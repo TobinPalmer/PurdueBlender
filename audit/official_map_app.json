@@ -1,0 +1,772 @@
+{
+  "authoringApp": "InstantAppsHomePage",
+  "source": "a3cbc26d59124dfd9b6b740937f37d10",
+  "folderId": "root",
+  "values": {
+    "webmap": "f2974db522f2494396e8a7095cdf2809",
+    "type": "webmap",
+    "landingPage": false,
+    "landingPageConfig": {
+      "titleText": "",
+      "subtitleText": "",
+      "descriptionText": "",
+      "entryButtonText": "",
+      "alignment": "center",
+      "backgroundType": "color",
+      "textColor": "#FFFFFF",
+      "entryButtonColor": "#0079C1",
+      "backgroundColor": "#0079C1",
+      "iconImage": null,
+      "iconImageScale": "m",
+      "backgroundImageSrc": null
+    },
+    "splashButtonText": "Enter",
+    "title": "WL Campus Map",
+    "searchConfiguration": {
+      "searchAllEnabled": false,
+      "allPlaceholder": "Building Names & Abbreviations",
+      "sources": [
+        {
+          "_uid": "1579284c353",
+          "displayField": "BUILDING_N",
+          "exactMatch": false,
+          "layer": {
+            "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer",
+            "id": "BuildingShapesZip4_4385"
+          },
+          "maxResults": 6,
+          "maxSuggestions": 6,
+          "name": "Campus Buildings",
+          "outFields": [
+            "BUILDING_N",
+            "BLDG_ABBR",
+            "ADDRESS",
+            "Zip"
+          ],
+          "searchFields": [
+            "BUILDING_N",
+            "BLDG_ABBR",
+            "ADDRESS",
+            "Zip"
+          ],
+          "placeholder": "Building Names & Abbreviations",
+          "suggestionsEnabled": true,
+          "minSuggestCharacters": 1,
+          "withinViewEnabled": false,
+          "zoomScale": 1250,
+          "popupTemplate": {
+            "popupElements": [
+              {
+                "type": "text",
+                "text": "<div style='text-align:center;'><img src='https://www.purdue.edu/campus-map/campus-buildings/{BLDG_ABBR}.jpg' alt='{BUILDING_N}' width='250' /><br />&nbsp;</div><p>{ADDRESS}<br />West Lafayette, IN {zip} - {plus4}<br /><a target='_blank' href='https://www.google.com/maps/dir//{BUILDING_N}+{ADDRESS}+West+lafayette+47906' rel='nofollow ugc noopener noreferrer'>Get Directions (Google Maps)</a></p>"
+              }
+            ],
+            "description": "<div style='text-align:center;'><img src='https://www.purdue.edu/campus-map/campus-buildings/{BLDG_ABBR}.jpg' alt='{BUILDING_N}' width='250' /><br />&nbsp;</div><p>{ADDRESS}<br />West Lafayette, IN {zip} - {plus4}<br /><a target='_blank' href='https://www.google.com/maps/dir//{BUILDING_N}+{ADDRESS}+West+lafayette+47906' rel='nofollow ugc noopener noreferrer'>Get Directions (Google Maps)</a></p>",
+            "fieldInfos": [
+              {
+                "fieldName": "FID",
+                "isEditable": false,
+                "label": "FID",
+                "tooltip": "",
+                "visible": false
+              },
+              {
+                "fieldName": "Entity",
+                "isEditable": true,
+                "label": "Entity",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "Level_",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Level_",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "Layer",
+                "isEditable": true,
+                "label": "Layer",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "Color",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Color",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "Linetype",
+                "isEditable": true,
+                "label": "Linetype",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "Elevation",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "Elevation",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "LineWt",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "LineWt",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "RefName",
+                "isEditable": true,
+                "label": "RefName",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "BLDG_ABBR",
+                "isEditable": true,
+                "label": "BLDG_ABBR",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "BUILDING_N",
+                "isEditable": true,
+                "label": "BUILDING_N",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "OTHER_ABBR",
+                "isEditable": true,
+                "label": "OTHER_ABBR",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "BUILDING_1",
+                "isEditable": true,
+                "label": "BUILDING_1",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "NUM_LEVELS",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "NUM_LEVELS",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "OWNER",
+                "isEditable": true,
+                "label": "OWNER",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "ADDRESS",
+                "isEditable": true,
+                "label": "ADDRESS",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "ZONES",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "ZONES",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "COMMENTS",
+                "isEditable": true,
+                "label": "COMMENTS",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "BUILT",
+                "format": {
+                  "dateFormat": "shortDateShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "BUILT",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "OCCUPIED",
+                "format": {
+                  "dateFormat": "shortDateShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "OCCUPIED",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "CountOfFLO",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "CountOfFLO",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "Extrution",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Extrution",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "Floorplans",
+                "isEditable": true,
+                "label": "Floorplans",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "SB",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "SB",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "B",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "B",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "G",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "G",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "M",
+                "isEditable": true,
+                "label": "M",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F01",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F01",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F02",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F02",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F03",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F03",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F04",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F04",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F05",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F05",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F06",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F06",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F07",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F07",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F08",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F08",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F09",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F09",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F10",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F10",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F11",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F11",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F12",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F12",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F13",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F13",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F14",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F14",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F15",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "F15",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "F16",
+                "isEditable": true,
+                "label": "F16",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "R",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": true,
+                "label": "R",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "RuleID",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "RuleID",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "PU_Occupie",
+                "isEditable": true,
+                "label": "PU_Occupie",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "DEMO",
+                "format": {
+                  "dateFormat": "shortDateShortTime",
+                  "digitSeparator": false
+                },
+                "isEditable": true,
+                "label": "DEMO",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "Zip",
+                "format": {
+                  "digitSeparator": false,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Zip",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "Plus4",
+                "format": {
+                  "digitSeparator": false,
+                  "places": 0
+                },
+                "isEditable": true,
+                "label": "Plus4",
+                "tooltip": "",
+                "visible": true
+              },
+              {
+                "fieldName": "Shape__Area",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": false,
+                "label": "Shape__Area",
+                "tooltip": "",
+                "visible": false
+              },
+              {
+                "fieldName": "Shape__Length",
+                "format": {
+                  "digitSeparator": true,
+                  "places": 2
+                },
+                "isEditable": false,
+                "label": "Shape__Length",
+                "tooltip": "",
+                "visible": false
+              },
+              {
+                "fieldName": "Building_F",
+                "isEditable": true,
+                "label": "Building_F",
+                "visible": false
+              },
+              {
+                "fieldName": "Zone",
+                "isEditable": true,
+                "label": "Zone",
+                "visible": false
+              }
+            ],
+            "title": "{BUILDING_N} ({BLDG_ABBR})"
+          },
+          "popupEnabled": true
+        }
+      ],
+      "activeSourceIndex": 0
+    },
+    "exportToPDFPosition": {
+      "position": "top-left",
+      "index": 0
+    },
+    "printPosition": {
+      "position": "top-left",
+      "index": 6
+    },
+    "homePosition": {
+      "position": "top-left",
+      "index": 4
+    },
+    "compassWidgetPosition": {
+      "position": "top-left",
+      "index": 5
+    },
+    "mapZoomPosition": {
+      "position": "top-left",
+      "index": 3
+    },
+    "keyboardShortcutsPosition": {
+      "position": "top-left",
+      "index": 1
+    },
+    "searchPosition": {
+      "position": "top-left",
+      "index": 2
+    },
+    "sharePosition": {
+      "position": "top-right",
+      "index": 2
+    },
+    "filterPosition": {
+      "position": "top-right",
+      "index": 13
+    },
+    "sketchToolsPosition": {
+      "position": "top-right",
+      "index": 11
+    },
+    "floorFilterPosition": {
+      "position": "top-right",
+      "index": 10
+    },
+    "measurePosition": {
+      "position": "top-right",
+      "index": 9
+    },
+    "locateWidgetPosition": {
+      "position": "top-right",
+      "index": 8
+    },
+    "bookmarksPosition": {
+      "position": "top-right",
+      "index": 7
+    },
+    "legendPosition": {
+      "position": "top-right",
+      "index": 4
+    },
+    "splashButtonPosition": {
+      "position": "top-right",
+      "index": 6
+    },
+    "languageSwitcherPosition": {
+      "position": "top-right",
+      "index": 1
+    },
+    "timePosition": {
+      "position": "bottom-left",
+      "index": 0
+    },
+    "swipeConfigurationPosition": {
+      "position": "bottom-left",
+      "index": 4
+    },
+    "basemapTogglePosition": {
+      "position": "bottom-left",
+      "index": 3
+    },
+    "scalebarPosition": {
+      "position": "bottom-left",
+      "index": 2
+    },
+    "overviewMapPosition": {
+      "position": "bottom-left",
+      "index": 1
+    },
+    "layerListPosition": {
+      "position": "top-right",
+      "index": 12
+    },
+    "fullScreenPosition": {
+      "position": "bottom-right",
+      "index": 2
+    },
+    "elevationProfilePosition": {
+      "position": "bottom-right",
+      "index": 1
+    },
+    "magnifierPosition": {
+      "position": "bottom-right",
+      "index": 0
+    },
+    "header": true,
+    "legend": true,
+    "keyboardShortcuts": true,
+    "popupHover": false,
+    "layerList": true,
+    "search": true,
+    "datePublished": 1782931255084,
+    "fullAppSettings": true,
+    "googleAnalytics": true,
+    "customTheme": {
+      "applySharedTheme": false,
+      "applyPresetTheme": true,
+      "font": "Arial",
+      "appFont": "Arial",
+      "logo": "https://purdueuniversity.maps.arcgis.com/sharing/rest/content/items/d7e5d06fb5344f5fb53819c42d3e91ed/resources/media/instantAppsConfigPanel_1755883165954_PU-V-logo.png",
+      "logoAltText": "Purdue University",
+      "logoLink": "",
+      "logoScale": "l",
+      "logoUrl": "https://marcom.purdue.edu/app/uploads/2022/09/PU-V-logo.jpg",
+      "logoSource": "upload",
+      "preset": "street",
+      "themes": {
+        "primary": {
+          "type": "primary",
+          "background": "#4A4A4A",
+          "text": "#FFFFFF"
+        }
+      }
+    },
+    "visibilityIcon": "checkbox",
+    "basemapToggle": false,
+    "googleAnalyticsConsent": false,
+    "googleAnalyticsKey": "G-PF1CYQ27F6",
+    "googleAnalyticsConsentMsg": "",
+    "enableHighlightColor": false,
+    "highlightColor": "rgba(142, 111, 62, 1)",
+    "filterConfig": null,
+    "swipeLeadingLayers": {
+      "layers": []
+    },
+    "swipeTrailingLayers": {
+      "layers": []
+    },
+    "customUrlParam": {
+      "layers": []
+    },
+    "uploads": [
+      "https://purdueuniversity.maps.arcgis.com/sharing/rest/content/items/d7e5d06fb5344f5fb53819c42d3e91ed/resources/media/instantAppsConfigPanel_1755883165954_PU-V-logo.png"
+    ],
+    "splash": true,
+    "splashTitle": "West Lafayette Campus Map",
+    "splashContent": "<p>This campus map shows buildings on West Lafayette campus.</p><p>Other campus maps include:</p><ul><li><a href=\"https://www.purdue.edu/campus-map/graphics/campusmap.pdf\" target=\"_blank\">Printed map</a> (PDF, opens in new tab)</li><li><a href=\"https://www.purdue.edu/parking/documents/PurdueParkingMap.pdf\" target=\"_blank\">WL Parking</a> (opens in new tab)</li><li><a href=\"https://purdueuniversity.maps.arcgis.com/apps/instant/basic/index.html?appid=ded56c64f72c41eba0124ed98c689c8d\" target=\"_blank\">WL Construction</a> (opens in new tab)</li><li><a href=\"https://purdueuniversity.maps.arcgis.com/apps/instant/basic/index.html?appid=b4ab9524eaa84cec9fb73c6b8b57afa2\" target=\"_blank\">Purdue in Indianapolis</a> (opens in new tab)</li></ul><p>&nbsp;</p>",
+    "trackWidgetPosition": {
+      "position": "top-right",
+      "index": 5
+    },
+    "informationPanelPosition": {
+      "position": "top-right",
+      "index": 3
+    },
+    "mapA11yDesc": "Interactive map of Purdue University West Lafayette campus. Displays building footprints labeled with abbreviations over aerial imagery. Select a building footprint to view its name, abbreviation, address, and a link to open directions in Google Maps. Toggleable layers include surface parking lots by permit type, metered parking spaces, accessible parking spaces, and accessible building entrances. Layers can be turned on or off using the layer list.",
+    "informationPanel": false,
+    "informationPanelContent": "",
+    "customHeader": false,
+    "visualScale": "l",
+    "popupFixed": true,
+    "popupFixedPosition": "top-left",
+    "layerListLegend": true,
+    "mapArea": true,
+    "layerListOpenAtStart": false,
+    "legendConfig": {
+      "style": {
+        "type": "classic",
+        "layout": "auto"
+      }
+    },
+    "legendOpenAtStart": false,
+    "bufferPosition": {
+      "position": "top-right",
+      "index": 0
+    },
+    "searchOpenAtStart": false,
+    "buffer": false,
+    "enableFilter": false
+  }
+}

@@ -1,0 +1,13 @@
+# Loeb evidence ledger — retrieved 2026-10-22
+
+- https://www.purduealumnus.org/fountain-runs/traditions/ — Purdue Alumnus, 2016-era article, preserved HTML. Documents 24 limestone jet bollards and removal of former reservoir. No dimensions or CRS. Relocation year1994 conflicts housing Purdue1993; not used as geometry measurement.
+- https://ontour.admissions.purdue.edu/daily-visits/ — official admissions, source date unknown, preserved HTML. Published 2200 gallons/minute recirculation. Assumed US gallons yields0.13880m³/s. Does not specify division across nozzles, pressure, schedule, nozzle bore or velocity.
+- https://commons.wikimedia.org/wiki/File:Purdue_University_Liberal_Arts_fountain.jpg — primary photograph by Quinn Thomson, 2010-10-07, CC BY-SA3.0; original retained for visual comparison, unmodified. Attribution and license https://creativecommons.org/licenses/by-sa/3.0/ . Source coordinate40.425003,-86.915825 in geographic degrees, assumed WGS84; unknown geotag accuracy and whether precise center. Indicates gross legacy location discrepancy; not a survey. Red patterned paving, pale rounded caps, center plume and perimeter arcs visible. Single oblique image lacks calibrated dimensions.
+- https://housing.purdue.edu/visit/guests-alumni/traditions.html — official housing corroborates Founders Park identity and1993 relocation, not precise center.
+- Searches: `site.purdue.edu "Loeb Fountain" "feet"`, `"Loeb Fountain" "plan" "diameter"`, `site.purdue.edu "Loeb Fountain" renovation`, `"Loeb Fountain" dimensions`. No dimensioned hydraulic/architectural construction plan located. Library finding aids describe historical photographs, not accessible measured plans.
+
+Project coordinate conversion is X=(lon+86.9137)*111412.84*cos(40.4274deg),Y=(lat-40.4274)*111040. Coordinate approximation, unsurveyed Z=0 deck reference. Geometry inherited20m deck,8.2m jet ring,44m outer promenade,0.85m bollards; all unsurveyed/inferred and not independently confirmed by floorplan.
+
+## Fluid limitations
+
+Liquid Mantaflow with gravity9.81m/s²,24FPS,48frames (2seconds). Attempt1/2 failed empty/stale bake; attempt3 valid80cell liquid but vastly widened emitters. Attempt4 actual geometric bore inferred from published totalQ, with center10m/s and perimeter(-4.8 inward,+4.5up)m/s. Analytic bore flow is a consistency target only. Domain128 cells over18.5m =>0.145m voxels, radius0.0155m underresolved. Surface distance1 numerical widening means solver does not reproduce nominal physicalQ; no convergence/calibrated splash/mist validation. These are previews, not hydraulically accurate engineering simulations. Cache must be shipped with asset. No100% accuracy claim.

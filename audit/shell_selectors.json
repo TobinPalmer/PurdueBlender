@@ -1,0 +1,600 @@
+{
+  "schema_version": 1,
+  "inventory": "building_objects.json",
+  "reference": "audit/official_building_references.json",
+  "extraction_warning": "Object selections are not certified ground footprints. Extract evaluated world-space structural perimeter. Wall strips need enclosed-boundary reconstruction; do not union thin-wall area or convex-hull entire site. Preserve courtyards and curved boundaries. No AABB-derived correction is authorized by this index.",
+  "buildings": [
+    {
+      "group_id": "walc",
+      "official_codes": [
+        "WALC"
+      ],
+      "collection_prefix": "01_WALC_",
+      "object_names": [
+        "Masonry lower plinth",
+        "Brick horizontal spandrels",
+        "Clear insulated glazing",
+        "Brick vertical piers",
+        "End brick spandrels",
+        "End brick piers",
+        "Rear brick bands",
+        "Rear brick piers"
+      ],
+      "name_regex": "^(Masonry lower plinth|Brick horizontal spandrels|Brick vertical piers|End brick spandrels|End brick piers|Rear brick bands|Rear brick piers|Clear insulated glazing)$",
+      "evidence_script": "import_walc_from_scratch.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Facade pieces; reconstruct closed perimeter; avoid a hull spanning recessed wings.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "wiley_hall",
+      "official_codes": [
+        "WILY"
+      ],
+      "collection_prefix": "01_Wiley_Masonry",
+      "object_names": [
+        "Window recess | interior shadow.004",
+        "Wiley | lightly weathered buff limestone.005",
+        "Wiley | warm russet brick / real-size 230 x 76 mm.001",
+        "Wiley | aged anodized aluminum.005"
+      ],
+      "name_regex": ".*",
+      "evidence_script": "test_wiley_import.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Imported material-joined masonry objects; geometry must be inspected for disconnected interior pieces. Selection is provisional.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "mechanical_engineering",
+      "official_codes": [
+        "ME"
+      ],
+      "collection_prefix": "09_Mechanical_",
+      "object_names": [
+        "ME_Historic_Core_Masonry",
+        "ME_Gatewood_Wing_Structure"
+      ],
+      "name_regex": "^ME_(Historic_Core_Masonry|Gatewood_Wing_Structure)$",
+      "evidence_script": "correct_walc_orientation_and_detail_surroundings.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Gatewood addition must be matched to its official feature separately if coded separately.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "potter_engineering",
+      "official_codes": [
+        "POTR"
+      ],
+      "collection_prefix": "10_Potter_",
+      "object_names": [
+        "Potter_Center_Masonry_Core"
+      ],
+      "name_regex": "^Potter_Center_Masonry_Core$",
+      "evidence_script": "correct_walc_orientation_and_detail_surroundings.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Principal exterior mass only; validate exact boundary using evaluated mesh.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "electrical_engineering",
+      "official_codes": [
+        "EE"
+      ],
+      "collection_prefix": "11_Electrical_",
+      "object_names": [
+        "EE_Historic_Masonry_Core"
+      ],
+      "name_regex": "^EE_Historic_Masonry_Core$",
+      "evidence_script": "correct_walc_orientation_and_detail_surroundings.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Principal exterior mass only; validate exact boundary using evaluated mesh.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "south_hall",
+      "official_codes": [
+        "SH"
+      ],
+      "collection_prefix": "12_South_Hall_Exterior",
+      "object_names": [
+        "SouthHall_GroundFloor_Glass_Podium",
+        "SouthHall_Residential_Masonry_Core"
+      ],
+      "name_regex": "^SouthHall_(GroundFloor_Glass_Podium|Residential_Masonry_Core)$",
+      "evidence_script": "build_south_hall_photorealistic.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Skybridge deliberately excluded; review separately.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "beering_hall",
+      "official_codes": [
+        "BRNG"
+      ],
+      "collection_prefix": "14_Beering_Hall_Exterior",
+      "object_names": [
+        "BRNG_Classroom_Wing_Masonry",
+        "BRNG_Office_Tower_Masonry",
+        "BRNG_Rotunda_Masonry_Drum_Core"
+      ],
+      "name_regex": "^BRNG_.*(Masonry|Masonry_Drum_Core)$",
+      "evidence_script": "build_beering_hall_photorealistic.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Use union of separate wing and tower outlines, preserving rotunda curvature.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "tarkington_hall",
+      "official_codes": [
+        "TARK"
+      ],
+      "collection_prefix": "17_Tarkington_Hall_Exterior",
+      "object_names": [
+        "Tark_NW_Wing_Brick_Shaft",
+        "Tark_SW_Wing_GF_Wall_N",
+        "Tark_SW_Wing_GF_Wall_S",
+        "Tark_SW_Wing_GF_Wall_E",
+        "Tark_SW_Wing_GF_Wall_W",
+        "Tark_SW_Wing_Upper_Brick_Shaft",
+        "Tark_NE_Wing_Brick_Shaft",
+        "Tark_SE_Wing_Brick_Shaft",
+        "Tark_Commons_Hub_GF_Wall_N",
+        "Tark_Commons_Hub_GF_Wall_S",
+        "Tark_Commons_Hub_GF_Wall_E",
+        "Tark_Commons_Hub_GF_Wall_W",
+        "Tark_Commons_Hub_Upper_Brick_Shaft",
+        "Tark_North_Entrance_Pavilion_Brick_Shaft",
+        "Tark_South_Entrance_Pavilion_GF_Wall_N",
+        "Tark_South_Entrance_Pavilion_GF_Wall_S",
+        "Tark_South_Entrance_Pavilion_GF_Wall_E",
+        "Tark_South_Entrance_Pavilion_GF_Wall_W",
+        "Tark_South_Entrance_Pavilion_Upper_Brick_Shaft"
+      ],
+      "name_regex": "^Tark_.*(Brick_Shaft|GF_Wall_[NSEW])$",
+      "evidence_script": "build_tarkington_hall_photorealistic.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Multiple wings: preserve courtyard voids.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "owen_hall",
+      "official_codes": [
+        "OWEN"
+      ],
+      "collection_prefix": "20_Owen_Hall_Exterior",
+      "object_names": [
+        "Owen_NW_Wing_Brick_Shaft",
+        "Owen_SW_Wing_GF_Wall_N",
+        "Owen_SW_Wing_GF_Wall_S",
+        "Owen_SW_Wing_GF_Wall_E",
+        "Owen_SW_Wing_GF_Wall_W",
+        "Owen_SW_Wing_Upper_Brick_Shaft",
+        "Owen_NE_Wing_Brick_Shaft",
+        "Owen_SE_Wing_Brick_Shaft",
+        "Owen_Commons_Hub_GF_Wall_N",
+        "Owen_Commons_Hub_GF_Wall_S",
+        "Owen_Commons_Hub_GF_Wall_E",
+        "Owen_Commons_Hub_GF_Wall_W",
+        "Owen_Commons_Hub_Upper_Brick_Shaft",
+        "Owen_North_Entrance_Pavilion_GF_Wall_N",
+        "Owen_North_Entrance_Pavilion_GF_Wall_S",
+        "Owen_North_Entrance_Pavilion_GF_Wall_E",
+        "Owen_North_Entrance_Pavilion_GF_Wall_W",
+        "Owen_North_Entrance_Pavilion_Upper_Brick_Shaft",
+        "Owen_South_Entrance_Pavilion_Brick_Shaft"
+      ],
+      "name_regex": "^Owen_.*(Brick_Shaft|GF_Wall_[NSEW])$",
+      "evidence_script": "build_owen_hall_photorealistic.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Multiple wings: preserve courtyard voids.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "ross_ade_stadium",
+      "official_codes": [
+        "STDM"
+      ],
+      "collection_prefix": "23_Ross_Ade_",
+      "object_names": [
+        "RossAde_LowerBowl_West_Riser_0",
+        "RossAde_LowerBowl_East_Riser_0",
+        "RossAde_LowerBowl_West_Riser_1",
+        "RossAde_LowerBowl_East_Riser_1",
+        "RossAde_LowerBowl_West_Riser_2",
+        "RossAde_LowerBowl_East_Riser_2",
+        "RossAde_LowerBowl_West_Riser_3",
+        "RossAde_LowerBowl_East_Riser_3",
+        "RossAde_LowerBowl_West_Riser_4",
+        "RossAde_LowerBowl_East_Riser_4",
+        "RossAde_LowerBowl_West_Riser_5",
+        "RossAde_LowerBowl_East_Riser_5",
+        "RossAde_LowerBowl_West_Riser_6",
+        "RossAde_LowerBowl_East_Riser_6",
+        "RossAde_LowerBowl_West_Riser_7",
+        "RossAde_LowerBowl_East_Riser_7",
+        "RossAde_LowerBowl_West_Riser_8",
+        "RossAde_LowerBowl_East_Riser_8",
+        "RossAde_LowerBowl_West_Riser_9",
+        "RossAde_LowerBowl_East_Riser_9",
+        "RossAde_LowerBowl_West_Riser_10",
+        "RossAde_LowerBowl_East_Riser_10",
+        "RossAde_LowerBowl_West_Riser_11",
+        "RossAde_LowerBowl_East_Riser_11",
+        "RossAde_LowerBowl_West_Riser_12",
+        "RossAde_LowerBowl_East_Riser_12",
+        "RossAde_LowerBowl_West_Riser_13",
+        "RossAde_LowerBowl_East_Riser_13",
+        "RossAde_LowerBowl_West_Riser_14",
+        "RossAde_LowerBowl_East_Riser_14",
+        "RossAde_LowerBowl_West_Riser_15",
+        "RossAde_LowerBowl_East_Riser_15",
+        "RossAde_LowerBowl_West_Riser_16",
+        "RossAde_LowerBowl_East_Riser_16",
+        "RossAde_LowerBowl_West_Riser_17",
+        "RossAde_LowerBowl_East_Riser_17",
+        "RossAde_UpperBowl_East_Riser_0",
+        "RossAde_UpperBowl_East_Riser_1",
+        "RossAde_UpperBowl_East_Riser_2",
+        "RossAde_UpperBowl_East_Riser_3",
+        "RossAde_UpperBowl_East_Riser_4",
+        "RossAde_UpperBowl_East_Riser_5",
+        "RossAde_UpperBowl_East_Riser_6",
+        "RossAde_UpperBowl_East_Riser_7",
+        "RossAde_UpperBowl_East_Riser_8",
+        "RossAde_UpperBowl_East_Riser_9",
+        "RossAde_UpperBowl_East_Riser_10",
+        "RossAde_UpperBowl_East_Riser_11",
+        "RossAde_UpperBowl_East_Riser_12",
+        "RossAde_UpperBowl_East_Riser_13",
+        "RossAde_UpperBowl_East_Riser_14",
+        "RossAde_UpperBowl_East_Riser_15",
+        "RossAde_UpperBowl_East_Riser_16",
+        "RossAde_UpperBowl_East_Riser_17",
+        "RossAde_UpperBowl_East_Riser_18",
+        "RossAde_UpperBowl_East_Riser_19",
+        "RossAde_UpperBowl_East_Riser_20",
+        "RossAde_UpperBowl_East_Riser_21",
+        "RossAde_WestPavilion_MainMass"
+      ],
+      "name_regex": "^RossAde_(LowerBowl_.*_Riser_\\d+|UpperBowl_.*_Riser_\\d+)$",
+      "evidence_script": "build_ross_ade_stadium_photorealistic.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Bowl risers are structural tier outlines, not enclosed wall footprint; compare with STDM family together. Pavilion shell selected additionally below.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "winifred_parker_hall",
+      "official_codes": [
+        "PKRW"
+      ],
+      "collection_prefix": "27_Winifred_Parker_Hall_Exterior",
+      "object_names": [
+        "Parker_EastWing_MainMass",
+        "Parker_NorthWing_MainMass",
+        "Parker_CenterFinger_MainMass",
+        "Parker_SouthWing_MainMass",
+        "Parker_EastWing_MainMass_North",
+        "Parker_EastWing_MainMass_South",
+        "Parker_EastWing_MainMass_Upper"
+      ],
+      "name_regex": "^Parker_.*MainMass.*$",
+      "evidence_script": "build_winifred_parker_hall_photorealistic.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Inventory retains original EastWing_MainMass alongside subdivided replacements: inspect overlap/duplicates before accepting footprint.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "frieda_parker_hall",
+      "official_codes": [
+        "PKRF"
+      ],
+      "collection_prefix": "30_Frieda_Parker_Hall_Exterior",
+      "object_names": [
+        "Frieda_EastWing_Upper_South",
+        "Frieda_EastWing_Upper_North",
+        "Frieda_Breezeway_Upper_Bridge",
+        "Frieda_WestWing_Upper",
+        "Frieda_NorthWing_Upper"
+      ],
+      "name_regex": "^Frieda_(EastWing_Upper_.*|Breezeway_Upper_Bridge|WestWing_Upper|NorthWing_Upper)$",
+      "evidence_script": "build_frieda_parker_hall_photorealistic.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Upper envelope bridges breezeway: distinguish projected overhang from ground-contact outline.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "elliott_hall_of_music",
+      "official_codes": [
+        "ELLT"
+      ],
+      "collection_prefix": "33_Elliott_Hall_of_Music_Exterior",
+      "object_names": [
+        "ELLT_Auditorium_Wall_East",
+        "ELLT_Auditorium_Wall_West",
+        "ELLT_Auditorium_Wall_South_L",
+        "ELLT_Auditorium_Wall_South_C",
+        "ELLT_Auditorium_Wall_South_R",
+        "ELLT_Auditorium_Wall_North_W",
+        "ELLT_Auditorium_Wall_North_E",
+        "ELLT_FlyTower_Wall_North",
+        "ELLT_FlyTower_Wall_West",
+        "ELLT_FlyTower_Wall_East",
+        "ELLT_South_Recessed_Wall_Top"
+      ],
+      "name_regex": "^ELLT_(Auditorium_Wall_.*|FlyTower_Wall_.*|South_Recessed_Wall_Top)$",
+      "evidence_script": "build_elliott_hall_v2.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Thin walls need perimeter reconstruction; do not compare wall-strip area directly.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "university_hall",
+      "official_codes": [
+        "UNIV"
+      ],
+      "collection_prefix": "36_University_Hall_Exterior",
+      "object_names": [
+        "UNIV_Wall_East_NorthSection",
+        "UNIV_Wall_East_SouthSection",
+        "UNIV_Wall_East_CenterUpper",
+        "UNIV_Wall_West",
+        "UNIV_Wall_North",
+        "UNIV_Wall_South",
+        "UNIV_Tower_Brick_Shaft"
+      ],
+      "name_regex": "^UNIV_(Wall_.*|Tower_Brick_Shaft)$",
+      "evidence_script": "build_university_hall_photorealistic.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Thin walls need perimeter reconstruction.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "neil_armstrong_hall",
+      "official_codes": [
+        "ARMS"
+      ],
+      "collection_prefix": "39_Neil_Armstrong_Hall_Exterior",
+      "object_names": [
+        "ARMS_East_Wall_North",
+        "ARMS_East_Wall_South",
+        "ARMS_East_Wall_East",
+        "ARMS_West_Wall_North",
+        "ARMS_West_Wall_South",
+        "ARMS_West_Wall_West",
+        "ARMS_Atrium_South_Wall"
+      ],
+      "name_regex": "^ARMS_(East_Wall_.*|West_Wall_.*|Atrium_South_Wall)$",
+      "evidence_script": "build_neil_armstrong_hall_photorealistic.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Atrium glazing boundary needs additional inspection; selected walls alone may not close courtyard boundaries.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "mackey_arena",
+      "official_codes": [
+        "MACK"
+      ],
+      "collection_prefix": "42_Mackey_Arena_Exterior",
+      "object_names": [
+        "MACK_Exterior_Lower_Brick_Wall",
+        "MACK_Exterior_Concourse_Glass",
+        "MACK_North_Pavilion_Vestibule"
+      ],
+      "name_regex": "^MACK_(Exterior_Lower_Brick_Wall|Exterior_Concourse_Glass|North_Pavilion_Vestibule)$",
+      "evidence_script": "build_mackey_arena_photorealistic.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Official MACK includes irregular associated envelope; circular arena alone cannot match entire polygon.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "purdue_memorial_union",
+      "official_codes": [
+        "PMU"
+      ],
+      "collection_prefix": "45_Purdue_Memorial_Union_Exterior",
+      "object_names": [
+        "PMU_Wall_South_L",
+        "PMU_Wall_South_R",
+        "PMU_Tower_Wall_Front",
+        "PMU_Tower_Wall_West",
+        "PMU_Tower_Wall_East",
+        "PMU_Wall_West",
+        "PMU_Wall_East",
+        "PMU_Wall_North",
+        "PMU_EastWing_Wall_InnerWest",
+        "PMU_EastWing_Wall_South",
+        "PMU_WestWing_Wall_InnerEast",
+        "PMU_WestWing_Wall_South",
+        "PMU_Wall_Fill_SE",
+        "PMU_Wall_Fill_SW"
+      ],
+      "name_regex": "^PMU_(Wall_.*|Tower_Wall_.*|EastWing_Wall_.*|WestWing_Wall_.*)$",
+      "evidence_script": "build_purdue_memorial_union.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Multiple wings/courtyard: reconstruct connected boundary rather than convex hull.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "stewart_center",
+      "official_codes": [
+        "STEW"
+      ],
+      "collection_prefix": "48_Stewart_Center_Exterior",
+      "object_names": [
+        "STEW_Ext_Wall_South_West",
+        "STEW_Ext_Wall_South_East",
+        "STEW_Ext_Wall_South_Center_Upper",
+        "STEW_Portico_Back_Wall",
+        "STEW_Portico_Side_Wall_W",
+        "STEW_Portico_Side_Wall_E",
+        "STEW_Ext_Wall_East",
+        "STEW_Ext_Wall_West",
+        "STEW_Ext_Wall_North_West",
+        "STEW_Ext_Wall_North_East",
+        "STEW_Ext_Wall_North_Center_Upper"
+      ],
+      "name_regex": "^STEW_(Ext_Wall_.*|Portico_Back_Wall|Portico_Side_Wall_.*)$",
+      "evidence_script": "build_stewart_center.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Portico recess and entrance gaps require perimeter reconstruction.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "hovde_hall",
+      "official_codes": [
+        "HOVD"
+      ],
+      "collection_prefix": "51_Hovde_Hall_Exterior",
+      "object_names": [
+        "HOVD_Wall_South_West",
+        "HOVD_Wall_South_East",
+        "HOVD_Wall_South_Center_Upper",
+        "HOVD_Wall_North",
+        "HOVD_Wall_East",
+        "HOVD_Wall_West"
+      ],
+      "name_regex": "^HOVD_Wall_.*$",
+      "evidence_script": "build_hovde_hall.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Portico columns excluded from main wall envelope; official outline may include portico.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "class_of_1950",
+      "official_codes": [
+        "CL50"
+      ],
+      "collection_prefix": "54_Class_of_1950_Exterior",
+      "object_names": [
+        "CL50_Wall_East_Upper",
+        "CL50_CurtainWall_East",
+        "CL50_Wall_West",
+        "CL50_Wall_North",
+        "CL50_Wall_South",
+        "CL50_Entrance_Glass_Wall"
+      ],
+      "name_regex": "^CL50_(Wall_.*|CurtainWall_East|Entrance_Glass_Wall)$",
+      "evidence_script": "build_class_of_1950.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Colonnade excluded from enclosed-wall boundary; review official definition.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "armory",
+      "official_codes": [
+        "AR"
+      ],
+      "collection_prefix": "57_Armory_Exterior",
+      "object_names": [
+        "Armory_Wall_East",
+        "Armory_Wall_West",
+        "Armory_Wall_North_Low",
+        "Armory_Wall_South_Low",
+        "Armory_Tower_Shaft_NE",
+        "Armory_Tower_Shaft_NW",
+        "Armory_Tower_Shaft_SE",
+        "Armory_Tower_Shaft_SW"
+      ],
+      "name_regex": "^Armory_(Wall_.*|Tower_Shaft_.*)$",
+      "evidence_script": "build_purdue_armory.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Corner towers must be included; steps and cheek walls excluded.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "math_sciences",
+      "official_codes": [
+        "MATH"
+      ],
+      "collection_prefix": "60_Math_Sciences_Exterior",
+      "object_names": [
+        "MATH_Corner_Tower_NE_Brick",
+        "MATH_Corner_Tower_NW_Brick",
+        "MATH_Corner_Tower_SE_Brick",
+        "MATH_Corner_Tower_SW_Brick",
+        "MATH_End_Wall_North_Brick",
+        "MATH_End_Wall_South_Brick",
+        "MATH_Ground_Curtain_West",
+        "MATH_Ground_Curtain_East",
+        "MATH_Spandrel_West_0",
+        "MATH_Spandrel_East_0",
+        "MATH_Spandrel_West_1",
+        "MATH_Spandrel_East_1",
+        "MATH_Spandrel_West_2",
+        "MATH_Spandrel_East_2",
+        "MATH_Spandrel_West_3",
+        "MATH_Spandrel_East_3",
+        "MATH_Spandrel_West_4",
+        "MATH_Spandrel_East_4",
+        "MATH_Spandrel_West_5",
+        "MATH_Spandrel_East_5",
+        "MATH_Spandrel_West_6",
+        "MATH_Spandrel_East_6",
+        "MATH_Spandrel_West_7",
+        "MATH_Spandrel_East_7",
+        "MATH_Spandrel_West_8",
+        "MATH_Spandrel_East_8",
+        "MATH_Spandrel_West_9",
+        "MATH_Spandrel_East_9",
+        "MATH_Ribbon_Glass_West_2",
+        "MATH_Ribbon_Glass_East_2",
+        "MATH_Ribbon_Glass_West_3",
+        "MATH_Ribbon_Glass_East_3",
+        "MATH_Ribbon_Glass_West_4",
+        "MATH_Ribbon_Glass_East_4",
+        "MATH_Ribbon_Glass_West_5",
+        "MATH_Ribbon_Glass_East_5",
+        "MATH_Ribbon_Glass_West_6",
+        "MATH_Ribbon_Glass_East_6",
+        "MATH_Ribbon_Glass_West_7",
+        "MATH_Ribbon_Glass_East_7",
+        "MATH_Ribbon_Glass_West_8",
+        "MATH_Ribbon_Glass_East_8",
+        "MATH_Ribbon_Glass_West_9",
+        "MATH_Ribbon_Glass_East_9",
+        "MATH_Ribbon_Glass_West_10",
+        "MATH_Ribbon_Glass_East_10"
+      ],
+      "name_regex": "^MATH_(Corner_Tower_.*_Brick|End_Wall_.*_Brick|Ground_Curtain_.*|Spandrel_.*|Ribbon_Glass_.*)$",
+      "evidence_script": "build_math_building_attempt2.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Upper shell overhangs pilotis; distinguish projected envelope from ground-contact outline.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "felix_haas_hall",
+      "official_codes": [
+        "HAAS"
+      ],
+      "collection_prefix": "63_Felix_Haas_Hall_Exterior",
+      "object_names": [
+        "HAAS_Brick_Wall_East",
+        "HAAS_Brick_Wall_West",
+        "HAAS_Brick_Wall_North",
+        "HAAS_Brick_Wall_South"
+      ],
+      "name_regex": "^HAAS_Brick_Wall_.*$",
+      "evidence_script": "build_haas_hall.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Entrance pavilion excluded from main rectangular walls; compare it separately if official polygon includes it.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    },
+    {
+      "group_id": "bell_tower",
+      "official_codes": [],
+      "collection_prefix": "04_Purdue_Bell_Tower_Detailed",
+      "object_names": [
+        "Bell_Tower_GroundPier_-2.4_-2.4",
+        "Bell_Tower_GroundPier_-2.4_2.4",
+        "Bell_Tower_GroundPier_2.4_-2.4",
+        "Bell_Tower_GroundPier_2.4_2.4",
+        "Bell_Tower_Brick_Shaft_Upper"
+      ],
+      "name_regex": "^Bell_Tower_(Brick_Shaft_Upper|GroundPier_.*)$",
+      "evidence_script": "upgrade_bell_tower_pass4.py",
+      "selection_reason": "Only named structural exterior walls, masonry masses, or explicit exterior glazing; site paving, furniture, roofs, landscaping, signage and interior collections excluded.",
+      "limitations": "Open tower, no standard enclosed ground footprint. Ground piers and upper shaft are distinct envelope definitions.",
+      "review_status": "candidate shell selected; geometry comparison still required"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "attempt": 2,
+  "score": 2.8,
+  "threshold_met": false,
+  "scores": {
+    "position_dimensions": 0.3,
+    "architecture_detail": 0.8,
+    "fluid": 0.2,
+    "portability": 0.5,
+    "evidence_uncertainty": 1.0
+  },
+  "findings": [
+    "Attempt2 sampled frames remain eight vertices/six polygons each, identical empty domain rendering; no successful liquid surface.",
+    "All 48 cached bobj mesh files are only 23 bytes, indicating empty surfaces; reported evaluated geometry is eight vertices and six faces on every sampled frame.",
+    "24 limestone bollards agree with Purdue Alumnus, but radius, position, height and nozzle dimensions remain unsupported.",
+    "Declared emitter area and velocity are not calibrated to Purdue Admissions reported 2200 GPM; nominal total emitter area times speed is roughly 18 cubic metres per second versus source 0.139 cubic metres per second.",
+    "Legacy central pool geometry visually conflicts with source statement that reservoir was removed.",
+    "Relative cache paths are good but master compatibility is untested."
+  ],
+  "sources": [
+    "https://www.purduealumnus.org/fountain-runs/traditions/",
+    "https://ontour.admissions.purdue.edu/daily-visits/"
+  ],
+  "required_next": [
+    "Produce nonempty baked mesh with distinct frames and visible jets.",
+    "Remove legacy pool if unsupported by modern photographs.",
+    "Quantify physical emitter approximation rather than calling widened nozzles accurate.",
+    "Supply measured geometry and position evidence or retain uncertainty."
+  ]
+}
