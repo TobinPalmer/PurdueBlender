@@ -1,5 +1,7 @@
 # Purdue University 3D Digital Twin: Comprehensive Precinct & Landmark Master Report
 
+> **Status update (October 22, 2026):** This document describes an earlier build and its object totals are outdated. The current modular master is [`purdue_campus_master.blend`](purdue_campus_master.blend); current counts, linked-asset workflow, and accuracy limitations are documented in [`modular/MASTER_STATUS.md`](modular/MASTER_STATUS.md). The former root master is preserved as `purdue_campus_master_before_modular_linking.blend`.
+
 **Master Blend File:** [`purdue_campus_master.blend`](file:///C:/Users/Tobin/.gemini/antigravity/scratch/purdue_digital_twin/purdue_campus_master.blend)  
 **Total Scene Objects:** 12,822 objects across 77 collections  
 **Coordinates Origin:** Purdue Bell Tower $(0, 0, 0)$  
