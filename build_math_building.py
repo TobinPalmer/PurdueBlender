@@ -9,7 +9,9 @@ import bpy
 import bmesh
 import math
 import mathutils
-
+import sys
+from pathlib import Path
+ROOT = Path(r'C:/Users/Tobin/Documents/Blender/PurdueMap')\nsys.path.insert(0, str(ROOT / 'materials'))\nimport pbr_upgrade as pbr
 BLEND_PATH = r"C:\Users\Tobin\Documents\Blender\PurdueMap\purdue_campus_master.blend"
 
 def run_build():
@@ -76,7 +78,7 @@ def run_build():
                     bsdf.inputs["Emission"].default_value = emission
         return mat
 
-    mat_brick = bpy.data.materials.get("Purdue_Red_Brick") or get_or_create_mat("MATH_Purdue_Red_Brick", (0.38, 0.14, 0.10, 1.0), roughness=0.75)
+    mat_brick = pbr.upgrade_brick(bpy.data.materials['Purdue_Red_Brick'], tint=(.88,.84,.78,1))
     mat_concrete = get_or_create_mat("MATH_Precast_Concrete", (0.76, 0.75, 0.72, 1.0), roughness=0.65)
     mat_dark_concrete = get_or_create_mat("MATH_BoardFormed_Concrete", (0.45, 0.44, 0.42, 1.0), roughness=0.70)
     mat_limestone = get_or_create_mat("MATH_Bedford_Limestone", (0.82, 0.80, 0.75, 1.0), roughness=0.60)

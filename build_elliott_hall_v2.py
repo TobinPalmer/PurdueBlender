@@ -2,6 +2,9 @@ import bpy
 import bmesh
 from mathutils import Vector, Matrix, Euler
 import math
+import sys
+from pathlib import Path
+ROOT = Path(r'C:/Users/Tobin/Documents/Blender/PurdueMap')\nsys.path.insert(0, str(ROOT / 'materials'))\nimport pbr_upgrade as pbr
 
 def build_elliott_hall():
     print("==================================================================")
@@ -55,7 +58,7 @@ def build_elliott_hall():
         return mat
 
     mat_stone = get_or_create_mat("Elliott_Bedford_Limestone", (0.80, 0.76, 0.68, 1.0), roughness=0.55)
-    mat_brick = get_or_create_mat("Elliott_Purdue_Red_Brick", (0.36, 0.12, 0.08, 1.0), roughness=0.68)
+    mat_brick = pbr.upgrade_brick(bpy.data.materials['Elliott_Purdue_Red_Brick'], tint=(.88,.84,.78,1))
     mat_dark_brick = get_or_create_mat("Elliott_Dark_Brick_Accent", (0.24, 0.08, 0.05, 1.0), roughness=0.72)
     mat_bronze = get_or_create_mat("Elliott_ArtDeco_Bronze", (0.38, 0.28, 0.14, 1.0), roughness=0.32, metallic=0.85)
     mat_gold = get_or_create_mat("Elliott_Gold_Leaf", (0.88, 0.72, 0.25, 1.0), roughness=0.22, metallic=0.92)
