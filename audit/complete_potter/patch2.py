@@ -1,0 +1,3 @@
+p='audit/complete_potter/build.py';s=open(p).read();find="concrete=material(";code="""# Select facade horizontal axis from the surface normal so brick courses retain meter size on both cardinal facades.
+geom=nt.nodes.new('ShaderNodeNewGeometry');nsep=nt.nodes.new('ShaderNodeSeparateXYZ');nt.links.new(geom.outputs['Normal'],nsep.inputs[0]);absolute=nt.nodes.new('ShaderNodeMath');absolute.operation='ABSOLUTE';nt.links.new(nsep.outputs['X'],absolute.inputs[0]);mix=nt.nodes.new('ShaderNodeMixRGB');nt.links.new(absolute.outputs[0],mix.inputs[0]);nt.links.new(sep.outputs['X'],mix.inputs[1]);nt.links.new(sep.outputs['Y'],mix.inputs[2]);nt.links.new(mix.outputs[0],comb.inputs['X'])
+""";s=s.replace(find,code+find,1);open(p,'w').write(s)

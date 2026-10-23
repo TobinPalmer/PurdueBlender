@@ -1,0 +1,14 @@
+# BHEE completion pass, 2026-10-22
+
+Asset: modular/buildings/electrical_engineering.blend; export Asset_electrical_engineering. Backup before.blend. Local frame and placement unchanged at campus origin [143.8499984741211,135]. Main structural outer wall polygon derives official FID292, source EPSG4326 converted with project x84810.60416539927,y111040 per degree. Main perimeter vertices retained; wall faces replaced with segmented spandrels/jambs and real openings. FID109 former18m stair projection removed and replaced low estimated entrance volume; its exact outline/height remains unresolved.
+
+Changes: 4169 export objects (formerly5), perimeter windows/mullions/sills, limestone courses, triple portal, photo-supported dark cornice/red tile eave, first-floor laboratory benches/screens/scopes/seats, lounge tables/green chairs/carpet, partitions with door gaps, exposed beams/light bars, floor/roof slabs clipped to official polygon with inferred courtyard. Save and reopen passed. No external texture files; procedural materials portable. shader_overview.png rendered in Cycles; overview.png and interior_cutaway.png Workbench. Shader preview supports material visibility, not geometric fidelity.
+
+Sources downloaded and viewed:
+- Purdue2025 exterior: https://engineering.purdue.edu/ECE/News/2025/a-century-of-circuits-and-community-purdues-electrical-engineering-building-turns-100/bhee.jpg (facade.jpg), redbrick, limestone, tall dark window mullions, triple stone portal, tile eave.
+- Purdue2024 completed-renovation article: https://engineering.purdue.edu/ECE/Wavelinks/2024/articles/max-w-and-maileen-brown-family-hall-of-electrical-engineering (article.html). Three photos downloaded; banner is interior despite generic alt text. Photos show actual labs/lounge, white exposed services, bench equipment, gray floor and green fabric/carpet.
+- https://engineering.purdue.edu/ECE/Giving/BHEE/BHEE_First_Floor_Renovation.pdf (renovation.pdf, plan_0/1.png). Proposal explicitly subject to change; used as inferred functional layout, not as-built certification.
+- GoogleMaps queried by parent: BHEE pin40.4288777,-86.9117698; place identity corroboration only, gallery ambiguous with MSEE. No false StreetView claim.
+- Official footprint cache audit/official_building_references.json source Purdue ArcGIS BuildingShapesZip4 FeatureServer0; retrieved2026-10-22. Source date/precision unknown.
+
+Remaining: exact bay count/positions, courtyard dimensions and glazing, roof geometry, heights18m (estimate), room locations, stairs/upperfloor interiors, full facade inscription and accessibility need stronger plans/photos. Uniform bays are estimated and not a faithful surveyed reconstruction. Interior illustrates documented first-floor functions, not complete as-built interior. Child independent review score5.2/10 before final technical fixes, no9/10 claim. Final source and fidelity limitations prevent honest9. No master or shared manifest edits.

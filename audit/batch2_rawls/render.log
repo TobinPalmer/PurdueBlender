@@ -1,0 +1,15 @@
+00:01.344  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\rawls_hall.blend"
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\batch2_rawls\finish_render.py:25: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  world=bpy.data.worlds.new('ReviewWorld');s.world=world;world.use_nodes=True;world.node_tree.nodes['Background'].inputs[0].default_value=(.7,.8,1,1);world.node_tree.nodes['Background'].inputs[1].default_value=.6
+00:08.047  render           | Saved: 'C:\Users\Tobin\Documents\Blender\PurdueMap\audit\batch2_rawls\exterior.png'
+Traceback (most recent call last):
+  File "C:\Users\Tobin\Documents\Blender\PurdueMap\audit\batch2_rawls\finish_render.py", line 32, in <module>
+    if not o.name.startswith('RAWL_2026_') and o.type=='MESH':o.hide_render=True
+           ^^^^^^
+AttributeError: 'NoneType' object has no attribute 'name'
+BlenderMCP addon registered
+Info: Saved as "rawls_hall.blend"
+BlenderMCP addon unregistered
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
+
+Blender quit

@@ -1,0 +1,2 @@
+import bpy,json
+bpy.ops.wm.open_mainfile(filepath=r'C:/Users/Tobin/Documents/Blender/PurdueMap/audit/complete_potter/before.blend');o=bpy.data.objects['POTR_Official_864_Structural_Envelope'];z=min(v.co.z for v in o.data.vertices);pts=[list(v.co)[:2] for v in o.data.vertices if abs(v.co.z-z)<1e-4];open(r'C:/Users/Tobin/Documents/Blender/PurdueMap/audit/complete_potter/outline.json','w').write(json.dumps(pts))

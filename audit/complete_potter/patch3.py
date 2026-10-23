@@ -1,0 +1,2 @@
+p='audit/complete_potter/build.py';s=open(p).read().replace('[.61,4.1,7.6,11.1]','[-4.064,.6096,4.8768,9.144]').replace('[5.35,8.85,12.35]','[6.1,10.3672]').replace('(.61,.025,.69)','(.71,.025,.7066)');s=s.replace("q=p+normal*.125;ob=box", "q=p+normal*.125;ob=box");s=s.replace("# Save portable node textures; no dependencies.","""   q=p+normal*.25;ob=box('POTR_406mm_Shading_Overhang',(q.x,q.y,z+.57),(L/count-.025,.4064,.16),concrete);ob.rotation_euler.z=math.atan2(d.y,d.x)
+# Save portable node textures; no dependencies.""");open(p,'w').write(s)
