@@ -1,0 +1,152 @@
+00:01.297  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\rawls_hall.blend"
+BlenderMCP addon registered
+
+NODE Material Output OUTPUT_MATERIAL
+ IN Surface <- [('Principled BSDF', 'BSDF')]
+
+NODE Principled BSDF BSDF_PRINCIPLED
+ IN Base Color <- [('Brick Texture.001', 'Color')]
+ IN Normal <- [('Bump.002', 'Normal')]
+ OUT BSDF -> [('Material Output', 'Surface')]
+
+NODE Texture Coordinate TEX_COORD
+ OUT Object -> [('Separate XYZ.001', 'Vector'), ('Noise Texture', 'Vector'), ('Noise Texture.001', 'Vector'), ('Separate XYZ.003', 'Vector')]
+
+NODE Geometry NEW_GEOMETRY
+ OUT Normal -> [('Separate XYZ', 'Vector')]
+
+NODE Separate XYZ SEPXYZ
+ IN Vector <- [('Geometry', 'Normal')]
+ OUT X -> [('Math', 'Value')]
+
+NODE Math MATH
+ IN Value <- [('Separate XYZ', 'X')]
+ OUT Value -> [('Math.001', 'Value')]
+
+NODE Math.001 MATH
+ IN Value <- [('Math', 'Value')]
+ OUT Value -> [('Mix', 'Factor')]
+
+NODE Separate XYZ.001 SEPXYZ
+ IN Vector <- [('Texture Coordinate', 'Object')]
+ OUT X -> [('Combine XYZ.001', 'X')]
+ OUT Y -> [('Combine XYZ', 'X')]
+ OUT Z -> [('Combine XYZ', 'Y'), ('Combine XYZ.001', 'Y')]
+
+NODE Combine XYZ COMBXYZ
+ IN X <- [('Separate XYZ.001', 'Y')]
+ IN Y <- [('Separate XYZ.001', 'Z')]
+ IN Z 0.0
+ OUT Vector -> [('Mix', 'B')]
+
+NODE Combine XYZ.001 COMBXYZ
+ IN X <- [('Separate XYZ.001', 'X')]
+ IN Y <- [('Separate XYZ.001', 'Z')]
+ IN Z 0.0
+ OUT Vector -> [('Mix', 'A')]
+
+NODE Mix MIX
+ IN Factor <- [('Math.001', 'Value')]
+ IN A <- [('Combine XYZ.001', 'Vector')]
+ IN B <- [('Combine XYZ', 'Vector')]
+
+NODE Brick Texture TEX_BRICK
+ IN Vector <- [('Mix (Legacy)', 'Color')]
+ IN Color1 <bpy_float[4], NodeSocketColor.default_value>
+ IN Color2 <bpy_float[4], NodeSocketColor.default_value>
+ IN Scale 1.0
+ IN Mortar Size 0.006000000052154064
+ IN Brick Width 0.23000000417232513
+ IN Row Height 0.07599999755620956
+ OUT Color -> [('Mix.001', 'A')]
+ OUT Factor -> [('Bump', 'Height')]
+
+NODE Noise Texture TEX_NOISE
+ IN Vector <- [('Texture Coordinate', 'Object')]
+ IN Scale 3.200000047683716
+ OUT Color -> [('Mix.001', 'B')]
+
+NODE Mix.001 MIX
+ IN A <- [('Brick Texture', 'Color')]
+ IN B <- [('Noise Texture', 'Color')]
+
+NODE Bump BUMP
+ IN Height <- [('Brick Texture', 'Factor')]
+ OUT Normal -> [('Bump.001', 'Normal')]
+
+NODE Noise Texture.001 TEX_NOISE
+ IN Vector <- [('Texture Coordinate', 'Object')]
+ IN Scale 160.0
+ OUT Factor -> [('Bump.001', 'Height')]
+
+NODE Bump.001 BUMP
+ IN Height <- [('Noise Texture.001', 'Factor')]
+ IN Normal <- [('Bump', 'Normal')]
+
+NODE Texture Coordinate.001 TEX_COORD
+ OUT Object -> [('Separate XYZ.002', 'Vector')]
+
+NODE Brick Texture.001 TEX_BRICK
+ IN Vector <- [('Combine XYZ.002', 'Vector')]
+ IN Color1 <bpy_float[4], NodeSocketColor.default_value>
+ IN Color2 <bpy_float[4], NodeSocketColor.default_value>
+ IN Scale 1.0
+ IN Mortar Size 0.006000000052154064
+ IN Brick Width 0.2150000035762787
+ IN Row Height 0.07500000298023224
+ OUT Color -> [('Principled BSDF', 'Base Color')]
+ OUT Factor -> [('Bump.002', 'Height')]
+
+NODE Separate XYZ.002 SEPXYZ
+ IN Vector <- [('Texture Coordinate.001', 'Object')]
+ OUT X -> [('Combine XYZ.002', 'X')]
+ OUT Z -> [('Combine XYZ.002', 'Y')]
+
+NODE Combine XYZ.002 COMBXYZ
+ IN X <- [('Separate XYZ.002', 'X')]
+ IN Y <- [('Separate XYZ.002', 'Z')]
+ IN Z 0.0
+ OUT Vector -> [('Brick Texture.001', 'Vector')]
+
+NODE Bump.002 BUMP
+ IN Height <- [('Brick Texture.001', 'Factor')]
+ OUT Normal -> [('Principled BSDF', 'Normal')]
+
+NODE Separate XYZ.003 SEPXYZ
+ IN Vector <- [('Texture Coordinate', 'Object')]
+ OUT X -> [('Combine XYZ.003', 'X')]
+ OUT Y -> [('Combine XYZ.004', 'X')]
+ OUT Z -> [('Combine XYZ.003', 'Y'), ('Combine XYZ.004', 'Y')]
+
+NODE Geometry.001 NEW_GEOMETRY
+ OUT Normal -> [('Separate XYZ.004', 'Vector')]
+
+NODE Separate XYZ.004 SEPXYZ
+ IN Vector <- [('Geometry.001', 'Normal')]
+ OUT X -> [('Math.002', 'Value')]
+
+NODE Math.002 MATH
+ IN Value <- [('Separate XYZ.004', 'X')]
+ OUT Value -> [('Mix (Legacy)', 'Factor')]
+
+NODE Mix (Legacy) MIX_RGB
+ IN Factor <- [('Math.002', 'Value')]
+ IN Color1 <- [('Combine XYZ.003', 'Vector')]
+ IN Color2 <- [('Combine XYZ.004', 'Vector')]
+ OUT Color -> [('Brick Texture', 'Vector')]
+
+NODE Combine XYZ.003 COMBXYZ
+ IN X <- [('Separate XYZ.003', 'X')]
+ IN Y <- [('Separate XYZ.003', 'Z')]
+ IN Z 0.0
+ OUT Vector -> [('Mix (Legacy)', 'Color1')]
+
+NODE Combine XYZ.004 COMBXYZ
+ IN X <- [('Separate XYZ.003', 'Y')]
+ IN Y <- [('Separate XYZ.003', 'Z')]
+ IN Z 0.0
+ OUT Vector -> [('Mix (Legacy)', 'Color2')]
+BlenderMCP addon unregistered
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
+
+Blender quit

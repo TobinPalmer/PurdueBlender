@@ -1,0 +1,52 @@
+{
+  "review": "independent_review_round8.md",
+  "asset": "modular/buildings/potter_engineering.blend",
+  "review_date": "2026-10-23",
+  "blender_version": "5.2.3 LTS",
+  "no_edit": true,
+  "reopened": true,
+  "score": 7.2,
+  "rubric": {
+    "source_and_plan_fit": {"score": 7, "out_of": 10},
+    "stair_and_landing_geometry": {"score": 6, "out_of": 10},
+    "penthouse_opening_and_door_fit": {"score": 6, "out_of": 10},
+    "reopen_and_asset_integrity": {"score": 9, "out_of": 10},
+    "render_communication": {"score": 7, "out_of": 10}
+  },
+  "verified": [
+    "Fresh Blender 5.2.3 reopen succeeded without saving or modifying the asset.",
+    "AssetRoot_potter_engineering is at (0,0,0); asset has 500 total objects and an Asset_potter_engineering export collection.",
+    "GIS structural envelope is 58.4515 x 67.4320 m; no missing unpacked external image dependencies were found.",
+    "Level 1 render clearly labels historic 2016 walls and an approximate current-use zone.",
+    "Round8 BVH tests report intersections between sampled upright boxes and several wall, rail, landing, enclosure, roof, and window objects.",
+    "Last S03 tread box extends about 38 mm past the assumed west edge of the roof aperture.",
+    "Top-flight sample center y=35.725 m is 525 mm off the estimated S03 doorway centerline y=35.2 m, beyond the nominal 600 mm half-width once a 400 mm body half-width is included."
+  ],
+  "classification": {
+    "likely_expected_or_inconclusive": [
+      "Upper landing and penthouse landing intersections near the final riser may arise from intended walk-surface transitions; the reported pair counts do not establish head/torso clearance.",
+      "Handrail intersections at samples centered on the divider rail may reflect sampling at the central separator rather than a walking lane."
+    ],
+    "potential_genuine_conflicts": [
+      "Registered Plan53/54/55 wall meshes intersect sampled stair body boxes at multiple cores/levels; local door/opening alignment is not resolved.",
+      "S03 top-flight body box marginally overlaps the modeled roof edge.",
+      "S03 top-flight lane is substantially offset from the estimated 1.2 m 4S04 doorway centerline, indicating probable jamb interference.",
+      "S03 enclosure wall hits near x=9.5-9.7 m and core2 glazing/frame intersections require local review."
+    ]
+  },
+  "limitations": [
+    "BVH overlap pairs do not report meaningful penetration depth or distinguish contact from obstruction.",
+    "The box proxy is axis-aligned and sampled at tread centroids; it is not a continuous swept route and includes transition/divider samples.",
+    "The mesh-hit diagnostics cover only six selected flight/level combinations, not all ten flights.",
+    "Registered 2016 partitions are historical geometry, not verified current wall faces or surveyed dimensions.",
+    "The stairwell render does not show the S03 upper landing/door/roof junction at useful detail."
+  ],
+  "priorities": [
+    "Resolve S03 stair, landing, doorway, 4S04 walls, and roof aperture in a plan-aligned close section.",
+    "Add hit coordinates and penetration depth, and classify expected support transitions separately from wall/rail/glazing/roof clashes.",
+    "Check every core and level against its registered plan and actual doorway openings.",
+    "Run a continuous person-envelope proxy across all ten flights and landing transitions.",
+    "Keep conclusions labeled geometric evidence, not code or accessibility compliance."
+  ],
+  "no_9_of_10_claim": true
+}

@@ -1,0 +1,80 @@
+{
+  "building": "Mathematical Sciences Building (MATH)",
+  "round": 5,
+  "review_date": "2026-10-23",
+  "asset": "modular/buildings/math_sciences.blend",
+  "rating": 6.9,
+  "previous_rating": 7.1,
+  "threshold": 9.0,
+  "meets_threshold": false,
+  "completion_recommendation": "continue_revision",
+  "category_scores": {
+    "identity_registration_footprint": 8.0,
+    "exterior_massing_facade": 5.6,
+    "materials_texturing": 7.9,
+    "third_floor_interior": 6.2,
+    "upper_floors_vertical_form": 4.5,
+    "saved_file_geometry_checks": 8.5
+  },
+  "round4_blocker_audit": {
+    "east_lettering": {
+      "status": "not_fixed",
+      "evidence": "Reopened saved asset contains visible MATH_Signage_East text 'MATHEMATICAL SCIENCES BUILDING' at (17.5,-3.8,4.65), dimensions approximately (6.03,0.252,0.08) m, hide_render=false.",
+      "cause": "finish_math.py line 511 puts the intended removal after literal backslash-n sequences on a line beginning with a comment, so the removal code is commented out.",
+      "next_fix": "Execute the removal, rebuild, reopen, verify object absence, rerender the facade, and correct the status text."
+    },
+    "dark_surround_marks": {
+      "status": "substantially_fixed",
+      "evidence": "Round-five brick_detail_after.png no longer shows the former dark square corner blocks; reveal joints appear flush and clean."
+    },
+    "passage_placement": {
+      "status": "not_modeled_appropriately_unclaimed",
+      "evidence": "Admissions tour text confirms a land bridge under MATH but does not establish bearing, dimensions, or supports. No passage is visible in the reviewed renders.",
+      "next_fix": "Only model after finding a view or plan that locates it on a specific elevation and supports its dimensions."
+    },
+    "interior_readability": {
+      "status": "partly_improved",
+      "evidence": "library_cutaway_round5.png removes much shell/ceiling occlusion, but opaque broad surfaces and overlapping furniture remain; zone labels are not legible."
+    }
+  },
+  "source_support_and_remaining_uncertainties": [
+    "East/south window pattern is visually plausible, but exact schedule and dimensions are not established by the available exterior photo.",
+    "North/west facade detail and large blank elevations remain unsupported.",
+    "Roof/penthouse outline, 33.2 m wall envelope, 42.9 m maximum, floor heights, and floor spacing remain estimates.",
+    "2022 third-floor plan supports core/zones for that renovation plan; 2025 article/photo supports library use and furniture/finish types, not exact current partitions and furniture layout.",
+    "Purdue admissions tour supports land-bridge existence only, not modeled location or dimensions."
+  ],
+  "checks": {
+    "saved_file_reopened_independently": true,
+    "blender_version": "5.2.3 LTS",
+    "export_collection": "Asset_math_sciences",
+    "direct_objects": 551,
+    "objects_including_children": 593,
+    "east_signage_object_present": true,
+    "east_signage_hide_render": false,
+    "pane_center_rays_clear": 81,
+    "solid_wall_controls_hit": 6,
+    "limitations": "Ray samples verify selected modeled opening/control locations only. They do not validate real-world schedule, reveal seating, passage, full elevation accuracy, or source footprint fit; footprint consistency relies on earlier GIS edge comparison."
+  },
+  "reviewed_evidence": [
+    "audit/batch3_math/exterior_after.png",
+    "audit/batch3_math/exterior_east_after.png",
+    "audit/batch3_math/exterior_north_after.png",
+    "audit/batch3_math/exterior_south_after.png",
+    "audit/batch3_math/exterior_west_after.png",
+    "audit/batch3_math/brick_detail_after.png",
+    "audit/batch3_math/library_cutaway_round5.png",
+    "audit/batch3_math/library_after.png",
+    "audit/batch3_math/library_plan_round4.png",
+    "audit/batch3_math/geometry_checks_round5.log",
+    "audit/batch3_math/render_round5_jointfix.log",
+    "audit/batch3_math/build_round5_jointfix.log",
+    "audit/batch3_math/finish_math.py"
+  ],
+  "major_blockers": [
+    "The gold east-facade text claimed as removed is still present and visible.",
+    "Large blank elevations and estimated roof/penthouse massing remain unresolved.",
+    "Metric heights and upper-floor form are unverified.",
+    "Interior cutaway remains visually ambiguous and exact layout is partly inferred."
+  ]
+}

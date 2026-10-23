@@ -1,0 +1,35 @@
+# Independent Round 7 Review — Potter Engineering Center
+
+Review date: 2026-10-23  
+Asset reopened independently in Blender 5.2.3: `modular/buildings/potter_engineering.blend`  
+Scope: read-only review of the saved asset and Round7 audit/render files. The blend was reopened in background mode and was not saved or modified.
+
+## Score: 7.5/10
+
+| Category | Score | Evidence |
+|---|---:|---|
+| Source alignment and evidence limits | 8/10 | The 2016 study is the stated source for historic partitions and penthouse labels. Plan registration IoU is reported as 0.8546; the report appropriately calls the location and areas estimates. Purdue’s current facilities page verifies Room 160 library collections across three floors. The current-use zone itself is explicitly approximate, not represented as an exact current room boundary. |
+| Penthouse orientation and adjacency | 8/10 | The Round6 plan-based T-shaped Room 401 and sequence through 401A to 4S04 remain in the saved asset, and Round6 ray evidence supports wall openings. The Round7 floor route is a useful intent check, but its obstacle/landing/room rectangles are hard-coded in the audit script rather than extracted from or collision-checked against the saved mesh. |
+| Area correspondence | 6/10 | 3,547 sf / 100 sf / 183 sf labels are fitted to the estimated room footprints. That reproduces the plan annotations by construction; it is not an independent measurement from drawing dimensions. |
+| Stair, landing, and clearance evidence | 7/10 | Ten rail assemblies are present and the updated render reads more orderly than Round6. The audit reports 1.014 m nominal clear width for each 1.05 m half-flight after accounting for two 18 mm rails, and samples 25 tread centroids per flight for vertical clearance to the next slab/roof. The width is formula-based, while headroom samples only vertical rays from tread face centroids and only test the named overhead slab/roof. It does not test a swept 0.8 m body envelope, rail/structure collisions, landing turns, or building-code compliance. |
+| Reopen and file integrity | 9/10 | Independent Blender reopen succeeded. The saved file has 500 total objects, an export collection with 456 objects, `AssetRoot_potter_engineering` at `(0,0,0)`, and no missing external image dependencies. The structural envelope remains 58.4515 × 67.4320 m. These checks establish basic file integrity, not correctness of every object. |
+| Exterior, facade, and interior presentation | 6/10 | The low-angle facade render gives the facade useful emphasis and the brick/precast/window rhythm is coherent. The roof remains a large, plain estimated plane. The new interior current-use cutaway is not review-ready: white walls are clipped/overexposed, floor labels are partly off-frame or occluded, and three stacked partitions merge into visual clutter. The stairwell render is clearer, although the diagonal-looking rail transitions near landings still deserve a targeted view. |
+
+## Findings
+
+- **Independent reopen:** The `.blend` opens cleanly in Blender 5.2.3. I independently confirmed the root object is `AssetRoot_potter_engineering` at the origin, the export collection is present, all ten expected `*_Handrails` objects exist, and there are no missing unpacked file images. The older `reopen_checks.json` says 500 objects and current reopen also reports 500 total.
+- **Stair proxy:** `round7_person_clear_checks.json` covers all ten modeled flights, with 25 tread samples each. Its `nominal_clear_width_m` value is calculated from the assumed 1.05 m half-flight and two 0.018 m rails; it is not an independently measured mesh clearance result. Headroom is tested with vertical rays from the centroids of upward-facing tread polygons to the next slab/roof. The results support “no sampled ray hit within 2 m,” not a continuous 2 m head-clearance volume. Landing headroom and full person-envelope collision are not checked.
+- **Penthouse route:** The BFS finds a path for a 0.8 m square on a 5 cm grid from `(9.8, 35.2)` to `(12.5, 35.2)`. This is a logical proxy using rectangles for the room, roof opening, and landing. It does not raycast or sweep the path against the actual 4S04 walls, floor surface, or stair landing mesh, so the reported success should not be called a verified mesh route. The script also does not connect this route to the stair tread path or through all three door openings.
+- **Historical/current distinction:** The Purdue facilities page states Room 160 is the Siegesmund Engineering Library and that its collections occupy three floors. The Round7 JSON labels the SW stack area only as an approximate use-zone marker, with the 2016 partitions remaining historical. The view communicates this distinction in its heading, but the cutaway obscures the floor plan and labels. A single floor-plan overlay plus separately framed floor views would communicate the evidence better.
+- **Exterior:** The facade-focused Round7 render improves the balance versus the roof-heavy Round6 view. Brick, precast strips, recessed windows, and vertical facade rhythm are visible. The roof shape and penthouse remain unverified estimates, and facade regularity still reads as generated; current sources do not support more precise side-specific claims.
+- **Documentation:** `REPORT.md` has not yet been updated to describe Round7, link the new checks/renders, state the new measured-proxy limitations, or replace its “Round 6 review pending” text. The Round7 anchor JSON and checks are helpful, but the report should be synchronized before presenting this as the current reviewed state.
+
+## Priorities to reach 9/10
+
+1. Replace the hard-coded 4S04 path rectangles with a mesh-based footprint sweep over the actual room, opening, landing, door, and stair geometry; report the narrowest clearance and any failed segment. Keep the result labeled as a geometry proxy, not code certification.
+2. Upgrade stair checks from tread-centroid rays to a sampled 0.8 m width × 2.0 m height envelope along each flight and landing; include the actual underside/roof and landing transitions, and measure width from the rail/flight geometry.
+3. Render a clean interior evidence view with separate floor panels or levels, readable unclipped labels, and subdued wall materials. The present cutaway is too overexposed and cluttered for independent plan comparison.
+4. Add measured facade variation and roof details only where a source supports them; otherwise keep the massing explicitly approximate and improve the exterior composition so the roof does not dominate.
+5. Update `REPORT.md` with Round7 evidence and this review score, and keep all room-area values described as target-fit estimates rather than measured areas.
+
+Round7 improves stair rail organization, adds useful approximate clearance evidence, and makes the exterior render easier to read. The stair/path checks are not yet derived from full geometry and the interior cutaway is not legible enough to support plan verification, so the asset remains below 9/10.

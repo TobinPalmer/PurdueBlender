@@ -1,0 +1,81 @@
+{
+  "asset": "modular/buildings/rawls_hall.blend",
+  "round": 6,
+  "reviewer": "independent no-edit review",
+  "score": 7,
+  "weighted_score_unrounded": 6.99,
+  "weighting": {
+    "exterior_form_and_detail": 0.3,
+    "materials_and_texturing": 0.2,
+    "interior_completeness": 0.3,
+    "technical_integrity_and_placement": 0.1,
+    "evidence_and_source_fit": 0.1
+  },
+  "categories": {
+    "exterior_form_and_detail": {
+      "score": 7.7,
+      "findings": "Overall massing and repeated floor/window rhythm read clearly; south openings have reveals and narrow frames. Facade transitions, base, roof equipment, and some glazed areas remain simplified."
+    },
+    "materials_and_texturing": {
+      "score": 6.6,
+      "findings": "Brick scale is plausible and mortar contrast is reduced, but courses remain regular. Exterior glazing reads as opaque blue panels; round6 transmission change has not demonstrated visible interior depth."
+    },
+    "interior_completeness": {
+      "score": 6.1,
+      "findings": "Plan overlay helps compare first-floor layout. The room view is explicitly a render-only cutaway with north pane and three real source-plan partitions hidden. Room is sparse, with generic furniture and limited finish/context. Atrium view lacks verified stairs, landings, and circulation."
+    },
+    "technical_integrity_and_placement": {
+      "score": 8.8,
+      "findings": "Reopened in Blender 5.2.3 LTS; 722 objects, 714 meshes, Asset_rawls_hall contains 722 objects, no missing file-backed images reported, identity unparented root. GIS registration remains about 1–2 m uncertain and Plan1086 boundary ambiguous."
+    },
+    "evidence_and_source_fit": {
+      "score": 6.5,
+      "findings": "2024 first-floor plan supports general room/core layout; handoff labels estimates carefully. Google Maps access is documented without dated screenshot or dimensioned survey. Historical atrium references support broad character only."
+    }
+  },
+  "prioritized_fixes": [
+    "Show saved glazing as glass in an ordinary exterior view, with a credible interior visible behind a pane while retaining glass and source-supported partitions.",
+    "Improve supported room-boundary and doorway context; refine furniture only where references support it; retain cutaway as supplemental evidence.",
+    "Provide reproducible plan registration control points/residuals or dimensioned authoritative transform before tightening placement claims.",
+    "Refine close-range brick/mortar variation and simplified facade/base/roof details against current reproducible references.",
+    "Leave atrium circulation and current finishes unresolved until supported by plans or clear location-verified sources."
+  ],
+  "evidence_files": [
+    "audit/batch4_rawls/2024_plan_geometry_overlay_round6.png",
+    "audit/batch4_rawls/north_1086_room_sightline_cutaway_round6.png",
+    "audit/batch4_rawls/brick_mortar_closeup_round6.png",
+    "audit/batch4_rawls/atrium_void_clear_section_round6.png",
+    "audit/batch4_rawls/round6_checks.json",
+    "audit/batch4_rawls/round6_handoff.md",
+    "audit/batch4_rawls/round6_model_changes.json",
+    "audit/batch4_rawls/plan.png",
+    "audit/batch4_rawls/interior_reference.jpg",
+    "audit/batch4_rawls/exterior_round4.png",
+    "audit/batch4_rawls/south_elevation_round5.png",
+    "audit/batch4_rawls/south_glazing_closeup_round5.png"
+  ],
+  "asset_modified": false,
+  "technical_reopen": {
+    "blender_version": "5.2.3 LTS",
+    "objects": 722,
+    "meshes": 714,
+    "asset_collection_objects": 722,
+    "missing_file_backed_images": [],
+    "root_parent": null,
+    "root_location": [
+      0,
+      0,
+      0
+    ],
+    "root_scale": [
+      1,
+      1,
+      1
+    ]
+  },
+  "caveats": [
+    "Round6 checks reuse round5 multihit rays because round6 changed material values only.",
+    "Room cutaway hides the north pane and three intervening source-plan walls for illustration.",
+    "No dated reproducible Google Maps screenshot or dimensioned survey tie is present."
+  ]
+}

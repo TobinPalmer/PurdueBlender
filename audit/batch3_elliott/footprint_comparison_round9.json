@@ -1,0 +1,56 @@
+{
+  "retrieved_utc": "2026-10-23T10:31:04.792657+00:00",
+  "request_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/617?f=pjson",
+  "layer_metadata_request_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+  "source": "Purdue BuildingShapesZip4 FeatureServer, layer 0, FID 617 (ELLT)",
+  "source_crs": {
+    "wkid": 102100,
+    "latestWkid": 3857,
+    "name": "WGS 84 Web Mercator Auxiliary Sphere (ArcGIS WKID 102100 / latest WKID 3857)",
+    "axis_order": "x=easting, y=northing"
+  },
+  "retrieval": "Raw layer metadata and FID 617 feature response saved beside this report; neighborhood query saved as building_shapes_neighborhood_raw.json. Retrieval date is UTC shown above.",
+  "project_geographic_origin": {
+    "latitude": 40.4274,
+    "longitude": -86.9137,
+    "datum": "WGS 84"
+  },
+  "local_metric_conversion": "Approximate ground-plane east/north coordinates from Web Mercator: (x-x0, y-y0) multiplied by cos(latitude_origin). No rotation or best-fit was applied to the overlay.",
+  "geometry_counts": {
+    "source_ring_coordinates_including_closure": 189,
+    "source_unique_vertices": 188,
+    "asset_local_vertices": 188,
+    "neighborhood_feature_count": 26
+  },
+  "placement_record": {
+    "id": "elliott_hall_of_music",
+    "origin_xy_m": [
+      -111.0000057220459,
+      49.89999771118164
+    ],
+    "kind": "detailed",
+    "file": "buildings/elliott_hall_of_music.blend",
+    "collection": "Asset_elliott_hall_of_music"
+  },
+  "vertex_correspondence_method": "Compare ordered 188 unique source vertices after map-to-ground transform against ordered asset polygon.json vertices translated by the manifest origin. This is a direct placement comparison, not a freely fitted transform.",
+  "vertex_residual_m": {
+    "rms": 0.16676857206581389,
+    "maximum": 0.2594408287238244,
+    "mean": 0.16022793653799464
+  },
+  "footprint_area_m2": {
+    "asset_polygon_local": 4765.272760757155,
+    "GIS_shape_area_ground_approx": 4773.303770331004,
+    "relative_difference_percent": -0.16824844929766056
+  },
+  "perimeter_m": {
+    "asset_polygon_local": 335.9073245106083,
+    "GIS_shape_length_ground_approx": 336.163905086756,
+    "relative_difference_percent": -0.07632603389751044
+  },
+  "limitations": [
+    "Web Mercator-to-ground conversion uses a constant origin-latitude scale over a compact campus neighborhood.",
+    "Feature geometry verifies the horizontal footprint only; it does not verify height, fa\u00e7ade openings, entry details, or interior geometry.",
+    "This overlay is based on Purdue GIS polygons and the current manifest/local asset coordinates; it is not a surveyed site-control measurement."
+  ]
+}

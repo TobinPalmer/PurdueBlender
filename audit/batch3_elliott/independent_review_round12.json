@@ -1,0 +1,77 @@
+{
+  "building": "Elliott Hall of Music",
+  "round": 12,
+  "review_type": "independent",
+  "score": 7.1,
+  "previous_round_score": 7.0,
+  "reaches_9_of_10": false,
+  "texturing_sufficient_for_9": false,
+  "interior_sufficient_for_9": false,
+  "saved_asset_reopened": true,
+  "blender_version": "5.2.3 LTS",
+  "checks": {
+    "asset_collection": "Asset_elliott_hall_of_music",
+    "mesh_count": 137,
+    "round12_objects_present": [
+      "ELLT_R12_Pit_Lift_Perimeter_Schematic",
+      "ELLT_R12_Pit_Lift_Platform_Schematic"
+    ],
+    "temporary_round12_objects": 0,
+    "GIS_shell_bounds_unchanged": {
+      "x_m": [-46.42, 44.08],
+      "y_m": [-38.13, 46.93],
+      "z_m": [0.0, 22.5]
+    },
+    "google_maps_pixels_verified": false
+  },
+  "round12_delta": [
+    "Main-floor render shows a more legible continuous center aisle; exact aisle width remains estimated, not plan-measured.",
+    "Central tread flight widened to an estimated 1.5 m.",
+    "Added schematic pit-lift platform and seam based only on an indexed callout; reported footprint is 2.55 m by 18.6 m and has no viewable dimensional support."
+  ],
+  "strengths": [
+    "Saved blend reopens in Blender 5.2.3 LTS with 137 meshes and no TEMP_R12 objects.",
+    "GIS shell bounds remain unchanged.",
+    "Center aisle reads more clearly in the main-floor plan render than in the round-11 stage-facing view.",
+    "Three curved seating levels remain broadly consistent with Purdue's seat map.",
+    "Seat upholstery color is consistent with current Purdue Convocations description."
+  ],
+  "findings": [
+    "Pit-lift footprint is exceptionally broad and its position and dimensions are unsupported by the indexed-only plan evidence; it does not read clearly as a lift in the supplied renders.",
+    "Exterior remains a broad brick mass with repetitive limestone-like striping; fly tower reads as a plain box with a flat cap.",
+    "Facade openings, entrance surrounds, stepped side-exit walls, and source-matched roof details remain missing or unverified.",
+    "Interior seating is highly repetitive; stage is simple, and cross-aisles, balcony transitions, backstage relationship, and egress remain schematic or indistinct.",
+    "Material distinction is present at base color level but surface treatment remains schematic; round 12 does not materially improve texturing.",
+    "Google Maps URL was inaccessible in the available web tool; no satellite or Street View imagery was verified."
+  ],
+  "required_fixes": [
+    "Replace the unverified broad pit-lift strip with plan-supported geometry or a small clearly labeled schematic callout.",
+    "Add source-led facade openings and documented entry, exit, pilaster, fly-tower, apsidal-end, and roof details without guessing unsupported dimensions.",
+    "Clarify cross-aisles, stairs, balcony transitions, stage/backstage organization, and exits from readable plan sources; label estimates.",
+    "Improve depth and variation across brick, limestone, roof tile, metal, and glass so the facade no longer reads as repetitive striping.",
+    "Verify Elliott-Hovde connector and route in a wider context view before making a continuity claim."
+  ],
+  "footprint_evidence": {
+    "feature": "Purdue BuildingShapes FID 617",
+    "rms_ordered_vertex_residual_m": 0.1668,
+    "max_ordered_vertex_residual_m": 0.2594,
+    "area_delta_percent": -0.168,
+    "perimeter_delta_percent": -0.076,
+    "limitation": "Approximate ground-plane conversion and horizontal footprint evidence only; does not validate elevations, facade, interior, or survey accuracy."
+  },
+  "evidence": [
+    "audit/batch3_elliott/interior_main_floor_plan_round12.png",
+    "audit/batch3_elliott/interior_central_aisle_round12.png",
+    "audit/batch3_elliott/stage_pit_lift_round12.png",
+    "audit/batch3_elliott/exterior_round11.png"
+  ],
+  "sources": [
+    "https://convocations.purdue.edu/directions/",
+    "https://convocations.purdue.edu/wp-content/uploads/2022/09/Elliott-Seat-Map.pdf",
+    "https://sah-archipedia.org/buildings/IN-01-157-0079",
+    "https://www.in.gov/idoa/mwbe/files/C4011859-Elliott-Hall-of-MusicBinder1.pdf",
+    "https://www.google.com/maps/place/Elliott+Hall+of+Music,+712+3rd+St,+West+Lafayette,+IN+47907"
+  ],
+  "review_report": "audit/batch3_elliott/independent_review_round12.md",
+  "asset": "modular/buildings/elliott_hall_of_music.blend"
+}

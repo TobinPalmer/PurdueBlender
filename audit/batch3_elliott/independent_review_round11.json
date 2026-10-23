@@ -1,0 +1,69 @@
+{
+  "building": "Elliott Hall of Music",
+  "round": 11,
+  "review_type": "independent",
+  "score": 7.0,
+  "previous_round_score": 7.0,
+  "reaches_9_of_10": false,
+  "texturing_sufficient_for_9": false,
+  "interior_sufficient_for_9": false,
+  "saved_asset_reopened": true,
+  "blender_version": "5.2.3 LTS",
+  "checks": {
+    "mesh_count": 135,
+    "temporary_round11_objects": 0,
+    "north_and_south_door_objects_present": true,
+    "portal_trim_pending_modifiers": 0,
+    "seat_material": "ELLT_B3_Theatre_Seat_Gray_Fabric_Estimated",
+    "window_schedule_modeled": false
+  },
+  "round11_delta": [
+    "Seat fabric changed from tan/brown to restrained gray based on Purdue Convocations' current venue-photo description.",
+    "Portal clearance repair from round 10 remains present.",
+    "No substantial exterior geometry, facade, stage, aisle, or circulation change visible against prior renders."
+  ],
+  "strengths": [
+    "Seat color is better supported by current Purdue Convocations description.",
+    "Three seating levels and curved block organization align broadly with Purdue seat map.",
+    "Portal trim clearance persists; saved blend reopens cleanly.",
+    "Previously reported GIS footprint fit is documented and appropriately limited to horizontal geometry."
+  ],
+  "findings": [
+    "Exterior walls remain mostly blank fields with repetitive horizontal and vertical bands.",
+    "Fly tower remains a plain box; roof profile and apsidal stage-end projection need evidence-led refinement.",
+    "Secondary entrance surrounds and stepped side-exit walls are not sufficiently modeled or evidenced in the submitted views.",
+    "Interior seat arrays remain repetitive; wide central aisle, cross-aisles, stairs and circulation are not clearly legible.",
+    "Stage and backstage relationship remain schematic; dimensions are unsupported by the cited seat map.",
+    "Hovde connection and continuous route remain unverified."
+  ],
+  "required_fixes": [
+    "Use inspectable source imagery or drawings to model facade openings, entrance and exit features, fly tower profile, apsidal projection and roof details; preserve estimates where dimensions cannot be established.",
+    "Make the center aisle, cross-aisles, stairs, stage and balcony transitions legible using source evidence where available; label remaining plan geometry as schematic.",
+    "Improve material depth and variation for brick, limestone, roof tile, metal and glazing; reduce the schematic strip-grid appearance.",
+    "Show whole-building entrance context only after Elliott and Hovde portal elevations are independently verified."
+  ],
+  "footprint_evidence": {
+    "feature": "Purdue BuildingShapes FID 617",
+    "rms_ordered_vertex_residual_m": 0.1668,
+    "max_ordered_vertex_residual_m": 0.2594,
+    "area_delta_percent": -0.168,
+    "perimeter_delta_percent": -0.076,
+    "limitation": "Approximate conversion; horizontal footprint fit only, not elevation or survey accuracy."
+  },
+  "review_report": "audit/batch3_elliott/independent_review_round11.md",
+  "asset": "modular/buildings/elliott_hall_of_music.blend",
+  "evidence": [
+    "audit/batch3_elliott/exterior_round11.png",
+    "audit/batch3_elliott/interior_from_stage_round11.png",
+    "audit/batch3_elliott/interior_from_stage_round10.png",
+    "audit/batch3_elliott/interior_audience_round9.png",
+    "audit/batch3_elliott/exterior_elevation_round8.png"
+  ],
+  "sources": [
+    "https://convocations.purdue.edu/directions/",
+    "https://convocations.purdue.edu/wp-content/uploads/2022/09/Elliott-Seat-Map.pdf",
+    "https://sah-archipedia.org/buildings/IN-01-157-0079",
+    "https://convocations.purdue.edu/elliott-hall-of-music-75th-anniversary-1940-2015/",
+    "https://archives.lib.purdue.edu/repositories/2/resources/1467"
+  ]
+}

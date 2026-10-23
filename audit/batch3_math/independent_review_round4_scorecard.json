@@ -1,0 +1,76 @@
+{
+  "building": "Mathematical Sciences Building (MATH)",
+  "round": 4,
+  "review_date": "2026-10-23",
+  "asset": "modular/buildings/math_sciences.blend",
+  "rating": 7.1,
+  "previous_rating": 7.2,
+  "threshold": 9.0,
+  "meets_threshold": false,
+  "completion_recommendation": "continue_revision",
+  "category_scores": {
+    "identity_registration_footprint": 8.0,
+    "exterior_massing_facade": 5.9,
+    "materials_texturing": 7.6,
+    "third_floor_interior": 6.3,
+    "upper_floors_vertical_form": 4.5,
+    "saved_file_geometry_checks": 8.5
+  },
+  "round4_changes": [
+    "33 legacy library objects hidden to reduce duplicates; change is recorded as reversible.",
+    "A source-labeled plan-reading render improves zone/core comparison but remains schematic.",
+    "Roof, penthouse, and slab objects carry estimate-status annotations; geometry remains unverified.",
+    "Campus-eye render reduces roof-face dominance through framing only; exterior massing was not verified or materially changed."
+  ],
+  "source_verified": [
+    "Purdue Statistics exterior photo supports red brick, repeated narrow windows, and pale vertical framing on the photographed facade.",
+    "Purdue's 2022 Trustees plan supports third-floor renovation area and shown zones/core relationships.",
+    "Purdue Libraries' 2025 article supports refreshed library finishes, group-study use, shelves, and room 352 testing-room type.",
+    "Purdue tour text supports existence of a passage/land bridge below MATH, not its modeled position or dimensions.",
+    "Purdue Archives source notes support the ten-story identity; metric dimensions are not thereby established."
+  ],
+  "inferred_or_unverified": [
+    "North/west facade detail and large blank wall wings.",
+    "Exact window bay schedule, dimensions, surround details, and brick specification/color.",
+    "Ground-level passage location, dimensions, supports, and relationship to surrounding facade.",
+    "Current library partitions, furniture placement/count, group-room dimensions and circulation.",
+    "Floor intervals, 33.2 m wall height, 42.9 m overall extent, upper floor layouts, roof and penthouse form."
+  ],
+  "checks": {
+    "saved_file_reopened_independently": true,
+    "blender_version": "5.2.3 LTS",
+    "export_collection": "Asset_math_sciences",
+    "direct_objects": 551,
+    "logged_objects_including_children": 593,
+    "pane_center_rays_clear": 81,
+    "solid_wall_controls_hit": 6,
+    "limitations": "Ray samples test chosen pane centers and six controls only; they do not establish real-world opening schedule, full facade accuracy, or glazing/reveal placement."
+  },
+  "visual_findings": [
+    "Gold MATH_Signage_East text visibly overlays the lower facade/window area in exterior_round4.png; independently confirmed object location (17.5,-3.8,4.65) m and dimensions approximately (6.03,0.25,0.08) m.",
+    "Black corner artifacts are visible on the pale window surrounds in brick_detail_after.png.",
+    "Large blank wall wings and estimated roof/penthouse remain prominent.",
+    "Library cutaway remains occluded and schematic despite hiding 33 legacy objects."
+  ],
+  "google_maps_visual_inspection": "attempted but inaccessible through the available web reader; no map imagery reviewed",
+  "major_blockers": [
+    "Large unsupported blank elevations, estimated rooftop massing, and unclear passage remain.",
+    "Facade label overlaps windows and surround corner artifacts need correction.",
+    "Interior remains hard to read and its current room/furniture layout is inferred.",
+    "Metric heights, story spacing, and roof profile remain unverified."
+  ],
+  "evidence_files": [
+    "audit/batch3_math/exterior_round4.png",
+    "audit/batch3_math/exterior_after.png",
+    "audit/batch3_math/exterior_east_after.png",
+    "audit/batch3_math/exterior_west_after.png",
+    "audit/batch3_math/exterior_north_after.png",
+    "audit/batch3_math/exterior_south_after.png",
+    "audit/batch3_math/brick_detail_after.png",
+    "audit/batch3_math/library_after.png",
+    "audit/batch3_math/library_plan_round4.png",
+    "audit/batch3_math/passage_round4.png",
+    "audit/batch3_math/geometry_checks_round4.log",
+    "audit/batch3_math/structural_edge_comparison.json"
+  ]
+}

@@ -1,0 +1,13 @@
+00:01.469  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\math_sciences.blend"
+00:01.578  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\math_sciences.blend"
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\batch3_math\render_exterior_round4.py:8: DeprecationWarning: 'World.use_nodes' is expected to be removed in Blender 6.0
+  sc.world=bpy.data.worlds.new('Math low angle sky'); sc.world.use_nodes=True; sc.world.node_tree.nodes.get('Background').inputs['Color'].default_value=(.52,.55,.58,1); sc.world.node_tree.nodes.get('Background').inputs['Strength'].default_value=.8
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\batch3_math\render_exterior_round4.py:11: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  me=bpy.data.meshes.new('Review ground mesh'); me.from_pydata([(-150,-150,-.08),(150,-150,-.08),(150,150,-.08),(-150,150,-.08)],[],[(0,1,2,3)]); g=bpy.data.objects.new('Review ground',me); sc.collection.objects.link(g); mat=bpy.data.materials.new('Review ground mat'); mat.diffuse_color=(.38,.4,.41,1); mat.use_nodes=True; next(n for n in mat.node_tree.nodes if n.type=='BSDF_PRINCIPLED').inputs['Base Color'].default_value=(.38,.4,.41,1); g.data.materials.append(mat)
+00:08.688  render           | Saved: 'C:\Users\Tobin\Documents\Blender\PurdueMap\audit\batch3_math\exterior_round4.png'
+BlenderMCP addon registered
+saved-file exterior render 593
+BlenderMCP addon unregistered
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
+
+Blender quit

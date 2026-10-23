@@ -2,7 +2,6 @@ import bpy, json
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 before=json.loads((ROOT/'audit/batch3_master/manifest_before.json').read_text())
-ids=['potter_engineering','mechanical_engineering','electrical_engineering','knoy_hall','class_of_1950']
 rows=[]
 for a in before['assets']:
     if a.get('kind')!='detailed': continue

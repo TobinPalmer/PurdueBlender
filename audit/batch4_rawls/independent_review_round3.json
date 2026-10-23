@@ -1,0 +1,104 @@
+{
+  "asset": "modular/buildings/rawls_hall.blend",
+  "review_round": 3,
+  "rating": 6.4,
+  "weighted_score": 6.41,
+  "weighting": {
+    "exterior": 0.3,
+    "materials": 0.2,
+    "interior": 0.3,
+    "technical": 0.1,
+    "evidence": 0.1
+  },
+  "categories": {
+    "exterior": {
+      "score": 6.6,
+      "summary": "Form and roof are readable; repetitive window openings remain dark flat recesses."
+    },
+    "materials": {
+      "score": 6,
+      "summary": "Brick scale/corner continuity read well; mortar is graphic and glazing reads opaque."
+    },
+    "interior": {
+      "score": 5.8,
+      "summary": "Plan overview is improved but core is hard to resolve; classroom is sparsely furnished; atrium lacks legible circulation and visible rails."
+    },
+    "technical": {
+      "score": 7.2,
+      "summary": "Blender 5.2.3 reopen: 722 objects, 714 meshes, no missing images, identity unparented root; Plan1086 edge remains uncertain."
+    },
+    "evidence": {
+      "score": 6.5,
+      "summary": "2024 plan and historical atrium sources support broad arrangement/character; current finishes, circulation, and facade specifics remain unverified."
+    }
+  },
+  "verified": {
+    "blender_version": "5.2.3",
+    "objects": 722,
+    "mesh_objects": 714,
+    "missing_images": [],
+    "asset_root_parent": null,
+    "asset_root_location": [
+      0,
+      0,
+      0
+    ],
+    "asset_root_scale": [
+      1,
+      1,
+      1
+    ],
+    "north_glass_location": [
+      0,
+      0.6000000238418579,
+      0
+    ],
+    "north_mullions_location": [
+      0,
+      0.6000000238418579,
+      0
+    ]
+  },
+  "findings": [
+    {
+      "priority": 1,
+      "issue": "North glazing reveal fit is unverified; saved +0.60m Y offset does not visibly fix glazing in full exterior/closeup and may cause protrusion.",
+      "evidence": [
+        "round3_model_changes.json",
+        "exterior_round3.png",
+        "brick_glazing_closeup_round3.png",
+        "facade_glazing_isolated_round3.png",
+        "facade_glazing_moved_test_round3.png"
+      ]
+    },
+    {
+      "priority": 2,
+      "issue": "Whole-floor plan cutaway is a useful improvement, but the core cluster and door gaps remain too small/low-contrast for detailed validation.",
+      "evidence": [
+        "first_floor_plan_cutaway_round3.png",
+        "plan.png"
+      ]
+    },
+    {
+      "priority": 3,
+      "issue": "Atrium section exposes four levels but does not clearly show guardrail glass, stair, bridge, or circulation.",
+      "evidence": [
+        "atrium_open_section_round3.png",
+        "interior_reference.jpg"
+      ]
+    },
+    {
+      "priority": 4,
+      "issue": "Plan1086 wall remains an unresolved boundary flag: 2.10m bbox-corner overhang and 1.27m centroid offset under approximate 1–2m registration uncertainty.",
+      "evidence": [
+        "round2_wall_edge_review.json",
+        "round1_notes.md"
+      ]
+    }
+  ],
+  "limitations": [
+    "No reproducible Google Maps facade screenshot is preserved.",
+    "2003 archive image is historical context, not current-condition or dimensioned evidence.",
+    "Review does not certify survey-grade placement or current upper-floor layouts."
+  ]
+}

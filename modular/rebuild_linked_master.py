@@ -104,7 +104,7 @@ for record in detailed:
 # Persist the placement convention and current build details.
 manifest["detailed_asset_count"] = len(detailed)
 manifest["placement_model"] = "Detailed assets are local-coordinate linked collections. Placement_<id> empties in the master supply XY campus coordinates. Massing assets retain their original campus coordinates and are linked directly."
-manifest["last_master_build"] = "2026-10-22"
+manifest["last_master_build"] = "2026-10-23"
 manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
 
 bpy.context.view_layer.update()

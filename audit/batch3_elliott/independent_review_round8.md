@@ -1,0 +1,33 @@
+# Elliott Hall of Music — independent review round 8
+
+**Score: 6.7/10. This revision is below 9/10 and is not ready to mark complete.** It improves the uncertain Elliott–Hovde interface by removing the unsupported connector, and adds an identifiable door surround and canopy supports. The main facade and interior remain too weakly evidenced and too difficult to read in the current renders.
+
+## Review performed
+
+- Reopened `modular/buildings/elliott_hall_of_music.blend` in Blender 5.2.3 LTS. `Asset_elliott_hall_of_music` has 133 meshes (134 total objects). The round 8 portal, supports, landing, and review marker are present; no old Hovde connector or temporary round 8 render objects are present.
+- Opened the linked campus file. `Placement_elliott_hall_of_music` instances `Asset_elliott_hall_of_music` from the relative library path `//buildings\\elliott_hall_of_music.blend`, has unit scale and zero rotation, and sits at `[-111.000008, 49.899998]` m. The manifest origin is `[-111.000006, 49.899998]` m, a difference of about 0.002 m. This confirms that the marker and manifest agree closely; it does not independently verify the GIS source match or physical placement accuracy.
+- Inspected the round 8 exterior, entry portal, audience-to-stage, and seating-plan renders; the round 8 handoff, result record, and source/uncertainty notes.
+
+## What improved
+
+- The previous Elliott-to-Hovde connector is gone. The landing stops at Elliott and the pending status is recorded, so the asset no longer depicts an unsupported bridge endpoint penetrating Hovde.
+- The Elliott-side portal now reads as a two-leaf glazed door with stone jambs and lintel. The broad curved canopy has two visible supports. These details are explicitly marked as estimated rather than represented as source-verified dimensions.
+- The exterior shader render shows the brick-and-limestone palette and roof treatment. The interior plan render makes the curved seating banks and two balcony tiers visible, consistent with the cited official seating chart at a schematic level.
+- Saved-file hygiene is good for this revision: the asset reopens, the intended round 8 objects are present, and no temporary render objects or prior connector objects were found.
+
+## Prioritized fixes
+
+1. **Improve the portal view and landing/status treatment.** In `entry_portal_round8.png`, the gray `LINK DEFERRED` lettering sits directly across the lower door/threshold and is low contrast. It obscures the entrance instead of reading as a separate review note. Move it clear of the architecture or keep the status in the review documentation only. Reframe and brighten the detail render so the jambs, both door leaves, threshold, landing edge, canopy support contact, and wall interface can be judged. The current image makes the landing look like a small floating shelf; it does not establish a usable or continuous route.
+2. **Resolve facade evidence and presentation.** The elevation remains a largely repetitive brick wall with a strong grid of limestone-like horizontal and vertical strips. No window arrangement is legible. The handoff is candid that the window schedule is unverified, but the current facade still lacks the visual hierarchy needed to identify a convincing finished exterior. Find an image or archive elevation that actually resolves the openings, or explicitly keep those areas as an unverified massing treatment and improve the facade render/material contrast. Do not invent a verified window count from the present sources.
+3. **Make the auditorium render readable.** `interior_audience_round8.png` is severely underexposed: seat rows, balcony fronts, stage, and circulation blend into dark masses, and the central composition is difficult to interpret. The top-down plan is clearer but cropped/rotated and remains an undimensioned schematic. Re-light and reframe the audience view and fit the full seating plan to the image. Keep counts, aisles, elevations, accessibility, and egress labeled as unverified unless dimensioned sources are found.
+4. **Add visual material evidence.** Material names include brick, limestone, glass, roof tile, carpet, and seat fabric, but these images show mostly flat color blocks. Wall bond/stone relief, door glazing, and interior material variation are not clearly demonstrated. Improve mapped scale, lighting, and close-up presentation enough to judge the assigned materials; avoid treating names alone as texturing proof.
+5. **Strengthen source traceability and placement evidence.** The notes cite useful sources, including SAH Archipedia, Purdue's seating chart and accessibility guidance, and BuildingShapes Feature 617. They explain that those references do not provide dimensions for the modeled details. The saved notes do not include a raw Feature 617 snapshot, retrieval date, source CRS, measurement method, or a footprint comparison. Add those fields and retain the source snapshot when available. The current linked marker matches the manifest origin, but no current top-down neighborhood overlay establishes that the source polygon and orientation are correct.
+6. **Revisit the joint connection only after Hovde has a reviewed portal.** The deferred endpoint is the correct interim representation. Do not reinstate a bridge or call the interface accessible based on Elliott-only evidence. Once Hovde has a source-backed opening, produce a joint context view and assess level alignment, endpoint fit, and route continuity together.
+
+## Confidence and disposition
+
+- **Verified in this review:** source asset reopens; 133 mesh objects in the export collection; prior connector and temporary round 8 objects absent; linked master instance uses the expected collection and relative library path; marker transform agrees with the manifest within about 0.002 m.
+- **Supported at feature-type level:** red brick and Indiana limestone vocabulary, curving canopy, second-floor Hovde approach, and three auditorium seating levels with curved blocks, based on the cited written sources and seating chart.
+- **Still estimated or unverified:** exact portal location and dimensions, door operation/material/clear width, canopy dimensions/support design, facade openings and ornament schedule, bridge and Hovde endpoint, accessible route, and auditorium dimensions/seating/circulation/egress. GIS placement agreement to the source geography was not independently remeasured in this review.
+
+**Disposition:** accept the round 8 change as a safe deferral of the connector, but continue Elliott work. The architecture, source evidence, and review imagery do not yet support a 9/10 rating.

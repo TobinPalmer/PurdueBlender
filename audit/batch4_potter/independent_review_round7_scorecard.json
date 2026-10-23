@@ -1,0 +1,49 @@
+{
+  "review": "independent_review_round7.md",
+  "asset": "modular/buildings/potter_engineering.blend",
+  "review_date": "2026-10-23",
+  "blender_version": "5.2.3 LTS",
+  "no_edit": true,
+  "reopened": true,
+  "score": 7.5,
+  "rubric": {
+    "source_alignment_and_evidence_limits": {"score": 8, "out_of": 10},
+    "penthouse_orientation_and_adjacency": {"score": 8, "out_of": 10},
+    "area_correspondence": {"score": 6, "out_of": 10},
+    "stairs_landings_and_clearance_evidence": {"score": 7, "out_of": 10},
+    "reopen_and_file_integrity": {"score": 9, "out_of": 10},
+    "exterior_facade_and_interior_presentation": {"score": 6, "out_of": 10}
+  },
+  "verified": [
+    "Fresh Blender 5.2.3 open succeeded for the saved asset.",
+    "AssetRoot_potter_engineering is at (0,0,0); the export collection is present with 456 objects.",
+    "500 total objects and no missing unpacked file images were observed.",
+    "Ten Round7 handrail objects are present.",
+    "The reported stair width and tread headroom are geometric proxies based on explicit assumptions and centroid samples.",
+    "The current Purdue facilities page identifies Room 160 as the Siegesmund Engineering Library and says its collections occupy three floors.",
+    "The low facade render is easier to read than the Round6 roof-heavy exterior view."
+  ],
+  "not_verified": [
+    "A continuous person-sized route calculated against the actual 4S04 mesh and connecting the stair to the room doors.",
+    "A continuous 0.8 m by 2.0 m swept envelope through flights, landings, and openings.",
+    "Accessibility, egress, stair, railing, or building-code compliance.",
+    "Survey-accurate penthouse positions, room boundaries, or dimensions.",
+    "Current partition boundaries inside Room 160 or exact placement of the current-use zone marker.",
+    "Facade-side allocation, roof form, and penthouse details from a measured current source."
+  ],
+  "limitations": [
+    "The 0.8 m BFS uses hard-coded rectangular room, aperture, and landing assumptions and does not test actual mesh collisions.",
+    "Headroom checks sample upward rays at tread-face centroids against only the named next slab or roof.",
+    "Nominal clear stair width is formula-based, not independently measured from mesh clearance.",
+    "The interior cutaway is overexposed, cluttered, and has clipped or obscured floor labels.",
+    "REPORT.md still describes Round6 as pending and does not yet document Round7."
+  ],
+  "priorities_to_reach_9": [
+    "Use mesh-based footprint sweeping for the 4S04 route and actual wall, door, opening, landing, and stair geometry.",
+    "Sample a full person envelope along stairs and landings and measure clear width from rail geometry.",
+    "Produce a legible interior plan/cutaway with separate floors and readable labels.",
+    "Synchronize REPORT.md with Round7 checks, renders, and independent findings.",
+    "Use source-backed facade and roof detail or keep those portions explicitly approximate."
+  ],
+  "no_9_of_10_claim": true
+}

@@ -1,0 +1,84 @@
+{
+  "asset": "modular/buildings/rawls_hall.blend",
+  "review_round": 5,
+  "overall_score": 6.7,
+  "weighted_score_unrounded": 6.69,
+  "weights": {
+    "exterior_form_and_detail": 0.3,
+    "materials_and_texturing": 0.2,
+    "interior_completeness": 0.3,
+    "technical_integrity_and_placement": 0.1,
+    "evidence_and_source_fit": 0.1
+  },
+  "category_scores": {
+    "exterior_form_and_detail": 7.7,
+    "materials_and_texturing": 6.8,
+    "interior_completeness": 5.2,
+    "technical_integrity_and_placement": 8.8,
+    "evidence_and_source_fit": 5.8
+  },
+  "south_openings": {
+    "measured_pane_count": 8,
+    "pattern": "Two measured x positions repeated over four measured z bands; no symmetry inferred.",
+    "matched_existing_pane_geometry": true,
+    "separate_east_glazing_modified": false,
+    "appearance": "Blue-gray panes with brick reveals and slim dark perimeter frames in supplied renders.",
+    "evidence": "round5_model_changes.json, south_elevation_round5.png, south_glazing_closeup_round5.png"
+  },
+  "glass": {
+    "saved_transmission": 0.18,
+    "roughness": 0.16,
+    "metallic": 0.08,
+    "interior_depth_demonstrated": false,
+    "issue": "Broad reflections dominate; no convincing lit room depth through representative glazing."
+  },
+  "technical_integrity": {
+    "reopened_in": "Blender 5.2.3 LTS",
+    "objects": 722,
+    "mesh_objects": 714,
+    "missing_images": [],
+    "root_parent": null,
+    "root_location": [
+      0,
+      0,
+      0
+    ],
+    "root_scale": [
+      1,
+      1,
+      1
+    ],
+    "wall_faces": 824,
+    "south_glass_quads": 8,
+    "south_frame_faces": 192,
+    "north_glass_quads": 60,
+    "north_frame_faces": 1440,
+    "asset_modified": false
+  },
+  "ray_evidence_mismatch": {
+    "detailed_trace": "round5_checks.json contains multi-hit paths after tested panes.",
+    "abbreviated_trace": "round5_aperture_ray_checks.json records next_hit null for every sample.",
+    "recommendation": "Regenerate abbreviated trace using same multi-hit method or remove it."
+  },
+  "prioritized_fixes": [
+    "Regenerate or remove round5_aperture_ray_checks.json to resolve conflict with round5_checks.json.",
+    "Make the supported first-floor core plan and atrium void easier to audit with clearer cutaway camera views.",
+    "Tune glazing and interior lighting together and demonstrate one room through representative glass.",
+    "Reduce mortar contrast without changing the supported brick scale.",
+    "Resolve GIS registration and Plan1086 boundary with dimensioned or reproducible source evidence."
+  ],
+  "reviewed_artifacts": [
+    "audit/batch4_rawls/south_elevation_round5.png",
+    "audit/batch4_rawls/south_glazing_closeup_round5.png",
+    "audit/batch4_rawls/north_glazing_interior_round5.png",
+    "audit/batch4_rawls/north_interior_depth_cutaway_round5.png",
+    "audit/batch4_rawls/core_partitions_ink_plan_round5.png",
+    "audit/batch4_rawls/atrium_columns_railwork_round5.png",
+    "audit/batch4_rawls/atrium_section_cutaway_round5.png",
+    "audit/batch4_rawls/north_entry_cutaway_round5.png",
+    "audit/batch4_rawls/round5_checks.json",
+    "audit/batch4_rawls/round5_aperture_ray_checks.json",
+    "audit/batch4_rawls/round5_model_changes.json",
+    "audit/batch4_rawls/round5_handoff.md"
+  ]
+}
