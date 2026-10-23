@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "asset_id": "wetherill_laboratory_of_chemistry",
+  "source_massings_id": "massing_r_b_wetherill_laboratory_of_chemistry_wthr_1577024",
+  "asset_file": "../../modular/buildings/wetherill_laboratory_of_chemistry.blend",
+  "export_collection": "Asset_wetherill_laboratory_of_chemistry",
+  "scene": "Building_wetherill_laboratory_of_chemistry",
+  "review_date": "2026-10-23",
+  "rating_0_to_10": 8.9,
+  "rating_threshold_9_met": false,
+  "rating_blockers": [
+    "No measured exterior elevations or verified eave/roof heights were available.",
+    "No current complete architectural floor plan was available; lab and corridor partitions remain schematic.",
+    "Google Maps satellite imagery capture date is not shown and was used as visual context, not for dimension extraction.",
+    "The master manifest and placement marker integration are pending the coordinating agent."
+  ],
+  "sources": [
+    {
+      "provider": "Purdue Campus GIS, BuildingShapesZip4 layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature": {
+        "fid": 257,
+        "code": "WTHR",
+        "name": "Richard Benbridge Wetherill Lab Of Chemistry"
+      },
+      "retrieved": "2026-10-22",
+      "source_edit_date": "not provided",
+      "source_crs": "EPSG:4326",
+      "raw_snapshot": "../official_purdue_buildings_wgs84.json",
+      "converted_snapshot": "../official_building_references.json",
+      "measurement_method": "Used exact 14-vertex ring in converted project coordinates; computed local root from official polygon axis-aligned bounds center; compared each saved perimeter wall outside-face edge endpoint to the corresponding source vertex after reopening the Blender file.",
+      "transform": {
+        "origin_lat": 40.4274,
+        "origin_lon": -86.9137,
+        "x": "east",
+        "y": "north",
+        "z": "up",
+        "units": "metres",
+        "latitude_m_per_degree": 111040.0,
+        "longitude_m_per_degree_at_origin": 84810.60416539927,
+        "type": "existing project local linear approximation; not a surveyed projected CRS"
+      },
+      "uncertainty": "The GIS layer is an official campus map polygon, not a certified survey. Dataset edit date and survey accuracy are not provided.",
+      "results": {
+        "ring_vertices": 14,
+        "ring_endpoint_max_error_m": 8.38654E-06,
+        "aabb_width_m": 77.327554706,
+        "aabb_depth_m": 62.258282481,
+        "local_asset_origin_xy_m": [
+          51.0402793884,
+          -103.1483306885
+        ]
+      }
+    },
+    {
+      "provider": "Google Maps satellite",
+      "url": "https://www.google.com/maps/place/Wetherill+Laboratory+of+Chemistry/@40.42685,-86.9141,19z/data=!3m1!1e3",
+      "feature": "Map label Wetherill (Richard Benbridge) Laboratory of Chemistry",
+      "retrieved": "2026-10-23",
+      "source_date": "imagery capture date not displayed",
+      "source_crs": "Google Maps satellite imagery / Web Mercator display; no georeferenced pixels exported",
+      "measurement_method": "Visual review at zoom 19 with 50 ft scale bar to confirm neighborhood placement and observe a flat articulated roof with service equipment; no edge measurements or pixel-to-ground registration performed.",
+      "inferences": [
+        "Flat roof and visible roof-service equipment were included as low mechanical units.",
+        "A south-side main entrance interpretation was made from the campus context and published façade view."
+      ],
+      "uncertainty": "Orthographic view and approximate context only; capture date, pixel resolution, roof/wall offsets and equipment dimensions are unknown."
+    },
+    {
+      "provider": "Purdue Department of Chemistry",
+      "url": "https://www.chem.purdue.edu/admissions/admissions/WTHR.JPG",
+      "feature": "Wetherill Laboratory exterior photograph",
+      "retrieved": "2026-10-23",
+      "source_date": "photograph capture date not provided",
+      "source_crs": "not spatially referenced",
+      "measurement_method": "Visual façade reference for brick and limestone, window grids, limestone piers, carved panels, roof cornice and entrance stairs; no dimensions extracted.",
+      "local_copy": "reference_exterior.jpg",
+      "uncertainty": "Single oblique view; occlusions/perspective do not establish all elevations or exact dimensions."
+    },
+    {
+      "provider": "Purdue Department of Chemistry",
+      "url": "https://www.chem.purdue.edu/commons/",
+      "image_url": "https://www.chem.purdue.edu/commons/images/Leighty%20Commons%20Photos/commons1.jpg",
+      "feature": "Leighty Commons outside WTHR Room 200",
+      "retrieved": "2026-10-23",
+      "page_statement": "Purdue places Leighty Commons outside Room 200 and states that the suspended caffeine LED sculpture is 20 feet wide and weighs more than 400 pounds.",
+      "image_capture_date": "not provided",
+      "measurement_method": "Used the published 20 ft width as the target envelope; fresh Blender reopen measured the sculpture X span at 6.095999956 m. Sculpture uses 14 heavy-atom nodes and 15 connections from the caffeine fused-ring, carbonyl and three methyl branch topology; hydrogens omitted. No dimensions inferred from photo pixels.",
+      "local_copy": "reference_commons.jpg",
+      "uncertainty": "The 20 ft span is source-backed; exact sculpture atom positions, rod thicknesses, lighting geometry and Commons layout remain visual interpretations."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/repositories/2/resources/1483",
+      "feature": "UA 136 Wetherill Laboratory of Chemistry records",
+      "retrieved": "2026-10-23",
+      "source_date": "collection includes 1955 information booklet; web record crawled 2026-10-23",
+      "measurement_method": "Historical description supports red brick, Indiana limestone trim and five symbolic cut designs above the main doors; no dimensions extracted.",
+      "uncertainty": "Descriptive historical record, not a current measured elevation."
+    },
+    {
+      "provider": "Purdue Department of Chemistry / Purdue EH&S",
+      "url": "https://www.chem.purdue.edu/docs/chemsafety/bep/BEPJuly2014.pdf",
+      "feature": "Building Emergency Plan for WTHR and BRWN, version 3, July 2014, section 3.2",
+      "retrieved": "2026-10-23",
+      "source_date": "July 2014",
+      "measurement_method": "Used five above-grade floors and one basement as a story-count reference; story height and overall 16 m eave are estimates, not measured values.",
+      "uncertainty": "May not reflect later changes; does not provide vertical elevations."
+    },
+    {
+      "provider": "Purdue Department of Chemistry, BCCE program book",
+      "url": "https://www.chem.purdue.edu/bcce/BCCE_Program_book_white_pages.pdf",
+      "feature": "Wetherill and Brown Laboratories floor plan, printed pages 24–25 (PDF pages 23–24)",
+      "retrieved": "2026-10-23",
+      "source_date": "program book around 2006; precise issue date not confirmed here",
+      "measurement_method": "Used only for room/corridor and Wetherill/Brown connection context; did not reconstruct a dimensioned plan.",
+      "uncertainty": "Event floor plan, old and partial; not a complete current architectural drawing."
+    },
+    {
+      "provider": "PubChem",
+      "url": "https://pubchem.ncbi.nlm.nih.gov/compound/caffeine",
+      "feature": "Caffeine CID 2519",
+      "retrieved": "2026-10-23",
+      "source_date": "PubChem record modified 2026-09-19",
+      "formula": "C8H10N4O2",
+      "smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+      "measurement_method": "Used molecular connectivity only to represent 14 heavy atoms, fused rings, two carbonyl branches and three N-methyl groups. Hydrogens omitted.",
+      "uncertainty": "The rendered LED sculpture is stylized and does not claim measured molecular bond lengths or exact physical sculpture node layout."
+    }
+  ],
+  "model_edits": [
+    "Replaced 28-vertex massing shell with separate detailed asset; preserved official 14-vertex WTHR outline on perimeter wall outside faces.",
+    "Added five-story red-brown brick and limestone institutional façade with gridded windows, string courses, pilasters, simplified five chemistry panels, south-side entry, steps and verdigris cornice.",
+    "Added five interior floor plates, schematic corridor/stair/lift cores, lab casework, benches and fume hoods.",
+    "Added second-floor Leighty Commons interpretation based on public page/photo; Commons layout dimensions remain inferred.",
+    "Added low rooftop service units positioned by visual aerial-context inference.",
+    "Generated all model materials procedurally; no external texture image dependencies remain in the asset file."
+  ],
+  "reopen_verification": "reopen_verification.json",
+  "renders": [
+    "exterior_hero.png",
+    "building_overview.png",
+    "entrance_detail.png",
+    "interior_commons_cutaway.png"
+  ],
+  "master_or_manifest_edited": false,
+  "original_massing_preserved": true,
+  "visual_fidelity_0_to_10": 8.9,
+  "improvement_pass": {
+    "date": "2026-10-23",
+    "changes": [
+      "Strengthened front limestone pilasters, bases, capitals and entrance entablature.",
+      "Reworked five chemistry plaques as inset limestone panels with dark engraved field labels and simplified relief emblems.",
+      "Scaled the caffeine topology to a reopened 6.096 m width and modeled all 14 heavy atoms with fused rings, carbonyls and three methyl branches.",
+      "Brightened and reframed the Commons cutaway with a local preview floor; rendered a close entrance view.",
+      "Varied roof plant sizes and positions into an irregular central cluster, retaining inferred status.",
+      "Moved plaque titles and relief forms forward of the backing; reduced title type size and placed the text on the lower panel band.",
+      "Added named content to the three Leighty Commons display screens.",
+      "Softened limestone edges, reduced exterior fill, and added raised hubs to rooftop fan units.",
+      "Moved plaque titles and relief forms forward of the backing; reduced title type size and placed the text on the lower panel band.",
+      "Added named content to the three Leighty Commons display screens.",
+      "Softened limestone edges, reduced exterior fill, and added raised hubs to rooftop fan units.",
+      "Moved all five chemistry panels outward beyond the portico piers and reframed the entrance render to show the complete labeled row.",
+      "Replaced pale Commons screens with dark teal displays, warm high-contrast content type, and a camera angle that shows the screen faces.",
+      "Reduced entrance lighting and the layered portico dimensions; corrected both handrails to follow the stair direction.",
+      "Increased plaque text size and contrast.",
+      "Reframed Commons in orthographic view, moved high-contrast Nobel displays in front of the cubby wall, enlarged content typography, and labeled both cafe counters.",
+      "Moved the five discipline plaque centers into clear spaces between portico piers and moved the central building name forward in high contrast.",
+      "Shortened/reduced the portico upper layers to clear the window course and shortened both rails to the stair run.",
+      "Added numbered cubby fronts and handles, disabled molecular sculpture cast shadows, and removed the duplicate cafe sign.",
+      "Reframed exterior_hero.png around the entrance and retained full-building context in building_overview.png.",
+      "Evened plaque spacing, enlarged field labels and building name, and thinned the geometric relief.",
+      "Added four thin Commons sculpture suspension cables as an explicit inference from the documented suspended installation."
+    ],
+    "visual_limitations": [
+      "Suspension cable attachment points are inferred; no structural drawing was available.",
+      "Overall facade heights and window proportions remain inferred; portico carving is simplified.",
+      "Lab partitions remain schematic; no measured current interior plans were available."
+    ]
+  },
+  "reopen_qa": {
+    "status": "PASS",
+    "blender_version": "5.2.3",
+    "object_count": 362,
+    "mesh_count": 338,
+    "material_count": 23,
+    "unassigned_mesh_materials": 0,
+    "external_file_images": 0,
+    "linked_libraries": 0,
+    "footprint_max_error_m": 8.386539749617379E-06,
+    "commons_caffeine_sculpture_span_x_m": 6.0959999561309814,
+    "root_local_location": [
+      0,
+      0,
+      0
+    ],
+    "root_scale": [
+      1,
+      1,
+      1
+    ],
+    "reopened_again": "2026-10-23 after targeted improvement pass",
+    "entrance_labels": "Plaque title curves and relief geometry are positioned 0.34 m outward from panel centers (panel front face 0.25 m); fresh-file render shows titles at entrance-detail view, though contrast and overlap remain partially limited by layered pilasters and camera angle.",
+    "final_targeted_pass": "PASS: all five chemistry labels sit 0.72 m outward of the plaque centers and are visible in reframed entrance_detail.png; Commons content headings render legibly in high-contrast display panels.",
+    "final_visual_pass": "PASS: toned exterior light, slimmer portico, side-running handrails, high-contrast enlarged plaques, orthographic Commons view with visible Nobel displays and cafe signs.",
+    "final_review_repairs": "PASS: central building name and five field labels use dark contrast and a clear outward offset; portico shortened/lateral supports separated from window row; rails end at stair base; Commons molecule shadows disabled; cubbies numbered/handled; one cafe sign retained.",
+    "final_visual_refinements": "PASS: entry-focused hero enlarges the building name and evenly spaced discipline labels; separate full-building overview saved; relief softened; stair rails terminate at run; Commons displays/cubbies/cafe shown; plausible slim suspension cables added."
+  }
+}

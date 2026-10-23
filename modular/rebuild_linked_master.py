@@ -31,6 +31,18 @@ def get_linked_collection(record):
         raise RuntimeError(f"Failed to link {record['collection']}")
     return collection
 
+def collection_local_matrix(obj, cache=None):
+    """Get an object's transform within its source collection, ignoring master instances."""
+    if cache is None:
+        cache = {}
+    if obj in cache:
+        return cache[obj]
+    matrix = obj.matrix_local.copy()
+    if obj.parent is not None:
+        matrix = collection_local_matrix(obj.parent, cache) @ matrix
+    cache[obj] = matrix
+    return matrix
+
 # Detailed source libraries use local geometry; one collection instance per building
 # carries the campus placement. This keeps edits in the small building file.
 for record in detailed:
@@ -67,6 +79,11 @@ superseded = {
     "massing_house_1033674920_dcd3b76": "elliott_hall_of_music",
     "massing_house_860822250_df21db0": "dudley_hall and lambertus_hall",
     "massing_knoy_hall_knoy_f598616": "knoy_hall",
+    "massing_american_railway_building_rail_fc0f9a2": "american_railway_building",
+    "massing_brown_laboratory_of_chemistry_brwn_aed3885": "brown_laboratory_of_chemistry",
+    "massing_pierce_hall_prce_e5f59eb": "peirce_hall",
+    "massing_psychological_sciences_building_psyc_34efd04": "psychological_sciences",
+    "massing_r_b_wetherill_laboratory_of_chemistry_wthr_1577024": "wetherill_laboratory_of_chemistry",
 }
 for old_id, replacement in superseded.items():
     old = asset_by_id.get(old_id)
@@ -94,7 +111,10 @@ for record in detailed:
     objects = list(collection.all_objects)
     record['objects'] = [obj.name for obj in objects]
     record['object_count'] = len(objects)
-    points = [obj.matrix_world @ Vector(corner) for obj in objects if obj.type in {'MESH','CURVE','FONT'} for corner in obj.bound_box]
+    local_matrices = {}
+    points = [collection_local_matrix(obj, local_matrices) @ Vector(corner)
+              for obj in objects if obj.type in {'MESH','CURVE','FONT'}
+              for corner in obj.bound_box]
     if points:
         local = [[min(p[i] for p in points),max(p[i] for p in points)] for i in range(3)]
         record['local_bounds_m'] = local

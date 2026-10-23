@@ -1,0 +1,66 @@
+{
+  "building_id": "psychological_sciences",
+  "asset_file": "modular/buildings/psychological_sciences.blend",
+  "asset_collection": "Asset_psychological_sciences",
+  "scene": "Building_psychological_sciences",
+  "retrieved_utc_date": "2026-10-23",
+  "placement_origin_project_m": [-106.6966, -48.275, 0.0],
+  "placement_method": "inherited from localized source asset; this revision did not independently remeasure",
+  "geometry": {
+    "footprint_source": "Purdue ArcGIS BuildingShapes, FeatureServer layer 0, FID 239, BLDG_ABBR PSYC",
+    "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "native_crs": "EPSG:3857 (WKID 102100; latest WKID 3857)",
+    "saved_snapshot": "raw_feature_239.geojson",
+    "snapshot_query_crs": "EPSG:4326",
+    "method": "retained perimeter from existing massing library previously marked footprint-corrected; no new polygon-wall overlay performed",
+    "position_accuracy": "unverified in this pass",
+    "orientation_accuracy": "unverified in this pass",
+    "plan_dimension_accuracy": "unverified in this pass",
+    "height": {
+      "status": "estimated / unverified",
+      "wall_height_m": 15.0,
+      "basis": "inherited massing shell; GIS lists 5 floors but no verified elevations were obtained"
+    },
+    "story_count": {
+      "status": "GIS attribute supported",
+      "value": 5,
+      "fields": ["NUM_LEVELS", "CountOfFLO"],
+      "note": "supports count only; exact floor elevations and plan layout remain unknown"
+    }
+  },
+  "photo_sources": [
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Psychological_Sciences_Building_Door.JPG",
+      "provider": "Wikimedia Commons",
+      "use": "building-specific entry reference",
+      "image_imported": false
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/File:Purdue_Psychological_Sciences_Sign.JPG",
+      "provider": "Wikimedia Commons",
+      "use": "building identity / sign reference",
+      "image_imported": false
+    }
+  ],
+  "interior": {
+    "status": "schematic and unverified",
+    "floor_count_modeled": 5,
+    "room_programs": ["reception and waiting", "participant observation", "seminar teaching", "psychology research labs", "interview and testing", "data analysis", "faculty offices", "graduate research"],
+    "reference_floorplans": "unavailable; GIS Floorplans field points to an inaccessible G:\\GIS path",
+    "circulation": "illustrative corridor; stair cores omitted because available sources do not locate them"
+  },
+  "source_massing_sha256": "AFC075300306CE494E43AF3ED3E81887F7309BF81276E26D75F47FE1A6E986FC",
+  "source_massing_changed": false,
+  "independent_score": "pending",
+  "builder_self_assessment": 8.4,
+  "remaining_uncertainty": [
+    "measured wall/roof height",
+    "floor elevations",
+    "exact facade bay count and dimensions",
+    "roof plant details",
+    "interior room plan and assignments",
+    "stair and lift positions",
+    "connector geometry to Peirce Hall",
+    "independent footprint registration and placement measurement"
+  ]
+}
