@@ -1,0 +1,60 @@
+{
+  "building_id": "krannert_building",
+  "name": "Krannert Building",
+  "asset_file": "modular/buildings/krannert_building.blend",
+  "export_collection": "Asset_krannert_building",
+  "revision": 2,
+  "review_date": "2026-10-24",
+  "changes_since_round1": [
+    "Refined the source-model chair upholstery with separate eased seat pads and added soft, fine procedural fabric/wood/carpet variation; retained the established local asset frame.",
+    "Replaced the straight Parrish counter frontage with a curved oak desk form based on the 2026 Purdue Libraries refresh preview, and added a continuous winding study table with four public-computer stations and upholstered task chairs.",
+    "Added a compact glazed Drawing Room group room with a centered door, six conference seats, table supports, and an open approach aisle; its bounds remain inside the modeled carpet footprint.",
+    "Added a separate lounge setting, two window-side high tables and four stools with metal foot rings to represent the documented mixture of lounge, booth, high-top, and work seating.",
+    "Adjusted conference-table and high-top supports to meet the modeled floor; updated pull-back eye-level renders and separate per-floor plan views for layout/circulation inspection."
+  ],
+  "sources": [
+    {
+      "provider": "Purdue Daniels School of Business",
+      "url": "https://business.purdue.edu/undergraduate/visit/self-guided-tour.pdf",
+      "reviewed": "2026-10-24",
+      "use": "Page 6 supports Drawing Room furnishing types and palette: glass-walled meeting rooms, blue/lime upholstery, patterned lounge seating, high-top tables/stools and acoustic materials. Page 4 supports Parrish Library book shelving, booth seating and study areas. Images are not measured floor plans."
+    },
+    {
+      "provider": "Purdue Libraries",
+      "url": "https://blogs.lib.purdue.edu/news/2026/06/08/parrish-library-undergoing-renovations-and-facility-improvements/",
+      "reviewed": "2026-10-24",
+      "use": "Documents Parrish refresh and depicts planned desk/table/furniture changes, including a winding shared study table and computer work areas. The post describes renovations in progress; previews do not establish as-built coordinates, dimensions or completed finish conditions."
+    },
+    {
+      "provider": "OfficeWorks, Purdue University’s Krannert School of Management Drawing Room",
+      "url": "https://officeworks.net/projects/purdue-universitys-krannert-school-of-management-drawing-room",
+      "reviewed": "2026-10-24",
+      "use": "Supports the Drawing Room's glass-walled group rooms and varied lounge/booth/high-top seating mix. It does not provide a dimensioned interior plan."
+    }
+  ],
+  "room_geometry": {
+    "drawingroom_floor_level_z_m": 3.90,
+    "parrish_floor_level_z_m": 8.53,
+    "drawingroom_carpet_bounds_xy_m": [-21.535, -7.535, -8.281, 3.719],
+    "conference_room_glass_bounds_xy_m": [-12.228, -7.773, -0.178, 3.577],
+    "door_leaf_width_m": 0.90,
+    "door_clear_opening_m": 1.80,
+    "modeled_front_aisle_to_nearest_chair_envelope_m": 0.78,
+    "measurement_status": "Model-derived only; room placement, dimensions, door clear opening and aisle are estimates, not survey or code/accessibility dimensions."
+  },
+  "evidence_limits": {
+    "interior_plan": "No measured or current as-built floor plan was located. Room XY coordinates, partition location, furniture sizes/counts, support details and workstation placement are estimated.",
+    "parrish_refresh": "The 2026 Libraries post reports work in progress and includes previews; it does not verify final installed furnishings or exact layout.",
+    "circulation": "Eye-level and top-down renders show the modeled furniture organization and open approach path only. A 0.78 m model gap is not a code-compliance or accessibility determination.",
+    "exterior_and_master": "This source-only round did not edit or verify master placement, manifest, README, shared indexes, or other buildings; root/master ownership is unchanged.",
+    "render_only": "Camera, lights and temporary plan-render floor are created by audit scripts and are not saved into the asset."
+  },
+  "validation": "audit/batch2_krannert/validation_round2.json",
+  "previews": {
+    "drawingroom_eye_level": "audit/batch2_krannert/drawingroom_r2.png",
+    "parrish_eye_level": "audit/batch2_krannert/parrish_r2.png",
+    "drawingroom_plan_cutaway": "audit/batch2_krannert/drawingroom_plan_r2.png",
+    "parrish_plan_cutaway": "audit/batch2_krannert/parrish_plan_r2.png"
+  },
+  "independent_grade_status": "Awaiting fresh independent review; no self-score assigned."
+}

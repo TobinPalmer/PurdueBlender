@@ -1,0 +1,230 @@
+{
+  "building_id": "krannert_building",
+  "revision": 7,
+  "review_date": "2026-10-24",
+  "assessment": "Independent approximate LiDAR/DEM roof-surface check. No model height or geometry changed.",
+  "dsm_source": {
+    "provider": "Indiana Geographic Information Office / Indiana Statewide Elevation Catalog",
+    "title": "Indiana 2016-2020 QL2 3DEP LiDAR, 2018 Tippecanoe tile",
+    "tile": "in2018_30001885_12",
+    "acquisition_date": "2018-04-20",
+    "download_url": "https://giselevationingov.s3.us-east-2.amazonaws.com/dsmoptimized/statewide/2018/SPW/5ft/in2018_30001885_12.tif",
+    "local_file": "audit/complete_knoy/indiana_3dep_2018_dsm_in2018_30001885_12.tif",
+    "sha256": "3d04dc9f70e85e7b6c1944bb87b09ab9686d2cfbb2e61ece97d3652206e5add9",
+    "product": "DSM, 5 ft cells, elevations in US survey feet; NAD83(HARN) / Indiana West (ftUS)",
+    "license": "CC0"
+  },
+  "terrain_source": {
+    "provider": "Indiana Geographic Information Office",
+    "title": "Indiana 2016-2020 bare-earth DEM ImageServer",
+    "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2016_2020_DEM/ImageServer/identify",
+    "product": "State 2.5 ft bare-earth/interpolated DEM; queried by point at 36 interior sample locations."
+  },
+  "footprint_source": {
+    "provider": "Purdue Campus GIS",
+    "service": "BuildingShapesZip4 FeatureServer, layer 0",
+    "feature_id": 54,
+    "building_code": "KRAN",
+    "raw_snapshot": "audit/batch2_krannert/krannert_gis_fid54_4326.json",
+    "native_crs": "EPSG:3857",
+    "saved_boundary_crs": "EPSG:4326",
+    "method": "Original GIS polygon transformed to DSM raster CRS by rasterio; valid pixel centers selected inside polygon. No geometry fit or model footprint used."
+  },
+  "dsm_summary": {
+    "crs": "PROJCS[\"NAD83(HARN) / Indiana West (ftUS)\",GEOGCS[\"NAD83(HARN)\",DATUM[\"NAD83_High_Accuracy_Reference_Network\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6152\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",37.5],PARAMETER[\"central_meridian\",-87.0833333333333],PARAMETER[\"scale_factor\",0.999966666666667],PARAMETER[\"false_easting\",2952750],PARAMETER[\"false_northing\",820208.333333333],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "transform": [
+      5.0,
+      0.0,
+      3000000.0,
+      0.0,
+      -5.0,
+      1890000.0
+    ],
+    "shape_px": [
+      1000,
+      1000
+    ],
+    "pixel_size": [
+      5.0,
+      5.0
+    ],
+    "nodata": null,
+    "valid_cell_centers": 895,
+    "quantiles_ftUS": {
+      "p0": 627.7999877929688,
+      "p10": 628.7020263671875,
+      "p25": 706.8699951171875,
+      "p50": 721.7100219726562,
+      "p75": 721.8400268554688,
+      "p90": 721.9400024414062,
+      "p95": 722.0429809570312,
+      "p99": 722.2006127929687,
+      "p100": 722.9099731445312
+    }
+  },
+  "terrain_samples": [
+    {
+      "longitude": -86.91125464717373,
+      "latitude": 40.423539280831186,
+      "bare_earth_elevation_ft": 614.52
+    },
+    {
+      "longitude": -86.91112663177366,
+      "latitude": 40.423539280831186,
+      "bare_earth_elevation_ft": 613.98
+    },
+    {
+      "longitude": -86.91099861637359,
+      "latitude": 40.423539280831186,
+      "bare_earth_elevation_ft": 614.58
+    },
+    {
+      "longitude": -86.91125464717373,
+      "latitude": 40.42360043004887,
+      "bare_earth_elevation_ft": 615.49
+    },
+    {
+      "longitude": -86.91112663177366,
+      "latitude": 40.42360043004887,
+      "bare_earth_elevation_ft": 615.3
+    },
+    {
+      "longitude": -86.91099861637359,
+      "latitude": 40.42360043004887,
+      "bare_earth_elevation_ft": 615.21
+    },
+    {
+      "longitude": -86.91112663177366,
+      "latitude": 40.42366157926656,
+      "bare_earth_elevation_ft": 615.24
+    },
+    {
+      "longitude": -86.91099861637359,
+      "latitude": 40.42366157926656,
+      "bare_earth_elevation_ft": 615.41
+    },
+    {
+      "longitude": -86.91087060097351,
+      "latitude": 40.42366157926656,
+      "bare_earth_elevation_ft": 615.27
+    },
+    {
+      "longitude": -86.91074258557344,
+      "latitude": 40.42366157926656,
+      "bare_earth_elevation_ft": 614.79
+    },
+    {
+      "longitude": -86.91061457017337,
+      "latitude": 40.42366157926656,
+      "bare_earth_elevation_ft": 614.87
+    },
+    {
+      "longitude": -86.91112663177366,
+      "latitude": 40.42372272848424,
+      "bare_earth_elevation_ft": 615.27
+    },
+    {
+      "longitude": -86.91099861637359,
+      "latitude": 40.42372272848424,
+      "bare_earth_elevation_ft": 615.39
+    },
+    {
+      "longitude": -86.91087060097351,
+      "latitude": 40.42372272848424,
+      "bare_earth_elevation_ft": 615.29
+    },
+    {
+      "longitude": -86.91074258557344,
+      "latitude": 40.42372272848424,
+      "bare_earth_elevation_ft": 614.88
+    },
+    {
+      "longitude": -86.91061457017337,
+      "latitude": 40.42372272848424,
+      "bare_earth_elevation_ft": 614.74
+    },
+    {
+      "longitude": -86.91112663177366,
+      "latitude": 40.42378387770193,
+      "bare_earth_elevation_ft": 615.29
+    },
+    {
+      "longitude": -86.91099861637359,
+      "latitude": 40.42378387770193,
+      "bare_earth_elevation_ft": 615.33
+    },
+    {
+      "longitude": -86.91087060097351,
+      "latitude": 40.42378387770193,
+      "bare_earth_elevation_ft": 615.31
+    },
+    {
+      "longitude": -86.91074258557344,
+      "latitude": 40.42378387770193,
+      "bare_earth_elevation_ft": 614.97
+    },
+    {
+      "longitude": -86.91061457017337,
+      "latitude": 40.42378387770193,
+      "bare_earth_elevation_ft": 614.6
+    },
+    {
+      "longitude": -86.91087060097351,
+      "latitude": 40.423845026919615,
+      "bare_earth_elevation_ft": 615.33
+    }
+  ],
+  "terrain_summary_ftUS": {
+    "count": 22,
+    "min": 613.98,
+    "median": 615.255,
+    "max": 615.49
+  },
+  "roof_surface_agl_ftUS": {
+    "median": 106.45502197265625,
+    "p10_p90": [
+      13.447026367187505,
+      106.68500244140625
+    ],
+    "quantiles": {
+      "p10": 13.447026367187505,
+      "p25": 91.6149951171875,
+      "p50": 106.45502197265625,
+      "p75": 106.58502685546875,
+      "p90": 106.68500244140625,
+      "p95": 106.78798095703121,
+      "p99": 106.94561279296875,
+      "p100": 107.65497314453125
+    },
+    "interpretation": "The median DSM-minus-sampled-DEM difference is an indicative typical surface height above nearby interpolated bare earth. The wide distribution includes lower/stepped surfaces, roof edges, voids and equipment; it is not a single surveyed roof/parapet/penthouse height."
+  },
+  "model_datums_ft_agl": {
+    "ground": 0.0,
+    "L1": 12.7,
+    "L2": 28.0,
+    "L3": 40.7,
+    "L4": 53.5,
+    "L5": 66.2,
+    "L6": 78.9,
+    "L7": 91.6,
+    "roof_deck": 104.3,
+    "parapet_top": 108.0,
+    "penthouse_top": 117.0,
+    "elevator_overrun_top": 120.7
+  },
+  "comparison": {
+    "roof_surface_median_vs_model_roof_deck_ft": 2.1550219726562574,
+    "roof_surface_p90_vs_model_parapet_ft": -1.3149975585937455,
+    "roof_surface_max_vs_model_overrun_ft": -13.045026855468748,
+    "assessment": "Compare LiDAR only as an independent broad vertical plausibility check. Do not interpret DSM surface statistics as measuring named model levels or prove the GIS vertical fields R/Extrution. The point DEM is interpolated beneath the building and project-to-GIS positioning is approximate."
+  },
+  "limits": [
+    "5 ft DSM raster cells limit pinpoint attribution to roof elements.",
+    "DSM includes top surfaces and equipment rather than bare earth; the polygon samples roof planes, stepped levels, edges and possible voids.",
+    "The 2.5 ft DTM values are point-query interpolations under the building, not surveyed foundation or grade elevations.",
+    "The project-local coordinate transform is approximate; there is no as-built elevation drawing or surveyed vertical datum in this audit.",
+    "This cannot establish occupied floor count, exact parapet/penthouse height, or undocumented GIS field semantics."
+  ],
+  "asset_geometry_changed": false,
+  "saved_source_reopen_validation": "Existing audit/batch2_krannert/validation_round4.json is still the latest saved-source reopen validation; this r7 analysis changed evidence only."
+}

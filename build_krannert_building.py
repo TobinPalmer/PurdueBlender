@@ -203,16 +203,44 @@ def main():
     # -------------------------------------------------------------------------
     # Materials Setup
     # -------------------------------------------------------------------------
-    mat_stone = create_material("KRAN_Indiana_Limestone", (0.84, 0.81, 0.74, 1.0), roughness=0.68, bump_scale=0.03)
+    # Round 4: warm the rendered stone to match Purdue's uncalibrated exterior
+    # photo. This is a qualitative albedo match, not a measured finish sample.
+    mat_stone = create_material("KRAN_Indiana_Limestone", (0.58, 0.55, 0.49, 1.0), roughness=0.78, bump_scale=0.018)
     mat_dark_base = create_material("KRAN_Dark_Base_Granite", (0.24, 0.24, 0.25, 1.0), roughness=0.55, bump_scale=0.04)
-    mat_brick = create_material("KRAN_Purdue_Red_Brick", (0.46, 0.18, 0.13, 1.0), roughness=0.78, bump_scale=0.06)
-    mat_glass = create_material("KRAN_Solar_Bronze_Glass", (0.08, 0.07, 0.05, 1.0), roughness=0.04, transmission=0.88, ior=1.52)
+    mat_brick = create_material("KRAN_Purdue_Red_Brick_R4", (0.19, 0.062, 0.043, 1.0), roughness=0.9)
+    # A restrained, non-directional red-brown surface variation is used only on
+    # the visible ground-floor masonry band. Individual brick courses are not
+    # modeled because the available photo does not resolve coursing or scale.
+    brick_nodes = mat_brick.node_tree.nodes
+    brick_links = mat_brick.node_tree.links
+    brick_bsdf = next(n for n in brick_nodes if n.type == 'BSDF_PRINCIPLED')
+    brick_tc = brick_nodes.new('ShaderNodeTexCoord')
+    brick_noise = brick_nodes.new('ShaderNodeTexNoise')
+    brick_noise.inputs['Scale'].default_value = 3.0
+    brick_noise.inputs['Detail'].default_value = 2.0
+    brick_noise.inputs['Roughness'].default_value = 0.65
+    brick_ramp = brick_nodes.new('ShaderNodeValToRGB')
+    brick_ramp.color_ramp.elements[0].position = 0.22
+    brick_ramp.color_ramp.elements[0].color = (0.15, 0.048, 0.034, 1.0)
+    brick_ramp.color_ramp.elements[1].position = 0.78
+    brick_ramp.color_ramp.elements[1].color = (0.23, 0.078, 0.052, 1.0)
+    brick_links.new(brick_tc.outputs['Object'], brick_noise.inputs['Vector'])
+    brick_links.new(brick_noise.outputs['Fac'], brick_ramp.inputs['Fac'])
+    brick_links.new(brick_ramp.outputs['Color'], brick_bsdf.inputs['Base Color'])
+    brick_bump = brick_nodes.new('ShaderNodeBump')
+    brick_bump.inputs['Strength'].default_value = 0.045
+    brick_bump.inputs['Distance'].default_value = 0.003
+    brick_links.new(brick_noise.outputs['Fac'], brick_bump.inputs['Height'])
+    brick_links.new(brick_bump.outputs['Normal'], brick_bsdf.inputs['Normal'])
+
+    # The Purdue-hosted exterior image reads as dark, reflective vertical glass.
+    # The finish remains a visual estimate; no measured reflectance is claimed.
+    mat_glass = create_material("KRAN_Solar_Bronze_Glass", (0.025, 0.032, 0.038, 1.0), roughness=0.24, transmission=0.0, metallic=0.18, ior=1.52)
     mat_mullion = create_material("KRAN_Dark_Bronze_Mullions", (0.16, 0.14, 0.12, 1.0), roughness=0.35, metallic=0.85)
     mat_spandrel = create_material("KRAN_Dark_Spandrel_Panel", (0.12, 0.11, 0.10, 1.0), roughness=0.40, metallic=0.50)
     mat_louver = create_material("KRAN_Mechanical_Louver", (0.35, 0.35, 0.36, 1.0), roughness=0.45, metallic=0.75)
     mat_roof = create_material("KRAN_Roof_Membrane", (0.22, 0.23, 0.24, 1.0), roughness=0.88)
     mat_concrete = create_material("KRAN_Concrete_Slab", (0.65, 0.63, 0.60, 1.0), roughness=0.70)
-    mat_plaza = create_material("KRAN_Plaza_Paving", (0.50, 0.48, 0.45, 1.0), roughness=0.80)
     mat_clock = create_material("KRAN_Clock_Dial", (0.92, 0.90, 0.85, 1.0), roughness=0.30)
     mat_clock_hands = create_material("KRAN_Clock_Hands", (0.10, 0.08, 0.06, 1.0), roughness=0.20, metallic=0.90)
     
@@ -236,6 +264,7 @@ def main():
     bm_walls = bmesh.new()
     mesh_walls.materials.append(mat_stone)     # 0: Limestone
     mesh_walls.materials.append(mat_dark_base)  # 1: Dark base granite
+    mesh_walls.materials.append(mat_brick)      # 2: Photo-supported ground-floor brick band
     
     z_levels = [Z_GROUND, Z_L1, Z_ROOF_DECK, Z_PARAPET_TOP]
     wall_ring_verts = []
@@ -244,7 +273,7 @@ def main():
         wall_ring_verts.append(ring)
         
     for l_idx in range(len(z_levels) - 1):
-        mat_id = 1 if l_idx == 0 else 0
+        mat_id = 2 if l_idx == 0 else 0
         r_bot = wall_ring_verts[l_idx]
         r_top = wall_ring_verts[l_idx + 1]
         for i in range(N):
@@ -374,7 +403,7 @@ def main():
     bm_mullions = bmesh.new()
     mesh_mullions.materials.append(mat_mullion)
     
-    def generate_facade_bays(pA, pB, num_bays, z_start=Z_L1, z_end=Z_ROOF_DECK, pier_width=0.45, pier_depth=0.25, has_ground_windows=True, skip_skyport=False):
+    def generate_facade_bays(pA, pB, num_bays, z_start=Z_L1, z_end=Z_ROOF_DECK, pier_width=0.72, pier_depth=0.25, has_ground_windows=True, skip_skyport=False, continuous_glazing=False, slot_width_override=None):
         xA, yA = pA
         xB, yB = pB
         dx = xB - xA
@@ -404,28 +433,28 @@ def main():
             s_bay_start = bay_i * bay_width
             s_bay_end = (bay_i + 1) * bay_width
             
-            p_pier_s = s_bay_start + (bay_width - pier_width) / 2.0
-            p_pier_e = p_pier_s + pier_width
-            
-            px0 = xA + p_pier_s * ux
-            py0 = yA + p_pier_s * uy
-            px1 = xA + p_pier_e * ux
-            py1 = yA + p_pier_e * uy
-            
-            # If skip_skyport is True and we are at Floor 4, we don't block the portal
-            pv0 = bm_piers.verts.new((px0, py0, z_start))
-            pv1 = bm_piers.verts.new((px1, py1, z_start))
-            pv2 = bm_piers.verts.new((px1 + nx * pier_depth, py1 + ny * pier_depth, z_start))
-            pv3 = bm_piers.verts.new((px0 + nx * pier_depth, py0 + ny * pier_depth, z_start))
-            
-            pv4 = bm_piers.verts.new((px0, py0, z_end))
-            pv5 = bm_piers.verts.new((px1, py1, z_end))
-            pv6 = bm_piers.verts.new((px1 + nx * pier_depth, py1 + ny * pier_depth, z_end))
-            pv7 = bm_piers.verts.new((px0 + nx * pier_depth, py0 + ny * pier_depth, z_end))
-            
-            bm_piers.faces.new((pv3, pv2, pv6, pv7))
-            bm_piers.faces.new((pv0, pv3, pv7, pv4))
-            bm_piers.faces.new((pv2, pv1, pv5, pv6))
+            # Current Purdue exterior imagery and the 1965 project photo show
+            # one narrow vertical window at each bay, separated by broad pale
+            # piers. Place the masonry piers at bay boundaries instead of
+            # bisecting the glazing at each bay center.
+            if bay_i > 0:
+                p_pier_s = s_bay_start - pier_width / 2.0
+                p_pier_e = s_bay_start + pier_width / 2.0
+                px0 = xA + p_pier_s * ux
+                py0 = yA + p_pier_s * uy
+                px1 = xA + p_pier_e * ux
+                py1 = yA + p_pier_e * uy
+                pv0 = bm_piers.verts.new((px0, py0, z_start))
+                pv1 = bm_piers.verts.new((px1, py1, z_start))
+                pv2 = bm_piers.verts.new((px1 + nx * pier_depth, py1 + ny * pier_depth, z_start))
+                pv3 = bm_piers.verts.new((px0 + nx * pier_depth, py0 + ny * pier_depth, z_start))
+                pv4 = bm_piers.verts.new((px0, py0, z_end))
+                pv5 = bm_piers.verts.new((px1, py1, z_end))
+                pv6 = bm_piers.verts.new((px1 + nx * pier_depth, py1 + ny * pier_depth, z_end))
+                pv7 = bm_piers.verts.new((px0 + nx * pier_depth, py0 + ny * pier_depth, z_end))
+                bm_piers.faces.new((pv3, pv2, pv6, pv7))
+                bm_piers.faces.new((pv0, pv3, pv7, pv4))
+                bm_piers.faces.new((pv2, pv1, pv5, pv6))
             
             if has_ground_windows:
                 gw_x0 = xA + (s_bay_start + 0.20) * ux + nx * 0.04
@@ -448,20 +477,26 @@ def main():
                 gm3 = bm_mullions.verts.new((gw_x0 + nx * 0.03, gw_y0 + ny * 0.03, gw_z_bot + 0.04))
                 bm_mullions.faces.new((gm0, gm1, gm2, gm3))
             
-            w_start_s = s_bay_start + 0.10
-            w_end_s = s_bay_end - 0.10
+            slot_limit = 1.25 if slot_width_override is None else slot_width_override
+            slot_width = min(slot_limit, bay_width * 0.46)
+            w_start_s = (s_bay_start + s_bay_end - slot_width) / 2.0
+            w_end_s = w_start_s + slot_width
             wx0 = xA + w_start_s * ux + nx * 0.05
             wy0 = yA + w_start_s * uy + ny * 0.05
             wx1 = xA + w_end_s * ux + nx * 0.05
             wy1 = yA + w_end_s * uy + ny * 0.05
             
-            for fl_bot, fl_top in floors:
+            floors_to_render = [(Z_L1 + 0.04, Z_ROOF_DECK - 0.04)] if continuous_glazing else floors
+            for fl_bot, fl_top in floors_to_render:
                 if skip_skyport and fl_bot == Z_L4:
                     continue # leave opening for Rawls bridge connection
                     
-                spandrel_h = 1.10
+                # Continuous slots begin just above the slab and use only a
+                # narrow sill, avoiding the chunky per-floor blank bands that
+                # obscured the photo-supported vertical rhythm.
+                spandrel_h = 0.04 if continuous_glazing else 0.28
                 win_bot = fl_bot + spandrel_h
-                win_top = fl_top - 0.20
+                win_top = fl_top - 0.18
                 
                 sp0 = bm_spandrels.verts.new((wx0, wy0, fl_bot))
                 sp1 = bm_spandrels.verts.new((wx1, wy1, fl_bot))
@@ -475,7 +510,7 @@ def main():
                 g3 = bm_glazing.verts.new((wx0, wy0, win_top))
                 bm_glazing.faces.new((g0, g1, g2, g3))
                 
-                m_thick = 0.06
+                m_thick = 0.045
                 ms0 = bm_mullions.verts.new((wx0, wy0, win_bot - m_thick/2))
                 ms1 = bm_mullions.verts.new((wx1, wy1, win_bot - m_thick/2))
                 ms2 = bm_mullions.verts.new((wx1 + nx * 0.04, wy1 + ny * 0.04, win_bot + m_thick/2))
@@ -487,21 +522,31 @@ def main():
                 mh2 = bm_mullions.verts.new((wx1 + nx * 0.04, wy1 + ny * 0.04, win_top + m_thick/2))
                 mh3 = bm_mullions.verts.new((wx0 + nx * 0.04, wy0 + ny * 0.04, win_top + m_thick/2))
                 bm_mullions.faces.new((mh0, mh1, mh2, mh3))
+
+                # The source views show fine transoms within the tall window
+                # strips; use a slim bar rather than a broad opaque spandrel.
+                transom_levels = [z + 0.04 for z in (Z_L2, Z_L3, Z_L4, Z_L5, Z_L6, Z_L7) if win_bot < z + 0.04 < win_top] if continuous_glazing else [win_bot + (win_top - win_bot) * 0.52]
+                for transom_z in transom_levels:
+                    tm0 = bm_mullions.verts.new((wx0, wy0, transom_z - m_thick / 2))
+                    tm1 = bm_mullions.verts.new((wx1, wy1, transom_z - m_thick / 2))
+                    tm2 = bm_mullions.verts.new((wx1 + nx * 0.04, wy1 + ny * 0.04, transom_z + m_thick / 2))
+                    tm3 = bm_mullions.verts.new((wx0 + nx * 0.04, wy0 + ny * 0.04, transom_z + m_thick / 2))
+                    bm_mullions.faces.new((tm0, tm1, tm2, tm3))
     
     # -------------------------------------------------------------------------
     # Generate Facade Windows & Piers on ALL Building Wings
     # -------------------------------------------------------------------------
     # 1. South main facade (V29 to V38, length ~22.6m -> 8 bays)
-    generate_facade_bays(KRAN_PTS[29], KRAN_PTS[38], num_bays=8, has_ground_windows=False)
+    generate_facade_bays(KRAN_PTS[29], KRAN_PTS[38], num_bays=8, has_ground_windows=False, continuous_glazing=True, slot_width_override=0.82)
     
     # 2. South connector facade (V25 to V26, length ~4.4m -> 2 bays)
     generate_facade_bays(KRAN_PTS[25], KRAN_PTS[26], num_bays=2)
     
     # 3. South-east wing south facade (V23 to V24, length ~29.1m -> 10 bays)
-    generate_facade_bays(KRAN_PTS[23], KRAN_PTS[24], num_bays=10)
+    generate_facade_bays(KRAN_PTS[23], KRAN_PTS[24], num_bays=10, continuous_glazing=True, slot_width_override=0.82)
     
     # 4. South-east wing west facade (V24 to V25, length ~17.1m -> 6 bays)
-    generate_facade_bays(KRAN_PTS[24], KRAN_PTS[25], num_bays=6)
+    generate_facade_bays(KRAN_PTS[24], KRAN_PTS[25], num_bays=6, continuous_glazing=True, slot_width_override=0.82)
     
     # 5. Connector east facade (V26 to V27, length ~11.3m -> 4 bays)
     generate_facade_bays(KRAN_PTS[26], KRAN_PTS[27], num_bays=4)
@@ -523,7 +568,7 @@ def main():
     
     # 11. North main facade:
     generate_facade_bays(KRAN_PTS[2], KRAN_PTS[3], num_bays=9)
-    generate_facade_bays(KRAN_PTS[13], KRAN_PTS[14], num_bays=9)
+    generate_facade_bays(KRAN_PTS[13], KRAN_PTS[14], num_bays=9, continuous_glazing=True, slot_width_override=0.82)
     
     # 12. North auditorium projection facets:
     generate_facade_bays(KRAN_PTS[5], KRAN_PTS[6], num_bays=2)
@@ -771,25 +816,12 @@ def main():
     obj_core = bpy.data.objects.new("KRAN_Structural_Circulation_Cores", mesh_core)
     col.objects.link(obj_core)
     
-    # -------------------------------------------------------------------------
-    # 11. Surrounding Plaza Paving & Sidewalks
-    # -------------------------------------------------------------------------
-    mesh_plaza = bpy.data.meshes.new("KRAN_Surrounding_Plaza_Paving")
-    bm_plaza = bmesh.new()
-    mesh_plaza.materials.append(mat_plaza)
-    
-    p_min_x = min(p[0] for p in KRAN_PTS) - 6.0
-    p_max_x = max(p[0] for p in KRAN_PTS) + 6.0
-    p_min_y = min(p[1] for p in KRAN_PTS) - 8.0
-    p_max_y = max(p[1] for p in KRAN_PTS) + 6.0
-    
-    add_box(bm_plaza, (p_min_x, p_min_y, -0.15), (p_max_x, p_max_y, 0.00), mat_index=0)
-    
-    bm_plaza.to_mesh(mesh_plaza)
-    bm_plaza.free()
-    obj_plaza = bpy.data.objects.new("KRAN_Surrounding_Plaza_Paving", mesh_plaza)
-    col.objects.link(obj_plaza)
-    
+    # The prior rectangular 88 x 61 m paving plate was not site evidence and
+    # obscured campus roads/terrain when the library was integrated. Site grade,
+    # sidewalks, planting and streets are provided by the campus master context.
+    # Keep the building library focused on building geometry; do not recreate a
+    # site surface without a source-mapped paving/grade plan.
+
     # -------------------------------------------------------------------------
     # 12. Rawls Hall Skybridge Connection Port (East facade, Level 4)
     # -------------------------------------------------------------------------
@@ -876,9 +908,9 @@ ARCHITECTURAL GEOMETRY & ELEVATIONS:
 - Elevator Overrun High Point: Z = 36.800 m (~120.7 ft)
 
 EXTERIOR MATERIALS & FACADE SYSTEM:
-- Indiana Limestone / Precast Concrete: Warm light buff cladding with subtle procedural bump.
-- Dark Base Granite / Stone: Ground level datum base course with ground floor window openings.
-- Solar Bronze Architectural Glass: Dark tinted bronze glazing on all window ribbons.
+- Indiana Limestone / Precast Concrete: Warm buff cladding, qualitatively matched to the undated Purdue-hosted exterior photo; no sampled finish color or calibrated material value is claimed.
+- Ground-level Brick Band: Procedural dark red-brown brick is applied to the grade-to-Level-1 wall band visible in the Purdue-hosted exterior photo. Brick module dimensions and application to occluded elevations remain estimates.
+- Dark Reflective Architectural Glass: Charcoal tinted glazing approximates the dark narrow vertical windows in the Purdue-hosted exterior photo; reflectance and exact window dimensions are not measured.
 - Anodized Aluminum Mullions: Dark bronze frames and dividers.
 - Dark Spandrel Panels: Horizontal panels separating floor window tiers.
 - Mechanical Louvers: Vertical screening along rooftop mechanical penthouse.

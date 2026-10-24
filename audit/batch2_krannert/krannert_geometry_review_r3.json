@@ -1,0 +1,202 @@
+{
+  "building_id": "krannert_building",
+  "review_date": "2026-10-24",
+  "source": {
+    "provider": "Purdue University campus GIS, ArcGIS BuildingShapesZip4 FeatureServer layer 0",
+    "feature_id_fid": 54,
+    "feature_name": "Krannert Building",
+    "feature_global_id": "{100A067D-6322-4767-A87E-98B4C9217B88}",
+    "feature_query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D54&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "raw_snapshot": "audit/batch2_krannert/krannert_gis_fid54_4326.json",
+    "layer_metadata_snapshot": "audit/batch2_krannert/krannert_gis_layer_metadata.json",
+    "gis_layer_native_crs": "EPSG:3857 (Web Mercator) from FeatureServer layer metadata; query geometry exported as EPSG:4326",
+    "source_crs": "EPSG:4326 (WGS84) in raw feature response",
+    "comparison_projection": "Project approximate campus-local formula: X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040; then subtract manifest placement origin. Not a surveyed CRS.",
+    "service_shape_area_web_mercator_units_m2": 3606.79296875,
+    "service_shape_length_web_mercator_units_m": 380.5231825487367,
+    "service_shape_units_note": "Layer-native spatial reference is EPSG:3857; scale distortion means these shape metrics exceed local ground estimates near latitude 40.4 N.",
+    "floor_and_height_fields": {
+      "NUM_LEVELS": 10,
+      "CountOfFLO": 10,
+      "G": 12.7,
+      "F01": 25.4,
+      "F02": 40.7,
+      "F03": 53.4,
+      "F04": 66.2,
+      "F05": 78.9,
+      "F06": 91.6,
+      "F07": 104.3,
+      "R": 117,
+      "Extrution": 108,
+      "Elevation": 612.4
+    },
+    "field_semantics_limit": "The feature layer schema provides field names but no descriptions/units; project manifest previously interprets Extrution and R as feet. Treat floor/roof values as reported GIS attributes, not surveyed vertical datums."
+  },
+  "placement": {
+    "manifest_origin_xy_m": [
+      234.5345001220703,
+      -412.71900939941406
+    ],
+    "coordinator_readonly_master_marker": {
+      "location_m": [
+        234.5345001,
+        -412.7189941,
+        0.0
+      ],
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "reported_by_coordinator": "2026-10-24",
+      "difference_from_manifest_xy_m": [
+        2.2e-08,
+        1.54e-05
+      ]
+    },
+    "source_asset_root_transform": "identity (validated previously in source round2)",
+    "note": "The marker check is coordinator-side; this agent did not edit the master."
+  },
+  "footprint_screening": {
+    "raw_feature_ring_vertex_count_including_closure": 42,
+    "projected_feature_bounds_local_m": [
+      [
+        -37.999712950467796,
+        37.99973100727192
+      ],
+      [
+        -22.76525623740963,
+        24.76480768544934
+      ]
+    ],
+    "projected_feature_area_local_m2_approx": 2086.6454137177834,
+    "projected_feature_perimeter_local_m_approx": 289.53075331264296,
+    "target_buildings_gis_bounds_world_m": [
+      [
+        196.535,
+        272.534
+      ],
+      [
+        -435.484,
+        -387.954
+      ]
+    ],
+    "source_footprint_wire_bounds_local_m": [
+      [
+        -37.99949645996094,
+        37.99949645996094
+      ],
+      [
+        -22.7650146484375,
+        24.764984130859375
+      ]
+    ],
+    "structural_exterior_wall_bounds_local_m": [
+      [
+        -38.199462890625,
+        38.19947814941406
+      ],
+      [
+        -22.96502685546875,
+        24.963287353515625
+      ]
+    ],
+    "wall_bounds_excess_each_side_m_approx": [
+      0.19974994015720426,
+      0.19974714214214373,
+      0.19977061805911944,
+      0.19847966806628392
+    ],
+    "raw_wgs84_to_projected_json_nearest_vertex_error_m": {
+      "mean": 0.0003910754124383921,
+      "max": 0.0006539909316715903
+    },
+    "raw_wgs84_to_asset_wire_nearest_vertex_error_m": {
+      "mean": 0.0003902425732687132,
+      "max": 0.0006501931720856849
+    },
+    "interpretation": "The source footprint wire is derived from this GIS feature, so wire/GIS overlap is a construction alignment check, not independent validation. Structural wall bounds extend about 0.2 m per side, consistent with wall thickness; AABB is not a polygon-shape score."
+  },
+  "vertical_screening": {
+    "source_model_level_bounds_z_m": {
+      "KRAN_FloorSlab_Ground_L0": [
+        -0.30000001192092896,
+        0.0
+      ],
+      "KRAN_FloorSlab_Floor_L1": [
+        3.571000099182129,
+        3.871000051498413
+      ],
+      "KRAN_FloorSlab_Floor_L2": [
+        8.234000205993652,
+        8.534000396728516
+      ],
+      "KRAN_FloorSlab_Floor_L3": [
+        12.104999542236328,
+        12.404999732971191
+      ],
+      "KRAN_FloorSlab_Floor_L4": [
+        16.006999969482422,
+        16.30699920654297
+      ],
+      "KRAN_FloorSlab_Floor_L5": [
+        19.878000259399414,
+        20.17799949645996
+      ],
+      "KRAN_FloorSlab_Floor_L6": [
+        23.749000549316406,
+        24.048999786376953
+      ],
+      "KRAN_FloorSlab_Floor_L7": [
+        27.6200008392334,
+        27.920000076293945
+      ],
+      "KRAN_FloorSlab_Roof_Deck": [
+        31.44099998474121,
+        31.791000366210938
+      ]
+    },
+    "model_parapet_bounds_z_m": [
+      32.917999267578125,
+      33.167999267578125
+    ],
+    "model_penthouse_bounds_z_m": [
+      31.791000366210938,
+      37.04999923706055
+    ],
+    "GIS_extrusion_field_value": 108,
+    "GIS_roof_field_R_value": 117,
+    "generator_constants_from_build_krannert_building_py": {
+      "main_parapet_top_m": 32.918,
+      "mechanical_penthouse_roof_m": 35.662,
+      "elevator_overrun_top_m": 36.8,
+      "overrun_trim_top_m": 37.05
+    },
+    "interpretation": "The source generator maps GIS Extrution=108 to the 32.918 m parapet and R=117 to the 35.662 m main penthouse roof. The separate 36.8 m elevator overrun and 37.05 m trim are generator estimates without a direct elevation source. Floor-field names are not described in the service schema; no roof geometry was changed."
+  },
+  "site_grade": {
+    "former_asset_plaza_object": "KRAN_Surrounding_Plaza_Paving",
+    "former_asset_plaza_bounds_local_m": [
+      [
+        -43.99949645996094,
+        43.99949645996094
+      ],
+      [
+        -30.7650146484375,
+        30.764984130859375
+      ],
+      [
+        -0.15000000596046448,
+        0.0
+      ]
+    ],
+    "current_asset_plaza_present": false,
+    "action": "Removed in round 3 from the saved asset and removed from the dedicated builder script. It was a 88 x 61.53 m flat rectangle that extended about 6 m beyond the building footprint; the GIS footprint does not support its extent or grade.",
+    "status": "The current source asset has no site grade, roadway, sidewalk or planting model. The master campus terrain/roads must supply site context. A neutral z=0 plane appears only in the exterior audit renders and is not saved in the asset."
+  }
+}

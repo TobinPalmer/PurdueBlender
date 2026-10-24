@@ -1,0 +1,37 @@
+Add-Type -AssemblyName System.Drawing
+$root=(Get-Location).Path
+$imCurrent=[System.Drawing.Image]::FromFile((Join-Path $root 'audit/batch2_krannert/krannert_current_exterior_purdue.jpg'))
+$imModel=[System.Drawing.Image]::FromFile((Join-Path $root 'audit/batch2_krannert/krannert_exterior_front_r3.png'))
+$imAerial=[System.Drawing.Image]::FromFile((Join-Path $root 'audit/batch2_krannert/krannert_aerial_1963_construction.jpg'))
+$bmp=[System.Drawing.Bitmap]::new(2250,1550)
+$g=[System.Drawing.Graphics]::FromImage($bmp)
+$g.SmoothingMode=[System.Drawing.Drawing2D.SmoothingMode]::HighQuality
+$g.InterpolationMode=[System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+$g.Clear([System.Drawing.Color]::FromArgb(247,248,249))
+$ink=[System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(31,40,49))
+$muted=[System.Drawing.SolidBrush]::new([System.Drawing.Color]::FromArgb(73,84,95))
+$white=[System.Drawing.SolidBrush]::new([System.Drawing.Color]::White)
+$title=[System.Drawing.Font]::new('Segoe UI',25,[System.Drawing.FontStyle]::Bold)
+$label=[System.Drawing.Font]::new('Segoe UI',17,[System.Drawing.FontStyle]::Bold)
+$body=[System.Drawing.Font]::new('Segoe UI',13,[System.Drawing.FontStyle]::Regular)
+$small=[System.Drawing.Font]::new('Segoe UI',10,[System.Drawing.FontStyle]::Regular)
+$g.DrawString('KRANNERT EXTERIOR — SOURCE COMPARISON / ROUND 3',$title,$ink,38,25)
+$p1=[System.Drawing.Rectangle]::new(40,95,690,790)
+$p2=[System.Drawing.Rectangle]::new(780,95,690,790)
+$p3=[System.Drawing.Rectangle]::new(1520,95,690,790)
+$g.FillRectangle($white,$p1);$g.FillRectangle($white,$p2);$g.FillRectangle($white,$p3)
+$g.DrawImage($imCurrent,$p1);$g.DrawImage($imModel,$p2);$g.DrawImage($imAerial,$p3)
+$g.DrawString('Official Purdue event photo',$label,$ink,43,900)
+$g.DrawString('Source-built model, R3 context render',$label,$ink,783,900)
+$g.DrawString('Purdue Libraries archive, 1963 construction aerial',$label,$ink,1523,900)
+$g.DrawString('Current Purdue-hosted perspective; capture date not provided. Supports light stone/concrete, narrow vertical glazing, darker ground band, and uninterrupted primary frontage.', $body,$muted,[System.Drawing.RectangleF]::new(42,943,675,105))
+$g.DrawString('Broad height, repeated narrow windows, pale facade and darker base are modeled. Entrance detail, finish, road/landscape and the re-entrant corner remain schematic.', $body,$muted,[System.Drawing.RectangleF]::new(782,943,675,105))
+$g.DrawString('Construction-era aerial supports multi-wing massing and flat roof/penthouse volumes; it does not establish current equipment or exact dimensions.', $body,$muted,[System.Drawing.RectangleF]::new(1522,943,675,105))
+$g.DrawString('The oblique corner seam falls at the GIS footprint re-entrant. It is retained pending a source that distinguishes courtyard/recess geometry from a missing facade panel.', $body,$ink,[System.Drawing.RectangleF]::new(42,1058,2160,48))
+$g.DrawString('GIS footprint: Purdue ArcGIS BuildingShapesZip4, Feature 54; WGS84 query and project-local overlay: krannert_geometry_review_r3.json and krannert_gis_footprint_overlay_r3.png.', $small,$muted,[System.Drawing.RectangleF]::new(42,1120,2160,26))
+$g.DrawString('Purdue Libraries source: https://blogs.lib.purdue.edu/news/2017/09/24/from-the-archives-standard-oil/ • 1963 construction photo; current photo: https://events.purdue.edu/krannert_building.', $small,$muted,[System.Drawing.RectangleF]::new(42,1150,2160,30))
+$g.DrawString('Render note: source paving is hidden only in this view and a neutral plane is added at z=0. The render-only plane is not saved to the asset and does not assert actual site materials.', $small,$muted,[System.Drawing.RectangleF]::new(42,1182,2160,30))
+$out=Join-Path $root 'audit/batch2_krannert/krannert_exterior_source_comparison_r3.png'
+$bmp.Save($out,[System.Drawing.Imaging.ImageFormat]::Png)
+$g.Dispose();$bmp.Dispose();$imCurrent.Dispose();$imModel.Dispose();$imAerial.Dispose()
+Write-Output $out

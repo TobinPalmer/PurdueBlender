@@ -1,0 +1,7 @@
+Add-Type -AssemblyName System.Drawing
+$pts=@((196.535,-421.196),(207.995,-421.115),(207.769,-395.855),(234.402,-395.602),(234.383,-394.273),(228.530,-393.438),(228.553,-389.212),(237.336,-387.954),(237.422,-387.954),(246.152,-389.095),(246.419,-393.254),(246.212,-393.272),(240.380,-394.169),(240.357,-395.544),(267.040,-395.291),(267.061,-397.474),(270.872,-397.441),(270.921,-403.263),(272.490,-403.251),(272.534,-408.759),(270.965,-408.771),(271.015,-414.575),(267.181,-414.603),(267.193,-416.820),(238.060,-417.003),(238.187,-434.122),(233.743,-434.152),(233.665,-422.829),(230.689,-422.847),(230.764,-435.202),(222.543,-435.252),(222.543,-435.441),(222.238,-435.440),(222.239,-435.255),(214.998,-435.298),(214.997,-435.484),(214.763,-435.484),(214.763,-435.300),(208.122,-435.342),(208.079,-432.871),(196.753,-432.950))
+$b=[System.Drawing.Bitmap]::new(1000,800);$g=[System.Drawing.Graphics]::FromImage($b);$g.Clear([System.Drawing.Color]::White);$f=[System.Drawing.Font]::new('Arial',10);$pen=[System.Drawing.Pen]::new([System.Drawing.Color]::Black,2);$scale=10;$ox=120;$oy=100
+$xy=@();foreach($p in $pts){$xy+=,[System.Drawing.PointF]::new($ox+($p[0]-196)*$scale,$oy+( -387.0-$p[1])*$scale)}
+for($i=0;$i -lt $pts.Count;$i++){$j=($i+1)%$pts.Count;$g.DrawLine($pen,$xy[$i],$xy[$j]);$g.DrawString([string]$i,$f,[System.Drawing.Brushes]::Red,$xy[$i].X,$xy[$i].Y)}
+$b.Save((Join-Path (Get-Location).Path 'audit/batch2_krannert/krannert_ring_index_map.png'),[System.Drawing.Imaging.ImageFormat]::Png);$g.Dispose();$b.Dispose()
+

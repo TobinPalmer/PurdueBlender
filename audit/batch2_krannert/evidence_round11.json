@@ -1,0 +1,68 @@
+{
+  "building_id": "krannert_building",
+  "name": "Krannert Building",
+  "revision": 11,
+  "review_date": "2026-10-24",
+  "asset_file": "modular/buildings/krannert_building.blend",
+  "scope": "Krannert-only source-backed facade cadence refinement. No master/shared files, placement marker, manifest, README, or other building assets were edited.",
+  "independent_round9_response": "The reviewer found R9 improved the broad-pier/narrow-glazing expression but the visible long wings still read as squat per-floor windows. R11 changes the documented south/front 10-bay elevation and one photographed long wing to narrow continuous upper-storey glazing strips with fine horizontal floor-level transoms.",
+  "facade_reference": {
+    "primary_source": {
+      "provider": "Indiana Architect / Indiana Society of Architects",
+      "title": "Indiana Architect, October 1965, selected-for-exhibition project page",
+      "url": "https://usmodernist.org/AIAIN/AIAIN-1965-10.pdf",
+      "page": 32,
+      "local_crop": "audit/batch2_krannert/krannert_architect_1965_photo_crop.png",
+      "visible_cues": ["tall, narrow vertical glazing extending across the upper facade", "broad pale piers", "fine horizontal floor-level window divisions", "dark/recessed ground story"],
+      "limits": "A perspective 1965 image, not a dimensioned elevation or a direct record of current condition."
+    },
+    "secondary_source": {
+      "provider": "Purdue University Events",
+      "url": "https://events.purdue.edu/krannert_building",
+      "local_photo": "audit/batch2_krannert/krannert_current_exterior_purdue.jpg",
+      "visible_cues": ["long facade with repeated tall slim glazed slots", "light piers", "fine transverse divisions"],
+      "limits": "Capture date, camera calibration, and dimensions are not supplied."
+    },
+    "model_changes": [
+      "Kept the R9 broad-pier treatment and narrow openings across short and re-entrant elevations.",
+      "On the 10-bay south/front elevation and one photo-visible long wing, changed individual upper-floor glazing rectangles to one narrow vertical glazing strip spanning modeled upper levels, interrupted visually only by fine transoms at modeled floor datums.",
+      "Estimated strip width is 0.82 m and pier width is 0.72 m, chosen as visual proportions from perspective photographs; neither is a surveyed measurement.",
+      "No roof, penthouse, floor elevation, footprint, placement, ground story, entrance canopy, or courtyard/seam geometry was changed."
+    ],
+    "renders": {
+      "south_front": "audit/batch2_krannert/krannert_south_front_r11.png",
+      "southeast_same_angle": "audit/batch2_krannert/krannert_southeast_same_corner_r11.png",
+      "southwest_same_angle": "audit/batch2_krannert/krannert_southwest_same_corner_r11.png",
+      "north_long_wing_detail": "audit/batch2_krannert/krannert_north_long_wing_r11.png",
+      "archival_comparison": "audit/batch2_krannert/krannert_archival_facade_comparison_r11.png",
+      "render_setup": "Generated after reopening the saved source blend in Blender 5.2.3. Temporary cameras, lighting/world settings, and render-only ground were not saved to the building asset."
+    }
+  },
+  "interior_and_courtyard_registration": {
+    "sources_reviewed": [
+      {
+        "title": "Purdue Krannert Building Emergency Maps",
+        "url": "https://apps.it.purdue.edu/sites/Facilities/Faq/Item/Download/2342",
+        "local_file": "audit/batch2_krannert/krannert_emergency_maps.pdf",
+        "limit": "Hand-drawn diagrams without scale, dimensions, issue date, or as-built status; adjacency/topology only."
+      },
+      {
+        "title": "Krannert Building MEL Renovation Phase III, Second Floor Furniture Plan",
+        "url": "https://lib.purdue.edu/wp-content/uploads/2024/04/schematic.pdf",
+        "local_file": "audit/batch2_krannert/krannert_mel_2f_furniture_plan_2010.pdf",
+        "limit": "Sheet explicitly marked NOT TO SCALE; renovation furniture plan is not an as-built measured interior plan."
+      },
+      {
+        "title": "Purdue Daniels School of Business self-guided tour",
+        "url": "https://business.purdue.edu/undergraduate/visit/self-guided-tour.pdf",
+        "limit": "Interior photographs support room appearance and furnishing types but lack reliable plan position/dimensions."
+      }
+    ],
+    "decision": "No dimensionally registered room partitions, circulation routes, courtyard walls, or re-entrant seam edits were justified by the available sources. Existing Drawing Room and Parrish Library spaces remain. Whole-floor interior organization and the courtyard gap remain explicitly unverified.",
+    "evidence_needed": "A dimensioned/as-built drawing with known scale and orientation, or interior photos tied to specific floor/position, is needed to place partitions or resolve the courtyard seam defensibly."
+  },
+  "validation": "audit/batch2_krannert/validation_round11.json",
+  "mesh_update_record": "audit/batch2_krannert/facade_round11_update.json",
+  "builder_source": "build_krannert_building.py",
+  "independent_grade_status": "Awaiting fresh independent full-building review; no self-score assigned."
+}

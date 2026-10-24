@@ -1,0 +1,111 @@
+{
+  "building_id": "krannert_building",
+  "name": "Krannert Building",
+  "revision": 7,
+  "review_date": "2026-10-24",
+  "asset_file": "modular/buildings/krannert_building.blend",
+  "source_scope": "Krannert-only source/evidence audit. No master, marker, manifest, README, shared data, or other building asset was edited.",
+  "placement_and_footprint": {
+    "master_marker_source": "audit/batch2_krannert/coordinator_placement_review_20261024.json",
+    "marker": {
+      "location_m": [
+        234.5345001,
+        -412.7189941,
+        0
+      ],
+      "rotation_rad": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "marker_manifest_xy_delta_m": 1.53E-05,
+    "official_footprint": {
+      "provider": "Purdue Campus GIS",
+      "service": "BuildingShapesZip4 FeatureServer layer 0",
+      "feature_id": 54,
+      "native_crs": "EPSG:3857",
+      "saved_snapshot_crs": "EPSG:4326",
+      "snapshot": "audit/batch2_krannert/krannert_gis_fid54_4326.json"
+    },
+    "independent_imagery_check": {
+      "provider": "Indiana Geographic Information Office / IndianaMap",
+      "service": "DynamicWebMercator/Indiana_2023_Imagery ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
+      "export_url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer/exportImage?bbox=-86.9128%2C40.4228%2C-86.9092%2C40.4248&bboxSR=4326&imageSR=4326&size=1600%2C900&format=jpgpng&f=image",
+      "export_response_extent_wgs84": [
+        -86.9128,
+        40.4227875,
+        -86.9092,
+        40.4248125
+      ],
+      "pixel_dimensions": [
+        1600,
+        900
+      ],
+      "source_date": "Indiana 2023 spring orthophotography cycle; exact acquisition date is not provided by this image service export.",
+      "nominal_source_cell_size": "6 inches (0.1524 m); export display pixels are approximately 0.19 m east-west by 0.25 m north-south over this bbox.",
+      "license": "CC0",
+      "local_crop": "audit/batch2_krannert/indiana_ortho_krannert_2023_crop.jpg",
+      "overlay": "audit/batch2_krannert/krannert_2023_orthophoto_footprint_overlay_r7.png",
+      "overlay_script": "audit/batch2_krannert/overlay_krannert_ortho_r7.ps1",
+      "method": "The GIS FID 54 WGS84 ring is drawn into the ortho export using the service's returned WGS84 extent. No translation, scale or rotation was fitted to the image. The building's shared marker already agrees with its manifest; local model coordinates use the documented approximate project conversion.",
+      "observation": "The GIS outline follows the visible roof/building perimeter and re-entrant roof shape at screening scale, supporting identity, broad orientation and approximate position against an independent aerial raster. Local edge offsets are visually on the order of the imagery pixel scale to about a metre in parts; shadow, parapet/overhang, orthorectification, raster display resolution, and non-survey conversion prevent a precise wall-residual claim.",
+      "limits": "This verifies only broad roof/building context and orientation. The GIS footprint and source model wire share GIS-derived geometry, so neither alone is independent as-built geometry; the orthophoto is the independent visual cross-check. It does not measure wall faces, dimensions, facade, elevation, or interior."
+    }
+  },
+  "vertical_evidence": {
+    "analysis": "audit/batch2_krannert/roof_height_assessment_r7.json",
+    "dsm_source": "Indiana GIO 2018 Tippecanoe 3DEP tile in2018_30001885_12, 5 ft cells, 2018-04-20; local source raster retained under audit/complete_knoy/.",
+    "terrain_source": "Indiana GIO 2016-2020 bare-earth DEM ImageServer, 22 interior point queries.",
+    "results_ftUS": {
+      "DSM_valid_cell_centers": 895,
+      "DSM_median_elevation": 721.71,
+      "bare_earth_median_elevation": 615.255,
+      "median_surface_minus_bare_earth": 106.455,
+      "surface_agl_p10": 13.447,
+      "surface_agl_p90": 106.685,
+      "surface_agl_max": 107.655,
+      "surface_agl_p25": 91.6149951171875
+    },
+    "model_comparison_ft_agl": {
+      "roof_deck": 104.3,
+      "parapet_top": 108,
+      "reported_R_attribute": 117,
+      "modeled_penthouse_top": 117,
+      "elevator_overrun_top": 120.7,
+      "L7_datum": 91.6
+    },
+    "assessment": "The DSM p25 surface difference is 91.61 ft AGL, close to the modeled L7 datum 91.6 ft; median is 106.46 ft, close to the modeled roof deck at 104.3 ft; p90 is 106.69 ft and maximum 107.65 ft, near the 108 ft parapet. This pattern supports broad stepped-roof levels, not exact story identification. The 2018 capture does not independently support the modeled 117 ft penthouse top. This is not proof the penthouse is absent: 5 ft DSM sampling may miss narrow/occluded elements and capture date/roof changes matter. Treat the high penthouse/overrun as unresolved rather than measured. GIS R/Extrution semantics and unit basis remain undocumented; no height geometry was changed.",
+    "method_limits": [
+      "DSM cell centers are sampled within the official GIS footprint; polygon and source-to-image conversion are approximate.",
+      "DSM includes roof planes, edges, low surfaces/voids, and rooftop objects; p10 is not a roof-height estimate.",
+      "Bare-earth DEM is interpolated under the structure and is not a surveyed base datum.",
+      "Surface statistics cannot establish story count, exact parapet height, penthouse form, or a named story/roof slab."
+    ]
+  },
+  "interior_sources": {
+    "provider": "Purdue University Mitch Daniels School of Business Safety and Facilities",
+    "landing_page": "https://apps.it.purdue.edu/sites/Facilities",
+    "document": "Krannert Emergency Maps.pdf",
+    "download_url": "https://apps.it.purdue.edu/sites/Facilities/Faq/Item/Download/2342",
+    "local_pdf": "audit/batch2_krannert/krannert_emergency_maps.pdf",
+    "page_count": 9,
+    "renders": "audit/batch2_krannert/krannert_emergency_map_page-1.png through krannert_emergency_map_page-9.png",
+    "coverage": "Basement, Ground Floor, and Floors 1–7; diagrams mark rooms, corridors, stairwells, elevators, and evacuation features.",
+    "use": "This is source evidence for broad circulation/core and room adjacency, and shows why the building is not an undivided interior shell.",
+    "limits": "The emergency route maps have no stated scale, dimension strings, architect/issue date or as-built status, and hand-drawn linework is visibly schematic. They do not provide defensible wall thicknesses, room dimensions, door widths/swing, furniture, ceiling heights or current condition. No interior partition geometry was inferred from the maps in R7; they will guide only explicitly approximate/topological work if later added."
+  },
+  "asset_changes": {
+    "model_geometry_changed": false,
+    "model_materials_changed": false,
+    "placement_changed": false,
+    "external_image_dependencies_added": false
+  },
+  "validation": "The unchanged saved source was reopened in Blender 5.2.3 for audit/batch2_krannert/validation_round7.json. Existing R4 validation remains valid for source geometry/material checks; no blend save was required in this evidence-only revision."
+}

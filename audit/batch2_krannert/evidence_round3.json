@@ -1,0 +1,115 @@
+{
+  "building_id": "krannert_building",
+  "name": "Krannert Building",
+  "asset_file": "modular/buildings/krannert_building.blend",
+  "export_collection": "Asset_krannert_building",
+  "revision": 3,
+  "review_date": "2026-10-24",
+  "source_scope": "Building-specific source library and evidence only; master, marker, manifest, README and shared indexes were not edited.",
+  "changes_since_round2": [
+    "Removed the unsupported 88 x 61.53 m rectangular KRAN_Surrounding_Plaza_Paving object from the saved source asset.",
+    "Removed generation of that site slab from the dedicated build_krannert_building.py script and documented that roads, sidewalks, planting and grade belong to the campus master context unless source-mapped evidence is available.",
+    "Added raw Purdue campus GIS feature and layer metadata snapshots, footprint screening measurements, a GIS/asset wire overlay, a source-plan comparison, and updated exterior renders after reopening the saved asset.",
+    "Kept the R2 source-supported Drawing Room and Parrish Library furniture and room cues. No dimensions or room locations were inferred from the available not-to-scale 2010 furniture plan."
+  ],
+  "sources": [
+    {
+      "provider": "Purdue University campus GIS, BuildingShapesZip4 FeatureServer layer 0",
+      "feature_id": 54,
+      "feature_name": "Krannert Building",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D54&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "retrieved": "2026-10-24",
+      "source_crs": "Layer native EPSG:3857 (metadata snapshot); raw requested geometry EPSG:4326 WGS84",
+      "raw_snapshot": "audit/batch2_krannert/krannert_gis_fid54_4326.json",
+      "metadata_snapshot": "audit/batch2_krannert/krannert_gis_layer_metadata.json",
+      "use_and_limit": "Footprint and reported level/height attributes only. The approximate campus-local conversion is not a surveyed CRS. Layer field names have no descriptions/units in the retrieved schema; R and Extrution are reported values, not verified elevations."
+    },
+    {
+      "provider": "Purdue Libraries",
+      "title": "Krannert Building construction aerial",
+      "url": "https://blogs.lib.purdue.edu/news/2017/09/24/from-the-archives-standard-oil/",
+      "source_date": "1963 construction image (date reported by source page)",
+      "local_copy": "audit/batch2_krannert/krannert_aerial_1963_construction.jpg",
+      "use_and_limit": "Broad multi-wing massing and flat-roof/penthouse context; does not establish present rooftop equipment, exact dimensions, or every facade detail."
+    },
+    {
+      "provider": "Purdue University Events",
+      "title": "Krannert Building exterior photograph",
+      "url": "https://events.purdue.edu/krannert_building",
+      "source_date": "Capture date not provided by source",
+      "local_copy": "audit/batch2_krannert/krannert_current_exterior_purdue.jpg",
+      "use_and_limit": "Visible facade palette/opening cues only; not an elevation drawing or dimensional source."
+    },
+    {
+      "provider": "Purdue Libraries, Krannert Building MEL Renovation Phase III",
+      "title": "Second Floor Furniture Plan",
+      "url": "https://lib.purdue.edu/wp-content/uploads/2024/04/schematic.pdf",
+      "source_date": "2010-12-16, printed on sheet",
+      "local_copy": "audit/batch2_krannert/krannert_mel_2f_furniture_plan_2010.pdf",
+      "use_and_limit": "The sheet explicitly says NOT TO SCALE. It is shown beside the modeled Parrish floor in audit/batch2_krannert/parrish_plan_source_comparison_r3.png for qualitative layout discussion only; no registration, measured XY, dimensions, or current as-built state is claimed."
+    },
+    {
+      "provider": "Purdue Daniels School of Business",
+      "title": "Official self-guided tour",
+      "url": "https://business.purdue.edu/undergraduate/visit/self-guided-tour.pdf",
+      "reviewed": "2026-10-24",
+      "use_and_limit": "Pages 4 and 6 support Parrish Library and Drawing Room identities and broad furnishing cues. Photographs are not measured plans."
+    },
+    {
+      "provider": "Purdue Libraries",
+      "title": "Parrish Library renovation preview",
+      "url": "https://blogs.lib.purdue.edu/news/2026/06/08/parrish-library-undergoing-renovations-and-facility-improvements/",
+      "reviewed": "2026-10-24",
+      "use_and_limit": "Shows proposed/ongoing refreshed desk and table areas; the article reports work in progress, so the final installed state and coordinates are uncertain."
+    }
+  ],
+  "footprint_and_placement": {
+    "review_record": "audit/batch2_krannert/krannert_geometry_review_r3.json",
+    "overlay": "audit/batch2_krannert/krannert_gis_footprint_overlay_r3.png",
+    "method": "Compare the raw WGS84 GIS ring with the project approximate campus-local formula, subtract manifest origin for local coordinates, and compare vertices to the source footprint wire. The source wire is derived from this same GIS feature.",
+    "approximate_feature_bounds_local_m": [[-37.9997, 37.9997], [-22.7653, 24.7648]],
+    "approximate_feature_area_m2": 2086.65,
+    "source_wire_to_raw_ring_nearest_vertex_error_mean_max_m": [0.00039, 0.00065],
+    "structural_wall_aabb_excess_beyond_feature_each_side_m_approx": [0.19975, 0.19975, 0.19977, 0.19848],
+    "interpretation_limit": "Wire/GIS agreement is construction alignment, not independent survey confirmation. The exterior wall AABB is only a screen and does not score polygon shape. The comparison projection is approximate."
+  },
+  "master_marker_check": {
+    "reported_by": "Coordinator, read-only master inspection",
+    "date": "2026-10-24",
+    "marker_location_m": [234.5345001, -412.7189941, 0.0],
+    "marker_rotation_deg": [0.0, 0.0, 0.0],
+    "marker_scale": [1.0, 1.0, 1.0],
+    "manifest_origin_xy_m": [234.5345001220703, -412.71900939941406],
+    "difference_from_manifest_xy_m": [0.000000022, 0.0000154],
+    "scope_limit": "Coordinator check only; this source agent did not open-save or modify the master or placement marker."
+  },
+  "height_and_roof": {
+    "reported_gis_fields": {"NUM_LEVELS": 10, "CountOfFLO": 10, "Extrution": 108, "R": 117},
+    "model_main_parapet_top_m": 33.168,
+    "model_penthouse_bounds_z_m": [31.791, 37.05],
+    "interpretation_limit": "The GIS field schema does not describe units or vertical datum. The build script interprets Extrution=108 and R=117 as feet when creating nominal main envelope cues, but the fit is not an independent surveyed height verification. Elevator overrun/trim above the main roof are generator estimates. The 1963 aerial supports broad flat-roof/penthouse massing only, not current rooftop detail. No roof geometry was changed in this round."
+  },
+  "site_grade": {
+    "removed_object": "KRAN_Surrounding_Plaza_Paving",
+    "former_bounds_local_m": [[-43.9995, 43.9995], [-30.7650, 30.7650], [-0.15, 0.0]],
+    "reason": "The broad rectangular slab extended roughly 6 m beyond the footprint, and no evidence supported its extent, paving, or grade. It also overlapped responsibility of master terrain and roads.",
+    "current_asset_site_context": "No roadway, sidewalk, planting, or grade geometry is claimed in this building library. Master campus terrain/roads provide context.",
+    "render_context": "Exterior audit views use a neutral temporary plane at z=-0.03 m; it is not saved in the asset and is not a site survey."
+  },
+  "interior_and_plan_evidence": {
+    "comparison_image": "audit/batch2_krannert/parrish_plan_source_comparison_r3.png",
+    "caveat": "The 2010 sheet is explicitly not to scale and predates current renovation. Comparison is qualitative and unregistered. R2 modeled room locations, dimensions, furniture counts, and circulation remain estimates.",
+    "retained_photo_supported_cues": ["Drawing Room glass meeting rooms and varied lounge/high-top seating", "Parrish books, study tables/workstations and booth seating"],
+    "no_claim": "No exact interior dimensions or complete current as-built floor plan are claimed."
+  },
+  "validation": "audit/batch2_krannert/validation_round3.json",
+  "previews": {
+    "exterior_front": "audit/batch2_krannert/krannert_exterior_front_r3.png",
+    "courtyard_corner": "audit/batch2_krannert/krannert_courtyard_corner_r3.png",
+    "gis_footprint_overlay": "audit/batch2_krannert/krannert_gis_footprint_overlay_r3.png",
+    "parrish_plan_source_comparison": "audit/batch2_krannert/parrish_plan_source_comparison_r3.png",
+    "drawingroom_interior": "audit/batch2_krannert/drawingroom_r2.png",
+    "parrish_interior": "audit/batch2_krannert/parrish_r2.png"
+  },
+  "independent_grade_status": "Awaiting a fresh independent full-building review; no self-score assigned."
+}

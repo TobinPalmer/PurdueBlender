@@ -1,0 +1,60 @@
+{
+  "building_id": "krannert_building",
+  "revision": 8,
+  "review_date": "2026-10-24",
+  "asset_file": "modular/buildings/krannert_building.blend",
+  "scope": "Krannert-only source/evidence audit. No blend geometry/materials/placement, master, manifest, README, shared indexes, or other building files were edited.",
+  "saved_asset_footprint_check": {
+    "source_object": "KRAN_FloorSlab_Roof_Deck",
+    "reopened_with": "Blender 5.2.3 LTS",
+    "method": "Reopened the saved source blend, extracted the 41 unique upper-perimeter vertices from the roof-deck mesh, and converted their asset-local XY coordinates back through the manifest placement origin and project approximate campus coordinate conversion. Projected the resulting WGS84 ring directly into the Indiana orthophoto's returned WGS84 extent. No image-fit translation, rotation or scale was applied.",
+    "ring_extraction": "audit/batch2_krannert/asset_footprint_round8.json",
+    "comparison_projection": "Project approximation: X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. This is not a surveyed CRS.",
+    "source_gis": "Purdue Campus GIS BuildingShapesZip4 FeatureServer layer 0, FID 54, KRAN; saved WGS84 snapshot at audit/batch2_krannert/krannert_gis_fid54_4326.json.",
+    "asset_to_raw_gis_nearest_vertex_m": {
+      "mean": 0.0003906,
+      "maximum": 0.0006618
+    },
+    "interpretation": "The saved roof-deck perimeter tracks the Purdue GIS footprint conversion and falls over the visible building roof at screening scale in the independent Indiana orthophoto. The roof slab polygon was generated from the same GIS ring, so the sub-millimeter trace residual verifies source conversion and saved-asset transform integrity, not as-built wall registration. Aerial shadow, roof overhang/parapet and approximate coordinate conversion prevent a precise facade residual claim.",
+    "orthophoto": {
+      "provider": "Indiana Geographic Information Office / IndianaMap",
+      "service": "DynamicWebMercator/Indiana_2023_Imagery ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
+      "source_date": "2023 spring orthophoto cycle; exact acquisition date not provided by export",
+      "nominal_cell_size": "6 in",
+      "license": "CC0",
+      "source_crop": "audit/batch2_krannert/indiana_ortho_krannert_2023_crop.jpg",
+      "overlay": "audit/batch2_krannert/krannert_asset_footprint_ortho_overlay_r8.png"
+    },
+    "master_marker_context": "Coordinator read-only check: location (234.5345001,-412.7189941,0), zero rotation, unit scale, within 0.0000153 m of manifest origin. Marker consistency plus the no-fit aerial overlay supports broad orientation/position; neither proves surveyed shell registration.",
+    "validation": "audit/batch2_krannert/validation_round8.json"
+  },
+  "vertical_and_roof_semantics": {
+    "evidence": "audit/batch2_krannert/roof_height_assessment_r7.json and audit/batch2_krannert/evidence_round7.json",
+    "summary": "2018 Indiana 3DEP DSM, 5 ft cells, sampled within raw Purdue GIS FID 54, has median 721.71 ftUS. Twenty-two Indiana 2016-2020 bare-earth DEM queries have median 615.255 ftUS, yielding indicative median roof-surface difference 106.455 ft; p25=91.615 ft, p90=106.685 ft, max=107.655 ft. These values are broadly consistent with stepped surfaces near model L7=91.6 ft, roof deck=104.3 ft and parapet=108 ft, but do not identify floors or named datums.",
+    "gis_field_semantics": "Feature schema only identifies F01-F07, G, R and Extrution as numeric fields without descriptions or units. Subtracting G from F01-F07 yields the modeled floor datums under a conditional feet/common-datum interpretation; R-G matches roof deck while raw R equals modeled penthouse top only under a different above-grade interpretation. Extrution=108 matches parapet only under an inferred above-grade-feet interpretation. Units and vertical meanings remain undocumented.",
+    "limits": ["5 ft DSM mixes roof planes, lower steps, edges, openings and rooftop elements; bare-earth DEM is interpolated under the structure, not surveyed footing elevation.", "The 2018 surface does not independently support the modeled 117 ft penthouse top, but sampling/date limits cannot prove absence; retain penthouse and overrun as unresolved.", "Do not relabel modeled levels, roof deck, penthouse or overrun as verified based on these checks."]
+  },
+  "interior_source_limits": {
+    "source": "Purdue Daniels School Safety and Facilities, Krannert Emergency Maps.pdf, https://apps.it.purdue.edu/sites/Facilities/Faq/Item/Download/2342",
+    "local_copy": "audit/batch2_krannert/krannert_emergency_maps.pdf",
+    "coverage": "Basement, ground floor and floors 1-7; hand-drawn diagrams mark rooms, corridors, stairwells and elevators.",
+    "use": "Broad topology and circulation context only; no new partition geometry added.",
+    "limits": "No stated scale, dimension strings, issue date or as-built status; not sufficient to locate walls/doors or infer dimensions. Preserve room layouts, courtyard seam and circulation as unresolved unless stronger plans/photos become available."
+  },
+  "asset_changes": {
+    "blend_geometry_changed": false,
+    "blend_materials_changed": false,
+    "blend_placement_changed": false,
+    "master_or_shared_files_changed": false,
+    "new_evidence_files": [
+      "audit/batch2_krannert/asset_footprint_round8.json",
+      "audit/batch2_krannert/extract_asset_footprint_r8.py",
+      "audit/batch2_krannert/overlay_krannert_asset_footprint_r8.ps1",
+      "audit/batch2_krannert/krannert_asset_footprint_ortho_overlay_r8.png",
+      "audit/batch2_krannert/validate_round8.py",
+      "audit/batch2_krannert/validation_round8.json"
+    ]
+  },
+  "unresolved": ["Independent survey-grade shell-to-GIS wall registration", "GIS vertical units and roof field semantics", "Exact roof/penthouse/overrun elevations", "Current facade cadence and material calibration", "Courtyard/re-entrant seam condition", "Scale and as-built status of emergency-map interior topology"]
+}

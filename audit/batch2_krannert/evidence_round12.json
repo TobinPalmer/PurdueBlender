@@ -1,0 +1,51 @@
+{
+  "building_id": "krannert_building",
+  "name": "Krannert Building",
+  "revision": 12,
+  "review_date": "2026-10-24",
+  "asset_file": "modular/buildings/krannert_building.blend",
+  "scope": "Krannert-only facade cadence refinement. No master/shared files, marker, manifest, README, or other building assets were edited.",
+  "review_response": "The R11 independent review said tall glazing improved but the full visible facade still read as stacked windows with broad bands, and several visible long elevations retained the earlier treatment. R12 extends the same photo-supported continuous-slot treatment to the long south/front and adjoining photographed wings, while leaving short returns and uncertain hidden faces in the prior design.",
+  "source_support": [
+    {
+      "provider": "Indiana Architect / Indiana Society of Architects",
+      "title": "Indiana Architect, October 1965, selected-for-exhibition project page",
+      "url": "https://usmodernist.org/AIAIN/AIAIN-1965-10.pdf",
+      "page": 32,
+      "local_crop": "audit/batch2_krannert/krannert_architect_1965_photo_crop.png",
+      "cues": ["tall narrow dark glazing slots", "broad pale piers", "fine floor-level transverse divisions", "dark ground level"],
+      "limits": "Perspective historical photo, not a calibrated elevation; it does not provide measured opening widths or certify hidden faces/current condition."
+    },
+    {
+      "provider": "Purdue University Events",
+      "title": "Krannert Building exterior photograph",
+      "url": "https://events.purdue.edu/krannert_building",
+      "local_photo": "audit/batch2_krannert/krannert_current_exterior_purdue.jpg",
+      "cues": ["long facade repeats slim vertical glazing", "visible side elevation uses the same vertical-slot rhythm", "light piers and dark lower story"],
+      "limits": "Image date, dimensions, and camera calibration are not provided."
+    }
+  ],
+  "model_changes": [
+    "Changed upper glazing on long visible runs (8-10 bays, including the south main facade and visible wing elevations) to narrow vertical strips continuous between existing floor slabs.",
+    "Reduced the continuous-strip sill to 0.04 m and located fine 0.045 m transoms 0.04 m above existing slab tops, leaving only the modeled slab edge as the horizontal break rather than wide modeled spandrel panels.",
+    "Kept an estimated 0.82 m strip width and existing 0.72 m pier width. These dimensions are visual estimates from the photographs, not surveyed measurements.",
+    "Short entrance/return bays and elevations without photo support retain the R9 per-floor window treatment. Footprint, floor/roof elevations, ground-story treatment, placement, entrance, courtyard and re-entrant gap are unchanged."
+  ],
+  "render_evidence": {
+    "south_front": "audit/batch2_krannert/krannert_south_front_r12.png",
+    "southeast_corner": "audit/batch2_krannert/krannert_southeast_same_corner_r12.png",
+    "southwest_corner": "audit/batch2_krannert/krannert_southwest_same_corner_r12.png",
+    "north_long_wing_detail": "audit/batch2_krannert/krannert_north_long_wing_r12.png",
+    "archival_comparison": "audit/batch2_krannert/krannert_archival_facade_comparison_r12.png",
+    "method": "Renders were made after reopening the saved asset in Blender 5.2.3 with render-only world, camera and ground settings. They are previews, not additional saved asset geometry."
+  },
+  "interior_courtyard_limit": {
+    "available_sources": ["Purdue emergency maps without scale/dimensions/date/as-built status", "2010 MEL second-floor furniture plan marked NOT TO SCALE", "Purdue tour photographs without plan location or dimensions"],
+    "decision": "No interior partitions, whole-floor circulation, or courtyard/re-entrant walls were added or claimed measured. The existing Drawing Room and Parrish Library remain; whole-floor layout and seam remain uncertain.",
+    "needed": "Dimensioned as-built plans with scale/orientation or located interior photographs."
+  },
+  "mesh_update_record": "audit/batch2_krannert/facade_round12_update.json",
+  "validation": "audit/batch2_krannert/validation_round12.json",
+  "builder": "build_krannert_building.py",
+  "independent_grade_status": "Awaiting fresh independent full-building review; no self-score assigned."
+}

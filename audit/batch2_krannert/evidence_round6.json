@@ -1,0 +1,99 @@
+{
+  "building_id": "krannert_building",
+  "name": "Krannert Building",
+  "evidence_supplement": 6,
+  "review_date": "2026-10-24",
+  "scope": "Read-only interpretation of existing official Purdue GIS vertical fields against the preserved Krannert builder datums. No asset, geometry, placement, master, manifest, or shared files changed.",
+  "source": {
+    "provider": "Purdue Campus GIS",
+    "service": "BuildingShapesZip4 FeatureServer, layer 0 (BuildingShapes)",
+    "feature_id": 54,
+    "building_abbreviation": "KRAN",
+    "native_crs": "EPSG:3857 (Web Mercator)",
+    "saved_feature_snapshot": "audit/batch2_krannert/krannert_gis_fid54_4326.json",
+    "saved_layer_metadata": "audit/batch2_krannert/krannert_gis_layer_metadata.json",
+    "feature_snapshot_crs": "EPSG:4326",
+    "retrieved_or_checked": "2026-10-24",
+    "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D54&outFields=*&returnGeometry=true&outSR=4326&f=pjson"
+  },
+  "raw_attributes": {
+    "Elevation": 612.4,
+    "SB": 0,
+    "B": 0,
+    "G": 12.7,
+    "F01": 25.4,
+    "F02": 40.7,
+    "F03": 53.4,
+    "F04": 66.2,
+    "F05": 78.9,
+    "F06": 91.6,
+    "F07": 104.3,
+    "R": 117,
+    "Extrution": 108
+  },
+  "field_metadata_findings": {
+    "units_documented": false,
+    "field_descriptions_present": false,
+    "aliases": "The returned aliases repeat the field names; no units or semantic descriptions are supplied.",
+    "interpretation": "Values are consistent with feet, but that unit is inferred rather than specified by the available layer schema. The relationship of Elevation, G, R and Extrution to a vertical datum or to one another is not documented."
+  },
+  "comparison_method": "For a conditional feet interpretation, subtract the raw G value from F01-F07 and R, then compare those differences with the builder's ground-relative floor/roof datums. This is an internal consistency check against values the model was already built from, not independent as-built measurement.",
+  "conditional_comparison_ft": [
+    {
+      "gis_expression": "F01 - G",
+      "result": 12.7,
+      "builder_datum_ft": 12.7,
+      "residual_ft": 0.0
+    },
+    {
+      "gis_expression": "F02 - G",
+      "result": 28.0,
+      "builder_datum_ft": 28.0,
+      "residual_ft": 0.0
+    },
+    {
+      "gis_expression": "F03 - G",
+      "result": 40.7,
+      "builder_datum_ft": 40.7,
+      "residual_ft": 0.0
+    },
+    {
+      "gis_expression": "F04 - G",
+      "result": 53.5,
+      "builder_datum_ft": 53.5,
+      "residual_ft": 0.0
+    },
+    {
+      "gis_expression": "F05 - G",
+      "result": 66.2,
+      "builder_datum_ft": 66.2,
+      "residual_ft": 0.0
+    },
+    {
+      "gis_expression": "F06 - G",
+      "result": 78.9,
+      "builder_datum_ft": 78.9,
+      "residual_ft": 0.0
+    },
+    {
+      "gis_expression": "F07 - G",
+      "result": 91.6,
+      "builder_datum_ft": 91.6,
+      "residual_ft": 0.0
+    },
+    {
+      "gis_expression": "R - G",
+      "result": 104.3,
+      "builder_roof_deck_datum_ft": 104.3,
+      "residual_ft": 0.0
+    }
+  ],
+  "roof_semantics_review": {
+    "extrution": "The raw value 108 numerically matches the builder's +108 ft parapet top only if interpreted as an above-ground feet field; schema does not define this.",
+    "r": "R=117 matches the builder's +117 ft penthouse top if treated as an above-ground feet field, while R-G=104.3 matches the builder roof-deck datum. Without field semantics, it is unclear whether R denotes a roof-deck elevation in the same datum as G or a roof/penthouse height above grade.",
+    "assessment": "Do not use this numeric pattern alone to claim verified parapet, roof deck, penthouse, or overall building height. Retain the existing roof/attribute ambiguity."
+  },
+  "result": "The F01-F07 sequence is internally consistent with the builder's ground-relative floor datums under a feet/common-datum interpretation. Because the model was derived from these same GIS values and the GIS units/semantics are undocumented, this does not independently verify actual floor heights. Roof fields remain ambiguous.",
+  "asset_geometry_changed": false,
+  "saved_asset_reopen_validation": "Existing audit/batch2_krannert/validation_round4.json remains the latest saved-source reopen check; this evidence-only supplement did not change the asset."
+}

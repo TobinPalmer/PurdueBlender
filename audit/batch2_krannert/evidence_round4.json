@@ -1,0 +1,66 @@
+{
+  "building_id": "krannert_building",
+  "name": "Krannert Building",
+  "revision": 4,
+  "review_date": "2026-10-24",
+  "asset_file": "modular/buildings/krannert_building.blend",
+  "export_collection": "Asset_krannert_building",
+  "source_scope": "Krannert source asset, dedicated builder, and building-specific audit only. Master, marker, manifest, README, shared indexes and other building assets were not edited.",
+  "changes_since_round3": [
+    "Applied a qualitative warm limestone/precast material variation and charcoal glazing to the existing facade materials.",
+    "Recolored 454 ground-to-L1 wall faces with an estimated red-brown masonry material. Replaced direction-sensitive brick/mortar patterning with restrained nondirectional color and bump variation because the undated photo does not resolve coursing or module scale.",
+    "No facade openings, roof, footprint, floor elevations, canopy, or courtyard/re-entrant seam geometry changed. The R3 unsupported surrounding plaza slab remains absent.",
+    "Rendered a broad-facade/return comparison and two oblique re-entrant views from the reopened source using temporary cameras and render-only ground."
+  ],
+  "visual_sources": [
+    {
+      "provider": "Purdue University Events",
+      "title": "Krannert Building exterior photograph",
+      "url": "https://events.purdue.edu/krannert_building",
+      "local_copy": "audit/batch2_krannert/krannert_current_exterior_purdue.jpg",
+      "source_capture_date": "Not provided",
+      "supports": ["qualitative warm light stone/precast appearance", "narrow dark vertical glazing", "darker ground-level band", "projecting entry context"],
+      "limits": "Perspective photograph, not a measured elevation or source for exact material values, dimensions, facade-opening geometry, roof form, or hidden/courtyard elevations."
+    },
+    {
+      "provider": "Purdue Libraries",
+      "title": "Krannert Building construction aerial",
+      "url": "https://blogs.lib.purdue.edu/news/2017/09/24/from-the-archives-standard-oil/",
+      "local_copy": "audit/batch2_krannert/krannert_aerial_1963_construction.jpg",
+      "supports": ["broad multi-wing massing", "flat-roof context"],
+      "limits": "Construction-era aerial does not establish current roof equipment, exact roof elevations, current facade, or as-built condition. No roof changes were made."
+    }
+  ],
+  "gis_and_master_registration": {
+    "feature_source": "Purdue Campus GIS BuildingShapesZip4 FeatureServer layer 0, FID 54; details and metadata in evidence_round3.json and krannert_geometry_review_r3.json.",
+    "approximate_footprint_bounds_local_m": [[-37.9997, 37.9997], [-22.7653, 24.7648]],
+    "footprint_area_approx_m2": 2086.65,
+    "wire_to_source_ring_mean_max_nearest_vertex_error_m": [0.00039, 0.00065],
+    "limits": "The wire was derived from the same feature; it is construction alignment, not independent as-built confirmation. Coordinate conversion is approximate; wall AABB is a screening check rather than polygon-shape verification.",
+    "coordinator_read_only_master_check": "audit/batch2_krannert/coordinator_placement_review_20261024.json",
+    "marker_location_m": [234.5345001, -412.7189941, 0.0],
+    "marker_rotation_rad": [0.0, 0.0, 0.0],
+    "marker_scale": [1.0, 1.0, 1.0],
+    "manifest_xy_origin_m": [234.5345001, -412.7190094],
+    "marker_manifest_xy_delta_m": 0.0000153,
+    "marker_scope_limit": "Read-only coordinator check establishes marker/manifest value agreement only, not shell-to-GIS polygon registration, facade accuracy, or vertical datum. This source task did not edit the master or marker."
+  },
+  "unknown_or_approximate_dimensions": [
+    "GIS attributes R=117 and Extrution=108 have no descriptions or units in returned layer schema; model roof/penthouse elevations remain unverified estimates.",
+    "The 1963 aerial supports only broad flat-roof/multi-wing context; current mechanical penthouse/equipment detail and top elevations are not verified.",
+    "The courtyard/re-entrant seam remains unresolved. The round4 two-view image shows model geometry from two directions, not source-supported seam validation.",
+    "Interior room XY positions, dimensions, furniture counts and circulation remain estimates; available plans are not to scale or not registered."
+  ],
+  "previews": {
+    "source_model_qualitative_corner_comparison": "audit/batch2_krannert/krannert_exterior_source_comparison_r4.png",
+    "reentrant_two_model_views": "audit/batch2_krannert/krannert_reentrant_two_views_r4.png",
+    "south_front": "audit/batch2_krannert/krannert_south_front_r4.png",
+    "southeast_corner": "audit/batch2_krannert/krannert_southeast_same_corner_r4.png",
+    "southwest_corner": "audit/batch2_krannert/krannert_southwest_same_corner_r4.png",
+    "drawing_room": "audit/batch2_krannert/drawingroom_r2.png",
+    "parrish_library": "audit/batch2_krannert/parrish_r2.png"
+  },
+  "validation": "audit/batch2_krannert/validation_round4.json",
+  "independent_review_status": "Awaiting a fresh independent full-building grade; builder assigns no self-score.",
+  "integration_note_for_coordinator": "Master placement review counted 671 objects in its linked source snapshot; the current source export collection has 670 objects because KRAN_Surrounding_Plaza_Paving was removed in R3. Shared manifest inventory still names that deleted object and requires coordinator-side reconciliation before/at integration."
+}
