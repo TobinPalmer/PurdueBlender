@@ -1,0 +1,55 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R6",
+  "sources": [
+    {
+      "id": "frp_project",
+      "url": "https://frpinc.com/projects/neil-armstrong-hall-of-engineering/",
+      "publisher": "FRP",
+      "use": "Building-specific project description and exterior/interior photographs.",
+      "supports": [
+        "Three-story cast-in-place concrete frame and steel mechanical penthouse are described.",
+        "The project description identifies a cantilevered roof/truss expression and Mayflower Red ACM cladding.",
+        "Two exposed concrete bridge levels with glass rails and three concrete stairs are described in the atrium."
+      ],
+      "limits": "The published photographs are not orthorectified or dimensioned elevations. They do not register exact facade stations, roof boundaries, floor plans, or stair routes to the local model frame."
+    },
+    {
+      "id": "wikimedia_2016_03",
+      "url": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_03.jpg",
+      "photographer": "Julian Herzog",
+      "date": "2016-08-11",
+      "license": "CC BY 4.0",
+      "camera_geotag": {
+        "latitude": 40.431433,
+        "longitude": -86.916781
+      },
+      "approx_local_camera_position_m": [-154.0, 47.3],
+      "use": "Qualitative direction/photo cue for red brick, upper glazing, curtainwall, and red roof appearance.",
+      "limits": "The geotag transforms to approximately [-154.0, 47.3]m in the existing north-oriented local GIS frame, northwest of the official footprint. The photograph has no bearing, calibrated lens, or facade control points. The image supports a general upper glazing band and finish family only; exact facade assignment, R6 band extents, panel rhythm, and dimensions are schematic rather than registered."
+    },
+    {
+      "id": "wikimedia_2016_02",
+      "url": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_02.jpg",
+      "photographer": "Julian Herzog",
+      "date": "2016-07 (Commons metadata)",
+      "license": "CC BY 4.0",
+      "use": "Secondary exterior appearance check for brick, curtainwall, and light canopy surfaces.",
+      "limits": "Not a measured elevation or a reliable basis for assigning every facade surface."
+    },
+    {
+      "id": "purdue_360_tour",
+      "url": "https://web.ics.purdue.edu/~iswartz/ofe/virtual/images/360-tour/arms/index.html",
+      "publisher": "Purdue University",
+      "use": "Confirms named Herman & Heddy Kurz Atrium and references second-floor skywalk and upper-floor engineering spaces.",
+      "limits": "The tour listing does not provide a dimensioned or direction-registered plan that can locate bridge ends, stairs, or room boundaries in the source model."
+    },
+    {
+      "id": "official_gis_lidar_r5",
+      "source_file": "audit/complete_neil_armstrong/validation_r5.json",
+      "use": "Retained R5 registration of Purdue GIS feature 642 and 2018 5-ft NDHM height masks into the existing manifest local frame.",
+      "limits": "The raster resolves broad roof-like height envelopes, not facade offsets, roof overhangs, exact planes, floor count, or interior layout. The highest zone is not proof of an occupied fifth story."
+    }
+  ],
+  "registration_summary": "R6 preserves the R5 LiDAR/GIS envelope transforms and root. The geotag only establishes that the 2016 photo was captured northwest of the building. Without bearing, calibrated camera parameters, and control points, no exact photo-to-facade registration is claimed."
+}

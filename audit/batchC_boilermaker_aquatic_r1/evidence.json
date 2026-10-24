@@ -1,0 +1,174 @@
+{
+  "building": "Morgan J. Burke Boilermaker Aquatic Center",
+  "building_id": "morgan_j_burke_boilermaker_aquatic_center",
+  "revision": 1,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+  "scope": "Only this building asset and audit/batchC_boilermaker_aquatic_r1. No master, README, manifest, shared indexes/scripts, other buildings, commit or push.",
+  "geometry_changes": [
+    {
+      "feature": "Exterior envelope and north entrance",
+      "change": "Added opaque brick/concrete GIS-aligned envelope, converted the 57 full-height transparent panes into 1.8m reflective ribbon panes, added north portal/doors/canopy/sign and removed the opposite generic threshold/name cue.",
+      "source_support": "Google Street View panorama captured July 2023 shows the north hall as red brick with lower ribbon glazing, centered entrance/canopy and building name.",
+      "limitations": "Only the north facade is directly checked. Window dimensions/divisions, other elevations, exact wall height and roof section remain estimates."
+    },
+    {
+      "feature": "Competition pool and deck",
+      "change": "Replaced one full-footprint deck slab with seven deck patches around two basins; competition pool waterline is 0.19m above asset origin and model basin depth is 2.2m.",
+      "source_support": "Purdue confirms the 8-lane, 50m competition pool.",
+      "limitations": "Basin depth/width, deck layout and dimensions not stated by the source remain schematic."
+    },
+    {
+      "feature": "Diving well",
+      "change": "Added separate 6-lane 26-yard dive pool with 17ft depth, five diving platform elevations and four springboards.",
+      "source_support": "Purdue RecWell aquatics and facility pages.",
+      "limitations": "Well width/precise location, tower supports, and platform form remain schematic without a dimensioned plan."
+    },
+    {
+      "feature": "Spa and materials",
+      "change": "Added the documented 12-person spa; corrected brick reuse on lane markers, lane markings, blocks, platforms and seating accents; added Purdue-gold material.",
+      "source_support": "Purdue facility fact sheet and existing material palette."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Purdue BuildingShapesZip4 FeatureServer layer 0, FID 896",
+      "provider": "Purdue University GIS",
+      "feature_id": 896,
+      "abbreviation": "AQUA",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D896&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "retrieved_date": "2026-10-24",
+      "source_crs": "EPSG:4326 response; FeatureServer native spatial reference EPSG:3857 / ESRI WKID 102100",
+      "measurement_method": "Ring coordinates transformed with project approximation X=(longitude+86.9137)*111412.84*cos(radians(40.4274)), Y=(latitude-40.4274)*111040 and recentered on transformed GIS bbox midpoint.",
+      "source_snapshot": "../batchC_boilermaker_aquatic_official_footprint.json",
+      "use": "Identity and plan footprint; bounds retained at ±30.098m X and ±51.252m Y.",
+      "uncertainty": "GIS footprint is not survey control and does not verify exterior elevations or roof details."
+    },
+    {
+      "title": "Google Maps Street View, Morgan J. Burke Aquatic Center north approach",
+      "provider": "Google Maps / Google Street View",
+      "pano_id": "y0c6EFsDkT7g2ak3hsZh5A",
+      "url": "https://www.google.com/maps/place/Morgan+J.+Burke+Aquatic+Center/@40.4289496,-86.9232244,191a,75y,180.41h,91.48t/data=!3m7!1e1!3m5!1sy0c6EFsDkT7g2ak3hsZh5A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-1.478424000000004%26panoid%3Dy0c6EFsDkT7g2ak3hsZh5A%26yaw%3D180.40817!7i16384!8i8192",
+      "retrieved_date": "2026-10-24",
+      "imagery_capture_date": "July 2023",
+      "camera_wgs84": [
+        40.4289496,
+        -86.9232244
+      ],
+      "heading_degrees": 180.41,
+      "supports": "Red-brick high-bay hall, lower window band, centered north entrance/canopy/name sign; distinguishes Aquatic Center from adjoining glazed CoRec.",
+      "does_not_support": "Measured dimensions, the roof section or all elevations, window spacing, or interior organization."
+    },
+    {
+      "title": "Purdue RecWell Facility Fact Sheet",
+      "provider": "Purdue University Recreation & Wellness",
+      "url": "https://purdue.edu/recwell/visit/facility/fact-sheet.php",
+      "retrieved_date": "2026-10-24",
+      "supports": "8-lane 50m pool, dive pool, four springboards, five platforms, spa, spectator seating and mezzanine.",
+      "uncertainty": "Current RecWell lists 625 seats; the Athletics story gives 700 permanent seats. Seating layout/capacity remains unresolved."
+    },
+    {
+      "title": "Purdue RecWell Aquatics",
+      "provider": "Purdue University Recreation & Wellness",
+      "url": "https://www.purdue.edu/recwell/sports-and-programs/aquatics/index.php",
+      "retrieved_date": "2026-10-24",
+      "supports": "Eight 50m pool lanes; diving well six 26-yard lanes and 17ft deep; 1/3/5/7.5/10m platform levels; two 1m and two 3m springboards; seating for 625."
+    },
+    {
+      "title": "Morgan J. Burke Aquatic Center",
+      "provider": "Purdue Athletics",
+      "url": "https://purduesports.com/morgan-j-burke-aquatic-center-1",
+      "retrieved_date": "2026-10-24",
+      "supports": "Identity, 2001 opening and official photo gallery."
+    },
+    {
+      "title": "Boilermaker Aquatic Center Story and Photo Tour",
+      "provider": "Purdue Athletics",
+      "url": "https://purduesports.com/boilermaker-aquatic-center-story-and-photo-tour",
+      "retrieved_date": "2026-10-24",
+      "supports": "Pool/dive use, moveable bulkheads, diving tower/platform heights and historical context."
+    }
+  ],
+  "height_and_roof": {
+    "official_levels": 2,
+    "gis_extrution_attribute": 12,
+    "gis_field_units": "Not defined in the layer schema.",
+    "modeled_wall_datum_m": 12.0,
+    "modeled_highest_roof_point_m": 12.298,
+    "status": "Unverified estimate; no measured elevation or roof section found. Existing roof geometry was preserved."
+  },
+  "interior_status": {
+    "competition_pool": "Published 8×50m; depth, width and location in plan remain schematic.",
+    "dive_pool": "Published 6×26yd and 17ft depth; width/location schematic.",
+    "platforms_m": [
+      1,
+      3,
+      5,
+      7.5,
+      10
+    ],
+    "springboards": "Two 1m and two 3m boards.",
+    "spa": "12-person; location schematic.",
+    "circulation": "No public dimensioned as-built plan found; rooms, lockers, mezzanine location, stairs and circulation remain unverified/schematic."
+  },
+  "validation": {
+    "revision": 1,
+    "passed": true,
+    "reopened_saved_asset": true,
+    "blender_version": "5.2.3 LTS",
+    "asset_file": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+    "collection": "Asset_morgan_j_burke_boilermaker_aquatic_center",
+    "child_inclusive_objects": 656,
+    "gis_feature_id": 896,
+    "project_local_gis_bbox_center_xy_m": [
+      -808.683,
+      80.337
+    ],
+    "local_xy_frame_and_official_gis_footprint_unchanged": true,
+    "perimeter_wall_bounds_local_m": [
+      [
+        -30.098,
+        30.098
+      ],
+      [
+        -51.252,
+        51.252
+      ]
+    ],
+    "perimeter_wall_object": "AQUA R1 | continuous brick and concrete high-bay envelope",
+    "north_facade_evidence": "Google Street View, Jul 2023 panorama y0c6EFsDkT7g2ak3hsZh5A at 40.4289496,-86.9232244 facing ~180 degrees; exterior brick, lower ribbon windows, centered entry and name sign.",
+    "ribbon_glazing_panels": 57,
+    "ribbon_glazing_height_range_m": [
+      1.8,
+      1.8
+    ],
+    "competition_pool_water_surface_z_m": 0.19,
+    "competition_pool_basin_depth_m": 2.2,
+    "dive_pool_depth_m": 5.1816,
+    "dive_pool_official_target_depth_m": 5.1816,
+    "diving_platform_levels_m": [
+      1.0,
+      3.0,
+      5.0,
+      7.5,
+      10.0
+    ],
+    "spa_present": true,
+    "exterior_building_name_present": true,
+    "all_meshes_have_material": true,
+    "mesh_z_bounds_m": [
+      -5.002,
+      12.298
+    ],
+    "external_image_dependencies": 0,
+    "master_or_manifest_edited": false,
+    "renders": [
+      "audit/batchC_boilermaker_aquatic_r1/aquatic_r1_north_exterior.png",
+      "audit/batchC_boilermaker_aquatic_r1/aquatic_r1_interior_cutaway.png",
+      "audit/batchC_boilermaker_aquatic_r1/aquatic_r1_interior_detail.png"
+    ]
+  },
+  "asset_sha256": "3af74fabaa31d0658d61c15b7566129c68db05d894b4eecdc6f83ea831aa651d",
+  "independent_grade": "Pending; no self-score claimed.",
+  "master_or_manifest_edited": false
+}

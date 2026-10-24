@@ -18,14 +18,14 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Hansen Life Sciences | [hansen_life_sciences.blend](buildings/hansen_life_sciences.blend) | 816 |
 | Hicks Library | [hicks_library.blend](buildings/hicks_library.blend) | 250 |
 | Hovde Hall | [hovde_hall.blend](buildings/hovde_hall.blend) | 760 |
-| Knoy Hall | [knoy_hall.blend](buildings/knoy_hall.blend) | 62 |
+| Knoy Hall | [knoy_hall.blend](buildings/knoy_hall.blend) | 158 |
 | Krannert Building | [krannert_building.blend](buildings/krannert_building.blend) | 670 |
-| Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 508 |
+| Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 601 |
 | Mackey Arena | [mackey_arena.blend](buildings/mackey_arena.blend) | 391 |
 | Math Sciences | [math_sciences.blend](buildings/math_sciences.blend) | 593 |
 | Mccutcheon Hall | [mccutcheon_hall.blend](buildings/mccutcheon_hall.blend) | 219 |
 | Mechanical Engineering | [mechanical_engineering.blend](buildings/mechanical_engineering.blend) | 55 |
-| Neil Armstrong Hall | [neil_armstrong_hall.blend](buildings/neil_armstrong_hall.blend) | 444 |
+| Neil Armstrong Hall | [neil_armstrong_hall.blend](buildings/neil_armstrong_hall.blend) | 449 |
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](buildings/niswonger_aviation_tech.blend) | 2298 |
 | Owen Hall | [owen_hall.blend](buildings/owen_hall.blend) | 799 |
 | Peirce Hall | [peirce_hall.blend](buildings/peirce_hall.blend) | 1236 |
@@ -68,12 +68,12 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Heine Pharmacy | [heine_pharmacy.blend](buildings/heine_pharmacy.blend) | 133 |
 | Horticulture Building | [horticulture_building.blend](buildings/horticulture_building.blend) | 728 |
 | Krach Leadership Center | [krach_leadership_center.blend](buildings/krach_leadership_center.blend) | 36 |
-| Lambert Fieldhouse | [lambert_fieldhouse.blend](buildings/lambert_fieldhouse.blend) | 339 |
+| Lambert Fieldhouse | [lambert_fieldhouse.blend](buildings/lambert_fieldhouse.blend) | 932 |
 | Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](buildings/life_science_plant_and_soils_laboratory.blend) | 641 |
 | Lyles-Porter Hall | [lyles_porter_hall.blend](buildings/lyles_porter_hall.blend) | 11 |
 | Materials Science and Electrical Engineering | [materials_science_and_electrical_engineering_msee.blend](buildings/materials_science_and_electrical_engineering_msee.blend) | 1200 |
-| Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 565 |
-| National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](buildings/national_soil_erosion_laboratory.blend) | 462 |
+| Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 1030 |
+| National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](buildings/national_soil_erosion_laboratory.blend) | 560 |
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](buildings/native_american_educational_and_cultural_center_nacc.blend) | 806 |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 414 |
 | Physics Building | [physics_building_phys_3bf42f3.blend](buildings/physics_building_phys_3bf42f3.blend) | 110 |

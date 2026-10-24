@@ -1,0 +1,48 @@
+{
+  "building": "Morgan J. Burke Boilermaker Aquatic Center",
+  "building_id": "morgan_j_burke_boilermaker_aquatic_center",
+  "revision": 6,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+  "scope": "Only the Aquatic Center asset and its dedicated audit directory were changed. No master/shared/index/README/manifest edits and no commit.",
+  "reviewer_r5_grade": 7.9,
+  "reviewer_r5_findings": [
+    "Make a visible improvement in building form or spatial presentation.",
+    "Hall still reads repetitive beneath a broad shallow roof; no measured support exists for roof shape or height.",
+    "Seating/rails remain schematic and sign is small from a distance.",
+    "Strengthen interior context and seating read while separating approximate site dressing from georeferenced placement."
+  ],
+  "sources": [
+    {"name":"Purdue Athletics official facility photo gallery","url":"https://purduesports.exposure.co/morgan-j-burke-aquatic-center","date":"2018-01-19","supports":"Building-specific interior photographs show a high-volume natatorium, exposed light steel roof structure, overhead lighting, spectator seating, and Purdue displays; photos are qualitative and not measured."},
+    {"name":"Arsee Engineers athletics projects","url":"https://www.arsee-engineers.com/project-athletic.html","supports":"Engineer project photo shows Purdue Aquatic Center interior with exposed white steel trusses and pool/gallery context; no dimensions or member schedule."},
+    {"name":"Purdue RecWell Aquatics","url":"https://www.purdue.edu/recwell/sports-and-programs/aquatics/index.php","supports":"Published aquatic program, pool details and 625 spectator capacity."},
+    {"name":"Purdue RecWell facility fact sheet","url":"https://purdue.edu/recwell/visit/facility/fact-sheet.php","supports":"Published facility uses and mezzanine."},
+    {"name":"Tnemec Boilermaker Aquatic Center profile","url":"https://www.tnemec.com/documents/134/Boilermaker_Aquatic_Center_Profile.pdf","supports":"Protected steel roof deck and coating finish context; does not support roof shape or dimensions."},
+    {"name":"Official GIS footprint, FID 896","file":"audit/batchC_boilermaker_aquatic_official_footprint.json","supports":"Horizontal building outline only; not survey control or master placement."}
+  ],
+  "changes": [
+    "Changed the existing 21 schematic clear-span truss meshes to a warm white painted-steel material supported qualitatively by facility photos; geometry, spacing, sections and elevations remain schematic.",
+    "Added 15 small high-bay fixture blocks and two hanging black-and-gold Purdue display panels, based on facility-photo motifs. Their exact position, dimensions, number and lighting plan are visual estimates.",
+    "Added a longitudinal interior camera and a closer seating/gallery presentation camera. The cutaway render hides the roof and optional site context, and uses a neutral background; render visibility flags are restored after each render.",
+    "Retained the optional site dressing in its separate approximate, un-georeferenced collection."
+  ],
+  "validation_file":"audit/batchC_boilermaker_aquatic_r1/validation_r6.json",
+  "validation_passed":true,
+  "gis_boundary_vertices":70,
+  "shell_perimeter_segments":70,
+  "max_sampled_bidirectional_error_m":0.000002,
+  "r6_structure_and_context":{"painted_truss_meshes":21,"high_bay_fixture_blocks":15,"banner_panels":2,"banner_text_objects":2,"representative_seat_blocks":288,"center_aisle_treads":12,"split_tier_sections":24,"ribbon_glazing_panes":57,"approximate_site_context_objects":21},
+  "external_image_dependencies":0,
+  "master_or_shared_files_edited":false,
+  "committed":false,
+  "uncertainties":[
+    "No measured roof section, roof profile, or eave/ridge heights were found.",
+    "The truss material character is photo-supported, but truss geometry, layout and dimensions are schematic.",
+    "High-bay lights and hanging-banner location/size/count are qualitative estimates, not measured/as-built data.",
+    "The 288 modeled seats are representative; published capacity is 625. Exact stand and circulation layout remain uncertain.",
+    "Optional site dressing is approximate and not georeferenced.",
+    "GIS-to-shell correspondence does not prove survey accuracy or master-scene placement."
+  ],
+  "renders":["aquatic_r6_interior_longitudinal.png","aquatic_r6_interior_seating_gallery.png","aquatic_r5_north_elevation.png","aquatic_r5_street_approach.png"],
+  "asset_sha256":"f87a9d3f86118ada8f8d99caffaa6d8ce2e86b5ae42bf86a23ef8f4994134f34"
+}

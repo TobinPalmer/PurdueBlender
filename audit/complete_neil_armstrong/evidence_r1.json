@@ -1,0 +1,93 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "retrieved_utc_date": "2026-10-24",
+  "sources": [
+    {
+      "title": "Neil Armstrong Hall of Engineering",
+      "provider": "Design and Build With Metal / Arconic project case history",
+      "url": "https://designandbuildwithmetal.com/featured-projects/neil-armstrong-hall-of-engineering",
+      "source_date": "Project completed October 2007; article page gives project-era description",
+      "retrieval_date": "2026-10-24",
+      "feature_id": null,
+      "crs": "Not applicable; descriptive source",
+      "relevant_evidence": [
+        "Atrium ceiling is described as 53 feet high.",
+        "High roof is described as a warped, wing-like cantilever on both ends and clad in Mayflower Red ACM.",
+        "Canopy and vestibule cladding is identified as Sea Wolf ACM.",
+        "The atrium is described as housing an Apollo I command-unit replica; the article does not establish current 2026 display status."
+      ],
+      "method_and_uncertainty": "Used the stated 53 ft lobby ceiling as a height datum and converted exactly at 0.3048 m/ft to 16.1544 m. Applied the named finish colors as material evidence. Roof and canopy geometry remains illustrative because no dimensioned elevation was found."
+    },
+    {
+      "title": "Apollo capsule makes a journey to new space",
+      "provider": "Purdue News Service",
+      "url": "https://www.purdue.edu/uns/x/2007b/071017P-ApolloModule.html",
+      "source_date": "2007-10-17",
+      "retrieval_date": "2026-10-24",
+      "feature_id": null,
+      "crs": "Not applicable; photo/caption source",
+      "relevant_evidence": [
+        "Purdue's caption identifies a full-scale Apollo I command-module replica being moved into the atrium for the hall dedication.",
+        "The same announcement documents the bronze Armstrong sculpture and lunar boot impressions outside the hall."
+      ],
+      "method_and_uncertainty": "Used to limit the atrium spacecraft representation to a command module rather than a complete command/service spacecraft. This is historical evidence for the 2007 dedication; continued presence in 2026 is unverified."
+    },
+    {
+      "title": "ARMS - Armstrong Hall",
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/arms/",
+      "source_date": "Page revision 2026-03-27",
+      "retrieval_date": "2026-10-24",
+      "feature_id": "ARMS",
+      "crs": "Not applicable; facility record",
+      "relevant_evidence": [
+        "Describes a four-level facility: lower level, at-grade level, and two upper floors.",
+        "Lists building rooms including Lower Level B061/B071, 1010, 1128, 1210, 1331, 2200 and 3331."
+      ],
+      "method_and_uncertainty": "Used as current floor-count evidence only. It does not provide floor plates, facade dimensions, elevations, or exact floor-to-floor heights."
+    },
+    {
+      "title": "Neil Armstrong Hall GIS building polygon record",
+      "provider": "Purdue official BuildingShapesZip4 ArcGIS FeatureServer, as summarized in the project master building audit",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "source_date": "Source date not stated in project snapshot",
+      "retrieval_date": "2026-10-22 (per audit/master_building_audit.json)",
+      "feature_id": 642,
+      "crs": "EPSG:3857 (ArcGIS layer metadata: WKID 102100, latest WKID 3857). The project comparison uses the campus local approximate conversion, not raw Web Mercator distances.",
+      "relevant_evidence": [
+        "Source code ARMS; source name Neil Armstrong Hall of Engineering.",
+        "Feature attributes: NUM_LEVELS=6, CountOfFlo=6, F02=17.3, F03=34.7, R=55; units/field semantics are not fully documented.",
+        "Official reference bounds in project meters: X [-189.973557, -27.711566], Y [361.929378, 418.720828].",
+        "Project audit shell screening: model bounds X [-172.0, -46.0], Y [370.5, 397.0], AABB width difference -36.262 m, depth difference -30.291 m, AABB IoU 0.3623."
+      ],
+      "raw_snapshot_paths": ["sources/gis_layer_metadata_20261024.json", "sources/gis_feature_642_20261024.json"],
+      "method_and_uncertainty": "These are master-audit bounding-box screening metrics, not footprint-boundary errors. The official polygon may include wings or extents not represented by the simplified selected wall shell. The GIS 6-level attribute conflicts with Purdue's 2026 facility description of four levels; field meanings are unspecified, so no floor geometry was changed from this conflict. No plan geometry was changed from the AABB mismatch without source-supported registration."
+    }
+  ],
+  "model_registration": {
+    "asset_file": "modular/buildings/neil_armstrong_hall.blend",
+    "asset_collection": "Asset_neil_armstrong_hall",
+    "asset_scene": "Building_neil_armstrong_hall",
+    "placement_origin_xy_m": [-109.0, 400.1893310546875],
+    "local_frame": "Existing source objects are parented to AssetRoot_neil_armstrong_hall with its existing parent-inverse transform. The root remains at [0,0,0]; campus placement was not changed.",
+    "limits": "Rotation, footprint wall plates, site alignment and outer shell dimensions remain unverified."
+  },
+  "r1_changes": [
+    {
+      "change": "Reduced the atrium curtain wall and south wall from 21.5 m to 16.1544 m, moved the skylight/trusses/lights to match, and withdrew the 19.2 m transom row.",
+      "evidence": "53 ft high atrium ceiling in the project case history.",
+      "uncertainty": "Atrium height is evidence-backed; the model's wall alignment and roof plane remain approximate."
+    },
+    {
+      "change": "Replaced the generic cylindrical Apollo object with a 3.0 m truncated-cone command-module silhouette; hid the separate service module and engine nozzle while retaining stable manifest-listed object names.",
+      "evidence": "Purdue News Service identifies the atrium display as a full-scale Apollo I command-module replica.",
+      "uncertainty": "Current display presence and exact replica details are unknown; the modeled dimensions are illustrative, not measured."
+    },
+    {
+      "change": "Applied Mayflower Red ACM material to the high-roof slabs and Sea Wolf ACM material to the entrance canopy and fascia.",
+      "evidence": "The project case history identifies those named finishes on the high roof and canopy/vestibule.",
+      "uncertainty": "The roof slabs remain flat proxies and do not yet reproduce the source-described warped wing profile. Material values are render approximations to named colors."
+    }
+  ],
+  "validation": "See validation_r1.json. Source was saved, reopened, checked for the stable named collection/scene and object count, then rendered using temporary review-only cameras/lights."
+}

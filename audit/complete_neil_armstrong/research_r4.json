@@ -1,0 +1,105 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R4",
+  "retrieved_date": "2026-10-24",
+  "geometry_changed": false,
+  "research_question": "Can public building-specific photos, Street View, Purdue archive catalogs/scans, or official plans provide registered missing wing outlines and floor elevations?",
+  "sources": [
+    {
+      "title": "Neil Armstrong Hall of Engineering development plans, September 2004",
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/repositories/2/archival_objects/41754",
+      "source_date": "September 2004",
+      "retrieval_date": "2026-10-24",
+      "record_details": [
+        "MSA 5, Series 11, Sub-Series 2, Item 19; Box 348, Item 5.",
+        "Record requires 48 hours notice and consultation with the Flight Archivist.",
+        "Catalog calls storage type Realia; page provides no scan, sheet list, floor names, dimensions, or elevation data."
+      ],
+      "use": "Potential authoritative design evidence if physically consulted; unavailable in the public online record.",
+      "limitation": "Cannot derive or register any floor/roof geometry from this catalog metadata."
+    },
+    {
+      "title": "Neil Armstrong Hall of Engineering records, accession 2023-097",
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/repositories/2/accessions/2617",
+      "source_date": "2007 materials; accessioned 2022",
+      "retrieval_date": "2026-10-24",
+      "record_details": [
+        "Unprocessed communal accession 59 lists one program, three spiral-bound books with CD-Rs, and newspaper printouts.",
+        "No digitized scan or itemized plans were exposed in the public record."
+      ],
+      "use": "Possible building-era photographs or presentation material in the physical accession.",
+      "limitation": "Catalog inventory does not identify dimensioned floor plans/elevations; contents are unprocessed and not available online."
+    },
+    {
+      "title": "Purdue Campus Facilities and Buildings Historic Database: Neil Armstrong Hall",
+      "provider": "Purdue University Libraries Archives and Special Collections",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/137",
+      "source_date": "database record; accessed current",
+      "retrieval_date": "2026-10-24",
+      "use": "Checked as a possible official building profile and plan repository.",
+      "result": "The current public page returned only the site shell/navigation, with no building profile or attachments."
+    },
+    {
+      "title": "360 Tour of Armstrong Hall of Engineering",
+      "provider": "Purdue Engineering, Office of Future Engineers",
+      "url": "https://web.ics.purdue.edu/~iswartz/ofe/virtual/images/360-tour/arms/index.html",
+      "source_date": "site tour available 2019-era",
+      "retrieval_date": "2026-10-24",
+      "evidence": [
+        "Lists Herman & Heddy Kurz Atrium, 2nd Floor Skywalk, 2nd/3rd floor labs, and Air & Space Collection panoramas."
+      ],
+      "use": "Building-specific interior visual reference; supports that spaces and elevated circulation exist.",
+      "limitation": "Panorama list and visual tours do not supply a registered plan, coordinates, floor outline, or dimensions. Individual rooms cannot be placed accurately in the current asset from this source."
+    },
+    {
+      "title": "Neil Armstrong Hall of Engineering structural project page",
+      "provider": "Fink Roberts & Petrie, Inc. (structural engineer)",
+      "url": "https://frpinc.com/projects/neil-armstrong-hall-of-engineering/",
+      "source_date": "Project completed 2006; page current at retrieval",
+      "retrieval_date": "2026-10-24",
+      "evidence": [
+        "Three-story concrete frame, mechanical penthouse, basement/partial sub-basement, cantilevered roof truss, two atrium bridge levels, three concrete stairs.",
+        "Page provides project photographs, not dimensioned drawings."
+      ],
+      "use": "Structural vocabulary and visual reference for atrium/roof.",
+      "limitation": "No plans, elevations, or measurable registration dimensions."
+    },
+    {
+      "title": "Armstrong statue in front of Neil Armstrong Hall of Engineering",
+      "provider": "Purdue e-Archives, Purdue Buildings and Campus Scenes; Purdue News Service/Dave Umberger",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/2632/",
+      "source_date": "2007-10-26",
+      "retrieval_date": "2026-10-24",
+      "evidence": [
+        "A dated exterior image associated with dedication of the building."
+      ],
+      "use": "Front entrance/facade appearance.",
+      "limitation": "Single perspective photograph; no aerial, side elevations, plan dimensions, or registration points sufficient for shell geometry."
+    },
+    {
+      "title": "Google Maps Street View check at Hall coordinate",
+      "provider": "Google Maps",
+      "url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=40.429,-86.915&heading=150&pitch=5",
+      "source_date": "current pano lookup",
+      "retrieval_date": "2026-10-24",
+      "result": "Google Maps reported no Street View imagery at the checked Hall coordinate; a nearby road coordinate also returned no Street View imagery.",
+      "limitation": "No building-specific street pano available through the coordinate lookup used in this pass."
+    },
+    {
+      "title": "Current official orthophoto and GIS comparison from R3",
+      "provider": "Indiana Geographic Information Office / Purdue GIS",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "source_date": "2023 tile in2023_29971887_06",
+      "retrieval_date": "2026-10-24",
+      "evidence": [
+        "R3 plan-registration plate shows one connected multi-wing building footprint and a narrow source shell located within it."
+      ],
+      "use": "Accurate broad plan coverage / building identity evidence.",
+      "limitation": "No floor-by-floor wall division or vertical elevations."
+    }
+  ],
+  "search_result": "No openly accessible building-specific, dimensioned as-built floor plans or elevations were found. Officially cataloged 2004 plans require archive consultation; the public record provides no scans or measurement metadata. The other official sources are photos, structural project descriptions, and panoramas that support broad form and circulation concepts but not plan registration.",
+  "geometry_decision": "Preserve the saved Blender geometry unchanged. The 2023 GIS/orthophoto confirms missing wings/depth, but no public source resolves their floor-by-floor outlines, atrium/courtyard boundary on each level, wall heights, roof elevations, or bridge/stair coordinates. Do not extrude/scale the GIS polygon into walls."
+}

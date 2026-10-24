@@ -1,0 +1,19 @@
+import bpy
+from mathutils import Vector
+from pathlib import Path
+p=Path(r'C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\morgan_j_burke_boilermaker_aquatic_center.blend'); bpy.ops.wm.open_mainfile(filepath=str(p))
+mat=bpy.data.materials['AQUA R4 | north facade running-bond brick with readable mortar relief']; nt=mat.node_tree; nt.nodes.clear(); out=nt.nodes.new('ShaderNodeOutputMaterial'); out.location=(980,80); bs=nt.nodes.new('ShaderNodeBsdfPrincipled'); bs.location=(720,80); bs.inputs['Roughness'].default_value=.84
+geo=nt.nodes.new('ShaderNodeNewGeometry'); geo.location=(-1050,320); sepP=nt.nodes.new('ShaderNodeSeparateXYZ'); sepP.location=(-850,360); sepN=nt.nodes.new('ShaderNodeSeparateXYZ'); sepN.location=(-850,20); nt.links.new(geo.outputs['Position'],sepP.inputs['Vector']); nt.links.new(geo.outputs['Normal'],sepN.inputs['Vector'])
+absX=nt.nodes.new('ShaderNodeMath');absX.operation='ABSOLUTE';absX.location=(-650,-20); absY=nt.nodes.new('ShaderNodeMath');absY.operation='ABSOLUTE';absY.location=(-650,-120);nt.links.new(sepN.outputs['X'],absX.inputs[0]);nt.links.new(sepN.outputs['Y'],absY.inputs[0])
+sumN=nt.nodes.new('ShaderNodeMath');sumN.operation='ADD';sumN.location=(-470,-80);nt.links.new(absX.outputs[0],sumN.inputs[0]);nt.links.new(absY.outputs[0],sumN.inputs[1])
+ratioX=nt.nodes.new('ShaderNodeMath');ratioX.operation='DIVIDE';ratioX.location=(-270,-120);nt.links.new(absY.outputs[0],ratioX.inputs[0]);nt.links.new(sumN.outputs[0],ratioX.inputs[1])
+ratioY=nt.nodes.new('ShaderNodeMath');ratioY.operation='DIVIDE';ratioY.location=(-270,-250);nt.links.new(absX.outputs[0],ratioY.inputs[0]);nt.links.new(sumN.outputs[0],ratioY.inputs[1])
+mx=nt.nodes.new('ShaderNodeMath');mx.operation='MULTIPLY';mx.location=(-70,350);nt.links.new(sepP.outputs['X'],mx.inputs[0]);nt.links.new(ratioX.outputs[0],mx.inputs[1]);my=nt.nodes.new('ShaderNodeMath');my.operation='MULTIPLY';my.location=(-70,220);nt.links.new(sepP.outputs['Y'],my.inputs[0]);nt.links.new(ratioY.outputs[0],my.inputs[1]);add=nt.nodes.new('ShaderNodeMath');add.operation='ADD';add.location=(120,330);nt.links.new(mx.outputs[0],add.inputs[0]);nt.links.new(my.outputs[0],add.inputs[1]);comb=nt.nodes.new('ShaderNodeCombineXYZ');comb.location=(310,330);nt.links.new(add.outputs[0],comb.inputs['X']);nt.links.new(sepP.outputs['Z'],comb.inputs['Y'])
+brick=nt.nodes.new('ShaderNodeTexBrick');brick.location=(90,30);brick.inputs['Color1'].default_value=(.43,.16,.095,1);brick.inputs['Color2'].default_value=(.31,.09,.052,1);brick.inputs['Mortar'].default_value=(.19,.17,.15,1);brick.inputs['Scale'].default_value=1;brick.inputs['Brick Width'].default_value=.66;brick.inputs['Row Height'].default_value=.22;brick.inputs['Mortar Size'].default_value=.028;brick.inputs['Mortar Smooth'].default_value=.025;nt.links.new(comb.outputs['Vector'],brick.inputs['Vector'])
+bump=nt.nodes.new('ShaderNodeBump');bump.location=(470,-30);bump.inputs['Strength'].default_value=.42;bump.inputs['Distance'].default_value=.045;nt.links.new(brick.outputs['Fac'],bump.inputs['Height']);nt.links.new(brick.outputs['Color'],bs.inputs['Base Color']);nt.links.new(bump.outputs['Normal'],bs.inputs['Normal']);nt.links.new(bs.outputs['BSDF'],out.inputs['Surface'])
+wall=bpy.data.objects['AQUA R1 | continuous brick and concrete high-bay envelope']; idx=list(wall.data.materials).index(mat); count=0
+for poly in wall.data.polygons:
+ if poly.material_index in (0,idx) and abs(poly.normal.z)<.1 and poly.center.z>.5:
+  poly.material_index=idx;count+=1
+cam=bpy.data.objects['AQUA R4 | spectator aisle detail camera'];cam.location=(11,-28,7.5);cam.rotation_euler=(Vector((20,0,3.2))-cam.location).to_track_quat('-Z','Y').to_euler();cam.data.lens=45
+bpy.ops.wm.save_as_mainfile(filepath=str(p));print('R4 facade projection corrected across vertical brick faces',count,'seat aisle camera moved to pool side')

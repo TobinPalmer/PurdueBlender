@@ -1,0 +1,328 @@
+{
+  "type": "FeatureCollection",
+  "links": [
+    {
+      "rel": "collection",
+      "type": "application/json",
+      "href": "https://stac.d2s.org/api/v1/collections/indiana-lidar-ndhm"
+    },
+    {
+      "rel": "parent",
+      "type": "application/json",
+      "href": "https://stac.d2s.org/api/v1/collections/indiana-lidar-ndhm"
+    },
+    {
+      "rel": "root",
+      "type": "application/json",
+      "href": "https://stac.d2s.org/api/v1/"
+    },
+    {
+      "rel": "self",
+      "type": "application/geo+json",
+      "href": "https://stac.d2s.org/api/v1/collections/indiana-lidar-ndhm/items"
+    }
+  ],
+  "features": [
+    {
+      "id": "tippecanoe-ndhm",
+      "bbox": [
+        -87.11123729155561,
+        40.203280828475194,
+        -86.67926338391547,
+        40.57455022526025
+      ],
+      "type": "Feature",
+      "links": [
+        {
+          "rel": "collection",
+          "type": "application/json",
+          "href": "https://stac.d2s.org/api/v1/collections/indiana-lidar-ndhm"
+        },
+        {
+          "rel": "parent",
+          "type": "application/json",
+          "href": "https://stac.d2s.org/api/v1/collections/indiana-lidar-ndhm"
+        },
+        {
+          "rel": "root",
+          "type": "application/json",
+          "href": "https://stac.d2s.org/api/v1/"
+        },
+        {
+          "rel": "self",
+          "type": "application/geo+json",
+          "href": "https://stac.d2s.org/api/v1/collections/indiana-lidar-ndhm/items/tippecanoe-ndhm"
+        },
+        {
+          "rel": "external",
+          "href": "https://cov.d2s.org?url=https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_ndhm_2018.tif",
+          "title": "Open in Cloud Optimized Viewer (https://cov.d2s.org)"
+        }
+      ],
+      "assets": {
+        "lidar-image": {
+          "href": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_ndhm_2018.tif",
+          "type": "image/tiff; application=geotiff; profile=cloud-optimized",
+          "eo:bands": [
+            {
+              "name": "b1",
+              "description": "gray"
+            }
+          ],
+          "proj:bbox": [
+            2945000.0,
+            1805000.0,
+            3065000.0,
+            1940000.0
+          ],
+          "proj:epsg": 2968,
+          "proj:shape": [
+            27000,
+            24000
+          ],
+          "raster:bands": [
+            {
+              "scale": 1.0,
+              "offset": 0.0,
+              "sampling": "area",
+              "data_type": "float32",
+              "histogram": {
+                "max": 233.52821350097656,
+                "min": -9.263440132141113,
+                "count": 11,
+                "buckets": [
+                  770144,
+                  75409,
+                  60382,
+                  25700,
+                  1224,
+                  4,
+                  0,
+                  0,
+                  0,
+                  1
+                ]
+              },
+              "statistics": {
+                "mean": 8.375114440917969,
+                "stddev": 17.975770950317383,
+                "maximum": 233.52821350097656,
+                "minimum": -9.263440132141113,
+                "valid_percent": 0.00010719676180021954
+              }
+            }
+          ],
+          "proj:geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  2945000.0,
+                  1805000.0
+                ],
+                [
+                  3065000.0,
+                  1805000.0
+                ],
+                [
+                  3065000.0,
+                  1940000.0
+                ],
+                [
+                  2945000.0,
+                  1940000.0
+                ],
+                [
+                  2945000.0,
+                  1805000.0
+                ]
+              ]
+            ]
+          },
+          "proj:projjson": {
+            "id": {
+              "code": 2968,
+              "authority": "EPSG"
+            },
+            "name": "NAD83(HARN) / Indiana West (ftUS)",
+            "type": "ProjectedCRS",
+            "$schema": "https://proj.org/schemas/v0.4/projjson.schema.json",
+            "base_crs": {
+              "id": {
+                "code": 4152,
+                "authority": "EPSG"
+              },
+              "name": "NAD83(HARN)",
+              "datum": {
+                "name": "NAD83 (High Accuracy Reference Network)",
+                "type": "GeodeticReferenceFrame",
+                "ellipsoid": {
+                  "name": "GRS 1980",
+                  "semi_major_axis": 6378137,
+                  "inverse_flattening": 298.257222101
+                }
+              },
+              "coordinate_system": {
+                "axis": [
+                  {
+                    "name": "Geodetic latitude",
+                    "unit": "degree",
+                    "direction": "north",
+                    "abbreviation": "Lat"
+                  },
+                  {
+                    "name": "Geodetic longitude",
+                    "unit": "degree",
+                    "direction": "east",
+                    "abbreviation": "Lon"
+                  }
+                ],
+                "subtype": "ellipsoidal"
+              }
+            },
+            "conversion": {
+              "name": "unnamed",
+              "method": {
+                "id": {
+                  "code": 9807,
+                  "authority": "EPSG"
+                },
+                "name": "Transverse Mercator"
+              },
+              "parameters": [
+                {
+                  "id": {
+                    "code": 8801,
+                    "authority": "EPSG"
+                  },
+                  "name": "Latitude of natural origin",
+                  "unit": "degree",
+                  "value": 37.5
+                },
+                {
+                  "id": {
+                    "code": 8802,
+                    "authority": "EPSG"
+                  },
+                  "name": "Longitude of natural origin",
+                  "unit": "degree",
+                  "value": -87.0833333333333
+                },
+                {
+                  "id": {
+                    "code": 8805,
+                    "authority": "EPSG"
+                  },
+                  "name": "Scale factor at natural origin",
+                  "unit": "unity",
+                  "value": 0.999966667
+                },
+                {
+                  "id": {
+                    "code": 8806,
+                    "authority": "EPSG"
+                  },
+                  "name": "False easting",
+                  "unit": {
+                    "name": "US survey foot",
+                    "type": "LinearUnit",
+                    "conversion_factor": 0.304800609601219
+                  },
+                  "value": 2952750
+                },
+                {
+                  "id": {
+                    "code": 8807,
+                    "authority": "EPSG"
+                  },
+                  "name": "False northing",
+                  "unit": {
+                    "name": "US survey foot",
+                    "type": "LinearUnit",
+                    "conversion_factor": 0.304800609601219
+                  },
+                  "value": 820208.333
+                }
+              ]
+            },
+            "coordinate_system": {
+              "axis": [
+                {
+                  "name": "Easting",
+                  "unit": {
+                    "name": "US survey foot",
+                    "type": "LinearUnit",
+                    "conversion_factor": 0.304800609601219
+                  },
+                  "direction": "east",
+                  "abbreviation": ""
+                },
+                {
+                  "name": "Northing",
+                  "unit": {
+                    "name": "US survey foot",
+                    "type": "LinearUnit",
+                    "conversion_factor": 0.304800609601219
+                  },
+                  "direction": "north",
+                  "abbreviation": ""
+                }
+              ],
+              "subtype": "Cartesian"
+            }
+          },
+          "proj:transform": [
+            5.0,
+            0.0,
+            2945000.0,
+            0.0,
+            -5.0,
+            1940000.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -87.11123729155561,
+              40.203280828475194
+            ],
+            [
+              -86.67926338391547,
+              40.203280828475194
+            ],
+            [
+              -86.67926338391547,
+              40.57455022526025
+            ],
+            [
+              -87.11123729155561,
+              40.57455022526025
+            ],
+            [
+              -87.11123729155561,
+              40.203280828475194
+            ]
+          ]
+        ]
+      },
+      "collection": "indiana-lidar-ndhm",
+      "properties": {
+        "end_datetime": "2019-12-31T00:00:00Z",
+        "start_datetime": "2017-01-01T00:00:00Z"
+      },
+      "stac_version": "1.0.0",
+      "stac_extensions": [
+        "https://stac-extensions.github.io/projection/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/raster/v1.1.0/schema.json",
+        "https://stac-extensions.github.io/eo/v1.1.0/schema.json"
+      ]
+    }
+  ],
+  "numberReturned": 1
+}

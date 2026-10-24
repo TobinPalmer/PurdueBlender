@@ -1,0 +1,227 @@
+{
+  "gis_mask_pixels": 2178,
+  "clip_shape_rows_cols": [
+    69,
+    139
+  ],
+  "source_grid_resolution_us_survey_ft": [
+    5.0,
+    5.0
+  ],
+  "source_grid_resolution_m": [
+    1.524003048006095,
+    1.524003048006095
+  ],
+  "gis_polygon_state_plane_bounds_usft": [
+    2999351.224790968,
+    1887622.884508967,
+    2999883.844785459,
+    1887809.1461053935
+  ],
+  "ndhm_mask_percentiles_m": {
+    "0": 5.562609381139169,
+    "5": 15.386334633142889,
+    "10": 15.489966886916186,
+    "25": 16.225302543378515,
+    "50": 19.36094183772839,
+    "75": 21.48844762777415,
+    "90": 21.616458674811867,
+    "95": 21.671787966378655,
+    "99": 21.748227639521673,
+    "100": 23.131313425712776
+  },
+  "ndhm_pixels_by_height_band": {
+    "0-1m": {
+      "pixels": 0,
+      "area_m2": 0.0
+    },
+    "1-3m": {
+      "pixels": 0,
+      "area_m2": 0.0
+    },
+    "3-6m": {
+      "pixels": 2,
+      "area_m2": 4.645170580663736
+    },
+    "6-10m": {
+      "pixels": 4,
+      "area_m2": 9.290341161327472
+    },
+    "10-14m": {
+      "pixels": 16,
+      "area_m2": 37.16136464530989
+    },
+    "14-20m": {
+      "pixels": 1491,
+      "area_m2": 3462.9746678848155
+    },
+    "20-40m": {
+      "pixels": 665,
+      "area_m2": 1544.5192180706924
+    },
+    "40-100m": {
+      "pixels": 0,
+      "area_m2": 0.0
+    }
+  },
+  "sources": {
+    "dsm": {
+      "stac_item": "tippecanoe-dsm",
+      "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_dsm_2018.tif",
+      "date": "2017-01-01T00:00:00Z to 2019-12-31T00:00:00Z"
+    },
+    "dtm": {
+      "stac_item": "tippecanoe-dtm",
+      "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019/3DEP_County_DEM_Mosaics/cog/Tippecanoe_Co_dem_2018_stplw.tif",
+      "date": "2017-01-01T00:00:00Z to 2019-12-31T00:00:00Z"
+    },
+    "ndhm": {
+      "stac_item": "tippecanoe-ndhm",
+      "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_ndhm_2018.tif",
+      "date": "2017-01-01T00:00:00Z to 2019-12-31T00:00:00Z"
+    }
+  },
+  "vertical_units": "US survey feet in Indiana State Plane/NAVD88 (GEOID12B) per Indiana 2017-2020 QL2 3DEP metadata; NDHM is normalized above-ground height. Converted to meters using 0.304800609601219 m/US survey ft.",
+  "ndhm_raw_percentiles_us_survey_ft": {
+    "0": -0.3600122034549713,
+    "5": 0.020012207329273224,
+    "10": 0.04001464694738388,
+    "25": 0.09999511390924454,
+    "50": 11.169990539550781,
+    "75": 56.12998580932617,
+    "90": 66.5500259399414,
+    "95": 70.7400131225586,
+    "99": 73.59097290039062,
+    "100": 84.02999877929688
+  },
+  "ndhm_bins": {
+    "0-6m": {
+      "pixels": 2,
+      "area_m2": 4.645170580663736
+    },
+    "6-10m": {
+      "pixels": 4,
+      "area_m2": 9.290341161327472
+    },
+    "10-14m": {
+      "pixels": 16,
+      "area_m2": 37.16136464530989
+    },
+    "14-18m": {
+      "pixels": 755,
+      "area_m2": 1753.5518942005606
+    },
+    "18-20m": {
+      "pixels": 736,
+      "area_m2": 1709.422773684255
+    },
+    "20-22m": {
+      "pixels": 663,
+      "area_m2": 1539.8740474900287
+    },
+    "22-30m": {
+      "pixels": 2,
+      "area_m2": 4.645170580663736
+    },
+    "30-100m": {
+      "pixels": 0,
+      "area_m2": 0.0
+    }
+  },
+  "connected_roof_height_zones": {
+    "ndhm_at_least_14m": [
+      {
+        "pixels": 2156,
+        "area_m2": 5007.493885955508,
+        "ndhm_median_m": 19.38226906696732,
+        "stateplane_bounds_usft": [
+          2999365.0,
+          1887625.0,
+          2999880.0,
+          1887810.0
+        ]
+      }
+    ],
+    "ndhm_at_least_18m": [
+      {
+        "pixels": 1401,
+        "area_m2": 3253.941991754947,
+        "ndhm_median_m": 19.882147112927026,
+        "stateplane_bounds_usft": [
+          2999400.0,
+          1887700.0,
+          2999880.0,
+          1887810.0
+        ]
+      }
+    ],
+    "ndhm_at_least_20m": [
+      {
+        "pixels": 658,
+        "area_m2": 1528.2611210383693,
+        "ndhm_median_m": 21.569213789672684,
+        "stateplane_bounds_usft": [
+          2999455.0,
+          1887720.0,
+          2999790.0,
+          1887785.0
+        ]
+      }
+    ]
+  },
+  "ndhm_raw_percentiles_scope": "Padded analysis clip (includes surrounding roads, sidewalks, lawns, and campus buildings), not GIS building footprint; use ndhm_mask_percentiles_m for FID 642 footprint statistics.",
+  "wing_mass_geometry_source": "sources/lidar_wing_zones_r5.json",
+  "wing_mass_summaries": [
+    {
+      "class": "wing_low",
+      "source_threshold_m": [
+        14.0,
+        18.0
+      ],
+      "median_top_height_m": 15.779529571533203,
+      "p10_p90_sample_height_m": [
+        15.256794929504395,
+        17.71653461456299
+      ],
+      "sample_cells_outside_shell": 336,
+      "area_m2": 772.219235627327,
+      "part_count": 8,
+      "triangle_count": 138
+    },
+    {
+      "class": "wing_mid",
+      "source_threshold_m": [
+        18.0,
+        20.0
+      ],
+      "median_top_height_m": 19.476760864257812,
+      "p10_p90_sample_height_m": [
+        18.392894172668456,
+        19.81599941253662
+      ],
+      "sample_cells_outside_shell": 458,
+      "area_m2": 1086.5993017604253,
+      "part_count": 2,
+      "triangle_count": 120
+    },
+    {
+      "class": "roof_high",
+      "source_threshold_m": [
+        20.0,
+        40.0
+      ],
+      "median_top_height_m": 21.54636287689209,
+      "p10_p90_sample_height_m": [
+        21.454911994934083,
+        21.65608787536621
+      ],
+      "sample_cells_outside_shell": 530,
+      "area_m2": 1264.650646357676,
+      "part_count": 1,
+      "triangle_count": 21
+    }
+  ],
+  "registration_uncertainty": "The GIS/local-frame transformation is inherited from evidence_r3.json and the R3 orthophoto overlay. The shell-bounds subtraction is only a clipping aid, not a surveyed wall boundary; NDHM cell size is 5 US survey feet.",
+  "validation": "validation_r5.json",
+  "review_map": "lidar_roof_height_r5.png"
+}

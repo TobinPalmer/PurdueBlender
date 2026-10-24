@@ -1,0 +1,69 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R5",
+  "retrieved_date": "2026-10-24",
+  "geometry_changed": true,
+  "sources": [
+    {
+      "title": "Indiana Statewide 3DEP LiDAR products — Tippecanoe County 2018 NDHM COG",
+      "provider": "Purdue Digital Forestry / iDiF",
+      "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_ndhm_2018.tif",
+      "stac_item": "https://stac.d2s.org/api/v1/collections/indiana-lidar-ndhm/items/tippecanoe-ndhm",
+      "source_date": "STAC temporal extent 2017-01-01 through 2019-12-31; regional product filename is Tippecanoe 2018",
+      "retrieval_date": "2026-10-24",
+      "raw_snapshot": "sources/stac_tippecanoe_ndhm_2018_r5.json",
+      "clip": "sources/tippecanoe_ndhm_clip_r5.tif",
+      "crs_resolution_units": "EPSG:2968, NAD83(HARN) / Indiana West (ftUS); 5 US survey foot cells (1.524m). NDHM height values are US survey feet, converted to meters using 0.304800609601219.",
+      "method": "Queried public STAC by a geographic bbox around Neil Armstrong Hall; clipped the COG over Purdue official GIS BuildingShapesZip4 feature FID 642; constrained NDHM cells to that polygon; polygonized three height bands; transformed State Plane cell boundaries through EPSG:3857 and the project local geographic conversion, subtracting the saved master placement marker (-109.0, 400.1893310547). The resulting masks were clipped outside the current source shell's world/local bounds and simplified by 0.65m.",
+      "result": "The 2018 NDHM shows contiguous building-height cells within the single connected GIS footprint. For omitted plan areas outside the existing modeled shell rectangle, the 14–18m band has 336 samples and median 15.78m (p10–p90 15.26–17.72m), the 18–20m band has 458 samples and median 19.48m (p10–p90 18.39–19.82m), and the 20–40m band has 530 samples and median 21.55m (p10–p90 21.45–21.66m). The 20–40m band is effectively a 20–22m roof zone; two >22m cells remain in the mask but do not materially affect its median.",
+      "uncertainty": "NDHM is a 5-ft sampled normalized surface and does not identify wall locations, roof edges beneath overhangs, construction form, story count, rooms, facade openings, or current conditions. Height bins are derived raster zones, not floor elevations. GIS is a ground-level footprint and may include small non-wall surfaces. The shell bounding rectangle is a clipping aid, not a measured facade outline. These solids are intentionally coarse and schematic."
+    },
+    {
+      "title": "Neil Armstrong Hall of Engineering — Purdue official BuildingShapesZip4 GIS feature 642",
+      "provider": "Purdue University / Indiana Geographic Information Office",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 642,
+      "source_date": "Layer edit date 2026-08-30; feature date not stated",
+      "retrieval_date": "2026-10-24",
+      "raw_snapshot": "sources/gis_feature_642_20261024.json",
+      "use": "Limits lidar-derived masses to the official connected building outline and provides the registered plan envelope.",
+      "uncertainty": "GIS footprint does not provide wall or roof edges or floor-by-floor division."
+    },
+    {
+      "title": "Indiana Current Imagery ImageServer catalog — 2023 tile in2023_29971887_06",
+      "provider": "Indiana Geographic Information Office",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "source_date": "2023",
+      "retrieval_date": "2026-10-24",
+      "raw_snapshot": "sources/ortho_catalog_item_neil_2023_r3.json",
+      "raster_snapshot": "sources/indiana_current_ortho_neil_extent.png",
+      "use": "Visual comparison plate pairs the GIS polygon and shell wall lines with a connected multi-wing roof around a courtyard. Used as footprint/context corroboration only, not as measured roof edges.",
+      "uncertainty": "Overhangs and raised roof planes can displace from ground walls in the orthophoto."
+    },
+    {
+      "title": "Indiana 3DEP Lidar Data Products, Data Accuracy, and Data Access",
+      "provider": "Purdue Digital Forestry / iDiF",
+      "url": "https://lidar.digitalforestry.org/docs/Indiana_3DEP_Lidar_Data_Products_Data_Accuracy_and_Data_Access.pdf",
+      "source_date": "Current documentation for Indiana 2016–2020 statewide 3DEP collection",
+      "retrieval_date": "2026-10-24",
+      "use": "Documents project-level data conventions and the QL2 source product family.",
+      "uncertainty": "General statewide collection documentation is not a building survey or a project-specific as-built statement. No vertical accuracy claim is made for the modeled wall boundaries."
+    }
+  ],
+  "r5_changes": [
+    {
+      "change": "Added three closed, coarse wing-envelope meshes outside the existing shell bounds, generated from 2018 NDHM masks constrained to official GIS FID 642.",
+      "objects": [
+        "ARMS_R5_Coarse_LiDAR_wing_low",
+        "ARMS_R5_Coarse_LiDAR_wing_mid",
+        "ARMS_R5_Coarse_LiDAR_roof_high"
+      ],
+      "basis": "Contiguous building-height raster zones and the registered connected GIS/orthophoto envelope; top height for each band uses its outside-shell cell median.",
+      "result": "A model now includes omitted broad connected wing masses in the GIS footprint, with schematic top heights near 15.78m, 19.48m, and 21.55m. No existing objects, wall positions, asset root, or master placement marker were moved.",
+      "uncertainty": "These are coarse solid envelopes only. They do not assert exact wall lines, floor plates, interior layout, window cadence, penthouse/roof details, floor count, or accessible circulation. The 5-ft raster cannot reliably separate all roof-edge/canopy surfaces, and the source dates 2017–2019."
+    }
+  ],
+  "review_render": "renders_r5/exterior_lidar_wings_r5.png",
+  "lidar_overlay": "lidar_roof_height_r5.png",
+  "validation": "validation_r5.json"
+}

@@ -1,0 +1,343 @@
+{
+  "objects": [
+    {
+      "name": "AQUA R3 | subtle standing seams on estimated roof",
+      "type": "CURVE",
+      "loc": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        60.90237808227539,
+        100.8280029296875,
+        3.0241317749023438
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mat": [
+        "AQUA | charcoal anodized metal"
+      ],
+      "bevel_depth": 0.014000000432133675,
+      "bevel_resolution": 1,
+      "resolution_u": 12
+    },
+    {
+      "name": "AQUA R1 | north facade building name",
+      "type": "FONT",
+      "loc": [
+        0.0,
+        51.27000045776367,
+        6.650000095367432
+      ],
+      "rot": [
+        -1.5707963705062866,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        6.1194562911987305,
+        0.2624821364879608,
+        0.024000003933906555
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mat": [
+        "AQUA R3 | warm white exterior lettering"
+      ]
+    },
+    {
+      "name": "AQUA R1 | continuous brick and concrete high-bay envelope",
+      "type": "MESH",
+      "loc": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rot": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "dims": [
+        60.19532775878906,
+        102.50411224365234,
+        11.928488731384277
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mat": [
+        "AQUA | mottled Purdue red-brown brick",
+        "AQUA | cast concrete"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "AQUA | mottled Purdue red-brown brick",
+      "nodes": [
+        {
+          "type": "ShaderNodeBsdfPrincipled",
+          "name": "Principled BSDF",
+          "inputs": {
+            "Base Color": [
+              0.36000001430511475,
+              0.10499999672174454,
+              0.054999999701976776,
+              1.0
+            ],
+            "Metallic": 0.0,
+            "Roughness": 0.8199999928474426,
+            "IOR": 1.5,
+            "Alpha": 1.0,
+            "Thin Wall": false,
+            "Normal": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Weight": 0.0,
+            "Diffuse Roughness": 0.0,
+            "Subsurface Weight": 0.0,
+            "Subsurface Radius": [
+              1.0,
+              0.20000000298023224,
+              0.10000000149011612
+            ],
+            "Subsurface Scale": 0.004999999888241291,
+            "Subsurface IOR": 1.399999976158142,
+            "Subsurface Anisotropy": 0.0,
+            "Specular IOR Level": 0.5,
+            "Specular Tint": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "Anisotropic": 0.0,
+            "Anisotropic Rotation": 0.0,
+            "Tangent": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Transmission Weight": 0.0,
+            "Coat Weight": 0.0,
+            "Coat Roughness": 0.029999999329447746,
+            "Coat IOR": 1.5,
+            "Coat Tint": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "Coat Normal": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Sheen Weight": 0.0,
+            "Sheen Roughness": 0.5,
+            "Sheen Tint": [
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "Emission Color": [
+              0.4000000059604645,
+              0.15000000596046448,
+              0.09000000357627869,
+              1.0
+            ],
+            "Emission Strength": 0.03500000014901161,
+            "Thin Film Thickness": 0.0,
+            "Thin Film IOR": 1.3300000429153442
+          }
+        },
+        {
+          "type": "ShaderNodeOutputMaterial",
+          "name": "Material Output",
+          "inputs": {
+            "Displacement": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Thickness": 0.0
+          }
+        },
+        {
+          "type": "ShaderNodeTexNoise",
+          "name": "Noise Texture",
+          "inputs": {
+            "Vector": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "W": 0.0,
+            "Scale": 24.0,
+            "Detail": 3.0,
+            "Roughness": 0.5,
+            "Lacunarity": 2.0,
+            "Offset": 0.0,
+            "Gain": 1.0,
+            "Distortion": 0.0
+          }
+        },
+        {
+          "type": "ShaderNodeTexCoord",
+          "name": "Texture Coordinate",
+          "inputs": {}
+        },
+        {
+          "type": "ShaderNodeValToRGB",
+          "name": "Color Ramp",
+          "inputs": {
+            "Factor": 0.5
+          }
+        },
+        {
+          "type": "ShaderNodeBump",
+          "name": "Bump",
+          "inputs": {
+            "Strength": 0.07999999821186066,
+            "Distance": 0.02500000037252903,
+            "Filter Width": 0.10000000149011612,
+            "Height": 1.0,
+            "Normal": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "type": "ShaderNodeTexNoise",
+          "name": "Noise Texture.001",
+          "inputs": {
+            "Vector": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "W": 0.0,
+            "Scale": 5.199999809265137,
+            "Detail": 3.0,
+            "Roughness": 0.7200000286102295,
+            "Lacunarity": 2.0,
+            "Offset": 0.0,
+            "Gain": 1.0,
+            "Distortion": 0.0
+          }
+        },
+        {
+          "type": "ShaderNodeBump",
+          "name": "Bump.001",
+          "inputs": {
+            "Strength": 0.1599999964237213,
+            "Distance": 0.03500000014901161,
+            "Filter Width": 0.10000000149011612,
+            "Height": 1.0,
+            "Normal": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        },
+        {
+          "type": "ShaderNodeValToRGB",
+          "name": "Color Ramp.001",
+          "inputs": {
+            "Factor": 0.5
+          }
+        },
+        {
+          "type": "ShaderNodeTexBrick",
+          "name": "Brick Texture",
+          "inputs": {
+            "Vector": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "Color1": [
+              0.4000000059604645,
+              0.13500000536441803,
+              0.07500000298023224,
+              1.0
+            ],
+            "Color2": [
+              0.28999999165534973,
+              0.0820000022649765,
+              0.04500000178813934,
+              1.0
+            ],
+            "Mortar": [
+              0.17000000178813934,
+              0.15000000596046448,
+              0.12999999523162842,
+              1.0
+            ],
+            "Scale": 1.0,
+            "Mortar Size": 0.017999999225139618,
+            "Mortar Smooth": 0.05999999865889549,
+            "Bias": 0.0,
+            "Brick Width": 0.6800000071525574,
+            "Row Height": 0.23999999463558197
+          }
+        },
+        {
+          "type": "ShaderNodeTexNoise",
+          "name": "Noise Texture.002",
+          "inputs": {
+            "Vector": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "W": 0.0,
+            "Scale": 4.5,
+            "Detail": 2.0,
+            "Roughness": 0.5,
+            "Lacunarity": 2.0,
+            "Offset": 0.0,
+            "Gain": 1.0,
+            "Distortion": 0.0
+          }
+        },
+        {
+          "type": "ShaderNodeBump",
+          "name": "Bump.002",
+          "inputs": {
+            "Strength": 0.10999999940395355,
+            "Distance": 0.017999999225139618,
+            "Filter Width": 0.10000000149011612,
+            "Height": 1.0,
+            "Normal": [
+              0.0,
+              0.0,
+              0.0
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

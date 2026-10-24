@@ -1,0 +1,124 @@
+{
+  "provider": "Indiana Geographic Information Office / Indiana Current Imagery ImageServer",
+  "service_url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+  "retrieval_date": "2026-10-24",
+  "source_collection": "2022\u20132025 current imagery; catalog item queried at NSEL centroid",
+  "source_crs": "EPSG:3857; project-local footprint inverted through the documented local approximation",
+  "project_local_to_lonlat": "lon=-86.9137+x/(111412.84*cos(40.4274deg)); lat=40.4274+y/111040.0",
+  "feature_id": 242,
+  "feature_name": "Soil Erosion Lab (SOIL)",
+  "request_bbox_3857": [
+    -9675975.056719722,
+    4927300.873336481,
+    -9675841.91315909,
+    4927416.192592655
+  ],
+  "image_px": [
+    1800,
+    1500
+  ],
+  "raw_image": "audit\\batchC_national_soil_erosion\\indiana_current_orthophoto_nsel_r1.jpg",
+  "overlay_image": "audit\\batchC_national_soil_erosion\\indiana_current_orthophoto_nsel_r1_gis_overlay.jpg",
+  "identify_catalog_response": {
+    "objectId": 0,
+    "name": "Pixel",
+    "value": "227, 228, 237, 231",
+    "location": {
+      "x": -9675898.015690949,
+      "y": 4927362.0871287305,
+      "spatialReference": {
+        "wkid": 102100,
+        "latestWkid": 3857
+      }
+    },
+    "properties": {
+      "Values": [
+        "NoData NoData NoData NoData",
+        "227 228 237 231",
+        "230 232 240 234"
+      ]
+    },
+    "catalogItems": {
+      "objectIdFieldName": "OBJECTID",
+      "features": [
+        {
+          "attributes": {
+            "OBJECTID": 1,
+            "Name": "Indiana_2025_SPW_2ft_exportraster",
+            "MinPS": 0.609601219202439,
+            "MaxPS": 3047,
+            "LowPS": 0.6096012192024385,
+            "HighPS": 78.02895605791213,
+            "Category": 2,
+            "Tag": "Dataset",
+            "GroupName": "",
+            "ProductName": "",
+            "CenterX": -9671836.271129418,
+            "CenterY": 4859750.006095828,
+            "ZOrder": 8099,
+            "Image_Year": null,
+            "County": null,
+            "Pixel_Size": null,
+            "Shape_Length": 1418573.2940079733,
+            "Shape_Area": 89872153363.15088
+          }
+        },
+        {
+          "attributes": {
+            "OBJECTID": 271954,
+            "Name": "in2023_29971882_06",
+            "MinPS": 0,
+            "MaxPS": 1.21920243840488,
+            "LowPS": 0.15240030480060962,
+            "HighPS": 0.30480060960121924,
+            "Category": 1,
+            "Tag": "Dataset",
+            "GroupName": "",
+            "ProductName": "",
+            "CenterX": -9675680.976954984,
+            "CenterY": 4927168.142225674,
+            "ZOrder": 4046,
+            "Image_Year": "2023",
+            "County": "Tippecanoe",
+            "Pixel_Size": "06 in.",
+            "Shape_Length": 4005.9188037092795,
+            "Shape_Area": 1002957.7791253929
+          }
+        },
+        {
+          "attributes": {
+            "OBJECTID": 4,
+            "Name": "Indiana_2023_SPW_06in",
+            "MinPS": 1.21920243840488,
+            "MaxPS": 3048,
+            "LowPS": 1.219202438404877,
+            "HighPS": 78.02895605791213,
+            "Category": 2,
+            "Tag": "Dataset",
+            "GroupName": "",
+            "ProductName": "",
+            "CenterX": -9714468.921875834,
+            "CenterY": 4832418.417377355,
+            "ZOrder": 506,
+            "Image_Year": null,
+            "County": null,
+            "Pixel_Size": null,
+            "Shape_Length": 1594892.59096127,
+            "Shape_Area": 123964021517.47235
+          }
+        }
+      ]
+    },
+    "catalogItemVisibilities": [
+      1,
+      0,
+      0
+    ]
+  },
+  "license": "ImageServer metadata documents CC0 statewide imagery.",
+  "limitations": [
+    "The project local tangent-plane conversion is approximate and not survey control.",
+    "Orthophoto records overhead roof appearance only; it does not establish wall height or roof slope.",
+    "Tree shadows and seasonal canopy obscure parts of the perimeter."
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "building": "Morgan J. Burke Boilermaker Aquatic Center",
+  "building_id": "morgan_j_burke_boilermaker_aquatic_center",
+  "revision": 4,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+  "asset_sha256": "e1ffe114125958531f71fc2506c0c9df3e4c35aab189f703c456fbf921adc2c9",
+  "scope": "Only the Aquatic Center asset and audit/batchC_boilermaker_aquatic_r1 were changed. No master, README, manifest, or shared indexes were edited. No commit.",
+  "independent_r3_grade": 7.8,
+  "r3_findings_addressed": [
+    "Facade still uniform, brick relief imperceptible.",
+    "Broad featureless roof.",
+    "Building lettering too large.",
+    "Seating and interior circulation looked schematic."
+  ],
+  "source_review": [
+    {
+      "source": "Google Street View north approach panorama TdL92OGnlFSS8CxGuVLKDA, July 2023",
+      "url": "https://www.google.com/maps/@?api=1&map_action=pano&pano=TdL92OGnlFSS8CxGuVLKDA",
+      "supports": "Qualitative brick facade, long ribbon/clerestory band, north entry canopy, and direct-mounted building lettering. It is not calibrated and provides no measured proportions."
+    },
+    {
+      "source": "Purdue RecWell Aquatics",
+      "url": "https://www.purdue.edu/recwell/sports-and-programs/aquatics/index.php",
+      "supports": "Published aquatic program, dive-pool depth and platform levels, and spectator capacity."
+    },
+    {
+      "source": "Purdue Recreation Facility Fact Sheet",
+      "url": "https://purdue.edu/recwell/visit/facility/fact-sheet.php",
+      "supports": "Mezzanine and program spaces, but not a dimensioned seating/interior plan."
+    },
+    {
+      "source": "Official BuildingShapesZip4 footprint, FID 896",
+      "file": "audit/batchC_boilermaker_aquatic_official_footprint.json",
+      "supports": "Horizontal footprint correspondence only; not vertical survey control or master registration."
+    }
+  ],
+  "changes": [
+    "Replaced the prior front-face brick texture coordinate mapping with a real-scale projection for vertical wall surfaces, so the running-bond courses and mortar relief read across the full perimeter shell. The close facade render shows the masonry pattern; it does not prove exact brick size or wall material specification.",
+    "Raised the estimated roof standing-seam relief from a very fine line to visible, soft silver-gray seams on both roof slopes. Roof form and dimensions remain unverified.",
+    "Reduced direct-mounted lettering width from the prior oversized treatment to approximately 4.65 model units, centered over the entry. This is a visual estimate from the qualitative Street View image, not a measured dimension.",
+    "Cut a schematic central access aisle into the spectator bank and split the concrete tiers around it; added 12 stair treads and handrails. Reduced representative count from 300 to 288. This responds to the need for readable circulation but is not claimed to match an as-built arrangement.",
+    "Added small bevels to seat pan/back edges and a dedicated pool-side seating-aisle camera to make the stand legible."
+  ],
+  "validation": "Fresh reopen in Blender 5.2.3 passed. All 70 official FID 896 GIS boundary edges correspond bidirectionally with all 70 shell perimeter segments, max sampled error 0.000002m in each direction; this is footprint correspondence only, not survey or master-placement validation. Validation confirms 57 ribbon panes, 70 mapped vertical masonry faces, 4.651m visually estimated lettering width, 86 roof-seam splines, 288 representative seats, 12 aisle treads, 24 split step sections, mezzanine/stairs, published dive-pool depth/platforms, materials on all meshes, and no external image dependencies.",
+  "uncertainties": [
+    "No calibrated facade elevation or roof section located; roof profile, heights, facade bay proportions, masonry course size, and sign scale remain estimates.",
+    "No as-built interior plan located; seating arrangement, center aisle, mezzanine arrangement, and circulation remain schematic.",
+    "GIS does not prove vertical dimensions or placement within the master."
+  ],
+  "renders": [
+    "aquatic_r4_north_elevation.png",
+    "aquatic_r4_street_approach.png",
+    "aquatic_r4_north_masonry_detail.png",
+    "aquatic_r4_entry_sign_detail.png",
+    "aquatic_r4_interior_gallery.png",
+    "aquatic_r4_interior_seating_aisle.png"
+  ]
+}

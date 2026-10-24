@@ -1,0 +1,48 @@
+{
+  "building": "Morgan J. Burke Boilermaker Aquatic Center",
+  "building_id": "morgan_j_burke_boilermaker_aquatic_center",
+  "revision": 2,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+  "asset_sha256": "b67b4fb43780a214d2b8573daf18f025c911ab015b6049e30f0485e3e6b7cdfc",
+  "scope": "Only this building asset and audit/batchC_boilermaker_aquatic_r1. No master/shared/index/README edits and no commit.",
+  "reviewer_r1_grade": 7.6,
+  "reviewer_r1_findings": [
+    "Exterior surface uniformity; roof/facade segmentation and context weak.",
+    "Entry/sign too small.",
+    "Cutaway sparse, lacking visible seating/mezzanine/circulation.",
+    "Tower supports and pool/deck layout remain schematic.",
+    "GIS check only tested bounding box.",
+    "Materials and lighting/render category was weak."
+  ],
+  "r2_changes": [
+    "Brick pilasters and course bands; ribbon window frames/reveals; improved procedural brick, concrete, metal and glazing materials.",
+    "Corrected perimeter shell top to follow retained shallow-gable estimate; added slight roof overhang, ridge cap and gutters; removed generic far-side sign/fascia artifact.",
+    "Enlarged north entry sign plaque with high-contrast lettering and canopy posts.",
+    "Added representative 300-seat bank and schematic mezzanine/rails/stairs. Published facility capacity is 625; seat-bank layout is not sourced as-built geometry.",
+    "Bidirectional GIS perimeter correspondence instead of bbox-only check."
+  ],
+  "source_links": {
+    "street_view": "https://www.google.com/maps/@?api=1&map_action=pano&pano=y0c6EFsDkT7g2ak3hsZh5A",
+    "recwell_aquatics": "https://www.purdue.edu/recwell/sports-and-programs/aquatics/index.php",
+    "facility_fact_sheet": "https://purdue.edu/recwell/visit/facility/fact-sheet.php",
+    "athletics_facility": "https://purduesports.com/facilities/morgan-j.-burke-aquatic-center/12",
+    "roof_project": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/04/Burke-Boilermaker-Aquatic-Center-Mechanical-B-1-24-4-15-1.pdf",
+    "gis_snapshot": "audit/batchC_boilermaker_aquatic_official_footprint.json"
+  },
+  "uncertainty": [
+    "Only north facade directly matched to Street View; side/rear segmentation is extrapolated.",
+    "Wall/eave/ridge heights and roof section are estimates; official GIS field units/meaning are undocumented.",
+    "Seating positions, mezzanine geometry, and circulation are schematic; no dimensioned as-built plan found.",
+    "Competition-pool basin details and dive tower structure remain schematic where sources do not specify dimensions.",
+    "GIS alignment is not survey control."
+  ],
+  "validation_file": "audit/batchC_boilermaker_aquatic_r1/validation_r2.json",
+  "validation_passed": true,
+  "gis_vertices": 70,
+  "wall_perimeter_segments": 70,
+  "max_sampled_bidirectional_error_m": 2e-06,
+  "external_image_dependencies": 0,
+  "master_or_manifest_edited": false,
+  "independent_grade_r2": "pending"
+}

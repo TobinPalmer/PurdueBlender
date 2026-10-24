@@ -51,10 +51,10 @@ This project tracks detailed campus models separately from the remaining massing
 | Math Sciences | [math_sciences.blend](modular/buildings/math_sciences.blend) | Finished | 8.1/10 | — |
 | Mccutcheon Hall | [mccutcheon_hall.blend](modular/buildings/mccutcheon_hall.blend) | Finished | 8.1/10 | — |
 | Mechanical Engineering | [mechanical_engineering.blend](modular/buildings/mechanical_engineering.blend) | Finished | 8.0/10 | — |
-| Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | In progress | 6.8/10 | Tobin |
-| National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](modular/buildings/national_soil_erosion_laboratory.blend) | In progress | 7.2/10 | Tobin |
+| Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | In progress | 7.9/10 | Tobin |
+| National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](modular/buildings/national_soil_erosion_laboratory.blend) | Finished | 8.0/10 | — |
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](modular/buildings/native_american_educational_and_cultural_center_nacc.blend) | In progress | 7.0/10 | Tobin |
-| Neil Armstrong Hall | [neil_armstrong_hall.blend](modular/buildings/neil_armstrong_hall.blend) | Needs independent grade | Not graded | Tobin |
+| Neil Armstrong Hall | [neil_armstrong_hall.blend](modular/buildings/neil_armstrong_hall.blend) | In progress | 7.5/10 | Tobin |
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](modular/buildings/niswonger_aviation_tech.blend) | In progress | 6.7/10 | Tobin |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](modular/buildings/northwest_chiller_plant.blend) | In progress | 7.5/10 | Tobin |
 | Owen Hall | [owen_hall.blend](modular/buildings/owen_hall.blend) | Needs independent grade | Not graded | Tobin |
@@ -76,11 +76,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (190 total)
+## Unfinished buildings (189 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 130 buildings, Brady 30 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 129 buildings, Brady 30 buildings.
 
-### Detailed models still in progress or awaiting a grade (56)
+### Detailed models still in progress or awaiting a grade (55)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -117,10 +117,9 @@ This list excludes individual house parcels. The detailed models that are still 
 | Knoy Hall | [`knoy_hall.blend`](modular/buildings/knoy_hall.blend) | 7.8/10 | Tobin |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 | Lawson Hall | [`lawson_hall.blend`](modular/buildings/lawson_hall.blend) | 7.0/10 | Tobin |
-| Morgan J. Burke Boilermaker Aquatic Center | [`morgan_j_burke_boilermaker_aquatic_center.blend`](modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 6.8/10 | Tobin |
-| National Soil Erosion Laboratory | [`national_soil_erosion_laboratory.blend`](modular/buildings/national_soil_erosion_laboratory.blend) | 7.2/10 | Tobin |
+| Morgan J. Burke Boilermaker Aquatic Center | [`morgan_j_burke_boilermaker_aquatic_center.blend`](modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 7.9/10 | Tobin |
 | Native American Educational and Cultural Center | [`native_american_educational_and_cultural_center_nacc.blend`](modular/buildings/native_american_educational_and_cultural_center_nacc.blend) | 7.0/10 | Tobin |
-| Neil Armstrong Hall | [`neil_armstrong_hall.blend`](modular/buildings/neil_armstrong_hall.blend) | Not graded | Tobin |
+| Neil Armstrong Hall | [`neil_armstrong_hall.blend`](modular/buildings/neil_armstrong_hall.blend) | 7.5/10 | Tobin |
 | Niswonger Aviation Tech | [`niswonger_aviation_tech.blend`](modular/buildings/niswonger_aviation_tech.blend) | 6.7/10 | Tobin |
 | Northwest Chiller Plant | [`northwest_chiller_plant.blend`](modular/buildings/northwest_chiller_plant.blend) | 7.5/10 | Tobin |
 | Owen Hall | [`owen_hall.blend`](modular/buildings/owen_hall.blend) | Not graded | Tobin |

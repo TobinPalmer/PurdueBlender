@@ -1,0 +1,62 @@
+{
+  "building": "Morgan J. Burke Boilermaker Aquatic Center",
+  "building_id": "morgan_j_burke_boilermaker_aquatic_center",
+  "revision": 3,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+  "asset_sha256": "e01a6e73d85202dd1ca1dc28cdb464193cc7774dc07d38e93eb7e537d68a666a",
+  "scope": "Only Aquatic Center source asset and audit/batchC_boilermaker_aquatic_r1. No master/shared/index/README edits and no commit.",
+  "independent_r2_grade": 7.9,
+  "r2_findings_addressed": [
+    "Improve exterior proportions and facade articulation from closer imagery.",
+    "Reduce the oversized entry plaque.",
+    "Add roof/material definition.",
+    "Clean interior feature camera to show gallery, seating, and circulation without overhead lines."
+  ],
+  "source_review": [
+    {
+      "source": "Google Street View, north approach panorama TdL92OGnlFSS8CxGuVLKDA (Jul 2023)",
+      "url": "https://www.google.com/maps/@?api=1&map_action=pano&pano=TdL92OGnlFSS8CxGuVLKDA",
+      "supports": "Qualitative north approach, brick wall, long upper ribbon/clerestory band, light entrance canopy and direct-mounted building lettering. Not calibrated; dimensions cannot be measured from this view."
+    },
+    {
+      "source": "Purdue RecWell Aquatics",
+      "url": "https://www.purdue.edu/recwell/sports-and-programs/aquatics/index.php",
+      "supports": "Published pool/dive features, 17-ft dive pool depth, platform heights, spectator-seat count."
+    },
+    {
+      "source": "Purdue Recreation Facility Fact Sheet",
+      "url": "https://purdue.edu/recwell/visit/facility/fact-sheet.php",
+      "supports": "Mezzanine and facility program; does not provide dimensioned plan or exact room layout."
+    },
+    {
+      "source": "Purdue Athletics facility page and gallery",
+      "url": "https://purduesports.com/facilities/morgan-j.-burke-aquatic-center/12",
+      "supports": "Facility identity and published interior imagery; no dimensioned exterior elevations."
+    },
+    {
+      "source": "Official BuildingShapesZip4 footprint snapshot, FID 896",
+      "file": "audit/batchC_boilermaker_aquatic_official_footprint.json",
+      "supports": "GIS horizontal footprint only; not survey control and not master-placement validation."
+    }
+  ],
+  "changes": [
+    "Replaced the oversized entry plaque with direct-mounted warm-white building-name lettering at the Street View-supported entrance location. Its scale is a visual estimate; source imagery is not calibrated.",
+    "Reworked the qualitative street-approach camera to frame the brick/glazed entry and canopy in a three-quarter view. Camera placement is a presentation choice, not a survey coordinate.",
+    "Added restrained running-bond procedural brick relief/color variation and softened roof-metal finish. No external textures.",
+    "Added 43 standing seams on each estimated roof slope for roof-surface articulation; the shallow-gable roof profile remains uncertain and the seams are not source-measured.",
+    "Updated the interior gallery cutaway presentation so mezzanine, representative seating, stairs, diving tower and pool circulation read without roof trusses crossing the view. Interior plan remains schematic."
+  ],
+  "validation": "validation_r3.json: reopened saved file in Blender 5.2.3; all checks passed. The full transformed official FID 896 footprint is bidirectionally compared with all 70 shell perimeter segments; maximum sampled mismatch 0.000002 m each direction. This shows GIS boundary correspondence only, not survey accuracy or master placement. Checks also confirm 57 ribbon panes, 300 representative seat blocks, mezzanine/stairs, published 5.1816 m dive depth and five platform elevations, all meshes have materials and no external image dependencies.",
+  "uncertainties": [
+    "No calibrated exterior elevation or roof section was located; roof profile, eave/ridge dimensions and exact facade bay dimensions remain estimates.",
+    "No as-built interior plan was located; seat count shown is representative (300 of published 625), and gallery supports/circulation are schematic.",
+    "GIS does not establish vertical dimensions or master-scene placement."
+  ],
+  "renders": [
+    "aquatic_r3_north_elevation.png",
+    "aquatic_r3_street_approach.png",
+    "aquatic_r3_entry_sign_detail.png",
+    "aquatic_r3_interior_gallery.png"
+  ]
+}

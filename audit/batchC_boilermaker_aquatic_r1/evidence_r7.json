@@ -1,0 +1,105 @@
+{
+  "building": "Morgan J. Burke Boilermaker Aquatic Center",
+  "building_id": "morgan_j_burke_boilermaker_aquatic_center",
+  "revision": 7,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+  "scope": "Only this building asset and audit/batchC_boilermaker_aquatic_r1 were modified. No master, README, manifest, shared index, other building, commit, or push.",
+  "starting_grade": 7.9,
+  "starting_grade_source": "Independent R6 reviewer feedback relayed by the coordinator. The interior score remained below target due to block-like seating, visually dominant overhead members, and weak lighting/banner integration. Exterior remained repetitive; roof form/height and master placement were uncertain.",
+  "sources": [
+    {
+      "name": "Purdue Athletics official Morgan J. Burke Aquatic Center photo gallery",
+      "provider": "Purdue Athletics / Exposure",
+      "url": "https://purduesports.exposure.co/morgan-j-burke-aquatic-center",
+      "source_date": "2018-01-19",
+      "retrieved": "2026-10-24",
+      "supports": "Qualitative, building-specific views of the natatorium interior, exposed light steel roof structure, overhead lighting, spectator stands, and Purdue displays. Does not establish dimensions, fixture schedule, or exact placement."
+    },
+    {
+      "name": "Athletics projects",
+      "provider": "Arsee Engineers",
+      "url": "https://www.arsee-engineers.com/project-athletic.html",
+      "retrieved": "2026-10-24",
+      "supports": "Project photo shows the Aquatic Center pool hall, gallery, and light-colored exposed steel structure. No member or roof dimensions."
+    },
+    {
+      "name": "Purdue Aquatic Center lighting installation",
+      "provider": "Huston Electric",
+      "url": "https://hustonelectric.com/project/purdue-aquatic-center/",
+      "retrieved": "2026-10-24",
+      "supports": "Project-specific lighting contractor page documents Lux Dynamics Wave LED fixtures installed above the competition and diving pools. Supports the presence of updated pool-hall LED lighting only; fixture count, exact location, spacing, dimensions, power, and as-built aiming remain unverified."
+    },
+    {
+      "name": "Purdue RecWell Aquatics",
+      "provider": "Purdue University",
+      "url": "https://www.purdue.edu/recwell/sports-and-programs/aquatics/index.php",
+      "retrieved": "2026-10-24",
+      "supports": "Published aquatic program and 625 spectator capacity."
+    },
+    {
+      "name": "Facility fact sheet",
+      "provider": "Purdue University RecWell",
+      "url": "https://purdue.edu/recwell/visit/facility/fact-sheet.php",
+      "retrieved": "2026-10-24",
+      "supports": "Published facility and mezzanine context; not a floor plan."
+    },
+    {
+      "name": "Boilermaker Aquatic Center project profile",
+      "provider": "Tnemec",
+      "url": "https://www.tnemec.com/documents/134/Boilermaker_Aquatic_Center_Profile.pdf",
+      "retrieved": "2026-10-24",
+      "supports": "Protected steel roof deck and coating finish context. It does not show a dimensioned roof section or heights."
+    },
+    {
+      "name": "Official GIS footprint, feature FID 896",
+      "provider": "Purdue campus GIS snapshot preserved in project audit",
+      "file": "audit/batchC_boilermaker_aquatic_official_footprint.json",
+      "retrieved": "2026-10-24",
+      "source_crs": "Source snapshot geometry is longitude/latitude; projected for comparison using project-local equirectangular approximation at latitude 40.4274, longitude -86.9137.",
+      "measurement_method": "Sampled corresponding polygon and structural-shell boundary segments in both directions.",
+      "supports": "Local horizontal outline correspondence only; not survey control or proof of placement in the campus master."
+    }
+  ],
+  "changes": [
+    "Rebuilt the existing 288 representative spectator seat silhouettes from simple blocks into joined, extruded seat-pan and slanted-back profiles with softened edges. The count and layout remain schematic; Purdue publishes a capacity of 625.",
+    "Added 18 compact overhead LED diffuser meshes and matching area lights arranged in the modeled pool-hall bays. The lighting contractor's project page supports updated LED lighting above the competition/diving pools; fixture count, position, dimensions, power, and layout are explicitly presentation estimates, not an as-built plan. The area-light shadows are disabled to avoid 18 competing shadow maps in the EEVEE preview.",
+    "Added two suspended black-and-gold Purdue display panels with hangers reaching the modeled lower truss zone and text facing outward on both sides. Existing photo references support Purdue-branded display motifs, but banner locations and scale are estimated.",
+    "Adjusted the existing 21 schematic steel-truss meshes to a less dominant medium neutral painted-steel finish. The material character is photo-supported; geometry, member sizes, spacing, and elevations remain unverified.",
+    "Added an interior integrated-lighting camera and close north-entry camera for review. Render-only roof/context visibility and neutral world changes are restored after the preview renders."
+  ],
+  "validation_file": "audit/batchC_boilermaker_aquatic_r1/validation_r7.json",
+  "validation_passed": true,
+  "validation_summary": {
+    "saved_asset_reopened": true,
+    "blender_version": "5.2.3 LTS",
+    "gis_feature_id": 896,
+    "gis_boundary_vertices": 70,
+    "shell_perimeter_segments": 70,
+    "maximum_sampled_bidirectional_error_m": 0.000002,
+    "r7_collection_objects": 46,
+    "truss_meshes": 21,
+    "representative_molded_seats": 288,
+    "led_fixture_meshes": 18,
+    "area_lights": 18,
+    "purdue_display_panels": 2,
+    "banner_text_objects": 4,
+    "all_meshes_have_materials": true,
+    "external_image_dependencies": 0
+  },
+  "uncertainties": [
+    "No measured roof section, roof profile, or eave/ridge heights were located. Roof geometry remains unverified.",
+    "The light-painted truss material character is photo-supported, while all member dimensions, geometry, spacing, and elevations remain schematic.",
+    "The lighting source confirms a building-specific LED installation, not the modeled count, exact fixture placement, dimensions, power, or lighting plan.",
+    "Banner count, location, and scale are presentation estimates based on qualitative facility photos.",
+    "The modeled 288 spectator seats are representative and do not equal published capacity; exact seating, stand, and circulation arrangement remains uncertain.",
+    "Optional site dressing remains separate, approximate, and un-georeferenced.",
+    "GIS-to-shell correspondence validates local footprint outline only. Campus-master placement and survey accuracy remain unverified."
+  ],
+  "renders": [
+    "audit/batchC_boilermaker_aquatic_r1/aquatic_r7_interior_integrated_lighting.png",
+    "audit/batchC_boilermaker_aquatic_r1/aquatic_r7_interior_seating_detail.png",
+    "audit/batchC_boilermaker_aquatic_r1/aquatic_r7_north_entry_approach.png"
+  ],
+  "asset_sha256": "3edbfd3ecf44cbb1eaea8204054724110d4adf7f28beefdc271726266bab933a"
+}

@@ -1,0 +1,41 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R6",
+  "parent_revision": "R5",
+  "asset": "modular/buildings/neil_armstrong_hall.blend",
+  "changes": [
+    {
+      "objects": ["ARMS_R6_North_Clerestory_Glass", "ARMS_R6_North_Clerestory_Mullions"],
+      "change": "Added a 22-bay upper facade glazing band and slender dark mullions on the candidate north-side edge of an R5 coarse wing envelope.",
+      "basis": "The geotagged 2016 exterior image shows an upper horizontal glazing strip above red-brick facade; FRP project images support the broad brick/glass material vocabulary.",
+      "confidence": "Low-to-moderate for the facade feature family; low for exact location, width, height, and rhythm.",
+      "uncertainty": "The geotag locates the camera northwest of the GIS footprint, but the photo has no bearing, camera calibration, facade control points, or dimensioned elevation. Exact facade assignment remains uncertain; the mesh is a qualitative facade cue, not a photo-registered window schedule."
+    },
+    {
+      "objects": ["ARMS_R5_Coarse_LiDAR_roof_high", "ARMS_East_Roof_Slab", "ARMS_West_Roof_Slab"],
+      "change": "Applied one restrained red ACM material treatment to the high LiDAR roof-zone's upward faces and to the existing roof ACM material used by the two older roof slabs.",
+      "basis": "FRP project documentation identifies Mayflower Red ACM in the roof/truss expression; the R5 NDHM defines only a broad, registered height zone.",
+      "confidence": "Moderate for red ACM as a finish family; low for exact cladding boundary, topography, cantilever shape, and panel layout.",
+      "uncertainty": "The LiDAR surface is a coarse roof-height envelope and does not recover the cantilevered roof geometry. R6 does not alter the R5 wing heights or footprints. The old roof slab geometry remains a simplified pre-existing representation."
+    },
+    {
+      "objects": ["ARMS_Balcony_Level2_Slab", "ARMS_Balcony_Level2_GlassRail", "ARMS_Balcony_Level2_Handrail", "ARMS_Balcony_Level3_Slab", "ARMS_Balcony_Level3_GlassRail", "ARMS_Balcony_Level3_Handrail"],
+      "change": "Produced an isolated two-level bridge section render for legibility; no bridge or circulation geometry was changed.",
+      "basis": "FRP explicitly describes exposed concrete bridges with glass rails at two atrium levels and three concrete stairs; its interior photographs show the general form.",
+      "confidence": "Moderate for the two bridge levels as building features; low for modeled exact span, termini, and coordinates.",
+      "uncertainty": "Available imagery is not registered to the asset. Existing modeled bridge spans and the one schematic stair remain unverified for path continuity, landing location, accessibility, and complete floor-to-floor circulation. The R6 section isolates the two bridge objects and is not a complete atrium cutaway."
+    },
+    {
+      "objects": [],
+      "change": "Adjusted render exposure, lighting, and framing; the section render temporarily substitutes an opaque tinted glass proxy to make the existing safety-rail positions visible.",
+      "basis": "Render-only presentation change.",
+      "confidence": "Not applicable to building geometry.",
+      "uncertainty": "Temporary camera, lights, visibility changes, and render-only material override were not saved to the .blend asset."
+    }
+  ],
+  "unchanged": [
+    "Root transform, manifest placement marker, and R5 GIS/LiDAR wing masks/heights.",
+    "Existing shell and original geometry aside from the building-local Mayflower Red ACM material color update.",
+    "No new floor plans, roof slope, penthouse placement, room layouts, stair runs, or GIS registration adjustments were inferred."
+  ]
+}
