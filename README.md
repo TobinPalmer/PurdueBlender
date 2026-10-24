@@ -46,7 +46,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Lawson Hall | [lawson_hall.blend](modular/buildings/lawson_hall.blend) | In progress | 7.0/10 | Tobin |
 | Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](modular/buildings/life_science_plant_and_soils_laboratory.blend) | Finished | 8.0/10 | — |
 | Lyles-Porter Hall | [lyles_porter_hall.blend](modular/buildings/lyles_porter_hall.blend) | Finished | 8.2/10 | — |
-| Mackey Arena | [mackey_arena.blend](modular/buildings/mackey_arena.blend) | In progress | 7.3/10 | Tobin |
+| Mackey Arena | [mackey_arena.blend](modular/buildings/mackey_arena.blend) | Finished | 8.0/10 | — |
 | Materials Science and Electrical Engineering | [materials_science_and_electrical_engineering_msee.blend](modular/buildings/materials_science_and_electrical_engineering_msee.blend) | In progress | 7.2/10 | Tobin |
 | Math Sciences | [math_sciences.blend](modular/buildings/math_sciences.blend) | In progress | 6.9/10 | Tobin |
 | Mccutcheon Hall | [mccutcheon_hall.blend](modular/buildings/mccutcheon_hall.blend) | Needs independent grade | Not graded | Tobin |
@@ -76,11 +76,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (195 total)
+## Unfinished buildings (194 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 165 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 164 buildings.
 
-### Detailed models still in progress or awaiting a grade (61)
+### Detailed models still in progress or awaiting a grade (60)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -117,7 +117,6 @@ This list excludes individual house parcels. The detailed models that are still 
 | Knoy Hall | [`knoy_hall.blend`](modular/buildings/knoy_hall.blend) | 7.7/10 | Tobin |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 | Lawson Hall | [`lawson_hall.blend`](modular/buildings/lawson_hall.blend) | 7.0/10 | Tobin |
-| Mackey Arena | [`mackey_arena.blend`](modular/buildings/mackey_arena.blend) | 7.3/10 | Tobin |
 | Materials Science and Electrical Engineering | [`materials_science_and_electrical_engineering_msee.blend`](modular/buildings/materials_science_and_electrical_engineering_msee.blend) | 7.2/10 | Tobin |
 | Math Sciences | [`math_sciences.blend`](modular/buildings/math_sciences.blend) | 6.9/10 | Tobin |
 | Mccutcheon Hall | [`mccutcheon_hall.blend`](modular/buildings/mccutcheon_hall.blend) | Not graded | Tobin |

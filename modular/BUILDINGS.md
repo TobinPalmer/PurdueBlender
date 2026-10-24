@@ -21,7 +21,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Knoy Hall | [knoy_hall.blend](buildings/knoy_hall.blend) | 62 |
 | Krannert Building | [krannert_building.blend](buildings/krannert_building.blend) | 670 |
 | Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 508 |
-| Mackey Arena | [mackey_arena.blend](buildings/mackey_arena.blend) | 373 |
+| Mackey Arena | [mackey_arena.blend](buildings/mackey_arena.blend) | 391 |
 | Math Sciences | [math_sciences.blend](buildings/math_sciences.blend) | 592 |
 | Mccutcheon Hall | [mccutcheon_hall.blend](buildings/mccutcheon_hall.blend) | 235 |
 | Mechanical Engineering | [mechanical_engineering.blend](buildings/mechanical_engineering.blend) | 50 |
