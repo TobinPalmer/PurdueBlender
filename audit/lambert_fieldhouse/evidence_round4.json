@@ -1,0 +1,53 @@
+{
+  "building_id": "massing_lambert_ward_l_fieldhouse_and_gymnasium_1656862",
+  "name": "Ward L. Lambert Fieldhouse and Gymnasium",
+  "asset_file": "modular/buildings/lambert_fieldhouse.blend",
+  "revision": 4,
+  "review_date": "2026-10-24",
+  "changes_since_round3": [
+    "Replaced the poorly legible entrance patch with 116 staggered warm red-brown brick units and three restrained tone variations.",
+    "Added an unmarked adjacent asphalt strip beside the Stadium Avenue sidewalk and curb to communicate the street context without inventing lane markings.",
+    "Inspected the entrance geometry and found no tile/border/sidewalk overlap: the black surround was the existing solid entry walk shaded beneath the roof eave. Applied a modest ambient lift only to entrance/site concrete; building materials are unchanged.",
+    "Reopened the saved source and rerendered exterior and interior cutaway previews.",
+    "Retained the track mesh and remeasured its saved lane-one centerline perimeter at 199.9889567 m."
+  ],
+  "references": [
+    {
+      "provider": "Purdue University Engineering Computer Network, Ground Control Requirements",
+      "url": "https://engineering.purdue.edu/~bethel/pur_gcp.pdf",
+      "reviewed": "2026-10-24",
+      "use": "Identifies Stadium Avenue, its sidewalk, and a brick inlay at Lambert Fieldhouse's main entrance. The asphalt strip merely signals the adjacent named avenue; road width and lane arrangement are not sourced and remain schematic."
+    },
+    {
+      "provider": "Purdue University Athletics",
+      "url": "https://purduesports.com/facilities/lambert-fieldhouse",
+      "reviewed": "2026-10-24",
+      "use": "Official facility identity and indoor-track context."
+    }
+  ],
+  "entrance_material_geometry_check": {
+    "finding": "No geometric overlap among pavers, border, and sidewalk. The dark surround was the solid entry-walk surface under the roof-eave shadow, not a void or asphalt patch.",
+    "pavers": "LAMB | Stadium entry brick inlay round4; top surface z=0.145 m",
+    "border_top_z_m": 0.1095,
+    "sidewalk_top_z_m": 0.08,
+    "correction": "A shadow-lift material using a restrained emission strength of 0.40 was assigned only to the entry walk, entrance threshold, sidewalk, curb, and border."
+  },
+  "direct_mesh_measurement": {
+    "track_mesh": "LAMB | 6-lane 200 m stadium track surface",
+    "method": "Average paired inner/outer boundary vertices at each sample station to recover the lane-one centerline polygon, then sum each closed polygon edge in local meters.",
+    "measured_centerline_perimeter_m": 199.98895672145127,
+    "lane_count": 6,
+    "boundary_line_count": 7
+  },
+  "uncertainties": [
+    "Sidewalk, curb, brick inlay and roadway dimensions/extent are schematic; source confirms their relationship but does not provide measurements.",
+    "Road width and lane markings are unverified and intentionally omitted.",
+    "Roof profile, facade cadence, and interior event/seating layout remain schematic."
+  ],
+  "validation": "audit/lambert_fieldhouse/validation_round4.json",
+  "previews": {
+    "exterior": "audit/lambert_fieldhouse/exterior_round4.png",
+    "interior_cutaway": "audit/lambert_fieldhouse/interior_round4.png"
+  },
+  "master_manifest_shared_files_edited": false
+}

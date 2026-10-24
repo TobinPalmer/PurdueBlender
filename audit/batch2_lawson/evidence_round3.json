@@ -1,0 +1,64 @@
+{
+  "building": "Lawson Hall / Richard and Patricia Lawson Computer Science Building",
+  "revision": "source-only round 3",
+  "source_blend": "modular/buildings/lawson_hall.blend",
+  "validation": "audit/batch2_lawson/validation_round3.json",
+  "sources": [
+    {
+      "url": "https://www.cs.purdue.edu/resources/docs/lawson_1.PDF",
+      "publisher": "Purdue Department of Computer Science",
+      "evidence_used": "North-up first-floor plan with room labels, vestibule, Commons, conference/meeting rooms, circulation, and stairs. Used for approximate partition/door registration, south entrance location, and interpretation of first-floor program.",
+      "snapshot": "audit/batch2_lawson/lawson_1.pdf",
+      "limitation": "Undated plan; only first floor; raster trace and registration are approximate, not survey-grade. Does not establish heights or upper-floor layouts."
+    },
+    {
+      "url": "https://www.cs.purdue.edu/news/articles/2006/building-update-march.html",
+      "publisher": "Purdue Department of Computer Science",
+      "evidence_used": "Historic construction photographs for facade/entrance appearance and interior progress context.",
+      "limitation": "Construction-era imagery; not a current-condition survey, and no dimensions inferred."
+    },
+    {
+      "url": "https://www.cs.purdue.edu/news/articles/2005/building-update-sept.html",
+      "publisher": "Purdue Department of Computer Science",
+      "evidence_used": "Historic construction photographs for masonry and window character.",
+      "limitation": "Construction-era imagery; no dimensions inferred."
+    },
+    {
+      "url": "https://www.purdue.edu/science/about/news/articles/2024/celebrating-2024-top-20-stories-from-the-college-of-science.html",
+      "publisher": "Purdue College of Science",
+      "evidence_used": "Purdue-published exterior photo used as visual support for the south entrance canopy, glazing, signage, approach steps, and rails.",
+      "limitation": "Perspective photo supports visible appearance only; entrance dimensions and exact materials remain illustrative."
+    },
+    {
+      "url": "https://www.google.com/maps/search/Lawson+Computer+Science+Building+Purdue",
+      "publisher": "Google Maps / Frank Sadek photo (October 2017, per displayed attribution)",
+      "evidence_used": "Supplementary visual check of exterior massing, facade, and entrance.",
+      "limitation": "User photo from 2017; not an official drawing or current-date proof; no geometry measured from it."
+    },
+    {
+      "url": "https://ftp.cs.purdue.edu/resources/lawson.html",
+      "publisher": "Purdue Department of Computer Science",
+      "evidence_used": "Building function/context only.",
+      "limitation": "No geometric measurements or facade details inferred."
+    }
+  ],
+  "changes": [
+    "Corrected the saved Purdue red-brick material so its brick-texture color drives the shader rather than a grayscale noise ramp.",
+    "Reduced curtain/rotunda glass transmission to produce dark blue-gray reflective glazing consistent with Purdue exterior photos.",
+    "Added illustrative south vestibule canopy, paired glazed doors/sidelights/transom, sign fascia, approach steps, and rails at the plan-indicated public entry.",
+    "Added two plan-derived first-floor interior door leaves and illustrative lower/upper stair landings and rails at existing stair groups.",
+    "Reopened saved source, checked material assignments and external image paths, and refreshed three evidence renders."
+  ],
+  "uncertainty": [
+    "Upper-floor plans, surveyed elevations, and a dimensioned current facade survey were not available in the checked sources.",
+    "Story heights, roof/penthouse massing, exact entry dimensions, and furniture dimensions/placements remain illustrative or inherited and unverified.",
+    "Stair runs are represented schematically; the checked first-floor plan establishes stair locations but not full floor-to-floor continuity or landing heights.",
+    "The plan trace uses approximate raster coordinates and scale registration; no claim of survey/GIS-level alignment is made."
+  ],
+  "previews": [
+    "audit/batch2_lawson/exterior_round3.png",
+    "audit/batch2_lawson/entry_close_round3.png",
+    "audit/batch2_lawson/interior_cutaway_round3.png"
+  ],
+  "grading": "Awaiting a fresh independent grade; this is not self-scored."
+}

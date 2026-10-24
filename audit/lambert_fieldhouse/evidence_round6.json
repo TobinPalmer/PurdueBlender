@@ -1,0 +1,124 @@
+{
+  "building_id": "massing_lambert_ward_l_fieldhouse_and_gymnasium_1656862",
+  "name": "Ward L. Lambert Fieldhouse and Gymnasium",
+  "asset_file": "modular/buildings/lambert_fieldhouse.blend",
+  "export_collection": "Asset_lambert_fieldhouse",
+  "revision": 6,
+  "review_date": "2026-10-24",
+  "references": [
+    {
+      "provider": "Purdue University Archives and Special Collections, Purdue Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/92",
+      "source_date": "Historical record for the 1937 building; retrieved page describes original construction",
+      "retrieved": "2026-10-24",
+      "use": "Describes stone, brick, steel and reinforced concrete, a one-story fieldhouse, a four-story gymnasium section, and original dimensions. It supports the material and multilevel institutional character; the source does not document the current roof profile, facade dimensions, truss spacing, or whether the historic entrance tower remains today."
+    },
+    {
+      "provider": "Boston Public Library Tichnor Brothers postcard collection, via Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Purdue_fieldhouse_and_gymnasium,_Purdue_University,_West_Lafayette,_Indiana_(77515).jpg",
+      "source_date": "Circa 1930\u20131945; accession 06_10_013807",
+      "retrieved": "2026-10-24",
+      "use": "Historical visual reference for brick massing, horizontal window bands, pale stone accents, and a prominent entrance tower. Exact proportions are not measured; tower survival in current conditions is unverified."
+    },
+    {
+      "provider": "Tripadvisor visitor photo on Lambert Fieldhouse listing",
+      "url": "https://www.tripadvisor.in/Attraction_Review-g37621-d27012836-Reviews-Lambert_Fieldhouse-West_Lafayette_Indiana.html",
+      "source_date": "Associated review dated 2024-09; photo capture date unspecified",
+      "retrieved": "2026-10-24",
+      "use": "Contemporary visual cue for red brick, tall light-colored concrete pilasters, and large block-like glazing; dimensions and exact bay rhythm are not measured."
+    },
+    {
+      "provider": "Dave Wegiel Photography, Gene Edmonds Invitational at Lambert Fieldhouse",
+      "url": "https://pinolaphoto.com/2019/01/14/gene-edmonds-invitational/",
+      "source_date": "2019-01-12/14 event coverage",
+      "retrieved": "2026-10-24",
+      "use": "Interior visual reference for the arched steel-roof volume, upper spectator/official balconies, and event display/equipment cues. The new truss spacing, balcony extents, and generic display remain illustrative."
+    },
+    {
+      "provider": "Purdue University Athletics, Lambert Fieldhouse facility page",
+      "url": "https://purduesports.com/facilities/lambert-fieldhouse",
+      "retrieved": "2026-10-24",
+      "use": "Official identity and current six-lane, 200 m track use."
+    },
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 layer 0, feature 261",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 261,
+      "source_crs": "WGS84 geographic coordinates in the retained raw snapshot; transformed by the project local approximate conversion",
+      "snapshot": "audit/batchC_lambert_official_footprint.json",
+      "retrieved": "2026-10-24",
+      "use": "Preserved plan footprint and exact segmented exterior wall alignment; the new horizontal bands follow its ten unique perimeter edges. It does not verify height, roof, tower, or facade style."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, Purdue Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/92",
+      "source_date": "Historical record for 1937 construction; page retrieved 2026-10-24",
+      "retrieved": "2026-10-24",
+      "use": "Source-supported plan dimensions/story count: one-story 172 x 303 ft fieldhouse plus separate four-story 110 x 210 ft gymnasium section. The record does not localize/orient those volumes against current GIS and gives no measured roof profile, elevations, facade cadence, or current tower status. Dimensions were converted using 0.3048 m/ft."
+    },
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 layer 0, feature 261",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 261,
+      "source_crs": "WGS84 geographic; project local approximate conversion X=(lon+86.9137)*84810.6042 m, Y=(lat-40.4274)*111040 m",
+      "snapshot": "audit/batchC_lambert_official_footprint.json",
+      "retrieved": "2026-10-24",
+      "use": "The saved project footprint mesh reproduces the source polygon and is U-shaped with 20 boundary edges. It constrains the outer plan and facade band positions, but does not identify the roofed fieldhouse/gym allocation or verify height."
+    }
+  ],
+  "measurement_and_frame": {
+    "track_mesh": "LAMB | 6-lane 200 m stadium track surface",
+    "measurement_method": "Average paired inner/outer boundary vertices at each sample station to recover the lane-one centerline polygon and sum its closed polygon edges in local meters.",
+    "measured_centerline_perimeter_m": 199.98895672145127,
+    "published_facility_lap_m": 200,
+    "lane_count": 6,
+    "boundary_line_count": 7,
+    "placement": "Local origin, GIS footprint, and track mesh preserved. The internal volumes are placed as an illustrative hypothesis because the archive does not georegister them and the U-shaped GIS footprint does not fully resolve the roofed area.",
+    "stone_band_registration": {
+      "method": "Extract the 20-edge closed GIS perimeter cycle from the bottom boundary edges of the saved ground-footprint mesh; orient each rectangular band segment to its edge tangent; position its center 0.20 m outward along the edge normal.",
+      "segment_count": 80,
+      "computed_mean_offset_error_m": 4.7e-07,
+      "computed_max_offset_error_m": 1.03e-06,
+      "pier_check": "33 existing pier centers compared to nearest GIS segment; mean distance 0.03296 m, maximum 0.10587 m."
+    },
+    "volume_plan_dimensions_from_archive": {
+      "one_story_fieldhouse": {
+        "length_ft": 303,
+        "width_ft": 172,
+        "length_m": 92.3544,
+        "width_m": 52.4256
+      },
+      "four_story_gym": {
+        "length_ft": 210,
+        "width_ft": 110,
+        "length_m": 64.008,
+        "width_m": 33.528
+      },
+      "story_height": "not measured; four-level envelope in the model is schematic"
+    }
+  },
+  "uncertainties": [
+    "The historical record gives two plan rectangles and story counts but does not georegister them. Current hall/gym placement, orientation, and connection are illustrative and remain a source conflict with parts of the U-shaped GIS outline.",
+    "Fieldhouse roof curvature, eave/ridge heights, steel member sections/spacing, gym overall elevation, and floor-to-floor heights are not measured. The gym height is only a schematic four-level envelope.",
+    "Facade window cadence and detail are visually estimated from historical/contemporary imagery; stone band positions follow GIS edges, but the historic photos do not supply elevation dimensions.",
+    "The historic entrance tower is hidden from current model views. The postcard supports only a historical tower depiction; current survival/location/proportions remain unverified.",
+    "Balcony extents, scoreboard, interior seating, event layout, and gym circulation/floor plates remain schematic; no accessibility or as-built claim is inferred.",
+    "GIS feature 261 is an approximate plan source, not a surveyed wall/roof edge; the project local conversion is approximate and does not independently verify the building\u2019s height or interior."
+  ],
+  "validation": "audit/lambert_fieldhouse/validation_round6.json",
+  "previews": {
+    "exterior": "audit/lambert_fieldhouse/exterior_round6.png",
+    "interior_cutaway": "audit/lambert_fieldhouse/interior_round6.png",
+    "plan_section_overlay": "audit/lambert_fieldhouse/plan_section_overlay_round6.svg"
+  },
+  "master_manifest_shared_files_edited": false,
+  "changes_since_round5": [
+    "Resized the arched one-story hall roof to Purdue Archives dimensions: 303 x 172 ft (92.354 x 52.426 m). Roof curvature/eave height remain schematic; the archival plan dimensions are documented, but their local position/orientation is not registered by the source.",
+    "Added a visually distinct four-story gym volume with archive plan dimensions 210 x 110 ft (64.008 x 33.528 m), a flat roof, three upper glazing rows, transparent ground-floor storefront, brick piers/spandrels and illustrative floor plates. Four-level envelope height and window spacing are estimates.",
+    "Rebuilt the pale stone facade bands against the actual 20-edge boundary extracted from the saved GIS footprint mesh. Each band segment is oriented along its source edge and positioned 0.20 m outward; the max computed center-offset error is about 0.000002 m. Existing 33 facade piers remain near the footprint (mean center distance 0.033 m; max 0.106 m).",
+    "Replaced previous roof-support detailing with trusses fitted to the reduced hall span. Truss size/spacing remain schematic and are visible in the cutaway render.",
+    "Renamed and hid the historic postcard entrance-tower pieces from current model views. They are retained only as a historical conjecture; no claim is made that the tower survives today.",
+    "Added plan/section overlay to compare archive dimensions against GIS feature 261. It shows that the GIS outline is U-shaped and does not uniquely register the documented volumes; parts of the projected hall rectangle cross notched/open areas. This is disclosed as unresolved rather than treated as verified geometry.",
+    "Saved and reopened the source library, rendered exterior and interior views, verified no unmaterialed meshes/material-output errors, and remeasured the unchanged six-lane track centerline at 199.988956721 m."
+  ]
+}

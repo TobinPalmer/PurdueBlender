@@ -1,0 +1,83 @@
+{
+  "revision": 13,
+  "asset": "modular/buildings/knoy_hall.blend",
+  "scope": "Knoy-only inspection and evidence/visualization improvements after the independent R12 grade. No saved building geometry or master/shared files changed.",
+  "review_findings_addressed": [
+    "R12 requested clearer floor-wide interior views where the 2018 plan supports them.",
+    "R12 requested a more legible spatial presentation of the source-located stair proxies.",
+    "R12 requested source-backed facade improvement without invented facade cadence/material assignments."
+  ],
+  "facade_sources_and_limits": {
+    "qualitative_photo": {
+      "publisher": "Purdue Polytechnic Institute",
+      "record_page": "https://polytechnic.purdue.edu/profile/rnawroc",
+      "image_url": "https://polytechnic.purdue.edu/sites/default/files/styles/featured_image/public/article-images/Knoy-featured.jpg?itok=wcvG00BW",
+      "local_image": "audit/complete_knoy/ref_purdue_profile_knoy_facade_r8.jpg",
+      "supports": ["red/brown brick at entrance sign wall", "light entrance lettering", "dark recessed glazing", "pale horizontal trim", "canopy context"],
+      "does_not_support": ["calibrated facade dimensions", "full all-sided cadence", "exact masonry/trim/glazing specification", "facade orientation fit from this image alone"]
+    },
+    "archive_record": {
+      "title": "Knoy Hall of Technology records, UA 141",
+      "repository": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/repositories/2/resources/1490",
+      "recorded_content": "The collection description says it contains construction information and a floorplan; one folder, dated 1984, is listed as open for research.",
+      "availability_limit": "The online finding aid does not expose a downloadable scan or measured elevation. No archive contents were treated as inspected evidence."
+    },
+    "planning_elevation_sheet": {
+      "source": "Purdue Engineering and Polytechnic Gateway Formation Study, 2018-05-31, PDF page 24",
+      "url": "https://engineering.purdue.edu/~frosch/Renderings/Gateway/2018-05-31%20MASSING%20STUDIES%20DRAFT%20INCLUDING%20LANDSCAPE.pdf",
+      "local_crop": "audit/complete_knoy/gateway_existing_elevations_crop_r11.png",
+      "finding": "The supplied Existing Knoy Elevations area contains floor-datum/dimension lines, not a traceable facade drawing or fenestration schedule. Thus cadence and face materials remain unresolved."
+    },
+    "photo_model_comparison": "audit/complete_knoy/knoy_entrance_photo_model_comparison_r13.png",
+    "material_render": "audit/complete_knoy/knoy_entrance_detail_material_r13.png",
+    "render_method": "The saved source blend was reopened and rendered with its procedural brick/glazing materials; the blend was not saved by the render task. This is a visual comparison, not photogrammetric alignment."
+  },
+  "circulation_and_interior_visuals": {
+    "source": "Purdue Gateway Formation Study page 24, Typical Plan Levels 2-4",
+    "registration": "Existing manually registered raster-to-local affine, approximately +/-1 m; no survey control",
+    "full_floor_spatial_renders": [
+      "audit/complete_knoy/knoy_l2_interior_plan_spatial_r13.png",
+      "audit/complete_knoy/knoy_l3_interior_plan_spatial_r13.png",
+      "audit/complete_knoy/knoy_l4_interior_plan_spatial_r13.png"
+    ],
+    "focused_core_views": [
+      "audit/complete_knoy/knoy_l2_stair_core_A_plan_r13.png",
+      "audit/complete_knoy/knoy_l2_stair_core_B_plan_r13.png",
+      "audit/complete_knoy/knoy_l2_stair_core_C_plan_r13.png"
+    ],
+    "bounded_spatial_stair_view": "audit/complete_knoy/knoy_core_b_l2_l3_stair_profile_r13.png",
+    "render_audits": [
+      "audit/complete_knoy/interior_spatial_render_audit_r13.json",
+      "audit/complete_knoy/stair_core_plan_validation_r13.json",
+      "audit/complete_knoy/stair_profile_validation_r13.json"
+    ],
+    "interpretation": "Full-floor views show the plan-traced partitions together with 15 selected plan-visible door leaves, three stair proxy footprints and 13 symbol-interpreted fixture proxies on each typical level. The isolated L2-L3 profile makes one modeled switchback proxy legible; stair geometry is illustrative, and this is not proof of an as-built or complete route.",
+    "nonclaims": ["no basement/L1/L5/roof stair connection is asserted", "no code or accessibility clearance is asserted", "render colors are temporary audit coding, not actual finishes", "no room use beyond source-supported plan symbols is asserted"]
+  },
+  "saved_asset_integrity": {
+    "validation": "audit/complete_knoy/validation_round13.json",
+    "saved_asset_reopened": true,
+    "validation_passed": true,
+    "direct_objects": 64,
+    "descendant_objects": 157,
+    "child_collection_counts": {
+      "KNOY_UpperLevel_TypicalPartitions_L2-L4": 3,
+      "KNOY_TypicalPlan_StairRuns_L2-L4": 6,
+      "KNOY_TypicalPlan_Doors_L2-L4": 45,
+      "KNOY_TypicalPlan_WashroomFixtures_L2-L4": 39
+    },
+    "preexisting_shell_mesh_count": 62,
+    "preexisting_shell_mesh_sha256": "c51a34c4704891f3442b17f7df0d9edc3741fc1cee7416041858dbeed39c9ed1",
+    "shell_geometry_unchanged": true,
+    "roof_L5_penthouse_PV_placement_unchanged": true,
+    "external_image_dependencies": []
+  },
+  "remaining_uncertainties": [
+    "Full facade cadence and exact material mapping require measured/current elevations or calibrated orthogonal photos.",
+    "Purdue Archive UA 141 contents are not available as scanned files in the public online finding aid.",
+    "L5, roof, penthouse and conflicting GIS 48-ft extrusion semantics remain unresolved.",
+    "Only L2-L3 and L3-L4 stair proxy intervals are modeled; their section dimensions are estimates, and no continuous route outside these intervals is verified.",
+    "The floorplan itself is a 2018 planning raster, not a current measured as-built architectural drawing."
+  ]
+}

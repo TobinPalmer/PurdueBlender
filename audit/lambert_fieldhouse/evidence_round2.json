@@ -1,0 +1,91 @@
+{
+  "building_id": "massing_lambert_ward_l_fieldhouse_and_gymnasium_1656862",
+  "name": "Ward L. Lambert Fieldhouse and Gymnasium",
+  "asset_file": "modular/buildings/lambert_fieldhouse.blend",
+  "export_collection": "Asset_lambert_fieldhouse",
+  "revision": 2,
+  "review_date": "2026-10-24",
+  "changes_since_round1": [
+    "Changed the exterior roof preview to use a matte, neutral surface and saved the interior review lights disabled for the default exterior view. Diagnostic renders showed those interior softboxes caused the broad white roof patch; they are turned on only for the cutaway preview.",
+    "Added 758 small gray glass-block joint segments over existing glazing bays, using the observed block-like window facade as a visual cue; exact module spacing is estimated.",
+    "Improved the existing concrete-pier rhythm and made the procedural brick material use a running-bond pattern at a consistent object-coordinate scale.",
+    "Added a short stepped Stadium Avenue entrance approach at the existing threshold and corrected the stair rise so it climbs toward the doorway; rail dimensions remain schematic.",
+    "Rebuilt the spectator banks as eight tiers on each long side, split into four seating groups by three access aisles.",
+    "Added a portable high-jump mat, standards and crossbar as event equipment visible in Lambert meet photography; placement is schematic and movable.",
+    "Measured the lane-one centerline directly from paired inner/outer vertices of the saved track mesh: 199.9889567 m, consistent with the official 200 m facility description."
+  ],
+  "references": [
+    {
+      "provider": "Purdue University Athletics",
+      "url": "https://purduesports.com/facilities/lambert-fieldhouse",
+      "reviewed": "2026-10-24",
+      "use": "Official building identity, address/corner context, 1937 opening and six-lane, 200 m Rekortan track. No roof elevation or track drawing is published on this page."
+    },
+    {
+      "provider": "Purdue University, Engineering Computer Network, Ground Control Requirements PDF",
+      "url": "https://engineering.purdue.edu/~bethel/pur_gcp.pdf",
+      "reviewed": "2026-10-24",
+      "use": "Identifies the sidewalk on Stadium Avenue and the brick inlay at the main entrance to Lambert Fieldhouse; supports the entrance-facing context, not exact stair measurements."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, Lambert Field House and Gymnasium records, UA 134",
+      "url": "https://archives.lib.purdue.edu/repositories/2/resources/1478",
+      "reviewed": "2026-10-24",
+      "use": "Historical program context and original 1937 construction; not used as measured facade/roof evidence."
+    },
+    {
+      "provider": "Purdue University Archives, Office of Marketing and Media photographs collection, UA 62 Series 3 catalog",
+      "url": "https://archives.lib.purdue.edu/fa/UA62_Series3.pdf",
+      "reviewed": "2026-10-24",
+      "use": "Catalog lists Lambert exterior images from the 1940s, 1964, 1971 and 1937 construction; image access was not available through the catalog response, so no dimensions or roof form were inferred from it."
+    },
+    {
+      "provider": "Tripadvisor visitor photo page for Lambert Fieldhouse (review dated September 2024; photo capture date not supplied)",
+      "url": "https://www.tripadvisor.in/Attraction_Review-g37621-d27012836-Reviews-Lambert_Fieldhouse-West_Lafayette_Indiana.html",
+      "reviewed": "2026-10-24",
+      "use": "Contemporary exterior photo visual reference for red brick, pale concrete pilasters and block-like glazed facade openings; not used for measured dimensions."
+    },
+    {
+      "provider": "Dave Wegiel Photography, Gene Edmonds Invitational at Lambert Fieldhouse",
+      "url": "https://pinolaphoto.com/2019/01/14/gene-edmonds-invitational/",
+      "reviewed": "2026-10-24",
+      "use": "Interior meet-photo visual evidence for the track venue and event equipment including a high-jump setting; layout and equipment placement in the model remain schematic."
+    },
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 layer 0, feature 261; existing raw snapshot",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 261,
+      "snapshot": "audit/batchC_lambert_official_footprint.json",
+      "use": "Official plan footprint and identity retained; no XY origin, footprint or master placement change in this round."
+    }
+  ],
+  "direct_mesh_measurement": {
+    "track_mesh": "LAMB | 6-lane 200 m stadium track surface",
+    "method": "average paired inner/outer boundary vertices at each station to recover the lane-one centerline polygon, then sum all closed polygon edge lengths in local meters",
+    "centerline_perimeter_m": 199.98895672145127,
+    "official_facility_value_m": 200.0,
+    "difference_m": -0.01104327854873,
+    "lane_count": 6,
+    "boundary_line_count": 7
+  },
+  "evidence_boundaries": {
+    "supported": [
+      "Purdue identity and present indoor track use",
+      "six running lanes and 200 m facility lap value",
+      "brick, pale concrete piers, block-like facade glazing, Stadium Avenue entrance context",
+      "curved interior roof character and athletic spectator/event setting"
+    ],
+    "estimates_or_unverified": [
+      "track straight length, curve geometry and lane width",
+      "roof profile, exact rise, exterior roof covering, seam arrangement and structural system",
+      "facade bay dimensions, exact window rhythm, block module dimensions, floor layout, seating count/spacing and egress details",
+      "high-jump mat location and portable event setup"
+    ]
+  },
+  "validation": "audit/lambert_fieldhouse/validation_round2.json",
+  "previews": {
+    "exterior": "audit/lambert_fieldhouse/exterior_round2.png",
+    "interior_cutaway": "audit/lambert_fieldhouse/interior_round2.png"
+  },
+  "master_manifest_shared_files_edited": false
+}

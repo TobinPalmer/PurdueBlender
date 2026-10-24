@@ -1,0 +1,45 @@
+{
+  "building": "Maurice G. Knoy Hall of Technology",
+  "revision_reviewed": 19,
+  "review_date": "2026-10-24",
+  "reviewer": "independent audit agent; did not build or edit Knoy R19",
+  "asset": "modular/buildings/knoy_hall.blend",
+  "report": "audit/complete_knoy/independent_review_round19.md",
+  "score": 7.7,
+  "max_score": 10,
+  "raw_score": 8.5,
+  "raw_max_score": 11,
+  "normalization": "round((raw_score / raw_max_score) * 10, 1)",
+  "previous_independent_score": 7.8,
+  "acceptance_target": 8.0,
+  "passed": false,
+  "criteria": [
+    {"name":"Identity and footprint","score":1.7,"max_score":2,"evidence":["Purdue GIS footprint and campus context support identity and general stepped form.","R19 supplies a candidate facade edge sightline."],"findings":["Project local conversion is approximate, not survey control."]},
+    {"name":"Placement, orientation, and scale","score":1.6,"max_score":2,"evidence":["Prior manifest and placement evidence remains applicable; R19 changed no placement or transform."],"findings":["No new survey control or independent orientation/scale measurement was added."]},
+    {"name":"Height, floors, and roof","score":1.2,"max_score":2,"evidence":["Indiana 2018 DSM provides a broad roof-like surface distribution."],"findings":["DSM does not establish roof slab/parapet height, occupied L5, or penthouse geometry; GIS 48-ft conflict remains.","No vertical geometry changed in R19."]},
+    {"name":"Exterior and entrances","score":1.4,"max_score":2,"evidence":["Purdue Archives photo supports brick-heavy massing and interrupted horizontal glazing on photographed faces."],"findings":["Model still repeats broad continuous glazing ribbons across elevations.","R19 does not alter visible facade fidelity; source photo is not georeferenced to a specific model face."]},
+    {"name":"Interior and circulation","score":1.7,"max_score":2,"evidence":["Saved model includes plan traces, illustrative doors, fixtures, and stairs."],"findings":["Geometry is not verified against a digitized as-built circulation/stair plan.","Vertical accessible-route continuity remains unverified."]},
+    {"name":"Technical and evidence quality","score":0.9,"max_score":1,"evidence":["Blender 5.2.3 reopen succeeded; four facade mesh fingerprints match R18; no unpacked images."],"findings":["R19 JSON and SVG give different camera XY and ray intersection for the same pano: JSON camera [260.38,78.59] / hit [234.472,66.136] / u=.69; SVG camera [261.607,77.251] / hit [235.921,64.898] / u≈.91.","The diagram should be regenerated or reconciled before using it for face-specific edits."]}
+  ],
+  "sightline_discrepancy": {
+    "pano_id": "37BzxutMJc4KJ68n5M55xw",
+    "json_camera_xy_m": [260.38,78.59],
+    "json_hit_xy_m": [234.472,66.136],
+    "json_segment_parameter_u": 0.69,
+    "svg_camera_xy_m": [261.607,77.251],
+    "svg_hit_xy_m": [235.921,64.898],
+    "svg_segment_parameter_u_approx": 0.91,
+    "approx_camera_delta_m": 1.82,
+    "approx_intersection_delta_m": 1.91,
+    "assessment": "Both plotted ray pairs are individually plausible for the stated heading, but they do not use the same camera coordinates or edge intersection. The discrepancy is unresolved; no facade edit should rely on either until the source values are reconciled."
+  },
+  "model_change": false,
+  "major_remaining_issues": [
+    "Continuous glazing ribbons differ from interrupted slit-like glazing in the official photo on photographed faces.",
+    "No measured evidence resolves roof/L5/penthouse geometry or GIS 48-ft conflict.",
+    "No digitized as-built stair/circulation plan verifies full interior continuity.",
+    "R19 JSON and SVG sightline coordinates conflict by about 1.8-1.9 m."
+  ],
+  "master_edited": false,
+  "asset_edited": false
+}

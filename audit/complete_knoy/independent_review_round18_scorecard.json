@@ -1,0 +1,71 @@
+{
+  "building": "Maurice G. Knoy Hall of Technology",
+  "revision_reviewed": 18,
+  "review_date": "2026-10-24",
+  "reviewer": "independent audit agent; did not build or edit Knoy R18",
+  "asset": "modular/buildings/knoy_hall.blend",
+  "report": "audit/complete_knoy/independent_review_round18.md",
+  "reopen_audit": "audit/complete_knoy/independent_review_round18_reopen.json",
+  "score": 7.8,
+  "max_score": 10,
+  "raw_score": 8.6,
+  "raw_max_score": 11,
+  "normalization": "round((raw_score / raw_max_score) * 10, 1)",
+  "previous_independent_score": 7.8,
+  "acceptance_target": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and footprint",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": ["Purdue GIS footprint and campus orthophoto context support identity and general stepped form."],
+      "findings": ["Local geographic conversion is approximate and is not survey control.", "R18 adds no new footprint measurement."]
+    },
+    {
+      "name": "Placement, orientation, and scale",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": ["Prior manifest and placement evidence remains applicable; R18 changes no placement or transform."],
+      "findings": ["No new survey control or independent orientation/scale measurement was added."]
+    },
+    {
+      "name": "Height, floors, and roof",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": ["Indiana 2018 3DEP DSM analysis covers 1,126 cells in the approximate building footprint and provides roof-like surface quantiles."],
+      "findings": ["Highest DSM cells fall outside the current candidate penthouse bbox and may represent edge returns, trees, or equipment.", "DSM does not establish occupied L5, roof slab/parapet height, or penthouse location; GIS 48-ft attribute conflict remains.", "No height or roof geometry changed in R18."]
+    },
+    {
+      "name": "Exterior and entrances",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": ["Purdue Archives photo record 75 supports brick-heavy masses and narrow, interrupted horizontal glazing on photographed faces.", "R18 accurately records that its 1.40 m band height is qualitative and that the photo has no calibrated face registration."],
+      "findings": ["The model still repeats broad, continuous glazing ribbons across elevations, unlike the interrupted slits and large brick fields in the source photo.", "Source cannot identify which GIS faces to interrupt or supply measured dimensions; no geometry change was made."]
+    },
+    {
+      "name": "Interior and circulation",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": ["Existing L1 and typical L2-L4 plan traces, illustrative doors, fixtures and stairs remain in the saved model.", "R18 explicitly records that no dimensioned as-built circulation source was found."],
+      "findings": ["Plan traces and stair/fixture interpretations are not as-built verification.", "Continuous accessible circulation through all levels remains unverified; no interior geometry changed."]
+    },
+    {
+      "name": "Technical and evidence quality",
+      "score": 1.0,
+      "max_score": 1,
+      "evidence": ["Direct Blender 5.2.3 reopen succeeded; 191 objects and 169 meshes.", "Independent recomputation matches all four geometry fingerprints recorded in validation_round18.json.", "Required meshes/materials are present and there are no unpacked external images.", "R18 update script writes evidence custom properties/text and does not alter geometry, materials, or transforms."],
+      "findings": []
+    }
+  ],
+  "sources_reviewed": [
+    "https://collections.lib.purdue.edu/campus/buildings/75",
+    "audit/complete_knoy/evidence_round18.json",
+    "audit/complete_knoy/validation_round18.json",
+    "audit/complete_knoy/update_knoy_r18.py",
+    "audit/complete_knoy/roof_spatial_check_r18.json",
+    "audit/complete_knoy/knoy_exterior_full_r17.png",
+    "audit/complete_knoy/purdue_archives_knoy_historic_database_photo_r17.jpeg"
+  ],
+  "decision": "Grade unchanged at 7.8/10. R18 improves evidence and uncertainty reporting but makes no visual/model geometry changes. The building remains below the 8.0 target."
+}

@@ -1,0 +1,76 @@
+{
+  "building_id": "massing_lambert_ward_l_fieldhouse_and_gymnasium_1656862",
+  "name": "Ward L. Lambert Fieldhouse and Gymnasium",
+  "asset_file": "modular/buildings/lambert_fieldhouse.blend",
+  "export_collection": "Asset_lambert_fieldhouse",
+  "revision": 3,
+  "review_date": "2026-10-24",
+  "changes_since_round2": [
+    "Added a minimal Stadium Avenue sidewalk strip, curb, and staggered red-brown brick inlay immediately outside the existing entrance threshold. Purdue's ground-control notes identify the sidewalk and brick inlay at the main entrance; dimensions and paving extent are schematic.",
+    "Adjusted the block-glass glazing mix to make the existing glazed openings read as translucent glass block instead of dark voids. Existing window openings and facade placement were not moved.",
+    "Improved the exterior preview with a separate neutral camera-side softbox; interior preview lights remain disabled for exterior views to prevent light leakage through the schematic canopy.",
+    "The track mesh remains unchanged; lane-one centerline perimeter remeasured directly from its saved paired inner/outer vertices at 199.9889567 m."
+  ],
+  "references": [
+    {
+      "provider": "Purdue University Athletics",
+      "url": "https://purduesports.com/facilities/lambert-fieldhouse",
+      "reviewed": "2026-10-24",
+      "use": "Official identity, address, built in 1937, current indoor track use, six lanes and 200 m Rekortan track."
+    },
+    {
+      "provider": "Purdue University Engineering Computer Network, Ground Control Requirements",
+      "url": "https://engineering.purdue.edu/~bethel/pur_gcp.pdf",
+      "reviewed": "2026-10-24",
+      "use": "Identifies the sidewalk at Stadium Avenue and a brick inlay at the main entrance to Lambert Fieldhouse. Supports minimal entrance context only; provides no paving dimensions."
+    },
+    {
+      "provider": "Tripadvisor visitor photo page for Lambert Fieldhouse (review dated September 2024; photo date unspecified)",
+      "url": "https://www.tripadvisor.in/Attraction_Review-g37621-d27012836-Reviews-Lambert_Fieldhouse-West_Lafayette_Indiana.html",
+      "reviewed": "2026-10-24",
+      "use": "Contemporary visual cross-check for the brick, concrete piers and block-like glazing; no dimensions inferred."
+    },
+    {
+      "provider": "Dave Wegiel Photography, Gene Edmonds Invitational at Lambert Fieldhouse",
+      "url": "https://pinolaphoto.com/2019/01/14/gene-edmonds-invitational/",
+      "reviewed": "2026-10-24",
+      "use": "Interior visual evidence for the curved roof volume, track-event setting, seating and portable high-jump equipment; event layout is schematic."
+    },
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 layer 0, feature 261; existing snapshot",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 261,
+      "snapshot": "audit/batchC_lambert_official_footprint.json",
+      "use": "Official building identity and plan footprint. Horizontal transform, local origin and master placement remain unchanged."
+    }
+  ],
+  "direct_mesh_measurement": {
+    "track_mesh": "LAMB | 6-lane 200 m stadium track surface",
+    "method": "average paired inner/outer boundary vertices at each sample station to recover the lane-one centerline polygon, then sum each closed polygon edge in local meters",
+    "measured_centerline_perimeter_m": 199.98895672145127,
+    "documented_facility_lap_m": 200.0,
+    "lane_count": 6,
+    "boundary_line_count": 7
+  },
+  "evidence_boundaries": {
+    "supported": [
+      "official Purdue building identity and present indoor track use",
+      "six lanes and 200 m facility lap value",
+      "red brick, pale concrete piers, translucent block-glass openings, Stadium Avenue entrance sidewalk/brick inlay context",
+      "arched interior volume and spectator/event equipment cues in meet photography"
+    ],
+    "estimated_or_unverified": [
+      "track straight and curve dimensions, lane width, track orientation within the hall",
+      "roof rise/profile, covering, seam pattern and support structure",
+      "facade bay rhythm, glass block module size, floor/room layout, seating spacing/capacity and egress aisles",
+      "entrance stair/sidewalk/curb dimensions and full frontage paving extent",
+      "portable high-jump mat location and meet setup"
+    ]
+  },
+  "validation": "audit/lambert_fieldhouse/validation_round3.json",
+  "previews": {
+    "exterior": "audit/lambert_fieldhouse/exterior_round3.png",
+    "interior_cutaway": "audit/lambert_fieldhouse/interior_round3.png"
+  },
+  "master_manifest_shared_files_edited": false
+}

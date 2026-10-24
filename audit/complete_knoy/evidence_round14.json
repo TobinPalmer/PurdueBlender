@@ -1,0 +1,99 @@
+{
+  "revision": 14,
+  "building": "Knoy Hall",
+  "asset": "modular/buildings/knoy_hall.blend",
+  "date": "2026-10-24",
+  "scope": "Corrected stale saved interior-plan status, recorded two newly checked Purdue interior-location sources, and refined existing qualitative brick finish. No building mesh geometry, transforms, placement, roof, level, stair or door geometry changed.",
+  "review_findings_addressed": [
+    "Corrected the saved scene/root trace-status property that was described as stale in independent review R13.",
+    "Recorded current evidence for two basement zones and first-floor elevator vicinity without inventing floor/elevator geometry.",
+    "Reduced the pale pink cast, bright mortar contrast and strong procedural bump in the existing brick material using qualitative Purdue photo cues."
+  ],
+  "interior_status": {
+    "saved_status": "Partial plan-derived interior: L1 partition trace from Liu thesis Figure 3.19(d), and L2-L4 typical partitions from Purdue's 2018 Gateway planning raster. Both use approximate manual registration; as-built dimensions, room finishes, most room contents and complete basement-to-roof circulation remain unverified.",
+    "primary_plan": {
+      "provider": "Purdue University College of Engineering",
+      "title": "Gateway Formation Study / Massing Studies Draft Including Landscape",
+      "url": "https://engineering.purdue.edu/~frosch/Renderings/Gateway/2018-05-31%20MASSING%20STUDIES%20DRAFT%20INCLUDING%20LANDSCAPE.pdf",
+      "sheet": "PDF page 24, Typical Plan Levels 2-4",
+      "registration_uncertainty": "Approximately +/-1 m from hand-affine registration; not a survey.",
+      "supports": "Typical-plan partition arrangement, selected room and fixture symbols, and drawn stair-core footprints only.",
+      "does_not_support": "As-built or current room dimensions, furnishing/finish schedule, stair sections, a continuous circulation route, or basement geometry."
+    },
+    "basements": {
+      "provider": "Purdue Polytechnic Institute",
+      "source_page": "Current Building Emergency Plan page snapshot, captured from Purdue Polytechnic, retrieved 2026-10-24.",
+      "url": "https://old.polytechnic.purdue.edu/schools/engineering-technology/safety-training/building-emergency-plan",
+      "snapshot": "audit/complete_knoy/knoy_emergency_plan_page_snapshot_2026.html",
+      "observed_labels": ["LOWER BASEMENT", "UPPER BASEMENT"],
+      "supports": "Two separately named basement zones in the building emergency plan.",
+      "does_not_support": "Basement footprint, dimensions, floor datums, partition layout, or connecting stair geometry.",
+      "model_action": "No basement geometry added from this source."
+    },
+    "elevator": {
+      "provider": "Purdue IT Knowledge Base",
+      "title": "Where are student accessible printers located?",
+      "url": "https://service.purdue.edu/TDClient/32/Purdue/KB/PrintArticle?ID=2428",
+      "snapshot": "audit/complete_knoy/purdue_it_printer_locator_knoy_snapshot.html",
+      "record": "knoy1h01-1",
+      "source_wording": "The printer is near the back entrance next to the LMBS building, near vending machines and the elevators on the first floor.",
+      "supports": "First-floor elevator presence and a broad vicinity near the back entrance next to LMBS.",
+      "does_not_support": "Shaft dimensions, exact shaft coordinates, elevator count, upper-floor landing locations, or circulation connections.",
+      "model_action": "No elevator geometry added from this source."
+    }
+  },
+  "brick_finish": {
+    "material": "KNOY_Purdue_Red_Brick",
+    "sources": [
+      {
+        "provider": "Purdue Polytechnic Institute",
+        "url": "https://polytechnic.purdue.edu/profile/rnawroc",
+        "local_image": "audit/complete_knoy/ref_purdue_profile_knoy_facade_r8.jpg",
+        "supports": "Qualitative red/brown entrance brick, lettering, glazing, pale trim and canopy context."
+      },
+      {
+        "provider": "Purdue HIST 152 course site",
+        "url": "https://hist152purdue.wordpress.com/2018/08/09/knoy-hall/",
+        "local_image": "audit/complete_knoy/ref_knoy_main_entrance_hist152_2018.jpg",
+        "supports": "Qualitative brick bond and entrance appearance from one perspective; not a calibrated elevation."
+      }
+    ],
+    "change": "Reduced brick shader linear colors, color-noise mix (0.25 to 0.10), mortar size (0.006 to 0.004 m), and bump strength/distance; roughness increased (0.60 to 0.78). Brick width/row height and model geometry were not changed.",
+    "limits": "The images do not establish exact brick or mortar color, size, bond pattern, or face-by-face material assignment. Values remain procedural render estimates.",
+    "preview": "audit/complete_knoy/knoy_entrance_detail_material_r14.png",
+    "render_script": "audit/complete_knoy/render_entry_material_r14.py"
+  },
+  "saved_asset_integrity": {
+    "validation": "audit/complete_knoy/validation_round14.json",
+    "saved_asset_reopened": true,
+    "validation_passed": true,
+    "direct_objects": 64,
+    "descendant_objects": 157,
+    "preexisting_shell_mesh_count": 62,
+    "preexisting_shell_mesh_sha256": "c51a34c4704891f3442b17f7df0d9edc3741fc1cee7416041858dbeed39c9ed1",
+    "shell_geometry_unchanged": true,
+    "all_156_mesh_geometry_and_world_matrices_match_pre_r14_backup": true,
+    "pre_r14_all_meshes_sha256": "43a19a6313c06e188082cb547847f583573bafe7f6d9e9ec6da52706b36de5b4",
+    "external_image_dependencies": [],
+    "roof_L5_penthouse_PV_placement_unchanged": true
+  },
+  "remaining_uncertainties": [
+    "Measured/current facade elevations or calibrated all-sided photographs are still needed to establish window cadence and exact material distribution.",
+    "No current measured floor plans or stair sections were located; room fit-out and continuous circulation remain incomplete/unverified.",
+    "The two basement zones and first-floor elevator vicinity are source-confirmed, but their precise geometry is unverified.",
+    "L5/roof/penthouse/PV placement and the conflicting GIS 48-ft height attribute remain unresolved."
+  ],
+  "changed_files": [
+    "modular/buildings/knoy_hall.blend",
+    "modular/buildings/build_knoy_hall.py",
+    "audit/complete_knoy/update_knoy_r14.py",
+    "audit/complete_knoy/render_entry_material_r14.py",
+    "audit/complete_knoy/validate_reopen_r14.py",
+    "audit/complete_knoy/validation_round14.json",
+    "audit/complete_knoy/evidence_round14.json",
+    "audit/complete_knoy/knoy_entrance_detail_material_r14.png",
+    "audit/complete_knoy/purdue_it_printer_locator_knoy_snapshot.html",
+    "audit/complete_knoy/knoy_hall_before_r14.blend",
+    "audit/complete_knoy/REVIEW.md"
+  ]
+}

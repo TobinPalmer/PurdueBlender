@@ -1,0 +1,133 @@
+{
+  "asset": "modular/buildings/knoy_hall.blend",
+  "source_plan": "audit/complete_knoy/Liu.pdf, Figure 3.19(d), thesis raster; not a door schedule or dimensioned construction plan",
+  "retrieved": "2026-10-24",
+  "method": "Reopened saved blend; centered 0.90 x 0.045 x 2.10 m candidate leaf at each omitted opening; Blender BVH triangle-overlap against traced partition meshes other than its own wall pair. This detects this candidate placement only; it does not prove that a differently located leaf is impossible.",
+  "ground_opening_candidate_count": 18,
+  "modeled_illustrative_leaf_count": 12,
+  "omitted_candidate_ids": [
+    "09",
+    "13",
+    "17",
+    "18",
+    "20",
+    "24"
+  ],
+  "status": "Six candidates remain unmodeled as doors pending a clearer plan or as-built schedule. They are not represented as confirmed door locations.",
+  "candidates": {
+    "09": {
+      "candidate_center_local_m": [
+        1.065,
+        -27.93
+      ],
+      "candidate_yaw_deg": 0.0,
+      "test_leaf_dimensions_m": [
+        0.9,
+        0.045,
+        2.1
+      ],
+      "intersections": [
+        {
+          "wall": "KNOY_Ground_TracePartition_11",
+          "face_pairs": 8
+        }
+      ],
+      "status": "unresolved; low-resolution raster does not clearly distinguish a door leaf/swing at this crossing; test leaf overlaps another traced partition"
+    },
+    "13": {
+      "candidate_center_local_m": [
+        5.664,
+        -25.07
+      ],
+      "candidate_yaw_deg": 0.0,
+      "test_leaf_dimensions_m": [
+        0.9,
+        0.045,
+        2.1
+      ],
+      "intersections": [
+        {
+          "wall": "KNOY_Ground_TracePartition_12",
+          "face_pairs": 4
+        }
+      ],
+      "status": "unresolved; low-resolution raster does not clearly distinguish a door leaf/swing at this crossing; test leaf overlaps another traced partition"
+    },
+    "17": {
+      "candidate_center_local_m": [
+        8.247,
+        5.675
+      ],
+      "candidate_yaw_deg": 45.9,
+      "test_leaf_dimensions_m": [
+        0.9,
+        0.045,
+        2.1
+      ],
+      "intersections": [
+        {
+          "wall": "KNOY_Ground_TracePartition_23",
+          "face_pairs": 8
+        }
+      ],
+      "status": "unresolved; low-resolution raster does not clearly distinguish a door leaf/swing at this crossing; test leaf overlaps another traced partition"
+    },
+    "18": {
+      "candidate_center_local_m": [
+        5.475,
+        8.665
+      ],
+      "candidate_yaw_deg": 45.9,
+      "test_leaf_dimensions_m": [
+        0.9,
+        0.045,
+        2.1
+      ],
+      "intersections": [
+        {
+          "wall": "KNOY_Ground_TracePartition_23",
+          "face_pairs": 8
+        }
+      ],
+      "status": "unresolved; low-resolution raster does not clearly distinguish a door leaf/swing at this crossing; test leaf overlaps another traced partition"
+    },
+    "20": {
+      "candidate_center_local_m": [
+        -0.321,
+        14.97
+      ],
+      "candidate_yaw_deg": 46.24,
+      "test_leaf_dimensions_m": [
+        0.9,
+        0.045,
+        2.1
+      ],
+      "intersections": [
+        {
+          "wall": "KNOY_Ground_TracePartition_23_AccessSide",
+          "face_pairs": 4
+        }
+      ],
+      "status": "unresolved; low-resolution raster does not clearly distinguish a door leaf/swing at this crossing; test leaf overlaps another traced partition"
+    },
+    "24": {
+      "candidate_center_local_m": [
+        4.971,
+        15.035
+      ],
+      "candidate_yaw_deg": -45.9,
+      "test_leaf_dimensions_m": [
+        0.9,
+        0.045,
+        2.1
+      ],
+      "intersections": [
+        {
+          "wall": "KNOY_Ground_TracePartition_19_AccessSide",
+          "face_pairs": 8
+        }
+      ],
+      "status": "unresolved; low-resolution raster does not clearly distinguish a door leaf/swing at this crossing; test leaf overlaps another traced partition"
+    }
+  }
+}

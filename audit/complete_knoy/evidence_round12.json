@@ -1,0 +1,58 @@
+{
+  "revision": 12,
+  "asset": "modular/buildings/knoy_hall.blend",
+  "focus": "Interior completeness improvement using only fixture-like symbols visible on the Purdue 2018 typical Levels 2-4 raster plan.",
+  "source": {
+    "title": "Engineering and Polytechnic Gateway Formation Study, massing studies draft including landscape",
+    "publisher": "Purdue University College of Engineering",
+    "date": "2018-05-31",
+    "url": "https://engineering.purdue.edu/~frosch/Renderings/Gateway/2018-05-31%20MASSING%20STUDIES%20DRAFT%20INCLUDING%20LANDSCAPE.pdf",
+    "page": 24,
+    "sheet_label": "Typical Plan Levels 2-4",
+    "local_pdf": "audit/complete_knoy/2018-05-31_knoy_massing_studies.pdf",
+    "plan_crop": "audit/complete_knoy/knoy_typical_plan_crop.png",
+    "interpretation": "Two compact fixture banks are visually interpreted as washrooms. One bank has four basin-like marks and four toilet-like marks; the other has three basin-like marks and two toilet-like marks. The sheet provides no fixture legend or schedule, so type/count interpretation is moderate confidence, not confirmed room use or as-built condition."
+  },
+  "asset_changes": {
+    "collection": "KNOY_TypicalPlan_WashroomFixtures_L2-L4",
+    "parent": "Asset_knoy_hall",
+    "objects_added": 39,
+    "by_level": {
+      "L2": {"object_count": 13, "interpreted_basins": 7, "interpreted_toilets": 6},
+      "L3": {"object_count": 13, "interpreted_basins": 7, "interpreted_toilets": 6},
+      "L4": {"object_count": 13, "interpreted_basins": 7, "interpreted_toilets": 6}
+    },
+    "position_method": "Centers follow the symbol-center pixels in typical_plan_fixture_candidates_r12.json transformed through the existing hand-registered plan affine (~+/-1 m). The typical plan is repeated on L2-L4 only.",
+    "geometry_and_material": "Very simple toilet/basin stand-ins and neutral material are display placeholders, not measured fixture design. Sizes, height, plumbing, material/finish, fixture orientation beyond schematic placement, operability, and current room use are not specified by the plan.",
+    "not_changed": ["exterior facade cadence or material mapping", "building footprint or placement", "roof/L5/penthouse/PV geometry", "GIS registration", "doors, stairs, partitions, or existing shell geometry"]
+  },
+  "visual_evidence": {
+    "source_with_candidate_marks": "audit/complete_knoy/knoy_typical_plan_fixture_overlay_r12.png",
+    "enlarged_two_bank_detail": "audit/complete_knoy/knoy_typical_plan_restroom_detail_r12.png",
+    "render_only_plan_view": "audit/complete_knoy/knoy_l2_typical_plan_rooms_r12.png",
+    "render_only_fixture_cutaway": "audit/complete_knoy/knoy_washroom_cutaway_r12.png",
+    "presentation_limit": "The plan crops provide the strongest location evidence. 3D fixture meshes are sparse schematic placeholders; the cutaway is illustrative and not an as-built interior render."
+  },
+  "validation": {
+    "file": "audit/complete_knoy/fixture_validation_r12.json",
+    "saved_blend_reopened": true,
+    "blend_validation_passed": true,
+    "asset_direct_objects": 64,
+    "asset_descendant_objects": 157,
+    "nested_collection_counts": {
+      "KNOY_UpperLevel_TypicalPartitions_L2-L4": 3,
+      "KNOY_TypicalPlan_StairRuns_L2-L4": 6,
+      "KNOY_TypicalPlan_Doors_L2-L4": 45,
+      "KNOY_TypicalPlan_WashroomFixtures_L2-L4": 39
+    },
+    "preexisting_62_direct_shell_mesh_hash": "c51a34c4704891f3442b17f7df0d9edc3741fc1cee7416041858dbeed39c9ed1",
+    "preexisting_shell_geometry_changed": false
+  },
+  "unresolved": [
+    "No authoritative fixture legend/schedule was present on the source plan.",
+    "The plan raster does not verify current room function, fixture types, exact fixture sizes, or as-built state.",
+    "Plan registration is hand-affine and approximately +/-1 m, not a survey.",
+    "Façade rhythm remains schematic; available photos are uncalibrated and do not support a reliable all-sided elevation revision.",
+    "L5/roof/penthouse level conflict and continuous basement-to-roof circulation remain unresolved."
+  ]
+}

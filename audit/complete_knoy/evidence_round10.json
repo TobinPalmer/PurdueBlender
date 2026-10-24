@@ -1,0 +1,48 @@
+{
+  "revision": 10,
+  "asset": "modular/buildings/knoy_hall.blend",
+  "scope": "Knoy-only south entrance evidence refinement",
+  "primary_source": {
+    "title": "Knoy Hall",
+    "publisher": "Purdue History Project (HIST 152)",
+    "url": "https://hist152purdue.wordpress.com/2018/08/09/knoy-hall/",
+    "image_url": "https://hist152purdue.wordpress.com/wp-content/uploads/2018/08/knoy-hall.jpg?w=1200",
+    "local_copy": "audit/complete_knoy/ref_knoy_main_entrance_hist152_2018.jpg",
+    "image_date": "2018 post; capture date not stated",
+    "supports": ["KNOY HALL OF TECHNOLOGY entrance lettering", "brick at south entry sign wall", "visual entrance context"],
+    "does_not_support": ["surveyed sign size or position", "brick specification/color", "full facade cadence", "exact door or canopy dimensions"]
+  },
+  "asset_changes": [
+    {
+      "object": "KNOY_Exterior_Masonry_Walls",
+      "change": "Two existing south entrance sign-wall faces on the existing 3.10–4.481 m band were assigned the existing red-brick material.",
+      "geometry_changed": false,
+      "evidence": "The 2018 photo shows a brick wall behind/around the entrance lettering; the face identification follows existing segment V25–V26 and its previously traced entry zone.",
+      "limits": "This is a localized material assignment, not proof of complete facade material mapping."
+    },
+    {
+      "object": "KNOY_Entrance_Sign_Lettering",
+      "change": "Added mesh lettering reading KNOY HALL OF TECHNOLOGY above the modeled south entrance zone.",
+      "geometry_changed": true,
+      "evidence": "Text and general placement are visible in the 2018 photo.",
+      "limits": "Uncalibrated photo; letter size, finish, mounting depth and precise surveyed location remain estimates. The lettering uses an estimated light-metal finish."
+    }
+  ],
+  "placement_validation": {
+    "saved_file_reopened": true,
+    "sign_uses_existing_shell_gis_to_local_parent_inverse": true,
+    "sign_world_bounds_m": [[-1.347824, 2.888935], [-46.389381, -46.289135], [3.881032, 4.164497]],
+    "sign_world_center_m": [0.770555, -46.339258, 4.022765],
+    "entry_wall_world_band_m": [3.10, 4.481],
+    "entrance_alignment_render": "audit/complete_knoy/knoy_entrance_detail_r10.png"
+  },
+  "integrity_validation": {
+    "file": "audit/complete_knoy/entrance_detail_validation_r10.json",
+    "passed": true,
+    "preexisting_mesh_count": 62,
+    "preexisting_mesh_geometry_sha256": "c51a34c4704891f3442b17f7df0d9edc3741fc1cee7416041858dbeed39c9ed1",
+    "preexisting_geometry_changed": false,
+    "roof_L5_PV_or_registration_geometry_changed": false
+  },
+  "unresolved": ["full elevation cadence and exterior photo calibration", "exact sign dimensions and substrate", "L5/roof height conflict", "PV layout/current presence", "door openings and continuous circulation"]
+}

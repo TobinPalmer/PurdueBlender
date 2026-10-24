@@ -1,0 +1,36 @@
+{
+  "revision": 17,
+  "building": "Knoy Hall",
+  "retrieval_date": "2026-10-24",
+  "asset": "modular/buildings/knoy_hall.blend",
+  "scope": "Source-supported qualitative L1-L4 facade glazing refinement only. No placement, roof/L5, circulation, entrance, GIS footprint, or master edits.",
+  "source": {
+    "provider": "Purdue University Archives and Special Collections, Historic Facilities and Buildings Database",
+    "record_url": "https://collections.lib.purdue.edu/campus/buildings/75",
+    "image_url": "https://collections.lib.purdue.edu/campus/images/buildings/75-maurice-g-knoy-hall-of-technology.jpeg",
+    "local_snapshot": "audit/complete_knoy/purdue_archives_knoy_historic_database_photo_r17.jpeg",
+    "sha256": "06b7c653e022f3025d6de94fdfb44b79cb7bdfa92f3d285d111444ed98a73360",
+    "feature_id": "Database building record 75; Maurice G. Knoy Hall of Technology",
+    "source_date": null,
+    "source_crs": null,
+    "measurement_method": "Qualitative visual review only. Several visible faces show narrow horizontal glazing ribbons framed by deeper brick areas. The image is perspective and has no scale/camera calibration; no pixel-to-meter measurement was attempted.",
+    "supports": "Narrower ribbon-window proportion and brick infill above/below the ribbons on visible elevations.",
+    "does_not_support": "Exact window height, sill/head elevation, bay spacing, material specification, all-sided facade assignment, or as-built elevations."
+  },
+  "geometry_changes": {
+    "old_l1_l4_glazing_height_m": 2.0,
+    "new_l1_l4_glazing_height_m": 1.4,
+    "vertical_registration": "Each ribbon remains centered on its prior band center; no story datum was moved.",
+    "bands_m": [[1.4,2.8],[5.88,7.28],[10.36,11.76],[14.84,16.24]],
+    "added_mesh": "KNOY_Facade_Brick_Spandrels_R17",
+    "infill": "Solid 0.30 m upper/lower strips at each L1-L4 window envelope, using the existing red-brick material.",
+    "untouched": ["L5/top glass band","all existing story levels","shell footprint and GIS registration","roof/penthouse/PV","doors/stairs/interiors","all object world transforms"]
+  },
+  "validation": "audit/complete_knoy/validation_round17.json",
+  "render": ["audit/complete_knoy/knoy_entrance_facade_r17.png","audit/complete_knoy/knoy_exterior_full_r17.png"],
+  "uncertainty": "The 1.40 m ribbon height is an explicitly estimated visual proportion, not an as-built measurement. The whole-building facade cadence remains unverified; the photograph is partial and perspective.",
+  "saved_asset_reopened": true,
+  "validation_passed": true,
+  "independent_grade": "pending"
+}
+

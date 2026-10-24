@@ -7,9 +7,9 @@ Features:
 - Continuous dark tinted solar ribbon glazing with dark bronze vertical and horizontal mullions
 - Recessed entrance portals with glazed double doors and cantilevered concrete/bronze canopies
 - Solid vertical corner/stair towers (West and NW)
-- Rooftop mechanical penthouse with procedural louver screens
-- Dual rooftop cooling towers on structural steel dunnage framing
-- Rooftop solar photovoltaic array (Applied Energy Laboratory) on aluminum racking
+- Schematic rooftop mechanical penthouse with louver screens; dimensions unverified
+- Rooftop photovoltaic array modeled as a schematic 28-panel 2017 installation
+- No cooling towers are generated without source evidence
 - Structural concrete column grid and vertical elevator/stair cores
 - Surrounding plaza paving
 - Embedded EVIDENCE_AND_INTERIOR_NOTES.txt documentation
@@ -41,7 +41,7 @@ scene["official_name"] = "Maurice G. Knoy Hall of Technology"
 scene["address"] = "401 N Grant Street, West Lafayette, IN 47907"
 scene["levels"] = 5
 scene["gis_fid"] = 243
-scene["interior_status"] = "unverified; official blueprints restricted to Purdue GIS"
+scene["interior_status"] = "Base builder creates shell and core placeholders only; detailed room layout and as-built interior are unverified unless supplemented by sourced plan traces."
 
 # Collections
 asset_coll = bpy.data.collections.new("Asset_knoy_hall")
@@ -110,30 +110,87 @@ def setup_brick_material():
     nodes = mat.node_tree.nodes
     links = mat.node_tree.links
     nodes.clear()
-    
+
+    # This graph mirrors the saved Knoy source material.  The brick size is a
+    # render-scale estimate; the Purdue photo supports the material family and
+    # broad color only, not a measured masonry specification.
     node_out = nodes.new(type='ShaderNodeOutputMaterial')
-    node_out.location = (600, 0)
-    
+    node_out.location = (900, 0)
     bsdf = nodes.new(type='ShaderNodeBsdfPrincipled')
-    bsdf.location = (300, 0)
-    bsdf.inputs['Roughness'].default_value = 0.85
+    bsdf.location = (650, 0)
+    bsdf.inputs['Roughness'].default_value = 0.78
     bsdf.inputs['Metallic'].default_value = 0.0
-    
-    # Brick texture node
-    tex_brick = nodes.new(type='ShaderNodeTexBrick')
-    tex_brick.location = (0, 0)
-    tex_brick.inputs['Color1'].default_value = (0.55, 0.20, 0.12, 1.0) # Purdue red brick
-    tex_brick.inputs['Color2'].default_value = (0.42, 0.16, 0.10, 1.0) # Darker brick variation
-    tex_brick.inputs['Mortar'].default_value = (0.75, 0.72, 0.68, 1.0) # Light grey mortar
-    tex_brick.inputs['Scale'].default_value = 18.0
-    tex_brick.inputs['Mortar Size'].default_value = 0.02
-    tex_brick.inputs['Mortar Smooth'].default_value = 0.1
-    tex_brick.inputs['Bias'].default_value = 0.1
-    tex_brick.inputs['Brick Width'].default_value = 0.5
-    tex_brick.inputs['Row Height'].default_value = 0.25
-    
-    links.new(tex_brick.outputs['Color'], bsdf.inputs['Base Color'])
+
+    tex_coord = nodes.new(type='ShaderNodeTexCoord')
+    geom = nodes.new(type='ShaderNodeNewGeometry')
+    sep_normal = nodes.new(type='ShaderNodeSeparateXYZ')
+    abs_x = nodes.new(type='ShaderNodeMath')
+    abs_x.operation = 'ABSOLUTE'
+    axis_gate = nodes.new(type='ShaderNodeMath')
+    axis_gate.operation = 'GREATER_THAN'
+    axis_gate.inputs[1].default_value = 0.5
+    sep_coord = nodes.new(type='ShaderNodeSeparateXYZ')
+    uv_xz = nodes.new(type='ShaderNodeCombineXYZ')
+    uv_yz = nodes.new(type='ShaderNodeCombineXYZ')
+    tri_mix = nodes.new(type='ShaderNodeMix')
+    tri_mix.data_type = 'RGBA'
+    brick = nodes.new(type='ShaderNodeTexBrick')
+    # A modest darker red-brown shift addresses the remaining qualitative
+    # mismatch in Purdue's entrance photos; values remain uncalibrated.
+    brick.inputs['Color1'].default_value = (0.120, 0.032, 0.013, 1.0)
+    brick.inputs['Color2'].default_value = (0.055, 0.013, 0.005, 1.0)
+    # Muted warm mortar is a qualitative match to the visible joints in the
+    # Purdue photos; it is not a measured mortar color or mix specification.
+    brick.inputs['Mortar'].default_value = (0.10, 0.08, 0.06, 1.0)
+    brick.inputs['Scale'].default_value = 1.0
+    brick.inputs['Mortar Size'].default_value = 0.002
+    brick.inputs['Mortar Smooth'].default_value = 0.001
+    brick.inputs['Bias'].default_value = 0.0
+    brick.inputs['Brick Width'].default_value = 0.23
+    brick.inputs['Row Height'].default_value = 0.076
+    noise = nodes.new(type='ShaderNodeTexNoise')
+    noise.inputs['Scale'].default_value = 3.2
+    noise.inputs['Detail'].default_value = 3.0
+    color_mix = nodes.new(type='ShaderNodeMix')
+    color_mix.data_type = 'RGBA'
+    color_mix.inputs[0].default_value = 0.04
+    bump = nodes.new(type='ShaderNodeBump')
+    bump.inputs['Strength'].default_value = 0.18
+    bump.inputs['Distance'].default_value = 0.004
+    fine_noise = nodes.new(type='ShaderNodeTexNoise')
+    fine_noise.inputs['Scale'].default_value = 160.0
+    fine_noise.inputs['Detail'].default_value = 2.0
+    fine_bump = nodes.new(type='ShaderNodeBump')
+    fine_bump.inputs['Strength'].default_value = 0.25
+    fine_bump.inputs['Distance'].default_value = 0.002
+
+    links.new(geom.outputs['Normal'], sep_normal.inputs['Vector'])
+    links.new(sep_normal.outputs['X'], abs_x.inputs[0])
+    links.new(abs_x.outputs[0], axis_gate.inputs[0])
+    links.new(tex_coord.outputs['Object'], sep_coord.inputs['Vector'])
+    links.new(sep_coord.outputs['X'], uv_yz.inputs['X'])
+    links.new(sep_coord.outputs['Z'], uv_yz.inputs['Y'])
+    links.new(sep_coord.outputs['Y'], uv_xz.inputs['X'])
+    links.new(sep_coord.outputs['Z'], uv_xz.inputs['Y'])
+    links.new(axis_gate.outputs[0], tri_mix.inputs[0])
+    links.new(uv_yz.outputs['Vector'], tri_mix.inputs[6])
+    links.new(uv_xz.outputs['Vector'], tri_mix.inputs[7])
+    links.new(tri_mix.outputs[2], brick.inputs['Vector'])
+    links.new(tex_coord.outputs['Object'], noise.inputs['Vector'])
+    links.new(brick.outputs['Color'], color_mix.inputs[6])
+    links.new(noise.outputs['Color'], color_mix.inputs[7])
+    links.new(color_mix.outputs[2], bsdf.inputs['Base Color'])
+    links.new(brick.outputs['Fac'], bump.inputs['Height'])
+    links.new(tex_coord.outputs['Object'], fine_noise.inputs['Vector'])
+    links.new(fine_noise.outputs['Fac'], fine_bump.inputs['Height'])
+    links.new(bump.outputs['Normal'], fine_bump.inputs['Normal'])
+    links.new(fine_bump.outputs['Normal'], bsdf.inputs['Normal'])
     links.new(bsdf.outputs['BSDF'], node_out.inputs['Surface'])
+    mat['evidence_source'] = 'https://polytechnic.purdue.edu/sites/default/files/styles/featured_image/public/article-images/Knoy-featured.jpg?itok=wcvG00BW'
+    mat['evidence_status'] = 'Qualitative visual cue only: Purdue-hosted entrance photos show red/brown brick. Undated, perspective, uncalibrated.'
+    mat['measurement_limit'] = 'Exact brick color, dimensions, mortar color, and bond pattern have not been measured; procedural values are render estimates.'
+    mat['estimated_brick_dimensions_m'] = '0.23 x 0.076; render scale only'
+    mat['estimated_mortar_width_m'] = 0.003
     return mat
 
 def setup_concrete_material():
@@ -148,11 +205,13 @@ def setup_concrete_material():
     
     bsdf = nodes.new(type='ShaderNodeBsdfPrincipled')
     bsdf.location = (300, 0)
-    bsdf.inputs['Base Color'].default_value = (0.82, 0.80, 0.76, 1.0) # Warm limestone / precast
-    bsdf.inputs['Roughness'].default_value = 0.72
+    bsdf.inputs['Base Color'].default_value = (0.58, 0.57, 0.55, 1.0)
+    bsdf.inputs['Roughness'].default_value = 0.82
     bsdf.inputs['Metallic'].default_value = 0.0
     
-    # Subtle noise for concrete texture
+    # Subtle tonal variation plus low-amplitude surface noise, matching the
+    # saved source asset. These are neutral render values, not a verified
+    # concrete/precast specification.
     tex_noise = nodes.new(type='ShaderNodeTexNoise')
     tex_noise.location = (0, 0)
     tex_noise.inputs['Scale'].default_value = 35.0
@@ -162,12 +221,27 @@ def setup_concrete_material():
     mix_col = nodes.new(type='ShaderNodeMix')
     mix_col.location = (150, 50)
     mix_col.data_type = 'RGBA'
-    mix_col.inputs[6].default_value = (0.80, 0.78, 0.74, 1.0) # Slightly darker tone
-    mix_col.inputs[7].default_value = (0.84, 0.82, 0.78, 1.0) # Lighter tone
+    mix_col.inputs[6].default_value = (0.80, 0.78, 0.74, 1.0)
+    mix_col.inputs[7].default_value = (0.84, 0.82, 0.78, 1.0)
     links.new(tex_noise.outputs['Fac'], mix_col.inputs[0]) # Factor
     links.new(mix_col.outputs[2], bsdf.inputs['Base Color'])
+
+    tex_coord = nodes.new(type='ShaderNodeTexCoord')
+    surface_noise = nodes.new(type='ShaderNodeTexNoise')
+    surface_noise.inputs['Scale'].default_value = 1.25
+    surface_noise.inputs['Detail'].default_value = 1.0
+    surface_noise.inputs['Roughness'].default_value = 0.52
+    bump = nodes.new(type='ShaderNodeBump')
+    bump.inputs['Strength'].default_value = 0.018
+    bump.inputs['Distance'].default_value = 0.006
+    links.new(tex_coord.outputs['Object'], surface_noise.inputs['Vector'])
+    links.new(surface_noise.outputs['Fac'], bump.inputs['Height'])
+    links.new(bump.outputs['Normal'], bsdf.inputs['Normal'])
     
     links.new(bsdf.outputs['BSDF'], node_out.inputs['Surface'])
+    mat['evidence_source'] = 'https://polytechnic.purdue.edu/sites/default/files/styles/featured_image/public/article-images/Knoy-featured.jpg?itok=wcvG00BW'
+    mat['evidence_status'] = 'Qualitative visual cue only: photo shows pale horizontal facade trim. Material identification is not confirmed.'
+    mat['measurement_limit'] = 'Exact concrete/precast/stone specification, color, finish, and dimensions are unverified; shader is a neutral render estimate.'
     return mat
 
 def setup_glass_material():
@@ -182,15 +256,30 @@ def setup_glass_material():
     
     bsdf = nodes.new(type='ShaderNodeBsdfPrincipled')
     bsdf.location = (100, 0)
-    bsdf.inputs['Base Color'].default_value = (0.04, 0.05, 0.06, 1.0) # Dark solar tint
-    bsdf.inputs['Roughness'].default_value = 0.03
-    bsdf.inputs['IOR'].default_value = 1.52
+    bsdf.inputs['Base Color'].default_value = (0.06, 0.10, 0.14, 1.0)
+    bsdf.inputs['Roughness'].default_value = 0.08
+    bsdf.inputs['IOR'].default_value = 1.50
     if 'Transmission Weight' in bsdf.inputs:
-        bsdf.inputs['Transmission Weight'].default_value = 0.88
+        bsdf.inputs['Transmission Weight'].default_value = 0.85
     elif 'Transmission' in bsdf.inputs:
-        bsdf.inputs['Transmission'].default_value = 0.88
+        bsdf.inputs['Transmission'].default_value = 0.85
         
     links.new(bsdf.outputs['BSDF'], node_out.inputs['Surface'])
+    mat['evidence_source'] = 'https://polytechnic.purdue.edu/sites/default/files/styles/featured_image/public/article-images/Knoy-featured.jpg?itok=wcvG00BW'
+    mat['evidence_status'] = 'Qualitative visual cue only: photo shows dark recessed glazing. Exact glazing tint and reflectance are unmeasured.'
+    mat['measurement_limit'] = 'The single uncalibrated view does not establish glazing specification, color, or reflectance.'
+    return mat
+
+def setup_entrance_sign_material():
+    mat = bpy.data.materials.new(name="KNOY_Entrance_Sign_Metal")
+    mat.use_nodes = True
+    bsdf = next(n for n in mat.node_tree.nodes if n.type == 'BSDF_PRINCIPLED')
+    bsdf.inputs['Base Color'].default_value = (0.68, 0.70, 0.72, 1.0)
+    bsdf.inputs['Metallic'].default_value = 0.35
+    bsdf.inputs['Roughness'].default_value = 0.34
+    mat['evidence_source'] = 'https://hist152purdue.wordpress.com/2018/08/09/knoy-hall/'
+    mat['evidence_status'] = 'The entrance lettering appears light/silver in the 2018 photo; metal finish is a visual estimate.'
+    mat['measurement_limit'] = 'Exact letter material, finish, dimensions, and reflectance are not specified.'
     return mat
 
 def setup_bronze_material():
@@ -344,6 +433,7 @@ def setup_ref_wire_material():
 mat_brick = setup_brick_material()
 mat_concrete = setup_concrete_material()
 mat_glass = setup_glass_material()
+mat_sign = setup_entrance_sign_material()
 mat_bronze = setup_bronze_material()
 mat_louver = setup_louver_material()
 mat_roof = setup_roof_material()
@@ -470,6 +560,11 @@ def create_exterior_walls():
         for z_bot, z_top, is_wall, is_win, mat_idx in z_bands:
             # If solid tower, build wall even in window bands using brick material
             current_mat = 1 if (is_solid and is_win) else mat_idx
+            # Purdue's 2018 entrance photo shows the south portal sign mounted
+            # on a brick sign wall. Apply brick to this existing band only;
+            # dimensions and wall/opening geometry remain unchanged.
+            if i == 25 and abs(z_bot - 3.10) < 1e-5 and abs(z_top - Z_L2) < 1e-5:
+                current_mat = 1
             
             if is_wall or is_solid:
                 # Exterior face
@@ -534,11 +629,19 @@ def create_ribbon_glazing_and_mullions():
     mullion_width = 0.08
     mullion_depth = 0.16
     
+    # Purdue Archives' public Knoy building record photograph shows narrow
+    # horizontal glazing ribbons set into substantially deeper brick bands
+    # on several visible faces. The original 2.0 m bands read too tall in
+    # comparison. The L1-L4 ribbons below use an estimated 1.40 m height,
+    # centered on the existing band elevations. This is a qualitative,
+    # uncalibrated photo interpretation, not an as-built facade measurement.
+    # The short top band is preserved separately because roof/L5 status is
+    # unresolved and the photo does not verify glazing at that elevation.
     win_bands = [
-        (1.10,  3.10),
-        (5.58,  7.58),
-        (10.06, 12.06),
-        (14.54, 16.54),
+        (1.40,  2.80),
+        (5.88,  7.28),
+        (10.36, 11.76),
+        (14.84, 16.24),
         (18.00, 19.10),
     ]
     
@@ -615,6 +718,41 @@ def create_ribbon_glazing_and_mullions():
     obj_mullions = bpy.data.objects.new("KNOY_Fenestration_Bronze_Mullions", mesh_mullions)
     obj_mullions.active_material = mat_bronze
     asset_coll.objects.link(obj_mullions)
+
+    # The shell's original 2.0 m glazing voids were retained as the upper/lower
+    # bounds for these estimated narrower windows. Fill the newly exposed 0.30 m
+    # strips with source-supported brick so each L1-L4 ribbon sits within a
+    # continuous masonry band, as visible in Purdue Archives' public Knoy photo.
+    # This is a qualitative facade interpretation; dimensions remain unmeasured.
+    fill_mesh = bpy.data.meshes.new("KNOY_Facade_Brick_Spandrels_R17")
+    fill_verts, fill_faces = [], []
+    old_bands = [(1.10,3.10),(5.58,7.58),(10.06,12.06),(14.54,16.54)]
+    new_bands = [(1.40,2.80),(5.88,7.28),(10.36,11.76),(14.84,16.24)]
+    for i in range(N_VERTS):
+        if is_stair_or_solid_segment(i):
+            continue
+        p0, p1 = BOUNDARY_2D[i], BOUNDARY_2D[(i+1)%N_VERTS]
+        q0, q1 = INNER_2D[i], INNER_2D[(i+1)%N_VERTS]
+        for (old_lo,old_hi),(new_lo,new_hi) in zip(old_bands,new_bands):
+            for z0,z1 in ((old_lo,new_lo),(new_hi,old_hi)):
+                base=len(fill_verts)
+                fill_verts.extend([
+                    (p0.x,p0.y,z0),(p1.x,p1.y,z0),(p1.x,p1.y,z1),(p0.x,p0.y,z1),
+                    (q0.x,q0.y,z0),(q1.x,q1.y,z0),(q1.x,q1.y,z1),(q0.x,q0.y,z1),
+                ])
+                fill_faces.extend([
+                    (base,base+1,base+2,base+3),
+                    (base+7,base+6,base+5,base+4),
+                    (base,base+4,base+5,base+1),
+                    (base+1,base+5,base+6,base+2),
+                    (base+2,base+6,base+7,base+3),
+                    (base+3,base+7,base+4,base),
+                ])
+    fill_mesh.from_pydata(fill_verts, [], fill_faces)
+    fill_mesh.materials.append(mat_brick)
+    fill_obj=bpy.data.objects.new("KNOY_Facade_Brick_Spandrels_R17",fill_mesh)
+    fill_obj.active_material=mat_brick
+    asset_coll.objects.link(fill_obj)
     
     return obj_glass, obj_mullions
 
@@ -756,6 +894,43 @@ def create_entrances_and_canopies():
 
 canopy_obj = create_entrances_and_canopies()
 
+def create_entrance_sign():
+    """Create source-visible entrance lettering with estimated size/location."""
+    p_start = BOUNDARY_2D[25]
+    p_end = BOUNDARY_2D[26]
+    edge = (p_end - p_start).normalized()
+    outward = Vector((-edge.y, edge.x))
+    center = (p_start + p_end) * 0.5 + outward * 0.05
+    normal = Vector((outward.x, outward.y, 0.0)).normalized()
+
+    curve = bpy.data.curves.new("KNOY_Entrance_Sign_Lettering", type='FONT')
+    curve.body = "KNOY HALL OF TECHNOLOGY"
+    curve.align_x = 'CENTER'
+    # The uncalibrated 2018 Purdue photo suggests a modest entrance wordmark;
+    # this remains a scale estimate, not a surveyed letter height.
+    curve.size = 0.24
+    curve.extrude = 0.010
+    curve.bevel_depth = 0.002
+    curve.bevel_resolution = 2
+    obj = bpy.data.objects.new("KNOY_Entrance_Sign_Lettering", curve)
+    asset_coll.objects.link(obj)
+    obj.location = (center.x, center.y, 3.92)
+    obj.rotation_euler = Vector((0.0, 0.0, 1.0)).rotation_difference(normal).to_euler()
+    obj.data.materials.append(mat_sign)
+    obj["evidence_source"] = "https://hist152purdue.wordpress.com/2018/08/09/knoy-hall/"
+    obj["source_feature"] = "Visible KNOY HALL OF TECHNOLOGY entrance lettering above the south entry in the 2018 Purdue History Project photo."
+    obj["geometry_status"] = "Lettering and south entrance zone are photo-supported; scale and precise wall position are estimates."
+    obj["measurement_limit"] = "Photo is perspective and uncalibrated; letter size, mounting depth, exact elevation, and surveyed position are unknown."
+    bpy.ops.object.select_all(action='DESELECT')
+    obj.select_set(True)
+    bpy.context.view_layer.objects.active = obj
+    bpy.ops.object.convert(target='MESH')
+    obj = bpy.context.view_layer.objects.active
+    obj.name = "KNOY_Entrance_Sign_Lettering"
+    return obj
+
+entrance_sign_obj = create_entrance_sign()
+
 # ---------------------------------------------------------------------------
 # 10. ROOF MECHANICAL PENTHOUSE & BULKHEAD
 # ---------------------------------------------------------------------------
@@ -880,7 +1055,8 @@ def create_roof_cooling_towers():
     asset_coll.objects.link(obj)
     return obj
 
-cooling_obj = create_roof_cooling_towers()
+# Do not instantiate the legacy speculative model: the inspected sources do
+# not establish current cooling-tower presence, placement, or dimensions.
 
 # ---------------------------------------------------------------------------
 # 12. ROOFTOP SOLAR PHOTOVOLTAIC ARRAYS
@@ -889,16 +1065,19 @@ def create_roof_solar_arrays():
     mesh = bpy.data.meshes.new("KNOY_Roof_Solar_Photovoltaic_Array")
     bm = bmesh.new()
     
-    rows_y = [6.0, 9.5, 13.0, 16.5, 20.0]
-    panel_height = 2.00
+    # Purdue Polytechnic's 2017 report documents a 28-panel array.
+    # The cited source gives no dimensioned layout, location, tilt, or rack
+    # specification; this 4 x 7 representation is explicitly schematic.
+    rows_y = [9.73, 11.91, 14.09, 16.27]
+    panel_height = 1.72
     tilt_rad = math.radians(28.0)
     
     dz = panel_height * math.sin(tilt_rad)
     dy = panel_height * math.cos(tilt_rad)
     
-    x_start = 210.0
-    x_end   = 231.0
-    num_panels_per_row = 18
+    x_start = 216.58
+    x_end   = 224.42
+    num_panels_per_row = 7
     p_spacing_x = (x_end - x_start) / num_panels_per_row
     
     for y_pos in rows_y:
@@ -919,7 +1098,7 @@ def create_roof_solar_arrays():
             
             bm.faces.new((v1, v2, v3, v4))
             
-            # Supporting leg posts to roof deck
+            # Illustrative rack feet; support dimensions are not source measured.
             vl1_b = bm.verts.new((px0 + 0.1, py_low, Z_ROOF))
             vl1_t = bm.verts.new((px0 + 0.1, py_low, pz_low))
             bm.edges.new((vl1_b, vl1_t))
@@ -937,6 +1116,11 @@ def create_roof_solar_arrays():
     return obj
 
 solar_obj = create_roof_solar_arrays()
+solar_obj["historical_panel_count"] = 28
+solar_obj["historical_panel_count_source"] = "Purdue Polytechnic 2017 Knoy rooftop solar installation article"
+solar_obj["layout_status"] = "Schematic 4x7 display; exact array layout and dimensions are not source-measured."
+solar_obj["current_roof_presence_status"] = "State of Indiana 2023 orthophoto shows a panel-like installation in a south roof region; this does not register the modeled PV mesh transform, and exact count/layout are not legible enough to verify."
+solar_obj["current_persistence_status"] = "Presence is supported in the 2023 imagery capture only; 2026 persistence is unverified."
 
 # ---------------------------------------------------------------------------
 # 13. STRUCTURAL CORE & COLUMNS
@@ -1041,24 +1225,26 @@ Built / Dedicated: 1982-1984
 Headquarters: Purdue Polytechnic Institute
 Gross Area: ~141,690 to 170,000 sq ft (Footprint: 28,338 sq ft = 2,632.7 m^2)
 
-DOCUMENTED GEOMETRY & VERTICAL ELEVATIONS (Purdue Official GIS FID 243)
+SOURCE-BACKED GEOMETRY & LEVEL NOTES
 ---------------------------------------------------------------------
-Elevation Datum: 621.4 ft
-Extrusion: 48.0 ft (14.630 m)
-Count of Floors: 5 above ground + basement + mezzanine
+Purdue GIS feature 243 reports five levels and 48 ft extrusion. The
+extrusion attribute is not an as-built roof measurement and does not resolve
+the floor/roof discrepancy. The 2018 Purdue Gateway planning study's page 24
+labels Existing Knoy Levels 1-4 at 14 ft 8 in floor-to-floor. The source is
+not an as-built survey. Modeled L1-L4 datums match that spacing within about
+0.011 m per interval. Purdue Polytechnic's emergency-plan page lists KNOY
+G-011 and KNOY 457, and references staff on the first and fourth floors;
+these corroborate L1/L4 use but do not map rooms or locate stairs. A 2018 Indiana 3DEP DSM comparison estimates the representative roof surface at about 59.9 ft above sampled bare earth, close to the inherited 58.8 ft L5 slab datum. This makes a roof-slab interpretation plausible, but does not establish whether L5 is an occupied story; the roof/penthouse details remain unverified. The project conversion, 5 ft DSM cells, stepped surfaces and interpolated terrain limit precision. See audit/complete_knoy/roof_height_assessment_r8.json. The contradictory GIS 48 ft extrusion attribute remains unresolved.
 
-Verified Vertical Datums:
-- Basement Floor (B): -22.0 ft (-6.706 m)
-- Mezzanine (M): -10.4 ft (-3.170 m)
-- Ground / Level 1 (F01): 0.0 ft (0.000 m)
-- Level 2 (F02): +14.7 ft (+4.481 m)
-- Level 3 (F03): +29.4 ft (+8.961 m)
-- Level 4 (F04): +44.1 ft (+13.442 m)
-- Level 5 (F05): +58.8 ft (+17.922 m)
-- Main Roof Deck (R): +63.0 ft (+19.202 m)
-- Parapet Coping Top: +65.5 ft (+19.950 m)
-- Rooftop Mechanical Penthouse: +75.0 ft (+22.860 m)
-- Cooling Towers & Fan Cowls: +77.1 ft (+23.500 m)
+Current modeled datum estimates (meters above modeled L1 datum):
+- Ground / Level 1: 0.000 m
+- Level 2: 4.481 m
+- Level 3: 8.961 m
+- Level 4: 13.442 m
+- Level 5: 17.922 m (unresolved in the 2018 source; 2018 LiDAR makes roof-slab interpretation plausible, not confirmed)
+- Roof deck: 19.202 m (unverified)
+- Parapet: 19.950 m (unverified)
+- Penthouse top: 24.300 m (schematic and unverified)
 
 ARCHITECTURAL IDENTITY & EXTERIOR EXPRESSION
 ---------------------------------------------------------------------
@@ -1068,23 +1254,36 @@ Brutalist / late-modernist academic architectural composition:
 - Full structural exterior masonry walls in campus world coordinates (meters).
 - Exposed precast concrete spandrel panels and lintel fascias.
 - Purdue red brick infill and solid stairwell anchor towers (west and northwest).
-- Continuous dark-tinted solar ribbon glazing with dark bronze extruded mullions.
+- Narrow horizontal dark-tinted glazing ribbons with dark bronze extruded
+  mullions. L1-L4 glass height is estimated at 1.40 m from Purdue Archives'
+  public building-record photograph; this is a qualitative proportion, not a
+  measured elevation. Exact facade cadence remains unverified.
 - Cantilevered concrete entrance canopies at Southeast, South, and West portals.
-- Central rooftop mechanical penthouse with dark bronze louvered screens.
-- Dual modular cooling towers on structural steel dunnage framing.
-- Rooftop photovoltaic solar panel array for the Applied Energy Laboratory.
+- Central rooftop mechanical penthouse placeholder with dark bronze louvered
+  screens; presence, dimensions and location remain unverified.
+- Cooling towers are not present in the reopened asset; no source located to
+  justify adding them.
+- The model shows 28 solar panels, matching Purdue Polytechnic's reported
+  April 2017 installation count. A State of Indiana 2023 orthophoto shows a
+  panel-like installation in a south roof region, supporting array presence
+  in that capture. This observation does not register the modeled PV mesh to
+  the imagery. The 4 x 7 arrangement, exact roof position, module layout, tilt
+  and racking dimensions remain schematic/unverified; the 2023 orthophoto does
+  not make module count reliably legible, and 2026 persistence remains
+  unverified.
 - West skywalk connector vestibule linking to the western complex (Lambertus).
 
 INTERIOR FIDELITY & HONEST TREATMENT OF EVIDENCE
 ---------------------------------------------------------------------
-- Full reinforced concrete floor slabs modeled at each verified level:
-  Basement, Ground (L1), Level 2, Level 3, Level 4, Level 5, and Roof Deck.
+- Floor slabs model the basement, Ground (L1), Levels 2-5 and roof deck.
+  The 2018 Purdue planning sheet supports Levels 1-4; modeled Level 5 and roof
+  remain source-conflicted/unverified, not verified as-built levels.
 - Primary structural column grid (7.3m / 24ft spacing) and vertical core
   circulation shafts (elevator banks and fire stairs) represented.
-- Non-public interior room layouts, classrooms, private faculty offices, and
-  specialized laboratory partitions are explicitly OMITTED and marked UNVERIFIED,
-  as detailed internal architectural blueprints are restricted by Purdue University
-  Physical Facilities for campus safety and building security protocols.
+- Room layouts, classroom/office fit-out and specialized laboratory partitions are
+  not generated by this base builder. The public 2018 Gateway typical-plan raster
+  and Liu thesis plan can support partial plan traces, but they do not establish
+  current as-built room conditions, complete furnishings or finishes.
 - No imaginary interior room arrangements have been invented.
 
 COORDINATE SYSTEM & MASTER COMPATIBILITY

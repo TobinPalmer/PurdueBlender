@@ -1,0 +1,61 @@
+{
+  "revision": 11,
+  "asset": "modular/buildings/knoy_hall.blend",
+  "review_findings_addressed": [
+    "R10 reviewer noted the entrance lettering looked large relative to the uncalibrated photo.",
+    "R10 reviewer noted the interior was sparse and did not show source-supported door placement clearly.",
+    "R10 reviewer noted the repetitive facade remains schematic without a calibrated all-sided elevation."
+  ],
+  "source_documents": [
+    {
+      "title": "Engineering and Polytechnic Gateway Formation Study, massing studies draft including landscape",
+      "publisher": "Purdue University College of Engineering",
+      "url": "https://engineering.purdue.edu/~frosch/Renderings/Gateway/2018-05-31%20MASSING%20STUDIES%20DRAFT%20INCLUDING%20LANDSCAPE.pdf",
+      "source_date": "2018-05-31",
+      "source_sheet": "PDF page 24, Typical Plan Levels 2-4 and Existing Knoy Elevations",
+      "local_snapshot": "audit/complete_knoy/2018-05-31_knoy_massing_studies.pdf",
+      "trace_crop": "audit/complete_knoy/knoy_typical_plan_crop.png",
+      "method": "Accepted wall traces in upper_plan_wall_trace.json; 15 door locations are midpoints of 0.75–1.20 m collinear gaps between traces, then visually matched to visible door-swing symbols on the plan raster. All positions inherit the hand-affine GIS registration uncertainty of approximately +/-1 m.",
+      "supports": ["door-opening locations on one typical Levels 2-4 plan", "floor-plan partitions", "stair symbol footprints", "nominal 14 ft 8 in L1-L4 floor-to-floor interval"],
+      "does_not_support": ["as-built or current plan", "door schedule, exact leaf swing, width/height beyond raster scaling", "partition/door finishes", "a verified continuous basement-to-roof accessible route", "roof/L5 story resolution"]
+    },
+    {
+      "title": "Knoy Hall",
+      "publisher": "Purdue History Project (HIST 152)",
+      "url": "https://hist152purdue.wordpress.com/2018/08/09/knoy-hall/",
+      "local_image": "audit/complete_knoy/ref_knoy_main_entrance_hist152_2018.jpg",
+      "supports": ["south entrance lettering identity and general appearance"],
+      "limit": "Uncalibrated perspective; sign size, mounting dimensions, and complete elevation rhythm remain unmeasured."
+    }
+  ],
+  "asset_edits": [
+    {
+      "object": "KNOY_TypicalPlan_Doors_L2-L4",
+      "change": "Added 15 candidate door panels at plan-visible door-swing openings and repeated this typical plan representation on L2, L3, and L4 (45 panels total). The collection is nested beneath Asset_knoy_hall so it is included by the exported collection hierarchy.",
+      "geometry_status": "Opening positions are traced from the source plan; widths (0.82–1.07 m) are raster-derived estimates. Closed panel pose, 2.10 m height, 0.045 m thickness, and neutral placeholder finish are illustrative. Exact swing direction is not asserted.",
+      "deliberate_exclusions": "Four 0.57 m raster gaps and one 1.5 m gap were not modeled as doors because they could be linework artifacts or a different opening type. L1 candidate openings remain unresolved."
+    },
+    {
+      "object": "KNOY_Entrance_Sign_Lettering",
+      "change": "Reduced the saved sign mesh scale by 20% after reviewer feedback. Its world bounds now span about 3.39 m, while the GIS-to-local placement transform and wall alignment remain unchanged.",
+      "geometry_status": "A conservative visual adjustment based on the Purdue 2018 entrance photo; still an estimate because the photograph has no scale reference."
+    }
+  ],
+  "review_images": {
+    "source_plan_with_door_locations": "audit/complete_knoy/knoy_typical_plan_doors_source_overlay_r11.png",
+    "spatial_view": "audit/complete_knoy/knoy_l2_doors_stairs_spatial_r11.png",
+    "entrance_scale_review": "audit/complete_knoy/knoy_entrance_detail_r11.png"
+  },
+  "validation": {
+    "file": "audit/complete_knoy/door_model_validation_r11.json",
+    "saved_asset_reopened": true,
+    "asset_direct_objects": 64,
+    "asset_descendant_objects": 118,
+    "nested_collection_counts": {"upper_partitions": 3, "stair_runs": 6, "typical_plan_door_panels": 45},
+    "all_45_door_panels_in_asset_hierarchy": true,
+    "preexisting_62_mesh_geometry_sha256": "c51a34c4704891f3442b17f7df0d9edc3741fc1cee7416041858dbeed39c9ed1",
+    "preexisting_geometry_changed": false,
+    "roof_L5_PV_or_GIS_registration_geometry_changed": false
+  },
+  "unchanged_uncertainties": ["facade rhythm/material mapping on all sides", "sign dimensions and material", "door leaf swing directions and dimensions", "L1 candidate door openings", "continuous stair route outside L2-L4", "L5/roof/penthouse height and level conflict", "PV layout and 2026 persistence"]
+}

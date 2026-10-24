@@ -1,0 +1,108 @@
+{
+  "building_id": "knoy_hall",
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/knoy_hall.blend",
+  "source_script": "modular/buildings/build_knoy_hall.py",
+  "revision": 6,
+  "sources": [
+    {
+      "provider": "Purdue Polytechnic Institute",
+      "title": "New Knoy rooftop solar array generates more power, learning opportunities and research",
+      "url": "https://old.polytechnic.purdue.edu/newsroom/new-knoy-rooftop-solar-array-generates-more-power-learning-opportunities-and-research",
+      "retrieved": "2026-10-24",
+      "source_date": "Published 2017-05-22; installation reported 2017-04-18",
+      "feature_identifier": "Knoy Hall / Applied Energy Laboratory rooftop PV installation",
+      "facts_used": [
+        "Purdue reports a 28-panel array installed on the Knoy roof, replacing a 24-panel array installed 17 years earlier.",
+        "The article links installation photographs and describes the panel support rack.",
+        "The report confirms the historical 2017 panel count, not the array's unchanged status in 2026."
+      ],
+      "model_application": "Replaced the prior speculative 90-panel array with 28 discrete modeled modules in a schematic 4x7 arrangement. Kept the prior roof-zone center. Added visually separate metal support rails.",
+      "uncertainty": "The article provides no measured roof plan, exact panel layout/orientation/position, array tilt, support-member dimensions, or current 2026 survey. The 4x7 pattern, tilt and retained center are estimates."
+    },
+    {
+      "provider": "Purdue Polytechnic Institute",
+      "title": "Knoy Hall first on campus to use solar power",
+      "url": "https://old.polytechnic.purdue.edu/newsroom/knoy-hall-first-campus-use-solar-power",
+      "retrieved": "2026-10-24",
+      "source_date": "Published 2013-11-15",
+      "feature_identifier": "Knoy Hall rooftop photovoltaic installation",
+      "facts_used": [
+        "Reports PV panels on Knoy Hall's roof, grid tied in 2013, and states that the installation had been present since 2000.",
+        "Establishes that rooftop PV is a repeated historic building feature; it does not establish the current array geometry."
+      ],
+      "uncertainty": "No current/as-built geometry or current system persistence is documented by this 2013 article."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "title": "Knoy Hall of Technology records, UA 141",
+      "url": "https://archives.lib.purdue.edu/repositories/2/resources/1490",
+      "retrieved": "2026-10-24",
+      "source_date": "Collection dates to 1984; finding aid published 2017-10-09",
+      "feature_identifier": "UA 141, Communal Collections Box 62, Placement 01",
+      "facts_used": [
+        "Finding aid says the folder contains construction information and a floor plan."
+      ],
+      "measurement_method": "Finding aid review only; the physical folder was not inspected during this task.",
+      "uncertainty": "Potential primary plans are not digitized in the cited record. The listed floor plan may not include elevations or roof equipment."
+    },
+    {
+      "provider": "Purdue University College of Engineering / Purdue Gateway planning study",
+      "title": "Serpentine: Knoy Hall Connection — Massing Studies Draft Including Landscape",
+      "url": "https://engineering.purdue.edu/~frosch/Renderings/Gateway/2018-05-31%20MASSING%20STUDIES%20DRAFT%20INCLUDING%20LANDSCAPE.pdf",
+      "retrieved": "2026-10-24",
+      "source_date": "2018-05-31 planning study",
+      "feature_identifier": "PDF page 24, Existing Knoy Elevations; adjacent Typical Plan Levels 2-4",
+      "facts_used": [
+        "Existing Knoy elevations label Levels 1-4 and state a 14 ft 8 in floor-to-floor height.",
+        "The existing typical plan is a useful L2-L4 plan source but is not a current surveyed/as-built document."
+      ],
+      "measurement_method": "Read the printed vertical interval and compared it to modeled L1-L4 datum values recorded in the source asset. Modeled intervals are 4.481, 4.480 and 4.481 m; the printed 14 ft 8 in converts to 4.4704 m, giving 0.0096-0.0106 m differences.",
+      "uncertainty": "The sheet is a planning study, not an as-built survey; it labels only existing Levels 1-4 and does not resolve modeled L5, the roof deck, parapet, or penthouse."
+    },
+    {
+      "provider": "Purdue University Archives / Purdue Campus Facilities and Buildings Historic Database",
+      "title": "Maurice G. Knoy Hall of Technology building record",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/555",
+      "retrieved": "2026-10-24",
+      "source_date": "Record states built 1985; database citation references the 2019 historical building record",
+      "feature_identifier": "Knoy Hall of Technology",
+      "facts_used": [
+        "Identifies Knoy Hall and notes that it has photovoltaic arrays on its roof."
+      ],
+      "uncertainty": "Historical description, not a current roof survey or dimensions source."
+    },
+    {
+      "provider": "Purdue Polytechnic Institute",
+      "title": "Official profile photo featuring Knoy Hall",
+      "url": "https://polytechnic.purdue.edu/sites/default/files/styles/featured_image/public/article-images/Knoy-featured.jpg?itok=wcvG00BW",
+      "record_page": "https://polytechnic.purdue.edu/profile/rnawroc",
+      "retrieved": "2026-10-24",
+      "source_date": "Photo capture date not provided",
+      "feature_identifier": "Knoy Hall entrance/facade photo used as a Purdue profile image",
+      "facts_used": [
+        "A current Purdue-hosted photo provides a facade reference for red brick, glazing, entrance signage, canopy and surrounding planting."
+      ],
+      "measurement_method": "Qualitative visual comparison only; the single perspective is uncalibrated and does not establish building dimensions, full facade rhythm, or floor elevations.",
+      "uncertainty": "No dated calibrated elevation or dimensioned facade source was found in this review; no exterior facade geometry was changed."
+    }
+  ],
+  "model_changes": [
+    "Changed the Knoy asset's solar panel geometry from 90 speculative modules to 28 modules, matching Purdue's published 2017 installation count.",
+    "Added panel-count/source/estimate metadata to the solar array object and scene.",
+    "Added an independently visible schematic metal support frame and a roof close-up audit view.",
+    "Tagged the existing penthouse as an unverified schematic placeholder without changing its geometry.",
+    "Did not add cooling-tower geometry because the inspected sources did not establish its presence or dimensions and the current reopened asset has no cooling-tower object.",
+    "Retained the L5 and roof geometry; documented the L1-L4 vertical interval comparison and the L5/roof source conflict."
+  ],
+  "unresolved": [
+    "Current roof layout and 2026 PV persistence are unverified.",
+    "Penthouse presence, dimensions, and placement remain unverified.",
+    "No source located for rooftop cooling towers; none modeled.",
+    "GIS attributes report five levels and 48 ft extrusion, but do not resolve the 2018 planning sheet's L1-L4 story labeling or the modeled L5/roof arrangement.",
+    "Facade photo is qualitative; exact elevation, window/band dimensions and facade rhythm remain unverified."
+  ],
+  "validation": "audit/complete_knoy/roof_equipment_validation_r6.json",
+  "preview": "audit/complete_knoy/knoy_roof_equipment_audit_r6.png",
+  "master_or_shared_files_modified": false
+}

@@ -10,3 +10,32 @@ NOT COMPLETE: no supported upperfloor layout; many firstfloor details missing; d
 
 Technical: source saved and reopened for Cycles shader exterior/interior renders. Render cameras and temporary hide flags are not saved. Inspect final technical.json and render.log. Master integration belongs exclusively to parent.
 Final visual correction: archived previous unsourced Interior_Public_Core and Glass_Partitions outside export because these intersected traced Commons and circulation. Final export508 objects.
+
+## Source-only round 3 (2026-10-24)
+
+Saved and reopened `modular/buildings/lawson_hall.blend` without changing the asset root transform or the `Asset_lawson_hall` collection convention. The rebuild corrects the facade brick shader connection (the grayscale ramp had been flattening the brick color), makes exterior glass read as reflective blue-gray, and adds an evidence-backed but dimensionally illustrative south entrance canopy, glazed doors/transom, name fascia, approach steps, and rails. Two first-floor partition door leaves follow gaps in the north-up Purdue plan; six landing meshes (two per three existing stair groups) and rails clarify the schematic circulation.
+
+Refreshed the exterior, entry-close, and first-floor cutaway previews after reopening. The cutaway remains a schematic plan visualization; the stair flights/landings are not a verified vertical section or full floor-to-floor route. The 2026-10-24 `validation_round3.json` confirms 552 export objects (549 meshes), unchanged identity root transform, no unmaterialed export meshes or missing external images, and no saved temporary preview camera. Brick Texture now drives the red-brown Base Color. Source list, evidence roles, and limits are in `evidence_round3.json`.
+
+Still unresolved: no upper-floor plans or dimensioned/current elevation survey in the checked sources; roof/penthouse dimensions and story heights are unverified; furniture dimensions are illustrative; plan registration and entrance dimensions are approximate. Purdue construction photos are historic and Google Maps' cited user photo is from 2017, so neither is treated as current or metric evidence. Awaiting independent review; no self-score claimed.
+
+## Round 4 — interior documentation, read clarity, and uncertainty tags (2026-10-24)
+
+Responding to the independent 7.4/10 review, this pass added supported first-floor items and improved the evidence views. Purdue CS documentation reports the Lawson Commons 2011 Harris Video Wall as 16 by 9 ft, built from sixteen 46-inch LCD displays in a 4 by 4 grid. The saved model now has a 4-by-4 module grid on a 4.8768 by 2.7432 m wall. This represents the documented 2011 installation only; current configuration and screen content are unknown.
+
+Purdue's 2006 CS sources describe the Kurz Lobby's 10-foot stainless-steel Echo Spiral directly in front of the main entry, its brushed/textured construction, direction/info touchscreens and memorabilia display case. The model now includes a 3.046 m schematic spiral plus illustrative display-case and kiosk forms. The source does not provide a measured sculpture drawing, so its exact profile, base, case/kiosk locations and dimensions remain schematic. Local source snapshots are retained in this audit folder.
+
+For the roof-height concern, no source found in this pass establishes measured/current roof, penthouse, mechanical-equipment or whole-shell elevations. Eleven shell/roof objects now carry explicit schematic/unverified-height metadata; the existing maximum Z of 21.30 m was not adjusted or claimed measured. Each of the 57 first-floor stair mesh pieces and six landing meshes is tagged as plan-located schematic, and vertical continuity is explicitly unverified. This revision does not claim a continuous stair route or model upper-floor plans.
+
+After saving and reopening the source, validation reports 601 export objects (598 meshes), unchanged identity root/local frame, no unmaterialed export meshes, no missing external images, the 16 display modules, and no saved render-only cameras. Re-rendered exterior, whole L1 cutaway, entry/lobby, and Commons details are in the `*_round4.png` previews. The L1 cutaway uses a temporary gray floor and controlled lighting for contrast; the staging is not saved into the asset.
+
+Remaining limits: roof and whole-shell heights remain unverified; facade window cadence is still schematic because available photos are not measured elevations; no upper-floor plans were found; stairs do not prove vertical continuity; furniture and precise room layouts remain approximate. Awaiting a fresh independent grade; no self-score assigned.
+
+
+## Round 5 — camera visibility, fuller sculpture read, lighting and placement check (2026-10-24)
+
+Responding to the independent 7.0/10 review, the Commons wall detail camera is now face-on and framed to show all 16 modules in four rows and four columns. The helical Echo Spiral keeps its source-supported 10 ft overall height (saved mesh bounds 3.047 m) while using a fuller 2.2-turn schematic profile to read more clearly as a coil. Profile, section, base and exact floor placement remain illustrative. The cutaway key/fill were increased and the exterior, L1 cutaway, entry/lobby and Commons close view were rendered again from the saved/reopened source.
+
+A read-only check of the live master scene found `Placement_lawson_hall` at `[-282.5, 44.0, 0.0]`, zero rotation, unit scale, linked to `Asset_lawson_hall`; this matches the manifest origin. This confirms registration only and does not recompute GIS polygon geometry or facade alignment. The master blend was not edited. See `master_marker_readonly_round5.json`.
+
+Validation reports 601 export objects (598 meshes), 16 video-wall modules, no unmaterialed meshes or missing external images, identity local root, and no saved render-only cameras. Roof height remains unverified and the stairs do not claim vertical continuity. Full results and current previews are listed in `evidence_round5.json` and `validation_round5.json`. Awaiting fresh independent full-building grade; no self-score assigned.

@@ -1,0 +1,105 @@
+{
+  "building": "Maurice G. Knoy Hall of Technology",
+  "revision_reviewed": 21,
+  "review_date": "2026-10-24",
+  "reviewer": "independent audit agent; did not build or edit Knoy R21",
+  "asset": "modular/buildings/knoy_hall.blend",
+  "report": "audit/complete_knoy/independent_review_round21.md",
+  "review_type": "independent_full_building_read_only",
+  "score": 7.8,
+  "max_score": 10,
+  "raw_score": 8.6,
+  "raw_max_score": 11,
+  "normalization": "round((raw_score / raw_max_score) * 10, 1)",
+  "previous_independent_score": 7.8,
+  "acceptance_target": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and footprint",
+      "score": 1.7,
+      "max_score": 2,
+      "findings": [
+        "Official GIS/campus context and the existing stepped plan support the identity and footprint.",
+        "The local coordinate conversion is approximate rather than survey control.",
+        "R21 adds no new footprint or survey evidence."
+      ]
+    },
+    {
+      "name": "Placement, orientation, and scale",
+      "score": 1.6,
+      "max_score": 2,
+      "findings": [
+        "Prior manifest/placement evidence remains applicable.",
+        "R21 changes no transform and adds no survey control or master-placement check."
+      ]
+    },
+    {
+      "name": "Height, floors, and roof",
+      "score": 1.2,
+      "max_score": 2,
+      "findings": [
+        "No new measured height, elevation, or roof plan was added.",
+        "The L5 interpretation and 48-foot GIS attribute conflict remain unresolved.",
+        "R21 changes no geometry."
+      ]
+    },
+    {
+      "name": "Exterior and entrances",
+      "score": 1.4,
+      "max_score": 2,
+      "findings": [
+        "Existing official/archive photo and Street View support brick massing and interrupted glazing on the photographed faces.",
+        "The model still shows broad continuous glazing ribbons, and R21 adds no calibrated face-specific elevation or opening schedule."
+      ]
+    },
+    {
+      "name": "Interior and circulation",
+      "score": 1.7,
+      "max_score": 2,
+      "findings": [
+        "The 2019 emergency plan confirms separate lower- and upper-basement shelter areas for named departments and lists room references.",
+        "The plan does not spatially locate either zone, establish slab elevations, identify circulation geometry, or verify route continuity.",
+        "The same plan was already cited in R14/R15 and R20; R21 adds no new spatial evidence or incremental circulation confidence."
+      ]
+    },
+    {
+      "name": "Technical and evidence quality",
+      "score": 1.0,
+      "max_score": 1.0,
+      "findings": [
+        "R21 reopened the saved asset; object/mesh counts are 191/169.",
+        "The saved R20/R21 all-geometry and world-matrix hashes match exactly.",
+        "No unpacked external images are reported."
+      ]
+    }
+  ],
+  "emergency_plan_assessment": {
+    "source": "https://polytechnic.purdue.edu/sites/default/files/files/BEP%20March%2015%202019.pdf",
+    "source_date": "2019-03-14",
+    "visually_reviewed_pages": [1, 2, 3, 4],
+    "page_4_supports": "Named lower- and upper-basement severe-weather shelter groups by department.",
+    "page_1_supports": "Room identifiers KNOY G-011 and KNOY 457.",
+    "does_not_support": "Basement plan boundaries, slab levels, room placement, stairs/elevators, accessibility, or circulation continuity.",
+    "incremental_value_in_R21": "Explicitly records previously known source evidence; no new spatial evidence and no grade increase."
+  },
+  "technical_checks": {
+    "reopened_saved_asset": true,
+    "blender_version": "5.2.3 LTS",
+    "scene_object_count": 191,
+    "mesh_object_count": 169,
+    "all_geometry_and_world_transforms_unchanged_from_r20": true,
+    "r20_sha256": "ed4a5c1d41d90a65a53b2190888d1b54b49fa3d519d5698536f9173dd8cbe31a",
+    "r21_sha256": "ed4a5c1d41d90a65a53b2190888d1b54b49fa3d519d5698536f9173dd8cbe31a",
+    "unpacked_external_images": []
+  },
+  "limitations": [
+    "No measured elevation resolves building height, L5, roof/penthouse, or the GIS 48-foot attribute conflict.",
+    "The emergency plan's basement labels and room identifiers are non-spatial and do not verify modeled basement/circulation geometry.",
+    "The R20 sightline is approximate and perspective/occlusion prevents exact facade opening assignment."
+  ],
+  "read_only_review": true,
+  "asset_edited": false,
+  "master_edited": false,
+  "shared_index_edited": false
+}

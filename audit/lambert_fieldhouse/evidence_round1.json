@@ -1,0 +1,72 @@
+{
+  "building_id": "massing_lambert_ward_l_fieldhouse_and_gymnasium_1656862",
+  "name": "Ward L. Lambert Fieldhouse and Gymnasium",
+  "asset_file": "modular/buildings/lambert_fieldhouse.blend",
+  "export_collection": "Asset_lambert_fieldhouse",
+  "revision": 1,
+  "retrieved_or_reviewed": "2026-10-24",
+  "changes": [
+    "Replaced the prior elliptical track with a six-lane stadium-shaped loop whose modeled lane-one centerline is 200 m by construction: two 45 m straights plus two semicircles with derived radius 17.507 m.",
+    "Added seven continuous track boundary markings and a cross-track finish marking.",
+    "Replaced four flat bleacher slabs with eight stepped seating rows along both long sides; individual charcoal seats and restrained gold blocks are grouped into low object-count meshes.",
+    "Added a schematic competition infield, ceiling light bars, and revised the roof finish with subtle longitudinal seam details and reduced emission.",
+    "Removed an unsupported full-footprint intermediate floor plate that occluded the interior track; retained the official GIS footprint and exterior structure.",
+    "Added a separate open-roof review camera and produced exterior and interior review renders. Preview-only hide states are not saved to the building source."
+  ],
+  "references": [
+    {
+      "provider": "Purdue University Athletics",
+      "url": "https://purduesports.com/facilities/lambert-fieldhouse",
+      "reviewed": "2026-10-24",
+      "use": "Official identity, address/corner context, construction year (1937), present use, six-lane 200 m Rekortan track. Does not provide track layout drawing or building elevations."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, UA 134",
+      "url": "https://archives.lib.purdue.edu/repositories/2/resources/1478",
+      "reviewed": "2026-10-24",
+      "use": "Historical program and original 1937 fieldhouse/gymnasium context; not used as a measured drawing."
+    },
+    {
+      "provider": "Purdue University Athletics / 360 tour link",
+      "url": "https://purduesports360.com/",
+      "reviewed": "2026-10-24",
+      "use": "Official facility page links to this interactive tour; the tour requires JavaScript and its visual details were not independently extracted in this review."
+    },
+    {
+      "provider": "Dave Wegiel Photography, Gene Edmonds Invitational at Lambert Fieldhouse",
+      "url": "https://pinolaphoto.com/2019/01/14/gene-edmonds-invitational/",
+      "reviewed": "2026-10-24",
+      "use": "Interior visual reference for the arched roof volume, track/event floor, lighting and spectator seating. Reference viewed for form only; no photo texture was copied into the asset."
+    },
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 layer 0, feature 261 (existing building evidence snapshot)",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 261,
+      "snapshot": "audit/batchC_lambert_official_footprint.json",
+      "use": "Existing source identity and plan footprint retained; this revision made no horizontal placement or footprint change."
+    }
+  ],
+  "modeling_boundary": {
+    "source_supported": [
+      "official GIS footprint and existing local origin",
+      "current indoor track use and six lanes / 200 m lap length",
+      "arched interior roof character and presence of spectator seating from interior photos"
+    ],
+    "schematic_estimates": [
+      "45 m straight length and derived curve radius used to satisfy a 200 m centerline lap; no official track plan was located",
+      "1.22 m lane width, seating count/positions, exact infield finish, lighting count/spacing",
+      "roof sheet material, seam spacing, exact roof profile/height, facade window rhythm and hidden interior circulation"
+    ],
+    "unverified": [
+      "measured elevation and roof construction details",
+      "exact architectural bay dimensions and room/floor layout",
+      "current detailed Street View/photo alignment for every facade"
+    ]
+  },
+  "previews": {
+    "exterior": "audit/lambert_fieldhouse/exterior_round1.png",
+    "interior_cutaway": "audit/lambert_fieldhouse/interior_round1.png"
+  },
+  "validation": "audit/lambert_fieldhouse/validation_round1.json",
+  "master_manifest_and_shared_files_edited": false
+}

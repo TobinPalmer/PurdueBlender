@@ -1,0 +1,682 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head id="Head1">
+  <title>Where are student accessible printers located?</title>
+  <script src="/TDPortal/Content/Scripts/jquery/2.2.4/jquery.min.js?v=20261017062908"></script><script src="/TDPortal/Content/Scripts/jquery-migrate/1.4.1/jquery-migrate.min.js?v=20261017062908"></script><script src="/TDPortal/Content/Scripts/tdx/dist/jquery.unobtrusive.compiled.min.js?v=20261017063340"></script><script type="text/javascript">window.TeamDynamix = window.TeamDynamix || {};TeamDynamix.LocaleFormat = {groupSeparator:',',decimalSeparator:'.',currencySymbol:'$',percentSymbol:'%',numberDecimalDigits:2,currencyDecimalDigits:2,currencySymbolPlacement:0,percentSymbolPlacement:2,percentDecimalDigits:2};</script><script src="/TDPortal/Content/Scripts/jquery-ui/1.13.2/jquery-ui-1.13.2.custom.timepicker.min.js?v=20261017063340"></script><link href="/TDPortal/Content/Styles/jquery-ui/1.13.2/jquery-ui.compiled.min.css?v=20261017063344" rel="stylesheet" type="text/css"  /><link href="/TDPortal/Content/bootstrap/3.4.1/dist/css/bootstrap.min.css?v=20261017062908" rel="stylesheet" type="text/css" id="lnkBootstrapCSS" /><script src="/TDPortal/Content/bootstrap/3.4.1/dist/js/bootstrap.min.js?v=20261017062908"></script><link href="/TDPortal/Content/FontAwesome/css/fontawesome.min.css?v=20261017062906" rel="stylesheet" type="text/css" id="lnkFontAwesome" /><link href="/TDPortal/Content/FontAwesome/css/solid.css?v=20261017062906" rel="stylesheet" type="text/css"  /><link href="/TDPortal/Content/FontAwesome/css/regular.css?v=20261017062906" rel="stylesheet" type="text/css"  /><link href="/TDPortal/Content/FontAwesome/css/brands.css?v=20261017062906" rel="stylesheet" type="text/css"  /><link href="/TDPortal/Content/FontAwesome/css/v4-shims.css?v=20261017062906" rel="stylesheet" type="text/css"  /><link href="/TDClient/Styles/bootstrap_custom.min.css?v=20261017063342" rel="stylesheet" type="text/css"  /><link href="/TDClient/Styles/TDStyles.min.css?v=20261017063342" rel="stylesheet" type="text/css"  /><link href="https://service.purdue.edu/TDPortal/BE/Style/2/TDClient/32?v=20240523190737" rel="stylesheet" type="text/css" /><link href="/TDClient/Styles/TDStyles-TDX12.min.css?v=20261017063342" rel="stylesheet" type="text/css"  /><script type='text/javascript'>window.isTDClient = true;</script><script src="/TDClient/Scripts/TDClientModals.min.js?v=20261017063334"></script><script src="/TDPortal/Content/Scripts/tdx/dist/TDJSFramework.compiled.min.js?v=20261017063340"></script><script type='text/javascript'>if (window.TeamDynamix && window.TeamDynamix.DateUtils) { window.TeamDynamix.DateUtils.setFormats({"shortDate":"M/D/YYYY","shortDateLenientVariants":["M/D/YY","MM/D/YY","M/DD/YY","MM/DD/YY","MM/D/YYYY","M/DD/YYYY","MM/DD/YYYY"],"longDate":"ddd M/D/YY","time":"h:mm A","timeLenientVariants":["hh:mm A"],"chartYear":"YYYY","chartMonthYear":"MMM YYYY","chartMonthDayYear":"MMM D, YYYY","jqDatePicker":"m/d/yy","jqDatePickerLenientVariants":["m/d/y"],"jqTimePicker":"h:mm TT","jqTimePickerLenientVariants":[],"shortDateHint":"mm/dd/yyyy","timeHint":"hh:mm AM/PM","dateTimeHint":"mm/dd/yyyy hh:mm AM/PM","monthDayHint":"mm/dd","dotNetShortDate":"M/d/yyyy","dotNetTime":"h:mm tt","dotNetShortDateTime":"M/d/yyyy h:mm tt"}); }</script><script src="/TDPortal/Content/Scripts/tdx/dist/modalFocusTrap.min.js?v=20261017063338"></script>
+  <link href="/TDClient/Scripts/Feed/css/app.css?v=20261017064912" rel="stylesheet" type="text/css"  />
+
+  <script type="text/javascript">
+    $(function () {
+      $('.sort-attachments').addClass('hidden');
+      $('#printSummary').autoToggle({ target: '#divSummary' });
+      $('#printBody').autoToggle({ target: '#divBody' });
+      $('#printFeed').autoToggle({ target: '#divFeed' });
+      $('#printFeedback').autoToggle({ target: '#divFeedback' });
+      $('#printDetails').autoToggle({ target: '#divDetails' });
+      $('#printRelatedArticles').autoToggle({ target: '#divRelatedArticles' });
+      $('#printRelatedServicesOrOfferings').autoToggle({ target: '#divRelatedServicesOrOfferings' });
+      $('#printAttachments').autoToggle({ target: '#divAttachments' });
+    });
+  </script>
+</head>
+<body>
+  <form id="printKBArticleForm">
+    <div id="content">
+    <div id="divHeader" class="button-nav-top no-print">
+      <div class="pull-left">
+        <button type="button" class="btn btn-primary" onclick="javascript:window.print();">
+          <span class="fa-solid fa-print fa-nopad" aria-hidden="true"></span>
+          <span class="hidden-xs padding-left-xs">Print</span>
+        </button>
+      </div>
+      <div class="pull-right form-inline" style="padding-top: 5px;">
+        <div class="form-group">
+          <label class="control-label gutter-right">Print:</label>
+                      <label class="checkbox-inline" for="printBody">
+              <input type="checkbox" id="printBody" checked="checked" />Body
+            </label>
+                                                    <label class="checkbox-inline" for="printRelatedArticles">
+              <input type="checkbox" id="printRelatedArticles" checked="checked" />Related Articles
+            </label>
+                            </div>
+      </div>
+    </div>
+
+    <div id="divKBTitle" class="col-md-12 gutter-bottom-lg">
+      <h1 class="gutter-top" style="-ms-word-wrap: break-word; word-wrap: break-word;">
+        Where are student accessible printers located?
+      </h1>
+    </div>
+    <div class="container-fluid gutter-top">
+
+
+        <div id="divBody" class="gutter-top break-word ckeShim clearfix">
+          <div class="gutter-bottom">
+            <h2>Body</h2>
+          </div>
+
+<h2>Overview</h2>
+
+<p>Printers in Purdue IT Learning Spaces are located in computer labs, libraries, and residence halls across campus. This article maintains a full listing of all printers that students can access in Purdue IT supported&nbsp; learning spaces.&nbsp;</p>
+
+<h2>Printer Locations&nbsp;</h2>
+<!-- Paste this code into the HTML/source view of the TeamDynamix WYSIWYG editor. -->
+
+<p id="printer-table-description">The table lists printer names, campus buildings, location types, and directions to each printer.</p>
+
+<div style="max-width: 100%; overflow-x: auto;">
+<div class="table-responsive">
+<table aria-describedby="printer-table-description" class="table table-condensed" style="width: 100%; border-collapse: collapse; border: 1px solid #555;">
+	<caption style="font-weight: bold; font-size: 1.1em; text-align: left; padding: 0.5rem 0;">Campus printer locations</caption>
+	<thead>
+		<tr style="background-color: #cfb991; color: #fffff;">
+			<th scope="col" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Printer</th>
+			<th scope="col" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Building</th>
+			<th scope="col" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Type</th>
+			<th scope="col" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Directions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr style="background-color: #fffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">aacc204-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Asian American &amp; Asian Resource Cultural Center (AAARCC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Cultural Center</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of the AAARCC, room 204.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">bcc204-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Black Cultural Center (BCC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Cultural Center</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor the BCC, room 204.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">bres180-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Brees Student Athlete Academic Center (BRES)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the lower floor of BRES in the Student Athlete Academic Center.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">bres230-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Brees Student Athlete Academic Center (BRES)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of BRES, room 230.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">brngb274-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Beering Hall (BRNG)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Mac Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the basement of BRNG, room b274, near the graduate student office area. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">brngb275-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Beering Hall (BRNG)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the basement of BRNG, room b275, near the graduate student office area. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">brngb291-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Beering Hall (BRNG)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the basement of BRNG, room b291, near the vending machine/lounge area. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">cqswbh01-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Cary Quad Southwest Building (CQSW)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Cary Quad South in the atrium next to Front Desk as you enter.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">crtn1030-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Creighton Hall of Animal Sciences (CRTN)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stand Alone Printer</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in CRTN hall, room 1030, in open study area.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">erhtc230-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Earhart Hall (ERHT)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Earhart Hall main visiting area, near the vending machines.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">fstc1h04-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">First Street Towers (FSTC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the First Street Towers, just before the Front Desk area.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">gris160-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Grissom Hall (GRIS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stand Alone Printer</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the main floor of GRIS in the open study area.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">ha234-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Hilltop Apartments (HA)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Hilltop Apartments 234, near the Main Desk Office.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">hamp3144-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Hampton Hall (HAMP)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 3rd floor of HAMP, room 3144. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">harr2h08-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Harrison Hall (HARR)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Harrison Hall, near the Front Desk area.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">hawk199g-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Hawkins Hall (HAWK)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Hawkins Hall, near the main entrance and Front Desk area on the main floor.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">hcrs1021-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Honors College South (HCRS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Honors College South inside a small computer lab, room 1021 on the main floor.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">hiksg950-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Hicks Undergraduate Library (HIKS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the HIKS Library. Printer 1 is visible as you enter through the main doors.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">hiksg950-2</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Hicks Undergraduate Library (HIKS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the HIKS Library. Printer 2 is to the right as you enter through the main doors, near student computer stations.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">hiksg950-3</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Hicks Undergraduate Library (HIKS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">This is a color printer. Located in the HIKS Library, near the boardgame/puzzle area and Libraries Desk.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">hiksg988-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">LGBTQ Center (LGBTQ)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Cultural Center</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the LGBTQ Center in HIKS, room g988. Enter the center and go to your right.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">hillc031-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Hillenbrand Hall (HILL)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Hillenbrand Hall. The printer is in the basement area before dining area.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">knoy1h01-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Knoy Hall (KNOY)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stand Alone Printer</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in KNOY, near the back entrance next to the LMBS building. It is near vending machines and the elevators on the first floor.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">kran230-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Krannert Hall (KRAN)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the Parrish Library on the 2nd floor of KRAN.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">kran230-2c</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Krannert Hall (KRAN)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the Parrish Library on the 2nd floor of KRAN. Kran230-2c is a color printer.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">krch270-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Krach Leadership Center (KRCH)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stand Alone Printer</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in KRCH, on the 2nd floor. Take the elevator in the main atrium and to the right.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">krch435-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Krach Leadership Center (KRCH)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stand Alone Printer</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in KRCH, on the 4th floor. Take the elevator to the 4th Floor. It will be to the right, by an upright sink.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">lcc200-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Latino Cultural Center (LCC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Cultural Center</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of the Latino Cultural Center.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">lilyg428-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Lilly Hall (LILY)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the ground floor of LILY, room g428. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">lynn1133d-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Veterinary Medicine Library in LYNN Hall (LYNN)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the Veterinary Medicine Library on the main floor of LYNN, room 1133.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">lynn1133d-2c</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Veterinary Medicine Library in LYNN Hall (LYNN)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the Veterinary Medicine Library on the main floor of LYNN, room 1133. lynn1133d-2c is a color printer.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">lynn2h01-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Veterinary Medicine Library in LYNN Hall (LYNN)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of LYNN. Take the elevator to the 2nd floor and printer is near the vending machine area.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">math311-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Mathematical Sciences Building (MATH)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the Math Library on the 3rd floor of MATH.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">mcutc216-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">McCutcheon Hall (MCUT)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the computer lab in McCutcheon Hall, room c216.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">mrdh146s-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Meredith Hall (MRDH)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the computer lab in Meredith Hall, room 146s.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">mrds1h05-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Meredith South Hall (MRDS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Meredith South Hall. Enter via doors facing First Street Towers and the printer will be to the left, near the Front Desk.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">mthw301-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Matthews Hall (MTHW)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 3rd floor of MTHW, room 301. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">nacc204-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Native American Cultural Center (NACC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Cultural Center</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of the Native American Cultural Center, room 240.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">nlsn1225-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Nelson Hall (NLSN)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the first floor of NLSN, room 1225. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">owenc116a-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Owen Hall (OWEN)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Owen Hall, room 116a, common area space.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">pgsc120-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Purdue Graduate Student Center (PGSC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Cultural Center</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the Purdue Graduate Student Center on the main level of the Northwestern Parking Garage, room 120.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">phys18-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Physics Building (PHYS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the lower floor of PHYS, room 18. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">phys22-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Physics Building (PHYS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the lower floor of PHYS, room 22. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">phys26-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Physics Building (PHYS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the lower floor of PHYS, room 26. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">phys116-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Physics Building (PHYS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 1st floor of PHYS, room 116. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">phys117-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Physics Building (PHYS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 1st floor of PHYS, room 117. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">phys121-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Physics Building (PHYS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 1st floor of PHYS, room 121. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">phys139-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Physics Building (PHYS)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 1st floor of PHYS, room 139. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">pkrf1h08-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Frieda Parker Hall (PKRF)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Freida Parker Hall, in the main area near the Front Desk.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">pkrw1h05-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Winifred Parker Hall (PKRW)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Winifred Parker Hall, in the open study space area.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">rawl4082-1c</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Rawls Hall (RAWL)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 4th floor of RAWL, room 4082. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">rawl4082-2c</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Rawls Hall (RAWL)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 4th floor of RAWL, room 4082. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">rhph316-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Robert Heine Pharmacy Building (RHPH)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 3rd floor of RHPH, room 316. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">sc179-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stanley Coulter (SC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 1st floor of SC, room 179. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">sc189-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stanley Coulter (SC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 1st floor of SC, room 189. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">sc231-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stanley Coulter (SC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of SC, room 231. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">sc277-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stanley Coulter (SC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of SC, room 277. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">sc289-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stanley Coulter (SC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of SC, room 289. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">scg46-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stanley Coulter (SC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the lower/ground level of SC, room G46. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">shrvc100-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Shreve Hall (SHRV)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the University Residence Center on the 1st floor of SHRV Hall, room 100.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">shrvc100-2c</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Shreve Hall (SHRV)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">This is a color printer. Located in the University Residence Center on the 1st floor of SHRV Hall, room 100.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">shrvc215-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Shreve Hall (SHRV)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of SHRV Hall, behind the Front Desk and near the recreational area.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">stew135-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">HSSE Library</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the HSSE Library in STEW, room 135. The printer is behind the Purdue IT Service Desk.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">stew135-2</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">HSSE Library</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the HSSE Library in STEW, room 135. The printer is near the Purdue IT Service Desk.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">stew135-3</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">HSSE Library</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">This is a wide format/poster printer located in the HSSE Library. Please see Purdue IT Service Desk for printing.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">stew135-4</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">HSSE Library</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">This is a color printer. Located in the HSSE Library in STEW, room 135. The printer is behind the Purdue IT Service Desk.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">stewbh01-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stewart Center (STEW)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stand Alone Printer</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the basement of STEW, near the study spaces and student organization rooms, next to the stairs leading to the PMU.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">stewgh04-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stewart Center (STEW)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Stand Alone Printer</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the ground floor of STEW, near the study spaces and student organization rooms, next to the doors leading to the PMU.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">tarkc201-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Tarkington Hall (TARK)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the computer lab in Tarkington Hall, room c201.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">term163-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Aviation &amp; Transportation Library (TERM)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the Aviation &amp; Transportation Library in the Terminal Building at the airport, room 163.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walc1144-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in WALC on the 1st floor, near the Purdue IT Service Desk.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walc1144-2</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in WALC on the 1st floor, near the Purdue IT Service Desk.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walc1144-3c</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">This is a color printer (Letter size only). Located in WALC on the 1st floor, near the vending area.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walc1h01-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in WALC on the 1st floor, near the bakery/cafe and the 1st floor restrooms.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walc1h01-2</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">This is a wide format/poster printer located in WALC. Please see Purdue IT Service Desk for printing.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walc2026-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of WALC, directly across from the elevators.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walc2143-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of WALC, near the Libraries Desk.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walc2148-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">This is a color printer (Letter size only). Located on the 2nd floor WALC, near the Librareis Desk.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walc2148-2</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of WALC, near the Libraries Desk.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walcbh01-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in the basement of WALC, near the study area.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">walcbh01-2</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wilmeth Active Learning Center (WALC)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Libraries</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">This is a color printer (Letter and Ledger size allowed). Located in the basement of WALC, near the study area.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">wilyc203-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wiley Hall (WILY)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Wiley Hall, room c203.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">wood1h01-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wood Hall (WOOD)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Residence Hall</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located in Wood Hall within Windsor Residence Halls, near the Front Desk.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">wthr114-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wetherill Hall (WTHR)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the lower level of WTHR, room 114. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">wthr212-2</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wetherill Hall (WTHR)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of WTHR, room 212. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+		<tr style="background-color: #f2f2f2;">
+			<th scope="row" style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">wthr214-1</th>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Wetherill Hall (WTHR)</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Computer Lab</td>
+			<td style="border: 1px solid #555; padding: 0.5rem; text-align: left; vertical-align: top;">Located on the 2nd floor of WTHR, room 214. Available during regular hours, outside of scheduled classes/events.</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<p>&nbsp;</p>
+</div>        </div>
+
+
+
+      <div id="divDetails" class="gutter-top break-word ckeShim clearfix">
+        <div class="gutter-bottom">
+          <h2>Details</h2>
+
+          <div class="panel panel-default gutter-top">
+            <div class="panel-heading">
+              <h2 class="h3 panel-title">Details</h2>
+            </div>
+
+            <div class="panel-body">
+              <div id="ArticleID">
+                <span class="control-label gutter-bottom-xs">Article ID: </span>
+                2428
+              </div>
+
+              <div id="divAuthor" class="disp-group">
+                <span class="control-label gutter-bottom-xs">
+                  Created
+                </span>
+                <div>
+                  Thu 9/24/26 1:22 PM
+                </div>
+              </div>
+
+                <div id="divModified" class="disp-group">
+                  <span class="control-label gutter-bottom-xs">
+                    Modified
+                  </span>
+                  <div>
+                    Thu 9/24/26 1:48 PM
+                  </div>
+                </div>
+
+
+
+              
+
+
+  <div class="js-custom-attributes-container">
+  </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <div id="divRelatedArticles" class="gutter-top break-word ckeShim clearfix">
+
+          <div class="gutter-bottom">
+            <h2>Related Articles</h2>
+          </div>
+
+          <div class="panel panel-default gutter-top">
+            <div class="panel-heading">
+              <h2 class="h3 panel-title">Related Articles (1)</h2>
+            </div>
+
+            <div class="panel-body">
+                <div class="gutter-top-sm gutter-bottom-lg">
+                  <div class="clearfix">
+                    <div class="pull-left font-md">
+                      <a href="/TDClient/32/Purdue/KB/Article/588/Where-are-printers-located">Where are printers located?</a>
+                    </div>
+                  </div>
+                  <div>All faculty, staff and students with a Purdue career account have access to use the Purdue IT printers, which can be found in computer labs, libraries and residence halls.</div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+    </div>
+  </form>
+</body>
+</html>

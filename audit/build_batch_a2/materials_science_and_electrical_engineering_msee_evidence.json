@@ -191,7 +191,29 @@
     "revision4_missing_external_textures": [],
     "revision4_source_sha256_verified": "9a62e8ff85db15968f79f9b20fd4e4080dbc02494fb33b6a2ce49261442140cc",
     "revision4_overview_newer_than_source": true,
-    "revision4_detail_newer_than_source": true
+    "revision4_detail_newer_than_source": true,
+    "revision5_preview": "audit\\rework_batch_a\\materials_science_and_electrical_engineering_msee_revision5_preview.png",
+    "revision5_detail_preview": "audit\\rework_batch_a\\materials_science_and_electrical_engineering_msee_revision5_entry_detail.png",
+    "revision5_reopened_library": true,
+    "revision5_object_count": 1198,
+    "revision5_GIS_shell_bounds_local_m": [
+      [
+        -37.0934,
+        37.0881
+      ],
+      [
+        -40.0671,
+        40.0597
+      ],
+      [
+        0.3,
+        15.0
+      ]
+    ],
+    "revision5_shell_manifold_edges": 0,
+    "revision5_origin_preserved": true,
+    "revision5_external_image_files": [],
+    "revision5_validation_record": "audit\\rework_batch_a\\materials_science_and_electrical_engineering_msee_R5_validation.json"
   },
   "uncertainties": [
     "Interior plans and precise facade dimensions are not available from the referenced sources.",
@@ -382,6 +404,25 @@
         "Added one restrained interior skyway deck with glass guard, visible posts and study furniture through the existing atrium; this is a schematic atrium interpretation, not an exact bridge survey. No exterior beams or projecting entrance canopy were added."
       ],
       "source_interpretation": "Facade identity cues are grounded in the linked building-specific photo/project records. Interior furniture, lab/workshop/clinical tableaux, equipment placement beyond directly documented scope, and exact bay dimensions are schematic visualization cues, not measured as-built data."
+    },
+    {
+      "date": "2026-10-24",
+      "revision": "R5",
+      "review_request": "Bring MSEE facade and atrium entry into closer alignment with building-specific Purdue references; improve evidence quality and inspect transparent interior.",
+      "geometry_edits": [
+        "Rebuilt the GIS shell from retained original eight corner coordinates with corrected outward normals; applied a watertight Boolean opening behind the two-storey glass atrium, approximately 22.25 m x 8.30 m x 18.0 m. Depth is an interpretive estimate, not a measured plan.",
+        "Removed 48 facade window/mullion meshes within the atrium glazing footprint while retaining adjacent punched windows.",
+        "Moved the existing three schematic collaboration tables and six seats behind atrium glazing.",
+        "Added source-visible arched entrance outline and fanlight spokes; exact proportions are visual estimates."
+      ],
+      "materials": "Changed the facade shader to dark red-brown running-bond brick with wall-orientation-aligned courses; increased atrium glass transparency; doors remain tinted semi-transparent glazing.",
+      "sources": [
+        "Official Purdue ECN exterior image, page and raw snapshot recorded in audit/rework_batch_a/materials_science_and_electrical_engineering_msee_R5_sources.json.",
+        "Purdue Archives and Special Collections supports the two-storey glass atrium and two skyways.",
+        "Official GIS feature 646 and local footprint bounds preserved."
+      ],
+      "source_interpretation": "Exterior brick and arch are qualitative cues from an official MSEE photograph. The opening depth and door/frame proportions are estimates. Atrium furniture and interior room layouts are schematic, not as-built.",
+      "footprint_origin": "Original GIS shell bounds and origin preserved; master placement marker and shared files not edited."
     }
   ]
 }

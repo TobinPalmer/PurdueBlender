@@ -1,0 +1,102 @@
+{
+  "revision": 16,
+  "building": "Knoy Hall",
+  "date": "2026-10-24",
+  "asset": "modular/buildings/knoy_hall.blend",
+  "scope": "One persisted qualitative brick/mortar shader adjustment in the Knoy source library and dedicated builder; no geometry, placement, floor, roof, PV, door, fixture, stair, or master edits.",
+  "review_finding_addressed": "R15 remained below threshold; reviewer still described the masonry as brighter/more regular than the Purdue red-brown brick reference and the mortar grid as conspicuous. R16 slightly deepens the brick palette and reduces mortar contrast/estimated width.",
+  "material": {
+    "name": "KNOY_Purdue_Red_Brick",
+    "shader_values_linear": {
+      "brick_color_1": [0.12, 0.032, 0.013],
+      "brick_color_2": [0.055, 0.013, 0.005],
+      "mortar_color": [0.10, 0.08, 0.06],
+      "estimated_mortar_width_m": 0.002,
+      "brick_width_estimate_m": 0.23,
+      "row_height_estimate_m": 0.076
+    },
+    "source_basis": [
+      {
+        "provider": "Purdue Polytechnic Institute",
+        "url": "https://polytechnic.purdue.edu/profile/rnawroc",
+        "local_image": "audit/complete_knoy/ref_purdue_profile_knoy_facade_r8.jpg",
+        "supports": "Qualitative red/brown masonry and lighter joints on one identifiable Knoy entrance view.",
+        "limits": "Undated, single perspective photo; no color calibration or known exposure. Does not establish measured material color, brick/mortar dimensions, bond specification, or facade-wide assignment."
+      },
+      {
+        "provider": "Purdue HIST 152 course site",
+        "url": "https://hist152purdue.wordpress.com/2018/08/09/knoy-hall/",
+        "local_image": "audit/complete_knoy/ref_knoy_main_entrance_hist152_2018.jpg",
+        "supports": "Qualitative entrance brick bond and contrast from a second view.",
+        "limits": "Uncalibrated perspective image; shader values remain visual estimates."
+      }
+    ],
+    "preview": "audit/complete_knoy/knoy_entrance_detail_material_r16.png",
+    "limits": "Values are render estimates only. The retained regular running-bond pattern and dimensions are not a measured masonry specification; no per-face assignment or facade cadence was changed."
+  },
+  "additional_source_search": {
+    "retrieval_date": "2026-10-24",
+    "findings": [
+      {
+        "provider": "Purdue University Archives and Special Collections",
+        "url": "https://archives.lib.purdue.edu/repositories/2/resources/1490",
+        "record": "UA 141, Knoy Hall of Technology records; 1984; open for research; described as construction information and a floorplan.",
+        "result": "The online finding aid exposes descriptive metadata but no digital plan or elevation scans. It is a promising physical/in-person archival lead, not geometry evidence inspected for this revision."
+      },
+      {
+        "provider": "Purdue University Archives and Special Collections",
+        "url": "https://archives.lib.purdue.edu/fa/UA62_Series3.pdf",
+        "record": "UA 62 finding aid describes 1985 Technology Building/Knoy construction photos, a graphic rendering and a separate 1987 building photo set.",
+        "result": "The finding aid is public; the described photographs/rendering were not exposed as linked image scans in the source record. No facade measurements can be extracted from the finding aid itself."
+      },
+      {
+        "provider": "Purdue University Archives and Special Collections",
+        "url": "https://archives.lib.purdue.edu/agents/corporate_entities/555",
+        "record": "Official building history says Knoy was an early Purdue solar-powered building and had photovoltaic arrays on its roof.",
+        "result": "This supports historical roof-array presence only. It does not establish the current array's position, count, support geometry or persistence, so no PV geometry was changed."
+      },
+      {
+        "provider": "Purdue University Exponent archive index",
+        "url": "https://collections.lib.purdue.edu/pupindex/search.php?fq=subjectStr%3A%22Technology%2C+Schools+of%22+AND+publicationStr%3A%22Exponent+Newspapers%22+AND+PublicationYear%3A%221984%22+AND+publicationStr%3A%22Exponent+Newspapers%22&q=Exponent+Newspapers&qtype=SourcePublication&submit=submit",
+        "record": "Index lists 'Technology Building ready for student use; landscaping, laboratories near completion (Photos)', Exponent Newspapers, 1984-08-22, p. 6B.",
+        "result": "The index entry is discoverable but the page image was not linked from the search results; it was not treated as a viewed photo or geometry source."
+      },
+      {
+        "provider": "ConstructConnect project listing for Purdue Knoy G007 lab refresh",
+        "url": "https://projects.constructconnect.com/details/6870637-west-lafayette-campus-knoy-hall-g007-instructional-lab-refresh-2024%26find_loc%3Dindiana-47907",
+        "record": "Project page describes the 2024 Knoy G007 lab refresh and lists plans/specifications as subscription documents.",
+        "result": "No openly accessible drawings were found; no details were inferred from the project listing."
+      },
+      {
+        "provider": "Purdue University College of Engineering",
+        "url": "https://engineering.purdue.edu/~frosch/Renderings/Gateway/2018-05-31%20MASSING%20STUDIES%20DRAFT%20INCLUDING%20LANDSCAPE.pdf",
+        "record": "The 2018 Gateway sheet labels a typical Levels 2-4 plan and shows floor-to-floor datum intervals under 'Existing Knoy Elevations'.",
+        "result": "The elevation panel contains datum/dimension lines rather than traceable facades. It supports the previously documented level spacing but does not resolve exterior cadence or roof form."
+      }
+    ],
+    "conclusion": "No newly accessible source gives calibrated facade elevations, current roof equipment configuration, or complete as-built circulation. Accordingly, uncertain exterior/roof/interior geometry and GIS alignment were not changed."
+  },
+  "saved_asset_integrity": {
+    "validation": "audit/complete_knoy/validation_round16.json",
+    "saved_asset_reopened": true,
+    "validation_passed": true,
+    "direct_objects": 64,
+    "descendant_objects": 157,
+    "all_156_mesh_geometry_and_world_matrices_match_r15": true,
+    "all_mesh_sha256": "43a19a6313c06e188082cb547847f583573bafe7f6d9e9ec6da52706b36de5b4",
+    "external_image_dependencies": [],
+    "placement_roof_L5_penthouse_PV_geometry_unchanged": true
+  },
+  "changed_files": [
+    "modular/buildings/knoy_hall.blend",
+    "modular/buildings/build_knoy_hall.py",
+    "audit/complete_knoy/knoy_hall_before_r16.blend",
+    "audit/complete_knoy/refine_brick_material_r16.py",
+    "audit/complete_knoy/render_entry_material_r16.py",
+    "audit/complete_knoy/validate_reopen_r16.py",
+    "audit/complete_knoy/validation_round16.json",
+    "audit/complete_knoy/evidence_round16.json",
+    "audit/complete_knoy/knoy_entrance_detail_material_r16.png",
+    "audit/complete_knoy/REVIEW.md"
+  ]
+}

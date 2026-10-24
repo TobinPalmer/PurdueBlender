@@ -1,0 +1,108 @@
+{
+  "building_id": "knoy_hall",
+  "revision": 9,
+  "date": "2026-10-24",
+  "scope": "Knoy source asset, dedicated builder and Knoy audit folder only",
+  "primary_photo": {
+    "provider": "Purdue Polytechnic Institute",
+    "title": "Official profile photo featuring Knoy Hall",
+    "url": "https://polytechnic.purdue.edu/sites/default/files/styles/featured_image/public/article-images/Knoy-featured.jpg?itok=wcvG00BW",
+    "record_page": "https://polytechnic.purdue.edu/profile/rnawroc",
+    "local_copy": "audit/complete_knoy/ref_purdue_profile_knoy_facade_r8.jpg",
+    "capture_date": null,
+    "source_match": "Identifiable entrance corner of Knoy Hall; one perspective photo.",
+    "visual_cues": [
+      "red/brown brick masonry at the entrance corner and sign wall",
+      "dark recessed glazing",
+      "pale horizontal edge/trim at stepped facade portions",
+      "entrance glazing and canopy context"
+    ],
+    "limits": "Undated, uncalibrated, partial perspective. Does not establish exact facade material specification, brick module or bond, glazing reflectance, full facade composition, dimensions, or building orientation. Material identification of the pale trim as concrete/precast is not confirmed."
+  },
+  "material_review": {
+    "asset_file": "modular/buildings/knoy_hall.blend",
+    "asset_materials": [
+      {
+        "name": "KNOY_Purdue_Red_Brick",
+        "role": "Procedural brick material on selected existing exterior masonry faces.",
+        "saved_shader_values": {
+          "brick_color_1_srgb_like": [
+            0.205,
+            0.061,
+            0.029
+          ],
+          "brick_color_2_srgb_like": [
+            0.095,
+            0.026,
+            0.014
+          ],
+          "mortar_color_srgb_like": [
+            0.38,
+            0.34,
+            0.29
+          ],
+          "brick_width_m_render_estimate": 0.23,
+          "row_height_m_render_estimate": 0.076,
+          "mortar_width_m_render_estimate": 0.006,
+          "roughness": 0.6
+        },
+        "interpretation": "Brick color family and lighter warm joint contrast are qualitative matches to the Purdue photo. Values and dimensions remain procedural render estimates, not field measurements."
+      },
+      {
+        "name": "KNOY_Precast_Concrete",
+        "role": "Pale facade trim material on selected existing exterior faces.",
+        "saved_shader_values": {
+          "base_color": [
+            0.58,
+            0.57,
+            0.55
+          ],
+          "roughness": 0.82
+        },
+        "interpretation": "Photo shows pale trim; exact material and finish are unknown. Neutral shader is illustrative."
+      },
+      {
+        "name": "KNOY_Dark_Tinted_Glass",
+        "role": "Dark recessed glazing material.",
+        "saved_shader_values": {
+          "base_color": [
+            0.06,
+            0.1,
+            0.14
+          ],
+          "roughness": 0.08,
+          "ior": 1.5,
+          "transmission": 0.85
+        },
+        "interpretation": "Photo shows dark glazing; exact tint, reflectance, and glass specification are unknown. Values are render settings only."
+      }
+    ],
+    "source_mesh_assignment_review": "KNOY_Exterior_Masonry_Walls has 986 vertices and 957 polygons. Existing material assignments vary by horizontal wall bands. No polygon assignment, wall geometry, opening, facade rhythm, roof, floor level, or placement was changed because the single perspective photo cannot register source features to the modeled faces.",
+    "source_material_comparison_render": "audit/complete_knoy/knoy_south_facade_source_review_r8.png",
+    "source_photo_copy": "audit/complete_knoy/ref_purdue_profile_knoy_facade_r8.jpg"
+  },
+  "changes": [
+    "Aligned the dedicated builder's brick node values/network, concrete roughness/base and subtle bump setup, and dark glass color/roughness/IOR/transmission with the currently saved Knoy source asset.",
+    "Added source and measurement-limit custom properties to the brick, pale trim, and glazing materials in the saved Knoy source asset.",
+    "Preserved existing facade material face assignments and all geometry because the available uncalibrated photo cannot support a face-by-face remap.",
+    "Lightened the procedural mortar color to a restrained warm neutral matching the lighter joints visible in the Purdue entrance photo; this visual adjustment is explicitly an estimate."
+  ],
+  "validation": {
+    "saved_source_reopened": "PASS",
+    "builder_material_functions_tested_in_blender_unsaved_scene": "PASS",
+    "builder_material_validation": "audit/complete_knoy/builder_material_validation_r9.json",
+    "saved_asset_material_metadata_and_geometry_hash": "audit/complete_knoy/facade_material_validation_r9.json",
+    "mesh_geometry_sha256_before_and_after": "c51a34c4704891f3442b17f7df0d9edc3741fc1cee7416041858dbeed39c9ed1",
+    "mesh_count": 62,
+    "mesh_or_placement_geometry_changed": false,
+    "source_material_comparison_is_photogrammetric": false,
+    "source_material_comparison_render": "audit/complete_knoy/knoy_south_facade_source_review_r9.png"
+  },
+  "unresolved": [
+    "Facade material specifications and exact color values are unverified.",
+    "Brick dimensions and bond pattern are render-scale estimates.",
+    "Full elevations and facade cadence are not calibrated to the model.",
+    "The 2018 LiDAR surface-height comparison remains independent evidence and does not prove a fifth occupied story, exact roof/parapet/penthouse height, or resolve the GIS 48-ft conflict.",
+    "L5 story/roof designation and continuous vertical circulation remain source-conflicted/unverified."
+  ]
+}

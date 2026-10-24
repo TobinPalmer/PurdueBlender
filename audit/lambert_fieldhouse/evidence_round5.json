@@ -1,0 +1,82 @@
+{
+  "building_id": "massing_lambert_ward_l_fieldhouse_and_gymnasium_1656862",
+  "name": "Ward L. Lambert Fieldhouse and Gymnasium",
+  "asset_file": "modular/buildings/lambert_fieldhouse.blend",
+  "export_collection": "Asset_lambert_fieldhouse",
+  "revision": 5,
+  "review_date": "2026-10-24",
+  "changes_since_round4": [
+    "Added a steel bowstring-truss and purlin grid beneath the existing estimated arched roof skin. Purdue's historic record identifies steel in the building structure; the 2019 interior meet photography shows the arched roof volume. Truss size and spacing remain schematic.",
+    "Reworked the facade accents to follow the ten-segment saved GIS perimeter. The earlier straight horizontal bars that overshot the irregular corners were removed. The 33 existing GIS-aligned concrete piers were moved slightly proud of the brick surface and lightened, and four subtle stone bands were segmented along the actual footprint edges.",
+    "Added a shallow entrance-tower facade cue based on the circa 1930–1945 Purdue Fieldhouse postcard. Its current survival and dimensions are unverified, so it is labeled schematic and does not alter the preserved wall footprint or origin.",
+    "Added upper side spectator balconies and a small generic display as illustrative cues visible in indoor meet photography. Exact location and detail remain schematic.",
+    "The entry brick/site materials and roadway from Round 4 were preserved. The six-lane track mesh was not changed and its saved centerline perimeter was remeasured."
+  ],
+  "references": [
+    {
+      "provider": "Purdue University Archives and Special Collections, Purdue Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/92",
+      "source_date": "Historical record for the 1937 building; retrieved page describes original construction",
+      "retrieved": "2026-10-24",
+      "use": "Describes stone, brick, steel and reinforced concrete, a one-story fieldhouse, a four-story gymnasium section, and original dimensions. It supports the material and multilevel institutional character; the source does not document the current roof profile, facade dimensions, truss spacing, or whether the historic entrance tower remains today."
+    },
+    {
+      "provider": "Boston Public Library Tichnor Brothers postcard collection, via Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Purdue_fieldhouse_and_gymnasium,_Purdue_University,_West_Lafayette,_Indiana_(77515).jpg",
+      "source_date": "Circa 1930–1945; accession 06_10_013807",
+      "retrieved": "2026-10-24",
+      "use": "Historical visual reference for brick massing, horizontal window bands, pale stone accents, and a prominent entrance tower. Exact proportions are not measured; tower survival in current conditions is unverified."
+    },
+    {
+      "provider": "Tripadvisor visitor photo on Lambert Fieldhouse listing",
+      "url": "https://www.tripadvisor.in/Attraction_Review-g37621-d27012836-Reviews-Lambert_Fieldhouse-West_Lafayette_Indiana.html",
+      "source_date": "Associated review dated 2024-09; photo capture date unspecified",
+      "retrieved": "2026-10-24",
+      "use": "Contemporary visual cue for red brick, tall light-colored concrete pilasters, and large block-like glazing; dimensions and exact bay rhythm are not measured."
+    },
+    {
+      "provider": "Dave Wegiel Photography, Gene Edmonds Invitational at Lambert Fieldhouse",
+      "url": "https://pinolaphoto.com/2019/01/14/gene-edmonds-invitational/",
+      "source_date": "2019-01-12/14 event coverage",
+      "retrieved": "2026-10-24",
+      "use": "Interior visual reference for the arched steel-roof volume, upper spectator/official balconies, and event display/equipment cues. The new truss spacing, balcony extents, and generic display remain illustrative."
+    },
+    {
+      "provider": "Purdue University Athletics, Lambert Fieldhouse facility page",
+      "url": "https://purduesports.com/facilities/lambert-fieldhouse",
+      "retrieved": "2026-10-24",
+      "use": "Official identity and current six-lane, 200 m track use."
+    },
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 layer 0, feature 261",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 261,
+      "source_crs": "WGS84 geographic coordinates in the retained raw snapshot; transformed by the project local approximate conversion",
+      "snapshot": "audit/batchC_lambert_official_footprint.json",
+      "retrieved": "2026-10-24",
+      "use": "Preserved plan footprint and exact segmented exterior wall alignment; the new horizontal bands follow its ten unique perimeter edges. It does not verify height, roof, tower, or facade style."
+    }
+  ],
+  "measurement_and_frame": {
+    "track_mesh": "LAMB | 6-lane 200 m stadium track surface",
+    "measurement_method": "Average paired inner/outer boundary vertices at each sample station to recover the lane-one centerline polygon and sum its closed polygon edges in local meters.",
+    "measured_centerline_perimeter_m": 199.98895672145127,
+    "published_facility_lap_m": 200,
+    "lane_count": 6,
+    "boundary_line_count": 7,
+    "placement": "No origin, local frame, master marker, GIS wall footprint, or track geometry changed."
+  },
+  "uncertainties": [
+    "Existing roof curvature/covering and all newly added truss sizes/spacings are schematic; historical room dimensions are not treated as roof measurements.",
+    "The entrance-tower cue comes from a historical postcard; its current survival, exact position, and proportions are unverified.",
+    "Concrete pilaster/band widths and details are visual estimates from contemporary and historical photos, not measured elevations.",
+    "Balcony, display and event-layout placement are illustrative; no furnishings, signage text, or accessibility claim is inferred.",
+    "Building height and facade dimensions are not independently surveyed in this source-only pass."
+  ],
+  "validation": "audit/lambert_fieldhouse/validation_round5.json",
+  "previews": {
+    "exterior": "audit/lambert_fieldhouse/exterior_round5.png",
+    "interior_cutaway": "audit/lambert_fieldhouse/interior_round5.png"
+  },
+  "master_manifest_shared_files_edited": false
+}

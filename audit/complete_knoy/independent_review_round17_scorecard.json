@@ -1,0 +1,87 @@
+{
+  "building": "Maurice G. Knoy Hall of Technology",
+  "revision_reviewed": 17,
+  "review_date": "2026-10-24",
+  "reviewer": "independent audit agent; did not build or edit Knoy R17",
+  "asset": "modular/buildings/knoy_hall.blend",
+  "report": "audit/complete_knoy/independent_review_round17.md",
+  "reopen_audit": "audit/complete_knoy/independent_reopen_review_r17.json",
+  "score": 7.8,
+  "max_score": 10,
+  "raw_score": 8.6,
+  "raw_max_score": 11,
+  "normalization": "round((raw_score / raw_max_score) * 10, 1)",
+  "acceptance_target": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and footprint",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS target feature KNOY / FID 243 and project orthophoto overlay support identity and broad stepped footprint.",
+        "Approximate local geographic conversion and prior plan registration are not survey control."
+      ],
+      "findings": ["Exact structural wall-face residual and surveyed dimensions are not independently established in R17."]
+    },
+    {
+      "name": "Placement, orientation, and scale",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "Manifest placement and local asset frame match prior review evidence.",
+        "R17 reports no placement or transform change."
+      ],
+      "findings": ["No new survey control or independent orientation measurement is supplied."]
+    },
+    {
+      "name": "Height, floors, and roof",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "2018 Purdue Gateway sheet labels L1-L4 floor-to-floor spacing.",
+        "Indiana 3DEP R8 assessment provides a broad, approximate roof-surface/ground comparison."
+      ],
+      "findings": ["L5 occupied-floor status, roof datum, penthouse/parapet dimensions, and exact rooftop-equipment placement remain unresolved.", "GIS 48-ft attribute conflicts with other vertical cues."]
+    },
+    {
+      "name": "Exterior and entrances",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": [
+        "Purdue Archives building record 75 photo supports brick-heavy walls and narrow horizontal glazing ribbons on visible faces.",
+        "R17 changes L1-L4 ribbon height from 2.0 m to 1.4 m and adds brick infill; source evidence is qualitative and uncalibrated.",
+        "Entrance render shows recognizable brick, dark glazing, canopy and building lettering."
+      ],
+      "findings": ["Modeled glazing still forms broad, continuous, regular horizontal bands; the archival photo shows narrow, interrupted strips within large brick fields.", "Photo does not establish 1.4 m measured band height, exact cadence, face assignment, or the same facade on every side.", "Entrance text size, mounting and facade details remain qualitative."]
+    },
+    {
+      "name": "Interior and circulation",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": [
+        "Saved asset includes a first-floor trace, typical L2-L4 plan traces, illustrative doors, fixture proxies and stair runs.",
+        "Purdue 2018 typical-floor planning sheet provides layout evidence with documented hand-registration uncertainty."
+      ],
+      "findings": ["Plan is not an as-built survey; fixtures and some circulation features are interpretations.", "Continuous accessible circulation across all levels is not verified."]
+    },
+    {
+      "name": "Technical and evidence quality",
+      "score": 1.0,
+      "max_score": 1,
+      "evidence": [
+        "Direct Blender 5.2.3 reopen succeeded; expected scene, asset collection and root are present.",
+        "R17 mesh and material assignment are present; no unpacked external image files were found.",
+        "R17 validation documents only two preexisting mesh edits, one added spandrel mesh, and unchanged preexisting transforms."
+      ],
+      "findings": []
+    }
+  ],
+  "sources_reviewed": [
+    "https://collections.lib.purdue.edu/campus/buildings/75",
+    "https://www.purdue.edu/engineering/2018-gateway-planning-study/ (local plan/elevation evidence in audit/complete_knoy)",
+    "Indiana 3DEP R8 evidence in audit/complete_knoy/roof_height_assessment_r8.json",
+    "Purdue GIS footprint and project orthophoto evidence in audit/complete_knoy"
+  ],
+  "decision": "Below target; R17 is technically valid and makes a documented qualitative facade adjustment, but facade cadence and several vertical/interior dimensions remain unsupported or uncertain."
+}

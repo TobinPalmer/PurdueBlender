@@ -1,0 +1,42 @@
+{
+  "source": "audit/complete_knoy/knoy_typical_plan_crop.png",
+  "source_pdf_page": 24,
+  "comparison_method": "Left panel is the untouched source raster crop. Right panel is the same crop with the registered accepted interior-wall centerline trace drawn in green; the saved Blender partition meshes are extruded from these exact centerlines. This is an overlay of traced geometry, not an independent as-built measurement.",
+  "registration_uncertainty": "3 manually selected outline controls to official Purdue GIS; hand-affine fit, approximately +/-1m, not survey",
+  "wall_width_m": 0.13,
+  "wall_height_m": 2.8,
+  "wall_height_status": "Estimated; source is a floor plan and provides no partition heights.",
+  "unresolved_items": "Short raster details and door swings remain ambiguous; six L1 candidate openings are still unresolved and are not inferred from this upper-floor overlay.",
+  "crops": {
+    "knoy_upper_registration_northwest.png": {
+      "source_pixel_bounds_xyxy": [
+        95,
+        140,
+        355,
+        520
+      ],
+      "upscale": "3x nearest-neighbor for legibility",
+      "output": "audit/complete_knoy/knoy_upper_registration_northwest.png"
+    },
+    "knoy_upper_registration_central.png": {
+      "source_pixel_bounds_xyxy": [
+        170,
+        430,
+        490,
+        850
+      ],
+      "upscale": "3x nearest-neighbor for legibility",
+      "output": "audit/complete_knoy/knoy_upper_registration_central.png"
+    },
+    "knoy_upper_registration_diagonal.png": {
+      "source_pixel_bounds_xyxy": [
+        275,
+        770,
+        555,
+        1250
+      ],
+      "upscale": "3x nearest-neighbor for legibility",
+      "output": "audit/complete_knoy/knoy_upper_registration_diagonal.png"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "revision": 15,
+  "building": "Knoy Hall",
+  "date": "2026-10-24",
+  "asset": "modular/buildings/knoy_hall.blend",
+  "scope": "Adjusted only the existing procedural red-brick material after the R14 reviewer still found mortar lines too bright. No mesh, placement, roof, floor, door, fixture, or stair geometry changed.",
+  "review_finding_addressed": "Reduced mortar brightness and width and decreased grayscale noise mixed into brick color. Existing brick courses are left visible but less contrasty.",
+  "source_basis": [
+    {
+      "provider": "Purdue Polytechnic Institute",
+      "url": "https://polytechnic.purdue.edu/profile/rnawroc",
+      "local_image": "audit/complete_knoy/ref_purdue_profile_knoy_facade_r8.jpg",
+      "supports": "Qualitative red/brown brick and visible joints at the entrance; the photo is a single perspective and not color-calibrated."
+    },
+    {
+      "provider": "Purdue HIST 152 course site",
+      "url": "https://hist152purdue.wordpress.com/2018/08/09/knoy-hall/",
+      "local_image": "audit/complete_knoy/ref_knoy_main_entrance_hist152_2018.jpg",
+      "supports": "Qualitative entrance-wall brick bond and contrast only."
+    }
+  ],
+  "material": {
+    "name": "KNOY_Purdue_Red_Brick",
+    "changes": {
+      "mortar_color_linear": [0.14, 0.12, 0.10],
+      "estimated_mortar_width_m": 0.003,
+      "brick_noise_blend": 0.04,
+      "brick_color_1_linear": [0.145, 0.038, 0.016],
+      "brick_color_2_linear": [0.068, 0.016, 0.007]
+    },
+    "limits": "All shader values remain visual estimates. Photos do not establish exact brick/mortar reflectance, dimensions, bond, or all-face material assignments.",
+    "preview": "audit/complete_knoy/knoy_entrance_detail_material_r15.png",
+    "render_script": "audit/complete_knoy/render_entry_material_r15.py"
+  },
+  "saved_asset_integrity": {
+    "validation": "audit/complete_knoy/validation_round15.json",
+    "saved_asset_reopened": true,
+    "validation_passed": true,
+    "direct_objects": 64,
+    "descendant_objects": 157,
+    "all_156_mesh_geometry_and_world_matrices_match_r14": true,
+    "all_mesh_sha256": "43a19a6313c06e188082cb547847f583573bafe7f6d9e9ec6da52706b36de5b4",
+    "external_image_dependencies": [],
+    "placement_roof_L5_penthouse_PV_geometry_unchanged": true
+  },
+  "remaining_uncertainties": [
+    "No measured/current facade elevation or calibrated all-sided photo was found; repeated facade cadence and exact material distribution remain unverified.",
+    "Publicly accessible interior material confirms lower/upper basement zones and a first-floor elevator vicinity, but not their geometry or continuous circulation.",
+    "L5, roof, penthouse, PV layout, and GIS 48-ft conflict remain unresolved."
+  ],
+  "changed_files": [
+    "modular/buildings/knoy_hall.blend",
+    "modular/buildings/build_knoy_hall.py",
+    "audit/complete_knoy/refine_brick_material_r15.py",
+    "audit/complete_knoy/render_entry_material_r15.py",
+    "audit/complete_knoy/validate_reopen_r15.py",
+    "audit/complete_knoy/validation_round15.json",
+    "audit/complete_knoy/evidence_round15.json",
+    "audit/complete_knoy/knoy_entrance_detail_material_r15.png",
+    "audit/complete_knoy/knoy_hall_before_r15.blend",
+    "audit/complete_knoy/REVIEW.md"
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "revision": 19,
+  "asset": "modular/buildings/knoy_hall.blend",
+  "scope": "Knoy-only source review. R19 adds a georeferenced Street View sightline and archive-source investigation; no building geometry, materials, transforms, or placement changed.",
+  "facade_sightline": {
+    "source": "Google Street View, 417 Northwestern Ave, West Lafayette, Indiana",
+    "url": "https://www.google.com/maps/@40.4281078,-86.9106299,190a,75y,244.32h,90t/data=!3m7!1e1!3m5!1s37BzxutMJc4KJ68n5M55xw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3D37BzxutMJc4KJ68n5M55xw%26yaw%3D244.31604!7i16384!8i8192?entry=ttu",
+    "pano_id": "37BzxutMJc4KJ68n5M55xw",
+    "capture_date": "2025-08",
+    "camera_lat_lon": [
+      40.4281078,
+      -86.9106299
+    ],
+    "heading_degrees_true_north": 244.31604,
+    "project_origin": [
+      40.4274,
+      -86.9137
+    ],
+    "project_xy_m": [
+      260.38,
+      78.59
+    ],
+    "gis_boundary_vertices": "modular/buildings/build_knoy_hall.py GIS_POLYGON",
+    "ray_hit": {
+      "segment_index_zero_based": 18,
+      "segment_endpoints_project_xy_m": [
+        [
+          229.788,
+          70.14
+        ],
+        [
+          236.558,
+          64.353
+        ]
+      ],
+      "distance_from_camera_m": 28.74,
+      "edge_parameter_u": 0.69,
+      "intersection_project_xy_m": [
+        234.472,
+        66.136
+      ],
+      "calculation": "Approximate local tangent-plane conversion using the project's manifest origin and longitude/latitude scale, then intersect the Street View heading ray with the building GIS polygon. This is a sightline-to-edge check, not orthophoto calibration."
+    },
+    "visual_observation": "The 2025 pano shows brick-heavy facade massing and thin horizontal glazing with broad opaque brick interruptions on visible portions. Vegetation, distance, perspective, and adjacent walls obscure exact bay count and spacing.",
+    "geometry_decision": "The sightline narrows the candidate facade to GIS edge 18. It does not resolve exact slit widths, interruption positions, whether the visible interval belongs wholly to this edge, or cadence on other faces. No modeled window segmentation was changed; converting a pixel estimate into pier positions would overstate the evidence.",
+    "diagram": "audit/complete_knoy/facade_glazing_assignment_r19.svg",
+    "historical_views_checked": [
+      {
+        "date": "2017-09",
+        "pano_id": "D6_nILpQqNtb2fZJUbaPJQ",
+        "observation": "Same broad sightline; tree cover still obscures most of the facade."
+      },
+      {
+        "date": "2009-06",
+        "pano_id": "HBWd-zKUSYl9fdHHvzm21w",
+        "observation": "Same broad sightline; vegetation and low image resolution still prevent a defensible interruption count."
+      }
+    ]
+  },
+  "archive_research": [
+    {
+      "title": "Knoy Hall of Technology records (UA 141), Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/repositories/2/resources/1490",
+      "finding": "Official finding aid says the 1984 records include construction information and a floor plan. The materials are held in a physical archive folder and the page does not expose digitized elevations or drawings.",
+      "use": "Identifies a credible path for future research, but yielded no new downloadable as-built facade or stair geometry in this pass."
+    },
+    {
+      "title": "Purdue University Office of Marketing and Media photographs (UA 62), Series 3 finding aid",
+      "url": "https://archives.lib.purdue.edu/fa/UA62_Series3.pdf",
+      "finding": "The finding aid lists 1984 contact-sheet/negative material for the New Technology Building (Knoy), including interior and exterior photographs; these are archival holdings, not digitized images on the page.",
+      "use": "Potential future face-specific historic photo source; not available for measurement/registration in this pass."
+    },
+    {
+      "title": "Purdue Building Images collection (UA 149), J-K slides",
+      "url": "https://archives.lib.purdue.edu/repositories/2/top_containers/14597",
+      "finding": "The archive finding aid lists Knoy Hall of Technology among slides dated 1984–2000; the referenced slides are physical holdings rather than online scans."
+    },
+    {
+      "title": "Engineering and Polytechnic Gateway Formation Study, Existing Knoy Elevations",
+      "url": "https://engineering.purdue.edu/~frosch/Renderings/Gateway/2018-05-31%20MASSING%20STUDIES%20DRAFT%20INCLUDING%20LANDSCAPE.pdf",
+      "local_page_render": "audit/complete_knoy/page24_r19-24.png",
+      "finding": "The existing-elevations panel records L1–L4 floor-to-floor height but contains no elevation silhouettes/opening segmentation. It does not resolve the R17 window cadence critique."
+    },
+    {
+      "title": "Purdue Archives Historic Facilities and Buildings Database, Knoy Hall photo record",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/75",
+      "finding": "The official photo visibly supports brick fields and interrupted slit-like glazing on photographed faces, but has no camera scale, calibrated direction, or registered face ID."
+    }
+  ],
+  "roof_l5_interior_research": {
+    "roof_l5": "No new digital roof plan, measured elevation, or source resolving the GIS 48-ft conflict/L5-vs-roof interpretation was located. Existing DSM remains a broad surface-height check only.",
+    "interior": "No new digitized as-built stair or circulation plan was located. UA 141 identifies a physical floor plan in Archives, and official emergency plan/2018 planning plan remain the available digital references; neither proves complete accessible route continuity."
+  },
+  "geometry_change": false,
+  "limitations": [
+    "Street View sightline location conversion uses the project's approximate tangent-plane origin, not survey control.",
+    "The panos are perspective images, partly occluded by trees, and do not establish exact glazing dimensions or cadence.",
+    "Archive finding aids establish the existence of material but are not substitutes for inspecting the original drawings or negatives."
+  ],
+  "r20_correction": {
+    "status": "The primary 2025 camera/ray values in this JSON were correct, but the companion R19 SVG plotted the 2009 panorama camera and ray while labeling it as 2025. Do not use the R19 SVG; use facade_glazing_assignment_r20.svg and evidence_round20.json.",
+    "correct_2025_camera_xy_m": [
+      260.3770358483776,
+      78.59411200007798
+    ],
+    "correct_2025_intersection_xy_m": [
+      234.4722419583696,
+      66.13590720633901
+    ],
+    "incorrectly_plotted_2009_camera_xy_m": [
+      261.60678960928675,
+      77.25052800015646
+    ],
+    "incorrectly_plotted_2009_intersection_xy_m": [
+      235.92089565829087,
+      64.89759716772093
+    ],
+    "no_geometry_change": true
+  }
+}

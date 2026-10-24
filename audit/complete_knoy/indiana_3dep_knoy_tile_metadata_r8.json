@@ -1,0 +1,35 @@
+{
+  "provider": "Indiana Geographic Information Office / Indiana Statewide 3DEP Lidar Dates MapServer",
+  "retrieved": "2026-10-24",
+  "query_url": "https://gisdata.in.gov/server/rest/services/Indiana_Statewide_3DEP_Lidar_Dates/MapServer/5/query?where=1%3D1&geometry=-86.9113%2C40.4278&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=pjson",
+  "tile_query_result": {
+    "OBJECTID": 14470,
+    "Text": "in2018_30001885_12",
+    "Project": "2018",
+    "Avg_Field3": 574.652,
+    "Field4_epoch_ms": 1524182400000,
+    "Field4_utc": "2018-04-20T00:00:00Z",
+    "Shape_Length": 8013.0483138269,
+    "Shape_Area": 4013043.69498705
+  },
+  "dsm_file": {
+    "path": "audit/complete_knoy/indiana_3dep_2018_dsm_in2018_30001885_12.tif",
+    "download_url": "https://giselevationingov.s3.us-east-2.amazonaws.com/dsmoptimized/statewide/2018/SPW/5ft/in2018_30001885_12.tif",
+    "bytes": 2955442,
+    "sha256": "3d04dc9f70e85e7b6c1944bb87b09ab9686d2cfbb2e61ece97d3652206e5add9",
+    "crs": "NAD83(HARN) / Indiana West (ftUS)",
+    "cell_size": "5 x 5 US survey feet",
+    "shape_px": [
+      1000,
+      1000
+    ],
+    "dtype": "float32",
+    "min_max_ft": [
+      0.0,
+      1534.41
+    ]
+  },
+  "height_source_service": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2016_2020_DEM/ImageServer",
+  "analysis_report": "audit/complete_knoy/roof_height_assessment_r8.json",
+  "note": "The DSM source is an aerial surface model, not bare earth. The separate state DEM is bare-earth/interpolated. The all-tile max/min include statewide values and are not Knoy-local."
+}

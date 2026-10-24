@@ -1,0 +1,315 @@
+{
+  "revision": 8,
+  "assessment": "Indicative roof-surface height from statewide 3DEP; no modeled height or geometry changed.",
+  "dsm_source": {
+    "provider": "Indiana Geographic Information Office / Indiana Statewide Elevation Catalog",
+    "title": "Indiana 2016-2020 QL2 3DEP LiDAR, 2018 Tippecanoe tile",
+    "tile": "in2018_30001885_12",
+    "acquisition_date": "2018-04-20",
+    "download_url": "https://giselevationingov.s3.us-east-2.amazonaws.com/dsmoptimized/statewide/2018/SPW/5ft/in2018_30001885_12.tif",
+    "dataset_catalog": "https://registry.opendata.aws/in-elevation/",
+    "product": "dsmoptimized raster, 5 ft cells, float elevations in US survey feet in NAD83(HARN) / Indiana West (ftUS).",
+    "license": "CC0"
+  },
+  "terrain_source": {
+    "provider": "Indiana Geographic Information Office",
+    "title": "Indiana 2016-2020 bare-earth DEM ImageServer",
+    "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2016_2020_DEM/ImageServer",
+    "pixels": "2.5 ft statewide product; 21 point samples queried at interior points of the approximate Knoy GIS polygon."
+  },
+  "footprint_registration": {
+    "source": "modular/buildings/target_buildings_gis.json / KNOY world_polygon",
+    "conversion": "project-local x/y to lon/lat using x=(lon+86.9137)*84810.60416539927 m/deg and y=(lat-40.4274)*111040 m/deg, then raster CRS transform",
+    "caution": "Project-local conversion is approximate; the 5ft DSM grid and building outline are not an as-built survey."
+  },
+  "dsm_footprint_stats": {
+    "valid_cell_centers_within_approx_gis_footprint": 1126,
+    "elevation_ft_quantiles_p10_p25_p50_p75_p90_p95_p99_max": [
+      651.47998046875,
+      666.2899780273438,
+      680.9400024414062,
+      681.1799926757812,
+      684.9649963378906,
+      692.8674926757812,
+      696.4199829101562,
+      709.9600219726562
+    ],
+    "dominant_surface_bin_1ft_range": [
+      680.0,
+      681.0
+    ],
+    "dominant_surface_bin_cell_count": 273,
+    "dominant_surface_bin_share": 0.2424511545293073,
+    "approx_projected_footprint_bounds_ft": [
+      3000620.325735093,
+      1886429.6778715733,
+      3000767.5347792334,
+      1886735.4567851943
+    ],
+    "raster_crs": "PROJCS[\"NAD83(HARN) / Indiana West (ftUS)\",GEOGCS[\"NAD83(HARN)\",DATUM[\"NAD83_High_Accuracy_Reference_Network\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6152\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",37.5],PARAMETER[\"central_meridian\",-87.0833333333333],PARAMETER[\"scale_factor\",0.999966666666667],PARAMETER[\"false_easting\",2952750],PARAMETER[\"false_northing\",820208.333333333],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "raster_transform": [
+      5.0,
+      0.0,
+      3000000.0,
+      0.0,
+      -5.0,
+      1890000.0
+    ],
+    "raster_shape_px": [
+      1000,
+      1000
+    ],
+    "raster_pixel_size_ft": [
+      5.0,
+      5.0
+    ],
+    "raster_nodata": null,
+    "raster_file_bytes": 2955442
+  },
+  "dtm_samples": [
+    {
+      "local_xy_m": [
+        203.415,
+        13.066
+      ],
+      "latitude": 40.42751766930836,
+      "longitude": -86.91130154402859,
+      "bare_earth_elevation_ft": 621.23
+    },
+    {
+      "local_xy_m": [
+        210.902,
+        13.066
+      ],
+      "latitude": 40.42751766930836,
+      "longitude": -86.91121325907798,
+      "bare_earth_elevation_ft": 620.82
+    },
+    {
+      "local_xy_m": [
+        218.389,
+        13.066
+      ],
+      "latitude": 40.42751766930836,
+      "longitude": -86.91112497412736,
+      "bare_earth_elevation_ft": 620.4
+    },
+    {
+      "local_xy_m": [
+        225.877,
+        13.066
+      ],
+      "latitude": 40.42751766930836,
+      "longitude": -86.91103668917675,
+      "bare_earth_elevation_ft": 620.03
+    },
+    {
+      "local_xy_m": [
+        233.364,
+        13.066
+      ],
+      "latitude": 40.42751766930836,
+      "longitude": -86.91094840422615,
+      "bare_earth_elevation_ft": 620.4
+    },
+    {
+      "local_xy_m": [
+        203.415,
+        28.593
+      ],
+      "latitude": 40.42765750180115,
+      "longitude": -86.91130154402859,
+      "bare_earth_elevation_ft": 621.21
+    },
+    {
+      "local_xy_m": [
+        210.902,
+        28.593
+      ],
+      "latitude": 40.42765750180115,
+      "longitude": -86.91121325907798,
+      "bare_earth_elevation_ft": 621.23
+    },
+    {
+      "local_xy_m": [
+        218.389,
+        28.593
+      ],
+      "latitude": 40.42765750180115,
+      "longitude": -86.91112497412736,
+      "bare_earth_elevation_ft": 621.36
+    },
+    {
+      "local_xy_m": [
+        225.877,
+        28.593
+      ],
+      "latitude": 40.42765750180115,
+      "longitude": -86.91103668917675,
+      "bare_earth_elevation_ft": 621.14
+    },
+    {
+      "local_xy_m": [
+        203.415,
+        44.12
+      ],
+      "latitude": 40.42779733429395,
+      "longitude": -86.91130154402859,
+      "bare_earth_elevation_ft": 621.06
+    },
+    {
+      "local_xy_m": [
+        210.902,
+        44.12
+      ],
+      "latitude": 40.42779733429395,
+      "longitude": -86.91121325907798,
+      "bare_earth_elevation_ft": 621.1
+    },
+    {
+      "local_xy_m": [
+        218.389,
+        44.12
+      ],
+      "latitude": 40.42779733429395,
+      "longitude": -86.91112497412736,
+      "bare_earth_elevation_ft": 621.14
+    },
+    {
+      "local_xy_m": [
+        225.877,
+        44.12
+      ],
+      "latitude": 40.42779733429395,
+      "longitude": -86.91103668917675,
+      "bare_earth_elevation_ft": 621.18
+    },
+    {
+      "local_xy_m": [
+        203.415,
+        59.647
+      ],
+      "latitude": 40.42793716678674,
+      "longitude": -86.91130154402859,
+      "bare_earth_elevation_ft": 621.44
+    },
+    {
+      "local_xy_m": [
+        210.902,
+        59.647
+      ],
+      "latitude": 40.42793716678674,
+      "longitude": -86.91121325907798,
+      "bare_earth_elevation_ft": 621.15
+    },
+    {
+      "local_xy_m": [
+        218.389,
+        59.647
+      ],
+      "latitude": 40.42793716678674,
+      "longitude": -86.91112497412736,
+      "bare_earth_elevation_ft": 620.89
+    },
+    {
+      "local_xy_m": [
+        225.877,
+        59.647
+      ],
+      "latitude": 40.42793716678674,
+      "longitude": -86.91103668917675,
+      "bare_earth_elevation_ft": 620.6
+    },
+    {
+      "local_xy_m": [
+        233.364,
+        59.647
+      ],
+      "latitude": 40.42793716678674,
+      "longitude": -86.91094840422615,
+      "bare_earth_elevation_ft": 620.16
+    },
+    {
+      "local_xy_m": [
+        210.902,
+        75.174
+      ],
+      "latitude": 40.42807699927954,
+      "longitude": -86.91121325907798,
+      "bare_earth_elevation_ft": 621.04
+    },
+    {
+      "local_xy_m": [
+        218.389,
+        75.174
+      ],
+      "latitude": 40.42807699927954,
+      "longitude": -86.91112497412736,
+      "bare_earth_elevation_ft": 620.81
+    },
+    {
+      "local_xy_m": [
+        225.877,
+        75.174
+      ],
+      "latitude": 40.42807699927954,
+      "longitude": -86.91103668917675,
+      "bare_earth_elevation_ft": 620.45
+    }
+  ],
+  "terrain_summary_ft": {
+    "count": 21,
+    "min": 620.03,
+    "median": 621.06,
+    "max": 621.44
+  },
+  "roof_surface_inference_ft": {
+    "representative_surface_elevation_median_ft": 680.9400024414062,
+    "approx_bare_earth_median_ft": 621.06,
+    "representative_surface_above_bare_earth_ft": 59.880002441406305,
+    "whole_footprint_surface_distribution_agl_p10_p25_p75_p90_ft": [
+      30.419980468750055,
+      45.229978027343805,
+      60.119992675781305,
+      63.90499633789068
+    ],
+    "interpretation": "The DSM median within the approximate GIS footprint is about 60 ft above the sampled bare-earth median. The broad percentile spread reflects stepped surfaces, edges, openings/voids and elevated equipment; it is a height check, not one roof plane or parapet elevation."
+  },
+  "model_datums_ft_agl": [
+    {
+      "datum": "L1 datum",
+      "height_ft": 0.0,
+      "evidence_status": "supported as model origin / base reference"
+    },
+    {
+      "datum": "L2 slab top",
+      "height_ft": 14.7,
+      "evidence_status": "2018 plan supports L1-L4 interval"
+    },
+    {
+      "datum": "L3 slab top",
+      "height_ft": 29.4,
+      "evidence_status": "2018 plan supports L1-L4 interval"
+    },
+    {
+      "datum": "L4 slab top",
+      "height_ft": 44.1,
+      "evidence_status": "2018 plan supports L1-L4 interval"
+    },
+    {
+      "datum": "L5 slab top",
+      "height_ft": 58.8,
+      "evidence_status": "retained slab; story function unresolved"
+    }
+  ],
+  "comparison": "The indicative 2018 DSM median roof-surface height (~60 ft AGL) is close to the inherited model L5 slab datum (~58.8 ft). It makes a roof-level slab interpretation plausible but cannot establish that L5 is a roof slab, an occupied floor, or exactly registered in vertical datum. The GIS extraction attribute of 48 ft remains conflicting and its semantics are not surveyed height.",
+  "limitations": [
+    "5 ft DSM cell spacing and approximate footprint conversion limit local feature attribution.",
+    "The DSM median combines roof planes, lower surfaces, edges and rooftop objects; it does not measure the parapet, penthouse, or a specific facade point.",
+    "The bare-earth surface is modeled/interpolated under the building; the 21 samples are service queries inside the footprint, not surveyed building footings.",
+    "Absolute accuracy specifications for QL2 are statewide metrics, not a Knoy-specific accuracy assessment.",
+    "The 2018 surface snapshot does not prove 2026 roof configuration.",
+    "This assessment does not register the PV mesh to the 2023 orthophoto; withdrawn cyan PV bounds remain do-not-use."
+  ],
+  "geometry_changed": false
+}
