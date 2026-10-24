@@ -1,0 +1,99 @@
+{
+  "building": "John T. McCutcheon Residence Hall",
+  "building_id": "mccutcheon_hall",
+  "revision": 3,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/mccutcheon_hall.blend",
+  "collection": "Asset_mccutcheon_hall",
+  "scope": "McCutcheon asset and dedicated audit only; no master, manifest, README, shared index, other building, commit, or push.",
+  "geometry_changes": [],
+  "presentation_changes": [
+    {
+      "scene": "Building_mccutcheon_hall",
+      "world": "McCutcheon_Clear_Day_Sky",
+      "sky_type": "HOSEK_WILKIE",
+      "background_strength": 1.2,
+      "purpose": "Provide natural daylight sky for standalone building review renders. This world is a scene setting and does not modify the master file."
+    },
+    {
+      "camera": "Cam_Hero_Perspective",
+      "action": "Made active for the standalone asset scene and set lens to 30 mm so the entire building fits in the saved hero frame.",
+      "purpose": "Provide a useful default saved-file hero view."
+    },
+    {
+      "render": "audit/mccutcheon_hall/mccutcheon_r3_entrance.png",
+      "purpose": "Entrance and concrete-screen detail view for comparison with the official Purdue Housing photo."
+    }
+  ],
+  "preserved_uncertainty": [
+    "No verified metric building height or floor spacing was found.",
+    "GIS num_levels_attribute=10 is marked unverified.",
+    "Official current exterior photo is oblique/cropped and not registered to a cardinal face or scale.",
+    "No public as-built room, bathroom, stair, elevator, or circulation plan was available.",
+    "No interior geometry was added."
+  ],
+  "sources": [
+    {
+      "title": "McCutcheon Hall accommodations and exterior image",
+      "page_url": "https://www.housing.purdue.edu/visit/conferences/accommodations.html",
+      "image_url": "https://www.housing.purdue.edu/images/_hero/mccutcheon-exterior-640x360.jpg",
+      "provider": "Purdue University Residences",
+      "retrieved_date": "2026-10-24",
+      "image_capture_date": "Unknown/not supplied",
+      "image_dimensions_px": [640,360],
+      "image_crs_or_camera_orientation": "Not supplied; image is not georeferenced or direction-identified.",
+      "inspected_observations": ["red brick", "blue-gray glazing", "perforated concrete-block screen near entry", "low glazed entrance", "light concrete/base", "wall name sign", "lawn/planting", "roof-level mechanical equipment"],
+      "supports": "Qualitative entry/facade material and feature categories only.",
+      "does_not_support": "Measured facade dimensions, cardinal orientation, full building/story height, exact screen position in local model coordinates, or roof component geometry.",
+      "local_copy_retained": false,
+      "temporary_inspection_copy_sha256": "2EE562D3EA26CAFCBBDCC177161396FD96EF3011925DECEBB1322263B3CA11DF"
+    },
+    {
+      "title": "McCutcheon | Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/mccutcheon.html",
+      "provider": "Purdue University Residences",
+      "retrieved_date": "2026-10-24",
+      "supports": "Identity, residence hall use, opened 1963, shared bathrooms/common spaces; sample room illustration is approximate.",
+      "does_not_support": "Measured exterior elevations, floor/story height, or as-built room/circulation plan."
+    },
+    {
+      "title": "Purdue News Service photo finding aid MSP19",
+      "url": "https://archives.lib.purdue.edu/fa/MSP19_News_Service.pdf",
+      "provider": "Purdue University Archives and Special Collections",
+      "retrieved_date": "2026-10-24",
+      "supports": "Catalog entries show historical McCutcheon construction/exterior photo holdings exist.",
+      "does_not_support": "Current visual geometry until archival images are inspected; catalog records are not digitized, face-identified elevations."
+    }
+  ],
+  "height_and_footprint": {
+    "gis_snapshot": "audit/mccutcheon_hall/gis_fid57_snapshot.json",
+    "provider": "Purdue BuildingShapesZip4 FeatureServer layer 0",
+    "feature_id": 57,
+    "source_crs": "EPSG:4326 transformed to the project's approximate local tangent plane; not survey control",
+    "local_aabb_plinth_delta_m": "<0.0001 at recorded precision; envelope only",
+    "model_top_m": 30.35,
+    "height_status": "Unverified. The map's 10-level attribute is explicitly marked unverified, and the available official photo is cropped and unscaled. No metric height edit was made."
+  },
+  "interior_status": "No geometry added. Housing amenities and approximate typical-room dimensions do not locate as-built interior rooms, bathrooms, stairs, elevators, or circulation.",
+  "validation": {
+    "report": "audit/mccutcheon_hall/mccutcheon_r3_validation.json",
+    "blender_version": "5.2.3 LTS",
+    "saved_asset_reopened": true,
+    "direct_objects": 1,
+    "objects_including_children": 235,
+    "asset_root_location": [0.0,0.0,0.0],
+    "asset_root_scale": [1.0,1.0,1.0],
+    "scene_camera": "Cam_Hero_Perspective",
+    "camera_lens_mm": 30.0,
+    "world_sky_type": "HOSEK_WILKIE",
+    "sun_parameters_changed": false,
+    "diagnostic_overlay_hide_render": true,
+    "diagnostic_overlay_hide_viewport": false,
+    "packed_foliage_images": 10,
+    "unresolved_unpacked_image_dependencies": [],
+    "renders": ["audit/mccutcheon_hall/mccutcheon_r3_hero.png","audit/mccutcheon_hall/mccutcheon_r3_entrance.png"],
+    "passed": true
+  },
+  "independent_grade": "Pending; no self-score claimed.",
+  "master_edited": false
+}

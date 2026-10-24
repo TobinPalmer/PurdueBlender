@@ -1,0 +1,121 @@
+{
+  "building": "John T. McCutcheon Residence Hall",
+  "building_id": "mccutcheon_hall",
+  "revision": 2,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/mccutcheon_hall.blend",
+  "collection": "Asset_mccutcheon_hall",
+  "scope": "Only the McCutcheon asset and audit/mccutcheon_hall were edited. No master, README, manifest, BUILDINGS, shared script, other building, commit, or push.",
+  "changes": [
+    {
+      "object": "MCUT_Official_Footprint_Overlay",
+      "action": "Set hide_render=true and preserved hide_viewport=false; added diagnostic-purpose/source-FID/source-URL custom properties.",
+      "reason": "It is an emissive GIS comparison trace, not built architecture or an on-site painted outline. It remains available in viewport comparisons and is omitted from architectural renders."
+    },
+    {
+      "objects": ["Site_Lawn_Base"],
+      "action": "Replaced gray Concrete_Pavement assignment with embedded procedural material MCUT_Grass_Lawn_Qualitative.",
+      "reason": "The broad landscape ground was visibly rendered as gray concrete. Official/context photos and the site's mapped landscape context support a lawn category. Exact grass color, species, and surface condition are not calibrated."
+    },
+    {
+      "objects": ["Site_McCutcheon_Drive", "Site_MacArthur_Drive"],
+      "action": "Replaced Roof_Membrane assignment with embedded procedural material MCUT_Asphalt_Drive_Qualitative.",
+      "reason": "These context meshes represent drives, and a roof membrane was a semantically wrong material assignment. Asphalt appearance is qualitative and not measured from a site material sample."
+    }
+  ],
+  "unchanged_architecture": ["structural shell", "facade/window geometry", "entrance and canopy geometry", "roof/penthouse geometry", "interior/circulation", "tree species and positions", "asset local origin", "manifest placement origin"],
+  "gis": {
+    "provider": "Purdue BuildingShapesZip4 FeatureServer layer 0",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 57,
+    "code": "MCUT",
+    "source_snapshot": "audit/official_building_references.json",
+    "dedicated_snapshot": "audit/mccutcheon_hall/gis_fid57_snapshot.json",
+    "snapshot_date": "2026-10-22",
+    "retrieved_for_this_pass": "2026-10-24; uses pre-existing retained project GIS snapshot",
+    "source_crs": "EPSG:4326 per source-layer metadata",
+    "derived_frame": {
+      "name": "Project local approximate tangent plane",
+      "origin_latitude": 40.4274,
+      "origin_longitude": -86.9137,
+      "x_axis": "east",
+      "y_axis": "north",
+      "x_metres_per_degree": 84810.60416539927,
+      "y_metres_per_degree": 111040.0,
+      "units": "metres",
+      "limitation": "Approximation only; not survey control or a certified projected CRS."
+    },
+    "manifest_placement_origin_xy_m": [-1215.0, -260.0],
+    "official_polygon_center_xy_m": [-1218.9750479185961, -260.9137241466736],
+    "polygon_local_bounds_m_relative_to_manifest_origin": {
+      "x": [-37.7984642107865, 31.5561924965898],
+      "y": [-43.8572516859153, 42.5734593570064]
+    },
+    "saved_base_plinth_bounds_local_m": {
+      "x": [-37.7985, 31.5562],
+      "y": [-43.8572, 42.5735]
+    },
+    "bbox_max_edge_difference_m_at_saved_precision": "<0.0001; AABB comparison only",
+    "minimum_rotated_rectangle": {
+      "width_m": 69.05439041447721,
+      "depth_m": 86.09314857949767,
+      "angle_degrees_east_ccw": 0.34363893822771274
+    },
+    "height_status": "GIS num_levels_attribute=10 is marked unverified. Do not interpret as surveyed story count/height; the asset's 30.35 m top remains unverified.",
+    "limitation": "Bounding-box agreement and diagnostic polygon overlay are not full structural-wall shape verification, a survey, or evidence for facade/roof/height."
+  },
+  "sources": [
+    {
+      "title": "McCutcheon | Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/mccutcheon.html",
+      "provider": "Purdue University Residences",
+      "retrieved_date": "2026-10-24",
+      "relevant_source_date": "Page text says the hall opened in 1963; page was observed/retrieved 2026-10-24.",
+      "supports": "Building identity, use as traditional residence hall, shared bathrooms/common spaces, 400 McCutcheon Drive; sample room plan is explicitly approximate.",
+      "does_not_support": "Measured elevations, facade/window schedule, roof geometry, exact as-built room/interior layout."
+    },
+    {
+      "title": "Student slain in Purdue University residence hall",
+      "url": "https://www.asumag.com/safety-security/article/21252186/student-slain-in-purdue-university-residence-hall",
+      "provider": "American School & University",
+      "retrieved_date": "2026-10-24",
+      "source_date": "2022-10-05",
+      "supports": "Identifies the residence hall, says it opened in 1963 and houses 730 residents; the page includes an exterior image that is qualitative context only.",
+      "does_not_support": "Survey dimensions, calibrated material colors, exact face orientation or a measured facade/roof profile. Search preview descriptions are not treated as measured evidence."
+    },
+    {
+      "title": "Buildings—McCutcheon Hall, Purdue University Archives postcard collection",
+      "url": "https://archives.lib.purdue.edu/repositories/2/archival_objects/5994",
+      "provider": "Purdue University Archives and Special Collections",
+      "retrieved_date": "2026-10-24",
+      "supports": "A McCutcheon postcard subject exists in an open research collection.",
+      "does_not_support": "Current scanned facade measurements; the image itself was not available for inspection in this pass."
+    },
+    {
+      "title": "Purdue News Service photo finding aid MSP19",
+      "url": "https://archives.lib.purdue.edu/fa/MSP19_News_Service.pdf",
+      "provider": "Purdue University Archives and Special Collections",
+      "retrieved_date": "2026-10-24",
+      "supports": "Catalog entries list proposed/construction/exterior McCutcheon Hall photo holdings from 1961 onward.",
+      "does_not_support": "Visual facade/roof claims until the corresponding archive photographs are inspected."
+    }
+  ],
+  "validation": {
+    "report": "audit/mccutcheon_hall/mccutcheon_r2_validation.json",
+    "blender_version": "5.2.3 LTS",
+    "saved_asset_reopened": true,
+    "expected_collection_present": true,
+    "direct_objects": 1,
+    "objects_including_children": 235,
+    "asset_root_location": [0.0, 0.0, 0.0],
+    "asset_root_scale": [1.0, 1.0, 1.0],
+    "diagnostic_overlay_hide_render": true,
+    "diagnostic_overlay_hide_viewport": false,
+    "new_surface_assignments_reopened": true,
+    "packed_linked_foliage_images": 10,
+    "unresolved_unpacked_image_dependencies": [],
+    "hero_render": "audit/mccutcheon_hall/mccutcheon_r2_hero.png",
+    "master_edited": false
+  },
+  "independent_grade": "Pending; no self-score claimed."
+}

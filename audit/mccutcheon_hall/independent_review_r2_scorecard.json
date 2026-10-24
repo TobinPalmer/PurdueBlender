@@ -1,0 +1,84 @@
+{
+  "building": "John T. McCutcheon Residence Hall",
+  "building_id": "mccutcheon_hall",
+  "asset_revision_reviewed": 2,
+  "review_date": "2026-10-24",
+  "review_type": "independent_full_building_read_only",
+  "overall_score": 7.5,
+  "acceptance_threshold": 8.0,
+  "meets_threshold": false,
+  "category_scores": {
+    "identity_and_program": {
+      "score": 9.0,
+      "weight": 1,
+      "finding": "Purdue identifies the hall and residence-hall use; broad massing is recognizable."
+    },
+    "horizontal_placement_and_footprint": {
+      "score": 8.5,
+      "weight": 1,
+      "finding": "GIS polygon and plinth AABB bounds agree below 0.0001 m in the documented approximate local frame; not survey control or full wall-shape proof."
+    },
+    "massing_and_height": {
+      "score": 7.0,
+      "weight": 1,
+      "finding": "Two tall wings and lower connector are legible; overall height, floor spacing, and roof profile remain unverified."
+    },
+    "facade_and_openings": {
+      "score": 7.0,
+      "weight": 1,
+      "finding": "Brick and repeated vertical window strips are plausible, but cadence, blank areas, screen placement, and entrance distribution lack direction-identified elevation evidence."
+    },
+    "materials_site_and_presentation": {
+      "score": 7.3,
+      "weight": 1,
+      "finding": "R2 fixes lawn/drive material categories using qualitative shaders; hero presentation remains flat with gray world and limited ground detail."
+    },
+    "interior_and_circulation": {
+      "score": 5.0,
+      "weight": 1,
+      "finding": "Interior objects are explicitly unverified opaque shells; no verified rooms, circulation, bathrooms, or stairs are represented."
+    },
+    "technical_integrity_and_handoff": {
+      "score": 9.0,
+      "weight": 1,
+      "finding": "R2 reopen validation passes, image dependencies are packed, no unresolved unpacked images, and diagnostic overlay is hidden from render."
+    }
+  },
+  "scoring_method": "Equal-weight arithmetic mean of seven categories, rounded to one decimal; reviewer judgments, not measured accuracy.",
+  "reviewed_files": [
+    "modular/buildings/mccutcheon_hall.blend",
+    "audit/mccutcheon_hall/REVIEW_R2.md",
+    "audit/mccutcheon_hall/mccutcheon_r2_evidence.json",
+    "audit/mccutcheon_hall/mccutcheon_r2_validation.json",
+    "audit/mccutcheon_hall/mccutcheon_r2_hero.png",
+    "audit/mccutcheon_hall/mccutcheon_r1_footprint_diagnostic.png",
+    "audit/mccutcheon_hall/mccutcheon_r0_inspection.json"
+  ],
+  "sources": [
+    {
+      "title": "McCutcheon | Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/mccutcheon.html",
+      "use": "Identity, residence-hall program, 1963 opening, shared bathrooms/common spaces; room plan is approximate."
+    },
+    {
+      "title": "Purdue BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "use": "GIS footprint feature retained in project snapshot; bounds registration only, with documented limitations."
+    },
+    {
+      "title": "Student slain in Purdue University residence hall",
+      "url": "https://www.asumag.com/safety-security/article/21252186/student-slain-in-purdue-university-residence-hall",
+      "use": "Hall identity, 1963 opening, 730 residents, and a qualitative exterior photo; not treated as measured facade evidence."
+    }
+  ],
+  "limitations": [
+    "No direction-identified exterior elevation set or measured drawing was available in the supplied evidence package.",
+    "Asset height, floor spacing, and roof profile are explicitly unverified.",
+    "The independent review relied on the supplied saved hero and diagnostic render; it made no unsupported image-derived dimensions or facade claims.",
+    "No master-scene placement or GIS survey control was evaluated."
+  ],
+  "read_only_review": true,
+  "asset_edited": false,
+  "master_edited": false,
+  "shared_index_edited": false
+}

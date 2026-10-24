@@ -1,0 +1,67 @@
+{
+  "source": "USGS National Map 3DEP LiDAR point cloud",
+  "product_title": "USGS_LPC_IN_Indiana_Statewide_LiDAR_2017_B17_in2018_29951885_12",
+  "download_url": "https://rockyweb.usgs.gov/vdelivery/Datasets/Staged/Elevation/LPC/Projects/IN_Indiana_Statewide_LiDAR_2017_B17/IN_Statewide_Opt2_B2_2017/LAZ/USGS_LPC_IN_Indiana_Statewide_LiDAR_2017_B17_in2018_29951885_12.laz",
+  "metadata_url": "https://thor-f5.er.usgs.gov/ngtoc/metadata/waf/elevation/lidar_point_cloud/laz/IN_Statewide_Opt2_B2_2017/USGS_LPC_IN_Indiana_Statewide_LiDAR_2017_B17_in2018_29951885_12.xml",
+  "acquisition_period": [
+    "2017-03-22",
+    "2018-04-26"
+  ],
+  "publication_date": "2021-01-18",
+  "retrieved_utc": "2026-10-24T19:25:44.817354+00:00",
+  "input_size_bytes": 47788284,
+  "input_sha256": "c1ff5b93e75421f062dced6b5a0086f8ab146cdb63f3c2067d645f9b94aab7c3",
+  "source_crs_wkt": "COMPOUNDCRS[\"NAD83(HARN) / Indiana West (ftUS) + NAVD88 height - Geoid12B (ftUS)\",BOUNDCRS[SOURCECRS[PROJCRS[\"NAD83(HARN) / Indiana West (ftUS)\",BASEGEOGCRS[\"NAD83(HARN)\",DATUM[\"NAD83 (High Accuracy Reference Network)\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4152]],CONVERSION[\"unnamed\",METHOD[\"Transverse Mercator\",ID[\"EPSG\",9807]],PARAMETER[\"Latitude of natural origin\",37.5,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8801]],PARAMETER[\"Longitude of natural origin\",-87.0833333333333,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"Scale factor at natural origin\",0.999966667,SCALEUNIT[\"unity\",1],ID[\"EPSG\",8805]],PARAMETER[\"False easting\",2952750,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",820208.333,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"x\",east,ORDER[1],LENGTHUNIT[\"US survey foot\",0.304800609601219]],AXIS[\"y\",north,ORDER[2],LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",2968]]],TARGETCRS[GEOGCRS[\"WGS 84\",DATUM[\"World Geodetic System 1984\",ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"latitude\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"longitude\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4326]]],ABRIDGEDTRANSFORMATION[\"Transformation from NAD83(HARN) to WGS84\",METHOD[\"Position Vector transformation (geog2D domain)\",ID[\"EPSG\",9606]],PARAMETER[\"X-axis translation\",0,ID[\"EPSG\",8605]],PARAMETER[\"Y-axis translation\",0,ID[\"EPSG\",8606]],PARAMETER[\"Z-axis translation\",0,ID[\"EPSG\",8607]],PARAMETER[\"X-axis rotation\",0,ID[\"EPSG\",8608]],PARAMETER[\"Y-axis rotation\",0,ID[\"EPSG\",8609]],PARAMETER[\"Z-axis rotation\",0,ID[\"EPSG\",8610]],PARAMETER[\"Scale difference\",1,ID[\"EPSG\",8611]]]],VERTCRS[\"NAVD88 height (ftUS)\",VDATUM[\"North American Vertical Datum 1988\"],CS[vertical,1],AXIS[\"gravity-related height\",up,LENGTHUNIT[\"US survey foot\",0.304800609601219]],GEOIDMODEL[\"GEOID12B\"],ID[\"EPSG\",6360]]]",
+  "horizontal_axis_unit": "US survey foot",
+  "vertical_unit_from_las_crs": "US survey foot",
+  "vertical_accuracy_in_product_metadata": "N/A",
+  "las_classification_histogram_in_building_bbox_plus_buffer": {
+    "1": 50302,
+    "2": 27463,
+    "7": 18
+  },
+  "roof_candidate_count_after_15m_height_filter": 11588,
+  "roof_return_selection": "Class 1 (unclassified; this tile contains no class-6 building returns), within official FID57 polygon and >=15 m above nearby ground median. Vegetation contamination remains possible.",
+  "filter_geometry": "Official GIS FID 57 polygon, transformed from EPSG:4326 using LAS-header CRS; nearby class-2 ground points from a 12 m exterior buffer used as local ground baseline.",
+  "classification_counts": {
+    "inside_all": 34653,
+    "inside_class1_candidate": 32208,
+    "outside_ground_class2": 20092
+  },
+  "ground_class2_z_median_m": 189.09829819659637,
+  "class1_candidate_z_quantiles_m_after_height_filter": {
+    "50": 209.9801879603759,
+    "90": 214.97891795783593,
+    "95": 215.0276860553721,
+    "98": 215.07115062230125,
+    "99": 215.12217424434846,
+    "99.5": 215.15285242570485,
+    "99.9": 215.19048920497838
+  },
+  "class1_candidate_max_z_m": 215.25933451866902,
+  "class1_candidate_count_by_height_above_ground_threshold_m": {
+    "20": 11194,
+    "24": 2659,
+    "26": 141,
+    "27": 0,
+    "28": 0,
+    "29": 0,
+    "30": 0
+  },
+  "estimated_height_above_nearby_ground_m": {
+    "50": 20.881889763779526,
+    "90": 25.880619761239558,
+    "95": 25.929387858775726,
+    "98": 25.972852425704872,
+    "99": 26.023876047752083,
+    "99.5": 26.054554229108476,
+    "99.9": 26.092191008382002
+  },
+  "limitations": [
+    "This LAZ tile contains no class-6 building-class points; roof candidates use class-1 unclassified returns and can include vegetation.",
+    "Point cloud is from 2017-2018, not a current as-built survey.",
+    "USGS product metadata lists vertical accuracy as N/A; the height is a classified point-cloud estimate, not surveyed elevation.",
+    "Roof quantiles may include mechanical equipment; compare several quantiles and imagery before revising the modeled roof.",
+    "Ground reference uses nearby class-2 points within a 12 m buffer and may vary with local grading."
+  ]
+}
