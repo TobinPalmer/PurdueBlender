@@ -17,7 +17,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Frieda Parker Hall | [frieda_parker_hall.blend](buildings/frieda_parker_hall.blend) | 539 |
 | Hansen Life Sciences | [hansen_life_sciences.blend](buildings/hansen_life_sciences.blend) | 816 |
 | Hicks Library | [hicks_library.blend](buildings/hicks_library.blend) | 250 |
-| Hovde Hall | [hovde_hall.blend](buildings/hovde_hall.blend) | 717 |
+| Hovde Hall | [hovde_hall.blend](buildings/hovde_hall.blend) | 760 |
 | Knoy Hall | [knoy_hall.blend](buildings/knoy_hall.blend) | 62 |
 | Krannert Building | [krannert_building.blend](buildings/krannert_building.blend) | 407 |
 | Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 508 |
@@ -67,7 +67,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](buildings/hall_for_discovery_and_learning_research.blend) | 396 |
 | Heine Pharmacy | [heine_pharmacy.blend](buildings/heine_pharmacy.blend) | 133 |
 | Horticulture Building | [horticulture_building.blend](buildings/horticulture_building.blend) | 728 |
-| Krach Leadership Center | [krach_leadership_center.blend](buildings/krach_leadership_center.blend) | 108 |
+| Krach Leadership Center | [krach_leadership_center.blend](buildings/krach_leadership_center.blend) | 36 |
 | Lambert Fieldhouse | [lambert_fieldhouse.blend](buildings/lambert_fieldhouse.blend) | 339 |
 | Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](buildings/life_science_plant_and_soils_laboratory.blend) | 502 |
 | Lyles-Porter Hall | [lyles_porter_hall.blend](buildings/lyles_porter_hall.blend) | 11 |

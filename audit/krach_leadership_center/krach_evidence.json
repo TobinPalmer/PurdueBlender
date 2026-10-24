@@ -1,0 +1,768 @@
+{
+  "building": "Krach Leadership Center",
+  "building_id": "krach_leadership_center",
+  "manifest_id": "massing_krach_leadership_center_krch_debcdf8",
+  "collection": "Asset_krach_leadership_center",
+  "asset_file": "modular/buildings/krach_leadership_center.blend",
+  "retrieved_date": "2026-10-24",
+  "gis": {
+    "provider": "Purdue University Campus BuildingShapesZip4 ArcGIS FeatureServer layer 0",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 902,
+    "name": "Krach Leadership Center (KRCH)",
+    "source_crs": "EPSG:4326 query response; underlying service spatial reference documented as 102100/3857",
+    "source_date": "not supplied",
+    "raw_snapshot": "audit/krach_leadership_center/gis_feature_snapshot.json",
+    "measurement_method": "GIS ring transformed by project approximate local geographic conversion; duplicate/collinear vertices simplified at 0.25 m tolerance; origin is source footprint bbox center",
+    "transform": "X=(longitude+86.9137)*111412.84*cos(40.4274 deg); Y=(latitude-40.4274)*111040; meters, approximate local frame, not survey CRS",
+    "placement_origin_xy_m": [
+      -639.8641814249419,
+      22.387328434462006
+    ],
+    "footprint_bounds_local_m": [
+      [
+        -35.19456,
+        -14.14485
+      ],
+      [
+        35.199999,
+        14.153132
+      ]
+    ],
+    "uncertainty": "Source date and survey tolerance absent; original GIS ring/wall association not independently surveyed."
+  },
+  "sources": [
+    {
+      "provider": "Sasaki, project architect",
+      "url": "https://www.sasaki.com/projects/purdue-university-krach-leadership-center/",
+      "retrieved": "2026-10-24",
+      "source_date": "Project completed July 2014 (page project fact)",
+      "supports": [
+        "four stories",
+        "brick with limestone accents",
+        "first-floor Main Street transparent public/social space",
+        "85,000 square feet"
+      ],
+      "snapshot": "audit/krach_leadership_center/sasaki_project.html"
+    },
+    {
+      "provider": "Purdue Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/krch/",
+      "retrieved": "2026-10-24",
+      "source_date": "page revision 2026-04-02",
+      "supports": [
+        "basement plus first through fourth floors",
+        "first-floor Amazon store and staff offices",
+        "upper-floor student support programs"
+      ],
+      "snapshot": "audit/krach_leadership_center/purdue_emergency_plan.html"
+    },
+    {
+      "provider": "Purdue Stories",
+      "url": "https://stories.purdue.edu/the-top-10-best-study-locations-at-purdue/",
+      "retrieved": "2026-10-24",
+      "source_date": "2022-03-16",
+      "supports": [
+        "published view of students using multilevel interior stairways"
+      ],
+      "snapshot": "audit/krach_leadership_center/purdue_study_locations.html"
+    },
+    {
+      "provider": "McGrory Glass project portfolio; glass fabricator",
+      "url": "https://mcgrory.com/projects/purdue-university/",
+      "retrieved": "2026-10-24",
+      "source_date": "not supplied",
+      "supports": [
+        "translucent etched laminated glass railings in main lobby and adjacent areas"
+      ],
+      "snapshot": "audit/krach_leadership_center/mcgrory_glass_project.html"
+    },
+    {
+      "provider": "Purdue University Newsroom archive",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2014/Q3/purdue-to-dedicate-students-krach-leadership-center-.html",
+      "retrieved": "2026-10-24",
+      "source_date": "2014",
+      "supports": [
+        "building identity and dedication context"
+      ],
+      "snapshot": "Referenced in prior building evidence; raw page not newly captured."
+    },
+    {
+      "supports": [
+        "partial basement",
+        "four floors",
+        "mechanical penthouse",
+        "85,000 GSF"
+      ],
+      "provider": "Fink Roberts & Petrie, project engineer",
+      "snapshot": "audit/krach_leadership_center/frp_krach_project.html",
+      "source_date": "Project completion listed as 2013; completion year differs from architect page (2014).",
+      "url": "https://frpinc.com/projects/krach-leadership-center/",
+      "retrieved": "2026-10-24",
+      "uncertainty": "No penthouse dimensions/location or measured elevations provided."
+    },
+    {
+      "supports": [
+        "brick with limestone accents",
+        "first-floor Main Street",
+        "four program floors",
+        "Sasaki/Scholer team"
+      ],
+      "provider": "Architect Magazine project gallery",
+      "snapshot": "audit/krach_leadership_center/architect_magazine_source_snapshot.json",
+      "source_date": "Published 2015-10-29; lists 2014 completion.",
+      "url": "https://www.architectmagazine.com/project-gallery/krach-leadership-center-third-street-suites_o/",
+      "retrieved": "2026-10-24",
+      "uncertainty": "Direct HTML retrieval was blocked by anti-bot challenge; details summarized from public indexed page."
+    }
+  ],
+  "modeled_interpretation": {
+    "above_grade_stories": 4,
+    "basement": "documented accessible level; partial below-grade extent not verified",
+    "current_model_height_m": "0 to 15.6 m shell top relative local model; estimated, not surveyed",
+    "local_bounds_xy_m": [
+      [
+        -35.19456,
+        -14.14485
+      ],
+      [
+        35.199999,
+        14.153132
+      ]
+    ],
+    "roof": "flat cap represented; exact parapet/mechanical penthouse dimensions unverified",
+    "interior": "schematic only; no architectural room plan claimed",
+    "materials": "procedural brick, limestone/painted metal, glazing, terrazzo and cast-stone stair material; packed/no external files"
+  },
+  "revision": {
+    "date": "2026-10-24",
+    "edits": [
+      "Added missing fourth-floor schematic plate at Z=14.68 m, traced from the GIS footprint ring; elevation extrapolated from existing 3.90 m floor rhythm.",
+      "Added 88 schematic stair treads, four half-flight landings, floor landings, etched-glass guard panels and dark handrail through the four-story lobby zone.",
+      "Cut central front facade behind the existing curtainwall to expose the documented transparent Main Street/lobby zone while preserving the external footprint; opening width is interpreted from the model facade image.",
+      "Adjusted local glazing materials for greater transparency so the lobby/stair can read through the curtainwall."
+    ],
+    "uncertainty": [
+      "No architectural plans or measured elevations were available; fourth-floor elevation and stair dimensions/location are inferred.",
+      "Purdue/Sasaki floor counts agree, but area values in prior sources differ (81,500 vs 85,000 sq ft); area not used as a geometry control.",
+      "Interior layout, exact stair arrangement, glass tint, sill height, exact facade aperture width, landscape and entry fittings remain interpretive.",
+      "Google Street View was not used to derive interior dimensions."
+    ],
+    "campus_placement_modified": false,
+    "master_file_modified": false,
+    "shared_files_modified": false,
+    "notes": [
+      "Reviewed the official Sasaki corner exterior photo and Purdue Krach stairwell photo; replaced broad center-glass and generic full-width stripe cues with a corner multi-level glass bay, transparent Main Street storefront, repeated pale-surround upper windows, and an explicit named entrance.",
+      "Rebuilt the front shell as segmented facade panels around openings instead of a Boolean-cut wall; GIS exterior ring and source envelope bounds remain unchanged.",
+      "Added a source-informed, schematic 4-story switchback stair with 88 treads, four intermediate landings, pale warm tread material and translucent etched-glass gallery guards. A guard-coordinate error found during review was corrected; stair bounds are now -0.97 to 15.64 m.",
+      "Replaced five flat schematic floor plates with shallow GIS-outline slabs and a stairwell void at all levels; inset perimeter edges 0.28 m to keep floor slabs behind the masonry facade and remove coplanar striping.",
+      "Adjusted facade glazing to show the stair through the saved exterior view and produced a separate stairwell cutaway preview.",
+      "Added a source-backed pale limestone roof-edge fascia and coping aligned to the unchanged GIS roof perimeter; flat roof remains the documented photo silhouette.",
+      "Added a low mechanical penthouse volume after the engineer source confirmed the feature; its 9.2 x 4.8 x 1.92 m size and roof position are explicitly schematic because no elevation/roof plan is available.",
+      "Rebuilt stair routing so each half-flight lands on a shared intermediate or full-floor connector, with 32 handrail splines tracing flight and landing edges. Added connection rationale and schematic limits to object metadata.",
+      "Sasakis corner photograph observations are attached to the curtainwall, punched-window, storefront and entrance object metadata; window cadence/width remains image-interpreted and is not presented as measured."
+    ]
+  },
+  "validation": {
+    "saved_and_reopened": true,
+    "blender": "5.2.3 LTS",
+    "recursive_asset_collection_object_count": 37,
+    "new_objects": [
+      "KRCH documented fourth-floor slab | level +14.68m",
+      "KRCH open stair | 4-floor lobby flights and etched glass balustrade"
+    ],
+    "new_floor_slab_bounds_m": [
+      [
+        -35.19456,
+        -14.14485,
+        14.68
+      ],
+      [
+        35.199999,
+        14.153132,
+        14.68
+      ]
+    ],
+    "stair_bounds_m": [
+      [
+        -24.45,
+        -11.775,
+        -0.97
+      ],
+      [
+        -15.54,
+        -6.825,
+        15.66
+      ]
+    ],
+    "instance_transform": "Unchanged; geometry remains local and all new objects are linked below Asset_krach_leadership_center/Schematic_Interior",
+    "preview": "audit/krach_leadership_center/source_preview.png",
+    "sha256": "DF692BC9B41D581416E42C7F6EC6987023C5065AD12035C7CC8966CDAFD4933C",
+    "evaluator_status": "Round 1 independent score 7.0/10; fixes implemented; round 2 evaluation requested; no self-score.",
+    "shell_bounds_m": [
+      [
+        -35.19456,
+        -14.14485,
+        -1.0
+      ],
+      [
+        35.2,
+        14.15313,
+        15.6
+      ]
+    ],
+    "atrium_levels_m": [
+      -0.92,
+      2.98,
+      6.88,
+      10.78,
+      14.68
+    ],
+    "atrium_void_xy_m": [
+      [
+        -25.3,
+        -12.9
+      ],
+      [
+        -13.6,
+        -5.7
+      ]
+    ],
+    "atrium_ray_tests": "At each of the five levels a downward ray at (-19.45,-9.3) passes through the atrium void; a ray at (0,0) hits the floor slab.",
+    "preview_path": "audit/krach_leadership_center/source_preview.png",
+    "interior_cutaway_preview": "audit/krach_leadership_center/lobby_stair_preview.png",
+    "source_photos": [
+      "audit/krach_leadership_center/sasaki_krach_corner_view_reference.jpg",
+      "audit/krach_leadership_center/purdue_krach_stairwell_reference.jpg"
+    ],
+    "no_missing_external_images": true,
+    "source_sha256_after_save_and_reopen": "3DA6CF75C9A3BD8645EC1E46DA183787F70C2FDDA74EA354CD2ACADD850FC9D8",
+    "google_streetview_used": false,
+    "master_placement_modified": false,
+    "master_blend_modified": false,
+    "shared_files_modified": false,
+    "roof_penthouse_dimensions_m": [
+      9.2,
+      4.8,
+      1.92
+    ],
+    "roof_parapet_fascia_height_m": 0.58,
+    "exterior_preview": "audit/krach_leadership_center/source_preview.png"
+  },
+  "visual_references": [
+    {
+      "source_date": "2014 project photography",
+      "retrieved_date": "2026-10-24",
+      "url": "https://www.sasaki.com/wp-content/uploads/2019/10/01-Krach_CornerView_2014_8789-1800x1200.jpg",
+      "snapshot": "audit/krach_leadership_center/sasaki_krach_corner_view_reference.jpg",
+      "observed": [
+        "four-story red-brown brick facade",
+        "pale stone window surrounds and parapet",
+        "full-height glazed corner bay",
+        "transparent first-floor lobby glazing and street entrance"
+      ],
+      "provider": "Sasaki, architect, project corner photograph"
+    },
+    {
+      "source_date": "published 2022-03-16",
+      "retrieved_date": "2026-10-24",
+      "url": "https://stories.purdue.edu/app/uploads/2022/03/CFJ_Krach-Stairwell-Comp-Flattened_FullRes-scaled.jpg",
+      "snapshot": "audit/krach_leadership_center/purdue_krach_stairwell_reference.jpg",
+      "observed": [
+        "multi-level open stair flights and intermediate landings",
+        "large atrium opening between gallery floors",
+        "continuous glazing along lobby perimeter"
+      ],
+      "provider": "Purdue Stories, Krach stairwell photo"
+    },
+    {
+      "source_date": "2014",
+      "retrieved_date": "2026-10-24",
+      "snapshot": "audit/krach_leadership_center/purdue_krach_dedication_reference.jpg",
+      "url": "https://www.purdue.edu/uns/images/2014/krach-dedication.jpg",
+      "provider": "Purdue University Newsroom, dedication photograph"
+    }
+  ],
+  "review_rounds": [
+    {
+      "max_score": 10,
+      "score": 7.0,
+      "status": "independent grade below threshold",
+      "actions": [
+        "used Purdue stairwell and Sasaki exterior photos",
+        "cut stair voids through five floor plates and checked them",
+        "added corner bay, storefront, window surrounds, and named entry"
+      ],
+      "findings": [
+        "make multilevel lobby/stair visible through saved glazing/views",
+        "verify floor openings around stair using photo evidence",
+        "add identifiable facade/entrance references"
+      ]
+    },
+    {
+      "max_score": 10,
+      "score": 7.5,
+      "status": "independent grade below threshold",
+      "actions": [
+        "added photo-backed roof-edge fascia and engineer-documented schematic penthouse",
+        "tagged bay and window geometry with source URL and visual observation",
+        "rebuilt stair as connected eight flights, nine landings, and 32 handrail splines; retained explicit schematic dimensions"
+      ],
+      "findings": [
+        "improve roof detail and window/bay placement with identifiable references",
+        "demonstrate stair continuity/landing connections from interior references or bound schematic claim"
+      ]
+    },
+    {
+      "max_score": 10,
+      "score": null,
+      "status": "fresh independent grader pending"
+    }
+  ],
+  "uncertainty": [
+    "GIS source has no survey date or tolerance; exact wall-to-footprint association remains unverified.",
+    "The corner-bay/facade openings and window cadence are interpreted from architect imagery; dimensions and exact compass-facing entrance alignment are not surveyed.",
+    "Gallery void and stair plan are schematic, based on published interior photo and documented multilevel etched-glass rails; dimensions/flight arrangement not measured.",
+    "Story-level elevations remain estimated from the pre-existing 3.90 m rhythm; 15.6 m shell top is not survey height.",
+    "Building area differs between published sources (81,500 vs 85,000 sq ft); area is not used as geometry control.",
+    "Mechanical penthouse presence is documented by the project engineer; exact height, roof footprint, orientation, and enclosure material are not shown.",
+    "Parapet fascia style is visible in the Sasaki exterior photo; the modeled 0.58 m fascia height is a visual estimate.",
+    "Completion year sources conflict: Fink Roberts & Petrie lists 2013; architect source and Purdue references list 2014."
+  ],
+  "model_placement": {
+    "observations": [
+      "south/Third Street elevation has a repeated narrow upper-window rhythm",
+      "tall curtainwall bay occupies the near facade corner",
+      "ground-level storefront/lobby wraps into that public frontage",
+      "pale roof-edge fascia/parapet appears above brick elevation"
+    ],
+    "uncertainty": "The photo is perspective and lacks a calibrated scale; local window positions, widths and parapet height are visual interpretations.",
+    "mapped_components": [
+      "KRCH | 4-story corner lobby curtainwall panes",
+      "KRCH | limestone punched-window reveals",
+      "KRCH | transparent Main Street ground-floor storefront",
+      "KRCH | photo-backed pale limestone roof-edge fascia"
+    ],
+    "reference_image": "audit/krach_leadership_center/sasaki_krach_corner_view_reference.jpg"
+  },
+  "stair_continuity": {
+    "landings": 9,
+    "flights": 8,
+    "source_url": "https://stories.purdue.edu/app/uploads/2022/03/CFJ_Krach-Stairwell-Comp-Flattened_FullRes-scaled.jpg",
+    "uncertainty": "This demonstrates modeled connectivity, not exact as-built stair layout; plan position, dimensions, risers and landing sizes remain schematic.",
+    "reference_image": "audit/krach_leadership_center/purdue_krach_stairwell_reference.jpg",
+    "handrail_splines": 32,
+    "floor_opening_ray_test": "Each flight terminates at a modeled intermediate/full-floor connector landing; the landing connector spans the upper flight endpoint to the next lower-flight start. All five floor slab voids were ray-tested."
+  },
+  "facade_revision_round4": {
+    "date": "2026-10-24",
+    "status": "saved, reopened, rendered, and awaiting independent review",
+    "reference": {
+      "provider": "Sasaki, project architect",
+      "url": "https://www.sasaki.com/wp-content/uploads/2019/10/01-Krach_CornerView_2014_8789-1800x1200.jpg",
+      "snapshot": "audit/krach_leadership_center/sasaki_krach_corner_view_reference.jpg",
+      "comparison": "Same corner/wing ordering used for saved source_preview.png and sasaki_facade_comparison_round4.png; geometry measured against Purdue GIS ring, not estimated from image pixels."
+    },
+    "geometry_changes": [
+      {
+        "feature": "four-story glazed corner bay",
+        "basis": "Aligned to the GIS diagonal inset joining (-16.3208,-14.0573) and (0.9931,-13.1601) in local meters; span 17.337 m, orientation 2.966 degrees. The Sasaki photo shows a full-height, pale-framed glass bay at the same west-wing / Main Street-wing transition.",
+        "uncertainty": "Pane divisions, frame widths, and exact elevation are photo interpretation, not measured drawings."
+      },
+      {
+        "feature": "Main Street storefront",
+        "basis": "Moved to the distinct east-wing south wall from x=1.05 to 31.20 m; no longer incorrectly covers the recessed bay transition. Sasaki describes first-floor Main Street as transparent public/social space.",
+        "uncertainty": "Exact storefront extents and mullion cadence estimated from photo."
+      },
+      {
+        "feature": "upper punched windows",
+        "basis": "Clear aperture dimensions 0.82 x 1.92 m; vertical proportions and west/east bay rhythm follow Sasaki image and GIS wall segments. West centers [-32.1,-27.6,-23.1,-18.6] m; east centers [4.0,9.3,14.6,19.9,25.2,30.0] m.",
+        "uncertainty": "Individual opening dimensions and repeated centers are photo-estimated; no elevations or measured facade schedules located."
+      },
+      {
+        "feature": "lobby stair alignment",
+        "basis": "Existing schematic stair and stairwell opening translated +11.75 m east to sit behind the aligned glass bay; flight count and connections retained. Five schematic slab apertures regenerated at that location; floor plates inset 1.5% to remove visible edge overlaps.",
+        "uncertainty": "Location, plan, dimensions and story elevations remain schematic; story rhythm is estimated, not surveyed."
+      }
+    ],
+    "roof_and_height_limits": {
+      "roof_edge": "Thin pale fascia is supported by the Sasaki corner photo; its 0.58 m modeled height remains photo-estimated.",
+      "mechanical_penthouse": "Fink Roberts & Petrie confirms a mechanical penthouse exists. Its modeled size (9.2 x 4.8 x 1.92 m), shape, location, and top elevation remain explicitly schematic because the source gives no dimensions or plan.",
+      "story_heights": "Four stories are documented; modeled floor-to-floor values and shell top height remain estimates."
+    },
+    "verification": {
+      "blender_version": "5.2.3 LTS",
+      "reopened_asset": "modular/buildings/krach_leadership_center.blend",
+      "sha256": "EF5DADA27656AC9CA10A3D90F06CBBB7082FD5F9E7BF54C43C8F319E3AF6393B",
+      "checks": [
+        "Asset_krach_leadership_center collection loads with expected objects.",
+        "Simplified GIS shell bounds unchanged.",
+        "All five lobby void ray checks clear while adjacent floor samples remain present.",
+        "Eight stair flights, nine landings, and 32 continuous handrail splines retained.",
+        "No missing external image dependencies."
+      ],
+      "previews": [
+        "audit/krach_leadership_center/source_preview.png",
+        "audit/krach_leadership_center/lobby_stair_preview.png",
+        "audit/krach_leadership_center/sasaki_facade_comparison_round4.png"
+      ],
+      "validation_script": "audit/krach_leadership_center/validate_krach.py",
+      "render_script": "audit/krach_leadership_center/reopen_render_v2.py"
+    }
+  },
+  "facade_revision_round5": {
+    "date": "2026-10-24",
+    "review_context": {
+      "previous_independent_score": "7.1/10",
+      "findings": [
+        "glazed bay too wide and centered on long elevation",
+        "storefront/window rhythm too simplified",
+        "interior cutaway noisy"
+      ],
+      "response": "Narrowed and moved the bay to the west endpoint of the GIS diagonal; made the ground-level glass continuous to Main Street; retained only photo-supported upper-window rhythm; replaced the cutaway preview with a clean stair-only view."
+    },
+    "status": "saved, reopened, rerendered, and awaiting fresh independent grade",
+    "reference": {
+      "provider": "Sasaki, project architect",
+      "url": "https://www.sasaki.com/wp-content/uploads/2019/10/01-Krach_CornerView_2014_8789-1800x1200.jpg",
+      "snapshot": "audit/krach_leadership_center/sasaki_krach_corner_view_reference.jpg",
+      "comparison": "Same corner-facing composition; side-by-side file sasaki_facade_comparison_round5.png. Image is a visual comparison only; dimensions below come from GIS or remain estimates."
+    },
+    "geometry_changes": [
+      {
+        "feature": "upper corner glazing bay",
+        "basis": "Moved from the center/full length of the GIS diagonal to the west corner transition. It now occupies t=0.0..0.5 of the diagonal edge from (-16.3208,-14.0573) to (0.9931,-13.1601) in local meters. Modeled bay length is 8.669 m, orientation 2.966 degrees.",
+        "uncertainty": "Width is estimated from the Sasaki photo, not a measured elevation. The remaining upper connector stays brick."
+      },
+      {
+        "feature": "ground-floor storefront continuity",
+        "basis": "Added a transparent ground-level connector from the narrow bay across the remaining GIS diagonal, meeting the east-wing Main Street storefront at x=1.05 m. The separate east storefront continues to x=31.20 m. Removed two floating signage text objects that obscured the glazing.",
+        "uncertainty": "Exact storefront limits and mullion spacing remain photo-estimated."
+      },
+      {
+        "feature": "upper punched-window rhythm",
+        "basis": "Retained narrow/tall apertures and four west-wing / six east-wing bays; no new window cadence was invented on the residual diagonal. Sasaki photo supports a repeated vertical window rhythm on the brick wings.",
+        "uncertainty": "Clear aperture (0.82 x 1.92 m), centers and reveals are approximate interpretations; measured elevations were unavailable."
+      },
+      {
+        "feature": "stair behind glazing",
+        "basis": "Moved the existing schematic stair to the narrowed bay center and scaled its X span to 0.92 so the flights read through the glass. Five schematic floor openings follow the revised center. Stair/landing connection count and elevations retained.",
+        "uncertainty": "Exact stair plan, size, floor elevations and void size remain schematic, not surveyed."
+      }
+    ],
+    "cutaway_preview": {
+      "file": "audit/krach_leadership_center/lobby_stair_preview.png",
+      "method": "Camera-matched source library reopened in Blender; preview isolates stair treads and landings on a neutral background. The rail-glass polygons are omitted only from this explanatory render to avoid dither noise; the saved source asset retains the glass guards and rail objects.",
+      "status": "all switchback flights and landings visible"
+    },
+    "roof_and_height_limits": {
+      "roof_edge": "Pale edge fascia remains supported by Sasaki corner photograph; its height is photo-estimated.",
+      "mechanical_penthouse": "Fink Roberts & Petrie confirms presence only; size, shape, location and elevation remain schematic.",
+      "story_heights": "Four above-grade floors documented; story heights and shell top elevation remain estimates."
+    },
+    "verification": {
+      "blender_version": "5.2.3 LTS",
+      "reopened_asset": "modular/buildings/krach_leadership_center.blend",
+      "sha256": "5C6F072FBCDD5D1D4D89E85DA163BD03A222E5D8AD273C17583F532AFDDA5796",
+      "checks": [
+        "Expected asset collection and required objects load.",
+        "GIS shell bounds unchanged.",
+        "Five stairwell floor void ray tests pass; adjacent floor samples are present.",
+        "Eight stair flights, nine landings and 32 handrail splines remain.",
+        "No missing external image dependencies."
+      ],
+      "previews": [
+        "audit/krach_leadership_center/source_preview.png",
+        "audit/krach_leadership_center/lobby_stair_preview.png",
+        "audit/krach_leadership_center/sasaki_facade_comparison_round5.png"
+      ],
+      "validation_script": "audit/krach_leadership_center/validate_krach.py",
+      "render_script": "audit/krach_leadership_center/reopen_render_v2.py"
+    }
+  },
+  "facade_revision_round6": {
+    "date": "2026-10-24",
+    "review_context": {
+      "previous_independent_score": "7.6/10",
+      "finding": "box_mesh adds its origin after rotating local vertices; glazing pane centers already included an origin-relative offset, shifting the bay and connector east by approximately 4.33 m. The stair near x=-11.99 m was consequently off-center from the glazing.",
+      "response": "Recentred every bay and connector pane/frame center around its supplied local origin before applying origin translation. Added build-time coordinate assertions to prevent another double-origin displacement."
+    },
+    "geometry_verification": {
+      "gis_diagonal_endpoints_local_m": [
+        [
+          -16.3207893,
+          -14.0572958
+        ],
+        [
+          0.9931201,
+          -13.1601419
+        ]
+      ],
+      "narrow_glass_bay_endpoints_local_m": [
+        [
+          -16.3207893,
+          -14.0572958
+        ],
+        [
+          -7.6638346,
+          -13.6087189
+        ]
+      ],
+      "bay_span_m": 8.6685688,
+      "bay_frame_mesh_bounds_local_m": [
+        [
+          -16.518,
+          -7.449
+        ],
+        [
+          -14.357,
+          -13.648
+        ],
+        [
+          -0.175,
+          15.375
+        ]
+      ],
+      "bay_pane_mesh_bounds_local_m": [
+        [
+          -16.209,
+          -7.768
+        ],
+        [
+          -14.154,
+          -13.652
+        ],
+        [
+          0.075,
+          15.125
+        ]
+      ],
+      "storefront_connector_mesh_bounds_local_m": [
+        [
+          -7.612,
+          0.948
+        ],
+        [
+          -13.708,
+          -13.2
+        ],
+        [
+          0.04,
+          2.92
+        ]
+      ],
+      "stair_clear_bounds_local_m": [
+        [
+          -16.091,
+          -7.894
+        ],
+        [
+          -11.775,
+          -6.825
+        ],
+        [
+          -0.97,
+          15.66
+        ]
+      ],
+      "interpretation": "Frame overhang is approximately 0.20 m around the GIS-defined half-edge bay. The glass pane and stair ranges now overlap around the same bay midpoint x=-11.992 m. Connector spans the remaining diagonal to the Main Street wing."
+    },
+    "view_comparison": {
+      "reference": "Sasaki project architect corner photograph, audit/krach_leadership_center/sasaki_krach_corner_view_reference.jpg",
+      "render": "audit/krach_leadership_center/source_preview.png",
+      "side_by_side": "audit/krach_leadership_center/sasaki_facade_comparison_round6.png",
+      "camera_eye_local_m": [
+        -85,
+        -50,
+        11
+      ],
+      "camera_target_local_m": [
+        -4,
+        -3,
+        7.4
+      ],
+      "lens_mm": 58,
+      "limitation": "Camera reproduces the southwest oblique corner/wing order, not calibrated perspective or exact photographic camera intrinsics."
+    },
+    "verification": {
+      "blender_version": "5.2.3 LTS",
+      "saved_reopened_asset": "modular/buildings/krach_leadership_center.blend",
+      "sha256": "106F8DAACC121AD5C8B274C7F05B85CF234DC6940C77CA066FB14BBFDF06D019",
+      "checks": [
+        "Krach source asset reopened successfully in Blender 5.2.3.",
+        "Build-time assertions confirm glazing bounds remain centered at GIS corner bay and connector bounds centered at connector midpoint.",
+        "GIS shell extents unchanged.",
+        "All five floor void ray checks pass; adjacent floor samples remain present.",
+        "Eight stair flights, nine landings, and 32 handrail splines retained in saved source.",
+        "No missing external image dependencies.",
+        "Exterior and stair cutaway renders refreshed from reopened source."
+      ],
+      "validation_script": "audit/krach_leadership_center/validate_krach.py",
+      "build_script": "audit/krach_leadership_center/facade_match_revision_round4.py",
+      "render_script": "audit/krach_leadership_center/reopen_render_v2.py",
+      "comparison_composer": "audit/krach_leadership_center/compose_sasaki_comparison_round6.ps1"
+    },
+    "uncertainty": [
+      "GIS gives the simplified connector geometry; the exact glazing subdivision and facade projection remain visual interpretations.",
+      "Story heights, penthouse dimensions/location, interior stair layout and entrance extents remain schematic or photo-estimated."
+    ],
+    "status": "saved, reopened, validated, rerendered, comparison refreshed; ready for fresh independent grade"
+  },
+  "facade_revision_round7": {
+    "date": "2026-10-24",
+    "review_context": {
+      "previous_independent_score": "7.2/10",
+      "findings": [
+        "Sasaki's near/end elevation has three repeated upper window rows, which were absent.",
+        "The tall bay belongs at the outside corner, not the mid-building GIS notch.",
+        "The facade has three upper window levels above a continuous transparent public ground floor."
+      ],
+      "response": "Moved the full-height bay to the GIS southwest outer corner, placed the stair and floor openings behind it, cut three upper rows into the west end wall, removed ground-floor punched windows, and extended storefront glazing continuously along the south frontage."
+    },
+    "source_reference": {
+      "provider": "Sasaki, project architect",
+      "url": "https://www.sasaki.com/wp-content/uploads/2019/10/01-Krach_CornerView_2014_8789-1800x1200.jpg",
+      "snapshot": "audit/krach_leadership_center/sasaki_krach_corner_view_reference.jpg",
+      "supports": [
+        "three upper window rows on near/end facade",
+        "tall framed glazing at the near outside corner",
+        "transparent ground-floor public frontage"
+      ],
+      "measurement_limit": "Photo perspective is not calibrated; window spacing, width and floor elevations remain visual estimates."
+    },
+    "geometry": {
+      "southwest_outer_corner_local_m": [
+        -35.130669,
+        -13.895864
+      ],
+      "corner_bay_endpoint_local_m": [
+        -26.462418,
+        -13.970257
+      ],
+      "corner_bay_width_m": 8.66857,
+      "bay_yaw_degrees": -0.4917,
+      "interior_stair_center_xy_m": [
+        -30.796543,
+        -9.3
+      ],
+      "stair_floor_void_size_m": [
+        8.8,
+        7.2
+      ],
+      "end_facade_windows": {
+        "upper_levels": 3,
+        "bays_per_level": 4,
+        "wall_apertures_cut": true
+      },
+      "long_facade_windows": {
+        "upper_levels": 3,
+        "bays": 8,
+        "omitted_behind_corner_glazing": 2
+      },
+      "public_storefront": {
+        "panes": 16,
+        "extends_from_corner_bay_to_east_wing": true,
+        "ground_floor_punched_windows_removed": true
+      }
+    },
+    "verification": {
+      "blender_version": "5.2.3 LTS",
+      "saved_reopened_source": "modular/buildings/krach_leadership_center.blend",
+      "sha256": "BDE08429342FD31EE3167D26F727E6BEDF6D94955031E0973DD2F8904BAA4316",
+      "checks": [
+        "Krach source reopened and rebuilt in Blender 5.2.3.",
+        "GIS exterior shell bounds unchanged.",
+        "Four window bays in each of three upper rows exist on the end elevation with matching mesh openings.",
+        "Long elevations have three upper rows and omit two window bays hidden by the corner glass.",
+        "Five floor opening ray tests pass at the shifted stair center; adjacent floor samples remain present.",
+        "Eight stair flights, nine landings, and 32 guard/handrail splines retained.",
+        "No missing external image dependencies.",
+        "Exterior and lobby cutaway rerendered from reopened source."
+      ],
+      "preview": "audit/krach_leadership_center/source_preview.png",
+      "cutaway_preview": "audit/krach_leadership_center/lobby_stair_preview.png",
+      "same_angle_comparison": "audit/krach_leadership_center/sasaki_facade_comparison_round7.png",
+      "validation_script": "audit/krach_leadership_center/validate_krach.py",
+      "build_script": "audit/krach_leadership_center/facade_match_revision_round4.py",
+      "stair_script": "audit/krach_leadership_center/align_lobby_to_outer_corner_round7.py"
+    },
+    "uncertainty": [
+      "The official GIS footprint supports the southwest corner and wall outline; bay width, mullion rhythm, window dimensions, and entrance measurements remain photographic interpretations.",
+      "Interior rooms, stair plan, exact story elevations, and penthouse footprint/height remain schematic or estimated."
+    ],
+    "status": "saved, reopened, validated, rerendered; awaiting fresh independent grade"
+  },
+  "facade_revision_round8": {
+    "date": "2026-10-24",
+    "review_context": {
+      "previous_independent_score": "7.8/10",
+      "findings": [
+        "Sasaki's long south elevation shows a more continuous window rhythm; the model had a large blank span.",
+        "Corner glazing frame read heavy.",
+        "Isolated lobby stair preview was flat gray and unreadable."
+      ],
+      "response": "Added four intermediate window bays to continue the three-level cadence across the blank span, positioned on the shallow GIS diagonal. Narrowed curtainwall frame members. Recentered the isolated preview camera on the moved corner stair, added key/fill lighting and a contrasting ground plane."
+    },
+    "geometry_and_material_changes": {
+      "south_window_centers_local_x_m": [
+        -23.1,
+        -18.6,
+        -14.1,
+        -9.6,
+        -5.1,
+        -0.6,
+        4.0,
+        9.3,
+        14.6,
+        19.9,
+        25.2,
+        30.0
+      ],
+      "south_upper_window_count": 36,
+      "west_end_upper_window_count": 12,
+      "levels": [
+        4.88,
+        8.78,
+        12.68
+      ],
+      "corner_frame_change": "Internal vertical frame bars reduced from 0.24 m to 0.14 m; horizontal transoms from 0.22 m to 0.14 m; outer uprights from 0.40 m to 0.24 m. Three glazing modules retained.",
+      "storefront_panes": 16,
+      "uncertainty": "Window centers on the shallow connector and all opening/frame dimensions remain photo interpretations; the connector facade plane is estimated from GIS endpoints."
+    },
+    "stair_preview": {
+      "file": "audit/krach_leadership_center/lobby_stair_preview.png",
+      "camera_target_local_m": [
+        -30.7965,
+        -9.3,
+        7.3
+      ],
+      "changes": "Camera moved from obsolete pre-relocation stair coordinates, widened to a 22 mm lens to fit the full stair height, added warm/cool area lights and a dark ground plane. Preview omits guard polygons only; saved asset retains glass guards and handrails."
+    },
+    "verification": {
+      "blender_version": "5.2.3 LTS",
+      "saved_reopened_source": "modular/buildings/krach_leadership_center.blend",
+      "sha256": "F6D4BE3728688A27968B4E833F283CC3F652433109EAB01CD69C9A266E90D8DB",
+      "checks": [
+        "Saved source reopened successfully.",
+        "GIS shell bounds unchanged.",
+        "48 facade window ray checks pass through the south and west-end wall openings.",
+        "Five floor void checks pass with adjacent floor samples retained.",
+        "36 long-facade upper panes, 12 west-end upper panes and 16 continuous storefront panes present.",
+        "Eight stair flights, nine landings and 32 saved handrail/guard splines retained.",
+        "No missing external image dependencies.",
+        "Exterior, isolated stair and Sasaki comparison renders refreshed from reopened source."
+      ],
+      "exterior_preview": "audit/krach_leadership_center/source_preview.png",
+      "cutaway_preview": "audit/krach_leadership_center/lobby_stair_preview.png",
+      "same_angle_comparison": "audit/krach_leadership_center/sasaki_facade_comparison_round8.png",
+      "validation_script": "audit/krach_leadership_center/validate_krach.py",
+      "build_script": "audit/krach_leadership_center/facade_match_revision_round4.py",
+      "render_script": "audit/krach_leadership_center/reopen_render_v2.py"
+    },
+    "uncertainty": [
+      "Facade window cadence follows the Sasaki image but is not a measured elevation schedule.",
+      "Story heights, penthouse location/shape, interior room plan, circulation dimensions and exact stair dimensions remain schematic or estimated."
+    ],
+    "status": "saved, reopened, validated, rerendered; ready for independent round 8 grade"
+  }
+}

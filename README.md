@@ -38,12 +38,12 @@ This project tracks detailed campus models separately from the remaining massing
 | Heine Pharmacy | [heine_pharmacy.blend](modular/buildings/heine_pharmacy.blend) | In progress | 7.5/10 | Rohan |
 | Hicks Library | [hicks_library.blend](modular/buildings/hicks_library.blend) | In progress | 6.6/10 | Rohan |
 | Horticulture Building | [horticulture_building.blend](modular/buildings/horticulture_building.blend) | In progress | 7.0/10 | Rohan |
-| Hovde Hall | [hovde_hall.blend](modular/buildings/hovde_hall.blend) | In progress | 7.8/10 | Tobin |
-| Knoy Hall | [knoy_hall.blend](modular/buildings/knoy_hall.blend) | In progress | 5.7/10 | Tobin |
-| Krach Leadership Center | [krach_leadership_center.blend](modular/buildings/krach_leadership_center.blend) | In progress | 6.8/10 | Tobin |
-| Krannert Building | [krannert_building.blend](modular/buildings/krannert_building.blend) | In progress | 5.7/10 | Tobin |
-| Lambert Fieldhouse | [lambert_fieldhouse.blend](modular/buildings/lambert_fieldhouse.blend) | In progress | 7.0/10 | Tobin |
-| Lawson Hall | [lawson_hall.blend](modular/buildings/lawson_hall.blend) | In progress | 6.0/10 | Tobin |
+| Hovde Hall | [hovde_hall.blend](modular/buildings/hovde_hall.blend) | Finished | 8.7/10 | — |
+| Knoy Hall | [knoy_hall.blend](modular/buildings/knoy_hall.blend) | In progress | 7.5/10 | Tobin |
+| Krach Leadership Center | [krach_leadership_center.blend](modular/buildings/krach_leadership_center.blend) | Finished | 8.1/10 | — |
+| Krannert Building | [krannert_building.blend](modular/buildings/krannert_building.blend) | In progress | 7.0/10 | Tobin |
+| Lambert Fieldhouse | [lambert_fieldhouse.blend](modular/buildings/lambert_fieldhouse.blend) | In progress | 8.0/10 | Tobin |
+| Lawson Hall | [lawson_hall.blend](modular/buildings/lawson_hall.blend) | In progress | 7.4/10 | Tobin |
 | Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](modular/buildings/life_science_plant_and_soils_laboratory.blend) | In progress | 6.8/10 | Tobin |
 | Lyles-Porter Hall | [lyles_porter_hall.blend](modular/buildings/lyles_porter_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Mackey Arena | [mackey_arena.blend](modular/buildings/mackey_arena.blend) | Needs independent grade | Not graded | Tobin |
@@ -76,9 +76,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (200 total)
+## Unfinished buildings (198 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current starter assignments: Rosen 15 buildings, Rohan 15 buildings, Tobin 170 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 168 buildings.
 
 ### Detailed models still in progress or awaiting a grade (64)
 
@@ -114,12 +114,10 @@ This list excludes individual house parcels. The detailed models that are still 
 | Heine Pharmacy | [`heine_pharmacy.blend`](modular/buildings/heine_pharmacy.blend) | 7.5/10 | Rohan |
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Rohan |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
-| Hovde Hall | [`hovde_hall.blend`](modular/buildings/hovde_hall.blend) | 7.8/10 | Tobin |
-| Knoy Hall | [`knoy_hall.blend`](modular/buildings/knoy_hall.blend) | 5.7/10 | Tobin |
-| Krach Leadership Center | [`krach_leadership_center.blend`](modular/buildings/krach_leadership_center.blend) | 6.8/10 | Tobin |
-| Krannert Building | [`krannert_building.blend`](modular/buildings/krannert_building.blend) | 5.7/10 | Tobin |
-| Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 7.0/10 | Tobin |
-| Lawson Hall | [`lawson_hall.blend`](modular/buildings/lawson_hall.blend) | 6.0/10 | Tobin |
+| Knoy Hall | [`knoy_hall.blend`](modular/buildings/knoy_hall.blend) | 7.5/10 | Tobin |
+| Krannert Building | [`krannert_building.blend`](modular/buildings/krannert_building.blend) | 7.0/10 | Tobin |
+| Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
+| Lawson Hall | [`lawson_hall.blend`](modular/buildings/lawson_hall.blend) | 7.4/10 | Tobin |
 | Life Science Plant and Soils Laboratory | [`life_science_plant_and_soils_laboratory.blend`](modular/buildings/life_science_plant_and_soils_laboratory.blend) | 6.8/10 | Tobin |
 | Lyles-Porter Hall | [`lyles_porter_hall.blend`](modular/buildings/lyles_porter_hall.blend) | Not graded | Tobin |
 | Mackey Arena | [`mackey_arena.blend`](modular/buildings/mackey_arena.blend) | Not graded | Tobin |

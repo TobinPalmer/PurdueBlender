@@ -1,0 +1,87 @@
+{
+  "building_id": "hovde_hall",
+  "building": "Frederick L. Hovde Hall of Administration",
+  "retrieved": "2026-10-24",
+  "sources": [
+    {
+      "source_id": "wikimedia_herzog_2016_01",
+      "title": "Frederick L. Hovde Hall of Administration, Purdue University 2016 01",
+      "provider": "Wikimedia Commons; photograph by Julian Herzog",
+      "page_url": "https://commons.wikimedia.org/wiki/File:Frederick_L_Hovde_Hall_of_Administration_Purdue_University_2016_01.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Frederick_L_Hovde_Hall_of_Administration_Purdue_University_2016_01.jpg",
+      "snapshot_file": "audit/batch3_hovde/reference_herzog_hovde_2016.jpg",
+      "source_date": "2016-09-18",
+      "license": "CC BY 4.0 (listed on Wikimedia Commons file page)",
+      "photo_location": {
+        "latitude": 40.428661,
+        "longitude": -86.913958,
+        "crs": "EPSG:4326"
+      },
+      "use": "Near-frontal visual reference for six tall slender supports, scroll/leaf-like capitals, dentilled entablature, pediment outline and apex ornament, broad stair, red brick wings, and red clay roof tile.",
+      "measurement": "Rough pediment-to-facade pixel ratio was used to set the portico at about 17.9 m wide against the Archives-reported 70 m facade length. Estimated ratio is about 0.25 +/-0.04; the source is perspective imagery, not a measured elevation.",
+      "limits": "Trees obscure the lower facade and doors; perspective and camera framing introduce uncertainty. No dimensions or camera calibration are derived from the image. Roof pitch and exact capital/dentil dimensions are interpretive.",
+      "comparison_render": "audit/batch3_hovde/same_angle_reference_round10.png",
+      "camera_note": "34 mm perspective near-frontal view with a similar entrance-centered azimuth. Original camera pose and distance are unknown, so this is a same-view-direction comparison, not a calibrated photogrammetric match."
+    },
+    {
+      "source_id": "purdue_archives_hovde_record",
+      "title": "Frederick L. Hovde Hall of Administration (West Lafayette, Ind.)",
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/573",
+      "feature_id": "Purdue Archives corporate entity 573; cited historic database building 132",
+      "retrieval_date": "2026-10-24",
+      "source_date": "Current archives record; cited historic database entry",
+      "crs": null,
+      "reported_dimensions": "70 by 230 feet",
+      "reported_stories": 4,
+      "use": "Authoritative identity, long building dimension, four-story count, administrative use, and Board of Trustees room context.",
+      "limits": "No dimensioned elevation, portico size, roof profile, window schedule, or room plan in this record."
+    },
+    {
+      "source_id": "west_lafayette_visitors_guide_2022",
+      "title": "West Lafayette 2022 Visitors Guide",
+      "provider": "Visit West Lafayette",
+      "url": "https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/westlafayettein/2022_Visitors_Guide_0481c246-c159-4d01-a3a6-e00c4eddae3e.pdf",
+      "source_date": "2022",
+      "retrieval_date": "2026-10-24",
+      "crs": null,
+      "use": "Additional modern exterior and central classical-entrance cross-check.",
+      "limits": "Promotional photograph rather than measured drawing."
+    },
+    {
+      "source_id": "sah_archipedia_elliott_hovde_context",
+      "title": "Edward C. Elliott Hall of Music",
+      "provider": "Society of Architectural Historians, SAH Archipedia",
+      "url": "https://sah-archipedia.org/buildings/IN-01-157-0079",
+      "retrieval_date": "2026-10-24",
+      "source_date": "Current article",
+      "crs": null,
+      "use": "Describes Hovde's monumental steps, limestone portico, and formal lobby in its relation to Elliott Hall, plus Scholer-campus red brick, Indiana limestone, and red clay tile roof palette.",
+      "limits": "Contextual history, not Hovde-specific roof survey or elevation."
+    }
+  ],
+  "round_10_changes": [
+    "Slimmed all six shafts to 0.79 m diameter while keeping their six-photo-supported layout and original heights; reduced oversize bases and capitals proportionally.",
+    "Added flared echinus and abacus blocks plus paired scroll/leaf reliefs at the six capitals, matching visible classical capital cues in the source photo. Exact carving profile remains interpretive.",
+    "Raised the entablature/frieze, added a projecting cornice, 37 small dentils, raking pediment moldings, and an apex acroterion. Pediment rise now approximately 5 m rather than the round-9 squat profile.",
+    "Added recessed stone window jambs/lintels and fine muntins on the long facades; softened brick mortar contrast and bump and kept cool blue-gray glazing.",
+    "Mapped shallow-relief terracotta tile courses on the hipped roof and added a low eave tile lip. The unsupported raised penthouse block was removed because it conflicted with the photographed continuous roof silhouette; no roof plan was located."
+  ],
+  "validation": {
+    "saved_and_reopened": true,
+    "asset_check": "audit/batch3_hovde/final_asset_check_round10.json",
+    "renders": [
+      "audit/batch3_hovde/same_angle_reference_round10.png",
+      "audit/batch3_hovde/portico_detail_round10.png",
+      "audit/batch3_hovde/roof_detail_round10.png"
+    ],
+    "root_transform_preserved": true,
+    "master_placement_or_gis_checked": false
+  },
+  "remaining_uncertainty": [
+    "Exact portico width, height, roof pitch, and column spacing remain visual estimates; no dimensioned elevation found.",
+    "Capital carving, dentil count, and entablature molding details are photo-informed interpretations, not surveyed dimensions.",
+    "Roof understructure/profile and presence of any hidden rooftop mechanical equipment remain unverified.",
+    "Interior plan and campus GIS/neighbor registration remain outside this building-side pass."
+  ]
+}

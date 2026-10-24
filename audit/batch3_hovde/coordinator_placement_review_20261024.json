@@ -1,0 +1,33 @@
+{
+  "building": "Frederick L. Hovde Hall of Administration",
+  "reviewed_utc": "2026-10-24",
+  "official_gis_feature": 618,
+  "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D618&outFields=*&returnGeometry=true&f=pjson",
+  "source_crs": "EPSG:3857 (ArcGIS wkid 102100)",
+  "projection": "Inverse Web Mercator to lon/lat, then project X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040; approximate local campus meters",
+  "gis_footprint_bounds_xy_m": [[-92.763719, -32.175668], [59.287728, 126.784258]],
+  "source_structural_wall_bounds_xy_m": [[-43.968788, 17.874178], [-19.501591, 49.013096]],
+  "manifest_marker_xy_m": [-49.802693, 78.244246],
+  "computed_bounds_after_manifest_translation_xy_m": [[-93.771481, -31.928515], [58.742655, 127.257342]],
+  "bbox_center_offset_m": 0.382,
+  "bounds_width_difference_m": 1.255,
+  "bounds_depth_difference_m": 1.019,
+  "screening_aabb_iou": 0.9651,
+  "source_axis_heading_from_east_deg": 39.519997,
+  "gis_long_wall_axis_deg": [39.3, 39.33],
+  "orientation_difference_deg": 0.19,
+  "status": "Source wall bounds plus manifest translation closely match the GIS screening footprint and direction. This is not a surveyed wall-level comparison.",
+  "master_marker": {
+    "verified_by": "Blender 5.2.3 background reopen of purdue_campus_master.blend",
+    "location_xy_m": [-49.8026924, 78.2442474],
+    "location_z_m": 0.0,
+    "rotation_xyz_rad": [0.0, 0.0, 0.0],
+    "scale_xyz": [1.0, 1.0, 1.0],
+    "matches_manifest_origin": true
+  },
+  "limitations": [
+    "Saved master marker and manifest origin match exactly; screening uses axis-aligned bounds and does not prove exact structural wall polygon coincidence.",
+    "The 2026-10-22 master audit AABB record predates round 12 and is a screening comparison, not a polygon wall registration.",
+    "GIS map conversion is approximate and feature polygon includes details beyond structural wall faces."
+  ]
+}
