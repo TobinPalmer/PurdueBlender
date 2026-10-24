@@ -2,7 +2,7 @@
 
 This project tracks detailed campus models separately from the remaining massing-only building assets. A detailed model counts as finished here only when its latest recorded independent grader score is at least 8/10. Scores describe the reviewed model revision; ungraded assets are explicitly marked.
 
-## Detailed models: status and latest grader score (69 buildings)
+## Detailed models: status and latest grader score (70 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -67,6 +67,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Rawls Hall | [rawls_hall.blend](modular/buildings/rawls_hall.blend) | In progress | 7.0/10 | Tobin |
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](modular/buildings/ray_w_herrick_laboratories.blend) | In progress | 7.2/10 | Tobin |
 | Ross Ade | [ross_ade.blend](modular/buildings/ross_ade.blend) | Needs independent grade | Not graded | Tobin |
+| SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](modular/buildings/massing_samara_f6b8e61.blend) | Finished | [8.6/10](audit/samara/independent_grade.json) | — |
 | South Hall | [south_hall.blend](modular/buildings/south_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](modular/buildings/stanley_coulter_hall.blend) | In progress | 4.7/10 | Tobin |
 | Stewart Center | [stewart_center.blend](modular/buildings/stewart_center.blend) | Needs independent grade | Not graded | Tobin |
@@ -76,11 +77,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (189 total)
+## Unfinished buildings (188 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 129 buildings, Brady 30 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 128 buildings, Brady 30 buildings.
 
-### Detailed models still in progress or awaiting a grade (55)
+### Detailed models still in progress or awaiting a grade (53)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -138,7 +139,7 @@ This list excludes individual house parcels. The detailed models that are still 
 | Wiley Hall | [`wiley_hall.blend`](modular/buildings/wiley_hall.blend) | Not graded | Tobin |
 | Winifred Parker Hall | [`winifred_parker_hall.blend`](modular/buildings/winifred_parker_hall.blend) | Not graded | Tobin |
 
-### Buildings that still have only massing models (136)
+### Buildings that still have only massing models (135)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -238,7 +239,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | ralph bettye bailey hall | [`massing_ralph_bettye_bailey_hall_406c4db.blend`](modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend) | Tobin |
 | redeemer lutheran church | [`massing_redeemer_lutheran_church_2e5ce2f.blend`](modular/buildings/massing_redeemer_lutheran_church_2e5ce2f.blend) | Tobin |
 | riverside covenannt church | [`massing_riverside_covenannt_church_3a60684.blend`](modular/buildings/massing_riverside_covenannt_church_3a60684.blend) | Tobin |
-| samara | [`massing_samara_f6b8e61.blend`](modular/buildings/massing_samara_f6b8e61.blend) | Tobin |
 | schleman hall schm | [`massing_schleman_hall_schm_ad4b05b.blend`](modular/buildings/massing_schleman_hall_schm_ad4b05b.blend) | Tobin |
 | shealy frances m residence hall | [`massing_shealy_frances_m_residence_hall_a210e50.blend`](modular/buildings/massing_shealy_frances_m_residence_hall_a210e50.blend) | Tobin |
 | shoemaker cooperative | [`massing_shoemaker_cooperative_2159ea4.blend`](modular/buildings/massing_shoemaker_cooperative_2159ea4.blend) | Tobin |

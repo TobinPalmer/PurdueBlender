@@ -5,8 +5,8 @@ The current project master is `../purdue_campus_master.blend`. It links the smal
 ## Current build
 
 - 1,979 registered assets: 1,978 building assets and one campus site asset.
-- 69 detailed buildings are local-coordinate linked collections. Each has a `Placement_<id>` empty in the master that supplies its XY campus position.
-- The master scene has 2,225 direct objects and references 52,212 objects across its source libraries.
+- 69 detailed buildings are local-coordinate linked collections. SAMARA is a separately linked legacy-coordinate model with HABS-backed geometry and an independent 8.6/10 grade. Each has a `Placement_<id>` empty in the master that supplies its XY campus position.
+- The master scene has 2,225 direct objects and references 53,313 objects across its source libraries.
 - 44 matching massing assets are superseded by detailed models.
 - All 69 placement markers reference their expected source library paths; the root master reopens with no missing library paths.
 - `purdue_campus_master_before_modular_linking.blend` preserves the former root master. Per-building world-coordinate copies are in `source_backups/buildings_world_coordinates/`.

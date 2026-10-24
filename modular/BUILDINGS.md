@@ -35,6 +35,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | R. B. Wetherill Laboratory of Chemistry | [wetherill_laboratory_of_chemistry.blend](buildings/wetherill_laboratory_of_chemistry.blend) | 362 |
 | Rawls Hall | [rawls_hall.blend](buildings/rawls_hall.blend) | 722 |
 | Ross Ade | [ross_ade.blend](buildings/ross_ade.blend) | 2118 |
+| SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](buildings/massing_samara_f6b8e61.blend) | 1102 |
 | South Hall | [south_hall.blend](buildings/south_hall.blend) | 186 |
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](buildings/stanley_coulter_hall.blend) | 824 |
 | Stewart Center | [stewart_center.blend](buildings/stewart_center.blend) | 1362 |
@@ -78,3 +79,5 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 414 |
 | Physics Building | [physics_building_phys_3bf42f3.blend](buildings/physics_building_phys_3bf42f3.blend) | 110 |
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](buildings/ray_w_herrick_laboratories.blend) | 89 |
+
+SAMARA retains its legacy massing filename and campus-coordinate direct link for compatibility with the existing master. Its measured geometry, independent grade, and remaining registration uncertainty are documented in the [SAMARA evidence record](../audit/samara/EVIDENCE.md).
