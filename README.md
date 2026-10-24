@@ -39,7 +39,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Hicks Library | [hicks_library.blend](modular/buildings/hicks_library.blend) | In progress | 6.6/10 | Rohan |
 | Horticulture Building | [horticulture_building.blend](modular/buildings/horticulture_building.blend) | In progress | 7.0/10 | Rohan |
 | Hovde Hall | [hovde_hall.blend](modular/buildings/hovde_hall.blend) | Finished | 8.7/10 | — |
-| Knoy Hall | [knoy_hall.blend](modular/buildings/knoy_hall.blend) | In progress | 7.7/10 | Tobin |
+| Knoy Hall | [knoy_hall.blend](modular/buildings/knoy_hall.blend) | In progress | 7.8/10 | Tobin |
 | Krach Leadership Center | [krach_leadership_center.blend](modular/buildings/krach_leadership_center.blend) | Finished | 8.1/10 | — |
 | Krannert Building | [krannert_building.blend](modular/buildings/krannert_building.blend) | Finished | 8.0/10 | — |
 | Lambert Fieldhouse | [lambert_fieldhouse.blend](modular/buildings/lambert_fieldhouse.blend) | In progress | 8.0/10 | Tobin |
@@ -47,7 +47,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](modular/buildings/life_science_plant_and_soils_laboratory.blend) | Finished | 8.0/10 | — |
 | Lyles-Porter Hall | [lyles_porter_hall.blend](modular/buildings/lyles_porter_hall.blend) | Finished | 8.2/10 | — |
 | Mackey Arena | [mackey_arena.blend](modular/buildings/mackey_arena.blend) | Finished | 8.0/10 | — |
-| Materials Science and Electrical Engineering | [materials_science_and_electrical_engineering_msee.blend](modular/buildings/materials_science_and_electrical_engineering_msee.blend) | In progress | 7.2/10 | Tobin |
+| Materials Science and Electrical Engineering | [materials_science_and_electrical_engineering_msee.blend](modular/buildings/materials_science_and_electrical_engineering_msee.blend) | Finished | 8.2/10 | — |
 | Math Sciences | [math_sciences.blend](modular/buildings/math_sciences.blend) | In progress | 6.9/10 | Tobin |
 | Mccutcheon Hall | [mccutcheon_hall.blend](modular/buildings/mccutcheon_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Mechanical Engineering | [mechanical_engineering.blend](modular/buildings/mechanical_engineering.blend) | In progress | 4.5/10 | Tobin |
@@ -76,11 +76,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (194 total)
+## Unfinished buildings (193 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 164 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 163 buildings.
 
-### Detailed models still in progress or awaiting a grade (60)
+### Detailed models still in progress or awaiting a grade (59)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -114,10 +114,9 @@ This list excludes individual house parcels. The detailed models that are still 
 | Heine Pharmacy | [`heine_pharmacy.blend`](modular/buildings/heine_pharmacy.blend) | 7.5/10 | Rohan |
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Rohan |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
-| Knoy Hall | [`knoy_hall.blend`](modular/buildings/knoy_hall.blend) | 7.7/10 | Tobin |
+| Knoy Hall | [`knoy_hall.blend`](modular/buildings/knoy_hall.blend) | 7.8/10 | Tobin |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 | Lawson Hall | [`lawson_hall.blend`](modular/buildings/lawson_hall.blend) | 7.0/10 | Tobin |
-| Materials Science and Electrical Engineering | [`materials_science_and_electrical_engineering_msee.blend`](modular/buildings/materials_science_and_electrical_engineering_msee.blend) | 7.2/10 | Tobin |
 | Math Sciences | [`math_sciences.blend`](modular/buildings/math_sciences.blend) | 6.9/10 | Tobin |
 | Mccutcheon Hall | [`mccutcheon_hall.blend`](modular/buildings/mccutcheon_hall.blend) | Not graded | Tobin |
 | Mechanical Engineering | [`mechanical_engineering.blend`](modular/buildings/mechanical_engineering.blend) | 4.5/10 | Tobin |

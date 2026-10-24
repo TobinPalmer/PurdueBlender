@@ -1,0 +1,67 @@
+{
+  "building_id": "materials_science_and_electrical_engineering_msee",
+  "retrieved_date": "2026-10-24",
+  "sources": [
+    {
+      "provider": "Purdue University Engineering Computer Network, ECN in MSEE",
+      "page_url": "https://engineering.purdue.edu/ECN/AboutUs/History/MSEE",
+      "image_url": "https://engineering.purdue.edu/ECN/AboutUs/History/MSEE/msee",
+      "local_snapshot": "audit/rework_batch_a/MSEE_official_ecn_1.jpg",
+      "page_last_modified": "2014-03-18",
+      "image_capture_date": "not published",
+      "source_crs": "photograph not georeferenced; page identifies MSEE, site address not stated on this page",
+      "method": "qualitative visual reference for dark red-brown brick facade, central glazed entry, and semicircular fanlight/arched frame; no pixel-to-meter measurements",
+      "uncertainty": "camera position, image date, lens perspective, and exact facade dimensions are unknown; geometry proportions remain interpretive."
+    },
+    {
+      "provider": "Purdue University Engineering Computer Network, ECN in MSEE",
+      "page_url": "https://engineering.purdue.edu/ECN/AboutUs/History/MSEE",
+      "image_url": "https://engineering.purdue.edu/ECN/AboutUs/History/MSEE/mseeHall",
+      "local_snapshot": "audit/rework_batch_a/MSEE_official_ecn_2.jpg",
+      "page_last_modified": "2014-03-18",
+      "image_capture_date": "not published",
+      "source_crs": "interior photograph not georeferenced",
+      "method": "context only; confirms a historic MSEE interior corridor; not used to infer atrium layout or exact room plan",
+      "uncertainty": "image is a hallway rather than the atrium; does not establish current interior finishes or as-built room layout."
+    },
+    {
+      "provider": "Purdue BuildingShapes ArcGIS FeatureServer, layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 646,
+      "local_snapshot": "audit/build_batch_a2/materials_science_and_electrical_engineering_msee_gis_feature.json",
+      "source_crs": "Feature snapshot EPSG:4326; local X/Y use project approximate tangent-plane conversion, not surveyed CRS",
+      "method": "preserved original four-corner footprint and local coordinate frame; no footprint/origin edits in R5",
+      "uncertainty": "GIS supports footprint and source-reported floor attributes only; height/roof and interior depth/layout are not verified."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, Materials and Electrical Engineering corporate record",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/703",
+      "retrieved_date": "2026-10-24",
+      "source_crs": "institutional building record; not spatial data",
+      "method": "supports facility identity, 1988 construction, two-storey glass atrium, laboratories, and two pedestrian skyways",
+      "uncertainty": "does not provide dimensions, current interior plan, or facade elevation."
+    },
+    {
+      "provider": "Purdue Engineering Imprints, Materials and Electrical Engineering Atrium Gets a Major Upgrade",
+      "url": "https://engineering.purdue.edu/Imprints/fall-2018/materials-and-electrical-engineering-atrium-gets-a-major-upgrade",
+      "retrieved_date": "2026-10-24",
+      "source_crs": "institutional article; not spatial data",
+      "method": "supports the student-centered first-floor Max W. Brown Atrium renewal and public-front-door function",
+      "uncertainty": "does not provide an as-built plan or surveyed facade dimensions."
+    }
+  ],
+  "revision5_changes": [
+    "Changed the facade procedural palette to source-photo-matched red-brown running-bond brick with subtle mortar relief; wall coordinates align courses to each facade orientation.",
+    "Removed 48 punched-window and mullion objects that fell inside the existing two-storey glazed atrium panel; retained adjacent facade windows.",
+    "Rebuilt the named GIS shell from its original eight corner coordinates with outward normals and cut a watertight two-storey atrium opening behind the glazing. Approximate opening: 22.25 m wide by 8.30 m high by 18.0 m deep; the depth is a visualization estimate, not an as-built measurement.",
+    "Moved the three schematic collaboration table groups and six seats behind the glazing, and increased atrium transparency to reveal interior cues.",
+    "Added a restrained semicircular entry arch, fanlight spokes, frame, and tinted door panels based on Purdue ECN photo. Dimensions and exact frame configuration are estimates, not surveyed.",
+    "Preserved the GIS footprint bounds, local origin, stable collection name, and master placement responsibility."
+  ],
+  "remaining_uncertainty": [
+    "No surveyed elevations, as-built construction/room plans, or measured atrium depth were available.",
+    "The official exterior photo is not geotagged and its capture date is unpublished; page last modified is 2014-03-18.",
+    "Floor plans/interior vignettes remain schematic and are not as-built.",
+    "Roof monitor, precise heights, and exact window dimensions remain unverified."
+  ]
+}

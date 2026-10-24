@@ -1,0 +1,47 @@
+{
+  "building_id": "materials_science_and_electrical_engineering_msee",
+  "revision": 6,
+  "retrieved_date": "2026-10-24",
+  "sources_consulted": [
+    {
+      "provider": "Purdue University Engineering Computer Network, ECN in MSEE",
+      "page_url": "https://engineering.purdue.edu/ECN/AboutUs/History/MSEE",
+      "image_url": "https://engineering.purdue.edu/ECN/AboutUs/History/MSEE/msee",
+      "local_snapshot": "audit/rework_batch_a/MSEE_official_ecn_1.jpg",
+      "page_last_modified": "2014-03-18",
+      "image_capture_date": "not published",
+      "source_crs": "Photograph is not georeferenced.",
+      "use_in_revision6": "Qualitative comparison for central ground-level entrance, semicircular fanlight, dark metal framing, red-brown brick, and the smaller highest window course. No pixel-to-meter dimensions were derived.",
+      "uncertainty": "The photo is perspective-corrected neither by camera metadata nor surveyed control points, and the exact facade orientation, image capture date, and as-built dimensions are unknown. Window and entrance proportions remain estimates."
+    },
+    {
+      "provider": "Purdue BuildingShapes ArcGIS FeatureServer, layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 646,
+      "local_snapshot": "audit/build_batch_a2/materials_science_and_electrical_engineering_msee_gis_feature.json",
+      "source_crs": "Feature snapshot EPSG:4326; local X/Y use project approximate tangent-plane conversion, not surveyed CRS.",
+      "use_in_revision6": "Footprint, local coordinate frame, and original shell bounds were checked after the facade changes; no footprint, origin, height, or roof geometry was edited.",
+      "uncertainty": "GIS footprint/source attributes do not verify the facade window dimensions, roof form, story heights, interior, or exact elevation."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/703",
+      "use_in_revision6": "Context for the two-storey glass atrium; no floor plan or circulation geometry inferred.",
+      "uncertainty": "No as-built interior plan, entry section, or surveyed elevation supplied."
+    }
+  ],
+  "revision6_changes": [
+    "Replaced the R5 entry insert whose fanlight sat several meters above grade: the paired door leaves and arched fanlight are now anchored at the atrium-screen base. The arch top is approximately 7.1 m in the local asset frame; this is an interpretive estimate, not a measured elevation.",
+    "Moved the entry frame and fanlight to the exterior side of the glazing and removed obsolete R5 arch/spoke geometry, resolving the visible overlap with the upper facade window course.",
+    "Changed door glazing from a flat, saturated cyan appearance to muted, darker paired glass leaves with center split, subtle pulls, and restrained frame; exact material/tint is interpretive because the source photo does not document the current finish.",
+    "Reduced the size of the highest facade window course relative to lower bays to reflect its visibly smaller appearance in the official Purdue exterior photo. The image is perspective and unscaled, so these are qualitative proportions, not measured dimensions.",
+    "Muted the general facade-window and atrium-glass colors to reduce the opaque cyan panel appearance. Exact reflectance/transparency remains a visualization choice.",
+    "Kept the local shell footprint bounds and coordinate frame unchanged. The current master Placement object was opened read-only and checked against manifest placement coordinates; no master file changes were made."
+  ],
+  "unverified_or_uncertain": [
+    "No surveyed elevation or as-built roof drawing was found; shell height, flat roof, roof monitor, and individual levels remain unverified or interpretive.",
+    "The official exterior photo is un-georeferenced, has no published capture date, and cannot prove absolute window or entry dimensions.",
+    "The atrium depth and interior furniture/circulation remain schematic. The available hallway photo does not support an atrium floor plan, stair location, or current interior layout.",
+    "Master registration check establishes only the current collection link path, translation, unit scale, and rotation. It does not establish facade fidelity or all neighboring GIS placement tests."
+  ]
+}

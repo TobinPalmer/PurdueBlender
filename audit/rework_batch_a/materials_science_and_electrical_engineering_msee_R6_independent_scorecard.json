@@ -1,0 +1,68 @@
+{
+  "building": "Materials Science and Electrical Engineering (MSEE)",
+  "revision_reviewed": 6,
+  "review_date": "2026-10-24",
+  "reviewer": "independent audit agent; did not build or edit MSEE R6",
+  "asset": "modular/buildings/materials_science_and_electrical_engineering_msee.blend",
+  "report": "audit/rework_batch_a/materials_science_and_electrical_engineering_msee_INDEPENDENT_REVIEW_R6.md",
+  "reopen_audit": "audit/rework_batch_a/materials_science_and_electrical_engineering_msee_R6_independent_reopen.json",
+  "score": 8.2,
+  "max_score": 10,
+  "acceptance_target": 8.0,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Identity and footprint",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": ["Purdue ECN and Archives identify MSEE.", "GIS feature 646 supports a four-corner footprint; reopened shell bounds match the recorded source bounds."],
+      "findings": ["Geographic conversion is approximate, not surveyed."]
+    },
+    {
+      "name": "Placement, orientation, and scale",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": ["Read-only master audit shows one relative library instance at manifest XY (87.421, 215.992 m), unit scale and zero rotation; relative path resolves."],
+      "findings": ["No independent survey control or neighboring-corner residual was measured."]
+    },
+    {
+      "name": "Form, height, and roof",
+      "score": 1.0,
+      "max_score": 1.5,
+      "evidence": ["GIS records four levels; model uses a plausible low-rise form and four major window courses.", "Saved shell spans z=0.3–15.0 m."],
+      "findings": ["GIS `Extrution` field is 36 with no documented units; no surveyed elevation or roof drawing was reviewed.", "Roof monitor, exact height and floor datums remain interpretive."]
+    },
+    {
+      "name": "Facade, texturing, and entrance",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": ["Official Purdue ECN exterior photo supports red-brown brick, central dark entrance, semicircular fanlight and a smaller top window course.", "R6 moves the paired doors/fanlight to the atrium-screen base, removes obsolete R5 arch geometry and reduces the top course."],
+      "findings": ["Glazing reads as uniformly opaque blue-gray panels and facade bays are highly repetitive.", "Photo is perspective and uncalibrated; dimensions, window schedule, material values and all-side cadence remain estimates."]
+    },
+    {
+      "name": "Interior and circulation",
+      "score": 0.5,
+      "max_score": 1,
+      "evidence": ["Archives describes a two-storey glass atrium, laboratories and two pedestrian skyways; saved asset includes an atrium vignette."],
+      "findings": ["No reviewed as-built interior plan or section verifies room layout, stairs, present contents, or continuous circulation.", "No legible interior review render accompanies R6."]
+    },
+    {
+      "name": "Technical and evidence quality",
+      "score": 1.4,
+      "max_score": 1.5,
+      "evidence": ["Blender 5.2.3 reopen succeeded; expected collection/shell found; 1200 asset objects; no mesh lacks materials; no unpacked external images.", "Dedicated R6 validation reports watertight shell and source bounds preserved.", "Master registration check is read-only and passes manifest transform/path checks."],
+      "findings": ["Portability and validation establish technical integrity, not as-built fidelity."]
+    }
+  ],
+  "sources_reviewed": [
+    "https://engineering.purdue.edu/ECN/AboutUs/History/MSEE",
+    "https://archives.lib.purdue.edu/agents/corporate_entities/703",
+    "Purdue BuildingShapes ArcGIS FeatureServer layer 0, feature 646; snapshot in audit/build_batch_a2/materials_science_and_electrical_engineering_msee_gis_feature.json",
+    "audit/rework_batch_a/materials_science_and_electrical_engineering_msee_R6_sources.json",
+    "audit/rework_batch_a/materials_science_and_electrical_engineering_msee_R6_validation.json",
+    "audit/rework_batch_a/materials_science_and_electrical_engineering_msee_R6_master_registration_readonly.json",
+    "audit/rework_batch_a/materials_science_and_electrical_engineering_msee_revision6_preview.png",
+    "audit/rework_batch_a/materials_science_and_electrical_engineering_msee_revision6_entry_detail.png"
+  ],
+  "decision": "Passes 8.0 threshold at 8.2/10. Metric roof/height and interior circulation remain unverified; score does not certify survey or as-built accuracy."
+}
