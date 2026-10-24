@@ -1,0 +1,58 @@
+{
+  "building": "Mathematical Sciences Building (MATH)",
+  "building_id": "math_sciences",
+  "review_round": 12,
+  "review_date": "2026-10-24",
+  "score": 8.1,
+  "max_score": 10.0,
+  "target": 8.0,
+  "passed_target": true,
+  "method": "Five AGENT.md criteria, each worth up to 2 points; total is the sum rounded to one decimal.",
+  "read_only_review": true,
+  "asset_or_master_edited": false,
+  "criteria": {
+    "identity_and_source_backed_footprint": {
+      "score": 1.9,
+      "max_score": 2.0,
+      "finding": "Purdue Statistics labels its image as Purdue's Math Building and the independent Flickr page identifies the same building. GIS FID 227 and the prior footprint comparison support the plan envelope, with approximate local projection/AABB limitations.",
+      "evidence": ["audit/batch3_math/math_photo_inventory_r12.json", "audit/batch3_math/evidence_round10.json", "audit/batch3_math/gis_fid227.geojson", "https://www.stat.purdue.edu/external_relations/statcom/getting_started.html", "https://www.flickr.com/photos/ataindy/4062109632/"]
+    },
+    "position_orientation_and_scale": {
+      "score": 1.9,
+      "max_score": 2.0,
+      "finding": "Retained R8 master-registration evidence shows one expected placement at the manifest origin within 0.02 m, zero rotation, unit scale, and a relative library path. The check was not freshly repeated in R12; the geographic transform is approximate.",
+      "evidence": ["audit/batch3_math/independent_review_round8_registration.json", "audit/batch3_math/round12_validation.json", "modular/manifest.json"]
+    },
+    "evidence_backed_height_floors_and_roof": {
+      "score": 0.9,
+      "max_score": 2.0,
+      "finding": "Ten-story identity and a qualitative parapet/raised roof silhouette are supported, but the DSM-DTM surface statistics remain above the modeled shell/roof/penthouse bounds. Broad 5-ft cells and unresolved vertical datum cannot assign those returns to a modeled component. Roof elevations/component attribution remain unresolved.",
+      "evidence": ["audit/batch3_math/math_roof_dsm_r10.json", "audit/batch3_math/round12_validation.json", "audit/batch3_math/source_review_round12.md", "https://registry.opendata.aws/in-elevation/"]
+    },
+    "facade_entrances_and_distinctive_architecture": {
+      "score": 1.6,
+      "max_score": 2.0,
+      "finding": "Purdue's departmental photo and the independent 2009 Flickr photo corroborate broad brick, repeated vertical window groups, simpler end/corner bays, lighter lower level, and roof-edge motifs visible in the renders. Bearing/cardinal-face mapping, current condition, exact openings/entrance, and calibrated color remain unverified.",
+      "evidence": ["audit/batch3_math/math_photo_inventory_r12.json", "audit/batch3_math/exterior_after.png", "audit/batch3_math/exterior_north_after.png", "audit/batch3_math/exterior_east_after.png", "audit/batch3_math/exterior_south_after.png", "audit/batch3_math/exterior_west_after.png", "https://www.stat.purdue.edu/external_relations/statcom/getting_started.html", "https://www.stat.purdue.edu/images/about/Math-Bldg-.jpg", "https://www.flickr.com/photos/ataindy/4062109632/"]
+    },
+    "modular_export_portability_and_complete_evidence": {
+      "score": 1.8,
+      "max_score": 2.0,
+      "finding": "Blender 5.2.3 reopened the standalone library with expected collection, 550 direct/593 inclusive objects, stable bounds, no unpacked images, and no R12 geometry changes. Source records preserve citations and uncertainty. Master registration is carried forward from R8; roof, current facade direction, and as-built interior evidence remain incomplete.",
+      "evidence": ["audit/batch3_math/round12_validation.json", "audit/batch3_math/evidence_round12.json", "audit/batch3_math/math_photo_inventory_r12.json", "audit/batch3_math/independent_review_round8_registration.json", "audit/batch3_math/third_floor_core_after.png"]
+    }
+  },
+  "evidence": ["modular/buildings/math_sciences.blend", "audit/batch3_math/source_review_round12.md", "audit/batch3_math/math_photo_inventory_r12.json", "audit/batch3_math/evidence_round12.json", "audit/batch3_math/round12_validation.json", "audit/batch3_math/independent_review_round11.md", "audit/batch3_math/exterior_after.png", "audit/batch3_math/exterior_north_after.png", "audit/batch3_math/exterior_east_after.png", "audit/batch3_math/exterior_south_after.png", "audit/batch3_math/exterior_west_after.png", "audit/batch3_math/third_floor_core_after.png"],
+  "findings": [
+    "R12 changed no geometry; Blender 5.2.3 reopened and validated the standalone asset.",
+    "The Flickr owner states the image was taken 2009-09-26; the original's EXIF DateTime is 2009-10-29 14:29:19. The discrepancy is unresolved and no GPS metadata is present.",
+    "Neither the Purdue Statistics image nor the Flickr image establishes bearing or correspondence to model cardinal elevations.",
+    "Roof heights/component attribution remain unresolved; the interior remains schematic and lacks as-built circulation evidence.",
+    "The qualitative facade evidence improves enough for a narrow pass under the five project criteria; this is not a claim that all dimensions or current conditions are verified."
+  ],
+  "unresolved": ["Image bearing and cardinal-face correspondence", "Roof elevations and component attribution", "Current post-2009 facade conditions", "As-built interior partitions and circulation"],
+  "sources_reviewed": [
+    {"url": "https://www.stat.purdue.edu/external_relations/statcom/getting_started.html", "independent_result": "Page labels linked image as Purdue's Math Building; image capture date unknown."},
+    {"url": "https://www.flickr.com/photos/ataindy/4062109632/", "independent_result": "Owner states taken 2009-09-26 and upload 2009-10-31; All rights reserved. Original EXIF says 2009:10:29 14:29:19; no embedded GPS."}
+  ]
+}

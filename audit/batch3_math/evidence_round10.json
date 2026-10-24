@@ -1,0 +1,96 @@
+{
+  "building": "Mathematical Sciences Building (MATH)",
+  "round": 10,
+  "date": "2026-10-24",
+  "prior_independent_score": 7.8,
+  "target": 8.0,
+  "scope": "Math Sciences source asset and its dedicated audit only; no master, manifest, shared index, or other building was edited.",
+  "geometry_changes": [],
+  "metadata_changes": [
+    "Added the 2018 Indiana 3DEP raster method, height percentiles, and limitations to the Math asset and its three modeled roof objects.",
+    "Recorded that current roof geometry is retained pending architectural elevations; the raster-to-model height discrepancy is not assigned to any particular story or component."
+  ],
+  "roof_and_height": {
+    "analysis": "audit/batch3_math/math_roof_dsm_r10.json",
+    "review_image": "audit/batch3_math/math_dsm_roof_height_r10.png",
+    "tile_metadata": {
+      "tile_id": "in2018_29951885_12",
+      "acquisition_date_utc": "2018-04-20",
+      "query_source": "Indiana Statewide 3DEP Lidar Dates MapServer, layer 5, point query at 40.4261348,-86.915642",
+      "dsm_filename": "in2018_29951885_12_dsm.tif",
+      "dsm_path": "audit/batch3_math/indiana_3dep_2018_dsm_in2018_29951885_12_dsm.tif",
+      "dsm_sha256": "1547f9840b679656feb4a25a5bb47a496f0c2675659a2b1c8571d3d24815f7ab",
+      "dtm_filename": "in2018_29951885_12.tif",
+      "dtm_path": "audit/batch3_math/indiana_3dep_2018_dtm_in2018_29951885_12.tif",
+      "dtm_sha256": "f5c11ed555532b093c3daafd021f8f0abd6280731d1781bf7c9e886726a9f3c2",
+      "horizontal_crs": "NAD83(HARN) / Indiana West (ftUS)",
+      "grid_resolution": "5-ft DSM and 2.5-ft DTM",
+      "source_dsm_url": "https://giselevationingov.s3.us-east-2.amazonaws.com/dsmoptimized/statewide/2018/SPW/5ft/in2018_29951885_12_dsm.tif",
+      "source_dtm_url": "https://giselevationingov.s3.us-east-2.amazonaws.com/demoptimized/statewide/2018/SPW/2.5ft/in2018_29951885_12.tif"
+    },
+    "method": "Rasterize the Purdue GIS FID 227 footprint in the tile CRS, resample the same-tile bare-earth DTM to the DSM grid, then summarize DSM-minus-DTM. The vertical values have no embedded unit tags; US survey feet are corroborated by the local DTM median ~624.04 matching Purdue GIS Elevation=623.3 (GIS attribute unit undocumented).",
+    "normalized_surface_height_m_percentiles": {
+      "p50": 36.9224,
+      "p90": 40.2515,
+      "p95": 40.4342,
+      "p99": 40.4942,
+      "max": 40.8570
+    },
+    "normalized_surface_height_ft_percentiles": {
+      "p50": 121.1362,
+      "p90": 132.0585,
+      "p95": 132.6578,
+      "max": 134.0450
+    },
+    "model_comparison": {
+      "main_roof_slab_z_m": [33.2, 33.4],
+      "penthouse_base_z_m": [33.0, 36.3],
+      "penthouse_coping_z_m": [36.2, 36.5],
+      "interpretation": "The median observed surface exceeds the modeled roof-slab top by ~3.5 m and the 95th-percentile surface is ~3.9 m above the penthouse coping top. This reveals a real model/data discrepancy but does not identify which story or roof component should move; no geometry was changed. The 5-ft grid includes possible roof equipment and returns and cannot resolve the thin modeled antennas."
+    },
+    "upper_surface_zone": {
+      "threshold": ">125 ft DSM-minus-DTM",
+      "cell_count": 86,
+      "approx_local_bounds_m": [[-1.87, 8.85], [-24.85, 8.68]],
+      "interpretation": "A raised roof-surface region is visible in the raster. The local mapping is approximate and the feature is not proven to be a penthouse; these bounds must not be used as surveyed footprint dimensions."
+    },
+    "accuracy_context": "Indiana's 2016-2020 QL2 source describes statewide RMSEz ≤0.10 m and an expected 95th-percentile NVA ≤0.196 m, but instructs users to assess their own AOI. This audit performs no local survey-point validation and the raster products have undocumented vertical datum tags.",
+    "unverified": [
+      "Exact wall-roof transition height and per-floor elevations.",
+      "Penthouse plan outline, parapet dimensions, roof-panel layout, and equipment identity.",
+      "Communications mast and antenna height; a 5-ft DSM does not reliably resolve thin vertical elements."
+    ]
+  },
+  "exterior_source_inventory": {
+    "records": "audit/batch3_math/math_source_inventory_r10.json",
+    "archive_photo_record": "Purdue eArchives item 823 / PPBUC00750, undated B&W exterior photograph, direction unknown.",
+    "archive_drawing_record": "Purdue eArchives item 824, undated B&W exterior-view drawing, direction unknown; its drawing content could not be visually inspected in this run.",
+    "result": "No trustworthy direction-tagged elevation/photo is available for filling the blank north/west surfaces. No openings or wall details were invented."
+  },
+  "interior_source_inventory": {
+    "current_public_evidence": "2022 third-floor Board plan and 2025 Purdue Libraries reopening article/photo support a library zone, core relationships, and broad furniture/material types; they do not establish an as-built room/furniture schedule.",
+    "facilities_access_reference": "https://www.purdue.edu/operations/operations-maintenance/wp-content/uploads/sites/7/2025/12/bd-manual.pdf",
+    "access_limit": "Purdue's Building Deputy manual says construction plans are available by facilities request and floor plans through Purdue's FM:S access; it says these plans should not be copied or redistributed. No current as-built plan was accessed. Existing partitions, route widths, stair layout, and furniture placement remain schematic."
+  },
+  "asset_validation": {
+    "report": "audit/batch3_math/round10_validation.json",
+    "passed": true,
+    "blender_version": "5.2.3 LTS",
+    "opened_saved_asset": true,
+    "direct_objects": 550,
+    "objects_including_children": 593,
+    "shell_bounds_m": [[-18.814985,17.876678],[-33.964325,33.804897],[0.0,33.2]],
+    "east_sign_absent": true,
+    "unpacked_external_images": [],
+    "roof_objects_annotated": true,
+    "geometry_changed": false,
+    "master_or_shared_files_edited": false
+  },
+  "tools_and_artifacts": [
+    "audit/batch3_math/analyze_math_roof_dsm_r10.py",
+    "audit/batch3_math/update_math_r10_height_evidence.py",
+    "audit/batch3_math/validate_math_r10.py",
+    "audit/batch3_math/finish_math.py"
+  ],
+  "rating_status": "No R10 self-score claimed. The independent R9 score of 7.8/10 remains in force pending a fresh reviewer."
+}

@@ -1,0 +1,79 @@
+{
+  "building": "Mathematical Sciences Building (MATH)",
+  "round": 9,
+  "date": "2026-10-24",
+  "asset": "modular/buildings/math_sciences.blend",
+  "scope": "Dedicated Math Sciences asset, its build script, and Math Sciences audit/evidence only. Master and shared files were not edited.",
+  "prior_independent_score": 7.7,
+  "prior_target": 8.0,
+  "changes": {
+    "geometry": "No facade, roof, story-height, or interior geometry edits in R9.",
+    "material": "Qualitatively shifted the existing embedded procedural brick colors from pale pink toward restrained red-brown, reduced lightness of the mortar, and recorded that this is not a calibrated measurement.",
+    "presentation": "Rendered a close facade review and a clearer, higher-resolution oblique third-floor library/core view. Review-only object colors and floor plane are not saved into the asset."
+  },
+  "material_parameters_linear": {
+    "color1": [0.31, 0.12, 0.082, 1.0],
+    "color2": [0.43, 0.205, 0.13, 1.0],
+    "mortar": [0.45, 0.4, 0.35, 1.0],
+    "provenance": "Qualitative appearance adjustment informed by Purdue Statistics exterior photo; not measured or color calibrated."
+  },
+  "source_review": {
+    "height_and_roof": "No measured MATH elevation, roof height, floor spacing, or reliable height specification was found in the public sources checked for R9. The Purdue Archives MATH entry confirms a 10-story identity only. Roof profile, 33.2 m shell top, 42.9 m maximum bound, slab heights, and mast remain estimated.",
+    "blank_elevations": "No new direction-identified north/west facade photo or building elevation was located. No openings or facade patterns were invented for those sides.",
+    "interior": "R8's library-to-hall/core relationship and vertical alignment remain internally consistent. The 2022 plan supports third-floor zones/core relationships; exact current partitions, route dimensions, furniture counts and positions remain schematic because a measured as-built plan was not found.",
+    "sources": [
+      {
+        "url": "https://www.stat.purdue.edu/images/about/Math-Bldg-.jpg",
+        "provider": "Purdue Department of Statistics",
+        "use": "Qualitative red-brown brick, narrow repeated window bays and pale surrounds on the visible facade; photo is not georeferenced, its orientation is not established, and its color is not calibrated."
+      },
+      {
+        "url": "https://archives.lib.purdue.edu/agents/corporate_entities/672",
+        "provider": "Purdue Archives and Special Collections",
+        "use": "Confirms the building is ten stories; supplies no metric heights or elevations."
+      },
+      {
+        "url": "https://www.purdue.edu/bot/meetings/past-meetings/2022/09.%20oct/pfc/Libraries%20Study%20Space%20Reno.pdf",
+        "provider": "Purdue Board of Trustees / Administrative Operations",
+        "use": "Third-floor library renovation plan and core/zone relationships; not an as-built dimensioned survey."
+      },
+      {
+        "url": "https://www.rcac.purdue.edu/index.php/news/6807",
+        "provider": "Purdue Research Computing",
+        "use": "Describes a data-center renovation; does not publish an elevation or measured building height."
+      },
+      {
+        "url": "https://archives.lib.purdue.edu/objects/21783",
+        "provider": "Purdue Archives and Special Collections",
+        "use": "Generic 1997 Building Drawings catalog entry in the Purdue Building Images collection; not identified as MATH and no drawing content was available, so it was not treated as MATH facade/height evidence."
+      }
+    ]
+  },
+  "validation": {
+    "report": "audit/batch3_math/round9_validation.json",
+    "passed": true,
+    "saved_asset_reopened_in_blender": true,
+    "collection_object_count_including_children": 593,
+    "round8_shell_bounds_unchanged": true,
+    "shell_z_bounds_m": [0.0, 33.20000076293945],
+    "third_floor_connector_present": true,
+    "external_unpacked_images": [],
+    "master_edited": false
+  },
+  "renders": [
+    "audit/batch3_math/exterior_brick_r9.png",
+    "audit/batch3_math/library_oblique_round9.png"
+  ],
+  "builder_and_render_scripts": [
+    "audit/batch3_math/finish_math.py",
+    "audit/batch3_math/update_math_r9_material.py",
+    "audit/batch3_math/render_math_r9.py",
+    "audit/batch3_math/validate_math_r9.py"
+  ],
+  "rating_status": "No self-score claimed. R8 independent score of 7.7/10 remains in force until a fresh independent reviewer evaluates R9.",
+  "reviewer_focus": [
+    "Compare new brick response against the visible Purdue facade reference, accounting for the photo's low resolution and lack of calibrated color.",
+    "Assess R9 oblique interior render readability while keeping room geometry and furniture clearly labeled as schematic.",
+    "Confirm R9 did not overstate unsupported height, roof, or blank north/west facade claims."
+  ]
+}

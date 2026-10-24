@@ -1,0 +1,49 @@
+{
+  "building": "Mathematical Sciences Building (MATH)",
+  "round": 9,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/math_sciences.blend",
+  "rating": 7.8,
+  "threshold": 8.0,
+  "meets_threshold": false,
+  "scoring_method": "Arithmetic mean of the six category scores, rounded to one decimal place.",
+  "category_scores": {
+    "identity_and_footprint": 9.1,
+    "placement_and_orientation": 9.6,
+    "roof_and_height": 4.8,
+    "exterior_and_texturing": 7.0,
+    "interior_and_circulation": 7.1,
+    "technical_integrity_and_verification": 9.3
+  },
+  "category_findings": {
+    "identity_and_footprint": "Archives supports the ten-story MATH identity; GIS FID 227 bounding-edge agreement is within 0.00434 m, while sampled edge-distance maxima are about 1.54-1.95 m and the GIS is not a survey.",
+    "placement_and_orientation": "R8 read-only master registration evidence remains applicable because R9 reports no master edits; the single instance matches manifest translation within 0.02 m, with unit scale and zero rotation.",
+    "roof_and_height": "No measured elevation supports the 33.2 m shell, 42.9 m maximum, floor intervals, penthouse/monitor, parapets, roof, or mast. The prominent rooftop panels remain unsupported.",
+    "exterior_and_texturing": "R9 red-brown brick visually improves over R8's pale pink and matches the direction of the low-resolution Purdue photo; exact color is uncalibrated and photo orientation is unknown. Blank wings and opening schedule remain unverified.",
+    "interior_and_circulation": "R9 oblique is more legible and vertical alignment is internally consistent. Room layout, furniture, partitions, corridor widths/positions, stairs, and as-built circulation remain schematic.",
+    "technical_integrity_and_verification": "Blender reopen passed, collection and object counts recorded, shell bounds unchanged, connector present, material values reopened, and no unpacked images found. These do not prove architectural fidelity."
+  },
+  "score_calculation": "(9.1 + 9.6 + 4.8 + 7.0 + 7.1 + 9.3) / 6 = 7.8167, rounded to 7.8.",
+  "files_reviewed": [
+    "audit/batch3_math/round9_validation.json",
+    "audit/batch3_math/evidence_round9.json",
+    "audit/batch3_math/exterior_brick_r9.png",
+    "audit/batch3_math/library_oblique_round9.png",
+    "audit/batch3_math/independent_review_round8_scorecard.json",
+    "audit/batch3_math/independent_review_round8_registration.json"
+  ],
+  "major_remaining_issues": [
+    "No metric elevation source supports modeled height, floor spacing, roof, or penthouse geometry.",
+    "Broad blank facades and modeled openings outside the photographed elevation remain unverified.",
+    "Brick value is qualitative rather than calibrated; current exterior photo is low-resolution and not direction-identified.",
+    "Interior geometry and circulation are illustrative; no current as-built plan verifies room partitions, dimensions, or furniture layout."
+  ],
+  "recommended_next_evidence": [
+    "A measured building elevation or facilities drawing identifying MATH.",
+    "Dated, direction-identified north and west facade photos or elevations.",
+    "A current as-built third-floor plan for partitions and circulation."
+  ],
+  "master_edited": false,
+  "asset_edited": false,
+  "report": "audit/batch3_math/independent_review_round9.md"
+}

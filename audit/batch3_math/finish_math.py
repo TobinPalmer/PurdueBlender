@@ -152,7 +152,10 @@ if brick is None: raise RuntimeError("Expected Purdue-photo brick material is mi
 # The prior review found brick coursing too subtle at campus-view scale. Keep
 # the existing metric UVs and procedural brick shader, but increase mortar
 # visibility and restrained brick variation so courses read across all faces.
-brick.diffuse_color=(.43,.25,.19,1)
+brick.diffuse_color=(.38,.19,.13,1)
+brick["r9_material_note"]=("Qualitative red-brown adjustment from the Purdue Statistics Math Building photo; "
+    "not calibrated color measurement. Roof height and unpictured north/west facade geometry remain unchanged.")
+brick["r9_evidence_url"]="https://www.stat.purdue.edu/images/about/Math-Bldg-.jpg"
 bn=brick.node_tree.nodes; bl=brick.node_tree.links
 brick_tex=next((n for n in bn if n.type=='TEX_BRICK'),None)
 brick_bump=next((n for n in bn if n.type=='BUMP'),None)
@@ -163,9 +166,11 @@ if brick_tex and brick_bsdf and brick_bump:
     brick_tex.inputs['Row Height'].default_value=.078
     brick_tex.inputs['Mortar Size'].default_value=.008
     brick_tex.inputs['Mortar Smooth'].default_value=.02
-    brick_tex.inputs['Color1'].default_value=(.39,.205,.155,1)
-    brick_tex.inputs['Color2'].default_value=(.49,.285,.22,1)
-    brick_tex.inputs['Mortar'].default_value=(.58,.53,.46,1)
+    # R9: qualitative warm red-brown adjustment from the Purdue Statistics
+    # photograph. It is not a calibrated color measurement.
+    brick_tex.inputs['Color1'].default_value=(.31,.12,.082,1)
+    brick_tex.inputs['Color2'].default_value=(.43,.205,.13,1)
+    brick_tex.inputs['Mortar'].default_value=(.45,.40,.35,1)
     brick_bump.inputs['Distance'].default_value=.003
     brick_bump.inputs['Strength'].default_value=.34
     if not brick_tex.outputs['Color'].is_linked:
@@ -507,6 +512,72 @@ combine_boxes("MATH_2026_Testing_Room_352_Chair",library,[seat,steel],
      ((test_x-.16,test_y-.53,10.96),(.04,.04,.58),1),((test_x+.16,test_y-.53,10.96),(.04,.04,.58),1)])
 for nm in ["MATH_2026_Testing_Room_352_Walls","MATH_2026_Testing_Room_352_Door"]:
     bpy.data.objects[nm]["source_status"]="Room 352 label/location read from the 2022 third-floor plan. Windowless use and desktop are documented by Purdue Libraries in 2025. Current partition dimensions and exact door/furniture placement are inferred."
+
+# R8: keep the plan-labeled third-floor library and its core vertically aligned
+# with the modeled F03 slab. The Board plan identifies the floor; it does not
+# provide survey elevations or dimensions for the route. The model's absolute
+# floor elevations remain estimates. Mark moved objects to make reruns safe
+# when legacy MATH_Lib_* objects persist outside the regenerated collections.
+r8_dz = 6.58 - 10.645
+r8_targets = {o.name: o for o in library.all_objects}
+r8_targets.update({o.name: o for o in EXPORT.all_objects if o.name.startswith("MATH_Lib_")})
+r8_targets.update({o.name: o for o in floors.all_objects if o.name.startswith("MATH_2026_Third_Floor_")})
+r8_aligned = 0
+for obj in r8_targets.values():
+    if "r8_vertical_alignment_dz_m" not in obj:
+        obj.location.z += r8_dz
+        obj["r8_vertical_alignment_dz_m"] = r8_dz
+        obj["r8_vertical_alignment_basis"] = (
+            "Third-floor assignment from the 2022 Purdue Board of Trustees plan; aligned to the "
+            "modeled MATH_2026_Typical_Floor_03 slab. Absolute story elevations remain estimated."
+        )
+        r8_aligned += 1
+
+# The plan depicts the library zone connecting through hall 311 toward the
+# elevator core. Width and exact centerline are inferred because the plan has
+# no dimensions. The carpet connector is created at the corrected F03 finish.
+connector = bpy.data.objects.get("MATH_2026_Third_Floor_Core_Connector")
+if connector is None:
+    cx, cy, cz = -.1, 3.10, 6.591
+    sx, sy, sz = 1.25, 15.62, .018
+    verts = [(cx-sx/2,cy-sy/2,cz-sz/2),(cx+sx/2,cy-sy/2,cz-sz/2),
+             (cx+sx/2,cy+sy/2,cz-sz/2),(cx-sx/2,cy+sy/2,cz-sz/2),
+             (cx-sx/2,cy-sy/2,cz+sz/2),(cx+sx/2,cy-sy/2,cz+sz/2),
+             (cx+sx/2,cy+sy/2,cz+sz/2),(cx-sx/2,cy+sy/2,cz+sz/2)]
+    mesh=bpy.data.meshes.new("MATH_2026_Third_Floor_Core_Connector_Mesh")
+    mesh.from_pydata(verts,[],[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)])
+    mesh.materials.append(aisle)
+    connector=bpy.data.objects.new("MATH_2026_Third_Floor_Core_Connector",mesh)
+    library.objects.link(connector)
+connector["r8_vertical_alignment_dz_m"] = 0.0
+connector["source_status"] = (
+    "2022 third-floor plan supports a library-to-hall-311-to-elevator-core connection. "
+    "The plan is not dimensioned for this aisle; width and centerline are inferred."
+)
+
+# R10: measured-surface evidence note for roof-height review. The 2018 3DEP
+# DSM constrains broad roof elevations, but cannot resolve exact penthouse
+# geometry or floor-by-floor story heights, so the current massing is retained.
+r10_source = "Indiana GIO 2018 3DEP 5-ft DSM / 2.5-ft bare-earth DTM; MATH GIS FID 227 footprint"
+r10_note = (
+    "DSM-minus-DTM height percentiles over the GIS footprint: p50 36.92 m, p90 40.25 m, "
+    "p95 40.43 m, max 40.86 m above local terrain. These are 5-ft first-surface cells, "
+    "not measured architectural elevations; passage/edge cells, parapets, equipment and "
+    "DTM interpolation affect the distribution. No metric story heights are derived."
+)
+for name in ["MATH_Corrected_GIS_Roof_Slab", "MATH_Rooftop_Penthouse_Base", "MATH_Rooftop_Penthouse_Copings"]:
+    roof_obj = bpy.data.objects.get(name)
+    if roof_obj is not None:
+        roof_obj["r10_surface_source"] = r10_source
+        roof_obj["r10_surface_height_evidence"] = r10_note
+        roof_obj["r10_geometry_status"] = (
+            "Existing metric profile retained. DSM suggests a vertical discrepancy relative to "
+            "this object's modeled z bounds; no source-backed elevation drawing was found to "
+            "assign it to individual stories or exact roof parts."
+        )
+asset["r10_roof_height_source"] = r10_source
+asset["r10_roof_height_summary"] = r10_note
+asset["r10_unverified_roof_features"] = "Penthouse extents, parapets, antenna/mast height, and floor-by-floor elevations remain unverified."
 
 # Remove unsourced gold lettering that crossed a window and facade area.\nold_sign=bpy.data.objects.get("MATH_Signage_East")\nif old_sign:\n    bpy.data.objects.remove(old_sign, do_unlink=True)\n\n# Save source library and a machine-readable summary.
 bpy.ops.wm.save_as_mainfile(filepath=str(ASSET))

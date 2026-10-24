@@ -1,0 +1,100 @@
+{
+  "score": 7.9,
+  "max_score": 10.0,
+  "criteria": {
+    "identity_and_source_backed_footprint": {
+      "score": 1.9,
+      "max_score": 2.0,
+      "finding": "Purdue identity and GIS FID 227 support the correct building and plan envelope. Shell/plinth bounds closely follow the transformed GIS bounds; the local projection and AABB comparison are not survey control or a full wall-shape check.",
+      "evidence": [
+        "audit/batch3_math/gis_fid227.geojson",
+        "audit/batch3_math/evidence_round10.json",
+        "audit/batch3_math/round11_validation.json",
+        "https://archives.lib.purdue.edu/agents/corporate_entities/672"
+      ]
+    },
+    "position_orientation_and_scale": {
+      "score": 1.9,
+      "max_score": 2.0,
+      "finding": "The retained R8 read-only master check shows one expected placement instance at the manifest coordinates within 0.02 m, zero rotation, unit scale, and a relative library path. This registration evidence was not freshly repeated in R11; the project's local coordinate transform is approximate.",
+      "evidence": [
+        "audit/batch3_math/independent_review_round8_registration.json",
+        "audit/batch3_math/round11_validation.json",
+        "modular/manifest.json"
+      ]
+    },
+    "evidence_backed_height_floors_and_roof": {
+      "score": 0.9,
+      "max_score": 2.0,
+      "finding": "Purdue Archives supports the ten-story identity, and the newly inspected undated drawing shows a flat parapet and raised rear roof silhouette qualitatively. The modeled shell tops at 33.2 m and coping at 36.5 m, while 2018 DSM-minus-DTM p50 is 36.92 m and p95 is 40.43 m. The raster's footprint-wide 5-ft cells, unresolved vertical datum, and lack of component attribution cannot establish which modeled roof component or story is wrong. No geometry change is justified.",
+      "evidence": [
+        "audit/batch3_math/math_roof_dsm_r10.json",
+        "audit/batch3_math/math_source_inventory_r11.json",
+        "audit/batch3_math/round11_validation.json",
+        "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/824/",
+        "https://registry.opendata.aws/in-elevation/"
+      ]
+    },
+    "facade_entrances_and_distinctive_architecture": {
+      "score": 1.4,
+      "max_score": 2.0,
+      "finding": "The archive photograph directly shows a mostly blank end wall next to vertically grouped windows; the drawing shows vertical facade bands, simpler end bays, lower-level glazing, and a raised rear roof edge. The building's broad massing and window rhythm are plausible in the saved renders. Neither archive image is dated, direction-identified, dimensioned, or confirmed as-built/current, so facade coverage, current openings, exact entrance placement, and correspondence to model cardinal faces remain unverified. Blank rendered areas cannot be scored as verified elevations.",
+      "evidence": [
+        "audit/batch3_math/math_source_inventory_r11.json",
+        "audit/batch3_math/exterior_after.png",
+        "audit/batch3_math/exterior_north_after.png",
+        "audit/batch3_math/exterior_east_after.png",
+        "audit/batch3_math/exterior_south_after.png",
+        "audit/batch3_math/exterior_west_after.png",
+        "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/823/",
+        "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/824/"
+      ]
+    },
+    "modular_export_portability_and_complete_evidence": {
+      "score": 1.8,
+      "max_score": 2.0,
+      "finding": "The standalone asset reopens in Blender 5.2.3 with the expected collection, 550 direct/593 inclusive objects, stable bounds, and no unpacked image dependencies. R11 adds structured source observations and limits, while existing GIS, raster, floor-plan, render, and placement evidence is retained. The master integration check is from R8 rather than a fresh R11 integration audit, and current elevation/interior coverage remains incomplete.",
+      "evidence": [
+        "audit/batch3_math/round11_validation.json",
+        "audit/batch3_math/evidence_round11.json",
+        "audit/batch3_math/math_source_inventory_r11.json",
+        "audit/batch3_math/independent_review_round8_registration.json",
+        "audit/batch3_math/validate_math_r11.py"
+      ]
+    }
+  },
+  "evidence": [
+    "modular/buildings/math_sciences.blend",
+    "audit/batch3_math/independent_review_round10.md",
+    "audit/batch3_math/evidence_round10.json",
+    "audit/batch3_math/source_review_round11.md",
+    "audit/batch3_math/math_source_inventory_r11.json",
+    "audit/batch3_math/evidence_round11.json",
+    "audit/batch3_math/round11_validation.json",
+    "audit/batch3_math/exterior_after.png",
+    "audit/batch3_math/exterior_north_after.png",
+    "audit/batch3_math/exterior_east_after.png",
+    "audit/batch3_math/exterior_south_after.png",
+    "audit/batch3_math/exterior_west_after.png",
+    "audit/batch3_math/library_after.png",
+    "audit/batch3_math/third_floor_core_after.png",
+    "audit/batch3_math/math_dsm_roof_height_r10.png"
+  ],
+  "findings": [
+    "R11 changed evidence only; no building geometry or placement changed.",
+    "The two newly inspected archive images substantiate broad historical design motifs but cannot be assigned to model cardinal elevations or current as-built conditions.",
+    "The roof-height discrepancy remains unresolved at component level. The 2018 DSM/DTM is not a measured architectural elevation.",
+    "The R11 validation confirms the standalone asset reopens and has no unpacked image dependencies; the read-only master placement evidence is retained from R8.",
+    "The asset does not meet the 8.0/10 threshold under the five equally weighted project criteria."
+  ],
+  "building": "Mathematical Sciences Building",
+  "building_id": "math_sciences",
+  "review_round": 11,
+  "review_date": "2026-10-24",
+  "target": 8.0,
+  "passed_target": false,
+  "method": "Five project rubric criteria, each worth up to 2 points; total is the sum rounded to one decimal.",
+  "asset": "modular/buildings/math_sciences.blend",
+  "read_only_review": true,
+  "asset_or_master_edited": false
+}

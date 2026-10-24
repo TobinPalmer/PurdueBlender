@@ -1,0 +1,70 @@
+{
+  "building": "Mathematical Sciences Building",
+  "building_id": "math_sciences",
+  "review_round": 10,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/math_sciences.blend",
+  "overall_score": 7.9,
+  "target": 8.0,
+  "passed_target": false,
+  "method": "Equal-weight mean of six categories, rounded to one decimal.",
+  "categories": {
+    "identity_and_footprint": {
+      "score": 9.1,
+      "weight": 1,
+      "finding": "GIS FID 227 and archive identity support the model; bounds closely track footprint but GIS is not survey control."
+    },
+    "placement_and_orientation": {
+      "score": 9.6,
+      "weight": 1,
+      "finding": "R8 read-only master check shows expected relative library path, transform within 0.02 m, zero rotation and unit scale; R10 does not alter placement."
+    },
+    "roof_and_height": {
+      "score": 5.2,
+      "weight": 1,
+      "finding": "R10 2018 DSM-DTM p50/p90/p95 are 36.92/40.25/40.43 m; modeled shell slab is 33.2-33.4 m and coping top 36.5 m. Conflict is documented but does not locate which component is wrong."
+    },
+    "exterior_and_texturing": {
+      "score": 7.0,
+      "weight": 1,
+      "finding": "Brick and repeated openings render coherently; broad blank elevations remain and available photo lacks registered direction and calibrated color."
+    },
+    "interior_and_circulation": {
+      "score": 7.1,
+      "weight": 1,
+      "finding": "Third-floor render and 2022 plan correspond at broad zone/core level; current partitions, routes and furniture remain schematic and vertical continuity unverified."
+    },
+    "technical_integrity_and_evidence": {
+      "score": 9.5,
+      "weight": 1,
+      "finding": "Blender 5.2.3 reopen validation passes with expected counts/bounds, provenance, no unpacked images, and no shared/master edits; R10 records source/method/uncertainty."
+    }
+  },
+  "category_score_sum": 47.5,
+  "category_count": 6,
+  "unrounded_mean": 7.9166666667,
+  "primary_deductions": [
+    "Modeled roof slab is approximately 3.5 m below the R10 lidar median surface, and the source cannot assign that discrepancy to a specific component.",
+    "Large blank facade faces remain unverified and no registered facade source supports additional openings.",
+    "Interior room/circulation geometry and complete vertical continuity remain schematic or unverified."
+  ],
+  "review_report": "audit/batch3_math/independent_review_round10.md",
+  "files_reviewed": [
+    "audit/batch3_math/evidence_round10.json",
+    "audit/batch3_math/round10_validation.json",
+    "audit/batch3_math/math_roof_dsm_r10.json",
+    "audit/batch3_math/math_source_inventory_r10.json",
+    "audit/batch3_math/exterior_after.png",
+    "audit/batch3_math/exterior_north_after.png",
+    "audit/batch3_math/exterior_east_after.png",
+    "audit/batch3_math/exterior_south_after.png",
+    "audit/batch3_math/exterior_west_after.png",
+    "audit/batch3_math/brick_detail_after.png",
+    "audit/batch3_math/library_after.png",
+    "audit/batch3_math/third_floor_core_after.png",
+    "audit/batch3_math/math_dsm_roof_height_r10.png",
+    "audit/batch3_math/independent_review_round8_registration.json"
+  ],
+  "read_only_review": true,
+  "math_or_master_files_edited": false
+}

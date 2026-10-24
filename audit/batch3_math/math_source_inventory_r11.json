@@ -1,0 +1,77 @@
+{
+  "review_date": "2026-10-24",
+  "building": "Mathematical Sciences Building (MATH)",
+  "review_round": 11,
+  "scope": "Additional evidence investigation only; no geometry or shared/master files edited.",
+  "inspected_official_archive_images": [
+    {
+      "item_id": 823,
+      "record_url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/823/",
+      "iiif_image_url": "https://earchives.lib.purdue.edu/iiif/2/pbuildings:823/full/full/0/default.jpg",
+      "purdue_id": "PPBUC00750",
+      "title": "Mathematical Sciences Building",
+      "description": "Exterior photograph of Math Sciences",
+      "original_date": "undated",
+      "orientation": "portrait",
+      "physical_description": "1 photograph: black and white; 12 x 10 cm",
+      "rights_statement": "Copyright Purdue University Libraries",
+      "visual_inspection": {
+        "method": "Viewed the publicly served Purdue eArchives IIIF image at its full rendition; the record and image retain Purdue Libraries' copyright notice.",
+        "observation": "An oblique corner view shows one largely unfenestrated masonry end wall and an adjacent long elevation with repeated vertical window groupings; a lighter lower/base level and flat roofline are visible.",
+        "usable_for": "Qualitative confirmation that a blank end wall and vertically grouped fenestration occur on the historic exterior; broad massing/material contrast only.",
+        "not_usable_for": "Compass orientation, mapping the photographed faces to model cardinal elevations, current-condition verification, dimensions, floor heights, penthouse dimensions, or accurate material color."
+      }
+    },
+    {
+      "item_id": 824,
+      "record_url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/824/",
+      "iiif_image_url": "https://earchives.lib.purdue.edu/iiif/2/pbuildings:824/full/full/0/default.jpg",
+      "purdue_id": "not supplied in the retained item API response",
+      "title": "Mathematical Sciences Building [catalog spelling: Mathematical]",
+      "description": "Exterior view of Math Sciences",
+      "original_date": "undated",
+      "orientation": "landscape",
+      "physical_description": "1 drawing: black and white; 10 x 12 cm",
+      "rights_statement": "Copyright Purdue University Libraries",
+      "visual_inspection": {
+        "method": "Viewed the publicly served Purdue eArchives IIIF image at its full rendition; the record and image retain Purdue Libraries' copyright notice.",
+        "observation": "A perspective architectural illustration shows a tall rectilinear tower with repeated vertical window bands across its main elevation, simpler end/corner bays, a glazed lower level, a flat parapet, and a slightly raised roof element behind the front roof edge.",
+        "usable_for": "Qualitative original-design cues for overall tower massing, repeated vertical facade rhythm, relatively blank corner/end zones, lower-level glazing, and a stepped/raised roof silhouette.",
+        "not_usable_for": "As-built confirmation, drawing date, compass direction, exact opening schedule, dimensions, component identity or height of the raised roof element, current interior, or current materials."
+      }
+    }
+  ],
+  "interior_source_lead": {
+    "record_url": "https://archives.lib.purdue.edu/repositories/2/accessions/2685",
+    "title": "Purdue University Libraries records, addition 68",
+    "accession": "2024-012",
+    "description": "Annual reports, floor plans and key information concerning the Mathematics Library move from the Recitation Building to the Mathematical Sciences Building.",
+    "dates": "1957-1994; source and date of acquisition unknown",
+    "format_and_access": "A 0.025 cubic-foot physical folder in communal accessions; record states Restrictions Apply: No. No scanned plan was located or inspected in this review.",
+    "assessment": "A concrete archival lead for original/library-move floor plans, but provenance/date are uncertain and the record does not establish the plans' status as current as-builts. Not used to edit rooms, circulation, or stairs."
+  },
+  "height_source_follow_up": {
+    "existing_analysis": "audit/batch3_math/math_roof_dsm_r10.json",
+    "existing_raster": "audit/batch3_math/indiana_3dep_2018_dsm_in2018_29951885_12_dsm.tif",
+    "existing_dtm": "audit/batch3_math/indiana_3dep_2018_dtm_in2018_29951885_12.tif",
+    "newly_confirmed_point_cloud_catalog": {
+      "provider": "Indiana Geographic Information Office / Indiana IOT",
+      "registry_url": "https://registry.opendata.aws/in-elevation/",
+      "bucket": "s3://giselevationingov/",
+      "documented_path_pattern": "las/statewide/2018/SPW/ql2/",
+      "license": "CC0 as stated by the Indiana Statewide Elevation Catalog",
+      "source_support": "Catalog confirms downloadable Indiana lidar LAS tiles for 2016-2020, arranged in tile grids; IU portal describes 2016-2020 QL2 point-cloud deliverables at about 2 last pulses/m².",
+      "not_resolved": "The corresponding raw LAS tile for the existing DSM product was not identified and analyzed in this pass. A point cloud could add dense 3D returns but would still require a verified vertical datum, accurate registration and roof-object attribution. No roof component can be assigned from the current percentile/bounds evidence alone."
+    },
+    "assessment": "R10 DSM/DTM mismatch remains unresolved at component level. The newly inspected historic drawing's raised roof silhouette is undimensioned and cannot be used to raise the modeled roof or penthouse."
+  },
+  "geometry_or_material_changes": [],
+  "geometry_claim": "No geometry changes; blank elevations and window distribution are only corroborated as broad design motifs, not direction-mapped or measurement-verified.",
+  "interior_changes": [],
+  "open_questions": [
+    "Which local/cardinal elevation corresponds to the faces shown in the historic photo and drawing?",
+    "What are the as-built roof slab, penthouse and parapet elevations and exact roof component footprint?",
+    "Are the original Mathematics Library floor plans accessible and relevant to a current or historical modeled interior?",
+    "What current elevation or direction-identified facade photographs can verify the present building?"
+  ]
+}

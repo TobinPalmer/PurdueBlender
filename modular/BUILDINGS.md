@@ -22,7 +22,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Krannert Building | [krannert_building.blend](buildings/krannert_building.blend) | 670 |
 | Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 508 |
 | Mackey Arena | [mackey_arena.blend](buildings/mackey_arena.blend) | 391 |
-| Math Sciences | [math_sciences.blend](buildings/math_sciences.blend) | 592 |
+| Math Sciences | [math_sciences.blend](buildings/math_sciences.blend) | 593 |
 | Mccutcheon Hall | [mccutcheon_hall.blend](buildings/mccutcheon_hall.blend) | 235 |
 | Mechanical Engineering | [mechanical_engineering.blend](buildings/mechanical_engineering.blend) | 50 |
 | Neil Armstrong Hall | [neil_armstrong_hall.blend](buildings/neil_armstrong_hall.blend) | 444 |

@@ -1,0 +1,66 @@
+{
+  "building": "Mathematical Sciences Building (MATH)",
+  "round": 8,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/math_sciences.blend",
+  "rating": 7.7,
+  "threshold": 8.0,
+  "meets_threshold": false,
+  "scoring_method": "Arithmetic mean of the six category scores, rounded to one decimal place.",
+  "category_scores": {
+    "identity_and_footprint": 9.1,
+    "placement_and_orientation": 9.6,
+    "roof_and_height": 4.8,
+    "exterior_and_texturing": 6.5,
+    "interior_and_circulation": 7.0,
+    "technical_integrity_and_verification": 9.3
+  },
+  "r8_alignment_assessment": {
+    "pass": true,
+    "library_finish_top_m": 6.58,
+    "f03_slab_top_m": 6.58,
+    "third_floor_core_connector_bounds_m": [[-0.725, 0.525], [-4.71, 10.91], [6.582, 6.6]],
+    "assessment": "Fixes prior interior vertical disconnect and creates a continuous modeled library-to-core route. Plan supports zone/core relationship but not absolute elevations or corridor width; geometry remains schematic."
+  },
+  "footprint_assessment": {
+    "gis_feature_id": 227,
+    "max_abs_bbox_edge_delta_m": 0.004335212800555155,
+    "structural_edge_median_offsets_m": {
+      "shell_centerline_to_gis_boundary": 0.09164566639510585,
+      "gis_boundary_to_shell_centerline": 0.09142752521782072
+    },
+    "structural_edge_max_offsets_m": {
+      "shell_centerline_to_gis_boundary": 1.947181735550762,
+      "gis_boundary_to_shell_centerline": 1.5382349877766883
+    },
+    "limitation": "Bounding-box agreement is not full polygon agreement; structural centerline distances include expected wall-thickness offset and are not surveyed tolerances."
+  },
+  "master_registration": {
+    "checked_read_only": true,
+    "evidence_file": "independent_review_round8_registration.json",
+    "pass": true,
+    "placement_object": "Placement_math_sciences",
+    "library_path": "//modular\\buildings\\math_sciences.blend",
+    "location_world_m": [-181.119995, -126.904999, 0.0],
+    "scale": [1.0, 1.0, 1.0],
+    "rotation_euler_rad": [0.0, 0.0, 0.0]
+  },
+  "technical_checks": {
+    "saved_asset_reopened": true,
+    "collection": "Asset_math_sciences",
+    "direct_objects": 550,
+    "objects_including_children": 593,
+    "east_sign_absent": true,
+    "selected_pane_center_rays_clear": 81,
+    "solid_wall_control_rays_hit_brick": 6,
+    "unpacked_external_images": [],
+    "limitations": "Sample geometry and reopen checks do not validate complete facade accuracy, real window schedule, metric elevation, roof form, or as-built interior."
+  },
+  "major_remaining_issues": [
+    "No measured elevation supports the modeled 33.2 m shell height, 42.9 m total extent, floor spacing, roof/penthouse, or mast.",
+    "Large blank facade wings and north/west elevation details are not source-verified.",
+    "Overview brick color/material appears flatter and paler than the limited exterior reference.",
+    "Interior circulation now aligns internally, but room/furniture arrangement and connector dimensions remain schematic; R8 oblique is difficult to assess at overview scale."
+  ],
+  "report": "audit/batch3_math/independent_review_round8.md"
+}

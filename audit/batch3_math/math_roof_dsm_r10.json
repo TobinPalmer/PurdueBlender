@@ -1,0 +1,103 @@
+{
+  "provider": "Indiana Geographic Information Office / Indiana Statewide 3DEP Lidar Dates MapServer and public 3DEP DSM object storage",
+  "acquisition_project": "2018",
+  "query_layer_tile": "in2018_29951885_12",
+  "tile_acquisition_date_utc": "2018-04-20T00:00:00Z",
+  "tile_index_query_url": "https://gisdata.in.gov/server/rest/services/Indiana_Statewide_3DEP_Lidar_Dates/MapServer/5/query?where=1%3D1&geometry=-86.915642%2C40.4261348&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=pjson",
+  "tile_path": "audit/batch3_math/indiana_3dep_2018_dsm_in2018_29951885_12_dsm.tif",
+  "review_image": "audit/batch3_math/math_dsm_roof_height_r10.png",
+  "tile_sha256": "1547f9840b679656feb4a25a5bb47a496f0c2675659a2b1c8571d3d24815f7ab",
+  "source_url": "https://giselevationingov.s3.us-east-2.amazonaws.com/dsmoptimized/statewide/2018/SPW/5ft/in2018_29951885_12_dsm.tif",
+  "bare_earth_dtm_path": "audit/batch3_math/indiana_3dep_2018_dtm_in2018_29951885_12.tif",
+  "bare_earth_dtm_url": "https://giselevationingov.s3.us-east-2.amazonaws.com/demoptimized/statewide/2018/SPW/2.5ft/in2018_29951885_12.tif",
+  "bare_earth_dtm_sha256": "f5c11ed555532b093c3daafd021f8f0abd6280731d1781bf7c9e886726a9f3c2",
+  "tile_crs": "PROJCS[\"NAD83(HARN) / Indiana West (ftUS)\",GEOGCS[\"NAD83(HARN)\",DATUM[\"NAD83_High_Accuracy_Reference_Network\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6152\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",37.5],PARAMETER[\"central_meridian\",-87.0833333333333],PARAMETER[\"scale_factor\",0.999966666666667],PARAMETER[\"false_easting\",2952750],PARAMETER[\"false_northing\",820208.333333333],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+  "tile_bounds_projected_native_units": [
+    2995000.0,
+    1885000.0,
+    3000000.0,
+    1890000.0
+  ],
+  "pixel_size_native_units": [
+    5.0,
+    5.0
+  ],
+  "tile_shape_pixels": [
+    1000,
+    1000
+  ],
+  "value_unit_note": "Source tile coordinates are Indiana West US survey feet. Raster pixel values have no embedded unit tags; ft is corroborated by matching local DTM elevations (~623.9) to Purdue GIS MATH Elevation=623.3. Both 2018 DSM and bare-earth DTM are compared in the same tile/product coordinate framework. Vertical datum metadata remains unverified.",
+  "footprint_source": "Purdue GIS BuildingShapesZip4 FID 227 MATH polygon from gis_fid227.geojson, transformed from EPSG:4326 into the DSM CRS.",
+  "footprint_pixel_count": 620,
+  "footprint_surface_elevation_ft_percentiles": {
+    "p0": 635.3300170898438,
+    "p5": 637.7279815673828,
+    "p10": 638.0459899902344,
+    "p25": 642.7474975585938,
+    "p50": 745.1799926757812,
+    "p75": 745.4400024414062,
+    "p90": 755.9949890136719,
+    "p95": 756.5905242919922,
+    "p99": 756.780029296875,
+    "p100": 758.0399780273438
+  },
+  "nearby_context_20_to_60m_elevation_ft_percentiles": {
+    "p5": 623.6830230712891,
+    "p25": 623.7874908447266,
+    "p50": 623.9049987792969,
+    "p75": 623.989990234375,
+    "p95": 637.7530090332032
+  },
+  "footprint_above_context_median_ft": 121.27499389648438,
+  "bare_earth_dtm_footprint_ft_percentiles": {
+    "p5": 623.7445068359375,
+    "p25": 623.9268798828125,
+    "p50": 624.041259765625,
+    "p75": 624.1549682617188,
+    "p95": 624.5700073242188
+  },
+  "bare_earth_dtm_context_ft_percentiles": {
+    "p5": 623.6229858398438,
+    "p25": 623.7150268554688,
+    "p50": 623.8125,
+    "p75": 623.9049682617188,
+    "p95": 623.9656372070312
+  },
+  "normalized_surface_height_dsm_minus_dtm_ft_percentiles": {
+    "p0": 11.25494384765625,
+    "p5": 13.528594970703125,
+    "p10": 13.96226806640625,
+    "p25": 18.843780517578125,
+    "p50": 121.13623046875,
+    "p75": 121.42999267578125,
+    "p90": 132.05848999023436,
+    "p95": 132.65777893066405,
+    "p99": 132.85456604003906,
+    "p100": 134.04498291015625
+  },
+  "normalized_surface_height_dsm_minus_dtm_m_percentiles": {
+    "p0": 3.4305137457931147,
+    "p5": 4.123523994118298,
+    "p10": 4.255707818056258,
+    "p25": 5.743595788949387,
+    "p50": 36.92239689166876,
+    "p75": 37.01193579144969,
+    "p90": 40.25150825203991,
+    "p95": 40.43417188641015,
+    "p99": 40.49415271730932,
+    "p100": 40.85699250500061
+  },
+  "higher_surface_zone_over_125ft_local_bounds_m": [
+    [
+      -1.8705454431226372,
+      8.84638064733332
+    ],
+    [
+      -24.85146078132115,
+      8.682511834984467
+    ]
+  ],
+  "higher_surface_zone_over_125ft_pixel_count": 86,
+  "local_coordinate_method": "Reproject DSM cell centers to WGS84 then apply the existing Math audit local-frame approximation also used in make_overlays.py. High-zone coordinates are approximate and not a cadastral alignment.",
+  "limitation": "DSM is a 2018 first-surface model at 5 ft cells, not a building roof survey. DTM below building may be interpolated because it is bare-earth; this height difference is approximate, and the footprint mask includes passage, parapets, roof equipment and returns. 5ft cells cannot resolve thin aerials, exact parapet edges, individual panel geometry, or floor-to-floor heights. The two products are useful as a broad roof-height range, not as-built architectural elevations."
+}
