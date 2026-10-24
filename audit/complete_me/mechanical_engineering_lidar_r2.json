@@ -1,0 +1,1921 @@
+{
+  "revision": 2,
+  "purpose": "Source registration and roof/height assessment; no geometry change is authorized by this result alone.",
+  "dsm_source": {
+    "provider": "Indiana Geographic Information Office / Indiana Statewide Elevation Catalog",
+    "title": "Indiana 2016-2020 QL2 3DEP LiDAR, 2018 Tippecanoe DSM tile in2018_30001885_12",
+    "acquisition_date": "2018-04-20",
+    "download_url": "https://giselevationingov.s3.us-east-2.amazonaws.com/dsmoptimized/statewide/2018/SPW/5ft/in2018_30001885_12.tif",
+    "catalog": "https://registry.opendata.aws/in-elevation/",
+    "product": "5-ft raster cells; floating elevation values in US survey feet; NAD83(HARN) / Indiana West (ftUS).",
+    "license": "CC0",
+    "local_file": "audit\\complete_me\\indiana_3dep_2018_dsm_in2018_30001885_12.tif",
+    "sha256": "3d04dc9f70e85e7b6c1944bb87b09ab9686d2cfbb2e61ece97d3652206e5add9",
+    "crs": "PROJCS[\"NAD83(HARN) / Indiana West (ftUS)\",GEOGCS[\"NAD83(HARN)\",DATUM[\"NAD83_High_Accuracy_Reference_Network\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6152\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",37.5],PARAMETER[\"central_meridian\",-87.0833333333333],PARAMETER[\"scale_factor\",0.999966666666667],PARAMETER[\"false_easting\",2952750],PARAMETER[\"false_northing\",820208.333333333],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "geotransform": [
+      5.0,
+      0.0,
+      3000000.0,
+      0.0,
+      -5.0,
+      1890000.0
+    ],
+    "raster_shape_px": [
+      1000,
+      1000
+    ],
+    "nodata": null
+  },
+  "footprint_source": {
+    "provider": "Purdue campus GIS",
+    "feature_service": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "source_snapshot": "audit\\official_building_references.json",
+    "feature_ids": [
+      857,
+      108
+    ],
+    "source_crs": "EPSG:4326 transformed to project-local approximate XY as preserved in the GIS snapshot; transformed back to EPSG:4326 with project inverse formula, then to the DSM CRS with pyproj/rasterio",
+    "campus_xy_to_lonlat": "lon=-86.9137+x/(111412.84*cos(40.4274deg)); lat=40.4274+y/111040.0",
+    "uncertainty": "Projection is the project approximate campus tangent plane, not survey control; 5-ft DSM pixels may straddle GIS roof edges."
+  },
+  "results": {
+    "108": {
+      "name": "Mechanical Engineering Building",
+      "code": "ME",
+      "gis_feature_id": 108,
+      "official_polygon_center_xy_m": [
+        108.42252558991208,
+        69.1818063138051
+      ],
+      "official_polygon_bounds_xy_m": [
+        100.63778577948375,
+        62.9163989287963,
+        114.70849666245024,
+        74.81411017310847
+      ],
+      "registered_polygon_bounds_in_raster_units": [
+        3000307.1874211505,
+        1886643.548123811,
+        3000353.3942081993,
+        1886682.598111584
+      ],
+      "cell_size_ft": [
+        5.0,
+        5.0
+      ],
+      "sampled_cells_at_cell_centers": 45,
+      "elevation_ftUS_quantiles_p10_p25_p50_p75_p90_p95_p99_max": [
+        634.6880004882812,
+        634.77001953125,
+        634.8800048828125,
+        638.52001953125,
+        654.2800048828126,
+        665.122021484375,
+        665.3576025390626,
+        665.4500122070312
+      ],
+      "dominant_1ft_elevation_bin_ftUS": [
+        634.0,
+        635.0
+      ],
+      "dominant_bin_share": 0.4888888888888889,
+      "spatial_6x6_neighborhoods": [
+        {
+          "grid_1based": [
+            1,
+            1
+          ],
+          "center_world_xy_m": [
+            101.81,
+            63.908
+          ],
+          "surface_elevation_ftUS_median": 629.5350341796875,
+          "surface_elevation_ftUS_p10_p90": [
+            627.0500183105469,
+            634.8550109863281
+          ],
+          "valid_cells": 6
+        },
+        {
+          "grid_1based": [
+            2,
+            1
+          ],
+          "center_world_xy_m": [
+            104.155,
+            63.908
+          ],
+          "surface_elevation_ftUS_median": 634.7000122070312,
+          "surface_elevation_ftUS_p10_p90": [
+            627.7460205078125,
+            635.0240112304688
+          ],
+          "valid_cells": 9
+        },
+        {
+          "grid_1based": [
+            3,
+            1
+          ],
+          "center_world_xy_m": [
+            106.501,
+            63.908
+          ],
+          "surface_elevation_ftUS_median": 634.8499755859375,
+          "surface_elevation_ftUS_p10_p90": [
+            629.4190124511719,
+            635.0080078125
+          ],
+          "valid_cells": 12
+        },
+        {
+          "grid_1based": [
+            4,
+            1
+          ],
+          "center_world_xy_m": [
+            108.846,
+            63.908
+          ],
+          "surface_elevation_ftUS_median": 634.8599853515625,
+          "surface_elevation_ftUS_p10_p90": [
+            634.71201171875,
+            635.0080078125
+          ],
+          "valid_cells": 12
+        },
+        {
+          "grid_1based": [
+            5,
+            1
+          ],
+          "center_world_xy_m": [
+            111.191,
+            63.908
+          ],
+          "surface_elevation_ftUS_median": 634.8800048828125,
+          "surface_elevation_ftUS_p10_p90": [
+            634.8200073242188,
+            638.9959716796875
+          ],
+          "valid_cells": 9
+        },
+        {
+          "grid_1based": [
+            6,
+            1
+          ],
+          "center_world_xy_m": [
+            113.536,
+            63.908
+          ],
+          "surface_elevation_ftUS_median": 634.8400268554688,
+          "surface_elevation_ftUS_p10_p90": [
+            634.8200073242188,
+            639.02197265625
+          ],
+          "valid_cells": 7
+        },
+        {
+          "grid_1based": [
+            1,
+            2
+          ],
+          "center_world_xy_m": [
+            101.81,
+            65.891
+          ],
+          "surface_elevation_ftUS_median": 634.7850341796875,
+          "surface_elevation_ftUS_p10_p90": [
+            627.9780212402344,
+            665.2340209960937
+          ],
+          "valid_cells": 10
+        },
+        {
+          "grid_1based": [
+            2,
+            2
+          ],
+          "center_world_xy_m": [
+            104.155,
+            65.891
+          ],
+          "surface_elevation_ftUS_median": 634.8900146484375,
+          "surface_elevation_ftUS_p10_p90": [
+            628.5640197753906,
+            656.2340087890625
+          ],
+          "valid_cells": 14
+        },
+        {
+          "grid_1based": [
+            3,
+            2
+          ],
+          "center_world_xy_m": [
+            106.501,
+            65.891
+          ],
+          "surface_elevation_ftUS_median": 634.8499755859375,
+          "surface_elevation_ftUS_p10_p90": [
+            629.5640014648437,
+            635.0380126953125
+          ],
+          "valid_cells": 17
+        },
+        {
+          "grid_1based": [
+            4,
+            2
+          ],
+          "center_world_xy_m": [
+            108.846,
+            65.891
+          ],
+          "surface_elevation_ftUS_median": 634.8499755859375,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7360107421875,
+            635.0380126953125
+          ],
+          "valid_cells": 17
+        },
+        {
+          "grid_1based": [
+            5,
+            2
+          ],
+          "center_world_xy_m": [
+            111.191,
+            65.891
+          ],
+          "surface_elevation_ftUS_median": 634.8800048828125,
+          "surface_elevation_ftUS_p10_p90": [
+            634.8200073242188,
+            638.8919799804687
+          ],
+          "valid_cells": 13
+        },
+        {
+          "grid_1based": [
+            6,
+            2
+          ],
+          "center_world_xy_m": [
+            113.536,
+            65.891
+          ],
+          "surface_elevation_ftUS_median": 636.3300170898438,
+          "surface_elevation_ftUS_p10_p90": [
+            634.8140075683593,
+            638.9829711914062
+          ],
+          "valid_cells": 10
+        },
+        {
+          "grid_1based": [
+            1,
+            3
+          ],
+          "center_world_xy_m": [
+            101.81,
+            67.874
+          ],
+          "surface_elevation_ftUS_median": 634.844970703125,
+          "surface_elevation_ftUS_p10_p90": [
+            628.3280212402344,
+            665.1660217285156
+          ],
+          "valid_cells": 12
+        },
+        {
+          "grid_1based": [
+            2,
+            3
+          ],
+          "center_world_xy_m": [
+            104.155,
+            67.874
+          ],
+          "surface_elevation_ftUS_median": 634.8699951171875,
+          "surface_elevation_ftUS_p10_p90": [
+            628.918017578125,
+            664.9460205078125
+          ],
+          "valid_cells": 17
+        },
+        {
+          "grid_1based": [
+            3,
+            3
+          ],
+          "center_world_xy_m": [
+            106.501,
+            67.874
+          ],
+          "surface_elevation_ftUS_median": 634.8300170898438,
+          "surface_elevation_ftUS_p10_p90": [
+            630.1819946289063,
+            635.0730163574219
+          ],
+          "valid_cells": 22
+        },
+        {
+          "grid_1based": [
+            4,
+            3
+          ],
+          "center_world_xy_m": [
+            108.846,
+            67.874
+          ],
+          "surface_elevation_ftUS_median": 634.8400268554688,
+          "surface_elevation_ftUS_p10_p90": [
+            634.723974609375,
+            635.0730163574219
+          ],
+          "valid_cells": 22
+        },
+        {
+          "grid_1based": [
+            5,
+            3
+          ],
+          "center_world_xy_m": [
+            111.191,
+            67.874
+          ],
+          "surface_elevation_ftUS_median": 634.8800048828125,
+          "surface_elevation_ftUS_p10_p90": [
+            634.766015625,
+            638.7359985351562
+          ],
+          "valid_cells": 17
+        },
+        {
+          "grid_1based": [
+            6,
+            3
+          ],
+          "center_world_xy_m": [
+            113.536,
+            67.874
+          ],
+          "surface_elevation_ftUS_median": 637.8200073242188,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7720092773437,
+            638.8919799804687
+          ],
+          "valid_cells": 13
+        },
+        {
+          "grid_1based": [
+            1,
+            4
+          ],
+          "center_world_xy_m": [
+            101.81,
+            69.857
+          ],
+          "surface_elevation_ftUS_median": 635.1500244140625,
+          "surface_elevation_ftUS_p10_p90": [
+            629.2720153808593,
+            665.2340209960937
+          ],
+          "valid_cells": 10
+        },
+        {
+          "grid_1based": [
+            2,
+            4
+          ],
+          "center_world_xy_m": [
+            104.155,
+            69.857
+          ],
+          "surface_elevation_ftUS_median": 634.9099731445312,
+          "surface_elevation_ftUS_p10_p90": [
+            631.5340087890625,
+            665.2280029296875
+          ],
+          "valid_cells": 15
+        },
+        {
+          "grid_1based": [
+            3,
+            4
+          ],
+          "center_world_xy_m": [
+            106.501,
+            69.857
+          ],
+          "surface_elevation_ftUS_median": 634.8200073242188,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7010131835938,
+            661.4890197753907
+          ],
+          "valid_cells": 22
+        },
+        {
+          "grid_1based": [
+            4,
+            4
+          ],
+          "center_world_xy_m": [
+            108.846,
+            69.857
+          ],
+          "surface_elevation_ftUS_median": 634.8350219726562,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7130065917969,
+            638.5670043945313
+          ],
+          "valid_cells": 24
+        },
+        {
+          "grid_1based": [
+            5,
+            4
+          ],
+          "center_world_xy_m": [
+            111.191,
+            69.857
+          ],
+          "surface_elevation_ftUS_median": 634.8800048828125,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7100219726562,
+            638.5700073242188
+          ],
+          "valid_cells": 21
+        },
+        {
+          "grid_1based": [
+            6,
+            4
+          ],
+          "center_world_xy_m": [
+            113.536,
+            69.857
+          ],
+          "surface_elevation_ftUS_median": 638.47998046875,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7099914550781,
+            638.5750122070312
+          ],
+          "valid_cells": 16
+        },
+        {
+          "grid_1based": [
+            1,
+            5
+          ],
+          "center_world_xy_m": [
+            101.81,
+            71.84
+          ],
+          "surface_elevation_ftUS_median": 664.4000244140625,
+          "surface_elevation_ftUS_p10_p90": [
+            634.85,
+            665.3060180664063
+          ],
+          "valid_cells": 7
+        },
+        {
+          "grid_1based": [
+            2,
+            5
+          ],
+          "center_world_xy_m": [
+            104.155,
+            71.84
+          ],
+          "surface_elevation_ftUS_median": 635.2899780273438,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7899780273438,
+            665.239990234375
+          ],
+          "valid_cells": 11
+        },
+        {
+          "grid_1based": [
+            3,
+            5
+          ],
+          "center_world_xy_m": [
+            106.501,
+            71.84
+          ],
+          "surface_elevation_ftUS_median": 634.7999877929688,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7060180664063,
+            664.5480224609375
+          ],
+          "valid_cells": 17
+        },
+        {
+          "grid_1based": [
+            4,
+            5
+          ],
+          "center_world_xy_m": [
+            108.846,
+            71.84
+          ],
+          "surface_elevation_ftUS_median": 634.8200073242188,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7080200195312,
+            643.7360107421874
+          ],
+          "valid_cells": 19
+        },
+        {
+          "grid_1based": [
+            5,
+            5
+          ],
+          "center_world_xy_m": [
+            111.191,
+            71.84
+          ],
+          "surface_elevation_ftUS_median": 636.3300170898438,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7050170898438,
+            638.5650024414062
+          ],
+          "valid_cells": 16
+        },
+        {
+          "grid_1based": [
+            6,
+            5
+          ],
+          "center_world_xy_m": [
+            113.536,
+            71.84
+          ],
+          "surface_elevation_ftUS_median": 638.47998046875,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7020080566406,
+            638.5690063476562
+          ],
+          "valid_cells": 12
+        },
+        {
+          "grid_1based": [
+            1,
+            6
+          ],
+          "center_world_xy_m": [
+            101.81,
+            73.823
+          ],
+          "surface_elevation_ftUS_median": 664.4000244140625,
+          "surface_elevation_ftUS_p10_p90": [
+            640.7360107421875,
+            664.6960205078125
+          ],
+          "valid_cells": 3
+        },
+        {
+          "grid_1based": [
+            2,
+            6
+          ],
+          "center_world_xy_m": [
+            104.155,
+            73.823
+          ],
+          "surface_elevation_ftUS_median": 649.6099853515625,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7699890136719,
+            665.0050048828125
+          ],
+          "valid_cells": 6
+        },
+        {
+          "grid_1based": [
+            3,
+            6
+          ],
+          "center_world_xy_m": [
+            106.501,
+            73.823
+          ],
+          "surface_elevation_ftUS_median": 634.780029296875,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7010131835938,
+            664.7330200195313
+          ],
+          "valid_cells": 12
+        },
+        {
+          "grid_1based": [
+            4,
+            6
+          ],
+          "center_world_xy_m": [
+            108.846,
+            73.823
+          ],
+          "surface_elevation_ftUS_median": 634.7949829101562,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7030151367187,
+            656.6510192871094
+          ],
+          "valid_cells": 14
+        },
+        {
+          "grid_1based": [
+            5,
+            6
+          ],
+          "center_world_xy_m": [
+            111.191,
+            73.823
+          ],
+          "surface_elevation_ftUS_median": 636.6300048828125,
+          "surface_elevation_ftUS_p10_p90": [
+            634.7010131835938,
+            638.5589965820312
+          ],
+          "valid_cells": 12
+        },
+        {
+          "grid_1based": [
+            6,
+            6
+          ],
+          "center_world_xy_m": [
+            113.536,
+            73.823
+          ],
+          "surface_elevation_ftUS_median": 638.5,
+          "surface_elevation_ftUS_p10_p90": [
+            634.6960083007813,
+            638.5619995117188
+          ],
+          "valid_cells": 9
+        }
+      ],
+      "transformed_ring_lonlat": [
+        [
+          -86.9125133820438,
+          40.428018947103
+        ],
+        [
+          -86.9124260411708,
+          40.4280737581968
+        ],
+        [
+          -86.9124197342621,
+          40.4280679020498
+        ],
+        [
+          -86.9123611699348,
+          40.4280736622831
+        ],
+        [
+          -86.912347474596,
+          40.427992445434
+        ],
+        [
+          -86.9124266260412,
+          40.427984656906
+        ],
+        [
+          -86.9124554793528,
+          40.4279666102209
+        ],
+        [
+          -86.9125133820438,
+          40.428018947103
+        ]
+      ],
+      "interpretation": "DSM returns all elevated surfaces, including roofs, trees and possible rooftop equipment; this is not a surveyed roof elevation.",
+      "centroid_height_check": {
+        "gis_centroid_world_xy_m": [
+          108.42252558991208,
+          69.1818063138051
+        ],
+        "gis_centroid_lonlat": [
+          -86.91242159234501,
+          40.42802303499922
+        ],
+        "dsm_pixel_row_col": [
+          667,
+          66
+        ],
+        "dsm_pixel_size_ft": [
+          5.0,
+          5.0
+        ],
+        "dsm_surface_elevation_ftUS": 634.8400268554688,
+        "bare_earth_dem_elevation_ftUS": 621.07,
+        "surface_above_bare_earth_ft": 13.7700268554687,
+        "surface_above_bare_earth_m": 4.197112579772017,
+        "bare_earth_source": "Indiana 2016-2020 DEM ImageServer identify at same FID108 centroid; 2.5-ft original pixel resolution and stated statewide 10 cm vertical/positional accuracy standard.",
+        "interpretation": "One 5-ft DSM cell centered on the small polygon indicates a ~4.20 m surface above the bare-earth DEM. The cell is uniform with its 8 immediate neighbors (values 634.72\u2013634.91 ftUS), making a low flat roof more likely than an isolated tree return. This is an approximate height, not a surveyed wall or parapet datum."
+      }
+    },
+    "857": {
+      "name": "Mechanical Engineering Building",
+      "code": "ME",
+      "gis_feature_id": 857,
+      "official_polygon_center_xy_m": [
+        68.6889401294758,
+        92.45384755625314
+      ],
+      "official_polygon_bounds_xy_m": [
+        11.970807533330007,
+        52.60481241477464,
+        128.99899226816945,
+        144.40132500058326
+      ],
+      "registered_polygon_bounds_in_raster_units": [
+        3000016.059003607,
+        1886609.4427160805,
+        3000400.136395559,
+        1886910.7643099232
+      ],
+      "cell_size_ft": [
+        5.0,
+        5.0
+      ],
+      "sampled_cells_at_cell_centers": 2312,
+      "elevation_ftUS_quantiles_p10_p25_p50_p75_p90_p95_p99_max": [
+        649.8200073242188,
+        664.4199829101562,
+        678.1050109863281,
+        684.6099853515625,
+        691.0830261230469,
+        694.2769989013672,
+        698.0466912841797,
+        699.219970703125
+      ],
+      "dominant_1ft_elevation_bin_ftUS": [
+        684.0,
+        685.0
+      ],
+      "dominant_bin_share": 0.09299307958477508,
+      "spatial_6x6_neighborhoods": [
+        {
+          "grid_1based": [
+            1,
+            1
+          ],
+          "center_world_xy_m": [
+            21.723,
+            60.255
+          ],
+          "surface_elevation_ftUS_median": 677.260009765625,
+          "surface_elevation_ftUS_p10_p90": [
+            676.8340209960937,
+            677.9119995117187
+          ],
+          "valid_cells": 5
+        },
+        {
+          "grid_1based": [
+            2,
+            1
+          ],
+          "center_world_xy_m": [
+            41.228,
+            60.255
+          ],
+          "surface_elevation_ftUS_median": 693.52001953125,
+          "surface_elevation_ftUS_p10_p90": [
+            690.0700073242188,
+            696.719970703125
+          ],
+          "valid_cells": 21
+        },
+        {
+          "grid_1based": [
+            3,
+            1
+          ],
+          "center_world_xy_m": [
+            60.733,
+            60.255
+          ],
+          "surface_elevation_ftUS_median": 683.3200073242188,
+          "surface_elevation_ftUS_p10_p90": [
+            623.3499755859375,
+            690.3699951171875
+          ],
+          "valid_cells": 21
+        },
+        {
+          "grid_1based": [
+            1,
+            2
+          ],
+          "center_world_xy_m": [
+            21.723,
+            75.554
+          ],
+          "surface_elevation_ftUS_median": 681.2999877929688,
+          "surface_elevation_ftUS_p10_p90": [
+            681.0460205078125,
+            685.6880004882812
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            2,
+            2
+          ],
+          "center_world_xy_m": [
+            41.228,
+            75.554
+          ],
+          "surface_elevation_ftUS_median": 693.22998046875,
+          "surface_elevation_ftUS_p10_p90": [
+            689.0500122070313,
+            697.7139770507813
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            3,
+            2
+          ],
+          "center_world_xy_m": [
+            60.733,
+            75.554
+          ],
+          "surface_elevation_ftUS_median": 685.3800048828125,
+          "surface_elevation_ftUS_p10_p90": [
+            664.3160034179688,
+            691.185986328125
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            4,
+            2
+          ],
+          "center_world_xy_m": [
+            80.237,
+            75.554
+          ],
+          "surface_elevation_ftUS_median": 692.969970703125,
+          "surface_elevation_ftUS_p10_p90": [
+            680.9519897460938,
+            694.089990234375
+          ],
+          "valid_cells": 23
+        },
+        {
+          "grid_1based": [
+            5,
+            2
+          ],
+          "center_world_xy_m": [
+            99.742,
+            75.554
+          ],
+          "surface_elevation_ftUS_median": 667.739990234375,
+          "surface_elevation_ftUS_p10_p90": [
+            664.1660034179688,
+            670.4919921875
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            1,
+            3
+          ],
+          "center_world_xy_m": [
+            21.723,
+            90.853
+          ],
+          "surface_elevation_ftUS_median": 677.1800537109375,
+          "surface_elevation_ftUS_p10_p90": [
+            676.6300048828125,
+            678.9700012207031
+          ],
+          "valid_cells": 6
+        },
+        {
+          "grid_1based": [
+            2,
+            3
+          ],
+          "center_world_xy_m": [
+            41.228,
+            90.853
+          ],
+          "surface_elevation_ftUS_median": 677.1699829101562,
+          "surface_elevation_ftUS_p10_p90": [
+            664.4360107421875,
+            681.0680053710937
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            3,
+            3
+          ],
+          "center_world_xy_m": [
+            60.733,
+            90.853
+          ],
+          "surface_elevation_ftUS_median": 664.4099731445312,
+          "surface_elevation_ftUS_p10_p90": [
+            664.256005859375,
+            664.4759765625
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            4,
+            3
+          ],
+          "center_world_xy_m": [
+            80.237,
+            90.853
+          ],
+          "surface_elevation_ftUS_median": 661.0499877929688,
+          "surface_elevation_ftUS_p10_p90": [
+            660.7719970703125,
+            667.7200073242187
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            5,
+            3
+          ],
+          "center_world_xy_m": [
+            99.742,
+            90.853
+          ],
+          "surface_elevation_ftUS_median": 660.989990234375,
+          "surface_elevation_ftUS_p10_p90": [
+            660.7839782714843,
+            665.1749816894531
+          ],
+          "valid_cells": 20
+        },
+        {
+          "grid_1based": [
+            6,
+            3
+          ],
+          "center_world_xy_m": [
+            119.247,
+            90.853
+          ],
+          "surface_elevation_ftUS_median": 647.780029296875,
+          "surface_elevation_ftUS_p10_p90": [
+            647.7140014648437,
+            649.3119995117188
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            2,
+            4
+          ],
+          "center_world_xy_m": [
+            41.228,
+            106.153
+          ],
+          "surface_elevation_ftUS_median": 679.3699951171875,
+          "surface_elevation_ftUS_p10_p90": [
+            676.37197265625,
+            682.1359741210938
+          ],
+          "valid_cells": 19
+        },
+        {
+          "grid_1based": [
+            3,
+            4
+          ],
+          "center_world_xy_m": [
+            60.733,
+            106.153
+          ],
+          "surface_elevation_ftUS_median": 684.5800170898438,
+          "surface_elevation_ftUS_p10_p90": [
+            682.1039794921875,
+            684.756005859375
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            4,
+            4
+          ],
+          "center_world_xy_m": [
+            80.237,
+            106.153
+          ],
+          "surface_elevation_ftUS_median": 667.5499877929688,
+          "surface_elevation_ftUS_p10_p90": [
+            665.2119873046875,
+            673.3419921875
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            5,
+            4
+          ],
+          "center_world_xy_m": [
+            99.742,
+            106.153
+          ],
+          "surface_elevation_ftUS_median": 649.9500122070312,
+          "surface_elevation_ftUS_p10_p90": [
+            648.3920043945312,
+            659.735986328125
+          ],
+          "valid_cells": 19
+        },
+        {
+          "grid_1based": [
+            6,
+            4
+          ],
+          "center_world_xy_m": [
+            119.247,
+            106.153
+          ],
+          "surface_elevation_ftUS_median": 649.135009765625,
+          "surface_elevation_ftUS_p10_p90": [
+            648.1699829101562,
+            650.0
+          ],
+          "valid_cells": 6
+        },
+        {
+          "grid_1based": [
+            3,
+            5
+          ],
+          "center_world_xy_m": [
+            60.733,
+            121.452
+          ],
+          "surface_elevation_ftUS_median": 679.0,
+          "surface_elevation_ftUS_p10_p90": [
+            676.8779907226562,
+            681.9420043945313
+          ],
+          "valid_cells": 17
+        },
+        {
+          "grid_1based": [
+            4,
+            5
+          ],
+          "center_world_xy_m": [
+            80.237,
+            121.452
+          ],
+          "surface_elevation_ftUS_median": 684.5900268554688,
+          "surface_elevation_ftUS_p10_p90": [
+            682.0980102539063,
+            684.960009765625
+          ],
+          "valid_cells": 25
+        },
+        {
+          "grid_1based": [
+            5,
+            5
+          ],
+          "center_world_xy_m": [
+            99.742,
+            121.452
+          ],
+          "surface_elevation_ftUS_median": 647.39501953125,
+          "surface_elevation_ftUS_p10_p90": [
+            647.3029907226562,
+            649.65
+          ],
+          "valid_cells": 24
+        },
+        {
+          "grid_1based": [
+            4,
+            6
+          ],
+          "center_world_xy_m": [
+            80.237,
+            136.752
+          ],
+          "surface_elevation_ftUS_median": 678.7100219726562,
+          "surface_elevation_ftUS_p10_p90": [
+            676.3020263671875,
+            681.6079956054688
+          ],
+          "valid_cells": 17
+        }
+      ],
+      "transformed_ring_lonlat": [
+        [
+          -86.912679290219,
+          40.4287004442093
+        ],
+        [
+          -86.9125332185804,
+          40.4285642070208
+        ],
+        [
+          -86.9125354757219,
+          40.4285627934666
+        ],
+        [
+          -86.9121789756713,
+          40.4282296403492
+        ],
+        [
+          -86.9123181621676,
+          40.4281426618288
+        ],
+        [
+          -86.9126728247377,
+          40.4284740978719
+        ],
+        [
+          -86.9127307643143,
+          40.4284378907912
+        ],
+        [
+          -86.9123732230447,
+          40.4281078424247
+        ],
+        [
+          -86.9124713723101,
+          40.4280453734935
+        ],
+        [
+          -86.9124940015761,
+          40.4280315299006
+        ],
+        [
+          -86.9125133820438,
+          40.428018947103
+        ],
+        [
+          -86.9125401602707,
+          40.4280022828899
+        ],
+        [
+          -86.9125679152475,
+          40.4279859422932
+        ],
+        [
+          -86.9126612250123,
+          40.4280743498906
+        ],
+        [
+          -86.9127009638656,
+          40.4280494676501
+        ],
+        [
+          -86.9127128116279,
+          40.4280605188411
+        ],
+        [
+          -86.9127465911262,
+          40.4280393676262
+        ],
+        [
+          -86.9127261175981,
+          40.4280202723278
+        ],
+        [
+          -86.912753881752,
+          40.428002887756
+        ],
+        [
+          -86.9127743552819,
+          40.4280219833847
+        ],
+        [
+          -86.9128055904064,
+          40.4280024258961
+        ],
+        [
+          -86.9127851166531,
+          40.4279833307753
+        ],
+        [
+          -86.9128128807758,
+          40.4279659465243
+        ],
+        [
+          -86.9128333543121,
+          40.4279850418075
+        ],
+        [
+          -86.9128347350638,
+          40.4279841769899
+        ],
+        [
+          -86.9128427025058,
+          40.4279484456769
+        ],
+        [
+          -86.912850958696,
+          40.4279495212303
+        ],
+        [
+          -86.9128487480806,
+          40.4279594356903
+        ],
+        [
+          -86.9129041510767,
+          40.4279667909711
+        ],
+        [
+          -86.9129063927233,
+          40.4279567395078
+        ],
+        [
+          -86.9129473782564,
+          40.4279620767683
+        ],
+        [
+          -86.9129670740573,
+          40.4278737465095
+        ],
+        [
+          -86.9131451732732,
+          40.4278969382205
+        ],
+        [
+          -86.9131421584393,
+          40.4279104583114
+        ],
+        [
+          -86.9132282555088,
+          40.4279216698245
+        ],
+        [
+          -86.9132312701067,
+          40.4279081497309
+        ],
+        [
+          -86.9133433177362,
+          40.427922740426
+        ],
+        [
+          -86.9133397000267,
+          40.4279389640723
+        ],
+        [
+          -86.913389236781,
+          40.4279454144893
+        ],
+        [
+          -86.9133860215343,
+          40.4279598358267
+        ],
+        [
+          -86.9134143301082,
+          40.4279635221083
+        ],
+        [
+          -86.9134155341809,
+          40.4279581134968
+        ],
+        [
+          -86.9134143541901,
+          40.4279579603061
+        ],
+        [
+          -86.9134159620304,
+          40.427950749386
+        ],
+        [
+          -86.9134419101846,
+          40.4279541282736
+        ],
+        [
+          -86.9134415081702,
+          40.4279559310874
+        ],
+        [
+          -86.9134674561089,
+          40.4279593098014
+        ],
+        [
+          -86.9134678581214,
+          40.4279575074901
+        ],
+        [
+          -86.913478473208,
+          40.4279588895449
+        ],
+        [
+          -86.9134780707561,
+          40.4279606923582
+        ],
+        [
+          -86.9135040186997,
+          40.4279640705614
+        ],
+        [
+          -86.9135044211497,
+          40.4279622682506
+        ],
+        [
+          -86.9135150355801,
+          40.427963650301
+        ],
+        [
+          -86.9135146337864,
+          40.427965453283
+        ],
+        [
+          -86.9135405817325,
+          40.4279688319806
+        ],
+        [
+          -86.9135409835251,
+          40.4279670291661
+        ],
+        [
+          -86.913556875695,
+          40.4279690985072
+        ],
+        [
+          -86.9135571748989,
+          40.4279924001261
+        ],
+        [
+          -86.9135547818724,
+          40.4279924178896
+        ],
+        [
+          -86.9135550410781,
+          40.4280125318266
+        ],
+        [
+          -86.9135574332283,
+          40.4280125140618
+        ],
+        [
+          -86.9135575512094,
+          40.4280216565779
+        ],
+        [
+          -86.9135551581802,
+          40.4280216750116
+        ],
+        [
+          -86.9135554165092,
+          40.4280417889472
+        ],
+        [
+          -86.9135578095374,
+          40.4280417711837
+        ],
+        [
+          -86.9135579266415,
+          40.4280509136984
+        ],
+        [
+          -86.9135555342703,
+          40.4280509316304
+        ],
+        [
+          -86.9135557925994,
+          40.4280710455659
+        ],
+        [
+          -86.9135581856291,
+          40.4280710276348
+        ],
+        [
+          -86.913558302733,
+          40.4280801703171
+        ],
+        [
+          -86.9135559103607,
+          40.4280801882491
+        ],
+        [
+          -86.9135561686888,
+          40.4281003026871
+        ],
+        [
+          -86.9135585617194,
+          40.4281002847561
+        ],
+        [
+          -86.9135588524672,
+          40.428122938986
+        ],
+        [
+          -86.9135358620113,
+          40.4281373344699
+        ],
+        [
+          -86.9135343453691,
+          40.4281359202122
+        ],
+        [
+          -86.9135324947133,
+          40.4281370792192
+        ],
+        [
+          -86.9135225500279,
+          40.4281279391921
+        ],
+        [
+          -86.913477289104,
+          40.4281562795098
+        ],
+        [
+          -86.9134871468327,
+          40.4281654736959
+        ],
+        [
+          -86.9134852955176,
+          40.4281666327011
+        ],
+        [
+          -86.9134868121595,
+          40.4281680469593
+        ],
+        [
+          -86.9134646014155,
+          40.4281819548591
+        ],
+        [
+          -86.9134630849943,
+          40.4281805400983
+        ],
+        [
+          -86.9134427242435,
+          40.428193288652
+        ],
+        [
+          -86.9134442408838,
+          40.4281947034134
+        ],
+        [
+          -86.9134349862734,
+          40.4282004982708
+        ],
+        [
+          -86.9134334696335,
+          40.4281990833417
+        ],
+        [
+          -86.9134131097484,
+          40.4282118318914
+        ],
+        [
+          -86.9134146261694,
+          40.4282132466529
+        ],
+        [
+          -86.9134053715538,
+          40.4282190415079
+        ],
+        [
+          -86.9134038549125,
+          40.4282176272486
+        ],
+        [
+          -86.9133834943585,
+          40.4282303757921
+        ],
+        [
+          -86.9133850107805,
+          40.4282317900513
+        ],
+        [
+          -86.9133757561603,
+          40.4282375847364
+        ],
+        [
+          -86.9133742397384,
+          40.428236170477
+        ],
+        [
+          -86.9133538796117,
+          40.4282489190158
+        ],
+        [
+          -86.9133553962527,
+          40.4282503332758
+        ],
+        [
+          -86.9133322594665,
+          40.4282648203158
+        ],
+        [
+          -86.9133231600638,
+          40.4282563335818
+        ],
+        [
+          -86.9133240853947,
+          40.4282557542476
+        ],
+        [
+          -86.9133144886138,
+          40.4282468035325
+        ],
+        [
+          -86.9132793205349,
+          40.4282688235775
+        ],
+        [
+          -86.9133151914528,
+          40.428302279525
+        ],
+        [
+          -86.912679290219,
+          40.4287004442093
+        ]
+      ],
+      "interpretation": "DSM returns all elevated surfaces, including roofs, trees and possible rooftop equipment; this is not a surveyed roof elevation.",
+      "dsm_surface_vs_bare_earth_grid": {
+        "method": "6x6 grid over the approximate GIS FID 857 polygon; point-in-polygon filters to interior; each DSM value is a 5x5-cell neighborhood median masked to the polygon; bare-earth value is an Indiana 2016-2020 DEM ImageServer identify query at the same grid point.",
+        "samples": [
+          {
+            "grid_1based": [
+              2,
+              1
+            ],
+            "world_xy_m": [
+              41.228,
+              60.255
+            ],
+            "lonlat": [
+              -86.91321388326823,
+              40.42794263798448
+            ],
+            "dsm_local_neighborhood_median_ftUS": 693.52001953125,
+            "bare_earth_dem_ftUS": 622.58,
+            "surface_minus_terrain_ft": 70.94001953124996
+          },
+          {
+            "grid_1based": [
+              3,
+              1
+            ],
+            "world_xy_m": [
+              60.733,
+              60.255
+            ],
+            "lonlat": [
+              -86.91298390380224,
+              40.42794263798448
+            ],
+            "dsm_local_neighborhood_median_ftUS": 683.3200073242188,
+            "bare_earth_dem_ftUS": 622.9,
+            "surface_minus_terrain_ft": 60.42000732421877
+          },
+          {
+            "grid_1based": [
+              1,
+              2
+            ],
+            "world_xy_m": [
+              21.723,
+              75.554
+            ],
+            "lonlat": [
+              -86.91344386273421,
+              40.42808042093445
+            ],
+            "dsm_local_neighborhood_median_ftUS": 681.2999877929688,
+            "bare_earth_dem_ftUS": 622.65,
+            "surface_minus_terrain_ft": 58.64998779296877
+          },
+          {
+            "grid_1based": [
+              2,
+              2
+            ],
+            "world_xy_m": [
+              41.228,
+              75.554
+            ],
+            "lonlat": [
+              -86.91321388326823,
+              40.42808042093445
+            ],
+            "dsm_local_neighborhood_median_ftUS": 693.22998046875,
+            "bare_earth_dem_ftUS": 622.7,
+            "surface_minus_terrain_ft": 70.52998046874995
+          },
+          {
+            "grid_1based": [
+              3,
+              2
+            ],
+            "world_xy_m": [
+              60.733,
+              75.554
+            ],
+            "lonlat": [
+              -86.91298390380224,
+              40.42808042093445
+            ],
+            "dsm_local_neighborhood_median_ftUS": 685.3800048828125,
+            "bare_earth_dem_ftUS": 623.14,
+            "surface_minus_terrain_ft": 62.240004882812514
+          },
+          {
+            "grid_1based": [
+              4,
+              2
+            ],
+            "world_xy_m": [
+              80.237,
+              75.554
+            ],
+            "lonlat": [
+              -86.91275392433626,
+              40.42808042093445
+            ],
+            "dsm_local_neighborhood_median_ftUS": 692.969970703125,
+            "bare_earth_dem_ftUS": 623.51,
+            "surface_minus_terrain_ft": 69.45997070312501
+          },
+          {
+            "grid_1based": [
+              5,
+              2
+            ],
+            "world_xy_m": [
+              99.742,
+              75.554
+            ],
+            "lonlat": [
+              -86.91252394487027,
+              40.42808042093445
+            ],
+            "dsm_local_neighborhood_median_ftUS": 667.739990234375,
+            "bare_earth_dem_ftUS": 622.89,
+            "surface_minus_terrain_ft": 44.849990234375014
+          },
+          {
+            "grid_1based": [
+              2,
+              3
+            ],
+            "world_xy_m": [
+              41.228,
+              90.853
+            ],
+            "lonlat": [
+              -86.91321388326823,
+              40.42821820388441
+            ],
+            "dsm_local_neighborhood_median_ftUS": 677.1699829101562,
+            "bare_earth_dem_ftUS": 622.95,
+            "surface_minus_terrain_ft": 54.219982910156205
+          },
+          {
+            "grid_1based": [
+              3,
+              3
+            ],
+            "world_xy_m": [
+              60.733,
+              90.853
+            ],
+            "lonlat": [
+              -86.91298390380224,
+              40.42821820388441
+            ],
+            "dsm_local_neighborhood_median_ftUS": 664.4099731445312,
+            "bare_earth_dem_ftUS": 623.27,
+            "surface_minus_terrain_ft": 41.13997314453127
+          },
+          {
+            "grid_1based": [
+              4,
+              3
+            ],
+            "world_xy_m": [
+              80.237,
+              90.853
+            ],
+            "lonlat": [
+              -86.91275392433626,
+              40.42821820388441
+            ],
+            "dsm_local_neighborhood_median_ftUS": 661.0499877929688,
+            "bare_earth_dem_ftUS": 623.66,
+            "surface_minus_terrain_ft": 37.38998779296878
+          },
+          {
+            "grid_1based": [
+              5,
+              3
+            ],
+            "world_xy_m": [
+              99.742,
+              90.853
+            ],
+            "lonlat": [
+              -86.91252394487027,
+              40.42821820388441
+            ],
+            "dsm_local_neighborhood_median_ftUS": 660.989990234375,
+            "bare_earth_dem_ftUS": 623.69,
+            "surface_minus_terrain_ft": 37.299990234374945
+          },
+          {
+            "grid_1based": [
+              6,
+              3
+            ],
+            "world_xy_m": [
+              119.247,
+              90.853
+            ],
+            "lonlat": [
+              -86.91229396540429,
+              40.42821820388441
+            ],
+            "dsm_local_neighborhood_median_ftUS": 647.780029296875,
+            "bare_earth_dem_ftUS": 622.26,
+            "surface_minus_terrain_ft": 25.52002929687501
+          },
+          {
+            "grid_1based": [
+              2,
+              4
+            ],
+            "world_xy_m": [
+              41.228,
+              106.153
+            ],
+            "lonlat": [
+              -86.91321388326823,
+              40.42835598683438
+            ],
+            "dsm_local_neighborhood_median_ftUS": 679.3699951171875,
+            "bare_earth_dem_ftUS": 623.28,
+            "surface_minus_terrain_ft": 56.08999511718753
+          },
+          {
+            "grid_1based": [
+              3,
+              4
+            ],
+            "world_xy_m": [
+              60.733,
+              106.153
+            ],
+            "lonlat": [
+              -86.91298390380224,
+              40.42835598683438
+            ],
+            "dsm_local_neighborhood_median_ftUS": 684.5800170898438,
+            "bare_earth_dem_ftUS": 623.77,
+            "surface_minus_terrain_ft": 60.81001708984377
+          },
+          {
+            "grid_1based": [
+              4,
+              4
+            ],
+            "world_xy_m": [
+              80.237,
+              106.153
+            ],
+            "lonlat": [
+              -86.91275392433626,
+              40.42835598683438
+            ],
+            "dsm_local_neighborhood_median_ftUS": 667.5499877929688,
+            "bare_earth_dem_ftUS": 623.8,
+            "surface_minus_terrain_ft": 43.749987792968795
+          },
+          {
+            "grid_1based": [
+              5,
+              4
+            ],
+            "world_xy_m": [
+              99.742,
+              106.153
+            ],
+            "lonlat": [
+              -86.91252394487027,
+              40.42835598683438
+            ],
+            "dsm_local_neighborhood_median_ftUS": 649.9500122070312,
+            "bare_earth_dem_ftUS": 623.43,
+            "surface_minus_terrain_ft": 26.5200122070313
+          },
+          {
+            "grid_1based": [
+              3,
+              5
+            ],
+            "world_xy_m": [
+              60.733,
+              121.452
+            ],
+            "lonlat": [
+              -86.91298390380224,
+              40.428493769784346
+            ],
+            "dsm_local_neighborhood_median_ftUS": 679.0,
+            "bare_earth_dem_ftUS": 623.77,
+            "surface_minus_terrain_ft": 55.23000000000002
+          },
+          {
+            "grid_1based": [
+              4,
+              5
+            ],
+            "world_xy_m": [
+              80.237,
+              121.452
+            ],
+            "lonlat": [
+              -86.91275392433626,
+              40.428493769784346
+            ],
+            "dsm_local_neighborhood_median_ftUS": 684.5900268554688,
+            "bare_earth_dem_ftUS": 623.74,
+            "surface_minus_terrain_ft": 60.85002685546874
+          },
+          {
+            "grid_1based": [
+              5,
+              5
+            ],
+            "world_xy_m": [
+              99.742,
+              121.452
+            ],
+            "lonlat": [
+              -86.91252394487027,
+              40.428493769784346
+            ],
+            "dsm_local_neighborhood_median_ftUS": 647.39501953125,
+            "bare_earth_dem_ftUS": 623.19,
+            "surface_minus_terrain_ft": 24.205019531249945
+          },
+          {
+            "grid_1based": [
+              4,
+              6
+            ],
+            "world_xy_m": [
+              80.237,
+              136.752
+            ],
+            "lonlat": [
+              -86.91275392433626,
+              40.428631552734316
+            ],
+            "dsm_local_neighborhood_median_ftUS": 678.7100219726562,
+            "bare_earth_dem_ftUS": 625.09,
+            "surface_minus_terrain_ft": 53.62002197265622
+          }
+        ],
+        "surface_minus_bare_earth_ft_quantiles_p10_p25_p50_p75_p90": [
+          26.42001391601567,
+          40.20247680664065,
+          54.72499145507811,
+          60.82001953125001,
+          69.56697167968751
+        ],
+        "interpretation": "Spatial height variation is indicative only. Tree canopy, rooftop equipment, GIS edge offsets, and DEM interpolation under the building can affect local values."
+      }
+    }
+  },
+  "terrain_source": {
+    "provider": "Indiana Geographic Information Office",
+    "title": "Indiana 2016-2020 hydro-flattened bare-earth DEM (DTM)",
+    "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2016_2020_DEM/ImageServer",
+    "metadata": "https://www.arcgis.com/home/item.html?id=a95c857cb47649ec87b04810214b0c1c",
+    "resolution": "2.5 ft for most Indiana counties; 10 cm vertical/positional standards per publisher; service identify queried at the FID108 centroid and a 6x6 set of FID857 interior points."
+  },
+  "limitations": [
+    "DSM is a surface model, not bare earth. Trees, rooftop equipment, parapets, and scan artifacts may contribute high returns.",
+    "One 2018 acquisition predates the 2023-2025 Gatewood renovation; it cannot establish current interior circulation.",
+    "The FID 108 polygon overlaps the larger FID 857 polygon in plan. Raster samples within overlap cannot distinguish duplicated registration from a distinct structure without the native GIS source semantics or orthophoto comparison.",
+    "No measured elevation drawing was located in the reviewed planning PDF; height derived from DSM is approximate and should not be assigned uniformly to every wing."
+  ]
+}

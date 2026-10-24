@@ -1,0 +1,89 @@
+{
+  "building": "Mechanical Engineering Building",
+  "building_id": "mechanical_engineering",
+  "revision_reviewed": 3,
+  "review_date": "2026-10-24",
+  "reviewer": "independent reviewer; did not build or edit R3",
+  "asset": "modular/buildings/mechanical_engineering.blend",
+  "report": "audit/complete_me/independent_review_r3.md",
+  "score": 8.0,
+  "max_score": 10.0,
+  "acceptance_target": 8.0,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Identity and footprint",
+      "score": 1.8,
+      "max_score": 2.0,
+      "findings": [
+        "Official 2023 Indiana orthophoto and GIS FID 857 match the multi-wing complex outline at campus scale.",
+        "FID 108 is a distinct compact southeast mass; touching/overlapping polygons and approximate campus projection do not establish every wall-level boundary."
+      ]
+    },
+    {
+      "name": "Placement and orientation",
+      "score": 1.9,
+      "max_score": 2.0,
+      "findings": [
+        "Read-only master inspection found one collection instance and resolving relative source path.",
+        "Marker location (66.300003, 86.5, 0) m agrees with manifest (66.300001, 86.5) within approximately 0.000002 m; rotation zero and scale one.",
+        "The campus transform remains approximate, not survey control."
+      ]
+    },
+    {
+      "name": "Form, height, and roof",
+      "score": 1.1,
+      "max_score": 1.5,
+      "findings": [
+        "R3 adds an official 2023 orthophoto registered across all 102 upward FID 857 roof faces, materially improving visible roof plan/color fidelity.",
+        "This texture does not establish roof geometry, height, or slopes; the single 18.5 m FID 857 shell and 18.5–18.75 m cap remain unverified against wing-specific roof datums."
+      ]
+    },
+    {
+      "name": "Facade, materials, and entrance",
+      "score": 1.5,
+      "max_score": 2.0,
+      "findings": [
+        "Qualitative support remains for brick, dark glazing, frames, stone bands, and the fountain-facing arch.",
+        "R3 did not change facade geometry; the repeated four-course schedule and entrance along-wall position are not registered to a GIS edge."
+      ]
+    },
+    {
+      "name": "Interior and circulation",
+      "score": 0.7,
+      "max_score": 1.5,
+      "findings": [
+        "Evacuation and renovation sources support broad core/connection context but are not scale-registered current floor plans.",
+        "Current partitions, complete circulation, and Gatewood connection remain schematic or unverified."
+      ]
+    },
+    {
+      "name": "Technical integrity",
+      "score": 1.0,
+      "max_score": 1.0,
+      "findings": [
+        "Blender 5.2.3 reopen and R3 validation pass; the orthophoto is packed and no external image dependency remains.",
+        "Read-only master check confirms the linked collection and marker path resolve.",
+        "Manifest object_count and object list are stale at 50 while the current source collection has 55; coordinator should reconcile the shared index during integration."
+      ]
+    }
+  ],
+  "sources_reviewed": [
+    "audit/complete_me/REVIEW_R3.md",
+    "audit/complete_me/mechanical_engineering_r3_evidence.json",
+    "audit/complete_me/mechanical_engineering_r3_validation.json",
+    "audit/complete_me/mechanical_engineering_r3_registered_roof_top.png",
+    "audit/complete_me/indiana_current_orthophoto_me_r2_gis_overlay.jpg",
+    "audit/complete_me/independent_review_r2.md",
+    "audit/complete_me/independent_review_r2_scorecard.json",
+    "audit/complete_me/mechanical_engineering_r1_hero.png",
+    "audit/complete_me/mechanical_engineering_r1_entrance.png",
+    "modular/buildings/mechanical_engineering.blend",
+    "modular/manifest.json",
+    "purdue_campus_master.blend",
+    "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+    "https://engineering.purdue.edu/ME/Giving/Renovation/ME-Building-Renovation-2022.pdf",
+    "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/04/Mechanical-Engineering-Building-Renovation-B-1-23-2-14.pdf"
+  ],
+  "decision": "Pass at 8.0/10. R3 materially improves the major roof surface with registered 2023 orthophoto, and the master placement/path are independently verified. Structural roof form/height, registered facade detail, and current interior remain unverified; manifest inventory needs coordinator update from 50 to 55 objects."
+}

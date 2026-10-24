@@ -1,0 +1,167 @@
+{
+  "building": "Mechanical Engineering Building",
+  "building_id": "mechanical_engineering",
+  "revision": 1,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/mechanical_engineering.blend",
+  "collection": "Asset_mechanical_engineering",
+  "owner": "Tobin",
+  "scope": "Dedicated Mechanical Engineering asset and audit only. Master and shared indexes were not edited.",
+  "baseline_grade": 4.5,
+  "baseline_report": "audit/complete_me/reviewer.md",
+  "geometry_changes": [
+    {
+      "object": "ME_Official_857_Structural_Envelope",
+      "operation": "Applied existing estimated 0.28 m wall thickness and boolean-cut 208 window openings plus one arched entrance opening through the main GIS shell.",
+      "placement_method": "Window modules repeated on long boundary edges of Purdue GIS FID 857; entrance face selected from the long edge whose outward normal points toward the Engineering Fountain, then centered on that edge.",
+      "dimensions_status": "Photo-derived qualitative proportions only. Exact opening schedule, window spacing, doorway size, facade-to-wing mapping, and door position are not measured."
+    },
+    {
+      "objects": [
+        "ME_R1_Facade_Window_Glazing",
+        "ME_R1_Facade_Window_Frames",
+        "ME_R1_Limestone_Window_Sills_And_Stringcourses",
+        "ME_R1_Gatewood_Fountain_Facing_Stone_Arch",
+        "ME_R1_Arched_Entry_Door_Glazing",
+        "ME_R1_Entry_Door_Mullions_And_Handles",
+        "ME_R1_Entry_Stone_Plaque_Silhouette",
+        "ME_R1_Entrance_Lettering"
+      ],
+      "operation": "Added dark window glazing and mullions, stone window sills/headers and approximate floor bands, an arched limestone entrance surround, dark double-door glazing, generic plaque silhouette, and building-name lettering.",
+      "source_support": "Qualitative facade categories visible in Purdue's 2025 official exterior photographs and a 2024 dated Wikimedia Commons photo. No facade dimensions were inferred from the images."
+    },
+    {
+      "object": "ME_R1_Brick_RedBrown_Qualitative",
+      "operation": "Replaced shell shading with a meter-scaled procedural running-bond brick, variable brick colors, mortar, and subtle bump response.",
+      "color_status": "Qualitative visual match, not measured or color-calibrated. No external texture dependency."
+    }
+  ],
+  "unchanged": [
+    "Purdue GIS FID 857 horizontal envelope, asset root, and placement origin [66.30000114440918, 86.5]",
+    "Modeled shell top at 18.5 m; no height or floor elevations were changed",
+    "Estimated existing floor plates and plan-traced partitions",
+    "Separate FID 108 shell and all master placement markers"
+  ],
+  "placement_method": {
+    "source_feature": "Purdue BuildingShapesZip4 FeatureServer layer 0, FID 857 (ME)",
+    "source_crs": "EPSG:4326 source coordinates transformed into the project's approximate local tangent plane; not survey control",
+    "source_snapshot": "audit/official_building_references.json",
+    "project_placement_origin_xy_m": [66.30000114440918, 86.5],
+    "local_shell_bounds_xy_m": [[-54.329193115234375, 62.69898986816406], [-33.89518737792969, 57.90132522583008]],
+    "gis_envelope_delta_after_boolean_m": [[0.0, 0.0], [0.0, 0.0]],
+    "fountain_coordinate_reference": {
+      "provider": "FotoSpot; third-party coordinate listing",
+      "url": "https://fotospot.com/attractions/indiana/engineering-fountain",
+      "coordinates_lat_lon": [40.428539, -86.913671],
+      "uncertainty": "Used only to select a candidate fountain-facing GIS edge; not survey control. Purdue's renovation page independently states the new main entrance faces the Engineering Fountain."
+    },
+    "candidate_fountain_facing_edge": {
+      "polygon_edge_index": 103,
+      "length_m": 69.737,
+      "outward_normal_xy": [-0.63398, 0.77335],
+      "door_center_local_xy_m": [-6.699, 35.795],
+      "door_position_status": "Estimated at edge midpoint; exact along-wall position is not established by the direction statement or unregistered photos."
+    }
+  },
+  "sources": [
+    {
+      "title": "Purdue BuildingShapesZip4, FeatureServer layer 0, FID 857",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "provider": "Purdue campus GIS",
+      "retrieval_date": "2026-10-22 (retained project snapshot)",
+      "source_date": "Not supplied by the service snapshot",
+      "feature_id": 857,
+      "crs": "EPSG:4326 source; transformed by the project's approximate local tangent-plane conversion",
+      "measurement_method": "Compared FID 857 ring AABB transformed around the manifest local placement origin to the saved shell bounds. After the R1 boolean cuts, XY bounds still match at recorded precision.",
+      "uncertainty": "Official campus map footprint, not a certified survey. AABB agreement does not verify every wall edge, local wing mapping, elevations, or facade locations."
+    },
+    {
+      "title": "ME Building Renovation brings changes",
+      "url": "https://engineering.purdue.edu/ME/News/2023/me-building-renovation-brings-changes",
+      "provider": "Purdue University School of Mechanical Engineering",
+      "retrieval_date": "2026-10-24",
+      "source_date": "2023 page; renovation subsequently continued through 2025",
+      "crs": "Not applicable",
+      "measurement_method": "Text states that the new main entrance is through the Gatewood Wing and faces the Engineering Fountain.",
+      "uncertainty": "Supports which direction the entrance faces, but not its precise position, dimensions, or which detailed GIS boundary segment corresponds to it."
+    },
+    {
+      "title": "ME — Mechanical Engineering Building Emergency Plan",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/me/",
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "retrieval_date": "2026-10-24",
+      "source_date": "Page says revision date 2026-03-27",
+      "feature_id": "Mechanical Engineering Building",
+      "crs": "Not applicable",
+      "measurement_method": "Building-description text documents a 1932 Engineering Mall wing, other east/center wings, Gatewood wing, and unequal floor alignment; photo caption identifies a view from Gatewood toward the main ME building.",
+      "uncertainty": "No metric elevations or measured facade schedule are published. Wing construction dates differ from the 2015 planning study and other Purdue pages; discrepancy retained."
+    },
+    {
+      "title": "ME Building Renovation brings changes — main entrance statement",
+      "url": "https://engineering.purdue.edu/ME/News/2023/me-building-renovation-brings-changes",
+      "image_url": "https://engineering.purdue.edu/ME/News/2025/purdues-mechanical-engineering-building-represents-more-than-a-century-of-history/me-building.jpg",
+      "provider": "Purdue University School of Mechanical Engineering",
+      "retrieval_date": "2026-10-24",
+      "source_date": "Associated 2025 article; image capture date not supplied",
+      "crs": "Image not georeferenced; viewpoint and scale not supplied",
+      "measurement_method": "Qualitative comparison of red-brown brick, dark multi-level windows, pale stone portal, name lettering, and landscaping in the saved entrance render.",
+      "uncertainty": "The photo is perspective and does not identify a compass direction or provide a measured elevation. Used for feature types and relative visual character only."
+    },
+    {
+      "title": "Purdue Mechanical Engineering Building, Wikimedia Commons file page",
+      "url": "https://commons.wikimedia.org/wiki/File:Purdue_Mechanical_Engineering_Building.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Purdue_Mechanical_Engineering_Building.jpg",
+      "provider": "Wikimedia Commons, author A Hazy / Alh225, CC BY-SA 4.0",
+      "retrieval_date": "2026-10-24",
+      "source_date": "EXIF/page metadata: 2024-06-20; image uploaded 2024-06-21",
+      "crs": "No GPS coordinates or camera direction recorded on inspected file page",
+      "measurement_method": "Qualitative facade comparison: brick, tall dark-framed windows, pale stone arched entry, sills/belt courses, and walk/ramp context.",
+      "uncertainty": "No measured scale or geolocation; image alone cannot verify exact opening count, dimensions, or which GIS side is pictured. Image was temporary review material and was not packed into the model."
+    },
+    {
+      "title": "Purdue ME Renovation — five building phases aerial illustration",
+      "url": "https://engineering.purdue.edu/ME/Giving/Renovation",
+      "image_url": "https://engineering.purdue.edu/ME/Giving/Renovation/reno-5-buildings.jpg",
+      "provider": "Purdue University School of Mechanical Engineering",
+      "retrieval_date": "2026-10-24",
+      "source_date": "Image capture/source date not stated",
+      "crs": "Oblique aerial image; no camera calibration or metric scale supplied",
+      "measurement_method": "Reviewed phase labels, visible facade/window categories, tiled roof slopes, flat roof areas, and rooftop equipment.",
+      "uncertainty": "Illustration is not georeferenced or orthographic; exact wing-to-GIS segment mapping, roof placement, and roof height cannot be measured. Roof geometry was not altered in R1."
+    },
+    {
+      "title": "ME–RAIL–HAMP Study, Mechanical Engineering Building existing plans",
+      "url": "https://engineering.purdue.edu/~frosch/Renderings/Masterplans/ME-RAIL-HAMP%20Study.pdf",
+      "provider": "Purdue University College of Engineering / MSKTD & Associates",
+      "retrieval_date": "Project copy in audit/complete_me/study2015.pdf; original snapshot retrieval recorded 2026-10-22",
+      "source_date": "2015-06-30 revision shown in source study",
+      "feature_id": "ME Building existing plans, pages 40–46",
+      "crs": "Architectural floor-plan sheets; project/north arrows shown, but no GIS registration was applied in R1",
+      "measurement_method": "Inspected existing basement through fourth-floor drawings and study notes. The scope explicitly excludes Gatewood; existing plan geometry is older than the 2025 renovation.",
+      "uncertainty": "Not treated as a current as-built plan, metric roof-height source, or facade schedule. R1 makes no interior or floor-plate changes from it."
+    }
+  ],
+  "remaining_uncertainty": [
+    "The shell remains a single 18.5 m high extrusion even though Purdue sources identify five wings from different periods; calibrated heights and wing-by-wing roof levels are unavailable in the evidence set.",
+    "The long-face window pattern is an evidence-informed visualization, not an independently verified elevation schedule; exact orientation and counts on all other faces remain uncertain.",
+    "The doorway is on the GIS edge oriented toward the fountain but placed at its midpoint by estimate; no georeferenced facade image pins its along-wall position.",
+    "GIS FID 108 remains unchanged and its relationship to FID 857 needs a separate source/geometry review.",
+    "Existing floor plates and partition geometry remain approximate. Plans are historical and do not cover Gatewood; current interior routing and room finishes are not verified.",
+    "The 2015 planning study and 2026 OEP description differ on east-wing construction dates. Purdue's recent history page gives only the five-phase range from 1929 to 2012."
+  ],
+  "validation": {
+    "report": "audit/complete_me/mechanical_engineering_r1_validation.json",
+    "validator_script": "audit/complete_me/validate_mechanical_engineering_r1.py",
+    "build_script": "audit/complete_me/build_mechanical_engineering_r1.py",
+    "blender_version": "5.2.3 LTS",
+    "reopen_passed": true,
+    "root_location": [0.0, 0.0, 0.0],
+    "root_scale": [1.0, 1.0, 1.0],
+    "gis_envelope_xy_delta_m": [[0.0,0.0],[0.0,0.0]],
+    "external_image_dependencies": [],
+    "renders": ["audit/complete_me/mechanical_engineering_r1_hero.png", "audit/complete_me/mechanical_engineering_r1_entrance.png"],
+    "master_edited": false,
+    "passed": true
+  },
+  "independent_grade": "Pending; no self-grade claimed."
+}

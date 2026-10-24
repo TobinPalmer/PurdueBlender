@@ -1,0 +1,86 @@
+{
+  "building": "Mechanical Engineering Building",
+  "building_id": "mechanical_engineering",
+  "revision_reviewed": 2,
+  "review_date": "2026-10-24",
+  "reviewer": "independent reviewer; did not build or edit R2",
+  "asset": "modular/buildings/mechanical_engineering.blend",
+  "report": "audit/complete_me/independent_review_r2.md",
+  "score": 7.5,
+  "max_score": 10.0,
+  "acceptance_target": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and footprint",
+      "score": 1.8,
+      "max_score": 2.0,
+      "findings": [
+        "The 2023 orthophoto overlay supports FID 857 as the large complex and FID 108 as a compact low-roof structure at the southeast edge.",
+        "Approximate campus transform and touching/overlapping polygons do not establish wall-level registration or the internal connection."
+      ]
+    },
+    {
+      "name": "Placement and orientation",
+      "score": 1.6,
+      "max_score": 2.0,
+      "findings": [
+        "Identity root and existing local XY are preserved; the entrance direction remains source-backed.",
+        "No read-only master placement-marker or linked-library check was performed; campus conversion is approximate."
+      ]
+    },
+    {
+      "name": "Form, height, and roof",
+      "score": 0.9,
+      "max_score": 1.5,
+      "findings": [
+        "FID 108's new 4.20 m wall top is a reasonable rounded estimate from a uniform 2018 5-ft DSM patch minus a same-coordinate bare-earth DEM sample; prior unsupported upper floors were excluded from the export collection.",
+        "The major FID 857 mass retains an unverified single 18.5 m height and broad flat roof despite documented phases and mixed roof forms.",
+        "Spatial DSM/DTM variation cannot be assigned to specific wings because returns may include equipment, parapets, and canopy, and no registered roof plan was located."
+      ]
+    },
+    {
+      "name": "Facade, materials, and entrance",
+      "score": 1.5,
+      "max_score": 2.0,
+      "findings": [
+        "R1 brick, dark windows, frames, bands, and arched entry have qualitative photographic support.",
+        "Rendered facade repeats a uniform window schedule across a broad wall; exact count/wing assignment and portal along-wall position remain unverified. R2 adds no facade-to-GIS registration."
+      ]
+    },
+    {
+      "name": "Interior and circulation",
+      "score": 0.7,
+      "max_score": 1.5,
+      "findings": [
+        "The 2025 emergency slides support current evacuation-route and vertical-core context, and 2015 study describes limited ME/Gatewood connections.",
+        "No current room/circulation geometry was edited; evacuation maps are not a complete measured as-built plan, and the detailed historic plans predate the current renovation."
+      ]
+    },
+    {
+      "name": "Technical integrity",
+      "score": 1.0,
+      "max_score": 1.0,
+      "findings": [
+        "Blender 5.2.3 reopened the asset; R2 validation passes with expected collection and identity root.",
+        "FID 108 XY bounds and FID 857 geometry are unchanged; unsupported FID 108 upper slabs are preserved outside the exported collection."
+      ]
+    }
+  ],
+  "sources_reviewed": [
+    "audit/complete_me/mechanical_engineering_lidar_r2.json",
+    "audit/complete_me/mechanical_engineering_ortho_registration_r2.json",
+    "audit/complete_me/mechanical_engineering_r2_validation.json",
+    "audit/complete_me/mechanical_engineering_r2_fid108_aerial.png",
+    "audit/complete_me/indiana_current_orthophoto_me_r2_gis_overlay.jpg",
+    "audit/complete_me/mechanical_engineering_r1_hero.png",
+    "audit/complete_me/mechanical_engineering_r1_entrance.png",
+    "audit/complete_me/safety2025.pdf",
+    "audit/complete_me/study2015.pdf",
+    "audit/complete_me/independent_review_r1.md",
+    "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+    "https://www.arcgis.com/home/item.html?id=a95c857cb47649ec87b04810214b0c1c",
+    "https://engineering.purdue.edu/~frosch/Renderings/Masterplans/ME-RAIL-HAMP%20Study.pdf"
+  ],
+  "decision": "Below 8.0/10. R2 credibly lowers the small FID 108 massing and clarifies its broad GIS identity, but major FID 857 roof/height, registered facade, and modeled current circulation remain unresolved."
+}

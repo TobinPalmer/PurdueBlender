@@ -1,0 +1,83 @@
+{
+  "building": "Mechanical Engineering Building",
+  "building_id": "mechanical_engineering",
+  "revision": 3,
+  "review_date": "2026-10-24",
+  "asset": "modular/buildings/mechanical_engineering.blend",
+  "collection": "Asset_mechanical_engineering",
+  "owner": "Tobin",
+  "scope": "Dedicated Mechanical Engineering asset and audit only. No master/shared indexes or other buildings changed. No commit was made.",
+  "geometry_changes": [],
+  "surface_changes": [
+    {
+      "object": "ME_Official_857_Roof",
+      "operation": "Applied the source-registered 2023 Indiana orthophoto as an image texture to the 102 upward-facing roof polygons. The original membrane remains on vertical faces.",
+      "image": "ME_R3_Indiana_2023_Orthophoto_FID857_Roof",
+      "packed": true,
+      "registration": "For mesh loop local XY, add [66.30000114440918, 86.5] m; invert project local tangent-plane conversion around [40.4274, -86.9137] to EPSG:4326; project to EPSG:3857; normalize against audit/complete_me/mechanical_engineering_ortho_registration_r2.json request_bbox_3857.",
+      "source_support": "2023 overhead imagery depicts the red-tile roofs, gray membrane sections, court, and rooftop equipment at the location of Purdue GIS FID857.",
+      "dimensions_status": "Texture provides observed overhead appearance only. It does not establish slopes, structural roof elevations, parapets, wall heights, or exact wing datums."
+    }
+  ],
+  "unchanged": [
+    "FID857 GIS footprint and local XY bounds",
+    "FID857 structural envelope height of 18.5 m and roof cap bounds of 18.5–18.75 m",
+    "FID857 facade openings, repeated window schedule, and entrance position",
+    "estimated floors, plan-traced partitions, stairs/elevators, and interior circulation",
+    "FID108 geometry, asset root, placement marker, campus master, and shared indexes"
+  ],
+  "sources": [
+    {
+      "title": "Indiana Current Imagery ImageServer, catalog item in2023_30001885_06",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "provider": "Indiana Geographic Information Office",
+      "retrieval_date": "2026-10-24",
+      "source_date": "2023 Tippecanoe orthophotography; 6-inch nominal pixel collection",
+      "feature_id": "in2023_30001885_06",
+      "crs": "EPSG:3857",
+      "local_source": "audit/complete_me/indiana_current_orthophoto_me_r2.jpg",
+      "measurement_method": "Normalized each FID857 roof-mesh loop transformed from project-local XY to EPSG:3857 into the saved 1800 x 1500 crop extent. The companion overlay shows the official FID857 boundary against the crop.",
+      "license": "CC0 per ImageServer metadata",
+      "uncertainty": "Project-local coordinates are an approximate tangent plane, not survey control. The aerial image is suitable for visible roof-surface categories and plan comparison but not roof height, wall position, or facade registration."
+    },
+    {
+      "title": "Purdue ME Building Renovation brochure",
+      "url": "https://engineering.purdue.edu/ME/Giving/Renovation/ME-Building-Renovation-2022.pdf",
+      "provider": "Purdue University School of Mechanical Engineering",
+      "retrieval_date": "2026-10-24",
+      "source_date": "2022 renovation planning brochure",
+      "local_source": "audit/complete_me/purdue_me_renovation_2022.pdf; rendered pages 6–9",
+      "measurement_method": "Reviewed labeled planned ground-through-third floor diagrams, a qualitative aerial roof view, and the text describing the proposed stair connection.",
+      "uncertainty": "Floor plans are presented for renovation communication and no usable surveyed scale/orientation registration to FID857 was found. The oblique aerial is qualitative."
+    },
+    {
+      "title": "Mechanical Engineering Building Renovation capital project request B-1-23-2-14",
+      "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/04/Mechanical-Engineering-Building-Renovation-B-1-23-2-14.pdf",
+      "provider": "Purdue University / Indiana Commission for Higher Education project request",
+      "retrieval_date": "2026-10-24",
+      "source_date": "2023 capital project request; planned occupancy March 2025",
+      "crs": "Not applicable",
+      "measurement_method": "Text confirms renovation scope on ground through third floors, a new elevator, and a new stairway connection to Gatewood.",
+      "uncertainty": "Project description gives no measured roof or facade elevations and no detailed architectural plans."
+    },
+    {
+      "title": "Purdue ME emergency evacuation plans",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/me/",
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "retrieval_date": "2026-10-24",
+      "source_date": "2025-08-21 maps in retained presentation",
+      "local_source": "audit/complete_me/safety2025.pdf and me_safety2025_page_11.png through me_safety2025_page_15.png",
+      "measurement_method": "Reviewed current evacuation routes, labeled levels, and vertical-core locations qualitatively.",
+      "uncertainty": "Emergency egress diagrams are not scale-registered measured architectural plans and do not establish room dimensions or complete daily circulation."
+    }
+  ],
+  "validation": "audit/complete_me/mechanical_engineering_r3_validation.json",
+  "preview": "audit/complete_me/mechanical_engineering_r3_registered_roof_top.png",
+  "builder": "audit/complete_me/build_mechanical_engineering_r3.py",
+  "remaining_uncertainty": [
+    "FID857 wing-specific structural heights and roof slopes remain unverified; the 2018 DSM includes equipment, trees, and other elevated returns.",
+    "Facade photographs are not registered to a GIS edge, so exact opening counts/positions and entrance along-wall position remain unverified.",
+    "The 2025 egress diagrams and 2022 planned floor layouts cannot be safely transformed into measured interior coordinates with the available registration evidence.",
+    "Orthophoto registration inherits the project's approximate campus tangent-plane conversion and should not be treated as survey control."
+  ]
+}
