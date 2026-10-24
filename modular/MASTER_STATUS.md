@@ -1,19 +1,19 @@
-# Master build status — October 22, 2026
+# Master build status — October 24, 2026
 
 The current project master is `../purdue_campus_master.blend`. It links the smaller building libraries with project relative paths. The linked master workspace copy is `purdue_campus_linked.blend`.
 
 ## Current build
 
-- 1,944 registered assets: 1,943 building assets and one campus site asset.
-- 34 detailed buildings are local-coordinate linked collections. Each has a `Placement_<id>` empty in the master that supplies its XY campus position.
-- The master scene has 2,234 direct objects and references 28,584 objects across its source libraries.
-- Four matching massing blocks were unlinked where detailed models now cover Hicks, Krannert, Lawson, and Rawls.
-- All 34 placement markers reference their expected source library paths; the root master reopens with no missing library paths.
+- 1,979 registered assets: 1,978 building assets and one campus site asset.
+- 69 detailed buildings are local-coordinate linked collections. Each has a `Placement_<id>` empty in the master that supplies its XY campus position.
+- The master scene has 2,225 direct objects and references 50,625 objects across its source libraries.
+- 44 matching massing assets are superseded by detailed models.
+- All 69 placement markers reference their expected source library paths; the root master reopens with no missing library paths.
 - `purdue_campus_master_before_modular_linking.blend` preserves the former root master. Per-building world-coordinate copies are in `source_backups/buildings_world_coordinates/`.
 
 ## Accuracy status
 
-These assembly checks confirm that assets are linked and placements are present. They do not certify architectural accuracy. The existing audit predates the nine new detailed assets and covers the original 1,933-asset scene. It reports 1,421 assets without an official footprint match, 397 ambiguous source matches, and 113 needing shell and height review. No building is certified. The nine new assets still need individual rows in that audit. See `../audit/MASTER_AUDIT.md` and the evidence records for the current limitations.
+These assembly checks confirm that assets are linked and placements are present. They do not certify architectural accuracy. The existing audit predates recent detailed assets and covers the original 1,933-asset scene. It reports 1,421 assets without an official footprint match, 397 ambiguous source matches, and 113 needing shell and height review. README acceptance grades are separate from a comprehensive geospatial audit; each completed building retains its own evidence and unresolved uncertainties. See `../audit/MASTER_AUDIT.md` and the evidence records for current limitations.
 
 ## Editing workflow
 
@@ -31,6 +31,6 @@ Second batch, October22–23: Hicks, Krannert, Lawson, Rawls and Niswonger recei
 
 ## October 24 active building pass
 
-The master was reopened and saved in Blender 5.2.3 after the Hovde Hall round-13 and Krach Leadership Center round-8 source revisions. The reopen found 1,937 linked libraries with no missing paths; both building source collections were present. Hovde's `Placement_hovde_hall` transform exactly matches its manifest origin (zero rotation, unit scale). Hovde round 13 graded 8.7/10 and Krach round 8 graded 8.1/10; both now meet the README acceptance threshold. Lambert's master marker also matches the manifest and its linked collection loads, but archived room volumes remain illustratively placed and need source registration. Hovde GIS bounds/axis comparisons are screening checks, not surveyed wall-polygon registration; roof pitch remains unverified. The saved master backup is `../purdue_campus_master.blend1`.
+The master was reopened and saved in Blender 5.2.3 after current linked-source updates. The 69-marker integration check passes with no missing libraries or placement/path errors. Hovde Hall scored 8.7/10, Krach Leadership Center 8.1/10, Life Science Plant and Soils Laboratory 8.0/10, and Lyles-Porter Hall 8.2/10. LSPS now links 641 source objects at its existing manifest marker; its six floor plates match the GIS perimeter within 0.00001 m. Lyles-Porter's marker matches the manifest origin with zero rotation and unit scale. Their remaining roof, below-grade, facade, and interior uncertainties are recorded in each building's audit. Lambert's marker matches the manifest, but its archived volume placements remain illustrative and need source registration. Hovde GIS bounds/axis comparisons are screening checks, not surveyed wall-polygon registration; roof pitch remains unverified. The saved master backup is `../purdue_campus_master.blend1`.
 
-Knoy Hall, Krannert Building, and Lawson Hall remain below threshold. Lambert Fieldhouse reached 8.0/10, but its two volume placements remain illustrative pending coordinator review. Current full-building grades are Knoy 7.5/10, Krannert 7.2/10, Lawson 7.4/10, and Lambert 8.0/10; builders are iterating from reviewer findings. Knoy’s targeted evidence-package review was 8.4/10, but the latest whole-building grade is 7.5/10. The master file is only being saved by Tobin; subagents edit only their assigned source libraries/evidence and do not commit.
+Knoy Hall remains below threshold after independent R10 and R11 full-building grades of 7.8/10; another evidence-backed revision is in progress. Krannert Building remains below threshold after an independent 7.8/10 R8 grade; the builder is iterating on the findings. Lawson Hall remains at 7.0/10, with round 5 awaiting review. Lambert Fieldhouse reached 8.0/10, but its two volume placements remain illustrative pending coordinator review. The master file is only saved by Tobin; subagents edit only their assigned source libraries/evidence and do not commit.

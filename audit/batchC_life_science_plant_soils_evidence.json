@@ -60,9 +60,24 @@
     "model_height_m": 10.97,
     "main_wall_height_m": 10.97,
     "modeled_floor_count": 4,
-    "status": "estimated from GIS Extrution field interpreted as feet; not a measured elevation",
+    "status": "Estimated only. The GIS schema does not document units or the semantics of Extrution/F01-F04/SB/B. The 12-unit F-level intervals are consistent with feet but do not prove feet. The 36-unit Extrution and 4-level count are not a surveyed roof elevation.",
     "official_num_levels": 4,
-    "note": "Roof elements add height beyond main envelope; verify against current imagery/plans if elevations become available."
+    "note": "Roof elements add height beyond main envelope; verify against current imagery/plans if elevations become available.",
+    "GIS_level_fields": {
+      "SB": -24,
+      "B": -12,
+      "G": 0,
+      "F01": 0,
+      "F02": 12,
+      "F03": 24,
+      "F04": 36,
+      "Extrution": 36,
+      "NUM_LEVELS": 4,
+      "Elevation": 621.4
+    },
+    "model_floor_spacing_m": 2.743,
+    "model_floor_spacing_note": "Existing above-grade datums are approximately 9 ft apart, while GIS F01-F04 fields differ by 12 units. This discrepancy is unresolved; floor datums, wall height, and roof elevation remain estimated.",
+    "basement_status": "Two schematic below-grade plates added using official GIS fields B=-12 and SB=-24 as approximate 12-foot intervals; field units are undocumented. One 1,163 sq ft seed-room volume is represented at the modeled B level because the report says basement but does not specify sublevel. Its square proportions, location, entrance/circulation and exact B/SB assignment are schematic; the surface GIS outline is reused only as a diagrammatic plate."
   },
   "references": [
     {
@@ -94,6 +109,50 @@
       "url": "https://www.google.com/maps/search/?api=1&query=Life+Science+Plant+and+Soils+Laboratory+Purdue",
       "accessed": "2026-10-24",
       "use": "campus address / street context"
+    },
+    {
+      "provider": "Google Maps / Google Street View",
+      "url": "https://www.google.com/maps/place/Life+Science+Plant+and+Soils+Laboratory/@40.4231921,-86.9194291,163m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8812e2b71ec32175:0x2dbc13bf851d0609!8m2!3d40.4231921!4d-86.9187854!16s%2Fg%2F11cnb8bwrl?entry=ttu",
+      "accessed": "2026-10-24",
+      "image_date": "August 2019",
+      "use": "Qualitative exterior check from 135 S Russell Dr. Visible red-brown brick wings, lower gray glazed/panel volume, and a narrow vertical glazed bay. Camera bearing, dimensions, and obscured details are not measured."
+    },
+    {
+      "provider": "Indiana Geographic Information Office / Indiana Current Imagery ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "accessed": "2026-10-24",
+      "image_date": "2023 (catalog identify at building location)",
+      "pixel_size": "06 in. / 0.1524 m nominal",
+      "source_crs": "EPSG:3857 (WKID 102100)",
+      "query_url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer/identify?geometry=-9675748%2C4927632&geometryType=esriGeometryPoint&sr=3857&returnGeometry=false&returnCatalogItems=true&f=pjson",
+      "local_image": "audit/batchC_life_science_plant_soils/indiana_orthophoto_lsps_2023.jpg",
+      "overlay_image": "audit/batchC_life_science_plant_soils/orthophoto_gis_overlay.png",
+      "use": "Independent overhead check. The Purdue GIS ring overlays the visible roof outline with close visual agreement and confirms the long-axis orientation, local placement, flat/light roof, and several small roof-mounted service units. Overlay is a visual comparison on orthorectified imagery; imagery and GIS are not survey control."
+    },
+    {
+      "provider": "Purdue University Department of Agronomy \u2014 Research Facilities",
+      "url": "https://ag.purdue.edu/department/agry/research/research-facilities.html",
+      "accessed": "2026-10-24",
+      "use": "States that Life Science Ranges greenhouse facilities are attached to the Plant and Soils Building; verifies a greenhouse connection as a program/context cue but not exact geometry or facade dimensions."
+    },
+    {
+      "provider": "Google Maps place listing for Life Science Plant and Soils Laboratory",
+      "url": "https://www.google.com/maps/place/Life+Science+Plant+and+Soils+Laboratory/@40.4231921,-86.9194291,163m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8812e2b71ec32175:0x2dbc13bf851d0609!8m2!3d40.4231921!4d-86.9187854!16s%2Fg%2F11cnb8bwrl?entry=ttu",
+      "accessed": "2026-10-24",
+      "coordinate": "40.4231921, -86.9187854",
+      "use": "POI coordinate is about 4.56 m west and 0.85 m south of the GIS footprint bounding-box midpoint after project conversion; useful as a location plausibility check only, not a surveyed entrance/control point."
+    },
+    {
+      "provider": "Purdue University Department of Agronomy, Background Information: Facilities & Equipment (PDF, page 30)",
+      "url": "https://www.agry.purdue.edu/csrees/bg-facilities.pdf",
+      "accessed": "2026-10-24",
+      "use": "Primary source for LSPS program: fifteen large sample dryers, four grinding units with dust arresters, 1,163 sq ft (108.05 m2) basement walk-in climate-controlled seed-storage room completed 2004, and 790 sq ft additional long-term seed-storage installation started fall 2008. Exact room dimensions/positions and later completion/status are not supplied."
+    },
+    {
+      "provider": "Purdue University, Department of Agronomy, 5-year report (2021)",
+      "url": "https://ag.purdue.edu/department/agry/_docs/final-agronomy-5-year-report-v2-2021.pdf",
+      "accessed": "2026-10-24",
+      "use": "Supplemental source indexed for 2021 use/cold-storage context. Direct PDF retrieval returned 404 during R4; inventory counts are instead supported by the accessible Purdue Background Information report."
     }
   ],
   "modeled_features": [
@@ -102,30 +161,67 @@
     "procedural connected materials: brick, precast/concrete, glazing, metal and roof",
     "building-specific roof/entry features described in source script",
     "building-specific interior geometry is stored in the exported Interior collection, not only in the render setup",
-    "preview lighting/camera excluded from exported asset collection"
+    "preview lighting/camera excluded from exported asset collection",
+    "R2: ground slab and all three upper floor plates rebuilt as exact extrusions of the 12-vertex Purdue GIS footprint ring; former bounding-box rectangles removed.",
+    "R2: 15 schematic sample dryer cabinets and four schematic soil grinding/dust-arrester units added to the interior; quantities follow Purdue Agronomy's 2021 report, while their room locations remain illustrative.",
+    "R2: brick shader adds running-bond courses using axis-aware world-position projections; facade window and greenhouse glazing tuned to the August 2019 Street View palette.",
+    "R3: added eight low-profile roof service-unit proxies distributed over the broad flat roof using visual positions from the 2023 Indiana GIO orthophoto; exact equipment count, type, and position are not verified.",
+    "R3: added schematic B and SB basement floor plates and cold-room enclosure proxies. Purdue GIS records B=-12 and SB=-24, and the 2021 Agronomy report describes basement cold storage; unit semantics, extents, room count, dimensions, and locations remain unverified.",
+    "R3: the GIS-to-orthophoto overlay confirms the 12-vertex outline aligns closely with the visible roof perimeter and its long axis. The manifest marker XY matches the evidence-recommended transformed GIS bbox midpoint; external geographic registration remains approximate, not survey-grade.",
+    "R3: expanded procedural materials to 19 unique export materials.",
+    "R4: removed all four inherited rooftop mechanical curb boxes because three extended outside the GIS roof outline; retained eight low-profile source-informed service-unit proxies entirely on the broad roof, with count and exact positions still illustrative.",
+    "R4: replaced five unsupported small basement cold-room boxes with one walk-in climate-controlled seed-storage room whose reported area is 1,163 sq ft (108.05 m\u00b2), based on Purdue Agronomy Facilities & Equipment. Its square plan proportions/position and modeled B-level assignment are schematic; the source confirms basement location only.",
+    "R4: added an internal shelving arrangement and open central aisle inside the walk-in seed room as a cutaway illustration; detailed circulation, door placement, equipment type/count and room orientation remain unverified.",
+    "R4: facade and greenhouse glazing darkened to a more reflective gray-green cue from qualitative 2019 Street View; optical parameters are visual estimates, not measured material properties.",
+    "R5: added one combined shallow dark-metal frame/transom mesh across 76 existing facade glazing panels. The frame detail is a generic architectural readability refinement, not measured from the qualitative Street View; no facade dimensions are asserted."
   ],
-  "specific_evidence_boundary": "The official PPDL map confirms nearby greenhouse facilities but does not verify an attached wing. The glazed growing bay is a schematic facade inset fully inside the selected GIS footprint; the unverified outside service apron was removed and all facade/site mesh bounds are contained within the GIS bbox.",
+  "specific_evidence_boundary": "The official PPDL map confirms nearby greenhouse facilities but does not verify an attached wing. The glazed growing bay is a schematic facade inset fully inside the selected GIS footprint; the unverified outside service apron was removed and all facade/site mesh bounds are contained within the GIS bbox. The August 2019 Street View is qualitative and perspective-distorted. It supports brick/glazing/material cues only. The 2021 report supports dryer/grinder counts, not their modeled room locations. Floor slabs are now clipped to the exact official GIS ring; the GIS CRS transformation remains an approximate campus-local conversion. The Indiana GIO 2023 orthophoto provides a current, orthorectified roof/perimeter and orientation cross-check; overlay agreement is visual and not survey control. The Google place coordinate is a POI, not a surveyed control. GIS level fields SB/B/F01-F04 and Extrution have undocumented units/semantics; model heights and floor datums remain estimates, including the unresolved 9-foot model versus 12-unit GIS interval difference. Basement rooms and rooftop unit layout are schematic proxies. R4 corrects the four inherited roof curb elements that protruded beyond the selected GIS roof ring. Purdue Agronomy Facilities & Equipment (page 30) supports 15 sample dryers, four soil grinding units and dust arresters, and a 1,163 sq ft climate-controlled walk-in seed-storage room in the basement. R4 represents that reported area, but uses schematic proportions, position and a tentative B-level assignment because neither sublevel nor plans are specified. A further 790 sq ft seed-storage installation began in fall 2008; current status/location are unclear and it is not modeled. R5 adds a combined, schematic dark-metal frame/transom detail over 76 existing glazing panels to improve facade depth/readability. Frame widths, divisions, and locations are not measured or source-confirmed.",
   "validation": {
     "saved": true,
-    "render_preview": "audit/batchC_life_science_plant_soils_preview.png",
-    "interior_detail_preview": "audit/batchC_life_science_plant_soils_interior_preview.png",
-    "generated_at_local": "2026-10-24T01:40:49-04:00",
-    "asset_object_count": 502,
-    "mesh_object_count": 500,
-    "interior_collection": "Interior",
-    "interior_object_count": 58,
-    "interior_mesh_count": 58,
+    "render_preview": "audit/batchC_life_science_plant_soils/exterior_west_r5.png",
+    "interior_detail_preview": "audit/batchC_life_science_plant_soils/interior_equipment_r2.png",
+    "generated_at_local": "2026-10-24",
+    "asset_object_count": 641,
+    "mesh_object_count": 639,
+    "interior_collection": "LSPS_Interior",
+    "interior_object_count": 160,
+    "interior_mesh_count": 77,
     "interior_geometry_exported": true,
     "window_glazing_bays": 76,
-    "materials": 10,
+    "materials": 19,
     "material_nodes_connected": true,
     "source_collection_objects_only": true,
-    "master_or_manifest_edited": false
+    "master_or_manifest_edited": false,
+    "sample_dryer_count": 15,
+    "soil_grinder_with_dust_arrester_count": 4,
+    "floorplate_geometry": "Six ground/upper/basement plates match the transformed 12-vertex GIS ring within 0.00001 m in local coordinates; basement reuse of surface footprint is schematic.",
+    "roof_preview": "audit/batchC_life_science_plant_soils/roof_top_r5.png",
+    "basement_preview": "audit/batchC_life_science_plant_soils/basement_cutaway_r5.png",
+    "below_grade_floor_count": 2,
+    "roof_service_unit_proxy_count": 8,
+    "cold_room_proxy_count": 1,
+    "independent_orthophoto_check": "Visual GIS-ring overlay on Indiana GIO 2023 Tippecanoe County orthophoto; close roof-outline and orientation match; not survey-grade.",
+    "master_marker_check": "manifest marker [-426.819, -466.398] m matches recommended transformed GIS bbox midpoint within 1 mm; master was read-only and unchanged.",
+    "basement_walk_in_seed_storage_room_count": 1,
+    "reported_seed_room_area_sqft": 1163,
+    "reported_seed_room_area_m2": 108.05,
+    "unsupported_rooftop_curbs_remaining": 0,
+    "legacy_small_cold_room_boxes_remaining": 0,
+    "window_frame_mesh_count": 1,
+    "framed_glazing_panel_count": 76
   },
   "uncertainties": [
-    "GIS horizontal footprint is a good source for the plan but does not verify wall height, facade bay locations, or roof equipment.",
-    "Heights are interpreted from the GIS extrusion attribute and remain estimates.",
-    "Facade imagery is referenced through official pages and map links; current Street View imagery was not independently captured or date-verified in this build pass.",
-    "Interior circulation and finishes are schematic cues, not measured architectural plans."
+    "Interior circulation and finishes are schematic cues, not measured architectural plans.",
+    "August 2019 Street View is historical, perspective-distorted, and only partially exposes the exterior; facade segment dimensions and camera bearing were not calibrated.",
+    "GIS horizontal footprint is a strong plan source; Indiana orthophoto overlay visually confirms the roof perimeter/orientation, but no surveyed control point has verified the local projection or master placement to a stated tolerance.",
+    "Google Maps POI coordinate is approximate and may mark the place/building centroid or entrance vicinity; it is not survey control.",
+    "GIS Extrution, Elevation, SB, B, and F01-F04 units/semantics are undocumented. The modeled 9-foot above-grade datums conflict with 12-unit GIS intervals; height and floor elevations remain unresolved estimates.",
+    "August 2019 Street View is historical, perspective-distorted, and only partially exposes the exterior. It supports qualitative material cues, not dimensions or all elevations.",
+    "The 2021 report is indexed at the cited Purdue URL but direct PDF retrieval returned 404 in this pass; a separately found legacy Appendix-D.pdf is a general Agronomy review document, not LSPS floor plans.",
+    "The 2023 Indiana orthophoto shows rooftop service equipment generally but not its exact count or type. Eight roof-unit proxies are illustrative; the four previously out-of-footprint inherited curb boxes were removed.",
+    "The accessible Purdue Background Information report supports the dryer/grinder quantities and a 1,163 sq ft basement walk-in climate room. Exact room dimensions, position, entrance, circulation and B/SB sublevel are not provided; those are schematic.",
+    "The same report notes an additional 790 sq ft long-term seed-storage installation began in fall 2008, but its present completion/status and location are unknown; it is omitted.",
+    "Purdue vertical GIS values remain ambiguous: modeled above-grade datums are about 9 ft apart while F01-F04 differ by 12 undocumented units; no facade elevation or floor section has resolved the discrepancy.",
+    "R5 window frame/transom details are generic visual cues; the available 2019 Street View does not resolve dimensions or exact divisions."
   ]
 }

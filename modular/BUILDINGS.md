@@ -69,7 +69,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Horticulture Building | [horticulture_building.blend](buildings/horticulture_building.blend) | 728 |
 | Krach Leadership Center | [krach_leadership_center.blend](buildings/krach_leadership_center.blend) | 36 |
 | Lambert Fieldhouse | [lambert_fieldhouse.blend](buildings/lambert_fieldhouse.blend) | 339 |
-| Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](buildings/life_science_plant_and_soils_laboratory.blend) | 502 |
+| Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](buildings/life_science_plant_and_soils_laboratory.blend) | 641 |
 | Lyles-Porter Hall | [lyles_porter_hall.blend](buildings/lyles_porter_hall.blend) | 11 |
 | Materials Science and Electrical Engineering | [materials_science_and_electrical_engineering_msee.blend](buildings/materials_science_and_electrical_engineering_msee.blend) | 1234 |
 | Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 565 |
