@@ -1,0 +1,17 @@
+00:01.719  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\materials_science_and_electrical_engineering_msee.blend"
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\rework_batch_a\final_touch.py:9: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  m.use_nodes=True;n=m.node_tree.nodes;l=m.node_tree.links;n.clear();g=n.new('ShaderNodeNewGeometry');g.location=(-500,80);noise=n.new('ShaderNodeTexNoise');noise.location=(-300,80);noise.inputs['Scale'].default_value=48;noise.inputs['Detail'].default_value=3;l.new(g.outputs['Position'],noise.inputs['Vector']);r=n.new('ShaderNodeValToRGB');r.location=(-70,120);r.color_ramp.elements[0].color=(color[0]*.72,color[1]*.72,color[2]*.72,1);r.color_ramp.elements[1].color=(color[0]*1.05,color[1]*1.05,color[2]*1.05,1);l.new(noise.outputs['Fac'],r.inputs['Fac']);p=n.new('ShaderNodeBsdfPrincipled');p.location=(200,80);p.inputs['Roughness'].default_value=.82;l.new(r.outputs['Color'],p.inputs['Base Color']);b=n.new('ShaderNodeBump');b.location=(0,-150);b.inputs['Strength'].default_value=.1;b.inputs['Distance'].default_value=.008;l.new(noise.outputs['Fac'],b.inputs['Height']);l.new(b.outputs['Normal'],p.inputs['Normal']);out=n.new('ShaderNodeOutputMaterial');out.location=(460,80);l.new(p.outputs['BSDF'],out.inputs['Surface']);m.diffuse_color=(*color,1)
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\rework_batch_a\final_touch.py:14: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  mat=bpy.data.materials.get('MSEE_atrium_schematic_floor') or bpy.data.materials.new('MSEE_atrium_schematic_floor');mat.diffuse_color=(.24,.26,.27,1);mat.use_nodes=True;mat.node_tree.nodes.get('Principled BSDF').inputs['Base Color'].default_value=(.24,.26,.27,1)
+00:04.766  render           | Saved: 'C:\Users\Tobin\Documents\Blender\PurdueMap\audit\rework_batch_a\materials_science_and_electrical_engineering_msee_revision_preview.png'
+00:05.219  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\northwest_chiller_plant.blend"
+00:09.985  render           | Saved: 'C:\Users\Tobin\Documents\Blender\PurdueMap\audit\rework_batch_a\northwest_chiller_plant_revision_preview.png'
+BlenderMCP addon registered
+Info: Saved as "materials_science_and_electrical_engineering_msee.blend"
+MSEE patched 1332
+Info: Saved as "northwest_chiller_plant.blend"
+NWCP patched 350
+BlenderMCP addon unregistered
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
+
+Blender quit

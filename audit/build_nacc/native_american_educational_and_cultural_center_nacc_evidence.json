@@ -1,0 +1,81 @@
+{
+  "building_id": "massing_native_american_educational_and_cultural_center_nacc_faa0f59",
+  "detailed_asset_id": "native_american_educational_and_cultural_center_nacc",
+  "file": "modular\\buildings\\native_american_educational_and_cultural_center_nacc.blend",
+  "collection": "Asset_native_american_educational_and_cultural_center_nacc",
+  "scene": "Scene",
+  "retrieved_date": "2026-10-24",
+  "sources": [
+    {
+      "provider": "Purdue Office of Emergency Preparedness, NACC Building Emergency Plan",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/nacc/",
+      "observed": "former single-family white wood-frame house; two stories and basement; 3 entry/exit doors; east/front door to Fifth Street, accessible entrance/ramp toward parking, rear kitchen door toward alley; separate one-car storage garage; room names by floor; revised 2026-03-17."
+    },
+    {
+      "provider": "Purdue Native American Educational and Cultural Center",
+      "url": "https://purdue.edu/naecc/",
+      "observed": "official center identity/address at 903 Fifth Street; current page confirms facility name and use."
+    },
+    {
+      "provider": "Purdue BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 927,
+      "building_code": "NACC",
+      "address": "903 5th Street",
+      "crs_service": "EPSG:4326 as recorded in checked-in snapshot; campus local coordinates are approximate local tangent-plane formula, not surveyed coordinates",
+      "attributes": {
+        "NUM_LEVELS": 1,
+        "Extrution": 18,
+        "Elevation": 624,
+        "Shape__Area": 216.1171875,
+        "Shape__Length": 73.0137671809916
+      },
+      "raw_snapshot": "audit\\build_nacc\\native_american_educational_and_cultural_center_nacc_gis_feature_927.json"
+    }
+  ],
+  "geometry": {
+    "origin_local_xy_m": [
+      -278.92799716565696,
+      190.0768944387499
+    ],
+    "axes": "X east, Y north, Z up; meters",
+    "footprint_vertices": 20,
+    "footprint_local_bounds_m": [
+      -8.311694309677648,
+      7.903022278376,
+      -5.593632561216793,
+      5.981996680598684
+    ],
+    "official_footprint_shell": "Matched FID 927 / NACC / 903 5th Street. GIS shell retained as footprint outline; first story count field conflicts with Purdue 2-story emergency plan, so official written description is used.",
+    "stories": "2 above grade plus basement per Purdue BEP",
+    "modeled_eaves_ridge_m": [
+      6.55,
+      9.2
+    ],
+    "height_status": "estimated; no measured elevation data located",
+    "exterior_details": "white painted weathered wood clapboard, contrasting trim, divided-light sash, porch, dark composition gable roof, three functional entry cues, accessible ramp and separately modeled storage garage. Architectural details beyond official plan are estimated, not field-measured.",
+    "garage": "Purdue confirms detached one-car storage garage; size and setback estimated.",
+    "interior": "Schematic living/welcome/map room, kitchen, restrooms, second-floor computer lab/library/conference/office zones, and basement furnace rooms based on official room list. Clearly separated in NACC_SCHEMATIC_INTERIOR_NOT_AS_BUILT; partitions are not an as-built floor plan."
+  },
+  "materials": {
+    "all_procedural_portable": true,
+    "count": 10,
+    "texture_network": "Procedural noise/color ramp/bump; no image paths."
+  },
+  "street_view": {
+    "status": "not independently verified in this pass",
+    "note": "Official BEP contains address-linked Google Earth and describes doors/faces; no Street View panorama capture date is claimed."
+  },
+  "validation": {
+    "saved": true,
+    "preview": "audit\\build_nacc\\native_american_educational_and_cultural_center_nacc_preview.png",
+    "collection": "Asset_native_american_educational_and_cultural_center_nacc",
+    "object_count": 806
+  },
+  "uncertainties": [
+    "Roof pitch, exact window count and historic house style are estimates; no measured elevations or historic house photographs were found in the consulted sources.",
+    "The GIS level field reports 1 while Purdue emergency plan explicitly states two stories and basement; modeling follows the dated Purdue written description.",
+    "Garage footprint/setback and ramp geometry are estimated from the official text description.",
+    "Interior partitions are schematic, derived from room names only."
+  ]
+}

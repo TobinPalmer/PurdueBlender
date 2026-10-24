@@ -1,0 +1,103 @@
+{
+  "building": "Drew and Brittany Brees Student-Athletic Academic Center",
+  "manifest_massing_id": "massing_drew_and_brittany_brees_student_athletic_academic_center_bres_da89033",
+  "detailed_collection": "Asset_brees_student_athletic_academic_center",
+  "asset_file": "modular/buildings/brees_student_athletic_academic_center.blend",
+  "retrieved_date": "2026-10-22",
+  "official_gis": {
+    "provider": "Purdue University campus GIS ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
+    "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D255&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "feature_id": 255,
+    "building_abbreviation": "BRES",
+    "feature_name": "Drew & Brittany Brees Student Athletic Center",
+    "source_crs": "EPSG:4326 response; original Purdue service uses EPSG:3857/102100 (as identified in prior project source docs)",
+    "raw_snapshot": "audit/batch_b_buildings/brees_student_athletic_academic_center_gis_feature.json",
+    "source_date": "not supplied",
+    "measurement_method": "Official GIS ring transformed by project local geographic linear approximation, duplicate/collinear vertices simplified with iterative maximum local point-to-segment deviation tolerance 0.25m; horizontal origin is the original footprint bbox center.",
+    "simplification_tolerance_m": 0.25,
+    "transform": "X=(longitude - -86.9137) * 84810.6041653993 m/degree; Y=(latitude - 40.4274) * 111040.0 m/degree; Z up in meters; this is approximate project frame, not a surveyed CRS",
+    "campus_placement_origin_xy_m": [
+      -243.35271339058767,
+      745.9921385884661
+    ],
+    "local_model_bounds_xy_m": [
+      [
+        -36.45840576500717,
+        36.4584057650072
+      ],
+      [
+        -36.28710237032806,
+        36.28710237032806
+      ]
+    ],
+    "footprint_vertex_count": 26,
+    "uncertainty": "GIS service gives no survey tolerance/date; vertex accuracy and wall-to-outline association unverified; overhangs not represented."
+  },
+  "architectural_references": {
+    "published_facts": "Athletics academic support, study/tutoring and computer center; 2004 opened; expanded/renovated 2012 and 2019. Reference shows red brick with ivy/gold lettering; massing is 2 GIS levels; height is estimated.",
+    "source_urls": [
+      "https://purduesports.com/sports/2018/5/17/acad-services-brees-student-athlete-acad-center-html.aspx",
+      "https://events.purdue.edu/drew_and_brittany_brees_student-athlete_academic_center",
+      "https://www.purdue.edu/operations/emergency-preparedness/bres/"
+    ],
+    "visual_reference_url": "https://localist-images.azureedge.net/photos/40100423165002/card%402x/165f2d98622def2b85a5a24a280b7b72bbf40b7a.jpg",
+    "google_maps_streetview": "Not directly inspected in this subtask; image sources used where cited; model detail claims limited accordingly.",
+    "revision_sources": [
+      {
+        "title": "Purdue Student Life \u2014 Brees Student Athletic Academic Center image",
+        "url": "https://localist-images.azureedge.net/photos/40100423165002/card%402x/165f2d98622def2b85a5a24a280b7b72bbf40b7a.jpg",
+        "accessed": "2026-10-24",
+        "observation": "Official image supports low brick massing, ivy, and gold building identity; gold name treatment, study glazing and visible desks are schematic details."
+      }
+    ]
+  },
+  "modeled_interpretation": {
+    "above_grade_stories": 2,
+    "approximate_wall_height_m": 11.5,
+    "height_evidence": "estimated or mixed: Athletics academic support, study/tutoring and computer center; 2004 opened; expanded/renovated 2012 and 2019. Reference shows red brick with ivy/gold lettering; massing is 2 GIS levels; height is estimated.",
+    "materials": [
+      "procedural textured brick / facade masonry",
+      "procedural limestone/painted metal",
+      "procedural glazing",
+      "procedural roof metal/membrane",
+      "schematic concrete and interior floor"
+    ],
+    "interior": "schematic use-based furniture/zone cues only; no claim of architectural room layout except Heine first-floor circulation/lecture/retail cues follow published level-one plan",
+    "object_count": 8,
+    "local_bounds_m": [
+      [
+        -36.45840576500717,
+        36.4584057650072
+      ],
+      [
+        -36.28710237032806,
+        36.28710237032806
+      ],
+      [
+        0,
+        11.5
+      ]
+    ],
+    "geometry_method": "source polygon extruded as structural shell with story-level glazing, facade banding, building-specific massing and entrance cues; roof form as identified by image/source or explicitly estimated"
+  },
+  "validation": {
+    "saved_and_reopened": true,
+    "reopen_check": "Saved, reopened from the saved .blend in Blender 5.2.3, and rerendered from that reopened scene; stable collection, placement_origin_xy_m, geometry, materials and source-file hash checked.",
+    "preview_path": "audit\\batch_b_buildings\\brees_student_athletic_academic_center_preview.png",
+    "texture_nodes_connected": true,
+    "source_sha256_after_save_and_render": "9ddb54c7b128dbbe53d58054e9e29f391acd6d3077913433e010825129b7a73c"
+  },
+  "revision": {
+    "date": "2026-10-24",
+    "notes": [
+      "Expanded study-commons glazing on the visible front and long elevation; enlarged gold Brees name and placed it with restrained ivy at the academic entry.",
+      "Added occupied study-table cues visible through the glazing while retaining the low two-story profile and reduced parapet.",
+      "Preserved GIS footprint; exact sign size, ivy extent and study furniture are schematic.",
+      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived."
+    ],
+    "campus_origin_preserved": true,
+    "source_only": true,
+    "preview_path": "audit\\batch_b_buildings\\brees_student_athletic_academic_center_preview.png"
+  }
+}

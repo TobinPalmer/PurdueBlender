@@ -1,0 +1,223 @@
+{
+  "manifest_id": "massing_physics_building_phys_3bf42f3",
+  "asset_file": "../../modular/buildings/physics_building_phys_3bf42f3.blend",
+  "export_collection": "Asset_physics_building",
+  "retrieved_date": "2026-10-24",
+  "source_feature": {
+    "provider": "Purdue University GIS, BuildingShapesZip4 FeatureServer layer 0",
+    "feature_id": "FID 273; GlobalID {D57ED203-075B-49D1-BCDD-5255AB802323}; BLDG_ABBR PHYS",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D273&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "snapshot": "physics_building_fid273_gis_snapshot.json",
+    "source_crs": "EPSG:4326 response; service geometry is campus GIS, project-local coordinates use project equirectangular approximation",
+    "source_date": "not provided by service snapshot",
+    "method": "Converted all WGS84 ring vertices through project transform; retained full polygon and centered local geometry at its bounds center",
+    "campus_origin_m": [
+      20.732372,
+      300.324127
+    ],
+    "bbox_local_m": [
+      [
+        -53.06,
+        53.06
+      ],
+      [
+        -60.098,
+        60.098
+      ]
+    ],
+    "polygon_area_local_m2": 5158.85,
+    "GIS_Shape__Area": 8918.0078125,
+    "area_discrepancy_note": "GIS Shape__Area reports 8918.01 while the project local transform ring area is 5158.85 m2; metric agreement not assumed pending review of source area units/projection.",
+    "area_reconciliation": {
+      "result": "Resolved projection difference; the footprint identity is consistent across the two cached Purdue GIS snapshots.",
+      "independent_snapshots": [
+        "audit/official_purdue_buildings_wgs84.json",
+        "audit/batchC_physics_official_footprint.json"
+      ],
+      "feature_match": "Both snapshots contain one FID 273 / PHYS polygon with the same single 34-vertex EPSG:4326 ring; every coordinate matches.",
+      "calculation": "Project local ring shoelace area is 5158.8513 m\u00b2. Purdue Shape__Area is 8918.0078 m\u00b2 in the underlying Web Mercator service plane. At centroid latitude 40.4300\u00b0, 8918.0078*cos(latitude)^2 = 5167.30 m\u00b2, within 0.17% of the locally transformed ring. This is the expected Web Mercator area scale distortion (sec(latitude)^2), plus small projection / rounding differences; it is not a second footprint or omitted ring.",
+      "source_crs_detail": "Service-native EPSG:3857/102100 Shape__Area is planar Web Mercator area; API response coordinates were requested in EPSG:4326. Project local coordinates use the project equirectangular approximation.",
+      "geometry_review": "GIS source has one exterior ring and no additional hole/disjoint rings. Shape is unchanged in this revision."
+    }
+  },
+  "visual_sources": [
+    {
+      "provider": "Purdue University, Department of Physics and Astronomy",
+      "url": "https://www.physics.purdue.edu/xia/contact.html",
+      "image_url": "https://www.physics.purdue.edu/xia/images/purduephysics.jpeg",
+      "retrieved_date": "2026-10-24",
+      "source_date": "page date unavailable",
+      "used_for": "Three-story brick facade, red tile roof, evenly spaced sash windows, central PHYSICS sign and entrance; photo shows banners and planted frontage."
+    },
+    {
+      "provider": "Purdue University, Physics Building event page",
+      "url": "https://events.purdue.edu/physics_building",
+      "image_url": "https://localist-images.azureedge.net/photos/40247397308836/card%402x/7a02b4b0e80baf717abf429dfe44cab0f62dea1a.jpg",
+      "retrieved_date": "2026-10-24",
+      "source_date": "2022 image postings visible on page",
+      "used_for": "Three-story brick elevation, roof tile, repeated windows, skybridge and landscape context."
+    },
+    {
+      "provider": "Purdue University, Department of Physics and Astronomy campus resources",
+      "url": "https://www.physics.purdue.edu/academic-programs/undergraduate/campus_resources.html",
+      "image_url": "https://www.physics.purdue.edu/academic-programs/images/registrar.jpg",
+      "retrieved_date": "2026-10-24",
+      "source_date": "not stated",
+      "used_for": "Central arched entrance, larger upper arched window, stone entry steps and facade details."
+    },
+    {
+      "provider": "Purdue University, Department history",
+      "url": "https://www.physics.purdue.edu/about/history/lark_horovitz_era.html",
+      "retrieved_date": "2026-10-24",
+      "source_date": "historical account; current Physics Building completed 1941 / dedicated 1942",
+      "used_for": "Identity/context only."
+    },
+    {
+      "provider": "Purdue University, Physics department location",
+      "url": "https://physics.purdue.edu/about/location.html",
+      "retrieved_date": "2026-10-24",
+      "source_date": "current page",
+      "used_for": "Address confirmation at 525 Northwestern Avenue and campus orientation."
+    }
+  ],
+  "height_evidence": {
+    "GIS_fields": {
+      "NUM_LEVELS": 8,
+      "F01_ft": 13,
+      "F02_ft": 27.1,
+      "F03_ft": 40.15,
+      "R_ft": 52.25,
+      "Extrution": 84
+    },
+    "interpretation": "F01/F02/F03 and R suggest 3 principal stories to roof datum 52.25 ft = 15.92m. GIS NUM_LEVELS=8 and Extrution=84 conflict with visible three-story envelope; those fields are retained but not used as measured elevation. Wall height and roof shape are estimates informed by photos.",
+    "uncertainty": "No surveyed vertical datum or architectural section found."
+  },
+  "geometry_edits": [
+    "Created independent detailed library from FID 273 footprint; retained local project coordinate frame.",
+    "Extruded exact GIS outline to estimated 12.20 m main wall line; modeled approximately 3 visible stories.",
+    "Added estimated hipped red tile roof to 15.92 m roof datum based on GIS R field and Purdue photographs.",
+    "Added repeated window/sill/stone trim rhythm based on photos; opening count, dimensions and individual elevations are estimates.",
+    "Added a schematic central stone entry and large arched upper window as shown in official imagery; exact entrance side and dimensions remain estimated.",
+    "Did not model interior, since no floor-plan evidence was verified.",
+    "Did not model exterior skybridge because the cited photo shows a connection but its endpoint, dimensions and relation to the GIS footprint could not be independently verified."
+  ],
+  "validation": {
+    "reopened": true,
+    "preview": "physics_building_preview.png",
+    "model_units": "meters",
+    "asset_collection": "Asset_physics_building",
+    "uncertainty": "Footprint and origin are GIS-derived; area is inconsistent with service Shape__Area, height/facade details estimated; entrance frontage selection unverified. Google Street View not directly inspected.",
+    "reopen_check": "Saved, reopened from the saved .blend in Blender 5.2.3, and rerendered from that reopened scene; stable collection, placement_origin_xy_m, geometry, materials and source-file hash checked.",
+    "object_count": 24,
+    "mesh_count": 23,
+    "asset_bounds_local_m": [
+      [
+        -53.22275924682617,
+        53.222755432128906
+      ],
+      [
+        -60.25985336303711,
+        60.259849548339844
+      ],
+      [
+        -0.09000000357627869,
+        15.920000076293945
+      ]
+    ],
+    "saved_and_reopened": true,
+    "preview_path": "audit\\physics_building\\physics_building_preview.png",
+    "source_sha256_after_save_and_render": "bf3b56b340dda68f4f9f2da09d0270e8c8b097c9a2aac2a41aa4c4c4ece59cce"
+  },
+  "revision": {
+    "date": "2026-10-24",
+    "notes": [
+      "Compared the same FID 273 one-ring, 34-vertex footprint in two Purdue GIS snapshots and documented the Web Mercator/project-frame area reconciliation.",
+      "Rebuilt the central portal, prominent PHYSICS sign, arched upper window and fanlight divisions; relocated/rebuilt the source skybridge to align its ends with the nearest PHYS/MSEE GIS wall points.",
+      "Saved the calculated MSEE-aligned source-local/master-coordinate endpoint transform in the evidence report; master placements are unchanged and span/height remain estimated.",
+      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived."
+    ],
+    "campus_origin_preserved": true,
+    "source_only": true,
+    "preview_path": "audit\\physics_building\\physics_building_preview.png"
+  },
+  "architectural_references": {
+    "revision_sources": [
+      {
+        "title": "Purdue Events \u2014 Physics Building exterior image",
+        "url": "https://events.purdue.edu/physics_building",
+        "image_url": "https://localist-images.azureedge.net/photos/40247397308836/card%402x/7a02b4b0e80baf717abf429dfe44cab0f62dea1a.jpg",
+        "accessed": "2026-10-24",
+        "observation": "Shows traditional tiled roof, red brick, entry/upper-window composition, and skybridge. The bridge is an estimated appendage outside the PHYS GIS polygon; its exact span/height is schematic."
+      },
+      {
+        "title": "Purdue Physics \u2014 Campus resources exterior photograph",
+        "url": "https://www.physics.purdue.edu/academic-programs/undergraduate/campus_resources.html",
+        "accessed": "2026-10-24",
+        "observation": "Supports the arched entry, upper arched window, and central PHYSICS name panel; portal geometry remains interpretive."
+      },
+      {
+        "title": "Henneman Engineering \u2014 Purdue Physics Building HVAC project photo",
+        "url": "https://henneman.com/work/purdue-university-physics-building/",
+        "accessed": "2026-10-24",
+        "observation": "Exterior image supports a low red-tile roof and glazed connecting skybridge; location and span are approximate."
+      }
+    ]
+  },
+  "bridge_alignment": {
+    "target": "MSEE, manifest building id materials_science_and_electrical_engineering_msee; project-frame GIS footprint edge-to-edge alignment",
+    "master_placements_m": {
+      "physics": [
+        20.732372,
+        300.324127,
+        0.0
+      ],
+      "msee": [
+        87.421,
+        215.992,
+        0.0
+      ]
+    },
+    "master_rotation_degrees": {
+      "physics": 0.0,
+      "msee": 0.0
+    },
+    "nearest_shell_endpoints_project_m": {
+      "physics": [
+        58.952614,
+        262.990509
+      ],
+      "msee": [
+        69.674605,
+        249.940914
+      ]
+    },
+    "physics_source_local_endpoints_m": {
+      "physics": [
+        38.220242,
+        -37.333618
+      ],
+      "msee_target": [
+        48.942233,
+        -50.383213
+      ]
+    },
+    "edge_gap_m": 16.8894,
+    "source_bridge_transform": {
+      "center_local_xy_m": [
+        43.581237,
+        -43.858416
+      ],
+      "center_master_xy_m": [
+        64.313609,
+        256.465711
+      ],
+      "rotation_z_degrees": -50.5923,
+      "length_m": 20.4894,
+      "width_m": 5.0,
+      "height_m": 3.2,
+      "center_z_m": 6.45,
+      "overlap_into_each_facade_m": 1.8
+    },
+    "method": "Nearest points between the saved 34-vertex PHYS footprint and 4-vertex MSEE footprint in project-local campus XY, after adding manifest placement translations. Bridge remains a source-library appendage; master placements are unchanged. Centerline and height are estimated; endpoint locations follow GIS shell edges."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "building": "Hall for Discovery and Learning Research",
+  "manifest_massing_id": "massing_hall_for_discovery_and_learning_research_dlr_ed8395e",
+  "detailed_collection": "Asset_hall_for_discovery_and_learning_research",
+  "asset_file": "modular/buildings/hall_for_discovery_and_learning_research.blend",
+  "retrieved_date": "2026-10-22",
+  "official_gis": {
+    "provider": "Purdue University campus GIS ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
+    "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D670&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "feature_id": 670,
+    "building_abbreviation": "DLR",
+    "feature_name": "Hall for Discovery and Learning Research",
+    "source_crs": "EPSG:4326 response; original Purdue service uses EPSG:3857/102100 (as identified in prior project source docs)",
+    "raw_snapshot": "audit/batch_b_buildings/hall_for_discovery_and_learning_research_gis_feature.json",
+    "source_date": "not supplied",
+    "measurement_method": "Official GIS ring transformed by project local geographic linear approximation, duplicate/collinear vertices simplified with iterative maximum local point-to-segment deviation tolerance 0.25m; horizontal origin is the original footprint bbox center.",
+    "simplification_tolerance_m": 0.25,
+    "transform": "X=(longitude - -86.9137) * 84810.6041653993 m/degree; Y=(latitude - 40.4274) * 111040.0 m/degree; Z up in meters; this is approximate project frame, not a surveyed CRS",
+    "campus_placement_origin_xy_m": [
+      -741.4700609090767,
+      -684.1321541267735
+    ],
+    "local_model_bounds_xy_m": [
+      [
+        -40.314116936272285,
+        40.3141169362724
+      ],
+      [
+        -17.94890900275732,
+        17.950695513916344
+      ]
+    ],
+    "footprint_vertex_count": 45,
+    "uncertainty": "GIS service gives no survey tolerance/date; vertex accuracy and wall-to-outline association unverified; overhangs not represented."
+  },
+  "architectural_references": {
+    "published_facts": "Purdue GIS FID670: five floors, mapped roof elevation 63.7m above project vertical datum, but source elevation datum/precision unclear. Image shows curved glass facade with horizontal metal bands; exterior silhouette and repeated curtainwall bands modeled. Floors/height use GIS and published photo; interior arrangement remains schematic.",
+    "source_urls": [
+      "https://architizer.com/projects/purdue-university-discovery-learning-center/",
+      "https://www.purdue.edu/operations/campus-planning-architecture/wp-content/uploads/sites/10/2025/05/Giant-Leap-Master-Plan-Compressed.pdf"
+    ],
+    "visual_reference_url": "https://architizer-prod.imgix.net/mediadata/projects/082011/9fda19d9.jpg?auto=format%2Ccompress&cs=strip&q=60&w=1680",
+    "google_maps_streetview": "Not directly inspected in this subtask; image sources used where cited; model detail claims limited accordingly.",
+    "revision_sources": [
+      {
+        "title": "Architizer \u2014 Hall for Discovery and Learning Research",
+        "url": "https://architizer.com/projects/hall-for-discovery-and-learning-research/",
+        "accessed": "2026-10-24",
+        "observation": "Supports bowed glazed frontage and floor-band rhythm; full-perimeter bowed bays/atrium activity are schematic where elevations are not shown."
+      }
+    ]
+  },
+  "modeled_interpretation": {
+    "above_grade_stories": 5,
+    "approximate_wall_height_m": 19.8,
+    "height_evidence": "estimated or mixed: Purdue GIS FID670: five floors, mapped roof elevation 63.7m above project vertical datum, but source elevation datum/precision unclear. Image shows curved glass facade with horizontal metal bands; exterior silhouette and repeated curtainwall bands modeled. Floors/height use GIS and published photo; interior arrangement remains schematic.",
+    "materials": [
+      "procedural textured brick / facade masonry",
+      "procedural limestone/painted metal",
+      "procedural glazing",
+      "procedural roof metal/membrane",
+      "schematic concrete and interior floor"
+    ],
+    "interior": "schematic use-based furniture/zone cues only; no claim of architectural room layout except Heine first-floor circulation/lecture/retail cues follow published level-one plan",
+    "object_count": 24,
+    "local_bounds_m": [
+      [
+        -40.314116936272285,
+        40.3141169362724
+      ],
+      [
+        -17.94890900275732,
+        17.950695513916344
+      ],
+      [
+        0,
+        19.8
+      ]
+    ],
+    "geometry_method": "source polygon extruded as structural shell with story-level glazing, facade banding, building-specific massing and entrance cues; roof form as identified by image/source or explicitly estimated"
+  },
+  "validation": {
+    "saved_and_reopened": true,
+    "reopen_check": "Saved, reopened from the saved .blend in Blender 5.2.3, and rerendered from that reopened scene; stable collection, placement_origin_xy_m, geometry, materials and source-file hash checked.",
+    "preview_path": "audit\\batch_b_buildings\\hall_for_discovery_and_learning_research_preview.png",
+    "texture_nodes_connected": true,
+    "source_sha256_after_save_and_render": "9ffdeb7c5a4cb78d00a7fae3894baebc17c971b32ff7724d34ebe8f070dd83ee"
+  },
+  "revision": {
+    "date": "2026-10-24",
+    "notes": [
+      "Removed the oversized generic rooftop box and replaced it with a compact mechanical screen.",
+      "Increased the visible curtainwall bow and reflective glass finish while carrying floor bands around the GIS ring; exact curvature remains estimated.",
+      "Added ground-floor public atrium tables/seats and stair landings behind the glazing while preserving the footprint, stories and origin.",
+      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived."
+    ],
+    "campus_origin_preserved": true,
+    "source_only": true,
+    "preview_path": "audit\\batch_b_buildings\\hall_for_discovery_and_learning_research_preview.png"
+  }
+}

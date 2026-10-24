@@ -1,0 +1,104 @@
+{
+  "building": "Krach Leadership Center",
+  "manifest_massing_id": "massing_krach_leadership_center_krch_debcdf8",
+  "detailed_collection": "Asset_krach_leadership_center",
+  "asset_file": "modular/buildings/krach_leadership_center.blend",
+  "retrieved_date": "2026-10-22",
+  "official_gis": {
+    "provider": "Purdue University campus GIS ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
+    "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D902&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "feature_id": 902,
+    "building_abbreviation": "KRCH",
+    "feature_name": "Krach Leadership Center",
+    "source_crs": "EPSG:4326 response; original Purdue service uses EPSG:3857/102100 (as identified in prior project source docs)",
+    "raw_snapshot": "audit/batch_b_buildings/krach_leadership_center_gis_feature.json",
+    "source_date": "not supplied",
+    "measurement_method": "Official GIS ring transformed by project local geographic linear approximation, duplicate/collinear vertices simplified with iterative maximum local point-to-segment deviation tolerance 0.25m; horizontal origin is the original footprint bbox center.",
+    "simplification_tolerance_m": 0.25,
+    "transform": "X=(longitude - -86.9137) * 84810.6041653993 m/degree; Y=(latitude - 40.4274) * 111040.0 m/degree; Z up in meters; this is approximate project frame, not a surveyed CRS",
+    "campus_placement_origin_xy_m": [
+      -639.8641814249419,
+      22.387328434462006
+    ],
+    "local_model_bounds_xy_m": [
+      [
+        -35.19455973593654,
+        35.1999985814507
+      ],
+      [
+        -14.144851897800663,
+        14.153132072091239
+      ]
+    ],
+    "footprint_vertex_count": 15,
+    "uncertainty": "GIS service gives no survey tolerance/date; vertex accuracy and wall-to-outline association unverified; overhangs not represented."
+  },
+  "architectural_references": {
+    "published_facts": "Purdue sources describe an 81,500-sq-ft 2014 four-story brick-and-glass student leadership building; emergency plan enumerates basement through fourth floor (5 accessible floor levels including basement). Model uses four above-grade levels plus partial basement cue, vertical glazing bays, pale structural piers, entry canopy. Exact heights are estimated.",
+    "source_urls": [
+      "https://www.purdue.edu/newsroom/archive/releases/2014/Q3/purdue-to-dedicate-students-krach-leadership-center-.html",
+      "https://archives.lib.purdue.edu/agents/corporate_entities/722",
+      "https://www.purdue.edu/operations/emergency-preparedness/krch/",
+      "https://stories.purdue.edu/popular-purdue-buildings-for-student-life/"
+    ],
+    "visual_reference_url": "https://stories.purdue.edu/app/uploads/2022/07/TopBuildings-ContentHub-Krach-16x9-1.jpg",
+    "google_maps_streetview": "Not directly inspected in this subtask; image sources used where cited; model detail claims limited accordingly.",
+    "revision_sources": [
+      {
+        "title": "Purdue News \u2014 Krach Leadership Center lobby photo/context",
+        "url": "https://www.purdue.edu/newsroom/archive/releases/2019/Q2/purdue-day-of-giving-leaps-to-41.6-million%2C-reaches-six-year-total-of-146.9-million.html",
+        "accessed": "2026-10-24",
+        "observation": "Purdue identifies active lobby use; the glazed study bay/interior desks are schematic and the exact furniture layout is not claimed."
+      }
+    ]
+  },
+  "modeled_interpretation": {
+    "above_grade_stories": 4,
+    "approximate_wall_height_m": 15.6,
+    "height_evidence": "estimated or mixed: Purdue sources describe an 81,500-sq-ft 2014 four-story brick-and-glass student leadership building; emergency plan enumerates basement through fourth floor (5 accessible floor levels including basement). Model uses four above-grade levels plus partial basement cue, vertical glazing bays, pale structural piers, entry canopy. Exact heights are estimated.",
+    "materials": [
+      "procedural textured brick / facade masonry",
+      "procedural limestone/painted metal",
+      "procedural glazing",
+      "procedural roof metal/membrane",
+      "schematic concrete and interior floor"
+    ],
+    "interior": "schematic use-based furniture/zone cues only; no claim of architectural room layout except Heine first-floor circulation/lecture/retail cues follow published level-one plan",
+    "object_count": 27,
+    "local_bounds_m": [
+      [
+        -35.19455973593654,
+        35.1999985814507
+      ],
+      [
+        -14.144851897800663,
+        14.153132072091239
+      ],
+      [
+        0,
+        15.6
+      ]
+    ],
+    "geometry_method": "source polygon extruded as structural shell with story-level glazing, facade banding, building-specific massing and entrance cues; roof form as identified by image/source or explicitly estimated"
+  },
+  "validation": {
+    "saved_and_reopened": true,
+    "reopen_check": "Saved, reopened from the saved .blend in Blender 5.2.3, and rerendered from that reopened scene; stable collection, placement_origin_xy_m, geometry, materials and source-file hash checked.",
+    "preview_path": "audit\\batch_b_buildings\\krach_leadership_center_preview.png",
+    "texture_nodes_connected": true,
+    "source_sha256_after_save_and_render": "e08adfaaa223194e9f15a096b7da7f44c763326e40e3223cf0890f64d5cdc144"
+  },
+  "revision": {
+    "date": "2026-10-24",
+    "notes": [
+      "Expanded the front-facing glazed study bay and added visible schematic lobby tables/monitors; vertical limestone fins now stop below the roof parapet.",
+      "Reworked the street entry as a wide glazed threshold with a canopy, stone supports, steps and legible Krach sign.",
+      "Recolored brick and roof with a warm brick/graphite metal palette; preserved flat modern roof and GIS footprint.",
+      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived."
+    ],
+    "campus_origin_preserved": true,
+    "source_only": true,
+    "preview_path": "audit\\batch_b_buildings\\krach_leadership_center_preview.png"
+  }
+}

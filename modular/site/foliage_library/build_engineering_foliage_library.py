@@ -62,6 +62,33 @@ tree_temp.objects.unlink(tree_obj); bpy.data.collections.remove(tree_temp)
 tree_col=make_asset_collection('PH_Tree_Small_02_LOD2', [tree_obj],
     'Poly Haven tree_small_02 native LOD1 with full leaf coverage; shared collection retains stable LOD2 identifier','LOD2 decimated composite')
 
+# Preserve the source color/roughness/normal maps and the silhouette cutouts while
+# strengthening partially covered leaf edges. The source alpha map is grayscale and
+# contains many antialiased leaf pixels; a sublinear alpha curve makes those pixels
+# denser while preserving its zero-alpha card cutouts and silhouette.
+leaf_material=bpy.data.materials.get('tree_small_02_leaves')
+if leaf_material and leaf_material.use_nodes:
+    tex=next((n for n in leaf_material.node_tree.nodes
+              if n.type=='TEX_IMAGE' and n.image and n.image.name=='tree_small_02_leaves_alpha.png'),None)
+    group=next((n for n in leaf_material.node_tree.nodes if n.type=='GROUP'
+                and n.node_tree and n.node_tree.name=='tree_small_02_leaves'),None)
+    if tex and group:
+        links=leaf_material.node_tree.links
+        alpha_socket=group.inputs.get('Alpha')
+        for link in list(links):
+            if link.to_node==group and link.to_socket==alpha_socket:
+                links.remove(link)
+        density=leaf_material.node_tree.nodes.new('ShaderNodeMath')
+        density.name='Leaf edge coverage (source alpha preserved)'
+        density.label='Leaf edge coverage: alpha ^ 0.65'
+        density.operation='POWER'
+        density.inputs[1].default_value=0.65
+        density.location=(tex.location.x+220,tex.location.y-150)
+        links.new(tex.outputs['Color'],density.inputs[0])
+        links.new(density.outputs['Value'],alpha_socket)
+        leaf_material['leaf_alpha_coverage_power']=0.65
+        leaf_material['leaf_alpha_note']='Source CC0 alpha mask remapped with alpha^0.65; zero-alpha cutouts and all source color/normal/roughness maps preserved.'
+
 # Supplement the open source crown with a rotated leaf-only layer.
 import bmesh, math
 leaf_mesh=tree_obj.data.copy()
@@ -73,6 +100,14 @@ leaf_layer.location=tree_obj.location.copy()
 leaf_layer.rotation_euler.z=math.radians(47)
 leaf_layer['adaptation']='Rotated source leaf cards to provide fuller summer coverage; trunk unchanged'
 tree_col.objects.link(leaf_layer)
+# Keep the previous collection ID available for linked files that still request it.
+# The new fuller LOD2 collection is the canonical asset; this collection is only a
+# compatibility alias so existing source blends do not lose their linked trees.
+legacy_tree_col=bpy.data.collections.new('PH_Tree_Small_02_LOD1_Composite')
+scene.collection.children.link(legacy_tree_col)
+for obj in tree_col.objects:
+    legacy_tree_col.objects.link(obj)
+legacy_tree_col['source_alias_for']='PH_Tree_Small_02_LOD2'
 # Low-cost texture-card shrubs in four distinct silhouettes.
 shrub_cols=[]
 for asset in ('shrub_02','shrub_04'):

@@ -1,0 +1,131 @@
+{
+  "building_id": "massing_life_science_plant_and_soils_laboratory_5963acd",
+  "name": "Life Science Plant and Soils Laboratory",
+  "asset_file": "modular/buildings/life_science_plant_and_soils_laboratory.blend",
+  "export_collection": "Asset_life_science_plant_and_soils_laboratory",
+  "source_feature": {
+    "provider": "Purdue University ArcGIS BuildingShapesZip4 FeatureServer layer 0",
+    "feature_id": 917,
+    "matched_name": "Life Science Plant And Soils Laboratory",
+    "abbreviation": "LSPS",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D917&outFields=*&returnGeometry=true&outSR=4326&f=json",
+    "native_crs": "EPSG:3857 / ESRI WKID 102100; query geometry requested as EPSG:4326",
+    "retrieval_date": "2026-10-24",
+    "snapshot": "audit/batchC_life_science_plant_soils_official_footprint.json",
+    "official_levels": 4,
+    "GIS_extrusion_field": 36,
+    "GIS_address": "150 S Russell Street"
+  },
+  "coordinate_method": {
+    "source_crs": "WGS 84 geographic coordinates returned by ArcGIS outSR=4326",
+    "project_transform": "X=(longitude + 86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude - 40.4274)*111040.0",
+    "local_origin": "midpoint of transformed GIS footprint bounding box",
+    "build_bbox_origin_xy_m": [
+      -426.819004,
+      -466.3979
+    ],
+    "local_geometry_shift_from_bbox_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "recommended_master_marker_xy_m": [
+      -426.819,
+      -466.398
+    ],
+    "note": "Project approximation is not a surveyed CRS. Footprint was centered for source-library geometry."
+  },
+  "footprint": {
+    "vertices": 12,
+    "bbox_local_m": [
+      [
+        -30.998,
+        -17.804
+      ],
+      [
+        30.998,
+        17.804
+      ]
+    ],
+    "dimensions_m": [
+      61.996,
+      35.608
+    ],
+    "approx_plan_area_m2": 1091.77,
+    "measurement": "official GIS ring transformed to project-local approximation; extruded as continuous shell",
+    "interior_rings": "none in selected feature"
+  },
+  "vertical_geometry": {
+    "model_height_m": 10.97,
+    "main_wall_height_m": 10.97,
+    "modeled_floor_count": 4,
+    "status": "estimated from GIS Extrution field interpreted as feet; not a measured elevation",
+    "official_num_levels": 4,
+    "note": "Roof elements add height beyond main envelope; verify against current imagery/plans if elevations become available."
+  },
+  "references": [
+    {
+      "provider": "Purdue University / official ArcGIS building GIS",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D917&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "accessed": "2026-10-24",
+      "use": "footprint outline, official building identity, levels and extrusion attribute"
+    },
+    {
+      "provider": "Purdue University",
+      "url": "https://ag.purdue.edu/department/btny/extension/plantandpestdiagnosticlab.html",
+      "accessed": "2026-10-24",
+      "use": "building identity, architectural features, or public context"
+    },
+    {
+      "provider": "Purdue University",
+      "url": "https://ag.purdue.edu/department/btny/ppdl/contact-us/parking-and-map.html",
+      "accessed": "2026-10-24",
+      "use": "building identity, architectural features, or public context"
+    },
+    {
+      "provider": "Purdue University",
+      "url": "https://ag.purdue.edu/department/btny/lilly-greenhouse/index.html",
+      "accessed": "2026-10-24",
+      "use": "building identity, architectural features, or public context"
+    },
+    {
+      "provider": "Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Life+Science+Plant+and+Soils+Laboratory+Purdue",
+      "accessed": "2026-10-24",
+      "use": "campus address / street context"
+    }
+  ],
+  "modeled_features": [
+    "official GIS footprint shell/perimeter preserved",
+    "repeated facade bays and horizontal datums",
+    "procedural connected materials: brick, precast/concrete, glazing, metal and roof",
+    "building-specific roof/entry features described in source script",
+    "building-specific interior geometry is stored in the exported Interior collection, not only in the render setup",
+    "preview lighting/camera excluded from exported asset collection"
+  ],
+  "specific_evidence_boundary": "The official PPDL map confirms nearby greenhouse facilities but does not verify an attached wing. The glazed growing bay is a schematic facade inset fully inside the selected GIS footprint; the unverified outside service apron was removed and all facade/site mesh bounds are contained within the GIS bbox.",
+  "validation": {
+    "saved": true,
+    "render_preview": "audit/batchC_life_science_plant_soils_preview.png",
+    "interior_detail_preview": "audit/batchC_life_science_plant_soils_interior_preview.png",
+    "generated_at_local": "2026-10-24T01:40:49-04:00",
+    "asset_object_count": 502,
+    "mesh_object_count": 500,
+    "interior_collection": "Interior",
+    "interior_object_count": 58,
+    "interior_mesh_count": 58,
+    "interior_geometry_exported": true,
+    "window_glazing_bays": 76,
+    "materials": 10,
+    "material_nodes_connected": true,
+    "source_collection_objects_only": true,
+    "master_or_manifest_edited": false
+  },
+  "uncertainties": [
+    "GIS horizontal footprint is a good source for the plan but does not verify wall height, facade bay locations, or roof equipment.",
+    "Heights are interpreted from the GIS extrusion attribute and remain estimates.",
+    "Facade imagery is referenced through official pages and map links; current Street View imagery was not independently captured or date-verified in this build pass.",
+    "Interior circulation and finishes are schematic cues, not measured architectural plans."
+  ]
+}

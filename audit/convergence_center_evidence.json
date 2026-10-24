@@ -1,0 +1,118 @@
+{
+  "building_id": "convergence_center",
+  "asset_file": "modular/buildings/convergence_center.blend",
+  "exported_collection": "Asset_convergence_center",
+  "original_massing_asset_preserved": "modular/buildings/massing_convergence_center_for_innovation_and_collaboration_conv_ce5226e.blend",
+  "retrieved_utc_date": "2026-10-23",
+  "sources": [
+    {
+      "provider": "Purdue University News",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2018/Q4/discovery-park-district-lays-welcome-mat-with-construction-of-145,000-square-foot,-five-story-building.html",
+      "use": "official name, five-story count, 145,000-sq-ft area, large lobby/plaza, first-floor retail; 2018 construction announcement includes design rendering"
+    },
+    {
+      "provider": "Purdue University News / Purdue Research Foundation",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2021/Q3/purdue,-purdue-research-foundation-launch-lab-to-life-6g-digital-innovation-at-discovery-park-district.html",
+      "use": "official building photo caption and operational identity"
+    },
+    {
+      "provider": "Purdue University News / Purdue Research Foundation",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2021/Q1/wabash-national-set-to-open-collaboration-space-in-purdues-discovery-park-district.html",
+      "use": "official exterior photo associated with occupied Convergence Center"
+    },
+    {
+      "provider": "Purdue Innovates",
+      "url": "https://purdueinnovates.org/venue/the-convergence-center-for-innovation-and-collaboration/",
+      "use": "current venue identity and exact address 101 Foundry Drive"
+    },
+    {
+      "provider": "Google Maps",
+      "url": "https://www.google.com/maps/place/The+Convergence+Center+for+Innovation+and+Collaboration/@40.4237313,-86.929787,17z/data=!3m1!4b1!4m6!3m5!1s0x8812e38bd7e04541:0xc20b61b4bddde859!8m2!3d40.4237313!4d-86.9272121!16s%2Fg%2F11j7kpptjx",
+      "use": "verified exact place listing/address and site map context; map places the west frontage on Foundry Drive with State Street north of the site and District Boulevard south; frontage inference only, not dimensional evidence"
+    },
+    {
+      "provider": "Google Maps Street View",
+      "url": "https://www.google.com/maps/@40.4235695,-86.9268681,3a,75y/data=!3m7!1e1!3m5!1s0x0:0x0!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D90%26panoid%3D0x0%253A0x0%26yaw%3D0!7i8192!8i4096",
+      "use": "street-view coverage attempted on 2026-10-23; Google reports no street-level imagery at selected point and serves a Carr Workplaces interior panorama instead. Exterior facade therefore comes from official Purdue images, not Street View."
+    },
+    {
+      "provider": "Purdue official CampusMap ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_query": "query?where=FID%3D946&outFields=*&returnGeometry=true",
+      "feature_id": 946,
+      "code": "CONV",
+      "source_crs": "EPSG:3857 (WKID 102100, latest WKID 3857); captured feature transformed to EPSG:4326 for GeoJSON and reprojected with project approximation for model",
+      "use": "authoritative official-campus footprint/source-feature identity"
+    }
+  ],
+  "gis_snapshot": {
+    "native": "audit/convergence_gis_feature_946_native.json",
+    "wgs84": "audit/convergence_gis_feature_946.geojson",
+    "layer_metadata": "audit/convergence_gis_layer_metadata.json",
+    "retrieval_date": "2026-10-23",
+    "native_crs": "EPSG:3857",
+    "output_crs": "EPSG:4326",
+    "feature_id": 946,
+    "name": "Convergence",
+    "BLDG_ABBR": "CONV",
+    "address": "101 Foundry Drive, West Lafayette, IN"
+  },
+  "coordinate_frame": {
+    "units": "meters",
+    "axes": "X east, Y north, Z up",
+    "project_origin_latitude": 40.4274,
+    "project_origin_longitude": -86.9137,
+    "local_origin_xy_m": [
+      -1131.698568664057,
+      -405.52500592356535
+    ],
+    "origin_definition": "official GIS polygon largest-ring centroid from existing Purdue official footprint reference; use master placement marker at this XY",
+    "transform": "X=(longitude + 86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude - 40.4274)*111040; local XY subtract centroid"
+  },
+  "footprint_local_bounds_m": {
+    "x_min": -17.662788537993492,
+    "x_max": 17.771059060742118,
+    "y_min": -42.22102162655449,
+    "y_max": 41.8504077894853,
+    "width_m": 35.43384759873561,
+    "depth_m": 84.07142941603979
+  },
+  "footprint_validation": {
+    "GIS_polygon_area_m2_projected": 2871.6509145277087,
+    "centroid_xy_m_projected": [
+      -1131.698568664057,
+      -405.52500592356535
+    ],
+    "local_origin_centroid_delta_m": [
+      0.0,
+      0.0
+    ],
+    "transform_method": "ArcGIS EPSG:3857 source was requested as EPSG:4326 GeoJSON; vertices were transformed to the project's local approximate east/north metric frame, then the ring centroid was recalculated by shoelace formula. The independently calculated centroid matches the saved campus reference center exactly."
+  },
+  "geometry_edits": [
+    "replaced one-object rectangular massing with 5-story local-coordinate shell following official stepped GIS footprint",
+    "added light gray metal panel facade, restrained floor bands, ribbon windows, metal mullions, ground-floor curtain wall",
+    "added west-facing Foundry Drive entrance canopy/vestibule, low-detail lobby cue, approximate identity panel, roof screen and estimated mechanical units",
+    "used procedural material texture variation on cladding, concrete, roof and metal trim"
+  ],
+  "vertical_evidence": {
+    "story_count": {
+      "value": 5,
+      "status": "verified from official 2018 Purdue construction release"
+    },
+    "roof_height_m": {
+      "value_estimate": 22.25,
+      "status": "estimated, not measured; based on five-story contemporary office-building scale and modeled roof screen"
+    },
+    "floor_heights": "estimated: ground floor 4.25 m, four upper stories approximately 4.05 m each"
+  },
+  "uncertainty": [
+    "No survey or dimensioned architectural elevation was found; vertical dimensions and window spacing are estimated.",
+    "Footprint identity verified by FID/code/name and address; GIS is an official campus-map polygon, not a certified survey.",
+    "South-side entry/canopy placement is inferred from official facade imagery and local street/address context; exact entrance bay not dimensioned.",
+    "Roof screen/HVAC placement is illustrative and unverified.",
+    "Interior modeling is limited to a subtle lobby floor/reception cue because public evidence confirms a large ground-floor lobby but does not expose complete interior layouts."
+  ],
+  "preview": "audit/convergence_center_preview.png",
+  "source_urls_and_retrieval_date": "URL/provider/date recorded above; sources consulted 2026-10-23"
+}

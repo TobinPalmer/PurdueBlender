@@ -1,0 +1,103 @@
+{
+  "building": "Ray W. Herrick Laboratories (2013 research building)",
+  "manifest_massing_id": "massing_ray_w_herrick_laboratories_36b11c6",
+  "detailed_collection": "Asset_ray_w_herrick_laboratories",
+  "asset_file": "modular/buildings/ray_w_herrick_laboratories.blend",
+  "retrieved_date": "2026-10-22",
+  "official_gis": {
+    "provider": "Purdue University campus GIS ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
+    "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D878&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "feature_id": 878,
+    "building_abbreviation": "HLAB",
+    "feature_name": "Herrick Laboratories",
+    "source_crs": "EPSG:4326 response; original Purdue service uses EPSG:3857/102100 (as identified in prior project source docs)",
+    "raw_snapshot": "audit/batch_b_buildings/ray_w_herrick_laboratories_gis_feature.json",
+    "source_date": "not supplied",
+    "measurement_method": "Official GIS ring transformed by project local geographic linear approximation, duplicate/collinear vertices simplified with iterative maximum local point-to-segment deviation tolerance 0.25m; horizontal origin is the original footprint bbox center.",
+    "simplification_tolerance_m": 0.25,
+    "transform": "X=(longitude - -86.9137) * 84810.6041653993 m/degree; Y=(latitude - 40.4274) * 111040.0 m/degree; Z up in meters; this is approximate project frame, not a surveyed CRS",
+    "campus_placement_origin_xy_m": [
+      -531.9590659304099,
+      -569.0631943790936
+    ],
+    "local_model_bounds_xy_m": [
+      [
+        -23.146601323653954,
+        23.14660132365384
+      ],
+      [
+        -39.016765106528055,
+        39.016765106528055
+      ]
+    ],
+    "footprint_vertex_count": 58,
+    "uncertainty": "GIS service gives no survey tolerance/date; vertex accuracy and wall-to-outline association unverified; overhangs not represented."
+  },
+  "architectural_references": {
+    "published_facts": "This manifest record matches Purdue GIS FID878 / HLAB / 177 S Russell Street and the 2013 68,000-sq-ft new building. A separate manifest record massing_herrick_laboratories_2138103 matches FID246 / HERL \u201cHerrick Acoustics\u201d, the distinct historic 1920s barn building; these are distinct adjacent facilities within the lab complex, not duplicate IDs. Model only HLAB here. Three stories from current visual/source descriptions; roof height estimated.",
+    "source_urls": [
+      "https://www.purdue.edu/newsroom/releases/2013/Q4/purdues-new-herrick-labs-building-open-for-business.html",
+      "https://engineering.purdue.edu/Herrick/about/facilities",
+      "https://engineering.purdue.edu/Herrick/about/about-us/history"
+    ],
+    "visual_reference_url": "https://www.purdue.edu/uns/images/2013/herrick-newbuilding.jpg",
+    "google_maps_streetview": "Not directly inspected in this subtask; image sources used where cited; model detail claims limited accordingly.",
+    "revision_sources": [
+      {
+        "title": "Purdue News \u2014 Herrick Labs building opens",
+        "url": "https://www.purdue.edu/newsroom/archive/releases/2013/Q2/purdues-new-herrick-labs-building-open-for-business.html",
+        "accessed": "2026-10-24",
+        "observation": "Supports the distinct 2013 HLAB facility; high-bay wing, duct risers, loading glazing and lab equipment remain schematic. The older Herrick Acoustics building is not included."
+      }
+    ]
+  },
+  "modeled_interpretation": {
+    "above_grade_stories": 3,
+    "approximate_wall_height_m": 13.5,
+    "height_evidence": "estimated or mixed: This manifest record matches Purdue GIS FID878 / HLAB / 177 S Russell Street and the 2013 68,000-sq-ft new building. A separate manifest record massing_herrick_laboratories_2138103 matches FID246 / HERL \u201cHerrick Acoustics\u201d, the distinct historic 1920s barn building; these are distinct adjacent facilities within the lab complex, not duplicate IDs. Model only HLAB here. Three stories from current visual/source descriptions; roof height estimated.",
+    "materials": [
+      "procedural textured brick / facade masonry",
+      "procedural limestone/painted metal",
+      "procedural glazing",
+      "procedural roof metal/membrane",
+      "schematic concrete and interior floor"
+    ],
+    "interior": "schematic use-based furniture/zone cues only; no claim of architectural room layout except Heine first-floor circulation/lecture/retail cues follow published level-one plan",
+    "object_count": 10,
+    "local_bounds_m": [
+      [
+        -23.146601323653954,
+        23.14660132365384
+      ],
+      [
+        -39.016765106528055,
+        39.016765106528055
+      ],
+      [
+        0,
+        13.5
+      ]
+    ],
+    "geometry_method": "source polygon extruded as structural shell with story-level glazing, facade banding, building-specific massing and entrance cues; roof form as identified by image/source or explicitly estimated"
+  },
+  "validation": {
+    "saved_and_reopened": true,
+    "reopen_check": "Saved, reopened from the saved .blend in Blender 5.2.3, and rerendered from that reopened scene; stable collection, placement_origin_xy_m, geometry, materials and source-file hash checked.",
+    "preview_path": "audit\\batch_b_buildings\\ray_w_herrick_laboratories_preview.png",
+    "texture_nodes_connected": true,
+    "source_sha256_after_save_and_render": "a470c6930fd16ef426eaf1e3f6b7d7a0dbb157d1f97d10cecb10c6c9d1b811b1"
+  },
+  "revision": {
+    "date": "2026-10-24",
+    "notes": [
+      "Added a distinct metal high-bay wing, visible test rigs, loading glazing and roof equipment; specific rig layout is schematic.",
+      "Kept brick office/lab bays distinct from metal high-bay walls, trimmed generic windows/facade fins to the parapet, and added schematic work surfaces.",
+      "Retained the distinct 2013 HLAB source match and GIS outline; did not include the separate historic HERL building.",
+      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived."
+    ],
+    "campus_origin_preserved": true,
+    "source_only": true,
+    "preview_path": "audit\\batch_b_buildings\\ray_w_herrick_laboratories_preview.png"
+  }
+}

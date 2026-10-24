@@ -1,0 +1,121 @@
+{
+  "building": "Fred and Mary Ford Dining Court",
+  "manifest_massing_id": "massing_ford_dining_court_71eede4",
+  "detailed_collection": "Asset_ford_dining_court",
+  "asset_file": "modular/buildings/ford_dining_court.blend",
+  "retrieved_date": "2026-10-22",
+  "official_gis": {
+    "provider": "Purdue University campus GIS ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
+    "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D81&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "feature_id": 81,
+    "building_abbreviation": "FORD",
+    "feature_name": "Fred And Mary Ford Dining Court",
+    "source_crs": "EPSG:4326 response; original Purdue service uses EPSG:3857/102100 (as identified in prior project source docs)",
+    "raw_snapshot": "audit/batch_b_buildings/ford_dining_court_gis_feature.json",
+    "source_date": "not supplied",
+    "measurement_method": "Official GIS ring transformed by project local geographic linear approximation, duplicate/collinear vertices simplified with iterative maximum local point-to-segment deviation tolerance 0.25m; horizontal origin is the original footprint bbox center.",
+    "simplification_tolerance_m": 0.25,
+    "transform": "X=(longitude - -86.9137) * 84810.6041653993 m/degree; Y=(latitude - 40.4274) * 111040.0 m/degree; Z up in meters; this is approximate project frame, not a surveyed CRS",
+    "campus_placement_origin_xy_m": [
+      -503.91569473304673,
+      523.647572063777
+    ],
+    "local_model_bounds_xy_m": [
+      [
+        -20.746445752084696,
+        20.746445752084753
+      ],
+      [
+        -48.313914470383,
+        48.313914470383
+      ]
+    ],
+    "footprint_vertex_count": 38,
+    "uncertainty": "GIS service gives no survey tolerance/date; vertex accuracy and wall-to-outline association unverified; overhangs not represented."
+  },
+  "architectural_references": {
+    "published_facts": "Two-story standalone dining court on Stadium Avenue/Russell corner per Purdue Archives; dining web page confirms use. GIS lists 4 level-related fields (15.3m,27.8m), conflicting with archival 2-story description; model uses 2 visible dining levels, roof height approximate. Roof form follows online exterior image reference with steep traditional gables.",
+    "source_urls": [
+      "https://archives.lib.purdue.edu/agents/corporate_entities/694",
+      "https://dining.purdue.edu/ResidentialDining/locations/ford.html",
+      "https://www.purdue.edu/accessibilityresources/Accessibility_Guide.pdf"
+    ],
+    "visual_reference_url": "https://pbs.twimg.com/profile_banners/4527780207/1610575095",
+    "google_maps_streetview": "Not directly inspected in this subtask; image sources used where cited; model detail claims limited accordingly.",
+    "revision_sources": [
+      {
+        "title": "FRP \u2014 Ford Dining Hall project description",
+        "url": "https://frpinc.com/projects/ford-dining-hall/",
+        "accessed": "2026-10-24",
+        "observation": "Describes a brick campus dining hall with clay-tile shingles and gabled roof framing; the detailed profile/pitches and glazing extents in this asset remain estimates."
+      },
+      {
+        "title": "Purdue Archives \u2014 Fred and Mary Ford Dining Court",
+        "url": "https://archives.lib.purdue.edu/agents/corporate_entities/694",
+        "accessed": "2026-10-24",
+        "observation": "Purdue describes a two-story dining-court building; interior tables/counter cues are schematic."
+      },
+      {
+        "title": "FRP \u2014 Ford Dining Hall project description and exterior images",
+        "url": "https://frpinc.com/projects/ford-dining-hall/",
+        "accessed": "2026-10-24",
+        "observation": "Confirms a two-story building, partial dining mezzanine, clay-tile shingles and gabled framing. The exterior reference supports restrained eaves; exact roof pitch intersections remain unverified."
+      },
+      {
+        "title": "Purdue News \u2014 Ford exterior photograph",
+        "url": "https://www.purdue.edu/uns/images/+2004/foodcourt-ext.jpg",
+        "accessed": "2026-10-24",
+        "observation": "Official Purdue News exterior photo used for the red-brick, roof-eave and public frontage comparison; detailed roof intersections and interior layout are estimated."
+      }
+    ]
+  },
+  "modeled_interpretation": {
+    "above_grade_stories": 2,
+    "approximate_wall_height_m": 10.0,
+    "height_evidence": "estimated or mixed: Two-story standalone dining court on Stadium Avenue/Russell corner per Purdue Archives; dining web page confirms use. GIS lists 4 level-related fields (15.3m,27.8m), conflicting with archival 2-story description; model uses 2 visible dining levels, roof height approximate. Roof form follows online exterior image reference with steep traditional gables.",
+    "materials": [
+      "procedural textured brick / facade masonry",
+      "procedural limestone/painted metal",
+      "procedural glazing",
+      "procedural roof metal/membrane",
+      "schematic concrete and interior floor"
+    ],
+    "interior": "schematic use-based furniture/zone cues only; no claim of architectural room layout except Heine first-floor circulation/lecture/retail cues follow published level-one plan",
+    "object_count": 11,
+    "local_bounds_m": [
+      [
+        -20.746445752084696,
+        20.746445752084753
+      ],
+      [
+        -48.313914470383,
+        48.313914470383
+      ],
+      [
+        0,
+        10.0
+      ]
+    ],
+    "geometry_method": "source polygon extruded as structural shell with story-level glazing, facade banding, building-specific massing and entrance cues; roof form as identified by image/source or explicitly estimated"
+  },
+  "validation": {
+    "saved_and_reopened": true,
+    "reopen_check": "Saved, reopened from the saved .blend in Blender 5.2.3, and rerendered from that reopened scene; stable collection, placement_origin_xy_m, geometry, materials and source-file hash checked.",
+    "preview_path": "audit\\batch_b_buildings\\ford_dining_court_preview.png",
+    "texture_nodes_connected": true,
+    "source_sha256_after_save_and_render": "ad3347ccb6de9e2d007a1c35a42493c15b0c3e567ae58c0673d966cc906260c5"
+  },
+  "revision": {
+    "date": "2026-10-24",
+    "notes": [
+      "Rechecked Purdue/FRP exterior references and kept the confirmed clay-tile gabled form while modestly reducing overhang and ridge prominence; exact pitch intersections remain uncertain.",
+      "Widened the visible dining glazing, added entrance signage, warm table/chair silhouettes and a lower-angle preview to make the occupied two-story commons read clearly.",
+      "Kept the two-story source reading and GIS outline; dining furniture and exact roof geometry are schematic.",
+      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived."
+    ],
+    "campus_origin_preserved": true,
+    "source_only": true,
+    "preview_path": "audit\\batch_b_buildings\\ford_dining_court_preview.png"
+  }
+}

@@ -1,0 +1,238 @@
+00:04.625  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\rawls_hall.blend"
+C:\Users\Tobin\Documents\Blender\PurdueMap\scratch\inspect_surface_graphs_next.py:7: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if not m.use_nodes: continue
+00:04.813  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\stanley_coulter_hall.blend"
+00:05.000  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\wiley_hall.blend"
+BlenderMCP addon registered
+
+### rawls_hall.blend
+Purdue_Concrete rough 0.82 metal 0.0 base_link False
+Purdue_Red_Brick rough 0.6 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 3.2, 'Detail': 3.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'Scale': 160.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+RAWL_Atrium_Rail_DarkBronze_R2 rough 0.28 metal 0.74 base_link False
+RAWL_Bedford_Limestone rough 0.72 metal 0.0 base_link False
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 40.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.03, 'Distance': 0.001} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+RAWL_Concrete_Floor rough 0.82 metal 0.0 base_link False
+RAWL_CurtainWall_Glass rough 0.09 metal 0.03 base_link False
+RAWL_Dark_Bronze_Metal rough 0.32 metal 0.55 base_link False
+RAWL_Plaza_Paver rough 0.6 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 3.2, 'Detail': 3.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'Scale': 160.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+RAWL_Purdue_Red_Brick rough 0.6 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector'), ('Object', 'Separate XYZ.003', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Mix (Legacy)', 'Color', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 3.2, 'Detail': 3.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'Scale': 160.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out []
+  Texture Coordinate.001 TEX_COORD {} in [] out [('Object', 'Separate XYZ.002', 'Vector')]
+  Brick Texture.001 TEX_BRICK {'Scale': 1.0} in [('Mix (Legacy).001', 'Color', 'Vector')] out [('Color', 'Principled BSDF', 'Base Color'), ('Factor', 'Bump.002', 'Height')]
+  Bump.002 BUMP {'Strength': 0.28, 'Distance': 0.004} in [('Brick Texture.001', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+  Texture Coordinate.002 TEX_COORD {} in [] out [('Object', 'Separate XYZ.005', 'Vector')]
+RAWL_Roof_Membrane rough 0.8 metal 0.0 base_link False
+RAWL_Structural_Steel rough 0.3 metal 0.8 base_link False
+
+### stanley_coulter_hall.blend
+Architectural_Glazing rough 0.19 metal 0.18 base_link False
+Bedford_Indiana_Limestone rough 0.78 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 45.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Mix', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.08, 'Distance': 0.01} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Campus_Lawn_Green rough 0.9 metal 0.0 base_link False
+Courtyard_Granite rough 0.55 metal 0.0 base_link False
+Dark_Bronze_Framing rough 0.35 metal 0.75 base_link False
+Historic_Slate_Roof_Procedural rough 0.8 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Wave Texture', 'Vector'), ('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 3.5, 'Detail': 3.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Mix', 'Factor')]
+  Bump BUMP {'Strength': 0.12, 'Distance': 0.018} in [('Wave Texture', 'Color', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Limestone_Water_Table rough 0.72 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 45.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Mix', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.08, 'Distance': 0.01} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Paving_Concrete rough 0.78 metal 0.0 base_link False
+Polished_Terrazzo rough 0.42 metal 0.0 base_link False
+Purdue_Red_Brick_Procedural rough 0.6 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 3.2, 'Detail': 3.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'Scale': 160.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+SC_Interior_Dark_Metal rough 0.7 metal 0.0 base_link False
+Info: Read library: 'C:\Users\Tobin\Documents\Blender\PurdueMap\modular\site\foliage_library\engineering_foliage_library.blend', '//..\site\foliage_library\engineering_foliage_library.blend', parent '<direct>'
+
+### wiley_hall.blend
+Glazing | room variation 00.001 rough 0.08 metal 0.0 base_link False
+Glazing | room variation 01.001 rough 0.08 metal 0.0 base_link False
+Glazing | room variation 02.001 rough 0.08 metal 0.0 base_link False
+Glazing | room variation 02.002 rough 0.08 metal 0.0 base_link False
+Glazing | room variation 02.003 rough 0.08 metal 0.0 base_link False
+Glazing | room variation 03.001 rough 0.08 metal 0.0 base_link False
+Glazing | room variation 04.001 rough 0.08 metal 0.0 base_link False
+Glazing | room variation 04.002 rough 0.08 metal 0.0 base_link False
+Glazing | room variation 05.001 rough 0.08 metal 0.0 base_link False
+Glazing | room variation 06.001 rough 0.08 metal 0.0 base_link False
+Interior | black painted metal rough 0.3 metal 0.8 base_link False
+Interior | black painted metal.001 rough 0.3 metal 0.8 base_link False
+Interior | black painted metal.002 rough 0.3 metal 0.8 base_link False
+Interior | black painted metal.003 rough 0.3 metal 0.8 base_link False
+Interior | black painted metal.004 rough 0.3 metal 0.8 base_link False
+Interior | black painted metal.005 rough 0.3 metal 0.8 base_link False
+Interior | brushed stainless steel rough 0.3 metal 0.8 base_link False
+Interior | brushed stainless steel.001 rough 0.3 metal 0.8 base_link False
+Interior | brushed stainless steel.002 rough 0.3 metal 0.8 base_link False
+Interior | brushed stainless steel.003 rough 0.3 metal 0.8 base_link False
+Interior | brushed stainless steel.004 rough 0.3 metal 0.8 base_link False
+Interior | brushed stainless steel.005 rough 0.3 metal 0.8 base_link False
+Interior | clear partition glass rough 0.08 metal 0.0 base_link False
+Interior | clear partition glass.001 rough 0.08 metal 0.0 base_link False
+Interior | cream speckled terrazzo rough 0.24 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Vector Math', 'Vector'), ('Object', 'Noise Texture', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Vector Rotate', 'Vector', 'Vector')] out [('Color', 'Mix (Legacy)', 'Color1'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 200.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor')]
+  Bump BUMP {'Strength': 0.2, 'Distance': 0.003} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Interior | cream speckled terrazzo.001 rough 0.24 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Vector Math', 'Vector'), ('Object', 'Noise Texture', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Vector Rotate', 'Vector', 'Vector')] out [('Color', 'Mix (Legacy)', 'Color1'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 200.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor')]
+  Bump BUMP {'Strength': 0.2, 'Distance': 0.003} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Interior | cream speckled terrazzo.002 rough 0.24 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Vector Math', 'Vector'), ('Object', 'Noise Texture', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Vector Rotate', 'Vector', 'Vector')] out [('Color', 'Mix (Legacy)', 'Color1'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 200.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor')]
+  Bump BUMP {'Strength': 0.2, 'Distance': 0.003} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Interior | cream speckled terrazzo.003 rough 0.24 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Vector Math', 'Vector'), ('Object', 'Noise Texture', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Vector Rotate', 'Vector', 'Vector')] out [('Color', 'Mix (Legacy)', 'Color1'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 200.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor')]
+  Bump BUMP {'Strength': 0.2, 'Distance': 0.003} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Interior | cream speckled terrazzo.004 rough 0.24 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Vector Math', 'Vector'), ('Object', 'Noise Texture', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Vector Rotate', 'Vector', 'Vector')] out [('Color', 'Mix (Legacy)', 'Color1'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 200.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor')]
+  Bump BUMP {'Strength': 0.2, 'Distance': 0.003} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Interior | cream speckled terrazzo.005 rough 0.24 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Vector Math', 'Vector'), ('Object', 'Noise Texture', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Vector Rotate', 'Vector', 'Vector')] out [('Color', 'Mix (Legacy)', 'Color1'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 200.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor')]
+  Bump BUMP {'Strength': 0.2, 'Distance': 0.003} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Lawn | mixed summer grass.001 rough 0.96 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 3.5, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.06} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Painted black steel.001 rough 0.3 metal 0.8 base_link False
+Painted black steel.002 rough 0.3 metal 0.8 base_link False
+Road | aged asphalt.001 rough 0.96 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 30.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.014} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Roof | dark gravel.001 rough 0.95 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 30.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.014} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Roof | dark gravel.002 rough 0.95 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 30.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.014} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Walk | warm concrete.001 rough 0.9 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 30.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.014} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Walk | warm concrete.002 rough 0.9 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 30.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.014} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Wiley | aged anodized aluminum.002 rough 0.3 metal 0.65 base_link False
+Wiley | aged anodized aluminum.003 rough 0.3 metal 0.65 base_link False
+Wiley | aged anodized aluminum.004 rough 0.3 metal 0.65 base_link False
+Wiley | aged anodized aluminum.005 rough 0.3 metal 0.65 base_link False
+Wiley | aged anodized aluminum.006 rough 0.3 metal 0.65 base_link False
+Wiley | lightly weathered buff limestone.002 rough 0.82 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 30.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')]00:06.594  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\winifred_parker_hall.blend"
+00:06.797  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\benjamin_harrison_hall.blend"
+ out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.014} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Wiley | lightly weathered buff limestone.003 rough 0.82 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 30.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.014} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Wiley | lightly weathered buff limestone.004 rough 0.82 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 30.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.014} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Wiley | lightly weathered buff limestone.005 rough 0.82 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 30.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.014} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Wiley | lightly weathered buff limestone.006 rough 0.82 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 30.0, 'Detail': 4.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Color Ramp', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.27, 'Distance': 0.014} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Wiley | salmon enamel spandrels.003 rough 0.48 metal 0.0 base_link False
+Wiley | warm russet brick / real-size 230 x 76 mm.003 rough 0.6 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 3.2, 'Detail': 3.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'Scale': 160.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+### winifred_parker_hall.blend
+Parker_Bedford_Limestone rough 0.72 metal 0.0 base_link False
+Parker_Bronze_Mullion rough 0.35 metal 0.75 base_link False
+Parker_Courtyard_Lawn rough 0.9 metal 0.0 base_link False
+Parker_Plaza_Concrete rough 0.82 metal 0.0 base_link False
+Parker_Plaza_Paver_Brick rough 0.6 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 3.2, 'Detail': 3.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'Scale': 160.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+Parker_Purdue_Red_Brick rough 0.6 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 3.2, 'Detail': 3.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'Scale': 160.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+Parker_Roof_Membrane rough 0.8 metal 0.0 base_link False
+Parker_Solar_Curtain_Glass rough 0.08 metal 0.1 base_link False
+Parker_Terrazzo_Cream rough 0.82 metal 0.0 base_link False
+
+### benjamin_harrison_hall.blend
+Aged_Architectural_Bronze rough 0.35 metal 0.75 base_link False
+Anodized_Aluminum rough 0.3 metal 0.65 base_link False
+Bicycle_Rack_Black_Steel rough 0.3 metal 0.8 base_link False
+Concrete_Pavement rough 0.82 metal 0.0 base_link False
+Harrison_Enamel_Spandrel rough 0.2 metal 0.0 base_link False
+Indiana_Bedford_Limestone rough 0.72 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Noise Texture', 'Vector')]
+  Noise Texture TEX_NOISE {'Scale': 8.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Mix', 'Factor'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.08, 'Distance': 0.001} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+Purdue_Red_Brick rough 0.6 metal 0.0 base_link True
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'Scale': 3.2, 'Detail': 3.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'Scale': 160.0, 'Detail': 2.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+Roof_Membrane rough 0.8 metal 0.0 base_link False
+Solar_Ribbon_Glass rough 0.08 metal 0.1 base_link False
+Solar_Screen_Concrete rough 0.82 metal 0.0 base_link False
+BlenderMCP addon unregistered
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
+
+Blender quit

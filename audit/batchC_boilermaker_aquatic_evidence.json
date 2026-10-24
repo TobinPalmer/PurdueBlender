@@ -1,0 +1,125 @@
+{
+  "building_id": "massing_morgan_j_burke_boilermaker_aquatic_center_2e6697f",
+  "name": "Morgan J. Burke Boilermaker Aquatic Center",
+  "asset_file": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+  "export_collection": "Asset_morgan_j_burke_boilermaker_aquatic_center",
+  "source_feature": {
+    "provider": "Purdue University ArcGIS BuildingShapesZip4 FeatureServer layer 0",
+    "feature_id": 896,
+    "matched_name": "Morgan J. Burke Boilermaker Aquatic Center",
+    "abbreviation": "AQUA",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D896&outFields=*&returnGeometry=true&outSR=4326&f=json",
+    "native_crs": "EPSG:3857 / ESRI WKID 102100; query geometry requested as EPSG:4326",
+    "retrieval_date": "2026-10-24",
+    "snapshot": "audit/batchC_boilermaker_aquatic_official_footprint.json",
+    "official_levels": 2,
+    "GIS_extrusion_field": 12,
+    "GIS_address": "1226 3rd Street"
+  },
+  "coordinate_method": {
+    "source_crs": "WGS 84 geographic coordinates returned by ArcGIS outSR=4326",
+    "project_transform": "X=(longitude + 86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude - 40.4274)*111040.0",
+    "local_origin": "midpoint of transformed GIS footprint bounding box",
+    "build_bbox_origin_xy_m": [
+      -808.682794,
+      80.336581
+    ],
+    "local_geometry_shift_from_bbox_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "recommended_master_marker_xy_m": [
+      -808.683,
+      80.337
+    ],
+    "note": "Project approximation is not a surveyed CRS. Footprint was centered for source-library geometry."
+  },
+  "footprint": {
+    "vertices": 70,
+    "bbox_local_m": [
+      [
+        -30.098,
+        -51.252
+      ],
+      [
+        30.098,
+        51.252
+      ]
+    ],
+    "dimensions_m": [
+      60.195,
+      102.504
+    ],
+    "approx_plan_area_m2": 5254.87,
+    "measurement": "official GIS ring transformed to project-local approximation; extruded as continuous shell",
+    "interior_rings": "none in selected feature"
+  },
+  "vertical_geometry": {
+    "model_height_m": 12.2,
+    "main_wall_height_m": 9.2,
+    "modeled_floor_count": 1,
+    "status": "estimated from GIS Extrution field interpreted as feet; not a measured elevation",
+    "official_num_levels": 2,
+    "note": "Roof elements add height beyond main envelope; verify against current imagery/plans if elevations become available."
+  },
+  "references": [
+    {
+      "provider": "Purdue University / official ArcGIS building GIS",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D896&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "accessed": "2026-10-24",
+      "use": "footprint outline, official building identity, levels and extrusion attribute"
+    },
+    {
+      "provider": "Published architectural / facility source",
+      "url": "https://purduesports.com/facilities/morgan-j.-burke-aquatic-center/12",
+      "accessed": "2026-10-24",
+      "use": "building identity, architectural features, or public context"
+    },
+    {
+      "provider": "Purdue University",
+      "url": "https://www.purdue.edu/recwell/sports-and-programs/aquatics/index.php",
+      "accessed": "2026-10-24",
+      "use": "building identity, architectural features, or public context"
+    },
+    {
+      "provider": "Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=Morgan+J+Burke+Boilermaker+Aquatic+Center",
+      "accessed": "2026-10-24",
+      "use": "campus address / street context"
+    }
+  ],
+  "modeled_features": [
+    "official GIS footprint shell/perimeter preserved",
+    "repeated facade bays and horizontal datums",
+    "procedural connected materials: brick, precast/concrete, glazing, metal and roof",
+    "building-specific roof/entry features described in source script",
+    "building-specific interior geometry is stored in the exported Interior collection, not only in the render setup",
+    "preview lighting/camera excluded from exported asset collection"
+  ],
+  "specific_evidence_boundary": "The 8-lane 50 m pool, diving use, high clear-span interior and spectator viewing are supported by official Purdue facility pages/photos; exterior roof profile and exact window/seat layout remain schematic estimates.",
+  "validation": {
+    "saved": true,
+    "render_preview": "audit/batchC_boilermaker_aquatic_preview.png",
+    "interior_detail_preview": "audit/batchC_boilermaker_aquatic_interior_preview.png",
+    "generated_at_local": "2026-10-24T01:41:19-04:00",
+    "asset_object_count": 565,
+    "mesh_object_count": 563,
+    "interior_collection": "Interior",
+    "interior_object_count": 361,
+    "interior_mesh_count": 360,
+    "interior_geometry_exported": true,
+    "window_glazing_bays": 57,
+    "materials": 9,
+    "material_nodes_connected": true,
+    "source_collection_objects_only": true,
+    "master_or_manifest_edited": false
+  },
+  "uncertainties": [
+    "GIS horizontal footprint is a good source for the plan but does not verify wall height, facade bay locations, or roof equipment.",
+    "Heights are interpreted from the GIS extrusion attribute and remain estimates.",
+    "Facade imagery is referenced through official pages and map links; current Street View imagery was not independently captured or date-verified in this build pass.",
+    "Interior circulation and finishes are schematic cues, not measured architectural plans."
+  ]
+}

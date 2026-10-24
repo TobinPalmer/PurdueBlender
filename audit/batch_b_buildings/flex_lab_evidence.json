@@ -1,0 +1,104 @@
+{
+  "building": "Flex Lab Facility",
+  "manifest_massing_id": "massing_flex_lab_flex_cc297ea",
+  "detailed_collection": "Asset_flex_lab",
+  "asset_file": "modular/buildings/flex_lab.blend",
+  "retrieved_date": "2026-10-22",
+  "official_gis": {
+    "provider": "Purdue University campus GIS ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
+    "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D909&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "feature_id": 909,
+    "building_abbreviation": "FLEX",
+    "feature_name": "Flex Laboratories",
+    "source_crs": "EPSG:4326 response; original Purdue service uses EPSG:3857/102100 (as identified in prior project source docs)",
+    "raw_snapshot": "audit/batch_b_buildings/flex_lab_gis_feature.json",
+    "source_date": "not supplied",
+    "measurement_method": "Official GIS ring transformed by project local geographic linear approximation, duplicate/collinear vertices simplified with iterative maximum local point-to-segment deviation tolerance 0.25m; horizontal origin is the original footprint bbox center.",
+    "simplification_tolerance_m": 0.25,
+    "transform": "X=(longitude - -86.9137) * 84810.6041653993 m/degree; Y=(latitude - 40.4274) * 111040.0 m/degree; Z up in meters; this is approximate project frame, not a surveyed CRS",
+    "campus_placement_origin_xy_m": [
+      -845.379510951895,
+      -650.9923391799532
+    ],
+    "local_model_bounds_xy_m": [
+      [
+        -16.2626037207159,
+        16.2626037207159
+      ],
+      [
+        -49.23750245638871,
+        49.23750245638871
+      ]
+    ],
+    "footprint_vertex_count": 85,
+    "uncertainty": "GIS service gives no survey tolerance/date; vertex accuracy and wall-to-outline association unverified; overhangs not represented."
+  },
+  "architectural_references": {
+    "published_facts": "2017 facility, approx 108,000 GSF, three-story simple form with brick planes and shifting glass/aluminum curtain wall; low-vibration basement, high bay and open collaborative spaces. GIS footprint FID909 and level fields are incomplete/zero, so three stories supported by architect/Purdue evidence; total above-grade height estimated.",
+    "source_urls": [
+      "https://engineering.purdue.edu/FlexLab",
+      "https://engineering.purdue.edu/Engr/AboutUs/MeetDean/Vision-2030/space-master-plan",
+      "https://www.ennead.com/work/purdue/",
+      "https://www.cesolutionsinc.com/flex-lab-1"
+    ],
+    "visual_reference_url": "https://enneadweb.s3.amazonaws.com/work-images/1507_Purdue/_xxl/1507_Flex-Lab-AW-19.jpg",
+    "google_maps_streetview": "Not directly inspected in this subtask; image sources used where cited; model detail claims limited accordingly.",
+    "revision_sources": [
+      {
+        "title": "Ennead Architects \u2014 Purdue Flex Lab",
+        "url": "https://www.ennead.com/work/purdue",
+        "accessed": "2026-10-24",
+        "observation": "Reference supports differentiated brick and curtainwall frontage; separated lab windows and bench cues are interpretive."
+      }
+    ]
+  },
+  "modeled_interpretation": {
+    "above_grade_stories": 3,
+    "approximate_wall_height_m": 14.8,
+    "height_evidence": "estimated or mixed: 2017 facility, approx 108,000 GSF, three-story simple form with brick planes and shifting glass/aluminum curtain wall; low-vibration basement, high bay and open collaborative spaces. GIS footprint FID909 and level fields are incomplete/zero, so three stories supported by architect/Purdue evidence; total above-grade height estimated.",
+    "materials": [
+      "procedural textured brick / facade masonry",
+      "procedural limestone/painted metal",
+      "procedural glazing",
+      "procedural roof metal/membrane",
+      "schematic concrete and interior floor"
+    ],
+    "interior": "schematic use-based furniture/zone cues only; no claim of architectural room layout except Heine first-floor circulation/lecture/retail cues follow published level-one plan",
+    "object_count": 23,
+    "local_bounds_m": [
+      [
+        -16.2626037207159,
+        16.2626037207159
+      ],
+      [
+        -49.23750245638871,
+        49.23750245638871
+      ],
+      [
+        0,
+        14.8
+      ]
+    ],
+    "geometry_method": "source polygon extruded as structural shell with story-level glazing, facade banding, building-specific massing and entrance cues; roof form as identified by image/source or explicitly estimated"
+  },
+  "validation": {
+    "saved_and_reopened": true,
+    "reopen_check": "Saved, reopened from the saved .blend in Blender 5.2.3, and rerendered from that reopened scene; stable collection, placement_origin_xy_m, geometry, materials and source-file hash checked.",
+    "preview_path": "audit\\batch_b_buildings\\flex_lab_preview.png",
+    "texture_nodes_connected": true,
+    "source_sha256_after_save_and_render": "f3dd115be97e7f7ad8fd1ac7a57e45a8d3b4122ae52c46490eb4deedcb21bd27"
+  },
+  "revision": {
+    "date": "2026-10-24",
+    "notes": [
+      "Strengthened the asymmetric brick-plane and shifting curtainwall composition with an offset high-bay glass field; visible optics benches and columns are schematic.",
+      "Rebuilt the public entry beneath the documented broad cantilever canopy and added warm lab activity cues behind the main glass.",
+      "Added a distinct compact high-bay roof volume while preserving GIS plan and origin; high-bay shape and equipment are interpretive.",
+      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived."
+    ],
+    "campus_origin_preserved": true,
+    "source_only": true,
+    "preview_path": "audit\\batch_b_buildings\\flex_lab_preview.png"
+  }
+}

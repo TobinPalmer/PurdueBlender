@@ -12,6 +12,7 @@ COLLECTION_NAME = 'Engineering_Mall_Groundwork_Patch'
 ORIGIN_LAT, ORIGIN_LON = 40.4274, -86.9137
 M_PER_LON = 84810.60416539927
 M_PER_LAT = 111040.0
+FOCUS = (-105.0, 110.0, 90.0, 300.0)
 
 # Work in campus coordinates, matching modular/AGENTS.md.
 def xy(lon, lat):
@@ -73,29 +74,143 @@ asset_collections={c.name:c for c in dst.collections}
 site_mats={m.name:m for m in dst.materials}
 col = bpy.data.collections.new(COLLECTION_NAME)
 bpy.context.scene.collection.children.link(col)
-patch_pavers=site_mats['Plaza_Architectural_Concrete'].copy()
-patch_pavers.name='Patch_Plaza_Architectural_Concrete_With_Stone_Joints'
-patch_pavers['source']='Derived copy of PurdueMap modular/site/campus_site.blend Plaza_Architectural_Concrete'
-materials={'concrete':site_mats['Campus_Walkway_Concrete'],
-           'paved':site_mats['Campus_Walkway_Concrete'],
-           'pavers':patch_pavers,
-           'asphalt':site_mats['asphalt_01'],
-           'grass':site_mats['grass_ground']}
-# Preserve the existing plaza material while adding a subtle project-local paving joint pattern.
-stone=materials['pavers']; nodes=stone.node_tree.nodes; links=stone.node_tree.links
-bs=nodes.get('Principled BSDF')
-tc=nodes.new('ShaderNodeTexCoord')
-vor=nodes.new('ShaderNodeTexVoronoi'); vor.feature='DISTANCE_TO_EDGE'; vor.inputs['Scale'].default_value=1.6
-links.new(tc.outputs['Object'],vor.inputs['Vector'])
-joint=nodes.new('ShaderNodeValToRGB'); joint.color_ramp.elements[0].position=.002; joint.color_ramp.elements[0].color=(.53,.51,.47,1); joint.color_ramp.elements[1].position=.009; joint.color_ramp.elements[1].color=(.70,.68,.63,1)
-links.new(vor.outputs['Distance'],joint.inputs['Fac']); links.new(joint.outputs['Color'],bs.inputs['Base Color'])
+
+def surface_material(name, base, noise_scale, variation, bump_distance, bump_strength):
+    """Project-local, meter-scaled procedural surface; avoids mutating linked source materials."""
+    m=bpy.data.materials.new(name); m.diffuse_color=(*base,1); m.use_nodes=True
+    n=m.node_tree.nodes; l=m.node_tree.links; bs=n.get('Principled BSDF')
+    bs.inputs['Roughness'].default_value=.88
+    tc=n.new('ShaderNodeTexCoord'); noise=n.new('ShaderNodeTexNoise')
+    noise.inputs['Scale'].default_value=noise_scale; noise.inputs['Detail'].default_value=3.0
+    noise.inputs['Roughness'].default_value=.72
+    l.new(tc.outputs['Object'],noise.inputs['Vector'])
+    ramp=n.new('ShaderNodeValToRGB')
+    lo=tuple(max(0,c*(1-variation)) for c in base)+(1,)
+    hi=tuple(min(1,c*(1+variation)) for c in base)+(1,)
+    ramp.color_ramp.elements[0].position=.2; ramp.color_ramp.elements[0].color=lo
+    ramp.color_ramp.elements[1].position=.8; ramp.color_ramp.elements[1].color=hi
+    l.new(noise.outputs['Fac'],ramp.inputs['Fac']); l.new(ramp.outputs['Color'],bs.inputs['Base Color'])
+    bump=n.new('ShaderNodeBump'); bump.inputs['Distance'].default_value=bump_distance
+    bump.inputs['Strength'].default_value=bump_strength
+    l.new(noise.outputs['Fac'],bump.inputs['Height']); l.new(bump.outputs['Normal'],bs.inputs['Normal'])
+    return m
+
+# The surfaces in this module use object-space coordinates in campus meters. A low-frequency
+# field gives broad natural variation; a separate finer field adds material grain without making
+# the site read as speckled noise. Grass colors vary at roughly 0.5–1 m, with fine turf relief.
+def layered_surface(name, base, macro_scale, macro_variation, fine_scale, bump_distance, bump_strength, roughness=.88):
+    m=bpy.data.materials.new(name); m.diffuse_color=(*base,1); m.use_nodes=True
+    n=m.node_tree.nodes; l=m.node_tree.links; bs=n.get('Principled BSDF')
+    bs.inputs['Roughness'].default_value=roughness
+    tc=n.new('ShaderNodeTexCoord'); macro=n.new('ShaderNodeTexNoise')
+    macro.inputs['Scale'].default_value=macro_scale; macro.inputs['Detail'].default_value=2.0
+    macro.inputs['Roughness'].default_value=.68; l.new(tc.outputs['Object'],macro.inputs['Vector'])
+    ramp=n.new('ShaderNodeValToRGB')
+    lo=tuple(max(0,c*(1-macro_variation)) for c in base)+(1,)
+    hi=tuple(min(1,c*(1+macro_variation)) for c in base)+(1,)
+    ramp.color_ramp.elements[0].position=.22; ramp.color_ramp.elements[0].color=lo
+    ramp.color_ramp.elements[1].position=.78; ramp.color_ramp.elements[1].color=hi
+    l.new(macro.outputs['Fac'],ramp.inputs['Fac']); l.new(ramp.outputs['Color'],bs.inputs['Base Color'])
+    fine=n.new('ShaderNodeTexNoise'); fine.inputs['Scale'].default_value=fine_scale
+    fine.inputs['Detail'].default_value=2.0; fine.inputs['Roughness'].default_value=.7
+    l.new(tc.outputs['Object'],fine.inputs['Vector'])
+    bump=n.new('ShaderNodeBump'); bump.inputs['Distance'].default_value=bump_distance
+    bump.inputs['Strength'].default_value=bump_strength
+    l.new(fine.outputs['Fac'],bump.inputs['Height']); l.new(bump.outputs['Normal'],bs.inputs['Normal'])
+    m['coordinate_units']='Object-space campus meters'; m['macro_variation_scale_per_m']=macro_scale
+    m['fine_detail_scale_per_m']=fine_scale
+    return m
+
+grass=layered_surface('Engineering_Mall_Mown_Grass_Textured',(.105,.225,.052),1.25,.22,32,.012,.35)
+grass['source']='Procedural close-mown turf with broad color variation and fine surface relief'
+grass['texture_scale_note']='Object-space coordinates are campus meters; macro variation spans about 0.8 m and fine relief about 3 cm'
+# Neutral concrete aggregate reads as pale warm gray under both daylight and shade.
+walkway=layered_surface('Engineering_Mall_Walkway_Concrete_Textured',(.47,.455,.415),2.0,.11,28,.004,.26)
+walkway['source']='Procedural meter-scaled campus concrete: restrained slab-scale variation and fine aggregate'
+asphalt=layered_surface('Engineering_Mall_Asphalt_Textured',(.105,.112,.108),1.0,.30,42,.003,.32,roughness=.94)
+asphalt['source']='Procedural neutral charcoal asphalt with meter-scaled aggregate; replaces broken external image material on this patch'
+patch_pavers=bpy.data.materials.new('Engineering_Mall_Plaza_Pavers_Textured'); patch_pavers.use_nodes=True
+bs=patch_pavers.node_tree.nodes.get('Principled BSDF'); bs.inputs['Roughness'].default_value=.84
+n=patch_pavers.node_tree.nodes; l=patch_pavers.node_tree.links; tc=n.new('ShaderNodeTexCoord')
+brick=n.new('ShaderNodeTexBrick'); brick.inputs['Scale'].default_value=1.0
+brick.inputs['Mortar Size'].default_value=.012; brick.inputs['Mortar Smooth'].default_value=.004
+brick.inputs['Brick Width'].default_value=.58; brick.inputs['Row Height'].default_value=.38
+brick.inputs['Color1'].default_value=(.48,.46,.41,1); brick.inputs['Color2'].default_value=(.57,.55,.50,1)
+brick.inputs['Mortar'].default_value=(.32,.31,.28,1); l.new(tc.outputs['Object'],brick.inputs['Vector'])
+l.new(brick.outputs['Color'],bs.inputs['Base Color'])
+paver_bump=n.new('ShaderNodeBump'); paver_bump.inputs['Distance'].default_value=.004; paver_bump.inputs['Strength'].default_value=.24
+l.new(brick.outputs['Fac'],paver_bump.inputs['Height']); l.new(paver_bump.outputs['Normal'],bs.inputs['Normal'])
+patch_pavers['source']='Meter-scaled warm-gray procedural concrete pavers with consistent narrow joints'
+materials={'concrete':walkway,'paved':walkway,'pavers':patch_pavers,
+           'asphalt':asphalt,'grass':grass}
+
+# OSM landuse outlines omit the continuous subgrade beneath the paths, leaving the preview sky
+# visible as blue-gray bands between mapped lawn islands. Add a local turf underlay beneath all
+# OSM path and plaza surfaces. It is deliberately below the mapped turf polygons and hardscape.
+gx0,gx1,gy0,gy1=FOCUS
+margin=25.0
+gx0-=margin; gx1+=margin; gy0-=margin; gy1+=margin
+ground_mesh=bpy.data.meshes.new('Engineering_Mall_Continuous_Subgrade_Mesh')
+ground_mesh.from_pydata([(gx0,gy0,.002),(gx1,gy0,.002),(gx1,gy1,.002),(gx0,gy1,.002)],[],[(0,1,2,3)])
+ground_mesh.materials.append(grass); ground_mesh.update()
+ground_obj=bpy.data.objects.new('Engineering_Mall_Continuous_Turf_Subgrade',ground_mesh); link_obj(ground_obj,col)
+ground_obj['surface']='continuous campus turf underlay beneath OSM-mapped paths and lawn parcels'
+ground_obj['source']='Project-local fill for unmapped subgrade gaps; not a surveyed landuse boundary'
+ground_obj['geometry_status']='flat local underlay clipped to the documented patch focus extent and placed below mapped surfaces'
 
 # Parse official OSM geometry snapshot, clipped by a documented focus extent.
 root = ET.parse(OSM).getroot()
 node_geo = {n.attrib['id']:(float(n.attrib['lon']),float(n.attrib['lat'])) for n in root.findall('node')}
 node_xy = {k:xy(*v) for k,v in node_geo.items()}
-FOCUS = (-105.0, 110.0, 90.0, 300.0)
 def inside(p): return FOCUS[0] <= p[0] <= FOCUS[1] and FOCUS[2] <= p[1] <= FOCUS[3]
+
+# The mapped radial walk centerlines terminate exactly on the fountain plaza outline. Their
+# square end caps leave small triangular turf slivers where the surveyed walk widths meet the
+# separately mapped paving polygon. Extend only those terminal centerlines into the existing
+# plaza so the same walk material overlaps the pavers. The outline and the walk's surveyed
+# alignment and width remain unchanged.
+plaza_way = next((w for w in root.findall('way') if w.attrib['id']=='283274215'), None)
+if plaza_way is None: raise RuntimeError('OSM fountain plaza outer way 283274215 is missing')
+plaza_ring = [node_xy[n.attrib['ref']] for n in plaza_way.findall('nd') if n.attrib['ref'] in node_xy]
+if len(plaza_ring)>1 and math.dist(plaza_ring[0],plaza_ring[-1])<0.02: plaza_ring=plaza_ring[:-1]
+
+def plaza_contains(p):
+    x,y=p; result=False
+    for a,b in zip(plaza_ring,plaza_ring[1:]+plaza_ring[:1]):
+        if (a[1]>y)!=(b[1]>y):
+            xi=(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0]
+            if x<xi: result=not result
+    return result
+
+def plaza_edge_distance(p):
+    best=float('inf')
+    for a,b in zip(plaza_ring,plaza_ring[1:]+plaza_ring[:1]):
+        dx,dy=b[0]-a[0],b[1]-a[1]; denom=dx*dx+dy*dy
+        t=0.0 if denom<1e-12 else max(0.0,min(1.0,((p[0]-a[0])*dx+(p[1]-a[1])*dy)/denom))
+        best=min(best,math.hypot(p[0]-(a[0]+t*dx),p[1]-(a[1]+t*dy)))
+    return best
+
+def extend_plaza_terminal(points,width):
+    """Let a mapped walk overlap the plaza only where its endpoint lies on the OSM rim."""
+    pts=list(points)
+    if len(pts)<2: return pts
+    extension=min(2.0,max(1.25,width*0.55))
+    for endpoint_index,neighbor_index in ((0,1),(-1,-2)):
+        endpoint=pts[endpoint_index]; neighbor=pts[neighbor_index]
+        if plaza_edge_distance(endpoint)>0.06: continue
+        dx,dy=endpoint[0]-neighbor[0],endpoint[1]-neighbor[1]
+        length=math.hypot(dx,dy)
+        if length<0.08: continue
+        ux,uy=dx/length,dy/length
+        # Choose the collinear direction that enters the plaza; this works for either end of a
+        # way without assuming OSM point order. Short samples avoid crossing to another edge.
+        candidates=[(ux,uy),(-ux,-uy)]
+        inward=next(((vx,vy) for vx,vy in candidates if plaza_contains((endpoint[0]+vx*.15,endpoint[1]+vy*.15))),None)
+        if inward is None: continue
+        moved=(endpoint[0]+inward[0]*extension,endpoint[1]+inward[1]*extension)
+        if endpoint_index==0: pts[0]=moved
+        else: pts[-1]=moved
+    return pts
 
 def clip_segment(a, b):
     """Liang-Barsky clip for one centerline segment against the documented focus."""
@@ -158,7 +273,6 @@ def create_ribbon(way_id, pts, width, material, label, surface):
         faces.append((i,i+1,i+2,i+3))
     if not faces: return
     me=bpy.data.meshes.new(f'OSM_{way_id}_surface_mesh'); me.from_pydata(verts,[],faces); me.materials.append(material); me.update()
-    if material==materials['asphalt']: world_xy_uv(me,.18)
     ob=bpy.data.objects.new(f'OSM_Way_{way_id}_{label}',me); link_obj(ob,col)
     ob['source']='OpenStreetMap'; ob['source_feature_id']=str(way_id); ob['surface']=surface; ob['width_m']=width; ob['width_status']='estimated from path type unless explicitly tagged'; ob['geometry_status']='OSM line geometry, locally projected to project XY'
 
@@ -186,8 +300,14 @@ for w in root.findall('way'):
             width={'primary':7.0,'service':3.4,'cycleway':3.2,'pedestrian':4.5,'steps':2.0,'footway':2.6,'path':2.0}.get(highway,2.5)
             if tags.get('name') in {'Stadium Mall','Stadium Mall Drive'}: width=4.2
         label=tags.get('name',highway).replace(' ','_')
-        for run_i,run in enumerate(runs):
-            create_ribbon(w.attrib['id'] if len(runs)==1 else f"{w.attrib['id']}_{run_i}",run,width,materials[key],label,surface)
+        # Way 283274215 is a closed outer paving polygon, not a centerline path. Treating its
+        # 22 perimeter edges as independent square-ended ribbons created triangular gaps at each
+        # vertex. Its concave-safe filled polygon below already represents the complete plaza.
+        is_plaza_outline=(w.attrib['id']=='283274215' and len(pts)>=4 and pts[0]==pts[-1])
+        if not is_plaza_outline:
+            for run_i,run in enumerate(runs):
+                run=extend_plaza_terminal(run,width)
+                create_ribbon(w.attrib['id'] if len(runs)==1 else f"{w.attrib['id']}_{run_i}",run,width,materials[key],label,surface)
         # This surveyed OSM ring is the Engineering Fountain's outer paving boundary; fill its area.
         if w.attrib['id']=='283274215' and len(pts)>=4 and pts[0]==pts[-1]:
             from mathutils.geometry import tessellate_polygon
@@ -200,6 +320,7 @@ for w in root.findall('way'):
             ob=bpy.data.objects.new('Engineering_Fountain_Plaza_Paving_OSM_283274215',me); link_obj(ob,col)
             ob['source']='OpenStreetMap way 283274215'; ob['surface']='paving_stones'; ob['geometry_status']='closed outer plaza polygon filled with concave-safe triangulation'
             ob['area_note']='OSM-tagged fountain plaza paving; polygon interpretation confirmed by project coordinate auditor'
+        # Preserve the OSM feature count: the plaza is represented by its filled surface mesh.
         path_count+=1
     if tags.get('landuse')=='grass' or tags.get('natural')=='grass':
         if len(pts)>=4 and pts[0]==pts[-1]:
@@ -211,7 +332,6 @@ for w in root.findall('way'):
             verts=[(p[0],p[1],.012) for p in ring]
             faces=[tuple(int(j) for j in tri) for tri in tris]
             me=bpy.data.meshes.new(f'OSM_{w.attrib["id"]}_turf_mesh'); me.from_pydata(verts,[],faces); me.materials.append(materials['grass']); me.update()
-            world_xy_uv(me,.25)
             ob=bpy.data.objects.new(f'OSM_Grass_{w.attrib["id"]}',me); link_obj(ob,col)
             ob['source']='OpenStreetMap'; ob['source_feature_id']=w.attrib['id']; ob['surface']='campus turf'; grass_count+=1
 

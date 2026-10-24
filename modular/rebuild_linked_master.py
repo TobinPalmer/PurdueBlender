@@ -84,6 +84,36 @@ superseded = {
     "massing_pierce_hall_prce_e5f59eb": "peirce_hall",
     "massing_psychological_sciences_building_psyc_34efd04": "psychological_sciences",
     "massing_r_b_wetherill_laboratory_of_chemistry_wthr_1577024": "wetherill_laboratory_of_chemistry",
+    "massing_black_cultural_center_bcc_e2b2544": "black_cultural_center",
+    "massing_birck_nanotechnology_center_362d0b7": "birck_nanotechnology_center",
+    "massing_asian_american_and_asian_resource_and_cultural_center_aacc_da08bb2": "asian_american_resource_and_cultural_center",
+    "massing_convergence_center_for_innovation_and_collaboration_conv_ce5226e": "convergence_center",
+    "massing_lyles_porter_hall_lyle_604c08e": "lyles_porter_hall",
+    "massing_agricultural_administration_building_120d92c": "agricultural_administration_building",
+    "massing_agricultural_and_biological_engineering_abe_0ebc7b3": "agricultural_and_biological_engineering_abe",
+    "massing_animal_disease_diagnostic_laboratory_b934354": "animal_disease_diagnostic_laboratory",
+    "massing_bechtel_innovation_design_center_bidc_5488863": "bechtel_innovation_design_center_bidc",
+    "massing_bindley_bioscience_center_641f939": "bindley_bioscience_center",
+    "massing_biochemistry_building_a267b8d": "biochemistry_building",
+    "massing_david_and_bonnie_brunner_farm_animal_hospital_dada82b": "david_and_bonnie_brunner_farm_animal_hospital",
+    "massing_dauch_alumni_center_3cb1249": "dauch_alumni_center",
+    "massing_drew_and_brittany_brees_student_athletic_academic_center_bres_da89033": "brees_student_athletic_academic_center",
+    "massing_ford_dining_court_71eede4": "ford_dining_court",
+    "massing_flex_lab_flex_cc297ea": "flex_lab",
+    "massing_hall_for_discovery_and_learning_research_dlr_ed8395e": "hall_for_discovery_and_learning_research",
+    "massing_heine_pharmacy_rhph_2f36735": "heine_pharmacy",
+    "massing_ray_w_herrick_laboratories_36b11c6": "ray_w_herrick_laboratories",
+    "massing_horticulture_286a904": "horticulture_building",
+    "massing_krach_leadership_center_krch_debcdf8": "krach_leadership_center",
+    "massing_lambert_ward_l_fieldhouse_and_gymnasium_1656862": "lambert_fieldhouse",
+    "massing_life_science_plant_and_soils_laboratory_5963acd": "life_science_plant_and_soils_laboratory",
+    "massing_materials_science_and_electrical_engineering_msee_003a4e2": "materials_science_and_electrical_engineering_msee",
+    "massing_morgan_center_for_entrepreneurship_mrgn_9ba681c": "burton_morgan_center",
+    "massing_morgan_j_burke_boilermaker_aquatic_center_2e6697f": "morgan_j_burke_boilermaker_aquatic_center",
+    "massing_national_soil_erosion_laboratory_soil_0a1864c": "national_soil_erosion_laboratory",
+    "massing_native_american_educational_and_cultural_center_nacc_faa0f59": "native_american_educational_and_cultural_center_nacc",
+    "massing_northwest_chiller_plant_nwcp_2b32fa6": "northwest_chiller_plant",
+    "massing_physics_building_phys_3bf42f3": "physics_building",
 }
 for old_id, replacement in superseded.items():
     old = asset_by_id.get(old_id)
@@ -124,7 +154,7 @@ for record in detailed:
 # Persist the placement convention and current build details.
 manifest["detailed_asset_count"] = len(detailed)
 manifest["placement_model"] = "Detailed assets are local-coordinate linked collections. Placement_<id> empties in the master supply XY campus coordinates. Massing assets retain their original campus coordinates and are linked directly."
-manifest["last_master_build"] = "2026-10-23"
+manifest["last_master_build"] = "2026-10-24"
 manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
 
 bpy.context.view_layer.update()
@@ -141,8 +171,10 @@ for name, record in expected.items():
     linked_path = resolve_library(marker.instance_collection)
     if linked_path != expected_path:
         errors.append(f"wrong source path on {name}: {linked_path}")
-    if tuple(round(float(v), 4) for v in marker.location[:2]) != tuple(round(float(v), 4) for v in record["placement_origin_xy_m"]):
-        errors.append(f"wrong placement on {name}")
+    expected_xy = record["placement_origin_xy_m"]
+    actual_xy = marker.location[:2]
+    if any(abs(float(actual_xy[i]) - float(expected_xy[i])) > 0.001 for i in range(2)):
+        errors.append(f"wrong placement on {name}: actual={list(actual_xy)}, expected={expected_xy}")
 for old_id in superseded:
     old = asset_by_id.get(old_id)
     if old:

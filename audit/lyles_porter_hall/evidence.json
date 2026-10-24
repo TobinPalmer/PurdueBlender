@@ -1,0 +1,145 @@
+{
+  "building": "Lyles-Porter Hall",
+  "building_code": "LYLE",
+  "asset_file": "modular/buildings/lyles_porter_hall.blend",
+  "collection": "Asset_lyles_porter_hall",
+  "feature_service": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+  "feature_id": 891,
+  "feature_name": "Lyles-Porter Hall",
+  "retrieval_date": "2026-10-24",
+  "source_crs": "EPSG:4326 (WGS 84; live GIS GeoJSON snapshot in audit/lyles_porter_hall/gis_live_response.geojson)",
+  "transform": "project local approximation: X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0; envelope center becomes local (0,0)",
+  "placement_origin_campus_xy_m": [
+    -257.675,
+    -717.457
+  ],
+  "coordinate_origin_description": "center of transformed GIS feature envelope; local source geometry must be placed at campus XY [-257.675, -717.457] m; Z ground datum 0",
+  "footprint_area_m2_from_transformed_raw_ring": 3520.26,
+  "footprint_area_m2_after_simplification": 3524.42,
+  "simplification_area_delta_m2": 4.16,
+  "original_ring_vertex_count": 132,
+  "simplified_ring_vertex_count": 40,
+  "simplification_tolerance_m": 0.4,
+  "height": "13.716 m approximate (GIS F01=15 ft, F02=30 ft, R=45 ft; three above-grade levels); wall roof elevation not survey-verified",
+  "partial_basement": "represented at z=-4.2 m under partial footprint/utility zone; extent, floor elevation, and grade visibility unverified",
+  "geometry_edits": [
+    "Replaced one-object coarse massing proxy geometry with simplified official GIS shell polygon and three-story envelope.",
+    "Added repeated brick facade bays, dark window frames and low-e glass, broad precast base, horizontal precast belts, main entrance curtainwall/canopy/signage, visible reception furnishings, exam/research-room cues, partial basement walls and roof/facility mechanicals.",
+    "Original massing library was not edited or deleted."
+  ],
+  "sources": [
+    {
+      "provider": "Purdue University GIS / ArcGIS REST FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": "FID 891, BLDG_ABBR LYLE, Lyles-Porter Hall",
+      "retrieved": "2026-10-24",
+      "crs": "EPSG:4326",
+      "use": "Footprint polygon and facility attributes (story/height fields).",
+      "uncertainty": "Shape footprint is a general building footprint; wall height, roof form and grade are not surveyed by this record.",
+      "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D891&outFields=*&returnGeometry=true&outSR=4326&f=geojson"
+    },
+    {
+      "provider": "Google Maps Street View",
+      "url": "https://www.google.com/maps/@40.4204053,-86.9167997,190a,75y,252.76h,90t/data=!3m7!1e1!3m5!1scraEdjX45J0M0g014PXkxg!2e0",
+      "capture_date": "March 2026",
+      "retrieved": "2026-10-24",
+      "crs": "WGS 84 coordinate in pano URL; Google internal panorama orientation/position, not survey",
+      "use": "Harrison Street south-side view of three-story red brick, broad light precast bands and facade rhythm."
+    },
+    {
+      "provider": "Google Maps Street View",
+      "url": "https://www.google.com/maps/@40.4214516,-86.9172083,191a,75y,271.71h,90t/data=!3m7!1e1!3m5!1s6IcuOQm2eUwtkI_nVNDBWg!2e0",
+      "capture_date": "August 2018",
+      "retrieved": "2026-10-24",
+      "crs": "WGS 84 coordinate in panorama URL; Google internal panorama orientation/position, not survey",
+      "use": "Clinic Drive view at 720 Clinic Dr of brick wings, pale concrete base/bands, repeated window details, recessed entry/service edge and projecting roof overhang."
+    },
+    {
+      "provider": "Purdue University News",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2014/Q3/purdue-dedicates-building-for-health-research,-training,-patient-services.html",
+      "published": "2014-09-26",
+      "retrieved": "2026-10-24",
+      "crs": "N/A",
+      "use": "Three-story scale, location, research labs, 30 sound booths, clinics, simulation suite, first floor reception and fitness/nursing/nutrition centers; two- and first-floor program arrangement."
+    },
+    {
+      "provider": "Design 27 project portfolio",
+      "url": "https://design27.com/projects/purdue-university-lyles-porter-hall/",
+      "published": "page describes Aug 2014 completion; access date 2026-10-24",
+      "retrieved": "2026-10-24",
+      "crs": "N/A",
+      "use": "112,000 sq ft gross area and healthcare-focused design description."
+    },
+    {
+      "provider": "Purdue University Events / Localist building image",
+      "url": "https://events.purdue.edu/lyles-porter_hall",
+      "photo_url": "https://localist-images.azureedge.net/photos/40176482694176/huge/5424a53b4c04e51e6af0d6683757390274567db6.jpg",
+      "retrieved": "2026-10-24",
+      "crs": "N/A",
+      "use": "Additional published campus facade reference; photo date not stated."
+    },
+    {
+      "provider": "IU School of Medicine blog",
+      "url": "https://medicine.iu.edu/blogs/spirit-of-medicine/iu-and-purdue-team-up-to-train-new-physicians-in-west-lafayette",
+      "photo_url": "https://mc-34647c8d-0ad3-4e6c-832a-7092-cdn.azureedge.net/-/media/blogs/2021/lyle-outside-2014/lyle-porter-hall-2014.jpg?rev=e41a291e65b94ec6849dfb5163e7ca92",
+      "published": "2021; photo 2014 per filename",
+      "retrieved": "2026-10-24",
+      "crs": "N/A",
+      "use": "Independent published exterior view and building/program context."
+    }
+  ],
+  "limitations": [
+    "Exact architectural plans, floor-to-floor dimensions, roof slopes and mechanical arrangement were unavailable; these are informed estimates.",
+    "GIS Shape__Area is 6084.586 in the source field but the transformed WGS84 ring area is 3520.26 square meters; source field units/method are undocumented, so the footprint geometry itself was used and this discrepancy remains open.",
+    "The GIS shell polygon is generalized and does not provide verified courtyard, wall thickness or roof-height evidence; compare the footprint top-down before replacing the original massing.",
+    "The Google Street View source is dated 2018 for Clinic Drive and March 2026 for Harrison Street; facade match is strong but portions are occluded and branch/corner attribution is approximate.",
+    "The interior is schematic; modeled cues include reception, fitness equipment, audiology sound booth and clinic exam table, but room layouts are not detailed construction plans."
+  ],
+  "source_massing_comparison": {
+    "asset_id": "massing_lyles_porter_hall_lyle_604c08e",
+    "source_file": "buildings/massing_lyles_porter_hall_lyle_604c08e.blend",
+    "original_world_bounds_xy_m": [
+      [
+        -303.833984375,
+        -215.27474975585938
+      ],
+      [
+        -753.095458984375,
+        -682.8626708984375
+      ]
+    ],
+    "GIS_feature_world_bounds_xy_m": [
+      [
+        -303.33019324816735,
+        -212.0189293453088
+      ],
+      [
+        -750.8561967861579,
+        -684.0568835470913
+      ]
+    ],
+    "original_mass_center_minus_GIS_envelope_center_m": [
+      -1.88,
+      -0.523
+    ],
+    "interpretation": "Existing proxy extent is close but smaller/slightly offset; source massing file remains unchanged. GIS envelope center defines this detailed asset local origin."
+  },
+  "geometry_summary": {
+    "local_bounds_xy_m": [
+      [
+        -45.656,
+        45.656
+      ],
+      [
+        -33.4,
+        33.4
+      ]
+    ],
+    "z_bounds_m": [
+      -4.2,
+      15.616
+    ],
+    "approx_story_count_above_grade": 3,
+    "source_polygon_ccw": false
+  }
+}

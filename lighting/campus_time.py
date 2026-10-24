@@ -59,22 +59,22 @@ def build_sky(scene=None):
             drive(e,'color',scene,f'{night[k]}+({day[k]}-{night[k]})*({DAY})+({sunset[k]}-{night[k]})*({GLOW})',k)
         e.color[3]=1
     mapping=node('ShaderNodeVectorMath','Long layered clouds',-890,-200)
-    mapping.operation='MULTIPLY'; mapping.inputs[1].default_value=(2.2,2.2,9.0)
+    mapping.operation='MULTIPLY'; mapping.inputs[1].default_value=(2.1,2.1,8.5)
     link(direction.outputs['Vector'],mapping.inputs[0])
     noise=node('ShaderNodeTexNoise','Soft turbulent cloud layers',-650,-160)
-    noise.inputs['Scale'].default_value=2.7; noise.inputs['Detail'].default_value=5; noise.inputs['Roughness'].default_value=.68
+    noise.inputs['Scale'].default_value=2.5; noise.inputs['Detail'].default_value=2.8; noise.inputs['Roughness'].default_value=.58; noise.inputs['Distortion'].default_value=.15
     link(mapping.outputs['Vector'],noise.inputs['Vector'])
     mask=node('ShaderNodeValToRGB','Feathered cloud edges',-400,-150)
-    mask.color_ramp.elements[0].position=.42; mask.color_ramp.elements[1].position=.69
+    mask.color_ramp.elements[0].position=.42; mask.color_ramp.elements[1].position=.62
     link(noise.outputs['Fac'],mask.inputs[0])
     altitude=node('ShaderNodeMapRange','Cloud hemisphere fade',-400,-400)
-    altitude.inputs['From Min'].default_value=.015; altitude.inputs['From Max'].default_value=.18
+    altitude.inputs['From Min'].default_value=.015; altitude.inputs['From Max'].default_value=.30
     link(sep.outputs['Z'],altitude.inputs['Value'])
     mult=node('ShaderNodeMath','Cloud opacity',-120,-120); mult.operation='MULTIPLY'
     link(mask.outputs[0],mult.inputs[0]); link(altitude.outputs[0],mult.inputs[1])
     cloud=node('ShaderNodeValToRGB','Pink cloud highlights and violet shadows',-120,-360)
     link(noise.outputs['Fac'],cloud.inputs[0])
-    for e,n,d,s in [(cloud.color_ramp.elements[0],(.006,.008,.018),(.33,.40,.55),(.22,.07,.19)),(cloud.color_ramp.elements[1],(.025,.03,.055),(1,1,.95),(1.5,.49,.62))]:
+    for e,n,d,s in [(cloud.color_ramp.elements[0],(.006,.008,.018),(.33,.40,.55),(.26,.065,.13)),(cloud.color_ramp.elements[1],(.025,.03,.055),(1,1,.95),(1.7,.58,.24))]:
         for k in range(3): drive(e,'color',scene,f'{n[k]}+({d[k]}-{n[k]})*({DAY})+({s[k]}-{n[k]})*({GLOW})',k)
         e.color[3]=1
     mix=node('ShaderNodeMixRGB','Clouds over atmosphere',570,0)

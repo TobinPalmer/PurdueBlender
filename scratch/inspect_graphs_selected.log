@@ -1,0 +1,185 @@
+00:04.516  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\math_sciences.blend"
+C:\Users\Tobin\Documents\Blender\PurdueMap\scratch\inspect_graphs_selected.py:6: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if not m.use_nodes: continue
+00:04.703  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\neil_armstrong_hall.blend"
+00:04.812  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\owen_hall.blend"
+BlenderMCP addon registered
+
+## math_sciences.blend
+
+ MATH_2026_Book_Brick {'Roughness': 0.78, 'Metallic': 0.0}
+
+ MATH_2026_Facade_Glass {'Roughness': 0.18, 'Metallic': 0.38}
+
+ MATH_2026_Group_Room_Clear_Glass {'Roughness': 0.16, 'Metallic': 0.08}
+
+ MATH_2026_Library_Steel {'Roughness': 0.36, 'Metallic': 0.72}
+
+ MATH_2026_Roof_Membrane {'Roughness': 0.86, 'Metallic': 0.0}
+  Noise Texture TEX_NOISE {'W': 0.0, 'Scale': 38.0, 'Detail': 2.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [] out [('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.18, 'Distance': 0.0015, 'Filter Width': 0.1, 'Height': 1.0} in [('Noise Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+ MATH_2026_Window_Metal {'Roughness': 0.33, 'Metallic': 0.68}
+
+ MATH_Audit_Roof {'Roughness': 0.8, 'Metallic': 0.0}
+
+ MATH_Bankers_Green_Glass {'Roughness': 0.08, 'Metallic': 0.0}
+
+ MATH_Bedford_Limestone {'Roughness': 0.72, 'Metallic': 0.0}
+
+ MATH_BoardFormed_Concrete {'Roughness': 0.82, 'Metallic': 0.0}
+
+ MATH_Photo_Brick_Metre {'Roughness': 0.83, 'Metallic': 0.0}
+  Texture Coordinate TEX_COORD {} in [] out [('UV', 'Brick Texture', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0, 'Mortar Size': 0.008, 'Mortar Smooth': 0.02, 'Bias': 0.0, 'Brick Width': 0.25, 'Row Height': 0.078} in [('Texture Coordinate', 'UV', 'Vector')] out [('Color', 'Principled BSDF', 'Base Color'), ('Factor', 'Bump', 'Height')]
+  Bump BUMP {'Strength': 0.34, 'Distance': 0.003, 'Filter Width': 0.1, 'Height': 1.0} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+ MATH_Precast_Concrete {'Roughness': 0.82, 'Metallic': 0.0}
+
+ MATH_Roof_Gravel {'Roughness': 0.8, 'Metallic': 0.0}
+
+ MATH_Terrazzo_Charcoal {'Roughness': 0.82, 'Metallic': 0.0}
+
+ MATH_Terrazzo_Cream {'Roughness': 0.82, 'Metallic': 0.0}
+
+ Purdue_Aluminum {'Roughness': 0.3, 'Metallic': 0.65}
+
+ Purdue_Brick {'Roughness': 0.6, 'Metallic': 0.0}
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0, 'Mortar Size': 0.006, 'Mortar Smooth': 0.002, 'Bias': 0.0, 'Brick Width': 0.23, 'Row Height': 0.076} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'W': 0.0, 'Scale': 3.2, 'Detail': 3.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012, 'Filter Width': 0.1, 'Height': 1.0} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'W': 0.0, 'Scale': 160.0, 'Detail': 2.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002, 'Filter Width': 0.1, 'Height': 1.0} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+ Purdue_Concrete {'Roughness': 0.82, 'Metallic': 0.0}
+
+ Purdue_Glass {'Roughness': 0.08, 'Metallic': 0.0}
+
+ Purdue_Limestone {'Roughness': 0.72, 'Metallic': 0.0}
+
+ Purdue_Red_Brick {'Roughness': 0.6, 'Metallic': 0.0}
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0, 'Mortar Size': 0.006, 'Mortar Smooth': 0.002, 'Bias': 0.0, 'Brick Width': 0.23, 'Row Height': 0.076} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'W': 0.0, 'Scale': 3.2, 'Detail': 3.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012, 'Filter Width': 0.1, 'Height': 1.0} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'W': 0.0, 'Scale': 160.0, 'Detail': 2.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002, 'Filter Width': 0.1, 'Height': 1.0} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+ Purdue_Roof {'Roughness': 0.8, 'Metallic': 0.0}
+
+ Solar_Ribbon_Glass {'Roughness': 0.08, 'Metallic': 0.0}
+
+## neil_armstrong_hall.blend
+
+ ARMS_Bedford_Limestone {'Roughness': 0.72, 'Metallic': 0.0}
+
+ ARMS_Cable_Steel {'Roughness': 0.3, 'Metallic': 0.8}
+
+ ARMS_Clear_Safety_Glass {'Roughness': 0.08, 'Metallic': 0.0}
+
+ ARMS_Lunar_Granite {'Roughness': 0.45, 'Metallic': 0.0}
+
+ ARMS_Mullion_Steel {'Roughness': 0.3, 'Metallic': 0.8}
+
+ ARMS_Purdue_Red_Brick {'Roughness': 0.6, 'Metallic': 0.0}
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0, 'Mortar Size': 0.006, 'Mortar Smooth': 0.002, 'Bias': 0.0, 'Brick Width': 0.23, 'Row Height': 0.076} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'W': 0.0, 'Scale': 3.2, 'Detail': 3.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012, 'Filter Width': 0.1, 'Height': 1.0} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'W': 0.0, 'Scale': 160.0, 'Detail': 2.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002, 'Filter Width': 0.1, 'Height': 1.0} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+ ARMS_Slate_Chalkboard {'Roughness': 0.8, 'Metallic': 0.0}
+
+ ARMS_Solar_Curtain_Glass {'Roughness': 0.08, 'Metallic': 0.0}
+
+ ARMS_Terrazzo_Cream {'Roughness': 0.82, 'Metallic': 0.0}
+
+## owen_hall.blend
+
+ Beering_Lobby_Terrazzo {'Roughness': 0.82, 'Metallic': 0.0}
+
+ Beering_Purdue_Red_Brick {'Roughness': 0.6, 'Metallic': 0.0}
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0, 'Mortar Size': 0.006, 'Mortar Smooth': 0.002, 'Bias': 0.0, 'Brick Width': 0.23, 'Row Height': 0.076} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'W': 0.0, 'Scale': 3.2, 'Detail': 3.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012, 'Filter Width': 0.1, 'Height': 1.0} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'W': 0.0, 'Scale': 160.0, 'Detail': 2.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002, 'Filter Width': 0.1, 'Height': 1.0} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+ Beering_Roof_Membrane {'Roughness': 0.8, 'Metallic': 0.0}00:04.953  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\purdue_memorial_union.blend"
+00:05.078  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\ross_ade.blend"
+
+
+ Beering_Solar_Ribbon_Glass {'Roughness': 0.08, 'Metallic': 0.0}
+
+ Indiana_Bedford_Limestone {'Roughness': 0.72, 'Metallic': 0.0}
+
+ Purdue_Metal {'Roughness': 0.3, 'Metallic': 0.8}
+
+ Tark_Stainless_Steel {'Roughness': 0.3, 'Metallic': 0.8}
+
+## purdue_memorial_union.blend
+
+ PMU_Bedford_Limestone {'Roughness': 0.72, 'Metallic': 0.0}
+
+ PMU_Dining_Terrazzo {'Roughness': 0.82, 'Metallic': 0.0}
+
+ PMU_Granite_Paver {'Roughness': 0.6, 'Metallic': 0.0}
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0, 'Mortar Size': 0.006, 'Mortar Smooth': 0.002, 'Bias': 0.0, 'Brick Width': 0.23, 'Row Height': 0.076} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'W': 0.0, 'Scale': 3.2, 'Detail': 3.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012, 'Filter Width': 0.1, 'Height': 1.0} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'W': 0.0, 'Scale': 160.0, 'Detail': 2.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002, 'Filter Width': 0.1, 'Height': 1.0} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+ PMU_GreatHall_Parquet {'Roughness': 0.28, 'Metallic': 0.0}
+
+ PMU_Lead_Gothic_Glass {'Roughness': 0.08, 'Metallic': 0.1}
+
+ PMU_Red_Brick_Gothic {'Roughness': 0.6, 'Metallic': 0.0}
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0, 'Mortar Size': 0.006, 'Mortar Smooth': 0.002, 'Bias': 0.0, 'Brick Width': 0.23, 'Row Height': 0.076} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'W': 0.0, 'Scale': 3.2, 'Detail': 3.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012, 'Filter Width': 0.1, 'Height': 1.0} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'W': 0.0, 'Scale': 160.0, 'Detail': 2.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002, 'Filter Width': 0.1, 'Height': 1.0} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+ PMU_Slate_Roof {'Roughness': 0.8, 'Metallic': 0.0}
+
+ PMU_Stained_Glass_Lancet {'Roughness': 0.08, 'Metallic': 0.0}
+
+ PMU_Stainless_Steel {'Roughness': 0.3, 'Metallic': 0.8}
+
+## ross_ade.blend
+
+ RossAde_Bedford_Limestone {'Roughness': 0.72, 'Metallic': 0.0}
+
+ RossAde_Bleachers_Aluminum {'Roughness': 0.3, 'Metallic': 0.65}
+
+ RossAde_Concrete_Structure {'Roughness': 0.82, 'Metallic': 0.0}
+
+ RossAde_Plaza_Brick_Pavers {'Roughness': 0.6, 'Metallic': 0.0}
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0, 'Mortar Size': 0.006, 'Mortar Smooth': 0.002, 'Bias': 0.0, 'Brick Width': 0.23, 'Row Height': 0.076} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'W': 0.0, 'Scale': 3.2, 'Detail': 3.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012, 'Filter Width': 0.1, 'Height': 1.0} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'W': 0.0, 'Scale': 160.0, 'Detail': 2.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002, 'Filter Width': 0.1, 'Height': 1.0} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+ RossAde_Purdue_Red_Brick {'Roughness': 0.6, 'Metallic': 0.0}
+  Texture Coordinate TEX_COORD {} in [] out [('Object', 'Separate XYZ.001', 'Vector'), ('Object', 'Noise Texture', 'Vector'), ('Object', 'Noise Texture.001', 'Vector')]
+  Brick Texture TEX_BRICK {'Scale': 1.0, 'Mortar Size': 0.006, 'Mortar Smooth': 0.002, 'Bias': 0.0, 'Brick Width': 0.23, 'Row Height': 0.076} in [('Mix', 'Result', 'Vector')] out [('Color', 'Mix.001', 'A'), ('Factor', 'Bump', 'Height')]
+  Noise Texture TEX_NOISE {'W': 0.0, 'Scale': 3.2, 'Detail': 3.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Color', 'Mix.001', 'B')]
+  Bump BUMP {'Strength': 0.4, 'Distance': 0.012, 'Filter Width': 0.1, 'Height': 1.0} in [('Brick Texture', 'Factor', 'Height')] out [('Normal', 'Bump.001', 'Normal')]
+  Noise Texture.001 TEX_NOISE {'W': 0.0, 'Scale': 160.0, 'Detail': 2.0, 'Roughness': 0.5, 'Lacunarity': 2.0, 'Offset': 0.0, 'Gain': 1.0, 'Distortion': 0.0} in [('Texture Coordinate', 'Object', 'Vector')] out [('Factor', 'Bump.001', 'Height')]
+  Bump.001 BUMP {'Strength': 0.25, 'Distance': 0.002, 'Filter Width': 0.1, 'Height': 1.0} in [('Noise Texture.001', 'Factor', 'Height'), ('Bump', 'Normal', 'Normal')] out [('Normal', 'Principled BSDF', 'Normal')]
+
+ RossAde_Solar_Ribbon_Glass {'Roughness': 0.08, 'Metallic': 0.1}
+
+ RossAde_Steel_Lattice_Black {'Roughness': 0.3, 'Metallic': 0.8}
+BlenderMCP addon unregistered
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
+
+Blender quit

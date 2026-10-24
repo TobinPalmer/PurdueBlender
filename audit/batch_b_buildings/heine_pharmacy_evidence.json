@@ -1,0 +1,116 @@
+{
+  "building": "Robert E. Heine Pharmacy Building",
+  "manifest_massing_id": "massing_heine_pharmacy_rhph_2f36735",
+  "detailed_collection": "Asset_heine_pharmacy",
+  "asset_file": "modular/buildings/heine_pharmacy.blend",
+  "retrieved_date": "2026-10-22",
+  "official_gis": {
+    "provider": "Purdue University campus GIS ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
+    "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D606&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "feature_id": 606,
+    "building_abbreviation": "RHPH",
+    "feature_name": "Robert E. Heine Pharmacy Building",
+    "source_crs": "EPSG:4326 response; original Purdue service uses EPSG:3857/102100 (as identified in prior project source docs)",
+    "raw_snapshot": "audit/batch_b_buildings/heine_pharmacy_gis_feature.json",
+    "source_date": "not supplied",
+    "measurement_method": "Official GIS ring transformed by project local geographic linear approximation, duplicate/collinear vertices simplified with iterative maximum local point-to-segment deviation tolerance 0.25m; horizontal origin is the original footprint bbox center.",
+    "simplification_tolerance_m": 0.25,
+    "transform": "X=(longitude - -86.9137) * 84810.6041653993 m/degree; Y=(latitude - 40.4274) * 111040.0 m/degree; Z up in meters; this is approximate project frame, not a surveyed CRS",
+    "campus_placement_origin_xy_m": [
+      -193.84218632570293,
+      259.60496004008974
+    ],
+    "local_model_bounds_xy_m": [
+      [
+        -36.168737712102654,
+        36.168737712102654
+      ],
+      [
+        -33.991167015547035,
+        33.991167015547035
+      ]
+    ],
+    "footprint_vertex_count": 22,
+    "uncertainty": "GIS service gives no survey tolerance/date; vertex accuracy and wall-to-outline association unverified; overhangs not represented."
+  },
+  "architectural_references": {
+    "published_facts": "Purdue Archives indicates a 145,000-square-foot pharmacy facility completed/moved in 1970 and dedicated by name in 1985; Purdue pharmacy publication says six stories. GIS lists 8 level-coded values with roof 61m (vertical datum unclear), conflicting with published six-story description; visible massing modeled as 6 floors, 22m approximate. Official level-one plan supports circulation/lecture/reception/retail zones; schematic interior only.",
+    "source_urls": [
+      "https://legacy.pharmacy.purdue.edu/building-map",
+      "https://archives.lib.purdue.edu/fa/UA00053_Pharmacy_School_of.pdf",
+      "https://pharmacy.purdue.edu/wp-content/uploads/2025/02/2024-The-Purdue-Pharmacist.pdf"
+    ],
+    "visual_reference_url": "https://legacy.pharmacy.purdue.edu/sites/default/files/inline-images/RHPH_level1.png",
+    "google_maps_streetview": "Not directly inspected in this subtask; image sources used where cited; model detail claims limited accordingly.",
+    "revision_sources": [
+      {
+        "title": "Purdue Events \u2014 Robert E. Heine Pharmacy Building",
+        "url": "https://events.purdue.edu/robert_e_heine_pharmacy_building",
+        "image_url": "https://localist-images.azureedge.net/photos/41093699625075/card/9dae1726a4351597d0ccf124839d26b3becec6f4.jpg",
+        "accessed": "2026-10-24",
+        "observation": "Official place page includes an exterior image. Purdue\u2019s building emergency plan describes Floors 1\u20135 above grade plus Floor G below and a basement; other Purdue publications call it six-story. The facade models five above-grade rows and a public pharmacy ground-floor cue; exact wall height remains GIS/photographic estimate."
+      },
+      {
+        "title": "Purdue Pharmacy building emergency plan",
+        "url": "https://www.pharmacy.purdue.edu/sites/default/files/safety/rhph_building_plan.pdf",
+        "accessed": "2026-10-24",
+        "observation": "Confirms offices, classrooms, student/research labs, Pharmacy Stores, a licensed pharmacy, five above-grade floors, lower Floor G, and basement. Ground-floor counter/shelf details are schematic."
+      },
+      {
+        "title": "Wikimedia Commons \u2014 Robert E. Heine Pharmacy Building exterior photograph",
+        "url": "https://commons.wikimedia.org/wiki/File:Purdue_University_Robert_E_Heine_Pharmacy_Building.jpg",
+        "accessed": "2026-10-24",
+        "observation": "Exterior photo used to study the tall stone entrance arcade; architectural interpretation is approximate."
+      }
+    ]
+  },
+  "modeled_interpretation": {
+    "above_grade_stories": 6,
+    "approximate_wall_height_m": 22.0,
+    "height_evidence": "estimated or mixed: Purdue Archives indicates a 145,000-square-foot pharmacy facility completed/moved in 1970 and dedicated by name in 1985; Purdue pharmacy publication says six stories. GIS lists 8 level-coded values with roof 61m (vertical datum unclear), conflicting with published six-story description; visible massing modeled as 6 floors, 22m approximate. Official level-one plan supports circulation/lecture/reception/retail zones; schematic interior only.",
+    "materials": [
+      "procedural textured brick / facade masonry",
+      "procedural limestone/painted metal",
+      "procedural glazing",
+      "procedural roof metal/membrane",
+      "schematic concrete and interior floor"
+    ],
+    "interior": "schematic use-based furniture/zone cues only; no claim of architectural room layout except Heine first-floor circulation/lecture/retail cues follow published level-one plan",
+    "object_count": 16,
+    "local_bounds_m": [
+      [
+        -36.168737712102654,
+        36.168737712102654
+      ],
+      [
+        -33.991167015547035,
+        33.991167015547035
+      ],
+      [
+        0,
+        22.0
+      ]
+    ],
+    "geometry_method": "source polygon extruded as structural shell with story-level glazing, facade banding, building-specific massing and entrance cues; roof form as identified by image/source or explicitly estimated"
+  },
+  "validation": {
+    "saved_and_reopened": true,
+    "reopen_check": "Saved, reopened from the saved .blend in Blender 5.2.3, and rerendered from that reopened scene; stable collection, placement_origin_xy_m, geometry, materials and source-file hash checked.",
+    "preview_path": "audit\\batch_b_buildings\\heine_pharmacy_preview.png",
+    "texture_nodes_connected": true,
+    "source_sha256_after_save_and_render": "1840f4b501db1e7871bb5fb76100f7bdb6deffc2e5ba397d5073e567fe1f2512"
+  },
+  "revision": {
+    "date": "2026-10-24",
+    "notes": [
+      "Added a narrow vertical glazed circulation bay and pale stone pilaster cadence; model shows five above-grade public levels while the six-floor campus sources appear to include one lower level. The GIS extrusion/roof field remains uncertain.",
+      "Reworked the public pharmacy ground-floor entry with a five-bay stone arcade, retail counter/shelf cues, enlarged PURDUE PHARMACY sign, and a compact estimated mechanical penthouse.",
+      "Added schematic lab/office activity behind the frontage glazing; it does not assert room layouts.",
+      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived."
+    ],
+    "campus_origin_preserved": true,
+    "source_only": true,
+    "preview_path": "audit\\batch_b_buildings\\heine_pharmacy_preview.png"
+  }
+}
