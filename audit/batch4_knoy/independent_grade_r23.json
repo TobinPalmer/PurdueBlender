@@ -1,0 +1,135 @@
+{
+  "evaluator": "independent_grade_r23.py",
+  "grade_date": "2026-10-25",
+  "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\knoy_hall.blend",
+  "reopened_actual_saved_blend": true,
+  "score": 8.1,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "verdict": "PASS — narrowly above threshold; rooftop and campus-placement uncertainty remains material.",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Raw Purdue Libraries Campus GIS response directly names Maurice G. Knoy Hall of Technology as ABBR=KNOY, OBJECTID=189, buildingidlong=75.",
+        "The independent service OBJECTID is explicitly distinguished from the project's cached FID 243; the evidence also correctly keeps the cache's level/extrusion fields out of the live service record.",
+        "Saved footprint wire matches the project cache to 0.000012 m max vertex residual and the live service to 0.177865 m; live source discrepancy is retained as uncertainty rather than silently fitted away."
+      ],
+      "findings": [
+        "GIS boundary is an exterior footprint reference, not a structural-wall survey."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.35,
+      "max_score": 2.0,
+      "evidence": [
+        "Reopened exterior-shell bounds are X -22.462..22.463 m, Y -46.581..46.581 m, Z 0.000..19.950 m.",
+        "Saved asset root is identity=True; three manual plan-registration controls and the corresponding overlay support approximate orientation and plan registration."
+      ],
+      "findings": [
+        "Plan orientation and internal-plan registration are manually inferred with approximately ±1 m uncertainty.",
+        "R23 did not inspect the master Placement_knoy_hall marker, so campus placement is not independently verified in this grade."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue's 2018 Gateway planning source depicts typical Levels 2–4 and existing Levels 1–4 at 14 ft 8 in floor-to-floor; saved L1–L4 intervals are approximately 4.480 m, within about 0.011 m.",
+        "2017 Purdue source supports a 28-panel photovoltaic installation; roof imagery supports broad roof/terrace forms qualitatively."
+      ],
+      "findings": [
+        "L5 occupied-floor versus roof-slab status is explicitly UNVERIFIED / SOURCE CONFLICT.",
+        "Penthouse geometry and exact roof equipment/panel layout are not measured; the PV arrangement is schematic and dates from 2017 source evidence."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue Archives exterior photographs and Purdue Polytechnic imagery show the stepped brick massing, brick-heavy facades, horizontal glazing bands, and entrance vocabulary represented by the saved model.",
+        "The reopened exterior render shows stepped volumes, brick/window rhythm, parapet bands, modeled entry canopy/sign, and roof PV; the saved brick shader has metre-scale course values with an oblique close-up.",
+        "Purdue's 2018 typical-level plan and Liu's ground-plan evidence support the modeled interior partitions, doors, and upper stair-core placements as approximate source-derived geometry."
+      ],
+      "findings": [
+        "Facade openings and rooftop forms have no calibrated, edge-specific elevation/photo fit; presentation detail is stronger than dimensional proof.",
+        "Interior registration and door/stair dimensions remain estimates, with some candidate door gaps unresolved."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.95,
+      "max_score": 2.0,
+      "evidence": [
+        "The actual saved Blender 5.2.3 file reopens in scene Building_knoy_hall, with 191 scene objects, 169 meshes, expected Asset_knoy_hall collection (158 contained objects), and identity asset root.",
+        "No unpacked external image dependencies found: 0.",
+        "Building-specific evidence includes raw GIS, source provenance, reopen validation, facade and plan imagery, roof/level caveats, and explicit source-ID reconciliation."
+      ],
+      "findings": [
+        "This library-asset audit does not prove successful placement in the full campus master."
+      ]
+    }
+  ],
+  "evidence": {
+    "reopen": {
+      "blender_version": "5.2.3 LTS",
+      "scene": "Building_knoy_hall",
+      "object_count": 191,
+      "mesh_count": 169,
+      "asset_collection_objects": 158,
+      "root_identity": true,
+      "unpacked_external_images": []
+    },
+    "footprint": {
+      "live_source_name": "Maurice G. Knoy Hall of Technology",
+      "live_objectid": 189,
+      "buildingidlong": 75,
+      "project_cache_fid": 243,
+      "project_cache_max_vertex_residual_m": 1.2e-05,
+      "live_service_max_vertex_residual_m": 0.177865
+    },
+    "model_bounds_m": {
+      "exterior_shell_xyz": [
+        [
+          -22.462493896484375,
+          22.462509155273438
+        ],
+        [
+          -46.580997467041016,
+          46.580997467041016
+        ],
+        [
+          0.0,
+          19.950000762939453
+        ]
+      ]
+    },
+    "source_records": [
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch4_knoy\\purdue_campus_knoy_feature189_r23.json",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch4_knoy\\official_gis_provenance_r23.json",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch4_knoy\\validation_r23.json",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\complete_knoy\\source_research_r23.md",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch4_knoy\\README.md"
+    ],
+    "image_evidence": [
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch4_knoy\\knoy_exterior_r23.png",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch4_knoy\\knoy_exterior_roof_oblique.png",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\complete_knoy\\knoy_l1_interior_cutaway.png",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\complete_knoy\\knoy_l2_interior_cutaway.png",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\complete_knoy\\knoy_typical_plan_crop.png",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\complete_knoy\\purdue_archives_knoy_exterior_winter_1126_r22.jpg",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\complete_knoy\\knoy_entrance_facade_r17.png"
+    ],
+    "sources_reviewed_directly": true
+  },
+  "findings": [
+    "The R23 source-ID clarification strengthens traceability and prevents confusing two different GIS identifiers; it does not change mesh geometry or prove the cached five-level field.",
+    "The reopened saved asset and source dossier meet the 8/10 threshold by a small margin under the project rubric.",
+    "The score should not be read as verified height or campus placement: L5/roof interpretation is unresolved, and the master placement marker was outside R23 validation scope."
+  ]
+}

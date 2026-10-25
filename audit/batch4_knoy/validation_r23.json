@@ -1,0 +1,126 @@
+{
+  "revision": 23,
+  "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\knoy_hall.blend",
+  "reopened_saved_asset": true,
+  "blender_version": "5.2.3 LTS",
+  "scene": "Building_knoy_hall",
+  "scene_object_count": 191,
+  "mesh_object_count": 169,
+  "asset_root_identity": true,
+  "exterior_shell_bounds_world_m": [
+    [
+      -22.4625,
+      22.4625
+    ],
+    [
+      -46.581,
+      46.581
+    ],
+    [
+      0.0,
+      19.95
+    ]
+  ],
+  "footprint_wire_bounds_local_m": [
+    [
+      -22.4625,
+      22.4625
+    ],
+    [
+      -46.581,
+      46.581
+    ],
+    [
+      0.15,
+      0.15
+    ]
+  ],
+  "gis_source": {
+    "provider": "Purdue University Libraries Campus GIS MapServer, layer PuGeoDB.DBO.CampusBuilding (0); project cache FID 243 is modular/buildings/target_buildings_gis.json.",
+    "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=Name%20LIKE%20%27%25Knoy%25%27&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "retrieval_date": "2026-10-25",
+    "feature_id": {
+      "OBJECTID": 189,
+      "buildingidlong": 75,
+      "name": "Maurice G. Knoy Hall of Technology"
+    },
+    "source_date": "Not stated for this service record; ChangeYear is retained in the raw snapshot.",
+    "source_crs": "EPSG:4326, as requested in the ArcGIS query response.",
+    "comparison_crs": "Project local tangent-plane approximation: X east, Y north, Z up; origin 40.4274, -86.9137; not surveyed.",
+    "measurement_method": "Transform each live Purdue GIS WGS84 ring coordinate with the documented project approximation, subtract the asset-local XY origin, then compare corresponding vertices against the reopened saved footprint wire.",
+    "unique_boundary_vertex_count": 29,
+    "closed_ring_coordinate_count": 30,
+    "area_m2": 2632.671,
+    "bounds_xy_m": [
+      [
+        195.927,
+        240.852
+      ],
+      [
+        -2.461,
+        90.701
+      ]
+    ],
+    "campus_to_asset_local_origin_xy_m": [
+      218.3895,
+      44.12
+    ],
+    "matched_asset_closed_ring_coordinate_count": 30,
+    "project_cache_max_corresponding_vertex_residual_m": 1.2e-05,
+    "live_service_max_vertex_residual_m": 0.177865,
+    "live_service_worst_vertex_indices_zero_based": [
+      5
+    ],
+    "live_service_vertex_residuals_m": [
+      0.000738,
+      0.000296,
+      0.000267,
+      0.000388,
+      0.000103,
+      0.177865,
+      0.137678,
+      0.000411,
+      0.000367,
+      0.000192,
+      0.000212,
+      0.000178,
+      0.000449,
+      0.00024,
+      0.000386,
+      0.000292,
+      0.000469,
+      0.000197,
+      0.000527,
+      0.000419,
+      0.000449,
+      0.000425,
+      0.000676,
+      0.000635,
+      0.000126,
+      0.000245,
+      0.000195,
+      0.000495,
+      0.000303
+    ],
+    "raw_source_snapshot": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch4_knoy\\purdue_campus_knoy_feature189_r23.json",
+    "raw_source_snapshot_sha256": "536c0aa79743298b47a3c3ef47714a84db796676e0e2fbc249e6b12b2c73b225",
+    "uncertainty": "The project-local coordinates use an approximate geographic conversion, not survey control. The saved boundary matches the cached project polygon within rounding; two vertices in the live Purdue service differ by up to 0.178 m. This could reflect source edits or separate digitization and is not enough to infer a structural-wall offset."
+  },
+  "level_evidence": {
+    "cached_project_record_fid_243_reported_levels": 5,
+    "purdue_campus_service_objectid": 189,
+    "purdue_campus_buildingidlong": 75,
+    "identifier_reconciliation": "Knoy cache row FID 243 in target_buildings_gis.json; Purdue campus MapServer layer 0 record OBJECTID 189 / buildingidlong 75.",
+    "live_purdue_footprint_max_vertex_residual_m": 0.177865,
+    "source_supported_numbered_levels": 4,
+    "l5_status": "UNVERIFIED / SOURCE CONFLICT: 2018 Purdue planning elevations label only Levels 1-4; separate project-cache FID 243 reports five levels but does not resolve occupied L5 versus roof slab.",
+    "uncertainty": "L5 occupied-floor versus roof-slab interpretation remains unresolved."
+  },
+  "mesh_and_world_matrix_sha256_before_metadata_edit": "ed4a5c1d41d90a65a53b2190888d1b54b49fa3d519d5698536f9173dd8cbe31a",
+  "mesh_and_world_matrix_sha256_after_save_reopen": "ed4a5c1d41d90a65a53b2190888d1b54b49fa3d519d5698536f9173dd8cbe31a",
+  "saved_blend_file_sha256": "45e8c72b96205df43fc0bd89251e2766fc4c754ce14d6e4b257eccf33cbe1016",
+  "geometry_and_world_matrices_unchanged": true,
+  "unpacked_external_images": [],
+  "render": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch4_knoy\\knoy_exterior_r23.png",
+  "scope": "Metadata clarification and read-only source-footprint comparison; no mesh geometry, material, object transform, master, placement marker, or shared index changed."
+}

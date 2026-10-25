@@ -1,0 +1,129 @@
+{
+  "building": "Morgan J. Burke Boilermaker Aquatic Center",
+  "building_id": "morgan_j_burke_boilermaker_aquatic_center",
+  "revision_reviewed": 9,
+  "grade_date": "2026-10-25",
+  "asset": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+  "asset_sha256_reviewed": "136c7c7ee7d9d69f8bd1ac84e6e9269c00297a9c464bdd42ef13009bba66f497",
+  "score": 8.5,
+  "max_score": 10,
+  "threshold": 8,
+  "passes": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS snapshot feature FID 896 is preserved as a raw source record; it is a building-specific footprint record.",
+        "R9 reopen validation compares the 70-vertex GIS ring with 70 structural-shell perimeter segments; maximum sampled bidirectional deviation is 0.000002 m.",
+        "The 2026-10-24 Arsee Engineers project photograph and its project listing identify the named aquatic center and support the natatorium program."
+      ],
+      "limitation": "The extremely close local outline match is correspondence to the GIS polygon, not proof that the source polygon is a surveyed wall line."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Coordinator-provided read-only master evidence reports Placement_morgan_j_burke_boilermaker_aquatic_center at (-808.6829834, 80.336998, 0), unit scale and zero rotation.",
+        "The manifest placement origin is (-808.683, 80.337); independently recomputing the stated XY difference gives 0.00001672 m, below the requested 0.00003 m tolerance.",
+        "The opened R9 shell object reports local dimensions [60.195, 102.504, 11.928] m; footprint correspondence provides the source-backed plan comparison."
+      ],
+      "limitation": "The placement transform is coordinator-reported master evidence, not a master file independently opened by this evaluator. The manifest uses a local approximate geographic frame, not survey control."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 0.9,
+      "max_score": 2,
+      "evidence": [
+        "The saved source contains the named pitched-roof object and 21 schematic clear-span roof truss meshes; roof geometry remains present and visible after reopen.",
+        "The Arsee Engineers interior project photograph qualitatively supports exposed trusses and a high-bay pool hall.",
+        "The opened roof object reports local dimensions [60.908, 103.109, 3.0] m; no measured section or elevation source was supplied to validate those values."
+      ],
+      "limitation": "Roof profile, truss member sizing and spacing, eave/ridge elevations, floor count, and total building height remain unverified. Dimensions read from the model are measurements of the model, not evidence for the real building."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Street View source record supports a north brick facade, ribbon glazing, entry canopy, and building lettering; R8 north-entry and facade renders remain part of the R9 saved evidence set.",
+        "Arsee Engineers project photography supports the pool hall, Purdue wall lettering, metal bleacher banks, center aisle, and exposed roof structure.",
+        "The two R9 renders show continuous stepped aluminum bleacher tiers, riser plates, center aisle rails/posts, wall-mounted Purdue panels, pool/deck, and linear lighting."
+      ],
+      "limitation": "Facade bay/opening dimensions, interior seating geometry, banner placement, rail compliance, fixture schedule, and truss detailing are not dimensioned/as-built evidence; the R9 cutaway view still presents a broad overhead plane with only limited readable roof structure."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": [
+        "The reopened file uses the manifest's stable asset collection and asset path; the actual file SHA-256 matches both the R9 validation and R9 hash record.",
+        "The asset contains 1,129 objects, all mesh objects have materials, and it has no external image-file dependencies.",
+        "R9 source record lists provider, URLs, retrieval dates, source CRS/method where applicable, uncertainty, validation, and renders."
+      ],
+      "limitation": "Some interior objects are explicitly schematic estimates, and the placement cross-check is supplied by the coordinator rather than included as independently inspectable master data in the asset folder."
+    }
+  ],
+  "evidence": {
+    "saved_asset_opened_read_only": true,
+    "asset_collection": "Asset_morgan_j_burke_boilermaker_aquatic_center",
+    "asset_objects": 1129,
+    "shell_local_dimensions_m": [
+      60.195,
+      102.504,
+      11.928
+    ],
+    "roof_object_local_dimensions_m": [
+      60.908,
+      103.109,
+      3.0
+    ],
+    "roof_render_and_viewport_visible_after_open": true,
+    "truss_objects": 21,
+    "r9_riser_objects": 24,
+    "r9_aisle_post_objects": 24,
+    "external_image_dependencies": 0,
+    "master_placement_check": {
+      "source": "Coordinator read-only inspection reported 2026-10-25",
+      "marker_translation_m": [
+        -808.6829834,
+        80.336998
+      ],
+      "manifest_origin_m": [
+        -808.683,
+        80.337
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "xy_error_m": 1.67200478288814e-05,
+      "method": "Direct marker transform comparison to manifest origin; no master file was opened or saved in this task."
+    },
+    "r9_renders_reviewed": [
+      "aquatic_r9_interior_truss_cutaway.png",
+      "aquatic_r9_bleacher_aisle_detail.png"
+    ],
+    "source_records_reviewed": [
+      "evidence_r9.json",
+      "validation_r9.json",
+      "audit/batchC_boilermaker_aquatic_official_footprint.json",
+      "modular/manifest.json"
+    ],
+    "score_basis": "Evidence judged against the five AGENT.md rubric criteria. Unsupported roof/height claims are deducted; appearance alone is not treated as measurement evidence."
+  },
+  "findings": [
+    "The R9 asset and its recorded SHA-256 agree exactly: 136c7c7ee7d9d69f8bd1ac84e6e9269c00297a9c464bdd42ef13009bba66f497",
+    "The requested master marker comparison agrees with the manifest origin within 0.00003 m, closing the placement evidence gap from R8.",
+    "Roof and total-height accuracy remain uncertain: qualitative truss imagery supports the building type, but no measured roof/elevation record validates modeled roof profile or elevations.",
+    "The R9 model adds connected bleacher risers and aisle posts; exact seat/tread dimensions and accessibility compliance remain illustrative."
+  ]
+}

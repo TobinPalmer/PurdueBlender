@@ -74,7 +74,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](buildings/life_science_plant_and_soils_laboratory.blend) | 641 |
 | Lyles-Porter Hall | [lyles_porter_hall.blend](buildings/lyles_porter_hall.blend) | 11 |
 | Materials Science and Electrical Engineering | [materials_science_and_electrical_engineering_msee.blend](buildings/materials_science_and_electrical_engineering_msee.blend) | 1200 |
-| Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 1030 |
+| Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 1129 |
 | National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](buildings/national_soil_erosion_laboratory.blend) | 560 |
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](buildings/native_american_educational_and_cultural_center_nacc.blend) | 806 |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 414 |

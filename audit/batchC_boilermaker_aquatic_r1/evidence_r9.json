@@ -1,0 +1,167 @@
+{
+  "building": "Morgan J. Burke Boilermaker Aquatic Center",
+  "building_id": "morgan_j_burke_boilermaker_aquatic_center",
+  "revision": 9,
+  "review_date": "2026-10-25",
+  "asset": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+  "scope": "Aquatic asset and this building-specific audit folder only. No master, shared index, README, manifest, other building, commit, or push.",
+  "starting_grade": 7.9,
+  "starting_grade_source": "Independent R8 review at independent_grade_r8.md (7.9/10).",
+  "sources": [
+    {
+      "name": "Purdue Aquatic Center interior project photograph",
+      "provider": "Arsee Engineers",
+      "url": "https://www.arsee-engineers.com/images/project/athletic/Purdue%20Aquatic%20Center.JPG",
+      "retrieved": "2026-10-24",
+      "supports": "Qualitative building-specific view of exposed white steel roof trusses, long rectangular high-bay lights, large black-and-gold Purdue lettering on wall-mounted panels, continuous aluminum bleacher banks, pool/deck and a center stair aisle. It is not a measured plan, elevation, fixture schedule, or seating plan."
+    },
+    {
+      "name": "Athletics projects",
+      "provider": "Arsee Engineers",
+      "url": "https://www.arsee-engineers.com/project-athletic.html",
+      "retrieved": "2026-10-24",
+      "supports": "Identifies the project photo as the Morgan J. Burke Aquatic Center at Purdue University."
+    },
+    {
+      "name": "Purdue Aquatic Center lighting installation",
+      "provider": "Huston Electric",
+      "url": "https://hustonelectric.com/project/purdue-aquatic-center/",
+      "retrieved": "2026-10-24",
+      "supports": "Project-specific documentation of Lux Dynamics Wave LED fixture installation over the competition and diving pools. It does not specify modeled count, positions, dimensions, output, or aiming."
+    },
+    {
+      "name": "Purdue Aquatic Center north approach Street View, pano TdL92OGnlFSS8CxGuVLKDA, July 2023",
+      "provider": "Google Maps Street View",
+      "url": "https://www.google.com/maps/@?api=1&map_action=pano&pano=TdL92OGnlFSS8CxGuVLKDA",
+      "retrieved": "2026-10-24",
+      "supports": "Qualitative north approach view of the brick facade, ribbon glazing, entry canopy and building lettering. Camera bearing is not calibrated; it does not establish dimensions or exact reveals."
+    },
+    {
+      "name": "Official GIS footprint, feature FID 896",
+      "provider": "Purdue campus GIS snapshot preserved in project audit",
+      "file": "audit/batchC_boilermaker_aquatic_official_footprint.json",
+      "retrieved": "2026-10-24",
+      "source_crs": "Source snapshot coordinates are longitude/latitude; comparison uses the project's local equirectangular approximation at latitude 40.4274, longitude -86.9137.",
+      "measurement_method": "Bidirectional sampling of source polygon edges and structural-shell perimeter segments.",
+      "supports": "Local horizontal outline correspondence only; not survey control or proof of placement in the campus master."
+    },
+    {
+      "name": "Purdue RecWell Aquatics",
+      "provider": "Purdue University",
+      "url": "https://www.purdue.edu/recwell/sports-and-programs/aquatics/index.php",
+      "retrieved": "2026-10-24",
+      "supports": "Published aquatic program and spectator capacity of 625."
+    }
+  ],
+  "changes": [
+    "Replaced the 288 individually molded tan seat blocks with 24 continuous satin-aluminum bleacher bench tiers, split around the existing 3.4 m center aisle. Each row has a dark nosing edge. The photograph supports metal bleacher banks and center aisle; all dimensions and exact tier/circulation layout are estimates.",
+    "Replaced barely visible short fixtures with 18 long linear luminous diffusers and matching balanced area lights. Their elongated appearance is based on the Arsee project photo; the Huston Electric page confirms a building-specific LED installation. The modeled count, spacing, output and aiming remain estimated.",
+    "Replaced floating overhead display panels with six separate wall-mounted black banner panels and wall standoffs, spelling PURDUE in large gold letters. Panel locations follow the modeled pier bays. The motif is photo-supported, but exact panel dimensions and locations are estimates.",
+    "Changed the existing blue ribbon-glazing finish to a darker, lower-roughness blue-gray and added head and jamb reveals to the north-facing panes. The north Street View supports brick, ribbon glazing and entry language; reveal dimensions are a visual refinement, not measured elevation data.",
+    "Kept the roof/trusses and optional site dressing separate from the revised facade/interior presentation; no roof geometry or site-placement claim was added.",
+    "Added 24 continuous graphite riser plates beneath the existing 24 representative aluminum bench sections to make the two tier banks read as connected bleachers. Their dimensions and structural function are illustrative, not an as-built seating plan.",
+    "Added 24 square handrail posts, one aligned to each of 12 aisle treads on both sides, and modestly thickened the two existing sloped rails. The posts visually meet the stair treads and existing handrails; exact rail dimensions and accessibility compliance remain unverified.",
+    "Added a saved interior cutaway presentation camera. The R9 render script temporarily hides the full roof surface, standing seams, ridge cap, and one eave fascia for the cutaway images; those objects are restored for render setup and the saved source retains the complete roof. Existing 21 schematic truss meshes remain in the asset and are exposed above the pool and seating in the review view.",
+    "Coordinator reported a read-only check of the master marker: (-808.6829834, 80.3369980, 0) translation, unit scale and zero rotation. It agrees with manifest origin (-808.683, 80.337) within 0.000017 m. This report is recorded as coordinator-provided evidence; this revision did not open or save the master."
+  ],
+  "validation_file": "audit/batchC_boilermaker_aquatic_r1/validation_r9.json",
+  "validation_status": "passed: Blender 5.2.3 reopened the saved R9 source, preserved the complete roof and 21 existing trusses, validated the GIS outline correspondence, counted the new risers/posts, checked material assignments, and found no external image dependencies. The root coordinator separately reported a direct read-only master-marker comparison against the manifest origin.",
+  "validation_summary": {
+    "revision": 9,
+    "passed": true,
+    "reopened_saved_asset": true,
+    "blender_version": "5.2.3 LTS",
+    "asset": "modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend",
+    "asset_collection": "Asset_morgan_j_burke_boilermaker_aquatic_center",
+    "asset_objects": 1129,
+    "asset_sha256": "136c7c7ee7d9d69f8bd1ac84e6e9269c00297a9c464bdd42ef13009bba66f497",
+    "gis_feature_id": 896,
+    "gis_ring_vertices": 70,
+    "wall_perimeter_segments": 70,
+    "gis_to_shell_max_sampled_error_m": 2e-06,
+    "shell_to_gis_max_sampled_error_m": 2e-06,
+    "footprint_claim": "Local FID 896 boundary correspondence only; not survey accuracy.",
+    "r8_improvement_collection_objects": 96,
+    "r9_collection_objects": 49,
+    "existing_trusses": 21,
+    "continuous_bleacher_risers": 24,
+    "connected_aisle_rail_posts": 24,
+    "existing_sloped_aisle_rails": 2,
+    "saved_cutaway_review_camera": "AQUA R9 | truss pool and bleacher cutaway camera",
+    "full_roof_geometry_retained_and_visible_after_reopen": true,
+    "material_assignment_passed": true,
+    "external_image_dependencies": 0,
+    "coordinator_master_placement_check": {
+      "source": "Coordinator read-only inspection reported 2026-10-25",
+      "marker_translation_m": [
+        -808.6829834,
+        80.336998
+      ],
+      "manifest_origin_m": [
+        -808.683,
+        80.337
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rotation_euler_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "xy_error_m": 1.67200478288814e-05,
+      "method": "Direct marker transform comparison to manifest origin; no master file was opened or saved in this task."
+    },
+    "master_or_shared_files_edited": false,
+    "committed": false,
+    "renders": [
+      "audit/batchC_boilermaker_aquatic_r1/aquatic_r9_interior_truss_cutaway.png",
+      "audit/batchC_boilermaker_aquatic_r1/aquatic_r9_bleacher_aisle_detail.png"
+    ],
+    "uncertainties": [
+      "Roof profile, truss member sizing/layout, and eave/ridge elevations remain unverified; no roof or height geometry was changed.",
+      "Trusses are existing schematic meshes; the cutaway render exposes them but does not validate as-built structure.",
+      "The 24 bleacher risers/posts are illustrative support detailing; seating capacity, tier dimensions, aisle details, and circulation remain unverified.",
+      "The cutaway render hides roof objects only for the review images; the complete roof geometry remains visible in the reopened saved asset.",
+      "GIS-to-shell outline correspondence does not establish survey accuracy."
+    ]
+  },
+  "uncertainties": [
+    "No measured roof section, roof profile, eave elevation, or ridge elevation was located. Roof and height geometry remain unverified and unchanged.",
+    "The existing 21 truss meshes are schematic; the cutaway exposes their placement but does not verify member sizing, spacing, elevation or as-built geometry.",
+    "The new 24 risers and 24 rail posts are illustrative supporting details. Exact seating geometry, capacity, stair/aisle details, rail dimensions and accessibility compliance are unverified.",
+    "Interior review camera position is for presentation only and is not a surveyed viewpoint.",
+    "The cutaway images hide roof surfaces only for review; the reopened saved asset retains the complete roof geometry.",
+    "GIS-to-shell outline correspondence does not establish survey accuracy or vertical geometry."
+  ],
+  "renders": [
+    "audit/batchC_boilermaker_aquatic_r1/aquatic_r9_interior_truss_cutaway.png",
+    "audit/batchC_boilermaker_aquatic_r1/aquatic_r9_bleacher_aisle_detail.png"
+  ],
+  "asset_sha256": "136c7c7ee7d9d69f8bd1ac84e6e9269c00297a9c464bdd42ef13009bba66f497",
+  "coordinator_master_placement_check": {
+    "source": "Coordinator read-only inspection reported 2026-10-25",
+    "marker_translation_m": [
+      -808.6829834,
+      80.336998
+    ],
+    "manifest_origin_m": [
+      -808.683,
+      80.337
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "rotation_euler_deg": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "xy_error_m": 1.67200478288814e-05,
+    "method": "Direct marker transform comparison to manifest origin; no master file was opened or saved in this task."
+  }
+}

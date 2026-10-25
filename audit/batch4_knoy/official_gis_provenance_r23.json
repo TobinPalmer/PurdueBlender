@@ -1,0 +1,21 @@
+{
+  "title": "Purdue University Libraries Campus GIS building footprint",
+  "provider": "Purdue University Libraries",
+  "service": "Purdue/campus MapServer, layer 0 (PuGeoDB.DBO.CampusBuilding)",
+  "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=Name%20LIKE%20%27%25Knoy%25%27&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+  "retrieval_date": "2026-10-25",
+  "feature_identifier": {
+    "OBJECTID": 189,
+    "buildingidlong": 75,
+    "ABBR": "KNOY",
+    "Name": "Maurice G. Knoy Hall of Technology"
+  },
+  "source_date": "Not stated. The service response has a ChangeYear attribute, which is retained as a separate source field and is not treated as a publication date.",
+  "source_crs": "EPSG:4326 (requested in the query; returned in the raw response)",
+  "raw_snapshot": "purdue_campus_knoy_feature189_r23.json",
+  "raw_snapshot_sha256": "536c0aa79743298b47a3c3ef47714a84db796676e0e2fbc249e6b12b2c73b225",
+  "comparison_method": "Apply the project local approximation X=(longitude+86.9137)*111412.84*cos(radians(40.4274)), Y=(latitude-40.4274)*111040, then subtract the asset-local XY origin (218.3895, 44.12) m and compare ordered boundary vertices to the reopened KNOY_Footprint_Reference_Wire mesh.",
+  "comparison_result": "The saved boundary matches the separate project cache within 0.000012 m after local translation. Comparison against this live service response has a maximum 0.177865 m vertex difference at two adjacent points; see validation_r23.json for all point residuals.",
+  "uncertainty": "The local transform is an approximate tangent-plane conversion, not survey control. The service/cache mismatch may reflect source edits or separate digitization; no structural-wall offset is inferred from it.",
+  "identifier_reconciliation": "The separate project cache modular/buildings/target_buildings_gis.json calls its Knoy row FID 243 and stores levels/extrusion fields. That FID is not the Purdue campus service OBJECTID, which is 189 for Knoy. Both identifiers are preserved explicitly; the two sources should not be conflated."
+}

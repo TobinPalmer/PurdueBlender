@@ -1,8 +1,8 @@
 """
 Enhanced script to build high-fidelity 3D asset for Maurice G. Knoy Hall of Technology (KNOY).
 Features:
-- Exact 30-vertex GIS polygon footprint
-- Precise floor slabs for Basement (-6.706m), Ground (0.000m), L2 (4.481m), L3 (8.961m), L4 (13.442m), L5 (17.922m), Roof Deck (19.202m)
+- Purdue campus footprint cross-check: cached project FID 243, Purdue campus GIS OBJECTID 189 / buildingidlong 75
+- Planning-study-supported L1-L4 datums at approximately 14 ft 8 in floor-to-floor; the inherited basement, L5 and roof datums remain unverified or schematic
 - Purdue red brick masonry with procedural coursing + precast concrete architectural bands and copings
 - Continuous dark tinted solar ribbon glazing with dark bronze vertical and horizontal mullions
 - Recessed entrance portals with glazed double doors and cantilevered concrete/bronze canopies
@@ -39,8 +39,12 @@ scene["building_id"] = "knoy_hall"
 scene["building_code"] = "KNOY"
 scene["official_name"] = "Maurice G. Knoy Hall of Technology"
 scene["address"] = "401 N Grant Street, West Lafayette, IN 47907"
-scene["levels"] = 5
-scene["gis_fid"] = 243
+scene["levels"] = 5  # Cached project building record FID 243 reports five; this does not verify five occupied levels.
+scene["source_supported_numbered_levels"] = 4
+scene["level_count_status"] = "The cached project building record FID 243 reports five levels and a 48 ft extrusion. Purdue's 2018 Gateway planning study explicitly labels existing Levels 1-4 at 14 ft 8 in floor-to-floor; the modeled L5 datum remains unresolved as an occupied story versus roof slab."
+scene["gis_fid"] = 243  # FID in modular/buildings/target_buildings_gis.json; not Purdue campus-service OBJECTID.
+scene["purdue_campus_gis_objectid"] = 189
+scene["purdue_campus_buildingidlong"] = 75
 scene["interior_status"] = "Base builder creates shell and core placeholders only; detailed room layout and as-built interior are unverified unless supplemented by sourced plan traces."
 
 # Collections
@@ -1220,14 +1224,14 @@ doc_text = """PURDUE CAMPUS DIGITAL TWIN: MAURICE G. KNOY HALL OF TECHNOLOGY (KN
 Building Code: KNOY
 Building Name: Maurice G. Knoy Hall of Technology
 Address: 401 N Grant Street, West Lafayette, IN 47907
-Official GIS FID: 243
+Cached project building-source FID: 243 (target_buildings_gis.json); Purdue campus service OBJECTID: 189; buildingidlong: 75
 Built / Dedicated: 1982-1984
 Headquarters: Purdue Polytechnic Institute
 Gross Area: ~141,690 to 170,000 sq ft (Footprint: 28,338 sq ft = 2,632.7 m^2)
 
 SOURCE-BACKED GEOMETRY & LEVEL NOTES
 ---------------------------------------------------------------------
-Purdue GIS feature 243 reports five levels and 48 ft extrusion. The
+The cached project building record FID 243 reports five levels and 48 ft extrusion. The
 extrusion attribute is not an as-built roof measurement and does not resolve
 the floor/roof discrepancy. The 2018 Purdue Gateway planning study's page 24
 labels Existing Knoy Levels 1-4 at 14 ft 8 in floor-to-floor. The source is
@@ -1249,7 +1253,7 @@ Current modeled datum estimates (meters above modeled L1 datum):
 ARCHITECTURAL IDENTITY & EXTERIOR EXPRESSION
 ---------------------------------------------------------------------
 Brutalist / late-modernist academic architectural composition:
-- Authentic 30-vertex GIS polygon footprint with distinctive 45-degree
+- Source-backed GIS polygon footprint with distinctive 45-degree
   sawtooth / stepped facade bays facing Grant Street on the east.
 - Full structural exterior masonry walls in campus world coordinates (meters).
 - Exposed precast concrete spandrel panels and lintel fascias.
