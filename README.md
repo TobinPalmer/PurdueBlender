@@ -71,18 +71,18 @@ This project tracks detailed campus models separately from the remaining massing
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](modular/buildings/massing_samara_f6b8e61.blend) | Finished | [8.6/10](audit/samara/independent_grade.json) | — |
 | South Hall | [south_hall.blend](modular/buildings/south_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](modular/buildings/stanley_coulter_hall.blend) | In progress | 4.7/10 | Tobin |
-| Stewart Center | [stewart_center.blend](modular/buildings/stewart_center.blend) | Needs independent grade | Not graded | Tobin |
+| Stewart Center | [stewart_center.blend](modular/buildings/stewart_center.blend) | Finished | [8.0/10](audit/stewart_center_independent_grade/independent_grade_r4.md) | — |
 | Tarkington Hall | [tarkington_hall.blend](modular/buildings/tarkington_hall.blend) | Needs independent grade | Not graded | Tobin |
 | University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Walc | [walc.blend](modular/buildings/walc.blend) | Needs independent grade | Not graded | Tobin |
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (175 total)
+## Unfinished buildings (174 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 85 buildings, Brady 60 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 84 buildings, Brady 60 buildings.
 
-### Detailed models still in progress or awaiting a grade (41)
+### Detailed models still in progress or awaiting a grade (40)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -122,7 +122,6 @@ This list excludes individual house parcels. The detailed models that are still 
 
 | South Hall | [`south_hall.blend`](modular/buildings/south_hall.blend) | Not graded | Tobin |
 | Stanley Coulter Hall | [`stanley_coulter_hall.blend`](modular/buildings/stanley_coulter_hall.blend) | 4.7/10 | Tobin |
-| Stewart Center | [`stewart_center.blend`](modular/buildings/stewart_center.blend) | Not graded | Tobin |
 | Tarkington Hall | [`tarkington_hall.blend`](modular/buildings/tarkington_hall.blend) | Not graded | Tobin |
 | University Hall | [`university_hall.blend`](modular/buildings/university_hall.blend) | Not graded | Tobin |
 | Walc | [`walc.blend`](modular/buildings/walc.blend) | Not graded | Tobin |

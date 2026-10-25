@@ -38,7 +38,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](buildings/massing_samara_f6b8e61.blend) | 1102 |
 | South Hall | [south_hall.blend](buildings/south_hall.blend) | 186 |
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](buildings/stanley_coulter_hall.blend) | 824 |
-| Stewart Center | [stewart_center.blend](buildings/stewart_center.blend) | 1362 |
+| Stewart Center | [stewart_center.blend](buildings/stewart_center.blend) | 2764 |
 | Tarkington Hall | [tarkington_hall.blend](buildings/tarkington_hall.blend) | 814 |
 | University Hall | [university_hall.blend](buildings/university_hall.blend) | 507 |
 | Walc | [walc.blend](buildings/walc.blend) | 950 |

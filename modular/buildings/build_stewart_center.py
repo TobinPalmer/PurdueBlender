@@ -58,6 +58,7 @@ def getmat(name, color, rough=0.65, metallic=0.0):
 brick=getmat('Stewart_Purdue_Red_Brick',(0.34,0.105,0.07),0.82)
 stone=getmat('Stewart_Bedford_Limestone',(0.64,0.59,0.48),0.74)
 glass=getmat('Stewart_Solar_Curtain_Glass',(0.045,0.13,0.19),0.22,0.25)
+glass_alt=getmat('Stewart_Reflective_Window_Glass',(0.10,0.22,0.24),0.20,0.16)
 roofmat=getmat('Stewart_GIS_Roof_Estimated',(0.18,0.19,0.20),0.92)
 portico_stone=getmat('Stewart_South_Portico_Limestone',(0.69,0.64,0.53),0.76)
 if portico_stone.use_nodes:
@@ -156,12 +157,23 @@ for i,a in enumerate(pts):
             count=max(1,int(seg//5.0)); spacing=seg/count
             for j in range(count):
                 t=t0+(j+.5)*spacing
-                wc=(a[0]+ux*t+outward[0]*.075,a[1]+uy*t+outward[1]*.075,0)
-                for row,z in enumerate((2.85,6.3,10.5,14.5),1):
-                    # Keep glazing subordinate to the masonry; all dimensions are estimates.
-                    oriented_box(f'STEW_GIS_Window_{i:02d}_{j:02d}_{row}',(wc[0],wc[1],z),min(2.2,spacing*.56),.12,2.15,angle,glass,.035)
-                    sillc=(wc[0]+outward[0]*.02,wc[1]+outward[1]*.02,z-1.17)
-                    oriented_box(f'STEW_GIS_Sill_{i:02d}_{j:02d}_{row}',sillc,min(2.35,spacing*.62),.20,.12,angle,stone,.018)
+                wc=(a[0]+ux*t+outward[0]*.025,a[1]+uy*t+outward[1]*.025,0)
+                row_specs=((2.85,2.55),(6.3,2.05),(10.5,2.65),(14.5,2.0))
+                win_width=min(2.55,spacing*(.51 if (i+j)%3==0 else .62))
+                for row,(z,win_height) in enumerate(row_specs,1):
+                    # Purdue's photo shows deep stone-framed vertical bays. The
+                    # lower and upper lights vary slightly; exact bay dimensions
+                    # remain estimates because no elevation was located.
+                    winmat=glass_alt if (i+j+row)%4==0 else glass
+                    oriented_box(f'STEW_GIS_Window_{i:02d}_{j:02d}_{row}',(wc[0],wc[1],z),win_width,.10,win_height,angle,winmat,.025)
+                    sillc=(wc[0]+outward[0]*.03,wc[1]+outward[1]*.03,z-win_height/2-.08)
+                    oriented_box(f'STEW_GIS_Sill_{i:02d}_{j:02d}_{row}',sillc,win_width+.26,.22,.14,angle,stone,.018)
+                    framec=(wc[0]+outward[0]*.07,wc[1]+outward[1]*.07,z)
+                    for side in (-1,1):
+                        jamb=(framec[0]+ux*side*(win_width/2+.05),framec[1]+uy*side*(win_width/2+.05),z)
+                        oriented_box(f'STEW_GIS_Window_Jamb_{i:02d}_{j:02d}_{row}_{side}',jamb,.10,.18,win_height+.06,angle,stone,.012)
+                    head=(framec[0],framec[1],z+win_height/2+.05)
+                    oriented_box(f'STEW_GIS_Window_Head_{i:02d}_{j:02d}_{row}',head,win_width+.20,.18,.10,angle,stone,.012)
 
 # Flat roof polygon is kept within the GIS trace. Shape and elevation are estimates.
 verts=[(x,y,wall_h-.15) for x,y in pts]+[(x,y,wall_h+.15) for x,y in pts]
@@ -196,7 +208,8 @@ for i in range(8):
 # silhouette follow Purdue's entrance photograph; dimensions remain estimated.
 def column_mesh(name,x,y,z0,z1,radius,material,segments=32,flute=False):
     levels=[(z0,radius*1.48),(z0+.28,radius*1.48),(z0+.52,radius*1.05),
-            (z0+.85,radius*.91),(z1-.45,radius*.82),(z1-.18,radius*1.20),(z1,radius*1.38)]
+            (z0+.85,radius*.91),(z1-.50,radius*.82),(z1-.30,radius*1.14),
+            (z1-.14,radius*1.48),(z1,radius*1.58)]
     vs=[]
     for zi,rad in levels:
         for k in range(segments):
@@ -213,7 +226,8 @@ def column_mesh(name,x,y,z0,z1,radius,material,segments=32,flute=False):
 
 col_x=[-22.15,-16.35,-10.55,-4.75,1.05,6.85]
 for i,x in enumerate(col_x,1):
-    column_mesh(f'STEW_South_Entry_Column_{i:02d}',x,-49.15,landing_z,8.95,.62,portico_stone,32,True)
+    column_mesh(f'STEW_South_Entry_Column_{i:02d}',x,-49.15,landing_z,8.95,.50,portico_stone,32,True)
+    oriented_box(f'STEW_South_Entry_Column_Abacus_{i:02d}',(x,-49.15,9.03),1.45,1.32,.20,0,portico_stone,.025)
 
 # Shallow entablature and triangular pediment above the column row.
 oriented_box('STEW_South_Entry_Entablature',(-7.65,-49.15,9.15),34.8,1.15,.52,0,portico_stone,.045)
@@ -281,6 +295,14 @@ for i,dc in enumerate(door_centers,1):
     for xx in (dc-1.72,dc,dc+1.72):
         oriented_box(f'STEW_South_Entry_Vestibule_DoorMullion_{i}_{xx:.2f}',(xx,front_y-.16,3.02),.075,.12,2.95,0,bronze,.012)
     oriented_box(f'STEW_South_Entry_Vestibule_DoorHead_{i}',(dc,front_y-.16,4.50),3.5,.12,.10,0,bronze,.012)
+    # Full-height limestone surrounds break the portal into three legible bays,
+    # following Purdue's deep stone-framed glazed openings. Bay width/depth is
+    # estimated from unscaled campus photography.
+    bay_half=3.55; bay_y=front_y-.20; bay_mid_z=(glass_bottom+glass_top)/2
+    for side in (-1,1):
+        oriented_box(f'STEW_South_Entry_GlassBay_Pier_{i}_{side}',(dc+side*bay_half,bay_y,bay_mid_z),.58,.72,glass_top-glass_bottom,0,portico_stone,.035)
+    oriented_box(f'STEW_South_Entry_GlassBay_Lintel_{i}',(dc,bay_y,8.28),bay_half*2+.58,.72,.54,0,portico_stone,.045)
+    oriented_box(f'STEW_South_Entry_GlassBay_Base_{i}',(dc,bay_y,1.70),bay_half*2+.58,.72,.16,0,portico_stone,.025)
 for i,x in enumerate((portal_xmin+.08,portal_xmax-.08),1):
     oriented_box(f'STEW_South_Entry_Vestibule_SideGlass_{i}',(x,(front_y+rear_y)/2,(glass_bottom+glass_top)/2),.14,front_y-rear_y,glass_top-glass_bottom,0,glass_mat,.015)
     oriented_box(f'STEW_South_Entry_Vestibule_SideRail_{i}',(x,(front_y+rear_y)/2,glass_top),.22,front_y-rear_y,.18,0,portico_stone,.025)

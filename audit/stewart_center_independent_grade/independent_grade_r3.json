@@ -1,0 +1,58 @@
+{
+  "building": "Stewart Center",
+  "asset": "modular/buildings/stewart_center.blend",
+  "sha256": "cf2e4c541f98329bf475229d702bc48178078571ba97b1136c9c0c5c9996535d",
+  "review_date": "2026-10-25",
+  "overall_score": 7.7,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "category_scores": {
+    "identity_and_gis_footprint_fidelity": 1.8,
+    "placement_orientation_scale_and_interior_layout": 1.4,
+    "floors_height_and_roof_form": 1.0,
+    "facade_entrances_and_distinctive_identity": 1.7,
+    "modular_integrity_portability_and_evidence": 1.8
+  },
+  "independent_reopen": "independent_reopen_r3.json",
+  "major_findings": [
+    "The 53-vertex GIS shell is visibly traced to Purdue GIS OBJECTID 615, but campus GIS is not a surveyed facade line and the conversion is approximate.",
+    "Identity root and portable material/image checks pass; the master placement marker was not reviewed.",
+    "R3 makes the recessed glazed vestibule and door sets legible and restores masonry above the entry.",
+    "The portico, columns, upper facade, and stair rails remain schematic relative to the Purdue photo; support/rail geometry reads awkwardly in the front render.",
+    "The roof is a large plain slab with generic rooftop masses; roof and height remain estimates without dimensioned elevation evidence.",
+    "No R3 interior cutaway was supplied. Interior module offsets remain approximate because the 2024 Road School floor diagrams have no scale or north arrow."
+  ],
+  "sources": [
+    {
+      "provider": "Purdue University Events",
+      "url": "https://events.purdue.edu/stewart_center",
+      "local_snapshot": "source_purdue_entrance.jpg",
+      "use": "Qualitative south entrance and portico comparison; photo has no calibration or source capture date."
+    },
+    {
+      "provider": "Purdue University campus GIS",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0",
+      "feature": "layer 0, OBJECTID 615, ABBR STEW",
+      "local_snapshot": "purdue_gis_feature_615.json",
+      "use": "Building identity and plan trace only; not wall elevations or a facade survey."
+    },
+    {
+      "provider": "Purdue Road School",
+      "url": "https://www.roadschool.purdue.edu/maps/2024%20Stewart%20Center%20Maps.pdf",
+      "local_snapshot": "roadschool_maps_2024.pdf",
+      "use": "Broad interior labels and adjacency only; no scale, north arrow, CRS, or control points."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/548",
+      "use": "Historical identity and three floors in central portion; no measured heights or roof plan."
+    }
+  ],
+  "required_before_pass": [
+    "Refine the entrance composition and visible stair rails against current photos.",
+    "Improve repetitive facade openings and visible material depth using evidence.",
+    "Document a defensible roof profile or clearly keep unsupported forms low-confidence.",
+    "Supply a cutaway view to inspect interior modules and retain their stated layout uncertainty.",
+    "Verify the master placement marker during coordinator integration."
+  ]
+}
