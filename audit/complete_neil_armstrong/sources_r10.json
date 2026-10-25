@@ -1,0 +1,26 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R10",
+  "sources": [
+    {
+      "id": "indiana_2023_orthophoto",
+      "provider": "Indiana statewide imagery served through Purdue GIS image service",
+      "image_year": 2023,
+      "catalog_item": "in2023_29971887_06",
+      "local_files": [
+        "audit/complete_neil_armstrong/sources/indiana_current_ortho_neil_extent.png",
+        "audit/complete_neil_armstrong/sources/ortho_catalog_item_neil_2023_r3.json"
+      ],
+      "use": "Sampled each of 192 existing roof-slab top-face centroids after transformation to the registered local map frame; changed appearance only.",
+      "limits": "Color sampling is a visual classification, not roof-material identification. Orthophoto shadows and adjacent objects can influence sample color. It does not prove the underlying slab geometry or actual roof substrate."
+    },
+    {
+      "id": "purdue_gis_fid642",
+      "url": "https://maps.purdue.edu/arcgis/rest/services/Buildings/BuildingFootprints/FeatureServer",
+      "local_record": "audit/complete_neil_armstrong/sources/gis_feature_642_20261024.json",
+      "use": "Read-only spatial context used to evaluate how much each slab footprint falls outside the official building footprint.",
+      "limits": "The GIS footprint is not a roof-plan outline; overhangs and canopies may extend beyond it. It is a mismatch indicator, not a clipping boundary."
+    }
+  ],
+  "registration": "Reuses the existing local frame and orthophoto extent transform documented in map_lidar_r5.py and overlay_roof_zones_r9.py. No camera registration, geometry fit, or placement adjustment was added."
+}

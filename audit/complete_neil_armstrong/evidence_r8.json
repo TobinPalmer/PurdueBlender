@@ -1,0 +1,22 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R8",
+  "parent_revision": "R7",
+  "asset": "modular/buildings/neil_armstrong_hall.blend",
+  "retrieval_date": "2026-10-24",
+  "change": {
+    "removed_objects": [
+      "ARMS_East_Roof_Penthouse",
+      "ARMS_East_Penthouse_Louvers",
+      "ARMS_West_Roof_Penthouse",
+      "ARMS_West_Penthouse_Louvers"
+    ],
+    "reason": "The R7 asset represented two end-located penthouses, each approximately 22–24m by 12–14m, with a 3.2m box and separate 2.4m louver skin. Registered 2018 5-ft NDHM has only two cells above 22m inside official footprint FID 642, both near local X=-13.53m, Y=5.75–7.27m. No cells support either broad modeled rooftop box. FRP confirms a mechanical penthouse exists but provides no position or footprint; R8 therefore removes the two unsupported boxes and leaves the actual penthouse unresolved.",
+    "source_records": ["audit/complete_neil_armstrong/roof_height_reconciliation_r8.json", "audit/complete_neil_armstrong/analyze_r8_roof_removals.py", "audit/complete_neil_armstrong/sources_r8.json"],
+    "preserved": ["All common R7 mesh geometry and transforms", "All three R5 GIS/LiDAR envelope X/Y masks and R7 Z surfaces", "R6 facade cue", "Root local frame and source placement"],
+    "uncertainty": "The two >22m cells might represent a small rooftop structure or classification residual. They do not establish a mechanical penthouse outline or type. No replacement object is modeled."
+  },
+  "placement": "Read-only marker record remains at [-109.0,400.1893310546875,0], zero error/rotation and unit scale; master and marker were not edited.",
+  "not_changed": ["Master blend, manifest, marker, README, shared indexes, other buildings", "Atrium bridges, stairs, floors and facade geometry", "Registered GIS/LiDAR wing envelopes and roof surfaces"],
+  "validation": "audit/complete_neil_armstrong/validation_r8.json"
+}

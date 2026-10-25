@@ -45,7 +45,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Wiley Hall | [wiley_hall.blend](buildings/wiley_hall.blend) | 402 |
 | Winifred Parker Hall | [winifred_parker_hall.blend](buildings/winifred_parker_hall.blend) | 664 |
 
-## Newly added buildings — October 24, 2026
+## Newly added buildings — October 24–25, 2026
 
 | Building | File | Objects |
 | --- | --- | ---: |
@@ -65,6 +65,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Drew and Brittany Brees Student Athletic Academic Center | [brees_student_athletic_academic_center.blend](buildings/brees_student_athletic_academic_center.blend) | 97 |
 | Flex Lab | [flex_lab.blend](buildings/flex_lab.blend) | 121 |
 | Ford Dining Court | [ford_dining_court.blend](buildings/ford_dining_court.blend) | 69 |
+| France A. Córdova Recreational Sports Center | [massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend](buildings/massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend) | 199 |
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](buildings/hall_for_discovery_and_learning_research.blend) | 396 |
 | Heine Pharmacy | [heine_pharmacy.blend](buildings/heine_pharmacy.blend) | 133 |
 | Horticulture Building | [horticulture_building.blend](buildings/horticulture_building.blend) | 728 |
@@ -81,3 +82,5 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](buildings/ray_w_herrick_laboratories.blend) | 89 |
 
 SAMARA retains its legacy massing filename and campus-coordinate direct link for compatibility with the existing master. Its measured geometry, independent grade, and remaining registration uncertainty are documented in the [SAMARA evidence record](../audit/samara/EVIDENCE.md).
+
+CREC retains its legacy massing filename and campus-world direct-link coordinates for compatibility with the existing master. Its independently graded geometry (8.1/10) and remaining roof/interior uncertainty are documented in the [CREC evidence record](../audit/france_a_cordova_rec_center/source_record.json).

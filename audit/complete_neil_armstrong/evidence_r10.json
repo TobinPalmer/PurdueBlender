@@ -1,0 +1,37 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R10",
+  "parent_revision": "R9",
+  "asset": "modular/buildings/neil_armstrong_hall.blend",
+  "asset_sha256": "63c18a8ce250345134399b48dc9eb0f5f5a7563ef3566a5b22145221e7c0145d",
+  "change": {
+    "objects": ["ARMS_East_Roof_Slab", "ARMS_West_Roof_Slab"],
+    "type": "Top-face appearance refinement",
+    "method": "For each of the 96 upward-facing top faces on each slab, sampled the corresponding registered 2023 orthophoto pixel at its projected face centroid. Clear red-family samples retain Mayflower Red ACM; neutral, pale, and shadow samples use the pale neutral roof appearance. Face geometry and all side faces are unchanged.",
+    "counts": {
+      "ARMS_East_Roof_Slab": {"pale": 83, "red": 13},
+      "ARMS_West_Roof_Slab": {"pale": 83, "red": 13}
+    },
+    "records": [
+      "audit/complete_neil_armstrong/roof_slab_faces_r10.json",
+      "audit/complete_neil_armstrong/roof_slab_material_samples_r10.json",
+      "audit/complete_neil_armstrong/classify_roof_slab_faces_r10.py",
+      "audit/complete_neil_armstrong/roof_slab_footprints_ortho_r9.png"
+    ],
+    "uncertainty": "The pixel colors describe only the 2023 orthophoto appearance. This is not a material survey. GIS comparison finds only about 56–57% of each slab top area overlaps FID 642, but the official building footprint is not an architectural roof plan and canopies may extend beyond it; R10 therefore does not trim or remove geometry."
+  },
+  "unchanged": [
+    "All 445 collection object names, mesh vertices, polygon indices and object transforms relative to R9",
+    "Source local frame, root [0,0,0], GIS/LiDAR masks, marker, master blend and shared indexes",
+    "All facade, roof, atrium, bridge and circulation geometry"
+  ],
+  "review_views": [
+    "audit/complete_neil_armstrong/renders_r10/exterior_lidar_silhouette_r10.png",
+    "audit/complete_neil_armstrong/renders_r10/roof_registered_plan_r10.png",
+    "audit/complete_neil_armstrong/renders_r10/facade_geotag_approx_r10.png",
+    "audit/complete_neil_armstrong/renders_r10/atrium_bridges_enclosure_r10.png",
+    "audit/complete_neil_armstrong/roof_zones_ortho_r9.png",
+    "audit/complete_neil_armstrong/roof_slab_footprints_ortho_r9.png"
+  ],
+  "validation": "audit/complete_neil_armstrong/validation_r10.json"
+}

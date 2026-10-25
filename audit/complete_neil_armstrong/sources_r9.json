@@ -1,0 +1,37 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R9",
+  "sources": [
+    {
+      "id": "indiana_2023_orthophoto",
+      "provider": "Indiana statewide imagery, served through Purdue GIS image service",
+      "local_files": [
+        "audit/complete_neil_armstrong/sources/indiana_current_ortho_neil_extent.png",
+        "audit/complete_neil_armstrong/sources/ortho_catalog_item_neil_2023_r3.json"
+      ],
+      "image_year": 2023,
+      "catalog_item": "in2023_29971887_06",
+      "use": "Registered color-family check for broad top surfaces within the existing FID 642 footprint and LiDAR height zones.",
+      "supports": [
+        "Broad side-wing roof surfaces and the central high roof surface appear pale neutral in the orthophoto.",
+        "An elongated red perimeter band appears around portions of the central roof area."
+      ],
+      "limits": "Orthophoto color supports appearance only. It does not establish roofing substrate, exact roof construction, hidden geometry, or current condition after 2023."
+    },
+    {
+      "id": "purdue_digital_forestry_2018_ndhm",
+      "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_ndhm_2018.tif",
+      "local_file": "audit/complete_neil_armstrong/sources/tippecanoe_ndhm_clip_r5.tif",
+      "use": "Inherited registered 5-ft normalized height surface; separates broad roof height zones for the R9 visual comparison.",
+      "limits": "The raster is coarse and does not support exact roof edges, surfaces, structural form, or material."
+    },
+    {
+      "id": "purdue_gis_fid642",
+      "url": "https://maps.purdue.edu/arcgis/rest/services/Buildings/BuildingFootprints/FeatureServer",
+      "local_record": "audit/complete_neil_armstrong/sources/gis_feature_642_20261024.json",
+      "use": "Inherited official footprint and registration context for the overlay.",
+      "limits": "Building footprint is not an architectural roof plan."
+    }
+  ],
+  "registration": "R9 reuses the established R3–R8 local frame and FID 642 roof masks; no camera registration or geometry fitting was introduced."
+}

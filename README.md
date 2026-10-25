@@ -2,7 +2,7 @@
 
 This project tracks detailed campus models separately from the remaining massing-only building assets. A detailed model counts as finished here only when its latest recorded independent grader score is at least 8/10. Scores describe the reviewed model revision; ungraded assets are explicitly marked.
 
-## Detailed models: status and latest grader score (70 buildings)
+## Detailed models: status and latest grader score (71 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -32,6 +32,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Felix Haas Hall | [felix_haas_hall.blend](modular/buildings/felix_haas_hall.blend) | In progress | 7.4/10 | Rohan |
 | Flex Lab | [flex_lab.blend](modular/buildings/flex_lab.blend) | In progress | 7.5/10 | Rohan |
 | Ford Dining Court | [ford_dining_court.blend](modular/buildings/ford_dining_court.blend) | In progress | 6.8/10 | Rohan |
+| France A. Córdova Recreational Sports Center | [massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend](modular/buildings/massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend) | Finished | 8.1/10 | — |
 | Frieda Parker Hall | [frieda_parker_hall.blend](modular/buildings/frieda_parker_hall.blend) | Needs independent grade | Not graded | Rohan |
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](modular/buildings/hall_for_discovery_and_learning_research.blend) | In progress | 7.3/10 | Rohan |
 | Hansen Life Sciences | [hansen_life_sciences.blend](modular/buildings/hansen_life_sciences.blend) | Needs independent grade | Not graded | Rohan |
@@ -54,7 +55,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | In progress | 7.9/10 | Tobin |
 | National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](modular/buildings/national_soil_erosion_laboratory.blend) | Finished | 8.0/10 | — |
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](modular/buildings/native_american_educational_and_cultural_center_nacc.blend) | In progress | 7.0/10 | Tobin |
-| Neil Armstrong Hall | [neil_armstrong_hall.blend](modular/buildings/neil_armstrong_hall.blend) | In progress | 7.5/10 | Tobin |
+| Neil Armstrong Hall | [neil_armstrong_hall.blend](modular/buildings/neil_armstrong_hall.blend) | In progress | 7.6/10 | Tobin |
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](modular/buildings/niswonger_aviation_tech.blend) | In progress | 6.7/10 | Tobin |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](modular/buildings/northwest_chiller_plant.blend) | In progress | 7.5/10 | Tobin |
 | Owen Hall | [owen_hall.blend](modular/buildings/owen_hall.blend) | Needs independent grade | Not graded | Tobin |
@@ -77,9 +78,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (188 total)
+## Unfinished buildings (187 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 128 buildings, Brady 30 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 127 buildings, Brady 30 buildings.
 
 ### Detailed models still in progress or awaiting a grade (53)
 
@@ -120,7 +121,7 @@ This list excludes individual house parcels. The detailed models that are still 
 | Lawson Hall | [`lawson_hall.blend`](modular/buildings/lawson_hall.blend) | 7.0/10 | Tobin |
 | Morgan J. Burke Boilermaker Aquatic Center | [`morgan_j_burke_boilermaker_aquatic_center.blend`](modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 7.9/10 | Tobin |
 | Native American Educational and Cultural Center | [`native_american_educational_and_cultural_center_nacc.blend`](modular/buildings/native_american_educational_and_cultural_center_nacc.blend) | 7.0/10 | Tobin |
-| Neil Armstrong Hall | [`neil_armstrong_hall.blend`](modular/buildings/neil_armstrong_hall.blend) | 7.5/10 | Tobin |
+| Neil Armstrong Hall | [`neil_armstrong_hall.blend`](modular/buildings/neil_armstrong_hall.blend) | 7.6/10 | Tobin |
 | Niswonger Aviation Tech | [`niswonger_aviation_tech.blend`](modular/buildings/niswonger_aviation_tech.blend) | 6.7/10 | Tobin |
 | Northwest Chiller Plant | [`northwest_chiller_plant.blend`](modular/buildings/northwest_chiller_plant.blend) | 7.5/10 | Tobin |
 | Owen Hall | [`owen_hall.blend`](modular/buildings/owen_hall.blend) | Not graded | Tobin |
@@ -139,7 +140,7 @@ This list excludes individual house parcels. The detailed models that are still 
 | Wiley Hall | [`wiley_hall.blend`](modular/buildings/wiley_hall.blend) | Not graded | Tobin |
 | Winifred Parker Hall | [`winifred_parker_hall.blend`](modular/buildings/winifred_parker_hall.blend) | Not graded | Tobin |
 
-### Buildings that still have only massing models (135)
+### Buildings that still have only massing models (134)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -175,7 +176,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | first street towers east fste | [`massing_first_street_towers_east_fste_c9b22d3.blend`](modular/buildings/massing_first_street_towers_east_fste_c9b22d3.blend) | Brady |
 | first street towers west fstw | [`massing_first_street_towers_west_fstw_b6c3bbe.blend`](modular/buildings/massing_first_street_towers_west_fstw_b6c3bbe.blend) | Brady |
 | forney hall of chemical engineering frny | [`massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend`](modular/buildings/massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend) | Brady |
-| france a c rdova recreational sports center | [`massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend`](modular/buildings/massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend) | Tobin |
 | fuse | [`massing_fuse_39cf4b5.blend`](modular/buildings/massing_fuse_39cf4b5.blend) | Tobin |
 | granite student living | [`massing_granite_student_living_3732ce0.blend`](modular/buildings/massing_granite_student_living_3732ce0.blend) | Tobin |
 | grant street parking garage pgg | [`massing_grant_street_parking_garage_pgg_f46c894.blend`](modular/buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | Tobin |

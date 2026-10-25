@@ -1,0 +1,39 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R9",
+  "parent_revision": "R8",
+  "asset": "modular/buildings/neil_armstrong_hall.blend",
+  "asset_sha256": "3ebc944ae939c1bc1056f8d5ebc9397dd8ca7bd37c50ae119036b01071413a0a",
+  "change": {
+    "type": "Material appearance correction on existing roof-zone top faces",
+    "objects": [
+      "ARMS_R5_Coarse_LiDAR_wing_low",
+      "ARMS_R5_Coarse_LiDAR_roof_high",
+      "ARMS_R5_Coarse_LiDAR_wing_mid"
+    ],
+    "details": [
+      "Applied a pale neutral appearance to top faces in the existing 14–18m and 20–22m coarse LiDAR zones, reflecting their color family in the registered 2023 orthophoto.",
+      "Retained the Mayflower red appearance on the existing 18–20m band where the orthophoto shows an elongated red perimeter feature."
+    ],
+    "source_records": [
+      "audit/complete_neil_armstrong/sources_r9.json",
+      "audit/complete_neil_armstrong/roof_zones_ortho_r9.png",
+      "audit/complete_neil_armstrong/assign_roof_materials_r9.py"
+    ],
+    "uncertainty": "The colors describe the 2023 aerial appearance only; actual roof membrane, metal, concrete, and panel substrates are not inferred. The 5-ft LiDAR height bands do not trace exact architectural edges."
+  },
+  "unchanged": [
+    "All 445 collection object names, mesh vertices, polygon indices and object transforms relative to R8",
+    "Asset root local location [0,0,0], source local frame, GIS/LiDAR envelope masks, and master marker",
+    "Facade, roof, atrium, bridge, stair, and circulation geometry",
+    "Master blend, manifest, README, shared indexes, and other building assets"
+  ],
+  "review_views": [
+    "audit/complete_neil_armstrong/renders_r9/exterior_lidar_silhouette_r9.png",
+    "audit/complete_neil_armstrong/renders_r9/roof_registered_plan_r9.png",
+    "audit/complete_neil_armstrong/renders_r9/facade_geotag_approx_r9.png",
+    "audit/complete_neil_armstrong/renders_r9/facade_nw_local_front_r9.png",
+    "audit/complete_neil_armstrong/renders_r9/atrium_bridges_enclosure_r9.png"
+  ],
+  "validation": "audit/complete_neil_armstrong/validation_r9.json"
+}

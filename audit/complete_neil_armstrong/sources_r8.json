@@ -1,0 +1,65 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R8",
+  "sources": [
+    {
+      "id": "purdue_digital_forestry_2018_ndhm",
+      "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_ndhm_2018.tif",
+      "provider": "Purdue Digital Forestry / Indiana 3DEP LiDAR",
+      "use": "Registered 5-ft normalized height data; independently count cells above 22m inside Purdue GIS FID 642.",
+      "supports": ["Two localized >22m cells in FID 642 at local X≈−13.53m, Y≈5.75–7.27m."],
+      "limits": "The two cells do not identify a penthouse or its form. At 5-ft resolution, the raster supports no 22x12m elevated box at either modeled end. The data cannot rule out a low or differently located penthouse."
+    },
+    {
+      "id": "purdue_gis_fid642",
+      "url": "https://maps.purdue.edu/arcgis/rest/services/Buildings/BuildingFootprints/FeatureServer",
+      "local_record": "audit/complete_neil_armstrong/sources/gis_feature_642_20261024.json",
+      "use": "Building footprint mask for clipping and local registration inherited from R3–R7.",
+      "limits": "The campus building polygon is not an architectural roof or penthouse plan."
+    },
+    {
+      "id": "frp_project",
+      "url": "https://frpinc.com/projects/neil-armstrong-hall-of-engineering/",
+      "publisher": "FRP structural engineer",
+      "use": "Building-specific description and project photographs.",
+      "supports": ["A structural-steel mechanical penthouse and cantilevered roof truss are described."],
+      "limits": "No penthouse plan, dimensions, elevation, or local-frame location are published. This is why R8 removes the two modeled boxes without claiming that the real penthouse is absent."
+    },
+    {
+      "id": "purdue_college_of_engineering_floorplan_excerpt",
+      "url": "https://engineering.purdue.edu/Engr/People/Community/vibrant-arts/documents/vibrant-arts-submission-guidelines.pdf",
+      "local_files": ["audit/complete_neil_armstrong/sources/purdue_vibrant_arts_guidelines_floorplan.pdf", "audit/complete_neil_armstrong/sources/vibrant_floorplan_page2.png", "audit/complete_neil_armstrong/sources/vibrant_floorplan_detail_r8.png"],
+      "publisher": "Purdue College of Engineering",
+      "use": "Official plan excerpt marks first-floor artwork positions and includes stair/room linework.",
+      "limits": "Only a cropped, partial first-floor plan is shown; it has no north arrow, scale, or controls for local-frame registration. Used for research and uncertainty documentation only; no stair, bridge, facade, or room geometry was changed from this sheet."
+    },
+    {
+      "id": "purdue_building_emergency_plan",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/arms/",
+      "publisher": "Purdue University Office of Emergency Preparedness",
+      "source_date": "Revision date 2026-03-27",
+      "use": "Confirms the building has one lower level, a grade level, and two upper floors.",
+      "limits": "This is not a dimensioned floor plan and does not locate interior circulation."
+    },
+    {
+      "id": "purdue_360_tour",
+      "url": "https://web.ics.purdue.edu/~iswartz/ofe/virtual/images/360-tour/arms/index.html",
+      "local_files": ["audit/complete_neil_armstrong/sources/purdue_360_tour_r8.html", "audit/complete_neil_armstrong/sources/purdue_360_tour_data_r8.js"],
+      "publisher": "Purdue University Office of Future Engineers",
+      "use": "Lists the Herman & Heddy Kurz Atrium and second-floor skywalk scenes; confirms names and level references.",
+      "limits": "Panorama scenes are not direction/position registered, so they cannot establish bridge endpoints or stair routes in the model."
+    },
+    {
+      "id": "wikimedia_2016_03",
+      "url": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_03.jpg",
+      "photographer": "Julian Herzog",
+      "date": "2016-08-11",
+      "license": "CC BY 4.0",
+      "camera_geotag": {"latitude": 40.431433, "longitude": -86.916781},
+      "local_file": "audit/complete_neil_armstrong/sources/wikimedia_neil_2016_03_r8.jpg",
+      "use": "Qualitative visual check for brick, curtain glazing, red ACM and pronounced wing-like roof overhang.",
+      "limits": "Camera pose/bearing and control points are absent; image supports visual vocabulary, not exact facade station, roof edge, or dimensions."
+    }
+  ],
+  "registration_summary": "R8 retains the registered GIS/LiDAR coordinate frame and master marker. The partial plan and 2016 photograph improve source coverage, but neither supports new local geometry registration. The only R8 geometry change is a LiDAR-supported correction to remove two large unsupported rooftop boxes."
+}

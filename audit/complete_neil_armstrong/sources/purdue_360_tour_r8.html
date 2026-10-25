@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>360 Tour of Armstrong Hall of Engineering</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="multiple-scenes ">
+
+<div id="pano"></div>
+
+<div id="sceneList">
+  <ul class="scenes">
+    
+      <a href="javascript:void(0)" class="scene" data-id="0-neil-armstrong-statue">
+        <li class="text">Neil Armstrong Statue</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="1-lunar-footprints">
+        <li class="text">Lunar footprints</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="2-herman--heddy-kurz-atrium">
+        <li class="text">Herman &amp; Heddy Kurz Atrium</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="3-lunar-sample">
+        <li class="text">Lunar Sample</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="4-large-lecture-classroom---arms-1010">
+        <li class="text">Large Lecture Classroom - ARMS 1010</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="5-epics-design-lab">
+        <li class="text">EPICS Design Lab</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="6-epics-electronics--hardware-computing-lab">
+        <li class="text">EPICS Electronics &amp; Hardware Computing Lab</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="7-2nd-floor-skywalk">
+        <li class="text">2nd Floor Skywalk</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="8-2nd-floor-aerospace-lab">
+        <li class="text">2nd Floor Aerospace Lab</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="9-air--space-collection---part-1">
+        <li class="text">Air &amp; Space Collection - Part 1</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="10-air--space-collection---part-2">
+        <li class="text">Air &amp; Space Collection - Part 2</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="11-air--space-collection---part-3">
+        <li class="text">Air &amp; Space Collection - Part 3</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="12-air--space-collection---part-4">
+        <li class="text">Air &amp; Space Collection - Part 4</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="13-air--space-collection---part-5">
+        <li class="text">Air &amp; Space Collection - Part 5</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="14-3rd-floor-aerospace-lab">
+        <li class="text">3rd Floor Aerospace Lab</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="15-design-studio---fye-classroom-arms-b098">
+        <li class="text">Design Studio - FYE Classroom (ARMS B098)</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="16-demonstration-studio---fye-collaboration-space">
+        <li class="text">Demonstration Studio - FYE Collaboration Space</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="17-innovation-studio---fye-collaboration-space">
+        <li class="text">Innovation Studio - FYE Collaboration Space</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="18-3d-print-club-workroom">
+        <li class="text">3D Print Club Workroom</li>
+      </a>
+    
+      <a href="javascript:void(0)" class="scene" data-id="19-study-space--amelias-cafe">
+        <li class="text">Study Space &amp; Amelia&#39;s Cafe</li>
+      </a>
+    
+  </ul>
+</div>
+
+<div id="titleBar">
+  <h1 class="sceneName"></h1>
+</div>
+
+<a href="javascript:void(0)" id="autorotateToggle">
+  <img class="icon off" src="img/play.png">
+  <img class="icon on" src="img/pause.png">
+</a>
+
+<a href="javascript:void(0)" id="fullscreenToggle">
+  <img class="icon off" src="img/fullscreen.png">
+  <img class="icon on" src="img/windowed.png">
+</a>
+
+<a href="javascript:void(0)" id="sceneListToggle">
+  <img class="icon off" src="img/expand.png">
+  <img class="icon on" src="img/collapse.png">
+</a>
+
+<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+  <img class="icon" src="img/up.png">
+</a>
+<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+  <img class="icon" src="img/down.png">
+</a>
+<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+  <img class="icon" src="img/left.png">
+</a>
+<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+  <img class="icon" src="img/right.png">
+</a>
+<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+  <img class="icon" src="img/plus.png">
+</a>
+<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+  <img class="icon" src="img/minus.png">
+</a>
+
+<script src="vendor/es5-shim.js"></script>
+<script src="vendor/eventShim.js"></script>
+<script src="vendor/classList.js"></script>
+<script src="vendor/requestAnimationFrame.js" ></script>
+<script src="vendor/screenfull.min.js" ></script>
+<script src="vendor/bowser.min.js" ></script>
+<script src="vendor/marzipano.js" ></script>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+
+</body>
+</html>
+

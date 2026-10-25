@@ -1,0 +1,44 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R7",
+  "parent_revision": "R6",
+  "asset": "modular/buildings/neil_armstrong_hall.blend",
+  "retrieval_date": "2026-10-24",
+  "changes": [
+    {
+      "objects": ["ARMS_R5_Coarse_LiDAR_wing_low", "ARMS_R5_Coarse_LiDAR_wing_mid", "ARMS_R5_Coarse_LiDAR_roof_high"],
+      "change": "Preserved all R5 plan vertices, shell cutouts, GIS mask, and object locations. Replaced each flat cap with a generalized height surface sampled at the existing cap vertices. Every XY remains unchanged; Z uses a 5x5 same-band NDHM median blended 35% local and 65% R5 zone median to suppress cell-scale noise. Applied Mayflower Red ACM to upward cap faces and retained Purdue brick on vertical envelope faces.",
+      "source": {
+        "title": "Indiana 3DEP LiDAR products — Tippecanoe 2018 normalized digital height model",
+        "provider": "Purdue Digital Forestry / iDiF",
+        "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_ndhm_2018.tif",
+        "source_date": "2017–2019 collection; regional product filename Tippecanoe 2018",
+        "source_crs": "EPSG:2968, NAD83(HARN)/Indiana West, US survey feet; 5-ft cells; converted to meters",
+        "measurement_method": "Sampled existing R5 top cap vertex XY positions in the same GIS-clipped height class. Used the median of qualifying 5x5 neighborhood cells, then blended 35% local median with 65% R5 zone median. The two R5 cells above 22m in the high zone are excluded rather than treated as roof towers.",
+        "feature_id": "Purdue BuildingShapesZip4 feature 642 constrains the source height masks"
+      },
+      "result": {
+        "wing_low_surface_height_range_m": [15.247, 16.516],
+        "wing_mid_surface_height_range_m": [19.059, 19.605],
+        "roof_high_surface_height_range_m": [21.504, 21.601],
+        "source_xy_and_footprint_preserved": true
+      },
+      "uncertainty": "The 5-ft NDHM is a normalized height surface, not a surveyed roof plane. It can include equipment, local classification noise, or residual non-roof surfaces and cannot identify exact walls, parapets, overhangs, truss shapes, floors, or stories. The resulting faceted caps are generalized height surfaces rather than measured slopes. Their plan boundaries remain the broad R5 GIS/raster zones, not exact architectural roof edges."
+    },
+    {
+      "objects": ["ARMS_R6_North_Clerestory_Glass", "ARMS_R6_North_Clerestory_Mullions"],
+      "change": "Retained the R6 upper-glazing cue without moving or refining its geometry.",
+      "source": "Geotagged 2016 Commons exterior photo and FRP material imagery as documented in sources_r6.json.",
+      "uncertainty": "The facade side, exact dimensions, and cadence remain schematic because the source image has no camera bearing, calibrated lens, or registered elevation."
+    },
+    {
+      "objects": ["ARMS_Atrium_Skylight_Glazing", "ARMS_Curtain_Glass_Bay_0…15", "ARMS_Balcony_Level2_*", "ARMS_Balcony_Level3_*", "ARMS_Roof_Steel_Truss_*", "R7_RenderOnly_Atrium_Stage"],
+      "change": "Rendered the existing bridge levels within the modeled curved curtain glazing, skylight, and roof trusses. Three central curtain bays are hidden as a camera reveal while side glazing remains visible. A generic neutral stage plane supplies vertical reference only, not a floor-plan claim. Display materials and visibility controls are render-only; no saved geometry or material changed.",
+      "source": "FRP project page describes two exposed concrete bridge levels with glass rails and three concrete stairs; its interior images support a glazed atrium and roof/truss context. https://frpinc.com/projects/neil-armstrong-hall-of-engineering/",
+      "uncertainty": "The published tour/photos are not direction-registered plans. The source does not verify bridge endpoints or locate the three stairs in the local model. R7 adds no stair geometry and claims no continuous floor-to-floor route. The generic render-only plane is staging and does not represent a surveyed atrium-floor outline."
+    }
+  ],
+  "placement": "Existing R6 marker audit remains read-only: marker at [-109.0,400.1893310546875,0], zero position error, zero rotation, unit scale. Root and source placement were not changed.",
+  "final_surface_sampling_file": "roof_surface_samples_r7_smooth.json",
+  "not_changed": ["Master blend, manifest, marker, README, shared indexes, other building assets", "GIS plan masks and all R5 envelope X/Y coordinates", "Bridge, stair, facade, and penthouse geometry"]
+}
