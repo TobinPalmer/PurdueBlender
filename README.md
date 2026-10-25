@@ -80,7 +80,7 @@ This project tracks detailed campus models separately from the remaining massing
 
 ## Unfinished buildings (187 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 127 buildings, Brady 30 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 97 buildings, Brady 60 buildings.
 
 ### Detailed models still in progress or awaiting a grade (53)
 
@@ -176,36 +176,36 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | first street towers east fste | [`massing_first_street_towers_east_fste_c9b22d3.blend`](modular/buildings/massing_first_street_towers_east_fste_c9b22d3.blend) | Brady |
 | first street towers west fstw | [`massing_first_street_towers_west_fstw_b6c3bbe.blend`](modular/buildings/massing_first_street_towers_west_fstw_b6c3bbe.blend) | Brady |
 | forney hall of chemical engineering frny | [`massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend`](modular/buildings/massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend) | Brady |
-| fuse | [`massing_fuse_39cf4b5.blend`](modular/buildings/massing_fuse_39cf4b5.blend) | Tobin |
-| granite student living | [`massing_granite_student_living_3732ce0.blend`](modular/buildings/massing_granite_student_living_3732ce0.blend) | Tobin |
-| grant street parking garage pgg | [`massing_grant_street_parking_garage_pgg_f46c894.blend`](modular/buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | Tobin |
-| grissom hall | [`massing_grissom_hall_01fd0e0.blend`](modular/buildings/massing_grissom_hall_01fd0e0.blend) | Tobin |
-| hall of data science and ai dsai | [`massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend`](modular/buildings/massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend) | Tobin |
-| hampton hall of civil engineering hamp | [`massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend`](modular/buildings/massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend) | Tobin |
-| hanley hall | [`massing_hanley_hall_c8a4551.blend`](modular/buildings/massing_hanley_hall_c8a4551.blend) | Tobin |
-| harrison street parking garage | [`massing_harrison_street_parking_garage_823c7d2.blend`](modular/buildings/massing_harrison_street_parking_garage_823c7d2.blend) | Tobin |
-| hawkins hall | [`massing_hawkins_hall_282335f.blend`](modular/buildings/massing_hawkins_hall_282335f.blend) | Tobin |
-| henni s hair shop | [`massing_henni_s_hair_shop_57f732b.blend`](modular/buildings/massing_henni_s_hair_shop_57f732b.blend) | Tobin |
-| herrick laboratories | [`massing_herrick_laboratories_2138103.blend`](modular/buildings/massing_herrick_laboratories_2138103.blend) | Tobin |
-| hi vine | [`massing_hi_vine_dbdf0c5.blend`](modular/buildings/massing_hi_vine_dbdf0c5.blend) | Tobin |
-| hillel | [`massing_hillel_36d2ba1.blend`](modular/buildings/massing_hillel_36d2ba1.blend) | Tobin |
-| hillenbrand hall | [`massing_hillenbrand_hall_a71e418.blend`](modular/buildings/massing_hillenbrand_hall_a71e418.blend) | Tobin |
-| hockmeyer hall of structural biology hock | [`massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend`](modular/buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | Tobin |
-| honors college and residences north | [`massing_honors_college_and_residences_north_3de3b7c.blend`](modular/buildings/massing_honors_college_and_residences_north_3de3b7c.blend) | Tobin |
-| honors college and residences south | [`massing_honors_college_and_residences_south_c663781.blend`](modular/buildings/massing_honors_college_and_residences_south_c663781.blend) | Tobin |
-| horizon bank | [`massing_horizon_bank_debc8f2.blend`](modular/buildings/massing_horizon_bank_debc8f2.blend) | Tobin |
-| hull all american marching band complex | [`massing_hull_all_american_marching_band_complex_665bcb7.blend`](modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend) | Tobin |
-| islamic societyof greater lafayette | [`massing_islamic_societyof_greater_lafayette_0130012.blend`](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | Tobin |
-| jimmy john s | [`massing_jimmy_john_s_12edba1.blend`](modular/buildings/massing_jimmy_john_s_12edba1.blend) | Tobin |
-| johnson hall of nursing jnsn | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | Tobin |
-| joyful journeys | [`massing_joyful_journeys_abaf5c3.blend`](modular/buildings/massing_joyful_journeys_abaf5c3.blend) | Tobin |
-| kappa sigma | [`massing_kappa_sigma_c1b36ec.blend`](modular/buildings/massing_kappa_sigma_c1b36ec.blend) | Tobin |
-| lambertus | [`lambertus_hall.blend`](modular/buildings/lambertus_hall.blend) | Tobin |
-| latino cultural center | [`massing_latino_cultural_center_5f0d139.blend`](modular/buildings/massing_latino_cultural_center_5f0d139.blend) | Tobin |
-| latino cultural center lcc | [`massing_latino_cultural_center_lcc_9cc71b3.blend`](modular/buildings/massing_latino_cultural_center_lcc_9cc71b3.blend) | Tobin |
-| life science ranges greenhouse and service building | [`massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend`](modular/buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | Tobin |
-| lilly hall | [`massing_lilly_hall_e7fc13e.blend`](modular/buildings/massing_lilly_hall_e7fc13e.blend) | Tobin |
-| mann hall | [`massing_mann_hall_2b4ebda.blend`](modular/buildings/massing_mann_hall_2b4ebda.blend) | Tobin |
+| fuse | [`massing_fuse_39cf4b5.blend`](modular/buildings/massing_fuse_39cf4b5.blend) | Brady |
+| granite student living | [`massing_granite_student_living_3732ce0.blend`](modular/buildings/massing_granite_student_living_3732ce0.blend) | Brady |
+| grant street parking garage pgg | [`massing_grant_street_parking_garage_pgg_f46c894.blend`](modular/buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | Brady |
+| grissom hall | [`massing_grissom_hall_01fd0e0.blend`](modular/buildings/massing_grissom_hall_01fd0e0.blend) | Brady |
+| hall of data science and ai dsai | [`massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend`](modular/buildings/massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend) | Brady |
+| hampton hall of civil engineering hamp | [`massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend`](modular/buildings/massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend) | Brady |
+| hanley hall | [`massing_hanley_hall_c8a4551.blend`](modular/buildings/massing_hanley_hall_c8a4551.blend) | Brady |
+| harrison street parking garage | [`massing_harrison_street_parking_garage_823c7d2.blend`](modular/buildings/massing_harrison_street_parking_garage_823c7d2.blend) | Brady |
+| hawkins hall | [`massing_hawkins_hall_282335f.blend`](modular/buildings/massing_hawkins_hall_282335f.blend) | Brady |
+| henni s hair shop | [`massing_henni_s_hair_shop_57f732b.blend`](modular/buildings/massing_henni_s_hair_shop_57f732b.blend) | Brady |
+| herrick laboratories | [`massing_herrick_laboratories_2138103.blend`](modular/buildings/massing_herrick_laboratories_2138103.blend) | Brady |
+| hi vine | [`massing_hi_vine_dbdf0c5.blend`](modular/buildings/massing_hi_vine_dbdf0c5.blend) | Brady |
+| hillel | [`massing_hillel_36d2ba1.blend`](modular/buildings/massing_hillel_36d2ba1.blend) | Brady |
+| hillenbrand hall | [`massing_hillenbrand_hall_a71e418.blend`](modular/buildings/massing_hillenbrand_hall_a71e418.blend) | Brady |
+| hockmeyer hall of structural biology hock | [`massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend`](modular/buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | Brady |
+| honors college and residences north | [`massing_honors_college_and_residences_north_3de3b7c.blend`](modular/buildings/massing_honors_college_and_residences_north_3de3b7c.blend) | Brady |
+| honors college and residences south | [`massing_honors_college_and_residences_south_c663781.blend`](modular/buildings/massing_honors_college_and_residences_south_c663781.blend) | Brady |
+| horizon bank | [`massing_horizon_bank_debc8f2.blend`](modular/buildings/massing_horizon_bank_debc8f2.blend) | Brady |
+| hull all american marching band complex | [`massing_hull_all_american_marching_band_complex_665bcb7.blend`](modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend) | Brady |
+| islamic societyof greater lafayette | [`massing_islamic_societyof_greater_lafayette_0130012.blend`](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | Brady |
+| jimmy john s | [`massing_jimmy_john_s_12edba1.blend`](modular/buildings/massing_jimmy_john_s_12edba1.blend) | Brady |
+| johnson hall of nursing jnsn | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | Brady |
+| joyful journeys | [`massing_joyful_journeys_abaf5c3.blend`](modular/buildings/massing_joyful_journeys_abaf5c3.blend) | Brady |
+| kappa sigma | [`massing_kappa_sigma_c1b36ec.blend`](modular/buildings/massing_kappa_sigma_c1b36ec.blend) | Brady |
+| lambertus | [`lambertus_hall.blend`](modular/buildings/lambertus_hall.blend) | Brady |
+| latino cultural center | [`massing_latino_cultural_center_5f0d139.blend`](modular/buildings/massing_latino_cultural_center_5f0d139.blend) | Brady |
+| latino cultural center lcc | [`massing_latino_cultural_center_lcc_9cc71b3.blend`](modular/buildings/massing_latino_cultural_center_lcc_9cc71b3.blend) | Brady |
+| life science ranges greenhouse and service building | [`massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend`](modular/buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | Brady |
+| lilly hall | [`massing_lilly_hall_e7fc13e.blend`](modular/buildings/massing_lilly_hall_e7fc13e.blend) | Brady |
+| mann hall | [`massing_mann_hall_2b4ebda.blend`](modular/buildings/massing_mann_hall_2b4ebda.blend) | Brady |
 | marc and sharon hagle hall hagl | [`massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend`](modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | Tobin |
 | marriot hall | [`massing_marriot_hall_7cd3eb5.blend`](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | Tobin |
 | marstellar | [`massing_marstellar_0c2ea90.blend`](modular/buildings/massing_marstellar_0c2ea90.blend) | Tobin |
