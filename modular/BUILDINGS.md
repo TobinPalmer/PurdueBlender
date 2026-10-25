@@ -31,7 +31,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Peirce Hall | [peirce_hall.blend](buildings/peirce_hall.blend) | 1236 |
 | Potter Engineering | [potter_engineering.blend](buildings/potter_engineering.blend) | 500 |
 | Psychological Sciences Building | [psychological_sciences.blend](buildings/psychological_sciences.blend) | 80 |
-| Purdue Memorial Union | [purdue_memorial_union.blend](buildings/purdue_memorial_union.blend) | 414 |
+| Purdue Memorial Union | [purdue_memorial_union.blend](buildings/purdue_memorial_union.blend) | 650 |
 | R. B. Wetherill Laboratory of Chemistry | [wetherill_laboratory_of_chemistry.blend](buildings/wetherill_laboratory_of_chemistry.blend) | 362 |
 | Rawls Hall | [rawls_hall.blend](buildings/rawls_hall.blend) | 722 |
 | Ross Ade | [ross_ade.blend](buildings/ross_ade.blend) | 2118 |

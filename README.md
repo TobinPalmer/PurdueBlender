@@ -63,7 +63,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Physics Building | [physics_building_phys_3bf42f3.blend](modular/buildings/physics_building_phys_3bf42f3.blend) | Finished | [8.4/10](audit/physics_building/independent_report_r2.md) | — |
 | Potter Engineering | [potter_engineering.blend](modular/buildings/potter_engineering.blend) | Finished | [8.0/10](audit/potter_engineering_refine/INDEPENDENT_GRADE_R3.md) | — |
 | Psychological Sciences Building | [psychological_sciences.blend](modular/buildings/psychological_sciences.blend) | Finished | 9.0/10 | — |
-| Purdue Memorial Union | [purdue_memorial_union.blend](modular/buildings/purdue_memorial_union.blend) | Needs independent grade | Not graded | Tobin |
+| Purdue Memorial Union | [purdue_memorial_union.blend](modular/buildings/purdue_memorial_union.blend) | Finished | [8.0/10](audit/purdue_memorial_union_independent_grade/independent_grade_r4.md) | — |
 | R. B. Wetherill Laboratory of Chemistry | [wetherill_laboratory_of_chemistry.blend](modular/buildings/wetherill_laboratory_of_chemistry.blend) | Finished | 8.3/10 | — |
 | Rawls Hall | [rawls_hall.blend](modular/buildings/rawls_hall.blend) | In progress | 7.0/10 | Tobin |
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](modular/buildings/ray_w_herrick_laboratories.blend) | In progress | 7.2/10 | Tobin |
@@ -78,11 +78,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (176 total)
+## Unfinished buildings (175 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 86 buildings, Brady 60 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 85 buildings, Brady 60 buildings.
 
-### Detailed models still in progress or awaiting a grade (42)
+### Detailed models still in progress or awaiting a grade (41)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -117,7 +117,6 @@ This list excludes individual house parcels. The detailed models that are still 
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Rohan |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
-| Purdue Memorial Union | [`purdue_memorial_union.blend`](modular/buildings/purdue_memorial_union.blend) | Not graded | Tobin |
 | Rawls Hall | [`rawls_hall.blend`](modular/buildings/rawls_hall.blend) | 7.0/10 | Tobin |
 | Ray W. Herrick Laboratories | [`ray_w_herrick_laboratories.blend`](modular/buildings/ray_w_herrick_laboratories.blend) | 7.2/10 | Tobin |
 
