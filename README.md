@@ -67,7 +67,7 @@ This project tracks detailed campus models separately from the remaining massing
 | R. B. Wetherill Laboratory of Chemistry | [wetherill_laboratory_of_chemistry.blend](modular/buildings/wetherill_laboratory_of_chemistry.blend) | Finished | 8.3/10 | — |
 | Rawls Hall | [rawls_hall.blend](modular/buildings/rawls_hall.blend) | In progress | 7.0/10 | Tobin |
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](modular/buildings/ray_w_herrick_laboratories.blend) | In progress | 7.2/10 | Tobin |
-| Ross Ade | [ross_ade.blend](modular/buildings/ross_ade.blend) | Needs independent grade | Not graded | Tobin |
+| Ross Ade | [ross_ade.blend](modular/buildings/ross_ade.blend) | Finished | [8.0/10](audit/ross_ade/independent_grade.md) | — |
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](modular/buildings/massing_samara_f6b8e61.blend) | Finished | [8.6/10](audit/samara/independent_grade.json) | — |
 | South Hall | [south_hall.blend](modular/buildings/south_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](modular/buildings/stanley_coulter_hall.blend) | In progress | 4.7/10 | Tobin |
@@ -78,11 +78,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (187 total)
+## Unfinished buildings (186 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 97 buildings, Brady 60 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 96 buildings, Brady 60 buildings.
 
-### Detailed models still in progress or awaiting a grade (53)
+### Detailed models still in progress or awaiting a grade (52)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -130,7 +130,7 @@ This list excludes individual house parcels. The detailed models that are still 
 | Purdue Memorial Union | [`purdue_memorial_union.blend`](modular/buildings/purdue_memorial_union.blend) | Not graded | Tobin |
 | Rawls Hall | [`rawls_hall.blend`](modular/buildings/rawls_hall.blend) | 7.0/10 | Tobin |
 | Ray W. Herrick Laboratories | [`ray_w_herrick_laboratories.blend`](modular/buildings/ray_w_herrick_laboratories.blend) | 7.2/10 | Tobin |
-| Ross Ade | [`ross_ade.blend`](modular/buildings/ross_ade.blend) | Not graded | Tobin |
+
 | South Hall | [`south_hall.blend`](modular/buildings/south_hall.blend) | Not graded | Tobin |
 | Stanley Coulter Hall | [`stanley_coulter_hall.blend`](modular/buildings/stanley_coulter_hall.blend) | 4.7/10 | Tobin |
 | Stewart Center | [`stewart_center.blend`](modular/buildings/stewart_center.blend) | Not graded | Tobin |

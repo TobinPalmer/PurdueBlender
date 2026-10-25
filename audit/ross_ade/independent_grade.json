@@ -1,0 +1,245 @@
+{
+  "building_id": "ross_ade",
+  "building_name": "Ross-Ade Stadium",
+  "score": 8.0,
+  "max_score": 10,
+  "passes_minimum": true,
+  "minimum_passing_score": 8,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "OpenStreetMap way 614516704 is tagged leisure=stadium, name=Ross-Ade Stadium, operator=Purdue University, and links to Purdue Athletics; geometry projects to a 217.07 m by 295.52 m outer stadium/site envelope.",
+        "The model reopens with a north-south field and a bowl/site outline whose 225 m by 305 m evaluated extents are about 3.65% and 3.21% larger than the OSM outer way bounds.",
+        "The supplied target_buildings_gis.json contains only LWSN, KRAN, KNOY, HIKS, and RAWL; it is not a Ross-Ade footprint source."
+      ],
+      "findings": [
+        "Identity is clear, but the OSM leisure=stadium polygon is a broad stadium/site envelope rather than surveyed structural wall lines; the modest overrun cannot be separated from plaza or decorative geometry without a structural footprint overlay."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2,
+      "max_score": 2,
+      "evidence": [
+        "Manifest origin is (-403.2000, 805.2000) m. OSM way 614516704 projects to bounding-box center (-403.1939, 805.2177) m using the project Bell Tower origin and documented local conversion; center offset is approximately -0.006 m X and -0.018 m Y.",
+        "Read-only master inspection found Placement_ross_ade at (-403.2000, 805.2000, 0) m, zero rotation, unit scale, instancing Asset_ross_ade.",
+        "Evaluated geometry is 225 m east-west by 305 m north-south, approximately 3–4% larger than the projected OSM outer envelope; field is modeled north-south."
+      ],
+      "findings": [
+        "Location/orientation are strongly verified; dimensions are close against an outer site polygon, with the reference limitation recorded under footprint."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1,
+      "max_score": 2,
+      "evidence": [
+        "Reopened evaluated asset spans Z=-0.02 to 49.75 m; the press-box pavilion roof is around 36 m and floodlight heads reach 49.75 m.",
+        "Purdue Athletics confirms permanent lighting was installed in 2017 and describes stadium expansions/press box history; Purdue’s public page does not provide surveyed height or floor elevations.",
+        "Review render shows an open bowl, west pavilion/press box, south end zone, and four corner floodlight towers."
+      ],
+      "findings": [
+        "Overall stadium form is plausible, but exact height, story levels, section profile, and roof elevations are estimates; no authoritative elevation/section drawing was located."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Purdue Athletics documents the 2018 field-level brick facade, permanent lighting, the 2023 south end-zone addition/Tiller Tunnel, and a 2020 south-end video board measuring 150 ft 4 in by 56 ft 9 in.",
+        "Reopened model includes brick-faced west pavilion/press box, gate structures, Tiller Tunnel, south end zone, lights, and a 45.82 m by 17.30 m south video screen, matching Purdue’s published board dimensions.",
+        "Three-quarter and top review renders are saved in audit/ross_ade."
+      ],
+      "findings": [
+        "Major signature elements are present and the video board dimensions match the official source. Fine gate/facade placement lacks a source overlay; review renders show broad seating-bowl surfaces washed out to white, obscuring the seat pattern and reducing visual fidelity."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2,
+      "max_score": 2,
+      "evidence": [
+        "Saved file reopened successfully in Blender 5.2.3 LTS; scene Building_ross_ade contains collection Asset_ross_ade with 2,118 objects (2,117 meshes) and the manifest’s expected root/name.",
+        "Manifest records local coordinates and stable path buildings/ross_ade.blend; evaluated bounds agree with its local/world bounds. The root is at local origin.",
+        "No non-generated external image paths were found; the asset is self-contained. The audit records provider, feature ID, retrieval/source timestamp, CRS, conversion, measurement method, uncertainty, source URLs, and findings."
+      ],
+      "findings": [
+        "Passes library naming, reopen, and portability checks."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/ross_ade.blend",
+    "scene": "Building_ross_ade",
+    "scene_object_count": 2118,
+    "mesh_object_count": 2117,
+    "asset_collection": "Asset_ross_ade",
+    "asset_collection_object_count": 2118,
+    "asset_root_location": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "evaluated_bounds_local_m": [
+      [
+        -112.5,
+        112.5
+      ],
+      [
+        -152.5,
+        152.5
+      ],
+      [
+        -0.019999999552965164,
+        49.75
+      ]
+    ],
+    "model_xy_dimensions_m": [
+      225.0,
+      305.0
+    ],
+    "osm_feature": {
+      "type": "way",
+      "id": 614516704,
+      "tags": {
+        "leisure": "stadium",
+        "name": "Ross–Ade Stadium",
+        "operator": "Purdue University",
+        "sport": "american_football",
+        "website": "https://purduesports.com/facilities/ross-ade-stadium/1",
+        "wikidata": "Q3442733",
+        "wikipedia": "en:Ross–Ade Stadium"
+      },
+      "source_timestamp_utc": "2026-10-22T03:48:50Z",
+      "crs": "EPSG:4326 (WGS 84)",
+      "projected_bounds_local_m": [
+        [
+          -511.7302234129582,
+          -294.6574820512946
+        ],
+        [
+          657.4567359999514,
+          952.978592000054
+        ]
+      ],
+      "projected_dimensions_m": [
+        217.0727413616636,
+        295.5218560001026
+      ],
+      "projected_bbox_center_m": [
+        -403.1938527321264,
+        805.2176640000027
+      ]
+    },
+    "manifest_placement_origin_xy_m": [
+      -403.20001220703125,
+      805.2000122070312
+    ],
+    "position_delta_from_osm_bbox_center_m": [
+      -0.006159474904848139,
+      -0.017651792971491886
+    ],
+    "dimension_difference_percent_vs_osm_outer_way_bbox": [
+      3.6518904163691523,
+      3.20725652179652
+    ],
+    "target_gis_contains_ross_ade": false,
+    "non_generated_external_image_paths": [],
+    "external_image_count": 0,
+    "master_placement_marker_read_only_check": {
+      "name": "Placement_ross_ade",
+      "type": "EMPTY",
+      "location_m": [
+        -403.20001220703125,
+        805.2000122070312,
+        0.0
+      ],
+      "rotation_euler_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "instance_collection": "Asset_ross_ade"
+    }
+  },
+  "sources": [
+    {
+      "title": "OpenStreetMap Ross-Ade Stadium way 614516704",
+      "provider": "OpenStreetMap via Overpass API",
+      "url": "https://www.openstreetmap.org/way/614516704",
+      "feature_id": "way/614516704",
+      "retrieved": "2026-10-22 snapshot; OSM base timestamp 2026-10-22T03:48:50Z",
+      "crs": "EPSG:4326 (WGS 84)",
+      "local_file": "audit/ross_ade/ross_ade_osm_way_614516704.json (feature extract); original Overpass response: ross_ade_stadium.json",
+      "method": "Project node lon/lat to local meters using origin (-86.9137, 40.4274): X=(lon+86.9137)*111412.84*cos(40.4274°), Y=(lat-40.4274)*111040. Compare axis-aligned outer feature bounds and center with evaluated asset bounds and manifest placement.",
+      "uncertainty": "Outer leisure=stadium polygon is not a surveyed wall footprint; local conversion is an approximation; OSM mapping date and positional accuracy are not survey-certified."
+    },
+    {
+      "title": "Ross-Ade Stadium facility page",
+      "provider": "Purdue Athletics",
+      "url": "https://purduesports.com/facilities/ross-ade-stadium",
+      "retrieved": "2026-10-25",
+      "crs": "Not applicable",
+      "method": "Read official stadium history, renovation and equipment descriptions; compare cited features and dimensions to reopened geometry.",
+      "uncertainty": "Page provides no measured overall height, floor elevations, or current architectural sections."
+    },
+    {
+      "title": "Ross Ade Stadium – Purdue University project page",
+      "provider": "Smoot Construction",
+      "url": "https://smootconstruction.com/our-work/ross-ade-stadium-purdue-university/",
+      "retrieved": "2026-10-25",
+      "crs": "Not applicable",
+      "method": "Secondary project documentation for 2001–03 press-box / facade renovation context.",
+      "uncertainty": "Not a dimensioned drawing; does not verify the modeled geometry."
+    },
+    {
+      "title": "Purdue West Lafayette campus map",
+      "provider": "Purdue University",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "retrieved": "2026-10-25",
+      "crs": "Map; not used for dimensional measurement",
+      "method": "Context check for stadium’s northern campus location.",
+      "uncertainty": "Map scale/generalization is not suitable for building footprint measurement."
+    },
+    {
+      "title": "Ross-Ade Stadium Tiller Tunnel concept and south end-zone imagery",
+      "provider": "Purdue Athletics media site",
+      "url": "https://www.summitathletics.com/websites/purdue/index.html",
+      "image_url": "https://summitathletics.com/websites/purdue/assets/img/index/overview/renderings/19-tiller-tunnel.webp",
+      "retrieved": "2026-10-25",
+      "crs": "Not applicable",
+      "method": "Visual cross-check for the 2023 Tiller Tunnel and south-end bowl addition.",
+      "uncertainty": "Promotional rendering, not as-built survey documentation."
+    },
+    {
+      "title": "Ross-Ade Stadium aerial photography collection",
+      "provider": "Trevor Mahlmann photography",
+      "url": "https://photos.tmahlmann.com/Places/Purdue/Ross-Ade-Stadium",
+      "image_url": "https://photos.smugmug.com/Places/Purdue/Ross-Ade-Stadium/i-kzNrVgG/0/4787ff08/XL/DJI_0636-HDR-XL.jpg",
+      "retrieved": "2026-10-25",
+      "crs": "Not applicable",
+      "method": "Visual check of open U-shaped seating bowl and exposed seating tiers.",
+      "uncertainty": "Independent photographer, not a Purdue facilities drawing; image predates the 2023 south-end addition."
+    }
+  ],
+  "findings": [
+    "Overall: 8.0/10; passes the 8/10 threshold.",
+    "The strongest evidence is identity, placement, north-south orientation, major signature elements, and a screen size matching Purdue’s published dimensions.",
+    "The OSM comparison is an outer stadium/site polygon, not the wall footprint; model XY extents exceed its projected bounds by approximately 3–4%.",
+    "Exact height, story elevations, and detailed facade/seat fidelity remain uncertain; the review render’s washed-out white bowl surfaces obscure seat detail."
+  ],
+  "review_artifacts": [
+    "audit/ross_ade/ross_ade_review_threequarter.png",
+    "audit/ross_ade/ross_ade_review_top.png",
+    "audit/ross_ade/ross_ade_osm_way_614516704.json"
+  ]
+}
