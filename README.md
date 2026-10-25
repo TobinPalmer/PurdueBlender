@@ -44,7 +44,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Krach Leadership Center | [krach_leadership_center.blend](modular/buildings/krach_leadership_center.blend) | Finished | 8.1/10 | — |
 | Krannert Building | [krannert_building.blend](modular/buildings/krannert_building.blend) | Finished | 8.0/10 | — |
 | Lambert Fieldhouse | [lambert_fieldhouse.blend](modular/buildings/lambert_fieldhouse.blend) | In progress | 8.0/10 | Tobin |
-| Lawson Hall | [lawson_hall.blend](modular/buildings/lawson_hall.blend) | In progress | 7.0/10 | Tobin |
+| Lawson Hall | [lawson_hall.blend](modular/buildings/lawson_hall.blend) | Finished | [8.1/10](audit/batch2_lawson/INDEPENDENT_REVIEW_round8.md) | — |
 | Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](modular/buildings/life_science_plant_and_soils_laboratory.blend) | Finished | 8.0/10 | — |
 | Lyles-Porter Hall | [lyles_porter_hall.blend](modular/buildings/lyles_porter_hall.blend) | Finished | 8.2/10 | — |
 | Mackey Arena | [mackey_arena.blend](modular/buildings/mackey_arena.blend) | Finished | 8.0/10 | — |
@@ -78,11 +78,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (182 total)
+## Unfinished buildings (181 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 92 buildings, Brady 60 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 91 buildings, Brady 60 buildings.
 
-### Detailed models still in progress or awaiting a grade (48)
+### Detailed models still in progress or awaiting a grade (47)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -117,7 +117,6 @@ This list excludes individual house parcels. The detailed models that are still 
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Rohan |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
-| Lawson Hall | [`lawson_hall.blend`](modular/buildings/lawson_hall.blend) | 7.0/10 | Tobin |
 | Neil Armstrong Hall | [`neil_armstrong_hall.blend`](modular/buildings/neil_armstrong_hall.blend) | 7.6/10 | Tobin |
 | Niswonger Aviation Tech | [`niswonger_aviation_tech.blend`](modular/buildings/niswonger_aviation_tech.blend) | 6.7/10 | Tobin |
 | Northwest Chiller Plant | [`northwest_chiller_plant.blend`](modular/buildings/northwest_chiller_plant.blend) | 7.5/10 | Tobin |

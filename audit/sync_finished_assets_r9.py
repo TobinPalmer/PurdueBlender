@@ -18,7 +18,7 @@ MASTER = ROOT / "purdue_campus_master.blend"
 MODULAR = ROOT / "modular"
 MANIFEST_PATH = MODULAR / "manifest.json"
 VERIFICATION_PATH = MODULAR / "verification.json"
-SYNC_REPORT_PATH = ROOT / "audit/master_sync_r10.json"
+SYNC_REPORT_PATH = ROOT / "audit/master_sync_r11.json"
 
 
 def read_json(path: Path):
@@ -75,6 +75,17 @@ records = {
         "validation_path": ROOT / "audit/owen_hall_independent_grade/gis_footprint_validation.json",
         "grade_json": ROOT / "audit/owen_hall_independent_grade/independent_scorecard_r3.json",
     },
+    "lawson_hall": {
+        "hash": "7a190341cef8c612672c6460850abddfd0f4b1b45165ef9dcbd4e41b1e5cc0eb",
+        "object_count": 619,
+        "grade_path": "../audit/batch2_lawson/INDEPENDENT_REVIEW_round8.md",
+        "accuracy_status": (
+            "independently graded 8.1/10; GIS FID 59 footprint and 619-object export verified; "
+            "L2/L3 partition traces and terrace are plan-derived; floor and roof heights remain estimated"
+        ),
+        "validation_path": ROOT / "audit/batch2_lawson/grade_reopen_r8.json",
+        "grade_json": ROOT / "audit/batch2_lawson/independent_scorecard_r8.json",
+    },
     "native_american_educational_and_cultural_center_nacc": {
         "hash": "e442e099cf94dde2b0d95f87e336ac550daf3445c56a3129c078ae64657e3305",
         "object_count": 806,
@@ -104,6 +115,8 @@ for asset_id, item in records.items():
         evidence_count = grade.get("evidence", {}).get("reopen", {}).get("asset_collection_objects")
     if asset_id == "owen_hall":
         evidence_count = grade.get("evidence", {}).get("reopened_object_count")
+    if asset_id == "lawson_hall":
+        evidence_count = grade.get("evidence", {}).get("export_object_count")
     if evidence_count is not None and int(evidence_count) != item["object_count"]:
         raise RuntimeError(f"{asset_id} grade object count does not match expected count")
     if item["validation_path"] is not None:
@@ -121,6 +134,10 @@ for asset_id, item in records.items():
             )
             validation_hash = validation.get("asset_sha256")
             validation_count = validation.get("collection_object_count")
+        elif asset_id == "lawson_hall":
+            validation_ok = validation.get("saved_file_reopened")
+            validation_hash = validation.get("sha256")
+            validation_count = validation.get("object_count")
         else:
             validation_ok = validation.get("passed")
             validation_hash = validation.get("asset_sha256")

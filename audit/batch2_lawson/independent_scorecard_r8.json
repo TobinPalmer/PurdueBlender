@@ -1,0 +1,82 @@
+{
+  "building": "Lawson Hall / Richard and Patricia Lawson Computer Science Building",
+  "revision": 8,
+  "review_date": "2026-10-25",
+  "reviewer": "Independent evaluator; exact saved asset reopened and GIS footprint recomputed",
+  "source_blend": "modular/buildings/lawson_hall.blend",
+  "source_sha256": "7a190341cef8c612672c6460850abddfd0f4b1b45165ef9dcbd4e41b1e5cc0eb",
+  "blender_version": "5.2.3 LTS",
+  "score": 8.1,
+  "max_score": 10,
+  "minimum_passing_score": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Purdue GIS BuildingShapes feature FID 59 is the Lawson Hall footprint source. I reopened the saved asset and independently sampled 21 points per each of the 54 GIS boundary edges against lower XY mesh edges of the shell, R7 closure and vestibule. All 1,134/1,134 samples are within 0.10 m; the maximum nearest-edge distance is 0.0000152 m.",
+      "deduction": "The comparison establishes horizontal lower-wall-line correspondence only; it does not establish height, wall thickness, current as-built changes, or survey accuracy of the GIS source."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "The saved asset root reopens at identity transform. The documented L1 plan/GIS controls preserve north-up orientation and approximately 0.0921 by 0.09234 m per pixel. R8 reused those controls for the L2 and L3 sheets at approximately 0.082895 by 0.083104 m per pixel after raster scaling. The existing master marker record gives [-282.5, 44.0, 0.0], zero rotation and unit scale.",
+      "deduction": "Plan registration remains an approximate raster fit with about 0.3 m pick uncertainty, and the master marker was not freshly reopened during this asset-only evaluation."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": "Official Purdue L2 and L3 plans now support source-derived room partitions on both additional floor slabs. The L3 sheet names Tolonga Terrace, and Purdue's building-hours listing confirms a third-floor terrace/balcony; the model now includes a terrace notch. The rooftop silhouette was reduced using completed/construction photos as visual references.",
+      "deduction": "The L2/L3 story heights, partition elevations, roof datum (13.8 m), maximum Z (19.0 m), and penthouse/equipment dimensions remain estimates. Checked plans do not establish all five GIS-reported levels, a measured roof elevation, or continuous 3D stairs."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "The model retains the brick/stone horizontal banding, repeated openings, curved Commons frontage, and photo-guided vestibule/canopy. The R8 exterior includes the terrace notch and revised penthouse silhouette; Purdue's 2006 images support their relative appearance, and the 2024 image supports the principal entrance treatment.",
+      "deduction": "The exterior remains a schematic architectural model: roof and equipment sizes are visually estimated; window cadence and glazing/framing dimensions are not fully documented by measured elevations, and a roof notch is modeled without source-backed guardrail/elevation detail."
+    },
+    {
+      "criterion": "Interior, materials, modular export, and evidence",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "The saved collection contains the existing L1 schematic interior plus L2/L3 plan-derived partition geometry: 75 retained L2 source segments and 87 L3 segments, with slabs on both floors. Blender 5.2.3 reopened the exact asset: 619 objects / 616 meshes, 41 assigned materials, identity root, no unmaterialed meshes, no missing external image paths, and no duplicate R8-named objects. The Harris Commons wall remains a 4-by-4 arrangement of 16 modules supported by Purdue's 2011 report.",
+      "deduction": "The added upper floors are deliberately sparse schematic wall traces: many raster partitions/doors and all room furnishings are absent; the L2/L3 elevations are estimated; no complete fourth/fifth-floor or basement plans and no verified continuous stair route are included."
+    }
+  ],
+  "evidence": {
+    "independent_reopen_record": "audit/batch2_lawson/grade_reopen_r8.json",
+    "gis_recomputed_samples": 1134,
+    "gis_samples_within_0_10m": 1134,
+    "gis_max_nearest_edge_distance_m": 0.0000151412,
+    "export_object_count": 619,
+    "mesh_count": 616,
+    "assigned_material_count": 41,
+    "root_identity": true,
+    "unmaterialed_mesh_count": 0,
+    "missing_external_images": 0,
+    "floor_2_source_segments": 75,
+    "floor_3_source_segments": 87,
+    "renders_inspected": [
+      "audit/batch2_lawson/exterior_round8.png",
+      "audit/batch2_lawson/floor2_layout_round8.png",
+      "audit/batch2_lawson/floor3_layout_round8.png",
+      "audit/batch2_lawson/gis_plan_overlay_l2_round8.png",
+      "audit/batch2_lawson/gis_plan_overlay_l3_round8.png",
+      "audit/batch2_lawson/plan_l3_terrace_detail_round8.png"
+    ]
+  },
+  "source_urls": [
+    "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D59&outFields=*&returnGeometry=true&outSR=4326&f=json",
+    "https://www.cs.purdue.edu/resources/docs/lawson_1.PDF",
+    "https://www.cs.purdue.edu/resources/docs/lawson_2.PDF",
+    "https://www.cs.purdue.edu/resources/docs/lawson_3.PDF",
+    "https://www.cs.purdue.edu/resources/building-hours.html",
+    "https://www.cs.purdue.edu/news/articles/2006/building-update-march.html",
+    "https://www.cs.purdue.edu/news/articles/2006/lawson-dedication.html",
+    "https://www.cs.purdue.edu/news/articles/2011/harris-video-wall.html"
+  ]
+}

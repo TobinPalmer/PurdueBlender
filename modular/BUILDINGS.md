@@ -20,7 +20,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Hovde Hall | [hovde_hall.blend](buildings/hovde_hall.blend) | 760 |
 | Knoy Hall | [knoy_hall.blend](buildings/knoy_hall.blend) | 158 |
 | Krannert Building | [krannert_building.blend](buildings/krannert_building.blend) | 670 |
-| Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 601 |
+| Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 619 |
 | Mackey Arena | [mackey_arena.blend](buildings/mackey_arena.blend) | 391 |
 | Math Sciences | [math_sciences.blend](buildings/math_sciences.blend) | 593 |
 | Mccutcheon Hall | [mccutcheon_hall.blend](buildings/mccutcheon_hall.blend) | 219 |

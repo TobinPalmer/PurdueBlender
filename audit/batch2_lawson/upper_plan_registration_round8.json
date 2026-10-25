@@ -1,0 +1,62 @@
+{
+  "method": "21 GIS boundary samples per edge searched for the nearest low-chroma teal perimeter stroke on the official Purdue plan raster; registration uses R7 L1/GIS controls rescaled for 120 dpi rasterization.",
+  "registration": {
+    "control_points_l1_px": [
+      [
+        323,
+        86
+      ],
+      [
+        627,
+        86
+      ],
+      [
+        298,
+        986
+      ]
+    ],
+    "control_local_xy_m": [
+      [
+        -13.209,
+        40.611
+      ],
+      [
+        14.791,
+        40.547
+      ],
+      [
+        -15.553,
+        -42.493
+      ]
+    ],
+    "l2_l3_m_per_px": [
+      0.08289450000000001,
+      0.08310400002000001
+    ],
+    "raster_pick_uncertainty_m": "approx. 0.3 m from source line width and manual control-point picks"
+  },
+  "floors": {
+    "2": {
+      "source_pdf": "https://www.cs.purdue.edu/resources/docs/lawson_2.PDF",
+      "raster": "plan_l2_round8.png",
+      "sample_count": 975,
+      "total_expected_samples": 1113,
+      "mean_nearest_teal_stroke_distance_m": 0.12088820950736552,
+      "max_nearest_teal_stroke_distance_m": 0.7252030035222696,
+      "within_0_30m": 905,
+      "overlay": "gis_plan_overlay_l2_round8.png",
+      "caveat": "The nearest-stroke metric is a raster outline check, not survey accuracy; colored edge aliasing and printed-plan line width still impose about 0.3 m registration uncertainty."
+    },
+    "3": {
+      "source_pdf": "https://www.cs.purdue.edu/resources/docs/lawson_3.PDF",
+      "raster": "plan_l3_round8.png",
+      "sample_count": 1027,
+      "total_expected_samples": 1113,
+      "mean_nearest_teal_stroke_distance_m": 0.10594488166158925,
+      "max_nearest_teal_stroke_distance_m": 0.6699590152075553,
+      "within_0_30m": 950,
+      "overlay": "gis_plan_overlay_l3_round8.png",
+      "caveat": "The nearest-stroke metric is a raster outline check, not survey accuracy; colored edge aliasing and printed-plan line width still impose about 0.3 m registration uncertainty."
+    }
+  }
+}
