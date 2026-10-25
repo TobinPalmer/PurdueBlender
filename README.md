@@ -199,36 +199,36 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | life science ranges greenhouse and service building | [`massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend`](modular/buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | Brady |
 | lilly hall | [`massing_lilly_hall_e7fc13e.blend`](modular/buildings/massing_lilly_hall_e7fc13e.blend) | Brady |
 | mann hall | [`massing_mann_hall_2b4ebda.blend`](modular/buildings/massing_mann_hall_2b4ebda.blend) | Brady |
-| marc and sharon hagle hall hagl | [`massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend`](modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | Tobin |
-| marriot hall | [`massing_marriot_hall_7cd3eb5.blend`](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | Tobin |
-| marstellar | [`massing_marstellar_0c2ea90.blend`](modular/buildings/massing_marstellar_0c2ea90.blend) | Tobin |
-| martin c jischke hall of biomedical engineering | [`massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend`](modular/buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | Tobin |
-| matthews hall mthw | [`massing_matthews_hall_mthw_9326885.blend`](modular/buildings/massing_matthews_hall_mthw_9326885.blend) | Tobin |
-| mcdonald s | [`massing_mcdonald_s_ab77b70.blend`](modular/buildings/massing_mcdonald_s_ab77b70.blend) | Tobin |
-| meredith hall | [`massing_meredith_hall_4bb4188.blend`](modular/buildings/massing_meredith_hall_4bb4188.blend) | Tobin |
-| meredith hall south | [`massing_meredith_hall_south_ffbc444.blend`](modular/buildings/massing_meredith_hall_south_ffbc444.blend) | Tobin |
-| mri modular facility mri1 | [`massing_mri_modular_facility_mri1_a93e22b.blend`](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | Tobin |
-| northwestern parking garage | [`massing_northwestern_parking_garage_979f1a2.blend`](modular/buildings/massing_northwestern_parking_garage_979f1a2.blend) | Tobin |
-| our saviour lutheran church | [`massing_our_saviour_lutheran_church_118afa2.blend`](modular/buildings/massing_our_saviour_lutheran_church_118afa2.blend) | Tobin |
-| phi delta theta | [`massing_phi_delta_theta_258cddd.blend`](modular/buildings/massing_phi_delta_theta_258cddd.blend) | Tobin |
-| phi kappa tau | [`massing_phi_kappa_tau_139b9d7.blend`](modular/buildings/massing_phi_kappa_tau_139b9d7.blend) | Tobin |
-| philip e nelson hall of food science nlsn | [`massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend`](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | Tobin |
-| pi kappa phi | [`massing_pi_kappa_phi_50e4645.blend`](modular/buildings/massing_pi_kappa_phi_50e4645.blend) | Tobin |
-| provenance apartments | [`massing_provenance_apartments_d913384.blend`](modular/buildings/massing_provenance_apartments_d913384.blend) | Tobin |
-| provenance apartments 001 | [`massing_provenance_apartments_001_1b3223b.blend`](modular/buildings/massing_provenance_apartments_001_1b3223b.blend) | Tobin |
-| provenance apartments 002 | [`massing_provenance_apartments_002_a9a7f4a.blend`](modular/buildings/massing_provenance_apartments_002_a9a7f4a.blend) | Tobin |
-| provenance apartments 003 | [`massing_provenance_apartments_003_682c8e8.blend`](modular/buildings/massing_provenance_apartments_003_682c8e8.blend) | Tobin |
-| provenance apartments 004 | [`massing_provenance_apartments_004_1bc10e3.blend`](modular/buildings/massing_provenance_apartments_004_1bc10e3.blend) | Tobin |
-| provenance apartments 005 | [`massing_provenance_apartments_005_960f6b0.blend`](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | Tobin |
-| purdue center for regional development scho | [`massing_purdue_center_for_regional_development_scho_a2375c9.blend`](modular/buildings/massing_purdue_center_for_regional_development_scho_a2375c9.blend) | Tobin |
-| purdue drug discovery facility | [`massing_purdue_drug_discovery_facility_fc72a4a.blend`](modular/buildings/massing_purdue_drug_discovery_facility_fc72a4a.blend) | Tobin |
-| purdue fire department | [`massing_purdue_fire_department_520430b.blend`](modular/buildings/massing_purdue_fire_department_520430b.blend) | Tobin |
-| purdue football performance complex | [`massing_purdue_football_performance_complex_f106c29.blend`](modular/buildings/massing_purdue_football_performance_complex_f106c29.blend) | Tobin |
-| purdue graduate student center | [`massing_purdue_graduate_student_center_af9c5c7.blend`](modular/buildings/massing_purdue_graduate_student_center_af9c5c7.blend) | Tobin |
-| purdue lutheran ministry | [`massing_purdue_lutheran_ministry_5425b3c.blend`](modular/buildings/massing_purdue_lutheran_ministry_5425b3c.blend) | Tobin |
-| purdue police department | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | Tobin |
-| purdue university daniel turf center | [`massing_purdue_university_daniel_turf_center_e69b7da.blend`](modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | Tobin |
-| purdue village administration building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | Tobin |
+| marc and sharon hagle hall hagl | [`massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend`](modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | Brady |
+| marriot hall | [`massing_marriot_hall_7cd3eb5.blend`](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | Brady |
+| marstellar | [`massing_marstellar_0c2ea90.blend`](modular/buildings/massing_marstellar_0c2ea90.blend) | Brady |
+| martin c jischke hall of biomedical engineering | [`massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend`](modular/buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | Brady |
+| matthews hall mthw | [`massing_matthews_hall_mthw_9326885.blend`](modular/buildings/massing_matthews_hall_mthw_9326885.blend) | Brady |
+| mcdonald s | [`massing_mcdonald_s_ab77b70.blend`](modular/buildings/massing_mcdonald_s_ab77b70.blend) | Brady |
+| meredith hall | [`massing_meredith_hall_4bb4188.blend`](modular/buildings/massing_meredith_hall_4bb4188.blend) | Brady |
+| meredith hall south | [`massing_meredith_hall_south_ffbc444.blend`](modular/buildings/massing_meredith_hall_south_ffbc444.blend) | Brady |
+| mri modular facility mri1 | [`massing_mri_modular_facility_mri1_a93e22b.blend`](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | Brady |
+| northwestern parking garage | [`massing_northwestern_parking_garage_979f1a2.blend`](modular/buildings/massing_northwestern_parking_garage_979f1a2.blend) | Brady |
+| our saviour lutheran church | [`massing_our_saviour_lutheran_church_118afa2.blend`](modular/buildings/massing_our_saviour_lutheran_church_118afa2.blend) | Brady |
+| phi delta theta | [`massing_phi_delta_theta_258cddd.blend`](modular/buildings/massing_phi_delta_theta_258cddd.blend) | Brady |
+| phi kappa tau | [`massing_phi_kappa_tau_139b9d7.blend`](modular/buildings/massing_phi_kappa_tau_139b9d7.blend) | Brady |
+| philip e nelson hall of food science nlsn | [`massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend`](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | Brady |
+| pi kappa phi | [`massing_pi_kappa_phi_50e4645.blend`](modular/buildings/massing_pi_kappa_phi_50e4645.blend) | Brady |
+| provenance apartments | [`massing_provenance_apartments_d913384.blend`](modular/buildings/massing_provenance_apartments_d913384.blend) | Brady |
+| provenance apartments 001 | [`massing_provenance_apartments_001_1b3223b.blend`](modular/buildings/massing_provenance_apartments_001_1b3223b.blend) | Brady |
+| provenance apartments 002 | [`massing_provenance_apartments_002_a9a7f4a.blend`](modular/buildings/massing_provenance_apartments_002_a9a7f4a.blend) | Brady |
+| provenance apartments 003 | [`massing_provenance_apartments_003_682c8e8.blend`](modular/buildings/massing_provenance_apartments_003_682c8e8.blend) | Brady |
+| provenance apartments 004 | [`massing_provenance_apartments_004_1bc10e3.blend`](modular/buildings/massing_provenance_apartments_004_1bc10e3.blend) | Brady |
+| provenance apartments 005 | [`massing_provenance_apartments_005_960f6b0.blend`](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | Brady |
+| purdue center for regional development scho | [`massing_purdue_center_for_regional_development_scho_a2375c9.blend`](modular/buildings/massing_purdue_center_for_regional_development_scho_a2375c9.blend) | Brady |
+| purdue drug discovery facility | [`massing_purdue_drug_discovery_facility_fc72a4a.blend`](modular/buildings/massing_purdue_drug_discovery_facility_fc72a4a.blend) | Brady |
+| purdue fire department | [`massing_purdue_fire_department_520430b.blend`](modular/buildings/massing_purdue_fire_department_520430b.blend) | Brady |
+| purdue football performance complex | [`massing_purdue_football_performance_complex_f106c29.blend`](modular/buildings/massing_purdue_football_performance_complex_f106c29.blend) | Brady |
+| purdue graduate student center | [`massing_purdue_graduate_student_center_af9c5c7.blend`](modular/buildings/massing_purdue_graduate_student_center_af9c5c7.blend) | Brady |
+| purdue lutheran ministry | [`massing_purdue_lutheran_ministry_5425b3c.blend`](modular/buildings/massing_purdue_lutheran_ministry_5425b3c.blend) | Brady |
+| purdue police department | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | Brady |
+| purdue university daniel turf center | [`massing_purdue_university_daniel_turf_center_e69b7da.blend`](modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | Brady |
+| purdue village administration building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | Brady |
 | ralph bettye bailey hall | [`massing_ralph_bettye_bailey_hall_406c4db.blend`](modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend) | Tobin |
 | redeemer lutheran church | [`massing_redeemer_lutheran_church_2e5ce2f.blend`](modular/buildings/massing_redeemer_lutheran_church_2e5ce2f.blend) | Tobin |
 | riverside covenannt church | [`massing_riverside_covenannt_church_3a60684.blend`](modular/buildings/massing_riverside_covenannt_church_3a60684.blend) | Tobin |
