@@ -1,0 +1,106 @@
+{
+  "evaluator": "independent_physics_building_review_r2",
+  "building": "Physics Building / PHYS",
+  "review_date": "2026-10-25",
+  "asset": "modular/buildings/physics_building_phys_3bf42f3.blend",
+  "asset_sha256": "7dc4f484c84cb0f7c5e6c5c676cf4d3e0e7fb80f434fe4862c1efd4fb342a7f5",
+  "blender_version": "5.2.3 LTS",
+  "score": 8.4,
+  "max_score": 10,
+  "minimum_passing_score": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Purdue GIS FID 273 identifies PHYS at 525 Northwestern Avenue. Independently reopened mesh 'PHYS | GIS footprint brick envelope' has a bidirectional maximum nearest-vertex deviation of 0.00000054 m from the 33-vertex GIS ring after the project transform; the ring and its projection reconciliation are documented in the evidence record.",
+      "limitation": "The local WGS84-to-meter transform is approximate, not a surveyed CRS."
+    },
+    {
+      "criterion": "Position, orientation, and scale",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "The master file reopened without saving. Placement_physics_building instances Asset_physics_building from the expected linked asset path. Its location [20.73237228, 300.32412720, 0] m differs from the GIS-derived manifest origin [20.732372, 300.324127] by 0.00000035 m; scale is one and rotation is zero. The reloaded master collection contains the current 319 objects. The source footprint orientation is unchanged and verified against the GIS ring.",
+      "limitation": "The GIS transform itself is project-local approximate positioning, not survey-grade georeferencing."
+    },
+    {
+      "criterion": "Supported floors, height, and roof form",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "Purdue GIS F01/F02/F03 values (13, 27.1, 40.15 ft) and R=52.25 ft support the three principal story datums and approximate roof datum used by the model; the three-story red-brick facade and red tiled roof are visible in Purdue photos. R2 retains this approximately three-story form and applies a red tile surface with eaves/ridge treatment.",
+      "limitation": "GIS NUM_LEVELS=8 and Extrution=84 conflict with the F-level fields and photos. The source has no section/elevation confirming exact wall height, roof pitch, roof thickness, or basement dimensions; the asset top is about 0.17 m above the nominal 52.25 ft roof datum."
+    },
+    {
+      "criterion": "Facade, main entrance, and distinctive features",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": "R2 improves the NW Avenue frontage with taller divided sash assemblies, running-bond brick, pale story bands, projecting eave/cornice, and a clearer central light-stone PHYSICS sign and three glazed entry bays. The refreshed exterior and entry renders show a sidewalk, curb, roadway, lawn, low hedge, and fence as review-only context. A GIS-aligned glazed skybridge and secondary arched entrance are represented; Purdue photos support the broad architectural language.",
+      "limitation": "Window counts and spacing, entrance measurements, basement sash, roof profile and much of the facade detailing remain estimates. The simple window groups and three-door composition still do not reproduce the finer frame, masonry, banner, and corner details visible in the references."
+    },
+    {
+      "criterion": "Materials, interior, modular export, and evidence",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": "A fresh Blender 5.2.3 reopen found 319 collection objects and 317 meshes; the exact manifest object list/count and all local bounds agree, every mesh has materials, there are no missing external image dependencies, and procedural Brick Texture nodes are present in masonry/roof materials. The master link reloads the same 319-object collection. R2 adds ground/first/second level plates and separate schematic corridor/room partitions guided by Purdue evacuation-plan functions, and new cutaway/ground-plan previews.",
+      "limitation": "Interior plans and partition placement are schematic; room dimensions and detailed uses are not modeled as-built, and interiors remain sparse compared with the exterior. Bridge span/elevation and roof form also remain partly interpretive."
+    }
+  ],
+  "evidence": {
+    "asset_reopen_file": "independent_reopen_r2.json",
+    "master_marker_check_file": "independent_master_marker_r2.json",
+    "reopened_asset_hash_matches_requested": true,
+    "collection_object_count": 319,
+    "collection_mesh_count": 317,
+    "object_inventory_matches_manifest": true,
+    "manifest_bound_errors_m": [[0, 0], [0, 0], [0, 0]],
+    "unmaterialed_meshes": 0,
+    "missing_external_images": 0,
+    "gis_expected_ring_vertices": 33,
+    "model_unique_xy_vertices": 33,
+    "gis_to_model_max_nearest_m": 0.00000053312015,
+    "model_to_gis_max_nearest_m": 0.00000053312015,
+    "master_marker_matches_manifest": true,
+    "master_marker_error_m": 0.0000003457356363,
+    "master_link_path_matches_asset": true,
+    "master_linked_object_count": 319,
+    "master_direct_root_link": false,
+    "previews_inspected": [
+      "physics_building_front_nw_preview.png",
+      "physics_building_entry_detail_preview.png",
+      "physics_building_roof_detail_preview.png",
+      "physics_building_interior_cutaway_preview.png",
+      "physics_building_interior_ground_plan_preview.png"
+    ],
+    "reference_photos_inspected": [
+      "purdue_physics_official_facade.jpg",
+      "purdue_physics_official_entrance.jpg",
+      "purdue_physics_event_2022.jpg"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Purdue Physics and Astronomy exterior photo",
+      "url": "https://www.physics.purdue.edu/xia/contact.html",
+      "image_url": "https://www.physics.purdue.edu/xia/images/purduephysics.jpeg"
+    },
+    {
+      "title": "Purdue Events, Physics Building exterior image",
+      "url": "https://events.purdue.edu/physics_building",
+      "image_url": "https://localist-images.azureedge.net/photos/40247397308836/card%402x/7a02b4b0e80baf717abf429dfe44cab0f62dea1a.jpg"
+    },
+    {
+      "title": "Purdue Physics campus resources entrance photograph",
+      "url": "https://www.physics.purdue.edu/academic-programs/undergraduate/campus_resources.html",
+      "image_url": "https://www.physics.purdue.edu/academic-programs/images/registrar.jpg"
+    },
+    {
+      "title": "Purdue Physics Building Evacuation Routes",
+      "url": "https://www.physics.purdue.edu/docs/resources/PHYS-Building-Evacuation-Routes.pdf"
+    },
+    {
+      "title": "Purdue GIS BuildingShapesZip4 FeatureServer, FID 273",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D273&outFields=*&returnGeometry=true&outSR=4326&f=pjson"
+    }
+  ]
+}

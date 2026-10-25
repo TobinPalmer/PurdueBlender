@@ -1,0 +1,94 @@
+{
+  "evaluator": "independent_physics_building_review_r1",
+  "building": "Physics Building / PHYS",
+  "review_date": "2026-10-25",
+  "asset": "modular/buildings/physics_building_phys_3bf42f3.blend",
+  "asset_sha256": "e7c2bb0062b6a692b57618352f569e7910d38ecefbd688263a73cb390a5f7620",
+  "blender_version": "5.2.3 LTS",
+  "score": 7.6,
+  "max_score": 10,
+  "minimum_passing_score": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Purdue GIS FID 273 identifies PHYS at 525 Northwestern Avenue. Independently reopened mesh 'PHYS | GIS footprint brick envelope' has a bidirectional max nearest-vertex deviation of 0.00000054 m from the 33-vertex GIS ring after the project transform; the GIS source and two cached Purdue snapshots are documented in the evidence record.",
+      "limitation": "The equirectangular project transform is approximate, not a survey CRS; GIS height/level fields conflict."
+    },
+    {
+      "criterion": "Position, orientation, and scale",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "The manifest placement origin is [20.732372, 300.324127] m, matching the asset evidence's GIS-derived campus origin. The preserved GIS ring gives the correct local orientation and footprint scale. Reopened asset bounds are approximately 106.446 x 120.520 m including relief/details.",
+      "limitation": "The master marker and refreshed master library were not reopened in this review; there is a small difference between recorded manifest vertical bounds and recomputed mesh bounds."
+    },
+    {
+      "criterion": "Supported floors, height, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": "Purdue photos show three principal visible levels and a low red tiled roof. GIS R=52.25 ft is documented and used as an approximate roof datum; the model has a low-pitch hipped roof and an overall vertical mesh bound of -0.09 to 16.09 m.",
+      "limitation": "GIS NUM_LEVELS=8 and Extrution=84 conflict with F01/F02/F03/R and the visible photo. No measured elevation or section supports modeled wall height, story intervals, roof pitch, or basement-window dimensions. The roof reads as a broad, nearly flat cap in the submitted NW preview and tile relief is not clearly legible."
+    },
+    {
+      "criterion": "Facade, main entrance, and distinctive features",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": "The model uses running-bond brick, repeated dark sash openings, pale story bands, a central PHYSICS panel, three entrance bays, stone steps/rails, a secondary arched portal, and a glazed MSEE skybridge. These features broadly agree with the submitted Purdue facade and entrance photographs; the evidence record marks dimensions as estimated.",
+      "limitation": "The facade remains visibly schematic: windows are mostly square/simple dark openings where the reference shows taller sash with detailed framing; the primary entrance composition and roof cornice are simplified. The preview is an isolated gray-ground render, so site landscape/context and source-appropriate lighting are absent."
+    },
+    {
+      "criterion": "Materials, interior, modular export, and evidence",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": "Fresh Blender reopen found 175 objects, 173 meshes, materials on every mesh, no missing external image dependencies, and a procedural brick material whose Brick Texture feeds Principled Base Color. The asset contains a schematic vestibule, twelve table/monitor sets, entry steps, and a multi-part glazed skybridge.",
+      "limitation": "The interior is sparse and schematic, with no source-verified floor-by-floor room plan. The shared manifest still lists 110 objects rather than the reopened 175 and its Z bound differs from the reopened mesh bound; the root master library link has not been refreshed or checked."
+    }
+  ],
+  "evidence": {
+    "independent_reopen_file": "independent_reopen_r1.json",
+    "preview_files_inspected": [
+      "physics_building_front_nw_preview.png",
+      "physics_building_side_sw_preview.png"
+    ],
+    "reference_files_inspected": [
+      "purdue_physics_official_facade.jpg",
+      "purdue_physics_official_entrance.jpg",
+      "purdue_physics_event_2022.jpg"
+    ],
+    "gis_source_snapshot": "physics_building_fid273_gis_snapshot.json",
+    "gis_expected_ring_vertices": 33,
+    "base_mesh_unique_xy_vertices": 33,
+    "gis_to_model_max_nearest_m": 0.00000053312015,
+    "model_to_gis_max_nearest_m": 0.00000053312015,
+    "collection_object_count": 175,
+    "collection_mesh_count": 173,
+    "unmaterialed_mesh_count": 0,
+    "missing_external_images": 0,
+    "manifest_object_count": 110,
+    "manifest_placement_origin_xy_m": [20.732372, 300.324127],
+    "root_master_refresh_checked": false
+  },
+  "sources": [
+    {
+      "title": "Purdue Physics and Astronomy exterior photo",
+      "url": "https://www.physics.purdue.edu/xia/contact.html",
+      "image_url": "https://www.physics.purdue.edu/xia/images/purduephysics.jpeg"
+    },
+    {
+      "title": "Purdue Events, Physics Building",
+      "url": "https://events.purdue.edu/physics_building",
+      "image_url": "https://localist-images.azureedge.net/photos/40247397308836/card%402x/7a02b4b0e80baf717abf429dfe44cab0f62dea1a.jpg"
+    },
+    {
+      "title": "Purdue Physics campus resources entrance photograph",
+      "url": "https://www.physics.purdue.edu/academic-programs/undergraduate/campus_resources.html",
+      "image_url": "https://www.physics.purdue.edu/academic-programs/images/registrar.jpg"
+    },
+    {
+      "title": "Purdue GIS BuildingShapesZip4 FeatureServer, FID 273",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D273&outFields=*&returnGeometry=true&outSR=4326&f=pjson"
+    }
+  ]
+}

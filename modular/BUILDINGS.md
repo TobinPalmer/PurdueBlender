@@ -78,7 +78,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](buildings/national_soil_erosion_laboratory.blend) | 560 |
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](buildings/native_american_educational_and_cultural_center_nacc.blend) | 806 |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 414 |
-| Physics Building | [physics_building_phys_3bf42f3.blend](buildings/physics_building_phys_3bf42f3.blend) | 110 |
+| Physics Building | [physics_building_phys_3bf42f3.blend](buildings/physics_building_phys_3bf42f3.blend) | 319 |
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](buildings/ray_w_herrick_laboratories.blend) | 89 |
 
 SAMARA retains its legacy massing filename and campus-coordinate direct link for compatibility with the existing master. Its measured geometry, independent grade, and remaining registration uncertainty are documented in the [SAMARA evidence record](../audit/samara/EVIDENCE.md).

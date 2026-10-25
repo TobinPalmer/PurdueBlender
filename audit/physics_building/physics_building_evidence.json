@@ -35,7 +35,7 @@
         "audit/batchC_physics_official_footprint.json"
       ],
       "feature_match": "Both snapshots contain one FID 273 / PHYS polygon with the same single 34-vertex EPSG:4326 ring; every coordinate matches.",
-      "calculation": "Project local ring shoelace area is 5158.8513 m\u00b2. Purdue Shape__Area is 8918.0078 m\u00b2 in the underlying Web Mercator service plane. At centroid latitude 40.4300\u00b0, 8918.0078*cos(latitude)^2 = 5167.30 m\u00b2, within 0.17% of the locally transformed ring. This is the expected Web Mercator area scale distortion (sec(latitude)^2), plus small projection / rounding differences; it is not a second footprint or omitted ring.",
+      "calculation": "Project local ring shoelace area is 5158.8513 m². Purdue Shape__Area is 8918.0078 m² in the underlying Web Mercator service plane. At centroid latitude 40.4300°, 8918.0078*cos(latitude)^2 = 5167.30 m², within 0.17% of the locally transformed ring. This is the expected Web Mercator area scale distortion (sec(latitude)^2), plus small projection / rounding differences; it is not a second footprint or omitted ring.",
       "source_crs_detail": "Service-native EPSG:3857/102100 Shape__Area is planar Web Mercator area; API response coordinates were requested in EPSG:4326. Project local coordinates use the project equirectangular approximation.",
       "geometry_review": "GIS source has one exterior ring and no additional hole/disjoint rings. Shape is unchanged in this revision."
     }
@@ -93,73 +93,94 @@
     "uncertainty": "No surveyed vertical datum or architectural section found."
   },
   "geometry_edits": [
-    "Created independent detailed library from FID 273 footprint; retained local project coordinate frame.",
-    "Extruded exact GIS outline to estimated 12.20 m main wall line; modeled approximately 3 visible stories.",
-    "Added estimated hipped red tile roof to 15.92 m roof datum based on GIS R field and Purdue photographs.",
-    "Added repeated window/sill/stone trim rhythm based on photos; opening count, dimensions and individual elevations are estimates.",
-    "Added a schematic central stone entry and large arched upper window as shown in official imagery; exact entrance side and dimensions remain estimated.",
-    "Did not model interior, since no floor-plan evidence was verified.",
-    "Did not model exterior skybridge because the cited photo shows a connection but its endpoint, dimensions and relation to the GIS footprint could not be independently verified."
+    "Created the building library asset from Purdue GIS FID 273 and preserved its local project coordinate frame and wall footprint.",
+    "Extruded the exact GIS outline to an estimated 12.20 m main wall line; retained the approximately three-story visible envelope.",
+    "Rebuilt the low hipped roof from the same GIS outline at the GIS R-field roof datum estimate of 15.92 m; applied meter-scale red-clay tile UVs oriented to the GIS long axis and one aligned ridge cap.",
+    "Added repeated dark sash bays, running-bond procedural brick, pale limestone story belts/cornice, and a small basement sash tier based on official Purdue photographs; opening count and dimensions remain estimates.",
+    "Placed a centered light-stone PHYSICS panel and three glazed entrance bays on the photo-supported NW Avenue facade; retained the secondary arched entrance on the other elevation.",
+    "Retained schematic entry vestibule/interior cues and the GIS-aligned MSEE skybridge; detailed floor-by-floor interior and exact bridge superstructure remain incomplete or interpretive.",
+    "R2: Refined exterior sash proportions toward the taller photographic window ratio and added raised charcoal perimeter frames, central meeting stiles, and horizontal sash rails on facade windows.",
+    "R2: Added a layered shadow fascia and projecting pale-stone eave moulding, engaged pilasters at the three-door entrance, door glazing divisions, and sign-panel corner details.",
+    "R2: Added inset ground/first/second visible-floor plates and level-separated schematic corridor/room partitions guided by Purdue evacuation-plan functions; no room dimension or exact partition placement is claimed as surveyed.",
+    "R2: Added a review-only Northwestern Avenue sidewalk, curb, roadway, lawn, low hedges, and fence to improve scale and frontage context in the exterior preview; these context objects are not part of the library asset."
   ],
   "validation": {
     "reopened": true,
-    "preview": "physics_building_preview.png",
+    "preview": "physics_building_front_nw_preview.png",
     "model_units": "meters",
     "asset_collection": "Asset_physics_building",
-    "uncertainty": "Footprint and origin are GIS-derived; area is inconsistent with service Shape__Area, height/facade details estimated; entrance frontage selection unverified. Google Street View not directly inspected.",
-    "reopen_check": "Saved, reopened from the saved .blend in Blender 5.2.3, and rerendered from that reopened scene; stable collection, placement_origin_xy_m, geometry, materials and source-file hash checked.",
-    "object_count": 24,
-    "mesh_count": 23,
+    "uncertainty": "The GIS wall footprint and campus origin remain verified. Exterior window, cornice and entry detail follows official photos; detailed story heights, roof pitch, basement window size/count, and internal room dimensions remain estimates. Interior corridors/functions follow official plans schematically; preview landscaping/context is render-only.",
+    "reopen_check": "Blender 5.2.3 loaded the saved asset in a fresh process. Verified 319 collection objects, 317 materialized meshes, no missing external images, bounds, and bidirectional GIS footprint vertex agreement within 0.00000054 m.",
+    "object_count": 319,
+    "mesh_count": 317,
     "asset_bounds_local_m": [
       [
-        -53.22275924682617,
-        53.222755432128906
+        -53.4164924621582,
+        53.416481018066406
       ],
       [
-        -60.25985336303711,
-        60.259849548339844
+        -60.45307159423828,
+        60.45307922363281
       ],
       [
         -0.09000000357627869,
-        15.920000076293945
+        16.09000015258789
       ]
     ],
     "saved_and_reopened": true,
-    "preview_path": "audit\\physics_building\\physics_building_preview.png",
-    "source_sha256_after_save_and_render": "bf3b56b340dda68f4f9f2da09d0270e8c8b097c9a2aac2a41aa4c4c4ece59cce"
+    "preview_path": "audit/physics_building/physics_building_front_nw_preview.png",
+    "source_sha256_after_save_and_render": "7dc4f484c84cb0f7c5e6c5c676cf4d3e0e7fb80f434fe4862c1efd4fb342a7f5",
+    "secondary_preview_path": "audit/physics_building/physics_building_entry_detail_preview.png",
+    "footprint_note": "GIS envelope base vertices retained; facade relief/details are additive. Roof rebuilt from the same GIS footprint ring; no XY footprint edits.",
+    "roof_preview_path": "audit/physics_building/physics_building_roof_detail_preview.png",
+    "interior_plan_preview_path": "audit/physics_building/physics_building_interior_ground_plan_preview.png"
   },
   "revision": {
-    "date": "2026-10-24",
+    "date": "2026-10-25",
     "notes": [
       "Compared the same FID 273 one-ring, 34-vertex footprint in two Purdue GIS snapshots and documented the Web Mercator/project-frame area reconciliation.",
       "Rebuilt the central portal, prominent PHYSICS sign, arched upper window and fanlight divisions; relocated/rebuilt the source skybridge to align its ends with the nearest PHYS/MSEE GIS wall points.",
       "Saved the calculated MSEE-aligned source-local/master-coordinate endpoint transform in the evidence report; master placements are unchanged and span/height remain estimated.",
-      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived."
+      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived.",
+      "Corrected the principal NW Avenue frontage to have three glazed entrance bays with a legible PHYSICS inscription on a light-stone panel; retained the secondary arched entrance on the other elevation.",
+      "Added a running-bond procedural brick pattern, small basement sash tier, and more legible pale horizontal stone bands along the primary street facade.",
+      "Rebuilt the roof surface across the exact GIS outline, applied GIS-axis-aligned meter-scale clay tile UVs, and replaced three offset ridge bars with one centered ridge cap aligned to the GIS long axis.",
+      "Rendered review previews after a fresh Blender reopen. Temporary area lights and camera placements used for previews only; not saved into the asset.",
+      "R2: Added tall charcoal divided sash frames, a more legible eave shadow fascia/limestone crown, entrance pilasters and refined door/transom muntins based on Purdue facade photographs.",
+      "R2: Added inset floor plates and separate ground/first/second floor circulation partitions guided by Purdue’s official evacuation floor plans. Exact interior dimensions/partition placements remain schematic.",
+      "R2: Rendered exterior with Northwestern Avenue sidewalk, curb, roadway, lawn, hedges and fence plus a close entrance/roof view; all review-only context and lighting remain outside the modular asset.",
+      "R2: Reopened and independently checked the GIS footprint; maximum nearest-vertex deviation remains below 0.000001 m in both directions."
     ],
     "campus_origin_preserved": true,
     "source_only": true,
-    "preview_path": "audit\\physics_building\\physics_building_preview.png"
+    "preview_path": "audit/physics_building/physics_building_front_nw_preview.png"
   },
   "architectural_references": {
     "revision_sources": [
       {
-        "title": "Purdue Events \u2014 Physics Building exterior image",
+        "title": "Purdue Events — Physics Building exterior image",
         "url": "https://events.purdue.edu/physics_building",
         "image_url": "https://localist-images.azureedge.net/photos/40247397308836/card%402x/7a02b4b0e80baf717abf429dfe44cab0f62dea1a.jpg",
         "accessed": "2026-10-24",
         "observation": "Shows traditional tiled roof, red brick, entry/upper-window composition, and skybridge. The bridge is an estimated appendage outside the PHYS GIS polygon; its exact span/height is schematic."
       },
       {
-        "title": "Purdue Physics \u2014 Campus resources exterior photograph",
+        "title": "Purdue Physics — Campus resources exterior photograph",
         "url": "https://www.physics.purdue.edu/academic-programs/undergraduate/campus_resources.html",
         "accessed": "2026-10-24",
         "observation": "Supports the arched entry, upper arched window, and central PHYSICS name panel; portal geometry remains interpretive."
       },
       {
-        "title": "Henneman Engineering \u2014 Purdue Physics Building HVAC project photo",
+        "title": "Henneman Engineering — Purdue Physics Building HVAC project photo",
         "url": "https://henneman.com/work/purdue-university-physics-building/",
         "accessed": "2026-10-24",
         "observation": "Exterior image supports a low red-tile roof and glazed connecting skybridge; location and span are approximate."
+      },
+      {
+        "title": "Purdue Physics Building Evacuation Routes — official floor plans",
+        "url": "https://www.physics.purdue.edu/docs/resources/PHYS-Building-Evacuation-Routes.pdf",
+        "accessed": "2026-10-25",
+        "observation": "Floor-plan labels identify ground-floor Physics Help Center/Machine Shop/laboratories, first-floor Student Commons and laboratories, second-floor Physics Library, and walkway to MSEE; only circulation/function cues are modeled and exact interior dimensions remain schematic."
       }
     ]
   },
