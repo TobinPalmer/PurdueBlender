@@ -63,6 +63,17 @@ records = {
         "validation_path": ROOT / "audit/batch4_knoy/validation_r23.json",
         "grade_json": ROOT / "audit/batch4_knoy/independent_grade_r23.json",
     },
+    "native_american_educational_and_cultural_center_nacc": {
+        "hash": "e442e099cf94dde2b0d95f87e336ac550daf3445c56a3129c078ae64657e3305",
+        "object_count": 806,
+        "grade_path": "../audit/build_nacc/nacc_independent_report_r3.md",
+        "accuracy_status": (
+            "independently graded 8.0/10; GIS FID 927 footprint and placement verified; "
+            "Purdue BEP supports floors, exits, and room 110 rear porch; roof and facade details remain estimated"
+        ),
+        "validation_path": None,
+        "grade_json": ROOT / "audit/build_nacc/nacc_independent_scorecard_r3.json",
+    },
 }
 
 for asset_id, item in records.items():

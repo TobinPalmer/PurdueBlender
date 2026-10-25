@@ -1,12 +1,14 @@
 {
-  "library": "modular\\buildings\\native_american_educational_and_cultural_center_nacc.blend",
+  "validation": "reopened saved asset in Blender 5.2.3 LTS",
+  "asset_file": "modular\\buildings\\native_american_educational_and_cultural_center_nacc.blend",
   "collection_found": true,
+  "collection": "Asset_native_american_educational_and_cultural_center_nacc",
   "objects": 806,
-  "meshes": 806,
-  "bounds_local_m": [
+  "mesh_objects": 806,
+  "local_bounds_m": [
     [
       -16.352,
-      11.363
+      8.796
     ],
     [
       -15.094,
@@ -18,15 +20,17 @@
     ]
   ],
   "material_count": 10,
-  "materials_all_noise_bump_principled": true,
-  "required_features": {
-    "NACC_fifth_street_front_door": true,
-    "NACC_parking_lot_access_door": true,
-    "NACC_alley_rear_kitchen_door": true,
-    "NACC_detached_single_car_storage_garage": true,
-    "NACC_accessibility_ramp": true,
-    "NACC_SCHEMATIC_INTERIOR_NOT_AS_BUILT": true
+  "materials_all_procedural_noise_bump_principled": true,
+  "feature_checks": {
+    "Fifth_Street_front_door": true,
+    "parking_lot_accessible_door": true,
+    "alley_rear_kitchen_door": true,
+    "detached_storage_garage": true,
+    "accessible_ramp": true,
+    "source_described_room_110_back_porch": true,
+    "schematic_interior_collection": true,
+    "undocumented_front_porch_removed": true
   },
   "external_image_paths": [],
-  "pass": true
+  "result": "PASS"
 }

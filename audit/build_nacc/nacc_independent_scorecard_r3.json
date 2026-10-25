@@ -1,0 +1,178 @@
+{
+  "evaluator": "independent_nacc_rubric_r3",
+  "asset": "modular/buildings/native_american_educational_and_cultural_center_nacc.blend",
+  "asset_sha256": "E442E099CF94DDE2B0D95F87E336AC550DAF3445C56A3129C078AE64657E3305",
+  "expected_sha256": "E442E099CF94DDE2B0D95F87E336AC550DAF3445C56A3129C078AE64657E3305",
+  "blender_version": "5.2.3 LTS",
+  "score": 8.0,
+  "max_score": 10,
+  "minimum_passing_score": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "max_points": 2,
+      "points": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Purdue GIS FeatureServer FID 927 identifies NACC at 903 5th Street; the Purdue emergency plan independently identifies the former house.",
+        "Reopened structural wall shell agrees with the projected GIS ring: max vertex distance GIS\u2192shell 0.0000 m, shell\u2192GIS 0.0000 m.",
+        "The 20-vertex source outline and modeled wall shell match, including the irregular perimeter; projected footprint dimensions 16.215 \u00d7 11.576 m."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "max_points": 2,
+      "points": 2.0,
+      "status": "verified within project transform limits",
+      "evidence": [
+        "Wall-shell local centroid offset from the GIS polygon centroid: (0.0000, -0.0000) m; registered placement origin in manifest: [-278.928, 190.077].",
+        "Structural dimensions: model 16.215 \u00d7 11.576 m; projected GIS 16.215 \u00d7 11.576 m.",
+        "GIS-derived wall geometry preserves orientation; local transform uses the project\u2019s stated approximate WGS84-to-meter conversion, not a surveyed CRS."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "max_points": 2,
+      "points": 1.0,
+      "status": "partly supported; estimated",
+      "evidence": [
+        "Purdue BEP (revision 2026-03-17) describes a two-story house with a basement; modeled asset has a basement and two above-grade levels.",
+        "Reopened asset vertical bounds are -2.35 to 9.35 m. Eaves/ridge, roof pitch, and total above-grade height are explicit model estimates, with no measured elevation drawing located.",
+        "GIS NUM_LEVELS=1 conflicts with the dated written Purdue BEP. The evidence record acknowledges this conflict."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "max_points": 2,
+      "points": 1.0,
+      "status": "partly supported; facade is interpretive",
+      "evidence": [
+        "Purdue BEP confirms three exits and locates the main door at Fifth Street, an accessible door toward the gravel parking lot, and the kitchen/rear door facing the alley.",
+        "The reopened asset contains these three named doors, a ramp, and a modest covered back porch next to the alley door; door-to-porch center spacing is 1.30 m.",
+        "Purdue lists room 110 as Back Porch. Front/rear render inspection confirms the covered porch is now on the rear/alley-facing side; the undocumented Fifth Street front porch is absent.",
+        "Window rhythm, shutters, exact door positions, porch dimensions, clapboard detail, and gabled roof are not verified by measured plans or a date-verified facade photo."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "max_points": 2,
+      "points": 2.0,
+      "status": "asset export and manifest verified; root master integration pending",
+      "evidence": [
+        "Blender 5.2.3 reopened the saved named collection with 806 mesh objects and 10 assigned materials; portable procedural materials=True; external image paths=[].",
+        "All nine expected feature/interior flags present: True.",
+        "Building-specific evidence includes source URLs, provider/feature, retrieval dates, CRS/transform, uncertainty, validation and current front/rear renders.",
+        "Corrected shared manifest object list exactly matches the reopened collection: True (current=806, manifest=806, missing=[], extra=[]).",
+        "Manifest local bounds match independently recomputed reopened mesh bounds within 0.5 mm: True; manifest=[[-16.352, 8.796], [-15.094, 6.432], [-2.35, 9.35]]; reopened=[[-16.352, 8.796], [-15.094, 6.432], [-2.35, 9.35]].",
+        "The root master library refresh was not inspected or claimed; coordinator integration check remains pending."
+      ]
+    }
+  ],
+  "evidence": {
+    "gis_feature_id": 927,
+    "gis_name": "Native American Educational and Cultural Center",
+    "gis_address": "903 5th Street",
+    "gis_source_area_m2_projected": 125.017,
+    "gis_footprint_dimensions_m": [
+      16.2147,
+      11.5756
+    ],
+    "shell_footprint_dimensions_m": [
+      16.2147,
+      11.5756
+    ],
+    "gis_to_shell_vertex_hausdorff_m": 1e-05,
+    "shell_to_gis_vertex_hausdorff_m": 1e-05,
+    "shell_centroid_local_xy_m": [
+      0.0,
+      -0.0
+    ],
+    "registered_placement_origin_xy_m": [
+      -278.928,
+      190.077
+    ],
+    "model_vertical_bounds_m": [
+      -2.35,
+      9.35
+    ],
+    "feature_checks": {
+      "named_export_collection_reopened": true,
+      "GIS_structural_shell_present": true,
+      "Fifth_Street_front_door": true,
+      "parking_lot_accessible_door_and_ramp": true,
+      "alley_rear_kitchen_door": true,
+      "room_110_back_porch": true,
+      "detached_storage_garage": true,
+      "undocumented_front_porch_absent": true,
+      "schematic_interior_labeled": true
+    },
+    "material_count": 10,
+    "portable_procedural_materials": true,
+    "external_image_paths": [],
+    "rear_door_xy_center_m": [
+      -8.462,
+      1.044
+    ],
+    "back_porch_xy_center_m": [
+      -9.762,
+      1.044
+    ],
+    "rear_door_to_porch_center_distance_m": 1.3,
+    "manifest_object_names_match_reopened_collection": true,
+    "manifest_missing_object_names": [],
+    "manifest_extra_object_names": [],
+    "reopened_local_bounds_m": [
+      [
+        -16.352,
+        8.796
+      ],
+      [
+        -15.094,
+        6.432
+      ],
+      [
+        -2.35,
+        9.35
+      ]
+    ],
+    "manifest_local_bounds_match_reopened_asset": true,
+    "manifest_recorded_local_bounds_m": [
+      [
+        -16.352,
+        8.796
+      ],
+      [
+        -15.094,
+        6.432
+      ],
+      [
+        -2.35,
+        9.35
+      ]
+    ],
+    "evidence_record_revision": {
+      "date": "2026-10-25",
+      "changes": [
+        "Moved the covered porch from the undocumented Fifth Street front to the alley-facing rear kitchen entrance, corresponding to Purdue BEP room 110, Back Porch.",
+        "Kept porch dimensions explicitly estimated and separated documented facts from modeled assumptions."
+      ],
+      "prior_score": 7.0,
+      "new_score": "not graded; independent grading requested separately."
+    },
+    "front_render": "native_american_educational_and_cultural_center_nacc_r2_preview.png",
+    "rear_render": "native_american_educational_and_cultural_center_nacc_r2_rear_preview.png"
+  },
+  "findings": [
+    "The porch relocation is source-consistent: Purdue says the rear/kitchen door faces the alley and identifies room 110 as Back Porch. The revised render places the roofed porch beside that door and leaves the Fifth Street entrance without a covered porch.",
+    "GIS identity, shape, dimensions, and local registration check out against feature 927. The transform is an approximate project conversion, not survey control.",
+    "The exact roof profile, heights, and facade composition remain estimates. The GIS one-level attribute conflicts with the written two-story BEP, so vertical accuracy is only partly supported.",
+    "The corrected modular manifest now matches the reopened asset object names and bounds. The root master library refresh remains coordinator-pending and was not inspected or claimed."
+  ],
+  "limitations": [
+    "No measured as-built elevation or date-verified current facade photograph was found in the consulted evidence.",
+    "Entrance and porch positions/sizes are supported directionally by the BEP but their exact dimensions and wall offsets remain estimates.",
+    "The GIS source and project transformation support local shape/registration checks; they do not establish surveyed positional accuracy.",
+    "The root master library refresh is coordinator-pending and was not inspected; this score covers the modular asset/export and corrected manifest only."
+  ]
+}

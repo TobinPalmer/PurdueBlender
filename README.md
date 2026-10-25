@@ -54,7 +54,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Mechanical Engineering | [mechanical_engineering.blend](modular/buildings/mechanical_engineering.blend) | Finished | 8.0/10 | — |
 | Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](modular/buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | Finished | [8.5/10](audit/batchC_boilermaker_aquatic_r1/independent_grade_r9.md) | — |
 | National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](modular/buildings/national_soil_erosion_laboratory.blend) | Finished | 8.0/10 | — |
-| Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](modular/buildings/native_american_educational_and_cultural_center_nacc.blend) | In progress | 7.0/10 | Tobin |
+| Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](modular/buildings/native_american_educational_and_cultural_center_nacc.blend) | Finished | [8.0/10](audit/build_nacc/nacc_independent_report_r3.md) | — |
 | Neil Armstrong Hall | [neil_armstrong_hall.blend](modular/buildings/neil_armstrong_hall.blend) | In progress | 7.6/10 | Tobin |
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](modular/buildings/niswonger_aviation_tech.blend) | In progress | 6.7/10 | Tobin |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](modular/buildings/northwest_chiller_plant.blend) | In progress | 7.5/10 | Tobin |
@@ -78,11 +78,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (184 total)
+## Unfinished buildings (183 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 94 buildings, Brady 60 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 93 buildings, Brady 60 buildings.
 
-### Detailed models still in progress or awaiting a grade (50)
+### Detailed models still in progress or awaiting a grade (49)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -118,7 +118,6 @@ This list excludes individual house parcels. The detailed models that are still 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 | Lawson Hall | [`lawson_hall.blend`](modular/buildings/lawson_hall.blend) | 7.0/10 | Tobin |
-| Native American Educational and Cultural Center | [`native_american_educational_and_cultural_center_nacc.blend`](modular/buildings/native_american_educational_and_cultural_center_nacc.blend) | 7.0/10 | Tobin |
 | Neil Armstrong Hall | [`neil_armstrong_hall.blend`](modular/buildings/neil_armstrong_hall.blend) | 7.6/10 | Tobin |
 | Niswonger Aviation Tech | [`niswonger_aviation_tech.blend`](modular/buildings/niswonger_aviation_tech.blend) | 6.7/10 | Tobin |
 | Northwest Chiller Plant | [`northwest_chiller_plant.blend`](modular/buildings/northwest_chiller_plant.blend) | 7.5/10 | Tobin |
