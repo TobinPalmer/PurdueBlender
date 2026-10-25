@@ -18,6 +18,7 @@ MASTER = ROOT / "purdue_campus_master.blend"
 MODULAR = ROOT / "modular"
 MANIFEST_PATH = MODULAR / "manifest.json"
 VERIFICATION_PATH = MODULAR / "verification.json"
+SYNC_REPORT_PATH = ROOT / "audit/master_sync_r10.json"
 
 
 def read_json(path: Path):
@@ -63,6 +64,17 @@ records = {
         "validation_path": ROOT / "audit/batch4_knoy/validation_r23.json",
         "grade_json": ROOT / "audit/batch4_knoy/independent_grade_r23.json",
     },
+    "owen_hall": {
+        "hash": "20ccd340d7cc2ab06ac6e94a84394c3d8ae0ec84573a1222e9ed541dbb19e981",
+        "object_count": 958,
+        "grade_path": "../audit/owen_hall_independent_grade/independent_report_r3.md",
+        "accuracy_status": (
+            "independently graded 8.0/10; GIS OBJECTID 38 footprint, placement and 958-object "
+            "manifest verified; height/floor intervals remain estimated and room modules illustrative"
+        ),
+        "validation_path": ROOT / "audit/owen_hall_independent_grade/gis_footprint_validation.json",
+        "grade_json": ROOT / "audit/owen_hall_independent_grade/independent_scorecard_r3.json",
+    },
     "native_american_educational_and_cultural_center_nacc": {
         "hash": "e442e099cf94dde2b0d95f87e336ac550daf3445c56a3129c078ae64657e3305",
         "object_count": 806,
@@ -90,6 +102,8 @@ for asset_id, item in records.items():
     evidence_count = grade.get("evidence", {}).get("scene_object_count")
     if asset_id == "knoy_hall":
         evidence_count = grade.get("evidence", {}).get("reopen", {}).get("asset_collection_objects")
+    if asset_id == "owen_hall":
+        evidence_count = grade.get("evidence", {}).get("reopened_object_count")
     if evidence_count is not None and int(evidence_count) != item["object_count"]:
         raise RuntimeError(f"{asset_id} grade object count does not match expected count")
     if item["validation_path"] is not None:
@@ -100,6 +114,13 @@ for asset_id, item in records.items():
             # R23's separate report records 191 scene objects but 158 asset-collection
             # objects, which is the count linked into the campus master.
             validation_count = item["object_count"]
+        elif asset_id == "owen_hall":
+            validation_ok = (
+                validation.get("asset_sha256") == actual_hash
+                and validation.get("collection_object_count") == item["object_count"]
+            )
+            validation_hash = validation.get("asset_sha256")
+            validation_count = validation.get("collection_object_count")
         else:
             validation_ok = validation.get("passed")
             validation_hash = validation.get("asset_sha256")
@@ -229,7 +250,7 @@ for asset_id, item in records.items():
     post_save.append({"id": asset_id, "linked_objects": len(collection.all_objects),
                       "marker_xy_m": [float(marker.location.x), float(marker.location.y)]})
 
-print(json.dumps({
+sync_report = {
     "status": "PASS",
     "master": str(MASTER),
     "master_reopened_after_save": True,
@@ -238,4 +259,6 @@ print(json.dumps({
     "manifest_source_object_count": source_object_count,
     "refreshed": sync_results,
     "post_save": post_save,
-}, indent=2, ensure_ascii=False))
+}
+SYNC_REPORT_PATH.write_text(json.dumps(sync_report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+print(json.dumps(sync_report, indent=2, ensure_ascii=False))

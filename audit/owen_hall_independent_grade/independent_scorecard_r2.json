@@ -1,0 +1,98 @@
+{
+  "evaluator": "independent_owen_hall_r2",
+  "asset": "modular/buildings/owen_hall.blend",
+  "asset_sha256": "a2d3b7814eac1adc0a8b28af989df25c7ab3c6a1129da90c40e9bd7871a5d7dc",
+  "blender_version": "5.2.3 LTS",
+  "score": 7.8,
+  "max_score": 10,
+  "minimum_passing_score": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "max_points": 2,
+      "points": 2.0,
+      "status": "verified within project transform limits",
+      "evidence": [
+        "Purdue GIS OBJECTID 38 identifies Richard Owen Residence Hall (ABBR OWEN).",
+        "Reopened base mesh matches the full 20-point GIS outline in the documented approximate project transform: intersection-over-union=1.0, coverage=1.0, equal 87.623 x 107.558 m envelopes.",
+        "Purdue's 2007 report describes Owen Hall as H-shaped and four stories; its plan is not dimensioned."
+      ]
+    },
+    {
+      "criterion": "Placement, orientation, and scale",
+      "max_points": 2,
+      "points": 2.0,
+      "status": "verified in local asset frame; campus conversion approximate",
+      "evidence": [
+        "GIS footprint validation records 0.0 m model/GIS envelope-center error and a local root translation of (0,0,0).",
+        "Footprint dimensions and orientation agree with the projected GIS outline.",
+        "The WGS84-to-meter project transform is approximate rather than surveyed."
+      ]
+    },
+    {
+      "criterion": "Height, floors, and roof",
+      "max_points": 2,
+      "points": 1.5,
+      "status": "partly supported",
+      "evidence": [
+        "The Purdue report supports four stories and an H-shaped form.",
+        "The 3.8 m story rhythm and 16.0 m parapet top are model estimates; no measured elevation or authoritative height was found.",
+        "The official exterior photo broadly supports a flat parapet roof silhouette."
+      ]
+    },
+    {
+      "criterion": "Facade and material finish",
+      "max_points": 2,
+      "points": 1.0,
+      "status": "broad character represented; detail and render need refinement",
+      "evidence": [
+        "The official image shows red brick, pale base/trim, vertical window groups, large glazed bays, and entrance steps/rails.",
+        "The model has brick and pale bands with repeated window masses, but the review render shows simplified window assemblies, glazed bays, and entrances with a bright, flat presentation.",
+        "Reopened asset inspection found 17 assigned node-based materials and zero external image paths. Node-based materials establish a portable material setup, not verified visual accuracy."
+      ]
+    },
+    {
+      "criterion": "Interior, portability, and integration evidence",
+      "max_points": 2,
+      "points": 1.3,
+      "status": "interior vignettes and portable export; shared integration metadata stale",
+      "evidence": [
+        "Named lobby, recreation lounge, study-center, and dorm-room sets include furniture, fixtures, and lights; the reviewed evidence does not establish complete source-verified interiors across all floors.",
+        "Blender 5.2.3 reopened Asset_owen_hall with 728 objects (711 meshes, 11 lights, 5 cameras, 1 empty), root at local origin, and no external image paths.",
+        "The shared manifest still lists 799 objects; current object inventory and master-library refresh need coordinator verification."
+      ]
+    }
+  ],
+  "evidence": {
+    "gis_feature_id": 38,
+    "gis_name": "Richard Owen Residence Hall",
+    "gis_footprint_iou": 1.0,
+    "gis_model_coverage": 1.0,
+    "gis_envelope_dimensions_m": [87.623, 107.558],
+    "model_envelope_dimensions_m": [87.623, 107.558],
+    "envelope_center_error_m": 0.0,
+    "height_status": "estimated; 3.8 m story rhythm and 16.0 m parapet top",
+    "reopened_collection": "Asset_owen_hall",
+    "reopened_object_count": 728,
+    "object_types": {"MESH": 711, "LIGHT": 11, "CAMERA": 5, "EMPTY": 1},
+    "assigned_node_material_count": 17,
+    "external_image_paths": [],
+    "shared_manifest_object_count": 799,
+    "master_library_refresh_validated": false,
+    "validation_file": "gis_footprint_validation.json",
+    "source_provenance_file": "source_provenance.json",
+    "facade_render": "owen_hall_facade.png",
+    "topdown_render": "owen_hall_gis_footprint_topdown.png"
+  },
+  "findings": [
+    "The new base footprint is an exact reconstruction of the checked-in Purdue GIS polygon under the documented project coordinate approximation, replacing the previous revision's weak footprint overlap.",
+    "The Purdue report supports an H-shaped four-story plan, but no measured building height or floor elevations were found.",
+    "Facade materials and overall pattern are recognizable; windows, glazed bays, entrance detailing, and render lighting remain simplified.",
+    "Several useful furnished interior vignettes are present, but the evidence does not establish a complete or as-built interior representation.",
+    "The linked asset now contains 728 objects while the shared manifest reports 799; master-side reloading and count synchronization remain necessary."
+  ],
+  "threshold": 8,
+  "passed_threshold": false,
+  "report": "independent_report_r2.md"
+}

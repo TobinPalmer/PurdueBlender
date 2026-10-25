@@ -58,7 +58,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Neil Armstrong Hall | [neil_armstrong_hall.blend](modular/buildings/neil_armstrong_hall.blend) | In progress | 7.6/10 | Tobin |
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](modular/buildings/niswonger_aviation_tech.blend) | In progress | 6.7/10 | Tobin |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](modular/buildings/northwest_chiller_plant.blend) | In progress | 7.5/10 | Tobin |
-| Owen Hall | [owen_hall.blend](modular/buildings/owen_hall.blend) | Needs independent grade | Not graded | Tobin |
+| Owen Hall | [owen_hall.blend](modular/buildings/owen_hall.blend) | Finished | [8.0/10](audit/owen_hall_independent_grade/independent_report_r3.md) | — |
 | Peirce Hall | [peirce_hall.blend](modular/buildings/peirce_hall.blend) | Finished | 8.8/10 | — |
 | Physics Building | [physics_building_phys_3bf42f3.blend](modular/buildings/physics_building_phys_3bf42f3.blend) | In progress | 7.3/10 | Tobin |
 | Potter Engineering | [potter_engineering.blend](modular/buildings/potter_engineering.blend) | In progress | 7.2/10 | Tobin |
@@ -78,11 +78,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (183 total)
+## Unfinished buildings (182 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 93 buildings, Brady 60 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 92 buildings, Brady 60 buildings.
 
-### Detailed models still in progress or awaiting a grade (49)
+### Detailed models still in progress or awaiting a grade (48)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -121,7 +121,6 @@ This list excludes individual house parcels. The detailed models that are still 
 | Neil Armstrong Hall | [`neil_armstrong_hall.blend`](modular/buildings/neil_armstrong_hall.blend) | 7.6/10 | Tobin |
 | Niswonger Aviation Tech | [`niswonger_aviation_tech.blend`](modular/buildings/niswonger_aviation_tech.blend) | 6.7/10 | Tobin |
 | Northwest Chiller Plant | [`northwest_chiller_plant.blend`](modular/buildings/northwest_chiller_plant.blend) | 7.5/10 | Tobin |
-| Owen Hall | [`owen_hall.blend`](modular/buildings/owen_hall.blend) | Not graded | Tobin |
 | Physics Building | [`physics_building_phys_3bf42f3.blend`](modular/buildings/physics_building_phys_3bf42f3.blend) | 7.3/10 | Tobin |
 | Potter Engineering | [`potter_engineering.blend`](modular/buildings/potter_engineering.blend) | 7.2/10 | Tobin |
 | Purdue Memorial Union | [`purdue_memorial_union.blend`](modular/buildings/purdue_memorial_union.blend) | Not graded | Tobin |

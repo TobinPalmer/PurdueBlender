@@ -27,7 +27,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Mechanical Engineering | [mechanical_engineering.blend](buildings/mechanical_engineering.blend) | 55 |
 | Neil Armstrong Hall | [neil_armstrong_hall.blend](buildings/neil_armstrong_hall.blend) | 449 |
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](buildings/niswonger_aviation_tech.blend) | 2298 |
-| Owen Hall | [owen_hall.blend](buildings/owen_hall.blend) | 799 |
+| Owen Hall | [owen_hall.blend](buildings/owen_hall.blend) | 958 |
 | Peirce Hall | [peirce_hall.blend](buildings/peirce_hall.blend) | 1236 |
 | Potter Engineering | [potter_engineering.blend](buildings/potter_engineering.blend) | 500 |
 | Psychological Sciences Building | [psychological_sciences.blend](buildings/psychological_sciences.blend) | 80 |

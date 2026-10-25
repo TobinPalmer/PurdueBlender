@@ -1,0 +1,109 @@
+{
+  "evaluator": "independent_owen_hall_r3",
+  "asset": "modular/buildings/owen_hall.blend",
+  "asset_sha256": "20ccd340d7cc2ab06ac6e94a84394c3d8ae0ec84573a1222e9ed541dbb19e981",
+  "blender_version": "5.2.3 LTS",
+  "score": 8.0,
+  "max_score": 10,
+  "minimum_passing_score": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "points": 2.0,
+      "max_points": 2,
+      "status": "verified against Purdue GIS in the documented project transform",
+      "evidence": [
+        "Purdue campus GIS OBJECTID 38 identifies Richard Owen Residence Hall (ABBR OWEN).",
+        "Independently reopened base polygon overlap: IoU=1.000000; model coverage=1.000000; center error=0.000001 m.",
+        "GIS envelope 87.623 x 107.558 m; model envelope 87.623 x 107.558 m."
+      ],
+      "deduction": "GIS wall/overhang convention and surveyed-coordinate accuracy are undocumented; none for modeled relative footprint."
+    },
+    {
+      "criterion": "Placement, orientation, and scale",
+      "points": 1.8,
+      "max_points": 2,
+      "status": "asset frame and manifest placement align; coordinator master refresh pending",
+      "evidence": [
+        "Reopened AssetRoot_owen_hall has zero translation and rotation and unit scale.",
+        "Manifest placement origin is [-591.1124877929688, 537.5999908447266] m and the GIS outline agrees under the documented approximate local transform.",
+        "The master marker itself was not reopened/validated for this new asset hash; campus placement is not surveyed."
+      ],
+      "deduction": "The root master placement instance was not refreshed and independently reopened for this revision."
+    },
+    {
+      "criterion": "Height, floors, and roof form",
+      "points": 1.4,
+      "max_points": 2,
+      "status": "story count and plan supported; absolute height estimated",
+      "evidence": [
+        "Purdue's 2007 report describes an H-shaped, four-story dormitory; the current model follows the H form and four levels.",
+        "The official exterior photo is consistent with a flat/parapet roof silhouette.",
+        "Reopened mesh bounds are Z=0 to 16 m; the floor rhythm and parapet top remain estimates with no measured elevation found."
+      ],
+      "deduction": "No measured building height, floor elevations, or dimensioned roof drawing was found."
+    },
+    {
+      "criterion": "Facade and material fidelity",
+      "points": 1.2,
+      "max_points": 2,
+      "status": "broad character represented; source-specific facade remains schematic",
+      "evidence": [
+        "The official Purdue exterior reference supports red brick, pale stone/concrete base and bands, and repeated vertical residential windows.",
+        "The R2 render adds framed multi-pane windows, selective louvers, a darker roof membrane/coping, and entrance steps/rails; the broad H footprint and facade rhythm read clearly.",
+        "Reopened collection uses 21 node materials; visual comparison shows the large glazed bays, lower concrete-panel pattern, and exact window spacing remain simplified."
+      ],
+      "deduction": "The render is a clean model view rather than a photo match; facade opening details and main common-area glazing are still generalized."
+    },
+    {
+      "criterion": "Interior, portability, and asset/manifest integrity",
+      "points": 1.6,
+      "max_points": 2,
+      "status": "portable asset and manifest reconciled; interior coverage remains illustrative",
+      "evidence": [
+        "The current Purdue room guide gives a standard double-room illustration with approximate dimensions of 11 ft 4 in by 16 ft and approximate furnishings; the model includes eight representative room modules, explicitly illustrative rather than assigned as-built rooms.",
+        "Blender 5.2.3 independently reopened 958 collection objects (934 meshes, 18 lights, five cameras, one empty), all mesh objects have material slots, 21 node materials are present, and no external image or library paths were found.",
+        "Manifest object names match the reopened collection exactly, count is 958, and full mesh bounds agree within 1 mm."
+      ],
+      "deduction": "There is no verified complete interior plan, and the current root master link still awaits coordinator refresh and save/reopen verification."
+    }
+  ],
+  "evidence": {
+    "gis_feature_id": 38,
+    "gis_name": "Richard Owen Residence Hall",
+    "gis_footprint_iou": 0.9999999292681905,
+    "gis_model_coverage": 0.9999999543676228,
+    "gis_envelope_dimensions_m": [
+      87.62266087400997,
+      107.55784365087266
+    ],
+    "model_envelope_dimensions_m": [
+      87.62266159057617,
+      107.55784606933594
+    ],
+    "envelope_center_error_m": 8.409663918301529e-07,
+    "reopened_collection": "Asset_owen_hall",
+    "reopened_object_count": 958,
+    "manifest_names_match": true,
+    "manifest_bounds_match": true,
+    "object_types": {
+      "CAMERA": 5,
+      "EMPTY": 1,
+      "LIGHT": 18,
+      "MESH": 934
+    },
+    "node_material_count": 21,
+    "unassigned_meshes": 0,
+    "missing_external_images": 0,
+    "external_libraries": 0,
+    "placement_origin_xy_m": [
+      -591.1124877929688,
+      537.5999908447266
+    ],
+    "height_status": "estimated; 16.0 m overall asset bounds, four stories supported by Purdue report",
+    "master_refresh_verified": false,
+    "evidence_file": "independent_reopen_r3.json"
+  },
+  "report": "independent_report_r3.md"
+}

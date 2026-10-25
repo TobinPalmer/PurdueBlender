@@ -1,0 +1,111 @@
+{
+  "score": 7,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "max_score": 2,
+      "score": 1,
+      "evidence": [
+        "Purdue GIS feature OBJECTID 38 identifies ABBR OWEN / Richard Owen Residence Hall at 1160 W. Stadium Avenue.",
+        "Projected GIS polygon and the model structural rectangles have IoU 0.267 and model coverage of source polygon 0.359."
+      ],
+      "finding": "Identity is verified. The coarse footprint-shape comparison is weak despite similar overall envelope dimensions; model and source shape cannot both earn full credit."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "max_score": 2,
+      "score": 2,
+      "evidence": [
+        "GIS envelope center vs model structural envelope center error: 0.33 m.",
+        "GIS envelope: 87.62 m east-west by 107.56 m north-south; model: 88.70 m by 108.30 m.",
+        "Envelope dimension errors: 1.2% and 0.7%; both outlines are essentially axis-aligned in the project frame."
+      ],
+      "finding": "Campus position, cardinal orientation, and overall plan envelope are verified within the project coordinate approximation. The footprint-shape discrepancy remains under criterion 1."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "max_score": 2,
+      "score": 1,
+      "evidence": [
+        "Reopened model evaluated bounds reach 19.10 m; repeated floor bands are modeled at about 3.8 m intervals.",
+        "Official Purdue exterior photo supports a flat roof edge / parapet profile, but no official measured height or clear floor-count specification was found."
+      ],
+      "finding": "Roof silhouette is broadly supported. Model height and exact floor count remain estimates, so this criterion is uncertain and loses one point."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "max_score": 2,
+      "score": 1,
+      "evidence": [
+        "Official Purdue Housing exterior photograph shows a long red-brick residential facade, pale concrete / stone base and vertical window bays.",
+        "Reopened model shows brick wall fields, pale horizontal trim, repeated windows, and entrance pavilions/portico; see owen_hall_facade.png."
+      ],
+      "finding": "Broad materials and repetitive residential facade rhythm are represented. The modeled facade is simplified: source photo's tall glazed bays, concrete paneling, detailed window divisions, entry stairs and rails are absent or generalized."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "max_score": 2,
+      "score": 2,
+      "evidence": [
+        "Saved file reopens as scene ['Building_owen_hall'] with collection Asset_owen_hall containing 799 objects.",
+        "AssetRoot is at local origin; evaluated geometry bounds are recorded. No external image or library paths, modifiers, or missing mesh data were found.",
+        "This folder contains source snapshots, provenance, an inspection script and JSON, the evaluator, a scorecard, and a rendered view."
+      ],
+      "finding": "Export structure and portability passed inspection. The evidence package explicitly retains the remaining uncertainties."
+    }
+  ],
+  "evidence": {
+    "feature_id": 38,
+    "official_building_name": "Richard Owen Residence Hall",
+    "official_address": "1160 W. Stadium Avenue",
+    "gis_crs": "EPSG:4326; transformed with documented approximate project conversion",
+    "gis_area_sq_m": 5166.65,
+    "model_structural_union_area_sq_m": 3622.47,
+    "footprint_intersection_over_union": 0.2671,
+    "model_coverage_of_source_polygon": 0.3586,
+    "envelope_center_error_m": 0.33,
+    "gis_envelope_dimensions_m": [
+      87.62,
+      107.56
+    ],
+    "model_envelope_dimensions_m": [
+      88.7,
+      108.3
+    ],
+    "envelope_dimension_error_percent": [
+      1.23,
+      0.69
+    ],
+    "model_evaluated_local_bounds_m": [
+      [
+        -49.112510681152344,
+        49.11248779296875
+      ],
+      [
+        -65.49996948242188,
+        65.5
+      ],
+      [
+        0.0,
+        19.100000381469727
+      ]
+    ],
+    "asset_path": "buildings/owen_hall.blend",
+    "collection": "Asset_owen_hall",
+    "object_count": 799,
+    "portable": true
+  },
+  "findings": [
+    "Below passing threshold: the detailed structural footprint shape has low overlap with the official GIS footprint proxy (IoU 0.27), even though the outer envelope and placement center align closely.",
+    "No authoritative height measurement or documented floor count was found; the 19.1 m top elevation and 3.8 m floor rhythm remain model estimates.",
+    "Facade materials and broad massing match the official photo, while window assemblies, concrete panels, and entrance detailing are simplified."
+  ],
+  "threshold": 8,
+  "passed": false,
+  "paths": {
+    "source_provenance": "source_provenance.json",
+    "asset_inspection": "asset_inspection.json",
+    "render": "owen_hall_facade.png"
+  }
+}

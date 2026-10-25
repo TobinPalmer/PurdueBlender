@@ -1,0 +1,55 @@
+{
+  "sources": [
+    {
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=OBJECTID%3D38&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "provider": "Purdue Libraries GIS campus map service",
+      "feature_id": "OBJECTID 38; buildingidlong 25; ABBR OWEN",
+      "retrieved_date": "2026-10-25",
+      "source_date": "Undated current campus-map layer. The feature attributes list construction begin/end years 1955-1958; publication/update date is not exposed.",
+      "crs": "WGS 84 longitude/latitude (EPSG:4326), requested via outSR=4326",
+      "measurement_method": "Converted the full outer ring with the documented project approximation X=(longitude+86.9137)*111412.84*cos(40.4274 degrees), Y=(latitude-40.4274)*111040; compared it to the reopened evaluated Owen_GIS_Limestone_Base polygon mesh, not an aggregate bounding rectangle.",
+      "uncertainty": "The service polygon identifies the hall and supports its horizontal outline. Its wall-vs-overhang convention is not documented. The project coordinate conversion is approximate, not surveyed; the source polygon is used directly to reconstruct the asset's horizontal footprint."
+    },
+    {
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/owen.html",
+      "provider": "Purdue University Residences",
+      "feature_id": "Owen residence hall page; official exterior image at /images/_hero/owen-exterior.jpg",
+      "retrieved_date": "2026-10-25",
+      "source_date": "Undated current page; page says the hall opened in 1957.",
+      "crs": "Not applicable",
+      "measurement_method": "Visual inspection of official exterior photograph and page description against the model facade render; no photogrammetric measurement performed.",
+      "uncertainty": "Photograph shows only one facade and is undated; it supports material and broad fenestration patterns but does not provide elevations or measured heights."
+    },
+    {
+      "url": "https://www.purdue.edu/uns/x/2007b/070702RimkusFinal.pdf",
+      "provider": "Purdue University, Report of Findings (Rimkus Consulting Group), official Purdue publication",
+      "feature_id": "Ground Level Floor Plan of Owen Hall, PDF page 6 (printed page 3); report text on printed page 2 describes a four-story, H-shaped residence hall",
+      "retrieved_date": "2026-10-25",
+      "source_date": "2007-07-02, based on Purdue URL/report identifier",
+      "crs": "Not applicable; plan is used for building identity and H-shaped configuration, not survey coordinates",
+      "measurement_method": "Read the official ground-level plan and report description; used only as independent confirmation of the GIS footprint's H-shaped plan and four-story count. No scale-derived measurements were taken from this report image.",
+      "uncertainty": "The plan is a ground-level diagram from 2007, not a dimensioned architectural drawing; it supports the broad plan shape and story count but does not verify wall dimensions, additions, current condition, or height."
+    },
+    {
+      "url": "https://housing.purdue.edu/images/measurements/layouts/svgs/owen_rmlayout_1.svg",
+      "provider": "Purdue University Residences, official Owen standard-room illustration",
+      "feature_id": "Owen standard double-room layout illustration; referenced from the official Owen residence hall page",
+      "retrieved_date": "2026-10-25",
+      "source_date": "Undated current housing page and linked room illustration",
+      "crs": "Not applicable",
+      "measurement_method": "Used Purdue's published standard-room dimensions (11 ft 4 in by 16 ft), closet dimensions (3 ft 11.5 in by 2 ft 6 in), standard mattress (77 by 36 in), and listed room furnishings to refine one representative room vignette.",
+      "uncertainty": "The university explicitly describes the layout as approximate and says furnishings and layouts may vary by room or availability. This supports a representative room vignette, not exact as-built room assignment or all-floor interior coverage."
+    }
+  ],
+  "asset": {
+    "path": "modular/buildings/owen_hall.blend",
+    "id": "owen_hall",
+    "collection": "Asset_owen_hall",
+    "manifest_placement_origin_xy_m": [-591.1124877929688, 537.5999908447266],
+    "library_object_count": 958,
+    "shared_manifest_object_count": 799,
+    "shared_manifest_count_update_required": true,
+    "reviewer": "Owen Hall footprint rebuild and reopened-asset validation",
+    "retrieved_date": "2026-10-25"
+  }
+}

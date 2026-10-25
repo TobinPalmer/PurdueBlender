@@ -1,0 +1,102 @@
+{
+  "validation_date": "2026-10-25",
+  "method": "Reopened saved Blender library; extracted evaluated XY vertices from the structural limestone base mesh; compared the resulting polygon with Purdue GIS OBJECTID 38 after the project-documented approximate EPSG:4326-to-local transform.",
+  "source_feature_id": 38,
+  "source_name": "Richard Owen Residence Hall",
+  "asset_path": "modular/buildings/owen_hall.blend",
+  "asset_sha256": "20ccd340d7cc2ab06ac6e94a84394c3d8ae0ec84573a1222e9ed541dbb19e981",
+  "build_script_path": "modular/buildings/build_owen_hall_gis_footprint.py",
+  "build_script_sha256": "26cb175c8993d791f5e4b064333b1e8c9feb29bbfeb9f131fd5e04e0f8e4a1b1",
+  "reopened_scene_names": [
+    "Building_owen_hall"
+  ],
+  "collection": "Asset_owen_hall",
+  "collection_object_count": 958,
+  "object_type_counts": {
+    "MESH": 934,
+    "CAMERA": 5,
+    "LIGHT": 18,
+    "EMPTY": 1
+  },
+  "local_root_translation_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "evaluated_collection_mesh_bounds_local_m": [
+    [
+      -49.112510681152344,
+      49.11248779296875
+    ],
+    [
+      -65.49996948242188,
+      65.5
+    ],
+    [
+      0.0,
+      16.0
+    ]
+  ],
+  "mesh_modifier_count": 0,
+  "external_image_or_library_references": [],
+  "node_material_count": 21,
+  "external_facade_window_count": 240,
+  "facade_frame_assembly_vertices": 13440,
+  "facade_louver_assembly_vertices": 3200,
+  "room_vignette_dimensions_m": {
+    "floor": [
+      4.876800060272217,
+      3.454400062561035,
+      0.11999999731779099
+    ],
+    "north_south_walls": [
+      4.876800060272217,
+      0.20000000298023224,
+      3.799999952316284
+    ],
+    "east_wall": [
+      0.20000000298023224,
+      3.454400062561035,
+      3.799999952316284
+    ],
+    "closet": [
+      1.2065000534057617,
+      0.7620000243186951,
+      2.200000047683716
+    ],
+    "standard_mattress_0": [
+      1.9558000564575195,
+      0.9143999814987183,
+      0.18000000715255737
+    ]
+  },
+  "illustrative_standard_double_module_count": 8,
+  "duplicated_room_module_object_count": 224,
+  "room_amenity_objects": [
+    "Owen_R2_StandardRoom_Amenities",
+    "Owen_R2_Room_Wall_Details"
+  ],
+  "base_mesh": "Owen_GIS_Limestone_Base",
+  "base_mesh_vertices": 88,
+  "base_mesh_faces": 87,
+  "base_mesh_materials": [
+    "Indiana_Bedford_Limestone"
+  ],
+  "base_mesh_modifier_count": 0,
+  "gis_polygon_area_m2": 5166.654,
+  "model_polygon_area_m2": 5166.654,
+  "intersection_over_union": 1.0,
+  "model_coverage_of_gis": 1.0,
+  "gis_envelope_dimensions_m": [
+    87.623,
+    107.558
+  ],
+  "model_envelope_dimensions_m": [
+    87.623,
+    107.558
+  ],
+  "envelope_center_error_m": 0.0,
+  "gis_source_uncertainty": "The official GIS layer's wall-versus-overhang convention is undocumented; the Purdue 2007 ground-level plan independently identifies Owen Hall as H-shaped and four stories. The project coordinate conversion is approximate, not surveyed.",
+  "vertical_dimensions": "Height and floor elevations remain estimates; no authoritative measured height was identified. The shell retains 3.8 m story intervals and a 16.0 m parapet top, marked as estimates.",
+  "footprint_extraction_json": "owen_hall_actual_footprint_mesh.json"
+}
