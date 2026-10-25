@@ -25,7 +25,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Math Sciences | [math_sciences.blend](buildings/math_sciences.blend) | 593 |
 | Mccutcheon Hall | [mccutcheon_hall.blend](buildings/mccutcheon_hall.blend) | 219 |
 | Mechanical Engineering | [mechanical_engineering.blend](buildings/mechanical_engineering.blend) | 55 |
-| Neil Armstrong Hall | [neil_armstrong_hall.blend](buildings/neil_armstrong_hall.blend) | 449 |
+| Neil Armstrong Hall | [neil_armstrong_hall.blend](buildings/neil_armstrong_hall.blend) | 446 |
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](buildings/niswonger_aviation_tech.blend) | 2314 |
 | Owen Hall | [owen_hall.blend](buildings/owen_hall.blend) | 958 |
 | Peirce Hall | [peirce_hall.blend](buildings/peirce_hall.blend) | 1236 |

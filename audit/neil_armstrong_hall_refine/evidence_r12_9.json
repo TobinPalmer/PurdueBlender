@@ -1,0 +1,79 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R12.9",
+  "asset": "modular/buildings/neil_armstrong_hall.blend",
+  "sha256": "d8c78374b047fa1248d6d304db0cba1e7f39ff97d133ccc06d774eabf7558bf7",
+  "fresh_reopen_validation": "validation_r12_9.json",
+  "asset_inventory": {
+    "objects": 446,
+    "meshes": 416,
+    "canopy_vertices": 371,
+    "canopy_faces": 342,
+    "canopy_duplicate_coordinate_faces": 0,
+    "new_sunshade_object": "ARMS_R12_9_Versoleil_Outriggers",
+    "sunshade_fins": 86,
+    "missing_mesh_materials": 0,
+    "null_material_slots": 0,
+    "missing_external_images": 0
+  },
+  "changes": [
+    {
+      "change": "Localized folded canopy profile",
+      "detail": "Moved the existing photo-inferred <=21.5 m peak to the north-west roof/eaves corner and tapered the profile along the two adjacent edges to 17.6 m. The registered 2023 orthophoto XY, 0.18 m shell thickness, duplicate cleanup, soffit finish, low entrance deck, and dark notch remain. Height/warp are inferred, not measured."
+    },
+    {
+      "change": "Expanded upper curtainwall field",
+      "detail": "Expanded the existing candidate long-wing glazing from z=15.15–18.85 m down to z=12.35–18.85 m, added repeated vertical mullions and one additional transom. Dimensions and stationing are photo-based interpretation only."
+    },
+    {
+      "change": "Added photo-informed aluminum outriggers",
+      "detail": "Added one modular combined mesh with 86 horizontal fins: 48 over 16 curved curtainwall bays at three existing transom levels, plus 38 along the expanded upper glazing at two levels. Kawneer documents Versoleil sunshade/outrigger system context; exact locations/depths/cadence are estimates."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Kawneer — Neil Armstrong Hall of Engineering, Purdue University",
+      "url": "https://www.kawneer.ca/projects/education/neil-armstrong-hall-of-engineering-purdue-university/",
+      "supports": "Project photography and the specified 1600UT curtain-wall / Versoleil sunshade system context; not dimensions."
+    },
+    {
+      "title": "FRP — Neil Armstrong Hall of Engineering",
+      "url": "https://frpinc.com/projects/neil-armstrong-hall-of-engineering/",
+      "supports": "Cantilevered steel roof truss and two atrium bridge levels; not registered geometry."
+    },
+    {
+      "title": "Purdue Office of Emergency Preparedness — Armstrong Hall BEP",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/arms/",
+      "supports": "Four-level building description."
+    },
+    {
+      "title": "Neil Armstrong Hall 2016 photos",
+      "local_files": [
+        "sources_r12/arms_2016_01.jpg",
+        "sources_r12/arms_2016_02.jpg",
+        "../../audit/complete_neil_armstrong/sources/wikimedia_neil_2016_03_r8.jpg"
+      ],
+      "supports": "Qualitative folded wing profile, large glazed zones, framing rhythm, and horizontal projecting sunshade members; headings/roll are unknown."
+    },
+    {
+      "title": "Indiana Current Imagery 2023 orthophoto",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "local_file": "../../audit/complete_neil_armstrong/sources/indiana_current_ortho_neil_extent.png",
+      "supports": "Roof/eaves plan only, not structural wall or courtyard edges."
+    }
+  ],
+  "evidence": {
+    "validation": "validation_r12_9.json",
+    "renders": "renders_independent_r12_9/",
+    "source_review": "source_review_r12_9.md",
+    "builder": "apply_refinement_r12_9.py",
+    "render_driver": "render_independent_r12_9.py"
+  },
+  "limitations": [
+    "The eaves trace does not verify the structural wall footprint or courtyard edges.",
+    "No measured facade schedule or dimensioned wall elevation was found; glazing and fin stationing/depths are qualitative estimates.",
+    "The 21.5 m peak/roof warp remains inferred; the 21.6 m LiDAR value is only a coarse ceiling.",
+    "Geotagged photographs lack heading/roll calibration and do not support exact facade registration."
+  ],
+  "ready_for_independent_grade": true
+}
