@@ -18,7 +18,7 @@ MASTER = ROOT / "purdue_campus_master.blend"
 MODULAR = ROOT / "modular"
 MANIFEST_PATH = MODULAR / "manifest.json"
 VERIFICATION_PATH = MODULAR / "verification.json"
-SYNC_REPORT_PATH = ROOT / "audit/master_sync_r12.json"
+SYNC_REPORT_PATH = ROOT / "audit/master_sync_r13.json"
 
 
 def read_json(path: Path):
@@ -97,6 +97,17 @@ records = {
         "validation_path": ROOT / "audit/physics_building/independent_reopen_r2.json",
         "grade_json": ROOT / "audit/physics_building/independent_scorecard_r2.json",
     },
+    "northwest_chiller_plant": {
+        "hash": "f764c63493bdf3258cfe3783e79f022a0dd48ce337aafa4a0486bf06ac29b5b6",
+        "object_count": 572,
+        "grade_path": "../audit/northwest_chiller_plant_refine/independent_grade_r1.md",
+        "accuracy_status": (
+            "independently graded 8.3/10; GIS shell, placement and 572-object manifest verified; "
+            "cooling-cell/piping arrangement and interior remain interpretive"
+        ),
+        "validation_path": ROOT / "audit/northwest_chiller_plant_refine/independent_reopen_r1.json",
+        "grade_json": ROOT / "audit/northwest_chiller_plant_refine/independent_scorecard_r1.json",
+    },
     "native_american_educational_and_cultural_center_nacc": {
         "hash": "e442e099cf94dde2b0d95f87e336ac550daf3445c56a3129c078ae64657e3305",
         "object_count": 806,
@@ -119,7 +130,9 @@ for asset_id, item in records.items():
     if actual_hash != item["hash"]:
         raise RuntimeError(f"{asset_id} hash mismatch: expected {item['hash']}, got {actual_hash}")
     grade = read_json(item["grade_json"])
-    if float(grade["score"]) < 8.0 or int(grade["max_score"]) != 10:
+    grade_score = grade.get("score", grade.get("total"))
+    grade_max = grade.get("max_score", grade.get("maximum"))
+    if float(grade_score) < 8.0 or int(grade_max) != 10:
         raise RuntimeError(f"{asset_id} does not have a passing independent grade")
     evidence_count = grade.get("evidence", {}).get("scene_object_count")
     if asset_id == "knoy_hall":
@@ -130,6 +143,8 @@ for asset_id, item in records.items():
         evidence_count = grade.get("evidence", {}).get("export_object_count")
     if asset_id == "physics_building":
         evidence_count = grade.get("evidence", {}).get("collection_object_count")
+    if asset_id == "northwest_chiller_plant":
+        evidence_count = grade.get("reopen_checks", {}).get("asset_object_count")
     if evidence_count is not None and int(evidence_count) != item["object_count"]:
         raise RuntimeError(f"{asset_id} grade object count does not match expected count")
     if item["validation_path"] is not None:
@@ -153,6 +168,10 @@ for asset_id, item in records.items():
             validation_count = validation.get("object_count")
         elif asset_id == "physics_building":
             validation_ok = validation.get("object_inventory_matches_manifest")
+            validation_hash = validation.get("asset_sha256")
+            validation_count = validation.get("collection_object_count")
+        elif asset_id == "northwest_chiller_plant":
+            validation_ok = validation.get("manifest_inventory_matches")
             validation_hash = validation.get("asset_sha256")
             validation_count = validation.get("collection_object_count")
         else:

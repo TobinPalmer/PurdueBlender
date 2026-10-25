@@ -77,7 +77,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 1129 |
 | National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](buildings/national_soil_erosion_laboratory.blend) | 560 |
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](buildings/native_american_educational_and_cultural_center_nacc.blend) | 806 |
-| Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 414 |
+| Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 572 |
 | Physics Building | [physics_building_phys_3bf42f3.blend](buildings/physics_building_phys_3bf42f3.blend) | 319 |
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](buildings/ray_w_herrick_laboratories.blend) | 89 |
 

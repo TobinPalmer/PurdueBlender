@@ -1,0 +1,43 @@
+{
+  "building": "Northwest Chiller Plant",
+  "review_date": "2026-10-25",
+  "reviewer": "independent_asset_review",
+  "asset": "modular/buildings/northwest_chiller_plant.blend",
+  "asset_sha256": "f764c63493bdf3258cfe3783e79f022a0dd48ce337aafa4a0486bf06ac29b5b6",
+  "total": 8.3,
+  "maximum": 10,
+  "threshold": 8,
+  "passed": true,
+  "rubric": [
+    {"category": "identity_and_footprint", "score": 1.9, "maximum": 2.0, "notes": "Correct utility plant identity and authoritative GIS shell retained. Exterior facade references unavailable for independent validation."},
+    {"category": "position_and_scale", "score": 2.0, "maximum": 2.0, "notes": "Master placement agrees with manifest within 0.000009 m; unit scale and zero rotation; linked collection resolves."},
+    {"category": "height_levels_and_roof", "score": 1.7, "maximum": 2.0, "notes": "Two-level 10.2 m GIS shell retained. Cooling-cell count/layout remains typological and unverified."},
+    {"category": "facade_and_visible_equipment", "score": 1.5, "maximum": 2.0, "notes": "Detailed industrial treatment is legible, but facade rhythm and equipment/pipe arrangements are unsupported by as-built references."},
+    {"category": "materials_interior_and_export", "score": 1.2, "maximum": 2.0, "notes": "Portable procedural materials, no missing image dependencies; interior remains schematic."}
+  ],
+  "reopen_checks": {
+    "blender_version": "5.2.3 LTS",
+    "asset_object_count": 572,
+    "manifest_object_count": 572,
+    "manifest_name_count": 572,
+    "manifest_inventory_matches": true,
+    "full_asset_bounds_match_manifest": true,
+    "unique_material_count": 29,
+    "materialless_meshes": 0,
+    "missing_image_dependencies": 0,
+    "gis_shell_bounds_m": [[-17.004774,20.493732],[-18.566463,21.454014],[0.3,10.5]],
+    "full_asset_bounds_m": [[-17.349226,25.643733],[-19.466464,21.798403],[0,13.77]],
+    "master_linked_count": 572,
+    "master_asset_path_matches": true,
+    "master_marker_xy_m": [-994.953003,200.167008],
+    "manifest_marker_xy_m": [-994.953,200.167],
+    "placement_error_m": 0.000008002,
+    "master_scale": [1,1,1],
+    "master_rotation_euler": [0,0,0]
+  },
+  "evidence_file": "independent_reopen_r1.json",
+  "limitations": [
+    "Official project sources confirm utility function and improvement scope, but do not provide verified facade imagery or as-built rooftop/mechanical drawings.",
+    "Cooling-cell count/configuration, piping, service-yard arrangement, and interior remain interpretive."
+  ]
+}
