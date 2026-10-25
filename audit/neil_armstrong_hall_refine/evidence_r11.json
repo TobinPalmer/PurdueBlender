@@ -1,0 +1,133 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R11 refinement",
+  "date": "2026-10-25",
+  "asset": "../../modular/buildings/neil_armstrong_hall.blend",
+  "sha256_before": "63c18a8ce250345134399b48dc9eb0f5f5a7563ef3566a5b22145221e7c0145d",
+  "sha256_after": "d3d90d21ad60b985826270be18c016220944e3c87545fc179af7b51d5084b8b4",
+  "collection": "Asset_neil_armstrong_hall",
+  "collection_objects": 445,
+  "total_objects": 445,
+  "changes": [
+    {
+      "kind": "presentation visibility",
+      "objects": [
+        "ARMS_R5_Coarse_LiDAR_wing_low",
+        "ARMS_R5_Coarse_LiDAR_wing_mid",
+        "ARMS_R5_Coarse_LiDAR_roof_high"
+      ],
+      "before": {
+        "ARMS_R5_Coarse_LiDAR_wing_low": {
+          "hide_render": false,
+          "hidden_in_view_layer": false
+        },
+        "ARMS_R5_Coarse_LiDAR_wing_mid": {
+          "hide_render": false,
+          "hidden_in_view_layer": false
+        },
+        "ARMS_R5_Coarse_LiDAR_roof_high": {
+          "hide_render": false,
+          "hidden_in_view_layer": false
+        }
+      },
+      "after": {
+        "ARMS_R5_Coarse_LiDAR_wing_low": {
+          "hide_render": true,
+          "hidden_in_view_layer": true
+        },
+        "ARMS_R5_Coarse_LiDAR_wing_mid": {
+          "hide_render": true,
+          "hidden_in_view_layer": true
+        },
+        "ARMS_R5_Coarse_LiDAR_roof_high": {
+          "hide_render": true,
+          "hidden_in_view_layer": true
+        }
+      },
+      "basis": "R5 source evidence calls these coarse NDHM/GIS envelope solids, not wall, facade, floor-plan, or exact roof-edge geometry. They obscure the independently modeled facade and are retained unchanged as hidden reference geometry.",
+      "source": "../../audit/complete_neil_armstrong/evidence_r5.json"
+    },
+    {
+      "kind": "canopy soffit PBR material",
+      "material": "ARMS_Sea_Wolf_ACM",
+      "before": {
+        "base_color": [
+          0.10999999940395355,
+          0.15000000596046448,
+          0.1599999964237213,
+          1.0
+        ],
+        "metallic": 0.7200000286102295,
+        "roughness": 0.2800000011920929
+      },
+      "after": {
+        "base_color": [
+          0.07999999821186066,
+          0.03700000047683716,
+          0.027000000700354576,
+          1.0
+        ],
+        "metallic": 0.550000011920929,
+        "roughness": 0.36000001430511475
+      },
+      "basis": "Officially attributed exterior photo of the building shows the large cantilever canopy underside in a dark red-brown metallic finish; previous base color was gray-blue.",
+      "reference_image": "sources/wikimedia_neil_2016_03_r8.jpg",
+      "reference_image_url": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_03.jpg",
+      "patch_sampling_note": "The dark visible canopy region was sampled approximately from the source photo; surrounding sky/glazing pixels are excluded from the material inference. A red-brown metal approximation is used; exact paint/ACM manufacturer color is unverified."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Neil Armstrong Hall of Engineering Purdue University 2016 03",
+      "publisher": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_03.jpg",
+      "retrieval_date": "2026-10-25",
+      "local_image": "sources/wikimedia_neil_2016_03_r8.jpg",
+      "image_sha256": "35bc12dd2639a3dce3d2b474c68bf658d9187bbdba8b9fcaeb61e761922f22ee",
+      "used_for": "Color evidence only for the cantilever canopy. Unregistered perspective image; not used to set dimensions, orientation, or facade coordinates."
+    },
+    {
+      "title": "Neil Armstrong Hall of Engineering emergency plan page",
+      "publisher": "Purdue University Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/arms/",
+      "retrieval_date": "2026-10-25",
+      "used_for": "Building identity and room/program context; not used to infer dimensions."
+    },
+    {
+      "title": "Purdue University BuildingShapesZip4 feature 642",
+      "publisher": "Purdue University / Indiana Geographic Information Office",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 642,
+      "source_crs": "EPSG:2968 for project transform details recorded in prior audit evidence_r5.json",
+      "used_for": "Contextual registered footprint basis for the retained coarse envelope; does not define facade/roof/canopy edges.",
+      "raw_snapshot": "../../audit/complete_neil_armstrong/sources/gis_feature_642_20261024.json"
+    },
+    {
+      "title": "Indiana 3DEP 2018 Tippecanoe NDHM",
+      "publisher": "Purdue Digital Forestry / iDiF",
+      "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_ndhm_2018.tif",
+      "source_crs_units": "EPSG:2968, US survey feet; see prior evidence_r5.json for conversion and sampling method.",
+      "used_for": "Provenance for coarse envelopes kept hidden as reference geometry.",
+      "raw_snapshot": "../../audit/complete_neil_armstrong/sources/tippecanoe_ndhm_clip_r5.tif"
+    }
+  ],
+  "presentation_render": {
+    "file": "renders_r3/north_entry_refined_r3.png",
+    "method": "Temporary neutral ground, area lights and review camera added for the render only; these were not saved into the asset.",
+    "purpose": "Reopened-asset visual check of facade visibility and canopy material after hiding schematic LiDAR envelopes."
+  },
+  "validation": {
+    "file": "validation_r11.json",
+    "blender_version": "5.2.3 LTS",
+    "collection_objects": 445,
+    "total_objects": 445,
+    "mesh_objects": 415,
+    "mesh_vertices": 5920,
+    "mesh_polygons": 5855,
+    "materials": 23,
+    "root_location": [0.0, 0.0, 0.0],
+    "asset_sha256": "d3d90d21ad60b985826270be18c016220944e3c87545fc179af7b51d5084b8b4",
+    "reopened_successfully": true
+  },
+  "independent_grade": "Not assigned; ready for separate grading."
+}

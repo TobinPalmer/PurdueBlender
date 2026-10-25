@@ -1,0 +1,88 @@
+{
+  "building": "Neil Armstrong Hall of Engineering",
+  "building_id": "neil_armstrong_hall",
+  "revision_reviewed": "R11 refinement",
+  "review_date": "2026-10-25",
+  "reviewer": "Independent read-only reviewer",
+  "asset": "modular/buildings/neil_armstrong_hall.blend",
+  "asset_sha256": "d3d90d21ad60b985826270be18c016220944e3c87545fc179af7b51d5084b8b4",
+  "review_type": "independent_full_asset_and_R11_change_review",
+  "score": 7.8,
+  "max_score": 10.0,
+  "previous_independent_score": 7.6,
+  "acceptance_target": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 1.6,
+      "max_score": 2.0,
+      "findings": [
+        "Manifest identity resolves to Neil Armstrong Hall and Purdue GIS feature 642; the supplied source set is building-specific.",
+        "The R11 changes correctly retain the coarse NDHM envelopes only as reference meshes and hide them from viewport display and rendering.",
+        "Architectural wall/roof correspondence to the GIS polygon remains unresolved; prior screening shows material footprint/roof-slab overlap differences and the new revision did not change footprint geometry."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale",
+      "score": 1.6,
+      "max_score": 2.0,
+      "findings": [
+        "The saved AssetRoot is at the local origin with identity world transform.",
+        "The master Placement_neil_armstrong_hall marker was reopened read-only at [-109.0, 400.1893310546875, 0.0], zero rotation, unit scale; it instances Asset_neil_armstrong_hall from the expected library path and exactly matches the manifest origin.",
+        "Marker alignment verifies placement origin only; the building shell's orientation and wall-level GIS registration remain approximate/unverified."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.4,
+      "max_score": 2.0,
+      "findings": [
+        "The 53 ft atrium ceiling and current four-level description have primary-source support in the prior source package.",
+        "The distinctive warped, wing-like cantilever roof is still not represented with verified dimensions or a calibrated roof plan; orthophoto roof colors do not establish construction materials or roof boundaries.",
+        "R11 changes no roof geometry and does not resolve the main roof-shape deduction."
+      ]
+    },
+    {
+      "name": "Facade, entrance, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "findings": [
+        "The `ARMS_Sea_Wolf_ACM` canopy material now reads dark red-brown in the R11 entry render, consistent with the attributed 2016 Wikimedia exterior photo; the photo is perspective/un-calibrated, so the exact shader color is an estimate.",
+        "The facade broadly combines brick, curtain glazing, and canopy massing, but window cadence, roof-wing profile, and facade-to-photo registration remain generic or unverified.",
+        "Hiding coarse reference solids removes visual clutter but does not add architectural geometry."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and evidence",
+      "score": 1.7,
+      "max_score": 2.0,
+      "findings": [
+        "Blender 5.2.3 reopened the exact asset hash; scene and export collection are present with 445 objects, 415 meshes, and 23 materials.",
+        "All listed manifest object names match the 445 objects in the exported collection; no unlisted or missing names were found.",
+        "All mesh objects have valid material assignments; no external image dependencies or missing image paths were found.",
+        "A deterministic mesh-vertex/polygon/world-transform digest matches the prior `.blend1` snapshot; object names also match. R11 changes are presentation visibility and canopy material only.",
+        "The evidence is detailed, though the presentation set does not yet show a calibrated whole-building comparison or verified architectural footprint."
+      ]
+    }
+  ],
+  "r11_change_assessment": {
+    "coarse_ndhm_meshes_hidden_in_view_layer": true,
+    "coarse_ndhm_meshes_hidden_from_render": true,
+    "canopy_finish_matches_qualitative_photo_cue": true,
+    "geometry_or_object_set_changed": false,
+    "score_change_from_r10": "+0.2: the facade presentation is cleaner and the canopy hue is better supported; major geometry/evidence deductions remain."
+  },
+  "evidence_files": [
+    "audit/neil_armstrong_hall_refine/independent_reopen_validation_r12.json",
+    "audit/neil_armstrong_hall_refine/evidence_r11.json",
+    "audit/neil_armstrong_hall_refine/validation_r11.json",
+    "audit/neil_armstrong_hall_refine/renders_r3/north_entry_refined_r3.png",
+    "audit/neil_armstrong_hall_refine/sources/wikimedia_neil_2016_03_r8.jpg",
+    "audit/complete_neil_armstrong/validation_r10.json",
+    "audit/complete_neil_armstrong/source_search_r11.json"
+  ],
+  "asset_edited": false,
+  "master_edited": false,
+  "manifest_edited": false
+}

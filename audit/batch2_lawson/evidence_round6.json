@@ -1,0 +1,157 @@
+{
+  "building": "Lawson Hall / Richard and Patricia Lawson Computer Science Building",
+  "revision": 6,
+  "review_date": "2026-10-25",
+  "source_blend": "modular/buildings/lawson_hall.blend",
+  "export_collection": "Asset_lawson_hall",
+  "validation": "audit/batch2_lawson/validation_round6.json",
+  "changes": [
+    {
+      "feature": "Kurz Lobby information fixtures",
+      "action": "Added an illustrative glass display case and two touchscreen kiosks.",
+      "evidence": "Purdue's 2006 building dedication describes interactive direction/information touchscreens and a display case for Purdue memorabilia in the Kurz Lobby.",
+      "limits": "Exact number, placement, dimensions and present condition are not established by the sources; all fixture geometry and layout are illustrative."
+    },
+    {
+      "feature": "Roof, exterior shell and stairs evidence metadata",
+      "action": "Tagged eleven roof/shell/vertical envelope objects as schematic and height/current-roof unverified. Tagged each of the 57 first-floor stair mesh pieces and six landing meshes as schematic, with vertical continuity unverified.",
+      "evidence": "Purdue's available first-floor plan gives stair locations only. Checked photo/plan sources do not provide measured elevations or complete current upper-floor plans.",
+      "limits": "No shell, roof, penthouse or equipment height geometry was changed or claimed as measured. Overall model Z maximum remains 21.30 m, unverified. No continuous floor-to-floor stair path is claimed."
+    },
+    {
+      "feature": "Lawson Commons Harris video wall",
+      "action": "Reframed the saved detail camera face-on and slightly wider so all four rows and all sixteen modules are legible; the model remains a 4 x 4 grid with documented 16 x 9 ft overall size.",
+      "evidence": "Purdue CS 2011 article reports a 16 x 9 ft wall, sixteen 46-inch LCD monitors, and 4 x 4 layout.",
+      "limits": "This represents the documented 2011 installation only. Current hardware and screen content are unverified; module mounting arrangement is illustrative."
+    },
+    {
+      "feature": "Kurz Lobby Echo Spiral",
+      "action": "Adjusted the schematic helical form to a fuller 2.2-turn coil with a thicker stainless section. Reopened-mesh bounds measure 3.047 m high, within 0.001 m of the source-reported 10 ft (3.048 m).",
+      "evidence": "Purdue CS 2006 article identifies the stainless, brushed/textured Echo Spiral and says it was installed in the lobby directly in front of the main entrance; Purdue dedication reports 10 ft.",
+      "limits": "The 10 ft overall height is source-backed. Turn count, tube/ribbon section, profile, base and precise floor location are illustrative; this is not an exact surface reconstruction."
+    },
+    {
+      "feature": "Interior camera and contrast",
+      "action": "Raised the whole first-floor cutaway exposure and key/fill illumination; refreshed the lobby and entry preview lighting.",
+      "evidence": "Lighting/render-only staging makes the plan-derived first floor and fixtures more readable.",
+      "limits": "Preview lights and cameras are temporary and are not saved to the asset. Cutaway remains a schematic L1 visualization; no vertical stair continuity is demonstrated."
+    },
+    {
+      "feature": "Placement registration evidence",
+      "action": "Read-only check of the current live master scene found Placement_lawson_hall at XYZ [-282.5, 44.0, 0.0], zero rotation, unit scale, instancing Asset_lawson_hall from the expected source-library path. This matches the manifest placement origin [-282.5, 44.0] and earlier placement_check.json record.",
+      "evidence": "Current live Blender scene inspected read-only on 2026-10-24; modular/manifest.json identifies the Lawson asset, collection, GIS FID 59, local-frame placement origin, and polygon-match metadata; audit/batch2_master/placement_check.json stores the earlier numeric marker check.",
+      "limits": "This confirms marker transform and linked collection registration, not an independent re-computation of GIS polygon geometry or visual façade alignment. No master file was edited."
+    },
+    {
+      "feature": "Review renders",
+      "action": "Reopened the saved source and refreshed exterior, whole first-floor cutaway, entry/lobby detail and face-on Commons video-wall detail renders.",
+      "limits": "Render cameras, temporary lights, hide flags and cutaway floor override are not saved into the building asset."
+    },
+    {
+      "feature": "Exterior glazing material read",
+      "action": "Adjusted the blue-gray base colors and roughness on the curtain-wall, curved rotunda and spandrel glass materials; no facade geometry or opening rhythm changed.",
+      "evidence": "Purdue-published Lawson exterior photographs provide visual-only support for blue-gray glazed surfaces distinct from the bronze frames. The 2024 photo is retained as audit/batch2_lawson/lawson_2024_entrance_reference.html.",
+      "limits": "The photos do not establish glazing product, exact color, reflectance or material specification. These shader values are visual approximations; no measured facade or height claims are made."
+    }
+  ],
+  "sources": [
+    {
+      "provider": "Purdue Department of Computer Science",
+      "title": "Harris Corporation Video Wall Installed in Lawson Computer Science Building Commons",
+      "url": "https://www.cs.purdue.edu/news/articles/2011/harris-video-wall.html",
+      "source_date": "2011-04-08",
+      "retrieved": "2026-10-24",
+      "local_snapshot": "audit/batch2_lawson/lawson_2011_video_wall.html",
+      "use": "Documented Commons display dimensions and 4 x 4 sixteen-monitor arrangement; supports modeled wall module count and 46-inch modules.",
+      "uncertainty": "Historical installation; current wall configuration is unverified."
+    },
+    {
+      "provider": "Purdue Department of Computer Science",
+      "title": "Echo Spiral Finds Home in Lawson",
+      "url": "https://www.cs.purdue.edu/news/articles/2006/echo-spiral.html",
+      "source_date": "2006-09-18",
+      "retrieved": "2026-10-24",
+      "local_snapshot": "audit/batch2_lawson/lawson_2006_echo_spiral.html",
+      "use": "Identifies John Mishler's stainless, brushed/textured metal spiral and states it was installed inside the lobby directly in front of the main entrance.",
+      "uncertainty": "No measured profile drawing; modeled form and placement are schematic."
+    },
+    {
+      "provider": "Purdue Department of Computer Science",
+      "title": "Lawson Dedication Proved to be Both High Tech and Highly Touching",
+      "url": "https://www.cs.purdue.edu/news/articles/2006/lawson-dedication.html",
+      "source_date": "2006",
+      "retrieved": "2026-10-24",
+      "local_snapshot": "audit/batch2_lawson/lawson_2006_dedication.html",
+      "use": "Describes Kurz Lobby's 10-foot sculpture, direction/information touch screens and display case; describes the University Meeting Room and adjacent Commons program.",
+      "uncertainty": "Historic description supports presence and function, not exact present layout or dimensions."
+    },
+    {
+      "provider": "Purdue Department of Computer Science",
+      "title": "Lawson Building Update",
+      "url": "https://www.cs.purdue.edu/news/articles/2006/building-update-march.html",
+      "source_date": "2006-03-17",
+      "retrieved": "2026-10-24",
+      "local_snapshot": "audit/batch2_lawson/lawson_2006_building_update.html",
+      "use": "Historic construction imagery supports visible exterior and interior construction context; used as visual-only evidence.",
+      "uncertainty": "Construction-era photos are not current survey/elevation evidence."
+    },
+    {
+      "provider": "Purdue College of Science",
+      "title": "Celebrating 2024 Top 20 Stories",
+      "url": "https://www.purdue.edu/science/about/news/articles/2024/celebrating-2024-top-20-stories-from-the-college-of-science.html",
+      "retrieved": "2026-10-24",
+      "local_snapshot": "audit/batch2_lawson/lawson_2024_entrance_reference.html",
+      "use": "Visual entrance reference for the R3 canopy, glazed entry and facade cues.",
+      "uncertainty": "Perspective image only; dimensions and exact placement are not measured."
+    },
+    {
+      "provider": "Purdue Department of Computer Science",
+      "title": "Lawson First Floor Plan",
+      "url": "https://www.cs.purdue.edu/resources/docs/lawson_1.PDF",
+      "retrieved": "2026-10-24",
+      "local_snapshot": "audit/batch2_lawson/lawson_1.pdf",
+      "use": "North-up first-floor rooms, vestibule, Commons, meeting room and stair locations.",
+      "uncertainty": "Undated plan; approximate raster registration. No upper floors or surveyed facade heights."
+    }
+  ],
+  "local_frame": {
+    "root": "AssetRoot_lawson_hall",
+    "root_transform": "identity, unchanged",
+    "collection": "Asset_lawson_hall",
+    "master_marker": "not edited",
+    "placement": "not edited"
+  },
+  "previews": [
+    "audit/batch2_lawson/exterior_round6.png",
+    "audit/batch2_lawson/interior_cutaway_round6.png",
+    "audit/batch2_lawson/entry_lobby_round6.png",
+    "audit/batch2_lawson/commons_wall_round6.png"
+  ],
+  "remaining_uncertainty": [
+    "No measured or current source establishes the whole-shell height, roof/penthouse/equipment elevations, or upper-floor window positions.",
+    "Exterior opening cadence/material dimensions are simplified and unmeasured; facade rhythm was not changed without elevation evidence.",
+    "No upper-floor plans were available. Stair pieces are illustrative and do not demonstrate continuous vertical circulation.",
+    "Only L1 interiors are modeled from the available first-floor plan. Furniture sizes/placements, display fixture positions and sculpture profile remain schematic."
+  ],
+  "review_status": "Awaiting fresh independent full-building grade; no self-grade assigned.",
+  "validation_summary": {
+    "reopened_saved_source": true,
+    "export_objects": 601,
+    "mesh_count": 598,
+    "unmaterialed_meshes": 0,
+    "missing_external_images": 0,
+    "root_transform_identity": true,
+    "round6_geometry_changed": false,
+    "adjusted_materials": [
+      "LWSN_Curtain_Glass",
+      "LWSN_Rotunda_Glass",
+      "LWSN_Spandrel_Glass"
+    ],
+    "video_wall_modules": 16,
+    "echo_spiral_mesh_height_m": 3.047,
+    "roof_height_verified": false,
+    "continuous_floor_to_floor_stair_route_verified": false,
+    "temporary_preview_cameras_saved": false,
+    "latest_independent_grade": "7.0/10 from round 4, prior to this visual material revision; fresh grade pending"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "building": "Lawson Hall / Richard and Patricia Lawson Computer Science Building",
+  "revision": 7,
+  "review_date": "2026-10-25",
+  "reviewer": "Independent evaluator; asset reopened and footprint recomputed",
+  "source_blend": "modular/buildings/lawson_hall.blend",
+  "source_sha256": "efd340e3977f1140686dccb48ab714b273e2d79a1fe8de83efe71b02ddb583b0",
+  "blender_version": "5.2.3 LTS",
+  "score": 7.8,
+  "max_score": 10,
+  "minimum_passing_score": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Purdue GIS BuildingShapes feature FID 59 is associated with Lawson Hall. I independently reopened the saved source and recomputed 21 samples along each of the 54 ordered GIS boundary edges against lower XY edges of the structural shell, north closure, and vestibule geometry: 1,134/1,134 samples fall within 0.10 m; maximum nearest-edge distance is 0.0000152 m. This verifies the horizontal outline correspondence, not wall thickness, above-grade geometry, or the GIS source's survey accuracy.",
+      "deduction": "The check proves plan-line fit only; it does not prove that all exterior surfaces, heights, or historical/current as-built changes match the live building."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "The reopened AssetRoot_lawson_hall transform is identity. The matched plan/GIS control points and scale bar support north-up first-floor placement with approximately 0.0921 m/pixel in X and 0.09234 m/pixel in Y; the recorded estimate gives about 0.3 m raster edge-pick uncertainty. The existing master marker record is at [-282.5, 44.0, 0.0] with zero rotation and unit scale.",
+      "deduction": "The master marker evidence predates this independent pass and was not freshly reopened as part of this grade; the plan registration remains an approximate image fit rather than surveyed dimensions."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.9,
+      "max_score": 2,
+      "evidence": "The Purdue first-floor plan supports L1 room arrangement and stair locations; source reporting supports a five-level GIS attribute. The reopened asset reaches Z=21.30 m and has a schematic roof/penthouse mass.",
+      "deduction": "No measured/current elevation, roof or penthouse height, complete upper-floor plan, or continuous stair section was found. The GIS level field does not establish the modeled story heights. The new north closure's top is explicitly estimated."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "The inspected Purdue entrance photo supports the curved pale-stone name canopy, glazed doors, approach steps, and handrails; the asset now places an entrance feature on the plan/GIS vestibule perimeter. The exterior render shows brick and light horizontal banding, repeated window bays, and a curved glazed Commons volume. Purdue's 2011 article confirms the historical 16-by-9-foot 4-by-4 video wall; all 16 display modules appear in the detail render.",
+      "deduction": "The building remains visibly schematic: facade opening cadence, glazing/framing specification, roof silhouette, and penthouse geometry are not measured; vestibule/canopy/door dimensions are visual estimates."
+    },
+    {
+      "criterion": "Interior, materials, modular export, and evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Blender 5.2.3 independently reopened the exact saved file and found Asset_lawson_hall with 615 objects/612 meshes, an identity root, no meshes without material assignments, and no missing external image paths. The brick texture is connected to the shader base color. The cutaway shows broad L1 room/circulation zoning and a lecture-hall seating layout; the Commons wall has the documented 16 modules. R7 source/evidence records describe sources, transform method, uncertainties, and refreshed views.",
+      "deduction": "The cutaway is schematic rather than a verified complete interior: upper floors are absent, furniture and room details are approximate, and stair flights/landings do not establish floor-to-floor continuity."
+    }
+  ],
+  "evidence": {
+    "independent_reopen_file": "audit/batch2_lawson/independent_reopen_r7.json",
+    "independently_recomputed_gis_samples": 1134,
+    "gis_samples_within_0_10m": 1134,
+    "gis_max_nearest_edge_distance_m": 0.0000151412,
+    "export_object_count": 615,
+    "mesh_count": 612,
+    "root_identity": true,
+    "unmaterialed_meshes": 0,
+    "missing_external_images": 0,
+    "views_inspected": [
+      "audit/batch2_lawson/exterior_round7.png",
+      "audit/batch2_lawson/interior_cutaway_round7.png",
+      "audit/batch2_lawson/entry_lobby_round7.png",
+      "audit/batch2_lawson/commons_wall_round7.png",
+      "audit/batch2_lawson/gis_shell_plan_overlay_round7.png"
+    ]
+  },
+  "source_urls": [
+    "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D59&outFields=*&returnGeometry=true&outSR=4326&f=json",
+    "https://www.cs.purdue.edu/resources/docs/lawson_1.PDF",
+    "https://www.purdue.edu/science/about/news/articles/2024/celebrating-2024-top-20-stories-from-the-college-of-science.html",
+    "https://www.cs.purdue.edu/news/articles/2011/harris-video-wall.html",
+    "https://www.cs.purdue.edu/news/articles/2006/echo-spiral.html"
+  ]
+}

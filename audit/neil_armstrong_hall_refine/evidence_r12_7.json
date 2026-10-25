@@ -1,0 +1,105 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R12.7 courtyard, facade cadence, and canopy silhouette refinement",
+  "date": "2026-10-25",
+  "parent_sha256": "659489bc2962d5118945d0b09060e576bb441318006d0c531019a12b558dbb69",
+  "asset": "../../modular/buildings/neil_armstrong_hall.blend",
+  "sha256": "a85ef78d82e5c50b09fcd4fb7bc191798fad0132a9a89b84297203186f2ae549",
+  "object_count": 445,
+  "mesh_object": "ARMS_Cantilever_Canopy_Deck",
+  "new_material": {
+    "name": "ARMS_R12_Wing_Red_ACM",
+    "base_color_linear": [
+      0.085,
+      0.025,
+      0.014,
+      1
+    ],
+    "metallic": 0.08,
+    "roughness": 0.5,
+    "scope": "new wing roof surface only; shared Mayflower ACM left unchanged",
+    "previous_test_values": {
+      "base_color": [
+        0.11999999731779099,
+        0.04500000178813934,
+        0.029999999329447746,
+        1.0
+      ],
+      "metallic": 0.2199999988079071,
+      "roughness": 0.4399999976158142
+    },
+    "color_revision": "R12.4, darkened to match the muted red-brown appearance in the CC BY 4.0 2016 facade images and the 2023 orthophoto; previous R12.3 rendered too pink under the blue review world. Render value remains lighting-dependent, not a calibrated sample."
+  },
+  "roof_pocket": {
+    "kind": "shallow dark triangular inset",
+    "orthophoto_pixel_vertices": [
+      [
+        460,
+        210
+      ],
+      [
+        505,
+        215
+      ],
+      [
+        492,
+        235
+      ]
+    ],
+    "asset_local_xyz_m": [
+      [
+        -57.913,
+        20.51,
+        19.964
+      ],
+      [
+        -53.066,
+        19.897,
+        19.096
+      ],
+      [
+        -54.466,
+        17.448,
+        19.242
+      ]
+    ],
+    "limitation": "The dark pocket is visual inference from aerial/photo evidence, not a verified structural aperture."
+  },
+  "sources": [
+    {
+      "title": "Indiana Current Imagery 2023 ortho",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "local_file": "../../audit/complete_neil_armstrong/sources/indiana_current_ortho_neil_extent.png",
+      "supports": "Red roof pocket and overall roof plan; no elevation."
+    },
+    {
+      "title": "Neil Armstrong Hall 2016 photo 01",
+      "url": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_01.jpg",
+      "license": "CC BY 4.0",
+      "local_file": "sources_r12/arms_2016_01.jpg",
+      "supports": "Folded wing shell and dark opening beneath the northwest apex; visual only, not scale registered."
+    },
+    {
+      "title": "Neil Armstrong Hall 2016 photo 03",
+      "url": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_03.jpg",
+      "license": "CC BY 4.0",
+      "local_file": "../../audit/complete_neil_armstrong/sources/wikimedia_neil_2016_03_r8.jpg",
+      "supports": "Canopy finish and folded roof silhouette; visual only, not scale registered."
+    }
+  ],
+  "validation_pending": "Fresh Blender 5.2.3 reopen validation passed at SHA a85ef78d82e5c50b09fcd4fb7bc191798fad0132a9a89b84297203186f2ae549. 445 objects/415 meshes, root identity, no unassigned or null materials, no external images. Roof/eaves remain orthophoto-traced; wall-window band and canopy heights are explicitly inferred. Courtyard comparison view was moved off display case 3 because its geotag position intersected the case.",
+  "sha256_before_color_revision": "a56b0b5c58d6c7de1bdbe2cc77845887a188ff92c41a0bb115c015100a625d6a",
+  "sha256_before_color_revision_r12_4": "345018f89068bee036c255bd60f28aad670f5d2e8a8f78786681bbe3b5de03b5",
+  "validation": "validation_r12_7.json",
+  "comparison_plate": "comparison_plate_r12_5.png",
+  "mesh_object_count": 415,
+  "render_directory": "renders_r12_5",
+  "r12_5_changes": {
+    "courtyard_camera": "Located an opaque blue view obstruction: ARMS_Display_GlassCase_3 was 1.6 m from the old approximate source camera. Kept the modeled glass case; shifted comparative camera to an exterior approach to reveal facade and avoid the case.",
+    "low_canopy": "Restored the original 24 x 9.5 x 0.5 m entrance canopy deck from pre-R12 mesh evidence, in the same existing mesh object.",
+    "facade": "Added an upper-level reflective glazing band and vertical mullions to ARMS_West_Wall_North from Wikimedia Commons 2016 photo 02 (CC BY 4.0). Approximate dimensions/cadence are not measured.",
+    "ribbon_windows": "Hidden 12 lower-story exterior ribbon-window planes unsupported by attributed photos, retaining the upper-storey bands; reversible via object visibility flags.",
+    "canopy_profile": "Kept the 2023 roof/eaves XY trace, changed height profile to a localized 21.5 m midpoint peak tapering to lower edges. 21.6 m remains a coarse 5-ft LiDAR ceiling, not surveyed height. Profile is a photo-based inference and still requires independent assessment."
+  },
+  "unresolved": "No dimensioned public plan or facade elevation found. Wall footprint is not verified from the eaves trace. Geotag images lack heading/roll, so comparative cameras are not calibrated. Canopy still looks materially different from photo 03 in matching-point renders."
+}

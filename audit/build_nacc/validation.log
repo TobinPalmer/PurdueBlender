@@ -1,8 +1,43 @@
-00:03.047  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\native_american_educational_and_cultural_center_nacc.blend"
-C:\Users\Tobin\Documents\Blender\PurdueMap\audit\build_nacc\validate_reopen.py:4: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
-  ns=list(m.node_tree.nodes) if m.use_nodes and m.node_tree else [];nodes.append({'material':m.name,'noise':any(n.type=='TEX_NOISE' for n in ns),'bump':any(n.type=='BUMP' for n in ns),'principled':any(n.type=='BSDF_PRINCIPLED' for n in ns)})
+00:01.547  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\native_american_educational_and_cultural_center_nacc.blend"
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\build_nacc\validate_reopen.py:15: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  nodes = list(material.node_tree.nodes) if material.use_nodes and material.node_tree else []
 BlenderMCP addon registered
-{'library': 'modular\\buildings\\native_american_educational_and_cultural_center_nacc.blend', 'collection_found': True, 'objects': 806, 'meshes': 806, 'bounds_local_m': [[-16.352, 11.363], [-15.094, 6.432], [-2.35, 9.35]], 'material_count': 10, 'materials_all_noise_bump_principled': True, 'required_features': {'NACC_fifth_street_front_door': True, 'NACC_parking_lot_access_door': True, 'NACC_alley_rear_kitchen_door': True, 'NACC_detached_single_car_storage_garage': True, 'NACC_accessibility_ramp': True, 'NACC_SCHEMATIC_INTERIOR_NOT_AS_BUILT': True}, 'external_image_paths': [], 'pass': True}
+{
+  "validation": "reopened saved asset in Blender 5.2.3 LTS",
+  "asset_file": "modular\\buildings\\native_american_educational_and_cultural_center_nacc.blend",
+  "collection_found": true,
+  "collection": "Asset_native_american_educational_and_cultural_center_nacc",
+  "objects": 806,
+  "mesh_objects": 806,
+  "local_bounds_m": [
+    [
+      -16.352,
+      8.796
+    ],
+    [
+      -15.094,
+      6.432
+    ],
+    [
+      -2.35,
+      9.35
+    ]
+  ],
+  "material_count": 10,
+  "materials_all_procedural_noise_bump_principled": true,
+  "feature_checks": {
+    "Fifth_Street_front_door": true,
+    "parking_lot_accessible_door": true,
+    "alley_rear_kitchen_door": true,
+    "detached_storage_garage": true,
+    "accessible_ramp": true,
+    "source_described_room_110_back_porch": true,
+    "schematic_interior_collection": true,
+    "undocumented_front_porch_removed": true
+  },
+  "external_image_paths": [],
+  "result": "PASS"
+}
 BlenderMCP addon unregistered
 Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
 

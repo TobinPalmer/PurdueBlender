@@ -1,0 +1,79 @@
+{
+  "building": "Stewart Center",
+  "asset": "modular/buildings/stewart_center.blend",
+  "asset_sha256": "580f5db01d9d103c0d9bc04f39a5e79b8215dd42fecbf232f2d458aa1fa2af6b",
+  "fresh_reopen": {
+    "evidence_file": "reopen_probe.json",
+    "sha256_matches_asset": true,
+    "blender_version": "5.2.3",
+    "collection": "Asset_stewart_center",
+    "collection_objects": 1963,
+    "mesh_objects": 1951,
+    "materials": 27,
+    "materialless_meshes": 0,
+    "missing_external_images": 0,
+    "root_objects": 1
+  },
+  "score": 7.3,
+  "max_score": 10,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and GIS footprint fidelity",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Purdue GIS OBJECTID 615; 53 trace vertices and 52 structural wall segments documented in R2 validation.",
+      "limitations": "GIS campus footprint is not a surveyed facade outline."
+    },
+    {
+      "name": "Placement, orientation, scale, and interior layout",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": "Identity root and existing local frame retained; module bounds and floor-map comparisons documented.",
+      "limitations": "Road School maps have no scale or north arrow; Ringel/HSSE offsets are approximate; master placement marker not independently checked."
+    },
+    {
+      "name": "Floors, height, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": "Archival evidence supports three floors in the central portion; oblique render shows current roof treatment.",
+      "limitations": "Wall height, overall height, roof elevation and rooftop shapes remain estimates; roof reads as broad and featureless."
+    },
+    {
+      "name": "Facade, entrances, and distinctive identity",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": "Purdue Events photo and R2 entry render show the updated six-column portico, pediment, landing, and broad stairs.",
+      "limitations": "Glazed entry/doors are not legible; brick/window grid remains behind portico; handrail pieces appear disconnected; historic library/Fowler Hall volumes are not distinguishable."
+    },
+    {
+      "name": "Modular integrity, portability, and evidence quality",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Matching fresh-reopen hash; named collection/root; no materialless meshes or missing external images; GIS, map, photo, and render evidence present.",
+      "limitations": "Master marker and building-specific dimensions are not verified."
+    }
+  ],
+  "findings": [
+    "R2 is a real visual improvement over R1 but remains below the 8.0 threshold.",
+    "The entrance needs a recessed glazed vestibule and visible doors; the facade grid should not continue behind the portico.",
+    "Refine portico depth, capitals/fluting, cornice and connected stair rails using photo evidence.",
+    "Keep height, roof, and module placement estimates labeled until dimensioned or georeferenced evidence is available.",
+    "Verify the Stewart Center instance marker in the campus master separately."
+  ],
+  "reviewed_evidence": [
+    "REMEDIATION_R2.md",
+    "BUILD_RECORD.md",
+    "building_validation.json",
+    "reopen_probe.json",
+    "source_purdue_entrance.jpg",
+    "south_entry_r2.png",
+    "south_oblique.png",
+    "footprint_overlay.png",
+    "purdue_gis_feature_615.json",
+    "roadschool_floor-1.png",
+    "roadschool_floor-2.png",
+    "roadschool_floor-3.png"
+  ]
+}

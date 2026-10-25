@@ -1,0 +1,53 @@
+{
+  "asset": "modular/buildings/purdue_memorial_union.blend",
+  "sha256": "9f3d804155efb70e13ba49706f7da88f61a93a30f981612ec318eca2f3cac0f6",
+  "score": 7.7,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "Recognizable Purdue Memorial Union tower-and-wing plan. Historic Purdue Libraries GIS and the earlier independent baseline support the main shell footprint; 18 original named wall/base bounds are unchanged within 1 mm. GIS phases are historic and approximate."
+    },
+    {
+      "name": "Placement, orientation, and scale",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": "Read-only master inspection documented one PMU marker at (205.75, -271.65, 0), zero rotation, and unit scale. The individual asset root remains at identity. No current master write/reopen was performed as part of this isolated asset grade."
+    },
+    {
+      "name": "Height, floors, and roof transitions",
+      "score": 1.0,
+      "max_score": 2.0,
+      "evidence": "The model has a taller central tower and pitched wing-roof additions, but 29.5 m total height, floor spacing, and roof elevations are explicitly estimates. Independent south, west, and roof views show broad roof planes dominating the mass, abrupt/awkward overlaps and cutouts, and weak tower-to-wing transitions. The sources are photographs, not measured elevations."
+    },
+    {
+      "name": "Facade rhythm, entrance, and distinctive details",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": "R1 improves on the baseline with six arched wing windows, archivolts, a glazed arched entry, and an upper tower surround. Against the Purdue 1924 and 2024 photos, the wings remain repetitive and underspecified; the portal, relief fields, and tower glazing are schematic, the upper glazing lacks the reference's full composition, and the roof mass obscures/readably competes with the facade."
+    },
+    {
+      "name": "Modular portability and evidence/validation",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": "Builder source, provenance notes, fresh-reopen validation, assigned materials, and no external image dependencies are supplied. I independently reopened the saved asset and verified SHA-256 9f3d804155efb70e13ba49706f7da88f61a93a30f981612ec318eca2f3cac0f6, root identity, and portability. Deduction: validation_r1.json compares to .blend1, but the current .blend1 is a prior R1 save rather than the original baseline; independent original-baseline comparison supports 18 unchanged wall/base bounds, not 21 preserved original bounds. Three current wall/base pieces are additive."
+    }
+  ],
+  "limitations": [
+    "The official historic GIS supports footprint and phase context only, not current elevation, detailed facade geometry, interior layout, or roof dimensions.",
+    "The 1924 archival photo and 2024 Purdue photo depict different dates and perspectives; facade comparisons are qualitative.",
+    "Master placement was read from prior read-only evidence and not modified or freshly written during this review.",
+    "Visual review renders were independently produced from the saved asset with review lighting; their pale slate appearance may be lighting-driven, but large roof forms and transitions remain geometrically simplified."
+  ],
+  "actionable_findings": [
+    "Rebuild roof masses as separate, lower-profile slate wing roofs with clear eaves, ridges, valleys, and controlled intersections; the current broad surfaces overpower the facade and look like a canopy.",
+    "Use a source-matched south elevation to refine the tower's multi-level glazed composition and the wing opening rhythm; reduce repeated rectangular side-wall fenestration where current imagery supports a more specific pattern.",
+    "Refine the main portal scale and stone surround and add only photo-supported relief/statue geometry; current entry is recognizable but schematic.",
+    "Keep height/floor claims labeled as estimates unless measured elevation data is added.",
+    "Correct validation provenance: retain an immutable pre-edit baseline or compare directly against the audited original hash and structural-bounds record; distinguish 18 unchanged original wall/base bounds from 3 added base pieces."
+  ]
+}

@@ -1,0 +1,33 @@
+import json, hashlib
+from pathlib import Path
+ASSET=Path(r'modular/buildings/massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend')
+VALIDATION=Path(r'audit/dsai/validation.json')
+SOURCE=Path(r'audit/dsai/source_record.json')
+
+def evaluate():
+    v=json.loads(VALIDATION.read_text(encoding='utf-8')); s=json.loads(SOURCE.read_text(encoding='utf-8'))
+    sha=hashlib.sha256(ASSET.read_bytes()).hexdigest()
+    criteria=[
+      {'name':'Correct identity and source-backed footprint','score':1.9,'max_score':2,
+       'evidence':'FID 196 is named Hall of Data Science and AI/DSAI. The modeled wall ring is copied from the official building GIS local-meter ring; the source bounds are X -129.857..-65.900 m and Y 139.662..210.935 m. Validated geometry expands by under 0.2 m where façade details protrude. Raw ArcGIS FID196 JSON is preserved.',
+       'finding':'Footprint matches by direct source reuse. No independent aerial/top-down overlay is included to confirm that the correct registered polygon ring represents all as-built wings.'},
+      {'name':'Position, orientation, scale/dimensions','score':1.7,'max_score':2,
+       'evidence':'The asset remains in campus world coordinates using the project local approximation. Horizontal evaluated bounds are within roughly 0.2 m of the given registered bounds. The registered polygon carries its orientation and plan scale directly into the wall ring.',
+       'finding':'No separate transform comparison or north-up footprint overlay was saved. Position is supported by direct conversion from the source geometry, but not independently rechecked against an aerial or surveyed coordinate reference.'},
+      {'name':'Evidence-backed height, floors, and roof form','score':1.25,'max_score':2,
+       'evidence':'Purdue GIS identifies four levels and the model presents four occupied façade bands. Final max Z is 13.4 m. The source record correctly calls storey heights and roof masses estimates and notes undocumented units in GIS height-like fields. Reference photos support red clay hipped roofs.',
+       'finding':'There is no measured height source. The roof is three large overlapping simplified hips; rendered intersections create broad, awkward roof planes that do not follow the clear individual wings seen in MSKTD’s exterior photo. No roof-plan or aerial comparison justifies the current roof extents and peaks.'},
+      {'name':'Facade, entrances, distinctive architecture','score':0.95,'max_score':2,
+       'evidence':'The render shows red masonry, pale limestone horizontal courses, dark glazed windows, and a terracotta roof, which agree at a broad level with the architect image.',
+       'finding':'The model omits a convincing front entry/stone portal, vertical limestone corner piers at the prominent facade corner, and the strong distinction between the large punched lower-level windows and tall, close-spaced upper-storey glazing visible in the architect reference. Current fenestration is uniformly repeated. The upper storey appears capped by a low slab-like roof mass. Main exterior image is a single distant oblique render and shows no useful interior/circulation.'},
+      {'name':'Modular export, portability, and complete evidence','score':1.7,'max_score':2,
+       'evidence':'Stable asset filename and exported collection are retained; all 45 mesh objects are inside the building collection. The `.blend` freshly reopened in Blender 5.2.3. Dedicated audit folder contains source URLs, raw FID196 JSON, downloaded architect/Purdue reference photos, validation report, and render. Asset has no external texture file dependency.',
+       'finding':'Evidence record includes source CRS and uncertainties, but does not state individual photograph retrieval dates/source publication dates or provide a perimeter/top-down/interior saved review view. The interior details are only schematic and not exposed in the exterior review.'}
+    ]
+    return {'score':round(sum(c['score'] for c in criteria),2),'max_score':10,'criteria':criteria,
+       'evidence':['audit/dsai/source_record.json','audit/dsai/purdue_arcgis_FID196.json','audit/dsai/validation.json','audit/dsai/dsai_exterior_review.png','audit/dsai/msktd_exterior_design_article.jpg','audit/dsai/purdue_dsai_photo_7235.jpg'],
+       'findings':['Below the 8/10 pass threshold. Correct the roof intersections/extents and bring the entry, corner treatment, and upper-storey window rhythm closer to the architect reference. Add an independent top-down footprint/position view and an interior/circulation view.','Asset SHA-256: '+sha,'Model bounds and collection/object counts are taken from the saved asset validation. Height and interior circulation remain estimates.']}
+
+result=evaluate()
+Path('audit/dsai/evaluator_result_1.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+print(json.dumps(result,indent=2))

@@ -1,0 +1,342 @@
+{
+  "building": "Lawson Hall / Richard and Patricia Lawson Computer Science Building",
+  "revision": 7,
+  "review_date": "2026-10-25",
+  "source_blend": "modular/buildings/lawson_hall.blend",
+  "build_script": "audit/batch2_lawson/build_round7.py",
+  "geometry_correction_script": "audit/batch2_lawson/correct_vestibule_round7.py",
+  "export_collection": "Asset_lawson_hall",
+  "validation": "audit/batch2_lawson/validation_round7.json",
+  "geometry_overlay": "audit/batch2_lawson/gis_shell_plan_overlay_round7.png",
+  "changes": [
+    {
+      "feature": "First-floor plan registration",
+      "action": "Re-registered plan-derived room/stair/interior objects using three matched wall corners shared by the Purdue north-up L1 raster and the GIS FID 59 polygon. Recovered separate X/Y scale factors of 0.092105 and 0.09233778 m/pixel.",
+      "evidence": "Control pairs: PDF pixels (323,86), (627,86), (298,986) to project-local GIS coordinates (-13.209,40.611), (14.791,40.547), (-15.553,-42.493). PDF scale bar independently reads approximately 0.092 m/pixel.",
+      "limits": "Raster wall-edge picks and line thickness give about 0.3 m registration uncertainty. This is an axis-aligned image fit, not a survey; no facade elevation was inferred."
+    },
+    {
+      "feature": "Fresh GIS-to-shell comparison and footprint corrections",
+      "action": "Compared all 54 ordered vertices/edges in official GIS FID 59 against the lower structural wall lines in the saved Blender source. Restored the full southeast vestibule boundary using GIS vertices 42-52 without diagonal shortcuts and added a 3.965 m north-edge closure matching GIS edge 6->7.",
+      "evidence": "A fresh lower-baseline comparison samples each of the 54 GIS boundary edges at 21 points (1,134 total). Before R7 additions, 83.95% were within 0.10 m; after the vestibule and north closure, 100% were within 0.10 m, with a maximum nearest-line distance of 0.000015 m. The live EPSG:4326 FID 59 snapshot and project polygon agree to a maximum 0.000636 m after the documented project tangent-plane conversion; project polygon values are rounded to millimeters.",
+      "limits": "The check measures XY lower wall-line alignment only; it does not verify wall thickness, all above-grade surfaces, elevations, or the correctness of the GIS source itself. The north closure follows the source in plan; its 14.55 m vertical extent copies the neighboring schematic exterior wall and remains unverified. No window cadence was inferred on that edge."
+    },
+    {
+      "feature": "Entrance vestibule, canopy and approach",
+      "action": "Rebuilt wall panels along the ordered GIS vestibule perimeter. Limited the photo-guided limestone canopy to the principal GIS/plan entrance wall instead of wrapping the whole vestibule. Added illustrative paired door framing, sign, treads and three handrail runs.",
+      "evidence": "Purdue L1 plan and FID 59 support location and horizontal shell perimeter. Purdue-published 2024 entrance image supports limestone canopy, named fascia, doors, steps and metal rails.",
+      "limits": "Vestibule wall top at 3.55 m, canopy top at 3.78 m, canopy 1.20 m projection/0.70 m side extensions/0.40 m convex bow, door opening width, mullions, sign dimensions, stair/rail sizes are visual estimates; no measured elevation or entrance detail was found."
+    },
+    {
+      "feature": "Unsupported elevation research",
+      "action": "Checked Purdue CS first-floor plan, official construction/entrance photography, the Purdue Archives UA 113 public collection description, and Purdue GIS attributes for elevation/upper-floor evidence.",
+      "evidence": "The public GIS record reports NUM_LEVELS=5 but its Extrution and other dimensional-looking fields do not document units or a measurement method. Purdue Archives UA 113 describes one folder with an information booklet and blank greeting cards, not a drawing set. Purdue CS construction article describes brickwork and window installation but supplies no measured elevation.",
+      "limits": "No public measured/current roof elevation, complete upper-floor floor plans, or verified floor-to-floor stair section was found. Roof, penthouse/equipment heights and facade opening cadence remain schematic/unverified; no roof geometry was changed."
+    },
+    {
+      "feature": "Saved-source renders",
+      "action": "Reopened the saved asset independently for refreshed exterior, first-floor cutaway, vestibule close-up, and 16-panel Commons-wall views.",
+      "evidence": "The images are `exterior_round7.png`, `interior_cutaway_round7.png`, `entry_lobby_round7.png`, and `commons_wall_round7.png` in this audit folder.",
+      "limits": "Temporary cameras, lights, render visibility flags, cutaway floor material and staging are not saved into the building asset."
+    }
+  ],
+  "sources": [
+    {
+      "provider": "Purdue GIS / ArcGIS REST",
+      "title": "BuildingShapesZip4, feature FID 59 (LWSN)",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D59&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "feature_id": "FID 59",
+      "retrieved": "2026-10-25",
+      "source_crs": "EPSG:4326 longitude/latitude",
+      "local_snapshot": "audit/batch2_lawson/gis_fid59_live.json",
+      "method": "Recomputed project XY with X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040; compared the 54-vertex ring to target_buildings_gis.json and the saved wall baselines.",
+      "uncertainty": "Project conversion is local approximate tangent-plane compatibility, not surveyed CRS; stored coordinates round to millimeters. GIS level/height attributes have undocumented units/semantics."
+    },
+    {
+      "provider": "Purdue Department of Computer Science",
+      "title": "Lawson First Floor Plan",
+      "url": "https://www.cs.purdue.edu/resources/docs/lawson_1.PDF",
+      "retrieved": "2026-10-25",
+      "source_date": "Undated PDF",
+      "source_crs": "North-up drawing with compass rose and graphical scale 1:16",
+      "local_snapshot": "audit/batch2_lawson/lawson_1.pdf; raster audit/batch2_lawson/plan.png",
+      "method": "Three matched outer-wall corners; axis-aligned X/Y raster scale, cross-checked against 0-32 ft scale bar.",
+      "uncertainty": "Approximately 0.3 m raster registration error. First floor only; it does not establish upper levels or facade heights."
+    },
+    {
+      "provider": "Purdue College of Science",
+      "title": "Celebrating 2024 Top 20 Stories from the College of Science (Lawson entrance photograph)",
+      "url": "https://www.purdue.edu/science/about/news/articles/2024/celebrating-2024-top-20-stories-from-the-college-of-science.html",
+      "retrieved": "2026-10-25",
+      "source_date": "2024 article",
+      "local_snapshot": "audit/batch2_lawson/lawson_2024_entrance_reference.html; audit/batch2_lawson/lawson_2024_lwsn2001.png",
+      "method": "Visual-only entrance material/form reference.",
+      "uncertainty": "Perspective photograph only; not a measured elevation or current specification."
+    },
+    {
+      "provider": "Purdue Department of Computer Science",
+      "title": "Building Update",
+      "url": "https://www.cs.purdue.edu/news/articles/2005/building-update-sept.html",
+      "source_date": "2005-09-20",
+      "retrieved": "2026-10-25",
+      "local_snapshot": "audit/batch2_lawson/lawson_2005_building_update_sept.html",
+      "method": "Construction context for brickwork/window installation and room program.",
+      "uncertainty": "Narrative and perspective images only; no dimensioned elevations."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "title": "Lawson Computer Science Building records, UA 113",
+      "url": "https://archives.lib.purdue.edu/repositories/2/resources/1453",
+      "retrieved": "2026-10-25",
+      "method": "Public collection scope checked while searching for measured elevations/upper-floor plans.",
+      "uncertainty": "Public record describes a 2006 information booklet and two blank greeting cards; it does not establish that no drawings exist outside this collection."
+    },
+    {
+      "provider": "Purdue Department of Computer Science",
+      "title": "Harris Corporation Video Wall Installed in Lawson Computer Science Building Commons",
+      "url": "https://www.cs.purdue.edu/news/articles/2011/harris-video-wall.html",
+      "source_date": "2011-04-08",
+      "retrieved": "2026-10-24",
+      "local_snapshot": "audit/batch2_lawson/lawson_2011_video_wall.html",
+      "method": "Supports the historical 16 x 9 ft, 4 x 4, sixteen-monitor Commons wall.",
+      "uncertainty": "2011 installation only; current hardware is unverified."
+    },
+    {
+      "provider": "Purdue Department of Computer Science",
+      "title": "Echo Spiral Finds Home in Lawson",
+      "url": "https://www.cs.purdue.edu/news/articles/2006/echo-spiral.html",
+      "source_date": "2006-09-18",
+      "retrieved": "2026-10-24",
+      "local_snapshot": "audit/batch2_lawson/lawson_2006_echo_spiral.html",
+      "method": "Supports stainless Echo Spiral presence, material and lobby context.",
+      "uncertainty": "No measured profile drawing; modeled profile and location schematic."
+    }
+  ],
+  "local_frame": {
+    "root": "AssetRoot_lawson_hall",
+    "root_transform": "Identity; preserved",
+    "collection": "Asset_lawson_hall",
+    "master_marker": "not edited",
+    "manifest_placement": "not edited; parent retains ownership"
+  },
+  "previews": [
+    "audit/batch2_lawson/exterior_round7.png",
+    "audit/batch2_lawson/interior_cutaway_round7.png",
+    "audit/batch2_lawson/entry_lobby_round7.png",
+    "audit/batch2_lawson/commons_wall_round7.png"
+  ],
+  "supplemental_geometry_evidence": [
+    "audit/batch2_lawson/gis_shell_plan_overlay_round7.png",
+    "audit/batch2_lawson/r7_shell_edges_round7.json"
+  ],
+  "remaining_uncertainty": [
+    "No measured/current roof, penthouse, equipment, or whole-shell elevation; model maximum Z is 21.30 m, unverified.",
+    "GIS reports NUM_LEVELS=5 but does not document a height measurement or the units/meaning of Extrution.",
+    "The 14.55 m north-edge closure top is inherited from neighboring schematic geometry and unverified; no opening cadence was added.",
+    "No complete upper-floor plans or continuous floor-to-floor stair route verified.",
+    "Facade cadence outside the registered L1 shell and current glazing specification remain unverified.",
+    "Canopy projection/elevation, door width, mullion spacing, stairs/rails and furniture dimensions/positions remain illustrative."
+  ],
+  "review_status": "Ready for a fresh independent review; no self-grade assigned.",
+  "validation_summary": {
+    "source_asset": "C:/Users/Tobin/Documents/Blender/PurdueMap/modular/buildings/lawson_hall.blend",
+    "reopened_saved_source": true,
+    "export_collection": "Asset_lawson_hall",
+    "export_objects": 615,
+    "mesh_count": 612,
+    "root_transform_identity": true,
+    "root_world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "bounds_m": {
+      "x": [
+        -27.5,
+        27.5
+      ],
+      "y": [
+        -54.0,
+        54.0
+      ],
+      "z": [
+        -0.009999999776482582,
+        21.299999237060547
+      ]
+    },
+    "unmaterialed_meshes": [],
+    "missing_external_images": [],
+    "brick_texture_drives_base_color": true,
+    "live_GIS_FID59_vs_project_polygon": {
+      "raw_source_ring_vertices": 54,
+      "stored_project_ring_vertices": 54,
+      "mean_vertex_delta_m": 0.0003844308659455498,
+      "max_vertex_delta_m": 0.0006355678508368391,
+      "projected_using": "X=(lon+86.9137)*111412.84*cos(radians(40.4274); Y=(lat-40.4274)*111040"
+    },
+    "GIS_boundary_samples_vs_existing_structural_shell": {
+      "sample_points": 1134,
+      "within_0_10m": 952,
+      "fraction_within_0_10m": 0.8395061728395061,
+      "max_nearest_distance_m": 7.018810449948829,
+      "mean_nearest_distance_m": 0.4197788511783821,
+      "worst_gis_edges": [
+        {
+          "gis_edge_index": 46,
+          "length_m": 5.714129942519681,
+          "max_nearest_distance_m": 7.018810449948829,
+          "mean_nearest_distance_m": 5.547466156203121,
+          "fraction_within_0_10m": 0.0
+        },
+        {
+          "gis_edge_index": 47,
+          "length_m": 2.8680474194127497,
+          "max_nearest_distance_m": 5.42614901829485,
+          "mean_nearest_distance_m": 4.858208794575623,
+          "fraction_within_0_10m": 0.0
+        },
+        {
+          "gis_edge_index": 48,
+          "length_m": 3.1259238634361877,
+          "max_nearest_distance_m": 4.530437355366482,
+          "mean_nearest_distance_m": 2.9713258490224534,
+          "fraction_within_0_10m": 0.0
+        },
+        {
+          "gis_edge_index": 45,
+          "length_m": 2.858852392132204,
+          "max_nearest_distance_m": 3.5019583970151933,
+          "mean_nearest_distance_m": 3.2383200204885387,
+          "fraction_within_0_10m": 0.0
+        },
+        {
+          "gis_edge_index": 44,
+          "length_m": 3.116221429873048,
+          "max_nearest_distance_m": 3.364862179475081,
+          "mean_nearest_distance_m": 2.043010372742315,
+          "fraction_within_0_10m": 0.0
+        }
+      ]
+    },
+    "GIS_boundary_samples_vs_shell_plus_R7_vestibule": {
+      "sample_points": 1134,
+      "within_0_10m": 1134,
+      "fraction_within_0_10m": 1.0,
+      "max_nearest_distance_m": 1.5141227107636741e-05,
+      "mean_nearest_distance_m": 4.2183527271369604e-06,
+      "worst_gis_edges": [
+        {
+          "gis_edge_index": 9,
+          "length_m": 5.044019428987161,
+          "max_nearest_distance_m": 1.5141227107636741e-05,
+          "mean_nearest_distance_m": 6.602466764227121e-06,
+          "fraction_within_0_10m": 1.0
+        },
+        {
+          "gis_edge_index": 10,
+          "length_m": 0.23455916098076826,
+          "max_nearest_distance_m": 1.5141227107636741e-05,
+          "mean_nearest_distance_m": 2.976300412101565e-06,
+          "fraction_within_0_10m": 1.0
+        },
+        {
+          "gis_edge_index": 2,
+          "length_m": 9.232026213134363,
+          "max_nearest_distance_m": 1.4400401029068364e-05,
+          "mean_nearest_distance_m": 1.2313562594791724e-05,
+          "fraction_within_0_10m": 1.0
+        },
+        {
+          "gis_edge_index": 3,
+          "length_m": 50.732088947726176,
+          "max_nearest_distance_m": 1.4400401029068364e-05,
+          "mean_nearest_distance_m": 6.97621663391067e-06,
+          "fraction_within_0_10m": 1.0
+        },
+        {
+          "gis_edge_index": 32,
+          "length_m": 0.637210326344442,
+          "max_nearest_distance_m": 1.3899737087340572e-05,
+          "mean_nearest_distance_m": 7.986213335355238e-06,
+          "fraction_within_0_10m": 1.0
+        }
+      ]
+    },
+    "GIS_shell_coverage_method": "21 evenly spaced samples on each of 54 ordered GIS boundary edges, compared to XY lower baseline edges from LWSN_Exterior_Brick, LWSN_Rotunda_Curtain_Glass, R7 GIS vestibule glass/door panels, and the R7 north-edge closure; 0.10 m tolerance.",
+    "R7_vestibule_glass_and_door_objects": 14,
+    "vestibule_canopy_exists": true,
+    "plan_registration_controls": {
+      "pdf_pixels": [
+        [
+          323,
+          86
+        ],
+        [
+          627,
+          86
+        ],
+        [
+          298,
+          986
+        ]
+      ],
+      "project_local_m": [
+        [
+          -13.209,
+          40.611
+        ],
+        [
+          14.791,
+          40.547
+        ],
+        [
+          -15.553,
+          -42.493
+        ]
+      ],
+      "scale_m_per_pixel": [
+        0.092105,
+        0.0923377778
+      ],
+      "uncertainty_m": "Approx. 0.3 m from raster edge-pick/line-width limits; not surveyed."
+    },
+    "video_wall_reported_dimensions_m": [
+      0.12000179290771484,
+      4.876801013946533,
+      2.7432003021240234
+    ],
+    "video_wall_module_count": 16,
+    "model_roof_max_z_m": 21.299999237060547,
+    "roof_height_verified": false,
+    "upper_floor_plans_verified": false,
+    "continuous_stair_route_verified": false,
+    "temporary_preview_cameras_saved": false,
+    "remaining_issues": [
+      "No measured/current elevation or complete upper-floor plan found.",
+      "GIS attributes NUM_LEVELS and Extrution do not expose a documented measurement method or usable unit for roof height.",
+      "Canopy height, projection, entrance glazing, door width and mullion dimensions remain visual/illustrative estimates.",
+      "Façade opening cadence and upper-floor stair continuity remain unverified."
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+from __future__ import annotations
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+
+def evaluate():
+    """Grade the saved PMU library against the project 5x2 independent rubric."""
+    inv = json.loads((HERE / "fresh_reopen.json").read_text(encoding="utf-8"))
+    placement = json.loads((HERE / "master_marker_readonly.json").read_text(encoding="utf-8"))
+    structural = json.loads((HERE / "structural_bounds.json").read_text(encoding="utf-8"))
+    mat = json.loads((HERE / "materials_inspection.json").read_text(encoding="utf-8"))
+    # Points are evidence-weighted, with unverified dimensions explicitly deducted.
+    criteria = [
+        {"name":"Correct identity and source-backed footprint", "score":1.7, "max_score":2,
+         "evidence":["Official Purdue GIS historical PMU feature 278 (1935-36) aligns the structural shell bounds to within about 0.5 m on the main outline.","GIS feature 482 (1938-40) is consistent in broad plan but extends ~4 m farther north; phases and later additions make this comparison uncertain."],
+         "findings":["Identity is supported by GIS name/phase and recognizable tower/wings.","The evidence is historical and not a current survey; complete present-day footprint and courtyard shape are not fully validated."]},
+        {"name":"Position, orientation, and scale/dimensions", "score":1.9, "max_score":2,
+         "evidence":["Read-only master marker reports one expected PMU instance at (205.75,-271.65,0), zero rotation, unit scale, and expected linked asset path.","The local structural bounds align with the historical GIS outline under the project’s approximate local conversion."],
+         "findings":["Placement and transform are directly confirmed; exact orientation and dimensions have no current survey/control source."]},
+        {"name":"Evidence-backed height, floors, and roof form", "score":1.0, "max_score":2,
+         "evidence":["Fresh-reopened asset bounds are Z 0-29.5 m; repeated belt levels and several wing/tower roofs are present.","Render evidence shows a multi-level central tower and lower wings."],
+         "findings":["No measured height, floor schedule, or roof/elevation source was available; 29.5 m is only the model’s own extent.","The broad pale roof masses are simplified and their profiles are not supported by a measured/source elevation."]},
+        {"name":"Facade, entrances, and distinctive architecture", "score":1.2, "max_score":2,
+         "evidence":["Controlled south, west, and oblique renders show the clock tower, wings, brick/limestone treatment, repeated windows, and Gothic-like ornament.","Official Purdue archival imagery supports a central tower and adjoining wings as identity cues."],
+         "findings":["The silhouette is recognizable, but many windows read as simple rectangles rather than the tall arched openings suggested by imagery.","Main entrance and facade stonework are weakly articulated; repeated flat wall treatment and pale roofs reduce fidelity.","Interior props are present, but no source-backed interior plan was available to verify their layout."]},
+        {"name":"Modular export, portability, and complete evidence", "score":1.5, "max_score":2,
+         "evidence":[f"Fresh reopen confirms {inv.get('object_count',414)} objects in the expected asset file/collection and an identity local root.","All mesh objects have assigned materials; material nodes are procedural and no external image dependency was found.","Read-only master inspection confirms one linked placement marker at the expected manifest transform."],
+         "findings":["The standalone asset is portable based on current inspection.","At review time the project did not provide a PMU-specific builder source/build script, preview/evidence record, or validation log; the current independent audit artifacts document this review but do not replace build provenance."]},
+    ]
+    score = round(sum(c["score"] for c in criteria), 1)
+    return {"building_id":"purdue_memorial_union", "asset_path":"modular/buildings/purdue_memorial_union.blend",
+            "asset_sha256":inv.get("asset_sha256", structural.get("asset_sha256")),
+            "score":score, "max_score":10, "pass_threshold":8, "passed":score >= 8,
+            "criteria":criteria,
+            "evidence":["source_evidence.md", "fresh_reopen.json", "structural_bounds.json", "materials_inspection.json", "master_marker_readonly.json", "oblique.png", "south.png", "west.png", "top.png"],
+            "findings":["Independent grade: below the 8/10 pass threshold.","The strongest verified aspect is historical footprint and modular placement; height/roof and facade fidelity remain under-evidenced or visibly simplified.","See criterion findings for actionable corrections and source limitations."]}
+
+if __name__ == "__main__":
+    result = evaluate()
+    (HERE / "independent_grade.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({"score":result["score"],"passed":result["passed"]}, indent=2))

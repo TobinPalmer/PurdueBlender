@@ -1,0 +1,87 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R12.8",
+  "asset": "modular/buildings/neil_armstrong_hall.blend",
+  "sha256": "59fd4e7ac4b4887cad2951e06ded82cf09e713592d320ca4fab4e0445e97649e",
+  "fresh_reopen_validation": "validation_r12_8.json",
+  "asset_inventory": {
+    "objects": 445,
+    "meshes": 415,
+    "canopy_vertices": 371,
+    "canopy_faces": 342,
+    "canopy_duplicate_coordinate_faces": 0,
+    "missing_mesh_materials": 0,
+    "null_material_slots": 0,
+    "missing_external_images": 0
+  },
+  "changes": [
+    {
+      "change": "Removed duplicate faces",
+      "detail": "Removed six exact duplicate entrance-deck faces left by R12.5 and fifteen exact duplicate faces at high roof-shell segment seams. Object and collection counts are unchanged."
+    },
+    {
+      "change": "Thinned high canopy shell",
+      "detail": "Reduced inferred shell thickness from 0.30 m to 0.18 m. Orthophoto-traced roof/eaves XY is preserved; height profile is unchanged and remains inferred."
+    },
+    {
+      "change": "Corrected canopy underside material",
+      "detail": "Added ARMS_R12_8_Wing_Soffit_ACM and assigned it to 160 high-canopy faces. The original low entrance awning retains its original material."
+    }
+  ],
+  "sources_and_scope": [
+    {
+      "title": "Purdue Emergency Preparedness building plan",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/arms/",
+      "supports": "Four-level description; no dimensions."
+    },
+    {
+      "title": "Design and Build with Metal project case history",
+      "url": "https://designandbuildwithmetal.com/featured-projects/neil-armstrong-hall-of-engineering",
+      "supports": "RATIO design intent, distinctive wing-like cantilever, brick/limestone facade and red ACM; no measured elevations."
+    },
+    {
+      "title": "Kawneer Neil Armstrong Hall project page",
+      "url": "https://www.kawneer.ca/projects/education/neil-armstrong-hall-of-engineering-purdue-university/",
+      "supports": "Facade system context and credited project photographs; no measured geometry."
+    },
+    {
+      "title": "FRP Engineering project page",
+      "url": "https://frpinc.com/projects/neil-armstrong-hall-of-engineering/",
+      "supports": "Three-story brick/glass design, cantilevered steel roof truss, atrium bridges; no dimensioned plan."
+    },
+    {
+      "title": "Purdue Archives Armstrong papers finding aid",
+      "url": "https://collections.lib.purdue.edu/fa/pdf/msa5_armstrong_n.pdf",
+      "supports": "Catalog mentions 2004 development plans in a personal-papers record but no architectural drawing is exposed."
+    },
+    {
+      "title": "Indiana Current Imagery 2023 orthophoto",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "local_file": "../../audit/complete_neil_armstrong/sources/indiana_current_ortho_neil_extent.png",
+      "supports": "Roof/eaves plan only; not structural walls/courtyard edges."
+    },
+    {
+      "title": "Neil Armstrong Hall 2016 source photographs",
+      "local_files": [
+        "sources_r12/arms_2016_01.jpg",
+        "sources_r12/arms_2016_02.jpg",
+        "../../audit/complete_neil_armstrong/sources/wikimedia_neil_2016_03_r8.jpg"
+      ],
+      "supports": "Qualitative canopy silhouette, red ACM, glazed facade zones and brick material. Camera headings/roll are unknown."
+    }
+  ],
+  "evidence": {
+    "validation": "validation_r12_8.json",
+    "renders": "renders_independent_r12_8/",
+    "source_review": "source_review_r12_8.md",
+    "builder": "apply_refinement_r12_8.py",
+    "render_driver": "render_independent_r12_8.py"
+  },
+  "limitations": [
+    "The orthophoto trace is roof/eaves evidence and does not verify the structural wall footprint.",
+    "The geotagged facade photos have no calibrated camera heading/roll and do not support exact facade registration.",
+    "Roof peak and warp remain photo-based inference; 21.6 m is only a coarse LiDAR ceiling, not a measured roof elevation.",
+    "No public dimensioned as-built plan or elevation was found in the R12.8 source review."
+  ],
+  "ready_for_independent_grade": true
+}

@@ -1,0 +1,72 @@
+{
+  "building": "Hall of Data Science and AI (DSAI)",
+  "asset_id": "massing_hall_of_data_science_and_ai_dsai_c8a41cc",
+  "collection": "Asset_massing_hall_of_data_science_and_ai_dsai_c8a41cc",
+  "retrieved_utc": "2026-10-25",
+  "model_coordinate_frame": "Purdue campus world coordinates in meters; X east, Y north, Z up; source GIS coordinates converted by project local approximation X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040; no surveyed CRS is claimed.",
+  "sources": [
+    {
+      "provider": "Purdue University GIS / ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 196,
+      "building_abbr": "DSAI",
+      "source_crs": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "use": "registered footprint, name, address, and official four-level count",
+      "snapshot": "purdue_arcgis_FID196.json",
+      "caveat": "Footprint does not establish fa\u00e7ade, roof, story heights, or interior layout; source height fields lack documented units."
+    },
+    {
+      "provider": "MSKTD (architect/interior designer; design architect Payette)",
+      "url": "https://msktd.com/design-journal/entry/behind-the-design-purdue-universitys-hall-of-data-science-and-ai/",
+      "use": "red brick and limestone exterior, window-transom/glazing interventions, hipped red tile roof, floor-2/3 research neighborhood layout, central communicating stair, floor-3 skylight, view to green roof, caf\u00e9/work areas",
+      "evidence_files": [
+        "msktd_exterior_design_article.jpg",
+        "msktd_exterior_wide.jpg",
+        "msktd_stair_landing.jpg",
+        "msktd_sky_light.jpg"
+      ],
+      "caveat": "Architectural photographs, not scaled drawings; modeled dimensions and exact fa\u00e7ade rhythms remain estimates."
+    },
+    {
+      "provider": "Purdue Sustainable Operations",
+      "url": "https://www.purdue.edu/operations/sustainable-ops/home/initiatives/buildings/dsai/",
+      "use": "building identity as former Helen B. Schleman Hall, 2024 renovation and atrium context; official project photos",
+      "evidence_files": [
+        "purdue_dsai_photo_7235.jpg",
+        "purdue_dsai_photo_7182.jpg",
+        "purdue_dsai_stair_7025.jpg",
+        "purdue_dsai_atrium_stair_7015.jpg",
+        "purdue_dsai_study_area_6993.jpg"
+      ],
+      "caveat": "Interior images evidence materials, columns, furniture and stair character; no dimensioned floorplan found."
+    },
+    {
+      "provider": "Purdue Department of Statistics",
+      "url": "https://www.stat.purdue.edu/news/2019/data_science_bldg.html",
+      "use": "program scale and planned four-story flagship context (approx. 86,000 sq ft was a 2019 plan)",
+      "caveat": "2019 planned new building later differed; used only as broad scale context, not as as-built measurement."
+    },
+    {
+      "provider": "CASE Circle of Excellence",
+      "url": "https://www.case.org/awards/circle-excellence/2025/dedication-hall-data-science-and-ai",
+      "use": "large interior concrete columns and green circuit-inspired graphic wraps",
+      "caveat": "Decoration not represented as extensive outdoor geometry."
+    }
+  ],
+  "verified": {
+    "footprint": "FID196 exact polygon ring carried into shell walls; source local projection is approximate campus conversion. Window/limestone projections extend slightly beyond ring as details.",
+    "story_count": "4 official levels; floor heights and wall height estimated from photographs.",
+    "material_palette": "photo-supported Purdue red brick, pale limestone, dark glazing, bronze frames, terracotta roof tiles.",
+    "interior": "communicating stair, atrium columns, skylight, planted terrace, research tables and caf\u00e9 are schematic and not dimensionally registered."
+  },
+  "estimates_and_uncertainties": [
+    "Exterior fa\u00e7ade bay spacing and exact sill/head heights are photographic estimates.",
+    "Three hipped roof masses are simplified inferred geometry; no as-built roof plan located.",
+    "Interior plan placements are illustrative, based on architect narrative/photos, not floorplans.",
+    "GIS source elevation and height-related numeric fields were not used as metric heights because their units are undocumented.",
+    "Decorative band courses and corner quoins are inspired by exterior photos; exact positions are estimated."
+  ]
+}

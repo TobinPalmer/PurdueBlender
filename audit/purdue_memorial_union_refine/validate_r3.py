@@ -1,0 +1,23 @@
+import bpy,json,os,hashlib
+from mathutils import Vector
+ROOT=r"C:\Users\Tobin\Documents\Blender\PurdueMap";ASSET=os.path.join(ROOT,'modular','buildings','purdue_memorial_union.blend');BASE=os.path.join(ROOT,'audit','purdue_memorial_union_independent_grade','structural_bounds.json');OUT=os.path.join(ROOT,'audit','purdue_memorial_union_refine','validation_r3.json')
+def sha(p):
+ h=hashlib.sha256()
+ with open(p,'rb') as f:
+  for b in iter(lambda:f.read(1<<20),b''):h.update(b)
+ return h.hexdigest()
+old=json.load(open(BASE,encoding='utf-8'));bpy.ops.wm.open_mainfile(filepath=ASSET);col=bpy.data.collections['Asset_purdue_memorial_union'];cur={};verts=[]
+for o in col.all_objects:
+ if o.type=='MESH':
+  p=[o.matrix_world@Vector(c) for c in o.bound_box];verts.extend(p);cur[o.name]=[[min(v[i] for v in p),max(v[i] for v in p)] for i in range(3)]
+base={o['name']:o['bounds'] for o in old['structural_objects']};wallbase=[n for n in base if 'Wall' in n or 'Base' in n];matched=sorted(set(wallbase)&set(cur))
+delta={n:max(abs(base[n][i][j]-cur[n][i][j]) for i in range(3) for j in range(2)) for n in matched};changed={n:x for n,x in delta.items() if x>.001}
+root=next((o for o in col.all_objects if o.name=='AssetRoot_purdue_memorial_union'),None);unpacked=sum(1 for im in bpy.data.images if im.source=='FILE' and im.filepath and not im.packed_file)
+result={'asset':ASSET,'sha256':sha(ASSET),'collection':'Asset_purdue_memorial_union','original_baseline':{'bounds_file':os.path.relpath(BASE,ROOT).replace('\\','/'),'asset_sha256':old['asset_sha256']},
+ 'objects':len(col.all_objects),'mesh_objects':sum(o.type=='MESH' for o in col.all_objects),'facade_refinement_objects':sum(o.name.startswith('PMU_R1_') for o in col.all_objects),'R3_roof_objects':sum(o.name.startswith('PMU_R3_Roof_') for o in col.all_objects),'R3_dormer_objects':sum(o.name.startswith('PMU_R3_Dormer_') for o in col.all_objects),
+ 'aggregate_mesh_bounds_local_m':[[round(min(v[i] for v in verts),4),round(max(v[i] for v in verts),4)] for i in range(3)],'original_wall_base_objects':len(wallbase),'matched_original_wall_base_objects':len(matched),'original_wall_base_bound_delta_m':{n:round(x,8) for n,x in delta.items()},'changes_over_1mm':changed,
+ 'additive_wall_base_objects':sorted(n for n in cur if ('Wall' in n or 'Base' in n) and n not in wallbase),'original_roof_objects_intentionally_replaced':sorted(n for n in base if ('Roof' in n or 'Slab' in n) and n not in cur),
+ 'root_transform':None if root is None else {'location':[round(x,6) for x in root.location],'rotation':[round(x,6) for x in root.rotation_euler],'scale':[round(x,6) for x in root.scale]},'unpacked_external_images':unpacked,'mesh_objects_without_material':sum(1 for o in col.all_objects if o.type=='MESH' and not o.data.materials),
+ 'previews':['audit/purdue_memorial_union_refine/south_refine_preview_r3.png','audit/purdue_memorial_union_refine/south_facade_detail_r3.png'],'fresh_reopen':'yes; inventory measured after opening saved asset from disk','master_placement':'untouched; read-only evidence in audit/purdue_memorial_union_independent_grade/master_marker_readonly.json','uncertainty':'29.5 m total height and all floor/eave/ridge spacing remain estimates without measured elevations.'}
+with open(OUT,'w',encoding='utf-8') as f:json.dump(result,f,indent=2)
+print(json.dumps(result,indent=2))

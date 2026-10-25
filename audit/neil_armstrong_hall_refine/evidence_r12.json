@@ -1,0 +1,307 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "R12 roof geometry refinement",
+  "date": "2026-10-25",
+  "asset": "../../modular/buildings/neil_armstrong_hall.blend",
+  "sha256_before": "d3d90d21ad60b985826270be18c016220944e3c87545fc179af7b51d5084b8b4",
+  "sha256_after": "6262855f445c84b194fd0f8f11041b925f9114ebb69e0ae7a6a9255989a472a2",
+  "collection_object_count": 445,
+  "scene_object_count": 445,
+  "changed_object": "ARMS_Cantilever_Canopy_Deck",
+  "mesh_preservation": {
+    "old_vertices": [
+      [
+        -12.0,
+        -4.75,
+        -0.25
+      ],
+      [
+        12.0,
+        -4.75,
+        -0.25
+      ],
+      [
+        12.0,
+        4.75,
+        -0.25
+      ],
+      [
+        -12.0,
+        4.75,
+        -0.25
+      ],
+      [
+        -12.0,
+        -4.75,
+        0.25
+      ],
+      [
+        12.0,
+        -4.75,
+        0.25
+      ],
+      [
+        12.0,
+        4.75,
+        0.25
+      ],
+      [
+        -12.0,
+        4.75,
+        0.25
+      ]
+    ],
+    "old_faces": [
+      [
+        0,
+        1,
+        2,
+        3
+      ],
+      [
+        4,
+        5,
+        6,
+        7
+      ],
+      [
+        0,
+        1,
+        5,
+        4
+      ],
+      [
+        2,
+        3,
+        7,
+        6
+      ],
+      [
+        1,
+        2,
+        6,
+        5
+      ],
+      [
+        3,
+        0,
+        4,
+        7
+      ]
+    ],
+    "old_materials": [
+      "ARMS_Sea_Wolf_ACM"
+    ]
+  },
+  "new_geometry": {
+    "kind": "orthophoto-traced, photo-height-inferred red ACM wing/canopy shell",
+    "outer_pixel_points": [
+      [
+        345,
+        153
+      ],
+      [
+        1509,
+        173
+      ],
+      [
+        1720,
+        441
+      ],
+      [
+        565,
+        414
+      ],
+      [
+        376,
+        355
+      ]
+    ],
+    "inner_pixel_points": [
+      [
+        600,
+        205
+      ],
+      [
+        1492,
+        222
+      ],
+      [
+        1604,
+        390
+      ],
+      [
+        565,
+        358
+      ],
+      [
+        510,
+        246
+      ]
+    ],
+    "outer_local_xy_m": [
+      [
+        -70.299,
+        27.49
+      ],
+      [
+        55.071,
+        25.041
+      ],
+      [
+        77.797,
+        -7.78
+      ],
+      [
+        -46.603,
+        -4.473
+      ],
+      [
+        -66.96,
+        2.752
+      ]
+    ],
+    "inner_local_xy_m": [
+      [
+        -42.834,
+        21.122
+      ],
+      [
+        53.24,
+        19.04
+      ],
+      [
+        65.303,
+        -1.534
+      ],
+      [
+        -46.603,
+        2.385
+      ],
+      [
+        -52.527,
+        16.101
+      ]
+    ],
+    "outer_z_m": [
+      21.5,
+      21.1,
+      20.9,
+      20.35,
+      20.15
+    ],
+    "inner_z_m": [
+      17.1,
+      17.35,
+      17.2,
+      16.45,
+      16.75
+    ],
+    "max_height_m": 21.6,
+    "thickness_m": 0.3,
+    "warp_amplitude_m": 1.25,
+    "mesh_bounds": {
+      "min": [
+        -70.299,
+        -7.78,
+        4.95
+      ],
+      "max": [
+        77.797,
+        27.49,
+        21.5
+      ],
+      "verts": 368,
+      "polygons": 356
+    },
+    "material_top": "ARMS_Mayflower_Red_ACM",
+    "material_underside": "ARMS_Sea_Wolf_ACM",
+    "uncertainty": "Plan edge is photo-traced; roof elevation and warp are inferred. NDHM supplies only a broad 5-ft height-band ceiling, not roof-specific dimensions. GIS is not used as a roof edge or wall plan."
+  },
+  "sources": [
+    {
+      "title": "Indiana Current Imagery, 2023 orthophoto tile",
+      "provider": "Indiana Geographic Information Office",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "local_file": "../../audit/complete_neil_armstrong/sources/indiana_current_ortho_neil_extent.png",
+      "used_for": "Direct top-down trace of the visible red canopy/eave footprint and pale inner roof boundary; not used to assert walls."
+    },
+    {
+      "title": "Indiana 3DEP 2018 Tippecanoe NDHM",
+      "provider": "Purdue Digital Forestry / iDiF",
+      "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_ndhm_2018.tif",
+      "local_file": "../../audit/complete_neil_armstrong/sources/tippecanoe_ndhm_clip_r5.tif",
+      "used_for": "Coarse height range; high-band median 21.55m and approximate 21.6m ceiling. 5-ft resolution cannot measure this roof form."
+    },
+    {
+      "title": "Neil Armstrong Hall of Engineering Purdue University 2016 01",
+      "photographer": "Julian Herzog",
+      "license": "CC BY 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_01.jpg",
+      "local_file": "sources_r12/arms_2016_01.jpg",
+      "camera_geotag_latlon": [
+        40.431388,
+        -86.916112
+      ],
+      "focal_length_mm": 38,
+      "used_for": "Visual evidence of folded/wing-like shell, overhang, and glazed atrium. Camera position geotagged; heading/roll unavailable; dimensions not inferred."
+    },
+    {
+      "title": "Neil Armstrong Hall of Engineering Purdue University 2016 03",
+      "photographer": "Julian Herzog",
+      "license": "CC BY 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_03.jpg",
+      "local_file": "../../audit/complete_neil_armstrong/sources/wikimedia_neil_2016_03_r8.jpg",
+      "camera_geotag_latlon": [
+        40.431433,
+        -86.916781
+      ],
+      "focal_length_mm": 48,
+      "used_for": "Visual evidence of the same red metallic wing canopy, glazing, brick and entrance; heading/roll unavailable; dimensions not inferred."
+    },
+    {
+      "title": "Neil Armstrong Hall of Engineering Purdue University 2016 02",
+      "photographer": "Julian Herzog",
+      "license": "CC BY 4.0",
+      "url": "https://commons.wikimedia.org/wiki/File:Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_02.jpg",
+      "local_file": "sources_r12/arms_2016_02.jpg",
+      "camera_geotag_latlon": [
+        40.430861,
+        -86.915212
+      ],
+      "focal_length_mm": 24,
+      "used_for": "Courtyard-side visual comparison for long glazed facades and roof relationship; heading/roll unavailable."
+    }
+  ],
+  "validation_pending": "Reopen the saved asset, verify the final world-space geometry bounds and collection inventory, then render source-matched sides and roof.",
+  "coordinate_frame_correction": {
+    "applied": "New canopy vertices converted from building asset coordinates into the existing mesh object local frame using matrix_world.inverted(); original lower canopy vertices and its parent transform were preserved.",
+    "object_matrix_world_before_correction": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -1.5
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        7.310668945
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        5.199999809
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "validation": "Reopen validation records final world-space bounds and confirms planned ortho coordinates."
+  }
+}

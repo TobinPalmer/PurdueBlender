@@ -1,0 +1,11 @@
+import bpy, collections, json
+col=bpy.data.collections.get('Asset_stewart_center')
+print('FILE',bpy.data.filepath,'COLLECTION',len(list(col.all_objects)) if col else None)
+objs=list(col.all_objects) if col else list(bpy.data.objects)
+print('SCENES',[s.name for s in bpy.data.scenes])
+print('COLLECTIONS',[(c.name,len(c.objects)) for c in bpy.data.collections if 'Stewart' in c.name or 'stewart' in c.name or 'Asset_stewart' in c.name])
+print('TYPES',dict(collections.Counter(o.type for o in objs)))
+print('PREFIXES')
+for p,n in collections.Counter(o.name.split('_')[0] for o in objs).most_common(30): print(p,n)
+print('WALLS',*[o.name for o in objs if 'Ext_Wall' in o.name],sep='\n')
+print('FACADES',*[o.name for o in objs if any(x in o.name for x in ['Win_','Window','Beltcourse','Fin_','Facade','Canopy','Portico','Roof','Wall_'])],sep='\n')

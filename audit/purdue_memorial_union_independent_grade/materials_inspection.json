@@ -1,0 +1,1086 @@
+[
+  {
+    "name": "PMU_Bedford_Limestone",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Surface Detail Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Subtle Surface Variation",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Subtle Finish Color",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Finish Roughness Drift",
+        "type": "MAP_RANGE"
+      },
+      {
+        "name": "Fine Surface Relief",
+        "type": "BUMP"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "MAP_RANGE:Value"
+      },
+      {
+        "from": "MAP_RANGE:Result",
+        "to": "BSDF_PRINCIPLED:Roughness"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "BUMP:Height"
+      },
+      {
+        "from": "BUMP:Normal",
+        "to": "BSDF_PRINCIPLED:Normal"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Bronze_Hardware",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Surface Detail Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Subtle Surface Variation",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Subtle Finish Color",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Finish Roughness Drift",
+        "type": "MAP_RANGE"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "MAP_RANGE:Value"
+      },
+      {
+        "from": "MAP_RANGE:Result",
+        "to": "BSDF_PRINCIPLED:Roughness"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Dark_Oak_Timber",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Surface Detail | Wood Grain",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Surface Detail | Object Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Surface Detail | Fine Relief",
+        "type": "BUMP"
+      },
+      {
+        "name": "Surface Detail | Wood Tone",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Surface Detail | Wood Color",
+        "type": "MIX_RGB"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "BUMP:Height"
+      },
+      {
+        "from": "BUMP:Normal",
+        "to": "BSDF_PRINCIPLED:Normal"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "MIX_RGB:Color2"
+      },
+      {
+        "from": "MIX_RGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Dining_Booth_Leather",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Surface Detail | Fabric Grain",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Surface Detail | Object Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Surface Detail | Fine Relief",
+        "type": "BUMP"
+      },
+      {
+        "name": "Surface Detail | Fabric Tone",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Surface Detail | Fabric Color",
+        "type": "MIX_RGB"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "BUMP:Height"
+      },
+      {
+        "from": "BUMP:Normal",
+        "to": "BSDF_PRINCIPLED:Normal"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "MIX_RGB:Color2"
+      },
+      {
+        "from": "MIX_RGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Dining_Terrazzo",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Surface Detail Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Subtle Surface Variation",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Subtle Finish Color",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Finish Roughness Drift",
+        "type": "MAP_RANGE"
+      },
+      {
+        "name": "Fine Surface Relief",
+        "type": "BUMP"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "MAP_RANGE:Value"
+      },
+      {
+        "from": "MAP_RANGE:Result",
+        "to": "BSDF_PRINCIPLED:Roughness"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "BUMP:Height"
+      },
+      {
+        "from": "BUMP:Normal",
+        "to": "BSDF_PRINCIPLED:Normal"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Fireplace_Ember",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Granite_Paver",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Texture Coordinate",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Geometry",
+        "type": "NEW_GEOMETRY"
+      },
+      {
+        "name": "Separate XYZ",
+        "type": "SEPXYZ"
+      },
+      {
+        "name": "Math",
+        "type": "MATH"
+      },
+      {
+        "name": "Math.001",
+        "type": "MATH"
+      },
+      {
+        "name": "Separate XYZ.001",
+        "type": "SEPXYZ"
+      },
+      {
+        "name": "Combine XYZ",
+        "type": "COMBXYZ"
+      },
+      {
+        "name": "Combine XYZ.001",
+        "type": "COMBXYZ"
+      },
+      {
+        "name": "Mix",
+        "type": "MIX"
+      },
+      {
+        "name": "Brick Texture",
+        "type": "TEX_BRICK"
+      },
+      {
+        "name": "Noise Texture",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Mix.001",
+        "type": "MIX"
+      },
+      {
+        "name": "Bump",
+        "type": "BUMP"
+      },
+      {
+        "name": "Noise Texture.001",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Bump.001",
+        "type": "BUMP"
+      },
+      {
+        "name": "Surface Detail Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Subtle Surface Variation",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Subtle Finish Color",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Finish Roughness Drift",
+        "type": "MAP_RANGE"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "NEW_GEOMETRY:Normal",
+        "to": "SEPXYZ:Vector"
+      },
+      {
+        "from": "SEPXYZ:X",
+        "to": "MATH:Value"
+      },
+      {
+        "from": "MATH:Value",
+        "to": "MATH:Value"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "SEPXYZ:Vector"
+      },
+      {
+        "from": "SEPXYZ:Y",
+        "to": "COMBXYZ:X"
+      },
+      {
+        "from": "SEPXYZ:Z",
+        "to": "COMBXYZ:Y"
+      },
+      {
+        "from": "SEPXYZ:X",
+        "to": "COMBXYZ:X"
+      },
+      {
+        "from": "SEPXYZ:Z",
+        "to": "COMBXYZ:Y"
+      },
+      {
+        "from": "MATH:Value",
+        "to": "MIX:Factor"
+      },
+      {
+        "from": "COMBXYZ:Vector",
+        "to": "MIX:A"
+      },
+      {
+        "from": "COMBXYZ:Vector",
+        "to": "MIX:B"
+      },
+      {
+        "from": "MIX:Result",
+        "to": "TEX_BRICK:Vector"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_BRICK:Color",
+        "to": "MIX:A"
+      },
+      {
+        "from": "TEX_NOISE:Color",
+        "to": "MIX:B"
+      },
+      {
+        "from": "TEX_BRICK:Factor",
+        "to": "BUMP:Height"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "BUMP:Height"
+      },
+      {
+        "from": "BUMP:Normal",
+        "to": "BUMP:Normal"
+      },
+      {
+        "from": "BUMP:Normal",
+        "to": "BSDF_PRINCIPLED:Normal"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "MAP_RANGE:Value"
+      },
+      {
+        "from": "MAP_RANGE:Result",
+        "to": "BSDF_PRINCIPLED:Roughness"
+      }
+    ]
+  },
+  {
+    "name": "PMU_GreatHall_Parquet",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Surface Detail Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Subtle Surface Variation",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Subtle Finish Color",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Finish Roughness Drift",
+        "type": "MAP_RANGE"
+      },
+      {
+        "name": "Fine Surface Relief",
+        "type": "BUMP"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "MAP_RANGE:Value"
+      },
+      {
+        "from": "MAP_RANGE:Result",
+        "to": "BSDF_PRINCIPLED:Roughness"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "BUMP:Height"
+      },
+      {
+        "from": "BUMP:Normal",
+        "to": "BSDF_PRINCIPLED:Normal"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Lantern_Glow",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Lead_Gothic_Glass",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Surface Detail Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Subtle Surface Variation",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Subtle Finish Color",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Finish Roughness Drift",
+        "type": "MAP_RANGE"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "MAP_RANGE:Value"
+      },
+      {
+        "from": "MAP_RANGE:Result",
+        "to": "BSDF_PRINCIPLED:Roughness"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Memorial_Crest_Black",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Memorial_Crest_Gold",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Red_Brick_Gothic",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Texture Coordinate",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Geometry",
+        "type": "NEW_GEOMETRY"
+      },
+      {
+        "name": "Separate XYZ",
+        "type": "SEPXYZ"
+      },
+      {
+        "name": "Math",
+        "type": "MATH"
+      },
+      {
+        "name": "Math.001",
+        "type": "MATH"
+      },
+      {
+        "name": "Separate XYZ.001",
+        "type": "SEPXYZ"
+      },
+      {
+        "name": "Combine XYZ",
+        "type": "COMBXYZ"
+      },
+      {
+        "name": "Combine XYZ.001",
+        "type": "COMBXYZ"
+      },
+      {
+        "name": "Mix",
+        "type": "MIX"
+      },
+      {
+        "name": "Brick Texture",
+        "type": "TEX_BRICK"
+      },
+      {
+        "name": "Noise Texture",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Mix.001",
+        "type": "MIX"
+      },
+      {
+        "name": "Bump",
+        "type": "BUMP"
+      },
+      {
+        "name": "Noise Texture.001",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Bump.001",
+        "type": "BUMP"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "NEW_GEOMETRY:Normal",
+        "to": "SEPXYZ:Vector"
+      },
+      {
+        "from": "SEPXYZ:X",
+        "to": "MATH:Value"
+      },
+      {
+        "from": "MATH:Value",
+        "to": "MATH:Value"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "SEPXYZ:Vector"
+      },
+      {
+        "from": "SEPXYZ:Y",
+        "to": "COMBXYZ:X"
+      },
+      {
+        "from": "SEPXYZ:Z",
+        "to": "COMBXYZ:Y"
+      },
+      {
+        "from": "SEPXYZ:X",
+        "to": "COMBXYZ:X"
+      },
+      {
+        "from": "SEPXYZ:Z",
+        "to": "COMBXYZ:Y"
+      },
+      {
+        "from": "MATH:Value",
+        "to": "MIX:Factor"
+      },
+      {
+        "from": "COMBXYZ:Vector",
+        "to": "MIX:A"
+      },
+      {
+        "from": "COMBXYZ:Vector",
+        "to": "MIX:B"
+      },
+      {
+        "from": "MIX:Result",
+        "to": "TEX_BRICK:Vector"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_BRICK:Color",
+        "to": "MIX:A"
+      },
+      {
+        "from": "TEX_NOISE:Color",
+        "to": "MIX:B"
+      },
+      {
+        "from": "MIX:Result",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      },
+      {
+        "from": "TEX_BRICK:Factor",
+        "to": "BUMP:Height"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "BUMP:Height"
+      },
+      {
+        "from": "BUMP:Normal",
+        "to": "BUMP:Normal"
+      },
+      {
+        "from": "BUMP:Normal",
+        "to": "BSDF_PRINCIPLED:Normal"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Signage_Gold",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Slate_Roof",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Surface Detail Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Subtle Surface Variation",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Subtle Finish Color",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Finish Roughness Drift",
+        "type": "MAP_RANGE"
+      },
+      {
+        "name": "Fine Surface Relief",
+        "type": "BUMP"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "MAP_RANGE:Value"
+      },
+      {
+        "from": "MAP_RANGE:Result",
+        "to": "BSDF_PRINCIPLED:Roughness"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "BUMP:Height"
+      },
+      {
+        "from": "BUMP:Normal",
+        "to": "BSDF_PRINCIPLED:Normal"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Stained_Glass_Lancet",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Surface Detail Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Subtle Surface Variation",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Subtle Finish Color",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Finish Roughness Drift",
+        "type": "MAP_RANGE"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "MAP_RANGE:Value"
+      },
+      {
+        "from": "MAP_RANGE:Result",
+        "to": "BSDF_PRINCIPLED:Roughness"
+      }
+    ]
+  },
+  {
+    "name": "PMU_Stainless_Steel",
+    "use_nodes": true,
+    "nodes": [
+      {
+        "name": "Principled BSDF",
+        "type": "BSDF_PRINCIPLED"
+      },
+      {
+        "name": "Material Output",
+        "type": "OUTPUT_MATERIAL"
+      },
+      {
+        "name": "Surface Detail Coordinates",
+        "type": "TEX_COORD"
+      },
+      {
+        "name": "Subtle Surface Variation",
+        "type": "TEX_NOISE"
+      },
+      {
+        "name": "Subtle Finish Color",
+        "type": "VALTORGB"
+      },
+      {
+        "name": "Finish Roughness Drift",
+        "type": "MAP_RANGE"
+      }
+    ],
+    "links": [
+      {
+        "from": "BSDF_PRINCIPLED:BSDF",
+        "to": "OUTPUT_MATERIAL:Surface"
+      },
+      {
+        "from": "TEX_COORD:Object",
+        "to": "TEX_NOISE:Vector"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "VALTORGB:Factor"
+      },
+      {
+        "from": "VALTORGB:Color",
+        "to": "BSDF_PRINCIPLED:Base Color"
+      },
+      {
+        "from": "TEX_NOISE:Factor",
+        "to": "MAP_RANGE:Value"
+      },
+      {
+        "from": "MAP_RANGE:Result",
+        "to": "BSDF_PRINCIPLED:Roughness"
+      }
+    ]
+  }
+]
