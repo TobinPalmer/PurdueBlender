@@ -5,9 +5,9 @@ Follow this workflow for each new building. The project-specific rules in [modul
 ## 0. File ownership and shared-file boundaries
 
 - Follow the building owner shown in `README.md`. Before editing, confirm the assignment and stable building ID. Modify only files explicitly associated with your assigned building: its dedicated source/build script and its building-specific evidence or audit folder. Do not edit other buildings' files, even to make a seemingly related improvement; ask the coordinator to reassign or handle shared work.
-- The master Blender file `purdue_campus_master.blend` is owned by Tobin Palmer and may only be opened for saving, edited, or committed from Tobin Palmer's computer. Subagents must never save or commit changes to the master `.blend` file.
+- The master Blender file `purdue_campus_master.blend` is owned by Tobin Palmer. Only Tobin may edit, save, or commit changes to the master `.blend` file. Contributors may commit and push their assigned building work. After pushing, each non-Tobin contributor must add an entry to the root `TODO.md` describing the building, pushed commit or branch, asset path, and master-blend integration needed. When Tobin merges that work into the master blend, Tobin removes its entry from `TODO.md`.
 - Shared files—including `README.md`, `AGENT.md`, `modular/AGENTS.md`, `modular/BUILDINGS.md`, `modular/manifest.json`, placement markers, and integration/verification scripts—are coordinator-owned. Subagents should report proposed changes instead of editing these files.
-- Subagents must not commit or push. Return source and evidence changes to the coordinator, who integrates shared changes and manages commits. Keep edits confined to the assigned file set so parallel work cannot overlap.
+- Contributors may commit and push only their assigned building files. Shared files remain coordinator-owned. Before pushing, keep edits confined to the assigned file set so parallel work cannot overlap.
 
 ## 1. Scope the work
 

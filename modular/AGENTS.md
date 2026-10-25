@@ -5,9 +5,9 @@ These rules apply to this directory and its building files. Read the README and 
 ## File ownership and merge-conflict prevention
 
 - Use the owner assignment in the root `README.md`. An agent may edit only the assigned building's source library, dedicated build script, and building-specific evidence/audit folder whose names identify that building. Do not edit any unassigned building file.
-- The root campus master `../purdue_campus_master.blend` is Tobin Palmer-owned. Only Tobin Palmer on his computer may save or commit that master file. Do not save master-file changes from a subagent session.
+- The root campus master `../purdue_campus_master.blend` is Tobin Palmer-owned. Only Tobin may edit, save, or commit that master file. Contributors may commit and push their assigned building work. After pushing, each non-Tobin contributor must add an entry to the repository-root `TODO.md` describing the building, pushed commit or branch, asset path, and master-blend integration needed. When Tobin merges that work into the master blend, Tobin removes its entry from `TODO.md`.
 - `README.md`, `AGENT.md`, `modular/AGENTS.md`, `BUILDINGS.md`, `manifest.json`, shared placement data, and integration scripts are shared coordinator-owned files. Request changes through the coordinator rather than editing them in parallel.
-- Subagents do not commit or push. The coordinator integrates and commits completed source/evidence work. Keep each task's write set limited to its assigned paths.
+- Contributors may commit and push only their assigned building files. Shared files remain coordinator-owned. Keep each task's write set limited to its assigned paths.
 
 ## Assigned building agent
 
