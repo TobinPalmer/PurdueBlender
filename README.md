@@ -80,7 +80,7 @@ This project tracks detailed campus models separately from the remaining massing
 
 ## Unfinished buildings (174 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 84 buildings, Brady 60 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 35 buildings, Rohan 15 buildings, Tobin 84 buildings, Brady 40 buildings.
 
 ### Detailed models still in progress or awaiting a grade (40)
 
@@ -134,26 +134,26 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
-| 3rd and west | [`massing_3rd_and_west_ffa3d05.blend`](modular/buildings/massing_3rd_and_west_ffa3d05.blend) | Brady |
-| alpha chi rho | [`massing_alpha_chi_rho_0cb591a.blend`](modular/buildings/massing_alpha_chi_rho_0cb591a.blend) | Brady |
-| alpha kappa lambda | [`massing_alpha_kappa_lambda_88dda6c.blend`](modular/buildings/massing_alpha_kappa_lambda_88dda6c.blend) | Brady |
-| animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Brady |
-| baptist student foundation | [`massing_baptist_student_foundation_c3d8114.blend`](modular/buildings/massing_baptist_student_foundation_c3d8114.blend) | Brady |
-| beering hall brng | [`massing_beering_hall_brng_b5c3fdf.blend`](modular/buildings/massing_beering_hall_brng_b5c3fdf.blend) | Brady |
-| campus edge | [`massing_campus_edge_343e3d8.blend`](modular/buildings/massing_campus_edge_343e3d8.blend) | Brady |
-| cary quadrangle east cqe | [`massing_cary_quadrangle_east_cqe_230c813.blend`](modular/buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | Brady |
-| cary quadrangle northeast cqne | [`massing_cary_quadrangle_northeast_cqne_0a76fca.blend`](modular/buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend) | Brady |
-| cary quadrangle northwest cqnw | [`massing_cary_quadrangle_northwest_cqnw_e8a861e.blend`](modular/buildings/massing_cary_quadrangle_northwest_cqnw_e8a861e.blend) | Brady |
-| cary quadrangle south cqs | [`massing_cary_quadrangle_south_cqs_7ee2283.blend`](modular/buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend) | Brady |
-| cary quadrangle west cqw | [`massing_cary_quadrangle_west_cqw_3d47a7d.blend`](modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend) | Brady |
-| chaney hale hall of science chas | [`massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend`](modular/buildings/massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend) | Brady |
-| chapel of the good shepherd | [`massing_chapel_of_the_good_shepherd_5d4d103.blend`](modular/buildings/massing_chapel_of_the_good_shepherd_5d4d103.blend) | Brady |
-| chi omega | [`massing_chi_omega_a9eb08d.blend`](modular/buildings/massing_chi_omega_a9eb08d.blend) | Brady |
-| circle k | [`massing_circle_k_fa39c23.blend`](modular/buildings/massing_circle_k_fa39c23.blend) | Brady |
-| creighton hall of animal sciences crtn | [`massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend`](modular/buildings/massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend) | Brady |
-| crosswalk commons | [`massing_crosswalk_commons_7c01ecd.blend`](modular/buildings/massing_crosswalk_commons_7c01ecd.blend) | Brady |
-| delta tau delta | [`massing_delta_tau_delta_e06b0b5.blend`](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Brady |
-| dudley | [`dudley_hall.blend`](modular/buildings/dudley_hall.blend) | Brady |
+| 3rd and west | [`massing_3rd_and_west_ffa3d05.blend`](modular/buildings/massing_3rd_and_west_ffa3d05.blend) | Rosen |
+| alpha chi rho | [`massing_alpha_chi_rho_0cb591a.blend`](modular/buildings/massing_alpha_chi_rho_0cb591a.blend) | Rosen |
+| alpha kappa lambda | [`massing_alpha_kappa_lambda_88dda6c.blend`](modular/buildings/massing_alpha_kappa_lambda_88dda6c.blend) | Rosen |
+| animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rosen |
+| baptist student foundation | [`massing_baptist_student_foundation_c3d8114.blend`](modular/buildings/massing_baptist_student_foundation_c3d8114.blend) | Rosen |
+| beering hall brng | [`massing_beering_hall_brng_b5c3fdf.blend`](modular/buildings/massing_beering_hall_brng_b5c3fdf.blend) | Rosen |
+| campus edge | [`massing_campus_edge_343e3d8.blend`](modular/buildings/massing_campus_edge_343e3d8.blend) | Rosen |
+| cary quadrangle east cqe | [`massing_cary_quadrangle_east_cqe_230c813.blend`](modular/buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | Rosen |
+| cary quadrangle northeast cqne | [`massing_cary_quadrangle_northeast_cqne_0a76fca.blend`](modular/buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend) | Rosen |
+| cary quadrangle northwest cqnw | [`massing_cary_quadrangle_northwest_cqnw_e8a861e.blend`](modular/buildings/massing_cary_quadrangle_northwest_cqnw_e8a861e.blend) | Rosen |
+| cary quadrangle south cqs | [`massing_cary_quadrangle_south_cqs_7ee2283.blend`](modular/buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend) | Rosen |
+| cary quadrangle west cqw | [`massing_cary_quadrangle_west_cqw_3d47a7d.blend`](modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend) | Rosen |
+| chaney hale hall of science chas | [`massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend`](modular/buildings/massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend) | Rosen |
+| chapel of the good shepherd | [`massing_chapel_of_the_good_shepherd_5d4d103.blend`](modular/buildings/massing_chapel_of_the_good_shepherd_5d4d103.blend) | Rosen |
+| chi omega | [`massing_chi_omega_a9eb08d.blend`](modular/buildings/massing_chi_omega_a9eb08d.blend) | Rosen |
+| circle k | [`massing_circle_k_fa39c23.blend`](modular/buildings/massing_circle_k_fa39c23.blend) | Rosen |
+| creighton hall of animal sciences crtn | [`massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend`](modular/buildings/massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend) | Rosen |
+| crosswalk commons | [`massing_crosswalk_commons_7c01ecd.blend`](modular/buildings/massing_crosswalk_commons_7c01ecd.blend) | Rosen |
+| delta tau delta | [`massing_delta_tau_delta_e06b0b5.blend`](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Rosen |
+| dudley | [`dudley_hall.blend`](modular/buildings/dudley_hall.blend) | Rosen |
 | duhme ophelia residence hall | [`massing_duhme_ophelia_residence_hall_1bb4e9c.blend`](modular/buildings/massing_duhme_ophelia_residence_hall_1bb4e9c.blend) | Brady |
 | earhart hall | [`massing_earhart_hall_0f14209.blend`](modular/buildings/massing_earhart_hall_0f14209.blend) | Brady |
 | fairway cooperative | [`massing_fairway_cooperative_2101b77.blend`](modular/buildings/massing_fairway_cooperative_2101b77.blend) | Brady |
