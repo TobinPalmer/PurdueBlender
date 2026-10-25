@@ -56,12 +56,12 @@ This project tracks detailed campus models separately from the remaining massing
 | National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](modular/buildings/national_soil_erosion_laboratory.blend) | Finished | 8.0/10 | — |
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](modular/buildings/native_american_educational_and_cultural_center_nacc.blend) | Finished | [8.0/10](audit/build_nacc/nacc_independent_report_r3.md) | — |
 | Neil Armstrong Hall | [neil_armstrong_hall.blend](modular/buildings/neil_armstrong_hall.blend) | In progress | 7.6/10 | Tobin |
-| Niswonger Aviation Tech | [niswonger_aviation_tech.blend](modular/buildings/niswonger_aviation_tech.blend) | In progress | 6.7/10 | Tobin |
+| Niswonger Aviation Tech | [niswonger_aviation_tech.blend](modular/buildings/niswonger_aviation_tech.blend) | Finished | [8.0/10](audit/niswonger_aviation_tech_refine/independent_grade_r4.md) | — |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](modular/buildings/northwest_chiller_plant.blend) | Finished | [8.3/10](audit/northwest_chiller_plant_refine/independent_grade_r1.md) | — |
 | Owen Hall | [owen_hall.blend](modular/buildings/owen_hall.blend) | Finished | [8.0/10](audit/owen_hall_independent_grade/independent_report_r3.md) | — |
 | Peirce Hall | [peirce_hall.blend](modular/buildings/peirce_hall.blend) | Finished | 8.8/10 | — |
 | Physics Building | [physics_building_phys_3bf42f3.blend](modular/buildings/physics_building_phys_3bf42f3.blend) | Finished | [8.4/10](audit/physics_building/independent_report_r2.md) | — |
-| Potter Engineering | [potter_engineering.blend](modular/buildings/potter_engineering.blend) | In progress | 7.2/10 | Tobin |
+| Potter Engineering | [potter_engineering.blend](modular/buildings/potter_engineering.blend) | Finished | [8.0/10](audit/potter_engineering_refine/INDEPENDENT_GRADE_R3.md) | — |
 | Psychological Sciences Building | [psychological_sciences.blend](modular/buildings/psychological_sciences.blend) | Finished | 9.0/10 | — |
 | Purdue Memorial Union | [purdue_memorial_union.blend](modular/buildings/purdue_memorial_union.blend) | Needs independent grade | Not graded | Tobin |
 | R. B. Wetherill Laboratory of Chemistry | [wetherill_laboratory_of_chemistry.blend](modular/buildings/wetherill_laboratory_of_chemistry.blend) | Finished | 8.3/10 | — |
@@ -78,11 +78,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (179 total)
+## Unfinished buildings (177 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 89 buildings, Brady 60 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 87 buildings, Brady 60 buildings.
 
-### Detailed models still in progress or awaiting a grade (45)
+### Detailed models still in progress or awaiting a grade (43)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -118,8 +118,6 @@ This list excludes individual house parcels. The detailed models that are still 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 | Neil Armstrong Hall | [`neil_armstrong_hall.blend`](modular/buildings/neil_armstrong_hall.blend) | 7.6/10 | Tobin |
-| Niswonger Aviation Tech | [`niswonger_aviation_tech.blend`](modular/buildings/niswonger_aviation_tech.blend) | 6.7/10 | Tobin |
-| Potter Engineering | [`potter_engineering.blend`](modular/buildings/potter_engineering.blend) | 7.2/10 | Tobin |
 | Purdue Memorial Union | [`purdue_memorial_union.blend`](modular/buildings/purdue_memorial_union.blend) | Not graded | Tobin |
 | Rawls Hall | [`rawls_hall.blend`](modular/buildings/rawls_hall.blend) | 7.0/10 | Tobin |
 | Ray W. Herrick Laboratories | [`ray_w_herrick_laboratories.blend`](modular/buildings/ray_w_herrick_laboratories.blend) | 7.2/10 | Tobin |

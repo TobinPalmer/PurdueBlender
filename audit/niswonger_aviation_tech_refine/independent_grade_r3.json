@@ -1,0 +1,152 @@
+{
+  "asset": "niswonger_aviation_tech",
+  "revision": "R3",
+  "score": 7.8,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "asset_sha256": "8f2bcfe7b8e6026b75d15d72185a3c01687a6df8be20a37b2f08d81b8f8159e1",
+  "fresh_reopen_facts": {
+    "asset_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\niswonger_aviation_tech.blend",
+    "asset_sha256": "8f2bcfe7b8e6026b75d15d72185a3c01687a6df8be20a37b2f08d81b8f8159e1",
+    "object_count": 2313,
+    "manifest_expected_object_count": 2300,
+    "mesh_count": 2227,
+    "manifest_missing_names": [],
+    "manifest_extra_names": [
+      "NISW_R3_Roof_Edge_Brick_North",
+      "NISW_R3_Roof_Edge_Brick_South",
+      "NISW_R3_Roof_Edge_Brick_West",
+      "NISW_R3_Roof_Edge_Classroom_North",
+      "NISW_R3_Roof_Edge_Classroom_South",
+      "NISW_R3_Roof_Edge_Classroom_West",
+      "NISW_R3_Roof_Lap_Brick_00",
+      "NISW_R3_Roof_Lap_Classroom_00",
+      "NISW_R3_Roof_Lap_Classroom_01",
+      "NISW_R3_Roof_Lap_Classroom_02",
+      "NISW_R3_Roof_Lap_Classroom_03",
+      "NISW_R3_Roof_Lap_Classroom_04",
+      "NISW_R3_Roof_Lap_Classroom_05"
+    ],
+    "mesh_bounds_local_m": [
+      [
+        -50.0,
+        -65.5,
+        -0.15
+      ],
+      [
+        50.0,
+        65.5,
+        10.2006
+      ]
+    ],
+    "root_location": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "materialless_meshes": [],
+    "missing_external_images": [],
+    "roof_hide_render": {
+      "NISW_R2_Roof_Brick_Wing": false,
+      "NISW_R2_Roof_Classroom_Wing": false,
+      "NISW_Photographic_Sloping_Roof": false,
+      "NISW_Flat_Roof_Membrane": false
+    },
+    "master_links": [
+      {
+        "object": "Placement_niswonger_aviation_tech",
+        "location": [
+          -1325.0,
+          -1229.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "collection": "Asset_niswonger_aviation_tech",
+        "library_path": "//modular\\buildings\\niswonger_aviation_tech.blend"
+      }
+    ]
+  },
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": [
+        "R3 render shows a coherent airport classroom/hangar complex with brick wings, glazed connector and attached hangar volumes.",
+        "The submitted Esri z20 overhead tile shows the matching roof-zone arrangement and separate hangar mass; no source-date or georegistration metadata is provided, so this verifies qualitative identity more than metric footprint.",
+        "Mesh envelope is [-50,50] x [-65.5,65.5] m, but the manifest exact-bound comparison is not an independent polygon trace."
+      ],
+      "finding": "Identity is convincing. Exact wall footprint and roof perimeter are not independently registered to a current survey or as-built plan."
+    },
+    {
+      "name": "Position, orientation and scale",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": [
+        "The master links Asset_niswonger_aviation_tech through Placement_niswonger_aviation_tech at (-1325,-1229.5,0), zero rotation, unit scale, matching the manifest placement origin.",
+        "Local XY envelope and building origin are consistent across the asset and master record."
+      ],
+      "finding": "Placement is internally consistent; this review lacks a survey control point proving the building's geospatial registration to sub-meter accuracy."
+    },
+    {
+      "name": "Evidence-backed height, floors and roof form",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": [
+        "R3 now renders the previously hidden sloping connector roof and hangar roof, and adds narrow roof edges and lap cues on the two added wing tops.",
+        "The orthophoto supports multiple roof zones and a service-equipment cluster, while the model still uses broad, simple planes and omits that cluster.",
+        "No as-built roof plan was found; exact elevations, slope, plate perimeters and mechanical layout remain explicitly unverified."
+      ],
+      "finding": "The major roof forms are present and legible, but the added plates remain approximate and the roof silhouette/detailing is less articulated than the aerial reference."
+    },
+    {
+      "name": "Facade, entrances and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "The R3 render shows long brick classroom wings, repeated glazed bays, a glazed entrance/connector and a distinctive pitched glazed volume.",
+        "MSKTD photographs support the brick, metal frame, extensive glazing and visible aircraft/hangar interior, but are mostly interior views and do not validate the current exterior camera side directly."
+      ],
+      "finding": "The signature materials and volumes are represented; exterior window/door rhythm, entrance placement and full elevations are not directly photo-matched in the submitted review views."
+    },
+    {
+      "name": "Modular export, portability and complete evidence",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": [
+        "Fresh Blender 5.2 reopen record reports 2,313 collection objects / 2,227 meshes, no unmaterialed meshes, no missing external image dependencies, origin at zero and visible roof shells.",
+        "The checked-in manifest still lists 2,300 objects and 2,300 expected names, so 13 R3 objects are not yet indexed; the master reopen record also predates the R3 2,313-object file.",
+        "Evidence includes six MSKTD project photos and a local Esri imagery mosaic; the mosaic's acquisition date is unavailable."
+      ],
+      "finding": "The asset itself is portable and material-complete, but shared manifest/master integration records are stale for this revision, and source metadata for the aerial is incomplete."
+    }
+  ],
+  "evidence": [
+    "audit/niswonger_aviation_tech_refine/exterior_r3.png",
+    "audit/niswonger_aviation_tech_refine/roofplan_r3.png",
+    "audit/niswonger_aviation_tech_refine/arcgis_world_imagery/composite_z20.jpg",
+    "audit/niswonger_aviation_tech_refine/msktd_project_1.jpg through msktd_project_6.jpg",
+    "audit/niswonger_aviation_tech_refine/roof_source_evidence_r3.md"
+  ],
+  "findings": [
+    "Score is below the 8/10 minimum.",
+    "Manifest and master evidence are stale relative to the 2,313-object saved R3 asset.",
+    "Roof plates need better evidence-backed articulation, and source dates/registration should be recorded if available.",
+    "A close exterior comparison view should be added against MSKTD imagery where the facade side is identifiable."
+  ],
+  "source_urls": [
+    "https://msktd.com/project/purdue-university-niswonger-aviation-technology/",
+    "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+    "https://www.purdue.edu/bot/meetings/past-meetings/2019/06.%20aug/pfc/508_Airport-HVAC-Window-Overhead-Door.pdf"
+  ]
+}

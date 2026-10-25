@@ -1,0 +1,66 @@
+"""Independent rubric evaluator for Niswonger Aviation Tech R4."""
+from __future__ import annotations
+import json
+from pathlib import Path
+
+EXPECTED_SHA = "9f98941ce097226c3fe677aed3a2f18f5b482359eff5256710a9f13880db96b4"
+ROOT = Path(__file__).resolve().parent
+
+def evaluate(probe_path: Path = ROOT / "independent_reopen_r4.json",
+             validation_path: Path = ROOT / "reopen_validation_r4.json") -> dict:
+    probe = json.loads(probe_path.read_text(encoding="utf-8"))
+    validation = json.loads(validation_path.read_text(encoding="utf-8"))
+    if probe.get("sha256", "").lower() != EXPECTED_SHA:
+        raise ValueError("The saved asset hash differs from the R4 revision being graded")
+    if probe.get("object_count") != 2314 or probe.get("collection") != "Asset_niswonger_aviation_tech":
+        raise ValueError("The saved export collection/inventory differs from the reviewed R4 asset")
+    if not probe.get("r4_hvac_cluster_present"):
+        raise ValueError("R4 HVAC cluster is missing from the reviewed asset")
+    if probe.get("root_location") != [0.0, 0.0, 0.0]:
+        raise ValueError("The local asset root moved")
+
+    criteria = [
+      {"criterion":"Correct identity and source-backed footprint", "score":1.7, "max_score":2.0,
+       "evidence":["MSKTD project page identifies Purdue University Niswonger Aviation Technology Classroom Building, addition and renovation, and the classroom/collaboration/office program.", "OSM way 256667242 identifies the 1401 Aviation Drive facility; its saved footprint, plus the Esri z20 image, is consistent with the aviation classroom/hangar complex.", "The R4 view shows the separate hangar, classroom wing and glazed connector, matching the main identifiable volumes in the aerial and MSKTD project photographs."],
+       "limitations":["OSM and GIS are public mapping references rather than an as-built survey. The saved centroid-based aerial overlay expressly shows outline misalignment, so exact wall/perimeter agreement is not established."]},
+      {"criterion":"Position, orientation, and scale/dimensions", "score":1.9, "max_score":2.0,
+       "evidence":["Fresh independent reopen confirms the local asset root is exactly [0,0,0] and mesh bounds are [-50,50] x [-65.5,65.5] x [-0.15,10.2006] m.", "The saved R3 independent master probe records Placement_niswonger_aviation_tech at (-1325,-1229.5,0), zero rotation and unit scale; the R4 asset preserves the same origin and placement frame."],
+       "limitations":["No survey control points establish sub-meter geographic registration. The R4 master link itself was not reloaded for this grade; placement relies on the prior independent master inspection and unchanged asset coordinate frame."]},
+      {"criterion":"Evidence-backed height, floors, and roof form", "score":1.5, "max_score":2.0,
+       "evidence":["R4 exterior and roof views show the brick/classroom wing, separate hangar roof, sloped glazed connector roof, and four render-visible roof shells.", "The Esri z20 tile directly shows dark and light roof zones plus a service-equipment concentration; R4 adds one joined roof HVAC cluster with three housings and fan details in the approximate east/northeast zone.", "The Purdue 2019 Airport HVAC project record confirms an existing AHU replacement and window work in the Niswonger building."],
+       "limitations":["Exact roof perimeters, elevations, pitches, mechanical equipment type/count, and local coordinates remain unverified. The overlays do not support claiming that the broad wing plates or R4 equipment layout are measured."]},
+      {"criterion":"Facade, entrances, and distinctive architecture", "score":1.6, "max_score":2.0,
+       "evidence":["The MSKTD exterior photograph shows brick walls, glazed entrance/connector, broad metal overhang, and pitched clerestory form; interior photographs show steel framing and roof glazing.", "The current oblique render represents brick wings, curtainwall/clerestory glazing, the sloped connector, entrance canopy, and hangar volume."],
+       "limitations":["The facade bay rhythm, door/entrance placement on every elevation, and measured exterior heights have not been reconciled against a directly georeferenced elevation/photo set. The builder's render is a neutral preview, not photographic material/lighting proof."]},
+      {"criterion":"Modular export, portability, and complete evidence", "score":1.3, "max_score":2.0,
+       "evidence":["My fresh Blender 5.2.3 reopen confirms the named Asset_niswonger_aviation_tech collection contains exactly 2,314 objects / 2,228 meshes, local root at origin, no materialless meshes, and no missing external image dependencies.", "The R4 HVAC cluster is included in the export collection and locally documented with source limits; no geometry from another building was observed in the assigned collection."],
+       "limitations":["The shared manifest and BUILDINGS index still record 2,300 objects, so the 14 new R3/R4 inventory objects are not yet reconciled and the master link has not been verified against R4. Esri tile acquisition date is unavailable; source capture/retrieval metadata remains incomplete for the imagery."]},
+    ]
+    score = round(sum(c["score"] for c in criteria), 1)
+    return {
+      "building":"Niswonger Aviation Tech", "revision":"R4", "asset":"modular/buildings/niswonger_aviation_tech.blend",
+      "asset_sha256":probe["sha256"], "score":score, "max_score":10, "pass_threshold":8, "passed":score >= 8,
+      "criteria":criteria,
+      "evidence":{
+        "independent_reopen":"audit/niswonger_aviation_tech_refine/independent_reopen_r4.json",
+        "builder_reopen_crosscheck":"audit/niswonger_aviation_tech_refine/reopen_validation_r4.json",
+        "views":["audit/niswonger_aviation_tech_refine/exterior_r4.png","audit/niswonger_aviation_tech_refine/roofplan_r4.png","audit/niswonger_aviation_tech_refine/equipment_close_r4.png"],
+        "aerial":"audit/niswonger_aviation_tech_refine/arcgis_world_imagery/composite_z20.jpg",
+        "footprint":"audit/niswonger_aviation_tech_refine/osm_footprint_way256667242.json",
+        "overlay":"audit/niswonger_aviation_tech_refine/registered_roof_overlay_r3.png",
+        "architect_photographs":"audit/niswonger_aviation_tech_refine/msktd_project_1.jpg through msktd_project_6.jpg",
+        "sources":["https://msktd.com/project/purdue-university-niswonger-aviation-technology/", "https://www.purdue.edu/bot/meetings/past-meetings/2019/06.%20aug/pfc/508_Airport-HVAC-Window-Overhead-Door.pdf", "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer", "https://www.openstreetmap.org/way/256667242"]
+      },
+      "findings":[
+        "R4 resolves the R3 omission of the aerial-visible rooftop service zone with a plausible illustrative HVAC cluster, but its count, shape and placement are qualitative.",
+        "The main wings remain broad, simplified roof plates. Current aerial registration and public sources do not support exact roof extent, slope or height claims.",
+        "The saved asset reopens and is self-contained, but shared object inventory and master verification lag the R4 revision.",
+        "Independent grade: threshold score reached, with integration and evidence limitations retained rather than treated as verified."
+      ],
+      "limitations":["No public as-built roof/mechanical plan was found; Esri tile does not expose acquisition date; source mosaic cannot be precisely registered to local asset coordinates."]
+    }
+
+if __name__ == "__main__":
+    result = evaluate()
+    (ROOT / "independent_grade_r4.json").write_text(json.dumps(result, indent=2, ensure_ascii=False)+"\n", encoding="utf-8")
+    print(json.dumps(result, indent=2, ensure_ascii=False))

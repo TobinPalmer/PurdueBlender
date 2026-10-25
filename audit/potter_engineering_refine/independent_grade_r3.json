@@ -1,0 +1,103 @@
+{
+  "building": "Potter Engineering Center",
+  "asset": "modular/buildings/potter_engineering.blend",
+  "asset_sha256": "DB9C22C8CD12012120E3A020DD0D901DB4248FEED1156F0235DDF4A2CE92DC3F",
+  "score": 8.0,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Official Purdue-linked GIS snapshot identifies A. A. Potter Engineering Center, code POTR, feature 864.",
+        "Independently reopened structural shell XY bounds match the GIS envelope after manifest placement offset within 2 mm: True.",
+        "Historic 2016 plan overlays record IoU 0.757 for basement and 0.854\u20130.855 for upper plans; plan alignment is approximate and those plans are not current measured records."
+      ],
+      "limitations": [
+        "GIS polygon is a campus-map reference, not a certified survey."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "The independent Blender reopen confirmed the asset root at local (0,0,0).",
+        "Manifest placement offset is [77.4000015258789, -10.0] m; asset shell aligns with the official GIS XY envelope after applying it.",
+        "GIS minimum rotated rectangle orientation is 89.889\u00b0 east-CCW, consistent with the modeled north-south long axis."
+      ],
+      "limitations": [
+        "The master collection-instance marker itself was not opened by this grader; coordinator must confirm final scene placement during integration."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue's 2016 renovation study provides floor plans, a typical window schedule, and a penthouse plan; the official photo supports the broad, low roof profile.",
+        "The asset contains floor slabs through the upper levels and a penthouse/roof interface; independently reopened structural shell top is 13.411 m and roof bounds reach 13.661 m locally."
+      ],
+      "limitations": [
+        "GIS explicitly marks height unverified; modeled elevations are estimates. The broad roof and penthouse height have no current surveyed elevation/as-built verification."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.1,
+      "max_score": 2.0,
+      "evidence": [
+        "The archived Purdue Engineering photo supports red brick, pale precast surrounds, repeated punched windows, and the projecting rounded brick stair tower; these feature families are present in the exterior render.",
+        "Facade close-up shows repeated brick piers, pale panels, window openings and a coherent material palette."
+      ],
+      "limitations": [
+        "The reference photo's bearing is unknown. The recognizable main exterior stair and canopy are not modeled in a verified facade position; the resulting entry presentation remains incomplete."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "Independent Blender 5.2.3 read-only reopen confirmed 500 collection objects / 488 meshes, correct export collection, unchanged root, and matching SHA-256.",
+        "All mesh objects have materials; there are no missing external image dependencies.",
+        "Building-specific evidence records source URLs/providers, GIS feature ID, snapshot date, coordinate conversion, plan-registration method/uncertainty, image, validation, and an updated S03 route schematic.",
+        "The estimated S03 roof opening passes a center ray while both controls hit the roof: {'opening_center_clear': True, 'west_control_intersects_roof': True, 'east_control_intersects_roof': True, 'estimated_opening_bounds_xy_m': [8.7, 33.85, 12.1, 36.55]}."
+      ],
+      "limitations": [
+        "The post-R8 schematic/check is current, but the saved exterior render was not regenerated with this exact final asset revision."
+      ]
+    }
+  ],
+  "evidence": {
+    "independent_blender_probe": "audit/potter_engineering_refine/independent_grade_probe.json",
+    "source_review": "audit/potter_engineering_refine/SOURCE_REVIEW.md",
+    "official_potter_gis_feature": 864,
+    "gis_shell_envelope_match_with_manifest_offset": true,
+    "validator_checks_pass": true,
+    "visuals_reviewed": [
+      "audit/complete_potter/after.png",
+      "audit/batch4_potter/exterior_facade_round7_low.png",
+      "audit/batch4_potter/facade_detail_current.png",
+      "audit/batch4_potter/stairwell_circulation_round7.png",
+      "audit/complete_potter/interior_historic2016.png",
+      "audit/potter_engineering_refine/purdue_potter_exterior.jpg",
+      "audit/potter_engineering_refine/first_floor_plan_crop.png",
+      "audit/potter_engineering_refine/s03_upper_route_schematic.png"
+    ]
+  },
+  "findings": [
+    "The widened S03 roof opening resolves the earlier sampled roof-edge intersection at the tested center point; controls verify that roof mesh remains on both sides.",
+    "A separate saved geometry check shows the estimated 0.8 m proxy can turn on the modeled landing and pass through the estimated 1.2 m doorway. This is not a continuous all-flight collision audit or code/accessibility certification.",
+    "The model is strong on GIS footprint and modular integrity, but the primary entrance canopy/stair location is still unverified and absent, and building heights/upper details remain estimates."
+  ],
+  "limitations": [
+    "No current measured elevation or as-built roof plan was found.",
+    "Some interior geometry derives from 2016 plans; current partitions and complete fit-out are unverified/incomplete.",
+    "The main entrance photo cannot be registered to a compass facade; entry stair/canopy location is unresolved.",
+    "The S03 check is local to the saved roof aperture and estimated door route; other stair/wall intersections from prior audits remain unresolved or based on historical plan traces."
+  ]
+}

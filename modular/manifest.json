@@ -125418,7 +125418,7 @@
           15.899999618530273
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.0/10; GIS feature 864 shell and footprint alignment verified; historic plan IoU is approximate; heights and upper details remain estimates, and main entrance is unverified",
       "placement_transform": "master collection-instance marker translates local geometry to placement_origin_xy_m",
       "source_bounds_world_m": [
         [
@@ -125452,7 +125452,10 @@
         77.4000015258789,
         -10.0
       ],
-      "local_coordinates": true
+      "local_coordinates": true,
+      "independent_grade_file": "../audit/potter_engineering_refine/INDEPENDENT_GRADE_R3.md",
+      "evidence_file": "audit/potter_engineering_refine/current_validation.json",
+      "asset_sha256": "db9c22c8cd12012120e3a020dd0d901db4248feed1156f0235ddf4a2ce92dc3f"
     },
     {
       "id": "purdue_memorial_union",
@@ -138381,6 +138384,22 @@
         "NISW_Atrium_LinearLighting.001",
         "NISW_Atrium_LinearLighting.002",
         "NISW_Atrium_LinearLighting.003",
+        "NISW_R2_Roof_Brick_Wing",
+        "NISW_R2_Roof_Classroom_Wing",
+        "NISW_R3_Roof_Edge_Brick_West",
+        "NISW_R3_Roof_Edge_Brick_North",
+        "NISW_R3_Roof_Edge_Brick_South",
+        "NISW_R3_Roof_Edge_Classroom_North",
+        "NISW_R3_Roof_Edge_Classroom_West",
+        "NISW_R3_Roof_Edge_Classroom_South",
+        "NISW_R3_Roof_Lap_Classroom_00",
+        "NISW_R3_Roof_Lap_Classroom_01",
+        "NISW_R3_Roof_Lap_Classroom_02",
+        "NISW_R3_Roof_Lap_Classroom_03",
+        "NISW_R3_Roof_Lap_Classroom_04",
+        "NISW_R3_Roof_Lap_Classroom_05",
+        "NISW_R3_Roof_Lap_Brick_00",
+        "NISW_R4_Roof_HVAC_Cluster",
         "NISW_Foundation_WaterTable",
         "NISW_Walls_Purdue_Brick",
         "NISW_Limestone_Accents",
@@ -139133,7 +139152,7 @@
         "NISW_B4_Corridor_PanelReveal_6_2_35",
         "NISW_B4_Corridor_PanelReveal_6_3_1"
       ],
-      "object_count": 2298,
+      "object_count": 2314,
       "bounds_world_m": [
         [
           -1375.0,
@@ -139162,7 +139181,7 @@
           19.193923950195312
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/MASTER_AUDIT.md",
+      "accuracy_status": "independently graded 8.0/10; OSM/Esri identify the campus complex but exact wall/roof registration remains uncertain; R4 rooftop equipment is illustrative; roof perimeter, slope and elevations are unverified",
       "placement_transform": "master collection-instance marker translates local geometry to placement_origin_xy_m",
       "source_metadata": {},
       "source_bounds_world_m": [
@@ -139197,7 +139216,10 @@
         -1325.0,
         -1229.5
       ],
-      "local_coordinates": true
+      "local_coordinates": true,
+      "independent_grade_file": "../audit/niswonger_aviation_tech_refine/independent_grade_r4.md",
+      "evidence_file": "audit/niswonger_aviation_tech_refine/reopen_validation_r4.json",
+      "asset_sha256": "db9c22c8cd12012120e3a020dd0d901db4248feed1156f0235ddf4a2ce92dc3f"
     },
     {
       "id": "rawls_hall",
@@ -162291,5 +162313,5 @@
   ],
   "detailed_asset_count": 69,
   "placement_model": "Detailed assets are local-coordinate linked collections. Placement_<id> empties in the master supply XY campus coordinates. Massing assets retain their original campus coordinates and are linked directly.",
-  "last_master_build": "2026-10-24"
+  "last_master_build": "2026-10-25"
 }
