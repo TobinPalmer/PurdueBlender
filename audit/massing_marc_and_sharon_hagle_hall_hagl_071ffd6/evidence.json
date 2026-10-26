@@ -1,0 +1,95 @@
+{
+  "building_id": "massing_marc_and_sharon_hagle_hall_hagl_071ffd6",
+  "building": "Marc and Sharon Hagle Hall (HAGL)",
+  "owner": "Kyle",
+  "asset": "modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend",
+  "builder": "modular/buildings/build_massing_marc_and_sharon_hagle_hall_hagl_071ffd6.py",
+  "scene": "Building_massing_marc_and_sharon_hagle_hall_hagl_071ffd6",
+  "collection": "Asset_massing_marc_and_sharon_hagle_hall_hagl_071ffd6",
+  "retrieved_on": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University, ArcGIS BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D430&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "feature_id": "FID 430; BLDG_ABBR HAGL; Marc and Sharon Hagle Hall",
+      "source_date": "Layer metadata describes campus buildings; individual geometry edit date is not populated",
+      "retrieved_date": "2026-10-26",
+      "raw_snapshot": "sources/purdue_buildings_fid430_wgs84.geojson",
+      "layer_metadata": "sources/purdue_building_shapes_layer_metadata.json",
+      "source_crs": "WGS 84 longitude/latitude (EPSG:4326), explicitly requested via outSR=4326",
+      "measurement_method": "Use all 74 vertices of the closed FID 430 polygon, projected using the approximate local formula mandated by modular/AGENTS.md: X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040. The projected polygon shoelace area is 845.68 m2.",
+      "uncertainty": "This is a campus GIS building outline, not a survey. The layer's Shape__Area attribute is not consistent with the requested WGS84-ring projected area, so the geometry coordinates are the reproducible footprint evidence; no claim is made that the GIS area attribute is metric."
+    },
+    {
+      "provider": "Purdue University Bands & Orchestras",
+      "url": "https://www.purdue.edu/bands/10-million-gift-sets-the-stage-for-new-bands-and-orchestras-building/",
+      "feature_id": "Marc and Sharon Hagle Hall project announcement",
+      "source_date": "2020-02-17",
+      "retrieved_date": "2026-10-26",
+      "raw_snapshot": "sources/purdue_bands_hagle_project_announcement_2020.html",
+      "source_crs": "Not applicable (published project facts)",
+      "measurement_method": "The university describes a $20 million, 37,500-square-foot, four-story facility at the southeast corner of Third and Russell Streets. Four stories are treated as documented; per-floor and total heights are model estimates.",
+      "uncertainty": "The article supports identity, gross floor area, story count, and location but supplies no measured elevations or facade dimensions."
+    },
+    {
+      "provider": "Purdue University News / Administrative Operations Communications",
+      "url": "https://www.purdue.edu/newsroom/purduetoday/releases/2022/Q2/plan-for-construction-impacts-this-summer-while-traveling-on-west-lafayette-campus.html",
+      "feature_id": "Hagle Hall construction photograph and completion update",
+      "source_date": "2022-05-19",
+      "retrieved_date": "2026-10-26",
+      "raw_snapshot": "sources/purduetoday_hagle_completion_2022.html",
+      "image_url": "https://www.purdue.edu/uns/images/2022/pt-summer-construction-800x533.jpg",
+      "image_snapshot": "sources/purduetoday_hagle_construction_2022.jpg",
+      "source_crs": "Not applicable (oblique photograph)",
+      "measurement_method": "Visual inspection of the exterior image: four-level facade, dark brick wall wings, pale curved corner bay with glazing, ground-floor storefront glazing, and blue angular roof canopy. Used only for architectural cues, not dimensional scaling.",
+      "uncertainty": "Construction-stage oblique photo; exact facade orientation, fenestration cadence, color values, canopy geometry, and heights are not dimensioned."
+    },
+    {
+      "provider": "Purdue University Vice Provost for Student Life",
+      "url": "https://www.purdue.edu/vpsl/news/featured-stories/2020_archive/breaking-ground-on-hagle-hall.php",
+      "feature_id": "Hagle Hall groundbreaking",
+      "source_date": "2020-11-12",
+      "retrieved_date": "2026-10-26",
+      "raw_snapshot": "sources/purdue_hagle_groundbreaking_2020.html",
+      "image_snapshot": "sources/purdue_hagle_groundbreaking_photo_2020.jpg",
+      "source_crs": "Not applicable",
+      "measurement_method": "Identity and project context cross-check; no dimensions derived.",
+      "uncertainty": "Groundbreaking photo is not an architectural elevation or measurable reference."
+    }
+  ],
+  "model": {
+    "footprint_status": "Rebuilt from Purdue GIS FID 430 ring and projected to campus coordinates; source polygon area is approximately 845.68 m2. Main wall bounds closely follow the GIS outline; the projecting curved-bay canopy extends about 2.75 m beyond part of that outline.",
+    "orientation": "Directly follows the GIS boundary vertex order and local projection; no independent survey or cardinal facade schedule was found.",
+    "stories": 4,
+    "height_status": "estimated",
+    "height_estimate_m": 15.1,
+    "height_basis": "Four stories documented by Purdue; floor-to-floor module 3.55 m plus 0.9 m parapet is a modeling estimate, not a surveyed height.",
+    "facade_representation": "Single-mesh shell with dark brick wings, a broadly glazed faceted curved bay, pale stone transitions, glazed ground level, a clearly framed entry door, and a projecting angular blue canopy above the curved bay. Bay glazing, canopy geometry, entry placement, and story heights remain visual estimates from Purdue's 2022 construction photo.",
+    "export": "One mesh object in expected scene and collection; campus-coordinate geometry retained with identity transform; no external image dependencies or linked libraries."
+  },
+  "build_metrics": "build_metrics.json",
+  "preview": "hagle_hall_preview.png",
+  "checks": [
+    "Builder rebuilt the assigned asset from Purdue GIS FID 430, rendered the revised canopy/glazing/entry, and saved to the assigned asset path.",
+    "Independent Blender 5.2 reopen check passed; see reopen_check.json.",
+    "Independent evaluator returned 8.5/10 PASS; see evaluate_hagle.py and grade.json."
+  ],
+  "remaining_uncertainty": [
+    "No surveyed elevation or authoritative measured building height located; all vertical dimensions are estimates.",
+    "No dimensioned elevations or floor plans located; facade bays, canopy dimensions, exact entrance placement, and material colors are visual approximations from the oblique 2022 photo.",
+    "The GIS polygon and local lon/lat conversion are not survey-grade."
+  ],
+  "independent_grade": {
+    "score": 8.5,
+    "max_score": 10,
+    "result": "PASS",
+    "evaluator": "evaluate_hagle.py",
+    "result_file": "grade.json",
+    "findings": [
+      "The projecting canopy and curved glazing are now represented; canopy still reads as a faceted curved ribbon rather than the exact angular photo silhouette.",
+      "The entry is present but remains small and difficult to see at overview scale.",
+      "No measured elevation is available; all vertical dimensions remain estimates.",
+      "GIS footprint is authoritative campus geometry but not survey-grade."
+    ]
+  }
+}
