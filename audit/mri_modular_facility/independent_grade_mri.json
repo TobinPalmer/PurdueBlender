@@ -1,0 +1,100 @@
+{
+  "score": 8.0,
+  "max_score": 10,
+  "pass": true,
+  "building": "Purdue Magnetic Resonance Imaging Facility (MRI1 / PMRI)",
+  "asset_id": "massing_mri_modular_facility_mri1_a93e22b",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS BuildingShapesZip4 FID 918 explicitly identifies PMRI at 750 S University Street; Office of Research cross-references MRI1/PMRI. Independently recomputed from saved FID 918 WGS84 polygon: all four structural base edges match the reopened mesh within 0.00002743 m.",
+      "limitations": "GIS accuracy is unpublished and not survey-grade; OSM centroid is 1.70 m offset, so Purdue GIS is correctly treated as footprint control."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Reopened mesh is in campus coordinates with identity object transform; exact four-edge source geometry confirms plan placement, dimensions, and orientation against the official GIS outline. The export agrees to sub-millimeter tolerance.",
+      "limitations": "Campus transform is an approximate local geographic conversion, not a surveyed CRS; source positional accuracy is unknown."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS level fields and Meyer Najem project description support a single-story facility. Aerial tile supports a low flat roof and rooftop mechanical equipment; model shows that roof type and equipment.",
+      "limitations": "No measured elevations or wall height are available. Model wall height 4.5 m, parapet/roof height 5.15 m, and HVAC top at 5.85 m are estimates; roof pitch, parapet details, and equipment dimensions are not verified."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.5,
+      "max_score": 2.0,
+      "evidence": "Contractor project record supports masonry veneer plus aluminum windows and doors; the saved mesh uses masonry walls and aluminum-framed openings. No retrieved exact-building exterior photo is available for direct comparison.",
+      "limitations": "Window rhythm, east-facing entry, MRI sign placement, and detailed facade appearance are not evidenced by an accessible exterior view; those details remain illustrative/inferred."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Cold reopened asset matches manifest path and collection, has one mesh object, identity transform, no modifiers, no file-backed images, preserved preview renders, raw GIS and multiple independent source snapshots, and a structured evidence record. Checks: {\"all_four_GIS_structural_edges_within_2mm\": true, \"asset_file_reopened\": true, \"expected_collection_contains_only_target_mesh\": true, \"identity_transform\": true, \"manifest_asset_matches\": true, \"no_external_file_images\": true, \"no_modifiers\": true}",
+      "limitations": "None found in the saved asset packaging; model fidelity remains subject to source limitations recorded above."
+    }
+  ],
+  "evidence": {
+    "saved_blend": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_mri_modular_facility_mri1_a93e22b.blend",
+    "source_feature": "Purdue BuildingShapesZip4 FeatureServer FID 918",
+    "source_geojson": "audit/mri_modular_facility/sources/feature_918_wgs84.geojson",
+    "evidence_record": "audit/mri_modular_facility/evidence.json",
+    "previews": [
+      "audit/mri_modular_facility/preview_exterior.png",
+      "audit/mri_modular_facility/preview_plan.png"
+    ],
+    "cold_reopen_checks": {
+      "asset_file_reopened": true,
+      "manifest_asset_matches": true,
+      "expected_collection_contains_only_target_mesh": true,
+      "identity_transform": true,
+      "no_modifiers": true,
+      "all_four_GIS_structural_edges_within_2mm": true,
+      "no_external_file_images": true
+    },
+    "source_edge_errors_m": [
+      1.174507749438725e-05,
+      1.4916792995783306e-05,
+      2.7428941900458625e-05,
+      2.7428941900458625e-05
+    ],
+    "model_bounds_xyz_m": {
+      "min": [
+        -158.1762237548828,
+        -700.0474243164062,
+        0.0
+      ],
+      "max": [
+        -136.34835815429688,
+        -681.8410034179688,
+        5.849999904632568
+      ]
+    },
+    "material_names": [
+      "MRI1_Aluminum_Frames",
+      "MRI1_Aluminum_Window_Glass",
+      "MRI1_Entry_Glass_Door",
+      "MRI1_Light_Horizontal_Trim",
+      "MRI1_Masonry_Veneer",
+      "MRI1_Roof_Membrane",
+      "MRI1_Rooftop_Equipment",
+      "MRI1_Sign_Backplate",
+      "MRI1_Sign_Letters"
+    ],
+    "mesh_vertices": 4742,
+    "mesh_faces": 1296,
+    "external_file_images": []
+  },
+  "findings": [
+    "Passes the 8/10 threshold, at the minimum passing score.",
+    "Keep the vertical height labeled estimated; no dimensional elevation source was found.",
+    "If exact facade accuracy is required, obtain a usable current exterior photo/elevation and verify the entrance bearing, window spacing, and MRI signage before revising those details."
+  ]
+}

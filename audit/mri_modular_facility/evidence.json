@@ -1,0 +1,233 @@
+{
+  "building": "Purdue Magnetic Resonance Imaging Facility (MRI1 / PMRI)",
+  "building_code": "PMRI",
+  "asset_id": "massing_mri_modular_facility_mri1_a93e22b",
+  "status": "Independent grade pass 8.0/10; awaiting master integration",
+  "asset": {
+    "path": "modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend",
+    "object": "MRI Modular Facility (MRI1)",
+    "collection": "Asset_massing_mri_modular_facility_mri1_a93e22b",
+    "kind": "massing",
+    "coordinate_frame": "Campus coordinates, identity transform",
+    "preview": "audit/mri_modular_facility/preview_exterior.png",
+    "reopen_check": "audit/mri_modular_facility/reopen_check.json",
+    "independent_grade": "audit/mri_modular_facility/independent_grade_mri.json"
+  },
+  "source_match": {
+    "official_identity": "Purdue GIS FID 918 is BLDG_ABBR=PMRI, BUILDING_N=Purdue Magnetic Resonance Imagin, 750 S University Street; Purdue Office of Research says MRI1 (aka PMRI).",
+    "osm_crosscheck": "OSM way 886348187 is named MRI Modular Facility (MRI1), 745 Agriculture Mall. Its converted centroid is 1.70 m from GIS FID 918 centroid; the small difference is retained in uncertainty rather than used as control.",
+    "campus_gis": "FID 918 is the official named Purdue footprint. Official WGS84 outline is used instead of the prior OSM-derived massing ring."
+  },
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer, layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/918?f=pjson",
+      "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D918&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "feature_id": "FID 918; GlobalID {789C2016-A99A-4499-B73B-C661C4D5E2E2}",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Feature-level created/edited dates blank; layer metadata reports last edit 2026-08-31T16:13:41Z.",
+      "source_crs": "EPSG:102100 (latest WKID 3857); WGS84 query snapshot also saved.",
+      "snapshots": [
+        "sources/feature_918_raw.json",
+        "sources/feature_918_wgs84.geojson",
+        "sources/purdue_buildings_layer_metadata.json"
+      ],
+      "use": "Official named Purdue building footprint, address, ownership, and one-level GIS record.",
+      "measurement_method": "Converted saved EPSG:4326 vertices with the project approximation; area and extents computed on the transformed four-vertex ring.",
+      "uncertainty": "Map feature accuracy is unpublished; not a survey. GIS Shape__Area is in projected Web Mercator units and is not used as ground area."
+    },
+    {
+      "provider": "OpenStreetMap contributors / Overpass API snapshot",
+      "url": "https://www.openstreetmap.org/way/886348187",
+      "feature_id": "Way 886348187; name MRI Modular Facility (MRI1), 745 Agriculture Mall",
+      "retrieval_date": "2026-10-22",
+      "source_date": "Repository Overpass snapshot timestamp 2026-10-22T03:45:50Z; way edit date unavailable.",
+      "source_crs": "WGS84 / EPSG:4326",
+      "snapshot": "sources/osm_way_886348187_snapshot.json",
+      "use": "Independent building-name/address/position corroboration.",
+      "measurement_method": "Converted node coordinates with project campus transform; compared centroid to official FID 918.",
+      "uncertainty": "Community-maintained footprint and identity; centroid differs from Purdue GIS by 1.70 m."
+    },
+    {
+      "provider": "Purdue University Health and Human Sciences MRI Facility",
+      "url": "https://www.purdue.edu/hhs/mri/Locations/index.html",
+      "photo_url": "https://www.purdue.edu/hhs/mri/images/MRI-Facility.JPG",
+      "location_map": "https://www.purdue.edu/hhs/mri/Locations/Location.jpg",
+      "feature_id": "Life Science MRI Facility; 750 S University Street",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page carries 2015 template footer; exact facility page update date not stated.",
+      "source_crs": "Not applicable",
+      "snapshots": [
+        "sources/purdue_hhs_mri_locations.html",
+        "sources/purdue_mri_location_map.jpg"
+      ],
+      "use": "Official address, map location, and link to facility exterior image.",
+      "measurement_method": "Address and mapped location matched to the Purdue GIS feature.",
+      "uncertainty": "The exterior image URL is listed in the page HTML but was unavailable to direct retrieval at audit time; map and page verify location only."
+    },
+    {
+      "provider": "Purdue University Office of Research",
+      "url": "https://research.purdue.edu/core-facility/purdue-mri-facility/",
+      "feature_id": "Purdue MRI Facility; Location MRI1 (aka PMRI)",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page dated May 28, 2026.",
+      "source_crs": "Not applicable",
+      "snapshot": "sources/purdue_mri_office_research.html",
+      "use": "Independent linkage between Purdue MRI facility and MRI1/PMRI identity.",
+      "measurement_method": "Name/code cross-reference only.",
+      "uncertainty": "No building dimensions, floors, or elevations."
+    },
+    {
+      "provider": "Meyer Najem, project contractor",
+      "url": "https://www.meyer-najem.com/portfolio/higher-education-construction/higher-education-3/",
+      "feature_id": "Purdue Research Foundation, Purdue University MRI Facility",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page last modified 2026-09-18.",
+      "source_crs": "Not applicable",
+      "snapshot": "sources/meyer_najem_purdue_mri_portfolio.html",
+      "use": "Construction narrative: single-story modular facility, masonry veneer, aluminum windows/doors, roofing, and approximate project floor area 3,800 square feet.",
+      "measurement_method": "Qualitative material/story description; floor-area comparison only (3,800 ft² converts to ~353 m², close to transformed GIS polygon area).",
+      "uncertainty": "Contractor project description contains no elevations/height; area may refer to gross floor area and is not a survey dimension."
+    },
+    {
+      "provider": "Esri World Imagery (credits: Esri, Vantor, Earthstar Geographics, GIS User Community)",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/197681/135564",
+      "feature_id": "Web Mercator tile z19 y197681 x135564, with z20 detail tile",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Imagery vintage not exposed in service metadata.",
+      "source_crs": "EPSG:102100 / latest WKID 3857 Web Mercator",
+      "snapshots": [
+        "sources/esri_world_imagery_tile_z19_y197681_x135564.jpg",
+        "sources/esri_world_imagery_tile_z20_y395362_x271128.jpg",
+        "sources/esri_world_imagery_service_metadata.json"
+      ],
+      "use": "Roof-plan/site context and rooftop mechanical-unit visibility.",
+      "measurement_method": "Qualitative comparison only; no pixel-derived dimensions or heights.",
+      "uncertainty": "Aerial acquisition date is not published and imagery cannot verify wall height or facade details."
+    }
+  ],
+  "transform": {
+    "geographic_origin": {
+      "latitude": 40.4274,
+      "longitude": -86.9137
+    },
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local approximate campus transform, not surveyed",
+    "coordinate_frame": "Simple massing retains campus coordinates; geometry is not local-origin instanced."
+  },
+  "measurements": {
+    "official_outline_vertices": 4,
+    "official_footprint_bounds_xy_m": {
+      "min_x": -157.8157196044922,
+      "max_x": -136.7088623046875,
+      "min_y": -699.7188720703125,
+      "max_y": -682.1695556640625
+    },
+    "official_ground_area_computed_m2": 353.55555161228403,
+    "official_bbox_dimensions_m": {
+      "east_west": 21.106857299804688,
+      "north_south": 17.54931640625
+    },
+    "osm_to_gis_centroid_delta_m": 1.7,
+    "original_massing_bounds_xy_m": {
+      "min_x": -156.29745483398438,
+      "max_x": -134.98455810546875,
+      "min_y": -700.3626098632812,
+      "max_y": -682.5184936523438,
+      "roof_top_m": 16.0
+    },
+    "after_bounds_xyz_m": {
+      "min": [
+        -158.1762237548828,
+        -700.0474243164062,
+        0.0
+      ],
+      "max": [
+        -136.34835815429688,
+        -681.8410034179688,
+        5.849999904632568
+      ]
+    },
+    "modeled_above_grade_floors": 1,
+    "estimated_wall_height_m": 4.5,
+    "estimated_roof_top_m": 5.8500000000000005,
+    "height_status": "One story is supported by Purdue GIS NUM_LEVELS/CountOfFLO and the contractor description; vertical height is an estimate because no elevation is published.",
+    "roof_status": "Low flat roof with HVAC blocks guided by aerial; roof pitch, parapet dimensions, and unit sizes estimated.",
+    "entry_orientation": "East-facing entry placed toward parking shown on aerial; no compass-tagged photo confirms main entrance side.",
+    "reopen_validation": "audit/mri_modular_facility/reopen_check.json",
+    "cold_reopen": {
+      "blend_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_mri_modular_facility_mri1_a93e22b.blend",
+      "building": "MRI Modular Facility (MRI1 / PMRI)",
+      "source": "Purdue BuildingShapesZip4 FeatureServer FID 918; saved WGS84 snapshot",
+      "cold_reopen_checks": {
+        "saved_blend_reopened": true,
+        "asset_path_matches_manifest": true,
+        "expected_collection_has_one_object": true,
+        "expected_object_is_mesh": true,
+        "identity_transform": true,
+        "no_modifiers": true,
+        "source_outline_has_four_corners": true,
+        "all_four_source_edges_match": true,
+        "portable_no_file_backed_images": true
+      },
+      "pass": true,
+      "source_wall_edge_max_error_m": 2.7428941900458625E-05,
+      "matched_source_edges": 4,
+      "source_bbox_xy_m": {
+        "min": [
+          -157.81571233813816,
+          -699.7188581532441
+        ],
+        "max": [
+          -136.70885614555215,
+          -682.1695465054199
+        ]
+      },
+      "model_bounds_xyz_m": {
+        "min": [
+          -158.1762237548828,
+          -700.0474243164062,
+          0.0
+        ],
+        "max": [
+          -136.34835815429688,
+          -681.8410034179688,
+          5.849999904632568
+        ]
+      },
+      "object": "MRI Modular Facility (MRI1)",
+      "collection": "Asset_massing_mri_modular_facility_mri1_a93e22b",
+      "collection_object_count": 1,
+      "object_type": "MESH",
+      "mesh_vertices": 4742,
+      "mesh_faces": 1296,
+      "modifiers": [],
+      "external_file_images": [],
+      "height_note": "One story supported by official GIS and contractor description; modeled 4.5 m wall/5.85 m equipment top are estimates."
+    }
+  },
+  "geometry_edits": [
+    "Replaced the original 8-vertex, 8-face, 16 m-high massing block with structural walls extruded from the official Purdue FID 918 four-corner outline.",
+    "Shifted plan position to official Purdue GIS coordinates; no scale/rotation override applied.",
+    "Built a single-story masonry-veneer shell, aluminum-framed windows and entry, pale trim, MRI corner signage, flat roof/parapet, and aerial-supported rooftop HVAC units.",
+    "Kept one mesh object in the existing collection, asset path, campus coordinate frame, and identity object transform."
+  ],
+  "uncertainties": [
+    "Purdue GIS is not a survey; its positional accuracy is unpublished. OSM name/shape centroid is 1.70 m from the official Purdue footprint.",
+    "No measured facade elevations or building height are available; 4.5 m wall height and 5.85 m top of rooftop equipment are estimates.",
+    "Exact window rhythm, entry bearing, parapet dimensions, roof pitch, and MRI signage position are not verified by a compass-tagged exterior photograph.",
+    "The Purdue HHS exterior-photo URL appears in its location page but was inaccessible to direct retrieval; contractor case information is qualitative and does not replace an exterior elevation."
+  ],
+  "artifacts": {
+    "build_script": "modular/buildings/build_massing_mri_modular_facility_mri1_a93e22b.py",
+    "preview_script": "audit/mri_modular_facility/render_preview.py",
+    "preview": "audit/mri_modular_facility/preview_exterior.png",
+    "top_preview": "audit/mri_modular_facility/preview_plan.png",
+    "raw_sources": "audit/mri_modular_facility/sources/",
+    "reopen_check_script": "audit/mri_modular_facility/reopen_check.py",
+    "before_rebuild_check": "audit/mri_modular_facility/initial_check.json",
+    "reopen_check": "audit/mri_modular_facility/reopen_check.json"
+  }
+}
