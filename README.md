@@ -2,7 +2,7 @@
 
 This project tracks detailed campus models separately from the remaining massing-only building assets. A detailed model counts as finished here only when its latest recorded independent grader score is at least 8/10. Scores describe the reviewed model revision; ungraded assets are explicitly marked.
 
-## Detailed models: status and latest grader score (95 buildings)
+## Detailed models: status and latest grader score (98 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -32,12 +32,15 @@ This project tracks detailed campus models separately from the remaining massing
 | Cary Quadrangle West (CQW) | [massing_cary_quadrangle_west_cqw_3d47a7d.blend](modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend) | Finished | [8.7/10](audit/massing_cary_quadrangle_west_cqw_independent_grade_r3/independent_grade_result.json) | — |
 | Chi Omega | [massing_chi_omega_a9eb08d.blend](modular/buildings/massing_chi_omega_a9eb08d.blend) | Finished | [9.0/10](audit/chi_omega_independent_grade_r2/result.json) | — |
 | Creighton Hall of Animal Sciences | [massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend](modular/buildings/massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend) | Finished | [8.5/10](audit/massing_creighton_hall_of_animal_sciences_crtn_a88d450/independent_grade/result.json) | — |
+| Crosswalk Commons | [massing_crosswalk_commons_7c01ecd.blend](modular/buildings/massing_crosswalk_commons_7c01ecd.blend) | Finished | [8.1/10](audit/crosswalk_commons/independent_grade_result.json) | — |
 | Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | Finished | 8.5/10 | — |
+| Delta Tau Delta | [massing_delta_tau_delta_e06b0b5.blend](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Finished | [8.25/10](audit/delta_tau_delta_e06b0b5/independent_grade_r2/result.json) | — |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](modular/buildings/convergence_center.blend) | Needs independent grade | Not graded | Rohan |
 | Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | In progress | 7.2/10 | Rohan |
 | David and Bonnie Brunner Farm Animal Hospital | [david_and_bonnie_brunner_farm_animal_hospital.blend](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | In progress | 6.7/10 | Rohan |
 | Drew and Brittany Brees Student Athletic Academic Center | [brees_student_athletic_academic_center.blend](modular/buildings/brees_student_athletic_academic_center.blend) | In progress | 7.3/10 | Rohan |
 | Duhme (Ophelia) Residence Hall | [massing_duhme_ophelia_residence_hall_1bb4e9c.blend](modular/buildings/massing_duhme_ophelia_residence_hall_1bb4e9c.blend) | Finished | [8.5/10](audit/duhme_ophelia_residence_hall_independent_grade/result.json) | — |
+| Dudley Hall | [dudley_hall.blend](modular/buildings/dudley_hall.blend) | Finished | [8.0/10](audit/dudley_hall/independent_grade/result.json) | — |
 | Electrical Engineering | [electrical_engineering.blend](modular/buildings/electrical_engineering.blend) | In progress | 5.2/10 | Rohan |
 | Earhart Hall | [massing_earhart_hall_0f14209.blend](modular/buildings/massing_earhart_hall_0f14209.blend) | Finished | [8.0/10](audit/earhart_hall_independent_grade/result.json) | — |
 | Elliott Hall Of Music | [elliott_hall_of_music.blend](modular/buildings/elliott_hall_of_music.blend) | In progress | 7.1/10 | Rohan |
@@ -102,9 +105,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (120 total)
+## Unfinished buildings (117 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 4 buildings, Rohan 15 buildings, Tobin 1 buildings, Arjav 10 buildings, Brady 90 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 1 building, Rohan 15 buildings, Tobin 1 building, Arjav 10 buildings, Brady 90 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -127,16 +130,13 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 
-### Buildings that still have only massing models (104)
+### Buildings that still have only massing models (101)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
 | animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rossen |
-| crosswalk commons | [`massing_crosswalk_commons_7c01ecd.blend`](modular/buildings/massing_crosswalk_commons_7c01ecd.blend) | Rossen |
-| delta tau delta | [`massing_delta_tau_delta_e06b0b5.blend`](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Rossen |
-| dudley | [`dudley_hall.blend`](modular/buildings/dudley_hall.blend) | Rossen |
 | fuse | [`massing_fuse_39cf4b5.blend`](modular/buildings/massing_fuse_39cf4b5.blend) | Brady |
 | granite student living | [`massing_granite_student_living_3732ce0.blend`](modular/buildings/massing_granite_student_living_3732ce0.blend) | Brady |
 | grant street parking garage pgg | [`massing_grant_street_parking_garage_pgg_f46c894.blend`](modular/buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | Brady |
