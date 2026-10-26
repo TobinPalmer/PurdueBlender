@@ -1,0 +1,105 @@
+{
+  "score": 8.2,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Official Purdue GIS feature 258 identifies Eleanor B. Shreve Residence Hall (SHRV).",
+        "Independently compared 24 distinct projected GIS ring points with the reopened mesh base; maximum nearest XY difference is 0.000030 m.",
+        "The source polygon's stepped multi-wing plan is preserved by the structural mesh. The official footprint is not a certified survey."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "The base vertices use the repository's documented campus-local conversion and match the source ring at coordinate-conversion precision.",
+        "Reopened mesh bounds in meters are [[-1000.5022583007812, -911.9681396484375], [-105.17498016357422, -30.45048713684082], [0.0, 32.275001525878906]]; object transform is {'location': [0.0, 0.0, 0.0], 'rotation_euler': [0.0, 0.0, 0.0], 'scale': [1.0, 1.0, 1.0]}.",
+        "Position and dimensions are consistent with the GIS polygon, but no survey control or published positional uncertainty is available."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2.0,
+      "evidence": [
+        "The GIS snapshot lists NUM_LEVELS=10; Purdue move-in directions distinguish floors 1-5 and 6-8, confirming at least eight numbered floors.",
+        "The official Purdue exterior photograph shows a flat roof and a raised mechanical screen, both reflected in the asset.",
+        "The 29 m wall height and 32.275 m total mesh peak are estimates; the available sources provide no scaled elevation or measured height. The photograph does not show all wings, so relative tower/connector heights remain uncertain."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": [
+        "The official exterior photo supports red brick, a pale lower base and vertical facade strips, repeated narrow windows, a broad glass entry, a canopy supported by columns, stairs, and a rooftop enclosure.",
+        "The model includes brick and pale trim, repeated windows, the column-supported canopy and raised stair, plus a raised rooftop screen.",
+        "The facade rhythm, vertical strips, connector-to-tower height changes, and entrance bearing/dimensions remain schematic because the official photo is unscaled and shows only part of the building."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "The saved asset reopens with one mesh in the expected collection (32906 vertices, 24556 faces).",
+        "A dedicated portable builder, raw GIS snapshot, official Purdue exterior photo and observation, move-in evidence, structured evidence, reopen validation, and current overview/detail renders are present.",
+        "The asset is still awaiting integration and reopen review in the shared master blend, which is coordinator-owned."
+      ]
+    }
+  ],
+  "evidence": {
+    "model": "modular/buildings/massing_shreve_hall_06d270a.blend",
+    "feature_id": 258,
+    "building_code": "SHRV",
+    "gis_ring_point_count": 24,
+    "max_nearest_base_vertex_error_m": 3.011e-05,
+    "mesh_bounds_world_m": [
+      [
+        -1000.5022583007812,
+        -911.9681396484375
+      ],
+      [
+        -105.17498016357422,
+        -30.45048713684082
+      ],
+      [
+        0.0,
+        32.275001525878906
+      ]
+    ],
+    "object_transform": {
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "mesh_vertices": 32906,
+    "mesh_faces": 24556,
+    "exported_collection_object_count": 1,
+    "saved_asset_reopened": true,
+    "official_photo_date": "Not supplied",
+    "wall_height_m_status": "estimated; no verified elevation drawing or measured height",
+    "roof_screen_height_limit_m": 32.275001525878906
+  },
+  "findings": [
+    "The footprint and overall facade vocabulary are supported, but the GIS map does not establish site-survey accuracy or height.",
+    "The official photo supports a rooftop screen and entrance canopy, but its unscaled partial view cannot validate exact roof height, full facade composition, or connector-to-tower height transitions."
+  ]
+}

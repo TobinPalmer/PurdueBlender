@@ -1,7 +1,7 @@
 {
   "building": "Eleanor B. Shreve Residence Hall",
   "asset_id": "massing_shreve_hall_06d270a",
-  "status": "Detailed asset updated; pending independent grade",
+  "status": "Finished for handoff: independent grade 8.2/10; master-blend integration pending",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -29,6 +29,15 @@
         "url": "https://www.pinterest.com/pin/shreve-hall--256283035018920877/",
         "use": "Photo visibly labeled SHREVE HALL; supports red brick, light concrete base, glass entrance, column-supported canopy, and raised stair vocabulary. It is not georeferenced or scaled.",
         "observation_record": "shreve_exterior_photo_observation.json"
+      },
+      {
+        "provider": "Purdue University Residences",
+        "url": "https://www.housing.purdue.edu/visit/conferences/accommodations.html",
+        "image_url": "https://housing.purdue.edu/images/_hero/shreve-exterior-640x360.jpg",
+        "use": "Official Shreve exterior image supports the red-brick tower and lower wing, narrow repeated window bays, vertical facade strips, flat rooftop screen, glass entry, broad column-supported canopy, and raised stairs; it is unscaled and undated.",
+        "retrieval_date": "2026-10-26",
+        "raw_image": "purdue_shreve_exterior_640x360.jpg",
+        "observation_record": "purdue_official_exterior_observation.json"
       }
     ]
   },
@@ -76,7 +85,8 @@
       "min_y": -105.17498,
       "max_y": -30.450487,
       "min_z": 0.0,
-      "max_z": 29.0
+      "max_z": 32.275002,
+      "note": "The 29 m modeled wall height is an estimate. The 32.275 m total bound includes a photo-informed rooftop screen whose location and size are illustrative."
     },
     "official_num_levels_attribute": 10,
     "official_extrution_attribute": 42,
@@ -85,18 +95,20 @@
   "geometry_edits": [
     "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
     "Added facade materials, repeated window bays, window surrounds, floor bands, plinth and roof coping.",
-    "Added a glass entrance, shallow column-supported canopy and raised stair/landing approach informed by the entrance photograph. Entry orientation and dimensions remain approximate because the image is not georeferenced or scaled."
+    "Added a glass entrance, shallow column-supported canopy and raised stair/landing approach informed by exterior photographs. Entry orientation and dimensions remain approximate because the images are not georeferenced or scaled.",
+    "Added a simple rooftop mechanical screen based on the raised enclosure visible in the official Purdue exterior photo; its placement and dimensions are estimates."
   ],
   "uncertainties": [
     "The official map polygon is not a certified survey and has no published position/dimension uncertainty.",
     "Height has not been checked against elevation drawings or on-site measurement; GIS level/Extrution fields are not treated as height measurements.",
     "GIS levels attribute 10; height estimate 29 m is not surveyed",
     "Facade details and window spacing are schematic; the local entrance features are photo-referenced but their campus-side placement and dimensions remain approximate.",
-    "No independent grader has reviewed this revision.",
+    "The official exterior photograph is unscaled and undated; the rooftop screen location and dimensions are illustrative.",
+    "Independent grade passed at 8.2/10; shared master integration remains pending. Full wing-height transitions and entrance bearing remain schematic.",
     "Official move-in directions refer to floors 6-8 but do not confirm the full floor count; GIS NUM_LEVELS=10 remains unverified."
   ],
   "artifacts": {
-    "build_script": "build_detail.py",
+    "build_script": "../../modular/buildings/build_massing_shreve_hall_06d270a.py",
     "build_config": "build_config.json",
     "raw_source": "source_feature_258_raw.json",
     "unloading_directions_observation": "shreve_unloading_directions_observation.json",
@@ -104,6 +116,12 @@
     "entrance_photo_observation": "shreve_exterior_photo_observation.json",
     "render_script": "render_preview.py",
     "detailed_preview": "preview_detail_r2.png",
-    "validation_script": "validate_asset.py"
+    "overview_preview": "preview_overview.png",
+    "validation_script": "validate_asset.py",
+    "official_exterior_image": "purdue_shreve_exterior_640x360.jpg",
+    "official_exterior_observations": "purdue_official_exterior_observation.json",
+    "independent_grade": "independent_grade_codex/result.json",
+    "independent_evaluator": "independent_grade_codex/evaluate.py",
+    "independent_grade_score": 8.2
   }
 }
