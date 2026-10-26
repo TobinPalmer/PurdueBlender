@@ -2,7 +2,7 @@
 
 This project tracks detailed campus models separately from the remaining massing-only building assets. A detailed model counts as finished here only when its latest recorded independent grader score is at least 8/10. Scores describe the reviewed model revision; ungraded assets are explicitly marked.
 
-## Detailed models: status and latest grader score (99 buildings)
+## Detailed models: status and latest grader score (102 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -63,6 +63,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Heine Pharmacy | [heine_pharmacy.blend](modular/buildings/heine_pharmacy.blend) | In progress | 7.5/10 | Rohan |
 | Hicks Library | [hicks_library.blend](modular/buildings/hicks_library.blend) | In progress | 6.6/10 | Rohan |
 | Horticulture Building | [horticulture_building.blend](modular/buildings/horticulture_building.blend) | In progress | 7.0/10 | Rohan |
+| Honors College and Residences North | [massing_honors_college_and_residences_north_3de3b7c.blend](modular/buildings/massing_honors_college_and_residences_north_3de3b7c.blend) | Finished | [8.0/10](audit/honors_college_and_residences_north/independent_grade/grade_result.json) | — |
+| Honors College and Residences South | [massing_honors_college_and_residences_south_c663781.blend](modular/buildings/massing_honors_college_and_residences_south_c663781.blend) | Finished | [8.5/10](audit/honors_college_residences_south_c663781/independent_grade/grade_result.json) | — |
+| Horizon Bank | [massing_horizon_bank_debc8f2.blend](modular/buildings/massing_horizon_bank_debc8f2.blend) | Finished | [8.9/10](audit/horizon_bank/independent_grade/grade_result.json) | — |
 | Hovde Hall | [hovde_hall.blend](modular/buildings/hovde_hall.blend) | Finished | 8.7/10 | — |
 | Knoy Hall | [knoy_hall.blend](modular/buildings/knoy_hall.blend) | Finished | [8.1/10](audit/batch4_knoy/independent_grade_r23.md) | — |
 | Krach Leadership Center | [krach_leadership_center.blend](modular/buildings/krach_leadership_center.blend) | Finished | 8.1/10 | — |
@@ -106,9 +109,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (116 total)
+## Unfinished buildings (113 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 45 buildings, Rohan 15 buildings, Tobin 46 buildings, Arjav 10 buildings, Brady 0 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 45 buildings, Rohan 15 buildings, Tobin 43 buildings, Arjav 10 buildings, Brady 0 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -131,7 +134,7 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 
-### Buildings that still have only massing models (100)
+### Buildings that still have only massing models (97)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -152,9 +155,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | hillel | [`massing_hillel_36d2ba1.blend`](modular/buildings/massing_hillel_36d2ba1.blend) | Rossen |
 | hillenbrand hall | [`massing_hillenbrand_hall_a71e418.blend`](modular/buildings/massing_hillenbrand_hall_a71e418.blend) | Rossen |
 | hockmeyer hall of structural biology hock | [`massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend`](modular/buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | Rossen |
-| honors college and residences north | [`massing_honors_college_and_residences_north_3de3b7c.blend`](modular/buildings/massing_honors_college_and_residences_north_3de3b7c.blend) | Tobin |
-| honors college and residences south | [`massing_honors_college_and_residences_south_c663781.blend`](modular/buildings/massing_honors_college_and_residences_south_c663781.blend) | Tobin |
-| horizon bank | [`massing_horizon_bank_debc8f2.blend`](modular/buildings/massing_horizon_bank_debc8f2.blend) | Tobin |
 | hull all american marching band complex | [`massing_hull_all_american_marching_band_complex_665bcb7.blend`](modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend) | Rossen |
 | islamic societyof greater lafayette | [`massing_islamic_societyof_greater_lafayette_0130012.blend`](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | Rossen |
 | jimmy john s | [`massing_jimmy_john_s_12edba1.blend`](modular/buildings/massing_jimmy_john_s_12edba1.blend) | Rossen |
@@ -241,7 +241,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 ## Adding a building
 
 Follow [AGENT.md](AGENT.md) for the required modular build and grading process.
-
 
 
 

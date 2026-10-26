@@ -114,6 +114,6 @@ Edit geometry in its source library; campus placement is controlled by its Place
 SAMARA retains its legacy massing filename and campus-coordinate direct link for compatibility with the existing master. Its measured geometry, independent grade, and remaining registration uncertainty are documented in the [SAMARA evidence record](../audit/samara/EVIDENCE.md).
 
 CREC retains its legacy massing filename and campus-world direct-link coordinates for compatibility with the existing master. Its independently graded geometry (8.1/10) and remaining roof/interior uncertainty are documented in the [CREC evidence record](../audit/france_a_cordova_rec_center/source_record.json).
-
-
-
+| Honors College and Residences North / Lees-Such Tower | [massing_honors_college_and_residences_north_3de3b7c.blend](buildings/massing_honors_college_and_residences_north_3de3b7c.blend) | 58 |
+| Honors College and Residences South | [massing_honors_college_and_residences_south_c663781.blend](buildings/massing_honors_college_and_residences_south_c663781.blend) | 149 |
+| Horizon Bank | [massing_horizon_bank_debc8f2.blend](buildings/massing_horizon_bank_debc8f2.blend) | 80 |

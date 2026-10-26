@@ -1,0 +1,83 @@
+{
+  "building_id": "massing_honors_college_and_residences_north_3de3b7c",
+  "display_name": "Honors College and Residences North / Lees-Such Tower",
+  "asset_path": "modular/buildings/massing_honors_college_and_residences_north_3de3b7c.blend",
+  "scene": "Building_massing_honors_college_and_residences_north_3de3b7c",
+  "collection": "Asset_massing_honors_college_and_residences_north_3de3b7c",
+  "source_evidence": [
+    {
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D544&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "provider": "Purdue GIS BuildingShapesZip4",
+      "feature": "FID 544; GlobalID {2A6774B1-C24B-4961-ACE0-DB3C256D90EF}; Lees-Such Tower",
+      "retrieved": "2026-10-26",
+      "source_crs": "WGS84 geographic coordinates (EPSG:4326)",
+      "method": "lon/lat transformed to project local campus frame using documented approximate conversion; collinear vertices simplified with 0.75m tolerance",
+      "uncertainty": "The GIS vertical attributes conflict with Purdue OEP's six-floor plus basement description. GIS plan geometry is the best available source for outline; not a survey control measurement."
+    },
+    {
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/hcr/",
+      "provider": "Purdue Operations and Emergency Preparedness",
+      "feature": "Honors College and Residences campus building overview",
+      "retrieved": "2026-10-26",
+      "source_crs": "not applicable",
+      "method": "Official text consulted for current complex identity and six floors plus basement",
+      "uncertainty": "No architectural plans or measured elevations provided on source page."
+    },
+    {
+      "url": "https://www.purdue.edu/newsroom/archive/purduetoday/releases/2016/Q3/photo-gallery-honors-college-and-residences.html",
+      "provider": "Purdue Today",
+      "feature": "2016 exterior image, local snapshot sources/purdue_news_hcr_2016.jpg",
+      "retrieved": "2026-10-26",
+      "source_date": "2016",
+      "source_crs": "not applicable",
+      "method": "Visual comparison for brick palette, limestone trim, glazed projecting bay, dark roof, and dormers",
+      "uncertainty": "Single oblique photograph does not establish facade orientation or dimensions; those details are approximate."
+    },
+    {
+      "url": "https://www.honors.purdue.edu/admissions/walking-tour.php",
+      "provider": "Purdue Honors College",
+      "feature": "Official campus tour and building/interior photographs",
+      "retrieved": "2026-10-26",
+      "source_crs": "not applicable",
+      "method": "Consulted for documented Innovation Forum and Honors Hall interior uses",
+      "uncertainty": "No public floor plan was located; secondary scene is only a schematic diagram."
+    }
+  ],
+  "model_notes": {
+    "footprint_simplified_vertices": 38,
+    "footprint_area_simplified_m2": 2855.45,
+    "outline_bounds_m": {
+      "x": [
+        -546.0299123958574,
+        -481.8177423811709
+      ],
+      "y": [
+        -111.62646506595593,
+        -28.828438805701353
+      ]
+    },
+    "above_grade_floors": 6,
+    "floor_heights_m": {
+      "ground_estimate": 4.15,
+      "typical_estimate": 3.05
+    },
+    "roof_peak_estimate_m": 29.1,
+    "dimension_source_conflict": "The manifest's former massing bounds are close to the GIS polygon but shifted by 1-3m; this model follows the Purdue GIS polygon. Do not use the modeled wall/roof height as surveyed."
+  },
+  "interior": "Separate scene is expressly schematic / not as-built; it communicates official program spaces without claiming plan accuracy.",
+  "validation": {
+    "rebuild_script": "modular/buildings/build_massing_honors_college_and_residences_north_3de3b7c.py",
+    "fresh_open_validation": "PASS \u2014 see fresh_open_validation.json; reopened in Blender 5.2.3",
+    "asset_sha256": "f883b5b321c072922625c11767ccb52716d8bbcf4d90c2cfb96c545b42123f70",
+    "collection_scene_check": "PASS \u2014 expected stable collection and scene present; 58 mesh objects; no linked objects or external image dependencies",
+    "remaining_uncertainty": "Roof profile and exact facade attribution remain estimates; independent grader accepted the asset at 8.0/10."
+  },
+  "independent_grade": {
+    "score": 8.0,
+    "max_score": 10,
+    "passed": true,
+    "asset_sha256": "f883b5b321c072922625c11767ccb52716d8bbcf4d90c2cfb96c545b42123f70",
+    "result_path": "independent_grade/grade_result.json",
+    "review_date": "2026-10-26"
+  }
+}

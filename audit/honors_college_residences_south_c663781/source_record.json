@@ -1,0 +1,93 @@
+{
+  "asset_id": "massing_honors_college_and_residences_south_c663781",
+  "asset_path": "modular/buildings/massing_honors_college_and_residences_south_c663781.blend",
+  "collection": "Asset_massing_honors_college_and_residences_south_c663781",
+  "scene": "Building_massing_honors_college_and_residences_south_c663781",
+  "owner": "Brady",
+  "retrieved_or_recorded": "2026-10-26",
+  "coordinate_frame": {
+    "asset_kind": "massing",
+    "units": "meters",
+    "axes": "X east, Y north, Z up",
+    "campus_origin": {"latitude": 40.4274, "longitude": -86.9137},
+    "transform": "Esri EPSG:3857 (WKID 102100/latestWkid 3857) -> WGS84 lon/lat -> local campus approximation X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0",
+    "uncertainty": "Local campus conversion is approximate, not a surveyed coordinate system. Values are preserved at source precision but should not be interpreted as survey-grade."
+  },
+  "sources": [
+    {
+      "provider": "Purdue University, BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/905?f=pjson",
+      "feature_id": 905,
+      "feature_identity": "FID 905, HCRS, Honors College Residence Hall South, 1101 3rd Street",
+      "retrieval_date": "2026-10-26",
+      "source_date": "GIS feature metadata does not expose a reliable survey or source-capture date; retained raw layer metadata reports a feature layer edit timestamp of 2026-08-31.",
+      "crs": "EPSG:3857; Esri WKID 102100, latestWkid 3857",
+      "measurement_method": "Transformed the complete 36-vertex outer ring into campus XY using the project conversion. The ring is used as the building base/wall footprint; dimensions and position are source-derived but locally approximated.",
+      "uncertainty": "Public building footprints are not survey-grade wall lines. The GIS reports NUM_LEVELS=8 and Extrution=96 with no documented units; these conflict/are ambiguous relative to official Purdue sources stating six stories plus basement, so not used as a measured height."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/honors-college.html",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Current official housing page; page last crawl showed 2026.",
+      "crs": "Not applicable",
+      "measurement_method": "Used to confirm the South Tower is a distinct building in the Honors College and Residences complex and that its housing is pod-style.",
+      "uncertainty": "No dimensioned elevations or measured exterior dimensions on this page."
+    },
+    {
+      "provider": "John Martinson Honors College, Purdue University",
+      "url": "https://www.honors.purdue.edu/admissions/walking-tour.php",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page modified 2026-09-01 per page footer.",
+      "crs": "Not applicable",
+      "measurement_method": "South-specific walking tour identifies the computer collaboratory, community living room/kitchen, reading room, offices, learning studios and STEAM Lab. These confirm broad program distribution, not a measured floor plan.",
+      "uncertainty": "No dimensioned South floor plan or exterior elevation. Interior geometry in this asset is explicitly schematic and not as-built."
+    },
+    {
+      "provider": "Purdue University Honors College",
+      "url": "https://new.honors.purdue.edu/admissions/building-info.php",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Current page at retrieval.",
+      "crs": "Not applicable",
+      "measurement_method": "Used official description: six stories plus basement; first floor academic; floors 2-6 residential; basement laundry/game/music. The first level is modeled as a taller academic podium and upper five as residential.",
+      "uncertainty": "Floor-to-floor heights are estimates; no height measurement is published."
+    },
+    {
+      "provider": "Purdue University News Service / Purdue Today",
+      "url": "https://www.purdue.edu/uns/images/2016/pt-honors-collegeLO.jpg",
+      "local_snapshot": "sources/purdue_honors_college_exterior_2016.jpg",
+      "retrieval_date": "2026-10-26",
+      "source_date": "2016 Purdue exterior photo.",
+      "crs": "Not applicable",
+      "measurement_method": "Visual reference for the complex-wide red-brown brick, dark roof, repetitive framed windows, pale precast articulation, glazed atrium/entry and gable silhouette.",
+      "uncertainty": "The available image is not independently identified as South-only. Attributing its visible gabled glazed entry composition to South is an inference; this must be graded as uncertain."
+    },
+    {
+      "provider": "Esri World Imagery (export snapshot)",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-86.921,40.4247,-86.918,40.4269&bboxSR=4326&imageSR=4326&size=1600,1200&format=jpg&f=image",
+      "local_snapshot": "sources/esri_world_imagery_export.jpg",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Underlying image capture date is not exposed in the retained export; imagery is current enough to show the completed complex but its exact date is unknown.",
+      "crs": "WGS 84 (EPSG:4326) export bounds; this is image evidence only, not a footprint source.",
+      "measurement_method": "Used to confirm the north-south placement relationship of the two Honors buildings and view roof segmentation, setbacks, and rooftop elements. South is the southern building nearer Third Street.",
+      "uncertainty": "Orthophoto source date unknown; pixels are not used for dimensional measurements."
+    },
+    {
+      "provider": "Fink Roberts & Petrie, project architect/engineer project page",
+      "url": "https://frpinc.com/projects/honors-college-residences/",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Current project page; project completed 2016.",
+      "crs": "Not applicable",
+      "measurement_method": "Used project description for five residential floors above a ground academic/support level and concrete podium with upper cold-formed steel framing.",
+      "uncertainty": "Combined project description covers the full North/South complex, not detailed South-specific elevations."
+    }
+  ],
+  "model_decisions": {
+    "footprint": "Purdue feature 905 outer GIS ring, transformed to the local campus approximation.",
+    "stories": "Six above-ground modeled floors: 4.15 m academic first-floor podium estimate plus five 3.15 m residential floor estimates. Basement is described by official sources but modeled only as schematic context, not as a measured exposed exterior volume.",
+    "roof_height": "Estimated eave 19.9 m and modeled roof cap about 20.62 m; not a measured height. A shallow south-facing gable and roof articulation are photo/aerial-informed interpretations.",
+    "facade": "Procedural brick and modeled window openings, blue-gray glazing, dark metal frames, thin precast story bands, plus an inferred south glazed atrium/entry. Source images are project-wide rather than South-specific.",
+    "interior": "Generic floor plates, core, and corridor partitions are individually labeled SCHEMATIC INTERIOR / not as-built. Official South tour verifies room functions but not locations or dimensions.",
+    "portability": "All building materials are procedural; no external image texture paths. Preview camera/lights/ground live outside the exported asset collection."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "building_id": "massing_horizon_bank_debc8f2",
+  "assigned_owner": "Tobin Palmer (coordinator reassignment; delegated build)",
+  "asset_path": "modular/buildings/massing_horizon_bank_debc8f2.blend",
+  "build_script": "modular/buildings/build_massing_horizon_bank_debc8f2.py",
+  "asset_collection": "Asset_massing_horizon_bank_debc8f2",
+  "asset_scene": "Building_massing_horizon_bank_debc8f2",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "role": "identity and address",
+      "provider": "Horizon Bank official branch page",
+      "url": "https://www.horizonbank.com/locations/west-lafayette",
+      "retrieved": "2026-10-26",
+      "source_date": "Current branch listing; no publication date shown",
+      "feature_identifier": "West Lafayette, IN Northwestern Ave; 1980 Northwestern Ave, West Lafayette, IN 47906",
+      "crs": "WGS 84 geographic coordinates for map point from Google Maps; page itself gives street address",
+      "measurement_method": "Address-based identity check; coordinate point is the Google Maps listing point, not a building survey",
+      "uncertainty": "High confidence branch identity. Address point does not define building corners or exact footprint."
+    },
+    {
+      "role": "building footprint and plan position",
+      "provider": "Indiana Geographic Information Office / Indiana Statewide LiDAR-Derived Building Footprints, hosted ArcGIS FeatureServer",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "query_url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0/query?objectIds=430274&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "retrieved": "2026-10-26",
+      "source_date": "Feature property lidaryear=2018; dataset describes statewide footprints derived from 2016-2020 USGS 3DEP LiDAR",
+      "feature_identifier": "objectid=430274, county=Tippecanoe, lidaryear=2018",
+      "raw_snapshot": "audit/horizon_bank/sources/indiana_footprint_objectid_430274_2026-10-26.json",
+      "layer_metadata_snapshot": "audit/horizon_bank/sources/indiana_building_footprints_layer_metadata_2026-10-26.json",
+      "crs": "GeoJSON query output is WGS 84 longitude/latitude (EPSG:4326); service native spatial reference is Web Mercator (EPSG:3857)",
+      "measurement_method": "Use the returned eight-vertex polygon (closing vertex omitted for mesh) as the exact plan outline. Transform geographic coordinates to the project's approximate local campus meters: X=(lon+86.9137)*84810.60416539927; Y=(lat-40.4274)*111040.0. No independent translation, rotation, or scale was applied.",
+      "reported_area_m2": 678.0850487656243,
+      "local_xy_bounds_m": {
+        "xmin": -744.0870229909932,
+        "xmax": -721.6299383040932,
+        "ymin": 2245.891264641373,
+        "ymax": 2268.3209004925584
+      },
+      "uncertainty": "The statewide polygon is LiDAR-derived reference geometry, not a legal survey. Source nominal acquisition year is 2018; later additions or alterations may be absent. The local transform is the project's documented approximate degrees-to-meters projection, not surveyed control."
+    },
+    {
+      "role": "exterior appearance, entrance, facade rhythm, roof silhouette",
+      "provider": "Google Maps / Google Street View",
+      "url": "https://www.google.com/maps/place/Horizon+Bank/@40.4480882,-86.92279,219a,37.5y,138.84h,90t/data=!3m7!1e1!3m5!1sBEIDnVCsMXxMoQp6FvbLUA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DBEIDnVCsMXxMoQp6FvbLUA%26yaw%3D138.84352!7i16384!8i8192!4m9!3m8!1s0x8812fd3f60727997:0xb8169804a15fbb8a!8m2!3d40.4477521!4d-86.9224333!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11f3_lhfct?entry=ttu",
+      "retrieved": "2026-10-26",
+      "source_date": "Google Street View capture displayed as Apr 2026",
+      "feature_identifier": "Pano BEIDnVCsMXxMoQp6FvbLUA; pano station 40.4480882,-86.92279; Google Maps place point 40.4477521,-86.9224333",
+      "crs": "WGS 84 geographic coordinates",
+      "measurement_method": "Direct visual inspection of the pano from the northwest, looking southeast; used for appearance only, not metric dimensions",
+      "observations": [
+        "One-story red/brown masonry branch wings with a raised central brick entrance/sign tower",
+        "Tall arched dark entry glazing under a green Horizon sign",
+        "Pale stone or cast-stone window jambs, sills, and vertical facade trim",
+        "Several large repeated glazed bays with dark mullions on the front and side",
+        "Broad dark low-pitch roof with shallow roof edge; building sits in a suburban parking/landscape setting"
+      ],
+      "uncertainty": "Street-level imagery is perspective-distorted and partly obscured by leafless trees. It supports broad architectural form, but not exact dimensions, materials specifications, or concealed elevations. No Google image files are redistributed in this evidence folder."
+    }
+  ],
+  "model_decisions": {
+    "footprint": "Exact outline from state feature 430274, in campus coordinates",
+    "position": "The source polygon lies at the same Northwestern Avenue location as the official branch address; geometry was rebuilt in the existing massing asset's campus coordinate frame",
+    "stories": "One visible story, as observed in Apr 2026 Street View",
+    "wall_height_m": {"value": 4.55, "status": "estimated from visual proportion; not measured"},
+    "entry_tower_height_m": {"value": 6.05, "status": "estimated from visual proportion; not measured"},
+    "roof": "Low faceted/hipped roof silhouette; height estimated from street view",
+    "materials": "Portable procedural brick material and local Blender materials; no external texture files",
+    "interior": "Separate scene named Horizon_Bank_Interior_Schematic_NOT_AS_BUILT; a simplified lobby/service layout only, because no as-built plan was located"
+  }
+}
