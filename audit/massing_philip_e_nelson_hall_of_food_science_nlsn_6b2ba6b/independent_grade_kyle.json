@@ -1,0 +1,187 @@
+{
+  "asset_id": "massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b",
+  "evaluator": "independent_grade_kyle.py",
+  "evaluation_date": "2026-10-26",
+  "blender_version": "5.2.3 LTS",
+  "reopened_asset": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend",
+  "score": 8.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified; GIS area agrees after source CRS is respected",
+      "evidence": {
+        "GIS_FID": 250,
+        "GIS_abbreviation": "NLSN",
+        "GIS_building_name": "Philip E. Nelson Hall of Food Science",
+        "GIS_address": "745 Agriculture Mall Drive",
+        "GIS_owner": "PURDUE",
+        "manifest_id": "massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b",
+        "matched_source_ring_vertices": 24,
+        "source_ring_vertex_max_error_m": 2.768858910307923e-05,
+        "source_ring_area_approx_ground_m2": 3407.261,
+        "Shape__Area_web_mercator_m2": 5889.3203125,
+        "source_ring_area_reprojected_3857_m2": 5889.32,
+        "reprojected_area_to_attribute_ratio": 1.0,
+        "layer_wkid": 3857
+      },
+      "reason": "The saved FID 250 polygon identifies NLSN by abbreviation, name, address and Purdue ownership; all 24 source ring points occur at the mesh base. The apparent Shape__Area discrepancy resolves when the EPSG:4326 ring is reprojected to the layer's EPSG:3857; computed and published areas agree within rounding."
+    },
+    {
+      "name": "Position, orientation and dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified to the project's approximate campus transform",
+      "evidence": {
+        "transform": "X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040",
+        "source_footprint_bounds_xy_m": [
+          [
+            -179.885,
+            -124.11
+          ],
+          [
+            -680.395,
+            -614.799
+          ]
+        ],
+        "model_bounds_xy_m_including_details": [
+          [
+            -179.885,
+            -124.101
+          ],
+          [
+            -681.636,
+            -614.799
+          ]
+        ],
+        "object_location_rotation_scale": {
+          "location": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        "source_dimensions_xy_m": [
+          55.775,
+          65.597
+        ],
+        "model_campus_coordinate_frame": "object geometry is stored at campus coordinates; object transform is identity"
+      },
+      "reason": "The transformed GIS ring is directly built into the saved mesh without a later translation, rotation, or scale change. Model outer bounds differ slightly where the entrance canopy projects beyond the walls. This is an approximate project conversion, not survey-grade positioning."
+    },
+    {
+      "name": "Height, floors and roof form",
+      "score": 1.0,
+      "max_score": 2.0,
+      "status": "partly supported; height and roof remain uncertain",
+      "evidence": {
+        "GIS_NUM_LEVELS": 5,
+        "GIS_CountOfFLO": 5,
+        "undocumented_GIS_R": 46.6,
+        "undocumented_GIS_Extrution": 33,
+        "evaluated_model_z_bounds_m": [
+          0.0,
+          16.4
+        ],
+        "recorded_estimated_main_roof_height_m": 14.2,
+        "recorded_estimated_gable_peak_m": 16.4
+      },
+      "reason": "GIS reports five levels and the model shows five bands, but field units/semantics are undocumented. Treating R=46.6 as feet is an explicit estimate, not a verified roof height. Available perspective photography supports a raised entrance feature but cannot establish the full flat roof silhouette or total building height."
+    },
+    {
+      "name": "Facade, entrances and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "broad features photo-supported; dimensions and layout estimated",
+      "evidence": {
+        "Purdue_events_page": "https://events.purdue.edu/philip_e_nelson_hall_of_food_science",
+        "page_photo_alt_identifies_building": true,
+        "saved_photo_present": true,
+        "model_material_polygon_counts": {
+          "NLSN | red-brown brick (photo-supported)": 48,
+          "NLSN | dark blue glazing (photo-supported)": 181,
+          "NLSN | light masonry trim (photo-supported)": 4
+        },
+        "model_material_names": [
+          "NLSN | red-brown brick (photo-supported)",
+          "NLSN | light masonry trim (photo-supported)",
+          "NLSN | dark blue glazing (photo-supported)"
+        ],
+        "visible_model_features": [
+          "red-brown brick material",
+          "repeated dark window fields",
+          "recessed dark door panel",
+          "pale canopy and portico columns",
+          "raised entrance gable"
+        ],
+        "photo_source_date": "not stated"
+      },
+      "reason": "Purdue's building page image is labeled as NLSN and visibly supports brick, repeated glazing, a recessed entrance, pale entrance canopy/columns, and a raised entry feature. The model captures these broad cues, but its five-level rhythm, window-bay spacing, entry position, and gable dimensions are not measurable from the undated perspective photo."
+    },
+    {
+      "name": "Modular export, portability and evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": {
+        "blend_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend",
+        "manifest_file": "buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend",
+        "expected_collection": "Asset_massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b",
+        "collection_present": "Asset_massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b",
+        "expected_object_names": [
+          "Philip E. Nelson Hall of Food Science (NLSN)"
+        ],
+        "collection_mesh_object_names": [
+          "Philip E. Nelson Hall of Food Science (NLSN)"
+        ],
+        "collection_mesh_count": 1,
+        "external_file_images": [],
+        "linked_blend_libraries": [],
+        "source_snapshots": [
+          "contact.html",
+          "events.html",
+          "events_building_photo.jpg",
+          "events_building_photo_large.jpg",
+          "events_photo_2.jpg",
+          "feature.json",
+          "history.html",
+          "history_portrait.jpg",
+          "layer.json",
+          "query.json",
+          "who.html"
+        ],
+        "evidence_record_present": true,
+        "preview_present": true,
+        "reopen_validation_present": true
+      },
+      "reason": "The saved blend has the expected manifest collection and one named mesh object, identity transforms, generated materials only, no linked libraries or external image files, and a complete building-specific evidence package with raw source snapshots and preview."
+    }
+  ],
+  "evidence": {
+    "primary_vector": "sources/query.json, FID 250",
+    "GIS_layer_metadata": "sources/layer.json",
+    "exterior_reference": "sources/events.html + sources/events_building_photo_large.jpg",
+    "preview_inspected": "preview.png",
+    "model_reopen_inspected": true,
+    "prior_builder_validation_not_used_as_score": true
+  },
+  "findings": [
+    "Passes the 8/10 threshold, but height remains an estimate: the builder interprets the undocumented GIS R=46.6 value as feet and adds a photo-estimated gable peak.",
+    "For a stronger height/roof score, obtain a dimensioned elevation, facilities plan, or reliable height measurement and confirm whether NUM_LEVELS includes a basement; otherwise keep these values explicitly estimated.",
+    "The source polygon area is not materially inconsistent: 3407.26 m2 in approximate ground coordinates becomes about 5889.32 m2 in EPSG:3857, matching GIS Shape__Area. The builder's evidence note incorrectly calls this an unresolved area conflict; update it to explain the CRS conversion."
+  ]
+}
