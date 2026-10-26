@@ -3,6 +3,9 @@ from mathutils import Vector
 from math import radians, sin, cos
 ASSET_ID='massing_hall_of_data_science_and_ai_dsai_c8a41cc'
 COLL='Asset_'+ASSET_ID
+# The builder runs in a clean background scene; remove Blender's startup cube, camera and light so they cannot leak into the exported modular library.
+for _ob in list(bpy.data.objects):
+    bpy.data.objects.remove(_ob, do_unlink=True)
 POLY=[[-105.10555549211085, 139.66237598145653], [-129.8574812718024, 169.04941890733426], [-121.45174350189234, 176.1368369212505], [-120.86278990802815, 175.4375375710606], [-108.9553903954778, 185.4773717061289], [-108.4073444327126, 184.82666777892746], [-99.85833210605796, 192.03478651755404], [-100.40637794950528, 192.685435258295], [-99.09117388409457, 193.79434725585497], [-104.91889453664754, 200.7133438289702], [-92.79543241918995, 210.93524187958337], [-80.96131566242666, 196.88506268651508], [-80.84487847997018, 196.9832351273567], [-80.1884533428514, 196.2038823098942], [-80.85457414775586, 195.57579231185173], [-79.25338939444514, 193.67473040392724], [-78.52179855320803, 194.2251550395008], [-77.86745176734559, 193.44824308164561], [-77.98388904260487, 193.3500148768053], [-74.86129608938887, 189.64264162644213], [-70.49741475972645, 184.46149211912143], [-67.76534682926255, 181.2178707554176], [-65.90039746008286, 179.00362959918766], [-69.3947568227414, 176.05738586974667], [-78.02384427713069, 168.78183035179518], [-84.5802652216076, 176.56609706339168], [-89.0315962993377, 173.12026526399222], [-84.14417907739049, 167.31761693735507], [-89.96807637388461, 162.40720785549456], [-85.551012019118, 157.16293611711762], [-86.37603126613276, 156.46730138586236], [-86.85865934050771, 157.0402674971615], [-91.11978178406306, 153.4475299664041], [-90.67604025367952, 152.84176565939333], [-91.37491909365265, 152.25252588096964], [-91.85747279923802, 152.82554733494862], [-97.68135388778332, 147.9150762931772], [-96.69977174745239, 146.74971063814382], [-105.10555549211085, 139.66237598145653]]
 # campus coordinates, meters. FID196 ArcGIS building outline translated with project's stated local conversion.
 ZBASE=0.0
@@ -95,9 +98,11 @@ for i,p in enumerate(POLY):
         bays=max(1,round(L/2.25)); bay=L/bays
         for floor,z in enumerate(FLOOR_Z):
             # Lower levels use paired vertical punched openings; top floor has taller grouped glazing.
-            winh=1.48 if floor<3 else 2.10
-            sill=z+.63 if floor<3 else z+.33
-            winw=min(bay*.58,1.18) if floor<3 else min(bay*.48,1.00)
+            # The renovated fourth level has notably taller and narrower windows,
+            # separated from the lower brick elevations by a broad stone belt.
+            winh=1.48 if floor<3 else 2.30
+            sill=z+.63 if floor<3 else z+.12
+            winw=min(bay*.58,1.18) if floor<3 else min(bay*.43,.92)
             if bay<1.65: winw=bay*.62
             for j in range(bays):
                 d=(j+.5)*bay
@@ -114,18 +119,23 @@ for i,p in enumerate(POLY):
 # Recessed glazed entry and limestone frame. Exact doorway position is not dimensioned in public sources.
 _di=door_edge_index; _p=POLY[_di]; _q=POLY[(_di+1)%len(POLY)]; _dx=_q[0]-_p[0]; _dy=_q[1]-_p[1]; _L=math.hypot(_dx,_dy); _ux,_uy=_dx/_L,_dy/_L; _nx,_ny=-_uy,_ux; _d=_L/2
 _ex=_p[0]+_ux*_d+_nx*.20; _ey=_p[1]+_uy*_d+_ny*.20; _rot=math.atan2(_uy,_ux)
-cube('Main glazed entry doors',(_ex,_ey,1.28),(2.05,.12,2.56),glass,_rot)
-for _side in [-1,1]: cube('Limestone entry jamb',(_ex+_ux*_side*1.18,_ey+_uy*_side*1.18,1.45),(.28,.33,2.9),limestone,_rot)
-cube('Limestone entry lintel',(_ex,_ey,2.95),(2.62,.37,.32),limestone,_rot)
-cube('Limestone entry canopy',(_ex+_nx*.55,_ey+_ny*.55,3.12),(3.1,1.25,.24),limestone,_rot)
-for _j in range(3): cube('Entry approach step %d'%_j,(_ex+_nx*(.55+_j*.42),_ey+_ny*(.55+_j*.42),.12+_j*.05),(3.2,1.2,.18),limestone,_rot)
-# Pale stone corner piers emphasize documented quoins only at strong building corners, not every GIS vertex.
+cube('Main glazed entry doors',(_ex,_ey,1.48),(2.65,.12,2.96),glass,_rot)
+for _side in [-1,1]: cube('Limestone entry jamb',(_ex+_ux*_side*1.48,_ey+_uy*_side*1.48,1.62),(.42,.48,3.24),limestone,_rot)
+cube('Limestone entry lintel',(_ex,_ey,3.26),(3.32,.52,.44),limestone,_rot)
+cube('Limestone entry portal crown',(_ex,_ey,3.54),(3.6,.72,.14),limestone,_rot)
+cube('Limestone entry canopy',(_ex+_nx*.72,_ey+_ny*.72,3.48),(4.0,1.65,.24),limestone,_rot)
+for _j in range(4): cube('Entry approach step %d'%_j,(_ex+_nx*(.7+_j*.36),_ey+_ny*(.7+_j*.36),.11+_j*.045),(4.1,1.25,.17),limestone,_rot)
+# Pale stone corner piers emphasize the large limestone corner framing seen in the architect photos.
 for i,(x,y) in enumerate(POLY):
     prev=POLY[(i-1)%len(POLY)]; nxt=POLY[(i+1)%len(POLY)]
     a=(x-prev[0],y-prev[1]); b=(nxt[0]-x,nxt[1]-y); la=math.hypot(*a); lb=math.hypot(*b)
     if la<3.0 or lb<3.0: continue
     bend=abs(math.atan2(a[0]*b[1]-a[1]*b[0],a[0]*b[0]+a[1]*b[1]))
-    if bend>math.radians(42): cube('Stone corner quoin %02d'%i,(x,y,WALL_H*.48),(.72,.72,WALL_H*.95),limestone)
+    if bend>math.radians(42) and min(la,lb)>8:
+        # Strong facade corners receive full-height limestone pilasters; this is
+        # an architectural interpretation, since no dimensioned elevation exists.
+        a0=math.atan2(b[1],b[0]); a1=math.atan2(a[1],a[0]); bis=(a0+a1)/2
+        cube('Full-height limestone facade pier %02d'%i,(x,y,WALL_H*.51),(.95,.74,WALL_H*.98),limestone,bis)
 # Perimeter cornice immediately below the tile roof.
 for i,p in enumerate(POLY):
     q=POLY[(i+1)%len(POLY)]; dx=q[0]-p[0]; dy=q[1]-p[1]; L=math.hypot(dx,dy)
@@ -133,7 +143,8 @@ for i,p in enumerate(POLY):
     ux,uy=dx/L,dy/L; nx,ny=-uy,ux
     verts=[(p[0]+nx*.12,p[1]+ny*.12,10.48),(q[0]+nx*.12,q[1]+ny*.12,10.48),(q[0]+nx*.12,q[1]+ny*.12,10.72),(p[0]+nx*.12,p[1]+ny*.12,10.72)]
     mesh_obj('Pale limestone upper cornice %02d'%i,verts,[(0,1,2,3)],limestone)
-# Roof hip blocks: simplified crossing hipped masses aligned to the GIS rectangle; photographed terracotta tile.
+# Separated hipped roof blocks follow the four broad footprint wings and leave
+# the interior court open. Roof extents and ridge heights are visual estimates.
 angle=radians(130.5816185364); ux,uy=cos(angle),sin(angle); vx,vy=-uy,ux
 cx,cy=-98.1305090241,174.5757082467
 # Each roof polygon uses a central ridge/hip geometry. These are visual estimates, not surveyed roof edges.
@@ -153,9 +164,10 @@ def hiproof(name,cu,cv,wx,wy,base=10.64,rise=2.55):
         dx=b[0]-a[0]; dy=b[1]-a[1]; L=math.hypot(dx,dy); nx,ny=dy/L,-dx/L
         mesh_obj(name+' dark eaves '+str(i),[(a[0]+nx*.08,a[1]+ny*.08,base-.05),(b[0]+nx*.08,b[1]+ny*.08,base-.05),(b[0]+nx*.08,b[1]+ny*.08,base+.08),(a[0]+nx*.08,a[1]+ny*.08,base+.08)],[(0,1,2,3)],roofedge)
     mesh_obj(name+' ridge cap',[(ridge[0][0],ridge[0][1],ridge[0][2]),(ridge[1][0],ridge[1][1],ridge[1][2]),(ridge[1][0]+.06,ridge[1][1]+.06,ridge[1][2]+.02),(ridge[0][0]+.06,ridge[0][1]+.06,ridge[0][2]+.02)],[(0,1,2,3)],roofedge)
-hiproof('Main hipped red tile roof',0,0,42,26)
-hiproof('North west hipped wing',-4,20.5,22,15)
-hiproof('South east hipped wing',5,-20.5,22,15)
+hiproof('West wing hipped red tile roof',-14.5,12.5,15.0,30.0)
+hiproof('North wing hipped red tile roof',4.0,22.0,23.0,11.0)
+hiproof('East wing hipped red tile roof',19.5,2.5,9.0,29.0)
+hiproof('South wing hipped red tile roof',-5.5,-20.0,24.0,12.0)
 # Third-floor planted terrace and glazed interior lightwell are explicitly evidence-backed design features.
 # Estimated location within overall envelope; rendered inside the registered shell.
 terrace=cube('Existing second floor green roof terrace', (cx+ux*10,cy+uy*10,6.00),(10,7,.24),green,angle)
@@ -222,4 +234,4 @@ bpy.context.scene.world.color=(.22,.22,.22)
 
 
 # Save the standalone, directly linkable asset at its stable path.
-bpy.ops.wm.save_as_mainfile(filepath=r'C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend')
+bpy.ops.wm.save_as_mainfile(filepath=os.path.join(os.path.dirname(os.path.abspath(__file__)), 'massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend'))

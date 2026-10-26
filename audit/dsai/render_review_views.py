@@ -10,9 +10,9 @@ scene.world=bpy.data.worlds.new('DSAI audit world'); scene.world.use_nodes=True;
 # hide exterior for a documented cutaway-style view (no file save): facade, roof, glazing and limestone.
 for ob in coll.objects:
     n=ob.name.lower(); mats=' '.join(m.name.lower() for m in ob.data.materials) if ob.type=='MESH' else ''
-    if n.startswith('masonry shell face') or any(k in mats for k in ['terracotta clay tile roof','dark bronze roof edge','pale indiana limestone','warm purdue red brick','dark blue reflective glazing']): ob.hide_render=True
+    if n.startswith('masonry shell face') or n.startswith('schematic research floor plate') or any(k in mats for k in ['terracotta clay tile roof','dark bronze roof edge','pale indiana limestone','warm purdue red brick','dark blue reflective glazing']): ob.hide_render=True
 sun_data=bpy.data.lights.new('DSAI interior audit area','AREA'); sun=bpy.data.objects.new('DSAI interior audit area',sun_data); scene.collection.objects.link(sun); sun.location=(-90,170,22); sun_data.energy=1800; sun_data.shape='DISK'; sun_data.size=18
-cam_data=bpy.data.cameras.new('DSAI interior review camera'); cam=bpy.data.objects.new('DSAI interior review camera',cam_data); scene.collection.objects.link(cam); cam.location=(-112,160,7.5); target=Vector((-98,175,4.4)); cam.rotation_euler=(target-cam.location).to_track_quat('-Z','Y').to_euler(); cam_data.type='ORTHO'; cam_data.ortho_scale=25; scene.camera=cam
+cam_data=bpy.data.cameras.new('DSAI interior review camera'); cam=bpy.data.objects.new('DSAI interior review camera',cam_data); scene.collection.objects.link(cam); cam.location=(-112,160,19.5); target=Vector((-98,175,4.4)); cam.rotation_euler=(target-cam.location).to_track_quat('-Z','Y').to_euler(); cam_data.type='ORTHO'; cam_data.ortho_scale=30; scene.camera=cam
 scene.render.filepath=os.path.abspath('audit/dsai/dsai_interior_review.png'); bpy.ops.render.render(write_still=True)
 # top-down roof/registered-outline comparison; curve is render-only, exact converted polygon vertices.
 for ob in coll.objects: ob.hide_render=False

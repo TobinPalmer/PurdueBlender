@@ -1,0 +1,96 @@
+{
+  "score": 8.8,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Raw Purdue ArcGIS FID 196 identifies DSAI at 475 Stadium Mall Drive; its 37-vertex polygon is preserved. Independently reprojecting the raw lon/lat ring with the repository's stated approximation and comparing to saved masonry shell vertices gives max nearest error 0.000008 m. The stable collection stores building ID and source feature ID.",
+      "finding": "Footprint is precisely registered to the supplied official GIS feature. As in all GIS-derived checks, identity of the feature is supported by the official name/abbreviation/address, not by a separate surveyed footprint."
+    },
+    {
+      "name": "Position, orientation, scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "The shell vertices retain the converted GIS ring directly, including orientation and plan scale; nearest-vertex discrepancy is below 0.000008 m. Evaluated model bounds are [[-130.26654052734375, 139.5706329345703, 0.0], [-65.8086166381836, 211.34429931640625, 13.430000305175781]] m in campus coordinates.",
+      "finding": "This verifies correct implementation of the GIS conversion, but no independent georeferenced aerial/top-down overlay or survey independently validates the source registration. Overall bounds include small decorative projections."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.55,
+      "max_score": 2,
+      "evidence": "GIS field NUM_LEVELS/CountOfFLO is 4; the saved shell is 10.65 m to eaves and the tile-roof geometry reaches 13.19 m. Architect and Purdue photographs show red tile hipped roofs and the four-level massing. Four distinct wing-roof masses are present, plus a small skylight.",
+      "finding": "Floor-to-floor, eave, ridge, roof extents and skylight station have no dimensioned as-built plan or survey and remain estimates. The saved overhead review shows roof sections arranged by wings with open courtyard gaps; precise roof junctions and extents are not independently measurable from the photographs."
+    },
+    {
+      "name": "Facade, entrances, distinctive architecture",
+      "score": 1.65,
+      "max_score": 2,
+      "evidence": "Exterior views now include red brick, limestone floor bands and corner piers, dark narrow window openings with a taller fourth-floor rhythm, and a strengthened glazed limestone entry. Saved views can be compared directly to the architect's exterior photo. Interior review view shows an open atrium, columns with green bands, communicating stair, floor plates and skylight, which align with the Purdue/architect narrative and photos.",
+      "finding": "The public source set is photographic, not dimensional; facade stationing and interior plan, furniture, stair dimensions remain schematic. In the exterior render, the entry is visibly less prominent than the reference and no vertical masonry/window lintel detail or the full image context is reproduced."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Saved asset reopens in Blender 5.2.0 LTS; collection Asset_massing_hall_of_data_science_and_ai_dsai_c8a41cc contains 45 objects (45 meshes). Modifier count 0; unpacked external image dependencies 0; generated objects outside collection []. The source record, raw GIS snapshot, downloaded source photos, validation, exterior/alignment/interior review views, and fresh saved-asset evaluator are available.",
+      "finding": "Building export and textures/material nodes are self-contained. Source record includes source URLs and retrieval date, though it does not give individual image publication/retrieval metadata or dimensioned source drawings."
+    }
+  ],
+  "evidence": [
+    "audit/dsai/source_record.json",
+    "audit/dsai/purdue_arcgis_FID196.json",
+    "audit/dsai/validation.json",
+    "audit/dsai/dsai_exterior_review.png",
+    "audit/dsai/dsai_alignment_review.png",
+    "audit/dsai/dsai_interior_review.png",
+    "audit/dsai/msktd_exterior_design_article.jpg",
+    "audit/dsai/purdue_dsai_photo_7235.jpg",
+    "audit/dsai/independent_grade_r2/metrics.json"
+  ],
+  "findings": [
+    "Passing score threshold: 8/10. This review directly reopened and measured the revised saved asset; the previous 7.5/10 score predates these roof, entry, facade, and view changes.",
+    "Horizontal footprint is verified against the cited GIS feature using the project conversion; no independent georeferenced survey overlay is present.",
+    "Four levels and architectural character have source support. Exact height, roof dimensions, detailed facade dimensions, and interior stationing remain estimates.",
+    "Saved model SHA-256: 843b55c4f8881b9f543c57fe1486e4c191414edcbb73931c43c212a368c91c26"
+  ],
+  "metrics": {
+    "collection": "Asset_massing_hall_of_data_science_and_ai_dsai_c8a41cc",
+    "collection_objects": 45,
+    "mesh_objects": 45,
+    "shell_faces": 36,
+    "GIS_ring_vertices": 38,
+    "max_shell_vertex_nearest_error_m": 8.358544923522201e-06,
+    "mean_shell_vertex_nearest_error_m": 4.458608744546037e-06,
+    "asset_bounds_world_m": [
+      [
+        -130.26654052734375,
+        139.5706329345703,
+        0.0
+      ],
+      [
+        -65.8086166381836,
+        211.34429931640625,
+        13.430000305175781
+      ]
+    ],
+    "roof_material_objects": 1,
+    "roof_height_range_m": [
+      10.640000343322754,
+      13.1899995803833
+    ],
+    "modifier_count": 0,
+    "unpacked_external_image_files": [],
+    "expected_named_objects_outside_collection": [],
+    "collection_properties": {
+      "building_id": "massing_hall_of_data_science_and_ai_dsai_c8a41cc",
+      "source_fid": 196,
+      "coordinate_frame": "campus world meters; X east, Y north, Z up",
+      "footprint_source": "Purdue ArcGIS BuildingShapesZip4 FeatureServer/0 FID 196; converted by project approximate local geographic transform",
+      "height_status": "estimated from four official levels and design photographs; no surveyed height source located"
+    },
+    "asset_sha256": "843b55c4f8881b9f543c57fe1486e4c191414edcbb73931c43c212a368c91c26",
+    "blender_version": "5.2.0 LTS"
+  }
+}

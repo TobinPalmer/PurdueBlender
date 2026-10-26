@@ -16,19 +16,19 @@
       },
       "use": "registered footprint, name, address, and official four-level count",
       "snapshot": "purdue_arcgis_FID196.json",
-      "caveat": "Footprint does not establish fa\u00e7ade, roof, story heights, or interior layout; source height fields lack documented units."
+      "caveat": "Footprint does not establish façade, roof, story heights, or interior layout; source height fields lack documented units."
     },
     {
       "provider": "MSKTD (architect/interior designer; design architect Payette)",
       "url": "https://msktd.com/design-journal/entry/behind-the-design-purdue-universitys-hall-of-data-science-and-ai/",
-      "use": "red brick and limestone exterior, window-transom/glazing interventions, hipped red tile roof, floor-2/3 research neighborhood layout, central communicating stair, floor-3 skylight, view to green roof, caf\u00e9/work areas",
+      "use": "red brick and limestone exterior, window-transom/glazing interventions, hipped red tile roof, floor-2/3 research neighborhood layout, central communicating stair, floor-3 skylight, view to green roof, café/work areas",
       "evidence_files": [
         "msktd_exterior_design_article.jpg",
         "msktd_exterior_wide.jpg",
         "msktd_stair_landing.jpg",
         "msktd_sky_light.jpg"
       ],
-      "caveat": "Architectural photographs, not scaled drawings; modeled dimensions and exact fa\u00e7ade rhythms remain estimates."
+      "caveat": "Architectural photographs, not scaled drawings; modeled dimensions and exact façade rhythms remain estimates."
     },
     {
       "provider": "Purdue Sustainable Operations",
@@ -60,13 +60,35 @@
     "footprint": "FID196 exact polygon ring carried into shell walls; source local projection is approximate campus conversion. Window/limestone projections extend slightly beyond ring as details.",
     "story_count": "4 official levels; floor heights and wall height estimated from photographs.",
     "material_palette": "photo-supported Purdue red brick, pale limestone, dark glazing, bronze frames, terracotta roof tiles.",
-    "interior": "communicating stair, atrium columns, skylight, planted terrace, research tables and caf\u00e9 are schematic and not dimensionally registered."
+    "interior": "communicating stair, atrium columns, skylight, planted terrace, research tables and café are schematic and not dimensionally registered.",
+    "facade_iteration_2": "Red brick, limestone portal and piers, four-level window rhythm, and upper-storey glazing are photo-informed; positions and dimensions remain approximate."
   },
   "estimates_and_uncertainties": [
-    "Exterior fa\u00e7ade bay spacing and exact sill/head heights are photographic estimates.",
-    "Three hipped roof masses are simplified inferred geometry; no as-built roof plan located.",
+    "Exterior façade bay spacing and exact sill/head heights are photographic estimates.",
     "Interior plan placements are illustrative, based on architect narrative/photos, not floorplans.",
     "GIS source elevation and height-related numeric fields were not used as metric heights because their units are undocumented.",
-    "Decorative band courses and corner quoins are inspired by exterior photos; exact positions are estimated."
-  ]
+    "Decorative band courses and corner quoins are inspired by exterior photos; exact positions are estimated.",
+    "Four separated wing-aligned hipped roof masses are simplified inferred geometry; their extents and elevations remain estimates without an as-built roof plan."
+  ],
+  "iteration_2": {
+    "date": "2026-10-26",
+    "baseline_grade": "7.5/10 in audit/dsai/independent_grade_1.md; that review predates this iteration",
+    "edits": [
+      "Replaced three intersecting roof masses with four smaller hipped masses aligned to the west, north, east, and south wings visible in the registered FID 196 plan; this roof plan remains an interpretation because no as-built roof plan was located.",
+      "Strengthened the glazed entrance with a broader limestone portal, crown, canopy, and approach steps; exact entrance station and dimensions remain photo-based estimates.",
+      "Added full-height limestone pilasters at prominent polygon corners where adjacent footprint runs are long; exact pier placement is not dimensioned in available sources.",
+      "Made fourth-floor windows taller and narrower to reflect the renovated upper-storey photo; facade bay dimensions remain estimates."
+    ],
+    "renders": [
+      "dsai_exterior_review.png",
+      "dsai_alignment_review.png",
+      "dsai_interior_review.png"
+    ],
+    "validation": "Fresh Blender 5.2.0 reopen succeeded; 45 mesh objects, expected collection, campus-space bounds recorded in validation.json. The Blender startup cube is excluded.",
+    "remaining_uncertainty": [
+      "No dimensioned as-built roof plan, elevation, entry survey, or interior floorplan was found.",
+      "GIS feature FID 196 was used directly for wall-ring location; no separate aerial survey overlay establishes registration independently.",
+      "Roof extent and ridge rise, entry placement and dimensions, window spacing, and interior layout remain estimates."
+    ]
+  }
 }
