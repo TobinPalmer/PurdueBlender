@@ -23,7 +23,10 @@ for ob in list(bpy.data.objects):
                            'UNIV_R2_UNIV_Interior_Floor_Second_GalleryRing_',
                            'UNIV_R2_Gallery_LibraryFeatureWall','UNIV_R2_Gallery_BookBay_',
                            'UNIV_R2_Gallery_Book_','UNIV_R2_Gallery_Overlook_FeatureWall',
-                           'UNIV_R2_Gallery_InterpretivePlaque','UNIV_R2_Overlook_')):
+                           'UNIV_R2_Gallery_InterpretivePlaque','UNIV_R2_Overlook_',
+                           'UNIV_R4_GalleryFloor_','UNIV_R4_Gallery_LibraryFeatureWall',
+                           'UNIV_R4_Gallery_BookBay_','UNIV_R4_Gallery_Book_',
+                           'UNIV_R4_Gallery_InterpretivePlaque','UNIV_R4_Overlook_')):
         bpy.data.objects.remove(ob,do_unlink=True)
 
 floor=bpy.data.materials['Univ_Parquet_Wood']

@@ -1,0 +1,75 @@
+{
+  "building": "University Hall",
+  "revision": "R5",
+  "asset": "modular/buildings/university_hall.blend",
+  "sha256": "8f10d54f13262fb4f4c847e41072df28ed2f607d2715171db4a2ff3789e0c05b",
+  "review_date": "2026-10-25",
+  "blender_version": "5.2.3 LTS",
+  "score": 7.4,
+  "weighted_unrounded_score": 7.44,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "rubric": {
+    "placement_and_footprint_evidence": {"weight": 0.15, "score": 7.5},
+    "massing_and_architectural_silhouette": {"weight": 0.20, "score": 8.0},
+    "facade_and_entrance": {"weight": 0.15, "score": 7.4},
+    "roof_and_tower_fidelity": {"weight": 0.15, "score": 7.6},
+    "materials_and_lighting": {"weight": 0.10, "score": 7.5},
+    "interior_gallery_coherence": {"weight": 0.20, "score": 6.2},
+    "asset_integrity_and_portability": {"weight": 0.05, "score": 9.5}
+  },
+  "reopen_evidence": "audit/university_hall_refine/independent_grade_r5_reopen.json",
+  "reviewed_renders": [
+    "audit/university_hall_refine/ground_oblique_r5.png",
+    "audit/university_hall_refine/east_elevation_r5.png",
+    "audit/university_hall_refine/entry_ground_r5.png",
+    "audit/university_hall_refine/interior_cutaway_r5.png"
+  ],
+  "strengths": [
+    "The steeper lower roof slopes, integrated-looking dormers, square lantern and taller spire substantially improve the recognizable University Hall silhouette over R4.",
+    "R5 adds restrained slate and brick variation, improved daylight shaping, and more convincing limestone hood details than the R4 applied semicircular trim.",
+    "The five recovered-column display elements correspond to Purdue's documented count and stated floor/stair locations; the report appropriately labels precise positions schematic.",
+    "The frozen candidate freshly reopens with identity root, 1,387 collection objects and 1,375 meshes, no materialless meshes, invalid slots, missing external images or linked libraries."
+  ],
+  "findings": [
+    "The two-level gallery is visible in the cutaway, but the separate left stair assembly has a clear visual gap from the gallery rings. The view therefore does not establish a connected circulation route; the R5 handoff also explicitly notes this limitation.",
+    "The gallery rings and railing layout remain a simplified schematic and do not make the central opening's continuity and stair landing connections immediately legible.",
+    "The entrance still reads as a generic portico with broad pediment, plain cylindrical columns and generic doors. The new moulding improves relief but does not match the more articulated historic/current image context.",
+    "Most window openings remain a uniform repeated grid; the shallow segmental hoods are an improvement, but their identical profiles and strong bright contrast still look applied rather than deeply integrated.",
+    "The slate tile breakup is clearer than R4, although the long roof still reads as a regular, broad field of repeated units; brick, pale trim and glass retain a somewhat flat, schematic appearance.",
+    "The GIS comparison is against campus-map FID 213, not a surveyed wall outline. Prior full-ring comparison remains IoU 0.872874, symmetric mean boundary residual 0.916 m, 95th percentile 2.292 m, and maximum sampled residual 2.470 m. Master placement was not reviewed."
+  ],
+  "sources": [
+    {
+      "title": "Purdue Stories, Restoring Purdue's University Hall as a campus crown jewel",
+      "url": "https://stories.purdue.edu/restoring-purdues-university-hall-as-a-campus-crown-jewel/",
+      "notes": "Supports the two-story central gallery, roof support-beam context, and five recovered display columns with locations: two ground floor, two third floor, one south stairwell."
+    },
+    {
+      "title": "Purdue CLA, University Hall renovation and preservation",
+      "url": "https://cla.purdue.edu/news/college/2025/university-hall-renovation-and-preservation.html",
+      "notes": "Corroborates the gallery, recovered columns, interior program and distinction between historic cast-iron display elements and structural framing."
+    },
+    {
+      "title": "Purdue Stories, 2025 University Hall exterior photograph",
+      "url": "https://stories.purdue.edu/app/uploads/2025/06/Purdue-UniversityHall-2025_KAL_6593-NewHero.jpg",
+      "notes": "Visual reference for roof/tower, dormers, eaves, windows and exterior proportions; image is perspective, not dimensional evidence."
+    },
+    {
+      "title": "Purdue CLA, University Hall steeple photograph",
+      "url": "https://www.cla.purdue.edu/about/images/university-hall-steeple.jpg",
+      "notes": "Visual reference for the tower, crown and roof relationship; no surveyed dimensions."
+    },
+    {
+      "title": "Purdue BuildingShapesZip4 campus map, FID 213",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "notes": "Campus-map polygon used for the prior approximate footprint comparison; it is not a certified as-built survey."
+    }
+  ],
+  "limitations": [
+    "R5 does not reach the requested 8.0/10 threshold.",
+    "No measured elevations, roof plan or interior plan were found; heights, roof pitch, exact openings, gallery dimensions and display-column positions remain estimates or schematic.",
+    "A passing model grade would still require an independent master placement and neighborhood-alignment check by the coordinator."
+  ]
+}

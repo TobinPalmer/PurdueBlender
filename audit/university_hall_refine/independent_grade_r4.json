@@ -1,0 +1,117 @@
+{
+  "building": "University Hall",
+  "round": "R4",
+  "asset": "modular/buildings/university_hall.blend",
+  "sha256": "285d85bf33fb2abc6364f29eca268512fc5e299bbc0fd4f49d20fb6eae42a2f6",
+  "baseline_r3_sha256": "3784451714a60a04b482c12031ac413ac5ed2c69d4b268d79f05e4816cf07f3b",
+  "review_date": "2026-10-25",
+  "score": 6.8,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "weights": {
+    "placement_and_footprint_evidence": 0.15,
+    "massing_and_silhouette": 0.20,
+    "facade_and_entrance": 0.15,
+    "roof_and_tower_fidelity": 0.15,
+    "materials_and_lighting": 0.10,
+    "interior_gallery_coherence": 0.20,
+    "asset_integrity_and_portability": 0.05
+  },
+  "criteria": [
+    {
+      "name": "Placement and footprint evidence",
+      "score": 7.0,
+      "evidence": "The main wall shell and local root remain unchanged. The prior full-ring FID 213 comparison reports IoU 0.872874, symmetric mean boundary residual 0.916 m, 95th percentile 2.292 m and maximum sampled residual 2.470 m. FID 213 is a campus-map outline, not a surveyed wall perimeter; this review did not establish master placement."
+    },
+    {
+      "name": "Massing and architectural silhouette",
+      "score": 7.0,
+      "evidence": "The R4 elevation and oblique views show a more distinct roof break and taller, narrower spire than R3. The silhouette remains an interpretation: the broad upper roof still reads shallow and the tower crown is simplified relative to Purdue's current photograph."
+    },
+    {
+      "name": "Facade and entrance",
+      "score": 6.5,
+      "evidence": "Arched head moulds and small eave consoles add detail absent from R3. The long elevations still repeat nearly identical window widths and spacing; the moulds read as thick pale semicircles applied above square openings, and the entrance remains a generic pediment/column composition with simplified door and surround detailing."
+    },
+    {
+      "name": "Roof and tower fidelity",
+      "score": 7.0,
+      "evidence": "Four mansard roof assemblies, a visible pitch-break course, ten integrated dormers, and an elongated lantern spire improve on R3's squat shallow roof. The roof still lacks readable slate courses/pattern and dimensional eave brackets; the belfry stage and spire base remain blocky in the elevation. Pitches and the 29.5 m top are image-estimated, not measured."
+    },
+    {
+      "name": "Materials and lighting",
+      "score": 6.0,
+      "evidence": "Brick, slate and limestone are assigned procedural materials, and R4 warms the limestone response. In the submitted views, the slate remains a largely uniform blue plane, the window trim is flat and bright, the sky and daylight are neutral/flat, and surface detail is much weaker than in Purdue's current exterior photograph. No missing external image textures were found."
+    },
+    {
+      "name": "Interior gallery coherence",
+      "score": 6.0,
+      "evidence": "The model has two gallery ring floors, a second-floor overlook, a feature wall/book bays, railings, stairs, and column representations. The cutaway shows floor plates occupying most of the image and only a small, hard-to-follow central opening; the stair route and support logic are not immediately legible. Public Purdue text supports a two-story central gallery and five recovered display columns (two ground floor, two third floor, one south stairwell); this asset instead contains eight repetitive paired gallery-column supports, so it should not equate the schematic supports with the five recovered columns."
+    },
+    {
+      "name": "Asset integrity and portability",
+      "score": 9.5,
+      "evidence": "Fresh Blender 5.2.3 LTS background reopen matched the exact requested SHA. Asset_university_hall contains 1,164 objects (1,151 meshes); root transform is identity; no materialless meshes, invalid material indices, missing external images, or linked libraries were found. Standalone reopen does not verify campus placement."
+    }
+  ],
+  "weighted_unrounded_score": 6.75,
+  "findings": [
+    "R4 materially improves the roof profile and tower proportions over the reviewed R3 image.",
+    "Arched moulds and eave consoles add façade detail, but repeated window bays and generic entry details remain conspicuous.",
+    "The cutaway is cleaner after hiding the old façades and roof, but gallery circulation, large floor plates, and support-column intent remain difficult to read.",
+    "The model's column set does not follow the publicly documented five recovered display-column locations/count; treat all modeled interior support geometry as schematic unless better plans are obtained.",
+    "The prior GIS ring residuals are unchanged and do not prove an as-built wall footprint."
+  ],
+  "evidence": {
+    "independent_reopen": "audit/university_hall_refine/independent_reopen_r4_grade.json",
+    "independent_reopen_script": "audit/university_hall_refine/independent_reopen_r4_grade.py",
+    "renders": [
+      "audit/university_hall_refine/ground_oblique_r4.png",
+      "audit/university_hall_refine/east_elevation_r4.png",
+      "audit/university_hall_refine/entry_ground_r4.png",
+      "audit/university_hall_refine/interior_cutaway_r4.png"
+    ],
+    "change_handoff": "audit/university_hall_refine/refine_handoff_r4.md",
+    "previous_review": "audit/university_hall_refine/independent_grade_r3.md"
+  },
+  "limitations": [
+    "Purdue public sources establish broad architectural and program facts, not measured roof, window, room or structural dimensions.",
+    "Roof profile, crown height, dormer spacing, facade openings, interior arrangement and column positions remain image-estimated or schematic.",
+    "No registered current as-built elevation or interior plan was located in the reviewed sources.",
+    "Standalone asset review does not verify master placement or surrounding campus alignment."
+  ],
+  "sources": [
+    {
+      "title": "Restoring Purdue's University Hall as a campus crown jewel",
+      "url": "https://stories.purdue.edu/restoring-purdues-university-hall-as-a-campus-crown-jewel/",
+      "retrieved": "2026-10-25",
+      "notes": "Purdue source supports the two-story central gallery, restored student-hub program, steel support beams, and five recovered columns: two on the ground floor, two on the third floor, and one in the south stairwell."
+    },
+    {
+      "title": "Purdue University Hall exterior photograph (2025)",
+      "url": "https://stories.purdue.edu/app/uploads/2025/06/Purdue-UniversityHall-2025_KAL_6593-NewHero.jpg",
+      "retrieved": "2026-10-25",
+      "notes": "Official image used to compare roof/tower silhouette, dormer integration, eaves, and facade proportions."
+    },
+    {
+      "title": "University Hall steeple photograph",
+      "url": "https://www.cla.purdue.edu/about/images/university-hall-steeple.jpg",
+      "retrieved": "2026-10-25",
+      "notes": "Purdue CLA close image used to compare tower and spire proportions."
+    },
+    {
+      "title": "FID 213 campus building polygon comparison",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "retrieved": "2026-10-25",
+      "notes": "Campus-map footprint evidence only; not a surveyed wall outline. Existing comparison is documented in audit/university_hall_refine/fid213_polygon_comparison_r3.json."
+    }
+  ],
+  "prioritized_r5_work": [
+    "Check the official exterior and steeple photos side by side. Rework the broad upper roof and spire/crown transition so the mansard and lantern silhouette matches the reference more closely; retain the explicit caveat that dimensions are image-estimated.",
+    "Replace applied-looking semicircle moulds with correctly registered stone arches/hood moulds, keystones and deeper surrounds. Vary window proportions only where the current image supports it. Rework the portico surround and eave brackets into shaped, integrated details.",
+    "Add readable slate courses/material breakup and stronger but still daylight-appropriate facade contrast. Current flat renders do not show the existing procedural surface depth well.",
+    "Recompose the cutaway to reveal a continuous two-story central void, gallery edges, stair flights and landings. Reduce visual competition from broad slabs and repeated thin posts. Separate the five publicly documented recovered display columns from any explicitly schematic structural support representation.",
+    "Reopen and inspect the final exact asset SHA, then obtain another independent review. Do not claim >=8 until a fresh score reaches that threshold."
+  ]
+}

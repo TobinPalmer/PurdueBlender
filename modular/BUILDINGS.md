@@ -40,13 +40,14 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Ross Ade | [ross_ade.blend](buildings/ross_ade.blend) | 2118 |
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](buildings/massing_samara_f6b8e61.blend) | 1102 |
 | South Hall | [south_hall.blend](buildings/south_hall.blend) | 25 |
+| St. Thomas Aquinas Center | [massing_st_thomas_aquinas_5535390.blend](buildings/massing_st_thomas_aquinas_5535390.blend) | 1275 |
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](buildings/stanley_coulter_hall.blend) | 760 |
 | Stewart Center | [stewart_center.blend](buildings/stewart_center.blend) | 2764 |
 | Tarkington Hall | [tarkington_hall.blend](buildings/tarkington_hall.blend) | 814 |
-| University Hall | [university_hall.blend](buildings/university_hall.blend) | 507 |
+| University Hall | [university_hall.blend](buildings/university_hall.blend) | 1377 |
 | Walc | [walc.blend](buildings/walc.blend) | 969 |
-| Wiley Hall | [wiley_hall.blend](buildings/wiley_hall.blend) | 402 |
-| Winifred Parker Hall | [winifred_parker_hall.blend](buildings/winifred_parker_hall.blend) | 664 |
+| Wiley Hall | [wiley_hall.blend](buildings/wiley_hall.blend) | 398 |
+| Winifred Parker Hall | [winifred_parker_hall.blend](buildings/winifred_parker_hall.blend) | 582 |
 
 ## Newly added buildings — October 24–25, 2026
 

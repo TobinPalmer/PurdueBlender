@@ -1,0 +1,109 @@
+{
+  "building": "Harvey W. Wiley Residence Hall",
+  "asset": "modular/buildings/wiley_hall.blend",
+  "sha256": "80b4e00f0537b2a78956c262ea0c0afd81f2b08cc3469a8f278ff93fbf603742",
+  "review_date": "2026-10-25",
+  "blender_version": "5.2.3 LTS",
+  "score": 7.8,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity, footprint, and placement evidence",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": "The Purdue campus GIS query identifies Harvey W. Wiley Residence Hall as OBJECTID 290 / buildingidlong 148, address 500 N. Martin Jischke Drive; the official address and 1958 opening agree. Under the project geographic conversion, the modeled shell center derived from the principal roof bounds is within about 0.5 m of the GIS ring bounding-box center. The model roof bounds are about 80 x 110 m, versus about 90 x 119 m for the converted GIS ring; this is a bounding-box comparison, not a registered wall-footprint overlay. The master marker was not evaluated."
+    },
+    {
+      "name": "Exterior massing and recognizable architecture",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": "The fresh render shows a legible three-storey brick residence hall arranged around a central courtyard, with long wings, regular window bays, a central common block, and flat roof masses. This broadly fits Purdue's official exterior description and archival exterior image. The façade rhythm is highly repetitive; secondary entrances, roof equipment, and some junctions remain schematic."
+    },
+    {
+      "name": "Materials and surface finish",
+      "score": 1.2,
+      "max_score": 1.5,
+      "evidence": "The asset reopens with 147 used material datablocks and no materialless mesh objects. Brick, pale trim, pink/coral spandrels, glazing, and roof finishes are visibly differentiated in the inspection render. Workbench lighting makes the saved surfaces read flat, and the grade did not verify all shader behavior under the final master renderer. There are no missing external image files."
+    },
+    {
+      "name": "Interior and resident program",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": "The asset includes extensive room, bed, desk, lounge, lobby, and interior finish geometry/materials. Purdue describes standard rooms, lounges, study rooms, and a support center; its illustrative room dimensions are expressly approximate. Available sources do not verify the modeled floor-by-floor room locations or full interior layout, and no interior render was used to establish those dimensions."
+    },
+    {
+      "name": "Technical integrity and portability",
+      "score": 1.0,
+      "max_score": 1.5,
+      "evidence": "A fresh Blender 5.2.3 process reopened the exact SHA and found the expected Asset_wiley_hall collection with 402 objects, 386 meshes, an identity AssetRoot_wiley_hall, no materialless meshes, and no missing image files. The linked foliage library uses a project-relative path that resolves. However, a single lawn mesh spans roughly 680 x 660 m, with a road mesh about 139 x 165 m, inside this building asset; that campus-scale context risks overlapping other master-scene site content and needs separation or a deliberate integration rule. The standalone master placement was not tested."
+    },
+    {
+      "name": "Evidence quality and uncertainty",
+      "score": 0.8,
+      "max_score": 1.0,
+      "evidence": "The audit retains the raw Purdue ArcGIS query, exact feature identifiers, source CRS and requested output CRS, the approximate project transform, a fresh asset reopen, mesh bounds, and two inspection renders. Official Purdue housing and archive sources confirm identity, opening date, and broad exterior appearance. Exact roof height, wall perimeter, room positions, and master alignment remain unverified."
+    }
+  ],
+  "weighted_total": 7.8,
+  "findings": [
+    "The exact saved asset reopens cleanly and reads as a coherent three-storey brick residence hall with a courtyard and substantial interior detailing.",
+    "The official campus GIS feature has the correct name, abbreviation, and address; the modeled roof-shell center aligns closely with its converted bounding-box center.",
+    "The modeled roof bounds are roughly 10 m shorter in each principal dimension than the GIS polygon bounds; the comparison does not establish that the GIS polygon is a surveyed wall line.",
+    "The export collection includes a 680 x 660 m lawn surface and campus road geometry. This context is far larger than the building and creates a clear risk of overlap when instanced in the campus master.",
+    "Interior furnishings and common spaces are modeled but are schematic relative to the public sources; no as-built floor plans were found in this review.",
+    "No master file was opened, so the existing Placement_wiley_hall marker and neighboring-building alignment remain ungraded."
+  ],
+  "evidence": {
+    "fresh_reopen": "audit/wiley_hall/independent_reopen.json",
+    "fresh_reopen_script": "audit/wiley_hall/independent_reopen.py",
+    "raw_gis_response": "audit/wiley_hall/gis_query.json",
+    "mesh_bounds": "audit/wiley_hall/mesh_bounds.json",
+    "renders": [
+      "audit/wiley_hall/oblique.png",
+      "audit/wiley_hall/top.png"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Purdue Campus Building GIS layer 0",
+      "provider": "Purdue University Libraries / Purdue Campus GIS",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=Name%20LIKE%20%27%25Wiley%25%27&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "feature": "OBJECTID 290; ABBR WILY; buildingidlong 148",
+      "retrieved": "2026-10-25",
+      "source_crs": "EPSG:3857 service geometry; query requested output EPSG:4326",
+      "method": "Used the project approximate longitude/latitude conversion and compared GIS ring bounding box with the principal modeled roof bounds translated by the manifest placement origin. No full boundary IoU or surveyed wall-line claim is made."
+    },
+    {
+      "title": "Wiley | Purdue University Residences",
+      "provider": "Purdue University Housing",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/wiley.html",
+      "retrieved": "2026-10-25",
+      "notes": "Confirms Wiley Hall opened in 1958, official address, resident support center and study spaces, and that standard room plan illustrations/dimensions are approximate."
+    },
+    {
+      "title": "Wiley Hall Exterior Entrance",
+      "provider": "Purdue University Residences",
+      "url": "https://housing.purdue.edu/get-reconnected/2017/04/index.html",
+      "image_url": "https://housing.purdue.edu/images/get-reconnected-old-images/Wiley%20Hall%20exterior.JPG",
+      "retrieved": "2026-10-25",
+      "notes": "Official exterior image indexed with a three-storey brick façade, red panels below windows, and a glazed entry."
+    },
+    {
+      "title": "Wiley Residence Hall, Purdue Buildings and Campus Scenes",
+      "provider": "Purdue University Libraries, Karnes Archives and Special Collections",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/2834",
+      "photo_date": "2004-06-14",
+      "retrieved": "2026-10-25",
+      "notes": "Archival exterior photograph record. Its indexed description identifies a three-storey brick residence hall with pink panels and a central glazed stairwell."
+    }
+  ],
+  "limitations": [
+    "This score covers the standalone asset; it does not certify master placement or neighboring campus alignment.",
+    "No dimensioned as-built roof plan, façade elevation, or complete interior plan was available in this review.",
+    "The GIS footprint comparison uses bounding extents with a locally approximate transform; it is not a full polygon-to-wall registration.",
+    "The image review uses Workbench renders and cannot verify final render-engine lighting or all shader response.",
+    "The large site lawn and road geometry should be separated or checked against the master terrain before integration."
+  ]
+}

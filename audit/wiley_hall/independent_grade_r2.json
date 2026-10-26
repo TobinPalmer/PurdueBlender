@@ -1,0 +1,112 @@
+{
+  "building": "Harvey W. Wiley Residence Hall",
+  "asset": "modular/buildings/wiley_hall.blend",
+  "sha256": "8f3e904273ec680811163d8150098aa0f67f55705376df86359b8510cc3a3859",
+  "review_date": "2026-10-25",
+  "blender_version": "5.2.3 LTS",
+  "score": 8.3,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": true,
+  "scope": "Independent standalone-asset grade plus read-only fresh master-marker check. No asset, master, manifest, README, or shared index was edited.",
+  "criteria": [
+    {
+      "name": "Identity, footprint, and placement evidence",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": "The GIS query contains both neighboring Wiley Dining Court OBJECTID 282 / WDCT / buildingidlong 141 and the correct Harvey W. Wiley Residence Hall OBJECTID 290 / WILY / buildingidlong 148. The grade uses WILY 290 only. Its converted GIS ring bounding-box center is approximately (-595.01108, 234.10049) m. The main modeled brick-shell bounding-box center translated by the manifest origin is approximately (-595.01105, 234.07040) m, 0.0301 m south. A fresh read-only master reopen confirms Placement_wiley_hall at (-447.585266, 234.070374, 0) m with identity rotation/scale, instancing Asset_wiley_hall from this library. The shell bounds are about 80.42 x 110.43 m versus GIS ring bounds about 90.33 x 119.22 m. This is a bounding-box comparison, not a registered wall-footprint overlay or surveyed wall-line validation."
+    },
+    {
+      "name": "Exterior massing and recognizable architecture",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": "The fresh oblique and top Workbench renders show two long, regular three-storey brick wings around a central courtyard and lower common block, repeated window bays, pale entrance/stair accents, and low flat roofs. The overall residence-hall form is coherent and agrees with Purdue's official descriptions of Wiley as a residence hall and archival/exterior record's broad brick-and-glazed-entry appearance. Window rhythms, secondary entrances, and roof service details remain simplified, and the image evidence does not establish exact dimensions or façade-by-façade fidelity."
+    },
+    {
+      "name": "Materials and surface finish",
+      "score": 1.2,
+      "max_score": 1.5,
+      "evidence": "The fresh reopen finds 142 materials used by the export collection, zero materialless meshes, zero invalid material slots, and no missing external images. Brick, pale masonry/trim, coral/pink spandrels, glazing, interior finishes, and dark roof surfaces are separately represented in the saved material groups and inspection views. However, the used materials contain no image-texture nodes, and the Workbench renders are flat inspection views rather than final-engine shading; fine photographic surface response and final lighting are not demonstrated."
+    },
+    {
+      "name": "Interior and resident program",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": "The building library contains substantial interior, room, lounge, bed-linen, desk, glazing, and finish material/geometry groups rather than an exterior-only shell. Purdue confirms standard rooms, a recreational lounge, central lounges, and study/support uses; its room layout and dimensions are explicitly approximate. No as-built floor plans were used to validate exact room placement or furnishing, and no interior render was generated for this R2 review."
+    },
+    {
+      "name": "Technical integrity and portability",
+      "score": 1.4,
+      "max_score": 1.5,
+      "evidence": "A new Blender 5.2.3 background process freshly opened the exact requested SHA and found Asset_wiley_hall with 398 objects (382 meshes, 14 empties, two text objects), identity AssetRoot_wiley_hall, no empty meshes, no materialless meshes, no invalid slots, and no missing image files. The relative engineering foliage library resolves. Four oversized lawn/road context objects are retained under Wiley_SiteContext_NotExported and excluded from the 398-object export; the saved source evidence verifies unchanged world transforms and master marker/link separately. The asset is technically clean for collection instancing, subject to the unresolved structural footprint size difference."
+    },
+    {
+      "name": "Evidence quality and uncertainty",
+      "score": 0.9,
+      "max_score": 1.0,
+      "evidence": "The audit retains the raw GIS query and corrected WILY feature selection, CRS conversion and bounding-box calculation, exact-SHA fresh reopen report, context separation verification, rendered inspection views, and a separate read-only fresh master-marker check. Purdue Housing and Purdue Archives provide official identity, use, address, and broad visual/program evidence. Exact surveyed wall outline, measured height, full polygon overlap, and as-built interior remain unverified."
+    }
+  ],
+  "findings": [
+    "The exact frozen R2 asset SHA was freshly reopened in Blender 5.2.3 LTS and its export collection excludes the oversized context surfaces.",
+    "The correct comparison is Wiley Hall GIS OBJECTID 290 / ABBR WILY / buildingidlong 148; the nearby Wiley Dining Court feature OBJECTID 282 / WDCT / buildingidlong 141 is not Wiley Hall.",
+    "The master marker currently instances the expected collection at the manifest origin with identity rotation and scale. Its transformed structural-shell bounding-box center is about 3 cm south of the correct WILY GIS bounding-box center.",
+    "The building remains about 10 m narrower and 9 m shorter than the GIS ring's bounding extents. Since the GIS outline is not proven to be a surveyed wall line, resolve with a polygon-to-structural-wall overlay before changing scale.",
+    "Facade colors and material assignments are complete enough to distinguish the principal finishes, but no used image-texture nodes or final-engine lighting are demonstrated.",
+    "The interior is extensive but remains illustrative; public sources verify room/support programs, not the modeled floor plans or furnishings."
+  ],
+  "prioritized_follow_up": [
+    "Produce a top-down registered overlay of the structural walls against the correct WILY GIS ring and assess orientation, intersections, and courtyard shape. Do not resize the whole model using the GIS bounding box alone.",
+    "Render a representative room and central support/lounge interior under the project renderer. Label its layout as illustrative unless suitable as-built plans become available.",
+    "If photographic realism is required, add appropriate brick, masonry, glazing, and roof surface detail; confirm final-engine shader response and packing/relative paths."
+  ],
+  "evidence": {
+    "fresh_asset_reopen": "audit/wiley_hall/independent_reopen_r2.json",
+    "fresh_asset_reopen_script": "audit/wiley_hall/independent_reopen_r2.py",
+    "gis_source_snapshot": "audit/wiley_hall/gis_query.json",
+    "correct_feature_bounds": "audit/wiley_hall/footprint_bounds_r2.json",
+    "context_membership_and_transform_check": "audit/wiley_hall/site_context_reopen_r2.json",
+    "master_marker_fresh_reopen": "audit/wiley_hall/independent_grade_r2_marker.json",
+    "renders": [
+      "audit/wiley_hall/oblique_r2.png",
+      "audit/wiley_hall/top_r2.png"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Purdue Campus Building GIS layer 0",
+      "provider": "Purdue University Libraries / Purdue Campus GIS",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=Name%20LIKE%20%27%25Wiley%25%27&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "feature": "OBJECTID 290; ABBR WILY; buildingidlong 148 (not neighboring OBJECTID 282 / WDCT / 141)",
+      "retrieved": "2026-10-25",
+      "crs_and_method": "Service geometry EPSG:3857, response requested in EPSG:4326; converted using the project's approximate local X-east/Y-north transform and compared bounding boxes, not wall polygons."
+    },
+    {
+      "title": "Wiley | Purdue University Residences",
+      "provider": "Purdue University",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/wiley.html",
+      "retrieved": "2026-10-25",
+      "notes": "Confirms opened 1958, 500 North Martin Jischke Drive, standard rooms, lounge and study/support functions; explicitly says room furniture/layout illustrations are general and approximate."
+    },
+    {
+      "title": "GetReConnected-April 2017, Wiley Academic Success Center",
+      "provider": "Purdue University Residences",
+      "url": "https://housing.purdue.edu/get-reconnected/2017/04/index.html",
+      "retrieved": "2026-10-25",
+      "notes": "Describes an academic center occupying former dining space east of the front desk, with collaborative learning area, offices, consultation rooms, and study spaces."
+    },
+    {
+      "title": "Wiley Residence Hall, Purdue Buildings and Campus Scenes",
+      "provider": "Purdue University Libraries, Karnes Archives and Special Collections",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/2834",
+      "photo_date": "2004-06-14",
+      "retrieved": "2026-10-25",
+      "notes": "Official archival exterior photograph record; broad three-storey brick, pink-panel, glazed-stair description retained in prior audit."
+    }
+  ],
+  "limitations": [
+    "The GIS comparison is not a full polygon-to-wall overlay, and the GIS polygon is not certified as a surveyed wall footprint.",
+    "No measured building height or verified as-built interior plan was available.",
+    "The standalone asset grade does not replace a visual review of neighborhood blending and rendered master-scene appearance."
+  ]
+}

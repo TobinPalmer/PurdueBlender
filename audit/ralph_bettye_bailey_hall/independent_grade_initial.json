@@ -1,0 +1,72 @@
+{
+  "grade_revision": "Initial 16 m height / five facade rows before the 2026-10-26 photo-based revision",
+  "reviewer": "independent subagent",
+  "score": 6.75,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "identity_and_source_backed_footprint",
+      "points": 2,
+      "max_points": 2,
+      "status": "verified",
+      "rationale": "Official Purdue GIS FID 411 identifies BALY / Ralph and Bettye Bailey Hall. The build script projects the source ring and builds the structural shell from those vertices."
+    },
+    {
+      "name": "position_orientation_scale_dimensions",
+      "points": 1.5,
+      "max_points": 2,
+      "status": "partially_verified",
+      "rationale": "The shell uses the GIS coordinates directly, matching the supplied map polygon. The polygon is not a survey, and there is no independent orientation or position accuracy check."
+    },
+    {
+      "name": "height_floors_roof",
+      "points": 0.5,
+      "max_points": 2,
+      "status": "uncertain_source_conflict",
+      "rationale": "The GIS five-level attribute does not establish height; 16 m was unverified. The official exterior photo shows two apparent above-grade window rows, in tension with the model's five rows. Roof form and height are not measured."
+    },
+    {
+      "name": "facade_entrances_distinctive_architecture",
+      "points": 1,
+      "max_points": 2,
+      "status": "partially_verified",
+      "rationale": "The Purdue photo supports red brick, pale trim and repeated windows. The model captures those broad features, but its five-row facade conflicts with the photo; entrance placement remains approximate."
+    },
+    {
+      "name": "modular_export_portability_complete_evidence",
+      "points": 1.75,
+      "max_points": 2,
+      "status": "mostly_verified",
+      "rationale": "Blender reopened the expected asset collection with one object, 6,840 vertices and 4,992 faces. Materials are procedural, with no external image dependency found. Raw source, build script, preview and structured evidence are present."
+    }
+  ],
+  "evidence": [
+    {
+      "source": "source_feature_411_raw.json",
+      "observation": "Purdue GIS FID 411 identifies BALY; NUM_LEVELS=5 and CountOfFLO=5 are attributes, not measured height."
+    },
+    {
+      "source": "build_bailey_hall_detail.py",
+      "observation": "Structural shell is generated from projected GIS ring vertices. HEIGHT_M=16.0 was explicitly unverified; five window rows derived from the floor-count attribute."
+    },
+    {
+      "source": "https://www.purdue.edu/operations/emergency-preparedness/baly/",
+      "observation": "Official Purdue identity/address page and exterior photo support brick facade and pale trim; visible view shows two apparent above-grade window rows."
+    },
+    {
+      "source": "modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend",
+      "observation": "Reopened in Blender 5.2.3 LTS. Expected object and collection; one collection object, 6,840 vertices, 4,992 faces, bounds z=0–16 m, five procedural materials, no external image dependencies found."
+    },
+    {
+      "source": "preview_detail.png",
+      "observation": "Preview showed five apparent window levels and a flat top, consistent with the identified discrepancy."
+    }
+  ],
+  "findings": [
+    "Resolve the conflict between the GIS five-level attribute and the official photo's apparent two above-grade levels.",
+    "Find authoritative evidence for height and roof form, or revise them as estimates consistent with the imagery.",
+    "Check entrance location and facade layout against additional exterior views.",
+    "The 6.75/10 grade was below the 8/10 passing threshold; revise and request a fresh independent grade."
+  ],
+  "evaluator_implementation": "evaluateBailey() returned the criteria above and summed points to score 6.75/10. Full evaluator implementation was supplied by reviewer in the task result."
+}

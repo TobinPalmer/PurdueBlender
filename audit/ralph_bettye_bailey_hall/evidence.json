@@ -1,0 +1,131 @@
+{
+  "building": "Ralph and Bettye Bailey Hall",
+  "asset_id": "massing_ralph_bettye_bailey_hall_406c4db",
+  "status": "Independent grade 8/10; footprint and photo-supported facade details modeled; height/floor conflict remains documented",
+  "source": {
+    "provider": "Purdue University official campus building footprint service",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 411,
+    "building_code": "BALY",
+    "source_name": "Ralph and Bettye Bailey Hall",
+    "retrieval_date": "2026-10-22 (repository-preserved snapshot; source base timestamp 2026-10-22T03:45:50Z)",
+    "source_date": "Not supplied for the campus feature; snapshot timestamp recorded separately.",
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "source_record": "source_feature_411_raw.json",
+    "reference_status": "Official campus GIS polygon, FID 411 / BALY; not a certified survey. The feature reports NUM_LEVELS=5 and CountOfFLO=5, which are source attributes, not measured height.",
+    "secondary_visual_references": [
+      {
+        "provider": "Purdue University Office of Emergency Preparedness",
+        "use": "Official BALY page identifies the building and provides an exterior photo. The photo supports red brick, limestone accents, a flat roof/parapet, entrance context, and two visible above-grade window rows. An 8 m shell height is only a visual estimate scaled approximately against a 2.4 m assumed entrance door; the photo is not an elevation or measured source.",
+        "photo_snapshot": "source_bailey_exterior_photo.jpg",
+        "url": "https://www.purdue.edu/operations/emergency-preparedness/baly/"
+      },
+      {
+        "provider": "Purdue University Archives and Special Collections",
+        "use": "Identifies Bailey Hall as completed in 2014 and home of Purdue Musical Organizations; no facade dimensions inferred.",
+        "url": "https://blogs.lib.purdue.edu/asc/2016/12/01/bailey-hall-and-purdues-musical-myth/"
+      },
+      {
+        "provider": "Purdue University Archives and Special Collections",
+        "use": "Exterior photograph supports two visible window rows, raised entrance/lobby tower, tall glazing, vertical sign panel, pale bands, and flat parapet. No calibrated dimensions or orientation inferred.",
+        "photo_snapshot": "source_bailey_archives_exterior.jpg",
+        "observation_record": "source_bailey_archives_photo_observation.json",
+        "url": "https://blogs.lib.purdue.edu/asc/files/2016/10/Bailey-Hall-Outside.jpg"
+      }
+    ]
+  },
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not surveyed CRS"
+  },
+  "measurements": {
+    "method": "Reprojected the 22 distinct vertices of official FID 411 using the documented approximate project-local conversion. The build script constructs the structural shell directly from that ring; entry and canopy details are excluded from structural plan comparison.",
+    "official_footprint_aabb_xy_m": {
+      "min_x": 295.7079179361737,
+      "max_x": 322.0309784439278,
+      "min_y": -39.44971756734731,
+      "max_y": -3.8080796788517546
+    },
+    "official_minimum_rotated_rectangle": null,
+    "official_polygon_area_m2": 1455.69140625,
+    "before_asset_aabb_xy_m": [
+      295.60736083984375,
+      -45.14886474609375,
+      322.33966064453125,
+      -4.108479976654053
+    ],
+    "before_asset_height_m": [
+      0.0,
+      16.0
+    ],
+    "after_structural_shell": "Built directly from all 22 distinct FID 411 source vertices. The photo-referenced entrance tower projects beyond the mapped wall boundary and is excluded from the structural footprint comparison.",
+    "after_modeled_height_m": 10.18,
+    "position_status": "Structural wall coordinates match the official GIS source transform; the service does not publish positional uncertainty, so absolute location accuracy is unverified.",
+    "plan_dimension_status": "Structural shell uses the official source polygon; boundary is a campus map outline, not a surveyed wall footprint.",
+    "orientation_status": "Structural shell follows source polygon order; independent true-north/entrance orientation review remains open.",
+    "height_status": "The lower-wing parapet is modeled at an estimated 7.5 m from the exterior photos. The entrance tower apex is modeled at 10.18 m using GIS field R=33.4 tentatively interpreted as feet; the service metadata documents coordinate units as US survey feet but gives no field-level unit/meaning definition. These are estimates, not surveyed elevations. GIS NUM_LEVELS=5 and CountOfFLO=5 conflict with two visible above-grade facade rows; the floor-count conflict remains unresolved.",
+    "tentative_gis_vertical_fields": {
+      "F02": 16.7,
+      "R": 33.4,
+      "Extrution": 28,
+      "interpretation": "F02 and R are field names suggestive of floor/roof elevations; their definitions and units are not documented. R=33.4 was tentatively interpreted as feet only to guide the estimated taller entrance tower, and is not treated as a verified height measurement."
+    },
+    "modeled_entry_tower_apex_m": 10.18,
+    "modeled_main_parapet_m": 7.5,
+    "facade_observation": "Purdue's current exterior image shows two visible rows of windows, red brick, light limestone bands/trim, and a flat parapet roof. These visible details inform the model; photo perspective and partial tree obstruction limit exact facade reconstruction.",
+    "visible_above_grade_window_rows": 2,
+    "official_num_levels_attribute": 5,
+    "official_extrution_attribute": 28,
+    "after_asset_bounds_including_facade_additions_m": {
+      "min_x": 292.7994079589844,
+      "max_x": 322.32122802734375,
+      "min_y": -39.739967346191406,
+      "max_y": -3.5178298950195312,
+      "min_z": 0.0,
+      "max_z": 10.180320739746094
+    },
+    "official_count_of_floors_attribute": 5,
+    "reopen_check": {
+      "object_name": "Ralph & Bettye Bailey Hall",
+      "asset_id": "massing_ralph_bettye_bailey_hall_406c4db",
+      "exported_collection_object_count": 1,
+      "mesh_vertex_count": 2968,
+      "mesh_face_count": 2088,
+      "bounds_xyz_m": [[292.7994079589844, 322.32122802734375], [-39.739967346191406, -3.5178298950195312], [0.0, 10.180320739746094]],
+      "blender_version": "5.2.3 LTS",
+      "saved_asset_reopened": true
+    }
+  },
+  "geometry_edits": [
+    "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
+    "Added facade materials, repeated window bays, window surrounds, one intermediate limestone band, plinth and roof coping.",
+    "Revised the shell from an unsupported 16 m height and five evenly spaced facade rows to a 7.5 m photo-scaled lower-wing parapet with two photo-supported above-grade window rows; kept the GIS five-level attribute as an unresolved conflict.",
+    "Added a photo-referenced raised entrance/lobby tower that projects beyond the GIS wall boundary, with a tall glazed bay, side glazing, vertical sign panel and limestone cap; its height and dimensions remain estimates, with the 10.18 m apex tentatively guided by undocumented GIS field R=33.4.",
+    "Added an entrance marker oriented toward west; exact facade detail placement remains approximate."
+  ],
+  "uncertainties": [
+    "The official campus GIS polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
+    "The 7.5 m lower-wing parapet and 10.18 m entrance tower heights are estimates; no elevation, section, or surveyed height source was found. GIS F02/R units and field definitions are undocumented.",
+    "GIS NUM_LEVELS=5 and CountOfFLO=5 conflict with the two visible above-grade window rows in the official exterior photo; the actual level accounting is unresolved.",
+    "Entrance location and tower dimensions remain approximate; the oblique photos do not establish geographic orientation or all facade bays.",
+    "The initial revisions scored 6.75/10, 7.5/10, and 7.75/10. The current projecting tower revision received an independent grade of 8/10; the complete criterion-level result is saved in independent_grade_final.json. Remaining uncertainties are retained above."
+  ],
+  "artifacts": {
+    "build_script": "build_bailey_hall_detail.py",
+    "raw_source": "source_feature_411_raw.json",
+    "gis_layer_metadata": "source_gis_layer_metadata.xml",
+    "exterior_photo_observation": "source_bailey_exterior_photo_observation.json",
+    "exterior_photo_snapshot": "source_bailey_exterior_photo.jpg",
+    "archives_photo_observation": "source_bailey_archives_photo_observation.json",
+    "archives_photo_snapshot": "source_bailey_archives_exterior.jpg",
+    "render_preview_script": "render_preview.py",
+    "initial_independent_grade": "independent_grade_initial.json",
+    "intermediate_independent_grade": "independent_grade_two_row_revision.json",
+    "latest_independent_grade": "independent_grade_final.json",
+    "preview": "preview_detail.png"
+  }
+}
