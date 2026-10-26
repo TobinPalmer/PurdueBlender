@@ -1,0 +1,99 @@
+{
+  "building_id": "bechtel_innovation_design_center_bidc",
+  "asset_file": "modular/buildings/bechtel_innovation_design_center_bidc.blend",
+  "builder_module": "modular/buildings/build_bechtel_innovation_design_center_bidc.py",
+  "exported_collection": "Asset_bechtel_innovation_design_center_bidc",
+  "retrieved_or_built": "2026-10-25",
+  "sources": [
+    {
+      "type": "official GIS footprint",
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 912,
+      "matched_attributes": {
+        "BLDG_ABBR": "BIDC",
+        "BUILDING_N": "Bechtel Innovation Design Center",
+        "ADDRESS": "1090 3rd Street"
+      },
+      "retrieved": "2026-10-25",
+      "source_crs": "Service EPSG:3857; checked-in feature snapshot stored in WGS84/EPSG:4326",
+      "local_snapshot": "audit/bechtel_innovation_design_center_bidc/sources/gis_feature_912.json",
+      "attributes_used_for_corroboration": {
+        "NUM_LEVELS": 0,
+        "Extrution": 48,
+        "Elevation": 0,
+        "Shape__Area_m2": 1922.43359375,
+        "Shape__Length_m": 193.49351900939573
+      },
+      "geometry_use": "The first exterior ring of feature 912 controls the shell; all 24 ring vertices are preserved without rescaling. The polygon surface is about 1112.12 m2 after local geographic conversion. The GIS service Shape__Area is a separate cartographic attribute and was not substituted for the ring area."
+    },
+    {
+      "type": "official facility page and plans",
+      "provider": "Purdue University Bechtel Innovation Design Center",
+      "url": "https://www.purdue.edu/bidc/about/about-the-center/",
+      "supports": "Facility use and published first-floor, second-floor, and basement plans; no elevations or surveyed dimensions used.",
+      "raw_snapshots": [
+        "audit/bechtel_innovation_design_center_bidc/sources/purdue_about.html",
+        "audit/bechtel_innovation_design_center_bidc/sources/first_floor_plan.png",
+        "audit/bechtel_innovation_design_center_bidc/sources/second_floor_plan.png",
+        "audit/bechtel_innovation_design_center_bidc/sources/basement_plan.png"
+      ]
+    },
+    {
+      "type": "official university news",
+      "provider": "Purdue College of Engineering",
+      "url": "https://engineering.purdue.edu/Engr/AboutUs/News/Spotlights/2018/bidc-already-serving-large-number-of-students",
+      "supports": "Facility purpose, student use, and BIDC-specific photographs.",
+      "raw_snapshot": "audit/bechtel_innovation_design_center_bidc/sources/purdue_engineering_2018.html"
+    },
+    {
+      "type": "project architect",
+      "provider": "Shive-Hattery",
+      "url": "https://www.shive-hattery.com/projects/purdue-university-bechtel-innovation-design-center/",
+      "supports": "Project size above 32,000 square feet, opened summer 2017, high-bay flexible area, fabrication/prototyping labs, assembly/storage and vehicle lab, exterior plaza, natural light and transparent environment.",
+      "raw_snapshot": "audit/bechtel_innovation_design_center_bidc/sources/architect_shive_hattery.html",
+      "building_specific_photo": {
+        "url": "https://www.shive-hattery.com/wp-content/uploads/2023/04/7151300_N48_1200X650.jpg",
+        "local_snapshot": "audit/bechtel_innovation_design_center_bidc/sources/architect_photo.jpg",
+        "observed": "Prominent two-storey glazed frontage with fine metal mullions, broad light gray opaque panel cladding, low-profile roof edge, and visible makerspace interior. Used to guide finish and glazing emphasis; photo perspective and unmeasured locations are not treated as dimensions."
+      }
+    }
+  ],
+  "geometry": {
+    "coordinate_frame": "Local metres, X east, Y north, Z up; centered at official GIS polygon centroid.",
+    "manifest_placement_origin_xy_m": [-431.49312776561794, 14.837793060113258],
+    "footprint_ring_vertex_count": 24,
+    "local_bounds_xy_m": [-18.611501, 17.638771, -17.729303, 15.809650],
+    "modeled_above_ground_floors": 2,
+    "modeled_roof_height_m": 10.8,
+    "height_status": "Estimated visualization value; no verified elevation or section drawing located. GIS Elevation is 0; legacy Extrution value is not treated as building height.",
+    "envelope": "Footprint-driven low-slope shell with light gray panel finish, glazing across all sufficiently long ring walls, a two-storey entrance glazing cue, metal mullions, floor bands, parapet and schematic rooftop plant.",
+    "interior": "Only a small workshop vignette behind glazing. Schematic use cues, not a floor-plan model or as-built room layout.",
+    "facade_status": "Specific front-of-building glazing and light cladding are supported by the architect photo; bay spacing, floor heights, roof plant, other facade sides and opening extents are estimated."
+  },
+  "validation": {
+    "reopened": true,
+    "validation_script": "audit/bechtel_innovation_design_center_bidc/validate_reopened.py",
+    "validation_report": "audit/bechtel_innovation_design_center_bidc/validation.json",
+    "mesh_object_count": 276,
+    "required_collection_present": true,
+    "shell_mesh_vertex_count": 48,
+    "shell_bounds_local_m": [[-18.611502, 17.638771], [-17.729303, 15.809650], [0.0, 10.35]],
+    "external_image_dependencies": [],
+    "previews_rendered_from_reopened_library": [
+      "audit/bechtel_innovation_design_center_bidc/overview.png",
+      "audit/bechtel_innovation_design_center_bidc/plan.png"
+    ]
+  },
+  "uncertainties": [
+    "The source GIS cartographic area attribute differs from the projected surface area of the feature ring; the ring geometry was retained as the authoritative plan outline.",
+    "GIS level count and extrusion attributes conflict with the publicly posted floor-plan set and are not reliable vertical measurements.",
+    "Two visible above-ground stories are inferred from the building-specific project photo and available plans; roof height is estimated at 10.8 m.",
+    "No as-built elevations, verified roof plan, or measured facade dimensions were found. Architectural details away from the photographed frontage are interpretive.",
+    "The few interior objects are schematic evidence of makerspace use only; they do not recreate a specific plan or equipment schedule."
+  ],
+  "candidate_grade": {
+    "status": "awaiting independent grader",
+    "builder_self_assessment": "The missing detailed library is reconstructed and contract-validated; the GIS outline, source-backed facade direction, dedicated module, evidence archive, and reopen previews are complete. Height and unphotographed details remain estimated."
+  }
+}
