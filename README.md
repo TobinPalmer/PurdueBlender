@@ -2,7 +2,7 @@
 
 This project tracks detailed campus models separately from the remaining massing-only building assets. A detailed model counts as finished here only when its latest recorded independent grader score is at least 8/10. Scores describe the reviewed model revision; ungraded assets are explicitly marked.
 
-## Detailed models: status and latest grader score (92 buildings)
+## Detailed models: status and latest grader score (95 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -29,6 +29,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Campus Edge | [massing_campus_edge_343e3d8.blend](modular/buildings/massing_campus_edge_343e3d8.blend) | Finished | [8.5/10](audit/massing_campus_edge_343e3d8_independent_grade_r2/result.json) | — |
 | Cary Quadrangle East (CQE) | [massing_cary_quadrangle_east_cqe_230c813.blend](modular/buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | Finished | [8.0/10](audit/massing_cary_quadrangle_east_cqe_independent_grade_r3/result.json) | — |
 | Cary Quadrangle South (CQS) | [massing_cary_quadrangle_south_cqs_7ee2283.blend](modular/buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend) | Finished | [8.5/10](audit/massing_cary_quadrangle_south_cqs_independent_grade/result.json) | — |
+| Cary Quadrangle West (CQW) | [massing_cary_quadrangle_west_cqw_3d47a7d.blend](modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend) | Finished | [8.7/10](audit/massing_cary_quadrangle_west_cqw_independent_grade_r3/independent_grade_result.json) | — |
+| Chi Omega | [massing_chi_omega_a9eb08d.blend](modular/buildings/massing_chi_omega_a9eb08d.blend) | Finished | [9.0/10](audit/chi_omega_independent_grade_r2/result.json) | — |
+| Creighton Hall of Animal Sciences | [massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend](modular/buildings/massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend) | Finished | [8.5/10](audit/massing_creighton_hall_of_animal_sciences_crtn_a88d450/independent_grade/result.json) | — |
 | Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | Finished | 8.5/10 | — |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](modular/buildings/convergence_center.blend) | Needs independent grade | Not graded | Rohan |
 | Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | In progress | 7.2/10 | Rohan |
@@ -99,9 +102,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (123 total)
+## Unfinished buildings (120 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 7 buildings, Rohan 15 buildings, Tobin 1 buildings, Arjav 10 buildings, Brady 90 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 4 buildings, Rohan 15 buildings, Tobin 1 buildings, Arjav 10 buildings, Brady 90 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -124,16 +127,13 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 
-### Buildings that still have only massing models (107)
+### Buildings that still have only massing models (104)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
 | animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rossen |
-| cary quadrangle west cqw | [`massing_cary_quadrangle_west_cqw_3d47a7d.blend`](modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend) | Rossen |
-| chi omega | [`massing_chi_omega_a9eb08d.blend`](modular/buildings/massing_chi_omega_a9eb08d.blend) | Rossen |
-| creighton hall of animal sciences crtn | [`massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend`](modular/buildings/massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend) | Rossen |
 | crosswalk commons | [`massing_crosswalk_commons_7c01ecd.blend`](modular/buildings/massing_crosswalk_commons_7c01ecd.blend) | Rossen |
 | delta tau delta | [`massing_delta_tau_delta_e06b0b5.blend`](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Rossen |
 | dudley | [`dudley_hall.blend`](modular/buildings/dudley_hall.blend) | Rossen |
