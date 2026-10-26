@@ -1,0 +1,152 @@
+{
+  "service": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
+  "service_description_url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer?f=pjson",
+  "service_description": "Indiana 2023 Imagery ImageServer, spring 2023 orthophotography, 4-band nominal 6-inch resolution, CC0.",
+  "retrieved_utc": "2026-10-26T03:33:08.479463+00:00",
+  "building_source": "Purdue GIS FID 879 / PKRW; direct polygon ring",
+  "source_crs": "EPSG:4326 (GIS) transformed to EPSG:3857 image request and back to project local coordinates for footprint overlay",
+  "project_conversion": {
+    "x": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274))",
+    "y": "Y=(latitude-40.4274)*111040.0",
+    "manifest_origin_xy_m": [
+      -544.25,
+      42.425
+    ]
+  },
+  "image_extent_3857": [
+    -9676051.308038602,
+    4928180.8656157665,
+    -9675806.405158859,
+    4928444.0933894105
+  ],
+  "image_px": [
+    1800,
+    1400
+  ],
+  "source_image": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\winifred_parker_hall\\indiana_2023_orthophoto_r5.png",
+  "overlay_image": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\winifred_parker_hall\\indiana_2023_orthophoto_overlay_r5.png",
+  "identify_response": {
+    "objectId": 0,
+    "name": "Pixel",
+    "value": "222, 223, 229, 225",
+    "location": {
+      "x": -9675928.856598731,
+      "y": 4928312.47862198,
+      "spatialReference": {
+        "wkid": 102100,
+        "latestWkid": 3857
+      }
+    },
+    "properties": {
+      "Values": [
+        "222 223 229 225",
+        "NoData NoData NoData NoData",
+        "NoData NoData NoData NoData",
+        "NoData NoData NoData NoData"
+      ]
+    },
+    "catalogItems": {
+      "objectIdFieldName": "OBJECTID",
+      "features": [
+        {
+          "attributes": {
+            "OBJECTID": 50536,
+            "Name": "in2023_29971885_06",
+            "MinPS": 0,
+            "MaxPS": 3.0480060960121924,
+            "LowPS": 0.15240030480060962,
+            "HighPS": 0.30480060960121924,
+            "Category": 1,
+            "Tag": "Dataset",
+            "GroupName": "",
+            "ProductName": "",
+            "CenterX": -9675679.107876439,
+            "CenterY": 4928171.631274891,
+            "ZOrder": null,
+            "Image_Year": "2023",
+            "County": "Tippecanoe",
+            "Pixel_Size": "06 in.",
+            "Shape_Length": 4006.3241080527528,
+            "Shape_Area": 1003160.7421124495
+          }
+        },
+        {
+          "attributes": {
+            "OBJECTID": 1,
+            "Name": "Indiana_2023_SPW_03in",
+            "MinPS": 1.5240030480060962,
+            "MaxPS": 3048,
+            "LowPS": 0.6096012192024385,
+            "HighPS": 39.01447802895606,
+            "Category": 1,
+            "Tag": "Dataset",
+            "GroupName": "",
+            "ProductName": "",
+            "CenterX": -9700387.2105343,
+            "CenterY": 4874529.405433793,
+            "ZOrder": null,
+            "Image_Year": null,
+            "County": null,
+            "Pixel_Size": null,
+            "Shape_Length": 1224926.8048982196,
+            "Shape_Area": 47439285844.51599
+          }
+        },
+        {
+          "attributes": {
+            "OBJECTID": 2,
+            "Name": "Indiana_2023_SPW_06in_N",
+            "MinPS": 3.0480060960121924,
+            "MaxPS": 3048,
+            "LowPS": 1.219202438404877,
+            "HighPS": 78.02895605791213,
+            "Category": 1,
+            "Tag": "Dataset",
+            "GroupName": "",
+            "ProductName": "",
+            "CenterX": -9714484.060017223,
+            "CenterY": 4839092.684812075,
+            "ZOrder": null,
+            "Image_Year": null,
+            "County": null,
+            "Pixel_Size": null,
+            "Shape_Length": 1546055.2088837582,
+            "Shape_Area": 112004018620.6953
+          }
+        },
+        {
+          "attributes": {
+            "OBJECTID": 3,
+            "Name": "Indiana_2023_SPW_06in_S",
+            "MinPS": 3.0480060960121924,
+            "MaxPS": 3048,
+            "LowPS": 1.219202438404877,
+            "HighPS": 78.02895605791213,
+            "Category": 1,
+            "Tag": "Dataset",
+            "GroupName": "",
+            "ProductName": "",
+            "CenterX": -9714484.060017223,
+            "CenterY": 4839092.684812075,
+            "ZOrder": null,
+            "Image_Year": null,
+            "County": null,
+            "Pixel_Size": null,
+            "Shape_Length": 1546055.2088837582,
+            "Shape_Area": 112004018620.6953
+          }
+        }
+      ]
+    },
+    "catalogItemVisibilities": [
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  "limitations": [
+    "This orthophoto validates roof footprint alignment, not surveyed wall-face dimensions.",
+    "The project local XY conversion is approximate rather than survey control."
+  ]
+}

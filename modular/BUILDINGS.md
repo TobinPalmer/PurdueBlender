@@ -44,7 +44,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | University Hall | [university_hall.blend](buildings/university_hall.blend) | 1377 |
 | Walc | [walc.blend](buildings/walc.blend) | 969 |
 | Wiley Hall | [wiley_hall.blend](buildings/wiley_hall.blend) | 398 |
-| Winifred Parker Hall | [winifred_parker_hall.blend](buildings/winifred_parker_hall.blend) | 664 |
+| Winifred Parker Hall | [winifred_parker_hall.blend](buildings/winifred_parker_hall.blend) | 582 |
 
 ## Newly added buildings — October 24–25, 2026
 

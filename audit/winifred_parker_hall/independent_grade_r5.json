@@ -1,0 +1,135 @@
+{
+  "building": "Winifred Parker Hall",
+  "revision": "R5 GIS-shell candidate",
+  "asset": "modular/buildings/winifred_parker_hall.blend",
+  "sha256": "92fa120794470d93a253d04f35ca0852caea7d05982a5f4e02b285fd914045a9",
+  "review_date_utc": "2026-10-26T03:36:24.765553+00:00",
+  "score": 8.05,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "Purdue BuildingShapesZip4 FID 879 is PKRW / Winifred Parker Residence Hall at 1196 3rd Street. Independent raw-ring to actual mesh top-face comparison: IoU 0.999999901, boundary Hausdorff 0.000002 m, GIS/model areas 1842.575/1842.575 m2. The 2023 orthophoto overlay shows the source polygon and model perimeter tracking the visible roof.",
+      "limitations": "The candidate's upper shell is traced to this GIS ring, so the near-1 IoU establishes faithful transfer of that outline, not surveyed wall-face accuracy. The GIS Shape__Area field (3185.1171875 m2) conflicts with the area of its returned ring (1842.575 m2)."
+    },
+    {
+      "criterion": "Campus placement, orientation, and scale",
+      "score": 1.45,
+      "max_score": 1.5,
+      "evidence": "Fresh read-only master reopen confirms the expected linked collection and marker; position error 0.000000 m, zero rotation, unit scale, and no duplicate direct source link. The source polygon is 51.49 by 79.23 m; the canonical upper shell matches.",
+      "limitations": "Placement is exact relative to the manifest; the campus XY transform is approximate, not survey control."
+    },
+    {
+      "criterion": "Massing, floors, height, and roof",
+      "score": 1.2,
+      "max_score": 1.5,
+      "evidence": "The model has a recognizable flat-roof mid-rise plan with a preserved internal notch/courtyard. The main shell spans z=4.2 to 20.2 m and the asset maximum is 23.40 m including rooftop masses. The 2023 aerial shows the flat roof and equipment. GIS floor-height fields F02-F05 and R support a similar mid-rise profile if their values are feet.",
+      "limitations": "GIS NUM_LEVELS=3 conflicts with CountOfFLO=6; field units are undocumented. If R=74.1 is feet, the modeled maximum is about 0.8 m taller. Rooftop services and exact floor-to-floor heights remain schematic."
+    },
+    {
+      "criterion": "Facade, windows, and entrances",
+      "score": 1.2,
+      "max_score": 1.5,
+      "evidence": "The official 2021 Purdue photo supports red brick, tall narrow punched windows, restrained light trim, and glazed ground-floor retail. The asset has 158 window and 158 sill objects over five modeled bands; East facade openings are aligned to the outline, and unsupported West/North bays were removed while preserving exterior continuity.",
+      "limitations": "Only one oblique image is available. Exact window spacing and opening size lack elevations; the large bright portal/canopy visible in the diagnostic render is not measured from a plan."
+    },
+    {
+      "criterion": "Materials and surface finish",
+      "score": 0.65,
+      "max_score": 1.0,
+      "evidence": "18 used materials cover brick, limestone, roof membrane, glazing, concrete, paving, and interior finishes. Procedural brick/noise/bump shaders are present; all mesh material slots are valid.",
+      "limitations": "No image-texture nodes or photographic maps are packed in the asset. The available diagnostic render makes the roof read washed white/cyan and the repeated brick remains stylized; final daylight material response was not polished."
+    },
+    {
+      "criterion": "Interior and building program",
+      "score": 0.55,
+      "max_score": 1.0,
+      "evidence": "Purdue Housing documents suites/semi-suites, shared baths, suite living rooms, a Starbucks/market at ground level, an Executive-in-Residence lobby, and TV lounges on each floor. The asset includes ground retail, lobby/reception, and a furnished sample suite with beds, desks, bath, sofa, and TV console.",
+      "limitations": "There is no complete representative resident floor or repeated TV lounge/corridor layout. The public room diagrams are expressly approximate, so room partitions and furniture positions remain illustrative."
+    },
+    {
+      "criterion": "Technical integrity, portability, and evidence",
+      "score": 1.2,
+      "max_score": 1.5,
+      "evidence": "Exact SHA 92fa120794470d93a253d04f35ca0852caea7d05982a5f4e02b285fd914045a9 freshly reopened in Blender 5.2.3 LTS: 582 objects / 581 meshes, identity root, 18 used materials, no materialless meshes, invalid indices, missing images, unpacked external image dependencies, or linked libraries. The grade evidence includes raw GIS, Purdue Housing text, official 2021 exterior photo, a catalog-identified 2023 Tippecanoe six-inch orthophoto, and a separate read-only master check.",
+      "limitations": "The GIS area conflict and local coordinate approximation remain unresolved."
+    }
+  ],
+  "evidence": {
+    "asset_reopen": "independent_grade_r5_extract.json",
+    "asset_extract_script": "independent_grade_r5_extract.py",
+    "master_marker": "independent_grade_r5_master_marker.json",
+    "master_marker_script": "independent_grade_r5_master_marker.py",
+    "gis_snapshot": "gis_feature_879_raw.json",
+    "gis_service": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "gis_feature": {
+      "FID": 879,
+      "BLDG_ABBR": "PKRW",
+      "BUILDING_N": "Winifred Parker Residence Hall",
+      "ADDRESS": "1196 3rd Street",
+      "NUM_LEVELS": 3,
+      "CountOfFLO": 6,
+      "R_field": 74.1,
+      "Shape__Area_m2": 3185.1171875
+    },
+    "footprint": {
+      "source_ring_vertices": 67,
+      "source_area_m2": 1842.574644649864,
+      "model_area_m2": 1842.5746450813276,
+      "intersection_area_m2": 1842.5745532216304,
+      "union_area_m2": 1842.5747365095601,
+      "iou": 0.9999999005261897,
+      "boundary_hausdorff_m": 2.498280488971585e-06,
+      "model_bounds_local_m": [
+        [
+          -45.29922866821289,
+          6.191469669342041
+        ],
+        [
+          -32.06128692626953,
+          47.17106246948242
+        ],
+        [
+          4.199999809265137,
+          20.200000762939453
+        ]
+      ]
+    },
+    "orthophoto_evidence": "indiana_2023_orthophoto_evidence_r5.json",
+    "orthophoto_catalog_item": {
+      "OBJECTID": 50536,
+      "Name": "in2023_29971885_06",
+      "MinPS": 0,
+      "MaxPS": 3.0480060960121924,
+      "LowPS": 0.15240030480060962,
+      "HighPS": 0.30480060960121924,
+      "Category": 1,
+      "Tag": "Dataset",
+      "GroupName": "",
+      "ProductName": "",
+      "CenterX": -9675679.107876439,
+      "CenterY": 4928171.631274891,
+      "ZOrder": null,
+      "Image_Year": "2023",
+      "County": "Tippecanoe",
+      "Pixel_Size": "06 in.",
+      "Shape_Length": 4006.3241080527528,
+      "Shape_Area": 1003160.7421124495
+    },
+    "orthophoto_overlay": "indiana_2023_orthophoto_overlay_r5.png",
+    "official_facade_image": "official_purdue_photo_2021.jpg",
+    "housing_page_snapshot": "purdue_residence_page_2026.html",
+    "housing_page_url": "https://housing.purdue.edu/my-housing/options/residence-halls/parker-south.html",
+    "render": "gis_shell_exterior.png"
+  },
+  "findings": [
+    "The R5 shell correction resolves the main east-wing position/shape problem from baseline; the actual mesh outline matches Purdue GIS FID 879 and the 2023 Tippecanoe roof image.",
+    "The fresh master marker is at the manifest origin with zero translation error, zero rotation, unit scale, and only one collection instance.",
+    "This narrow pass is not an as-built claim: floor-count/height semantics, measured wall lines, full residential circulation, exact openings, and final rendered materials remain uncertain or schematic.",
+    "Priority follow-up is a neutral daylight exterior render with roof services checked, plus a labeled representative resident-floor/corridor cutaway and source-backed reconciliation of the GIS area/floor fields."
+  ]
+}
