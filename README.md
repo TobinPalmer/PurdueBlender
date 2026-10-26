@@ -160,7 +160,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (17)
+### Detailed models still in progress or awaiting a grade (18)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -181,10 +181,11 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Johnson Hall of Nursing (JNSN) | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | [9.3/10](audit/massing_johnson_hall_of_nursing_jnsn_823fca7/independent_grade/r2/result.json); awaiting master integration | Tobin |
 | Purdue Police Department (TERY) | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | [8.4/10](audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json); awaiting master integration | Rossen |
+| Telecommunications Building (TEL) | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | [8.0/10](audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json); awaiting master integration | Rossen |
 
 
 
-### Buildings that still have only massing models (53)
+### Buildings that still have only massing models (52)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -228,7 +229,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | smith hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | Arjav |
 | stone hall ston | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | Rossen |
 | student health center push | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Rossen |
-| telecommunications building tel | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | Rossen |
 | the caretaker s cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | Rossen |
 | the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Rossen |
 | the moosehead lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | Rossen |
@@ -433,7 +433,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 194 | Hilltop Apartment 2 | [massing_house_301842060_c96be34](modular/buildings/massing_house_301842060_c96be34.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 196 | Hall of Data Science and AI | [massing_hall_of_data_science_and_ai_dsai_c8a41cc](modular/buildings/massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 197 | John W. Hicks Undergraduate Library | [massing_hicks_undergraduate_library_hiks_9467680](modular/buildings/massing_hicks_undergraduate_library_hiks_9467680.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 199 | Telecommunications Building | [massing_telecommunications_building_tel_8dfaccf](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 199 | Telecommunications Building | [massing_telecommunications_building_tel_8dfaccf](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | Independently graded 8.0/10; FID 199 identity, footprint and placement verified; awaiting master integration (see TODO.md); facade and height remain uncertain |
 | 201 | Tee-hangar No. 2 | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 202 | Tee-hangar No. 3 | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 203 | Hilltop Apartment 29 | [massing_house_301842867_f640b11](modular/buildings/massing_house_301842867_f640b11.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
