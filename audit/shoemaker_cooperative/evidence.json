@@ -1,0 +1,87 @@
+{
+  "building": "Shoemaker Cooperative",
+  "asset_id": "massing_shoemaker_cooperative_2159ea4",
+  "status": "Detailed asset updated; pending independent grade",
+  "source": {
+    "provider": "Purdue University official campus building footprint service",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 800,
+    "building_code": "SOSH",
+    "source_name": "Shoemaker",
+    "retrieval_date": "2026-10-22 (repository-preserved source snapshot)",
+    "source_date": "Not supplied in the service snapshot",
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "source_record": "source_feature_800_raw.json",
+    "reference_status": "Official campus map polygon; not a certified survey",
+    "secondary_visual_references": [
+      {
+        "url": "https://www.shoemakercooperative.com/our-home",
+        "use": "Address and owner photo tour; its gallery labels a second floor; visual dimensions approximated",
+        "provider": "Shoemaker Cooperative"
+      },
+      {
+        "url": "https://archives.lib.purdue.edu/agents/corporate_entities/611",
+        "use": "Cooperative identity and historical context",
+        "provider": "Purdue University Archives and Special Collections"
+      }
+    ]
+  },
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not surveyed CRS"
+  },
+  "measurements": {
+    "method": "Compared the structural wall polygon built from the official feature ring using the repository transform; facade details and entrance are excluded from plan comparison",
+    "official_footprint_aabb_xy_m": [
+      334.4441890273138,
+      -59.578147744546186,
+      357.8187682472943,
+      -33.65076509562641
+    ],
+    "official_minimum_rotated_rectangle": {
+      "width_m": 23.074683895767464,
+      "depth_m": 17.020412337688953,
+      "angle_degrees_east_ccw": 128.54401842574157
+    },
+    "official_polygon_area_m2": 498.84765625,
+    "before_asset_aabb_xy_m": [
+      334.57781982421875,
+      -60.150367736816406,
+      358.2993469238281,
+      -33.511871337890625
+    ],
+    "before_asset_height_m": [
+      0.0,
+      16.0
+    ],
+    "after_structural_shell": "Built from all distinct official source-ring vertices; intended to match official footprint within coordinate conversion precision",
+    "after_modeled_height_m": 6.7,
+    "position_status": "Structural footprint set to the official map polygon coordinates; underlying source positional uncertainty is unpublished",
+    "plan_dimension_status": "Footprint matches official source polygon; polygon is not a survey",
+    "orientation_status": "Structural shell follows official polygon vertex orientation",
+    "height_status": "estimated; no verified elevation drawing or measured height",
+    "official_num_levels_attribute": 1,
+    "official_extrution_attribute": 17
+  },
+  "geometry_edits": [
+    "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
+    "Added facade materials, repeated window bays, window surrounds, floor bands, plinth and roof coping.",
+    "Added an entrance marker oriented toward west; exact facade detail placement remains approximate."
+  ],
+  "uncertainties": [
+    "The official map polygon is not a certified survey and has no published position/dimension uncertainty.",
+    "Height has not been checked against elevation drawings or on-site measurement; GIS level/Extrution fields are not treated as height measurements.",
+    "GIS levels attribute 1 conflicts with cooperative photo gallery labelling a second floor; modeled two-storey mass remains an estimate",
+    "Facade details, window spacing and entrance position are approximate and need independent visual review.",
+    "No independent grader has reviewed this revision."
+  ],
+  "artifacts": {
+    "build_script": "build_detail.py",
+    "build_config": "build_config.json",
+    "raw_source": "source_feature_800_raw.json"
+  }
+}
