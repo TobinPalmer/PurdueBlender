@@ -1,7 +1,7 @@
 {
   "building": "Shoemaker Cooperative",
   "asset_id": "massing_shoemaker_cooperative_2159ea4",
-  "status": "Operator exterior photo now informs the gable roof, two-level corner porch, and shutters; GIS level-count conflict, campus orientation, and height remain unresolved or estimated",
+  "status": "Independent review passed at 8.5/10; GIS footprint, operator photo features, and the level-count conflict are documented",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -74,7 +74,8 @@
       "max_y": -33.46479,
       "min_z": 0.0,
       "max_z": 10.2
-    }
+    },
+    "reopen_validation": "Saved library reopened in Blender 5.2.3 LTS; expected one-object collection and ten transformed GIS footprint vertices verified, maximum residual 0.000014 m."
   },
   "geometry_edits": [
     "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
@@ -87,16 +88,19 @@
     "The map NUM_LEVELS attribute is 1, while the operator site provides a Floor Two gallery label and an exterior image showing two above-grade levels; field counting semantics remain unresolved.",
     "The exterior photo is partial, monochrome, and unscaled; exact height, roof wings, campus orientation, window spacing, and porch location are not measured.",
     "Wall color is unknown. The gable placement, entrance location, facade rhythms, and architectural dimensions remain approximate and need independent exterior review.",
-    "No independent grader has reviewed this revision."
+    "Independent grade passed at 8.5/10; criterion-level results are saved under independent_grade_codex/."
   ],
   "artifacts": {
-    "build_script": "build_detail.py",
+    "build_script": "../../modular/buildings/build_massing_shoemaker_cooperative_2159ea4.py",
     "build_config": "build_config.json",
     "raw_source": "source_feature_800_raw.json",
     "owner_site_observation": "source_owner_site_observation.json",
     "build_preview": "preview_detail_r2.png",
     "render_script": "render_preview.py",
     "reopen_validation": "reopen_validation.json",
-    "validation_script": "validate_asset.py"
+    "validation_script": "validate_asset.py",
+    "preview_render_script": "render_preview.py",
+    "independent_grade": "independent_grade_codex/result.json",
+    "independent_evaluator": "independent_grade_codex/evaluate.py"
   }
 }
