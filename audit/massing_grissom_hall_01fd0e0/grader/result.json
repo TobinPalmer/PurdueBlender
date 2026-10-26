@@ -1,0 +1,163 @@
+{
+  "building_id": "massing_grissom_hall_01fd0e0",
+  "score": 6.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "partially verified",
+      "evidence": [
+        "Saved ArcGIS snapshot contains a building feature named Grissom Hall with abbreviation GRIS and address 315 N. Grant Street.",
+        "Freshly loaded structural shell bounds are 214.54..257.63 m X and -138.26..-74.50 m Y; transformed live feature bounds are 218.36..257.81 m X and -138.40..-74.64 m Y.",
+        "Shell minus current GIS envelope deltas (min,max) are [[-3.818853685324086, -0.18045672332812046], [0.1378225417770409, 0.13784995838159375]]; west edge differs by about 3.82 m while the other envelope edges agree closely.",
+        "A before-model snapshot exists, but the evidence record says the earlier official GIS identifier 236 has no accompanying raw snapshot, leaving the western shell jog not independently traced to a reproducible source."
+      ],
+      "findings": [
+        "Resolve the projecting west entry/wall jog against a saved official source polygon or dimensioned plan; preserve the source snapshot and feature identifier."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "partially verified",
+      "evidence": [
+        "Fresh load confirms shell world bounds [[214.54244995117188, 257.63433837890625], [-138.26223754882812, -74.50425720214844], [0.0, 11.399999618530273]]; reported structural dimensions are 43.09 x 63.76 x 11.40 m.",
+        "Asset retains campus-coordinate geometry and identity transform; footprint envelope agrees with three sides of the current Purdue GIS polygon.",
+        "No independently sourced bearing, control point, dimensioned plan, or survey is included; the local geographic conversion is explicitly approximate, and polygon disagreement at the west side complicates orientation/scale validation."
+      ],
+      "findings": [
+        "Add a second control source or dimensioned plan to establish footprint bearing, dimensions, and the west-side alignment independently."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 0.5,
+      "max_score": 2,
+      "status": "estimated / unverified",
+      "evidence": [
+        "Freshly loaded shell height is 11.40 m; the saved evidence identifies it as an inherited legacy estimate, not a measured elevation.",
+        "The archive snapshot supports two historic main floors plus attic; the current source material does not include measured elevations or a current dimensioned section.",
+        "The model has three horizontal fa\u00e7ade levels and a flat parapet/cornice roof. Neither exact current floor heights nor hidden roof construction are established by the supplied evidence."
+      ],
+      "findings": [
+        "Obtain a current elevation/section or reliable height source; until then keep the 11.4 m height, floor spacing, and roof assembly explicitly estimated."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "partially verified",
+      "evidence": [
+        "Purdue's saved exterior photograph directly supports red brick, pale stone courses/surrounds, multi-pane windows, monumental pale columns, and a glazed entry.",
+        "The reopened exported collection contains 36 objects, including the shell, repeated windows/stone bands, entry doors, column objects, architrave and pediment; these features are visible in the supplied previews.",
+        "The single oblique photo has foliage occlusion and only shows part of the building. The modeled six-column portico count and position, repeated regular window rhythm on all elevations, and shallow pediment shape are not verified by the photo; the visible reference appears to integrate larger columns within a distinct facade composition."
+      ],
+      "findings": [
+        "Compare the portico column count/spacing and facade bays against additional elevation-specific photos or plans; keep unseen elevations and dimensions labeled approximate."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "mostly verified",
+      "evidence": [
+        "Fresh load opens the saved .blend; expected collection 'Asset_massing_grissom_hall_01fd0e0' exists with 36 objects, and scene 'Building_massing_grissom_hall_01fd0e0' is present.",
+        "The collection's measured bounds are [[213.28744506835938, 257.874755859375], [-138.50265502929688, -74.26383972167969], [-0.04999995231628418, 11.399999618530273]]; the shell and added geometry remain in the expected campus-coordinate frame.",
+        "External file images: 0; unpacked image files missing on disk: [].",
+        "Evidence includes raw GIS, Purdue facilities/project and archive snapshots, an architect project page, a current Purdue exterior image, source metadata, uncertainty notes and three previews.",
+        "The shared manifest still lists only the shell and object_count 1, while the actual asset collection contains multiple detail objects. This is an index mismatch outside the graded building file."
+      ],
+      "findings": [
+        "Coordinator should update the shared manifest object list/count to match the exported collection before integration."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/massing_grissom_hall_01fd0e0.blend",
+    "loaded_file": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_grissom_hall_01fd0e0.blend",
+    "collection": "Asset_massing_grissom_hall_01fd0e0",
+    "collection_object_count": 36,
+    "mesh_object_count": 36,
+    "scene_present": true,
+    "shell_bounds_world_m": [
+      [
+        214.54244995117188,
+        257.63433837890625
+      ],
+      [
+        -138.26223754882812,
+        -74.50425720214844
+      ],
+      [
+        0.0,
+        11.399999618530273
+      ]
+    ],
+    "collection_bounds_world_m": [
+      [
+        213.28744506835938,
+        257.874755859375
+      ],
+      [
+        -138.50265502929688,
+        -74.26383972167969
+      ],
+      [
+        -0.04999995231628418,
+        11.399999618530273
+      ]
+    ],
+    "gis_feature_id": 180,
+    "gis_transformed_envelope_local_m": [
+      [
+        218.36130363649596,
+        257.81479510223437
+      ],
+      [
+        -138.40006009060517,
+        -74.64210716053003
+      ]
+    ],
+    "shell_minus_gis_edge_deltas_m": [
+      [
+        -3.818853685324086,
+        -0.18045672332812046
+      ],
+      [
+        0.1378225417770409,
+        0.13784995838159375
+      ]
+    ],
+    "file_images": 0,
+    "unpacked_image_files_missing": [],
+    "source_files_present": [
+      "architect.html",
+      "archives_building_225.html",
+      "gis.json",
+      "lookup.html",
+      "massing_grissom_before.blend",
+      "purdue.html",
+      "purdue_exterior_g1.jpg"
+    ],
+    "previews_present": [
+      "grissom_exterior_axonometric.png",
+      "grissom_plan.png",
+      "grissom_west_entry.png"
+    ]
+  },
+  "findings": [
+    "Resolve the projecting west entry/wall jog against a saved official source polygon or dimensioned plan; preserve the source snapshot and feature identifier.",
+    "Add a second control source or dimensioned plan to establish footprint bearing, dimensions, and the west-side alignment independently.",
+    "Obtain a current elevation/section or reliable height source; until then keep the 11.4 m height, floor spacing, and roof assembly explicitly estimated.",
+    "Compare the portico column count/spacing and facade bays against additional elevation-specific photos or plans; keep unseen elevations and dimensions labeled approximate.",
+    "Coordinator should update the shared manifest object list/count to match the exported collection before integration."
+  ],
+  "grader_note": "Independent geometry inspection and source comparison. The score deducts for unsupported height/roof, incomplete evidence for the west footprint jog and orientation, unverified facade repetition/portico dimensions, and stale shared manifest object inventory."
+}

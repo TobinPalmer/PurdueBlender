@@ -1,0 +1,291 @@
+{
+  "building_id": "massing_grissom_hall_01fd0e0",
+  "building_name": "Grissom Hall",
+  "owner_assignment": "Rossen",
+  "asset_path": "modular/buildings/massing_grissom_hall_01fd0e0.blend",
+  "exported_collection": "Asset_massing_grissom_hall_01fd0e0",
+  "build_script": "modular/buildings/build_massing_grissom_hall_01fd0e0.py",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University GIS, BuildingShapesZip4 FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D236&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "layer_metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "snapshot": "sources/official_feature_236.json",
+      "layer_metadata_snapshot": "sources/official_footprint_layer.json",
+      "feature_id": 236,
+      "attributes": {
+        "FID": 236,
+        "BLDG_ABBR": "GRIS",
+        "BUILDING_N": "Grissom Hall",
+        "ADDRESS": "315 N Grant Street",
+        "NUM_LEVELS": 5,
+        "CountOfFLO": 5,
+        "Elevation": 615.5,
+        "Extrution": 48,
+        "F01": 0,
+        "F02": 18.5,
+        "F03": 35,
+        "F04": 0,
+        "F05": 0,
+        "R": 47.2,
+        "Shape__Area_m2": 3329.3828125,
+        "Shape__Length_m": 329.57157947233134
+      },
+      "source_crs": "EPSG:4326 geometry requested and saved; source layer geometry properties report esriMeters for area/length.",
+      "measurement_method": "Transformed polygon with project local approximation X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040. Deduplicated vertices at 1e-5 m and compared bidirectional nearest-vertex distances against the assigned shell. The exact 22-vertex perimeter match has maximum residual about 0.000012 m (projection/coordinate precision limited).",
+      "vertical_field_interpretation": "Feature stores Elevation=615.5, Extrution=48, F02=18.5, F03=35, R=47.2. Layer schema exposes numeric types but no unit metadata or field descriptions. Model uses the likely feet interpretation (x0.3048) provisionally: Elevation=615.5 ft is plausible for local ground elevation, Extrution=48 ft gives 14.6304 m, R=47.2 ft gives 14.38656 m, and floor fields imply 5.6388 m and 10.668 m. This is an inference, not verified field-unit documentation or a survey measurement. FID count conflict retained as unresolved.",
+      "uncertainty": "Feature is plan geometry with vertical attributes of undocumented semantics/units; NUM_LEVELS and CountOfFLO=5 conflict with Purdue IE's 2015 description of the renovated building as three-story. Model height therefore follows the likely feet interpretation of Extrution and roof R only provisionally."
+    },
+    {
+      "provider": "Purdue University Libraries, GIS / Purdue campus ArcGIS REST service",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=ABBR%3D%27GRIS%27&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "snapshot": "sources/gis.json",
+      "feature_id": 180,
+      "attributes": {
+        "ABBR": "GRIS",
+        "Name": "Grissom Hall",
+        "ADDRESS": "315 N. Grant Street",
+        "buildingidlong": 225,
+        "reported_shape_area": 3255.535180205,
+        "reported_shape_perimeter": 320.545776089
+      },
+      "source_crs": "EPSG:4326 (requested outSR=4326; ArcGIS JSON spatialReference is saved in snapshot)",
+      "measurement_method": "Same local geographic approximation as above; secondary context comparison only. Its simplified west bound is 3.82 m east of the manifest-linked FID 236 / assigned shell west bound.",
+      "gis_envelope_local_m": {
+        "x": [
+          218.3613,
+          257.8148
+        ],
+        "y": [
+          -138.4001,
+          -74.6421
+        ]
+      },
+      "uncertainty": "This is a distinct generalized service feature, not the assigned FID 236 geometry. Its simplified west edge explains the previous apparent 3.82 m mismatch and is not a reason to alter the exact assigned shell."
+    },
+    {
+      "provider": "Purdue University, Edwardson School of Industrial Engineering",
+      "url": "https://engineering.purdue.edu/IE/aboutus/aboutus/facilities/facilities-reinvention",
+      "snapshot": "sources/purdue.html",
+      "source_date": "Project describes 2014-2015 reinvention; page accessed 2026-10-26",
+      "source_crs": "Not applicable",
+      "measurement_method": "Project narrative identifies building reinvention, modernization and classroom/lab/study program; it states the existing 1906 building was gutted to its brick walls and rebuilt.",
+      "uncertainty": "No measured elevations, structural plan or explicit story-height dimensions were supplied."
+    },
+    {
+      "provider": "Purdue University, Edwardson School of Industrial Engineering",
+      "url": "https://engineering.purdue.edu/IE/aboutus/facilities/facilities-celebration",
+      "snapshot": "sources/purdue_celebration_2015.html",
+      "source_date": "2015 project description; page accessed 2026-10-26",
+      "source_crs": "Not applicable",
+      "measurement_method": "Narrative identifies the renovated Grissom Hall as a three-story building, supporting three visible above-grade facade levels; it does not supply measured floor-to-floor or roof heights.",
+      "uncertainty": "Story count describes the 2015 renovated building and does not establish exact vertical dimensions."
+    },
+    {
+      "provider": "MSKTD & Associates, project architect and engineer",
+      "url": "https://msktd.com/project/purdue-university-grissom-hall/",
+      "snapshot": "sources/architect.html",
+      "source_date": "Web project page, accessed 2026-10-26; renovation project period 2014-2015 corroborated by Purdue IE",
+      "source_crs": "Not applicable",
+      "measurement_method": "Project description reports 52,000 square feet of renovated space and records the building's renovated learning/work program.",
+      "uncertainty": "No exterior elevation or dimensioned drawing available in the saved page."
+    },
+    {
+      "provider": "Purdue University, Edwardson School of Industrial Engineering",
+      "url": "https://engineering.purdue.edu/IE/aboutus/facilities/g1.jpg",
+      "snapshot": "sources/purdue_exterior_g1.jpg",
+      "source_date": "Image date not published; current facilities page image accessed 2026-10-26",
+      "source_crs": "Not applicable",
+      "measurement_method": "Visual reference directly supports red brick, pale limestone courses/surrounds, large multi-pane window groupings, monumental pale classical columns, broad stone entablature and a glazed entry.",
+      "uncertainty": "Single oblique photo with foliage occlusion; it does not verify all facades, exact bay positions, column count, portico dimensions or roof construction. The model does not add a triangular pediment because this image does not establish one."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/575",
+      "snapshot": "sources/archives_building_225.html",
+      "source_date": "Historic description cites Purdue Campus Facilities and Buildings Historic Database; archive page accessed 2026-10-26",
+      "source_crs": "Not applicable",
+      "measurement_method": "Historical description says the 1906 Civil Engineering Building had two main floors and an attic story, received a 1928 addition and was renamed Grissom Hall in 1968.",
+      "uncertainty": "Historical story count does not establish exact current floors or current vertical dimensions after renovation."
+    },
+    {
+      "provider": "Purdue University Events, Localist venue record",
+      "url": "https://events.purdue.edu/grissom_hall",
+      "snapshot": "sources/lookup.html",
+      "source_date": "Venue page accessed 2026-10-26",
+      "source_crs": "Not applicable",
+      "measurement_method": "Confirms identity and address 315 N Grant St, West Lafayette, IN 47907-2023.",
+      "uncertainty": "Venue listing does not document geometry or architecture."
+    }
+  ],
+  "geometry_review": {
+    "source_shell_bounds_world_m": {
+      "x": [
+        214.54244995117188,
+        257.63433837890625
+      ],
+      "y": [
+        -138.26223754882812,
+        -74.50425720214844
+      ],
+      "z": [
+        0.0,
+        14.630399703979492
+      ]
+    },
+    "export_validation": {
+      "reopened_in_blender": true,
+      "exported_collection_object_count": 27,
+      "primary_shell_object_name": "Grissom Hall",
+      "primary_shell_modifiers": 0,
+      "all_external_images_packed": true,
+      "asset_collection_instance_transform": "identity; retained campus coordinates",
+      "asset_bounds_world_m": {
+        "x": [
+          213.28744506835938,
+          257.874755859375
+        ],
+        "y": [
+          -138.50265502929688,
+          -74.26383972167969
+        ],
+        "z": [
+          -0.04999995231628418,
+          14.630399703979492
+        ]
+      },
+      "scene_name": "Building_massing_grissom_hall_01fd0e0",
+      "instance_offset": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "overall_detail_bounds_world_m": {
+      "x": [
+        213.28744506835938,
+        257.874755859375
+      ],
+      "y": [
+        -138.50265502929688,
+        -74.26383972167969
+      ],
+      "z": [
+        -0.04999995231628418,
+        14.630399703979492
+      ],
+      "note": "Fresh-reopen union of mesh object local bounds transformed to world coordinates; includes portico projection and column bases."
+    },
+    "before_after_structural_footprint": "Original source shell XY vertices, object location, and mesh footprint were preserved. Added fenestration/stone/portico details are separate meshes in the assigned exported collection.",
+    "live_purdue_gis_comparison": "Manifest-linked Purdue BuildingShapesZip4 FID 236 is an exact perimeter match: 22 unique vertices per polygon and bidirectional maximum nearest-vertex residual approximately 0.000012 m after the documented local geographic approximation. Generalized Purdue campus MapServer OID 180 has a west edge 3.82 m east of this outline; it is a separate simplified geometry and the earlier mismatch was a source-selection issue, not a shell error.",
+    "coordinate_frame": "Simple massing in campus coordinates; project local approximate origin latitude 40.4274 longitude -86.9137; meters, X east, Y north, Z up.",
+    "position": "No world translation or rotation applied. Existing source shell remains in campus coordinates.",
+    "height_and_floors": {
+      "asset_height_m": 14.6304,
+      "height_source_raw": {
+        "Extrution": 48,
+        "R": 47.2,
+        "F02": 18.5,
+        "F03": 35,
+        "Elevation": 615.5
+      },
+      "unit_status": "undocumented in ArcGIS layer schema; feet conversion is an inference",
+      "story_interpretation": "Three visible facade levels modeled to agree with Purdue IE's 2015 three-story description. GIS F02/F03 values are provisionally interpreted as floor elevations in feet (5.6388 m and 10.668 m); exact floor datum/semantics unverified.",
+      "status": "provisional estimate informed by raw official GIS vertical fields and story-count source",
+      "basis": "Feature FID 236 reports Extrution=48 and R=47.2 but field units are undocumented. Applying the likely feet conversion yields shell top 14.6304 m and roof/cornice reference 14.38656 m. These values replace legacy 11.4 m massing estimate, but remain inferred rather than measured. The feature's NUM_LEVELS/CountOfFLO=5 conflicts with the 2015 Purdue IE three-story narrative, so count fields are preserved without treating them as verified above-grade stories."
+    },
+    "roof": "Flat parapet/cornice silhouette is modeled from the shell and photographed horizontal masonry treatment. FID 236 R=47.2 is used as a provisional roof elevation after inferred feet conversion. Roof assembly, drainage, mechanical equipment and hidden geometry are unverified.",
+    "orientation": "Original shell orientation retained. New façade overlays follow its exact side-face perimeter loop; no rotation applied.",
+    "edits": [
+      "Preserved original structural footprint mesh and campus position.",
+      "Replaced shell surface material with portable procedural red-brick material.",
+      "Added repeated glazed window openings and pale frames/sills/mullions to long exterior runs.",
+      "Resized the shell top to 14.6304 m using FID 236 Extrution=48 under an explicitly provisional feet interpretation; retained its exact XY perimeter and campus position.",
+      "Added limestone story courses at provisional F02/F03 GIS heights and an upper cornice referenced to R=47.2, all converted from likely feet and explicitly uncertain.",
+      "Added an estimated west-facing four-column limestone portico, glazed double entry and broad entablature based on Purdue exterior photo; exact count, spacing and placement are unverified.",
+      "Packed all linked texture resources into the asset."
+    ],
+    "previews": [
+      "previews/grissom_exterior_axonometric.png",
+      "previews/grissom_plan.png",
+      "previews/grissom_west_entry.png"
+    ],
+    "remaining_uncertainty": [
+      "No dimensioned current plan/elevation or GIS unit documentation was located; height/floor levels use inferred feet conversion and exact window count/spacing and portico count/placement remain approximate.",
+      "FID 236 count attributes NUM_LEVELS=5 and CountOfFLO=5 conflict with Purdue IE's 2015 three-story description; vertical-field semantics and floor datum remain unresolved.",
+      "Generalized campus OID 180 omits a westward portion; it is retained in evidence as a separate geometry source and is not used to modify the assigned FID 236 shell.",
+      "The photograph does not reveal all elevations, detailed roof construction or below-grade conditions."
+    ],
+    "fid236_perimeter_validation": {
+      "method": "Reopened asset; deduplicated shell and assigned feature polygon vertices at 1e-5 m; bidirectional nearest-vertex comparison after documented local geographic approximation.",
+      "shell_unique_vertices": 22,
+      "FID236_unique_vertices": 22,
+      "bidirectional_max_nearest_vertex_residual_m": 1.1997696865889508e-05,
+      "bidirectional_mean_nearest_vertex_residual_m": 5.2111240877803585e-06,
+      "result": "Exact match within coordinate/projection precision; no shell XY edits made."
+    },
+    "reopened_validation_snapshot": "reopened_validation.json",
+    "validation": {
+      "asset_reopened": true,
+      "blender_version": "4.5.15 LTS",
+      "asset_path": "../../modular/buildings/massing_grissom_hall_01fd0e0.blend",
+      "footprint_verified_against": "sources/official_feature_236.json",
+      "external_images": [],
+      "portability": "No external file images; all content is procedural or packed."
+    }
+  },
+  "source_snapshot_inventory": {
+    "raw_official_gis": [
+      "sources/official_feature_236.json",
+      "sources/official_footprint_layer.json",
+      "sources/official_layer_item.json",
+      "sources/gis.json"
+    ],
+    "purdue_and_architecture": [
+      "sources/purdue.html",
+      "sources/purdue_celebration_2015.html",
+      "sources/purdue_renovation_levels_2015.pdf",
+      "sources/purdue_exterior_g1.jpg",
+      "sources/architect.html",
+      "sources/archives_building_225.html",
+      "sources/lookup.html"
+    ],
+    "additional_architect_images": [
+      "sources/msktd_project-pug-1.jpg",
+      "sources/msktd_project-pug-2.jpg",
+      "sources/msktd_project-pug-3.jpg",
+      "sources/msktd_project-pug-4.jpg",
+      "sources/msktd_project-pug-5.jpg",
+      "sources/msktd_project-pug-6.jpg",
+      "sources/msktd_project-pug-7.jpg",
+      "sources/msktd_project-pug-8.jpg",
+      "sources/msktd_project-pug-f.jpg"
+    ],
+    "before_asset": "sources/massing_grissom_before.blend",
+    "previews": [
+      "previews/grissom_exterior_axonometric.png",
+      "previews/grissom_plan.png",
+      "previews/grissom_west_entry.png"
+    ],
+    "validation": "reopened_validation.json",
+    "final_independent_grade": "grader/r2/result.json"
+  },
+  "independent_grading": {
+    "initial_grade": {
+      "path": "grader/result.json",
+      "score": 6.5,
+      "max_score": 10,
+      "passed": false,
+      "note": "Resolved findings through assigned FID 236 exact perimeter match, provisional vertical GIS interpretation, source uncertainty labels, and facade revisions."
+    },
+    "final_grade": {
+      "path": "grader/r2/result.json",
+      "score": 8.0,
+      "max_score": 10,
+      "passing_threshold": 8,
+      "passed": true,
+      "method": "Separate independent evaluator reopened the saved asset, checked FID 236 geometry and raw attributes, inspected source photo/previews and evidence; evaluator result is preserved at the referenced path."
+    }
+  }
+}

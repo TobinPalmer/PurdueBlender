@@ -1,0 +1,151 @@
+{
+  "building_id": "massing_grissom_hall_01fd0e0",
+  "score": 8.0,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified within project transform precision",
+      "evidence": [
+        "Raw Purdue BuildingShapesZip4 snapshot identifies FID 236 as GRIS / Grissom Hall, 315 N Grant Street; the separate Purdue campus MapServer generalized geometry is not substituted for this assigned source.",
+        "Freshly opened asset shell and raw FID 236 polygon each contain 22 unique perimeter vertices after 1e-5 m deduplication.",
+        "Independent bidirectional nearest-vertex residual is 0.00001200 m using the project's documented approximate lon/lat-to-local-metre transform; shell perimeter agrees to coordinate/projection precision."
+      ],
+      "findings": []
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2,
+      "status": "strongly verified horizontally; transform remains approximate",
+      "evidence": [
+        "Fresh shell world bounds (m): [[214.54244995117188, 257.63433837890625], [-138.26223754882812, -74.50425720214844], [0.0, 14.630399703979492]]; structural dimensions are 43.092 x 63.758 m.",
+        "Assigned source polygon is co-registered vertex-for-vertex within 0.00001200 m; perimeter orientation, plan shape, and position follow the assigned Purdue GIS source.",
+        "The model stays in the existing simple-massing campus-coordinate frame with identity collection offset. The project transform is a local approximation, not a survey/control-network coordinate reference."
+      ],
+      "findings": [
+        "Absolute placement accuracy is limited by the project's approximate local geographic conversion; no survey control was supplied."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "status": "partly supported; height provisional",
+      "evidence": [
+        "Fresh shell height is 14.6304 m. Raw FID 236 records Extrution=48, R=47.2, F02=18.5, F03=35 and Elevation=615.5; the GIS layer schema contains no unit/field-description metadata.",
+        "The model provisionally interprets vertical fields as feet (48 ft = 14.6304 m; R=47.2 ft = 14.38656 m). Purdue IE's saved 2015 source describes the renovated building as three-story, consistent with three visible facade levels, but does not provide dimensions.",
+        "FID 236 also says NUM_LEVELS=5 and CountOfFLO=5, in conflict with Purdue's three-story description. Therefore neither inferred feet nor field semantics resolve exact height/floor datum; treat the current height and level bands as estimates. The flat parapet is plausible from the photo but hidden roof construction is unknown."
+      ],
+      "findings": [
+        "GIS vertical units and field semantics remain undocumented; confirm against an elevation, section, or surveyed height before treating 14.6304 m as measured.",
+        "GIS five-level attributes conflict with Purdue IE's three-story narrative; retain this source conflict in the evidence record."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "partly supported by direct photo evidence",
+      "evidence": [
+        "Directly inspected Purdue exterior photo supports red brick, pale limestone horizontal bands and surrounds, large multi-pane window groupings, a glazed entry, and monumental pale classical columns beneath a broad stone entablature.",
+        "Fresh preview shows those materials/features as brick shell, pale courses/surrounds, repeated glazing and frames, west entry doors, and four monumental portico columns. Revised asset no longer adds the unsupported triangular pediment.",
+        "The single oblique, foliage-obscured photo does not establish total column count, exact portico location/dimensions, all facade window rhythms, or unseen elevations. These remain schematic estimates."
+      ],
+      "findings": [
+        "Column count, facade bays, and unseen elevations remain approximate because the saved photo is partial and no elevation drawing was found."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "asset and source package verified; shared index stale",
+      "evidence": [
+        "Fresh load contains expected collection 'Asset_massing_grissom_hall_01fd0e0', scene 'Building_massing_grissom_hall_01fd0e0', 27 collection objects, and zero shell modifiers; identity collection offset is [0.0, 0.0, 0.0].",
+        "Entire exported mesh envelope is [[213.28744506835938, 257.874755859375], [-138.50265502929688, -74.26383972167969], [-0.04999995231628418, 14.630399703979492]]; 0 file-backed images and 0 unpacked image paths. The asset is self-contained with generated/material-only geometry and no external image dependencies.",
+        "Building-specific evidence contains raw FID 236 and separate GIS snapshots, source metadata, Purdue/architect/archive snapshots, current exterior photo, reopened validation, and three previews.",
+        "Coordinator-owned modular manifest still records 1 object(s), shell height 11.399999618530273 m, and shell-only name, while the saved collection has 27 objects and reaches 14.6304 m. The export works; the shared index is stale."
+      ],
+      "findings": [
+        "Coordinator should refresh Grissom's manifest object inventory and vertical bounds to match the saved asset before integration."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/massing_grissom_hall_01fd0e0.blend",
+    "loaded_file": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_grissom_hall_01fd0e0.blend",
+    "collection": "Asset_massing_grissom_hall_01fd0e0",
+    "scene": "Building_massing_grissom_hall_01fd0e0",
+    "collection_object_count": 27,
+    "shell_bounds_world_m": [
+      [
+        214.54244995117188,
+        257.63433837890625
+      ],
+      [
+        -138.26223754882812,
+        -74.50425720214844
+      ],
+      [
+        0.0,
+        14.630399703979492
+      ]
+    ],
+    "collection_bounds_world_m": [
+      [
+        213.28744506835938,
+        257.874755859375
+      ],
+      [
+        -138.50265502929688,
+        -74.26383972167969
+      ],
+      [
+        -0.04999995231628418,
+        14.630399703979492
+      ]
+    ],
+    "source_provider": "Purdue University GIS BuildingShapesZip4",
+    "source_feature_id": 236,
+    "source_abbreviation": "GRIS",
+    "source_raw_vertical_attributes": {
+      "NUM_LEVELS": 5,
+      "CountOfFLO": 5,
+      "Elevation": 615.5,
+      "Extrution": 48,
+      "F02": 18.5,
+      "F03": 35,
+      "R": 47.2
+    },
+    "unique_shell_vertices": 22,
+    "unique_source_vertices": 22,
+    "bidirectional_vertex_residual_max_m": 1.1997696865889508e-05,
+    "collection_instance_offset": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shell_modifier_count": 0,
+    "file_images": 0,
+    "unpacked_file_images": [],
+    "inspected_source_photo": "audit/massing_grissom_hall_01fd0e0/sources/purdue_exterior_g1.jpg",
+    "inspected_previews": [
+      "audit/massing_grissom_hall_01fd0e0/previews/grissom_exterior_axonometric.png",
+      "audit/massing_grissom_hall_01fd0e0/previews/grissom_plan.png",
+      "audit/massing_grissom_hall_01fd0e0/previews/grissom_west_entry.png"
+    ]
+  },
+  "findings": [
+    "Absolute placement accuracy is limited by the project's approximate local geographic conversion; no survey control was supplied.",
+    "GIS vertical units and field semantics remain undocumented; confirm against an elevation, section, or surveyed height before treating 14.6304 m as measured.",
+    "GIS five-level attributes conflict with Purdue IE's three-story narrative; retain this source conflict in the evidence record.",
+    "Column count, facade bays, and unseen elevations remain approximate because the saved photo is partial and no elevation drawing was found.",
+    "Coordinator should refresh Grissom's manifest object inventory and vertical bounds to match the saved asset before integration."
+  ],
+  "grader_note": "Fresh-process inspection of the revised saved Blender asset, raw FID 236 polygon and attributes, source photograph, previews, evidence snapshots, and shared manifest. Height uses the builder's inferred feet conversion only provisionally; the GIS field units remain undocumented."
+}
