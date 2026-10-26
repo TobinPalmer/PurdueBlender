@@ -1,0 +1,148 @@
+Blender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)
+Read blend: "C:\Users\gotse\Documents\Codex\2026-10-25\github-plugin-github-openai-curated-remote\outputs\PurdueBlender\modular\buildings\class_of_1950.blend"
+Warning: region type 11 missing in space type "Action" (id: 12) - removing region
+Warning: region type 14 missing in space type "Node" (id: 16) - removing region
+regiondata free error
+Warning: region type 15 missing in space type "Node" (id: 16) - removing region
+Warning: region type 11 missing in space type "Action" (id: 12) - removing region
+Warning: region type 14 missing in space type "Node" (id: 16) - removing region
+regiondata free error
+Warning: region type 15 missing in space type "Node" (id: 16) - removing region
+Warning: region type 14 missing in space type "Node" (id: 16) - removing region
+Warning: region type 15 missing in space type "Node" (id: 16) - removing region
+Warning: region type 11 missing in space type "Action" (id: 12) - removing region
+Warning: region type 11 missing in space type "Action" (id: 12) - removing region
+Warning: region type 11 missing in space type "Action" (id: 12) - removing region
+Warning: region type 14 missing in space type "Node" (id: 16) - removing region
+Warning: region type 15 missing in space type "Node" (id: 16) - removing region
+Error: Engine 'BLENDER_EEVEE' not available for scene 'Building_class_of_1950' (an add-on may need to be installed or enabled)
+BlenderMCP addon registered
+Warning: File written by newer Blender binary (502.45), expect loss of data!
+{
+  "asset_id": "class_of_1950",
+  "asset_path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\class_of_1950.blend",
+  "asset_sha256": "5df5f8c7d8443ba290b18c2f6ef84a820c9a5e6680b77fed614baa1633ff9564",
+  "asset_bytes": 1108915,
+  "scene": "Building_class_of_1950",
+  "collection": "Asset_class_of_1950",
+  "blender_version": "4.5.15 LTS",
+  "saved_render_engine": "BLENDER_EEVEE_NEXT",
+  "source_file_rewrite_performed": false,
+  "validation_notes": [
+    "This Blender 4.5.15 run logged that the saved file was written by newer Blender binary 502.45; no source rewrite was performed.",
+    "Blender logged Engine 'BLENDER_EEVEE' not available while loading; the loaded target scene reports render.engine='BLENDER_EEVEE_NEXT'."
+  ],
+  "object_count": 2431,
+  "mesh_object_count": 2406,
+  "evaluated_mesh_bounds_local_frame_m": [
+    [
+      -30.941999435424805,
+      13.524999618530273
+    ],
+    [
+      -18.920000076293945,
+      18.9752197265625
+    ],
+    [
+      0.0,
+      18.899999618530273
+    ]
+  ],
+  "manifest_local_bounds_m": [
+    [
+      -30.941999435424805,
+      13.524999618530273
+    ],
+    [
+      -18.920000076293945,
+      18.9752197265625
+    ],
+    [
+      0.0,
+      18.899999618530273
+    ]
+  ],
+  "placement_origin_xy_m": [
+    -107.69000244140625,
+    -116.9949951171875
+  ],
+  "root_empty_present_at_local_origin": true,
+  "required_geometry_present": [
+    "CL50_Corrected_GIS_Wall_Envelope",
+    "CL50_Corrected_GIS_Roof_Slab",
+    "CL50_Penthouse"
+  ],
+  "unmaterialed_mesh_count": 0,
+  "unmaterialed_meshes": [],
+  "external_libraries": [],
+  "unpacked_file_images": [],
+  "status": "PASS",
+  "source_evidence": {
+    "gis_feature_id": 230,
+    "gis_code": "CL50",
+    "gis_name": "Class of 1950 Lecture Hall",
+    "retrieved": "2026-10-25",
+    "gis_crs": "EPSG:3857 (ArcGIS latestWkid=3857; layer wkid=102100)",
+    "footprint_method": "Inverse Web Mercator; convert with the Purdue local approximation documented in modular/AGENTS.md; compare after subtracting the manifest placement origin.",
+    "height_uncertainty": "GIS NUM_LEVELS and CountOfFLO are 3; Extrution=36 has no documented units/semantics. Model height is not claimed as surveyed.",
+    "vertical_reference_fields": {
+      "NUM_LEVELS": 3,
+      "CountOfFLO": 3,
+      "Extrution": 36,
+      "Elevation": 623,
+      "F02": 16.2,
+      "R": 32.1
+    },
+    "evidence_directory": "audit\\class_of_1950_evidence",
+    "footprint_check": {
+      "source_feature_id": 230,
+      "source_code": "CL50",
+      "source_crs": "EPSG:3857 (ArcGIS latestWkid=3857; layer wkid=102100)",
+      "method": "Inverse Web Mercator; apply the Purdue local approximation in modular/AGENTS.md; subtract the manifest placement origin; compare GIS ring vertices with rounded-to-millimeter Z=0 envelope vertices.",
+      "source_ring_vertex_count": 29,
+      "model_lower_perimeter_vertex_count": 82,
+      "gis_to_model_nearest_vertex_avg_m": 0.00038404066411117327,
+      "gis_to_model_nearest_vertex_max_m": 0.0005786862175334143,
+      "model_to_gis_nearest_vertex_avg_m": 0.11870047450121464,
+      "model_to_gis_nearest_vertex_max_m": 0.18056814057061304,
+      "source_local_bounds_m": [
+        [
+          -30.309583969303162,
+          12.99129287711689
+        ],
+        [
+          -18.351182781114858,
+          18.975220504220488
+        ]
+      ],
+      "model_lower_perimeter_bounds_m": [
+        [
+          -30.31,
+          12.991
+        ],
+        [
+          -18.351,
+          18.975
+        ]
+      ],
+      "max_axis_extent_delta_m": [
+        0.0004160306968366001,
+        0.00022050422048636165
+      ],
+      "limitation": "Directed nearest-vertex distances document XY agreement but are not a surveyed wall error or area-overlap statistic. GIS feature has no source date; vertical field semantics remain undocumented."
+    },
+    "official_architecture_sources": [
+      "https://archives.lib.purdue.edu/agents/corporate_entities/541",
+      "https://events.purdue.edu/class_of_1950_lecture_hall",
+      "https://www.roadschool.purdue.edu/maps/2024%20Class%20of%201950%20Lecture%20Hall.pdf"
+    ]
+  },
+  "generated_at": "2026-10-25",
+  "builder_module": "modular\\buildings\\build_class_of_1950.py",
+  "mode": "validate-existing-source"
+}
+BUILD_EVIDENCE=C:\Users\gotse\Documents\Codex\2026-10-25\github-plugin-github-openai-curated-remote\outputs\PurdueBlender\audit\class_of_1950_evidence\package_validation.json
+BlenderMCP addon unregistered
+
+Blender quit
+Error: Not freed memory blocks: 6312, total unfreed memory 0.240444 MB

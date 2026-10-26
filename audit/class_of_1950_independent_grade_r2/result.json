@@ -1,0 +1,190 @@
+{
+  "score": 8.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passes": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "Verified. The raw Purdue ArcGIS feature identifies FID 230, CL50, \u201cClass of 1950 Lecture Hall\u201d. Its 29-vertex polygon is compared with the asset wall envelope lower perimeter (82 vertices) after inverse Web Mercator and the documented Purdue local approximation. GIS-to-model directed nearest-vertex max is 0.000579 m; model-to-GIS max is 0.181 m, consistent with finer mesh tessellation. This is a vertex-distance check, not polygon IoU or a surveyed wall-error claim."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "Verified within the project coordinate approximation. The master has exactly one Placement_class_of_1950 marker at [-107.69000244140625, -116.9949951171875, 0.0]; its XY matches the manifest origin with delta [0.0, 0.0] m, rotation is [0.0, 0.0, 0.0] degrees and scale is [1.0, 1.0, 1.0]. The marker instances the expected relative linked library. GIS source/model lower-perimeter axis-extent deltas are [0.0004160306968366001, 0.00022050422048636165] m."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "assessment": "Partially verified. Official GIS NUM_LEVELS and CountOfFLO both report 3 floors, and Purdue exterior images support a low/flat parapet silhouette. The reopened asset is 18.9 m tall. GIS Extrution=36 has no documented units/semantics and no surveyed height source was found, so the model height remains unverified."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "Purdue Archives source text and current Purdue exterior photos support the curved brick-and-glass frontage, large round brick columns, pale column bases/capitals, glazed upper wall, and curved soffit. The saved current-revision close and assembled views show these features. The 2024 Road School room map supports lecture hall/classroom identity but is not used as dimensional evidence."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "assessment": "The current builder was run from an isolated smoke project against copied current inputs; its package copy reopened successfully with 2431 objects and identical SHA-256. Direct reopen reports 2431 objects ({'EMPTY': 2, 'LIGHT': 23, 'MESH': 2406}), no unmaterialed meshes, external libraries, or unpacked file images; the master uses a relative library path. Deduction reflects manifest source_metadata/evidence_file still being null and Blender 4.5.15 reporting a newer-file/Eevee compatibility warning. This independent packet preserves source snapshots, photos, views, probes, and packaging output."
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/class_of_1950.blend",
+    "asset_sha256": "5df5f8c7d8443ba290b18c2f6ef84a820c9a5e6680b77fed614baa1633ff9564",
+    "asset_bytes": 1108915,
+    "manifest_id": "class_of_1950",
+    "expected_collection": "Asset_class_of_1950",
+    "scene": "Building_class_of_1950",
+    "asset_reopen": {
+      "blender_version": "4.5.15 LTS",
+      "object_count": 2431,
+      "type_counts": {
+        "EMPTY": 2,
+        "LIGHT": 23,
+        "MESH": 2406
+      },
+      "bounds_m": [
+        [
+          -30.941999435424805,
+          13.524999618530273
+        ],
+        [
+          -18.920000076293945,
+          18.9752197265625
+        ],
+        [
+          0.0,
+          18.899999618530273
+        ]
+      ],
+      "manifest_names_match": true,
+      "missing_required_geometry": [],
+      "unmaterialed_mesh_count": 0,
+      "external_libraries": [],
+      "unpacked_file_images": []
+    },
+    "identity_source": {
+      "provider": "Purdue University ArcGIS FeatureServer",
+      "feature_id": 230,
+      "code": "CL50",
+      "name": "Class of 1950 Lecture Hall",
+      "crs": "EPSG:3857 (latestWkid 3857; layer wkid 102100)",
+      "retrieved": "2026-10-25",
+      "source_date": "not provided",
+      "gis_ring_vertices": 29,
+      "num_levels": 3,
+      "count_of_floors": 3,
+      "extrution_field": 36,
+      "height_interpretation": "unverified"
+    },
+    "footprint_comparison": {
+      "source_feature_id": 230,
+      "source_code": "CL50",
+      "source_crs": "EPSG:3857 (ArcGIS latestWkid=3857; layer wkid=102100)",
+      "method": "Inverse Web Mercator; apply the Purdue local approximation in modular/AGENTS.md; subtract the manifest placement origin; compare GIS ring vertices with rounded-to-millimeter Z=0 envelope vertices.",
+      "source_ring_vertex_count": 29,
+      "model_lower_perimeter_vertex_count": 82,
+      "gis_to_model_nearest_vertex_avg_m": 0.00038404066411117327,
+      "gis_to_model_nearest_vertex_max_m": 0.0005786862175334143,
+      "model_to_gis_nearest_vertex_avg_m": 0.11870047450121464,
+      "model_to_gis_nearest_vertex_max_m": 0.18056814057061304,
+      "source_local_bounds_m": [
+        [
+          -30.309583969303162,
+          12.99129287711689
+        ],
+        [
+          -18.351182781114858,
+          18.975220504220488
+        ]
+      ],
+      "model_lower_perimeter_bounds_m": [
+        [
+          -30.31,
+          12.991
+        ],
+        [
+          -18.351,
+          18.975
+        ]
+      ],
+      "max_axis_extent_delta_m": [
+        0.0004160306968366001,
+        0.00022050422048636165
+      ],
+      "limitation": "Directed nearest-vertex distances document XY agreement but are not a surveyed wall error or area-overlap statistic. GIS feature has no source date; vertical field semantics remain undocumented."
+    },
+    "placement": {
+      "manifest_origin_xy_m": [
+        -107.69000244140625,
+        -116.9949951171875
+      ],
+      "marker": {
+        "name": "Placement_class_of_1950",
+        "type": "EMPTY",
+        "location": [
+          -107.69000244140625,
+          -116.9949951171875,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "instance_collection": "Asset_class_of_1950",
+        "instance_collection_library": "//modular\\buildings\\class_of_1950.blend"
+      },
+      "xy_delta_m": [
+        0.0,
+        0.0
+      ],
+      "single_marker": true,
+      "linked_collection": true
+    },
+    "packaging_smoke": {
+      "mode": "validated-byte-identical-package-copy",
+      "package_sha256": "5df5f8c7d8443ba290b18c2f6ef84a820c9a5e6680b77fed614baa1633ff9564",
+      "source_sha256": "5df5f8c7d8443ba290b18c2f6ef84a820c9a5e6680b77fed614baa1633ff9564",
+      "identical_hash": true,
+      "reopened_object_count": 2431,
+      "isolated_project": "builder_smoke_project/"
+    },
+    "render_views": [
+      "views/current_asset_close_render.png",
+      "views/current_asset_assembled_view.png"
+    ],
+    "source_snapshots": [
+      "sources/arcgis_feature_230.json",
+      "sources/arcgis_layer_0_metadata.json",
+      "sources/source_evidence.json",
+      "sources/manifest_snapshot.json",
+      "sources/modular_AGENTS_snapshot.md",
+      "sources/builder_snapshot.py",
+      "sources/purdue_events_photo.jpg",
+      "sources/purdue_libraries_exterior_reference.jpg",
+      "sources/purdue_road_school_floor_plan_2024.pdf"
+    ]
+  },
+  "findings": [
+    "Footprint, object inventory, and master placement are strongly verified. Nearest-vertex distances are not an area overlap statistic and the GIS source is a building polygon rather than a surveyed wall survey.",
+    "Three floors are supported, but 18.9 m model height is not verified: the GIS Extrution=36 field has no stated vertical units/semantics and no surveyed height source was found.",
+    "The asset and its packaging copy reopen with all expected objects and no external dependencies. Blender 4.5.15 reports the source was written by newer binary 502.45 and that the saved BLENDER_EEVEE engine is unavailable; do not resave/edit in this older version without checking the authoring-version workflow.",
+    "Manifest source_metadata and evidence_file remain null; this audit packet contains the source/evidence provenance independently."
+  ],
+  "evaluator": "evaluate.py::evaluate",
+  "evaluated_at": "2026-10-25",
+  "scope": "Fresh independent read-only grade of the packaged final Class of 1950 asset. Builder packaging was smoke-tested from a copied project tree. No assigned building files or shared indexes were modified."
+}

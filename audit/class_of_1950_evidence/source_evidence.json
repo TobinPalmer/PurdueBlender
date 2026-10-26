@@ -1,0 +1,56 @@
+{
+  "retrieved": "2026-10-25",
+  "primary_footprint_source": {
+    "provider": "Purdue University ArcGIS FeatureServer",
+    "service": "BuildingShapesZip4 / layer 0 (BuildingShapes)",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/230?f=pjson",
+    "feature_id": 230,
+    "building_abbreviation": "CL50",
+    "building_name": "Class of 1950 Lecture Hall",
+    "source_crs": "EPSG:3857 (service latestWkid 3857; layer advertises wkid 102100)",
+    "source_date": "not provided for feature geometry",
+    "raw_snapshot": "arcgis_feature_230.json",
+    "layer_metadata_snapshot": "arcgis_layer_0_metadata.json",
+    "measurement_method": "Inverse Web Mercator to geographic degrees, then apply the Purdue local conversion specified in modular/AGENTS.md. Subtract manifest placement XY to compare with the modular asset local frame.",
+    "uncertainty": "The GIS layer metadata does not define vertical units/semantics for the Extrution field."
+  },
+  "architecture_sources": [
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/541",
+      "record_date": "1990; online record retrieved 2026-10-25",
+      "facts_used": "Brick building; large brick columns support the first level; second-floor wall is made of windows; the hall has an auditorium plus additional classrooms.",
+      "retrieval_note": "Search index supplied page text; direct open returned HTTP 403."
+    },
+    {
+      "provider": "Purdue University Events Calendar",
+      "url": "https://events.purdue.edu/class_of_1950_lecture_hall",
+      "source_date": "not stated; retrieved 2026-10-25",
+      "image_url": "https://localist-images.azureedge.net/photos/40105580914741/card/10aba04015d4556fd88ff12a109bdd63673ed88e.jpg",
+      "raw_snapshot": "purdue_events_photo.jpg",
+      "facts_used": "Curved brick-and-glass frontage, large round brick columns, pale column bases, glazed upper wall, low/flat parapet roof silhouette."
+    },
+    {
+      "provider": "Purdue Libraries, Purdue Buildings and Campus Scenes",
+      "url": "https://collections.lib.purdue.edu/campus/images/buildings/195-class-of-1950-lecture-hall.jpeg",
+      "source_date": "not provided; retrieved 2026-10-23 in the existing building refinement audit",
+      "raw_snapshot": "purdue_libraries_exterior_reference.jpg",
+      "facts_used": "Exterior photo supports the curved brick arcade, pale bases/capitals, broad curved soffit, and glazing; measurements inferred from the photo are estimates only."
+    },
+    {
+      "provider": "Purdue Road School",
+      "url": "https://www.roadschool.purdue.edu/maps/2024%20Class%20of%201950%20Lecture%20Hall.pdf",
+      "source_date": "2024 edition; retrieved 2026-10-23 in the existing building refinement audit",
+      "raw_snapshot": "purdue_road_school_floor_plan_2024.pdf",
+      "facts_used": "Official room map supporting auditorium and adjacent classroom identity; page has no usable scale and is not used as dimension evidence."
+    }
+  ],
+  "model_and_review_evidence": [
+    "audit/class_of_1950_independent_grade/result.json",
+    "audit/class_of_1950_independent_grade/blender_probe.json",
+    "audit/class_of_1950_independent_grade/master_placement_probe.json",
+    "audit/class_of_1950_independent_grade/model_close_render.png",
+    "audit/class_of_1950_independent_grade/model_assembled_view.png"
+  ],
+  "height_caveat": "GIS NUM_LEVELS and CountOfFLO both report 3. The saved mesh height is 18.9 m, but no surveyed elevation/height evidence was found; the Extrution=36 value has undocumented units/semantics and is not treated as a verified height."
+}
