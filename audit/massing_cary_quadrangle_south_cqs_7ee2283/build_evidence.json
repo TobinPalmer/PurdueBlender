@@ -1,0 +1,65 @@
+{
+  "asset_id": "massing_cary_quadrangle_south_cqs_7ee2283",
+  "builder": "Rossen assignment agent",
+  "build_date": "2026-10-26",
+  "original_state": {
+    "asset": "modular/buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend",
+    "manifest_bounds_world_m": [
+      [
+        -447.409851,
+        -277.508789
+      ],
+      [
+        478.227081,
+        524.919372
+      ],
+      [
+        0.0,
+        21.9
+      ]
+    ],
+    "manifest_accuracy_status": "unverified",
+    "inspection": "one unrefined campus-coordinate mesh with dimensions about 169.9 x 46.7 x 21.9 m; no source record or separate roof/facade forms."
+  },
+  "edits": [
+    "Replaced the unsourced block with the official FID 653/CQS building footprint; preserved the stable ID, asset file path, scene name, collection name and campus coordinate frame.",
+    "Simplified 341 GIS ring vertices to 289 with 0.22 m tolerance; measured max source-vertex-to-simplified-segment deviation 0.2141 m and plan-area change 0.90 m2.",
+    "Added a U-shaped massing shell with three separate estimated gable roof wings, retaining the central courtyard opening visible in 2023 orthophotography.",
+    "Added the paired crenellated towers, central raised entry pavilion, projecting oriel, stone plinth/string courses, pointed entry forms and schematic window bays informed by the identified South building photograph.",
+    "Added source record, raw GIS and imagery snapshots, evidence report, projected simplified ring, orthophoto footprint overlay, reopen validation script, and top/south preview renders."
+  ],
+  "placement_and_orientation": {
+    "method": "WGS84 footprint projected with repository documented local approximation; geometry stays in campus coordinates",
+    "source_bounds_m": [
+      [
+        -447.623403,
+        -277.560565
+      ],
+      [
+        477.301518,
+        525.464275
+      ]
+    ],
+    "asset_bounds_m": "See reopen_validation.json; decorative roof overhangs and towers extend slightly outside plan footprint.",
+    "transform": "object location (0,0,0), rotation (0,0,0), scale (1,1,1); identity collection instance offset; no placement marker or master blend edits."
+  },
+  "height_and_floors": {
+    "status": "estimated / unresolved",
+    "modeled_extent_m": [
+      0,
+      22.125
+    ],
+    "gis_attributes": {
+      "NUM_LEVELS": 7,
+      "CountOfFLO": 7,
+      "Extrution": 54
+    },
+    "limitation": "Extrution unit is undocumented; exact above-grade storey count and ground elevation remain unverified."
+  },
+  "remaining_uncertainty": [
+    "The 2006 photo establishes distinctive facade elements but not measured dimensions.",
+    "The modeled facade line is inferred from the courtyard-facing north bar, the map geometry and documented south-building camera point/heading.",
+    "Roof pitch, exact tower dimensions, floor heights, window bays, landscape/site grading and vertical ground datum are not measured."
+  ],
+  "validation": "See reopen_validation.json. Reopened with Blender 4.5.15; expected scene and collection loaded, one mesh object, no modifiers, unit object transform, 0 boundary edges, 0 nonmanifold edges; top and south evidence renders generated."
+}

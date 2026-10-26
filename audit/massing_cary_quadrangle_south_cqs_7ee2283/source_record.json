@@ -1,0 +1,105 @@
+{
+  "asset_id": "massing_cary_quadrangle_south_cqs_7ee2283",
+  "building_identity": "Franklin Levering Cary Quadrangle (South), Purdue abbreviation CQS; GIS feature FID 653",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "role": "authoritative building footprint, identity, address and level attributes",
+      "provider": "Purdue University GIS / BuildingShapesZip4",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D653&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "snapshot": "sources/purdue_building_shapes_fid653_cqs_2026-10-26.geojson",
+      "layer_metadata_snapshot": "sources/purdue_building_shapes_layer_metadata_2026-10-26.json",
+      "feature_id": "FID=653; BLDG_ABBR=CQS; BUILDING_N=Franklin Levering Cary Quadrangle (South); address=1016 W Stadium Avenue",
+      "source_crs": "EPSG:4326 WGS84 returned GeoJSON",
+      "retrieved_date": "2026-10-26",
+      "fields_used": [
+        "NUM_LEVELS=7",
+        "CountOfFLO=7",
+        "Extrution=54",
+        "Elevation=625"
+      ],
+      "measurement_method": "Project each polygon vertex with the Purdue project local approximation X=(lon+86.9137)*111412.84*cos(40.4274\u00b0), Y=(lat-40.4274)*111040; simplify small boundary traces at 0.22 m tolerance. The GIS polygon controls plan shape and campus location.",
+      "uncertainty": "Extrution units are undocumented. The feature is used for XY shape/location only. NUM_LEVELS is recorded as an attribute, not interpreted as seven above-grade storeys."
+    },
+    {
+      "role": "current roof plan / courtyard configuration",
+      "provider": "Indiana Geographic Information Office / IndianaMap",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer/exportImage?bbox=-86.9191579178705%2C40.4315184646829%2C-86.916792710621%2C40.4323122070866&bboxSR=4326&size=1800%2C700&imageSR=4326&format=jpg&f=image",
+      "snapshot": "sources/indiana_2023_orthophoto_cqs.jpg",
+      "metadata_snapshot": "sources/indiana_2023_orthophoto_cqs_metadata.json",
+      "source_crs": "EPSG:4326 requested/exported resampled image",
+      "retrieved_date": "2026-10-26",
+      "source_date": "2023, based on Indiana_2023_Imagery service name",
+      "measurement_method": "Visual roof-plan context and U-shaped courtyard confirmation; no dimensions measured from pixels.",
+      "uncertainty": "Orthophoto resolution and export resampling preclude deriving facade, floors or height."
+    },
+    {
+      "role": "building-specific south elevation and distinctive facade details",
+      "provider": "Wikimedia Commons image by Tstuddud; original photographer metadata credits Tstuddud",
+      "url": "https://commons.wikimedia.org/wiki/File:Purdue_CaryQuadrangle.jpg",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Purdue_CaryQuadrangle.jpg",
+      "snapshot": "sources/cary_south_photo_wikimedia_2006.jpg",
+      "description_snapshot": "sources/wikimedia_cqs_photo_description_2026-10-26.html",
+      "source_date": "2006-09-17 19:03 UTC (image metadata); Commons page says south building looking north",
+      "camera_location_wgs84": [
+        40.431667,
+        -86.917944
+      ],
+      "camera_heading_degrees": 0,
+      "retrieved_date": "2026-10-26",
+      "source_crs": "WGS84 coordinates for camera point; image pixels have no geometric CRS",
+      "measurement_method": "Visual form reference for red brick, pale stone piers, paired crenellated towers, central projecting bay/arched entry, and horizontal facade rhythm. Dimensions are not measured from this perspective image.",
+      "rights": "Public domain statement on the Commons file page.",
+      "uncertainty": "One 2006 photo; perspective/landscaping obscures some details and does not establish exact dimensions or roof pitch."
+    },
+    {
+      "role": "South wing renovation and use context",
+      "provider": "School Designs / Architectural & School Building",
+      "url": "https://schooldesigns.com/Projects/purdue-university-cary-quadrangle-south/",
+      "snapshot": "sources/cary_south_schooldesigns_2026-10-26.html",
+      "source_date": "Published 2019-09-23; page gives completion July 2006",
+      "retrieved_date": "2026-10-26",
+      "source_crs": "Not applicable",
+      "measurement_method": "Identity-specific renovation history and broad program context only; page project photos are interior images and are not used as exterior evidence.",
+      "uncertainty": "140,000 sq ft describes rehabilitated project area, not a footprint measurement."
+    },
+    {
+      "role": "Purdue historical identity and construction context",
+      "provider": "Purdue Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/359",
+      "snapshot": "sources/purdue_historic_database_cqs_2026-10-26.html",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Record covers 1939-present and states South was the fifth/final Cary building",
+      "source_crs": "Not applicable",
+      "measurement_method": "Identity, construction and broad historic context only.",
+      "uncertainty": "Historic database reports 173,256 gross sq ft, not a measured footprint or height."
+    },
+    {
+      "role": "current housing and renovation context",
+      "provider": "Purdue University Residences",
+      "url": "https://housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
+      "snapshot": "sources/purdue_housing_cary_current_2026-10-26.html",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Current page accessed 2026-10-26",
+      "source_crs": "Not applicable",
+      "measurement_method": "Confirms South preserves its original layout while the four outer buildings were renovated. Not used for dimensions.",
+      "uncertainty": "No South-specific exterior dimensions or elevations."
+    }
+  ],
+  "model_notes": {
+    "asset_type": "simple massing library in campus coordinates",
+    "placement": "identity transform; placement remains controlled by source geometry coordinates and manifest, no master placement marker edited",
+    "export_collection": "Asset_massing_cary_quadrangle_south_cqs_7ee2283",
+    "building_scene": "Building_massing_cary_quadrangle_south_cqs_7ee2283",
+    "source_geometry": "GIS outline with courtyard; three roof wings are estimated from orthophoto configuration",
+    "facade": "Courtyard-facing north-bar elevation is modeled using 2006 building-specific photo; window spacing is schematic",
+    "vertical": "0-22.125m overall model extent including tower crenels, estimated from building-specific south elevation photograph proportions; GIS Extrution=54 units undocumented; NUM_LEVELS=7 but exact above-grade floor count unverified.",
+    "known_uncertainties": [
+      "Roof pitch and ridge heights are estimated.",
+      "Facade window dimensions and exact bay spacing are schematic.",
+      "Image camera heading/location and south-wing label are source-provided but perspective does not yield measured dimensions.",
+      "Building bottom elevation and terrain fit are not verified."
+    ]
+  }
+}
