@@ -72,6 +72,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Mccutcheon Hall | [mccutcheon_hall.blend](buildings/mccutcheon_hall.blend) | 219 |
 | McDonald's | [massing_mcdonald_s_ab77b70.blend](buildings/massing_mcdonald_s_ab77b70.blend) | 1 |
 | Mechanical Engineering | [mechanical_engineering.blend](buildings/mechanical_engineering.blend) | 55 |
+| MRI Modular Facility (MRI1 / PMRI) | [massing_mri_modular_facility_mri1_a93e22b.blend](buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | 1 |
 | Neil Armstrong Hall | [neil_armstrong_hall.blend](buildings/neil_armstrong_hall.blend) | 446 |
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](buildings/niswonger_aviation_tech.blend) | 2314 |
 | Owen Hall | [owen_hall.blend](buildings/owen_hall.blend) | 958 |
@@ -249,6 +250,7 @@ Herrick Laboratories (historic Herrick Acoustics) retains campus-world coordinat
 | Martin C. Jischke Hall of Biomedical Engineering | [massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend](buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | 1 |
 | Matthews Hall (MTHW) | [massing_matthews_hall_mthw_9326885.blend](buildings/massing_matthews_hall_mthw_9326885.blend) | 1 |
 | McDonald's (605 W Stadium Ave) | [massing_mcdonald_s_ab77b70.blend](buildings/massing_mcdonald_s_ab77b70.blend) | 1 |
+| MRI Modular Facility (MRI1 / PMRI) | [massing_mri_modular_facility_mri1_a93e22b.blend](buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | 1 |
 
 Marriott Hall retains campus-world coordinates. Its 8.5/10 independent grade verifies all 33 Purdue GIS FID 862 footprint vertices within 0.1 mm. Roof planes, the lobby canopy, and height remain estimated; GIS's four-level field does not clearly resolve the visible above-grade facade bands. See [Marriott evidence](../audit/marriott_hall/evidence.json).
 
@@ -263,4 +265,6 @@ Virginia C. Meredith Residence Hall retains campus-world coordinates. Its 8.5/10
 Philip E. Nelson Hall of Food Science retains campus-world coordinates. Its 8.5/10 independent grade verifies all 24 Purdue GIS FID 250 ring vertices within 0.000028 m; the entry canopy and raised gable extend beyond the walls. Purdue's area field agrees with the ring when using its EPSG:3857 layer CRS. Height/roof and exact facade layout remain estimated. See [NLSN grade](../audit/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b/independent_grade_kyle.json).
 
 McDonald's at 605 W Stadium Ave retains campus-world coordinates. Its 9.0/10 independent grade verifies all 16 structural edges against named OSM way 256640455 within 0.000015 m; Purdue's building-shape layer has no separate McDonald's feature. The facade follows an attributed exact-address exterior photo, but the image is undated and covers only one corner. Height and other elevations remain estimated. See [McDonald's grade](../audit/mcdonald_s/independent_grade_revision2.json).
+
+MRI Modular Facility retains campus-world coordinates. Its 8.0/10 independent grade verifies all four Purdue GIS FID 918 structural edges within 0.000028 m. A contractor description supports masonry veneer and aluminum openings; one-story/flat-roof massing is supported by GIS and aerial imagery. Height, HVAC top, detailed facade, and entry bearing remain estimates. See [MRI grade](../audit/mri_modular_facility/independent_grade_mri.json).
 

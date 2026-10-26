@@ -164,7 +164,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (33)
+### Detailed models still in progress or awaiting a grade (34)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -193,6 +193,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Marc and Sharon Hagle Hall (HAGL) | [`massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend`](modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | [8.5/10](audit/massing_marc_and_sharon_hagle_hall_hagl_071ffd6/grade.json); awaiting master integration | Kyle |
 | Matthews Hall (MTHW) | [`massing_matthews_hall_mthw_9326885.blend`](modular/buildings/massing_matthews_hall_mthw_9326885.blend) | [8.75/10](audit/matthews_hall_mthw_9326885/grade_result.json); awaiting master integration | Kyle |
 | McDonald's | [`massing_mcdonald_s_ab77b70.blend`](modular/buildings/massing_mcdonald_s_ab77b70.blend) | [9.0/10](audit/mcdonald_s/independent_grade_revision2.json); awaiting master integration | Kyle |
+| MRI Modular Facility (MRI1 / PMRI) | [`massing_mri_modular_facility_mri1_a93e22b.blend`](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | [8.0/10](audit/mri_modular_facility/independent_grade_mri.json); awaiting master integration | Kyle |
 | Smith Hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | [8.5/10](audit/smith_hall/independent_grade_kyle.json); awaiting master integration | Kyle |
 | Marriott Hall | [`massing_marriot_hall_7cd3eb5.blend`](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | [8.5/10](audit/marriott_hall/grade.json); awaiting master integration | Kyle |
 | Martin C. Jischke Hall of Biomedical Engineering | [`massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend`](modular/buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | [8.0/10](audit/martin_c_jischke_hall/grade.json); awaiting master integration | Kyle |
@@ -204,7 +205,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 
 
 
-### Buildings that still have only massing models (37)
+### Buildings that still have only massing models (36)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -218,7 +219,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | life science ranges greenhouse and service building | [`massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend`](modular/buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | Tobin |
 | marstellar | [`massing_marstellar_0c2ea90.blend`](modular/buildings/marstellar_0c2ea90.blend) | Kyle |
 | meredith hall south | [`massing_meredith_hall_south_ffbc444.blend`](modular/buildings/massing_meredith_hall_south_ffbc444.blend) | Kyle |
-| mri modular facility mri1 | [`massing_mri_modular_facility_mri1_a93e22b.blend`](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | Kyle |
 | northwestern parking garage | [`massing_northwestern_parking_garage_979f1a2.blend`](modular/buildings/massing_northwestern_parking_garage_979f1a2.blend) | Kyle |
 | our saviour lutheran church | [`massing_our_saviour_lutheran_church_118afa2.blend`](modular/buildings/massing_our_saviour_lutheran_church_118afa2.blend) | Kyle |
 | provenance apartments | [`massing_provenance_apartments_d913384.blend`](modular/buildings/massing_provenance_apartments_d913384.blend) | Kyle |
@@ -827,7 +827,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 915 | Life Science Ranges | [massing_house_159752239_8e7a81a](modular/buildings/massing_house_159752239_8e7a81a.blend)<br>[massing_house_587549840_07f2e96](modular/buildings/massing_house_587549840_07f2e96.blend)<br>[massing_life_science_ranges_greenhouse_and_service_building_c96231f](modular/buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 916 | Ag Alumni Seed Phenotyping Facility | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 917 | Life Science Plant And Soils Laboratory | [massing_house_587540581_cd4d006](modular/buildings/massing_house_587540581_cd4d006.blend)<br>[massing_life_science_plant_and_soils_laboratory_5963acd](modular/buildings/massing_life_science_plant_and_soils_laboratory_5963acd.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 918 | Purdue Magnetic Resonance Imagin | [massing_mri_modular_facility_mri1_a93e22b](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 918 | Purdue Magnetic Resonance Imagin | [massing_mri_modular_facility_mri1_a93e22b](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | Direct FID 918 verified; four structural edges match within 0.000028 m; 8.0/10 pass; awaiting master integration |
 | 925 | Latino Cultural Center at Purdue | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 926 | Asian American Resource and Cultural Center | [massing_asian_american_and_asian_resource_and_cultural_center_aacc_da08bb2](modular/buildings/massing_asian_american_and_asian_resource_and_cultural_center_aacc_da08bb2.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 927 | Native American Educational and Cultural Center | [massing_native_american_educational_and_cultural_center_nacc_faa0f59](modular/buildings/massing_native_american_educational_and_cultural_center_nacc_faa0f59.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
