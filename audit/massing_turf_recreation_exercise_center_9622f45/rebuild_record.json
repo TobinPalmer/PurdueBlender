@@ -1,0 +1,74 @@
+{
+  "building_id": "massing_turf_recreation_exercise_center_9622f45",
+  "asset_path": "modular\\buildings\\massing_turf_recreation_exercise_center_9622f45.blend",
+  "stable_collection": "Asset_massing_turf_recreation_exercise_center_9622f45",
+  "source_feature": {
+    "provider": "Purdue University Libraries GIS",
+    "objectid": 312,
+    "abbr": "TREC",
+    "name": "Turf Recreation Exercise Center"
+  },
+  "prior_manifest_bounds_world_m": [
+    [
+      -919.4317626953125,
+      -873.3795776367188
+    ],
+    [
+      85.51190185546875,
+      160.38616943359375
+    ],
+    [
+      0.0,
+      16.0
+    ]
+  ],
+  "new_gis_wall_footprint_bounds_m": [
+    [
+      -921.2015309405002,
+      -876.3613377269335
+    ],
+    [
+      85.09356330498576,
+      159.91885530228956
+    ],
+    [
+      0.0,
+      9.7
+    ]
+  ],
+  "new_roof_bounds_pre_overhang_m": [
+    [
+      -921.2015309405002,
+      -876.3613377269335
+    ],
+    [
+      85.09356330498576,
+      159.91885530228956
+    ],
+    [
+      0.0,
+      14.4
+    ]
+  ],
+  "old_to_new_footprint_center_shift_m": [
+    -2.3757641677011634,
+    -0.4428263408935891
+  ],
+  "footprint_metrics": {
+    "prior_osm_area_m2": 3198.0445980980876,
+    "new_purdue_gis_area_m2": 3170.1984733922363,
+    "prior_osm_vertices_including_closure": 14,
+    "new_purdue_gis_vertices_excluding_closure": 32
+  },
+  "reported_area_figures_sqft": {
+    "purdue_gis_ring_computed": 34123.73237078395,
+    "purdue_gis_squarefootage_attribute": 36210,
+    "purdue_treasurer_building_list_oct2021": 36545.51,
+    "recwell_project_size": 29037
+  },
+  "area_discrepancy_note": "These figures differ and are not reconciled by the sources. The rebuild follows the official Purdue GIS footprint rather than forcing geometry to fit an area statistic.",
+  "imagery_source": "Indiana 2023 orthophoto and Google Street View panorama CKWL7p3cJEsDPH5hReovcw (July 2023); see footprint_imagery_comparison.json, orthophoto_footprint_overlay.png and sources/google_street_view_trec_search_access.txt",
+  "geometry_change": "Rebuilt wall perimeter from the current named Purdue GIS polygon; used 2018 QL2 LiDAR profile for estimated 9.7 m eaves and 14.4 m ridge; modeled the observed light two-plane roof, north-south ridge and east-west transverse bands. Added the TREC Street View-observed east-side brick base, pale vertical-rib metal cladding, approximate glazed northeast-corner entrance and canopy, window, wall louvers and service doors. Facade component stationing and dimensions are visual estimates from one perspective panorama. Kept the GIS/OSM roof-perimeter conflict explicit rather than forcing an unsupported overhang interpretation.",
+  "placement_convention": "Preserves stable asset ID/path and direct campus-coordinate collection geometry. No manifest or master placement edits were made.",
+  "status": "candidate awaiting independent grade and coordinator-owned shared-index update"
+}

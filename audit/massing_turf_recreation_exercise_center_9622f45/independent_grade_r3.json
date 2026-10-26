@@ -1,0 +1,363 @@
+{
+  "building_id": "massing_turf_recreation_exercise_center_9622f45",
+  "building_name": "Turf Recreation Exercise Center (TREC)",
+  "reviewer": "independent evaluator r3; raw-source, rendered-view, and direct reopened-library inspection",
+  "score": 6.9,
+  "max_score": 10,
+  "passing_standard": 8,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.6,
+      "max_score": 2,
+      "status": "identity and selected Purdue polygon verified; perimeter conflict remains",
+      "evidence": [
+        "Raw Purdue GIS feature OBJECTID=312 is Turf Recreation Exercise Center (ABBR=TREC); raw OSM way 283275002 is independently named Turf Recreation Exercise Center.",
+        "The saved wall footprint uses all 32 vertices from the Purdue feature and its computed ring area is 3170.2 m2.",
+        "The orthophoto shows both Purdue GIS and OSM outlines over the same TREC roof. OSM tracks the visible roof edge more closely in places; neither source establishes the actual structural-wall perimeter.",
+        "Purdue area attribute (36,210 sq ft), computed polygon area (~34,124 sq ft), Treasurer list (36,545.51 sq ft), and RecWell project figure (29,037 sq ft) do not reconcile."
+      ],
+      "findings": [
+        "Keep the roof-edge versus wall-footprint discrepancy explicit; current named Purdue GIS footprint is a defensible source choice, but it is not confirmed as the wall line."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.3,
+      "max_score": 2,
+      "status": "GIS position and north-south axis represented; 2.4 m source conflict unresolved",
+      "evidence": [
+        "Reopened asset bounds are X -921.752..-875.811 m, Y 84.544..160.469 m; model dimensions are about 44.84 x 74.83 m.",
+        "The modeled perimeter follows the selected Purdue GIS ring; orthophoto and both GIS/OSM outlines show a long north-south hall, matching the model ridge direction.",
+        "The selected GIS center is -2.38 m west and 0.44 m south of the OSM/prior manifest center; GIS is about 1.21 m narrower east-west. The roof-wall relation is unresolved.",
+        "Reopened asset has direct campus-coordinate geometry, as appropriate for this massing asset. Master placement/context is outside this isolated library grade."
+      ],
+      "findings": [
+        "Coordinator should reconcile the OSM-matching prior manifest bounds against the current Purdue feature and orthophoto before accepting campus placement."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "roof silhouette and estimated vertical profile supported; no surveyed elevations or floor count",
+      "evidence": [
+        "The 2023 orthophoto supports a pale two-plane gable roof, north-south ridge, and repeated east-west transverse roof bands; the reopened model reproduces those broad features.",
+        "Raw 2018 Indiana QL2 LiDAR tile analysis reports 7,529 non-ground returns in the OSM roof ring and 12,968 nearby classified-ground returns. Across-width median profile is approximately 9.693/9.665 m at the outer bins and 14.373 m centrally.",
+        "Reopened wall envelope is 9.70 m high and roof reaches 14.40 m. Evidence accurately labels these as estimates, not surveyed dimensions; LiDAR has no class-6 building returns in either footprint and uses nearby ground.",
+        "No reliable source establishes floor count. The single clear-span hall interpretation is consistent with RecWell use, but this is not proof of story count."
+      ],
+      "findings": [
+        "Retain estimate labels and uncertainty; no published section/elevation or surveyed eave/ridge height was found."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.5,
+      "max_score": 2,
+      "status": "minimal schematic entry; facade treatment and distinctive features unverified",
+      "evidence": [
+        "Reopened asset has a neutral, uninterrupted exterior wall envelope and one pair of schematic door panels; render shows no evidence-backed facade rhythm, cladding, glazing, or other distinctive features.",
+        "Purdue RecWell accessibility source places a TREC entrance on the circle drive west of CoRec and at grade, supporting the general side/level only. The exact bay, count, dimensions, and materials are not specified.",
+        "No TREC-specific exterior elevation or ground-level photo was found in the evidence package. CoRec/AIA imagery is correctly excluded as not TREC-specific."
+      ],
+      "findings": [
+        "Find a TREC-specific, attributable facade/entrance photo or drawing and model only details it supports. If none exists, keep the facade deliberately neutral and record the unresolved limitation; appearance alone cannot earn these points."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "standalone asset and provenance package verified",
+      "evidence": [
+        "Direct Blender 4.5 reopen confirms scene Building_massing_turf_recreation_exercise_center_9622f45 and collection Asset_massing_turf_recreation_exercise_center_9622f45 with 88 mesh objects; stable asset path and collection name are preserved.",
+        "No file-linked external images are referenced by the reopened library; geometry is directly in campus coordinates for this massing asset.",
+        "The folder contains raw Purdue GIS, OSM, RecWell, campus map, 2023 orthophoto, and 2018 LiDAR source snapshots with URLs/providers, IDs, dates, CRS, methods, and uncertainty; four review renders and footprint overlay are present.",
+        "Reopen report records evaluated bounds, footprint vertex count, wall/roof heights, and expected collection."
+      ],
+      "findings": [
+        "No modular export or evidence completeness issue found in the standalone asset. Master integration remains Tobin-owned."
+      ]
+    }
+  ],
+  "evidence": {
+    "directly_reopened_asset": "modular\\buildings\\massing_turf_recreation_exercise_center_9622f45.blend",
+    "reopen_summary": {
+      "opened_scene": "Building_massing_turf_recreation_exercise_center_9622f45",
+      "collection": "Asset_massing_turf_recreation_exercise_center_9622f45",
+      "object_count": 88,
+      "evaluated_mesh_count": 88,
+      "evaluated_face_count": 137,
+      "world_bounds_m": [
+        [
+          -921.7515258789062,
+          -875.8113403320312
+        ],
+        [
+          84.54356384277344,
+          160.46885681152344
+        ],
+        [
+          0.0,
+          14.510000228881836
+        ]
+      ],
+      "gis_perimeter_vertex_count": 32,
+      "wall_z_bounds_m": [
+        0.0,
+        9.699999809265137
+      ],
+      "roof_z_bounds_m": [
+        9.699999809265137,
+        14.399999618530273
+      ],
+      "material_slots": [
+        "TREC | dark metal trim (inferred)",
+        "TREC | interior slab",
+        "TREC | light roof surface (2023 orthophoto)",
+        "TREC | schematic entrance panel (material unverified)",
+        "TREC | transverse roof seam highlights (orthophoto rhythm)",
+        "TREC | unspecified exterior wall placeholder"
+      ]
+    },
+    "source_identity": {
+      "purdue_objectid": 312,
+      "purdue_name": "Turf Recreation Exercise Center",
+      "purdue_abbr": "TREC",
+      "osm_way_id": 283275002
+    },
+    "orthophoto_observation": "Orthophoto shows a long north-south roof ridge, two sloped planes and repeated light-colored east-west bands perpendicular to the ridge. The roof appears white/light gray. Roof heights are not measurable from this orthographic image.",
+    "lidar_analysis": {
+      "source": "2018 Indiana QL2 LAS 1.4, Tippecanoe Co tile in2018_29951885_12.copc.laz",
+      "source_tile": "EPSG:2968 NAD83(HARN) Indiana West US survey feet; vertical NAVD88 Geoid12B US survey feet",
+      "bounds_ft": [
+        2996892.8249444105,
+        1886650.273949846,
+        2997169.365685417,
+        1887017.0613336437
+      ],
+      "purdue_gis_perimeter_xy_ft": {
+        "vertices": 32,
+        "bbox": [
+          2996952.8249444105,
+          1886710.273949846,
+          2997099.586272743,
+          1886955.5182132397
+        ]
+      },
+      "osm_perimeter_xy_ft": {
+        "vertices": 14,
+        "bbox": [
+          2996958.6321803583,
+          1886711.6575686636,
+          2997109.365685417,
+          1886957.0613336437
+        ]
+      },
+      "header": {
+        "point_count": 11278927,
+        "point_format": "<PointFormat(6, 4 bytes of extra dims)>",
+        "scales": [
+          0.01,
+          0.01,
+          0.01
+        ],
+        "offsets": [
+          2997500.0,
+          1887500.0,
+          623.0
+        ],
+        "crs": "COMPD_CS[\"NAD83(HARN) / Indiana West (ftUS) + NAVD88 height - Geoid12B (ftUS)\",PROJCS[\"NAD83(HARN) / Indiana West (ftUS)\",GEOGCS[\"NAD83(HARN)\",DATUM[\"NAD83_High_Accuracy_Reference_Network\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY[\"EPSG\",\"6152\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4152\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",37.5],PARAMETER[\"central_meridian\",-87.08333333333333],PARAMETER[\"scale_factor\",0.999966667],PARAMETER[\"false_easting\",2952750],PARAMETER[\"false_northing\",820208.3330000002],UNIT[\"US survey foot\",0.3048006096012192,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"X\",EAST],AXIS[\"Y\",NORTH],AUTHORITY[\"EPSG\",\"2968\"]],VERT_CS[\"NAVD88 height - Geoid12B (ftUS)\",VERT_DATUM[\"North American Vertical Datum 1988\",2005,AUTHORITY[\"EPSG\",\"5103\"]],UNIT[\"US survey foot\",0.3048006096012192,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Gravity-related height\",UP],AUTHORITY[\"EPSG\",\"6360\"]]]"
+      },
+      "counts": {
+        "class6_in_gis": 0,
+        "class6_in_osm": 0,
+        "class2_in_ground_window": 12968
+      },
+      "class_histogram_inside_perimeter": {
+        "purdue_gis_ring": {
+          "1": 7089,
+          "2": 283
+        },
+        "osm_ring": {
+          "1": 7529,
+          "2": 122
+        }
+      },
+      "roof_non_ground_return_elevation_ft": {
+        "purdue_gis_ring": {
+          "count": 7089,
+          "min_ft": 619.3,
+          "p05_ft": 651.35,
+          "median_ft": 659.26,
+          "p95_ft": 666.9159999999999,
+          "max_ft": 678.64,
+          "height_above_nearby_ground_m": {
+            "median": 12.186,
+            "p95": 14.519,
+            "max": 18.093
+          }
+        },
+        "osm_ring": {
+          "count": 7529,
+          "min_ft": 619.54,
+          "p05_ft": 650.764,
+          "median_ft": 658.83,
+          "p95_ft": 666.87,
+          "max_ft": 668.19,
+          "height_above_nearby_ground_m": {
+            "median": 12.055,
+            "p95": 14.505,
+            "max": 14.908
+          }
+        }
+      },
+      "nearby_ground_class2_elevation_ft": {
+        "count": 12968,
+        "min_ft": 616.96,
+        "p05_ft": 617.98,
+        "median_ft": 619.28,
+        "p95_ft": 620.78,
+        "max_ft": 621.66
+      },
+      "osm_roof_cross_section_bins_east_to_west": [
+        {
+          "x_bin_ft": [
+            2996958.6321803583,
+            2996971.1933057797
+          ],
+          "point_count": 510,
+          "p05_height_above_ground_m": 9.374,
+          "median_height_above_ground_m": 9.693,
+          "p95_height_above_ground_m": 10.099
+        },
+        {
+          "x_bin_ft": [
+            2996971.1933057797,
+            2996983.754431201
+          ],
+          "point_count": 648,
+          "p05_height_above_ground_m": 10.052,
+          "median_height_above_ground_m": 10.535,
+          "p95_height_above_ground_m": 11.046
+        },
+        {
+          "x_bin_ft": [
+            2996983.754431201,
+            2996996.315556623
+          ],
+          "point_count": 644,
+          "p05_height_above_ground_m": 11.004,
+          "median_height_above_ground_m": 11.493,
+          "p95_height_above_ground_m": 11.989
+        },
+        {
+          "x_bin_ft": [
+            2996996.315556623,
+            2997008.8766820445
+          ],
+          "point_count": 650,
+          "p05_height_above_ground_m": 11.953,
+          "median_height_above_ground_m": 12.457,
+          "p95_height_above_ground_m": 12.937
+        },
+        {
+          "x_bin_ft": [
+            2997008.8766820445,
+            2997021.437807466
+          ],
+          "point_count": 651,
+          "p05_height_above_ground_m": 12.922,
+          "median_height_above_ground_m": 13.42,
+          "p95_height_above_ground_m": 13.894
+        },
+        {
+          "x_bin_ft": [
+            2997021.437807466,
+            2997033.998932888
+          ],
+          "point_count": 650,
+          "p05_height_above_ground_m": 13.884,
+          "median_height_above_ground_m": 14.373,
+          "p95_height_above_ground_m": 14.816
+        },
+        {
+          "x_bin_ft": [
+            2997033.998932888,
+            2997046.560058309
+          ],
+          "point_count": 671,
+          "p05_height_above_ground_m": 13.739,
+          "median_height_above_ground_m": 14.24,
+          "p95_height_above_ground_m": 14.769
+        },
+        {
+          "x_bin_ft": [
+            2997046.560058309,
+            2997059.1211837307
+          ],
+          "point_count": 669,
+          "p05_height_above_ground_m": 12.805,
+          "median_height_above_ground_m": 13.283,
+          "p95_height_above_ground_m": 13.774
+        },
+        {
+          "x_bin_ft": [
+            2997059.1211837307,
+            2997071.682309152
+          ],
+          "point_count": 681,
+          "p05_height_above_ground_m": 11.832,
+          "median_height_above_ground_m": 12.332,
+          "p95_height_above_ground_m": 12.814
+        },
+        {
+          "x_bin_ft": [
+            2997071.682309152,
+            2997084.2434345735
+          ],
+          "point_count": 680,
+          "p05_height_above_ground_m": 10.854,
+          "median_height_above_ground_m": 11.354,
+          "p95_height_above_ground_m": 11.851
+        },
+        {
+          "x_bin_ft": [
+            2997084.2434345735,
+            2997096.8045599954
+          ],
+          "point_count": 668,
+          "p05_height_above_ground_m": 9.906,
+          "median_height_above_ground_m": 10.404,
+          "p95_height_above_ground_m": 10.888
+        },
+        {
+          "x_bin_ft": [
+            2997096.8045599954,
+            2997109.365685417
+          ],
+          "point_count": 407,
+          "p05_height_above_ground_m": 4.563,
+          "median_height_above_ground_m": 9.665,
+          "p95_height_above_ground_m": 10.018
+        }
+      ]
+    },
+    "review_renders": [
+      "preview.png",
+      "preview_top.png",
+      "preview_north_gable.png",
+      "preview_east_entry.png",
+      "orthophoto_footprint_overlay.png"
+    ]
+  },
+  "findings": [
+    "Keep the roof-edge versus wall-footprint discrepancy explicit; current named Purdue GIS footprint is a defensible source choice, but it is not confirmed as the wall line.",
+    "Coordinator should reconcile the OSM-matching prior manifest bounds against the current Purdue feature and orthophoto before accepting campus placement.",
+    "Retain estimate labels and uncertainty; no published section/elevation or surveyed eave/ridge height was found.",
+    "Find a TREC-specific, attributable facade/entrance photo or drawing and model only details it supports. If none exists, keep the facade deliberately neutral and record the unresolved limitation; appearance alone cannot earn these points.",
+    "No modular export or evidence completeness issue found in the standalone asset. Master integration remains Tobin-owned."
+  ],
+  "recommendation": "Below 8/10. The model is a defensible evidence-led massing candidate, but source conflict over the wall/roof outline and the unsupported facade/entrance detail limit the grade. Resolve placement with the coordinator and seek attributable TREC-specific exterior evidence; do not invent architectural details if none is available."
+}

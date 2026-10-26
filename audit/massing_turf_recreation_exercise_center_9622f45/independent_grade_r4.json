@@ -1,0 +1,411 @@
+{
+  "building_id": "massing_turf_recreation_exercise_center_9622f45",
+  "building_name": "Turf Recreation Exercise Center (TREC)",
+  "reviewer": "independent evaluator r4; raw source snapshots, direct Blender 4.5.15 reopen, saved views, and July 2023 Street View panorama inspected",
+  "score": 8.1,
+  "max_score": 10,
+  "passing_standard": 8,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "TREC identity and named GIS footprint verified; wall/roof perimeter remains uncertain",
+      "evidence": [
+        "Raw Purdue CampusBuilding feature OBJECTID 312 names Turf Recreation Exercise Center and uses ABBR=TREC; raw OSM way 283275002 is separately named Turf Recreation Exercise Center.",
+        "The saved wall envelope follows the 32-vertex Purdue GIS polygon (computed area 3170.2 m\u00b2). The orthophoto directly shows the red GIS and blue OSM rings on the same TREC roof.",
+        "The named GIS polygon is a reasonable authoritative choice for this facility. The imagery makes clear that it is roof-level registration evidence and does not prove that the polygon is the structural wall line.",
+        "The raw GIS area attribute (36,210 sq ft), computed GIS ring (~34,124 sq ft), Purdue Treasurer list (36,545.51 sq ft), and RecWell project area (29,037 sq ft) remain unreconciled."
+      ],
+      "findings": [
+        "Retain the GIS-versus-OSM perimeter and four area figures as unresolved; no evidence supports silently converting either source outline into a surveyed wall edge."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.4,
+      "max_score": 2,
+      "status": "GIS placement and dimensions reproduced; source registration conflict remains",
+      "evidence": [
+        "Direct Blender 4.5.15 reopen confirms world bounds X -921.752..-874.594 m, Y 84.544..161.208 m. The structural envelope is about 44.84 \u00d7 74.83 m and the long axis is north-south.",
+        "The outline was placed using the documented campus-coordinate approximation and the model retains campus coordinates in the expected standalone massing library.",
+        "The selected GIS center differs from the prior OSM/manifest center by -2.38 m east-west and -0.44 m north-south; GIS is about 1.21 m narrower east-west. Both lines fall over the correct roof in the 2023 orthophoto."
+      ],
+      "findings": [
+        "The identity and gross placement are strong, but the unresolved ~2.4 m horizontal offset and ~1.2 m width difference prevent full confidence in the final wall position/dimensions."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.7,
+      "max_score": 2,
+      "status": "Roof form is imagery-supported and vertical profile is LiDAR-derived estimate; floors remain unverified",
+      "evidence": [
+        "The orthophoto directly supports the pale two-plane roof, north-south ridge and repeated east-west transverse bands. The top and isometric views show those same major forms.",
+        "The reopen report gives eaves 9.70 m and ridge 14.40 m; both are labelled estimates, not measured elevations.",
+        "The source LiDAR analysis reports a cross-roof profile of about 9.7 m at outer bins and 14.37 m centrally above nearby classified ground. The point cloud has no class-6 returns within either outline and uses nearby ground, so it supports the broad estimated profile but not surveyed eaves.",
+        "RecWell's turf-field use supports one large clear-span interior volume, but the available sources do not establish a floor/story count."
+      ],
+      "findings": [
+        "Keep both vertical datums explicitly estimated and leave floor count unverified; no published section or elevation was found."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "TREC-specific Street View verifies the major visible-side facade elements; exact stationing and some openings are estimates",
+      "evidence": [
+        "I opened the identified Google Street View panorama CKWL7p3cJEsDPH5hReovcw in Chrome; its visible capture label is July 2023. The TREC facade is directly visible with a red-brown brick base, pale vertical-rib metal above, two large service-door openings, dark wall louvers, one horizontal window and a glazed corner entrance beneath a broad light canopy.",
+        "The reopened model and rendered east-entry view reproduce those main material bands, vertical ribs, corner glazing/canopy, wall louvers, window and service doors. These details are now supported by a TREC-specific view rather than extrapolated CoRec imagery.",
+        "The 360 panorama is perspective, not a rectified elevation; dimensions and feature stationing are necessarily estimated. The model's visible long wall appears to show more service-door panels than the two clearly visible in the panorama, and unseen faces are not verified."
+      ],
+      "findings": [
+        "The main facade language is now evidence-backed. Reduce or document the extra service-door panels against the panorama, and retain uncertainty for exact dimensions and the unseen sides."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "Standalone asset reopened; export and evidence package are complete for this massing lane",
+      "evidence": [
+        "The saved asset at modular\\buildings\\massing_turf_recreation_exercise_center_9622f45.blend reopens in Blender 4.5.15 with the expected scene and collection, 274 mesh objects, and 324 evaluated faces.",
+        "The validation reports no unpacked external image dependencies and confirms direct campus-coordinate massing geometry.",
+        "The dedicated audit folder includes raw GIS and OSM snapshots, official RecWell pages, 2023 orthophoto, 2018 QL2 LiDAR tile and computations, the Street View access/inspection record, orthophoto overlay, four useful rendered views, and a saved reopen-validation report."
+      ],
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "directly_reopened_asset": "modular\\buildings\\massing_turf_recreation_exercise_center_9622f45.blend",
+    "direct_observations": [
+      "Opened saved library with Blender 4.5.15 LTS and confirmed expected scene/collection and mesh-only collection.",
+      "Viewed preview, top, north-gable and east-entry renders directly.",
+      "Viewed raw 2023 orthophoto footprint overlay directly.",
+      "Opened Google Maps Street View panorama CKWL7p3cJEsDPH5hReovcw in Chrome and verified July 2023 imagery and visible east/northeast facade."
+    ],
+    "reopened_asset_summary": {
+      "scene": "Building_massing_turf_recreation_exercise_center_9622f45",
+      "collection": "Asset_massing_turf_recreation_exercise_center_9622f45",
+      "collection_objects": 274,
+      "evaluated_faces": 324,
+      "world_bounds_m": [
+        [
+          -921.7515258789062,
+          -874.5935668945312
+        ],
+        [
+          84.54356384277344,
+          161.20765686035156
+        ],
+        [
+          0.0,
+          14.510000228881836
+        ]
+      ],
+      "material_names": [
+        "TREC | blue-gray glazing (Street View Jul 2023)",
+        "TREC | dark glazing frames (Street View Jul 2023)",
+        "TREC | dark metal trim (inferred)",
+        "TREC | dark wall louvers (Street View Jul 2023)",
+        "TREC | glazed entry door (Street View Jul 2023)",
+        "TREC | interior slab",
+        "TREC | light entrance canopy fascia (Street View Jul 2023)",
+        "TREC | light gray vertical-rib metal (Street View Jul 2023)",
+        "TREC | light neutral wall backing",
+        "TREC | light roof surface (2023 orthophoto)",
+        "TREC | metal panel standing ribs (Street View Jul 2023)",
+        "TREC | red-brown brick base (Street View Jul 2023)",
+        "TREC | transverse roof seam highlights (orthophoto rhythm)"
+      ],
+      "external_images": []
+    },
+    "source_identity": {
+      "purdue_objectid": 312,
+      "purdue_name": "Turf Recreation Exercise Center",
+      "purdue_abbr": "TREC",
+      "osm_way_id": 283275002,
+      "osm_name": "Turf Recreation Exercise Center"
+    },
+    "source_footprint_comparison": {
+      "official_purdue_gis_overlay_color": "red",
+      "osm_2021_overlay_color": "blue",
+      "visual_result": "Both footprints lie over the same long north-south light-roofed field hall in the orthophoto. Purdue GIS OID 312 is shifted about 2.4 m west and 0.44 m south from the 2021 OSM outline, and is about 1.21 m narrower east-west; red/blue separation is visible along the perimeter and does not alter facility identity.",
+      "purdue_gis_bounds_project_m": [
+        [
+          -921.2015309417055,
+          -876.3613377269335
+        ],
+        [
+          85.0935633089307,
+          159.91885530228956
+        ]
+      ],
+      "osm_bounds_project_m": [
+        [
+          -919.4317597558215,
+          -873.3796016933727
+        ],
+        [
+          85.51190400202131,
+          160.38617600044518
+        ]
+      ],
+      "dimension_comparison_m": {
+        "purdue_gis_east_west_width": 44.84019321477206,
+        "osm_east_west_width": 46.052158062448825,
+        "gis_minus_osm_width": -1.211964847676768,
+        "purdue_gis_north_south_length": 74.82529199335886,
+        "osm_north_south_length": 74.87427199842386,
+        "gis_minus_osm_length": -0.04898000506500466
+      },
+      "gis_minus_osm_center_m": [
+        -2.3757536097224374,
+        -0.4428306956231154
+      ],
+      "gis_ring_area_project_m2": 3170.198473384102,
+      "osm_ring_area_project_m2": 3198.044597969296,
+      "reported_area_comparison_sqft": {
+        "purdue_gis_ring_area_computed": 34123.73237069639,
+        "purdue_gis_squarefootage_attribute": 36210,
+        "recwell_project_size_fact_sheet": 29037,
+        "status": "unresolved across four published/computed figures; likely different definitions or scopes",
+        "purdue_treasurer_building_list_oct2021": 36545.51
+      },
+      "roof_observation": "Orthophoto shows a long north-south roof ridge, two sloped planes and repeated light-colored east-west bands perpendicular to the ridge. The roof appears white/light gray. Roof heights are not measurable from this orthographic image."
+    },
+    "lidar_profile": {
+      "source": "2018 Indiana QL2 LAS 1.4, Tippecanoe Co tile in2018_29951885_12.copc.laz",
+      "source_tile": "EPSG:2968 NAD83(HARN) Indiana West US survey feet; vertical NAVD88 Geoid12B US survey feet",
+      "bounds_ft": [
+        2996892.8249444105,
+        1886650.273949846,
+        2997169.365685417,
+        1887017.0613336437
+      ],
+      "purdue_gis_perimeter_xy_ft": {
+        "vertices": 32,
+        "bbox": [
+          2996952.8249444105,
+          1886710.273949846,
+          2997099.586272743,
+          1886955.5182132397
+        ]
+      },
+      "osm_perimeter_xy_ft": {
+        "vertices": 14,
+        "bbox": [
+          2996958.6321803583,
+          1886711.6575686636,
+          2997109.365685417,
+          1886957.0613336437
+        ]
+      },
+      "header": {
+        "point_count": 11278927,
+        "point_format": "<PointFormat(6, 4 bytes of extra dims)>",
+        "scales": [
+          0.01,
+          0.01,
+          0.01
+        ],
+        "offsets": [
+          2997500.0,
+          1887500.0,
+          623.0
+        ],
+        "crs": "COMPD_CS[\"NAD83(HARN) / Indiana West (ftUS) + NAVD88 height - Geoid12B (ftUS)\",PROJCS[\"NAD83(HARN) / Indiana West (ftUS)\",GEOGCS[\"NAD83(HARN)\",DATUM[\"NAD83_High_Accuracy_Reference_Network\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY[\"EPSG\",\"6152\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4152\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",37.5],PARAMETER[\"central_meridian\",-87.08333333333333],PARAMETER[\"scale_factor\",0.999966667],PARAMETER[\"false_easting\",2952750],PARAMETER[\"false_northing\",820208.3330000002],UNIT[\"US survey foot\",0.3048006096012192,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"X\",EAST],AXIS[\"Y\",NORTH],AUTHORITY[\"EPSG\",\"2968\"]],VERT_CS[\"NAVD88 height - Geoid12B (ftUS)\",VERT_DATUM[\"North American Vertical Datum 1988\",2005,AUTHORITY[\"EPSG\",\"5103\"]],UNIT[\"US survey foot\",0.3048006096012192,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Gravity-related height\",UP],AUTHORITY[\"EPSG\",\"6360\"]]]"
+      },
+      "counts": {
+        "class6_in_gis": 0,
+        "class6_in_osm": 0,
+        "class2_in_ground_window": 12968
+      },
+      "class_histogram_inside_perimeter": {
+        "purdue_gis_ring": {
+          "1": 7089,
+          "2": 283
+        },
+        "osm_ring": {
+          "1": 7529,
+          "2": 122
+        }
+      },
+      "roof_non_ground_return_elevation_ft": {
+        "purdue_gis_ring": {
+          "count": 7089,
+          "min_ft": 619.3,
+          "p05_ft": 651.35,
+          "median_ft": 659.26,
+          "p95_ft": 666.9159999999999,
+          "max_ft": 678.64,
+          "height_above_nearby_ground_m": {
+            "median": 12.186,
+            "p95": 14.519,
+            "max": 18.093
+          }
+        },
+        "osm_ring": {
+          "count": 7529,
+          "min_ft": 619.54,
+          "p05_ft": 650.764,
+          "median_ft": 658.83,
+          "p95_ft": 666.87,
+          "max_ft": 668.19,
+          "height_above_nearby_ground_m": {
+            "median": 12.055,
+            "p95": 14.505,
+            "max": 14.908
+          }
+        }
+      },
+      "nearby_ground_class2_elevation_ft": {
+        "count": 12968,
+        "min_ft": 616.96,
+        "p05_ft": 617.98,
+        "median_ft": 619.28,
+        "p95_ft": 620.78,
+        "max_ft": 621.66
+      },
+      "osm_roof_cross_section_bins_east_to_west": [
+        {
+          "x_bin_ft": [
+            2996958.6321803583,
+            2996971.1933057797
+          ],
+          "point_count": 510,
+          "p05_height_above_ground_m": 9.374,
+          "median_height_above_ground_m": 9.693,
+          "p95_height_above_ground_m": 10.099
+        },
+        {
+          "x_bin_ft": [
+            2996971.1933057797,
+            2996983.754431201
+          ],
+          "point_count": 648,
+          "p05_height_above_ground_m": 10.052,
+          "median_height_above_ground_m": 10.535,
+          "p95_height_above_ground_m": 11.046
+        },
+        {
+          "x_bin_ft": [
+            2996983.754431201,
+            2996996.315556623
+          ],
+          "point_count": 644,
+          "p05_height_above_ground_m": 11.004,
+          "median_height_above_ground_m": 11.493,
+          "p95_height_above_ground_m": 11.989
+        },
+        {
+          "x_bin_ft": [
+            2996996.315556623,
+            2997008.8766820445
+          ],
+          "point_count": 650,
+          "p05_height_above_ground_m": 11.953,
+          "median_height_above_ground_m": 12.457,
+          "p95_height_above_ground_m": 12.937
+        },
+        {
+          "x_bin_ft": [
+            2997008.8766820445,
+            2997021.437807466
+          ],
+          "point_count": 651,
+          "p05_height_above_ground_m": 12.922,
+          "median_height_above_ground_m": 13.42,
+          "p95_height_above_ground_m": 13.894
+        },
+        {
+          "x_bin_ft": [
+            2997021.437807466,
+            2997033.998932888
+          ],
+          "point_count": 650,
+          "p05_height_above_ground_m": 13.884,
+          "median_height_above_ground_m": 14.373,
+          "p95_height_above_ground_m": 14.816
+        },
+        {
+          "x_bin_ft": [
+            2997033.998932888,
+            2997046.560058309
+          ],
+          "point_count": 671,
+          "p05_height_above_ground_m": 13.739,
+          "median_height_above_ground_m": 14.24,
+          "p95_height_above_ground_m": 14.769
+        },
+        {
+          "x_bin_ft": [
+            2997046.560058309,
+            2997059.1211837307
+          ],
+          "point_count": 669,
+          "p05_height_above_ground_m": 12.805,
+          "median_height_above_ground_m": 13.283,
+          "p95_height_above_ground_m": 13.774
+        },
+        {
+          "x_bin_ft": [
+            2997059.1211837307,
+            2997071.682309152
+          ],
+          "point_count": 681,
+          "p05_height_above_ground_m": 11.832,
+          "median_height_above_ground_m": 12.332,
+          "p95_height_above_ground_m": 12.814
+        },
+        {
+          "x_bin_ft": [
+            2997071.682309152,
+            2997084.2434345735
+          ],
+          "point_count": 680,
+          "p05_height_above_ground_m": 10.854,
+          "median_height_above_ground_m": 11.354,
+          "p95_height_above_ground_m": 11.851
+        },
+        {
+          "x_bin_ft": [
+            2997084.2434345735,
+            2997096.8045599954
+          ],
+          "point_count": 668,
+          "p05_height_above_ground_m": 9.906,
+          "median_height_above_ground_m": 10.404,
+          "p95_height_above_ground_m": 10.888
+        },
+        {
+          "x_bin_ft": [
+            2997096.8045599954,
+            2997109.365685417
+          ],
+          "point_count": 407,
+          "p05_height_above_ground_m": 4.563,
+          "median_height_above_ground_m": 9.665,
+          "p95_height_above_ground_m": 10.018
+        }
+      ]
+    },
+    "review_views": [
+      "preview.png",
+      "preview_top.png",
+      "preview_north_gable.png",
+      "preview_east_entry.png",
+      "orthophoto_footprint_overlay.png"
+    ],
+    "street_view_panorama_id": "CKWL7p3cJEsDPH5hReovcw",
+    "street_view_capture": "July 2023"
+  },
+  "findings": [
+    "Retain the GIS-versus-OSM perimeter and four area figures as unresolved; no evidence supports silently converting either source outline into a surveyed wall edge.",
+    "The identity and gross placement are strong, but the unresolved ~2.4 m horizontal offset and ~1.2 m width difference prevent full confidence in the final wall position/dimensions.",
+    "Keep both vertical datums explicitly estimated and leave floor count unverified; no published section or elevation was found.",
+    "The main facade language is now evidence-backed. Reduce or document the extra service-door panels against the panorama, and retain uncertainty for exact dimensions and the unseen sides."
+  ],
+  "recommendation": "Passes the 8/10 independent-grade gate at 8.1/10. Coordinator should preserve the GIS/OSM wall-versus-roof discrepancy and unresolved area definitions. The main observed facade elements are supported by the TREC-specific Street View panorama; door count/stationing, measured heights, floor count, and unseen facades remain uncertain."
+}
