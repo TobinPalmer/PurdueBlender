@@ -2,6 +2,8 @@
 
 These building assets are independently graded at or above 8/10 and pushed to `master`. Tobin owns the master blend and should integrate each latest asset, place it from the manifest coordinates, remove or replace any older instance, and reopen the master to verify placement.
 
+- **Stone Hall (STON)** — pass: 8.0/10 (`audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json`); model commit `8d426a3`. Asset: `modular/buildings/massing_stone_hall_ston_d3f479a.blend`. Integrate at the manifest coordinates, replace the Stone Hall massing, reconcile the second candidate asset listed for FID 240, verify a single intended building instance, then remove this handoff after integration.
+
 - **Telecommunications Building (TEL)** — pass: 8.0/10 (`audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json`); model commit `6993c7c`. Asset: `modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend`. Integrate the asset at its manifest campus coordinates, replace its existing massing instance, verify it appears once, and remove this handoff after master integration.
 
 - **Purdue Police Department (TERY)** — pass: 8.4/10 (`audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json`); model commit `6ccbc81`. Asset: `modular/buildings/massing_purdue_police_department_19f467e.blend`. Integrate the asset at its manifest campus coordinates, replace the corresponding TERY/PUPD massing, verify it appears once, and remove this handoff after master integration.

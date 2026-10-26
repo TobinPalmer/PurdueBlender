@@ -160,7 +160,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (18)
+### Detailed models still in progress or awaiting a grade (19)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -181,11 +181,12 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Johnson Hall of Nursing (JNSN) | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | [9.3/10](audit/massing_johnson_hall_of_nursing_jnsn_823fca7/independent_grade/r2/result.json); awaiting master integration | Tobin |
 | Purdue Police Department (TERY) | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | [8.4/10](audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json); awaiting master integration | Rossen |
+| Stone Hall (STON) | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | [8.0/10](audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json); awaiting master integration | Rossen |
 | Telecommunications Building (TEL) | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | [8.0/10](audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json); awaiting master integration | Rossen |
 
 
 
-### Buildings that still have only massing models (52)
+### Buildings that still have only massing models (51)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -227,7 +228,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Arjav |
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
 | smith hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | Arjav |
-| stone hall ston | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | Rossen |
 | student health center push | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Rossen |
 | the caretaker s cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | Rossen |
 | the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Rossen |
@@ -468,7 +468,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 237 | Arthur G. Hansen Life Sciences Research Building | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 238 | Biochemistry Building | [massing_biochemistry_building_a267b8d](modular/buildings/massing_biochemistry_building_a267b8d.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 239 | Psychological Sciences Building | [massing_psychological_sciences_building_psyc_34efd04](modular/buildings/massing_psychological_sciences_building_psyc_34efd04.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 240 | Winthrop E. Stone Hall | [massing_house_1149668161_25bb857](modular/buildings/massing_house_1149668161_25bb857.blend)<br>[massing_stone_hall_ston_d3f479a](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 240 | Winthrop E. Stone Hall | [massing_house_1149668161_25bb857](modular/buildings/massing_house_1149668161_25bb857.blend)<br>[massing_stone_hall_ston_d3f479a](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | Stone Hall asset independently graded 8.0/10; its mesh ring matches FID 240. Reconcile the second candidate massing during master integration (see TODO.md). Height remains estimated. |
 | 241 | Willie M. Reed Animal Disease Diagnostic Laboratory | [massing_animal_disease_diagnostic_laboratory_b934354](modular/buildings/massing_animal_disease_diagnostic_laboratory_b934354.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 242 | Soil Erosion Lab | [massing_national_soil_erosion_laboratory_soil_0a1864c](modular/buildings/massing_national_soil_erosion_laboratory_soil_0a1864c.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 243 | Maurice G. Knoy Hall of Technology | [massing_knoy_hall_knoy_f598616](modular/buildings/massing_knoy_hall_knoy_f598616.blend) | Direct FID crosswalk candidate; geometry/grade still require review |

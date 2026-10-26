@@ -183,6 +183,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Lilly Hall of Life Sciences | [massing_lilly_hall_e7fc13e.blend](buildings/massing_lilly_hall_e7fc13e.blend) | 4 |
 | Mann Hall | [massing_mann_hall_2b4ebda.blend](buildings/massing_mann_hall_2b4ebda.blend) | 1 |
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
+| Stone Hall (STON) | [massing_stone_hall_ston_d3f479a.blend](buildings/massing_stone_hall_ston_d3f479a.blend) | 1 |
 | Telecommunications Building (TEL) | [massing_telecommunications_building_tel_8dfaccf.blend](buildings/massing_telecommunications_building_tel_8dfaccf.blend) | 1 |
 
 Hillel retains campus-world coordinates. Its 8.3/10 grade supports the main shell and GIS footprint; the proposed 845 sq ft addition is unresolved, and height, roof depth/pitch, and facade opening details remain schematic. See [Hillel grade](../audit/massing_hillel_36d2ba1/independent_grade/r2/result.json).
@@ -204,6 +205,8 @@ Lilly Hall of Life Sciences retains campus-world coordinates. Its 8.0/10 grade c
 Mann Hall retains campus-world coordinates. Its 8.2/10 grade confirms the Purdue GIS FID 635 footprint within 0.000032 m and a portable Blender 4.5.15 export. The 11.278 m height matches GIS R=37 ft, while GIS level fields conflict with the architect's two-story plus lower-level description; official-photo facade cues remain simplified. See [Mann Hall grade](../audit/massing_mann_hall_2b4ebda/independent_grade/r1/grade.json).
 
 Purdue Police Department (TERY) retains campus-world coordinates. Its 8.4/10 grade verifies the Purdue GIS FID 275 footprint to under 1 mm and the identity match to Oliver Perkins Terry House, where Purdue identifies police operations. One-story brick and ribbon glazing are photo-informed; 4.45 m roof height, entrance position, facade bay rhythm, and the unmodeled utility basement remain uncertain. See [PUPD grade](../audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json).
+
+Stone Hall (STON) retains campus-world coordinates. Its 8.0/10 independent grade confirms that the mesh’s 12 base-ring vertices match the Purdue GIS FID 240 polygon. The 13.716 m total height is an estimate from GIS Extrution=45 with undocumented units; source area and perimeter attributes conflict with polygon-ring measurements. Broad steps and the central three-panel entrance reflect archive photographs, while exact window proportions remain interpretive. See [Stone Hall grade](../audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json).
 
 Telecommunications Building (TEL) retains campus-world coordinates. Its 8.0/10 grade verifies the Purdue GIS FID 199 footprint and the 29 source ring vertices within 0.1 mm. A broad flat roof and approximate roof equipment positions are supported by 2018 orthophoto; the 9.14 m height is an estimate from unclassified LiDAR returns, while facade material and windows remain unverified. See [TEL grade](../audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json).
 
