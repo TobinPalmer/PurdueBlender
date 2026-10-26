@@ -80,7 +80,7 @@ This project tracks detailed campus models separately from the remaining massing
 
 ## Unfinished buildings (168 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 8 buildings, Arjav 10 buildings, Brady 70 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 8 buildings, Arjav 10 buildings, Brady 100 buildings.
 
 ### Detailed models still in progress or awaiting a grade (34)
 
@@ -265,6 +265,7 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 ## Adding a building
 
 Follow [AGENT.md](AGENT.md) for the required modular build and grading process.
+
 
 
 
