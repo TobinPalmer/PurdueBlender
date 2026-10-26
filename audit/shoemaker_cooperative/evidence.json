@@ -1,7 +1,7 @@
 {
   "building": "Shoemaker Cooperative",
   "asset_id": "massing_shoemaker_cooperative_2159ea4",
-  "status": "Detailed asset updated; pending independent grade",
+  "status": "Second-floor evidence reconciled with GIS level-count conflict; facade and height remain estimates",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -15,14 +15,14 @@
     "reference_status": "Official campus map polygon; not a certified survey",
     "secondary_visual_references": [
       {
-        "url": "https://www.shoemakercooperative.com/our-home",
-        "use": "Address and owner photo tour; its gallery labels a second floor; visual dimensions approximated",
-        "provider": "Shoemaker Cooperative"
+        "provider": "Shoemaker Cooperative (building operator)",
+        "use": "Confirms address 351 Northwestern Avenue; photo-tour navigation includes a Floor Two label, supporting a second floor. It does not establish the total storey count or exterior dimensions.",
+        "url": "https://www.shoemakercooperative.com/our-home"
       },
       {
-        "url": "https://archives.lib.purdue.edu/agents/corporate_entities/611",
-        "use": "Cooperative identity and historical context",
-        "provider": "Purdue University Archives and Special Collections"
+        "provider": "Purdue University Archives and Special Collections",
+        "use": "Cooperative identity and historical context; no building measurements inferred.",
+        "url": "https://archives.lib.purdue.edu/agents/corporate_entities/611"
       }
     ]
   },
@@ -63,9 +63,10 @@
     "position_status": "Structural footprint set to the official map polygon coordinates; underlying source positional uncertainty is unpublished",
     "plan_dimension_status": "Footprint matches official source polygon; polygon is not a survey",
     "orientation_status": "Structural shell follows official polygon vertex orientation",
-    "height_status": "estimated; no verified elevation drawing or measured height",
+    "height_status": "6.7 m modeled as a two-storey estimate; the operator photo tour confirms a Floor Two, while the official GIS NUM_LEVELS attribute is 1. No measured height is available.",
     "official_num_levels_attribute": 1,
-    "official_extrution_attribute": 17
+    "official_extrution_attribute": 17,
+    "storey_evidence": "GIS NUM_LEVELS=1 conflicts with the operator photo-tour label Floor Two. The page supports at least a second floor but not total storeys or height."
   },
   "geometry_edits": [
     "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
@@ -73,15 +74,16 @@
     "Added an entrance marker oriented toward west; exact facade detail placement remains approximate."
   ],
   "uncertainties": [
-    "The official map polygon is not a certified survey and has no published position/dimension uncertainty.",
-    "Height has not been checked against elevation drawings or on-site measurement; GIS level/Extrution fields are not treated as height measurements.",
-    "GIS levels attribute 1 conflicts with cooperative photo gallery labelling a second floor; modeled two-storey mass remains an estimate",
-    "Facade details, window spacing and entrance position are approximate and need independent visual review.",
+    "The official campus polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
+    "The map NUM_LEVELS attribute is 1, while the operator photo tour includes Floor Two; exact total storeys and height remain unresolved.",
+    "The operator photo tour is interior context and does not provide measured exterior elevations or a roof plan.",
+    "Facade materials, window spacing, entrance location, and roof form remain approximate and need independent exterior review.",
     "No independent grader has reviewed this revision."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
     "build_config": "build_config.json",
-    "raw_source": "source_feature_800_raw.json"
+    "raw_source": "source_feature_800_raw.json",
+    "owner_site_observation": "source_owner_site_observation.json"
   }
 }
