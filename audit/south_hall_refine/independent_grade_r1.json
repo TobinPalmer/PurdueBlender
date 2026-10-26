@@ -1,0 +1,87 @@
+{
+  "building": "South Hall",
+  "asset": "modular/buildings/south_hall.blend",
+  "review_date": "2026-10-25",
+  "sha256": "9a848c6140c3abc6c6a1d7c7daa9d8c176d7a0452c3c489d56672812c573c410",
+  "score": 7.8,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity, plan footprint, and local frame",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": "FID 528 identifies South Hall. The full simplified GIS outline is retained and the reopened base-mesh overlay matches to approximately 2.24 micrometres. The match verifies the transform against the same source polygon, not a separate structural-wall survey. Root is identity."
+    },
+    {
+      "name": "Vertical massing, connector, and roof",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": "Eight residential floors and a low north dining/link arm follow broad Purdue program/site-plan evidence. The exact plan split/endpoint, inferred 14/10-foot floor rhythm, absolute height, and roof form remain estimates or unverified."
+    },
+    {
+      "name": "Exterior facade, entrance, and materials",
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": "Brick, framed glazing, a glazed base/entry, and roof variation establish broad character. The facade is very regular and schematic; the prominent tall glazed bay in current construction imagery is not clearly reproduced, and roof/eave articulation is sparse."
+    },
+    {
+      "name": "Interior and amenities",
+      "score": 0.9,
+      "max_score": 1.5,
+      "evidence": "The asset includes representative labs, public amenities, and a sample double room, all explicitly schematic. The cutaway does not communicate coherent connected spaces, circulation, cores, or room adjacencies. Exact room locations are unsupported."
+    },
+    {
+      "name": "Source evidence and uncertainty handling",
+      "score": 1.2,
+      "max_score": 1.5,
+      "evidence": "Purdue GIS, a Trustees site plan, housing pages, and 2026 construction references are preserved with provenance and limitations. Plan registration, connector partition, and GIS floor-field unit interpretation remain inferred."
+    },
+    {
+      "name": "Saved file, materials, and portability",
+      "score": 0.9,
+      "max_score": 1.0,
+      "evidence": "Independent Blender 5.2.3 fresh reopen matched the expected hash, 22 objects, identity root, material coverage, and no external image dependencies. Low object detail still limits inspection of this large building."
+    }
+  ],
+  "findings": [
+    "R1 is a substantial improvement over the prior rectangular slab and preserves the full GIS ground outline.",
+    "The eight-story upper shell and one-story connector are plausible broad massing but depend on estimated plan partition and inferred GIS height units.",
+    "Facade rhythm, glass bay/atrium, roof articulation, and ground-floor circulation remain too schematic for an 8/10 pass.",
+    "The interior cutaway shows representative props but not an understandable connected floor arrangement.",
+    "The asset and evidence are portable and reopen cleanly; master placement was not reviewed."
+  ],
+  "required_before_pass": [
+    "Add source-informed tall glazed facade/atrium and more representative facade variation without claiming an unverified window schedule.",
+    "Rework the ground-floor cutaway to show connected public spaces, clear circulation, and representative partitions/amenities; label room placement schematic.",
+    "Clarify the low dining connector transition in exterior views and retain its partition uncertainty.",
+    "Keep unsupported roof and height conditions clearly estimated unless stronger source evidence is found.",
+    "Reopen master and verify the placement marker during coordinator integration."
+  ],
+  "review_sources": [
+    "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D528&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+    "https://www.purdue.edu/bot/meetings/past-meetings/2023/07.%20aug/pfc/Hillenbrand%20Residence%20Hall%20South.pdf",
+    "https://housing.purdue.edu/my-housing/options/residence-halls/south-hall.html",
+    "https://housing.purdue.edu/news/2025_0115-construction-ambassadors-south-hill.html",
+    "https://www.housing.purdue.edu/get-reconnected/2026/03/special-feature3.html"
+  ],
+  "evidence": {
+    "fresh_reopen": "audit/south_hall_refine/independent_reopen_r1.json",
+    "builder_validation": "audit/south_hall_refine/validation_r1.json",
+    "build_record": "audit/south_hall_refine/BUILD_RECORD_R1.md",
+    "footprint_overlay": "audit/south_hall_refine/official_footprint_vs_asset_r1.png",
+    "renders": [
+      "audit/south_hall_refine/south_hall_oblique_full_r1.png",
+      "audit/south_hall_refine/south_hall_human_scale_east_entry_r1.png",
+      "audit/south_hall_refine/south_hall_schematic_ground_floor_cutaway_r1.png"
+    ]
+  },
+  "limitations": [
+    "Purdue GIS FID 528 is not a certified wall survey; the model boundary was generated from it.",
+    "The site plan is unregistered and does not independently provide a georeferenced connector split.",
+    "GIS floor fields have no stated units or verified vertical datum; the feet interpretation is an estimate.",
+    "Construction photography can show temporary conditions and does not establish dimensions or as-built room layout.",
+    "Master placement was not checked by this standalone asset review."
+  ]
+}

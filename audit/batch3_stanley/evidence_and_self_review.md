@@ -33,3 +33,30 @@
 ## Candid self-review
 
 **Current self-rating: 7.2/10; still below the requested 9/10 and pending independent review.** Round 2 improves the materially incorrect triangular window caps, bright/flat stone, steep roof, entry composition, and nearly blank interior. However, the overall model remains stylized; the roof still reads broad and somewhat flat, and the entrance header is crowded by the facade window above. The interior is now populated, but furniture, room layout, and finishes remain schematic rather than photo-verified. Height and roof profile are not independently measured. The provided renders should be inspected at full resolution; further work should focus on roof/facade proportion and entry-to-window clearance, then receive an independent score before any 9/10 claim.
+
+
+## R3/R4 revision and validation — 2026-10-25
+
+R3 is saved into the standalone Stanley asset. R4 makes a measured-object change only to the modeled cornice depth and roof-eave vertical alignment; the official foundation and asset root remain fixed. The asset is reopened and validated in Blender 5.2.3. The latest file SHA-256 is `40c1b209881cc7eaba71b1cb0057dc6d735751dd81bf2142ba5b3e4838f03a13`.
+
+### Source-backed changes
+
+- Removed 39 detached bronze-frame faces at z≈20.8 m from 39 third-floor frame meshes. A fresh reopen finds the highest repaired frame vertex at 12.20 m, within the upper modeled opening band.
+- Reproportioned 114 east-facade glass, frame, and limestone-trim meshes into wider groupings based qualitatively on the current Purdue CLA photograph. No measured elevation or window schedule was found, so the widths remain visual estimates.
+- Shaped both entrance stair cheeks to the stair slope and added thin metal handrails with short supports, following the visible stair/rail composition in the CLA photo. Exact dimensions are estimated.
+- Tuned the limestone, glazing, and roof procedural materials.
+- Reduced the cornice from 0.90 m to 0.45 m vertical depth and lowered the roof assembly by 0.45 m so the eave meets the thinner cornice. The historic PPBUC01117 image supports a low hipped roof; it is undated and does not prove current roof profile or height. Those remain unverified/estimated.
+- Rendered a focused interior cutaway for review. The room arrangement is explicitly schematic based on historical 2022 plans and broad current use categories, not a current as-built layout.
+
+### Reopen and full-outline validation
+
+`reopen_verification_r4.json` confirms 825 objects in `Asset_stanley_coulter_hall`, root location/rotation `(0,0,0)`, unit scale, repaired level-three frames, and the post-R4 roof/cornice bounds. The full-ring comparison uses all 12 vertices of official Purdue ArcGIS FID 56 and the 12 bottom vertices of the asset foundation. IoU is `0.999999899024`, symmetric-difference area `0.000286441 m²`, Hausdorff distance `0.000004506 m`. The outline match is effectively exact in the local project coordinate transform, but this is a campus-map polygon rather than a survey and does not validate walls above the foundation, facade, roof, or height. The registered plan overlay is `SC_footprint_overlay_r3.png`.
+
+### Review renders
+
+- Exterior: `SC_hero_r4.png`
+- Entry: `SC_entry_r4.png`
+- Interior schematic: `SC_interior_schematic_r4.png`
+- Full foundation overlay: `SC_footprint_overlay_r3.png`
+
+**Current candid self-assessment:** improvements address several R1 defects, but the asset remains stylized and the roof, overall elevation details, window grouping, and interior are not independently verified. The R1 score of 4.7/10 is historical; no new score is asserted here. R4 is ready for an independent grader, and it is not being represented as a 9/10 result.
