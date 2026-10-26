@@ -1,0 +1,125 @@
+{
+  "building": "Stanley Coulter Hall",
+  "review_stage": "R6 ready for independent grading; no R6 score assigned",
+  "asset": "modular/buildings/stanley_coulter_hall.blend",
+  "sha256": "ecc5c02b4eac97d2afee19602e790b86d84f41b3fe78222b17f75f43e70cc61e",
+  "previous_grade": {
+    "round": "R5",
+    "score": 7.8,
+    "threshold": 8.0,
+    "report": "independent_grade_r5.md",
+    "primary_feedback": [
+      "Entrance reads shallow and blocky compared with the Purdue CLA photograph.",
+      "Facade openings do not match the broad grouped upper glazing visible in the photograph.",
+      "Two entry-side rectangles rendered as open gray view-through gaps rather than brick piers.",
+      "Interior was a furniture-use diagram with no visibly connected route to the lobby stair.",
+      "Roof appearance and height remain unverified; master placement was not checked."
+    ]
+  },
+  "r6_changes": [
+    {
+      "area": "East/courtyard upper facade",
+      "details": "Replaced 33 individual third-floor east window modules with two grouped ribbons plus a center ribbon over the entry. Narrow bronze mullions follow the original eight window centers and three center-module centers. Light limestone head/sill bands tie the groups into one band, matching the visible composition in Purdue's current CLA image. The existing foundation outline and lower window rows were not moved. Original modules remain in a hidden, separate recovery collection.",
+      "object_count": 20
+    },
+    {
+      "area": "Glazing material",
+      "details": "Changed the shared Architectural_Glazing shader to a darker, more reflective blue-gray surface so the ribbons read as windows against the modeled solid brick wall instead of light-gray opaque panels. No claim of transparent view-through glazing is made because the supporting brick wall is not modeled with window cutouts."
+    },
+    {
+      "area": "Entrance side piers",
+      "details": "Filled the two unsupported gray view-through gaps on either side of the stone main portal with red-brick mesh faces joined into the existing full-building exterior brick object. This preserves the existing procedural brick mapping and closes the visual holes. The source photograph shows brick piers flanking the portal; their exact dimensions remain estimates fitted between existing window trim and the stone surround.",
+      "joined_faces": 12,
+      "new_object_count": 0
+    },
+    {
+      "area": "Entrance portal",
+      "details": "Reduced the projecting depth and visible height of the stone entablature while preserving the paired round supports, recessed double doors, arched transom, stone surround, stair, and handrails. The entablature world bounds changed from X 28.10..28.97 m and Z 6.15..6.62 m to X 28.10..28.64 m and Z 6.31..6.62 m. Dimensions are estimated from the undimensioned photograph."
+    },
+    {
+      "area": "Unsupported fixtures",
+      "details": "Moved the four R5 wall-lantern bracket/glow objects into a hidden scene-level recovery collection. The examined current facade photograph does not substantiate their blocky design. They are excluded from the active asset collection."
+    },
+    {
+      "area": "Roof surface",
+      "details": "Added a low-strength procedural wave bump to the existing roof shader as restrained estimated course variation. No dormers, HVAC, ridge equipment, roof profile, or height were asserted. Current roof construction and total height remain unverified."
+    },
+    {
+      "area": "Interior circulation study",
+      "details": "Added an explicitly schematic, connected entry-to-lobby corridor floor and low corridor walls, plus a landing that overlaps the existing lobby staircase shell. The route floor overlaps the main door plane by 0.1236 m, the landing by 0.15 m, and the landing overlaps the stair bounds by 0.2912 m. A separate review render labels the route and states that room layout is unverified. No current as-built room/partition plan was available."
+    }
+  ],
+  "source_basis": [
+    {
+      "provider": "Purdue College of Liberal Arts",
+      "url": "https://www.cla.purdue.edu/academic/english/images/stanleycoulterhall.jpg",
+      "retrieved": "2026-10-25",
+      "photo_date": "Not exposed",
+      "supports": "Current facade composition: grouped upper glazing, red-brick piers, pale stone portal, recessed doors, round paired supports, stairs and rails. It does not provide dimensions or full building elevations."
+    },
+    {
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/1310/",
+      "record": "PPBUC01117",
+      "date": "Undated image; digitized 2006-12-01",
+      "supports": "Historic low hipped-roof context only; not current roof construction or surveyed height."
+    },
+    {
+      "provider": "Purdue Board of Trustees",
+      "url": "https://www.purdue.edu/bot/meetings/past-meetings/2022/09.%20oct/pfc/University%20Hall%20Related%20Renovations.pdf",
+      "pages": "11-13",
+      "document_date": "2022-09-28",
+      "supports": "Historical Stanley Coulter basement/first-/second-floor plan sheets; they do not confirm current as-built room routing or interior finishes."
+    },
+    {
+      "provider": "Purdue ArcGIS BuildingShapesZip4, official campus map feature",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 56,
+      "snapshot_date": "2026-10-22",
+      "retrieved": "2026-10-25",
+      "crs": "Project approximate local-meter frame; not a certified survey.",
+      "supports": "Foundation perimeter only."
+    }
+  ],
+  "fresh_reopen": {
+    "validation": "Blender 5.2.3 standalone reopen",
+    "evidence": "reopen_verification_r6.json",
+    "asset_sha256": "ecc5c02b4eac97d2afee19602e790b86d84f41b3fe78222b17f75f43e70cc61e",
+    "active_collection": "Asset_stanley_coulter_hall",
+    "active_object_count": 760,
+    "active_mesh_count": 750,
+    "root_transform": "identity location/rotation, unit scale",
+    "used_material_count": 24,
+    "materialless_meshes": 0,
+    "invalid_material_slots": 0,
+    "external_image_texture_files": 0,
+    "missing_images": 0,
+    "hidden_scene_archives": {
+      "unverified_roof_options_r5": 52,
+      "superseded_individual_upper_east_windows_r6": 33,
+      "unverified_entry_lantern_objects_r6": 4
+    }
+  },
+  "foundation_comparison": {
+    "evidence": "full_polygon_comparison_r3.json",
+    "feature_id": 56,
+    "intersection_over_union": 0.9999998990235448,
+    "symmetric_difference_area_m2": 0.00028644119725406136,
+    "hausdorff_distance_m": 0.000004505824793678872,
+    "limit": "The project local-meter campus-map polygon validates the foundation ring only; it is not a survey and does not verify wall lines, entrance location, roof, or height."
+  },
+  "renders": [
+    "SC_hero_r6.png",
+    "SC_entry_r6.png",
+    "SC_interior_circulation_r6.png",
+    "SC_footprint_overlay_r3.png"
+  ],
+  "remaining_uncertainties": [
+    "The master Placement_stanley_coulter_hall marker and assembled neighborhood alignment have not been opened/checked by this asset-only task; coordinator must verify before integration.",
+    "The current CLA photo is undated, undimensioned and only covers part of the facade. R6 upper-window dimensions and brick-infill extents are visual fits, not measured elevations.",
+    "The current roof profile, surface material, construction and 15.78 m render-visible top elevation are not independently verified; the historic archive photograph is undated.",
+    "The corridor and stair landing are a connected schematic, not a claim of current as-built partitions or room routing. Interior finishes and floor-to-floor core remain unverified.",
+    "The full foundation ring remains a close match to official campus-map feature 56, but survey-grade position and orientation are not established by the outline comparison."
+  ],
+  "status": "R6 reopens and validates as a standalone asset and is ready for independent grading. No R6 score is claimed; it is not represented as meeting the 8.0 threshold until an independent grader reports a passing score."
+}

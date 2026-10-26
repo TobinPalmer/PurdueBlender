@@ -1,0 +1,77 @@
+{
+  "building": "Stanley Coulter Hall",
+  "asset": "modular/buildings/stanley_coulter_hall.blend",
+  "review_date": "2026-10-25",
+  "asset_sha256": "40c1b209881cc7eaba71b1cb0057dc6d735751dd81bf2142ba5b3e4838f03a13",
+  "score": 7.6,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "fresh_reopen": "audit/batch3_stanley/independent_reopen_r4.json",
+  "category_scores": {
+    "identity_and_full_gis_footprint": {"score": 1.9, "max_score": 2.0},
+    "placement_orientation_and_asset_scale": {"score": 1.6, "max_score": 2.0},
+    "floors_height_and_roof_form": {"score": 1.2, "max_score": 2.0},
+    "facade_entrance_and_materials": {"score": 1.25, "max_score": 2.0},
+    "saved_asset_interior_evidence_and_portability": {"score": 1.65, "max_score": 2.0}
+  },
+  "evidence": {
+    "gis_feature_id": 56,
+    "gis_feature_name": "Stanley Coulter Hall",
+    "source_vertex_count": 12,
+    "asset_bottom_vertex_count": 12,
+    "intersection_over_union": 0.9999998990235448,
+    "symmetric_difference_area_m2": 0.00028644119725406136,
+    "hausdorff_distance_m": 0.000004505824793678872,
+    "independent_recomputation": {
+      "performed_by_reviewer": true,
+      "method": "Shapely 2.2.0; official 12-vertex raw source ring compared with all 12 bottom foundation vertices from the saved asset vertex probe",
+      "recomputed_iou": 0.9999998990235446,
+      "recomputed_symmetric_difference_area_m2": 0.00028644119725112257,
+      "recomputed_hausdorff_distance_m": 0.000004505824793678872
+    },
+    "builder_reopen": "audit/batch3_stanley/reopen_verification_r4.json",
+    "independent_high_bounds_probe": "audit/batch3_stanley/independent_high_bounds_r4.json",
+    "bounds_interpretation": {
+      "all_collection_bounds_local_m": [[-48.282657623291016, 52.62249755859375], [-31.714492797851562, 30.786941528320312], [-0.20000000298023224, 21.349998474121094]],
+      "render_visible_bounds_local_m": [[-48.282657623291016, 52.62249755859375], [-31.714492797851562, 30.786941528320312], [-0.20000000298023224, 15.837250709533691]],
+      "extra_high_objects": 47,
+      "all_extra_high_objects_hide_render_and_hide_get": true,
+      "interpretation": "The 21.35 m all-object bound includes hidden roof/dormer/chimney/HVAC option meshes. The meshes are disabled for rendering and hidden from viewport via hide_get; render-visible geometry tops at 15.837 m. They do not explain the visible hero roof appearance."
+    },
+    "builder_report": "audit/batch3_stanley/build_report_r4.json",
+    "exterior_render": "audit/batch3_stanley/SC_hero_r4.png",
+    "entrance_render": "audit/batch3_stanley/SC_entry_r4.png",
+    "interior_render": "audit/batch3_stanley/SC_interior_schematic_r4.png",
+    "footprint_overlay": "audit/batch3_stanley/SC_footprint_overlay_r3.png",
+    "sources": [
+      "https://www.cla.purdue.edu/academic/english/images/stanleycoulterhall.jpg",
+      "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/1310/",
+      "https://stories.purdue.edu/restoring-purdues-university-hall-as-a-campus-crown-jewel/",
+      "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0"
+    ]
+  },
+  "findings": [
+    "Full GIS ring agreement is effectively exact in the documented approximate local conversion, but does not validate wall lines above the foundation or the height.",
+    "The main entrance is still much broader and more classical than the current Purdue CLA photo: full-width triangular portico versus narrow rectangular stone portal with arched transom and two slender supports.",
+    "The facade window grid remains repetitive compared with the source’s grouped openings and distinct upper band.",
+    "The large dark roof remains nearly featureless; historic imagery is undated and does not verify the present roof or height.",
+    "The interior cutaway is visible but sparse and schematic; source materials do not verify current room arrangement.",
+    "The asset reopens cleanly, has no materialless meshes or missing external images, and retains an identity local root; master marker placement was not reviewed."
+  ],
+  "required_before_pass": [
+    "Correct entrance massing and details to match the photo-supported narrow stone surround, arched transom, recessed doors and two slender columns.",
+    "Improve grouped window rhythm and upper glass band without changing the GIS foundation/root.",
+    "Improve roof/eave surface and silhouette while maintaining explicit height/profile uncertainty.",
+    "Add depth to stone/glass/roof materials and remove/explain bright entry fixtures.",
+    "Provide a more legible schematic cutaway with partitions, door openings, floor relationship, and circulation.",
+    "Repeat reopen validation and coordinator master-marker verification after the next revision."
+  ],
+  "limitations": [
+    "GIS source is an official campus-map polygon, not a certified survey or measured wall-line survey.",
+    "Current Purdue facade photo has no displayed capture date or scale.",
+    "Historic archives photo is undated and supports only historical character, not current roof geometry.",
+    "Height, roof profile, current interior layout, and interior fixture placement remain estimated or schematic.",
+    "The current master was not reopened in this independent review."
+  ]
+}

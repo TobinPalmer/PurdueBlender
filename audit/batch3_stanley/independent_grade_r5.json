@@ -1,0 +1,90 @@
+{
+  "building": "Stanley Coulter Hall",
+  "review_stage": "Independent R5 grade",
+  "asset": "modular/buildings/stanley_coulter_hall.blend",
+  "sha256": "d453ca6e1dacfaa3c6c23791396260e9101a5683ddab22d5cd81aaebbcd67c2c",
+  "score": 7.8,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "reviewer": "Independent coordinator review",
+  "reopen_evidence": "reopen_verification_r5.json",
+  "render_evidence": [
+    "SC_hero_r5.png",
+    "SC_entry_r5.png",
+    "SC_interior_schematic_r5.png",
+    "SC_footprint_overlay_r3.png"
+  ],
+  "source_evidence": [
+    {
+      "provider": "Purdue College of Liberal Arts",
+      "url": "https://www.cla.purdue.edu/academic/english/images/stanleycoulterhall.jpg",
+      "supports": "Visible facade, brick and stone palette, entrance composition, door/transom, stair and rails. The photo is undated and does not supply dimensions."
+    },
+    {
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/1310/",
+      "record": "PPBUC01117, undated historic image",
+      "supports": "Historic massing and low hipped-roof context only, not current roof condition or dimensions."
+    },
+    {
+      "provider": "Purdue ArcGIS BuildingShapesZip4",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 56,
+      "snapshot_date": "2026-10-22",
+      "supports": "Full foundation ring in the project approximate local-meter frame; this campus-map polygon is not a certified survey."
+    },
+    {
+      "provider": "Purdue CLA Space Project 2022 photo gallery",
+      "url": "https://cla.purdue.edu/about/college-initiatives/cla-space-project-2022/image-gallery/stanley-coulter.html",
+      "supports": "Identifies the Commons and Grad Hub spaces; available page text does not verify this modeled interior layout."
+    }
+  ],
+  "scorecard": {
+    "identity_and_full_gis_footprint": {
+      "score": 1.9,
+      "max": 2.0,
+      "findings": "Identity is clear. The 12-point foundation ring comparison reports IoU 0.999999899, symmetric difference 0.000286 m², and Hausdorff distance 0.0000045 m against Purdue FID 56. This validates only the plinth outline in the project's approximate local frame, not walls above it or a survey-grade position."
+    },
+    "placement_orientation_and_scale": {
+      "score": 1.6,
+      "max": 2.0,
+      "findings": "Fresh Blender reopen confirms the expected asset collection and identity local root. The asset report preserves manifest origin [-57.5569,-99.1479] m. The assembled master marker was not opened in this asset review, so campus placement is not independently verified."
+    },
+    "floors_height_and_roof_form": {
+      "score": 1.35,
+      "max": 2.0,
+      "findings": "The three-story mass and broad low hipped roof are plausible and the brown procedural roof material improves R4. The current roof is still a large, nearly featureless plane; no current measured roof profile or height is sourced. The archived 47 high options are correctly excluded from the active exported collection, but 10 sub-eave/high-option-like pieces remain in its collection bounds, with render-visible top at 15.7828 m and active all-geometry top at 15.87 m."
+    },
+    "facade_entrance_and_materials": {
+      "score": 1.45,
+      "max": 2.0,
+      "findings": "R5 meaningfully narrows the portal and improves the entry composition, window-width hierarchy, roof color, and lantern tone. The current Purdue photo still shows a more deeply recessed stone-framed entrance with a visibly arched inner soffit/transom, paired supports, broad stairs and rails; the render's portal reads as a shallow blocky canopy, with conspicuous square wall fixtures. The east elevation remains highly regular compared with the photograph's more varied groups and upper glazed band. Brick, stone, and glazing remain clean procedural surfaces rather than photo-textured material, but no missing material slots or external files were found."
+    },
+    "interior_saved_asset_evidence_and_portability": {
+      "score": 1.5,
+      "max": 2.0,
+      "findings": "Fresh Blender 5.2.3 reopen matches the exact asset hash. The active collection contains 773 objects/763 meshes; the reopen reports 25 unique used materials across the asset and archive, with no materialless meshes, invalid slots, or missing external image files. The 52 unsupported options are preserved in a hidden sibling archive. The interior image is an explicitly labeled use/furniture schematic, but it does not demonstrate a modeled, connected circulation/core or readable room partitions. Evidence carefully separates measured outline from estimated roof/facade/interior, though the master marker is outside this review."
+    }
+  },
+  "total": 7.8,
+  "blocking_gaps": [
+    "No independent check of the master Placement_stanley_coulter_hall marker or assembled campus view.",
+    "The entrance remains visibly shallow and blocky relative to the current Purdue CLA photograph; the inner arch, recessed doors, supports, and stair/rail silhouette need a closer match.",
+    "The broad roof reads as an almost unbroken slab. Its current profile and elevation remain unsourced; historic imagery is not evidence of current roof condition.",
+    "The current exterior reference shows larger grouped openings and a more distinct upper glazing band than the model's regular grid.",
+    "The interior remains a top-down furniture/use graphic without legible connected circulation or floor-to-floor context."
+  ],
+  "recommendations": [
+    "Before integration, have the coordinator reopen the master and compare the Stanley placement marker and nearby courtyard/street alignment to the official campus imagery.",
+    "Refine the entrance from the photo: deepen the recess, make the arched inner soffit/transom legible, slim the portal cap and supports, and model the stair rails clearly. Remove or reshape the two square wall fixtures that are not supported by the photo.",
+    "Break up the repetitive facade rhythm into the observed paired/grouped windows and more continuous upper glazing band, while preserving the verified foundation ring.",
+    "Give the low hip roof restrained readable surface/eave detail without asserting unsupported dormers, HVAC, or a measured roof height; retain the report's uncertainty label.",
+    "If interior detail is retained, add a clearly schematic connected corridor/core and room partitions, and show the vertical relationship to the piano-nobile floor."
+  ],
+  "limits": [
+    "The official GIS polygon is an approximate campus-map outline and does not verify facade or height.",
+    "The current CLA image is undated and covers only a portion of the courtyard facade.",
+    "The archive roof image is undated and cannot prove current roof construction.",
+    "This review uses the supplied image renders and fresh standalone reopen; it does not certify the master blend placement marker."
+  ]
+}

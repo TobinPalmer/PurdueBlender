@@ -36,8 +36,8 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Rawls Hall | [rawls_hall.blend](buildings/rawls_hall.blend) | 722 |
 | Ross Ade | [ross_ade.blend](buildings/ross_ade.blend) | 2118 |
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](buildings/massing_samara_f6b8e61.blend) | 1102 |
-| South Hall | [south_hall.blend](buildings/south_hall.blend) | 186 |
-| Stanley Coulter Hall | [stanley_coulter_hall.blend](buildings/stanley_coulter_hall.blend) | 824 |
+| South Hall | [south_hall.blend](buildings/south_hall.blend) | 25 |
+| Stanley Coulter Hall | [stanley_coulter_hall.blend](buildings/stanley_coulter_hall.blend) | 760 |
 | Stewart Center | [stewart_center.blend](buildings/stewart_center.blend) | 2764 |
 | Tarkington Hall | [tarkington_hall.blend](buildings/tarkington_hall.blend) | 814 |
 | University Hall | [university_hall.blend](buildings/university_hall.blend) | 507 |
@@ -79,8 +79,11 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](buildings/native_american_educational_and_cultural_center_nacc.blend) | 806 |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 572 |
 | Physics Building | [physics_building_phys_3bf42f3.blend](buildings/physics_building_phys_3bf42f3.blend) | 319 |
-| Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](buildings/ray_w_herrick_laboratories.blend) | 89 |
+| Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](buildings/ray_w_herrick_laboratories.blend) | 80 |
 
 SAMARA retains its legacy massing filename and campus-coordinate direct link for compatibility with the existing master. Its measured geometry, independent grade, and remaining registration uncertainty are documented in the [SAMARA evidence record](../audit/samara/EVIDENCE.md).
 
 CREC retains its legacy massing filename and campus-world direct-link coordinates for compatibility with the existing master. Its independently graded geometry (8.1/10) and remaining roof/interior uncertainty are documented in the [CREC evidence record](../audit/france_a_cordova_rec_center/source_record.json).
+
+
+

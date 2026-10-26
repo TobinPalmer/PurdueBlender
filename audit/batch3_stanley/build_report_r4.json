@@ -1,0 +1,178 @@
+{
+  "building": "Stanley Coulter Hall",
+  "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\stanley_coulter_hall.blend",
+  "review_stage": "R4 ready for independent grading",
+  "sha256": "40c1b209881cc7eaba71b1cb0057dc6d735751dd81bf2142ba5b3e4838f03a13",
+  "source_evidence": [
+    {
+      "provider": "Purdue College of Liberal Arts",
+      "url": "https://www.cla.purdue.edu/academic/english/images/stanleycoulterhall.jpg",
+      "retrieved": "2026-10-25",
+      "use": "current courtyard facade openings and entrance composition; image date not exposed"
+    },
+    {
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/1310/",
+      "image_url": "https://earchives.lib.purdue.edu/digital/iiif/pbuildings/1310/full/full/0/default.jpg",
+      "record": "PPBUC01117; undated photograph, digitized 2006-12-01",
+      "retrieved": "2026-10-25",
+      "use": "historic low hipped roof and facade character only"
+    },
+    {
+      "provider": "Purdue campus map / ArcGIS official BuildingShapesZip4 FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 56,
+      "feature_name": "Stanley Coulter Hall",
+      "snapshot_date": "2026-10-22",
+      "retrieved": "2026-10-25",
+      "crs": "Purdue project local approximate-meter frame using AGENTS.md conversion; not a certified survey"
+    },
+    {
+      "provider": "Purdue Board of Trustees",
+      "url": "https://www.purdue.edu/bot/meetings/past-meetings/2022/09.%20oct/pfc/University%20Hall%20Related%20Renovations.pdf",
+      "pages": "11-13",
+      "use": "historical room-plan reference only; current room arrangement remains unverified"
+    },
+    {
+      "provider": "Purdue Stories",
+      "url": "https://stories.purdue.edu/restoring-purdues-university-hall-as-a-campus-crown-jewel/",
+      "date": "2025",
+      "use": "broad current building-use categories only; not room locations"
+    }
+  ],
+  "changes": [
+    "Removed 39 unsupported floating high third-floor bronze-frame faces across 39 meshes; the maximum remaining repaired-frame vertex height is 12.20 m.",
+    "Reproportioned 114 east-facade window meshes into wider grouped proportions; qualitative estimates from the CLA photograph, not measured elevations.",
+    "Shaped both portico stair cheeks to the stair run and added a thin metal continuous handrail with brackets; dimensions estimated from the current CLA entrance photo.",
+    "Adjusted the limestone, glazing, and roof materials for warmer stone, more reflective glazing, and muted roof variation.",
+    "Reduced the modeled cornice vertical depth from 0.90 m to 0.45 m and lowered the roof assembly 0.45 m so its eave meets the revised cornice. The hipped roof remains a cautious historic-photo interpretation; no current roof-height evidence was found.",
+    "Kept the interior arrangement schematic; generated a focused, presentation-only cutaway image for review without claiming current as-built room geometry."
+  ],
+  "footprint_comparison": {
+    "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\stanley_coulter_hall.blend",
+    "asset_foundation_object": "SC_Foundation_Limestone_Plinth",
+    "source": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "source_feature_id": 56,
+    "source_name": "Stanley Coulter Hall",
+    "source_snapshot_date": "2026-10-22",
+    "retrieval_date": "2026-10-25",
+    "project_coordinate_note": "The official campus reference snapshot is stored in the project local approximate meter frame; see source metadata and modular/AGENTS.md for its local tangent-plane convention.",
+    "transform": "campus_xy_m = local_xy_m + manifest placement_origin_xy_m",
+    "source_vertex_count": 12,
+    "asset_bottom_vertex_count": 12,
+    "source_area_m2": 2836.7126505072724,
+    "asset_area_m2": 2836.712538871383,
+    "intersection_over_union": 0.9999998990235448,
+    "symmetric_difference_area_m2": 0.00028644119725406136,
+    "hausdorff_distance_m": 4.505824793678872e-06,
+    "max_boundary_distance_m": 4.505824793678872e-06,
+    "asset_valid": true,
+    "source_valid": true,
+    "height_status": "not assessed by footprint comparison",
+    "limits": [
+      "Official outline is campus-map footprint, not a certified survey or wall-line survey.",
+      "Project conversion uses the documented approximate local tangent-plane formula.",
+      "This comparison checks the lower structural plinth perimeter only; it does not validate facade, roof, or height."
+    ]
+  },
+  "reopen_verification": {
+    "reopen_verified": true,
+    "file": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\stanley_coulter_hall.blend",
+    "sha256": "40c1b209881cc7eaba71b1cb0057dc6d735751dd81bf2142ba5b3e4838f03a13",
+    "asset_collection": "Asset_stanley_coulter_hall",
+    "asset_object_count": 825,
+    "total_scene_objects": 826,
+    "root_transform": {
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "foundation_bounds_local_m": [
+      [
+        -28.111003875732422,
+        -24.86144256591797,
+        -0.20000000298023224
+      ],
+      [
+        28.223695755004883,
+        29.338401794433594,
+        1.7999999523162842
+      ]
+    ],
+    "exterior_wall_bounds_local_m": [
+      [
+        -28.114582061767578,
+        -24.861801147460938,
+        1.7999999523162842
+      ],
+      [
+        28.226646423339844,
+        29.336318969726562,
+        13.0
+      ]
+    ],
+    "repaired_level3_bronze_frame_count": 39,
+    "max_level3_frame_vertex_z_m": 12.200000762939453,
+    "cornice_bounds_local_m": [
+      [
+        -28.45578384399414,
+        -25.20612335205078,
+        13.210000038146973
+      ],
+      [
+        28.5683536529541,
+        29.68304443359375,
+        13.65999984741211
+      ]
+    ],
+    "roof_bounds_local_m": [
+      [
+        -28.484516143798828,
+        -25.234848022460938,
+        13.75
+      ],
+      [
+        28.59707260131836,
+        29.711761474609375,
+        15.78279972076416
+      ]
+    ],
+    "roof_height_status": "estimated; not GIS verified",
+    "interior_status": "schematic from historical 2022 plan/use descriptions; not a current as-built plan",
+    "placement_origin_xy_m": [
+      -57.55689525604248,
+      -99.14793586730957
+    ],
+    "render_camera_names": [
+      "Cam_SC_02_MemorialMall_East_Hero",
+      "Cam_SC_03_East_Portico_Ground",
+      "Cam_SC_06_Interior_Schematic"
+    ]
+  },
+  "renders": {
+    "exterior": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch3_stanley\\SC_hero_r4.png",
+    "entrance": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch3_stanley\\SC_entry_r4.png",
+    "interior_schematic": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch3_stanley\\SC_interior_schematic_r4.png",
+    "registered_top_footprint": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\batch3_stanley\\SC_footprint_overlay_r3.png"
+  },
+  "limitations": [
+    "Building roof elevation, roof construction and current full elevations are unverified; roof profile is estimated from an undated historic image.",
+    "The source polygon is an official campus-map outline, not a certified survey or measured wall line.",
+    "Interior plan geometry is schematic; 2022 renovation plans and the 2025 use story do not establish the current room-by-room as-built arrangement.",
+    "Master integration and campus marker placement were not edited or reviewed in this assigned-asset pass.",
+    "The R4 exterior remains a simplified architectural visualization; independent visual grading is required before acceptance."
+  ],
+  "status": "Saved and reopened; root transform preserved; full foundation outline comparison passed. Awaiting independent R4 grading; not claiming 9/10."
+}
