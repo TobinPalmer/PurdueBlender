@@ -1,0 +1,105 @@
+{
+  "asset_id": "armory",
+  "owner": "Rosen",
+  "identity": "Purdue Armory, 812 Third Street, West Lafayette, Indiana",
+  "manifest_contract": {
+    "asset_path": "modular/buildings/armory.blend",
+    "collection": "Asset_armory",
+    "scene": "Building_armory",
+    "placement_origin_xy_m": [-208.7750015258789, 68.34999656677246],
+    "placement_origin_changed": false
+  },
+  "sources": [
+    {
+      "provider": "Purdue University PuGeoDB.DBO.CampusBuilding ArcGIS MapServer layer 0",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query",
+      "feature_id": 207,
+      "source_date": "Current campus building layer; publication date not supplied in response",
+      "retrieved": "2026-10-25",
+      "crs": "EPSG:3857 (service response wkid 102100, latestWkid 3857)",
+      "snapshot": "audit/armory/purdue_gis_feature_207.json",
+      "identity_match": "ABBR=AR, Name=Armory, OWNER=PURDUE, ADDRESS=812 Third Street",
+      "geometry_method": "All four corners of the source rectangle were converted from Web Mercator to lon/lat and then to the repository's local-meter approximation (X east, Y north). The manifest placement origin was subtracted for the local asset frame. No rescaling or rotation was applied to the GIS ring.",
+      "source_geometry_bounds_world_m": [[-244.0101386502288, -193.1342095137775], [24.38273729741013, 112.9949818039313]],
+      "source_geometry_bounds_local_m": [[-35.235137124349905, 15.6407920121014], [-43.96725926936233, 44.644985237158835]],
+      "source_dimensions_m": [50.8759291364513, 88.61224450652117],
+      "source_area_m2": 7696.10708932,
+      "area_note": "Shape.STArea() is reported by the EPSG:3857 service and is not interpreted as ground-area measurement; the converted local rectangular footprint area differs.",
+      "uncertainty": "GIS footprint is authoritative for this task's plan fit, not a field survey or evidence of facade, eaves, roof projection, or height."
+    },
+    {
+      "provider": "Purdue e-Archives, Purdue Buildings and Campus Scenes",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/140/",
+      "source_date": "Photograph date not established in the accessible item record",
+      "snapshot": "audit/armory/purdue_archives_armory_reference.jpg",
+      "supports": "Building-specific monochrome exterior showing brick fields, pale stone trim, repeated multi-pane windows, a central arched entry, and the distinctive raised central stepped gable with an arched upper light.",
+      "measurement_method": "Visual comparison only. The photograph is not georeferenced and provides no measured elevation or scale.",
+      "uncertainty": "Historical view; current facade condition, exact gable width/elevation, exact window count and colors are not measured."
+    },
+    {
+      "provider": "Purdue Archives and Special Collections, Armory corporate entity record",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/571",
+      "source_date": "Record describes 1918-present facility and 1928 fire event",
+      "retrieved": "2026-10-25",
+      "supports": "The current Armory was built in 1918 after a 1916 fire at the earlier armory; its program included ROTC, classrooms, offices, a large drill deck, and rifle range. The record describes a 1928 fire in which roofing tiles fell from the roof.",
+      "uncertainty": "The archive text does not provide total height, exact story count, measured roof geometry, or confirmation of current roof surfacing."
+    },
+    {
+      "provider": "Purdue Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/87",
+      "retrieved": "2026-10-25",
+      "supports": "Armory (AR), 1918-present; historic facility identity.",
+      "uncertainty": "Dynamic record does not expose a measured height or elevation drawing in this pass."
+    },
+    {
+      "provider": "Purdue Polytechnic Air Force ROTC Contact page",
+      "url": "https://polytechnic.purdue.edu/afrotc/contact-us",
+      "retrieved": "2026-10-25",
+      "supports": "Current contact address is 812 3rd Street and visitor directions reference stairs to a second floor.",
+      "uncertainty": "Confirms a second floor is accessed, not the building's total number of floors or basement condition."
+    }
+  ],
+  "model_changes": {
+    "footprint": "Structural perimeter wall meshes were adjusted in XY to match the four GIS ring bounds relative to the unchanged manifest placement origin. Pre-fit perimeter: X [-35.5250, 15.9750] m; Y [-44.6500, 44.6500] m. Post-fit perimeter matches the GIS target within 0.001 m.",
+    "roof": "Removed the unsupported four tall corner tower forms, raised battlements/merlons, ridge monitor, former hipped roof patch and unverified exposed trusses. Added a simple longitudinal gabled roof and the photo-supported central stepped cross-gable with arched upper fanlight. Main roof form, gable width and all elevations are estimates.",
+    "windows": "Corrected the prior 216 repair-frame/muntin objects that were offset from the wall planes; they now sit just outside the GIS-matched east/west structural walls.",
+    "export": "Preview lights were moved to scene-only collection Armory_Preview_Setup. No cameras or lights are inside Asset_armory. Existing packed image materials are retained; the linked foliage library remains a relative project path.",
+    "saved_file_version": "The existing file was written by Blender 5.02.45; it was opened/saved with Blender 4.5.15, which warned once about newer-file compatibility. The saved result reopened successfully with the expected scene, collection, geometry, and materials. A validation render was produced from the reopened saved asset."
+  },
+  "verification": {
+    "builder": "modular/buildings/build_armory.py",
+    "asset": "modular/buildings/armory.blend",
+    "scene": "Building_armory",
+    "collection": "Asset_armory",
+    "collection_object_count_after_reopen": 703,
+    "structural_wall_bounds_local_m": [[-35.235137939453125, 15.640791893005371], [-43.96725845336914, 44.64498519897461], [1.5, 12.5]],
+    "gis_target_bounds_local_m": [[-35.235137124349905, 15.6407920121014], [-43.96725926936233, 44.644985237158835]],
+    "footprint_match_tolerance_m": 0.001,
+    "removed_unsupported_tower_detail_objects": 72,
+    "removed_unverified_truss_objects": 416,
+    "unpacked_external_images": [],
+    "relative_libraries": ["//..\\site\\foliage_library\\engineering_foliage_library.blend"],
+    "reopened_export_probe": "audit/armory/armory_asset_collection_probe.blend; reopened with Asset_armory and central gable, 703 objects, no camera/light objects",
+    "preview": "audit/armory/armory_repaired_preview.png",
+    "gable_detail": "audit/armory/armory_central_gable_detail.png",
+    "preliminary_builder_estimate": "Approximately 8.2/10; independent regrade is pending."
+  },
+  "height_and_story_status": {
+    "authoritative_height": "unavailable",
+    "authoritative_total_story_count": "unavailable",
+    "modeled_wall_top_m": 12.5,
+    "modeled_main_roof_ridge_m": 18.0,
+    "modeled_central_gable_peak_m": 19.35,
+    "modeled_height_status": "All model elevations are visual/typology estimates; not a survey or GIS height measurement.",
+    "story_evidence": "The archival exterior shows two principal windowed levels and an attic/gable light; the current AFROTC page mentions access to a second floor. Total story count, attic use, and basement status remain unverified.",
+    "roof_material": "Archival account documents roof tiles during the 1928 fire; current roof finish is unknown. The muted tile-toned model material is illustrative only."
+  },
+  "unresolved_uncertainties": [
+    "No authoritative building height, total floor/story count, vertical datum, or measured facade elevation was located.",
+    "The archive photograph is not georeferenced and its creation date is not established from the accessible item record.",
+    "Central gable dimensions and orientation registration are interpreted from the archive view; roof form/height are estimates.",
+    "The photograph supports historical tile roofing, but present roof covering and color are not verified.",
+    "GIS uses the repository's documented local approximation and is not a site survey."
+  ]
+}
+

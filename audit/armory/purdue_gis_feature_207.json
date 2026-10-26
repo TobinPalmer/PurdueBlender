@@ -1,0 +1,108 @@
+{
+  "source_url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query",
+  "retrieved_date": "2026-10-25",
+  "query_parameters": {
+    "where": "ABBR='AR'",
+    "outFields": "OBJECTID,ABBR,Name,OWNER,ADDRESS,Shape.STArea(),Shape.STLength()",
+    "returnGeometry": "true",
+    "outSR": "3857",
+    "f": "json"
+  },
+  "query_response": {
+    "displayFieldName": "Name",
+    "fieldAliases": {
+      "OBJECTID": "OBJECTID",
+      "ABBR": "ABBR",
+      "Name": "Name",
+      "OWNER": "OWNER",
+      "ADDRESS": "ADDRESS",
+      "Shape.STArea()": "Shape.STArea()",
+      "Shape.STLength()": "Shape.STLength()"
+    },
+    "geometryType": "esriGeometryPolygon",
+    "spatialReference": {
+      "wkid": 102100,
+      "latestWkid": 3857
+    },
+    "fields": [
+      {
+        "name": "OBJECTID",
+        "type": "esriFieldTypeOID",
+        "alias": "OBJECTID"
+      },
+      {
+        "name": "ABBR",
+        "type": "esriFieldTypeString",
+        "alias": "ABBR",
+        "length": 5
+      },
+      {
+        "name": "Name",
+        "type": "esriFieldTypeString",
+        "alias": "Name",
+        "length": 120
+      },
+      {
+        "name": "OWNER",
+        "type": "esriFieldTypeString",
+        "alias": "OWNER",
+        "length": 40
+      },
+      {
+        "name": "ADDRESS",
+        "type": "esriFieldTypeString",
+        "alias": "ADDRESS",
+        "length": 40
+      },
+      {
+        "name": "Shape.STArea()",
+        "type": "esriFieldTypeDouble",
+        "alias": "Shape.STArea()"
+      },
+      {
+        "name": "Shape.STLength()",
+        "type": "esriFieldTypeDouble",
+        "alias": "Shape.STLength()"
+      }
+    ],
+    "features": [
+      {
+        "attributes": {
+          "OBJECTID": 207,
+          "ABBR": "AR",
+          "Name": "Armory",
+          "OWNER": "PURDUE",
+          "ADDRESS": "812 Third Street",
+          "Shape.STArea()": 7696.10708932,
+          "Shape.STLength()": 364.9859566325701
+        },
+        "geometry": {
+          "rings": [
+            [
+              [
+                -9675442.9565,
+                4928395.468699999
+              ],
+              [
+                -9675442.3283,
+                4928279.127800003
+              ],
+              [
+                -9675508.4773,
+                4928278.767700002
+              ],
+              [
+                -9675509.1063,
+                4928395.108599998
+              ],
+              [
+                -9675442.9565,
+                4928395.468699999
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "building_id": "armory",
+  "score": 8.4,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS feature 207 identifies Armory (AR), owner Purdue, address 812 Third Street.",
+        "The four named structural wall meshes measure 50.876 x 88.612 m against converted GIS bounds 50.876 x 88.612 m; axis discrepancies are 0.000 m and 0.000 m.",
+        "Purdue archive photograph supports brick masonry, pale trim, central entry and stepped central gable."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Structural wall center differs from the manifest-local GIS ring center by 0.000 m (dx=-0.000, dy=0.000).",
+        "The four GIS corners and wall bounds use the repository local-meter conversion and unchanged manifest placement origin; footprint dimensions and cardinal alignment match within tolerance.",
+        "This GIS conversion is approximate rather than survey control."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.1,
+      "max_score": 2,
+      "evidence": [
+        "Purdue archive photo directly supports a central stepped cross-gable and upper arched light; the rebuilt render includes these features.",
+        "The archive corporate record confirms the historical building and a 1928 roof-tile fire, but not the current roof finish.",
+        "No authoritative height, total story count, measured elevation, or roof geometry was found; modeled wall/roof/gable elevations are explicitly estimated."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": [
+        "The new render includes brick fields, repeated window bays, pale trim, central entry, stepped central gable and arched fanlight visible in the Purdue archive photo.",
+        "The repaired entry is modeled as a central arched composition; material tones and exact window/gable dimensions are visual approximations.",
+        "The source photo date is undetermined, and no current measured elevation is available."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "Reopened scene/collection contract matches id=armory, file=buildings/armory.blend, scene=Building_armory, collection=Asset_armory; actual collection contains 703 objects.",
+        "A collection-only .blend was written and independently reopened; the expected ID, gable, and no-camera/light contract passed. No unpacked external images or absolute library paths were found; foliage library path is relative.",
+        "Manifest still lists 1184 objects (1184 names), while the reopened current collection has 703; coordinator should refresh shared metadata. Source records, raw GIS snapshot, archive photo, previews, and builder validation are present."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "buildings/armory.blend",
+    "scene": "Building_armory",
+    "collection": "Asset_armory",
+    "actual_object_count": 703,
+    "manifest_object_count": 1184,
+    "gis_feature": {
+      "OBJECTID": 207,
+      "ABBR": "AR",
+      "Name": "Armory",
+      "OWNER": "PURDUE",
+      "ADDRESS": "812 Third Street",
+      "Shape.STArea()": 7696.10708932,
+      "Shape.STLength()": 364.9859566325701
+    },
+    "gis_source": {
+      "provider": "Purdue University PuGeoDB.DBO.CampusBuilding ArcGIS MapServer layer 0",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query",
+      "feature_id": 207,
+      "source_date": "Current campus building layer; publication date not supplied in response",
+      "retrieved": "2026-10-25",
+      "crs": "EPSG:3857 (service response wkid 102100, latestWkid 3857)",
+      "snapshot": "audit/armory/purdue_gis_feature_207.json",
+      "identity_match": "ABBR=AR, Name=Armory, OWNER=PURDUE, ADDRESS=812 Third Street",
+      "geometry_method": "All four corners of the source rectangle were converted from Web Mercator to lon/lat and then to the repository's local-meter approximation (X east, Y north). The manifest placement origin was subtracted for the local asset frame. No rescaling or rotation was applied to the GIS ring.",
+      "source_geometry_bounds_world_m": [
+        [
+          -244.0101386502288,
+          -193.1342095137775
+        ],
+        [
+          24.38273729741013,
+          112.9949818039313
+        ]
+      ],
+      "source_geometry_bounds_local_m": [
+        [
+          -35.235137124349905,
+          15.6407920121014
+        ],
+        [
+          -43.96725926936233,
+          44.644985237158835
+        ]
+      ],
+      "source_dimensions_m": [
+        50.8759291364513,
+        88.61224450652117
+      ],
+      "source_area_m2": 7696.10708932,
+      "area_note": "Shape.STArea() is reported by the EPSG:3857 service and is not interpreted as ground-area measurement; the converted local rectangular footprint area differs.",
+      "uncertainty": "GIS footprint is authoritative for this task's plan fit, not a field survey or evidence of facade, eaves, roof projection, or height."
+    },
+    "gis_bounds_local_m": [
+      [
+        -35.235137124349905,
+        15.6407920121014
+      ],
+      [
+        -43.96725926936233,
+        44.644985237158835
+      ]
+    ],
+    "model_wall_bounds_local_m": [
+      [
+        -35.235137939453125,
+        15.640791893005371
+      ],
+      [
+        -43.96725845336914,
+        44.64498519897461
+      ]
+    ],
+    "axis_dimension_error_m": [
+      6.960071914363652e-07,
+      8.541774150216952e-07
+    ],
+    "center_error_m": 6.078065115890698e-07,
+    "preview": "audit/armory/armory_repaired_preview.png",
+    "gable_detail": "audit/armory/armory_central_gable_detail.png",
+    "archive_photo": "audit/armory/purdue_archives_armory_reference.jpg",
+    "source_record": "audit/armory/source_record.json",
+    "asset_probe": "audit/armory_independent_grade_r2/blender_probe.json",
+    "export_probe": "audit/armory_independent_grade_r2/export_probe_result.json"
+  },
+  "findings": [
+    {
+      "severity": "positive",
+      "finding": "The repaired perimeter aligns to the official GIS envelope and the central stepped gable is supported by the archival Purdue photo."
+    },
+    {
+      "severity": "moderate",
+      "finding": "No authoritative building height, complete story count, roof dimensions, or current roof finish was located; vertical geometry is estimated."
+    },
+    {
+      "severity": "moderate",
+      "finding": "Manifest object names/count are stale and need coordinator refresh to 703 objects."
+    },
+    {
+      "severity": "positive",
+      "finding": "The named collection exports and reopens independently with relative linked-library path and no unpacked image dependencies."
+    }
+  ]
+}
