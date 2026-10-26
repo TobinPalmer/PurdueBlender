@@ -1,0 +1,65 @@
+{
+  "score": 8,
+  "max_score": 10,
+  "minimum_pass": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2,
+      "max_score": 2,
+      "evidence": "Official Purdue GIS feature 432 (DUDL, Dudley Hall); saved validation reports symmetric nearest-vertex error 0.0001 m. GIS attributes identify the hall, while the footprint is horizontal only and not a certified survey."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2,
+      "max_score": 2,
+      "evidence": "Manifest defines direct campus-world coordinates with identity transform. Exact ring correspondence preserves placement and orientation; GIS minimum-rotated-rectangle dimensions are 97.18 x 32.17 m at 0.172\u00b0 east of north. The metric frame is the project\u2019s approximate geographic conversion, not survey control."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1,
+      "max_score": 2,
+      "evidence": "Purdue\u2019s archived 2019 announcement identifies four stories plus a basement, which supports four visible above-grade bands. The saved model is 16.0 m tall and the flat parapet roof is visually plausible, but height, roof elevation, and basement depth have no measured source; GIS explicitly marks height unverified."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1,
+      "max_score": 2,
+      "evidence": "Direct visual review of the saved preview shows brick-colored walls, repeated dark window bands, a glazed entrance treatment, a pale facade cue, and a terracotta-colored screen. These cues appear in the saved Ennead photograph, but that photograph shows both Dudley and Lambertus; assigning these elements to Dudley\u2019s polygon and fixing their exact positions is schematic. The preview is a single oblique view and does not independently establish facade orientation or detail accuracy."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2,
+      "max_score": 2,
+      "evidence": "Saved asset exists at the manifest path; retained Blender reopen record names collection Asset_dudley_hall and 6 meshes. Builder generates geometry/materials internally without external texture paths. Source records include provider, URL, feature/date, CRS or applicability, method, and uncertainty; preview and raw source snapshots exist (4/4 source files)."
+    }
+  ],
+  "evidence": {
+    "asset": "modular\\buildings\\dudley_hall.blend",
+    "preview_visually_inspected": "audit\\dudley_hall\\views\\dudley_hall_refined_preview.png",
+    "source_files": [
+      "audit\\dudley_hall\\sources\\purdue_gis_fid432_dudley_hall.json",
+      "audit\\dudley_hall\\sources\\purdue_dudley_hall_2019.html",
+      "audit\\dudley_hall\\sources\\ennead_project_page.html",
+      "audit\\dudley_hall\\sources\\ennead_dudley_lambertus_exterior_0007.jpg"
+    ],
+    "saved_blender_reopen_record": "audit\\dudley_hall\\asset_validation.json",
+    "gis_symmetric_nearest_vertex_error_m": 0.0001,
+    "gis_minimum_rotated_rectangle_m": [
+      97.17782732121043,
+      32.168735832335024
+    ],
+    "model_z_bounds_m": [
+      0.0,
+      16.0
+    ]
+  },
+  "findings": [
+    "The official GIS outline verifies horizontal plan agreement only; it does not verify facade offsets, height, roof elevation, or basement depth.",
+    "The model\u2019s 16.0 m height is an estimate. Four stories are sourced, but the floor-to-floor dimensions are not.",
+    "The Ennead exterior image depicts the combined Dudley\u2013Lambertus complex; facade assignment to Dudley and screen placement remain uncertain.",
+    "The saved preview supports only a schematic architectural resemblance and does not resolve the combined-hall attribution uncertainty."
+  ],
+  "method_note": "Independent assessment used direct visual comparison of the saved preview against the retained original source image, and read the raw GIS/source snapshots and saved-asset Blender reopen record. No builder or geometry was modified."
+}

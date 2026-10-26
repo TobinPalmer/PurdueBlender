@@ -1,0 +1,60 @@
+{
+  "building_id": "dudley_hall",
+  "asset_path": "modular/buildings/dudley_hall.blend",
+  "export_collection": "Asset_dudley_hall",
+  "owner": "Rossen",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University Campus Map ArcGIS feature service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "source_app": "https://www.purdue.edu/campus_map/",
+      "feature_id": 432,
+      "code": "DUDL",
+      "source_date": "snapshot 2026-10-22",
+      "source_crs": "WGS 84 / EPSG:4326",
+      "measurement_method": "Feature ring projected to project local meters using origin 40.4274,-86.9137 and the repository's documented longitude/latitude factors; exact local polygon saved in sources/purdue_gis_fid432_dudley_hall.json.",
+      "uncertainty": "Official campus map outline, not a certified survey; no building height or elevation is encoded."
+    },
+    {
+      "provider": "Ennead Architects; exterior photograph credited on project page to Jeff Goldberg/Esto",
+      "url": "https://ennead.com/wp-content/uploads/2023/05/Ennead-1922-Purdue-Gateway-01-FinalExtPhoto-0007_medium-1.jpg",
+      "page_url": "https://ennead.com/work/purdue-university-dudley-and-lambertus-hall/",
+      "source_date": "project photography published 2023; exact capture date not stated",
+      "local_snapshot": "sources/ennead_dudley_lambertus_exterior_0007.jpg",
+      "measurement_method": "Visual reference for brick portions, broad curtainwall entry, pale projecting volume, and terracotta-colored vertical screen; not used as a metric elevation.",
+      "uncertainty": "Photograph shows the combined Dudley-Lambertus complex; mapping individual visible facade zones onto the Dudley GIS polygon is approximate."
+    },
+    {
+      "provider": "Purdue University College of Engineering",
+      "url": "https://engineering.purdue.edu/Engr/AboutUs/News/Spotlights/2019/first-gateway-complex-building-named-for-bill-and-marty-dudley",
+      "local_snapshot": "sources/purdue_dudley_hall_2019.html.gz",
+      "source_date": "2019-06-18",
+      "source_crs": "not applicable",
+      "measurement_method": "Published report identifies Dudley as four stories plus basement and estimates 145,000 square feet; floor count supports a schematic four-level above-grade treatment, not surveyed floor-to-floor dimensions.",
+      "uncertainty": "Later project sources give 250,000-255,000 square feet for the combined Dudley-Lambertus complex. Those combined-area figures are not treated as Dudley-only area."
+    },
+    {
+      "provider": "Ennead Architects project page",
+      "url": "https://ennead.com/work/purdue-university-dudley-and-lambertus-hall/",
+      "local_snapshot": "sources/ennead_project_page.html.gz",
+      "source_date": "project completed 2022; page accessed 2026-10-26",
+      "source_crs": "not applicable",
+      "measurement_method": "Project description supports simple brick forms and a terracotta-shaded curtainwall in the linked complex.",
+      "uncertainty": "Description addresses both connected halls and does not provide facade dimensions or a Dudley-only elevation."
+    }
+  ],
+  "changes": [
+    "Preserved the existing official-GIS-derived structural shell and campus-coordinate frame.",
+    "Added schematic four-level window bands, a broad glass entry bay, facade mullions, a terracotta-screen cue, and horizontal facade stringcourses based on the cited architect photo.",
+    "Added a repeatable dedicated builder at modular/buildings/build_dudley_hall.py and saved a fresh rendered preview.",
+    "Added a paired entry-door cue beneath the central south curtainwall; the exact doorway width and bay are estimated from the architect photograph."
+  ],
+  "validation": "Reopened the saved library in Blender 4.5.15. The 65 unique lower-shell XY vertices match the 66-point closed FID 432 ring with symmetric nearest-vertex maximum error 0.0001 m. The Asset_dudley_hall collection contains the structural shell plus five combined detail meshes (2,760 detail faces).",
+  "remaining_uncertainty": [
+    "GIS height field is explicitly unverified; the 16.0 m shell height is estimated and does not include a measured basement depth.",
+    "Facade assignments, glazing extents, story heights, and terracotta screen placement are schematic interpretations of a combined-building photo.",
+    "No measured roof elevation or individual Dudley-only exterior elevation was located."
+  ],
+  "grade_status": "independent grade pending; not marked passed"
+}
