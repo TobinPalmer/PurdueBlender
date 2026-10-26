@@ -1,0 +1,108 @@
+{
+  "score": 7.8,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS FID 779 identifies 'Lds Institute of Religion' at 14 WALDRON ST.; the Church locator evidence distinguishes 14 Waldron from the separate 3224 Jasper meetinghouse. Structural shell's four lower XY vertices match the transformed GIS ring in order; maximum vertex residual 0.000016 m.",
+      "findings": []
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Asset is a massing library retaining campus-world coordinates under identity transform, as its manifest contract specifies. The long and short shell axes follow the GIS ring; measured shell dimensions from that ring are approximately 32.51 m by 17.97 m. The shell registration is exact to the project transform.",
+      "findings": []
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2.0,
+      "evidence": "GIS records NUM_LEVELS=1; the July 2023 Street View visibly supports a single-story, low-roof building and a small higher reddish roof behind it. The asset has a 4.15 m body, 5.45 m main ridge, and 5.90 m secondary ridge, but these are estimates from one unscaled, oblique and partly occluded image; GIS 'Extrution: 12' has undocumented units.",
+      "findings": [
+        "No scaled elevation, survey, or measured height evidence supports any modeled Z dimension.",
+        "The secondary roof's plan and pitch are inferred from a narrow visible strip; exact roof silhouette remains unverified."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.9,
+      "max_score": 2.0,
+      "evidence": "Street View supports red-brown brick, a low dark eave, a broad glazed/recessed entrance, ramp/steps, and several openings. The mesh includes these general elements, but the generated straight-on render places the entrance near the middle of the long elevation and shows four regular small windows; the oblique source photo shows a substantially off-center entry and a more recessed, columned/glazed front zone. Exact window count and spacing are explicitly estimates.",
+      "findings": [
+        "Facade composition is only approximate: entrance placement/glazing and window pattern do not convincingly reproduce the visible source arrangement.",
+        "No visual evidence supports hidden elevations or the exact trim/material boundaries; the archive finding aid lists photos but the photos were not obtained."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": "Blender reopened massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend in 5.2.3 LTS; expected scene and collection exist, the collection has 1 object(s), and the mesh has 400 vertices / 285 polygons with 9 named materials. No modifiers, external libraries, or image dependencies are present. Source register, raw GIS snapshot, Street View image, source notes, build/reopen records, and three renders are present.",
+      "findings": [
+        "Shared manifest bounds remain stale (Z max 16.0 m versus reopened mesh max 5.9 m); coordinator-owned index needs reconciliation before final integration.",
+        "The Purdue Archives references are catalog leads only; source images remain unavailable, and the Street View evidence is one oblique view."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset": "modular\\buildings\\massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend",
+    "blender": "5.2.3 LTS",
+    "reopened_scene": "Building_massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451",
+    "reopened_collection": "Asset_massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451",
+    "collection_object_names": [
+      "The Church of Jesus Christ of Latter-day Saints"
+    ],
+    "mesh_bounds_world_m": {
+      "x": [
+        -342.4059,
+        -319.1073
+      ],
+      "y": [
+        -306.7158,
+        -273.7745
+      ],
+      "z": [
+        -0.2512,
+        5.9
+      ]
+    },
+    "gis_shell_vertex_residuals_m": [
+      5e-06,
+      1.6e-05,
+      1.6e-05,
+      8e-06
+    ],
+    "source_files": [
+      "audit\\massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451\\source_register.json",
+      "audit\\massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451\\source_notes.md",
+      "audit\\massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451\\sources\\google_street_view_23_waldron_2023.jpg"
+    ],
+    "all_render_files_present": true,
+    "source_notes_present": true,
+    "manifest_bounds_world_m": [
+      [
+        -337.32568359375,
+        -319.43914794921875
+      ],
+      [
+        -307.5141906738281,
+        -273.9023742675781
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ]
+  },
+  "findings": [
+    "No scaled elevation, survey, or measured height evidence supports any modeled Z dimension.",
+    "The secondary roof's plan and pitch are inferred from a narrow visible strip; exact roof silhouette remains unverified.",
+    "Facade composition is only approximate: entrance placement/glazing and window pattern do not convincingly reproduce the visible source arrangement.",
+    "No visual evidence supports hidden elevations or the exact trim/material boundaries; the archive finding aid lists photos but the photos were not obtained.",
+    "Shared manifest bounds remain stale (Z max 16.0 m versus reopened mesh max 5.9 m); coordinator-owned index needs reconciliation before final integration.",
+    "The Purdue Archives references are catalog leads only; source images remain unavailable, and the Street View evidence is one oblique view."
+  ]
+}
