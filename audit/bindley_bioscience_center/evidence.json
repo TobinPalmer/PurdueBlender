@@ -1,0 +1,135 @@
+{
+  "building_id": "bindley_bioscience_center",
+  "asset_file": "modular/buildings/bindley_bioscience_center.blend",
+  "builder_module": "modular/buildings/build_bindley_bioscience_center.py",
+  "exported_collection": "Asset_bindley_bioscience_center",
+  "retrieved_or_built": "2026-10-25",
+  "manifest_contract": {
+    "asset_path": "modular/buildings/bindley_bioscience_center.blend",
+    "collection": "Asset_bindley_bioscience_center",
+    "placement_origin_xy_m": [-825.9724870358015, -512.0082823935928],
+    "local_geometry": true,
+    "source_massing_id": "massing_bindley_bioscience_center_641f939"
+  },
+  "sources": [
+    {
+      "type": "official GIS footprint",
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 605,
+      "matched_attributes": {
+        "BLDG_ABBR": "BIND",
+        "BUILDING_N": "Bindley Bioscience Center",
+        "ADDRESS": "1203 Mitch Daniels Blvd",
+        "NUM_LEVELS": 3,
+        "CountOfFLO": 3
+      },
+      "source_retrieval_date": "2026-10-24 (existing checked-in raw feature snapshot); copied to this audit on 2026-10-25",
+      "source_crs": "ArcGIS feature service EPSG:3857; saved geometry snapshot in WGS84/EPSG:4326",
+      "local_snapshot": "audit/bindley_bioscience_center/sources/gis_feature_605.json",
+      "measurement_method": "Used first exterior ring of matched source feature. Converted WGS84 lon/lat with the project's documented local approximate conversion (X longitude, Y latitude), computed a shoelace polygon centroid, subtracted centroid for local coordinates, and preserved all 191 ring vertices without rescaling. Local shoelace area is about 2712.56 m2. The Shape__Area attribute is 4688.65 m2 in service Web Mercator and is not directly comparable without projection scale correction.",
+      "relevant_attributes": {
+        "Elevation": 626.8,
+        "Extrution": 19,
+        "Shape__Area_m2_web_mercator": 4688.6484375,
+        "Shape__Length_m_web_mercator": 426.15279835387133,
+        "BUILT_unix_ms": 1046476800000,
+        "OCCUPIED_unix_ms": 1118793600000
+      }
+    },
+    {
+      "type": "official facility page and building photograph",
+      "provider": "Bindley Bioscience Center, Purdue University",
+      "url": "https://bindley.research.purdue.edu/about-us/",
+      "supports": "Bindley identity and interdisciplinary life-sciences research purpose; linked building-specific exterior photograph shows the dark name wall, two/three-level glazed frontage, light metallic panels, entry canopy, and visible lobby.",
+      "source_image_url": "https://bindley.research.purdue.edu/app/uploads/2025/06/3d71b0f840eb2f2492d80181b8ee0d659b5ee1b2-1-1024x682.jpg",
+      "source_image_date": "Image path indicates June 2025 upload; original photograph date unverified.",
+      "raw_snapshots": [
+        "audit/bindley_bioscience_center/sources/bindley_about.html",
+        "audit/bindley_bioscience_center/sources/purdue_bindley_photo.jpg"
+      ]
+    },
+    {
+      "type": "official facility and core descriptions",
+      "provider": "Bindley Bioscience Center, Purdue University",
+      "url": "https://bindley.research.purdue.edu/facilities/",
+      "supports": "Research laboratory/core-facility program for interpreted interior lab benches and instrument silhouettes.",
+      "raw_snapshot": "audit/bindley_bioscience_center/sources/bindley_facilities.html"
+    },
+    {
+      "type": "official university research-center directory",
+      "provider": "Purdue University Office of Research",
+      "url": "https://research.purdue.edu/research-center/bindley-bioscience-center-bbc/",
+      "source_date": "2026-05-28 page date",
+      "supports": "Building identity, Discovery Park location, and combined life-sciences and engineering research use.",
+      "raw_snapshot": "audit/bindley_bioscience_center/sources/purdue_office_of_research.html"
+    },
+    {
+      "type": "project architect project page and photos",
+      "provider": "Flad Architects",
+      "url": "https://www.flad.com/work/purdue-bindley-bioscience-engineering.php",
+      "supports": "Building-specific exterior photos showing white/silver metal panel cladding, broad glazed volumes, dark entrance signage, and campus-facing landscaped approach; architect states the original center anchors Discovery Park and a significant MCRF laboratory addition extends the building.",
+      "raw_page_snapshot": "audit/bindley_bioscience_center/sources/flad_project.html",
+      "source_date": "Flad lookbook lists original center completion 2005 and MCRF addition completion 2013.",
+      "project_image_snapshots": [
+        "audit/bindley_bioscience_center/sources/flad_bindley_1.jpg",
+        "audit/bindley_bioscience_center/sources/flad_bindley_2.jpg",
+        "audit/bindley_bioscience_center/sources/flad_bindley_3.jpg",
+        "audit/bindley_bioscience_center/sources/flad_bindley_4.jpg",
+        "audit/bindley_bioscience_center/sources/flad_bindley_5.jpg",
+        "audit/bindley_bioscience_center/sources/flad_bindley_6.jpg",
+        "audit/bindley_bioscience_center/sources/flad_bindley_7.jpg"
+      ],
+      "supplementary_raw_snapshot": "audit/bindley_bioscience_center/sources/flad_lookbook.pdf"
+    }
+  ],
+  "geometry": {
+    "coordinate_frame": "Local metres, X east, Y north, Z up; origin is area centroid of official GIS exterior ring.",
+    "manifest_placement_origin_xy_m": [-825.9724870358015, -512.0082823935928],
+    "footprint_ring_vertex_count": 191,
+    "local_footprint_bounds_xy_m": [-16.449314, 20.215668, -50.688927, 47.908821],
+    "modeled_floors": 3,
+    "modeled_eave_height_m": 13.3,
+    "modeled_roof_top_with_parapet_m": 14.55,
+    "height_status": "Estimated. GIS records three levels, but its Elevation and legacy Extrution values are not verified roof heights. No section or elevation was located.",
+    "envelope": "GIS-ring shell and low-slope roof with a light silver panel finish, banded research windows, broad front curtain-wall bay, prominent charcoal entry name wall and canopy, and low-profile schematic rooftop plant screens/vents.",
+    "interior": "Small schematic laboratory benches and instrument silhouettes behind glazing. Use-based visualization only; not an as-built room plan.",
+    "facade_status": "Color/material, glass, a broad opaque charcoal name wall in front of the lobby glazing, and canopy cues follow building-specific Purdue and Flad photos. Exact location/extent of glazing in the footprint, panel dimensions, bay spacing, roof plant, and unphotographed elevations remain estimated.",
+    "rooftop_equipment_status": "Conservatively modeled as schematic low-profile screens and vents with tops at or below 14.50 m, aligned with the prior 14.55 m overall-top estimate. No roof plan or section verifies their locations or heights; the 14.55 m value itself remains estimated."
+  },
+  "validation": {
+    "reopened": true,
+    "validation_script": "audit/bindley_bioscience_center/validate_reopened.py",
+    "validation_report": "audit/bindley_bioscience_center/validation.json",
+    "mesh_object_count": 527,
+    "collection_object_count": 528,
+    "required_collection_present": true,
+    "shell_vertex_count": 382,
+    "shell_bounds_local_m": [[-16.449314, 20.215668], [-50.688927, 47.908821], [0.0, 13.3]],
+    "external_image_dependencies": [],
+    "dark_name_wall_present": true,
+    "roof_equipment_max_top_local_m": 14.5,
+    "collection_export_file": "audit/bindley_bioscience_center/bindley_collection_export_probe.blend",
+    "collection_export_reopened": true,
+    "collection_export_object_count": 528,
+    "collection_export_camera_or_light_objects": [],
+    "collection_export_linked_libraries": [],
+    "previews_rendered_from_reopened_library": [
+      "audit/bindley_bioscience_center/overview.png",
+      "audit/bindley_bioscience_center/entry_detail.png",
+      "audit/bindley_bioscience_center/plan.png"
+    ]
+  },
+  "uncertainties": [
+    "Official GIS footprint match is by feature ID, building abbreviation, full building name and address; no field survey was conducted.",
+    "GIS polygon uses a local approximate coordinate conversion. Web Mercator Shape__Area differs because it is in a projection with latitude scale distortion; the GIS ring itself was retained.",
+    "Three levels are recorded by GIS and supported by building-specific photographs, but floor-to-floor and roof elevations are not verified. The eave/top heights remain estimates; rooftop equipment is now modeled conservatively no higher than 14.50 m.",
+    "No as-built elevations, roof plan, or traced floor plans were found. Interior objects, mechanical equipment, and facade dimensions are schematic; rooftop screen/vent locations and dimensions are unverified.",
+    "The GIS feature ring appears to include the extensive 2013 MCRF addition; the architect source confirms the addition but does not provide a dimensioned addition outline.",
+    "Street-level imagery was not independently inspected in this pass."
+  ],
+  "candidate_grade": {
+    "status": "awaiting independent evaluator",
+    "builder_self_assessment": "Dedicated source module, official source snapshot set, 191-vertex GIS envelope, manifest origin, named collection, and reopen/export validation are complete. The photo-backed charcoal entry name wall is visible in front of the glazed entrance. Rooftop equipment is schematic and conservatively kept at or below the 14.55 m top estimate; that top estimate and all equipment details remain unverified."
+  }
+}

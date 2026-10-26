@@ -1,0 +1,55 @@
+{
+  "building_id": "bindley_bioscience_center",
+  "asset_sha256": "661ae48a93f24dd40be36b6f7853dce006627483840b59637fec99b2374b7968",
+  "score": 8.8,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Official Purdue BuildingShapes feature 605 matches BIND, the full building name, and the 1203 Mitch Daniels Blvd address. Its 191-point exterior ring is preserved in the structural shell; independent bidirectional point-set Hausdorff residual is 0.000002 m."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "The detailed model is in the GIS-centroid local frame. The independent projected GIS centroid and manifest placement origin differ by 0.000000 m; shell XY bounds match the source-derived local bounds to sub-millimeter precision, with the source ring vertices preserved without rescaling."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS records three levels, matching the modeled three-level envelope. The evidence explicitly labels the 13.3 m eave and \u226414.5 m roof equipment tops as estimates/schematic; no measured roof plan, section, or elevation was located. The low-slope roof is visually plausible but not dimension-verified."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": "The Purdue facility and Flad photographs support the light metallic panels, broad glazing, lobby curtain wall, entry canopy, and prominent charcoal name wall. The revised render shows the dark wall and legible name in front of the glazed lobby. Exact bay spacing, wall extent, entry dimensions, and unphotographed elevations remain interpretive."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "The reopened named collection contains 528 objects, and its object names/count match the manifest exactly. A collection-only .blend export was independently reopened with the same object count and no cameras/lights, external images, or linked libraries. The building record includes raw GIS, Purdue facility/photo, Purdue research directory, and architect sources, plus renders and validation."
+    }
+  ],
+  "evidence": {
+    "source_record": "audit/bindley_bioscience_center/evidence.json",
+    "raw_gis_snapshot": "audit/bindley_bioscience_center/sources/gis_feature_605.json",
+    "primary_photo": "audit/bindley_bioscience_center/sources/purdue_bindley_photo.jpg",
+    "architect_photos": "audit/bindley_bioscience_center/sources/flad_bindley_1.jpg through flad_bindley_7.jpg",
+    "overview_render": "audit/bindley_bioscience_center/overview.png",
+    "entry_render": "audit/bindley_bioscience_center/entry_detail.png",
+    "blender_asset_probe": "audit/bindley_bioscience_center_independent_grade_r2/blender_probe.json",
+    "collection_export_probe": "audit/bindley_bioscience_center_independent_grade_r2/export_probe.json"
+  },
+  "findings": [
+    "Three levels are supported by Purdue GIS, but eave/top height and floor-to-floor dimensions are estimates.",
+    "The rooftop screens and vents are deliberately schematic and are not supported by a roof plan or section.",
+    "The facade concept follows building-specific Purdue and Flad photographs; exact elevations and bay dimensions remain unverified."
+  ]
+}
