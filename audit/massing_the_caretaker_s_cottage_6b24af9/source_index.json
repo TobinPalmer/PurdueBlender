@@ -1,0 +1,100 @@
+{
+  "building_id": "massing_the_caretaker_s_cottage_6b24af9",
+  "assignment": "Rossen",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "role": "named structure identity, address, date, materials and historic double porches",
+      "provider": "West Lafayette Public Library, Caretaker’s Cottage local history museum",
+      "url": "https://wlaf.lib.in.us/caretakerscottage/",
+      "feature_id": "named museum building, 1496 N Salisbury St",
+      "source_date": "Page current at retrieval; construction stated 1903",
+      "snapshot": "sources/official_library_cottage_page.html",
+      "images": [
+        "sources/official_library_cottage_historic.jpg",
+        "sources/official_library_cottage_porch_overlook.png"
+      ],
+      "source_crs": "Not applicable; unscaled photographs",
+      "measurement_method": "Use building description (Bedford limestone, terracotta roof tile, original design with double porches, 3-4 rooms and root cellar) and exterior image qualitatively; no photographic dimensions inferred.",
+      "uncertainty": "Page provides no plan, elevations or measured height; photographs are perspective views."
+    },
+    {
+      "role": "official civic identity, preserved exterior and museum opening",
+      "provider": "City of West Lafayette press release, hosted by GovDelivery",
+      "url": "https://content.govdelivery.com/accounts/INWESTLAFAYETTE/bulletins/387c1c3",
+      "feature_id": "2024 Caretaker’s Cottage ribbon-cutting release",
+      "source_date": "2024-03-05",
+      "snapshot": "sources/city_cottage_ribbon_cutting.html",
+      "source_crs": "Not applicable",
+      "measurement_method": "Identity/history cross-check; confirms 1903 building and historically preserved 2024 reopening.",
+      "uncertainty": "Release has no measured dimensions or architectural drawings."
+    },
+    {
+      "role": "independent named building footprint",
+      "provider": "OpenStreetMap API",
+      "url": "https://api.openstreetmap.org/api/0.6/way/953041335/full.json",
+      "feature_id": "way 953041335",
+      "feature_name": "The Caretaker's Cottage",
+      "tags": {
+        "building": "yes",
+        "historic": "building",
+        "name": "The Caretaker's Cottage",
+        "operator": "West Lafayette Library",
+        "operator:wikidata": "Q69861995",
+        "year_of_construction": "1903"
+      },
+      "source_date": "2024-10-20T20:46:53Z",
+      "retrieved_utc_date": "2026-10-26",
+      "snapshot": "sources/osm_full_953041335.json",
+      "source_crs": "WGS84 / EPSG:4326",
+      "measurement_method": "Transform 10 unique outer-ring points with the project local lon/lat approximation into campus coordinates; OSM ring bounds match the original manifest massing bounds to better than 0.0001 m in each XY extent.",
+      "uncertainty": "Community-mapped geometry; not a cadastral or architectural survey. Footprint outline is used for wall/base shell, not roof overhang."
+    },
+    {
+      "role": "independent 2018 building/roof footprint",
+      "provider": "Indiana Geographic Information Office, Indiana Building Footprints 2016-2020 FeatureServer layer 0",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "feature_id": "objectid 433415",
+      "source_date": "2018 LiDAR year; dataset describes 2016-2020",
+      "retrieved_utc_date": "2026-10-26",
+      "snapshot": "sources/indiana_lidar_footprints_433415.json; sources/indiana_lidar_layer_metadata.json",
+      "source_crs": "Service returns geometry as WGS84; layer spatial reference is Web Mercator EPSG:3857",
+      "measurement_method": "Returned polygon ring is projected with the project local approximation for comparison. At 209.76 m² it is larger than the 159.48 m² OSM wall outline and visually follows the orthophoto roof envelope; model uses the ring as an approximate roof-plan infill/extent, not as a surveyed wall outline.",
+      "uncertainty": "LiDAR-derived roof envelope, not ground-level foundation survey; no height model used."
+    },
+    {
+      "role": "current aerial roof registration",
+      "provider": "Indiana Geographic Information Office, Indiana Current Orthophotography ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "feature_id": "ImageServer export at the Cottage coordinate",
+      "source_date": "Service coverage 2022-2025; exact local capture date unavailable",
+      "retrieved_utc_date": "2026-10-26",
+      "snapshot": "sources/indiana_current_imagery_metadata.json; sources/indiana_current_orthophoto_cottage.png; sources/indiana_orthophoto_footprint_overlay.jpg; sources/orthophoto_export_info.json",
+      "source_crs": "Request/export extent WGS84 EPSG:4326; source service uses Web Mercator",
+      "measurement_method": "Export 1200x700 crop at recorded WGS84 extent; compare roof outline visually against OSM and Indiana LiDAR polygons. Used for orientation, roof plan and neighborhood-side context only.",
+      "uncertainty": "No exact image date/camera, orthophoto does not provide elevations or facade details."
+    },
+    {
+      "role": "historic exterior form and materials",
+      "provider": "West Lafayette Public Library official page photo gallery",
+      "url": "https://wlaf.lib.in.us/caretakerscottage/",
+      "feature_id": "2017 Grand View Cemetery caretaker cottage photograph on official library page",
+      "source_date": "Image captioned 2017 on page",
+      "snapshot": "sources/official_library_cottage_historic.jpg",
+      "source_crs": "Not applicable; unscaled exterior perspective photo",
+      "measurement_method": "Qualitative cues: rubble limestone walls, terracotta tile roof, multi-plane/hip-gable silhouette, deep roof projection and porch/veranda forms.",
+      "uncertainty": "Tree cover and oblique view conceal some openings and porches; exact geometry, heights and current renovation changes are unknown."
+    },
+    {
+      "role": "official image of stone porch/veranda construction",
+      "provider": "West Lafayette Public Library official Caretaker’s Cottage page",
+      "url": "https://wlaf.lib.in.us/caretakerscottage/",
+      "feature_id": "official library gallery image IMG_7052",
+      "source_date": "Page image; exact exposure date not provided",
+      "snapshot": "sources/official_library_cottage_porch_overlook.png",
+      "source_crs": "Not applicable; unscaled oblique image",
+      "measurement_method": "Qualitatively checked heavy stone piers and low stone parapets; used as a material/form reference only.",
+      "uncertainty": "Perspective image provides no reliable dimensions and may show a restoration-era condition."
+    }
+  ]
+}

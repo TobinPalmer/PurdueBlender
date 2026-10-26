@@ -1,0 +1,63 @@
+{
+  "building_id": "massing_the_caretaker_s_cottage_6b24af9",
+  "assignment": "Rossen",
+  "asset": "modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend",
+  "build_script": "modular/buildings/build_massing_the_caretaker_s_cottage_6b24af9.py",
+  "scene": "Building_massing_the_caretaker_s_cottage_6b24af9",
+  "exported_collection": "Asset_massing_the_caretaker_s_cottage_6b24af9",
+  "source_records": [
+    "source_index.json",
+    "source_registration.json",
+    "sources/osm_full_953041335.json",
+    "sources/indiana_lidar_footprints_433415.json",
+    "sources/indiana_current_orthophoto_cottage.png",
+    "sources/indiana_orthophoto_footprint_overlay.jpg",
+    "sources/official_library_cottage_page.html",
+    "sources/official_library_cottage_historic.jpg",
+    "sources/official_library_cottage_porch_overlook.png",
+    "sources/city_cottage_ribbon_cutting.html"
+  ],
+  "geometry_edits": [
+    "Rebuilt the structural shell from the named 10-point OSM outline in project campus coordinates.",
+    "Replaced the 16 m fallback extrusion with a one-story stone cottage; wall top 3.35 m, eaves about 3.48 m and ridge about 5.55 m, all estimated from qualitative imagery.",
+    "Added a terracotta roof-envelope infill from the 2018 Indiana LiDAR outline and three stepped hipped roof volumes aligned to an estimated 40 degree NE-SW axis, with a procedural brick tile pattern.",
+    "Added stone trim, photo-guided window and door approximations, and a broad veranda with enlarged limestone piers and low stone parapet sections.",
+    "Removed the unsupported separate porch canopy and access ramp/rails; roof texture is procedural and has no external image dependencies."
+  ],
+  "validation": {
+    "method": "Asset rebuilt and reopened in Blender 4.5.15 LTS using audit/massing_the_caretaker_s_cottage_6b24af9/reopen_validate.py.",
+    "result_file": "reopen_validation.json",
+    "passed": true,
+    "collection_object_count": 71,
+    "mesh_count": 71,
+    "source_osm_way": 953041335,
+    "osm_structural_ring_points": 10,
+    "max_ring_error_m": 0.0000574317,
+    "evaluated_bounds_m": {
+      "min": [382.2563, 1461.9686, 0.0],
+      "max": [403.4279, 1484.1754, 5.55],
+      "height": 5.5500
+    },
+    "object_transforms_identity": true,
+    "materialless_mesh_count": 0,
+    "unpacked_external_images": [],
+    "presentation_collection_outside_export": true,
+    "rendered_views": [
+      "renders/top.png",
+      "renders/street_oblique.png",
+      "renders/north_oblique.png",
+      "renders/side_oblique.png"
+    ]
+  },
+  "uncertainties": [
+    "No measured elevation, architectural plan, or verified building height was found; wall, eave and ridge heights are estimates.",
+    "OSM way 953041335 is a community-mapped wall/base outline, not a cadastral or architectural survey.",
+    "Indiana LiDAR footprint objectid 433415 is a larger roof-envelope candidate (209.76 m2 versus 159.48 m2 for OSM), with 0.86 m centroid separation and 0.722 IoU; it is not treated as a surveyed foundation.",
+    "Orthophoto service coverage is 2022-2025 but the exact local capture date is unavailable.",
+    "Roof intersections and tile scale, story-height, openings, entrance and porch dimensions are qualitative interpretations."
+  ],
+  "coordinator_review_needed": [
+    "Confirm master link uses this asset once at its manifest placement and replaces the original massing block.",
+    "Fresh independent evaluator regrade pending after 7.8/10 initial grade; roof-envelope and porch revisions are documented in the build record."
+  ]
+}

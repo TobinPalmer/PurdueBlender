@@ -1,0 +1,63 @@
+{
+  "measurement_method": "Transform WGS84 vertices with project README local approximation; compare OSM outline and Indiana LiDAR-derived polygon in campus meters using Shapely. These source rings are independent of the model; this registration compares sources and current orthophoto, not a survey.",
+  "transform": "X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0",
+  "osm_named_feature": {
+    "way_id": 953041335,
+    "point_count": 10,
+    "bounds_xy_m": [
+      384.65001413250235,
+      1463.7070719997928,
+      401.67150238794693,
+      1480.8960640002624
+    ],
+    "area_m2": 159.4846590340073,
+    "perimeter_m": 57.30832017270656,
+    "centroid_xy_m": [
+      394.27905558873385,
+      1471.7864475712363
+    ]
+  },
+  "indiana_lidar_feature": {
+    "objectid": 433415,
+    "point_count": 8,
+    "county": "Tippecanoe",
+    "lidaryear": 2018,
+    "bounds_xy_m": [
+      383.19398568506244,
+      1462.9850899326425,
+      402.7381653643421,
+      1482.7224499198928
+    ],
+    "area_m2": 209.76139951484376,
+    "perimeter_m": 63.094791867286375,
+    "centroid_xy_m": [
+      393.95164773440627,
+      1472.5809261594727
+    ]
+  },
+  "comparison": {
+    "centroid_separation_m": 0.8592974631881117,
+    "intersection_over_union": 0.722134923008098,
+    "intersection_area_m2": 154.8342528211794,
+    "interpretation": "OSM polygon matches the manifest wall/base footprint. The larger Indiana LiDAR outline has about 0.86 m centroid separation and better follows the 2022-2025 orthophoto roof edge; treat it as roof envelope rather than foundation."
+  },
+  "orthophoto": {
+    "provider": "Indiana Geographic Information Office, Indiana Current Orthophotography ImageServer",
+    "service_url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+    "coverage": "2022-2025, exact local capture date not available",
+    "crop_file": "sources/indiana_current_orthophoto_cottage.png",
+    "overlay_file": "sources/indiana_orthophoto_footprint_overlay.jpg",
+    "extent_wgs84": [
+      -86.90938,
+      40.44049,
+      -86.90878,
+      40.44084
+    ],
+    "size_px": [
+      1200,
+      700
+    ],
+    "source_crs": "WGS84 request/export",
+    "limits": "Used for plan and roof-outline registration only, not height, facade or dated renovation comparison."
+  }
+}

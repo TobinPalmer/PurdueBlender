@@ -1,0 +1,799 @@
+{
+  "building_id": "massing_the_caretaker_s_cottage_6b24af9",
+  "building_name": "The Caretaker's Cottage",
+  "grader": "independent evaluator r2; raw source, four frozen renders, and direct Blender reopen",
+  "evaluator": "independent_grade_r2.py::evaluate",
+  "score": 8.1,
+  "max_score": 10,
+  "passing_standard": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2.0,
+      "status": "identity and wall/base polygon strongly supported; boundaries are not surveys",
+      "evidence": [
+        "Official West Lafayette Public Library page names and describes the 1903 Caretaker's Cottage at 1496 N Salisbury Street; the City of West Lafayette opening release independently confirms the named preserved cottage.",
+        "Raw OSM way 953041335 is named The Caretaker's Cottage and has 10 unique exterior points. Saved shell checks against the raw transformed ring with maximum nearest-point error 0.000057 m.",
+        "Indiana 2018 LiDAR footprint 433415 and current orthophoto independently identify the larger roof outline; source comparison records IoU 0.722 and centroid separation 0.859 m. OSM remains a plausible wall/base ring; neither polygon is a cadastral or architectural survey."
+      ],
+      "deduction": "0.1: OSM is community-mapped and the larger LiDAR-derived roof envelope does not establish the exact wall/foundation line."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "status": "XY footprint and orientation verified against named feature; local geographic transform is approximate",
+      "evidence": [
+        "Reopened shell bounds from the saved mesh are [[384.6500244140625, 401.6715087890625], [1463.70703125, 1480.8961181640625]]; raw OSM ring bounds are [[384.65001413250235, 401.67150238794693], [1463.7070719997928, 1480.8960640002624]]; dimensions from OSM are 17.02 x 17.19 m.",
+        "The shell's maximum error against all raw OSM nodes is 0.000057 m, substantially below the 1 mm check threshold; building axes match the georeferenced source polygon.",
+        "Evaluated full asset bounds are [[382.2562561035156, 1461.9686279296875, 0.0], [403.4278564453125, 1484.1754150390625, 5.550000190734863]]; plan extents 21.17 x 22.21 m include roof/porch projections and should not be read as wall dimensions. The asset uses the simple massing world-coordinate convention."
+      ],
+      "deduction": "0.1: the campus transform is the project's approximate lon/lat conversion, and plan limits for roof/porch projections are qualitative."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2.0,
+      "status": "one-story appearance and terracotta multi-plane roof supported; all vertical dimensions are estimates and roof junctions remain approximate",
+      "evidence": [
+        "The official 2017 exterior photo shows a low, one-story stone cottage with a strongly articulated terracotta tiled roof, deep eaves, intersecting roof planes and broad porch roofs. The current orthophoto and LiDAR footprint support the stepped roof plan, but not elevations.",
+        "The reopened model is 5.55 m high. Build/evidence records label wall top 3.35 m, eaves about 3.48 m and ridge 5.55 m as estimates; no surveyed elevation or height measurement was found.",
+        "In the frozen top and oblique renders, the roof has the correct terracotta multi-plane character and broadly follows the stepped outline, but several intersections/valleys still read as overlapping volumes, with small exposed/irregular gaps. The tile pitch and scale are not measured."
+      ],
+      "deduction": "0.8: roof silhouette is source-informed but intersection geometry remains approximate, and exact height/pitch are not established by measured evidence."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.3,
+      "max_score": 2.0,
+      "status": "materials and porch concept supported; openings and fine facade arrangement remain qualitative",
+      "evidence": [
+        "Official library text supports Bedford limestone, terracotta roofing and double porches; the historic photograph visibly shows rubble-stone walls, broad veranda, heavy stone piers, low parapet and deep eaves. A second official porch photo corroborates the heavy masonry supports/parapet treatment.",
+        "Current street and north oblique renders include textured stone walls, terracotta roof, a broad porch with several heavy piers and low parapet treatment, plus framed windows and an entrance opening.",
+        "The model's stone treatment is smoother/more uniform than the photographed rubble masonry; exact window count/placement, door location, porch dimensions and restoration-era changes are not fixed by measured plans/elevations. No specific entrance dimension is claimed."
+      ],
+      "deduction": "0.7: the signature material and double-porch vocabulary are supported, while fenestration, doorway placement, pier spacing and porch dimensions are interpretations and visual correspondence is approximate."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "saved standalone asset reopens cleanly with portable materials; manifest height bound and master integration need coordinator review",
+      "evidence": [
+        "Direct Blender reopen found scene Building_massing_the_caretaker_s_cottage_6b24af9, expected collection Asset_massing_the_caretaker_s_cottage_6b24af9, 71 objects (71 meshes, 429 evaluated faces).",
+        "All 71 exported meshes have materials=True; unpacked external image paths=[]; every exported object has identity location/rotation/scale=True; presentation collection exists=True, name overlap=[].",
+        "Building-specific package has 7 documented sources, raw OSM/GIS/orthophoto/historic-photo snapshots, source registration, a reopen record and four current renders.",
+        "Read-only shared manifest XY bounds align to the saved massing footprint, but its recorded Z max is 16.0 m while the reopened asset reaches 5.55 m; shared manifest update is coordinator-owned. Master link/replacement was not in scope for this isolated grade."
+      ],
+      "deduction": "0.2: coordinator-owned manifest Z bounds remain stale and master integration/duplicate replacement was not inspected."
+    }
+  ],
+  "evidence": {
+    "saved_asset": "modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend",
+    "scene": "Building_massing_the_caretaker_s_cottage_6b24af9",
+    "collection": "Asset_massing_the_caretaker_s_cottage_6b24af9",
+    "reopened_object_count": 71,
+    "mesh_count": 71,
+    "evaluated_face_count": 429,
+    "mesh_world_bounds_m": [
+      [
+        382.2562561035156,
+        1461.9686279296875,
+        0.0
+      ],
+      [
+        403.4278564453125,
+        1484.1754150390625,
+        5.550000190734863
+      ]
+    ],
+    "mesh_plan_extents_m": [
+      21.171600341796875,
+      22.206787109375
+    ],
+    "source_osm_way": 953041335,
+    "source_unique_ring_points": 10,
+    "max_shell_vertex_error_to_raw_osm_m": 5.743171811716287e-05,
+    "all_raw_osm_ring_points_match": true,
+    "shell_bounds_xy_m": [
+      [
+        384.6500244140625,
+        401.6715087890625
+      ],
+      [
+        1463.70703125,
+        1480.8961181640625
+      ]
+    ],
+    "raw_osm_bounds_xy_m": [
+      [
+        384.65001413250235,
+        401.67150238794693
+      ],
+      [
+        1463.7070719997928,
+        1480.8960640002624
+      ]
+    ],
+    "raw_osm_plan_dimensions_m": [
+      17.02148825544458,
+      17.188992000469625
+    ],
+    "source_registration_lidar_osm_iou": 0.722134923008098,
+    "source_registration_lidar_osm_centroid_distance_m": 0.8592974631881117,
+    "identity_checks_from_raw_source_text": {
+      "library_page_identifies_caretakers_cottage": true,
+      "library_page_names_1903": true,
+      "city_release_identifies_cottage": true,
+      "osm_way_named_for_cottage": true
+    },
+    "manifest_recorded_z_bounds_m": [
+      0.0,
+      16.0
+    ],
+    "unpacked_external_images": [],
+    "presentation_collection_exists": true,
+    "evaluated_mesh_records": [
+      {
+        "name": "The Caretaker's Cottage",
+        "vertices": 20,
+        "faces": 12,
+        "materials": [
+          "Bedford_Limestone_Rubble"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Terracotta_Roof_Envelope_Infill",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Terracotta_Roof_Tile"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "North_Terracotta_Hipped_Roof",
+        "vertices": 6,
+        "faces": 5,
+        "materials": [
+          "Terracotta_Roof_Tile"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "South_Terracotta_Hipped_Roof",
+        "vertices": 6,
+        "faces": 5,
+        "materials": [
+          "Terracotta_Roof_Tile"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Stepped_Connector_Terracotta_Roof",
+        "vertices": 6,
+        "faces": 5,
+        "materials": [
+          "Terracotta_Roof_Tile"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Front_Porch_Stone_Deck",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Front_Porch_Stone_Pier_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Bedford_Limestone_Rubble"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Front_Porch_Stone_Pier_0",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Bedford_Limestone_Rubble"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Front_Porch_Stone_Pier_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Bedford_Limestone_Rubble"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Front_Porch_Beam",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Front_Porch_Low_Stone_Wall_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Bedford_Limestone_Rubble"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Front_Porch_Low_Stone_Wall_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Bedford_Limestone_Rubble"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_0_Glazing",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Smoked_Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_0_Jamb_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_0_Jamb_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_0_HeadSill_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_0_HeadSill_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_0_Mullion",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Painted_Wood_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_1_Glazing",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Smoked_Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_1_Jamb_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_1_Jamb_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_1_HeadSill_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_1_HeadSill_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_1_Mullion",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Painted_Wood_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_2_Glazing",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Smoked_Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_2_Jamb_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_2_Jamb_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_2_HeadSill_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_2_HeadSill_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_0_2_Mullion",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Painted_Wood_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_1_0_Glazing",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Smoked_Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_1_0_Jamb_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_1_0_Jamb_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_1_0_HeadSill_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_1_0_HeadSill_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_1_0_Mullion",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Painted_Wood_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_3_0_Glazing",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Smoked_Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_3_0_Jamb_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_3_0_Jamb_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_3_0_HeadSill_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_3_0_HeadSill_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_3_0_Mullion",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Painted_Wood_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_5_0_Glazing",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Smoked_Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_5_0_Jamb_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_5_0_Jamb_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_5_0_HeadSill_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_5_0_HeadSill_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_5_0_Mullion",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Painted_Wood_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_6_0_Glazing",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Smoked_Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_6_0_Jamb_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_6_0_Jamb_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_6_0_HeadSill_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_6_0_HeadSill_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_6_0_Mullion",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Painted_Wood_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_7_0_Glazing",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Smoked_Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_7_0_Jamb_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_7_0_Jamb_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_7_0_HeadSill_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_7_0_HeadSill_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_7_0_Mullion",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Painted_Wood_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_8_0_Glazing",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Smoked_Glass"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_8_0_Jamb_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_8_0_Jamb_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_8_0_HeadSill_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_8_0_HeadSill_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Window_8_0_Mullion",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Painted_Wood_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Entry_Door",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Dark_Wood"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Entry_Door_Limestone_Lintel",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Return_Porch_Stone_Deck",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Warm_Limestone_Trim"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Return_Porch_Stone_Pier_-1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Bedford_Limestone_Rubble"
+        ],
+        "modifiers": []
+      },
+      {
+        "name": "Return_Porch_Stone_Pier_1",
+        "vertices": 8,
+        "faces": 6,
+        "materials": [
+          "Bedford_Limestone_Rubble"
+        ],
+        "modifiers": []
+      }
+    ],
+    "renders_reviewed": [
+      "renders/top.png",
+      "renders/street_oblique.png",
+      "renders/north_oblique.png",
+      "renders/side_oblique.png"
+    ],
+    "source_images_reviewed": [
+      "sources/official_library_cottage_historic.jpg",
+      "sources/official_library_cottage_porch_overlook.png",
+      "sources/indiana_orthophoto_footprint_overlay.jpg",
+      "sources/indiana_current_orthophoto_cottage.png"
+    ]
+  },
+  "findings": [
+    "Passes the 8/10 minimum at 8.1/10, with roof/facade uncertainty deducted rather than hidden.",
+    "Coordinator should update the shared manifest's stale vertical bound (currently 16 m; saved asset maximum is about 5.55 m) before integrating/relying on manifest bounds.",
+    "No measured height or roof plan was found. Preserve the stated estimates; do not treat wall/eave/ridge heights or roof intersection geometry as verified.",
+    "Roof valleys/intersections remain visibly approximate in the rendered views. The broad veranda and stone piers are supported by historic photographs, while exact openings, entrance position, and porch dimensions remain unverified.",
+    "Master integration and confirmation that the original massing is replaced exactly once were outside this isolated asset grade."
+  ]
+}
