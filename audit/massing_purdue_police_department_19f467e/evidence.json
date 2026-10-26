@@ -1,0 +1,130 @@
+{
+  "building_id": "massing_purdue_police_department_19f467e",
+  "assigned_name": "Purdue Police Department",
+  "owner": "Rossen",
+  "asset_path": "modular/buildings/massing_purdue_police_department_19f467e.blend",
+  "scene": "Building_massing_purdue_police_department_19f467e",
+  "export_collection": "Asset_massing_purdue_police_department_19f467e",
+  "expected_object": "Purdue Police Department",
+  "identity_resolution": {
+    "conclusion": "The Rossen PUPD asset represents the Oliver Perkins Terry House (TERY), the operational building that Purdue identifies as the Purdue University Police Department location. The stable assignment name is retained.",
+    "official_gis_feature": "FID 275 / BLDG_ABBR TERY / BUILDING_N Oliver Perkins Terry House / building 1215 / 205 S Martin Jischke Drive",
+    "why_this_match_is_supported": [
+      "Root README assigns the PUPD asset to Rossen and lists FID 275 as a direct crosswalk candidate.",
+      "Purdue Events identifies the address as 205 S Martin Jischke Drive and explicitly states that Purdue University Police Department is located in Terry House.",
+      "Purdue Office of Emergency Preparedness identifies TERY at the same address, says it is a one-story building with a small utility basement, and lists police/dispatch functions at TERY.",
+      "The converted GIS polygon and original massing outline centroids differ by about 1.46 m, and the official footprint lies within the old oversized shell (prior polygon IoU about 0.8723). The aerial shows a matching large low-roof building at the GIS location.",
+      "No second Oliver Perkins Terry House or PUPD building asset appears in the current modular manifest. README crosswalk entries 116–118 are separate obfuscated OB1/OB2/OB3 source features and are not assigned to this stable asset."
+    ],
+    "identity_uncertainty": "The assignment uses an operational name while the GIS/physical building uses the Terry House name. This is documented rather than silently renaming the stable asset."
+  },
+  "sources": [
+    {
+      "provider": "Purdue University Facilities / campus GIS FeatureServer",
+      "feature_id": "FID 275, GlobalID {9671DFCB-CAA7-411B-AE4A-EF9863987FC0}, TERY",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "snapshot": "audit/official_purdue_buildings_wgs84.json (feature FID 275; WGS84/EPSG:4326 snapshot); retrieved feature attributes/geometry also preserved in audit/massing_purdue_police_department_19f467e/sources/purdue_gis_fid_275.json",
+      "retrieved": "2026-10-26",
+      "source_date": "GIS item modified 2026-08-31; feature-level geometry edit date unavailable",
+      "crs": "Official service geometry EPSG:3857 (WKID 102100 / latestWKID 3857); cached full-campus snapshot was requested in WGS84/EPSG:4326. The building-specific JSON preserves original EPSG:3857 coordinates.",
+      "measurement_method": "Converted each EPSG:3857 polygon ring coordinate to WGS84, then to project campus XY using the approximate formula in modular/README.md. The GIS feature is the structural footprint input.",
+      "relevant_attributes": {
+        "BLDG_ABBR": "TERY",
+        "BUILDING_N": "Oliver Perkins Terry House",
+        "BUILDING_1": "1215",
+        "ADDRESS": "205 S Martin Jischke Drive",
+        "Shape__Area": 2915.984375,
+        "Shape__Length": 241.86231296871432,
+        "Level_": 4,
+        "NUM_LEVELS": 2,
+        "Extrution": 18,
+        "R": 11.4,
+        "B": -9.7
+      },
+      "uncertainty": "Fields Level_, NUM_LEVELS, Extrution, R and B do not define a verified above-grade height convention in the source documentation and conflict with the official emergency plan’s one-story description. They were not interpreted as measured wall or roof dimensions. Shape__Area is in projected Web Mercator; do not compare it directly with ground area."
+    },
+    {
+      "provider": "Purdue Office of Emergency Preparedness",
+      "feature_id": "TERY building emergency plan",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/tery/",
+      "snapshot": "audit/massing_purdue_police_department_19f467e/sources/purdue_tery_building_emergency_plan.html",
+      "retrieved": "2026-10-26",
+      "source_date": "Revision Date 2026-02-12",
+      "crs": "Not applicable; text source",
+      "measurement_method": "Official description for address, story count, utility basement, police and dispatch room use.",
+      "uncertainty": "Does not provide surveyed elevations, wall height, roof height, detailed entrance location, or a georeferenced facade direction."
+    },
+    {
+      "provider": "Purdue University Events",
+      "feature_id": "Oliver Perkins Terry House place page and lead photo",
+      "url": "https://events.purdue.edu/oliver_perkins_terry_house",
+      "snapshot": "audit/massing_purdue_police_department_19f467e/sources/purdue_events_terry_house.html",
+      "image_snapshot": "audit/massing_purdue_police_department_19f467e/sources/purdue_terry_house_photo.jpg",
+      "retrieved": "2026-10-26",
+      "source_date": "Page lists two place-photo posts in June 2022; lead image's exact capture date is not stated.",
+      "crs": "Not georeferenced",
+      "measurement_method": "Photo supports low horizontal red-brick facade, a broad continuous ribbon of glazing, a flat roof/parapet, and a projecting entrance canopy. It is not used to claim exact dimensions or compass orientation.",
+      "uncertainty": "Photo perspective does not establish which GIS frontage is shown or the exact door position."
+    },
+    {
+      "provider": "Esri World Imagery (ArcGIS MapServer export)",
+      "feature_id": "Export around GIS FID 275; map extent EPSG:3857 [-9676215,4927380,-9676025,4927600]",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-9676215%2C4927380%2C-9676025%2C4927600&bboxSR=3857&imageSR=3857&size=1140%2C1320&format=jpg&f=image",
+      "snapshot": "audit/massing_purdue_police_department_19f467e/sources/world_imagery_tery_area.jpg",
+      "retrieved": "2026-10-26",
+      "source_date": "Imagery acquisition date not exposed by the export response",
+      "crs": "EPSG:3857",
+      "measurement_method": "Visual context only: confirms a low, broad building form at the GIS location and its relationship to surrounding road/parking; official GIS polygon remains the footprint source.",
+      "uncertainty": "Image service imagery date/resolution is provider-managed; canopy, roof equipment, and vegetation obscure exact wall outline."
+    },
+    {
+      "provider": "Purdue Treasurer, Space Report building list (October 2021)",
+      "feature_id": "Building 1215 / TERY",
+      "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/03/Space-Report_1.13.1HE_Buiding_List_Oct2021.pdf",
+      "snapshot": "Not saved locally; cited corroborating source",
+      "retrieved": "2026-10-26",
+      "source_date": "October 2021 report",
+      "crs": "Not applicable",
+      "measurement_method": "Corroborates building number/name/address and gross floor space (20,351.87 sq ft); gross floor area is not treated as footprint or height.",
+      "uncertainty": "Does not provide wall geometry or facade details."
+    }
+  ],
+  "geometry": {
+    "source_footprint_vertices": 13,
+    "source_footprint_bounds_campus_xy_m": {
+      "x": [-740.9433, -709.0679],
+      "y": [-597.0826, -536.6788]
+    },
+    "source_footprint_ground_area_project_approx_m2": 1687.02,
+    "source_footprint_perimeter_project_approx_m": 183.87,
+    "original_asset_bounds_world_m": {
+      "x": [-747.0203, -705.1323],
+      "y": [-597.8727, -536.2788],
+      "z": [0.0, 16.0]
+    },
+    "original_to_gis_footprint_comparison": "Prior comparison of structural lower outline vs transformed FID 275 polygon: polygon IoU approximately 0.872. The old shape enclosed the source footprint but extended several metres beyond it; old 16 m height was generic massing and unsupported.",
+    "original_structural_centroid_to_gis_centroid_offset_m": 1.463,
+    "model_geometry_changes": [
+      "Replaced generic 16 m massing shell with the FID 275/TERY polygon at its campus-world coordinates.",
+      "Modeled one above-grade low story, brick wall/parapet, and flat roof; total roof/parapet elevation 4.45 m is an estimate from exterior-photo proportions, not a measured height.",
+      "Added a broad ribbon glazing band, brick piers and mullions based on Purdue's exterior photo. Bay spacing and dimensions are visual estimates.",
+      "Added one modest entrance door and canopy on a representative long frontage. Its exact frontage and position are not georeferenced and remain estimated.",
+      "Did not model a basement because its dimensions/visible geometry are unavailable; the BEP says only that a small utility basement exists."
+    ],
+    "campus_coordinate_method": "For each Web Mercator point: lon = degrees(x/6378137); lat = degrees(2*atan(exp(y/6378137))-pi/2); then project formula X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040. This is the documented approximate campus conversion, not survey-grade geodesy.",
+    "vertical_ground_reference": "Z=0 retained from the original campus-world massing; no surveyed elevation source found."
+  },
+  "review_status": {
+    "identity_and_feature": "supported by Purdue official address/use sources plus matching GIS geometry and pre-existing asset center",
+    "position_and_footprint": "GIS-based; campus XY uses project's approximate transform; entrance orientation estimated",
+    "floors_and_roof": "one above-grade story and flat low roof supported qualitatively; precise height estimated; basement not modeled",
+    "facade_and_entrance": "red brick, ribbon glazing, flat roof and canopy supported by official photo; exact bay sizes/door location unverified",
+    "modular_export": "preserves manifest scene, collection, object name, asset path, campus-world coordinates, and one-object collection",
+    "remaining_uncertainty": [
+      "No measured elevations or plan/elevation drawing found.",
+      "GIS attributes contain level/extrusion fields with undocumented semantics that conflict with the official one-story plan; not used for vertical sizing.",
+      "Purdue Events photo has no georeferenced direction; the modeled entrance frontage is approximate.",
+      "World imagery capture date is unknown."
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "evaluator": "independent_grader_purdue_police_department",
+  "graded_at": "2026-10-26T20:02:42.340738+00:00",
+  "asset_path": "modular/buildings/massing_purdue_police_department_19f467e.blend",
+  "source_paths_reviewed": [
+    "audit/massing_purdue_police_department_19f467e/evidence.json",
+    "audit/massing_purdue_police_department_19f467e/sources/purdue_gis_fid_275.json",
+    "audit/massing_purdue_police_department_19f467e/sources/purdue_tery_building_emergency_plan.html",
+    "audit/massing_purdue_police_department_19f467e/sources/purdue_events_terry_house.html",
+    "audit/massing_purdue_police_department_19f467e/sources/purdue_terry_house_photo.jpg",
+    "audit/massing_purdue_police_department_19f467e/sources/world_imagery_tery_area.jpg",
+    "audit/massing_purdue_police_department_19f467e/views/purdue_police_department_frontage.png"
+  ],
+  "score": 8.4,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified",
+      "evidence": "Raw Purdue GIS FID 275 names Oliver Perkins Terry House, gives address 205 S Martin Jischke Drive, and supplies a polygon. Cached Purdue Events HTML explicitly says PUPD is located in Terry House; cached Purdue emergency plan independently names TERY, lists PUPD/dispatch, and states one story plus a small utility basement. The rooftop aerial is consistent with a broad low building, although imagery date/clarity limit precise wall interpretation.",
+      "finding": null
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2,
+      "status": "GIS footprint and campus position verified; frontage orientation estimated",
+      "evidence": "Reopened mesh bounds compared with the source-footprint XY bounds recorded in evidence; maximum axis-bound discrepancy 0.0000 m. GIS-derived polygon point match and surrounding Esri imagery support campus placement. The local degree-to-meter conversion is explicitly approximate, and the source photo does not georeference the modeled entrance side.",
+      "finding": "Orientation of the detailed facade/entrance is not established by source evidence."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "status": "story count and roof form supported; numeric heights estimated",
+      "evidence": "Official emergency plan directly states one story with a small utility basement. Purdue Events exterior photo visibly supports a low, flat/parapet roof. The 4.05 m wall and 4.45 m roof/parapet are explicitly estimates inferred from photo proportions; no surveyed vertical dimensions or roof plan were found.",
+      "finding": "Do not treat modeled wall/roof elevations as measured; basement is not modeled due to missing dimensions."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2,
+      "status": "major facade pattern supported; detailed placement partly estimated",
+      "evidence": "Inspected cached Purdue Events photograph: it visibly shows a horizontal red-brick building, long continuous ribbon glazing with vertical divisions, and a projecting red canopy. Rendered model includes these broad traits and one entrance. The model regularizes pier/mullion spacing and places door/canopy on a representative long frontage; the photograph has no georeferenced direction, and the exact entry position is not verifiable. The cross-bracing and landscaping visible in the photo are omitted.",
+      "finding": "Entrance frontage and exact bay rhythm remain unverified; some distinctive photo details are simplified or omitted."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified",
+      "evidence": "Independently reopened .blend in Blender. Scene=True; expected collection=True; exported collection contains ['Purdue Police Department']; mesh vertices=300; external file image dependencies=[]; modifiers=[]. Building evidence folder includes raw GIS JSON, Purdue HTML pages, source photographs/aerial, evidence record, render and reopen record.",
+      "finding": null
+    }
+  ],
+  "evidence": {
+    "independent_reopened_blend_measurements": {
+      "scene_present": true,
+      "collection_present": true,
+      "object_present": true,
+      "object_type": "MESH",
+      "collection_objects": [
+        "Purdue Police Department"
+      ],
+      "vertex_count": 300,
+      "polygon_count": 216,
+      "bounds_world_m": [
+        [
+          -740.9432983398438,
+          -707.7379150390625
+        ],
+        [
+          -597.0826416015625,
+          -536.6787719726562
+        ],
+        [
+          0.0,
+          4.449999809265137
+        ]
+      ],
+      "bottom_xy_bounds_m": [
+        [
+          -740.9432983398438,
+          -709.0679321289062
+        ],
+        [
+          -597.0826416015625,
+          -536.6787719726562
+        ]
+      ],
+      "object_transform": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "modifiers": [],
+      "material_names": [
+        "TERY brick piers",
+        "TERY charcoal mullions",
+        "TERY dark ribbon glazing",
+        "TERY entrance glazing",
+        "TERY flat roof membrane",
+        "TERY red canopy fascia",
+        "TERY warm red brick"
+      ],
+      "image_paths": []
+    },
+    "raw_source_identity_crosscheck_passed": true,
+    "reopened_mesh_xy_bounds_max_abs_difference_from_source_bounds_m": 4.160156254329195e-05
+  },
+  "findings": [
+    "Orientation of the detailed facade/entrance is not established by source evidence.",
+    "Do not treat modeled wall/roof elevations as measured; basement is not modeled due to missing dimensions.",
+    "Entrance frontage and exact bay rhythm remain unverified; some distinctive photo details are simplified or omitted."
+  ],
+  "revision_needed": false,
+  "revision_requests": []
+}
