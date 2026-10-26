@@ -1,0 +1,92 @@
+{
+  "building": "Stanley Coulter Hall",
+  "review_stage": "Independent R6 grade",
+  "asset": "modular/buildings/stanley_coulter_hall.blend",
+  "sha256": "ecc5c02b4eac97d2afee19602e790b86d84f41b3fe78222b17f75f43e70cc61e",
+  "score": 8.1,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": true,
+  "reviewer": "Independent grader agent; did not build R6",
+  "reopen_evidence": "independent_reopen_r6.json",
+  "render_evidence": [
+    "SC_hero_r6.png",
+    "SC_entry_r6.png",
+    "SC_interior_circulation_r6.png",
+    "SC_footprint_overlay_r3.png"
+  ],
+  "source_evidence": [
+    {
+      "provider": "Purdue College of Liberal Arts",
+      "url": "https://www.cla.purdue.edu/academic/english/images/stanleycoulterhall.jpg",
+      "retrieved": "2026-10-25",
+      "photo_date": "Not exposed",
+      "supports": "Partial current facade composition: grouped upper glazing, brick piers, limestone portal, recessed doors/transom, paired supports, stairs and rails; no dimensions or complete elevations."
+    },
+    {
+      "provider": "Purdue Board of Trustees",
+      "url": "https://www.purdue.edu/bot/meetings/past-meetings/2022/09.%20oct/pfc/University%20Hall%20Related%20Renovations.pdf",
+      "document_date": "2022-09-28",
+      "pages": "11-13",
+      "supports": "Historical floor plan context only; not current as-built partitions or finishes."
+    },
+    {
+      "provider": "Purdue ArcGIS BuildingShapesZip4",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 56,
+      "snapshot_date": "2026-10-22",
+      "supports": "Campus-map foundation perimeter only; project approximate local-meter transform, not certified survey."
+    },
+    {
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/1310/",
+      "record": "PPBUC01117",
+      "date": "Undated",
+      "supports": "Historic low-hip context only; not current roof construction or height."
+    }
+  ],
+  "scorecard": {
+    "identity_and_gis_footprint": {
+      "score": 1.9,
+      "max": 2.0,
+      "findings": "Unchanged 12-point foundation ring matches Purdue FID 56 in the approximate local-meter frame: IoU 0.999999899, symmetric difference 0.000286 m2, Hausdorff distance 0.0000045 m. Checks only the campus-map footprint, not surveyed wall lines or absolute registration."
+    },
+    "placement_orientation_and_scale": {
+      "score": 1.6,
+      "max": 2.0,
+      "findings": "Independent standalone reopen confirms the expected collection and identity root. The master Placement_stanley_coulter_hall marker and assembled neighborhood were not opened; placement remains unverified."
+    },
+    "floors_height_and_roof_form": {
+      "score": 1.35,
+      "max": 2.0,
+      "findings": "Three-story mass and low hip are plausible. R6 adds subtle procedural roof variation, but the hero image still shows a broad nearly uninterrupted roof plane. Current roof profile, construction, and surveyed height are unavailable; 15.87 m evaluated top is not a survey measurement."
+    },
+    "facade_entrance_and_materials": {
+      "score": 1.6,
+      "max": 2.0,
+      "findings": "R6 improves upper grouping, closes unsupported view-through wall gaps with brick, and slims the entry cap. However, the upper blue glazing remains a long nearly continuous surface over solid brick instead of cut openings; it lacks true recess/depth and the photo shows stronger brick breaks. The entrance is clearer but still simplified relative to the undimensioned photo. Procedural materials are complete and portable."
+    },
+    "interior_saved_asset_evidence_and_portability": {
+      "score": 1.65,
+      "max": 2.0,
+      "findings": "R6 adds a connected schematic entry-to-lobby/stair route, explicitly labeled unverified. The top-down diagram does not show verified room partitions, a complete core, or vertical circulation. Independent reopen verifies exact saved hash, identity root, 760 objects/750 meshes, 24 used materials, zero materialless meshes, zero invalid slots, and no external/missing image files. Recovery archives remain hidden outside the exported asset collection."
+    }
+  },
+  "total": 8.1,
+  "blocking_gaps": [],
+  "non_blocking_refinements": [
+    "Coordinator must verify the master Placement_stanley_coulter_hall marker and adjacent courtyard/street alignment before integration.",
+    "True openings and masonry breaks would improve the grouped upper glazing; the current band is a visual facade surface over a solid wall.",
+    "Current roof profile and height remain unverified.",
+    "Interior route is schematic pending current as-built plans."
+  ],
+  "limits": [
+    "Purdue GIS FID 56 outline is a campus-map perimeter, not a certified wall survey.",
+    "Purdue CLA facade photograph is undated, undimensioned, and partial.",
+    "Historical Board of Trustees floor plans do not establish current room layout.",
+    "The standalone asset grade does not verify master placement or neighborhood alignment."
+  ],
+  "asset_modified_by_grader": false,
+  "master_or_shared_files_modified": false,
+  "commit_created": false
+}
