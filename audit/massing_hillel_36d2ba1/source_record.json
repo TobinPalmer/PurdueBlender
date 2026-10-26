@@ -1,0 +1,129 @@
+{
+  "asset_id": "massing_hillel_36d2ba1",
+  "building": "Hillel Foundation at Purdue University",
+  "assignment": "Rossen",
+  "manifest_asset": "modular/buildings/massing_hillel_36d2ba1.blend",
+  "collection": "Asset_massing_hillel_36d2ba1",
+  "scene": "Building_massing_hillel_36d2ba1",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "role": "footprint and GIS identity candidate",
+      "provider": "ArcGIS REST FeatureServer; layer BuildingShapesZip4 (service publisher not stated in the layer response)",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/803?f=pjson",
+      "snapshot": "gis_feature_803.json",
+      "layer_metadata_snapshot": "gis_layer_metadata.json",
+      "feature_id": 803,
+      "building_code": "SOHIL",
+      "source_name": "Hillel Foundation",
+      "source_address": "912 W. STATE ST.",
+      "source_date": "not supplied in the service record",
+      "source_crs": "EPSG:3857 (latestWkid 3857; service WKID 102100)",
+      "source_attributes": {
+        "NUM_LEVELS": 1,
+        "Extrution": 12,
+        "Shape__Area_projected_m2": 1056.0390625
+      },
+      "measurement_method": "Used the feature's single outer ring. Converted EPSG:3857 vertices to WGS84 with spherical Web Mercator inverse formulas, then to the project's approximate local campus XY formula from modular/AGENTS.md. Plan area was computed from the converted project XY polygon; the source Shape__Area is Web Mercator area and is not treated as ground area.",
+      "result": {
+        "projected_shell_area_m2": 610.947,
+        "projected_shell_area_sqft": 6574,
+        "axis_bounds_xy_m": [
+          [
+            -337.395863,
+            -305.997686
+          ],
+          [
+            -341.539272,
+            -315.95757
+          ]
+        ],
+        "vertex_count": 12
+      },
+      "uncertainty": "The feature name and street address strongly identify Hillel, but the layer's publisher/source date and survey status are not identified. NUM_LEVELS and 12 ft Extrution are GIS attributes, not architectural measured elevations. The feature may describe the pre-addition footprint; see the separate 2019 record below."
+    },
+    {
+      "role": "parcel / aerial alignment and site context",
+      "provider": "Tippecanoe County Area Plan Commission agenda center; drawing by TBird Design Services Corp.",
+      "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/Item/8816?fileID=16761",
+      "snapshot": "2019_tippecanoe_hillel_sketch_plan.pdf",
+      "drawing_id": "S-4850 / V101",
+      "drawing_date": "2019-05-20",
+      "staff_report_date": "2019-06-13",
+      "source_crs": "Survey monument table lists northing/easting/elevation but drawing does not state a CRS; not used for numeric model georeferencing.",
+      "measurement_method": "Reviewed the 1 in = 20 ft sketch plan and its 2019 aerial underlay. Used the Hillel parcel label, street layout, and visible existing roof to check the GIS footprint's address and corner-site context. The report says the existing building crossed an old platted lot line and that expansion was planned; the plan is a subdivision sketch and proposed-use document, not an as-built architectural plan.",
+      "uncertainty": "Aerial-underlay registration and roof-edge visibility are limited by overprinted survey annotations. The proposed addition is not assumed to have been built. The drawing gives no elevations or roof pitch."
+    },
+    {
+      "role": "building identity, approximate floor area, front orientation and historic use",
+      "provider": "Tippecanoe County Area Board of Zoning Appeals",
+      "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/Minutes/_07242019-1284",
+      "snapshot": "2019_tippecanoe_variance_minutes.pdf",
+      "hearing_date": "2019-07-24",
+      "source_crs": "not applicable",
+      "reported_facts": [
+        "The existing Purdue Hillel Jewish Center is at 912 W. State Street.",
+        "The representative described the building as built in 1951 and roughly 6,500 sq ft.",
+        "An 845 sq ft addition was proposed in 2019; the minutes discuss that addition as a proposal.",
+        "The hearing record says the building front faces Waldron Street."
+      ],
+      "measurement_method": "Used the approximate reported building area only as an independent check against the converted GIS polygon area. Used the written front-orientation statement to orient the schematic entrance to the west/Waldron side.",
+      "uncertainty": "The stated area is approximate and the minutes are not a measured as-built drawing. No completed-construction record for the proposed 845 sq ft addition was found during this pass."
+    },
+    {
+      "role": "current public address and Hillel organization cross-check",
+      "provider": "Purdue Hillel official website",
+      "url": "https://purduehillel.org/contact",
+      "snapshot": "purdue_hillel_contact.html",
+      "source_date": "current page retrieved 2026-10-26",
+      "source_crs": "not applicable",
+      "reported_facts": [
+        "Purdue Hillel lists 912 Mitch Daniels Boulevard, West Lafayette."
+      ],
+      "measurement_method": "Cross-checked the current address against the former State Street address in the County plan and GIS feature. State Street was renamed Mitch Daniels Boulevard; the source check establishes organization/site continuity, not geometry.",
+      "uncertainty": "No building dimensions or architectural details are supplied by this page."
+    },
+    {
+      "role": "direct exterior facade and roof-form reference; building continuity check",
+      "provider": "Purdue Hillel Foundation, official Spring 2022 newsletter",
+      "url": "https://img1.wsimg.com/blobby/go/86127332-a2c8-4761-84a4-c6d143a5229d/Purdue%2520Hillel%2520Spring%252022%2520Newsletter%2520-%2520Single%2520Pa.pdf",
+      "snapshot": "purdue_hillel_spring_2022_newsletter.pdf",
+      "relevant_image_snapshot": "purdue_hillel_2022_large-01.png",
+      "source_date": "Spring 2022",
+      "retrieved_date": "2026-10-26",
+      "source_crs": "not applicable; photograph is not georeferenced",
+      "measurement_method": "Visual inspection of the exterior photograph on newsletter page 1. The photo directly supports a low single-storey composition, light buff masonry, repeated tall multi-pane window bays, a broad shallow flat/low-slope roof edge, and a distinct masonry/signage panel. No dimensions were extracted.",
+      "uncertainty": "Camera view is not compass-georeferenced and no elevations or dimensions are provided. The modeled broad eave, window locations/sizes, entry position, and wall height remain approximations. Newsletter text describes the 70-year-old building at 912 West State Street and remarks that it looks the same, but this is not proof about the 2019 proposed addition."
+    }
+  ],
+  "geometry_decisions": {
+    "footprint": "Use feature 803 ring unchanged after the documented coordinate conversion. Its 610.947 m2 project-plane area is close to the approximately 6,500 sq ft (603.87 m2) hearing figure, supporting identity and footprint scale.",
+    "height": "Retain a 3.6576 m display placeholder for visual continuity only. It is numerically the former GIS Extrution=12 interpreted as feet, but the field units are undocumented; no measured height or 12 ft claim is made. Height remains unverified.",
+    "roof": "A broad, flat/low-slope roof edge and pale roof finish are modeled from the Spring 2022 official newsletter photograph. The 0.7 m approximate overhang is visual only; no pitch or dimension is measured.",
+    "facade": "Revised to light buff masonry, repeated tall framed multi-pane glazing, a distinct entry door and sign-panel mass, and broad eaves, guided by the official Spring 2022 exterior photograph. County minutes establish the west/Waldron-facing front; the photograph itself is not compass-registered. Opening sizes and positions remain illustrative.",
+    "placement": "Keep the source's campus-world coordinate frame and stable scene/collection. Do not change the master placement marker or manifest.",
+    "2019_addition": "Preserve the pre-addition feature 803 footprint. The County 2019 record proves an 845 sq ft addition was proposed and variances approved, but no permit/as-built/completion evidence was found. The 2022 newsletter photo and unchanged-building remark are not conclusive completion records."
+  },
+  "remaining_uncertainty": [
+    "The County record documents an 845 sq ft addition proposal; it is uncertain whether/when it was completed. The candidate feature area aligns closely with the pre-addition 6,500 sq ft report.",
+    "The campus coordinate conversion is a local approximation, not a surveyed CRS transformation.",
+    "No measured height, roof pitch, eave depth, architectural elevations, or georeferenced facade dimensions are available; height is intentionally unverified and is a display placeholder only.",
+    "The proposed 845 sq ft 2019 addition completion remains unresolved. The model preserves GIS feature 803 / the approximately 6,500 sq ft pre-addition footprint.",
+    "The 2022 photo directly supports general facade and roof character but not compass direction, exact entry location, window count, or dimensions."
+  ],
+  "revision_2026_10_26": {
+    "changes": [
+      "Replaced dark red/charcoal scheme with photo-supported light buff masonry and pale broad flat eave.",
+      "Reworked facade as repeated taller multi-pane window bays, visible entry glazing, and a central masonry/sign-panel cue.",
+      "Kept the GIS feature 803 shell polygon unchanged and kept 3.6576 m explicitly as an unverified display placeholder."
+    ],
+    "asset_exported_objects": 4,
+    "rendered_views": [
+      "hillel_exterior_oblique_r2.png",
+      "hillel_waldron_front_r2.png",
+      "hillel_roof_top_r2.png"
+    ],
+    "reopen_validation": "reopen_validation.json",
+    "addition_decision": "2019 proposed 845 sq ft addition status unresolved; retain pre-addition GIS footprint pending as-built evidence."
+  }
+}

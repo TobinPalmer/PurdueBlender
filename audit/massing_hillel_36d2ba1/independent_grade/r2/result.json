@@ -1,0 +1,179 @@
+{
+  "building_id": "massing_hillel_36d2ba1",
+  "review_revision": "r2",
+  "score": 8.3,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Directly reopened r2 mesh shell matches the 12-vertex converted ring of Purdue GIS BuildingShapesZip4 FID 803 (SOHIL, Hillel Foundation, 912 W State St) to <0.001 m. County 2019 minutes identify the same Hillel site, and the reported existing area (~6,500 sq ft) is close to the transformed GIS area (~610.95 m\u00b2 / 6,574 sq ft).",
+      "uncertainty": "GIS layer survey/date metadata is not stated. County hearing also discusses a proposed 845 sq ft addition, with completion unresolved; the model preserves the candidate pre-addition footprint."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Shell is directly positioned in the documented local campus coordinate frame and follows GIS footprint vertices. GIS bounds are approximately 31.40 \u00d7 25.58 m; transformed area agrees reasonably with county's approximate area. County hearing text says the front faces Waldron Street; model places its principal entry on the west frontage.",
+      "uncertainty": "Coordinates use the project's approximate conversion, not survey control. Exact structural dimensions/frontage registration were not established independently of the GIS polygon."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": "GIS attributes report one level; the official Spring 2022 Hillel newsletter exterior photograph shows a low single-storey building and a broad, shallow/low-slope roof edge. The r2 model represents one low volume with broad flat eaves.",
+      "uncertainty": "No measured elevation or roof pitch is available. The 3.6576 m shell height and ~0.7 m eave depth are explicitly visual estimates/placeholders, not source measurements."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": "Compared r2 oblique/front renders against the official Spring 2022 newsletter photograph. Both show light buff masonry, repeated tall multi-light window bays, substantial pale framing/piers, a prominent entrance/sign panel, and a broad shallow roof edge. The county minutes independently say the front faces Waldron Street; the model puts its entry at that side.",
+      "uncertainty": "Newsletter image is oblique and not compass-registered; exact window count, positions, sizes, entry dimensions and masonry/roof materials remain schematic. Model is a simplified representation, not a verified elevation."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "Saved r2 .blend reopened directly in Blender 4.5.15. Expected scene and named asset collection exist with four mesh objects; no linked libraries or unpacked external images. Three r2 preview renders, raw GIS snapshot, source provenance, county documents, Hillel official source snapshot, and reopen validation are present.",
+      "uncertainty": "Asset portability and collection structure pass. The model's render engine is Blender 4.5 EEVEE Next; successful render-generation is evidenced by saved previews, but another Blender version's engine compatibility is not established."
+    }
+  ],
+  "evidence": {
+    "direct_reopen_measurements": "direct_inspection.json",
+    "source_record": "../../source_record.json",
+    "GIS_snapshot": "../../gis_feature_803.json",
+    "county_plan": "../../2019_tippecanoe_hillel_sketch_plan.pdf",
+    "county_minutes": "../../2019_tippecanoe_variance_minutes.pdf",
+    "official_newsletter_photo": "../../purdue_hillel_2022_large-01.png",
+    "r2_renders": [
+      "../../hillel_exterior_oblique_r2.png",
+      "../../hillel_waldron_front_r2.png",
+      "../../hillel_roof_top_r2.png"
+    ],
+    "measurements": {
+      "opened_saved_asset": true,
+      "blender_version": "4.5.15 LTS",
+      "asset": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_hillel_36d2ba1.blend",
+      "scene": "Building_massing_hillel_36d2ba1",
+      "scene_object_count": 7,
+      "collection": "Asset_massing_hillel_36d2ba1",
+      "collection_object_count": 4,
+      "mesh_objects": [
+        {
+          "name": "Hillel",
+          "vertices": 36,
+          "faces": 27,
+          "modifiers": [],
+          "materials": [
+            "Hillel | light buff masonry based on 2022 photo",
+            "Hillel | pale low-slope roof and broad eave"
+          ],
+          "library": null
+        },
+        {
+          "name": "Hillel_Schematic_Windows_And_Entry_Frame",
+          "vertices": 208,
+          "faces": 156,
+          "modifiers": [],
+          "materials": [
+            "Hillel | pale window frames and entry surround"
+          ],
+          "library": null
+        },
+        {
+          "name": "Hillel_Schematic_Entry_Glazing",
+          "vertices": 8,
+          "faces": 6,
+          "modifiers": [],
+          "materials": [
+            "Hillel | entrance glazing"
+          ],
+          "library": null
+        },
+        {
+          "name": "Hillel_Schematic_Window_Glazing",
+          "vertices": 384,
+          "faces": 288,
+          "modifiers": [],
+          "materials": [
+            "Hillel | dark reflective glazing"
+          ],
+          "library": null
+        }
+      ],
+      "evaluated_world_bounds_m": [
+        [
+          -338.00897216796875,
+          -305.1978759765625
+        ],
+        [
+          -342.0506591796875,
+          -315.3177795410156
+        ],
+        [
+          0.0,
+          3.7576000690460205
+        ]
+      ],
+      "evaluated_dimensions_m": [
+        32.81109619140625,
+        26.732879638671875,
+        3.7576000690460205
+      ],
+      "GIS_feature": {
+        "FID": 803,
+        "BLDG_ABBR": "SOHIL",
+        "BUILDING_N": "Hillel Foundation",
+        "ADDRESS": "912 W. STATE ST.",
+        "NUM_LEVELS": 1,
+        "CountOfFLO": 1,
+        "Extrution": 12,
+        "ring_vertices": 12,
+        "local_projected_area_m2": 610.9469848596054,
+        "max_nearest_shell_ground_vertex_error_m": 1.8859832054367392e-05,
+        "mean_nearest_shell_ground_vertex_error_m": 1.1015028512651396e-05
+      },
+      "external_libraries": [],
+      "unpacked_external_images": [],
+      "render_files": [
+        {
+          "path": "hillel_exterior_oblique_r2.png",
+          "exists": true,
+          "bytes": 1264885
+        },
+        {
+          "path": "hillel_waldron_front_r2.png",
+          "exists": true,
+          "bytes": 1230420
+        },
+        {
+          "path": "hillel_roof_top_r2.png",
+          "exists": true,
+          "bytes": 1207004
+        }
+      ],
+      "render_engine": "BLENDER_EEVEE_NEXT"
+    }
+  },
+  "findings": [
+    {
+      "severity": "moderate",
+      "finding": "Current building footprint may include an unresolved 2019 addition proposal; the asset keeps the source GIS candidate ring and does not claim later addition status.",
+      "action": "Retain this limitation and update only if a later as-built/parcel source establishes the addition geometry."
+    },
+    {
+      "severity": "moderate",
+      "finding": "Height, roof pitch, and eave depth lack measured source dimensions.",
+      "action": "Keep the 3.6576 m height and eave depth labeled schematic/estimated."
+    },
+    {
+      "severity": "minor",
+      "finding": "Facade rendering has photo-supported general character, but exact opening layout and materials cannot be verified from an unregistered oblique newsletter photo.",
+      "action": "Keep individual openings and finishes explicitly illustrative."
+    }
+  ]
+}

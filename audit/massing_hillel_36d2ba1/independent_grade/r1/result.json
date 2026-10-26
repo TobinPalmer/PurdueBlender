@@ -1,0 +1,251 @@
+{
+  "building_id": "massing_hillel_36d2ba1",
+  "review_revision": "r1",
+  "score": 6.9,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "Purdue GIS FID 803 / SOHIL explicitly names Hillel Foundation at 912 W State Street. The county 2019 hearing identifies the Hillel Jewish Center at that address, and the current Hillel site records the renamed address. The converted 12-vertex feature shell is closely supported by the aerial-underlay roof and the county's approximate 6,500 sq ft existing-building area.",
+      "uncertainty": "The county record also documents a proposed 845 sq ft addition, but does not establish completion. The official GIS feature has no source date/survey status; its footprint may represent the pre-addition building."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "assessment": "The shell is placed in the documented campus-world frame and directly follows the converted GIS polygon. Its 610.95 m2 plan area is close to the hearing's approximate 6,500 sq ft (603.87 m2); county plan/aerial supports corner-site context and the current roof outline. The west-facing front is corroborated by the minutes.",
+      "uncertainty": "Coordinate conversion is approximate and the county plan is a 2019 subdivision sketch, not a surveyed building footprint; its annotated aerial is not used for independent metric registration. Exact structural wall dimensions remain unverified."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "assessment": "GIS lists NUM_LEVELS=1 / CountOfFLO=1 and Extrution=12, and the model represents a low one-level massing. The county aerial confirms a roof plane exists.",
+      "uncertainty": "No measured elevation or source establishes whether Extrution=12 means feet or the actual eave height. At 3.6576 m the model uses a plausible but unverified 12 ft extrusion. The aerial/plan cannot establish roof pitch or exact roof silhouette, so the flat/low-slope cap is a neutral schematic."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.6,
+      "max_score": 2,
+      "assessment": "The model includes schematic wall, windows, glazing, trim, and a west-facing entry; its front direction is supported by the county hearing statement that the building faces Waldron Street.",
+      "uncertainty": "Available primary evidence does not show an exterior elevation or sufficiently clear facade image. Window count, spacing, materials, entry size/position, roof finish, and architectural character are illustrative and cannot be verified from the aerial/site plan."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "assessment": "Direct reopen confirms the expected scene and collection with five mesh objects, no modifiers, no external libraries, and no unpacked file images. Raw GIS, county plan/minutes, official Hillel identity snapshot, detailed provenance/uncertainty, and preview renders are present.",
+      "uncertainty": "The saved asset reports Blender 5.2.0 LTS; this review runtime was Blender 4.5.15 and warned about the forward file version and unavailable BLENDER_EEVEE engine. Mesh and collection data were inspectable, but render-engine compatibility was not verified."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_hillel_36d2ba1.blend",
+    "direct_reopen_measurements": "audit/massing_hillel_36d2ba1/independent_grade/r1/direct_inspection.json",
+    "builder_reopen_validation": "audit/massing_hillel_36d2ba1/reopen_validation.json",
+    "source_record": "audit/massing_hillel_36d2ba1/source_record.json",
+    "GIS_feature": "audit/massing_hillel_36d2ba1/gis_feature_803.json",
+    "county_sketch_plan": "audit/massing_hillel_36d2ba1/2019_tippecanoe_hillel_sketch_plan.pdf",
+    "county_variance_minutes": "audit/massing_hillel_36d2ba1/2019_tippecanoe_variance_minutes.pdf",
+    "official_contact_snapshot": "audit/massing_hillel_36d2ba1/purdue_hillel_contact.html",
+    "visual_review": [
+      "audit/massing_hillel_36d2ba1/hillel_exterior_oblique.png",
+      "audit/massing_hillel_36d2ba1/hillel_roof_top.png",
+      "audit/massing_hillel_36d2ba1/hillel_roof_plan_detail.png",
+      "audit/massing_hillel_36d2ba1/site_detail.png"
+    ],
+    "direct_measurements": {
+      "opened_saved_asset": true,
+      "blender_version": "4.5.15 LTS",
+      "asset": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_hillel_36d2ba1.blend",
+      "scene": "Building_massing_hillel_36d2ba1",
+      "collection": "Asset_massing_hillel_36d2ba1",
+      "collection_object_count": 5,
+      "scene_object_count": 7,
+      "mesh_objects": [
+        {
+          "name": "Hillel",
+          "vertices": 24,
+          "faces": 14,
+          "modifiers": [],
+          "materials": [
+            "Hillel | schematic muted brick",
+            "Hillel | schematic charcoal low-slope roof"
+          ],
+          "linked_library": null
+        },
+        {
+          "name": "Hillel_Schematic_Entrance_Frame",
+          "vertices": 8,
+          "faces": 6,
+          "modifiers": [],
+          "materials": [
+            "Hillel | schematic pale stone trim"
+          ],
+          "linked_library": null
+        },
+        {
+          "name": "Hillel_Schematic_Entrance",
+          "vertices": 8,
+          "faces": 6,
+          "modifiers": [],
+          "materials": [
+            "Hillel | schematic entrance door"
+          ],
+          "linked_library": null
+        },
+        {
+          "name": "Hillel_Schematic_Windows",
+          "vertices": 136,
+          "faces": 102,
+          "modifiers": [],
+          "materials": [
+            "Hillel | schematic pale stone trim"
+          ],
+          "linked_library": null
+        },
+        {
+          "name": "Hillel_Schematic_Glazing",
+          "vertices": 136,
+          "faces": 102,
+          "modifiers": [],
+          "materials": [
+            "Hillel | schematic dark glazing"
+          ],
+          "linked_library": null
+        }
+      ],
+      "world_bounds_m": [
+        [
+          -337.5909729003906,
+          -305.82159423828125
+        ],
+        [
+          -341.7369384765625,
+          -315.7544860839844
+        ],
+        [
+          -0.03000009059906006,
+          3.657599925994873
+        ]
+      ],
+      "world_dimensions_m": [
+        31.769378662109375,
+        25.982452392578125,
+        3.687600016593933
+      ],
+      "structural_shell_bounds_m": [
+        [
+          -337.3958740234375,
+          -305.9976806640625
+        ],
+        [
+          -341.5392761230469,
+          -315.95758056640625
+        ],
+        [
+          0.0,
+          3.657599925994873
+        ]
+      ],
+      "structural_shell_dimensions_m": [
+        31.398193359375,
+        25.581695556640625,
+        3.657599925994873
+      ],
+      "gis_feature": {
+        "FID": 803,
+        "BLDG_ABBR": "SOHIL",
+        "BUILDING_N": "Hillel Foundation",
+        "ADDRESS": "912 W. STATE ST.",
+        "NUM_LEVELS": 1,
+        "CountOfFLO": 1,
+        "Extrution": 12,
+        "Shape__Area_web_mercator_m2": 1056.0390625,
+        "source_crs": "EPSG:3857 (latestWkid 3857; service WKID 102100)",
+        "ring_count": 1,
+        "ring_vertices_excluding_closure": 12,
+        "transformed_ring_area_m2": 610.9469848596054,
+        "transformed_ring_bounds_xy_m": [
+          [
+            -337.3958632364132,
+            -305.9976858311978
+          ],
+          [
+            -341.5392716135466,
+            -315.95756982145986
+          ]
+        ],
+        "max_nearest_shell_ground_vertex_error_m": 1.8859832054367392e-05,
+        "mean_nearest_shell_ground_vertex_error_m": 1.1015028512651396e-05
+      },
+      "external_libraries": [],
+      "unpacked_external_images": [],
+      "render_engine_setting": "BLENDER_EEVEE_NEXT",
+      "review_runtime_note": "Blender 4.5.15 reported this .blend was written by binary version 502.44 and reported that engine BLENDER_EEVEE is unavailable. Geometry and collection data were directly inspected; render-engine compatibility was not verified.",
+      "render_files": [
+        {
+          "path": "hillel_exterior_oblique.png",
+          "exists": true,
+          "bytes": 1084768
+        },
+        {
+          "path": "hillel_roof_top.png",
+          "exists": true,
+          "bytes": 1047344
+        },
+        {
+          "path": "hillel_roof_plan_detail.png",
+          "exists": true,
+          "bytes": 792952
+        }
+      ],
+      "county_and_identity_sources": [
+        {
+          "path": "2019_tippecanoe_hillel_sketch_plan.pdf",
+          "exists": true,
+          "bytes": 807357
+        },
+        {
+          "path": "2019_tippecanoe_variance_minutes.pdf",
+          "exists": true,
+          "bytes": 175582
+        },
+        {
+          "path": "purdue_hillel_contact.html",
+          "exists": true,
+          "bytes": 135865
+        }
+      ],
+      "county_plan_overlay_images": [
+        "audit/massing_hillel_36d2ba1/site_detail.png",
+        "audit/massing_hillel_36d2ba1/hillel_roof_plan_detail.png"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "severity": "major",
+      "finding": "The GIS extrusion is the only height clue, with no documented units or measured roof/eave level; roof pitch is not established by the top-down evidence.",
+      "action": "Keep 3.6576 m explicitly provisional and seek a dimensioned elevation/as-built drawing or a reliable oblique source before claiming vertical accuracy."
+    },
+    {
+      "severity": "major",
+      "finding": "Facade and entry details are schematic, with no elevation/photo evidence for windows, material, count, spacing, or exact entrance geometry.",
+      "action": "Retain the current conservative schematic, or refine only after acquiring photo/elevation evidence; do not present the illustrative facade as verified."
+    },
+    {
+      "severity": "moderate",
+      "finding": "A 2019 county hearing proposed an 845 sq ft addition, but no completion record is in the source set. The modeled footprint appears to follow the pre-addition feature and is close to the county's existing-area estimate.",
+      "action": "Document the pre-addition interpretation and seek a later parcel/as-built footprint if the model is intended to show the current building."
+    },
+    {
+      "severity": "minor",
+      "finding": "This independent reopen used Blender 4.5.15 against a file saved by Blender 5.2.0; the file opened for mesh inspection but emitted a forward-version warning and its BLENDER_EEVEE engine identifier was unavailable.",
+      "action": "Verify opening and rendering in the intended Blender 5.2 environment; do not save the file from the older reviewer runtime."
+    }
+  ]
+}
