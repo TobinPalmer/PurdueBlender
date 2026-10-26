@@ -1,0 +1,82 @@
+{
+  "score": 7.4,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "The source feature snapshot identifies FID 277 / SHLY / Frances M. Shealy Residence Hall.",
+        "Independently compared the 56 unique projected GIS ring vertices to the mesh base vertices; maximum nearest XY difference is 0.000032 m.",
+        "The official ring is a concave U-shaped plan; the rendered model preserves its open courtyard and long wings."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "Asset mesh is in the repository's documented campus-local XY coordinate approximation and follows the source polygon orientation.",
+        "World-space mesh bounds measured from the reopened asset are [-629.0634765625, -169.56663513183594, 0.0, -561.4959716796875, -134.16835021972656, 20.0] m.",
+        "The source polygon comparison demonstrates direct implementation consistency, but the GIS service publishes no positional accuracy or survey uncertainty; no independent site control is present."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.6,
+      "max_score": 2.0,
+      "evidence": [
+        "The GIS attribute reports five levels, but it is not an elevation measurement; the modeled 15.2 m wall height is explicitly estimated.",
+        "The archive photo directly shows a broad, continuous pitched slate roof with several prominent front-facing gables and chimneys.",
+        "The rendered model is dominated by a single flat, pale roof cap; its small gables/dormers and sculpted maximum-height feature do not reproduce the source roof silhouette. Overall roof plan and elevation remain unsupported."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.2,
+      "max_score": 2.0,
+      "evidence": [
+        "The archive photo shows red-brown brick, strong pale limestone surrounds and string courses, grouped and bay windows, an elaborate stone portal, and a large Tudor entrance gable.",
+        "The model includes brick-colored walls, light horizontal courses, repeated small windows, and a schematic lion/shield detail, so its broad material vocabulary is supported.",
+        "The rendered facade lacks the photo's bay-window projections, grouped window proportions, limestone entrance portal, and coherent main gable/roof composition. The revised close-up confirms the entrance gable and doorway, but the shallow portal and low-contrast schematic relief do not read like the photographed stone entry and lion."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "Reopened asset contains one mesh object in the expected collection with 6956 vertices and 4919 faces.",
+        "A dedicated building builder module, relative source/evidence paths, raw GIS snapshot, archive image and metadata, structured evidence JSON, and rendered views are present.",
+        "The model saves and reopens in the assigned library path with zero object transforms; shared master integration has not been independently checked."
+      ]
+    }
+  ],
+  "evidence": {
+    "model": "modular/buildings/massing_shealy_frances_m_residence_hall_a210e50.blend",
+    "evidence_directory": "audit/frances_m_shealy_residence_hall",
+    "reference_photo_date": "2004-06-14",
+    "source_feature_id": 277,
+    "gis_ring_point_count": 56,
+    "base_vertex_max_nearest_error_m": 3.174e-05,
+    "mesh_vertex_count": 6956,
+    "mesh_face_count": 4919,
+    "mesh_bounds_min_xyz_m": [
+      -629.0634765625,
+      -169.56663513183594,
+      0.0
+    ],
+    "mesh_bounds_max_xyz_m": [
+      -561.4959716796875,
+      -134.16835021972656,
+      20.0
+    ],
+    "collection_object_count": 1
+  },
+  "findings": [
+    "Major roof-form mismatch: replace the expansive flat cap with a continuous, dark pitched roof composition based on the archive photograph; place the prominent main entrance gable and secondary gables at a visually credible scale.",
+    "Bring the front facade closer to the photograph with a readable limestone entrance bay/portal and projecting bay windows; retain the lion-and-shield feature above the entrance.",
+    "Height is not independently verified: keep it labeled as an estimate and do not treat the GIS five-level field as measured elevation."
+  ]
+}
