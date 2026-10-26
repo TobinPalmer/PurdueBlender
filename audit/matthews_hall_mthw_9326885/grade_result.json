@@ -1,0 +1,110 @@
+{
+  "score": 8.75,
+  "max_score": 10,
+  "pass": true,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "pass",
+      "evidence": "Purdue ArcGIS feature 235 names Matthews Hall (MTHW); 14 source-ring edges independently match the reopened grade-level mesh within 0.002 m.",
+      "metrics": {
+        "official_feature_id": 235,
+        "building_abbr": "MTHW",
+        "building_name": "Matthews Hall",
+        "source_vertices": 14,
+        "matched_wall_edges": 14,
+        "max_edge_error_m": 1.4298866087191274e-05
+      }
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "pass",
+      "evidence": "Absolute source/model XY edge coordinates agree; this jointly checks campus position, plan orientation/shape, and structural plan dimensions. Coordinate evidence is the project's approximate local transform, not survey-grade.",
+      "metrics": {
+        "min_xyz_m": [
+          -240.88510131835938,
+          -337.3826599121094,
+          0.0
+        ],
+        "max_xyz_m": [
+          -213.80685424804688,
+          -255.6410369873047,
+          11.949999809265137
+        ],
+        "source_footprint_bbox_xy_m": {
+          "min": [
+            -240.4051076297429,
+            -332.7182394914166
+          ],
+          "max": [
+            -214.2868474815519,
+            -256.1210229704352
+          ]
+        },
+        "source_dimensions_xy_m": [
+          26.118260148191013,
+          76.59721652098142
+        ],
+        "model_total_dimensions_xyz_m": [
+          27.0782470703125,
+          81.74162292480469,
+          11.949999809265137
+        ]
+      }
+    },
+    {
+      "criterion": "Height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2.0,
+      "status": "partial",
+      "evidence": "Official Purdue emergency plan states three stories, and the official exterior image supports a shallow roof edge. Reopened mesh has three visible facade tiers and roof top at 11.95 m. No measured elevation or floor heights are available; GIS level count conflicts (4) and GIS extrusion field is undocumented, so exact height is unverified.",
+      "metrics": {
+        "model_roof_top_m": 11.949999809265137,
+        "reported_stories": 3,
+        "gis_count_fields_conflict": true,
+        "measured_height_source": false
+      }
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "partial",
+      "evidence": "Direct visual comparison of saved preview with official Purdue Events photo supports red brick, pale horizontal stone courses, repeated sash-window rhythm, and a columned south-front portico/entrance. Only an oblique view of one facade is available; exact window dimensions, side/rear facades, material extent, and entrance bearing remain unverified."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "pass",
+      "evidence": "Reopened file contains the expected single mesh in the named manifest collection/path; no linked file images; source snapshots, metadata, preview, and reopen record are present.",
+      "metrics": {
+        "blend_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_matthews_hall_mthw_9326885.blend",
+        "manifest_asset_path": "buildings/massing_matthews_hall_mthw_9326885.blend",
+        "collection_object_count": 1,
+        "mesh_vertices": 4320,
+        "external_file_images": 0,
+        "required_evidence_files_present": true,
+        "modifiers": []
+      }
+    }
+  ],
+  "evidence": {
+    "asset_id": "massing_matthews_hall_mthw_9326885",
+    "saved_file_reopened": true,
+    "source_snapshot": "audit/matthews_hall_mthw_9326885/sources/feature_235_wgs84.json",
+    "visual_reference": "sources/purdue_events_matthews_hall.jpg",
+    "preview": "preview_exterior.png",
+    "measurement_tolerance_m": 0.002
+  },
+  "findings": [
+    "Passes overall at 8.75/10 (minimum 8/10).",
+    "Structural footprint, position, orientation, and plan dimensions independently match the named official GIS feature.",
+    "Three stories are supported by an official emergency plan, but the model's 11.95 m roof height is an estimate without elevation evidence; GIS records conflict on floor count.",
+    "Facade reconstruction has good qualitative support on the photographed frontage; other elevations and precise architectural measurements remain unverified."
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "building": "Matthews Hall",
+  "building_code": "MTHW",
+  "asset_id": "massing_matthews_hall_mthw_9326885",
+  "status": "Source-based facade reconstruction built; independently graded 8.75/10 (pass)",
+  "asset": {
+    "path": "modular/buildings/massing_matthews_hall_mthw_9326885.blend",
+    "object": "Matthews Hall (MTHW)",
+    "collection": "Asset_massing_matthews_hall_mthw_9326885",
+    "reopen_check": "Reopened from the saved Blender file. Expected object and collection present, one mesh object, no modifiers, source wall edges match, and no external file images are linked.",
+    "mesh_vertices": 4320,
+    "mesh_faces": 1387,
+    "preview": "preview_exterior.png"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/235?f=pjson",
+      "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D235&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "feature_id": "FID 235; GlobalID {F8B09D24-0D96-43CB-9D3F-5B6351072314}",
+      "feature_match": "BLDG_ABBR=MTHW, BUILDING_N=Matthews Hall, ADDRESS=812 Mitch Daniels Blvd, OWNER=PURDUE",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Feature-level created/edited dates are blank. Layer metadata reports last edit 2026-08-31T16:13:41Z.",
+      "source_crs": "EPSG:102100 (latest WKID 3857) in raw feature snapshot; saved ArcGIS reprojection is EPSG:4326.",
+      "snapshots": [
+        "sources/feature_235_raw.json",
+        "sources/feature_235_wgs84.json",
+        "sources/layer_metadata.json"
+      ],
+      "use": "Exact named Purdue building feature; 14 distinct vertices in a closed polygon, plan shape and position.",
+      "measurement_method": "Used ArcGIS's saved EPSG:4326 geometry and the project's approximate transform: X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. Model structural walls are extruded from the source ring at Z=0.",
+      "uncertainty": "Official campus map polygon, not a certified survey; feature-level positional accuracy is not published."
+    },
+    {
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/mthw/",
+      "feature_id": "Matthews Hall Building Emergency Plan (MTHW)",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Revision Date 2026-09-22",
+      "source_crs": "Not applicable",
+      "snapshot": "sources/purdue_emergency_plan.html",
+      "use": "Official first-responder description calls Matthews Hall a three-story rectangular building; also confirms MTHW identity and location context.",
+      "measurement_method": "Story count and overall massing description only; no height inferred from this source.",
+      "uncertainty": "The plan supplies no measured elevations, floor-to-floor heights, or facade dimensions."
+    },
+    {
+      "provider": "Purdue University Events",
+      "url": "https://events.purdue.edu/matthews_hall",
+      "photo_url": "https://localist-images.azureedge.net/photos/40247369264802/card/93ba3c31065e2e854b5dc057a53b2ebe6bb3b69d.jpg",
+      "feature_id": "Official Matthews Hall place page and exterior photograph",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page shows exterior-photo activity on 2022-06-12 and 2022-06-15; exact image capture date is not stated.",
+      "source_crs": "Not applicable",
+      "snapshots": [
+        "sources/purdue_events_page.html",
+        "sources/purdue_events_matthews_hall.jpg"
+      ],
+      "use": "Visual reference for red brick, pale stone courses, double-hung window rhythm, dark shallow roof edge, and columned south-facing entrance portico.",
+      "measurement_method": "Qualitative facade features only; perspective is not used for dimensions.",
+      "uncertainty": "Single oblique facade image; side/rear elevations and exact dimensions are not visible."
+    }
+  ],
+  "transform": {
+    "geographic_origin": {
+      "latitude": 40.4274,
+      "longitude": -86.9137
+    },
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not a surveyed CRS",
+    "coordinate_frame": "Campus coordinates retained; this asset remains kind=massing in modular/manifest.json."
+  },
+  "measurements": {
+    "source_outline_vertices_distinct": 14,
+    "source_outline_bounds_xy_m": {
+      "min_x": -240.4051,
+      "max_x": -214.2868,
+      "min_y": -332.7182,
+      "max_y": -256.121
+    },
+    "source_bbox_dimensions_m": {
+      "east_west": 26.12,
+      "north_south": 76.6
+    },
+    "original_massing_bounds_xy_m": {
+      "min_x": -240.3448,
+      "max_x": -214.1213,
+      "min_y": -332.909,
+      "max_y": -256.4913
+    },
+    "after_structural_footprint": "Walls reconstructed from all 14 distinct official source-ring vertices. The GIS record is used for plan geometry and placement; portico, window trim, roof edge, and stairs are excluded from wall-footprint comparison.",
+    "orientation": "Primary entrance facade modeled on the south frontage toward Mitch Daniels Boulevard; inferred from the official address and reference image rather than an elevation plan.",
+    "modeled_above_grade_stories": 3,
+    "modeled_floor_to_floor_m": 3.8,
+    "estimated_wall_height_m": 11.4,
+    "estimated_roof_top_m": 11.95,
+    "height_status": "Estimated. No measured vertical source found. Purdue's current emergency plan says three stories; GIS fields NUM_LEVELS and CountOfFlo are 4, while F04 is 0. GIS Extrution=27 has no documented units and was not treated as a measured height.",
+    "roof_status": "Low, shallow roof edge modeled from the official exterior photo; hidden roof geometry is unverified.",
+    "reopen_validation": "audit/reopen_check.json",
+    "reopened_source_wall_edge_match": true,
+    "reopened_source_wall_vertex_error_m": 0.00010000000003174137,
+    "reopened_model_bounds_including_portico_and_roof_m": {
+      "min": [
+        -240.88510131835938,
+        -337.3826599121094,
+        0.0
+      ],
+      "max": [
+        -213.80685424804688,
+        -255.6410369873047,
+        11.949999809265137
+      ]
+    }
+  },
+  "geometry_edits": [
+    "Replaced the original 24-vertex, 32-face rectangular massing block with the 14-vertex Purdue feature 235 structural wall outline.",
+    "Rebuilt a three-story red-brick facade with evenly spaced sash windows, pale stone sills/lintels and horizontal floor bands guided by the official photo.",
+    "Added a south-facing paired entrance, four-column limestone portico, entablature, and approach steps guided by the official photo.",
+    "Added a shallow dark roof plane and overhanging cornice; roof details remain visual estimates.",
+    "Preserved the existing asset file, stable ID, object name, exported collection, identity transform, and campus coordinate frame."
+  ],
+  "uncertainties": [
+    "GIS footprint positional and dimensional accuracy is unpublished; it is not a survey.",
+    "Purdue's Emergency Plan describes three stories while GIS level count fields indicate four; the model follows the current BEP and exterior photograph, and treats the GIS count conflict as unresolved.",
+    "Wall height and floor spacing are visual/story-count estimates; GIS Extrution=27 is not used because its units and meaning are undocumented.",
+    "One oblique photo cannot verify all facade elevations, rear additions, precise window spacing, roof pitch, or materials on every side.",
+    "Primary entrance orientation toward the south frontage is inferred from address/photo context; no plan or compass-tagged elevation was found."
+  ],
+  "artifacts": {
+    "build_script": "modular/buildings/build_massing_matthews_hall_mthw_9326885.py",
+    "preview_script": "render_preview.py",
+    "preview": "preview_exterior.png",
+    "raw_sources": "sources/",
+    "reopen_check_script": "reopen_check.py"
+  },
+  "independent_grade": {
+    "evaluator": "audit/matthews_hall_mthw_9326885/grade_mthw.py",
+    "result": "audit/matthews_hall_mthw_9326885/grade_result.json",
+    "score": 8.75,
+    "max_score": 10,
+    "pass_threshold": 8,
+    "outcome": "pass",
+    "summary": "Independent evaluator reopened the saved asset and verified all 14 structural footprint edges against Purdue GIS feature 235, with maximum edge error 0.0000143 m. Position/orientation/plan dimensions received full credit; height/floors/roof form received 1.25/2 and facade received 1.5/2.",
+    "limitations": [
+      "The 11.95 m roof elevation and 3.8 m floor spacing are estimates; no measured elevation or floor-height source is available.",
+      "The GIS floor-count fields indicate four while the Purdue emergency plan says three stories; the discrepancy remains unresolved.",
+      "The reference photo shows only one oblique frontage; other elevations and precise facade dimensions remain unverified."
+    ]
+  }
+}
