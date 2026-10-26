@@ -1,7 +1,7 @@
 {
   "building": "Shoemaker Cooperative",
   "asset_id": "massing_shoemaker_cooperative_2159ea4",
-  "status": "Second-floor evidence reconciled with GIS level-count conflict; facade and height remain estimates",
+  "status": "Operator exterior photo now informs the gable roof, two-level corner porch, and shutters; GIS level-count conflict, campus orientation, and height remain unresolved or estimated",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -16,7 +16,7 @@
     "secondary_visual_references": [
       {
         "provider": "Shoemaker Cooperative (building operator)",
-        "use": "Confirms address 351 Northwestern Avenue; photo-tour navigation includes a Floor Two label, supporting a second floor. It does not establish the total storey count or exterior dimensions.",
+        "use": "Confirms address 351 Northwestern Avenue, labels an interior photo-tour section Floor Two, and provides a partial monochrome exterior photograph. It supports two above-grade levels and visible gable/porch/shutter vocabulary but supplies no scale or georeferenced orientation.",
         "url": "https://www.shoemakercooperative.com/our-home"
       },
       {
@@ -59,31 +59,44 @@
       16.0
     ],
     "after_structural_shell": "Built from all distinct official source-ring vertices; intended to match official footprint within coordinate conversion precision",
-    "after_modeled_height_m": 6.7,
+    "after_modeled_height_m": 10.2,
     "position_status": "Structural footprint set to the official map polygon coordinates; underlying source positional uncertainty is unpublished",
     "plan_dimension_status": "Footprint matches official source polygon; polygon is not a survey",
     "orientation_status": "Structural shell follows official polygon vertex orientation",
-    "height_status": "6.7 m modeled as a two-storey estimate; the operator photo tour confirms a Floor Two, while the official GIS NUM_LEVELS attribute is 1. No measured height is available.",
+    "height_status": "6.7 m eaves and 10.2 m ridge are illustrative estimates informed by the operator exterior photo. The OSM/GIS source field reports Extrution=17 and NUM_LEVELS=1 but publishes no field-unit or counting definitions; neither is treated as a measured height.",
     "official_num_levels_attribute": 1,
     "official_extrution_attribute": 17,
-    "storey_evidence": "GIS NUM_LEVELS=1 conflicts with the operator photo-tour label Floor Two. The page supports at least a second floor but not total storeys or height."
+    "storey_evidence": "GIS NUM_LEVELS=1 conflicts with both the operator photo-tour Floor Two label and the operator exterior image showing two above-grade window levels. The model uses two above-grade levels; the field counting convention and exact total levels remain unresolved.",
+    "after_asset_bounds_including_roof_and_porch_m": {
+      "min_x": 334.278839,
+      "max_x": 358.004761,
+      "min_y": -59.76408,
+      "max_y": -33.46479,
+      "min_z": 0.0,
+      "max_z": 10.2
+    }
   },
   "geometry_edits": [
     "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
-    "Added facade materials, repeated window bays, window surrounds, floor bands, plinth and roof coping.",
-    "Added an entrance marker oriented toward west; exact facade detail placement remains approximate."
+    "Added a pitched gable roof over an approximate main block, retaining a low roof over the remainder of the irregular footprint; exact roof wings are not documented.",
+    "Added a schematic two-level corner porch/balcony with posts and railing, a ground-floor entry marker, repeated windows, dark shutters, floor bands and plinth. The porch's campus-side orientation and all facade dimensions remain approximate.",
+    "Changed the exterior material to a neutral light tone because the operator image is monochrome and does not establish actual wall color."
   ],
   "uncertainties": [
     "The official campus polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
-    "The map NUM_LEVELS attribute is 1, while the operator photo tour includes Floor Two; exact total storeys and height remain unresolved.",
-    "The operator photo tour is interior context and does not provide measured exterior elevations or a roof plan.",
-    "Facade materials, window spacing, entrance location, and roof form remain approximate and need independent exterior review.",
+    "The map NUM_LEVELS attribute is 1, while the operator site provides a Floor Two gallery label and an exterior image showing two above-grade levels; field counting semantics remain unresolved.",
+    "The exterior photo is partial, monochrome, and unscaled; exact height, roof wings, campus orientation, window spacing, and porch location are not measured.",
+    "Wall color is unknown. The gable placement, entrance location, facade rhythms, and architectural dimensions remain approximate and need independent exterior review.",
     "No independent grader has reviewed this revision."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
     "build_config": "build_config.json",
     "raw_source": "source_feature_800_raw.json",
-    "owner_site_observation": "source_owner_site_observation.json"
+    "owner_site_observation": "source_owner_site_observation.json",
+    "build_preview": "preview_detail_r2.png",
+    "render_script": "render_preview.py",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py"
   }
 }
