@@ -1,0 +1,180 @@
+{
+  "building_id": "burton_morgan_center",
+  "asset_file": "modular/buildings/burton_morgan_center.blend",
+  "exported_collection": "Asset_burton_morgan_center",
+  "collection_export_file": "audit/burton_morgan_center/burton_morgan_center_collection_export.blend",
+  "source_feature": {
+    "provider": "Purdue University BuildingShapes ArcGIS FeatureServer layer 0",
+    "feature_id": 80,
+    "global_id": "{C103E2E9-A417-4A37-BD4E-BD9786DA6F9E}",
+    "abbreviation": "MRGN",
+    "name": "Burton D. Morgan Center For Entrepreneurship",
+    "address": "1201 Mitch Daniels Blvd",
+    "source_crs": "EPSG:3857 / WKID 102100",
+    "snapshot_crs": "EPSG:4326 requested from service",
+    "retrieval_date": "2026-10-25",
+    "original_coordinate_count": 77,
+    "unique_ring_vertices": 76,
+    "interior_rings": 0,
+    "gis_num_levels": 5,
+    "gis_count_of_floors": 5,
+    "gis_extrution_value": 38,
+    "gis_elevation_field": 628.1,
+    "local_origin_project_m": [
+      -775.751,
+      -404.568
+    ],
+    "transform": "X=(longitude + 86.9137)*111412.84*cos(radians(40.4274); Y=(latitude - 40.4274)*111040; local project approximation, not surveyed CRS"
+  },
+  "placement": {
+    "manifest_origin_xy_m": [
+      -775.751,
+      -404.568
+    ],
+    "source_footprint_local_bounds_m": {
+      "min": [
+        -12.693872181478469,
+        -29.18476747167847
+      ],
+      "max": [
+        12.694645936838924,
+        29.184971871466814
+      ]
+    },
+    "source_dimensions_m": [
+      25.388518118317393,
+      58.369739343145284
+    ],
+    "local_asset_bounds_m": {
+      "min": [
+        -12.823751449584961,
+        -31.84908103942871,
+        0.0
+      ],
+      "max": [
+        12.82449722290039,
+        29.31997299194336,
+        8.819999694824219
+      ]
+    },
+    "placement_status": "GIS footprint bbox center agrees with manifest placement origin within 0.001 m; orientation retained from EPSG:4326 ring"
+  },
+  "dimensions_and_height": {
+    "floor_count": "2 occupied stories supported by Purdue 2004 dedication page and architect project profile; GIS NUM_LEVELS and CountOfFLO report 5 and conflict",
+    "modeled_wall_top_m": 7.45,
+    "modeled_roof_top_m": 7.62,
+    "glass_monitor_top_m": 8.82,
+    "height_status": "estimated; no dimensioned section/elevation found. GIS Extrution=38 has no verified unit. Previous 6.7/10 grade applies to an older design revision whose detailed .blend is absent from this checkout."
+  },
+  "facade_evidence": {
+    "architect_description": "brick volumes face east; glass and larger-scaled aluminum-clad volumes emerge to the west; tall glass monitor over entrance aligns Discovery Mall axis",
+    "modeled": [
+      "east red-brick volumes with narrow punched windows",
+      "west pale aluminum panels with broad glazed bays",
+      "south-end two-story transparent entrance, tall glass monitor and projecting canopy",
+      "flat roof with coping following major GIS perimeter segments"
+    ],
+    "specificity": "facade material/orientation and monitor are source-backed; bay spacing, canopy dimensions and panel module sizes are approximations"
+  },
+  "interior": {
+    "modeled": "schematic two-floor lobby, bridge, stair, desk/benches and 40 lecture seats",
+    "source_evidence": "Purdue 2004 article describes a 72-seat lecture room; current Purdue Office of Research directory reports an 80-seat lecture hall",
+    "status": "layout is not from a verified interior plan; 40 seats are schematic and do not claim to represent full capacity"
+  },
+  "object_count": 384,
+  "mesh_object_count": 382,
+  "interior_collection_object_count": 100,
+  "material_count": 10,
+  "object_names_match_manifest": true,
+  "long_manifest_names_preserved_as_custom_properties": 2,
+  "previews": [
+    "audit/burton_morgan_center/burton_morgan_center_preview.png",
+    "audit/burton_morgan_center/burton_morgan_center_plan_preview.png",
+    "audit/burton_morgan_center/burton_morgan_center_interior_preview.png"
+  ],
+  "sources": [
+    {
+      "path": "audit/burton_morgan_center/sources/gis_feature_80_query_2026-10-25.json",
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D80&outFields=%2A&returnGeometry=true&outSR=4326&f=json",
+      "retrieved": "2026-10-25",
+      "source_date": "service dataset date not stated in saved response",
+      "crs": "service geometry requested as EPSG:4326; source layer EPSG:3857 / WKID 102100",
+      "measurement": "feature 80 polygon transformed using project local degrees-to-meters approximation and manifest origin",
+      "supports": "identity, address, plan outline and source attributes only",
+      "uncertainty": "polygon does not establish wall heights, facade divisions, roof or interior",
+      "bytes": 11673,
+      "sha256": "6732d87a77917ed46d93a53b963b1c5db2c89ed5746f2ca98183c413eb93324c"
+    },
+    {
+      "path": "audit/burton_morgan_center/sources/purdue_dedication_2004.html",
+      "provider": "Purdue News Service",
+      "url": "https://www.purdue.edu/uns/html3month/2004/041021.Cosier.bdmctr.html",
+      "retrieved": "2026-10-25",
+      "source_date": "2004-10-21",
+      "crs": "not applicable",
+      "measurement": "source page and linked photo captions reviewed",
+      "supports": "identity, two-story description, 31,000 sq ft, building use and exterior-photo context",
+      "uncertainty": "period source; does not provide measured elevations or a dimensioned plan",
+      "bytes": 13899,
+      "sha256": "cf356c3ebc01836af3dafe4493da5751d93ee9281c255e204806c9a23d055390"
+    },
+    {
+      "path": "audit/burton_morgan_center/sources/purdue_dedication_image_2004.jpg",
+      "provider": "Purdue News Service photo / David Umberger",
+      "url": "https://www.purdue.edu/uns/images/%2B2004/burton-morgan2213.jpg",
+      "retrieved": "2026-10-25",
+      "source_date": "2004 dedication-page context; capture date not stated",
+      "crs": "not applicable",
+      "measurement": "visual facade comparison",
+      "supports": "flat roof, red brick end/volume, pale metal paneling, tall glass monitor, curtain wall, entry canopy",
+      "uncertainty": "camera viewpoint is not georeferenced; photo cannot independently set dimensions",
+      "bytes": 1798578,
+      "sha256": "3a6313b396ca227b0a1492efcb9b4111f3b8dca53fb8474b9d89b6c95b79df40"
+    },
+    {
+      "path": "audit/burton_morgan_center/sources/schooldesigns_goody_clancy_project.html",
+      "provider": "School Designs project profile; project architect Goody Clancy and Associates",
+      "url": "https://schooldesigns.com/Projects/purdue-university-the-burton-d-morgan-center-for-entrepreneurship/",
+      "retrieved": "2026-10-25",
+      "source_date": "2005 Architectural Portfolio; completion listed 04/2004",
+      "crs": "not applicable",
+      "measurement": "project description and four architect-attributed photographs reviewed",
+      "supports": "east-facing brick volumes, west glass/aluminum volumes, entrance glass monitor and campus-aligned axis",
+      "uncertainty": "architectural project profile, not measured elevation drawings",
+      "bytes": 32596,
+      "sha256": "db9f5e1e1bfb25b803296dc7cc9a2390310256b1e41f5984cb168102441594c4"
+    },
+    {
+      "path": "audit/burton_morgan_center/sources/purdue_research_centers.html",
+      "provider": "Purdue Office of Research",
+      "url": "https://research.purdue.edu/about/institutes-and-centers/",
+      "retrieved": "2026-10-25",
+      "source_date": "page currently served; content date not stated",
+      "crs": "not applicable",
+      "measurement": "building-specific directory entry reviewed",
+      "supports": "opened 2004, address, outdoor patio, current 80-seat lecture hall",
+      "uncertainty": "current space description does not locate elements within the building",
+      "bytes": 121504,
+      "sha256": "78da9f14798c86ca5d1caa784bc762532804d8222ec8b9772aa1eeff21d151bd"
+    }
+  ],
+  "uncertainties": [
+    "The city/campus GIS feature is official footprint evidence but its 5-level attributes conflict with the Purdue dedication and architect description of a two-story building. The model follows the two-story descriptions and leaves total height estimated.",
+    "No dimensioned architectural plans, elevations or sections were found. Facade rhythms, wall heights and entry canopy dimensions are approximate.",
+    "The architect profile describes east/west material orientation; the source photos are not georeferenced, so facade orientation is not independently verified by a measured survey.",
+    "The historic Purdue photo predates later campus changes; current exterior condition and any subsequent additions are unverified.",
+    "Interior walls, seating layout and finishes are schematic."
+  ],
+  "validation_report": "audit/burton_morgan_center/validation.json",
+  "final_validation": {
+    "main_file_reopened": true,
+    "collection_export_reopened_and_verified": true,
+    "object_count": 384,
+    "mesh_count": 382,
+    "interior_collection_object_count": 100,
+    "unpacked_external_image_dependencies": [],
+    "reopened_render": "audit/burton_morgan_center/reopened_validation.png",
+    "validation_report": "audit/burton_morgan_center/validation.json"
+  }
+}
