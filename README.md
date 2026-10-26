@@ -164,7 +164,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (36)
+### Detailed models still in progress or awaiting a grade (37)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -189,6 +189,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Johnson Hall of Nursing (JNSN) | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | [9.3/10](audit/massing_johnson_hall_of_nursing_jnsn_823fca7/independent_grade/r2/result.json); awaiting master integration | Tobin |
 | Purdue Police Department (TERY) | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | [8.4/10](audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json); awaiting master integration | Rossen |
 | Purdue Village Administration Building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | [8.5/10](audit/massing_purdue_village_administration_building_3faae6c/independent_grade/evaluation_r2.json); awaiting master integration | Rossen |
+| Provenance Apartments 005 | [`massing_provenance_apartments_005_960f6b0.blend`](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | [8.3/10](audit/massing_provenance_apartments_005_960f6b0/independent_grade_r4.json); awaiting master integration | Rossen |
 | Pete Dye Clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | [8.5/10](audit/massing_the_pete_dye_clubhouse_a3a9641/independent_grade/pete_dye_independent_grade_r2.json); awaiting master integration | Rossen |
 | Stone Hall (STON) | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | [8.0/10](audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json); awaiting master integration | Rossen |
 | Student Health Center (PUSH) | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | [8.2/10](audit/massing_student_health_center_push_1200c3b/independent_grade/independent_grade_r2.json); awaiting master integration | Rossen |
@@ -211,7 +212,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 
 
 
-### Buildings that still have only massing models (34)
+### Buildings that still have only massing models (33)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -231,7 +232,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | provenance apartments 002 | [`massing_provenance_apartments_002_a9a7f4a.blend`](modular/buildings/massing_provenance_apartments_002_a9a7f4a.blend) | Kyle |
 | provenance apartments 003 | [`massing_provenance_apartments_003_682c8e8.blend`](modular/buildings/massing_provenance_apartments_003_682c8e8.blend) | Kyle |
 | provenance apartments 004 | [`massing_provenance_apartments_004_1bc10e3.blend`](modular/buildings/massing_provenance_apartments_004_1bc10e3.blend) | Kyle |
-| provenance apartments 005 | [`massing_provenance_apartments_005_960f6b0.blend`](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | Rossen |
 | purdue university daniel turf center | [`massing_purdue_university_daniel_turf_center_e69b7da.blend`](modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | Rossen |
 | ralph bettye bailey hall | [`massing_ralph_bettye_bailey_hall_406c4db.blend`](modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend) | Tobin |
 | riverside covenannt church | [`massing_riverside_covenannt_church_3a60684.blend`](modular/buildings/massing_riverside_covenannt_church_3a60684.blend) | Arjav |
@@ -592,7 +592,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 503 | Building C | [massing_provenance_apartments_d913384](modular/buildings/massing_provenance_apartments_d913384.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 504 | Building B | [massing_provenance_apartments_001_1b3223b](modular/buildings/massing_provenance_apartments_001_1b3223b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 505 | Building A | [massing_provenance_apartments_002_a9a7f4a](modular/buildings/massing_provenance_apartments_002_a9a7f4a.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 506 | Building F | [massing_provenance_apartments_005_960f6b0](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 506 | Building F | [massing_provenance_apartments_005_960f6b0](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | County C1.4 labels Building F / 143; independently graded 8.3/10; awaiting master integration (see TODO.md); GIS is pre-planning/roof-level, not a surveyed wall line |
 | 507 | Building G | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 508 | Building I | [massing_provenance_apartments_003_682c8e8](modular/buildings/massing_provenance_apartments_003_682c8e8.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 509 | Building H | [massing_provenance_apartments_004_1bc10e3](modular/buildings/massing_provenance_apartments_004_1bc10e3.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
