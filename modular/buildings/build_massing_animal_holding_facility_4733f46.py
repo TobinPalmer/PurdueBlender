@@ -41,6 +41,27 @@ SOUTH_SLOPE_X, SOUTH_SLOPE_Y, _ = SOUTH_PROFILE["plane_coefficients_local_z_equa
 ROOF_THICKNESS = 0.12
 ROOF_ZONE_Y = -996.7429296393766  # row 817 of the georeferenced 2023 ortho transformed to local campus XY
 WALL_THICKNESS = 0.28
+EXIT_DOOR_WIDTH_M = 1.1  # estimated by fitting the diagram image to the official footprint
+EXIT_DOOR_HEIGHT_M = 2.05  # diagrammatic single-storey door height; no elevation source
+EXIT_PLAN_IMAGE = OUT / "sources/purdue_ahf_exits_diagram_2026-10-26.jpg"
+
+# Red arrows on Purdue's dated AHF emergency-exits drawing identify exterior
+# egress doors. The compass points to the right of the page; the plan's outer
+# outline is registered approximately to the official Purdue GIS footprint.
+# Pixel positions are the door locations just inside each arrow, clockwise
+# from the southern wing. This is an approximate plan registration, not survey.
+EXIT_PLAN_DOOR_PIXELS = [
+    ("egress_01", 88, 137),
+    ("egress_02", 608, 31),
+    ("egress_03", 900, 47),
+    ("egress_04", 990, 214),
+    ("egress_05", 990, 373),
+    ("egress_06", 990, 537),
+    ("egress_07", 500, 526),
+    ("egress_08", 518, 296),
+    ("egress_09", 500, 373),
+]
+EXIT_PLAN_PIXEL_BOUNDS = (17.0, 1015.0, 1.0, 544.0)
 
 scene = bpy.context.scene
 scene.name = SCENE
@@ -65,6 +86,7 @@ wall_mat = material("AHF | neutral wall envelope (facade unverified)", (0.60, 0.
 roof_main_mat = material("AHF | light corrugated main roof (Indiana 2023 ortho)", (0.68, 0.72, 0.71))
 roof_south_mat = material("AHF | darker south roof zone (Indiana 2023 ortho)", (0.20, 0.23, 0.25))
 trim_mat = material("AHF | perimeter edge (diagrammatic)", (0.42, 0.43, 0.40))
+exit_mat = material("AHF | emergency exit door placeholder (appearance unverified)", (0.28, 0.30, 0.29))
 
 verts, faces, face_materials = [], [], []
 
@@ -119,6 +141,48 @@ def add_edge_prism(a, b, width, low_a, low_b, high_a, high_b, material_index):
         faces.append(tuple(base + i for i in face))
         face_materials.append(material_index)
 
+def project_to_segment(point, a, b):
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    length_sq = dx * dx + dy * dy
+    t = max(0.0, min(1.0, ((point[0] - a[0]) * dx + (point[1] - a[1]) * dy) / length_sq))
+    projected = (a[0] + t * dx, a[1] + t * dy)
+    return math.hypot(point[0] - projected[0], point[1] - projected[1]), projected, t
+
+def plan_pixel_to_local(pixel_x, pixel_y):
+    px_min, px_max, py_min, py_max = EXIT_PLAN_PIXEL_BOUNDS
+    x_min, x_max = min(p[0] for p in points), max(p[0] for p in points)
+    y_min, y_max = min(p[1] for p in points), max(p[1] for p in points)
+    local_x = x_min + (pixel_y - py_min) / (py_max - py_min) * (x_max - x_min)
+    local_y = y_min + (pixel_x - px_min) / (px_max - px_min) * (y_max - y_min)
+    return local_x, local_y
+
+edge_doors = [[] for _ in points]
+exit_records = []
+for exit_id, pixel_x, pixel_y in EXIT_PLAN_DOOR_PIXELS:
+    plan_xy = plan_pixel_to_local(pixel_x, pixel_y)
+    candidates = []
+    for edge_index, edge_start in enumerate(points):
+        edge_end = points[(edge_index + 1) % len(points)]
+        distance, projected, t = project_to_segment(plan_xy, edge_start, edge_end)
+        candidates.append((distance, edge_index, projected, t))
+    fit_error, edge_index, door_xy, edge_t = min(candidates, key=lambda item: item[0])
+    edge_start = points[edge_index]
+    edge_end = points[(edge_index + 1) % len(points)]
+    edge_length = math.dist(edge_start, edge_end)
+    center_along = max(EXIT_DOOR_WIDTH_M / 2,
+                       min(edge_length - EXIT_DOOR_WIDTH_M / 2, edge_t * edge_length))
+    edge_doors[edge_index].append((center_along - EXIT_DOOR_WIDTH_M / 2,
+                                   center_along + EXIT_DOOR_WIDTH_M / 2,
+                                   exit_id))
+    exit_records.append({
+        "id": exit_id,
+        "plan_pixel_xy": [pixel_x, pixel_y],
+        "registered_xy_m": [round(plan_xy[0], 3), round(plan_xy[1], 3)],
+        "snapped_shell_xy_m": [round(door_xy[0], 3), round(door_xy[1], 3)],
+        "gis_edge_index": edge_index,
+        "plan_to_shell_residual_m": round(fit_error, 3),
+    })
+
 def clip_at_y(poly, limit, keep_north):
     """Clip a simple outline at the measured roof-zone boundary."""
     output = []
@@ -150,7 +214,37 @@ for i, p0 in enumerate(points):
         top_a = roof_height_at(a[0], a[1])
         top_b = roof_height_at(b[0], b[1])
         eave_a, eave_b = top_a - ROOF_THICKNESS, top_b - ROOF_THICKNESS
-        add_edge_prism(a, b, WALL_THICKNESS, 0.0, 0.0, eave_a, eave_b, 0)
+        edge_length = math.dist(p0, p1)
+        segment_start = math.dist(p0, a)
+        segment_cuts = [0.0, length]
+        for door_start, door_end, _exit_id in edge_doors[i]:
+            left = max(segment_start, door_start)
+            right = min(segment_start + length, door_end)
+            if right > left:
+                segment_cuts.extend((left - segment_start, right - segment_start))
+        segment_cuts = sorted(set(round(cut, 8) for cut in segment_cuts))
+        for cut_start, cut_end in zip(segment_cuts, segment_cuts[1:]):
+            if cut_end - cut_start < 1e-6:
+                continue
+            t0, t1 = cut_start / length, cut_end / length
+            sub_a = (a[0] + dx * t0, a[1] + dy * t0)
+            sub_b = (a[0] + dx * t1, a[1] + dy * t1)
+            sub_mid_along = segment_start + (cut_start + cut_end) / 2
+            active_door = next((door for door in edge_doors[i]
+                                if door[0] - 1e-7 <= sub_mid_along <= door[1] + 1e-7), None)
+            sub_top_a = roof_height_at(*sub_a) - ROOF_THICKNESS
+            sub_top_b = roof_height_at(*sub_b) - ROOF_THICKNESS
+            if active_door:
+                door_top = min(EXIT_DOOR_HEIGHT_M, sub_top_a - 0.2, sub_top_b - 0.2)
+                add_edge_prism(sub_a, sub_b, WALL_THICKNESS,
+                               door_top, door_top, sub_top_a, sub_top_b, 0)
+                # The door leaf is a neutral schematic placeholder. Its plan
+                # location comes from the exit diagram; material and height do not.
+                add_edge_prism(sub_a, sub_b, 0.08,
+                               0.06, 0.06, door_top - 0.05, door_top - 0.05, 4)
+            else:
+                add_edge_prism(sub_a, sub_b, WALL_THICKNESS,
+                               0.0, 0.0, sub_top_a, sub_top_b, 0)
         add_edge_prism(a, b, 0.36, eave_a, eave_b, top_a, top_b, 3)
 
 def add_roof_region(region, roof_height, top_material):
@@ -200,7 +294,7 @@ if len(crossings) == 2:
 mesh = bpy.data.meshes.new("Animal Holding Facility | GIS-derived envelope")
 mesh.from_pydata(verts, [], faces)
 mesh.materials.clear()
-for mat in (wall_mat, roof_main_mat, roof_south_mat, trim_mat):
+for mat in (wall_mat, roof_main_mat, roof_south_mat, trim_mat, exit_mat):
     mesh.materials.append(mat)
 mesh.update()
 obj = bpy.data.objects.new("Animal Holding Facility", mesh)
@@ -255,10 +349,27 @@ evidence.update({
                        "south_addition_slope_percent_xy": [round(SOUTH_SLOPE_X * 100, 3), round(SOUTH_SLOPE_Y * 100, 3)],
                        "roof_thickness_m": ROOF_THICKNESS,
                        "status": "North roof held at its normalized-height median; south addition uses a reproducible low-slope plane fitted to 2018 NDHM spatial-bin medians. Both are representative roof-surface estimates, not surveyed eaves."},
-    "facade": "Neutral unfenestrated envelope; the official Purdue Historic Facilities AHF record has no attached image and no AHF-specific public elevation, plan, or identifiable street-level exterior was found in the documented search. Facade and entrances remain unverified.",
+    "facade": "Neutral envelope remains otherwise unverified. Nine emergency-exit locations from Purdue's dated AHF egress plan are represented by schematic door panels; the plan does not identify the public/main entrance, door materials, windows, or facade composition.",
     "roof": "The 2023 orthophoto identifies light north/main and darker south roof zones. A 2018 NDHM fit across four spatial bin sizes shows no stable north/main slope, so it remains at its 4.036 m median; the south zone has a stable approximately -4.0% Y trend and is modeled as a low-slope plane. This is a normalized surface trend, not a surveyed roof profile; eaves and framing remain unresolved.",
     "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png"
 })
+evidence["emergency_exit_plan_registration"] = {
+    "source_image": "audit/animal_holding_facility/sources/purdue_ahf_exits_diagram_2026-10-26.jpg",
+    "source_page": "audit/animal_holding_facility/sources/purdue_ahf_emergency_plan_2026-10-26.html",
+    "image_date": "2023-12-20",
+    "registration": "Compass arrow indicates north to the right of the page. The plan outline was approximately fitted to the official Purdue GIS footprint bounding box; red exit arrows were mapped to local XY and snapped to the nearest exterior GIS edge.",
+    "door_count": len(exit_records),
+    "door_width_estimate_m": EXIT_DOOR_WIDTH_M,
+    "door_height_estimate_m": EXIT_DOOR_HEIGHT_M,
+    "maximum_plan_to_shell_residual_m": round(max(record["plan_to_shell_residual_m"] for record in exit_records), 3),
+    "positions": exit_records,
+    "uncertainty": "The plan is not georeferenced or dimensioned; pixel-to-footprint registration is approximate. Red arrows identify emergency exits, not necessarily the public/main entrance. Door sizes and exterior appearance are schematic estimates."
+}
+evidence["facade_source_search_validation"] = {
+    "record": "audit/animal_holding_facility/sources/ahf_facade_plan_validation_2026-10-26.json",
+    "result": "No additional authoritative AHF exterior photo, elevation, material schedule, or facade drawing was found. Independent registration check of the AHF-01 plan to Purdue GIS FID 266 reports a 0.975 m mean and 1.923 m maximum marker-to-shell residual across nine exits.",
+    "limitation": "The plan supports approximate emergency egress locations only; it does not identify the public entrance or establish facade appearance, door dimensions, or heights."
+}
 ortho_source = {
     "provider": "Indiana Geographic Information Office, Indiana 2023 Imagery ImageServer",
     "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
@@ -297,6 +408,19 @@ units_source = {
     "measurement_method": "Documents Indiana 3DEP LiDAR/DTM source coordinates and values in U.S. survey feet; NDHM height is derived from these elevation values.",
     "uncertainty": "Units apply to the source 3DEP elevation data; NDHM inherits feet as the difference of those source elevations."
 }
+emergency_exit_source = {
+    "provider": "Purdue University Office of Emergency Preparedness",
+    "url": "https://www.purdue.edu/operations/emergency-preparedness/ahf-evpr/",
+    "feature_id": "AHF emergency-exits plan AHF-01",
+    "snapshot": "audit/animal_holding_facility/sources/purdue_ahf_emergency_plan_2026-10-26.html",
+    "image_url": "https://www.purdue.edu/operations/emergency-preparedness/wp-content/uploads/sites/3/2026/04/AHF-Exits-1024x589.jpg",
+    "image_snapshot": "audit/animal_holding_facility/sources/purdue_ahf_exits_diagram_2026-10-26.jpg",
+    "retrieved": "2026-10-26",
+    "source_date": "plan image dated 2023-12-20; page revision 2026-04-13",
+    "source_crs": "Floorplan image has no CRS or stated scale; compass indicates north toward page right.",
+    "measurement_method": "Registered plan outline approximately to the official Purdue GIS footprint bounds using page pixels, then snapped the nine red emergency-exit markers to the nearest footprint edge. Fit residuals and pixel coordinates are recorded in emergency_exit_plan_registration.",
+    "uncertainty": "Emergency exits are not necessarily the public/main entrance. Image registration is approximate, and plan symbols do not establish door dimensions, materials, glazing, or facade composition. Door geometry is explicitly schematic."
+}
 historic_detail_source = {
     "provider": "Purdue Libraries and Archives, Campus Facilities and Buildings Historic Database, AHF detail record 294",
     "url": "https://collections.lib.purdue.edu/campus/buildings/294",
@@ -307,7 +431,7 @@ historic_detail_source = {
     "measurement_method": "Identity/history cross-check; record phases have empty images arrays and image_url is null. Reported current-phase area converts to about 2,293.50 m², 0.59% above the Purdue GIS polygon area of 2,280.05 m².",
     "uncertainty": "Area conventions are unspecified and this is only a plausibility cross-check. The public record's lack of attached images does not establish that no uncatalogued or restricted facade evidence exists."
 }
-for source in (ortho_source, ndhm_source, units_source, historic_detail_source):
+for source in (ortho_source, ndhm_source, units_source, historic_detail_source, emergency_exit_source):
     if not any(s.get("provider") == source["provider"] for s in sources):
         sources.append(source)
 evidence["height_and_facade_uncertainty"] = {
@@ -329,14 +453,15 @@ evidence["height_and_facade_uncertainty"] = {
         "limitation": "Surface trend is not an eave survey; local ground normalization, rooftop objects, grid resolution, and zone-boundary uncertainty may contribute."
     },
     "roof": "2018 NDHM supports median normalized heights of 4.036 m north/main and 5.166 m south addition; 2023 orthophoto supports their plan-zone split. The south addition's stable broad Y trend is modeled, while structural eaves, framing, and exact seam remain unresolved.",
-    "facade": "Neutral unfenestrated envelope; current facade and entrances remain unverified."
+    "facade": "Nine emergency-exit locations are source-backed by the dated AHF-01 plan and shown as schematic door panels. Public/main entrance identity, facade materials, windows, and elevations remain unverified."
 }
+evidence["height_and_facade_uncertainty"]["emergency_exits"] = evidence["emergency_exit_plan_registration"]
 evidence["roof_zone_preview"] = "audit/animal_holding_facility/roof_zones_topdown.png"
 validation = evidence.setdefault("validation", {})
 validation["roof_zone_preview"] = "audit/animal_holding_facility/roof_zones_topdown.png"
 validation["roof_segmentation"] = "Top surface split into light north/main and dark south zones using the 2023 orthophoto; the north uses its 2018 NDHM median, and the south uses a fitted low-slope surface whose median is centered on its 2018 NDHM median."
 validation["ndhm_height_samples"] = "PASS: 614 valid north/main and 359 valid south-addition cells sampled from the official 2018 5-ft Tippecanoe NDHM; zone medians are 4.036 m and 5.166 m above ground. Four bin-size fits show stable -4.0% to -4.8% south Y trend and no stable north trend. See ndhm_roof_height_statistics.json and ndhm_roof_profile_analysis.json."
-validation["saved_and_reopened"] = "PASS: reopened with Blender 4.5.15; expected collection contains exactly one mesh object, no modifiers, 368 vertices and 304 faces; BMesh reports zero non-manifold or boundary edges."
+validation["saved_and_reopened"] = "PASS: reopened with Blender 4.5.15; expected collection contains exactly one mesh object, no modifiers, 584 vertices and 466 faces; BMesh reports zero non-manifold or boundary edges."
 validation["mesh_topology"] = {
     "method": "Reopened the saved .blend and evaluated the mesh edge manifold and boundary flags with Blender BMesh.",
     "non_manifold_edges": 0,
@@ -345,12 +470,22 @@ validation["mesh_topology"] = {
 }
 validation["linked_into_empty_scene"] = "PASS: linked named collection from the library into a factory-startup scene; one expected object and campus coordinates were retained."
 validation["evaluated_bounds_world_m"] = [[-65.645, -23.697], [-1030.837, -955.232], [0.0, round(max(v[2] for v in verts), 3)]]
+validation["emergency_exit_doors"] = {
+    "count": len(exit_records),
+    "door_width_estimate_m": EXIT_DOOR_WIDTH_M,
+    "door_height_estimate_m": EXIT_DOOR_HEIGHT_M,
+    "maximum_plan_to_shell_residual_m": round(max(record["plan_to_shell_residual_m"] for record in exit_records), 3),
+    "source": "Purdue AHF-01 emergency-exits plan dated 2023-12-20; locations approximate and snapped to GIS shell."
+}
 geometry_edits = evidence.setdefault("geometry_edits", [])
 geometry_edits[:] = [edit for edit in geometry_edits if edit !=
     "Split the roof surface into two georeferenced zones matching the 2023 orthophoto, and set each zone to its 2018 NDHM median height (4.036 m north/main; 5.166 m south addition); no facade detail was inferred."]
 roof_edit = "Split the roof surface into two georeferenced zones matching the 2023 orthophoto; held the north at its 2018 NDHM median and fit a low-slope south plane to 2018 NDHM spatial-bin medians (four bin sizes reproduce a -4.0% to -4.8% Y trend); no facade detail was inferred."
 if roof_edit not in geometry_edits:
     geometry_edits.append(roof_edit)
+exit_edit = "Added nine schematic emergency-exit door panels at plan-derived positions from Purdue's AHF-01 emergency-exits drawing; positions are snapped to the GIS shell, while dimensions and appearance remain estimates."
+if exit_edit not in geometry_edits:
+    geometry_edits.append(exit_edit)
 closure_edit = "Added perimeter faces to both roof slabs so the exported roof volumes are closed; reopened in Blender 4.5.15 and verified zero boundary or non-manifold edges."
 if closure_edit not in geometry_edits:
     geometry_edits.append(closure_edit)

@@ -17,7 +17,7 @@
     "roof_thickness_m": 0.12,
     "status": "North roof held at its normalized-height median; south addition uses a reproducible low-slope plane fitted to 2018 NDHM spatial-bin medians. Both are representative roof-surface estimates, not surveyed eaves."
   },
-  "facade": "Neutral unfenestrated envelope; the official Purdue Historic Facilities AHF record has no attached image and no AHF-specific public elevation, plan, or identifiable street-level exterior was found in the documented search. Facade and entrances remain unverified. A follow-up indexed public-web search on 2026-10-26 included Purdue ECN webcam archives, the public ePlanroom landing page, and State Budget Committee Phase III minutes; these corroborate site/project context but provide no identifiable AHF facade or elevation, so no facade detail was inferred.",
+  "facade": "Neutral envelope remains otherwise unverified. Nine emergency-exit locations from Purdue's dated AHF egress plan are represented by schematic door panels; the plan does not identify the public/main entrance, door materials, windows, or facade composition.",
   "roof": "The 2023 orthophoto identifies light north/main and darker south roof zones. A 2018 NDHM fit across four spatial bin sizes shows no stable north/main slope, so it remains at its 4.036 m median; the south zone has a stable approximately -4.0% Y trend and is modeled as a low-slope plane. This is a normalized surface trend, not a surveyed roof profile; eaves and framing remain unresolved.",
   "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png",
   "owner": "Rossen",
@@ -137,6 +137,19 @@
       "source_crs": "Not applicable",
       "measurement_method": "Indexed budget record reviewed for project description.",
       "uncertainty": "Confirms addition/renovation context only; no plan, facade, or elevation data."
+    },
+    {
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/ahf-evpr/",
+      "feature_id": "AHF emergency-exits plan AHF-01",
+      "snapshot": "audit/animal_holding_facility/sources/purdue_ahf_emergency_plan_2026-10-26.html",
+      "image_url": "https://www.purdue.edu/operations/emergency-preparedness/wp-content/uploads/sites/3/2026/04/AHF-Exits-1024x589.jpg",
+      "image_snapshot": "audit/animal_holding_facility/sources/purdue_ahf_exits_diagram_2026-10-26.jpg",
+      "retrieved": "2026-10-26",
+      "source_date": "plan image dated 2023-12-20; page revision 2026-04-13",
+      "source_crs": "Floorplan image has no CRS or stated scale; compass indicates north toward page right.",
+      "measurement_method": "Registered plan outline approximately to the official Purdue GIS footprint bounds using page pixels, then snapped the nine red emergency-exit markers to the nearest footprint edge. Fit residuals and pixel coordinates are recorded in emergency_exit_plan_registration.",
+      "uncertainty": "Emergency exits are not necessarily the public/main entrance. Image registration is approximate, and plan symbols do not establish door dimensions, materials, glazing, or facade composition. Door geometry is explicitly schematic."
     }
   ],
   "identity_and_placement": {
@@ -214,7 +227,173 @@
       "limitation": "Surface trend is not an eave survey; local ground normalization, rooftop objects, grid resolution, and zone-boundary uncertainty may contribute."
     },
     "roof": "2018 NDHM supports median normalized heights of 4.036 m north/main and 5.166 m south addition; 2023 orthophoto supports their plan-zone split. The south addition's stable broad Y trend is modeled, while structural eaves, framing, and exact seam remain unresolved.",
-    "facade": "Neutral unfenestrated envelope; current facade and entrances remain unverified."
+    "facade": "Nine emergency-exit locations are source-backed by the dated AHF-01 plan and shown as schematic door panels. Public/main entrance identity, facade materials, windows, and elevations remain unverified.",
+    "emergency_exits": {
+      "source_image": "audit/animal_holding_facility/sources/purdue_ahf_exits_diagram_2026-10-26.jpg",
+      "source_page": "audit/animal_holding_facility/sources/purdue_ahf_emergency_plan_2026-10-26.html",
+      "image_date": "2023-12-20",
+      "registration": "Compass arrow indicates north to the right of the page. The plan outline was approximately fitted to the official Purdue GIS footprint bounding box; red exit arrows were mapped to local XY and snapped to the nearest exterior GIS edge.",
+      "door_count": 9,
+      "door_width_estimate_m": 1.1,
+      "door_height_estimate_m": 2.05,
+      "maximum_plan_to_shell_residual_m": 1.923,
+      "positions": [
+        {
+          "id": "egress_01",
+          "plan_pixel_xy": [
+            88,
+            137
+          ],
+          "registered_xy_m": [
+            -55.049,
+            -1025.304
+          ],
+          "snapped_shell_xy_m": [
+            -55.923,
+            -1025.284
+          ],
+          "gis_edge_index": 11,
+          "plan_to_shell_residual_m": 0.874
+        },
+        {
+          "id": "egress_02",
+          "plan_pixel_xy": [
+            608,
+            31
+          ],
+          "registered_xy_m": [
+            -63.167,
+            -986.098
+          ],
+          "snapped_shell_xy_m": [
+            -63.126,
+            -984.175
+          ],
+          "gis_edge_index": 5,
+          "plan_to_shell_residual_m": 1.923
+        },
+        {
+          "id": "egress_03",
+          "plan_pixel_xy": [
+            900,
+            47
+          ],
+          "registered_xy_m": [
+            -61.942,
+            -964.082
+          ],
+          "snapped_shell_xy_m": [
+            -61.907,
+            -964.083
+          ],
+          "gis_edge_index": 6,
+          "plan_to_shell_residual_m": 0.035
+        },
+        {
+          "id": "egress_04",
+          "plan_pixel_xy": [
+            990,
+            214
+          ],
+          "registered_xy_m": [
+            -49.152,
+            -957.297
+          ],
+          "snapped_shell_xy_m": [
+            -49.112,
+            -955.727
+          ],
+          "gis_edge_index": 7,
+          "plan_to_shell_residual_m": 1.57
+        },
+        {
+          "id": "egress_05",
+          "plan_pixel_xy": [
+            990,
+            373
+          ],
+          "registered_xy_m": [
+            -36.974,
+            -957.297
+          ],
+          "snapped_shell_xy_m": [
+            -36.942,
+            -956.033
+          ],
+          "gis_edge_index": 7,
+          "plan_to_shell_residual_m": 1.264
+        },
+        {
+          "id": "egress_06",
+          "plan_pixel_xy": [
+            990,
+            537
+          ],
+          "registered_xy_m": [
+            -24.413,
+            -957.297
+          ],
+          "snapped_shell_xy_m": [
+            -23.895,
+            -957.306
+          ],
+          "gis_edge_index": 8,
+          "plan_to_shell_residual_m": 0.519
+        },
+        {
+          "id": "egress_07",
+          "plan_pixel_xy": [
+            500,
+            526
+          ],
+          "registered_xy_m": [
+            -25.256,
+            -994.241
+          ],
+          "snapped_shell_xy_m": [
+            -24.586,
+            -994.253
+          ],
+          "gis_edge_index": 8,
+          "plan_to_shell_residual_m": 0.67
+        },
+        {
+          "id": "egress_08",
+          "plan_pixel_xy": [
+            518,
+            296
+          ],
+          "registered_xy_m": [
+            -42.871,
+            -992.883
+          ],
+          "snapped_shell_xy_m": [
+            -42.861,
+            -992.429
+          ],
+          "gis_edge_index": 1,
+          "plan_to_shell_residual_m": 0.454
+        },
+        {
+          "id": "egress_09",
+          "plan_pixel_xy": [
+            500,
+            373
+          ],
+          "registered_xy_m": [
+            -36.974,
+            -994.241
+          ],
+          "snapped_shell_xy_m": [
+            -38.443,
+            -994.208
+          ],
+          "gis_edge_index": 0,
+          "plan_to_shell_residual_m": 1.469
+        }
+      ],
+      "uncertainty": "The plan is not georeferenced or dimensioned; pixel-to-footprint registration is approximate. Red arrows identify emergency exits, not necessarily the public/main entrance. Door sizes and exterior appearance are schematic estimates."
+    }
   },
   "geometry_edits": [
     "Replaced prior 16 m box with the 16-node Purdue GIS footprint.",
@@ -222,13 +401,14 @@
     "Preserved manifest stable ID, scene, collection, object name, and campus coordinate frame.",
     "Split the roof surface into two georeferenced material zones matching the light north/main roof and darker south roof visible in 2023 Indiana imagery; no unsupported roof elevations or facade details were added.",
     "Added perimeter faces to both roof slabs so the exported roof volumes are closed; reopened in Blender 4.5.15 and verified zero boundary or non-manifold edges.",
-    "Split the roof surface into two georeferenced zones matching the 2023 orthophoto; held the north at its 2018 NDHM median and fit a low-slope south plane to 2018 NDHM spatial-bin medians (four bin sizes reproduce a -4.0% to -4.8% Y trend); no facade detail was inferred."
+    "Split the roof surface into two georeferenced zones matching the 2023 orthophoto; held the north at its 2018 NDHM median and fit a low-slope south plane to 2018 NDHM spatial-bin medians (four bin sizes reproduce a -4.0% to -4.8% Y trend); no facade detail was inferred.",
+    "Added nine schematic emergency-exit door panels at plan-derived positions from Purdue's AHF-01 emergency-exits drawing; positions are snapped to the GIS shell, while dimensions and appearance remain estimates."
   ],
   "validation": {
     "blender_version": "4.5.15 LTS",
     "exported_collection": "Asset_massing_animal_holding_facility_4733f46",
     "expected_collection_object_count": 1,
-    "saved_and_reopened": "PASS: reopened with Blender 4.5.15; expected collection contains exactly one mesh object, no modifiers, 368 vertices and 304 faces; BMesh reports zero non-manifold or boundary edges.",
+    "saved_and_reopened": "PASS: reopened with Blender 4.5.15; expected collection contains exactly one mesh object, no modifiers, 584 vertices and 466 faces; BMesh reports zero non-manifold or boundary edges.",
     "linked_into_empty_scene": "PASS: linked named collection from the library into a factory-startup scene; one expected object and campus coordinates were retained.",
     "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png",
     "evaluated_bounds_world_m": [
@@ -256,9 +436,188 @@
       "non_manifold_edges": 0,
       "boundary_edges": 0,
       "result": "PASS"
-    }
+    },
+    "emergency_exit_doors": {
+      "count": 9,
+      "door_width_estimate_m": 1.1,
+      "door_height_estimate_m": 2.05,
+      "maximum_plan_to_shell_residual_m": 1.923,
+      "source": "Purdue AHF-01 emergency-exits plan dated 2023-12-20; locations approximate and snapped to GIS shell."
+    },
+    "reopen_verification": "audit/animal_holding_facility/reopen_verification.json"
   },
   "roof_zone_preview": "audit/animal_holding_facility/roof_zones_topdown.png",
   "facade_evidence_search": "Public Purdue Libraries historic building record has image_url=null; Purdue Archives public search showed an AHF corporate-name record but no indexed AHF-identified exterior image, elevation, or plan. This is not proof that no restricted or uncatalogued material exists. Facade and entrance remain unknown.",
-  "additional_facade_search": "audit/animal_holding_facility/sources/ahf_additional_source_search_2026-10-26.json"
+  "additional_facade_search": "audit/animal_holding_facility/sources/ahf_additional_source_search_2026-10-26.json",
+  "emergency_exit_plan_registration": {
+    "source_image": "audit/animal_holding_facility/sources/purdue_ahf_exits_diagram_2026-10-26.jpg",
+    "source_page": "audit/animal_holding_facility/sources/purdue_ahf_emergency_plan_2026-10-26.html",
+    "image_date": "2023-12-20",
+    "registration": "Compass arrow indicates north to the right of the page. The plan outline was approximately fitted to the official Purdue GIS footprint bounding box; red exit arrows were mapped to local XY and snapped to the nearest exterior GIS edge.",
+    "door_count": 9,
+    "door_width_estimate_m": 1.1,
+    "door_height_estimate_m": 2.05,
+    "maximum_plan_to_shell_residual_m": 1.923,
+    "positions": [
+      {
+        "id": "egress_01",
+        "plan_pixel_xy": [
+          88,
+          137
+        ],
+        "registered_xy_m": [
+          -55.049,
+          -1025.304
+        ],
+        "snapped_shell_xy_m": [
+          -55.923,
+          -1025.284
+        ],
+        "gis_edge_index": 11,
+        "plan_to_shell_residual_m": 0.874
+      },
+      {
+        "id": "egress_02",
+        "plan_pixel_xy": [
+          608,
+          31
+        ],
+        "registered_xy_m": [
+          -63.167,
+          -986.098
+        ],
+        "snapped_shell_xy_m": [
+          -63.126,
+          -984.175
+        ],
+        "gis_edge_index": 5,
+        "plan_to_shell_residual_m": 1.923
+      },
+      {
+        "id": "egress_03",
+        "plan_pixel_xy": [
+          900,
+          47
+        ],
+        "registered_xy_m": [
+          -61.942,
+          -964.082
+        ],
+        "snapped_shell_xy_m": [
+          -61.907,
+          -964.083
+        ],
+        "gis_edge_index": 6,
+        "plan_to_shell_residual_m": 0.035
+      },
+      {
+        "id": "egress_04",
+        "plan_pixel_xy": [
+          990,
+          214
+        ],
+        "registered_xy_m": [
+          -49.152,
+          -957.297
+        ],
+        "snapped_shell_xy_m": [
+          -49.112,
+          -955.727
+        ],
+        "gis_edge_index": 7,
+        "plan_to_shell_residual_m": 1.57
+      },
+      {
+        "id": "egress_05",
+        "plan_pixel_xy": [
+          990,
+          373
+        ],
+        "registered_xy_m": [
+          -36.974,
+          -957.297
+        ],
+        "snapped_shell_xy_m": [
+          -36.942,
+          -956.033
+        ],
+        "gis_edge_index": 7,
+        "plan_to_shell_residual_m": 1.264
+      },
+      {
+        "id": "egress_06",
+        "plan_pixel_xy": [
+          990,
+          537
+        ],
+        "registered_xy_m": [
+          -24.413,
+          -957.297
+        ],
+        "snapped_shell_xy_m": [
+          -23.895,
+          -957.306
+        ],
+        "gis_edge_index": 8,
+        "plan_to_shell_residual_m": 0.519
+      },
+      {
+        "id": "egress_07",
+        "plan_pixel_xy": [
+          500,
+          526
+        ],
+        "registered_xy_m": [
+          -25.256,
+          -994.241
+        ],
+        "snapped_shell_xy_m": [
+          -24.586,
+          -994.253
+        ],
+        "gis_edge_index": 8,
+        "plan_to_shell_residual_m": 0.67
+      },
+      {
+        "id": "egress_08",
+        "plan_pixel_xy": [
+          518,
+          296
+        ],
+        "registered_xy_m": [
+          -42.871,
+          -992.883
+        ],
+        "snapped_shell_xy_m": [
+          -42.861,
+          -992.429
+        ],
+        "gis_edge_index": 1,
+        "plan_to_shell_residual_m": 0.454
+      },
+      {
+        "id": "egress_09",
+        "plan_pixel_xy": [
+          500,
+          373
+        ],
+        "registered_xy_m": [
+          -36.974,
+          -994.241
+        ],
+        "snapped_shell_xy_m": [
+          -38.443,
+          -994.208
+        ],
+        "gis_edge_index": 0,
+        "plan_to_shell_residual_m": 1.469
+      }
+    ],
+    "uncertainty": "The plan is not georeferenced or dimensioned; pixel-to-footprint registration is approximate. Red arrows identify emergency exits, not necessarily the public/main entrance. Door sizes and exterior appearance are schematic estimates."
+  },
+  "facade_source_search_validation": {
+    "record": "audit/animal_holding_facility/sources/ahf_facade_plan_validation_2026-10-26.json",
+    "result": "No additional authoritative AHF exterior photo, elevation, material schedule, or facade drawing was found. Independent registration check of the AHF-01 plan to Purdue GIS FID 266 reports a 0.975 m mean and 1.923 m maximum marker-to-shell residual across nine exits.",
+    "limitation": "The plan supports approximate emergency egress locations only; it does not identify the public entrance or establish facade appearance, door dimensions, or heights."
+  }
 }

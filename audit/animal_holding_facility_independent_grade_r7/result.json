@@ -1,0 +1,118 @@
+{
+  "evaluator": "independent AHF r7 evaluator",
+  "evaluated_at_utc": "2026-10-26T12:50:51.962723+00:00",
+  "asset": "modular/buildings/massing_animal_holding_facility_4733f46.blend",
+  "score": 8.25,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue GIS feature FID 266 identifies BLDG_ABBR AHF and BUILDING_N Animal Holding Facility at 410 S University Street.",
+        "The official Purdue polygon and 2016-2020 Indiana footprint comparison reports 0.50 m centroid offset and 1.739 m maximum symmetric vertex-to-boundary distance."
+      ],
+      "findings": "The building identity is unambiguous and the Purdue survey-style footprint is corroborated by an independent state footprint. The saved model follows the 16-vertex Purdue outline."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Reopened mesh evaluated XY bounds: X -65.645 to -23.697 m; Y -1030.837 to -955.232 m.",
+        "Model bounds differ from the converted Purdue GIS footprint bounds by at most 0.180 m; measured model envelope is 41.948 by 75.605 m.",
+        "Each GIS footprint corner is represented within 0.000 m of a model vertex in XY.",
+        "Top-down comparison against 2023 Indiana orthophoto visually confirms the building's orientation and campus placement."
+      ],
+      "findings": "XY position, orientation, and plan scale are strongly supported. The small envelope expansion is consistent with the perimeter wall/roof edge around the GIS polygon."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.75,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue GIS attributes report NUM_LEVELS=1 and CountOfFLO=1.",
+        "The 2018 Indiana 5-ft NDHM has 614 north/main and 359 south/addition samples; median roof-surface heights are 4.036 m and 5.166 m above ground.",
+        "Current model vertical extent is 5.999 m; the southern roof profile trend is supported by multi-bin fits in 4 resolutions."
+      ],
+      "findings": "The one-floor and two-zone roof massing have source support. Deduct 0.25 because the 5-ft normalized-height raster is not an eave survey and the roof-zone seam/slope remain approximations."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.5,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue AHF-01 emergency-exits plan dated 2023-12-20 explicitly marks 9 red-arrow emergency exits; the asset contains corresponding schematic door panels.",
+        "Plan-to-GIS registration is approximate and has a maximum recorded shell residual of 1.923 m."
+      ],
+      "findings": "This plan supports the existence and approximate plan locations of emergency egress doors only. It does not identify the public/main entrance, facade materials, window rhythm, signage, or distinctive exterior features. Door dimensions, appearance, and placement precision remain estimates; no architectural facade credit is awarded."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Expected collection Asset_massing_animal_holding_facility_4733f46 contains exactly one mesh object named Animal Holding Facility.",
+        "Fresh Blender evaluation reports 584 vertices and 466 faces, no modifiers, 0 non-manifold edges, and 0 boundary edges.",
+        "External image dependencies: []; independent linked-library check: PASS."
+      ],
+      "findings": "The library asset is portable and structurally valid; its structured evidence covers GIS, orthophoto, lidar, and egress-plan inputs with limitations recorded."
+    }
+  ],
+  "evidence": {
+    "purdue_gis_feature_id": 266,
+    "purdue_gis_attributes": {
+      "BLDG_ABBR": "AHF",
+      "BUILDING_N": "Animal Holding Facility",
+      "NUM_LEVELS": 1,
+      "CountOfFLO": 1,
+      "ADDRESS": "410 S University Street"
+    },
+    "max_gis_vertex_to_model_vertex_m": 5.1199746388771836e-05,
+    "indiana_footprint_comparison": {
+      "centroid_offset_m": 0.5,
+      "maximum_vertex_to_other_boundary_m": 1.739,
+      "method": "symmetric max vertex-to-segment distance in project approximate XY; 16 Purdue vertices vs 8 Indiana vertices"
+    },
+    "blender_reopen": {
+      "blender_version": "4.5.15 LTS",
+      "scene": "Building_massing_animal_holding_facility_4733f46",
+      "collection": "Asset_massing_animal_holding_facility_4733f46",
+      "object_count": 1,
+      "object_name": "Animal Holding Facility",
+      "evaluated_vertex_count": 584,
+      "evaluated_face_count": 466,
+      "non_manifold_edge_count": 0,
+      "boundary_edge_count": 0,
+      "evaluated_bounds_world_m": [
+        [
+          -65.6451187133789,
+          -23.69708824157715
+        ],
+        [
+          -1030.836669921875,
+          -955.23193359375
+        ],
+        [
+          0.0,
+          5.999149322509766
+        ]
+      ],
+      "external_image_dependencies": []
+    },
+    "egress_plan": {
+      "source_image": "audit/animal_holding_facility/sources/purdue_ahf_exits_diagram_2026-10-26.jpg",
+      "date": "2023-12-20",
+      "emergency_exit_count": 9,
+      "maximum_plan_to_shell_residual_m": 1.923,
+      "facade_or_main_entrance_evidence": false
+    }
+  },
+  "findings": [
+    "The egress plan justifies a limited schematic emergency-door treatment. It does not resolve the facade/entrance evidence gap.",
+    "The building passes the 8/10 threshold from footprint, position, roof/floor, export, and limited exit-location evidence; facade appearance and the primary entrance remain unverified."
+  ]
+}

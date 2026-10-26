@@ -1,0 +1,23 @@
+{
+  "retrieved_date": "2026-10-26",
+  "purpose": "Independent check of a distinct public street-level imagery source for an identifiable Animal Holding Facility exterior after the existing Purdue archive and webcam searches did not locate a building-specific facade view.",
+  "provider": "KartaView (formerly OpenStreetCam)",
+  "documentation_url": "https://kartaview.org/doc/faq",
+  "documented_endpoint_pattern": "GET /2.0/photo/?lat={latitude}&lng={longitude}&radius={meters}",
+  "request_url": "https://api.kartaview.org/2.0/photo/?lat=40.4185&lng=-86.9142&radius=100",
+  "search_center": {
+    "latitude": 40.4185,
+    "longitude": -86.9142,
+    "method": "Approximate center of the AHF campus-frame GIS outline, converted using the repository's documented local campus conversion.",
+    "radius_m": 100
+  },
+  "response": {
+    "api_code": 600,
+    "api_message": "The request has been processed without incidents",
+    "http_code": 200,
+    "returned_photo_count": 0,
+    "has_more_data": false
+  },
+  "assessment": "No KartaView street-level photos were returned within 100 m of the AHF outline center. This source avenue does not provide facade or entrance evidence and supports no geometry edits.",
+  "limitations": "The query uses an approximate center and 100 m radius; empty coverage does not prove there are no images elsewhere or in another provider's imagery. No facade attributes were inferred."
+}

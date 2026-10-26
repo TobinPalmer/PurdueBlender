@@ -1,0 +1,52 @@
+{
+  "retrieved_date": "2026-10-26",
+  "purpose": "Independent follow-up for AHF-specific exterior facade evidence and validation of the Purdue emergency-exit diagram registration already used by the builder.",
+  "queries": [
+    "site:purdue.edu \"Animal Holding Facility\" Purdue exterior",
+    "Purdue Animal Holding Facility 410 S University building photo",
+    "Purdue Animal Holding Facility AHF architectural drawing elevation",
+    "\"410 S University St\" Purdue AHF photo",
+    "\"AHF-01\" Purdue emergency exits",
+    "\"Animal Holding Facility\" Purdue \"Phase III\" photo"
+  ],
+  "findings": [
+    {
+      "source": "Purdue Office of Emergency Preparedness, AHF - EVPR Animal Holding Facility; AHF-01 Emergency Exits diagram",
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "page_url": "https://www.purdue.edu/operations/emergency-preparedness/ahf-evpr/",
+      "diagram_url": "https://www.purdue.edu/operations/emergency-preparedness/wp-content/uploads/sites/3/2026/04/AHF-Exits-1024x589.jpg",
+      "local_raw_snapshot": "purdue_ahf_emergency_plan_2026-10-26.html",
+      "local_diagram_snapshot": "purdue_ahf_exits_diagram_2026-10-26.jpg",
+      "diagram_date": "2023-12-20",
+      "observed_content": "Labeled AHF-01 plan with nine red emergency-exit arrows around the building plan. The page identifies the address as 410 S University St. The compass indicates north toward the right edge of the page.",
+      "registration_check": {
+        "method": "Compared the existing builder's page-pixel-to-local mapping against Purdue GIS FID 266, then projected each selected egress marker to the nearest polygon segment.",
+        "marker_count": 9,
+        "mean_marker_to_polygon_residual_m": 0.975,
+        "median_marker_to_polygon_residual_m": 0.874,
+        "rms_marker_to_polygon_residual_m": 1.136,
+        "maximum_marker_to_polygon_residual_m": 1.923,
+        "assessment": "The orientation and overall plan registration are plausible at building-massing scale, with residuals below 2 m. This is a bounding-box approximation rather than a surveyed or scale-annotated registration; marker residual measures mismatch before snapping and does not establish door width, exact threshold location, or facade elevation."
+      },
+      "supports": [
+        "Approximate locations of the nine depicted emergency egress doors around the footprint perimeter."
+      ],
+      "does_not_support": [
+        "Which exit is the public or main entrance.",
+        "Exterior wall materials, colors, or cladding.",
+        "Window locations or dimensions.",
+        "Door appearance or height.",
+        "Eave, parapet, roof, or facade heights."
+      ]
+    },
+    {
+      "source": "Purdue campus historic buildings database and broader web-index search results",
+      "provider": "Purdue University Libraries Archives and Special Collections; Purdue University",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/294",
+      "retrieval": "Searches for AHF exterior photographs, 410 S University St imagery, AHF-01 plan references, and Phase III construction photos surfaced identity, area, chronology, campus-map material, and the already-known emergency plan, but no additional AHF-identified facade photo, elevation, material schedule, or dimensioned exterior drawing.",
+      "assessment": "No newly found facade evidence supports additional model edits. Search-engine coverage is not exhaustive, and the previously documented Purdue Archives UA 154 folder remains a non-digitized archival lead."
+    }
+  ],
+  "geometry_recommendation": "Use the existing nine exit locations only as diagrammatic emergency egress openings. Keep their mapped positions approximate and door appearance/height explicitly unverified. Do not add windows, facade materials, or designate a main entrance from this plan.",
+  "limitations": "The exit diagram has no visible scale bar or exterior elevations. Bounding-box registration to the GIS polygon and nearest-edge snapping cannot remove uncertainty from plan line thickness, raster cropping, phase differences, the schematic drawing, or differences between interior plan walls and the GIS shell. Public indexed search is not an exhaustive archival inspection."
+}
