@@ -1,0 +1,111 @@
+{
+  "building_id": "agricultural_and_biological_engineering_abe",
+  "owner": "Rosen",
+  "asset_file": "modular/buildings/agricultural_and_biological_engineering_abe.blend",
+  "exported_collection": "Asset_agricultural_and_biological_engineering_abe",
+  "builder": "modular/buildings/build_agricultural_and_biological_engineering_abe.py",
+  "retrieved_date": "2026-10-25",
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 406,
+      "building_code": "ABE",
+      "building_name": "Agricultural And Biological Engineering",
+      "address": "225 S University Street",
+      "snapshot": "evidence/purdue_abe_gis_feature_406.json",
+      "retrieval_date": "2026-10-24 (inherited source snapshot)",
+      "source_date": "not stated; service layer is maintained by Purdue",
+      "source_crs": "EPSG:3857 service geometry; checked-in snapshot coordinates are WGS84/EPSG:4326",
+      "measurement": "GIS exterior ring transformed into the project campus approximation (X east, Y north), then the manifest placement origin was subtracted so the asset geometry is building-local; simplified by at most about 0.75 m for mesh-ready facades; no scale fit",
+      "attributes": {"NUM_LEVELS": 6, "Extrution": 58, "Elevation": 619.2, "Shape__Area": 5664.35546875, "Shape__Length": 343.9637483805928},
+      "uncertainty": "Feature identity is supported by the ABE code, full name and street address. The source is a cartographic outline, not a measured wall survey; it does not describe facade segmentation or clarify units on its extrusion field."
+    },
+    {
+      "provider": "Purdue University, Agricultural and Biological Engineering, Final Planning Document",
+      "url": "https://engineering.purdue.edu/Intranet/Groups/Schools/ABE/ABE%20Final%20Planning%20Doc.pdf",
+      "snapshot": "evidence/ABE_Final_Planning_Doc.pdf",
+      "retrieval_date": "2026-10-25",
+      "source_date": "planning document; source dates to 2017 project planning",
+      "source_crs": "not applicable",
+      "measurement": "Text-extracted design narrative: identifies an approximately 11,000 NSF 1928 building, an approximately 30,000 NSF 1940 addition, a one-storey south wing to be removed, and a planned four-storey addition with basement and penthouse. Planning proposal rather than as-built survey.",
+      "uncertainty": "Preconstruction option document. Its planned massing and floor design may differ from the completed building; it does not provide a georeferenced elevation for this model."
+    },
+    {
+      "provider": "MSKTD, architect project page",
+      "url": "https://msktd.com/project/purdue-university-agricultural-and-biological-engineering-abe-building/",
+      "retrieval_date": "2026-10-25",
+      "source_date": "completed for 2020-2021 academic opening",
+      "source_crs": "not applicable",
+      "measurement": "Architect reports renovation of an existing three-storey 37,000-square-foot building and replacement of a demolished one-storey structure by a five-storey 125,000-square-foot research facility.",
+      "uncertainty": "Project description verifies story-count program and uses, not level elevations or which GIS shell edges belong to each construction phase."
+    },
+    {
+      "provider": "Purdue ABE Building History page",
+      "url": "https://engineering.purdue.edu/ABE/BldgHistory",
+      "retrieval_date": "2026-10-25",
+      "source_date": "page last modified 2018-05-02; historical archive",
+      "source_crs": "not applicable",
+      "measurement": "Confirms that historic photographs and the earlier ABE building archive are associated with this facility.",
+      "uncertainty": "Archive page alone does not provide current measured elevations."
+    },
+    {
+      "provider": "Farm Progress, photographed ABE virtual tour entrance",
+      "url": "https://www.farmprogress.com/farm-life/take-virtual-tour-through-purdue-s-new-ag-engineering-building",
+      "retrieval_date": "2026-10-25",
+      "source_date": "article date not recorded in inherited project evidence",
+      "source_crs": "not applicable; uncalibrated photograph",
+      "measurement": "Visual cue for brick and pale-stone entrance framing and the 1928 marker above the entry.",
+      "uncertainty": "Photograph is not calibrated to GIS and cannot establish the entrance side, dimensions, or window cadence."
+    }
+  ],
+  "coordinate_method": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "units": "meters",
+    "axes": "X east, Y north, Z up",
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "local_coordinate_formula": "local_x = campus_approx_x - placement_origin_x; local_y = campus_approx_y - placement_origin_y",
+    "placement_origin_xy_m": [-246.71846085020562, -632.8773862787382],
+    "uncertainty": "Project compatibility approximation, not a survey-grade projected CRS."
+  },
+  "model": {
+    "levels": "five above-grade floors in the main shell; three-storey retained component is documented but its exact boundary in plan is unresolved, so no invented split is claimed",
+    "height_m": 18,
+    "height_status": "estimated; five floors at approximately 3.6 m each; Purdue GIS also records an extrusion attribute of 58 with unspecified units, equivalent to 17.68 m only if feet",
+    "roof": "flat roof with a low parapet and a compact schematic mechanical screen; exact rooftop arrangement unverified",
+    "facade": "brick field, pale horizontal trim and repeated glazing are qualitative project-photo cues; detailed bay positions and the exact location of the curtain-wall wing remain approximate",
+    "entry": "photographed stone surround and 1928 lintel marker; assigned to the longest GIS edge for presentation because the photo cannot be georeferenced",
+    "interior": "not modeled; no public as-built floor plan available",
+    "geometry_edits": [
+      "Recreated the dedicated detailed asset because the manifest-referenced .blend and prior builder script were absent from the checkout; older preview images and a GIS/evidence snapshot were present.",
+      "Created a mesh-ready shell from the matched GIS exterior ring after subtracting the manifest placement origin, keeping all geometry in building-local coordinates.",
+      "Added estimated five-floor fenestration, brick material, parapet, roof screen and photograph-based entrance features.",
+      "Preserved the manifest ID, collection name, and placement origin. Applying that origin once recovers the Purdue GIS campus footprint; no campus translation is baked into the asset."
+    ]
+  },
+  "validation": {
+    "reopened_asset": true,
+    "validated_bounds": true,
+    "reopen_report": "validation.json",
+    "validated_collection_objects": 956,
+    "primary_shell_bounds_m": {"x": [-36.003, 33.035], "y": [-27.597, 27.204], "z": [0.0, 18.0]},
+    "manifest_translation_recovers_campus_bounds_m": {"x": [-282.721, -213.684], "y": [-660.474, -605.673]},
+    "manifest_translation_verified_once": true,
+    "external_unpacked_image_dependencies": [],
+    "external_texture_dependencies": "none intended; procedural material nodes only",
+    "overview_render": "evidence/abe_exterior_overview.png",
+    "entry_render": "evidence/abe_entry_detail.png",
+    "independent_grade": null,
+    "status": "Local-frame rebuild and Blender reopen validation passed; awaiting independent regrade"
+  },
+  "uncertainties": [
+    "GIS footprint shape and position are cartographic, not measured wall lines; the outline is down-sampled for facade detailing.",
+    "Exact retained-versus-new addition boundary and orientation were not located in a georeferenced plan, so the model does not assert that partition.",
+    "Total above-grade height and floor-to-floor dimensions are estimates; GIS level and extrusion attributes are not survey measurements.",
+    "The roof-screen equipment and window bay cadence are schematic.",
+    "Photographic entrance cues are not aligned to a known GIS side and are placed illustratively.",
+    "Street-level imagery was not independently checked during this pass."
+  ]
+}
