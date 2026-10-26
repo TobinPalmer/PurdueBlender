@@ -194,6 +194,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
 | Stone Hall (STON) | [massing_stone_hall_ston_d3f479a.blend](buildings/massing_stone_hall_ston_d3f479a.blend) | 1 |
 | Telecommunications Building (TEL) | [massing_telecommunications_building_tel_8dfaccf.blend](buildings/massing_telecommunications_building_tel_8dfaccf.blend) | 1 |
+| Twin Pines Cooperative | [massing_twin_pines_cooperative_8f606f9.blend](buildings/massing_twin_pines_cooperative_8f606f9.blend) | 1 |
 
 Hillel retains campus-world coordinates. Its 8.3/10 grade supports the main shell and GIS footprint; the proposed 845 sq ft addition is unresolved, and height, roof depth/pitch, and facade opening details remain schematic. See [Hillel grade](../audit/massing_hillel_36d2ba1/independent_grade/r2/result.json).
 
@@ -218,6 +219,8 @@ Purdue Police Department (TERY) retains campus-world coordinates. Its 8.4/10 gra
 Stone Hall (STON) retains campus-world coordinates. Its 8.0/10 independent grade confirms that the mesh’s 12 base-ring vertices match the Purdue GIS FID 240 polygon. The 13.716 m total height is an estimate from GIS Extrution=45 with undocumented units; source area and perimeter attributes conflict with polygon-ring measurements. Broad steps and the central three-panel entrance reflect archive photographs, while exact window proportions remain interpretive. See [Stone Hall grade](../audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json).
 
 Telecommunications Building (TEL) retains campus-world coordinates. Its 8.0/10 grade verifies the Purdue GIS FID 199 footprint and the 29 source ring vertices within 0.1 mm. A broad flat roof and approximate roof equipment positions are supported by 2018 orthophoto; the 9.14 m height is an estimate from unclassified LiDAR returns, while facade material and windows remain unverified. See [TEL grade](../audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json).
+
+Twin Pines Cooperative retains campus-world coordinates. Its 8.3/10 grade verifies the six-vertex OSM FID 766 footprint against the mesh within 0.1 mm and supports the two-story gable, porch, and siding from Purdue and house photographs. The 9.05 m roof ridge and many facade details remain estimates; the south-facing frontage is inferred. See [Twin Pines grade](../audit/massing_twin_pines_cooperative_8f606f9/independent_grade/twin_pines_independent_grade.json).
 
 Herrick Laboratories (historic Herrick Acoustics) retains campus-world coordinates. Its 8.4/10 grade verifies Purdue GIS FID 246 / HERL and distinguishes it from Ray W. Herrick Labs; height estimates and GIS area discrepancy remain unresolved. See [Herrick grade](../audit/massing_herrick_laboratories_2138103/independent_grade/r2/result.json).
 
