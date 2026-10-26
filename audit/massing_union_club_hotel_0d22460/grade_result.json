@@ -1,0 +1,686 @@
+{
+  "score": 7.3,
+  "max_score": 10,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": "Official GIS FID 663 names Purdue Memorial Union Club (PMUC), address 201 N Grant Street; the official campus map separately lists PMU and PMUC. Purdue Events identifies the PMUC property as the Union Club Hotel addition. The candidate shell's 53-point base ring matches the 53 distinct GIS vertices in order; direct evaluation found maximum XY error 0.00001850 m and centroid displacement 0.00000027 m.",
+      "limitations": "The project's local lon/lat-to-meter approximation is not a surveyed projection."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "mostly verified",
+      "evidence": "The complete irregular 53-vertex GIS outline is reproduced at campus coordinates and has the same source ordering/orientation. The evaluated overall XY envelope is 41.283 x 119.839 m versus the converted source envelope 40.706 x 119.413 m; the small difference is exterior trim/entry geometry. No arbitrary translation or global scale is apparent.",
+      "limitations": "The GIS conversion has local-approximation uncertainty; model dimensions outside the base polygon include trim and the portico."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2.0,
+      "status": "partially verified; roof silhouette unsupported",
+      "evidence": "GIS reports NUM_LEVELS=7 and height-related fields F01-F06, R=63.1, and Extrution=72. The modeled seven floor bands and 21.95 m top are plausible if the undocumented values are feet, but that unit conversion is an estimate. Reopened model bounds place the body/top at about 21.95 m. Roof views show an essentially broad flat/capped slab with a small penthouse; the preserved official 80x80 photo thumbnail suggests more varied pitched/gabled roof silhouettes, but is too low resolution for exact roof measurement.",
+      "limitations": "No elevations or unit-documented height source. Roof geometry is not substantiated by the GIS and visibly simplifies the photo-supported roofline; 21.95 m is an estimate."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.8,
+      "max_score": 2.0,
+      "status": "weakly supported",
+      "evidence": "The model supplies a plausible red-brick palette, repeated punched openings, limestone-colored bands, and a gabled covered entrance. Purdue Events has an official exterior image, but the preserved copy is only 80x80 pixels and does not support window count, spacing, floor-by-floor changes, or exact portico placement. In the renders, nearly every elevation has a highly regular identical window grid and belt course; the entry is tiny relative to the long wing and its location is explicitly inferred by the build script rather than measured from a clear elevation.",
+      "limitations": "No facade plans or readable high-resolution, current exterior elevations. Distinctive hotel details and exact entrance/frontage remain largely interpretive."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.7,
+      "max_score": 2.0,
+      "status": "mostly verified",
+      "evidence": "Fresh-opened .blend contains the exact stable exported collection Asset_massing_union_club_hotel_0d22460 with 18 objects (17 meshes), readable asset metadata, and materials on evaluated meshes. No unpacked external image paths were found. The asset and build script preserve the stable ID/path and the campus-coordinate massing convention. Four renders, a source index/evidence narrative, raw GIS feature snapshot, official map and Purdue source snapshots, and reopen validation are present. The saved renders are consistent with the geometry checked directly.",
+      "limitations": "No master-link/duplicate-removal review is within this independent asset audit; coordinator must check final integration. Evidence has only one low-resolution exterior image."
+    }
+  ],
+  "evidence": {
+    "direct_saved_asset_inspection": {
+      "asset_path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_union_club_hotel_0d22460.blend",
+      "asset_id": "massing_union_club_hotel_0d22460",
+      "expected_collection": "Asset_massing_union_club_hotel_0d22460",
+      "collection_found": true,
+      "collection_object_count": 18,
+      "mesh_count": 17,
+      "gis_feature": {
+        "FID": 663,
+        "name": "Purdue Memorial Union Club",
+        "abbreviation": "PMUC",
+        "levels": 7,
+        "ring_vertex_count": 53
+      },
+      "actual_shell_vertex_count": 424,
+      "actual_base_ring_count_compared": 53,
+      "max_base_ring_error_m": 1.8500813178054284e-05,
+      "base_centroid_error_m": 2.6974514734630276e-07,
+      "source_xy_bounds_m": [
+        [
+          235.80162331753857,
+          276.50746427367886
+        ],
+        [
+          -284.82632661101434,
+          -165.4135114005885
+        ]
+      ],
+      "evaluated_asset_bounds_m": [
+        [
+          235.51370239257812,
+          -284.97137451171875,
+          0.0
+        ],
+        [
+          276.79718017578125,
+          -165.1328582763672,
+          21.950000762939453
+        ]
+      ],
+      "evaluated_asset_height_m": 21.950000762939453,
+      "unpacked_external_images": [],
+      "objects": [
+        {
+          "name": "Union Club Hotel",
+          "type": "MESH",
+          "vertices_evaluated": 424,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Story_Belt_Courses",
+          "type": "MESH",
+          "vertices_evaluated": 2256,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Facade_Stone_Window_Reveals",
+          "type": "MESH",
+          "vertices_evaluated": 3248,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Facade_Glazing",
+          "type": "MESH",
+          "vertices_evaluated": 3248,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Facade_Stone_Sills",
+          "type": "MESH",
+          "vertices_evaluated": 3248,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Facade_Window_Mullions",
+          "type": "MESH",
+          "vertices_evaluated": 3248,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Facade_Window_Transoms",
+          "type": "MESH",
+          "vertices_evaluated": 3248,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Roof_Coping",
+          "type": "MESH",
+          "vertices_evaluated": 376,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Entry_Pier_0",
+          "type": "MESH",
+          "vertices_evaluated": 8,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Entry_Pier_1",
+          "type": "MESH",
+          "vertices_evaluated": 8,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Entry_Canopy",
+          "type": "MESH",
+          "vertices_evaluated": 8,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Entry_Lintel",
+          "type": "MESH",
+          "vertices_evaluated": 8,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Entry_Glazed_Lobby",
+          "type": "MESH",
+          "vertices_evaluated": 8,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Entry_Sign",
+          "type": "MESH",
+          "vertices_evaluated": 8,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Entry_Gabled_Porte_Cochere",
+          "type": "MESH",
+          "vertices_evaluated": 6,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Entry_Hotel_Lettering",
+          "type": "FONT",
+          "materials": 1,
+          "modifiers": []
+        },
+        {
+          "name": "UCH_Roof_Mechanical_Penthouse",
+          "type": "MESH",
+          "vertices_evaluated": 8,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "UCH_Penthouse_Roof",
+          "type": "MESH",
+          "vertices_evaluated": 8,
+          "materials": 1,
+          "modifiers": [],
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "asset_scene": "Building_massing_union_club_hotel_0d22460",
+      "asset_transform_note": "Simple massing remains in campus coordinates; no detailed Placement marker is expected."
+    },
+    "rendered_views_inspected": [
+      "renders/east_oblique.png",
+      "renders/northwest_oblique.png",
+      "renders/south_oblique.png",
+      "renders/top.png"
+    ],
+    "source_material_inspected": [
+      "sources/official_gis_fid_663.json",
+      "sources/official_purdue_campus_map.pdf",
+      "sources/official_purdue_events_pmuc.html",
+      "sources/official_event_listing_photo.jpg (80x80)",
+      "sources/official_purdue_2018_hotel_history.html",
+      "sources/official_purdue_union_history_podcast.html",
+      "source_evidence.md",
+      "reopen_validation.json"
+    ]
+  },
+  "findings": [
+    "FAIL: total is below the required 8/10 threshold; revise and request a fresh independent grade.",
+    "Replace the near-uniform flat top/large simple slab with a roof silhouette supported by higher-resolution exterior imagery or plans; keep unsupported heights explicitly estimated.",
+    "Improve facade and entrance differentiation only where exterior source imagery can substantiate it. Seek a readable official/current hotel exterior image or elevation; current preserved image is only 80x80 and the rendered entrance is small and inferred.",
+    "The GIS footprint, identity crosswalk, and seven-level field provide strong horizontal/identity support. Do not alter the matched 53-point footprint without new source evidence."
+  ]
+}

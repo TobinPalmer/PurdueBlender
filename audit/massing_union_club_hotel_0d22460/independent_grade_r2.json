@@ -1,0 +1,145 @@
+{
+  "asset": "modular/buildings/massing_union_club_hotel_0d22460.blend",
+  "sha256": "716e12ab4a93c0fb20659ef54577bd3fd5d25e1d380a6a35a6e27a78b975f313",
+  "score": 8.1,
+  "max_score": 10,
+  "pass_threshold": 8.0,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": "Purdue GIS FID 663 identifies Purdue Memorial Union Club (PMUC); the official campus map and Purdue Events listing distinguish PMUC from the main PMU and identify the hotel at 201 N Grant Street. The fresh Blender reopen confirms all 53 transformed GIS ring vertices match the saved shell base within 0.000019 m. The GIS-backed identity and footprint are strong.",
+      "limitations": "The project lon/lat conversion is approximate, not a surveyed projection."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "mostly verified",
+      "evidence": "The full irregular GIS shell perimeter and orientation are retained at campus coordinates. The evaluated bounds differ from the source ring by roughly 0.6 m in width and 0.4 m in length, consistent with small trim/entry projections; the asset has no arbitrary global translation or scale change.",
+      "limitations": "Local conversion uncertainty remains, and the tower/portico position and dimensions are inferred from perspective photographs rather than measured plans."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "status": "partially verified",
+      "evidence": "Official GIS reports seven levels and height-related fields; if undocumented vertical units are feet, Extrution=72 is approximately 21.95 m, near the reopened model height of 21.75 m. The Circle Design Group and Marriott photographs directly show varied pitched slate gables, dormers, and a taller tower, and the current asset contains separate gable/cross-gable roof masses.",
+      "limitations": "GIS height units are not documented. No measured exterior elevation or roof plan was found. Ridge/eave elevations, pitch, roof plan and floor spacing remain estimates; renders still show broad simplified roof planes and estimated junctions."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.2,
+      "max_score": 2.0,
+      "status": "partially supported",
+      "evidence": "High-resolution Circle Design Group/White Lodging and Marriott exterior photographs directly identify the hotel and support a red-brick/pale-stone palette, repeated gables and a substantial covered entry. The asset now models a projecting pale tower, tall arched glazing, gabled porte-cochere, paired windows and story bands.",
+      "limitations": "The rendered facades remain regular and schematic relative to the photographs. Tower/entry proportions and precise position are not measured; facade bay rhythm and detail vary more in the references than in the model. The Board plan set contains floor plans but no exterior elevations."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "mostly verified",
+      "evidence": "Fresh Blender 4.5.15 LTS reopen confirms the expected stable collection with 28 objects/27 meshes, identity campus-coordinate collection convention, no materialless meshes, and no unpacked external image files. The asset has four inspection renders and a detailed source index with raw source snapshots; the current binary SHA-256 is recorded for this grade.",
+      "limitations": "Master integration, duplicate replacement, and coordinator-owned manifest refresh were not part of this asset grade."
+    }
+  ],
+  "evidence": {
+    "asset_path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_union_club_hotel_0d22460.blend",
+    "asset_sha256_at_grading": "716e12ab4a93c0fb20659ef54577bd3fd5d25e1d380a6a35a6e27a78b975f313",
+    "asset_size_bytes": 2047108,
+    "blender_reopen_report": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_union_club_hotel_0d22460\\reopen_validation.json",
+    "reopen_report_sha256": "7bbe9783e6fd33eff9c904fc0ebfdbe380f5669b5087aaa35ecbde452b34f669",
+    "reopen_report_saved_at_local": "2026-10-26T17:23:31.423465",
+    "asset_saved_at_local": "2026-10-26T17:23:29.392538",
+    "blender_version": "4.5.15 LTS",
+    "collection_found": "Asset_massing_union_club_hotel_0d22460",
+    "collection_object_count": 28,
+    "mesh_object_count": 27,
+    "gis_feature": {
+      "id": 663,
+      "name": "Purdue Memorial Union Club",
+      "abbreviation": "PMUC",
+      "levels": 7,
+      "extrution_attribute": 72,
+      "elevation": 617.8
+    },
+    "gis_ring_vertex_count": 53,
+    "max_gis_shell_match_error_m": 1.8577794912408235e-05,
+    "evaluated_bounds_m": [
+      [
+        235.5140380859375,
+        -284.97137451171875,
+        0.0
+      ],
+      [
+        278.71722412109375,
+        -163.16600036621094,
+        21.75
+      ]
+    ],
+    "evaluated_height_m": 21.75,
+    "materialless_meshes": [],
+    "unpacked_external_images": [],
+    "source_providers": [
+      "Circle Design Group",
+      "Marriott / The Union Club Hotel at Purdue University, Autograph Collection",
+      "Purdue Stories",
+      "Purdue University Board of Trustees",
+      "Purdue University Campus Map",
+      "Purdue University Events",
+      "Purdue University GIS",
+      "Purdue University News",
+      "Purdue for Life Foundation"
+    ],
+    "circle_design_group_source": {
+      "provider": "Circle Design Group",
+      "url": "https://circledesigngroup.com/project/union-club-hotel/",
+      "feature_id": "Purdue Union Club Hotel, Autograph Collection project; exterior photograph 1",
+      "source_crs": "Perspective photograph; camera position and lens calibration unavailable",
+      "source_date": "Project completion 2020; gallery page current at retrieval 2026-10-26",
+      "snapshot": "sources/circle_design_group_union_club_project.html; sources/circle_design_group_exterior.jpeg",
+      "image_url": "https://circledesigngroup.com/wp-content/uploads/2021/09/1-Building-exterior.jpeg",
+      "method": "Project page identifies Purdue University / White Lodging as client, HKS as architect, and credits the exterior photo to Union Club Hotel & White Lodging Services. The photograph directly supports a pale stone vertical entrance tower with a tall arched window, a large gabled covered entry, stepped slate roof planes, brick wings and paired windows.",
+      "uncertainty": "Perspective and absent scale prevent dimensional measurement. Used for form/material/relative arrangement only."
+    },
+    "marriott_photo_source": {
+      "provider": "Marriott / The Union Club Hotel at Purdue University, Autograph Collection",
+      "url": "https://www.marriott.com/en-us/hotels/indwk-the-union-club-hotel-at-purdue-university-autograph-collection/photos/",
+      "feature_id": "Official hotel gallery images: ak-indwk-exterior-26541 and ak-indwk-union-club-exterior-dusk-50236",
+      "source_crs": "Perspective photographs; camera positions and lens calibration unavailable",
+      "source_date": "Gallery current at retrieval 2026-10-26; capture dates not supplied",
+      "snapshot": "sources/official_marriott_hotel_photo_gallery.html; sources/marriott_exterior.jpg; sources/marriott_exterior_dusk.jpg",
+      "image_urls": [
+        "https://cache.marriott.com/is/image/marriotts7prod/ak-indwk-exterior-26541%3AWide-Hor?fit=constrain&wid=2000",
+        "https://cache.marriott.com/is/image/marriotts7prod/ak-indwk-union-club-exterior-dusk-50236%3AWide-Hor?fit=constrain&wid=2000"
+      ],
+      "method": "Current exterior photographs visually confirm the hotel identity via the entrance signage and support slate pitched roof planes, repeated projecting gables, red brick, pale stone trim, paired facade windows, and a substantial covered entry. No dimensions or camera pose were inferred.",
+      "uncertainty": "Perspective and unknown camera calibration prevent measurement of roof pitches, heights, bay spacing, or precise roof-plan geometry; these remain qualitative and estimated."
+    },
+    "read_only_visual_review": [
+      "renders/south_oblique.png",
+      "renders/east_oblique.png",
+      "renders/northwest_oblique.png",
+      "renders/top.png",
+      "sources/circle_design_group_exterior.jpeg",
+      "sources/marriott_exterior.jpg",
+      "sources/marriott_exterior_dusk.jpg"
+    ],
+    "assessment_basis": "The reopen report predates the current asset by about two seconds, and both report/source evidence describe the second iteration. This script did not write to the asset."
+  },
+  "findings": [
+    "Independent score: 8.1/10; passing threshold is 8/10.",
+    "The second iteration resolves the prior evidence gap for roof silhouette and facade identity by adding directly attributable Circle Design Group/White Lodging and Marriott photographs; those photographs support visual form, not measured dimensions.",
+    "The model remains a simplified architectural interpretation: facade rhythms and roof intersections are schematic, and vertical dimensions remain estimates because no elevation/roof schedule with documented units was found.",
+    "Coordinator should refresh the shared manifest/index and verify the master asset link and placement before integration acceptance."
+  ],
+  "limitations": [
+    "Height, floor spacing, roof pitch, roof plan and entry/tower dimensions are not verified by measured elevations or calibrated photos.",
+    "Facade and roof details are photo-supported qualitatively but remain schematic and estimated geometrically.",
+    "This is an asset-level evaluation; the current master scene and shared manifest were not opened or edited."
+  ]
+}
