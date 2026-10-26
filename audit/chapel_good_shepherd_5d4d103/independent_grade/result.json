@@ -1,0 +1,147 @@
+{
+  "score": 7.0,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "OSM way/869993661 is tagged name=Chapel of the Good Shepherd, building=church, denomination=episcopal, address 610 Meridian Street. Nominatim independently resolves that address/name to the same way. The saved mesh has 12 source perimeter vertices; its XY bounds match the OSM conversion envelope (6.598..40.582 m east, 770.129..787.807 m north). The footprint includes the notched outline rather than a fallback rectangle.",
+      "findings": []
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": "The object has identity transform and its mapped shell sits in campus coordinates; horizontal dimensions follow the OSM perimeter. The official accessibility page identifies the Meridian Street front entrance and the north-side accessible entrance. In the supplied OSM context, Meridian Street runs immediately south of the building (road latitude about 40.43420; footprint south edge 40.4343356). However, the candidate puts the main door/canopy on its east boundary (x\u224840.7 m) and places the front gable at the east end; the principal street-facing entrance is therefore on the wrong side. The north-side secondary door is placed on the north wall as stated, though its exact location is an estimate.",
+      "findings": [
+        "Move the main entrance and porch to the south/Meridian-facing elevation. Orient the principal gable so that its facade faces south; keep the accessible entrance on the north side."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": "The official exterior photograph and official site elevation drawing both support a prominent two-story central gabled sanctuary, a white bell stage/spire, and much lower attached wings. Numeric wall, eave, ridge, and spire heights are estimates; the photo/drawing provide no scale or measured vertical dimensions. In the saved preview, the sanctuary ridge/gable is oriented toward the east side instead of the south-facing front, and dark triangular roof gaps appear where lower wings join the taller volume. The candidate roof massing does not follow the official elevation's simple low side-wing silhouette cleanly.",
+      "findings": [
+        "Rebuild the roof junctions as closed, non-overlapping planes that match the official elevation: central two-story gable, low left/west wing, and long low right/east wing. Keep all heights explicitly labeled as estimates."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.75,
+      "max_score": 2,
+      "evidence": "The official, undated exterior photograph shows red brick, pale trim, red central door, tall white steeple with louvered bell stage, central gable vent, repeated tall windows on the long wing, and a circular window. Those broad visual cues appear in the candidate. The official site also includes a front elevation drawing (goodshep_about_image_5.jpg) with the central entrance under the gable, flanking windows, lower west wing, and a long windowed east wing. The candidate puts the door on the east end wall; its front/back composition and window arrangement differ from that elevation. Individual dimensions and exact window/door positions remain estimated.",
+      "findings": [
+        "Match the south-facing official elevation: put the red door under the central gable, flanking windows on that facade, lower west wing and the long windowed east wing. Update source_record.json to identify and preserve the official elevation drawing as an evidence image."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.75,
+      "max_score": 2,
+      "evidence": "The saved .blend reopens and contains scene Building_massing_chapel_of_the_good_shepherd_5d4d103, collection Asset_massing_chapel_of_the_good_shepherd_5d4d103, and one mesh object with 920 vertices/680 polygons. Its object transform is identity and there are no modifiers or external unpacked image dependencies. The source record preserves raw OSM/Nominatim/site snapshots and clearly labels vertical quantities as estimates. A rendered preview is included. The official site elevation drawing is present in the downloaded source snapshots but is absent from source_record.json's cited source list, so evidence indexing is incomplete.",
+      "findings": [
+        "Add the official site elevation drawing image and its page URL/source date limitations to source_record.json. Re-run Blender reopen validation after geometry changes."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_file": "modular/buildings/massing_chapel_of_the_good_shepherd_5d4d103.blend",
+    "scene": "Building_massing_chapel_of_the_good_shepherd_5d4d103",
+    "collection": "Asset_massing_chapel_of_the_good_shepherd_5d4d103",
+    "model_inspection": {
+      "object_name": "Chapel of the Good Shepherd",
+      "type": "MESH",
+      "vertices": 920,
+      "polygons": 680,
+      "modifiers": [],
+      "world_bounds_m": [
+        [
+          6.598265171051025,
+          43.5
+        ],
+        [
+          770.1290283203125,
+          787.8065795898438
+        ],
+        [
+          0.0,
+          18.64999771118164
+        ]
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "asset_collection_object_count": 1,
+      "external_unpacked_images": []
+    },
+    "footprint_osm_way": 869993661,
+    "footprint_node_count": 12,
+    "footprint_bounds_xy_m": [
+      [
+        6.598265004041236,
+        40.58187409312882
+      ],
+      [
+        770.129023999832,
+        787.8065920004883
+      ]
+    ],
+    "direct_source_inspection": [
+      {
+        "path": "audit/chapel_good_shepherd_5d4d103/sources/osm_way_869993661_2026-10-26.json",
+        "observation": "way tags explicitly name the chapel and address; version 2 was timestamped 2025-12-10T09:20:29Z; closed 12-node perimeter."
+      },
+      {
+        "path": "audit/chapel_good_shepherd_5d4d103/sources/osm_context_2026-10-26.osm",
+        "observation": "Meridian Street geometry lies south of the building outline; Ravinia Road is on the north side."
+      },
+      {
+        "path": "audit/chapel_good_shepherd_5d4d103/sources/goodshep_about_image_4.jpg",
+        "observation": "Official undated photograph confirms brick, centered south/front gable and door, white spire, lower side wings, tall long-wing windows and circular window."
+      },
+      {
+        "path": "audit/chapel_good_shepherd_5d4d103/sources/goodshep_about_image_5.jpg",
+        "observation": "Official site elevation sketch confirms front door under central gable, low west wing, and long low east wing; it is a valuable unindexed source snapshot."
+      },
+      {
+        "path": "audit/chapel_good_shepherd_5d4d103/chapel_good_shepherd_preview.png",
+        "observation": "Candidate's main door/gable faces east; dark triangular gaps are visible at lower-wing/sanctuary roof junctions."
+      },
+      {
+        "path": "audit/chapel_good_shepherd_5d4d103/reopen_validation.json",
+        "observation": "Prior reopen validation reports saved asset reopens, identity coordinate frame and expected collection; this evaluator independently opened the file and inspected the scene/object."
+      }
+    ],
+    "source_supported_facts": [
+      "building identity/name/address and footprint polygon from OSM/Nominatim",
+      "Meridian street frontage south and accessible entry on north from official site/context",
+      "broad material/color, gable, spire, wing and window composition from official site photo/elevation"
+    ],
+    "estimates_not_measurements": [
+      "wall/eave/ridge/spire heights",
+      "roof pitch",
+      "window and entrance dimensions/spacing",
+      "precise secondary entrance location"
+    ]
+  },
+  "findings": [
+    "FAIL: main facade/entrance is placed on the east edge although official sources place the principal entry on the south, Meridian-facing side.",
+    "Roof planes have dark triangular openings at the sanctuary/lower-wing junctions and differ from the official elevation silhouette.",
+    "The downloaded official elevation sketch is not indexed in the source record.",
+    "Score is below 8/10; the revised asset needs a fresh independent review after these changes."
+  ]
+}

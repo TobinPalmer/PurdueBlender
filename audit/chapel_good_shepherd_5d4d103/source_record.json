@@ -1,0 +1,107 @@
+{
+  "asset_id": "massing_chapel_of_the_good_shepherd_5d4d103",
+  "building_name": "Chapel of the Good Shepherd",
+  "assigned_owner": "Rossen",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "role": "building identity and address",
+      "provider": "OpenStreetMap Nominatim",
+      "url": "https://nominatim.openstreetmap.org/search?q=610+Meridian+St%2C+West+Lafayette%2C+IN&format=jsonv2&polygon_geojson=1&addressdetails=1",
+      "raw_snapshot": "sources/nominatim_610_meridian_2026-10-26.json",
+      "feature_id": "way/869993661",
+      "retrieved_date": "2026-10-26",
+      "source_date": "OpenStreetMap current snapshot; feature version timestamp is preserved in the way response",
+      "crs": "WGS 84 (EPSG:4326)",
+      "measurement_method": "Address geocoding and OSM feature match; the returned named place_of_worship polygon is matched by the Chapel of the Good Shepherd name and 610 Meridian Street address.",
+      "uncertainty": "Community-maintained map data; not a surveyed building plan."
+    },
+    {
+      "role": "mapped building footprint and tags",
+      "provider": "OpenStreetMap API",
+      "url": "https://api.openstreetmap.org/api/0.6/way/869993661/full.json",
+      "raw_snapshot": "sources/osm_way_869993661_2026-10-26.json",
+      "feature_id": "way/869993661",
+      "retrieved_date": "2026-10-26",
+      "source_date": "OSM element metadata retained in raw response",
+      "crs": "WGS 84 (EPSG:4326)",
+      "measurement_method": "Use the closed OSM way boundary, converted to project campus coordinates with X=(longitude+86.9137)*111412.84*cos(40.4274 degrees), Y=(latitude-40.4274)*111040. The 12 perimeter vertices are retained directly; the resulting plan envelope is about 34.0 m east-west by 17.7 m north-south.",
+      "uncertainty": "OSM polygon is community-mapped and is not identified as a wall survey; facade, roof overhang, and entrance steps can extend beyond this footprint."
+    },
+    {
+      "role": "current building exterior and architectural character",
+      "provider": "Chapel of the Good Shepherd official website",
+      "url": "https://www.goodshep.org/about",
+      "image_url": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72s-SGV_DmOBNFJYd5G3gfh8ce7xMBC9YQvPPu2ByumQ3duBagw8wMPOMFpK2tsR4cUZUOHhL-1bE19tc6_qqUohRnqzTdHrEgQEqJ1Frb6HNlkNIdRWmZgPI5QwQ9-8cjETpZjDj469h7pkxcs5arRpvHT0Yl4QLyYWkJMjwk75apOCN0OSi_O3ctHd4UANpHTVbpAebbYzZz4A8YY=w1280",
+      "raw_snapshot": "sources/goodshep_about_2026-10-26.html",
+      "image_snapshot": "sources/goodshep_about_image_4.jpg",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Not stated on the page",
+      "crs": "Not applicable to photograph",
+      "measurement_method": "Visual interpretation of the official exterior photograph, with south frontage cross-checked against the official accessibility page and mapped Meridian Street orientation. The page history identifies the current building as a former Church of Christ Scientist building acquired in 2005.",
+      "supported_observations": [
+        "Red brick walls with pale painted trim.",
+        "An south-facing main gable and projecting entrance canopy, with a red entry door.",
+        "A tall, white steeple and louvered bell stage above the central roof.",
+        "Lower attached wings and a long side facade with repeated tall windows.",
+        "The principal gabled entrance faces south toward Meridian Street, consistent with the official accessibility page and surrounding street layout."
+      ],
+      "uncertainty": "The photograph has no capture date or measured scale. Detailed window dimensions, wall heights, roof pitch, steeple dimensions, and exact wing-to-roof transitions are estimates, not measured facts."
+    },
+    {
+      "role": "entrance side and secondary accessible entry",
+      "provider": "Chapel of the Good Shepherd official website",
+      "url": "https://www.goodshep.org/about/accessibility",
+      "raw_snapshot": "sources/goodshep_accessibility_2026-10-26.html",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Not stated on the page",
+      "crs": "Not applicable",
+      "measurement_method": "The official page identifies the Meridian Street front entrance and states the accessible entrance is on the north side of the building at Ravinia Street. The primary gabled entry is placed on the south (Meridian-facing) facade.",
+      "uncertainty": "The page gives no dimensioned plan or precise door location along the north wall; the secondary entrance placement is approximate."
+    },
+    {
+      "role": "street orientation around the mapped footprint",
+      "provider": "OpenStreetMap API",
+      "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-86.9148,40.4328,-86.9120,40.4360",
+      "raw_snapshot": "sources/osm_context_2026-10-26.osm",
+      "feature_id": "Meridian Street, Ravinia Road, and nearby ways in the returned map extent",
+      "retrieved_date": "2026-10-26",
+      "source_date": "OSM current snapshot; individual element metadata is retained in the raw response",
+      "crs": "WGS 84 (EPSG:4326)",
+      "measurement_method": "Compared the named street lines with the Chapel footprint coordinates; Meridian Street is south of the footprint and Ravinia Road is north, orienting the main entrance south and accessible entrance north.",
+      "uncertainty": "Community-mapped road geometry is approximate; only cardinal-side relationships are used."
+    },
+    {
+      "role": "front elevation and wing window rhythm",
+      "provider": "Chapel of the Good Shepherd official website",
+      "url": "https://www.goodshep.org/about",
+      "image_url": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72sVVhwY0XyOoS9su18xAoo9j_rHQd_SHK_jqKoexmR-bYPpB_HO81ZtdEP2y6iABGtxCIVkK25U8B1Im2uZCU7376xtvrlNCnlvdFvJ6C2vk28Gfn7IDuhTo7oFuYJX8u3eXu03lnocwnYzPvqxIkeSEyD36uNnTjUs6kmyhMuD_VWVrFVy3pYXyBF9FwuAQAh8jwh9DNgJY-4k__w=w1280",
+      "raw_snapshot": "sources/goodshep_about_2026-10-26.html",
+      "image_snapshot": "sources/goodshep_about_image_5.jpg",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Not stated on the page",
+      "crs": "Not applicable to elevation drawing",
+      "measurement_method": "Visual interpretation of the undated official elevation image; it supports a central south-facing gable, lower west wing, long east wing, and repeated tall windows. No measured dimensions are inferred from the drawing.",
+      "supported_observations": [
+        "Central gabled front with centered entry.",
+        "Lower attached wing west of the entrance when viewed from Meridian Street.",
+        "Long lower east wing with a repeated row of tall front windows."
+      ],
+      "uncertainty": "The elevation image is undated and has no scale. Geometry dimensions and roof transitions remain estimates."
+    }
+  ],
+  "model_notes": {
+    "coordinate_frame": "Campus coordinates in meters, X east, Y north, Z up, origin latitude 40.4274 longitude -86.9137.",
+    "placement": "Massing asset stays in campus coordinates as specified by the manifest; the source outline envelope matches the prior asset XY bounds within the conversion precision.",
+    "geometry_changes": [
+      "Replaced the single 34 m by 18 m by 16 m fallback block with a mapped perimeter shell and attached lower wings.",
+      "Added a photo-based central sanctuary with a south-facing Meridian entrance, lower west and east wings, porch, windows, north accessible door, louvered bell stage, and steeple.",
+      "Added decorative entrance steps extending south beyond the mapped structural-wall outline."
+    ],
+    "unverified": [
+      "Story count and all vertical dimensions.",
+      "Exact roof pitch, window spacing, facade material color, and steeple height.",
+      "Exact location of the north-side accessible entrance beyond the source's side identification."
+    ]
+  }
+}

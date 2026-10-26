@@ -1,0 +1,118 @@
+{
+  "score": 8.25,
+  "max_score": 10,
+  "status": "pass",
+  "reviewer": "independent_grade_r2",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "OSM way/869993661 is named and addressed as the chapel; Nominatim resolves the same address to that feature. Direct reopen measured the zero-Z shell envelope at X 6.598..40.582 m and Y 770.129..787.807 m, matching the converted source polygon bounds; the notched campus-coordinate perimeter is retained."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2,
+      "evidence": "Object world matrix is identity and structural footprint lies in campus meters. The main gabled facade and centered entrance face south toward Meridian Street, while the secondary accessible entrance remains on the north side. The south-elevation and southeast renders confirm the left/west low wing and long right/east wing arrangement. XY geometry follows the mapped outline. Geographic and source-survey precision are limited by OSM mapping uncertainty."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": "The official photograph and elevation support a tall central gable with bell stage/spire and lower attached wings. The reopened renders show closed, continuous roof silhouettes without the prior dark triangular openings. Overall Z reaches 18.65 m, but no source gives measured heights or roof pitch; these remain estimates. Roof planes intersect at wing junctions and show seams in top view."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": "The saved model shows brick color, pale trim, centered red entrance on the south gable, flanking windows, gable vent, louvered bell stage, white steeple, and repeated windows on the long east wing, matching broad official photo/elevation cues. The official front elevation shows paired upper and lower window groups around the central entry; the model simplifies this to one flanking window on each side. Detailed dimensions and spacing are not documented."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Blender 4.5.15 reopened the saved asset directly. It contains the expected scene and collection with one mesh, identity transform, no modifiers, and no unpacked external images. Source record indexes the official elevation image and URL, raw OSM/Nominatim/site snapshots, provider, CRS, retrieval/source date limits, methods, and uncertainty; a preview and independent reopen views are retained."
+    }
+  ],
+  "evidence": {
+    "asset_file": "modular/buildings/massing_chapel_of_the_good_shepherd_5d4d103.blend",
+    "reopen_record": "audit/chapel_good_shepherd_5d4d103/independent_grade_r2/reopen_inspection.json",
+    "rendered_views": [
+      "audit/chapel_good_shepherd_5d4d103/independent_grade_r2/south_elevation.png",
+      "audit/chapel_good_shepherd_5d4d103/independent_grade_r2/southeast.png",
+      "audit/chapel_good_shepherd_5d4d103/independent_grade_r2/top.png"
+    ],
+    "source_record": "audit/chapel_good_shepherd_5d4d103/source_record.json",
+    "directly_reviewed_sources": [
+      "audit/chapel_good_shepherd_5d4d103/sources/osm_way_869993661_2026-10-26.json",
+      "audit/chapel_good_shepherd_5d4d103/sources/osm_context_2026-10-26.osm",
+      "audit/chapel_good_shepherd_5d4d103/sources/goodshep_about_image_4.jpg",
+      "audit/chapel_good_shepherd_5d4d103/sources/goodshep_about_image_5.jpg"
+    ],
+    "reopen_model_facts": {
+      "scene": "Building_massing_chapel_of_the_good_shepherd_5d4d103",
+      "collection": "Asset_massing_chapel_of_the_good_shepherd_5d4d103",
+      "object_name": "Chapel of the Good Shepherd",
+      "vertices": 807,
+      "polygons": 600,
+      "modifiers": [],
+      "world_bounds_m": [
+        [
+          6.598265171051025,
+          40.58187484741211
+        ],
+        [
+          767.3300170898438,
+          787.8065795898438
+        ],
+        [
+          0.0,
+          18.64999771118164
+        ]
+      ],
+      "zero_z_xy_bounds_m": [
+        [
+          6.598265171051025,
+          40.58187484741211
+        ],
+        [
+          770.1290283203125,
+          787.8065795898438
+        ]
+      ],
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "unpacked_images": [],
+      "boundary_edges": 24,
+      "edges_with_more_than_two_faces": 4
+    }
+  },
+  "findings": [
+    "Passes the 8/10 minimum. Remaining accuracy limitations: height and roof pitch are photo-based estimates; the central front elevation omits the upper pair of flanking windows shown in the official sketch; roof joins retain intersecting seams, though no open gaps are apparent in the reviewed views."
+  ]
+}
