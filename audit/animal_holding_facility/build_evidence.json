@@ -17,7 +17,7 @@
     "roof_thickness_m": 0.12,
     "status": "North roof held at its normalized-height median; south addition uses a reproducible low-slope plane fitted to 2018 NDHM spatial-bin medians. Both are representative roof-surface estimates, not surveyed eaves."
   },
-  "facade": "Neutral unfenestrated envelope; the official Purdue Historic Facilities AHF record has no attached image and no AHF-specific public elevation, plan, or identifiable street-level exterior was found in the documented search. Facade and entrances remain unverified.",
+  "facade": "Neutral unfenestrated envelope; the official Purdue Historic Facilities AHF record has no attached image and no AHF-specific public elevation, plan, or identifiable street-level exterior was found in the documented search. Facade and entrances remain unverified. A follow-up indexed public-web search on 2026-10-26 included Purdue ECN webcam archives, the public ePlanroom landing page, and State Budget Committee Phase III minutes; these corroborate site/project context but provide no identifiable AHF facade or elevation, so no facade detail was inferred.",
   "roof": "The 2023 orthophoto identifies light north/main and darker south roof zones. A 2018 NDHM fit across four spatial bin sizes shows no stable north/main slope, so it remains at its 4.036 m median; the south zone has a stable approximately -4.0% Y trend and is modeled as a low-slope plane. This is a normalized surface trend, not a surveyed roof profile; eaves and framing remain unresolved.",
   "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png",
   "owner": "Rossen",
@@ -115,6 +115,28 @@
       "source_date": "AHF history record; current phase 2001-present, reported area 24,687 sq ft",
       "measurement_method": "Identity/history cross-check; record phases have empty images arrays and image_url is null. Reported current-phase area converts to about 2,293.50 m², 0.59% above the Purdue GIS polygon area of 2,280.05 m².",
       "uncertainty": "Area conventions are unspecified and this is only a plausibility cross-check. The public record's lack of attached images does not establish that no uncatalogued or restricted facade evidence exists."
+    },
+    {
+      "provider": "Purdue University Engineering Computer Network, Engineering Webcams",
+      "url": "https://engineering.purdue.edu/ECN/WebCam/cam65/grid",
+      "feature_id": "Purdue Large Animal Hospital camera from Wade Power Plant roof",
+      "snapshot": "audit/animal_holding_facility/sources/ahf_additional_source_search_2026-10-26.json",
+      "retrieved": "2026-10-26",
+      "source_date": "Example image URL encodes 2022-10-10 08:10",
+      "source_crs": "Unspecified camera view",
+      "measurement_method": "Indexed page description and image URL checked for an AHF-specific view.",
+      "uncertainty": "The camera page describes a view of the Large Animal Hospital complex, not an AHF-identified facade; not used for facade or elevation geometry."
+    },
+    {
+      "provider": "Indiana State Budget Agency, State Budget Committee meeting minutes",
+      "url": "https://www.in.gov/sba/files/bc_minutes_june_2000.pdf",
+      "feature_id": "Purdue Animal Holding Facility Phase III cost increase",
+      "snapshot": "audit/animal_holding_facility/sources/ahf_additional_source_search_2026-10-26.json",
+      "retrieved": "2026-10-26",
+      "source_date": "June 2000",
+      "source_crs": "Not applicable",
+      "measurement_method": "Indexed budget record reviewed for project description.",
+      "uncertainty": "Confirms addition/renovation context only; no plan, facade, or elevation data."
     }
   ],
   "identity_and_placement": {
@@ -237,5 +259,6 @@
     }
   },
   "roof_zone_preview": "audit/animal_holding_facility/roof_zones_topdown.png",
-  "facade_evidence_search": "Public Purdue Libraries historic building record has image_url=null; Purdue Archives public search showed an AHF corporate-name record but no indexed AHF-identified exterior image, elevation, or plan. This is not proof that no restricted or uncatalogued material exists. Facade and entrance remain unknown."
+  "facade_evidence_search": "Public Purdue Libraries historic building record has image_url=null; Purdue Archives public search showed an AHF corporate-name record but no indexed AHF-identified exterior image, elevation, or plan. This is not proof that no restricted or uncatalogued material exists. Facade and entrance remain unknown.",
+  "additional_facade_search": "audit/animal_holding_facility/sources/ahf_additional_source_search_2026-10-26.json"
 }
