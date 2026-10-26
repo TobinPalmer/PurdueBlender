@@ -1,0 +1,144 @@
+{
+  "asset_id": "massing_islamic_societyof_greater_lafayette_0130012",
+  "assignment": "Rossen",
+  "asset_path": "modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend",
+  "builder_path": "modular/buildings/build_massing_islamic_societyof_greater_lafayette_0130012.py",
+  "scene": "Building_massing_islamic_societyof_greater_lafayette_0130012",
+  "collection": "Asset_massing_islamic_societyof_greater_lafayette_0130012",
+  "identity": {
+    "manifest_source_object": "Islamic Societyof Greater Lafayette",
+    "official_name": "Islamic Society of Greater Lafayette (ISGL)",
+    "official_location": "1022 1st St., at Russell St. and 1st St., West Lafayette, Indiana",
+    "matched_gis_feature": "Purdue BuildingShapesZip4 FID 771 / BLDG_ABBR SOMSA / Muslim Student Association / 1021 FIRST ST.",
+    "confidence": "Strong physical-site match, with a formal crosswalk still unverified. The labeled ISGL exterior photo, official 1022 1st St. address, First/Russell corner location, and Purdue Engineering 2022 event page (ISGL venue at 1022 First St., hosted with the Muslim Student Association) connect the site and organizations. Tippecanoe County judgments list North American Islamic Trust Inc. ISGL at 1022 First St. Purdue GIS FID 771 remains labeled Muslim Student Association / 1021 First St.; no parcel/name crosswalk was found.",
+    "additional_corroboration": [
+      "Purdue Engineering Global Engineering Programs 2022 Ramadan event page identifies the event location as Islamic Society of Greater Lafayette, 1022 1st Street, and describes Purdue-hosted participation with the Muslim Student Association; raw snapshot is listed in source_catalog.json.",
+      "Tippecanoe County 2010–2024 judgments workbook lists NORTH AMERICAN ISLAMIC TRUST INC ISGL at 1022 FIRST ST.; this supports the location/organization link but is not a GIS parcel crosswalk."
+    ]
+  },
+  "source_catalog": "audit/massing_islamic_societyof_greater_lafayette_0130012/sources/source_catalog.json",
+  "retrieved_utc": "2026-10-26",
+  "coordinate_frame": {
+    "type": "Campus coordinates retained directly; simple massing asset with identity placement transform.",
+    "axes_units": "meters; X east, Y north, Z up",
+    "origin": "latitude 40.4274, longitude -86.9137",
+    "conversion": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0; local approximate conversion, not a surveyed CRS."
+  },
+  "before": {
+    "bounds_world_m": [
+      [
+        -442.2024841308594,
+        -419.0152587890625
+      ],
+      [
+        -225.4001007080078,
+        -203.48080444335938
+      ],
+      [
+        0.0,
+        7.599999904632568
+      ]
+    ],
+    "mesh_vertices": 20,
+    "mesh_faces": 26,
+    "assessment": "Legacy simple extrusion; footprint and 7.6m fallback height unverified. Blender 4.5.15 direct reopen found external relative brick texture image paths, which have been removed in the rebuilt portable library."
+  },
+  "after": {
+    "expected_collection_object_count": 1,
+    "mesh_vertices": 982,
+    "mesh_faces": 747,
+    "world_bounds_m": [
+      [
+        -441.9336853027344,
+        -419.0837707519531
+      ],
+      [
+        -225.12615966796875,
+        -201.3453369140625
+      ],
+      [
+        0.0,
+        8.149999618530273
+      ]
+    ],
+    "structural_wall_footprint": "Purdue GIS FID 771 SOMSA polygon ring, transformed to campus coordinates and used directly for shell base; area 463.27 m2, bounds X -441.816 to -419.202 m, Y -225.008 to -203.251 m.",
+    "roof_eaves": "Estimated 0.20 m rectangular-wing overhang beyond the GIS shell; exact roof eave lines are unverified.",
+    "wall_and_roof_heights": "Estimated wall/eave 6.05 m; estimated west-wing ridge 7.50 m and east-wing ridge 8.15 m. Exterior photo supports two facade bands and aerial supports a multi-plane roof silhouette, but GIS reports one level and Extrution=12 with unknown units. Exact story count and all vertical dimensions remain unverified.",
+    "facade": "Red-brown brick, two interpreted window bands, pale limestone stringcourses and entry surround, a small pale domed entrance canopy, and sign plaque. Broad traits are visible in the Visit Lafayette / Home of Purdue exterior photo; bay layout, entrance compass side, roof rise, and dimensions are estimates.",
+    "portability": "All materials are native; no linked libraries or external images. Temporary render camera objects are removed before saving.",
+    "roof_form": "Two intersecting estimated four-plane hip roofs aligned to the broad west and east GIS footprint wings, replacing the r1 single-center-apex roof after review of the Indiana 2022–2025 orthophoto. West ridge 7.50 m and east ridge 8.15 m; all elevations and overhangs remain estimates.",
+    "area_source_conflict": "Purdue GIS Shape__Area=800.7890625 conflicts with the 463.267 m2 shoelace area computed from its 11-vertex returned ring in the repository local approximation. The ring was not scaled to the field; no authoritative explanation of the field semantics was found."
+  },
+  "placement_and_plan": {
+    "source": "Purdue University BuildingShapesZip4 feature FID 771, abbreviation SOMSA; official ISGL contact address and current Indiana orthophoto supplement identity/site match.",
+    "method": "Transform source EPSG:4326 ring using modular/AGENTS.md local approximation; preserve simple massing asset's campus world coordinates with no additional transform.",
+    "footprint_metrics": {
+      "ring_vertex_count_excluding_closure": 11,
+      "transformed_polygon_area_m2": 463.267246555,
+      "bounds_xy_m": [
+        -441.815910781,
+        -225.008447849,
+        -419.202008743,
+        -203.250928012
+      ]
+    },
+    "visual_check": "Georeferenced service crop places the building at the First/Russell corner; the published labeled ISGL photo supports brick facade and entry canopy. Aerial is visual context, not a surveyed wall/roof-line measurement.",
+    "residual_uncertainty": "GIS name/address (MSA, 1021 First Street) differs from ISGL current address (1022 1st Street). Purdue event and county records provide additional organization/location corroboration but no parcel crosswalk. GIS Shape__Area conflicts with the transformed ring area and is not used for scaling. Roof eaves and entrance canopy extend beyond the GIS wall shell by estimated amounts; OSM footprint was not obtained."
+  },
+  "vertical_geometry": {
+    "gis_attributes": {
+      "NUM_LEVELS": 1,
+      "CountOfFLO": 1,
+      "Extrution": 12,
+      "unit_status": "Not documented by layer metadata."
+    },
+    "modeled_visible_floors": 2,
+    "modeled_floor_status": "Inferred from two visible horizontal window/facade bands in exterior photograph; conflicts with GIS one-level attributes and is not a confirmed occupancy floor count.",
+    "eave_height_m": 6.05,
+    "roof_peak_height_m": 8.15,
+    "height_status": "Estimated from exterior photo, aerial roof silhouette, and legacy asset height only; not measured."
+  },
+  "edits": [
+    "Replaced the 20-vertex legacy one-material fallback extrusion with a shell using transformed official Purdue GIS FID 771 polygon geometry.",
+    "Added an estimated hipped roof and modest overhang responding to the visible aerial roof plan.",
+    "Added photo-backed brick, two interpreted window bands, limestone entry surround/stringcourses, sign plaque, and a small domed entry canopy. Did not add a large mosque dome or minaret because none is visible in the matched source evidence.",
+    "Replaced external texture-file references with native portable materials; kept expected scene, collection and campus coordinates.",
+    "R2: Replaced the single-center-apex roof fan with two intersecting estimated hip-roof volumes (west and east wings) responding to multiple planes/ridge breaks visible in the current Indiana orthophoto; retained estimated 6.05 m eaves with 7.50 m west and 8.15 m east ridges.",
+    "R2 evidence update: added Purdue Engineering event and Tippecanoe County judgment corroboration for the ISGL/MSA site relationship, while retaining the unresolved GIS naming/address discrepancy and area-field conflict."
+  ],
+  "validation": {
+    "status": "Passed fresh direct reopen in Blender 4.5.15 LTS after r2 roof rebuild. Expected scene and collection reopened with one mesh object (982 vertices, 747 faces), no modifiers, unpacked external images, or linked libraries. All three regenerated renders exist. Transformed FID 771 shell ring vertices match bottom shell mesh vertices within 0.00001437 m maximum nearest-vertex error.",
+    "renders": [
+      "audit/massing_islamic_societyof_greater_lafayette_0130012/renders/isgl_exterior_approach.png",
+      "audit/massing_islamic_societyof_greater_lafayette_0130012/renders/isgl_front_elevation.png",
+      "audit/massing_islamic_societyof_greater_lafayette_0130012/renders/isgl_roof_plan.png"
+    ],
+    "unresolved": [
+      "Purdue GIS FID 771 remains labeled Muslim Student Association / 1021 First Street, while ISGL currently lists 1022 1st Street. Purdue Engineering event and county judgment records corroborate the site/organization relationship, but a formal GIS parcel/name/address crosswalk remains unavailable.",
+      "GIS reports one level; the exterior image shows two facade bands. Exact occupancy floor count, wall/eave height, and west/east ridge heights remain estimates or uncertain.",
+      "The labeled facade photograph has no georeferenced camera direction; entrance compass side and other unseen facades remain inferred.",
+      "The GIS Shape__Area field (800.789 m2) conflicts with the 463.267 m2 transformed ring area; its calculation/provenance remains unknown, and ring geometry is used without scaling.",
+      "No OSM footprint or elevation drawing was obtained; eaves/overhang and canopy extents are estimated beyond the GIS wall shell."
+    ],
+    "direct_reopen_result": "audit/massing_islamic_societyof_greater_lafayette_0130012/review/reopen_validation.json",
+    "direct_reopen_max_shell_error_m": 1.4369728203514821e-05
+  },
+  "iteration_history": [
+    {
+      "iteration": "r1",
+      "independent_grade": "7.2/10",
+      "result": "Did not pass. Findings included unresolved physical identity corroboration, Shape__Area/ring-area conflict, insufficient roof-plane match, and unverified facade orientation.",
+      "record": "audit/massing_islamic_societyof_greater_lafayette_0130012/independent_grade/r1/result.json"
+    },
+    {
+      "iteration": "r2",
+      "changes": [
+        "Added identity corroboration from Purdue Engineering 2022 event page and Tippecanoe County judgments workbook; retained qualification because there is no formal GIS parcel crosswalk.",
+        "Kept the source ring at its transformed coordinates and documented the Shape__Area conflict rather than rescaling the shell.",
+        "Rebuilt the roof as separate estimated west/east four-plane hip volumes to better represent orthophoto-visible plane/ridge breaks."
+      ],
+      "validation": "Fresh direct Blender 4.5.15 reopen passed; see review/reopen_validation.json.",
+      "independent_grade": "Pending fresh independent review."
+    }
+  ]
+}

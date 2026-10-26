@@ -1,0 +1,226 @@
+{
+  "score": 8.0,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "The official ISGL page and labeled Visit Lafayette photograph identify the society and 1022 1st St. location. Purdue Engineering’s 2022 event page connects the same venue with Muslim Student Association activity; the county judgments list North American Islamic Trust Inc. ISGL at 1022 First. Purdue GIS FID 771 / SOMSA geometry lands at this First/Russell site and its ring is directly used for the base shell. The GIS record still says Muslim Student Association / 1021 FIRST ST., without a parcel crosswalk; Shape__Area=800.789 m² also conflicts with transformed ring shoelace area 463.267 m². This is a strong physical-site match, not a fully resolved official feature crosswalk."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Fresh independent Blender reopen confirms all 11 GIS shell ring vertices within 0.00001437 m using the documented campus conversion. Model bounds are X -441.934..-419.084, Y -225.126..-201.345 m; plan dimensions are approximately 22.85 x 23.78 m. The orthophoto corroborates site orientation and multi-wing roof plan. The repository conversion is approximate rather than survey control; no independent wall survey resolves the Shape__Area conflict."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": "The 2022–2025 Indiana orthophoto directly supports a complex intersecting, multi-plane roof silhouette, and r2 replaced the former single-apex roof with west/east roof volumes that better reflect visible plane breaks. The rendered roof remains a simplified, estimated interpretation; roof elevations and pitches are not measurable from this overhead image. Height is 8.15 m, eaves 6.05 m, and ridge heights 7.50/8.15 m by estimate. GIS attributes NUM_LEVELS=1 and CountOfFLO=1 conflict with the two visible facade/window bands in the photo. No measured height or verified occupancy floor count was found."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "The published labeled photo visibly supports red-brown brick, upper and ground-level window bands, pale entrance surround, signage, and a small domed entrance canopy; the model contains these features and avoids an unsupported large mosque dome/minaret. Bay spacing, unseen facades, and entrance compass side remain extrapolated from one oblique, ungeoreferenced image."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Fresh Blender 4.5.15 LTS reopen confirms the expected scene and collection, one named mesh (982 vertices, 747 faces), zero modifiers, no external images, and no linked libraries. Independent shell check passes at 0.00001437 m maximum nearest-vertex error. Three renders exist; raw GIS/metadata, official organization pages, labeled exterior photo, orthophoto snapshot/metadata, event page, county PDF, source catalog, and evidence record are present. Minor deduction: manifest bounds and accuracy_status remain stale legacy values, although stable ID/file/collection/scene are correct and this grading task cannot edit shared indexes."
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend",
+    "asset_exists": true,
+    "manifest_entry": {
+      "id": "massing_islamic_societyof_greater_lafayette_0130012",
+      "kind": "massing",
+      "file": "buildings/massing_islamic_societyof_greater_lafayette_0130012.blend",
+      "collection": "Asset_massing_islamic_societyof_greater_lafayette_0130012",
+      "scene": "Building_massing_islamic_societyof_greater_lafayette_0130012",
+      "objects": [
+        "Islamic Societyof Greater Lafayette"
+      ],
+      "object_count": 1,
+      "bounds_world_m": [
+        [
+          -442.2024841308594,
+          -419.0152587890625
+        ],
+        [
+          -225.4001007080078,
+          -203.48080444335938
+        ],
+        [
+          0.0,
+          7.599999904632568
+        ]
+      ],
+      "exterior_bounds_world_m": [
+        [
+          -442.2024841308594,
+          -419.0152587890625
+        ],
+        [
+          -225.4001007080078,
+          -203.48080444335938
+        ],
+        [
+          0.0,
+          7.599999904632568
+        ]
+      ],
+      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "placement_transform": "identity; object coordinates retained in campus world space",
+      "source_bounds_world_m": [
+        [
+          -442.2024841308594,
+          -419.0152587890625
+        ],
+        [
+          -225.4001007080078,
+          -203.48080444335938
+        ],
+        [
+          0.0,
+          7.599999904632568
+        ]
+      ]
+    },
+    "source_identity_fields": {
+      "FID": 771,
+      "BLDG_ABBR": "SOMSA",
+      "BUILDING_N": "Muslim Student Association",
+      "ADDRESS": "1021 FIRST ST.",
+      "NUM_LEVELS": 1,
+      "CountOfFLO": 1,
+      "Extrution": 12,
+      "Shape__Area": 800.7890625
+    },
+    "direct_reopen": {
+      "validation": "passed",
+      "opened_asset": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_islamic_societyof_greater_lafayette_0130012.blend",
+      "blender_version": "4.5.15 LTS",
+      "scene": "Building_massing_islamic_societyof_greater_lafayette_0130012",
+      "collection": "Asset_massing_islamic_societyof_greater_lafayette_0130012",
+      "objects": [
+        {
+          "name": "Islamic Society of Greater Lafayette",
+          "type": "MESH",
+          "dimensions": [
+            22.84991455078125,
+            23.78082275390625,
+            8.149999618530273
+          ],
+          "modifiers": []
+        }
+      ],
+      "mesh_vertices": 982,
+      "mesh_faces": 747,
+      "bounds_world_m": [
+        [
+          -441.9336853027344,
+          -419.0837707519531
+        ],
+        [
+          -225.12615966796875,
+          -201.3453369140625
+        ],
+        [
+          0.0,
+          8.149999618530273
+        ]
+      ],
+      "gis_feature": {
+        "fid": 771,
+        "abbr": "SOMSA",
+        "ring_vertices": 11
+      },
+      "gis_shell_vertex_nearest_error_m": {
+        "per_vertex": [
+          6.282534071930921e-06,
+          8.277328127609e-06,
+          8.691759201218946e-06,
+          3.169644915028296e-06,
+          1.0026024801489914e-05,
+          1.3910316629963102e-05,
+          1.4369728203514821e-05,
+          1.338841670307947e-05,
+          5.56635199746326e-06,
+          7.528242527994302e-06,
+          9.456869370824986e-06
+        ],
+        "maximum": 1.4369728203514821e-05
+      },
+      "unpacked_external_images": [],
+      "linked_libraries": [],
+      "checks": {
+        "expected_scene": true,
+        "expected_collection": true,
+        "exactly_one_object": true,
+        "single_expected_mesh_object": true,
+        "gis_shell_vertices_within_0_00002m": true,
+        "no_modifiers": true,
+        "no_external_images": true,
+        "no_linked_libraries": true,
+        "mesh_faces_present": true
+      }
+    },
+    "evidence_record_path": "audit/massing_islamic_societyof_greater_lafayette_0130012/evidence_record.json",
+    "source_catalog_count": 7,
+    "render_files": {
+      "isgl_exterior_approach.png": {
+        "exists": true,
+        "bytes": 1134333
+      },
+      "isgl_front_elevation.png": {
+        "exists": true,
+        "bytes": 1084185
+      },
+      "isgl_roof_plan.png": {
+        "exists": true,
+        "bytes": 1057339
+      }
+    },
+    "independent_visual_inspection": [
+      "renders/isgl_exterior_approach.png",
+      "renders/isgl_front_elevation.png",
+      "renders/isgl_roof_plan.png",
+      "sources/indiana_current_imagery_isgl.jpg",
+      "sources/isgl_exterior_homeofpurdue.jpg"
+    ]
+  },
+  "findings": [
+    {
+      "severity": "moderate",
+      "finding": "Purdue GIS FID 771 is labelled Muslim Student Association / 1021 FIRST ST., while official ISGL records say 1022 1st St.; additional event and county records corroborate the organizations/site but no formal parcel crosswalk was found.",
+      "action": "Retain this as a strong physical-site match with explicit crosswalk uncertainty; accept a parcel or address-history source if one is found."
+    },
+    {
+      "severity": "moderate",
+      "finding": "ArcGIS Shape__Area (800.789 m²) differs substantially from the transformed ring shoelace area (463.267 m²).",
+      "action": "Keep the returned ring unscaled and state area-field provenance as unresolved until authoritative GIS metadata or a survey clarifies it."
+    },
+    {
+      "severity": "major",
+      "finding": "The modeled roof form and all vertical dimensions are estimates; GIS reports one level while the photo shows two facade bands, and roof pitch/ridge heights cannot be recovered from the overhead imagery.",
+      "action": "Keep heights/floors labeled estimated or unverified. Dimensioned elevations or reliable oblique/roof imagery would be needed for stronger claims."
+    },
+    {
+      "severity": "moderate",
+      "finding": "Facade rhythm and entrance orientation are based on a single oblique, ungeoreferenced facade photograph.",
+      "action": "Treat window spacing and entrance compass side as inferred unless a second geolocated view becomes available."
+    },
+    {
+      "severity": "minor",
+      "finding": "Shared manifest bounds and accuracy_status still describe the legacy fallback massing rather than this updated mesh.",
+      "action": "Coordinator should refresh the shared manifest after accepting this grade; shared files were not changed during this independent review."
+    }
+  ]
+}

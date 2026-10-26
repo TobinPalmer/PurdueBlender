@@ -1,0 +1,187 @@
+{
+  "score": 7.2,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": "Purdue FID 771 / SOMSA is labeled Muslim Student Association at 1021 FIRST ST.; ISGL official contact page gives 1022 1st St., and the labeled Visit Lafayette photo plus imagery place the society at the same First/Russell corner. GIS ring has 11 vertices and transformed shoelace area 463.27 m², while ArcGIS Shape__Area=800.7890625 m²; the substantial field/ring area conflict is unresolved. Saved validator reports maximum ring-to-shell nearest-vertex error 0.00001437 m. Physical match is plausible/high confidence, but GIS name/address do not identify ISGL and discrepancy is unresolved."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "GIS ring transformed using repository's documented campus approximation has XY bounds [-441.816,-225.008]–[-419.202,-203.251] m. Reopen record places asset bounds at [-442.098,-225.278]–[-418.919,-201.345] m and reports exact transformed source-ring vertices within 0.00001437 m. Site corner and roof orientation are visually consistent with current orthophoto; local conversion is approximate, not survey control."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.8,
+      "max_score": 2,
+      "evidence": "GIS attributes NUM_LEVELS=1, CountOfFLO=1, Extrution=12 (unit semantics undocumented). Saved model height is 8.15 m, with stated estimated eaves 6.05 m and roof peak 8.15 m. Exterior photo supports a two-band facade and a sloped roof, and orthophoto supports a multi-plane roof, but neither establishes floor count, dimensions, or roof geometry. The rendered single-apex hipped/pyramidal roof does not convincingly reproduce the several distinct roof planes/ridges visible in the orthophoto."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": "The published labeled exterior photo visibly supports red-brown brick, two facade/window bands, pale entry surround, and a small domed canopy/sign. Render includes those features and no unsupported large mosque dome/minaret. It uses a generic repeated bay rhythm and inferred entrance orientation; the source photograph is an oblique view without georeferenced camera direction, so exact bay spacing, entry side and hidden facades are not independently established."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Expected asset exists (649547 bytes). Saved Blender 4.5.15 reopen report identifies expected scene/collection, exactly one mesh (982 vertices, 750 faces), no modifiers, external images or linked libraries; three renders exist: {'isgl_exterior_approach.png': {'exists': True, 'bytes': 1135403}, 'isgl_front_elevation.png': {'exists': True, 'bytes': 1086129}, 'isgl_roof_plan.png': {'exists': True, 'bytes': 1090257}}. Evidence folder includes raw GIS, metadata, official ISGL identity pages, labeled facade photo, orthophoto metadata, source catalog, build measurements and validation. This review could not start Blender because the connected Blender addon is offline and no bpy module is installed; geometry checks below therefore independently recalculate source ring metrics and cross-check the saved reopen report, but do not newly reopen the file."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend",
+    "asset_exists": true,
+    "manifest_entry": {
+      "id": "massing_islamic_societyof_greater_lafayette_0130012",
+      "kind": "massing",
+      "file": "buildings/massing_islamic_societyof_greater_lafayette_0130012.blend",
+      "collection": "Asset_massing_islamic_societyof_greater_lafayette_0130012",
+      "scene": "Building_massing_islamic_societyof_greater_lafayette_0130012",
+      "objects": [
+        "Islamic Societyof Greater Lafayette"
+      ],
+      "object_count": 1,
+      "bounds_world_m": [
+        [
+          -442.2024841308594,
+          -419.0152587890625
+        ],
+        [
+          -225.4001007080078,
+          -203.48080444335938
+        ],
+        [
+          0.0,
+          7.599999904632568
+        ]
+      ],
+      "exterior_bounds_world_m": [
+        [
+          -442.2024841308594,
+          -419.0152587890625
+        ],
+        [
+          -225.4001007080078,
+          -203.48080444335938
+        ],
+        [
+          0.0,
+          7.599999904632568
+        ]
+      ],
+      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "placement_transform": "identity; object coordinates retained in campus world space",
+      "source_bounds_world_m": [
+        [
+          -442.2024841308594,
+          -419.0152587890625
+        ],
+        [
+          -225.4001007080078,
+          -203.48080444335938
+        ],
+        [
+          0.0,
+          7.599999904632568
+        ]
+      ]
+    },
+    "identity_fields": {
+      "FID": 771,
+      "BLDG_ABBR": "SOMSA",
+      "BUILDING_N": "Muslim Student Association",
+      "ADDRESS": "1021 FIRST ST.",
+      "NUM_LEVELS": 1,
+      "CountOfFLO": 1,
+      "Extrution": 12
+    },
+    "gis_ring": {
+      "unique_vertices": 11,
+      "area_m2_local_approx": 463.26724655503494,
+      "bounds_xy_m": [
+        -441.815911,
+        -225.008448,
+        -419.202009,
+        -203.250928
+      ]
+    },
+    "saved_asset_bounds_world_m": [
+      [
+        -442.0984802246094,
+        -418.9192199707031
+      ],
+      [
+        -225.27809143066406,
+        -201.3453369140625
+      ],
+      [
+        0.0,
+        8.149999618530273
+      ]
+    ],
+    "independently_recomputed_footprint_to_shell_error_m_from_saved_validator": 1.4369728203514821e-05,
+    "saved_reopen_report_status": "passed",
+    "saved_reopen_report_checks": {
+      "asset_file_exists": true,
+      "scene_name": true,
+      "expected_collection_exists": true,
+      "exactly_one_collection_object": true,
+      "exactly_one_mesh": true,
+      "one_object_expected_name": true,
+      "no_modifiers": true,
+      "no_external_images": true,
+      "no_linked_libraries": true,
+      "gis_identity_fid_771_somsa": true,
+      "gis_shell_vertices_within_0_00002m": true,
+      "all_three_renders_present": true
+    },
+    "renders": {
+      "isgl_exterior_approach.png": {
+        "exists": true,
+        "bytes": 1135403
+      },
+      "isgl_front_elevation.png": {
+        "exists": true,
+        "bytes": 1086129
+      },
+      "isgl_roof_plan.png": {
+        "exists": true,
+        "bytes": 1090257
+      }
+    },
+    "source_catalog_count": 5,
+    "direct_blender_reopen_this_review": false
+  },
+  "findings": [
+    {
+      "severity": "major",
+      "finding": "The building match relies on location and the labeled ISGL photo: GIS FID 771 is explicitly named Muslim Student Association at 1021 First St., while ISGL currently gives 1022 1st St.",
+      "action": "Locate an authoritative address/building history, parcel record, or Purdue/municipal document that links FID 771 or the historical 1021 address to ISGL; otherwise retain this as a probable site match and avoid stating that the GIS identity is confirmed."
+    },
+    {
+      "severity": "moderate",
+      "finding": "The GIS Shape__Area attribute (800.7890625 m²) is substantially larger than the transformed polygon-ring area (463.27 m²); ring geometry is used for shell fit but the area-field discrepancy is unresolved.",
+      "action": "Retain the raw ring and document the transformed coordinate-area calculation; seek the layer’s area-calculation method or an independent parcel/building survey before treating either area as measured ground truth."
+    },
+    {
+      "severity": "major",
+      "finding": "Height and roof remain estimates. GIS says one level; the model interprets two facade bands and its rendered roof has one apex, while current aerial shows several roof planes/ridges.",
+      "action": "Seek dimensioned elevations, older/current oblique imagery, or roof imagery with clearer ridge detail; revise the roof silhouette and height only if those sources resolve the existing discrepancy. Until then label the geometry illustrative."
+    },
+    {
+      "severity": "moderate",
+      "finding": "Facade rhythm and entrance orientation are extrapolated from a single un-georeferenced photo.",
+      "action": "Find a second view or georeferenced street photo to confirm which facade is shown and verify window-bay rhythm and entrance side."
+    },
+    {
+      "severity": "review limitation",
+      "finding": "A fresh Blender reopen was not possible in this grading environment; the direct reopen JSON predates this review.",
+      "action": "Have the coordinator or builder rerun the provided reopen validator when Blender is available; no asset or evidence files were altered by this grader."
+    }
+  ]
+}

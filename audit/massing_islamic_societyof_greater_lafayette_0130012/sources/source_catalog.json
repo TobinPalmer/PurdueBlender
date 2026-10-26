@@ -1,0 +1,90 @@
+{
+  "asset_id": "massing_islamic_societyof_greater_lafayette_0130012",
+  "retrieved_utc": "2026-10-26",
+  "identity": {
+    "manifest_target": "Islamic Societyof Greater Lafayette",
+    "official_society_name": "Islamic Society of Greater Lafayette (ISGL)",
+    "official_address": "1022 1st St., corner of Russell St. and 1st St., West Lafayette, IN 47906",
+    "gis_match": "Purdue BuildingShapesZip4 FID 771, BLDG_ABBR SOMSA, BUILDING_N Muslim Student Association, address 1021 FIRST ST.",
+    "confidence": "Strong physical-site match, with a formal crosswalk still unverified. Purdue GIS FID 771 is located at the First/Russell corner. The labeled ISGL exterior photo, official 1022 1st St. address, Purdue Engineering 2022 event page (ISGL venue at 1022 First St., with Muslim Student Association participation), and Tippecanoe County judgments listing North American Islamic Trust Inc. ISGL at 1022 First St. corroborate the site relationship. The GIS feature itself remains labeled Muslim Student Association / 1021 First St.; no parcel/name crosswalk was found."
+  },
+  "sources": [
+    {
+      "file": "purdue_gis_FID771_SOMSA.json",
+      "provider": "Purdue University GIS / BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D771&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "feature_id": "FID 771; BLDG_ABBR SOMSA; Muslim Student Association; 1021 FIRST ST.",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "No feature edit timestamp supplied; GIS layer does not expose a usable survey date.",
+      "source_crs": "EPSG:4326 (WGS 84) response; transformed to repository local campus meters.",
+      "measurement_method": "Used the returned polygon ring as the structural shell after transform X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. Transformed ring has 11 non-closing vertices, 463.27 m2 shoelace area, and bounds X -441.816 to -419.202 m, Y -225.008 to -203.251 m.",
+      "uncertainty": "GIS labels the building Muslim Student Association / 1021 First Street, while ISGL's current site says 1022 1st Street. The physical match is supported by the corner location, aerial, and published labeled photo, but the name/address discrepancy is not resolved by the GIS itself. GIS NUM_LEVELS=1 and Extrution=12 have undocumented units/semantics and conflict with the visible upper facade."
+    },
+    {
+      "file": "purdue_gis_bbox_query.json; purdue_gis_layer_metadata.json",
+      "provider": "Purdue University GIS / BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "feature_id": "Layer metadata and local bbox feature query containing FID 771",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "Metadata response does not identify an orthophoto/survey date.",
+      "source_crs": "Layer metadata advertises spatial reference; feature query requested EPSG:4326.",
+      "measurement_method": "Preserved the raw feature-service layer metadata and nearby spatial query to inspect identity, floor-count, and extrusion attributes.",
+      "uncertainty": "The Extrution field is 12 but units are not declared; NUM_LEVELS and CountOfFLO are 1. These fields are not used as a measured building height."
+    },
+    {
+      "file": "isgl_home_2026-10-26.html; isgl_about_2026-10-26.html",
+      "provider": "Islamic Society of Greater Lafayette official website",
+      "url": "https://www.masjidisgl.org/ and https://isglclientprod.azurewebsites.net/about",
+      "feature_id": "ISGL organization/contact location",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "Current web pages; no construction date or architectural dimensions found.",
+      "source_crs": "Not applicable.",
+      "measurement_method": "Used the organization's current posted name and address: 1022 1st St. at the Russell/First corner.",
+      "uncertainty": "Identity/address evidence only; pages do not supply a floor plan, elevation, or measured height."
+    },
+    {
+      "file": "homeofpurdue_listing_2026-10-26.html; isgl_exterior_homeofpurdue.jpg",
+      "provider": "Visit Lafayette-West Lafayette / Home of Purdue listing",
+      "url": "https://www.homeofpurdue.com/listing/islamic-society-of-greater-lafayette/610/",
+      "feature_id": "Islamic Society of Greater Lafayette listing and labeled exterior photograph",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "Photo exposure date not supplied; page was retrieved 2026-10-26.",
+      "source_crs": "Photograph has no georeferenced camera location.",
+      "measurement_method": "Visual reference for red-brown brick, upper and ground-floor windows, pale entry surround, sign, and small domed entrance canopy.",
+      "uncertainty": "One oblique facade view only; it does not establish which compass facade is shown, exact proportions, wall height, roof pitch, or features on hidden sides."
+    },
+    {
+      "file": "indiana_current_imagery_isgl.jpg; indiana_imagery_metadata.json",
+      "provider": "Indiana Geographic Information Office Current Orthophotography ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer/exportImage?bbox=-86.9192,40.4251,-86.9183,40.4259&bboxSR=4326&size=1800,1200&imageSR=4326&format=jpg&f=image",
+      "feature_id": "Orthophoto crop around 1022 First Street / Russell Street",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "Service describes 2022-2025 imagery; exact tile acquisition date is not exposed.",
+      "source_crs": "Export bbox and image output requested in EPSG:4326; service advertises Web Mercator (WKID 3857).",
+      "measurement_method": "1800x1200 image exported for lon/lat bbox [-86.9192,40.4251,-86.9183,40.4259]. Used for visual site/building confirmation and roof shape only, not metric surveying.",
+      "uncertainty": "Tree canopy, shadows, parked cars, and resampling obscure some edges; exact roof eave/wall line and image date remain uncertain."
+    },
+    {
+      "file": "purdue_gepp_ramadan_event_isgl_msa_2022.html",
+      "provider": "Purdue University College of Engineering, Global Engineering Programs and Partnerships",
+      "url": "https://engineering.purdue.edu/GEP/events/2022/global-celebration-ramadan",
+      "feature_id": "2022 Global Celebration - Ramadan event; names ISGL at 1022 1st Street as event location and records Purdue-hosted event with Muslim Student Association participation",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "2022 event; page has no building construction/measurement date.",
+      "source_crs": "Not applicable.",
+      "measurement_method": "Used page text to corroborate that ISGL and Muslim Student Association activity share the 1022 1st Street venue.",
+      "uncertainty": "Organizational/event identity and venue corroboration only; does not establish a formal GIS parcel crosswalk or provide building dimensions."
+    },
+    {
+      "file": "tippecanoe_county_judgments_2010_2024_2025-01.pdf",
+      "provider": "Tippecanoe County, Indiana",
+      "url": "https://www.tippecanoe.in.gov/DocumentCenter/View/48331/2010-2024-Judgments-Updated-1-31-25",
+      "feature_id": "2010-2024 judgments list, updated 2025-01-31; entry NORTH AMERICAN ISLAMIC TRUST INC ISGL at 1022 FIRST ST, West Lafayette",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "County file title identifies update through 2025-01-31.",
+      "source_crs": "Not applicable.",
+      "measurement_method": "Searched the county-published judgments PDF printout for the organization/address entry; it was originally saved with an .xlsx extension but its file signature is PDF, so the snapshot was renamed to .pdf without content changes.",
+      "uncertainty": "Supports organization/address relationship only; judgments list is not an official building parcel crosswalk, floor plan, or dimensional record."
+    }
+  ]
+}
