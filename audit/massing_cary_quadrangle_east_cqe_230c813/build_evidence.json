@@ -1,0 +1,56 @@
+{
+  "asset_id": "massing_cary_quadrangle_east_cqe_230c813",
+  "identity_match": {
+    "manifest_id": "massing_cary_quadrangle_east_cqe_230c813",
+    "manifest_asset": "modular/buildings/massing_cary_quadrangle_east_cqe_230c813.blend",
+    "readme_label": "cary quadrangle east cqe",
+    "assignment": "Rossen",
+    "official_gis_name": "Franklin Levering Cary Quadrangle (East)",
+    "official_gis_code": "CQE",
+    "official_gis_fid": 639
+  },
+  "footprint": {
+    "source": "Purdue BuildingShapesZip4 FeatureServer/0, FID 639, returned WGS84 polygon",
+    "source_vertex_count": 60,
+    "built_vertex_count": 52,
+    "simplification_tolerance_m": 0.12,
+    "projected_area_m2": 1083.7692,
+    "projected_perimeter_m": 199.3235,
+    "bounds_world_m_xy": [[-284.8783, -270.8745], [510.8767, 592.9309]],
+    "interpretation": "This source polygon overlays the 2023 Indiana orthophoto around the long building perimeter. The previous asset was a 13.3238 by 82.1585 m rectangle with bounds [-284.6498,-271.3261] x [511.6723,593.8308], slightly north of the returned source shape; the revised walls follow the GIS polygon."
+  },
+  "height_and_architecture": {
+    "historical_description": "Purdue Archives corporate record search-index text: 42 x 269 ft historic envelope; brick, stone, reinforced concrete; three stories plus basement; Tudor Gothic.",
+    "official_gis_attributes": {
+      "NUM_LEVELS": 5,
+      "CountOfFLO": 5,
+      "Extrution": 48,
+      "Elevation": 631
+    },
+    "modeled_visible_storeys": 3,
+    "modeled_overall_height_m": 14.63,
+    "height_basis": "The GIS Extrution field has undocumented units; 48 ft converted to 14.63 m is an explicit tentative interpretation, not a verified measurement.",
+    "uncertainties": [
+      "Historic source says three stories plus basement whereas two GIS floor-count fields say five; the visible modeled level count follows the building-specific historic description.",
+      "No surveyed facade elevation, storey height, window schedule, entrance drawing, or roof plan was found.",
+      "Tudor-Gothic material/color, vertical window rhythm, stone bands, pilasters, pointed entrance, and dormer-like forms are schematic interpretations; general Cary images are not labeled CQE.",
+      "The orthophoto supports the footprint and a complex roof surface with interruptions, but does not resolve exact roof dormer geometry."
+    ]
+  },
+  "validation": {
+    "reopened_in": "Blender 4.5.15 LTS",
+    "validation_script": "reopen_validate.py",
+    "result_file": "reopen_validation.json",
+    "result": "passed",
+    "asset_collection": "Asset_massing_cary_quadrangle_east_cqe_230c813",
+    "asset_mesh_object_count": 13,
+    "all_asset_objects_identity_transforms": true,
+    "external_object_libraries": false,
+    "previews": ["cqe_detailed_preview.png", "cqe_top_preview.png"],
+    "source_alignment_image": "cqe_orthophoto_footprint_overlay.png"
+  },
+  "coordinator_owned_follow_up": [
+    "Refresh the manifest bounds for this source-aligned replacement: geometry footprint XY [-284.8783,-270.8745] x [510.8767,592.9309] m; full asset extents including roof overhang and entry detail [-286.0694,-270.4039] x [510.4223,593.3852] x [0,14.63] m.",
+    "Update README and shared index/assignment status after independent grading; those shared files are intentionally unchanged by this builder."
+  ]
+}

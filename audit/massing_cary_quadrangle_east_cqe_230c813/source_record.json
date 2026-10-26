@@ -1,0 +1,61 @@
+{
+  "asset_id": "massing_cary_quadrangle_east_cqe_230c813",
+  "building_identity": "Franklin Levering Cary Quadrangle (East), Purdue building code CQE, source FID 639",
+  "retrieved_utc_date": "2026-10-25",
+  "sources": [
+    {
+      "role": "authoritative footprint and source identity",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D639&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "snapshot": "sources/purdue_building_shapes_fid639_cqe_2026-10-25.geojson",
+      "layer_metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "metadata_snapshot": "sources/purdue_building_shapes_layer_metadata_2026-10-25.json",
+      "fields_used": ["FID=639", "BLDG_ABBR=CQE", "BUILDING_N=Franklin Levering Cary Quadrangle (East)", "NUM_LEVELS=5", "CountOfFLO=5", "Extrution=48"],
+      "geometry_method": "Use returned WGS84 polygon; project each vertex with the repository-documented Purdue campus conversion; simplify collinear/noisy vertices with 0.12 m tolerance while retaining at least 9 vertices.",
+      "limitations": [
+        "The source attributes Shape__Area and Shape__Length do not match area and perimeter measured from the returned polygon; the returned geometry is used for plan shape.",
+        "The source does not document units for Extrution=48. The builder interprets it as feet (14.63 m) only as a tentative overall height estimate.",
+        "GIS NUM_LEVELS and CountOfFLO both report 5, while the specific historical description reports 3 stories plus basement. The model shows three above-grade window levels and records this conflict."
+      ]
+    },
+    {
+      "role": "roof footprint / site appearance context",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer/exportImage?bbox=-86.91725,40.4319,-86.91670,40.43285&bboxSR=4326&size=1100,1900&imageSR=4326&format=jpg&f=image",
+      "snapshot": "sources/indiana_2023_orthophoto_cqe.jpg",
+      "metadata": "sources/indiana_2023_orthophoto_metadata.json",
+      "use": "Confirms long north-south roof mass and visible roof interruptions; does not establish facade details or storey height."
+    },
+    {
+      "role": "building-specific historic identity and architectural description",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/792",
+      "use": "Purdue Archives identifies the East building as the first Cary Quadrangle building; describes a 42 by 269 ft historic envelope, brick, stone, reinforced concrete, three stories plus basement, Tudor Gothic, cornerstone dated 1927-11-05 and opening in 1928.",
+      "capture_note": "Direct archival page was blocked to automated retrieval; these facts were taken from the Purdue Archives search-index result."
+    },
+    {
+      "role": "Cary complex renovation context",
+      "url": "https://archives.lib.purdue.edu/repositories/2/resources/1217",
+      "use": "Purdue Archives collection summary states Cary Hall East opened September 1929 and the outer halls, including East, were renovated during 2000-2006.",
+      "capture_note": "Direct archival page was blocked to automated retrieval; this is contextual evidence only."
+    },
+    {
+      "role": "current Purdue Housing context and general architectural imagery",
+      "url": "https://housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
+      "snapshot": "sources/purdue_housing_cary_quad_current_2026-10-25.html",
+      "image": "sources/purdue_housing_cary_quad_hero.jpg",
+      "use": "Current housing page describes Cary Quadrangle and renovation context. The hero depicts Cary generally and is not labeled as a view of the East building; it is not used as direct East facade proof."
+    },
+    {
+      "role": "historical Cary architectural context only",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/159/",
+      "image_url": "https://earchives.lib.purdue.edu/digital/api/singleitem/image/pbuildings/159/default.jpg",
+      "snapshot": "sources/purdue_archives_cary_quadrangle_image_159.jpg",
+      "use": "General 1950s Cary Quadrangle view; it is not labeled as CQE and therefore informs only broad brick/stone/Tudor-Gothic interpretation, not exact facade geometry."
+    }
+  ],
+  "model_interpretations": [
+    "The official footprint is the strongest building-specific geometric source.",
+    "Three visible window rows follow the specific historic description; floor spacing, window counts, window proportions, stone courses, pilasters, entrance placement, and the pointed-arch treatment are schematic interpretations.",
+    "The long gable roof and ten small dormer-like forms are approximated from the orthophoto. The source imagery does not resolve dormer shape or establish that all apparent roof protrusions are dormers.",
+    "No measured facade elevations or verified height source were found. Overall height 14.63 m is a feet-to-meters interpretation of the GIS Extrution field and remains unverified."
+  ],
+  "coordinate_contract": "Campus world coordinates, meters, X east, Y north, Z up; identity object transforms."
+}
