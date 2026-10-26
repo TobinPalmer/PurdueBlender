@@ -8,16 +8,17 @@
   "footprint_vertices": 16,
   "vertical_model": {
     "levels": 1,
-    "wall_height_m": 4.4,
-    "roof_cap_m": 0.4,
-    "status": "diagrammatic estimate; GIS Extrution=12 has undocumented units"
+    "north_main_roof_height_m": 4.036,
+    "south_addition_roof_height_m": 5.166,
+    "roof_thickness_m": 0.12,
+    "status": "median normalized roof heights from 2018 Tippecanoe NDHM (5-ft grid); see source statistics and unit method"
   },
   "facade": "Neutral unfenestrated envelope; current facade and entrances unverified because no dated exterior imagery or elevations were found.",
-  "roof": "Low flat diagrammatic cap; roof form unverified.",
+  "roof": "The 2023 orthophoto identifies the light north/main and darker south roof zones. The 2018 NDHM supports separate median roof heights for those zones; each zone is represented by a level plane at its median, while within-zone pitch and profile remain unresolved.",
   "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png",
   "owner": "Rossen",
   "date_built": "2026-10-25",
-  "source_crs": "Purdue layer native EPSG:3857; query output EPSG:4326; Indiana layer native EPSG:3857; query output EPSG:4326",
+  "source_crs": "Purdue footprint query EPSG:4326, projected to EPSG:2968 for the NDHM comparison; building local XY follows the project approximate conversion.",
   "sources": [
     {
       "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
@@ -56,6 +57,41 @@
       "source_date": "October 2021",
       "measurement_method": "Published address and building number cross-check.",
       "uncertainty": "Identity and address only."
+    },
+    {
+      "provider": "Indiana Geographic Information Office, Indiana 2023 Imagery ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
+      "feature_id": "catalog OBJECTID 50535 / in2023_29971882_06",
+      "snapshot": "audit/animal_holding_facility/sources/indiana_2023_orthophoto_georef_2026-10-25.jpg",
+      "metadata": "audit/animal_holding_facility/sources/indiana_2023_orthophoto_metadata.json",
+      "retrieved": "2026-10-25",
+      "source_date": "2023 imagery; 6-inch pixel size",
+      "source_crs": "EPSG:3857",
+      "measurement_method": "Georeferenced vertical orthophoto interpreted against Purdue FID 266 outline; pixel extent and dimensions are recorded in source metadata.",
+      "uncertainty": "Supports roof plan zones and visible rooftop equipment only; it does not establish roof heights, pitch, facade, or entrance."
+    },
+    {
+      "provider": "Purdue Geospatial Data Science Lab / Indiana 3DEP NDHM; source tile hosted in Indiana Geographic Information Office S3 elevation catalog",
+      "url": "https://giselevationingov.s3.us-east-2.amazonaws.com/ndhmoptimized/statewide/2018/SPW/5ft/in2018_29951880_12_ndhm.tif",
+      "feature_id": "Indiana DEM Tile Footprints OBJECTID 35355; corresponding NDHM tile in2018_29951880_12_ndhm.tif",
+      "snapshot": "audit/animal_holding_facility/sources/indiana_lidar_ndhm_tippecanoe_2018_tile_in2018_29951880_12.tif",
+      "metadata": "audit/animal_holding_facility/sources/indiana_lidar_ndhm_metadata.json",
+      "measurement_code": "audit/animal_holding_facility/analyze_ndhm_roof_heights.py",
+      "measurement_result": "audit/animal_holding_facility/ndhm_roof_height_statistics.json",
+      "retrieved": "2026-10-25",
+      "source_date": "2018 Tippecanoe County 3DEP; 5-ft grid",
+      "source_crs": "EPSG:2968 / NAD83(HARN), Indiana West, US survey feet",
+      "measurement_method": "Median normalized roof height above local ground from valid 5-ft raster cells inside the source outline and within each orthophoto roof zone.",
+      "uncertainty": "NDHM samples are not survey points at eaves; rooftop equipment and edge effects influence tails. The two roof zones share the dated 2023 orthophoto split but LiDAR is from 2018."
+    },
+    {
+      "provider": "Oh et al., peer-reviewed Indiana 3DEP LiDAR method paper (2022)",
+      "url": "https://gdsl.org/wp-content/uploads/2023/10/2022-02-Oh-RS-3DEP_LiDAR_CHM_Indiana.pdf",
+      "snapshot": "audit/animal_holding_facility/sources/indiana_3dep_lidar_units_method_paper_2022.pdf",
+      "retrieved": "2026-10-25",
+      "source_date": "2022",
+      "measurement_method": "Documents Indiana 3DEP LiDAR/DTM source coordinates and values in U.S. survey feet; NDHM height is derived from these elevation values.",
+      "uncertainty": "Units apply to the source 3DEP elevation data; NDHM inherits feet as the difference of those source elevations."
     }
   ],
   "identity_and_placement": {
@@ -110,39 +146,59 @@
     "Extrution_raw": 12,
     "R_raw": 12.5,
     "field_semantics": "GIS metadata gives field names and numeric types only, no vertical units or datum.",
-    "model_height_m": 4.8,
-    "status": "estimated; not measured.",
-    "roof": "Low flat cap used as neutral massing; current roof form unverified.",
-    "facade": "Neutral unfenestrated envelope; entrances/materials/opening rhythm unverified."
+    "model_height_m": 5.166,
+    "status": "2018 NDHM median normalized roof heights measured on a 5-ft grid; representative zone planes remain approximations.",
+    "ndhm_roof_heights": {
+      "north_main": {
+        "pixel_count": 614,
+        "median_ft": 13.24,
+        "median_m": 4.036,
+        "iqr_m": 0.247
+      },
+      "south_addition": {
+        "pixel_count": 359,
+        "median_ft": 16.95,
+        "median_m": 5.166,
+        "iqr_m": 0.683
+      }
+    },
+    "roof": "2018 NDHM supports median normalized heights of 4.036 m north/main and 5.166 m south addition; 2023 orthophoto supports their plan-zone split. Within-zone slopes, eave form, and exact seam remain unresolved.",
+    "facade": "Neutral unfenestrated envelope; current facade and entrances remain unverified."
   },
   "geometry_edits": [
     "Replaced prior 16 m box with the 16-node Purdue GIS footprint.",
     "Extruded one diagrammatic level to 4.4 m plus 0.4 m cap; vertical dimensions are estimates.",
-    "Preserved manifest stable ID, scene, collection, object name, and campus coordinate frame."
+    "Preserved manifest stable ID, scene, collection, object name, and campus coordinate frame.",
+    "Split the roof surface into two georeferenced material zones matching the light north/main roof and darker south roof visible in 2023 Indiana imagery; no unsupported roof elevations or facade details were added.",
+    "Split the roof surface into two georeferenced zones matching the 2023 orthophoto, and set each zone to its 2018 NDHM median height (4.036 m north/main; 5.166 m south addition); no facade detail was inferred."
   ],
   "validation": {
     "blender_version": "4.5.15 LTS",
     "exported_collection": "Asset_massing_animal_holding_facility_4733f46",
     "expected_collection_object_count": 1,
-    "saved_and_reopened": "PASS: reopened with Blender 4.5.15; collection contains exactly one mesh object, no modifiers, 288 vertices and 220 faces.",
-    "linked_into_empty_scene": "PASS: linked Asset_massing_animal_holding_facility_4733f46 from the library into a factory-startup scene; expected object and campus coordinates were retained.",
+    "saved_and_reopened": "PASS: reopened with Blender 4.5.15; expected collection contains exactly one mesh object, no modifiers, 368 vertices and 280 faces.",
+    "linked_into_empty_scene": "PASS: linked named collection from the library into a factory-startup scene; one expected object and campus coordinates were retained.",
     "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png",
     "evaluated_bounds_world_m": [
       [
-        -65.646,
+        -65.645,
         -23.697
       ],
       [
         -1030.837,
-        -955.231
+        -955.232
       ],
       [
         0.0,
-        4.8
+        5.166
       ]
     ],
     "portable_material_images": "PASS: no external image dependencies.",
     "footprint_overlay": "audit/animal_holding_facility/footprint_comparison.svg",
-    "footprint_metrics": "audit/animal_holding_facility/footprint_comparison.json"
-  }
+    "footprint_metrics": "audit/animal_holding_facility/footprint_comparison.json",
+    "roof_zone_preview": "audit/animal_holding_facility/roof_zones_topdown.png",
+    "roof_segmentation": "Top surface split into light north/main and dark south zones using the 2023 orthophoto; each level comes from the corresponding 2018 NDHM median.",
+    "ndhm_height_samples": "PASS: 614 valid north/main and 359 valid south-addition cells sampled from the official 2018 5-ft Tippecanoe NDHM; median planes are 4.036 m and 5.166 m above ground. See ndhm_roof_height_statistics.json."
+  },
+  "roof_zone_preview": "audit/animal_holding_facility/roof_zones_topdown.png"
 }

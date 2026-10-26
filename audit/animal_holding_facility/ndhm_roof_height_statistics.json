@@ -1,0 +1,50 @@
+{
+  "method": "Read the 32-bit float NDHM GeoTIFF, transform the official Purdue FID266 polygon from the saved EPSG:2968 ring to the tile's 5-ft pixels, and summarize valid normalized-height cells by orthophoto roof zone. Heights are above local ground. Median is used as a robust representative roof-surface height.",
+  "raster": "audit/animal_holding_facility/sources/indiana_lidar_ndhm_tippecanoe_2018_tile_in2018_29951880_12.tif",
+  "ring": "audit/animal_holding_facility/sources/purdue_gis_fid266_2026-10-25_stateplane_2968.json",
+  "tile_origin_epsg2968_ft": [
+    2995000.0,
+    1885000.0
+  ],
+  "pixel_size_ft": 5.0,
+  "roof_zone_boundary_stateplane_y_ft": 1883168.8443683232,
+  "vertical_unit_assumption": "U.S. survey feet, inherited from source Indiana 3DEP LiDAR/DTM and preserved by the normalized-height subtraction; see source record and saved 2022 paper.",
+  "feet_to_meters": 0.3048006096012192,
+  "zones": {
+    "all": {
+      "pixel_count": 973,
+      "percentile_05_ft": 12.68,
+      "percentile_25_ft": 13.09,
+      "median_ft": 13.76,
+      "percentile_75_ft": 16.51,
+      "percentile_95_ft": 18.83,
+      "median_m": 4.194,
+      "iqr_m": 1.042
+    },
+    "north_main": {
+      "pixel_count": 614,
+      "percentile_05_ft": 12.63,
+      "percentile_25_ft": 12.9,
+      "median_ft": 13.24,
+      "percentile_75_ft": 13.71,
+      "percentile_95_ft": 14.5,
+      "median_m": 4.036,
+      "iqr_m": 0.247
+    },
+    "south_addition": {
+      "pixel_count": 359,
+      "percentile_05_ft": 14.36,
+      "percentile_25_ft": 15.98,
+      "median_ft": 16.95,
+      "percentile_75_ft": 18.22,
+      "percentile_95_ft": 19.25,
+      "median_m": 5.166,
+      "iqr_m": 0.683
+    }
+  },
+  "limitations": [
+    "NDHM is 5-ft grid height above ground, not a survey of eaves; pixel maxima can include rooftop equipment and edge effects.",
+    "Roof-zone split comes from the 2023 orthophoto and is approximate; it is not a construction seam survey.",
+    "LiDAR acquisition is 2018; the 2023 imagery confirms roof-zone continuity at a later date but not exact roof elevations in 2023."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "provider": "Purdue Geospatial Data Science Lab / Indiana 3DEP NDHM; source tile hosted in Indiana Geographic Information Office S3 elevation catalog",
+  "tile_url": "https://giselevationingov.s3.us-east-2.amazonaws.com/ndhmoptimized/statewide/2018/SPW/5ft/in2018_29951880_12_ndhm.tif",
+  "raw_snapshot": "audit/animal_holding_facility/sources/indiana_lidar_ndhm_tippecanoe_2018_tile_in2018_29951880_12.tif",
+  "retrieved": "2026-10-25",
+  "feature_id": "Indiana DEM Tile Footprints OBJECTID 35355; corresponding NDHM tile in2018_29951880_12_ndhm.tif",
+  "source_year": 2018,
+  "county": "Tippecanoe",
+  "source_crs": "EPSG:2968 / NAD83(HARN), Indiana West, US survey feet (GeoTIFF keys)",
+  "horizontal_grid": {
+    "pixel_size": "5 U.S. survey feet",
+    "tile_origin_top_left": [2995000.0, 1885000.0],
+    "tile_width_px": 1000,
+    "tile_height_px": 1000
+  },
+  "vertical_units": {
+    "unit": "U.S. survey feet",
+    "basis": "The Indiana 3DEP source LiDAR and DTM are documented in U.S. survey feet; NDHM is object height above ground derived from those elevations. The method/units reference is saved alongside this raster.",
+    "reference_pdf": "audit/animal_holding_facility/sources/indiana_3dep_lidar_units_method_paper_2022.pdf",
+    "reference_url": "https://gdsl.org/wp-content/uploads/2023/10/2022-02-Oh-RS-3DEP_LiDAR_CHM_Indiana.pdf"
+  },
+  "measurement_method": "Convert official Purdue FID266 outline to the raster's EPSG:2968 coordinate grid. Read valid NDHM raster cells whose centers fall inside the footprint, classify north/main versus south-addition pixels using the 2023 orthophoto roof-zone boundary, and summarize each sample set by median and interquartile range. Reproducible code and output are `analyze_ndhm_roof_heights.py` and `ndhm_roof_height_statistics.json`.",
+  "results": {
+    "north_main": {"pixel_count": 614, "median_height_ft": 13.24, "median_height_m": 4.036, "iqr_m": 0.247},
+    "south_addition": {"pixel_count": 359, "median_height_ft": 16.95, "median_height_m": 5.166, "iqr_m": 0.683}
+  },
+  "uncertainty": "NDHM is a 5-ft grid, not a surveyed eave point measurement; returns may include rooftop equipment and edge effects. The 2018 height surface and 2023 roof-tone zones are from different dates. Median planes approximate each zone; local roof pitch and facade details are not measured."
+}
