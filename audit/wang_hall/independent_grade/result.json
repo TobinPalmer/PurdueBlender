@@ -1,0 +1,92 @@
+{
+  "building": "Wang Hall (WANG)",
+  "asset": "modular\\buildings\\massing_wang_hall_wang_0dac5ab.blend",
+  "asset_sha256": "740cd96ae5716a9f8ed7d260963449a52c5a36ffbebbcb9167ab92c8872bfe2c",
+  "score": 7.8,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": [
+        "OSM way 301932787 is named Wang Hall (WANG); Purdue GIS feature FID 895 independently identifies Wang Hall.",
+        "The saved outline is derived from the 17-vertex OSM ring. Structural shell XY bbox agrees with the projected source bbox within 0.000002 m.",
+        "Aerial overlay shows OSM follows the visible roof edge more closely than the Purdue GIS ring, although the sources differ by several metres (reported IoU ~0.812)."
+      ],
+      "deduction": "Small deduction because OSM is a community-mapped roof outline, not surveyed wall geometry, and the GIS/aerial boundary remains conflicting."
+    },
+    {
+      "name": "Position, orientation, scale and dimensions",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "Structural footprint dimensions and outline match the projected OSM ring; the evaluated shell bbox differs by only 0.000002 m.",
+        "Asset geometry is centered at local XY origin. The manifest source bounds center is [98.29549026489258, 339.91009521484375], matching the planned Placement marker anchor [98.2954902278031, 339.9100960000692].",
+        "Master marker integration was not available in this building-only review; planned integration still needs coordinator verification."
+      ],
+      "deduction": "Campus placement is supported by the exact planned bbox center, but the final master Placement marker and rotation still need integration review."
+    },
+    {
+      "name": "Evidence-backed height, floors and roof form",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Four floors are independently supported by Purdue/CSO descriptions and OSM building:levels=4.",
+        "OSM tags height=14.8 m; the manifest massing bounds also top at 14.8 m. The new shell-body Z span is 13.88 m before roof/parapet and is an estimate, not a survey.",
+        "Preview roof plan includes a long central skylight and rooftop equipment, consistent with aerial and architect imagery at a schematic level."
+      ],
+      "deduction": "Exact floor heights and roof elevations are not supported by dimensioned drawings; total evaluated model reaches 15.9 m because of rooftop components, 1.1 m above the OSM tagged height. Roof features remain simplified."
+    },
+    {
+      "name": "Facade, entrances and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "The model has a red brick texture, pale horizontal bands, repeated divided windows, a central glass panel, entrance canopy and sign, consistent in broad material vocabulary with architect photos.",
+        "The central atrium tower in the reference is a distinctive projecting brick pavilion with tall glass, a raised curved/capped top and a recessed entry; the model shows a flush rectangular glazed panel, no raised tower/cap and a broad low canopy. The generated preview visibly shows brick texture behind the central glass, so the atrium opening is not convincingly legible.",
+        "Facade reference also has taller, fewer window bays than the many small, squarish repeated units in the model."
+      ],
+      "deduction": "The recognizable central tower, its projection and cap, window proportions, and atrium transparency are not reproduced closely enough."
+    },
+    {
+      "name": "Modular export, portability and evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Fresh Blender 5.2.3 open reports expected scene Building_massing_wang_hall_wang_0dac5ab and collection Asset_massing_wang_hall_wang_0dac5ab with 9 objects and evaluated mesh geometry.",
+        "No linked external libraries were found; materials are procedural and the preview rig is separate from the asset collection.",
+        "The audit contains raw OSM/GIS/official/architect/aerial source snapshots, an overlay, two renders, structured evidence and fresh-open validation. Asset SHA-256 checked independently as 740cd96ae5716a9f8ed7d260963449a52c5a36ffbebbcb9167ab92c8872bfe2c."
+      ],
+      "deduction": "Portability and evidence are strong; coordinator still needs to change the manifest integration class and verify the final placement marker."
+    }
+  ],
+  "evidence": {
+    "independently_read": [
+      "Saved .blend via Blender fresh-open validation",
+      "Purdue manifest row and modular/AGENTS coordinate-frame rule",
+      "OSM way 301932787 raw JSON",
+      "Purdue GIS FID 895 GeoJSON and aerial overlay",
+      "Purdue official articles and CSO architect images",
+      "Three-quarter and roof-plan model previews"
+    ],
+    "structural_bbox_delta_m": 1.6506212432432221e-06,
+    "asset_centered_xy": true,
+    "manifest_kind": "massing",
+    "manifest_world_center_m": [
+      98.29549026489258,
+      339.91009521484375
+    ],
+    "planned_anchor_xy_m": [
+      98.2954902278031,
+      339.9100960000692
+    ],
+    "manifest_world_center_matches_planned_anchor": true
+  },
+  "findings": [
+    "Coordinator must implement the planned detailed-asset integration: change manifest kind to detailed and set Placement_massing_wang_hall_wang_0dac5ab to [98.2954902278031, 339.9100960000692], then verify placement/orientation in the master.",
+    "Model the projecting brick atrium pavilion and raised curved/capped crown from the architect references, with recessed/tall central glazing and a readable entrance; the current flat rectangular screen lacks Wang Hall's signature feature.",
+    "Correct the central pane/atrium so interior structure or open depth reads through it; the rendered panel currently looks like a dark brick-backed rectangle.",
+    "Review overall roof top against the 14.8 m source height; the model currently reaches 15.9 m including rooftop component geometry."
+  ]
+}

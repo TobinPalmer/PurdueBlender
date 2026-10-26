@@ -1,0 +1,81 @@
+{
+  "building_name": "Clayton W. Dement Fire Station (Purdue University Fire Department)",
+  "asset_id": "massing_purdue_fire_department_520430b",
+  "asset_path": "modular/buildings/massing_purdue_fire_department_520430b.blend",
+  "asset_collection": "Asset_massing_purdue_fire_department_520430b",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/53",
+      "local_snapshot": "sources/purdue_historic_dmnt_53.html",
+      "source_record": "Clayton W. Dement Fire Station (DMNT)",
+      "source_date": "Construction 1964-1965; dedicated 1986-06-27; page accessed 2026-10-26",
+      "use": "Identity; three-bay station description; brick material; historical context; 10,637 gross-square-foot figure. The page does not provide a measured elevation or detailed floor plan."
+    },
+    {
+      "provider": "Purdue University Facilities Operations",
+      "url": "https://www.purdue.edu/operations/operations-maintenance/wp-content/uploads/sites/7/2025/12/bd-manual.pdf",
+      "local_snapshot": "sources/purdue_building_deputy_manual_2025.pdf",
+      "source_date": "2025-12 file path; accessed 2026-10-26",
+      "use": "Confirms Purdue University Fire Department location at 1250 W. Third Street and service role."
+    },
+    {
+      "provider": "Purdue University / ArcGIS BuildingShapesZip4 FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D211&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "local_snapshot": "sources/dmnt_feature_211.geojson",
+      "feature_id": "FID 211; BLDG_ABBR DMNT; BUILDING_N Clayton W. Dement Fire Station; building number 1048",
+      "source_crs": "EPSG:4326 (WGS 84)",
+      "retrieved": "2026-10-26",
+      "measurement_method": "Source polygon vertex coordinates converted to the project's approximate campus XY meters using the transform below. No footprint fitting or rescaling was applied after conversion.",
+      "transform": "x=(longitude+86.9137)*111412.84*cos(radians(40.4274)); y=(latitude-40.4274)*111040.0; z=up. This is a local approximation, not a surveyed CRS.",
+      "attributes_used": {
+        "address": "1250 3rd Street",
+        "num_levels": 2,
+        "extrution": 15,
+        "recorded_shape_area_m2": 1294.1171875,
+        "recorded_shape_length_m": 170.04965625886078
+      },
+      "uncertainty": "GIS extrusion field is recorded as 15 but its unit/definition is not explicit in the snapshot. Two levels are recorded; actual overall roof height remains unmeasured."
+    },
+    {
+      "provider": "Google Maps Street View",
+      "url": "https://www.google.com/maps/@40.4277088,-86.9239753,2847a,13.1y/data=!3m5!1e1!3m3!1s4G_u-T0PyopGT1ZNTYrK4Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3D4G_u-T0PyopGT1ZNTYrK4Q%26yaw%3D0",
+      "local_snapshot": "sources/google_streetview_dmnt_2026_yaw0.jpg",
+      "pano_id": "4G_u-T0PyopGT1ZNTYrK4Q",
+      "capture_point": {
+        "latitude": 40.4277088,
+        "longitude": -86.9239753
+      },
+      "view": "yaw 0 degrees, pitch 0 degrees, 900x600 thumbnail; captured directly from the Street View panorama on 2026-10-26",
+      "use": "Current front elevation appearance: low brick office wing, two visible light-colored sectional apparatus doors, red canopy/fascia, entrance, attached taller charcoal ribbed hall. Current capture date was not available; 2026 in the image copyright is not treated as imagery capture date.",
+      "uncertainty": "Only two vehicle doors are visibly clear in this view, while the Purdue historic record describes a three-bay station; a third recessed bay is modelled as an interpretation and should be independently reviewed."
+    },
+    {
+      "provider": "Purdue University Newsroom archive",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2013/Q4/chief,-longest-serving-firefighter-reflect-on-pufds-50th-anniversary.html",
+      "source_date": "2013-12-16",
+      "local_snapshot": "sources/purdue_pufd_50th_anniversary_2013.html",
+      "linked_photo": "https://www.purdue.edu/uns/images/2013/fire-trucks.jpg",
+      "photo_snapshot": "sources/purdue_fire_trucks_at_dement_2013.jpg",
+      "use": "Purdue attributes the fire-truck image to the Clayton West Dement Station; the image supports apparatus-bay scale and an internal steel roof-truss structure, but it is not an exterior elevation photo."
+    }
+  ],
+  "model_revision": {
+    "asset_sha256": "25cfbd3b81e61c614d4d4f49c3cd7e7525e16bc9b5d55dcb27e82ac8bb191f59",
+    "geometry_edits": [
+      "Replaced the single untextured massing block with a GIS-footprint brick shell, textured walls, roof/fascia, a high attached apparatus hall, sectional bay doors, service entry, glazing, and red canopy. Elevated hall geometry was clipped to the northern portion of the source polygon rather than added as a separate guessed rectangular footprint.",
+      "Added UV-based brick pattern and subtle surface relief; added dark ribbed-metal upper cladding and roof, pale sectional-door panels, dark glazing, and concrete thresholds.",
+      "Preserved campus-world XY placement and the existing asset ID, path, collection name, and scene name."
+    ],
+    "source_footprint_bounds_world_m": [
+      [-889.273372, -857.235373],
+      [19.872305, 52.840965],
+      [0.0, 0.0]
+    ],
+    "height_status": "The 14.6 m model roof is an estimate interpreted from imagery and GIS levels/extrusion. No surveyed elevation source was found.",
+    "orientation_status": "The footprint follows Purdue GIS directly. The main apparatus frontage was placed on the south/recessed frontage based on the current Street View orientation; the third bay and interior layout remain uncertain.",
+    "interior_status": "Interior rooms and fire apparatus are not modeled. Purdue's available truck photo is interior imagery but does not provide a floor plan; adding room layouts would be speculative.",
+    "grading_status": "Pending independent grader."
+  }
+}

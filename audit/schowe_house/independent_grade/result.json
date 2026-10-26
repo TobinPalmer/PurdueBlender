@@ -1,0 +1,138 @@
+{
+  "building": "Schowe House / Global Policy Research Institute",
+  "asset_id": "massing_purdue_center_for_regional_development_scho_a2375c9",
+  "asset_path": "modular/buildings/massing_purdue_center_for_regional_development_scho_a2375c9.blend",
+  "asset_sha256": "20bf463365d19bd69ad7a32d240228b5eb8ca51c0feeb06271f0076cce0b8de7",
+  "grader": "independent_grader_subagent",
+  "grade_date": "2026-10-26",
+  "score": 6.0,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "status": "FAIL",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.4,
+      "max_score": 2,
+      "status": "identity verified; geometry does not consistently follow source ring",
+      "evidence": [
+        "Raw Purdue GIS feature 295 identifies Schowe House at 1341 Northwestern Avenue; source area 471.365390615 m\u00b2.",
+        "Official Purdue campus map and PCRD contact page identify SCHO / Schowe House; NIRPC 2025 appendix associates a Schowe House image with the 1341 Northwestern Avenue contact block.",
+        "Independent baseline vertex-to-wall check: GIS-to-model max nearest-vertex error 1.284060 m; model-wall-to-GIS max point-to-segment error 5.002682 m."
+      ],
+      "reason": "The name/address/source match is sound, but the actual wall mesh is several metres outside parts of its claimed GIS outline."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 0.8,
+      "max_score": 2,
+      "status": "substantial horizontal mismatch",
+      "evidence": [
+        "Independent checks compare the actual wall mesh vertices at ground level with the 40-vertex GIS ring in the project\u2019s documented approximate meter conversion.",
+        "The maximum GIS-vertex-to-wall-vertex distance is 1.284 m and the maximum wall-vertex-to-GIS-segment distance is 5.003 m; multiple wall vertices are not on/near the source perimeter.",
+        "GIS bounds are [[-404.93373930531743, -379.67946077886756], [1309.7042881612037, 1330.7423065949297]]; wall mesh bounds are [[-409.6334228515625, -378.0018005371094], [1307.6055908203125, 1334.17041015625]]; evaluated full-asset bounds are [[-409.6334228515625, -378.0018005371094], [1307.6055908203125, 1334.17041015625], [0.0, 8.529999732971191]]. The model extends beyond the footprint on several edges, beyond what a small roof overhang explains."
+      ],
+      "reason": "The chosen source coordinate transform is documented, but independent geometry checks show the mesh does not preserve the source plan dimensions and perimeter. Master placement is not reviewed here."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.8,
+      "max_score": 2,
+      "status": "mostly estimated",
+      "evidence": [
+        "The GIS text has no measured elevation or floor count; model notes explicitly state gable/eave/chimney heights are estimated from one oblique exterior photo.",
+        "The roof image shows multiple intersecting planes and dormers, but the visible facade-to-roof relationships and some roof/wall intersections are difficult to reconcile from the single image."
+      ],
+      "reason": "Roof vocabulary is photo-informed, but the main height and roof intersections are not measured or fully resolved by the available single view."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2,
+      "status": "partially supported; geometry review found substantial visual defects",
+      "evidence": [
+        "The model includes brick, slate and cedar roof textures, dormers, chimneys, windows, an entrance porch and garage doors, generally consistent with the source photo.",
+        "Independent visual inspection of both previews finds broad discontinuities and uncovered gaps in several wall runs, openings that appear unglazed/unframed in the principal view, and roof planes that visibly overlap or terminate irregularly.",
+        "The NIRPC reference is one oblique image partly obscured by vegetation; it does not establish every facade or exact entrance/window placement."
+      ],
+      "reason": "The correct architectural vocabulary is present, but missing/fragmented wall coverage and visibly irregular roof/facade joins prevent a passing fidelity score."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified in fresh Blender reopen",
+      "evidence": [
+        "Fresh Blender 5.2.3 LTS process opened the exact asset and found collection Asset_massing_purdue_center_for_regional_development_scho_a2375c9, 39 collection objects and 39 meshes.",
+        "The expected SHA-256 matches: 20bf463365d19bd69ad7a32d240228b5eb8ca51c0feeb06271f0076cce0b8de7; all mesh objects have assigned materials: True.",
+        "Packed building texture images: ['SCHO_brick_tile', 'SCHO_shingle_tile', 'SCHO_slate_tile']; unpacked external image dependencies: [].",
+        "Building-specific source register, raw GIS, address-associated 2025 photo, model metrics, preview renders, and reopen report are present."
+      ],
+      "reason": "The standalone library and source evidence are portable and reproduce in a fresh process."
+    }
+  ],
+  "evidence": {
+    "blender_version": "5.2.3 LTS",
+    "fresh_open_scene": "Building_massing_purdue_center_for_regional_development_scho_a2375c9",
+    "collection": "Asset_massing_purdue_center_for_regional_development_scho_a2375c9",
+    "object_count": 39,
+    "mesh_count": 39,
+    "gis_feature_id": 295,
+    "gis_building_name": "Schowe House",
+    "gis_area_m2": 471.365390615,
+    "gis_to_model_wall_max_vertex_error_m": 1.28405965752442,
+    "model_wall_to_gis_max_segment_error_m": 5.002681592055058,
+    "gis_bounds_m": [
+      [
+        -404.93373930531743,
+        -379.67946077886756
+      ],
+      [
+        1309.7042881612037,
+        1330.7423065949297
+      ]
+    ],
+    "structural_wall_bounds_m": [
+      [
+        -409.6334228515625,
+        -378.0018005371094
+      ],
+      [
+        1307.6055908203125,
+        1334.17041015625
+      ]
+    ],
+    "evaluated_full_asset_bounds_m": [
+      [
+        -409.6334228515625,
+        -378.0018005371094
+      ],
+      [
+        1307.6055908203125,
+        1334.17041015625
+      ],
+      [
+        0.0,
+        8.529999732971191
+      ]
+    ],
+    "packed_textures": [
+      "SCHO_brick_tile",
+      "SCHO_shingle_tile",
+      "SCHO_slate_tile"
+    ],
+    "unpacked_external_images": [],
+    "preview_images": [
+      "audit/schowe_house/preview_three_quarter.png",
+      "audit/schowe_house/preview_roof.png",
+      "audit/schowe_house/sources/schowe_house_pcrd_photo_2025_crop.png"
+    ]
+  },
+  "findings": [
+    "Rebuild the wall baseline from the GIS ring and compare actual structural vertices/segments to each source edge; the current model is up to 5.003 m from the mapped perimeter.",
+    "Repair the intersecting roof masses and their gable ends/fascia; both saved views show visible clipping or unsupported detached roof/wall pieces.",
+    "Revise wall generation so every structural perimeter run is continuous except for openings supported by the photograph; frame/glaze those openings consistently.",
+    "Seek a second facade/photo or floorplan/elevation to verify entrance orientation, garage/wing arrangement, floor count, ridge/eave heights, and the 1990 west addition. If unavailable, retain those items as estimates."
+  ],
+  "errors": []
+}

@@ -1,0 +1,62 @@
+{
+  "score": 8.5,
+  "max_score": 10,
+  "threshold": 8.0,
+  "status": "PASS",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "OpenStreetMap way 301932784 is named University Lutheran Church; the official visit page and Purdue archive distinguish the site at 460 Northwestern from Purdue Lutheran Ministry. The 17 transformed OSM vertices and the structural shell bottom ring match with a symmetric Hausdorff distance of 0.00001063 m.",
+      "findings": []
+    },
+    {
+      "name": "Position, orientation and scale/dimensions",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": "The envelope bounds match the source footprint within 0.00000555 m. The local conversion places the outline at campus XY [224.0740593385258, 171.33619923364054]; the road-facing edges were selected using OSM way 932656636 (Northwestern Avenue). The outline is about 29.05 by 30.11 m.",
+      "findings": [
+        "OSM is not a surveyed parcel/wall survey; the official photograph has no camera azimuth, so the photographed facade cannot be tied conclusively to a specific compass edge."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors and roof form",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": "The official exterior photo supports three above-grade storeys and a shallow dark roof; the official visit page and Purdue archive record support the basement fellowship hall and third-floor sanctuary. The current model spans -2.67 m to 13.94 m, but the height is explicitly estimated with \u00b12.5 m uncertainty.",
+      "findings": [
+        "No measured elevation or roof section was found. The shallow roof fall and stepped parapet profile are visual estimates; GIS height/story attributes are not reliable for this property."
+      ]
+    },
+    {
+      "name": "Facade, entrances and distinctive architecture",
+      "score": 1.55,
+      "max_score": 2.0,
+      "evidence": "The model includes a brick shader with brick and noise nodes, pale masonry courses, dark frames and glazing, nine broad street-facing windows (three bays on each of three floors), the UNIVERSITY/LUTHERAN lettering, Fuel lettering, and storefront canopies. The revised preview is closer to the official image\u2019s three dominant ribbon-window bays and larger centered name sign than the first graded revision.",
+      "findings": [
+        "The visible Fuel sign appears on the central frontage grouping while it sits at the far end of the grouping in the official photo; photo azimuth is unknown, so the precise side alignment is not fully verifiable. Door/storefront segmentation and non-photographed elevations remain schematic or extrapolated."
+      ]
+    },
+    {
+      "name": "Modular export, portability and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Fresh-opened Blender 5.2.3 asset SHA d9f259d060cbaca93d9b50c675c2e4089800e0e9c8d55e11f2e7725eab259d18; expected scene/collection present, 540 collection objects and 537 meshes; no materialless meshes, external images, linked libraries or missing library paths. The main structural shell is watertight and has no loose vertices. The source register, raw OSM footprint/road snapshots, official web captures and official exterior image are present, with a dedicated build script and three previews.",
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/massing_university_lutheran_church_20903f1.blend",
+    "asset_sha256": "d9f259d060cbaca93d9b50c675c2e4089800e0e9c8d55e11f2e7725eab259d18",
+    "probe": "audit/university_lutheran_church/independent_grade_final/fresh_open_probe.json",
+    "official_reference": "audit/university_lutheran_church/images/official_ulupurdue_full_building.jpg",
+    "source_register": "audit/university_lutheran_church/source_register.json",
+    "preview": "audit/university_lutheran_church/preview_street_elevation.png"
+  },
+  "findings": [
+    "OSM is not a surveyed parcel/wall survey; the official photograph has no camera azimuth, so the photographed facade cannot be tied conclusively to a specific compass edge.",
+    "No measured elevation or roof section was found. The shallow roof fall and stepped parapet profile are visual estimates; GIS height/story attributes are not reliable for this property.",
+    "The visible Fuel sign appears on the central frontage grouping while it sits at the far end of the grouping in the official photo; photo azimuth is unknown, so the precise side alignment is not fully verifiable. Door/storefront segmentation and non-photographed elevations remain schematic or extrapolated."
+  ]
+}

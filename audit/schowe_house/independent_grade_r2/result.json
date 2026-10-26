@@ -1,0 +1,120 @@
+{
+  "building": "Purdue Center for Regional Development / Schowe House",
+  "asset_id": "massing_purdue_center_for_regional_development_scho_a2375c9",
+  "asset_path": "modular/buildings/massing_purdue_center_for_regional_development_scho_a2375c9.blend",
+  "asset_sha256": "05b7286ddab789bef1c7023a2d20bc2ada2daffc418991ec612bfe2ed340c4ef",
+  "grader": "independent_grader_subagent",
+  "grade_date": "2026-10-26",
+  "score": 7.8,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "status": "FAIL",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Purdue GIS FID 295 identifies Schowe House at 1341 Northwestern Avenue with 471.365 m\u00b2 plan area; Purdue campus map/PCRD page and the 2025 NIRPC panel independently support the Schowe House / PCRD identity.",
+        "Against the converted GIS boundary, sampled perimeter wall-to-source max distance is 0.290 m, GIS-to-wall max is 0.552 m, mean GIS-to-wall distance is 0.003 m. The local boundary deviations are consistent with the documented 0.14 m wall thickness plus door/garage interruptions."
+      ],
+      "reason": "Identity and mapped source footprint are now well supported; the former multi-meter segment shift is repaired."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "mostly verified in campus coordinates",
+      "evidence": [
+        "Structural wall bounds [[-405.00421142578125, -379.6091003417969], [1309.6337890625, 1330.812744140625]] m align with the official GIS bounds [[-404.9337393053175, -379.6794607788676], [1309.7042881612037, 1330.7423065949297]] m to approximately 0.14 m at the extents.",
+        "The source uses the documented project-local lon/lat conversion, not a surveyed CRS. This standalone review did not independently verify the full-master placement or neighboring context."
+      ],
+      "reason": "Plan position and dimensions track the GIS outline closely, with a small deduction for the approximate transform and unreviewed master context."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.7,
+      "max_score": 2.0,
+      "status": "height estimated; roof silhouette incomplete",
+      "evidence": [
+        "The modeled ridge is about 5.85 m and overall roof height about 6.0 m, inferred from a single oblique photo; no measured elevation or confirmed floor count was found.",
+        "The retained image shows multiple cross-gabled roof volumes and tall chimney(s). The model uses one continuous two-slope roof sheet clipped to the footprint, with two small dormers; it does not reproduce the visible cross-gable junctions or chimneys.",
+        "The reference photo does not establish exact ridge/eave heights or hidden-side roof geometry."
+      ],
+      "reason": "Photo-supported roof material and a pitched main roof are present, but the source silhouette is materially more complex than the model and vertical dimensions remain estimates."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.3,
+      "max_score": 2.0,
+      "status": "partially supported",
+      "evidence": [
+        "The model has red-brown brick, gray slate, windows, a porch entry, garage doors, and a schematic interior; these features are generally supported by the 2025 source photo.",
+        "The source photo shows dark wood/shingle cladding on upper gable faces and strong cross-gable/chimney details. The model uses brick for the gable wall areas and omits the visible chimney(s).",
+        "Several roof undersides/intersections read as exposed light surfaces in the saved roof preview; hidden and rear elevations are not independently documented."
+      ],
+      "reason": "The base material palette and some facade openings match the reference, but upper cladding and distinctive roof/chimney details are missing, and the preview retains visible roof/wall artifacts."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified in fresh Blender reopen",
+      "evidence": [
+        "A clean Blender 5.2.3 LTS process reopened the exact SHA 05b7286ddab789bef1c7023a2d20bc2ada2daffc418991ec612bfe2ed340c4ef and found scene Building_massing_purdue_center_for_regional_development_scho_a2375c9, collection Asset_massing_purdue_center_for_regional_development_scho_a2375c9, 23 objects, and 23 meshes.",
+        "Three generated textures are packed, no linked libraries are present, and the building-specific evidence folder has raw GIS, official identification, the address-associated 2025 image, source register, metrics, and previews."
+      ],
+      "reason": "The library and evidence package are self-contained and reopen successfully."
+    }
+  ],
+  "evidence": {
+    "fresh_asset_probe": "audit/schowe_house/independent_grade_r2/fresh_asset_probe.json",
+    "gis_feature_id": 295,
+    "gis_bounds_m": [
+      [
+        -404.9337393053175,
+        -379.6794607788676
+      ],
+      [
+        1309.7042881612037,
+        1330.7423065949297
+      ]
+    ],
+    "evaluated_asset_bounds_m": [
+      [
+        -406.7227478027344,
+        -379.6091003417969
+      ],
+      [
+        1309.6337890625,
+        1330.812744140625
+      ],
+      [
+        0.0,
+        5.9663825035095215
+      ]
+    ],
+    "wall_ground_vertex_count": 276,
+    "wall_ground_edge_segment_count": 276,
+    "gis_to_wall_max_sampled_distance_m": 0.5521472850634577,
+    "wall_to_gis_max_sampled_distance_m": 0.28991960113576104,
+    "gis_to_wall_mean_sampled_distance_m": 0.0032281515466000693,
+    "packed_images": [
+      "SCHO_brick_tile",
+      "SCHO_shingle_tile",
+      "SCHO_slate_tile"
+    ],
+    "visual_references": [
+      "audit/schowe_house/preview_three_quarter.png",
+      "audit/schowe_house/preview_roof.png",
+      "audit/schowe_house/sources/schowe_house_pcrd_photo_2025_crop.png"
+    ]
+  },
+  "findings": [
+    "The GIS-to-wall multi-meter shift is corrected; sampled wall perimeter now agrees within 0.55 m maximum and about 0.003 m mean, with deviations concentrated around interrupted ground-level openings and wall thickness.",
+    "Reconstruct the visible cross-gabled roof junctions and upper dark wood/shingle gable cladding from the saved 2025 photo; the current continuous two-slope roof is materially simplified.",
+    "Add the prominent brick chimney(s) visible in the source photo and repair the pale exposed roof/wall intersection surfaces seen in the roof preview.",
+    "Keep ridge/eave heights and hidden elevations labeled as estimates unless stronger source evidence appears."
+  ]
+}

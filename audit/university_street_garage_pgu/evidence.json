@@ -1,0 +1,65 @@
+{
+  "building_id": "massing_university_street_parking_garage_pgu_be81bec",
+  "name": "University Street Parking Garage (PGU)",
+  "asset_path": "modular/buildings/massing_university_street_parking_garage_pgu_be81bec.blend",
+  "build_script": "modular/buildings/build_massing_university_street_parking_garage_pgu_be81bec.py",
+  "retrieved_utc": "2026-10-26",
+  "placement_origin_xy_m": [-303.86584469187807, -72.76342594547486],
+  "coordinate_method": "Approximate local campus tangent conversion required by modular/AGENTS.md: X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. Anchor is the midpoint of the official GIS footprint's geographic bounding box converted to campus coordinates. Asset geometry is centered on this origin; campus placement remains the master Placement_<id> marker's responsibility.",
+  "source_records": [
+    {
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D260&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "provider": "Purdue University ArcGIS building shapes service (BuildingShapesZip4)",
+      "feature_id": "FID 260; GlobalID {FE662732-0E98-488F-9E50-DAC18DC14512}; BLDG_ABBR PGU",
+      "source_name": "University Street Parking Garage, 201 N University Street",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "Layer metadata dataLastEditDate 2026-08-31T16:13:41Z; feature-level creation/edit dates unavailable",
+      "source_crs": "EPSG:4326 (longitude, latitude); output requested in EPSG:4326",
+      "measurement_method": "Preserved raw feature GeoJSON. Converted each footprint vertex with project local-campusing formula; source polygon bounds are 82.36 m east-west by 95.93 m north-south. GIS properties report NUM_LEVELS=6, CountOfFLO=6, Extrution=47, F02=10.1, F03=20.2, F04=30.4, R=40.6. Extrusion units and the interpretation of the per-floor fields are not declared in the layer metadata; values were not treated as surveyed dimensions.",
+      "uncertainty": "Footprint identity and outline are directly identified by PGU/official name/address. Source area Shape__Area unit is undocumented. Vertical fields have unclear units/meaning and do not form a complete floor schedule. No floorplan was accessible."
+    },
+    {
+      "url": "https://www.cesolutionsinc.com/purdue-university-parking-garage-restoration-repair",
+      "provider": "CE Solutions, structural engineering project page",
+      "feature_id": "University Street Parking Garage project page; image filename University Street.jpg",
+      "source_name": "University Street Garage exterior and repair context",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "Page/image date not stated; image file path includes 2017-era upload identifier",
+      "source_crs": "Photograph, no geospatial CRS",
+      "measurement_method": "Visual comparison of the preserved photograph with facade composition: open-air parking decks, light concrete horizontal spandrel/parapet bands, dark openings, reddish brick piers, vertical glazed stair/core slot, and distinct ENTER/EXIT portals. Used for appearance only, not metric measurement.",
+      "uncertainty": "Single oblique exterior photograph does not establish all elevations, exact bay spacing, exact portal positions, roof details, or floor circulation."
+    },
+    {
+      "url": "https://admissions.purdue.edu/visit/parkinguniversity.php",
+      "provider": "Purdue University Undergraduate Admissions",
+      "feature_id": "University Street Parking Garage visitor directions",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "Page date not stated",
+      "source_crs": "Textual source, no CRS",
+      "measurement_method": "Confirms garage identity and approach from University Street; used to support street-facing access context only.",
+      "uncertainty": "Not a building geometry, dimension, or floorplan source."
+    }
+  ],
+  "modeled_features": [
+    "Official GIS polygon used for parking deck/floor plate outlines.",
+    "Six deck levels modeled at 2.85 m spacing, yielding approximately 15.06 m total height including the base and parapet; the floor count comes from GIS while exact spacing is an architectural inference, cross-checked against but not claimed to measure the ambiguous 47 extrusion field.",
+    "Open-air facade with shadowed ventilation openings, light concrete spandrel bands, red-brown brick piers, and glazed core slots based on CE Solutions photo.",
+    "Regular interior support grid, representative parking marks, four stair/elevator cores, and paired ramp runs are generalized/inferred because no verified PGU plans were accessible. They are not an asserted exact parking layout or verified accessible route.",
+    "Procedural concrete/traffic coating shaders; no external image dependencies."
+  ],
+  "files": {
+    "raw_gis_feature": "audit/university_street_garage_pgu/purdue_building_FID260.geojson",
+    "raw_gis_layer_metadata": "audit/university_street_garage_pgu/purdue_building_layer_metadata.json",
+    "raw_admissions_page": "audit/university_street_garage_pgu/purdue_admissions_parking_page.html",
+    "raw_engineering_page": "audit/university_street_garage_pgu/ce_solutions_repair_project_page.html",
+    "reference_photo": "audit/university_street_garage_pgu/ce_solutions_university_street_garage.jpg",
+    "preview": "audit/university_street_garage_pgu/pgu_hero.png",
+    "fresh_open_validation": "audit/university_street_garage_pgu/fresh_reopen_validation.json"
+  },
+  "remaining_uncertainty": [
+    "No verified garage floorplan or measured elevation was found; interior circulation and bay layout are illustrative.",
+    "Exact floor-to-floor heights and roof construction are uncertain; modeled height is approximately 15.06 m.",
+    "GIS attribute source units for Shape__Area, Extrution, and floor elevation fields are not explicit.",
+    "Street-facing access positions were placed approximately using the photo and address context; exact present-day entrance configuration requires direct close-up survey or current imagery."
+  ]
+}

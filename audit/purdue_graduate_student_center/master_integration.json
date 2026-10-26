@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "master_file": "purdue_campus_master.blend",
+  "audit": "audit/master_sync_pgsc_2026-10-26.json",
+  "master_sha256": "6aa50f651ad35d138d73cece4cabd0139413fb35326649ad3f7471495b85941d",
+  "placement_marker": "Placement_massing_purdue_graduate_student_center_af9c5c7",
+  "garage_override_collection": "MasterOverride_NorthwesternParkingGarage_PGSC",
+  "garage_source_asset": "modular/buildings/massing_northwestern_parking_garage_979f1a2.blend",
+  "garage_source_modified": false,
+  "cutout_method": "Exact Boolean difference on a master-owned copy of the linked garage mesh using the official PGSC GIS polygon buffered 0.2m in XY, cutter z=-0.5..4.5m; cutter face normals recalculated before application.",
+  "cutout_mesh_topology": {
+    "nonmanifold_edges": 0,
+    "boundary_edges": 0
+  },
+  "verification": "fresh master reopen confirms PGSC marker path, exact location, bounds within 0.00002m, no source garage link, and a clearance ray through the PGSC footprint only reaches the garage proxy roof at z=4.5m."
+}

@@ -1,0 +1,89 @@
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[2]
+PROBE = json.loads((HERE / 'blender_probe.json').read_text(encoding='utf-8'))
+EVIDENCE = json.loads((ROOT / 'audit/wang_hall/evidence.json').read_text(encoding='utf-8'))
+FRESH = json.loads((ROOT / 'audit/wang_hall/fresh_open_validation.json').read_text(encoding='utf-8'))
+EXPECTED_SHA = '7c0d3ad6e3399125067a4bb4fec86deee6972b10699f9d95bdce9ae3f11d7cea'
+assert PROBE['asset_sha256'].lower() == EXPECTED_SHA
+assert EVIDENCE['model']['asset_sha256'].lower() == EXPECTED_SHA
+
+criteria = [
+  {
+    'name':'Correct identity and source-backed footprint','score':1.9,'max_score':2,
+    'evidence':[
+      'The OSM source snapshot identifies way 301932787 as Wang Hall (WANG), with 17 unique outline vertices; the independent Blender probe confirmed the asset structural footprint vertices lie within 0.000002 m of the projected/centered OSM vertices (maximum nearest-vertex error 0.00000195 m).',
+      'The evidence record also cross-references Purdue GIS FID 895 and the CSO project photographs; the plan polygon and campus context identify the correct building.',
+      'Purdue GIS and OSM outlines differ by about 5.3 m / IoU about 0.812. The model follows OSM based on aerial alignment and area reconciliation, so the selected roof-edge outline remains uncertain as an exact wall survey.'
+    ],
+    'findings':['Identity and OSM plan outline are strongly supported; modest deduction for source disagreement and lack of a surveyed structural-wall polygon.']
+  },
+  {
+    'name':'Position, orientation, and scale/dimensions','score':1.55,'max_score':2,
+    'evidence':[
+      'The asset is authored in a local coordinate frame with the source footprint bbox centered at (0,0); its local anchor is explicitly documented as campus XY [98.2954902278031,339.9100960000692] m.',
+      'Independent evaluated bounds are approximately 93.317 m by 99.855 m; structural polygon coordinates align with the OSM projection vertex by vertex.',
+      'The asset library contains no Placement marker. Evidence says the coordinator will integrate it through a detailed placement marker; this evaluation therefore verifies local geometry/declared anchor, not final master-scene placement. The approximate project geographic conversion is not survey-grade.'
+    ],
+    'findings':['Local scale/orientation are reproducible from the OSM ring. Final campus placement is pending master integration and cannot yet be independently confirmed in the master scene.']
+  },
+  {
+    'name':'Evidence-backed height, floors, and roof form','score':1.65,'max_score':2,
+    'evidence':[
+      'Official Purdue ECE source and OSM tags support four stories; OSM way 301932787 tags height=14.8 m, clearly recorded as unsurveyed in the evidence.',
+      'Independent reopen gives 14.81 m overall evaluated extent (rounding-scale 0.01 m above tag); structural shell is about 13.88 m tall, roof deck/parapet and modeled rooftop features fit the reported envelope to this tolerance.',
+      'The preview roof plan shows a long central glazed skylight strip and low equipment consistent with the provided architect imagery; no dimensioned roof plan or surveyed elevations are available.'
+    ],
+    'findings':['Story count and approximate height are supported, but source height is unsurveyed and exact roof/mechanical elevations remain schematic.']
+  },
+  {
+    'name':'Facade, entrances, and distinctive architecture','score':1.45,'max_score':2,
+    'evidence':[
+      'Compared the model three-quarter/detail previews directly with audit/wang_hall/sources/wang-hall-finished.jpg. The model represents the red/brown brick field, repeated framed glazing, four-level facade rhythm, pale entrance canopy, central projecting masonry atrium pavilion, tall transparent atrium glazing and raised pale crown.',
+      'The dedicated detail preview shows visible interior floor/balcony elements behind the atrium glazing; the saved validation ray enters the modeled facade opening and reaches interior geometry at 6.06 m.',
+      'The source photograph shows a more clearly curved metal-clad crown, finer facade proportions and realistic material/color variation. The model crown reads as a broad shallow/flat pale cap from the available views; individual window proportions and secondary facade details are schematic. Interior furnishing/layout has no verified plan.'
+    ],
+    'findings':['Distinctive atrium massing and transparent glazing are present. Crown curvature, facade cadence/material response, and interior planning need stronger source-based visual refinement for a higher fidelity score.']
+  },
+  {
+    'name':'Modular export, portability, and complete evidence','score':1.85,'max_score':2,
+    'evidence':[
+      'The saved asset freshly opens in Blender 5.2.3 LTS with the expected scene and Asset_massing_wang_hall_wang_0dac5ab collection; 12 asset objects contain evaluated geometry.',
+      'Independent dependency checks found zero external libraries, no placement markers (expected for the local library), and no external image texture dependencies. Procedural materials are assigned across facade, roof, glazing, interior, and entrance objects.',
+      'Building-specific evidence includes raw OSM snapshot, Purdue GIS feature, architect/official source snapshots, aerial overlay and rendered previews. The assigned separate probe and evaluator are saved in this independent_grade_final folder.',
+      'The root/shared manifest and master integration are outside this asset ownership and remain coordinator actions.'
+    ],
+    'findings':['Portable modular asset and substantial source record are present; master manifest/marker handoff is intentionally pending.']
+  }
+]
+score = round(sum(c['score'] for c in criteria), 2)
+result = {
+ 'evaluator':'Independent Wang Hall final regrade',
+ 'building':'Wang Hall (Seng-Liang Wang Hall)',
+ 'asset':'modular/buildings/massing_wang_hall_wang_0dac5ab.blend',
+ 'asset_sha256':PROBE['asset_sha256'],
+ 'score':score,'max_score':10,'passing_standard':8,'passes':score >= 8,
+ 'criteria':criteria,
+ 'evidence':[
+   'Independent evaluator freshly opened the named .blend in Blender '+PROBE['probe_blender_version']+' and directly measured evaluated geometry and source-ring alignment.',
+   'The independent structural outline comparison used the captured OSM way 301932787 coordinates with the project conversion in modular/AGENTS.md and found maximum nearest vertex error %.8f m.' % PROBE['structural_outline_nearest_mesh_vertex_error_m']['maximum'],
+   'Visual review directly compared current previews audit/wang_hall/preview_three_quarter.png, preview_atrium_detail.png, preview_roof_plan.png against the saved architect reference audit/wang_hall/sources/wang-hall-finished.jpg.',
+   'Official Purdue ECE and Purdue GIS references, OSM tags, and evidence.json were checked for identity, floor count, height, area and anchor. Existing independent reopen report cross-checks the expected scene and collection.'
+ ],
+ 'findings':[
+   'Passes the 8/10 threshold at %.2f/10.' % score,
+   'Master integration remains unverified: add/inspect the detailed placement marker at campus XY [98.2954902278031,339.9100960000692] and verify it replaces the old massing link exactly once.',
+   'Keep OSM/GIS footprint disagreement and the unsurveyed 14.8 m OSM height flagged as uncertainties.',
+   'For improved visual fidelity, refine the shallow crown to match the source photograph’s visibly curved/light metal-clad cap and review facade-window proportions/material response; interior remains illustrative without a verified plan.'
+ ],
+ 'limitations':['This is an independent local asset review. It does not assert that the master blend has integrated the asset. Appearance scoring is based on available saved previews/reference, not a rendered camera-matched comparison.'],
+ 'probe':'audit/wang_hall/independent_grade_final/blender_probe.json',
+ 'evaluator_script':'audit/wang_hall/independent_grade_final/evaluate_wang_hall.py'
+}
+(HERE / 'result.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+print(json.dumps({'score':score,'max_score':10,'passes':score>=8,'criteria':[{k:c[k] for k in ['name','score','max_score']} for c in criteria],'findings':result['findings']},indent=2))
+
+
+

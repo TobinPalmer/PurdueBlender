@@ -1,0 +1,87 @@
+{
+  "review_type": "independent fresh-open asset review",
+  "reviewed_date": "2026-10-26",
+  "asset_path": "modular/buildings/massing_university_street_parking_garage_pgu_be81bec.blend",
+  "assignment_sha256": "0cee0625c38ea3742e553c07cd76f65e363b7be63bdbb90881e8beb95fc59760",
+  "observed_sha256": "0cee0625c38ea3742e553c07cd76f65e363b7be63bdba90881e8beb95fc59760",
+  "project_record_sha256": "0cee0625c38ea3742e553c07cd76f65e363b7be63bdba90881e8beb95fc59760",
+  "assignment_sha_matches_observed": false,
+  "project_record_sha_matches_observed": true,
+  "sha_discrepancy_note": "The assignment SHA differs from both the current file SHA and audit/asset_sha256.json by one hex character. The observed file hash agrees with the existing project hash record.",
+  "pass_threshold": 8.0,
+  "score": 8.15,
+  "max_score": 10.0,
+  "passes": true,
+  "criteria": [
+    {
+      "name": "Identity and source match",
+      "score": 0.95,
+      "max": 1.0,
+      "status": "verified",
+      "basis": "Official Purdue ArcGIS feature FID 260 is explicitly PGU, with matching name/address and preserved raw GeoJSON. CE Solutions image corroborates facade identity."
+    },
+    {
+      "name": "Footprint, dimensions and orientation",
+      "score": 1.85,
+      "max": 2.0,
+      "status": "verified with small overhang difference",
+      "basis": "Raw GIS converted bounds are 82.36 x 95.93 m; evaluated asset bounds are 83.00 x 96.45 m. The small increase is compatible with modeled piers/facade projections. Deck plates are generated directly from the source polygon; no independent surveyed orientation check is available."
+    },
+    {
+      "name": "Placement anchor and modular coordinates",
+      "score": 0.95,
+      "max": 1.0,
+      "status": "verified as asset metadata/local frame",
+      "basis": "The saved collection stores midpoint-derived anchor [-303.865845, -72.763426] m; geometry is in the local frame. Full campus integration placement was outside this asset-only review."
+    },
+    {
+      "name": "Floor count and vertical dimensions",
+      "score": 0.7,
+      "max": 1.0,
+      "status": "floor count verified; height estimated",
+      "basis": "Six deck plates match the GIS six-level attribute. Approximately 15.06 m height and 2.85 m floor spacing are estimates: GIS vertical fields have ambiguous units/meaning and no measured elevation source was found."
+    },
+    {
+      "name": "Exterior facade fidelity",
+      "score": 1.35,
+      "max": 2.0,
+      "status": "partially verified",
+      "basis": "Open dark bays, concrete spandrels, red-brown piers, glazed core slots and entry/exit signs resemble the single CE Solutions photo. In comparison the model bands appear too thin/uniform and its four prominent corner cores are unsupported by that reference, which shows a dominant brick tower and a smaller distant core. Exact current entrances/elevations are unverified."
+    },
+    {
+      "name": "Parking interior and circulation",
+      "score": 0.55,
+      "max": 1.0,
+      "status": "illustrative, unverified",
+      "basis": "The asset has support columns, representative stall stripes, four cores and ramp flights. No verified floorplan was found. Ramp slabs do not establish verified continuous circulation, landings or turning paths; parking layout remains generalized."
+    },
+    {
+      "name": "Materials, dependencies and asset portability",
+      "score": 0.9,
+      "max": 1.0,
+      "status": "verified",
+      "basis": "A fresh Blender process opened the expected scene/collection. Named procedural concrete, coating, brick, glazing and marking materials are assigned. No unpacked external images; library collection name is stable."
+    },
+    {
+      "name": "Evidence quality and uncertainty reporting",
+      "score": 0.9,
+      "max": 1.0,
+      "status": "verified",
+      "basis": "Evidence includes source URLs, providers, feature ID, retrieval date, CRS, conversion/measurement method, raw GIS, comparison photo and explicit vertical/interior/access uncertainties."
+    }
+  ],
+  "fresh_open_probe": "fresh_blender_probe.json",
+  "visual_sources_reviewed": [
+    "../pgu_hero.png",
+    "../ce_solutions_university_street_garage.jpg",
+    "../evidence.json",
+    "../purdue_building_FID260.geojson"
+  ],
+  "unresolved_findings": [
+    "Exact total height and floor-to-floor spacing are estimates, not verified measurements.",
+    "No verified garage floorplan; ramp continuity and exact stall/support arrangement remain unverified.",
+    "Facade assessment relies on one oblique project photo; modeled band/core proportions differ from the reference.",
+    "Placement/collision within the full campus master was outside this library-only review."
+  ],
+  "summary": "Passes at 8.15/10. The library is portable, correctly identified and anchored in its documented local frame, and closely matches official footprint bounds and the six-level count. Height, internal circulation, current access layout and some facade proportions remain uncertain."
+}

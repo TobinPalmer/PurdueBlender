@@ -1,0 +1,263 @@
+{
+  "building": "Clayton W. Dement Fire Station (Purdue University Fire Department)",
+  "asset_id": "massing_purdue_fire_department_520430b",
+  "asset_path": "modular/buildings/massing_purdue_fire_department_520430b.blend",
+  "asset_sha256": "6a20209ae3db99c028a16d7df11e42a87577b8bee29afc5e0ead98a779b03817",
+  "master_path": "purdue_campus_master.blend",
+  "master_sha256": "fd42c154b5812f16bcf8cf21560600d3e46d4358fd82c07c7395fdbb1208aaa2",
+  "grader": "independent_grader_subagent",
+  "grade_date": "2026-10-26",
+  "score": 8.4,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "status": "PASS",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Purdue Archives identifies the Clayton W. Dement Fire Station (DMNT) as a three-bay brick fire station: https://collections.lib.purdue.edu/campus/buildings/53",
+        "Purdue Facilities Operations confirms PUFD is located at 1250 W Third Street: https://www.purdue.edu/operations/operations-maintenance/wp-content/uploads/sites/7/2025/12/bd-manual.pdf",
+        "Official GIS FID 211 identifies DMNT at 1250 3rd Street. After localization, the model shell matches its 14 source vertices in local coordinates within 0.000058 m."
+      ],
+      "reason": "The building identity is confirmed by primary sources; this is the Purdue Fire Department home station."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified in the project coordinate transform",
+      "evidence": [
+        "Fresh Blender 5.2.3 reopen confirmed marker location [-873.25439453125, 35.95798110961914, 0.0] matches manifest XY [-873.2543640136719, 35.95798206329346] within 0.001 m.",
+        "Marker rotation is zero and scale is unit. The marker links the exact intended relative library path.",
+        "Reconstructed world bounds from fresh local asset geometry and marker position differ from manifest world bounds by at most 0.00003052 m."
+      ],
+      "reason": "Localization preserved the previously verified source footprint and the master instance places it at the manifest position. Absolute position remains in the project\u2019s documented approximate local conversion, not a survey CRS."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2.0,
+      "status": "partially verified; total height estimated",
+      "evidence": [
+        "Official GIS lists two levels and an extrusion value of 15 without documenting the unit/meaning.",
+        "Model bounds remain 0\u201314.6 m. The roof-height split and raised apparatus hall are image-based estimates; no surveyed elevation source was found."
+      ],
+      "reason": "Floor count and broad silhouette have support, but numeric heights are unverified and remain estimates."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2.0,
+      "status": "mostly supported, some interpretation",
+      "evidence": [
+        "Purdue archival record identifies brick construction and a three-bay station; current Street View shows two clear vehicle doors, a red canopy, personnel entry, brick office wing, and taller ribbed-metal hall.",
+        "Rendered preview and source panoramas were directly compared; fa\u00e7ade materials/details are assigned and packaged in the asset. Source snapshots and URLs remain in audit/purdue_fire_department/evidence.json."
+      ],
+      "reason": "Principal materials and massing are represented. The exact third-bay position/configuration is interpreted from the historic three-bay description because only two doors are clear in the current frontal panorama."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Fresh Blender 5.2.3 open confirms 99 mesh objects, all 99 assigned materials, no external file images, expected scene/collection, and 100 total collection objects including AssetRoot.",
+        "Current asset SHA-256: 6a20209ae3db99c028a16d7df11e42a87577b8bee29afc5e0ead98a779b03817.",
+        "Fresh master audit and independent master open both pass; no superseded massing collection is directly linked alongside the detail instance."
+      ],
+      "reason": "Stable collection/path contract and self-contained materials are preserved after localization."
+    }
+  ],
+  "fresh_reopen_checks": {
+    "asset": {
+      "asset_id": "massing_purdue_fire_department_520430b",
+      "asset_path": "modular/buildings/massing_purdue_fire_department_520430b.blend",
+      "asset_sha256": "6a20209ae3db99c028a16d7df11e42a87577b8bee29afc5e0ead98a779b03817",
+      "scene": "Building_massing_purdue_fire_department_520430b",
+      "collection": "Asset_massing_purdue_fire_department_520430b",
+      "mesh_object_count": 99,
+      "object_count_all_types": 100,
+      "objects_outside_asset_collection": [],
+      "assigned_material_meshes": 99,
+      "material_names": [
+        "Dement | blue-gray glazing",
+        "Dement | charcoal ribbed metal cladding",
+        "Dement | charcoal standing-seam metal",
+        "Dement | concrete apron",
+        "Dement | dark doors and openings",
+        "Dement | dark red steel trim",
+        "Dement | pale gray sectional bay doors",
+        "Dement | warm white paint",
+        "Dement | weathered red-brown brick"
+      ],
+      "world_bounds_m": [
+        [
+          -16.01898193359375,
+          16.01904296875
+        ],
+        [
+          -16.88298225402832,
+          16.882984161376953
+        ],
+        [
+          0.0,
+          14.600000381469727
+        ]
+      ],
+      "external_image_paths": [],
+      "verified_after_fresh_open": true
+    },
+    "master": {
+      "status": "PASS",
+      "master_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\purdue_campus_master.blend",
+      "asset_id": "massing_purdue_fire_department_520430b",
+      "marker_name": "Placement_massing_purdue_fire_department_520430b",
+      "marker_location": [
+        -873.25439453125,
+        35.95798110961914,
+        0.0
+      ],
+      "manifest_origin_xy_m": [
+        -873.2543640136719,
+        35.95798206329346
+      ],
+      "marker_rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "marker_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "linked_library": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_purdue_fire_department_520430b.blend",
+      "expected_library": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_purdue_fire_department_520430b.blend",
+      "linked_collection": "Asset_massing_purdue_fire_department_520430b",
+      "manifest_local_bounds_m": [
+        [
+          -16.01898193359375,
+          16.01904296875
+        ],
+        [
+          -16.88298225402832,
+          16.882984161376953
+        ],
+        [
+          0.0,
+          14.600000381469727
+        ]
+      ],
+      "reconstructed_world_bounds_m": [
+        [
+          -889.2733764648438,
+          -857.2353515625
+        ],
+        [
+          19.07499885559082,
+          52.840965270996094
+        ],
+        [
+          0.0,
+          14.600000381469727
+        ]
+      ],
+      "manifest_world_bounds_m": [
+        [
+          -889.2733459472656,
+          -857.2353210449219
+        ],
+        [
+          19.074999809265137,
+          52.84096622467041
+        ],
+        [
+          0.0,
+          14.600000381469727
+        ]
+      ],
+      "asset_sha256": "6a20209ae3db99c028a16d7df11e42a87577b8bee29afc5e0ead98a779b03817"
+    },
+    "integration_audit": {
+      "id": "massing_purdue_fire_department_520430b",
+      "status": "PASS",
+      "errors": [],
+      "marker_location": [
+        -873.25439453125,
+        35.95798110961914,
+        0.0
+      ],
+      "library": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_purdue_fire_department_520430b.blend",
+      "mesh_count": 99,
+      "object_count": 100,
+      "world_bounds_m": [
+        [
+          -889.2733764648438,
+          -857.2353515625
+        ],
+        [
+          19.07499885559082,
+          52.840965270996094
+        ],
+        [
+          0.0,
+          14.600000381469727
+        ]
+      ],
+      "manifest_bounds_m": [
+        [
+          -889.2733459472656,
+          -857.2353210449219
+        ],
+        [
+          19.074999809265137,
+          52.84096622467041
+        ],
+        [
+          0.0,
+          14.600000381469727
+        ]
+      ],
+      "bound_error_max_m": 3.0517578125e-05,
+      "asset_sha256": "6a20209ae3db99c028a16d7df11e42a87577b8bee29afc5e0ead98a779b03817"
+    },
+    "localized_footprint": {
+      "asset_sha256": "6a20209ae3db99c028a16d7df11e42a87577b8bee29afc5e0ead98a779b03817",
+      "feature_id": 211,
+      "building_name": "Clayton W. Dement Fire Station",
+      "abbr": "DMNT",
+      "address": "1250 3rd Street",
+      "placement_origin_xy_m": [
+        -873.2543640136719,
+        35.95798206329346
+      ],
+      "source_local_vertex_count": 14,
+      "model_lower_vertex_count": 14,
+      "source_to_model_max_vertex_error_m": 5.7908541770348644e-05,
+      "model_to_source_max_vertex_error_m": 5.7908541770348644e-05,
+      "model_local_shell_bounds_m": [
+        [
+          -16.01898193359375,
+          16.01904296875
+        ],
+        [
+          -16.085676193237305,
+          16.882984161376953
+        ],
+        [
+          0.0,
+          5.0
+        ]
+      ]
+    }
+  },
+  "findings": [
+    "The localized asset preserves the prior geometry and footprint fit; the world placement is recreated by the master marker.",
+    "Master marker uses the exact modular library path, correct XY, zero rotation, and unit scale; reconstructed world bounds agree with the manifest within tolerance.",
+    "Roof height is estimated; the current front view visibly supports two bay doors while the historic Purdue record calls the station three-bay. Exact third-bay configuration remains uncertain.",
+    "Interior layout is not modeled because available evidence does not support one."
+  ]
+}

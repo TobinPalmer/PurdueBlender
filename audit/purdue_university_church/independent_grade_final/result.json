@@ -1,0 +1,127 @@
+{
+  "score": 7.7,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS FID 797 explicitly names BLDG_ABBR UC / University Church. Independently transformed 20-vertex GIS outline has bounds [[296.3565827428268, 347.2111957642118], [-162.1550495182555, -119.46780979172445]]; fresh-open shell bounds [[296.3565979003906, 347.211181640625], [-162.15504455566406, -119.46781158447266]]; max XY axis-bound error 0.000015 m. The state record and 2024 floor plan cross-check identity and use.",
+      "findings": []
+    },
+    {
+      "name": "Position, orientation, scale and dimensions",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": "Campus coordinates and GIS plan envelope match within 0.000015 m. The plan shape is present, but the portico/photo facade cannot be assigned to a GIS edge with the evidence available: the photo has no geotag/azimuth and floorplan has no north arrow/scale.",
+      "findings": [
+        "Facade cardinal orientation remains inferred; source photo does not establish which GIS edge is the photographed entrance."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors and roof form",
+      "score": 1.1,
+      "max_score": 2.0,
+      "evidence": "Source photo supports a slate gabled sanctuary roof and tower/spire silhouette; state record supports a multi-story facility. Eaves (11.7m), ridge (14.9m), spire (28.54m), and floor count remain estimates; GIS level fields conflict (Level_=4, NUM_LEVELS=1, CountOfFLO=3, Extrution=39 with undocumented units).",
+      "findings": [
+        "No measured elevations or sufficiently scaled multi-view photo were found."
+      ]
+    },
+    {
+      "name": "Facade, entrances and distinctive architecture",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": "Direct comparison of saved preview with 2023 source supports red brick, four-column portico, triangular pediment with circular oculus, green spired tower, and arched side windows. Fresh-open probe confirms True oculus, 4 portico columns, True tower, 105 arched window-head objects. However, preview shows arches on the portico entrance elevation, while source photo shows rectangular/square-headed openings on the portico wall and arches on the perpendicular side wall; openings are generalized incorrectly across elevations. Facade compass placement is also inferred.",
+      "findings": [
+        "Arched window heads extend across the displayed portico elevation, whereas source-visible windows on that elevation are rectangular; correct the distribution or explain with corroborating imagery."
+      ]
+    },
+    {
+      "name": "Modular export, portability and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "A separate Blender 5.2 background process opened the saved asset. Expected scene/collection present=True/True; 826 collection objects and 721 meshes; 40 shell vertices; no materialless meshes=True; unpacked external images=0; all five source snapshots and three previews exist. Asset SHA-256 1925045438dd01b022327dab66796a45e133b48f323ec6e4c6d6de9695e98877.",
+      "findings": [
+        "Evidence record is detailed and self-contained, but final grade should be checked against the current saved revision after the window-head edits."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_university_church_84b2a1b.blend",
+    "asset_sha256": "1925045438dd01b022327dab66796a45e133b48f323ec6e4c6d6de9695e98877",
+    "blender_probe": "audit\\purdue_university_church\\independent_grade_final\\fresh_open_probe.json",
+    "gis_bounds_local_m": [
+      [
+        296.3565827428268,
+        347.2111957642118
+      ],
+      [
+        -162.1550495182555,
+        -119.46780979172445
+      ]
+    ],
+    "model_shell_bounds_local_m": [
+      [
+        296.3565979003906,
+        347.211181640625
+      ],
+      [
+        -162.15504455566406,
+        -119.46781158447266
+      ]
+    ],
+    "axis_bound_error_m": [
+      1.5157563836964982e-05,
+      4.9625914471107535e-06
+    ],
+    "fresh_open_probe": {
+      "fresh_open": true,
+      "asset_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_university_church_84b2a1b.blend",
+      "asset_sha256": "1925045438dd01b022327dab66796a45e133b48f323ec6e4c6d6de9695e98877",
+      "expected_scene_present": true,
+      "expected_collection_present": true,
+      "object_count": 826,
+      "mesh_count": 721,
+      "collection_scene_linked": true,
+      "collection_objects_outside_root": 0,
+      "shell_bounds_xyz": [
+        [
+          296.3565979003906,
+          347.211181640625
+        ],
+        [
+          -162.15504455566406,
+          -119.46781158447266
+        ],
+        [
+          0.0,
+          11.699999809265137
+        ]
+      ],
+      "shell_vertex_count": 40,
+      "shell_face_count": 56,
+      "arch_window_head_count": 105,
+      "oculus_present": true,
+      "tower_present": true,
+      "portico_columns": 4,
+      "doors": 3,
+      "materialless_meshes": [],
+      "external_images": [],
+      "missing_library_paths": [],
+      "scene_camera": "UC Preview Camera",
+      "scene_units": "METRIC"
+    },
+    "source_record": "audit/purdue_university_church/build_evidence.json",
+    "visual_comparison": [
+      "audit/purdue_university_church/preview.png",
+      "audit/purdue_university_church/preview_east.png",
+      "audit/purdue_university_church/sources/dave_wegiel_university_church_dusk.jpg"
+    ]
+  },
+  "findings": [
+    "Facade cardinal orientation remains inferred; source photo does not establish which GIS edge is the photographed entrance.",
+    "No measured elevations or sufficiently scaled multi-view photo were found.",
+    "Arched window heads extend across the displayed portico elevation, whereas source-visible windows on that elevation are rectangular; correct the distribution or explain with corroborating imagery.",
+    "Evidence record is detailed and self-contained, but final grade should be checked against the current saved revision after the window-head edits."
+  ]
+}

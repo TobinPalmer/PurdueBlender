@@ -1,0 +1,123 @@
+{
+  "building": "Purdue Drug Discovery Facility",
+  "asset_id": "massing_purdue_drug_discovery_facility_fc72a4a",
+  "asset_path": "modular/buildings/massing_purdue_drug_discovery_facility_fc72a4a.blend",
+  "asset_sha256": "0e720cf446c15fbec44d48dc490e90a2c2ba08cb270d275d7de0be0ed3a2e6ff",
+  "grader": "independent_grader_subagent",
+  "grade_date": "2026-10-26",
+  "score": 9.1,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "status": "PASS",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Independent inspection of the saved Purdue GIS feature confirms FID 893, abbreviation DRUG, name Drug Discovery Facility, and address 720 Clinic Drive.",
+        "Purdue Office of Research independently identifies the Drug Discovery Facility at 720 Clinic Drive and describes its three-story research program.",
+        "Measured mesh base outline against all preserved projected GIS outer/courtyard rings; sampled symmetric maximum deviation is 0.370 m (0.40 m acceptance tolerance, consistent with the low-detail simplification needed for the 152-vertex GIS perimeter)."
+      ],
+      "reason": "Official facility identity and location agree, and the shell follows the source polygon including the courtyard within the documented simplification tolerance."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "status": "verified in project coordinate frame; transform is approximate",
+      "evidence": [
+        "The shell remains at its expected campus-world coordinates; per-axis max bounding difference versus the GIS-converted extent is [3.7716206406912534e-06, 0.019720842088190693] m.",
+        "Footprint vertices follow the official feature with no additional translation, rotation, or scale change; the supplied campus conversion uses an approximate local longitude/latitude-to-meter transform rather than a surveyed CRS."
+      ],
+      "reason": "Plan shape and campus placement are directly compared to the GIS, but absolute geodetic position inherits the project's approximate coordinate conversion."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "three stories verified; vertical dimensions partly interpreted",
+      "evidence": [
+        "Purdue Office of Research explicitly calls the facility three-story.",
+        "The preserved GIS record contains F02=16, F03=32, F04=48 and R=56, but its saved field metadata supplies no field descriptions or units; interpreting R as a 56-ft roof datum is plausible but not formally established.",
+        "Fresh geometry inspection reports wall top 14.28 m and full asset top 17.03 m due to the entrance canopy; floor elevations and wall height remain estimated.",
+        "Published photos support a flat roof and high entrance canopy, but no measured elevations or as-built floor-level drawing were found."
+      ],
+      "reason": "Story count and broad roof silhouette are supported, but exact floor spacing, parapet height, and the semantic meaning of the GIS vertical fields are not conclusively evidenced."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.7,
+      "max_score": 2.0,
+      "status": "mostly source-supported; rear/courtyard treatment inferred",
+      "evidence": [
+        "The Purdue Office of Research photo shows the brick facade, regular horizontal floor bands, tall glazed entrance bay, and projecting flat canopy; these major elements appear in the inspected render.",
+        "Purdue's official facility description says users can observe lab experiments through glass barriers, supporting the glazed facade feature.",
+        "The model includes windows, brick, glazing, metal frames, a canopy/columns, doors, lobby levels, reception desk, and a feature wall; only the public oblique night view and 2011 proposed plan/render were available for detailed comparison."
+      ],
+      "reason": "The prominent architecture reads consistently with official imagery, while secondary elevations and exact entrance placement are inferred from a proposed design and sparse oblique imagery."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified by independent fresh-open probe",
+      "evidence": [
+        "Fresh Blender 5.2.3 LTS open confirms the named scene and collection, 35 collection objects (35 meshes), and 1677 polygons.",
+        "All meshes have material slots (9 unique materials); there are 0 external linked libraries and no mesh missing materials.",
+        "Asset SHA-256 independently computed: 0e720cf446c15fbec44d48dc490e90a2c2ba08cb270d275d7de0be0ed3a2e6ff.",
+        "The building-specific folder contains raw GIS feature and metadata snapshots, official Purdue photo/page snapshots, a proposed plan and floor plan/interior image, a render, and fresh-open validation evidence."
+      ],
+      "reason": "The asset reopens cleanly, keeps its stable collection contract, uses self-contained material data, and has substantial source/evidence records."
+    }
+  ],
+  "evidence": {
+    "fresh_open_probe": "audit/purdue_drug_discovery_facility/independent_grade/blender_probe_result.json",
+    "footprint_comparison": {
+      "source_properties": {
+        "FID": 893,
+        "BLDG_ABBR": "DRUG",
+        "BUILDING_N": "Drug Discovery Facility",
+        "ADDRESS": "720 Clinic Drive",
+        "NUM_LEVELS": 6,
+        "CountOfFLO": 5,
+        "F02": 16,
+        "F03": 32,
+        "F04": 48,
+        "R": 56
+      },
+      "source_ring_count": 2,
+      "source_point_count": 180,
+      "model_outline_edge_count": 52,
+      "source_to_model_max_distance_m": 0.3702445736274472,
+      "model_to_source_max_distance_m": 2.8987721330126644e-05,
+      "symmetric_hausdorff_sampled_m": 0.3702445736274472
+    },
+    "inspected_preview": "audit/purdue_drug_discovery_facility/preview_drug_discovery_facility_2026-10-26.png",
+    "official_sources": [
+      {
+        "title": "Institutes and Centers at Discovery Park \u2014 Purdue University",
+        "url": "https://research.purdue.edu/about/institutes-and-centers/",
+        "verified_claim": "Lines 140-158 identify the facility, location, three-story description and glazed experiment-observation feature."
+      },
+      {
+        "title": "Drug Discovery Building \u2014 Purdue Department of Chemistry",
+        "url": "https://www.chem.purdue.edu/DrugDiscovery/building.html",
+        "verified_claim": "Confirms the facility identity and provides the proposed map, first-floor layout and architectural images."
+      },
+      {
+        "title": "Purdue campus GIS layer metadata",
+        "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0",
+        "verified_claim": "Confirms Purdue campus polygon feature service and its EPSG:3857 spatial reference; project footprint itself is feature FID 893 in the preserved hosted-layer snapshot."
+      }
+    ],
+    "model_evidence_snapshot": "audit/purdue_drug_discovery_facility/model_evidence_2026-10-26.json"
+  },
+  "findings": [
+    "The asset uses campus-world coordinates as a simple massing library; master placement-marker integration has not been reviewed by this grading pass.",
+    "No surveyed/elevation source establishes exact main-wall, parapet, canopy, or floor-level dimensions; retain these as estimates.",
+    "Rear and courtyard facade rhythms are repeated/inferred from the front photo rather than independently confirmed from matching views."
+  ],
+  "grader_notes": "The GIS F02/F03/F04/R values suggest floor and roof datums, but the layer snapshot has no field descriptions or explicit units. The numeric mapping is plausible, not independently defined. Score is above threshold despite this limitation."
+}

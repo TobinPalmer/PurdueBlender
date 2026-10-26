@@ -1,0 +1,89 @@
+{
+  "building": "Wood Street Parking Garage (PGW)",
+  "asset_id": "massing_wood_street_garage_pgw_2fa056e",
+  "asset_path": "modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend",
+  "asset_sha256": "ec96675691a6fad923bd564bf04fd8be3817bb5af2f79825b266dfaf9966d4e1",
+  "grader": "independent_grader_subagent",
+  "grade_date": "2026-10-26",
+  "score": 8.7,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "status": "PASS",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Purdue BuildingShapesZip4 FeatureServer 0 FID 254 identifies Wood Street Parking Garage (PGW) at 120 S Grant Street.",
+        "Fresh-open probe independently converted the 18 raw GIS ring points from EPSG:3857 to the project's local tangent coordinates and found the model deck's ring vertex set identical: 18 vertices, 0 missing, 0 extra at 0.0001 m rounding tolerance.",
+        "Official Purdue parking references and the Purdue Archives search excerpt corroborate the Wood Street Garage identity/location."
+      ],
+      "reason": "The authoritative GIS building code, feature ID, name, address and exact footprint geometry match."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "verified locally; master marker pending",
+      "evidence": [
+        "Asset scene records its campus anchor as [313.53060833992083, -503.85230334816924] m; the GIS transformed footprint bbox midpoint is the same anchor.",
+        "Structural footprint dimensions are [38.74459002697131, 120.8251283419213] m, and the exact source ring is represented in the local frame; scene axes are X east, Y north, Z up.",
+        "A master Placement marker has not yet been added, so the final campus instance transform remains to be checked by the coordinator."
+      ],
+      "reason": "Local origin, orientation and footprint scale are source-registered; final master placement still needs coordinator verification."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "partially verified; roof height inferred",
+      "evidence": [
+        "Purdue GIS reports NUM_LEVELS=8, CountOfFLO=8, and floor fields F01\u2013F07 at 10 ft intervals.",
+        "The reopened asset has eight occupied deck slabs at 3.048 m increments and an overall roof/parapet top of 24.0944 m.",
+        "GIS R=78 ft plausibly indicates about 23.774 m to roof, but its definition and vertical units are not documented; the modeled top is about 0.320 m higher. No measured elevation drawing was found."
+      ],
+      "reason": "Eight levels and the approximate vertical scale are supported by GIS fields, but the roof datum and field interpretation are not independently surveyed."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "partially source-supported",
+      "evidence": [
+        "The saved circa-2010 exterior image shows repeated horizontal open parking slots, concrete piers/spandrels, a narrow glazed stair tower, and warm stairwell lights.",
+        "The model includes repeated open facade bays, a glazed/stair-lit tower, ramps and the labeled clearance/garage sign; the exterior and top-down previews show these parts distinctly.",
+        "Facade bay spacing, stair tower position and exact ramp routing remain inferred; the available exterior photo is old and the current street-level appearance was not directly captured."
+      ],
+      "reason": "The main garage type and recognizable facade language are supported by the reference, while finer placement/rhythm and present-day details remain unverified."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.9,
+      "max_score": 2.0,
+      "status": "verified as standalone library; master handoff pending",
+      "evidence": [
+        "A fresh Blender 5.2.3 open of SHA256 ec96675691a6fad923bd564bf04fd8be3817bb5af2f79825b266dfaf9966d4e1 found the expected scene `Building_massing_wood_street_garage_pgw_2fa056e`, collection `Asset_massing_wood_street_garage_pgw_2fa056e`, 79 objects and 29 mesh objects.",
+        "The geometry uses 9 procedural materials, has 0 external file images and 0 linked libraries; the source collection is directly linked in the asset scene.",
+        "The evidence folder contains raw GIS, official parking/map material, historic photo reference, build report, previews and fresh-open validation."
+      ],
+      "reason": "The reusable asset is self-contained and reopens cleanly; it still needs root-owned manifest/marker registration in the master."
+    }
+  ],
+  "evidence": [
+    "audit/purdue_wood_street_garage_pgw/independent_grade/model_probe.json",
+    "audit/purdue_wood_street_garage_pgw/build_report.json",
+    "audit/purdue_wood_street_garage_pgw/sources.json",
+    "audit/purdue_wood_street_garage_pgw/preview_exterior_dusk.png",
+    "audit/purdue_wood_street_garage_pgw/preview_top_down.png",
+    "audit/purdue_wood_street_garage_pgw/woodstreet_parking_entrance_reference.jpg"
+  ],
+  "findings": [
+    "PASS: exact source GIS footprint, building identity, local-frame dimensions, eight decks, expected scene/collection, portability, and target asset hash were independently checked.",
+    "Height is not a survey measurement. The 78 ft R field is interpreted as a roof datum; model top is 24.094 m versus 23.774 m implied by that field.",
+    "Current exterior imagery was unavailable in the source packet. Facade bay spacing, stair tower location, and ramp routing remain inferred from a circa-2010 image and garage typology.",
+    "Master integration is pending; the coordinator must place the collection instance at [313.530608, -503.852303] m and reopen the master to verify neighbors and transform."
+  ],
+  "master_integration_status": "PENDING_COORDINATOR_PLACEMENT_MARKER"
+}

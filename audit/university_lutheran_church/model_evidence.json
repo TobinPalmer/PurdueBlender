@@ -1,0 +1,149 @@
+{
+  "asset_id": "massing_university_lutheran_church_20903f1",
+  "asset_path": "modular/buildings/massing_university_lutheran_church_20903f1.blend",
+  "asset_sha256": "d9f259d060cbaca93d9b50c675c2e4089800e0e9c8d55e11f2e7725eab259d18",
+  "scene": "Building_massing_university_lutheran_church_20903f1",
+  "exported_collection": "Asset_massing_university_lutheran_church_20903f1",
+  "asset_coordinate_mode": "local meters; master placement marker supplies campus XY",
+  "anchor_xy_m": [
+    224.0740593385258,
+    171.33619923364054
+  ],
+  "outline_centroid_xy_m": [
+    224.0740593385258,
+    171.33619923364054
+  ],
+  "outline_bounds_xy_m": [
+    [
+      208.91396124082118,
+      237.9615931676513
+    ],
+    [
+      155.24502400032816,
+      185.3590720003558
+    ]
+  ],
+  "footprint_area_m2": 520.8839353217518,
+  "footprint_perimeter_m": 102.11890818333228,
+  "footprint_vertex_count": 17,
+  "reference_geometry_comparison": {
+    "source": "pre-existing single-object massing library manifest bounds",
+    "result": "pass",
+    "old_bounds_world_m": [
+      [
+        208.91395568847656,
+        237.9615936279297
+      ],
+      [
+        155.24502563476562,
+        185.35906982421875
+      ],
+      [
+        0,
+        16
+      ]
+    ],
+    "new_footprint_bounds_xy_m": [
+      [
+        208.91396124082118,
+        237.9615931676513
+      ],
+      [
+        155.24502400032816,
+        185.3590720003558
+      ]
+    ],
+    "max_horizontal_bound_difference_m": 5.5523446178540325e-06,
+    "interpretation": "OSM outline and original massing spatial bounds are the same target and extent."
+  },
+  "measured_dimensions": {
+    "length_x_m": 29.04763192683012,
+    "length_y_m": 30.11404800002765,
+    "method": "axis-aligned envelope of OSM outline using project-local conversion",
+    "uncertainty_m": "approximately 0.5–1.0 from source geometry and local projection; not surveyed"
+  },
+  "height": {
+    "model_top_m": 13.87,
+    "basement_bottom_m": -2.6,
+    "above_grade_top_estimate_m": 13.87,
+    "status": "estimated",
+    "basis": "three visible storeys and shallow roof profile in official ULu image, scaled approximately against the road-facing OSM boundary chain (about 28.5 m).",
+    "uncertainty_m": 2.5,
+    "note": "Prior massing top at 16 m was an unverified generic height; no authoritative measured height located."
+  },
+  "architecture": {
+    "exterior": "red-brown brick, 3 storeys, broad horizontal glazing bays with dark aluminum frames, pale horizontal masonry courses, white UNIVERSITY / LUTHERAN sign, vertical Fuel sign, shallow dark metal roof",
+    "roof": "low-slope roof deck with dark coping and restrained stepped parapet; slope/height estimated",
+    "interior": "schematic cafe and office at grade, offices at second floor, sanctuary and pews on third floor, fellowship hall in basement; room use source-backed, exact interior layout not verified"
+  },
+  "validation": {
+    "build_script": "modular/buildings/build_massing_university_lutheran_church_20903f1.py",
+    "previews": [
+      "preview_three_quarter.png",
+      "preview_street_elevation.png",
+      "preview_top.png"
+    ],
+    "independent_grade": "8.5/10 PASS; see independent_grade_final/result.json",
+    "fresh_open": {
+      "result": "PASS",
+      "report": "fresh_open_validation.json",
+      "scene": "Building_massing_university_lutheran_church_20903f1",
+      "exported_collection": "Asset_massing_university_lutheran_church_20903f1",
+      "asset_collection_object_count": 540,
+      "mesh_object_count": 537,
+      "library_links": 0,
+      "external_image_textures": 0,
+      "envelope_topology": {
+        "boundary_edges": 0,
+        "non_manifold_edges": 0,
+        "loose_vertices": 0
+      }
+    },
+    "asset_collection_object_count": 540,
+    "master_integration": "PASS; see master_integration_2026-10-26.json",
+    "localized_asset_sha256": "0fce5502bd505fdaab11f5ca9c4b4506eacf54e8d21b29243aae06b46014cdc8"
+  },
+  "limitations": [
+    "Exact interior partitions and furniture are illustrative.",
+    "Building height and parapet profile are estimates from photograph; no surveyed elevation or published building section found.",
+    "Window module counts beyond the official road-facing elevation are extrapolated around the other footprint edges."
+  ],
+  "street_frontage": {
+    "road_source": "OpenStreetMap way 932656636, Northwestern Avenue",
+    "road_snapshot": "sources/osm_northwestern_avenue_way_932656636.json",
+    "front_edge_indices": [
+      1,
+      3,
+      5,
+      6,
+      8,
+      10
+    ],
+    "sign_and_cafe_reference_edge_index": 5,
+    "selection_method": "edge direction within about 26 degrees of the road and outward normal facing the nearest road segment",
+    "note": "The frontage follows several short stepped segments in the source footprint; this choice places the cafe/sign elevation on the road-facing side.",
+    "total_road_facing_edge_length_m": 28.5,
+    "main_window_bay_groups": [
+      [
+        3
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        8
+      ]
+    ]
+  },
+  "asset_geometry_origin_xy_m": [
+    0.0,
+    0.0
+  ],
+  "asset_origin_note": "Massing assets retain absolute campus coordinates in their mesh and are linked at identity; the reported anchor is the outline centroid for location reference.",
+  "asset_sha256_localized": "0fce5502bd505fdaab11f5ca9c4b4506eacf54e8d21b29243aae06b46014cdc8",
+  "placement_origin_xy_m": [
+    223.3721466064453,
+    170.30205535888672
+  ]
+}

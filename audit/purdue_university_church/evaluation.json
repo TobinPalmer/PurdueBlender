@@ -1,0 +1,93 @@
+{
+  "score": 8.2,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "GIS FID 797 is UC / University Church; saved shell bounds compare to transformed polygon with max axis-bound error 0.0000 m."
+    },
+    {
+      "name": "Position, orientation and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "GIS-derived campus-coordinate shell aligns with source outline bounds; facade orientation is inferred because the floor plan has no north arrow and photograph lacks camera azimuth."
+    },
+    {
+      "name": "Height, floors and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": "The state record confirms a multi-story building and GIS reports conflicting counts (Level_=4, NUM_LEVELS=1, CountOfFLO=3); all heights and slate gable dimensions are estimates without measured elevation evidence."
+    },
+    {
+      "name": "Facade, entrances and distinctive architecture",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "The saved reference photo supports red brick, four-column portico, triangular pediment, a square green spired tower, steps, a circular pediment oculus and arched side windows. Model contains the oculus=True and 105 arched window heads; tower is placed beyond the portico along the same wing. Cardinal facade mapping remains inferred."
+    },
+    {
+      "name": "Modular export, portability and evidence",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": "Expected scene and collection are present (826 objects); all five raw source snapshots exist=True; external file textures=0; evidence notes source conflicts and uncertainty."
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/massing_university_church_84b2a1b.blend",
+    "scene": "Building_massing_university_church_84b2a1b",
+    "collection": "Asset_massing_university_church_84b2a1b",
+    "shell_bounds_xy_m": [
+      [
+        296.3565979003906,
+        347.211181640625
+      ],
+      [
+        -162.15504455566406,
+        -119.46781158447266
+      ]
+    ],
+    "source_bounds_xy_m": [
+      [
+        296.3565827428268,
+        347.2111957642119
+      ],
+      [
+        -162.1550495182555,
+        -119.46780979172445
+      ]
+    ],
+    "max_shell_bound_error_m": 1.5157563836964982e-05,
+    "all_mesh_bounds_xyz_m": [
+      [
+        296.2617492675781,
+        351.6112060546875
+      ],
+      [
+        -162.24594116210938,
+        -119.37376403808594
+      ],
+      [
+        -0.03750000149011612,
+        28.53999900817871
+      ]
+    ],
+    "object_count": 826,
+    "mesh_count": 721,
+    "outlier_objects": [],
+    "pediment_oculus_present": true,
+    "arched_window_head_count": 105,
+    "reference_snapshot_completeness": 5,
+    "reference_snapshot_total": 5,
+    "external_image_files": [],
+    "previews": [
+      "audit/purdue_university_church/preview.png",
+      "audit/purdue_university_church/preview_east.png",
+      "audit/purdue_university_church/preview_plan.png"
+    ]
+  },
+  "findings": [
+    "Roof and floor heights need independent elevation or multi-view photo verification.",
+    "Confirm portico/tower facade assignment with a geotagged or cardinally oriented reference; the photo places the tower beyond the portico along the same wing."
+  ]
+}

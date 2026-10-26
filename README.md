@@ -2,7 +2,9 @@
 
 This project tracks detailed campus models separately from the remaining massing-only building assets. A detailed model counts as finished here only when its latest recorded independent grader score is at least 8/10. Scores describe the reviewed model revision; ungraded assets are explicitly marked.
 
-## Detailed models: status and latest grader score (102 buildings)
+Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
+
+## Detailed models: status and latest grader score (112 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -70,7 +72,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Knoy Hall | [knoy_hall.blend](modular/buildings/knoy_hall.blend) | Finished | [8.1/10](audit/batch4_knoy/independent_grade_r23.md) | — |
 | Krach Leadership Center | [krach_leadership_center.blend](modular/buildings/krach_leadership_center.blend) | Finished | 8.1/10 | — |
 | Krannert Building | [krannert_building.blend](modular/buildings/krannert_building.blend) | Finished | 8.0/10 | — |
-| Lambert Fieldhouse | [lambert_fieldhouse.blend](modular/buildings/lambert_fieldhouse.blend) | In progress | 8.0/10 | Tobin |
+| Lambert Fieldhouse | [lambert_fieldhouse.blend](modular/buildings/lambert_fieldhouse.blend) | In progress | [7.8/10](audit/lambert_fieldhouse/independent_grade_r7.json) | Tobin |
 | Lawson Hall | [lawson_hall.blend](modular/buildings/lawson_hall.blend) | Finished | [8.1/10](audit/batch2_lawson/INDEPENDENT_REVIEW_round8.md) | — |
 | Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](modular/buildings/life_science_plant_and_soils_laboratory.blend) | Finished | 8.0/10 | — |
 | Lyles-Porter Hall | [lyles_porter_hall.blend](modular/buildings/lyles_porter_hall.blend) | Finished | 8.2/10 | — |
@@ -90,6 +92,12 @@ This project tracks detailed campus models separately from the remaining massing
 | Physics Building | [physics_building_phys_3bf42f3.blend](modular/buildings/physics_building_phys_3bf42f3.blend) | Finished | [8.4/10](audit/physics_building/independent_report_r2.md) | — |
 | Potter Engineering | [potter_engineering.blend](modular/buildings/potter_engineering.blend) | Finished | [8.0/10](audit/potter_engineering_refine/INDEPENDENT_GRADE_R3.md) | — |
 | Psychological Sciences Building | [psychological_sciences.blend](modular/buildings/psychological_sciences.blend) | Finished | 9.0/10 | — |
+| Purdue Center for Regional Development (Schowe House) | [massing_purdue_center_for_regional_development_scho_a2375c9.blend](modular/buildings/massing_purdue_center_for_regional_development_scho_a2375c9.blend) | Finished | [8.5/10](audit/schowe_house/independent_grade_localized/result.json) | — |
+| Purdue Drug Discovery Facility | [massing_purdue_drug_discovery_facility_fc72a4a.blend](modular/buildings/massing_purdue_drug_discovery_facility_fc72a4a.blend) | Finished | [9.1/10](audit/purdue_drug_discovery_facility/independent_grade_localized/result.json) | — |
+| Purdue Fire Department | [massing_purdue_fire_department_520430b.blend](modular/buildings/massing_purdue_fire_department_520430b.blend) | Finished | [8.4/10](audit/purdue_fire_department/independent_grade_localized/result.json) | — |
+| Purdue Football Performance Complex (Kozuch Football Performance Center) | [massing_purdue_football_performance_complex_f106c29.blend](modular/buildings/massing_purdue_football_performance_complex_f106c29.blend) | Finished | [8.5/10](audit/purdue_football_performance_complex/independent_grade_localized/result.json) | — |
+| Purdue Graduate Student Center | [massing_purdue_graduate_student_center_af9c5c7.blend](modular/buildings/massing_purdue_graduate_student_center_af9c5c7.blend) | Finished | [8.6/10](audit/purdue_graduate_student_center/independent_grade/result.json) | — |
+| Purdue Lutheran Ministry | [massing_purdue_lutheran_ministry_5425b3c.blend](modular/buildings/massing_purdue_lutheran_ministry_5425b3c.blend) | Finished | [8.4/10](audit/purdue_lutheran_ministry/independent_grade/result.json) | — |
 | Purdue Memorial Union | [purdue_memorial_union.blend](modular/buildings/purdue_memorial_union.blend) | Finished | [8.0/10](audit/purdue_memorial_union_independent_grade/independent_grade_r4.md) | — |
 | R. B. Wetherill Laboratory of Chemistry | [wetherill_laboratory_of_chemistry.blend](modular/buildings/wetherill_laboratory_of_chemistry.blend) | Finished | 8.3/10 | — |
 | Rawls Hall | [rawls_hall.blend](modular/buildings/rawls_hall.blend) | Finished | [8.14/10](audit/batch4_rawls/independent_review_round11.md) | — |
@@ -101,17 +109,22 @@ This project tracks detailed campus models separately from the remaining massing
 | St. Thomas Aquinas Center | [massing_st_thomas_aquinas_5535390.blend](modular/buildings/massing_st_thomas_aquinas_5535390.blend) | Finished | [8.2/10](audit/st_thomas_aquinas_5535390/independent_grade_r4.md) | � |
 | Stewart Center | [stewart_center.blend](modular/buildings/stewart_center.blend) | Finished | [8.0/10](audit/stewart_center_independent_grade/independent_grade_r4.md) | — |
 | Tarkington Hall | [tarkington_hall.blend](modular/buildings/tarkington_hall.blend) | Finished | [8.0/10](audit/tarkington_hall/independent_grade_r4.md) | — |
+| University Book Store | [massing_university_book_store_717bf2c.blend](modular/buildings/massing_university_book_store_717bf2c.blend) | Finished | [8.25/10](audit/purdue_university_book_store/independent_grade/grade.json) | — |
+| University Church | [massing_university_church_84b2a1b.blend](modular/buildings/massing_university_church_84b2a1b.blend) | Finished | [8.2/10](audit/purdue_university_church/independent_grade_revised/result.json) | — |
+| University Lutheran Church | [massing_university_lutheran_church_20903f1.blend](modular/buildings/massing_university_lutheran_church_20903f1.blend) | Finished | [8.5/10](audit/university_lutheran_church/independent_grade_final/result.json) | — |
 | University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | Finished | [8.0/10](audit/university_hall_refine/independent_grade_r7.md) | � |
 | Walc | [walc.blend](modular/buildings/walc.blend) | Finished | [8.25/10](audit/walc_refine/independent_grade_r5.md) | — |
+| Wang Hall | [massing_wang_hall_wang_0dac5ab.blend](modular/buildings/massing_wang_hall_wang_0dac5ab.blend) | Finished | [8.4/10](audit/wang_hall/independent_grade_final/result.json) | — |
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Finished | [8.3/10](audit/wiley_hall/independent_grade_r2.md) | — |
+| Wood Street Parking Garage | [massing_wood_street_garage_pgw_2fa056e.blend](modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend) | Finished | [8.7/10](audit/purdue_wood_street_garage_pgw/independent_grade/result.json) | — |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Finished | [8.05/10](audit/winifred_parker_hall/independent_grade_r5.md) | � |
 | Yue-Kong Pao Hall | [massing_yue_kong_pao_hall_a3cb766.blend](modular/buildings/massing_yue_kong_pao_hall_a3cb766.blend) | Finished | [8.0/10](audit/yue_kong_pao_hall/independent_grade_r1.md) | — |
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (113 total)
+## Unfinished buildings (102 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 63 buildings, Rohan 15 buildings, Tobin 25 buildings, Arjav 10 buildings, Brady 0 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 63 buildings, Rohan 15 buildings, Tobin 14 buildings, Arjav 10 buildings, Brady 0 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -132,9 +145,9 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Heine Pharmacy | [`heine_pharmacy.blend`](modular/buildings/heine_pharmacy.blend) | 7.5/10 | Rohan |
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Rohan |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
-| Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
+| Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | [7.8/10](audit/lambert_fieldhouse/independent_grade_r7.json) | Tobin |
 
-### Buildings that still have only massing models (97)
+### Buildings that still have only massing models (86)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -188,12 +201,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | provenance apartments 003 | [`massing_provenance_apartments_003_682c8e8.blend`](modular/buildings/massing_provenance_apartments_003_682c8e8.blend) | Rossen |
 | provenance apartments 004 | [`massing_provenance_apartments_004_1bc10e3.blend`](modular/buildings/massing_provenance_apartments_004_1bc10e3.blend) | Rossen |
 | provenance apartments 005 | [`massing_provenance_apartments_005_960f6b0.blend`](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | Rossen |
-| purdue center for regional development scho | [`massing_purdue_center_for_regional_development_scho_a2375c9.blend`](modular/buildings/massing_purdue_center_for_regional_development_scho_a2375c9.blend) | Tobin |
-| purdue drug discovery facility | [`massing_purdue_drug_discovery_facility_fc72a4a.blend`](modular/buildings/massing_purdue_drug_discovery_facility_fc72a4a.blend) | Tobin |
-| purdue fire department | [`massing_purdue_fire_department_520430b.blend`](modular/buildings/massing_purdue_fire_department_520430b.blend) | Tobin |
-| purdue football performance complex | [`massing_purdue_football_performance_complex_f106c29.blend`](modular/buildings/massing_purdue_football_performance_complex_f106c29.blend) | Tobin |
-| purdue graduate student center | [`massing_purdue_graduate_student_center_af9c5c7.blend`](modular/buildings/massing_purdue_graduate_student_center_af9c5c7.blend) | Tobin |
-| purdue lutheran ministry | [`massing_purdue_lutheran_ministry_5425b3c.blend`](modular/buildings/massing_purdue_lutheran_ministry_5425b3c.blend) | Tobin |
 | purdue police department | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | Rossen |
 | purdue university daniel turf center | [`massing_purdue_university_daniel_turf_center_e69b7da.blend`](modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | Rossen |
 | purdue village administration building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | Rossen |
@@ -219,9 +226,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | twin pines cooperative | [`massing_twin_pines_cooperative_8f606f9.blend`](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | Rossen |
 | union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Rossen |
 | unitarian universalist church of tippecanoe county | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | Rossen |
-| university book store | [`massing_university_book_store_717bf2c.blend`](modular/buildings/massing_university_book_store_717bf2c.blend) | Tobin |
-| university church | [`massing_university_church_84b2a1b.blend`](modular/buildings/massing_university_church_84b2a1b.blend) | Tobin |
-| university lutheran church | [`massing_university_lutheran_church_20903f1.blend`](modular/buildings/massing_university_lutheran_church_20903f1.blend) | Tobin |
 | university street parking garage pgu | [`massing_university_street_parking_garage_pgu_be81bec.blend`](modular/buildings/massing_university_street_parking_garage_pgu_be81bec.blend) | Tobin |
 | utility plant office facility | [`massing_utility_plant_office_facility_e219ef5.blend`](modular/buildings/massing_utility_plant_office_facility_e219ef5.blend) | Tobin |
 | veterinary animal isolation building 2 | [`massing_veterinary_animal_isolation_building_2_ebb4142.blend`](modular/buildings/massing_veterinary_animal_isolation_building_2_ebb4142.blend) | Tobin |
@@ -229,13 +233,11 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | veterinary pathology building | [`massing_veterinary_pathology_building_48b5a5b.blend`](modular/buildings/massing_veterinary_pathology_building_48b5a5b.blend) | Tobin |
 | village bottle shoppe | [`massing_village_bottle_shoppe_6a17e23.blend`](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | Tobin |
 | von s | [`massing_von_s_d207e41.blend`](modular/buildings/massing_von_s_d207e41.blend) | Tobin |
-| wang hall wang | [`massing_wang_hall_wang_0dac5ab.blend`](modular/buildings/massing_wang_hall_wang_0dac5ab.blend) | Tobin |
 | west lafayette intermediate school | [`massing_west_lafayette_intermediate_school_d72f0fa.blend`](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Tobin |
 | west lafayette junior senior high school | [`massing_west_lafayette_junior_senior_high_school_fa45bd1.blend`](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Tobin |
 | whistler hall | [`massing_whistler_hall_6f6bf8d.blend`](modular/buildings/massing_whistler_hall_6f6bf8d.blend) | Tobin |
 | wiley dining court wdct | [`massing_wiley_dining_court_wdct_8a6c669.blend`](modular/buildings/massing_wiley_dining_court_wdct_8a6c669.blend) | Tobin |
 | windsor halls | [`massing_windsor_halls_80aeb51.blend`](modular/buildings/massing_windsor_halls_80aeb51.blend) | Tobin |
-| wood street garage pgw | [`massing_wood_street_garage_pgw_2fa056e.blend`](modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend) | Tobin |
 | young hall yong | [`massing_young_hall_yong_cae1b95.blend`](modular/buildings/massing_young_hall_yong_cae1b95.blend) | Tobin |
 
 ## Adding a building

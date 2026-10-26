@@ -1,0 +1,93 @@
+{
+  "building": "Wood Street Parking Garage (PGW)",
+  "stable_id": "massing_wood_street_garage_pgw_2fa056e",
+  "retrieved_date": "2026-10-26",
+  "sources": [
+    {
+      "title": "BuildingShapesZip4, FeatureServer layer 0, FID 254",
+      "provider": "Purdue GIS via ArcGIS REST",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D254&outFields=*&returnGeometry=true&f=pjson",
+      "raw_snapshot": "audit/purdue_wood_street_garage_pgw/raw_arcgis_fid254.json",
+      "feature_id": 254,
+      "source_crs": "EPSG:3857 (Web Mercator), WKID 102100 / latestWKID 3857",
+      "retrieved_date": "2026-10-26",
+      "fields_used": [
+        "BLDG_ABBR=PGW",
+        "BUILDING_N=Wood Street Parking Garage",
+        "ADDRESS=120 S Grant Street",
+        "Shape__Area=7080.2578125 (Web Mercator sq m)",
+        "Shape__Length=417.904536140574 m (Web Mercator)",
+        "NUM_LEVELS=8",
+        "CountOfFLO=8",
+        "R=78",
+        "F01..F07=10..70",
+        "Extrution=70"
+      ],
+      "measurement_method": "Converted each polygon ring point from EPSG:3857 to longitude/latitude, then used the project local approximation in modular/AGENTS.md. The footprint is represented directly by the converted ring. Local anchor is the transformed polygon bounding-box midpoint 313.530608340, -503.852303348.",
+      "uncertainty": "Web Mercator and project-local conversion produce approximate ground dimensions; the layer is CAD-derived, not survey-grade. Height fields are not independently measured elevations."
+    },
+    {
+      "title": "Purdue Parking / Road School attendee parking page",
+      "provider": "Purdue University, Road School",
+      "url": "https://roadschool.purdue.edu/Attendees/Parking%20.html",
+      "raw_snapshot": "audit/purdue_wood_street_garage_pgw/official_parking_reference.html",
+      "feature_id": "Wood Street Garage, address 120 S Grant Street; 7 ft 2 in clearance",
+      "retrieved_date": "2026-10-26",
+      "source_date": "live page captured on retrieval",
+      "measurement_method": "Used for identity/address and entry clearance only.",
+      "uncertainty": "No elevations, floor plans, or facade dimensions."
+    },
+    {
+      "title": "Purdue West Lafayette Campus Map",
+      "provider": "Purdue University Maps",
+      "url": "https://www.purdue.edu/maps/graphics/campusmap.pdf",
+      "raw_snapshot": "audit/purdue_wood_street_garage_pgw/official_campus_map.pdf",
+      "feature_id": "PGW, map grid H8",
+      "retrieved_date": "2026-10-26",
+      "source_date": "PDF publication metadata not verified in this build",
+      "measurement_method": "Used for location/context identity only.",
+      "uncertainty": "Diagram map is not suitable for measured footprint dimensions."
+    },
+    {
+      "title": "Wood Street Parking Garage corporate entity record",
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/992",
+      "raw_snapshot": "audit/purdue_wood_street_garage_pgw/purdue_archives_record.txt",
+      "feature_id": "Corporate entity 992",
+      "retrieved_date": "2026-10-26",
+      "source_date": "record says built on Grant/Wood corner; direct access returned HTTP 403 on retrieval",
+      "measurement_method": "Search-index excerpt used only for site location and historic capacity.",
+      "uncertainty": "Direct page was inaccessible; no construction date or geometry details relied on."
+    },
+    {
+      "title": "Wood Street Parking Garage image within Wood Street Garage presentation",
+      "provider": "SlideShare",
+      "url": "https://www.slideshare.net/slideshow/wood-street-parking-garage/5394362",
+      "image_url": "https://image.slidesharecdn.com/woodstreetparkinggarage-101008105820-phpapp02/75/Wood-street-parking-garage-3-2048.jpg",
+      "raw_snapshot": "audit/purdue_wood_street_garage_pgw/woodstreet_parking_entrance_reference.jpg",
+      "feature_id": "slide image 3",
+      "retrieved_date": "2026-10-26",
+      "source_date": "presentation URL indicates 2010-10; precise capture date not verified",
+      "measurement_method": "Qualitative exterior evidence: open concrete deck bands, vertical structural piers, blue/green glazed stair tower with warm interior lights.",
+      "uncertainty": "Older low-resolution slide and street-level perspective; not used for dimensions or precise current condition."
+    }
+  ],
+  "transform": {
+    "formula_x": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "formula_y": "(latitude - 40.4274) * 111040.0",
+    "anchor_world_m": [
+      313.53060833992083,
+      -503.85230334816924
+    ],
+    "local_axis": "X east, Y north, Z up",
+    "projection_note": "Approximate project-local metric coordinates; EPSG:3857 scale is removed by inverse Web Mercator before conversion."
+  },
+  "design_inferences": [
+    "Eight occupied parking decks use 3.048 m vertical spacing based on GIS floor fields F01-F07 at 10 ft increments and the 8-level count.",
+    "GIS R=78 interpreted as a 78 ft roof/parapet datum (23.774 m); this is not a surveyed height and the true meaning of R remains uncertain.",
+    "Facade bay rhythm, concrete tone, circulation tower placement, and internal ramp configuration are inferred from the available exterior photo and parking-garage type.",
+    "Current Purdue street-level imagery was not directly captured in this build; facade evidence uses the 2010-era SlideShare exterior and current official location/parking references."
+  ],
+  "assets_are_procedural": true,
+  "external_texture_files": 0
+}

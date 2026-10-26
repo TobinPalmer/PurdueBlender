@@ -1,0 +1,60 @@
+{
+  "building": "University Lutheran Church (ULu), 460 Northwestern Avenue, West Lafayette, Indiana",
+  "retrieved_utc": "2026-10-26",
+  "sources": [
+    {
+      "provider": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/301932784",
+      "raw_snapshot": "sources/osm_way_301932784.json",
+      "feature": "way 301932784; OSM API version 6; last edited 2022-10-12T20:53:03Z",
+      "crs": "WGS84 / EPSG:4326",
+      "method": "Retrieved full way geometry through OSM API; 17 unique footprint vertices; transformed with project-local campus formula.",
+      "uncertainty": "Community-maintained footprint. Its transformed bounds match the existing GIS-derived massing bounds within 0.00001 m; not a legal survey."
+    },
+    {
+      "provider": "University Lutheran Church official website",
+      "url": "https://www.ulupurdue.org/visit",
+      "raw_snapshot": "sources/official_visit_page.html",
+      "feature": "official visit page, retrieved 2026-10-26",
+      "crs": null,
+      "method": "Confirms 460 Northwestern Avenue, location across from Electrical Engineering, ground-level Fuel Coffee access, sanctuary on third floor, fellowship hall in basement.",
+      "uncertainty": "Program information establishes uses, not exact interior partitions or dimensions."
+    },
+    {
+      "provider": "University Lutheran Church official website",
+      "url": "https://www.ulupurdue.org/history",
+      "raw_snapshot": "sources/official_history_page.html",
+      "feature": "official church history and exterior image",
+      "crs": null,
+      "method": "History confirms 2017 return to Northwestern Avenue; official image `images/official_ulupurdue_full_building.jpg` supports red-brown brick exterior, three visible storeys, long ribbon-window bays, raised church lettering, and shallow dark roof.",
+      "uncertainty": "Photo perspective and visible snow obscure some roof and side details; exact dimensions and height are not published."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/894",
+      "raw_snapshot": null,
+      "feature": "Purdue Exponent Building corporate-entity record; source summary retrieved 2026-10-26",
+      "crs": null,
+      "method": "Identifies this address as the former Exponent building; states newsroom remained on second floor, basement press area became fellowship hall, first floor became offices/cafe, and sanctuary opened on third floor.",
+      "uncertainty": "Page access was blocked for raw capture; facts corroborated by indexed record and church official visit page."
+    },
+    {
+      "provider": "Indiana Statewide LiDAR-Derived Building Footprints",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "raw_snapshot": null,
+      "feature": "Indiana building footprint layer 2016\u20132020 (source record from GIS metadata)",
+      "crs": "Web Mercator / EPSG:3857",
+      "method": "Used as an independent contextual source for campus building footprints; detailed outline for this model is represented by the OSM way and pre-existing PurdueMap target geometry.",
+      "uncertainty": "2016\u20132020 vintage predates the church conversion and may not reflect subsequent additions."
+    },
+    {
+      "provider": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/932656636",
+      "raw_snapshot": "sources/osm_northwestern_avenue_way_932656636.json",
+      "feature": "way 932656636, Northwestern Avenue; OSM primary road; API snapshot retrieved 2026-10-26",
+      "crs": "WGS84 / EPSG:4326",
+      "method": "Used the nearest street segment and its heading to choose road-facing footprint edges and orient the street view/sign elevation.",
+      "uncertainty": "Street geometry is community-maintained and is not curb survey; only used to distinguish the front from rear sides."
+    }
+  ]
+}

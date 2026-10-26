@@ -1,0 +1,118 @@
+{
+  "building_id": "massing_university_church_84b2a1b",
+  "asset_path": "modular/buildings/massing_university_church_84b2a1b.blend",
+  "scene": "Building_massing_university_church_84b2a1b",
+  "collection": "Asset_massing_university_church_84b2a1b",
+  "retrieved_utc_date": "2026-10-26",
+  "coordinate_frame": {
+    "axes": "X east, Y north, Z up",
+    "units": "meters",
+    "project_origin_lat_lon": [
+      40.4274,
+      -86.9137
+    ],
+    "conversion": "X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0; approximate local tangent transform; not surveyed"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University GIS / ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D797&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "snapshot_path": "audit/purdue_university_church/sources/purdue_gis_fid797.geojson",
+      "feature_id": "FID 797, BLDG_ABBR UC, BUILDING_N University Church",
+      "source_crs": "EPSG:4326",
+      "retrieved": "2026-10-26",
+      "method": "Raw polygon transformed using project local tangent approximation; measured XY outline, orientation and plan bounds",
+      "uncertainty": "GIS polygon is the mapped building outline, not a survey; source fields conflict (Level_=4, NUM_LEVELS=1, CountOfFLO=3, Extrution=39 with undocumented units)."
+    },
+    {
+      "provider": "Purdue Road School 2024",
+      "url": "https://www.roadschool.purdue.edu/maps/2024%20University%20Church.pdf",
+      "snapshot_path": "audit/purdue_university_church/sources/2024_road_school_university_church_first_floor.pdf",
+      "source_date": "2024",
+      "source_crs": "not geospatial; schematic first-floor plan",
+      "retrieved": "2026-10-26",
+      "method": "Plan shape used to confirm connected rooms, large sanctuary/event hall, wings and circulation",
+      "uncertainty": "No north arrow or scale on displayed map; not used to determine exterior dimensions or geographic orientation."
+    },
+    {
+      "provider": "Indiana State Budget Committee, June 2019 meeting minutes",
+      "url": "https://www.in.gov/sba/files/June-2019-Minutes-Fully-Executed.pdf",
+      "snapshot_path": "audit/purdue_university_church/sources/indiana_state_budget_committee_june_2019.pdf",
+      "source_date": "2019-06",
+      "source_crs": "not geospatial; address reference",
+      "retrieved": "2026-10-26",
+      "method": "Identity, address, 31,964 square feet, multi-story status and 0.86-acre parcel",
+      "uncertainty": "The source describes a multi-story facility but does not give an exact floor count or measured height."
+    },
+    {
+      "provider": "Dave Wegiel / Pinola Photo",
+      "url": "https://pinolaphoto.com/2024/01/28/university-church-west-lafayette-indiana-2/",
+      "image_url": "https://photos.smugmug.com/2023-Photos/2023-Purdue/i-jrL8K7n/0/c835a2ec/L/DAW00401-L.jpg",
+      "snapshot_path": "audit/purdue_university_church/sources/dave_wegiel_university_church_dusk.jpg",
+      "source_date": "photo 2023-12-10; page 2024-01-28",
+      "source_crs": "photograph, no geotag/camera azimuth available",
+      "retrieved": "2026-10-26",
+      "method": "Facade study: red brick, classical four-column portico, triangular pediment, square tower with green copper spire, steps and lower wings",
+      "uncertainty": "Photo camera azimuth cannot be tied to a specific GIS wall; east facade assignment is inferred from the floorplan hall-door edge."
+    },
+    {
+      "provider": "Home of Purdue local directory image",
+      "url": "https://www.homeofpurdue.com/listing/university-church/",
+      "snapshot_path": "audit/purdue_university_church/sources/homeofpurdue_university_church_exterior.jpg",
+      "source_date": "undated directory photo",
+      "source_crs": "photograph, no geotag/camera azimuth available",
+      "retrieved": "2026-10-26",
+      "method": "Cross-check brick/church character and facade opening proportions",
+      "uncertainty": "Directory image differs from the 2023 classical-portico view and could show another facade/phase or be a mismatched listing image; twin-tower composition not included absent corroboration."
+    }
+  ],
+  "dimensions": {
+    "gis_xy_bounds_m": [
+      [
+        296.3565827428268,
+        347.2111957642119
+      ],
+      [
+        -162.1550495182555,
+        -119.46780979172445
+      ]
+    ],
+    "outline_vertex_count": 20,
+    "roof_eaves_m_estimated": 11.7,
+    "main_roof_ridge_m_estimated": 14.9,
+    "spire_tip_m_estimated": 28.54,
+    "floor_estimate": "3 occupied floors inferred from the GIS CountOfFLO=3 and multi-story 2019 state record; exact floor count unresolved"
+  },
+  "geometry_edits": [
+    "Replaced one-mesh unverified massing with campus-frame GIS polygon shell",
+    "Added procedural red-brick material and explicit stone floor bands",
+    "Added recessed glazing with stone surrounds/mullions; arched heads occur on non-portico elevations, while the east portico facade retains square lintels per photo comparison",
+    "Added four-column portico, triangular pediment, circular oculus, three doors and steps based on 2023 photo",
+    "Added square bell tower and green copper pyramidal spire based on 2023 photo",
+    "Added estimated slate sanctuary gable and connector-wing roof caps",
+    "Kept all components in manifest collection and campus coordinate frame"
+  ],
+  "uncertainties": [
+    "Portico facade mapping to GIS edge is inferred, not geotag verified",
+    "Historic twin-tower image conflicts with the contemporary single-tower facade and is treated as possibly mismatched/unresolved",
+    "GIS floor attributes conflict; exact storey/height and roof elevations remain estimates",
+    "2024 floorplan has no georeferencing/scale/orientation and does not verify vertical layout"
+  ],
+  "validation": {
+    "reopen_required": true,
+    "previews": [
+      "audit/purdue_university_church/preview.png",
+      "audit/purdue_university_church/preview_east.png",
+      "audit/purdue_university_church/preview_plan.png"
+    ],
+    "asset_export": "saved as .blend with named scene/collection; no external image-texture links",
+    "asset_sha256_localized": "7e0e88769d49aa3524206ae9bf498a73ef6e45e35df9a78996ae9b101b6c8fd9",
+    "independent_grade": "8.2/10 PASS; see independent_grade_revised/result.json",
+    "master_integration": "PASS; see master_integration_2026-10-26.json",
+    "placement_origin_xy_m": [
+      323.89398193359375,
+      -140.80984497070312
+    ],
+    "coordinate_frame": "local meters; master placement marker supplies campus XY"
+  }
+}

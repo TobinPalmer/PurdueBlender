@@ -1,0 +1,139 @@
+{
+  "asset_id": "massing_purdue_graduate_student_center_af9c5c7",
+  "asset_path": "modular/buildings/massing_purdue_graduate_student_center_af9c5c7.blend",
+  "builder_path": "modular/buildings/build_massing_purdue_graduate_student_center_af9c5c7.py",
+  "retrieved_on": "2026-10-26",
+  "assignment": {
+    "readme": "README.md assigns purdue graduate student center to Tobin.",
+    "manifest_asset_id": "massing_purdue_graduate_student_center_af9c5c7",
+    "stable_collection": "Asset_massing_purdue_graduate_student_center_af9c5c7",
+    "stable_scene": "Building_massing_purdue_graduate_student_center_af9c5c7"
+  },
+  "identity": {
+    "name": "Purdue Graduate Student Center (PGSC)",
+    "address": "504 Northwestern Avenue, West Lafayette, Indiana 47906",
+    "source_gis_id": 526,
+    "source_gis_abbreviation": "PGSC",
+    "interpretation": "The PGSC occupies the former visitor-information-center portion of Northwestern Avenue Parking Garage. This asset models the PGSC low office/student-center portion, not the garage decks. The separately assigned garage asset should own the upper parking decks; coordinate overlap at the shared envelope/interface during integration.",
+    "identity_sources": [
+      "https://purdue.edu/academics/ogsps/current-graduate-student-resources/purdue-graduate-student-center-pgsc/",
+      "https://archives.lib.purdue.edu/agents/corporate_entities/895"
+    ]
+  },
+  "sources": [
+    {
+      "type": "campus GIS polygon and attributes",
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D526&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "retrieved_on": "2026-10-26",
+      "local_copy": "audit/purdue_graduate_student_center/sources/purdue_gis_pgsc_fid526_2026-10-26.geojson",
+      "feature": {
+        "FID": 526,
+        "GlobalID": "{5485843A-764F-476F-9BB1-D34FC4965229}",
+        "BLDG_ABBR": "PGSC",
+        "BUILDING_N": "Purdue Graduate Student Center",
+        "ADDRESS": "504 Northwestern Avenue",
+        "NUM_LEVELS": 2,
+        "Extrution": 12,
+        "Shape__Area_m2": 960.18359375,
+        "Shape__Length_m": 127.04723495069837,
+        "coordinate_reference": "GeoJSON coordinates requested as EPSG:4326 (longitude, latitude); layer metadata native reference is Web Mercator WKID 102100 / latestWKID 3857."
+      }
+    },
+    {
+      "type": "official current building/student center page and exterior/interior photos",
+      "url": "https://purdue.edu/academics/ogsps/current-graduate-student-resources/purdue-graduate-student-center-pgsc/",
+      "retrieved_on": "2026-10-26",
+      "local_copy": "audit/purdue_graduate_student_center/sources/purdue_pgsc_official_page_2026-10-26.html",
+      "photo_copy": "audit/purdue_graduate_student_center/sources/purdue_official_pgsc_photo_2025-08.jpg",
+      "image_source_url": "https://www.purdue.edu/academics/ogsps/wp-content/uploads/2025/09/room-108-1.jpg",
+      "used_for": "Visible red-brown brick, pale dimensional name signage, canopy/storefront, and program information. The page identifies rooms/lounges, kitchens and study/conference areas, but supplies no dimensioned floor plan."
+    },
+    {
+      "type": "Purdue Archives history/identity record",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/895",
+      "retrieved_on": "2026-10-26",
+      "local_copy": "audit/purdue_graduate_student_center/sources/purdue_pgsc_historic_record_2026-10-26.html",
+      "used_for": "Confirms that PGSC is inside Northwestern Avenue Parking Garage and occupies the former Visitor Information Center portion."
+    },
+    {
+      "type": "Google Maps Street View visual reference",
+      "url": "https://www.google.com/maps/@40.4297506,-86.9124408,192a,75y,84.93193297159961h,90t/data=!3m7!1e1!3m5!1su149QOTu5LDQAa6qdW4bkw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Du149QOTu5LDQAa6qdW4bkw%26yaw%3D84.93193297159961!7i16384!8i8192",
+      "retrieved_on": "2026-10-26",
+      "panorama_id": "u149QOTu5LDQAa6qdW4bkw",
+      "imagery_date": "2025-08 (as shown by Google Maps imagery metadata)",
+      "local_reference": "audit/purdue_graduate_student_center/sources/google_streetview_reference_2025-08.url.txt",
+      "tiles": "audit/purdue_graduate_student_center/sources/google_streetview_tiles_2025-08/",
+      "used_for": "Street-level massing and relationship of PGSC brick frontage to the garage decks above."
+    }
+  ],
+  "modeling_method": {
+    "footprint": "The closed 10-coordinate campus GIS polygon is converted into a low extruded volume. For Blender model coordinate anchoring, use local tangent-plane approximations at 40.4274 N, 86.9137 W: X=(longitude+86.9137)*111412.84*cos(40.4274 degrees), Y=(latitude-40.4274)*111040. The projected GIS bounding-box center is recorded as the placement origin. This is locally accurate for a small campus footprint but is not a substitute for a full CRS reprojection.",
+    "source_polygon_area_m2": 960.18359375,
+    "source_polygon_bbox_world_m": {
+      "x": [
+        137.37563684586044,
+        168.64423155917322
+      ],
+      "y": [
+        247.85918676606798,
+        275.01363113590287
+      ]
+    },
+    "placement_origin_xy_m": [
+      153.00993420251683,
+      261.4364089509854
+    ],
+    "wall_height_m": 3.65,
+    "wall_height_uncertainty": "GIS field Extrution=12 has undocumented units. 3.65m treats 12 as plausible feet; confirm against measured elevation/model data during independent grade. GIS lists NUM_LEVELS=2, which indicates the facility/garage relationship needs further checking rather than inferring the entire garage height from this field.",
+    "facade": "Southwest/west street-facing edges derived from the GIS polygon edge sequence, informed by the Street View and official image. Brick piers, dark glazing and entry doors, horizontal canopy, fascia and raised sign are discrete modular objects.",
+    "interior": "Schematic room partitions and furniture represent source-described lounge, kitchen, conference/multipurpose, information desk and study uses. No measured floor plan was found; these are not surveyed room positions or dimensions.",
+    "materials": "10 procedural, self-contained materials including brick courses/bump, precast concrete, charcoal metal, dark/entry glazing, dimensional lettering, terrazzo, gypsum, wood and upholstery. No external image texture dependency.",
+    "integration_note": "The garage collision is resolved through a reproducible master-only Boolean cutout proxy. Northwestern Parking Garage source library remains unchanged; the override clears PGSC up to z=4.5m and retains the upper garage massing."
+  },
+  "build_result": {
+    "geometry_object_count": 63,
+    "used_material_count": 10,
+    "model_local_bounds_m": [
+      [
+        -17.118099212646484,
+        15.634297370910645
+      ],
+      [
+        -14.79931926727295,
+        13.577221870422363
+      ],
+      [
+        0.0,
+        3.6500000953674316
+      ]
+    ],
+    "model_bounds_dimensions_m": [
+      32.75239658355713,
+      28.376540184020996,
+      3.6500000953674316
+    ],
+    "preview_exterior": "audit/purdue_graduate_student_center/preview_three_quarter.png",
+    "preview_interior": "audit/purdue_graduate_student_center/preview_interior_schematic.png",
+    "metrics": "audit/purdue_graduate_student_center/build_metrics.json",
+    "fresh_open_validation": "audit/purdue_graduate_student_center/fresh_open_validation.json",
+    "validation_status": "PASS: Blender 5.2.3 opened the saved .blend in a new background process; expected scene and stable collection found; 63 geometry objects, 10 used materials, and no external file textures. See fresh_open_validation.json for SHA256.",
+    "independent_grade": "Not yet performed; root coordinates grader."
+  },
+  "master_integration": {
+    "status": "PASS",
+    "master_file": "purdue_campus_master.blend",
+    "audit": "audit/master_sync_pgsc_2026-10-26.json",
+    "master_sha256": "6aa50f651ad35d138d73cece4cabd0139413fb35326649ad3f7471495b85941d",
+    "placement_marker": "Placement_massing_purdue_graduate_student_center_af9c5c7",
+    "garage_override_collection": "MasterOverride_NorthwesternParkingGarage_PGSC",
+    "garage_source_asset": "modular/buildings/massing_northwestern_parking_garage_979f1a2.blend",
+    "garage_source_modified": false,
+    "cutout_method": "Exact Boolean difference on a master-owned copy of the linked garage mesh using the official PGSC GIS polygon buffered 0.2m in XY, cutter z=-0.5..4.5m; cutter face normals recalculated before application.",
+    "cutout_mesh_topology": {
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0
+    },
+    "verification": "fresh master reopen confirms PGSC marker path, exact location, bounds within 0.00002m, no source garage link, and a clearance ray through the PGSC footprint only reaches the garage proxy roof at z=4.5m."
+  }
+}

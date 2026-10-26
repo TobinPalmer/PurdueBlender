@@ -117,3 +117,19 @@ CREC retains its legacy massing filename and campus-world direct-link coordinate
 | Honors College and Residences North / Lees-Such Tower | [massing_honors_college_and_residences_north_3de3b7c.blend](buildings/massing_honors_college_and_residences_north_3de3b7c.blend) | 58 |
 | Honors College and Residences South | [massing_honors_college_and_residences_south_c663781.blend](buildings/massing_honors_college_and_residences_south_c663781.blend) | 149 |
 | Horizon Bank | [massing_horizon_bank_debc8f2.blend](buildings/massing_horizon_bank_debc8f2.blend) | 80 |
+
+## Newly integrated buildings — October 26, 2026
+
+| Building | File | Objects |
+| --- | --- | ---: |
+| Purdue Center for Regional Development (Schowe House) | [massing_purdue_center_for_regional_development_scho_a2375c9.blend](buildings/massing_purdue_center_for_regional_development_scho_a2375c9.blend) | 33 |
+| Purdue Drug Discovery Facility | [massing_purdue_drug_discovery_facility_fc72a4a.blend](buildings/massing_purdue_drug_discovery_facility_fc72a4a.blend) | 36 |
+| Purdue Fire Department | [massing_purdue_fire_department_520430b.blend](buildings/massing_purdue_fire_department_520430b.blend) | 100 |
+| Purdue Football Performance Complex (Kozuch Football Performance Center) | [massing_purdue_football_performance_complex_f106c29.blend](buildings/massing_purdue_football_performance_complex_f106c29.blend) | 402 |
+| Purdue Graduate Student Center | [massing_purdue_graduate_student_center_af9c5c7.blend](buildings/massing_purdue_graduate_student_center_af9c5c7.blend) | 63 |
+| Purdue Lutheran Ministry | [massing_purdue_lutheran_ministry_5425b3c.blend](buildings/massing_purdue_lutheran_ministry_5425b3c.blend) | 168 |
+| University Book Store | [massing_university_book_store_717bf2c.blend](buildings/massing_university_book_store_717bf2c.blend) | 538 |
+| University Church | [massing_university_church_84b2a1b.blend](buildings/massing_university_church_84b2a1b.blend) | 821 |
+| University Lutheran Church | [massing_university_lutheran_church_20903f1.blend](buildings/massing_university_lutheran_church_20903f1.blend) | 541 |
+| Wang Hall | [massing_wang_hall_wang_0dac5ab.blend](buildings/massing_wang_hall_wang_0dac5ab.blend) | 12 |
+| Wood Street Parking Garage | [massing_wood_street_garage_pgw_2fa056e.blend](buildings/massing_wood_street_garage_pgw_2fa056e.blend) | 79 |

@@ -1,0 +1,129 @@
+{
+  "building_id": "massing_purdue_football_performance_complex_f106c29",
+  "name": "Kozuch Football Performance Complex",
+  "asset_path": "modular/buildings/massing_purdue_football_performance_complex_f106c29.blend",
+  "asset_collection": "Asset_massing_purdue_football_performance_complex_f106c29",
+  "scene": "Building_massing_purdue_football_performance_complex_f106c29",
+  "placement_origin_xy_m": [
+    -261.0446763075753,
+    982.3368211826471
+  ],
+  "campus_local_conversion": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_m": "(longitude - origin_longitude) * 111412.84 * cos(radians(origin_latitude))",
+    "y_m": "(latitude - origin_latitude) * 111040.0",
+    "projection_note": "Project's local approximate degree-to-meter conversion; not surveyed CRS. GIS source geometry returned EPSG:4326 from Purdue MapServer."
+  },
+  "source_feature": {
+    "provider": "Purdue Libraries campus GIS ArcGIS MapServer layer 0",
+    "feature_id": 1202,
+    "abbreviation": "FPC",
+    "source_name": "Kozuch Football Performance Complex",
+    "address": "1228 John R Wooden Drive (Purdue Athletics)",
+    "mapserver_reported_area_m2": 9367.942038825,
+    "local_approx_polygon_area_m2": 5418.622358097667,
+    "vertex_count": 22,
+    "source_url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=OBJECTID%3D1202&outFields=*&returnGeometry=true&outSR=4326&f=geojson"
+  },
+  "sources": [
+    {
+      "provider": "Purdue Libraries Campus GIS / ArcGIS MapServer",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=OBJECTID%3D1202&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "feature_id": 1202,
+      "retrieval_date": "2026-10-26",
+      "source_crs": "EPSG:4326 response; service source is EPSG:3857",
+      "method": "Use source polygon FID 1202, transform WGS84 coordinates with the project\u2019s documented local approximation, and compare structural plan outline in campus XY.",
+      "uncertainty": "Source polygon represents the campus feature labelled FPC; its edge may combine the joined footprint and additions. The source map's Shape.STArea() is Web Mercator area and differs from the local approximate area."
+    },
+    {
+      "provider": "Purdue University Athletics official facilities page",
+      "url": "https://purduesports.com/facilities/kozuch-football-performance-complex",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page describes the facility opened August 2017; current page accessed 2026-10-26",
+      "source_crs": "Not applicable",
+      "method": "Verify identity, address, three-level program, 112,000 square feet, use, and visible entrance against page text and official exterior photograph in sources/.",
+      "uncertainty": "Published gross floor area does not provide surveyed exterior dimensions or elevations."
+    },
+    {
+      "provider": "Populous, project architect",
+      "url": "https://populous.com/showcases/purdue-university-football-performance-complex",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Project opened 2017",
+      "source_crs": "Not applicable",
+      "method": "Use project description and exterior image for the glass curtainwall, old gold/black palette, two-plane flight-inspired roof concept, and location between practice fields.",
+      "uncertainty": "No dimensioned elevations or construction drawings are published on the page."
+    },
+    {
+      "provider": "Esri World Imagery basemap export",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-86.9181%2C40.4338%2C-86.9154%2C40.4372&bboxSR=4326&imageSR=4326&size=1600%2C1200&format=jpg&f=image",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Imagery vintage is not exposed in the export response",
+      "source_crs": "EPSG:4326 request/response, 1600x1200 pixels; export response extent [-86.9190166667, 40.4338, -86.9144833333, 40.4372]",
+      "method": "Overlay Purdue GIS FID 1202 on the aerial image using the export response extent; the resulting outline aligns with the white-roofed football performance building at the north end of Mollenkopf.",
+      "uncertainty": "The image export does not expose a dated imagery acquisition record."
+    },
+    {
+      "provider": "FRP Inc. construction/project photography",
+      "url": "https://frpinc.com/projects/purdue-university-football-performance-complex/",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Project photo; page publication date not shown",
+      "source_crs": "Not applicable",
+      "method": "Use entrance photo to interpret glass corner, tilted stainless columns, canopy, metal panel cladding, and 1228 sign.",
+      "uncertainty": "Single perspective photograph; component dimensions and hidden elevations remain estimated."
+    },
+    {
+      "provider": "Purdue Archives and Special Collections / Historic Facilities Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/318",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Database access date 2026-10-26",
+      "source_crs": "Not applicable",
+      "method": "Cross-check identity as a three-level building adjoining the north end of Mollenkopf Athletic Center, with football locker, weight, coaching, meeting, equipment, and sports medicine areas.",
+      "uncertainty": "Historical narrative does not supply exact building dimensions or elevations."
+    }
+  ],
+  "geometry": {
+    "local_bounds_m": [
+      [
+        -94.9954605102539,
+        83.8504638671875
+      ],
+      [
+        -27.358043670654297,
+        27.358043670654297
+      ],
+      [
+        0.0,
+        14.550000190734863
+      ]
+    ],
+    "structural_footprint_from_GIS": true,
+    "floor_count": 3,
+    "story_to_story_heights_m": [
+      3.7,
+      3.9,
+      3.75
+    ],
+    "total_envelope_height_m": 14.55,
+    "height_status": "estimated from three-level description and image proportions; not measured",
+    "roof": "two angular overlapping flight-inspired planes, interpreted from Populous description and photos; not surveyed"
+  },
+  "model_scope": {
+    "mesh_and_curve_object_count": 401,
+    "material_count": 9,
+    "interior": "Schematic visible lobby/team-hall, support-room masses, floor plates and stair; not an as-built interior. No source plans were available in this build pass.",
+    "edits": [
+      "Replaced inaccurate single-block massing with a footprint derived from Purdue GIS FID 1202.",
+      "Added three levels, facade glazing/mullions, metal cladding and entrance canopy.",
+      "Added splayed stainless steel columns, Purdue P/address signage, floors and schematic lobby/support interior."
+    ]
+  },
+  "preview": "audit/purdue_football_performance_complex/preview_three_quarter.png",
+  "preview_entrance": "audit/purdue_football_performance_complex/preview_entrance.png",
+  "retrieval_date": "2026-10-26",
+  "uncertainty": [
+    "No measured elevation or construction drawings were found; floor heights and roof geometry are visual estimates.",
+    "A campus GIS polygon identifies the FPC building feature; existing massing footprint differs substantially, and its source could not be validated. The detailed model follows authoritative FID 1202.",
+    "Interior layout is schematic except for published program and visible lobby features."
+  ]
+}

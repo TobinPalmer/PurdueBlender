@@ -1,0 +1,216 @@
+{
+  "building": "Purdue Drug Discovery Facility",
+  "abbreviation": "DRUG",
+  "stable_id": "massing_purdue_drug_discovery_facility_fc72a4a",
+  "owner": "Tobin",
+  "retrieved_utc_date": "2026-10-26",
+  "asset_status": "rebuilt detailed library; ready for independent grading and master integration",
+  "asset_path": "modular/buildings/massing_purdue_drug_discovery_facility_fc72a4a.blend",
+  "build_script_path": "modular/buildings/build_massing_purdue_drug_discovery_facility_fc72a4a.py",
+  "asset_sha256": "0e720cf446c15fbec44d48dc490e90a2c2ba08cb270d275d7de0be0ed3a2e6ff",
+  "source_evidence": [
+    {
+      "purpose": "Authoritative footprint and building identity",
+      "provider": "ArcGIS hosted Purdue/Indiana building-shape layer (same FID as project master audit)",
+      "feature_id": 893,
+      "feature_name": "Drug Discovery Facility",
+      "abbreviation": "DRUG",
+      "address": "720 Clinic Drive",
+      "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D893&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "raw_snapshot": "audit/purdue_drug_discovery_facility/sources/arcgis_feature_893_2026-10-26.geojson",
+      "metadata_snapshot": "audit/purdue_drug_discovery_facility/sources/arcgis_layer_metadata_2026-10-26.json",
+      "native_crs": "EPSG:3857 / WKID 102100 (latest WKID 3857)",
+      "returned_geometry_crs": "EPSG:4326 (explicit outSR=4326)",
+      "method": "Used GIS feature FID 893, verified BLDG_ABBR DRUG, BUILDING_N Drug Discovery Facility and address. Converted lon/lat to project local east/north meters using project origin 40.4274,-86.9137; no rotation or manual translation.",
+      "source_date": "No survey/edit timestamp supplied in feature. GIS service fetched 2026-10-26.",
+      "uncertainty": "The feature includes detailed short perimeter segments and one interior ring. External building photo/map context confirms identity; perimeters for small canopies/steps are not independently surveyed."
+    },
+    {
+      "purpose": "Official building program, location, three-storey count, glazing feature",
+      "provider": "Purdue University Office of Research",
+      "url": "https://research.purdue.edu/about/institutes-and-centers/",
+      "source_snapshot": "audit/purdue_drug_discovery_facility/sources/purdue_research_facilities_page_2026-10-26.html",
+      "source_date": "Page currently available; retrieval 2026-10-26.",
+      "details": "Facility address 720 Clinic Drive; opened 2014; described as three-storey; more than 32,000 assignable sq ft. Text describes researchers observing laboratory experiments through glass barriers.",
+      "crs": "Not applicable; published webpage.",
+      "method": "Used to confirm identity, street address, official story count, general use and glazing/collaboration feature.",
+      "uncertainty": "No measured floor-by-floor elevations or drawing dimensions published on this page."
+    },
+    {
+      "purpose": "Current exterior photo, facade material, glass atrium and canopy",
+      "provider": "Purdue University Office of Research (image served from the official facility page)",
+      "url": "https://research.purdue.edu/app/uploads/2026/04/About-InstitutesCenters-DrugDiscoveryFacility.jpg",
+      "page_url": "https://research.purdue.edu/about/institutes-and-centers/",
+      "raw_snapshot": "audit/purdue_drug_discovery_facility/sources/purdue_official_photo_2026-04.jpg",
+      "source_date": "File path indicates April 2026; page image presently served; retrieved 2026-10-26.",
+      "crs": "Not applicable; photograph with no camera pose metadata.",
+      "method": "Visual reference for red-brown brick, three horizontal floor bands, central full-height glazed entry bay, slender light-colored columns, projecting flat roof canopy, dark metal glazing frames, flat roof.",
+      "uncertainty": "Photograph is an oblique night view and does not establish exact orientation, plan dimensions or height."
+    },
+    {
+      "purpose": "Architectural concept, floor plans and interior",
+      "provider": "Purdue Department of Chemistry",
+      "url": "https://www.chem.purdue.edu/DrugDiscovery/building.html",
+      "source_snapshot": "audit/purdue_drug_discovery_facility/sources/purdue_chem_drug_discovery_building_page_2026-10-26.html",
+      "design_image_url": "https://www.chem.purdue.edu/DrugDiscovery/images/DD2.gif",
+      "floor_plan_url": "https://www.chem.purdue.edu/DrugDiscovery/images/floor1.gif",
+      "interior_render_url": "https://www.chem.purdue.edu/DrugDiscovery/images/interior.gif",
+      "site_plan_url": "https://www.chem.purdue.edu/DrugDiscovery/images/map.jpg",
+      "raw_snapshots": [
+        "audit/purdue_drug_discovery_facility/sources/DD2.gif",
+        "audit/purdue_drug_discovery_facility/sources/floor1.gif",
+        "audit/purdue_drug_discovery_facility/sources/interior.gif",
+        "audit/purdue_drug_discovery_facility/sources/map.jpg"
+      ],
+      "source_date": "Site plan dated 2011-02-17; completion later reported in 2014. Retrieved 2026-10-26.",
+      "crs": "Site plan north arrow indicates page-up north; illustrative plan is not a survey.",
+      "method": "Used proposed site plan and entrance/landscape context to orient the public entrance to the west plaza; used exterior rendering for atrium canopy shape and floor plan/interior rendering for simple visible lobby features.",
+      "uncertainty": "2011 material is a proposed design and may differ from final as-built conditions; only lobby-level visible interior modeled."
+    },
+    {
+      "purpose": "Independent Purdue campus location index",
+      "provider": "Purdue University Libraries Campus GIS",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0",
+      "metadata_snapshot": "audit/purdue_drug_discovery_facility/sources/purdue_campus_gis_layer_metadata_2026-10-26.json",
+      "source_date": "Service includes time extent through 2015; fetched 2026-10-26.",
+      "native_crs": "EPSG:3857 / WKID 102100",
+      "method": "Official campus GIS service metadata used as secondary source context and spatial reference.",
+      "uncertainty": "No exact queried campus building feature was used for this model\u2019s footprint; measured outline is from FID 893 feature above."
+    }
+  ],
+  "measurements_and_build_method": {
+    "coordinate_system": "Project campus XY: X east, Y north, Z up, meters; origin latitude 40.4274, longitude -86.9137. Approximate local equirectangular conversion: X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.",
+    "source_footprint_bounds_xy_m": [
+      [
+        -345.26046375767623,
+        -305.81210487133734
+      ],
+      [
+        -647.9187789460775,
+        -597.6403133375993
+      ]
+    ],
+    "source_width_m": 39.448,
+    "source_depth_m": 50.278,
+    "source_perimeter_rings": [
+      152,
+      26
+    ],
+    "architectural_wall_outline_vertices": [
+      49,
+      3
+    ],
+    "wall_outline_simplification_max_deviation_m": 0.24,
+    "roof_and_story_plate_outline": "Tessellated directly from full GIS polygon; interior courtyard ring retained.",
+    "reported_story_count": "3 stories per Purdue official page.",
+    "modeled_floor_plate_elevations_m": [
+      4.77,
+      9.64,
+      14.48
+    ],
+    "modeled_main_wall_top_m": 14.28,
+    "parapet_top_m": 14.79,
+    "GIS_R_field_ft": 56,
+    "GIS_R_interpreted_roof_datum_m": 17.0688,
+    "modeled_canopy_top_m": 17.03,
+    "orientation": "No independent rotation; GIS geometry copied via project prescribed conversion. Public entrance/atrium west side inferred from 2011 Purdue plan and illustrated site access. Entry bay center Y=-633.754m, estimated from longest nearly north-south west wall runs.",
+    "geometry_edits": [
+      "Replaced one unverified solid massing mesh with 35 self-contained mesh objects in the existing named asset collection.",
+      "Built 3-storey wall shell and slabs with courtyard hole from Purdue/Indiana GIS footprint.",
+      "Added three facade window bands, 97 window bay elements, UV-mapped procedural brick and warm concrete, bronze frames, glazing and brick plinth.",
+      "Added a central west-facing 3-storey glazed entry bay with paired door, light columns and a broad flat projecting canopy based on Purdue image references.",
+      "Added roof parapet and low screened mechanical enclosures; added schematic visible lobby slabs, reception desk and feature wall based on official interior plan/render.",
+      "Geometry remains in absolute campus world coordinates and library collection/scene names match manifest."
+    ],
+    "remaining_uncertainty": [
+      "GIS vertical field R=56 ft is interpreted as roof/canopy top; underlying field definition is not explicitly documented.",
+      "Actual finished floor elevations are not published; modeled story spacing is inferred from typical 16-foot GIS level increments and official three-storey description.",
+      "Exact west entrance center is estimated from wall geometry and 2011 site plan; no geotagged as-built survey was found.",
+      "Detailed interior beyond the entrance lobby is not modeled; room divisions and lab equipment are schematic/unverified.",
+      "Facade source photos are oblique; rear and courtyard elevations are inferred from footprint and repeated facade rhythm."
+    ]
+  },
+  "validation": {
+    "asset_id": "massing_purdue_drug_discovery_facility_fc72a4a",
+    "reopened_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_purdue_drug_discovery_facility_fc72a4a.blend",
+    "sha256": "0e720cf446c15fbec44d48dc490e90a2c2ba08cb270d275d7de0be0ed3a2e6ff",
+    "blender_version": "5.2.3 LTS",
+    "scene": "Building_massing_purdue_drug_discovery_facility_fc72a4a",
+    "collection": "Asset_massing_purdue_drug_discovery_facility_fc72a4a",
+    "scene_object_count": 35,
+    "collection_object_count": 35,
+    "mesh_object_count": 35,
+    "polygon_count": 1677,
+    "material_count": 9,
+    "uv_mapped_mesh_count": 5,
+    "uv_required_facade_meshes": [
+      "DRUG | GIS footprint walls, three-storey brick and glazing",
+      "DRUG | dark brick plinth",
+      "DRUG | roof parapet",
+      "DRUG | facade glazing and aluminum window frames"
+    ],
+    "external_images": [
+      {
+        "name": "Render Result",
+        "filepath": "",
+        "packed": false
+      },
+      {
+        "name": "Viewer Node",
+        "filepath": "",
+        "packed": false
+      }
+    ],
+    "external_libraries": [],
+    "source_feature": {
+      "fid": 893,
+      "name": "Drug Discovery Facility",
+      "abbr": "DRUG",
+      "address": "720 Clinic Drive",
+      "crs_output": "EPSG:4326",
+      "local_conversion": "X=(lon+86.9137)*111412.84*cos(40.4274 deg); Y=(lat-40.4274)*111040"
+    },
+    "source_footprint_bounds_xy_m": [
+      [
+        -345.26046375767623,
+        -305.81210487133734
+      ],
+      [
+        -647.9187789460775,
+        -597.6403133375993
+      ]
+    ],
+    "structural_wall_mesh_bounds_xyz_m": [
+      [
+        -345.2604675292969,
+        -305.8121032714844
+      ],
+      [
+        -647.9187622070312,
+        -597.6600341796875
+      ],
+      [
+        0.25,
+        14.279999732971191
+      ]
+    ],
+    "full_asset_bounds_xyz_m": [
+      [
+        -345.41046142578125,
+        -305.8121032714844
+      ],
+      [
+        -647.986572265625,
+        -597.6403198242188
+      ],
+      [
+        0.0,
+        17.030000686645508
+      ]
+    ],
+    "material_checks": "PASS: all meshes have materials; architectural shell, brick plinth, parapet and facade glazing use UV maps; procedural brick shader is self-contained in the blend",
+    "reopen_checks": "PASS: library scene/collection names match manifest; all geometry is mesh-based and nonempty; no external image or library dependencies expected"
+  },
+  "independent_grade": "pending root-appointed independent grader; do not mark complete until score >= 8/10 and findings are addressed."
+}

@@ -114,6 +114,17 @@ superseded = {
     "massing_native_american_educational_and_cultural_center_nacc_faa0f59": "native_american_educational_and_cultural_center_nacc",
     "massing_northwest_chiller_plant_nwcp_2b32fa6": "northwest_chiller_plant",
     "massing_physics_building_phys_3bf42f3": "physics_building",
+    "massing_purdue_fire_department_520430b": "purdue_fire_department",
+    "massing_purdue_drug_discovery_facility_fc72a4a": "purdue_drug_discovery_facility",
+    "massing_purdue_center_for_regional_development_scho_a2375c9": "schowe_house",
+    "massing_purdue_football_performance_complex_f106c29": "purdue_football_performance_complex",
+    "massing_purdue_lutheran_ministry_5425b3c": "purdue_lutheran_ministry",
+    "massing_wood_street_garage_pgw_2fa056e": "wood_street_garage_pgw",
+    "massing_university_book_store_717bf2c": "university_book_store",
+    "massing_university_church_84b2a1b": "university_church",
+    "massing_university_lutheran_church_20903f1": "university_lutheran_church",
+    "massing_wang_hall_wang_0dac5ab": "wang_hall",
+    "massing_northwestern_parking_garage_979f1a2": "master_override_with_pgsc_opening",
 }
 for old_id, replacement in superseded.items():
     old = asset_by_id.get(old_id)
@@ -127,6 +138,83 @@ for old_id, replacement in superseded.items():
         root_collection.children.unlink(collection)
     old["master_visibility"] = f"superseded by detailed {replacement}"
 
+# The Graduate Student Center is a verified low-volume asset located inside the
+# Northwestern Avenue Garage footprint. Keep the garage source library untouched;
+# the master owns this deterministic cutout proxy so the two structures do not
+# occupy the same solid volume.
+pgsc_id = "massing_purdue_graduate_student_center_af9c5c7"
+garage_id = "massing_northwestern_parking_garage_979f1a2"
+pgsc_record = asset_by_id.get(pgsc_id)
+garage_override_name = "MasterOverride_NorthwesternParkingGarage_PGSC"
+if pgsc_record is not None and pgsc_record.get("kind") == "detailed":
+    previous_override = bpy.data.collections.get(garage_override_name)
+    if previous_override is not None:
+        if previous_override in list(root_collection.children):
+            root_collection.children.unlink(previous_override)
+        bpy.data.collections.remove(previous_override, do_unlink=True)
+
+    garage_record = asset_by_id[garage_id]
+    garage_source_collection = get_linked_collection(garage_record)
+    garage_source = next((obj for obj in garage_source_collection.all_objects
+                          if obj.name == "Northwestern Parking Garage"), None)
+    if garage_source is None or garage_source.type != "MESH":
+        raise RuntimeError("Northwestern Parking Garage source mesh is unavailable")
+
+    cutout_path = MODULAR.parent / "audit" / "purdue_graduate_student_center" / "pgsc_garage_cutout_polygon.json"
+    cutout = json.loads(cutout_path.read_text(encoding="utf-8"))
+    ring = cutout["cutout_ring_xy_m"][:-1]
+    ring_count = len(ring)
+    z0, z1 = -0.5, 4.5
+    inverse = garage_source.matrix_world.inverted()
+    vertices = [tuple(inverse @ Vector((x, y, z)))
+                for z in (z0, z1) for x, y in ring]
+    faces = [tuple(range(ring_count)), tuple(reversed(range(ring_count, 2 * ring_count)))]
+    for i in range(ring_count):
+        j = (i + 1) % ring_count
+        faces.append((i, j, ring_count + j, ring_count + i))
+    cutter_mesh = bpy.data.meshes.new("PGSC_MasterCutout_CutterMesh")
+    cutter_mesh.from_pydata(vertices, [], faces)
+    cutter_mesh.update()
+    import bmesh
+    cutter_bm = bmesh.new()
+    cutter_bm.from_mesh(cutter_mesh)
+    bmesh.ops.recalc_face_normals(cutter_bm, faces=cutter_bm.faces)
+    cutter_bm.to_mesh(cutter_mesh)
+    cutter_bm.free()
+
+    override_collection = bpy.data.collections.new(garage_override_name)
+    root_collection.children.link(override_collection)
+    override = garage_source.copy()
+    override.data = garage_source.data.copy()
+    override.name = "Northwestern Parking Garage — master PGSC cutout proxy"
+    override.hide_render = False
+    override.hide_viewport = False
+    override_collection.objects.link(override)
+    cutter = bpy.data.objects.new("PGSC_MasterCutout_Cutter", cutter_mesh)
+    override_collection.objects.link(cutter)
+    cutter.matrix_world = garage_source.matrix_world.copy()
+
+    for obj in bpy.context.selected_objects:
+        obj.select_set(False)
+    override.select_set(True)
+    bpy.context.view_layer.objects.active = override
+    boolean = override.modifiers.new("Master_PGSC_Interface_Cutout", "BOOLEAN")
+    boolean.operation = "DIFFERENCE"
+    boolean.solver = "EXACT"
+    boolean.object = cutter
+    bpy.ops.object.modifier_apply(modifier=boolean.name)
+    bpy.data.objects.remove(cutter, do_unlink=True)
+
+    override_bm = bmesh.new()
+    override_bm.from_mesh(override.data)
+    override_bm.normal_update()
+    nonmanifold = sum(not edge.is_manifold for edge in override_bm.edges)
+    boundary_edges = sum(edge.is_boundary for edge in override_bm.edges)
+    override_bm.free()
+    if nonmanifold or boundary_edges:
+        raise RuntimeError(f"PGSC garage cutout is not watertight: nonmanifold={nonmanifold}, boundary={boundary_edges}")
+    garage_record["master_visibility"] = "master-only cutout proxy exposes the detailed Purdue Graduate Student Center; source library unchanged"
+
 # Newly registered massing modules (including split Dudley/Lambertus) link directly.
 for record in manifest['assets']:
     if record.get('kind') != 'massing' or record['id'] in superseded or record.get('master_visibility','').startswith('superseded'):
@@ -139,22 +227,34 @@ for record in manifest['assets']:
 for record in detailed:
     collection = get_linked_collection(record)
     objects = list(collection.all_objects)
-    record['objects'] = [obj.name for obj in objects]
-    record['object_count'] = len(objects)
+    actual_names = [obj.name for obj in objects]
+    # Collection iteration order is not stable across Blender sessions. Keep a
+    # valid existing order and refresh only when membership actually changes.
+    if sorted(record.get('objects', [])) != sorted(actual_names):
+        record['objects'] = actual_names
+    if record.get('object_count') != len(objects):
+        record['object_count'] = len(objects)
     local_matrices = {}
     points = [collection_local_matrix(obj, local_matrices) @ Vector(corner)
               for obj in objects if obj.type in {'MESH','CURVE','FONT'}
               for corner in obj.bound_box]
     if points:
         local = [[min(p[i] for p in points),max(p[i] for p in points)] for i in range(3)]
-        record['local_bounds_m'] = local
+        existing_local = record.get('local_bounds_m')
+        if existing_local is None or max(abs(local[i][j] - existing_local[i][j])
+                                         for i in range(3) for j in range(2)) > 0.00001:
+            record['local_bounds_m'] = local
         xy=record['placement_origin_xy_m']
-        record['bounds_world_m'] = [[v+xy[i] for v in local[i]] if i<2 else local[i] for i in range(3)]
+        world = [[v+xy[i] for v in local[i]] if i<2 else local[i] for i in range(3)]
+        existing_world = record.get('bounds_world_m')
+        if existing_world is None or max(abs(world[i][j] - existing_world[i][j])
+                                          for i in range(3) for j in range(2)) > 0.00001:
+            record['bounds_world_m'] = world
 
 # Persist the placement convention and current build details.
 manifest["detailed_asset_count"] = len(detailed)
 manifest["placement_model"] = "Detailed assets are local-coordinate linked collections. Placement_<id> empties in the master supply XY campus coordinates. Massing assets retain their original campus coordinates and are linked directly."
-manifest["last_master_build"] = "2026-10-24"
+manifest["last_master_build"] = "2026-10-26"
 manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
 
 bpy.context.view_layer.update()
@@ -191,6 +291,10 @@ verification = {
     "master_scene_object_count": len(scene.objects),
     "source_asset_object_count": sum(a.get("object_count", 0) for a in manifest["assets"]),
     "superseded_massing_assets": list(superseded),
+    "pgsc_garage_master_override": {
+        "collection": garage_override_name if pgsc_record is not None and pgsc_record.get("kind") == "detailed" else None,
+        "status": "PASS" if pgsc_record is not None and pgsc_record.get("kind") == "detailed" else "NOT_APPLIED",
+    },
     "errors": errors,
     "placement_model": manifest["placement_model"],
 }

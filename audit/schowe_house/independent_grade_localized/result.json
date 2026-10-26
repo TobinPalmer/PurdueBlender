@@ -1,0 +1,153 @@
+{
+  "building": "Purdue Center for Regional Development / Schowe House",
+  "asset_id": "massing_purdue_center_for_regional_development_scho_a2375c9",
+  "asset_path": "modular/buildings/massing_purdue_center_for_regional_development_scho_a2375c9.blend",
+  "grader": "independent_grader_subagent",
+  "grade_date": "2026-10-26",
+  "max_score": 10,
+  "passing_threshold": 8,
+  "asset_sha256": "43fbc9e65e24e93710b38d868ce21e0162d5493b0a9fb0d2d64353ce5ea1837d",
+  "score": 8.5,
+  "status": "PASS",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Purdue campus GIS feature 295 names Schowe House at 1341 Northwestern Avenue and reports 471.365 m\u00b2 area; the official campus map labels SCHO as Global Policy Research Institute (Schowe House), and the PCRD contact page confirms the address.",
+        "I independently sampled the GIS boundary and the saved perimeter wall mesh. GIS-to-wall maximum distance is 0.552 m and wall-to-GIS maximum is 0.290 m; mean GIS-to-wall distance is 0.003 m. The residual is concentrated around ground-level openings and the documented wall thickness."
+      ],
+      "reason": "Building identity is corroborated by multiple Purdue records. The 40-vertex official footprint is used directly, and the structural walls align closely with it."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "verified in fresh master reopen; project CRS remains approximate",
+      "evidence": [
+        "Standalone localized geometry reconstructs campus-world bounds [[-406.7227325439453, -379.47019958496094], [1309.0890502929688, 1331.4927368164062], [0.0, 7.78000020980835]] m from the local asset plus manifest origin [-393.0964813232422, 1320.2908325195312].",
+        "Fresh Blender reopen of the master confirms exactly one Placement_massing_purdue_center_for_regional_development_scho_a2375c9 instance, linked from the expected library path, at [-393.09649658203125, 1320.290771484375, 0.0] m with unit scale and zero rotation.",
+        "The master instance world bounds differ from manifest bounds by at most 0.000061 m; independent GIS-to-wall max/mean distances remain 0.552/0.003 m. The project lon/lat-to-meter transform remains approximate, not surveyed."
+      ],
+      "reason": "Master placement, source path, orientation, and dimensions are verified. A small deduction remains for the approximate project coordinate transform."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2.0,
+      "status": "roof form partly photo-supported; vertical dimensions estimated",
+      "evidence": [
+        "The retained May 2025 NIRPC appendix photo associated with the Schowe House/PCRD address visibly shows a brick house with intersecting gray pitched roofs, upper dark wood/shingle gable faces, chimney stacks, and garage doors. The revised model now contains three cross-gable roof runs, dark infill faces, and two brick chimneys.",
+        "Fresh-open evaluated vertical bounds are 0.00\u20137.78 m. The project sources do not provide a surveyed elevation, confirmed floor count, or roof dimensions; eaves, ridge levels, chimney heights/positions, and wing roof geometry remain visual estimates."
+      ],
+      "reason": "The revised roof silhouette includes the principal photo-supported cross-gables and chimneys, but exact heights and hidden-side geometry are not documented by measured sources."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "principal materials and features supported; some openings/interior schematic",
+      "evidence": [
+        "The photo and source notes support red-brown brick, slate-like gray roofs, upper dark timber/shingle cladding, rectangular windows, chimney stacks, and garage doors. These features appear in the revised model and are represented with distinct assigned materials.",
+        "The single oblique photo is partly tree-obscured and does not identify camera azimuth. Door/window placement on obscured elevations, the exact main entrance position, roof junction details, and the interior plan cannot be verified from this source set; the modeled interior is explicitly schematic."
+      ],
+      "reason": "The principal facade palette and distinctive roof details are now represented. Some openings and the interior remain interpretations because the available photo does not show all elevations or room layout."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified in fresh Blender reopen",
+      "evidence": [
+        "A clean Blender 5.2.3 LTS process reopened the exact localized SHA 43fbc9e65e24e93710b38d868ce21e0162d5493b0a9fb0d2d64353ce5ea1837d, with scene Building_massing_purdue_center_for_regional_development_scho_a2375c9, collection Asset_massing_purdue_center_for_regional_development_scho_a2375c9, 33 objects including the placement root, and 32 meshes.",
+        "All 32 meshes have assigned materials (0 missing); the current asset packs 2 used image textures, has no linked library dependencies, and is registered as local-coordinate geometry with a dedicated master marker. Building-specific source snapshots, metrics, fresh-open validation, and renders are retained."
+      ],
+      "reason": "The localized library reopens cleanly, retains the named collection contract, uses packed textures and the project placement marker, and has complete building-specific evidence."
+    }
+  ],
+  "regrade_date": "2026-10-26",
+  "regrade_note": "Revision 3 grade is confirmed for the exact localized source-library SHA and its single verified master collection instance. Localization changed the source coordinate frame; world geometry is preserved after adding the manifest placement origin.",
+  "evidence": {
+    "localized_asset_probe": "audit/schowe_house/independent_grade_localized/asset_probe.json",
+    "master_instance_probe": "audit/schowe_house/independent_grade_localized/master_probe.json",
+    "previous_visual_grade": "audit/schowe_house/independent_grade_r3/result.json",
+    "asset_sha256": "43fbc9e65e24e93710b38d868ce21e0162d5493b0a9fb0d2d64353ce5ea1837d",
+    "master_sha256": "fd42c154b5812f16bcf8cf21560600d3e46d4358fd82c07c7395fdbb1208aaa2",
+    "master_scene_object_count": 9497,
+    "master_placement_marker_count": 75,
+    "marker_location": [
+      -393.09649658203125,
+      1320.290771484375,
+      0.0
+    ],
+    "manifest_origin_xy_m": [
+      -393.0964813232422,
+      1320.2908325195312
+    ],
+    "world_bounds_m": [
+      [
+        -406.7227478027344,
+        -379.47021484375
+      ],
+      [
+        1309.0889892578125,
+        1331.49267578125
+      ],
+      [
+        0.0,
+        7.78000020980835
+      ]
+    ],
+    "master_manifest_bound_error_max_m": 6.103515625e-05,
+    "gis_to_wall_max_m": 0.5520951733201902,
+    "wall_to_gis_max_m": 0.2899505932016649,
+    "gis_to_wall_mean_m": 0.003267134807203028,
+    "reconstructed_world_bounds_m": [
+      [
+        -406.7227325439453,
+        -379.47019958496094
+      ],
+      [
+        1309.0890502929688,
+        1331.4927368164062
+      ],
+      [
+        0.0,
+        7.78000020980835
+      ]
+    ],
+    "mesh_count": 32,
+    "material_names": [
+      "SCHO \u2022 Purdue red-brown brick",
+      "SCHO \u2022 dark painted timber",
+      "SCHO \u2022 dark wood upper gable cladding",
+      "SCHO \u2022 interior oak floor",
+      "SCHO \u2022 limestone sills",
+      "SCHO \u2022 shaded glass",
+      "SCHO \u2022 stained oak doors",
+      "SCHO \u2022 warm interior light",
+      "SCHO \u2022 warm interior plaster",
+      "SCHO \u2022 weathered gray slate"
+    ],
+    "images": [
+      {
+        "name": "SCHO_brick_tile",
+        "packed": true,
+        "path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\schowe_house\\sources\\schowe_brick_tile.png"
+      },
+      {
+        "name": "SCHO_slate_tile",
+        "packed": true,
+        "path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\schowe_house\\sources\\schowe_slate_tile.png"
+      }
+    ]
+  },
+  "findings": [
+    "The exact localized asset SHA matches the current master linked source. Its saved geometry reconstructs the revision 3 campus-world bounds and GIS-to-wall measurements within numerical tolerance.",
+    "A fresh master reopen finds one correct collection instance at the manifest origin, unit scale, zero rotation, expected source path, no direct duplicate source collection, and world bounds matching the manifest within 0.000061 m.",
+    "The prior 8.5/10 visual and evidence assessment remains applicable; no geometric or material changes were introduced by localization.",
+    "Estimated roof and facade dimensions and schematic interior remain unresolved as documented in the revision 3 grade."
+  ]
+}

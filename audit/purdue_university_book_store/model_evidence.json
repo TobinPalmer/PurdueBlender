@@ -1,0 +1,109 @@
+{
+  "building": "Purdue University Book Store, 360 W State Street, West Lafayette, Indiana",
+  "stable_id": "massing_university_book_store_717bf2c",
+  "asset": "modular/buildings/massing_university_book_store_717bf2c.blend",
+  "collection": "Asset_massing_university_book_store_717bf2c",
+  "scene": "Building_massing_university_book_store_717bf2c",
+  "build_date": "2026-10-26",
+  "coordinate_frame": "Building-local metres; origin at OSM/Nominatim storefront address point, campus conversion below.",
+  "campus_origin": {
+    "latitude": 40.4274,
+    "longitude": -86.9137
+  },
+  "placement_anchor_campus_xy_m": [
+    306.4291939108263,
+    -351.85244799958355
+  ],
+  "local_osm_footprint_bounds_m": [
+    [
+      -14.341473165040327,
+      20.193404850935735
+    ],
+    [
+      -16.83366400026216,
+      22.030335999450017
+    ]
+  ],
+  "source_footprint": {
+    "provider": "OpenStreetMap",
+    "feature": "way 117396621",
+    "version": 4,
+    "source_timestamp": "2022-10-31T23:34:55Z",
+    "nodes": [
+      1322458241,
+      10145013621,
+      1322459396,
+      1322458678,
+      1322459741,
+      1322459448,
+      1322458734,
+      1322459815,
+      1322459140,
+      1322458241
+    ]
+  },
+  "sources": [
+    {
+      "provider": "OpenStreetMap",
+      "url": "https://api.openstreetmap.org/api/0.6/way/117396621/full.json",
+      "feature_id": "way/117396621",
+      "retrieved": "2026-10-26",
+      "source_crs": "WGS84 latitude/longitude (EPSG:4326)",
+      "method": "Transform each ordered way node using the project local campus XY approximation; subtract the Nominatim address-point anchor. Building footprint is exact to the mapped OSM polygon, not a survey.",
+      "uncertainty": "OSM outline and mapping date are volunteer sourced; precise wall thickness and courtyard/structural-wall boundary are not independently surveyed."
+    },
+    {
+      "provider": "Nominatim",
+      "url": "https://nominatim.openstreetmap.org/search?format=jsonv2&q=University%20Book%20Store%2C%20360%20W%20State%20St%2C%20West%20Lafayette%2C%20IN",
+      "feature_id": "way/117396621",
+      "retrieved": "2026-10-26",
+      "source_crs": "WGS84 latitude/longitude (EPSG:4326)",
+      "method": "Identity/address match; returned 40.4242313,-86.9100869.",
+      "uncertainty": "Geocoder's point is a representative address point; plan centroid is derived independently from footprint."
+    },
+    {
+      "provider": "Purdue University Book Store",
+      "url": "https://www.purdueu.com/about-us",
+      "feature_id": "official store location",
+      "retrieved": "2026-10-26",
+      "source_crs": "not applicable",
+      "method": "Confirms main shop at 360 W State Street and across from Purdue Memorial Union.",
+      "uncertainty": "No public elevation or as-built dimensions found."
+    },
+    {
+      "provider": "Loc8NearMe gallery (Google photo credit, accessed through listing)",
+      "url": "https://www.loc8nearme.com/indiana/west-lafayette/university-book-store/2957801/gallery/#id=rvc0QR9QDp.jpg",
+      "feature_id": "Google-credited street-level storefront photo 27/27",
+      "retrieved": "2026-10-26",
+      "source_crs": "not applicable",
+      "method": "Visual inspection of south-facing State Street frontage; records brick, pale parapet/trim, long ribbed awning, display glazing, west-side paired entrance, white facade sign, and glazed taller east corner.",
+      "uncertainty": "The image metadata gives Google photo credit but no capture date or camera position; rear elevations and rooftop equipment are not verified."
+    },
+    {
+      "provider": "Purdue University official campus shop listing",
+      "url": "https://www.purdue.edu/trademarks-licensing/documents/Full%20Purdue%20Retailer%20List.pdf",
+      "feature_id": "University Book Store – Main",
+      "retrieved": "2026-10-26",
+      "source_crs": "not applicable",
+      "method": "Confirms University Book Store at 360 W State St, distinct from Purdue West Follett location.",
+      "uncertainty": "No architectural dimensions."
+    }
+  ],
+  "height_evidence": {
+    "status": "estimated",
+    "store_height_m": 6.15,
+    "glass_corner_height_m": 13.4,
+    "basis": "Single-storey storefront plus visibly taller multi-level glazed corner in Google-credited facade photo; no measured elevation available."
+  },
+  "interior_evidence": {
+    "status": "schematic, unverified",
+    "basis": "Generic book shelving, retail counter, and display items placed behind photo-confirmed shopfront glazing; interior floor plan unavailable."
+  },
+  "materials": "All shaders are procedural Blender nodes; no external textures or absolute asset paths.",
+  "validation": {
+    "asset_reopen": "passed",
+    "geometry_review": "passed; 9 OSM source vertices match within 0.00002 m",
+    "independent_grade": "8.25/10 — pass; see independent_grade/grade.json",
+    "master_integration": "passed; marker and bounds verified in audit/master_sync_detail_integrations_2026-10-26.json"
+  }
+}

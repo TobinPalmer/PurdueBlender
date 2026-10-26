@@ -1,0 +1,112 @@
+{
+  "building": "Wood Street Parking Garage (PGW)",
+  "stable_id": "massing_wood_street_garage_pgw_2fa056e",
+  "build_timestamp_utc": "2026-10-26T15:59:00.571830+00:00",
+  "gis": {
+    "provider": "Purdue GIS / Esri BuildingShapesZip4 FeatureServer layer 0",
+    "feature_id": 254,
+    "code": "PGW",
+    "name": "Wood Street Parking Garage",
+    "address": "120 S Grant Street",
+    "crs": "EPSG:3857 (Web Mercator), projected to project-local approximate metric conversion documented in modular/AGENTS.md",
+    "source_area_sq_m_esri": 7080.2578125,
+    "source_perimeter_m_esri": 417.9045361405744,
+    "converted_bbox_m": [
+      [
+        -19.372295013485655,
+        19.372295013485655
+      ],
+      [
+        -60.41256417096065,
+        60.41256417096065
+      ]
+    ],
+    "anchor_world_m": [
+      313.53060833992083,
+      -503.85230334816924
+    ],
+    "projected_plan_dimensions_m": [
+      38.74459002697131,
+      120.8251283419213
+    ],
+    "ring_vertex_count": 18,
+    "height_fields": {
+      "NUM_LEVELS": 8,
+      "CountOfFLO": 8,
+      "R_ft": 78,
+      "Extrution": 70
+    },
+    "height_interpretation": "8 occupied decks modeled at 10 ft increments, GIS R=78 interpreted as roof level (23.7744m); height not independently surveyed."
+  },
+  "model": {
+    "asset_file": "modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend",
+    "collection": "Asset_massing_wood_street_garage_pgw_2fa056e",
+    "scene": "Building_massing_wood_street_garage_pgw_2fa056e",
+    "geometry_frame": "local meters; origin at GIS footprint bounding-box center; parent master marker should be [313.530608, -503.852303]",
+    "bounds_local_m": [
+      [
+        -19.372295379638672,
+        19.372295379638672
+      ],
+      [
+        -60.41256332397461,
+        60.41256332397461
+      ],
+      [
+        0.0,
+        24.09440040588379
+      ]
+    ],
+    "object_count": 79,
+    "materials_procedural": true,
+    "external_texture_dependencies": 0,
+    "render_previews": [
+      "audit/purdue_wood_street_garage_pgw/preview_exterior_dusk.png",
+      "audit/purdue_wood_street_garage_pgw/preview_top_down.png"
+    ],
+    "feature_notes": [
+      "8 concrete parking decks",
+      "open air facade openings with repeated piers and horizontal spandrels",
+      "glazed stair tower with visible stairs and warm landings",
+      "internal sloped vehicle ramps",
+      "roof parapet and deck lights"
+    ],
+    "inferred": [
+      "façade bay rhythm",
+      "stair tower placement within footprint",
+      "ramp arrangement",
+      "concrete shade and glazing tone"
+    ],
+    "sha256": "ec96675691a6fad923bd564bf04fd8be3817bb5af2f79825b266dfaf9966d4e1"
+  },
+  "validation": {
+    "status": "fresh-open PASS",
+    "report": "audit/purdue_wood_street_garage_pgw/fresh_open_validation.json",
+    "object_count": 79,
+    "mesh_count": 29,
+    "bounds_local_m": [
+      [
+        -19.372295379638672,
+        19.372295379638672
+      ],
+      [
+        -60.41256332397461,
+        60.41256332397461
+      ],
+      [
+        0.0,
+        24.09440040588379
+      ]
+    ],
+    "GIS_ring_vertex_set": "exact after local transform (float validation tolerance 1e-4 m)",
+    "external_image_dependencies": 0,
+    "materialless_geometry": [],
+    "independent_grade": "8.7/10 — pass; see independent_grade/result.json",
+    "known_uncertainty": [
+      "GIS level and roof fields are CAD-derived; no measured elevation drawing found in current source set.",
+      "Street-level photo is circa-2010; current street-level imagery was not directly captured.",
+      "Façade grid, circulation tower location, and ramp configuration remain evidence-based inferences rather than drawing-backed details."
+    ],
+    "master_integration": "passed; marker and bounds verified in audit/master_sync_detail_integrations_2026-10-26.json"
+  }
+}

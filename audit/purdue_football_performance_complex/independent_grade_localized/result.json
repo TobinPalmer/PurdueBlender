@@ -1,0 +1,139 @@
+{
+  "building": "Kozuch Football Performance Complex",
+  "asset_id": "massing_purdue_football_performance_complex_f106c29",
+  "asset_path": "modular/buildings/massing_purdue_football_performance_complex_f106c29.blend",
+  "asset_sha256": "c22443f6751e276cd93dc41ffec119e151f88997dde3e6258e5b6a709259d93a",
+  "master_path": "purdue_campus_master.blend",
+  "master_sha256": "27569901dd28d7f48948c150bdc67749537fa36086236d8e36d53430482dfb36",
+  "grader": "independent_grader_subagent",
+  "grade_date": "2026-10-26",
+  "score": 8.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "status": "PASS",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Purdue Libraries GIS feature 1202 (FPC) and official Purdue facility sources identify the Kozuch Football Performance Complex.",
+        "The localized master instance's 44-vertex structural plinth matches all 22 source GIS vertices; max nearest-vertex error is 0.00000355 m.",
+        "The saved Esri imagery overlay places the GIS outline on the complex at Mollenkopf's north end."
+      ],
+      "reason": "Identity is cross-checked with official sources and the actual master instance's footprint aligns with Purdue GIS."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified against GIS and master placement",
+      "evidence": [
+        "A fresh master open found exactly one Placement_massing_purdue_football_performance_complex_f106c29 empty, instancing the expected Asset collection.",
+        "The marker is at [-5.572498321533203, 0.0, 0.0] m with zero rotation; GIS-to-instance plinth error is 0.00000355 m.",
+        "Freshly evaluated master instance world bounds are [[-94.9954605102539, 83.8504638671875], [-27.358043670654297, 27.358043670654297], [0.0, 14.550000190734863]] m.",
+        "The asset's updated local X bounds are recentered; applying the master marker restores the source-matched campus-space footprint."
+      ],
+      "reason": "The changed local frame is compensated by the single master marker, and direct GIS comparison validates final campus position, orientation, and plan scale."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.1,
+      "max_score": 2.0,
+      "status": "partly supported; vertical form uncertain",
+      "evidence": [
+        "Purdue Athletics and the architect describe a three-level facility; no measured elevation was located.",
+        "Fresh source asset height is 14.55 m and remains an estimate.",
+        "Three full-footprint plates appear inconsistent with the 112,000 sq ft published gross area; actual story extents are not documented.",
+        "Populous describes a two-plane flight-inspired roof; the model's main roof slopes remain subtle compared with the official entrance photo."
+      ],
+      "reason": "The three-level program and roof concept are source-backed but the precise elevations and vertical extents are not."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2.0,
+      "status": "key features present; detailing partly interpreted",
+      "evidence": [
+        "The model includes glazed facade bands, metal cladding, projecting entrance canopy, splayed columns, Purdue P/address signage, floors, and schematic lobby/team-hall spaces.",
+        "Saved entrance and three-quarter previews show the implemented features; source photography supports the architectural palette and major entrance elements.",
+        "Facade bay rhythm, hidden sides, and interior organization remain simplified or schematic."
+      ],
+      "reason": "Identity-bearing facade and entrance elements are represented; several architectural details are interpreted rather than dimensionally documented."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Fresh Blender 5.2.3 open confirmed expected scene and collection; 402 objects, 401 geometry objects, 398 meshes, and 9 used materials.",
+        "No linked objects or unpacked external images were found in the source asset.",
+        "Asset SHA-256 matches the requested localized revision: c22443f6751e276cd93dc41ffec119e151f88997dde3e6258e5b6a709259d93a.",
+        "Master SHA-256 independently read as 27569901dd28d7f48948c150bdc67749537fa36086236d8e36d53430482dfb36; its one instance resolves to the expected collection."
+      ],
+      "reason": "The exact revision opens cleanly, is self-contained, and is instantiated once through the modular master placement."
+    }
+  ],
+  "master_placement": [
+    {
+      "marker_name": "Placement_massing_purdue_football_performance_complex_f106c29",
+      "marker_type": "EMPTY",
+      "marker_location_world_m": [
+        -5.572498321533203,
+        0.0,
+        0.0
+      ],
+      "marker_rotation_world_euler": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "instance_collection": "Asset_massing_purdue_football_performance_complex_f106c29",
+      "instance_object_count": 402,
+      "instance_geometry_count": 401,
+      "world_bounds_m": [
+        [
+          -94.9954605102539,
+          83.8504638671875
+        ],
+        [
+          -27.358043670654297,
+          27.358043670654297
+        ],
+        [
+          0.0,
+          14.550000190734863
+        ]
+      ]
+    }
+  ],
+  "gis_footprint_alignment": {
+    "source_feature_id": 1202,
+    "source_vertex_count": 22,
+    "placement_origin_xy_m": [
+      -261.0446763075753,
+      982.3368211826471
+    ],
+    "master_instance_plinth_found": true,
+    "max_source_vertex_to_master_plinth_distance_m": 3.5501823800255287e-06,
+    "plinth_vertex_count": 44
+  },
+  "evidence": [
+    "asset_probe.json",
+    "master_probe.json",
+    "../gis_footprint_on_esri_imagery.png",
+    "../preview_entrance.png",
+    "../preview_three_quarter.png",
+    "../build_evidence.json",
+    "../sources/"
+  ],
+  "findings": [
+    "The localized asset revision retains the previously reviewed geometry and materials, with local X recentered; the master placement compensates for the change.",
+    "The unique master marker has zero rotation, references the expected asset collection, and its actual instance footprint matches Purdue GIS FID 1202 to within 0.000004 m.",
+    "The aerial GIS overlay shows the complex at Mollenkopf's north end. This review confirms the KFPC footprint is separately represented by its own collection instance; it does not claim to verify every adjoining Mollenkopf wall or seam in the broader master.",
+    "Height, exact story extents, and the dramatic roof fold remain estimated or simplified; the interior is schematic."
+  ],
+  "errors": []
+}

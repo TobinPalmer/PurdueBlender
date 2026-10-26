@@ -1,0 +1,166 @@
+{
+  "score": 8.25,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified against raw OSM snapshot",
+      "evidence": "Official store address/name corroborated by Purdue store listing and OSM way 117396621 (University Book Store, 360 W State St); in a fresh Blender process the shell\u2019s nine source ring vertices match the raw OSM polygon after the documented local transform.",
+      "deduction": "None for this criterion; OSM is a volunteer mapped outline, not a survey."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2,
+      "status": "position/orientation/plan verified; absolute site placement pending coordinator integration",
+      "evidence": "The source ring is transformed with project X-east/Y-north local approximation; measured plan bounds are 34.53 \u00d7 38.86 m, max ring-vertex error 0.00000072 m. Nominatim address point converts to campus anchor (306.429, -351.852) m.",
+      "deduction": "Campus location is represented as a documented local anchor but validation says master integration is pending; no surveyed control point or authoritative dimensions were available."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "status": "partly supported; heights estimated",
+      "evidence": "The fresh-open shell is 4.28 m to its flat roof; the asset extends to 13.77 m (builder reports retail parapet about 6.15 m and glazed corner about 13.4 m). Source street photograph visibly supports a low flat-roof shop with a distinctly taller glazed corner.",
+      "deduction": "No measured elevations, roof plan, or authoritative floor count were found. The height values and multi-level interpretation remain image-derived estimates; rooftop form/equipment are unverified."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.75,
+      "max_score": 2,
+      "status": "strong street-photo match with minor simplifications",
+      "evidence": "Direct comparison with the cited Google-credited storefront image supports red brick, broad pale parapet with pilasters, long ribbed pale awning, display glazing, paired west-side entry, white UNIVERSITY BOOK STORE lettering, and taller glazed east corner. The rendered front view contains these features.",
+      "deduction": "The model simplifies the corner\u2019s stepped/canted cream surround and presents the frontage with a cleaner, more regular window rhythm; the back and side elevations and the interior remain inferred/schematic."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.75,
+      "max_score": 2,
+      "status": "asset/export and dependency checks verified; integration pending",
+      "evidence": "Fresh-open asset contains the expected named scene and collection; 538/538 asset objects are directly linked to that collection. No external libraries or unpacked file images. Procedural materials, raw OSM snapshot, provenance/evidence, roof-plan/front previews, and validation are present.",
+      "deduction": "Coordinator-owned manifest/placement/master integration is explicitly pending. Evidence states source date, retrieval date, CRS, method, and uncertainty, but building/store source photos do not have capture date or metric camera calibration."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_university_book_store_717bf2c.blend",
+    "asset_sha256": "3d28146e3ec9db8bdb2d01f20dbfba918c7497cbc10a0581dcaf48b8e2462730",
+    "assignment": "Root README ownership row names stable ID massing_university_book_store_717bf2c, the same asset path, and owner Tobin.",
+    "evaluated_from_fresh_blender_process": true,
+    "raw_source": "audit/purdue_university_book_store/osm_way_117396621_full.json",
+    "model_evidence": "audit/purdue_university_book_store/model_evidence.json",
+    "validation": "audit/purdue_university_book_store/validation.json",
+    "front_preview": "audit/purdue_university_book_store/preview_state_street.png",
+    "roof_preview": "audit/purdue_university_book_store/preview_roof_plan.png",
+    "source_image_url": "https://s1.localdatacdn.com/in/west-lafayette/2957801/original/rvc0QR9QDp.jpg",
+    "measured_metrics": {
+      "fresh_process_open": true,
+      "scene": "Building_massing_university_book_store_717bf2c",
+      "collection": "Asset_massing_university_book_store_717bf2c",
+      "asset_objects": 538,
+      "mesh_objects": 536,
+      "font_objects": 2,
+      "asset_direct_links": 538,
+      "source_way": "way/117396621",
+      "source_version": 4,
+      "source_date": "2022-10-31T23:34:55Z",
+      "source_vertex_count": 9,
+      "max_source_vertex_error_m": 7.230428858940742e-07,
+      "source_footprint_bounds_local_m": [
+        [
+          -14.341473165040327,
+          20.193404850935735
+        ],
+        [
+          -16.83366400026216,
+          22.030335999450017
+        ]
+      ],
+      "source_bbox_width_depth_m": [
+        34.53487801597606,
+        38.86399999971218
+      ],
+      "shell_z_range_m": [
+        0.0,
+        4.28000020980835
+      ],
+      "whole_asset_bounds_m": [
+        [
+          -15.649999618530273,
+          20.193405151367188
+        ],
+        [
+          -19.010000228881836,
+          22.030336380004883
+        ],
+        [
+          0.0,
+          13.770000457763672
+        ]
+      ],
+      "campus_anchor_xy_m": [
+        306.4291939108263,
+        -351.85244799958355
+      ],
+      "unpacked_file_images": [],
+      "external_libraries": [],
+      "scene_camera": "Preview Camera | State Street.006",
+      "distinct_material_count": 7,
+      "source_ring_edges": [
+        {
+          "edge": 0,
+          "length_m": 35.5487209704087,
+          "bearing_deg_from_east": 270.9432298091856
+        },
+        {
+          "edge": 1,
+          "length_m": 3.6178048899811017,
+          "bearing_deg_from_east": 316.80794811621917
+        },
+        {
+          "edge": 2,
+          "length_m": 30.871814124480032,
+          "bearing_deg_from_east": 358.59850305042517
+        },
+        {
+          "edge": 3,
+          "length_m": 7.408911961941464,
+          "bearing_deg_from_east": 86.52174826267031
+        },
+        {
+          "edge": 4,
+          "length_m": 6.12381893023084,
+          "bearing_deg_from_east": 180.72725956649052
+        },
+        {
+          "edge": 5,
+          "length_m": 18.9553647317429,
+          "bearing_deg_from_east": 90.53835199868536
+        },
+        {
+          "edge": 6,
+          "length_m": 8.798567006414398,
+          "bearing_deg_from_east": 178.3366678597297
+        },
+        {
+          "edge": 7,
+          "length_m": 12.340752912513935,
+          "bearing_deg_from_east": 91.49645653255254
+        },
+        {
+          "edge": 8,
+          "length_m": 19.116516575873707,
+          "bearing_deg_from_east": 180.26624709329656
+        }
+      ],
+      "asset_sha256": "3d28146e3ec9db8bdb2d01f20dbfba918c7497cbc10a0581dcaf48b8e2462730"
+    }
+  },
+  "findings": [
+    "Passes the requested 8/10 threshold at 8.25/10, with material height and absolute-placement uncertainty retained.",
+    "Keep height/floor labels explicitly estimated until a measured elevation, reliable height source, or calibrated imagery is available.",
+    "Complete and recheck the coordinator-owned master placement/integration before claiming campus placement fully verified.",
+    "For higher facade fidelity, refine the source-photo corner surround and document source-image date/camera uncertainty; do not scale geometry from the image without calibration."
+  ]
+}

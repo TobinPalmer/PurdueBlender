@@ -1,0 +1,174 @@
+{
+  "score": 8.6,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "OSM way 301932784 is tagged as University Lutheran Church, place of worship, at 460 Northwestern Avenue.",
+        "Official ULu visit page confirms this location and its relationship across the street from Electrical Engineering.",
+        "The model envelope XY bounds match the transformed OSM ring within 0.00000555 m."
+      ],
+      "findings": "Pass. The identity is distinguishable from Purdue Lutheran Ministry, and the source ring is the intended church footprint."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Envelope XY bounds: [208.91395568847656, 237.9615936279297] x [155.24502563476562, 185.35906982421875] m; transformed OSM expected bounds: [[208.91396124082118, 237.9615931676513], [155.24502400032816, 185.3590720003558]].",
+        "Northwestern Avenue OSM way 932656636 was used to identify road-facing edges; detected frontage edges: 1, 3, 5, 6, 8, 10.",
+        "The asset keeps the campus-world coordinate convention of its existing manifest record and is intended to be linked at identity."
+      ],
+      "findings": "Pass on footprint placement and orientation. Coordinate conversion is the project\u2019s approximate local transform, not a surveyed CRS; the OSM geometry and source dataset remain non-survey evidence."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": [
+        "Official church imagery shows three above-ground storeys and a shallow dark roof.",
+        "Official visit page and Purdue Archives record support basement fellowship hall and third-floor sanctuary.",
+        "Model roof/parapet reaches approximately 13.94 m and basement extends to -2.60 m.",
+        "No measured elevation, roof section, or reliable public height field was located; the height remains a photo-scaled estimate with \u00b12.5 m stated uncertainty."
+      ],
+      "findings": "Partial. Storey count and low roof profile have direct photo/program support, but the numeric height and roof slope/parapet are estimates. The asset depicts a nearly flat roof plane and a stepped parapet that is less clear in the source photo."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.35,
+      "max_score": 2.0,
+      "evidence": [
+        "Official exterior image shows red-brown brick, repeated dark horizontal window bays, pale masonry courses, UNIVERSITY/LUTHERAN signage, a vertical Fuel sign, and a low dark roof edge.",
+        "The model includes brick textures, 3 above-ground window levels, pale courses, road-facing church lettering, Fuel sign, cafe canopy, and exterior entrance details.",
+        "Facade module counts on non-photographed sides are extrapolated from footprint and should be treated as uncertain."
+      ],
+      "findings": "Good source resemblance, but the model distributes more and smaller windows across stepped frontage segments than the photograph\u2019s three dominant wide bays. The church sign is much smaller than the reference sign and the storefront/entry locations are schematic."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Expected scene `Building_massing_university_lutheran_church_20903f1` and collection `Asset_massing_university_lutheran_church_20903f1` reopen; collection contains 623 objects (620 meshes).",
+        "Envelope is closed: {'vertices': 34, 'edges': 79, 'faces': 47, 'boundary_edges': 0, 'non_manifold_edges': 0, 'loose_vertices': 0}.",
+        "Materials found: ULu | charcoal aluminum frames, ULu | charcoal standing-seam roof, ULu | dark blue-gray insulated glazing, ULu | interior concrete and carpet, ULu | mixed red-brown brick, ULu | oak furniture, ULu | pale limestone bands, ULu | warm interior wall paint, ULu | warm white signage.",
+        "No external image paths (0) or linked library paths (0); previews present: True; required raw source snapshots present: True.",
+        "Freshly reopened SHA256: 22513de9eab91817216366280497c9cda07312fcdcabd0b4d65055ec97e2ca25."
+      ],
+      "findings": "Pass. Dedicated build script and evidence exist, expected names are preserved, and the asset is self-contained."
+    }
+  ],
+  "evidence": {
+    "asset_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_university_lutheran_church_20903f1.blend",
+    "asset_sha256": "22513de9eab91817216366280497c9cda07312fcdcabd0b4d65055ec97e2ca25",
+    "scene": "Building_massing_university_lutheran_church_20903f1",
+    "collection": "Asset_massing_university_lutheran_church_20903f1",
+    "expected_osm_bounds_xy_m": [
+      [
+        208.91396124082118,
+        237.9615931676513
+      ],
+      [
+        155.24502400032816,
+        185.3590720003558
+      ]
+    ],
+    "measured_envelope_bounds_world_m": [
+      [
+        208.91395568847656,
+        237.9615936279297
+      ],
+      [
+        155.24502563476562,
+        185.35906982421875
+      ],
+      [
+        -2.5999999046325684,
+        12.75
+      ]
+    ],
+    "max_xy_bound_error_m": 5.5523446178540325e-06,
+    "road_facing_edges": [
+      {
+        "edge_index": 1,
+        "length_m": 2.0372903657500694,
+        "road_distance_m": 26.154940300058215,
+        "parallel_alignment": 0.9351499676704407,
+        "faces_road": 0.9351500272750854
+      },
+      {
+        "edge_index": 3,
+        "length_m": 9.251988944591707,
+        "road_distance_m": 21.4411190970706,
+        "parallel_alignment": 0.9346995949745178,
+        "faces_road": 0.9346994906663895
+      },
+      {
+        "edge_index": 5,
+        "length_m": 3.4490543382455976,
+        "road_distance_m": 22.677912259901117,
+        "parallel_alignment": 0.934745728969574,
+        "faces_road": 0.9976451694965363
+      },
+      {
+        "edge_index": 6,
+        "length_m": 3.5783488440980684,
+        "road_distance_m": 22.708840162121646,
+        "parallel_alignment": 0.9346915036439896,
+        "faces_road": 0.9962878003716469
+      },
+      {
+        "edge_index": 8,
+        "length_m": 7.135751409173595,
+        "road_distance_m": 26.350916004365086,
+        "parallel_alignment": 0.9350581914186478,
+        "faces_road": 0.9604059644043446
+      },
+      {
+        "edge_index": 10,
+        "length_m": 3.0478822852642415,
+        "road_distance_m": 29.329465856777,
+        "parallel_alignment": 0.9344334006309509,
+        "faces_road": 0.9064880684018135
+      }
+    ],
+    "topology": {
+      "vertices": 34,
+      "edges": 79,
+      "faces": 47,
+      "boundary_edges": 0,
+      "non_manifold_edges": 0,
+      "loose_vertices": 0
+    },
+    "material_names": [
+      "ULu | charcoal aluminum frames",
+      "ULu | charcoal standing-seam roof",
+      "ULu | dark blue-gray insulated glazing",
+      "ULu | interior concrete and carpet",
+      "ULu | mixed red-brown brick",
+      "ULu | oak furniture",
+      "ULu | pale limestone bands",
+      "ULu | warm interior wall paint",
+      "ULu | warm white signage"
+    ],
+    "external_image_paths": [],
+    "linked_library_paths": [],
+    "previews_present": true,
+    "source_snapshot_paths": [
+      "sources/osm_way_301932784.json",
+      "sources/osm_northwestern_avenue_way_932656636.json",
+      "sources/official_visit_page.html",
+      "sources/official_history_page.html",
+      "images/official_ulupurdue_full_building.jpg"
+    ],
+    "source_snapshots_complete": true
+  },
+  "findings": [
+    "Improve the road-facing elevation by aligning its three dominant wide window bays to the official photo and enlarging/centering the church sign.",
+    "Replace the numeric height with a surveyed or independently documented elevation if one becomes available; current value is explicitly an estimate.",
+    "Interior uses align with published room assignments, but room partitions and furniture are schematic."
+  ]
+}

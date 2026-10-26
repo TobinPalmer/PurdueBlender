@@ -1,0 +1,120 @@
+{
+  "building": "Purdue Drug Discovery Facility",
+  "asset_id": "massing_purdue_drug_discovery_facility_fc72a4a",
+  "asset_path": "modular/buildings/massing_purdue_drug_discovery_facility_fc72a4a.blend",
+  "asset_sha256": "3269b18a48ac4a746037011e16b48f7ae2abde35749a2e3ba80fce95c85fc798",
+  "expected_asset_sha256": "3269b18a48ac4a746037011e16b48f7ae2abde35749a2e3ba80fce95c85fc798",
+  "master_path": "purdue_campus_master.blend",
+  "master_sha256": "fd42c154b5812f16bcf8cf21560600d3e46d4358fd82c07c7395fdbb1208aaa2",
+  "grader": "independent_grader_subagent_relocalized_revision",
+  "grade_date": "2026-10-26",
+  "score": 9.1,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "status": "PASS",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified",
+      "evidence": [
+        "Independent inspection of preserved Purdue/Indiana GIS FID 893 verifies DRUG, Drug Discovery Facility, 720 Clinic Drive.",
+        "Purdue Office of Research independently identifies the facility at 720 Clinic Drive and describes it as three stories.",
+        "After applying the manifest/master placement anchor to the localized model outline, sampled symmetric GIS-boundary deviation is 0.370 m (0.40 m tolerance). This includes the outer perimeter and interior courtyard ring."
+      ],
+      "reason": "The source identity/address matches and the world-space model outline remains within the stated geometry tolerance after localizing the asset."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2,
+      "status": "verified by fresh master instance probe",
+      "evidence": [
+        "A fresh Blender open of the master found exactly one Placement_massing_purdue_drug_discovery_facility_fc72a4a instance at [-325.61126708984375, -622.8134765625, 0.0], versus manifest anchor [-325.6112823486328, -622.8134460449219]; maximum XY error is 0.000031 m.",
+        "Master instance links the expected library path and collection; world bounds differ from manifest by at most 0.000031 m.",
+        "Localized source mesh bounds and instance transform reproduce the GIS campus footprint; sampled source-to-model boundary deviation is 0.370 m and model-to-source is 0.000058 m.",
+        "Coordinates inherit the project's documented approximate local lon/lat-to-meter conversion rather than a surveyed CRS."
+      ],
+      "reason": "The exact master marker, library path, instance transform and resulting world bounds all match the manifest; the small deduction retains the known approximate geographic transform limitation."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "three-story count supported; detailed vertical dimensions partly estimated",
+      "evidence": [
+        "Purdue Office of Research calls the facility three-story.",
+        "GIS fields F02=16, F03=32, F04=48, R=56 are preserved, but their metadata has no descriptions/units; roof-datum interpretation remains plausible, not proven.",
+        "Fresh localized asset geometry has local Z bounds [0.0, 17.030000686645508]; official photos support a flat roof and tall entrance canopy, but no surveyed elevation confirms all vertical dimensions."
+      ],
+      "reason": "The story count and broad roof silhouette are supported. Exact floor spacing and the specific meaning/units of vertical GIS fields remain unresolved."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.7,
+      "max_score": 2,
+      "status": "major features match official imagery; secondary facades inferred",
+      "evidence": [
+        "The official Purdue Research photo shows the brick facade, regular floor bands, tall glazed entrance bay, and projecting flat canopy represented by the model preview.",
+        "Purdue's facility description confirms the intended glass visibility between laboratory and public areas; the asset includes a curtainwall entrance and simple visible lobby.",
+        "Only an oblique night photograph and a proposed 2011 site design are available for the as-built comparison; rear/courtyard elevations therefore remain inferred."
+      ],
+      "reason": "The signature facade and entry are recognizably source-supported, while less visible elevations and exact local details are not independently documented."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified by fresh asset and master opens",
+      "evidence": [
+        "Fresh asset reopen in Blender 5.2.3 LTS finds expected scene/collection, 36 objects (35 meshes), and 9 materials.",
+        "All mesh objects have materials, the asset has no external linked libraries, and a local-coordinate root at origin preserves the manifest anchor.",
+        "Fresh master reopen confirms one instance of the same local library; asset SHA-256 is 3269b18a48ac4a746037011e16b48f7ae2abde35749a2e3ba80fce95c85fc798, master SHA-256 is fd42c154b5812f16bcf8cf21560600d3e46d4358fd82c07c7395fdbb1208aaa2.",
+        "Building-specific source snapshots, model evidence, preview, validator, and the original independent grade are retained in the project audit folder."
+      ],
+      "reason": "Both the standalone local library and its master instance reopen with the expected contract and portable links."
+    }
+  ],
+  "evidence": {
+    "asset_probe": "audit/purdue_drug_discovery_facility/independent_grade_localized/asset_probe_result.json",
+    "master_probe": "audit/purdue_drug_discovery_facility/independent_grade_localized/master_probe_result.json",
+    "master_audit_crosscheck": "audit/master_sync_fire_drug_schowe_2026-10-26.json",
+    "gis_source": "audit/purdue_drug_discovery_facility/sources/arcgis_feature_893_2026-10-26.geojson",
+    "purdue_official_sources": [
+      {
+        "title": "Institutes and Centers at Discovery Park \u2014 Purdue University",
+        "url": "https://research.purdue.edu/about/institutes-and-centers/",
+        "supports": "Facility identity, 720 Clinic Drive, three-story count and glass viewing feature."
+      },
+      {
+        "title": "Drug Discovery Building \u2014 Purdue Department of Chemistry",
+        "url": "https://www.chem.purdue.edu/DrugDiscovery/building.html",
+        "supports": "Proposed site plan, first and second floor plans, and architectural images."
+      }
+    ],
+    "previous_grade": "audit/purdue_drug_discovery_facility/independent_grade/result.json"
+  },
+  "placement_metrics": {
+    "manifest_anchor_xy_m": [
+      -325.6112823486328,
+      -622.8134460449219
+    ],
+    "master_marker_xy_m": [
+      -325.61126708984375,
+      -622.8134765625,
+      0.0
+    ],
+    "marker_xy_error_m": 3.0517578125e-05,
+    "world_bounds_error_max_m": 3.0517578125e-05,
+    "outline_source_to_model_m": 0.3702605553811729,
+    "outline_model_to_source_m": 5.803407121165891e-05,
+    "master_checks_pass": true
+  },
+  "findings": [
+    "The localized revision preserves the prior model geometry; the original sampled footprint discrepancy remains 0.37 m and is within this review's explicit 0.40 m tolerance.",
+    "The master marker has the exact manifest location, unrotated unit scale, expected linked library, and matching world bounds.",
+    "Floor and roof dimensions retain estimation and GIS field-definition limits from the prior grade.",
+    "This review checks the integrated instance transform, not every neighboring master-scene asset or general master-scene appearance."
+  ]
+}

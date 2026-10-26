@@ -1,0 +1,144 @@
+{
+  "building": "Wang Hall (Seng-Liang Wang Hall)",
+  "stable_id": "massing_wang_hall_wang_0dac5ab",
+  "owner": "Tobin",
+  "asset": "modular/buildings/massing_wang_hall_wang_0dac5ab.blend",
+  "build_script": "modular/buildings/build_massing_wang_hall_wang_0dac5ab.py",
+  "retrieved_utc_date": "2026-10-26",
+  "placement_anchor_campus_xy_m": [
+    98.2954902278031,
+    339.9100960000692
+  ],
+  "placement_anchor_local_frame_m": [
+    0.0,
+    0.0
+  ],
+  "integration_dependency": "Master placement marker is saved at the documented campus anchor and verified in the coordinator master audit.",
+  "coordinate_conversion": {
+    "description": "Project geographic coordinates into the campus meter frame; building library geometry is translated to a local frame by subtracting the footprint bbox center. The master Placement marker will apply the recorded campus anchor.",
+    "x_m": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_m": "(latitude - 40.4274) * 111040.0",
+    "source_crs": "EPSG:4326; approximate local tangent conversion, not survey-grade"
+  },
+  "sources": [
+    {
+      "provider": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/301932787",
+      "feature_id": "way 301932787",
+      "snapshot": "audit/wang_hall/sources/wang_hall_osm_way_301932787_full_2026-10-26.json",
+      "source_date": "OSM current at retrieval; source history not captured",
+      "retrieval_date": "2026-10-26",
+      "source_crs": "WGS84 / EPSG:4326",
+      "measurement_method": "17 unique building outline vertices projected with project conversion; bounding box center used as local asset origin",
+      "use": "Primary structural plan outline; named Wang Hall and aligns with roof in aerial imagery. OSM attributes building:levels=4 and height=14.8 m.",
+      "uncertainty": "Community-mapped roof/building outline, not a surveyed wall survey."
+    },
+    {
+      "provider": "Purdue University GIS",
+      "url": "https://gis.itap.purdue.edu/arcgis/rest/services/Buildings/MapServer/0",
+      "feature_id": "FID 895, Wang Hall / WANG",
+      "snapshot": "audit/wang_hall/sources/purdue_gis_wang_fid895_2026-10-26.geojson",
+      "source_date": "GIS layer date unavailable",
+      "retrieval_date": "2026-10-26",
+      "source_crs": "EPSG:4326 in saved feature response",
+      "measurement_method": "Polygon transformed with project local meter conversion; compared against OSM outline",
+      "use": "Independent institutional identity/plan comparison.",
+      "uncertainty": "GIS polygon appears offset/jittered relative to imagery. Its computed area is about 3032 m2 versus OSM about 3370 m2; OSM-to-GIS IoU about 0.812, centroid separation about 5.32 m and Hausdorff about 5.54 m. OSM selected for roof outline based on imagery and floor-area reconciliation."
+    },
+    {
+      "provider": "Esri World Imagery",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      "feature_id": "Imagery tile covering Wang Hall; local crop",
+      "snapshot": "audit/wang_hall/sources/wang_hall_esri_aerial_2026-10-26.jpg",
+      "source_date": "Tile date metadata not retained",
+      "retrieval_date": "2026-10-26",
+      "source_crs": "Web Mercator imagery service; image crop georeferenced at retrieval",
+      "measurement_method": "Visual orthographic comparison of OSM and GIS outlines to roof edges",
+      "use": "Roof footprint and plan-shape review. Overlay saved as audit/wang_hall/footprint_overlay_on_aerial.png.",
+      "uncertainty": "Aerial image date and resolution are not survey-grade; roof edge may differ from wall line."
+    },
+    {
+      "provider": "Purdue Electrical and Computer Engineering",
+      "url": "https://engineering.purdue.edu/ECE/News/2014/wang-hall-dedicated",
+      "feature_id": "Wang Hall dedication article",
+      "snapshot": "audit/wang_hall/sources/purdue_ece_wang_hall_dedication_2014.html",
+      "source_date": "2014-09-19",
+      "retrieval_date": "2026-10-26",
+      "source_crs": "N/A",
+      "measurement_method": "Published building area and story description",
+      "use": "Official identity, four-story count, 147000 sq ft and 516 Northwestern Ave address.",
+      "uncertainty": "Does not publish surveyed building height or detailed floor elevations."
+    },
+    {
+      "provider": "CSO Architects",
+      "url": "https://www.csoarchitects.com/projects/wang-hall-purdue-university",
+      "feature_id": "Wang Hall project page and project photographs",
+      "snapshot": "audit/wang_hall/sources/cso_wang_hall_project_page_2026-10-26.html",
+      "source_date": "Project completed 2014; page date unavailable",
+      "retrieval_date": "2026-10-26",
+      "source_crs": "N/A",
+      "measurement_method": "Visual review of architect photographs and project description",
+      "use": "Massing, red masonry, regular windows, central four-story light-filled atrium, lobby/gathering space, and entrance imagery.",
+      "uncertainty": "Photos are view-specific and do not provide complete facade elevations or room plan."
+    },
+    {
+      "provider": "Purdue University",
+      "url": "https://www.purdue.edu/newsroom/releases/2015/Q1/purdues-wang-hall-earns-leed-gold-certification.html",
+      "feature_id": "Wang Hall LEED Gold article",
+      "snapshot": "audit/wang_hall/sources/purdue_wang_hall_leed_article_2015.html",
+      "source_date": "2015",
+      "retrieval_date": "2026-10-26",
+      "source_crs": "N/A",
+      "measurement_method": "Published area/program facts",
+      "use": "Cross-checks 147000 sq ft scale and building identity/program.",
+      "uncertainty": "Not a geometry source."
+    },
+    {
+      "provider": "CSO Architects / project archive",
+      "url": "https://www.csoarchitects.com/projects/wang-hall-purdue-university",
+      "feature_id": "Wang Hall design plans and facade imagery",
+      "snapshot": "audit/wang_hall/sources/Wang_plans16.jpg and related Wang_plans*.jpg; wang-hall-finished.jpg",
+      "source_date": "Design/construction images circa 2013-2014",
+      "retrieval_date": "2026-10-26",
+      "source_crs": "N/A",
+      "measurement_method": "Visual reference for facade rhythm, entrance, skylight and architectural materials",
+      "use": "Roof/facade features and entrance approach.",
+      "uncertainty": "Not dimensioned survey drawings; certain architectural details are approximations."
+    }
+  ],
+  "model": {
+    "stories": 4,
+    "height_m": 14.8,
+    "height_method": "OSM tagged height; checked against four-story official descriptions, estimated from floor stack and roof/parapet; not surveyed",
+    "osm_plan_area_m2_approx": 3370.02,
+    "official_floor_area_sqft": 147000,
+    "design_changes": [
+      "Replaced original single massing block with mapped 17-vertex structural outline centered in local coordinates.",
+      "Added four-story brick shell and parapet, roof deck, long central skylight strip and low-profile rooftop equipment that stays within the 14.8 m tagged roof envelope.",
+      "Added taller, fewer facade windows, pale floor bands, masonry/stone textures, a projecting brick atrium pavilion with an elliptical raised crown, tall screened glazing, front canopy, entry lettering and basic entrance furniture.",
+      "Added schematic atrium balconies, stair flights, reception, seating and feature-wall volumes; these are illustrative only because a verified interior plan was unavailable.",
+      "Added a separate preview camera/light rig outside the exported asset collection."
+    ],
+    "portable_materials": "Procedural materials only; no external images, linked libraries or external asset dependencies.",
+    "asset_sha256": "7c0d3ad6e3399125067a4bb4fec86deee6972b10699f9d95bdce9ae3f11d7cea"
+  },
+  "validation": {
+    "fresh_open_result": "audit/wang_hall/fresh_open_validation.json",
+    "fresh_open_script": "audit/wang_hall/fresh_open_validation.py",
+    "result": "Blender 5.2.3 opened saved asset in a separate process; expected scene/collection present, 12 collection objects, 10672 evaluated mesh vertices, no external libraries. Evaluated vertical extent is 14.81 m; structural outline agrees with OSM bounding coordinates within 0.000002 m. Main roof and rooftop equipment now remain within the 14.8 m source-height envelope to rounding.",
+    "views": [
+      "audit/wang_hall/preview_three_quarter.png",
+      "audit/wang_hall/preview_atrium_detail.png",
+      "audit/wang_hall/preview_roof_plan.png",
+      "audit/wang_hall/footprint_overlay_on_aerial.png"
+    ],
+    "remaining_uncertainty": [
+      "GIS and OSM wall/roof outlines disagree by several meters; selected OSM roof outline aligns visually with the aerial and gives an area closer to official 147000 square feet.",
+      "Exact floor heights and total surveyed height are unavailable; story elevations are schematic and OSM's 14.8 m value is unsurveyed. The evaluated roof/mechanical envelope reaches 14.81 m, a rounding-scale 0.01 m above the tagged height; equipment heights are approximate.",
+      "Exact interior layout, atrium opening dimensions, finish materials, and secondary facade details are illustrative rather than verified from dimensioned plans. An inward raycast confirms the sample center atrium opening is clear; complete interior visibility still needs visual review.",
+      "Preview lighting is a presentation setup and does not represent site illumination."
+    ],
+    "independent_grade": "8.4/10 PASS; see independent_grade_final/result.json",
+    "master_integration": "PASS; see master_integration_2026-10-26.json"
+  }
+}

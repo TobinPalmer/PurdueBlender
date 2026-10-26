@@ -1,0 +1,81 @@
+{
+  "retrieved_utc": "2026-10-26",
+  "building": "Schowe House / Global Policy Research Institute",
+  "sources": [
+    {
+      "id": "purdue_campus_gis_feature_295",
+      "provider": "Purdue campus GIS / ArcGIS MapServer layer 0",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=OBJECTID%3D295&outFields=%2A&returnGeometry=true&outSR=4326&f=json",
+      "feature_id": 295,
+      "retrieved_utc": "2026-10-26",
+      "source_crs": "ArcGIS layer metadata WKID 102100/latestWKID 3857; query geometry explicitly returned in EPSG:4326/WKID 4326",
+      "method": "Used the source exterior ring directly. Converted lon/lat to project-local meters with the formula documented in modular/AGENTS.md: x=(lon+86.9137)*111412.84*cos(radians(40.4274)); y=(lat-40.4274)*111040. This is an approximate local conversion, not a survey CRS.",
+      "facts": "OBJECTID 295, ABBR SCHO, Name Schowe House, address 1341 Northwestern Avenue, 471.365390615 m2 area, 127.871210436 m perimeter; description says built 1929, 1990 west-wing improvements, PCRD center from 2009.",
+      "snapshot": "purdue_gis_fid295_schowe_house_2026-10-26.json",
+      "snapshot_sha256": {
+        "snapshot": "eb3a6ba5e40ab7f96abedc638d489c6aae28465c758060dade161b269746759e"
+      }
+    },
+    {
+      "id": "purdue_campus_gis_layer_metadata",
+      "provider": "Purdue campus GIS / ArcGIS MapServer layer 0",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0?f=pjson",
+      "retrieved_utc": "2026-10-26",
+      "source_crs": "Layer metadata WKID 102100/latestWKID 3857",
+      "method": "Metadata snapshot documenting field names, shape units, and layer source spatial reference.",
+      "snapshot": "gis_layer_metadata_2026-10-26.json",
+      "snapshot_sha256": {
+        "snapshot": "7080e63de76e7d81cc2d5b036bd7f535e3ccf8ff89c50d91d73ace488b944c3b"
+      }
+    },
+    {
+      "id": "purdue_official_campus_map",
+      "provider": "Purdue University",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "Current map retrieved 2026-10-26; PDF source has no publication date in parsed text.",
+      "method": "Official campus map index identifies SCHO as Global Policy Research Institute (Schowe House), grid F1.",
+      "snapshot": "purdue_campus_map_current.pdf",
+      "snapshot_sha256": {
+        "snapshot": "4a9f67800aead2002385f39263224bd2117e99c36f5a11b67ae3608b21d55e9a"
+      }
+    },
+    {
+      "id": "purdue_pcrd_contact",
+      "provider": "Purdue Center for Regional Development",
+      "url": "https://pcrd.purdue.edu/about-us/contact-us/",
+      "retrieved_utc": "2026-10-26",
+      "method": "Official contact page confirms the Purdue Schowe House address is 1341 Northwestern Avenue and identifies PCRD.",
+      "snapshot": "pcrd_contact_us_2026-10-26.html",
+      "snapshot_sha256": {
+        "snapshot": "7ae75d8f6e10ef5dec7a3d556fe879969c44c6cb90bf5f002e7c9aba749bd0e6"
+      }
+    },
+    {
+      "id": "nirpc_schowe_house_photo",
+      "provider": "Northwestern Indiana Regional Planning Commission, Comprehensive Economic Development Strategy appendix (May 2025 PDF)",
+      "url": "https://www.in.gov/nirpc/files/CEDS-Appendix-Only-May-2025.pdf",
+      "retrieved_utc": "2026-10-26",
+      "source_date": "May 2025 appendix; Schowe House/PCRD panel on PDF page 25 (zero-based page index 24).",
+      "method": "The page places the image beside the 1341 Northwestern Avenue / Purdue Schowe House identification. Retained both page raster and crop; camera direction and elevation are not stated.",
+      "snapshot": "nirpc_ceds_appendix_may_2025.pdf",
+      "page_snapshot": "nirpc_pcrd_contact_photo_page_25_2025.png",
+      "photo_crop": "schowe_house_pcrd_photo_2025_crop.png",
+      "uncertainty": "No per-image photographer credit is visible on page 25; the embedded photograph is used only as facade/roof reference, not as a texture.",
+      "snapshot_sha256": {
+        "snapshot": "002e5de96f1f308ed4057e585588784d4e0ab6e97abade32904f3bc15b2e3888",
+        "page_snapshot": "7386ec24d5f279f7005866e2389fed3491540f563084eccca7b1bf0da469f417",
+        "photo_crop": "b80de8f5906bbdf50f260314e06875d6347078e2e18dc00a76bcc6b8d6d65134"
+      }
+    },
+    {
+      "id": "west_lafayette_public_library_archival_context",
+      "provider": "West Lafayette Public Library Local History and Archive Collections",
+      "url": "https://wlaf.lib.in.us/localhistoryarchive/",
+      "retrieved_utc": "2026-10-26",
+      "method": "Search-indexed archive description identifies the Allen family home at 1341 Northwestern Avenue, pictured in 1930, and describes the home as built in the early 1930s. This is secondary historical context, not current facade evidence.",
+      "snapshot": null,
+      "uncertainty": "Source page denied direct fetch during this task; no image snapshot retained. Official Purdue GIS states construction in 1929, so the conflicting year remains source conflict."
+    }
+  ]
+}
