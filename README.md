@@ -4,7 +4,7 @@ This project tracks detailed campus models separately from the remaining massing
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-## Detailed models: status and latest grader score (125 buildings)
+## Detailed models: status and latest grader score (130 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -20,6 +20,11 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Henni's Hair Shop | [massing_henni_s_hair_shop_57f732b.blend](modular/buildings/massing_henni_s_hair_shop_57f732b.blend) | Finished | [8.2/10](audit/massing_henni_s_hair_shop_57f732b/independent_grade/r1/result.json) | — |
 | Herrick Laboratories (HERL) | [massing_herrick_laboratories_2138103.blend](modular/buildings/massing_herrick_laboratories_2138103.blend) | Finished | [8.4/10](audit/massing_herrick_laboratories_2138103/independent_grade/r2/result.json) | — |
 | Hi Vine | [massing_hi_vine_dbdf0c5.blend](modular/buildings/massing_hi_vine_dbdf0c5.blend) | Finished | [8.3/10](audit/massing_hi_vine_dbdf0c5_independent_grade_r1/grade_result.json) | — |
+| Hillel | [massing_hillel_36d2ba1.blend](modular/buildings/massing_hillel_36d2ba1.blend) | Finished | [8.3/10](audit/massing_hillel_36d2ba1/independent_grade/r2/result.json) | — |
+| Hillenbrand Hall | [massing_hillenbrand_hall_a71e418.blend](modular/buildings/massing_hillenbrand_hall_a71e418.blend) | Finished | [8.0/10](audit/massing_hillenbrand_hall_a71e418/independent_grade/r3/result.json) | — |
+| Hockmeyer Hall of Structural Biology (HOCK) | [massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend](modular/buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | Finished | [8.0/10](audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/independent_grade/r3/result.json) | — |
+| Jimmy John's | [massing_jimmy_john_s_12edba1.blend](modular/buildings/massing_jimmy_john_s_12edba1.blend) | Finished | [8.0/10](audit/massing_jimmy_john_s_12edba1/independent_grade/r3/result.json) | — |
+| Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](modular/buildings/massing_kappa_sigma_c1b36ec.blend) | Finished | [8.5/10](audit/massing_kappa_sigma_c1b36ec/independent_grade/result.json) | — |
 | 3rd and West | [massing_3rd_and_west_ffa3d05.blend](modular/buildings/massing_3rd_and_west_ffa3d05.blend) | Finished | [8.1/10](audit/massing_3rd_and_west_ffa3d05_independent_grade/result.json) | — |
 | Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | Finished | 8.5/10 | — |
 | Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | Finished | 8.0/10 | — |
@@ -160,21 +165,16 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | [7.8/10](audit/lambert_fieldhouse/independent_grade_r7.json) | Tobin |
 
-### Buildings that still have only massing models (73)
+### Buildings that still have only massing models (68)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
-| hillel | [`massing_hillel_36d2ba1.blend`](modular/buildings/massing_hillel_36d2ba1.blend) | Rossen |
-| hillenbrand hall | [`massing_hillenbrand_hall_a71e418.blend`](modular/buildings/massing_hillenbrand_hall_a71e418.blend) | Rossen |
-| hockmeyer hall of structural biology hock | [`massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend`](modular/buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | Rossen |
 | hull all american marching band complex | [`massing_hull_all_american_marching_band_complex_665bcb7.blend`](modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend) | Rossen |
 | islamic societyof greater lafayette | [`massing_islamic_societyof_greater_lafayette_0130012.blend`](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | Rossen |
-| jimmy john s | [`massing_jimmy_john_s_12edba1.blend`](modular/buildings/massing_jimmy_john_s_12edba1.blend) | Rossen |
 | johnson hall of nursing jnsn | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | Rossen |
 | joyful journeys | [`massing_joyful_journeys_abaf5c3.blend`](modular/buildings/massing_joyful_journeys_abaf5c3.blend) | Rossen |
-| kappa sigma | [`massing_kappa_sigma_c1b36ec.blend`](modular/buildings/massing_kappa_sigma_c1b36ec.blend) | Rossen |
 | lambertus | [`lambertus_hall.blend`](modular/buildings/lambertus_hall.blend) | Rossen |
 | latino cultural center | [`massing_latino_cultural_center_5f0d139.blend`](modular/buildings/massing_latino_cultural_center_5f0d139.blend) | Rossen |
 | latino cultural center lcc | [`massing_latino_cultural_center_lcc_9cc71b3.blend`](modular/buildings/massing_latino_cultural_center_lcc_9cc71b3.blend) | Rossen |

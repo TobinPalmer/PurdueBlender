@@ -169,5 +169,25 @@ Henni's Hair Shop retains campus-world coordinates. Its 8.2/10 grade confirms th
 
 Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreement between named OSM footprint and aerial; six-story interpretation and 19.7 m height are estimates. See [Hi Vine grade](../audit/massing_hi_vine_dbdf0c5_independent_grade_r1/grade_result.json).
 
+## Rossen detailed models — October 26, 2026
+
+| Building | File | Objects |
+| --- | --- | ---: |
+| Hillel | [massing_hillel_36d2ba1.blend](buildings/massing_hillel_36d2ba1.blend) | 1 |
+| Hillenbrand Hall | [massing_hillenbrand_hall_a71e418.blend](buildings/massing_hillenbrand_hall_a71e418.blend) | 1 |
+| Hockmeyer Hall of Structural Biology (HOCK) | [massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend](buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | 6 |
+| Jimmy John's | [massing_jimmy_john_s_12edba1.blend](buildings/massing_jimmy_john_s_12edba1.blend) | 1 |
+| Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](buildings/massing_kappa_sigma_c1b36ec.blend) | 1 |
+
+Hillel retains campus-world coordinates. Its 8.3/10 grade supports the main shell and GIS footprint; the proposed 845 sq ft addition is unresolved, and height, roof depth/pitch, and facade opening details remain schematic. See [Hillel grade](../audit/massing_hillel_36d2ba1/independent_grade/r2/result.json).
+
+Hillenbrand Hall retains campus-world coordinates. Its 8.0/10 grade supports two towers and eight floors per tower from a Purdue project summary; exact as-built height, roof, fenestration, and entrance remain uncertain. See [Hillenbrand grade](../audit/massing_hillenbrand_hall_a71e418/independent_grade/r3/result.json).
+
+Hockmeyer Hall retains campus-world coordinates. Its 8.0/10 grade supports the source footprint and a three-story mass; exact height, penthouse, facade registration, and entrance remain partly estimated. Blender 4.5.15 truncates the long scene name on reopen, recorded in [Hockmeyer validation](../audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/reopen_validation.json).
+
+Jimmy John's retains campus-world coordinates. Its 8.0/10 grade uses the Indiana 2018 LiDAR-derived roof ring with OSM and dated orthophoto cross-checks; exact wall edge, height, roof, and facade dimensions remain uncertain. See [Jimmy John's grade](../audit/massing_jimmy_john_s_12edba1/independent_grade/r3/result.json).
+
+Kappa Sigma retains campus-world coordinates. Its 8.5/10 grade verifies the Purdue GIS footprint against independent LiDAR; height and detailed entrance/window geometry remain estimated, and current use is conflicted. See [Kappa Sigma grade](../audit/massing_kappa_sigma_c1b36ec/independent_grade/result.json).
+
 Herrick Laboratories (historic Herrick Acoustics) retains campus-world coordinates. Its 8.4/10 grade verifies Purdue GIS FID 246 / HERL and distinguishes it from Ray W. Herrick Labs; height estimates and GIS area discrepancy remain unresolved. See [Herrick grade](../audit/massing_herrick_laboratories_2138103/independent_grade/r2/result.json).
 
