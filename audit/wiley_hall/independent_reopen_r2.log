@@ -1,0 +1,69 @@
+00:03.875  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\wiley_hall.blend"
+00:04.046  reports          | Read library: 'C:\Users\Tobin\Documents\Blender\PurdueMap\modular\site\foliage_library\engineering_foliage_library.blend', '//..\site\foliage_library\engineering_foliage_library.blend', parent '<direct>'
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\wiley_hall\independent_reopen_r2.py:33: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  info = {"name": material.name, "use_nodes": material.use_nodes}
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\wiley_hall\independent_reopen_r2.py:34: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if not material.use_nodes or not material.node_tree:
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\wiley_hall\independent_reopen_r2.py:141: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  "materials_missing_texture_nodes": [m.name for m in bpy.data.materials if m.name in material_names and not any(n.type == "TEX_IMAGE" for n in m.node_tree.nodes) if m.use_nodes and m.node_tree],
+00:19.890  render           | Saved: 'C:\Users\Tobin\Documents\Blender\PurdueMap\audit\wiley_hall\oblique_r2.png'
+00:25.578  render           | Saved: 'C:\Users\Tobin\Documents\Blender\PurdueMap\audit\wiley_hall\top_r2.png'
+BlenderMCP addon registered
+{
+  "sha256": "8f3e904273ec680811163d8150098aa0f67f55705376df86359b8510cc3a3859",
+  "scene": "Building_wiley_hall",
+  "export_collection_object_count": 398,
+  "object_type_counts": {
+    "EMPTY": 14,
+    "MESH": 382,
+    "FONT": 2
+  },
+  "evaluated_mesh_bounds_local_axis_major_m": [
+    [
+      -203.46578979492188,
+      39.84049987792969
+    ],
+    [
+      -67.49998474121094,
+      55.34001541137695
+    ],
+    [
+      -1.149999976158142,
+      11.850000381469727
+    ]
+  ],
+  "material_count": 142,
+  "materialless_meshes": [],
+  "missing_external_images": [],
+  "linked_libraries": [
+    {
+      "filepath": "//..\\site\\foliage_library\\engineering_foliage_library.blend",
+      "resolved": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\..\\site\\foliage_library\\engineering_foliage_library.blend",
+      "exists": true
+    }
+  ],
+  "root_transform": {
+    "name": "AssetRoot_wiley_hall",
+    "location": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "cameras": [],
+  "lights": []
+}
+BlenderMCP addon unregistered
+
+Blender quit

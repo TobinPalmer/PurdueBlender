@@ -1,0 +1,93 @@
+{
+  "building": "University Hall",
+  "round": "R6",
+  "asset": "modular/buildings/university_hall.blend",
+  "sha256": "5fb431e4a8c6d5f47e50fc7085de981f64a2f4982b73af57830cdac162bd9da2",
+  "review_date": "2026-10-25",
+  "blender_version": "5.2.3 LTS",
+  "score": 7.8,
+  "weighted_unrounded_score": 7.8,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "weights": {
+    "placement_and_footprint_evidence": 0.15,
+    "massing_and_architectural_silhouette": 0.20,
+    "facade_and_entrance": 0.15,
+    "roof_and_tower_fidelity": 0.15,
+    "materials_and_lighting": 0.10,
+    "interior_gallery_coherence": 0.20,
+    "asset_integrity_and_portability": 0.05
+  },
+  "categories": {
+    "placement_and_footprint_evidence": 7.5,
+    "massing_and_architectural_silhouette": 8.0,
+    "facade_and_entrance": 7.4,
+    "roof_and_tower_fidelity": 7.6,
+    "materials_and_lighting": 7.5,
+    "interior_gallery_coherence": 8.0,
+    "asset_integrity_and_portability": 9.5
+  },
+  "evidence": {
+    "independent_reopen": "audit/university_hall_refine/independent_grade_r6_reopen.json",
+    "saved_geometry_bounds": "audit/university_hall_refine/independent_grade_r6_stair_bounds.json",
+    "bounds_script": "audit/university_hall_refine/independent_grade_r6_stair_bounds.py",
+    "reopen_script": "audit/university_hall_refine/independent_grade_r6_reopen.py",
+    "render_views": [
+      "audit/university_hall_refine/ground_oblique_r6.png",
+      "audit/university_hall_refine/east_elevation_r6.png",
+      "audit/university_hall_refine/entry_ground_r6.png",
+      "audit/university_hall_refine/interior_cutaway_r6.png",
+      "audit/university_hall_refine/interior_cutaway_southeast_r6.png",
+      "audit/university_hall_refine/interior_stair_profile_r6.png"
+    ],
+    "independent_review": "audit/university_hall_refine/independent_grade_r6.md"
+  },
+  "key_findings": [
+    "The lower stair flight overlaps the saved 2.35 m landing by approximately 0.43 m along its run.",
+    "The upper stair flight overlaps the saved 2.75 m landing by approximately 0.56 m along its run.",
+    "Both saved landings also overlap the saved west gallery floor mesh at the corresponding level; the connected route is still schematic because no measured interior plan is available.",
+    "The cutaway script also creates temporary path strips for the render, but the main landing-to-floor overlaps are present in saved geometry.",
+    "Five reclaimed-display-column groups are present: two ground, two third-floor, one south stairwell.",
+    "The facade/entrance and material scores remain below threshold despite the improved gallery connection."
+  ],
+  "limitations": [
+    "Campus-map FID 213 is not a surveyed wall line; previous footprint metrics do not prove as-built dimensions.",
+    "The independent asset grade does not verify master placement or campus-neighbor alignment.",
+    "Roof, tower, window surround, interior dimensions, reclaimed-column positions, and stair routing remain estimated or schematic.",
+    "The evidence render uses temporary path strips; the separate fresh-reopen geometry bounds confirm saved floor/landing overlaps, but the routes are not verified as-built."
+  ],
+  "priority_fixes": [
+    "Refine the portico and integrate its moulds with the building wall/roof composition using reference-supported details.",
+    "Improve window rhythm and facade articulation without inventing unsupported variation.",
+    "Improve tonal depth and material response of slate, brick, and limestone under neutral daylight.",
+    "Produce a clear section render with saved gallery floors visible and temporary explanatory overlays clearly distinguished."
+  ],
+  "sources": [
+    {
+      "title": "Purdue Stories: University Hall restoration",
+      "url": "https://stories.purdue.edu/restoring-purdues-university-hall-as-a-campus-crown-jewel/",
+      "supports": "Two-story central gallery, five recovered cast-iron columns and their stated display categories; distinction from new roof support beams."
+    },
+    {
+      "title": "Purdue CLA: University Hall rededication",
+      "url": "https://cla.purdue.edu/academic/history/events/stories/2025/university-hall-rededication-ceremony.html",
+      "supports": "Completed two-story gallery and academy overlook."
+    },
+    {
+      "title": "Purdue 2025 University Hall exterior photo",
+      "url": "https://stories.purdue.edu/app/uploads/2025/06/Purdue-UniversityHall-2025_KAL_6593-NewHero.jpg",
+      "supports": "Visual reference for roof silhouette, tower, dormers, and facade; not a measured elevation."
+    },
+    {
+      "title": "Purdue University Hall steeple photo",
+      "url": "https://www.cla.purdue.edu/about/images/university-hall-steeple.jpg",
+      "supports": "Visual reference for the tower and steeple; not a measured drawing."
+    },
+    {
+      "title": "Purdue BuildingShapesZip4 feature service, FID 213",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "supports": "Campus-map polygon comparison; not a certified as-built wall survey."
+    }
+  ]
+}

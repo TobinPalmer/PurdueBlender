@@ -71,18 +71,19 @@ This project tracks detailed campus models separately from the remaining massing
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](modular/buildings/massing_samara_f6b8e61.blend) | Finished | [8.6/10](audit/samara/independent_grade.json) | — |
 | South Hall | [south_hall.blend](modular/buildings/south_hall.blend) | Finished | [8.2/10](audit/south_hall_refine/independent_grade_r2.md) | — |
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](modular/buildings/stanley_coulter_hall.blend) | Finished | [8.1/10](audit/batch3_stanley/independent_grade_r6.md) | — |
+| St. Thomas Aquinas Center | [massing_st_thomas_aquinas_5535390.blend](modular/buildings/massing_st_thomas_aquinas_5535390.blend) | Finished | [8.2/10](audit/st_thomas_aquinas_5535390/independent_grade_r4.md) | � |
 | Stewart Center | [stewart_center.blend](modular/buildings/stewart_center.blend) | Finished | [8.0/10](audit/stewart_center_independent_grade/independent_grade_r4.md) | — |
 | Tarkington Hall | [tarkington_hall.blend](modular/buildings/tarkington_hall.blend) | Needs independent grade | Not graded | Tobin |
-| University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | In progress | 7.8/10 | Tobin |
+| University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | Finished | [8.0/10](audit/university_hall_refine/independent_grade_r7.md) | � |
 | Walc | [walc.blend](modular/buildings/walc.blend) | Finished | [8.25/10](audit/walc_refine/independent_grade_r5.md) | — |
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Finished | [8.3/10](audit/wiley_hall/independent_grade_r2.md) | — |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (168 total)
+## Unfinished buildings (166 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 8 buildings, Arjav 10 buildings, Brady 100 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 6 buildings, Arjav 10 buildings, Brady 100 buildings.
 
-### Detailed models still in progress or awaiting a grade (34)
+### Detailed models still in progress or awaiting a grade (33)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -118,10 +119,9 @@ This list excludes individual house parcels. The detailed models that are still 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 | Tarkington Hall | [`tarkington_hall.blend`](modular/buildings/tarkington_hall.blend) | Not graded | Tobin |
-| University Hall | [`university_hall.blend`](modular/buildings/university_hall.blend) | 7.8/10 | Tobin |
 | Winifred Parker Hall | [`winifred_parker_hall.blend`](modular/buildings/winifred_parker_hall.blend) | Not graded | Tobin |
 
-### Buildings that still have only massing models (134)
+### Buildings that still have only massing models (133)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -227,7 +227,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Arjav |
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
 | smith hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | Arjav |
-| st thomas aquinas | [`massing_st_thomas_aquinas_5535390.blend`](modular/buildings/massing_st_thomas_aquinas_5535390.blend) | Tobin |
 | stone hall ston | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | Brady |
 | student health center push | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Brady |
 | telecommunications building tel | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | Brady |
