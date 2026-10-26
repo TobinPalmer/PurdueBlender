@@ -1,0 +1,69 @@
+{
+  "building_id": "massing_campus_edge_343e3d8",
+  "name": "Campus Edge on Pierce",
+  "identity": {
+    "address": "134 Pierce Street, West Lafayette, Indiana",
+    "osm_way_id": 886359911,
+    "indiana_lidar_footprint_objectid": 407824,
+    "identity_match": "OSM way is explicitly named Campus Edge and carries address 134 Pierce Street; the Indiana 2016-2020 building footprint overlaps the OSM polygon at 0.914 IoU and 1.06 m centroid separation in the project's documented local approximation. The 2023 Indiana orthophoto confirms the matching roof outline.",
+    "retrieved_utc_date": "2026-10-25"
+  },
+  "sources": [
+    {
+      "provider": "OpenStreetMap contributors",
+      "url": "https://api.openstreetmap.org/api/0.6/way/886359911/full.json",
+      "feature": "Way 886359911, Campus Edge, 134 Pierce Street",
+      "source_date": "way timestamp 2020-12-19; node edits include later updates",
+      "source_crs": "EPSG:4326 WGS 84",
+      "method": "Use the tagged building polygon as the independent identity and roof-height raster sampling outline; compare against Indiana LiDAR footprint.",
+      "uncertainty": "Community-maintained geometry; not a cadastral or architectural survey."
+    },
+    {
+      "provider": "Indiana Geographic Information Office, Hosted Building Footprints FeatureServer",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0/query",
+      "feature": "OBJECTID 407824, Tippecanoe County, LiDAR year 2018",
+      "source_date": "2018 LiDAR-derived footprint (service layer snapshot retrieved 2026-10-25)",
+      "source_crs": "EPSG:4326 WGS 84 in saved query response",
+      "method": "Extrude this 13-vertex footprint after projecting each vertex with the local conversion documented in modular/README.md. Simplify only near-collinear vertices within 0.30 m. Independent comparison with OSM way 886359911 gives 0.914 IoU and a 1.06 m centroid gap.",
+      "uncertainty": "Aerial/LiDAR roof footprint may differ from wall footprint; local degree conversion is approximate and not surveyed."
+    },
+    {
+      "provider": "Indiana Geographic Information Office, Indiana 3DEP LiDAR normalized digital height model",
+      "url": "https://giselevationingov.s3.us-east-2.amazonaws.com/ndhmoptimized/statewide/2018/SPW/5ft/in2018_30001880_12_ndhm.tif",
+      "feature": "Tile in2018_30001880_12; Tippecanoe County; footprint tile index OBJECTID 14401",
+      "source_date": "2018 acquisition; tile retrieved 2026-10-25",
+      "source_crs": "EPSG:2968 NAD83(HARN) / Indiana West (US survey feet), 5 ft cells",
+      "method": "Sample pixel centers inside the OSM way polygon transformed to EPSG:2968. For finite values 10-160 ft, median is 118.49 ft / 36.12 m and p90 is 120.98 ft / 36.88 m; use median only as approximate roof datum.",
+      "uncertainty": "5 ft cells mix roof edges and surroundings; outlier/tree returns and the NDHM surface do not establish surveyed eaves, story count, or architectural stepbacks."
+    },
+    {
+      "provider": "Indiana Geographic Information Office, DynamicWebMercator Indiana 2023 Imagery ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer/exportImage",
+      "feature": "Orthophoto crop around Campus Edge, 1800 x 1800 px",
+      "source_date": "2023 imagery; service metadata and crop retrieved 2026-10-25",
+      "source_crs": "ImageServer export in Web Mercator; extent saved in indiana_2023_orthophoto_metadata.json",
+      "method": "Visual check of the roof outline, not used to infer vertical dimensions.",
+      "uncertainty": "Orthophoto roof surface is not a structural wall survey."
+    },
+    {
+      "provider": "American Campus Communities, official property page and gallery",
+      "url": "https://www.americancampus.com/student-apartments/in/west-lafayette/campus-edge-on-pierce",
+      "feature": "Property identity/address and official exterior gallery image 07",
+      "source_date": "Current property page retrieved 2026-10-25; photo date not stated",
+      "source_crs": "Not applicable",
+      "method": "Use the official oblique exterior photograph for qualitative facade composition, brick accents, podium, balcony zones, and multiple tower volumes.",
+      "uncertainty": "Photo does not provide measured dimensions or establish exact locations of facade elements."
+    }
+  ],
+  "raw_snapshots": [
+    "sources/openstreetmap_way_886359911_full.json",
+    "sources/indiana_2016_2020_building_footprints_point_query_2026-10-25.json",
+    "sources/indiana_2016_2020_building_footprints_point_query_2026-10-25.geojson",
+    "sources/indiana_dem_tile_footprint_point_query_2026-10-25.json",
+    "sources/indiana_lidar_delivery_tiles_2026-10-25.json",
+    "sources/indiana_2018_tippecanoe_ndhm_in2018_30001880_12_ndhm.tif",
+    "sources/indiana_2023_orthophoto_metadata.json",
+    "sources/indiana_2023_orthophoto_campus_edge.jpg",
+    "sources/official_gallery_07.jpg"
+  ]
+}

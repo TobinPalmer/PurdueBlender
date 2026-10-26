@@ -1,0 +1,54 @@
+{
+  "building_id": "massing_campus_edge_343e3d8",
+  "source": "Indiana 2018 3DEP normalized digital height model",
+  "tile": "in2018_30001880_12_ndhm.tif",
+  "source_crs": "EPSG:2968 NAD83(HARN) / Indiana West (US survey feet)",
+  "tile_geotransform": {
+    "upper_left_x_ftUS": 3000000.0,
+    "upper_left_y_ftUS": 1885000.0,
+    "pixel_size_ftUS": 5.0,
+    "width_px": 1000,
+    "height_px": 1000
+  },
+  "footprint": "OpenStreetMap way 886359911, projected from EPSG:4326 to EPSG:2968 with pyproj",
+  "pixel_sampling": "Sample pixel centers inside OSM way polygon; no interpolation.",
+  "raw_inside_sample_count": 1341,
+  "raw_inside_ft_quantiles": {
+    "5": 32.759971618652344,
+    "25": 115.53998565673828,
+    "50": 118.47001647949219,
+    "75": 119.90003204345703,
+    "90": 120.97998809814453,
+    "95": 122.27002716064453,
+    "99": 129.89598999023437
+  },
+  "filtered_roof_values_ft_10_to_160": {
+    "n": 1327,
+    "quantiles": {
+      "5": 32.98000221252441,
+      "25": 115.82000350952148,
+      "50": 118.49002075195312,
+      "75": 119.91499328613281,
+      "90": 120.98401184082032,
+      "95": 122.28399810791015,
+      "99": 129.89738067626953
+    },
+    "median_m": 36.11583055685642,
+    "p90_m": 36.87600056108315
+  },
+  "candidate_roof_height_estimate_m": 36.550163053939386,
+  "interpretation": "NDHM cells estimate height above ground; robust interior roof-surface statistics support approximate building height but are not a surveyed roof datum/eave. The tile contains outliers, excluded from the representative roof sample by the stated 10\u2013160 ft range.",
+  "limitations": [
+    "5-ft raster cells mix roof edges and surroundings.",
+    "Tree/outlier cells inside the plan polygon can inflate upper quantiles.",
+    "NDHM height surface does not establish floor count, eave height, or architectural stepbacks.",
+    "Collection year 2018; current photo evidence is later."
+  ],
+  "indiana_footprint_comparison": {
+    "objectid": 407824,
+    "source_year": "2018",
+    "osm_area_m2_local": 3104.5710375681324,
+    "indiana_area_ft2_stateplane": 35276.9487472892,
+    "indiana_area_m2_stateplane": 3277.348889929808
+  }
+}
