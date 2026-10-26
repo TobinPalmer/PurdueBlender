@@ -121,7 +121,8 @@
     "Kept stable ID, manifest path, scene, collection, object name, identity transform and campus X-east/Y-north/Z-up coordinate contract.",
     "Projected in native EPSG:2968, converting US survey feet with the exact US survey-foot factor. LiDAR roof polygon area is approximately 598.27 m\u00b2 and perimeter 149.23 m; Purdue FID 784 polygon is approximately 476.20 m\u00b2 and 122.65 m. IoU is 0.7573.",
     "Reconciled the published Shape__Area/Shape__Length conflict: across both datasets the reported values divided by raw native ft\u00b2/ft values are approximately 0.160514/0.4008 rather than the expected 0.0929034/0.3048006. This repeated factor indicates an apparent source-field unit conversion inconsistency; the precise cause is undocumented. Geometry was computed from rings in the declared native CRS, not from those attribute values.",
-    "Added photo-backed, approximate gabled roof masses, chimney, brick-colored walls, light window trim, rectangular window rhythm and a shallow entrance canopy. Their dimensions and exact placement are not surveyed."
+    "Added photo-backed, approximate gabled roof masses, chimney, brick-colored walls, light window trim, rectangular window rhythm and a shallow entrance canopy. Their dimensions and exact placement are not surveyed.",
+    "Rebuilt mesh faces with shared vertex indices at repeated coordinates; Blender 4.5.15 reports zero boundary edges and zero non-manifold edges. The principal shell is connected; roof and facade details remain separate closed components."
   ],
   "uncertainties": [
     "Height: not measured. Eaves and ridges are illustrative estimates; the photo establishes multi-level appearance but offers no scale. Purdue Extrution=12 has undocumented units and is not used as a verified height.",
@@ -137,6 +138,7 @@
     "reopen_and_collection_link_test": "PASS: reopened saved asset; expected scene and collection found; one mesh linked from the saved blend into a fresh empty scene; object identity transform; no modifiers or unpacked external images.",
     "height_and_facade": "Photo-supported qualitative gables/chimney/brick/windows/covered entrance. Scale, exact segmentation and opening positions remain explicit estimates; see uncertainty entries.",
     "ready_for_independent_grading": true,
-    "registration_and_area_perimeter_reconciliation": "PASS: both source polygons measured from native EPSG:2968 coordinates in US survey feet using exact conversion; independent roof-outline comparison and orthophoto overlay saved in footprint_registration.json and orthophoto_footprint_comparison.png."
+    "registration_and_area_perimeter_reconciliation": "PASS: both source polygons measured from native EPSG:2968 coordinates in US survey feet using exact conversion; independent roof-outline comparison and orthophoto overlay saved in footprint_registration.json and orthophoto_footprint_comparison.png.",
+    "mesh_topology": "PASS: 256 vertices, 384 edges, 188 faces; 0 boundary edges; 0 non-manifold edges; principal connected shell (16 faces) plus separate closed roof/facade components. See portability_check.json."
   }
 }

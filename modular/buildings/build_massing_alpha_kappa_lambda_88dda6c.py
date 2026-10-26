@@ -10,6 +10,7 @@ import json
 import math
 from pathlib import Path
 import bpy
+import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -52,12 +53,22 @@ def mat(name, color, roughness=0.82):
 class MeshBuilder:
     def __init__(self):
         self.vertices, self.faces, self.material_ids = [], [], []
+        self.vertex_index = {}
 
     def face(self, points, material_id):
         indices = []
         for p in points:
-            indices.append(len(self.vertices))
-            self.vertices.append(tuple(p))
+            point = tuple(float(c) for c in p)
+            # Reuse a single index at each shared coordinate. The 1e-6 m grid
+            # only absorbs floating point noise from repeated mathutils.Vector
+            # arithmetic; it is far below the source footprint precision.
+            key = tuple(round(c, 6) for c in point)
+            index = self.vertex_index.get(key)
+            if index is None:
+                index = len(self.vertices)
+                self.vertices.append(point)
+                self.vertex_index[key] = index
+            indices.append(index)
         self.faces.append(tuple(indices))
         self.material_ids.append(material_id)
 
@@ -192,6 +203,28 @@ def main():
 
     mesh=bpy.data.meshes.new("Alpha Kappa Lambda 2018 LiDAR footprint shell with photo-backed massing")
     mesh.from_pydata(mb.vertices,[],mb.faces); mesh.update()
+    # Keep the authored asset as one mesh object with shared-index, closed
+    # surface components instead of face-by-face duplicate vertices.
+    topo=bmesh.new(); topo.from_mesh(mesh)
+    boundary_edges=sum(1 for e in topo.edges if e.is_boundary)
+    nonmanifold_edges=sum(1 for e in topo.edges if not e.is_manifold)
+    component_sizes=[]; seen=set()
+    for seed in topo.faces:
+        if seed in seen: continue
+        stack=[seed]; seen.add(seed); size=0
+        while stack:
+            face=stack.pop(); size+=1
+            for edge in face.edges:
+                for other in edge.link_faces:
+                    if other not in seen: seen.add(other); stack.append(other)
+        component_sizes.append(size)
+    topo_report={"vertices":len(topo.verts),"edges":len(topo.edges),"faces":len(topo.faces),
+                 "boundary_edges":boundary_edges,"nonmanifold_edges":nonmanifold_edges,
+                 "face_connected_components":len(component_sizes),
+                 "largest_component_faces":max(component_sizes,default=0),
+                 "component_face_counts_desc":sorted(component_sizes,reverse=True)}
+    topo.free()
+    assert boundary_edges == 0 and nonmanifold_edges == 0, topo_report
     obj=bpy.data.objects.new("Alpha Kappa Lambda",mesh); asset.objects.link(obj)
     for m in mats: mesh.materials.append(m)
     for poly,mi in zip(mesh.polygons,mb.material_ids):
@@ -228,6 +261,7 @@ def main():
         "official_identity":{"fid":784,"name":"Alpha Kappa Lambda","abbreviation":"SOAKL","address":"417 Waldron St"},
         "coordinate_contract":"Campus X east, Y north, Z up; documented origin and local approximation; simple massing directly linked in campus coordinates",
         "lidar_vertices":n,"lidar_ring_area_projected_m2_approx":None,
+        "mesh_topology":topo_report,
         "bounds_world_m":bounds,
         "estimated_eaves_m":WALL_EAVE_M,"estimated_main_ridge_m":PRIMARY_RIDGE_M,
         "height_status":"Unmeasured estimate: two visible above-grade levels and gabled attic/roof are apparent in the 2022 AKL chapter-house image; vertical scale inferred, not surveyed. GIS Extrution=12 has undocumented units.",
