@@ -1,0 +1,111 @@
+{
+  "asset_id": "massing_jimmy_john_s_12edba1",
+  "retrieved": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Indiana Geographic Information Office / IndianaMap statewide LiDAR-derived building footprints",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "metadata_url": "https://www.arcgis.com/sharing/rest/content/items/384f2d5041a14c34bd9e807c568784da/info/metadata/metadata.xml?format=default&output=html",
+      "retrieved": "2026-10-26",
+      "source_snapshot": "indiana_lidar_footprint_2016_2020.json",
+      "feature_id": "objectid 443017",
+      "county": "Tippecanoe",
+      "lidar_year": "2018",
+      "measurement_method": "ArcGIS point-intersection query at OSM building center; returned WGS84 polygon independently projected using the repository local approximation; source SHAPE__Area is Web Mercator and is retained separately",
+      "reported_shape_area_web_mercator_m2": 447.07507463595266,
+      "projected_ground_area_sqft": 2784.04,
+      "comparison": "Selected as the primary exterior massing outline. Dated 2018 orthophoto overlay shows it tracing the same roof as OSM; state polygon is larger, and roof-versus-wall edge/georegistration residual is unresolved. Projected ground area 258.65 m2 / 2,784 sq ft; raw SHAPE__Area is Web Mercator.",
+      "uncertainty": "LiDAR-derived generalization, not cadastral survey. Orthophoto overlay does not resolve exact wall line versus roof edge; county metadata reports +/-2.5 ft horizontal accuracy at 90% for county aerial imagery.",
+      "role": "primary footprint / exterior massing outline"
+    },
+    {
+      "provider": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/116427223",
+      "feature_id": "way/116427223",
+      "retrieved": "2026-10-26",
+      "source_snapshot_timestamp": "2026-10-22T03:45:50Z",
+      "source_crs": "EPSG:4326 WGS84 lat/lon",
+      "measurement_method": "OSM node ring transformed to project campus XY using project local approximation X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040.0",
+      "source_snapshot": "openstreetmap_way_116427223.json",
+      "uncertainty": "Crowd-sourced outline, no survey certification. Its polygon is mostly nested within the 2018 state LiDAR outline (IoU about 80.9%); it confirms the named address/general location but does not determine which ring is the exact wall line.",
+      "role": "identity/location corroboration only; not selected as massing boundary"
+    },
+    {
+      "provider": "Jimmy John's official location directory",
+      "url": "https://locations.jimmyjohns.com/in/west-lafayette/sandwiches-9006.html",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "source_snapshot": "official_store_listing_2026-10-26.html",
+      "matching_attributes": {
+        "address": "311 W State St, West Lafayette, IN 47906",
+        "store_id": "9006",
+        "phone": "765-743-8200"
+      },
+      "measurement_method": "identity/address match only; no geometry",
+      "uncertainty": "confirms business identity and address, not building shape or design."
+    },
+    {
+      "provider": "RoadsideArchitecture; Google Maps map-link target",
+      "url": "https://www.roadarch.com/eateries/bchef2.html",
+      "photo_url": "https://www.roadarch.com/25/6/jimmy.jpg",
+      "map_url": "https://www.google.com/maps/@40.4239423,-86.9085984,3a,75y,124.24h,93.69t/data=!3m6!1e1!3m4!1s5vg2DNh_c_S_4pdxJjpfpQ!2e0!7i13312!8i6656",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "measurement_method": "photo interpretation and georeferenced map link, not survey",
+      "observations": [
+        "one-story low-slope roof with deep eaves",
+        "long glazed storefront with light mullions",
+        "round projecting corner sign"
+      ],
+      "uncertainty": "page states former Burger Chef opened around 1965 and Jimmy Johns occupied it since 2017; photo date unspecified and current facade may differ. No dimensions inferred as measured."
+    },
+    {
+      "provider": "LoopNet property record (secondary public-record summary)",
+      "url": "https://www.loopnet.com/property/311-w-state-st-west-lafayette-in-47906/18157-790719429019000026/",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "feature_id": "parcel 79-07-19-429-019.000-026",
+      "reported_area_sqft": 1908,
+      "measurement_method": "Secondary public-record summary; basis is unspecified. CountyOffice secondary aggregator labels 1,908 sq ft as gross/first-floor area, one story, and land as 18,317 sq ft; this is unverified without official Beacon property card.",
+      "uncertainty": "Treat 1,908 sq ft as a likely floor-area lead, not parcel area or confirmed wall footprint. Official Beacon access was blocked in this session; this inference cannot be verified."
+    },
+    {
+      "provider": "Purdue official GIS audit",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "retrieved": "2026-10-22",
+      "feature_id": null,
+      "measurement_method": "existing repo master_building_audit.csv lookup",
+      "result": "no_official_match",
+      "uncertainty": "official campus GIS source match unavailable for this feature; this is distinct from the independent statewide Indiana LiDAR-derived building-footprints layer, which does return a nearby candidate polygon."
+    },
+    {
+      "provider": "Indiana Geographic Information Office, Indiana 2018 orthophoto imagery service",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2018_Imagery/ImageServer",
+      "retrieved": "2026-10-26",
+      "source_snapshot": "../renders/indiana_2018_ortho.png",
+      "overlay": "../renders/footprint_overlay_indiana_2018.png",
+      "measurement_method": "visual overlay of the OSM and state LiDAR rings on dated 2018 orthophoto; image pixel size about 0.1524 m",
+      "observations": "Both polygons trace the same rectangular roof; OSM is inset and the state ring extends beyond visible roof edge in places. Alignment/roof-edge residual is unresolved.",
+      "uncertainty": "Not a surveyed roof/wall boundary; county metadata reports +/-2.5 ft horizontal accuracy at 90% for county aerial imagery."
+    },
+    {
+      "provider": "Tippecanoe County Board of Zoning Appeals, official agenda packet/minutes",
+      "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/Agenda/_08232017-947?packet=true",
+      "retrieved": "2026-10-26",
+      "case": "BZA-1963",
+      "date": "2017-07-26 minutes in 2017-08-23 packet",
+      "observations": "Records existing Jimmy John’s building at 311 W State St, site renovation with new glass/roof and patio, allowed 36-inch sign and denied requested 54-inch sign (0 yes/6 no).",
+      "measurement_method": "Official planning minutes, not architectural plans or survey.",
+      "uncertainty": "Confirms existing building and sign decision; no wall dimensions or surveyed footprint. Packet refers to photos/aerials but does not contain submitted plans."
+    },
+    {
+      "provider": "Tippecanoe County GIS metadata",
+      "url": "https://www.tippecanoe.in.gov/560/GIS-Metadata",
+      "retrieved": "2026-10-26",
+      "observations": "County aerial imagery metadata reports recent imagery updated nearly yearly and horizontal accuracy +/-2.5 ft at 90%. Used as contextual accuracy note, not as the source of the 2018 orthophoto export.",
+      "uncertainty": "Accuracy statement is not a feature-specific confidence interval."
+    }
+  ],
+  "footprint_resolution": "State Indiana 2018 LiDAR footprint feature 443017 is selected as primary exterior massing outline after overlay against dated 2018 orthophoto. OSM way 116427223 is identity/location corroboration only. Both outline the same roof; exact roof edge versus wall line remains unresolved. 1,908 sq ft is likely secondary-reported floor area, not parcel area; official assessor card unavailable.",
+  "area_interpretation": "State ring 2,784 sq ft projected ground area; OSM ring 2,252 sq ft; LoopNet 1,908 sq ft with secondary aggregator labeling it first-floor/gross area. Do not treat these as directly comparable or claim a verified footprint area."
+}

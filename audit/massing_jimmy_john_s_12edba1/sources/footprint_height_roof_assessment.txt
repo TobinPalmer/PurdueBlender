@@ -1,0 +1,17 @@
+Jimmy John's footprint, height, and roof cross-check (retrieved 2026-10-26)
+
+Independent footprint candidate
+Indiana's statewide "Indiana Building Footprints 2016-2020" ArcGIS layer returned a polygon at the OSM building center. Feature objectid 443017 reports county Tippecanoe and lidar year 2018. The raw JSON response is saved as indiana_lidar_footprint_2016_2020.json. The layer metadata describes a statewide LiDAR-derived building-footprint product; the metadata says the layer derives from the 2016-2020 USGS 3DEP collection.
+
+Using the returned WGS84 ring and the repository's documented campus-local approximation gives approximately 258.65 m2 / 2,784 sq ft and bounds 16.85 m by 21.03 m. The OSM ring gives approximately 209.25 m2 / 2,252 sq ft and bounds 14.71 m by 19.32 m. The independent polygon occupies the same building location and has a similar rectangular orientation, but is about 24% larger than OSM. LoopNet's secondary property record reports 1,908 sq ft; its measurement basis and date are unspecified, and floor area need not equal a footprint polygon. These three area figures do not establish the exact current wall boundary.
+
+The model therefore retains the existing OSM ring and coordinates, while recording the 2018 Indiana polygon as independent corroborating evidence of a building footprint at the site. Purdue's campus BuildingShapes audit has no matching feature. The Indiana polygon is not treated as a cadastral survey or as proof that its outline is the exact current wall line.
+
+Height and roof
+The saved RoadsideArchitecture historical photo (photo URL in reference_index.json) visibly supports a single-story building, broad deep eaves, and a shallow roof silhouette. Its date is not stated. No measured building elevation, permit drawing, or surveyed height was found. The modeled 4.0-5.0 m roof-edge range, one-plane roof choice, 1.0 m rise over approximately 14.7 m (about 3.9 degrees), slope direction, and 0.5-0.63 m eaves are explicitly schematic visual estimates. Only the one-story count and broad shallow/deep-eave appearance are treated as photo-supported. The precise roof plane, pitch, direction, edge heights, and current condition remain unverified.
+
+Source references
+- Indiana layer: https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0
+- Indiana metadata: https://www.arcgis.com/sharing/rest/content/items/384f2d5041a14c34bd9e807c568784da/info/metadata/metadata.xml?format=default&output=html
+- Indiana metadata describes a LiDAR-derived product from statewide 2016-2020 USGS 3DEP collection: https://www.arcgis.com/sharing/rest/content/items/384f2d5041a14c34bd9e807c568784da/info/metadata/metadata.xml?format=default&output=html
+- Historical imagery and property source notes: historical_photo_and_property_notes.txt

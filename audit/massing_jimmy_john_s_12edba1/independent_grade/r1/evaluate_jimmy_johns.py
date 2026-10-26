@@ -1,0 +1,130 @@
+"""Independent rubric evaluator for the Jimmy John's modular asset.
+
+Reads the builder's saved evidence and validation records plus the rendered preview.
+Scores only claims supported by inspectable source snapshots, geometry measurements,
+and direct saved-library validation. Run from the repository root:
+    python audit/massing_jimmy_john_s_12edba1/independent_grade/r1/evaluate_jimmy_johns.py
+"""
+from pathlib import Path
+import json
+
+ROOT = Path(__file__).resolve().parents[4]
+AUDIT = ROOT / "audit" / "massing_jimmy_john_s_12edba1"
+
+
+def evaluate():
+    evidence = json.loads((AUDIT / "evidence.json").read_text(encoding="utf-8"))
+    validation = json.loads((AUDIT / "direct_validation.json").read_text(encoding="utf-8"))
+    preview = AUDIT / "renders" / "jimmy_johns_facade_preview.png"
+    sources = AUDIT / "sources"
+    ref = json.loads((sources / "reference_index.json").read_text(encoding="utf-8"))
+    source_names = {s["provider"]: s for s in ref["sources"]}
+
+    criteria = [
+        {
+            "name": "Correct identity and source-backed footprint",
+            "score": 1.5,
+            "max_score": 2,
+            "evidence": [
+                "OSM way/116427223 tags Jimmy John's, 311 West State Street, and address 311 (saved raw JSON).",
+                "Official Jimmy John's store listing independently confirms 311 W State St and store 9006.",
+                "Historical Burger Chef/Jimmy John's page and linked panorama tie the former restaurant to the same vicinity.",
+                "No official Purdue GIS footprint match; LoopNet's 1,908 sq ft differs by about 18% from the OSM-derived 2,252.37 sq ft. Neither source establishes the exact wall footprint conclusively.",
+            ],
+            "finding": "Identity is well corroborated, but footprint identity/area remains unresolved; OSM is crowd-sourced, not surveyed, and conflicts with the secondary area figure.",
+        },
+        {
+            "name": "Position, orientation, and scale/dimensions",
+            "score": 1.5,
+            "max_score": 2,
+            "evidence": [
+                "Direct validation reports identity object transform and preserves the five-node OSM ring at ground level to within 1 mm.",
+                "Structural OSM ring bounds are approximately 14.71 m by 19.32 m; the mesh's roof/sign envelope extends about 0.5–0.63 m beyond those bounds.",
+                "Coordinates use the documented project local approximation from WGS84; placement is inherited from the OSM feature, with no independent surveyed position/orientation check.",
+            ],
+            "finding": "Coordinate conversion, orientation retention, and modeled source-ring retention are documented; absolute placement and true dimensions are not independently confirmed, and the area discrepancy remains.",
+        },
+        {
+            "name": "Evidence-backed height, floors, and roof form",
+            "score": 1.0,
+            "max_score": 2,
+            "evidence": [
+                "Saved historical photo notes describe a one-story building with a low-slope roof and deep eaves.",
+                "Model bounds reach 5.0 m; the source record explicitly calls height and roof slope estimates and reports no elevation/survey source.",
+                "The preview visibly shows a shallow single-plane roof, but the 4–5 m roof height and slope direction are not measured from evidence.",
+            ],
+            "finding": "Story count and general roof silhouette have historical-photo support; numerical height and roof pitch/direction remain estimates without an identified source date or elevation measurement.",
+        },
+        {
+            "name": "Facade, entrances, and distinctive architecture",
+            "score": 1.5,
+            "max_score": 2,
+            "evidence": [
+                "Historical photo notes describe a long glazed facade, light mullions, and a round projecting corner sign; these features are visible in the saved preview.",
+                "The builder documents storefront bay spacing as schematic and the door position as estimated; current facade changes since the undated image are unverified.",
+            ],
+            "finding": "The major historical facade cues are represented, while exact bays, door location, dimensions, and present-day tenant facade are not verified.",
+        },
+        {
+            "name": "Modular export, portability, and complete evidence",
+            "score": 2.0,
+            "max_score": 2,
+            "evidence": [
+                "Reopen validation records the expected scene and Asset_massing_jimmy_john_s_12edba1 collection with one mesh object, 652 vertices, and 149 polygons.",
+                "No modifiers, external libraries, or external image paths; preview exists and source, evidence, and direct-validation records are saved.",
+                "Manifest path and exported collection identifiers agree with the asset records; simple massing remains in campus coordinates.",
+            ],
+            "finding": "Saved-library reopen, expected collection, portability, and the supporting evidence package are recorded as complete.",
+        },
+    ]
+    score = sum(c["score"] for c in criteria)
+    result = {
+        "asset_id": "massing_jimmy_john_s_12edba1",
+        "building": "Jimmy John's",
+        "review_type": "independent rubric review",
+        "score": score,
+        "max_score": 10,
+        "passing_threshold": 8,
+        "passed": score >= 8,
+        "criteria": criteria,
+        "evidence": {
+            "files_inspected": [
+                "modular/buildings/massing_jimmy_john_s_12edba1.blend (saved-asset properties through direct_validation.json)",
+                "modular/buildings/build_massing_jimmy_john_s_12edba1.py",
+                "audit/massing_jimmy_john_s_12edba1/evidence.json",
+                "audit/massing_jimmy_john_s_12edba1/direct_validation.json",
+                "audit/massing_jimmy_john_s_12edba1/sources/reference_index.json",
+                "audit/massing_jimmy_john_s_12edba1/sources/openstreetmap_way_116427223.json",
+                "audit/massing_jimmy_john_s_12edba1/sources/historical_photo_and_property_notes.txt",
+                "audit/massing_jimmy_john_s_12edba1/sources/official_store_listing.txt",
+                "audit/massing_jimmy_john_s_12edba1/renders/jimmy_johns_facade_preview.png",
+                "modular/manifest.json",
+            ],
+            "preview_exists": preview.is_file(),
+            "source_count": len(ref["sources"]),
+            "official_store_listing_snapshot": (sources / "official_store_listing_2026-10-26.html").is_file(),
+            "validation_reopened": validation.get("reopened", False),
+            "saved_geometry_counts": {
+                "mesh_objects": validation.get("mesh_object_count"),
+                "vertices": validation.get("vertex_count"),
+                "polygons": validation.get("polygon_count"),
+            },
+            "source_providers": sorted(source_names),
+            "review_limit": "Blender executable was unavailable for a fresh local reopen during this grading pass; the saved direct-reopen record and rendered preview were inspected.",
+        },
+        "findings": [
+            "The business identity is independently supported by OSM tags, the official store address listing, and historical property/photo context.",
+            "The structural ring is retained exactly from OSM, but Purdue GIS has no matching official feature and the OSM area conflicts with a secondary property figure.",
+            "Height and mono-slope roof geometry are estimates from an undated historical photo, not measured dimensions.",
+            "Facade form is photo-informed; exact door/bay measurements and current facade state remain unverified.",
+            "The asset is a portable, reopen-validated single-collection massing library with preview and structured source evidence.",
+        ],
+    }
+    return result
+
+
+if __name__ == "__main__":
+    result = evaluate()
+    out = Path(__file__).with_name("result.json")
+    out.write_text(json.dumps(result, indent=2), encoding="utf-8")
+    print(json.dumps(result, indent=2))
