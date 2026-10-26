@@ -67,6 +67,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Marriott Hall | [massing_marriot_hall_7cd3eb5.blend](buildings/massing_marriot_hall_7cd3eb5.blend) | 1 |
 | Martin C. Jischke Hall of Biomedical Engineering | [massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend](buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | 1 |
 | Matthews Hall (MTHW) | [massing_matthews_hall_mthw_9326885.blend](buildings/massing_matthews_hall_mthw_9326885.blend) | 1 |
+| Philip E. Nelson Hall of Food Science (NLSN) | [massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend](buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | 1 |
 | Virginia C. Meredith Residence Hall (MRDH) | [massing_meredith_hall_4bb4188.blend](buildings/massing_meredith_hall_4bb4188.blend) | 1 |
 | Mccutcheon Hall | [mccutcheon_hall.blend](buildings/mccutcheon_hall.blend) | 219 |
 | Mechanical Engineering | [mechanical_engineering.blend](buildings/mechanical_engineering.blend) | 55 |
@@ -256,4 +257,6 @@ Marc and Sharon Hagle Hall retains campus-world coordinates. Its 8.5/10 grade ma
 Matthews Hall retains campus-world coordinates. Its 8.75/10 grade matches all 14 Purdue GIS FID 235 structural edges within 0.000015 m; a Purdue photo supports the brick/stone facade and columned entry. Roof height is estimated and unseen elevations remain unverified. See [MTHW grade](../audit/matthews_hall_mthw_9326885/grade_result.json).
 
 Virginia C. Meredith Residence Hall retains campus-world coordinates. Its 8.5/10 independent grade matches all 20 Purdue GIS FID 253 structural edges within 0.000031 m and verifies the X-shaped footprint. Height/floor count conflict across sources, roof form is unverified, and the main porch is simplified. See [Meredith evidence](../audit/meredith_hall/independent_grade.json).
+
+Philip E. Nelson Hall of Food Science retains campus-world coordinates. Its 8.5/10 independent grade verifies all 24 Purdue GIS FID 250 ring vertices within 0.000028 m; the entry canopy and raised gable extend beyond the walls. Purdue's area field agrees with the ring when using its EPSG:3857 layer CRS. Height/roof and exact facade layout remain estimated. See [NLSN grade](../audit/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b/independent_grade_kyle.json).
 

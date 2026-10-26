@@ -164,7 +164,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (31)
+### Detailed models still in progress or awaiting a grade (32)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -195,6 +195,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Smith Hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | [8.5/10](audit/smith_hall/independent_grade_kyle.json); awaiting master integration | Kyle |
 | Marriott Hall | [`massing_marriot_hall_7cd3eb5.blend`](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | [8.5/10](audit/marriott_hall/grade.json); awaiting master integration | Kyle |
 | Martin C. Jischke Hall of Biomedical Engineering | [`massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend`](modular/buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | [8.0/10](audit/martin_c_jischke_hall/grade.json); awaiting master integration | Kyle |
+| Philip E. Nelson Hall of Food Science (NLSN) | [`massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend`](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | [8.5/10](audit/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b/independent_grade_kyle.json); awaiting master integration | Kyle |
 | Virginia C. Meredith Residence Hall | [`massing_meredith_hall_4bb4188.blend`](modular/buildings/massing_meredith_hall_4bb4188.blend) | [8.5/10](audit/meredith_hall/independent_grade.json); awaiting master integration | Kyle |
 | Telecommunications Building (TEL) | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | [8.0/10](audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json); awaiting master integration | Rossen |
 | Twin Pines Cooperative | [`massing_twin_pines_cooperative_8f606f9.blend`](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | [8.3/10](audit/massing_twin_pines_cooperative_8f606f9/independent_grade/twin_pines_independent_grade.json); awaiting master integration | Rossen |
@@ -202,7 +203,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 
 
 
-### Buildings that still have only massing models (39)
+### Buildings that still have only massing models (38)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -220,7 +221,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | mri modular facility mri1 | [`massing_mri_modular_facility_mri1_a93e22b.blend`](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | Kyle |
 | northwestern parking garage | [`massing_northwestern_parking_garage_979f1a2.blend`](modular/buildings/massing_northwestern_parking_garage_979f1a2.blend) | Kyle |
 | our saviour lutheran church | [`massing_our_saviour_lutheran_church_118afa2.blend`](modular/buildings/massing_our_saviour_lutheran_church_118afa2.blend) | Kyle |
-| philip e nelson hall of food science nlsn | [`massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend`](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | Kyle |
 | provenance apartments | [`massing_provenance_apartments_d913384.blend`](modular/buildings/massing_provenance_apartments_d913384.blend) | Kyle |
 | provenance apartments 001 | [`massing_provenance_apartments_001_1b3223b.blend`](modular/buildings/massing_provenance_apartments_001_1b3223b.blend) | Kyle |
 | provenance apartments 002 | [`massing_provenance_apartments_002_a9a7f4a.blend`](modular/buildings/massing_provenance_apartments_002_a9a7f4a.blend) | Kyle |
@@ -478,7 +478,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 247 | Herbert C. Brown Laboratory of Chemistry | [massing_brown_laboratory_of_chemistry_brwn_aed3885](modular/buildings/massing_brown_laboratory_of_chemistry_brwn_aed3885.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 248 | Terminal Building (Hangar No. 2) | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 249 | Smith Hall | [massing_smith_hall_4c2018f](modular/buildings/massing_smith_hall_4c2018f.blend) | Direct FID 249 footprint rebuilt; independent grade 8.5/10; awaiting master integration; height remains estimated |
-| 250 | Philip E. Nelson Hall of Food Science | [massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 250 | Philip E. Nelson Hall of Food Science | [massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | Direct FID 250 verified; all 24 ring vertices match within 0.000028 m; independent grade 8.5/10; awaiting master integration |
 | 251 | Steven C. Beering Hall of Liberal Arts & Education | [beering_hall](modular/buildings/beering_hall.blend) | Duplicate BRNG massing record removed from the master; see `TODO.md` |
 | 252 | Hangar No. 4 | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 253 | Virginia C. Meredith Residence Hall | [massing_meredith_hall_4bb4188](modular/buildings/massing_meredith_hall_4bb4188.blend) | Direct FID 253 verified; 20 structural edges match within 0.000031 m; 8.5/10 pass; awaiting master integration |
