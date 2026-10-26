@@ -1,0 +1,80 @@
+{
+  "asset_id": "massing_mann_hall_2b4ebda",
+  "grade_round": "r1",
+  "score": 8.2,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Opened the blend and confirmed the expected Mann Hall asset ID/object. The archived Purdue GIS feature is FID 635 / MANN. Independently recalculated its WGS84 ring with the documented campus projection and compared it against actual reopened z=0 mesh vertices: maximum nearest-ring error 0.000032 m. An independent OSM polygon comparison reports 96.51% IoU and 0.10 m centroid offset."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Actual mesh bounds are X -779.712..-746.220 m, Y -518.700..-457.557 m. Geometry remains in the campus coordinate frame; GIS ring is preserved at full local scale. The independently archived OSM comparison reports 0.474\u00b0 major-axis difference; OSM extent discrepancies are recorded (3.72 m Hausdorff), so confidence is strongest for the matching main footprint, with local outline detail less certain."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": "Reopened mesh height is 11.278 m; Purdue GIS R=37 ft converts to 11.278 m and the source roof maximum is represented. The archived architect page describes two stories plus a lower level, while GIS NUM_LEVELS is 3 and floor fields F02/F03 are ambiguously labeled. The photo supports two visible facade bands and a parapet/roof screen, but no elevation drawing was found; exact floor elevations and rooftop enclosure shape remain estimates."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.8,
+      "max_score": 2.0,
+      "evidence": "Directly inspected the archived Purdue photo and rendered isometric. The model includes a glazed two-story facade, mullions, dark wall treatment, brick accent, entrance glazing/canopy, and roof parapet. In the render the facade reads as a mostly blank opaque block with limited window bands; the source has extensive glazed corner curtain wall and a prominent curved/arched canopy. The model puts a broad brick-colored panel on the visible facade rather than matching the photo\u2019s narrow end pier, and the roof equipment is a simplified box. These are visible source/model discrepancies."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Direct reopen in Blender 4.5.15 LTS succeeded. Expected named scene and collection contain one mesh; no modifiers or external libraries; actual mesh has 4028 vertices and 1014 faces. The evidence folder includes official Purdue GIS native/WGS84 snapshots and metadata, Purdue facilities page/photo, architect page snapshot, OSM comparison, build summary, and a preview render."
+    }
+  ],
+  "evidence": {
+    "direct_blender_reopen": "4.5.15 LTS",
+    "asset": "modular\\buildings\\massing_mann_hall_2b4ebda.blend",
+    "scene": "Building_massing_mann_hall_2b4ebda",
+    "collection": "Asset_massing_mann_hall_2b4ebda",
+    "object": "Mann Hall",
+    "evaluated_bounds_m": [
+      [
+        -779.7118530273438,
+        -746.2198486328125
+      ],
+      [
+        -518.7001342773438,
+        -457.55657958984375
+      ],
+      [
+        0.0,
+        11.277600288391113
+      ]
+    ],
+    "evaluated_mesh_vertices": 4028,
+    "evaluated_mesh_faces": 1014,
+    "mesh_modifiers": [],
+    "external_libraries": [],
+    "max_gis_source_vertex_to_model_base_m": 3.177606752111546e-05,
+    "mean_gis_source_vertex_to_model_base_m": 1.9676293151601616e-05,
+    "gis_reported_roof_height_m": 11.277600000000001,
+    "source_files": [
+      "audit\\massing_mann_hall_2b4ebda\\sources\\purdue_building_gis_fid_635.json",
+      "audit\\massing_mann_hall_2b4ebda\\sources\\purdue_official_mann_hall_photo.jpg",
+      "audit\\massing_mann_hall_2b4ebda\\preview\\mann_hall_isometric.png",
+      "audit\\massing_mann_hall_2b4ebda\\sources\\independent_osm_comparison.json"
+    ],
+    "visual_inspection": "Independently viewed official Purdue photograph and current isometric preview."
+  },
+  "findings": [
+    "The source-backed footprint, geospatial frame, and GIS roof maximum are strong; the official GIS floor-height field semantics conflict with the architect description.",
+    "Facade silhouette needs closer source matching: continuous corner glazing, brick end pier, and entrance canopy shape/placement are not reproduced convincingly in the submitted view.",
+    "The 37 ft maximum corresponds to GIS R, but interior floor stack, lower-level exposure, and rooftop plant enclosure dimensions lack elevation/plan confirmation."
+  ]
+}
