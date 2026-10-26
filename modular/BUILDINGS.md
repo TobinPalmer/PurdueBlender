@@ -8,7 +8,6 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Grant Street Parking Garage (PGG) | [massing_grant_street_parking_garage_pgg_f46c894.blend](buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | 13 |
 | Hall of Data Science and AI (DSAI) | [massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend](buildings/massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend) | 45 |
 | Grissom Hall | [massing_grissom_hall_01fd0e0.blend](buildings/massing_grissom_hall_01fd0e0.blend) | 27 |
-| Granite Student Living | [massing_granite_student_living_3732ce0.blend](buildings/massing_granite_student_living_3732ce0.blend) | 1088 |
 | Hampton Hall of Civil Engineering (HAMP) | [massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend](buildings/massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend) | 6 |
 | Hanley Hall | [massing_hanley_hall_c8a4551.blend](buildings/massing_hanley_hall_c8a4551.blend) | 1 |
 | Harrison Street Parking Garage | [massing_harrison_street_parking_garage_823c7d2.blend](buildings/massing_harrison_street_parking_garage_823c7d2.blend) | 549 |
@@ -30,9 +29,12 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Chapel of the Good Shepherd | [massing_chapel_of_the_good_shepherd_5d4d103.blend](buildings/massing_chapel_of_the_good_shepherd_5d4d103.blend) | 1 |
 | Chaney-Hale Hall of Science | [massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend](buildings/massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend) | 1 |
 | American Railway Building | [american_railway_building.blend](buildings/american_railway_building.blend) | 693 |
+| Acacia | [massing_house_301841251_8a9a05b.blend](buildings/massing_house_301841251_8a9a05b.blend) | 509 |
 | Alpha Chi Rho | [massing_alpha_chi_rho_0cb591a.blend](buildings/massing_alpha_chi_rho_0cb591a.blend) | 1 |
+| Alpha Gamma Rho | [massing_house_301841253_f0b3be3.blend](buildings/massing_house_301841253_f0b3be3.blend) | 727 |
 | Alpha Kappa Lambda | [massing_alpha_kappa_lambda_88dda6c.blend](buildings/massing_alpha_kappa_lambda_88dda6c.blend) | 1 |
 | Baptist Student Foundation | [massing_baptist_student_foundation_c3d8114.blend](buildings/massing_baptist_student_foundation_c3d8114.blend) | 183 |
+| Beta Sigma Psi | [massing_house_301841254_29ab02d.blend](buildings/massing_house_301841254_29ab02d.blend) | 2 |
 | Armory | [armory.blend](buildings/armory.blend) | 703 |
 | Beering Hall | [beering_hall.blend](buildings/beering_hall.blend) | 1137 |
 | Bell Tower | [bell_tower.blend](buildings/bell_tower.blend) | 578 |
@@ -85,6 +87,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Walc | [walc.blend](buildings/walc.blend) | 969 |
 | Wiley Hall | [wiley_hall.blend](buildings/wiley_hall.blend) | 398 |
 | Winifred Parker Hall | [winifred_parker_hall.blend](buildings/winifred_parker_hall.blend) | 582 |
+| Young Hall (YONG) | [massing_young_hall_yong_cae1b95.blend](buildings/massing_young_hall_yong_cae1b95.blend) | 23 |
 | Yue-Kong Pao Hall | [massing_yue_kong_pao_hall_a3cb766.blend](buildings/massing_yue_kong_pao_hall_a3cb766.blend) | 363 |
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](buildings/zeta_tau_alpha.blend) | 563 |
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](buildings/zundo_family_dentistry.blend) | 275 |
@@ -146,6 +149,10 @@ CREC retains its legacy massing filename and campus-world direct-link coordinate
 | University Church | [massing_university_church_84b2a1b.blend](buildings/massing_university_church_84b2a1b.blend) | 821 |
 | University Street Parking Garage (PGU) | [massing_university_street_parking_garage_pgu_be81bec.blend](buildings/massing_university_street_parking_garage_pgu_be81bec.blend) | 857 |
 | University Lutheran Church | [massing_university_lutheran_church_20903f1.blend](buildings/massing_university_lutheran_church_20903f1.blend) | 541 |
+| Utility Plant Office Facility | [massing_utility_plant_office_facility_e219ef5.blend](buildings/massing_utility_plant_office_facility_e219ef5.blend) | 361 |
+| Veterinary Animal Isolation Building 2 (VA2) | [massing_veterinary_animal_isolation_building_2_ebb4142.blend](buildings/massing_veterinary_animal_isolation_building_2_ebb4142.blend) | 1113 |
+| Veterinary Medicine Isolation Facility | [massing_veterinary_medicine_isolation_facility_66d1305.blend](buildings/massing_veterinary_medicine_isolation_facility_66d1305.blend) | 145 |
+| Veterinary Pathology Building | [massing_veterinary_pathology_building_48b5a5b.blend](buildings/massing_veterinary_pathology_building_48b5a5b.blend) | 1 |
 | Wang Hall | [massing_wang_hall_wang_0dac5ab.blend](buildings/massing_wang_hall_wang_0dac5ab.blend) | 12 |
 | Wood Street Parking Garage | [massing_wood_street_garage_pgw_2fa056e.blend](buildings/massing_wood_street_garage_pgw_2fa056e.blend) | 79 |
 
@@ -159,7 +166,6 @@ Grissom Hall retains campus-world direct-link coordinates. Its 8.0/10 grade veri
 
 Hampton Hall of Civil Engineering retains campus-world coordinates. Its 8.2/10 grade confirms the shell matches the campus-map polygon within 0.00001472 m; height and entrance placement remain estimated. See [HAMP grade](../audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/independent_grade/result.json).
 
-Granite Student Living retains campus-world coordinates. Its 8.55/10 grade confirms ground-shell dimensions and design height against proposed plans, not as-built drawings; registration and facade/roof details remain uncertain. See [Granite grade](../audit/massing_granite_student_living_3732ce0/independent_grade_r2/result.json).
 
 Hawkins Hall retains campus-world coordinates. Its 8.2/10 grade verifies Purdue BuildingShapes FID 83; GIS level/height fields conflict with story counts and have undocumented units. Connector height and entry location are estimated. See [Hawkins grade](../audit/massing_hawkins_hall_282335f/independent_grade/result.json).
 

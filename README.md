@@ -4,13 +4,14 @@ This project covers Purdue West Lafayette campus buildings and Purdue-operated r
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-## Detailed models: status and latest grader score (139 buildings)
+## Detailed models: status and latest grader score (143 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
 | FUSE | [massing_fuse_39cf4b5.blend](modular/buildings/massing_fuse_39cf4b5.blend) | Finished | [8.25/10](audit/massing_fuse_39cf4b5/independent_grade_r3/result.json) | — |
 | Grant Street Parking Garage (PGG) | [massing_grant_street_parking_garage_pgg_f46c894.blend](modular/buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | Finished | [8.75/10](audit/massing_grant_street_parking_garage_pgg_f46c894/review/pgg_independent_grade.json) | — |
 | Hall of Data Science and AI | [massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend](modular/buildings/massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend) | Finished | [8.8/10](audit/dsai/independent_grade_r2/result.json) | — |
+| Bob & Trudy Hull “All-American” Marching Band Complex | [massing_hull_all_american_marching_band_complex_665bcb7.blend](modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend) | Finished; height and facade details remain estimated | [8.4/10](audit/hull_all_american_marching_band_complex/independent_grade_current/result.json) | — |
 | Grissom Hall | [massing_grissom_hall_01fd0e0.blend](modular/buildings/massing_grissom_hall_01fd0e0.blend) | Finished | [8.0/10](audit/massing_grissom_hall_01fd0e0/grader/r2/result.json) | — |
 | Hampton Hall of Civil Engineering (HAMP) | [massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend](modular/buildings/massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend) | Finished | [8.2/10](audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/independent_grade/result.json) | — |
 | Hanley Hall | [massing_hanley_hall_c8a4551.blend](modular/buildings/massing_hanley_hall_c8a4551.blend) | Finished | [8.1/10](audit/massing_hanley_hall_c8a4551/independent_grader/r3/result.json) | — |
@@ -27,9 +28,12 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | 3rd and West | [massing_3rd_and_west_ffa3d05.blend](modular/buildings/massing_3rd_and_west_ffa3d05.blend) | Finished | [8.1/10](audit/massing_3rd_and_west_ffa3d05_independent_grade/result.json) | — |
 | Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | Finished | 8.5/10 | — |
 | Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | Finished | 8.0/10 | — |
+| Acacia | [massing_house_301841251_8a9a05b.blend](modular/buildings/massing_house_301841251_8a9a05b.blend) | Finished | [8.35/10](audit/acacia/independent_grade_r2/result.json) | — |
 | Alpha Chi Rho | [massing_alpha_chi_rho_0cb591a.blend](modular/buildings/massing_alpha_chi_rho_0cb591a.blend) | Finished | [8.15/10](audit/alpha_chi_rho_independent_grade_r2/result.json) | — |
+| Alpha Epsilon Pi | [alpha_epsilon_pi.blend](modular/buildings/alpha_epsilon_pi.blend) | Finished; current address/roof match modeled, GIS name conflict remains | [8.25/10](audit/alpha_epsilon_pi/independent_grade_revision_2/result.json) | — |
 | Alpha Gamma Rho | [massing_house_301841253_f0b3be3.blend](modular/buildings/massing_house_301841253_f0b3be3.blend) | Finished | [8.4/10](audit/alpha_gamma_rho/independent_grade_master_integration/master_integration_grade.json) | — |
 | Beta Sigma Psi | [massing_house_301841254_29ab02d.blend](modular/buildings/massing_house_301841254_29ab02d.blend) | Finished | [9.0/10](audit/beta_sigma_psi/independent_grade_master_integration/result.json) | — |
+| Alpha Sigma Phi | [massing_house_301841603_654031c.blend](modular/buildings/massing_house_301841603_654031c.blend) | Finished | [8.2/10](audit/alpha_sigma_phi/independent_grade_current/result.json) | — |
 | Alpha Kappa Lambda | [massing_alpha_kappa_lambda_88dda6c.blend](modular/buildings/massing_alpha_kappa_lambda_88dda6c.blend) | Finished | [8.0/10](audit/alpha_kappa_lambda_independent_grade_r3/result.json) | — |
 | American Railway Building | [american_railway_building.blend](modular/buildings/american_railway_building.blend) | Finished | 8.5/10 | — |
 | Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](modular/buildings/animal_disease_diagnostic_laboratory.blend) | Finished | 8.3/10 | — |
@@ -147,9 +151,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
 | Lilly Hall of Life Sciences | [massing_lilly_hall_e7fc13e.blend](modular/buildings/massing_lilly_hall_e7fc13e.blend) | Finished | [8.0/10](audit/massing_lilly_hall_e7fc13e/independent_grade/r1/grade.json) | — |
 | Mann Hall | [massing_mann_hall_2b4ebda.blend](modular/buildings/massing_mann_hall_2b4ebda.blend) | Finished | [8.2/10](audit/massing_mann_hall_2b4ebda/independent_grade/r1/grade.json) | — |
-## Unfinished buildings (129 total)
+## Unfinished buildings (125 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 127 projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 129 known unfinished projects. Owners: Tobin 30, Rossen 29, Kyle 22, Rohan 28, Arjav 20, Brady 0. The 30/29/22 assignments cover 81 projects.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 123 projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 125 known unfinished projects. Current pending assignments: Tobin 26, Rossen 29, Kyle 22, Rohan 28, Arjav 20, Brady 0. The Tobin, Rossen, and Kyle queues now contain 77 projects; 48 remain with Rohan, Arjav, and Brady.
 
 ### New West Lafayette construction projects (2)
 
@@ -188,13 +192,12 @@ These projects are absent from the modeled-asset inventory and need current plan
 
 
 
-### Buildings that still have only massing models (49)
+### Buildings that still have only massing models (48)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
-| hull all american marching band complex | [`massing_hull_all_american_marching_band_complex_665bcb7.blend`](modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend) | Tobin |
 | islamic societyof greater lafayette | [`massing_islamic_societyof_greater_lafayette_0130012.blend`](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | Tobin |
 | joyful journeys | [`massing_joyful_journeys_abaf5c3.blend`](modular/buildings/massing_joyful_journeys_abaf5c3.blend) | Tobin |
 | lambertus | [`lambertus_hall.blend`](modular/buildings/lambertus_hall.blend) | Tobin |
@@ -248,17 +251,14 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 
 ### Fraternity, sorority, and cooperative facilities
 
-Unfinished current IFC chapter-house assignments are nearly even: 14 assigned to Tobin and 15 to Rossen across 29 remaining current IFC houses. The legacy Kappa Sigma house is independently graded 8.5/10 and appears in the finished table above. Seven of the current 36 IFC-listed organizations have finished entries above: Alpha Chi Rho, Alpha Gamma Rho, Alpha Kappa Lambda, Beta Sigma Psi, Beta Upsilon Chi (formerly Fairway Cooperative), Delta Tau Delta, and FarmHouse. Rows without a confirmed campus-map match remain facility-research work; do not invent a house location from organization membership alone.
+Unfinished current IFC chapter-house assignments are nearly even: 11 assigned to Tobin and 15 to Rossen across 26 remaining current IFC houses. The legacy Kappa Sigma house is independently graded 8.5/10 and appears in the finished table above. Ten of the current 36 IFC-listed organizations have finished entries above: Acacia, Alpha Chi Rho, Alpha Epsilon Pi, Alpha Gamma Rho, Alpha Kappa Lambda, Alpha Sigma Phi, Beta Sigma Psi, Beta Upsilon Chi (formerly Fairway Cooperative), Delta Tau Delta, and FarmHouse. Rows without a confirmed campus-map match remain facility-research work; do not invent a house location from organization membership alone.
 
 Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/councils/ifc/chapters.php), [Panhellenic](https://www.purdue.edu/fscl/councils/pha/chapters.php), [MGC](https://www.purdue.edu/fscl/councils/mgc/chapters.php), [NPHC](https://www.purdue.edu/fscl/councils/nphc/chapters.php), and [cooperative-house](https://www.purdue.edu/fscl/councils/cooperatives/houses.php) lists. Purdue describes FSCL as five councils with 90 organizations; the model inventory tracks physical facilities rather than treating each organization as a separate building ([FSCL overview](https://www.purdue.edu/vpsl/news/featured-stories/2026_0105-fscl-150-recap.php)). Add any MGC or NPHC facility if a dedicated physical house is verified. A spatial candidate is not treated as a confirmed match until its footprint is checked.
 
-#### Fraternity houses (29 unfinished: Tobin 14, Rossen 15)
+#### Fraternity houses (26 unfinished: Tobin 11, Rossen 15)
 
 | House / building | GIS FID and asset | Work status | Assigned to |
 | --- | --- | --- | --- |
-| Acacia | FID 791; [massing_house_301841251_8a9a05b](modular/buildings/massing_house_301841251_8a9a05b.blend) | Massing asset; verify and detail | Tobin |
-| Alpha Epsilon Pi | FID 821; New asset/source mapping required | No reliable asset match; build from GIS FID 821 and chapter-house evidence | Tobin |
-| Alpha Sigma Phi | FID 763; [massing_house_301841603_654031c](modular/buildings/massing_house_301841603_654031c.blend) | Massing asset; verify and detail | Tobin |
 | Alpha Tau Omega | FID 785; [massing_house_301840870_c45a5f4](modular/buildings/massing_house_301840870_c45a5f4.blend) | Massing asset; verify and detail | Tobin |
 
 | Beta Theta Pi | FID 826; New asset/source mapping required | No reliable asset match; build from GIS FID 826 and house evidence | Tobin |
@@ -537,7 +537,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 413 | Hangar No. 6 Addition | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 414 | Lambert Green Dining | [massing_circle_k_fa39c23](modular/buildings/massing_circle_k_fa39c23.blend)<br>[massing_house_1034040095_378b714](modular/buildings/massing_house_1034040095_378b714.blend)<br>[massing_house_1034040098_68f2f90](modular/buildings/massing_house_1034040098_68f2f90.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+3 more candidates) |
 | 430 | Marc and Sharon Hagle Hall | [massing_marc_and_sharon_hagle_hall_hagl_071ffd6](modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 431 | Bob & Trudy Marching Band Complex | [massing_hull_all_american_marching_band_complex_665bcb7](modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 431 | Bob & Trudy Marching Band Complex | [massing_hull_all_american_marching_band_complex_665bcb7](modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend) | Integrated detailed asset; independent grade 8.4/10; master fresh-open PASS; height/facade remain estimated |
 | 432 | Dudley Hall | [massing_house_860822250_df21db0](modular/buildings/massing_house_860822250_df21db0.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 433 | Lambertus Hall | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 434 | (unnamed official map feature) | — | No direct FID crosswalk; reconcile to a master asset or create one |
@@ -705,7 +705,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 751 | Delta Upsilon | [massing_house_301841256_1cc7641](modular/buildings/massing_house_301841256_1cc7641.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 752 | Delta Zeta | [massing_crosswalk_commons_7c01ecd](modular/buildings/massing_crosswalk_commons_7c01ecd.blend)<br>[massing_house_301841601_7ae6159](modular/buildings/massing_house_301841601_7ae6159.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 753 | Delta Delta Delta | [massing_house_301841333_affe21e](modular/buildings/massing_house_301841333_affe21e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 754 | Chi Phi | [massing_house_301841605_8eef95d](modular/buildings/massing_house_301841605_8eef95d.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 754 | Chi Phi | [massing_house_301841605_8eef95d](modular/buildings/massing_house_301841605_8eef95d.blend)<br>[alpha_epsilon_pi](modular/buildings/alpha_epsilon_pi.blend) | FID 754 address/roof is used for current AEPi listing; GIS still says Chi Phi. AEPi graded 8.25/10 and integrated; prior massing superseded to prevent duplication; current occupancy conflict remains documented |
 | 755 | Evans Scholars | [massing_house_301841610_b6ad6ed](modular/buildings/massing_house_301841610_b6ad6ed.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 756 | Alpha Omicron Pi | [massing_house_301841607_63d85b5](modular/buildings/massing_house_301841607_63d85b5.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 757 | Alpha Gamma Delta | [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -714,7 +714,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 760 | Theta Chi | [massing_house_301841328_39f169f](modular/buildings/massing_house_301841328_39f169f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 761 | Circle Pines | [massing_house_301841609_c6c9ac4](modular/buildings/massing_house_301841609_c6c9ac4.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 762 | Phi Kappa Theta | [massing_house_301841332_9b3bd1f](modular/buildings/massing_house_301841332_9b3bd1f.blend)<br>[massing_house_301841334_fa7e5a2](modular/buildings/massing_house_301841334_fa7e5a2.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 763 | Alpha Sigma Phi | [massing_house_301841603_654031c](modular/buildings/massing_house_301841603_654031c.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 763 | Alpha Sigma Phi | [massing_house_301841603_654031c](modular/buildings/massing_house_301841603_654031c.blend) | Integrated detailed asset; independent grade 8.2/10; master fresh-open PASS; story count/facade details remain uncertain |
 | 764 | Alpha Phi | [massing_house_301841331_735e92f](modular/buildings/massing_house_301841331_735e92f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 765 | Alpha Chi Omega | [massing_house_301841602_8190d79](modular/buildings/massing_house_301841602_8190d79.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 766 | Twin Pines | [massing_twin_pines_cooperative_8f606f9](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -742,7 +742,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 788 | Alpha Xi Delta | [massing_house_301841248_fe939c7](modular/buildings/massing_house_301841248_fe939c7.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 789 | Sigma Phi Epsilon | [massing_house_301841250_d63b09a](modular/buildings/massing_house_301841250_d63b09a.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 790 | Pi Kappa Alpha | [massing_house_301841252_e4f8f05](modular/buildings/massing_house_301841252_e4f8f05.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 791 | Acacia | [massing_house_301841251_8a9a05b](modular/buildings/massing_house_301841251_8a9a05b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 791 | Acacia | [massing_house_301841251_8a9a05b](modular/buildings/massing_house_301841251_8a9a05b.blend) | Finished; 8.35/10 independent grade and master integration PASS; see audit/acacia/ |
 | 792 | Alpha Gamma Rho | [massing_house_301841253_f0b3be3](modular/buildings/massing_house_301841253_f0b3be3.blend) | Purdue FID 792 remains a spatial candidate; independently graded 8.4/10 and integrated through a placement marker. OSM footprint is community mapped; campus registration remains unverified |
 | 793 | Beta Sigma Psi | [massing_house_301841254_29ab02d](modular/buildings/massing_house_301841254_29ab02d.blend) | Direct Purdue GIS FID 793 asset; independently graded 9.0/10 in master and integrated through its placement marker. Shape__Area/Length attributes conflict with polygon vertices; floor count conflicts with current Street View |
 | 794 | Glenwood | [massing_house_301841249_f827941](modular/buildings/massing_house_301841249_f827941.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -758,7 +758,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 804 | Kappa Sigma | [massing_house_301838017_9e20680](modular/buildings/massing_house_301838017_9e20680.blend)<br>[massing_house_301838020_d902112](modular/buildings/massing_house_301838020_d902112.blend)<br>[massing_house_671108497_7c12a3a](modular/buildings/massing_house_671108497_7c12a3a.blend) | Direct FID crosswalk; graded 8.5/10 and integrated in master; see audit/massing_kappa_sigma_c1b36ec/independent_grade/result.json |
 | 805 | Chauncey | [massing_house_1149668160_21c8b31](modular/buildings/massing_house_1149668160_21c8b31.blend)<br>[massing_house_860808220_b0ead89](modular/buildings/massing_house_860808220_b0ead89.blend)<br>[massing_house_970455229_ac730ab](modular/buildings/massing_house_970455229_ac730ab.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+9 more candidates) |
 | 820 | Theta Tau | [massing_house_970736968_fa1edef](modular/buildings/massing_house_970736968_fa1edef.blend)<br>[massing_house_970737027_6544e29](modular/buildings/massing_house_970737027_6544e29.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 821 | Alpha Epsilon Pi | — | No direct FID crosswalk; reconcile to a master asset or create one |
+| 821 | Alpha Epsilon Pi | — | Legacy/alternate GIS label at 116 Fowler is not used for the current 1051 David Ross address model; reconcile whether this is a separate in-scope facility or a stale map label. See audit/alpha_epsilon_pi/evidence.md |
 | 822 | Maclure | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 823 | Fairway | [massing_house_1497291148_3e4e79b](modular/buildings/massing_house_1497291148_3e4e79b.blend)<br>[massing_house_860901801_babb527](modular/buildings/massing_house_860901801_babb527.blend)<br>[massing_house_860901803_330065b](modular/buildings/massing_house_860901803_330065b.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+3 more candidates) |
 | 824 | Ann Tweedale | — | No direct FID crosswalk; reconcile to a master asset or create one |
