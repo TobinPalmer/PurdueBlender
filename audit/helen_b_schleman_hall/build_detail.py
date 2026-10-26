@@ -42,21 +42,32 @@ for i,a in enumerate(points):
     t=Vector((delta.x/L,delta.y/L,0)); n=Vector((t.y,-t.x,0))*sign; edge.append((a,b,L,t,n))
     a0=Vector((a.x,a.y,base)); b0=Vector((b.x,b.y,base)); a1=Vector((a.x,a.y,plinth)); b1=Vector((b.x,b.y,plinth)); at=Vector((a.x,a.y,H)); bt=Vector((b.x,b.y,H))
     quad((a0,b0,b1,a1),stone); quad((a1,b1,bt,at),wall)
-# Flat structural roof follows the official polygon; no height claim is inferred from the map outline.
-for tri in tessellate_polygon([points]):
-    k=len(verts)
-    for idx in tri:
-        p=points[int(idx)]; verts.append((p.x,p.y,H))
-    face((k,k+1,k+2),roof)
+# Shallow red-tile gable follows the building's dominant long axis; exact roof dimensions are unverified.
+major=max(edge,key=lambda e:e[2])[3].copy(); minor=Vector((-major.y,major.x,0))
+majors=[p.dot(major) for p in points]; minors=[p.dot(minor) for p in points]
+m0=min(majors)-0.35; m1=max(majors)+0.35; n0=min(minors)-0.35; n1=max(minors)+0.35; nc=(n0+n1)*0.5
+rise=float(cfg.get('roof_rise_m',1.4))
+def roof_point(m,n,z): return major*m+minor*n+Vector((0,0,z))
+left0=roof_point(m0,n0,H); left1=roof_point(m1,n0,H); right0=roof_point(m0,n1,H); right1=roof_point(m1,n1,H)
+ridge0=roof_point(m0,nc,H+rise); ridge1=roof_point(m1,nc,H+rise)
+quad((left0,left1,ridge1,ridge0),roof); quad((ridge0,ridge1,right1,right0),roof)
+# Brick gable ends preserve the source's wall material below the tile slopes.
+k=len(verts); verts.extend((tuple(left0),tuple(right0),tuple(ridge0))); face((k,k+1,k+2),wall)
+k=len(verts); verts.extend((tuple(right1),tuple(left1),tuple(ridge1))); face((k,k+1,k+2),wall)
+box(roof_point((m0+m1)*0.5,nc,H+rise-0.06),major,minor,0.36,0.36,0.16,roof)
 # Window bays use repeated facade rhythm. All added pieces remain part of this one building object.
+entry=max((e for e in edge if e[4].x < -0.7 and e[2]>5),key=lambda e:e[2],default=None)
 for a,b,L,t,n in edge:
     if L<4.0: continue
     count=max(1,int((L-1.5)//4.0)); spacing=L/(count+1); w=min(float(cfg.get('window_width_m',2.15)),spacing*0.63); pane_h=min(1.55,story*0.55)
+    is_entry_edge=entry is not None and a==entry[0] and b==entry[1]
     for floor in range(F):
         z=plinth+story*(floor+0.5)
         if z+pane_h/2>H-0.4: continue
         for bay in range(count):
-            p=a.lerp(b,spacing*(bay+1)/L); c=Vector((p.x,p.y,z))+n*0.07
+            p=a.lerp(b,spacing*(bay+1)/L)
+            if is_entry_edge and floor==0 and abs((p-(a+b)*0.5).dot(t))<2.0: continue
+            c=Vector((p.x,p.y,z))+n*0.07
             box(c,t,n,w*0.74,0.06,pane_h,glass)
             framec=c+n*0.045; fw=0.09
             box(framec+Vector((0,0,pane_h/2)),t,n,w,0.14,fw,stone); box(framec-Vector((0,0,pane_h/2)),t,n,w,0.14,fw,stone)
@@ -64,9 +75,19 @@ for a,b,L,t,n in edge:
     for z in [plinth+story*k for k in range(1,F)]: box(Vector(((a.x+b.x)/2,(a.y+b.y)/2,z))+n*0.025,t,n,L+0.02,0.10,0.10,stone)
     box(Vector(((a.x+b.x)/2,(a.y+b.y)/2,H-0.16))+n*0.05,t,n,L+0.12,0.28,0.32,stone)
 # Small west-facing entry marker, based on orientation rather than an undocumented exact door location.
-entry=max((e for e in edge if e[4].x < -0.7 and e[2]>5),key=lambda e:e[2],default=None)
 if entry:
-    a,b,L,t,n=entry; p=(a+b)*0.5; box(Vector((p.x,p.y,1.45))+n*0.12,t,n,2.5,0.1,2.9,glass); box(Vector((p.x,p.y,3.1))+n*0.16,t,n,3.2,0.25,0.22,stone)
+    a,b,L,t,n=entry; p=(a+b)*0.5
+    # Paired entrance doors, a brick-column portico with limestone bases/capitals, and a historic inscription panel.
+    for offset in (-0.68,0.68): box(Vector((p.x,p.y,1.48))+n*0.14+t*offset,t,n,1.24,0.08,2.86,glass)
+    box(Vector((p.x,p.y,1.48))+n*0.19,t,n,0.09,0.16,2.82,stone)
+    for side in (-1,1):
+        c=Vector((p.x,p.y,1.58))+n*1.65+t*(side*2.35)
+        box(c,t,n,0.56,0.60,2.78,wall)
+        box(Vector((p.x,p.y,0.30))+n*1.65+t*(side*2.35),t,n,0.88,0.90,0.46,stone)
+        box(Vector((p.x,p.y,3.04))+n*1.65+t*(side*2.35),t,n,0.82,0.82,0.34,stone)
+    box(Vector((p.x,p.y,3.34))+n*1.65,t,n,5.75,3.45,0.30,roof)
+    box(Vector((p.x,p.y,3.22))+n*0.22,t,n,3.9,0.20,0.48,stone)
+    box(Vector((p.x,p.y,3.55))+n*0.24,t,n,4.5,0.28,0.22,stone)
 old=obj.data; old_name=old.name; mesh=bpy.data.meshes.new(old_name+'_detail'); mesh.from_pydata(verts,[],faces)
 for m in mats: mesh.materials.append(m)
 mesh.update()
