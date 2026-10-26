@@ -1,0 +1,42 @@
+{
+  "asset_id": "massing_cary_quadrangle_west_cqw_3d47a7d",
+  "asset_path": "modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend",
+  "build_script": "modular/buildings/build_massing_cary_quadrangle_west_cqw_3d47a7d.py",
+  "collection": "Asset_massing_cary_quadrangle_west_cqw_3d47a7d",
+  "scene": "Building_massing_cary_quadrangle_west_cqw_3d47a7d",
+  "geometry_edits": [
+    "Rebuilt the massing shell from official Purdue GIS FID 60 polygon, preserving direct campus coordinates and the 129-point closed footprint.",
+    "Added five-story brick facade massing, parapet, schematic window bays, limestone trim, twin entry towers, projecting oriel, and West-specific entrance locations from Purdue Archives exterior photos.",
+    "Replaced the central and two secondary rectangular door leaves with pointed Gothic mesh portals and limestone voussoir surrounds, directly reflecting Purdue Archives image 180; enlarged the central opening to 2.95 m wide with a 4.94 m estimated stone apex immediately beneath the oriel sill.",
+    "Moved the two secondary portals to \u00b112.0 m from the facade centerline, alongside the central tower/oriel group as shown in the archival elevation; window spacing now leaves the source-supported long outer wing stretches. Articulated both towers with stone story belts, pointed upper window surrounds, two extra upper window stages, stronger corner merlons, and limestone cap details. Tower dimensions and height remain photo-based estimates.",
+    "Added a court-side preview and two exterior preview views in the separate preview-only collection; cameras and lights are outside the exported asset collection."
+  ],
+  "source_measurements": {
+    "footprint_local_bounds_m": {
+      "x": [
+        -455.19495,
+        -439.42278
+      ],
+      "y": [
+        514.56557,
+        599.0194
+      ]
+    },
+    "footprint_area_m2_local_approximation": 1151.8331,
+    "official_levels": 5,
+    "arcgis_extrution_attribute": 48,
+    "assumed_body_height_m": 14.63,
+    "tower_top_height_m_estimated": 19.77,
+    "measurement_method": "Transform ArcGIS EPSG:3857 feature to WGS84, then apply modular/AGENTS.md local campus approximation. Height assumes the undocumented Extrution value is feet; tower height is estimated from archival imagery.",
+    "uncertainty": [
+      "ArcGIS does not document Extrution units or survey tolerance; 14.63 m body height assumes feet.",
+      "The 19.77 m evaluated top includes estimated battlement caps. Tower height, exact floor spacing, roof form, and window placements are estimates from archival images, not measured elevations.",
+      "Archival photos support Gothic entrance and tower character but provide no dimensions.",
+      "GIS wall-to-footprint relationship is not surveyed."
+    ]
+  },
+  "validation": "reopen_validation.json",
+  "source_index": "sources/source_index.json",
+  "raw_snapshots_preserved": true,
+  "master_asset_edited": false
+}

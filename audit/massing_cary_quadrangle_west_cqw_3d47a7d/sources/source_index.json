@@ -1,0 +1,57 @@
+{
+  "asset_id": "massing_cary_quadrangle_west_cqw_3d47a7d",
+  "retrieved_utc": "2026-10-26",
+  "identity": "Franklin Levering Cary Quadrangle (West), Purdue building abbreviation CQW, Purdue GIS building code 1315; address 1012 W Stadium Avenue.",
+  "sources": [
+    {
+      "role": "footprint, address, level-count and vertical extrusion attributes",
+      "provider": "Purdue University ArcGIS BuildingShapesZip4",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/60?f=pjson",
+      "feature_id": "FID 60; BLDG_ABBR CQW; GlobalID {4A564E0C-C8A1-4CF7-9569-92BEFDEDFE59}",
+      "retrieved": "2026-10-26",
+      "source_date": "layer metadata last edit dates absent",
+      "crs": "EPSG:3857 (WKID 102100/latestWKID 3857), converted to EPSG:4326; projected to repository local approximation per modular/AGENTS.md",
+      "measurements": {
+        "Shape__Area_m2": 1991.19921875,
+        "Shape__Length_m": 316.20001894727096,
+        "NUM_LEVELS": 5,
+        "CountOfFLO": 5,
+        "Extrution_attribute": 48
+      },
+      "method": "Official feature geometry transformed with inverse spherical Mercator, then repository documented longitude/latitude-to-campus-metre approximation. Polygon area/perimeter fields are from service metadata, not recomputed from local approximation.",
+      "uncertainty": "Source service does not state vertical units for Extrution or a survey tolerance. Exact building wall-to-GIS relationship not surveyed; polygon shape is used as structural footprint."
+    },
+    {
+      "role": "building history, construction materials and archival exterior photos",
+      "provider": "Purdue University Archives and Special Collections, Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/10",
+      "feature_id": "Building record 10; structure 116; photos 180-182",
+      "retrieved": "2026-10-26",
+      "source_date": "construction 1937-1938; source photo 181 dated 2004-06-24; photo 180 circa 1950s; photo 182 undated exterior photograph",
+      "crs": "not applicable",
+      "measurement_method": "Record states West building built 1938, 59,036 sq ft, brick, architect Scholer Corporation; photos 181/182 interpreted for entrance massing, twin towers, oriel, arched entry, flat/parapet roofline, window rhythm.",
+      "uncertainty": "Archived photographs establish qualitative facade character but do not supply dimensions. Photo 181 metadata explicitly dates 2004; date for 182 unavailable."
+    },
+    {
+      "role": "current hall grouping / renovation context",
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
+      "feature_id": "Cary Quadrangle; four outer units named West, Northwest, Northeast and East",
+      "retrieved": "2026-10-26",
+      "source_date": "page modified 2026-09-24",
+      "crs": "not applicable",
+      "measurement_method": "Page states four outer buildings were renovated in 2007; used as context only.",
+      "uncertainty": "Page is for all Cary Quad, not building-specific facade dimensions."
+    }
+  ],
+  "raw_snapshot_files": [
+    "official_feature_60_raw.json",
+    "official_layer_metadata_raw.json",
+    "purdue_historic_building_10_raw.html",
+    "purdue_historic_building_10_record.json",
+    "purdue_earchives_image_180_external_shot_of_cary_quad_resid.jpg",
+    "purdue_earchives_image_181_exterior_photograph_of_cary_hall.jpg",
+    "purdue_earchives_image_182_exterior_photograph_of_cary_hall.jpg"
+  ],
+  "source_geometry": "purdue_cqw_fid60_wgs84.geojson"
+}

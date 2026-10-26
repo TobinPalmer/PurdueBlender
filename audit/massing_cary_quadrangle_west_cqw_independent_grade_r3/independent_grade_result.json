@@ -1,0 +1,251 @@
+{
+  "score": 8.7,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "max_score": 2,
+      "score": 2.0,
+      "evidence": "Independent source polygon FID 60 / BLDG_ABBR CQW compared vertexwise with shell mesh; source vertices=129, shell unique XY vertices=129, max source-to-model nearest error=0.00009 m, centroid error=0.00000 m. Identity is Purdue GIS building code 1315 / Franklin Levering Cary Quadrangle (West).",
+      "uncertainty": "GIS source does not publish survey tolerance or structural wall-vs-overhang relationship."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "max_score": 2,
+      "score": 2.0,
+      "evidence": "GIS-to-shell local campus XY bounds source=[[-455.194949615933, -439.4227752869569], [514.5655744773717, 599.0193958116515]], model=[[-455.1949, -439.4228], [514.5656, 599.0194]]; centroid error=0.00000 m. Full outline vertex agreement checks rotation, location, and scale rather than only overall bounding box.",
+      "uncertainty": "Repository frame is a documented local geographic approximation, not a surveyed CRS."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "max_score": 2,
+      "score": 1.1,
+      "evidence": "Official GIS reports five levels; model visibly carries five principal facade window courses. Archival photos 180/181/182 support twin crenellated towers and flat/parapet roof silhouette; model includes these.",
+      "uncertainty": "GIS Extrution=48 is unitless and no elevation source exists. Model total evaluated Z bounds [-0.04999995231628418, 19.77039909362793]; 14.63 m body height is an assumed feet conversion and tower height is photo-estimated, not verified."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "max_score": 2,
+      "score": 1.6,
+      "evidence": "Raw archive images 180-182 directly show paired battlement towers, projecting central oriel, central Gothic opening, and paired smaller pointed entrances. Asset mesh inventory has towers, oriel, central arch surround and both side portal surrounds. Fresh frontal renders saved at C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_cary_quadrangle_west_cqw_independent_grade_r3/grade_front.png and C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_cary_quadrangle_west_cqw_independent_grade_r3/grade_front_oblique.png.",
+      "uncertainty": "Photographs give qualitative composition only; the simplified massing reproduces the major elements but exact portal sizes, stone trim, openings, and facade depth remain estimates."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "max_score": 2,
+      "score": 2.0,
+      "evidence": "Saved .blend reopened independently. Scene=Building_massing_cary_quadrangle_west_cqw_3d47a7d; collection=Asset_massing_cary_quadrangle_west_cqw_3d47a7d; mesh objects in export=1667; source index and raw GIS/archive snapshots exist; file image dependencies=[].",
+      "uncertainty": "Preview camera/lights may be retained outside the exported asset collection; master integration not graded."
+    }
+  ],
+  "evidence": {
+    "asset_file": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_cary_quadrangle_west_cqw_3d47a7d.blend",
+    "asset_id": "massing_cary_quadrangle_west_cqw_3d47a7d",
+    "fresh_reopen": true,
+    "blender_version": "4.5.15 LTS",
+    "gis_feature_id": 60,
+    "gis_building_abbr": "CQW",
+    "official_levels": 5,
+    "extrution_attribute": 48,
+    "source_polygon_unique_vertices": 129,
+    "shell_mesh_unique_xy_vertices": 129,
+    "shell_max_source_nearest_error_m": 8.822060198384597e-05,
+    "shell_mean_source_nearest_error_m": 4.233794551604698e-05,
+    "centroid_error_m": 4.229892533025202e-06,
+    "source_bounds_m": [
+      [
+        -455.194949615933,
+        -439.4227752869569
+      ],
+      [
+        514.5655744773717,
+        599.0193958116515
+      ]
+    ],
+    "asset_shell_bounds_m": [
+      [
+        -455.1949,
+        -439.4228
+      ],
+      [
+        514.5656,
+        599.0194
+      ]
+    ],
+    "evaluated_asset_z_bounds_m": [
+      -0.04999995231628418,
+      19.77039909362793
+    ],
+    "components": {
+      "tower_south": {
+        "name": "CQW south entry tower",
+        "center_m": [
+          -436.973,
+          550.992,
+          9.365
+        ],
+        "bounds_m": [
+          [
+            -439.573,
+            -434.373
+          ],
+          [
+            548.292,
+            553.693
+          ],
+          [
+            0.0,
+            18.73
+          ]
+        ]
+      },
+      "tower_north": {
+        "name": "CQW north entry tower",
+        "center_m": [
+          -436.973,
+          562.592,
+          9.365
+        ],
+        "bounds_m": [
+          [
+            -439.573,
+            -434.373
+          ],
+          [
+            559.892,
+            565.292
+          ],
+          [
+            0.0,
+            18.73
+          ]
+        ]
+      },
+      "portal_south": {
+        "name": "CQW south secondary portal surround",
+        "center_m": [
+          -438.953,
+          544.793,
+          2.07
+        ],
+        "bounds_m": [
+          [
+            -439.043,
+            -438.863
+          ],
+          [
+            543.703,
+            545.883
+          ],
+          [
+            0.12,
+            4.02
+          ]
+        ]
+      },
+      "portal_north": {
+        "name": "CQW north secondary portal surround",
+        "center_m": [
+          -438.953,
+          568.793,
+          2.07
+        ],
+        "bounds_m": [
+          [
+            -439.043,
+            -438.863
+          ],
+          [
+            567.703,
+            569.883
+          ],
+          [
+            0.12,
+            4.02
+          ]
+        ]
+      },
+      "central_portal": {
+        "name": "CQW central pointed Gothic portal surround",
+        "center_m": [
+          -438.953,
+          556.792,
+          2.53
+        ],
+        "bounds_m": [
+          [
+            -439.043,
+            -438.863
+          ],
+          [
+            554.997,
+            558.587
+          ],
+          [
+            0.12,
+            4.94
+          ]
+        ]
+      },
+      "oriel": {
+        "name": "CQW entrance oriel bay",
+        "center_m": [
+          -438.423,
+          556.792,
+          7.08
+        ],
+        "bounds_m": [
+          [
+            -439.523,
+            -437.323
+          ],
+          [
+            554.142,
+            559.443
+          ],
+          [
+            4.93,
+            9.23
+          ]
+        ]
+      },
+      "central_door": {
+        "name": "CQW recessed pointed Gothic entry door",
+        "center_m": [
+          -439.163,
+          556.792,
+          2.41
+        ],
+        "bounds_m": [
+          [
+            -439.223,
+            -439.103
+          ],
+          [
+            555.318,
+            558.267
+          ],
+          [
+            0.16,
+            4.66
+          ]
+        ]
+      },
+      "parapet": null
+    },
+    "renders": [
+      "grade_front.png",
+      "grade_front_oblique.png"
+    ],
+    "raw_archival_photo_files": [
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_cary_quadrangle_west_cqw_3d47a7d\\sources\\purdue_earchives_image_180_external_shot_of_cary_quad_resid.jpg",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_cary_quadrangle_west_cqw_3d47a7d\\sources\\purdue_earchives_image_181_exterior_photograph_of_cary_hall.jpg",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_cary_quadrangle_west_cqw_3d47a7d\\sources\\purdue_earchives_image_182_exterior_photograph_of_cary_hall.jpg"
+    ]
+  },
+  "findings": [
+    "The main pointed opening is directly beneath the projecting oriel between the twin towers, matching the archive composition.",
+    "Two secondary pointed portals are present in the lateral facade zones, outside the central tower pair. They are correctly paired, but render as small and somewhat detached-looking openings relative to the archival full-elevation image; this is the main visible simplification.",
+    "The 48-unit GIS extrusion remains unresolved; no building elevation or verified height should be claimed. Preserve the height as an estimate."
+  ]
+}
