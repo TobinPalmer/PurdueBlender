@@ -1,0 +1,45 @@
+{
+  "source_snapshot": "sources/indiana_aerial_current.jpg",
+  "metadata_snapshot": "sources/indiana_current_imagery_service_metadata.json",
+  "retrieval_date": "2026-10-26",
+  "service_period": "2022-2025; exact acquisition date of the image tile is not exposed in the saved service response",
+  "source_crs": "Input/output request EPSG:4326",
+  "requested_bbox_wgs84": [
+    -86.9092,
+    40.4248,
+    -86.9074,
+    40.4265
+  ],
+  "image_size_px": [
+    1400,
+    1100
+  ],
+  "map_scale_approximation": {
+    "longitude_resolution_m_per_px": 0.109,
+    "latitude_resolution_m_per_px": 0.172,
+    "method": "Approximate physical spans from geographic request bounds at 40.4256 N divided by returned raster dimensions"
+  },
+  "visual_roof_bounds_approx_px": {
+    "x_min": 680,
+    "x_max": 845,
+    "y_min": 505,
+    "y_max": 805,
+    "measurement_method": "Manual visual selection from the orthophoto crop; eaves are partly shadowed and adjacent roofs/parking complicate edges"
+  },
+  "visual_roof_size_approx_m": {
+    "east_west": 18.0,
+    "north_south": 51.6
+  },
+  "existing_structural_envelope_m": {
+    "east_west": 18.7516,
+    "north_south": 46.3037,
+    "source": "Manifest-indexed massing geometry before editing; retained in final build"
+  },
+  "comparison": "The manually selected visible roof length is longer than the A105 first-floor shell. Because image selection is shadowed and measures roof outline (including eaves) rather than wall footprint, it does not override dimensioned plan shell measurements. Orthophoto is retained as orientation and broad-envelope corroboration only.",
+  "uncertainty": "High for roof-edge measurement and exact acquisition date; moderate for north-south orientation. The roof outline is not equivalent to surveyed wall footprint.",
+  "plan_shell_dimensions_m": {
+    "east_west": 18.4912,
+    "north_south": 46.1899,
+    "source": "A105 first-floor shell dimensions; proposed 2014 plan"
+  }
+}

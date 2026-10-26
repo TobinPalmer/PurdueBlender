@@ -1,0 +1,134 @@
+{
+  "building_id": "massing_granite_student_living_3732ce0",
+  "asset_file": "modular/buildings/massing_granite_student_living_3732ce0.blend",
+  "build_script": "modular/buildings/build_massing_granite_student_living_3732ce0.py",
+  "asset_collection": "Asset_massing_granite_student_living_3732ce0",
+  "build_date": "2026-10-26",
+  "baseline": {
+    "source": "prebuild_geometry_snapshot.json",
+    "mesh_objects": 1,
+    "vertices": 8,
+    "faces": 8,
+    "bounds_m": [
+      [
+        454.796875,
+        473.548492
+      ],
+      [
+        -236.437469,
+        -190.133789
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ],
+    "dimensions_m": [
+      18.751617,
+      46.30368,
+      16.0
+    ],
+    "interpretation": "Single generic massing extrusion with no validated windows, floor differentiation, entrances, balconies, or roof silhouette."
+  },
+  "changes": [
+    "Kept the existing asset ID, scene, exported collection, local campus coordinate frame, center, and long-axis orientation.",
+    "Replaced estimated envelope and vertical scale with the proposed 2014 A105 floor-plan shell dimensions and A100 64 ft overall height; modeled five total levels.",
+    "Built a limestone ground-level plinth and four upper brick levels with floor bands, windows, selected balconies, ground-floor glazing, and an A200/A201-inspired hipped/gabled roof silhouette.",
+    "Used procedural materials and generated mesh geometry; no external textures or linked libraries.",
+    "Added preview-only ground plane, camera, and light outside the exported asset collection."
+  ],
+  "source_support": {
+    "identity_and_use": [
+      "Granite Student Living operator listing",
+      "KJG Architecture project description",
+      "Tippecanoe County-hosted 2023 market survey",
+      "2014 county-hosted final detailed plan set for 225 Northwestern Avenue"
+    ],
+    "footprint": "A105 provides dimensioned first-floor and upper-floor shell rectangles. A100 labels 8,936 sf building coverage and the plan geometry includes small offsets/recesses. These are proposed-design dimensions, not survey/as-built measurements. A state building-footprints query found no target polygon.",
+    "position_and_orientation": "The best geocoder match is an IDSI point-address candidate linked to the current parcel listed as 225 Northwestern Avenue. A100 north arrow and site layout support the retained long north-south orientation. Parcel comparison confirms plausible placement but not an exact building centroid or wall edge.",
+    "height_floors_roof": "A100 explicitly gives five stories and 64 ft overall height. A200/A201 give floor finish levels through 47 ft 2 3/8 in, truss bearing at 56 ft 2 3/4 in, and a hip/gable roof silhouette. Gable positions and facade rhythm are interpreted from the drawings.",
+    "facade": "A200/A201 show brick and stone veneer, siding fields, balconies, repeated openings, ground-floor storefront/garage bays, and awnings. Individual opening/bay dimensions and final as-built details remain reconstructed.",
+    "orthophoto": "Current imagery corroborates the long north-south roof orientation and broad massing. The manual roof-edge measurement is not used as a wall footprint because shadow and adjacent features obscure edges."
+  },
+  "validation": {
+    "reopen_validation": "reopen_validation.json",
+    "preview_primary": "preview_exterior.png",
+    "preview_secondary": "preview_end_view.png",
+    "stable_collection_found": true,
+    "collection_object_count": 1088,
+    "mesh_object_count": 1088,
+    "collection_evaluated_bounds_m": [
+      [
+        454.01116943359375,
+        474.63330078125
+      ],
+      [
+        -236.45057678222656,
+        -190.1206817626953
+      ],
+      [
+        0.0,
+        19.507200241088867
+      ]
+    ],
+    "structural_block_bounds_m": [
+      [
+        454.92706298828125,
+        473.41827392578125
+      ],
+      [
+        -236.38058471679688,
+        -190.190673828125
+      ],
+      [
+        0.0,
+        17.139101028442383
+      ]
+    ],
+    "roof_bounds_m": [
+      [
+        454.9270935058594,
+        473.41827392578125
+      ],
+      [
+        -236.38058471679688,
+        -190.190673828125
+      ],
+      [
+        17.13909912109375,
+        17.850000381469727
+      ]
+    ],
+    "external_libraries": 0,
+    "external_textures": false,
+    "saved_and_reopened": true,
+    "checks": {
+      "expected_collection": true,
+      "single_expected_asset_collection": true,
+      "portable_materials": true,
+      "textures_external": false,
+      "transforms_local": true
+    },
+    "result": "Rebuild/reopen checks pass for the expected asset collection, procedural materials, local transforms, and portability. Independent review r2 passed at 8.55/10. The first-floor shell matches A105 within 0.00002 m; the upper shell is 2 in longer north-south than A105 because the graded model reuses the ground-shell length.",
+    "independent_grade": {
+      "file": "independent_grade_r2/result.json",
+      "score": 8.55,
+      "max_score": 10,
+      "passing_standard": 8,
+      "saved_asset_sha256": "8ab151e331337a9dcd23f3872a8bdb3a7b24381f63e99452c1acf52e9aded44c"
+    }
+  },
+  "unresolved_uncertainty": [
+    "The 2014 drawings are proposed design documents rather than as-built or survey drawings; exact built shell, revisions, and setbacks may vary.",
+    "No directly matching surveyed building-footprint polygon was found. A100/A105 plan geometry is therefore the best available source for intended shell dimensions.",
+    "The IDSI point-address and parcel support plausible placement but do not establish a surveyed building centroid or wall line. Under the documented modular conversion, the model ground shell is within the generalized parcel; alternative approximations differ by a few tenths of a meter.",
+    "The first-floor rectangular shell matches A105 within 0.00002 m. The upper-shell width matches within rounding, but its north-south length is 0.0508 m (2 in) longer than A105 because the graded model uses the ground-floor length for upper levels.",
+    "Orthophoto roof dimensions remain approximate and differ from plan shell dimensions because visible roof edge is not structural wall footprint and shadows/nearby features obscure edges.",
+    "Facade zones, entrances/storefronts, opening and balcony stationing, and roof intersections are simplified readings of A200/A201 rather than exact elevation tracing."
+  ],
+  "source_measurement_files": [
+    "official_plan_measurement.json",
+    "parcel_site_plan_alignment.json",
+    "orthophoto_measurement.json"
+  ]
+}

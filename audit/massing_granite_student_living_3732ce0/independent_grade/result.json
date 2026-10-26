@@ -1,0 +1,139 @@
+{
+  "building_id": "massing_granite_student_living_3732ce0",
+  "score": 6.0,
+  "max_score": 10,
+  "passing_standard": 8,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.25,
+      "max_score": 2,
+      "assessment": "Identity is supported; footprint shape and exact wall edge remain unverified.",
+      "evidence": [
+        "Operator listing identifies North by Northwest at 225 Northwestern Ave.",
+        "Architect description and county-hosted market survey also associate 225 Northwestern with North by Northwest.",
+        "Current orthophoto gives an approximate elongated roof envelope (18.0 x 51.6 m), but it is a roof-edge estimate, not a wall footprint.",
+        "Indiana 2016-2020 building-footprint query returned no polygon intersecting this asset envelope; exact footprint is not GIS-verified."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.0,
+      "max_score": 2,
+      "assessment": "Position is plausible and scale is broadly consistent with imagery; exact position/orientation are unverified.",
+      "evidence": [
+        "Saved structural bounds are approximately 18.752 x 46.304 x 14.9 m, center [464.173, -213.286, 7.45] m in campus coordinates.",
+        "Center-to-each of 3 equally scored (100) address candidates is [3.36, 43.27, 21.01] m using the documented local approximation.",
+        "Orthophoto roof length estimate differs from the saved structural length by about 5.3 m; roof edge and wall footprint are not interchangeable.",
+        "No matching surveyed footprint or street-address parcel point establishes exact rotation or wall dimensions."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "assessment": "Five-level count and hipped roof have partial independent support; numeric height and detailed roof geometry are estimates.",
+      "evidence": [
+        "Model has one 3.85 m ground level and four repeated residential levels, with roof ridge at 16 m overall.",
+        "ForRent profile describes five stories, while a property-photo caption reportedly calls the building four-story; floor count remains conflicting/estimated.",
+        "Current orthophoto supports a hipped roof silhouette, but the model's simple low-pitch hip is not validated against final elevations or plans.",
+        "No source provides verified elevation heights or measured floor-to-floor dimensions."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.75,
+      "max_score": 2,
+      "assessment": "The broad material and balcony language is supported, but exact facade rhythm and entrance layout are weakly documented.",
+      "evidence": [
+        "Preview shows red brick, pale stone base/corner accents, dark windows, black balcony rails, and red awnings.",
+        "Source register attributes red brick, pale stone accents, black balcony rails, red ground-level awnings, and apartment window rhythm to a PurdueGuru property photo.",
+        "That photo is not included as a raw local snapshot in the supplied evidence folder, limiting independent source inspection.",
+        "Operator listing supports balconies but does not establish exact bay spacing, number of bays, storefront positions, or residential entrance placement."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "Export and file portability checks pass; evidence is structured and limitations are documented.",
+      "evidence": [
+        "Reopened asset reports 987 collection objects and 987 meshes in the expected collection.",
+        "Manifest ID/path/collection match: True; reopen expected-collection/single-collection checks: True.",
+        "Portable material check passes: True; no external linked libraries and no external textures are reported.",
+        "Source register, orthophoto measurement, prebuild snapshot, reopen validation, and exterior/end-view renders are present; registered raw snapshots present: {'sources/granite_north_by_northwest_listing_2026-10-26.html': True, 'sources/tippecanoe_official_2023_apartment_market_report.pdf': True, 'sources/indiana_composite_geocoder_225_northwestern_2026-10-26.json': True, 'sources/indiana_building_footprints_query_2026-10-26.json': True, 'sources/indiana_aerial_current.jpg': True}."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_file": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_granite_student_living_3732ce0.blend",
+    "collection": "Asset_massing_granite_student_living_3732ce0",
+    "direct_reopen_bounds_m": [
+      [
+        453.4618835449219,
+        474.88348388671875
+      ],
+      [
+        -236.50746154785156,
+        -190.0637969970703
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ],
+    "structural_bounds_m": [
+      [
+        454.796875,
+        473.5484619140625
+      ],
+      [
+        -236.43746948242188,
+        -190.1337890625
+      ],
+      [
+        0.0,
+        14.899999618530273
+      ]
+    ],
+    "structural_dimensions_m": [
+      18.752,
+      46.304,
+      14.9
+    ],
+    "structural_center_m": [
+      464.173,
+      -213.286,
+      7.45
+    ],
+    "candidate_center_errors_m": [
+      3.36,
+      43.27,
+      21.01
+    ],
+    "prebuild_dimensions_m": [
+      18.751617431640625,
+      46.303680419921875,
+      16.0
+    ],
+    "orthophoto_roof_size_approx_m": {
+      "east_west": 18.0,
+      "north_south": 51.6
+    },
+    "manifest_entry_present_and_consistent": true,
+    "source_snapshot_files_present": {
+      "sources/granite_north_by_northwest_listing_2026-10-26.html": true,
+      "sources/tippecanoe_official_2023_apartment_market_report.pdf": true,
+      "sources/indiana_composite_geocoder_225_northwestern_2026-10-26.json": true,
+      "sources/indiana_building_footprints_query_2026-10-26.json": true,
+      "sources/indiana_aerial_current.jpg": true
+    }
+  },
+  "findings": [
+    "Exact structural footprint and orientation remain unverified because the queried GIS footprint source did not match the building.",
+    "Geocoder center agreement is approximate and ambiguous: multiple 100-score candidates exist for this address.",
+    "The five-story model is plausible but floor count conflicts across secondary sources; exact height is unsupported.",
+    "The saved facade reference photo is not present as a raw snapshot, and detailed storefront/entrance locations are not independently established.",
+    "The imagery's roof-length estimate is about 5.3 m longer than the retained structural length; the discrepancy is unresolved because imagery measures roof edges."
+  ]
+}

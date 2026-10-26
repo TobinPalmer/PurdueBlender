@@ -1,0 +1,176 @@
+{
+  "building_id": "massing_granite_student_living_3732ce0",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "id": "granite_listing_north_by_northwest",
+      "provider": "Granite Student Living (property operator)",
+      "url": "https://granitestudentliving.com/listings/north-by-northwest-layout-1a-2/",
+      "snapshot": "sources/granite_north_by_northwest_listing_2026-10-26.html",
+      "source_date": "Current listing page; accessed 2026-10-26",
+      "crs": "Not spatial data",
+      "feature_id": "North by Northwest, 225 Northwestern Ave, West Lafayette, IN 47906",
+      "supports": [
+        "identity match",
+        "address",
+        "apartment amenities",
+        "balconies",
+        "elevator",
+        "top floor vaulted ceiling",
+        "covered garage parking"
+      ],
+      "measurement_method": "Operator listing, no architectural dimensions",
+      "uncertainty": "Operator listing confirms property identity/address but provides no verified exterior dimensions or floor count."
+    },
+    {
+      "id": "tippecanoe_multifamily_market_report",
+      "provider": "Tippecanoe County / Don R. Scheidt & Co. report in county document center",
+      "url": "https://www.tippecanoe.in.gov/DocumentCenter/View/39965/427-N-Chauncey-Avenue-West-Lafayette",
+      "snapshot": "sources/tippecanoe_official_2023_apartment_market_report.pdf",
+      "source_date": "2023 rent survey (report says surveyed January 2023)",
+      "crs": "Not spatial data",
+      "feature_id": "North by Northwest, 225 Northwestern Avenue",
+      "supports": [
+        "identity match",
+        "44 units",
+        "year built 2015",
+        "garage and retail reported"
+      ],
+      "measurement_method": "Published property-market comparison; no plan dimensions",
+      "uncertainty": "Secondary report hosted by county; details supplied by Granite and not an architectural record."
+    },
+    {
+      "id": "kjg_architecture_project_post",
+      "provider": "KJG Architecture, project architect",
+      "url": "https://www.linkedin.com/posts/kjg-architecture-inc._multifamily-studentliving-retail-activity-7118276875772198912-yEw5",
+      "source_date": "Approximately 2023; accessed 2026-10-26",
+      "crs": "Not spatial data",
+      "feature_id": "225 Northwestern Avenue project",
+      "supports": [
+        "corner of Northwestern Avenue and North Street",
+        "44 student apartments",
+        "ground-floor parking and retail",
+        "Granite office",
+        "urban-scale replacement of liquor store and surface parking"
+      ],
+      "measurement_method": "Project-architect description",
+      "uncertainty": "Describes use and design intent; page notes iterations changed before completion; no verified final elevations or dimensions."
+    },
+    {
+      "id": "indiana_composite_geocoder",
+      "provider": "Indiana Geographic Information Office / ArcGIS locator",
+      "url": "https://gisdata.in.gov/server/rest/services/Indiana_CompositeLocator_WGS84/GeocodeServer/findAddressCandidates?SingleLine=225%20Northwestern%20Ave%2C%20West%20Lafayette%2C%20IN&outFields=*&f=pjson",
+      "snapshot": "sources/indiana_composite_geocoder_225_northwestern_2026-10-26.json",
+      "source_date": "Locator queried 2026-10-26",
+      "crs": "WGS 84 (EPSG:4326)",
+      "feature_id": "Address candidate set; multiple 100-score candidates returned",
+      "supports": [
+        "address localization only"
+      ],
+      "measurement_method": "ArcGIS address candidates; project local conversion per modular/AGENT.md: X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040; compare the IDSI point-address candidate (-86.9081895,40.425489) with the existing asset center.",
+      "uncertainty": "Several 100-score candidates are returned for the same street address; one aligns with existing massing center, but this is not a parcel/building centroid and is not survey-grade."
+    },
+    {
+      "id": "indiana_building_footprints_2016_2020",
+      "provider": "Indiana Geographic Information Office, Indiana Building Footprints 2016-2020",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "snapshot": "sources/indiana_building_footprints_query_2026-10-26.json",
+      "source_date": "Feature attributes report lidar year 2018 for returned nearby polygons",
+      "crs": "Query input/output WGS 84 (EPSG:4326); layer source metadata in Web Mercator EPSG:3857",
+      "feature_id": "Query envelope around 225 Northwestern; nearby returned features include OBJECTID 442169, 410037, 410087, 407783, 407796, 410058",
+      "supports": [
+        "nearby context footprints",
+        "check for directly matching footprint"
+      ],
+      "measurement_method": "ArcGIS polygon query for Tippecanoe County, envelope [-86.9087,40.4248,-86.9075,40.4262]; compare returned rings against asset center/envelope after project-local coordinate transform",
+      "uncertainty": "No returned 2018 polygon intersects the asset envelope. The dataset does not verify the target footprint; absence may reflect source coverage or matching/query limitations. Do not substitute the nearest footprint."
+    },
+    {
+      "id": "indiana_current_orthophoto",
+      "provider": "Indiana Geographic Information Office current imagery service",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "snapshot": "sources/indiana_aerial_current.jpg",
+      "metadata_snapshot": "sources/indiana_current_imagery_service_metadata.json",
+      "source_date": "Service includes 2022-2025; exact acquisition date for returned tile is not exposed in the saved response",
+      "crs": "Image requested with bboxSR=4326 and imageSR=4326; request bbox [-86.9092,40.4248,-86.9074,40.4265], 1400 x 1100 px",
+      "feature_id": "Image crop centered on geocoded address / existing massing center",
+      "supports": [
+        "roof silhouette",
+        "visual footprint envelope",
+        "street context"
+      ],
+      "measurement_method": "Visual roof edge estimate in image pixels, scaled using request extent; compare approximately with asset bounds 18.75 x 46.30m",
+      "uncertainty": "Orthophoto roof-edge measurements are approximate and do not necessarily represent structural wall footprint; shadows and adjacent roof/parking structures make edges ambiguous."
+    },
+    {
+      "id": "forrent_property_profile",
+      "provider": "ForRent property listing",
+      "url": "https://www.forrent.com/in/west-lafayette/north-by-northwest/cr3mqfg",
+      "source_date": "Current listing; accessed 2026-10-26",
+      "crs": "Not spatial data",
+      "feature_id": "North by Northwest, 225 Northwestern Avenue",
+      "supports": [
+        "five-story description",
+        "built 2015",
+        "44 units"
+      ],
+      "measurement_method": "Published listing details",
+      "uncertainty": "Third-party listing and story count conflicts with some property-photo captions that call the building four-story; count above ground floor visually is not independently resolved."
+    },
+    {
+      "id": "purdueguru_property_photo",
+      "provider": "PurdueGuru directory/property page",
+      "url": "https://www.purdueguru.com/find-apartments/North-by-Northwest/225-Northwestern-Avenue-West-Lafayette/1411",
+      "source_date": "Undated property photograph; accessed 2026-10-26",
+      "crs": "Not spatial data",
+      "feature_id": "North by Northwest, 225 Northwestern Avenue",
+      "supports": [
+        "red brick facade",
+        "pale stone accents",
+        "black balcony rails",
+        "red ground-level awnings",
+        "apartment window rhythm"
+      ],
+      "measurement_method": "Visual inspection of property photograph/image description",
+      "uncertainty": "Image is secondary and does not establish exact dimensions; captions vary in reported floor count."
+    },
+    {
+      "id": "tippecanoe_2014_final_plans",
+      "provider": "Tippecanoe County Document Center; plan set by TBIRD Design Services and KJG Architecture",
+      "url": "https://www.tippecanoe.in.gov/DocumentCenter/View/476/Final-Detailed-Plans-Submission-Example-PDF",
+      "snapshot": "sources/tippecanoe_2014_final_detailed_plans_225_northwestern.pdf",
+      "rendered_sheet_snapshots": [
+        "sources/official_plan_pages/sheet-18.png (A100)",
+        "sources/official_plan_pages/sheet-20.png (A105)",
+        "sources/official_plan_pages/sheet-24.png (A200)",
+        "sources/official_plan_pages/sheet-25.png (A201)"
+      ],
+      "source_date": "Final detailed plans dated 2014-04-30; retrieved 2026-10-26",
+      "crs": "Not spatial data; A100 north arrow indicates long building axis north-south",
+      "feature_id": "225 Northwestern Avenue Planned Development; project A2013.087",
+      "supports": [
+        "project/address identity",
+        "A100 proposed five-story use, 8,936 sf footprint and 64 ft height",
+        "A105 first-floor and upper-floor shell dimensions",
+        "A200/A201 facade materials, floor elevations, truss bearing and gable/hip roof form"
+      ],
+      "measurement_method": "Read printed dimensions and notes on A100, A105, A200 and A201; A105 gives first-floor shell 151 ft 6 1/2 in by 60 ft 8 in and upper floors 151 ft 4 1/2 in by 57 ft 11 in; A100 orientation is cross-checked against current orthophoto.",
+      "uncertainty": "Proposed 2014 plans may differ from final as-built conditions. Exact later revisions and surveyed wall edges are unavailable."
+    },
+    {
+      "id": "indiana_current_target_parcel",
+      "provider": "Indiana Geographic Information Office / Tippecanoe County source parcel boundary",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Parcel_Boundaries_of_Indiana_Current/FeatureServer/0",
+      "snapshot": "sources/indiana_current_parcel_790719286020000026.json",
+      "source_date": "Current layer queried 2026-10-26",
+      "crs": "WGS 84 (EPSG:4326), compared using PurdueBlender modular/AGENT.md local approximation: X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.",
+      "feature_id": "STATE_PARCEL_ID 790719286020000026; parcel 79-07-19-286-020.000-026; OBJECTID 1867590; 225 NORTHWESTERN AVE",
+      "supports": [
+        "address-candidate-to-parcel linkage",
+        "parcel boundary context for placement and plan alignment"
+      ],
+      "measurement_method": "Queried by the state parcel ID returned for the first IDSI_Address candidate; transformed ring and plan shell are compared with the project local conversion documented in modular/AGENT.md. See parcel_site_plan_alignment.json.",
+      "uncertainty": "Under the documented conversion the ground shell corners and sampled edges lie inside this generalized parcel; a different local approximation shifts the northern edge by a few tenths of a meter. Parcel boundary is not a building footprint or surveyed wall line."
+    }
+  ]
+}
