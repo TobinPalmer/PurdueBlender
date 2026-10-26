@@ -44,9 +44,10 @@
   "revision": {
     "structural_footprint": "Feature 441814 vertex ring after inverse Web Mercator and local-frame transform; no fit-to-bounds scaling applied.",
     "estimated_vertical_design_m": {
-      "main_wall_eave": 7.1,
-      "ridge_peak": 8.9,
-      "lower_wing_eave": 4.1
+      "main_wall_top_proxy": 4.5,
+      "roof_crest_proxy": 6.0,
+      "south_wing_wall_top_proxy": 4.5,
+      "basis": "Design proxies guided by 2018 NDHM roof-surface samples (roughly 4.45 m p10 to 5.81 m p90 after canopy/outlier filtering); these are not measured eave/ridge elevations."
     },
     "resulting_xy_envelope_m": [
       24.39441331634316,
@@ -54,5 +55,5 @@
     ],
     "vertical_height_total_m": 8.9
   },
-  "uncertainty": "The Indiana statewide layer is LiDAR-derived and reference-grade only, not a survey. SHAPE__Area/Length are service properties in EPSG:3857 map units; local-plan metrics above use the repository approximate ground conversion. Height/story count, gable pitch, facade rhythm, and entrance location are estimates based on 2017 exterior photo and 2023 orthophoto, not measured."
+  "uncertainty": "The Indiana statewide footprint is LiDAR-derived and not a survey. SHAPE__Area/Length are service properties in EPSG:3857 map units; local-plan metrics above use the repository approximate ground conversion. The 2018 NDHM is 5-ft resolution, normalized roof/vegetation surface height; 2-25 ft cells were retained for robust roof summaries, but possible canopy overlap remains. It does not provide measured eave/ridge values, exact floor count, gable pitch, facade rhythm, or entrance dimensions."
 }

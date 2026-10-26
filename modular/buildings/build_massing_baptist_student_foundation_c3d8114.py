@@ -27,11 +27,15 @@ PREVIEW_PATH = ROOT / "audit" / "baptist_student_foundation" / "preview.png"
 TOP_PREVIEW_PATH = ROOT / "audit" / "baptist_student_foundation" / "roof_plan_view.png"
 FEATURE_ID = 441814
 
-# Vertical values are estimates from the Foundation's 2017 exterior photo and
-# its 2023 roof imagery; no surveyed elevation or height field is published.
-MAIN_EAVE_Z = 7.1
-MAIN_RIDGE_Z = 8.9
-ANNEX_EAVE_Z = 4.1
+# Height proxies are estimated from the 2018 Indiana NDHM tile and checked
+# against the address-matched photos/orthophoto. The 5-ft raster samples roof
+# surface cells, not surveyed eave or ridge elevations. Robust roof-cell values
+# (2–25 ft, excluding apparent canopy returns) span roughly 13.7–22.0 ft.
+# These design proxies use the lower/upper part of that distribution and carry
+# substantial uncertainty because the raster resolution is coarse.
+MAIN_EAVE_Z = 4.5
+MAIN_RIDGE_Z = 6.0
+ANNEX_EAVE_Z = 4.5
 WALL_BASE_Z = 0.0
 
 
@@ -108,7 +112,8 @@ def create_walls(ring, collection, brick, interior):
         x2, y2 = ring[(i + 1) % len(ring)]
         mid_y = (y1 + y2) * 0.5
         # Aerial plan shows a southern projecting stem. The 2017 exterior
-        # photo shows a taller principal wing with a lower attached wing.
+        # photo supports an attached wing, but NDHM medians are similar across
+        # the two plan regions, so no lower south-wing wall height is asserted.
         top = ANNEX_EAVE_Z if mid_y < -104.5 else MAIN_EAVE_Z
         base = len(verts)
         verts.extend([(x1, y1, WALL_BASE_Z), (x2, y2, WALL_BASE_Z),
@@ -116,15 +121,6 @@ def create_walls(ring, collection, brick, interior):
         faces.append((base, base + 1, base + 2, base + 3))
         material_ids.append(0)
     obj = add_mesh("Red brick exterior walls from LiDAR outline", verts, faces, brick, collection)
-    # The orthophoto outline is T-shaped. The taller north wing continues over
-    # the lower south stem, leaving a measured shared line rather than an open
-    # notch; close the exposed second-storey face above the lower roof.
-    add_mesh("Second-storey connector wall over south annex",
-             [(-441.25, -104.39, ANNEX_EAVE_Z + 0.15),
-              (-428.38, -102.20, ANNEX_EAVE_Z + 0.15),
-              (-428.38, -102.20, MAIN_EAVE_Z),
-              (-441.25, -104.39, MAIN_EAVE_Z)],
-             [(0, 1, 2, 3)], brick, collection)
     return obj
 
 
@@ -143,10 +139,26 @@ def clip_polygon_y(poly, limit, keep_lower):
     return result
 
 
+def clip_polygon_x(poly, limit, keep_lower):
+    """Clip a polygon to one side of a vertical ridge line."""
+    result = []
+    for a, b in zip(poly, poly[1:] + poly[:1]):
+        ax, bx = a[0], b[0]
+        ain = ax <= limit if keep_lower else ax >= limit
+        bin = bx <= limit if keep_lower else bx >= limit
+        if ain:
+            result.append(a)
+        if ain != bin:
+            t = (limit - ax) / (bx - ax)
+            result.append((limit, a[1] + t * (b[1] - a[1])))
+    return result
+
+
 def make_gable_roof(collection, roof_mat, ring):
     # Split the exact main-wing outline at an east-west ridge. This keeps the
-    # roof footprint within the measured polygon despite its indented T shape.
-    # The lower projecting south stem receives its own shallow roof.
+    # roof footprint within the source polygon despite its indented T shape.
+    # Ridge location/pitch are design estimates: the 2018 NDHM supports a
+    # roof-surface height distribution but provides no eave/ridge elevations.
     main = [ring[i] for i in (2, 3, 4, 5, 6, 7)]
     ridge_y = -96.9
     main_south, main_north = min(y for _, y in main), max(y for _, y in main)
@@ -163,8 +175,19 @@ def make_gable_roof(collection, roof_mat, ring):
         add_mesh(name, verts, [tuple(range(len(verts)))], roof_mat, collection, triangulate=True)
 
     annex = [ring[i] for i in (0, 1, 2, 7)]
-    verts = [(x, y, ANNEX_EAVE_Z + max(0.0, (y + 112.5)) * 0.025) for x, y in annex]
-    add_mesh("Lower annex roof", verts, [tuple(range(len(verts)))], roof_mat, collection, triangulate=True)
+    annex_west, annex_east = min(x for x, _ in annex), max(x for x, _ in annex)
+    annex_ridge_x = (annex_west + annex_east) * 0.5
+    for name, polygon in (("South wing west gable plane", clip_polygon_x(annex, annex_ridge_x, True)),
+                          ("South wing east gable plane", clip_polygon_x(annex, annex_ridge_x, False))):
+        verts = []
+        for x, y in polygon:
+            if abs(x - annex_ridge_x) < 1e-5:
+                z = MAIN_RIDGE_Z
+            else:
+                edge_x = annex_west if x < annex_ridge_x else annex_east
+                z = ANNEX_EAVE_Z + (MAIN_RIDGE_Z - ANNEX_EAVE_Z) * abs(x - edge_x) / abs(annex_ridge_x - edge_x)
+            verts.append((x, y, z))
+        add_mesh(name, verts, [tuple(range(len(verts)))], roof_mat, collection, triangulate=True)
 
     # The photographed principal volume has a gable end at either end of its
     # long ridge; close those wall triangles instead of leaving open roof voids.
@@ -203,19 +226,13 @@ def decorate_facades(ring, collection, trim, glass, metal, door_mat):
         angle = math.atan2(dy, dx)
         # Outward normal for the counterclockwise footprint outline.
         nx, ny = dy / length, -dx / length
-        mid_y = (y1 + y2) * 0.5
-        low_wing = mid_y < -104.5
         count = max(1, min(7, int(length // 3.5)))
-        for row_z in ([1.55] if low_wing else [1.55, 4.55]):
+        for row_z in (1.55, 3.0):
             for j in range(count):
                 t = (j + 1) / (count + 1)
                 px = x1 + dx * t + nx * 0.10
                 py = y1 + dy * t + ny * 0.10
                 add_window(collection, (px, py, row_z), 1.2, 1.45, angle, trim, glass, metal)
-
-    # Two upper windows in the wall overlooking the low attached stem.
-    for x in (-437.3, -432.1):
-        add_window(collection, (x, -103.85, 5.65), 1.25, 1.45, 0.0, trim, glass, metal)
 
     # West-facing primary entrance with a small canopy, inset double doors,
     # steps and side lights; the entrance location is estimated from the 2017

@@ -61,11 +61,16 @@ comparison = {
     "prior_bbox_center_to_source_bbox_center_m": bbox_offset,
     "revision": {
         "structural_footprint": "Feature 441814 vertex ring after inverse Web Mercator and local-frame transform; no fit-to-bounds scaling applied.",
-        "estimated_vertical_design_m": {"main_wall_eave": 7.1, "ridge_peak": 8.9, "lower_wing_eave": 4.1},
+        "estimated_vertical_design_m": {
+            "main_wall_top_proxy": 4.5,
+            "roof_crest_proxy": 6.0,
+            "south_wing_wall_top_proxy": 4.5,
+            "basis": "Design proxies guided by 2018 NDHM roof-surface samples (roughly 4.45 m p10 to 5.81 m p90 after canopy/outlier filtering); these are not measured eave/ridge elevations.",
+        },
         "resulting_xy_envelope_m": [max(xs) - min(xs), max(ys) - min(ys)],
         "vertical_height_total_m": 8.9,
     },
-    "uncertainty": "The Indiana statewide layer is LiDAR-derived and reference-grade only, not a survey. SHAPE__Area/Length are service properties in EPSG:3857 map units; local-plan metrics above use the repository approximate ground conversion. Height/story count, gable pitch, facade rhythm, and entrance location are estimates based on 2017 exterior photo and 2023 orthophoto, not measured.",
+    "uncertainty": "The Indiana statewide footprint is LiDAR-derived and not a survey. SHAPE__Area/Length are service properties in EPSG:3857 map units; local-plan metrics above use the repository approximate ground conversion. The 2018 NDHM is 5-ft resolution, normalized roof/vegetation surface height; 2-25 ft cells were retained for robust roof summaries, but possible canopy overlap remains. It does not provide measured eave/ridge values, exact floor count, gable pitch, facade rhythm, or entrance dimensions.",
 }
 (HERE / "footprint_comparison.json").write_text(json.dumps(comparison, indent=2), encoding="utf-8")
 
@@ -110,6 +115,15 @@ sources = [
         "uncertainty": "Orthophoto cannot verify wall height, floors, facade, or entrance.",
     },
     {
+        "role": "roof-surface height estimate",
+        "provider": "Purdue Geospatial Data Science Lab / Indiana Digital Forestry, Indiana 2017-2019 3DEP LiDAR NDHM",
+        "url": "https://giselevationingov.s3.us-east-2.amazonaws.com/ndhmoptimized/statewide/2018/SPW/5ft/in2018_29951885_12_ndhm.tif",
+        "feature_identifier": "Tippecanoe 2018 NDHM tile in2018_29951885_12_ndhm.tif; queried BStF tile footprint OBJECTID 35356; 5-ft pixels",
+        "retrieved": "2026-10-25", "source_date": "2018 LiDAR collection", "crs": "EPSG:2968 NAD83(HARN) Indiana West (ftUS)",
+        "method": "Sampled raster cell centers inside feature 441814 after projection from EPSG:3857. 191 raw cells were sampled; 177 values between 2 and 25 ft were retained for robust roof-surface quantiles. p10–p90 are approximately 4.45–5.81 m overall; crossbar and south stem medians are 5.07 m and 5.14 m. Source tile, tile query, and reproducible sampling script/results are preserved beside this record.",
+        "uncertainty": "5-ft cells, automated footprint, and tree canopy/edge mixing limit the reading. NDHM values are normalized roof/vegetation surface heights and are not measured wall, eave, or ridge elevations. Values above 25 ft were excluded as likely canopy returns, but some vegetation may remain; no floor count or roof pitch is directly measured.",
+    },
+    {
         "role": "Purdue historical context check",
         "provider": "Purdue University Libraries, Campus Buildings Historic Database / Purdue Campus GIS",
         "url": "https://collections.lib.purdue.edu/campus/ ; https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0",
@@ -134,7 +148,8 @@ record = {
         "rendered_roof_plan_view": "audit/baptist_student_foundation/roof_plan_view.png",
         "remaining_uncertainty": [
             "No published measured heights or floor plans located.",
-            "Exact heights, facade windows, main entrance position, roof pitch, and color values are estimates from dated images.",
+            "Vertical design proxies are estimates guided by 2018 NDHM roof-surface quantiles; no eave/ridge elevations or floor count are measured. Facade windows, entrance dimensions/location, roof pitch, and colors remain approximate from dated imagery.",
+            "The NDHM sample distribution is similar on the north crossbar and south stem; a distinct low roof level is not supported by these samples.",
             "The 2018 LiDAR footprint is automated; no cadastral or boundary survey was available.",
         ],
     },
