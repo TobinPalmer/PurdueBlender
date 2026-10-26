@@ -1,0 +1,69 @@
+{
+  "asset_id": "massing_cary_quadrangle_west_cqw_3d47a7d",
+  "asset_path": "modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend",
+  "grader": "independent subagent",
+  "evaluated_on": "2026-10-26",
+  "score": 7.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS FID 60 identifies Franklin Levering Cary Quadrangle (West) (CQW), matching Purdue Archives building record 10 / structure 116. Reprojected GIS polygon area is 1151.8 m\u00b2; saved shell XY bounds differ from the independent transformed source bounds by at most 0.0000 m. Shell has 0 boundary and 0 nonmanifold edges.",
+      "findings": "Identity and plan polygon are directly source-backed. GIS service does not provide survey tolerance or prove that its building outline is the exact masonry wall line."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "The saved shell follows the source GIS coordinates in the repository's documented approximate local campus transform, with maximum XY bounds residual 0.0000 m. The asset remains in campus coordinates as required for massing; footprint outline and cardinal orientation agree with GIS.",
+      "findings": "The main shell is correctly located and scaled to the GIS outline. Tower, oriel, and entrance projections extend beyond that shell; archival images support their existence but do not quantify their projection."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS records NUM_LEVELS=5 and Extrution=48; the asset represents five levels. Fresh Blender 4.5.15 reopen measured body top around 14.63 m and tallest tower top 19.30 m. Purdue Archives photos 180\u2013182 support a mostly flat/parapeted roof and taller twin entrance towers.",
+      "findings": "The vertical extrusion unit is undocumented. The 14.63 m body assumes 48 feet; tower height and floor-to-floor spacing are estimates with no measured elevation source. Roof form is qualitative only."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2.0,
+      "evidence": "The saved render contains a five-row window rhythm, brick/stone palette, paired towers, central projecting oriel and three entrance locations. Purdue Archives image 180 (1950s) shows two taller, more articulated towers, a prominent Gothic central entrance, flanking pointed-arch entrances, and distinct roof/crown details; image 181 (2004) independently shows the twin-tower entry and projecting central bay.",
+      "findings": "The model translates those motifs into rectangular block towers and simplified trim. The central entrance is mostly a rectangular dark opening with angular trim rather than the clearly pointed Gothic arch in the 1950s source; tower upper profiles, masonry articulation, and the specific window groupings are not well matched. The archive photos are oblique/frontal and do not support exact dimensions."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": "Fresh reopen confirms scene Building_massing_cary_quadrangle_west_cqw_3d47a7d, collection Asset_massing_cary_quadrangle_west_cqw_3d47a7d, 1628 mesh objects, saved evaluated bounds, and no missing external images or linked libraries. The .blend re-renders successfully. Raw Purdue GIS metadata/feature, GeoJSON, Archives record HTML/JSON, and source photographs are preserved with URL/date/CRS and uncertainty notes.",
+      "findings": "Asset path and collection name match the manifest, but the manifest entry still describes one object named Cary Quadrangle West (CQW), old bounds, and 16 m top height; the current asset has 1,628 meshes and reaches 19.30 m. The coordinator should refresh the shared manifest/index after building acceptance. This evaluator did not edit shared files."
+    }
+  ],
+  "evidence": {
+    "fresh_blender_probe": "blender_probe.json",
+    "fresh_blender_log": "blender_probe.log",
+    "fresh_reopen_render": "fresh_reopen_render.png",
+    "raw_source_index": "audit/massing_cary_quadrangle_west_cqw_3d47a7d/sources/source_index.json",
+    "raw_gis_feature": "audit/massing_cary_quadrangle_west_cqw_3d47a7d/sources/official_feature_60_raw.json",
+    "raw_gis_geojson": "audit/massing_cary_quadrangle_west_cqw_3d47a7d/sources/purdue_cqw_fid60_wgs84.geojson",
+    "purdue_archives_record": "audit/massing_cary_quadrangle_west_cqw_3d47a7d/sources/purdue_historic_building_10_record.json",
+    "source_images": [
+      "audit/massing_cary_quadrangle_west_cqw_3d47a7d/sources/purdue_earchives_image_180_external_shot_of_cary_quad_resid.jpg",
+      "audit/massing_cary_quadrangle_west_cqw_3d47a7d/sources/purdue_earchives_image_181_exterior_photograph_of_cary_hall.jpg",
+      "audit/massing_cary_quadrangle_west_cqw_3d47a7d/sources/purdue_earchives_image_182_exterior_photograph_of_cary_hall.jpg"
+    ],
+    "gis_polygon_area_local_approx_m2": 1151.833,
+    "shell_bounds_max_residual_m": 2e-05
+  },
+  "findings": [
+    "The GIS identity and footprint are strong; measured shell outline agrees with the transformed polygon.",
+    "Height remains estimated because the GIS Extrution units are undocumented and no measured elevation is present.",
+    "Improve the central pointed arch and tower silhouette/detail against the direct Purdue Archives references.",
+    "Refresh shared manifest metadata to match the accepted current asset; coordinator-owned files were not changed."
+  ]
+}
