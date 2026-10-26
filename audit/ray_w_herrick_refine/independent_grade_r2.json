@@ -1,0 +1,29 @@
+{
+  "building": "Ray W. Herrick Laboratories (2013 HLAB building)",
+  "candidate": "audit/ray_w_herrick_refine/ray_w_herrick_r2_candidate.blend",
+  "review_date": "2026-10-25",
+  "sha256": "5dfe15ad317dad3661fab756b312e2d0ce2de9b64b53bb3ecb0523a93525bbbf",
+  "score": 8.1,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": true,
+  "criteria": [
+    {"name": "Identity, GIS footprint, and plan", "score": 1.85, "max_score": 2.0, "evidence": "58-point raised foundation loop has 0.197 m maximum symmetric vertex-to-segment distance from raw Purdue FID 878 coordinates under the documented local conversion; 5.025 m2 area difference, about 0.19%. This is the same GIS feature used to author the candidate, not an independent wall survey."},
+    {"name": "Local frame and placement basis", "score": 1.35, "max_score": 1.5, "evidence": "Candidate geometry uses a local frame and documented campus origin; south-facing entry agrees with current Purdue visitor information. Master Placement marker and campus neighborhood were not checked in this standalone grade."},
+    {"name": "Exterior form and roof", "score": 1.45, "max_score": 2.0, "evidence": "Three-storey office/lab, glazed living-lab wing, and dark high-bay are recognizable. Roof remains a broad flat cap without the articulated high-level glazed/steel monitor/canopy cue in the Purdue design elevations and 2013 image; roof equipment is schematic."},
+    {"name": "Facade, entrance, and materials", "score": 1.65, "max_score": 2.0, "evidence": "Brick piers, pale metal spandrels, dark high-bay face, framed glazing, and south entry distinguish the main material zones with procedural materials. Window rhythm, facade modules, entry/canopy, and planting remain simplified."},
+    {"name": "Interior and laboratory use", "score": 1.0, "max_score": 1.5, "evidence": "Three schematic floor plates, connected corridor/stair/elevator cues, partitions, work surfaces, and lab/test-rig silhouettes are present. Floor diagrams support broad use zones but not exact room/equipment placement; no supplied interior cutaway render."},
+    {"name": "Saved asset, evidence, and portability", "score": 0.8, "max_score": 1.0, "evidence": "Exact candidate hash reopened in Blender 5.2.3; 80 asset objects, 68 meshes, 17 used materials, no materialless meshes, invalid material references, external images, or linked libraries. The four preview-stage objects are outside the building collection. No dedicated root object; master marker must be checked at integration."}
+  ],
+  "source_identity": {"provider": "Purdue University Campus BuildingShapesZip4 ArcGIS FeatureServer layer 0", "feature_id": 878, "abbreviation": "HLAB", "address": "177 S Russell Street", "distinct_from": "Historic Herrick Acoustics / HERL, FID 246"},
+  "footprint_comparison": {"method": "Transform raw GIS ring with project local-meter conversion and subtract documented campus placement origin; compare to 58-point candidate raised-foundation bottom loop using symmetric vertex-to-segment distance.", "max_symmetric_distance_m": 0.19697001225395142, "source_area_m2": 2588.7721744924506, "candidate_area_m2": 2593.7971980038537, "area_difference_m2": 5.025023511403106, "simplification_tolerance_m": 0.25, "limitation": "Candidate was authored from the same GIS ring; this is not independent survey evidence."},
+  "fresh_reopen": "audit/ray_w_herrick_refine/independent_reopen_r2.json",
+  "evidence": ["audit/ray_w_herrick_refine/BUILD_RECORD_R2.md", "audit/ray_w_herrick_refine/preview_r2.png", "audit/ray_w_herrick_refine/south_r2.png", "audit/ray_w_herrick_refine/independent_reopen_r2.json", "audit/ray_w_herrick_refine/exterior_bounds_r2.json", "audit/batch_b_buildings/ray_w_herrick_laboratories_evidence.json", "audit/batch_b_buildings/ray_w_herrick_laboratories_gis_feature.json"],
+  "source_urls": [
+    "https://www.purdue.edu/newsroom/archive/releases/2013/Q4/purdues-new-herrick-labs-building-open-for-business.html",
+    "https://engineering.purdue.edu/Herrick/AnnualReport/information/visit",
+    "https://engineering.purdue.edu/Herrick/information/AnnualReports/2012%20fall.pdf",
+    "https://www.purdue.edu/uns/images/2013/herrick-newbuilding.jpg"
+  ],
+  "limitations": ["Roof monitor/clerestory form, parapet and equipment are simplified or uncertain.", "Window sizes and exact facade modules are estimated from undimensioned photos/design elevations.", "Interior partitions, vertical circulation and lab equipment placement are schematic, not as-built verified.", "Master placement marker and neighborhood context have not been checked.", "GIS outline is approximate campus GIS, the same footprint used to author the candidate; no independent structural-wall survey was available."]
+}
