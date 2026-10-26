@@ -1,0 +1,113 @@
+{
+  "building": "Wilmeth Active Learning Center (WALC)",
+  "asset": "modular/buildings/walc.blend",
+  "review_date": "2026-10-25",
+  "sha256": "66e77776b04dd142c8a1292ff2f297c5a4b3a9b3f676ff62243bf81376714850",
+  "score": 7.6,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and plan footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "The structural roof ring traces cached Purdue GIS FID 906 to about 0.000002 m. This shows consistency with the source outline used by the model, not independent survey accuracy."
+    },
+    {
+      "name": "Local frame and structure",
+      "score": 0.9,
+      "max_score": 1.0,
+      "evidence": "AssetRoot_walc has identity transform and the detailed asset remains in its local frame. The relative foliage library resolves. The master Placement_walc marker and neighboring context were not checked."
+    },
+    {
+      "name": "Exterior architecture",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": "The overall mass and entrance canopy read as WALC. Added fins improve vertical articulation at the entry, but standard exterior views still show broad repetitive glass ribbons and red-brown bands. Piers, entry depth, facade bays and roof edges remain simplified; roof form and elevations are unverified."
+    },
+    {
+      "name": "Materials and surface finish",
+      "score": 0.85,
+      "max_score": 1.5,
+      "evidence": "Procedural variation and updated glass/bronze responses are assigned. The renders still read as flat dark glazing and uniform red-brown bands, with low-contrast exterior lighting. Paving and entry surroundings are generic."
+    },
+    {
+      "name": "Interior and program",
+      "score": 1.45,
+      "max_score": 2.0,
+      "evidence": "Reading room, atrium, stairs/bridges, stacks, theatre, active-learning classroom and basement are represented. Brighter views improve inspection, but layouts and finishes remain schematic and are not checked against detailed floor plans; the basement is mostly empty."
+    },
+    {
+      "name": "Reopenability and evidence",
+      "score": 1.15,
+      "max_score": 1.5,
+      "evidence": "Exact hash independently reopened in Blender 5.2.3. The relative foliage library resolves, 24 materials are used, the image is packed, and there are no materialless/invalid-slot meshes. No verified elevations, room plans or master placement check were provided."
+    }
+  ],
+  "findings": [
+    "R2 resolves the machine-specific foliage library path and that relative link succeeds on fresh reopen.",
+    "147 bronze facade fins add some vertical rhythm, clearest around the main entry; long horizontal facade bands remain dominant in normal exterior views.",
+    "Procedural surface variation is present but not perceptible enough in the saved low-contrast exterior renders to establish convincing masonry/glass texture.",
+    "Interior renders are brighter. Existing interior program is substantial but remains generic and unverified against detailed plans.",
+    "Near-zero GIS trace residual uses the same cached outline as model input and does not establish surveyed wall accuracy.",
+    "Master placement marker and neighborhood composition remain unreviewed."
+  ],
+  "limitations": [
+    "No dimensioned as-built facade or roof elevation was found in the reviewed sources.",
+    "Floor-by-floor interior room boundaries and finishes remain unverified.",
+    "Master Placement_walc and adjacent road/plaza alignment were not part of this standalone review.",
+    "GIS residual measures agreement with the cached authored trace, not survey accuracy."
+  ],
+  "sources": [
+    {
+      "title": "Purdue Office of Emergency Preparedness — WALC Building Emergency Plan",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/walc/",
+      "accessed": "2026-10-25",
+      "scope": "Floor count and program areas, not dimensioned architecture."
+    },
+    {
+      "title": "Purdue Chemistry — Wilmeth Active Learning Center",
+      "url": "https://www.chem.purdue.edu/media/news/2017/wilmeth.html",
+      "accessed": "2026-10-25",
+      "scope": "Classroom program and opening-era image context, not as-built dimensions."
+    },
+    {
+      "title": "Purdue Libraries — WALC open-house photographs",
+      "url": "https://blogs.lib.purdue.edu/news/2017/05/17/libraries-host-big-ten-academic-alliance-library-conference/",
+      "accessed": "2026-10-25",
+      "scope": "2017 interior photographic context."
+    },
+    {
+      "title": "Purdue News — Then & Now: Wilmeth Active Learning Center",
+      "url": "https://www.purdue.edu/newsroom/archive/purduetoday/releases/2018/Q4/then-and-now-wilmeth.html",
+      "accessed": "2026-10-25",
+      "scope": "Official exterior/context imagery, not a measured elevation."
+    },
+    {
+      "title": "Purdue BuildingShapesZip4 GIS FID 906 snapshot",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "accessed": "2026-10-22",
+      "scope": "Cached trace comparison only; not independent wall survey."
+    }
+  ],
+  "evidence": {
+    "fresh_reopen": "audit/walc_refine/independent_reopen_r2.json",
+    "reopen_script": "audit/walc_refine/independent_reopen_r2.py",
+    "build_record": "audit/walc_refine/r2_change_log.md",
+    "previous_grade": "audit/walc_refine/independent_grade.md",
+    "renders": [
+      "audit/walc_refine/southwest.png",
+      "audit/walc_refine/southeast.png",
+      "audit/walc_refine/north.png",
+      "audit/walc_refine/roof.png",
+      "audit/walc_refine/03_reading_room_reference.png",
+      "audit/walc_refine/04_atrium_reference.png",
+      "audit/walc_refine/05_atrium_stairs.png",
+      "audit/walc_refine/06_library_stacks.png",
+      "audit/walc_refine/07_hiler_theatre.png",
+      "audit/walc_refine/08_active_learning.png",
+      "audit/walc_refine/09_basement.png"
+    ]
+  }
+}
