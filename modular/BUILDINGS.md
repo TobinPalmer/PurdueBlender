@@ -6,6 +6,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | --- | --- | ---: |
 | American Railway Building | [american_railway_building.blend](buildings/american_railway_building.blend) | 693 |
 | Alpha Chi Rho | [massing_alpha_chi_rho_0cb591a.blend](buildings/massing_alpha_chi_rho_0cb591a.blend) | 1 |
+| Alpha Kappa Lambda | [massing_alpha_kappa_lambda_88dda6c.blend](buildings/massing_alpha_kappa_lambda_88dda6c.blend) | 1 |
 | Armory | [armory.blend](buildings/armory.blend) | 703 |
 | Beering Hall | [beering_hall.blend](buildings/beering_hall.blend) | 1137 |
 | Bell Tower | [bell_tower.blend](buildings/bell_tower.blend) | 578 |
