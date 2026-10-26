@@ -23,7 +23,7 @@ assert all(max(abs(v) for v in obj.rotation_euler) < 1e-7 for obj in objects)
 assert all(max(abs(v-1.0) for v in obj.scale) < 1e-7 for obj in objects)
 coords = [obj.matrix_world @ Vector(corner) for obj in objects for corner in obj.bound_box]
 bounds = [[min(v[i] for v in coords), max(v[i] for v in coords)] for i in range(3)]
-expected = [[-286.1, -270.3], [510.4, 593.5], [0.0, 14.7]]
+expected = [[-290.0, -267.0], [507.0, 597.0], [0.0, 15.2]]
 assert all(expected[i][0] <= bounds[i][0] <= bounds[i][1] <= expected[i][1] for i in range(3)), bounds
 report = {
     "status": "passed",

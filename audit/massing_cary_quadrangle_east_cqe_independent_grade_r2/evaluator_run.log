@@ -1,0 +1,115 @@
+{
+  "score": 7.6,
+  "max_score": 10,
+  "status": "fail",
+  "candidate_commit": null,
+  "candidate_commit_status": "uncommitted worktree candidate; evaluator run against the current saved .blend",
+  "evaluated_local_date": "2026-10-26",
+  "asset_path": "modular/buildings/massing_cary_quadrangle_east_cqe_230c813.blend",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": "Reopened asset carries stable ID massing_cary_quadrangle_east_cqe_230c813; the authoritative Purdue BuildingShapes feature is FID 639, BLDG_ABBR=CQE, name=Franklin Levering Cary Quadrangle (East). Independent campus-coordinate projection gives GIS footprint area 1083.769 m\u00b2 and perimeter 199.323 m. The model foundation outline has area 1083.878 m\u00b2 and perimeter 198.982 m; boundary comparison sampled at 0.25 m intervals gives source-to-model max/mean 0.109/0.001 m and model-to-source max/mean 0.087/0.001 m.",
+      "limitations": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "status": "verified_with_coordinate_limitations",
+      "evidence": "Independent Blender reopen reports world extents [[-286.0694274902344, -270.4039306640625], [510.4223327636719, 593.3851928710938], [0.0, 15.079999923706055]] m; the foundation plan bounds are [[-284.8783264160156, -270.8744812011719], [510.8766784667969, 592.930908203125]]. The model outline follows the GIS source within the boundary distances above, and the 2023 Indiana orthophoto alignment image supports its campus placement and north-south orientation. All modeled asset objects have identity transforms.",
+      "limitations": [
+        "Placement uses the project's approximate lon/lat-to-meter conversion; no surveyed control point or independent geodetic registration is supplied."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.1,
+      "max_score": 2.0,
+      "status": "partially_supported",
+      "evidence": "Purdue Archives corporate-record search-index text identifies three stories plus basement; official GIS records NUM_LEVELS=5, CountOfFLO=5, and Extrution=48. The 1928 Archives image metadata and the reviewed image show a Cary exterior with a long gabled roof, repeated projecting gabled bays, and small gable windows. The revised asset now has 6 gable-end meshes (3 paired cross-gable features) and three above-grade window rows; these image features are Cary-wide context only.",
+      "limitations": [
+        "The archive image does not identify Cary East, and orthophoto does not resolve exact roof form or gable count; applying those forms/counts to this building is architectural inference.",
+        "The GIS five-level fields conflict with the building-specific three-stories-plus-basement account. Extrution=48 has undocumented units; the asset's 15.08 m overall height remains an estimate, not a measured height."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.8,
+      "max_score": 2.0,
+      "status": "weakly_supported_with_period_context",
+      "evidence": "Cary East-specific School Designs extract says its renovation retained its original Collegiate Gothic character; the building-specific Archives description supports brick, stone, and reinforced concrete. The generic 1928 Cary image supports the broad period context of projecting gable forms and small gable windows, not this facade's exact organization. The candidate renders three window rows, belt courses, pilasters, gable end panels, and an entrance arch.",
+      "limitations": [
+        "No supplied source identifies the candidate's exact entrance, bay rhythm, pilaster locations, facade materials by elevation, gable placement/count, or cross-gable dimensions. The render shows the new gable pieces sitting on the main roof with no corresponding projecting wall bays, unlike the contextual photograph's projecting facade bays; the exact CQE treatment remains unverified."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "verified_with_evidence_limitations",
+      "evidence": "Fresh Blender 4.5.15 LTS reopen succeeded on the current candidate. The expected scene/collection/asset ID resolve; there are 23 mesh objects, all with identity transforms; no external object libraries; measured bounds are [[-286.0694274902344, -270.4039306640625], [510.4223327636719, 593.3851928710938], [0.0, 15.079999923706055]]. Dedicated source records and previews are present, including official footprint/orthophoto snapshots, archival metadata, and a Cary East renovation-source extract.",
+      "limitations": [
+        "The external archive record details remain represented by source metadata/search-index capture, and no building-specific exterior elevation has been located."
+      ]
+    }
+  ],
+  "evidence": {
+    "direct_reopen_probe": "audit/massing_cary_quadrangle_east_cqe_independent_grade_r2/blender_probe.json",
+    "independent_blender_run_log": "audit/massing_cary_quadrangle_east_cqe_independent_grade_r2/blender_run.log",
+    "candidate_build_evidence": "audit/massing_cary_quadrangle_east_cqe_230c813/build_evidence.json",
+    "candidate_source_record": "audit/massing_cary_quadrangle_east_cqe_230c813/source_record.json",
+    "source_snapshots": [
+      "audit/massing_cary_quadrangle_east_cqe_230c813/sources/purdue_building_shapes_fid639_cqe_2026-10-25.geojson",
+      "audit/massing_cary_quadrangle_east_cqe_230c813/sources/indiana_2023_orthophoto_cqe.jpg",
+      "audit/massing_cary_quadrangle_east_cqe_230c813/sources/purdue_archives_cary_photo_165_metadata_2026-10-26.json",
+      "audit/massing_cary_quadrangle_east_cqe_230c813/sources/purdue_archives_cary_photo_162_metadata_2026-10-26.json",
+      "audit/massing_cary_quadrangle_east_cqe_230c813/sources/schooldesigns_cary_east_project_extract_2026-10-26.json"
+    ],
+    "reviewed_visual_evidence": [
+      "audit/massing_cary_quadrangle_east_cqe_230c813/cqe_detailed_preview.png",
+      "audit/massing_cary_quadrangle_east_cqe_230c813/cqe_top_preview.png",
+      "audit/massing_cary_quadrangle_east_cqe_230c813/cqe_orthophoto_footprint_overlay.png",
+      "https://earchives.lib.purdue.edu/iiif/2/pbuildings:165/full/full/0/default.jpg"
+    ],
+    "independent_geometry_comparison": {
+      "source_fid": 639,
+      "source_xy_bounds_m": [
+        [
+          -284.8783237236557,
+          -270.8744923539021
+        ],
+        [
+          510.8766921722804,
+          592.9308805829692
+        ]
+      ],
+      "source_projected_area_m2": 1083.7691888075933,
+      "model_foundation_outline_area_m2": 1083.8778353412636,
+      "source_projected_perimeter_m": 199.32348554700752,
+      "model_foundation_outline_perimeter_m": 198.98183431257988,
+      "source_to_model_boundary_max_mean_m": [
+        0.10865516745315255,
+        0.0012579783141869272
+      ],
+      "model_to_source_boundary_max_mean_m": [
+        0.08742953591907682,
+        0.0008205659129426364
+      ],
+      "cross_gable_end_meshes": 6,
+      "cross_gable_pairs": 3,
+      "blend_sha256": "20aa765bcbd6d7db11887362f79059ba0bc8f4d4741a769a80f9842d9c050f04"
+    },
+    "method": "Reviewer-generated evaluator reopened the current uncommitted .blend in Blender 4.5.15, independently projected the raw GIS polygon using the repository coordinate conversion, compared it to the foundation mesh bottom outline using sampled point-to-segment distances, reviewed the current detailed/top previews and orthophoto overlay, and separately viewed the cited Purdue Archives 1928 image. Prior grade values were not used in the calculations or score."
+  },
+  "findings": [
+    "The replacement keeps the identity and source-aligned plan footprint, which are strongly supported.",
+    "Adding cross-gable forms and attic windows is a reasonable period-context interpretation from the 1928 Cary image, but that image is not labeled as Cary East and does not justify the model's exact gable count or placement.",
+    "In the current render, gable-end structures sit on the main roof without projecting facade bays, while the period-context photo shows projecting gabled facade bays; that visual difference and the lack of CQE-specific elevation evidence limit the architectural credit.",
+    "Three above-grade rows are consistent with the building-specific historic account, but overall height and floor-count convention remain unresolved; 15.08 m is an estimate only.",
+    "Final independent score is below the required 8/10 pass threshold. Candidate remains uncommitted and should not be marked complete on this grade."
+  ]
+}

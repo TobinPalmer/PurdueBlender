@@ -18,6 +18,21 @@
       ]
     },
     {
+      "role": "independent roof-surface-height corroboration",
+      "url": "https://giselevationingov.s3.us-east-2.amazonaws.com/ndhmoptimized/statewide/2018/SPW/5ft/in2018_29951885_12_ndhm.tif",
+      "provider": "Purdue Geospatial Data Science Lab / Indiana Digital Forestry",
+      "product": "Indiana 2017-2019 3DEP LiDAR Normalized Digital Height Model",
+      "retrieved_local_date": "2026-10-26",
+      "source_date": "2018 collection",
+      "crs": "EPSG:2968; NAD83(HARN) / Indiana West (ftUS)",
+      "resolution": "5 ft x 5 ft",
+      "snapshots": ["sources/in2018_29951885_12_ndhm.tif", "sources/indiana_2018_ndhm_source_metadata.json"],
+      "analysis": "cqe_ndhm_analysis.json; reproducible script analyze_cqe_ndhm.py",
+      "method": "Sample raster values at cell centers inside the authoritative FID 639 footprint after transforming its WGS84 ring to EPSG:2968. All 474 interior cells are 36.67-61.07 ft above ground; median 46.20 ft (14.08 m), p10-p90 39.17-52.14 ft (11.94-15.89 m). Neighbor median in a 50-ft bounding box is 0.37 ft, while the neighbor p75 is 23.29 ft; this supports the building roof as the elevated surface, with edge/canopy caveats.",
+      "use": "Corroborates an approximate roof-surface height range and makes the 15.08 m modeled maximum plausible. It does not resolve floor-count convention, eave versus ridge heights, or exact roof form.",
+      "limitations": ["5-ft cells can mix roof edges and vegetation; the automated GIS outline may include edge pixels.", "NDHM reports normalized surface height, not a surveyed facade elevation or individual eave/ridge measurement.", "The source's GIS Extrution=48 remains undocumented in units; its tentative feet interpretation is only corroborative."]
+    },
+    {
       "role": "roof footprint / site appearance context",
       "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer/exportImage?bbox=-86.91725,40.4319,-86.91670,40.43285&bboxSR=4326&size=1100,1900&imageSR=4326&format=jpg&f=image",
       "snapshot": "sources/indiana_2023_orthophoto_cqe.jpg",
@@ -29,6 +44,33 @@
       "url": "https://archives.lib.purdue.edu/agents/corporate_entities/792",
       "use": "Purdue Archives identifies the East building as the first Cary Quadrangle building; describes a 42 by 269 ft historic envelope, brick, stone, reinforced concrete, three stories plus basement, Tudor Gothic, cornerstone dated 1927-11-05 and opening in 1928.",
       "capture_note": "Direct archival page was blocked to automated retrieval; these facts were taken from the Purdue Archives search-index result."
+    },
+    {
+      "role": "Cary East-specific renovation history and style context",
+      "url": "https://schooldesigns.com/Projects/purdue-university-cary-quadrangle-east/",
+      "snapshot": "sources/schooldesigns_cary_east_project_extract_2026-10-26.json",
+      "provider": "School Designs / Architectural & School Building magazine",
+      "retrieved_local_date": "2026-10-26",
+      "use": "Identifies the project explicitly as Cary Quadrangle East, completed in 2001 by Scholer Corporation, originally completed in 1928, and says the renovation retained its original Collegiate Gothic charm. It corroborates the broad style, not specific facade details, floors, or height.",
+      "limitation": "The page's photos show renovated interiors rather than exterior elevations."
+    },
+    {
+      "role": "dated Cary exterior photographs as architectural context",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/165/",
+      "metadata_snapshot": "sources/purdue_archives_cary_photo_165_metadata_2026-10-26.json",
+      "image_url": "https://earchives.lib.purdue.edu/iiif/2/pbuildings:165/full/full/0/default.jpg",
+      "retrieved_local_date": "2026-10-26",
+      "use": "Purdue Archives dates this Cary Quadrangle exterior image to 1928. Visual inspection shows a long brick facade, three above-grade window rows, stone foundation band, repeated projecting gabled bays, and small attic windows. A separate building history identifies East as the first Cary unit and dates its opening to 1928, so this image may depict East; the catalog record does not identify the unit, so the match remains a chronology-based inference rather than verified identity.",
+      "rights": "Purdue University Libraries copyright; image was reviewed as a research reference and is not redistributed in this repository."
+    },
+    {
+      "role": "additional early Cary exterior image",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/162/",
+      "metadata_snapshot": "sources/purdue_archives_cary_photo_162_metadata_2026-10-26.json",
+      "image_url": "https://earchives.lib.purdue.edu/iiif/2/pbuildings:162/full/full/0/default.jpg",
+      "retrieved_local_date": "2026-10-26",
+      "use": "Purdue Archives gives an approximate 1926-1932 date range and generic Cary Quadrangle exterior description. It shows gabled facade projections and upper gable windows, but does not name East; used only as broad period context.",
+      "rights": "Purdue University Libraries copyright; image was reviewed as a research reference and is not redistributed in this repository."
     },
     {
       "role": "Cary complex renovation context",
@@ -53,9 +95,9 @@
   ],
   "model_interpretations": [
     "The official footprint is the strongest building-specific geometric source.",
-    "Three visible window rows follow the specific historic description; floor spacing, window counts, window proportions, stone courses, pilasters, entrance placement, and the pointed-arch treatment are schematic interpretations.",
-    "The long gable roof and ten small dormer-like forms are approximated from the orthophoto. The source imagery does not resolve dormer shape or establish that all apparent roof protrusions are dormers.",
-    "No measured facade elevations or verified height source were found. Overall height 14.63 m is a feet-to-meters interpretation of the GIS Extrution field and remains unverified."
+    "Three visible above-grade window rows follow the building-specific historic description. The historic source says three stories plus basement; two GIS fields say five levels. The count could include attic and basement in a different way, but the GIS field definitions do not establish that interpretation. The model shows three above-grade rows, an upper foundation band, and small attic windows only as an explicit period-context interpretation.",
+    "A Purdue Archives photo is dated to the same year Cary East opened, and it shows projecting gabled bays and small attic windows. It may depict East, but does not identify the unit; the match is a chronology-based inference. The gables, window rhythm, stone courses, pilasters, entrance placement, and pointed-arch treatment remain approximate interpretations rather than verified CQE details.",
+    "The 2018 NDHM samples corroborate an approximately 14.08 m median roof-surface height and 11.94-15.89 m p10-p90 range; the modeled 15.08 m maximum is plausible but remains an estimate, not a surveyed measurement. The GIS Extrution=48 field has undocumented units and is used only as tentative corroboration. NDHM cannot resolve eave/ridge height separately or settle the five-level versus three-stories-plus-basement conflict."
   ],
   "coordinate_contract": "Campus world coordinates, meters, X east, Y north, Z up; identity object transforms."
 }
