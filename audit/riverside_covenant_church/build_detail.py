@@ -1,71 +1,160 @@
-import bpy,bmesh,json,math,os
+import bpy
+import bmesh
+import json
+import math
+import os
 from mathutils import Vector
-cfg=json.load(open(os.path.join(os.path.dirname(__file__),'build_config.json'),encoding='utf-8-sig'))
-path=bpy.data.filepath; obj=bpy.data.objects.get(cfg['object_name']); coll=bpy.data.collections.get(cfg['collection_name'])
-if not path or obj is None or coll is None or obj not in coll.objects[:] or len(coll.objects)!=1: raise RuntimeError('Assigned church collection mismatch')
-# Original massing polygon is retained as the shell. Added windows and entrance are deliberately approximate.
-mesh=obj.data; original_verts=[tuple(v.co) for v in mesh.vertices]; faces=[tuple(p.vertices) for p in mesh.polygons]; assignments=[]
-wallc=(.36,.12,.075) if 'redeemer' in cfg['asset_id'] else (.43,.33,.23)
-stonec=(.68,.59,.46) if 'redeemer' in cfg['asset_id'] else (.68,.63,.54)
-glassc=(.025,.075,.10); roofc=(.14,.12,.10)
-def mat(name,color,rough=.8,metal=0):
- m=bpy.data.materials.get(name) or bpy.data.materials.new(name); m.diffuse_color=(*color,1); m.use_nodes=True; bs=m.node_tree.nodes.get('Principled BSDF'); bs.inputs['Base Color'].default_value=(*color,1); bs.inputs['Roughness'].default_value=rough; bs.inputs['Metallic'].default_value=metal; return m
-mats=[mat(cfg['asset_id']+'_Masonry',wallc),mat(cfg['asset_id']+'_Limestone',stonec),mat(cfg['asset_id']+'_Glazing',glassc,.2,.06),mat(cfg['asset_id']+'_Roof',roofc)]
-verts=list(original_verts); mat_ids=[]
-world=obj.matrix_world.copy(); inv=world.inverted_safe();
-def to_local(p): return tuple(inv@Vector(p))
-def add_face(ids,mi): faces.append(tuple(ids)); mat_ids.append(mi)
-def quad(ps,mi):
- k=len(verts); verts.extend(to_local(p) for p in ps); add_face((k,k+1,k+2,k+3),mi)
-def box(c,t,n,w,d,h,mi):
- c=Vector(c); t=Vector((t.x,t.y,0)).normalized(); n=Vector((n.x,n.y,0)).normalized(); z=Vector((0,0,1)); hw=w/2;hd=d/2;hh=h/2
- o=[(-hw,-hd,-hh),(hw,-hd,-hh),(hw,hd,-hh),(-hw,hd,-hh),(-hw,-hd,hh),(hw,-hd,hh),(hw,hd,hh),(-hw,hd,hh)]; k=len(verts); verts.extend(to_local(c+t*a+n*b+z*v) for a,b,v in o)
- for f0 in ((0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)): add_face(tuple(k+i for i in f0),mi)
-# Give original structural polygons stable masonry/roof material slots while preserving all original mesh geometry.
-for p in mesh.polygons:
- n=world.to_3x3()@p.normal; mat_ids.append(3 if n.z>.82 else 0)
-# Facade bays placed on long vertical faces based on polygon bounds; no exact openings inferred.
-minz=min((world@v.co).z for v in mesh.vertices); maxz=max((world@v.co).z for v in mesh.vertices); h=maxz-minz; model_center=sum((world@v.co for v in mesh.vertices),Vector((0,0,0)))/max(1,len(mesh.vertices))
-for p in list(mesh.polygons):
- if len(p.vertices)<4: continue
- coords=[world@mesh.vertices[i].co for i in p.vertices]; n=world.to_3x3()@p.normal
- face_center=sum(coords,Vector((0,0,0)))/len(coords)
- if n.dot(face_center-model_center)<0: n=-n
- if abs(n.z)>.2: continue
- lo=min(v.z for v in coords); hi=max(v.z for v in coords); bottoms=[v for v in coords if abs(v.z-lo)<1e-4];
- if hi-lo<3.5 or len(bottoms)<2: continue
- a,b=max(((bottoms[i],bottoms[j]) for i in range(len(bottoms)) for j in range(i+1,len(bottoms))),key=lambda ab:(ab[0]-ab[1]).length)
- delta=b-a; L=Vector((delta.x,delta.y,0)).length
- if L<5: continue
- t=Vector((delta.x,delta.y,0)).normalized(); n=Vector((n.x,n.y,0)).normalized(); count=max(1,int((L-2)//4.0)); spacing=L/(count+1); ww=min(1.65,spacing*.6); wh=1.35
- rows=[1.75,4.45,7.15] if h>9.0 else [1.7,4.3]
- for zoff in rows:
-  z=minz+zoff
-  if z+wh/2>hi-.35: continue
-  for k in range(count):
-   p0=a.lerp(b,(k+1)/(count+1)); c=Vector((p0.x,p0.y,z))+n*.075
-   box(c,t,n,ww*.76,.06,wh,2); fc=c+n*.05; bw=.09
-   box(fc+Vector((0,0,wh/2)),t,n,ww,.13,bw,1); box(fc-Vector((0,0,wh/2)),t,n,ww,.13,bw,1); box(fc-t*(ww/2-bw/2),t,n,bw,.13,wh,1); box(fc+t*(ww/2-bw/2),t,n,bw,.13,wh,1)
-# West-facing entrance marker. Its exact position and style are not documented, so it remains explicitly approximate.
-wall_faces=[]
-for p in mesh.polygons:
- n=world.to_3x3()@p.normal
- if abs(n.z)>.2: continue
- coords=[world@mesh.vertices[i].co for i in p.vertices]
- if len(coords)>=4 and max(v.z for v in coords)-min(v.z for v in coords)>3:
-  bottoms=[v for v in coords if v.z<min(c.z for c in coords)+.01]
-  if len(bottoms)>=2: wall_faces.append((p,coords,n,bottoms))
-entry=min(wall_faces,key=lambda x:x[2].x,default=None)
-if entry:
- p0=min((v for v in entry[1]),key=lambda v:v.x); n=Vector((entry[2].x,entry[2].y,0)).normalized(); t=Vector((n.y,-n.x,0)).normalized(); center=Vector((sum(v.x for v in entry[1])/len(entry[1]),sum(v.y for v in entry[1])/len(entry[1]),minz+1.3))+n*.1
- box(center,t,n,2.1,.12,2.6,2)
-# Rebuild the same mesh datablock and preserve all existing structural faces.
-oldname=mesh.name; new=bpy.data.meshes.new(oldname+'_facade'); new.from_pydata(verts,[],faces); new.materials.clear()
-for m in mats:new.materials.append(m)
-new.update()
-for p,mi in zip(new.polygons,mat_ids): p.material_index=mi
-bm=bmesh.new();bm.from_mesh(new);bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(new);bm.free();new.update();obj.data=new
-if mesh.users==0:bpy.data.meshes.remove(mesh)
-new.name=oldname
-bpy.ops.wm.save_as_mainfile(filepath=path)
-print('BUILD_RESULT_JSON='+json.dumps({'asset_id':cfg['asset_id'],'original_vertex_count':len(original_verts),'new_vertex_count':len(new.vertices),'new_face_count':len(new.polygons),'height_m':round(h,3),'position_footprint':'retained from original source mesh; not independently verified','collection_objects':len(coll.objects)}))
+
+folder = os.path.dirname(__file__)
+with open(os.path.join(folder, "build_config.json"), encoding="utf-8-sig") as f:
+    cfg = json.load(f)
+with open(os.path.join(folder, "source_mesh_snapshot.json"), encoding="utf-8-sig") as f:
+    snapshot = json.load(f)
+
+obj = bpy.data.objects.get(cfg["object_name"])
+collection = bpy.data.collections.get(cfg["collection_name"])
+if not bpy.data.filepath or obj is None or collection is None or obj not in collection.objects[:] or len(collection.objects) != 1:
+    raise RuntimeError("Assigned church collection mismatch")
+
+old_mesh = obj.data
+world = obj.matrix_world.copy()
+inverse = world.inverted_safe()
+ring_local = []
+for raw in snapshot["vertices_local"]:
+    p = Vector(raw)
+    if abs(p.z) < 1e-6:
+        xy = (round(p.x, 6), round(p.y, 6))
+        if xy not in {(round(q.x, 6), round(q.y, 6)) for q in ring_local}:
+            ring_local.append(p.copy())
+ring = [world @ p for p in ring_local]
+if len(ring) != 4:
+    raise RuntimeError(f"Expected the four-node original OSM ring, found {len(ring)}")
+
+# Derive a stable long axis and width from opposite side midpoints; the exact four
+# source-ring points remain the wall footprint, including the slight map rotation.
+end_a = (ring[0] + ring[1]) * 0.5
+end_b = (ring[2] + ring[3]) * 0.5
+axis = Vector((end_b.x - end_a.x, end_b.y - end_a.y, 0.0)).normalized()
+center = sum(ring, Vector((0.0, 0.0, 0.0))) / len(ring)
+cross = Vector((-axis.y, axis.x, 0.0))
+if cross.dot((ring[1] + ring[2]) * 0.5 - center) < 0:
+    cross.negate()
+length = abs((end_b - end_a).dot(axis))
+width = abs(((ring[1] + ring[2]) * 0.5 - (ring[0] + ring[3]) * 0.5).dot(cross))
+eaves = float(cfg["wall_eaves_m"])
+ridge = float(cfg["ridge_height_m"])
+overhang = float(cfg["roof_overhang_m"])
+if not (0.0 < eaves < ridge and length > width > 0.0):
+    raise RuntimeError("Invalid estimated church form dimensions")
+
+tag = cfg["asset_id"]
+def make_material(name, color, roughness=0.78, metallic=0.0):
+    m = bpy.data.materials.get(tag + "_" + name) or bpy.data.materials.new(tag + "_" + name)
+    m.diffuse_color = (*color, 1.0)
+    m.use_nodes = True
+    bsdf = m.node_tree.nodes.get("Principled BSDF")
+    if bsdf:
+        bsdf.inputs["Base Color"].default_value = (*color, 1.0)
+        bsdf.inputs["Roughness"].default_value = roughness
+        bsdf.inputs["Metallic"].default_value = metallic
+    return m
+
+materials = [
+    make_material("Brick", (0.30, 0.12, 0.085)),
+    make_material("Stone_Trim", (0.68, 0.59, 0.47)),
+    make_material("Glazing", (0.035, 0.11, 0.16), 0.22, 0.04),
+    make_material("Slate_Roof", (0.11, 0.12, 0.13), 0.86),
+]
+vertices, faces, material_ids = [], [], []
+def add_face(points, material_index):
+    start = len(vertices)
+    vertices.extend(tuple(inverse @ p) for p in points)
+    faces.append(tuple(range(start, start + len(points))))
+    material_ids.append(material_index)
+
+def add_box(center_point, tangent, normal, box_width, depth, height, material_index):
+    c = Vector(center_point)
+    t = Vector((tangent.x, tangent.y, 0.0)).normalized()
+    n = Vector((normal.x, normal.y, 0.0)).normalized()
+    z = Vector((0.0, 0.0, 1.0))
+    hw, hd, hh = box_width / 2.0, depth / 2.0, height / 2.0
+    offsets = [(-hw,-hd,-hh),(hw,-hd,-hh),(hw,hd,-hh),(-hw,hd,-hh),
+               (-hw,-hd,hh),(hw,-hd,hh),(hw,hd,hh),(-hw,hd,hh)]
+    start = len(vertices)
+    vertices.extend(tuple(inverse @ (c + t*a + n*b + z*h)) for a,b,h in offsets)
+    for face in ((0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)):
+        faces.append(tuple(start + i for i in face))
+        material_ids.append(material_index)
+
+# Perimeter wall shell exactly follows the saved bottom-ring points.
+for i, a0 in enumerate(ring):
+    b0 = ring[(i + 1) % len(ring)]
+    a = Vector((a0.x, a0.y, 0.0))
+    b = Vector((b0.x, b0.y, 0.0))
+    add_face((a, b, Vector((b.x, b.y, eaves)), Vector((a.x, a.y, eaves))), 0)
+
+# One long-axis gable roof is an illustrative completion of the source massing.
+half_length = length / 2.0 + overhang
+half_width = width / 2.0 + overhang
+end_a_roof = center - axis * half_length
+end_b_roof = center + axis * half_length
+south_a = end_a_roof - cross * half_width
+south_b = end_b_roof - cross * half_width
+north_a = end_a_roof + cross * half_width
+north_b = end_b_roof + cross * half_width
+ridge_a = Vector((center.x - axis.x * half_length, center.y - axis.y * half_length, ridge))
+ridge_b = Vector((center.x + axis.x * half_length, center.y + axis.y * half_length, ridge))
+south_a.z = south_b.z = north_a.z = north_b.z = eaves
+add_face((south_a, ridge_a, ridge_b, south_b), 3)
+add_face((ridge_a, north_a, north_b, ridge_b), 3)
+add_face((south_a, north_a, ridge_a), 0)
+add_face((south_b, ridge_b, north_b), 0)
+
+# A restrained, single row of small side windows is schematic and unmeasured.
+for side_sign in (-1.0, 1.0):
+    outward = cross * side_sign
+    wall_center = center + outward * (width / 2.0)
+    for fraction in (-0.30, -0.10, 0.10, 0.30):
+        p = wall_center + axis * (length * fraction)
+        zc, ww, wh = 2.35, 1.25, 1.25
+        pane_center = Vector((p.x, p.y, zc)) + outward * 0.07
+        add_box(pane_center, axis, outward, ww * 0.78, 0.07, wh, 2)
+        frame_center = pane_center + outward * 0.07
+        trim = 0.075
+        add_box(frame_center + Vector((0,0,wh/2)),axis,outward,ww,0.13,trim,1)
+        add_box(frame_center - Vector((0,0,wh/2)),axis,outward,ww,0.13,trim,1)
+        add_box(frame_center - axis*(ww/2-trim/2),axis,outward,trim,0.13,wh,1)
+        add_box(frame_center + axis*(ww/2-trim/2),axis,outward,trim,0.13,wh,1)
+
+old_name = old_mesh.name
+new_mesh = bpy.data.meshes.new(old_name + "_gable_revision")
+new_mesh.from_pydata(vertices, [], faces)
+for material in materials:
+    new_mesh.materials.append(material)
+new_mesh.update()
+for polygon, material_index in zip(new_mesh.polygons, material_ids):
+    polygon.material_index = material_index
+bm = bmesh.new()
+bm.from_mesh(new_mesh)
+bmesh.ops.recalc_face_normals(bm, faces=list(bm.faces))
+bm.to_mesh(new_mesh)
+bm.free()
+new_mesh.update()
+obj.data = new_mesh
+if old_mesh.users == 0:
+    bpy.data.meshes.remove(old_mesh)
+new_mesh.name = old_name
+bpy.ops.wm.save_as_mainfile(filepath=bpy.data.filepath)
+world_vertices = [world @ v.co for v in new_mesh.vertices]
+result = {
+    "asset_id": tag,
+    "collection_objects": len(collection.objects),
+    "source_ring_vertices": len(ring),
+    "mesh_vertices": len(new_mesh.vertices),
+    "mesh_faces": len(new_mesh.polygons),
+    "bounds_world_m": [[round(min(v[i] for v in world_vertices), 6), round(max(v[i] for v in world_vertices), 6)] for i in range(3)],
+    "wall_eaves_estimate_m": eaves,
+    "ridge_estimate_m": ridge,
+    "footprint_preserved": True,
+}
+print("BUILD_RESULT_JSON=" + json.dumps(result))
