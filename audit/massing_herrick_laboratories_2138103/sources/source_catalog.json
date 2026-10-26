@@ -1,0 +1,86 @@
+{
+  "building_id": "massing_herrick_laboratories_2138103",
+  "assignment_owner": "Rossen",
+  "sources": [
+    {
+      "file": "purdue_building_shapes_fid246_herl_2026-10-26.json",
+      "provider": "Purdue University campus GIS, BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D246&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 246,
+      "source_name": "Herrick Acoustics",
+      "source_code": "HERL",
+      "retrieved_date": "2026-10-26",
+      "source_date": "not supplied by service",
+      "crs": "EPSG:4326 response",
+      "measurement_method": "Transform source polygon with modular/AGENTS.md campus approximation; map coordinates to meters; use GIS ring directly for building shell.",
+      "uncertainty": "GIS polygon is an official campus footprint, not a survey of structural wall faces; its 36 ft extrusion and 3 level fields are interpreted but not field verified."
+    },
+    {
+      "file": "purdue_building_shapes_layer_metadata_2026-10-26.json",
+      "provider": "Purdue University campus GIS, BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "feature_id": "layer metadata",
+      "retrieved_date": "2026-10-26",
+      "source_date": "service metadata response",
+      "crs": "service metadata declares geographic coordinates; feature requested as EPSG:4326",
+      "measurement_method": "Metadata inspection for schema/spatial reference/field names.",
+      "uncertainty": "Metadata does not document `Extrution` units."
+    },
+    {
+      "file": "purdue_herrick_facilities_2026-10-26.html",
+      "provider": "Ray W. Herrick Laboratories, Purdue University",
+      "url": "https://engineering.purdue.edu/Herrick/about/facilities",
+      "feature_id": "facility history statement",
+      "retrieved_date": "2026-10-26",
+      "source_date": "page last modified 2021-07-22",
+      "crs": "not applicable",
+      "measurement_method": "Page identifies the original building as a converted 1920s horse barn housing acoustics research; distinguishes it from the 68,000 sq ft building completed 2013.",
+      "uncertainty": "No measured dimensions/elevations."
+    },
+    {
+      "file": "purdue_herrick_history_2026-10-26.html",
+      "provider": "Ray W. Herrick Laboratories, Purdue University",
+      "url": "https://engineering.purdue.edu/Herrick/information/history",
+      "feature_id": "institutional history",
+      "retrieved_date": "2026-10-26",
+      "source_date": "page last modified 2026-05-14",
+      "crs": "not applicable",
+      "measurement_method": "Historical identity/use: original horse barn on south campus, opened as Herrick Labs in 1958; modern new building constructed in 2013.",
+      "uncertainty": "No dimensions or facade measurements."
+    },
+    {
+      "file": "herrick_laboratories_newsletter_spring_2009.pdf",
+      "provider": "Ray W. Herrick Laboratories, Purdue University, Spring 2009 newsletter",
+      "url": "https://engineering.purdue.edu/Herrick/information/Newsletter/spr09.pdf",
+      "feature_id": "page 1 historical photos and retrospective by Judy Hanks",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Spring 2009; photographs described as ca. 1942, 1957 (before wings), and ca. 1960 or 1980 (after wings; date disputed)",
+      "crs": "not applicable",
+      "measurement_method": "Contemporary-institutional archival account for barn and wing sequence, office addition, hay-loft reuse; photos used only for general form/facade.",
+      "uncertainty": "Newsletter itself says date of post-wing photo is disputed; historical photos are not dimensioned or georeferenced."
+    },
+    {
+      "file": "herrick_labs_original_photo_labmanager.jpg",
+      "provider": "Lab Manager magazine, Lauren Everett article (archival photo credited in page caption to the original Herrick Labs)",
+      "url": "https://www.labmanager.com/how-building-design-can-influence-human-comfort-and-productivity-21823",
+      "image_url": "https://lmg-labmanager.s3.amazonaws.com/assets/articleNo/21823/iImg/40026/ma20-llo-5-herrick-labs-original.jpg",
+      "feature_id": "article image captioned \u201cOriginal Herrick Labs, donated to Purdue University in 1957 by Ray W. Herrick.\u201d",
+      "retrieved_date": "2026-10-26",
+      "source_date": "article published 2020-03-09; photograph capture date not stated",
+      "crs": "not applicable",
+      "measurement_method": "Photographic reference for center gabled/cupola barn, brick walls, flanking low wings, long window bands, and courtyard frontage.",
+      "uncertainty": "Secondary publication; no measured elevation, scale, or capture date."
+    },
+    {
+      "file": "newsletter_page-01.png",
+      "provider": "Rendered view of page 1 of Purdue Herrick Laboratories Spring 2009 newsletter PDF",
+      "url": "https://engineering.purdue.edu/Herrick/information/Newsletter/spr09.pdf#page=1",
+      "feature_id": "page 1",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Spring 2009 publication; historic photo dates described in caption",
+      "crs": "not applicable",
+      "measurement_method": "Local raster rendering from saved PDF for visual inspection only; original PDF retained.",
+      "uncertainty": "Raster derivative, not dimensioned evidence."
+    }
+  ]
+}

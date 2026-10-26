@@ -1,0 +1,81 @@
+{
+  "saved_and_reopened": true,
+  "asset": "modular/buildings/massing_herrick_laboratories_2138103.blend",
+  "scene": "Building_massing_herrick_laboratories_2138103",
+  "collection": "Asset_massing_herrick_laboratories_2138103",
+  "object": "Herrick Acoustics | historic barn and wings",
+  "collection_object_count": 1,
+  "mesh_object_count": 1,
+  "modifier_count": 0,
+  "mesh_vertex_count": 6035,
+  "mesh_face_count": 4453,
+  "bounds_m": {
+    "x": [
+      -652.0280151367188,
+      -573.48095703125
+    ],
+    "y": [
+      -536.505615234375,
+      -452.4864196777344
+    ],
+    "z": [
+      0.0,
+      10.949999809265137
+    ]
+  },
+  "dimensions_m": [
+    78.54705810546875,
+    84.01919555664062,
+    10.949999809265137
+  ],
+  "source": {
+    "provider": "Purdue University BuildingShapesZip4 layer 0",
+    "feature_id": 246,
+    "code": "HERL",
+    "name": "Herrick Acoustics",
+    "crs": "EPSG:4326 response transformed to the project approximate local campus frame",
+    "converted_ring_vertex_count": 66,
+    "footprint_vertex_nearest_error_max_m": 3.6293997603431015e-05,
+    "footprint_vertex_nearest_error_mean_m": 2.0473938969125446e-05,
+    "source_shape_area_attribute_m2": 5174.79296875,
+    "converted_ring_shoelace_area_m2": 2993.8066305820685,
+    "area_field_discrepancy_note": "GIS Shape__Area attribute does not match area recomputed from the returned ring using project transform; geometry ring is used for the shell, area field is not used."
+  },
+  "height": {
+    "nominal_gis_extrution_field": 36,
+    "interpreted_as": "feet",
+    "max_height_m": 10.949999809265137,
+    "wing_height_m_estimate": 5.2,
+    "uncertainty": "GIS metadata omits Extrution units; model height is an estimate."
+  },
+  "external_images": [],
+  "renders": [
+    "audit/massing_herrick_laboratories_2138103/renders/herrick_acoustics_courtyard_preview.png",
+    "audit/massing_herrick_laboratories_2138103/renders/herrick_acoustics_plan_preview.png"
+  ],
+  "before_bounds_m": {
+    "x": [
+      -633.1705322265625,
+      -596.0997924804688
+    ],
+    "y": [
+      -536.5675048828125,
+      -482.7908020019531
+    ],
+    "z": [
+      0.0,
+      16.0
+    ]
+  },
+  "edits": [
+    "Replaced fallback shell polygon with Purdue GIS FID 246 HERL ring after approximate campus transform.",
+    "Rebuilt low wings and central raised barn from GIS outline plus historic source photos.",
+    "Added gabled roof, cupola, dormers, brick/window rhythm, and approximate courtyard entrance."
+  ],
+  "unresolved": [
+    "The GIS structural polygon is not a surveyed wall footprint.",
+    "GIS Extrution=36 unit interpretation as feet is unconfirmed; 3-floor attribute conflicts with varying wing heights in photos.",
+    "Low wing height, barn core subdivisions, facade/window stations, roof details, and entry exact location are estimated.",
+    "GIS Shape__Area field (5174.79) conflicts with transformed ring area (~2993.81 m2); geometry ring used, area attribute not used."
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "building_id": "massing_herrick_laboratories_2138103",
+  "review_revision": "r1",
+  "score": 7.9,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "Pass. The opened asset is labeled Herrick Acoustics; its wall base matches the 66-vertex transformed GIS FID 246 / HERL ring to a maximum nearest-vertex difference of 0.000037 m. Purdue's facilities/history sources identify the original 1920s horse barn and explicitly distinguish it from the 2013 new Herrick building, avoiding confusion with FID 878 / HLAB.",
+      "uncertainty": "The GIS polygon is not a surveyed structural-wall survey, and its Shape__Area attribute conflicts with the area computed from the returned ring. The polygon identity and vertex agreement remain direct evidence."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "assessment": "The reopened mesh is in campus coordinates and the bottom outline overlays the GIS ring under the documented local approximation. Its total bounds are 78.547 x 84.019 m, including facade projections; the GIS wall ring itself is the stronger plan evidence. No separate survey or measured dimensions are retained.",
+      "uncertainty": "The local geographic conversion is approximate, and the transformed ring area (2993.81 m\u00b2) differs from GIS Shape__Area (5174.79 m\u00b2); the footprint ring, rather than the area attribute, is modeled."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.1,
+      "max_score": 2,
+      "assessment": "The GIS record reports three levels and Extrution=36. Historical imagery supports the central barn's pitched roof, cupola, and dormers, and the newer photo supports lower flanking wings. The mesh is 10.95 m high with 5.2 m wing height.",
+      "uncertainty": "No elevation or measured height source supports 10.95 m or 5.2 m. The 36-unit field has undocumented units and is interpreted as feet; the three-level field does not validate the varied wing/barn heights. Exact roof geometry is photo-derived."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2,
+      "assessment": "The asset includes red-brown brick, broad low wings around a courtyard, central raised barn volume, red roof, cupola, dormers, window elements, and a courtyard entrance/canopy. These motifs are visible in the 2009 institutional newsletter images and the retained Lab Manager photo of the original building.",
+      "uncertainty": "The saved courtyard render simplifies the photographic facade: window bands and entrance composition are sparse, while the original photo shows more continuous glazing, visible wall piers, and a more legible roof-to-wall profile. Facade stationing and entrance position are not measured."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "The saved file reopens with the expected named scene and collection, one mesh object, no modifiers, local material data, and no external file-image dependencies. Dedicated source snapshots/catalog, validation record, and two renders are present.",
+      "uncertainty": "The library is a self-contained campus-coordinate asset; any future collection-instance use should retain the project placement convention."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_herrick_laboratories_2138103.blend",
+    "direct_reopen_measurements": "audit/massing_herrick_laboratories_2138103/independent_grade/r1/direct_inspection.json",
+    "gis_feature": "audit/massing_herrick_laboratories_2138103/sources/purdue_building_shapes_fid246_herl_2026-10-26.json",
+    "institutional_history_and_facilities": [
+      "audit/massing_herrick_laboratories_2138103/sources/purdue_herrick_history_2026-10-26.html",
+      "audit/massing_herrick_laboratories_2138103/sources/purdue_herrick_facilities_2026-10-26.html"
+    ],
+    "historic_visual_sources": [
+      "audit/massing_herrick_laboratories_2138103/sources/herrick_laboratories_newsletter_spring_2009.pdf",
+      "audit/massing_herrick_laboratories_2138103/sources/herrick_labs_original_photo_labmanager.jpg"
+    ],
+    "review_renders": [
+      "audit/massing_herrick_laboratories_2138103/renders/herrick_acoustics_courtyard_preview.png",
+      "audit/massing_herrick_laboratories_2138103/renders/herrick_acoustics_plan_preview.png"
+    ],
+    "direct_measurements": {
+      "asset": "modular/buildings/massing_herrick_laboratories_2138103.blend",
+      "scene": "Building_massing_herrick_laboratories_2138103",
+      "scene_building_id": null,
+      "collection": "Asset_massing_herrick_laboratories_2138103",
+      "collection_object_count": 1,
+      "object": "Herrick Acoustics | historic barn and wings",
+      "object_type": "MESH",
+      "modifiers": [],
+      "vertices": 6035,
+      "faces": 4453,
+      "materials": [
+        "Herrick | red-brown brick",
+        "Herrick | red tile roof",
+        "Herrick | dark metal frames",
+        "Herrick | blue-gray glazing",
+        "Herrick | pale stone / painted trim",
+        "Herrick | brick piers",
+        null
+      ],
+      "bounds_m": [
+        [
+          -652.0280151367188,
+          -573.48095703125
+        ],
+        [
+          -536.505615234375,
+          -452.4864196777344
+        ],
+        [
+          0.0,
+          10.949999809265137
+        ]
+      ],
+      "dimensions_m": [
+        78.54705810546875,
+        84.01919555664062,
+        10.949999809265137
+      ],
+      "base_vertex_count": 74,
+      "source": {
+        "FID": 246,
+        "name": "Herrick Acoustics",
+        "abbr": "HERL",
+        "num_levels": 3,
+        "extrution": 36,
+        "shape_area_attribute": 5174.79296875,
+        "source_ring_vertices_after_cleaning": 66,
+        "ring_shoelace_area_m2": 2993.8066305820685,
+        "vertex_nearest_error_max_m": 3.6293997603431015e-05,
+        "vertex_nearest_error_mean_m": 2.0473938969125446e-05
+      },
+      "external_file_images": [],
+      "world_translation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "is_linked": false
+    },
+    "source_attributes": {
+      "FID": 246,
+      "BUILDING_N": "Herrick Acoustics",
+      "BLDG_ABBR": "HERL",
+      "NUM_LEVELS": 3,
+      "Extrution": 36,
+      "Shape__Area": 5174.79296875
+    }
+  },
+  "findings": [
+    {
+      "severity": "major",
+      "finding": "Height and wing elevations are estimates: the GIS Extrution=36 units are not documented, and the evidence set has no measured elevation. The model's feet interpretation and 5.2 m wings remain unverified.",
+      "action": "Seek a dimensioned elevation, as-built plan, or authoritative building height record; otherwise keep these values explicitly labeled as estimates."
+    },
+    {
+      "severity": "moderate",
+      "finding": "The courtyard render conveys the correct broad composition but underrepresents the source photo's continuous wing window bands, wall piers, and central entrance/roof-to-wall articulation.",
+      "action": "Use the retained historic/current photographs to revise or document the facade/window rhythm and entrance placement, then render a comparable courtyard elevation."
+    },
+    {
+      "severity": "moderate",
+      "finding": "The GIS Shape__Area value (5174.79 m\u00b2) is substantially larger than the approximate transformed ring area (2993.81 m\u00b2). The shell follows the returned FID 246 geometry directly, but the attribute conflict is unexplained.",
+      "action": "Check the layer's native area computation and polygon topology/units; preserve the source ring as the footprint unless authoritative geometry shows otherwise."
+    }
+  ]
+}

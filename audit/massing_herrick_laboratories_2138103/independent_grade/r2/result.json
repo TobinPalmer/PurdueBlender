@@ -1,0 +1,147 @@
+{
+  "building_id": "massing_herrick_laboratories_2138103",
+  "review_revision": "r2",
+  "score": 8.4,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "The saved scene represents the historic Herrick Acoustics / HERL complex, not the separate 2013 Ray W. Herrick Laboratories. The Purdue BuildingShapesZip4 FID 246 ring is directly used as the shell base; fresh reopen confirms 66 cleaned source vertices and maximum nearest ground-vertex error below 0.0001 m.",
+      "uncertainty": "The service Shape__Area value is materially larger than the transformed ring area; metadata does not resolve its semantics. The source ring is retained without area-based rescaling."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.7,
+      "max_score": 2,
+      "assessment": "The wall shell matches the FID 246 polygon under the documented campus local approximation. The U-shaped footprint and courtyard orientation agree with the retained aerial/plan geometry; wall base comparison is direct rather than based on decorative bounds.",
+      "uncertainty": "The GIS polygon is not a surveyed structural-wall plan; its local ring area is 2993.81 m2 while Shape__Area is 5174.79, ratio 1.728. Overall bounds include modeled facade/roof projections."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.35,
+      "max_score": 2,
+      "assessment": "Archival and current photographs support the raised central barn volume, pitched roof, cupola, dormers, and lower wings. GIS records three levels, consistent with a multi-level core but insufficient to establish the varied wing and roof heights.",
+      "uncertainty": "No measured elevation or reliable height record is present. The 5.0 m wings, 6.9 m eaves, 9.25 m ridge, and 10.95 m cupola top are estimates. GIS Extrution=36 has undocumented units; a feet interpretation is plausible but unverified."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "assessment": "The r2 courtyard render adds repeated window bays and mullions, pale piers/bands, a clearer entrance canopy, and a courtyard-facing gable. These changes make the model materially closer to the retained Lab Manager photo and institutional newsletter than the r1 render. The brick, roof, cupola, and dormers also correspond to those images.",
+      "uncertainty": "The source photo shows long continuous wing glazing, a strongly legible centered entrance/sign/canopy, and a more articulated central roof-to-wall profile. The render still abstracts these details into separated small bays and a subdued entrance; precise bay spacing and entrance geometry are not measured."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "assessment": "Fresh Blender reopen verifies the expected scene, collection, and single mesh object with no modifiers, external image dependencies, or linked libraries. R2 direct-reopen measurements, source catalog/raw snapshots, revision notes, and both preview renders are present.",
+      "uncertainty": "Blender 4.5.15 emitted a forward-version warning because the file was written by binary version 502.44; geometry and library data still reopened and inspected correctly. The library remains a simple campus-coordinate massing asset; preserve its direct-link convention if integrated into the master."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_herrick_laboratories_2138103.blend",
+    "direct_reopen_measurements": "audit/massing_herrick_laboratories_2138103/independent_grade/r2/direct_inspection.json",
+    "r2_validation": "audit/massing_herrick_laboratories_2138103/r2/reopen_validation_r2.json",
+    "gis_feature": "audit/massing_herrick_laboratories_2138103/sources/purdue_building_shapes_fid246_herl_2026-10-26.json",
+    "source_catalog": "audit/massing_herrick_laboratories_2138103/sources/source_catalog.json",
+    "institutional_history": [
+      "audit/massing_herrick_laboratories_2138103/sources/purdue_herrick_history_2026-10-26.html",
+      "audit/massing_herrick_laboratories_2138103/sources/purdue_herrick_facilities_2026-10-26.html"
+    ],
+    "visual_sources": [
+      "audit/massing_herrick_laboratories_2138103/sources/herrick_laboratories_newsletter_spring_2009.pdf",
+      "audit/massing_herrick_laboratories_2138103/sources/herrick_labs_original_photo_labmanager.jpg"
+    ],
+    "review_renders": [
+      "audit/massing_herrick_laboratories_2138103/r2/herrick_acoustics_courtyard_preview_r2.png",
+      "audit/massing_herrick_laboratories_2138103/r2/herrick_acoustics_plan_preview_r2.png"
+    ],
+    "direct_measurements": {
+      "opened_saved_asset": true,
+      "blender_version": "4.5.15 LTS",
+      "asset": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_herrick_laboratories_2138103.blend",
+      "scene": "Building_massing_herrick_laboratories_2138103",
+      "collection": "Asset_massing_herrick_laboratories_2138103",
+      "collection_object_count": 1,
+      "object": "Herrick Acoustics | historic barn and wings",
+      "object_type": "MESH",
+      "mesh_vertices": 10315,
+      "mesh_faces": 7663,
+      "modifiers": [],
+      "bounds_world_m": [
+        [
+          -652.0380249023438,
+          -573.48095703125
+        ],
+        [
+          -536.515625,
+          -452.4864196777344
+        ],
+        [
+          0.0,
+          10.949999809265137
+        ]
+      ],
+      "world_dimensions_m": [
+        78.55706787109375,
+        84.02920532226562,
+        10.949999809265137
+      ],
+      "gis_source": {
+        "provider": "Purdue University BuildingShapesZip4 FeatureServer layer 0",
+        "FID": 246,
+        "BLDG_ABBR": "HERL",
+        "BUILDING_N": "Herrick Acoustics",
+        "NUM_LEVELS": 3,
+        "Extrution": 36,
+        "Shape__Area": 5174.79296875,
+        "cleaned_ring_vertices": 66,
+        "local_approx_ring_area_m2": 2993.8066305820685,
+        "Shape__Area_to_ring_area_ratio": 1.728499401360433,
+        "max_nearest_ground_vertex_error_m": 3.6293997603431015e-05,
+        "mean_nearest_ground_vertex_error_m": 2.0473938969125453e-05,
+        "source_ring_count": 1
+      },
+      "unpacked_external_images": [],
+      "linked_libraries": [],
+      "renders": [
+        {
+          "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_herrick_laboratories_2138103\\r2\\herrick_acoustics_courtyard_preview_r2.png",
+          "exists": true,
+          "bytes": 1495239
+        },
+        {
+          "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_herrick_laboratories_2138103\\r2\\herrick_acoustics_plan_preview_r2.png",
+          "exists": true,
+          "bytes": 1171059
+        }
+      ]
+    }
+  },
+  "findings": [
+    {
+      "severity": "moderate",
+      "finding": "The GIS Shape__Area field remains 1.7285 times the transformed polygon-ring area, and the service metadata does not explain the difference.",
+      "action": "Keep using the returned authoritative ring for the shell; document the discrepancy and only revise if the GIS provider supplies a clarified area basis or corrected geometry."
+    },
+    {
+      "severity": "moderate",
+      "finding": "The elevation values remain photo-derived estimates; Extrution=36 has no documented units, and no measured elevation was found.",
+      "action": "Retain explicit estimated labels and pursue a dimensioned elevation or facilities height record if a better authoritative source becomes available."
+    },
+    {
+      "severity": "minor",
+      "finding": "R2 visibly improves the courtyard facade, but the continuous wing glazing and centered entry/sign composition in the photo are still simplified.",
+      "action": "A later refinement could better connect window groups into continuous bands and clarify the center entrance, provided the change remains photo-backed."
+    },
+    {
+      "severity": "minor",
+      "finding": "Blender 4.5.15 opened the saved file with a forward-version warning (file binary version 502.44). Direct geometry and collection inspection succeeded.",
+      "action": "Confirm the intended minimum Blender version before distributing the library to 4.5-only consumers; avoid saving the file from an older Blender version unless explicitly required."
+    }
+  ]
+}
