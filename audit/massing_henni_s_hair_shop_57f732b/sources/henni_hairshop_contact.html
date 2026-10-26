@@ -1,0 +1,249 @@
+<!-- 
+    ============================================
+    HENNI'S HAIRSHOP - CONTACT PAGE
+    ============================================
+    
+    This page provides contact information and a map for Henni's Hairshop.
+    
+    LAST UPDATED: 2025-07-07
+    
+    NOTES:
+    - This page includes business hours, contact info, and an embedded Google Map
+    - The contact form will be added later via Google Forms or Clover integration
+    - Update the Google Maps iframe src if the business location changes
+    ============================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Henni's Hairshop - Find our location, business hours, and contact information. We're here to answer your questions.">
+    
+    <!-- Page Title -->
+    <title>Contact Us - Henni's Hairshop</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/hennishairshop-icon.png">
+    <link rel="shortcut icon" type="image/png" href="../assets/images/hennishairshop-icon.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        .contact-form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            height: 960px;
+            background-color: #f8f8f8;
+        }
+
+        .contact-form-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .contact-info {
+            text-align: center;
+        }
+        
+        .contact-info h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-details {
+            margin: 2rem 0;
+        }
+        
+        .contact-details p {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+        
+        .map-container {
+            height: 300px;
+            margin-top: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .form-note {
+            background-color: #f8f8f8;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        @media (min-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr 1fr;
+                align-items: start;
+            }
+            
+            .contact-info {
+                text-align: left;
+                position: sticky;
+                top: 100px;
+            }
+        }
+    </style>
+</head>
+<body class="contact">
+    <!-- 
+        MAIN HEADER SECTION
+        Consistent with other pages for navigation consistency.
+        The 'active' class highlights the current page in the navigation.
+    -->
+    <header>
+        <div class="container">
+            <!-- Logo - Links back to homepage -->
+            <div class="logo">
+                <a href="/" aria-label="Return to Homepage">
+                    <img src="../assets/images/hennishairshop-logo.png" alt="Henni's Hairshop Logo" style="max-height: 60px;">
+                </a>
+            </div>
+            
+            <!-- Main Navigation -->
+            <nav>
+                <ul>
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="../about/" class="nav-link">About</a></li>
+                    <li><a href="../contact/" class="nav-link active">Contact</a></li>
+                    <li><a href="https://hennishairshop.bookedby.com/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 
+        MAIN CONTENT AREA
+        Contains the contact page specific content.
+        The padding-top ensures content isn't hidden behind the fixed header.
+    -->
+    <main>
+        <!-- Page Header Section -->
+        <section class="page-hero">
+            <h1>Get In Touch</h1>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section class="contact-container">
+            <div class="contact-info">
+                <h2>Visit Us</h2>
+                <div class="contact-details">
+                    <p><strong>Address:</strong><br>
+                    121 Northwestern Avenue<br>
+                    West Lafayette, IN 47906</p>
+                    
+                    <p><strong>Phone:</strong> <a href="tel:765-743-3121">(765) 743-3121</a></p>
+                    
+                    <p><strong>Email:</strong> <a href="mailto:hennishairshop@gmail.com">hennishairshop@gmail.com</a></p>
+                    
+                    <p><strong>Hours:</strong><br>
+                    Please see our <a href="https://hennishairshop.bookedby.com/" target="_blank" rel="noopener noreferrer">Booking Portal</a> for hours.</p>
+                </div>
+                
+                <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.2869737834935!2d-86.9081051!3d40.424644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8812e2aeb90badd7%3A0x7f54f3d4ee5fe92!2sHenni&#39;s%20Hairshop!5e0!3m2!1sen!2sus!4v1751581479797!5m2!1sen!2sus"
+                    allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <div class="form-note">
+                    <p><strong>Attention Potential Stylists:</strong><br>
+                    We're always looking for talented stylists to join our team! Please use this form to introduce yourself and share your experience.
+                    Please include your experience and availability when contacting us about employment opportunities.</p>
+                </div>
+                
+                <!-- 
+                    FORM INTEGRATION NOTE:
+                    
+                    A contact form will be integrated here using either:
+                    1. Google Forms, or
+                    2. A Clover 3rd-party integration
+                    
+                    The form will include fields for:
+                    - Name
+                    - Email
+                    - Phone
+                    - Message
+                    - Special note for potential stylists
+                    
+                    For now, we're using a simple email/phone contact method.
+                -->
+                <div style="background-color: #f8f8f8; padding: 2rem; border-radius: 8px; text-align: center;">
+                    <p>Please email us at <a href="mailto:hennishairshop@gmail.com">hennishairshop@gmail.com</a> or call us at <a href="tel:765-743-3121">(765) 743-3121</a>.</p>
+                </div>
+            </div>
+        </section>
+        <section class="contact-form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdTW_KwzoCUhfmHIr9JLZuWNO6NqYcuYopDA2pKvus_FTy-5w/viewform?embedded=true" width="640" height="3481" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+    </main>
+
+    <!-- 
+        FOOTER SECTION
+        Consistent with other pages.
+        The year is automatically updated via JavaScript.
+    -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="current-year">2025</span> Henni's Hairshop. All rights reserved.</p>
+            <!-- 
+                YEAR UPDATE NOTE:
+                The year is automatically updated by JavaScript in ../assets/js/main.js
+                No need to manually update it here.
+            -->
+        </div>
+    </footer>
+
+    <!-- 
+        JAVASCRIPT FILES
+        - main.js: Handles dynamic elements like the copyright year update
+        - Path is relative to this file's location
+    -->
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

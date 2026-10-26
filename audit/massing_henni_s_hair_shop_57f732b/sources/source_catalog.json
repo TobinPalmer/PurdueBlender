@@ -1,0 +1,68 @@
+{
+  "asset_id": "massing_henni_s_hair_shop_57f732b",
+  "retrieved_utc": "2026-10-26",
+  "sources": [
+    {
+      "file": "osm_way_116427257_raw.json",
+      "provider": "OpenStreetMap, via the repository's Overpass snapshot",
+      "url": "https://www.openstreetmap.org/way/116427257",
+      "feature_id": "way 116427257",
+      "tags": {"name": "Henni's Hair Shop", "shop": "hairdresser", "building": "yes"},
+      "source_date": "2026-10-22T03:45:50Z (snapshot timestamp)",
+      "source_crs": "EPSG:4326 / WGS 84",
+      "measurement_method": "Four footprint vertices transformed using the repository conversion X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040; compared with the existing massing lower ring.",
+      "uncertainty": "OpenStreetMap is not a survey and provides no height. Footprint only describes the mapped exterior plan."
+    },
+    {
+      "file": "osm_northwestern_avenue_way_860910537_raw.json",
+      "provider": "OpenStreetMap, via the repository's Overpass roads snapshot",
+      "url": "https://www.openstreetmap.org/way/860910537",
+      "feature_id": "way 860910537, Northwestern Avenue",
+      "source_date": "2026-10-22T03:46:51Z (snapshot timestamp)",
+      "source_crs": "EPSG:4326 / WGS 84",
+      "measurement_method": "Transformed roadway nodes using the project conversion and compared with the building's east wall; roadway runs roughly north-south at this frontage.",
+      "uncertainty": "Street centerline is not a parcel or facade survey."
+    },
+    {
+      "file": "henni_hairshop_contact.html",
+      "provider": "Henni's Hairshop, official business website",
+      "url": "https://hennishairshop.com/contact/",
+      "feature_id": "Business contact page",
+      "source_date": "Retrieved 2026-10-26; page copyright 2025",
+      "source_crs": "Not applicable",
+      "measurement_method": "Confirms the current salon address as 121 Northwestern Avenue, West Lafayette.",
+      "uncertainty": "Address alone does not prove a particular footprint or height."
+    },
+    {
+      "file": "henni_hairshop_home.html",
+      "provider": "Henni's Hairshop, official business website",
+      "url": "https://hennishairshop.com/",
+      "feature_id": "Business home page",
+      "source_date": "Retrieved 2026-10-26; page copyright 2025",
+      "source_crs": "Not applicable",
+      "measurement_method": "Confirms business identity and proximity to Purdue.",
+      "uncertainty": "No geometry, dimensions or facade imagery on the saved page."
+    },
+    {
+      "file": "henni_hairshop_storefront.jpg",
+      "provider": "Niwenn user-contributed post; linked image hosted by CloudFront",
+      "url": "https://d2x9eo1fkrbkyw.cloudfront.net/original/2X/d/d661e71d830f1605c79bb28bfcbe3a8e05902866.jpeg",
+      "page_url": "https://niwenn.com/t/topic/3602",
+      "feature_id": "Image captioned Henni's Hairshop storefront; page post dated 2022-03-25",
+      "source_date": "2022-03-25 post date; photo capture date not known",
+      "source_crs": "Not applicable; oblique street photograph",
+      "measurement_method": "Visual evidence of a two-level corner storefront: gray brick base, light horizontal upper siding, large glazed shopfront, black awning wrapping a corner, and projecting shop sign.",
+      "uncertainty": "Image is not a measured elevation; exact camera direction, facade dimensions, material details and current condition are unknown. Page was crawled in 2026 but its URL returned 404 when checked locally; the direct image URL was accessible and saved."
+    },
+    {
+      "file": "master_building_audit.csv (repository reference)",
+      "provider": "Purdue Blender repository review ledger",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": "No exact official Purdue building match recorded for this asset",
+      "source_date": "Ledger source reference dated 2026-10-22",
+      "source_crs": "GIS service layer CRS per service metadata; not used for the model geometry",
+      "measurement_method": "Recorded no official-code/exact-name match for the asset; retained OSM named outline and address evidence instead.",
+      "uncertainty": "An official Purdue campus building polygon is unavailable in the existing reference layer for this off-campus storefront."
+    }
+  ]
+}

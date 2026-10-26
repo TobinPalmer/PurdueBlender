@@ -1,0 +1,60 @@
+{
+  "asset_id": "massing_henni_s_hair_shop_57f732b",
+  "assignment": "Rossen",
+  "asset_path": "modular/buildings/massing_henni_s_hair_shop_57f732b.blend",
+  "collection": "Asset_massing_henni_s_hair_shop_57f732b",
+  "scene": "Building_massing_henni_s_hair_shop_57f732b",
+  "identity": {
+    "asset_name": "Henni's Hair Shop",
+    "confirmed_by": ["official business contact page: 121 Northwestern Avenue", "OpenStreetMap way 116427257 named Henni's Hair Shop and tagged shop=hairdresser"],
+    "confidence": "High identity confidence; exact feature and official business address agree."
+  },
+  "provenance": "Source URLs, providers, snapshot dates, source CRS, methods, and uncertainty are detailed in sources/source_catalog.json. Raw snapshots include the named OSM way and mapped Northwestern Avenue segment. The storefront image is saved locally with its source URL and 2022 post date recorded.",
+  "before": {
+    "object_count": 1,
+    "bounds_world_m": [[462.378937,474.218506],[-309.579529,-303.017059],[0.0,16.0]],
+    "geometry": "Simple 4-corner extruded shell; 16 m height had no height source."
+  },
+  "after": {
+    "object_count": 1,
+    "collection_object": "Henni's Hair Shop",
+    "mesh_vertices": 6964,
+    "mesh_faces": 5143,
+    "structural_footprint_xy_bounds_m": [[462.379,474.219],[-309.580,-303.017]],
+    "overall_bounds_xyz_m": [[462.272,474.831],[-310.076,-302.957],[0.0,8.38]],
+    "modifiers": 0,
+    "external_image_paths": [],
+    "linked_libraries": []
+  },
+  "placement_and_plan": {
+    "footprint_source": "OpenStreetMap way 116427257, retained from the repository snapshot dated 2026-10-22.",
+    "method": "Four source vertices were transformed from EPSG:4326 with the documented Purdue local conversion; the structural bottom ring preserves these coordinates.",
+    "match": "Maximum nearest-vertex distance is 0.000525 m and mean is 0.000382 m, due to source/output coordinate precision.",
+    "orientation": "No rotation or translation applied. The asset's east short face is nearest the mapped Northwestern Avenue line and was modeled as the storefront face; photo orientation itself is not georeferenced.",
+    "uncertainty": "Purdue's reviewed official BuildingShapesZip4 reference has no exact-name/code match for this off-campus shop. The OSM footprint is the sole saved building polygon."
+  },
+  "vertical_geometry": {
+    "observed_levels": "Two distinct exterior levels are visible in the 2022 storefront photo.",
+    "height_m": 8.38,
+    "height_status": "Estimated, not measured. Height is a conservative two-floor interpretation and roof parapet from the photograph. No survey, section, or reliable published elevation was found.",
+    "roof": "Flat, dark roof/parapet, simplified from the photograph; exact roofline is not fully visible."
+  },
+  "facade": {
+    "photo_supported_features": ["gray brick lower storefront", "light horizontal upper siding", "large ground-floor glazing", "black wrapping awning", "projecting Henni sign"],
+    "modeling_status": "Generalized facades with a centered entrance, display windows and upper windows. Exact window size/rhythm, wall material boundaries, sign dimensions, branding placement on side walls and hidden elevations remain approximate."
+  },
+  "edits": [
+    "Preserved the original four-corner OSM footprint and campus placement.",
+    "Reduced unsupported 16 m extrusion to an 8.38 m visual estimate for the two-level storefront.",
+    "Added lower gray masonry storefront, upper light siding, display glazing, upper sash windows, wrapped black awning, projecting sign lettering and a flat roof cap.",
+    "Removed unused image-texture datablocks and joined geometry into the expected single export mesh."
+  ],
+  "validation": {
+    "reopen": "Passed: saved asset reopened; expected scene, collection, and one object found.",
+    "footprint": "Passed against named OSM source: max transformed vertex error 0.000525 m.",
+    "export": "Passed: exact expected collection and one mesh object; no modifiers, external images, or linked libraries.",
+    "render": "Rendered and visually inspected audit/massing_henni_s_hair_shop_57f732b/renders/henni_hair_shop_facade.png.",
+    "unresolved": ["Building height is unmeasured.", "Facade photo is oblique and cannot establish all elevations or exact orientation.", "No matching official building outline was found in the local Purdue reference layer."]
+  },
+  "independent_grade": "Pending separate evaluator review."
+}

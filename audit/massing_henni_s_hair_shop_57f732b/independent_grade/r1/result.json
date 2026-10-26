@@ -1,0 +1,248 @@
+{
+  "score": 8.2,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 1.8,
+      "max_points": 2,
+      "status": "strong but OSM-only footprint evidence",
+      "reason": "The named OSM way 116427257 is tagged building=yes/shop=hairdresser/name=Henni’s Hair Shop; the official contact page independently lists 121 Northwestern Avenue. The four transformed way vertices match the base-shell vertices closely. No official campus footprint match or survey is available, so source authority/positional accuracy remain bounded by OSM."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 1.8,
+      "max_points": 2,
+      "status": "verified against mapped footprint; not independently surveyed",
+      "reason": "Direct saved-mesh z=0 vertex inspection finds a one-to-one maximum residual of 0.000515 m and mean 0.000372 m against the four source nodes after the documented project transform. OSM polygon area is 74.92 m²; edge lengths are 11.80 m, 11.73 m, 6.47 m, 6.26 m. Northwestern Avenue centerline and east-facing frontage are consistent, but the same OSM data drives the model and there is no independent survey/geodetic check."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.0,
+      "max_points": 2,
+      "status": "partially supported; height and roof uncertain",
+      "reason": "The 2022 oblique storefront image visibly supports two exterior levels. The 8.38 m total height and flat parapet are estimates only; the photo crops the roof and gives no measured vertical datum, section, or elevation. The evaluator does not treat the modeled height as verified."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 1.8,
+      "max_points": 2,
+      "status": "photo-backed composition with schematic details",
+      "reason": "The storefront photo directly shows gray masonry at the ground level, light horizontal upper siding, broad shopfront glazing, a black awning wrapping the corner, a projecting Henni sign, and an upper sash window. The model represents these features, including a door and sign text; exact opening sizes, door position, complete elevations, and georeferenced photo orientation are not established."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 1.8,
+      "max_points": 2,
+      "status": "export collection portable; minor scene clutter",
+      "reason": "Direct Blender reopen confirms expected scene `Building_massing_henni_s_hair_shop_57f732b`, one expected collection with one mesh object, no mesh modifiers, external libraries, or image datablocks. There is also a review camera outside the asset collection in the saved scene, so the scene itself contains a non-export camera. Raw OSM and storefront source snapshots, catalog, evidence record, reopen validation, and a preview render are present."
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/massing_henni_s_hair_shop_57f732b.blend",
+    "direct_reopen": {
+      "reopened_file": "modular/buildings/massing_henni_s_hair_shop_57f732b.blend",
+      "scene": "Building_massing_henni_s_hair_shop_57f732b",
+      "scenes": [
+        "Building_massing_henni_s_hair_shop_57f732b"
+      ],
+      "collections": [
+        {
+          "name": "Asset_massing_henni_s_hair_shop_57f732b",
+          "objects": [
+            "Henni's Hair Shop"
+          ]
+        }
+      ],
+      "objects": [
+        {
+          "name": "Review camera",
+          "type": "CAMERA",
+          "matrix_world": [
+            [
+              0.7772448062896729,
+              -0.2728041410446167,
+              0.566981852054596,
+              485.29998779296875
+            ],
+            [
+              0.6291983127593994,
+              0.3369933068752289,
+              -0.7003891468048096,
+              -327.29998779296875
+            ],
+            [
+              -3.1361512498051525e-08,
+              0.9011178612709045,
+              0.43357419967651367,
+              17.100000381469727
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "name": "Henni's Hair Shop",
+          "type": "MESH",
+          "matrix_world": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "vertices": 6964,
+          "faces": 5143,
+          "evaluated_vertices": 6964,
+          "evaluated_faces": 5143,
+          "dimensions_local": [
+            12.558868408203125,
+            7.1190185546875,
+            8.380000114440918
+          ],
+          "bounds_world_m": [
+            [
+              462.2721252441406,
+              474.83099365234375
+            ],
+            [
+              -310.07598876953125,
+              -302.95697021484375
+            ],
+            [
+              0.0,
+              8.380000114440918
+            ]
+          ],
+          "modifiers": [],
+          "material_slots": [
+            "Cool gray brick storefront",
+            "Warm white horizontal siding",
+            "Dark flat roof",
+            "Siding grooves",
+            "Blue gray storefront glazing",
+            "Dark metal window frames",
+            "Black metal shop awning",
+            "Cream shop sign panel",
+            "Light sign lettering"
+          ],
+          "base_vertices_z0_unique_xy": [
+            [
+              462.378998,
+              -309.490997
+            ],
+            [
+              462.489014,
+              -303.016998
+            ],
+            [
+              474.175995,
+              -309.579987
+            ],
+            [
+              474.189423,
+              -306.89502
+            ],
+            [
+              474.195831,
+              -305.965057
+            ],
+            [
+              474.218994,
+              -303.316986
+            ],
+            [
+              474.24942,
+              -306.895447
+            ],
+            [
+              474.255829,
+              -305.965454
+            ]
+          ]
+        }
+      ],
+      "linked_libraries": [],
+      "images": [],
+      "materials": [
+        "Black metal shop awning",
+        "Blue gray storefront glazing",
+        "Cool gray brick storefront",
+        "Cream shop sign panel",
+        "Dark flat roof",
+        "Dark metal window frames",
+        "Light sign lettering",
+        "Siding grooves",
+        "Warm white horizontal siding"
+      ]
+    },
+    "OSM_source_id": "way/116427257",
+    "OSM_tags": {
+      "building": "yes",
+      "name": "Henni's Hair Shop",
+      "shop": "hairdresser"
+    },
+    "OSM_snapshot_timestamp": "2026-10-22T03:45:50Z",
+    "source_crs": "EPSG:4326 / WGS 84",
+    "project_transform": "X=(lon+86.9137)*84810.604165; Y=(lat-40.4274)*111040.0; approximate local coordinates, not surveyed.",
+    "source_polygon_area_m2": 74.92477998088457,
+    "source_edge_lengths_m": [
+      11.797489484831972,
+      6.2627995642200585,
+      11.733137565436353,
+      6.474570809507508
+    ],
+    "model_to_source_vertex_residuals_m": [
+      0.0003157933965386598,
+      0.00047614908807054856,
+      0.000515454353028427,
+      0.00018211788208104902
+    ],
+    "business_address_confirmed_in_saved_official_page": true,
+    "render_path": "audit/massing_henni_s_hair_shop_57f732b/renders/henni_hair_shop_facade.png",
+    "source_catalog": "audit/massing_henni_s_hair_shop_57f732b/sources/source_catalog.json",
+    "evidence_record": "audit/massing_henni_s_hair_shop_57f732b/evidence_record.json"
+  },
+  "findings": [
+    {
+      "severity": "uncertainty",
+      "finding": "Height is an 8.38 m estimate and the roofline is not visible in the saved oblique photo.",
+      "action": "Retain as estimated unless a measured elevation, permit drawing, or suitable orthogonal image becomes available."
+    },
+    {
+      "severity": "uncertainty",
+      "finding": "The footprint comes from a named OSM way and matches the asset precisely, but there is no independent authoritative wall survey; the photoreference is not georeferenced.",
+      "action": "For stricter survey-grade placement, compare with a city/county building polygon or georeferenced orthophoto when obtainable."
+    },
+    {
+      "severity": "minor",
+      "finding": "The reopened scene contains a review camera outside the single-object export collection.",
+      "action": "It does not affect collection-instance export; remove it only if a clean scene-level library is required."
+    }
+  ]
+}
