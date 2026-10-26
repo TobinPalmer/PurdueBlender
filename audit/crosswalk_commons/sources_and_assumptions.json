@@ -1,0 +1,79 @@
+{
+  "building_id": "massing_crosswalk_commons_7c01ecd",
+  "building_name": "Crosswalk Commons",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "OpenStreetMap API",
+      "url": "https://api.openstreetmap.org/api/0.6/way/231217849/full.json",
+      "feature_identifier": "way 231217849",
+      "source_timestamp": "2022-06-15T05:20:14Z",
+      "source_crs": "WGS 84 / EPSG:4326",
+      "snapshot": "osm_way_231217849_full.json",
+      "identity_fields": {
+        "name": "Crosswalk Commons",
+        "addr:housenumber": "925",
+        "addr:street": "Hilltop Drive",
+        "addr:city": "West Lafayette",
+        "addr:postcode": "47906"
+      },
+      "measurement_method": "Closed 14-vertex OSM building outline; vertices transformed into the project's local approximate campus XY coordinates using the documented meters conversion.",
+      "footprint_area_m2_approx": 1023.705,
+      "projected_bounds_xy_m": [[-864.262462, -798.924372], [788.073088, 815.888608]],
+      "uncertainty": "Mapped crowd-sourced footprint, not a survey; local project conversion is approximate. Supports horizontal outline and identity, not vertical geometry or facade details."
+    },
+    {
+      "provider": "Crosswalk Project, Inc. / Crosswalk Commons official website",
+      "url": "https://crosswalkcommons.com/contact-on-campus-housing-west-lafayette/",
+      "feature_identifier": "Property contact page / 925 Hilltop Drive",
+      "source_date": "Retrieved 2026-10-26; page copyright 2026",
+      "source_crs": "Not spatial data",
+      "snapshot": "sources/crosswalkcommons_home_2026-10-26.html",
+      "measurement_method": "Address and residential program description transcribed from property operator site.",
+      "uncertainty": "Identity and program only; no dimensions, floor count, orientation, or facade survey."
+    },
+    {
+      "provider": "Crosswalk Project, Inc. / Crosswalk Commons official image gallery",
+      "url": "https://crosswalkcommons.com/gallery/",
+      "feature_identifier": "Exterior stills 1-4",
+      "source_date": "Gallery copyright 2023; individual photo dates unknown",
+      "source_crs": "Not spatial data",
+      "snapshots": [
+        "exterior_stills_1_2023.jpg",
+        "exterior_stills_2_2023.jpg",
+        "exterior_stills_3_2023.jpg",
+        "exterior_stills_4_2023.jpg"
+      ],
+      "measurement_method": "Visual inspection for apparent storeys, roof silhouette, broad material zones, entry mass, glazing and window rhythm.",
+      "uncertainty": "Photographs are perspective views and are not dimensioned elevations; precise dimensions and facade orientation/entry geolocation are unverified."
+    },
+    {
+      "provider": "Tippecanoe County, Indiana",
+      "url": "https://www.tippecanoe.in.gov/DocumentCenter/View/39966/Hi-ViNE---West-Lafayette",
+      "feature_identifier": "PDF p. 19, campus-proximate apartment complex table",
+      "source_date": "Report includes 2023 market data; page shows Crosswalk Commons year 2013",
+      "source_crs": "Not spatial data",
+      "snapshot": "sources/tippecanoe_county_housing_market_report_2023.pdf (p. 19)",
+      "measurement_method": "Identity cross-check against name, address, development year and unit/bed count.",
+      "uncertainty": "Does not support model dimensions, height, footprint or facade design."
+    },
+    {
+      "provider": "Design Collaborative",
+      "url": "https://designcollaborative.com/dc-project/purdue-university-crosswalk-commons/",
+      "feature_identifier": "Purdue University – Crosswalk Commons project page",
+      "source_date": "Retrieved by browser 2026-10-26; page date not stated",
+      "source_crs": "Not spatial data",
+      "measurement_method": "Project and program cross-check; page describes student housing, community gathering spaces, and West Lafayette location.",
+      "uncertainty": "Not dimensioned; direct local HTML request returned HTTP 403, so no raw HTML snapshot is represented as saved."
+    }
+  ],
+  "model_assumptions": {
+    "floor_count": "Three visible levels interpreted from official operator exterior photographs; estimated, not independently documented in an elevation drawing.",
+    "overall_roof_height_m": 9.5,
+    "height_status": "Estimated from three visible levels, not a measured elevation.",
+    "roof": "Simple flat roof/parapet; rooftop plant and fine roof geometry not visible in available imagery.",
+    "entrance": "Stone portal and dark canopy included; exact side and location are not georeferenced and remain approximate.",
+    "facade": "Broad siding, brick, stone, dark fascia, and glazed areas follow official gallery photographs; detailed dimensions and orientation remain unverified.",
+    "placement": "Keeps the source OSM ring in the repository campus coordinate frame; no campus relocation made."
+  }
+}
