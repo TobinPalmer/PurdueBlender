@@ -10,11 +10,15 @@
     "levels": 1,
     "north_main_roof_height_m": 4.036,
     "south_addition_roof_height_m": 5.166,
+    "south_addition_slope_percent_xy": [
+      -1.484,
+      -4.159
+    ],
     "roof_thickness_m": 0.12,
-    "status": "median normalized roof heights from 2018 Tippecanoe NDHM (5-ft grid); see source statistics and unit method"
+    "status": "North roof held at its normalized-height median; south addition uses a reproducible low-slope plane fitted to 2018 NDHM spatial-bin medians. Both are representative roof-surface estimates, not surveyed eaves."
   },
-  "facade": "Neutral unfenestrated envelope; current facade and entrances unverified because no dated exterior imagery or elevations were found.",
-  "roof": "The 2023 orthophoto identifies the light north/main and darker south roof zones. The 2018 NDHM supports separate median roof heights for those zones; each zone is represented by a level plane at its median, while within-zone pitch and profile remain unresolved.",
+  "facade": "Neutral unfenestrated envelope; the official Purdue Historic Facilities AHF record has no attached image and no AHF-specific public elevation, plan, or identifiable street-level exterior was found in the documented search. Facade and entrances remain unverified.",
+  "roof": "The 2023 orthophoto identifies light north/main and darker south roof zones. A 2018 NDHM fit across four spatial bin sizes shows no stable north/main slope, so it remains at its 4.036 m median; the south zone has a stable approximately -4.0% Y trend and is modeled as a low-slope plane. This is a normalized surface trend, not a surveyed roof profile; eaves and framing remain unresolved.",
   "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png",
   "owner": "Rossen",
   "date_built": "2026-10-25",
@@ -101,6 +105,16 @@
       "retrieved": "2026-10-25",
       "measurement_method": "Public indexed record queried by exact building name; image_url field inspected.",
       "uncertainty": "Record has no linked image. Absence from public index does not rule out uncatalogued/restricted archival materials."
+    },
+    {
+      "provider": "Purdue Libraries and Archives, Campus Facilities and Buildings Historic Database, AHF detail record 294",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/294",
+      "snapshot": "audit/animal_holding_facility/sources/purdue_historic_facilities_ahf_detail_2026-10-25.json",
+      "search_note": "audit/animal_holding_facility/sources/ahf_facade_source_search_2026-10-25.json",
+      "retrieved": "2026-10-25",
+      "source_date": "AHF history record; current phase 2001-present, reported area 24,687 sq ft",
+      "measurement_method": "Identity/history cross-check; record phases have empty images arrays and image_url is null. Reported current-phase area converts to about 2,293.50 m², 0.59% above the Purdue GIS polygon area of 2,280.05 m².",
+      "uncertainty": "Area conventions are unspecified and this is only a plausibility cross-check. The public record's lack of attached images does not establish that no uncatalogued or restricted facade evidence exists."
     }
   ],
   "identity_and_placement": {
@@ -155,8 +169,8 @@
     "Extrution_raw": 12,
     "R_raw": 12.5,
     "field_semantics": "GIS metadata gives field names and numeric types only, no vertical units or datum.",
-    "model_height_m": 5.166,
-    "status": "2018 NDHM median normalized roof heights measured on a 5-ft grid; representative zone planes remain approximations.",
+    "model_height_m": 5.999,
+    "status": "North/main roof is held at its 2018 NDHM median; south addition uses the robust Y trend from 2018 NDHM spatial-bin medians. These are representative normalized roof surfaces, not surveyed eaves.",
     "ndhm_roof_heights": {
       "north_main": {
         "pixel_count": 614,
@@ -171,7 +185,13 @@
         "iqr_m": 0.683
       }
     },
-    "roof": "2018 NDHM supports median normalized heights of 4.036 m north/main and 5.166 m south addition; 2023 orthophoto supports their plan-zone split. Within-zone slopes, eave form, and exact seam remain unresolved.",
+    "ndhm_roof_profile": {
+      "analysis": "audit/animal_holding_facility/ndhm_roof_profile_analysis.json",
+      "north_main": "614 samples; regression slopes range -0.029% to -0.831% Y over 2.5–10 m bins, with marginal or inconsistent residual improvement; retained flat at median 4.036 m.",
+      "south_addition": "359 samples; Y slope ranges -4.022% to -4.752% across 2.5–10 m bins. At 5 m bins, plane median absolute residual is 0.060 m versus 0.381 m for a flat median surface. Modeled XY slopes are -1.484% X and -4.159% Y.",
+      "limitation": "Surface trend is not an eave survey; local ground normalization, rooftop objects, grid resolution, and zone-boundary uncertainty may contribute."
+    },
+    "roof": "2018 NDHM supports median normalized heights of 4.036 m north/main and 5.166 m south addition; 2023 orthophoto supports their plan-zone split. The south addition's stable broad Y trend is modeled, while structural eaves, framing, and exact seam remain unresolved.",
     "facade": "Neutral unfenestrated envelope; current facade and entrances remain unverified."
   },
   "geometry_edits": [
@@ -179,8 +199,8 @@
     "Extruded one diagrammatic level to 4.4 m plus 0.4 m cap; vertical dimensions are estimates.",
     "Preserved manifest stable ID, scene, collection, object name, and campus coordinate frame.",
     "Split the roof surface into two georeferenced material zones matching the light north/main roof and darker south roof visible in 2023 Indiana imagery; no unsupported roof elevations or facade details were added.",
-    "Split the roof surface into two georeferenced zones matching the 2023 orthophoto, and set each zone to its 2018 NDHM median height (4.036 m north/main; 5.166 m south addition); no facade detail was inferred.",
-    "Added perimeter faces to both roof slabs so the exported roof volumes are closed; reopened in Blender 4.5.15 and verified zero boundary or non-manifold edges."
+    "Added perimeter faces to both roof slabs so the exported roof volumes are closed; reopened in Blender 4.5.15 and verified zero boundary or non-manifold edges.",
+    "Split the roof surface into two georeferenced zones matching the 2023 orthophoto; held the north at its 2018 NDHM median and fit a low-slope south plane to 2018 NDHM spatial-bin medians (four bin sizes reproduce a -4.0% to -4.8% Y trend); no facade detail was inferred."
   ],
   "validation": {
     "blender_version": "4.5.15 LTS",
@@ -200,15 +220,15 @@
       ],
       [
         0.0,
-        5.166
+        5.999
       ]
     ],
     "portable_material_images": "PASS: no external image dependencies.",
     "footprint_overlay": "audit/animal_holding_facility/footprint_comparison.svg",
     "footprint_metrics": "audit/animal_holding_facility/footprint_comparison.json",
     "roof_zone_preview": "audit/animal_holding_facility/roof_zones_topdown.png",
-    "roof_segmentation": "Top surface split into light north/main and dark south zones using the 2023 orthophoto; each level comes from the corresponding 2018 NDHM median.",
-    "ndhm_height_samples": "PASS: 614 valid north/main and 359 valid south-addition cells sampled from the official 2018 5-ft Tippecanoe NDHM; median planes are 4.036 m and 5.166 m above ground. See ndhm_roof_height_statistics.json.",
+    "roof_segmentation": "Top surface split into light north/main and dark south zones using the 2023 orthophoto; the north uses its 2018 NDHM median, and the south uses a fitted low-slope surface whose median is centered on its 2018 NDHM median.",
+    "ndhm_height_samples": "PASS: 614 valid north/main and 359 valid south-addition cells sampled from the official 2018 5-ft Tippecanoe NDHM; zone medians are 4.036 m and 5.166 m above ground. Four bin-size fits show stable -4.0% to -4.8% south Y trend and no stable north trend. See ndhm_roof_height_statistics.json and ndhm_roof_profile_analysis.json.",
     "mesh_topology": {
       "method": "Reopened the saved .blend and evaluated the mesh edge manifold and boundary flags with Blender BMesh.",
       "non_manifold_edges": 0,

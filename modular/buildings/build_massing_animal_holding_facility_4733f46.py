@@ -33,6 +33,11 @@ assert len(points) == 16 and ring[0] == ring[-1], (len(points), ring[0], ring[-1
 NDHM_STATS = json.loads((OUT / "ndhm_roof_height_statistics.json").read_text(encoding="utf-8"))
 NORTH_TOP = NDHM_STATS["zones"]["north_main"]["median_m"]
 SOUTH_TOP = NDHM_STATS["zones"]["south_addition"]["median_m"]
+PROFILE = json.loads((OUT / "ndhm_roof_profile_analysis.json").read_text(encoding="utf-8"))
+SOUTH_PROFILE = PROFILE["zones"]["south_addition"]
+SOUTH_ANCHOR_X, SOUTH_ANCHOR_Y = SOUTH_PROFILE["plane_anchor_local_xy_m"]
+SOUTH_ANCHOR_Z = SOUTH_PROFILE["plane_anchor_height_m"]
+SOUTH_SLOPE_X, SOUTH_SLOPE_Y, _ = SOUTH_PROFILE["plane_coefficients_local_z_equals_ax_plus_by_plus_c"]
 ROOF_THICKNESS = 0.12
 ROOF_ZONE_Y = -996.7429296393766  # row 817 of the georeferenced 2023 ortho transformed to local campus XY
 WALL_THICKNESS = 0.28
@@ -90,8 +95,29 @@ def orthophoto_pixel(x, y):
     return ((merc_x - extent[0]) / (extent[2] - extent[0]) * 1200,
             (extent[3] - merc_y) / (extent[3] - extent[1]) * 1500)
 
-def roof_top_at(y):
-    return NORTH_TOP if y >= ROOF_ZONE_Y else SOUTH_TOP
+def roof_height_at(x, y):
+    if y >= ROOF_ZONE_Y:
+        return NORTH_TOP
+    return SOUTH_ANCHOR_Z + SOUTH_SLOPE_X * (x - SOUTH_ANCHOR_X) + SOUTH_SLOPE_Y * (y - SOUTH_ANCHOR_Y)
+
+def add_edge_prism(a, b, width, low_a, low_b, high_a, high_b, material_index):
+    """Create a closed wall/edge strip whose upper and lower edges may slope."""
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    length = math.hypot(dx, dy)
+    tangent = (dx / length, dy / length)
+    normal = (-tangent[1], tangent[0])
+    base = len(verts)
+    for point, low, high, side in ((a, low_a, high_a, -1),
+                                   (b, low_b, high_b, -1),
+                                   (b, low_b, high_b, 1),
+                                   (a, low_a, high_a, 1)):
+        ox, oy = normal[0] * width * side / 2, normal[1] * width * side / 2
+        verts.extend(((point[0] + ox, point[1] + oy, low),
+                      (point[0] + ox, point[1] + oy, high)))
+    for face in ((0, 2, 3, 1), (6, 7, 5, 4), (0, 1, 7, 6),
+                 (2, 4, 5, 3), (0, 6, 4, 2), (1, 3, 5, 7)):
+        faces.append(tuple(base + i for i in face))
+        face_materials.append(material_index)
 
 def clip_at_y(poly, limit, keep_north):
     """Clip a simple outline at the measured roof-zone boundary."""
@@ -121,22 +147,22 @@ for i, p0 in enumerate(points):
         tangent = (dx / length, dy / length)
         normal = (-tangent[1], tangent[0])
         mid = ((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
-        top = roof_top_at(mid[1])
-        eave = top - ROOF_THICKNESS
-        add_box((mid[0], mid[1], eave / 2), (tangent, normal),
-                (length + 0.02, WALL_THICKNESS, eave), 0)
-        add_box((mid[0], mid[1], eave + ROOF_THICKNESS / 2), (tangent, normal),
-                (length + 0.02, 0.36, ROOF_THICKNESS), 3)
+        top_a = roof_height_at(a[0], a[1])
+        top_b = roof_height_at(b[0], b[1])
+        eave_a, eave_b = top_a - ROOF_THICKNESS, top_b - ROOF_THICKNESS
+        add_edge_prism(a, b, WALL_THICKNESS, 0.0, 0.0, eave_a, eave_b, 0)
+        add_edge_prism(a, b, 0.36, eave_a, eave_b, top_a, top_b, 3)
 
-def add_roof_region(region, top_z, top_material):
+def add_roof_region(region, roof_height, top_material):
     if len(region) < 3:
         return
     region_2d = [[Vector((x, y, 0.0)) for x, y in region]]
     region_triangles = tessellate_polygon(region_2d)
     base = len(verts)
     count = len(region)
-    verts.extend((x, y, top_z) for x, y in region)
-    verts.extend((x, y, top_z - ROOF_THICKNESS) for x, y in region)
+    top_heights = [roof_height(x, y) for x, y in region]
+    verts.extend((x, y, z) for (x, y), z in zip(region, top_heights))
+    verts.extend((x, y, z - ROOF_THICKNESS) for (x, y), z in zip(region, top_heights))
     for tri in region_triangles:
         faces.append(tuple(base + i for i in tri))
         face_materials.append(top_material)
@@ -151,8 +177,8 @@ def add_roof_region(region, top_z, top_material):
 
 north_region = clip_at_y(points, ROOF_ZONE_Y, True)
 south_region = clip_at_y(points, ROOF_ZONE_Y, False)
-add_roof_region(north_region, NORTH_TOP, 1)
-add_roof_region(south_region, SOUTH_TOP, 2)
+add_roof_region(north_region, lambda x, y: NORTH_TOP, 1)
+add_roof_region(south_region, roof_height_at, 2)
 
 # The lidar medians show a roof-level step at the orthophoto-derived boundary.
 # Represent its vertical transition as a simple partition without facade detail.
@@ -165,11 +191,11 @@ for i, a in enumerate(points):
 if len(crossings) == 2:
     crossings.sort()
     x1, x2 = crossings[0][0], crossings[1][0]
-    lower_eave = min(NORTH_TOP, SOUTH_TOP) - ROOF_THICKNESS
-    upper_eave = max(NORTH_TOP, SOUTH_TOP) - ROOF_THICKNESS
-    add_box(((x1 + x2) / 2, ROOF_ZONE_Y, (lower_eave + upper_eave) / 2),
-            ((1.0, 0.0), (0.0, 1.0)),
-            (x2 - x1, WALL_THICKNESS, upper_eave - lower_eave), 0)
+    north_eave = NORTH_TOP - ROOF_THICKNESS
+    south_eave_a = roof_height_at(x1, ROOF_ZONE_Y) - ROOF_THICKNESS
+    south_eave_b = roof_height_at(x2, ROOF_ZONE_Y) - ROOF_THICKNESS
+    add_edge_prism((x1, ROOF_ZONE_Y), (x2, ROOF_ZONE_Y), WALL_THICKNESS,
+                   north_eave, north_eave, south_eave_a, south_eave_b, 0)
 
 mesh = bpy.data.meshes.new("Animal Holding Facility | GIS-derived envelope")
 mesh.from_pydata(verts, [], faces)
@@ -226,10 +252,11 @@ evidence.update({
     "vertical_model": {"levels": 1,
                        "north_main_roof_height_m": NORTH_TOP,
                        "south_addition_roof_height_m": SOUTH_TOP,
+                       "south_addition_slope_percent_xy": [round(SOUTH_SLOPE_X * 100, 3), round(SOUTH_SLOPE_Y * 100, 3)],
                        "roof_thickness_m": ROOF_THICKNESS,
-                       "status": "median normalized roof heights from 2018 Tippecanoe NDHM (5-ft grid); see source statistics and unit method"},
-    "facade": "Neutral unfenestrated envelope; current facade and entrances unverified because no dated exterior imagery or elevations were found.",
-    "roof": "The 2023 orthophoto identifies the light north/main and darker south roof zones. The 2018 NDHM supports separate median roof heights for those zones; each zone is represented by a level plane at its median, while within-zone pitch and profile remain unresolved.",
+                       "status": "North roof held at its normalized-height median; south addition uses a reproducible low-slope plane fitted to 2018 NDHM spatial-bin medians. Both are representative roof-surface estimates, not surveyed eaves."},
+    "facade": "Neutral unfenestrated envelope; the official Purdue Historic Facilities AHF record has no attached image and no AHF-specific public elevation, plan, or identifiable street-level exterior was found in the documented search. Facade and entrances remain unverified.",
+    "roof": "The 2023 orthophoto identifies light north/main and darker south roof zones. A 2018 NDHM fit across four spatial bin sizes shows no stable north/main slope, so it remains at its 4.036 m median; the south zone has a stable approximately -4.0% Y trend and is modeled as a low-slope plane. This is a normalized surface trend, not a surveyed roof profile; eaves and framing remain unresolved.",
     "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png"
 })
 ortho_source = {
@@ -253,11 +280,13 @@ ndhm_source = {
     "metadata": "audit/animal_holding_facility/sources/indiana_lidar_ndhm_metadata.json",
     "measurement_code": "audit/animal_holding_facility/analyze_ndhm_roof_heights.py",
     "measurement_result": "audit/animal_holding_facility/ndhm_roof_height_statistics.json",
+    "profile_analysis_code": "audit/animal_holding_facility/analyze_ndhm_roof_profile.py",
+    "profile_analysis_result": "audit/animal_holding_facility/ndhm_roof_profile_analysis.json",
     "retrieved": "2026-10-25",
     "source_date": "2018 Tippecanoe County 3DEP; 5-ft grid",
     "source_crs": "EPSG:2968 / NAD83(HARN), Indiana West, US survey feet",
     "measurement_method": "Median normalized roof height above local ground from valid 5-ft raster cells inside the source outline and within each orthophoto roof zone.",
-    "uncertainty": "NDHM samples are not survey points at eaves; rooftop equipment and edge effects influence tails. The two roof zones share the dated 2023 orthophoto split but LiDAR is from 2018."
+    "uncertainty": "NDHM samples are not survey points at eaves; rooftop equipment, 5-ft gridding, edge effects, and ground normalization can affect spatial trends. The north trend is unstable across bins; the south Y trend is stable but still approximate. Roof zones follow the 2023 orthophoto split while LiDAR is from 2018."
 }
 units_source = {
     "provider": "Oh et al., peer-reviewed Indiana 3DEP LiDAR method paper (2022)",
@@ -268,7 +297,17 @@ units_source = {
     "measurement_method": "Documents Indiana 3DEP LiDAR/DTM source coordinates and values in U.S. survey feet; NDHM height is derived from these elevation values.",
     "uncertainty": "Units apply to the source 3DEP elevation data; NDHM inherits feet as the difference of those source elevations."
 }
-for source in (ortho_source, ndhm_source, units_source):
+historic_detail_source = {
+    "provider": "Purdue Libraries and Archives, Campus Facilities and Buildings Historic Database, AHF detail record 294",
+    "url": "https://collections.lib.purdue.edu/campus/buildings/294",
+    "snapshot": "audit/animal_holding_facility/sources/purdue_historic_facilities_ahf_detail_2026-10-25.json",
+    "search_note": "audit/animal_holding_facility/sources/ahf_facade_source_search_2026-10-25.json",
+    "retrieved": "2026-10-25",
+    "source_date": "AHF history record; current phase 2001-present, reported area 24,687 sq ft",
+    "measurement_method": "Identity/history cross-check; record phases have empty images arrays and image_url is null. Reported current-phase area converts to about 2,293.50 m², 0.59% above the Purdue GIS polygon area of 2,280.05 m².",
+    "uncertainty": "Area conventions are unspecified and this is only a plausibility cross-check. The public record's lack of attached images does not establish that no uncatalogued or restricted facade evidence exists."
+}
+for source in (ortho_source, ndhm_source, units_source, historic_detail_source):
     if not any(s.get("provider") == source["provider"] for s in sources):
         sources.append(source)
 evidence["height_and_facade_uncertainty"] = {
@@ -277,20 +316,26 @@ evidence["height_and_facade_uncertainty"] = {
     "Extrution_raw": 12,
     "R_raw": 12.5,
     "field_semantics": "GIS metadata gives field names and numeric types only, no vertical units or datum.",
-    "model_height_m": round(max(NORTH_TOP, SOUTH_TOP), 3),
-    "status": "2018 NDHM median normalized roof heights measured on a 5-ft grid; representative zone planes remain approximations.",
+    "model_height_m": round(max(v[2] for v in verts), 3),
+    "status": "North/main roof is held at its 2018 NDHM median; south addition uses the robust Y trend from 2018 NDHM spatial-bin medians. These are representative normalized roof surfaces, not surveyed eaves.",
     "ndhm_roof_heights": {
         "north_main": {"pixel_count": 614, "median_ft": 13.24, "median_m": NORTH_TOP, "iqr_m": 0.247},
         "south_addition": {"pixel_count": 359, "median_ft": 16.95, "median_m": SOUTH_TOP, "iqr_m": 0.683}
     },
-    "roof": "2018 NDHM supports median normalized heights of 4.036 m north/main and 5.166 m south addition; 2023 orthophoto supports their plan-zone split. Within-zone slopes, eave form, and exact seam remain unresolved.",
+    "ndhm_roof_profile": {
+        "analysis": "audit/animal_holding_facility/ndhm_roof_profile_analysis.json",
+        "north_main": "614 samples; regression slopes range -0.029% to -0.831% Y over 2.5–10 m bins, with marginal or inconsistent residual improvement; retained flat at median 4.036 m.",
+        "south_addition": "359 samples; Y slope ranges -4.022% to -4.752% across 2.5–10 m bins. At 5 m bins, plane median absolute residual is 0.060 m versus 0.381 m for a flat median surface. Modeled XY slopes are -1.484% X and -4.159% Y.",
+        "limitation": "Surface trend is not an eave survey; local ground normalization, rooftop objects, grid resolution, and zone-boundary uncertainty may contribute."
+    },
+    "roof": "2018 NDHM supports median normalized heights of 4.036 m north/main and 5.166 m south addition; 2023 orthophoto supports their plan-zone split. The south addition's stable broad Y trend is modeled, while structural eaves, framing, and exact seam remain unresolved.",
     "facade": "Neutral unfenestrated envelope; current facade and entrances remain unverified."
 }
 evidence["roof_zone_preview"] = "audit/animal_holding_facility/roof_zones_topdown.png"
 validation = evidence.setdefault("validation", {})
 validation["roof_zone_preview"] = "audit/animal_holding_facility/roof_zones_topdown.png"
-validation["roof_segmentation"] = "Top surface split into light north/main and dark south zones using the 2023 orthophoto; each level comes from the corresponding 2018 NDHM median."
-validation["ndhm_height_samples"] = "PASS: 614 valid north/main and 359 valid south-addition cells sampled from the official 2018 5-ft Tippecanoe NDHM; median planes are 4.036 m and 5.166 m above ground. See ndhm_roof_height_statistics.json."
+validation["roof_segmentation"] = "Top surface split into light north/main and dark south zones using the 2023 orthophoto; the north uses its 2018 NDHM median, and the south uses a fitted low-slope surface whose median is centered on its 2018 NDHM median."
+validation["ndhm_height_samples"] = "PASS: 614 valid north/main and 359 valid south-addition cells sampled from the official 2018 5-ft Tippecanoe NDHM; zone medians are 4.036 m and 5.166 m above ground. Four bin-size fits show stable -4.0% to -4.8% south Y trend and no stable north trend. See ndhm_roof_height_statistics.json and ndhm_roof_profile_analysis.json."
 validation["saved_and_reopened"] = "PASS: reopened with Blender 4.5.15; expected collection contains exactly one mesh object, no modifiers, 368 vertices and 304 faces; BMesh reports zero non-manifold or boundary edges."
 validation["mesh_topology"] = {
     "method": "Reopened the saved .blend and evaluated the mesh edge manifold and boundary flags with Blender BMesh.",
@@ -299,9 +344,11 @@ validation["mesh_topology"] = {
     "result": "PASS"
 }
 validation["linked_into_empty_scene"] = "PASS: linked named collection from the library into a factory-startup scene; one expected object and campus coordinates were retained."
-validation["evaluated_bounds_world_m"] = [[-65.645, -23.697], [-1030.837, -955.232], [0.0, round(max(NORTH_TOP, SOUTH_TOP), 3)]]
+validation["evaluated_bounds_world_m"] = [[-65.645, -23.697], [-1030.837, -955.232], [0.0, round(max(v[2] for v in verts), 3)]]
 geometry_edits = evidence.setdefault("geometry_edits", [])
-roof_edit = "Split the roof surface into two georeferenced zones matching the 2023 orthophoto, and set each zone to its 2018 NDHM median height (4.036 m north/main; 5.166 m south addition); no facade detail was inferred."
+geometry_edits[:] = [edit for edit in geometry_edits if edit !=
+    "Split the roof surface into two georeferenced zones matching the 2023 orthophoto, and set each zone to its 2018 NDHM median height (4.036 m north/main; 5.166 m south addition); no facade detail was inferred."]
+roof_edit = "Split the roof surface into two georeferenced zones matching the 2023 orthophoto; held the north at its 2018 NDHM median and fit a low-slope south plane to 2018 NDHM spatial-bin medians (four bin sizes reproduce a -4.0% to -4.8% Y trend); no facade detail was inferred."
 if roof_edit not in geometry_edits:
     geometry_edits.append(roof_edit)
 closure_edit = "Added perimeter faces to both roof slabs so the exported roof volumes are closed; reopened in Blender 4.5.15 and verified zero boundary or non-manifold edges."
