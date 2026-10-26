@@ -1,0 +1,116 @@
+{
+  "asset_id": "massing_cary_quadrangle_northwest_cqnw_e8a861e",
+  "asset_path": "modular/buildings/massing_cary_quadrangle_northwest_cqnw_e8a861e.blend",
+  "evaluator": "Independent source-and-asset inspection; separate process reopened saved Blender file and compared foundation boundary to raw GIS geometry.",
+  "score": 7.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue BuildingShapesZip4 FID 647 identifies BLDG_ABBR=CQNW and Franklin Levering Cary Quadrangle (NW).",
+        "The rebuilt shell uses the returned 112-point GIS boundary simplified to 55 vertices at the stated 0.5 m tolerance.",
+        "Independent boundary comparison: max raw GIS vertex to shell-boundary distance 0.419 m; shell area is 0.9911 of projected source-polygon area."
+      ],
+      "findings": [
+        "Source attributes Shape_Area/Shape_Length conflict with the returned polygon measurements; model consistently uses the actual returned geometry."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "The model remains in the repository campus world frame with unit object scales and identity rotations; coordinates are computed directly from the authoritative source geometry using the conversion documented in modular/AGENTS.md.",
+        "The prior manifest AABB center differs from the current GIS-derived AABB center by 1.46 m; source-derived current bounds are independently recorded in blender_probe.json.",
+        "Plan extent is derived from the polygon, approximately 67.6 by 16.5 m; footprint comparison is detailed in blender_probe.json."
+      ],
+      "findings": [
+        "Campus conversion is a local approximation rather than a survey CRS. The prior inventory AABB differs by about 1.46 m at center and needs coordinator review if the master marker or neighbor alignment is later adjusted."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS records five levels. A current 2023 IndianaMap orthophoto supports the long east-west mass and repeated roof interruptions.",
+        "The 2018 3DEP normalized height model has 385 interior samples: roof/vegetation surface median 14.00 m, p10-p90 11.95-15.87 m.",
+        "The modeled 14.9 m ridge lies inside the sampled surface range; the asset metadata labels it an estimate."
+      ],
+      "findings": [
+        "NDHM is a normalized roof/vegetation surface and does not separately measure wall height, eave height, or ridge height. The chosen 14.9 m peak is near the surface p90, not a measured ridge. GIS five-level count does not state whether basement or attic counts; four window rows plus a raised base are an interpretation."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.7,
+      "max_score": 2,
+      "evidence": [
+        "The current aerial supports the overall roof plan; current housing documentation confirms the complex/unit context.",
+        "A 1928 Cary archive image shows contextual brick, repeated windows, and roof forms but predates CQNW construction in 1938 and does not identify the NW unit."
+      ],
+      "findings": [
+        "Brick/stone color, window cadence, stone courses, gable projection geometry, and the pointed-arch entrance are not established by a CQNW-specific elevation or photograph. The builder labels the facade and entry as interpretations; these details must remain provisional."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Reopened the saved asset in Blender 4.5.15 LTS. Expected scene and collection exist; 21 collection meshes evaluate to bounds -433.12..-364.10 m X, 581.23..601.31 m Y, and 0..14.90 m Z.",
+        "All asset objects have identity rotations, unit scales, and no modifiers. No external texture paths were found.",
+        "The building evidence includes raw GIS GeoJSON, orthophoto, NDHM raster and reproducible sampling script, historical/source snapshots, preview views, and reopen validation."
+      ],
+      "findings": [
+        "The static manifest still declares one named object while the rebuilt export has 21 mesh objects and no object named exactly \u201cCary Quadrangle Northwest (CQNW)\u201d. The collection contract is met, but the manifest object inventory may need coordinator reconciliation."
+      ]
+    }
+  ],
+  "evidence": {
+    "blender_probe": "blender_probe.json",
+    "blender_log": "blender_reopen_grade.log",
+    "preview_paths": [
+      "../massing_cary_quadrangle_northwest_cqnw_e8a861e/cqnw_preview.png",
+      "../massing_cary_quadrangle_northwest_cqnw_e8a861e/cqnw_top_preview.png",
+      "../massing_cary_quadrangle_northwest_cqnw_e8a861e/sources/cqnw_orthophoto_footprint_overlay.png"
+    ],
+    "primary_sources": [
+      {
+        "title": "Purdue BuildingShapesZip4 FeatureServer FID 647",
+        "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D647&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+        "snapshot": "../massing_cary_quadrangle_northwest_cqnw_e8a861e/sources/purdue_building_shapes_fid647_2026-10-26.geojson"
+      },
+      {
+        "title": "IndianaMap 2023 orthophoto",
+        "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
+        "snapshot": "../massing_cary_quadrangle_northwest_cqnw_e8a861e/sources/indiana_2023_orthophoto_cqnw.jpg"
+      },
+      {
+        "title": "Indiana 3DEP 2018 normalized height model tile",
+        "url": "https://giselevationingov.s3.us-east-2.amazonaws.com/ndhmoptimized/statewide/2018/SPW/5ft/in2018_29951885_12_ndhm.tif",
+        "snapshot": "../massing_cary_quadrangle_northwest_cqnw_e8a861e/sources/in2018_29951885_12_ndhm.tif"
+      },
+      {
+        "title": "Purdue Campus Facilities and Buildings Historic Database, record 358",
+        "url": "https://collections.lib.purdue.edu/campus/buildings/358",
+        "snapshot": "../massing_cary_quadrangle_northwest_cqnw_e8a861e/sources/purdue_historic_building_entry_358_2026-10-26.html"
+      },
+      {
+        "title": "Purdue Archives and Special Collections, item 165 (1928 Cary context; predates CQNW)",
+        "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/165/",
+        "snapshot": "../massing_cary_quadrangle_northwest_cqnw_e8a861e/sources/purdue_archives_cary_exterior_1928_item165.jpg"
+      }
+    ]
+  },
+  "findings": [
+    "FAILS the required 8/10 threshold at the current evidence level. Strong identity and footprint matching make this a usable massing asset, but facades, entrance, and a precise ridge height are not independently established.",
+    "Do not describe the NDHM median or p90 as ridge measurements. Preserve 14.9 m as an estimate unless a building-specific elevation or roof-height source is found.",
+    "No building or shared files were changed by this grader."
+  ]
+}
