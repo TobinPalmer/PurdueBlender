@@ -134,6 +134,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Lyles-Porter Hall | [lyles_porter_hall.blend](buildings/lyles_porter_hall.blend) | 11 |
 | Materials Science and Electrical Engineering | [materials_science_and_electrical_engineering_msee.blend](buildings/materials_science_and_electrical_engineering_msee.blend) | 1200 |
 | Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 1129 |
+| The Moosehead Lounge | [massing_the_moosehead_lounge_f81529e.blend](buildings/massing_the_moosehead_lounge_f81529e.blend) | 1 |
 | National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](buildings/national_soil_erosion_laboratory.blend) | 560 |
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](buildings/native_american_educational_and_cultural_center_nacc.blend) | 806 |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 572 |
