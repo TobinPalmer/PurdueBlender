@@ -1,0 +1,51 @@
+{
+  "building_id": "massing_the_moosehead_lounge_f81529e",
+  "iteration": "r2",
+  "trigger": {
+    "independent_grade": "audit/massing_the_moosehead_lounge_f81529e/independent_grade_r1.json",
+    "score": 7.5,
+    "threshold": 8.0,
+    "deductions": [
+      "One broad schematic gable did not reflect the multiple roof-plane sections visible in the orthophoto.",
+      "Gable-end wall faces were absent.",
+      "Unsupported repeated window rhythm, facade materials, and trim were modeled without direct facade evidence."
+    ]
+  },
+  "edits": [
+    {
+      "edit": "Replaced the broad single gable with west/north and east/south roof zones clipped to the unchanged OSM structural ring.",
+      "evidence": "Roof-plane changes and offset east/south wing visible in the 2022-2025 Indiana current orthophoto; approximate seam set at local X=310.95 m, where the ring steps into the eastern portion.",
+      "limitation": "Seam location, ridge Y positions, and roof section interpretation are approximate; imagery has tree/shadow occlusion and no elevation information. Both ridges remain 7.60 m estimates."
+    },
+    {
+      "edit": "Added west and east terminal gable-end wall faces and a narrow transition wall between roof profiles.",
+      "evidence": "These close wall volumes to the interpreted gable roof planes at the outer ends and orthophoto roof break.",
+      "limitation": "No direct gable-end street photograph or elevation was found; wall profiles remain schematic."
+    },
+    {
+      "edit": "Removed repeated generic windows, sill bands, and trim; kept three plain doors at OSM-tagged level-0 main entrance nodes.",
+      "evidence": "OSM entry nodes support only approximate locations; no facade photograph/elevation supports window count, rhythm, material, or trim.",
+      "limitation": "Door size and construction are still generic estimates; facade appearance remains unverified."
+    }
+  ],
+  "preserved": [
+    "OSM way 910910470 ring and world placement",
+    "Purdue FID 855 exclusion",
+    "Indiana 2018 FID 409924 conflict and overlap accounting",
+    "Scene, collection, asset, and object stable names"
+  ],
+  "validation": {
+    "method": "Directly reopened the saved asset with Blender 4.5.15 LTS using audit/massing_the_moosehead_lounge_f81529e/reopen_validation.py.",
+    "result": "All 19 reopen checks passed.",
+    "asset_collection_object_count": 1,
+    "mesh_vertices": 101,
+    "mesh_faces": 71,
+    "structural_outline_matches_osm_and_manifest": true,
+    "maximum_decorative_projection_beyond_outline_m": 0.04443,
+    "two_orthophoto_interpreted_roof_zones": true,
+    "gable_end_faces_recorded": true,
+    "unsupported_facade_details_omitted": true,
+    "external_unpacked_images": 0
+  },
+  "status": "Frozen for fresh independent grading; no commit or shared-index changes made."
+}

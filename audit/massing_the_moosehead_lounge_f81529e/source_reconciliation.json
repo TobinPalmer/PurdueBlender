@@ -1,0 +1,85 @@
+{
+  "building_id": "massing_the_moosehead_lounge_f81529e",
+  "retrieval_date": "2026-10-26",
+  "identity": {
+    "result": "OSM way 910910470 is the best directly named and addressed identity match for The Moosehead Lounge, 434 North Grant Street. The City of West Lafayette 2026-02-19 BPW closure map labels Moosehead Lounge at the same site. Purdue's CampusBuilding GIS name query contains no Moosehead match.",
+    "osm_source": {
+      "provider": "OpenStreetMap contributors",
+      "url": "https://api.openstreetmap.org/api/0.6/way/910910470/full",
+      "feature": "way 910910470; 22 boundary nodes; name=The Moosehead Lounge; addr:housenumber=434; addr:street=North Grant Street; building=semidetached_house; building:levels=2",
+      "source_snapshot": "sources/osm_way_910910470_full.json",
+      "source_date": "2021-02-25T16:32:56Z (feature edit timestamp)",
+      "source_crs": "WGS 84 geographic coordinates (EPSG:4326)",
+      "method": "Used closed way ring for plan boundary; project conversion documented below.",
+      "uncertainty": "OSM naming/address tags are direct identity evidence but are community-maintained; not a Purdue-owned building identifier."
+    },
+    "city_source": {
+      "provider": "City of West Lafayette, Board of Public Works",
+      "url": "https://d3n9y02raazwpg.cloudfront.net/westlafayette/5d7f7765-cedf-11f0-bb28-005056a89546-9877950e-0676-400b-9b87-858108bdf899-1771880814.pdf",
+      "feature": "Moosehead Lounge label on 2026-02-19 closure map",
+      "source_snapshot": "sources/city_west_lafayette_2026_bpw_map.pdf",
+      "source_date": "2026-02-19, date shown in map filename/title context",
+      "source_crs": "Map display; not a coordinate dataset",
+      "method": "Visual label/site check against 434 N Grant Street and OSM footprint location.",
+      "uncertainty": "Supports site identity only; map is not a building footprint or elevation source."
+    },
+    "purdue_gis_source": {
+      "provider": "Purdue University CampusBuilding GIS layer (PuGeoDB.DBO.CampusBuilding)",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/FeatureServer/0",
+      "feature": "Name query snapshot in sources/purdue_moosehead_name_query.json; no Moosehead name match",
+      "source_snapshot": "sources/purdue_building_layer_metadata.json; sources/purdue_moosehead_name_query.json",
+      "source_date": "Not supplied by the layer response",
+      "source_crs": "Web Mercator (EPSG:3857), per layer metadata",
+      "method": "Name search, not nearest-feature inference.",
+      "uncertainty": "No direct Purdue GIS feature was identified. Do not assign FID 855: the assignment table maps FID 855 to the Old Purdue Exponent Building, so this is a conflicting candidate and is excluded."
+    }
+  },
+  "footprint": {
+    "selected_geometry": "OSM way 910910470",
+    "selected_geometry_reason": "Named/addressed footprint matches the assigned Moosehead identity and site label, and its bbox agrees with the existing manifest campus bounds. No reliable Purdue CampusBuilding name match was found.",
+    "projection": "Project's local approximate conversion: X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. This is a local approximation, not a surveyed CRS.",
+    "measurement_method": "Shapely planar polygon area/intersection after projecting source WGS84 rings with the documented local conversion; results rounded to 0.01 m2.",
+    "osm_area_m2": 242.12,
+    "osm_bbox_local_m": [294.6151, 145.6845, 322.0259, 158.7872],
+    "indiana_2018_candidate": {
+      "provider": "Indiana Geographic Information Office, Indiana Building Footprints 2016-2020 layer",
+      "feature": "OBJECTID/FID 409924; lidar year 2018",
+      "source_snapshot": "sources/indiana_footprints_metadata.json; sources/indiana_footprints_bbox_query.json",
+      "service_item_id": "384f2d5041a14c34bd9e807c568784da",
+      "source_crs": "WGS 84 geographic coordinates (EPSG:4326) in query result; service metadata reports Web Mercator (EPSG:3857)",
+      "polygon_area_m2_local_projection": 601.70,
+      "intersection_with_osm_m2": 228.73,
+      "osm_outline_covered_percent": 94.45,
+      "indiana_polygon_covered_percent": 38.01,
+      "conflict": "The 2018 lidar footprint extends well south of the OSM Moosehead outline across the adjacent roof. It overlaps most of the OSM footprint but is nearly 2.5 times its area; the high overlap is not sufficient to treat it as a clean identity match.",
+      "uncertainty": "The imagery comparison suggests a merged/adjacent roof polygon. The exact historic segmentation and wall line remain unresolved; this feature is not used as the target shell."
+    },
+    "height_and_roof": {
+      "eave_m": 5.25,
+      "ridge_m": 7.6,
+      "status": "Estimated schematic dimensions. OSM lists two building levels but no measured elevation was found.",
+      "uncertainty": "Exact eave, ridge, roof divisions, and facade dimensions are unverified."
+    }
+  },
+  "imagery": {
+    "provider": "Indiana Geographic Information Office, Indiana Current Imagery",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+    "source_snapshot": "sources/indiana_current_imagery_metadata.json; sources/indiana_current_imagery_export_response.json; sources/indiana_current_imagery_site.tif; sources/current_imagery_footprint_overlay.png",
+    "source_date": "Imagery service covers 2022-2025; exact acquisition date for the exported tile not resolved from saved metadata.",
+    "source_crs": "Web Mercator (EPSG:3857)",
+    "method": "Visual check of OSM outline and Indiana 2018 footprint against current orthophoto; 0.0762 m pixel size in service metadata.",
+    "uncertainty": "Orthophoto supports horizontal roof context, not wall/eave height or facade details."
+  },
+  "roof_interpretation": {
+    "source": "Indiana Current Imagery roof context at sources/indiana_current_imagery_site.tif; RGB preview at sources/orthophoto_preview.png; registered overlay at sources/current_imagery_footprint_overlay.png",
+    "observation": "The orthophoto shows multiple roof planes over the named OSM footprint, with an offset east/south wing and a visible roof break near the footprint's stepped east transition. The image does not resolve vertical dimensions.",
+    "r2_geometry_changes": [
+      "Replace one broad uniform gable with two adjacent roof zones clipped to the OSM structural ring: a west/north body and an east/south wing.",
+      "Add two terminal gable-end wall faces above the eaves and a narrow transition wall at the shared roof break to close the roof profiles.",
+      "Retain 5.25 m eaves and 7.60 m ridge as estimates; both roof zones use the same estimated ridge height because no elevation source supports a height difference."
+    ],
+    "measurement_method": "Roof-zone seam placed approximately at local X=310.95 m, where the OSM ring steps into the east/south wing. Ridge Y is approximated from each clipped plan zone's north/south bounds. This is an interpretive massing method, not a measured ridge line.",
+    "uncertainty": "Orthophoto shadows/tree cover obscure some seams; exact roof edges, ridge positions, gable profiles, and heights remain unverified. Facade imagery/elevations were not found, so generic windows and trim were removed; only OSM level-0 entry nodes remain as plain schematic doors."
+  },
+  "result": "Keep OSM way 910910470 as the selected named footprint source; retain the Indiana 2018 shape as an explicit conflicting/merged candidate; leave Purdue FID unresolved and exclude FID 855."
+}

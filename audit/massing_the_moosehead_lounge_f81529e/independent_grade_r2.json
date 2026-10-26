@@ -1,0 +1,271 @@
+{
+  "evaluator": "Independent evaluator r2; executed by Blender Python after reopening the revised saved asset in Blender 4.5.15 LTS and visually comparing its revised roof zones to the saved orthophoto/OSM overlay.",
+  "score": 8.2,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "OSM way 910910470 is directly tagged The Moosehead Lounge, 434 North Grant Street; the captured West Lafayette BPW map labels Moosehead at the site. The named, addressed OSM ring is compared against an imagery overlay and the mesh structural outline (maximum source-to-mesh vertex residual 0.0000 m). Purdue's name query found no Moosehead; FID 855 is an Old Purdue Exponent candidate and is explicitly excluded.",
+      "findings": []
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": "The object retains campus-world coordinates and identity object transform. OSM/project local-conversion footprint bbox is [[294.6150767505242, 322.02586401651496], [145.68447999984983, 158.78719999990608]]; reopened asset world bbox is [[294.5706481933594, 322.02587890625], [145.68447875976562, 158.78720092773438]]; maximum bbox difference is 0.044 m. Orthophoto overlay supports site alignment. Approximate geographic conversion and community-mapped source are documented.",
+      "findings": [
+        "The local projection is approximate rather than surveyed, and no independent parcel survey or Purdue-named GIS feature was found."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": "OSM building:levels=2 supports a two-level interpretation. Reopened mesh reaches 7.60 m, with 5.25 m eaves; both heights are labeled estimates. The saved 2022\u20132025 Indiana orthophoto/OSM overlay shows several roof planes and a break at the stepped east/south wing; the revised asset splits the envelope into two roof zones, has 26 roof faces and 5 wall-material faces above eave level, including two terminal gable closures.",
+      "findings": [
+        "No source establishes measured eave or ridge height.",
+        "Roof seam and ridge positions, and the shared 7.60 m ridge heights, remain estimated interpretations of a partly obscured overhead image."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2.0,
+      "evidence": "The OSM snapshot includes 3 main entrance nodes on level 0; the revised asset models plain doors at those mapped positions (nearest door-face vertex distances [0.4638879613768754, 0.4638996341743655, 0.46387817072608034]). Renders show a plain two-level wall shell without the earlier unsupported repeated windows, bands, and trim.",
+      "findings": [
+        "No direct facade photographs or elevations were located; facade materials, windows, entry construction, and distinctive wall details remain unverified. Omission of unsupported detail is appropriate, but leaves facade fidelity largely unresolved."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": "Independently reopened in Blender 4.5.15 LTS; exact scene/collection/object identities persist; asset collection has one mesh object, 101 vertices, 71 faces, no modifiers, and no file-backed image dependencies. Scene has 6 objects including a separate render-only collection. Source snapshots, r2 iteration/reconciliation, validation, and four refreshed renders are present.",
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_the_moosehead_lounge_f81529e.blend",
+    "blender_version": "4.5.15 LTS",
+    "scene": "Building_massing_the_moosehead_lounge_f81529e",
+    "asset_collection": "Asset_massing_the_moosehead_lounge_f81529e",
+    "asset_collection_object_names": [
+      "The Moosehead Lounge"
+    ],
+    "scene_object_count": 6,
+    "object_transform": {
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "object_bounds_world_m": [
+      [
+        294.5706481933594,
+        322.02587890625
+      ],
+      [
+        145.68447875976562,
+        158.78720092773438
+      ],
+      [
+        0.0,
+        7.599999904632568
+      ]
+    ],
+    "source_footprint_ring_projected_local_m": [
+      [
+        294.615077,
+        156.844
+      ],
+      [
+        302.281955,
+        156.821792
+      ],
+      [
+        302.231069,
+        158.7872
+      ],
+      [
+        303.104618,
+        158.776096
+      ],
+      [
+        304.003611,
+        158.753888
+      ],
+      [
+        304.054497,
+        156.855104
+      ],
+      [
+        305.750709,
+        156.844
+      ],
+      [
+        309.414527,
+        156.832896
+      ],
+      [
+        309.397565,
+        155.189504
+      ],
+      [
+        310.924156,
+        155.167296
+      ],
+      [
+        310.95808,
+        153.101952
+      ],
+      [
+        310.966561,
+        152.713312
+      ],
+      [
+        311.924921,
+        152.724416
+      ],
+      [
+        311.924921,
+        153.379552
+      ],
+      [
+        315.300383,
+        153.435072
+      ],
+      [
+        321.881686,
+        153.5128
+      ],
+      [
+        322.025864,
+        145.717792
+      ],
+      [
+        309.660478,
+        145.68448
+      ],
+      [
+        309.67744,
+        147.250144
+      ],
+      [
+        294.64052,
+        147.483328
+      ],
+      [
+        294.64052,
+        148.726976
+      ],
+      [
+        294.632039,
+        151.502976
+      ]
+    ],
+    "structural_intersection_vertices": 22,
+    "source_to_mesh_nearest_vertex_residuals_m": [
+      1.1e-05,
+      6e-06,
+      1.1e-05,
+      1e-05,
+      1.1e-05,
+      5e-06,
+      1.4e-05,
+      8e-06,
+      1.6e-05,
+      6e-06,
+      1.3e-05,
+      1.4e-05,
+      1.1e-05,
+      9e-06,
+      4e-06,
+      6e-06,
+      1.6e-05,
+      1.2e-05,
+      1.1e-05,
+      1.3e-05,
+      1.2e-05,
+      1.2e-05
+    ],
+    "source_to_mesh_max_residual_m": 1.6108157860819007e-05,
+    "manifest_bounds_world_m": [
+      [
+        294.6150817871094,
+        322.02587890625
+      ],
+      [
+        145.68447875976562,
+        158.78720092773438
+      ],
+      [
+        0.0,
+        7.599999904632568
+      ]
+    ],
+    "source_bbox_world_m": [
+      [
+        294.6150767505242,
+        322.02586401651496
+      ],
+      [
+        145.68447999984983,
+        158.78719999990608
+      ]
+    ],
+    "source_asset_bbox_max_delta_m": 0.04442855716484928,
+    "osm_levels": "2",
+    "osm_entrance_node_ids": [
+      8458401136,
+      8458401139,
+      8458401151
+    ],
+    "door_face_nearest_node_residuals_m": [
+      0.4638879613768754,
+      0.4638996341743655,
+      0.46387817072608034
+    ],
+    "materials": [
+      "Muted warm masonry \u2014 generic material, facade unverified",
+      "Weathered charcoal roof",
+      "Entry doors \u2014 schematic"
+    ],
+    "face_count_by_material_index": {
+      "0": 27,
+      "1": 26,
+      "2": 18
+    },
+    "roof_face_count": 26,
+    "wall_faces_above_eave_count": 5,
+    "geometry_iteration": "r2: removed unsupported repeated windows, sill bands, and trim; retained only three OSM-mapped level-0 entry positions as schematic plain doors; split broad single roof into west/north and east/south gabled zones; added west/east gable-end wall faces; preserved exact OSM 910910470 structural ring.",
+    "revised_roof_status": "Two-zone gabled roof silhouette (west/north body and east/south wing) follows visible roof-plane breaks in 2022-2025 Indiana orthophoto and OSM footprint projections. Gable-end wall faces close west and east terminal profiles. Exact roof seam positions, ridge directions, and all heights remain interpreted estimates, not survey measurements.",
+    "saved_roof_observation": "The current-imagery preview and OSM overlay show a stepped east/south roof zone and multiple visible roof planes; exact vertical pitches/heights cannot be read from this overhead source.",
+    "modifiers": [],
+    "file_backed_images": [],
+    "purdue_fid_855_conflict": "README assignment crosswalk identifies FID 855 as Old Purdue Exponent Building; it is not a Moosehead match."
+  },
+  "findings": [
+    "The local projection is approximate rather than surveyed, and no independent parcel survey or Purdue-named GIS feature was found.",
+    "No source establishes measured eave or ridge height.",
+    "Roof seam and ridge positions, and the shared 7.60 m ridge heights, remain estimated interpretations of a partly obscured overhead image.",
+    "No direct facade photographs or elevations were located; facade materials, windows, entry construction, and distinctive wall details remain unverified. Omission of unsupported detail is appropriate, but leaves facade fidelity largely unresolved."
+  ],
+  "uncertainties": [
+    "OSM tags building:levels=2, but no scaled elevation or measured height source was found.",
+    "Eave 5.25 m and ridge 7.60 m are explicit estimates; the two-zone gable form and seam locations are interpreted from an obscured orthophoto, not measured.",
+    "Facade materials, door construction, and any window arrangement are unverified; available evidence has no street-level facade photograph or elevation.",
+    "The 2018 Indiana footprint is a conflicting merged/adjacent-roof candidate and is disclosed, not used as the shell.",
+    "Purdue GIS FID 855 is correctly excluded: the assignment queue and README map it to the Old Purdue Exponent Building."
+  ],
+  "check_errors": []
+}
