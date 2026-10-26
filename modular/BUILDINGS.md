@@ -57,7 +57,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Bindley Bioscience Center | [bindley_bioscience_center.blend](buildings/bindley_bioscience_center.blend) | 528 |
 | Biochemistry Building | [biochemistry_building.blend](buildings/biochemistry_building.blend) | 1623 |
 | Birck Nanotechnology Center | [birck_nanotechnology_center.blend](buildings/birck_nanotechnology_center.blend) | 110 |
-| Black Cultural Center | [black_cultural_center.blend](buildings/black_cultural_center.blend) | 623 |
+| Black Cultural Center | [black_cultural_center.blend](buildings/black_cultural_center.blend) | 621 |
 | Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](buildings/burton_morgan_center.blend) | 384 |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](buildings/convergence_center.blend) | 894 |
 | Dauch Alumni Center | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 652 |
