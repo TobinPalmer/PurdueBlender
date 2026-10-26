@@ -2,6 +2,8 @@
 
 These building assets are independently graded at or above 8/10 and pushed to `master`. Tobin owns the master blend and should integrate each latest asset, place it from the manifest coordinates, remove or replace any older instance, and reopen the master to verify placement.
 
+- **Pete Dye Clubhouse** — pass: 8.5/10 (`audit/massing_the_pete_dye_clubhouse_a3a9641/independent_grade/pete_dye_independent_grade_r2.json`); model commit `16320fa`. Asset: `modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend`. Replace the new clubhouse massing in `purdue_campus_master.blend`, preserve manifest placement, and verify one instance after reopening. Keep it distinct from the legacy 1998 clubhouse (GIS FID 233); roof/floor heights and facade orientation remain estimates.
+
 - **Purdue Village Administration Building** — pass: 8.5/10 (`audit/massing_purdue_village_administration_building_3faae6c/independent_grade/evaluation_r2.json`); model commit `777df68`. Asset: `modular/buildings/massing_purdue_village_administration_building_3faae6c.blend`. Replace its massing in `purdue_campus_master.blend`, preserve manifest placement, and verify it appears once after reopening. Height, facade bearing, and GIS area discrepancy remain uncertain.
 
 - **Student Health Center (PUSH)** — pass: 8.2/10 (`audit/massing_student_health_center_push_1200c3b/independent_grade/independent_grade_r2.json`); model commit `e565128`. Asset: `modular/buildings/massing_student_health_center_push_1200c3b.blend`. Replace the PUSH massing in `purdue_campus_master.blend`, preserve manifest placement, and verify it appears once after reopening. Roof heights/story interpretation and facade opening details remain partly estimated.

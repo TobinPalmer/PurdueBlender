@@ -164,7 +164,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (29)
+### Detailed models still in progress or awaiting a grade (30)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -186,6 +186,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Johnson Hall of Nursing (JNSN) | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | [9.3/10](audit/massing_johnson_hall_of_nursing_jnsn_823fca7/independent_grade/r2/result.json); awaiting master integration | Tobin |
 | Purdue Police Department (TERY) | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | [8.4/10](audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json); awaiting master integration | Rossen |
 | Purdue Village Administration Building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | [8.5/10](audit/massing_purdue_village_administration_building_3faae6c/independent_grade/evaluation_r2.json); awaiting master integration | Rossen |
+| Pete Dye Clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | [8.5/10](audit/massing_the_pete_dye_clubhouse_a3a9641/independent_grade/pete_dye_independent_grade_r2.json); awaiting master integration | Rossen |
 | Stone Hall (STON) | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | [8.0/10](audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json); awaiting master integration | Rossen |
 | Student Health Center (PUSH) | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | [8.2/10](audit/massing_student_health_center_push_1200c3b/independent_grade/independent_grade_r2.json); awaiting master integration | Rossen |
 | Redeemer Lutheran Church | [`massing_redeemer_lutheran_church_2e5ce2f.blend`](modular/buildings/massing_redeemer_lutheran_church_2e5ce2f.blend) | [8.0/10](audit/redeemer_lutheran_church/independent_grade_kyle.json); awaiting master integration | Kyle |
@@ -200,7 +201,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 
 
 
-### Buildings that still have only massing models (41)
+### Buildings that still have only massing models (40)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -237,7 +238,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | the caretaker s cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | Rossen |
 | the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Rossen |
 | the moosehead lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | Rossen |
-| the pete dye clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Rossen |
 | turf recreation exercise center | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Rossen |
 | union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Rossen |
 
@@ -612,7 +612,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 542 | WALDRON 19 | [massing_house_301838782_35890d9](modular/buildings/massing_house_301838782_35890d9.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 543 | Continuum Discovery Park | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 544 | Lees-Such Tower | [massing_honors_college_and_residences_north_3de3b7c](modular/buildings/massing_honors_college_and_residences_north_3de3b7c.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 545 | New Pete Dye Clubhouse | [massing_the_pete_dye_clubhouse_a3a9641](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 545 | New Pete Dye Clubhouse | [massing_the_pete_dye_clubhouse_a3a9641](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Independently graded 8.5/10; matches the new clubhouse OSM footprint; legacy FID 233 is the distinct 1998 clubhouse; awaiting master integration (see TODO.md); height and facade remain estimated |
 | 546 | Darr-Chaney Hall of Pharmacy and Dauch Hall of Nursing | [massing_house_1558638276_ff1ad9e](modular/buildings/massing_house_1558638276_ff1ad9e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 547 | Third and West | [massing_3rd_and_west_ffa3d05](modular/buildings/massing_3rd_and_west_ffa3d05.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 548 | Daniels School of Business | — | No direct FID crosswalk; reconcile to a master asset or create one |

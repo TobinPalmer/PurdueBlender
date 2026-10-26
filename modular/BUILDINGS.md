@@ -195,6 +195,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](buildings/massing_kappa_sigma_c1b36ec.blend) | 1 |
 | Lilly Hall of Life Sciences | [massing_lilly_hall_e7fc13e.blend](buildings/massing_lilly_hall_e7fc13e.blend) | 4 |
 | Mann Hall | [massing_mann_hall_2b4ebda.blend](buildings/massing_mann_hall_2b4ebda.blend) | 1 |
+| Pete Dye Clubhouse | [massing_the_pete_dye_clubhouse_a3a9641.blend](buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | 122 |
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
 | Purdue Village Administration Building | [massing_purdue_village_administration_building_3faae6c.blend](buildings/massing_purdue_village_administration_building_3faae6c.blend) | 1 |
 | Stone Hall (STON) | [massing_stone_hall_ston_d3f479a.blend](buildings/massing_stone_hall_ston_d3f479a.blend) | 1 |
@@ -219,6 +220,8 @@ Kappa Sigma retains campus-world coordinates. Its 8.5/10 grade verifies the Purd
 Lilly Hall of Life Sciences retains campus-world coordinates. Its 8.0/10 grade confirms the Purdue GIS FID 581 footprint within 0.000023 m. GIS supports six floors; 25.055 m height is estimated by interpreting undocumented R=82.2 as feet, and roof/current facade details remain partly schematic. See [Lilly Hall grade](../audit/massing_lilly_hall_e7fc13e/independent_grade/r1/grade.json).
 
 Mann Hall retains campus-world coordinates. Its 8.2/10 grade confirms the Purdue GIS FID 635 footprint within 0.000032 m and a portable Blender 4.5.15 export. The 11.278 m height matches GIS R=37 ft, while GIS level fields conflict with the architect's two-story plus lower-level description; official-photo facade cues remain simplified. See [Mann Hall grade](../audit/massing_mann_hall_2b4ebda/independent_grade/r1/grade.json).
+
+Pete Dye Clubhouse retains campus-world coordinates. Its 8.5/10 grade verifies the new facility footprint against OSM within 0.000047 m and supports the continuous ridge, projecting cross-gable, lower wing, and varied glazing from CE Solutions and Purdue photos. Roof heights and entrance orientation remain estimates. The older 1998 clubhouse (GIS FID 233) is distinct. See [Pete Dye grade](../audit/massing_the_pete_dye_clubhouse_a3a9641/independent_grade/pete_dye_independent_grade_r2.json).
 
 Purdue Police Department (TERY) retains campus-world coordinates. Its 8.4/10 grade verifies the Purdue GIS FID 275 footprint to under 1 mm and the identity match to Oliver Perkins Terry House, where Purdue identifies police operations. One-story brick and ribbon glazing are photo-informed; 4.45 m roof height, entrance position, facade bay rhythm, and the unmodeled utility basement remain uncertain. See [PUPD grade](../audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json).
 
