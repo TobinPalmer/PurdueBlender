@@ -1,0 +1,122 @@
+{
+  "asset_id": "massing_student_health_center_push_1200c3b",
+  "asset_file": "modular/buildings/massing_student_health_center_push_1200c3b.blend",
+  "grader": "independent subagent",
+  "score": 7.4,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "status": "needs_iteration",
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Raw Purdue BuildingShapes feature FID 274 names Purdue University Student Health Center (PUSH), address 601 Stadium Mall Drive. The 13-vertex outline is transformed with the project campus formula; build record area is 1204.48 m2.",
+      "finding": "Strong identity and plan source match. The exterior photo independently corroborates the building appearance, though it is not a dimensioned footprint survey."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Reopened asset vertex bounds are [[-229.0678253173828, -172.65992736816406], [294.11651611328125, 364.8216552734375], [0.0, 14.630399703979492]]; recorded GIS boundary mismatch is 0.0291 m. The GIS ring establishes campus placement, orientation, and horizontal dimensions.",
+      "finding": "Horizontal placement and footprint scale closely reproduce the authoritative feature. The project uses an approximate local geographic conversion rather than a surveyed campus CRS, so minor systematic position/scale error remains possible."
+    },
+    {
+      "name": "Height, floors, and roof form",
+      "score": 0.8,
+      "max_score": 2,
+      "evidence": "GIS FID 274 reports NUM_LEVELS/CountOfFLO=5, floor elevations through F04, and Extrution=48 without documented units. Model height is an explicitly estimated 14.63 m based on 48 ft; the photo shows a red pitched roof and approximately three above-ground levels in the visible portion.",
+      "finding": "Height and floor count are unresolved, not measured. The model uses a single fan-like hipped roof over the entire irregular footprint. The 2020 photo instead shows different roof heights and a low entrance wing adjoining the taller main block; that massing is absent."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": "The Purdue 2020 photograph directly supports red brick, pale stone trim/bands, upper-story windows, a broad glazed entrance, medical emblem, and red tile roof. The model represents brick, repeated windows, bands, glazing, emblem, and red roof.",
+      "finding": "The principal facade features are recognizable, but the model repeats small windows uniformly around the perimeter. The photo has larger, differently proportioned upper-story windows, a broad and detailed entrance, and a one-story entrance wing. The entrance wall was selected by longest edge rather than source orientation, and side/rear facades are unverified."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Saved library collection check: True, 1 object(s), 1 mesh; 6 assigned material(s); unpacked external images: []. Reopen record: True. Evidence includes raw GIS and metadata, official map PDF, Purdue photo and page snapshots, source register, renders, build record, and reopen validation.",
+      "finding": "Stable asset file, collection, and ID are preserved; the export is self-contained and the reopen check passes. The one-mesh export is portable, although the building's architectural parts are not separately editable. Source citations and stated uncertainty are unusually complete."
+    }
+  ],
+  "evidence": {
+    "direct_asset_inspection": {
+      "collection_present": true,
+      "object_count": 1,
+      "mesh_object_count": 1,
+      "evaluated_vertex_bounds_xyz_m": [
+        [
+          -229.0678253173828,
+          -172.65992736816406
+        ],
+        [
+          294.11651611328125,
+          364.8216552734375
+        ],
+        [
+          0.0,
+          14.630399703979492
+        ]
+      ],
+      "material_count": 6,
+      "unpacked_external_images": []
+    },
+    "source_inspection": {
+      "gis_feature_id": 274,
+      "gis_name": "Purdue University Student Health Center",
+      "gis_address": "601 Stadium Mall Drive",
+      "gis_vertex_count": 13,
+      "source_types": [
+        "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+        "Purdue University / John Underwood, Purdue Today archive",
+        "Purdue University Student Health Services",
+        "Purdue University Campus Map"
+      ]
+    },
+    "visual_inspection": [
+      "renders/push_exterior_preview.png",
+      "renders/push_footprint_preview.png",
+      "sources/purdue_push_exterior_2020.jpg"
+    ],
+    "reopen_validation": {
+      "asset_id": "massing_student_health_center_push_1200c3b",
+      "blend_reopened": true,
+      "scene": "Building_massing_student_health_center_push_1200c3b",
+      "collection": "Asset_massing_student_health_center_push_1200c3b",
+      "collection_object_count": 1,
+      "object": "Student Health Center (PUSH)",
+      "object_type": "MESH",
+      "evaluated_vertex_count": 12691,
+      "evaluated_polygon_count": 3176,
+      "material_count": 6,
+      "evaluated_bounds_world_m": [
+        [
+          -229.0678253173828,
+          -172.65992736816406
+        ],
+        [
+          294.11651611328125,
+          364.8216552734375
+        ],
+        [
+          0.0,
+          14.630399703979492
+        ]
+      ],
+      "max_xy_bound_error_m": 0.029073886718776976,
+      "evaluated_height_m": 14.630399703979492,
+      "modifiers": [],
+      "unpacked_external_images": [],
+      "result": "pass"
+    }
+  },
+  "findings": [
+    "The footprint/placement model is well evidenced, but the architectural massing in the source photo has a tall main block and a lower entrance wing; the exported model has one continuous wall height and one simplified roof system.",
+    "The GIS floor/extrusion fields and visible story count do not establish a reliable measured height. Keep the height explicitly estimated until a dimensioned elevation or other authoritative vertical source is found.",
+    "The facade reference is one oblique image. Entrance orientation and facade rhythms on other sides remain unverified."
+  ]
+}
