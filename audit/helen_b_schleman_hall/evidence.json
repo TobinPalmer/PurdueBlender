@@ -1,7 +1,7 @@
 {
   "building": "Helen B. Schleman Hall",
   "asset_id": "massing_schleman_hall_schm_ad4b05b",
-  "status": "Historic red-tile roof and brick-column entrance detailed from Purdue exterior reference; height and level-count conflict unresolved",
+  "status": "Historic red-tile roof and brick-column entrance detailed from Purdue exterior reference; a Purdue basement plan plausibly reconciles three visible floors with the four-level GIS attribute; height remains estimated and independent grade pending",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -23,6 +23,12 @@
         "provider": "Purdue University Sustainable Operations",
         "use": "Confirms the former Schleman Hall identity and the 2024 Data Science and AI renovation context; no dimensions inferred.",
         "url": "https://www.purdue.edu/operations/sustainable-ops/home/initiatives/buildings/dsai/"
+      },
+      {
+        "provider": "Purdue University, Potter Engineering Center Renovation Study (American Structurepoint), page 78",
+        "use": "Interior floor-plan evidence that Schleman has a basement; not an exterior or measured-height source",
+        "url": "https://engineering.purdue.edu/~frosch/Renderings/Masterplans/POTR%20Study.pdf",
+        "observation_record": "source_floorplan_observation.json"
       }
     ]
   },
@@ -75,7 +81,7 @@
       "max_z": 12.819999694824219
     },
     "modeled_visible_storeys": 3,
-    "storey_count_conflict": "Official GIS NUM_LEVELS=4; current exterior reference visually appears to show three window levels. The model uses three visible facade levels; whether the GIS count includes a lower/attic level is unresolved.",
+    "storey_count_interpretation": "The exterior photo shows approximately three above-grade facade levels and a Purdue renovation-study floor plan explicitly labels a Schleman basement (page 78). This makes three visible floors plus one basement a plausible reconciliation of GIS NUM_LEVELS=4, but the GIS counting convention and any basement exposure remain unverified.",
     "reopen_check": {
       "object_name": "Schleman Hall (SCHM)",
       "asset_id": "massing_schleman_hall_schm_ad4b05b",
@@ -93,7 +99,7 @@
   ],
   "uncertainties": [
     "The official campus GIS polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
-    "The GIS level count of 4 conflicts with the exterior image’s apparent three visible levels; exact storey interpretation remains unresolved.",
+    "A Purdue study confirms an interior basement level, making the four-level GIS count plausible alongside three visible above-grade floors. The plan does not establish the GIS counting convention or how much basement is exposed at grade.",
     "The wall height, 1.4 m roof rise, gable shape, portico dimensions and entrance location are estimates, not measured elevations.",
     "The 2024 renovation context may affect current interior use; this model uses the visible exterior reference and does not reproduce recent interior changes.",
     "No independent grader has reviewed this revision."
@@ -104,6 +110,7 @@
     "raw_source": "source_feature_224_raw.json",
     "exterior_reference_observation": "source_exterior_reference_observation.json",
     "preview_render_script": "render_preview.py",
-    "preview": "preview_detail.png"
+    "preview": "preview_detail.png",
+    "floorplan_observation": "source_floorplan_observation.json"
   }
 }
