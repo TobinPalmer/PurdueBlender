@@ -14,7 +14,7 @@ ASSET_ID = "massing_alpha_chi_rho_0cb591a"
 COLLECTION = "Asset_massing_alpha_chi_rho_0cb591a"
 ORIGIN_LAT = 40.4274
 ORIGIN_LON = -86.9137
-WALL_HEIGHT = 3.8
+WALL_HEIGHT = 6.2
 
 
 def local_xy(lon, lat):
@@ -83,7 +83,9 @@ result = {
     "gis_xy_area_m2_project_approx": abs(polygon_area(gis_xy)),
     "whole_object_bounds_m_including_facade_and_porch_details": bounds,
     "estimated_wall_height_m": WALL_HEIGHT,
-    "height_status": "estimated; GIS level count is one, but the extrusion field unit is undocumented",
+    "height_status": "estimated from two visible stories in an undated street panorama; no measured elevation located",
+    "facade_basis": "Google Street View pano VCE1Wee15-lqG_KbYR239Q; retrieved 2026-10-26, capture date not exposed",
+    "footprint_cross_check": "Indiana 2018 LiDAR-derived footprint comparison; broad agreement, measurable boundary discrepancy recorded separately",
     "external_file_dependencies": image_paths,
 }
 OUTPUT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

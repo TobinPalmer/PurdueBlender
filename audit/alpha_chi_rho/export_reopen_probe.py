@@ -33,7 +33,7 @@ objects = list(collection.objects)
 assert len(objects) == 1
 obj = objects[0]
 assert obj.name == "Alpha Chi Rho" and obj.type == "MESH"
-assert len(obj.data.materials) == 7
+assert len(obj.data.materials) == 8
 assert all(material is not None for material in obj.data.materials)
 external_images = [image.filepath for image in bpy.data.images
                    if image.source == "FILE" and image.filepath]

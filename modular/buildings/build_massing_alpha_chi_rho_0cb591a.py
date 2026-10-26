@@ -27,8 +27,8 @@ COLLECTION_NAME = "Asset_massing_alpha_chi_rho_0cb591a"
 
 ORIGIN_LAT = 40.4274
 ORIGIN_LON = -86.9137
-WALL_HEIGHT = 3.8
-ROOF_THICKNESS = 0.35
+WALL_HEIGHT = 6.2  # two visible stories; dimension remains an estimate
+ROOF_THICKNESS = 0.40
 
 
 def local_xy(lon, lat):
@@ -120,12 +120,12 @@ def main():
         material("White window and porch trim", (0.91, 0.89, 0.83)),
         material("Wood entry door", (0.28, 0.19, 0.14)),
         material("Siding seam shadow", (0.66, 0.65, 0.59)),
+        material("Muted maroon shutters", (0.28, 0.10, 0.14)),
     ]
     mb = MeshBuilder()
 
-    # Official GIS building perimeter, extruded into a one-level shell. The
-    # source level count supports one level, while its extrusion field's units
-    # are undocumented; the 3.8 m shell height is therefore only an estimate.
+    # Official GIS perimeter extruded to two visible stories. The height and
+    # floor spacing are estimated from undated street imagery, not measured.
     bottom = [(x, y, 0.0) for x, y in footprint]
     eaves = [(x, y, WALL_HEIGHT) for x, y in footprint]
     roof_top = [(x, y, WALL_HEIGHT + ROOF_THICKNESS) for x, y in footprint]
@@ -160,15 +160,15 @@ def main():
 
     # Facade rhythm is illustrative: evenly spaced paired windows, with no
     # claims about exact openings, room layouts, or current facade details.
-    west_fronts = []
+    east_fronts = []
     for i in range(n):
         p, q = footprint[i], footprint[(i + 1) % n]
         dx, dy = q[0] - p[0], q[1] - p[1]
         length = math.hypot(dx, dy)
         nx, ny = outward_sign * dy / length, -outward_sign * dx / length
-        if nx < -0.85 and length >= 5.4:
-            west_fronts.append((length, i))
-    entry_edge_index = max(west_fronts)[1] if west_fronts else None
+        if nx > 0.85 and length >= 5.4:
+            east_fronts.append((length, i))
+    entry_edge_index = max(east_fronts)[1] if east_fronts else None
     for i in range(n):
         p, q = footprint[i], footprint[(i + 1) % n]
         dx, dy = q[0] - p[0], q[1] - p[1]
@@ -179,44 +179,61 @@ def main():
         normal = (outward_sign * dy / length, -outward_sign * dx / length, 0.0)
         count = max(1, int((length - 1.2) // 3.2))
         centers = [length * (j + 1) / (count + 1) for j in range(count)]
-        # The westward-facing street side receives a simple entry porch.
+        # Street-view imagery places the broad entry facade on the east edge.
         street_front = i == entry_edge_index
         door_center = centers[len(centers) // 2] if street_front else None
-        for center in centers:
-            if street_front and center == door_center:
-                continue
-            c = (p[0] + tangent[0] * center + normal[0] * 0.055,
-                 p[1] + tangent[1] * center + normal[1] * 0.055,
-                 1.85)
-            axes = (tangent, normal, (0.0, 0.0, 1.0))
-            # Painted trim surround, inset glazing, and simple muntins.
-            mb.box(c, axes, (1.42, 0.07, 1.62), 4)
-            mb.box((c[0] + normal[0] * 0.045,
-                    c[1] + normal[1] * 0.045, c[2]), axes,
-                   (1.12, 0.035, 1.32), 3)
-            mb.box((c[0] + normal[0] * 0.075,
-                    c[1] + normal[1] * 0.075, c[2]), axes,
-                   (0.055, 0.025, 1.25), 4)
-            mb.box((c[0] + normal[0] * 0.075,
-                    c[1] + normal[1] * 0.075, c[2]), axes,
-                   (1.05, 0.025, 0.055), 4)
+        for level, z in enumerate((1.72, 4.88)):
+            for center in centers:
+                if street_front and level == 0 and center == door_center:
+                    continue
+                c = (p[0] + tangent[0] * center + normal[0] * 0.055,
+                     p[1] + tangent[1] * center + normal[1] * 0.055, z)
+                axes = (tangent, normal, (0.0, 0.0, 1.0))
+                # Trim, glazing, muntins, and the paired maroon shutters seen
+                # in the street panorama; dimensions and counts are illustrative.
+                mb.box(c, axes, (1.42, 0.07, 1.62), 4)
+                mb.box((c[0] + normal[0] * 0.045,
+                        c[1] + normal[1] * 0.045, c[2]), axes,
+                       (1.12, 0.035, 1.32), 3)
+                mb.box((c[0] + normal[0] * 0.075,
+                        c[1] + normal[1] * 0.075, c[2]), axes,
+                       (0.055, 0.025, 1.25), 4)
+                mb.box((c[0] + normal[0] * 0.075,
+                        c[1] + normal[1] * 0.075, c[2]), axes,
+                       (1.05, 0.025, 0.055), 4)
+                for side in (-1, 1):
+                    shutter = (c[0] + tangent[0] * side * 0.88 + normal[0] * 0.075,
+                               c[1] + tangent[1] * side * 0.88 + normal[1] * 0.075, z)
+                    mb.box(shutter, axes, (0.24, 0.035, 1.36), 7)
         if street_front:
             center = door_center
             c = (p[0] + tangent[0] * center + normal[0] * 0.08,
-                 p[1] + tangent[1] * center + normal[1] * 0.08, 1.12)
+                 p[1] + tangent[1] * center + normal[1] * 0.08, 1.15)
             axes = (tangent, normal, (0.0, 0.0, 1.0))
             mb.box((c[0] - normal[0] * 0.035,
                     c[1] - normal[1] * 0.035, 1.125), axes,
-                   (1.38, 0.08, 2.25), 4)
-            mb.box(c, axes, (1.10, 0.05, 2.08), 5)
-            # Shallow entrance canopy, modeled as a simple porch hood.
-            porch_center = (c[0] + normal[0] * 0.75,
-                            c[1] + normal[1] * 0.75, 2.48)
-            mb.box(porch_center, axes, (2.5, 1.45, 0.15), 2)
-            for offset in (-0.95, 0.95):
-                col = (c[0] + tangent[0] * offset + normal[0] * 1.35,
-                       c[1] + tangent[1] * offset + normal[1] * 1.35, 1.23)
-                mb.box(col, axes, (0.12, 0.12, 2.45), 4)
+                   (1.38, 0.08, 2.30), 4)
+            mb.box(c, axes, (1.10, 0.05, 2.12), 5)
+            # Two-story portico and balcony are clearly visible in the source.
+            porch_center = (c[0] + normal[0] * 1.65,
+                            c[1] + normal[1] * 1.65, 6.35)
+            mb.box(porch_center, axes, (7.6, 3.3, 0.22), 2)
+            balcony = (c[0] + normal[0] * 1.10,
+                       c[1] + normal[1] * 1.10, 3.30)
+            mb.box(balcony, axes, (7.15, 0.16, 0.12), 4)
+            for offset in [(-3.3 + j * 0.33) for j in range(21)]:
+                rail = (c[0] + tangent[0] * offset + normal[0] * 1.10,
+                        c[1] + tangent[1] * offset + normal[1] * 1.10, 3.55)
+                mb.box(rail, axes, (0.055, 0.055, 0.50), 4)
+            for offset in (-3.35, -1.12, 1.12, 3.35):
+                col = (c[0] + tangent[0] * offset + normal[0] * 2.55,
+                       c[1] + tangent[1] * offset + normal[1] * 2.55, 3.28)
+                mb.box(col, axes, (0.34, 0.34, 6.15), 4)
+            # Front-facing centered gable inferred from the street image.
+            base_a = (c[0] + tangent[0] * -3.8 + normal[0] * 1.66, c[1] + tangent[1] * -3.8 + normal[1] * 1.66, 6.48)
+            base_b = (c[0] + tangent[0] * 3.8 + normal[0] * 1.66, c[1] + tangent[1] * 3.8 + normal[1] * 1.66, 6.48)
+            peak = (c[0] + normal[0] * 1.66, c[1] + normal[1] * 1.66, 7.62)
+            mb.face([base_a, base_b, peak], 0)
 
     mesh = bpy.data.meshes.new("Alpha Chi Rho GIS shell and illustrative facade")
     mesh.from_pydata(mb.verts, [], mb.faces)
@@ -244,11 +261,11 @@ def main():
     camera_data = bpy.data.cameras.new("AXP massing preview camera")
     camera = bpy.data.objects.new("AXP massing preview camera", camera_data)
     rig.objects.link(camera)
-    camera.location = (center_x - 46.0, center_y - 48.0, 37.0)
-    target = Vector((center_x, center_y, 4.2))
+    camera.location = (center_x + 46.0, center_y - 48.0, 27.0)
+    target = Vector((center_x, center_y, 4.0))
     camera.rotation_euler = (target - camera.location).to_track_quat("-Z", "Y").to_euler()
     camera_data.type = "ORTHO"
-    camera_data.ortho_scale = 48.0
+    camera_data.ortho_scale = 46.0
     scene.camera = camera
 
     light_data = bpy.data.lights.new("Large soft key", type="AREA")
@@ -257,7 +274,7 @@ def main():
     light_data.size = 32
     light = bpy.data.objects.new("Large soft key", light_data)
     rig.objects.link(light)
-    light.location = (center_x - 18, center_y - 24, 38)
+    light.location = (center_x + 18, center_y - 24, 38)
     light.rotation_euler = (Vector((center_x, center_y, 3.0)) - light.location).to_track_quat("-Z", "Y").to_euler()
 
     scene.render.engine = "CYCLES"
@@ -294,7 +311,7 @@ def main():
         "gis_xy_area_m2_approx": abs(signed_area),
         "bounds_m": bounds,
         "estimated_wall_height_m": WALL_HEIGHT,
-        "estimated_total_height_m": WALL_HEIGHT + ROOF_THICKNESS,
+        "estimated_total_height_m": 7.62,
         "preview": str(PREVIEW_FILE),
     }
     BUILD_RESULT_FILE.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")

@@ -23,11 +23,40 @@
       "source_date": "1978",
       "feature_id": "PUD00092 / item 46421",
       "source_crs": "Not applicable; historical yearbook photograph",
-      "evidence": "Historic chapter-house image informs only illustrative siding/window style; not current dimensions",
+      "evidence": "Historic chapter-house image informs historical context only; not used to claim current facade or dimensions",
       "snapshot": "sources/purdue_archives_debris_item_46421_2026-10-26.json",
       "rights_note": "Archive record places copyright responsibility on the user; the source photo is not redistributed here"
     }
   ],
+  "facade_sources": [
+    {
+      "provider": "Google Maps Street View",
+      "panorama_id": "VCE1Wee15-lqG_KbYR239Q",
+      "source_record": "sources/streetview_source_record.json",
+      "retrieved_date": "2026-10-26",
+      "capture_date": "not exposed",
+      "evidence": "Visible two stories, light horizontal siding, dark shutters, centered two-story columned portico/balcony, central entry, centered gable",
+      "limitation": "Undated panorama; present condition and dimensions are not verified"
+    },
+    {
+      "provider": "Zillow property page",
+      "url": "https://www.zillow.com/homedetails/27-N-Russell-St-West-Lafayette-IN-47906/206767728_zpid/",
+      "source_record": "sources/zillow_property_source_record.json",
+      "retrieved_date": "2026-10-26",
+      "evidence": "Page claims 1928 construction, masonry, and asphalt roof",
+      "limitation": "Property-page claims, no dimensions; off-market listing and legacy rental text not used for current appearance"
+    }
+  ],
+  "independent_footprint_check": {
+    "provider": "Indiana Building Footprints 2016-2020",
+    "feature_id": 410090,
+    "lidar_year": 2018,
+    "comparison": "footprint_comparison.json",
+    "overlay": "footprint_comparison.svg",
+    "centroid_separation_m": 0.299634,
+    "raster_iou_0_05m": 0.785497,
+    "interpretation": "Broad positional and scale agreement; boundary simplification/discrepancy means Purdue's identified outline is retained, not replaced"
+  },
   "coordinate_method": {
     "units": "meters",
     "axes": "X east, Y north, Z up",
@@ -46,10 +75,11 @@
   },
   "vertical_geometry": {
     "source_story_count": 1,
-    "estimated_wall_height_m": 3.8,
-    "estimated_roof_thickness_m": 0.35,
-    "estimated_total_height_m": 4.15,
-    "status": "estimated; GIS Extrution field is 12 with undocumented units, and no dimensioned elevation was located"
+    "visual_story_count": 2,
+    "estimated_wall_height_m": 6.2,
+    "estimated_roof_thickness_m": 0.4,
+    "estimated_total_height_m": 7.62,
+    "status": "estimated from two visible stories in an undated street panorama; GIS count conflicts and its extrusion units are undocumented; no dimensioned elevation located"
   },
   "build": {
     "blender_version": "4.5.15 LTS",
@@ -58,9 +88,9 @@
     "collection": "Asset_massing_alpha_chi_rho_0cb591a",
     "scene": "Building_massing_alpha_chi_rho_0cb591a",
     "object_name": "Alpha Chi Rho",
-    "mesh_vertices": 6020,
-    "mesh_polygons": 1500,
-    "materials": 7,
+    "mesh_vertices": 13271,
+    "mesh_polygons": 3313,
+    "materials": 8,
     "external_image_dependencies": [],
     "preview": "alpha_chi_rho_preview.png",
     "build_log": "build.log"
@@ -81,8 +111,9 @@
     }
   ],
   "unverified": [
-    "Current facade dimensions and openings",
-    "Current roof shape and materials",
+    "Capture date and present condition of the street panorama",
+    "Measured facade dimensions and exact opening locations",
+    "Measured roof shape, pitch, and materials",
     "Measured wall/eave height and ground elevation datum",
     "Exact entrance/porch location and dimensions"
   ],
