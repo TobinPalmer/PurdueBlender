@@ -204,6 +204,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Virginia C. Meredith Residence Hall | [`massing_meredith_hall_4bb4188.blend`](modular/buildings/massing_meredith_hall_4bb4188.blend) | [8.5/10](audit/meredith_hall/independent_grade.json); awaiting master integration | Kyle |
 | Telecommunications Building (TEL) | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | [8.0/10](audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json); awaiting master integration | Rossen |
 | Twin Pines Cooperative | [`massing_twin_pines_cooperative_8f606f9.blend`](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | [8.3/10](audit/massing_twin_pines_cooperative_8f606f9/independent_grade/twin_pines_independent_grade.json); awaiting master integration | Rossen |
+| Turf Recreation Exercise Center (TREC) | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | [8.1/10](audit/massing_turf_recreation_exercise_center_9622f45/independent_grade_r4.json); awaiting master integration | Rossen |
 | Unitarian Universalist Church of Tippecanoe County | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | [8.5/10](audit/unitarian_universalist_church_of_tippecanoe_county_2a6793d/independent_grade_kyle.json); awaiting master integration | Kyle |
 
 
@@ -239,7 +240,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
 | the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Rossen |
 | the moosehead lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | Rossen |
-| turf recreation exercise center | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Rossen |
 | union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Rossen |
 
 | village bottle shoppe | [`massing_village_bottle_shoppe_6a17e23.blend`](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | Tobin |
@@ -791,7 +791,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 860 | Grounds Maintenance Pesticide Storage Facility | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 861 | Bill & Sally Hanley Human Development Institute | [massing_hanley_hall_c8a4551](modular/buildings/massing_hanley_hall_c8a4551.blend)<br>[massing_house_988509816_d9662c5](modular/buildings/massing_house_988509816_d9662c5.blend)<br>[massing_house_988509817_c56a2a6](modular/buildings/massing_house_988509817_c56a2a6.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+1 more candidates) |
 | 862 | Marriott Hall | [massing_marriot_hall_7cd3eb5](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | Direct FID 862 verified; 33 source vertices match within 0.000065 m; 8.5/10 pass; awaiting master integration |
-| 863 | Turf Recreation Center | [massing_turf_recreation_exercise_center_9622f45](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 863 | Turf Recreation Center | [massing_turf_recreation_exercise_center_9622f45](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Independently graded 8.1/10; named GIS and OSM identity confirmed, but perimeter/area conflicts remain unresolved (see TODO.md) |
 | 864 | A. A. Potter Engineering Center | [massing_potter_engineering_center_potr_89c4c33](modular/buildings/massing_potter_engineering_center_potr_89c4c33.blend)<br>[potter_engineering](modular/buildings/potter_engineering.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 865 | Salt Storage | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 866 | Heavy Equipment Storage | — | No direct FID crosswalk; reconcile to a master asset or create one |
