@@ -1,0 +1,126 @@
+{
+  "score": 9.0,
+  "max_score": 10,
+  "pass": true,
+  "passing_standard": 8,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified with community-map accuracy limitation",
+      "evidence": "OSM way 256640455 explicitly tags McDonald's name/brand, 605 Stadium Avenue, fast-food amenity, and official store URL. Reopened model structural edges are independently compared to all source edges.",
+      "metrics": {
+        "osm_way_id": 256640455,
+        "name": "McDonald's",
+        "brand": "McDonald's",
+        "address": "605 Stadium Avenue",
+        "source_vertices": 16,
+        "matched_edges": 16,
+        "max_edge_error_m": 1.4863405287851023e-05,
+        "matched_structural_wall_vertex_symmetric_hausdorff_m": 1.4863405287851023e-05,
+        "source_area_m2": 511.53738445702584
+      }
+    },
+    {
+      "criterion": "Position, orientation, and dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified against OSM outline; survey limitation retained",
+      "evidence": "Structural perimeter coordinates, rotation, and plan dimensions independently match the georeferenced OSM ring in the manifest campus frame. Purdue GIS name inventory has no McDonald's record; no separate official building footprint is available.",
+      "metrics": {
+        "model_identity_transform": true,
+        "source_bbox_xy_m": {
+          "min": [
+            29.03066980579883,
+            390.86080000019365
+          ],
+          "max": [
+            61.36895317413393,
+            419.26483199996255
+          ]
+        },
+        "model_bounds_xyz_m": {
+          "min": [
+            28.470417022705078,
+            390.4246826171875,
+            0.0
+          ],
+          "max": [
+            61.396575927734375,
+            419.8265075683594,
+            4.699999809265137
+          ]
+        },
+        "source_bbox_dimensions_m": [
+          32.3382833683351,
+          28.404031999768904
+        ]
+      }
+    },
+    {
+      "criterion": "Height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "one story and low roof visually supported; height unverified",
+      "evidence": "The exact-address exterior photo shows one occupied story and a low parapet/roofline; aerial tiles support the broad roof plan. The saved model roof/equipment top is 4.70 m, but no measured elevation or height source exists, so its numerical height remains estimated.",
+      "metrics": {
+        "model_roof_top_m": 4.699999809265137,
+        "published_height_m": null,
+        "photo_supports_one_visible_story": true,
+        "aerial_supports_roof_plan_only": true
+      }
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "major photographed features represented; exact geometry and bearing unverified",
+      "evidence": "An exact-address gallery page for McDonald's at 605 W Stadium Ave attributes a nighttime exterior corner photo to Akash Patil. The photo shows the entrance bay and Welcome sign, dark cladding, adjacent light panels, storefront glazing, yellow roofline canopy, and a small golden arches mark; the revised preview represents these elements. The image has no capture date or compass bearing and shows only one corner, so dimensions, current condition, and other elevations remain uncertain.",
+      "metrics": {
+        "store_specific_facade_photo_present": true,
+        "photo_attribution": "Akash Patil via USA Restaurants listing for 605 W Stadium Ave",
+        "photo_capture_date": null,
+        "store_specific_elevation_present": false,
+        "entrance_bearing_verified": false
+      }
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "pass",
+      "evidence": "Saved file reopens with one mesh in the expected manifest collection/path, no modifiers, no file-backed image dependencies, and source snapshots plus preview/reopen record in the dedicated audit folder.",
+      "metrics": {
+        "asset_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_mcdonald_s_ab77b70.blend",
+        "manifest_path": "buildings/massing_mcdonald_s_ab77b70.blend",
+        "collection_object_count": 1,
+        "object_type": "MESH",
+        "mesh_vertices": 3008,
+        "mesh_faces": 1765,
+        "modifiers": [],
+        "external_file_images": []
+      }
+    }
+  ],
+  "evidence": {
+    "asset_id": "massing_mcdonald_s_ab77b70",
+    "saved_blend_reopened": true,
+    "osm_snapshot": "audit/mcdonald_s/sources/osm_way_256640455_full.xml",
+    "aerial_snapshots": [
+      "audit/mcdonald_s/sources/esri_world_imagery_tile_z20_y395324_x271135.jpg",
+      "audit/mcdonald_s/sources/esri_world_imagery_tile_z19_y197662_x135567.jpg"
+    ],
+    "preview": "audit/mcdonald_s/preview_exterior.png",
+    "exact_address_facade_photo": "audit/mcdonald_s/sources/usarestaurants_photo_03.jpg",
+    "photo_source_record": "audit/mcdonald_s/sources/usarestaurants_gallery_source_record.json",
+    "purdue_gis_name_inventory": "audit/mcdonald_s/sources/purdue_gis_building_name_inventory.json",
+    "measurement_tolerance_m": 0.002
+  },
+  "findings": [
+    "Score 9.0/10; PASS against the required 8/10 minimum.",
+    "Identity and 16-edge structural footprint match OSM way 256640455 within 0.000015 m; Purdue BuildingShapes has no separate named McDonald's footprint.",
+    "Exact-address exterior evidence supports one visible story and low roof form; the model height of 4.70 m remains estimated.",
+    "The facade now follows major features in the attributed exact-address photo, but that photo is undated and lacks a compass bearing; storefront dimensions, entrance bearing, and unseen elevations remain uncertain."
+  ]
+}
