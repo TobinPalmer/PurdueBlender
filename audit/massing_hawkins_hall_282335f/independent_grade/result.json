@@ -1,0 +1,168 @@
+{
+  "score": 8.2,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": "Official Purdue BuildingShapes FID 83 identifies BLDG_ABBR HAWK / George A. Hawkins Hall. Source ring transformed using documented local campus approximation; 65 cleaned vertices compared directly to the lower shell, maximum nearest-vertex delta 0.0000 m (mean 0.0000 m)."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "verified_with_limit",
+      "evidence": "GIS footprint has the same campus placement and directional outline; the asset's direct evaluated bounds are X 150.431\u2013201.053, Y -557.261\u2013-461.206 m. GIS is in EPSG:4326 and conversion is an approximate local transform, not a survey; aerial overlay is supportive but imagery georeferencing/date are not stated."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2.0,
+      "status": "partly_estimated",
+      "evidence": "Purdue OEP snapshot supports 13 floors on east wing and 10 on west/connector. GIS extrusion field is 140, modeled as feet = 42.672 m, but metadata does not confirm units/meaning; GIS NUM_LEVELS=15 conflicts with OEP floor counts. The 10-floor mass height is estimated by proportional division (10/13), not measured. Flat roof is consistent with aerial and exterior photo."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2.0,
+      "status": "partly_supported",
+      "evidence": "Saved Purdue exterior photo supports red/orange brick, repeated window bands, light trim, and flat roof. Render includes these visual elements and split-height wings. Exact window spacing, central entry station/canopy, and upper-wing boundary are not dimensioned; entrance placement is explicitly inferred."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "verified_with_limit",
+      "evidence": "Directly opened saved .blend in Blender; expected scene/collection present, 7 collection objects (7 meshes), evaluated bounds Z 0.000\u201342.737 m; no modifiers on exported objects; file images are project-relative and resolve: True. Raw GIS, OEP, housing pages, exterior photo, aerial, render, and validation are saved. No single machine-readable evidence_record.json; source and uncertainty details are instead in audit README and validation JSON."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_hawkins_hall_282335f.blend",
+    "scene": "Building_massing_hawkins_hall_282335f",
+    "collection": "Asset_massing_hawkins_hall_282335f",
+    "identity": {
+      "FID": 83,
+      "BLDG_ABBR": "HAWK",
+      "BUILDING_N": "George A. Hawkins Hall"
+    },
+    "direct_blend_inspection": {
+      "opened_in_blender": true,
+      "collection_object_count": 7,
+      "mesh_object_count": 7,
+      "bounds_m": [
+        [
+          150.43057250976562,
+          201.0531463623047
+        ],
+        [
+          -557.2612915039062,
+          -461.2057800292969
+        ],
+        [
+          0.0,
+          42.73699951171875
+        ]
+      ],
+      "footprint_source_vertex_max_nearest_error_m": 3.0622497848258535e-05,
+      "footprint_source_vertex_mean_nearest_error_m": 1.4103846948665111e-05,
+      "external_images": [
+        {
+          "path": "//..\\..\\materials\\textures\\red_brick\\diffuse.jpg",
+          "exists": true,
+          "project_relative": true
+        },
+        {
+          "path": "//..\\..\\materials\\textures\\red_brick\\height.jpg",
+          "exists": true,
+          "project_relative": true
+        },
+        {
+          "path": "//..\\..\\materials\\textures\\red_brick\\normal.jpg",
+          "exists": true,
+          "project_relative": true
+        },
+        {
+          "path": "//..\\..\\materials\\textures\\red_brick\\rough.jpg",
+          "exists": true,
+          "project_relative": true
+        }
+      ],
+      "recorded_validation": {
+        "asset": "modular/buildings/massing_hawkins_hall_282335f.blend",
+        "scene": "Building_massing_hawkins_hall_282335f",
+        "collection": "Asset_massing_hawkins_hall_282335f",
+        "object_count": 7,
+        "mesh_object_count": 7,
+        "object_names": [
+          "Hawkins | ten-floor lower footprint",
+          "Hawkins | east wing upper three floors",
+          "Hawkins | west and shared facade floor courses",
+          "Hawkins | west and shared facade windows and frames",
+          "Hawkins | east wing facade floor courses",
+          "Hawkins | east wing facade windows and frames",
+          "Hawkins | inferred central glazed entry"
+        ],
+        "bounds_m": {
+          "x": [
+            150.43057250976562,
+            201.0531463623047
+          ],
+          "y": [
+            -557.2612915039062,
+            -461.2057800292969
+          ],
+          "z": [
+            0.0,
+            42.73699951171875
+          ]
+        },
+        "dimensions_m": [
+          50.62257385253906,
+          96.05551147460938,
+          42.73699951171875
+        ],
+        "relative_external_images": [
+          {
+            "path": "//..\\..\\materials\\textures\\red_brick\\diffuse.jpg",
+            "resolved_exists": true
+          },
+          {
+            "path": "//..\\..\\materials\\textures\\red_brick\\height.jpg",
+            "resolved_exists": true
+          },
+          {
+            "path": "//..\\..\\materials\\textures\\red_brick\\normal.jpg",
+            "resolved_exists": true
+          },
+          {
+            "path": "//..\\..\\materials\\textures\\red_brick\\rough.jpg",
+            "resolved_exists": true
+          }
+        ],
+        "scene_height_note": "140 ft maximum from official GIS attribute; east/west floor counts per 2026 OEP. West/connector height is an estimate at 10/13 of 140 ft.",
+        "save_reopened": true
+      }
+    },
+    "reviewed_files": [
+      "audit/massing_hawkins_hall_282335f/README.md",
+      "audit/massing_hawkins_hall_282335f/final_validation.json",
+      "audit/massing_hawkins_hall_282335f/sources/purdue_building_shapes_fid83_full_2026-10-26.json",
+      "audit/massing_hawkins_hall_282335f/sources/purdue_oep_hawkins_emergency_plan_2026-10-26.html",
+      "audit/massing_hawkins_hall_282335f/sources/purdue_residences_hawkins_2026-10-26.html",
+      "audit/massing_hawkins_hall_282335f/sources/purdue_residences_hawkins_exterior.jpg",
+      "audit/massing_hawkins_hall_282335f/sources/indiana_current_aerial_hawkins.jpg",
+      "audit/massing_hawkins_hall_282335f/preview_exterior.png",
+      "audit/massing_hawkins_hall_282335f/site_alignment_overlay.png"
+    ]
+  },
+  "findings": [
+    "Keep the 140 ft height interpretation explicitly uncertain until a source confirms the GIS extrusion units or a dimensioned elevation is found.",
+    "GIS NUM_LEVELS=15 and OEP floor counts (13 east / 10 west) conflict; preserve both and label the west/connector height as estimated.",
+    "Upper east-wing split and central entry location are approximate; the photo is not a dimensioned or georeferenced elevation.",
+    "The 0.29 m overall plan-bound expansion relative to the GIS structural outline is attributable to facade/trim projections; evaluate structural base separately from the total render bounds."
+  ],
+  "reviewer": "Independent evaluator (read-only asset/source review)",
+  "reviewed_utc": "2026-10-26T16:19:28.332680+00:00"
+}
