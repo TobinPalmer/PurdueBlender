@@ -1,0 +1,97 @@
+{
+  "score": 7.25,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 1.75,
+      "max_points": 2,
+      "evidence": "Directly compared 6 transformed vertices from 2018 Indiana LiDAR objectid 409940 with the reopened shell's six base vertices; symmetric nearest-vertex max difference 0.000013 m. Address 400 Northwestern, 1928 construction, and the fraternity shelter are corroborated by the zoning report and 1970 chapter publication. The GIS feature itself is unlabeled and the address point falls just outside the polygon.",
+      "finding": "Footprint match is excellent; identity remains a spatial/documentary association rather than a named survey feature."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 2.0,
+      "max_points": 2,
+      "evidence": "Reopened campus-coordinate structural XY bounds are 311.4045–336.1739 m east and 60.6152–103.9547 m north; they agree with the transformed GIS ring. Asset preserves campus coordinates and expected collection.",
+      "finding": "No material horizontal position, orientation, or scale discrepancy found."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.0,
+      "max_points": 2,
+      "evidence": "The zoning staff report identifies Tudor Revival characteristics, which supports a steep roof silhouette at a broad stylistic level. The model records 10.4 m eaves, 15.2 m ridge, 17.4 m chimney tops, three window bands, and three chimneys as estimates. Reviewed sources contain no measured elevations or floor plan; exact heights, floor count, roof geometry, and chimney count are unsupported.",
+      "finding": "Retain the estimated labels; obtain a dimensioned elevation/plan or directly inspected archival photo set to verify height, floors, roof and stacks."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 1.0,
+      "max_points": 2,
+      "evidence": "The sources support red brick and a general Tudor Revival character only weakly: the X profile is a small, cropped seasonal image, while the 2021 report names the style. The rendered asset shows repeated window panels, lintels, a west-side entry, projecting gable/canopy, and a regular side rhythm. The source snapshot says archival negatives and photos exist but were not inspected; no facade drawing, measured entry, window count, or 1970 addition junction was found.",
+      "finding": "The visual massing is coherent but most facade placement/detail is schematic. Verify the actual elevations and 1970 addition from archival imagery, or simplify unsupported detail."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 1.5,
+      "max_points": 2,
+      "evidence": "Blender 4.5.15 LTS reopened the saved file. Expected scene/collection are present; 73 mesh objects are in the scene and target collection, there are 0 modifiers, and external linked libraries are 0. Structured source/build evidence and both saved preview images are present. The three-quarter render is inspectable. The plan render is clipped vertically by the orthographic framing and mostly shows the roof; the shared manifest currently still lists one object and original bounds, inconsistent with the reopened 73-object asset.",
+      "finding": "Library is portable and opens correctly; repair the plan framing and ask the coordinator to refresh the manifest/index count and bounds before integration."
+    }
+  ],
+  "evidence": {
+    "asset_reopen": {
+      "path": "modular\\buildings\\massing_delta_tau_delta_e06b0b5.blend",
+      "sha256": "94ef42f576009ccb90655cc65212bc54c0a77fa3908063d56d0d7ddf33ec2c65",
+      "blender_version": "4.5.15 LTS",
+      "scene": "Building_massing_delta_tau_delta_e06b0b5",
+      "collection": "Asset_massing_delta_tau_delta_e06b0b5",
+      "object_count": 73,
+      "bounds_world_m": [
+        [
+          311.0545349121094,
+          336.5238952636719
+        ],
+        [
+          60.26517868041992,
+          104.30464935302734
+        ],
+        [
+          0.0,
+          17.399999618530273
+        ]
+      ],
+      "external_libraries": [],
+      "modifiers_total": 0
+    },
+    "footprint_check": {
+      "provider": "Indiana Building Footprints, Tippecanoe County 2018 LiDAR",
+      "feature_id": 409940,
+      "transformed_source_vertex_count": 6,
+      "reopened_shell_bottom_vertex_count": 6,
+      "symmetric_nearest_vertex_max_error_m": 1.275e-05,
+      "shape_area_m2": 1203.754741476443,
+      "shape_perimeter_m": 155.1203528571216
+    },
+    "documentary_source_ids": [
+      "objectid 409940",
+      "Address match",
+      "Zoning petition Z-2826",
+      "Purdue Gamma Lambda Shelter; 400 Northwestern Avenue",
+      "Box 9, Folder 31, Delta Tau Delta Fraternity, 400 Northwestern Ave.",
+      "Items 25.7.107-25.7.112; fraternity exterior groups and 1946 construction photographs",
+      "Official chapter/house-corporation site",
+      "Purdue_Delts account profile image"
+    ],
+    "previews": [
+      "audit/delta_tau_delta_e06b0b5/previews/delta_tau_delta_three_quarter.png",
+      "audit/delta_tau_delta_e06b0b5/previews/delta_tau_delta_plan.png"
+    ],
+    "direct_image_inspection": "Three-quarter view shows a simple brick envelope, very broad roof planes, three stacks, repeated window panels and schematic entrance. Plan preview crops the north/south extent and is dominated by roof; it is not a reliable footprint presentation."
+  },
+  "findings": [
+    "Score is below the 8/10 threshold.",
+    "Footprint/XY are accurately derived from an unlabeled 2018 GIS polygon, but identity is inferential.",
+    "No measured vertical data or directly reviewed facade/elevation record is present; the documented construction-era photo/plan leads have not been inspected.",
+    "Plan preview framing and stale shared manifest need coordinator follow-up."
+  ]
+}

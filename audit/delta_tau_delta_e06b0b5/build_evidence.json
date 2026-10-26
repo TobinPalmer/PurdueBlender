@@ -1,0 +1,76 @@
+{
+  "building_id": "massing_delta_tau_delta_e06b0b5",
+  "building": "Delta Tau Delta, Gamma Lambda Chapter (Purdue Shelter)",
+  "asset": "modular/buildings/massing_delta_tau_delta_e06b0b5.blend",
+  "source_script": "modular/buildings/build_massing_delta_tau_delta_e06b0b5.py",
+  "collection": "Asset_massing_delta_tau_delta_e06b0b5",
+  "scene": "Building_massing_delta_tau_delta_e06b0b5",
+  "coordinate_frame": {
+    "asset_kind": "massing; retained in campus world coordinates with identity transform",
+    "units": "meters",
+    "axes": "X east, Y north, Z up",
+    "geographic_origin": [40.4274, -86.9137],
+    "transform": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040"
+  },
+  "sources": "sources/documentary_sources_snapshot_2026-10-26.json; raw LiDAR GIS feature is stored alongside it",
+  "independent_grade": {
+    "status": "PASS",
+    "score": 8.25,
+    "out_of": 10,
+    "report": "independent_grade_r2/report.md",
+    "result": "independent_grade_r2/result.json",
+    "evaluated_asset_sha256": "F1DFB1418FB4D003BB4BD3A333C2A137ED0B3F923DB5876653769505AA639283",
+    "post_grade_update": "After the independent review, the plan preview camera was recentered on the footprint bounds and widened; the building geometry was unchanged. The latest asset hash is recorded in validation.asset_sha256.",
+    "manifest_follow_up": "The independent reviewer excluded coordinator-owned modular/manifest.json from the building score but flagged its old object count and bounds for coordinator refresh before integration."
+  },
+  "geometry_source": {
+    "provider": "Indiana Geographic Information Office; footprint data credited to Polis Center at IUPUI",
+    "feature_id": "objectid 409940",
+    "source_crs": "Native EPSG:3857 (WKID 102100); requested output EPSG:4326 (WGS 84)",
+    "closed_ring_vertices": 7,
+    "source_area_m2": 1203.754741476443,
+    "source_perimeter_m": 155.1203528571216,
+    "measurement_method": "Each source polygon vertex transformed using the project local geographic approximation. The existing massing envelope and nearby address point provided cross-checks; the source service does not identify the building by name.",
+    "identity_uncertainty": "The feature footprint was spatially matched to the 400 Northwestern Ave address and agreed closely with the existing asset's position. The address geocoder point is near the road frontage and falls just outside the building polygon."
+  },
+  "before": {
+    "asset": "Single coarse massing mesh named Delta Tau Delta",
+    "bounds_world_m": [[311.1871, 333.3820], [61.6050, 101.9569], [0.0, 16.0]],
+    "structural_footprint_status": "unverified rectangle; asset object was 22.195 by 40.352 m"
+  },
+  "after": {
+    "bounds_world_m": [[310.6398, 336.5239], [60.2652, 104.3046], [0.0, 17.4]],
+    "structural_footprint_status": "GIS polygon directly used for ground-level shell; approximately 24.77 by 43.34 m bounding envelope; source area 1203.75 m2",
+    "height_status": "estimated, not measured; 10.4 m eaves, 15.2 m principal ridge, 17.4 m chimney tops",
+    "floor_status": "three window bands used as a visual estimate; no floor plan or published count was found",
+    "roof_status": "steep principal gable roof with three projecting front gables and three stacks; the broad gable/brick/window/arched-entry character is visible in the chapter's official profile image, while pitch, dimensions, and chimney count remain estimates",
+    "facade_status": "estimated brick envelope with three gabled bays and repeated window bands; doorway is schematic; full facade layout, entry side, exact window count, and addition junction remain unverified",
+    "collection_object_count": 85,
+    "modifiers": "none",
+    "external_dependencies": "none"
+  },
+  "edits": [
+    "Replaced the unverified rectangular block with the six unique vertices of Indiana footprint feature 409940, transformed to campus coordinates.",
+    "Added an estimated 10.4 m wall envelope, 15.2 m ridge, and chimney stacks (17.4 m top elevation). These are modeled estimates only.",
+    "Added a steep main gable roof, three projecting front gables with upper windows guided by the chapter's official profile photo, repeated window panels, and a schematic projecting entry gable/canopy to represent the documented Tudor Revival style.",
+    "Expanded the plan preview framing so the full building envelope is visible.",
+    "Preserved asset path, stable ID, scene name, collection name, campus coordinate frame, and identity transform."
+  ],
+  "validation": {
+    "blender_version": "4.5.15 LTS",
+    "save_reopened": "passed in Blender 4.5.15 LTS; exact expected scene and collection names present",
+    "export_collection": "passed; 85 mesh objects, zero modifiers, no linked external objects, no camera/light objects, asset collection name preserved",
+    "reopened_world_bounds_m": [[310.6398, 336.5239], [60.2652, 104.3046], [0.0, 17.4]],
+    "asset_sha256": "2E6BE593D42546CDBBBA5AC469BC2CCAAF6B641598FD0B378C6FCD4FE563B0B3",
+    "preview_files": [
+      "previews/delta_tau_delta_three_quarter.png",
+      "previews/delta_tau_delta_plan.png"
+    ],
+    "remaining_uncertainty": [
+      "No measured elevations, floor plan, or roof survey located; all vertical geometry is estimated.",
+      "2018 footprint feature is unlabeled; identity match is geographic/address-based and could omit post-2018 changes.",
+      "The 1970 addition is documented as approximately doubling the house, but its footprint seam and facade are not identifiable in the sources inspected.",
+      "Entry side and facade details are unverified; the entry is schematic."
+    ]
+  }
+}

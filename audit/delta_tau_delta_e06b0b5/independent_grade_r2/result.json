@@ -1,0 +1,75 @@
+{
+  "score": 8.25,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 2.0,
+      "max_points": 2,
+      "evidence": "Downloaded and directly inspected the cited Purdue_Delts profile image (400x400 px, https://unavatar.io/x/Purdue_Delts, retrieval 2026-10-26): the sign identifies Delta Tau Delta, Gamma Lambda, 400 Northwestern; the house appears in that image. Transformed 2018 GIS feature 409940's six unique vertices match the reopened structural base ring with symmetric max nearest-vertex error 0.000013 m. The GIS feature itself is unlabeled and the address point is just outside it, but the image/sign plus zoning/chapter documents resolve identity.",
+      "finding": "Identity and footprint are adequately supported, with GIS collection/parcel uncertainty retained."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 2.0,
+      "max_points": 2,
+      "evidence": "Reopened structural shell XY bounds match the projected LiDAR ring and retain the expected campus-world coordinates; no horizontal displacement, rotation, or scale discrepancy found.",
+      "finding": "No material discrepancy."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.0,
+      "max_points": 2,
+      "evidence": "The directly inspected profile image supports a broad steep, front-gabled roof silhouette and chimney-like verticals. Its snowy, low-resolution crop cannot establish eaves/ridge height, floor count, pitch, or exact roof/chimney layout. Modeled 10.4 m eaves, 15.2 m ridge, 17.4 m tops, and three floor/window bands remain estimates.",
+      "finding": "Vertical dimensions and floor count remain unsupported; retain explicit estimate labels."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 1.5,
+      "max_points": 2,
+      "evidence": "The cited profile image directly supports red brick, multiple front-facing gables, rectangular window rows, a steep roof and an arched masonry entrance. The updated asset now includes three projecting front gables, repeated windows, brick and a schematic arched/pointed entry. The partial oblique snowy image does not verify the full elevations, exact bay count/spacing, facade entry side, or the 1970 addition seam.",
+      "finding": "Broad facade character is now evidence-backed; most exact layout remains schematic."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 1.75,
+      "max_points": 2,
+      "evidence": "Blender 4.5.15 LTS reopened the saved asset and expected scene/collection. Target collection contains 85 objects; zero modifiers and zero external libraries. Three default objects (Cube, Camera, Light) remain outside the target collection. Source/build evidence and both previews exist. The three-quarter view is usable; plan preview remains vertically clipped and roof-dominated. The shared manifest still lists 1 object and old bounds, although the asset is now 85 objects with current expanded bounds.",
+      "finding": "Portable named collection is ready. Correct the plan view and refresh the coordinator-owned manifest before integration."
+    }
+  ],
+  "evidence": {
+    "asset_sha256": "f1dfb1418fb4d003bb4bd3a333c2a137ed0b3f923db5876653769505aa639283",
+    "asset_path": "modular/buildings/massing_delta_tau_delta_e06b0b5.blend",
+    "blender_version": "4.5.15 LTS",
+    "scene": "Building_massing_delta_tau_delta_e06b0b5",
+    "collection_object_count": 85,
+    "scene_object_count": 88,
+    "bounds_world_m": [
+      [
+        310.6398010253906,
+        336.5238952636719
+      ],
+      [
+        60.26517868041992,
+        104.30464935302734
+      ],
+      [
+        0.0,
+        17.399999618530273
+      ]
+    ],
+    "external_libraries": [],
+    "modifiers_total": 0,
+    "gis_footprint_max_vertex_error_m": 1.275e-05,
+    "identity_visual_source": "https://unavatar.io/x/Purdue_Delts (proxy for cited Purdue_Delts X profile avatar; directly inspected; 400x400 px; retrieved 2026-10-26)",
+    "plan_preview": "Still cropped in north/south direction; not an effective full footprint view.",
+    "manifest_mismatch": "manifest object_count=1 and old bounds do not match current asset. Shared coordinator-owned metadata, excluded from the asset score but must be corrected before integration."
+  },
+  "findings": [
+    "PASS at 8.25/10.",
+    "The profile image substantially strengthens identity and broad facade support but cannot establish measured height/floors or exact facade geometry.",
+    "The stale manifest does not reduce the building asset score because it is shared coordinator-owned metadata, but it is a concrete integration blocker until updated.",
+    "Plan preview remains clipped; default Cube, Camera and Light are present in the Blender scene outside the export collection."
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "retrieved_utc_date": "2026-10-26",
+  "building_identity": "Delta Tau Delta, Gamma Lambda Chapter, 400 Northwestern Avenue, West Lafayette, Indiana",
+  "sources": [
+    {
+      "provider": "Indiana Geographic Information Office; footprint data credited to Polis Center at IUPUI",
+      "title": "Indiana Statewide LiDAR Derived Building Footprints / Indiana Building Footprints 2016-2020",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0/query?objectIds=409940&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": "objectid 409940",
+      "source_date": "LidarYear field is 2018; metadata publication date 2022-08-08; service snapshot retrieved 2026-10-26",
+      "source_crs": "Service native spatial reference EPSG:3857 (WKID 102100); query requested outSR=4326 (WGS 84)",
+      "measurement_method": "Used the returned building polygon and transformed each vertex to the project's documented local approximation (X=(longitude+86.9137)*111412.84*cos(40.4274 degrees), Y=(latitude-40.4274)*111040).",
+      "source_measurements": {
+        "shape_area_m2": 1203.754741476443,
+        "shape_perimeter_m": 155.1203528571216,
+        "vertices_in_closed_ring": 7
+      },
+      "uncertainty": "Dataset does not name the structure; metadata says polygons are automated derivatives of 2016-2020 USGS 3DEP LiDAR, are reference data rather than a legal survey, and may differ from detailed on-the-ground/historical review. Identity match is supported by parcel/address/location context and the close match to the existing asset envelope. The polygon may not represent later small additions or decorative projections.",
+      "raw_snapshot": "indiana_lidar_building_footprint_oid409940_2026-10-26.json",
+      "metadata_snapshot": "indiana_building_footprints_metadata.xml"
+    },
+    {
+      "provider": "U.S. Census Bureau Geocoder",
+      "title": "400 Northwestern Avenue address candidate",
+      "url": "https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=400%20Northwestern%20Ave%2C%20West%20Lafayette%2C%20IN%2047906&benchmark=Public_AR_Current&format=json",
+      "feature_id": "Address match",
+      "source_date": "Current address-range locator; queried 2026-10-26",
+      "source_crs": "WGS 84 longitude/latitude",
+      "measurement_method": "Returned address point: longitude -86.910279617946, latitude 40.428042917547. Spatially queried the 2018 footprint service at the point and at the adjacent building center; the address point itself falls just outside the footprint, consistent with an address point on the frontage.",
+      "uncertainty": "Address geocoding identifies the parcel/frontage, not a surveyed building entrance or wall corner."
+    },
+    {
+      "provider": "Tippecanoe County Area Plan Commission",
+      "title": "Z-2826, Purdue Delta Tau Delta Association, Inc., staff report",
+      "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/Item/11186?fileID=21927",
+      "feature_id": "Zoning petition Z-2826",
+      "source_date": "2021-04-15",
+      "source_crs": "Not applicable; land-use report",
+      "measurement_method": "Document text identifies the address as 400 Northwestern Avenue and states that the building was constructed in 1928, reflects Tudor Revival characteristics, and has been home to a fraternity for several decades.",
+      "uncertainty": "The staff report characterizes architectural style and age but provides no dimensioned plan, facade elevations, floor count, or measured height."
+    },
+    {
+      "provider": "Delta Tau Delta, The Rainbow, Vol. 94, No. 1",
+      "title": "1970 Fall issue, Purdue Shelter addition",
+      "url": "https://deltataudeltaarchive.com/wp-content/uploads/2011/11/1970-FALL_VOL-94_NO-1.pdf",
+      "feature_id": "Purdue Gamma Lambda Shelter; 400 Northwestern Avenue",
+      "source_date": "1970 (Fall issue; article describes the addition dedication in May 1970)",
+      "source_crs": "Not applicable; historical fraternity publication",
+      "measurement_method": "The article/caption describes the Woodson C. Immel addition as approximately doubling the Shelter, locates it at 400 Northwestern Avenue, and says the original building was erected in 1928.",
+      "uncertainty": "The prose establishes an addition and relative size only. The local geometry and exact junction between original and addition are not identified in a plan."
+    },
+    {
+      "provider": "Indiana Historical Society, Hugh J. Baker & Company Collection finding aid",
+      "title": "Hugh J. Baker & Company Collection, 1905-1972, Box 9, Folder 31",
+      "url": "https://indianahistory.org/wp-content/uploads/hugh-j-baker-company-collection-1905-1972.pdf",
+      "feature_id": "Box 9, Folder 31, Delta Tau Delta Fraternity, 400 Northwestern Ave.",
+      "source_date": "1928 project record listed in finding aid",
+      "source_crs": "Not applicable; archival finding aid",
+      "measurement_method": "Finding-aid entry identifies architect Bishop, Knowlton & Carson (Indianapolis), contractor Hall Construction Co. (Indianapolis), date 1928, and related photographs.",
+      "uncertainty": "Finding aid identifies associated project records but the plans/photographs were not directly inspected for this model."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "title": "J. C. Allen negatives and photographs inventory, entries 25.7.107-25.7.112",
+      "url": "https://archives.lib.purdue.edu/fa/MSP25_JC-Allen_inventory.pdf",
+      "feature_id": "Items 25.7.107-25.7.112; fraternity exterior groups and 1946 construction photographs",
+      "source_date": "1945-1946",
+      "source_crs": "Not applicable; archival inventory",
+      "measurement_method": "Inventory identifies several groups photographed outside the Delta Tau Delta house and five 1946 construction photographs and a negative.",
+      "uncertainty": "Inventory metadata confirms that visual records exist; the images themselves were not accessible/inspected for this model and were not used to infer dimensions."
+    },
+    {
+      "provider": "Purdue Delts / Gamma Lambda house corporation",
+      "title": "Purdue Delts chapter site",
+      "url": "https://purduedelts.com/",
+      "feature_id": "Official chapter/house-corporation site",
+      "source_date": "Current site, retrieved 2026-10-26",
+      "source_crs": "Not applicable",
+      "measurement_method": "Site labels the organization as Purdue Delts and displays '400 Northwestern' as the chapter's online gathering place.",
+      "uncertainty": "The current landing page provides identity/address but no architectural measurements or facade documentation."
+    },
+    {
+      "provider": "Purdue Delts account, X profile image",
+      "title": "Delta Tau Delta Gamma Lambda Chapter house profile image",
+      "url": "https://x.com/Purdue_Delts",
+      "feature_id": "Purdue_Delts account profile image",
+      "source_date": "Image date not stated; retrieved 2026-10-26",
+      "source_crs": "Not applicable; visual source",
+      "measurement_method": "Inspected the account's 400x400 profile photograph. It visibly shows the red-brick chapter house with several steep, front-facing gables, rows of rectangular windows, a tall chimney, and a masonry arched entrance. The view is used to guide only those broad visible forms; no lengths, floor count, roof pitch, or exact dimensions were measured.",
+      "uncertainty": "The low-resolution image is a snowy, partial oblique view. Snow obscures roofing and wall details; the full facade, floor count, addition seam, and exact number/size of architectural elements remain unverified."
+    }
+  ]
+}

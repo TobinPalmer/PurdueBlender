@@ -1,0 +1,588 @@
+<html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <title>Indiana Statewide LiDAR Derived Building Footprints</title>
+        <style type="text/css">
+EM { font-style: normal; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; color: #333333 } 
+.allLinks { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; color: #3399CC; text-decoration: none} 
+A.allLinks:hover { color: #FFCC00; text-decoration: underline } 
+.formText { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000} 
+.selectText { font-family: "Courier New", Courier, mono; font-size: 9pt; color: #000000} 
+.headerLinks { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #72C7F1; text-decoration: none; font-weight: bold }
+A.headerLinks:link { color: #72C7F1 } 
+A.headerLinks:visited { color: #72C7F1 } 
+A.headerLinks:hover { color: #FFCC00; text-decoration: underline } 
+div.allLinks { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; color: #FFFFFF; text-decoration: none} 
+.gateTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14pt; font-weight: bold; color: #CC3333} 
+.gateTitleText { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold; color: #999999} 
+.gateIntro { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold; color: #000000}
+.boxTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold; color: #006699} 
+.explorerTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12pt; font-weight: bold; color: #CC3333}
+.explorerText { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 14pt; color: #333333} 
+.explorerList { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 12pt; color: #333333} 
+.detailsTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold; color: #333333} 
+.detailsText { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; color: #333333}
+.boxText { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; color: #000000}
+.subText { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000} 
+A.boxText:link { color: #000000 } A.boxText:visited { color: #000000 } 
+A.boxText:hover { color: #000000; text-decoration: underline } 
+A:link { color: #006699; text-decoration: none } 
+A:visited { color: #006699; text-decoration: none } 
+A:hover { color: #339933; text-decoration: underline } 
+.footerLinks { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #666666; text-decoration: none} 
+A.footerLinks:link { color: #666666; } 
+A.footerLinks:visited { color: #666666 } 
+A.footerLinks:hover { color: #000000; text-decoration: underline } 
+.mainTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13pt; font-weight: bold; color: #CC3333} 
+.mainGreyTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13pt; color: #A0A0A0} 
+.smallTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12pt; color: #999999; font-weight: bold} 
+.sectionTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11pt; font-weight: bold; color: #006699} 
+.headTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11pt; color: #333333; font-weight: bold}
+.toolbarTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14pt; color: #333333;}
+.bodyText { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 16pt; color: #333333}
+.bodyTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; font-weight: bold; color: #333333}
+LI { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt; line-height: 14pt; color: #333333}
+.homeBottomLinks { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #000000; text-decoration: none ; font-weight: bold } 
+A.homeBottomLinks:link { color: #000000 } 
+A.homeBottomLinks:visited { color: #000000 } 
+A.homeBottomLinks:hover { color: #FF6600; text-decoration: underline }
+.homepageText { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; line-height: 19pt; color: #000000; } 
+.homeTitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; font-weight: bold; color: #CC3333} 
+.homeBold { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold; color: #000000; } 
+.homeLinkBold { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; font-weight: bold; color: #006699} 
+A.homeLinkBold:link { color: #006699 } 
+A.homeLinkBold:visited { color: #006699 } 
+A.homeLinkBold:hover { color: #006699; text-decoration: underline } 
+.homeLink { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 8pt; color: #006699} 
+A.homeLink:link { color: #006699 }
+A.homeLink:visited { color: #006699 } 
+A.homeLink:hover { color: #006699; text-decoration: underline }
+</style>
+    </head>
+    <body class="bodyText">
+        <h1 class="toolbarTitle">Indiana Statewide LiDAR Derived Building Footprints</h1>
+        <hr>
+        <dl>
+            <dt>
+                <em>Identification Information: </em>
+            </dt>
+            <dd>
+                <dl>
+                    <dt>
+                        <em>Citation: </em>
+                    </dt>
+                    <dd>
+                        <dl>
+                            <dt>
+                                <em>Citation Information: </em>
+                            </dt>
+                            <dd>
+                                <dl>
+                                    <dt>
+                                        <em>Publication Date: </em>20220808
+                                    </dt>
+                                    <dt>
+                                        <em>Title: </em>Indiana Statewide LiDAR Derived Building Footprints
+                                    </dt>
+                                    <dt>
+                                        <em>Geospatial Data Presentation Form: </em>vector digital data
+                                    </dt>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt>
+                        <em>Description: </em>
+                    </dt>
+                    <dd>
+                        <dl>
+                            <dt>
+                                <em>Abstract: </em>This dataset contains polygons representing the footprint of structures within Indiana. This data was derived by the Polis Center at Indiana University Purdue University Indianapolis (IUPUI) from statewide LiDAR data collected during the 2016-2020 USGS 3DEP program. This dataset was developed as part of the Cooperating Technical Partner program with the Federal Emergency Management Agency and the Indiana Department of Natural Resources.
+                            </dt>
+                        </dl>
+                    </dd>
+                    <dt>
+                        <em>Status: </em>
+                    </dt>
+                    <dd>
+                        <dl>
+                            <dt>
+                                <em>Progress: </em>Complete
+                            </dt>
+                            <dt>
+                                <em>Maintenance and Update Frequency: </em>None planned
+                            </dt>
+                        </dl>
+                    </dd>
+                    <dt>
+                        <em>Spatial Domain: </em>
+                    </dt>
+                    <dd>
+                        <dl>
+                            <dt>
+                                <em>Bounding Coordinates: </em>
+                            </dt>
+                            <dd>
+                                <dl>
+                                    <dt>
+                                        <em>West Bounding Coordinate: </em>-88.091253474
+                                    </dt>
+                                    <dt>
+                                        <em>East Bounding Coordinate: </em>-84.7852399079999
+                                    </dt>
+                                    <dt>
+                                        <em>North Bounding Coordinate: </em>41.760706355
+                                    </dt>
+                                    <dt>
+                                        <em>South Bounding Coordinate: </em>37.773360924
+                                    </dt>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt>
+                        <em>Keywords: </em>
+                    </dt>
+                    <dd>
+                        <dl>
+                            <dt>
+                                <em>Theme: </em>
+                            </dt>
+                            <dd>
+                                <dl>
+                                    <dt>
+                                        <em>Theme Keyword Thesaurus: </em>None
+                                    </dt>
+                                    <dt>
+                                        <em>Theme Keyword: </em>Indiana
+                                    </dt>
+                                    <dt>
+                                        <em>Theme Keyword: </em>Buildings
+                                    </dt>
+                                    <dt>
+                                        <em>Theme Keyword: </em>Building
+                                    </dt>
+                                    <dt>
+                                        <em>Theme Keyword: </em>LiDAR
+                                    </dt>
+                                    <dt>
+                                        <em>Theme Keyword: </em>Indianamap
+                                    </dt>
+                                    <dt>
+                                        <em>Theme Keyword: </em>Structures
+                                    </dt>
+                                    <dt>
+                                        <em>Theme Keyword: </em>Footprint
+                                    </dt>
+                                </dl>
+                            </dd>
+                            <dt>
+                                <em>Theme: </em>
+                            </dt>
+                            <dd>
+                                <dl>
+                                    <dt>
+                                        <em>Theme Keyword Thesaurus: </em>ISO 19115 Topic Categories
+                                    </dt>
+                                    <dt>
+                                        <em>Theme Keyword: </em>economy
+                                    </dt>
+                                    <dt>
+                                        <em>Theme Keyword: </em>location
+                                    </dt>
+                                    <dt>
+                                        <em>Theme Keyword: </em>structure
+                                    </dt>
+                                </dl>
+                            </dd>
+                            <dt>
+                                <em>Place: </em>
+                            </dt>
+                            <dd>
+                                <dl>
+                                    <dt>
+                                        <em>Place Keyword Thesaurus: </em>None
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Indiana
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Adams County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Allen County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Bartholomew County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Benton County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Blackford County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Boone County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Brown County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Carroll County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Cass County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Clark County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Clay County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Clinton County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Crawford County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Daviess County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Dearborn County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Decatur County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Dekalb County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Delaware County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Dubois County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Elkhart County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Fayette County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Floyd County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Fountain County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Franklin County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Fulton County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Gibson County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Grant County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Greene County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Hamilton County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Hancock County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Harrison County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Hendricks County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Henry County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Howard County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Huntington County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Jackson County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Jasper County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Jay County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Jefferson County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Jennings County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Johnson County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Knox County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Kosciusko County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Lagrange County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Lake County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>LaPorte County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Lawrence County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Madison County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Marion County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Marshall County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Martin County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Miami County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Monroe County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Montgomery County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Morgan County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Newton County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Noble County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Ohio County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Orange County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Owen County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Parke County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Perry County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Pike County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Porter County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Posey County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Pulaski County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Putnam County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Randolph County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Ripley County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Rush County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Scott County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Shelby County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Spencer County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Starke County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Steuben County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>St Joseph County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Sullivan County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Switzerland County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Tippecanoe County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Tipton County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Union County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Vanderburgh County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Vermillion County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Vigo County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Wabash County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Warren County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Warrick County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Washington County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Wayne County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Wells County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>White County
+                                    </dt>
+                                    <dt>
+                                        <em>Place Keyword: </em>Whitley County
+                                    </dt>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt>
+                        <em>Access Constraints: </em>Other Constraints
+                    </dt>
+                    <dt>
+                        <em>Use Constraints: </em>This data set was compiled by the Polis Center at IUPUI, using LiDAR data and automated process. This product is distributed "AS-IS" without warranties of any kind, either expressed or implied, including but not limited to warranties of suitability of a particular purpose or use. No attempt has been made in either the designed format or production of these data to define the limits or jurisdiction of any federal, state, or local government. These data are intended for use only at the published scale or smaller and are for reference purposes only. They are not to be construed as a legal document or survey instrument. A detailed on-the-ground survey and historical analysis of a single site may differ from this data.
+                    </dt>
+                    <dt>
+                        <em>Point of Contact: </em>
+                    </dt>
+                    <dd>
+                        <dl>
+                            <dt>
+                                <em>Contact Information: </em>
+                            </dt>
+                            <dd>
+                                <dl>
+                                    <dt>
+                                        <em>Contact Organization Primary: </em>
+                                    </dt>
+                                    <dd>
+                                        <dl>
+                                            <dt>
+                                                <em>Contact Organization: </em>Indiana Geographic Information Office
+                                            </dt>
+                                        </dl>
+                                    </dd>
+                                    <dt>
+                                        <em>Contact Electronic Mail Address: </em><a href="mailto:indianamapsupport@iot.in.gov">indianamapsupport@iot.in.gov</a>
+                                    </dt>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt>
+                        <em>Data Set Credit: </em>Polis Center at IUPUI
+                    </dt>
+                </dl>
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                <em>Spatial Data Organization Information: </em>
+            </dt>
+            <dd>
+                <dl>
+                    <dt>
+                        <em>Direct Spatial Reference Method: </em>Vector
+                    </dt>
+                </dl>
+            </dd>
+        </dl>
+        <dl>
+            <dt>
+                <em>Metadata Reference Information: </em>
+            </dt>
+            <dd>
+                <dl>
+                    <dt>
+                        <em>Metadata Date: </em>20220809
+                    </dt>
+                    <dt>
+                        <em>Metadata Contact: </em>
+                    </dt>
+                    <dd>
+                        <dl>
+                            <dt>
+                                <em>Contact Information: </em>
+                            </dt>
+                            <dd>
+                                <dl>
+                                    <dt>
+                                        <em>Contact Organization Primary: </em>
+                                    </dt>
+                                    <dd>
+                                        <dl>
+                                            <dt>
+                                                <em>Contact Organization: </em>State of Indiana Geographic Information Office
+                                            </dt>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt>
+                        <em>Metadata Standard Name: </em>FGDC Content Standard for Digital Geospatial Metadata
+                    </dt>
+                    <dt>
+                        <em>Metadata Standard Version: </em>FGDC-STD-001-1998
+                    </dt>
+                    <dt>
+                        <em>Metadata Time Convention: </em>local time
+                    </dt>
+                </dl>
+            </dd>
+        </dl>
+    </body>
+</html>
+
