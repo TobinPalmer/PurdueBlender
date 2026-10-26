@@ -73,16 +73,16 @@ This project tracks detailed campus models separately from the remaining massing
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](modular/buildings/stanley_coulter_hall.blend) | Finished | [8.1/10](audit/batch3_stanley/independent_grade_r6.md) | — |
 | Stewart Center | [stewart_center.blend](modular/buildings/stewart_center.blend) | Finished | [8.0/10](audit/stewart_center_independent_grade/independent_grade_r4.md) | — |
 | Tarkington Hall | [tarkington_hall.blend](modular/buildings/tarkington_hall.blend) | Needs independent grade | Not graded | Tobin |
-| University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | In progress | 6.8/10 | Tobin |
+| University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | In progress | 7.8/10 | Tobin |
 | Walc | [walc.blend](modular/buildings/walc.blend) | Finished | [8.25/10](audit/walc_refine/independent_grade_r5.md) | — |
-| Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
+| Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Finished | [8.3/10](audit/wiley_hall/independent_grade_r2.md) | — |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (169 total)
+## Unfinished buildings (168 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 69 buildings, Arjav 10 buildings, Brady 40 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 8 buildings, Arjav 10 buildings, Brady 70 buildings.
 
-### Detailed models still in progress or awaiting a grade (35)
+### Detailed models still in progress or awaiting a grade (34)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -118,8 +118,7 @@ This list excludes individual house parcels. The detailed models that are still 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 | Tarkington Hall | [`tarkington_hall.blend`](modular/buildings/tarkington_hall.blend) | Not graded | Tobin |
-| University Hall | [`university_hall.blend`](modular/buildings/university_hall.blend) | 6.8/10 | Tobin |
-| Wiley Hall | [`wiley_hall.blend`](modular/buildings/wiley_hall.blend) | Not graded | Tobin |
+| University Hall | [`university_hall.blend`](modular/buildings/university_hall.blend) | 7.8/10 | Tobin |
 | Winifred Parker Hall | [`winifred_parker_hall.blend`](modular/buildings/winifred_parker_hall.blend) | Not graded | Tobin |
 
 ### Buildings that still have only massing models (134)
@@ -229,36 +228,36 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
 | smith hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | Arjav |
 | st thomas aquinas | [`massing_st_thomas_aquinas_5535390.blend`](modular/buildings/massing_st_thomas_aquinas_5535390.blend) | Tobin |
-| stone hall ston | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | Tobin |
-| student health center push | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Tobin |
-| telecommunications building tel | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | Tobin |
-| the caretaker s cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | Tobin |
-| the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Tobin |
-| the moosehead lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | Tobin |
-| the pete dye clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Tobin |
-| triangle fraternity | [`massing_triangle_fraternity_8477ad9.blend`](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Tobin |
-| turf recreation exercise center | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Tobin |
-| twin pines cooperative | [`massing_twin_pines_cooperative_8f606f9.blend`](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | Tobin |
-| union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Tobin |
-| unitarian universalist church of tippecanoe county | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | Tobin |
-| university book store | [`massing_university_book_store_717bf2c.blend`](modular/buildings/massing_university_book_store_717bf2c.blend) | Tobin |
-| university church | [`massing_university_church_84b2a1b.blend`](modular/buildings/massing_university_church_84b2a1b.blend) | Tobin |
-| university lutheran church | [`massing_university_lutheran_church_20903f1.blend`](modular/buildings/massing_university_lutheran_church_20903f1.blend) | Tobin |
-| university street parking garage pgu | [`massing_university_street_parking_garage_pgu_be81bec.blend`](modular/buildings/massing_university_street_parking_garage_pgu_be81bec.blend) | Tobin |
-| utility plant office facility | [`massing_utility_plant_office_facility_e219ef5.blend`](modular/buildings/massing_utility_plant_office_facility_e219ef5.blend) | Tobin |
-| veterinary animal isolation building 2 | [`massing_veterinary_animal_isolation_building_2_ebb4142.blend`](modular/buildings/massing_veterinary_animal_isolation_building_2_ebb4142.blend) | Tobin |
-| veterinary medicine isolation facility | [`massing_veterinary_medicine_isolation_facility_66d1305.blend`](modular/buildings/massing_veterinary_medicine_isolation_facility_66d1305.blend) | Tobin |
-| veterinary pathology building | [`massing_veterinary_pathology_building_48b5a5b.blend`](modular/buildings/massing_veterinary_pathology_building_48b5a5b.blend) | Tobin |
-| village bottle shoppe | [`massing_village_bottle_shoppe_6a17e23.blend`](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | Tobin |
-| von s | [`massing_von_s_d207e41.blend`](modular/buildings/massing_von_s_d207e41.blend) | Tobin |
-| wang hall wang | [`massing_wang_hall_wang_0dac5ab.blend`](modular/buildings/massing_wang_hall_wang_0dac5ab.blend) | Tobin |
-| west lafayette intermediate school | [`massing_west_lafayette_intermediate_school_d72f0fa.blend`](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Tobin |
-| west lafayette junior senior high school | [`massing_west_lafayette_junior_senior_high_school_fa45bd1.blend`](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Tobin |
-| whistler hall | [`massing_whistler_hall_6f6bf8d.blend`](modular/buildings/massing_whistler_hall_6f6bf8d.blend) | Tobin |
-| wiley dining court wdct | [`massing_wiley_dining_court_wdct_8a6c669.blend`](modular/buildings/massing_wiley_dining_court_wdct_8a6c669.blend) | Tobin |
-| windsor halls | [`massing_windsor_halls_80aeb51.blend`](modular/buildings/massing_windsor_halls_80aeb51.blend) | Tobin |
-| wood street garage pgw | [`massing_wood_street_garage_pgw_2fa056e.blend`](modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend) | Tobin |
-| young hall yong | [`massing_young_hall_yong_cae1b95.blend`](modular/buildings/massing_young_hall_yong_cae1b95.blend) | Tobin |
+| stone hall ston | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | Brady |
+| student health center push | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Brady |
+| telecommunications building tel | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | Brady |
+| the caretaker s cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | Brady |
+| the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Brady |
+| the moosehead lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | Brady |
+| the pete dye clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Brady |
+| triangle fraternity | [`massing_triangle_fraternity_8477ad9.blend`](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Brady |
+| turf recreation exercise center | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Brady |
+| twin pines cooperative | [`massing_twin_pines_cooperative_8f606f9.blend`](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | Brady |
+| union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Brady |
+| unitarian universalist church of tippecanoe county | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | Brady |
+| university book store | [`massing_university_book_store_717bf2c.blend`](modular/buildings/massing_university_book_store_717bf2c.blend) | Brady |
+| university church | [`massing_university_church_84b2a1b.blend`](modular/buildings/massing_university_church_84b2a1b.blend) | Brady |
+| university lutheran church | [`massing_university_lutheran_church_20903f1.blend`](modular/buildings/massing_university_lutheran_church_20903f1.blend) | Brady |
+| university street parking garage pgu | [`massing_university_street_parking_garage_pgu_be81bec.blend`](modular/buildings/massing_university_street_parking_garage_pgu_be81bec.blend) | Brady |
+| utility plant office facility | [`massing_utility_plant_office_facility_e219ef5.blend`](modular/buildings/massing_utility_plant_office_facility_e219ef5.blend) | Brady |
+| veterinary animal isolation building 2 | [`massing_veterinary_animal_isolation_building_2_ebb4142.blend`](modular/buildings/massing_veterinary_animal_isolation_building_2_ebb4142.blend) | Brady |
+| veterinary medicine isolation facility | [`massing_veterinary_medicine_isolation_facility_66d1305.blend`](modular/buildings/massing_veterinary_medicine_isolation_facility_66d1305.blend) | Brady |
+| veterinary pathology building | [`massing_veterinary_pathology_building_48b5a5b.blend`](modular/buildings/massing_veterinary_pathology_building_48b5a5b.blend) | Brady |
+| village bottle shoppe | [`massing_village_bottle_shoppe_6a17e23.blend`](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | Brady |
+| von s | [`massing_von_s_d207e41.blend`](modular/buildings/massing_von_s_d207e41.blend) | Brady |
+| wang hall wang | [`massing_wang_hall_wang_0dac5ab.blend`](modular/buildings/massing_wang_hall_wang_0dac5ab.blend) | Brady |
+| west lafayette intermediate school | [`massing_west_lafayette_intermediate_school_d72f0fa.blend`](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Brady |
+| west lafayette junior senior high school | [`massing_west_lafayette_junior_senior_high_school_fa45bd1.blend`](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Brady |
+| whistler hall | [`massing_whistler_hall_6f6bf8d.blend`](modular/buildings/massing_whistler_hall_6f6bf8d.blend) | Brady |
+| wiley dining court wdct | [`massing_wiley_dining_court_wdct_8a6c669.blend`](modular/buildings/massing_wiley_dining_court_wdct_8a6c669.blend) | Brady |
+| windsor halls | [`massing_windsor_halls_80aeb51.blend`](modular/buildings/massing_windsor_halls_80aeb51.blend) | Brady |
+| wood street garage pgw | [`massing_wood_street_garage_pgw_2fa056e.blend`](modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend) | Brady |
+| young hall yong | [`massing_young_hall_yong_cae1b95.blend`](modular/buildings/massing_young_hall_yong_cae1b95.blend) | Brady |
 | yue kong pao hall | [`massing_yue_kong_pao_hall_a3cb766.blend`](modular/buildings/massing_yue_kong_pao_hall_a3cb766.blend) | Tobin |
 | zeta tau alpha | [`massing_zeta_tau_alpha_af8a443.blend`](modular/buildings/massing_zeta_tau_alpha_af8a443.blend) | Tobin |
 | zundo family dentistry | [`massing_zundo_family_dentistry_f840e2b.blend`](modular/buildings/massing_zundo_family_dentistry_f840e2b.blend) | Tobin |
