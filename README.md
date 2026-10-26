@@ -11,7 +11,7 @@ This project tracks detailed campus models separately from the remaining massing
 | American Railway Building | [american_railway_building.blend](modular/buildings/american_railway_building.blend) | Finished | 8.5/10 | — |
 | Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](modular/buildings/animal_disease_diagnostic_laboratory.blend) | Finished | 8.3/10 | — |
 | Armory | [armory.blend](modular/buildings/armory.blend) | Finished | 8.4/10 | — |
-| Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](modular/buildings/asian_american_resource_and_cultural_center.blend) | Needs independent grade | Not graded | Rossen |
+| Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](modular/buildings/asian_american_resource_and_cultural_center.blend) | Finished | 8.5/10 | — |
 | Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](modular/buildings/bechtel_innovation_design_center_bidc.blend) | Finished | 8.75/10 | — |
 | Beering Hall | [beering_hall.blend](modular/buildings/beering_hall.blend) | Finished | 8.0/10 | — |
 | Bell Tower | [bell_tower.blend](modular/buildings/bell_tower.blend) | Finished | 9.3/10 | — |
@@ -78,15 +78,14 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (164 total)
+## Unfinished buildings (163 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 25 buildings, Rohan 15 buildings, Tobin 44 buildings, Arjav 10 buildings, Brady 70 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 24 buildings, Rohan 15 buildings, Tobin 44 buildings, Arjav 10 buildings, Brady 70 buildings.
 
-### Detailed models still in progress or awaiting a grade (30)
+### Detailed models still in progress or awaiting a grade (29)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
-| Asian American and Asian Resource and Cultural Center | [`asian_american_resource_and_cultural_center.blend`](modular/buildings/asian_american_resource_and_cultural_center.blend) | Not graded | Rossen |
 | Biochemistry Building | [`biochemistry_building.blend`](modular/buildings/biochemistry_building.blend) | 6.8/10 | Rossen |
 | Birck Nanotechnology Center | [`birck_nanotechnology_center.blend`](modular/buildings/birck_nanotechnology_center.blend) | Not graded | Rossen |
 | Black Cultural Center | [`black_cultural_center.blend`](modular/buildings/black_cultural_center.blend) | Not graded | Rossen |
