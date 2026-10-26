@@ -1,0 +1,297 @@
+{
+  "building_id": "massing_house_301841252_e4f8f05",
+  "building": "Pi Kappa Alpha (Pike), Beta Phi Chapter, Purdue University",
+  "grade": "independent r1",
+  "score": 8.7,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "max_score": 2.0,
+      "score": 2.0,
+      "evidence": [
+        "Purdue GIS FID 790 names Pi Kappa Alpha (SOPKA), address 629 University St; chapter page independently identifies its house at the same address.",
+        "Independently reopened structural mesh has 12 unique XY coordinates and matches the transformed official GIS ring within 0.000017 m symmetric nearest-vertex distance: True.",
+        "Official chapter photo depicts the named chapter house; OSM 301841252 address and footprint are a secondary geometry/location check."
+      ],
+      "limitations": [
+        "Purdue polygon is authoritative campus GIS but not described as a surveyed wall line; OSM differs by sub-metre amounts."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "max_score": 2.0,
+      "score": 1.8,
+      "evidence": [
+        "GIS transformed plan bounds X -285.869..-271.581 m; Y 382.365..424.921 m.",
+        "Actual wall shell inherits the GIS coordinates exactly; fresh Blender process confirms its evaluated saved asset and campus-space bounds [[-286.1435241699219, 382.1136779785156, -0.2199999988079071], [-269.2939147949219, 425.2009582519531, 11.554749488830566]].",
+        "East facade orientation follows address/street context and is consistent with the chapter photo, but exact orientation is not independently surveyed."
+      ],
+      "limitations": [
+        "Exact east-facing assignment is inferred from street context, not a surveyed elevation; OSM and GIS rings differ slightly."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "max_score": 2.0,
+      "score": 1.25,
+      "evidence": [
+        "2023 chapter-house photo directly shows three visible levels and a shallow gray metal roof.",
+        "Actual structural mesh wall height is 9.10 m; roof ridge/eave values in model are estimates, and photo provides no scale.",
+        "Model's shallow hipped roof is a plausible interpretation of the single oblique/front photo."
+      ],
+      "limitations": [
+        "No measured elevation or roof plan/pitch is available. GIS NUM_LEVELS/CountOfFLO=1 conflicts with the photo; no basis to claim exact height or roof geometry."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "max_score": 2.0,
+      "score": 1.75,
+      "evidence": [
+        "Photo visibly supports red brick, three window bands with white shutters, four-column white portico, triangular pediment with chapter lettering, centered entry and small hood.",
+        "Independently inspected asset includes 4 separately named column shafts and 22 front window recesses; preview closely matches major composition."
+      ],
+      "limitations": [
+        "Photo is one facade only; rear/ends are extrapolated. Exact window schedule, ornament details and facade depth are not dimensioned; source photo includes irregular window/AC details simplified in model."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "max_score": 2.0,
+      "score": 1.9,
+      "evidence": [
+        "Fresh Blender 00:00.829  blend            | Read blend: \"C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_house_301841252_e4f8f05.blend\" process reopened the saved .blend; expected scene/collection are present, 608 collection objects, 604 mesh objects, evaluated nonempty meshes 604.",
+        "No materialless mesh objects: True; no unpacked external images: True.",
+        "Evidence folder contains GIS and OSM raw snapshots, chapter page and official photo, historical chapter publication, source metadata, and a rendered preview."
+      ],
+      "limitations": [
+        "This independent review verifies the standalone building asset and portability; it does not verify master-blend linking/integration, owned by Tobin."
+      ]
+    }
+  ],
+  "evidence": {
+    "actual_asset_inspection": {
+      "scene": "Building_massing_house_301841252_e4f8f05",
+      "collection": "Asset_massing_house_301841252_e4f8f05",
+      "collection_objects": 608,
+      "structural_vertices": [
+        [
+          -274.26116943359375,
+          424.9212646484375,
+          0.0
+        ],
+        [
+          -274.22991943359375,
+          415.6277770996094,
+          0.0
+        ],
+        [
+          -272.9930114746094,
+          415.6315612792969,
+          0.0
+        ],
+        [
+          -272.96905517578125,
+          408.94110107421875,
+          0.0
+        ],
+        [
+          -271.6163635253906,
+          408.94464111328125,
+          0.0
+        ],
+        [
+          -271.58148193359375,
+          398.355712890625,
+          0.0
+        ],
+        [
+          -272.9615478515625,
+          398.34918212890625,
+          0.0
+        ],
+        [
+          -272.93768310546875,
+          391.6130065917969,
+          0.0
+        ],
+        [
+          -274.1258544921875,
+          391.6091613769531,
+          0.0
+        ],
+        [
+          -274.09747314453125,
+          382.404052734375,
+          0.0
+        ],
+        [
+          -285.72918701171875,
+          382.364990234375,
+          0.0
+        ],
+        [
+          -285.8685302734375,
+          424.8821716308594,
+          0.0
+        ],
+        [
+          -274.26116943359375,
+          424.9212646484375,
+          9.100000381469727
+        ],
+        [
+          -274.22991943359375,
+          415.6277770996094,
+          9.100000381469727
+        ],
+        [
+          -272.9930114746094,
+          415.6315612792969,
+          9.100000381469727
+        ],
+        [
+          -272.96905517578125,
+          408.94110107421875,
+          9.100000381469727
+        ],
+        [
+          -271.6163635253906,
+          408.94464111328125,
+          9.100000381469727
+        ],
+        [
+          -271.58148193359375,
+          398.355712890625,
+          9.100000381469727
+        ],
+        [
+          -272.9615478515625,
+          398.34918212890625,
+          9.100000381469727
+        ],
+        [
+          -272.93768310546875,
+          391.6130065917969,
+          9.100000381469727
+        ],
+        [
+          -274.1258544921875,
+          391.6091613769531,
+          9.100000381469727
+        ],
+        [
+          -274.09747314453125,
+          382.404052734375,
+          9.100000381469727
+        ],
+        [
+          -285.72918701171875,
+          382.364990234375,
+          9.100000381469727
+        ],
+        [
+          -285.8685302734375,
+          424.8821716308594,
+          9.100000381469727
+        ]
+      ],
+      "structural_vertex_count": 24,
+      "collection_mesh_object_count": 604,
+      "evaluated_nonempty_meshes": 604,
+      "all_bounds": [
+        [
+          -286.1435241699219,
+          382.1136779785156,
+          -0.2199999988079071
+        ],
+        [
+          -269.2939147949219,
+          425.2009582519531,
+          11.554749488830566
+        ]
+      ],
+      "materialless_meshes": [],
+      "external_image_paths": [],
+      "portico_columns": [
+        "Portico_Column_Shaft_1",
+        "Portico_Column_Shaft_2",
+        "Portico_Column_Shaft_3",
+        "Portico_Column_Shaft_4"
+      ],
+      "east_window_count": 22,
+      "walls_height_status": "estimated: three visible storeys; wall eave 9.1 m",
+      "mesh_bounds": [
+        [
+          -285.8685302734375,
+          382.364990234375,
+          0.0
+        ],
+        [
+          -285.8685302734375,
+          382.364990234375,
+          9.100000381469727
+        ],
+        [
+          -285.8685302734375,
+          424.9212646484375,
+          9.100000381469727
+        ],
+        [
+          -285.8685302734375,
+          424.9212646484375,
+          0.0
+        ],
+        [
+          -271.58148193359375,
+          382.364990234375,
+          0.0
+        ],
+        [
+          -271.58148193359375,
+          382.364990234375,
+          9.100000381469727
+        ],
+        [
+          -271.58148193359375,
+          424.9212646484375,
+          9.100000381469727
+        ],
+        [
+          -271.58148193359375,
+          424.9212646484375,
+          0.0
+        ]
+      ]
+    },
+    "official_gis_transformed_bounds_xy_m": [
+      [
+        -285.86853995571755,
+        -271.58148120408765
+      ],
+      [
+        382.36499766195266,
+        424.92126969327273
+      ]
+    ],
+    "gis_wall_vertex_set_within_1mm": true,
+    "gis_wall_symmetric_hausdorff_error_m": 1.7e-05,
+    "wall_height_from_actual_saved_mesh_m": 9.1,
+    "blender_returncode": 0,
+    "blender_version_line": "Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)"
+  },
+  "findings": [
+    "PASS: the identity is corroborated independently by official Purdue GIS and the chapter's address statement.",
+    "PASS: saved wall footprint matches transformed Purdue GIS ring within 0.000017 m symmetric nearest-vertex distance.",
+    "PASS with uncertainty: the photo supports the principal facade composition and three apparent stories.",
+    "LIMITATION: wall height, roof ridge height/pitch and roof plan remain estimates; GIS floor count conflicts with the photo.",
+    "LIMITATION: no master integration was assessed."
+  ],
+  "pass_standard": 8,
+  "passes": true,
+  "evaluator": "evaluate.py; independently reopened saved asset with Blender and compared the actual structural mesh to raw Purdue GIS; source-photo findings recorded by grader.",
+  "limitations": [
+    "Grading evaluates standalone building asset/evidence, not master campus integration."
+  ]
+}
