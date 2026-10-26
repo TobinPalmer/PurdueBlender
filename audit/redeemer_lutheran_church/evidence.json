@@ -1,19 +1,25 @@
 {
   "building": "Redeemer Lutheran Church",
   "asset_id": "massing_redeemer_lutheran_church_2e5ce2f",
-  "status": "Facade details updated; source footprint match and independent grade pending",
+  "status": "Original OSM source feature and footprint import consistency documented; independent spatial/architectural grade pending",
   "source": {
-    "provider": "Building owner/congregation official website",
-    "url": "https://www.redeemerwlin.org/contact",
-    "feature_identifier": "No matching feature in the preserved official Purdue campus GIS snapshot",
-    "retrieval_date": "2026-10-25",
-    "source_crs": "Original library uses project campus-local X east, Y north, Z up; church-specific source CRS/coordinate conversion not independently established",
-    "source_record": "source_mesh_snapshot.json",
-    "reference_status": "Official owner confirms building name/location, but there is no independent polygon match",
+    "provider": "OpenStreetMap via Overpass API",
+    "url": "https://www.openstreetmap.org/way/473799725",
+    "feature_identifier": "way/473799725",
+    "retrieval_date": "2026-10-22 (source snapshot base timestamp)",
+    "source_crs": "EPSG:4326 (WGS 84); projected to project-local approximate XY for comparison, not a surveyed CRS",
+    "source_record": "source_osm_way_473799725_raw.json",
+    "source_snapshot_timestamp": "2026-10-22T03:48:50Z",
+    "reference_status": "Exact named OSM building feature in the preserved original Overpass snapshot. The projected ring matches the retained source mesh in vertex order to sub-millimeter precision; this confirms consistency with the original OSM import, not independent geographic or survey accuracy.",
     "secondary_visual_references": [
       {
         "provider": "Building owner/congregation",
-        "use": "Official church identity, address and exterior homepage images; no measured geometry inferred",
+        "use": "Official building identity and address reference; does not certify footprint, height, or facade measurements",
+        "url": "https://www.redeemerwlin.org/contact"
+      },
+      {
+        "provider": "Building owner/architect",
+        "use": "Contextual identity/history or renovation reference; not a measured geometry source",
         "url": "https://www.redeemerwlin.org/"
       }
     ]
@@ -21,11 +27,13 @@
   "transform": {
     "origin_latitude": 40.4274,
     "origin_longitude": -86.9137,
-    "axes": "X east, Y north, Z up in original library",
-    "units": "meters as project metadata; church-specific geographic transform is unverified"
+    "axes": "X east, Y north, Z up in project-local coordinates",
+    "units": "meters",
+    "source_to_project_xy": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0",
+    "crs_note": "Approximate project compatibility conversion, not a surveyed coordinate reference system."
   },
   "measurements": {
-    "method": "Recorded bounds of the source mesh and retained its shell; no independent footprint or elevation comparison possible",
+    "method": "Projected outer-ring WGS84 nodes from OpenStreetMap way 473799725 with the documented project-local approximation, applying the importer’s sequential 0.3 m point filter; compared ordered ring vertices to the preserved bottom ring in source_mesh_snapshot.json. Full results are in source_footprint_comparison_way_473799725.json. This assesses original import consistency only.",
     "before_and_after_asset_bounds_m": {
       "max_y": 2112.080810546875,
       "min_z": 0.0,
@@ -36,10 +44,10 @@
     },
     "original_vertex_count": 48,
     "original_face_count": 68,
-    "after_footprint_status": "Retained original source mesh footprint; not independently verified",
-    "orientation_status": "Unverified; original mesh orientation retained",
-    "height_status": "16 m retained from original massing; unverified",
-    "position_status": "Original local campus coordinates retained; not verified against an independent map source"
+    "after_footprint_status": "Ordered source OSM ring agrees with the retained source mesh within sub-millimeter coordinate rounding; this is source-import consistency, not an independent footprint/structural-wall survey.",
+    "orientation_status": "Original vertex order matches the filtered OSM ring; this confirms import orientation consistency only and does not establish independent true-north orientation accuracy.",
+    "height_status": "16 m retained from the original model; unverified. Matched OSM way has no height or building:levels tag.",
+    "position_status": "Original project-local coordinates are consistent with the matched way projected using the project approximation; independent geodetic position accuracy is unverified."
   },
   "geometry_edits": [
     "Retained the original mesh vertices and structural faces.",
@@ -47,16 +55,18 @@
     "Preserved object, collection, scene, asset ID and asset path."
   ],
   "uncertainties": [
-    "Purdue GIS snapshot has no matching named record for this church.",
-    "The preserved mesh snapshot records the original geometry but does not identify its upstream geometry source or geographic precision.",
-    "Facade fenestration, entrance placement, footprint identity, orientation and height remain unverified.",
-    "The official page is not an elevation drawing; details have not been matched to a measured photo.",
+    "OpenStreetMap way 473799725 is the original imported source and has no independent source survey; match does not certify positional accuracy or a structural wall footprint.",
+    "The project-local conversion is approximate and not a surveyed CRS.",
+    "Height remains 16 m from the original massing and is unverified; the source feature has no height or building:levels tags.",
+    "Facade fenestration, entrance placement, roof form and architecture are not validated by the footprint comparison.",
     "No independent grader has reviewed this revision."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
     "build_config": "build_config.json",
-    "raw_source": "source_mesh_snapshot.json",
+    "original_geometry_snapshot": "source_mesh_snapshot.json",
+    "raw_source": "source_osm_way_473799725_raw.json",
+    "footprint_comparison": "source_footprint_comparison_way_473799725.json",
     "preview": "preview_detail.png"
   }
 }
