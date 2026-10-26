@@ -1,0 +1,84 @@
+{
+  "building_id": "massing_stone_hall_ston_d3f479a",
+  "score": 7.75,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified with source-data caveat",
+      "evidence": [
+        "Official Purdue GIS FID 240 has BLDG_ABBR=STON, name=Winthrop E. Stone Hall, address=700 Mitch Daniels Blvd.",
+        "GIS ring has 12 unique vertices; saved reopen validation reports exact ring match=True.",
+        "GIS Shape__Area/Shape__Length conflict materially with ring-derived area/perimeter, so the ring is the usable geometry and summary metrics remain suspect."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "supported by transformed GIS ring and saved asset geometry check",
+      "evidence": [
+        "Saved reopen validation reports source-ring match and world bounds; GIS ring is in WGS84 and the recorded comparison uses the documented approximate campus transform, not a surveyed CRS.",
+        "No independent survey control or separate quantitative registration residual is available."
+      ]
+    },
+    {
+      "name": "Height, floors, and roof",
+      "score": 0.75,
+      "max_score": 2,
+      "status": "partially supported; height uncertain and level cue conflicts",
+      "evidence": [
+        "GIS NUM_LEVELS=6; model height 13.716000000000001 m derives from Extrution=45 interpreted as feet although units are undeclared.",
+        "Rendered elevations show about four visible facade bands including a narrow top band, fewer than GIS NUM_LEVELS=6; floor count cannot be verified from supplied photos or model.",
+        "Archive photos support a low flat/parapet roof silhouette, which the model approximates."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2,
+      "status": "partially supported stylization",
+      "evidence": [
+        "Historic archival photographs [1371, 1372, 1373, 1374] support brick, pale stone/concrete pilasters and horizontal bands, repeated rectangular windows, and a formal central entry.",
+        "Model uses brick-colored walling, light trim/bands, repeated windows, and a central door, but facade bays/windows are squat and regularized; the historical tall framed windows, strongly expressed monumental entry with broad steps, and characteristic proportions are absent or simplified.",
+        "Source photographs are historical qualitative evidence, not measured elevations or confirmation of current facade."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and evidence completeness",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified from saved reopen report and evidence bundle",
+      "evidence": [
+        "Reopen validation reports expected scene/collection, one named mesh, no external image dependencies, and status pass.",
+        "Audit bundle contains raw GIS feature and layer metadata, source registry with provider/URLs/date/CRS/uncertainties, archive record/photos, three rendered views, build validation, and reopen validation."
+      ]
+    }
+  ],
+  "evidence": [
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\purdue_building_gis_fid240_ston_4326.json",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\purdue_building_gis_layer_metadata.json",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\purdue_historic_building_record_71.html",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\stone_hall_archive_1371.jpg",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\stone_hall_1959_archive_1372.jpg",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\stone_hall_archive_1373.jpg",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\stone_hall_archive_1374.jpg",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\preview\\stone_hall_isometric.png",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\preview\\stone_hall_front.png",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\preview\\stone_hall_top.png",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\build_validation.json",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\reopen_validation.json"
+  ],
+  "findings": [
+    "The source-linked GIS outline and identity are unusually well documented, but the GIS area/perimeter summary fields conflict with the actual geometry ring.",
+    "Location/plan receives full credit based on exact ring-match evidence; positional accuracy still inherits the approximate, non-survey transform.",
+    "The principal visual shortfall is facade fidelity, especially the much more monumental entry and tall window/pilaster proportions seen in the archival photos.",
+    "The number of modeled facade bands does not substantiate the GIS six-level attribute; roof and height are only partly supported."
+  ],
+  "limitations": [
+    "Visual assessment was made from saved front/isometric/top renders and archived photos; no interactive Blender session or measured elevation source was used.",
+    "The asset's exact source-ring geometry match is taken from its saved reopen-validation record, while source identity/attributes and archival visuals were independently inspected here."
+  ]
+}

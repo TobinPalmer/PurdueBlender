@@ -1,0 +1,154 @@
+{
+  "building_id": "massing_stone_hall_ston_d3f479a",
+  "revision": "r2",
+  "score": 8.0,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Identity / footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "GIS identity and ring corroborated; GIS summary metrics conflict",
+      "evidence": [
+        "Raw Purdue GIS FID 240 identifies Winthrop E. Stone Hall (STON), 700 Mitch Daniels Blvd; saved reopen record carries source FID 240.",
+        "Independently transformed raw ring has 12 unique vertices and approximate area 2218.175 m\u00b2 / perimeter 227.855 m; Blender directly compared it with the saved mesh base ring and found match=True.",
+        "Stored Shape__Area=3834.203125 is 1.729x ring-derived area; Shape__Length=299.581115 is 1.315x ring-derived perimeter. The polygon ring is the usable footprint source, not these inconsistent aggregates.",
+        "Top preview shows the mapped stepped/jogged plan shape; footprint remains an approximate campus GIS envelope, not surveyed wall lines."
+      ]
+    },
+    {
+      "name": "Position / orientation / scale",
+      "score": 1.75,
+      "max_score": 2,
+      "status": "ring registration supported with approximate transform limitation",
+      "evidence": [
+        "Background Blender directly opened the asset and reported bounds [[-170.847900390625, -114.23639678955078], [-333.67425537109375, -273.6920166015625], [0.0, 13.715999603271484]]; the first 12 base vertices match the transformed source ring=True.",
+        "Top render also visibly retains the source ring's main jogs. Registration uses the documented campus transform and is not survey-controlled.",
+        "Coordinates use a local approximate geographic transform, not surveyed CRS/control; orientation and absolute registration inherit that limitation."
+      ]
+    },
+    {
+      "name": "Height / floors / roof",
+      "score": 0.75,
+      "max_score": 2,
+      "status": "estimated height; story interpretation and roof silhouette partly supported",
+      "evidence": [
+        "Raw GIS has NUM_LEVELS=6 and Extrution=45; the layer does not declare Extrution units. Reported model height 13.716000000000001 m is 45 ft converted to meters, an explicit but unverified interpretation.",
+        "GIS F01-F04 values are used to support four visible facade bands; B and G are retained as ambiguous below/grade-related fields. The rendered four bands do not independently demonstrate six stories.",
+        "Archive images support a low flat/parapet edge, which the flat roof approximates. No surveyed top elevation or floor-to-floor dimensions are supplied."
+      ]
+    },
+    {
+      "name": "Facade / entrance",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "improved, photo-informed stylization; proportions remain approximate",
+      "evidence": [
+        "Archive photos [1371, 1372, 1373, 1374] visibly support brick walling, pale vertical pilasters and horizontal bands, regularly repeated rectangular windows, a centered formal entrance with multiple doors, and broad shallow steps.",
+        "R2 front/isometric renders show brick-colored walling, pale vertical and horizontal trim, repeated windows, a wider three-panel entrance surround, and entry steps. These match the source vocabulary better than a blank massing shell.",
+        "Compared with archive views, modeled openings and entrance remain simplified and much less monumental; facade bay/window proportions and the visible story rhythm are stylized rather than measured. Historical views do not establish current condition."
+      ]
+    },
+    {
+      "name": "Modular export / evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "direct Blender open and package evidence checks pass",
+      "evidence": [
+        "Direct Blender 4.5.15 open reports scene=Building_massing_stone_hall_ston_d3f479a, collection present=True, one object=['Stone Hall (STON)'], mesh=MESH with 8768 vertices / 6572 faces; world bounds=[[-170.847900390625, -114.23639678955078], [-333.67425537109375, -273.6920166015625], [0.0, 13.715999603271484]].",
+        "Link inspection reports libraries=[], file image dependencies=[], object/mesh/material library links=[None, None, [None, None, None, None]], and asset collection linked at scene root=True.",
+        "Saved reopen report agrees: scene Building_massing_stone_hall_ston_d3f479a, collection True, 1 object(s), no linked image dependencies, status=pass.",
+        "The audit bundle contains source registry with provider, URLs, retrieval date, source CRS, method and uncertainty; raw GIS feature/layer metadata; archive page and four photographs; build and reopen reports; and three preview renders.",
+        "R2 previews are readable PNGs: {'stone_hall_isometric.png': (1200, 900), 'stone_hall_front.png': (1200, 900), 'stone_hall_top.png': (1200, 900)}; the four cited photo files are present=True. The blend exists=True (bytes=1021902).",
+        "The evaluator directly opened the saved .blend with `C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\blender\\blender-4.5.15-windows-x64\\blender.exe --background C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_stone_hall_ston_d3f479a.blend --python-expr <embedded inspection code>`; Blender reported no external libraries or file image dependencies."
+      ]
+    }
+  ],
+  "evidence": [
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_stone_hall_ston_d3f479a.blend",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\purdue_building_gis_fid240_ston_4326.json",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\purdue_building_gis_layer_metadata.json",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\source_registry.json",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\purdue_historic_building_record_71.html",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\audit_note.md",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\build_validation.json",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\reopen_validation.json",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\stone_hall_archive_1371.jpg",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\stone_hall_1959_archive_1372.jpg",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\stone_hall_archive_1373.jpg",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\sources\\stone_hall_archive_1374.jpg",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\preview\\stone_hall_isometric.png",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\preview\\stone_hall_front.png",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_stone_hall_ston_d3f479a\\preview\\stone_hall_top.png"
+  ],
+  "findings": [
+    "Score: 8.0/10 using the five published two-point criteria.",
+    "GIS FID 240 is the correct Stone Hall identity; the raw polygon ring yields about 2218.175 m\u00b2 and 227.855 m, while stored Shape__Area=3834.203 and Shape__Length=299.581 materially disagree.",
+    "The 13.716 m top is not a measured height: it assumes GIS Extrution=45 means feet, while the GIS layer declares no units. The GIS NUM_LEVELS=6 also does not map directly to the four visible facade bands.",
+    "R2's wider entrance surround, steps, taller window treatment, brick and pale trim align more closely with archive photos 1371-1374, but remain a qualitative interpretation.",
+    "Background Blender directly verified the asset scene, root export collection, single mesh object, world bounds, absence of external links, and the mesh base ring against the transformed GIS ring (match=True)."
+  ],
+  "metrics": {
+    "source_ring_vertices": 12,
+    "ring_area_m2_approx": 2218.175,
+    "ring_perimeter_m_approx": 227.855,
+    "stored_shape_area": 3834.203125,
+    "stored_shape_length": 299.5811154716871,
+    "stored_to_ring_area_ratio": 1.729,
+    "stored_to_ring_perimeter_ratio": 1.315,
+    "height_m_reported": 13.716000000000001,
+    "height_interpretation": "Extrution=45 assumed feet; unit undeclared"
+  },
+  "direct_blender_inspection": {
+    "asset_collection_at_scene_root": true,
+    "collection_object_count": 1,
+    "collection_objects": [
+      "Stone Hall (STON)"
+    ],
+    "collection_present": true,
+    "file_image_dependencies": [],
+    "filepath": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_stone_hall_ston_d3f479a.blend",
+    "footprint_matches_source_ring": true,
+    "footprint_ring_vertices": 12,
+    "libraries": [],
+    "material_libraries": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "mesh_data_library": null,
+    "mesh_faces": 6572,
+    "mesh_vertices": 8768,
+    "object_library": null,
+    "object_type": "MESH",
+    "scene": "Building_massing_stone_hall_ston_d3f479a",
+    "scene_object_count": 4,
+    "scene_root_collections": [
+      "Asset_massing_stone_hall_ston_d3f479a",
+      "Preview_Only_StoneHall"
+    ],
+    "source_ring_vertices": 12,
+    "world_bounds": [
+      [
+        -170.847900390625,
+        -114.23639678955078
+      ],
+      [
+        -333.67425537109375,
+        -273.6920166015625
+      ],
+      [
+        0.0,
+        13.715999603271484
+      ]
+    ],
+    "available": true,
+    "blender_executable": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\blender\\blender-4.5.15-windows-x64\\blender.exe",
+    "blender_version_line": "Blender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)"
+  },
+  "limitations": [
+    "The GIS-to-campus transform is approximate; source aggregate geometry fields conflict with the ring-derived metrics.",
+    "Archive photographs are historical and perspective views, not measured elevations or current-condition documentation."
+  ]
+}
