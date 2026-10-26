@@ -1,0 +1,73 @@
+{
+  "building_id": "massing_animal_holding_facility_4733f46",
+  "candidate_commit": "58852a9cd58bce4676b8faaa434908204841278e",
+  "evaluator": "Independent R4 review against root AGENT.md and modular/AGENTS.md; reopened Blender library, recomputed project coordinates and Indiana footprint comparison, independently sampled raw NDHM, tested fresh-scene linking and inspected dated orthophoto and public archive search record.",
+  "score": 7.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "points": 2.0,
+      "max_points": 2,
+      "assessment": "Purdue GIS FID 266 and the Purdue historic facilities entry identify AHF; the 2018 Indiana feature OID 407881 is a separate footprint source. Independent project-coordinate conversion reproduces Purdue centroid (-41.212,-989.934) m; Indiana is 0.500 m away, with 1.739 m maximum symmetric boundary-vertex residual. The reopened mesh contains every transformed Purdue outline vertex within 0.000052 m."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "points": 2.0,
+      "max_points": 2,
+      "assessment": "Saved asset bounds are x[-65.6453,-23.6969], y[-1030.8369,-955.2317] m. Against independently converted Purdue outline bounds [-65.4652,-23.8771] by [-1030.6567,-955.4119] m, the ~0.18 m perimeter growth is consistent with declared 0.28 m wall thickness and roof trim. The plan orientation is retained vertex-for-vertex; origin and local conversion follow repository rules. No independent survey control is present, but two GIS datasets corroborate placement."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "points": 1.5,
+      "max_points": 2,
+      "assessment": "Independent raw-raster sampling reproduces 614 north-zone cells (median 13.239998 ft / 4.03556 m; IQR 0.24689 m) and 359 south-zone cells (median 16.949996 ft / 5.16637 m; IQR 0.68277 m). Purdue GIS supports one level, the dated orthophoto visibly supports the light north and dark south plan zones, and the 2018 NDHM supports their representative normalized heights. The model turns medians into flat planes and a crisp 1.13 m step; this is an explicit generalized interpretation, not verified eave, roof pitch, or exact seam geometry."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "points": 0.0,
+      "max_points": 2,
+      "assessment": "No credit: the exported model is a neutral blank envelope. Evidence records an exact-name Purdue historic database search with image_url=null and public Archives searches returning a corporate-name record but no indexed AHF exterior photograph, elevation, or plan. The search is explicitly non-exhaustive and does not prove archival materials do not exist; no building-specific visual/elevation evidence supports facade or entrance details."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "points": 2.0,
+      "max_points": 2,
+      "assessment": "Reopened saved library contains exactly the expected one-object named collection (368 vertices, 588 edges, 304 faces), no modifiers, and no file-backed image dependencies. Independent BMesh check now finds 0 boundary and 0 non-manifold edges, resolving R3's 48-edge finding. Linking the named collection into a fresh factory-startup scene succeeds. Evidence includes raw GIS, orthophoto and NDHM snapshots, metadata, reproducible sampling/build scripts, and preview."
+    }
+  ],
+  "evidence": {
+    "blender_probe": "audit/animal_holding_facility_independent_grade_r4/blender_probe.json",
+    "source_probe": "audit/animal_holding_facility_independent_grade_r4/source_probe.json",
+    "previous_grade": "audit/animal_holding_facility_independent_grade_r3/result.json (7.2/10); its reported 48 boundary/non-manifold edges are now independently zero.",
+    "archive_search": {
+      "record": "audit/animal_holding_facility/sources/ahf_facade_source_search_2026-10-25.json",
+      "result": "Purdue Libraries historic AHF record has image_url=null; public Purdue Archives search returned an AHF corporate-name entry but no indexed AHF-specific exterior photograph, elevation, or plan in the recorded queries.",
+      "scope": "This was a public indexed search, not an exhaustive archival request; restricted and uncatalogued sources may exist. Facade and entrance remain unverified and are not modeled."
+    },
+    "orthophoto": "2023 Indiana 6-inch georeferenced aerial crop; visually confirms two roof-tone zones in plan only, not facade or vertical roof form.",
+    "ndhm": "The independent point-in-polygon/cell-center probe matched both zone sample counts and medians to the saved evidence (values within float precision). 5-ft NDHM heights are normalized roof-object heights above local ground, not surveyed eaves.",
+    "footprint": "Purdue FID 266 and Indiana 2018 OID 407881 independently agree within 0.50 m at centroids and 1.74 m symmetric maximum boundary residual.",
+    "source_build_evidence": "audit/animal_holding_facility/build_evidence.json; assessed claims against raw source snapshots and visible saved preview."
+  },
+  "findings": [
+    {
+      "severity": "blocking-for-8/10",
+      "finding": "Facade/entrance criterion remains unsupported: no AHF-specific exterior image or elevation was found in the documented public search, and the asset intentionally has no openings or entrance. To earn points, add a building-specific dated ground-level image or measured elevation and model only details it supports; otherwise retain this criterion as unverified and record the access/search limitation."
+    },
+    {
+      "severity": "minor",
+      "finding": "The two roof zone levels are reproducible medians from 2018 NDHM and the split is visible in 2023 imagery, but flat planes and the inter-zone step are approximations. Do not describe them as measured eaves, pitch, or a surveyed seam."
+    },
+    {
+      "severity": "resolved",
+      "finding": "R3 reported 48 boundary/non-manifold edges. Independent reopen of this candidate returns 0 boundary edges and 0 non-manifold edges; the named export also links into a clean scene."
+    },
+    {
+      "severity": "positive-evidence",
+      "finding": "The footprint's 16 transformed source vertices appear in the saved mesh within 0.000052 m, and independent recomputation from the raw NDHM reproduces both sample counts and medians."
+    }
+  ]
+}
