@@ -1,0 +1,132 @@
+{
+  "building_id": "massing_baptist_student_foundation_c3d8114",
+  "name": "Baptist Student Foundation at Purdue / The Found",
+  "manifest_asset": "modular/buildings/massing_baptist_student_foundation_c3d8114.blend",
+  "manifest_collection": "Asset_massing_baptist_student_foundation_c3d8114",
+  "sources": [
+    {
+      "role": "identity, address, photo, and facade cross-check",
+      "provider": "The Found at Purdue (organization website)",
+      "url": "https://www.thefoundatpurdue.org/",
+      "feature_identifier": "Official organization; website states 200 N Russell St; exterior image official_web_image_5.jpg from 20181014-124554.jpg",
+      "retrieved": "2026-10-25",
+      "source_date": "2018-10-14 filename; exact capture date not independently confirmed",
+      "crs": null,
+      "method": "Official site states the address; its dated exterior image visually compared to the building location and footprint.",
+      "uncertainty": "Low-resolution partial oblique exterior; no dimensioned plans or surveyed elevations found."
+    },
+    {
+      "role": "independent exterior photo and identity cross-check",
+      "provider": "The Purdue Exponent, issue dated Aug. 17-18, 2017",
+      "url": "https://bloximages.newyork1.vip.townnews.com/purdueexponent.org/content/tncms/assets/v3/editorial/c/c7/cc7ac664-843e-11e7-bdd5-335a6bc6456b/59972adb59de1.pdf.pdf",
+      "feature_identifier": "2017-08-17 issue, printed page 19, ad for The Baptist Student Foundation at Purdue, 200 N Russell St",
+      "retrieved": "2026-10-25",
+      "source_date": "2017-08-17/18 issue",
+      "crs": null,
+      "method": "Photo printed with address and organization name; supports brick exterior, gabled principal roof, entry canopy, and apparent multiple levels.",
+      "uncertainty": "Small monochrome halftone ad; exact window count, roof pitch, and height cannot be measured."
+    },
+    {
+      "role": "plan footprint and location",
+      "provider": "Indiana Geographic Information Office / Polis Center at IUPUI; Indiana Statewide LiDAR Derived Building Footprints layer",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "feature_identifier": "OBJECTID 441814, Tippecanoe County, LidarYear 2018",
+      "retrieved": "2026-10-25",
+      "source_date": "2018 lidar; metadata publication date 2022-08-08",
+      "crs": "EPSG:3857 (layer reports wkid 102100/latestWkid 3857)",
+      "method": "Queried polygons within 80 m of manifest placement. Selected 441814: source polygon bbox center is within 0.313 m of prior massing bbox center; its polygon area centroid is 1.611 m from that center because the southern stem shifts the centroid. It has an 8-vertex T-shaped outline plus a closing coordinate. Vertices were inverse-projected then transformed to repository local XY. No scale fitting applied.",
+      "uncertainty": "Automated LiDAR footprint extraction, published as-is; not a survey. Service area/perimeter use map-plane units, while local metrics apply the project local conversion."
+    },
+    {
+      "role": "roof form and plan confirmation",
+      "provider": "Indiana Geographic Information Office, Indiana 2023 Imagery ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
+      "feature_identifier": "Exported 1400x1400 JPG, Web Mercator bbox around feature centroid; 2023 county orthophoto",
+      "retrieved": "2026-10-25",
+      "source_date": "2023",
+      "crs": "EPSG:3857 export bbox; image has no embedded CRS; export parameters and service metadata preserved beside it",
+      "method": "Plan-view comparison: T-shaped footprint aligns with T-shaped roof, with north crossbar and southern projecting wing; roof edge and ridge details are visually estimated.",
+      "uncertainty": "Orthophoto cannot verify wall height, floors, facade, or entrance."
+    },
+    {
+      "role": "Purdue historical context check",
+      "provider": "Purdue University Libraries, Campus Buildings Historic Database / Purdue Campus GIS",
+      "url": "https://collections.lib.purdue.edu/campus/ ; https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0",
+      "feature_identifier": "Purdue campus GIS search within 150 m; legacy campus layer did not return this current off-campus foundation; nearby historic features saved as context only",
+      "retrieved": "2026-10-25",
+      "source_date": "campus GIS time extent through 2015; no match for current Baptist Student Foundation",
+      "crs": "EPSG:3857",
+      "method": "Recorded negative search result to avoid confusing a historic Baptist Church record elsewhere with this building.",
+      "uncertainty": "The Found is adjacent to but outside the historic campus layer coverage; current organization address and Exponent ad support identity."
+    }
+  ],
+  "geometry_and_design": {
+    "building_id": "massing_baptist_student_foundation_c3d8114",
+    "source_feature_id": 441814,
+    "source_retrieved": "2026-10-25",
+    "source_date": "2018 lidar collection; statewide dataset publication date 2022-08-08",
+    "source_crs": "EPSG:3857 (Web Mercator; service spatial reference 102100/3857)",
+    "local_frame": "EPSG:3857 vertices inverse-projected to geographic, then approximate Purdue campus local XY per modular/AGENTS.md: X=(lon+86.9137)*111412.84*cos(40.4274 radians), Y=(lat-40.4274)*111040",
+    "source_geometry_metrics_local_m": {
+      "vertex_count": 8,
+      "area_m2": 445.8467933571992,
+      "perimeter_m": 94.1153902448129,
+      "bounds_m": {
+        "x": [
+          -445.8021913965057,
+          -421.40777808016253
+        ],
+        "y": [
+          -112.91757535137776,
+          -89.33501119328412
+        ]
+      },
+      "centroid_m": [
+        -434.09530171304704,
+        -99.60416826219584
+      ]
+    },
+    "prior_massing_bbox_m": {
+      "x": [
+        -445.57794189453125,
+        -422.2210998535156
+      ],
+      "y": [
+        -112.2392349243164,
+        -90.18669128417969
+      ],
+      "height_m": 16.0,
+      "bbox_center_xy_m": [
+        -433.908,
+        -101.204
+      ]
+    },
+    "prior_bbox_center_to_source_centroid_m": 1.610758678696409,
+    "prior_bbox_center_to_source_bbox_center_m": 0.3128203707041621,
+    "revision": {
+      "structural_footprint": "Feature 441814 vertex ring after inverse Web Mercator and local-frame transform; no fit-to-bounds scaling applied.",
+      "estimated_vertical_design_m": {
+        "main_wall_eave": 7.1,
+        "ridge_peak": 8.9,
+        "lower_wing_eave": 4.1
+      },
+      "resulting_xy_envelope_m": [
+        24.39441331634316,
+        23.582564158093646
+      ],
+      "vertical_height_total_m": 8.9
+    },
+    "uncertainty": "The Indiana statewide layer is LiDAR-derived and reference-grade only, not a survey. SHAPE__Area/Length are service properties in EPSG:3857 map units; local-plan metrics above use the repository approximate ground conversion. Height/story count, gable pitch, facade rhythm, and entrance location are estimates based on 2017 exterior photo and 2023 orthophoto, not measured."
+  },
+  "validation": {
+    "asset_rebuilt_from_source": true,
+    "source_snapshot_preserved": true,
+    "rendered_preview": "audit/baptist_student_foundation/preview.png",
+    "rendered_roof_plan_view": "audit/baptist_student_foundation/roof_plan_view.png",
+    "remaining_uncertainty": [
+      "No published measured heights or floor plans located.",
+      "Exact heights, facade windows, main entrance position, roof pitch, and color values are estimates from dated images.",
+      "The 2018 LiDAR footprint is automated; no cadastral or boundary survey was available."
+    ]
+  }
+}
