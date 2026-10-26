@@ -1,0 +1,73 @@
+{
+  "retrieved": "2026-10-26",
+  "purpose": "Follow-up search of authoritative Purdue archives, publications, and planning records for AHF-specific imagery, elevations, plans, materials, and vertical measurements after prior independent grades remained below the 8/10 threshold.",
+  "queries": [
+    "Animal Holding Facility Purdue 72 dogs",
+    "Animal Holding Facility Phase III Purdue 2001 construction",
+    "site:vet.purdue.edu Animal Holding Facility Purdue",
+    "site:purdue.edu 410 S University Street Animal Holding Facility exterior",
+    "site:archives.lib.purdue.edu Animal Holding Facility West Lafayette Ind",
+    "Purdue University Architect records UA 154 Campus Construction Slides 1991-2000",
+    "Purdue University Veterinary Medical Update May 1990 Animal Holding Facility Phase I",
+    "Purdue Animal Holding Facility 1990 Wilburn construction",
+    "Purdue Animal Holding Facility J. R. Kelly"
+  ],
+  "findings": [
+    {
+      "source": "Purdue Campus Facilities and Buildings Historic Database, AHF detail record 294",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/294",
+      "provider": "Purdue University Libraries Archives and Special Collections",
+      "retrieval": "The live HTML page embeds the structured AHF record. It reports Phase I (1990-1991, 9,777 sq ft), Phase II (1992-1994), and Phase III (1999-2001, 24,687 sq ft); materials and architects are empty; the record image_url is null and both structure image arrays are empty.",
+      "relevance": "Confirms construction chronology and current phase footprint plausibility only. It does not support facade, entrance, material, roof framing, pitch, or height geometry.",
+      "existing_snapshot": "audit/animal_holding_facility/sources/purdue_historic_facilities_ahf_detail_2026-10-25.json"
+    },
+    {
+      "source": "Purdue University Architect records, Campus Construction Slides, 1991-2000, Box 4, Folder 25, UA 154, Series 1, Sub-Series 4, File 13",
+      "url": "https://archives.lib.purdue.edu/repositories/2/top_containers/14668",
+      "provider": "Purdue University Archives and Special Collections",
+      "retrieval": "The public Archives search index describes a broad slide folder for campus construction during 1991-2000 and states that the larger architect-records collection includes images in varying media of Purdue buildings and landscapes. The folder description does not identify AHF or individual slide contents. The item-level repository page returned HTTP 403 in direct retrieval; no image was available to inspect.",
+      "relevance": "A plausible physical archival lead, but not visual evidence. No architectural detail is inferred from a broad folder label.",
+      "next_research_step": "Request Box 4, Folder 25 / UA 154, Series 1, Sub-Series 4, File 13 from Archives for inspection or scanning; ask whether any 1990-2001 slides identify Animal Holding Facility, Phase II, or Phase III."
+    },
+    {
+      "source": "Purdue University Architect records, digital and archival objects search",
+      "url": "https://archives.lib.purdue.edu/objects",
+      "provider": "Purdue University Archives and Special Collections",
+      "retrieval": "Search indexing exposed no AHF-specific exterior photograph, elevation, or plan. The collection descriptions are discovery metadata, not proof that uncatalogued or restricted material does not exist. The Archives collection interface returned HTTP 403 during direct page retrieval.",
+      "relevance": "No usable AHF-specific image or plan surfaced in public indexed material."
+    },
+    {
+      "source": "Purdue University Veterinary Medical Update, 1990, volume 15, issue 2 (May), digital object PSVM00152",
+      "url": "https://archives.lib.purdue.edu/repositories/2/digital_objects/427",
+      "provider": "Purdue University Archives and Special Collections",
+      "retrieval": "The public search index identifies a digitized veterinary newsletter. Queries pairing its title/year with Animal Holding Facility or construction did not surface AHF-specific content. The digital-object repository page returned HTTP 403, so the document itself could not be inspected in this search.",
+      "relevance": "Potential period publication to inspect, but no building-specific visual or design information was available to support a model revision."
+    },
+    {
+      "source": "Purdue Treasurer, October 2021 Building List",
+      "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/03/Space-Report_1.13.1HE_Buiding_List_Oct2021.pdf",
+      "provider": "Purdue University Office of the Treasurer",
+      "retrieval": "Indexes AHF as building 1310 at 410 S University Street and reports 24,385.83 sq ft.",
+      "relevance": "Identity and area cross-check only; no facade or elevation information."
+    },
+    {
+      "source": "Purdue campus maps and facilities directories",
+      "urls": [
+        "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+        "https://engineering.purdue.edu/PBM2025/program/pbm2025_program_0805.pdf"
+      ],
+      "provider": "Purdue University",
+      "retrieval": "Maps label the AHF site and provide campus context; they contain no building-specific elevation, exterior photograph, or measured height.",
+      "relevance": "Location confirmation only."
+    },
+    {
+      "source": "Purdue College of Veterinary Medicine, parking information for new hospital construction",
+      "url": "https://vet.purdue.edu/news/parking-information-released-in-anticipation-of-new-building-construction.php",
+      "provider": "Purdue University College of Veterinary Medicine",
+      "retrieval": "Names the Animal Holding Facility as a distinct facility in the area affected by later hospital construction; the indexed article offers no AHF-specific facade view or elevation.",
+      "relevance": "Facility identity/context only. New veterinary hospital images are excluded because they depict other buildings."
+    }
+  ],
+  "decision": "No AHF-specific dated exterior photograph, facade description, elevation, plan, material record, or reliable vertical measurement was recovered. The newly found archive folder is not item-specific and could not be visually inspected. Existing roof-zone and normalized-height evidence remains the strongest available public geometry evidence, but it does not fill the facade/entrance gap identified by independent reviewers. No building geometry was changed.",
+  "limitations": "This public-index search is not an exhaustive inspection of Purdue Archives holdings, non-digitized plans, current controlled project files, or restricted collections. Purdue Archives explicitly directs researchers to contact archives@purdue.edu for further source consultation. The public search index and direct archival object pages could not expose the underlying scans here."
+}
