@@ -164,7 +164,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (34)
+### Detailed models still in progress or awaiting a grade (35)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -194,6 +194,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Matthews Hall (MTHW) | [`massing_matthews_hall_mthw_9326885.blend`](modular/buildings/massing_matthews_hall_mthw_9326885.blend) | [8.75/10](audit/matthews_hall_mthw_9326885/grade_result.json); awaiting master integration | Kyle |
 | McDonald's | [`massing_mcdonald_s_ab77b70.blend`](modular/buildings/massing_mcdonald_s_ab77b70.blend) | [9.0/10](audit/mcdonald_s/independent_grade_revision2.json); awaiting master integration | Kyle |
 | MRI Modular Facility (MRI1 / PMRI) | [`massing_mri_modular_facility_mri1_a93e22b.blend`](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | [8.0/10](audit/mri_modular_facility/independent_grade_mri.json); awaiting master integration | Kyle |
+| Our Saviour Lutheran Church | [`massing_our_saviour_lutheran_church_118afa2.blend`](modular/buildings/massing_our_saviour_lutheran_church_118afa2.blend) | [8.75/10](audit/massing_our_saviour_lutheran_church_118afa2/independent_grade.json); awaiting master integration | Kyle |
 | Smith Hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | [8.5/10](audit/smith_hall/independent_grade_kyle.json); awaiting master integration | Kyle |
 | Marriott Hall | [`massing_marriot_hall_7cd3eb5.blend`](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | [8.5/10](audit/marriott_hall/grade.json); awaiting master integration | Kyle |
 | Martin C. Jischke Hall of Biomedical Engineering | [`massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend`](modular/buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | [8.0/10](audit/martin_c_jischke_hall/grade.json); awaiting master integration | Kyle |
@@ -205,7 +206,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 
 
 
-### Buildings that still have only massing models (36)
+### Buildings that still have only massing models (35)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -220,7 +221,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | marstellar | [`massing_marstellar_0c2ea90.blend`](modular/buildings/marstellar_0c2ea90.blend) | Kyle |
 | meredith hall south | [`massing_meredith_hall_south_ffbc444.blend`](modular/buildings/massing_meredith_hall_south_ffbc444.blend) | Kyle |
 | northwestern parking garage | [`massing_northwestern_parking_garage_979f1a2.blend`](modular/buildings/massing_northwestern_parking_garage_979f1a2.blend) | Kyle |
-| our saviour lutheran church | [`massing_our_saviour_lutheran_church_118afa2.blend`](modular/buildings/massing_our_saviour_lutheran_church_118afa2.blend) | Kyle |
 | provenance apartments | [`massing_provenance_apartments_d913384.blend`](modular/buildings/massing_provenance_apartments_d913384.blend) | Kyle |
 | provenance apartments 001 | [`massing_provenance_apartments_001_1b3223b.blend`](modular/buildings/massing_provenance_apartments_001_1b3223b.blend) | Kyle |
 | provenance apartments 002 | [`massing_provenance_apartments_002_a9a7f4a.blend`](modular/buildings/massing_provenance_apartments_002_a9a7f4a.blend) | Kyle |

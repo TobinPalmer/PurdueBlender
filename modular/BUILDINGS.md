@@ -71,8 +71,10 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Virginia C. Meredith Residence Hall (MRDH) | [massing_meredith_hall_4bb4188.blend](buildings/massing_meredith_hall_4bb4188.blend) | 1 |
 | Mccutcheon Hall | [mccutcheon_hall.blend](buildings/mccutcheon_hall.blend) | 219 |
 | McDonald's | [massing_mcdonald_s_ab77b70.blend](buildings/massing_mcdonald_s_ab77b70.blend) | 1 |
+| Our Saviour Lutheran Church | [massing_our_saviour_lutheran_church_118afa2.blend](buildings/massing_our_saviour_lutheran_church_118afa2.blend) | 1 |
 | Mechanical Engineering | [mechanical_engineering.blend](buildings/mechanical_engineering.blend) | 55 |
 | MRI Modular Facility (MRI1 / PMRI) | [massing_mri_modular_facility_mri1_a93e22b.blend](buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | 1 |
+| Our Saviour Lutheran Church | [massing_our_saviour_lutheran_church_118afa2.blend](buildings/massing_our_saviour_lutheran_church_118afa2.blend) | 1 |
 | Neil Armstrong Hall | [neil_armstrong_hall.blend](buildings/neil_armstrong_hall.blend) | 446 |
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](buildings/niswonger_aviation_tech.blend) | 2314 |
 | Owen Hall | [owen_hall.blend](buildings/owen_hall.blend) | 958 |
@@ -267,4 +269,6 @@ Philip E. Nelson Hall of Food Science retains campus-world coordinates. Its 8.5/
 McDonald's at 605 W Stadium Ave retains campus-world coordinates. Its 9.0/10 independent grade verifies all 16 structural edges against named OSM way 256640455 within 0.000015 m; Purdue's building-shape layer has no separate McDonald's feature. The facade follows an attributed exact-address exterior photo, but the image is undated and covers only one corner. Height and other elevations remain estimated. See [McDonald's grade](../audit/mcdonald_s/independent_grade_revision2.json).
 
 MRI Modular Facility retains campus-world coordinates. Its 8.0/10 independent grade verifies all four Purdue GIS FID 918 structural edges within 0.000028 m. A contractor description supports masonry veneer and aluminum openings; one-story/flat-roof massing is supported by GIS and aerial imagery. Height, HVAC top, detailed facade, and entry bearing remain estimates. See [MRI grade](../audit/mri_modular_facility/independent_grade_mri.json).
+
+Our Saviour Lutheran Church retains campus-world coordinates. Its 8.75/10 independent grade verifies all 9 vertices of named OSM way 860901797 within 0.000015 m; the official church map pin falls inside the outline. Purdue FID 823 is Fairway and is explicitly rejected. Official church photos support the brick, teal gable, stained glass, asymmetric roof, and cross; heights, roof pitch, and exact feature dimensions remain estimated. See [Our Saviour grade](../audit/massing_our_saviour_lutheran_church_118afa2/independent_grade.json).
 
