@@ -1,0 +1,64 @@
+{
+  "asset_id": "massing_house_301841250_d63b09a",
+  "asset_path": "modular/buildings/massing_house_301841250_d63b09a.blend",
+  "collection": "Asset_massing_house_301841250_d63b09a",
+  "scene": "Building_massing_house_301841250_d63b09a",
+  "retrieved_date": "2026-10-26",
+  "osm_source": "https://www.openstreetmap.org/way/301841250",
+  "chapter_sources": [
+    {
+      "url": "https://purdue.sigep.org/meet-our-chapter/about-our-chapter/",
+      "provider": "Sigma Phi Epsilon Indiana Alpha",
+      "source_date": "accessed 2026-10-26",
+      "evidence": "Identifies 690 Waldron as century-old English Colonial; brick trimmed in stone; pillars and approach landscape."
+    },
+    {
+      "url": "https://purdue.sigep.org/meet-our-chapter/chapter-facility/",
+      "provider": "Sigma Phi Epsilon Indiana Alpha",
+      "source_date": "accessed 2026-10-26",
+      "evidence": "Confirms 690 Waldron, three occupied levels, red tile roof and two veranda roof areas; recent renovation installed doors/windows."
+    },
+    {
+      "url": "https://purdue.sigep.org/wp-content/uploads/sites/207/2025/05/SPE-Web-Headers.png",
+      "provider": "Sigma Phi Epsilon Indiana Alpha",
+      "source_date": "May 2025 (URL path; photo caption calls it 690 Waldron)",
+      "evidence": "Exterior photo shows long red-brick multi-wing facade, tall roof/dormer forms, light-trimmed windows, veranda and central entry."
+    },
+    {
+      "url": "https://www.westlafayette.in.gov/DocumentCenter/View/13226/Sidewalk-Closure---Stadium-Avenue---Engineering",
+      "provider": "City of West Lafayette Engineering Department",
+      "source_date": "2024-07-02",
+      "evidence": "City memo places Sigma Phi Epsilon building at 690 Waldron and references its north elevation / Stadium Avenue context."
+    }
+  ],
+  "geometry": {
+    "source_feature": "OSM way 301841250",
+    "source_crs": "EPSG:4326",
+    "method": "node-by-node project local conversion; no fit or warp",
+    "projected_bounds_xy_m": [
+      [
+        -330.625659278145,
+        376.4700160000757
+      ],
+      [
+        -312.1115043888191,
+        416.6998079999689
+      ]
+    ],
+    "polygon_area_m2_planar": 546.87,
+    "wall_footprint_uncertainty": "OSM edge may describe roof projection or wall; not surveyed"
+  },
+  "model_changes": [
+    "Rebuilt the massing shell from the complete 21-vertex OSM outline, retaining local-project XY campus position.",
+    "Replaced fallback 16 m block with three-level 8.75 m masonry eaves and evidence-informed multi-wing red tile gables (estimated height).",
+    "Added regular window rhythm, stone belt courses, west-facing entrance and two low tile veranda canopies; all facade dimensions are visual estimates from the 2025 official image.",
+    "Added entry piers, lamps, steps and winding approach as isolated details; these are not included in the source footprint."
+  ],
+  "validation_status": "Fresh-process reopen passed in Blender 5.2.3. Export collection contains 639 objects (638 meshes; 4,012 evaluated faces), zero modifiers, identity campus-world shell transform, source-ring max nearest-vertex error 0.000021 m, no missing unpacked images; see reopen_validation.json.",
+  "uncertainty": [
+    "No surveyed elevation or measured floor-to-floor heights found; 8.75 m eaves and 12.70 m highest roof are estimates derived from three reported levels and visual reference.",
+    "OSM wall/roof outline convention and survey tolerance are unknown.",
+    "The exterior reference is a nighttime wide-angle photo; hidden elevations and exact window/roof dimensions are unverified.",
+    "Overlapping wing roof zones approximate the multi-gable silhouette, not construction framing."
+  ]
+}

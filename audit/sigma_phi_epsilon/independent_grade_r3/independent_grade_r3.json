@@ -1,0 +1,104 @@
+{
+  "asset_id": "massing_house_301841250_d63b09a",
+  "asset_path": "modular/buildings/massing_house_301841250_d63b09a.blend",
+  "independent_grade": "r3",
+  "score": 8.65,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "OSM way 301841250 is addressed at 690 Waldron; the preserved official Sigma Phi Epsilon pages and City engineering memo independently identify the chapter house at 690 Waldron. The full OSM polygon is represented by the shell within the measured ring error. OSM building=school is generic and its edge may represent a roof projection rather than surveyed wall line.",
+      "uncertainty": "Mapped footprint identity is well supported by address crosswalk, but the mapping convention/survey tolerance is undocumented."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "The closed footprint is transformed node-by-node from EPSG:4326 with the documented project local conversion; no fit or warp. Independent mesh inspection checks each source ring vertex against shell vertices. The asset remains in campus coordinates as expected for a massing asset.",
+      "uncertainty": "The local conversion is approximate rather than survey-grade; no independent survey coordinates or second footprint source were available."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.45,
+      "max_score": 2,
+      "evidence": "The official chapter facility page identifies three occupied levels, red tile roof, and two veranda roof areas. The official 2025 exterior photo directly shows multi-gable roof zones, red tile, upper gable windows, and veranda. Model eaves (8.75m) and roof peaks (11.2\u201312.7m) are explicitly estimates.",
+      "uncertainty": "No measured elevations/floor-to-floor heights; wing-by-wing roof geometry and peak heights remain interpretation from one nighttime wide-angle photo."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": "Model preview directly compared with official photo: red masonry, light horizontal stone/belt trim, repeated light-framed windows, multi-wing facade, prominent entry, piers/approach and tiled veranda areas are represented. Chapter page describes English Colonial character, brick with stone trim, pillars and approach landscape. Photo shows central entry/veranda and varied window groups.",
+      "uncertainty": "Window rhythm/size and trim dimensions are simplified estimates; several visible photo-specific facade differences (larger glazed openings, balcony/terrace railing and varied gable treatment) are not reproduced. Other elevations are unseen."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Clean-process Blender reopen verified the named scene and export collection, 639 objects/638 meshes, visible geometry and materials, no external image dependencies, and no missing or unpacked image paths. Building-specific evidence includes raw OSM/API snapshot, official HTML pages, official house image, City engineering PDF, preview, build record, and reopen record. Evaluator also checks expected stable IDs and footprint geometry.",
+      "uncertainty": "Asset is a 639-object standalone massing library. Master blend integration is a coordinator handoff and is outside this building-library grade."
+    }
+  ],
+  "evidence": {
+    "scene_present": true,
+    "export_collection_present": true,
+    "export_object_count": 639,
+    "mesh_count": 638,
+    "modifier_count": 0,
+    "shell_vertex_count": 42,
+    "source_ring_vertex_count": 21,
+    "shell_source_ring_max_nearest_vertex_error_m": 2.1002879494574414e-05,
+    "evaluated_bounds_world_m": [
+      [
+        -334.3900146484375,
+        -311.90447998046875
+      ],
+      [
+        376.2618408203125,
+        416.90802001953125
+      ],
+      [
+        0.0,
+        12.699999809265137
+      ]
+    ],
+    "materials": [
+      "SigEp_Dark_Entry",
+      "SigEp_Dark_Glass",
+      "SigEp_Lantern_Metal",
+      "SigEp_Limestone",
+      "SigEp_OffWhite_Window_Trim",
+      "SigEp_Red_Brick",
+      "SigEp_Red_Tile_Roof",
+      "SigEp_Stone_Paving",
+      "SigEp_Warm_Brick_Trim"
+    ],
+    "external_image_paths_missing": [],
+    "evidence_files": [
+      "audit/sigma_phi_epsilon/build_evidence.json",
+      "audit/sigma_phi_epsilon/reopen_validation.json",
+      "audit/sigma_phi_epsilon/preview.png",
+      "audit/sigma_phi_epsilon/sources/osm_way_301841250_raw.json",
+      "audit/sigma_phi_epsilon/sources/osm_way_301841250.json",
+      "audit/sigma_phi_epsilon/sources/sigep_about_chapter.html",
+      "audit/sigma_phi_epsilon/sources/sigep_chapter_facility.html",
+      "audit/sigma_phi_epsilon/sources/official_chapter_house_2025.png",
+      "audit/sigma_phi_epsilon/sources/city_engineering_memo_2024-07-02.pdf"
+    ],
+    "visual_inspection": "Direct comparison of preview.png against official_chapter_house_2025.png."
+  },
+  "findings": [
+    "PASS: score meets the 8/10 minimum.",
+    "Verified source-ring maximum nearest-vertex deviation: 0.000021003 m.",
+    "Model remains an evidence-informed representation, not a surveyed elevation model.",
+    "Master integration is still required before the assignment is complete."
+  ],
+  "limitations": [
+    "OSM footprint is not a surveyed wall line; exact footprint tolerance is unknown.",
+    "Height and roof geometry are estimated from a chapter statement and one oblique nighttime image.",
+    "Not evidence of integration into the master campus blend."
+  ]
+}
