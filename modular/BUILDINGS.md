@@ -192,6 +192,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 
 | Building | File | Objects |
 | --- | --- | ---: |
+| The Caretaker’s Cottage | [massing_the_caretaker_s_cottage_6b24af9.blend](buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | 71 |
 | Hillel | [massing_hillel_36d2ba1.blend](buildings/massing_hillel_36d2ba1.blend) | 1 |
 | Hillenbrand Hall | [massing_hillenbrand_hall_a71e418.blend](buildings/massing_hillenbrand_hall_a71e418.blend) | 1 |
 | Hockmeyer Hall of Structural Biology (HOCK) | [massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend](buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | 6 |
@@ -209,6 +210,8 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Telecommunications Building (TEL) | [massing_telecommunications_building_tel_8dfaccf.blend](buildings/massing_telecommunications_building_tel_8dfaccf.blend) | 1 |
 | Twin Pines Cooperative | [massing_twin_pines_cooperative_8f606f9.blend](buildings/massing_twin_pines_cooperative_8f606f9.blend) | 1 |
 | Union Club Hotel | [massing_union_club_hotel_0d22460.blend](buildings/massing_union_club_hotel_0d22460.blend) | 28 |
+
+The Caretaker’s Cottage retains campus-world coordinates. Its 8.1/10 independent grade matches all ten OSM wall/base points within 0.000058 m and supports the porch from official library and city imagery. Wall and ridge heights are estimates; the LiDAR roof envelope differs from the OSM wall footprint, and roof junctions/openings remain approximate. See [Caretaker’s Cottage grade](../audit/massing_the_caretaker_s_cottage_6b24af9/independent_grade_r2.json).
 
 Hillel retains campus-world coordinates. Its 8.3/10 grade supports the main shell and GIS footprint; the proposed 845 sq ft addition is unresolved, and height, roof depth/pitch, and facade opening details remain schematic. See [Hillel grade](../audit/massing_hillel_36d2ba1/independent_grade/r2/result.json).
 
