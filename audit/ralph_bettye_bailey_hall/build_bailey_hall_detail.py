@@ -9,7 +9,8 @@ from mathutils.geometry import tessellate_polygon
 ASSET_ID = 'massing_ralph_bettye_bailey_hall_406c4db'
 OBJECT_NAME = 'Ralph & Bettye Bailey Hall'
 COLLECTION_NAME = 'Asset_massing_ralph_bettye_bailey_hall_406c4db'
-HEIGHT_M = 16.0  # retained from the source massing; estimated, not surveyed
+HEIGHT_M = 7.5  # photo-scaled estimate for the lower wings; no measured elevation
+ENTRY_TOWER_HEIGHT_M = 33.4 * 0.3048  # GIS field R, tentatively interpreted as feet; units undocumented
 FLOOR_COUNT = 5  # official campus GIS attribute; treated as an attribute, not height evidence
 ORIGIN_LAT = 40.4274
 ORIGIN_LON = -86.9137
@@ -168,8 +169,10 @@ for tri in triangles:
     bottom_base = len(verts) - 3
     add_face((bottom_base + 2, bottom_base + 1, bottom_base), ROOF)
 
-# Repeated window bays on every substantial outer wall; five rows follow the official floor-count attribute.
-window_rows = [1.55 + row * 2.85 for row in range(FLOOR_COUNT)]
+# The current official exterior photograph shows two visible above-grade window rows.
+# The GIS NUM_LEVELS=5 attribute is retained as conflicting source metadata; it is
+# not used to invent five facade rows or a building height.
+window_rows = [1.75, 5.0]
 entry_edge = None
 entry_point = None
 entry_tangent = None
@@ -215,30 +218,51 @@ for i, a, b, length, tangent, normal in edge_data:
 for i, a, b, length, tangent, normal in edge_data:
     if length < 2.0:
         continue
-    for zband in (3.95, 6.8, 9.65, 12.5):
+    for zband in (4.0,):
         center = Vector(((a.x + b.x) * 0.5, (a.y + b.y) * 0.5, zband)) + normal * 0.025
         add_box(center, tangent, normal, length + 0.04, 0.10, 0.10, STONE)
     cap_center = Vector(((a.x + b.x) * 0.5, (a.y + b.y) * 0.5, roof_z - 0.20)) + normal * 0.08
     add_box(cap_center, tangent, normal, length + 0.18, 0.42, 0.40, STONE)
 
+# Raised entrance tower, visible in Purdue's archival exterior photo. Its apex uses
+# GIS field R=33.4 only as a tentative feet interpretation (the field units are not
+# documented); the general 8 m wall/parapet remains a photo-scaled estimate.
+if entry_edge is not None:
+    # Let the tower project beyond the mapped wall line, as the entrance volume
+    # appears to do in the archival oblique view. This projection is decorative.
+    tower_center_xy = Vector((entry_point.x, entry_point.y)) - Vector((entry_normal.x, entry_normal.y)) * 1.1
+    tower_height = max(HEIGHT_M, ENTRY_TOWER_HEIGHT_M)
+    add_box(Vector((tower_center_xy.x, tower_center_xy.y, tower_height * 0.5)),
+            entry_tangent, entry_normal, 7.2, 5.2, tower_height, BRICK)
+    add_box(Vector((tower_center_xy.x, tower_center_xy.y, tower_height - 0.06)),
+            entry_tangent, entry_normal, 7.34, 5.34, 0.12, STONE)
+    # Tall glazed bay on the tower's street-facing side, matching the archival view.
+    tower_front = Vector((tower_center_xy.x, tower_center_xy.y, 7.1)) + entry_normal * 2.65
+    add_box(tower_front, entry_tangent, entry_normal, 3.8, 0.12, 5.4, GLASS)
+    # Side glazing and a vertical sign panel remain schematic in size and placement.
+    tower_side = Vector((tower_center_xy.x, tower_center_xy.y, 6.8)) + entry_tangent * 3.65
+    add_box(tower_side, entry_normal, entry_tangent, 3.1, 0.12, 4.7, GLASS)
+    tower_sign = Vector((tower_center_xy.x, tower_center_xy.y, 7.3)) + entry_normal * 2.73
+    add_box(tower_sign, entry_tangent, entry_normal, 0.75, 0.10, 2.8, STONE)
+
 # Main west-facing entrance with limestone surround, dark double glazing, and a shallow canopy.
 if entry_edge is not None:
     p = Vector((entry_point.x, entry_point.y, 0.0))
     door_w, door_h = 2.25, 2.55
-    door_center = p + entry_normal * 0.07 + Vector((0, 0, door_h * 0.5 + 0.05))
+    door_center = p + entry_normal * 1.58 + Vector((0, 0, door_h * 0.5 + 0.05))
     add_box(door_center, entry_tangent, entry_normal, door_w, 0.08, door_h, GLASS)
-    trim_center = p + entry_normal * 0.15 + Vector((0, 0, door_h * 0.5 + 0.05))
+    trim_center = p + entry_normal * 1.66 + Vector((0, 0, door_h * 0.5 + 0.05))
     trim = 0.24
     add_box(trim_center + Vector((0, 0, door_h * 0.5)), entry_tangent, entry_normal, door_w + 0.55, 0.24, trim, STONE)
     add_box(trim_center - entry_tangent * (door_w * 0.5 + trim * 0.5), entry_tangent, entry_normal, trim, 0.24, door_h, STONE)
     add_box(trim_center + entry_tangent * (door_w * 0.5 + trim * 0.5), entry_tangent, entry_normal, trim, 0.24, door_h, STONE)
     add_box(trim_center, entry_tangent, entry_normal, 0.10, 0.16, door_h * 0.92, METAL)
-    canopy_center = p + entry_normal * 0.72 + Vector((0, 0, 3.05))
+    canopy_center = p + entry_normal * 2.18 + Vector((0, 0, 3.05))
     add_box(canopy_center, entry_tangent, entry_normal, 4.2, 1.55, 0.22, STONE)
     for side in (-1, 1):
-        pier_center = p + entry_normal * 0.95 + entry_tangent * (side * 1.75) + Vector((0, 0, 1.38))
+        pier_center = p + entry_normal * 2.28 + entry_tangent * (side * 1.75) + Vector((0, 0, 1.38))
         add_box(pier_center, entry_tangent, entry_normal, 0.30, 0.34, 2.76, STONE)
-    plaque_center = p + entry_normal * 0.18 + Vector((0, 0, 3.65))
+    plaque_center = p + entry_normal * 1.72 + Vector((0, 0, 3.65))
     add_box(plaque_center, entry_tangent, entry_normal, 3.8, 0.18, 0.55, ROOF)
 
 # Replace the original simplified extrusion while preserving its object, collection, and exported asset IDs.
@@ -287,8 +311,9 @@ result = {
     'materials': [m.name for m in mats],
     'structural_bounds_xy_m': [[round(min_x, 3), round(max_x, 3)], [round(min_y, 3), round(max_y, 3)]],
     'estimated_height_m': HEIGHT_M,
+    'estimated_entry_tower_height_m': ENTRY_TOWER_HEIGHT_M,
     'floor_count_attribute': FLOOR_COUNT,
-    'height_status': 'unverified; 16 m retained as an estimate from the existing massing',
+    'height_status': 'lower-wing parapet estimated at 7.5 m from Purdue exterior photos; entry tower apex estimated at 10.18 m by tentatively interpreting GIS R=33.4 as feet; field units are undocumented',
 }
 print('BUILD_RESULT_JSON=' + json.dumps(result))
 
