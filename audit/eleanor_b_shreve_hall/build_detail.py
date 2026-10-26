@@ -48,8 +48,12 @@ for tri in tessellate_polygon([points]):
     for idx in tri:
         p=points[int(idx)]; verts.append((p.x,p.y,H))
     face((k,k+1,k+2),roof)
+# Reserve a west-facing opening for the documented entrance. Its campus orientation
+# and exact location are approximate because the exterior reference is not georeferenced.
+entry_index=max((i for i,e in enumerate(edge) if e[4].x < -0.7 and e[2]>5),key=lambda i:edge[i][2],default=None)
+entry=edge[entry_index] if entry_index is not None else None
 # Window bays use repeated facade rhythm. All added pieces remain part of this one building object.
-for a,b,L,t,n in edge:
+for edge_index,(a,b,L,t,n) in enumerate(edge):
     if L<4.0: continue
     count=max(1,int((L-1.5)//4.0)); spacing=L/(count+1); w=min(float(cfg.get('window_width_m',2.15)),spacing*0.63); pane_h=min(1.55,story*0.55)
     for floor in range(F):
@@ -57,16 +61,26 @@ for a,b,L,t,n in edge:
         if z+pane_h/2>H-0.4: continue
         for bay in range(count):
             p=a.lerp(b,spacing*(bay+1)/L); c=Vector((p.x,p.y,z))+n*0.07
+            if floor==0 and edge_index==entry_index and abs((p-(a+b)*0.5).dot(Vector((t.x,t.y))))<float(cfg['entry_canopy_width_m'])/2+0.5: continue
             box(c,t,n,w*0.74,0.06,pane_h,glass)
             framec=c+n*0.045; fw=0.09
             box(framec+Vector((0,0,pane_h/2)),t,n,w,0.14,fw,stone); box(framec-Vector((0,0,pane_h/2)),t,n,w,0.14,fw,stone)
             box(framec-t*(w/2-fw/2),t,n,fw,0.14,pane_h,stone); box(framec+t*(w/2-fw/2),t,n,fw,0.14,pane_h,stone)
     for z in [plinth+story*k for k in range(1,F)]: box(Vector(((a.x+b.x)/2,(a.y+b.y)/2,z))+n*0.025,t,n,L+0.02,0.10,0.10,stone)
     box(Vector(((a.x+b.x)/2,(a.y+b.y)/2,H-0.16))+n*0.05,t,n,L+0.12,0.28,0.32,stone)
-# Small west-facing entry marker, based on orientation rather than an undocumented exact door location.
-entry=max((e for e in edge if e[4].x < -0.7 and e[2]>5),key=lambda e:e[2],default=None)
+# Photo-referenced glass entry, broad canopy, columns and raised stair approach.
 if entry:
-    a,b,L,t,n=entry; p=(a+b)*0.5; box(Vector((p.x,p.y,1.45))+n*0.12,t,n,2.5,0.1,2.9,glass); box(Vector((p.x,p.y,3.1))+n*0.16,t,n,3.2,0.25,0.22,stone)
+    a,b,L,t,n=entry; p=(a+b)*0.5; entry_w=float(cfg['entry_width_m']); canopy_w=float(cfg['entry_canopy_width_m']); canopy_d=float(cfg['entry_canopy_depth_m'])
+    box(Vector((p.x,p.y,1.8))+n*0.12,t,n,entry_w,0.1,3.6,glass)
+    box(Vector((p.x,p.y,3.65))+n*(canopy_d*0.42),t,n,canopy_w,canopy_d,0.28,stone)
+    for side in (-1,1):
+        c=Vector((p.x,p.y,1.8))+n*(canopy_d*0.82)+t*(side*(canopy_w/2-0.22))
+        box(c,t,n,0.28,0.28,3.6,stone)
+    landing_z=0.76
+    box(Vector((p.x,p.y,landing_z))+n*0.25,t,n,entry_w+0.6,0.50,0.12,stone)
+    for step in range(4):
+        step_height=0.18*(4-step); step_distance=0.38+step*0.48
+        box(Vector((p.x,p.y,step_height/2))+n*step_distance,t,n,entry_w+0.9,0.52,step_height,stone)
 old=obj.data; old_name=old.name; mesh=bpy.data.meshes.new(old_name+'_detail'); mesh.from_pydata(verts,[],faces)
 for m in mats: mesh.materials.append(m)
 mesh.update()
