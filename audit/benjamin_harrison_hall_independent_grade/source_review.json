@@ -1,0 +1,48 @@
+{
+  "building_id": "benjamin_harrison_hall",
+  "retrieval_date": "2026-10-25",
+  "sources": [
+    {
+      "provider": "Purdue University official campus map / BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 85,
+      "name": "Benjamin Harrison Residence Hall",
+      "code": "HARR",
+      "snapshot": "audit/official_building_references.json",
+      "snapshot_date": "2026-10-22",
+      "crs": "source GIS relayed through the project's campus-map-derived local meter conversion; origin 40.4274,-86.9137, X east and Y north; not a certified survey",
+      "measurement": "28 distinct ring vertices; official AABB 70.1462 x 86.3737 m; source min-rotated-rectangle angle 0.2612 degrees",
+      "limits": "GIS polygon verifies horizontal perimeter and identity only; source record says 10 levels attribute but warns its height field is unverified."
+    },
+    {
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/harr/",
+      "feature_id": "HARR emergency plan",
+      "source_date": "Revision 2026-03-17",
+      "measurement": "Building description: three major wings; north and south wings are 8 stories tall; center section is 2 stories",
+      "limits": "Does not provide measured total height, roof elevations, exterior finish schedules, or facade dimensions."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/harrison.html",
+      "feature_id": "Harrison Hall residence hall page",
+      "source_date": "Current page checked 2026-10-25",
+      "measurement": "Identifies Harrison Hall, address 107 MacArthur Drive, opened 1966; describes two wings connected by central common areas.",
+      "limits": "Page is an identity/use source, not a building elevation or dimension source."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/campus-living/get-involved/work-with-us/awards/pastwinners.html",
+      "feature_id": "February 2024 Harrison Hall award photo",
+      "source_date": "Page modified 2026-04-20",
+      "measurement": "Official housing page identifies an image of people outside Harrison Hall entrance.",
+      "limits": "Available image is not an elevation or dimensioned architectural source."
+    }
+  ],
+  "asset_evidence_state": {
+    "dedicated_builder_script_exists": false,
+    "dedicated_building_evidence_folder_existed_before_this_grading": false,
+    "manifest_source_metadata": {}
+  },
+  "methodology": "Independent visual inspection of Blender renders plus actual Blender reopen/export probes. Structural perimeter comparison uses the bottom ring of HARR_Ground_Plinth_Base after subtracting manifest placement origin, compared vertex-to-vertex with the official GIS ring. Structural core bounds are secondary cross-checks, not the footprint measure. No master file was opened or changed."
+}

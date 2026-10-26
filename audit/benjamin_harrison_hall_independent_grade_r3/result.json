@@ -1,0 +1,84 @@
+{
+  "score": 8.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "max_points": 2,
+      "points": 2,
+      "status": "verified",
+      "evidence": "Official Purdue GIS FID 85 identifies Benjamin Harrison Residence Hall at 107 Macarthur Drive; independently projected 28-vertex polygon matches the evaluated base perimeter (28 vertices; symmetric nearest-vertex error 0.000561 m).",
+      "limitation": "Official campus-map polygon is not a certified survey."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "max_points": 2,
+      "points": 2,
+      "status": "verified",
+      "evidence": "Manifest placement origin [-1110.0, -260.0] m plus the local frame maps the full GIS vertex pattern to the model; source ring comparison independently confirms plan shape, scale and orientation. Evaluated local XYZ bounds: [[-75.0, 75.0], [-85.0, 85.0], [-0.05999999865889549, 30.350000381469727]] m.",
+      "limitation": "Position, orientation and dimensions are awarded from GIS/manifest geometry only. No dimensions or heading were inferred from the unregistered perspective photograph; the local meters-per-degree transform is approximate."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "max_points": 2,
+      "points": 1,
+      "status": "partially verified",
+      "evidence": "Purdue OEP source states three major wings, 8 stories in each north/south wing and 2 in the central section; those relative masses and story bands are represented in the reopened model and fresh views.",
+      "limitation": "No authoritative total elevation, floor datums, floor-to-floor dimensions or roof-form evidence. The photo is perspective and is not used to infer vertical dimensions."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "max_points": 2,
+      "points": 1.5,
+      "status": "photo-backed cues; dimensions and orientation unverified",
+      "evidence": "Direct visual comparison of the archived Purdue hero photo with the fresh Cam_West_Entrance render supports four broad cues: red-brown brick on wings/connector; repeated vertically stacked narrow windows; a light perforated screen across the lower connector; and glazed entrance adjoining a broad light canopy. The listed Blender object anchors all exist in the reopened export: HARR_Center_Pavilion_Main_Brick, HARR_Center_West_Entrance_Bay, HARR_Entrance_Canopy_Fascia, HARR_Entrance_Canopy_Slab, HARR_NorthTower_North_Frames, HARR_North_Tower_Brick_Core, HARR_Screen_End_Pier_N, HARR_Screen_End_Pier_S, HARR_Screen_Top_Beam, HARR_SouthTower_South_Frames, HARR_South_Tower_Brick_Core, HARR_West_Solar_Screen_Grid.",
+      "limitation": "Photograph compass direction and camera registration are unknown. It cannot establish wing-to-compass assignment, exact window width/spacing, screen dimensions/pattern, canopy dimensions, lettering, unseen elevations, or precise facade geometry."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "max_points": 2,
+      "points": 2,
+      "status": "verified",
+      "evidence": "Canonical builder reran in an isolated replica and emitted three fresh views. Actual asset reopened in Blender 4.5.15 LTS; named collection has 220 objects and exact manifest membership. Collection-only export reopened with 220 objects, no camera/light objects, no unpacked external images and no linked libraries. Source snapshots and image are recorded with SHA256 hashes.",
+      "limitation": "Opening asset emits an unavailable legacy BLENDER_EEVEE identifier warning in Blender 4.5; builder switches to EEVEE Next in-memory for successful renders."
+    }
+  ],
+  "evidence": {
+    "actual_probe": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r3\\probe_actual.json",
+    "rebuilt_probe": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r3\\probe_rebuilt.json",
+    "facade_comparison": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r3\\source_snapshots\\facade_photo_comparison.json",
+    "reopened_collection_export": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r3\\collection_export_actual_reopened.json",
+    "source_review": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r3\\source_review.json",
+    "rebuild_log": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r3\\canonical_builder_rebuild.log",
+    "views": [
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r3\\views\\purdue_harrison_hall_exterior_hero.jpg",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r3\\views\\cam_hero_perspective.png",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r3\\views\\cam_topdown_footprint.png",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r3\\views\\cam_west_entrance.png"
+    ],
+    "original_asset_sha256": "27ddb20ef2e15319f8db3094e843e0db1d7ffc7a78cb13ed228f4501cba0e754",
+    "isolated_rebuild_sha256": "95289322fa55cf77dc973882aefda7e171ea2f4644c8bf83eea5fcca12ed0b66",
+    "photo_anchor_validation": {
+      "HARR_Center_Pavilion_Main_Brick": true,
+      "HARR_Center_West_Entrance_Bay": true,
+      "HARR_Entrance_Canopy_Fascia": true,
+      "HARR_Entrance_Canopy_Slab": true,
+      "HARR_NorthTower_North_Frames": true,
+      "HARR_North_Tower_Brick_Core": true,
+      "HARR_Screen_End_Pier_N": true,
+      "HARR_Screen_End_Pier_S": true,
+      "HARR_Screen_Top_Beam": true,
+      "HARR_SouthTower_South_Frames": true,
+      "HARR_South_Tower_Brick_Core": true,
+      "HARR_West_Solar_Screen_Grid": true
+    }
+  },
+  "findings": [
+    "The new official exterior photograph supports broad color/material and composition cues but remains unregistered; it did not change or validate placement, orientation, dimensions, exact facade geometry, or roof.",
+    "GIS identity and plan geometry are independently verified; local placement/scale/orientation derive from that polygon and the manifest origin.",
+    "Height, floor datums, total height and roof remain partly/unverified; the OEP source supports story arrangement only.",
+    "No building/model/builder/shared-index files were changed for this independent grade; the canonical builder ran against an isolated copy."
+  ]
+}

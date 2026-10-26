@@ -1,0 +1,66 @@
+{
+  "source_image": "audit/benjamin_harrison_hall/sources/purdue_harrison_hall_exterior_hero.jpg",
+  "source_image_sha256": "969c3e26c28ae2b9f953cc6247aa826c9b7583d6e6ee9ba5c558c804c0fbfafd",
+  "source_page": "https://www.housing.purdue.edu/my-housing/options/residence-halls/harrison.html",
+  "compared_model_view": "audit/benjamin_harrison_hall/cam_west_entrance.png",
+  "status": "Photo-backed visual cues; no dimensions extracted from perspective image.",
+  "viewpoint_registration": "The Purdue page does not state the photograph's compass direction. Compare motifs only; the mapping to the model's west view is visual, not georeferenced.",
+  "observed_cues_and_model_objects": [
+    {
+      "photo_cue": "Red-brown brick on the tall wings and lower connector.",
+      "model_objects": [
+        "HARR_North_Tower_Brick_Core",
+        "HARR_South_Tower_Brick_Core",
+        "HARR_Center_Pavilion_Main_Brick"
+      ],
+      "status": "Visible material cue supported."
+    },
+    {
+      "photo_cue": "Repeated narrow windows stacked vertically on a tall wing.",
+      "model_objects": [
+        "HARR_NorthTower_North_Frames",
+        "HARR_SouthTower_South_Frames"
+      ],
+      "status": "Repeated window rhythm is visible; exact spacing remains schematic, and photo-to-wing orientation is not established."
+    },
+    {
+      "photo_cue": "Light perforated screen across the lower connector.",
+      "model_objects": [
+        "HARR_West_Solar_Screen_Grid",
+        "HARR_Screen_End_Pier_S",
+        "HARR_Screen_End_Pier_N",
+        "HARR_Screen_Top_Beam"
+      ],
+      "status": "Screen presence and contrast supported; exact dimensions/pattern and solar-control function remain unverified."
+    },
+    {
+      "photo_cue": "Glazed entrance adjoining a broad, light canopy/overhang.",
+      "model_objects": [
+        "HARR_Center_West_Entrance_Bay",
+        "HARR_Entrance_Canopy_Slab",
+        "HARR_Entrance_Canopy_Fascia"
+      ],
+      "status": "Composition supported; exact proportions remain schematic."
+    }
+  ],
+  "not_established_by_photo": [
+    "Exact window width, spacing, and frame profile.",
+    "Perforated screen dimensions, precise block pattern, and solar-control function.",
+    "Canopy dimensions, roof construction, parapets, and rooftop equipment.",
+    "The modeled HARRISON HALL lettering and its location.",
+    "Facade treatments on elevations not visible in this photograph."
+  ],
+  "validated_model_object_anchors": [
+    "HARR_North_Tower_Brick_Core",
+    "HARR_South_Tower_Brick_Core",
+    "HARR_NorthTower_North_Frames",
+    "HARR_SouthTower_South_Frames",
+    "HARR_Center_Pavilion_Main_Brick",
+    "HARR_West_Solar_Screen_Grid",
+    "HARR_Center_West_Entrance_Bay",
+    "HARR_Entrance_Canopy_Slab",
+    "HARR_Entrance_Canopy_Fascia"
+  ],
+  "geometry_changes_this_iteration": [],
+  "reason_no_facade_geometry_change": "The rendered entrance elevation already expresses the visible photo-supported cues. A perspective photograph cannot establish dimensions or justify moving facade elements, so unmeasured details remain schematic instead of being guessed."
+}

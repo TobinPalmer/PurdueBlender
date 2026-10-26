@@ -1,0 +1,98 @@
+{
+  "building_id": "benjamin_harrison_hall",
+  "score": 7.7,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Official Purdue campus-map ArcGIS feature 85 is code HARR, named Benjamin Harrison Residence Hall.",
+        "The saved GIS ring has 28 distinct vertices; the Blender asset's HARR_Ground_Plinth_Base has 28 base vertices.",
+        "Vertex comparison after applying the manifest local-frame offset: max source-to-model 0.000561 m; max model-to-source 0.000561 m.",
+        "The hero/top-down renders show the three-wing residence-hall arrangement described in Purdue's current emergency plan."
+      ],
+      "findings": [
+        "The GIS record is an official campus-map polygon, not a certified survey; it verifies horizontal shape and identity rather than facade or vertical geometry."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Model structural bounds and source GIS local bounds differ by at most 0.004698 m on any side.",
+        "Source GIS AABB measures 70.146 x 86.374 m; model base plinth spans 70.150 x 86.370 m.",
+        "GIS minimum rotated rectangle angle is 0.261 degrees; model perimeter is aligned to the same campus axes.",
+        "The saved local geometry and manifest placement origin are consistent; source centroid minus manifest origin is [2.0761789042335295, -0.19363313905341784] m, while the exact perimeter was compared in that local frame."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue OEP states the north and south wings are 8 stories and the central section is 2 stories; the model renders corresponding tall paired wings and a low central connector.",
+        "Reopened major north/south brick cores span z=3.80..26.60 m locally; total asset geometry reaches z=30.35 m.",
+        "The model depicts roof decks/parapets and mechanical penthouses."
+      ],
+      "findings": [
+        "No authoritative total building height, roof elevation, roof construction, or floor-to-floor dimensions were located; total height and current roof form remain unverified.",
+        "The GIS record carries a 10-level attribute, but its accompanying source review marks vertical GIS fields unverified; the direct OEP story description is preferred."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": [
+        "Reopened renders show red-brown brick wing masses, repeated vertical window bays, a central entrance canopy/storefront, courtyard glazing, and a west solar-screen grid.",
+        "The Purdue emergency plan and Residences page substantiate the three-part wing arrangement and central common-area connector.",
+        "An official Purdue Residences page identifies a photo taken outside the Harrison Hall entrance, but provides no measured exterior facade information."
+      ],
+      "findings": [
+        "The exact brick/window composition, solar-screen dimensions, and canopy/entrance design are not corroborated by elevation drawings or a sufficiently detailed exterior source in the asset's evidence record."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and evidence completeness",
+      "score": 0.8,
+      "max_score": 2.0,
+      "evidence": [
+        "The actual asset reopened in Blender 4.5.15 LTS with the manifest scene, collection, 224 objects, and exact manifest object name/count agreement.",
+        "Collection-only export reopened with 224 objects; there are no external images or linked libraries.",
+        "The manifest preserves local geometry and a campus placement origin."
+      ],
+      "findings": [
+        "The exported building collection contains 3 cameras and 1 light alongside the geometry.",
+        "No canonical `modular/buildings/build_benjamin_harrison_hall.py` or building-specific source/evidence folder exists; manifest source_metadata is empty, so the model cannot be reproduced from a documented source-backed build workflow.",
+        "The asset was saved in Blender 5.0.2 and reopened by Blender 4.5.15; its legacy `BLENDER_EEVEE` engine identifier is unavailable in the older runtime. Geometry and collection export reopened, and preview renders succeeded after switching render engine in memory."
+      ]
+    }
+  ],
+  "evidence": {
+    "blender_probe": "audit/benjamin_harrison_hall_independent_grade/blender_probe.json",
+    "structural_measurements": "audit/benjamin_harrison_hall_independent_grade/structural_object_measurements.json",
+    "source_review": "audit/benjamin_harrison_hall_independent_grade/source_review.json",
+    "rendered_views": [
+      "audit/benjamin_harrison_hall_independent_grade/cam_hero_perspective.png",
+      "audit/benjamin_harrison_hall_independent_grade/cam_topdown_footprint.png",
+      "audit/benjamin_harrison_hall_independent_grade/cam_west_entrance.png"
+    ],
+    "official_gis_snapshot": "audit/official_building_references.json",
+    "official_sources": [
+      "https://www.purdue.edu/operations/emergency-preparedness/harr/",
+      "https://www.housing.purdue.edu/my-housing/options/residence-halls/harrison.html",
+      "https://www.housing.purdue.edu/campus-living/get-involved/work-with-us/awards/pastwinners.html"
+    ]
+  },
+  "findings": [
+    "The model has an excellent source-backed horizontal shell and matches the GIS ring to submillimeter accuracy.",
+    "The official Purdue emergency plan supports the three-wing layout and 8-story/2-story massing, but does not verify total height or roof geometry.",
+    "The main completion gap is evidence and reproducibility: no dedicated builder/source record exists and render cameras/lights are part of the exported asset collection.",
+    "Overall independent grade is below the repository's 8/10 finish threshold."
+  ]
+}

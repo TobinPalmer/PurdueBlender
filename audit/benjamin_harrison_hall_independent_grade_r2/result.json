@@ -1,0 +1,60 @@
+{
+  "score": 7,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "max_points": 2,
+      "points": 2,
+      "status": "verified",
+      "evidence": "Official Purdue GIS feature 85 identifies Benjamin Harrison Residence Hall at 107 Macarthur Drive; independent projection yields 28 vertices against 28 model base vertices with symmetric nearest-vertex error 0.000561 m.",
+      "limitation": "The Purdue campus-map polygon is not a certified survey."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "max_points": 2,
+      "points": 2,
+      "status": "verified",
+      "evidence": "Manifest origin [-1110.0, -260.0] m was applied to the local GIS frame; the model base ring matches the full source vertex set and orientation. Evaluated asset bounds are [[-75.0, 75.0], [-85.0, 85.0], [-0.05999999865889549, 30.350000381469727]] m in local XYZ.",
+      "limitation": "Project local meters-per-degree conversion is approximate; the footprint does not establish surveyed wall thickness or exact interior dimensions."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "max_points": 2,
+      "points": 1,
+      "status": "partially verified",
+      "evidence": "Purdue OEP page documents three major wings, with north and south wings at 8 stories and center section at 2 stories; these relative masses are represented in the reopened scene and fresh preview.",
+      "limitation": "No authoritative total elevation, floor-to-floor heights, floor datum, or roof-form source was found. Story count does not verify modeled 30.35 m total bounds or roof geometry."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "max_points": 2,
+      "points": 0,
+      "status": "unverified",
+      "evidence": "Fresh renders show brick wall surfaces, repetitive window bands, an entrance canopy, signage, and a west solar screen. The official housing page only states two wings linked by common areas; its official hall-photo gallery feed confirms photo assets exist but supplied no facade descriptions or measured elevation. The award page cited by the builder lists a Harrison Hall employee and does not itself support an exterior entrance photograph.",
+      "limitation": "Appearance alone is not evidence. No reviewed source image or dimensioned elevation verifies facade material/colors, window rhythm, screen geometry, sign, or entrance details."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "max_points": 2,
+      "points": 2,
+      "status": "verified",
+      "evidence": "Canonical builder ran on an isolated copy and generated fresh views; actual asset reopened in Blender 4.5.15 LTS. Export collection has 220 objects with exact manifest names, no cameras/lights in export, no unpacked external images or linked libraries; collection-only export probe was written (4195735 bytes) and reopened independently with the same 220 objects, no cameras/lights, and no external references. GIS, OEP, housing HTML, and gallery-feed JSON source snapshots are archived beside this report.",
+      "limitation": "Opening the legacy scene emits Blender 4.5 warning that engine identifier BLENDER_EEVEE is unavailable; builder switches to BLENDER_EEVEE_NEXT for renders. Scene still opens and previews render."
+    }
+  ],
+  "evidence": {
+    "probe": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r2\\probe_actual.json",
+    "source_review": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r2\\source_review.json",
+    "asset_sha256": "88b41ecd4735f7d8d7697c131778da7b2055ac9d9b68b35c078a7c842df58320",
+    "fresh_builder_rebuild_probe": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\benjamin_harrison_hall_independent_grade_r2\\probe_rebuilt.json"
+  },
+  "findings": [
+    "Footprint/identity/manifest placement are independently verified against official Purdue GIS feature 85.",
+    "The canonical builder reruns successfully against the supplied seed in an isolated replica; its output hashes differ from the original because it saves refreshed metadata/render state, while the original asset, builder, and building evidence hashes were recorded unchanged.",
+    "Height and roof remain unverified. Facade/entrance details need a direct source-image comparison or dimensioned elevation before those points can be awarded.",
+    "The builder evidence record overstates the award page as supporting an entrance photograph; the saved award page is a winner-list and does not establish a facade image."
+  ]
+}
