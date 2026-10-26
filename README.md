@@ -6,23 +6,23 @@ This project tracks detailed campus models separately from the remaining massing
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
-| Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | Finished | 8.5/10 | — |
-| Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | Finished | 8.0/10 | — |
+| Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | In progress | 7.0/10 | Rossen |
+| Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | In progress | 6.8/10 | Rossen |
 | American Railway Building | [american_railway_building.blend](modular/buildings/american_railway_building.blend) | Finished | 8.5/10 | — |
-| Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](modular/buildings/animal_disease_diagnostic_laboratory.blend) | Finished | 8.3/10 | — |
-| Armory | [armory.blend](modular/buildings/armory.blend) | Finished | 8.4/10 | — |
-| Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](modular/buildings/asian_american_resource_and_cultural_center.blend) | Finished | 8.5/10 | — |
-| Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](modular/buildings/bechtel_innovation_design_center_bidc.blend) | Finished | 8.75/10 | — |
-| Beering Hall | [beering_hall.blend](modular/buildings/beering_hall.blend) | Finished | 8.0/10 | — |
-| Bell Tower | [bell_tower.blend](modular/buildings/bell_tower.blend) | Finished | 9.3/10 | — |
-| Benjamin Harrison Hall | [benjamin_harrison_hall.blend](modular/buildings/benjamin_harrison_hall.blend) | Finished | 8.5/10 | — |
-| Bindley Bioscience Center | [bindley_bioscience_center.blend](modular/buildings/bindley_bioscience_center.blend) | Finished | 8.8/10 | — |
-| Biochemistry Building | [biochemistry_building.blend](modular/buildings/biochemistry_building.blend) | Finished | 8.5/10 | — |
-| Birck Nanotechnology Center | [birck_nanotechnology_center.blend](modular/buildings/birck_nanotechnology_center.blend) | Finished | 8.0/10 | — |
-| Black Cultural Center | [black_cultural_center.blend](modular/buildings/black_cultural_center.blend) | Finished | 9.0/10 | — |
+| Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](modular/buildings/animal_disease_diagnostic_laboratory.blend) | In progress | 7.0/10 | Rossen |
+| Armory | [armory.blend](modular/buildings/armory.blend) | Needs independent grade | Not graded | Rossen |
+| Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](modular/buildings/asian_american_resource_and_cultural_center.blend) | Needs independent grade | Not graded | Rossen |
+| Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](modular/buildings/bechtel_innovation_design_center_bidc.blend) | In progress | 7.0/10 | Rossen |
+| Beering Hall | [beering_hall.blend](modular/buildings/beering_hall.blend) | Needs independent grade | Not graded | Rossen |
+| Bell Tower | [bell_tower.blend](modular/buildings/bell_tower.blend) | Needs independent grade | Not graded | Rossen |
+| Benjamin Harrison Hall | [benjamin_harrison_hall.blend](modular/buildings/benjamin_harrison_hall.blend) | Needs independent grade | Not graded | Rossen |
+| Bindley Bioscience Center | [bindley_bioscience_center.blend](modular/buildings/bindley_bioscience_center.blend) | In progress | 7.2/10 | Rossen |
+| Biochemistry Building | [biochemistry_building.blend](modular/buildings/biochemistry_building.blend) | In progress | 6.8/10 | Rossen |
+| Birck Nanotechnology Center | [birck_nanotechnology_center.blend](modular/buildings/birck_nanotechnology_center.blend) | Needs independent grade | Not graded | Rossen |
+| Black Cultural Center | [black_cultural_center.blend](modular/buildings/black_cultural_center.blend) | Needs independent grade | Not graded | Rossen |
 | Brown Laboratory of Chemistry | [brown_laboratory_of_chemistry.blend](modular/buildings/brown_laboratory_of_chemistry.blend) | Finished | 8.8/10 | — |
-| Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](modular/buildings/burton_morgan_center.blend) | Finished | 8.4/10 | — |
-| Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | Finished | 8.5/10 | — |
+| Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](modular/buildings/burton_morgan_center.blend) | In progress | 6.7/10 | Rossen |
+| Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | In progress | 7.4/10 | Rossen |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](modular/buildings/convergence_center.blend) | Needs independent grade | Not graded | Rohan |
 | Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | In progress | 7.2/10 | Rohan |
 | David and Bonnie Brunner Farm Animal Hospital | [david_and_bonnie_brunner_farm_animal_hospital.blend](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | In progress | 6.7/10 | Rohan |
@@ -65,7 +65,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Psychological Sciences Building | [psychological_sciences.blend](modular/buildings/psychological_sciences.blend) | Finished | 9.0/10 | — |
 | Purdue Memorial Union | [purdue_memorial_union.blend](modular/buildings/purdue_memorial_union.blend) | Finished | [8.0/10](audit/purdue_memorial_union_independent_grade/independent_grade_r4.md) | — |
 | R. B. Wetherill Laboratory of Chemistry | [wetherill_laboratory_of_chemistry.blend](modular/buildings/wetherill_laboratory_of_chemistry.blend) | Finished | 8.3/10 | — |
-| Rawls Hall | [rawls_hall.blend](modular/buildings/rawls_hall.blend) | In progress | 7.0/10 | Tobin |
+| Rawls Hall | [rawls_hall.blend](modular/buildings/rawls_hall.blend) | Finished | [8.14/10](audit/batch4_rawls/independent_review_round11.md) | — |
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](modular/buildings/ray_w_herrick_laboratories.blend) | Finished | [8.1/10](audit/ray_w_herrick_refine/independent_grade_r2.md) | — |
 | Ross Ade | [ross_ade.blend](modular/buildings/ross_ade.blend) | Finished | [8.0/10](audit/ross_ade/independent_grade.md) | — |
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](modular/buildings/massing_samara_f6b8e61.blend) | Finished | [8.6/10](audit/samara/independent_grade.json) | — |
@@ -73,19 +73,34 @@ This project tracks detailed campus models separately from the remaining massing
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](modular/buildings/stanley_coulter_hall.blend) | Finished | [8.1/10](audit/batch3_stanley/independent_grade_r6.md) | — |
 | Stewart Center | [stewart_center.blend](modular/buildings/stewart_center.blend) | Finished | [8.0/10](audit/stewart_center_independent_grade/independent_grade_r4.md) | — |
 | Tarkington Hall | [tarkington_hall.blend](modular/buildings/tarkington_hall.blend) | Needs independent grade | Not graded | Tobin |
-| University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | Needs independent grade | Not graded | Tobin |
-| Walc | [walc.blend](modular/buildings/walc.blend) | Needs independent grade | Not graded | Tobin |
-| Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
+| University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | In progress | 7.8/10 | Tobin |
+| Walc | [walc.blend](modular/buildings/walc.blend) | Finished | [8.25/10](audit/walc_refine/independent_grade_r5.md) | — |
+| Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Finished | [8.3/10](audit/wiley_hall/independent_grade_r2.md) | — |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (151 total)
+## Unfinished buildings (168 total)
 
-This list excludes individual house parcels and duplicate building records. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 15 buildings, Rohan 15 buildings, Tobin 71 buildings, Arjav 10 buildings, Brady 40 buildings. The Beering Hall BRNG massing record duplicates the finished Beering Hall detailed asset (both match official GIS feature 251); it is excluded from unique building-work totals, but the linked campus scene still contains both libraries and needs a Tobin-owned master integration fix. See `audit/beering_hall_brng_duplicate_check.json`.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 8 buildings, Arjav 10 buildings, Brady 100 buildings.
 
-### Detailed models still in progress or awaiting a grade (22)
+### Detailed models still in progress or awaiting a grade (34)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
+| Agricultural Administration Building | [`agricultural_administration_building.blend`](modular/buildings/agricultural_administration_building.blend) | 7.0/10 | Rossen |
+| Agricultural and Biological Engineering | [`agricultural_and_biological_engineering_abe.blend`](modular/buildings/agricultural_and_biological_engineering_abe.blend) | 6.8/10 | Rossen |
+| Animal Disease Diagnostic Laboratory | [`animal_disease_diagnostic_laboratory.blend`](modular/buildings/animal_disease_diagnostic_laboratory.blend) | 7.0/10 | Rossen |
+| Armory | [`armory.blend`](modular/buildings/armory.blend) | Not graded | Rossen |
+| Asian American and Asian Resource and Cultural Center | [`asian_american_resource_and_cultural_center.blend`](modular/buildings/asian_american_resource_and_cultural_center.blend) | Not graded | Rossen |
+| Bechtel Innovation Design Center | [`bechtel_innovation_design_center_bidc.blend`](modular/buildings/bechtel_innovation_design_center_bidc.blend) | 7.0/10 | Rossen |
+| Beering Hall | [`beering_hall.blend`](modular/buildings/beering_hall.blend) | Not graded | Rossen |
+| Bell Tower | [`bell_tower.blend`](modular/buildings/bell_tower.blend) | Not graded | Rossen |
+| Benjamin Harrison Hall | [`benjamin_harrison_hall.blend`](modular/buildings/benjamin_harrison_hall.blend) | Not graded | Rossen |
+| Bindley Bioscience Center | [`bindley_bioscience_center.blend`](modular/buildings/bindley_bioscience_center.blend) | 7.2/10 | Rossen |
+| Biochemistry Building | [`biochemistry_building.blend`](modular/buildings/biochemistry_building.blend) | 6.8/10 | Rossen |
+| Birck Nanotechnology Center | [`birck_nanotechnology_center.blend`](modular/buildings/birck_nanotechnology_center.blend) | Not graded | Rossen |
+| Black Cultural Center | [`black_cultural_center.blend`](modular/buildings/black_cultural_center.blend) | Not graded | Rossen |
+| Burton D. Morgan Center for Entrepreneurship | [`burton_morgan_center.blend`](modular/buildings/burton_morgan_center.blend) | 6.7/10 | Rossen |
+| Class Of 1950 | [`class_of_1950.blend`](modular/buildings/class_of_1950.blend) | 7.4/10 | Rossen |
 | Convergence Center for Innovation and Collaboration | [`convergence_center.blend`](modular/buildings/convergence_center.blend) | Not graded | Rohan |
 | Dauch Alumni Center | [`dauch_alumni_center.blend`](modular/buildings/dauch_alumni_center.blend) | 7.2/10 | Rohan |
 | David and Bonnie Brunner Farm Animal Hospital | [`david_and_bonnie_brunner_farm_animal_hospital.blend`](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 6.7/10 | Rohan |
@@ -102,21 +117,22 @@ This list excludes individual house parcels and duplicate building records. The 
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Rohan |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
-| Rawls Hall | [`rawls_hall.blend`](modular/buildings/rawls_hall.blend) | 7.0/10 | Tobin |
-
 | Tarkington Hall | [`tarkington_hall.blend`](modular/buildings/tarkington_hall.blend) | Not graded | Tobin |
-| University Hall | [`university_hall.blend`](modular/buildings/university_hall.blend) | Not graded | Tobin |
-| Walc | [`walc.blend`](modular/buildings/walc.blend) | Not graded | Tobin |
-| Wiley Hall | [`wiley_hall.blend`](modular/buildings/wiley_hall.blend) | Not graded | Tobin |
+| University Hall | [`university_hall.blend`](modular/buildings/university_hall.blend) | 7.8/10 | Tobin |
 | Winifred Parker Hall | [`winifred_parker_hall.blend`](modular/buildings/winifred_parker_hall.blend) | Not graded | Tobin |
 
-### Buildings that still have only massing models (129)
+### Buildings that still have only massing models (134)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
+| 3rd and west | [`massing_3rd_and_west_ffa3d05.blend`](modular/buildings/massing_3rd_and_west_ffa3d05.blend) | Rossen |
+| alpha chi rho | [`massing_alpha_chi_rho_0cb591a.blend`](modular/buildings/massing_alpha_chi_rho_0cb591a.blend) | Rossen |
+| alpha kappa lambda | [`massing_alpha_kappa_lambda_88dda6c.blend`](modular/buildings/massing_alpha_kappa_lambda_88dda6c.blend) | Rossen |
 | animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rossen |
+| baptist student foundation | [`massing_baptist_student_foundation_c3d8114.blend`](modular/buildings/massing_baptist_student_foundation_c3d8114.blend) | Rossen |
+| beering hall brng | [`massing_beering_hall_brng_b5c3fdf.blend`](modular/buildings/massing_beering_hall_brng_b5c3fdf.blend) | Rossen |
 | campus edge | [`massing_campus_edge_343e3d8.blend`](modular/buildings/massing_campus_edge_343e3d8.blend) | Rossen |
 | cary quadrangle east cqe | [`massing_cary_quadrangle_east_cqe_230c813.blend`](modular/buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | Rossen |
 | cary quadrangle northeast cqne | [`massing_cary_quadrangle_northeast_cqne_0a76fca.blend`](modular/buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend) | Rossen |
@@ -212,36 +228,36 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
 | smith hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | Arjav |
 | st thomas aquinas | [`massing_st_thomas_aquinas_5535390.blend`](modular/buildings/massing_st_thomas_aquinas_5535390.blend) | Tobin |
-| stone hall ston | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | Tobin |
-| student health center push | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Tobin |
-| telecommunications building tel | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | Tobin |
-| the caretaker s cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | Tobin |
-| the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Tobin |
-| the moosehead lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | Tobin |
-| the pete dye clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Tobin |
-| triangle fraternity | [`massing_triangle_fraternity_8477ad9.blend`](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Tobin |
-| turf recreation exercise center | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Tobin |
-| twin pines cooperative | [`massing_twin_pines_cooperative_8f606f9.blend`](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | Tobin |
-| union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Tobin |
-| unitarian universalist church of tippecanoe county | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | Tobin |
-| university book store | [`massing_university_book_store_717bf2c.blend`](modular/buildings/massing_university_book_store_717bf2c.blend) | Tobin |
-| university church | [`massing_university_church_84b2a1b.blend`](modular/buildings/massing_university_church_84b2a1b.blend) | Tobin |
-| university lutheran church | [`massing_university_lutheran_church_20903f1.blend`](modular/buildings/massing_university_lutheran_church_20903f1.blend) | Tobin |
-| university street parking garage pgu | [`massing_university_street_parking_garage_pgu_be81bec.blend`](modular/buildings/massing_university_street_parking_garage_pgu_be81bec.blend) | Tobin |
-| utility plant office facility | [`massing_utility_plant_office_facility_e219ef5.blend`](modular/buildings/massing_utility_plant_office_facility_e219ef5.blend) | Tobin |
-| veterinary animal isolation building 2 | [`massing_veterinary_animal_isolation_building_2_ebb4142.blend`](modular/buildings/massing_veterinary_animal_isolation_building_2_ebb4142.blend) | Tobin |
-| veterinary medicine isolation facility | [`massing_veterinary_medicine_isolation_facility_66d1305.blend`](modular/buildings/massing_veterinary_medicine_isolation_facility_66d1305.blend) | Tobin |
-| veterinary pathology building | [`massing_veterinary_pathology_building_48b5a5b.blend`](modular/buildings/massing_veterinary_pathology_building_48b5a5b.blend) | Tobin |
-| village bottle shoppe | [`massing_village_bottle_shoppe_6a17e23.blend`](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | Tobin |
-| von s | [`massing_von_s_d207e41.blend`](modular/buildings/massing_von_s_d207e41.blend) | Tobin |
-| wang hall wang | [`massing_wang_hall_wang_0dac5ab.blend`](modular/buildings/massing_wang_hall_wang_0dac5ab.blend) | Tobin |
-| west lafayette intermediate school | [`massing_west_lafayette_intermediate_school_d72f0fa.blend`](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Tobin |
-| west lafayette junior senior high school | [`massing_west_lafayette_junior_senior_high_school_fa45bd1.blend`](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Tobin |
-| whistler hall | [`massing_whistler_hall_6f6bf8d.blend`](modular/buildings/massing_whistler_hall_6f6bf8d.blend) | Tobin |
-| wiley dining court wdct | [`massing_wiley_dining_court_wdct_8a6c669.blend`](modular/buildings/massing_wiley_dining_court_wdct_8a6c669.blend) | Tobin |
-| windsor halls | [`massing_windsor_halls_80aeb51.blend`](modular/buildings/massing_windsor_halls_80aeb51.blend) | Tobin |
-| wood street garage pgw | [`massing_wood_street_garage_pgw_2fa056e.blend`](modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend) | Tobin |
-| young hall yong | [`massing_young_hall_yong_cae1b95.blend`](modular/buildings/massing_young_hall_yong_cae1b95.blend) | Tobin |
+| stone hall ston | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | Brady |
+| student health center push | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Brady |
+| telecommunications building tel | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | Brady |
+| the caretaker s cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | Brady |
+| the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Brady |
+| the moosehead lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | Brady |
+| the pete dye clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Brady |
+| triangle fraternity | [`massing_triangle_fraternity_8477ad9.blend`](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Brady |
+| turf recreation exercise center | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Brady |
+| twin pines cooperative | [`massing_twin_pines_cooperative_8f606f9.blend`](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | Brady |
+| union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Brady |
+| unitarian universalist church of tippecanoe county | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | Brady |
+| university book store | [`massing_university_book_store_717bf2c.blend`](modular/buildings/massing_university_book_store_717bf2c.blend) | Brady |
+| university church | [`massing_university_church_84b2a1b.blend`](modular/buildings/massing_university_church_84b2a1b.blend) | Brady |
+| university lutheran church | [`massing_university_lutheran_church_20903f1.blend`](modular/buildings/massing_university_lutheran_church_20903f1.blend) | Brady |
+| university street parking garage pgu | [`massing_university_street_parking_garage_pgu_be81bec.blend`](modular/buildings/massing_university_street_parking_garage_pgu_be81bec.blend) | Brady |
+| utility plant office facility | [`massing_utility_plant_office_facility_e219ef5.blend`](modular/buildings/massing_utility_plant_office_facility_e219ef5.blend) | Brady |
+| veterinary animal isolation building 2 | [`massing_veterinary_animal_isolation_building_2_ebb4142.blend`](modular/buildings/massing_veterinary_animal_isolation_building_2_ebb4142.blend) | Brady |
+| veterinary medicine isolation facility | [`massing_veterinary_medicine_isolation_facility_66d1305.blend`](modular/buildings/massing_veterinary_medicine_isolation_facility_66d1305.blend) | Brady |
+| veterinary pathology building | [`massing_veterinary_pathology_building_48b5a5b.blend`](modular/buildings/massing_veterinary_pathology_building_48b5a5b.blend) | Brady |
+| village bottle shoppe | [`massing_village_bottle_shoppe_6a17e23.blend`](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | Brady |
+| von s | [`massing_von_s_d207e41.blend`](modular/buildings/massing_von_s_d207e41.blend) | Brady |
+| wang hall wang | [`massing_wang_hall_wang_0dac5ab.blend`](modular/buildings/massing_wang_hall_wang_0dac5ab.blend) | Brady |
+| west lafayette intermediate school | [`massing_west_lafayette_intermediate_school_d72f0fa.blend`](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Brady |
+| west lafayette junior senior high school | [`massing_west_lafayette_junior_senior_high_school_fa45bd1.blend`](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Brady |
+| whistler hall | [`massing_whistler_hall_6f6bf8d.blend`](modular/buildings/massing_whistler_hall_6f6bf8d.blend) | Brady |
+| wiley dining court wdct | [`massing_wiley_dining_court_wdct_8a6c669.blend`](modular/buildings/massing_wiley_dining_court_wdct_8a6c669.blend) | Brady |
+| windsor halls | [`massing_windsor_halls_80aeb51.blend`](modular/buildings/massing_windsor_halls_80aeb51.blend) | Brady |
+| wood street garage pgw | [`massing_wood_street_garage_pgw_2fa056e.blend`](modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend) | Brady |
+| young hall yong | [`massing_young_hall_yong_cae1b95.blend`](modular/buildings/massing_young_hall_yong_cae1b95.blend) | Brady |
 | yue kong pao hall | [`massing_yue_kong_pao_hall_a3cb766.blend`](modular/buildings/massing_yue_kong_pao_hall_a3cb766.blend) | Tobin |
 | zeta tau alpha | [`massing_zeta_tau_alpha_af8a443.blend`](modular/buildings/massing_zeta_tau_alpha_af8a443.blend) | Tobin |
 | zundo family dentistry | [`massing_zundo_family_dentistry_f840e2b.blend`](modular/buildings/massing_zundo_family_dentistry_f840e2b.blend) | Tobin |
@@ -249,3 +265,7 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 ## Adding a building
 
 Follow [AGENT.md](AGENT.md) for the required modular build and grading process.
+
+
+
+

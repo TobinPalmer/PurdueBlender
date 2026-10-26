@@ -1,0 +1,495 @@
+00:01.860  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\modular\buildings\university_hall.blend"
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\university_hall_refine\inspect_saved_asset.py:20: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  if m.use_nodes:
+BlenderMCP addon registered
+C:\Users\Tobin\Documents\Blender\PurdueMap\audit\university_hall_refine\inspect_saved_asset.py:42: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  report={'asset':str(asset),'sha256':hashlib.sha256(asset.read_bytes()).hexdigest(),'blender_version':bpy.app.version_string,'scene':scene.name,'scene_object_count':len(scene.objects),'collection':collection.name,'collection_object_count':len(objects),'mesh_count':len(meshes),'object_type_counts':{t:sum(o.type==t for o in objects) for t in sorted({o.type for o in objects})},'root':None if root_obj is None else {'name':root_obj.name,'location':list(root_obj.location),'rotation_euler':list(root_obj.rotation_euler),'scale':list(root_obj.scale),'matrix_world_translation':list(root_obj.matrix_world.translation)},'evaluated_bounds_local_m_axis_major':bounds,'material_count_used':len(materials),'materialless_meshes':materialless,'invalid_material_indices':invalid_slots,'materials':[{'name':m.name,'use_nodes':m.use_nodes,'diffuse_color':list(m.diffuse_color),'node_count':len(m.node_tree.nodes) if m.use_nodes else 0,'principled':[{'base_color':list(n.inputs['Base Color'].default_value) if 'Base Color' in n.inputs else None,'roughness':n.inputs['Roughness'].default_value if 'Roughness' in n.inputs else None,'metallic':n.inputs['Metallic'].default_value if 'Metallic' in n.inputs else None} for n in m.node_tree.nodes if n.type=='BSDF_PRINCIPLED']} for m in materials.values()],'image_texture_nodes':image_nodes,'missing_external_images':missing_images,'linked_libraries':linked_libs,'cameras':cameras,'collection_hierarchy':child_collections,'scene_camera':scene.camera.name if scene.camera else None,'render_engine':scene.render.engine}
+{
+  "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\university_hall.blend",
+  "sha256": "7b1054212e66d8fb56155e735a90b26dab915e0bfaf8e3655a0e1d8a8536bb22",
+  "blender_version": "5.2.3 LTS",
+  "scene": "Building_university_hall",
+  "scene_object_count": 507,
+  "collection": "Asset_university_hall",
+  "collection_object_count": 507,
+  "mesh_count": 495,
+  "object_type_counts": {
+    "EMPTY": 1,
+    "LIGHT": 11,
+    "MESH": 495
+  },
+  "root": {
+    "name": "AssetRoot_university_hall",
+    "location": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_euler": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "matrix_world_translation": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "evaluated_bounds_local_m_axis_major": [
+    [
+      -19.074993133544922,
+      19.075000762939453
+    ],
+    [
+      -22.220012664794922,
+      22.21999740600586
+    ],
+    [
+      0.0,
+      27.69999885559082
+    ]
+  ],
+  "material_count_used": 18,
+  "materialless_meshes": [],
+  "invalid_material_indices": [],
+  "materials": [
+    {
+      "name": "Univ_Bedford_Limestone",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.8199999928474426,
+        0.7900000214576721,
+        0.7200000286102295,
+        1.0
+      ],
+      "node_count": 7,
+      "principled": [
+        {
+          "base_color": [
+            0.8199999928474426,
+            0.7900000214576721,
+            0.7200000286102295,
+            1.0
+          ],
+          "roughness": 0.7200000286102295,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Weathered_Red_Brick",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.3075000047683716,
+        0.09149999916553497,
+        0.04349999874830246,
+        1.0
+      ],
+      "node_count": 17,
+      "principled": [
+        {
+          "base_color": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            1.0
+          ],
+          "roughness": 0.6000000238418579,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Window_Glass",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.05999999865889549,
+        0.10000000149011612,
+        0.14000000059604645,
+        1.0
+      ],
+      "node_count": 2,
+      "principled": [
+        {
+          "base_color": [
+            0.05999999865889549,
+            0.10000000149011612,
+            0.14000000059604645,
+            1.0
+          ],
+          "roughness": 0.07999999821186066,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Slate_Roof",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.20000000298023224,
+        0.20999999344348907,
+        0.23000000417232513,
+        1.0
+      ],
+      "node_count": 7,
+      "principled": [
+        {
+          "base_color": [
+            0.20000000298023224,
+            0.20999999344348907,
+            0.23000000417232513,
+            1.0
+          ],
+          "roughness": 0.800000011920929,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Bronze",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.2199999988079071,
+        0.17000000178813934,
+        0.12999999523162842,
+        1.0
+      ],
+      "node_count": 8,
+      "principled": [
+        {
+          "base_color": [
+            0.2199999988079071,
+            0.17000000178813934,
+            0.12999999523162842,
+            1.0
+          ],
+          "roughness": 0.3499999940395355,
+          "metallic": 0.75
+        }
+      ]
+    },
+    {
+      "name": "Univ_Gold_Accent",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.8600000143051147,
+        0.7099999785423279,
+        0.2800000011920929,
+        1.0
+      ],
+      "node_count": 2,
+      "principled": [
+        {
+          "base_color": [
+            0.8600000143051147,
+            0.7099999785423279,
+            0.2800000011920929,
+            1.0
+          ],
+          "roughness": 0.25,
+          "metallic": 0.8500000238418579
+        }
+      ]
+    },
+    {
+      "name": "Univ_Dark_Walnut",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "node_count": 8,
+      "principled": [
+        {
+          "base_color": [
+            0.1599999964237213,
+            0.10000000149011612,
+            0.05999999865889549,
+            1.0
+          ],
+          "roughness": 0.3799999952316284,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Verdigris_Copper",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.3199999928474426,
+        0.5,
+        0.41999998688697815,
+        1.0
+      ],
+      "node_count": 8,
+      "principled": [
+        {
+          "base_color": [
+            0.3199999928474426,
+            0.5,
+            0.41999998688697815,
+            1.0
+          ],
+          "roughness": 0.5,
+          "metallic": 0.30000001192092896
+        }
+      ]
+    },
+    {
+      "name": "Univ_Parquet_Wood",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.3199999928474426,
+        0.20000000298023224,
+        0.11999999731779099,
+        1.0
+      ],
+      "node_count": 8,
+      "principled": [
+        {
+          "base_color": [
+            0.3199999928474426,
+            0.20000000298023224,
+            0.11999999731779099,
+            1.0
+          ],
+          "roughness": 0.44999998807907104,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Interior_Plaster",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.5799999833106995,
+        0.5699999928474426,
+        0.550000011920929,
+        1.0
+      ],
+      "node_count": 8,
+      "principled": [
+        {
+          "base_color": [
+            0.5799999833106995,
+            0.5699999928474426,
+            0.550000011920929,
+            1.0
+          ],
+          "roughness": 0.8199999928474426,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Burgundy_Leather",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "node_count": 8,
+      "principled": [
+        {
+          "base_color": [
+            0.2800000011920929,
+            0.03999999910593033,
+            0.05999999865889549,
+            1.0
+          ],
+          "roughness": 0.44999998807907104,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Antique_Mahogany",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "node_count": 8,
+      "principled": [
+        {
+          "base_color": [
+            0.2199999988079071,
+            0.07999999821186066,
+            0.05000000074505806,
+            1.0
+          ],
+          "roughness": 0.3199999928474426,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Bankers_Lamp_Green",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "node_count": 2,
+      "principled": [
+        {
+          "base_color": [
+            0.05000000074505806,
+            0.3499999940395355,
+            0.11999999731779099,
+            1.0
+          ],
+          "roughness": 0.11999999731779099,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Bankers_Lamp_Glow",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "node_count": 2,
+      "principled": [
+        {
+          "base_color": [
+            1.0,
+            0.8999999761581421,
+            0.699999988079071,
+            1.0
+          ],
+          "roughness": 0.4000000059604645,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Chalkboard_Slate",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.20000000298023224,
+        0.20999999344348907,
+        0.23000000417232513,
+        1.0
+      ],
+      "node_count": 8,
+      "principled": [
+        {
+          "base_color": [
+            0.20000000298023224,
+            0.20999999344348907,
+            0.23000000417232513,
+            1.0
+          ],
+          "roughness": 0.800000011920929,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Walkway_Brick",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.3075000047683716,
+        0.09149999916553497,
+        0.04349999874830246,
+        1.0
+      ],
+      "node_count": 17,
+      "principled": [
+        {
+          "base_color": [
+            0.800000011920929,
+            0.800000011920929,
+            0.800000011920929,
+            1.0
+          ],
+          "roughness": 0.6000000238418579,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Garden_Boxwood",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.3199999928474426,
+        0.20000000298023224,
+        0.11999999731779099,
+        1.0
+      ],
+      "node_count": 8,
+      "principled": [
+        {
+          "base_color": [
+            0.3199999928474426,
+            0.20000000298023224,
+            0.11999999731779099,
+            1.0
+          ],
+          "roughness": 0.44999998807907104,
+          "metallic": 0.0
+        }
+      ]
+    },
+    {
+      "name": "Univ_Barre_Granite",
+      "use_nodes": true,
+      "diffuse_color": [
+        0.800000011920929,
+        0.800000011920929,
+        0.800000011920929,
+        1.0
+      ],
+      "node_count": 8,
+      "principled": [
+        {
+          "base_color": [
+            0.18000000715255737,
+            0.18000000715255737,
+            0.20000000298023224,
+            1.0
+          ],
+          "roughness": 0.15000000596046448,
+          "metallic": 0.0
+        }
+      ]
+    }
+  ],
+  "image_texture_nodes": [],
+  "missing_external_images": [],
+  "linked_libraries": [],
+  "cameras": [],
+  "collection_hierarchy": [
+    {
+      "depth": 0,
+      "name": "Asset_university_hall",
+      "direct_objects": 507,
+      "all_objects": 507
+    }
+  ],
+  "scene_camera": null,
+  "render_engine": "BLENDER_EEVEE"
+}
+BlenderMCP addon unregistered
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
+
+Blender quit

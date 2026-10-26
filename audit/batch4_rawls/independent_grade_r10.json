@@ -1,0 +1,51 @@
+{
+  "building": "Rawls Hall",
+  "round": "R10",
+  "asset": "modular/buildings/rawls_hall.blend",
+  "sha256": "d361f211a8177e234d475493d6242ad396981b7f3fed29dc57f37f54e1026d9e",
+  "review_date": "2026-10-25",
+  "score": 7.9,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "weights": {
+    "exterior_form_and_detail": 0.30,
+    "materials_and_texturing": 0.20,
+    "interior_completeness": 0.30,
+    "technical_integrity_and_placement": 0.10,
+    "evidence_and_source_fit": 0.10
+  },
+  "criteria": [
+    {"name":"Exterior form and detail","score":8.2,"max_score":10.0,"evidence":"Four-storey brick elevation, repeated southeast glazing and glass-roof penthouse remain readable. R10 added no exterior form/facade detail; other elevations, base, roof edges and exact 44-pane placement remain simplified or unverified."},
+    {"name":"Materials and texturing","score":7.8,"max_score":10.0,"evidence":"Lighter blue-gray curtain-wall shader and coherent brick/reveal variation. Through-glass image still has strong reflection and bright softbox highlight; glass color/specification is not measured."},
+    {"name":"Interior completeness","score":7.1,"max_score":10.0,"evidence":"Five schematic platforms and six rising rows improve tier readability; source supports fixed tiered tables, a lectern and dual projectors. Central/front wall still blocks much of the room; projector surfaces are not evident in the submitted view; 42 modeled desk objects versus 62 seats listed by the 2023 guide; full room boundary and route to atrium/core are not established."},
+    {"name":"Technical integrity and placement","score":9.3,"max_score":10.0,"evidence":"Independent Blender 5.2.3 reopen exact hash: 735 scene/collection objects, 727 meshes, identity root, 18 used materials, zero materialless/invalid-slot meshes, missing images, linked libraries or >120m mesh-bound outliers. Independent BVH checks: 44/44 pane-center rays clear exterior shell and 44/44 clear tested 1086 wall. Center rays do not prove all-view visibility; master marker/neighborhood unreviewed."},
+    {"name":"Evidence and source fit","score":7.8,"max_score":10.0,"evidence":"R10 handoff records exact hash, source URLs/access date, validation and uncertainties. Purdue 2023 guide lists 62 seats, fixed tiered tables, lectern and dual projectors; room page lists occupancy 136; 2024 plan is first-floor only. Tier rise and 1m plan-shell registration remain approximate."}
+  ],
+  "weighted_unrounded_score": 7.86,
+  "findings": [
+    "R10 improves on R9's absent tiered-room cues by adding five low platforms and six seating rows, plus a schematic lectern and dual screens.",
+    "The submitted through-glass view remains partly occluded by a central/front wall and bright reflection; teaching equipment is not clearly legible from the normal view.",
+    "The Purdue 2023 room guide lists 62 seats. There are 42 modeled desk objects, so the model is not a complete count/layout for that source. The R10 handoff correctly does not equate the separate 136 occupancy figure with seats.",
+    "Exterior quality is essentially unchanged from R9. The 44-pane pattern remains model-inherited, not dimension-verified.",
+    "Plan-to-shell registration remains uncertain by about 1m; master placement and surrounding campus context were not checked."
+  ],
+  "evidence": {
+    "independent_reopen": "audit/batch4_rawls/independent_reopen_r10.json",
+    "independent_reopen_script": "audit/batch4_rawls/independent_reopen_r10.py",
+    "builder_reopen": "audit/batch4_rawls/round10_reopen_validation.json",
+    "classroom_validation": "audit/batch4_rawls/round10_classroom_validation.json",
+    "builder_handoff": "audit/batch4_rawls/round10_handoff.md",
+    "change_set": "audit/batch4_rawls/round10_change_set.json",
+    "previous_review": "audit/batch4_rawls/independent_review_round9.md",
+    "renders": ["audit/batch4_rawls/se_curtainwall_full_round10.png","audit/batch4_rawls/se_curtainwall_through_glass_round10.png"],
+    "sources": [
+      {"title":"Purdue RAWL 1086 Classroom Guide (2023)","url":"https://kcc.krannert.purdue.edu/Faq/Item/Download/2194","notes":"Page 1 lists fixed tiered tables, 62 seats and dual projectors; page 2 describes lectern."},
+      {"title":"Purdue Rawls 1086 room listing","url":"https://kcc.krannert.purdue.edu/Faq/Item/811","notes":"Lists occupancy 136 and table type tiered."},
+      {"title":"Purdue Road School Rawls Hall first-floor plan (2024)","url":"https://roadschool.purdue.edu/maps/2024%20Rawls%20Hall.pdf","notes":"First-floor layout only."},
+      {"title":"Fink Roberts & Petrie Rawls Hall project","url":"https://frpinc.com/projects/rawls-hall-krannert-school-of-management/","notes":"Building/roof-penthouse/fourth-floor bridge context."},
+      {"title":"Purdue OEP Rawls Hall","url":"https://www.purdue.edu/operations/emergency-preparedness/rawl/","notes":"General building-floor and open-ceiling description."}
+    ]
+  },
+  "limitations": ["Standalone asset grade does not inspect the master placement marker or neighborhood.","R10's 42 desks are explicitly schematic; 2023 room guide lists 62 seats.","Tier heights and dimensions are not sourced; plan-to-shell registration remains about 1m uncertain.","Pane locations and widths are inherited from existing model, not independently surveyed.","Upper-floor partitions, atrium circulation and current interior finishes remain unverified."]
+}

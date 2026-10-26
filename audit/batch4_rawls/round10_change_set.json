@@ -1,0 +1,49 @@
+{
+  "round": 10,
+  "asset": "modular/buildings/rawls_hall.blend",
+  "source_asset_sha256": "5ea4dde459d6ed6a594f49bf7c30411a6ed960124c8580e3fb7832d7f91f6910",
+  "final_asset_sha256": "d361f211a8177e234d475493d6242ad396981b7f3fed29dc57f37f54e1026d9e",
+  "blender_validation": "Blender 5.2.3 fresh reopen",
+  "changes": [
+    {
+      "feature": "Room 1086 classroom tiers",
+      "details": "Six existing seating rows of seven desks/chairs; five low platforms at schematic 0.13 m increments up to 0.65 m; lifted all 168 matching existing table legs.",
+      "source_basis": "Purdue 2024 first-floor plan supports room footprint; Purdue 2023 classroom guide and Purdue room listing describe fixed tiered tables.",
+      "uncertainty": "Platform height, dimensions, row count and completeness are schematic. No seat count or dimensions inferred from the 136-person room occupancy."
+    },
+    {
+      "feature": "Teaching end",
+      "details": "Added paired schematic projection panels and a two-part lectern.",
+      "source_basis": "Purdue 2023 RAWL 1086 guide lists a lectern and dual-projection equipment.",
+      "uncertainty": "Exact fixture size, location and wall mounting are not documented by the source plan."
+    },
+    {
+      "feature": "Curtain-wall glass material",
+      "details": "Lighter blue-gray base color, roughness 0.18, transmission 0.28, coat 0.02, specular IOR 0.28.",
+      "source_basis": "Visual response to R9 independent review finding the glass dark and reflective; general FRP/Purdue public facade imagery.",
+      "uncertainty": "Estimated visual treatment, not measured glass properties."
+    }
+  ],
+  "preserved": {
+    "se_glass_panes": 44,
+    "pane_quads_changed": false,
+    "facade_openings_moved": false,
+    "plan1086_walls_moved": false,
+    "approximate_plan_to_shell_uncertainty_m": 1.0
+  },
+  "validation_report": "audit/batch4_rawls/round10_reopen_validation.json",
+  "classroom_validation": "audit/batch4_rawls/round10_classroom_validation.json",
+  "renders": [
+    "audit/batch4_rawls/se_curtainwall_full_round10.png",
+    "audit/batch4_rawls/se_curtainwall_through_glass_round10.png"
+  ],
+  "sources": [
+    {"provider":"Purdue Road School","url":"https://roadschool.purdue.edu/maps/2024%20Rawls%20Hall.pdf","retrieved":"2026-10-25","supports":"first-floor plan footprint and shown doors only"},
+    {"provider":"Purdue Daniels School IT","url":"https://kcc.krannert.purdue.edu/Faq/Item/811","retrieved":"2026-10-25","supports":"Rawls 1086 occupancy listing and tiered table type"},
+    {"provider":"Purdue Daniels School","url":"https://kcc.krannert.purdue.edu/Faq/Item/Download/2194","retrieved":"2026-10-25","supports":"fixed tiered tables, lectern and dual-projection equipment in 2023 room guide"},
+    {"provider":"Fink Roberts & Petrie","url":"https://frpinc.com/projects/rawls-hall-krannert-school-of-management/","retrieved":"2026-10-25","supports":"general exterior and glass-roof penthouse reference"},
+    {"provider":"Purdue Office of Emergency Preparedness","url":"https://www.purdue.edu/operations/emergency-preparedness/rawl/","retrieved":"2026-10-25","supports":"general four-floor/open-ceiling building context"}
+  ],
+  "master_placement_checked": false,
+  "commit_created": false
+}

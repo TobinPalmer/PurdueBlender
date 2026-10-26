@@ -1,0 +1,49 @@
+{
+  "building": "University Hall",
+  "stable_id": "university_hall",
+  "asset": "modular/buildings/university_hall.blend",
+  "asset_sha256": "7b1054212e66d8fb56155e735a90b26dab915e0bfaf8e3655a0e1d8a8536bb22",
+  "blender_version": "5.2.3 LTS",
+  "threshold": 8.0,
+  "overall_score": 4.3,
+  "passed": false,
+  "category_scores": {
+    "campus placement and GIS footprint screening": 7.0,
+    "architectural form and silhouette": 2.5,
+    "facade detail and fenestration": 3.0,
+    "roof and tower fidelity": 1.5,
+    "materials and textures": 4.0,
+    "interior completeness and accuracy": 1.5,
+    "asset integrity and portability": 8.5
+  },
+  "evidence": {
+    "fresh_reopen": "audit/university_hall_refine/independent_reopen.json",
+    "renders": [
+      "audit/university_hall_refine/oblique_southwest.png",
+      "audit/university_hall_refine/east_elevation.png",
+      "audit/university_hall_refine/south_elevation.png",
+      "audit/university_hall_refine/north_elevation.png",
+      "audit/university_hall_refine/roof_plan.png",
+      "audit/university_hall_refine/interior_cutaway.png"
+    ],
+    "gis_screening": "audit/master_building_audit.json, University Hall FID 213; AABB center difference 0.391 m, width/depth differences -0.469/-0.323 m and AABB overlap IoU 0.9617. This is screening evidence only; the source explicitly leaves orientation, plan dimensions, height and shell verification unresolved.",
+    "master_marker": "audit/completion_master/placement_check.json reports Placement_university_hall at the manifest XY with 0.0 m transform error, identity rotation and scale, and Asset_university_hall with 507 exported objects. This verifies marker-to-manifest agreement, not independent surveyed wall alignment."
+  },
+  "required_fixes": [
+    "Rebuild the roof silhouette as the documented mansard/slate roof with correctly proportioned dormers, cornice/eaves, and the prominent central tower/steeple and cupola. Current saved views show a large flat roof slab and a small open, square cupola-like frame.",
+    "Replace the uniform box massing with the historic building's differentiated front/rear elevations, setbacks and recognizable Victorian proportions. Confirm building orientation and roof plan against current orthophotos and the official GIS polygon.",
+    "Rework the facade with correct brick/stone composition, cream/white window surrounds, lintels, sills, brackets, cornices and entrance details. Current windows are repetitive dark rectangles and the elevations lack the source building's defining ornament.",
+    "Model the renovated interior sufficiently to match Purdue's two-story central gallery/atrium, stairs, circulation, floors, columns and representative student/common spaces. The cutaway currently exposes broad blank slabs and very sparse furnishings rather than recognizable rooms and circulation.",
+    "Improve material realism and control: the asset has 18 assigned node materials and procedural brick nodes, but no image textures; render results remain flat, with a featureless roof and weak facade variation. Add appropriate brick, stone and slate surface relief/color variation and inspect them under neutral daylight."
+  ],
+  "official_references": [
+    "https://stories.purdue.edu/restoring-purdues-university-hall-as-a-campus-crown-jewel/",
+    "https://cla.purdue.edu/academic/history/events/stories/2025/university-hall-rededication-ceremony.html",
+    "https://www.purdue.edu/bot/meetings/past-meetings/2022/09.%20oct/pfc/University%20Hall%20Related%20Renovations.pdf"
+  ],
+  "limitations": [
+    "AABB GIS screening is not a surveyed footprint fit or a wall-perimeter comparison.",
+    "The official renovation plans are proposed design drawings from 2022; current Purdue 2025 pages were used for the renovated program and architectural/photo reference.",
+    "The grading render setup adds temporary cameras, lights and ground and does not save them into the building library."
+  ]
+}

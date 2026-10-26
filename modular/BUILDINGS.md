@@ -36,7 +36,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Psychological Sciences Building | [psychological_sciences.blend](buildings/psychological_sciences.blend) | 80 |
 | Purdue Memorial Union | [purdue_memorial_union.blend](buildings/purdue_memorial_union.blend) | 650 |
 | R. B. Wetherill Laboratory of Chemistry | [wetherill_laboratory_of_chemistry.blend](buildings/wetherill_laboratory_of_chemistry.blend) | 362 |
-| Rawls Hall | [rawls_hall.blend](buildings/rawls_hall.blend) | 722 |
+| Rawls Hall | [rawls_hall.blend](buildings/rawls_hall.blend) | 761 |
 | Ross Ade | [ross_ade.blend](buildings/ross_ade.blend) | 2118 |
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](buildings/massing_samara_f6b8e61.blend) | 1102 |
 | South Hall | [south_hall.blend](buildings/south_hall.blend) | 25 |
@@ -44,7 +44,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Stewart Center | [stewart_center.blend](buildings/stewart_center.blend) | 2764 |
 | Tarkington Hall | [tarkington_hall.blend](buildings/tarkington_hall.blend) | 814 |
 | University Hall | [university_hall.blend](buildings/university_hall.blend) | 507 |
-| Walc | [walc.blend](buildings/walc.blend) | 950 |
+| Walc | [walc.blend](buildings/walc.blend) | 969 |
 | Wiley Hall | [wiley_hall.blend](buildings/wiley_hall.blend) | 402 |
 | Winifred Parker Hall | [winifred_parker_hall.blend](buildings/winifred_parker_hall.blend) | 664 |
 

@@ -1,0 +1,120 @@
+{
+  "building": "Rawls Hall",
+  "asset": "modular/buildings/rawls_hall.blend",
+  "review_round": "R9",
+  "review_date": "2026-10-25",
+  "sha256": "5ea4dde459d6ed6a594f49bf7c30411a6ed960124c8580e3fb7832d7f91f6910",
+  "score": 7.6,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "weights": {
+    "exterior_form_and_detail": 0.30,
+    "materials_and_texturing": 0.20,
+    "interior_completeness": 0.30,
+    "technical_integrity_and_placement": 0.10,
+    "evidence_and_source_fit": 0.10
+  },
+  "criteria": [
+    {
+      "name": "Exterior form and detail",
+      "score": 8.2,
+      "max_score": 10.0,
+      "weight": 0.30,
+      "weighted_contribution": 2.46,
+      "evidence": "The full southeast render now reads as four repeated glazed rows in the brick elevation. The arched roof penthouse is recognizable. The overall form remains simplified at roof/base and does not include the documented fourth-floor pedestrian bridge. Window coordinates derive from the existing pane meshes, not a surveyed elevation."
+    },
+    {
+      "name": "Materials and texturing",
+      "score": 7.6,
+      "max_score": 10.0,
+      "weight": 0.20,
+      "weighted_contribution": 1.52,
+      "evidence": "Brick, light bands, bronze frames and blue-gray glazing are coherent and applied. In the full elevation the glass remains dark and uniform; room depth is only legible in the through-glass close view. No dated facade source verifies exact color or texture."
+    },
+    {
+      "name": "Interior completeness",
+      "score": 6.5,
+      "max_score": 10.0,
+      "weight": 0.30,
+      "weighted_contribution": 1.95,
+      "evidence": "R9 provides a sightline to desks in first-floor room 1086. The visible room remains a sparse generic schematic with a dominant plain overhead surface, no clearly tiered arrangement, no legible lectern/front wall and no connected route to the core/atrium. Purdue lists 1086 as a tiered room with occupancy 136. Upper-floor circulation and current finishes remain unverified."
+    },
+    {
+      "name": "Technical integrity and placement",
+      "score": 9.3,
+      "max_score": 10.0,
+      "weight": 0.10,
+      "weighted_contribution": 0.93,
+      "evidence": "Independent Blender 5.2.3 reopen matched the exact SHA, 722 objects/714 meshes, identity root, 18 used materials, no materialless or invalid-slot meshes, no external image files or linked libraries, and no mesh bound outliers beyond 120 m. The eight repaired parent inverses are identity. Independent BVH testing found all 44 pane rays clear through the exterior shell and all 44 clear through the tested 1086 wall. The master Placement_rawls_hall marker was not checked."
+    },
+    {
+      "name": "Evidence and source fit",
+      "score": 7.4,
+      "max_score": 10.0,
+      "weight": 0.10,
+      "weighted_contribution": 0.74,
+      "evidence": "R9 documents sources, geometry edits, reopen checks and uncertainty. FRP supports four stories, the entry foyer, arched glass penthouse and fourth-floor bridge; Purdue OEP supports four floors, basement, windows and open-ceiling design; Purdue's 2024 plan supports only the first floor; Purdue identifies 1086 as tiered and 136-person. Pane positions are inherited from modeled geometry, and plan-to-shell registration remains about 1 m uncertain."
+    }
+  ],
+  "weighted_score_unrounded": 7.65,
+  "findings": [
+    "R9 resolves the specific R8 occlusion defect by exposing the 44 existing modeled southeast panes and replacing full-pane bronze slabs with 176 thin frame bars.",
+    "Independent Blender BVH tests from each pane center found 44/44 clear through the exterior shell and 44/44 clear through the tested first-floor 1086 wall.",
+    "The full southeast render now shows consistent glazing across four rows; glass transparency and room depth remain weak from a normal full-elevation view.",
+    "The through-glass render shows generic desks but not a well-supported tiered 1086 classroom, a lectern/front wall, or connected core/atrium circulation.",
+    "The standalone asset review does not validate the master placement marker or campus neighborhood alignment."
+  ],
+  "limitations": [
+    "Ray clearance proves no modeled wall obstruction at existing pane centers; it does not establish that window positions and dimensions match the real facade.",
+    "The documented plan-to-shell registration uncertainty remains about 1 m.",
+    "Only first-floor room 1086 has plan support; upper-floor room layout and circulation remain unverified.",
+    "The 2003 Purdue archive photo can support atrium design context but not current interior finishes.",
+    "The master Placement_rawls_hall marker and full campus master were not inspected in this grade."
+  ],
+  "evidence": {
+    "fresh_reopen": "audit/batch4_rawls/independent_reopen_r9.json",
+    "independent_reopen_script": "audit/batch4_rawls/independent_reopen_r9.py",
+    "builder_validation": "audit/batch4_rawls/round9_reopen_validation.json",
+    "build_record": "audit/batch4_rawls/round9_handoff.md",
+    "renders": [
+      "audit/batch4_rawls/se_curtainwall_full_round9.png",
+      "audit/batch4_rawls/se_curtainwall_through_glass_round9.png",
+      "audit/batch4_rawls/north_exterior_round8.png",
+      "audit/batch4_rawls/sidewalk_southwest_round8.png"
+    ],
+    "prior_grade": "audit/batch4_rawls/independent_review_round8.md"
+  },
+  "sources": [
+    {
+      "provider": "Fink Roberts & Petrie",
+      "url": "https://frpinc.com/projects/rawls-hall-krannert-school-of-management/",
+      "retrieved": "2026-10-25",
+      "supports": "four-story facility, large entry foyer, glass-enclosed arched roof penthouse, fourth-floor pedestrian bridge"
+    },
+    {
+      "provider": "Purdue Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/rawl/",
+      "retrieved": "2026-10-25",
+      "supports": "four floors plus basement, glass railings, large windows, open-ceiling design"
+    },
+    {
+      "provider": "Purdue Road School 2024",
+      "url": "https://roadschool.purdue.edu/maps/2024%20Rawls%20Hall.pdf",
+      "retrieved": "2026-10-25",
+      "supports": "first-floor room layout only"
+    },
+    {
+      "provider": "Purdue Daniels School IT",
+      "url": "https://kcc.krannert.purdue.edu/Faq/Item/811",
+      "retrieved": "2026-10-25",
+      "supports": "1086 is a tiered classroom with occupancy 136"
+    },
+    {
+      "provider": "Purdue Daniels School and Purdue Libraries",
+      "url": "https://business.purdue.edu/news/info/Building/Rawls-interior-image.php",
+      "retrieved": "2026-10-25",
+      "supports": "official interior image collection; older archive image is identified as a 2003 interior view"
+    }
+  ]
+}
