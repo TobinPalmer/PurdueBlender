@@ -40,3 +40,17 @@ scene.view_settings.exposure = -0.25
 scene.world.color = (0.035, 0.045, 0.06)
 bpy.ops.render.render(write_still=True)
 print("RENDERED=" + scene.render.filepath)
+# Show the complete campus-coordinate asset, including the tower's roof silhouette.
+center_full = Vector(((min(p.x for p in coords)+max(p.x for p in coords))/2,
+                      (min(p.y for p in coords)+max(p.y for p in coords))/2,
+                      (min(p.z for p in coords)+max(p.z for p in coords))/2))
+camera.location = center_full + Vector((-94.0, -108.0, 54.0))
+camera.rotation_euler = (center_full-camera.location).to_track_quat("-Z", "Y").to_euler()
+camera_data.ortho_scale = 112.0
+light.location = center_full + Vector((-80.0, -72.0, 100.0))
+light.rotation_euler = (center_full-light.location).to_track_quat("-Z", "Y").to_euler()
+light_data.energy = 6000
+light_data.size = 40.0
+scene.render.filepath = os.path.join(folder, "preview_overview.png")
+bpy.ops.render.render(write_still=True)
+print("RENDERED=" + scene.render.filepath)
