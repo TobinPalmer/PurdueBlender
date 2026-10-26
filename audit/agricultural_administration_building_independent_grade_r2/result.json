@@ -1,0 +1,95 @@
+{
+  "building_id": "agricultural_administration_building",
+  "score": 7.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue GIS Feature 267 matches AGAD, full building name, address, and owner PURDUE. Actual reopened shell is 24 unique base vertices; symmetric Hausdorff error against raw ring is 0.000002 m."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Computed GIS centroid (-57.696332, -443.673382) m matches manifest placement origin within 0.000000 m. GIS and actual shell bounds differ by 0.000001 m; footprint spans 63.422 x 42.135 m."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 0.75,
+      "max_score": 2.0,
+      "evidence": [
+        "GIS NUM_LEVELS=5 and CountOfFLO=5 support five levels. Modeled 17.2 m height/floor spacing are explicitly estimates; Extrution=34 has no documented unit or measurement definition. Current flat roof is unverified; archival photo depicts an earlier roof form."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue Stories current entrance photo corroborates dark red brick, pale limestone base/bands, repeated windows, and glazed accessible entry; archival image supports historic brick and stone vocabulary.",
+        "Model renders reproduce brick, limestone bands/plinth, and repeated bays. Entry is a simple door proxy without the source photo’s tall glazed composition; exact entry location, bays, and dimensions are estimates."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and evidence completeness",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": [
+        "Independent Blender process reopened the saved .blend, exported only Asset_agricultural_administration_building and reopened the export with 6 objects and no external image dependencies.",
+        "Evidence folder contains raw GIS, two Purdue photo snapshots, source provenance, renders, and uncertainty notes. Shared manifest object names/count remain stale (1338 vs 6); coordinator must refresh them."
+      ]
+    }
+  ],
+  "evidence": {
+    "gis_feature_id": 267,
+    "source_ring_vertices": 24,
+    "reopened_shell_vertices": 24,
+    "symmetric_hausdorff_error_m": 1.5790764164070337e-06,
+    "source_local_bounds_m": [
+      -34.163708472232436,
+      -25.56738044363192,
+      29.257918917848343,
+      16.56785958932369
+    ],
+    "model_local_bounds_m": [
+      -34.163708,
+      -25.567381,
+      29.257919,
+      16.56786
+    ],
+    "bounds_error_m": 5.563680822717743e-07,
+    "gis_centroid_xy_m": [
+      -57.696331815307765,
+      -443.67338239976016
+    ],
+    "manifest_placement_origin_xy_m": [
+      -57.69633181530767,
+      -443.67338239975965
+    ],
+    "placement_origin_error_m": 5.198629004280618e-13,
+    "model_height_m": 17.200000762939453,
+    "gis_num_levels": 5,
+    "gis_extrution_attribute": 34,
+    "manifest_object_count": 1338,
+    "actual_collection_object_count": 6,
+    "manifest_object_names_stale": true,
+    "external_image_dependencies": [],
+    "asset_sha256": "44c8af14f9575a4d41a6f613c819f9398547e045c7ed4cc8d00e098f979e42ac",
+    "blender_probe": "audit/agricultural_administration_building_independent_grade_r2/blender_probe.py"
+  },
+  "findings": [
+    "PASS: source identity and all 24 GIS footprint vertices match the actual shell.",
+    "PASS: local centroid, plan bounds, and orientation align with the manifest placement contract.",
+    "LIMITATION: no current measured height or roof evidence; 17.2 m is estimated and GIS extrusion units are undocumented.",
+    "LIMITATION: photos support materials and entry character, while entrance proxy and fenestration dimensions remain approximate.",
+    "INTEGRATION: shared manifest count/names (1,338 vs 6) are stale and need coordinator refresh."
+  ]
+}

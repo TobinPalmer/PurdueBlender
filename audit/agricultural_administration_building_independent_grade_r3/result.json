@@ -1,0 +1,112 @@
+{
+  "building_id": "agricultural_administration_building",
+  "score": 8.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue University BuildingShapes FeatureServer feature 267 identifies AGAD by building code, full name, street address, and Purdue ownership.",
+        "The reopened shell's 24 base vertices match the raw GIS exterior ring with symmetric Hausdorff error 0.000002 m."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "The GIS centroid is (-57.696332, -443.673382) m and matches manifest placement origin within 0.000000 m.",
+        "Local GIS/model XY bounds differ by at most 0.000001 m; a 24-vertex shape comparison verifies orientation and dimensions beyond a bounding-box-only check."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 0.9,
+      "max_score": 2.0,
+      "evidence": [
+        "Current GIS reports NUM_LEVELS=5 and CountOfFLO=5, supporting a five-level diagrammatic treatment; neither field defines floor datums or measurement units.",
+        "The modeled 17.2 m height and 3.44 m bands are explicitly estimates. Purdue Archives supports a tile roof and two stories plus a basement only at the 1908 opening, and notes later renovations; the present roof is not established, so the neutral cap is correctly marked as a placeholder."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": [
+        "The 2023 Purdue Stories entrance photograph supports present-day brick and limestone, repeated window bays, and a tall glazed entrance; an archival Purdue photograph supports the historical brick/stone vocabulary.",
+        "The inspected entrance render now includes a tall glazed portal with stacked panes, paired lower doors, mullions, and limestone jamb/lintel. Exact doorway location, pane count, window cadence, and dimensions remain estimates from uncalibrated imagery."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "A separate Blender 4.5.15 process reopened the saved asset and exported/reopened Asset_agricultural_administration_building with 6 objects; the shared manifest's names and count match exactly.",
+        "The exported collection has no missing unpacked image dependencies or linked libraries. The evidence folder includes raw GIS and layer-metadata snapshots, two Purdue photo files, source provenance, rendered overview/entrance views, and a reopen-validation report."
+      ]
+    }
+  ],
+  "evidence": {
+    "gis_feature_id": 267,
+    "source_identity": {
+      "BLDG_ABBR": "AGAD",
+      "BUILDING_N": "Agricultural Administration Building",
+      "ADDRESS": "615 Mitch Daniels Blvd",
+      "OWNER": "PURDUE"
+    },
+    "source_crs": "GIS snapshot returned as EPSG:4326; project-prescribed local approximation used for ground coordinates",
+    "source_vertex_count": 24,
+    "model_base_vertex_count": 24,
+    "symmetric_hausdorff_error_m": 1.5790764164070337e-06,
+    "source_local_bounds_m": [
+      -34.163708472232436,
+      -25.56738044363192,
+      29.257918917848343,
+      16.56785958932369
+    ],
+    "model_local_bounds_m": [
+      -34.163708,
+      -25.567381,
+      29.257919,
+      16.56786
+    ],
+    "bounds_error_m": 5.563680822717743e-07,
+    "source_centroid_xy_m": [
+      -57.696331815307765,
+      -443.67338239976016
+    ],
+    "manifest_placement_origin_xy_m": [
+      -57.69633181530767,
+      -443.67338239975965
+    ],
+    "placement_origin_error_m": 5.198629004280618e-13,
+    "modeled_height_m": 17.200000762939453,
+    "gis_NUM_LEVELS": 5,
+    "gis_CountOfFLO": 5,
+    "gis_Extrution_raw_value": 34,
+    "manifest_count_and_names_match": true,
+    "external_unpacked_image_dependencies": [],
+    "linked_library_paths": [],
+    "asset_sha256": "58aa4ae10ced6f0814616b7ad7afc624a72925c2d48c708bab8554771eee0b8b",
+    "blender_version": "4.5.15",
+    "probe_file": "audit/agricultural_administration_building_independent_grade_r3/blender_probe.json",
+    "evidence_record": "audit/agricultural_administration_building/build_evidence.json",
+    "raw_gis_snapshot": "audit/agricultural_administration_building/sources/agricultural_administration_gis_feature_267_current.json",
+    "visuals_inspected": [
+      "audit/agricultural_administration_building/agricultural_administration_building_overview.png",
+      "audit/agricultural_administration_building/agricultural_administration_building_entrance.png",
+      "audit/agricultural_administration_building/sources/agad_entrance_2023.jpg"
+    ]
+  },
+  "findings": [
+    "PASS: source identity, GIS outline, local bounds, centroid/placement origin, and orientation are independently verified from reopened geometry.",
+    "PASS: the revised entrance composition is photo-backed and visible in the close render; present facade materials are supported by Purdue imagery.",
+    "LIMITATION: only five-level count is supported by current GIS; height, floor spacing, and present roof remain estimated or unverified. The tile roof and two stories plus basement apply to the 1908 historical state.",
+    "PASS: expected collection exports and reopens; manifest count/names match; no unpacked images or linked-library dependencies were found."
+  ]
+}
