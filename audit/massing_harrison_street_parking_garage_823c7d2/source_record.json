@@ -1,0 +1,81 @@
+{
+  "asset_id": "massing_harrison_street_parking_garage_823c7d2",
+  "subject": "Harrison Street Parking Garage, Purdue University, 719 Clinic Drive",
+  "retrieved_utc": "2026-10-26",
+  "local_transform": "x=(lon+86.9137)*111412.84*cos(radians(40.4274)); y=(lat-40.4274)*111040.0; z in metres; direct world coordinates.",
+  "sources": [
+    {
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=BLDG_ABBR%3D%27PGH%27&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "provider": "Purdue University GIS / ArcGIS FeatureServer",
+      "source_crs": "EPSG:4326",
+      "feature": "FID 892, BLDG_ABBR PGH, Harrison Street Parking Garage, address 719 Clinic Drive",
+      "evidence_role": "Primary geospatial footprint and identity. GIS ring is used directly for modeled deck outline after repository local-coordinate transform.",
+      "limits": "GIS layer has no declared building-height units. Attributes NUM_LEVELS=7 and CountOfFLO=6 do not agree and were not used as authoritative floor count; Elevation/Extrution/F01 etc units undocumented."
+    },
+    {
+      "url": "https://wginc.com/projects/purdue-university-harrison-street?hsLang=en",
+      "provider": "WGI project page",
+      "source_crs": null,
+      "feature": "Project description: 855-space stand-alone cast-in-place structure; six levels including one below grade; supports adjacent Health & Human Sciences and Drug Discovery buildings.",
+      "evidence_role": "Structural system and floor-count evidence.",
+      "limits": "No dimensioned plans, fa\u00e7ade elevations, or as-built level heights published on this page."
+    },
+    {
+      "url": "https://www.fawilhelm.com/our-portfolio/",
+      "provider": "F.A. Wilhelm Construction portfolio",
+      "source_crs": null,
+      "feature": "Search-indexed portfolio description reports six-level garage; brick veneer and architectural precast concrete; planter beds around structure.",
+      "evidence_role": "Material palette and perimeter planting as qualitative fa\u00e7ade evidence.",
+      "limits": "Page fetch returned redirect; wording captured from search result; no measured fa\u00e7ade dimensions."
+    },
+    {
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "provider": "Purdue University campus map",
+      "source_crs": "map image; no declared survey CRS",
+      "feature": "Campus wayfinding identity/location for Harrison Street Garage in F9 and 719 Clinic Drive area.",
+      "evidence_role": "Independent campus context check.",
+      "limits": "Not suitable for metric footprint measurement."
+    },
+    {
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "provider": "Indiana Geographic Information Office, current imagery ImageServer",
+      "source_crs": "EPSG:4326 output crop",
+      "feature": "Current aerial crop archived in sources/current_aerial_harrison_crop.jpg with service metadata.",
+      "evidence_role": "Visual check of roofscape, footprint orientation, and adjacent site context.",
+      "limits": "Orthophoto is not a fa\u00e7ade survey; image date/resolution are provider-dependent."
+    }
+  ],
+  "footprint_measurement": {
+    "gis_ring_vertices_including_closure": 70,
+    "polygon_validity": "Valid Geometry",
+    "area_m2": 4523.334487245026,
+    "bounds_xy_m": [
+      -361.5203184913143,
+      -747.1449421877492,
+      -303.2452957976681,
+      -662.7342785204769
+    ],
+    "method": "Transform official feature polygon vertices with local campus equirectangular approximation from modular/AGENTS.md; planar Shapely area."
+  },
+  "modeled_vertical_claims": {
+    "supported": "Six levels total, one below grade, from WGI project page; cast-in-place structure per WGI.",
+    "inferred": "3.2 m typical level interval, basement floor at -3.2m, grade at 0.0m, above-grade decks at 3.2m intervals, roof deck at 15.65-15.95m, parapet/screen top 17.1m.",
+    "not_claimed": "GIS vertical fields are not treated as surveyed heights because units/semantics are undocumented; exact built roof elevation remains uncertain."
+  },
+  "roof_evidence": {
+    "source": "Indiana Geographic Information Office, Indiana Current Imagery ImageServer; archived crop in sources/current_aerial_harrison_crop.jpg and enlarged roof detail in roof_aerial_zoom.png.",
+    "provider_date_range": "The imagery service describes current orthophotography collected during 2022-2025; the specific image acquisition date is not exposed in the retrieved metadata.",
+    "observed": "The roof-level surface contains marked parking bays, drive aisles with directional arrows, and a raised elongated central structure/open-sided area, plus small rooftop enclosures near edges.",
+    "model_response": "Added approximate roof parking stall stripes, drive arrows, and an open-sided raised central pavilion canopy. These features are oriented to the GIS polygon principal axes and remain within the roof deck footprint. The existing main stair/service core is retained.",
+    "limits": "The aerial provides visual/top-down evidence only. Stall widths, exact layout coordinates, pavilion function, dimensions, height, circulation ramps, and edge enclosure details remain estimated; no dimensioned roof plan was found."
+  },
+  "fa\u00e7ade_claims": {
+    "supported": "Open cast-in-place parking structure; brick veneer, architectural precast, and perimeter planter beds stated by project/contractor sources.",
+    "inferred": "Repeated open parking bays, pier rhythm, spandrel levels, stair/service core placement, and roof screen geometry are interpretive massing choices due lack of measured elevations."
+  },
+  "model_files": {
+    "asset": "modular/buildings/massing_harrison_street_parking_garage_823c7d2.blend",
+    "builder": "modular/buildings/build_massing_harrison_street_parking_garage_823c7d2.py"
+  },
+  "reproducibility": "Builder reads the archived raw GIS FID892 ring relative to its own project root; uses only Blender built-in Python/mathutils and creates local mesh/material data. The saved .blend has no external linked resources."
+}

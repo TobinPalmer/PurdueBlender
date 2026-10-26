@@ -1,0 +1,117 @@
+{
+  "score": 8.2,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Purdue GIS FID 892 identifies BLDG_ABBR PGH, Harrison Street Parking Garage, 719 Clinic Drive. The raw GIS ring is the deck outline after the repository's documented local transform. The archived Indiana aerial depicts the same long, indented roof plan in this site context."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Fresh Blender 4.5.15 read-only reopen found the structural slabs at X [-361.5203,-303.2453] m and Y [-747.1450,-662.7343] m, matching the transformed GIS bounds to rounding. The full object bounds are X [-361.7581,-302.9874], Y [-747.3728,-662.5153], only about 0.24 m beyond the GIS shell at maximum. Orientation follows the source ring; no separate polygon IoU metric is supplied."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": "WGI supports six total levels including one below grade. The current asset has six structural deck slabs and a roof deck, with 3.2 m intervals and 17.1 m screen top identified as estimates. Unlike the prior revision, the roof render now includes parking-stall striping, circulation arrows, a raised central open-sided canopy with four piers, and a smaller edge enclosure corresponding to features visible in the archived orthophoto. Exact stall layout, canopy dimensions/function, ramp geometry, floor-to-floor heights, and roof/screen elevation remain unverified."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": "WGI and contractor evidence summarized in the source record support a cast-in-place garage with brick veneer, architectural precast, and perimeter planting. The oblique and elevation renders show repeated open parking bays, concrete piers/spandrels, a brick service core, screen, and planter curbs. There are no dimensioned elevations; bay rhythm, core placement, entrance locations, and facade proportions remain interpretive, and an entrance/ramp sequence is not clearly represented."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "Fresh reopen found the expected stable scene and collection with 549 mesh objects, no non-mesh collection objects, no linked libraries, and no file-backed image dependencies. Source snapshots, metadata, build notes, validation JSON/log, and three views are present. Blender 4.5.15 opened the Blender 5.2-authored file for inspection but reported the newer writer version; the massing and portability checks passed, with cross-version editing/render compatibility still a limitation."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_harrison_street_parking_garage_823c7d2.blend",
+    "scene": [
+      "Building_massing_harrison_street_parking_garage_823c7d2"
+    ],
+    "collection": "Asset_massing_harrison_street_parking_garage_823c7d2",
+    "direct_reopen_tool": "Blender 4.5.15 LTS, read-only fresh open; file header reports Blender 5.2 writer",
+    "direct_reopen_object_count": 549,
+    "direct_reopen_mesh_object_count": 549,
+    "direct_reopen_bounds_xyz_m": [
+      [
+        -361.75811767578125,
+        -302.9873962402344
+      ],
+      [
+        -747.372802734375,
+        -662.5153198242188
+      ],
+      [
+        -3.440000057220459,
+        17.100000381469727
+      ]
+    ],
+    "validation_structural_deck_bounds_xyz_m": [
+      [
+        -361.52032470703125,
+        -303.24530029296875
+      ],
+      [
+        -747.1449584960938,
+        -662.7342529296875
+      ],
+      [
+        -0.23999999463558197,
+        0.0
+      ]
+    ],
+    "sources": [
+      {
+        "provider": "Purdue University GIS / ArcGIS FeatureServer",
+        "feature": "FID 892, BLDG_ABBR PGH, Harrison Street Parking Garage, address 719 Clinic Drive",
+        "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=BLDG_ABBR%3D%27PGH%27&outFields=*&returnGeometry=true&outSR=4326&f=json"
+      },
+      {
+        "provider": "WGI project page",
+        "feature": "Project description: 855-space stand-alone cast-in-place structure; six levels including one below grade; supports adjacent Health & Human Sciences and Drug Discovery buildings.",
+        "url": "https://wginc.com/projects/purdue-university-harrison-street?hsLang=en"
+      },
+      {
+        "provider": "F.A. Wilhelm Construction portfolio",
+        "feature": "Search-indexed portfolio description reports six-level garage; brick veneer and architectural precast concrete; planter beds around structure.",
+        "url": "https://www.fawilhelm.com/our-portfolio/"
+      },
+      {
+        "provider": "Purdue University campus map",
+        "feature": "Campus wayfinding identity/location for Harrison Street Garage in F9 and 719 Clinic Drive area.",
+        "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf"
+      },
+      {
+        "provider": "Indiana Geographic Information Office, current imagery ImageServer",
+        "feature": "Current aerial crop archived in sources/current_aerial_harrison_crop.jpg with service metadata.",
+        "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer"
+      }
+    ],
+    "reviewed_views": [
+      "audit/massing_harrison_street_parking_garage_823c7d2/renders/harrison_oblique_review.png",
+      "audit/massing_harrison_street_parking_garage_823c7d2/renders/harrison_elevation_review.png",
+      "audit/massing_harrison_street_parking_garage_823c7d2/renders/harrison_roof_review.png"
+    ],
+    "reviewed_roof_source": "audit/massing_harrison_street_parking_garage_823c7d2/roof_aerial_zoom.png, derived from archived sources/current_aerial_harrison_crop.jpg",
+    "gis_feature": "Purdue BuildingShapesZip4 FID 892 / BLDG_ABBR PGH"
+  },
+  "findings": [
+    "Passes the repository 8/10 threshold at 8.2/10. The revised roof treatment now responds to visible aerial evidence for rooftop parking, circulation arrows, and a raised central structure/open-sided area.",
+    "Deck outline and campus position closely match the transformed Purdue GIS footprint. Full object bounds extend about 0.24 m beyond the ring because edge-spaced facade features cross the structural perimeter slightly.",
+    "Six levels including one below grade are sourced; story spacing and overall height remain estimates because neither GIS vertical-field units nor dimensioned elevations are available.",
+    "Facade materials are qualitatively sourced, but entrance/ramp access, bay dimensions, core location, canopy dimensions/function, and exact rooftop stall arrangement remain inferred or unverified.",
+    "Blender 4.5.15 reopened the 5.2-authored asset for read-only geometry inspection and reported its newer file version. The saved library is self-contained, though same-version rebuild/render remains the safer compatibility path."
+  ],
+  "independent_review": true,
+  "read_only_asset_source_shared_index": true
+}
