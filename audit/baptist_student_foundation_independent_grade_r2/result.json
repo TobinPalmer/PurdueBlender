@@ -1,0 +1,142 @@
+{
+  "score": 8.0,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Official The Found site identifies 200 N Russell St; the 2017 Exponent ad independently labels The Baptist Student Foundation at the same address.",
+        "The 2023 orthophoto shows the same T-shaped roof plan. Indiana LiDAR-derived feature 441814 matches the 8-vertex structural wall outline with 0.00001455 m maximum corresponding vertex error, 445.846861 m\u00b2 area, and IoU 0.99999904.",
+        "The 2018 footprint is automated LiDAR extraction rather than a survey; identity is cross-checked by address and imagery."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Independent reprojection uses EPSG:3857\u2192EPSG:4326, then the repository documented local XY formula; the model uses the source outline without fit-to-bounds rescaling.",
+        "Structural plan dimensions and T orientation agree with feature 441814 and the 2023 orthophoto.",
+        "No independent survey/control point verifies the absolute project XY offset, so placement confidence is limited by the source layer and approximate local conversion."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": [
+        "I re-sampled the preserved NDHM tile by 5-ft cell centers after transforming feature 441814 into EPSG:2968; 191 cells fall in the footprint and 177 remain in the disclosed 2\u201325 ft robustness filter. p10/median/p90 are 4.45/5.07/5.81 m.",
+        "The revised model\u2019s structural eaves are 4.5 m and ridge is 6.0 m, consistent with the sampled surface-height range; the 2017 address-bearing image supports a gabled principal form. The model is 6.0 m tall from its base, not 8.9 m as the evidence JSON currently states.",
+        "NDHM is roof/vegetation height above terrain, not a measured eave/ridge survey. Floor count and roof pitch remain estimates."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "The 2017 Exponent photo supports brick exterior, gabled roof, visible windows, and entrance/canopy in broad form. The official 2018 event photo provides an additional context view but not a measured elevation.",
+        "The orthophoto supports plan form only. Window count and spacing, entrance location/dimensions, trim and colors are still illustrative; exact facade schedule is not established by the available low-resolution/oblique views."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": [
+        "The revised .blend reopens with exactly one expected scene and collection, 183 mesh objects, zero collection offset, and no linked Blender libraries or external image dependencies.",
+        "Raw footprint, NDHM GeoTIFF, tile metadata/hash, reproducible sampling code/results, orthophoto, official site images, and preview renders are present. The NDHM file SHA-256 matches its metadata and independent re-sampling reproduces 191/177 sample counts and quantiles.",
+        "The committed build_evidence.json still claims 8.9 m asset height while the saved blend is 6.0 m; its manifest snapshot says one object and 16 m, and the coordinator-owned modular manifest remains stale. Wall and roof structural meshes are open single-surface pieces, not watertight solids. These reduce confidence in evidence synchronization and mesh integrity."
+      ]
+    }
+  ],
+  "evidence": {
+    "prior_grade": {
+      "path": "audit/baptist_student_foundation_independent_grade/result.json",
+      "score": 7.5,
+      "outcome": "fail"
+    },
+    "asset": "modular/buildings/massing_baptist_student_foundation_c3d8114.blend",
+    "builder_source": "modular/buildings/build_massing_baptist_student_foundation_c3d8114.py",
+    "build_record": "audit/baptist_student_foundation/build_evidence.json",
+    "blender_probe": "audit/baptist_student_foundation_independent_grade_r2/blender_probe.json",
+    "source_footprint_comparison": {
+      "feature_id": 441814,
+      "source_crs": "EPSG:3857",
+      "projected_to": "EPSG:4326 then approximate project XY",
+      "source_area_m2": 445.8467933805996,
+      "model_area_m2": 445.8468609168742,
+      "area_delta_percent": 1.5147865955425287e-05,
+      "intersection_over_union": 0.999999035011621,
+      "max_corresponding_vertex_delta_m": 1.4550622872266526e-05,
+      "source_ring_vertices": 8,
+      "model_ring_vertices": 8
+    },
+    "ndhm_tile_verification": {
+      "shape": [
+        1000,
+        1000
+      ],
+      "dtype": "float32",
+      "pixel_size_ft": [
+        5,
+        5
+      ],
+      "crs": "EPSG:2968; NAD83(HARN) / Indiana West (ftUS)",
+      "geotiff_origin_ftUS": [
+        2995000,
+        1890000
+      ],
+      "sha256": "765836e9b05a70d8b2bd80e8395189415fc2e371981685a9de66e4792768545b",
+      "metadata_hash_matches": true
+    },
+    "ndhm_independent_sampling": {
+      "independent_sample_count": 191,
+      "filtered_roof_count": 177,
+      "filter_ft": [
+        2,
+        25
+      ],
+      "quantiles_m_p10_median_p90": [
+        4.45191431564554,
+        5.071890096762836,
+        5.806458821756722
+      ],
+      "model_structural_roof_range_m": [
+        4.5,
+        6.0
+      ],
+      "model_asset_height_m": 6.0,
+      "prior_grade": 7.5,
+      "prior_threshold": 8
+    },
+    "evidence_index_mismatch": {
+      "build_evidence_claimed_height_m": 8.9,
+      "reopened_blend_height_m": 6.0,
+      "build_evidence_manifest_snapshot_object_count": null,
+      "reopened_blend_collection_object_count": 183,
+      "coordinator_manifest_object_count": 1,
+      "coordinator_manifest_height_m": 16.0,
+      "note": "Evidence/manifest snapshots were recorded before or not synchronized to the revised asset; modular/manifest.json still reports 1 object and 16 m height."
+    },
+    "imagery_review": [
+      "audit/baptist_student_foundation/sources/indiana_2023_orthophoto_bsf_2026-10-25.jpg",
+      "audit/baptist_student_foundation/sources/exponent_page-19.png",
+      "audit/baptist_student_foundation/sources/official_web_image_5.jpg"
+    ],
+    "readme_rules": [
+      "AGENT.md: independent score >=8/10, evidence each criterion, fresh grade after revisions",
+      "modular/AGENTS.md: record position/dimensions/height separately; distinguish estimated from measured; preserve coordinate contracts and portable export"
+    ]
+  },
+  "findings": [
+    "PASS threshold achieved at 8.0/10; the NDHM-based revision materially improves vertical evidence over the previous 7.5/10 result.",
+    "The asset\u2019s current saved geometry has max Z 6.0 m. Update build_evidence.json and the coordinator-owned modular/manifest.json, which still report prior 8.9 m/16 m heights and stale object count/bounds.",
+    "The main footprint and roof surfaces are open; close or deliberately document those surfaces before treating the library as a solid/watertight building.",
+    "Facade openings, entry placement, roof pitch, and story count remain approximate; preserve that status in integration notes."
+  ]
+}
