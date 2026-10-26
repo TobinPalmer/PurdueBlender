@@ -1,0 +1,155 @@
+{
+  "building_id": "massing_purdue_university_daniel_turf_center_e69b7da",
+  "building_name": "Purdue University Daniel Turf Center / William H. Daniel Turfgrass Research & Diagnostic Court",
+  "reviewer": "Independent r3 grader; directly inspected source snapshots, attributed photo and aerial overlay, and cleanly reopened the .blend in Blender.",
+  "score": 8.6,
+  "max_score": 10,
+  "passing_standard": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2.0,
+      "status": "Purdue GIS FID 208 identity is corroborated by official HLA address page and attributed exterior photo; source plan ring is directly reproduced but represents roof projection rather than surveyed walls.",
+      "evidence": [
+        "Direct query attributes: FID 208, DANL, William H. Daniel Turfgrass Research & Diagnostic Court, 1340 Cherry Lane, NUM_LEVELS=1.",
+        "Model source identity properties agree with FID 208; transformed source ring maximum nearest-vertex error measured from reopened geometry: 0.000078 m.",
+        "Purdue HLA page independently identifies the Daniel Center/address. The 2011 J&D Turf post explicitly attributes its attached exterior photograph to the Daniel Center building.",
+        "Esri aerial overlay supports the polygon's roof-plan correspondence. Wall line and eave overhang are not separately surveyed; GIS/imagery may map roof projection."
+      ],
+      "findings": [
+        "Keep wall-line and roof-overhang offset explicitly unverified; GIS polygon match alone does not establish structural wall line."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "Campus XY placement, long-axis orientation, and plan dimensions agree with identified GIS feature under project's documented approximate transform; exact wall dimensions are unmeasured.",
+      "evidence": [
+        "Clean reopen model world bounds: [[-1408.48046875, -1363.87646484375], [1609.4888916015625, 1627.1295166015625], [0.0, 4.050000190734863]] m.",
+        "Source ring transformed using the project's published local approximation gives approximately 44.60 m by 17.64 m; the model traces the same footprint and south projection bump.",
+        "North-up aerial places the parking apron on the south long elevation and is consistent with the source-ring plan. Coordinate approximation and roof-vs-wall uncertainty remain."
+      ],
+      "findings": [
+        "The local degrees-to-meters formula is approximate rather than a survey-grade CRS transformation; no surveyed wall dimension was found."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.4,
+      "max_score": 2.0,
+      "status": "Single story and shallow gable are supported; absolute vertical scale, pitch and detailed heights remain low-confidence visual estimates.",
+      "evidence": [
+        "Purdue GIS NUM_LEVELS=1 supports one level. The attributed exterior photo depicts a single-story, elongated structure with a shallow gable roof and ridge parallel to the long axis.",
+        "Clean reopen bounds show Z 0.000 to 4.050 m. Builder explicitly labels 3.25 m eave and 4.05 m ridge as visual estimates; no calibrated elevations were located.",
+        "Raw GIS Extrution=14 has undocumented units and is retained uninterpreted rather than treated as height."
+      ],
+      "findings": [
+        "Absolute eave/ridge height and roof pitch remain unverified, low-confidence estimates; appearance is not measurement."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.7,
+      "max_score": 2.0,
+      "status": "Photo-supported massing-level cladding tone, long horizontal window band and centered canopy are represented; exact fenestration and facade dimensions are not modeled.",
+      "evidence": [
+        "The 2011 attributed image directly shows light metal wall cladding, a long horizontal upper window band and centered entrance canopy.",
+        "Directly reopened object has pale siding, light metal roof and dark horizontal-window-band materials. The preview render visibly includes the long band and centered canopy; roof/facade massing corresponds to the photo.",
+        "Facade assignment to south side is a documented inference: the photograph has no compass orientation, and the match relies on parking apron plus centered source-ring bump. Individual doors/windows, siding ribs, and exact facade dimensions are omitted."
+      ],
+      "findings": [
+        "Facade orientation and small-scale details are not directly georeferenced or dimensioned; current geometry is appropriately limited to massing-level evidence."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "Expected single-building scene/collection directly reopens; manifold mesh and varied provenance package are present. Shared manifest still needs coordinator reconciliation.",
+      "evidence": [
+        "Blender 5.2.3 LTS cleanly reopened expected file, scene 'Building_massing_purdue_university_daniel_turf_center_e69b7da', and collection 'Asset_massing_purdue_university_daniel_turf_center_e69b7da' containing the expected single mesh object.",
+        "Reopened mesh: 58 vertices, 108 edges, 54 faces; modifiers=0, nonmanifold edges=0; materials=['Daniel Center | pale metal siding massing', 'Daniel Center | light metal roof massing', 'Daniel Center | dark horizontal window band']; linked libraries=0.",
+        "Building-specific package includes source register, raw native and WGS84 GIS snapshots, GIS layer metadata, official Purdue page snapshot, imagery export and overlay, directly attributed 2011 photo, two renders, build record, iteration notes, and clean-reopen validation.",
+        "Shared manifest bounds are stale by up to 1.191 m versus reopened asset; manifest is coordinator-owned and requires update."
+      ],
+      "findings": [
+        "Coordinator should update manifest bounds to the accepted r3 geometry; that shared file is outside grader/building ownership."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend",
+    "blender": "5.2.3 LTS",
+    "scene": "Building_massing_purdue_university_daniel_turf_center_e69b7da",
+    "collection": "Asset_massing_purdue_university_daniel_turf_center_e69b7da",
+    "object": "Purdue University Daniel Turf Center",
+    "bounds_world_m": [
+      [
+        -1408.48046875,
+        -1363.87646484375
+      ],
+      [
+        1609.4888916015625,
+        1627.1295166015625
+      ],
+      [
+        0.0,
+        4.050000190734863
+      ]
+    ],
+    "source_fid": 208,
+    "source_name": "William H. Daniel Turfgrass Research & Diagnostic Court",
+    "source_address": "1340 Cherry Lane",
+    "source_levels": 1,
+    "max_source_ring_nearest_vertex_error_m": 7.773535471323269e-05,
+    "mesh": {
+      "vertices": 58,
+      "edges": 108,
+      "faces": 54,
+      "nonmanifold_edges": 0,
+      "modifiers": 0,
+      "materials": [
+        "Daniel Center | pale metal siding massing",
+        "Daniel Center | light metal roof massing",
+        "Daniel Center | dark horizontal window band"
+      ],
+      "linked_libraries": 0
+    },
+    "manifest_bounds_world_m": [
+      [
+        -1409.1790771484375,
+        -1364.9842529296875
+      ],
+      [
+        1610.6795654296875,
+        1626.6361083984375
+      ],
+      [
+        0.0,
+        3.799999952316284
+      ]
+    ],
+    "max_manifest_bounds_difference_m": 1.190673828125,
+    "reviewed_source_artifacts": [
+      "audit/massing_purdue_university_daniel_turf_center_e69b7da/sources/purdue_buildings_fid208_query_2026-10-26.json",
+      "audit/massing_purdue_university_daniel_turf_center_e69b7da/sources/purdue_buildings_fid208_native3857_2026-10-26.json",
+      "audit/massing_purdue_university_daniel_turf_center_e69b7da/sources/purdue_buildings_layer_metadata_2026-10-26.json",
+      "audit/massing_purdue_university_daniel_turf_center_e69b7da/sources/purdue_daniel_turf_center_page_2026-10-26.html",
+      "audit/massing_purdue_university_daniel_turf_center_e69b7da/sources/daniel_center_exterior_2011_janddturf.jpg",
+      "audit/massing_purdue_university_daniel_turf_center_e69b7da/sources/gis_fid208_aerial_overlay.png",
+      "audit/massing_purdue_university_daniel_turf_center_e69b7da/renders/daniel_turf_center_top.png",
+      "audit/massing_purdue_university_daniel_turf_center_e69b7da/renders/daniel_turf_center_oblique.png"
+    ]
+  },
+  "findings": [
+    "Keep wall-line and roof-overhang offset explicitly unverified; GIS polygon match alone does not establish structural wall line.",
+    "The local degrees-to-meters formula is approximate rather than a survey-grade CRS transformation; no surveyed wall dimension was found.",
+    "Absolute eave/ridge height and roof pitch remain unverified, low-confidence estimates; appearance is not measurement.",
+    "Facade orientation and small-scale details are not directly georeferenced or dimensioned; current geometry is appropriately limited to massing-level evidence.",
+    "Coordinator should update manifest bounds to the accepted r3 geometry; that shared file is outside grader/building ownership."
+  ],
+  "recommendation": "Passes the independent 8/10 gate for this massing asset. Keep height/pitch and wall-line uncertainty prominent. Coordinator must reconcile shared manifest bounds before project indexing; pass does not establish Tobin master integration."
+}
