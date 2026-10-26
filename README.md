@@ -160,7 +160,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (15)
+### Detailed models still in progress or awaiting a grade (16)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -179,10 +179,11 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Heine Pharmacy | [`heine_pharmacy.blend`](modular/buildings/heine_pharmacy.blend) | 7.5/10 | Rohan |
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Rohan |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
+| Johnson Hall of Nursing (JNSN) | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | [9.3/10](audit/massing_johnson_hall_of_nursing_jnsn_823fca7/independent_grade/r2/result.json); awaiting master integration | Tobin |
 
 
 
-### Buildings that still have only massing models (55)
+### Buildings that still have only massing models (54)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -190,7 +191,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | --- | --- | --- |
 | hull all american marching band complex | [`massing_hull_all_american_marching_band_complex_665bcb7.blend`](modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend) | Tobin |
 | islamic societyof greater lafayette | [`massing_islamic_societyof_greater_lafayette_0130012.blend`](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | Tobin |
-| johnson hall of nursing jnsn | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | Tobin |
 | joyful journeys | [`massing_joyful_journeys_abaf5c3.blend`](modular/buildings/massing_joyful_journeys_abaf5c3.blend) | Tobin |
 | lambertus | [`lambertus_hall.blend`](modular/buildings/lambertus_hall.blend) | Tobin |
 | latino cultural center | [`massing_latino_cultural_center_5f0d139.blend`](modular/buildings/massing_latino_cultural_center_5f0d139.blend) | Tobin |
@@ -450,7 +450,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 214 | Leo Philip Doyle Laboratory | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 215 | Materials Management Storage Building 1 | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 216 | Peirce Hall | [massing_pierce_hall_prce_e5f59eb](modular/buildings/massing_pierce_hall_prce_e5f59eb.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 218 | Helen R. Johnson Hall Of Nursing | [massing_johnson_hall_of_nursing_jnsn_823fca7](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 218 | Helen R. Johnson Hall Of Nursing | [massing_johnson_hall_of_nursing_jnsn_823fca7](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | Independently graded 9.3/10; awaiting master integration (see TODO.md) |
 | 219 | Entomology Environmental Lab | [massing_house_301958646_8b88cf5](modular/buildings/massing_house_301958646_8b88cf5.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 220 | Veterinary Pathology Building | [massing_veterinary_pathology_building_48b5a5b](modular/buildings/massing_veterinary_pathology_building_48b5a5b.blend) | Direct FID crosswalk; graded 8.2/10 and integrated in master; see audit/veterinary_pathology_building/master_integration_2026-10-26.json |
 | 221 | Hangar No. 5 | — | No direct FID crosswalk; reconcile to a master asset or create one |
