@@ -1,0 +1,148 @@
+{
+  "building_id": "massing_animal_holding_facility_4733f46",
+  "asset": "modular/buildings/massing_animal_holding_facility_4733f46.blend",
+  "collection": "Asset_massing_animal_holding_facility_4733f46",
+  "source_feature_id": 266,
+  "geometry_source": "audit/animal_holding_facility/sources/purdue_gis_fid266_2026-10-25.json",
+  "method": "Project the official Purdue GIS exterior ring using the project-prescribed approximate local conversion; preserve campus coordinates and original manifest identity.",
+  "footprint_vertices": 16,
+  "vertical_model": {
+    "levels": 1,
+    "wall_height_m": 4.4,
+    "roof_cap_m": 0.4,
+    "status": "diagrammatic estimate; GIS Extrution=12 has undocumented units"
+  },
+  "facade": "Neutral unfenestrated envelope; current facade and entrances unverified because no dated exterior imagery or elevations were found.",
+  "roof": "Low flat diagrammatic cap; roof form unverified.",
+  "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png",
+  "owner": "Rossen",
+  "date_built": "2026-10-25",
+  "source_crs": "Purdue layer native EPSG:3857; query output EPSG:4326; Indiana layer native EPSG:3857; query output EPSG:4326",
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D266&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 266,
+      "retrieved": "2026-10-25",
+      "source_date": "live GIS layer; edit timestamp 2026-08-31 UTC",
+      "source_crs": "EPSG:3857 native; requested response EPSG:4326",
+      "measurement_method": "Exterior ring converted with project-prescribed local approximation.",
+      "uncertainty": "Authoritative footprint, not an independent field survey; vertical field units undefined."
+    },
+    {
+      "provider": "Indiana Geographic Information Office, Indiana Building Footprints 2016-2020 ArcGIS FeatureServer",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0/query?geometry=-86.9142%2C40.4185&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 407881,
+      "retrieved": "2026-10-25",
+      "source_date": "2018 LiDAR-derived footprint (lidaryear=2018)",
+      "source_crs": "EPSG:3857 native; requested response EPSG:4326",
+      "measurement_method": "Polygon converted using same local approximation; centroid and boundary vertices compared.",
+      "uncertainty": "Wall/eave footprint convention is not defined."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings",
+      "feature_id": "Animal Holding Facility (AHF)",
+      "retrieved": "2026-10-25",
+      "source_date": "Database lists 1991-present and footprint phases 1991-2001 and 2001-present; construction begins 1990",
+      "measurement_method": "Institutional building-history entry.",
+      "uncertainty": "Confirms identity, use, and phased expansion; does not define current facade, roof, or elevation."
+    },
+    {
+      "provider": "Purdue University Treasurer, Building List (Oct. 2021)",
+      "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/03/Space-Report_1.13.1HE_Buiding_List_Oct2021.pdf",
+      "feature_id": "Building 1310 / AHF",
+      "retrieved": "2026-10-25",
+      "source_date": "October 2021",
+      "measurement_method": "Published address and building number cross-check.",
+      "uncertainty": "Identity and address only."
+    }
+  ],
+  "identity_and_placement": {
+    "official_name": "Animal Holding Facility",
+    "building_code": "AHF",
+    "official_address": "410 S University Street, West Lafayette, IN 47907",
+    "building_number": "1310",
+    "campus_coordinates_xy_m": [
+      -41.212,
+      -989.934
+    ],
+    "footprint_comparison": {
+      "Purdue_GIS": {
+        "vertices": 16,
+        "area_m2_local": 2280.05,
+        "centroid_xy_m": [
+          -41.212,
+          -989.934
+        ],
+        "bounds_xy_m": [
+          -65.465,
+          -1030.657,
+          -23.877,
+          -955.412
+        ]
+      },
+      "Indiana_2018": {
+        "vertices": 8,
+        "area_m2_local": 2442.45,
+        "centroid_xy_m": [
+          -40.808,
+          -990.227
+        ],
+        "bounds_xy_m": [
+          -64.983,
+          -1031.312,
+          -22.881,
+          -954.879
+        ]
+      },
+      "comparison": {
+        "centroid_offset_m": 0.5,
+        "maximum_vertex_to_other_boundary_m": 1.739,
+        "method": "symmetric max vertex-to-segment distance in project approximate XY; 16 Purdue vertices vs 8 Indiana vertices"
+      }
+    },
+    "placement_status": "Purdue GIS and Indiana 2018 footprint centroids agree within 0.50 m; max boundary-vertex residual 1.74 m."
+  },
+  "height_and_facade_uncertainty": {
+    "NUM_LEVELS": 1,
+    "CountOfFLO": 1,
+    "Extrution_raw": 12,
+    "R_raw": 12.5,
+    "field_semantics": "GIS metadata gives field names and numeric types only, no vertical units or datum.",
+    "model_height_m": 4.8,
+    "status": "estimated; not measured.",
+    "roof": "Low flat cap used as neutral massing; current roof form unverified.",
+    "facade": "Neutral unfenestrated envelope; entrances/materials/opening rhythm unverified."
+  },
+  "geometry_edits": [
+    "Replaced prior 16 m box with the 16-node Purdue GIS footprint.",
+    "Extruded one diagrammatic level to 4.4 m plus 0.4 m cap; vertical dimensions are estimates.",
+    "Preserved manifest stable ID, scene, collection, object name, and campus coordinate frame."
+  ],
+  "validation": {
+    "blender_version": "4.5.15 LTS",
+    "exported_collection": "Asset_massing_animal_holding_facility_4733f46",
+    "expected_collection_object_count": 1,
+    "saved_and_reopened": "PASS: reopened with Blender 4.5.15; collection contains exactly one mesh object, no modifiers, 288 vertices and 220 faces.",
+    "linked_into_empty_scene": "PASS: linked Asset_massing_animal_holding_facility_4733f46 from the library into a factory-startup scene; expected object and campus coordinates were retained.",
+    "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png",
+    "evaluated_bounds_world_m": [
+      [
+        -65.646,
+        -23.697
+      ],
+      [
+        -1030.837,
+        -955.231
+      ],
+      [
+        0.0,
+        4.8
+      ]
+    ],
+    "portable_material_images": "PASS: no external image dependencies.",
+    "footprint_overlay": "audit/animal_holding_facility/footprint_comparison.svg",
+    "footprint_metrics": "audit/animal_holding_facility/footprint_comparison.json"
+  }
+}
