@@ -21,6 +21,12 @@
         "provider": "Building owner/architect",
         "use": "Contextual identity/history or renovation reference; not a measured geometry source",
         "url": "https://www.redeemerwlin.org/"
+      },
+      {
+        "provider": "Purdue Exponent, August 17-18, 2017, page 20",
+        "use": "Low-resolution exterior photo observation for one-level gabled main volume; no scale or measured dimensions",
+        "url": "https://bloximages.newyork1.vip.townnews.com/purdueexponent.org/content/tncms/assets/v3/editorial/c/c7/cc7ac664-843e-11e7-bdd5-335a6bc6456b/59972adb59de1.pdf.pdf",
+        "observation_record": "source_exterior_photo_observation.json"
       }
     ]
   },
@@ -34,7 +40,7 @@
   },
   "measurements": {
     "method": "Projected outer-ring WGS84 nodes from OpenStreetMap way 473799725 with the documented project-local approximation, applying the importer’s sequential 0.3 m point filter; compared ordered ring vertices to the preserved bottom ring in source_mesh_snapshot.json. Full results are in source_footprint_comparison_way_473799725.json. This assesses original import consistency only.",
-    "before_and_after_asset_bounds_m": {
+    "asset_bounds_before_m": {
       "max_y": 2112.080810546875,
       "min_z": 0.0,
       "min_y": 2067.786865234375,
@@ -42,23 +48,32 @@
       "max_z": 16.0,
       "max_x": 7.251306533813477
     },
+    "asset_bounds_after_m": {
+      "max_y": 2112.080810546875,
+      "min_z": 0.0,
+      "min_y": 2067.786865234375,
+      "min_x": -25.918121337890625,
+      "max_z": 10.8,
+      "max_x": 7.251306533813477
+    },
     "original_vertex_count": 48,
     "original_face_count": 68,
     "after_footprint_status": "Ordered source OSM ring agrees with the retained source mesh within sub-millimeter coordinate rounding; this is source-import consistency, not an independent footprint/structural-wall survey.",
     "orientation_status": "Original vertex order matches the filtered OSM ring; this confirms import orientation consistency only and does not establish independent true-north orientation accuracy.",
-    "height_status": "16 m retained from the original model; unverified. Matched OSM way has no height or building:levels tag.",
+    "height_status": "4.8 m wall eaves and 10.8 m ridge are illustrative estimates. The newspaper photo shows a one-level gabled church form but has no scale or measured elevation; matched OSM way has no height or building:levels tag.",
     "position_status": "Original project-local coordinates are consistent with the matched way projected using the project approximation; independent geodetic position accuracy is unverified."
   },
   "geometry_edits": [
-    "Retained the original mesh vertices and structural faces.",
-    "Added masonry, glazing and limestone trim materials, repeated window bays, and an approximate entry glazing marker.",
+    "Rebuilt the wall shell from the exact 24-node bottom ring in the preserved source mesh snapshot; the plan ring and project coordinates are unchanged.",
+    "Reduced the original unverified 16 m extrusion to illustrative 4.8 m wall eaves and added an approximate 10.8 m gable ridge informed only by the 2017 exterior photo.",
+    "Added repeated small window bays, approximate gable-end glazing and paired-entry markers, plus a low roof over remaining footprint areas. Their positions and forms are not measured; roof form outside the photographed gable is unverified.",
     "Preserved object, collection, scene, asset ID and asset path."
   ],
   "uncertainties": [
     "OpenStreetMap way 473799725 is the original imported source and has no independent source survey; match does not certify positional accuracy or a structural wall footprint.",
     "The project-local conversion is approximate and not a surveyed CRS.",
-    "Height remains 16 m from the original massing and is unverified; the source feature has no height or building:levels tags.",
-    "Facade fenestration, entrance placement, roof form and architecture are not validated by the footprint comparison.",
+    "Wall eaves (4.8 m), gable peak (10.8 m), gable position and footprint subdivision are illustrative; neither the photo nor source feature provides measured elevations or a full roof plan.",
+    "Facade fenestration and entrance placement are approximate. The source OSM feature has no height or building:levels tags.",
     "No independent grader has reviewed this revision."
   ],
   "artifacts": {
@@ -67,6 +82,10 @@
     "original_geometry_snapshot": "source_mesh_snapshot.json",
     "raw_source": "source_osm_way_473799725_raw.json",
     "footprint_comparison": "source_footprint_comparison_way_473799725.json",
-    "preview": "preview_detail.png"
+    "exterior_photo_observation": "source_exterior_photo_observation.json",
+    "build_preview": "preview_detail_r2.png",
+    "original_preview": "preview_detail.png",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py"
   }
 }

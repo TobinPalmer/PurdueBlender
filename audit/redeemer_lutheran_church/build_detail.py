@@ -1,71 +1,184 @@
-import bpy,bmesh,json,math,os
+import bpy, bmesh, json, math, os
 from mathutils import Vector
-cfg=json.load(open(os.path.join(os.path.dirname(__file__),'build_config.json'),encoding='utf-8-sig'))
-path=bpy.data.filepath; obj=bpy.data.objects.get(cfg['object_name']); coll=bpy.data.collections.get(cfg['collection_name'])
-if not path or obj is None or coll is None or obj not in coll.objects[:] or len(coll.objects)!=1: raise RuntimeError('Assigned church collection mismatch')
-# Original massing polygon is retained as the shell. Added windows and entrance are deliberately approximate.
-mesh=obj.data; original_verts=[tuple(v.co) for v in mesh.vertices]; faces=[tuple(p.vertices) for p in mesh.polygons]; assignments=[]
-wallc=(.36,.12,.075) if 'redeemer' in cfg['asset_id'] else (.43,.33,.23)
-stonec=(.68,.59,.46) if 'redeemer' in cfg['asset_id'] else (.68,.63,.54)
-glassc=(.025,.075,.10); roofc=(.14,.12,.10)
-def mat(name,color,rough=.8,metal=0):
- m=bpy.data.materials.get(name) or bpy.data.materials.new(name); m.diffuse_color=(*color,1); m.use_nodes=True; bs=m.node_tree.nodes.get('Principled BSDF'); bs.inputs['Base Color'].default_value=(*color,1); bs.inputs['Roughness'].default_value=rough; bs.inputs['Metallic'].default_value=metal; return m
-mats=[mat(cfg['asset_id']+'_Masonry',wallc),mat(cfg['asset_id']+'_Limestone',stonec),mat(cfg['asset_id']+'_Glazing',glassc,.2,.06),mat(cfg['asset_id']+'_Roof',roofc)]
-verts=list(original_verts); mat_ids=[]
-world=obj.matrix_world.copy(); inv=world.inverted_safe();
-def to_local(p): return tuple(inv@Vector(p))
-def add_face(ids,mi): faces.append(tuple(ids)); mat_ids.append(mi)
-def quad(ps,mi):
- k=len(verts); verts.extend(to_local(p) for p in ps); add_face((k,k+1,k+2,k+3),mi)
-def box(c,t,n,w,d,h,mi):
- c=Vector(c); t=Vector((t.x,t.y,0)).normalized(); n=Vector((n.x,n.y,0)).normalized(); z=Vector((0,0,1)); hw=w/2;hd=d/2;hh=h/2
- o=[(-hw,-hd,-hh),(hw,-hd,-hh),(hw,hd,-hh),(-hw,hd,-hh),(-hw,-hd,hh),(hw,-hd,hh),(hw,hd,hh),(-hw,hd,hh)]; k=len(verts); verts.extend(to_local(c+t*a+n*b+z*v) for a,b,v in o)
- for f0 in ((0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)): add_face(tuple(k+i for i in f0),mi)
-# Give original structural polygons stable masonry/roof material slots while preserving all original mesh geometry.
-for p in mesh.polygons:
- n=world.to_3x3()@p.normal; mat_ids.append(3 if n.z>.82 else 0)
-# Facade bays placed on long vertical faces based on polygon bounds; no exact openings inferred.
-minz=min((world@v.co).z for v in mesh.vertices); maxz=max((world@v.co).z for v in mesh.vertices); h=maxz-minz; model_center=sum((world@v.co for v in mesh.vertices),Vector((0,0,0)))/max(1,len(mesh.vertices))
-for p in list(mesh.polygons):
- if len(p.vertices)<4: continue
- coords=[world@mesh.vertices[i].co for i in p.vertices]; n=world.to_3x3()@p.normal
- face_center=sum(coords,Vector((0,0,0)))/len(coords)
- if n.dot(face_center-model_center)<0: n=-n
- if abs(n.z)>.2: continue
- lo=min(v.z for v in coords); hi=max(v.z for v in coords); bottoms=[v for v in coords if abs(v.z-lo)<1e-4];
- if hi-lo<3.5 or len(bottoms)<2: continue
- a,b=max(((bottoms[i],bottoms[j]) for i in range(len(bottoms)) for j in range(i+1,len(bottoms))),key=lambda ab:(ab[0]-ab[1]).length)
- delta=b-a; L=Vector((delta.x,delta.y,0)).length
- if L<5: continue
- t=Vector((delta.x,delta.y,0)).normalized(); n=Vector((n.x,n.y,0)).normalized(); count=max(1,int((L-2)//4.0)); spacing=L/(count+1); ww=min(1.65,spacing*.6); wh=1.35
- rows=[1.75,4.45,7.15] if h>9.0 else [1.7,4.3]
- for zoff in rows:
-  z=minz+zoff
-  if z+wh/2>hi-.35: continue
-  for k in range(count):
-   p0=a.lerp(b,(k+1)/(count+1)); c=Vector((p0.x,p0.y,z))+n*.075
-   box(c,t,n,ww*.76,.06,wh,2); fc=c+n*.05; bw=.09
-   box(fc+Vector((0,0,wh/2)),t,n,ww,.13,bw,1); box(fc-Vector((0,0,wh/2)),t,n,ww,.13,bw,1); box(fc-t*(ww/2-bw/2),t,n,bw,.13,wh,1); box(fc+t*(ww/2-bw/2),t,n,bw,.13,wh,1)
-# West-facing entrance marker. Its exact position and style are not documented, so it remains explicitly approximate.
-wall_faces=[]
-for p in mesh.polygons:
- n=world.to_3x3()@p.normal
- if abs(n.z)>.2: continue
- coords=[world@mesh.vertices[i].co for i in p.vertices]
- if len(coords)>=4 and max(v.z for v in coords)-min(v.z for v in coords)>3:
-  bottoms=[v for v in coords if v.z<min(c.z for c in coords)+.01]
-  if len(bottoms)>=2: wall_faces.append((p,coords,n,bottoms))
-entry=min(wall_faces,key=lambda x:x[2].x,default=None)
-if entry:
- p0=min((v for v in entry[1]),key=lambda v:v.x); n=Vector((entry[2].x,entry[2].y,0)).normalized(); t=Vector((n.y,-n.x,0)).normalized(); center=Vector((sum(v.x for v in entry[1])/len(entry[1]),sum(v.y for v in entry[1])/len(entry[1]),minz+1.3))+n*.1
- box(center,t,n,2.1,.12,2.6,2)
-# Rebuild the same mesh datablock and preserve all existing structural faces.
-oldname=mesh.name; new=bpy.data.meshes.new(oldname+'_facade'); new.from_pydata(verts,[],faces); new.materials.clear()
-for m in mats:new.materials.append(m)
-new.update()
-for p,mi in zip(new.polygons,mat_ids): p.material_index=mi
-bm=bmesh.new();bm.from_mesh(new);bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bm.to_mesh(new);bm.free();new.update();obj.data=new
-if mesh.users==0:bpy.data.meshes.remove(mesh)
-new.name=oldname
-bpy.ops.wm.save_as_mainfile(filepath=path)
-print('BUILD_RESULT_JSON='+json.dumps({'asset_id':cfg['asset_id'],'original_vertex_count':len(original_verts),'new_vertex_count':len(new.vertices),'new_face_count':len(new.polygons),'height_m':round(h,3),'position_footprint':'retained from original source mesh; not independently verified','collection_objects':len(coll.objects)}))
+from mathutils.geometry import tessellate_polygon
+
+folder = os.path.dirname(__file__)
+with open(os.path.join(folder, 'build_config.json'), encoding='utf-8-sig') as f:
+    cfg = json.load(f)
+with open(os.path.join(folder, 'source_mesh_snapshot.json'), encoding='utf-8-sig') as f:
+    source = json.load(f)
+
+obj = bpy.data.objects.get(cfg['object_name'])
+coll = bpy.data.collections.get(cfg['collection_name'])
+if not bpy.data.filepath or obj is None or coll is None or obj not in coll.objects[:] or len(coll.objects) != 1:
+    raise RuntimeError('Assigned church collection mismatch')
+
+old_mesh = obj.data
+world = obj.matrix_world.copy()
+inv = world.inverted_safe()
+# The preserved import snapshot supplies the exact original ring. Rebuild from it so
+# rerunning this script replaces this building's generated details instead of stacking them.
+ring_local = []
+for v in source['vertices_local']:
+    p = Vector(v)
+    if abs(p.z) < 1e-6:
+        xy = (round(p.x, 6), round(p.y, 6))
+        if xy not in {(round(q.x, 6), round(q.y, 6)) for q in ring_local}:
+            ring_local.append(p.copy())
+ring = [world @ p for p in ring_local]
+if len(ring) != 24:
+    raise RuntimeError(f'Expected the 24-node source ring, found {len(ring)}')
+
+eaves = float(cfg['wall_eaves_m'])
+peak = float(cfg['gable_peak_m'])
+gable = cfg['main_gable_bounds_xy_m']
+x0, x1 = float(gable['min_x']), float(gable['max_x'])
+y0, y1 = float(gable['min_y']), float(gable['max_y'])
+xc = (x0 + x1) / 2.0
+if not (eaves < peak and x0 < xc < x1 and y0 < y1):
+    raise RuntimeError('Invalid gable dimensions')
+
+# Verify the approximate raised gable stays inside the mapped source footprint.
+def inside_polygon(x, y):
+    inside = False
+    for i, a in enumerate(ring):
+        b = ring[i - 1]
+        if (a.y > y) != (b.y > y) and x < (b.x - a.x) * (y - a.y) / (b.y - a.y) + a.x:
+            inside = not inside
+    return inside
+for corner in ((x0,y0),(x1,y0),(x1,y1),(x0,y1)):
+    if not inside_polygon(*corner):
+        raise RuntimeError(f'Approximate gable bounds leave the source footprint at {corner}')
+
+# Keep all materials local to this building asset.
+tag = cfg['asset_id']
+def material(name, color, roughness=0.78, metallic=0.0):
+    m = bpy.data.materials.get(tag + '_' + name) or bpy.data.materials.new(tag + '_' + name)
+    m.diffuse_color = (*color, 1.0)
+    m.use_nodes = True
+    bsdf = m.node_tree.nodes.get('Principled BSDF')
+    if bsdf:
+        bsdf.inputs['Base Color'].default_value = (*color, 1.0)
+        bsdf.inputs['Roughness'].default_value = roughness
+        bsdf.inputs['Metallic'].default_value = metallic
+    return m
+wall = material('Masonry', (0.34, 0.12, 0.075))
+stone = material('Limestone', (0.62, 0.55, 0.44))
+glass = material('Glazing', (0.025, 0.08, 0.12), 0.22, 0.05)
+roof = material('Shingle_Roof', (0.12, 0.105, 0.09), 0.9)
+annex_roof = material('Low_Roof', (0.24, 0.22, 0.20), 0.9)
+mats = [wall, stone, glass, roof, annex_roof]
+verts, faces, mat_ids = [], [], []
+def add_face(indices, mat_id):
+    faces.append(tuple(indices))
+    mat_ids.append(mat_id)
+def add_quad(points, mat_id):
+    start = len(verts)
+    verts.extend(tuple(inv @ p) for p in points)
+    add_face((start, start+1, start+2, start+3), mat_id)
+def add_triangle(points, mat_id):
+    start = len(verts)
+    verts.extend(tuple(inv @ p) for p in points)
+    add_face((start, start+1, start+2), mat_id)
+def add_box(center, tangent, normal, width, depth, height, mat_id):
+    c = Vector(center)
+    t = Vector((tangent.x, tangent.y, 0.0)).normalized()
+    n = Vector((normal.x, normal.y, 0.0)).normalized()
+    z = Vector((0.0, 0.0, 1.0))
+    hw, hd, hh = width/2, depth/2, height/2
+    offsets = [(-hw,-hd,-hh),(hw,-hd,-hh),(hw,hd,-hh),(-hw,hd,-hh),
+               (-hw,-hd,hh),(hw,-hd,hh),(hw,hd,hh),(-hw,hd,hh)]
+    start = len(verts)
+    verts.extend(tuple(inv @ (c+t*a+n*b+z*h)) for a,b,h in offsets)
+    for f in ((0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)):
+        add_face(tuple(start+i for i in f), mat_id)
+
+# Exact OSM ring remains the wall plan; only the vertical treatment changes.
+area2 = sum(ring[i].x*ring[(i+1)%len(ring)].y-ring[(i+1)%len(ring)].x*ring[i].y for i in range(len(ring)))
+sign = 1.0 if area2 > 0 else -1.0
+for i, a0 in enumerate(ring):
+    b0 = ring[(i+1)%len(ring)]
+    delta = b0-a0
+    length = Vector((delta.x, delta.y, 0.0)).length
+    if length < 0.05:
+        continue
+    tangent = Vector((delta.x/length, delta.y/length, 0.0))
+    normal = Vector((tangent.y, -tangent.x, 0.0))*sign
+    a = Vector((a0.x,a0.y,0.0)); b = Vector((b0.x,b0.y,0.0))
+    at = Vector((a0.x,a0.y,eaves)); bt = Vector((b0.x,b0.y,eaves))
+    add_quad((a,b,bt,at), 0)
+    # Repeated small sanctuary windows follow the source polygon perimeter.
+    if length >= 5.0:
+        count = max(1, int((length-2.0)//7.0))
+        spacing = length/(count+1)
+        width = min(1.45, spacing*0.58)
+        pane_h = 1.35
+        zc = min(2.7, eaves-pane_h/2-0.3)
+        for k in range(count):
+            p = a.lerp(b, (k+1)/(count+1))
+            c = Vector((p.x,p.y,zc))+normal*0.055
+            add_box(c,tangent,normal,width*0.76,0.07,pane_h,2)
+            fc = c+normal*0.055
+            bw = 0.075
+            add_box(fc+Vector((0,0,pane_h/2)),tangent,normal,width,0.13,bw,1)
+            add_box(fc-Vector((0,0,pane_h/2)),tangent,normal,width,0.13,bw,1)
+            add_box(fc-tangent*(width/2-bw/2),tangent,normal,bw,0.13,pane_h,1)
+            add_box(fc+tangent*(width/2-bw/2),tangent,normal,bw,0.13,pane_h,1)
+
+# Low roof over the rest of the irregular source footprint (annex roof form unverified).
+xy = [Vector((p.x,p.y)) for p in ring]
+for tri in tessellate_polygon([xy]):
+    add_triangle([Vector((xy[int(i)].x,xy[int(i)].y,eaves)) for i in tri],4)
+
+# A single raised gable records the church form visible in the 2017 exterior photograph.
+overhang = 0.30
+left, right = x0-overhang, x1+overhang
+front, back = y0-overhang, y1+overhang
+z0, zr = eaves, peak
+ridge0 = Vector((xc,front,zr)); ridge1 = Vector((xc,back,zr))
+add_quad((Vector((left,front,z0)),ridge0,ridge1,Vector((left,back,z0))),3)
+add_quad((ridge0,Vector((right,front,z0)),Vector((right,back,z0)),ridge1),3)
+# Gable end infill at both ends of the ridge.
+add_triangle((Vector((left,front,z0)),Vector((right,front,z0)),ridge0),0)
+add_triangle((Vector((left,back,z0)),ridge1,Vector((right,back,z0))),0)
+# The south gable gets a restrained clerestory and paired-door marker; both are approximate.
+front_normal = Vector((0,1,0)); tangent = Vector((1,0,0))
+add_box((xc,front+0.10,6.95),tangent,front_normal,1.55,0.08,2.70,2)
+add_box((xc,front+0.17,1.38),tangent,front_normal,2.15,0.12,2.65,2)
+add_box((xc-1.16,front+0.16,1.43),tangent,front_normal,0.12,0.16,2.70,1)
+add_box((xc+1.16,front+0.16,1.43),tangent,front_normal,0.12,0.16,2.70,1)
+add_box((xc,front+0.16,2.91),tangent,front_normal,2.42,0.16,0.14,1)
+
+old_name = old_mesh.name
+new_mesh = bpy.data.meshes.new(old_name+'_gable_revision')
+new_mesh.from_pydata(verts, [], faces)
+for m in mats:
+    new_mesh.materials.append(m)
+new_mesh.update()
+for poly, mat_id in zip(new_mesh.polygons, mat_ids):
+    poly.material_index = mat_id
+bm = bmesh.new()
+bm.from_mesh(new_mesh)
+bmesh.ops.recalc_face_normals(bm, faces=list(bm.faces))
+bm.to_mesh(new_mesh)
+bm.free()
+new_mesh.update()
+obj.data = new_mesh
+if old_mesh.users == 0:
+    bpy.data.meshes.remove(old_mesh)
+new_mesh.name = old_name
+bpy.ops.wm.save_as_mainfile(filepath=bpy.data.filepath)
+coords = [world @ v.co for v in new_mesh.vertices]
+result = {
+    'asset_id': cfg['asset_id'],
+    'source_way': 473799725,
+    'collection_objects': len(coll.objects),
+    'source_ring_vertices': len(ring),
+    'mesh_vertices': len(new_mesh.vertices),
+    'mesh_faces': len(new_mesh.polygons),
+    'height_m': round(max(v.z for v in coords)-min(v.z for v in coords),3),
+    'height_status': cfg['modeled_height_status'],
+    'gable_bounds_xy_m': [left,right,front,back],
+    'footprint_preserved': True,
+}
+print('BUILD_RESULT_JSON='+json.dumps(result))
