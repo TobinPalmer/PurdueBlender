@@ -1,0 +1,396 @@
+{
+  "building_id": "massing_provenance_apartments_005_960f6b0",
+  "building_name": "Provenance Apartments 005 / Building F (143)",
+  "reviewer": "independent r3 evaluator; fresh Blender 5.2.3 reopen and direct inspection of C1.4, FID 506 overlay, r3 source search, evidence, and renders",
+  "score": 7.8,
+  "max_score": 10,
+  "passing_standard": 8,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2.0,
+      "status": "Strong independent match to Building F / 143; GIS ring remains a pre-planning proxy rather than an as-built wall survey",
+      "evidence": [
+        "County construction-plan sheet C1.4 labels the central apartment block BLDG F / 143 between BLDG E / 144 and BLDG G / 142.",
+        "Purdue GIS FID 506 names Building F and abbreviation 143. The stable .005 crosswalk is corroborated by the inherited proxy center's proximity, explicit C1.4 location, and the no-warp overlay against the current Indiana orthophoto.",
+        "The 32 reopened base-ring vertices reproduce transformed FID 506 within 0.000059 m. The red overlay follows the target roof outline closely, but both the layer label ('BLDG Building Pre-planning') and overhead roof imagery limit claims about exact wall registration."
+      ],
+      "findings": [
+        "Keep the building identity and footprint match qualified: FID 506 is pre-planning, and the orthophoto shows roof/eaves rather than a surveyed wall line."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "status": "Position, orientation, and approximate envelope agree with the plan crosswalk and current roof imagery",
+      "evidence": [
+        "Fresh Blender reopen bounds: X -1573.270..-1523.543 m, Y -466.853..-447.569 m, Z 0.000..11.400 m. The transformed GIS candidate envelope is approximately 49.73 by 19.28 m.",
+        "The C1.4 neighbor order/orientation and orthophoto overlay support the mapped block placement. The plan is not georeferenced and project coordinates use a local approximation; the GIS line is not certified as the wall perimeter."
+      ],
+      "findings": [
+        "Treat the footprint dimensions as approximate until a georeferenced as-built or wall survey is available."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.4,
+      "max_score": 2.0,
+      "status": "Three-story count has project-wide support; roof rhythm and all vertical measurements are explicitly estimated",
+      "evidence": [
+        "Studio M's project description supports three stories at the development level, but does not identify the story count of Building F individually.",
+        "Build evidence labels eaves (8.9 m) and ridge (11.4 m) as estimates, each with \u00b11.5 m uncertainty; no Building F elevation or section was found.",
+        "The five-break roof rhythm broadly corresponds to the repeated roof shapes visible in the exact-block 2025 overhead image. The image does not establish ridge locations, pitch, eave/ridge heights, or a definitive gable count; the r3 summary identifies these as estimates."
+      ],
+      "findings": [
+        "Retain the explicit height and roof-form uncertainty; no measured vertical evidence or F-specific architectural elevation is available."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.2,
+      "max_score": 2.0,
+      "status": "The neutral shell is a defensible evidence-limited massing; facade and entrance architecture remain unknown",
+      "evidence": [
+        "The r3 exact-block search records searches for F/143 photos, elevations, and sections and reports no attributable street image or approved architectural elevation/section in accessible sources.",
+        "Studio M imagery is project-wide and cannot identify this block. The r3 model removes its previously generalized windows, balconies, accent bays, canopies, and material stationing, avoiding unsupported placement claims.",
+        "Direct inspection of the render confirms a plain shell with no modeled entrance or facade rhythm. Therefore the package accurately represents the evidence gap but does not resolve Building F's visible architectural character."
+      ],
+      "findings": [
+        "Facade, opening rhythm, and entrance remain unverified and absent; a building-specific photo or elevation would be needed to raise this criterion materially."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "Asset reopens cleanly and the audit package is complete; the shared manifest still contains superseded bounds",
+      "evidence": [
+        "Direct separate-process Blender 5.2.3 LTS reopen confirms scene/collection identity, one mesh (132 vertices, 44 faces), 0 modifiers, 0 unpacked images, and 0 linked libraries. The r3 reopen validation records 16/16 checks passing.",
+        "The audit folder contains the raw Purdue GIS snapshot, C1.4 plan and crop, raw and overlaid 2025 orthophoto, source search/register, revision summary, reopen validation, and updated top and oblique renders. The saved mesh has two neutral material slots, no modifiers, and no external image dependencies.",
+        "Shared manifest bounds remain [[-1627.371337890625, -1489.2232666015625], [-474.5072326660156, -446.1253967285156], [0.0, 11.399999618530273]], while the reopened asset bounds are [[-1573.270263671875, -1523.542724609375], [-466.8532409667969, -447.56915283203125], [0.0, 11.399999618530273]]; maximum component difference is 54.10 m. This is a substantial stale integration record and should be reconciled by the shared-file owner."
+      ],
+      "findings": [
+        "Coordinator should update the shared manifest bounds before relying on them for integration; the independent audit does not alter shared files."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular\\buildings\\massing_provenance_apartments_005_960f6b0.blend",
+    "blender": "5.2.3 LTS",
+    "reopened_scene": "Building_massing_provenance_apartments_005_960f6b0",
+    "reopened_collection": "Asset_massing_provenance_apartments_005_960f6b0",
+    "direct_reopen_measurements": {
+      "object": "Provenance Apartments.005",
+      "type": "MESH",
+      "collection_count": 1,
+      "vertices": 132,
+      "faces": 44,
+      "bounds": [
+        [
+          -1573.270263671875,
+          -1523.542724609375
+        ],
+        [
+          -466.8532409667969,
+          -447.56915283203125
+        ],
+        [
+          0.0,
+          11.399999618530273
+        ]
+      ],
+      "materials": [
+        "Provenance 005 unverified facade neutral",
+        "Provenance 005 roof neutral from aerial"
+      ],
+      "unpacked_images": [],
+      "libraries": 0,
+      "modifiers": []
+    },
+    "source_identity": {
+      "FID": 506,
+      "BUILDING_N": "Building F",
+      "BLDG_ABBR": "143",
+      "Layer": "BLDG Building Pre-planning",
+      "BUILDING_1": "1509",
+      "ADDRESS": " ",
+      "NUM_LEVELS": 0,
+      "BUILT": null,
+      "OCCUPIED": null
+    },
+    "candidate_footprint": {
+      "ring_vertex_count": 32,
+      "candidate_envelope_m": [
+        49.72756747263816,
+        19.284092127631993
+      ],
+      "max_vertex_residual_m": 5.9327458276095637e-05,
+      "as_built_wall_line": "uncertain; pre-planning polygon and roof outline are not a surveyed wall line"
+    },
+    "crosswalk": {
+      "asset_id": "massing_provenance_apartments_005_960f6b0",
+      "stable_asset_assignment": "Provenance Apartments.005",
+      "method": "Crosschecked legacy target location against all Purdue GIS Provenance plan-feature centroids, then required independent explicit county-plan label plus current orthophoto overlay before assigning the individual building.",
+      "legacy_target_bounds_m": [
+        [
+          -1627.371337890625,
+          -1489.2232666015625
+        ],
+        [
+          -474.5072326660156,
+          -446.1253967285156
+        ],
+        [
+          0.0,
+          11.399999618530273
+        ]
+      ],
+      "legacy_bounds_center_xy_m": [
+        -1558.2973022460938,
+        -460.3163146972656
+      ],
+      "candidate_polygon_centroid_distances_m": [
+        {
+          "fid": 500,
+          "name": "Unlabelled",
+          "distance": 71.89
+        },
+        {
+          "fid": 501,
+          "name": "Building E",
+          "distance": 44.11
+        },
+        {
+          "fid": 502,
+          "name": "Building D",
+          "distance": 83.47
+        },
+        {
+          "fid": 503,
+          "name": "Building C",
+          "distance": 82.32
+        },
+        {
+          "fid": 504,
+          "name": "Building B",
+          "distance": 110.58
+        },
+        {
+          "fid": 505,
+          "name": "Building A",
+          "distance": 104.87
+        },
+        {
+          "fid": 506,
+          "name": "Building F / 143",
+          "distance": 10.84
+        },
+        {
+          "fid": 507,
+          "name": "Building G",
+          "distance": 54.3
+        },
+        {
+          "fid": 508,
+          "name": "Building I",
+          "distance": 169.84
+        },
+        {
+          "fid": 509,
+          "name": "Building H",
+          "distance": 122.72
+        }
+      ],
+      "crosswalk_conclusion": "FID 506 is the nearest mapped apartment building to the inherited .005 object center by 33.27 m over the next-nearest FID 501 (Building E). It is explicitly labeled BLDG F / 143 on county construction-plan sheet C1.4, between BLDG E / 144 and BLDG G / 142. A no-warp overlay of the transformed FID 506 ring aligns closely with the central Building F roof outline in Indiana 2025 orthophoto. These independent sources support the stable .005-to-Building F identity; the previous model's broad bounds are only a rough center and not wall geometry.",
+      "source_urls": [
+        "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/506?f=pjson",
+        "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/ArchivedAgenda/_01022020-1597?packet=true",
+        "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer"
+      ],
+      "remaining_limitations": [
+        "Purdue GIS FID 506 remains tagged BLDG Building Pre-planning; the available County packet is an approved detailed construction-plan / stormwater sheet, not an as-built survey.",
+        "The orthophoto roof/eave boundary is not identical to a surveyed exterior wall line.",
+        "Building-specific elevation and facade schedule remain unavailable; height and facade composition retain explicit estimates/generalization."
+      ]
+    },
+    "source_search_r3": {
+      "conclusion": "No defensible Building F-specific street-level image, approved elevation, or section was found in accessible sources. The facade is therefore left undetailed and neutral. The 2025 overhead imagery supports only the roof outline and a rough five-break roof rhythm; all ridge placement and roof heights remain estimates.",
+      "searches": [
+        {
+          "query": "\\\"Building F\\\" \\\"Provenance\\\" West Lafayette apartments 143",
+          "result": "No exact-block image or elevation."
+        },
+        {
+          "query": "\\\"Provenance Apartments\\\" \\\"Building F\\\" elevation",
+          "result": "No Building F architectural elevation or section."
+        },
+        {
+          "query": "\\\"1509 Mitch Daniels\\\" Provenance apartment Building F",
+          "result": "Address context only; no individual facade documentation."
+        },
+        {
+          "query": "site:tippecanoe.in.gov Provenance Building F 143 elevations sections",
+          "result": "The accessible approved packet contains civil/construction site plans; no individual architectural elevation/section located."
+        },
+        {
+          "query": "PD-20-01 Provenance final detailed plans Building F elevations",
+          "result": "Resolution and site-plan materials surfaced; no F/143 elevation/section located."
+        },
+        {
+          "query": "Provenance Apartments 1509 Mitch Daniels exterior Building F",
+          "result": "No exact-block street photo identified."
+        }
+      ],
+      "reviewed_sources": [
+        {
+          "title": "Tippecanoe County approved Phase 1 & 2 construction-plan packet, sheet C1.4",
+          "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/ArchivedAgenda/_01022020-1597?packet=true",
+          "local_copy": "sources/county_provenance_phase1_2_construction_plans.pdf",
+          "finding": "Sheet explicitly labels BLDG F / 143 and its site position, but is a civil/stormwater plan, not an architectural elevation or section."
+        },
+        {
+          "title": "Indiana Current Orthophotography ImageServer",
+          "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+          "local_copy": "indiana_current_orthophoto_2025_fid506_overlay.jpg",
+          "finding": "Current overhead view supports the central block roof outline and approximate roof breaks, not facade features, roof heights, or surveyed wall registration."
+        },
+        {
+          "title": "Purdue University EHPS annual fire statistics",
+          "url": "https://www.purdue.edu/ehps/police/images/reports/west-lafayette.pdf",
+          "finding": "Contains a 1509 Mitch Daniels Blvd address in the Provenance context, but no image or geometry for Building F."
+        },
+        {
+          "title": "Studio M Provenance project page",
+          "url": "https://www.studiomarchitecture.net/provenance-at-discovery-park",
+          "finding": "Project-wide description/photos only; no photo labels or drawing identify Building F. Excluded from F-specific facade geometry."
+        }
+      ],
+      "excluded_nearby_image": {
+        "source": "Apartments.com search result photo showing address 1505",
+        "reason": "1505 is not 1509 and is not identified as Building F / 143; not used as target evidence."
+      }
+    },
+    "height": {
+      "wall_eave_estimate_m": 8.9,
+      "ridge_estimate_m": 11.4,
+      "uncertainty_m": {
+        "eave_plus_minus": 1.5,
+        "ridge_plus_minus": 1.5
+      },
+      "story_evidence": "Studio M Provenance project description states seven three-story apartment buildings; not individually attributed to Building F."
+    },
+    "manifest_bounds_m": [
+      [
+        -1627.371337890625,
+        -1489.2232666015625
+      ],
+      [
+        -474.5072326660156,
+        -446.1253967285156
+      ],
+      [
+        0.0,
+        11.399999618530273
+      ]
+    ],
+    "manifest_delta_m": [
+      [
+        54.10107421875,
+        -34.3194580078125
+      ],
+      [
+        7.65399169921875,
+        -1.443756103515625
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "r3_reopen_validation": {
+      "status": "pass",
+      "validation": "saved library reopened in a separate Blender process",
+      "blender_version": "5.2.3 LTS",
+      "asset_path": "modular/buildings/massing_provenance_apartments_005_960f6b0.blend",
+      "scene": "Building_massing_provenance_apartments_005_960f6b0",
+      "collection": "Asset_massing_provenance_apartments_005_960f6b0",
+      "exported_object": "Provenance Apartments.005",
+      "checks": {
+        "scene_exists": true,
+        "asset_collection_exists": true,
+        "expected_object_exists": true,
+        "collection_object_count_is_one": true,
+        "object_is_mesh": true,
+        "no_external_images": true,
+        "orthophoto_overlay_saved": true,
+        "county_construction_plan_saved": true,
+        "r3_exact_block_source_search_saved": true,
+        "base_ring_vertex_count_matches_source": true,
+        "source_ring_vertices_match_within_0_001m": true,
+        "no_modifiers": true,
+        "object_has_identity_transform": true,
+        "two_neutral_material_slots_only": true,
+        "no_facade_projection_beyond_gis_ring": true,
+        "estimated_three_story_height_retained": true
+      },
+      "source_footprint_vertex_error": {
+        "max_xy_or_z_m": 5.9327458276095637e-05,
+        "mean_xy_or_z_m": 1.3088861394627521e-05,
+        "source_ring_points": 32
+      },
+      "evaluated_world_bounds_m": [
+        [
+          -1573.270263671875,
+          -1523.542724609375
+        ],
+        [
+          -466.8532409667969,
+          -447.56915283203125
+        ],
+        [
+          0.0,
+          11.399999618530273
+        ]
+      ],
+      "mesh_counts": {
+        "vertices": 132,
+        "faces": 44
+      },
+      "external_dependency_count": 0,
+      "note": "County plan sheet C1.4 explicitly identifies BLDG F / 143; the Purdue pre-planning FID 506 ring closely matches the current 2025 roof outline, but is not a surveyed wall registration. The exact-block search found no street-level image or approved elevation/section. The shell has no facade relief or material stationing. Project-level story count is three; eave/ridge heights and the five-break roof rhythm are estimates."
+    },
+    "reviewed_files": [
+      "modular\\buildings\\massing_provenance_apartments_005_960f6b0.blend",
+      "audit\\massing_provenance_apartments_005_960f6b0\\sources\\county_provenance_phase1_2_construction_plans.pdf",
+      "audit\\massing_provenance_apartments_005_960f6b0\\sources\\county_plan_sheet_C1_4_apartment_cluster.png",
+      "audit\\massing_provenance_apartments_005_960f6b0\\indiana_current_orthophoto_2025_fid506_overlay.jpg",
+      "audit\\massing_provenance_apartments_005_960f6b0\\sources\\indiana_current_orthophoto_2025_raw.jpg",
+      "audit\\massing_provenance_apartments_005_960f6b0\\source_register.json",
+      "audit\\massing_provenance_apartments_005_960f6b0\\revision_r3_summary.md",
+      "audit\\massing_provenance_apartments_005_960f6b0\\source_search_r3.json",
+      "audit\\massing_provenance_apartments_005_960f6b0\\preview_southwest.png",
+      "audit\\massing_provenance_apartments_005_960f6b0\\preview_top.png",
+      "audit\\massing_provenance_apartments_005_960f6b0\\crosswalk_analysis.json",
+      "audit\\massing_provenance_apartments_005_960f6b0\\build_evidence.json",
+      "audit\\massing_provenance_apartments_005_960f6b0\\source_search_r3.json"
+    ],
+    "limitations": [
+      "Purdue GIS FID 506 is a pre-planning feature, not an as-built wall survey.",
+      "C1.4 is an un-georeferenced site/construction plan and not a vertical elevation.",
+      "Orthophoto supports roof outline and approximate breaks, not roof height, pitch, or facade layout.",
+      "Three-story evidence is development-wide; eaves, ridge, and roof segmentation remain estimates.",
+      "No exact-block facade image/elevation was located; entrances and opening pattern remain unknown.",
+      "Shared manifest bounds are stale and differ substantially from the reopened asset."
+    ]
+  },
+  "findings": [
+    "Keep the building identity and footprint match qualified: FID 506 is pre-planning, and the orthophoto shows roof/eaves rather than a surveyed wall line.",
+    "Treat the footprint dimensions as approximate until a georeferenced as-built or wall survey is available.",
+    "Retain the explicit height and roof-form uncertainty; no measured vertical evidence or F-specific architectural elevation is available.",
+    "Facade, opening rhythm, and entrance remain unverified and absent; a building-specific photo or elevation would be needed to raise this criterion materially.",
+    "Coordinator should update the shared manifest bounds before relying on them for integration; the independent audit does not alter shared files."
+  ],
+  "recommendation": "The r3 asset scores 7.8/10. Identity and approximate footprint are well supported by C1.4, FID 506, and the current orthophoto. The neutral shell is appropriate given the documented lack of exact-block facade evidence. Height and the five-break roof rhythm remain estimates, and the shared manifest still needs bounds reconciliation."
+}

@@ -1,0 +1,34 @@
+{
+  "asset_id": "massing_provenance_apartments_005_960f6b0",
+  "stable_asset_assignment": "Provenance Apartments.005",
+  "method": "Crosschecked legacy target location against all Purdue GIS Provenance plan-feature centroids, then required independent explicit county-plan label plus current orthophoto overlay before assigning the individual building.",
+  "legacy_target_bounds_m": [
+    [-1627.371337890625, -1489.2232666015625],
+    [-474.5072326660156, -446.1253967285156],
+    [0.0, 11.399999618530273]
+  ],
+  "legacy_bounds_center_xy_m": [-1558.2973022460938, -460.3163146972656],
+  "candidate_polygon_centroid_distances_m": [
+    {"fid": 500, "name": "Unlabelled", "distance": 71.89},
+    {"fid": 501, "name": "Building E", "distance": 44.11},
+    {"fid": 502, "name": "Building D", "distance": 83.47},
+    {"fid": 503, "name": "Building C", "distance": 82.32},
+    {"fid": 504, "name": "Building B", "distance": 110.58},
+    {"fid": 505, "name": "Building A", "distance": 104.87},
+    {"fid": 506, "name": "Building F / 143", "distance": 10.84},
+    {"fid": 507, "name": "Building G", "distance": 54.3},
+    {"fid": 508, "name": "Building I", "distance": 169.84},
+    {"fid": 509, "name": "Building H", "distance": 122.72}
+  ],
+  "crosswalk_conclusion": "FID 506 is the nearest mapped apartment building to the inherited .005 object center by 33.27 m over the next-nearest FID 501 (Building E). It is explicitly labeled BLDG F / 143 on county construction-plan sheet C1.4, between BLDG E / 144 and BLDG G / 142. A no-warp overlay of the transformed FID 506 ring aligns closely with the central Building F roof outline in Indiana 2025 orthophoto. These independent sources support the stable .005-to-Building F identity; the previous model's broad bounds are only a rough center and not wall geometry.",
+  "source_urls": [
+    "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/506?f=pjson",
+    "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/ArchivedAgenda/_01022020-1597?packet=true",
+    "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer"
+  ],
+  "remaining_limitations": [
+    "Purdue GIS FID 506 remains tagged BLDG Building Pre-planning; the available County packet is an approved detailed construction-plan / stormwater sheet, not an as-built survey.",
+    "The orthophoto roof/eave boundary is not identical to a surveyed exterior wall line.",
+    "Building-specific elevation and facade schedule remain unavailable; height and facade composition retain explicit estimates/generalization."
+  ]
+}
