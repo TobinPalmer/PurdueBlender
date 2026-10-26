@@ -1,0 +1,97 @@
+{
+  "asset_id": "massing_kappa_sigma_c1b36ec",
+  "assignment": "Rossen",
+  "built_at": "2026-10-26",
+  "builder": "modular/buildings/build_massing_kappa_sigma_c1b36ec.py",
+  "blender_version": "4.5.15 LTS",
+  "asset_path": "modular/buildings/massing_kappa_sigma_c1b36ec.blend",
+  "scene": "Building_massing_kappa_sigma_c1b36ec",
+  "collection": "Asset_massing_kappa_sigma_c1b36ec",
+  "objects": [
+    "Kappa Sigma"
+  ],
+  "before": {
+    "geometry_source": "generic legacy massing",
+    "manifest_bounds_world_m": [
+      [
+        353.2955,
+        395.2683
+      ],
+      [
+        -153.7127,
+        -131.4158
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ],
+    "direct_blender_dimensions_m": [
+      41.9728,
+      22.2968,
+      16.0
+    ],
+    "mesh_vertex_count": 24,
+    "object_transform": "identity"
+  },
+  "after": {
+    "source_geometry": "Purdue BuildingShapesZip4 FID 804 66-vertex exterior ring transformed to project campus coordinates",
+    "bounds_world_m": [
+      [
+        353.5739,
+        396.1057
+      ],
+      [
+        -153.8205,
+        -131.121
+      ],
+      [
+        0.0,
+        13.7
+      ]
+    ],
+    "asset_collection_object_count": 1,
+    "evaluated_dimensions_m": [
+      42.5318,
+      22.6996,
+      13.7
+    ],
+    "wall_top_estimate_m": 9.6,
+    "gable_ridge_estimate_m": 12.0,
+    "chimney_top_estimate_m": 13.7,
+    "placement_transform": "identity; campus coordinates retained",
+    "geometry_edits": [
+      "Replaced box-like perimeter with source-matched Purdue FID 804 polygon.",
+      "Added three visible facade levels as an estimate, with repeated trim and window glazing.",
+      "Added a central entry hood and step, matching the public photo qualitatively.",
+      "Added three estimated front gables, a flat roof substrate, and a brick chimney based on public photo and orthophoto context.",
+      "Added portable geometric Kappa Sigma letters based on the chapter-house photo; no external font or texture dependency."
+    ]
+  },
+  "checks": {
+    "identity_and_address": "Purdue FID 804 names Kappa Sigma, abbreviation SOKS, at 308 North St.",
+    "independent_footprint": "Indiana LiDAR objectid 410022; local-frame polygon IoU 0.8294; centroid separation 1.0968 m.",
+    "position_orientation": "Source ring coordinates projected into the documented campus frame; no manual orientation change.",
+    "height": "estimated, not measured; source values conflict with photo and lack reliable units.",
+    "roof": "gable/chimney form supported qualitatively by photo; dimensions estimated.",
+    "facade": "qualitatively photo-backed; exact pattern dimensions estimated.",
+    "portability": "embedded procedural colors and mesh geometry only; no external image/font dependencies.",
+    "render": "successful Blender EEVEE render at audit/massing_kappa_sigma_c1b36ec/kappa_sigma_preview.png",
+    "reopen": "passed in Blender 4.5.15; exact bottom perimeter match within 0.01 m, one expected mesh object, identity transform, zero modifiers, zero boundary/non-manifold/wire edges, no external image dependencies"
+  },
+  "remaining_uncertainty": [
+    "No measured elevations, construction drawings, or roof height survey were found.",
+    "The older official chapter photos may not represent the present building condition.",
+    "A current 308 North Street site describes the property as unaffiliated student housing, conflicting with the alumni chapter address; current use and signage are not assumed.",
+    "Purdue GIS and LiDAR footprints are source datasets, not property-line or wall surveys."
+  ],
+  "render": "audit/massing_kappa_sigma_c1b36ec/kappa_sigma_preview.png",
+  "evaluated_mesh": {
+    "vertices": 2554,
+    "edges": 3831,
+    "faces": 1855,
+    "boundary_edges": 0,
+    "non_manifold_edges": 0,
+    "wire_edges": 0
+  }
+}

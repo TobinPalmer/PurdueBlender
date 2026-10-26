@@ -1,0 +1,129 @@
+{
+  "asset_id": "massing_kappa_sigma_c1b36ec",
+  "assignment": "Rossen",
+  "retrieved_at": "2026-10-26",
+  "manifest_contract": {
+    "asset_path": "modular/buildings/massing_kappa_sigma_c1b36ec.blend",
+    "scene": "Building_massing_kappa_sigma_c1b36ec",
+    "collection": "Asset_massing_kappa_sigma_c1b36ec",
+    "object": "Kappa Sigma",
+    "coordinate_contract": "Simple massing stays in campus coordinates, meters, X east, Y north, Z up; geographic origin latitude 40.4274, longitude -86.9137; object transform identity."
+  },
+  "sources": [
+    {
+      "role": "building identity, address, footprint perimeter, source building attributes",
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 FeatureServer, layer 0",
+      "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D804&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 804,
+      "source_name": "Kappa Sigma",
+      "abbreviation": "SOKS",
+      "address": "308 North St, West Lafayette, IN 47906",
+      "retrieved_at": "2026-10-26",
+      "source_data_date": "Service lastEditDate recorded in local metadata snapshot; per-feature build/occupancy dates are blank.",
+      "source_crs": "Query geometry returned in EPSG:4326 (WGS 84); FeatureServer's advertised spatial reference is EPSG:3857.",
+      "local_snapshots": [
+        "audit/massing_kappa_sigma_c1b36ec/sources/purdue_gis_fid804_2026-10-26.json",
+        "audit/massing_kappa_sigma_c1b36ec/sources/purdue_gis_layer_metadata_2026-10-26.json"
+      ],
+      "reported_attributes": {
+        "NUM_LEVELS": 1,
+        "CountOfFLO": 1,
+        "Extrution": 12,
+        "Shape__Area": 1174.83203125,
+        "Shape__Length": 201.65995271100257
+      },
+      "measurement_method": "Projected the 66-vertex exterior ring into campus meters using the project's documented local approximation. Geometry-derived area is 679.65 m2 and perimeter 153.44 m. The service Shape__Area/Shape__Length fields do not reconcile with the transformed ring measurements and are not used as physical dimensions.",
+      "uncertainty": "This is an institutional GIS polygon, not a wall/foundation survey; it may represent the roof envelope. Its published level/extrusion attributes are ambiguous and conflict with the visible three-level facade."
+    },
+    {
+      "role": "independent roof-envelope footprint cross-check",
+      "provider": "Indiana Geographic Information Office, Indiana Statewide LiDAR Derived Building Footprints FeatureServer layer 0",
+      "service_url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0/query?where=objectid%3D410022&outFields=*&returnGeometry=true&outSR=2968&f=pjson",
+      "feature_id": 410022,
+      "source_name": "Building footprint, Tippecanoe County",
+      "source_data_date": "LiDAR year 2018, as reported in the feature attributes.",
+      "retrieved_at": "2026-10-26",
+      "source_crs": "Native statewide dataset is Indiana West StatePlane (EPSG:2968); service query snapshots also include the feature in EPSG:4326. Layer metadata advertises web mercator, EPSG:3857.",
+      "local_snapshots": [
+        "audit/massing_kappa_sigma_c1b36ec/sources/indiana_lidar_layer_metadata_2026-10-26.json",
+        "audit/massing_kappa_sigma_c1b36ec/sources/indiana_lidar_feature_410022_2026-10-26_stateplane_2968.json",
+        "audit/massing_kappa_sigma_c1b36ec/sources/indiana_lidar_feature_410022_2026-10-26.json",
+        "audit/massing_kappa_sigma_c1b36ec/sources/indiana_lidar_near_kappa_sigma_2026-10-26.json"
+      ],
+      "measurement_method": "Registered the 10-vertex exterior outline with Purdue FID 804 using the campus local approximation applied to both EPSG:4326 query geometries. The polygon intersection-over-union is 0.8294 and centroid separation is 1.10 m. The LiDAR outline covers 755.17 m2 under this approximation; source published Shape__Area is not used because it does not reconcile with the returned geometry.",
+      "uncertainty": "Automated 2018 LiDAR-derived footprint supports the roof envelope, not the surveyed foundation/wall line. Source date predates current imagery."
+    },
+    {
+      "role": "current aerial context and roof-envelope inspection",
+      "provider": "Indiana Geographic Information Office, Indiana Current Orthophotography ImageServer",
+      "service_url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer/exportImage",
+      "retrieved_at": "2026-10-26",
+      "source_data_date": "Service describes 2022-2025 orthophotography; exact exposure date at this location is not exposed.",
+      "source_crs": "Export requested in EPSG:4326 from an imagery service advertised in EPSG:3857.",
+      "local_snapshots": [
+        "audit/massing_kappa_sigma_c1b36ec/sources/indiana_current_imagery_layer_metadata_2026-10-26.json",
+        "audit/massing_kappa_sigma_c1b36ec/sources/indiana_ortho_export_info_2026-10-26.json",
+        "audit/massing_kappa_sigma_c1b36ec/sources/indiana_current_orthophoto_kappa_sigma_2026-10-26.png",
+        "audit/massing_kappa_sigma_c1b36ec/sources/orthophoto_with_purdue_outline.png"
+      ],
+      "measurement_method": "Exported a 1200 by 900 pixel image for lon/lat bbox [-86.9108, 40.4250, -86.9089, 40.4268]. Used to inspect the local roof mass and cross-check the source footprint placement, not to measure vertical dimensions.",
+      "uncertainty": "Current imagery is oblique and partly shadowed; exact capture date and roof segmentation are unavailable."
+    },
+    {
+      "role": "facade, visible floor count, entry, and roof-form reference",
+      "provider": "Chi Alumni Chapter of Kappa Sigma, Purdue University",
+      "url": "https://www.chikappasigma.org/",
+      "image_url": "https://chikappasigma.org/cache/5094a3d1ecbdb0a4d4bb438ab154d792_w844_h400_sc.jpg",
+      "retrieved_at": "2026-10-26",
+      "source_date": "Photo is undated on the source page.",
+      "source_crs": "Not applicable; unscaled frontal photograph.",
+      "local_snapshots": [
+        "audit/massing_kappa_sigma_c1b36ec/sources/kappa_sigma_alumni_home_page_2026-10-26.html",
+        "audit/massing_kappa_sigma_c1b36ec/sources/kappa_sigma_chi_chapter_house_event_official.jpg",
+        "audit/massing_kappa_sigma_c1b36ec/sources/kappa_sigma_chi_chapter_house_official.jpg"
+      ],
+      "measurement_method": "Used qualitatively to represent three visible facade levels, red brick, repeated pale rectangular window surrounds, a central entrance with an arch/hood, raised Kappa Sigma letters, multiple front-facing gables, and a tall brick chimney. No exact dimensions were extracted from the unscaled photo.",
+      "uncertainty": "Photo date, camera geometry, and current continuity are unknown. Exact window spacing, gable/ridge dimensions, chimney size, and entrance location remain estimates."
+    },
+    {
+      "role": "current address and use conflict check",
+      "provider": "Chi Alumni Chapter Kappa Sigma contact page and 308 North Street housing FAQ",
+      "url": "https://www.chikappasigma.org/contact ; https://www.308northstreet.com/faq.html",
+      "retrieved_at": "2026-10-26",
+      "source_date": "Pages retrieved 2026-10-26; source content dates not stated.",
+      "source_crs": "Not applicable.",
+      "local_snapshots": [
+        "audit/massing_kappa_sigma_c1b36ec/sources/kappa_sigma_alumni_contact_page_2026-10-26.html",
+        "audit/massing_kappa_sigma_c1b36ec/sources/308_north_street_current_housing_faq_2026-10-26.html"
+      ],
+      "measurement_method": "Compared the chapter contact address (308 North St) with the present 308 North Street housing FAQ.",
+      "uncertainty": "The chapter page associates Kappa Sigma with the address, while the current housing FAQ says the property is independent housing unaffiliated with an active fraternity or Purdue. The stable repo asset identity and GIS match are retained; this model does not claim the building currently operates as a fraternity or that the older chapter photo shows its present signage."
+    }
+  ],
+  "geometry_and_placement": {
+    "registration": "Purdue FID 804 coordinates transformed directly to the documented campus local frame; no manual translation or rotation was applied.",
+    "purdue_ring_vertex_count": 66,
+    "purdue_polygon_area_approx_m2": 679.6518,
+    "purdue_polygon_perimeter_approx_m": 153.4366,
+    "lidar_ring_vertex_count": 10,
+    "lidar_polygon_area_approx_m2": 755.1728,
+    "lidar_polygon_intersection_over_union": 0.8294,
+    "lidar_centroid_separation_m": 1.0968,
+    "purdue_footprint_bounds_world_m": [[353.5739, 396.1057], [-153.6980, -131.2466]],
+    "placement_transform": "identity; original massing coordinate mode retained",
+    "orientation": "Retained the source orientation in campus X east/Y north axes; the FID 804 perimeter was not rotated.",
+    "position_status": "corrected to the source ring by evidence; no placement-marker adjustment"
+  },
+  "vertical_and_facade_status": {
+    "visible_storeys": "3 storeys indicated by undated source photograph; visual count, not a measured floor schedule.",
+    "wall_height_m": {"value": 9.6, "status": "estimated from three visible levels at about 3.2 m each"},
+    "roof_ridge_height_m": {"value": 12.0, "status": "estimated from undated photograph and 2022-2025 orthophoto"},
+    "chimney_top_height_m": {"value": 13.7, "status": "estimated; no elevation drawing or LiDAR vertical sample used"},
+    "façade": "Photo-backed red masonry, rectangular windows with light trim, entry hood, and raised KΣ sign. Exact dimensions and positions are estimated.",
+    "roof": "Three front gable masses and chimney are supported qualitatively by the chapter-house photo; pitches, ridge lengths, and subdivisions remain estimated.",
+    "height_measurement": "unverified"
+  }
+}
