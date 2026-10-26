@@ -1,0 +1,122 @@
+{
+  "building_id": "massing_creighton_hall_of_animal_sciences_crtn_a88d450",
+  "score": 8.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "evaluator": "Independent review using AGENT.md rubric; reopened .blend in Blender 4.5.15 LTS; inspected raw GIS JSON, source HTML snapshots, live authoritative project text, and both provided previews.",
+  "asset_sha256": "2845636bdf4151869af1fc0a6bb161a31866019c068b9e7ab3aafe1c00b70960",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": "Raw Purdue BuildingShapesZip4 snapshot identifies FID 914, BLDG_ABBR CRTN, address 270 S Russell Street, and the Creighton Hall name (spelling variant Russel). The closed WGS84 polygon has 49 non-closure vertices. Reopened asset contains the corresponding extruded plan; its 49 unique source ring vertices match ground-level mesh vertices within 0.000032 m; XY bounds differ by under 0.00002 m.",
+      "checks_passed": true
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified within source/transform limits",
+      "evidence": "The direct WGS84-to-local XY transform, using the documented campus origin and approximate equirectangular conversion, reproduces the 94.9279 x 37.4695 m source bounds. Reopened world bounds differ by 0.000018 m maximum. Vertex-wise ring transformation is used without fitting/rescaling; the source ring supplies orientation. The transform itself is approximate, not surveyed.",
+      "checks_passed": true
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "partially verified; heights estimated",
+      "evidence": "Turner\u2019s project page directly identifies a three-story teaching/research laboratory wing and a two-story animal-studies wing. The model encodes those story counts with 4 m/story schematic allowances (12 m and 8 m); neither floor-to-floor heights nor roof elevations are measured. Low-slope roof silhouette is broadly consistent with project imagery, but detailed roof equipment, parapets, and the exact split line remain unverified.",
+      "checks_passed": true
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.25,
+      "max_score": 2.0,
+      "status": "partially verified",
+      "evidence": "The Purdue-hosted page and its captioned building photo, together with Turner\u2019s project gallery, are relevant building-specific visual references. The model uses brick-colored wall masses, repeated tall glazing, light trim, and a glazed canopy. Exact window rhythm, bay dimensions, the east-side entry placement, and canopy dimensions are not verified by the available views; the entry is correctly described as schematic by its builder.",
+      "checks_passed": true
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.75,
+      "max_score": 2.0,
+      "status": "verified with presentation limitation",
+      "evidence": "Reopened successfully in Blender 4.5.15 LTS. Expected collection and object names are present; collection has one joined mesh (1,912 vertices, 1,610 polygons, no modifiers), no linked libraries, and no external image textures. Source snapshots, retrieval dates, feature identifiers, CRS/conversion, uncertainty, build evidence, and two previews are present. The 211 disconnected mesh components are expected from joined schematic glazing/trim elements. Preview render lighting makes the roofing very flat, which reduces visual inspectability but does not affect the saved geometry.",
+      "checks_passed": true
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend",
+    "reopen_inspection": "independent_grade/reopen_inspection.json",
+    "raw_sources": [
+      "sources/crtn_fid914_gis_snapshot.json",
+      "sources/turner_source_snapshot.html",
+      "sources/purdue_source_snapshot.html"
+    ],
+    "previews": [
+      "previews/crtn_three_quarter.png",
+      "previews/crtn_plan.png"
+    ],
+    "live_references": [
+      {
+        "url": "https://www.turnerconstruction.com/projects/purdue-university-hobart-russell-creighton-hall-of-animal-sciences",
+        "relevant claim": "The project is a two-part complex: three-story teaching/research lab wing and two-story animal-studies wing."
+      },
+      {
+        "url": "https://ag.purdue.edu/news/department/ansc/2023/05/ansc-graduate-student-awards-2023.html",
+        "relevant claim": "Purdue-hosted May 19, 2023 story with an Open Graph image labeled Picture of Creighton Hall; the image is visual facade context, not measured documentation."
+      }
+    ],
+    "reopen_metrics": {
+      "version": "4.5.15 LTS",
+      "asset_sha256": "2845636bdf4151869af1fc0a6bb161a31866019c068b9e7ab3aafe1c00b70960",
+      "asset_bytes": 711075,
+      "collection_count": 1,
+      "object_name": "Creighton Hall of Animal Sciences (CRTN)",
+      "object_type": "MESH",
+      "mesh_vertices": 1912,
+      "mesh_polygons": 1610,
+      "components": 211,
+      "modifiers": [],
+      "dimensions": [
+        94.92788696289062,
+        37.469482421875,
+        12.119999885559082
+      ],
+      "bounds_world_m": [
+        [
+          -484.4724426269531,
+          -389.5445556640625
+        ],
+        [
+          -690.8076171875,
+          -653.338134765625
+        ],
+        [
+          0.0,
+          12.119999885559082
+        ]
+      ],
+      "source_FID": 914,
+      "source_ABBR": "CRTN",
+      "num_levels": 5,
+      "linked_libraries": 0,
+      "mesh_bbox_xy_error_m": 1.803138775358093e-05,
+      "polygon_vertex_count": 49,
+      "ground_z_vertex_count": 73,
+      "source_unique_xy_vertex_count": 49,
+      "source_ground_vertex_max_error_m": 3.1320919556546175e-05,
+      "source_ground_vertex_exact": true
+    },
+    "source_limits": "GIS has no measured roof elevation (Extrution=0, CountOfFLO=0). NUM_LEVELS=5 is complex-level metadata and does not resolve the wing split. Visual references do not prove the modeled entry side or precise fenestration."
+  },
+  "findings": [
+    "PASS (8.50/10; threshold 8.00).",
+    "The GIS polygon and its placement/scale conversion are strongly verified; source metadata reports NUM_LEVELS=5 for the whole complex, while the project-specific Turner narrative distinguishes the two-story and three-story wings. The asset\u2019s 8 m/12 m values remain estimates.",
+    "Keep the entrance location, detailed facade rhythm, exact roof elevations, and roof equipment explicitly unverified. Do not use the visual preview alone to claim those details are accurate.",
+    "The source-to-model bounding-box check is reproducible and nearly exact. This confirms transformed extents; the evaluator did not claim a survey-grade geodetic position or independent verification of every concave boundary segment."
+  ]
+}

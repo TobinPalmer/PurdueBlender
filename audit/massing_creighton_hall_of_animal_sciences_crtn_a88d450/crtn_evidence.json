@@ -1,0 +1,156 @@
+{
+  "building_id": "massing_creighton_hall_of_animal_sciences_crtn_a88d450",
+  "name": "Hobart and Russell Creighton Hall of Animal Sciences (CRTN)",
+  "asset": "modular/buildings/massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend",
+  "collection": "Asset_massing_creighton_hall_of_animal_sciences_crtn_a88d450",
+  "retrieved_date": "2026-10-26",
+  "coordinate_system": {
+    "source_crs": "EPSG:4326 WGS 84",
+    "project_axes": "X east, Y north, Z up; meters",
+    "origin_lat_lon": [
+      40.4274,
+      -86.9137
+    ],
+    "conversion": "X=(lon+86.9137)*84810.60416539927; Y=(lat-40.4274)*111040.0; project equirectangular approximation, not surveyed"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University GIS, BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D914&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "feature_id": "FID 914 / GlobalID {3FA2C03E-4423-4F77-8144-C59578DC41F4} / BLDG_ABBR CRTN",
+      "source_date": "not supplied by GIS service; occupied timestamp 2017-12-15, built timestamp 2016-08-01",
+      "retrieved_date": "2026-10-26",
+      "snapshot": "audit/massing_creighton_hall_of_animal_sciences_crtn_a88d450/sources/crtn_fid914_gis_snapshot.json",
+      "method": "converted the closed WGS84 footprint ring into project XY; built full-plan mesh from the official polygon",
+      "uncertainty": "GIS NUM_LEVELS=5 is whole complex metadata, while Extrution=0 and CountOfFLO=0 provide no measured roof elevation; source Shape__Area is a service field and is not treated as metric area"
+    },
+    {
+      "provider": "Turner Construction Company, project page",
+      "url": "https://www.turnerconstruction.com/projects/purdue-university-hobart-russell-creighton-hall-of-animal-sciences",
+      "feature_id": "Purdue University animal sciences complex; project narrative and gallery",
+      "source_date": "project completion circa 2018; page currently accessible",
+      "retrieved_date": "2026-10-26",
+      "method": "used the published distinction between three-story teaching/research wing and two-story animal-studies wing; interpreted gallery only for massing/facade character",
+      "uncertainty": "no measured elevations or architectural plans exposed on the page",
+      "snapshot": "audit/massing_creighton_hall_of_animal_sciences_crtn_a88d450/sources/turner_source_snapshot.html"
+    },
+    {
+      "provider": "Purdue University Department of Animal Sciences / Purdue Agriculture",
+      "url": "https://ag.purdue.edu/news/department/ansc/2023/05/ansc-graduate-student-awards-2023.html",
+      "feature_id": "Purdue-hosted 2023 article photo captioned Hobart and Russell Creighton Hall of Animal Sciences",
+      "source_date": "2023-05-19 article",
+      "retrieved_date": "2026-10-26",
+      "image_url": "https://ag.purdue.edu/news/department/ansc/2023/05/_media/crtn-hall.jpg",
+      "method": "visual reference for brick facade, tall glazing, concrete trim, and glazed entrance canopy",
+      "uncertainty": "photograph does not establish exact facade bay spacing, canopy dimensions, entrance side, or roof height",
+      "snapshot": "audit/massing_creighton_hall_of_animal_sciences_crtn_a88d450/sources/purdue_source_snapshot.html"
+    }
+  ],
+  "horizontal_validation": {
+    "method": "direct ring vertex conversion using project transform; no rescaling or aggregate bounding-box fitting",
+    "vertex_count": 49,
+    "bounds_xy_m": [
+      [
+        -484.47244461107255,
+        -389.54454179895635
+      ],
+      [
+        -690.8075991561122,
+        -653.3381196912796
+      ]
+    ],
+    "position_error_m": 0.0,
+    "plan_dimensions": [
+      94.9279028121162,
+      37.4694794648326
+    ],
+    "source_rotation": "retained WGS84 ring orientation after applying the documented approximate project transform"
+  },
+  "vertical_geometry": {
+    "status": "estimated",
+    "whole_complex_level_metadata": 5,
+    "lab_wing_stories": 3,
+    "animal_studies_wing_stories": 2,
+    "estimated_lab_roof_m": 12.0,
+    "estimated_lower_wing_roof_m": 8.0,
+    "method": "4.0 m per story schematic allowance; floors and roof elevations are not measured",
+    "uncertainty": "roof parapet, mechanical equipment, floor-to-floor heights, and ground datum remain unverified"
+  },
+  "facade_and_roof": {
+    "status": "photo-derived schematic",
+    "supported": [
+      "brick exterior",
+      "large/tall glazing",
+      "light concrete elements",
+      "glazed entry canopy",
+      "contemporary low-slope roof silhouette"
+    ],
+    "unverified": [
+      "exact window spacing and dimensions",
+      "entry side/location",
+      "parapet height",
+      "roof equipment",
+      "two-wing split line"
+    ]
+  },
+  "export_validation": {
+    "reopened_in_blender": "passed",
+    "collection": "Asset_massing_creighton_hall_of_animal_sciences_crtn_a88d450",
+    "object_name": "Creighton Hall of Animal Sciences (CRTN)",
+    "object_count": 1,
+    "mesh_vertex_count": 1912,
+    "mesh_polygon_count": 1610,
+    "object_dimensions_m": [
+      94.927887,
+      37.469482,
+      12.12
+    ],
+    "modifiers": [],
+    "portable_paths": "no external textures or linked files",
+    "collection_object_count": 1,
+    "bounds_world_m": [
+      [
+        -484.472443,
+        -389.544556
+      ],
+      [
+        -690.807617,
+        -653.338135
+      ],
+      [
+        0.0,
+        12.12
+      ]
+    ],
+    "linked_libraries": 0,
+    "reopened_checks": [
+      "expected scene, collection, and object names present",
+      "one mesh object in exported collection",
+      "evaluated bounds match transformed FID 914 ring within 0.01 m in XY",
+      "asset opens with no linked libraries",
+      "no external image textures or modifiers",
+      "12.12 m roof bound retained as an estimate"
+    ]
+  },
+  "edits": [
+    "replaced inherited 1-mesh box with the FID 914 polygon extrusion and repeated schematic facade elements",
+    "corrected inherited plan bounds from approx. 94.8 x 90.9 m to the GIS ring bounds; adopted 3-story/2-story roof estimates"
+  ],
+  "preview_files": [
+    "audit/massing_creighton_hall_of_animal_sciences_crtn_a88d450/previews/crtn_three_quarter.png",
+    "audit/massing_creighton_hall_of_animal_sciences_crtn_a88d450/previews/crtn_plan.png"
+  ],
+  "independent_grade": {
+    "score": 8.5,
+    "max_score": 10,
+    "result": "PASS",
+    "review": "audit/massing_creighton_hall_of_animal_sciences_crtn_a88d450/independent_grade/result.json",
+    "report": "audit/massing_creighton_hall_of_animal_sciences_crtn_a88d450/independent_grade/report.md",
+    "remaining_uncertainty": [
+      "roof elevations are estimates",
+      "wing split orientation and entry side are unverified",
+      "exact fenestration dimensions and rhythm are schematic",
+      "roof equipment/parapets unverified"
+    ]
+  }
+}
