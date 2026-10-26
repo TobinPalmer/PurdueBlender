@@ -1,0 +1,88 @@
+{
+  "building_id": "massing_cary_quadrangle_northeast_cqne_0a76fca",
+  "asset": "modular/buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend",
+  "grade_version": "independent R2",
+  "score": 8.0,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue BuildingShapesZip4 FeatureServer FID 638 names Franklin Levering Cary Quadrangle (NE) (CQNE).",
+        "Independent comparison of 54 unique raw GIS vertices with the reopened bottom wall ring: maximum nearest-vertex difference 0.00003211 m; mean 0.00001843 m.",
+        "Plan bounds are 65.351 m east-west by 15.736 m north-south."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Reopened asset uses the expected campus-coordinate massing collection with identity location, rotation, and scale for all seven objects.",
+        "The GIS outline is transformed by the repository documented local latitude/longitude approximation and the reopened structural ring agrees at sub-millimeter precision.",
+        "World bounds include the modeled roof overhang: 65.851 x 16.416 x 16.000 m."
+      ],
+      "findings": [
+        "The repository geographic conversion is approximate and is not a surveyed CRS."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue GIS records CountOfFLO=5 and the asset renders five facade levels.",
+        "The 2013 5-ft NDHM analysis has 366 footprint cells; p90/p95 are 52.015/52.558 native units. If those values are US survey feet, they convert to 15.854/16.020 m, bracketing the modeled 16.0 m peak.",
+        "Cross-building NDHM bands show a central high region and the Purdue complex aerial depicts pitched roofs; these support a broad gable interpretation, not a surveyed exact roof profile."
+      ],
+      "findings": [
+        "The NDHM GeoTIFF declares horizontal CRS units of US survey feet but does not explicitly declare raster vertical units. Therefore 16.0 m is conditional on native values also being feet, not a verified height.",
+        "The five-floor count is an official GIS field; eave elevation, ridge elevation, and pitch remain estimates."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.5,
+      "max_score": 2.0,
+      "evidence": [
+        "The Purdue oblique aerial supports broad Cary brick, pitched-roof, and repeated-window character, but it shows the quad collectively and does not isolate CQNE.",
+        "The 1950s Purdue Archives image is of Cary Hall generally and is not identified as this northeast building; it provides historical complex context only.",
+        "The candidate has five rows of repeated windows and horizontal courses, all appropriately described as schematic/visual estimates."
+      ],
+      "findings": [
+        "No CQNE-specific elevation or clear facade photograph was supplied; exact window count/spacing, entrance location, facade materials/trim, and distinctive details are not verified.",
+        "Appearance and complex-wide imagery alone do not establish the details of this individual facade."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Fresh Blender 4.5.15 LTS reopen found the expected named asset collection in scene Building_massing_cary_quadrangle_northeast_cqne_0a76fca with 7 mesh objects.",
+        "All inspected objects have identity transforms and no modifiers; there are no external image dependencies.",
+        "Building evidence includes the raw Purdue GIS snapshot, official Purdue housing page and imagery, original NDHM tile, native measurement summary, build script, reopen validation, and rendered previews."
+      ],
+      "findings": []
+    }
+  ],
+  "evidence": [
+    "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/build_evidence.json",
+    "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/ndhm_measurement.json",
+    "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/purdue_gis_feature_638_cqne_4326.json",
+    "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/indiana_2013_ndhm_tile_29951885.tif",
+    "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/purdue_housing_cary_aerial.jpg",
+    "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/purdue_archives_cary_quad_1950s.jpg",
+    "audit/massing_cary_quadrangle_northeast_cqne_independent_grade_r2/blender_probe.json",
+    "audit/massing_cary_quadrangle_northeast_cqne_independent_grade_r2/independent_reopen_preview.png"
+  ],
+  "findings": [
+    "PASS at 8.00/10; minimum passing score is 8/10.",
+    "The conditional NDHM unit interpretation is explicitly retained as an uncertainty.",
+    "Do not claim an exact CQNE facade, entrance, or measured height from this grade."
+  ]
+}
