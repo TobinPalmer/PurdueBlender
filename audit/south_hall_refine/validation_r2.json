@@ -3,10 +3,10 @@
   "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\south_hall.blend",
   "blender_version": "5.2.3 LTS",
   "asset_collection": "Asset_south_hall",
-  "asset_object_count": 24,
-  "mesh_count": 23,
+  "asset_object_count": 25,
+  "mesh_count": 24,
   "exterior_object_count": 9,
-  "interior_object_count": 14,
+  "interior_object_count": 15,
   "root_location": [
     0.0,
     0.0,
@@ -53,10 +53,11 @@
     "SouthHall_Schematic_DataMine_Lab_Glass_Partitions_01_09",
     "SouthHall_Schematic_DataMine_Labs_Furniture_01_09",
     "SouthHall_Schematic_Lobby_Dining_Game_Amenities",
+    "SouthHall_Schematic_Public_Areas_Clipped_to_GIS_Outline",
     "SouthHall_Schematic_Connected_Public_Circulation",
     "SouthHall_Schematic_Representative_Double_Room_Walls_Furnishings"
   ],
-  "asset_sha256": "f0358b1cc5c9a9b1fbe0f0aefd99c618b9f7a2dfa46fb50d2fafd51e19e7c03c",
+  "asset_sha256": "89fbdcf4959174fc91f9477822084de73b38149cfda55cb6ad17348a9289ed06",
   "footprint_registered_overlay": {
     "source_fid": 528,
     "simplified_area_m2": 3434.5158258616434,
@@ -284,5 +285,17 @@
     "residential_shell_vertex_count": 45,
     "partition_y_local_m": 5.0,
     "partition_uncertainty": "connector/residential boundary and exact endpoint are approximate (about 3 m); verify against georeferenced architectural drawing when available"
+  },
+  "public_layout_footprint_check": {
+    "gis_fid": 528,
+    "zone_overhang_before_clip_m2": 124.98561693444857,
+    "route_overhang_before_clip_m2": 8.427457434120784,
+    "residual_overhang_after_clip_m2": 0.0,
+    "clipped_zone_area_in_asset_m2": 655.014382862025,
+    "clipped_route_area_in_asset_m2": 241.96173739193895,
+    "all_mesh_vertices_inside_or_on_outline": true,
+    "zone_triangle_count": 14,
+    "route_triangle_count": 16,
+    "layout_uncertainty": "all public zone locations and route connections remain schematic because no floor plan is available; the clipping only prevents diagram geometry crossing the GIS envelope"
   }
 }

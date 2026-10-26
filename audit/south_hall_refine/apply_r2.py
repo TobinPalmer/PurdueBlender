@@ -8,7 +8,8 @@ ASSET=os.path.join(ROOT,"modular","buildings","south_hall.blend")
 FOOTPRINT=os.path.join(ROOT,"audit","south_hall_refine","gis_footprint_r1.json")
 LAYOUT=os.path.join(ROOT,"audit","south_hall_refine","schematic_lab_centers_r1.json")
 PARTITION=os.path.join(ROOT,"audit","south_hall_refine","gis_partition_r1.json")
-assert os.path.exists(BASE) and os.path.exists(FOOTPRINT) and os.path.exists(LAYOUT) and os.path.exists(PARTITION)
+PUBLIC_GEOMETRY=os.path.join(ROOT,"audit","south_hall_refine","public_geometry_r2.json")
+assert os.path.exists(BASE) and os.path.exists(FOOTPRINT) and os.path.exists(LAYOUT) and os.path.exists(PARTITION) and os.path.exists(PUBLIC_GEOMETRY)
 bpy.ops.wm.open_mainfile(filepath=BASE)
 scene=bpy.context.scene
 asset=bpy.data.collections["Asset_south_hall"]
@@ -21,7 +22,7 @@ if root is None:
     root=bpy.data.objects.new("AssetRoot_south_hall",None); asset.objects.link(root)
 assert tuple(round(v,5) for v in root.matrix_world.translation)==(0.0,0.0,0.0), "Keep local asset root identity"
 
-fd=json.load(open(FOOTPRINT,encoding="utf-8")); ld=json.load(open(LAYOUT,encoding="utf-8")); pd=json.load(open(PARTITION,encoding="utf-8"))
+fd=json.load(open(FOOTPRINT,encoding="utf-8")); ld=json.load(open(LAYOUT,encoding="utf-8")); pd=json.load(open(PARTITION,encoding="utf-8")); pg=json.load(open(PUBLIC_GEOMETRY,encoding="utf-8"))
 ring=[tuple(map(float,p)) for p in fd["local_outline_xy_m"][:-1]]
 assert len(ring)>20 and fd["source_feature_id"]==528
 signed=sum(ring[i][0]*ring[(i+1)%len(ring)][1]-ring[(i+1)%len(ring)][0]*ring[i][1] for i in range(len(ring)))
@@ -115,6 +116,13 @@ def make_mesh(name, verts, faces, materials, mat_ids=None, uv_faces=None, collec
     collection.objects.link(ob)
     if ob.name not in asset.objects: asset.objects.link(ob)
     return ob
+
+def flat_triangle_mesh(name, triangles, z, material, collection=interior):
+    verts=[]; faces=[]
+    for tri in triangles:
+        base=len(verts); verts.extend([(float(x),float(y),z) for x,y in tri]); faces.append([base,base+1,base+2])
+    assert faces, "Expected clipped public-floor triangles"
+    return make_mesh(name,verts,faces,[material],[0]*len(faces),None,collection)
 
 def prism(name, r, z0, z1, side, cap, collection=ext, uvbrick=False):
     n=len(r); verts=[(x,y,z0) for x,y in r]+[(x,y,z1) for x,y in r]
@@ -346,36 +354,18 @@ common.box((-30,-48,.40),(Vector((1,0,0)),Vector((0,1,0)),up),(5.0,2.2,.72),2)
 common.box((-30,-48,.78),(Vector((1,0,0)),Vector((0,1,0)),up),(5.2,2.3,.08),6)
 common.finish("SouthHall_Schematic_Lobby_Dining_Game_Amenities",finish_mats,interior)
 
-# A single connected, public-area circulation spine linking the MacArthur entry, lobby,
-# Sushi Boss/dining, and game/lounge area. It is explicitly schematic (no floor plan published).
-circulation=Assembler()
-public_mats=finish_mats+[corridor_mat,public_zone_mat]
-# Broad carpeted activity zones help distinguish lobby, dining, and recreation from
-# circulation. Their sizes/locations are diagrammatic, not traced from floor plans.
-for x,y,w,d in ((10.0,-33.5,18.0,14.0),(22.0,-45.0,14.0,12.0),(-48.0,-39.0,20.0,18.0)):
-    circulation.box((x,y,.235),(Vector((1,0,0)),Vector((0,1,0)),up),(w,d,.025),11)
-public_nodes=[Vector((10.0,-33.5,0)),Vector((22.0,-45.0,0)),Vector((-48.0,-39.0,0))]
-if east_edges:
-    _ei,_a,_b,_t,_out,_L,_mid=max(east_edges,key=lambda x:x[5])
-    entry_inner=_mid-_out*4.0
-    public_nodes.insert(0,Vector((entry_inner.x,entry_inner.y,0)))
-# Prim MST over public nodes; keep path clear of room modules, width is 2.4 m.
-connected={0}; edges=[]
-while len(connected)<len(public_nodes):
-    best=None
-    for i in connected:
-        for j in range(len(public_nodes)):
-            if j in connected: continue
-            dist=(public_nodes[j]-public_nodes[i]).length
-            if best is None or dist<best[0]: best=(dist,i,j)
-    dist,i,j=best; connected.add(j); edges.append((i,j))
-for i,j in edges:
-    a=public_nodes[i]; b=public_nodes[j]; delta=b-a; length=delta.length
-    if length<.1: continue
-    direction=delta.normalized(); side=Vector((-direction.y,direction.x,0))
-    circulation.box((a+b)*.5+up*.258,(direction,side,up),(length,2.4,.045),10)
-circulation_obj=circulation.finish("SouthHall_Schematic_Connected_Public_Circulation",public_mats,interior)
-circulation_obj["layout_status"]="schematic circulation linking entry, lobby, dining, and lounge/game amenities; no floor plan available"
+# Schematic lobby/dining/game zones and their connecting public route are triangulated
+# from exact intersections with the full GIS polygon; no patch or path extends outside it.
+zone_triangles=[tri for zone in pg["zones"] for tri in zone["triangles_xy"]]
+zone_obj=flat_triangle_mesh("SouthHall_Schematic_Public_Areas_Clipped_to_GIS_Outline",zone_triangles,.2375,public_zone_mat,interior)
+zone_obj["layout_status"]="schematic lobby/dining/game area patches clipped inside GIS envelope; no floor plan available"
+zone_obj["preclip_overhang_area_m2"]=pg["total_zone_overhang_area_m2"]
+zone_obj["postclip_overhang_area_m2"]=pg["residual_overhang_after_clip_m2"]
+route_triangles=[tri for route in pg["routes"] for tri in route["triangles_xy"]]
+circulation_obj=flat_triangle_mesh("SouthHall_Schematic_Connected_Public_Circulation",route_triangles,.26,corridor_mat,interior)
+circulation_obj["layout_status"]="schematic circulation linking entry, lobby, dining, and lounge/game amenities; clipped inside GIS envelope; no floor plan available"
+circulation_obj["preclip_overhang_area_m2"]=pg["total_route_overhang_area_m2"]
+circulation_obj["postclip_overhang_area_m2"]=pg["residual_overhang_after_clip_m2"]
 
 # One representative double-occupancy room uses the published 11 ft 6 in x 16 ft 11 in plan
 # dimensions; exact room assignment and internal layout remain schematic.
@@ -412,6 +402,6 @@ asset["ground_floor_circulation_status"]="schematic connected public circulation
 # Set meaningful viewport colors and a neutral transparent workbench preview.
 scene.render.resolution_x=1280; scene.render.resolution_y=900; scene.render.resolution_percentage=100
 bpy.ops.wm.save_as_mainfile(filepath=ASSET)
-print("SOUTH_HALL_R1_SAVED",ASSET)
+print("SOUTH_HALL_R2_SAVED",ASSET)
 print("FOOTPRINT",len(ring),"verts","area_m2",area,"bounds",minx,maxx,miny,maxy)
 print("LEVELS",levels,"exterior",len(ext.all_objects),"interior",len(interior.all_objects),"asset",len(asset.all_objects))

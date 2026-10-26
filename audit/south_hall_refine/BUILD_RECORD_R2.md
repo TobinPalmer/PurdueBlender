@@ -3,7 +3,7 @@
 **Asset:** `modular/buildings/south_hall.blend`  
 **Building ID / collection / local root:** `south_hall` / `Asset_south_hall` / `AssetRoot_south_hall`  
 **Revision date:** 2026-10-25  
-**R2 asset SHA-256:** `f0358b1cc5c9a9b1fbe0f0aefd99c618b9f7a2dfa46fb50d2fafd51e19e7c03c`
+**R2 asset SHA-256:** `89fbdcf4959174fc91f9477822084de73b38149cfda55cb6ad17348a9289ed06`
 
 ## Independent review response
 
@@ -14,7 +14,7 @@ R2 addresses those items while preserving the full GIS-ground-outline comparison
 1. Added a two-face, full-height glazed bay at an approximate outer corner, spanning the seven upper residential levels. Its 6 m facade runs, dark perimeter/vertical mullions, and level transoms are based on the prominent multi-storey glazed corner visible in Purdue's 2026 construction image. Nearby punched windows are suppressed to avoid collisions. The source image is not georegistered to the GIS facade; the chosen corner, extent, interior depth, and bay dimensions remain approximate.
 2. Kept the 3.25 m residential window bay rhythm but alternated the window module between broader lounge/room glazing (1.48 × 1.92 m) and narrower bedroom openings (1.18 × 1.78 m). These dimensions/patterns are visual interpretations of the photo, not a published window schedule.
 3. Retained the low-confidence flat membrane, with darker restrained 6 m seam detailing and subtle surface variation. No usable roof image or construction detail is available, so no unsupported rooftop equipment or roof assembly is claimed.
-4. Added a continuous schematic public-area route from the MacArthur-side entry through the lobby and dining to the game/lounge zone, with differentiated public-area floor patches. The ground-floor cutaway now shows the Level 01 floor and connected route; the nine schematic lab modules and representative bedroom are hidden in this particular review view so they do not read as disconnected ground-floor rooms. They remain in the asset and remain labeled schematic.
+4. Added a continuous schematic public-area route from the MacArthur-side entry through the lobby and dining to the game/lounge zone, with differentiated public-area floor patches. The final R2 geometry clips the carpets and circulation strips to the complete GIS polygon. Before clipping, the requested carpet rectangles overhung the outline by 124.986 m² total (19.260 m² lobby, 105.726 m² game/lounge); route strips overhung it by 8.427 m² total. After clipping, both have 0.000 m² residual outside area. The ground-floor cutaway shows the Level 01 floor and connected route; the nine schematic lab modules and representative bedroom are hidden in this particular review view so they do not read as disconnected ground-floor rooms. They remain in the asset and remain labeled schematic.
 
 ## Source basis
 
@@ -47,11 +47,11 @@ R2 review images:
 - `south_hall_schematic_ground_floor_cutaway_r2.png` — connected public circulation and amenity zones.
 - `official_footprint_vs_asset_r2.png` — registered GIS polygon/base-mesh overlay.
 
-Fresh Blender 5.2.3 reopen validation is in `validation_r2.json`; it confirms the asset collection/root, no materialless mesh or unpacked image dependencies, and the R2 asset hash above. R2 was not committed, and the master/shared indexes were not touched.
+Fresh Blender 5.2.3 reopen validation is in `validation_r2.json`; it confirms 25 asset objects (24 meshes), 9 exterior objects, 15 interior objects, identity root transform, no materialless meshes or unpacked image dependencies, and the R2 asset hash above. The public-area meshes contain 655.014 m² of clipped floor zones and 241.962 m² of clipped circulation; all 30 triangle faces have vertices inside/on the GIS polygon, and their triangulated areas match the intersection calculations. The full GIS polygon and its outline-match result remain an envelope check, not structural-wall verification. R2 was not committed, and the master/shared indexes were not touched.
 
 ## Remaining uncertainties
 
-- The ArcGIS outline is not a certified wall survey; full GIS envelope and high-shell structural boundary remain separate concepts.
+- The ArcGIS outline is not a certified wall survey; full GIS envelope and high-shell structural boundary remain separate concepts. The R2 cutaway floor, carpets, and routes are constrained to that GIS envelope, which does not prove the walls follow the boundary.
 - The blue/tan site-plan split and exact Hillenbrand-link endpoint are approximate; a georeferenced architectural/site plan could materially refine both.
 - The 2026 facade image supports a multi-storey glazed bay, but its exact location on the GIS footprint cannot be matched conclusively. Bay placement/dimensions and alternating window sizes remain estimates.
 - Absolute heights/vertical units, roof build-up/seam spacing, final cladding details, entry dimensions, and floor-by-floor interiors remain unverified.
