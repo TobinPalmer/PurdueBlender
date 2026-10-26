@@ -99,9 +99,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (124 total)
+## Unfinished buildings (123 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 8 buildings, Rohan 15 buildings, Tobin 1 buildings, Arjav 10 buildings, Brady 90 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 7 buildings, Rohan 15 buildings, Tobin 1 buildings, Arjav 10 buildings, Brady 90 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -124,7 +124,7 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 
-### Buildings that still have only massing models (108)
+### Buildings that still have only massing models (107)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -133,7 +133,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rossen |
 | cary quadrangle west cqw | [`massing_cary_quadrangle_west_cqw_3d47a7d.blend`](modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend) | Rossen |
 | chi omega | [`massing_chi_omega_a9eb08d.blend`](modular/buildings/massing_chi_omega_a9eb08d.blend) | Rossen |
-| circle k | [`massing_circle_k_fa39c23.blend`](modular/buildings/massing_circle_k_fa39c23.blend) | Rossen |
 | creighton hall of animal sciences crtn | [`massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend`](modular/buildings/massing_creighton_hall_of_animal_sciences_crtn_a88d450.blend) | Rossen |
 | crosswalk commons | [`massing_crosswalk_commons_7c01ecd.blend`](modular/buildings/massing_crosswalk_commons_7c01ecd.blend) | Rossen |
 | delta tau delta | [`massing_delta_tau_delta_e06b0b5.blend`](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Rossen |

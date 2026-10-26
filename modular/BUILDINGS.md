@@ -10,6 +10,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Cary Quadrangle South (CQS) | [massing_cary_quadrangle_south_cqs_7ee2283.blend](buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend) | 1 |
 | Cary Quadrangle Northeast (CQNE) | [massing_cary_quadrangle_northeast_cqne_0a76fca.blend](buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend) | 7 |
 | Cary Quadrangle Northwest (CQNw) | [massing_cary_quadrangle_northwest_cqnw_e8a861e.blend](buildings/massing_cary_quadrangle_northwest_cqnw_e8a861e.blend) | 1 |
+| Circle K | [massing_circle_k_fa39c23.blend](buildings/massing_circle_k_fa39c23.blend) | 69 |
 | Chapel of the Good Shepherd | [massing_chapel_of_the_good_shepherd_5d4d103.blend](buildings/massing_chapel_of_the_good_shepherd_5d4d103.blend) | 1 |
 | Chaney-Hale Hall of Science | [massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend](buildings/massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend) | 1 |
 | American Railway Building | [american_railway_building.blend](buildings/american_railway_building.blend) | 693 |
