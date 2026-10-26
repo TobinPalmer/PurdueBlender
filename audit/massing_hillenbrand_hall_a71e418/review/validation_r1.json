@@ -1,0 +1,43 @@
+{
+  "asset_id": "massing_hillenbrand_hall_a71e418",
+  "asset_path": "modular/buildings/massing_hillenbrand_hall_a71e418.blend",
+  "build_script": "modular/buildings/build_massing_hillenbrand_hall_a71e418.py",
+  "blender_version": "5.2.0 LTS (bundled local headless binary; Blender MCP unavailable)",
+  "direct_reopen": "passed; see review/direct_reopen_r1.json and review/reopen_validate.log",
+  "render": "passed; review/preview_r1.png",
+  "mesh_object_count": 1,
+  "mesh_vertices": 27228,
+  "mesh_faces": 6778,
+  "object_bounds_world_m": {
+    "x": [
+      -1161.5166,
+      -1043.8494
+    ],
+    "y": [
+      -137.1206,
+      -19.4775
+    ],
+    "z": [
+      0.0,
+      30.4
+    ]
+  },
+  "checks": {
+    "identity": "verified to Purdue GIS FID 259 name/address and imagery roof context.",
+    "footprint": "rebuilt from Purdue GIS shell in EPSG:4326. GIS-derived shell bounds X -1161.3981..-1043.9688 m, Y -137.0147..-19.5937 m; red overlay in review/gis_aerial_overlay.png aligns with visible building roof. Model includes small facade/window/canopy overhangs outside shell bounds.",
+    "orientation_and_position": "verified against source GIS polygon and visually checked against Esri imagery overlay; local conversion is approximate, not survey-grade.",
+    "height": "30.4 m retained from starting asset as unverified visual estimate. GIS level/extrusion fields are inconsistent and no elevation sheet found.",
+    "floor_count": "unverified. Repeated facade divisions are schematic only; no floor-count claim is embedded.",
+    "roof": "flat massing roof with no measured parapet or rooftop equipment. Esri aerial shows more articulation than this simplified mass.",
+    "facade": "red brick and green entrance canopy are source-informed from official Purdue image; window size/count, belt courses, exact entrance wall/location remain schematic or inferred.",
+    "portability": "one mesh in expected scene/collection, identity transform, no modifiers, no external image dependencies; materials procedural.",
+    "compatibility": "the bundled Blender 5.2.0 reopened and rendered the asset. It emitted a warning that the file originated from a newer Blender 5.2.45 binary; simple mesh/material content survived this reopen, but coordinator/grader should perform its own current-version reopen."
+  },
+  "all_direct_reopen_checks_pass": true,
+  "remaining_uncertainty": [
+    "No measured elevation sheet or verified story count.",
+    "Roof articulation and rooftop volumes simplified.",
+    "Facade rhythm and entrance pavilion placement are illustrative, not dimensionally supported.",
+    "Footprint registration is based on campus GIS and orthophoto, not survey control."
+  ]
+}

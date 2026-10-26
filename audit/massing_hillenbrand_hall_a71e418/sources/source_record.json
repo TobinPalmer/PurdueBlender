@@ -1,0 +1,97 @@
+{
+  "asset_id": "massing_hillenbrand_hall_a71e418",
+  "retrieval_date": "2026-10-26",
+  "project_coordinate_convention": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040; meters, Z up; approximate campus-local projection",
+  "sources": [
+    {
+      "role": "building identity and shell footprint",
+      "provider": "Purdue University Facilities GIS / ArcGIS BuildingShapesZip4",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": "FID 259",
+      "feature_name": "Hillenbrand Residence Hall",
+      "address": "1301 3rd Street",
+      "retrieved": "2026-10-26",
+      "source_crs": "WGS 84 (EPSG:4326) from query outSR=4326",
+      "measurement_method": "Converted source polygon vertices with the project local lon/lat-to-meter formula. This polygon directly drives the rebuilt shell.",
+      "uncertainty": "The shell is exact to the source feature by construction, not an independent survey. The service lists NUM_LEVELS/CountOfFLO=10 and extrusion-related values but does not expose a reliable elevation datum or consistent height in this response."
+    },
+    {
+      "role": "current roof outline and parcel alignment check",
+      "provider": "Esri World Imagery MapServer export",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      "feature_id": "Map export centered on Hillenbrand; bbox stored in world_imagery_context_2026-10-26.url",
+      "retrieved": "2026-10-26",
+      "source_crs": "Web Mercator (EPSG:3857), 1200x1200 image",
+      "measurement_method": "Rendered the transformed FID 259 footprint as a red overlay over the imagery. Roof/image alignment supports identity and horizontal placement.",
+      "source_date": "Imagery acquisition date not exposed by this export; see tile image metadata/attribution limitations.",
+      "uncertainty": "Image is not survey control; seasonal shadows, orthorectification, source-date and tile seams can affect apparent edges."
+    },
+    {
+      "role": "official hall identity, location, program and history",
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/hillenbrand.html",
+      "retrieved": "2026-10-26",
+      "feature_id": "Hillenbrand Hall residence page",
+      "source_date": "Current page snapshot retrieved 2026-10-26; page notes hall opened 1993.",
+      "measurement_method": "Used for name/address (1301 Third Street), residential function, suite-style description, and dining court on the ground floor.",
+      "uncertainty": "Does not provide elevations, footprint measurements, story count or roof dimensions."
+    },
+    {
+      "role": "entry architecture and historic context",
+      "provider": "Purdue University Residences",
+      "url": "https://housing.purdue.edu/get-reconnected/2018/08/index.html",
+      "retrieved": "2026-10-26",
+      "feature_id": "Hillenbrand Hall Celebrates 25 Years of Innovation; official page photo Hillenbrand09.jpg",
+      "source_date": "August 2018 page; photograph capture date not specified.",
+      "measurement_method": "Visual reference for red-brick facade, glazing and green standing-seam roof over the entrance pavilion.",
+      "uncertainty": "The image is a close entrance view; it does not establish which compass-facing wall or exact dimensions."
+    },
+    {
+      "role": "campus location context",
+      "provider": "Purdue University Campus Map",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "retrieved": "2026-10-26",
+      "feature_id": "West Lafayette Campus map",
+      "source_crs": "Not used for measurement",
+      "measurement_method": "Locator/context check only.",
+      "uncertainty": "Not a survey drawing."
+    },
+    {
+      "role": "documented tower count, floor count, connections and wings",
+      "provider": "Purdue University Treasurer / Facilities project summary",
+      "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/05/fpa-Hillenbrand-Residence-Hall-Sewer-Replacement-and-Bathroom-Repair-III-IV-B-1-20-2-07.pdf",
+      "retrieved": "2026-10-26",
+      "feature_id": "Hillenbrand Residence Hall Sewer Replacement and Bathroom Repair III & IV",
+      "source_date": "PDF metadata: created 2019-08-02, modified 2019-08-07; project summary text shown on rendered page 3",
+      "measurement_method": "Page 3 states the building has two towers of eight floors each, each tower has two wings, and towers connect at first floor and basement through common areas/dining hall. Used to support tower/floor count and approximate two-wing upper plans.",
+      "uncertainty": "Proposed project documentation, not an as-built survey; does not give reliable absolute tower height, roof pitch, wing dimensions or facade dimensions."
+    }
+  ],
+  "transformed_gis_shell": {
+    "vertex_count": 62,
+    "bounds_xy_m": [
+      [
+        -1161.3980910794671,
+        -1043.9687850511211
+      ],
+      [
+        -137.0146593830259,
+        -19.593714825293773
+      ]
+    ],
+    "plan_area_m2_approx": 6257.891,
+    "method": "shoelace area after project local conversion; source Shape__Area is in service geometry units and differs due to its projection; not compared directly"
+  },
+  "raw_snapshots": [
+    "sources/hillenbrand_gis_fid259_query.json",
+    "sources/gis_layer_metadata.json",
+    "sources/purdue_residences_hillenbrand_2026-10-26.html",
+    "sources/hillenbrand_entrance_official.jpg",
+    "sources/purdue_residences_hillenbrand_25th_2018.html",
+    "sources/purdue_campus_map_2025.pdf",
+    "sources/world_imagery_context_2026-10-26.jpg",
+    "sources/world_imagery_context_2026-10-26.url",
+    "sources/purdue_treasurer_hillenbrand_two_towers_2023.pdf",
+    "sources/treasurer_hillenbrand_page-3.png"
+  ]
+}

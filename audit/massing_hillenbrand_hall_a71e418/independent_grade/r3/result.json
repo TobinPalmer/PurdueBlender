@@ -1,0 +1,106 @@
+{
+  "asset_id": "massing_hillenbrand_hall_a71e418",
+  "iteration": "r3",
+  "score": 8.0,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": [
+        "Purdue Facilities GIS BuildingShapesZip4 FID 259 names Hillenbrand Residence Hall at 1301 3rd Street; the official Purdue Residences page independently matches the identity and address.",
+        "The saved mesh XY bounds match the transformed 62-vertex GIS polygon within 0.0000 m. I inspected the GIS-on-Esri aerial overlay; the outline follows the building footprint/roof perimeter closely, including the connected wings."
+      ],
+      "limitations": [
+        "The polygon directly drives the mesh, so bound agreement alone is not independent; the aerial provides a visual cross-check but not survey control."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Direct-reopen bounds are X -1161.398..-1043.969 m, Y -137.015..-19.594 m, Z 0.000..25.359 m; the XY bounds agree with the transformed GIS shell within 0.0000 m.",
+        "The model object has zero location/rotation offsets and unit scale in the campus-coordinate massing frame. The polygon orientation and aerial overlay agree visually."
+      ],
+      "limitations": [
+        "The project lon/lat conversion is approximate; imagery registration and GIS coordinates are not survey-grade."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "The saved Purdue Treasurer project summary (rendered page 3) states there are two towers of eight floors each, each tower has two wings, and towers connect at the first floor and basement.",
+        "The saved aerial shows two separate tower roof crowns and the broad lower connected footprint; the preview models two eight-level towers with approximate wing breaks and hipped caps.",
+        "The 25.35936 m roof peak is explicitly labeled estimated; source GIS height fields have undocumented units and conflicting values."
+      ],
+      "limitations": [
+        "No measured elevation, exact floor elevations, wing dimensions, roof pitch, ridge height, or as-built confirmation is available. The caps and upper-level wing interpretation remain approximations."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.8,
+      "max_score": 2,
+      "evidence": [
+        "I inspected the official Purdue entrance photograph: it supports red brick, glazing, and a prominent green standing-seam canopy/pavilion.",
+        "The preview shows a brick-colored facade, repeated dark window apertures, and green roof caps; these are plausible schematic cues rather than measured facade details.",
+        "The builder removed the entrance geometry because the photograph does not establish which compass-facing wall contains it; the model therefore omits a distinctive documented feature."
+      ],
+      "limitations": [
+        "No independent facade drawings or measured window rhythm/size, material extent, entrance position, or canopy geometry."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Independent saved-file reopen record reports Blender 5.2.0 LTS, expected scene/collection, one mesh (8714 vertices; 2133 faces), identity transform, no modifiers, and no external images; all recorded direct checks pass.",
+        "The preview, validation record, GIS overlay, source record, official PDF and page rendering are present. 10/10 source snapshots listed by the source record are present.",
+        "The source record identifies URLs, providers, GIS feature ID, retrieval date, source CRS, coordinate/measurement methods, and uncertainties. Asset identity and export collection names remain stable."
+      ],
+      "limitations": [
+        "The validation was performed with Blender 5.2.0 LTS; portability was directly checked in that version."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_hillenbrand_hall_a71e418.blend",
+    "preview": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_hillenbrand_hall_a71e418\\review\\preview_r3.png",
+    "aerial_overlay": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_hillenbrand_hall_a71e418\\review\\gis_aerial_overlay.png",
+    "official_entrance_photo": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_hillenbrand_hall_a71e418\\sources\\hillenbrand_entrance_official.jpg",
+    "treasurer_source_pdf": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_hillenbrand_hall_a71e418\\sources\\purdue_treasurer_hillenbrand_two_towers_2023.pdf",
+    "treasurer_page_render": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_hillenbrand_hall_a71e418\\sources\\treasurer_hillenbrand_page-3.png",
+    "source_record": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_hillenbrand_hall_a71e418\\sources\\source_record.json",
+    "direct_reopen_record": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_hillenbrand_hall_a71e418\\review\\direct_reopen_r3.json",
+    "validation_record": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_hillenbrand_hall_a71e418\\review\\validation_r3.json",
+    "xy_model_minus_gis_bounds_m": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        -0.0,
+        -0.0
+      ]
+    ],
+    "max_absolute_xy_bound_delta_m": 0.0,
+    "all_listed_raw_snapshots_present": true,
+    "raw_snapshots_present_count": 10,
+    "raw_snapshots_listed_count": 10,
+    "direct_reopen_checks_passed": true,
+    "visual_inspection": "Independently inspected preview_r3.png, gis_aerial_overlay.png, official entrance photo, and rendered Treasurer PDF page 3."
+  },
+  "findings": [
+    "PASS at the 8/10 repository threshold, with the score relying on strong identity/footprint and export evidence.",
+    "Height remains an estimate and must not be treated as measured; the floor count is documented in a Purdue project summary, which is not an as-built drawing.",
+    "The distinctive entrance canopy is visible in the official photograph but absent from the model because its position could not be resolved. Facade bays and roof details are schematic.",
+    "Upper tower wing layout and roof interpretation are only partially supported by the text summary and aerial image; exact dimensions remain unverified."
+  ]
+}
