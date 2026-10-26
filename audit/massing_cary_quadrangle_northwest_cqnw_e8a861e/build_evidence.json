@@ -1,0 +1,161 @@
+{
+  "asset_id": "massing_cary_quadrangle_northwest_cqnw_e8a861e",
+  "candidate_status": "Ready for fresh independent grade after revision; not yet passed",
+  "assignment": {
+    "owner": "Rossen",
+    "readme_row": "README.md assigns the Cary Quadrangle Northwest library to Rossen.",
+    "manifest_id": "massing_cary_quadrangle_northwest_cqnw_e8a861e",
+    "asset_path": "modular\\buildings\\massing_cary_quadrangle_northwest_cqnw_e8a861e.blend",
+    "collection": "Asset_massing_cary_quadrangle_northwest_cqnw_e8a861e"
+  },
+  "master_position_check": {
+    "master_file": "modular/purdue_campus_linked.blend",
+    "coordinate_contract": "Massing remains directly in campus world coordinates; identity object transforms.",
+    "manifest_reference_bounds_world_m": [
+      [
+        -432.5511,
+        -367.0179
+      ],
+      [
+        584.5146,
+        599.5049
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ],
+    "prior_master_audit": {
+      "aabb_center_difference_m": 1.463,
+      "aabb_width_difference_m": -2.272,
+      "aabb_depth_difference_m": -3.267,
+      "aabb_overlap_iou": 0.7916,
+      "position_status": "unverified"
+    },
+    "action": "No master changes or placement corrections; replacement geometry is derived from official FID 647 using the repository coordinate conversion."
+  },
+  "baseline_inspection": {
+    "path": "modular/buildings/massing_cary_quadrangle_northwest_cqnw_e8a861e.blend",
+    "objects": 1,
+    "mesh_vertices": 16,
+    "dimensions_m": [
+      65.53,
+      14.99,
+      16.0
+    ],
+    "issue": "flat generic extrusion; prior source audit marked shell and height unverified"
+  },
+  "source_backed_changes": [
+    "Rebuilt shell from Purdue BuildingShapesZip4 FID 647; 112 GIS vertices simplified to 55 at 0.5 m tolerance.",
+    "Added stone foundation band and brick wall shell, with four repeated window rows and stone bands as schematic interpretations.",
+    "Changed generic flat top to an east-west gabled roof consistent with 2023 roof imagery; added six repeated gable interruptions visible in the roof plan.",
+    "Added one pointed-arch entrance on inferred south/court-facing long side; its exact position and form remain unverified.",
+    "Estimated ridge at 14.9 m based on 2018 NDHM median 14.00 m and p10-p90 11.95-15.87 m."
+  ],
+  "after_build": {
+    "asset_id": "massing_cary_quadrangle_northwest_cqnw_e8a861e",
+    "source_fid": 647,
+    "source_name": "Franklin Levering Cary Quadrangle (NW)",
+    "expected_object_name": "Cary Quadrangle Northwest (CQNW)",
+    "export_object_count": 1,
+    "raw_vertices": 112,
+    "built_vertices": 55,
+    "footprint_bounds_world_m": [
+      [
+        -432.46146455503776,
+        -364.84866811887304
+      ],
+      [
+        582.0829883582223,
+        600.3406602091513
+      ]
+    ],
+    "plan_dimensions_m": [
+      67.61279643616473,
+      18.257671850929
+    ],
+    "simplification_tolerance_m": 0.5,
+    "foundation_top_m": 0.85,
+    "wall_top_estimate_m": 12.05,
+    "eaves_estimate_m": 12.2,
+    "ridge_estimate_m": 14.9,
+    "visible_window_rows_interpretation": 4,
+    "roof_gable_projection_count": 6,
+    "asset_path": "modular\\buildings\\massing_cary_quadrangle_northwest_cqnw_e8a861e.blend"
+  },
+  "reopen_validation": {
+    "blender_version": "4.5.15 LTS",
+    "asset_collection_found": true,
+    "asset_object_count": 1,
+    "mesh_object_count": 1,
+    "named_object": "Cary Quadrangle Northwest (CQNW)",
+    "evaluated_bounds_m": [
+      [
+        -433.12060546875,
+        -364.09912109375
+      ],
+      [
+        581.2255249023438,
+        601.30517578125
+      ],
+      [
+        0.0,
+        14.899999618530273
+      ]
+    ],
+    "checks": {
+      "scene_name_matches": true,
+      "nonempty_asset_collection": true,
+      "one_named_manifest_object": true,
+      "all_asset_objects_mesh": true,
+      "no_asset_modifiers": true,
+      "unit_object_scales": true,
+      "identity_object_rotation": true,
+      "expected_coordinates_world_space": true,
+      "no_unpacked_external_dependencies": true,
+      "all_pass": true
+    },
+    "external_files": []
+  },
+  "validation_scope": "Opened the saved individual library with Blender 4.5.15, evaluated each collection mesh, checked expected scene and collection, geometry bounds, identity transforms, modifiers, and external dependencies. No master file changed.",
+  "remaining_uncertainty": [
+    "Campus map projection uses the repository local approximation and is not a survey CRS.",
+    "GIS Shape_Area/Shape_Length fields conflict with area/perimeter computed from returned polygon; model uses polygon geometry.",
+    "GIS five-level fields do not clarify whether basement/attic are counted; four facade rows plus raised base are an interpretation.",
+    "NDHM supports roof surface height but not eaves/ridge split; 14.9 m peak is estimated.",
+    "Aerial supports roof outline, but exact dormer count and facade configuration have no CQNW-specific elevation/photo.",
+    "Historic Cary Archives photos are contextual only; the 1928 photo predates CQNW construction in 1938. Entrance location is inferred.",
+    "A CQNW-specific archive folder exists but its physical contents are not online; facade and entrance remain unverified."
+  ],
+  "candidate_preview": "cqnw_preview.png",
+  "top_preview": "cqnw_top_preview.png",
+  "source_record": "source_record.json",
+  "export_contract_revision": {
+    "finding": "Initial candidate exported 21 mesh objects; manifest expected one object named Cary Quadrangle Northwest (CQNW).",
+    "change": "Joined every static asset mesh while preserving material assignments, and renamed the result to the exact manifest object name.",
+    "result": {
+      "object_count": 1,
+      "object_name": "Cary Quadrangle Northwest (CQNW)",
+      "mesh_vertices": 4678,
+      "mesh_faces": 3444,
+      "checks": {
+        "scene_name_matches": true,
+        "nonempty_asset_collection": true,
+        "one_named_manifest_object": true,
+        "all_asset_objects_mesh": true,
+        "no_asset_modifiers": true,
+        "unit_object_scales": true,
+        "identity_object_rotation": true,
+        "expected_coordinates_world_space": true,
+        "no_unpacked_external_dependencies": true,
+        "all_pass": true
+      }
+    }
+  },
+  "source_search_revision": {
+    "finding": "Purdue Archives has a CQNW-specific Office of the Architect folder locator for Cary Halls (Northwest and West), 1937-1939, folder 8.",
+    "snapshot": "sources/purdue_architect_records_cary_nw_west_folder8_catalog_snapshot.json",
+    "limitation": "It is a physical combined folder. The online record does not provide a digitized elevation/photo or identify which document formats are in this specific folder. Additional archived Cary images are undated or predate the 1938 NW building, so they remain contextual and were not used as CQNW-specific facade evidence.",
+    "action": "Retained the aerial-backed gable roof and disclosed that facade rows, entry, and period styling are interpretations."
+  }
+}

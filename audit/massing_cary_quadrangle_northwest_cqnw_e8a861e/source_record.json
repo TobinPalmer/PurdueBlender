@@ -1,0 +1,118 @@
+{
+  "asset_id": "massing_cary_quadrangle_northwest_cqnw_e8a861e",
+  "building_identity": "Franklin Levering Cary Quadrangle (NW), Purdue campus code CQNW; official GIS FID 647; historic database building record 358.",
+  "retrieved_date": "2026-10-26",
+  "coordinate_contract": "Repository approximate WGS84-to-campus transform; X east, Y north, Z up; meters. Not a surveyed CRS.",
+  "sources": [
+    {
+      "role": "authoritative footprint and campus GIS identifiers",
+      "provider": "Purdue University GIS / BuildingShapesZip4 FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D647&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "snapshot": "sources/purdue_building_shapes_fid647_2026-10-26.geojson",
+      "source_crs": "EPSG:4326 WGS 84 (returned geometry)",
+      "feature": "FID 647; BLDG_ABBR=CQNW; BUILDING_N=Franklin Levering Cary Quadrangle (NW); NUM_LEVELS=5; CountOfFLO=5; Extrution=48; Shape_Area=1561.22; Shape_Length=255.98; ADDRESS=1008 W Stadium Avenue.",
+      "measurement_method": "112 raw vertices converted using repository approximation; 0.5 m iterative vertex simplification for modeled shell; area/perimeter computed from projected ring. Model bounds (-432.46146455503776, 582.0829883582223, -364.65605279713407, 600.3406602091513); plan dimensions approximately 67.76 m long x 16.48 m wide; polygon area 903.1 m2.",
+      "uncertainty": "GIS Shape_Area/Shape_Length attributes do not agree with measurements of returned geometry; model uses returned polygon. Extrution units are undocumented and not used as a sole height basis."
+    },
+    {
+      "role": "roof plan / current site context",
+      "provider": "Indiana Geographic Information Office / IndianaMap",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer/exportImage?bbox=-86.9188691437782,40.4325821018404,-86.91792965163421,40.432866526118595&bboxSR=4326&size=1400,500&imageSR=4326&format=jpg&f=image",
+      "snapshot": "sources/indiana_2023_orthophoto_cqnw.jpg",
+      "overlay": "sources/cqnw_orthophoto_footprint_overlay.png",
+      "source_date": "2023 statewide orthophotography (service name); capture date not returned by export endpoint",
+      "source_crs": "EPSG:4326 requested/exported, resampled",
+      "measurement_method": "Visual comparison of roof plan and authoritative polygon overlay; not used to infer height or facade dimensions.",
+      "uncertainty": "Image is an orthorectified, resampled roof view. It supports a long east-west gabled mass and repeated roof interruptions but cannot prove facade openings, exact roof elevations, or entrance."
+    },
+    {
+      "role": "independent estimated vertical corroboration",
+      "provider": "Purdue Geospatial Data Science Lab / Indiana Digital Forestry",
+      "url": "https://giselevationingov.s3.us-east-2.amazonaws.com/ndhmoptimized/statewide/2018/SPW/5ft/in2018_29951885_12_ndhm.tif",
+      "snapshot": "sources/in2018_29951885_12_ndhm.tif",
+      "analysis": "sources/cqnw_ndhm_analysis.json",
+      "source_date": "2018 LiDAR collection",
+      "source_crs": "EPSG:2968 NAD83(HARN) / Indiana West (ftUS)",
+      "measurement_method": "Transformed FID 647 WGS84 polygon to EPSG:2968 and sampled pixel centers strictly inside. Georeferencing uses tile origin (2,995,000 ftUS, 1,890,000 ftUS), 5 ft pixel size. Values are normalized surface height in feet; vegetation/edge mixed pixels remain possible.",
+      "result": {
+        "p10": 11.948789907101299,
+        "median": 14.00254423738828,
+        "p90": 15.870960207496587
+      },
+      "uncertainty": "NDHM estimates roof/vegetation surface above terrain, not a surveyed wall, eave, or ridge height; edge pixels and canopy can affect samples."
+    },
+    {
+      "role": "building-specific historical identity and construction context",
+      "provider": "Purdue Campus Facilities and Buildings Historic Database; Purdue University Archives and Special Collections",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/358",
+      "snapshot": "sources/purdue_historic_building_entry_358_2026-10-26.html",
+      "structured_snapshot": "sources/purdue_historic_building_entry_358_structured_snapshot.json",
+      "source_date": "Historical record describes construction/opening in 1938; entry accessed 2026-10-26",
+      "source_crs": "Not applicable",
+      "measurement_method": "Direct record 358 HTML payload: NW was fourth Cary building, built for 116 residents; one further building followed in 1939; complex remodeled 2000-2006.",
+      "uncertainty": "The entry has no building-specific facade elevation or photograph. Search-indexed database description says 48,474 gross square feet and architect Scholer Corporation; these attributes are not used as geometric measurements."
+    },
+    {
+      "role": "Cary architectural context only",
+      "provider": "Purdue University Libraries, Karnes Archives and Special Collections, Purdue Buildings and Campus Scenes",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/165/",
+      "image_url": "https://earchives.lib.purdue.edu/iiif/2/pbuildings:165/full/full/0/default.jpg",
+      "snapshot": "sources/purdue_archives_cary_exterior_1928_item165.jpg",
+      "metadata_snapshot": "sources/purdue_archives_cary_image_165_iiif_manifest_2026-10-26.json",
+      "source_date": "1928",
+      "source_crs": "Not applicable",
+      "measurement_method": "Qualitative architecture context. Image shows a long brick Cary facade, repeated vertically aligned window bays, a stone base, roof dormers and projecting gabled bays.",
+      "uncertainty": "Catalog identifies Cary Quadrangle but not its specific unit. Since CQNW was built in 1938 and this photo is dated 1928, it cannot depict CQNW; style details inform broad context only and are not asserted as building-specific evidence. Copyright Purdue University Libraries; image is retained as a research snapshot only."
+    },
+    {
+      "role": "Cary complex exterior context only",
+      "provider": "Purdue University Libraries, Karnes Archives and Special Collections",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/159/",
+      "image_url": "https://earchives.lib.purdue.edu/digital/iiif/pbuildings/159/full/full/0/default.jpg",
+      "snapshot": "sources/purdue_archives_cary_quad_exterior_1950s_item159.jpg",
+      "source_date": "1950s, archive catalog description",
+      "source_crs": "Not applicable",
+      "measurement_method": "Qualitative Cary-complex context only.",
+      "uncertainty": "The catalog does not identify a specific building unit; not used to infer CQNW-specific facade form or entrance."
+    },
+    {
+      "role": "current residence-hall identity and renovation context",
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
+      "snapshot": "sources/purdue_housing_cary_quad_2026-10-26.html",
+      "source_date": "Page modified 2026-09-24",
+      "source_crs": "Not applicable",
+      "measurement_method": "Page identifies Cary as historic all-male housing and notes four outer wings (including NW) renovated in 2007; two-room connecting bathroom suites.",
+      "uncertainty": "Complex-wide page; no unit-specific elevation or dimensions."
+    },
+    {
+      "role": "CQNW-specific architectural archive locator (no digitized drawing accessed)",
+      "provider": "Purdue University Archives and Special Collections, Purdue University Office of the Architect records",
+      "url": "https://archives.lib.purdue.edu/repositories/2/archival_objects/2131",
+      "snapshot": "sources/purdue_architect_records_cary_nw_west_folder8_catalog_snapshot.json",
+      "source_date": "1937-1939 folder",
+      "source_crs": "Not applicable",
+      "measurement_method": "Catalog identifies the folder as Cary Halls (Northwest and West), 1937-1939. It is a building-specific locator; no geometry is measured from it.",
+      "uncertainty": "The folder is physical, and direct catalog access returned HTTP 403 in this retrieval. Catalog collection scope mentions blueprints generally but does not establish a facade sheet in this folder. Consult the folder before making elevation-specific claims."
+    }
+  ],
+  "geometry_measurements": {
+    "raw_gis_vertices": 112,
+    "model_simplification_m": 0.5,
+    "projected_plan_area_m2": 903.08,
+    "projected_perimeter_m": 194.82,
+    "long_axis_length_m": 67.76,
+    "short_axis_length_m": 16.48,
+    "long_axis_orientation_deg_from_east": -2.838,
+    "elevation_samples": 385
+  },
+  "model_interpretations": [
+    "GIS outline provides the model plan. The GIS Shape_Area/Shape_Length statistics conflict with the returned polygon; source polygon geometry is used.",
+    "Current aerial supports a long east-west roof plan with three large repeated interruptions visible on the two long roof slopes. Their simplified modeled form and count remain aerial interpretation.",
+    "GIS records five levels but does not document the counting convention. Four window rows plus a raised stone base are modeled; the relation of five levels to basement/attic remains uncertain.",
+    "Model ridge is 14.9 m, an estimate selected within the NDHM p10-p90 roof-surface range (11.95-15.87 m); no surveyed eave/ridge height exists in the consulted sources.",
+    "Brick/stone palette, repeated sash windows, stone courses and pointed-arch entry are Cary-period context, not verified details specific to CQNW. The entrance is placed on the courtyard-facing south long side based on building arrangement; exact entrance location is unverified.",
+    "A building-specific Office of the Architect archive folder (Cary Halls Northwest and West, 1937-1939) was found. It is not digitized here; its folder groups NW with West and the catalog does not expose a drawing, so it cannot validate facade or entrance geometry."
+  ]
+}
