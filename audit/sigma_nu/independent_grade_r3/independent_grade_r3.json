@@ -1,0 +1,115 @@
+{
+  "building_id": "massing_house_301841330_f58ae87",
+  "grader": "independent_grader_r3",
+  "grade_round": 3,
+  "score": 8.0,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Raw Purdue GIS FeatureServer snapshot identifies FID 758 as SOSN / GREEK at 1301 Tower Dr.",
+        "In a fresh Blender process, I compared all 10 source ring vertices to the saved House_301841330 base ring in both nearest-neighbor directions; maximum error was 0.000037491 m.",
+        "Fall 2019 Beta Zeta newsletter page contains a 1301 address plaque and chapter-house exterior imagery, independently supporting identity."
+      ],
+      "uncertainty": [
+        "Purdue GIS record describes a building outline, not a surveyed structural-wall line; it is a strong identity/shape proxy, not a verified wall footprint."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": [
+        "Saved footprint coordinates reproduce the documented local approximate WGS84-to-campus transform from the Purdue GIS ring; independently computed horizontal bound extents are approximately 33.78 m east-west by 29.82 m north-south.",
+        "Fresh-process saved-asset bounds are [[-1009.4022827148438, -975.5484008789062], [606.5393676757812, 636.4332885742188], [0.0, 7.449999809265137]]; the footprint shell remains in the GIS-derived campus frame without translation or rotation.",
+        "OSM Tower Drive context supports adjacency and a north/northwest facade hypothesis."
+      ],
+      "uncertainty": [
+        "The project's transform is a local approximation, not a surveyed CRS; facade bearing is an inference because newsletter photos are not georeferenced. GIS plan polygon may be roof edge rather than wall edge."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 0.9,
+      "max_score": 2.0,
+      "evidence": [
+        "The Spring 2022 newsletter publisher's page 0 identifies a First Floor Blue Room, Second Floor Bathroom, and Third Floor Study Room; this supports at least three occupied levels, not exact exterior floor lines or which levels are above grade. Verified in the publisher's rendered-page text and the saved page-0 thumbnail (https://www.epageflip.net/i/1467079-spring-2022-newsletter).",
+        "Fresh Blender inspection measures the saved model's top at 7.450 m; model script labels 7.2 m wall height and 7.45 m roof top as estimates.",
+        "The saved model has a shallow flat/parapet cap, but available chapter newsletter photos do not establish the roof silhouette or dimensions."
+      ],
+      "uncertainty": [
+        "No source measures absolute height, floor elevations, number of above-grade floors, or roof form. Retained as provisional estimates; most of this criterion is unsupported."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": [
+        "Fall 2019 newsletter photo directly shows the chapter-house exterior at 1301 Tower Drive: red/brown brick, light masonry/trim, a centered recessed entrance/canopy, repeated openings, and a projecting side bay are broadly reflected in the asset and preview.",
+        "Model uses a generalized light lower band and red brick upper walls, two rows of front openings, central entrance, horizontal bands, and one restrained side bay; this aligns at broad compositional level with the cited photos."
+      ],
+      "uncertainty": [
+        "Photographs are perspective-distorted and partly occluded; exact opening counts, spacing, dimensions, story lines, trim profiles, and mapping of pictured facade to a specific GIS edge are unverified. The dark preview underrepresents detail but is a render/lighting limitation, not additional evidence."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "Fresh Blender 5.2.3 load found the expected scene and export collection with 29 mesh objects; the asset also contains a separate review-only camera/light collection.",
+        "Independent inspection found no file-backed textures ([]) and no linked Blender libraries ([]); geometry is self-contained.",
+        "Dedicated build script, preview, raw GIS snapshot, road context, assessor snapshot, newsletter captures, and a source register with URLs/providers/dates/CRS/methods/uncertainties are present."
+      ],
+      "uncertainty": [
+        "The official foundation-house image is referenced in the source register but is not preserved as a local raw image snapshot. It is not essential to the grade because the newsletter exterior and GIS establish identity and broad facade cues."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_house_301841330_f58ae87.blend",
+    "fresh_process_blender_version": "5.2.3 LTS",
+    "asset_sha256": "23d795b2af22e73b9335193b6205398678aef75acce65ec76242de6a35edaa04",
+    "source_fid": 758,
+    "source_ring_vertices": 10,
+    "saved_base_ring_vertices": 10,
+    "symmetric_nearest_vertex_error_m": 3.749126333686267e-05,
+    "saved_asset_bounds_m": [
+      [
+        -1009.4022827148438,
+        -975.5484008789062
+      ],
+      [
+        606.5393676757812,
+        636.4332885742188
+      ],
+      [
+        0.0,
+        7.449999809265137
+      ]
+    ],
+    "asset_collection_object_count": 29,
+    "asset_collection_types": {
+      "MESH": 29
+    },
+    "body_modifiers": [],
+    "external_file_images": [],
+    "linked_libraries": [],
+    "preview": "audit/sigma_nu/sigma_nu_preview.png",
+    "newsletter_photo": "audit/sigma_nu/sources/beta_zeta_fall_2019_newsletter_page2_900.jpg",
+    "spring_newsletter_html": "audit/sigma_nu/sources/beta_zeta_spring_2022_newsletter_page.html",
+    "raw_gis": "audit/sigma_nu/sources/purdue_gis_fid_758.json"
+  },
+  "findings": [
+    "This r3 saved asset passes the required 8/10 threshold based on direct inspection of its geometry and current source evidence.",
+    "Footprint and identity are strong; exactness is to the Purdue GIS outline, whose boundary is not known to be the structural wall.",
+    "The newsletter provides evidence for at least three occupied floor levels and broad front/side facade cues. It does not support the model's absolute height or roof profile, which remain estimates.",
+    "Orientation toward Tower Drive is contextually plausible but remains inferred because the chapter-house images are not georeferenced."
+  ]
+}
