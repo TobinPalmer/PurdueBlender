@@ -54,6 +54,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Winifred Parker Hall | [winifred_parker_hall.blend](buildings/winifred_parker_hall.blend) | 582 |
 | Yue-Kong Pao Hall | [massing_yue_kong_pao_hall_a3cb766.blend](buildings/massing_yue_kong_pao_hall_a3cb766.blend) | 363 |
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](buildings/zeta_tau_alpha.blend) | 563 |
+| Zundo Family Dentistry | [zundo_family_dentistry.blend](buildings/zundo_family_dentistry.blend) | 275 |
 
 ## Newly added buildings — October 24–25, 2026
 
