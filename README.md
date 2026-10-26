@@ -66,7 +66,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Purdue Memorial Union | [purdue_memorial_union.blend](modular/buildings/purdue_memorial_union.blend) | Finished | [8.0/10](audit/purdue_memorial_union_independent_grade/independent_grade_r4.md) | — |
 | R. B. Wetherill Laboratory of Chemistry | [wetherill_laboratory_of_chemistry.blend](modular/buildings/wetherill_laboratory_of_chemistry.blend) | Finished | 8.3/10 | — |
 | Rawls Hall | [rawls_hall.blend](modular/buildings/rawls_hall.blend) | In progress | 7.0/10 | Tobin |
-| Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](modular/buildings/ray_w_herrick_laboratories.blend) | In progress | 7.2/10 | Tobin |
+| Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](modular/buildings/ray_w_herrick_laboratories.blend) | Finished | [8.1/10](audit/ray_w_herrick_refine/independent_grade_r2.md) | — |
 | Ross Ade | [ross_ade.blend](modular/buildings/ross_ade.blend) | Finished | [8.0/10](audit/ross_ade/independent_grade.md) | — |
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](modular/buildings/massing_samara_f6b8e61.blend) | Finished | [8.6/10](audit/samara/independent_grade.json) | — |
 | South Hall | [south_hall.blend](modular/buildings/south_hall.blend) | Finished | [8.2/10](audit/south_hall_refine/independent_grade_r2.md) | — |
@@ -78,11 +78,11 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (172 total)
+## Unfinished buildings (171 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 72 buildings, Arjav 10 buildings, Brady 40 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 71 buildings, Arjav 10 buildings, Brady 40 buildings.
 
-### Detailed models still in progress or awaiting a grade (38)
+### Detailed models still in progress or awaiting a grade (37)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -118,7 +118,6 @@ This list excludes individual house parcels. The detailed models that are still 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 | Rawls Hall | [`rawls_hall.blend`](modular/buildings/rawls_hall.blend) | 7.0/10 | Tobin |
-| Ray W. Herrick Laboratories | [`ray_w_herrick_laboratories.blend`](modular/buildings/ray_w_herrick_laboratories.blend) | 7.2/10 | Tobin |
 
 | Tarkington Hall | [`tarkington_hall.blend`](modular/buildings/tarkington_hall.blend) | Not graded | Tobin |
 | University Hall | [`university_hall.blend`](modular/buildings/university_hall.blend) | Not graded | Tobin |
@@ -270,5 +269,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 ## Adding a building
 
 Follow [AGENT.md](AGENT.md) for the required modular build and grading process.
+
 
 

@@ -79,10 +79,11 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](buildings/native_american_educational_and_cultural_center_nacc.blend) | 806 |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 572 |
 | Physics Building | [physics_building_phys_3bf42f3.blend](buildings/physics_building_phys_3bf42f3.blend) | 319 |
-| Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](buildings/ray_w_herrick_laboratories.blend) | 89 |
+| Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](buildings/ray_w_herrick_laboratories.blend) | 80 |
 
 SAMARA retains its legacy massing filename and campus-coordinate direct link for compatibility with the existing master. Its measured geometry, independent grade, and remaining registration uncertainty are documented in the [SAMARA evidence record](../audit/samara/EVIDENCE.md).
 
 CREC retains its legacy massing filename and campus-world direct-link coordinates for compatibility with the existing master. Its independently graded geometry (8.1/10) and remaining roof/interior uncertainty are documented in the [CREC evidence record](../audit/france_a_cordova_rec_center/source_record.json).
+
 
 
