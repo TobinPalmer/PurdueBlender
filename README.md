@@ -4,7 +4,7 @@ This project tracks detailed campus models separately from the remaining massing
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-## Detailed models: status and latest grader score (112 buildings)
+## Detailed models: status and latest grader score (113 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -112,6 +112,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | University Book Store | [massing_university_book_store_717bf2c.blend](modular/buildings/massing_university_book_store_717bf2c.blend) | Finished | [8.25/10](audit/purdue_university_book_store/independent_grade/grade.json) | — |
 | University Church | [massing_university_church_84b2a1b.blend](modular/buildings/massing_university_church_84b2a1b.blend) | Finished | [8.2/10](audit/purdue_university_church/independent_grade_revised/result.json) | — |
 | University Lutheran Church | [massing_university_lutheran_church_20903f1.blend](modular/buildings/massing_university_lutheran_church_20903f1.blend) | Finished | [8.5/10](audit/university_lutheran_church/independent_grade_final/result.json) | — |
+| University Street Parking Garage | [massing_university_street_parking_garage_pgu_be81bec.blend](modular/buildings/massing_university_street_parking_garage_pgu_be81bec.blend) | Finished | [8.15/10](audit/university_street_garage_pgu/independent_grade_final/result.json) | — |
 | University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | Finished | [8.0/10](audit/university_hall_refine/independent_grade_r7.md) | � |
 | Walc | [walc.blend](modular/buildings/walc.blend) | Finished | [8.25/10](audit/walc_refine/independent_grade_r5.md) | — |
 | Wang Hall | [massing_wang_hall_wang_0dac5ab.blend](modular/buildings/massing_wang_hall_wang_0dac5ab.blend) | Finished | [8.4/10](audit/wang_hall/independent_grade_final/result.json) | — |
@@ -122,9 +123,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (102 total)
+## Unfinished buildings (101 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 63 buildings, Rohan 15 buildings, Tobin 14 buildings, Arjav 10 buildings, Brady 0 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 63 buildings, Rohan 15 buildings, Tobin 13 buildings, Arjav 10 buildings, Brady 0 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -147,7 +148,7 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | [7.8/10](audit/lambert_fieldhouse/independent_grade_r7.json) | Tobin |
 
-### Buildings that still have only massing models (86)
+### Buildings that still have only massing models (85)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -226,7 +227,7 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | twin pines cooperative | [`massing_twin_pines_cooperative_8f606f9.blend`](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | Rossen |
 | union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Rossen |
 | unitarian universalist church of tippecanoe county | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | Rossen |
-| university street parking garage pgu | [`massing_university_street_parking_garage_pgu_be81bec.blend`](modular/buildings/massing_university_street_parking_garage_pgu_be81bec.blend) | Tobin |
+
 | utility plant office facility | [`massing_utility_plant_office_facility_e219ef5.blend`](modular/buildings/massing_utility_plant_office_facility_e219ef5.blend) | Tobin |
 | veterinary animal isolation building 2 | [`massing_veterinary_animal_isolation_building_2_ebb4142.blend`](modular/buildings/massing_veterinary_animal_isolation_building_2_ebb4142.blend) | Tobin |
 | veterinary medicine isolation facility | [`massing_veterinary_medicine_isolation_facility_66d1305.blend`](modular/buildings/massing_veterinary_medicine_isolation_facility_66d1305.blend) | Tobin |
@@ -243,6 +244,7 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 ## Adding a building
 
 Follow [AGENT.md](AGENT.md) for the required modular build and grading process.
+
 
 
 

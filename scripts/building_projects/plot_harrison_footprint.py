@@ -2,6 +2,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import numpy as np
+from pathlib import Path
 
 # Coordinates
 rings = [
@@ -26,5 +27,7 @@ for i, (x, y) in enumerate(rings[:-1]):
 ax.set_aspect('equal')
 ax.grid(True)
 ax.set_title("Official Harrison Hall Footprint (29 vertices)")
-plt.savefig("harrison_footprint_analysis.png", dpi=150)
-print("Saved harrison_footprint_analysis.png")
+out_path = Path(__file__).resolve().parents[2] / 'audit' / 'benjamin_harrison_hall' / 'harrison_footprint_analysis.png'
+out_path.parent.mkdir(parents=True, exist_ok=True)
+plt.savefig(out_path, dpi=150)
+print(f"Saved {out_path}")

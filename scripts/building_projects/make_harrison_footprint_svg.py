@@ -1,3 +1,5 @@
+from pathlib import Path
+
 # Generate an SVG
 rings = [
   [-1139.761, -266.327], [-1139.894, -256.911], [-1138.459, -256.880], [-1138.323, -250.796],
@@ -31,6 +33,8 @@ for i, p in enumerate(rings[:-1]):
 
 svg.append('</svg>')
 
-with open('harrison_footprint.svg', 'w') as f:
+out_path = Path(__file__).resolve().parents[2] / 'audit' / 'benjamin_harrison_hall' / 'harrison_footprint.svg'
+out_path.parent.mkdir(parents=True, exist_ok=True)
+with open(out_path, 'w') as f:
     f.write("\n".join(svg))
-print("Saved harrison_footprint.svg")
+print(f"Saved {out_path}")

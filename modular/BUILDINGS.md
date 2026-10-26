@@ -130,6 +130,8 @@ CREC retains its legacy massing filename and campus-world direct-link coordinate
 | Purdue Lutheran Ministry | [massing_purdue_lutheran_ministry_5425b3c.blend](buildings/massing_purdue_lutheran_ministry_5425b3c.blend) | 168 |
 | University Book Store | [massing_university_book_store_717bf2c.blend](buildings/massing_university_book_store_717bf2c.blend) | 538 |
 | University Church | [massing_university_church_84b2a1b.blend](buildings/massing_university_church_84b2a1b.blend) | 821 |
+| University Street Parking Garage (PGU) | [massing_university_street_parking_garage_pgu_be81bec.blend](buildings/massing_university_street_parking_garage_pgu_be81bec.blend) | 857 |
 | University Lutheran Church | [massing_university_lutheran_church_20903f1.blend](buildings/massing_university_lutheran_church_20903f1.blend) | 541 |
 | Wang Hall | [massing_wang_hall_wang_0dac5ab.blend](buildings/massing_wang_hall_wang_0dac5ab.blend) | 12 |
 | Wood Street Parking Garage | [massing_wood_street_garage_pgw_2fa056e.blend](buildings/massing_wood_street_garage_pgw_2fa056e.blend) | 79 |
+

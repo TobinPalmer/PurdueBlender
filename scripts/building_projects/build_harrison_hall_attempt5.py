@@ -615,9 +615,11 @@ def build_benjamin_harrison_hall_attempt5():
     ]
     
     render_paths = []
+    render_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'audit', 'benjamin_harrison_hall'))
+    os.makedirs(render_dir, exist_ok=True)
     for cam, fname in renders:
         scene.camera = cam
-        out_path = os.path.abspath(fname)
+        out_path = os.path.join(render_dir, fname)
         scene.render.filepath = out_path
         bpy.ops.render.render(write_still=True)
         render_paths.append(out_path)

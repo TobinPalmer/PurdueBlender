@@ -123,6 +123,7 @@ superseded = {
     "massing_university_book_store_717bf2c": "university_book_store",
     "massing_university_church_84b2a1b": "university_church",
     "massing_university_lutheran_church_20903f1": "university_lutheran_church",
+    "massing_university_street_parking_garage_pgu_be81bec": "university_street_parking_garage_pgu",
     "massing_wang_hall_wang_0dac5ab": "wang_hall",
     "massing_northwestern_parking_garage_979f1a2": "master_override_with_pgsc_opening",
 }

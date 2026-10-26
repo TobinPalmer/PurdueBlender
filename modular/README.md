@@ -26,8 +26,8 @@ For each review record, include:
 
 ## Known limitations inherited from the source project
 
-- `audit_all_30_sectors.py` scores mesh density rather than geographic agreement. Existing sector percentages and architectural superlatives are not validation results.
-- `build_campus_base.py` uses a local degrees-to-meters approximation. Comparisons in other coordinate systems need an explicit transform; Blender units alone do not define a surveyed CRS.
+- `../scripts/building_tools/audit_all_30_sectors.py` scores mesh density rather than geographic agreement. Existing sector percentages and architectural superlatives are not validation results.
+- `../scripts/building_tools/build_campus_base.py` uses a local degrees-to-meters approximation. Comparisons in other coordinate systems need an explicit transform; Blender units alone do not define a surveyed CRS.
 - The original massing generator uses fallback heights (including 7.5 m houses and 16 m campus buildings) and estimates 3.8 m per story. These are not measured dimensions.
 - Legacy generation scripts contain absolute paths to an older workspace. Do not rerun them on modular files without reviewing their paths, deletion behavior, and placement assumptions.
 - A decorative object's overall bounding box can include steps, roof overhangs, and signs. It is not automatically comparable to a ground footprint.
@@ -37,7 +37,7 @@ When reporting completion, give counts of verified, corrected, ambiguous, and un
 ## Files to start with
 
 - `purdue_campus_linked.blend`: assembled campus with relative library links.
-- `BUILDINGS.md`: clickable index of the 35 detailed building files.
+- `BUILDINGS.md`: clickable index of the 36 detailed building files.
 - `manifest.json`: complete index including every simple background building and house.
 - `verification.json`: file/link/object-count checks and documented transform changes.
 - `rebuild_linked_master.py`: rebuilds detailed placement markers and removes matching massing blocks when a detailed library replaces them.
@@ -47,4 +47,5 @@ When reporting completion, give counts of verified, corrected, ambiguous, and un
 - `../audit/official_footprints_reference.blend`: 508 official Purdue footprint outlines. Link collection `Official_Purdue_Footprints_Reference` into a working scene for a visual comparison; the outlines use campus world coordinates and do not render.
 - `../audit/placement_corrections.json`: changes actually applied, their evidence, and remaining limitations. Wiley's gross hall/dining-court location mix-up was corrected using official hall envelope-center placement; exact wall registration and dimensions remain unresolved.
 
-The original master is preserved as `../purdue_campus_master_before_modular_linking.blend`. Open `../purdue_campus_master.blend` for current work. Do not rerun legacy generators against the modular master. `../split_buildings.py` is an initial migration utility, not the everyday update workflow: it retains existing exported files rather than overwriting agent edits. Building file saves followed by reopening the master are the everyday workflow.
+The original master is preserved as `../purdue_campus_master_before_modular_linking.blend`. Open `../purdue_campus_master.blend` for current work. Do not rerun legacy generators against the modular master. `../scripts/building_tools/split_buildings.py` is an initial migration utility, not the everyday update workflow: it retains existing exported files rather than overwriting agent edits. Building file saves followed by reopening the master are the everyday workflow.
+
