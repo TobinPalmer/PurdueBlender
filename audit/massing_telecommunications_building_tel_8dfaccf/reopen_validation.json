@@ -1,0 +1,162 @@
+{
+  "asset": "modular\\buildings\\massing_telecommunications_building_tel_8dfaccf.blend",
+  "reopen_app": "Blender 4.5.15 LTS",
+  "scene": "Building_massing_telecommunications_building_tel_8dfaccf",
+  "collection": "Asset_massing_telecommunications_building_tel_8dfaccf",
+  "object_count": 1,
+  "objects": [
+    "Telecommunications Building (TEL)"
+  ],
+  "mesh": {
+    "vertices": 218,
+    "faces": 58,
+    "materials": [
+      "TEL | facade material unverified (neutral massing)",
+      "TEL | flat roof surface proxy (2018 ortho)",
+      "TEL | entrance glazing proxy (OSM main entrance location)",
+      "TEL | roof equipment low-profile proxy (2018 ortho positions)"
+    ],
+    "world_bounds_m": [
+      [
+        -297.172119140625,
+        -163.45008850097656,
+        0.0
+      ],
+      [
+        -263.7153625488281,
+        -143.31365966796875,
+        9.437904357910156
+      ]
+    ],
+    "object_transform": {
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_degrees": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "modifiers": []
+  },
+  "checks": [
+    {
+      "check": "blender_version",
+      "passed": true,
+      "detail": "4.5.15 LTS"
+    },
+    {
+      "check": "scene_identity",
+      "passed": true,
+      "detail": {
+        "actual": "Building_massing_telecommunications_building_tel_8dfaccf",
+        "expected": "Building_massing_telecommunications_building_tel_8dfaccf"
+      }
+    },
+    {
+      "check": "collection_identity_and_unique",
+      "passed": true,
+      "detail": {
+        "matches": 1,
+        "expected": "Asset_massing_telecommunications_building_tel_8dfaccf"
+      }
+    },
+    {
+      "check": "object_count",
+      "passed": true,
+      "detail": {
+        "actual": 1,
+        "expected": 1
+      }
+    },
+    {
+      "check": "object_names",
+      "passed": true,
+      "detail": {
+        "actual": [
+          "Telecommunications Building (TEL)"
+        ],
+        "expected": [
+          "Telecommunications Building (TEL)"
+        ]
+      }
+    },
+    {
+      "check": "object_types",
+      "passed": true,
+      "detail": [
+        "MESH"
+      ]
+    },
+    {
+      "check": "no_external_libraries",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "no_external_images",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "check": "identity_transform",
+      "passed": true,
+      "detail": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "check": "official_footprint_ring_vertices_present",
+      "passed": true,
+      "detail": {
+        "source_vertices": 29,
+        "mesh_base_vertices": 89,
+        "max_tolerance_m": 0.0001,
+        "missing_vertices": []
+      }
+    },
+    {
+      "check": "base_and_roof_elevation",
+      "passed": true,
+      "detail": {
+        "z_min": 0.0,
+        "z_max_including_equipment": 9.437904357910156,
+        "estimated_shell_height_m": 9.137904000000006
+      }
+    },
+    {
+      "check": "no_modifiers",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "Facade, window pattern, and exact entrance dimensions remain unverified from available source imagery.",
+    "GIS polygon and footprint source are map features, not structural survey.",
+    "Roof height is an estimate from class-1 LiDAR returns; tile lacks class-6 building returns.",
+    "Roof-equipment dimensions/heights are schematic proxies."
+  ]
+}

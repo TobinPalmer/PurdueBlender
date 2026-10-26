@@ -1,0 +1,27 @@
+{
+  "asset_id": "massing_telecommunications_building_tel_8dfaccf",
+  "source_file": "in2018_29951885_12.copc.laz",
+  "source_url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN/Tippecanoe_Co_2018_3DEP/Elev18_LAS1.4SPW_IN/copc/in2018_29951885_12.copc.laz",
+  "lidar_crs": "NAD83(HARN)/Indiana West ftUS EPSG:2968",
+  "vertical_datum": "NAVD88 Geoid12B ftUS",
+  "target_polygon": "Purdue BuildingShapesZip4 FID 199, WGS84 ring transformed to EPSG:2968",
+  "roof_surface_filter": "ASPRS class 1 returns inside footprint eroded 3 m",
+  "ground_filter": "ASPRS class 2 returns within 5 m external footprint buffer",
+  "class_counts": {
+    "1": 4942330,
+    "2": 6331397,
+    "7": 4956,
+    "17": 239,
+    "18": 5
+  },
+  "footprint_interior_return_count": 1450,
+  "ground_return_count": 1640,
+  "ground_median_ftUS": 618.51,
+  "roof_height_median_m": 9.137904000000006,
+  "roof_height_p95_m": 10.564367999999991,
+  "roof_height_p99_m": 11.375136000000015,
+  "roof_height_max_m": 11.436095999999996,
+  "all_footprint_class1_median_m": 9.165336000000016,
+  "method": "Median class-1 surface elevation minus median class-2 ground in exterior buffer; 3m erosion applied in feetUS in EPSG:2968. Nearest-rank quantiles.",
+  "interpretation": "Roof height is an estimate from unclassified surface points; no class-6 building returns in tile. Interior central statistic can include remaining vegetation or non-roof returns; compare spread and orthophoto. GIS reports four levels but its Extrution/R fields have undocumented units."
+}
