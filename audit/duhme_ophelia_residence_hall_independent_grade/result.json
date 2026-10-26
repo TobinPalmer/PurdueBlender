@@ -1,0 +1,62 @@
+{
+  "score": 8.5,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Purdue GIS MapServer OBJECTID 229 / buildingidlong 351 identifies DUHM at 209 N Russell Street. Candidate base has the same 52 unique plan vertices; independent nearest-boundary checks in both directions have maximum error 0.000031 m, and plan area matches the GIS polygon (1,051.623 m\u00b2).",
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "The 52-vertex source outline projected through modular/AGENTS.md's local campus transform matches the candidate foundation in campus XY to approximately 0.000031 m. Top view shows the same open V-plan, central link, and wing directions. GIS extent is X [-628.8512,-561.5163] m, Y [-219.1116,-184.0809] m.",
+      "findings": [
+        "GIS footprint is an archival campus layer with temporal extent ending in 2015, so it is a strong placement/plan reference but not a current wall survey."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "Purdue historic building record and current OEP page support four stories; the historic record describes a fireproof roof. Candidate has four visible occupied levels, pitched slate-like roof planes, a central gable, and chimneys. Fresh-open candidate top is 15.84 m, but no source located provides a measured eave or ridge height.",
+      "findings": [
+        "Vertical dimensions are estimates rather than source-measured heights; the submitted 15.84 m overall envelope cannot be independently validated from available evidence."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": "Purdue e-Archives image PPBUC01766 (2004-06-24) supports red/brown masonry, a prominent central projecting multi-floor bay, vertically proportioned windows, steep dark roofs, chimneys, and a recessed arched entry. Candidate includes a central bay, repeated windows, masonry, roof and chimney details.",
+      "findings": [
+        "The reviewed elevation remains visually sparse and pale relative to the archival reference: broad flat wall fields, simplified window surrounds, and a central bay/entry treatment that does not clearly reproduce the reference's pale horizontal stone bands and recessed arched entrance. The single archival viewpoint limits certainty about unseen elevations."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Fresh reopen finds the expected named scene and export collection, 1,491 objects (1,490 meshes and one font), 15 materials, and no linked libraries or unpacked external images. Candidate validation and independent source snapshots/rendered review views are present.",
+      "findings": [
+        "Portability and modular export validate. The package does not establish source-backed interior layout or measured vertical dimensions; these remain documented uncertainties rather than verified detail."
+      ]
+    }
+  ],
+  "evidence": [
+    "Exact candidate independently SHA-256 verified as 5FBC2A4109382AA8E53273B333B8E84813F7FE0B24B7AE689D33D6B164C2136E; freshly opened in Blender 5.2.3 from modular/buildings/massing_duhme_ophelia_residence_hall_1bb4e9c.blend.",
+    "Independent rendered review views: review_three_quarter.png, review_north_elevation.png, review_east_elevation.png, review_top.png in this audit folder.",
+    "Independent source record and measurements: source_record.md, purdue_historic_campus_building_229.json, independent_gis_measurements.json.",
+    "Candidate fresh-open probe: candidate_probe.json; no linked libraries or external image dependencies."
+  ],
+  "findings": [
+    "GIS footprint is an archival campus layer with temporal extent ending in 2015, so it is a strong placement/plan reference but not a current wall survey.",
+    "Vertical dimensions are estimates rather than source-measured heights; the submitted 15.84 m overall envelope cannot be independently validated from available evidence.",
+    "The reviewed elevation remains visually sparse and pale relative to the archival reference: broad flat wall fields, simplified window surrounds, and a central bay/entry treatment that does not clearly reproduce the reference's pale horizontal stone bands and recessed arched entrance. The single archival viewpoint limits certainty about unseen elevations.",
+    "Portability and modular export validate. The package does not establish source-backed interior layout or measured vertical dimensions; these remain documented uncertainties rather than verified detail."
+  ],
+  "pass": true
+}

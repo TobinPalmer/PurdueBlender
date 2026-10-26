@@ -18,6 +18,8 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Benjamin Harrison Hall | [benjamin_harrison_hall.blend](buildings/benjamin_harrison_hall.blend) | 220 |
 | Brown Laboratory of Chemistry | [brown_laboratory_of_chemistry.blend](buildings/brown_laboratory_of_chemistry.blend) | 72 |
 | Class Of 1950 | [class_of_1950.blend](buildings/class_of_1950.blend) | 2431 |
+| Duhme (Ophelia) Residence Hall | [massing_duhme_ophelia_residence_hall_1bb4e9c.blend](buildings/massing_duhme_ophelia_residence_hall_1bb4e9c.blend) | 1491 |
+| Earhart Hall | [massing_earhart_hall_0f14209.blend](buildings/massing_earhart_hall_0f14209.blend) | 25 |
 | Electrical Engineering | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4169 |
 | Elliott Hall Of Music | [elliott_hall_of_music.blend](buildings/elliott_hall_of_music.blend) | 137 |
 | Felix Haas Hall | [felix_haas_hall.blend](buildings/felix_haas_hall.blend) | 879 |

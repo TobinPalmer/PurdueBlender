@@ -2,7 +2,7 @@
 
 This project tracks detailed campus models separately from the remaining massing-only building assets. A detailed model counts as finished here only when its latest recorded independent grader score is at least 8/10. Scores describe the reviewed model revision; ungraded assets are explicitly marked.
 
-## Detailed models: status and latest grader score (81 buildings)
+## Detailed models: status and latest grader score (84 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -28,12 +28,15 @@ This project tracks detailed campus models separately from the remaining massing
 | Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](modular/buildings/burton_morgan_center.blend) | Finished | [8.4/10](audit/burton_morgan_center_independent_grade/result.json) | — |
 | Campus Edge | [massing_campus_edge_343e3d8.blend](modular/buildings/massing_campus_edge_343e3d8.blend) | Finished | [8.5/10](audit/massing_campus_edge_343e3d8_independent_grade_r2/result.json) | — |
 | Cary Quadrangle East (CQE) | [massing_cary_quadrangle_east_cqe_230c813.blend](modular/buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | Finished | [8.0/10](audit/massing_cary_quadrangle_east_cqe_independent_grade_r3/result.json) | — |
+| Cary Quadrangle South (CQS) | [massing_cary_quadrangle_south_cqs_7ee2283.blend](modular/buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend) | Finished | [8.5/10](audit/massing_cary_quadrangle_south_cqs_independent_grade/result.json) | — |
 | Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | Finished | 8.5/10 | — |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](modular/buildings/convergence_center.blend) | Needs independent grade | Not graded | Rohan |
 | Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | In progress | 7.2/10 | Rohan |
 | David and Bonnie Brunner Farm Animal Hospital | [david_and_bonnie_brunner_farm_animal_hospital.blend](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | In progress | 6.7/10 | Rohan |
 | Drew and Brittany Brees Student Athletic Academic Center | [brees_student_athletic_academic_center.blend](modular/buildings/brees_student_athletic_academic_center.blend) | In progress | 7.3/10 | Rohan |
+| Duhme (Ophelia) Residence Hall | [massing_duhme_ophelia_residence_hall_1bb4e9c.blend](modular/buildings/massing_duhme_ophelia_residence_hall_1bb4e9c.blend) | Finished | [8.5/10](audit/duhme_ophelia_residence_hall_independent_grade/result.json) | — |
 | Electrical Engineering | [electrical_engineering.blend](modular/buildings/electrical_engineering.blend) | In progress | 5.2/10 | Rohan |
+| Earhart Hall | [massing_earhart_hall_0f14209.blend](modular/buildings/massing_earhart_hall_0f14209.blend) | Finished | [8.0/10](audit/earhart_hall_independent_grade/result.json) | — |
 | Elliott Hall Of Music | [elliott_hall_of_music.blend](modular/buildings/elliott_hall_of_music.blend) | In progress | 7.1/10 | Rohan |
 | Felix Haas Hall | [felix_haas_hall.blend](modular/buildings/felix_haas_hall.blend) | In progress | 7.4/10 | Rohan |
 | Flex Lab | [flex_lab.blend](modular/buildings/flex_lab.blend) | In progress | 7.5/10 | Rohan |
@@ -88,9 +91,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (139 total)
+## Unfinished buildings (136 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 13 buildings, Rohan 15 buildings, Tobin 1 buildings, Arjav 10 buildings, Brady 100 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 12 buildings, Rohan 15 buildings, Tobin 1 buildings, Arjav 10 buildings, Brady 98 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -113,7 +116,7 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 
-### Buildings that still have only massing models (123)
+### Buildings that still have only massing models (120)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -122,7 +125,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rossen |
 | cary quadrangle northeast cqne | [`massing_cary_quadrangle_northeast_cqne_0a76fca.blend`](modular/buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend) | Rossen |
 | cary quadrangle northwest cqnw | [`massing_cary_quadrangle_northwest_cqnw_e8a861e.blend`](modular/buildings/massing_cary_quadrangle_northwest_cqnw_e8a861e.blend) | Rossen |
-| cary quadrangle south cqs | [`massing_cary_quadrangle_south_cqs_7ee2283.blend`](modular/buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend) | Rossen |
 | cary quadrangle west cqw | [`massing_cary_quadrangle_west_cqw_3d47a7d.blend`](modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend) | Rossen |
 | chaney hale hall of science chas | [`massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend`](modular/buildings/massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend) | Rossen |
 | chapel of the good shepherd | [`massing_chapel_of_the_good_shepherd_5d4d103.blend`](modular/buildings/massing_chapel_of_the_good_shepherd_5d4d103.blend) | Rossen |
@@ -132,8 +134,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | crosswalk commons | [`massing_crosswalk_commons_7c01ecd.blend`](modular/buildings/massing_crosswalk_commons_7c01ecd.blend) | Rossen |
 | delta tau delta | [`massing_delta_tau_delta_e06b0b5.blend`](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Rossen |
 | dudley | [`dudley_hall.blend`](modular/buildings/dudley_hall.blend) | Rossen |
-| duhme ophelia residence hall | [`massing_duhme_ophelia_residence_hall_1bb4e9c.blend`](modular/buildings/massing_duhme_ophelia_residence_hall_1bb4e9c.blend) | Brady |
-| earhart hall | [`massing_earhart_hall_0f14209.blend`](modular/buildings/massing_earhart_hall_0f14209.blend) | Brady |
 | fairway cooperative | [`massing_fairway_cooperative_2101b77.blend`](modular/buildings/massing_fairway_cooperative_2101b77.blend) | Brady |
 | faith west community center | [`massing_faith_west_community_center_84aa829.blend`](modular/buildings/massing_faith_west_community_center_84aa829.blend) | Brady |
 | family express | [`massing_family_express_a07e1fb.blend`](modular/buildings/massing_family_express_a07e1fb.blend) | Brady |
