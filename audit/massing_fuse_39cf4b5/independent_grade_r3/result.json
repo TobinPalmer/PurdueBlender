@@ -1,0 +1,111 @@
+{
+  "building_id": "massing_fuse_39cf4b5",
+  "building": "FUSE",
+  "review_type": "fresh independent regrade r3",
+  "score": 8.25,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue Housing snapshot names FUSE at 720 Northwestern Avenue; Pierce Engineers identifies the matching seven-level project and private housing program.",
+        "Independently parsed the saved OSM XML. Way 256639574 is tagged name=FUSE and building=residential. Applying the documented local approximate transform to its 58-point closed ring yields 57 unique plan vertices; they exactly coincide at the saved Blender mesh precision with the 57 z=0 vertices of the retained FUSE shell (computed mean and maximum nearest-vertex errors both 0 at Blender float precision).",
+        "The raw OSM XML retains the source feature timestamp. OSM is community-mapped rather than survey-grade, so it corroborates identity and plan but is not a survey certification."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Converted OSM bounds X=-107.0479446..-24.5781131 m and Y=561.4959680..643.7988160 m agree with the retained shell bounds X=-107.0479431..-24.5781136 m and Y=561.4959717..643.7988281 m, within coordinate storage precision.",
+        "The reopened shell dimensions are 82.4698 x 82.3029 m. Full decorative-geometry bounds and updated manifest bounds include setbacks/signs and are not misrepresented as the structural footprint.",
+        "The Mapletree coordinate is explicitly treated as an address pin, not a building centroid, avoiding a false position discrepancy. The geographic conversion is explicitly described as an approximate local transform, not a surveyed CRS."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "Pierce Engineers source supports one commercial level over two below-grade parking levels and four apartment levels above, seven total. Reopened asset contains the five above-grade levels and concrete slabs/supports extending to z=-6.42 m for a schematic two-level below-grade representation.",
+        "The axonometric preview displays four upper window rows over a commercial podium, courtyard opening, split flat roof and parapet. These elements broadly match the sourced program and visible project image.",
+        "The shell's 16 m above-grade height is inherited and explicitly unverified; floor heights, roof construction/profile, basement parking grid and ramps are schematic. The saved plan does not establish those vertical dimensions."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Reopened model contains repeated window glass/frame bays, brick piers, light spandrels, storefront glazing, double-leaf entrance forms, courtyard-facing windows, and two upper-corner FUSE font signs. Both corner signs are visible in the axonometric preview.",
+        "The saved Archilovers page references an exterior photograph with brick/panel treatment, corner composition, storefront and rooftop FUSE identity signs. It documents broad exterior character, not scaled elevations.",
+        "Entrances, exact sign placement/size, facade cadence and material divisions remain schematic. Door forms are present but are not legible in the two saved previews; no dimensioned elevation or entrance plan is preserved."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Opened the saved .blend in Blender 4.5.15. Asset_massing_fuse_39cf4b5 has 11 objects, matching the current manifest object list and object_count. FUSE retains its original shell; all collection objects have no modifiers. A legacy scene engine warning is emitted on open, but it does not prevent collection inspection.",
+        "All four referenced image textures are packed. Collection and asset path remain stable. Dedicated build script and two previews are present.",
+        "Evidence JSON includes URLs, providers, feature IDs, retrieval/source dates when available, CRS or non-spatial source designation, method, uncertainty, and local raw snapshots for Purdue Housing, Pierce Engineers, OSM, Mapletree search snippet, and Archilovers. The visual source is represented by a page snapshot and image URL rather than a preserved image file, and no exterior entrance view or verified vertical drawing is included.",
+        "Minor inconsistency: the FUSE object's custom source_footprint property says mean deviation 0.000368 m, whereas evidence.json reports 0.0000154 m mean and 0.0000301 m max; independent comparison of the rounded saved Blender vertices produced 0 error at mesh precision. Correct or remove that stale custom-property statistic for a fully consistent record."
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "path": "modular/buildings/massing_fuse_39cf4b5.blend",
+      "detail": "Reopened in Blender 4.5.15; independently inspected collection membership, object count, bounds/dimensions, modifiers, sign objects, basement geometry, and packed images."
+    },
+    {
+      "path": "modular/manifest.json",
+      "detail": "Inspected FUSE manifest record; object_count=11 and object list matches reopened collection names."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/evidence.json",
+      "detail": "Reviewed source facts and metadata, geometry measurements, edit claims, uncertainty labels, reopen check and preview paths."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/sources/osm_fuse_bbox.osm",
+      "detail": "Parsed source way 256639574 by its explicit FUSE/residential tags and independently compared its transformed closed ring to the saved shell z=0 vertices."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/sources/purdue_housing_fuse.html",
+      "detail": "Reviewed the raw official residence snapshot for FUSE identity, address, retail, heated parking and courtyard."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/sources/pierce_engineers_fuse.html",
+      "detail": "Reviewed the saved engineering project page snapshot for seven-level program and reported project area."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/sources/archilovers_fuse_project.html",
+      "detail": "Reviewed the saved project-page snapshot for exterior photo reference and source date."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/previews/exterior_axonometric.png",
+      "detail": "Viewed the saved exterior image; repeated facade, courtyard, parapet and two upper-corner signs are visible."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/previews/plan.png",
+      "detail": "Viewed the saved plan image; retained near-square ring, courtyard opening, and decorative elements are visible."
+    },
+    {
+      "path": "modular/buildings/build_massing_fuse_39cf4b5.py",
+      "detail": "Reviewed dedicated build logic for four upper-level window bands, entry forms, two FUSE signs, estimated roof/court and schematic basement levels."
+    }
+  ],
+  "findings": [
+    "PASS: 8.25/10 meets the repository 8/10 standard. Source-backed plan geometry, campus position, and horizontal dimensions are strongly corroborated by the named OSM FUSE footprint.",
+    "The seven-level use program is sourced and represented. Keep the 16 m height, precise floor elevations, roof details, entry locations and basement layout explicitly marked estimated or unverified.",
+    "Optional record cleanup: reconcile the custom FUSE source_footprint property (0.000368 m mean) with evidence.json's OSM comparison statistics and the direct saved-mesh comparison; no geometry correction is indicated.",
+    "The two previews do not clearly show the entry doors. A street-level entrance view would improve reviewability; available evidence still does not validate their exact locations.",
+    "No source-backed evidence establishes survey-grade accuracy, detailed elevations, or exact parking/entrance layouts; those claims should remain limited."
+  ]
+}

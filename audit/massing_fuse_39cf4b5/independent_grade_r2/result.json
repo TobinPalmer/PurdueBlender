@@ -1,0 +1,103 @@
+{
+  "building_id": "massing_fuse_39cf4b5",
+  "building": "FUSE",
+  "review_type": "independent regrade",
+  "score": 7.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue Housing raw page snapshot identifies FUSE at 720 Northwestern Avenue and describes its private interior quad and retail use.",
+        "Independently parsed OSM XML contains way 256639574 tagged name=FUSE and building=residential (way timestamp 2022-02-22; ODbL attribution in source XML). Against the preserved pre-edit FUSE shell, all 58 closed way vertices match (57 unique vertices) to mean nearest-vertex distance 0.0000154 m and maximum 0.0000301 m using the modular/AGENTS.md local approximate conversion.",
+        "The polygon match is compelling identity/plan evidence, though OSM is community-mapped and not survey-grade."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "The converted OSM polygon and original shell have coincident bounds: approximately X=-107.04794 to -24.57811 m and Y=561.49597 to 643.79882 m. The exact vertex correspondence validates inherited position, orientation, and plan dimensions (about 82.47 by 82.30 m) against this source.",
+        "The Mapletree coordinate is documented as an address pin, not centroid; its roughly 30 m north-south discrepancy is not a contradiction to the footprint match."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "Pierce Engineers raw snapshot supports seven levels: one commercial level, four apartment levels, and two below-grade parking levels. Reopened file contains podium, four repeated upper window rows, and schematic below-grade structural decks.",
+        "The 16 m above-grade height is inherited, not independently measured. The source snapshot does not validate that height or roof profile; the flat roof and deck layout remain schematic."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "The saved model contains repeated glazing/frame bays, brick piers, light spandrels, storefront glazing, a double-leaf door feature, and a FUSE sign; the exterior preview visibly shows the overall repeated fa\u00e7ade, while the sign and doors are not legible from that view.",
+        "Facade color is attributed in evidence.json to a LoopNet image reference, but there is no raw snapshot. Exact bay rhythm, panel dimensions, sign and entrance locations are explicitly estimated and lack plans/elevations."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "Reopened the saved asset in Blender 4.5.15: Asset_massing_fuse_39cf4b5 exists with 10 objects; FUSE shell has no unapplied modifiers; all four image textures are packed and no external FILE image paths remain.",
+        "Dedicated build script, two previews, raw Purdue/Pierce/OSM snapshots, and a structured evidence record are present. However, per-source CRS/retrieval/source-date/measurement/uncertainty fields are inconsistent or absent; the LoopNet snapshot is null; Mapletree is represented only by a snippet plus failed-fetch record. Shared manifest object_count/objects still describe the one-object legacy export and should be reconciled by the coordinator."
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "path": "modular/buildings/massing_fuse_39cf4b5.blend",
+      "detail": "Opened directly in Blender 4.5.15. Inspected collection membership, evaluated mesh bounds, modifiers, font/sign object, and packed/external image state."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/evidence.json",
+      "detail": "Reviewed source claims, source metadata, edits, measurements, uncertainties, and preview paths."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/sources/massing_fuse_before.blend",
+      "detail": "Reopened the preserved original shell and independently extracted unique ground-plane vertices."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/sources/osm_fuse_bbox.osm",
+      "detail": "Parsed raw XML, selected way 256639574 by its name=FUSE and building=residential tags, and independently compared all closed-ring vertices after applying the documented local approximate conversion."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/sources/purdue_housing_fuse.html",
+      "detail": "Raw Purdue Housing source snapshot reviewed for building identity, address, retail, and courtyard facts."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/sources/pierce_engineers_fuse.html",
+      "detail": "Raw Pierce Engineers source snapshot reviewed for seven-level use program."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/previews/exterior_axonometric.png",
+      "detail": "Viewed saved exterior preview; repeated fa\u00e7ade and courtyard are visible; doors/sign are not legible from this angle."
+    },
+    {
+      "path": "audit/massing_fuse_39cf4b5/previews/plan.png",
+      "detail": "Viewed saved plan preview; square perimeter and centered approximate court are visible."
+    },
+    {
+      "path": "modular/buildings/build_massing_fuse_39cf4b5.py",
+      "detail": "Reviewed the dedicated build logic for edits and which features are explicitly modeled as estimates."
+    }
+  ],
+  "findings": [
+    "FAIL: 7.5/10 remains below the repository 8/10 passing standard.",
+    "Strongly supported plan geometry and horizontal placement are established by exact correspondence to the named OSM FUSE polygon; retain the caveat that OSM is not a survey.",
+    "Obtain an authoritative height/elevation or clearly keep the 16 m height marked unverified; the seven-level program is supported but roof form and basement configuration are schematic.",
+    "Save an inspectable dated fa\u00e7ade/entrance image or elevation source if available; document which entrance(s) are real and their locations. Current door placements are symmetric estimates and the preview does not clearly show them.",
+    "Complete source metadata consistently, including CRS, retrieval date, source date when available, measurement method, uncertainty, and raw snapshot for the LoopNet visual reference; the Mapletree page attempt remains a non-content HTTP 405 log plus snippet.",
+    "Coordinator should update the shared manifest object list/count to match the ten-object export collection before integration."
+  ]
+}

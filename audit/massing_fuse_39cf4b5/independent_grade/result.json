@@ -1,0 +1,100 @@
+{
+  "building_id": "massing_fuse_39cf4b5",
+  "building": "FUSE",
+  "score": 4.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue housing identifies FUSE at 720 Northwestern Avenue and lists the ground-level retail, heated parking, and private interior quad. Identity is well supported; the model footprint is inherited from a legacy massing asset and has no independently matched GIS polygon or survey."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 0.5,
+      "max_score": 2,
+      "evidence": [
+        "Mapletree pin coordinate converts under modular/AGENTS.md local approximation to X=-66.0 m, Y=632.7 m. Saved shell center is X=-65.8 m, Y=602.6 m (delta 0.2, -30.1 m); the approximate pin is not documented as a surveyed centroid. Saved shell dimensions are 82.47 x 82.30 x 16.00 m, but no independent footprint, orientation, or dimension comparison supports them."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "Pierce Engineers source snapshot states seven total levels: four apartment levels above one commercial level and two below-grade parking levels. The model visually represents a retail podium and four residential levels, but omits the below-grade parking. Its 16 m height is inherited and explicitly not independently measured; the flat roof is not verified by an elevation or plan."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.75,
+      "max_score": 2,
+      "evidence": [
+        "Preview shows repeated upper window bays, brick piers, light spandrels, retail glazing, and an interior court; the submitted visual-reference source is a LoopNet listing but no raw snapshot is saved. Evidence record calls facade cadence and sign location schematic. No clearly modeled or source-verified entrance is documented."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "Saved Asset_massing_fuse_39cf4b5 collection reopened with 9 objects and a collection-only probe exported and reopened successfully. Four image texture paths are relative to the project and point into materials/textures/red_brick; they are not packed. Evidence includes two previews and raw Purdue/Pierce snapshots, but the Mapletree snapshot is an HTTP 405 error text file, and source metadata/footprint evidence is incomplete."
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_fuse_39cf4b5.blend",
+      "detail": "Independently opened with Blender 4.5.15; collection name, nine objects, dimensions, transforms, modifiers and image paths inspected."
+    },
+    {
+      "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_fuse_39cf4b5\\evidence.json",
+      "detail": "Structured source and uncertainty record reviewed."
+    },
+    {
+      "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_fuse_39cf4b5\\sources\\purdue_housing_fuse.html",
+      "detail": "Raw official Purdue housing source snapshot."
+    },
+    {
+      "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_fuse_39cf4b5\\sources\\pierce_engineers_fuse.html",
+      "detail": "Raw source snapshot supporting seven-level program and 420,000 sq ft."
+    },
+    {
+      "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_fuse_39cf4b5\\sources\\mapletree_fuse.html.error.txt",
+      "detail": "Snapshot attempt records HTTP 405; it contains no usable source page."
+    },
+    {
+      "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_fuse_39cf4b5\\previews\\exterior_axonometric.png",
+      "detail": "Directly inspected exterior preview: courtyard opening, flat roof, schematic facade, no visible entrance."
+    },
+    {
+      "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_fuse_39cf4b5\\previews\\plan.png",
+      "detail": "Directly inspected plan preview: square perimeter and centered approximate courtyard."
+    },
+    {
+      "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\build_massing_fuse_39cf4b5.py",
+      "detail": "Inspected generation logic and its explicit inherited/estimated geometry notes."
+    },
+    {
+      "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\manifest.json",
+      "detail": "Manifest retains kind=massing, expected collection and bounds; its object_count/source objects still describe one legacy FUSE object, while saved collection has nine."
+    },
+    {
+      "path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-26\\can\\work\\fuse_collection_export_test.blend",
+      "detail": "Temporary collection-only export probe outside repository, reopened successfully with expected collection and nine members."
+    }
+  ],
+  "findings": [
+    "FAIL: 4.5/10 is below the 8/10 passing standard; the asset should not be accepted as independently validated.",
+    "Footprint identity is not established geometrically. Obtain a matching authoritative GIS footprint or survey and compare wall footprint, orientation and dimensions.",
+    "Coordinate pin is only approximate: the converted Mapletree point and shell center differ by about 30 m north-south; resolve against an identifiable building centroid or footprint before claiming placement accuracy.",
+    "Height and floor program have partial source support, but 16 m is inherited and the two underground parking levels are not represented.",
+    "Facade details are mostly schematic, no entrance is identified, and the LoopNet visual reference has no saved raw snapshot. Add inspectable dated imagery/elevation evidence if available.",
+    "Manifest object_count and objects fields remain stale relative to the nine-object saved export collection; update by coordinator when integrating the building.",
+    "Texture references are relative but not packed; portability depends on preserving the project texture folder."
+  ]
+}

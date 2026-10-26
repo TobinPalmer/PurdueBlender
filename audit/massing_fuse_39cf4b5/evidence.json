@@ -1,0 +1,151 @@
+{
+  "building_id": "massing_fuse_39cf4b5",
+  "building": "FUSE",
+  "asset": "modular/buildings/massing_fuse_39cf4b5.blend",
+  "generated_script": "modular/buildings/build_massing_fuse_39cf4b5.py",
+  "retrieved": "2026-10-26",
+  "sources": [
+    {
+      "facts": [
+        "Address: 720 Northwestern Avenue",
+        "first-level CVS, Subway, and Jimmy Johns retail",
+        "heated parking below",
+        "private interior quad"
+      ],
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/apartments/fuse.html",
+      "raw_snapshot": "sources/purdue_housing_fuse.html",
+      "source_date": "page last modified 2026-08-20",
+      "source_crs": "not applicable; project description",
+      "feature_id": "FUSE residence page, address 720 Northwestern Avenue",
+      "retrieval_date": "2026-10-26",
+      "measurement_method": "Used only for identity, address, listed retail, below-building heated parking, and interior quad; page gives no measured geometry.",
+      "uncertainty": "Official page does not document dimensions, detailed elevations, or exact entrance locations."
+    },
+    {
+      "facts": [
+        "7 levels total",
+        "4 apartment levels above 1 commercial level and 2 below-grade parking levels",
+        "420,000 sq ft"
+      ],
+      "provider": "Pierce Engineers",
+      "url": "https://www.pierceengineers.com/our-projects/the-fuse",
+      "raw_snapshot": "sources/pierce_engineers_fuse.html",
+      "source_date": "not stated",
+      "source_crs": "not applicable; project description",
+      "feature_id": "The Fuse project page",
+      "retrieval_date": "2026-10-26",
+      "measurement_method": "Used only for stated program of four apartment levels over one commercial level and two parking levels below grade, plus reported area.",
+      "uncertainty": "No dimensioned elevations, story heights, roof detail, or parking layout are published in the saved page."
+    },
+    {
+      "facts": [
+        "Way 256639574 is tagged name=FUSE and building=residential",
+        "All 58 closed-ring OSM vertices match the 58-point closed shell ring at mean nearest-vertex distance 0.0000154 m and maximum 0.0000301 m in the project local coordinate transform",
+        "OSM data is community-mapped and should be treated as corroborating geometry, not a survey"
+      ],
+      "provider": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/256639574",
+      "raw_snapshot": "sources/osm_fuse_bbox.osm",
+      "source_date": "source feature timestamp retained in raw snapshot; retrieved 2026-10-26; ODbL 1.0",
+      "source_crs": "WGS 84 geographic coordinates (EPSG:4326)",
+      "feature_id": "way 256639574; tags name=FUSE, building=residential",
+      "retrieval_date": "2026-10-26",
+      "measurement_method": "Converted all 58 closed ring coordinates with modular/AGENTS.md local approximate formula, compared nearest XY vertices against the 58-point original closed shell ring, and measured per-vertex nearest Euclidean distances. Mean 0.0000154 m, maximum 0.0000301 m; there are 57 unique plan vertices.",
+      "uncertainty": "Community-mapped footprint is not a survey and verifies plan shape/placement only, not facade wall offsets or height."
+    },
+    {
+      "facts": [
+        "Property location coordinate 40.433098, -86.914478",
+        "Address: 720 Northwestern Avenue",
+        "489 beds; coordinate treated as an address pin, not as a surveyed building centroid"
+      ],
+      "provider": "Mapletree",
+      "url": "https://www.mapletree.com.sg/All-Properties/MIPL/USA/Fuse.aspx",
+      "raw_snapshot": "sources/mapletree_fuse_snippet.md",
+      "source_date": "not stated",
+      "source_crs": "not stated; coordinate displayed as an address pin",
+      "feature_id": "Fuse property page, 720 Northwestern Avenue",
+      "retrieval_date": "2026-10-26",
+      "measurement_method": "Coordinate recorded as address pin only; not used as building centroid or footprint measurement.",
+      "uncertainty": "Direct HTML request returned HTTP 405; snippet is preserved and coordinate is not treated as surveyed."
+    },
+    {
+      "facts": [
+        "Project page by Josh Humble describes an exterior view photographed for F.A. Wilhelm Construction, the concrete contractor",
+        "Dated project record states work completed in 2016",
+        "Exterior image used only to identify broad brick/panel materials, corner condition, storefront and rooftop FUSE identity signs"
+      ],
+      "provider": "Archilovers; Josh Humble, project author",
+      "url": "https://www.archilovers.com/projects/255213/fuse-apartments-purdue-university.html",
+      "raw_snapshot": "sources/archilovers_fuse_project.html",
+      "source_date": "project record: 2016 completed; page published 2019-08-25",
+      "source_crs": "not applicable; exterior photograph",
+      "feature_id": "Archilovers project 255213",
+      "image_reference": "https://cdn.archilovers.com/projects/b_730_9aa3951b-bdfc-4272-a4a9-b36e2147cb5f.jpg",
+      "retrieval_date": "2026-10-26",
+      "measurement_method": "Visual reference only; no scaled dimensions extracted from the perspective photograph.",
+      "uncertainty": "Photograph documents exterior character but does not identify the exact entrance coordinates, story heights, or roof assembly."
+    }
+  ],
+  "geometry": {
+    "source_footprint": "Retained from pre-existing FUSE massing asset; all 58 closed-ring XY vertices match OSM way 256639574 (57 unique plan vertices) within the repository's local approximate transform: mean nearest-vertex distance 0.0000154 m, maximum 0.0000301 m. OSM is community-mapped and not a survey.",
+    "dimensions_m": {
+      "x": 82.47,
+      "y": 82.3,
+      "z": 16.0
+    },
+    "full_collection_bounds_m": {
+      "x": [-107.55795, -24.06811],
+      "y": [560.98596, 644.30884],
+      "z": [-6.42, 17.123]
+    },
+    "basis": "Axis-aligned shell extents measured from saved legacy mesh with Blender 4.5.15. For OSM EPSG:4326 vertices, comparison used the repository local transform: X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. The local approximation is not a surveyed CRS.",
+    "placement": "Retained inherited coordinates. Mapletree coordinate is an address pin, not a surveyed centroid; OSM polygon corroborates the inherited shell position and orientation.",
+    "court": {
+      "width_m": 23.0,
+      "depth_m": 21.0,
+      "basis": "Approximate central courtyard cut added to match Purdue-described interior quad; dimensions estimated."
+    }
+  },
+  "edits": [
+    "Retained existing massing shell, original collection name, and asset path.",
+    "Cut a 23 m by 21 m estimated interior quad above the 3.15 m retail podium.",
+    "Added repeated residential window bays, brick piers, light spandrels, a retail glazing band, estimated street-level double-leaf doors, and two upper-corner FUSE signs based on the dated exterior photograph.",
+        "Added roof surface split around the courtyard and parapet.",
+    "Added schematic two-level below-grade parking decks and supports to represent the sourced program; stall layout, ramps, and structural grid are not verified.",
+    "Packed all image textures into the Blender file for portable delivery."
+  ],
+  "reopen_check": {
+    "performed": true,
+    "blender_version": "4.5.15",
+    "collection": "Asset_massing_fuse_39cf4b5",
+    "object_count": 11,
+    "full_collection_bounds_m": [
+      [
+        -107.55795,
+        -24.06811
+      ],
+      [
+        560.98596,
+        644.30884
+      ],
+      [
+        -6.42,
+        17.123
+      ]
+    ],
+    "courtyard_ray_test": "Ray through center of courtyard intersects podium lawn at z=3.15 m; no upper shell obstruction.",
+    "preview_paths": [
+      "previews/exterior_axonometric.png",
+      "previews/plan.png",
+      "previews/street_entry.png"
+    ]
+  },
+  "uncertainties": [
+    "Footprint match uses community-mapped OpenStreetMap geometry; no survey-grade source was found.",
+    "Facade cadence, panel dimensions, sign positions and dimensions, courtyard dimensions, entrances, basement decks, parking grid, and apartment-level elevations are schematic estimates.",
+    "The 16 m above-grade height is inherited and not independently measured; basement levels are schematic and below grade.",
+    "No master scene placement or exterior neighbor context was modified."
+  ]
+}
