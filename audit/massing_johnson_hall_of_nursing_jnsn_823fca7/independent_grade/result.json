@@ -1,0 +1,149 @@
+{
+  "score": 7.2,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified",
+      "evidence": "Opened mesh uses the exact 12-vertex ground ring from Purdue BuildingShapes FID 218 / JNSN; largest nearest source-to-mesh ground vertex error is 0.00000982 m. OSM way 117146488 independently names Johnson Hall of Nursing and differs by 0.876 m Hausdorff.",
+      "uncertainty": "Purdue polygon is not a certified structural survey; stored Shape__Area (1701.02 m²) conflicts with the local ring area (984.01 m²), though the OSM geometry corroborates the ring scale."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "status": "verified against campus GIS; not survey-verified",
+      "evidence": "The reopened mesh retains the projected campus coordinates and source polygon orientation without transformation from origin; GIS AABB is 42.40 by 42.72 m. Footprint vertices match the declared campus local approximation within 1 mm.",
+      "uncertainty": "Projection is the repository's local approximation, and GIS/OSM wall-versus-edge semantics differ slightly; no independent survey dimensions were supplied. Overall mesh bounds include entry/plinth/parapet details."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 0.9,
+      "max_score": 2,
+      "status": "partly evidenced; height/roof unverified",
+      "evidence": "Purdue GIS supports three levels. Reopened overall bounds reach 11.21 m, consistent with the documented nominal 11.25 m massing.",
+      "uncertainty": "No dimensioned elevation or survey height was located. The 3.55 m floor-to-floor spacing and flat/parapet roof are builder assumptions; GIS Extrution=24 units are undocumented and are not valid height evidence."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.5,
+      "max_score": 2,
+      "status": "mostly illustrative",
+      "evidence": "The latest exterior, plan, and entry-elevation renders show three-storey punched openings, floor bands, a glazed entry, canopy and low parapet; object topology is present in the reopened mesh.",
+      "uncertainty": "No exterior photo, facade elevation, or dimensioned plan supports the brick/limestone palette, regular opening pattern, west-facing entrance location, or roof parapet. The builder explicitly labels these provisional. Appearance is not source verification."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified for standalone asset",
+      "evidence": "Directly opened the latest saved file (written at the same timestamp as the camera-only rebuild/renders). Expected scene and collection exist; one joined mesh, no modifiers, no linked libraries, and no unpacked external images. Raw sources, source record, source metrics, build script, and three valid PNG renders are present.",
+      "uncertainty": "The master blend's single-link integration was outside this independent asset review."
+    }
+  ],
+  "evidence": {
+    "asset_opened_directly": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_johnson_hall_of_nursing_jnsn_823fca7.blend",
+    "asset_version_opened_with": "4.5.15 LTS",
+    "version_compatibility_note": "Opened read-only in Blender 4.5.15; Blender warned that the file was written by newer Blender 5.2. No save was performed.",
+    "scene": "Building_massing_johnson_hall_of_nursing_jnsn_823fca7",
+    "collection": "Asset_massing_johnson_hall_of_nursing_jnsn_823fca7",
+    "asset_object": "Johnson Hall of Nursing (JNSN)",
+    "asset_mesh_object_count": 1,
+    "mesh_vertices_faces": [
+      2008,
+      1502
+    ],
+    "modifiers": [],
+    "object_location_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "world_bounds_m": [
+      [
+        -176.530807,
+        -133.834183
+      ],
+      [
+        201.274094,
+        244.287689
+      ],
+      [
+        0.0,
+        11.21
+      ]
+    ],
+    "source_ring_unique_vertices": 12,
+    "source_ring_area_m2_local_approx": 984.0055712634885,
+    "source_ring_aabb_xy_m": [
+      [
+        -176.383574,
+        -133.981424
+      ],
+      [
+        201.421263,
+        244.140529
+      ]
+    ],
+    "shell_ground_vertices_nearest_source_max_error_m": 9.82e-06,
+    "gis_shape_area_attr_m2": 1701.015625,
+    "gis_num_levels": 3,
+    "gis_extrution_raw_units_undocumented": 24,
+    "height_bounds_m": [
+      0.0,
+      11.21
+    ],
+    "osm_outline_difference_hausdorff_m": 0.875891281658294,
+    "sources_reviewed": [
+      "Purdue BuildingShapesZip4 FID 218 (raw JSON)",
+      "OSM way 117146488 (raw XML)",
+      "Purdue October 2021 space report (29,742.28 sq ft)",
+      "Purdue nursing graduate handbook and university history timeline",
+      "Indiana Commission 2023 replacement project authorization and Purdue project page"
+    ],
+    "renders_reviewed": [
+      {
+        "file": "johnson_hall_nursing_exterior_preview.png",
+        "width_px": 1400,
+        "height_px": 1000,
+        "bytes": 1369900
+      },
+      {
+        "file": "johnson_hall_nursing_plan_preview.png",
+        "width_px": 1100,
+        "height_px": 1100,
+        "bytes": 1181304
+      },
+      {
+        "file": "johnson_hall_nursing_entry_elevation.png",
+        "width_px": 1400,
+        "height_px": 800,
+        "bytes": 822787
+      }
+    ],
+    "external_libraries": [],
+    "unpacked_external_images": [],
+    "master_link_check": "not performed; evaluator examined standalone library only"
+  },
+  "findings": [
+    {
+      "severity": "strength",
+      "finding": "The saved post-camera-change asset reopens successfully. The FID 218 shell geometry still matches the source ring to sub-millimeter vertex error."
+    },
+    {
+      "severity": "limitation",
+      "finding": "This is a geometry-faithful GIS massing model, not a source-verified architectural reconstruction. Height and all facade/entry/roof details remain largely estimated."
+    },
+    {
+      "severity": "scope",
+      "finding": "The 2023 state authorization and current Purdue project page identify a planned replacement and proposed demolition. The evidence does not establish demolition completion at the present date; this asset is correctly scoped to legacy GIS identity, not the replacement."
+    }
+  ],
+  "pass_threshold": 8.0,
+  "passed": false,
+  "evaluation_version": "independent JNSN r1",
+  "evaluator": "separate review agent",
+  "evaluated_date": "2026-10-26"
+}

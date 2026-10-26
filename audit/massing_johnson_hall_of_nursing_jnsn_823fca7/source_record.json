@@ -1,0 +1,172 @@
+{
+  "building_id": "massing_johnson_hall_of_nursing_jnsn_823fca7",
+  "assigned_owner": "Rossen",
+  "asset": "modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend",
+  "identity": {
+    "official_name": "Helen R. Johnson Hall Of Nursing",
+    "code": "JNSN",
+    "purdue_buildingshapes_fid": 218,
+    "address": "502 N University St, West Lafayette, IN 47907-2069",
+    "model_scope": "legacy Johnson Hall of Nursing mapped as JNSN/FID 218; not the later Darr-Chaney Hall of Nursing and Pharmacy project."
+  },
+  "sources": [
+    {
+      "file": "sources/purdue_building_shapes_fid218_jnsn.json",
+      "provider": "Purdue University BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D218&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 218,
+      "retrieved_date": "2026-10-22 (shared source register)",
+      "source_date": "not supplied",
+      "crs": "EPSG:4326 response",
+      "measurement_method": "Transform all returned polygon vertices using the documented campus local tangent approximation: X=(lon+86.9137)*111412.84*cos(40.4274), Y=(lat-40.4274)*111040.0; remove the duplicate closing vertex only.",
+      "uncertainty": "Official campus map polygon, not a structural survey; Shape__Area attribute conflicts with area of returned ring."
+    },
+    {
+      "file": "sources/osm_way_117146488.xml",
+      "provider": "OpenStreetMap API 0.6",
+      "url": "https://api.openstreetmap.org/api/0.6/way/117146488/full",
+      "feature_id": "way 117146488",
+      "retrieved_date": "2026-10-26",
+      "source_date": "current API record at retrieval",
+      "crs": "WGS84 latitude/longitude transformed to project local campus approximation",
+      "measurement_method": "Independent outline identity and shape comparison; exact OSM way downloaded with member nodes.",
+      "uncertainty": "Crowd-sourced map; not a survey; outline differs from Purdue GIS by about 0.876 m Hausdorff distance and may encode slightly different wall/overhang edges."
+    },
+    {
+      "file": "sources/purdue_space_report_building_list_2021.pdf",
+      "provider": "Purdue University Treasurer / Finance",
+      "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/03/Space-Report_1.13.1HE_Buiding_List_Oct2021.pdf",
+      "feature_id": "JNSN, record 1134",
+      "retrieved_date": "2026-10-26",
+      "source_date": "October 2021 building list",
+      "crs": "not applicable",
+      "measurement_method": "Institutional identity/address and reported area of 29,742.28 square feet.",
+      "uncertainty": "Area is not a surveyed footprint and its precise basis (gross/net) is not documented in the list."
+    },
+    {
+      "file": "sources/purdue_nursing_graduate_handbook_2022.pdf",
+      "provider": "Purdue University College of Health and Human Sciences, School of Nursing",
+      "url": "https://hhs.purdue.edu/wp-content/uploads/2022/07/NUR-graduate-handbook.pdf",
+      "feature_id": "School of Nursing history timeline",
+      "retrieved_date": "2026-10-26",
+      "source_date": "2022 PDF",
+      "crs": "not applicable",
+      "measurement_method": "Reports the Nursing and Allied Health Building ready for occupancy in 1977 and renamed Helen R. Johnson Hall of Nursing in 1991.",
+      "uncertainty": "No architectural description, elevation, or dimensions."
+    },
+    {
+      "file": "sources/purdue_historical_timeline.html",
+      "provider": "Purdue University Libraries Archives and Special Collections",
+      "url": "https://collections.lib.purdue.edu/timelines/puhistorical",
+      "feature_id": "1977 entry",
+      "retrieved_date": "2026-10-26",
+      "source_date": "web page current at retrieval",
+      "crs": "not applicable",
+      "measurement_method": "Institutional history cross-check: Johnson Hall of Nursing completed in 1977.",
+      "uncertainty": "No dimensions or facade description."
+    },
+    {
+      "file": "sources/indiana_commission_2023_nursing_pharmacy_facility.pdf",
+      "provider": "Indiana Commission for Higher Education / Purdue proposal",
+      "url": "https://www.in.gov/che/files/September-2023-Final-Commission-Meeting-Agenda7.pdf",
+      "feature_id": "September 14, 2023 project authorization",
+      "retrieved_date": "2026-10-26",
+      "source_date": "September 2023",
+      "crs": "not applicable",
+      "measurement_method": "Documents a proposal to construct the new Nursing and Pharmacy Education Building and demolish Johnson Hall of Nursing and other facilities. Used to flag status/time-scope uncertainty, not geometry.",
+      "uncertainty": "Proposal record does not independently confirm demolition completion."
+    },
+    {
+      "file": "sources/purdue_nursing_pharmacy_education_building_project.html",
+      "provider": "Purdue University School of Nursing and College of Pharmacy project page",
+      "url": "https://nursing.pharmacy.purdue.edu/",
+      "feature_id": "new Darr-Chaney Hall project",
+      "retrieved_date": "2026-10-26",
+      "source_date": "page current at retrieval",
+      "crs": "not applicable",
+      "measurement_method": "Documents the replacement project, distinct from the legacy JNSN/FID 218 asset.",
+      "uncertainty": "Does not provide as-built dimensions of the legacy building."
+    },
+    {
+      "file": "sources/purdue_historic_building_record_jnsn.html",
+      "provider": "Purdue University Archives and Special Collections, Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/58",
+      "feature_id": "database building ID 58; JNSN",
+      "retrieved_date": "2026-10-26",
+      "source_date": "record covers 1975–present; construction 1975–1977; dedication 1990",
+      "crs": "not applicable",
+      "measurement_method": "Raw HTML source snapshot. The record identifies Helen R. Johnson Hall of Nursing (JNSN), architect Scholer Corporation, 30,503 gross sq ft, construction dates, and lists Brick under Materials; its embedded images array is empty.",
+      "uncertainty": "Official material listing supports brick as a material but does not specify placement/coverage, facade design, openings, or entrance. No image is supplied by the record."
+    },
+    {
+      "file": null,
+      "provider": "Purdue University Archives and Special Collections, Purdue Building Images collection UA 149",
+      "url": "https://archives.lib.purdue.edu/repositories/2/archival_objects/24012",
+      "feature_id": "UA 149, File 17, Box 2, Folder 5 (J-K Slides, 1984–2000)",
+      "retrieved_date": "2026-10-26",
+      "source_date": "1984–2000 (folder date span)",
+      "crs": "not applicable",
+      "measurement_method": "Archival catalog finding aid lists Johnson Hall of Nursing among the slides in the folder. Catalog record was searched as a lead for direct facade evidence.",
+      "uncertainty": "Physical slides, not digitized in the public record; no image inspection or facade claim is made from this listing."
+    },
+    {
+      "file": null,
+      "provider": "Google Maps Street View (corroborating secondary image source)",
+      "url": "https://www.google.com/maps/@40.4292381,-86.9159019,192a,30y,110.44h,90t/data=!3m7!1e1!3m5!1sA9uia6rcKZF_CDi5NSntjQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DA9uia6rcKZF_CDi5NSntjQ%26yaw%3D110.44!7i13312!8i6656",
+      "feature_id": "Street View panorama A9uia6rcKZF_CDi5NSntjQ; panorama point 40.4292381,-86.9159019; exact place listing Johnson (Helen R.) Hall of Nursing, 502 N University St",
+      "retrieved_date": "2026-10-26",
+      "source_date": "September 2007 (panorama date displayed by Maps)",
+      "crs": "WGS84 panorama point; compared to Purdue GIS FID 218 footprint and named Google Maps place listing",
+      "measurement_method": "Visual inspection of the identity-matched panorama, with the pano point on the immediate west/southwest side of the FID 218 outline, corroborates a horizontal row of upper-story windows on the visible long face. Used only for broad facade feature placement, not precise count/dimensions.",
+      "uncertainty": "Secondary imagery, low-resolution and partly tree-obstructed. Lower facade/doorway is obscured; no entrance side, details, dimensions, or hidden facades are inferred. No image file is redistributed in the audit."
+    }
+  ],
+  "geometry_assessment": {
+    "purdue_fid": {
+      "FID": 218,
+      "name": "Helen R. Johnson Hall Of Nursing",
+      "code": "JNSN",
+      "levels": 3,
+      "extrution_raw": 24,
+      "shape_area_attr": 1701.015625,
+      "shape_length_attr": 173.1556108552611,
+      "ring_count": 1,
+      "ring_vertices_including_close": 13,
+      "local_approx_unique_ring_vertices": 12,
+      "local_approx_area_m2": 984.0055712634885,
+      "local_approx_valid": true,
+      "bounds_xy": [
+        -176.3835738218635,
+        201.4212631037276,
+        -133.98142356431464,
+        244.14052948617837
+      ]
+    },
+    "osm_way": {
+      "way_id": 117146488,
+      "tags": {
+        "addr:housenumber": "502",
+        "building": "university",
+        "name": "Johnson Hall of Nursing (JNSN)"
+      },
+      "unique_vertices": 16,
+      "local_approx_area_m2": 1005.8637256830366,
+      "bounds_xy": [
+        -175.998965763448,
+        200.7159039999283,
+        -133.2544212647408,
+        244.1214399998512
+      ],
+      "boundary_hausdorff_to_gis_m": 0.875891281658294,
+      "centroid_offset_m": 0.49583192806497156
+    },
+    "resolution": "The single source ring is valid and has 984.01 m² area in the project local approximation. OSM way 117146488 independently gives 1005.86 m² and 0.876 m boundary Hausdorff difference, supporting the ring shape and indicating the stored Shape__Area=1701.02 is inconsistent with the geometry. The mesh uses the Purdue FID 218 vertices exactly; no area-based rescaling."
+  },
+  "height_and_facade": {
+    "height": "2018 3DEP LiDAR class-1 surface return median is 8.135 m above nearby class-2 ground; the main roof is modeled flat at the median. Purdue GIS reports 3 levels; floor-to-floor spacing remains a derived estimate.",
+    "facade": "Purdue's official historic building record lists Brick as a material, but supplies no image (embedded images array empty). An identity-matched Google Maps Street View panorama from September 2007 corroborates a horizontal upper-story window ribbon on the southwest-facing long facade. Eight modeled panes are a render proxy for the observed ribbon, not a measured bay count or dimension. No entrance, canopy, limestone band, lower-floor windows, or detailing is modeled because none is supported by available imagery/elevations.",
+    "archive_lead": "Purdue Archives catalogs Johnson Hall of Nursing in UA 149 J-K Slides, 1984–2000, Box 2, Folder 5, but the image file is not digitized in the public record; it cannot support additional claims.",
+    "uncertainty": "The 2007 panorama is secondary, low-resolution, and tree-obstructed; only the upper horizontal ribbon is used as corroborating facade evidence. Entrance and most facade details remain unverified."
+  },
+  "time_scope_note": "Purdue documents from 2023 proposed demolishing JNSN for the replacement Nursing and Pharmacy Education Building. This asset represents the legacy GIS identity and is not a model of the new replacement. Whether the old building remains on site at the present date is not asserted."
+}
