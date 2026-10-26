@@ -1,0 +1,183 @@
+{
+  "asset_id": "massing_hampton_hall_of_civil_engineering_hamp_9715f0e",
+  "asset_path": "modular/buildings/massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend",
+  "export_collection": "Asset_massing_hampton_hall_of_civil_engineering_hamp_9715f0e",
+  "scene": "Building_massing_hampton_hall_of_civil_engineering_hamp_9715f0e",
+  "owner_assignment": "Rossen (root README.md pending table; confirmed 2026-10-26)",
+  "retrieved_on": "2026-10-26",
+  "coordinate_frame": {
+    "units": "meters",
+    "x": "east",
+    "y": "north",
+    "z": "up",
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_conversion": "(longitude + 86.9137) * 84810.60416539927",
+    "y_conversion": "(latitude - 40.4274) * 111040.0",
+    "reference": "project local approximation; not survey CRS"
+  },
+  "sources": [
+    {
+      "type": "official_GIS_footprint",
+      "provider": "Purdue campus map ArcGIS BuildingShapesZip4",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D272&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 272,
+      "source_date": "layer date not exposed; project reference snapshot 2026-10-22",
+      "retrieved": "2026-10-26",
+      "source_crs": "EPSG:4326 (WGS84); raw response outSR=4326",
+      "measurement_method": "FeatureServer closed polygon rings converted to the documented local meters frame; compared source vertices with the audit reference derived from the same feature. Source/reference ring difference is exactly 0 m; saved shell ring differs by at most 0.00001472 m from the map coordinates due to Blender float precision. This is faithful reproduction of the source, not an independent survey check.",
+      "uncertainty": "Purdue campus-map polygon is not certified survey data; dimensions and translation agreement are inherited from source coordinate conversion; exact overlay comparison is not an independent survey check. Attribute height fields (Extrution/R) are explicitly excluded."
+    },
+    {
+      "type": "official_facade_photo",
+      "provider": "Purdue Lyles School of Civil and Construction Engineering",
+      "url": "https://engineering.purdue.edu/CCE/People/People/Giving/controls/images/HAMP-building.jpg",
+      "feature_id": "HAMP-building.jpg",
+      "source_date": "not provided on image/page",
+      "retrieved": "2026-10-26",
+      "source_crs": "not applicable; photograph",
+      "measurement_method": "Qualitative visual comparison for brick color, stone surrounds, vertical multi-pane glazing, facade name sign and ground-level entry.",
+      "uncertainty": "Perspective and tree occlusion prevent metric measurements; image viewpoint is not georegistered."
+    },
+    {
+      "type": "official_building_history",
+      "provider": "Purdue Lyles School of Civil and Construction Engineering",
+      "url": "https://engineering.purdue.edu/CCE/AboutUs/News/Features/civil-engineering-building-to-be-named-for-alumnus",
+      "feature_id": "Purdue CCE article dated 2012-07-18",
+      "source_date": "2012-07-18",
+      "retrieved": "2026-10-26",
+      "source_crs": "not applicable",
+      "measurement_method": "Confirms identity/name and building constructed in three phases: 1950, 1961, 1986.",
+      "uncertainty": "No phase footprint diagrams or exterior dimension schedule in article; phase volumes are not separated in this model."
+    },
+    {
+      "type": "official_renovation_record",
+      "provider": "Purdue Lyles School of Civil and Construction Engineering",
+      "url": "https://engineering.purdue.edu/CCE/Media/Transitions/2020-February/renovations-at-hampton-hall",
+      "feature_id": "Purdue CCE article dated 2020-02-28",
+      "source_date": "2020-02-28",
+      "retrieved": "2026-10-26",
+      "source_crs": "not applicable",
+      "measurement_method": "Qualitative evidence for ground-floor/basement renovations, accessible entry and labs.",
+      "uncertainty": "Does not locate the new entrance in the GIS footprint or provide dimensions."
+    },
+    {
+      "type": "floor_count_report",
+      "provider": "Purdue Engineering / COFFEE",
+      "url": "https://engineering.purdue.edu/COFFEE/downloads/open/safety.pdf",
+      "feature_id": "Hampton Hall building description in safety report; local raw snapshot included",
+      "source_date": "not stated in retrieved PDF; search index listed 7 months before retrieval",
+      "retrieved": "2026-10-26",
+      "source_crs": "not applicable",
+      "measurement_method": "Report describes basement, ground, main/first, second, third, fourth floors (six levels) and is used only to identify story arrangement. Model depicts five above-grade levels; individual level heights are estimates.",
+      "uncertainty": "The source identifies levels, not surveyed elevations or exact floor-to-floor heights."
+    },
+    {
+      "type": "2017_renovation_floorplan",
+      "provider": "Purdue Engineering / HAMP renovation renderings",
+      "url": "https://engineering.purdue.edu/~frosch/Renderings/HAMP/Final%20Hampton%20Hall%20Renderings.pdf",
+      "feature_id": "Ground floor overview and teaching-lab sheets; drawings dated 2017-08-08",
+      "source_date": "2017-08-08",
+      "retrieved": "2026-10-26",
+      "source_crs": "not applicable; architectural floor plan drawings",
+      "measurement_method": "Supports teaching/lab program and internal renovation scope; not used for exterior footprint or dimensions.",
+      "uncertainty": "Public file contains interior renovation sheets only; no scaled exterior elevation was used."
+    }
+  ],
+  "measurements": {
+    "official_polygon_minimum_rotated_rectangle_m": {
+      "width": 62.45789974764834,
+      "depth": 110.13953692485589,
+      "angle_degrees_east_ccw": 39.30644726131723
+    },
+    "official_polygon_center_xy_m": [
+      -94.52805863085361,
+      317.64182212067516
+    ],
+    "official_polygon_area_projected_m2": 5103.79305674098,
+    "raw_feature_attribute_levels": 7,
+    "height": "Structural shell height 17.25 m (estimated as five above-grade levels x 3.45 m); roof penthouse extends to complete asset z 18.25 m and is also schematic; neither is measured.",
+    "saved_shell_bounds_world_m": [
+      [
+        -142.05946350097656,
+        -38.66997528076172
+      ],
+      [
+        260.1601257324219,
+        370.3581848144531
+      ],
+      [
+        0.0,
+        17.25
+      ]
+    ],
+    "complete_asset_bounds_world_m": [
+      [
+        -142.18948364257812,
+        -38.54063415527344
+      ],
+      [
+        260.0310974121094,
+        370.4870300292969
+      ],
+      [
+        0.0,
+        18.25
+      ]
+    ],
+    "mesh_object_count_in_export_collection": 5,
+    "export_collection_object_count": 6
+  },
+  "geometry_edits": [
+    "Replaced single generic 16 m massing block with exact campus-map ring prism and five visible above-grade levels (17.25 m estimated).",
+    "Added schematic low flat-roof mechanical penthouse; not sourced to measured roof survey.",
+    "Added repeated narrow dark glazing, limestone-colored jambs/sills/headers and horizontal floor belts, based on Purdue facade photograph.",
+    "Added ground-level accessible glass entry and identification sign at the longest facade edge; exact orientation/location is estimated.",
+    "Retained campus world coordinates and identity placement; no master marker or manifest edits."
+  ],
+  "validation_status": "PASS (8.2/10 independent grade); reopened in Blender 5.2.0 LTS, expected collection found with 6 objects, shell boundary max error 0.00001472 m, no modifiers/external images/linked libraries. Height and facade details retain the limitations listed below.",
+  "uncertainties": [
+    "Source map polygon is not a survey; no independent field survey available.",
+    "Above-grade floor heights, total height, and roof mechanical arrangement are estimates.",
+    "Six levels including basement are described in Purdue report; basement is below grade and not modeled.",
+    "Purdue CCE states three construction phases (1950, 1961, 1986), but public sources reviewed do not identify separate phase footprint/elevation limits.",
+    "Facade rhythm follows the official photo qualitatively; exact window counts, dimensions, entrance-side assignment, and stone/brick boundaries are not georeferenced.",
+    "Independent grader found the official photograph shows a prominent tall central pale-stone/glazed bay not represented by this model. The photo is not georeferenced to a specific facade plane, so the feature was recorded as a visible omission rather than added at an assumed location."
+  ],
+  "independent_grade": {
+    "reviewer": "separate independent evaluator agent (Hanley lane; no HAMP asset edits)",
+    "result_path": "audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/independent_grade/result.json",
+    "evaluator_path": "audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/independent_grade/evaluate_hamp.py",
+    "score": 8.2,
+    "max_score": 10,
+    "threshold": 8.0,
+    "passed": true,
+    "criterion_scores": {
+      "Correct identity and source-backed footprint": {
+        "points": 2.0,
+        "max_points": 2
+      },
+      "Position, orientation, and scale/dimensions": {
+        "points": 2.0,
+        "max_points": 2
+      },
+      "Evidence-backed height, floors, and roof form": {
+        "points": 1.4,
+        "max_points": 2
+      },
+      "Facade, entrances, and distinctive architecture": {
+        "points": 0.8,
+        "max_points": 2
+      },
+      "Modular export, portability, and complete evidence": {
+        "points": 2.0,
+        "max_points": 2
+      }
+    },
+    "findings": [
+      "Position/shape are tied to Purdue GIS and the project approximate lon/lat conversion; the feature is not a certified survey.",
+      "No source provides surveyed elevations or floor-to-floor heights; roof penthouse is schematic and unsupported by the supplied evidence.",
+      "The source photograph shows a dominant tall central glazed and pale-stone atrium/bay that is absent from the model; current model reads as uniform horizontal brick-and-window rows. Entrance form and precise location remain schematic."
+    ]
+  }
+}

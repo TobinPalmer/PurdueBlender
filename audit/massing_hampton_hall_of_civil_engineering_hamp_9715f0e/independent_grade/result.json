@@ -1,0 +1,80 @@
+{
+  "score": 8.2,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 2.0,
+      "max_points": 2,
+      "evidence": "Raw Purdue Campus GIS feature FID=272 / code=HAMP / name=Delon and Elizabeth Hampton Hall of Civil Engineering directly identifies Hampton Hall. Source ring has 37 coordinates. Loaded structural shell bottom has 36 vertices; independently recomputed source-to-mesh max nearest XY error is 0.00001472 m. This establishes source polygon reproduction, not an independent survey.",
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 2.0,
+      "max_points": 2,
+      "evidence": "The loaded shell base follows the campus GIS ring in the project local meter approximation. Recomputed GIS AABB is x=[-142.059,-38.670], y=[260.160,370.358] m; saved shell bounds in builder validation agree. Orientation follows source polygon vertices rather than a rectangular proxy.",
+      "findings": [
+        "Position/shape are tied to Purdue GIS and the project approximate lon/lat conversion; the feature is not a certified survey."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.4,
+      "max_points": 2,
+      "evidence": "Purdue Engineering safety report describes basement, ground, main/first, second, third, and fourth levels, consistent with five above-grade levels. Builder depicts 17.25 m shell height as an estimate (5 x 3.45 m) and a separate 1 m low rooftop penthouse estimate. Renders visibly show five facade bands.",
+      "findings": [
+        "No source provides surveyed elevations or floor-to-floor heights; roof penthouse is schematic and unsupported by the supplied evidence."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 0.8,
+      "max_points": 2,
+      "evidence": "Purdue CCE facade photograph confirms warm brick, pale stone framing, vertically proportioned glazing, and prominent name lettering. The saved entry view and model include brick, repeated windows, pale trim, and a sign/entry.",
+      "findings": [
+        "The source photograph shows a dominant tall central glazed and pale-stone atrium/bay that is absent from the model; current model reads as uniform horizontal brick-and-window rows. Entrance form and precise location remain schematic."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 2.0,
+      "max_points": 2,
+      "evidence": "Independently reopened .blend and found expected scene=True, collection=True, 6 collection objects (5 meshes), 0 linked libraries and 0 unpacked external images. Evidence folder contains raw official GIS, source facade image, official history/renovation sources, floor-level report and renovation drawings, render set, and reopen validation.",
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "asset": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend",
+    "scene": "Building_massing_hampton_hall_of_civil_engineering_hamp_9715f0e",
+    "collection": "Asset_massing_hampton_hall_of_civil_engineering_hamp_9715f0e",
+    "collection_object_count": 6,
+    "official_feature_id": 272,
+    "official_name": "Delon and Elizabeth Hampton Hall of Civil Engineering",
+    "source_ring_vertices": 37,
+    "shell_bottom_vertices": 36,
+    "max_source_to_shell_xy_error_m": 1.4718735890255867e-05,
+    "gis_bounds_xy_m": [
+      [
+        -142.05946721212553,
+        -38.669973529825775
+      ],
+      [
+        260.1601312422531,
+        370.3581984127186
+      ]
+    ],
+    "linked_libraries": [],
+    "unpacked_external_images": [],
+    "renders": [
+      "audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/renders/exterior_axonometric.png",
+      "audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/renders/entry_facade.png",
+      "audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/renders/roof_plan.png"
+    ]
+  },
+  "findings": [
+    "Position/shape are tied to Purdue GIS and the project approximate lon/lat conversion; the feature is not a certified survey.",
+    "No source provides surveyed elevations or floor-to-floor heights; roof penthouse is schematic and unsupported by the supplied evidence.",
+    "The source photograph shows a dominant tall central glazed and pale-stone atrium/bay that is absent from the model; current model reads as uniform horizontal brick-and-window rows. Entrance form and precise location remain schematic."
+  ]
+}
