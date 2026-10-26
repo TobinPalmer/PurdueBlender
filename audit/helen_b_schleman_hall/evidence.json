@@ -1,7 +1,7 @@
 {
   "building": "Helen B. Schleman Hall",
   "asset_id": "massing_schleman_hall_schm_ad4b05b",
-  "status": "Historic red-tile roof and brick-column entrance detailed from Purdue exterior reference; a Purdue basement plan plausibly reconciles three visible floors with the four-level GIS attribute; height remains estimated and independent grade pending",
+  "status": "Independent grade passed at 8.1/10 (independent_grade_r1); asset reopened and validated in Blender 5.2.3. Master integration remains pending.",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -17,7 +17,11 @@
       {
         "provider": "Purdue University Events",
         "use": "Current exterior photo and address reference; visual observations indicate red brick, red tile roof and a covered two-column entrance portico; apparent three visible storeys are a photo interpretation, not a measured count.",
-        "url": "https://events.purdue.edu/helen_b_schleman_hall_of_student_servcs"
+        "url": "https://events.purdue.edu/helen_b_schleman_hall_of_student_servcs",
+        "raw_snapshots": [
+          "source_purdue_events_page.html",
+          "source_exterior_photo_official.jpg"
+        ]
       },
       {
         "provider": "Purdue University Sustainable Operations",
@@ -64,8 +68,8 @@
       0.0,
       11.399999618530273
     ],
-    "after_structural_shell": "Walls follow all 16 distinct official source-ring vertices. A new gable roof and portico are architectural additions and extend beyond the wall footprint.",
-    "after_modeled_height_m": 12.82,
+    "after_structural_shell": "Walls follow all 16 distinct official source-ring vertices. A simplified hip roof and portico are architectural additions and extend beyond the wall footprint.",
+    "after_modeled_height_m": 12.81,
     "position_status": "The structural footprint follows official FID 224 after the approximate project conversion. Source positional uncertainty is unpublished; entrance side uses visual reference context and remains approximate.",
     "plan_dimension_status": "Walls use official campus GIS feature polygon; the map polygon is not a surveyed wall outline. Roof eaves and entrance portico are estimated.",
     "orientation_status": "Roof ridge follows the footprint long axis; entrance faces the west-side edge selected by the build script. No georeferenced photo confirms this orientation.",
@@ -83,34 +87,53 @@
     "modeled_visible_storeys": 3,
     "storey_count_interpretation": "The exterior photo shows approximately three above-grade facade levels and a Purdue renovation-study floor plan explicitly labels a Schleman basement (page 78). This makes three visible floors plus one basement a plausible reconciliation of GIS NUM_LEVELS=4, but the GIS counting convention and any basement exposure remain unverified.",
     "reopen_check": {
-      "object_name": "Schleman Hall (SCHM)",
+      "asset_path": "modular/buildings/massing_schleman_hall_schm_ad4b05b.blend",
       "asset_id": "massing_schleman_hall_schm_ad4b05b",
+      "scene": "Building_massing_schleman_hall_schm_ad4b05b",
+      "object_name": "Schleman Hall (SCHM)",
       "exported_collection_object_count": 1,
       "mesh_vertex_count": 3926,
       "mesh_face_count": 2874,
-      "saved_asset_reopened": true
-    }
+      "reopened_in_blender": "5.2.3 LTS",
+      "max_source_ring_error_m": 8.11e-06,
+      "identity_world_transform": true,
+      "modifiers": []
+    },
+    "roof_form_status": "A simplified shallow hip roof and red-tile material match the broad silhouette/material visible in the Purdue photograph. The complete intersecting roof plan and pitch are not documented."
   },
   "geometry_edits": [
     "Preserved the official campus GIS structural wall polygon and the existing asset object, collection, scene, ID and file path.",
-    "Replaced the flat cap with a shallow red-tile gable roof aligned to the footprint long axis.",
+    "Replaced the flat cap with a simplified shallow red-tile hip roof aligned to the footprint long axis.",
     "Added a paired-glass entry under a portico with brick columns, limestone bases and capitals, a red roof canopy and limestone inscription panel.",
-    "Adjusted window bays to avoid overlap with the entrance; three visible facade levels are modeled, while the official GIS four-level attribute remains unresolved."
+    "Adjusted window bays to avoid overlap with the entrance; three visible facade levels are modeled, while the official GIS four-level attribute remains unresolved.",
+    "Saved an independent build module under modular/buildings and rendered oblique, entrance-elevation, and top overview views."
   ],
   "uncertainties": [
     "The official campus GIS polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
     "A Purdue study confirms an interior basement level, making the four-level GIS count plausible alongside three visible above-grade floors. The plan does not establish the GIS counting convention or how much basement is exposed at grade.",
-    "The wall height, 1.4 m roof rise, gable shape, portico dimensions and entrance location are estimates, not measured elevations.",
     "The 2024 renovation context may affect current interior use; this model uses the visible exterior reference and does not reproduce recent interior changes.",
-    "No independent grader has reviewed this revision."
+    "No independent grader has reviewed this revision.",
+    "The visible photo suggests several intersecting hip roof planes; the model uses a single simplified hip roof over the footprint because the complete roof plan is not visible.",
+    "A floor-plan reference supports a basement, but the GIS level-count convention, exact wall height, floor elevations, roof pitch, and entrance orientation remain uncertain.",
+    "Address metadata conflicts: official Purdue GIS FID 224 lists 656 Oval Drive, while the official Purdue Events page lists 475 Stadium Mall Drive. Both identify Schleman Hall; exact primary address designation remains unresolved."
   ],
   "artifacts": {
-    "build_script": "build_detail.py",
+    "build_module": "modular/buildings/build_massing_schleman_hall_schm_ad4b05b.py",
+    "legacy_build_script": "build_detail.py",
     "build_config": "build_config.json",
-    "raw_source": "source_feature_224_raw.json",
-    "exterior_reference_observation": "source_exterior_reference_observation.json",
-    "preview_render_script": "render_preview.py",
-    "preview": "preview_detail.png",
-    "floorplan_observation": "source_floorplan_observation.json"
+    "raw_official_purdue_gis_feature": "source_feature_224_raw.json",
+    "purdue_events_page": "source_purdue_events_page.html",
+    "purdue_exterior_photo": "source_exterior_photo_official.jpg",
+    "exterior_photo_observations": "source_exterior_reference_observation.json",
+    "floorplan_observation": "source_floorplan_observation.json",
+    "initial_preview": "preview_detail.png",
+    "final_oblique_preview": "preview_detail_r2.png",
+    "entrance_view": "preview_entrance_r1.png",
+    "top_view": "preview_top_r1.png",
+    "render_script": "render_preview.py",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py",
+    "independent_grade": "independent_grade_r1/result.json",
+    "independent_grade_evaluator": "independent_grade_r1/evaluate.py"
   }
 }

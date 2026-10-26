@@ -1,0 +1,117 @@
+{
+  "score": 8.1,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Official Purdue GIS building-shapes feature FID 224 names Helen B. Schleman Hall (SCHM), with a preserved 16-vertex polygon.",
+        "The official campus GIS perimeter appears in the reopened asset; saved validation reports a maximum projected source-ring error of 8.11e-06 m.",
+        "The official Purdue Events page names Schleman Hall and its raw image shows a matching red-brick, red-tile building."
+      ],
+      "deduction": "The feature lists address '656 Oval Drive', while the Purdue Events page lists '475 Stadium Mall Drive'; the sources do not reconcile these address labels. The GIS polygon is not a certified survey."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "The object and scene retain identity transforms in the campus-coordinate massing library.",
+        "All 16 official GIS ring points are matched within 0.000009 m by the reopen validation.",
+        "The GIS outline yields an approximately 53.77 m by 25.15 m minimum-rectangle footprint; the building mesh follows the source ring."
+      ],
+      "deduction": "The project geographic conversion is approximate, official positional uncertainty is unpublished, and the photo does not verify the chosen west-facing entrance bearing."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "Purdue exterior image supports red-tile low roof silhouette and three visibly occupied facade levels.",
+        "A Purdue renovation-study basement plan labels a distinct Schleman basement; it supports, but does not prove, interpreting the GIS four-level value as three above-grade levels plus basement.",
+        "The 11.4 m wall top and approximately 12.8 m roof peak are explicitly labeled estimates; no measured elevations are supplied."
+      ],
+      "deduction": "Exact height, floor elevations, basement exposure, GIS level convention, roof pitch and complete roof plan are unknown. The photo shows several intersecting roof forms, while the model uses one simplified hip roof."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "The raw Purdue photo shows brick with light belt courses/window trim, a recessed multi-bay entrance, and a portico with brick piers and light bases/capitals.",
+        "The current oblique and entrance renders contain those source-observed elements and three facade levels.",
+        "The top preview confirms the library geometry stays within the GIS-derived plan envelope, apart from documented roof/portico extensions."
+      ],
+      "deduction": "The photo is one perspective image, not an elevation; it cannot establish exact window/door dimensions, opening rhythm, bearing, or full wing/roof configuration. Some details are simplified."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": [
+        "Blender 5.2.3 LTS reopened the expected scene, one named collection object, 3926 vertices, 2874 faces, five materials, identity transform, and no modifiers.",
+        "A dedicated modular/buildings build module exists and the asset path/collection/object identifiers remain stable.",
+        "The building evidence includes raw official GIS, Purdue Events HTML and image, floor-plan observations, three views, build configuration, and a source-ring reopen validation."
+      ],
+      "deduction": "The build module saves into the open source file instead of implementing an independent collection-export operation; integration into the Tobin-owned master is still pending."
+    }
+  ],
+  "evidence": [
+    "Independent evaluator reopened and inspected the saved .blend in Blender; it read actual scene, collection, object transform, vertex/face counts, materials, bounds and modifiers.",
+    "Evaluator directly checked the official GIS snapshot, official photo observation and raw-image path, basement-plan observation, current renders, dedicated build module, and saved reopen validation."
+  ],
+  "findings": [
+    {
+      "priority": "medium",
+      "status": "uncertain",
+      "finding": "Reconcile or explicitly retain the address difference (656 Oval Drive in the GIS feature versus 475 Stadium Mall Drive on the official Events page); the building identity itself is supported by both named records."
+    },
+    {
+      "priority": "medium",
+      "status": "documented",
+      "finding": "Keep eaves/wall height, roof peak/pitch, exact floor count, basement exposure, and entrance bearing marked estimated or unverified pending measured elevations/georeferenced imagery."
+    },
+    {
+      "priority": "low",
+      "status": "documented",
+      "finding": "The source photograph shows several intersecting low-pitch red-tile roof planes; the model represents the overall massing with a simplified single hip roof."
+    }
+  ],
+  "asset_inspection": {
+    "blender_version": "5.2.3 LTS",
+    "scene": "Building_massing_schleman_hall_schm_ad4b05b",
+    "collection_object_count": 1,
+    "object": "Schleman Hall (SCHM)",
+    "vertices": 3926,
+    "faces": 2874,
+    "bounds_world_m": [
+      [
+        -141.31514,
+        -114.250221
+      ],
+      [
+        -204.281158,
+        -149.248672
+      ],
+      [
+        0.0,
+        12.809999
+      ]
+    ],
+    "materials": [
+      "SCHLEMAN_HALL_SCHM_AD4B05B_Exterior",
+      "SCHLEMAN_HALL_SCHM_AD4B05B_Limestone",
+      "SCHLEMAN_HALL_SCHM_AD4B05B_Glazing",
+      "SCHLEMAN_HALL_SCHM_AD4B05B_Roof",
+      "SCHLEMAN_HALL_SCHM_AD4B05B_Metal"
+    ],
+    "modifiers": [],
+    "identity_world_transform": true,
+    "address_gis": "656 Oval Drive",
+    "address_photo": "475 Stadium Mall Drive",
+    "gis_source_ring_error_m": 8.11e-06
+  },
+  "grade_status": "pass: meets repository minimum of 8/10"
+}
