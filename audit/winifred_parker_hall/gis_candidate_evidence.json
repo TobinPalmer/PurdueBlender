@@ -1,0 +1,83 @@
+{
+  "building_id": "winifred_parker_hall",
+  "candidate_asset": "audit/winifred_parker_hall/Winifred_Parker_R5_GIS_shell_candidate.blend",
+  "promoted_source_asset": "modular/buildings/winifred_parker_hall.blend",
+  "candidate_sha256": "92fa120794470d93a253d04f35ca0852caea7d05982a5f4e02b285fd914045a9",
+  "baseline_asset": "audit/winifred_parker_hall/Winifred_Parker_Hall_baseline_pre_R5.blend",
+  "baseline_sha256": "19518699e96685d886a56ff480b88e7a2bdc6b33ae2e155d147357253c255f1c",
+  "preserved_baseline_snapshot": "audit/winifred_parker_hall/Winifred_Parker_Hall_baseline_pre_R5.blend",
+  "collection": "Asset_winifred_parker_hall",
+  "sources": [
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": "FID 879; BLDG_ABBR PKRW; Winifred Parker Residence Hall; 1196 3rd Street",
+      "retrieved": "2026-10-22",
+      "source_crs": "EPSG:4326 (WGS 84)",
+      "raw_snapshot": "audit/winifred_parker_hall/gis_feature_879_raw.json",
+      "method": "Transformed source ring using the project's documented local approximation (X=(lon+86.9137)*111412.84*cos(40.4274 degrees), Y=(lat-40.4274)*111040), then centered on the manifest placement origin (-544.25, 42.425). Compared the upper structural shell outline directly with the transformed polygon.",
+      "source_measurements": {
+        "polygon_area_m2_from_geometry": 1842.5746446498654,
+        "polygon_bounds_campus_xy_m": [-589.5492296333053, 10.363714808586337, -538.0585301510012, 89.59606084361894],
+        "ring_vertices": 66,
+        "Shape__Area_attribute_m2": 3185.1171875,
+        "Shape__Length_attribute_m": 442.26042138245697
+      },
+      "uncertainty": "The feature geometry is not a survey and uses an approximate local conversion. Its legacy Shape__Area attribute disagrees with area computed from the returned polygon; source boundary was used because its perimeter/bounds correspond to the building trace."
+    },
+    {
+      "provider": "Purdue University Housing",
+      "url": "https://housing.purdue.edu/my-housing/options/residence-halls/parker-south.html",
+      "retrieved": "2026-10-22",
+      "snapshot": "audit/winifred_parker_hall/purdue_residence_page_2026.html",
+      "relevant_evidence": "Describes suites/semi-suites, floor-to-ceiling windows, study and lounge uses, ground-floor Starbucks and Third Street Market, and says plan dimensions are approximate.",
+      "uncertainty": "Program information does not verify individual facade dimensions, structural wall positions, or measured elevations."
+    },
+    {
+      "provider": "Purdue University official photo",
+      "url": "https://www.purdue.edu/vpsl/news/perspectives-stories/fall-2021/_images/winifred-parker-hall.jpg",
+      "source_date": "Fall 2021",
+      "retrieved": "2026-10-22",
+      "local_copy": "audit/winifred_parker_hall/official_purdue_photo_2021.jpg",
+      "use": "Facade review indicates red brick, tall narrow punched windows, restrained light trim/sills, a ground-level glass entrance/storefront, and no broad bright story bands like the earlier model.",
+      "uncertainty": "Single oblique exterior photograph; not enough to confirm every facade, floor-to-floor height, roof configuration, or current condition."
+    }
+  ],
+  "geometry_changes": [
+    "Removed the full overlapping East Wing box and its six other rectangular wing mass approximations from the candidate, replacing them with one continuous upper-story shell and GIS-outline roof. This preserves a continuous exterior through the wing and avoids the earlier hole-producing duplicate-removal cutaway.",
+    "Created one continuous ground-story structural core from the official outline north of the 28.3 m campus-Y storefront datum, leaving the Third Street retail/entry zone open at ground level beneath the continuous upper shell.",
+    "Moved 118 East facade window/sill/curtain objects to the source-derived eastern wall edge.",
+    "Removed unsupported West facade window/sill bays 0-3 and north facade bay 5 on each upper story.",
+    "Reduced the earlier square window aspect and oversized sill/spandrel proportions toward the tall, narrow openings in Purdue's official photo.",
+    "Removed the rectangular repeated story bands and water-table boxes that no longer followed the actual perimeter and looked too prominent against the photo."
+  ],
+  "candidate_geometry": {
+    "upper_shell_xy_area_m2": 1842.5746446498654,
+    "upper_shell_height_m": 16.0,
+    "upper_shell_z_range_m": [4.2, 20.2],
+    "ground_core_area_m2": 1062.2525088023403,
+    "ground_core_z_range_m": [0.0, 4.2],
+    "roof_z_range_m": [20.16, 20.32],
+    "original_height_including_penthouses_max_z_m": 23.4
+  },
+  "validation": {
+    "reopen_report": "audit/winifred_parker_hall/gis_candidate_reopen_validation.json",
+    "reopened_in_separate_blender_process": true,
+    "export_objects": 582,
+    "mesh_objects": 581,
+    "used_materials": 18,
+    "materialless_meshes": 0,
+    "external_unpacked_image_files": 0,
+    "render": "audit/winifred_parker_hall/gis_shell_exterior.png",
+    "change_record": "audit/winifred_parker_hall/gis_candidate_change_record.json",
+    "independent_grade": "pending; do not mark complete until a fresh independent grader returns at least 8/10",
+    "source_asset_frozen_at_candidate_sha": true
+  },
+  "remaining_uncertainties": [
+    "Purdue GIS NUM_LEVELS says 3 while the same record exposes Floorplans levels 2-5 and CountOfFLO 6; candidate story heights and the six-level interpretation are not survey-verified.",
+    "No surveyed elevation, complete as-built drawing, or current multi-elevation photo set was found in this evidence packet; roof/penthouse form and total height remain estimated or unverified.",
+    "The GIS outer ring has no courtyard hole; it appears to describe the building outline but cannot resolve interior partition/courtyard conditions.",
+    "Ground-floor subtraction north of Y=28.3 m follows the existing storefront datum rather than an as-built floor plan; the open lower retail zone needs visual grading.",
+    "The approximate GIS footprint and old Shape__Area attribute conflict. Treat the candidate's exact geometric trace as source alignment, not proof of survey accuracy."
+  ]
+}
