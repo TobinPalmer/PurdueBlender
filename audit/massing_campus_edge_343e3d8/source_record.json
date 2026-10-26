@@ -33,8 +33,8 @@
       "feature": "Tile in2018_30001880_12; Tippecanoe County; footprint tile index OBJECTID 14401",
       "source_date": "2018 acquisition; tile retrieved 2026-10-25",
       "source_crs": "EPSG:2968 NAD83(HARN) / Indiana West (US survey feet), 5 ft cells",
-      "method": "Sample pixel centers inside the OSM way polygon transformed to EPSG:2968. For finite values 10-160 ft, median is 118.49 ft / 36.12 m and p90 is 120.98 ft / 36.88 m; use median only as approximate roof datum.",
-      "uncertainty": "5 ft cells mix roof edges and surroundings; outlier/tree returns and the NDHM surface do not establish surveyed eaves, story count, or architectural stepbacks."
+      "method": "Sample 2018 5-ft NDHM pixel centers inside OSM way 886359911; whole-outline median is about 36.12 m. A second reproducible analysis summarizes three north/middle/south roof bands using the 2023 orthophoto extent and approximate campus local conversion.",
+      "uncertainty": "5-ft cells mix roof edges, trees, and rooftop elements; NDHM is a normalized surface and does not establish eaves or story count. Orthophoto-derived per-tower bands are approximate, not surveyed."
     },
     {
       "provider": "Indiana Geographic Information Office, DynamicWebMercator Indiana 2023 Imagery ImageServer",
@@ -42,8 +42,8 @@
       "feature": "Orthophoto crop around Campus Edge, 1800 x 1800 px",
       "source_date": "2023 imagery; service metadata and crop retrieved 2026-10-25",
       "source_crs": "ImageServer export in Web Mercator; extent saved in indiana_2023_orthophoto_metadata.json",
-      "method": "Visual check of the roof outline, not used to infer vertical dimensions.",
-      "uncertainty": "Orthophoto roof surface is not a structural wall survey."
+      "method": "Visual check of roof outline and qualitative interpretation of three north-to-south roof-pad intervals separated by two dark courtyard/recess bands; row intervals use the saved EPSG:4326 extent and project local conversion, summarized in campus_edge_roof_zone_analysis.json.",
+      "uncertainty": "Orthophoto roof surfaces are not structural wall boundaries. Row-derived pad boundaries use an approximate local conversion and are clipped to the GIS footprint, not surveyed tower outlines."
     },
     {
       "provider": "American Campus Communities, official property page and gallery",
@@ -65,5 +65,17 @@
     "sources/indiana_2023_orthophoto_metadata.json",
     "sources/indiana_2023_orthophoto_campus_edge.jpg",
     "sources/official_gallery_07.jpg"
+  ],
+  "roof_plan_interpretation": {
+    "status": "qualitative photo interpretation georeferenced through orthophoto extent and approximate local projection",
+    "analysis": "audit/massing_campus_edge_343e3d8/campus_edge_roof_zone_analysis.json",
+    "preview": "audit/massing_campus_edge_343e3d8/orthophoto_roof_zone_interpretation.png",
+    "interpretation": "Three separate north/middle/south roof-pad masses with two major open/recessed roof bands above the continuous low podium. Upper mass facades follow each pad boundary, leaving the recess bands open.",
+    "uncertainty": "Roof-pad boundaries are interpreted from 2023 orthophoto rows transformed using its saved extent, then clipped to the GIS ring; exact tower wall lines and courtyard elevations are not surveyed."
+  },
+  "derived_outputs": [
+    "campus_edge_roof_zone_analysis.json",
+    "orthophoto_roof_zone_interpretation.png",
+    "reopen_validation.json"
   ]
 }

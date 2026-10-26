@@ -4,21 +4,21 @@
   "scene": "Building_massing_campus_edge_343e3d8",
   "collection": "Asset_massing_campus_edge_343e3d8",
   "asset_id": "massing_campus_edge_343e3d8",
-  "asset_objects": 11,
-  "asset_mesh_objects": 11,
+  "asset_objects": 15,
+  "asset_mesh_objects": 15,
   "all_asset_objects_are_local_meshes": true,
   "linked_libraries": 0,
   "external_unpacked_images": 0,
   "asset_bounds_m": {
     "min": [
       390.9216003417969,
-      -580.7102661132812,
+      -579.6698608398438,
       0.0
     ],
     "max": [
-      433.374267578125,
+      432.46649169921875,
       -487.0778503417969,
-      37.2400016784668
+      37.387001037597656
     ]
   },
   "structural_podium_bounds_m": {
@@ -34,6 +34,98 @@
     ],
     "vertices": 24
   },
+  "tower_roof_zone_bounds": {
+    "north": {
+      "shell_bounds_m": {
+        "min": [
+          391.234375,
+          -507.9700012207031,
+          4.800000190734863
+        ],
+        "max": [
+          431.4328918457031,
+          -487.3523254394531,
+          34.895999908447266
+        ],
+        "vertices": 8
+      },
+      "roof_bounds_m": {
+        "min": [
+          391.234375,
+          -507.9700012207031,
+          34.895999908447266
+        ],
+        "max": [
+          431.4328918457031,
+          -487.3523254394531,
+          35.895999908447266
+        ],
+        "vertices": 8
+      },
+      "ndhm_zone_sample_count": 176,
+      "approximate_roof_surface_median_m": 35.896
+    },
+    "middle": {
+      "shell_bounds_m": {
+        "min": [
+          391.6307678222656,
+          -539.780029296875,
+          4.800000190734863
+        ],
+        "max": [
+          431.75592041015625,
+          -522.6010131835938,
+          35.09400177001953
+        ],
+        "vertices": 12
+      },
+      "roof_bounds_m": {
+        "min": [
+          391.6307678222656,
+          -539.780029296875,
+          35.09400177001953
+        ],
+        "max": [
+          431.75592041015625,
+          -522.6010131835938,
+          36.09400177001953
+        ],
+        "vertices": 12
+      },
+      "ndhm_zone_sample_count": 267,
+      "approximate_roof_surface_median_m": 36.094
+    },
+    "south": {
+      "shell_bounds_m": {
+        "min": [
+          391.7921447753906,
+          -563.364990234375,
+          4.800000190734863
+        ],
+        "max": [
+          431.9954528808594,
+          -548.3699951171875,
+          35.266998291015625
+        ],
+        "vertices": 16
+      },
+      "roof_bounds_m": {
+        "min": [
+          391.7921447753906,
+          -563.364990234375,
+          35.266998291015625
+        ],
+        "max": [
+          431.9954528808594,
+          -548.3699951171875,
+          36.266998291015625
+        ],
+        "vertices": 16
+      },
+      "ndhm_zone_sample_count": 246,
+      "approximate_roof_surface_median_m": 36.267
+    }
+  },
   "preview_setup_objects_outside_asset_collection": 4,
   "checks": {
     "scene_and_export_collection_names": "pass",
@@ -41,7 +133,10 @@
     "local_portable_mesh_asset": "pass",
     "evaluated_world_bounds": "pass",
     "separate_preview_setup": "pass",
-    "approximate_height_over_36m": "pass"
+    "approximate_height_over_36m": "pass",
+    "three_separated_roof_towers": "pass",
+    "legacy_continuous_shell_removed": "pass",
+    "roof_shells_match_orthophoto_interpretation_bands": "pass"
   },
-  "height_interpretation": "36.12 m approximate roof datum inferred from 2018 NDHM statistics; not a surveyed eave or floor datum."
+  "height_interpretation": "Per-zone NDHM medians (north 35.896 m, middle 36.094 m, south 36.267 m) are approximate normalized roof-surface statistics in orthophoto-interpreted bands; they do not establish eaves, story counts, or surveyed tower heights."
 }

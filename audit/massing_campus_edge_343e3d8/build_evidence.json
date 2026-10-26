@@ -33,50 +33,95 @@
   "vertical_geometry": {
     "status": "estimated; not surveyed",
     "ground_reference": "model ground datum z=0 m; no independent surveyed elevation adjustment",
-    "roof_datum_estimate_m": 36.12,
-    "method": "2018 NDHM samples within OSM outline: 1,327 finite samples in 10-160 ft range; median 118.49 ft = 36.12 m; p90 120.98 ft = 36.88 m.",
+    "whole_outline_roof_surface_median_m": 36.12,
+    "tower_roof_surface_median_estimates_m": {
+      "north": 35.896,
+      "middle": 36.094,
+      "south": 36.267
+    },
+    "method": "2018 NDHM pixel centers inside the OSM footprint, grouped into three approximate Y bands georeferenced from the 2023 orthophoto extent using the project local conversion. Per-zone values are normalized surface medians, not eaves.",
     "podium_height_m": 4.8,
     "residential_floors_estimated": 9,
-    "residential_floor_to_floor_estimate_m": 3.369,
-    "roof_equipment_extent_m_approx": "up to z=37.24 m",
-    "uncertainty": "Five-foot NDHM pixels contain edge/tree outliers. NDHM is a normalized surface and does not establish eaves, exact floor count, per-tower height, or roof stepbacks."
+    "equipment_top_m_approx": 37.387,
+    "uncertainty": "5-ft NDHM cells include rooftop equipment, edges, and possible tree returns. Orthophoto row boundaries are approximate and clipped to the GIS ring; per-tower eaves, floor counts, and exact roof-step elevations are unknown.",
+    "roof_datum_estimate_m": 36.12,
+    "roof_equipment_extent_m_approx": "up to z=37.387 m from approximate rooftop equipment geometry"
   },
   "architecture": {
-    "status": "qualitative photo interpretation",
-    "source": "American Campus Communities official exterior gallery photo",
+    "status": "qualitative photo interpretation with plan massing cross-checked against official 2023 orthophoto",
+    "sources": [
+      "American Campus Communities official exterior gallery image 07",
+      "Indiana Geographic Information Office 2023 orthophoto"
+    ],
     "represented_features": [
       "warm brick podium and vertical brick accents",
       "repeated glazed residential window bays",
-      "alternating graphite and light-gray facade material impression",
+      "alternating graphite and light-gray facade impression",
       "stacked balconies on selected long elevations",
       "projecting podium entry canopy and ground-floor glazing",
-      "approximate rooftop mechanical units"
+      "three separated north/middle/south upper tower roof-pad masses",
+      "two major open/recessed courtyard or terrace bands above the continuous low podium",
+      "approximate rooftop mechanical units placed only on tower roofs"
     ],
     "estimated_features": [
-      "floor count and floor spacing",
-      "bay count, window size, balcony position and dimensions",
-      "podium height and canopy dimensions",
-      "equipment count and locations"
+      "tower Y bands and roof-pad extents interpreted from orthophoto rows using its saved georeference and approximate local conversion",
+      "individual tower roof heights represented with per-zone NDHM medians",
+      "floor count, floor-to-floor spacing, bay count, openings, balconies, canopy, and rooftop equipment"
     ],
     "unverified": [
-      "individual tower footprints/heights and roof-step geometry",
-      "wall/eave elevations and detailed opening schedule",
-      "exact material palette and surveyed facade orientation"
+      "surveyed tower wall lines or exact court boundaries",
+      "eave elevations, exact tower height differences, and floor count",
+      "detailed opening schedule and exact entry/balcony positions",
+      "podium courtyard floor elevations and concealed structure"
     ]
   },
   "changes": [
     "Replaced the inherited 16 m placeholder massing with an extrusion of the matching 2018 Indiana LiDAR footprint.",
     "Added photo-interpreted podium, facade rhythm, windows, balcony stacks, entry canopy, brick accents and approximate roof equipment.",
-    "Kept the stable asset ID, asset path, collection name and campus-world coordinate contract."
+    "Kept the stable asset ID, asset path, collection name and campus-world coordinate contract.",
+    "Replaced the footprint-wide upper shell with three orthophoto-interpreted roof-pad tower masses clipped to the unchanged GIS footprint.",
+    "Left two large roof recess/courtyard bands open above the low continuous podium; removed the continuous upper facade grid across those bands.",
+    "Used 2018 NDHM medians sampled separately within the three approximate orthophoto roof zones (35.896 m north, 36.094 m middle, 36.267 m south) while retaining explicit non-survey caveats."
   ],
   "validation": {
     "blender_version": "4.5.15 LTS",
     "reopen_validation": "audit/massing_campus_edge_343e3d8/reopen_validation.json",
-    "result": "passed: reopened saved .blend; expected scene, stable ID and export collection present; 11 local mesh objects; no linked libraries or unpacked external images; evaluated bounds and separated preview setup verified",
+    "result": "passed: reopened saved .blend; expected scene, stable ID and export collection present; 15 local mesh objects including three separate upper tower shells and three roof/parapet zones; no linked libraries or unpacked external images; evaluated bounds and separate preview setup verified",
     "preview": "audit/massing_campus_edge_343e3d8/campus_edge_preview.png",
     "top_preview": "audit/massing_campus_edge_343e3d8/campus_edge_footprint_preview.png",
     "orthophoto_overlay": "audit/massing_campus_edge_343e3d8/orthophoto_footprint_overlay.png",
-    "ndhm_map": "audit/massing_campus_edge_343e3d8/ndhm_campus_edge_roof_map.png"
+    "ndhm_map": "audit/massing_campus_edge_343e3d8/ndhm_campus_edge_roof_map.png",
+    "orthophoto_roof_zone_interpretation": "audit/massing_campus_edge_343e3d8/orthophoto_roof_zone_interpretation.png",
+    "roof_zone_analysis": "audit/massing_campus_edge_343e3d8/campus_edge_roof_zone_analysis.json",
+    "separated_tower_masses": "Three tower shells occupy approximate north/middle/south orthophoto roof-pad bands; the two intervening bands contain only the low podium roof/terrace at z=4.8 m.",
+    "uncertainty": "The NDHM statistics are approximate normalized roof-surface heights; the orthophoto-derived tower bands use an approximate local projection and are clipped to the GIS footprint, not surveyed wall lines.",
+    "asset_mesh_objects": 15,
+    "asset_world_bounds_m": {
+      "min": [
+        390.9216003417969,
+        -579.6698608398438,
+        0.0
+      ],
+      "max": [
+        432.46649169921875,
+        -487.0778503417969,
+        37.387001037597656
+      ]
+    },
+    "structural_podium_bounds_world_m": {
+      "min": [
+        391.234375,
+        -579.3570556640625,
+        0.0
+      ],
+      "max": [
+        432.1537170410156,
+        -487.3523254394531,
+        4.800000190734863
+      ],
+      "vertices": 24
+    },
+    "tower_roof_zone_bounds": "audit/massing_campus_edge_343e3d8/reopen_validation.json"
   },
   "coordinator_follow_up": "Shared README/manifest indexes and the linked master were left untouched. Manifest placeholder bounds should be compared with the new structural footprint bounds above before Tobin integrates the library."
 }

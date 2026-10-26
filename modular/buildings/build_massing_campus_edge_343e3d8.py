@@ -19,6 +19,7 @@ ASSET_PATH = ROOT / "modular" / "buildings" / f"{ASSET_ID}.blend"
 EVIDENCE = ROOT / "audit" / ASSET_ID
 SOURCE = EVIDENCE / "sources" / "indiana_2016_2020_building_footprints_point_query_2026-10-25.json"
 NDHM_SUMMARY = EVIDENCE / "campus_edge_ndhm_analysis.json"
+ROOF_ZONE_ANALYSIS = EVIDENCE / "campus_edge_roof_zone_analysis.json"
 COLLECTION_NAME = f"Asset_{ASSET_ID}"
 SCENE_NAME = f"Building_{ASSET_ID}"
 
@@ -32,6 +33,8 @@ RESIDENTIAL_FLOOR_TO_FLOOR_M = (BUILDING_HEIGHT_M - PODIUM_HEIGHT_M - 1.0) / RES
 PARAPET_HEIGHT_M = 1.0
 SIMPLIFY_TOLERANCE_M = 0.30
 FEET_TO_METERS = 1200.0 / 3937.0
+ROOF_ZONES = json.loads(ROOF_ZONE_ANALYSIS.read_text(encoding="utf-8"))["zones"]
+TOWER_ROOF_HEIGHTS = {name: data["roof_surface_datum_estimate_m"] for name, data in ROOF_ZONES.items()}
 
 
 def project_lon_lat(lon, lat):
@@ -90,6 +93,26 @@ def point_in_polygon(x, y, points):
                 inside = not inside
         j = i
     return inside
+
+
+def clip_at_y(points, limit, keep_north):
+    """Clip a GIS-derived ring to one side of a horizontal local-Y cut."""
+    output = []
+    for index, current in enumerate(points):
+        previous = points[index - 1]
+        current_inside = current[1] >= limit if keep_north else current[1] <= limit
+        previous_inside = previous[1] >= limit if keep_north else previous[1] <= limit
+        if current_inside != previous_inside:
+            t = (limit - previous[1]) / (current[1] - previous[1])
+            output.append((previous[0] + t * (current[0] - previous[0]), limit))
+        if current_inside:
+            output.append(current)
+    return output
+
+
+def clip_to_y_band(points, y_min, y_max):
+    north_part = clip_at_y(points, y_min, True)
+    return clip_at_y(north_part, y_max, False)
 
 
 def make_material(name, color, roughness=0.72, metallic=0.0):
@@ -200,9 +223,20 @@ def make_building(scene, collection, points, feature):
     equipment = make_material("CE_Rooftop_Mechanical_Equipment", (0.72, 0.73, 0.69), roughness=0.8)
 
     create_prism("CE_Continuous_Brick_Podium", points, 0.0, PODIUM_HEIGHT_M, brick, roof, collection)
-    upper_top = BUILDING_HEIGHT_M - PARAPET_HEIGHT_M
-    create_prism("CE_Residential_Tower_Shell", points, PODIUM_HEIGHT_M, upper_top, charcoal, roof, collection)
-    create_prism("CE_Roof_Parapet", points, upper_top, BUILDING_HEIGHT_M, light_panel, roof, collection)
+    # The 2023 orthophoto shows three roof pads separated by two large dark
+    # courtyard/recess bands. Keep the source-backed footprint at podium level,
+    # but stop the upper residential volumes at those roof-pad boundaries.
+    tower_specs = []
+    for name in ("north", "middle", "south"):
+        y_min, y_max = ROOF_ZONES[name]["local_y_bounds_m"]
+        region = clip_to_y_band(points, y_min, y_max)
+        if len(region) < 3:
+            raise ValueError(f"Roof-zone clip for {name} produced fewer than three vertices")
+        roof_height = TOWER_ROOF_HEIGHTS[name]
+        upper_top = roof_height - PARAPET_HEIGHT_M
+        create_prism(f"CE_{name.title()}_Tower_Shell", region, PODIUM_HEIGHT_M, upper_top, charcoal, roof, collection)
+        create_prism(f"CE_{name.title()}_Tower_Roof_Parapet", region, upper_top, roof_height, light_panel, roof, collection)
+        tower_specs.append((name, region, roof_height))
 
     # Batch repeated details into a few portable meshes instead of hundreds of
     # loose objects. Each elevation remains outside the stable campus outline.
@@ -217,7 +251,6 @@ def make_building(scene, collection, points, feature):
 
     area = signed_area(points)
     exterior_sign = 1.0 if area < 0 else -1.0
-    floor_step = RESIDENTIAL_FLOOR_TO_FLOOR_M
     facade_base = PODIUM_HEIGHT_M
     window_width = 1.55
     window_height = 1.78
@@ -235,12 +268,6 @@ def make_building(scene, collection, points, feature):
         tangent = (dx / length, dy / length)
         normal = (-tangent[1] * exterior_sign, tangent[0] * exterior_sign)
         angle = math.atan2(tangent[1], tangent[0])
-        bay_count = max(1, int((length - 1.0) / spacing))
-        is_east_frontage = normal[0] > 0.70 and length > 18.0
-        is_south_frontage = normal[1] < -0.75 and length > 18.0
-        if is_east_frontage or is_south_frontage:
-            frontage_edges.append((edge_index, start, end, tangent, normal, angle, length, bay_count))
-
         # Ground-floor glazing and brick piers are photo-interpreted from the
         # property exterior; their exact door/window positions are not surveyed.
         ground_modules = max(1, int((length - 1.0) / 4.0))
@@ -255,63 +282,79 @@ def make_building(scene, collection, points, feature):
                 py = start[1] + dy * (bay / ground_modules) + normal[1] * 0.18
                 add_box(brick_batch, (px, py, PODIUM_HEIGHT_M / 2), (0.55, 0.26, PODIUM_HEIGHT_M), angle)
 
-        # Repeated residential windows, wall-panel spandrels, and occasional
-        # brick accents are qualitative interpretations of the official facade.
-        for floor in range(RESIDENTIAL_FLOORS):
-            floor_z = facade_base + floor * floor_step
-            window_z = floor_z + 1.87
-            band_z = floor_z + 0.10
-            add_box(band_batch,
-                    ((start[0] + end[0]) / 2 + normal[0] * 0.08,
-                     (start[1] + end[1]) / 2 + normal[1] * 0.08,
-                     band_z),
-                    (length, 0.15, 0.18), angle)
-            for bay in range(bay_count):
-                t = (bay + 0.5) / bay_count
-                cx = start[0] + dx * t + normal[0] * 0.11
-                cy = start[1] + dy * t + normal[1] * 0.11
-                add_box(glass_batch, (cx, cy, window_z), (window_width, 0.17, window_height), angle)
-                frame_depth = 0.23
-                frame_width = 0.095
-                for side in (-1, 1):
-                    off = side * (window_width / 2 - frame_width / 2)
-                    add_box(frame_batch,
-                            (cx + tangent[0] * off, cy + tangent[1] * off, window_z),
-                            (frame_width, frame_depth, window_height + 0.10), angle)
-                for off_z in (-window_height / 2, window_height / 2):
-                    add_box(frame_batch, (cx, cy, window_z + off_z),
-                            (window_width, frame_depth, frame_width), angle)
-                if bay % 4 == 0:
-                    # Red-brick vertical accents match the alternating brick
-                    # and graphite bays visible in the official exterior image.
-                    accent_width = 0.34
-                    ax = cx + tangent[0] * (window_width / 2 + 0.27) + normal[0] * 0.04
-                    ay = cy + tangent[1] * (window_width / 2 + 0.27) + normal[1] * 0.04
-                    add_box(brick_batch, (ax, ay, facade_base + (RESIDENTIAL_FLOORS * floor_step) / 2),
-                            (accent_width, 0.18, RESIDENTIAL_FLOORS * floor_step), angle)
-                total_windows += 1
+    # The residential facade grid follows each roof pad's own perimeter. This
+    # leaves the two orthophoto-supported courtyard/recess bands open above the
+    # podium instead of placing floating windows through empty roof zones.
+    for tower_name, tower_region, roof_height in tower_specs:
+        tower_floor_step = (roof_height - PARAPET_HEIGHT_M - facade_base) / RESIDENTIAL_FLOORS
+        for edge_index, start in enumerate(tower_region):
+            end = tower_region[(edge_index + 1) % len(tower_region)]
+            dx, dy = end[0] - start[0], end[1] - start[1]
+            length = math.hypot(dx, dy)
+            if length < 2.3:
+                continue
+            tangent = (dx / length, dy / length)
+            normal = (-tangent[1] * exterior_sign, tangent[0] * exterior_sign)
+            angle = math.atan2(tangent[1], tangent[0])
+            bay_count = max(1, int((length - 1.0) / spacing))
+            is_east_frontage = normal[0] > 0.70 and length > 18.0
+            is_south_frontage = normal[1] < -0.75 and length > 18.0
+            if is_east_frontage or is_south_frontage:
+                frontage_edges.append((edge_index, start, end, tangent, normal, angle, length, bay_count))
 
-                # Balcony stacks are limited to outward-facing east/south
-                # elevations, following the official oblique property photo.
-                in_balcony_zone = (bay_count >= 7 and 1 <= bay <= bay_count - 2
-                                   and (bay_count < 15 or (bay_count * 0.20 <= bay <= bay_count * 0.62)))
-                if floor >= 1 and (is_east_frontage or is_south_frontage) and in_balcony_zone and bay % 2 == 0:
-                    balcony_z = floor_z + 0.22
-                    balcony_width = 2.15
-                    balcony_depth = 1.05
-                    bx = cx + normal[0] * 0.68
-                    by = cy + normal[1] * 0.68
-                    add_box(balcony_batch, (bx, by, balcony_z),
-                            (balcony_width, balcony_depth, 0.18), angle)
-                    rail_center = (bx + normal[0] * (balcony_depth / 2 - 0.06),
-                                   by + normal[1] * (balcony_depth / 2 - 0.06),
-                                   balcony_z + 0.65)
-                    add_box(railing_batch, rail_center, (balcony_width, 0.07, 1.05), angle)
+            # Residential bays, panels, and balcony stacks remain qualitative
+            # image interpretations; exact opening locations are not surveyed.
+            for floor in range(RESIDENTIAL_FLOORS):
+                floor_z = facade_base + floor * tower_floor_step
+                window_z = floor_z + 1.87
+                band_z = floor_z + 0.10
+                add_box(band_batch,
+                        ((start[0] + end[0]) / 2 + normal[0] * 0.08,
+                         (start[1] + end[1]) / 2 + normal[1] * 0.08,
+                         band_z),
+                        (length, 0.15, 0.18), angle)
+                for bay in range(bay_count):
+                    t = (bay + 0.5) / bay_count
+                    cx = start[0] + dx * t + normal[0] * 0.11
+                    cy = start[1] + dy * t + normal[1] * 0.11
+                    add_box(glass_batch, (cx, cy, window_z), (window_width, 0.17, window_height), angle)
+                    frame_depth = 0.23
+                    frame_width = 0.095
                     for side in (-1, 1):
-                        sx = bx + tangent[0] * side * (balcony_width / 2 - 0.04) + normal[0] * 0.12
-                        sy = by + tangent[1] * side * (balcony_width / 2 - 0.04) + normal[1] * 0.12
-                        add_box(railing_batch, (sx, sy, balcony_z + 0.65), (0.07, balcony_depth, 1.05), angle)
-                    total_balconies += 1
+                        off = side * (window_width / 2 - frame_width / 2)
+                        add_box(frame_batch,
+                                (cx + tangent[0] * off, cy + tangent[1] * off, window_z),
+                                (frame_width, frame_depth, window_height + 0.10), angle)
+                    for off_z in (-window_height / 2, window_height / 2):
+                        add_box(frame_batch, (cx, cy, window_z + off_z),
+                                (window_width, frame_depth, frame_width), angle)
+                    if bay % 4 == 0:
+                        accent_width = 0.34
+                        ax = cx + tangent[0] * (window_width / 2 + 0.27) + normal[0] * 0.04
+                        ay = cy + tangent[1] * (window_width / 2 + 0.27) + normal[1] * 0.04
+                        add_box(brick_batch, (ax, ay, facade_base + RESIDENTIAL_FLOORS * tower_floor_step / 2),
+                                (accent_width, 0.18, RESIDENTIAL_FLOORS * tower_floor_step), angle)
+                    total_windows += 1
+
+                    in_balcony_zone = (bay_count >= 7 and 1 <= bay <= bay_count - 2
+                                       and (bay_count < 15 or bay_count * 0.20 <= bay <= bay_count * 0.62))
+                    if floor >= 1 and (is_east_frontage or is_south_frontage) and in_balcony_zone and bay % 2 == 0:
+                        balcony_z = floor_z + 0.22
+                        balcony_width = 2.15
+                        balcony_depth = 1.05
+                        bx = cx + normal[0] * 0.68
+                        by = cy + normal[1] * 0.68
+                        add_box(balcony_batch, (bx, by, balcony_z),
+                                (balcony_width, balcony_depth, 0.18), angle)
+                        rail_center = (bx + normal[0] * (balcony_depth / 2 - 0.06),
+                                       by + normal[1] * (balcony_depth / 2 - 0.06),
+                                       balcony_z + 0.65)
+                        add_box(railing_batch, rail_center, (balcony_width, 0.07, 1.05), angle)
+                        for side in (-1, 1):
+                            sx = bx + tangent[0] * side * (balcony_width / 2 - 0.04) + normal[0] * 0.12
+                            sy = by + tangent[1] * side * (balcony_width / 2 - 0.04) + normal[1] * 0.12
+                            add_box(railing_batch, (sx, sy, balcony_z + 0.65), (0.07, balcony_depth, 1.05), angle)
+                        total_balconies += 1
 
     # The official front view shows a projecting podium canopy and a recessed
     # glazed entry; the side and exact dimensions remain qualitative.
@@ -340,27 +383,30 @@ def make_building(scene, collection, points, feature):
 
     # Orthophoto shows rooftop plant/equipment clusters. Placement and height
     # are approximate; sizes and count are not individually measured.
-    min_x = min(p[0] for p in points)
-    max_x = max(p[0] for p in points)
-    min_y = min(p[1] for p in points)
-    max_y = max(p[1] for p in points)
-    for yi in range(1, 7):
-        for xi in range(1, 5):
-            x = min_x + (max_x - min_x) * xi / 5
-            y = min_y + (max_y - min_y) * yi / 8
-            if point_in_polygon(x, y, points):
-                # Leave clear setbacks at the perimeter and use a sparse roof grid.
-                if min(abs(x - min_x), abs(x - max_x), abs(y - min_y), abs(y - max_y)) < 5.5:
-                    continue
-                add_box(equipment_batch, (x, y, BUILDING_HEIGHT_M + 0.56), (1.8, 2.4, 1.12), 0.0)
+    for tower_name, region, roof_height in tower_specs:
+        min_x = min(p[0] for p in region)
+        max_x = max(p[0] for p in region)
+        min_y = min(p[1] for p in region)
+        max_y = max(p[1] for p in region)
+        for yi in range(1, 4):
+            for xi in range(1, 4):
+                x = min_x + (max_x - min_x) * xi / 4
+                y = min_y + (max_y - min_y) * yi / 4
+                if point_in_polygon(x, y, region):
+                    # Keep a perimeter clearance and avoid populating the
+                    # courtyard gaps between the three roof pads.
+                    if min(abs(x - min_x), abs(x - max_x), abs(y - min_y), abs(y - max_y)) < 5.5:
+                        continue
+                    add_box(equipment_batch, (x, y, roof_height + 0.56), (1.8, 2.4, 1.12), 0.0)
     create_box_batch("CE_Rooftop_Mechanical_Units_Approximate", equipment_batch, equipment, collection)
 
     collection["asset_id"] = ASSET_ID
     collection["building_name"] = "Campus Edge on Pierce"
     collection["coordinate_contract"] = "Simple massing asset in campus world coordinates; X east, Y north, Z up, meters."
-    collection["building_height_status"] = "approximate roof datum from 2018 NDHM; individual floor/story heights estimated"
+    collection["building_height_status"] = "three approximate roof-surface medians from 2018 NDHM roof-zone samples; none is a surveyed eave or story datum"
+    collection["roof_plan_model"] = "Three upper tower roof pads interpreted from 2023 orthophoto rows; two open/recessed bands remain between the tower masses above the low continuous podium."
     collection["footprint_source"] = "Indiana 2016-2020 LiDAR-derived Building Footprints objectid 407824; cross-checked with OSM way 886359911"
-    collection["source_uncertainty"] = "Horizontal outline is a public LiDAR/OSM footprint, not a survey. Facade bays, entry, balconies, and roof equipment are qualitative interpretations."
+    collection["source_uncertainty"] = "Horizontal outline is a public LiDAR/OSM footprint, not a survey. Tower zones follow approximate 2023 orthophoto row bands transformed with the saved extent and clipped to the GIS ring; NDHM zone medians remain approximate normalized surface heights. Facade bays, entry, balconies, and roof equipment are qualitative interpretations."
 
     return {
         "source_feature_id": feature["properties"].get("objectid"),
@@ -369,6 +415,9 @@ def make_building(scene, collection, points, feature):
         "window_count": total_windows,
         "balcony_count": total_balconies,
         "building_height_m": BUILDING_HEIGHT_M,
+        "tower_roof_height_estimates_m": TOWER_ROOF_HEIGHTS,
+        "tower_zone_sample_counts": {name: ROOF_ZONES[name]["ndhm_sample_count"] for name in ROOF_ZONES},
+        "tower_zone_bounds_local_y_m": {name: ROOF_ZONES[name]["local_y_bounds_m"] for name in ROOF_ZONES},
         "podium_height_m": PODIUM_HEIGHT_M,
         "residential_floor_count_estimated": RESIDENTIAL_FLOORS,
         "residential_floor_to_floor_m_estimated": RESIDENTIAL_FLOOR_TO_FLOOR_M,
@@ -459,7 +508,7 @@ def main():
         "asset_object_count": len(collection.objects),
         "asset_mesh_object_count": sum(1 for obj in collection.objects if obj.type == "MESH"),
         "preview_setup_object_count_outside_asset": len(preview_collection.objects),
-        "height_status": "approximate roof datum from 2018 NDHM; per-floor datums and eaves estimated",
+        "height_status": "approximate 2018 NDHM roof-surface medians by orthophoto-interpreted band; not surveyed tower eaves or story datums",
         "preview": "audit/massing_campus_edge_343e3d8/campus_edge_preview.png",
         "top_preview": "audit/massing_campus_edge_343e3d8/campus_edge_footprint_preview.png",
     }
