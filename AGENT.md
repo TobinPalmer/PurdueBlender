@@ -9,6 +9,10 @@ Follow this workflow for each new building. The project-specific rules in [modul
 - Shared files—including `README.md`, `AGENT.md`, `modular/AGENTS.md`, `modular/BUILDINGS.md`, `modular/manifest.json`, placement markers, and integration/verification scripts—are coordinator-owned. Subagents should report proposed changes instead of editing these files.
 - Contributors may commit and push only their assigned building files. Shared files remain coordinator-owned. Before pushing, keep edits confined to the assigned file set so parallel work cannot overlap.
 
+## Sync the master branch before each commit
+
+The coordinating/master agent must pull the latest `origin/master` before every commit, including commits that contain only shared indexes or the master Blender file. Use `git pull --rebase --autostash origin master` after the intended files are ready. Review the result and resolve any conflicts according to file ownership; preserve other contributors' changes. If the pull cannot complete cleanly, stop before committing and resolve the conflict first. Never force-push shared history.
+
 ## 1. Scope the work
 
 1. Choose one backlog building. Confirm its stable ID, asset path, footprint, and campus placement in `modular/manifest.json` and `modular/buildings/target_buildings_gis.json`.
