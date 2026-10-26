@@ -4,9 +4,11 @@ from math import radians
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, 'asian_american_resource_and_cultural_center.blend')
-PREVIEW = os.path.join(ROOT, 'evidence', 'aaarcc_preview.png')
-GIS = os.path.join(ROOT, 'evidence', 'aaarcc_gis_feature_926.json')
-os.makedirs(os.path.dirname(PREVIEW), exist_ok=True)
+AUDIT = os.path.abspath(os.path.join(ROOT, '..', '..', 'audit', 'asian_american_resource_and_cultural_center'))
+SOURCES = os.path.join(AUDIT, 'sources')
+PREVIEW = os.path.join(AUDIT, 'aaarcc_preview.png')
+GIS = os.path.join(SOURCES, 'aaarcc_gis_feature_926.json')
+os.makedirs(SOURCES, exist_ok=True)
 
 # Campus local approximation used by this project; source feature is WGS 84.
 LON_SCALE = 84810.60416539927
@@ -156,25 +158,27 @@ def siding_courses_from_ring(pts, z0=.52, z1=5.76):
     o.modifiers.new('Clapboard weighted normals','WEIGHTED_NORMAL')
     return o
 siding_courses_from_ring(core_ring)
-# Main steep gable roof, ridge east-west, with generous eaves as in the official exterior photos.
-x0,x1,y0,y1=core; eave=5.82; ridge=9.10; ymid=(y0+y1)/2; over=.42
-roof_slab('AAARCC | north roof slope',[(x0-.42,y0-.42,eave),(x1+.42,y0-.42,eave),(x1+.42,ymid,ridge),(x0-.42,ymid,ridge)],roofmat)
-roof_slab('AAARCC | south roof slope',[(x0-.42,ymid,ridge),(x1+.42,ymid,ridge),(x1+.42,y1+.42,eave),(x0-.42,y1+.42,eave)],roofmat)
-# End gable cladding triangles.
-for x in [x0-.02,x1+.02]:
-    mesh_obj('AAARCC | gable end',[(x,y0,eave),(x,y1,eave),(x,ymid,ridge-.04)],[(0,1,2)],siding)
-    cube('Gable rake trim left',(x,(y0+ymid)/2,(eave+ridge)/2),(.12,math.sqrt((ymid-y0)**2+(ridge-eave)**2),.16),trim,.03).rotation_euler[0]=math.atan2(ridge-eave,ymid-y0)
-    cube('Gable rake trim right',(x,(ymid+y1)/2,(eave+ridge)/2),(.12,math.sqrt((y1-ymid)**2+(ridge-eave)**2),.16),trim,.03).rotation_euler[0]=-math.atan2(ridge-eave,y1-ymid)
+# Main steep gable roof. Official Purdue front and corner photographs show the
+# Fifth Street front as the long eave elevation; the gables are at the north/south ends.
+x0,x1,y0,y1=core; eave=5.82; ridge=9.10; ymid=(y0+y1)/2; xmid=(x0+x1)/2; over=.42
+roof_slab('AAARCC | west roof slope',[(x0-.42,y0-.42,eave),(xmid, y0-.42,ridge),(xmid,y1+.42,ridge),(x0-.42,y1+.42,eave)],roofmat)
+roof_slab('AAARCC | east roof slope',[(xmid,y0-.42,ridge),(x1+.42,y0-.42,eave),(x1+.42,y1+.42,eave),(xmid,y1+.42,ridge)],roofmat)
+# Gable end cladding triangles face north/south.
+for y in [y0-.02,y1+.02]:
+    mesh_obj('AAARCC | gable end',[(x0,y,eave),(x1,y,eave),(xmid,y,ridge-.04)],[(0,1,2)],siding)
+    rake_len=math.sqrt((xmid-x0)**2+(ridge-eave)**2)
+    cube('Gable rake trim left',((x0+xmid)/2,y,(eave+ridge)/2),(rake_len,.12,.16),trim,.03).rotation_euler[1]=-math.atan2(ridge-eave,xmid-x0)
+    cube('Gable rake trim right',((xmid+x1)/2,y,(eave+ridge)/2),(rake_len,.12,.16),trim,.03).rotation_euler[1]=math.atan2(ridge-eave,x1-xmid)
 # Eave fascia, soffits, continuous ridge cap.
-for y in [y0-.42,y1+.42]:
-    cube('Roof eave fascia',((x0+x1)/2,y,eave-.08),(x1-x0+.9,.17,.22),roofedge,.035)
-cube('Roof ridge cap',((x0+x1)/2,ymid,ridge+.03),(x1-x0+.95,.24,.22),roofedge,.05)
-# Slate-like shingle course lines on both roof planes.
+for x in [x0-.42,x1+.42]:
+    cube('Roof eave fascia',(x,ymid,eave-.08),(.17,y1-y0+.9,.22),roofedge,.035)
+cube('Roof ridge cap',(xmid,ymid,ridge+.03),(.24,y1-y0+.95,.22),roofedge,.05)
+# Slate-like shingle course lines across both roof slopes.
 for i in range(1,11):
-    t=i/11; yy=y0+(ymid-y0)*t; zz=eave+(ridge-eave)*t
-    cube('North shingle course',((x0+x1)/2,yy,zz+.025),(x1-x0+.65,.025,.035),roofedge,.006)
-    yy2=y1-(y1-ymid)*t
-    cube('South shingle course',((x0+x1)/2,yy2,zz+.025),(x1-x0+.65,.025,.035),roofedge,.006)
+    t=i/11; xx=x0+(xmid-x0)*t; zz=eave+(ridge-eave)*t
+    cube('West shingle course',(xx,ymid,zz+.025),(.025,y1-y0+.65,.035),roofedge,.006)
+    xx2=x1-(x1-xmid)*t
+    cube('East shingle course',(xx2,ymid,zz+.025),(.025,y1-y0+.65,.035),roofedge,.006)
 # The westward GIS projection is an open covered front porch. The Fifth Street-facing door
 # and front elevation in Purdue's official imagery support this interpretation.
 wx0,wx1,wy0,wy1=wing
@@ -227,11 +231,11 @@ def window(name, center, normal, w=1.05, h=1.48, sill=1.0, panes_x=2, panes_z=4)
         for i in range(1,panes_z): cube(name+' horizontal muntin',(cx,cy+.225,cz-h/2+h*i/panes_z),(w-.12,.06,.035),trim,.006)
         cube(name+' projecting sill',(cx,cy+.27,cz-h/2-.04),(w+.30,.28,.13),trim,.018)
 
-# Main facades. West/Fifth-facing side is the principal elevation.
-# Front upper sash trio, ground-floor windows left/right of the centered entry.
+# Main facades. West/Fifth-facing side is the principal eave elevation, with an
+# entry toward its south end and repeated two-storey sash bays as seen in Purdue's photos.
 front_x=core[0]; front_ys=[core[2]+1.55,core[2]+4.35,core[2]+7.05]
-for i,yy in enumerate(front_ys): window(f'Fifth Street upper sash {i+1}',(front_x,yy,4.85),'west',1.12,1.55,1.0,2,4)
-for i,yy in enumerate([core[2]+2.05,core[2]+6.45]): window(f'Fifth Street lower sash {i+1}',(front_x,yy,1.75),'west',1.20,1.65,1.0,2,4)
+for i,yy in enumerate([core[2]+1.25,core[2]+3.25,core[2]+5.30,core[2]+7.35]): window(f'Fifth Street upper sash {i+1}',(front_x,yy,4.85),'west',1.18,1.60,1.0,2,4)
+for i,yy in enumerate([core[2]+3.30,core[2]+5.35,core[2]+7.25]): window(f'Fifth Street lower sash {i+1}',(front_x,yy,1.75),'west',1.38,1.78,1.0,2,4)
 # East rear elevation windows; north/south sides.
 for i,yy in enumerate([core[2]+1.7,core[2]+4.3,core[2]+7.0]):
     window(f'Rear upper sash {i+1}',(core[1],yy,4.5),'east',1.02,1.45,1.0,2,4)
@@ -242,11 +246,11 @@ for side,yy in [('south',core[2]),('north',core[3])]:
 # West wing multipane windows, constrained to smaller wing wall.
 for yy in [wing[2]+1.1,wing[2]+3.2,wing[2]+4.85]:
     window('West wing sash',(wing[0],yy,4.25),'west',.95,1.35,1.0,2,3)
-# Attic vent / small gable sash on west-facing gable.
-window('West attic gable sash',(core[0],ymid,7.25),'west',.62,.84,1.0,2,2)
+# Attic sash on the south-facing gable end.
+window('South attic gable sash',(xmid,core[2],7.25),'south',.62,.84,1.0,2,2)
 
 # Main door, west/front facade, with transom and panel detail.
-door_y=(wing[2]+wing[3])/2; door_z=1.52
+door_y=wing[2]+.92; door_z=1.52
 cube('Front door frame',(front_x-.12,door_y,door_z),(.20,1.24,2.65),trim,.035)
 cube('Front stained wood door',(front_x-.24,door_y,door_z),(.11,1.02,2.42),wood,.025)
 for z in [.72,1.30,1.88]:
@@ -292,7 +296,7 @@ for yy in [door_y-.83,door_y+.83]:
 cube('Front stair handrail',(front_x-.95,door_y,1.05),(.07,1.78,.07),metal,.02)
 
 # Brick chimney at rear roof plane and masonry cap.
-chimx=core[1]-.90; chimy=core[3]-.90
+chimx=xmid+.80; chimy=ymid
 cube('Brick chimney shaft',(chimx,chimy,7.85),(.72,.72,4.1),brick,.035)
 cube('Brick chimney cap',(chimx,chimy,9.94),(.94,.94,.22),roofedge,.035)
 for z in [6.5,7.1,7.7,8.3,8.9,9.5]:
@@ -361,7 +365,7 @@ bpy.ops.mesh.primitive_plane_add(size=70, location=(0,0,-.11)); ground=bpy.conte
 for c in list(ground.users_collection): c.objects.unlink(ground)
 previewcol.objects.link(ground)
 # Camera target centered on local origin; facade southwest view.
-target=Vector((0,0,4.5)); camloc=Vector((-19,-21,14))
+target=Vector((0,0,4.5)); camloc=Vector((-21,-17,13))
 bpy.ops.object.camera_add(location=camloc); camera=link_obj(bpy.context.object,'Preview camera | southwest front'); camera.data.lens=52; camera.rotation_euler=(target-camloc).to_track_quat('-Z','Y').to_euler(); scene.camera=camera
 # Do not leave rendering helpers in the exported asset collection.
 for helper in [sun,fill,camera]:
@@ -391,7 +395,7 @@ meta={
  'source_feature_id':926,
  'warnings':['Roof ridge height and eave height are visual estimates from exterior photographs; no surveyed elevations or construction drawings located.','Interior furnishings/room partitions are a documented programmatic schematic, not measured floor-plan geometry.','Google Street View records the exterior on 2019-01/02; the official Purdue facility page was retrieved 2026-10-23 and may show later landscape/site changes.','GIS geometry horizontal transform is project local approximation from WGS84, not a surveyed engineering CRS.'],
 }
-with open(os.path.join(ROOT,'evidence','aaarcc_asset_validation.json'),'w',encoding='utf-8') as f: json.dump(meta,f,indent=2)
+with open(os.path.join(AUDIT,'aaarcc_asset_validation.json'),'w',encoding='utf-8') as f: json.dump(meta,f,indent=2)
 print(json.dumps(meta,indent=2))
 
 
