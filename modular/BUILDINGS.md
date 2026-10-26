@@ -178,6 +178,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Hockmeyer Hall of Structural Biology (HOCK) | [massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend](buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | 6 |
 | Islamic Society of Greater Lafayette (ISGL) | [massing_islamic_societyof_greater_lafayette_0130012.blend](buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | 1 |
 | Jimmy John's | [massing_jimmy_john_s_12edba1.blend](buildings/massing_jimmy_john_s_12edba1.blend) | 1 |
+| Joyful Journeys | [massing_joyful_journeys_abaf5c3.blend](buildings/massing_joyful_journeys_abaf5c3.blend) | 1 |
 | Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](buildings/massing_kappa_sigma_c1b36ec.blend) | 1 |
 
 Hillel retains campus-world coordinates. Its 8.3/10 grade supports the main shell and GIS footprint; the proposed 845 sq ft addition is unresolved, and height, roof depth/pitch, and facade opening details remain schematic. See [Hillel grade](../audit/massing_hillel_36d2ba1/independent_grade/r2/result.json).
@@ -189,6 +190,8 @@ Hockmeyer Hall retains campus-world coordinates. Its 8.0/10 grade supports the s
 ISGL retains campus-world coordinates and the rebuilt shell bounds are recorded in the manifest. Its 8.0/10 grade uses Purdue GIS FID 771 without scaling. GIS identity/address and Shape__Area conflicts remain, while height, roof, and facade details are partly estimated. See [ISGL grade](../audit/massing_islamic_societyof_greater_lafayette_0130012/independent_grade/r2/result.json).
 
 Jimmy John's retains campus-world coordinates. Its 8.0/10 grade uses the Indiana 2018 LiDAR-derived roof ring with OSM and dated orthophoto cross-checks; exact wall edge, height, roof, and facade dimensions remain uncertain. See [Jimmy John's grade](../audit/massing_jimmy_john_s_12edba1/independent_grade/r3/result.json).
+
+Joyful Journeys retains campus-world coordinates. Its 8.0/10 grade supports the OSM roof-perimeter proxy and a photo-informed two-level gable mass; exact wall footprint, story count, height, roof geometry, and opening locations remain uncertain. The manifest Z maximum was corrected to the reopened 8.76 m asset bound. See [Joyful Journeys grade](../audit/massing_joyful_journeys_abaf5c3/independent_grade/r2/result.json).
 
 Kappa Sigma retains campus-world coordinates. Its 8.5/10 grade verifies the Purdue GIS footprint against independent LiDAR; height and detailed entrance/window geometry remain estimated, and current use is conflicted. See [Kappa Sigma grade](../audit/massing_kappa_sigma_c1b36ec/independent_grade/result.json).
 
