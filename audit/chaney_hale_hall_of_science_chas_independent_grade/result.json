@@ -1,0 +1,165 @@
+{
+  "building": "Chaney-Hale Hall of Science (CHAS)",
+  "asset_id": "massing_chaney_hale_hall_of_science_chas_6bb9ef7",
+  "asset_path": "modular/buildings/massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend",
+  "grader": "independent subagent",
+  "grade_date": "2026-10-26",
+  "blender_version": "4.5.15 LTS",
+  "score": 8.15,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 2.0,
+      "earned": 2.0,
+      "evidence": "Purdue BuildingShapesZip4 FID 945 identifies CHAS. The 52-point GIS ring is reproduced at ground level; maximum nearest-vertex deviation 0.00001060 m. Source-derived approximate area 2219.65 m\u00b2.",
+      "findings": [
+        "GIS feature is a map footprint, not surveyed structural-wall geometry."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 2.0,
+      "earned": 2.0,
+      "evidence": "Ground ring lies at GIS campus coordinates in the documented local approximation. Source bbox [[-190.95317182139948, -116.33259126103889], [102.69923936090208, 161.59685592440383]]; shell bbox [[-190.9531707763672, -116.33258819580078], [102.6992416381836, 161.59686279296875]]; object transform location=[0.0, 0.0, 0.0], scale=[1.0, 1.0, 1.0]. No rotation is applied; source vertex sequence and shell vertices agree.",
+      "findings": [
+        "The GIS source provides no positional accuracy metadata; apparent numeric agreement validates reconstruction of the source data, not survey accuracy."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 2.0,
+      "earned": 1.25,
+      "evidence": "Purdue's 2020 opening article states four stories; the supplied official photo and contractor photo show a broad, shallow flat roof edge. Reopened model height is 16.00 m and cap is modeled at z=16.00 m.",
+      "findings": [
+        "16 m height and 0.72 m overhang are explicitly estimates; no elevation or survey datum supports them.",
+        "Roof is represented as one flat cap; photographed roof soffit supports the general form only."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 2.0,
+      "earned": 0.9,
+      "evidence": "Mesh has 2116 vertices, 517 polygons, and materials ['CHAS - red brick', 'CHAS - dark ground brick', 'CHAS - blue gray glazing', 'CHAS - limestone bands', 'CHAS - wood soffit and roof']. Photos support red brick, blue-gray glazing, dark base, pale horizontal bands, and deep soffit.",
+      "findings": [
+        "Reference photos show broad, nearly continuous curtainwall fields, narrow vertical mullions, solid brick end zones with tall slit windows, and visible doors; the model instead uses repeated isolated rectangular window panels and largely unarticulated brick end walls.",
+        "No distinct entrance or canopy geometry is present, and the selected preview omits the principal photographed elevation.",
+        "A single extruded GIS polygon cannot demonstrate the actual wing height/setback differences beyond the outline."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 2.0,
+      "earned": 2.0,
+      "evidence": "Reopened with Blender 4.5.15 LTS; expected scene/collection and one mesh are present; 0 modifiers, 0 external image paths. Material nodes are internal. Candidate evidence folder contains raw GIS, metadata, official Purdue article/photo, ECN webcam photo, architect page, contractor photo, and source/method/uncertainty record.",
+      "findings": [
+        "No project-relative linked-library dependency or external image path is required; the saved massing asset opens standalone."
+      ]
+    }
+  ],
+  "evidence": {
+    "source_feature": {
+      "provider": "Purdue BuildingShapesZip4 ArcGIS FeatureServer",
+      "FID": 945,
+      "building_name": "Chaney-Hale Hall of Science",
+      "abbreviation": "CHAS",
+      "vertices": 52,
+      "approx_area_m2": 2219.651,
+      "gis_bbox_m": [
+        [
+          -190.95317182139948,
+          -116.33259126103889
+        ],
+        [
+          102.69923936090208,
+          161.59685592440383
+        ]
+      ],
+      "shell_bbox_m": [
+        [
+          -190.9531707763672,
+          -116.33258819580078
+        ],
+        [
+          102.6992416381836,
+          161.59686279296875
+        ]
+      ],
+      "max_nearest_ground_ring_vertex_error_m": 1.05992330661272e-05,
+      "missing_vertices_over_1mm": []
+    },
+    "asset": {
+      "scene": "Building_massing_chaney_hale_hall_of_science_chas_6bb9ef7",
+      "collection": "Asset_massing_chaney_hale_hall_of_science_chas_6bb9ef7",
+      "object": "Chaney-Hale Hall of Science (CHAS)",
+      "object_count": 1,
+      "vertices": 2116,
+      "polygons": 517,
+      "bounds_xyz_m": [
+        [
+          -191.67311096191406,
+          -115.63268280029297
+        ],
+        [
+          102.18531036376953,
+          162.30284118652344
+        ],
+        [
+          0.0,
+          16.0
+        ]
+      ],
+      "object_location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "modifiers": [],
+      "materials": [
+        "CHAS - red brick",
+        "CHAS - dark ground brick",
+        "CHAS - blue gray glazing",
+        "CHAS - limestone bands",
+        "CHAS - wood soffit and roof"
+      ],
+      "external_images": [],
+      "linked_libraries": []
+    },
+    "inspected_views": [
+      "candidate preview.png",
+      "candidate topdown.png",
+      "official Purdue 2020 exterior photo",
+      "FRP contractor exterior photo",
+      "Purdue ECN rooftop webcam photo"
+    ]
+  },
+  "findings": [
+    "GIS feature is a map footprint, not surveyed structural-wall geometry.",
+    "The GIS source provides no positional accuracy metadata; apparent numeric agreement validates reconstruction of the source data, not survey accuracy.",
+    "16 m height and 0.72 m overhang are explicitly estimates; no elevation or survey datum supports them.",
+    "Roof is represented as one flat cap; photographed roof soffit supports the general form only.",
+    "Reference photos show broad, nearly continuous curtainwall fields, narrow vertical mullions, solid brick end zones with tall slit windows, and visible doors; the model instead uses repeated isolated rectangular window panels and largely unarticulated brick end walls.",
+    "No distinct entrance or canopy geometry is present, and the selected preview omits the principal photographed elevation.",
+    "A single extruded GIS polygon cannot demonstrate the actual wing height/setback differences beyond the outline.",
+    "No project-relative linked-library dependency or external image path is required; the saved massing asset opens standalone."
+  ],
+  "recommendation": "Do not mark complete at this score. Improve the principal facade with source-supported curtainwall extent, vertical mullions, brick end-zone slit windows and entry treatment; capture a principal-elevation comparison and obtain better height/roof evidence if available, then request a fresh independent grade.",
+  "files": {
+    "source_candidate_evidence": "audit/chaney_hale_hall_of_science_chas/",
+    "script": "evaluate_chas.py",
+    "probe": "blender_probe.json",
+    "log": "blender.log"
+  }
+}
