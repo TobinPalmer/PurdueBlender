@@ -206,7 +206,9 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Lilly Hall of Life Sciences | [massing_lilly_hall_e7fc13e.blend](buildings/massing_lilly_hall_e7fc13e.blend) | 4 |
 | Mann Hall | [massing_mann_hall_2b4ebda.blend](buildings/massing_mann_hall_2b4ebda.blend) | 1 |
 | Pete Dye Clubhouse | [massing_the_pete_dye_clubhouse_a3a9641.blend](buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | 122 |
+| Phi Delta Theta | [massing_phi_delta_theta_258cddd.blend](buildings/massing_phi_delta_theta_258cddd.blend) | 313 |
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
+| Purdue University Daniel Turf Center | [massing_purdue_university_daniel_turf_center_e69b7da.blend](buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | 1 |
 | Purdue Village Administration Building | [massing_purdue_village_administration_building_3faae6c.blend](buildings/massing_purdue_village_administration_building_3faae6c.blend) | 1 |
 | Provenance Apartments 005 | [massing_provenance_apartments_005_960f6b0.blend](buildings/massing_provenance_apartments_005_960f6b0.blend) | 1 |
 | Stone Hall (STON) | [massing_stone_hall_ston_d3f479a.blend](buildings/massing_stone_hall_ston_d3f479a.blend) | 1 |
@@ -216,6 +218,10 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Union Club Hotel | [massing_union_club_hotel_0d22460.blend](buildings/massing_union_club_hotel_0d22460.blend) | 28 |
 
 The Caretaker’s Cottage retains campus-world coordinates. Its 8.1/10 independent grade matches all ten OSM wall/base points within 0.000058 m and supports the porch from official library and city imagery. Wall and ridge heights are estimates; the LiDAR roof envelope differs from the OSM wall footprint, and roof junctions/openings remain approximate. See [Caretaker’s Cottage grade](../audit/massing_the_caretaker_s_cottage_6b24af9/independent_grade_r2.json).
+
+Daniel Turf Center retains campus-world coordinates. Its 8.6/10 independent grade verifies the Purdue GIS FID 208 crosswalk and source-ring match; a building-specific 2011 photo supports the shallow gable, light metal siding, horizontal window band and centered canopy. The GIS outline may follow roof projection rather than surveyed walls; height and facade bearing remain estimates. See [Daniel Turf Center grade](../audit/massing_purdue_university_daniel_turf_center_e69b7da/independent_grade_r3/independent_grade_r3.json).
+
+Phi Delta Theta retains campus-world coordinates. Its 8.3/10 independent grade verifies the named FID 796 / SOFDH feature at 503 State St; all 30 shell base vertices match the source ring within 0.000016 m. The chapter photo supports the broad facade features, while heights, roof dimensions, exact proportions and hidden elevations remain estimated. See [Phi Delta Theta grade](../audit/massing_phi_delta_theta_258cddd/independent_grade_r1/independent_grade.json).
 
 Provenance Apartments 005 retains campus-world coordinates. Its 8.3/10 independent grade supports the Building F / 143 crosswalk using County plan sheet C1.4 and Purdue GIS FID 506. The GIS is pre-planning/roof-level rather than a surveyed wall line; heights, roof, and facade remain partly estimated. See [Provenance Apartments 005 grade](../audit/massing_provenance_apartments_005_960f6b0/independent_grade_r4.json).
 
