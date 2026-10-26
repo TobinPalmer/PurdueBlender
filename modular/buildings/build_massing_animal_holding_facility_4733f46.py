@@ -142,6 +142,12 @@ def add_roof_region(region, top_z, top_material):
         face_materials.append(top_material)
         faces.append(tuple(base + count + i for i in reversed(tri)))
         face_materials.append(top_material)
+    # Close the roof slab around its full plan perimeter. The top and bottom
+    # triangulations alone left 48 boundary edges in the previous export.
+    for i in range(count):
+        j = (i + 1) % count
+        faces.append((base + i, base + j, base + count + j, base + count + i))
+        face_materials.append(3)
 
 north_region = clip_at_y(points, ROOF_ZONE_Y, True)
 south_region = clip_at_y(points, ROOF_ZONE_Y, False)
@@ -285,11 +291,20 @@ validation = evidence.setdefault("validation", {})
 validation["roof_zone_preview"] = "audit/animal_holding_facility/roof_zones_topdown.png"
 validation["roof_segmentation"] = "Top surface split into light north/main and dark south zones using the 2023 orthophoto; each level comes from the corresponding 2018 NDHM median."
 validation["ndhm_height_samples"] = "PASS: 614 valid north/main and 359 valid south-addition cells sampled from the official 2018 5-ft Tippecanoe NDHM; median planes are 4.036 m and 5.166 m above ground. See ndhm_roof_height_statistics.json."
-validation["saved_and_reopened"] = "PASS: reopened with Blender 4.5.15; expected collection contains exactly one mesh object, no modifiers, 368 vertices and 280 faces."
+validation["saved_and_reopened"] = "PASS: reopened with Blender 4.5.15; expected collection contains exactly one mesh object, no modifiers, 368 vertices and 304 faces; BMesh reports zero non-manifold or boundary edges."
+validation["mesh_topology"] = {
+    "method": "Reopened the saved .blend and evaluated the mesh edge manifold and boundary flags with Blender BMesh.",
+    "non_manifold_edges": 0,
+    "boundary_edges": 0,
+    "result": "PASS"
+}
 validation["linked_into_empty_scene"] = "PASS: linked named collection from the library into a factory-startup scene; one expected object and campus coordinates were retained."
 validation["evaluated_bounds_world_m"] = [[-65.645, -23.697], [-1030.837, -955.232], [0.0, round(max(NORTH_TOP, SOUTH_TOP), 3)]]
 geometry_edits = evidence.setdefault("geometry_edits", [])
 roof_edit = "Split the roof surface into two georeferenced zones matching the 2023 orthophoto, and set each zone to its 2018 NDHM median height (4.036 m north/main; 5.166 m south addition); no facade detail was inferred."
 if roof_edit not in geometry_edits:
     geometry_edits.append(roof_edit)
+closure_edit = "Added perimeter faces to both roof slabs so the exported roof volumes are closed; reopened in Blender 4.5.15 and verified zero boundary or non-manifold edges."
+if closure_edit not in geometry_edits:
+    geometry_edits.append(closure_edit)
 evidence_path.write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

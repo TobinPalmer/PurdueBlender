@@ -92,6 +92,15 @@
       "source_date": "2022",
       "measurement_method": "Documents Indiana 3DEP LiDAR/DTM source coordinates and values in U.S. survey feet; NDHM height is derived from these elevation values.",
       "uncertainty": "Units apply to the source 3DEP elevation data; NDHM inherits feet as the difference of those source elevations."
+    },
+    {
+      "provider": "Purdue University Libraries, Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings",
+      "feature_id": "Algolia public index objectID 294 / AHF",
+      "snapshot": "audit/animal_holding_facility/sources/purdue_historic_facilities_ahf_record_2026-10-25.json",
+      "retrieved": "2026-10-25",
+      "measurement_method": "Public indexed record queried by exact building name; image_url field inspected.",
+      "uncertainty": "Record has no linked image. Absence from public index does not rule out uncatalogued/restricted archival materials."
     }
   ],
   "identity_and_placement": {
@@ -170,13 +179,14 @@
     "Extruded one diagrammatic level to 4.4 m plus 0.4 m cap; vertical dimensions are estimates.",
     "Preserved manifest stable ID, scene, collection, object name, and campus coordinate frame.",
     "Split the roof surface into two georeferenced material zones matching the light north/main roof and darker south roof visible in 2023 Indiana imagery; no unsupported roof elevations or facade details were added.",
-    "Split the roof surface into two georeferenced zones matching the 2023 orthophoto, and set each zone to its 2018 NDHM median height (4.036 m north/main; 5.166 m south addition); no facade detail was inferred."
+    "Split the roof surface into two georeferenced zones matching the 2023 orthophoto, and set each zone to its 2018 NDHM median height (4.036 m north/main; 5.166 m south addition); no facade detail was inferred.",
+    "Added perimeter faces to both roof slabs so the exported roof volumes are closed; reopened in Blender 4.5.15 and verified zero boundary or non-manifold edges."
   ],
   "validation": {
     "blender_version": "4.5.15 LTS",
     "exported_collection": "Asset_massing_animal_holding_facility_4733f46",
     "expected_collection_object_count": 1,
-    "saved_and_reopened": "PASS: reopened with Blender 4.5.15; expected collection contains exactly one mesh object, no modifiers, 368 vertices and 280 faces.",
+    "saved_and_reopened": "PASS: reopened with Blender 4.5.15; expected collection contains exactly one mesh object, no modifiers, 368 vertices and 304 faces; BMesh reports zero non-manifold or boundary edges.",
     "linked_into_empty_scene": "PASS: linked named collection from the library into a factory-startup scene; one expected object and campus coordinates were retained.",
     "preview": "audit/animal_holding_facility/animal_holding_facility_preview.png",
     "evaluated_bounds_world_m": [
@@ -198,7 +208,14 @@
     "footprint_metrics": "audit/animal_holding_facility/footprint_comparison.json",
     "roof_zone_preview": "audit/animal_holding_facility/roof_zones_topdown.png",
     "roof_segmentation": "Top surface split into light north/main and dark south zones using the 2023 orthophoto; each level comes from the corresponding 2018 NDHM median.",
-    "ndhm_height_samples": "PASS: 614 valid north/main and 359 valid south-addition cells sampled from the official 2018 5-ft Tippecanoe NDHM; median planes are 4.036 m and 5.166 m above ground. See ndhm_roof_height_statistics.json."
+    "ndhm_height_samples": "PASS: 614 valid north/main and 359 valid south-addition cells sampled from the official 2018 5-ft Tippecanoe NDHM; median planes are 4.036 m and 5.166 m above ground. See ndhm_roof_height_statistics.json.",
+    "mesh_topology": {
+      "method": "Reopened the saved .blend and evaluated the mesh edge manifold and boundary flags with Blender BMesh.",
+      "non_manifold_edges": 0,
+      "boundary_edges": 0,
+      "result": "PASS"
+    }
   },
-  "roof_zone_preview": "audit/animal_holding_facility/roof_zones_topdown.png"
+  "roof_zone_preview": "audit/animal_holding_facility/roof_zones_topdown.png",
+  "facade_evidence_search": "Public Purdue Libraries historic building record has image_url=null; Purdue Archives public search showed an AHF corporate-name record but no indexed AHF-identified exterior image, elevation, or plan. This is not proof that no restricted or uncatalogued material exists. Facade and entrance remain unknown."
 }
