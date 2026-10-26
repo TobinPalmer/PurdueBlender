@@ -10,4 +10,3 @@ These building assets are independently graded at or above 8/10 and pushed to `m
 
 ## Duplicate record cleanup
 
-- **Beering Hall BRNG duplicate** — Purdue GIS feature 251 matches the already graded Beering Hall detailed asset. Pushed record/library commit: `f2ae2dd`. Asset: `modular/buildings/massing_beering_hall_brng_b5c3fdf.blend`. Remove this duplicate library instance from the Tobin-owned master and retain the detailed Beering Hall link; evidence is in `audit/beering_hall_brng_duplicate_check.json`.
