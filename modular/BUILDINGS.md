@@ -8,7 +8,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Armory | [armory.blend](buildings/armory.blend) | 703 |
 | Beering Hall | [beering_hall.blend](buildings/beering_hall.blend) | 1137 |
 | Bell Tower | [bell_tower.blend](buildings/bell_tower.blend) | 578 |
-| Benjamin Harrison Hall | [benjamin_harrison_hall.blend](buildings/benjamin_harrison_hall.blend) | 224 |
+| Benjamin Harrison Hall | [benjamin_harrison_hall.blend](buildings/benjamin_harrison_hall.blend) | 220 |
 | Brown Laboratory of Chemistry | [brown_laboratory_of_chemistry.blend](buildings/brown_laboratory_of_chemistry.blend) | 72 |
 | Class Of 1950 | [class_of_1950.blend](buildings/class_of_1950.blend) | 2431 |
 | Electrical Engineering | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4169 |
