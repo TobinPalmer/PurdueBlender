@@ -1,0 +1,91 @@
+{
+  "building_id": "massing_joyful_journeys_abaf5c3",
+  "building_name": "Joyful Journey (Joyful Journeys)",
+  "address": "600 Lindberg Road, West Lafayette, IN 47906",
+  "retrieved_utc_date": "2026-10-26",
+  "coordinate_transform": "Project local campus X east/Y north: X=(longitude + 86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude - 40.4274)*111040.0; source inputs WGS84 EPSG:4326. Approximate local transform, not survey CRS.",
+  "sources": [
+    {
+      "source_id": "osm_way_869182111",
+      "provider": "OpenStreetMap contributors",
+      "source_date": "2020-11-10T14:29:08Z",
+      "url": "https://www.openstreetmap.org/way/869182111",
+      "api_url": "https://api.openstreetmap.org/api/0.6/way/869182111/full.json",
+      "raw_snapshot": "sources/osm_way_869182111_full.json",
+      "feature_id": "way 869182111; name=Joyful Journeys; addr 600 Lindberg Road; amenity=social_facility; social_facility=day_care",
+      "source_crs": "EPSG:4326 WGS84",
+      "method": "Convert the polygon ring into project local XY using the documented local approximation. Confirmed name and address via current operator site; visual overlay against Esri aerial corroborates roof-edge outline.",
+      "uncertainty": "OSM is crowd-mapped with no stated positional tolerance; the asset perimeter matches its ring to sub-millimeter because the baseline massing appears to share this source geometry, so that numeric agreement is not independent geodetic validation. Polygon is a roof/perimeter proxy rather than a surveyed wall line. OSM social_facility:for tag is not relied upon for exact use."
+    },
+    {
+      "source_id": "esri_world_imagery_lindberg",
+      "provider": "Esri World Imagery MapServer export",
+      "source_date": "Imagery acquisition date not exposed; retrieved 2026-10-26",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-9675400%2C4930880%2C-9675180%2C4931100&bboxSR=3857&imageSR=3857&size=1000%2C1000&format=jpg&f=image",
+      "raw_snapshot": "sources/world_imagery_lindberg_2026-10-26.jpg",
+      "feature_id": "Roof of 600 Lindberg Road near Lindberg/Salisbury intersection",
+      "source_crs": "Export bbox EPSG:3857 (Web Mercator); 1000x1000 pixels",
+      "method": "Overlay the OSM perimeter on the orthophoto using the inverse Web Mercator export bbox. The roof edge and plan outline register closely; roof imagery supports a complex pitched/faceted residential roof.",
+      "uncertainty": "Mosaic capture date and ground control precision are unknown. Imagery supports roof footprint and general roof silhouette only, not story count, wall line, exact height, or facade materials."
+    },
+    {
+      "source_id": "joyful_journey_operator",
+      "provider": "Joyful Journey Inc, official operator page",
+      "source_date": "Current page retrieved 2026-10-26",
+      "url": "https://joyfuljourneywl.org/",
+      "raw_snapshot": "sources/joyful_journey_official_homepage_2026-10-26.html",
+      "image_snapshots": [
+        "sources/operator_photo_day_service.webp",
+        "sources/operator_photo_home_style.webp"
+      ],
+      "feature_id": "Joyful Journey; operator identifies 600 Lindberg Road, West Lafayette, NW corner of Lindberg and Salisbury; adult day service; invites visitors to tour the house",
+      "source_crs": "Not applicable",
+      "method": "Identity/address and use corroboration; describes a home-like service setting. No measured building dimensions or exterior elevation are published in saved page.",
+      "uncertainty": "Photos retrieved from this page are service icons, not building exterior imagery; architectural details are not established."
+    },
+    {
+      "source_id": "tippecanoe_zoning_commitment_z2571",
+      "provider": "Tippecanoe County Area Plan Commission; official commitment and staff report",
+      "source_date": "Application and staff report in 2014 (May 15 commitment; June 12 staff report)",
+      "url": "https://maps.tippecanoe.in.gov/commitments/z2571.pdf",
+      "raw_snapshot": "sources/tippecanoe_commitment_z2571.pdf",
+      "feature_id": "Z-2571; Walk His Way LLC; parcel 164-04000-0036; 600 Lindberg Road; rezoning/commitment for adult day care use",
+      "source_crs": "Site context map; no stated survey CRS or architectural drawing scale for building footprint",
+      "method": "Read commitment, exhibit and staff report pages: identify the property/address, existing single-family home, neighboring streets and proposed adult-day-care use. Context map supports corner orientation only.",
+      "uncertainty": "Document does not provide building elevations, floor heights, exact roof dimensions, or a surveyed structural wall footprint. Its commitment polygon is a zoning/site reference, not a building footprint."
+    },
+    {
+      "source_id": "area_iv_community_resource_guide_2019_page_85",
+      "provider": "Area IV Agency on Aging & Community Action; 2024 Community Resource Guide PDF posted 2019 (per URL)",
+      "source_date": "PDF URL includes 2019-03; retrieved 2026-10-26; printed page 85",
+      "url": "https://www.familyhconline.com/wp-content/uploads/2019/03/Community-Resource-Guide-1.pdf",
+      "raw_snapshot": "sources/community_resource_guide_2019.pdf",
+      "image_snapshot": "sources/joyful_journey_exterior_photo_page85.jpg",
+      "feature_id": "Joyful Journey Adult Day Service panel; photo shows the entry and street number 600",
+      "source_crs": "Not geospatial; address on the same page identifies 600 Lindberg Road, West Lafayette, IN 47906",
+      "method": "Extracted the page-85 exterior image from the saved guide. The visible 600 at the entry, address printed in the same panel, and house-like building form support identity and visible facade cues (covered entry, light trim, dark shutters, upper gable windows).",
+      "uncertainty": "The photo is not a measured elevation and provides no scale or verified orientation relative to north. It supports visual details only; dimensional interpretation and the model height remain estimates."
+    }
+  ],
+  "building_geometry": {
+    "footprint_source": "OSM way 869182111 roof perimeter; visually checked against Esri World Imagery. The ring was inherited from the baseline massing and retained; it is not a surveyed wall polygon.",
+    "roof_perimeter_area_m2_estimate": 505.65774399914466,
+    "dimensions_aabb_m_estimate": [
+      38.13084763363402,
+      21.841568000400002
+    ],
+    "orientation": "Long axis approximately east-west from mapped polygon; exact bearing unverified.",
+    "height_m_estimate": 8.7,
+    "height_method": "Approximate total height estimated by scaling the visible two-level facade and gable to a conventional residential entry/door height in the 2019 photo. The image has no scale or surveyed elevations; modeled eave 5.40 m, roof peak 8.70 m, cap maximum 8.76 m are estimates, not measured values.",
+    "storey_count": "Two above-grade levels are photo-supported by upper-level windows on the front gable; exact floor count and interior use remain unverified.",
+    "roof_form": "Approximate low multi-facet gable/hip silhouette traced from aerial roof shape; exact ridge breaks and pitch unverified.",
+    "facade": "Photo-informed schematic muted green-gray siding, light trim, covered entry, dark shutters, and upper gable windows. The photo supports visible pattern but remaining elevations, precise opening placement, colors, and material specification are not measured.",
+    "footprint_area_method": "Shapely area of OSM way 869182111 after project local transform; do not interpret as surveyed wall-line area."
+  },
+  "uncertainty_summary": [
+    "OSM ring and current Esri imagery support the roof/perimeter location and plan shape; no official surveyed building footprint match was found in the master audit.",
+    "The 2014 county report describes an existing single-family home and approval of adult day-care use, but is not a building elevation or architectural plan.",
+    "No measured building height, surveyed elevation, precise story heights, roof pitch, or ridge plan was found. Two above-grade levels and overall 8.70 m peak are photo-informed estimates; geometry maximum is 8.76 m including the small ridge cap.",
+    "A 2019 community resource guide includes a photo labeled for Joyful Journey at 600 Lindberg Road. It supports the entry, trim, shutters and upper-level front windows, but not the facade dimensions or exact orientation."
+  ]
+}

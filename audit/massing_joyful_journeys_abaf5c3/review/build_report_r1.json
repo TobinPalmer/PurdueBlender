@@ -1,0 +1,76 @@
+{
+  "building_id": "massing_joyful_journeys_abaf5c3",
+  "checkpoint": "builder safe pause for independent review",
+  "status": "ready for independent grade after coordinator confirms write slot",
+  "identity_and_assignment": "README assigns Joyful Journeys to Rossen. OSM way 869182111 and official operator page identify Joyful Journey at 600 Lindberg Road, at the northwest corner of Lindberg and Salisbury; county 2014 zoning staff report documents existing single-family home and request to use it as adult day care.",
+  "work_summary": [
+    "Reopened the original expected asset: scene Building_massing_joyful_journeys_abaf5c3, collection Asset_massing_joyful_journeys_abaf5c3, one plain mesh object at 16.0 m height with no custom source documentation and external relative brick texture references.",
+    "Retained the exact existing campus XY footprint because it matches OSM way 869182111 roof perimeter and overlays the independent Esri World Imagery roof outline. The numerical ring match is not treated as independent survey validation because the baseline object appears seeded from the same polygon.",
+    "Replaced the tall plain block with a low one-main-level residential/day-service massing, approximate multi-faceted gable/hip roof, schematic windows and entry canopy. Height estimate is 7.35 m; the roof cap produces maximum saved Z=7.41 m. Story count, exact ridge configuration, pitch and facade remain unverified.",
+    "Removed prior external texture-image dependencies; saved a single named mesh in the expected asset scene and collection with procedural material slots.",
+    "Saved hero and aerial renders, OSM-over-aerial outline overlay, source snapshots, direct reopen facts and structured validation."
+  ],
+  "before": {
+    "object_count": 1,
+    "mesh_vertices": 24,
+    "mesh_faces": 32,
+    "bounds_world_m": [
+      [
+        -104.04564666748047,
+        -65.91480255126953
+      ],
+      [
+        2056.23876953125,
+        2078.080322265625
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ],
+    "textures": [
+      "relative red brick diffuse/height/normal/rough images referenced by original material"
+    ]
+  },
+  "after": {
+    "asset": "modular/buildings/massing_joyful_journeys_abaf5c3.blend",
+    "builder": "modular/buildings/build_massing_joyful_journeys_abaf5c3.py",
+    "scene": "Building_massing_joyful_journeys_abaf5c3",
+    "collection": "Asset_massing_joyful_journeys_abaf5c3",
+    "object_count": 1,
+    "mesh_vertices": 662,
+    "mesh_faces": 162,
+    "bounds_world_m": [
+      [
+        -104.04564666748047,
+        -65.91480255126953
+      ],
+      [
+        2056.23876953125,
+        2078.080322265625
+      ],
+      [
+        0.0,
+        7.409999847412109
+      ]
+    ],
+    "height_estimate_m": 7.35,
+    "no_modifiers": true,
+    "no_library_links": true,
+    "no_unpacked_external_images": true
+  },
+  "evidence_files": [
+    "audit/massing_joyful_journeys_abaf5c3/sources/source_record.json",
+    "audit/massing_joyful_journeys_abaf5c3/review/footprint_comparison_r1.json",
+    "audit/massing_joyful_journeys_abaf5c3/review/validation_r1.json",
+    "audit/massing_joyful_journeys_abaf5c3/review/osm_roof_aerial_overlay.jpg",
+    "audit/massing_joyful_journeys_abaf5c3/review/joyful_journeys_hero_r1.png",
+    "audit/massing_joyful_journeys_abaf5c3/review/joyful_journeys_aerial_r1.png"
+  ],
+  "validation": "Directly reopened the saved asset in Blender 5.2.0; all 10 checks in validation_r1.json pass. Expected named scene and collection, one mesh object, identity transform, no modifiers, no linked libraries, no unpacked image dependencies. OSM-vs-builder ring IoU 0.9999999998 and Hausdorff 0.000000005 m; roof outline independently checked against Esri aerial.",
+  "unresolved": [
+    "No official GIS shell feature match in existing master audit; exact roof-edge outline supported by OSM and aerial, but not survey.",
+    "No measured building height, precise level count, roof ridge/pitch plan, or facade elevation; all vertical and facade design remains estimated/schematic.",
+    "Coordinator-owned modular/manifest.json still records 16.0 m upper bound; asset now maxes at 7.41 m. Do not edit shared manifest in this lane."
+  ]
+}

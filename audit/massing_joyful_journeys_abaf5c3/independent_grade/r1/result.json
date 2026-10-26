@@ -1,0 +1,396 @@
+{
+  "score": 6.6,
+  "max_score": 10,
+  "status": "incomplete_review_below_pass_threshold",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "OSM way 869182111 is named Joyful Journeys, tagged day_care, address 600 Lindberg Road; the official operator page independently identifies Joyful Journey at 600 Lindberg Road / Lindberg-Salisbury corner. The 2014 county Z-2571 report identifies the existing single-family home and adult day-care use. Transformed OSM ring has 12 vertices, area 505.66 m², and the saved aerial overlay traces the visible roof perimeter. OSM/crowd map and roof perimeter are not a surveyed wall footprint."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "The OSM ring in documented campus approximation has XY bounds [-104.046,2056.239]–[-65.915,2078.080] m and AABB dimensions 38.13×21.84 m. Saved validation reports that campus-coordinate mesh bounds preserve this ring and visually align with the independent Esri aerial; positional transform is identity. The numeric ring comparison is not independent because the baseline asset inherited the same OSM geometry; transform is approximate and source boundary follows roof edge, not confirmed wall line."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": "2014 County report supports that the pre-use-change structure was a single-family home; aerial supports a low multi-facet roof and roof-perimeter outline. Neither source supplies a measured height, story count, pitch, or ridge plan. The 7.35 m overall height is an estimate and one-main-level/attic interpretation is unverified. Current render shows a complex roof mass but the exact ridge breaks and pitches are schematic."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.5,
+      "max_score": 2,
+      "evidence": "No exterior building photograph, elevation, or facade plan is present in the evidence. Official operator page photos are service/home-style icons rather than views of this structure. Light siding, window rhythm, and the Lindberg-facing canopy in the model are unsupported schematic choices; no facade or entrance detail is verified."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": "Saved r1 Blender 5.2 direct-reopen report states expected scene/collection, one mesh object (662 vertices/162 faces), identity transform, no modifiers, linked libraries, or unpacked images; r1 source/validation records and both renders plus aerial overlay exist ({'joyful_journeys_hero_r1.png': {'exists': True, 'bytes': 819845}, 'joyful_journeys_aerial_r1.png': {'exists': True, 'bytes': 841335}}; overlay {'exists': True, 'bytes': 257170}). The current .blend exists (108165 bytes), but I could not freshly open it: Blender MCP reported it was not connected. Thus current saved-file structure is supported only by the builder's earlier r1 reopen artifact. Shared manifest bounds remain at 16.0 m while r1 validation has max Z 7.41 m; this grader does not edit the shared manifest."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_joyful_journeys_abaf5c3.blend",
+    "asset_exists": true,
+    "asset_bytes": 108165,
+    "manifest_entry": {
+      "id": "massing_joyful_journeys_abaf5c3",
+      "kind": "massing",
+      "file": "buildings/massing_joyful_journeys_abaf5c3.blend",
+      "collection": "Asset_massing_joyful_journeys_abaf5c3",
+      "scene": "Building_massing_joyful_journeys_abaf5c3",
+      "objects": [
+        "Joyful Journeys"
+      ],
+      "object_count": 1,
+      "bounds_world_m": [
+        [
+          -104.04564666748047,
+          -65.91480255126953
+        ],
+        [
+          2056.23876953125,
+          2078.080322265625
+        ],
+        [
+          0.0,
+          16.0
+        ]
+      ],
+      "exterior_bounds_world_m": [
+        [
+          -104.04564666748047,
+          -65.91480255126953
+        ],
+        [
+          2056.23876953125,
+          2078.080322265625
+        ],
+        [
+          0.0,
+          16.0
+        ]
+      ],
+      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "placement_transform": "identity; object coordinates retained in campus world space",
+      "source_bounds_world_m": [
+        [
+          -104.04564666748047,
+          -65.91480255126953
+        ],
+        [
+          2056.23876953125,
+          2078.080322265625
+        ],
+        [
+          0.0,
+          16.0
+        ]
+      ]
+    },
+    "source_record_identity": "Joyful Journey (Joyful Journeys)",
+    "source_records": [
+      {
+        "source_id": "osm_way_869182111",
+        "provider": "OpenStreetMap contributors",
+        "source_date": "2020-11-10T14:29:08Z",
+        "url": "https://www.openstreetmap.org/way/869182111",
+        "api_url": "https://api.openstreetmap.org/api/0.6/way/869182111/full.json",
+        "raw_snapshot": "sources/osm_way_869182111_full.json",
+        "feature_id": "way 869182111; name=Joyful Journeys; addr 600 Lindberg Road; amenity=social_facility; social_facility=day_care",
+        "source_crs": "EPSG:4326 WGS84",
+        "method": "Convert the polygon ring into project local XY using the documented local approximation. Confirmed name and address via current operator site; visual overlay against Esri aerial corroborates roof-edge outline.",
+        "uncertainty": "OSM is crowd-mapped with no stated positional tolerance; the asset perimeter matches its ring to sub-millimeter because the baseline massing appears to share this source geometry, so that numeric agreement is not independent geodetic validation. Polygon is a roof/perimeter proxy rather than a surveyed wall line. OSM social_facility:for tag is not relied upon for exact use."
+      },
+      {
+        "source_id": "esri_world_imagery_lindberg",
+        "provider": "Esri World Imagery MapServer export",
+        "source_date": "Imagery acquisition date not exposed; retrieved 2026-10-26",
+        "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-9675400%2C4930880%2C-9675180%2C4931100&bboxSR=3857&imageSR=3857&size=1000%2C1000&format=jpg&f=image",
+        "raw_snapshot": "sources/world_imagery_lindberg_2026-10-26.jpg",
+        "feature_id": "Roof of 600 Lindberg Road near Lindberg/Salisbury intersection",
+        "source_crs": "Export bbox EPSG:3857 (Web Mercator); 1000x1000 pixels",
+        "method": "Overlay the OSM perimeter on the orthophoto using the inverse Web Mercator export bbox. The roof edge and plan outline register closely; roof imagery supports a complex pitched/faceted residential roof.",
+        "uncertainty": "Mosaic capture date and ground control precision are unknown. Imagery supports roof footprint and general roof silhouette only, not story count, wall line, exact height, or facade materials."
+      },
+      {
+        "source_id": "joyful_journey_operator",
+        "provider": "Joyful Journey Inc, official operator page",
+        "source_date": "Current page retrieved 2026-10-26",
+        "url": "https://joyfuljourneywl.org/",
+        "raw_snapshot": "sources/joyful_journey_official_homepage_2026-10-26.html",
+        "image_snapshots": [
+          "sources/operator_photo_day_service.webp",
+          "sources/operator_photo_home_style.webp"
+        ],
+        "feature_id": "Joyful Journey; operator identifies 600 Lindberg Road, West Lafayette, NW corner of Lindberg and Salisbury; adult day service; invites visitors to tour the house",
+        "source_crs": "Not applicable",
+        "method": "Identity/address and use corroboration; describes a home-like service setting. No measured building dimensions or exterior elevation are published in saved page.",
+        "uncertainty": "Photos retrieved from this page are service icons, not building exterior imagery; architectural details are not established."
+      },
+      {
+        "source_id": "tippecanoe_zoning_commitment_z2571",
+        "provider": "Tippecanoe County Area Plan Commission; official commitment and staff report",
+        "source_date": "Application and staff report in 2014 (May 15 commitment; June 12 staff report)",
+        "url": "https://maps.tippecanoe.in.gov/commitments/z2571.pdf",
+        "raw_snapshot": "sources/tippecanoe_commitment_z2571.pdf",
+        "feature_id": "Z-2571; Walk His Way LLC; parcel 164-04000-0036; 600 Lindberg Road; rezoning/commitment for adult day care use",
+        "source_crs": "Site context map; no stated survey CRS or architectural drawing scale for building footprint",
+        "method": "Read commitment, exhibit and staff report pages: identify the property/address, existing single-family home, neighboring streets and proposed adult-day-care use. Context map supports corner orientation only.",
+        "uncertainty": "Document does not provide building elevations, floor heights, exact roof dimensions, or a surveyed structural wall footprint. Its commitment polygon is a zoning/site reference, not a building footprint."
+      }
+    ],
+    "osm_way": {
+      "id": 869182111,
+      "tags": {
+        "addr:city": "West Lafayette",
+        "addr:housenumber": "600",
+        "addr:postcode": "47906",
+        "addr:state": "IN",
+        "addr:street": "Lindberg Road",
+        "amenity": "social_facility",
+        "building": "yes",
+        "name": "Joyful Journeys",
+        "social_facility": "day_care",
+        "social_facility:for": "disabled"
+      },
+      "timestamp": "2020-11-10T14:29:08Z",
+      "unique_vertices": 12,
+      "area_m2_local_approx": 505.657743999167,
+      "bounds_xy_m": [
+        -104.045649,
+        2056.23872,
+        -65.914802,
+        2078.080288
+      ]
+    },
+    "previous_r1_reopen_report": {
+      "opened_directly": true,
+      "asset": "modular/buildings/massing_joyful_journeys_abaf5c3.blend",
+      "scene": "Building_massing_joyful_journeys_abaf5c3",
+      "scenes": [
+        "Building_massing_joyful_journeys_abaf5c3"
+      ],
+      "collections": [
+        "Asset_massing_joyful_journeys_abaf5c3"
+      ],
+      "scene_collection_children": [
+        "Asset_massing_joyful_journeys_abaf5c3"
+      ],
+      "object_count": 1,
+      "objects": [
+        {
+          "name": "Joyful Journeys",
+          "type": "MESH",
+          "bounds_world_m": [
+            [
+              -104.04564666748047,
+              -65.91480255126953
+            ],
+            [
+              2056.23876953125,
+              2078.080322265625
+            ],
+            [
+              0.0,
+              7.409999847412109
+            ]
+          ],
+          "vertex_count": 662,
+          "face_count": 162,
+          "modifiers": [],
+          "materials": [
+            "Warm light residential siding",
+            "Light trim",
+            "Dark window glass",
+            "Charcoal gray shingle roof",
+            "Entry door",
+            "Foundation masonry"
+          ],
+          "matrix_world_translation": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "rotation_euler": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "properties": {
+            "stable_id": "massing_joyful_journeys_abaf5c3",
+            "use": "Joyful Journey adult day service; former single-family home per 2014 county zoning staff report",
+            "source_footprint": "OSM way 869182111 (name/address match), visually checked against Esri World Imagery export; roof perimeter proxy, not surveyed wall line",
+            "height_m_estimate": 7.35,
+            "storey_count_estimate": "unverified; modeled as one main level with attic-like roof volume",
+            "roof_form": "approximate multi-facet gable from aerial; exact ridge layout unverified",
+            "facade": "schematic light residential siding, windows, and south entrance canopy; exact materials/openings unverified"
+          }
+        }
+      ],
+      "linked_libraries": [],
+      "unpacked_external_images": []
+    },
+    "previous_r1_validation": {
+      "building_id": "massing_joyful_journeys_abaf5c3",
+      "schema": "Joyful Journeys r1 direct reopen and source/geometry validation",
+      "blender_version": "5.2.0 LTS",
+      "asset": "modular/buildings/massing_joyful_journeys_abaf5c3.blend",
+      "scene": "Building_massing_joyful_journeys_abaf5c3",
+      "collection": "Asset_massing_joyful_journeys_abaf5c3",
+      "object_count": 1,
+      "object": {
+        "name": "Joyful Journeys",
+        "type": "MESH",
+        "bounds_world_m": [
+          [
+            -104.04564666748047,
+            -65.91480255126953
+          ],
+          [
+            2056.23876953125,
+            2078.080322265625
+          ],
+          [
+            0.0,
+            7.409999847412109
+          ]
+        ],
+        "vertex_count": 662,
+        "face_count": 162,
+        "modifiers": [],
+        "materials": [
+          "Warm light residential siding",
+          "Light trim",
+          "Dark window glass",
+          "Charcoal gray shingle roof",
+          "Entry door",
+          "Foundation masonry"
+        ],
+        "matrix_world_translation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_euler": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "properties": {
+          "stable_id": "massing_joyful_journeys_abaf5c3",
+          "use": "Joyful Journey adult day service; former single-family home per 2014 county zoning staff report",
+          "source_footprint": "OSM way 869182111 (name/address match), visually checked against Esri World Imagery export; roof perimeter proxy, not surveyed wall line",
+          "height_m_estimate": 7.35,
+          "storey_count_estimate": "unverified; modeled as one main level with attic-like roof volume",
+          "roof_form": "approximate multi-facet gable from aerial; exact ridge layout unverified",
+          "facade": "schematic light residential siding, windows, and south entrance canopy; exact materials/openings unverified"
+        }
+      },
+      "bounds_world_m": [
+        [
+          -104.04564666748047,
+          -65.91480255126953
+        ],
+        [
+          2056.23876953125,
+          2078.080322265625
+        ],
+        [
+          0.0,
+          7.409999847412109
+        ]
+      ],
+      "footprint_comparison": {
+        "osm_way": "869182111",
+        "aabb_dimensions_m": [
+          38.13084763363402,
+          21.841568000400002
+        ],
+        "source_ring_area_m2": 505.65774399914466,
+        "builder_ring_area_m2": 505.6577439653156,
+        "iou": 0.9999999997828698,
+        "hausdorff_distance_m": 4.60721362735032e-09,
+        "important_caveat": "The source ring is inherited from baseline geometry; numerical agreement is not independent survey evidence. Aerial overlay is the independent visual check."
+      },
+      "checks": {
+        "asset_reopened_directly": true,
+        "expected_scene": true,
+        "expected_asset_collection": true,
+        "one_expected_mesh_object": true,
+        "identity_transform_direct_campus_coordinates": true,
+        "no_modifiers": true,
+        "no_linked_libraries": true,
+        "no_unpacked_external_images": true,
+        "height_estimate_stored": true,
+        "footprint_outline_close_to_osm": true,
+        "renders_present": true
+      },
+      "all_checks_pass": true,
+      "known_limitations": [
+        "7.35 m height is an estimate; overall bounds include a 0.06 m ridge cap, for a maximum Z of 7.41 m.",
+        "Floor count, wall height, roof ridge arrangement and roof pitch are not measured. The model is one main level with attic-like roof mass, based on the 2014 zoning report describing a single-family home and aerial roof profile.",
+        "Facade finish, window rhythm and entrance canopy are schematic; no building elevations were located.",
+        "Master audit had no official Purdue GIS feature match for this building. OSM identity and Esri imagery support the match, but are not a survey.",
+        "Coordinator-owned manifest still records 16.0 m vertical bounds and should be refreshed after review."
+      ]
+    },
+    "renders": {
+      "joyful_journeys_hero_r1.png": {
+        "exists": true,
+        "bytes": 819845
+      },
+      "joyful_journeys_aerial_r1.png": {
+        "exists": true,
+        "bytes": 841335
+      }
+    },
+    "aerial_overlay": {
+      "exists": true,
+      "bytes": 257170
+    },
+    "fresh_direct_reopen_this_review": false
+  },
+  "findings": [
+    {
+      "severity": "major",
+      "finding": "Facade appearance and entrance location are schematic; no structure-specific facade photo or elevation was found.",
+      "action": "Retain explicit unverified labels; seek an exterior street photo, property/permit elevation, or operator image of the actual 600 Lindberg building before adding facade claims."
+    },
+    {
+      "severity": "moderate",
+      "finding": "Height, exact floor count, roof pitch, and ridge organization are not measured; the model is a low-rise massing estimate.",
+      "action": "Keep the 7.35 m height as an estimate and one-main-level/attic form as unverified unless a dimensioned elevation or suitable oblique source is obtained."
+    },
+    {
+      "severity": "moderate",
+      "finding": "Footprint match is to OSM roof perimeter, and the baseline may share the same source geometry; exact numerical agreement is not independent geodetic verification.",
+      "action": "Use the aerial overlay as visual corroboration and record the footprint as a roof-edge proxy; seek county parcel/building survey if a wall-line claim is required."
+    },
+    {
+      "severity": "review limitation",
+      "finding": "This review could not freshly open the saved .blend because Blender MCP is offline. The existing r1 direct-reopen result is prior validation, not a fresh independent reopen.",
+      "action": "Repeat the direct reopen when Blender is available; do not treat this grade as passing or current-file-verified until that check completes."
+    },
+    {
+      "severity": "coordinator note",
+      "finding": "Shared manifest still records the pre-rebuild 16.0 m vertical bound while r1 asset validation reports 7.41 m maximum.",
+      "action": "Coordinator may update the shared manifest after accepting the building revision."
+    }
+  ]
+}

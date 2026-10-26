@@ -1,0 +1,109 @@
+{
+  "building_id": "massing_joyful_journeys_abaf5c3",
+  "schema": "Joyful Journeys r1 direct reopen and source/geometry validation",
+  "blender_version": "5.2.0 LTS",
+  "asset": "modular/buildings/massing_joyful_journeys_abaf5c3.blend",
+  "scene": "Building_massing_joyful_journeys_abaf5c3",
+  "collection": "Asset_massing_joyful_journeys_abaf5c3",
+  "object_count": 1,
+  "object": {
+    "name": "Joyful Journeys",
+    "type": "MESH",
+    "bounds_world_m": [
+      [
+        -104.04564666748047,
+        -65.91480255126953
+      ],
+      [
+        2056.23876953125,
+        2078.080322265625
+      ],
+      [
+        0.0,
+        7.409999847412109
+      ]
+    ],
+    "vertex_count": 662,
+    "face_count": 162,
+    "modifiers": [],
+    "materials": [
+      "Warm light residential siding",
+      "Light trim",
+      "Dark window glass",
+      "Charcoal gray shingle roof",
+      "Entry door",
+      "Foundation masonry"
+    ],
+    "matrix_world_translation": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "rotation_euler": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scale": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "properties": {
+      "stable_id": "massing_joyful_journeys_abaf5c3",
+      "use": "Joyful Journey adult day service; former single-family home per 2014 county zoning staff report",
+      "source_footprint": "OSM way 869182111 (name/address match), visually checked against Esri World Imagery export; roof perimeter proxy, not surveyed wall line",
+      "height_m_estimate": 7.35,
+      "storey_count_estimate": "unverified; modeled as one main level with attic-like roof volume",
+      "roof_form": "approximate multi-facet gable from aerial; exact ridge layout unverified",
+      "facade": "schematic light residential siding, windows, and south entrance canopy; exact materials/openings unverified"
+    }
+  },
+  "bounds_world_m": [
+    [
+      -104.04564666748047,
+      -65.91480255126953
+    ],
+    [
+      2056.23876953125,
+      2078.080322265625
+    ],
+    [
+      0.0,
+      7.409999847412109
+    ]
+  ],
+  "footprint_comparison": {
+    "osm_way": "869182111",
+    "aabb_dimensions_m": [
+      38.13084763363402,
+      21.841568000400002
+    ],
+    "source_ring_area_m2": 505.65774399914466,
+    "builder_ring_area_m2": 505.6577439653156,
+    "iou": 0.9999999997828698,
+    "hausdorff_distance_m": 4.60721362735032e-09,
+    "important_caveat": "The source ring is inherited from baseline geometry; numerical agreement is not independent survey evidence. Aerial overlay is the independent visual check."
+  },
+  "checks": {
+    "asset_reopened_directly": true,
+    "expected_scene": true,
+    "expected_asset_collection": true,
+    "one_expected_mesh_object": true,
+    "identity_transform_direct_campus_coordinates": true,
+    "no_modifiers": true,
+    "no_linked_libraries": true,
+    "no_unpacked_external_images": true,
+    "height_estimate_stored": true,
+    "footprint_outline_close_to_osm": true,
+    "renders_present": true
+  },
+  "all_checks_pass": true,
+  "known_limitations": [
+    "7.35 m height is an estimate; overall bounds include a 0.06 m ridge cap, for a maximum Z of 7.41 m.",
+    "Floor count, wall height, roof ridge arrangement and roof pitch are not measured. The model is one main level with attic-like roof mass, based on the 2014 zoning report describing a single-family home and aerial roof profile.",
+    "Facade finish, window rhythm and entrance canopy are schematic; no building elevations were located.",
+    "Master audit had no official Purdue GIS feature match for this building. OSM identity and Esri imagery support the match, but are not a survey.",
+    "Coordinator-owned manifest still records 16.0 m vertical bounds and should be refreshed after review."
+  ]
+}
