@@ -38,9 +38,28 @@ scene.render.resolution_y = 800
 scene.render.resolution_percentage = 100
 scene.render.image_settings.file_format = "PNG"
 scene.render.film_transparent = False
-scene.render.filepath = os.path.join(folder, "preview_detail_r2.png")
+scene.render.filepath = os.path.join(folder, "preview_detail_r3.png")
 scene.view_settings.view_transform = "AgX"
 scene.view_settings.exposure = -0.6
 scene.world.color = (0.035, 0.045, 0.06)
+bpy.ops.render.render(write_still=True)
+print("RENDERED=" + scene.render.filepath)
+
+# Straight-on south entrance view and campus-axis top view complement the oblique preview.
+camera.location = center + Vector((0.0, -52.0, 8.5))
+camera.rotation_euler = (center - camera.location).to_track_quat("-Z", "Y").to_euler()
+camera_data.ortho_scale = 40.0
+light.location = center + Vector((-10.0, -25.0, 24.0))
+light.rotation_euler = (center - light.location).to_track_quat("-Z", "Y").to_euler()
+scene.render.filepath = os.path.join(folder, "preview_front_r1.png")
+bpy.ops.render.render(write_still=True)
+print("RENDERED=" + scene.render.filepath)
+
+camera.location = center + Vector((0.0, 0.0, 58.0))
+camera.rotation_euler = (0.0, 0.0, 0.0)
+camera_data.ortho_scale = 40.0
+light.location = center + Vector((-18.0, -12.0, 35.0))
+light.rotation_euler = (center - light.location).to_track_quat("-Z", "Y").to_euler()
+scene.render.filepath = os.path.join(folder, "preview_top_r1.png")
 bpy.ops.render.render(write_still=True)
 print("RENDERED=" + scene.render.filepath)

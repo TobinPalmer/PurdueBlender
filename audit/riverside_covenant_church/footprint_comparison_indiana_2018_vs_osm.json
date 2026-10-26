@@ -1,0 +1,76 @@
+{
+  "building": "Riverside Covenant Church",
+  "retrieval_date": "2026-10-26",
+  "official_source": {
+    "provider": "Indiana Geographic Information Office / IndianaMap",
+    "dataset": "Indiana Building Footprints 2016-2020",
+    "feature_id": 409445,
+    "county": "Tippecanoe",
+    "lidar_year": "2018",
+    "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+    "service_layer_crs": "EPSG:3857",
+    "query_output_crs": "EPSG:4326"
+  },
+  "comparison_source": {
+    "provider": "OpenStreetMap via Overpass API",
+    "feature_id": "way/860918859",
+    "snapshot_timestamp": "2026-10-22T03:48:50Z",
+    "url": "https://www.openstreetmap.org/way/860918859"
+  },
+  "projection": {
+    "name": "Purdue project approximate local XY conversion",
+    "x": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y": "(latitude - 40.4274) * 111040.0",
+    "units": "meters",
+    "limitation": "not a surveyed CRS"
+  },
+  "method": "Transform independent Indiana footprint and OSM rings to project-local XY; recompute areas in meters; select cyclic/reversed vertex alignment with least maximum vertex distance; compute convex-polygon intersection-over-union.",
+  "official_footprint_area_m2": 486.83,
+  "osm_footprint_area_m2": 432.16,
+  "area_ratio_official_to_osm": 1.1265,
+  "centroid_offset_m": 0.645,
+  "max_aligned_vertex_offset_m": 1.465,
+  "mean_aligned_vertex_offset_m": 0.977,
+  "footprint_iou": 0.8867,
+  "best_alignment": {
+    "reversed": false,
+    "rotation": 1
+  },
+  "osm_ring_projected_m": [
+    [
+      -157.001,
+      2000.963
+    ],
+    [
+      -156.84,
+      2014.288
+    ],
+    [
+      -124.426,
+      2013.91
+    ],
+    [
+      -124.587,
+      2000.574
+    ]
+  ],
+  "indiana_ring_projected_m": [
+    [
+      -123.331,
+      2000.313
+    ],
+    [
+      -156.944,
+      2000.48
+    ],
+    [
+      -156.872,
+      2014.963
+    ],
+    [
+      -123.259,
+      2014.796
+    ]
+  ],
+  "uncertainty": "Indiana 2016-2020 footprints are independent of the original OSM import and identify the local structure by polygon overlap. They are not a legal survey; the source attribution states LIDAR year 2018. Boundary differences may reflect mapping tolerance or roof/structure treatment."
+}

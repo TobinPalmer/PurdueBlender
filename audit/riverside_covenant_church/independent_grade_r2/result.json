@@ -1,0 +1,139 @@
+{
+  "score": 8.0,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Riverside's official history identifies its church at 1850 Woodland Avenue; a preserved named OSM polygon and independent IndianaMap feature 409445 overlap at 0.8867 IoU.",
+        "The state GIS ring is the modelled structural outline; the reopened model's maximum ring error is 0.00000902 m.",
+        "The independent GIS footprint is 486.83 m\u00b2 versus 432.16 m\u00b2 for OSM."
+      ],
+      "deduction": "The Indiana statewide footprint is not a legal survey and differs from OSM by about 12.7% in area; exact structural-wall boundary is not established."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "Campus XY from the Indiana GIS ring is preserved with an identity world matrix; model geometry matches the projected ring within 0.00000902 m.",
+        "Independent Indiana and OSM polygon centroids differ 0.645 m; polygon IoU is 0.8867.",
+        "The library remains a direct-link campus-coordinate asset and retains its expected scene, collection, object, and transform."
+      ],
+      "deduction": "Local coordinate conversion is approximate; the photo does not establish true-north facade orientation, and no geodetic survey or independent dimensions are available."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "The 2016 exterior photograph directly supports a low horizontal roof and prominent centered A-frame; the model represents these features.",
+        "The photo supports a low one-level hall composition, but no floor count or measured elevation is provided.",
+        "Eaves 4.5 m, main ridge 5.7 m, and glazed apex 11.5 m are explicitly estimates, not measured heights."
+      ],
+      "deduction": "Vertical dimensions, floor count, and exact roof pitch remain unverified; the evidence only supports the relative silhouette."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "The dated facade photo shows the centered glazed A-frame, light framing, and multiple glazed entry bays; the preview includes those same large features in the matching central arrangement.",
+        "Brick frontage and a low continuous eave are visible in the reference. The preview also includes simplified side windows."
+      ],
+      "deduction": "The side-window count and dimensions, facade proportions, materials, and exact door geometry are schematic; one perspective photo is not an orthographic elevation."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Blender 5.2.3 reopened the expected scene with one object in the named asset collection; the mesh has 467 vertices, 337 faces, and no modifiers.",
+        "Dedicated build module preserves the stable asset path/names and campus coordinate frame; its source inputs are repository-relative.",
+        "Evidence includes raw Indiana GIS and OSM snapshots, layer metadata, a dated exterior photo, comparison method/results, preview, and reopen validation."
+      ],
+      "deduction": "A stale modeling-limitations paragraph still describes the prior 4.7 m/8.8 m gable model, conflicting with the current 4.5 m/5.7 m/11.5 m configuration; update that evidence text before treating the package as fully clean."
+    }
+  ],
+  "evidence": [
+    "Independently reopened the saved .blend in Blender 5.2.3 and checked collection membership, object transforms, geometry counts, bounds, materials, and modifiers.",
+    "Compared the current render with the preserved 2016 exterior photo and reviewed raw GIS/OSM feature snapshots, CRS/method notes, comparison metrics, build module, configuration, and reopen validation."
+  ],
+  "findings": [
+    {
+      "priority": "medium",
+      "status": "unresolved",
+      "finding": "Refresh the modeling_limitations in source_reference_observation.json, which currently describes the superseded single-gable revision and old 4.7 m/8.8 m estimates."
+    },
+    {
+      "priority": "medium",
+      "status": "unresolved",
+      "finding": "Keep floor count and all elevation/roof dimensions explicitly estimated until a measured elevation or suitable additional source is available."
+    },
+    {
+      "priority": "low",
+      "status": "documented",
+      "finding": "The GIS/OSM overlap supports identity and plan placement, but the approximate projection and 2018 statewide outline do not constitute a structural-wall or cadastral survey."
+    }
+  ],
+  "asset_inspection": {
+    "blender_version": "5.2.3 LTS",
+    "scene": "massing_riverside_covenannt_church_3a60684",
+    "collection_object_count": 1,
+    "object": "Riverside Covenannt Church",
+    "vertices": 467,
+    "faces": 337,
+    "bounds_world_m": [
+      [
+        -157.496582,
+        -122.706604
+      ],
+      [
+        1999.760376,
+        2015.515991
+      ],
+      [
+        0.0,
+        11.580802
+      ]
+    ],
+    "world_matrix": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "materials": [
+      "massing_riverside_covenannt_church_3a60684_Brick",
+      "massing_riverside_covenannt_church_3a60684_Stone_Trim",
+      "massing_riverside_covenannt_church_3a60684_Glazing",
+      "massing_riverside_covenannt_church_3a60684_Slate_Roof",
+      "massing_riverside_covenannt_church_3a60684_Entry_Wood"
+    ],
+    "modifiers": []
+  },
+  "grade_status": "pass",
+  "reviewer": "Independent rubric evaluation"
+}
