@@ -1,0 +1,63 @@
+{
+  "building": "John C. Smalley Center for Housing & Food Service Administration",
+  "retrieved": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University official campus building footprint service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 225,
+      "source_name": "John C. Smalley Center For Housing & Food Service Administration",
+      "building_code": "SMLY",
+      "source_date": null,
+      "retrieved": "2026-10-22 (repository-preserved source snapshot)",
+      "crs": "EPSG:4326 (WGS 84)",
+      "measurement_method": "All 16 distinct source-ring vertices transformed with the project-local conversion; compared to the reopened mesh base vertices.",
+      "observation": "The official polygon describes the currently mapped building footprint, not a certified survey. Its transformed area is 2114.46 m2; the GIS feature also reports NUM_LEVELS=2 and Extrution=12, with no documented units or field definitions.",
+      "uncertainty": "The service publishes no positional or dimensional accuracy, vertical datum, or definition of its extrusion attribute."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/698",
+      "source_date": "Historical record; page does not date the web publication",
+      "retrieved": "2026-10-22 (snapshot); checked 2026-10-26",
+      "crs": null,
+      "measurement_method": "Archival building-history description; no dimensions measured.",
+      "observation": "The administration building for the women's residence halls was constructed north of Meredith Hall in 1963, expanded in 1982, and renamed John C. Smalley Center in 1985. The archive lists earlier forms including Residence Halls Administration Building and Women's Residence Hall Annex.",
+      "uncertainty": "No plan, elevation, addition boundary, or facade specification is provided. The current GIS footprint is used as a single building outline; the 1982 addition is not separated."
+    },
+    {
+      "provider": "Purdue University Residences official contact page",
+      "url": "https://www.housing.purdue.edu/connect/contact/index.html",
+      "source_date": null,
+      "retrieved": "2026-10-26",
+      "crs": null,
+      "measurement_method": "Current building-directory/address information; no geometry measured.",
+      "observation": "Identifies Smalley Center as the University Residences housing and food-services administration location and gives the address 1225 Third Street, West Lafayette, IN 47907-2008.",
+      "uncertainty": "Address confirms identity, not a particular entrance or facade bearing."
+    },
+    {
+      "provider": "Purdue University official West Lafayette campus map",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "source_date": "Current map page; PDF publication date was not established in the retained snapshot",
+      "retrieved": "2026-10-26",
+      "crs": null,
+      "measurement_method": "Name and campus locator cross-check only.",
+      "observation": "Lists Smalley Center under the SMLY abbreviation and identifies its residence/food-services administration function.",
+      "uncertainty": "The campus directory map is not a facade plan or survey."
+    }
+  ],
+  "coordinate_transform": {
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "project_frame": "Meters; X east, Y north, Z up; campus origin 40.4274 latitude, -86.9137 longitude",
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "limitation": "Local approximate transform, not surveyed CRS."
+  },
+  "modeling_decisions": {
+    "footprint": "Use mapped GIS ring as the building plan shell; preserve all 16 distinct ring vertices.",
+    "floors": "Model two levels, consistent with the GIS NUM_LEVELS=2 attribute; level-height distribution is not independently established.",
+    "height": "7.6 m estimate only; no elevation drawing or measured height was found.",
+    "facade": "Neutral institutional materials, repeated windows, plinth, floor bands and coping are schematic; no georeferenced facade photograph or elevation drawing currently supports exact finish, window pattern, roof form or door position.",
+    "historic_addition": "The 1982 expansion is documented, but its footprint is not available and is not guessed or separately delineated."
+  }
+}
