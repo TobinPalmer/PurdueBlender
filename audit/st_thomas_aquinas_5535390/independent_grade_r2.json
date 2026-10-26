@@ -1,0 +1,97 @@
+{
+  "building": "St. Thomas Aquinas Catholic Center at Purdue",
+  "asset": "modular/buildings/massing_st_thomas_aquinas_5535390.blend",
+  "round": "R2",
+  "sha256": "9fea60330e434dc184d19c3397187c1171a47cbce23e624dbf39ca944a85b94a",
+  "review_date": "2026-10-25",
+  "blender_version": "5.2.3 LTS",
+  "score": 7.3,
+  "weighted_unrounded_score": 7.255,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "categories": [
+    {
+      "name": "Identity and plan evidence",
+      "weight": 0.2,
+      "score": 9.0,
+      "evidence": "Correct GIS FID 852 and named OSM way 117396617; projected GIS/OSM IoU is 0.922. Structural shell follows the GIS ring by construction, not an independent wall survey."
+    },
+    {
+      "name": "Massing and architectural silhouette",
+      "weight": 0.2,
+      "score": 7.5,
+      "evidence": "The gabled sanctuary, bell tower/cross, and three connected component zones read; addition forms and roof transitions remain approximate."
+    },
+    {
+      "name": "Facade and architectural detail",
+      "weight": 0.15,
+      "score": 6.7,
+      "evidence": "Entry sign, masonry, trim, windows, and canopy are present, but repeated bays and simplified junctions lack the reference photographs' detail."
+    },
+    {
+      "name": "Materials and surface finish",
+      "weight": 0.15,
+      "score": 6.7,
+      "evidence": "Portable material groups are assigned; repeated stripe artifacts and flat-looking brick, glass, and roof response reduce fidelity."
+    },
+    {
+      "name": "Interior and program",
+      "weight": 0.15,
+      "score": 6.3,
+      "evidence": "Sanctuary furnishings are recognizable; classroom furnishings are sparse and the structural/circulation logic is not established."
+    },
+    {
+      "name": "Technical integrity and integration readiness",
+      "weight": 0.1,
+      "score": 5.5,
+      "evidence": "The exact asset reopens cleanly, but the manifest still indexes it as campus-coordinate massing while its geometry is local and its origin exists only as a custom property."
+    },
+    {
+      "name": "Evidence and uncertainty",
+      "weight": 0.05,
+      "score": 9.0,
+      "evidence": "GIS/OSM raw data, official architect/parish references, conversion, retrieval date, and uncertainty are documented."
+    }
+  ],
+  "independent_reopen": "audit/st_thomas_aquinas_5535390/independent_grade_r2_reopen.json",
+  "independent_reopen_script": "audit/st_thomas_aquinas_5535390/independent_grade_r2_reopen.py",
+  "review_report": "audit/st_thomas_aquinas_5535390/independent_grade_r2.md",
+  "limitations": [
+    "Master placement was not opened or verified; manifest coordinate mode is inconsistent with the local geometry.",
+    "Campus GIS is a map outline, not a surveyed wall footprint.",
+    "Roof heights, pitches, component boundaries, interior partitions, and furniture are unverified or estimated.",
+    "Inspection renders are not photorealistic final-render outputs."
+  ],
+  "sources": [
+    {
+      "title": "J.W. McQuiston Architecture — St. Thomas Aquinas",
+      "url": "https://www.jwmcq.com/st-thomas-aquinas",
+      "provider": "Project architect",
+      "notes": "Project text and labeled exterior/entry/chapel images; design dated 2001."
+    },
+    {
+      "title": "St. Thomas Aquinas Catholic Center — Project Renewal",
+      "url": "https://www.boilercatholics.org/project-renewal",
+      "provider": "Parish",
+      "notes": "Identifies original church, new church addition, office/classroom addition; documents recent accessible ramp work."
+    },
+    {
+      "title": "Purdue BuildingShapesZip4 FID 852",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/852",
+      "provider": "Purdue GIS",
+      "feature_id": 852,
+      "retrieved": "2026-10-25",
+      "source_crs": "EPSG:3857; geometry queried as EPSG:4326 and converted to project's approximate local coordinates",
+      "notes": "Campus map outline, not a certified as-built survey."
+    },
+    {
+      "title": "OpenStreetMap way 117396617",
+      "url": "https://www.openstreetmap.org/way/117396617",
+      "provider": "OpenStreetMap",
+      "feature_id": 117396617,
+      "retrieved": "2026-10-25",
+      "notes": "Named St. Thomas Aquinas outline used as a corroborating plan source."
+    }
+  ]
+}

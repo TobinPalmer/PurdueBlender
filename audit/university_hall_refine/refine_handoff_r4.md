@@ -1,34 +1,30 @@
-# University Hall refinement handoff — revision 4
+# University Hall R4 candidate handoff
 
 **Asset:** `modular/buildings/university_hall.blend`  
-**SHA-256:** `227d6163491da17cb4ec9a34155951b62c921089d5d0e383e01c5e50614fbeef`  
-**Fresh reopen:** Blender 5.2.3 LTS, passed. The asset opens as `Building_university_hall` and exports all 1,003 objects in `Asset_university_hall`. It has 990 meshes, one curve, 11 lights, no materialless meshes, no invalid material slots, no missing external images, and no linked libraries. Report: [independent_reopen_r4.json](independent_reopen_r4.json).
+**SHA-256:** `285d85bf33fb2abc6364f29eca268512fc5e299bbc0fd4f49d20fb6eae42a2f6`  
+**Baseline:** R3 `3784451714a60a04b482c12031ac413ac5ed2c69d4b268d79f05e4816cf07f3b`  
+**Fresh standalone reopen:** Blender 5.2.3 LTS; 1,164 objects (1,151 meshes), identity `AssetRoot_university_hall`, no materialless meshes, invalid material indices, missing images, or linked libraries. Evidence: `independent_reopen_r4.json`.
 
-## Work completed
+## R4 changes
 
-- Replaced the large rectangular roof block with four constructed, pitched mansard planes, limestone eaves, a defined upper deck, and ten small brick dormers with glazing, stone surrounds, and pitched caps.
-- Added procedural slate color variation and relief, plus additional subtle surface relief on existing brick. Kept the texture self-contained in Blender materials.
-- Reworked the tower crown: added the hipped slate bell-stage cap, an octagonal copper lantern and steeper spire, gold finial, louvers, and clock faces at each cardinal face. Total crown height remains at the source model's previous 27.7 m ceiling.
-- Added limestone arched window moulds to the long elevations and nine illustrative sash openings on each short elevation, with mullions, jambs, sills, headers, and keystones.
-- Replaced the broad first- and second-floor plates with gallery rings. The openings are 7.6 × 12.0 m and 6.6 × 10.8 m respectively. Added gallery book bays and feature wall, an upper overlook guard, cast-iron column representations, and two stair flights with landings and handrails.
-- Preserved `AssetRoot_university_hall` location `(0,0,0)`, rotation `(0,0,0)`, and scale `(1,1,1)`. The modeled main wall footprint was left at its current coordinates and dimensions; roof eaves intentionally project beyond the wall line.
+- Removed the superseded R5-prefixed geometry inherited in the failed R3 file before rebuilding the roof, dormers, tower crown, entry details, columns, and stairs; this prevents coincident duplicate meshes.
+- Rebuilt four continuous two-pitch mansard assemblies. The lower rise is 2.62 m over a 3.25 m horizontal run; the upper rise is 1.55 m over about 4.0 m. Added thicker lower roof shells, a defined pitch-break cornice, an inset upper deck, and ten integrated east/west dormers. Roof pitch and dormer dimensions are visual estimates from Purdue imagery, not measured drawings.
+- Made the copper/slate lantern spire taller and narrower, raising the evaluated top from 27.7 m to about 29.5 m. This is image-proportioned; no measured height source was found.
+- Added small limestone eave consoles and correctly registered arched limestone window-head moulds on the long elevations. The old misregistered arch curve was removed. Existing main shell and window positions remain unchanged.
+- Added the two-ring gallery floors, 7.6 × 12.0 m first-level opening, 6.6 × 10.8 m academy overlook, library feature wall/book bays, railings, stepped stair flights, and display columns. The plan, furniture, structural layout, and column locations remain schematic; Purdue publishes broad program facts, not as-built interior dimensions.
+- Kept the standalone local origin and root transform unchanged; did not edit master, shared indexes, or README.
 
-## Renders
+## Review images
 
-- [Oblique exterior](oblique_southwest_r2.png)
-- [East elevation](east_elevation_r2.png)
-- [Interior shell cutaway](interior_cutaway_r2.png)
+- `ground_oblique_r4.png`
+- `east_elevation_r4.png`
+- `entry_ground_r4.png`
+- `interior_cutaway_r4.png`
 
-These are temporary neutral daylight review renders. Cameras, fill lights and the ground plane were removed from the session and were not saved into the asset.
+The cutaway is a review view with two façades and roof elements hidden; it is not a claim that the building has open façades.
 
-## Evidence and uncertainty
+## Sources and limits
 
-Research retrieved 2026-10-25. Purdue's 2025 restoration story identifies the renovated building as a student-centered hub and documents the revived two-story central gallery, recovered columns, roof trusses, and the restoration approach: [Purdue Stories, 2025-06-30](https://stories.purdue.edu/restoring-purdues-university-hall-as-a-campus-crown-jewel/). The official rededication account describes the completed two-story gallery, second-floor academy overlook, collaboration spaces, and classrooms: [Purdue CLA, 2025-10-25](https://cla.purdue.edu/academic/history/events/stories/2025/university-hall-rededication-ceremony.html). Current campus imagery used for the steeple, trim, and roof silhouette includes [Purdue CLA's University Hall steeple photo](https://www.cla.purdue.edu/about/images/university-hall-steeple.jpg) and the [Purdue Stories 2025 exterior photo](https://stories.purdue.edu/app/uploads/2025/06/Purdue-UniversityHall-2025_KAL_6593-NewHero.jpg). The Board of Trustees packet has proposed renovation floor plans dated 2022-09-28, before completion; it was used only as planning/program context, not represented as an as-built survey: [University Hall and Related Renovations PDF](https://www.purdue.edu/bot/meetings/past-meetings/2022/09.%20oct/pfc/University%20Hall%20Related%20Renovations.pdf).
+Retrieved 2026-10-25. Purdue's 2025 restoration account supports the restored two-story central gallery, student use, and historic columns: https://stories.purdue.edu/restoring-purdues-university-hall-as-a-campus-crown-jewel/. The article's official exterior photograph and Purdue CLA's steeple photograph were used for roof, spire, window-head, and trim proportions: https://stories.purdue.edu/app/uploads/2025/06/Purdue-UniversityHall-2025_KAL_6593-NewHero.jpg and https://www.cla.purdue.edu/about/images/university-hall-steeple.jpg. Purdue's 2025 completion account supports the academy overlook and current gathering-space program: https://cla.purdue.edu/academic/history/events/stories/2025/university-hall-rededication-ceremony.html.
 
-The GIS record previously cited in `independent_grade.md` is BuildingShapesZip4 FID 213. It supplied bounds screening only (AABB overlap IoU 0.9617, center difference 0.391 m); it did not verify the true perimeter, orientation, elevation, or roof. The original main shell outline, local frame, and manifest placement have been preserved. No new GIS fit was claimed.
-
-The roof's upper plan dimensions and roof pitch were proportioned to the existing shell and Purdue's exterior imagery; they are not archival or field measurements. Dormer count and exact spacing are visually estimated. The 7.6 × 12.0 m / 6.6 × 10.8 m gallery openings are a schematic interpretation of the documented two-story gallery and overlook, not dimensions measured from the 2022 plan sheet or current as-built drawings. Window counts and short-elevation fenestration are reconstructed from visual comparison and remain unverified against an elevation drawing. Cast-iron column positions are representative; Purdue reports five recovered columns, but the public description only assigns broad floor/stair locations. No changes were made to the master blend, shared manifest, README, or Git history.
-
-## Grading status
-
-The prior 4.3/10 grade belongs to asset SHA `7b105421…bb22` and is not a grade of this revision. Independent review of this SHA is still required. The new visual/evidence package is ready for that review; no score is claimed here.
+The model wall shell remains unchanged. Earlier full-ring comparison against Purdue BuildingShapesZip4 FID 213 produced IoU 0.872874, symmetric mean boundary residual 0.916 m, 95th percentile 2.292 m, and maximum sampled residual 2.470 m. That polygon is a campus-map outline, not a surveyed wall line. The project-local conversion from EPSG:4326 follows `X=(longitude+86.9137)*111412.84*cos(radians(40.4274))`, `Y=(latitude-40.4274)*111040`; it is approximate, not a formal projected CRS. Do not treat roof pitch, crown height, room layout, window spacing, or gallery structure as measured. Independent R4 grading is pending; this handoff does not claim a passing score.

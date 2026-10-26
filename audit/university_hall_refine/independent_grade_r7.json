@@ -1,0 +1,112 @@
+{
+  "building": "University Hall",
+  "round": "R7",
+  "asset": "modular/buildings/university_hall.blend",
+  "sha256": "7ed748bb216108115986f276cb5558a445559be75245be95639158221d8538c1",
+  "review_date": "2026-10-25",
+  "blender_version": "5.2.3 LTS",
+  "score": 8.0,
+  "weighted_unrounded_score": 8.005,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": true,
+  "weights": {
+    "placement_and_footprint_evidence": 0.15,
+    "massing_and_architectural_silhouette": 0.2,
+    "facade_and_entrance": 0.15,
+    "roof_and_tower_fidelity": 0.15,
+    "materials_and_lighting": 0.1,
+    "interior_gallery_coherence": 0.2,
+    "asset_integrity_and_portability": 0.05
+  },
+  "categories": {
+    "placement_and_footprint_evidence": 7.5,
+    "massing_and_architectural_silhouette": 8.0,
+    "facade_and_entrance": 8.3,
+    "roof_and_tower_fidelity": 7.6,
+    "materials_and_lighting": 8.2,
+    "interior_gallery_coherence": 8.0,
+    "asset_integrity_and_portability": 9.5
+  },
+  "category_evidence": {
+    "placement_and_footprint_evidence": "The retained BuildingShapesZip4 FID 213 comparison reports IoU 0.872874 and symmetric mean boundary residual 0.916 m (95th percentile 2.292 m; max 2.470 m). This is a campus-map polygon rather than a surveyed wall outline. R7 leaves the local frame and footprint unchanged; master placement was outside this standalone scope.",
+    "massing_and_architectural_silhouette": "Fresh oblique and elevation renders show a readable historic academic hall mass with symmetrical brick wings, slate roof and dormers, lantern, and narrow steeple. Roof pitch and dimensions remain visual estimates; the tower is recognizable but simplified.",
+    "facade_and_entrance": "R7 integrates the pediment backing to approximately X=3.60 m at the east façade, seats the architrave on column capitals, adds slope moulds/impost blocks and a layered divided-transom entry. Fresh views show the portico connected to the façade and the entrance assembly reading as one composition. Window openings remain unchanged; the R7 saved asset contains 152 named hood/detail meshes, with larger segmental hoods and keys on ground-level openings and shallower upper-level hoods. These are visibly improved though still repetitive and estimate-based rather than dimensioned from an elevation.",
+    "roof_and_tower_fidelity": "The slate courses, dormers, lantern and steeple retain a recognizable silhouette. R7 does not materially change their basic geometry; details and proportions still rely on photographs rather than measured drawings.",
+    "materials_and_lighting": "The rebuilt shader uses distinct east-west and north-south brick-coordinate branches, a brick node with nominal 0.24 m by 0.075 m courses, mortar relief, varied red-brown tones, finer warmed limestone relief, subdued glazing, and procedural slate. The fresh reopen finds 20 used materials, no materialless meshes, invalid indices, missing external images, or linked libraries. The previews show readable correctly oriented brick courses and roof tiles, but the finish remains stylized; no image-texture nodes or final photographic/render-engine evaluation are present in the asset review.",
+    "interior_gallery_coherence": "A fresh exact-file geometry inspection found two saved stair flights, two saved R6 landings, eight saved gallery-floor mesh segments, and five named reclaimed-column assemblies (Ground A/B, Third A/B, SouthStair). Evaluated bounds show the lower stair/first landing overlap by about 0.42 m in run and the upper stair/second landing by about 0.56 m; both meet at the modeled landing elevations. Purdue documents a two-story central gallery and five recovered columns in those categories. The actual-floor view has slabs that obscure some stair details, while explanatory cutaways add temporary schematic bands, so interior appearance and dimensions remain schematic.",
+    "asset_integrity_and_portability": "New Blender 5.2.3 process freshly opened the requested SHA and found the expected Asset_university_hall collection with 1,377 objects (1,364 meshes, one curve, one empty, 11 lights), identity root transform, 20 used materials, no empty meshes, no materialless meshes, no invalid material indices, no missing external images, and no linked libraries."
+  },
+  "key_findings": [
+    "The exact R7 SHA was reopened in Blender 5.2.3 LTS; export collection and identity root are present and technically clean.",
+    "The portico pediment now returns to the wall and its architrave/cornice is seated on the existing capitals, resolving the prominent former facade gap.",
+    "Ground-floor window hoods/keys are stronger than the shallow upper hoods while existing apertures remain untouched.",
+    "Brick course orientation and mortar relief are explicitly modeled in procedural shader nodes; slate remains portable procedural material.",
+    "The two stair flights, two landings, eight saved gallery-floor pieces, and five restored-column assemblies remain in the actual asset; render overlays are called out separately.",
+    "The pass is narrow. Roof/tower proportions, true measured elevations, exact footprint, and interior-plan accuracy are not verified."
+  ],
+  "priority_fixes": [
+    "Before a later polish round, tune the steeple, lantern, dormer sizes, and roof silhouette against Purdue's current high-resolution exterior photograph; no measured elevation was found.",
+    "Make a clean interior section using only saved geometry, or label temporary floor/path overlays prominently so the gallery/stair circulation is not mistaken for modeled floor area.",
+    "If closer photographic material realism is needed, add restrained reference-supported variation and inspect the shaders in a final render with neutral daylight; do not add unsupported façade features.",
+    "Retain the current GIS-map uncertainty: obtain a surveyed or as-built outline before changing overall footprint dimensions."
+  ],
+  "limitations": [
+    "The FID 213 polygon is not a certified as-built wall footprint; the existing IoU/boundary metrics do not prove surveyed dimensions.",
+    "No measured elevation, roof plan, or complete as-built interior plan was found.",
+    "R7 inspection images are Workbench previews and do not establish final Cycles/Eevee lighting/material response.",
+    "The master blend was not opened in this R7 grade; placement and neighboring-campus alignment are not scored."
+  ],
+  "evidence": {
+    "fresh_exact_sha_reopen": "audit/university_hall_refine/independent_reopen_r7.json",
+    "fresh_structure_and_saved_geometry_check": "audit/university_hall_refine/independent_grade_r7_structure.json",
+    "structure_check_script": "audit/university_hall_refine/independent_grade_r7_structure.py",
+    "asset_reopen_script": "audit/university_hall_refine/inspect_saved_asset_r7.py",
+    "reviewed_render_views": [
+      "audit/university_hall_refine/ground_oblique_r7.png",
+      "audit/university_hall_refine/east_elevation_r7.png",
+      "audit/university_hall_refine/entry_ground_r7.png",
+      "audit/university_hall_refine/interior_cutaway_r7.png",
+      "audit/university_hall_refine/interior_cutaway_southeast_r7.png",
+      "audit/university_hall_refine/interior_stair_profile_r7.png",
+      "audit/university_hall_refine/gallery_actual_floors_r7.png"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Restoring Purdue's University Hall as a campus crown jewel",
+      "provider": "Purdue University Stories",
+      "url": "https://stories.purdue.edu/restoring-purdues-university-hall-as-a-campus-crown-jewel/",
+      "retrieved": "2026-10-25",
+      "supports": "The two-story central gallery; five recovered historic cast-iron columns, with two on ground floor, two on third floor, and one in the south stairwell; these display columns are distinguished from new roof support beams."
+    },
+    {
+      "title": "University Hall rededication ceremony",
+      "provider": "Purdue College of Liberal Arts",
+      "url": "https://cla.purdue.edu/academic/history/events/stories/2025/university-hall-rededication-ceremony.html",
+      "retrieved": "2026-10-25",
+      "supports": "Current University Hall restoration/gallery reference; the page was not accessible during this review and is retained as an unverified secondary reference."
+    },
+    {
+      "title": "Purdue University Hall 2025 exterior photograph",
+      "provider": "Purdue University Stories",
+      "url": "https://stories.purdue.edu/app/uploads/2025/06/Purdue-UniversityHall-2025_KAL_6593-NewHero.jpg",
+      "retrieved": "2026-10-25",
+      "supports": "Handoff-selected visual reference for façade/roof/tower proportions; direct image URL could not be rendered by the browser tool in this review."
+    },
+    {
+      "title": "University Hall steeple photograph",
+      "provider": "Purdue College of Liberal Arts",
+      "url": "https://www.cla.purdue.edu/about/images/university-hall-steeple.jpg",
+      "retrieved": "2026-10-25",
+      "supports": "Handoff-selected tower reference; direct image URL could not be rendered by the browser tool in this review."
+    },
+    {
+      "title": "BuildingShapesZip4 feature service, FID 213",
+      "provider": "ArcGIS feature service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "retrieved": "Previously recorded in the R7 handoff; original source response/projection details should be carried forward with the footprint overlay.",
+      "supports": "Campus-map outline comparison only, not a surveyed structural-wall boundary."
+    }
+  ]
+}
