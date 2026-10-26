@@ -18,6 +18,11 @@
         "url": "https://housing.purdue.edu/my-housing/options/residence-halls/shreve.html",
         "use": "Building identity, use and opening year; no measured height or facade dimensions inferred",
         "provider": "Purdue University Residences"
+      },
+      {
+        "provider": "Purdue University Residences",
+        "url": "https://www.housing.purdue.edu/move-in/west-lafayette/move-in/directions/shreve.html",
+        "use": "Official move-in directions distinguish unloading locations for floors 1-5 and 6-8; supports at least eight numbered floors but does not establish the total floor count or building height."
       }
     ]
   },
@@ -60,7 +65,8 @@
     "orientation_status": "Structural shell follows official polygon vertex orientation",
     "height_status": "estimated; no verified elevation drawing or measured height",
     "official_num_levels_attribute": 10,
-    "official_extrution_attribute": 42
+    "official_extrution_attribute": 42,
+    "floor_count_status": "Conflicting/partial evidence: Purdue GIS attributes NUM_LEVELS=10; official move-in directions refer to floors 6-8, establishing at least eight numbered floors but not the total. Modeled 10 floors remain an estimate pending plans or measured elevations."
   },
   "geometry_edits": [
     "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
@@ -72,11 +78,14 @@
     "Height has not been checked against elevation drawings or on-site measurement; GIS level/Extrution fields are not treated as height measurements.",
     "GIS levels attribute 10; height estimate 29 m is not surveyed",
     "Facade details, window spacing and entrance position are approximate and need independent visual review.",
-    "No independent grader has reviewed this revision."
+    "No independent grader has reviewed this revision.",
+    "Official move-in directions refer to floors 6-8 but do not confirm the full floor count; GIS NUM_LEVELS=10 remains unverified."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
     "build_config": "build_config.json",
-    "raw_source": "source_feature_258_raw.json"
+    "raw_source": "source_feature_258_raw.json",
+    "unloading_directions_observation": "shreve_unloading_directions_observation.json",
+    "independent_reopen_check": "shreve_reopen_check.json"
   }
 }
