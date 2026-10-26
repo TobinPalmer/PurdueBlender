@@ -48,15 +48,19 @@ for tri in tessellate_polygon([points]):
     for idx in tri:
         p=points[int(idx)]; verts.append((p.x,p.y,H))
     face((k,k+1,k+2),roof)
+entry=max((e for e in edge if e[4].x < -0.7 and e[2]>5),key=lambda e:e[2],default=None)
 # Window bays use repeated facade rhythm. All added pieces remain part of this one building object.
 for a,b,L,t,n in edge:
     if L<4.0: continue
     count=max(1,int((L-1.5)//4.0)); spacing=L/(count+1); w=min(float(cfg.get('window_width_m',2.15)),spacing*0.63); pane_h=min(1.55,story*0.55)
+    is_entry_edge=entry is not None and a==entry[0] and b==entry[1]
     for floor in range(F):
         z=plinth+story*(floor+0.5)
         if z+pane_h/2>H-0.4: continue
         for bay in range(count):
-            p=a.lerp(b,spacing*(bay+1)/L); c=Vector((p.x,p.y,z))+n*0.07
+            p=a.lerp(b,spacing*(bay+1)/L)
+            if is_entry_edge and floor==0 and abs((p-(a+b)*0.5).dot(t))<1.9: continue
+            c=Vector((p.x,p.y,z))+n*0.07
             box(c,t,n,w*0.74,0.06,pane_h,glass)
             framec=c+n*0.045; fw=0.09
             box(framec+Vector((0,0,pane_h/2)),t,n,w,0.14,fw,stone); box(framec-Vector((0,0,pane_h/2)),t,n,w,0.14,fw,stone)
@@ -64,9 +68,16 @@ for a,b,L,t,n in edge:
     for z in [plinth+story*k for k in range(1,F)]: box(Vector(((a.x+b.x)/2,(a.y+b.y)/2,z))+n*0.025,t,n,L+0.02,0.10,0.10,stone)
     box(Vector(((a.x+b.x)/2,(a.y+b.y)/2,H-0.16))+n*0.05,t,n,L+0.12,0.28,0.32,stone)
 # Small west-facing entry marker, based on orientation rather than an undocumented exact door location.
-entry=max((e for e in edge if e[4].x < -0.7 and e[2]>5),key=lambda e:e[2],default=None)
 if entry:
-    a,b,L,t,n=entry; p=(a+b)*0.5; box(Vector((p.x,p.y,1.45))+n*0.12,t,n,2.5,0.1,2.9,glass); box(Vector((p.x,p.y,3.1))+n*0.16,t,n,3.2,0.25,0.22,stone)
+    a,b,L,t,n=entry; p=(a+b)*0.5
+    # Entrance reference shows double doors below a broad inscribed limestone lintel.
+    for offset in (-0.66,0.66): box(Vector((p.x,p.y,1.45))+n*0.13+t*offset,t,n,1.20,0.08,2.86,glass)
+    box(Vector((p.x,p.y,1.45))+n*0.20,t,n,0.09,0.16,2.90,stone)
+    box(Vector((p.x,p.y,1.51))+n*0.20-t*1.34,t,n,0.16,0.26,3.02,stone)
+    box(Vector((p.x,p.y,1.51))+n*0.20+t*1.34,t,n,0.16,0.26,3.02,stone)
+    box(Vector((p.x,p.y,3.06))+n*0.21,t,n,3.45,0.28,0.28,stone)
+    box(Vector((p.x,p.y,3.52))+n*0.18,t,n,1.70,0.18,0.42,stone)
+    for width,depth,z in [(3.7,0.65,0.20),(3.3,0.42,0.41)]: box(Vector((p.x,p.y,z))+n*(depth*0.52),t,n,width,depth,0.20,stone)
 old=obj.data; old_name=old.name; mesh=bpy.data.meshes.new(old_name+'_detail'); mesh.from_pydata(verts,[],faces)
 for m in mats: mesh.materials.append(m)
 mesh.update()
@@ -77,3 +88,4 @@ mesh.name=old_name; obj.location=(0,0,0); obj.rotation_euler=(0,0,0); obj.scale=
 bpy.ops.wm.save_as_mainfile(filepath=blend_path)
 result={'asset_id':cfg['asset_id'],'source_fid':attrs['FID'],'vertices':len(mesh.vertices),'faces':len(mesh.polygons),'official_ring_vertices':len(points),'official_extrusion_attribute':attrs.get('Extrution'),'official_levels_attribute':attrs.get('NUM_LEVELS'),'height_m':H,'height_status':cfg['height_status'],'collection_objects':len(coll.objects)}
 print('BUILD_RESULT_JSON='+json.dumps(result))
+

@@ -1,7 +1,7 @@
 {
   "building": "Smith Hall",
   "asset_id": "massing_smith_hall_4c2018f",
-  "status": "Detailed asset updated; pending independent grade",
+  "status": "Official footprint shell and photo-referenced double-door limestone entry updated; independent grade pending",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -15,9 +15,14 @@
     "reference_status": "Official campus map polygon; not a certified survey",
     "secondary_visual_references": [
       {
-        "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/03/Space-Report_1.13.1HE_Buiding_List_Oct2021.pdf",
-        "use": "Official building identity and address; no facade measurements inferred",
-        "provider": "Purdue University Treasurer"
+        "provider": "Purdue University Treasurer",
+        "use": "Official building identity/address record; no facade dimensions inferred.",
+        "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/03/Space-Report_1.13.1HE_Buiding_List_Oct2021.pdf"
+      },
+      {
+        "provider": "Purdue University Events",
+        "use": "Official exterior photo reference for the red-brick facade, paired glass doors and stone lintel above the entrance; no dimensions inferred.",
+        "url": "https://events.purdue.edu/smith_hall"
       }
     ]
   },
@@ -60,23 +65,42 @@
     "orientation_status": "Structural shell follows official polygon vertex orientation",
     "height_status": "estimated from 3-level GIS attribute; no verified measured elevation",
     "official_num_levels_attribute": 3,
-    "official_extrution_attribute": 26
+    "official_extrution_attribute": 26,
+    "after_asset_bounds_including_facade_additions_m": {
+      "min_x": -307.9342346191406,
+      "max_x": -229.25146484375,
+      "min_y": -484.538818359375,
+      "max_y": -402.8434143066406,
+      "min_z": 0.0,
+      "max_z": 12.0
+    },
+    "after_shell_source_match": "Structural shell rebuilt from the 46 distinct official source-ring vertices; entry and facade additions are excluded from the plan comparison. Source coordinates are applied through the documented approximate project transform.",
+    "reopen_check": {
+      "object_name": "Smith Hall",
+      "asset_id": "massing_smith_hall_4c2018f",
+      "exported_collection_object_count": 1,
+      "mesh_vertex_count": 9532,
+      "mesh_face_count": 6910,
+      "saved_asset_reopened": true
+    }
   },
   "geometry_edits": [
-    "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
-    "Added facade materials, repeated window bays, window surrounds, floor bands, plinth and roof coping.",
-    "Added an entrance marker oriented toward west; exact facade detail placement remains approximate."
+    "Rebuilt the structural shell from official Purdue campus GIS feature 249 while preserving the existing object, collection, scene, asset ID and file path.",
+    "Added a centered paired-glass entrance, limestone side jambs, a broad lintel and a shallow limestone plaque, guided by the official Purdue Events exterior photo.",
+    "Removed first-floor windows from the approximate entrance bay to avoid overlap; the entrance location and dimensions remain approximate."
   ],
   "uncertainties": [
-    "The official map polygon is not a certified survey and has no published position/dimension uncertainty.",
-    "Height has not been checked against elevation drawings or on-site measurement; GIS level/Extrution fields are not treated as height measurements.",
-    "GIS levels attribute 3; height unverified",
-    "Facade details, window spacing and entrance position are approximate and need independent visual review.",
+    "The official campus polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
+    "The modeled 12 m height is estimated from the GIS three-level attribute; no measured elevation source was located.",
+    "The official exterior image confirms material and entrance features but does not provide elevations or measured facade geometry.",
+    "Window spacing and entrance placement remain approximate and need independent visual review.",
     "No independent grader has reviewed this revision."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
     "build_config": "build_config.json",
-    "raw_source": "source_feature_249_raw.json"
+    "raw_source": "source_feature_249_raw.json",
+    "preview_render_script": "render_preview.py",
+    "preview": "preview_detail.png"
   }
 }
