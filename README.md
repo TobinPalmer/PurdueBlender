@@ -4,10 +4,22 @@ This project tracks detailed campus models separately from the remaining massing
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-## Detailed models: status and latest grader score (113 buildings)
+## Detailed models: status and latest grader score (125 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
+| FUSE | [massing_fuse_39cf4b5.blend](modular/buildings/massing_fuse_39cf4b5.blend) | Finished | [8.25/10](audit/massing_fuse_39cf4b5/independent_grade_r3/result.json) | — |
+| Grant Street Parking Garage (PGG) | [massing_grant_street_parking_garage_pgg_f46c894.blend](modular/buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | Finished | [8.75/10](audit/massing_grant_street_parking_garage_pgg_f46c894/review/pgg_independent_grade.json) | — |
+| Hall of Data Science and AI | [massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend](modular/buildings/massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend) | Finished | [8.8/10](audit/dsai/independent_grade_r2/result.json) | — |
+| Grissom Hall | [massing_grissom_hall_01fd0e0.blend](modular/buildings/massing_grissom_hall_01fd0e0.blend) | Finished | [8.0/10](audit/massing_grissom_hall_01fd0e0/grader/r2/result.json) | — |
+| Granite Student Living | [massing_granite_student_living_3732ce0.blend](modular/buildings/massing_granite_student_living_3732ce0.blend) | Finished | [8.55/10](audit/massing_granite_student_living_3732ce0/independent_grade_r2/result.json) | — |
+| Hampton Hall of Civil Engineering (HAMP) | [massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend](modular/buildings/massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend) | Finished | [8.2/10](audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/independent_grade/result.json) | — |
+| Hanley Hall | [massing_hanley_hall_c8a4551.blend](modular/buildings/massing_hanley_hall_c8a4551.blend) | Finished | [8.1/10](audit/massing_hanley_hall_c8a4551/independent_grader/r3/result.json) | — |
+| Harrison Street Parking Garage | [massing_harrison_street_parking_garage_823c7d2.blend](modular/buildings/massing_harrison_street_parking_garage_823c7d2.blend) | Finished | [8.2/10](audit/massing_harrison_street_parking_garage_823c7d2_independent_grade_r3/grade_result.json) | — |
+| Hawkins Hall | [massing_hawkins_hall_282335f.blend](modular/buildings/massing_hawkins_hall_282335f.blend) | Finished | [8.2/10](audit/massing_hawkins_hall_282335f/independent_grade/result.json) | — |
+| Henni's Hair Shop | [massing_henni_s_hair_shop_57f732b.blend](modular/buildings/massing_henni_s_hair_shop_57f732b.blend) | Finished | [8.2/10](audit/massing_henni_s_hair_shop_57f732b/independent_grade/r1/result.json) | — |
+| Herrick Laboratories (HERL) | [massing_herrick_laboratories_2138103.blend](modular/buildings/massing_herrick_laboratories_2138103.blend) | Finished | [8.4/10](audit/massing_herrick_laboratories_2138103/independent_grade/r2/result.json) | — |
+| Hi Vine | [massing_hi_vine_dbdf0c5.blend](modular/buildings/massing_hi_vine_dbdf0c5.blend) | Finished | [8.3/10](audit/massing_hi_vine_dbdf0c5_independent_grade_r1/grade_result.json) | — |
 | 3rd and West | [massing_3rd_and_west_ffa3d05.blend](modular/buildings/massing_3rd_and_west_ffa3d05.blend) | Finished | [8.1/10](audit/massing_3rd_and_west_ffa3d05_independent_grade/result.json) | — |
 | Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | Finished | 8.5/10 | — |
 | Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | Finished | 8.0/10 | — |
@@ -123,9 +135,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (101 total)
+## Unfinished buildings (89 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 63 buildings, Rohan 15 buildings, Tobin 13 buildings, Arjav 10 buildings, Brady 0 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 51 buildings, Rohan 15 buildings, Tobin 13 buildings, Arjav 10 buildings, Brady 0 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -148,24 +160,12 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | [7.8/10](audit/lambert_fieldhouse/independent_grade_r7.json) | Tobin |
 
-### Buildings that still have only massing models (85)
+### Buildings that still have only massing models (73)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
-| fuse | [`massing_fuse_39cf4b5.blend`](modular/buildings/massing_fuse_39cf4b5.blend) | Rossen |
-| granite student living | [`massing_granite_student_living_3732ce0.blend`](modular/buildings/massing_granite_student_living_3732ce0.blend) | Rossen |
-| grant street parking garage pgg | [`massing_grant_street_parking_garage_pgg_f46c894.blend`](modular/buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | Rossen |
-| grissom hall | [`massing_grissom_hall_01fd0e0.blend`](modular/buildings/massing_grissom_hall_01fd0e0.blend) | Rossen |
-| hall of data science and ai dsai | [`massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend`](modular/buildings/massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend) | Rossen |
-| hampton hall of civil engineering hamp | [`massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend`](modular/buildings/massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend) | Rossen |
-| hanley hall | [`massing_hanley_hall_c8a4551.blend`](modular/buildings/massing_hanley_hall_c8a4551.blend) | Rossen |
-| harrison street parking garage | [`massing_harrison_street_parking_garage_823c7d2.blend`](modular/buildings/massing_harrison_street_parking_garage_823c7d2.blend) | Rossen |
-| hawkins hall | [`massing_hawkins_hall_282335f.blend`](modular/buildings/massing_hawkins_hall_282335f.blend) | Rossen |
-| henni s hair shop | [`massing_henni_s_hair_shop_57f732b.blend`](modular/buildings/massing_henni_s_hair_shop_57f732b.blend) | Rossen |
-| herrick laboratories | [`massing_herrick_laboratories_2138103.blend`](modular/buildings/massing_herrick_laboratories_2138103.blend) | Rossen |
-| hi vine | [`massing_hi_vine_dbdf0c5.blend`](modular/buildings/massing_hi_vine_dbdf0c5.blend) | Rossen |
 | hillel | [`massing_hillel_36d2ba1.blend`](modular/buildings/massing_hillel_36d2ba1.blend) | Rossen |
 | hillenbrand hall | [`massing_hillenbrand_hall_a71e418.blend`](modular/buildings/massing_hillenbrand_hall_a71e418.blend) | Rossen |
 | hockmeyer hall of structural biology hock | [`massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend`](modular/buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | Rossen |

@@ -4,6 +4,18 @@ Edit geometry in its source library; campus placement is controlled by its Place
 
 | Building | File | Objects |
 | --- | --- | ---: |
+| FUSE | [massing_fuse_39cf4b5.blend](buildings/massing_fuse_39cf4b5.blend) | 11 |
+| Grant Street Parking Garage (PGG) | [massing_grant_street_parking_garage_pgg_f46c894.blend](buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | 13 |
+| Hall of Data Science and AI (DSAI) | [massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend](buildings/massing_hall_of_data_science_and_ai_dsai_c8a41cc.blend) | 45 |
+| Grissom Hall | [massing_grissom_hall_01fd0e0.blend](buildings/massing_grissom_hall_01fd0e0.blend) | 27 |
+| Granite Student Living | [massing_granite_student_living_3732ce0.blend](buildings/massing_granite_student_living_3732ce0.blend) | 1088 |
+| Hampton Hall of Civil Engineering (HAMP) | [massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend](buildings/massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend) | 6 |
+| Hanley Hall | [massing_hanley_hall_c8a4551.blend](buildings/massing_hanley_hall_c8a4551.blend) | 1 |
+| Harrison Street Parking Garage | [massing_harrison_street_parking_garage_823c7d2.blend](buildings/massing_harrison_street_parking_garage_823c7d2.blend) | 549 |
+| Hawkins Hall | [massing_hawkins_hall_282335f.blend](buildings/massing_hawkins_hall_282335f.blend) | 7 |
+| Henni's Hair Shop | [massing_henni_s_hair_shop_57f732b.blend](buildings/massing_henni_s_hair_shop_57f732b.blend) | 1 |
+| Herrick Laboratories (HERL) | [massing_herrick_laboratories_2138103.blend](buildings/massing_herrick_laboratories_2138103.blend) | 1 |
+| Hi Vine | [massing_hi_vine_dbdf0c5.blend](buildings/massing_hi_vine_dbdf0c5.blend) | 1 |
 | 3rd and West | [massing_3rd_and_west_ffa3d05.blend](buildings/massing_3rd_and_west_ffa3d05.blend) | 19 |
 | Campus Edge | [massing_campus_edge_343e3d8.blend](buildings/massing_campus_edge_343e3d8.blend) | 15 |
 | Cary Quadrangle East (CQE) | [massing_cary_quadrangle_east_cqe_230c813.blend](buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | 23 |
@@ -134,4 +146,28 @@ CREC retains its legacy massing filename and campus-world direct-link coordinate
 | University Lutheran Church | [massing_university_lutheran_church_20903f1.blend](buildings/massing_university_lutheran_church_20903f1.blend) | 541 |
 | Wang Hall | [massing_wang_hall_wang_0dac5ab.blend](buildings/massing_wang_hall_wang_0dac5ab.blend) | 12 |
 | Wood Street Parking Garage | [massing_wood_street_garage_pgw_2fa056e.blend](buildings/massing_wood_street_garage_pgw_2fa056e.blend) | 79 |
+
+FUSE retains its legacy filename and campus-world direct-link coordinates. Its 8.25/10 independent grade verifies the named OSM plan and horizontal placement; height, facade dimensions, entrances, and below-grade layout remain estimated. See [FUSE evidence](../audit/massing_fuse_39cf4b5/evidence.json).
+
+Grant Street Parking Garage retains campus-world direct-link coordinates. Its 8.75/10 grade verifies Purdue GIS; total height, five deck intervals, entrance direction, and facade arches remain estimated. See [PGG evidence](../audit/massing_grant_street_parking_garage_pgg_f46c894/evidence_record.json).
+
+Hall of Data Science and AI retains campus-world direct-link coordinates. Its 8.8/10 grade confirms the shell follows Purdue GIS FID 196 within 0.000009 m; height, roof dimensions, facade spacing, and interior layout remain estimates. See [DSAI evidence](../audit/dsai/source_record.json).
+
+Grissom Hall retains campus-world direct-link coordinates. Its 8.0/10 grade verifies GIS FID 236 within 0.000012 m. Height fields conflict with Purdue story counts; facade bays and portico dimensions remain schematic. See [Grissom evidence](../audit/massing_grissom_hall_01fd0e0/evidence.json).
+
+Hampton Hall of Civil Engineering retains campus-world coordinates. Its 8.2/10 grade confirms the shell matches the campus-map polygon within 0.00001472 m; height and entrance placement remain estimated. See [HAMP grade](../audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/independent_grade/result.json).
+
+Granite Student Living retains campus-world coordinates. Its 8.55/10 grade confirms ground-shell dimensions and design height against proposed plans, not as-built drawings; registration and facade/roof details remain uncertain. See [Granite grade](../audit/massing_granite_student_living_3732ce0/independent_grade_r2/result.json).
+
+Hawkins Hall retains campus-world coordinates. Its 8.2/10 grade verifies Purdue BuildingShapes FID 83; GIS level/height fields conflict with story counts and have undocumented units. Connector height and entry location are estimated. See [Hawkins grade](../audit/massing_hawkins_hall_282335f/independent_grade/result.json).
+
+Harrison Street Parking Garage retains campus-world coordinates. Its 8.2/10 grade verifies Purdue GIS FID 892 and aerial-supported rooftop parking/canopy; floor spacing and facade details remain estimates. See [Harrison grade](../audit/massing_harrison_street_parking_garage_823c7d2_independent_grade_r3/grade_result.json).
+
+Hanley Hall retains campus-world coordinates. Its 8.1/10 grade supports Purdue GIS OBJECTID 310 wall shell and OSM roof/eave projection; source semantics are inferential. Roof dimensions and entrance side remain estimated. See [Hanley grade](../audit/massing_hanley_hall_c8a4551/independent_grader/r3/result.json).
+
+Henni's Hair Shop retains campus-world coordinates. Its 8.2/10 grade confirms the named OSM footprint and photo-supported two-level facade; 8.38 m height is estimated. See [Henni grade](../audit/massing_henni_s_hair_shop_57f732b/independent_grade/r1/result.json).
+
+Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreement between named OSM footprint and aerial; six-story interpretation and 19.7 m height are estimates. See [Hi Vine grade](../audit/massing_hi_vine_dbdf0c5_independent_grade_r1/grade_result.json).
+
+Herrick Laboratories (historic Herrick Acoustics) retains campus-world coordinates. Its 8.4/10 grade verifies Purdue GIS FID 246 / HERL and distinguishes it from Ray W. Herrick Labs; height estimates and GIS area discrepancy remain unresolved. See [Herrick grade](../audit/massing_herrick_laboratories_2138103/independent_grade/r2/result.json).
 
