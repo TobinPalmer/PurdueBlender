@@ -37,3 +37,8 @@ Review every manifest asset, including unnamed massing and residential buildings
 8. Publish coverage totals and remaining exceptions. Claim all buildings fully accurate only if every applicable dimension and placement criterion has sufficient evidence and passes its documented tolerance. Otherwise report exactly what was checked and what remains uncertain.
 
 Do not use the legacy sector fidelity percentages as evidence: `audit_all_30_sectors.py` assigns those scores from mesh density, without comparison to geography.
+
+
+## Commit completed building work
+
+After a building is finished and its evidence is complete, commit the changed files for that building. Keep the commit limited to that building's assigned files, and follow the root TODO.md handoff rule when the work needs integration into the master blend.

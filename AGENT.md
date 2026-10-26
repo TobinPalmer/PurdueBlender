@@ -25,7 +25,7 @@ Save raw source snapshots in a building-specific evidence folder. Record URL, pr
 
 Build only this building in its dedicated module, using the documented local coordinate frame. The module should create geometry from the collected sources, including the footprint, orientation, floors, roof silhouette, facade rhythm, entrances, and distinctive features supported by evidence. Keep the campus position controlled by the corresponding `Placement_<id>` marker and manifest entry. Use portable relative paths or pack textures.
 
-Export the expected named collection to the manifest asset path. Include a preview render and structured evidence record. Do not alter the campus origin or unrelated assets.
+Export the expected named collection to the manifest asset path. Include a preview render and structured evidence record. Do not alter the campus origin or unrelated assets. After the building is finished and its evidence is complete, commit the changed files for that building.
 
 ## 4. Validate
 
