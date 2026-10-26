@@ -1,0 +1,31 @@
+{
+  "building_id": "massing_beering_hall_brng_b5c3fdf",
+  "duplicate_of": "beering_hall",
+  "source_match": {
+    "provider": "Purdue GIS BuildingShapesZip4 FeatureServer",
+    "feature_id": 251,
+    "name": "Steven C. Beering Hall of Liberal Arts & Education",
+    "existing_audit_rows": [
+      "beering_hall",
+      "massing_beering_hall_brng_b5c3fdf"
+    ]
+  },
+  "linked_master_inspection": {
+    "file": "modular/purdue_campus_linked.blend",
+    "method": "Read-only Blender 4.5.15 inspection of bpy.data.libraries, collections, objects, and collection instances.",
+    "both_libraries_present": true,
+    "libraries": [
+      "//buildings\\beering_hall.blend",
+      "//buildings\\massing_beering_hall_brng_b5c3fdf.blend"
+    ],
+    "asset_collections": [
+      "Asset_beering_hall",
+      "Asset_massing_beering_hall_brng_b5c3fdf"
+    ],
+    "placement_marker": "Placement_beering_hall"
+  },
+  "decision": "The BRNG massing record is a duplicate building record, not a distinct Rossen building assignment. Exclude it from unique unfinished-building totals and retain its manifest entry as superseded by beering_hall.",
+  "pending_integration": "The linked master currently contains both detailed and massing assets. Removing the duplicate link from the Tobin-owned master is still required; this task did not edit or save the master file.",
+  "inspected_by": "Coordinator",
+  "inspection_date": "2026-10-25"
+}

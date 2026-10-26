@@ -1,0 +1,264 @@
+{
+  "score": 8.3,
+  "max_score": 10,
+  "passing_standard": 8,
+  "passed": true,
+  "building_id": "animal_disease_diagnostic_laboratory",
+  "reviewer": "independent subagent",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified",
+      "evidence": [
+        "Purdue GIS FeatureServer FID 241 directly names ADDL, Willie M. Reed Animal Disease Diagnostic Laboratory, and 406 S University Street.",
+        "Read-only Blender vertex comparison: 18 source corners, 18 shell corners; maximum local-XY mismatch 0.000002 m.",
+        "Official Purdue ADDL page corroborates the laboratory identity and function."
+      ],
+      "limits": [
+        "GIS footprint is a mapped building polygon, not a survey; source record notes this uncertainty."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "status": "partial",
+      "evidence": [
+        "The shell's 18 vertices match the source ring under the documented local conversion (max error 0.000002 m), verifying plan orientation and dimensions against GIS.",
+        "Manifest placement origin differs from independently transformed polygon centroid by 0.000000 m.",
+        "GIS-derived plan bounds are approximately 39.38 m east-west by 78.38 m north-south."
+      ],
+      "limits": [
+        "The master Placement marker was not reopened in this asset-specific grade; manifest coordinates stand in for the intended campus placement.",
+        "No independent survey or aerial registration was used to test GIS positional accuracy."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "status": "partial",
+      "evidence": [
+        "Both source GIS NUM_LEVELS and CountOfFLO attributes equal five, and the model displays five window bands.",
+        "The shell uses the GIS Extrution value 57 as 17.3736 m; read-only saved asset top is 17.7236 m including the 0.35 m base."
+      ],
+      "limits": [
+        "GIS Extrution units and vertical measurement definition are undocumented; height is a proxy, not a surveyed value.",
+        "Flat roof is modeled without roof-plan/elevation evidence; roof profile and equipment remain unverified."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.3,
+      "max_score": 2,
+      "status": "partial",
+      "evidence": [
+        "The building-specific Beef Magazine/Purdue photograph is cited in the source record and supports qualitative brick and covered-entry cues.",
+        "The Purdue ADDL 2007 newsletter documents a BSL-3 addition attached at the southeast corner; the model marks that area qualitatively.",
+        "Saved preview and entry render were inspected directly; they show repeated glazing, a covered double-door entry, sign, and southeast darker facade patch."
+      ],
+      "limits": [
+        "Window rhythm/count, opening sizes, material extents, exact entry location/dimensions and addition shape are not measured by cited sources.",
+        "Distinctive facade treatment beyond the cited photo is illustrative; no full elevation set was found."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified",
+      "evidence": [
+        "Actual saved source .blend reopened in Blender; scene/collection identity passed with 8 objects.",
+        "Actual exported collection probe reopened and its independent check passed with eight expected objects and no camera/light.",
+        "No external image texture paths; builder module, raw GIS snapshot, evidence record, two renders and export probe are present."
+      ],
+      "limits": []
+    }
+  ],
+  "evidence": {
+    "files_inspected": [
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\animal_disease_diagnostic_laboratory.blend",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\animal_disease_diagnostic_laboratory\\preview.png",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\animal_disease_diagnostic_laboratory\\entry_detail.png",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\build_batch_a\\animal_disease_diagnostic_laboratory_gis_feature_241.json",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\animal_disease_diagnostic_laboratory\\source_record.json",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\animal_disease_diagnostic_laboratory\\collection_export_probe.blend",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\animal_disease_diagnostic_laboratory\\verify_export_probe.py"
+    ],
+    "gis": {
+      "feature_id": 241,
+      "building_name": "Willie M. Reed Animal Disease Diagnostic Laboratory",
+      "abbr": "ADDL",
+      "address": "406 S University Street",
+      "source_crs": "EPSG:4326 local WGS84 snapshot transformed from ArcGIS EPSG:3857 service",
+      "source_vertex_count": 18,
+      "max_shell_vertex_error_m": 2e-06,
+      "manifest_origin": [
+        -196.3559772433905,
+        -1028.3665309334529
+      ],
+      "transformed_polygon_centroid": [
+        -196.355977,
+        -1028.366531
+      ],
+      "origin_error_m": 0.0,
+      "extrution_value_and_unit_status": "57; unit and measurement definition undocumented",
+      "num_levels": 5,
+      "count_of_floors": 5
+    },
+    "blender_source_asset": {
+      "building_id": "animal_disease_diagnostic_laboratory",
+      "collection": "Asset_animal_disease_diagnostic_laboratory",
+      "external_image_paths": [],
+      "nonzero_object_transforms": [],
+      "object_count": 8,
+      "object_names": [
+        "ADDL_Base_Plinth",
+        "ADDL_Entry_Canopy_Visual_Proxy",
+        "ADDL_Entry_Glazed_Double_Door_Visual_Proxy",
+        "ADDL_Entry_Stile_and_Piers_Visual_Proxy",
+        "ADDL_Flat_Roof_Outline",
+        "ADDL_GIS_Footprint_Primary_Shell",
+        "ADDL_Official_Name_Sign_Visual_Proxy",
+        "ADDL_Repeating_Laboratory_Window_Bays"
+      ],
+      "object_types": {
+        "FONT": 1,
+        "MESH": 7
+      },
+      "scene": "Scene",
+      "shell_bounds_m": [
+        [
+          -19.89407,
+          19.487362
+        ],
+        [
+          -37.479099,
+          40.901558
+        ],
+        [
+          0.35,
+          17.7236
+        ]
+      ],
+      "shell_unique_xy": [
+        [
+          -19.89407,
+          -1.188861
+        ],
+        [
+          -19.718494,
+          6.29069
+        ],
+        [
+          -18.94788,
+          -8.222466
+        ],
+        [
+          -18.770164,
+          -1.215377
+        ],
+        [
+          -15.957213,
+          -32.630672
+        ],
+        [
+          -15.329472,
+          -8.314648
+        ],
+        [
+          -15.14977,
+          6.184505
+        ],
+        [
+          -14.416711,
+          37.873505
+        ],
+        [
+          -3.504339,
+          -36.887955
+        ],
+        [
+          -3.402479,
+          -32.956196
+        ],
+        [
+          2.499818,
+          37.4818
+        ],
+        [
+          2.576341,
+          40.901558
+        ],
+        [
+          12.158116,
+          37.24099
+        ],
+        [
+          12.23469,
+          40.68512
+        ],
+        [
+          12.92979,
+          -15.281121
+        ],
+        [
+          14.323609,
+          37.145447
+        ],
+        [
+          18.906515,
+          -37.479099
+        ],
+        [
+          19.487362,
+          -15.455114
+        ]
+      ],
+      "shell_unique_xy_count": 18,
+      "source_feature_id": 241,
+      "story_count": 5
+    },
+    "sources_verified": [
+      {
+        "url": "https://vet.purdue.edu/addl/",
+        "supports": "official ADDL identity and diagnostic function"
+      },
+      {
+        "url": "https://www.addl.purdue.edu/Newsletters/2007/Summer/Letter.htm",
+        "supports": "attached BSL-3 addition at southeast corner"
+      },
+      {
+        "url": "https://www.beefmagazine.com/livestock-management/purdue-animal-disease-diagnostic-laboratory-gets-boost-from-state",
+        "supports": "building-specific exterior photo; qualitative facade cue"
+      },
+      {
+        "url": "https://www.in.gov/che/files/Purdue_University.pdf",
+        "supports": "state project record for ADDL BSL-3 facility, not facade or overall-building geometry"
+      }
+    ],
+    "validation_logs": {
+      "source_asset_probe_tail": "BlenderMCP addon registered\nINDEPENDENT_GRADE_JSON={\"building_id\": \"animal_disease_diagnostic_laboratory\", \"collection\": \"Asset_animal_disease_diagnostic_laboratory\", \"external_image_paths\": [], \"nonzero_object_transforms\": [], \"object_count\": 8, \"object_names\": [\"ADDL_Base_Plinth\", \"ADDL_Entry_Canopy_Visual_Proxy\", \"ADDL_Entry_Glazed_Double_Door_Visual_Proxy\", \"ADDL_Entry_Stile_and_Piers_Visual_Proxy\", \"ADDL_Flat_Roof_Outline\", \"ADDL_GIS_Footprint_Primary_Shell\", \"ADDL_Official_Name_Sign_Visual_Proxy\", \"ADDL_Repeating_Laboratory_Window_Bays\"], \"object_types\": {\"FONT\": 1, \"MESH\": 7}, \"scene\": \"Scene\", \"shell_bounds_m\": [[-19.89407, 19.487362], [-37.479099, 40.901558], [0.35, 17.7236]], \"shell_unique_xy\": [[-19.89407, -1.188861], [-19.718494, 6.29069], [-18.94788, -8.222466], [-18.770164, -1.215377], [-15.957213, -32.630672], [-15.329472, -8.314648], [-15.14977, 6.184505], [-14.416711, 37.873505], [-3.504339, -36.887955], [-3.402479, -32.956196], [2.499818, 37.4818], [2.576341, 40.901558], [12.158116, 37.24099], [12.23469, 40.68512], [12.92979, -15.281121], [14.323609, 37.145447], [18.906515, -37.479099], [19.487362, -15.455114]], \"shell_unique_xy_count\": 18, \"source_feature_id\": 241, \"story_count\": 5}\nBlenderMCP addon unregistered\nBlender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\nRead blend: \"C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\animal_disease_diagnostic_laboratory.blend\"\n\nBlender quit\n",
+      "export_probe_check_tail": "Blender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)\nRead blend: \"C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\animal_disease_diagnostic_laboratory\\collection_export_probe.blend\"\nWarning: Library file, loading empty scene\nBlenderMCP addon registered\nWarning: Library file, loading empty scene\n{\n  \"reopened_collection_export\": \"C:\\\\Users\\\\gotse\\\\Documents\\\\Codex\\\\2026-10-25\\\\github-plugin-github-openai-curated-remote\\\\outputs\\\\PurdueBlender\\\\audit\\\\animal_disease_diagnostic_laboratory\\\\collection_export_probe.blend\",\n  \"collection\": \"Asset_animal_disease_diagnostic_laboratory\",\n  \"object_count\": 8,\n  \"object_names\": [\n    \"ADDL_Base_Plinth\",\n    \"ADDL_Entry_Canopy_Visual_Proxy\",\n    \"ADDL_Entry_Glazed_Double_Door_Visual_Proxy\",\n    \"ADDL_Entry_Stile_and_Piers_Visual_Proxy\",\n    \"ADDL_Flat_Roof_Outline\",\n    \"ADDL_GIS_Footprint_Primary_Shell\",\n    \"ADDL_Official_Name_Sign_Visual_Proxy\",\n    \"ADDL_Repeating_Laboratory_Window_Bays\"\n  ]\n}\nBlenderMCP addon unregistered\nRead blend: \"C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\animal_disease_diagnostic_laboratory\\collection_export_probe.blend\"\n\nBlender quit\n"
+    }
+  },
+  "findings": [
+    {
+      "severity": "material",
+      "finding": "Height and roof confidence is limited: the five-level count is sourced, but the modeled 57 ft height interprets an undocumented GIS field and the flat roof has no direct evidence.",
+      "repair": "Locate an authoritative elevation, roof plan, survey, or dated official building record; update geometry only if it establishes a different height or roof form."
+    },
+    {
+      "severity": "material",
+      "finding": "Facade detailing and BSL-3 addition geometry remain qualitative; the source text only locates the addition at the southeast corner.",
+      "repair": "Use current, building-specific orthogonal photos or architectural documents to verify elevations, entry location, window rhythm, and the separate addition footprint."
+    },
+    {
+      "severity": "minor",
+      "finding": "Position was validated against the checked-in Purdue GIS snapshot and manifest origin, but the linked master placement marker and external positional registration were not inspected in this grading pass.",
+      "repair": "Coordinator should verify the master Placement marker and campus overlay during integration."
+    }
+  ]
+}

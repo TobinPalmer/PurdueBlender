@@ -1,0 +1,43 @@
+{
+  "building": "Riverside Covenannt Church",
+  "osm_way_id": 860918859,
+  "source_url": "https://www.openstreetmap.org/way/860918859",
+  "source_snapshot_timestamp": "2026-10-22T03:48:50Z",
+  "source_crs": "EPSG:4326 (WGS 84)",
+  "comparison_projection": {
+    "project_origin_latitude": 40.4274,
+    "project_origin_longitude": -86.9137,
+    "x_formula": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274))",
+    "y_formula": "Y=(latitude-40.4274)*111040.0",
+    "units": "meters; project approximate local conversion, not surveyed CRS"
+  },
+  "method": "Project outer way nodes to campus-local XY; apply sequential 0.3 m importer point filter; compare bottom-ring source mesh vertices with filtered source vertices using symmetric nearest-vertex distance. This verifies consistency with the original OSM import only; it is not independent spatial accuracy or a structural wall-footprint certification.",
+  "osm_filtered_ring_vertex_count": 4,
+  "source_mesh_unique_bottom_vertex_count": 4,
+  "max_source_mesh_to_filtered_osm_nearest_vertex_m": 3.4233771438432986e-05,
+  "max_filtered_osm_to_source_mesh_nearest_vertex_m": 3.4233771438432986e-05,
+  "source_osm_polygon_area_m2": 432.15993090519623,
+  "source_mesh_xy_area_m2": 432.16098520020023,
+  "source_osm_filtered_xy_bounds_m": {
+    "min_x": -157.0013904301536,
+    "max_x": -124.42563737099599,
+    "min_y": 2000.5743680004434,
+    "max_y": 2014.2878080005357
+  },
+  "asset_source": [
+    [
+      -157.0013885498047,
+      -124.4256362915039
+    ],
+    [
+      2000.5743408203125,
+      2014.287841796875
+    ],
+    [
+      0.0,
+      16.0
+    ]
+  ],
+  "height_status": "Unverified: OSM feature has neither height nor building:levels tags; source mesh retains 16 m original massing.",
+  "position_status": "Original project-local coordinates retained; approximate map projection and original OSM snapshot consistency do not constitute independent location verification."
+}

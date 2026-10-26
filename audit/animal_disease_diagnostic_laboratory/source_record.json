@@ -1,0 +1,81 @@
+{
+  "asset_id": "animal_disease_diagnostic_laboratory",
+  "owner": "Rosen",
+  "building_name": "Willie M. Reed Animal Disease Diagnostic Laboratory",
+  "source_status": "Reconstructed from the checked-in Purdue GIS snapshot and listed public references. This record does not reuse claims about the absent prior detailed asset as validation evidence.",
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 241,
+      "snapshot": "audit/build_batch_a/animal_disease_diagnostic_laboratory_gis_feature_241.json",
+      "retrieved": "2026-10-24",
+      "match": "BLDG_ABBR=ADDL, BUILDING_N=Willie M. Reed Animal Disease Diagnostic Laboratory, ADDRESS=406 S University Street; campus source OWNER=PURDUE",
+      "geometry": "Single exterior polygon ring of 18 distinct WGS84 vertices, projected to local meters with the documented Purdue project conversion and centered at the geographic/projected polygon centroid; no rescaling.",
+      "fields": {
+        "NUM_LEVELS": {"value": 5, "status": "direct source attribute"},
+        "CountOfFLO": {"value": 5, "status": "direct source attribute"},
+        "Extrution": {"value": 57, "status": "direct numeric source attribute; units and measurement definition not documented in layer metadata; modeled as a provisional 57 ft / 17.3736 m height only"},
+        "Elevation": {"value": 597.7, "status": "direct numeric source attribute; units and vertical datum not documented"},
+        "Shape__Area": {"value": 4001.9375, "status": "service-provided projected-area field; not treated as ground footprint area"},
+        "Shape__Length": {"value": 309.62125718928587, "status": "service-provided projected-length field"}
+      },
+      "floorplan_field": {"value": "G:\\GIS\\web_pages\\html_pages\\ADDL.html", "status": "internal campus file path only; contents unavailable in this workspace and not used to infer the room plan"}
+    },
+    {
+      "provider": "Purdue Animal Disease Diagnostic Laboratory",
+      "url": "https://vet.purdue.edu/addl/",
+      "supports": "Official identity and diagnostic-laboratory function; does not provide a surveyed elevation or footprint in this modeling pass."
+    },
+    {
+      "provider": "Purdue ADDL Summer 2007 newsletter",
+      "url": "https://www.addl.purdue.edu/Newsletters/2007/Summer/Letter.htm",
+      "supports": "Describes the attached BSL-3 addition on the southeast corner. Exact external dimensions, elevation, and detailed interior arrangement are not given in the cited text."
+    },
+    {
+      "provider": "Purdue capital project record, January 2023",
+      "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/04/Reed-Animal-Disease-Diagnostic-Laboratory-Equipment-Replacement-B-1-23-2-08.pdf",
+      "supports": "Existing lab and a project scope including equipment replacement and an incinerator/chute/cooler work. The document is not used as a source for the building's overall facade or detailed floor plan."
+    },
+    {
+      "provider": "Beef Magazine, Purdue Animal Disease Diagnostic Laboratory gets boost from state",
+      "url": "https://www.beefmagazine.com/livestock-management/purdue-animal-disease-diagnostic-laboratory-gets-boost-from-state",
+      "supports": "Building-specific exterior photograph, which supports a brick facade and a modest glazed/covered entry. Bay dimensions, entry orientation registration, wall materials on unphotographed sides, and sign dimensions are not measured from this source."
+    }
+  ],
+  "modeled_geometry": {
+    "footprint": "The source GIS ring is traced as a full-height shell; local origin is the polygon centroid. Source geometry bounds in local XY are approximately [-19.8941, 19.4874] m east and [-37.4791, 40.9016] m north.",
+    "height": "57 ft (17.3736 m) used as a provisional extrusion proxy from Extrution=57. The layer does not publish that field's units or vertical semantics, so the result is not survey verified.",
+    "levels": "Five levels reflect both NUM_LEVELS and CountOfFLO. Floor-to-floor heights and whether any count denotes a basement are unverified.",
+    "facade": "Repeated glazing is an illustrative pattern; brick and modest covered entry are qualitative cues from the building-specific photo. Exact window count, size, materials by elevation, and entrance orientation remain estimates.",
+    "service_addition": "A darker southeast boundary finish indicates the documented attached BSL-3 addition at a qualitative location. Its separate outline and dimensions are not documented in the cited source and are not invented as a measured footprint.",
+    "interior": "No interior modeled. The GIS's Floorplans attribute points to an unavailable internal G: drive file. No room layout is claimed.",
+    "roof_equipment": "Omitted because no building-specific roof survey or sufficiently clear roof evidence was found."
+  },
+  "verification": {
+    "builder": "modular/buildings/build_animal_disease_diagnostic_laboratory.py",
+    "asset": "modular/buildings/animal_disease_diagnostic_laboratory.blend",
+    "collection": "Asset_animal_disease_diagnostic_laboratory",
+    "scene": "Scene",
+    "preview": "audit/animal_disease_diagnostic_laboratory/preview.png",
+    "entry_detail": "audit/animal_disease_diagnostic_laboratory/entry_detail.png",
+    "reopen_check": "Passed: Blender 4.5.15 reopened the saved source file. Scene and expected collection matched; seven evaluated meshes and one sign object loaded; GIS shell evaluated bounds were [-19.8941, 19.4874] m east, [-37.4791, 40.9016] m north, and [0.35, 17.7236] m vertical; no external image texture paths were found.",
+    "export_check": "Passed: bpy.data.libraries.write exported only Asset_animal_disease_diagnostic_laboratory to collection_export_probe.blend, and Blender reopened it with all 8 expected objects and no cameras or lights in the exported collection.",
+    "saved_before_render": true,
+    "preview_render": "1200x900, EEVEE Next, 12 samples; rendered after source save",
+    "detail_render": "960x720, EEVEE Next, 12 samples; rendered after source save",
+    "asset_object_count": 8,
+    "evaluated_total_bounds_m": [[-19.9502, 19.5484], [-37.5394, 40.9646], [0.05, 17.7236]],
+    "evaluated_gis_shell_bounds_m": [[-19.8941, 19.4874], [-37.4791, 40.9016], [0.35, 17.7236]],
+    "external_image_paths": [],
+    "candidate_builder_grade": "Approximately 8.2/10 before independent review; identity and GIS footprint are strong, while height semantics, roof treatment, and most facade details remain partly uncertain."
+  },
+  "uncertainties": [
+    "The source feature identifies the building by name, abbreviation, and address, but the geometry is a GIS representation, not a site survey.",
+    "GIS extrusion and elevation field units and vertical datum are undocumented.",
+    "Facade bay spacing, materials outside the photographed view, entrance placement, and dimensions are visual estimates.",
+    "The documented southeast BSL-3 addition's external dimensions and exact outline were unavailable.",
+    "The internal floorplan path references a campus G: drive file not available here; no interior is modeled.",
+    "Street-level panorama alignment and availability were not independently confirmed."
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "score": 5.1,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.1,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS OBJECTID 207 identifies ABBR=AR, Armory, 812 Third Street.",
+        "The brick armory identity and historic masonry character are supported by Purdue's archived exterior photograph.",
+        "GIS envelope is 50.88 x 88.61 m; model exterior is 56.45 x 90.70 m. Axis size errors are 11.0% and 2.4%. The saved report calls the geometry an approximate AI reconstruction."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "GIS and model exterior-envelope centers differ by 1.83 m (dx=1.80, dy=-0.34).",
+        "The plan axes are broadly cardinal, but model dimensions 56.45 x 90.70 m differ from GIS 50.88 x 88.61 m.",
+        "GIS EPSG:3857 coordinates were converted using modular/AGENTS.md's documented local-meter approximation; this is not a survey."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.4,
+      "max_score": 2,
+      "evidence": [
+        "The manifest envelope reaches Z=22.4 m, but the saved evidence has no authoritative height or story count.",
+        "The archive photo supports a central gable; the current render shows a broad hipped/clerestory roof and four raised corner blocks unsupported by the reference.",
+        "The building evidence states that roof profile and architectural details differ from the historical reference; roof finish is unverified."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "Both archive photo and model show brick fields, pale trim, repeated multi-pane windows, and a central entrance.",
+        "The model simplifies the historic central gable/arched entrance and window rhythm; colors and textures are artistic approximations, not measured.",
+        "No current dated facade or measured elevation is saved in the evidence folder."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": [
+        "Manifest retains id=armory, file=buildings/armory.blend, collection=Asset_armory, and local placement contract; it records 1184 objects.",
+        "Building-specific verification.json records a reopened asset, collection count, packed images, and roof/window geometry-repair checks. A preview and historic reference image are present.",
+        "There is no dedicated modular/buildings/build_armory.py module or comprehensive current-source record; this evaluation did not have an independent Blender reopen probe."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "buildings/armory.blend",
+    "export_collection": "Asset_armory",
+    "retrieved_date": "2026-10-25",
+    "gis_provider": "Purdue University, PuGeoDB.DBO.CampusBuilding ArcGIS MapServer layer 0",
+    "gis_source_url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query",
+    "gis_crs": "EPSG:3857; converted using repository local-meter approximation",
+    "gis_feature": {
+      "OBJECTID": 207,
+      "ABBR": "AR",
+      "Name": "Armory",
+      "OWNER": "PURDUE",
+      "ADDRESS": "812 Third Street",
+      "Shape.STArea()": 7696.10708932,
+      "Shape.STLength()": 364.9859566325701
+    },
+    "gis_bounds_local_m": [
+      [
+        -244.0101386502288,
+        -193.1342095137775
+      ],
+      [
+        24.38273729741013,
+        112.9949818039313
+      ]
+    ],
+    "gis_vertex_mean_center_local_m": [
+      -218.57202170854282,
+      68.68886035938203
+    ],
+    "model_structural_exterior_bounds_world_m": [
+      [
+        -245.0,
+        -188.5500030517578
+      ],
+      [
+        22.999996185302734,
+        113.69999694824219
+      ]
+    ],
+    "model_structural_exterior_dimensions_m": [
+      56.44999694824219,
+      90.70000076293945
+    ],
+    "center_delta_xy_m": [
+      1.797020182663914,
+      -0.33886379260957256
+    ],
+    "center_offset_m": 1.8286908450700983,
+    "dimension_error_percent_xy": [
+      10.956198552838233,
+      2.3560584296729394
+    ],
+    "model_bounds_world_m": [
+      [
+        -245.0000114440918,
+        -172.55001068115234
+      ],
+      [
+        22.9999942779541,
+        113.69999885559082
+      ],
+      [
+        0.0,
+        22.399999618530273
+      ]
+    ],
+    "manifest_object_count": 1184,
+    "supporting_files": [
+      "materials/buildings/armory/report.md",
+      "materials/buildings/armory/verification.json",
+      "materials/buildings/armory/reference.jpg",
+      "materials/buildings/armory/hero.png",
+      "renders/armory/armory_render.png",
+      "audit/armory_independent_grade/purdue_gis_feature_207.json"
+    ],
+    "external_authoritative_sources": [
+      {
+        "title": "Purdue Campus Facilities and Buildings Historic Database — Armory",
+        "url": "https://collections.lib.purdue.edu/campus/buildings"
+      },
+      {
+        "title": "Purdue e-Archives — Armory photograph",
+        "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/140/"
+      },
+      {
+        "title": "Purdue Campus ArcGIS REST layer",
+        "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0"
+      }
+    ]
+  },
+  "findings": [
+    {
+      "severity": "major",
+      "finding": "Purdue GIS plan envelope differs from the model: 11.0% on X and 2.4% on Y; exterior-center offset 1.83 m."
+    },
+    {
+      "severity": "major",
+      "finding": "The roof silhouette and corner blocks conflict with the archival Purdue exterior photo; height and story count are unsupported."
+    },
+    {
+      "severity": "moderate",
+      "finding": "Brick, repeated windows, and central entry are directionally supported, but the facade pattern is not a close match."
+    },
+    {
+      "severity": "moderate",
+      "finding": "The library has useful portability checks and renders, but lacks the dedicated builder module and a complete current-source record."
+    },
+    {
+      "severity": "positive",
+      "finding": "Purdue GIS and archives corroborate identity; stable asset ID and collection names match the manifest."
+    }
+  ]
+}

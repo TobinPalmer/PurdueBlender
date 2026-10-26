@@ -1,0 +1,90 @@
+{
+  "building": "Riverside Covenant Church",
+  "asset_id": "massing_riverside_covenannt_church_3a60684",
+  "status": "Original OSM source feature and footprint import consistency documented; independent spatial/architectural grade pending",
+  "source": {
+    "provider": "OpenStreetMap via Overpass API",
+    "url": "https://www.openstreetmap.org/way/860918859",
+    "feature_identifier": "way/860918859",
+    "retrieval_date": "2026-10-22 (source snapshot base timestamp)",
+    "source_crs": "EPSG:4326 (WGS 84); projected to project-local approximate XY for comparison, not a surveyed CRS",
+    "source_record": "source_osm_way_860918859_raw.json",
+    "source_snapshot_timestamp": "2026-10-22T03:48:50Z",
+    "reference_status": "Exact named OSM building feature in the preserved original Overpass snapshot. The projected ring matches the retained source mesh in vertex order to sub-millimeter precision; this confirms consistency with the original OSM import, not independent geographic or survey accuracy.",
+    "secondary_visual_references": [
+      {
+        "provider": "Building owner/congregation",
+        "use": "Official building identity and address reference; does not certify footprint, height, or facade measurements",
+        "url": "https://www.rcovenant.org/our-history/"
+      },
+      {
+        "provider": "Building owner/architect",
+        "use": "Contextual identity/history or renovation reference; not a measured geometry source",
+        "url": "https://www.kjgarchitecture.com/portfolio-1/covenant-curch"
+      },
+      {
+        "provider": "Building owner/congregation",
+        "use": "Confirms congregation location and acquisition of an existing church in 2006; no measured geometry",
+        "url": "https://www.rcovenant.org/our-history/"
+      }
+    ]
+  },
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "axes": "X east, Y north, Z up in project-local coordinates",
+    "units": "meters",
+    "source_to_project_xy": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0",
+    "crs_note": "Approximate project compatibility conversion, not a surveyed coordinate reference system."
+  },
+  "measurements": {
+    "method": "Projected outer-ring WGS84 nodes from OpenStreetMap way 860918859 with the documented project-local approximation, applying the importer’s sequential 0.3 m point filter; compared ordered ring vertices to the preserved bottom ring in source_mesh_snapshot.json. Full results are in source_footprint_comparison_way_860918859.json. This assesses original import consistency only.",
+    "asset_bounds_before_m": {
+      "max_y": 2014.287841796875,
+      "min_z": 0.0,
+      "min_y": 2000.5743408203125,
+      "min_x": -157.0013885498047,
+      "max_z": 16.0,
+      "max_x": -124.4256362915039
+    },
+    "asset_bounds_after_m_including_roof_overhang": {
+      "max_y": 2014.644776,
+      "min_z": 0.0,
+      "min_y": 2000.2229,
+      "min_x": -157.353729,
+      "max_z": 8.8,
+      "max_x": -124.073303
+    },
+    "original_vertex_count": 8,
+    "original_face_count": 8,
+    "after_footprint_status": "Ordered source OSM ring agrees with the retained source mesh within sub-millimeter coordinate rounding; this is source-import consistency, not an independent footprint/structural-wall survey.",
+    "orientation_status": "Original vertex order matches the filtered OSM ring; this confirms import orientation consistency only and does not establish independent true-north orientation accuracy.",
+    "height_status": "4.7 m eaves and 8.8 m ridge are illustrative estimates, not measured elevations. The source OSM way has no height or building:levels tag. The cited 2022 architect page describes an interior renovation but gives no exterior elevation or roof dimensions.",
+    "position_status": "Original project-local coordinates are consistent with the matched way projected using the project approximation; independent geodetic position accuracy is unverified."
+  },
+  "geometry_edits": [
+    "Rebuilt the wall shell from the exact four-node source ring in the preserved mesh snapshot; the original plan points and project coordinate frame remain unchanged.",
+    "Reduced the original unverified 16 m extrusion to an estimated 4.7 m wall eave and added an estimated 8.8 m gable ridge with a 0.35 m roof overhang.",
+    "Added one schematic row of side windows and brick, trim, glazing, and slate materials. The references do not document the roof form, window layout, exterior materials, or measured height; these details remain estimates.",
+    "Preserved object, collection, scene, asset ID and asset path."
+  ],
+  "uncertainties": [
+    "OpenStreetMap way 860918859 is the original imported source and has no independent source survey; match does not certify positional accuracy or a structural wall footprint.",
+    "The project-local conversion is approximate and not a surveyed CRS.",
+    "Eaves, ridge, gabled roof form, overhang, side windows, and exterior material colors are schematic estimates. The selected OSM feature has no height or building:levels tags, and the cited architect page does not document exterior geometry.",
+    "No independent grader has reviewed this revision."
+  ],
+  "artifacts": {
+    "build_script": "build_detail.py",
+    "build_config": "build_config.json",
+    "original_geometry_snapshot": "source_mesh_snapshot.json",
+    "raw_source": "source_osm_way_860918859_raw.json",
+    "footprint_comparison": "source_footprint_comparison_way_860918859.json",
+    "owner_architect_observations": "source_reference_observation.json",
+    "build_preview": "preview_detail_r2.png",
+    "original_preview": "preview_detail.png",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py",
+    "render_script": "render_preview.py"
+  }
+}

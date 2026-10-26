@@ -1,0 +1,245 @@
+{
+  "score": 9.0,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passes": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "Official Purdue BuildingShapes GIS feature 645 identifies BCC at 1100 3rd Street. I compared the 61 unique source-ring vertices with the evaluated BCC first-floor brick shell after centering the EPSG:4326 feature bounds and applying the project local approximation. The maximum bidirectional nearest-vertex distance is 0.00000109 m, and the structural shell XY bounds match the source bounds. Identity is corroborated by Purdue's own BCC facility/location pages. The GIS perimeter is not a surveyed elevation source."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "The current manifest specifies local geometry and campus origin [-493.868, 14.068] m. The master contains exactly one Placement_black_cultural_center marker at [-493.8680114746094, 14.067999839782715, 0.0]; XY delta is [-1.1e-05, -0.0] m, rotation is [0.0, 0.0, 0.0] degrees, scale is [1.0, 1.0, 1.0], and it instances the expected relative library. The GIS shell bounds and plan orientation agree within about 0.000001 m; overall measured model bounds are [[-17.81300163269043, 18.973894119262695], [-16.596012115478516, 14.939719200134277], [0.0, 9.0600004196167]]."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "assessment": "GIS NUM_LEVELS=3 and Purdue's facility page documents a second-floor lab, supporting a multilevel building. Official photos and architectural descriptions support a low-slope roof with clerestory monitors. The model top is 9.06 m, but no measured elevation or plan dimensions were found; GIS Extrution=24 has no resolved units/definition. Eave, roof and total heights therefore remain estimates."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "Purdue BCC\u2019s official architectural description supports the African-village concept, geometric brick motif, keyhole portal with cast-stone medallions, octagonal glazed lobby, and upper wrought-iron balcony. The Purdue 2021 exterior photo supports the red brick/pale stone palette, glazed lobby and relation to the sidewalk. The current render contains the modeled portal, medallions, octagonal glazed entry, balcony and facade pattern; the entrance and identifying sign are visible."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "Fresh Blender 4.5.15 reopen found 621 objects and the sorted object-name list matches the coordinator-refreshed manifest count 621. The current asset has no camera/light in the exported collection, no unmaterialed meshes, no external libraries and no unpacked image dependencies. I ran the canonical builder in an isolated copied project, reopened its output, and compared every object transform and mesh vertex stream against the current asset: 0 object differences across 621. I separately wrote and reopened a collection-only export with 621 objects and no cameras/lights. Raw GIS, metadata, official pages, photo, builder, manifest and view are preserved in this packet."
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/black_cultural_center.blend",
+    "asset_sha256": "244ed7202752ab77f758d56da5b6ab6e434600fbec43758321e373a01734b70d",
+    "asset_bytes": 4572825,
+    "manifest_id": "black_cultural_center",
+    "expected_collection": "Asset_black_cultural_center",
+    "expected_scene": "Scene",
+    "current_manifest_object_count": 621,
+    "object_names_and_count_match_manifest": true,
+    "asset_probe": {
+      "blender_version": "4.5.15 LTS",
+      "scene": "Scene",
+      "collection": "Asset_black_cultural_center",
+      "object_count": 621,
+      "type_counts": {
+        "MESH": 620,
+        "FONT": 1
+      },
+      "evaluated_bounds_local_m": [
+        [
+          -17.81300163269043,
+          18.973894119262695
+        ],
+        [
+          -16.596012115478516,
+          14.939719200134277
+        ],
+        [
+          0.0,
+          9.0600004196167
+        ]
+      ],
+      "manifest_bounds_local_m": [
+        [
+          -17.813201904296875,
+          18.97410011291504
+        ],
+        [
+          -16.596012115478516,
+          14.939925193786621
+        ],
+        [
+          0.0,
+          9.0600004196167
+        ]
+      ],
+      "source_feature": {
+        "fid": 645,
+        "code": "BCC",
+        "name": "Black Cultural Center",
+        "address": "1100 3rd Street",
+        "crs": {
+          "wkid": 4326,
+          "latestWkid": 4326
+        },
+        "ring_vertex_count_unique": 61,
+        "num_levels": 3,
+        "extrution": 24
+      },
+      "structural_shell": "BCC | first-floor brick envelope",
+      "structural_shell_local_xy_bounds_m": [
+        [
+          -17.7428551,
+          17.7428551
+        ],
+        [
+          -14.7660112,
+          14.7660112
+        ]
+      ],
+      "gis_local_xy_bounds_m": [
+        [
+          -17.74285521825557,
+          17.742855217050337
+        ],
+        [
+          -14.766011617359709,
+          14.766011617359709
+        ]
+      ],
+      "source_to_shell_nearest_avg_m": 3.558519485227533e-07,
+      "source_to_shell_nearest_max_m": 1.0938301887096082e-06,
+      "shell_to_source_nearest_avg_m": 3.558519485227534e-07,
+      "shell_to_source_nearest_max_m": 1.0938301887096082e-06,
+      "unmaterialed_mesh_count": 0,
+      "material_count": 11,
+      "external_libraries": [],
+      "unpacked_file_images": [],
+      "asset_camera_light_count": 0,
+      "modifier_count": 624
+    },
+    "source": {
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+      "feature_id": 645,
+      "abbreviation": "BCC",
+      "name": "Black Cultural Center",
+      "address": "1100 3rd Street",
+      "response_crs": "EPSG:4326 WGS 84",
+      "native_layer_crs": "EPSG:3857 / WKID 102100",
+      "retrieved": "2026-10-25",
+      "source_date": "not supplied",
+      "unique_ring_vertices": 61,
+      "local_approx_area_m2": 883.002,
+      "NUM_LEVELS": 3,
+      "Extrution": 24,
+      "official_architecture_source": "https://www.purdue.edu/bcc/facility/index.php",
+      "official_photo_source": "https://www.purdue.edu/newsroom/archive/releases/2021/Q1/black-cultural-center-releases-spring-2021-virtual-events.html"
+    },
+    "footprint_method": "Read raw feature ring; transform WGS84 with the documented Purdue local approximate conversion; center the geometry on the GIS bounding-box midpoint; compare evaluated XY vertices of BCC | first-floor brick envelope to all 61 GIS vertices with bidirectional nearest-vertex distances. This is not a polygon IoU or elevation check.",
+    "placement": {
+      "manifest_origin_xy_m": [
+        -493.868,
+        14.068
+      ],
+      "marker": {
+        "name": "Placement_black_cultural_center",
+        "location": [
+          -493.8680114746094,
+          14.067999839782715,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "instance_collection": "Asset_black_cultural_center",
+        "library_path": "//modular\\buildings\\black_cultural_center.blend"
+      },
+      "marker_xy_delta_m": [
+        -1.1474609380002221e-05,
+        -1.6021728477255692e-07
+      ],
+      "one_marker": true
+    },
+    "builder_smoke": {
+      "rebuilt_asset_path": "builder_smoke_project/modular/buildings/black_cultural_center.blend",
+      "rebuilt_sha256": "2e249f32303dd9b29640e00acbdc8958248e391a7782efa01dbed264ff7de1c7",
+      "opened_in": "4.5.15 LTS",
+      "scene": "Scene",
+      "collection": "Asset_black_cultural_center",
+      "object_count": 621,
+      "type_counts": {
+        "MESH": 620,
+        "FONT": 1
+      },
+      "manifest_object_count": 621,
+      "manifest_names_match": true,
+      "current_asset_sha256": "244ed7202752ab77f758d56da5b6ab6e434600fbec43758321e373a01734b70d",
+      "rebuild_byte_identical_to_current": false,
+      "camera_light_count": 0
+    },
+    "builder_geometry_comparison": {
+      "current_asset": "modular\\buildings\\black_cultural_center.blend",
+      "rebuild_asset": "audit\\black_cultural_center_independent_grade\\builder_smoke_project\\modular\\buildings\\black_cultural_center.blend",
+      "current_count": 621,
+      "rebuild_count": 621,
+      "same_object_name_set": true,
+      "same_transforms_and_mesh_data": true,
+      "differing_object_count": 0,
+      "different_object_names": []
+    },
+    "independent_collection_export": {
+      "probe_path": "black_cultural_center_independent_export.blend",
+      "opened_in": "4.5.15 LTS",
+      "collection": "Asset_black_cultural_center",
+      "object_count": 621,
+      "type_counts": {
+        "MESH": 620,
+        "FONT": 1
+      },
+      "camera_light_count": 0,
+      "linked_libraries": []
+    },
+    "views": [
+      "views/current_black_cultural_center_preview.png",
+      "views/builder_smoke_preview.png"
+    ],
+    "source_snapshots": [
+      "sources/purdue_gis_fid_645.json",
+      "sources/purdue_gis_layer_metadata.json",
+      "sources/source_record.json",
+      "sources/prior_builder_evidence_snapshot.json",
+      "sources/purdue_bcc_facility_2026-10-25.html",
+      "sources/purdue_bcc_location_2026-10-25.html",
+      "sources/purdue_bcc_official_2021_exterior.jpg",
+      "sources/purdue_news_bcc_2021.html",
+      "sources/manifest_snapshot.json",
+      "sources/modular_AGENTS_snapshot.md",
+      "sources/AGENT_snapshot.md",
+      "sources/builder_snapshot.py"
+    ]
+  },
+  "findings": [
+    "FID 645 and the full polygon are well supported; the GIS perimeter was used directly for the structural shell and matches at approximately 1 micrometer under the stated local approximation.",
+    "The master placement marker matches the refreshed manifest origin, and its relative library path points to the current detailed asset.",
+    "The height estimate is not a survey result. GIS reports 3 levels and Extrution=24 without vertical units; official materials support multiple floors and roof form, but no measured elevation source was located.",
+    "The refreshed manifest has 621 objects and now matches the saved asset\u2019s count and names. An isolated canonical rebuild reproduced all object transforms and mesh vertex data; a collection-only export also reopened successfully."
+  ],
+  "evaluator": "evaluate.py::evaluate",
+  "evaluated_at": "2026-10-25",
+  "scope": "Fresh independent grade of current Black Cultural Center revision, current 621-object manifest, GIS FID 645 and official Purdue source evidence. The canonical builder smoke run and independent asset/master/export probes were performed without modifying assigned building files or shared indexes."
+}

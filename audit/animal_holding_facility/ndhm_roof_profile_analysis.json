@@ -1,0 +1,125 @@
+{
+  "source": "audit/animal_holding_facility/sources/indiana_lidar_ndhm_tippecanoe_2018_tile_in2018_29951880_12.tif",
+  "zone_boundary_source": "2023 Indiana orthophoto roof-tone split, transformed to EPSG:2968",
+  "method": "Transform each valid NDHM pixel center from EPSG:2968 to geographic coordinates and then into the project-local XY frame. Fit least-squares planes to median heights aggregated into spatial bins inside each roof zone.",
+  "units": "US survey feet converted to meters; NDHM values are normalized height above local ground.",
+  "zones": {
+    "north_main": {
+      "sample_count": 614,
+      "spatial_bin_count": 70,
+      "bin_size_m": 5.0,
+      "plane_anchor_local_xy_m": [
+        -42.9194,
+        -973.4576
+      ],
+      "plane_anchor_height_m": 4.0334,
+      "plane_coefficients_local_z_equals_ax_plus_by_plus_c": [
+        -0.003151,
+        -0.002168,
+        4.033368
+      ],
+      "slope_percent_x": -0.315,
+      "slope_percent_y": -0.217,
+      "flat_median_absolute_residual_m": 0.1143,
+      "plane_median_absolute_residual_m": 0.1055,
+      "flat_rms_residual_m": 0.1884,
+      "plane_rms_residual_m": 0.1826,
+      "height_p05_m": 3.849,
+      "height_median_m": 4.036,
+      "height_p95_m": 4.421,
+      "interpretation": "Regression tests normalized roof-surface height spatial trend; it is not an eave survey and may reflect rooftop equipment, 5-ft gridding, edge mixing, or ground-normalization error."
+    },
+    "south_addition": {
+      "sample_count": 359,
+      "spatial_bin_count": 43,
+      "bin_size_m": 5.0,
+      "plane_anchor_local_xy_m": [
+        -38.4015,
+        -1016.0964
+      ],
+      "plane_anchor_height_m": 5.1606,
+      "plane_coefficients_local_z_equals_ax_plus_by_plus_c": [
+        -0.014844,
+        -0.041592,
+        5.160574
+      ],
+      "slope_percent_x": -1.484,
+      "slope_percent_y": -4.159,
+      "flat_median_absolute_residual_m": 0.381,
+      "plane_median_absolute_residual_m": 0.0601,
+      "flat_rms_residual_m": 0.5627,
+      "plane_rms_residual_m": 0.3439,
+      "height_p05_m": 4.376,
+      "height_median_m": 5.166,
+      "height_p95_m": 5.869,
+      "interpretation": "Regression tests normalized roof-surface height spatial trend; it is not an eave survey and may reflect rooftop equipment, 5-ft gridding, edge mixing, or ground-normalization error."
+    }
+  },
+  "bin_size_sensitivity": {
+    "north_main": {
+      "2.5m": {
+        "slope_percent_x": -0.35,
+        "slope_percent_y": -0.831,
+        "plane_median_absolute_residual_m": 0.1098,
+        "flat_median_absolute_residual_m": 0.1219,
+        "spatial_bin_count": 245
+      },
+      "5m": {
+        "slope_percent_x": -0.315,
+        "slope_percent_y": -0.217,
+        "plane_median_absolute_residual_m": 0.1055,
+        "flat_median_absolute_residual_m": 0.1143,
+        "spatial_bin_count": 70
+      },
+      "7.5m": {
+        "slope_percent_x": -0.317,
+        "slope_percent_y": -0.029,
+        "plane_median_absolute_residual_m": 0.1104,
+        "flat_median_absolute_residual_m": 0.125,
+        "spatial_bin_count": 38
+      },
+      "10m": {
+        "slope_percent_x": -0.421,
+        "slope_percent_y": -0.271,
+        "plane_median_absolute_residual_m": 0.1012,
+        "flat_median_absolute_residual_m": 0.0899,
+        "spatial_bin_count": 19
+      }
+    },
+    "south_addition": {
+      "2.5m": {
+        "slope_percent_x": -1.588,
+        "slope_percent_y": -4.752,
+        "plane_median_absolute_residual_m": 0.0774,
+        "flat_median_absolute_residual_m": 0.3307,
+        "spatial_bin_count": 131
+      },
+      "5m": {
+        "slope_percent_x": -1.484,
+        "slope_percent_y": -4.159,
+        "plane_median_absolute_residual_m": 0.0601,
+        "flat_median_absolute_residual_m": 0.381,
+        "spatial_bin_count": 43
+      },
+      "7.5m": {
+        "slope_percent_x": -0.468,
+        "slope_percent_y": -4.152,
+        "plane_median_absolute_residual_m": 0.0299,
+        "flat_median_absolute_residual_m": 0.3901,
+        "spatial_bin_count": 21
+      },
+      "10m": {
+        "slope_percent_x": -0.907,
+        "slope_percent_y": -4.022,
+        "plane_median_absolute_residual_m": 0.0297,
+        "flat_median_absolute_residual_m": 0.3962,
+        "spatial_bin_count": 15
+      }
+    }
+  },
+  "limitations": [
+    "The 2018 NDHM is a 5-ft surface model rather than surveyed structural roof points.",
+    "The 2023 roof-zone boundary is not a surveyed seam.",
+    "Spatial gradients can be caused by rooftop equipment, edge mixing, or local ground normalization; no facade, eave, or roof framing survey was found."
+  ]
+}

@@ -4,11 +4,16 @@ Edit geometry in its source library; campus placement is controlled by its Place
 
 | Building | File | Objects |
 | --- | --- | ---: |
+| 3rd and West | [massing_3rd_and_west_ffa3d05.blend](buildings/massing_3rd_and_west_ffa3d05.blend) | 19 |
+| Campus Edge | [massing_campus_edge_343e3d8.blend](buildings/massing_campus_edge_343e3d8.blend) | 15 |
 | American Railway Building | [american_railway_building.blend](buildings/american_railway_building.blend) | 693 |
-| Armory | [armory.blend](buildings/armory.blend) | 1184 |
-| Beering Hall | [beering_hall.blend](buildings/beering_hall.blend) | 1162 |
+| Alpha Chi Rho | [massing_alpha_chi_rho_0cb591a.blend](buildings/massing_alpha_chi_rho_0cb591a.blend) | 1 |
+| Alpha Kappa Lambda | [massing_alpha_kappa_lambda_88dda6c.blend](buildings/massing_alpha_kappa_lambda_88dda6c.blend) | 1 |
+| Baptist Student Foundation | [massing_baptist_student_foundation_c3d8114.blend](buildings/massing_baptist_student_foundation_c3d8114.blend) | 183 |
+| Armory | [armory.blend](buildings/armory.blend) | 703 |
+| Beering Hall | [beering_hall.blend](buildings/beering_hall.blend) | 1137 |
 | Bell Tower | [bell_tower.blend](buildings/bell_tower.blend) | 578 |
-| Benjamin Harrison Hall | [benjamin_harrison_hall.blend](buildings/benjamin_harrison_hall.blend) | 224 |
+| Benjamin Harrison Hall | [benjamin_harrison_hall.blend](buildings/benjamin_harrison_hall.blend) | 220 |
 | Brown Laboratory of Chemistry | [brown_laboratory_of_chemistry.blend](buildings/brown_laboratory_of_chemistry.blend) | 72 |
 | Class Of 1950 | [class_of_1950.blend](buildings/class_of_1950.blend) | 2431 |
 | Electrical Engineering | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4169 |
@@ -52,15 +57,15 @@ Edit geometry in its source library; campus placement is controlled by its Place
 
 | Building | File | Objects |
 | --- | --- | ---: |
-| Agricultural Administration Building | [agricultural_administration_building.blend](buildings/agricultural_administration_building.blend) | 1338 |
-| Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](buildings/agricultural_and_biological_engineering_abe.blend) | 1482 |
-| Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](buildings/animal_disease_diagnostic_laboratory.blend) | 1756 |
-| Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](buildings/asian_american_resource_and_cultural_center.blend) | 411 |
-| Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](buildings/bechtel_innovation_design_center_bidc.blend) | 545 |
-| Bindley Bioscience Center | [bindley_bioscience_center.blend](buildings/bindley_bioscience_center.blend) | 904 |
-| Biochemistry Building | [biochemistry_building.blend](buildings/biochemistry_building.blend) | 1623 |
+| Agricultural Administration Building | [agricultural_administration_building.blend](buildings/agricultural_administration_building.blend) | 6 |
+| Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](buildings/agricultural_and_biological_engineering_abe.blend) | 956 |
+| Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](buildings/animal_disease_diagnostic_laboratory.blend) | 8 |
+| Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](buildings/asian_american_resource_and_cultural_center.blend) | 433 |
+| Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](buildings/bechtel_innovation_design_center_bidc.blend) | 276 |
+| Bindley Bioscience Center | [bindley_bioscience_center.blend](buildings/bindley_bioscience_center.blend) | 528 |
+| Biochemistry Building | [biochemistry_building.blend](buildings/biochemistry_building.blend) | 2049 |
 | Birck Nanotechnology Center | [birck_nanotechnology_center.blend](buildings/birck_nanotechnology_center.blend) | 110 |
-| Black Cultural Center | [black_cultural_center.blend](buildings/black_cultural_center.blend) | 623 |
+| Black Cultural Center | [black_cultural_center.blend](buildings/black_cultural_center.blend) | 621 |
 | Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](buildings/burton_morgan_center.blend) | 384 |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](buildings/convergence_center.blend) | 894 |
 | Dauch Alumni Center | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 652 |

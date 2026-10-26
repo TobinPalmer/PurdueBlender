@@ -1,0 +1,3 @@
+Independent fresh grade for the revised Baptist Student Foundation asset (candidate build commit 040516bc851ca60fd63338d01031144e31e1508f).
+
+Reproduce: run evaluator.py from the repository root with Python dependencies numpy, tifffile, pyproj, and shapely. First rerun probe.py with Blender 4.5.15 against the saved asset to refresh blender_probe.json. evaluator.py returns the required score/max_score/criteria/evidence/findings record and saves result.json. It independently reprojects the source outline, compares the ordered structural wall ring, verifies the tile hash, and re-samples the normalized height raster.

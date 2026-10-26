@@ -1,0 +1,67 @@
+{
+  "building_id": "massing_animal_holding_facility_4733f46",
+  "candidate_commit": "c40be18b4f6c70ae8a101d84549b3c89f25c0db5",
+  "score": 7.75,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "points": 2.0,
+      "max_points": 2,
+      "assessment": "Purdue GIS FID 266 and Purdue facilities history identify AHF; a separate Indiana 2018 footprint is also recorded. Independent conversion of all 16 source vertices yields the published local outline, and every transformed GIS outline vertex appears in the reopened mesh within 0.000051 m."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "points": 2.0,
+      "max_points": 2,
+      "assessment": "Reopened world bounds are x [-65.6451187133789, -23.69708824157715], y [-1030.836669921875, -955.23193359375], z [0.0, 5.999149322509766] m. The footprint vertex sequence preserves plan orientation; the roughly 0.18 m outer expansion is consistent with the documented wall/trim thickness. Independent GIS footprints corroborate site location (0.50 m centroid offset and 1.74 m max symmetric boundary residual in the previous source comparison)."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "points": 1.75,
+      "max_points": 2,
+      "assessment": "Independent raw 2018 Indiana 5-ft NDHM sampling reproduces n=614 north cells (median 4.036 m) and n=359 south cells (median 5.166 m). Regressions from four spatial-bin sizes reproduce a stable south-zone Y surface trend of about -4.0% to -4.8%; the R5 model replaces the prior level south plane with a corresponding low-slope plane while keeping the north/main roof at its median. Purdue GIS reports one level. NDHM is a normalized surface raster rather than a roof/eave survey, and the roof-zone seam and structural pitch remain uncertain."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "points": 0.0,
+      "max_points": 2,
+      "assessment": "The reopened asset remains a neutral, unfenestrated envelope with no entrance or facade features. The dated public-source search documents a null image field and no indexed AHF-specific exterior, elevation, or plan; the search is explicitly non-exhaustive. With no building-specific visual/elevation evidence, this criterion remains unverified and receives no credit."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "points": 2.0,
+      "max_points": 2,
+      "assessment": "Blender 4.5.15 LTS reopened the saved candidate: the expected named collection contains 1 mesh object with 368 vertices/304 faces, zero boundary and non-manifold edges, no modifiers or external image dependencies, and it links into a fresh factory-startup scene. Evidence includes raw GIS/orthophoto/NDHM snapshots, reproducible scripts, height/profile analyses, reopening checks and preview."
+    }
+  ],
+  "evidence": {
+    "blender_probe": "audit/animal_holding_facility_independent_grade_r5/blender_probe.json",
+    "source_probe": "audit/animal_holding_facility_independent_grade_r5/source_probe.json",
+    "render": "audit/animal_holding_facility_independent_grade_r5/reviewed_asset_preview.png (directly inspected; blank facade envelope, split north/south roof planes)",
+    "orthophoto": "audit/animal_holding_facility_independent_grade_r5/reviewed_orthophoto_overlay.png (directly inspected; supports roof-tone zones only)",
+    "facade_search": "audit/animal_holding_facility/sources/ahf_facade_source_search_2026-10-25.json",
+    "roof_fit": "Independent recomputation from the raw official NDHM tile; see source_probe.json for counts, medians and 2.5/5/7.5/10 m bin fits.",
+    "prior_grade": "audit/animal_holding_facility_independent_grade_r4/result.json (7.5/10); R5 addresses its flat south plane finding."
+  },
+  "findings": [
+    {
+      "severity": "blocking-for-8/10",
+      "finding": "No AHF-specific exterior photograph, measured elevation, or plan is in the documented public search; facade and entrance remain absent and unsupported. Another distinct sourced iteration or archival access is needed to earn this criterion."
+    },
+    {
+      "severity": "minor",
+      "finding": "R5 materially improves roof-profile consistency: independently recomputed binned NDHM values show the south-zone normalized-surface trend across four scales, and the asset models that zone with a low slope. NDHM may capture roof equipment, local ground-normalization artifacts, or edge contamination; it is not structural pitch or surveyed eaves."
+    },
+    {
+      "severity": "minor",
+      "finding": "The north/main zone is represented by a median-height plane because its weak fitted trend is not stable across bin scales. The orthophoto identifies zone colors in plan but not the exact roof seam or structure."
+    },
+    {
+      "severity": "positive-evidence",
+      "finding": "Reopened topology is closed (0 boundary and 0 non-manifold edges), and the named asset collection links into a clean factory-startup scene without external images."
+    }
+  ]
+}

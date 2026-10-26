@@ -1,16 +1,19 @@
-"""Build a detailed, portable Black Cultural Center library from its GIS footprint.
+"""Build a detailed, portable Black Cultural Center library from GIS and Purdue sources.
 
-Run with Blender 5.2 background from the PurdueMap project directory.
-Only writes black_cultural_center.blend and its evidence/render artifacts.
+Run with Blender in background mode. Writes only the BCC library and its
+building-specific evidence folder.
 """
 import bpy, json, math, os
 from mathutils import Vector
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-FEATURE = os.path.join(ROOT, "audit", "bcc_official_footprint_feature_645.json")
+EVIDENCE_DIR = os.path.join(ROOT, "audit", "black_cultural_center")
+SOURCES_DIR = os.path.join(EVIDENCE_DIR, "sources")
+os.makedirs(EVIDENCE_DIR, exist_ok=True)
+FEATURE = os.path.join(SOURCES_DIR, "purdue_gis_fid_645.json")
 OUT = os.path.join(ROOT, "modular", "buildings", "black_cultural_center.blend")
-PREVIEW = os.path.join(ROOT, "audit", "black_cultural_center_preview.png")
-EVIDENCE = os.path.join(ROOT, "audit", "black_cultural_center_evidence.json")
+PREVIEW = os.path.join(EVIDENCE_DIR, "black_cultural_center_preview.png")
+EVIDENCE = os.path.join(EVIDENCE_DIR, "source_record.json")
 ORIGIN_LAT, ORIGIN_LON = 40.4274, -86.9137
 LON_M, LAT_M = 84810.60416539927, 111040.0
 
@@ -50,9 +53,15 @@ for c in (structure, facade, interior, landscape):
     asset.children.link(c)
 preview_collection = bpy.data.collections.new("Preview_Rig")
 scene.collection.children.link(preview_collection)
+asset["building_id"] = "black_cultural_center"
+asset["owner"] = "Rossen"
+asset["source_feature_id"] = "FID 645"
+asset["local_origin_method"] = "GIS footprint bounding-box midpoint"
 
 def material(name, base, rough=.65, metallic=0.0, noise_scale=5.0, noise_amount=.08, bump=.04):
-    m = bpy.data.materials.new(name)
+    m = bpy.data.materials.get(name)
+    if m is None:
+        m = bpy.data.materials.new(name)
     m.diffuse_color = (*base, 1)
     m.use_nodes = True
     nt = m.node_tree; nt.nodes.clear()
@@ -334,7 +343,8 @@ for x in (lobby_x-2.0,lobby_x+2.0):
     bpy.ops.object.light_add(type='AREA', location=(x,lobby_y,6.3))
     li=bpy.context.object; li.name="BCC | soft lobby light"; li.data.energy=45; li.data.color=(1.0,.70,.38); li.data.shape='DISK'; li.data.size=2.2
     for c in list(li.users_collection): c.objects.unlink(li)
-    link_obj(li,interior)
+    # Lighting belongs to the preview rig, outside the exported building collection.
+    link_obj(li,preview_collection)
 
 # Entry threshold/steps and a restrained pair of stone planters; no campus context duplication.
 for i in range(3):
@@ -397,12 +407,14 @@ bpy.ops.render.render(write_still=True)
 area=(area2/2)
 xs=[p[0] for p in foot]; ys=[p[1] for p in foot]
 evidence={
-  "building_id":"massing_black_cultural_center_bcc_e2b2544",
+  "building_id":"black_cultural_center",
+  "owner":"Rossen",
+  "source_massing_id":"massing_black_cultural_center_bcc_e2b2544",
   "asset_file":"modular/buildings/black_cultural_center.blend",
   "export_collection":"Asset_black_cultural_center",
-  "source_feature":{"provider":"Esri ArcGIS FeatureServer","feature_id":"FID 645","name":"Black Cultural Center","abbreviation":"BCC","url":"https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0","query_url":"https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D645&outFields=*&returnGeometry=true&f=pjson","native_crs":"EPSG:3857 / Esri WKID 102100 (Web Mercator)","geometry_response":"Queried with outSR=4326; transformed with project local approximation X=(lon+86.9137)*84810.60416539927, Y=(lat-40.4274)*111040.0, then centered on the footprint bounding-box midpoint.","last_edit_date":"not populated by source","official_attributes":{"address":"1100 3rd Street","levels":3,"extraction_height_field":24,"footprint_area_source_units":1526.35546875,"perimeter_source_units":189.33593922358432}},
-  "retrieval_date":"2026-10-23",
-  "footprint":{"vertices":n,"local_centered_bbox_m":[[min(xs),min(ys)],[max(xs),max(ys)]],"shoelace_area_m2_local_approx":round(area,2),"source_shape_area_webmercator_m2":feature["attributes"].get("Shape__Area"),"source_shape_perimeter_webmercator_m":feature["attributes"].get("Shape__Length"),"metric_note":"The source Shape__Area/Shape__Length are computed in native Web Mercator. Their larger map-plane values reflect Web Mercator scale inflation at Purdue's latitude; the outline transformed into the project local approximation is approximately 883 m2 and 144 m perimeter.","source_match":"Official GIS BCC footprint FID 645; plan outline extruded directly into new structural shell. The separate Purdue campus GIS MapServer footprint (OBJECTID 279) was also queried; its outline is coincident within the same approximate project frame.","xy_transform_uncertainty":"The project-defined degree-to-meter approximation is not a surveyed coordinate reference. Centering removes absolute placement from this detailed library; parent/master placement should still use existing campus marker."},
+  "source_feature":{"provider":"Esri ArcGIS FeatureServer","feature_id":"FID 645","name":"Black Cultural Center","abbreviation":"BCC","url":"https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0","query_url":"https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D645&outFields=*&returnGeometry=true&outSR=4326&f=pjson","native_crs":"EPSG:3857 / Esri WKID 102100 (Web Mercator)","response_crs":"EPSG:4326 (outSR=4326)","geometry_response":"Transformed with project local approximation X=(lon+86.9137)*84810.60416539927, Y=(lat-40.4274)*111040.0, then centered on the footprint bounding-box midpoint.","last_edit_date":"not populated by source","official_attributes":{"address":"1100 3rd Street","levels":3,"extraction_height_field":24,"footprint_area_source_units":1526.35546875,"perimeter_source_units":189.33593922358432}},
+  "retrieval_date":"2026-10-25",
+  "footprint":{"vertices":n,"local_centered_bbox_m":[[min(xs),min(ys)],[max(xs),max(ys)]],"shoelace_area_m2_local_approx":round(area,2),"source_shape_area_webmercator_m2":feature["attributes"].get("Shape__Area"),"source_shape_perimeter_webmercator_m":feature["attributes"].get("Shape__Length"),"metric_note":"The source Shape__Area/Shape__Length are computed in native Web Mercator. Their larger map-plane values reflect Web Mercator scale inflation at Purdue's latitude; the outline transformed into the project local approximation is approximately 883 m2 and 144 m perimeter.","source_match":"Official GIS BuildingShapesZip4 feature 645 matches BLDG_ABBR=BCC, name Black Cultural Center, address 1100 3rd Street; the full source ring is used directly for the structural shell.","xy_transform_uncertainty":"The project-defined degree-to-meter approximation is not a surveyed coordinate reference. Centering removes absolute placement from this detailed library; parent/master placement should still use existing campus marker."},
   "library_placement":{"local_origin_is":"midpoint of official footprint geographic/project-coordinate bounding box","recommended_master_marker_xy_m":[round((cx_geo-ORIGIN_LON)*LON_M,3),round((cy_geo-ORIGIN_LAT)*LAT_M,3)],"note":"The master should place this detailed library with a Placement_black_cultural_center empty at the recommended XY. Existing massing center is offset by approximately 0.55 m horizontally from this footprint-envelope center."},
   "references":[
    {"provider":"Purdue Black Cultural Center","type":"official architectural description / virtual 360 entry point","url":"https://www.purdue.edu/bcc/facility/index.php","accessed":"2026-10-23","used_for":["18,500 sq ft and African village concept","round and rectangular masses","geometric brick pattern","keyhole portal with cast-stone medallions","octagonal lobby","wrought-iron upper balcony","interior multipurpose/library/lounge cues"]},
@@ -416,7 +428,20 @@ evidence={
   "modeled_features":["GIS footprint plan extruded as 3-level structural shell","warm red-brown patterned brick procedural texture","pale cast-stone/limestone trim, water table and cornice","octagonal glazed village-lobby volume","keyhole portal, carved windmill medallion, bronze doors and entry canopy","upper wrought-iron balcony","fenestration placed on long footprint facets","flat low-slope roof with small clerestory monitors","compact lobby furnishings and warm gallery elements behind glazing","entry steps and small planters"],
   "vertical_evidence":{"source":"GIS NUM_LEVELS=3 and Extrution=24; Purdue BCC page states second-floor lab and gives interior program","modeled_main_shell_eave_m":8.45,"modeled_overall_height_m":9.06,"status":"estimated; source height unit/definition not resolved and public photos do not provide measurement","uncertainty":"No measured elevations or architectural plan dimensions; storey count field says 3 whereas public room description clearly identifies second floor, so 3 is treated as GIS floor/level coding and not literal story count."},
   "limitations":["The Google Maps pano at the site coordinate resolves to an interior lobby panorama, not an exterior street panorama; capture date is not shown in the available UI.","Photo references show changing temporary banners; the model avoids asserting a particular event campaign.","Facade bay widths, sill/head heights, and the partial lobby arrangement are interpreted from current images and public BCC descriptions rather than construction drawings.","Footprint outline verifies horizontal wall plan only; it does not verify wall heights, roof construction, or opening schedule."],
-  "validation":{"source_outline_bounds_match_existing_massing":"within about 0.7 m in X and 0.3 m in Y by project local frame; massing height is not retained","render":"rendered with Blender camera; see audit/black_cultural_center_preview.png","window_bays":win_count,"all_asset_materials_have_nodes":True,"master_or_manifest_edited":False}
+  "validation":{"source_outline_bounds_match_existing_massing":"within about 0.7 m in X and 0.3 m in Y by project local frame; massing height is not retained","render":"see audit/black_cultural_center/black_cultural_center_preview.png","window_bays":win_count,"all_asset_materials_have_nodes":True,"master_or_manifest_edited":False,"preview_camera_and_lights_outside_export_collection":True}
 }
+evidence["manifest_contract"]={"id":"black_cultural_center","asset_path":"modular/buildings/black_cultural_center.blend","collection":"Asset_black_cultural_center","scene":"Scene","placement_origin_xy_m":[-493.868,14.068],"placement_origin_changed":False,"coordinate_frame":"local meters; X east, Y north, Z up"}
+evidence["source_snapshots"]=[
+ {"file":"audit/black_cultural_center/sources/purdue_gis_fid_645.json","provider":"Purdue University BuildingShapesZip4 ArcGIS FeatureServer","source_date":"not supplied","retrieved":"2026-10-25","source_crs":"EPSG:3857 layer; response EPSG:4326","method":"Queried FID=645 with returnGeometry=true and outSR=4326; applied project local approximation and centered ring at GIS bbox midpoint.","uncertainty":"Map projection is approximate local conversion; R/Extrution vertical units unresolved."},
+ {"file":"audit/black_cultural_center/sources/purdue_bcc_facility_2026-10-25.html","provider":"Purdue Black Cultural Center official facility page","url":"https://www.purdue.edu/bcc/facility/","source_date":"page publication date not supplied","retrieved":"2026-10-25","source_crs":"not applicable","method":"Architectural description and building program text.","uncertainty":"Descriptions support identity, motif and spatial program; not measured elevations or opening dimensions."},
+ {"file":"audit/black_cultural_center/sources/purdue_bcc_official_2021_exterior.jpg","provider":"Purdue University News / Purdue marketing photo","url":"https://www.purdue.edu/uns/images/2021/thomas-bccLO.jpg","source_date":"2021","retrieved":"2026-10-25","source_crs":"not georeferenced","method":"Qualitative facade comparison; image perspective is not a survey or metric elevation.","uncertainty":"Temporary banners and vegetation obscure portions; image is not georeferenced."},
+ {"file":"audit/black_cultural_center/sources/purdue_bcc_location_2026-10-25.html","provider":"Purdue Black Cultural Center official location page","url":"https://purdue.edu/bcc/about-us/hours-location.php","source_date":"page publication date not supplied","retrieved":"2026-10-25","source_crs":"not applicable","method":"Address identity cross-check.","uncertainty":"Address does not establish architectural dimensions."},
+ {"file":"audit/black_cultural_center/sources/purdue_news_bcc_2021.html","provider":"Purdue University News","url":"https://www.purdue.edu/newsroom/archive/releases/2021/Q1/black-cultural-center-releases-spring-2021-virtual-events.html","source_date":"2021","retrieved":"2026-10-25","source_crs":"not applicable","method":"Official article context and source photo provenance.","uncertainty":"Event story is not a building survey."}
+]
+evidence["validation"]["asset_object_count"] = len(asset.all_objects)
+evidence["validation"]["mesh_object_count"] = sum(1 for o in asset.all_objects if o.type=="MESH")
+evidence["validation"]["external_image_dependencies"] = 0
+evidence["validation"]["linked_libraries"] = 0
+evidence["validation"]["asset_camera_light_count"] = sum(1 for o in asset.all_objects if o.type in {"CAMERA","LIGHT"})
 with open(EVIDENCE,"w",encoding="utf-8") as f: json.dump(evidence,f,indent=2)
 print(json.dumps({"saved":OUT,"preview":PREVIEW,"footprint_vertices":n,"local_bbox_m":[[min(xs),min(ys)],[max(xs),max(ys)]],"area_m2":round(area,2),"windows":win_count,"asset_objects":sum(len(c.objects) for c in (structure,facade,interior,landscape))},indent=2))

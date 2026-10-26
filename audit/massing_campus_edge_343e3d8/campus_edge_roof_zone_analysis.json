@@ -1,0 +1,78 @@
+{
+  "building_id": "massing_campus_edge_343e3d8",
+  "sources": {
+    "orthophoto": "audit/massing_campus_edge_343e3d8/sources/indiana_2023_orthophoto_campus_edge.jpg",
+    "orthophoto_metadata": "audit/massing_campus_edge_343e3d8/sources/indiana_2023_orthophoto_metadata.json",
+    "ndhm": "audit/massing_campus_edge_343e3d8/sources/indiana_2018_tippecanoe_ndhm_in2018_30001880_12.tif",
+    "outline": "OpenStreetMap way 886359911 (Campus Edge, 134 Pierce Street), sampled inside its EPSG:2968 polygon"
+  },
+  "method": "Three visibly separate roof-pad row intervals were interpreted from the 2023 orthophoto (pixel rows). Row edges are transformed using the saved EPSG:4326 orthophoto extent and the project's approximate campus local conversion; 2018 5-ft NDHM pixel centers inside the OSM polygon are summarized by the resulting Y bands. The intervals are source-georeferenced interpretations, not surveyed tower boundaries.",
+  "units": "NDHM US survey feet converted to meters; values are normalized surface height above local ground.",
+  "zones": {
+    "north": {
+      "orthophoto_rows_px": [
+        195.0,
+        541.0
+      ],
+      "local_y_bounds_m": [
+        -507.97,
+        -482.783
+      ],
+      "ndhm_sample_count": 176,
+      "height_quantiles_m": {
+        "5": 35.115,
+        "25": 35.325,
+        "50": 35.896,
+        "75": 37.106,
+        "90": 39.554,
+        "95": 39.669
+      },
+      "roof_surface_datum_estimate_m": 35.896
+    },
+    "middle": {
+      "orthophoto_rows_px": [
+        742.0,
+        978.0
+      ],
+      "local_y_bounds_m": [
+        -539.78,
+        -522.601
+      ],
+      "ndhm_sample_count": 267,
+      "height_quantiles_m": {
+        "5": 9.853,
+        "25": 12.168,
+        "50": 36.094,
+        "75": 36.363,
+        "90": 36.803,
+        "95": 37.48
+      },
+      "roof_surface_datum_estimate_m": 36.094
+    },
+    "south": {
+      "orthophoto_rows_px": [
+        1096.0,
+        1302.0
+      ],
+      "local_y_bounds_m": [
+        -563.365,
+        -548.37
+      ],
+      "ndhm_sample_count": 246,
+      "height_quantiles_m": {
+        "5": 10.034,
+        "25": 10.301,
+        "50": 36.267,
+        "75": 36.6,
+        "90": 36.831,
+        "95": 36.955
+      },
+      "roof_surface_datum_estimate_m": 36.267
+    }
+  },
+  "limitations": [
+    "Orthophoto rows identify approximate roof pads and recesses; metadata extent and local conversion are approximate, and roof edges need not coincide with structural footprint walls.",
+    "NDHM values are a surface-height proxy, not eave or structural roof elevations; 5-ft cells mix edge, trees, and rooftop elements.",
+    "Tower floor counts, internal boundaries, exact tower heights, roof parapets, and podium/courtyard elevations remain uncertain."
+  ]
+}

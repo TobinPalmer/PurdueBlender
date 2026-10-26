@@ -1,0 +1,100 @@
+{
+  "building_id": "bell_tower",
+  "score": 9.3,
+  "max_score": 10,
+  "pass_threshold": 8.0,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS FID 290 identifies BELL / Bell Tower at 325 Centennial Mall Drive. I projected the 4-vertex source envelope with the documented local conversion; the convex hull of actual base-foot vertices has a sampled symmetric boundary discrepancy of 0.027 m (sampling interval 0.05 m)."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "GIS polygon area centroid and manifest placement differ by 0.000002 m. Oriented-envelope edge angle differs by 0.000\u00b0 modulo 90\u00b0, and sorted envelope dimension errors are 0.031 m and 0.034 m. The model uses the manifest local frame; the master placement instance itself was not opened."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue News states 160 ft and four historic bells; the actual evaluated model height is 48.767998 m versus 48.768 m, an error of 0.000002 m. Official Purdue photos show the pyramidal metal roof and open belfry. GIS reports one level; a freestanding tower has no normal occupied-floor stack to infer."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "Reopened/rendered geometry includes red-brick shaft, limestone base arches/string courses, four clock dials, four historic bells, four open belfry arches, and pyramidal roof. The official Purdue photos corroborate these signature features; the plaque text and subordinate architectural dimensions are explicitly representative/estimated."
+    },
+    {
+      "name": "Modular export, portability, and evidence completeness",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": "Scene `Building_bell_tower`, collection `Asset_bell_tower`, 578 manifest-matched objects; collection-only export reopened with the same objects and no camera/lights. No unpacked textures or linked libraries. Detailed source evidence and build script are present under `modular/bell_tower_work/`; canonical `modular/buildings/build_bell_tower.py` is absent."
+    }
+  ],
+  "evidence": {
+    "probe": "audit/bell_tower_independent_grade/blender_probe.json",
+    "export_probe": "audit/bell_tower_independent_grade/collection_export_probe_result.json",
+    "renders": [
+      "audit/bell_tower_independent_grade/overview.png",
+      "audit/bell_tower_independent_grade/front_elevation.png"
+    ],
+    "gis_snapshot": "audit/bell_tower_independent_grade/gis_feature_290.geojson",
+    "source_record": "audit/bell_tower_independent_grade/source_record.json",
+    "builder_evidence": "modular/bell_tower_work/EVIDENCE.md",
+    "source_urls": [
+      "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "https://www.purdue.edu/newsroom/archive/releases/2020/Q4/university-to-mark-25th-birthday-of-purdue-bell-tower.html",
+      "https://purduenews.exposure.co/happy-birthday-purdue-bell-tower",
+      "https://archives.lib.purdue.edu/repositories/2/agents/corporate_entities/544"
+    ],
+    "measurements": {
+      "centroid_error_m": 1.7983936660801267e-06,
+      "boundary_hausdorff_sampled_m": 0.02677736211447257,
+      "orientation_error_mod90_degrees": 1.0332908153998233e-05,
+      "obb_dimension_errors_m": [
+        0.03072350606472174,
+        0.03389979382278252
+      ],
+      "model_height_m": 48.76799774169922,
+      "published_height_m": 48.768,
+      "height_error_m": 2.258300781932121e-06,
+      "object_count": 578,
+      "feature_counts": {
+        "clock_dials": 4,
+        "historic_bells": 4,
+        "belfry_open_arches": 4,
+        "base_arch_spandrels": 4,
+        "roof_present": true,
+        "memorial_plaque_present": true
+      }
+    },
+    "checks": {
+      "identity_match": true,
+      "source_feature_id_match": true,
+      "gis_shell_boundary_under_5cm": true,
+      "placement_centroid_under_1cm": true,
+      "model_manifest_object_names_match": true,
+      "export_reopens_with_all_objects": true,
+      "no_unpacked_images_or_linked_libraries": true,
+      "signature_features_present": true
+    },
+    "source_limitations": [
+      "GIS polygon is a map envelope, not certified structural survey.",
+      "Published source supports overall height but not a measured set of subordinate elevations.",
+      "The exact plaque text, plaque seal, and internal mechanism are not verified.",
+      "The master placement instance was not opened."
+    ]
+  },
+  "findings": [
+    "The model aligns its structural base envelope and placement to official Purdue GIS within centimeter-scale tolerances.",
+    "Published 160 ft height matches evaluated geometry to under 0.001 mm; official sources support red brick, limestone trim, four bells, and the clock/tower identity.",
+    "The exported collection is portable and reopens with the expected manifest contract.",
+    "Remaining evidence gap: the dedicated build module is stored at modular/bell_tower_work/build_tower.py rather than modular/buildings/build_bell_tower.py; the master placement marker was not independently inspected.",
+    "Fine dimensions and plaque inscription remain estimates or representative rather than surveyed/facsimile detail."
+  ]
+}

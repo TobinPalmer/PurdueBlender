@@ -1,0 +1,26 @@
+{
+  "grade_revision": "8 m main parapet / two photo-supported window rows before entrance-tower update",
+  "reviewer": "independent subagent",
+  "score": 7.5,
+  "max_score": 10,
+  "criteria": [
+    {"name":"identity_and_source_backed_footprint","points":2,"max_points":2,"status":"verified","rationale":"Purdue GIS FID 411 identifies BALY / Ralph and Bettye Bailey Hall; the build script creates the shell from the projected source ring."},
+    {"name":"position_orientation_scale_dimensions","points":1.5,"max_points":2,"status":"partially_verified","rationale":"The shell follows supplied GIS coordinates. The polygon is not a survey, and position and orientation have no independent accuracy check."},
+    {"name":"height_floors_roof","points":0.75,"max_points":2,"status":"partially_verified_source_conflict","rationale":"The official photo supports two visible window rows and a flat parapet roof. The 8 m height relies on an assumed door height, not calibrated evidence. GIS NUM_LEVELS=5 and CountOfFLO=5 remain in conflict with the photo."},
+    {"name":"facade_entrances_distinctive_architecture","points":1.5,"max_points":2,"status":"partially_verified","rationale":"The photo supports brick, pale trim, two visible window rows, and a recessed entrance. Exact entrance placement and the other facades were not independently established."},
+    {"name":"modular_export_portability_complete_evidence","points":1.75,"max_points":2,"status":"mostly_verified","rationale":"Blender 5.2.3 reopened the expected single-object collection (2,928 vertices, 2,058 faces; z=0–8 m). Evidence and a fresh preview were present. The asset references project-relative brick textures."}
+  ],
+  "evidence": [
+    {"source":"source_feature_411_raw.json","observation":"FID 411 identifies BALY and supplies the footprint ring plus NUM_LEVELS=5 and CountOfFLO=5 attributes."},
+    {"source":"source_bailey_exterior_photo_observation.json","observation":"Documents the official Purdue photo, its two visible window rows, brick and limestone details, flat roof silhouette, and limitations."},
+    {"source":"build_bailey_hall_detail.py","observation":"Uses the GIS ring for the shell; sets HEIGHT_M=8.0 as a photo-scaled estimate and models two window rows."},
+    {"source":"modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend","observation":"Reopened in Blender 5.2.3 LTS with expected object and collection; one object, 2,928 vertices, 2,058 faces, z=0–8 m."},
+    {"source":"preview_detail.png","observation":"Shows the two-row brick facade and flat roof form."}
+  ],
+  "findings": [
+    "The 8 m height remains unsupported by measured or calibrated evidence; GIS five-level attributes conflict with two visible photo rows.",
+    "The official photo shows only part of the building, leaving entrance placement and remaining facade layout incompletely checked.",
+    "The model revision was improved, but the evidence remained below the 8/10 threshold."
+  ],
+  "evaluator_implementation": "Reviewer independently scored each rubric criterion against the sources, build script, preview, and fresh Blender reopen, then summed the criterion points."
+}

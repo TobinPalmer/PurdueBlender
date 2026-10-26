@@ -1,0 +1,105 @@
+{
+  "asset_id": "asian_american_resource_and_cultural_center",
+  "retrieved_utc_date": "2026-10-23",
+  "identity": {
+    "official_name": "Asian American Resource and Cultural Center / Asian American and Asian Resource and Cultural Center (AAARCC)",
+    "address": "915 Fifth Street, West Lafayette, Indiana; corner of Fifth Street and Waldron Street",
+    "purdue_building_code": "AACC",
+    "official_gis_feature_id": 926,
+    "identity_resolution": "FID 926 is the 915 Fifth Street facility, not the former 1100 Third Street location. The current Purdue facility page and Street View place the current AAARCC at 915 Fifth Street."
+  },
+  "sources": [
+    {
+      "provider": "Purdue University GIS / ArcGIS REST",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D926&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 926,
+      "retrieved": "2026-10-23",
+      "source_date": "Not stated in the service response; created/edited fields are blank",
+      "source_crs": "WGS 84 geographic coordinates (EPSG:4326). The returned geometry declares wkid 4326; reported Shape__Area and Shape__Length units are meters.",
+      "raw_snapshot": "aaarcc_gis_feature_926.json",
+      "fields": {
+        "BLDG_ABBR": "AACC",
+        "BUILDING_N": "Asian American Resource and Cultural Center",
+        "ADDRESS": "915 5th Stteet (source typo)",
+        "NUM_LEVELS": 1,
+        "Extrution": 12,
+        "Elevation": 622,
+        "Shape__Area_m2": 167.87890625,
+        "Shape__Length_m": 58.00618611164944,
+        "ring_vertex_count_including_closure": 21
+      },
+      "limitations": "The GIS metadata lists one level and an extrusion value of 12 but does not state height units or provide surveyed elevations; exterior photographs show a two-storey house. Footprint data does not verify facade, roof, or interior geometry."
+    },
+    {
+      "provider": "Google Maps Street View",
+      "url": "https://www.google.com/maps/place/Asian+American+and+Asian+Resource+and+Cultural+Center,+Purdue+University/@40.4291352,-86.9176326,3733a,13.1y/data=!3m8!1e1!3m6!1sCIHM0ogKEICAgICk5N3YlwE!2e10!3e11!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FANWiy9T42wu6hmRZ9bX2tDyu-6sLpEMC-lbHvpp5B3fZuuFiE8_4ElfPBOBBkXl5uySbC0zof9ue3-rD7bjyPBb9GiF8LcKAFBjtRsZyp7LO8_RMN4G2-_ZEJ9BtRRcFEHKHA_0pweIvkw%3Dw900-h600-k-no-pi90-ya196-ro0-fo100!7i8704!8i4352!4m9!3m8!1s0x8812e2b1e3f52d13:0xeb7d6c41389dc884!8m2!3d40.4291352!4d-86.9176326!10e5!14m1!1BCgIgARICCAI!16s%2Fg%2F11bc7r3w3n",
+      "pano_id": "CIHM0ogKEICAgICk5N3YlwE",
+      "image_date": "January/February 2019 (Google Maps listing gallery; exact capture day not exposed)",
+      "retrieved": "2026-10-23",
+      "observed": "Small white clapboard house, pitched shingle roof, multi-pane sash windows, dark foundation, and front sign identifying Purdue AAARCC.",
+      "limitations": "The available Street View imagery is historical (2019), and imagery capture detail is user-contributed."
+    },
+    {
+      "provider": "Purdue AAARCC official facilities page",
+      "url": "https://www.purdue.edu/aaarcc/about/ourFacilities.php",
+      "image_urls": [
+        "https://www.purdue.edu/aaarcc/images/our_facilities/1st_floor/corner-Waldron-5thSt.JPG",
+        "https://www.purdue.edu/aaarcc/images/our_facilities/1st_floor/front1.jpg",
+        "https://www.purdue.edu/aaarcc/images/our_facilities/1st_floor/front2.jpg"
+      ],
+      "retrieved": "2026-10-23",
+      "page_last_modified": "2025-08-21",
+      "observed": "Exterior gallery for the AAARCC house at 915 Fifth Street; the page identifies the Fifth/Waldron corner and shows facility space including the entrance, lounge, dining/pantry, kitchen, stairs, conference room, and computer lab.",
+      "limitations": "The official photos document appearance and room types but are not measured elevations or floor plans."
+    },
+    {
+      "provider": "Purdue Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/nacc/",
+      "retrieved": "2026-10-23",
+      "observed": "Safety text identifies the front door facing Fifth Street, a rear kitchen door facing the alley, a separate front door toward the gravel parking lot with the handicap-accessible ramp, and three main-floor exits."
+    },
+    {
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/499",
+      "retrieved": "2026-10-23",
+      "observed": "AAARCC records describe a lounge, kitchen, conference room, computer lab, exhibition space, and student organization storage; the history states it moved to 915 Fifth Street in 2016."
+    },
+    {
+      "provider": "Purdue AAARCC 2025 newsletter",
+      "url": "https://www.purdue.edu/aaarcc/documents/newsletter/2025/04-28-2025-min.pdf",
+      "retrieved": "2026-10-23",
+      "observed": "Describes the AAARCC building as a two-storey 1927 house."
+    }
+  ],
+  "horizontal_measurement": {
+    "method": "The raw feature ring was converted with the Purdue campus project approximation: X=(longitude+86.9137)*84810.60416539927; Y=(latitude-40.4274)*111040. The feature bounding-box center defines the detailed library local origin. The exact feature outline is preserved as the plinth perimeter.",
+    "project_origin": {"latitude": 40.4274, "longitude": -86.9137},
+    "axes": "X east, Y north, Z up; meters",
+    "feature_bounds_campus_xy_m": [[-341.2431537111661,-329.2586499355945],[187.5256938071334,197.23520632879627]],
+    "detailed_asset_placement_origin_xy_m": [-335.25090182338033,192.38045006796483],
+    "old_massing_aabb_center_xy_m": [-335.38352966,192.03813171],
+    "old_massing_center_offset_m": 0.367,
+    "old_massing_aabb_width_difference_m": 0.941,
+    "old_massing_aabb_depth_difference_m": 0.473,
+    "tolerance": "The geographic transform is an approximate local campus conversion, not a surveyed engineering coordinate reference system."
+  },
+  "vertical_and_architectural_measurement": {
+    "verified": ["historic-house character", "two visible storeys", "pitched roof", "horizontal white clapboard", "multi-pane sash windows", "front Fifth Street entry and sign", "separate accessible entry/ramp", "documented interior program room types"],
+    "estimated": ["eave about 5.82 m", "main roof ridge about 9.10 m", "chimney top about 10.05 m", "window spacing and exact facade dimensions", "porch roof profile", "furnishing placement"],
+    "unverified": ["surveyed height/elevations", "exact construction footprint wall line versus covered porch line", "exact roof framing/roof breaks", "floor plan and exact room positions", "current landscape/site furnishings"]
+  },
+  "model_edits": [
+    "Replaced the one-prism massing concept with a small two-storey clapboard house shell and exact GIS perimeter plinth.",
+    "Added steep asphalt-shingle gable roof, modest front porch roof and columns, chimney, fascia, gutters/downspouts, multi-pane sash windows, entry doors, sign, foundation, steps and accessible approach ramp.",
+    "Added a schematic interior featuring documented lounge/library, dining/kitchen, conference, and computer-lab use. Exact room partitions/furniture locations remain unverified.",
+    "Created procedural node textures for paint, shingle, stone, brick, glass, concrete, wood, and metal.",
+    "Kept all building geometry local around the official footprint envelope center; preview ground, camera, and lights are separate from the exported asset collection."
+  ],
+  "unresolved_or_review_needed": [
+    "Google Maps Street View was independently identified by the coordinating agent; the subagent browser could not be opened from this thread. Its pano ID and URL are preserved above for grader review.",
+    "The main architectural mass is a compact house, not a large institutional building. The GIS outline includes a west porch-like projection; the model interprets it as an open covered porch based on front-entry imagery and the written orientation record.",
+    "Roof heights and room arrangement are not surveyed; reviewer should judge silhouette and facade against the linked Street View and Purdue official photographs before assigning a numeric fidelity score."
+  ]
+}
+
+

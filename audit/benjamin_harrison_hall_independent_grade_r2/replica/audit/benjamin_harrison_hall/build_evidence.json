@@ -1,0 +1,146 @@
+{
+  "building_id": "benjamin_harrison_hall",
+  "assigned_owner": "Rossen",
+  "asset": "modular/buildings/benjamin_harrison_hall.blend",
+  "scene": "Building_benjamin_harrison_hall",
+  "export_collection": "Asset_benjamin_harrison_hall",
+  "builder_script": "modular/buildings/build_benjamin_harrison_hall.py",
+  "retrieved": "2026-10-25",
+  "method": "Preserved the existing detailed local-coordinate model; this dedicated builder verifies its GIS ring, adds asset/source metadata, and separates preview-only cameras/light from the exported collection. It does not regenerate facade geometry from raster references.",
+  "gis_source": {
+    "provider": "Purdue University official campus map / BuildingShapes ArcGIS FeatureServer",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D85&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "feature_id": 85,
+    "building_code": "HARR",
+    "name": "Benjamin Harrison Residence Hall",
+    "address": "107 Macarthur Drive",
+    "retrieved": "2026-10-25",
+    "source_crs": "Purdue ArcGIS service native EPSG:3857; returned snapshot geometry EPSG:4326",
+    "snapshot": "audit/benjamin_harrison_hall/sources/benjamin_harrison_hall_gis_feature_85_raw.json",
+    "measurement": "28-point exterior ring; transformed using the project's local meters-per-degree approximation, then subtracting manifest placement origin [-1110,-260] m. Symmetric nearest-vertex error against the preserved HARR_Ground_Plinth_Base perimeter is recorded below.",
+    "limits": "Official campus map footprint is not a certified survey and does not verify facade or vertical dimensions."
+  },
+  "architectural_sources": [
+    {
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/harr/",
+      "page_revision": "2026-03-17",
+      "retrieved": "2026-10-25",
+      "snapshot": "audit/benjamin_harrison_hall/sources/purdue_oep_harrison_emergency_plan_2026-10-25.html",
+      "supports": "Three major wings; north and south wings are 8 stories; center section is 2 stories.",
+      "uncertainty": "No total height, roof elevation/form, or floor-to-floor measurements."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/harrison.html",
+      "page_revision": "Page last modified 2025-12-10; checked 2026-10-25",
+      "retrieved": "2026-10-25",
+      "snapshot": "audit/benjamin_harrison_hall/sources/purdue_residences_harrison_2026-10-25.html",
+      "supports": "Opened in 1966; two wings connected by central common areas; address 107 MacArthur Drive.",
+      "uncertainty": "Residence page is not an elevation or dimensional source."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/campus-living/get-involved/work-with-us/awards/pastwinners.html",
+      "source_date": "February 2024 Harrison Hall award entry; page last modified 2026-04-20",
+      "retrieved": "2026-10-25",
+      "snapshot": "audit/benjamin_harrison_hall/sources/purdue_residences_award_photos_2026-10-25.html",
+      "supports": "Official page identifies an image taken outside the Harrison Hall entrance.",
+      "uncertainty": "The image is not a measured facade elevation."
+    }
+  ],
+  "placement": {
+    "manifest_origin_xy_m": [
+      -1110.0,
+      -260.0
+    ],
+    "local_frame": "meters; X east, Y north, Z up",
+    "local_geometry_preserved": true
+  },
+  "geometry_validation": {
+    "source_ring_distinct_vertices": 28,
+    "model_base_ring_distinct_vertices": 28,
+    "source_model_symmetric_nearest_vertex_error_m": 0.0005610994613119989,
+    "model_base_z_local_m": 0.0,
+    "expected_collection": "Asset_benjamin_harrison_hall",
+    "manifest_object_count_before_shared_refresh": 224,
+    "manifest_object_name_count_before_shared_refresh": 224,
+    "manifest_names_still_listed_for_preview_gear": [
+      "Cam_Hero_Perspective",
+      "Cam_TopDown_Footprint",
+      "Cam_West_Entrance",
+      "Sun_Purdue_Daylight"
+    ],
+    "object_count_before_preview_split": 224,
+    "preview_gear_moved": [],
+    "preview_gear_in_sibling_collection": [
+      "Cam_Hero_Perspective",
+      "Cam_TopDown_Footprint",
+      "Cam_West_Entrance",
+      "Sun_Purdue_Daylight"
+    ],
+    "object_count_after_preview_split": 220,
+    "export_object_types": {
+      "MESH": 218,
+      "FONT": 1,
+      "EMPTY": 1
+    },
+    "export_contains_camera_or_light": false,
+    "source_asset_sha256_after_save": "ace53167c9da1864c9aad32a03f1e0ae935388579b12fc924316d3c768a74b97"
+  },
+  "vertical_status": {
+    "source_level_attribute": 10,
+    "height": "Unverified. The official OEP plan supports relative story arrangement only: 8 stories each in north/south wings; 2 stories in the central section.",
+    "roof": "Unverified; no roof form or elevation found in the consulted Purdue sources.",
+    "floor_to_floor": "Unverified; no authoritative vertical measurements found.",
+    "existing_model_major_core_bounds_local_m": {
+      "north": [
+        3.8,
+        26.6
+      ],
+      "south": [
+        3.8,
+        26.6
+      ],
+      "central": [
+        3.8,
+        7.4
+      ]
+    },
+    "existing_model_total_bounds_local_m": [
+      -0.06,
+      30.35
+    ],
+    "interpretation": "Do not treat modeled z values or GIS NUM_LEVELS as surveyed total building height or precise floor datums."
+  },
+  "export_validation": {
+    "preview_collection": "PreviewOnly_benjamin_harrison_hall",
+    "preview_collection_excluded_from_export": true,
+    "rendered_views": [
+      {
+        "camera": "Cam_Hero_Perspective",
+        "path": "audit\\benjamin_harrison_hall\\cam_hero_perspective.png",
+        "sha256": "1dcc10e9213ed5bce4e4b6329baf8e99e26cfefd3e62fcc77a0aec05354818ee"
+      },
+      {
+        "camera": "Cam_TopDown_Footprint",
+        "path": "audit\\benjamin_harrison_hall\\cam_topdown_footprint.png",
+        "sha256": "c46e0de9f28a26acd1b47658c1d4b268bf7292baa22d7db172e6fc3826d02366"
+      },
+      {
+        "camera": "Cam_West_Entrance",
+        "path": "audit\\benjamin_harrison_hall\\cam_west_entrance.png",
+        "sha256": "0be11f26db6e416ea26c34705dd11571e5c47a18b9d73c09254993b86e503280"
+      }
+    ],
+    "external_image_dependencies": [],
+    "geometry_rebuilt": false,
+    "blender_runtime_version": "4.5.15 LTS",
+    "geometry_note": "Retained existing detailed geometry because its GIS perimeter and three-wing massing already agree with official sources; only export membership/metadata were repaired."
+  },
+  "remaining_uncertainty": [
+    "No authoritative total building height, roof geometry, or floor-to-floor dimensions were located.",
+    "Facade composition, exact window spacing, west solar screen dimensions, and entrance details lack a dimensioned elevation source.",
+    "The official GIS polygon supports identity and horizontal plan geometry but is not a survey."
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "asset": "modular/buildings/massing_alpha_chi_rho_0cb591a.blend",
+  "building_id": "massing_alpha_chi_rho_0cb591a",
+  "independent_grade": true,
+  "score": 8.15,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "status": "PASS",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 1.9,
+      "max_points": 2,
+      "evidence": [
+        "Purdue BuildingShapes feature FID 775 names Alpha Chi Rho (SOACR) at 27 Russell St and provides the footprint used by the model.",
+        "The reopened asset retains the source ring to 0.000016 m vertex error.",
+        "Independent Indiana 2018 LiDAR footprint 410090 has raster IoU 0.785 and centroid separation 0.300 m against the Purdue polygon; it broadly corroborates location and shape, while edge disagreement remains material."
+      ],
+      "deduction": "The independent outline is LiDAR-derived, not a site survey; its IoU of about 0.785 leaves boundary differences unresolved."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 1.7,
+      "max_points": 2,
+      "evidence": [
+        "Purdue and Indiana footprints have centroids only 0.300 m apart.",
+        "The asset's horizontal outline matches the Purdue feature in its documented campus-local conversion; the independent outline supports broad registration and scale.",
+        "The repository conversion is an approximate lon/lat-to-local-meter transform, not surveyed geodetic control."
+      ],
+      "deduction": "No surveyed control confirms absolute placement; the two footprint products differ at the edges."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.15,
+      "max_points": 2,
+      "evidence": [
+        "The saved model spans Z=-0.02 to 7.62 m, with a documented 6.2 m estimated wall height and 7.62 m estimated high point.",
+        "Google's Aug 2019 Street View supports two visible stories; Purdue GIS reports one level, and no measured elevation or roof plan is supplied.",
+        "Zillow's asphalt-roof claim does not establish the modeled roof geometry."
+      ],
+      "deduction": "Vertical dimensions and story spacing are estimates, the GIS level count conflicts with the visual story count, and the model simplifies the visible roof profile to a flat cap."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 1.4,
+      "max_points": 2,
+      "evidence": [
+        "Direct review of the address-matched panorama shows a two-story light-sided facade, dark shutters, centered tall portico/balcony, entry and gable; these broad features appear in the revised model.",
+        "Google labels the image Aug 2019. It supports the facade as of that date, not current condition or exact opening arrangement.",
+        "The model simplifies the main roof, window rhythm, entry steps and ornament.",
+        "The 1978 Purdue Debris record is historical context only and does not validate the present facade."
+      ],
+      "deduction": "Street-level image supports broad character as of Aug 2019; exact openings and dimensions remain illustrative, and several visible details are simplified."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 2.0,
+      "max_points": 2,
+      "evidence": [
+        "A fresh Blender 4.5.15 open probe found the expected collection with 1 mesh object (13271 vertices, 3313 polygons).",
+        "Builder reopen validation and clean-scene append/save/reopen portability probe both report PASS.",
+        "No external image dependencies are present; 8 materials are embedded and building-specific evidence records include source identifiers, URLs, dates, CRS/method notes and uncertainty."
+      ],
+      "deduction": null
+    }
+  ],
+  "evidence": {
+    "asset_probe": "audit/alpha_chi_rho_independent_grade_r2/asset_probe.json",
+    "purdue_source": "audit/alpha_chi_rho/sources/purdue_gis_FID775_alpha_chi_rho_2026-10-26.json",
+    "indiana_source": "audit/alpha_chi_rho/sources/indiana_lidar_building_footprint_410090_2026-10-26.json",
+    "footprint_comparison": "audit/alpha_chi_rho/footprint_comparison.json",
+    "streetview_source_record": "audit/alpha_chi_rho/sources/streetview_source_record.json",
+    "direct_streetview_inspection": "audit/alpha_chi_rho_independent_grade_r2/streetview_inspection.json",
+    "build_evidence": "audit/alpha_chi_rho/build_evidence.json",
+    "reopen_validation": "audit/alpha_chi_rho/reopen_validation.json",
+    "portable_export_probe": "audit/alpha_chi_rho/export_reopen_probe.json",
+    "preview": "audit/alpha_chi_rho/alpha_chi_rho_preview.png"
+  },
+  "findings": [
+    {
+      "severity": "moderate",
+      "finding": "The footprint match has a measurable edge discrepancy: the independent 2018 LiDAR outline and Purdue GIS outline have only about 0.785 raster IoU.",
+      "recommended_evidence": "Check a georeferenced current orthophoto or survey to decide which perimeter represents the above-ground structure."
+    },
+    {
+      "severity": "moderate",
+      "finding": "The 6.2 m wall height and roof dimensions are estimated, and GIS's one-level attribute conflicts with two stories visible in Street View.",
+      "recommended_evidence": "Find a dimensioned elevation or dated campus imagery with a scale reference; preserve the height as estimated until then."
+    },
+    {
+      "severity": "minor",
+      "finding": "The Street View panorama is dated Aug 2019 and cannot establish the building's current 2026 condition.",
+      "recommended_evidence": "Seek a dated current facade photograph if exact present condition matters."
+    }
+  ],
+  "remaining_uncertainty": [
+    "Whether the Purdue outline precisely traces the current above-ground perimeter; the 2018 LiDAR outline differs at the edges.",
+    "Absolute horizontal registration accuracy of the approximate local-coordinate transform.",
+    "Measured wall/eave height, vertical datum, roof plan/profile, and exact facade dimensions.",
+    "The 2019 Street View image cannot establish current 2026 condition."
+  ],
+  "rubric_note": "Scores reflect source-backed correctness rather than appearance. The dated 2019 Street View was directly reviewed; its age, estimated dimensions, simplified roof, and footprint-edge disagreement are explicitly deducted."
+}

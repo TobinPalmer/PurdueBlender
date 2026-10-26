@@ -1,0 +1,91 @@
+{
+  "asset": "modular/buildings/massing_alpha_chi_rho_0cb591a.blend",
+  "independent_grade": true,
+  "score": 7.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "status": "FAIL",
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "points": 1.9,
+      "max_points": 2,
+      "evidence": [
+        "Purdue BuildingShapes FID 775 identifies Alpha Chi Rho (SOACR) at 27 Russell St.",
+        "All 14 GIS ring corners match ground-level mesh vertices within 0.000019 m.",
+        "The independent check uses the same official GIS snapshot that informed construction; it does not independently verify the real-world survey or parcel-to-building match."
+      ],
+      "deduction": "Minor: no second independent footprint/survey source."
+    },
+    {
+      "criterion": "Position, orientation, and scale",
+      "points": 1.7,
+      "max_points": 2,
+      "evidence": [
+        "Model footprint bounds and GIS bounds are consistent with the same polygon and project local-coordinate conversion.",
+        "The project explicitly labels its lon/lat-to-campus-meters conversion as an approximation rather than a surveyed projection."
+      ],
+      "deduction": "Small: no independent geodetic control or site survey confirms absolute placement and scale."
+    },
+    {
+      "criterion": "Height, floors, and roof",
+      "points": 1.1,
+      "max_points": 2,
+      "evidence": [
+        "The GIS feature reports 1 level; the mesh spans Z=0.00–4.15 m.",
+        "Evidence identifies the 3.8 m wall and 0.35 m flat roof cap as modeling estimates; GIS Extrution=12 has no documented unit or method."
+      ],
+      "deduction": "Height and roof profile are not source-backed; elevation field lacks a vertical datum."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 0.8,
+      "max_points": 2,
+      "evidence": [
+        "The asset includes horizontal siding, openings, a door, trim, and a small entrance canopy; the preview reads as a simple low one-story mass.",
+        "The 1978 Purdue Debris photo supports only historical siding/window language, not the present facade."
+      ],
+      "deduction": "Current exterior, opening pattern, roof, and entrance dimensions are explicitly unverified; no current dated photograph or measured elevation substantiates these features."
+    },
+    {
+      "criterion": "Modular export, portability, and evidence",
+      "points": 2.0,
+      "max_points": 2,
+      "evidence": [
+        "The expected asset collection contains 1 mesh object with 6020 vertices, 1500 polygons, and 7 material slots.",
+        "The independent Blender open probe succeeded; builder evidence records saved-file reopen validation and clean-scene append/save/reopen validation as PASS.",
+        "No external image dependencies; 1 Asset_ collection is present, and the named scene/collection conventions are satisfied."
+      ],
+      "deduction": null
+    }
+  ],
+  "findings": [
+    {
+      "severity": "major",
+      "finding": "Present-day architecture is not verified. Roof form, height, current facade rhythm, windows, and entrance geometry rely on illustration or estimates.",
+      "recommended_evidence": "Add dated current exterior photos (multiple facades/roofline) or dimensioned elevations and cite the sources."
+    },
+    {
+      "severity": "moderate",
+      "finding": "The excellent footprint match is internally consistent with the official FID 775 geometry but is not independent validation of geospatial registration.",
+      "recommended_evidence": "Cross-check against a campus survey, orthophoto/building outline from a separate authoritative source, or surveyed control points."
+    },
+    {
+      "severity": "minor",
+      "finding": "The 625 elevation attribute has no documented vertical datum; the model correctly leaves the origin at local Z=0."
+    }
+  ],
+  "remaining_uncertainty": [
+    "Whether the queried GIS outline precisely represents the current above-ground building perimeter.",
+    "Absolute horizontal registration accuracy of the project-specific local coordinate approximation.",
+    "Current height, roof geometry, facade openings/materials, and entrance placement."
+  ],
+  "evidence_files": [
+    "audit/alpha_chi_rho_independent_grade/independent_probe.json",
+    "audit/alpha_chi_rho/evidence.md",
+    "audit/alpha_chi_rho/reopen_validation.json",
+    "audit/alpha_chi_rho/export_reopen_probe.json",
+    "audit/alpha_chi_rho/alpha_chi_rho_preview.png"
+  ],
+  "rubric_note": "Scores reflect source-backed correctness, not visual finish alone. Evidence assertions in the asset audit were treated as documentary evidence; geometric checks were independently repeated against the saved blend but necessarily share the builder source polygon."
+}

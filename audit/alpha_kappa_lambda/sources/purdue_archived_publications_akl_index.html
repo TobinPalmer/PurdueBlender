@@ -1,0 +1,305 @@
+    <html>
+        <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJMJBKBNQ5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WJMJBKBNQ5');
+</script>
+        <link type="text/css" rel="stylesheet" href="//assets.lib.purdue.edu/css/normalize.css" />
+        <link type="text/css" rel="stylesheet" href="//assets.lib.purdue.edu/css/bootstrap-purdue.css" type="text/css" />
+        <link type="text/css" rel="stylesheet" href="//assets.lib.purdue.edu/css/site.css" type="text/css" />       
+        <link type="text/css" rel="stylesheet" href="//assets.lib.purdue.edu/css/jquery-ui.css" />
+        <link href="css/site.css" type="text/css" rel="stylesheet" />
+
+                <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="//assets.lib.purdue.edu/js/functions.js"></script>
+        <script type="text/javascript" src="//assets.lib.purdue.edu/js/maskedInput.js"></script>                
+        <script type="text/javascript" src="//assets.lib.purdue.edu/js/jquery.megamenu.js"></script>
+        <script type="text/javascript" src="//assets.lib.purdue.edu/js/bootstrap-dropdown.js"></script>
+        <script type="text/javascript" src="//assets.lib.purdue.edu/js/jquery.zclip.min.js"></script>
+
+        <script type="text/javascript">
+            jQuery(document).ready(function(){
+                jQuery(".megamenu").megamenu({ 'show_method':'fadeIn', 'hide_method': 'fadeOut', 'enable_js_shadow':false });           
+            });
+            
+            function headerSearchSubmit(option) {           
+                if (option == 'website') {
+                    jQuery("#headerSearchForm").attr("action", 'http://www.google.com/cse?cx=015675504521142124930:gt_fnei4sns&q=' + jQuery("#headerSearchInput").val());
+                    jQuery('#headerSearchForm').submit();
+                }else {
+                    jQuery("#headerSearchForm").attr("action", 'http://www.lib.purdue.edu/system/search/dlPrimo.php?fn=search&searchType=simple');
+                    jQuery('#headerSearchForm').submit();
+                }
+            }   
+        </script>
+
+
+        <title>Archived Purdue Publications</title>
+        </head>
+<body>
+    <div id="page">
+    <div id="header">
+        <div id="purdueLogo">
+            <a href="http://www.purdue.edu">
+                <img src="//assets.lib.purdue.edu/images/header/purdueLogo.png" title="Purdue University Homepage" alt="Purdue University" height="64" width="202">
+            </a>
+        </div>
+        <div id="librariesLogo">
+            <a href="/">
+                <img src="//assets.lib.purdue.edu/images/header/libraries.png" title="Libraries Homepage" alt="" height="30" width="264">
+            </a>
+        </div>
+    </div>
+            <div class="navigationWrapper">
+                <ul class="megamenu">
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="publicationsList.php">Publication List</a></li>                    
+                </ul>        
+        </div>
+
+    <div id ="content-wrapper">
+        <nav class="breadcrumb">
+          <ul>
+            <li><a href="http://www.lib.purdue.edu/spcol">Archives Home</a> › </li>
+            <li><a href="/pupindex/index.php">Archived Purdue Publications</a> › </li>
+            <li>Search Results</li>
+          </ul>
+        </nav>
+<div id ="main">
+    <h1 id="page-title" class="title"><a href="index.php">
+        Archived Purdue Publications</a></h1>
+    <h2  class="grayDiagonalsOffset width50">Search</h2>
+    <form name="queryForm" id="queryForm" action="" method="GET">
+    <!--<label for="q">Search For:</label>-->
+    <input name="q" id="q"  value="Alpha Kappa Lambda"/>
+    <label for="qtype">in</label>
+    <select name="qtype" id="qtype">
+        <option value="alltext" >All</option>
+        <option value="TitleDescription"  >Title/Description</option>
+       <!-- <option value="PubID">PubID</option>-->
+        <option value="SubjectHeading" selected=selected>Subject</option>
+        <option value="SourcePublication" >Publication</option>
+        <option value="PublicationYear" >PublicationYear</option>
+        <option value="PublicationMonth" >PublicationMonth</option>
+        <option value="PublicationDay" >PublicationDay</option>
+
+    </select><!--<br />between [optional]<br />
+    <label for="yearA">Start Year</label>
+    <input name="yearA" id="yearA"  />
+    <label for="yearB">End Year</label>
+    <input name="yearB" id="yearB"  />-->
+    <input type="submit" name="submit" id="submit" class="searchbtn btn btn-success" value="Find It!" />
+    </form>
+    <div id="sidebar">
+        <div id="currentFacets"><div class="facetTitle">Limit By</div>Subject:&amp;quot;Alpha Kappa Lambda&amp;quot; <a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=">Remove</a><br/></div><div class="facetTitle">Subjects</div><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=subjectStr:%22Alpha+Kappa+Lambda%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >Alpha Kappa Lambda [14]</a><br/><div class="facetTitle">Publication</div><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=publicationStr:%22Debris%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >Debris [7]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=publicationStr:%22Exponent+Newspapers%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >Exponent Newspapers [7]</a><br/><div class="facetTitle">Year</div><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221989%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1989 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221987%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1987 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221985%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1985 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221984%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1984 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221967%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1967 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221965%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1965 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221941%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1941 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221940%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1940 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221939%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1939 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221938%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1938 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221937%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1937 [2]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221936%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1936 [1]</a><br/><a href="search.php?q=Alpha Kappa Lambda&qtype=SubjectHeading&fq=PublicationYear:%221935%22+AND+subjectStr%3A%22Alpha+Kappa+Lambda%22&submit=submit" >1935 [1]</a><br/>
+    </div>
+    <div id="resultWrapper">
+
+            <div id="resultCount"><span class="itemCount">Displaying <span class="itemCountHighlight">1</span> to <span class="itemCountHighlight">14</span> of <span class="itemCountHighlight">14</span> results for <span class="itemCountHighlight">Alpha Kappa Lambda</span></span></div><br /><div class="pagination"></div><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Photo, List</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Debris</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    1935                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 278</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Photo, List</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Debris</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    1936                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 230</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Photo, List</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Debris</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    1937                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 322</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Photo, List</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Debris</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    1938                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 361</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Photo, List</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Debris</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    1939                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 373</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Photo, Members</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Debris</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    1940                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 433</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Photo, Members</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Debris</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    1941                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 349</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Home Robbed</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Exponent Newspapers</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    10/13/1937                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 1, c. 5</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Last year's Help Week award winner tries again</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Exponent Newspapers</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    10/16/1965                </span><br />
+                <span class="itemInfo itemLocation">vol. 81, no. 24</span> <span class="itemInfo itemLocation">p. 4</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Fraternities build new houses on campus</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Exponent Newspapers</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    10/26/1967                </span><br />
+                <span class="itemInfo itemLocation">vol. 83</span> <span class="itemInfo itemLocation">p. 7</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Fraternity, sorority sponsor 'Road Rally" for charity</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Exponent Newspapers</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    9/26/1984                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 3</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Shoe tree (photo)</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Exponent Newspapers</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    2/1/1985                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 3</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Junior in intensive care, AKL lying in alley</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Exponent Newspapers</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    4/27/1987                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 1</span><br />
+
+
+            </div>
+
+</table><hr/>            <div class="resultItem">
+                <span class="itemInfo itemTitle">Fire causes little damage, much concern at local fraternity</span><br />
+                <span class="itemHeading">Publication: </span><span class="itemInfo itemPublication">Exponent Newspapers</span><br />
+                <span class="itemHeading">Subject:</span> <span class="itemInfo itemSubject">Alpha Kappa Lambda</span><br />
+                <span class="itemHeading">Date:</span>
+                <span class="itemInfo itemDate">
+                    3/31/1989                </span><br />
+                <span class="itemInfo itemLocation"></span> <span class="itemInfo itemLocation">p. 3</span><br />
+
+
+            </div>
+
+</table>    </div>
+</div>
+    </div>
+    			<div id="footer">
+				<br />
+				<a class="footerLinkGray" href="//www.lib.purdue.edu/about">About the Libraries</a>|
+				<a class="footerLinkGray" href="//www.lib.purdue.edu/directory">Directory</a>|
+				<a class="footerLinkGray" href="//www.lib.purdue.edu/about/employment">Employment</a>|
+				<a class="footerLinkGray" href="//www.lib.purdue.edu/dev">Accesibility</a>|
+				<a class="footerLinkGray" href="//www.lib.purdue.edu/uco/" target="_blank">Copyright</a>|
+				<a class="footerLinkGray" href="//www.lib.purdue.edu/sitemap">Site Map</a>|
+				<a class="footerLinkGray" href="//purl.lib.purdue.edu/db/intranet" target="_blank">Intranet</a>|
+				<a class="footerLinkGray" href="//www.lib.purdue.edu/contact">Contact Us</a>|
+				<a href="//www.facebook.com/PurdueLibraries" target="_blank" class="socialMedia facebook" title="Facebook Page"><span class="displace">Facebook Page</span></a>			
+				<a href="//twitter.com/#!/PurdueLibraries" target="_blank" class="socialMedia twitter" title="Twitter Feed"><span class="displace">Twitter Feed</span></a>
+				
+				<br /><br />
+				
+
+				<div id="FDL_shield">
+					<a class="noBorder" title="Federal Depository Library" href="http://guides.lib.purdue.edu/govdocslinks">
+						<img src="//assets.lib.purdue.edu/images/footer/FDL_shield.png" alt="Federal Depository Library" />
+					</a>
+				</div>			
+				
+				<div id="copyright_block">						
+					&copy; 2023 <a href="//www.purdue.edu/">Purdue University</a>.&nbsp;All Rights Reserved.
+					<a href="//www.purdue.edu/purdue/ea_eou_statement.html">An equal access/equal opportunity university.</a>
+					<br />
+					If you have trouble accessing this page because of a disability, please contact <a href="mailto:accessibility@lib.purdue.edu">accessibility@lib.purdue.edu</a>.
+				</div>				
+			</div>	<!-- region__footer -->
+
+    </body>

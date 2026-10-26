@@ -1,0 +1,131 @@
+{
+  "building_id": "agricultural_administration_building",
+  "assigned_owner": "Rosen",
+  "asset": "modular/buildings/agricultural_administration_building.blend",
+  "collection": "Asset_agricultural_administration_building",
+  "builder_script": "modular/buildings/build_agricultural_administration_building.py",
+  "date_built": "2026-10-25",
+  "source_feature_id": 267,
+  "building_code": "AGAD",
+  "building_name": "Agricultural Administration Building",
+  "source_address": "615 Mitch Daniels Blvd",
+  "gis_source": {
+    "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D267&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "feature_id": 267,
+    "retrieved": "2026-10-25",
+    "service_native_crs": "EPSG:3857",
+    "snapshot_output_crs": "EPSG:4326",
+    "snapshot": "audit/agricultural_administration_building/sources/agricultural_administration_gis_feature_267_current.json",
+    "layer_metadata_snapshot": "audit/agricultural_administration_building/sources/agricultural_administration_gis_layer_metadata_2026-10-25.json",
+    "measurement_method": "Exact exterior ring projected using the project-prescribed local geographic approximation and recentered at its shoelace centroid."
+  },
+  "gis_vertical_attributes": {
+    "raw_values": {
+      "Level_": 4,
+      "NUM_LEVELS": 5,
+      "CountOfFLO": 5,
+      "Extrution": 34,
+      "F01": 8.2,
+      "F02": 24.7,
+      "F03": 40.95,
+      "F04": 0,
+      "F05": 0
+    },
+    "field_metadata": "The service describes these fields only by name and numeric type; it does not define units, datum, or vertical measurement semantics.",
+    "model_use": "NUM_LEVELS=5 and CountOfFLO=5 support only five diagrammatic facade bands. Other raw values are preserved but not converted to meters or used as surveyed heights/floor datums."
+  },
+  "geometry_source_crs": "EPSG:4326",
+  "source_snapshot": "audit/agricultural_administration_building/sources/agricultural_administration_gis_feature_267_current.json",
+  "historical_photo_source": {
+    "provider": "Purdue University Stories; photo credited to Purdue University Archives and Special Collections",
+    "url": "https://stories.purdue.edu/app/uploads/2023/03/AGAD-OLD-side-by-side-660x825-1.jpg",
+    "caption_page": "https://stories.purdue.edu/early-advocacy-paved-way-for-purdues-thriving-disability-resource-center/",
+    "retrieved": "2026-10-25",
+    "source_date": "historic photograph; original photo date not stated",
+    "supports": [
+      "brick exterior",
+      "stone trim",
+      "historic roof silhouette only in archival-era image"
+    ],
+    "snapshot": "audit/agricultural_administration_building/sources/agad_archival_facade_2023.jpg"
+  },
+  "historic_vertical_and_roof_source": {
+    "provider": "Purdue University Archives and Special Collections",
+    "url": "https://archives.lib.purdue.edu/agents/corporate_entities/569",
+    "retrieved": "2026-10-25",
+    "source_date": "Historical information about the 1908 opening; page also notes multiple later renovations.",
+    "supports": [
+      "original building opened as two stories plus a basement",
+      "brick and stone trim",
+      "original tile roof",
+      "subsequent renovations make current roof and vertical arrangement uncertain"
+    ],
+    "snapshot": "audit/agricultural_administration_building/sources/purdue_archives_agad_history_2026-10-25.json"
+  },
+  "current_entrance_photo_source": {
+    "provider": "Purdue University Stories; photo by Rebecca McElhoe",
+    "url": "https://stories.purdue.edu/app/uploads/2023/03/AGAD-NEW-side-by-side-660x825-1.jpg",
+    "caption_page": "https://stories.purdue.edu/early-advocacy-paved-way-for-purdues-thriving-disability-resource-center/",
+    "retrieved": "2026-10-25",
+    "source_date": "2023 article; image caption says current building, exact capture date not stated",
+    "supports": [
+      "present-day brick and limestone facade",
+      "glazed accessible entrance",
+      "approach walk"
+    ]
+  },
+  "geometry": {
+    "method": "Project exact exterior ring using project local approximation: X=(lon+86.9137)*111412.84*cos(40.4274\u00b0), Y=(lat-40.4274)*111040; subtract shoelace centroid for local origin; extrude only the outline.",
+    "origin_world_xy_m": [
+      -57.696332,
+      -443.673382
+    ],
+    "gis_footprint_area_computed_m2": 1722.19,
+    "source_shape_area_attribute_web_mercator_m2": 2976.81640625,
+    "source_area_note": "Shape__Area is calculated in native Web Mercator; the ring is returned in geographic coordinates, so its local ground-plane area differs by the expected latitude distortion factor.",
+    "footprint_vertices": 24,
+    "local_bounds_m": [
+      -34.164,
+      29.258,
+      -25.567,
+      16.568
+    ],
+    "model_height_m": 17.2,
+    "height_status": "diagrammatic estimate only; no current measured elevation. The archival two-story-plus-basement description is dated to the 1908 opening and cannot be assumed unchanged after documented renovations.",
+    "modeled_levels": 5,
+    "floor_height_m": 3.44,
+    "floor_height_status": "equal visual bands at 3.44 m are a modeling scaffold only; current GIS exposes NUM_LEVELS=5 and CountOfFLO=5 but no field units/vertical definitions, and the 1908 archive describes a different historical state.",
+    "facade": "Punched vertical window bays, dark metal frames, brick field, limestone plinth/belts/cornice, and a tall stacked-glass portal composition matching the 2023 Purdue photo. Bay positions and dimensions are visual estimates from uncalibrated photos.",
+    "entry_location": "Estimated at the midpoint of the longest south-facing segment; photo identifies the glazed entrance but GIS contains no doorway location.",
+    "roof": "Simple neutral flat cap, explicitly a constrained placeholder rather than a claim about the present roof. Purdue Archives documents a tile roof at the 1908 opening, but also documents later renovations; the current photo does not show the roof.",
+    "interior": "Not modeled; no verified floor-plan source was located."
+  },
+  "validation": {
+    "asset_sha256_after_save": "58aa4ae10ced6f0814616b7ad7afc624a72925c2d48c708bab8554771eee0b8b",
+    "exported_collection": "Asset_agricultural_administration_building",
+    "expected_collection_object_count": 6,
+    "source_ring_and_manifest_contract_checked": true,
+    "rendered_previews": [
+      "audit/agricultural_administration_building/agricultural_administration_building_overview.png",
+      "audit/agricultural_administration_building/agricultural_administration_building_entrance.png"
+    ],
+    "external_image_dependencies": [],
+    "preview_only_camera_light_floor_collection": "AGAD_Preview_Only"
+  },
+  "geometry_edits": [
+    "New source library rebuilt from scratch as a single structural shell using GIS feature 267.",
+    "Added estimated masonry base, story courses, cornice and repeated punched-window bays using photo-supported brick/limestone palette.",
+    "Reworked the estimated glazed south entrance as a tall, narrow stacked-glass portal with paired lower door leaves, mullions, stone jambs and lintel, matching the composition in Purdue\u2019s captioned 2023 entrance photograph.",
+    "Kept a neutral flat roof cap and diagrammatic vertical envelope because available vertical GIS fields lack units/definitions and the present roof is not shown; recorded the documented 1908 tile roof as historical, not current.",
+    "Added preview-only cameras, light and ground outside the exported building collection."
+  ],
+  "uncertainties": [
+    "The GIS ring identifies the correct building by FID 267, AGAD code, name and address; it is a published footprint, not a boundary survey. Shape__Area is native Web Mercator area while the returned ring is WGS84 and converted to local ground meters.",
+    "Purdue Archives records the 1908 opening as two stories plus a basement with a tile roof, and records later renovations. The current GIS separately reports NUM_LEVELS=5 and CountOfFLO=5; the service exposes no vertical-field units or definitions. The model's 17.2 m envelope and 3.44 m equal bands are deliberately diagrammatic, not a measured current height or floor spacing.",
+    "The gray flat cap is a neutral placeholder because current roof form is not visible in the modern photo; the archive's tile roof is evidence for the original 1908 state only.",
+    "The 2023 image supports the present brick/stone facade and a tall, narrow glazed entrance composition. The doorway location, height, number of panes, facade bay spacing and window dimensions remain estimated from an uncalibrated image and GIS has no doorway point.",
+    "No verified floor plans, facade elevations, construction drawings, current aerial measurement, or Street View calibration were located for this build.",
+    "The building outline has one exterior ring and no interior rings in the checked feature; no separate courtyard holes are represented."
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "asset_id": "massing_alpha_kappa_lambda_88dda6c",
+  "reviewer": "fresh independent grader",
+  "evaluator_version": 3,
+  "score": 8.0,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "result": "PASS",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.7,
+      "max_score": 2,
+      "status": "identity corroborated; perimeter discrepancy documented",
+      "evidence": [
+        "Purdue GIS FID 784 identifies Alpha Kappa Lambda (SOAKL), 417 Waldron St.",
+        "Independent Indiana LiDAR-derived footprint objectid 409920 (2018) is registered at the same address and compared with current orthophotography.",
+        "The saved massing uses the 14-vertex LiDAR roof outline; its visible-roof fit is supported by the orthophoto overlay.",
+        "The Purdue and LiDAR outlines have IoU 0.7573 and area values 476.20 m\u00b2 vs 598.27 m\u00b2 (20.4% difference); the source Shape__Area/Length fields are also internally inconsistent with ring geometry."
+      ],
+      "reason": "Building identity and a second official footprint are persuasive, and the LiDAR envelope is corroborated by imagery. The notable polygon disagreement and roof-versus-foundation ambiguity prevent full confidence in the perimeter."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "status": "well registered in plan; local conversion and vertical dimensions are approximate",
+      "evidence": [
+        "The reopened mesh bounds are 26.289 m east-west, 48.934 m north-south, and 10.730 m tall.",
+        "The asset retains the project campus X-east/Y-north/Z-up identity-transform convention; LiDAR outline was compared with Purdue GIS and Indiana current orthophoto.",
+        "Orthophoto coverage is dated 2022\u20132025, but exact capture date is unavailable; project coordinate conversion is a local geographic approximation."
+      ],
+      "reason": "Independent geospatial sources and imagery provide strong plan position/orientation and useful scale evidence. The precise imagery date and local conversion limit survey-level precision."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "status": "roof and apparent levels supported; vertical scale estimated",
+      "evidence": [
+        "The mesh height is 10.73 m; the builder explicitly labels eaves (6.2 m), primary ridge (9.1 m), and total height as estimates.",
+        "The 2022 captioned Kappa Chapter House image visibly shows a multi-level brick house with pitched gables and a prominent chimney.",
+        "No measured elevation or floor-height data establishes actual vertical dimensions; GIS Extrution=12 has undocumented units and is not treated as a verified height."
+      ],
+      "reason": "The building-specific photo supports the broad roof form and multi-level appearance, but the model\u2019s vertical scale remains an unmeasured interpretation."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "distinctive features represented from photo; geometry remains simplified",
+      "evidence": [
+        "The 2022 Kappa Chapter House photo supports red-brown masonry, light window trim, repeated windows, covered entrance, multiple pitched gables, and a tall chimney.",
+        "The saved preview includes brick-colored walls, windows, entrance canopy, dark roof masses, and chimney.",
+        "The preview simplifies the photo\u2019s pronounced stepped facade and complex roof profile; entrance orientation, exact openings, and component dimensions are approximate."
+      ],
+      "reason": "The model represents major building-specific cues and is recognizable as a sourced massing. The photograph is oblique and unscaled, and the render simplifies several facade and roof transitions."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "status": "asset contract and fresh-file portability pass; closed details remain separate components",
+      "evidence": [
+        "Independent Blender 4.5.15 reopen confirms expected scene, collection, one named mesh, identity transform, zero modifiers, no external image dependencies: True.",
+        "A new factory-empty Blender file independently linked the exported collection successfully and found exactly one mesh object (256 vertices); no external images are required.",
+        "Fresh topology probe measured 256 vertices, 384 edges and 188 faces; 0 boundary edges, 0 nonmanifold edges and 0 wire edges.",
+        "All 30 face-connected components are closed; the principal shell has 16 faces, while facade/roof details remain separate closed components.",
+        "Structured evidence, source snapshots, preview, builder, build results and portability report are present."
+      ],
+      "reason": "The previous severe open-edge defect is repaired. The file meets the modular contract and links in a fresh project; separate closed components are a modest integration limitation, not an export blocker."
+    }
+  ],
+  "evidence": {
+    "model_probe": "audit/alpha_kappa_lambda_independent_grade_r3/blender_probe.json",
+    "portability_probe": "audit/alpha_kappa_lambda_independent_grade_r3/portability_probe.json",
+    "preview_inspected": "audit/alpha_kappa_lambda/alpha_kappa_lambda_preview.png",
+    "orthophoto_inspected": "audit/alpha_kappa_lambda/orthophoto_footprint_comparison.png",
+    "source_photo_inspected": "audit/alpha_kappa_lambda/sources/akl_inside_2022_page-10.png",
+    "registration": "audit/alpha_kappa_lambda/footprint_registration.json",
+    "structured_evidence": "audit/alpha_kappa_lambda/evidence.json",
+    "asset_build_record": "audit/alpha_kappa_lambda/build_result.json",
+    "footprint_iou": 0.7573157007309463,
+    "purdue_area_m2": 476.20225473400507,
+    "indiana_lidar_area_m2": 598.2668485950248,
+    "purdue_vs_lidar_area_gap_percent": 20.4,
+    "asset_dimensions_m": {
+      "x": 26.289,
+      "y": 48.934,
+      "z": 10.73
+    },
+    "manifest_contract_ok": true,
+    "mesh_vertex_count": 256,
+    "mesh_edge_count": 384,
+    "mesh_face_count": 188,
+    "boundary_edge_count": 0,
+    "nonmanifold_edge_count": 0,
+    "wire_edge_count": 0,
+    "face_connected_component_count": 30,
+    "largest_component_faces": 16,
+    "topology_repair_claim_confirmed": true,
+    "portability_probe_result": "PASS",
+    "preview_exists": true,
+    "source_photo_exists": true
+  },
+  "findings": [
+    {
+      "severity": "important",
+      "finding": "Keep the roof-envelope versus wall/foundation perimeter uncertainty explicit: Purdue and 2018 LiDAR polygons have IoU 0.7573 and projected areas 476.20 m\u00b2 versus 598.27 m\u00b2; source GIS area/length attributes do not reconcile with their rings."
+    },
+    {
+      "severity": "important",
+      "finding": "Building height, exact eave/ridge heights and detailed facade placement remain estimates from an unscaled oblique photograph; obtain measured elevation evidence if survey-level dimensions are required."
+    },
+    {
+      "severity": "informational",
+      "finding": "Topology repair confirmed: Blender reports zero boundary/nonmanifold edges, with 30 closed components (largest shell 16 faces). Separate closed roof and facade pieces are present within one mesh object."
+    }
+  ]
+}

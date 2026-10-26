@@ -1,0 +1,106 @@
+{
+  "building": "Smith Hall",
+  "asset_id": "massing_smith_hall_4c2018f",
+  "status": "Official footprint shell and photo-referenced double-door limestone entry updated; independent grade pending",
+  "source": {
+    "provider": "Purdue University official campus building footprint service",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 249,
+    "building_code": "SMTH",
+    "source_name": "Smith Hall",
+    "retrieval_date": "2026-10-22 (repository-preserved source snapshot)",
+    "source_date": "Not supplied in the service snapshot",
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "source_record": "source_feature_249_raw.json",
+    "reference_status": "Official campus map polygon; not a certified survey",
+    "secondary_visual_references": [
+      {
+        "provider": "Purdue University Treasurer",
+        "use": "Official building identity/address record; no facade dimensions inferred.",
+        "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/03/Space-Report_1.13.1HE_Buiding_List_Oct2021.pdf"
+      },
+      {
+        "provider": "Purdue University Events",
+        "use": "Official exterior photo reference for the red-brick facade, paired glass doors and stone lintel above the entrance; no dimensions inferred.",
+        "url": "https://events.purdue.edu/smith_hall"
+      }
+    ]
+  },
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not surveyed CRS"
+  },
+  "measurements": {
+    "method": "Compared the structural wall polygon built from the official feature ring using the repository transform; facade details and entrance are excluded from plan comparison",
+    "official_footprint_aabb_xy_m": [
+      -307.7594055003542,
+      -484.47628505290595,
+      -229.44217684119883,
+      -403.0344312639909
+    ],
+    "official_minimum_rotated_rectangle": {
+      "width_m": 78.05491922325018,
+      "depth_m": 81.39613865773805,
+      "angle_degrees_east_ccw": 179.1418279864131
+    },
+    "official_polygon_area_m2": 5884.43359375,
+    "before_asset_aabb_xy_m": [
+      -308.05755615234375,
+      -484.7340087890625,
+      -229.03103637695312,
+      -403.3194885253906
+    ],
+    "before_asset_height_m": [
+      0.0,
+      16.0
+    ],
+    "after_structural_shell": "Built from all distinct official source-ring vertices; intended to match official footprint within coordinate conversion precision",
+    "after_modeled_height_m": 12.0,
+    "position_status": "Structural footprint set to the official map polygon coordinates; underlying source positional uncertainty is unpublished",
+    "plan_dimension_status": "Footprint matches official source polygon; polygon is not a survey",
+    "orientation_status": "Structural shell follows official polygon vertex orientation",
+    "height_status": "estimated from 3-level GIS attribute; no verified measured elevation",
+    "official_num_levels_attribute": 3,
+    "official_extrution_attribute": 26,
+    "after_asset_bounds_including_facade_additions_m": {
+      "min_x": -307.9342346191406,
+      "max_x": -229.25146484375,
+      "min_y": -484.538818359375,
+      "max_y": -402.8434143066406,
+      "min_z": 0.0,
+      "max_z": 12.0
+    },
+    "after_shell_source_match": "Structural shell rebuilt from the 46 distinct official source-ring vertices; entry and facade additions are excluded from the plan comparison. Source coordinates are applied through the documented approximate project transform.",
+    "reopen_check": {
+      "object_name": "Smith Hall",
+      "asset_id": "massing_smith_hall_4c2018f",
+      "exported_collection_object_count": 1,
+      "mesh_vertex_count": 9532,
+      "mesh_face_count": 6910,
+      "saved_asset_reopened": true
+    }
+  },
+  "geometry_edits": [
+    "Rebuilt the structural shell from official Purdue campus GIS feature 249 while preserving the existing object, collection, scene, asset ID and file path.",
+    "Added a centered paired-glass entrance, limestone side jambs, a broad lintel and a shallow limestone plaque, guided by the official Purdue Events exterior photo.",
+    "Removed first-floor windows from the approximate entrance bay to avoid overlap; the entrance location and dimensions remain approximate."
+  ],
+  "uncertainties": [
+    "The official campus polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
+    "The modeled 12 m height is estimated from the GIS three-level attribute; no measured elevation source was located.",
+    "The official exterior image confirms material and entrance features but does not provide elevations or measured facade geometry.",
+    "Window spacing and entrance placement remain approximate and need independent visual review.",
+    "No independent grader has reviewed this revision."
+  ],
+  "artifacts": {
+    "build_script": "build_detail.py",
+    "build_config": "build_config.json",
+    "raw_source": "source_feature_249_raw.json",
+    "preview_render_script": "render_preview.py",
+    "preview": "preview_detail.png"
+  }
+}

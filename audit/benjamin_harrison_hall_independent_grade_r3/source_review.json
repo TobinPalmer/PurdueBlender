@@ -1,0 +1,93 @@
+{
+  "grade_date": "2026-10-25",
+  "rubric_source": "outputs/PurdueBlender/AGENT.md; five criteria, 2 points each, minimum pass 8/10",
+  "asset_sha256_original": "27ddb20ef2e15319f8db3094e843e0db1d7ffc7a78cb13ed228f4501cba0e754",
+  "builder_sha256": "1e6ab86ce798c0734cef7cb71cc6db50ea611f24bd9733c4d1a4172267711f24",
+  "original_asset_and_builder_modified": false,
+  "photo": {
+    "provider": "Purdue University Residences",
+    "page_url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/harrison.html",
+    "image_url": "https://housing.purdue.edu/images/_hero/harrison-exterior.jpg",
+    "caption": "Harrison Hall exterior (official page hero image); no capture date or compass direction provided.",
+    "snapshot": "source_snapshots/purdue_harrison_hall_exterior_hero.jpg",
+    "sha256": "969c3e26c28ae2b9f953cc6247aa826c9b7583d6e6ee9ba5c558c804c0fbfafd",
+    "comparison_record": "source_snapshots/facade_photo_comparison.json",
+    "registration": "No camera pose/compass direction is published. Compared visible motifs only; did not use it for orientation, placement, length, width, height, or measurements."
+  },
+  "photo_cue_review": [
+    {
+      "cue": "Red-brown brick on tall wings and lower connector",
+      "model_anchors_exist": true,
+      "visual_match": "Supported at broad color/material level; model texture is stylized and no sample-based color measurement was made.",
+      "not_verified": "Exact brick hue, course size, mortar, and facade coverage on unseen elevations."
+    },
+    {
+      "cue": "Repeated narrow windows stacked vertically on a tall wing",
+      "model_anchors_exist": true,
+      "visual_match": "Repeated vertical window bands are visible in both photo and render.",
+      "not_verified": "Exact width, spacing, count correspondence to the pictured wing, frame profile, or compass orientation."
+    },
+    {
+      "cue": "Light perforated screen across lower connector",
+      "model_anchors_exist": true,
+      "visual_match": "A light lattice/perforated screen spans a low connector region in both images.",
+      "not_verified": "Exact screen dimensions, lattice module, material, construction, and claimed solar-control function."
+    },
+    {
+      "cue": "Glazed entrance adjoining broad light canopy/overhang",
+      "model_anchors_exist": true,
+      "visual_match": "Glazing at the entry and a broad light-colored horizontal canopy/overhang are visible in both images.",
+      "not_verified": "Canopy projection/height, exact entrance proportions, or registered faÃ§ade alignment."
+    },
+    {
+      "cue": "HARRISON HALL lettering/model sign and rooftop equipment",
+      "model_anchors_exist": true,
+      "visual_match": "Not confirmed by this photograph; no score awarded for the sign, rooftop equipment, or other unpictured details.",
+      "not_verified": "Presence and exact placement."
+    }
+  ],
+  "other_sources": [
+    {
+      "provider": "Purdue University official campus map / BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D85&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 85,
+      "retrieved": "2026-10-25",
+      "crs": "Service native EPSG:3857; saved response geometry EPSG:4326",
+      "snapshot": "source_snapshots/benjamin_harrison_hall_gis_feature_85_raw.json",
+      "supports": "Identity, address and exterior plan ring; 28 distinct vertices.",
+      "uncertainty": "Campus GIS polygon is not a certified survey."
+    },
+    {
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/harr/",
+      "retrieved": "2026-10-25",
+      "snapshot": "source_snapshots/purdue_oep_harrison_emergency_plan_2026-10-25.html",
+      "supports": "Three major wings, north/south wings at 8 stories, center at 2 stories.",
+      "uncertainty": "No total elevation, roof form, floor datums, or floor-to-floor heights."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/harrison.html",
+      "retrieved": "2026-10-25",
+      "snapshot": "source_snapshots/purdue_residences_harrison_2026-10-25.html",
+      "supports": "Opened in 1966; two wings connected by central common areas; address.",
+      "uncertainty": "No dimensioned elevation."
+    }
+  ],
+  "views": {
+    "hero": "views/cam_hero_perspective.png",
+    "footprint": "views/cam_topdown_footprint.png",
+    "entrance": "views/cam_west_entrance.png",
+    "comparison_method": "Visual motif comparison between official page hero image and fresh render. This is not a registered photogrammetric comparison."
+  },
+  "source_snapshot_sha256": {
+    "benjamin_harrison_hall_gis_feature_85_raw.json": "80658b616c372dc35741593b2174467ea60b3e15b9289158079aad447f19ed22",
+    "builder_build_evidence.json": "f3576428dce29609e6c7fde929ed9f4b9705bdaba32d038990fdf699e9bdb3eb",
+    "facade_photo_comparison.json": "1866711dcbc37a28817c3a5e8430d1d0ebca1137a094a5fd0f701f33e92b9a59",
+    "manifest_snapshot.json": "df746b2e989f57c79108726a82154392f2e41b05c21b2e64a0d76ca8c918b3b6",
+    "purdue_harrison_hall_exterior_hero.jpg": "969c3e26c28ae2b9f953cc6247aa826c9b7583d6e6ee9ba5c558c804c0fbfafd",
+    "purdue_oep_harrison_emergency_plan_2026-10-25.html": "1323b94adb64339a959be387362f964322ac7c4f7d93a02238211f88bd59b2fc",
+    "purdue_residences_award_photos_2026-10-25.html": "3610e92c6917eabf40d91e43e93ace86381bf7c9ae9cf78ed9443fc17f41f990",
+    "purdue_residences_harrison_2026-10-25.html": "a363f2ef97d8370399963ea7b4991e888c99cc493d54df4b44217f643ff0e513"
+  }
+}

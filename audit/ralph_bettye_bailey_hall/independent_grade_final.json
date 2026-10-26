@@ -1,0 +1,26 @@
+{
+  "reviewer": "independent subagent",
+  "grade_revision": "2026-10-26 projected entrance tower revision",
+  "score": 8,
+  "max_score": 10,
+  "criteria": [
+    {"name":"identity_and_source_backed_footprint","points":2,"max_points":2,"status":"verified","rationale":"Official Purdue GIS FID 411 / BALY identifies Ralph & Bettye Bailey Hall. The build script generates the structural shell from the projected source ring."},
+    {"name":"position_orientation_scale_dimensions","points":1.5,"max_points":2,"status":"partially_verified","rationale":"The shell matches the provided GIS polygon through the documented project-local transform. The polygon is not a survey, and the photos do not independently verify facade orientation or absolute position accuracy."},
+    {"name":"height_floors_roof","points":1,"max_points":2,"status":"partially_verified_source_conflict","rationale":"Two Purdue photos support two visible window rows, a flat parapet, and a higher entry tower. The 7.5 m parapet and 10.18 m tower heights remain estimates. GIS NUM_LEVELS and CountOfFLO both report five; the meanings and units of F02, R, and Extrution are undocumented, so R=33.4 does not establish a measured tower height."},
+    {"name":"facade_entrances_distinctive_architecture","points":1.75,"max_points":2,"status":"mostly_verified_with_placement_uncertainty","rationale":"The photos support the brick and stone palette, two window rows, raised entrance volume, tall glazing, sign panel, and shallow canopy. The model depicts the tower as a projecting full-height facade volume. Exact location, proportions, signage, and unseen facades remain schematic."},
+    {"name":"modular_export_portability_complete_evidence","points":1.75,"max_points":2,"status":"mostly_verified","rationale":"A fresh Blender 5.2.3 reopen confirms the expected one-object collection, 2,968 vertices, 2,088 faces, and bounds z=0–10.18 m. GIS and photo snapshots, observations, build script, and fresh preview are present."}
+  ],
+  "evidence": [
+    {"source":"source_feature_411_raw.json","observation":"Purdue GIS FID 411 identifies BALY and supplies the footprint, NUM_LEVELS=5, CountOfFLO=5, F02=16.7, R=33.4, and Extrution=28."},
+    {"source":"source_gis_layer_metadata.xml","observation":"The metadata identifies US survey feet for the coordinate system but does not define units or meanings for F02, R, or Extrution."},
+    {"source":"source_bailey_exterior_photo_observation.json and source_bailey_archives_photo_observation.json","observation":"The photos show two visible window rows, brick and stone details, a flat parapet, raised entrance tower, tall glazing, sign panel, and canopy. Neither supplies calibrated height or orientation."},
+    {"source":"modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend","observation":"Fresh Blender 5.2.3 reopen: expected object and collection, one collection object, 2,968 vertices, 2,088 faces, and z bounds 0–10.1803 m."},
+    {"source":"preview_detail.png","observation":"Preview shows the projected entrance tower, glazing, sign panel, cap, and canopy; it reads more clearly as an entrance volume than the prior revision."}
+  ],
+  "findings": [
+    "The model reaches the 8/10 threshold. Its height remains estimated; do not treat GIS R=33.4 as a measured height until its field meaning and units are verified.",
+    "The five-level GIS attributes remain unresolved against the two visible facade rows.",
+    "Oblique photos leave orientation, tower dimensions, exact entrance placement, and unseen facades approximate."
+  ],
+  "evaluator_implementation": "The reviewer independently scored each rubric criterion against the source snapshots, build script, preview, and fresh Blender 5.2.3 reopen, then summed the criterion points."
+}

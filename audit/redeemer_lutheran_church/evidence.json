@@ -1,0 +1,91 @@
+{
+  "building": "Redeemer Lutheran Church",
+  "asset_id": "massing_redeemer_lutheran_church_2e5ce2f",
+  "status": "Original OSM source feature and footprint import consistency documented; independent spatial/architectural grade pending",
+  "source": {
+    "provider": "OpenStreetMap via Overpass API",
+    "url": "https://www.openstreetmap.org/way/473799725",
+    "feature_identifier": "way/473799725",
+    "retrieval_date": "2026-10-22 (source snapshot base timestamp)",
+    "source_crs": "EPSG:4326 (WGS 84); projected to project-local approximate XY for comparison, not a surveyed CRS",
+    "source_record": "source_osm_way_473799725_raw.json",
+    "source_snapshot_timestamp": "2026-10-22T03:48:50Z",
+    "reference_status": "Exact named OSM building feature in the preserved original Overpass snapshot. The projected ring matches the retained source mesh in vertex order to sub-millimeter precision; this confirms consistency with the original OSM import, not independent geographic or survey accuracy.",
+    "secondary_visual_references": [
+      {
+        "provider": "Building owner/congregation",
+        "use": "Official building identity and address reference; does not certify footprint, height, or facade measurements",
+        "url": "https://www.redeemerwlin.org/contact"
+      },
+      {
+        "provider": "Building owner/architect",
+        "use": "Contextual identity/history or renovation reference; not a measured geometry source",
+        "url": "https://www.redeemerwlin.org/"
+      },
+      {
+        "provider": "Purdue Exponent, August 17-18, 2017, page 20",
+        "use": "Low-resolution exterior photo observation for one-level gabled main volume; no scale or measured dimensions",
+        "url": "https://bloximages.newyork1.vip.townnews.com/purdueexponent.org/content/tncms/assets/v3/editorial/c/c7/cc7ac664-843e-11e7-bdd5-335a6bc6456b/59972adb59de1.pdf.pdf",
+        "observation_record": "source_exterior_photo_observation.json"
+      }
+    ]
+  },
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "axes": "X east, Y north, Z up in project-local coordinates",
+    "units": "meters",
+    "source_to_project_xy": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0",
+    "crs_note": "Approximate project compatibility conversion, not a surveyed coordinate reference system."
+  },
+  "measurements": {
+    "method": "Projected outer-ring WGS84 nodes from OpenStreetMap way 473799725 with the documented project-local approximation, applying the importer’s sequential 0.3 m point filter; compared ordered ring vertices to the preserved bottom ring in source_mesh_snapshot.json. Full results are in source_footprint_comparison_way_473799725.json. This assesses original import consistency only.",
+    "asset_bounds_before_m": {
+      "max_y": 2112.080810546875,
+      "min_z": 0.0,
+      "min_y": 2067.786865234375,
+      "min_x": -25.918121337890625,
+      "max_z": 16.0,
+      "max_x": 7.251306533813477
+    },
+    "asset_bounds_after_m": {
+      "max_y": 2112.080810546875,
+      "min_z": 0.0,
+      "min_y": 2067.786865234375,
+      "min_x": -25.918121337890625,
+      "max_z": 10.8,
+      "max_x": 7.251306533813477
+    },
+    "original_vertex_count": 48,
+    "original_face_count": 68,
+    "after_footprint_status": "Ordered source OSM ring agrees with the retained source mesh within sub-millimeter coordinate rounding; this is source-import consistency, not an independent footprint/structural-wall survey.",
+    "orientation_status": "Original vertex order matches the filtered OSM ring; this confirms import orientation consistency only and does not establish independent true-north orientation accuracy.",
+    "height_status": "4.8 m wall eaves and 10.8 m ridge are illustrative estimates. The newspaper photo shows a one-level gabled church form but has no scale or measured elevation; matched OSM way has no height or building:levels tag.",
+    "position_status": "Original project-local coordinates are consistent with the matched way projected using the project approximation; independent geodetic position accuracy is unverified."
+  },
+  "geometry_edits": [
+    "Rebuilt the wall shell from the exact 24-node bottom ring in the preserved source mesh snapshot; the plan ring and project coordinates are unchanged.",
+    "Reduced the original unverified 16 m extrusion to illustrative 4.8 m wall eaves and added an approximate 10.8 m gable ridge informed only by the 2017 exterior photo.",
+    "Added repeated small window bays, approximate gable-end glazing and paired-entry markers, plus a low roof over remaining footprint areas. Their positions and forms are not measured; roof form outside the photographed gable is unverified.",
+    "Preserved object, collection, scene, asset ID and asset path."
+  ],
+  "uncertainties": [
+    "OpenStreetMap way 473799725 is the original imported source and has no independent source survey; match does not certify positional accuracy or a structural wall footprint.",
+    "The project-local conversion is approximate and not a surveyed CRS.",
+    "Wall eaves (4.8 m), gable peak (10.8 m), gable position and footprint subdivision are illustrative; neither the photo nor source feature provides measured elevations or a full roof plan.",
+    "Facade fenestration and entrance placement are approximate. The source OSM feature has no height or building:levels tags.",
+    "No independent grader has reviewed this revision."
+  ],
+  "artifacts": {
+    "build_script": "build_detail.py",
+    "build_config": "build_config.json",
+    "original_geometry_snapshot": "source_mesh_snapshot.json",
+    "raw_source": "source_osm_way_473799725_raw.json",
+    "footprint_comparison": "source_footprint_comparison_way_473799725.json",
+    "exterior_photo_observation": "source_exterior_photo_observation.json",
+    "build_preview": "preview_detail_r2.png",
+    "original_preview": "preview_detail.png",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py"
+  }
+}

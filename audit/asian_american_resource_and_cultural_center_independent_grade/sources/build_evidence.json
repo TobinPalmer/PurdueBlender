@@ -1,0 +1,63 @@
+{
+  "asset_id": "asian_american_resource_and_cultural_center",
+  "assigned_owner": "Rossen",
+  "asset_path": "modular/buildings/asian_american_resource_and_cultural_center.blend",
+  "builder_path": "modular/buildings/build_asian_american_resource_and_cultural_center.py",
+  "collection": "Asset_asian_american_resource_and_cultural_center",
+  "scene": "Building_asian_american_resource_and_cultural_center",
+  "placement_origin_xy_m": [-335.25090182338033, 192.38045006796483],
+  "model_revision": "Rebuilt 2026-10-25; corrected main ridge direction and Fifth Street facade from current official photos",
+  "source_records": [
+    {
+      "provider": "Purdue University GIS / ArcGIS REST",
+      "feature_id": "FID 926; BLDG_ABBR AACC",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D926&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "retrieved_date": "2026-10-25",
+      "source_date": "Not stated in service response",
+      "source_crs": "EPSG:4326 WGS 84",
+      "snapshot": "sources/aaarcc_gis_feature_926.json",
+      "method": "Convert all raw ring vertices using campus project approximation, center local geometry on GIS feature bounds, compare source ring bidirectionally with exact GIS perimeter plinth",
+      "uncertainty": "Approximate project transform; GIS outline is not a surveyed structural wall line and does not support height."
+    },
+    {
+      "provider": "Purdue University AAARCC Our Facilities",
+      "url": "https://www.purdue.edu/aaarcc/about/ourFacilities.php",
+      "retrieved_date": "2026-10-25",
+      "source_date": "Page reports last modified 2025-08-21",
+      "source_crs": "Not spatial; Purdue official facility/gallery source",
+      "snapshots": ["sources/purdue_aaarcc_our_facilities_2026-10-25.html", "sources/purdue_aaarcc_front1.jpg", "sources/purdue_aaarcc_waldron_fifth_corner.jpg"],
+      "method": "Use imagery for visible massing, roof type, front entry, siding, and window rhythm; compare gallery to render",
+      "uncertainty": "Photographs are not measured elevations or plans."
+    },
+    {
+      "provider": "Purdue University Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/nacc/",
+      "retrieved_date": "2026-10-25",
+      "source_date": "Not stated",
+      "source_crs": "Not spatial; official safety document",
+      "snapshot": "sources/purdue_aaarcc_emergency_plan_2026-10-25.html",
+      "method": "Use AAARCC-specific text for entry/exit and accessible approach narrative",
+      "uncertainty": "No dimensions; some page sections concern the adjacent NACC."
+    },
+    {
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/499",
+      "retrieved_date": "2026-10-23 in prior source record",
+      "source_date": "Facility history says relocation to 915 Fifth Street in 2016",
+      "source_crs": "Not spatial; institutional history",
+      "snapshot": "sources/prior_aaarcc_evidence.json",
+      "method": "Use for identity/history and room program corroboration",
+      "uncertainty": "Fresh page snapshot blocked by Cloudflare challenge; no dimensions."
+    }
+  ],
+  "verification": "reopen_verification.json",
+  "collection_export_verification": "collection_export_probe_verification.json",
+  "preview": "aaarcc_preview.png",
+  "unverified": [
+    "Surveyed total/eave/ridge/chimney heights and floor datums",
+    "Exact roof framing and internal floor plan positions",
+    "Exact structural wall footprint versus covered porch projection"
+  ],
+  "independent_grade": null,
+  "manifest_note": "Current shared manifest reports 411 objects; this revision has 433 objects (432 mesh + 1 font). Coordinator must refresh the shared object count."
+}

@@ -1,0 +1,181 @@
+{
+  "score": 8.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passes": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "Official Purdue GIS FID 926 names BLDG_ABBR AACC and Asian American Resource and Cultural Center at 915 Fifth Street. The saved polygon is in WGS 84 (EPSG:4326); after applying the project-local conversion and subtracting the GIS bounding-box center, its 20 unique ring vertices agree with the asset's exact GIS-perimeter plinth to 0.000000231 m maximum bidirectional nearest-vertex distance. This validates the GIS perimeter/plinth; it does not prove the different structural wall line, which remains uncertain."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.5,
+      "max_score": 2,
+      "assessment": "The master contains one Placement_asian_american_resource_and_cultural_center marker at [-335.25091552734375, 192.3804473876953, 0.0]; its campus XY differs from the manifest placement origin by [-1.37e-05, -2.7e-06] m, with zero rotation, unit scale, and the expected relative asset link. The GIS-derived local origin and polygon establish plan orientation/scale for the plinth. The interpreted house walls/porch and height dimensions were reconstructed from photos rather than measured plans, and the model's modifier-evaluated local bounds differ from manifest local bounds by up to 0.0300 m per axis."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "assessment": "Purdue exterior photos and facility-page snapshots show a two-storey house with a steep shingle gable roof; the model reflects those features. GIS NUM_LEVELS and CountOfFLO both say 1 floor(s), conflicting with the visible two stories, while Extrution=12 has no documented units. Model total height is 10.05 m and its eave/ridge/chimney heights remain photo estimates; no surveyed vertical datum or measured architectural plan was found."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "The official Purdue AAARCC gallery photos support white horizontal clapboard, multi-pane sash windows, front porch/entry, shingle gable roof, chimney, and the Fifth Street sign. The saved preview visibly includes these elements. Purdue Emergency Preparedness provides separate front, accessible, and rear kitchen exit descriptions; the builder models the Fifth Street entrance, ramp/accessible door, and rear door. Interior room furniture/partition positions are schematic, not judged as measured."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "A fresh Blender 4.5.15 reopen found 433 objects ({'MESH': 432, 'FONT': 1}); names and count match the current manifest. The master has one relative linked collection instance. There are 0 unmaterialed meshes, 0 external libraries, and 0 unpacked file-image dependencies. An independent collection-only export was saved and reopened with 433 objects and no cameras/lights. Source records, raw GIS, current facility/emergency-page snapshots, photos, builder, manifest snapshot, preview and probes are in this packet. The current asset hash is fb7a209d1e5c025757afe7bb66e94f498b0b07cf0a464baa693bd5a5c7e58cbb."
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/asian_american_resource_and_cultural_center.blend",
+    "asset_sha256": "fb7a209d1e5c025757afe7bb66e94f498b0b07cf0a464baa693bd5a5c7e58cbb",
+    "asset_bytes": 3788533,
+    "manifest_id": "asian_american_resource_and_cultural_center",
+    "expected_collection": "Asset_asian_american_resource_and_cultural_center",
+    "expected_scene": "Building_asian_american_resource_and_cultural_center",
+    "manifest_object_count": 433,
+    "manifest_names_and_count_match": true,
+    "fresh_asset_probe": {
+      "blender_version": "4.5.15 LTS",
+      "scene": "Building_asian_american_resource_and_cultural_center",
+      "render_engine": "CYCLES",
+      "collection": "Asset_asian_american_resource_and_cultural_center",
+      "object_count": 433,
+      "type_counts": {
+        "MESH": 432,
+        "FONT": 1
+      },
+      "bounds_local_m": [
+        [
+          -6.399097919464111,
+          6.495902061462402
+        ],
+        [
+          -5.435450077056885,
+          4.879549980163574
+        ],
+        [
+          0.0,
+          10.049999237060547
+        ]
+      ],
+      "manifest_local_bounds_m": [
+        [
+          -6.399097919464111,
+          6.4659013748168945
+        ],
+        [
+          -5.435450077056885,
+          4.884550094604492
+        ],
+        [
+          0.0,
+          10.049999237060547
+        ]
+      ],
+      "gis_to_plinth_nearest_avg_m": 1.0190651241228624e-07,
+      "gis_to_plinth_nearest_max_m": 2.31414088131066e-07,
+      "plinth_to_gis_nearest_avg_m": 1.0190651241228626e-07,
+      "plinth_to_gis_nearest_max_m": 2.31414088131066e-07,
+      "unmaterialed_mesh_count": 0,
+      "external_libraries": [],
+      "unpacked_file_images": [],
+      "modifier_count": 856
+    },
+    "source": {
+      "provider": "Purdue University GIS ArcGIS REST",
+      "feature_id": 926,
+      "abbreviation": "AACC",
+      "name": "Asian American Resource and Cultural Center",
+      "source_crs": "EPSG:4326 WGS 84",
+      "retrieved": "2026-10-25",
+      "source_date": "not supplied",
+      "ring_vertex_count_unique": 20,
+      "raw_snapshot": "sources/aaarcc_gis_feature_926.json",
+      "shape_area_m2": 167.87890625,
+      "shape_length_m": 58.00618611164944,
+      "num_levels": 1,
+      "count_of_floors": 1,
+      "extrution": 12
+    },
+    "footprint_method": "Transform WGS84 lon/lat using the exact campus local approximation documented in modular/AGENTS.md; center on transformed source feature bounding box; compare all ring vertices to the named GIS plinth mesh vertices. Bidirectional nearest-vertex check, not IoU.",
+    "placement": {
+      "manifest_origin_xy_m": [
+        -335.25090182338033,
+        192.38045006796483
+      ],
+      "master_marker": {
+        "name": "Placement_asian_american_resource_and_cultural_center",
+        "location": [
+          -335.25091552734375,
+          192.3804473876953,
+          0.0
+        ],
+        "rotation_degrees": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "instance_collection": "Asset_asian_american_resource_and_cultural_center",
+        "library_path": "//modular\\buildings\\asian_american_resource_and_cultural_center.blend"
+      },
+      "xy_delta_m": [
+        -1.370396341826563e-05,
+        -2.6802695174410474e-06
+      ],
+      "one_marker": true,
+      "relative_link_ok": true
+    },
+    "independent_collection_export": {
+      "probe_path": "independent_collection_export_probe.blend",
+      "opened_in": "4.5.15 LTS",
+      "collection": "Asset_asian_american_resource_and_cultural_center",
+      "object_count": 433,
+      "type_counts": {
+        "MESH": 432,
+        "FONT": 1
+      },
+      "camera_or_light_count": 0,
+      "external_libraries": []
+    },
+    "views": [
+      "views/current_preview.png"
+    ],
+    "source_snapshots": [
+      "sources/aaarcc_gis_feature_926.json",
+      "sources/prior_aaarcc_evidence.json",
+      "sources/purdue_aaarcc_our_facilities_2026-10-25.html",
+      "sources/purdue_aaarcc_emergency_plan_2026-10-25.html",
+      "sources/purdue_aaarcc_front1.jpg",
+      "sources/purdue_aaarcc_waldron_fifth_corner.jpg",
+      "sources/manifest_snapshot.json",
+      "sources/builder_snapshot.py",
+      "sources/build_evidence.json",
+      "sources/aaarcc_asset_validation.json",
+      "sources/manifest_targeted_evidence_snapshot.json"
+    ]
+  },
+  "findings": [
+    "GIS identity and outline are strongly supported, and the saved plinth reproduces the official polygon. The GIS source is a building-shape feature, not a structural wall survey; the builder interprets part of the footprint as porch/projection space, so the exact wall-versus-covered-porch line is not verified.",
+    "The model is correctly placed through the master marker and has a relative collection link. Manifest count/name contract matches the current 433-object asset. Modifier-evaluated overall bounds differ from recorded local bounds by at most a few centimeters; the difference may reflect bevel/solidify modifiers and warrants coordinator review only if strict bounds parity is required.",
+    "Exterior photos support two visible storeys and pitched roof form. The GIS one-level/12 extrusion attributes conflict with the photos and have no vertical-unit definition; model height and exact eave/ridge/chimney dimensions remain estimates.",
+    "The collection-only export reopened successfully in Blender 4.5.15 without cameras/lights or external libraries. The asset is authored and tested on the same Blender 4.5.15 line."
+  ],
+  "evaluator": "evaluate.py::evaluate",
+  "evaluated_at": "2026-10-25",
+  "scope": "Fresh independent assessment of the current rebuilt AAARCC asset, canonical builder inputs, source records, manifest and master placement. Source files and shared indexes were not modified."
+}

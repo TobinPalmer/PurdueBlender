@@ -1,0 +1,178 @@
+{
+  "building_id": "massing_3rd_and_west_ffa3d05",
+  "building_name": "3rd and West",
+  "assignment": "Rossen",
+  "asset_path": "modular/buildings/massing_3rd_and_west_ffa3d05.blend",
+  "builder_path": "modular/buildings/build_massing_3rd_and_west_ffa3d05.py",
+  "collection": "Asset_massing_3rd_and_west_ffa3d05",
+  "scene": "Building_massing_3rd_and_west_ffa3d05",
+  "retrieved_date": "2026-10-25",
+  "sources": [
+    {
+      "provider": "OpenStreetMap via Overpass API",
+      "url": "https://www.openstreetmap.org/way/1324500897",
+      "feature_id": 1324500897,
+      "feature_name": "3rd and West",
+      "tags": {
+        "building": "dormitory",
+        "name": "3rd and West"
+      },
+      "source_crs": "WGS84 / EPSG:4326",
+      "source_snapshot_timestamp": "2026-10-22T03:45:50Z",
+      "retrieved_date": "2026-10-25",
+      "source_date": "Individual way edit date unavailable in cached Overpass response.",
+      "snapshot": "sources/osm_way_1324500897_snapshot.json",
+      "method": "14 outer-ring nodes converted to campus coordinates with project documented local approximation; polygon area and footprint vertex coordinates computed from transformed ring.",
+      "supports": "Building identity, perimeter shape, orientation, and placement input.",
+      "uncertainty": "OSM is not a surveyed/official Purdue footprint. The available snapshot records the Overpass snapshot time, not an individual edit time."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://housing.purdue.edu/get-reconnected/2025/08/special-feature.html",
+      "feature_id": null,
+      "retrieved_date": "2026-10-25",
+      "source_date": "2025-08-06, per page URL/timeline and article publication.",
+      "source_crs": "Not applicable; institutional article and photo.",
+      "snapshot": "sources/purdue_residences_opening_2025.html",
+      "photo": "sources/purdue_3rd_west_exterior.png",
+      "method": "Article and official Purdue Research Foundation photo visually inspected.",
+      "supports": "Site at Third Street and McCormick Road; five stories; occupied/opened for 2025-26; visible brick accent and glazed courtyard-facing residential elevations.",
+      "uncertainty": "Single courtyard angle does not establish whole-building elevations or measured dimensions."
+    },
+    {
+      "provider": "Purdue Research Foundation / Discovery Park District",
+      "url": "https://discoveryparkdistrict.com/3rd-and-west-activation-project/",
+      "feature_id": null,
+      "retrieved_date": "2026-10-25",
+      "source_date": "Page does not state a publication date.",
+      "source_crs": "Not applicable; project page.",
+      "snapshot": "sources/discovery_park_3rd_and_west_project.html",
+      "method": "Project description reviewed.",
+      "supports": "Five-story residential community; 325,000 square feet; dual courtyard form; prominent entry plaza; campus residential use.",
+      "uncertainty": "Gross area is not a substitute for a measured footprint or building elevation."
+    },
+    {
+      "provider": "SCB Architecture",
+      "url": "https://scb.southleft.com/project/3rd-and-west/",
+      "feature_id": null,
+      "retrieved_date": "2026-10-25",
+      "source_date": "Page does not state a publication date.",
+      "source_crs": "Not applicable; architect project description.",
+      "snapshot": "sources/scb_page_text_capture.txt",
+      "method": "Web page text capture; see note in capture. A raw HTML copy could not be fetched from this host in the shell session.",
+      "supports": "Two landscaped courts (north public, south resident), transparent ground-floor amenity link, full-height corner study/amenity forms, patterned Norman brick and glazing, facade depth shifts, west setback.",
+      "uncertainty": "The model uses simplified proxies; the project page text does not provide measured facade dimensions or heights."
+    },
+    {
+      "provider": "American Campus Communities",
+      "url": "https://www.americancampus.com/news-and-insights/new-student-housing-opens-through-purdue-research-foundation-and-american-campus-communities",
+      "feature_id": null,
+      "retrieved_date": "2026-10-25",
+      "source_date": "Page does not state a publication date in the saved content.",
+      "source_crs": "Not applicable; project partner page.",
+      "snapshot": "sources/american_campus_3rd_and_west_project.html",
+      "method": "Project description reviewed.",
+      "supports": "Project identity, 325,000 square foot program, five floors, and two-courtyard design.",
+      "uncertainty": "Program and gross floor area do not certify exact geometry."
+    }
+  ],
+  "coordinate_method": {
+    "project_origin_lat_lon": [
+      40.4274,
+      -86.9137
+    ],
+    "formula_x_m": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "formula_y_m": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up; meters",
+    "projection_note": "Project compatibility approximation, not a surveyed CRS transformation."
+  },
+  "before": {
+    "source": "original manifest asset and asset probe",
+    "mesh_object_count": 1,
+    "vertex_count": 28,
+    "face_count": 38,
+    "bounds_world_m": [
+      [
+        -1417.2445068359375,
+        -1308.64453125
+      ],
+      [
+        -104.31097412109375,
+        -12.836223602294922
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ],
+    "evidence_file": "source_probe.json"
+  },
+  "after": {
+    "change": "Rebuilt the outline shell from OSM way 1324500897, split its elevations into five floors, added repeated glazing and frames, two brick end accents, and a flat parapet. Preview-only ground, camera and lights are not in the saved asset.",
+    "object_count": 19,
+    "structural_shell_bounds_world_m": [
+      [
+        -1417.2445068359375,
+        -1308.64453125
+      ],
+      [
+        -104.31097412109375,
+        -12.836223602294922
+      ],
+      [
+        0.0,
+        18.0
+      ]
+    ],
+    "full_model_bounds_world_m": [
+      [
+        -1417.5050048828125,
+        -1308.38427734375
+      ],
+      [
+        -104.5710678100586,
+        -12.575742721557617
+      ],
+      [
+        -0.4499998092651367,
+        18.900001525878906
+      ]
+    ],
+    "outer_footprint_area_m2": 5553.922048042907,
+    "source_node_count": 14,
+    "source_vertex_max_error_m": 5.993e-05,
+    "source_outline": "Matches all OSM ring vertices within float32 Blender mesh precision; model does not independently validate the OSM source.",
+    "story_count": 5,
+    "estimated_story_module_m": 3.6,
+    "estimated_eave_height_m": 18.0,
+    "estimated_parapet_m": 0.9,
+    "estimated_total_height_m": 18.9,
+    "evidence_files": [
+      "build_metrics.json",
+      "reopen_validation.json",
+      "reopen_validation.log",
+      "3rd_and_west_preview.png",
+      "linked_collection_probe.json"
+    ]
+  },
+  "validation": {
+    "saved_asset_reopened": true,
+    "expected_collection_present": true,
+    "scene_name_matches_manifest": true,
+    "all_scene_objects_belong_to_asset_collection": true,
+    "external_image_font_library_dependencies": false,
+    "structural_footprint_match": "PASS within 0.001 m; maximum node discrepancy 0.00005993 m from float32 mesh storage.",
+    "placement": "Direct world-coordinate massing; OSM transformed nodes are the placed input. No measured independent placement check.",
+    "orientation": "Rendered ring retains OSM sequence/orientation; no rotation edit was applied.",
+    "height": "Five story count supported; story module and overall height estimated.",
+    "validation_report": "reopen_validation.json",
+    "collection_library_link": "PASS: expected collection linked into a fresh empty Blender file with 19 mesh objects."
+  },
+  "unresolved_uncertainty": [
+    "No independent surveyed or official geospatial footprint for this 2025 building was located; horizontal agreement is with the cached OSM outline used to construct the asset.",
+    "Five stories are source-supported, while story height, parapet, and total elevation remain estimates.",
+    "Facade bay spacing, window sizes, brick accent positions and widths, material colors, roof equipment, and courtyard landscape geometry are illustrative and not measured.",
+    "The architect source identifies a north public courtyard and a south private courtyard; this asset models the building wings that bound them but does not include surveyed courtyard paving or planting."
+  ],
+  "independent_grade_status": "pending"
+}
