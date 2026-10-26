@@ -81,9 +81,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Yue-Kong Pao Hall | [massing_yue_kong_pao_hall_a3cb766.blend](modular/buildings/massing_yue_kong_pao_hall_a3cb766.blend) | Finished | [8.0/10](audit/yue_kong_pao_hall/independent_grade_r1.md) | — |
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
-## Unfinished buildings (141 total)
+## Unfinished buildings (140 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 14 buildings, Rohan 15 buildings, Tobin 2 buildings, Arjav 10 buildings, Brady 100 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 13 buildings, Rohan 15 buildings, Tobin 2 buildings, Arjav 10 buildings, Brady 100 buildings.
 
 ### Detailed models still in progress or awaiting a grade (17)
 
@@ -107,7 +107,7 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 
-### Buildings that still have only massing models (124)
+### Buildings that still have only massing models (123)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -116,7 +116,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rossen |
 | cary quadrangle northeast cqne | [`massing_cary_quadrangle_northeast_cqne_0a76fca.blend`](modular/buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend) | Rossen |
 | cary quadrangle northwest cqnw | [`massing_cary_quadrangle_northwest_cqnw_e8a861e.blend`](modular/buildings/massing_cary_quadrangle_northwest_cqnw_e8a861e.blend) | Rossen |
-| cary quadrangle south cqs | [`massing_cary_quadrangle_south_cqs_7ee2283.blend`](modular/buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend) | Rossen |
 | cary quadrangle west cqw | [`massing_cary_quadrangle_west_cqw_3d47a7d.blend`](modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend) | Rossen |
 | chaney hale hall of science chas | [`massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend`](modular/buildings/massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend) | Rossen |
 | chapel of the good shepherd | [`massing_chapel_of_the_good_shepherd_5d4d103.blend`](modular/buildings/massing_chapel_of_the_good_shepherd_5d4d103.blend) | Rossen |
