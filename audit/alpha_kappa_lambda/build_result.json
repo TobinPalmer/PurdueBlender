@@ -3,34 +3,51 @@
   "asset_path": "modular/buildings/massing_alpha_kappa_lambda_88dda6c.blend",
   "collection": "Asset_massing_alpha_kappa_lambda_88dda6c",
   "scene": "Building_massing_alpha_kappa_lambda_88dda6c",
-  "object_name": "Alpha Kappa Lambda",
-  "object_count_in_asset_collection": 1,
-  "mesh_vertices": 40,
-  "mesh_faces": 22,
-  "source_feature_id": 784,
-  "source_name": "Alpha Kappa Lambda",
-  "campus_coordinates": "X east / Y north / Z up; simple massing remains in campus coordinates",
-  "source_crs": "EPSG:4326 WGS84; transformed by README's local geographic approximation",
-  "gis_unique_ring_vertices": 20,
-  "gis_ring_area_m2_approx_local_projection": 475.9567299462142,
+  "object": "Alpha Kappa Lambda",
+  "source_geometry": "Indiana Statewide LiDAR Derived Building Footprints, objectid 409920, lidar year 2018; independently registered against Indiana current orthophoto and Purdue FID 784",
+  "official_identity": {
+    "fid": 784,
+    "name": "Alpha Kappa Lambda",
+    "abbreviation": "SOAKL",
+    "address": "417 Waldron St"
+  },
+  "coordinate_contract": "Campus X east, Y north, Z up; documented origin and local approximation; simple massing directly linked in campus coordinates",
+  "lidar_vertices": 14,
+  "lidar_ring_area_projected_m2_approx": 598.2668485950248,
   "bounds_world_m": [
     [
-      -403.5462341308594,
-      -379.7321472167969
+      -406.72833251953125,
+      -380.43951416015625
     ],
     [
-      131.33421325683594,
-      169.28305053710938
+      129.4871368408203,
+      178.4207305908203
     ],
     [
       0.0,
-      12.0
+      10.729999542236328
     ]
   ],
-  "provisional_height_m": 12.0,
-  "height_status": "uncertain estimate/provisional GIS Extrution=12 interpreted as meters for massing; source field units undocumented; NUM_LEVELS=1 conflicts with prior 11.4m model and does not independently establish vertical form",
-  "roof_status": "flat cap is a massing convention; roof form unverified",
-  "facade_status": "unverified; no facade openings, material claims, or entrance are modeled",
+  "estimated_eaves_m": 6.2,
+  "estimated_main_ridge_m": 9.1,
+  "height_status": "Unmeasured estimate: two visible above-grade levels and gabled attic/roof are apparent in the 2022 AKL chapter-house image; vertical scale inferred, not surveyed. GIS Extrution=12 has undocumented units.",
+  "roof_status": "Photo-backed charcoal pitched gables, rear/side lower roof masses, and a prominent brick chimney; roof segment boundaries and heights are estimated from 2022 exterior photo plus 2022-2025 aerial orthophoto.",
+  "facade_status": "Photo-backed red-brown masonry, light window/eave trim, repeated rectangular windows, and a front entrance/porch; exact openings and entrance position are approximate.",
   "preview": "audit/alpha_kappa_lambda/alpha_kappa_lambda_preview.png",
-  "external_dependencies": []
+  "external_dependencies": [],
+  "lidar_ring_perimeter_projected_m_approx": 149.2299187254755,
+  "footprint_comparison": {
+    "purdue_fid_784_area_projected_m2_approx": 476.20225473400507,
+    "purdue_fid_784_perimeter_projected_m_approx": 122.65383352416522,
+    "indiana_lidar_409920_area_projected_m2_approx": 598.2668485950248,
+    "indiana_lidar_409920_perimeter_projected_m_approx": 149.2299187254755,
+    "polygon_iou": 0.7573157007309463,
+    "reported_shape_field_conversion_factors_vs_native_ft_geometry": {
+      "purdue_length": 0.40081498070172616,
+      "purdue_area": 0.16051374589862227,
+      "indiana_lidar_length": 0.4007918011139589,
+      "indiana_lidar_area": 0.16051459078632518
+    },
+    "interpretation": "Both independent sources have nearly identical reported Shape__Area/Shape__Length-to-native-ft geometry ratios that differ from US survey foot conversion. Rings were measured in native EPSG:2968 with exact unit conversion; cause of source-field discrepancy is undocumented."
+  }
 }

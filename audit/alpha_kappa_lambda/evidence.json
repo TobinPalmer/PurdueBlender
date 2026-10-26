@@ -62,30 +62,81 @@
       "source_date": "Archive item covers Kappa Chapter history 1934-1996; index lists a 1967 Exponent item titled Fraternities build new houses on campus",
       "source_crs": "Not applicable",
       "measurement_method": "Catalog and indexed publication metadata only; not used as dimension evidence.",
-      "local_snapshot": "audit/alpha_kappa_lambda/sources/purdue_archived_publications_akl_index.html; archive item page returned HTTP 403 to local snapshot request",
-      "uncertainty": "Index metadata alone does not provide design drawings, current facade imagery, or a reliable construction date."
+      "uncertainty": "The index snapshot is local; the cited archive item page itself returned HTTP 403 when requested. Index metadata alone does not provide design drawings, current facade imagery, or a reliable construction date.",
+      "local_snapshots": [
+        "audit/alpha_kappa_lambda/sources/purdue_archived_publications_akl_index.html"
+      ]
+    },
+    {
+      "role": "independent roof-envelope footprint and registration",
+      "provider": "Indiana Geographic Information Office, Indiana Statewide LiDAR Derived Building Footprints FeatureServer layer 0",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "feature_id": 409920,
+      "source_name": "Building footprint at 417 Waldron St; Tippecanoe County",
+      "source_data_date": "LiDAR year 2018; service/layer metadata snapshot retrieved 2026-10-25",
+      "retrieved_at": "2026-10-25",
+      "source_crs": "Service geometry provided in EPSG:4326; source layer native spatial reference EPSG:2968, NAD83(HARN) Indiana West US Survey Foot",
+      "measurement_method": "Selected the independent footprint at the AKL address, projected its 14-vertex outer ring into native EPSG:2968 and converted US survey feet with 0.3048006096012192 m/ft. Registered against Purdue FID 784 and the Indiana current orthophoto. The LiDAR outline overlaps the Purdue outline at IoU 0.7573 and better encloses the visible roof in the orthophoto.",
+      "local_snapshots": [
+        "audit/alpha_kappa_lambda/sources/indiana_lidar_building_footprints_layer_metadata_2026-10-25.json",
+        "audit/alpha_kappa_lambda/sources/indiana_lidar_building_footprints_at_alpha_kappa_lambda_2026-10-25.json",
+        "audit/alpha_kappa_lambda/sources/indiana_lidar_building_footprints_at_alpha_kappa_lambda_2026-10-25_stateplane_2968.json"
+      ],
+      "uncertainty": "Independent registration supports the roof envelope but is a 2018 LiDAR-derived polygon, not a cadastral survey; source attribution and visible roof boundary do not establish wall/foundation dimensions."
+    },
+    {
+      "role": "independent current aerial roof registration",
+      "provider": "Indiana Geographic Information Office, Indiana Current Orthophotography ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "source_data_date": "Service describes current orthophotography from 2022\u20132025; export does not identify the exact capture date at this location",
+      "retrieved_at": "2026-10-25",
+      "source_crs": "Requested/exported geographic extent EPSG:4326; imagery service is dynamically projected",
+      "measurement_method": "Exported a 1200 by 900 pixel georeferenced view of the building and compared Purdue and Indiana LiDAR outlines against visible roof edges. Used only to verify plan registration and roof envelope, not to derive height.",
+      "local_snapshots": [
+        "audit/alpha_kappa_lambda/sources/indiana_current_orthoimagery_layer_metadata.json",
+        "audit/alpha_kappa_lambda/sources/indiana_current_orthophoto_417_waldron.png",
+        "audit/alpha_kappa_lambda/sources/indiana_current_orthophoto_export_info.json",
+        "audit/alpha_kappa_lambda/orthophoto_footprint_comparison.png",
+        "audit/alpha_kappa_lambda/footprint_registration.json"
+      ],
+      "uncertainty": "The exact image capture date is unavailable from the service export. Orthophoto pixels are not a vertical survey and do not resolve wall dimensions or facade details."
+    },
+    {
+      "role": "chapter-house identity and visible roof/facade details",
+      "provider": "Alpha Kappa Lambda national organization, InsideAKL March\u2013April 2022, Kappa Chapter House photo (printed page 9)",
+      "url": "https://akl.org/wp-content/uploads/sites/2017/2025/05/0046.-InsideAKL-March-April-2022.pdf",
+      "source_date": "March\u2013April 2022 issue",
+      "retrieved_at": "2026-10-25",
+      "source_crs": "Not applicable; unscaled oblique photograph",
+      "measurement_method": "The page caption identifies the pictured house as \u201cKappa Chapter House.\u201d Visible features support red-brown brick/masonry, white trim, repeated rectangular windows, multiple dark pitched gables, a tall brick chimney, and a modest covered entrance. Used for qualitative form/material evidence only.",
+      "uncertainty": "Photograph is not scaled or orthographic. Roof segment sizes, height, exact window/door locations and entrance geometry are approximated; some facade is occluded.",
+      "local_snapshots": [
+        "audit/alpha_kappa_lambda/sources/akl_inside_2022_kappa_chapter.pdf",
+        "audit/alpha_kappa_lambda/sources/akl_inside_2022_page-10.png"
+      ]
     }
   ],
   "geometry_edits": [
-    "Replaced the prior unverified shell with a single closed mesh extruded from Purdue GIS FID 784's official outer ring.",
-    "Kept the manifest stable ID, asset path, scene, exported collection, object name, identity transform, and campus-coordinate massing contract.",
-    "Updated footprint coordinates from the prior bounding box (-404.0717..-380.0109 E, 131.4603..170.5908 N) to the transformed official ring bounds (-403.5462..-379.7322 E, 131.3342..169.2831 N).",
-    "Used GIS Extrution=12 as a provisional 12 m extrusion solely for massing; this is not a measured height.",
-    "Removed unsupported facade/entrance details and used a flat top cap as a generic massing convention; roof form remains unverified."
+    "Rebuilt the one-piece massing shell from Indiana 2018 LiDAR footprint objectid 409920 (14-vertex roof envelope), independently registered against Indiana current orthophoto and compared with Purdue official FID 784.",
+    "Kept stable ID, manifest path, scene, collection, object name, identity transform and campus X-east/Y-north/Z-up coordinate contract.",
+    "Projected in native EPSG:2968, converting US survey feet with the exact US survey-foot factor. LiDAR roof polygon area is approximately 598.27 m\u00b2 and perimeter 149.23 m; Purdue FID 784 polygon is approximately 476.20 m\u00b2 and 122.65 m. IoU is 0.7573.",
+    "Reconciled the published Shape__Area/Shape__Length conflict: across both datasets the reported values divided by raw native ft\u00b2/ft values are approximately 0.160514/0.4008 rather than the expected 0.0929034/0.3048006. This repeated factor indicates an apparent source-field unit conversion inconsistency; the precise cause is undocumented. Geometry was computed from rings in the declared native CRS, not from those attribute values.",
+    "Added photo-backed, approximate gabled roof masses, chimney, brick-colored walls, light window trim, rectangular window rhythm and a shallow entrance canopy. Their dimensions and exact placement are not surveyed."
   ],
   "uncertainties": [
-    "Height: provisional 12 m interpretation of GIS Extrution=12; units undocumented. NUM_LEVELS=1 is insufficient to verify height or stories.",
-    "Roof: unknown; flat cap is only a massing convention.",
-    "Facade, openings, materials, and entrance: unverified; no current source image or drawing was identified.",
-    "Area: official Shape__Area differs from area of source ring projected under the documented approximation; discrepancy not resolved.",
-    "Historical chapter records and photos are not evidence that the present shell is architecturally unchanged."
+    "Height: not measured. Eaves and ridges are illustrative estimates; the photo establishes multi-level appearance but offers no scale. Purdue Extrution=12 has undocumented units and is not used as a verified height.",
+    "Roof: 2022 captioned chapter-house photo supports several pitched gables and a tall brick chimney. Exact ridge positions and elevations are estimated; orthophoto helps only with plan roof envelope.",
+    "Facade/entrance: 2022 source supports brick/masonry appearance, white trim, windows and a modest covered entrance. Exact opening dimensions, locations and entrance orientation are approximate from an unscaled oblique image.",
+    "Footprint: independent 2018 LiDAR outline overlaps Purdue FID 784 at IoU 0.7573 and fits the visible roof outline better. It is a roof-derived outline, not a surveyed foundation perimeter.",
+    "Published Shape__Area/Shape__Length attributes in both GIS layers exhibit a nearly matching nonstandard conversion factor relative to native ft\u00b2/ft geometry. This is documented as a source attribute inconsistency; the responsible processing step is unknown."
   ],
   "validation": {
     "preview": "audit/alpha_kappa_lambda/alpha_kappa_lambda_preview.png",
     "build_result": "audit/alpha_kappa_lambda/build_result.json",
     "portability_report": "audit/alpha_kappa_lambda/portability_check.json",
     "reopen_and_collection_link_test": "PASS: reopened saved asset; expected scene and collection found; one mesh linked from the saved blend into a fresh empty scene; object identity transform; no modifiers or unpacked external images.",
-    "height_and_facade": "Explicitly unverified/provisional; see uncertainty entries.",
-    "ready_for_independent_grading": true
+    "height_and_facade": "Photo-supported qualitative gables/chimney/brick/windows/covered entrance. Scale, exact segmentation and opening positions remain explicit estimates; see uncertainty entries.",
+    "ready_for_independent_grading": true,
+    "registration_and_area_perimeter_reconciliation": "PASS: both source polygons measured from native EPSG:2968 coordinates in US survey feet using exact conversion; independent roof-outline comparison and orthophoto overlay saved in footprint_registration.json and orthophoto_footprint_comparison.png."
   }
 }
