@@ -1,0 +1,82 @@
+{
+  "building": "Eleanor B. Shreve Residence Hall",
+  "asset_id": "massing_shreve_hall_06d270a",
+  "status": "Detailed asset updated; pending independent grade",
+  "source": {
+    "provider": "Purdue University official campus building footprint service",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 258,
+    "building_code": "SHRV",
+    "source_name": "Eleanor B. Shreve Residence Hall",
+    "retrieval_date": "2026-10-22 (repository-preserved source snapshot)",
+    "source_date": "Not supplied in the service snapshot",
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "source_record": "source_feature_258_raw.json",
+    "reference_status": "Official campus map polygon; not a certified survey",
+    "secondary_visual_references": [
+      {
+        "url": "https://housing.purdue.edu/my-housing/options/residence-halls/shreve.html",
+        "use": "Building identity, use and opening year; no measured height or facade dimensions inferred",
+        "provider": "Purdue University Residences"
+      }
+    ]
+  },
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not surveyed CRS"
+  },
+  "measurements": {
+    "method": "Compared the structural wall polygon built from the official feature ring using the repository transform; facade details and entrance are excluded from plan comparison",
+    "official_footprint_aabb_xy_m": [
+      -998.2932543871061,
+      -104.98465302596969,
+      -912.1584503718744,
+      -30.64080112900683
+    ],
+    "official_minimum_rotated_rectangle": {
+      "width_m": 85.7325991350308,
+      "depth_m": 73.87196309042453,
+      "angle_degrees_east_ccw": 0.3182484673564528
+    },
+    "official_polygon_area_m2": 7945.59375,
+    "before_asset_aabb_xy_m": [
+      -998.5006713867188,
+      -105.4435806274414,
+      -912.1380615234375,
+      -30.791391372680664
+    ],
+    "before_asset_height_m": [
+      0.0,
+      16.0
+    ],
+    "after_structural_shell": "Built from all distinct official source-ring vertices; intended to match official footprint within coordinate conversion precision",
+    "after_modeled_height_m": 29.0,
+    "position_status": "Structural footprint set to the official map polygon coordinates; underlying source positional uncertainty is unpublished",
+    "plan_dimension_status": "Footprint matches official source polygon; polygon is not a survey",
+    "orientation_status": "Structural shell follows official polygon vertex orientation",
+    "height_status": "estimated; no verified elevation drawing or measured height",
+    "official_num_levels_attribute": 10,
+    "official_extrution_attribute": 42
+  },
+  "geometry_edits": [
+    "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
+    "Added facade materials, repeated window bays, window surrounds, floor bands, plinth and roof coping.",
+    "Added an entrance marker oriented toward west; exact facade detail placement remains approximate."
+  ],
+  "uncertainties": [
+    "The official map polygon is not a certified survey and has no published position/dimension uncertainty.",
+    "Height has not been checked against elevation drawings or on-site measurement; GIS level/Extrution fields are not treated as height measurements.",
+    "GIS levels attribute 10; height estimate 29 m is not surveyed",
+    "Facade details, window spacing and entrance position are approximate and need independent visual review.",
+    "No independent grader has reviewed this revision."
+  ],
+  "artifacts": {
+    "build_script": "build_detail.py",
+    "build_config": "build_config.json",
+    "raw_source": "source_feature_258_raw.json"
+  }
+}
