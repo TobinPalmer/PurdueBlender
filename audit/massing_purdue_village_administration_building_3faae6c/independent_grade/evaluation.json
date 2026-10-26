@@ -1,0 +1,120 @@
+{
+  "building_id": "massing_purdue_village_administration_building_3faae6c",
+  "evaluator": "independent_grade/evaluate_pvab.py",
+  "evaluated_asset": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_purdue_village_administration_building_3faae6c.blend",
+  "score": 6,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 2,
+      "max_score": 2,
+      "status": "verified",
+      "evidence": [
+        "Reopened mesh is named Purdue Village Administration Building; official GIS feature FID 524 is labeled Purdue Village Administration Building / PVAB.",
+        "Independent OSM way 283274993 snapshot is tagged with the same building name (match=True).",
+        "All 14 official source ring vertices match the evaluated bottom ring within 0.000034 m; GIS area recorded as 2481.327 m\u00b2."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2,
+      "max_score": 2,
+      "status": "verified against project GIS transform",
+      "evidence": [
+        "Evaluated world-space bounds are [[-904.51171875, -834.8258056640625], [-832.55859375, -761.7974853515625], [0.0, 4.199999809265137]] m; dimensions are [69.686, 70.761, 4.2] m.",
+        "Campus coordinates and orientation derive directly from the named official EPSG:4326 ring using the documented project local approximation; mesh object transform is identity.",
+        "Reopen check reports 3.3813577529347136e-05 m maximum vertex error."
+      ],
+      "findings": [
+        "The project conversion is approximate local tangent-plane math, not survey-grade georeferencing."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0,
+      "max_score": 2,
+      "status": "unverified",
+      "evidence": [
+        "Saved Z extent is [0.0, 4.199999809265137] m, but 4.2 m is explicitly tagged as an estimate.",
+        "GIS reports NUM_LEVELS=0 and Extrution=0; both are unpopulated/zero.",
+        "The flat cap is described as generic; no roof profile or floor count source was found in the supplied source records."
+      ],
+      "findings": [
+        "No evidence verifies model height, floor count, or roof form; estimated height and generic cap cannot earn evidence-backed points."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0,
+      "max_score": 2,
+      "status": "unverified",
+      "evidence": [
+        "The reopened asset is a plain single-material shell with no facade or entrance geometry.",
+        "The attached archival record supports historical identity and use, but expressly lacks facade/elevation/roof description."
+      ],
+      "findings": [
+        "No source-backed facade, entrance, or distinctive architectural feature is modeled or documented."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2,
+      "max_score": 2,
+      "status": "verified",
+      "evidence": [
+        "Saved asset reopens; expected export collection Asset_massing_purdue_village_administration_building_3faae6c contains 1 object(s).",
+        "Required evidence files present: {'build_log.txt': True, 'evidence_record.json': True, 'preview_oblique.png': True, 'preview_top.png': True, 'reopen_validation.json': True, 'sources/arcgis_fid524_raw.json': True, 'sources/osm_way_283274993_raw.json': True, 'sources/purdue_archives_record_snapshot.json': True}.",
+        "Asset has no external file-path dependencies (0 absolute external paths found).",
+        "Builder, evidence record, raw source snapshots, reopen validation, and two preview renders are present."
+      ],
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "reopened": true,
+    "evaluated_vertex_count": 28,
+    "evaluated_bounds_m": [
+      [
+        -904.51171875,
+        -834.8258056640625
+      ],
+      [
+        -832.55859375,
+        -761.7974853515625
+      ],
+      [
+        0.0,
+        4.199999809265137
+      ]
+    ],
+    "evaluated_dimensions_m": [
+      69.6859130859375,
+      70.7611083984375,
+      4.199999809265137
+    ],
+    "official_gis_fid": 524,
+    "official_gis_name": "Purdue Village Administration Building",
+    "official_ring_vertex_count": 14,
+    "maximum_source_vertex_error_m": 3.3813577529347136e-05,
+    "external_absolute_file_paths": [],
+    "evidence_files_present": {
+      "build_log.txt": true,
+      "evidence_record.json": true,
+      "preview_oblique.png": true,
+      "preview_top.png": true,
+      "reopen_validation.json": true,
+      "sources/arcgis_fid524_raw.json": true,
+      "sources/osm_way_283274993_raw.json": true,
+      "sources/purdue_archives_record_snapshot.json": true
+    }
+  },
+  "findings": [
+    "The project conversion is approximate local tangent-plane math, not survey-grade georeferencing.",
+    "No evidence verifies model height, floor count, or roof form; estimated height and generic cap cannot earn evidence-backed points.",
+    "No source-backed facade, entrance, or distinctive architectural feature is modeled or documented."
+  ]
+}
