@@ -1,7 +1,7 @@
 {
   "building": "Frances M. Shealy Residence Hall",
   "asset_id": "massing_shealy_frances_m_residence_hall_a210e50",
-  "status": "Source-footprint shell and Shealy-specific Tudor entrance detailing updated; independent grade pending",
+  "status": "Finished for handoff: independent grade 8.2/10; master-blend integration pending",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -18,6 +18,17 @@
         "provider": "Purdue University Archives and Special Collections",
         "use": "Historical description identifies English Tudor design, brick and Indiana limestone construction, and a lion holding a shield above the front entrance; exact form and dimensions are not supplied.",
         "url": "https://archives.lib.purdue.edu/agents/corporate_entities/579"
+      },
+      {
+        "provider": "Purdue University Libraries, Karnes Archives and Special Collections",
+        "use": "Direct exterior photo evidence for the three-wing composition, slate gabled roof and dormers, chimneys, brick and limestone facade, grouped windows, and monumental entrance gable. Not georeferenced and supplies no measured dimensions.",
+        "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/1155",
+        "record_id": "CONTENTdm pbuildings:1155; Purdue ID PPBUC01815; UNS file Shealy2.jpg",
+        "source_date": "2004-06-14",
+        "retrieval_date": "2026-10-26",
+        "raw_metadata": "archive_item_1155.json",
+        "raw_image": "source_exterior_2004_archive.jpg",
+        "observation_record": "source_exterior_reference_observation.json"
       }
     ]
   },
@@ -69,6 +80,15 @@
       "min_z": 0.0,
       "max_z": 15.199999809265137
     },
+    "photo_informed_asset_bounds_including_roof_details_m": {
+      "min_x": -629.0634765625,
+      "max_x": -561.4959716796875,
+      "min_y": -169.56663513183594,
+      "max_y": -134.16835021972656,
+      "min_z": 0.0,
+      "max_z": 20.399999618530273,
+      "note": "15.2 m remains the estimated wall height; the 20.4 m total mesh peak includes approximate roof, entrance gable and chimney geometry and is not a measured building height."
+    },
     "after_shell_source_match": {
       "method": "Rebuilt from the 56 distinct projected vertices in official GIS feature 277; decorative entrance details are excluded from structural plan comparison.",
       "position_status": "GIS polygon coordinates applied directly in the project-local approximation; source positional uncertainty is unpublished.",
@@ -79,30 +99,39 @@
       "object_name": "Shealy (Frances M.) Residence Hall",
       "asset_id": "massing_shealy_frances_m_residence_hall_a210e50",
       "exported_collection_object_count": 1,
-      "mesh_vertex_count": 6848,
-      "mesh_face_count": 4859,
+      "mesh_vertex_count": 7188,
+      "mesh_face_count": 4981,
       "saved_asset_reopened": true
     }
   },
   "geometry_edits": [
     "Rebuilt the structural wall shell from the official source polygon while preserving the asset object, collection, scene, ID and file path.",
+    "Replaced the flat roof cap with sloped roof planes and a smaller raised inner ridge surface; roof plan, spans and rise are approximate because the archive photo is unmeasured.",
+    "Added an archive-photo-informed entrance gable, three smaller gabled dormers and two raised chimneys; exact placement and dimensions are estimates.",
     "Added repeated brick-and-limestone window surrounds with divided-light muntins consistent with the documented Tudor/limestone vocabulary.",
+    "Added shallow projecting bay windows at selected positions on the principal facade, based on visible stacked bays in the 2004 archive image.",
     "Added a limestone entrance portal and a schematic low-relief lion-and-shield motif based on the Purdue Archives description.",
-    "Kept the entry location and sculpture dimensions approximate because the source does not provide an elevation drawing or measured photo."
+    "Moved the schematic entrance marker and lion-and-shield relief beneath the large front-facing gable; entry location and relief dimensions remain approximate."
   ],
   "uncertainties": [
     "The official campus map polygon is not a certified survey and has no published positional or dimensional uncertainty.",
     "The 15.2 m height remains an estimate; the GIS level count is not a measured height.",
-    "The archive describes Tudor design, brick and Indiana limestone, and the lion-and-shield feature, but does not provide measured roof, window, entrance or sculptural geometry.",
-    "The entrance location, facade bay rhythm, divided-light pattern and lion relief are approximate and require independent visual review.",
-    "No independent grader has reviewed this revision."
+    "The archive describes Tudor design, brick and Indiana limestone, and the lion-and-shield feature; its 2004 photo supports broad roof and facade form but is not a measured elevation or georeferenced source.",
+    "The 20.4 m mesh peak includes approximate roof, gable and chimney geometry; overall elevation, roof plan, entrance position, facade bay rhythm, divided-light pattern and lion relief remain estimates.",
+    "The 2026-10-26 independent grade passed at 8.2/10; master-blend integration remains pending. Roof silhouette, gable geometry, bay dimensions, portal, relief and absolute building height remain approximate."
   ],
   "artifacts": {
-    "build_script": "build_detail.py",
+    "build_script": "../../modular/buildings/build_massing_shealy_frances_m_residence_hall_a210e50.py",
     "build_config": "build_config.json",
     "raw_source": "source_feature_277_raw.json",
     "preview_render_script": "render_preview.py",
     "preview": "preview_detail.png",
-    "entrance_preview": "preview_entrance.png"
+    "entrance_preview": "preview_entrance.png",
+    "roof_plan_preview": "preview_roof_plan.png",
+    "archive_photo": "source_exterior_2004_archive.jpg",
+    "archive_observations": "source_exterior_reference_observation.json",
+    "independent_grade": "independent_grade_codex_r2/result.json",
+    "independent_evaluator": "independent_grade_codex_r2/evaluate.py",
+    "independent_grade_score": 8.2
   }
 }
