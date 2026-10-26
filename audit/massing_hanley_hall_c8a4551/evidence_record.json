@@ -1,0 +1,110 @@
+{
+  "asset_id": "massing_hanley_hall_c8a4551",
+  "assignment": "Rossen",
+  "asset_path": "modular/buildings/massing_hanley_hall_c8a4551.blend",
+  "collection": "Asset_massing_hanley_hall_c8a4551",
+  "scene": "Building_massing_hanley_hall_c8a4551",
+  "identity": {
+    "manifest_source_object": "Hanley Hall",
+    "matched_records": [
+      "Purdue GIS OBJECTID 310 / HNLY: Bill and Sally Hanley Hall",
+      "OSM way 283275000: Hanley Hall"
+    ],
+    "confidence": "Building identity is high. The evidence conflict is now interpreted as different outlines: Purdue GIS OBJECTID 310 for walls and OSM way 283275000 for roof/eave overhang. A current georeferenced Indiana orthophoto overlay supports this: OSM perimeter lies outside the Purdue GIS perimeter along most visible edges and traces the larger roof outline. Residual source semantics and survey uncertainty remain."
+  },
+  "provenance": "See sources/source_catalog.json for raw provider snapshots, dates, CRS, methods, metrics, and limitations. Added the Indiana 2022\u20132025 statewide orthophoto export and georeferenced overlay used to distinguish the wall ring from the roof/eave ring.",
+  "before": {
+    "object_count": 1,
+    "source_geometry": "single 56-vertex extruded shell",
+    "height_m": 16.0,
+    "bounds_xyz_m": [
+      [
+        -805.810974,
+        -752.778931
+      ],
+      [
+        -318.551544,
+        -278.4328
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ]
+  },
+  "after": {
+    "object_count": 1,
+    "collection_object": "Hanley Hall",
+    "mesh_vertices": 3138,
+    "mesh_faces": 2320,
+    "overall_bounds_xyz_m": [
+      [
+        -805.810974,
+        -752.778931
+      ],
+      [
+        -318.551544,
+        -278.4328
+      ],
+      [
+        0.0,
+        16.08
+      ]
+    ],
+    "structural_shell_footprint": "Purdue GIS OBJECTID 310 polygon; 96 vertices. Reopened model ring max coordinate error 0.000033 m; mesh/source IoU 0.999999.",
+    "roof_eave_outline": "OSM way 283275000 roof/eave perimeter; 29 vertices. Reopened model ring max coordinate error 0.000031 m; mesh/source IoU 0.999999.",
+    "modifiers": 0,
+    "external_images": 0,
+    "linked_libraries": 0,
+    "saved_scene_objects": [
+      "Hanley Hall"
+    ]
+  },
+  "placement_and_plan": {
+    "source": "Official Purdue University campus GIS OBJECTID 310 (HNLY) for structural wall line; OSM way 283275000 for outer roof/eave line; Indiana Current Orthophotography crop for visual relationship.",
+    "method": "Transformed EPSG:4326 source rings with project local approximation X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040. The GIS wall polygon is used for vertical shell. The OSM ring is retained only as the larger projected roof/eave boundary.",
+    "footprint_comparison": "Purdue GIS wall polygon area 1184.16 m2; OSM/eave polygon area 1455.00 m2; intersection-over-union 0.8085; boundary Hausdorff 3.55 m; centroid offset 1.24 m. Aerial overlay shows OSM mostly on outer eaves, GIS on the inset wall edge. The official GIS 34,064 sq-ft attribute and three-floor count make GIS the more plausible wall ring, but are not a surveyed wall-line proof.",
+    "orientation": "Kept official GIS orientation; location is in campus world coordinates and footprint center aligns with both source polygons. Current shell does not apply rotation or arbitrary rescale.",
+    "residual_uncertainty": "Exact survey date and wall/eave semantics are not supplied for either polygon. Orthophoto is statewide 2022\u20132025; exact tile date unavailable. Some eaves, shadows and trees obscure edges."
+  },
+  "vertical_geometry": {
+    "floor_count": "Three floors per Purdue Office of Emergency Preparedness plan, revision 2026-03-31.",
+    "height_m": 16.08,
+    "wall_eave_height_m": 14.8,
+    "height_status": "Estimated. Official floor count plus three-floor story structure support floor organization only; no measured elevation, section or roof survey found. Total ridge and eave levels remain estimates.",
+    "roof": "Shallow hipped roof massing spans the larger OSM roof/eave outline and rises to the estimated 16.08 m inner ridge plane. Current orthophoto shows multiple sloping roof planes and the HHS photograph shows a dark projecting eave. Roof pitch, ridge divisions and exact elevations remain generalized."
+  },
+  "facade": {
+    "materials_and_features": [
+      "red-brown brick",
+      "blue-gray ground-level glazing",
+      "repeated upper-story windows",
+      "light horizontal stone bands",
+      "dark projecting hipped roof edge",
+      "glazed entry bay on probable playground-facing side"
+    ],
+    "source": "Purdue HHS photograph captioned MCDLS children play outside of Hanley Hall (published 2026-09-24); Indiana 2022\u20132025 current orthophoto crop for roof layout and courtyard/playground context.",
+    "status": "Brick, ground glazing, upper windows and roof edge are visible in the Purdue photo. The current orthophoto supports the broad roof-plan shape. The north/playground-side entry bay location is inferred from photo/playground context, not georeferenced; exact entrance placement, roof facets and all unphotographed elevations remain uncertain."
+  },
+  "edits": [
+    "Replaced the OSM-sized wall extrusion with Purdue GIS OBJECTID 310 structural wall footprint after overlay review showed the OSM ring tracking the larger eave/roof projection outside the GIS wall line.",
+    "Retained OSM way 283275000 as the outer roof/eave plan outline, consistent with current aerial imagery.",
+    "Changed the roof from a flat cap to a shallow hipped roof massing with a modest inset high plane; pitch and ridge height remain estimates because no elevation/section was found.",
+    "Added a contextual glazed entry bay on the probable playground-facing north side using the visible ground-floor glazing/entrance in the Purdue HHS photograph and adjacent playground context. The photo is not georeferenced, so exact door side remains uncertain.",
+    "Kept the three-floor arrangement from Purdue OEP; preserved brick, glazing, windows and light facade bands from the Purdue photo."
+  ],
+  "validation": {
+    "reopened": "Passed: saved .blend reopened directly in Blender 5.2; one expected scene, one expected collection, one mesh object. Saved file contains no startup cube, camera, light or other stray scene object.",
+    "source_shell_check": "Passed: all 96 Purdue GIS OBJECTID 310 wall vertices present with max coordinate error 0.000033 m. Mesh/source wall polygon IoU 0.999999.",
+    "roof_eave_check": "Passed: all 29 OSM eave outline vertices present with max coordinate error 0.000031 m. Mesh/source roof-plan IoU 0.999999.",
+    "footprint_reconciliation": "Purdue GIS is now modeled as wall shell; OSM is modeled as larger roof/eave projection. Source outline differences preserved: GIS 1184.16 m2, OSM 1455.00 m2, wall/eave IoU 0.80849, centroid offset 1.235 m. The current orthophoto overlay supports the interpretation but is not a survey.",
+    "portability": "Passed: expected collection exports a single joined mesh; no modifiers, external images, or linked libraries. The saved file has one scene containing only Hanley Hall.",
+    "render": "Rendered and inspected audit/massing_hanley_hall_c8a4551/renders/hanley_hall_facade.png and hanley_entry_review.png. Source overlay: review/hanley_current_aerial_footprint_overlay.jpg.",
+    "unresolved": [
+      "Overall height/eave and ridge heights and roof pitch remain estimates.",
+      "Entrance is inferred on probable playground-facing side because source photo camera location is not georeferenced; no entrance drawing was available.",
+      "Indiana current imagery service covers 2022\u20132025 but does not expose exact acquisition date for this tile."
+    ]
+  },
+  "independent_grade": "R2 review scored 6.0/10. This repair responds to the footprint conflict by modeling GIS as walls and OSM as roof/eave projection, adds a contextual entrance and hipped roof with remaining uncertainties documented. Fresh independent review requested."
+}

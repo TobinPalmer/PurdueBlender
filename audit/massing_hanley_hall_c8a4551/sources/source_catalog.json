@@ -1,0 +1,74 @@
+{
+  "asset_id": "massing_hanley_hall_c8a4551",
+  "retrieved_utc": "2026-10-26",
+  "identity_note": "The stable massing target Hanley Hall / HNLY is matched to Purdue's official Bill and Sally Hanley Hall GIS feature (OBJECTID 310, address 1202 W. State Street) and OSM way 283275000. Purdue's emergency plan uses 1202 Mitch Daniels Blvd, a current street-name address for the same location.",
+  "sources": [
+    {
+      "file": "purdue_campus_gis_hanley.json",
+      "provider": "Purdue University campus GIS",
+      "url": "https://gis.purdue.edu/arcgis/rest/services/Campus/Buildings/FeatureServer/0/query?where=ABBR%3D%27HNLY%27&outFields=*&returnGeometry=true&f=json",
+      "feature_id": 310,
+      "source_date": "GIS response has no edit timestamp; attribute says built 2011",
+      "source_crs": "EPSG:4326 (WGS 84)",
+      "method": "Retained raw polygon response; compared transformed boundary with the supplied massing mesh. Projected vertices with project approximate conversion X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040.",
+      "uncertainty": "Approximate local tangent conversion is not surveyed. GIS outline appears to be a campus building polygon and is consistent with OSM; no architectural wall plan was found."
+    },
+    {
+      "file": "osm_way_283275000_raw.json",
+      "provider": "OpenStreetMap via Overpass snapshot",
+      "url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%3Bway(283275000)%3Bout%20body%3B%3E%3Bout%20skel%20qt%3B",
+      "feature_id": "way 283275000",
+      "source_date": "2026-10-22T03:45:50Z (base timestamp in the supplied raw snapshot)",
+      "source_crs": "EPSG:4326 (WGS 84)",
+      "method": "The 28-vertex shell footprint preserves the supplied asset's source ring. Compared after the project conversion, its mean nearest-vertex distance to transformed OSM way vertices is 0.0044 m and maximum is 0.1219 m.",
+      "uncertainty": "OSM geometry is not a survey; a footprint does not establish wall inset, roof overhang, facade, or height. The official Purdue HNLY GIS polygon is materially smaller than this OSM/supplied shell; see evidence_record.json for directed boundary differences."
+    },
+    {
+      "file": "purdue_hanley_emergency_plan.html",
+      "provider": "Purdue Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/hnly/",
+      "feature_id": "HNLY building emergency plan",
+      "source_date": "Revision 2026-03-31",
+      "source_crs": "Not applicable",
+      "method": "Official page gives building code/name, 1202 Mitch Daniels Blvd, three floors, and room use by floor.",
+      "uncertainty": "Floor count is supported; vertical elevations and roof shape are not specified."
+    },
+    {
+      "file": "purdue_hhs_hanley_article.html",
+      "provider": "Purdue College of Health and Human Sciences",
+      "url": "https://www.purdue.edu/hhs/news/2026/09/purdue-miller-child-development-lab-school-celebrates-100-years-of-growth-teaching-and-research-in-early-childhood-education/",
+      "feature_id": "Official article and embedded Hanley Hall photograph",
+      "source_date": "2026-09-24",
+      "source_crs": "Not applicable",
+      "method": "Confirms the lab school moved into Hanley Hall at its completion in 2011; contextual source for identity and occupancy.",
+      "uncertainty": "Article's photo does not give a georeferenced camera location or dimensions."
+    },
+    {
+      "file": "purdue_hanley_playground_photo.jpg",
+      "provider": "Purdue College of Health and Human Sciences / Miller Child Development Lab School",
+      "url": "https://www.purdue.edu/hhs/news/wp-content/uploads/2026/09/Hanley-Hall-kids-playing.jpg",
+      "feature_id": "Photograph captioned 'MCDLS children play outside of Hanley Hall'",
+      "source_date": "Published 2026-09-24; exposure date not specified",
+      "source_crs": "Not applicable",
+      "method": "Visual evidence for brick walls, extensive ground-level glazing, repeated upper-story windows, and dark projecting roof edge.",
+      "uncertainty": "Frontage and view direction are not georeferenced; facade details were generalized around the verified footprint."
+    },
+    {
+      "file": "indiana_current_aerial_hanley.jpg",
+      "provider": "Indiana Geographic Information Office, Current Orthophotography ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer/exportImage?bbox=-86.9242,40.4240,-86.9217,40.4255&bboxSR=4326&size=1800,1200&imageSR=4326&format=jpg&f=image",
+      "source_date": "Service description covers 2022\u20132025 statewide orthophotography; exact tile acquisition date not exposed for this export.",
+      "retrieved_utc": "2026-10-26",
+      "source_crs": "EPSG:4326 export; source service advertises Web Mercator (WKID 3857).",
+      "measurement_method": "1800 x 1200 crop exported for bbox -86.9242,40.4240,-86.9217,40.4255. Georeferenced GIS/OSM outline overlay reviewed in audit/massing_hanley_hall_c8a4551/review/hanley_current_aerial_footprint_overlay.jpg. Orthophoto used for visual roof-eave/wall relationship and playground context only, not metric survey.",
+      "uncertainty": "Image pixels are resampled and trees/shadows obscure some boundary segments. It visually supports Purdue GIS as an inset wall line and OSM as the broader eave/roof outline, but the distinction is interpretive and not a surveyed wall measurement.",
+      "metadata_file": "indiana_imagery_service_metadata.json"
+    }
+  ],
+  "footprint_source_resolution": {
+    "gis": "Purdue GIS OBJECTID 310 is retained as the structural wall footprint: transformed ring area 1184.16 m2. Its boundary is inset from OSM along most visible edges in the current orthophoto.",
+    "osm": "OSM way 283275000 is retained as the outer roof/eave outline: transformed area 1455.00 m2. In the current aerial overlay its larger perimeter follows the roof projection beyond the GIS wall line.",
+    "cross_check": "Purdue GIS attributes report 34,064 square feet and the official 2026 OEP plan reports three floors. GIS footprint x 3 = approx. 38,234 sq ft gross envelope, 12.2% above the stated square footage; OSM footprint x 3 = approx. 46,986 sq ft, 37.9% above. This is only a plausibility check because area basis and atrium/void treatment are not specified.",
+    "uncertainty": "The current orthophoto is from a statewide 2022\u20132025 service but its exact acquisition date is unknown; source polygons have no documented wall-versus-eave semantics. GIS-as-wall / OSM-as-eave is the best supported interpretation, not a surveyed finding."
+  }
+}

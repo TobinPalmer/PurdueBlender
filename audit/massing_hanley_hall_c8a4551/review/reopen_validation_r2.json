@@ -1,0 +1,104 @@
+{
+  "asset": "modular/buildings/massing_hanley_hall_c8a4551.blend",
+  "asset_reopened_directly": true,
+  "scene": "Building_massing_hanley_hall_c8a4551",
+  "collection": "Asset_massing_hanley_hall_c8a4551",
+  "export_objects": [
+    "Hanley Hall"
+  ],
+  "object_count": 1,
+  "mesh_vertices": 3138,
+  "mesh_faces": 2320,
+  "world_bounds_xyz_m": [
+    [
+      -805.8109741210938,
+      -752.7789306640625
+    ],
+    [
+      -318.5515441894531,
+      -278.43280029296875
+    ],
+    [
+      0.0,
+      16.079999923706055
+    ]
+  ],
+  "mesh_modifiers": [],
+  "linked_libraries": [],
+  "unpacked_external_images": [],
+  "wall_footprint": {
+    "source": "Purdue Campus GIS OBJECTID 310 / HNLY",
+    "source_vertices": 96,
+    "source_area_m2": 1184.1595241835507,
+    "source_bounds_xy_m": [
+      -803.7927041412083,
+      -317.46099044831,
+      -755.5219779118614,
+      -280.36823459436846
+    ],
+    "mesh_matched_vertices": 96,
+    "max_source_to_mesh_vertex_error_m": 3.2710416967877533e-05,
+    "source_validity": "Valid Geometry",
+    "mesh_ring_validity": "Valid Geometry",
+    "mesh_ring_area_m2": 1184.1596732837656,
+    "mesh_to_source_iou": 0.9999988506599043
+  },
+  "roof_eave_outline": {
+    "source": "OSM way 283275000 / Hanley Hall; visually supported as outer roof/eave ring by Indiana current aerial",
+    "source_vertices": 29,
+    "source_area_m2": 1455.0005369381179,
+    "source_bounds_xy_m": [
+      -805.81099335642,
+      -318.55155200018544,
+      -752.7789225721493,
+      -278.43280000001187
+    ],
+    "mesh_matched_vertices": 29,
+    "max_source_to_mesh_vertex_error_m": 3.0155784661813218e-05,
+    "source_validity": "Valid Geometry",
+    "mesh_ring_validity": "Valid Geometry",
+    "mesh_ring_area_m2": 1455.0001872565038,
+    "mesh_to_source_iou": 0.9999988963599007
+  },
+  "source_difference_and_resolution": {
+    "area_delta_m2": 270.84101275456715,
+    "area_ratio_osm_to_gis": 1.2287200391698117,
+    "wall_to_eave_iou": 0.8084931199436707,
+    "centroid_offset_m": 1.2354645319949566,
+    "boundary_hausdorff_m": 3.5496457192857567,
+    "orthophoto_interpretation": "Current orthophoto overlay shows the smaller official GIS wall ring inset inside the larger OSM edge along the visible roof perimeter; the builder now models these as wall and eave respectively."
+  },
+  "vertical_evidence": {
+    "official_floors": 3,
+    "source": "Purdue OEP emergency plan revision 2026-03-31",
+    "estimated_wall_eave_height_m": 14.8,
+    "estimated_ridge_height_m": 16.08,
+    "actual_mesh_z_min_m": 0.0,
+    "actual_mesh_z_max_m": 16.079999923706055,
+    "height_status": "Estimated; no measured building elevation/section."
+  },
+  "area_plausibility_check": {
+    "official_campus_gis_squarefootage_attribute_sqft": 34064.0,
+    "approx_gross_m2": 3164.64915456,
+    "three_floor_mean_gross_per_floor_m2": 1054.88305152,
+    "GIS_wall_footprint_x3_sqft": 38238.56111221605,
+    "OSM_eave_footprint_x3_sqft": 46984.486307599334,
+    "assessment": "This is a plausibility check only; published square footage basis and void/atrium treatment are unspecified."
+  },
+  "entrance": "Single glazed entrance bay modeled on the probable playground-facing/north side from photo + aerial context. Side selection remains inferred; no georeferenced entrance drawing found.",
+  "renders": [
+    "audit/massing_hanley_hall_c8a4551/renders/hanley_hall_facade.png",
+    "audit/massing_hanley_hall_c8a4551/renders/hanley_entry_review.png"
+  ],
+  "validation_result": "pass",
+  "single_scene_and_clean_library": {
+    "scene_names": [
+      "Building_massing_hanley_hall_c8a4551"
+    ],
+    "all_scene_objects": [
+      "Hanley Hall:MESH"
+    ],
+    "review_camera_light_in_saved_file": false,
+    "result": "pass"
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "score": 6.0,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": false,
+  "asset_id": "massing_hanley_hall_c8a4551",
+  "review_revision": "r2",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "max_score": 2,
+      "score": 1.0,
+      "evidence": [
+        "Purdue GIS OBJECTID 310 names Bill and Sally Hanley Hall, abbreviation HNLY, address 1202 W State Street; OSM way 283275000 is named Hanley Hall.",
+        "Saved asset's 28-point grade ring is essentially identical to OSM: IoU 0.999977, symmetric boundary Hausdorff 0.0017 m.",
+        "Official GIS FID/OBJECTID 310 footprint differs materially: GIS area 1184.2 m\u00b2 vs asset 1455.0 m\u00b2, IoU 0.808, centroid offset 1.24 m, boundary Hausdorff 3.55 m; shell is 1.23\u00d7 GIS area."
+      ],
+      "assessment": "Identity verified; footprint remains source-conflicted. The current model follows OSM/original massing rather than Purdue GIS."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "max_score": 2,
+      "score": 1.25,
+      "evidence": [
+        "Direct Blender reopen measured structural grade bounds X -805.811..-752.779 m, Y -318.552..-278.433 m; dimensions 53.03\u00d740.12 m.",
+        "The ring matches OSM transformed with project local approximation (IoU 0.999977); official GIS center is 1.24 m away and projected GIS footprint is materially smaller."
+      ],
+      "assessment": "Campus location and orientation are strongly supported by OSM and inherited geometry, but width/area cannot be treated as resolved until GIS discrepancy is explained."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "max_score": 2,
+      "score": 0.75,
+      "evidence": [
+        "Purdue OEP emergency plan identifies three floors; it gives no floor elevations or roof height.",
+        "Direct Blender geometry top is 16.08 m. The builder labels 16 m as an inherited estimate; no measured height source was found.",
+        "The Purdue HHS photograph supports a dark projecting eave/roof edge at one frontage, but its orientation and roof pitch are unknown. The model uses a flat cap; exact form is not verified."
+      ],
+      "assessment": "Floor count is supported. Vertical dimensions and detailed roof geometry are estimates."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "max_score": 2,
+      "score": 1.25,
+      "evidence": [
+        "The Purdue HHS photo visibly supports red-brown brick, extensive ground-floor glazing, repeated upper windows, and a dark projecting eave.",
+        "The saved render includes those broad traits, but repeats simplified equal window bays and bands around the entire unphotographed perimeter; the photo is not georeferenced.",
+        "No entrance is identified in the asset or source record; no plan/elevation proves entrance location or detailed corner massing."
+      ],
+      "assessment": "Broad materials and fa\u00e7ade rhythm are photo-supported; entrance and unphotographed sides remain generalized."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "max_score": 2,
+      "score": 1.75,
+      "evidence": [
+        "Direct reopen found scene Building_massing_hanley_hall_c8a4551 and expected collection Asset_massing_hanley_hall_c8a4551 containing one mesh object (3080 vertices, 2285 faces); no modifiers, linked libraries, or unpacked external images.",
+        "Dedicated source and evidence records include raw Purdue GIS and OSM snapshots, official emergency plan, Purdue HHS article/photo, source URLs, CRS/method, and the unresolved footprint conflict.",
+        "The Blender scene contains review camera/light objects outside the exported asset collection; the collection itself remains a single portable mesh."
+      ],
+      "assessment": "Export and evidence are substantially complete; slight deduction for retained non-export review scene objects and unresolved source conflict in the evidence package."
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/massing_hanley_hall_c8a4551.blend",
+    "inspected_directly": true,
+    "blender_reopen_exit_code": 0,
+    "inspection": {
+      "blend_filepath": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_hanley_hall_c8a4551.blend",
+      "asset_id": "massing_hanley_hall_c8a4551",
+      "scene": "Building_massing_hanley_hall_c8a4551",
+      "collection": "Asset_massing_hanley_hall_c8a4551",
+      "collection_objects": [
+        "Hanley Hall"
+      ],
+      "object_type": "MESH",
+      "object_count": 1,
+      "mesh_vertices": 3080,
+      "mesh_faces": 2285,
+      "mesh_bounds_world_xyz_m": [
+        [
+          -806.3449096679688,
+          -752.3583374023438
+        ],
+        [
+          -318.99267578125,
+          -278.15155029296875
+        ],
+        [
+          0.0,
+          16.079999923706055
+        ]
+      ],
+      "grade_vertices_xy_m": [
+        [
+          -753.372986,
+          -278.644012
+        ],
+        [
+          -766.263977,
+          -278.466003
+        ],
+        [
+          -766.958984,
+          -278.454987
+        ],
+        [
+          -767.883972,
+          -278.433014
+        ],
+        [
+          -767.984985,
+          -285.140015
+        ],
+        [
+          -777.815002,
+          -285.006012
+        ],
+        [
+          -777.797974,
+          -283.940002
+        ],
+        [
+          -783.591003,
+          -283.85199
+        ],
+        [
+          -783.607971,
+          -285.050995
+        ],
+        [
+          -796.007019,
+          -284.872986
+        ],
+        [
+          -796.143005,
+          -294.122986
+        ],
+        [
+          -797.864014,
+          -294.545013
+        ],
+        [
+          -800.137024,
+          -295.110992
+        ],
+        [
+          -799.374023,
+          -298.153992
+        ],
+        [
+          -799.221008,
+          -298.752991
+        ],
+        [
+          -799.900024,
+          -298.920013
+        ],
+        [
+          -798.577026,
+          -304.183014
+        ],
+        [
+          -805.810974,
+          -305.481995
+        ],
+        [
+          -801.104004,
+          -318.552002
+        ],
+        [
+          -765.36499,
+          -311.345001
+        ],
+        [
+          -753.788025,
+          -311.511993
+        ],
+        [
+          -753.737,
+          -308.002991
+        ],
+        [
+          -752.888977,
+          -308.014008
+        ],
+        [
+          -752.778992,
+          -300.341003
+        ],
+        [
+          -753.685974,
+          -300.329987
+        ],
+        [
+          -753.585022,
+          -293.511993
+        ],
+        [
+          -753.551025,
+          -290.946991
+        ],
+        [
+          -753.390015,
+          -280.253998
+        ]
+      ],
+      "grade_vertex_count": 28,
+      "modifier_names": [],
+      "scene_object_names": [
+        "Review camera",
+        "Large softbox",
+        "Hanley Hall"
+      ],
+      "external_file_images": [],
+      "linked_libraries": [],
+      "mesh_material_names": [
+        "Warm red-brown brick",
+        "Light limestone bands and frames",
+        "Blue-gray glazing",
+        "Dark gray standing-seam roof"
+      ],
+      "generated_geometry_has_uv_layers": false
+    },
+    "footprints": {
+      "asset": {
+        "validity": "Valid Geometry",
+        "vertices": 28,
+        "area_m2": 1455.0066675399246,
+        "bounds_xy_m": [
+          -805.810974,
+          -318.552002,
+          -752.778992,
+          -278.433014
+        ],
+        "centroid_xy_m": [
+          -776.8500731275924,
+          -298.972010014643
+        ]
+      },
+      "purdue_gis_objectid_310": {
+        "validity": "Valid Geometry",
+        "vertices": 96,
+        "area_m2": 1184.1595241835507,
+        "bounds_xy_m": [
+          -803.7927041412083,
+          -317.46099044831,
+          -755.5219779118614,
+          -280.36823459436846
+        ],
+        "centroid_xy_m": [
+          -778.0413711544135,
+          -298.6452530011902
+        ]
+      },
+      "osm_way_283275000": {
+        "validity": "Valid Geometry",
+        "vertices": 29,
+        "area_m2": 1455.0005369381179,
+        "bounds_xy_m": [
+          -805.81099335642,
+          -318.55155200018544,
+          -752.7789225721493,
+          -278.43280000001187
+        ],
+        "centroid_xy_m": [
+          -776.84984666863,
+          -298.97181388310344
+        ]
+      }
+    },
+    "comparison_metrics": {
+      "asset_osm_iou": 0.9999767914633668,
+      "asset_osm_hausdorff_m": 0.0016785394951651293,
+      "asset_gis_iou": 0.8084922138854643,
+      "asset_gis_boundary_hausdorff_m": 3.550026115417442,
+      "asset_gis_centroid_distance_m": 1.2352979942298785,
+      "asset_to_gis_area_ratio": 1.2287252163454214
+    },
+    "sources_read": [
+      "audit/massing_hanley_hall_c8a4551/evidence_record.json",
+      "audit/massing_hanley_hall_c8a4551/sources/source_catalog.json",
+      "audit/massing_hanley_hall_c8a4551/sources/purdue_campus_gis_hanley.json",
+      "audit/massing_hanley_hall_c8a4551/sources/osm_way_283275000_raw.json",
+      "audit/massing_hanley_hall_c8a4551/sources/purdue_hanley_emergency_plan.html",
+      "audit/massing_hanley_hall_c8a4551/sources/purdue_hanley_playground_photo.jpg",
+      "audit/massing_hanley_hall_c8a4551/renders/hanley_hall_facade.png"
+    ]
+  },
+  "findings": [
+    {
+      "severity": "major",
+      "finding": "Purdue GIS FID/OBJECTID 310 and OSM way 283275000 do not describe coincident footprints. The asset currently follows OSM, with area about 23% larger than Purdue GIS and IoU about 0.81.",
+      "action": "Resolve source semantics using dated orthophoto, a georeferenced official site/floor plan, or facilities confirmation before claiming the shell footprint is verified. State which line is structural wall vs roof/site outline; if no higher-quality evidence is found, retain the uncertainty explicitly."
+    },
+    {
+      "severity": "major",
+      "finding": "Total height 16.08 m and roof cap form are not supported by measured elevations; only three floors and a photographed dark eave are evidenced.",
+      "action": "Seek official building section/elevation or reliable survey. Until then keep total height labeled an estimate and avoid representing the flat cap as a verified roof profile."
+    },
+    {
+      "severity": "moderate",
+      "finding": "The facade image is not georeferenced and does not identify an entrance; repeated windows/bands on other elevations are extrapolated.",
+      "action": "Use official entrance/site plan or additional oriented photos to place the entrance and distinguish the photographed frontage from other sides."
+    }
+  ]
+}
