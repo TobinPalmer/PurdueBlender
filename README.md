@@ -78,9 +78,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (155 total)
+## Unfinished buildings (154 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 19 buildings, Rohan 15 buildings, Tobin 71 buildings, Arjav 10 buildings, Brady 40 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 18 buildings, Rohan 15 buildings, Tobin 71 buildings, Arjav 10 buildings, Brady 40 buildings.
 
 ### Detailed models still in progress or awaiting a grade (22)
 
@@ -110,13 +110,12 @@ This list excludes individual house parcels. The detailed models that are still 
 | Wiley Hall | [`wiley_hall.blend`](modular/buildings/wiley_hall.blend) | Not graded | Tobin |
 | Winifred Parker Hall | [`winifred_parker_hall.blend`](modular/buildings/winifred_parker_hall.blend) | Not graded | Tobin |
 
-### Buildings that still have only massing models (133)
+### Buildings that still have only massing models (132)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
-| alpha chi rho | [`massing_alpha_chi_rho_0cb591a.blend`](modular/buildings/massing_alpha_chi_rho_0cb591a.blend) | Rossen |
 | alpha kappa lambda | [`massing_alpha_kappa_lambda_88dda6c.blend`](modular/buildings/massing_alpha_kappa_lambda_88dda6c.blend) | Rossen |
 | animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rossen |
 | baptist student foundation | [`massing_baptist_student_foundation_c3d8114.blend`](modular/buildings/massing_baptist_student_foundation_c3d8114.blend) | Rossen |
