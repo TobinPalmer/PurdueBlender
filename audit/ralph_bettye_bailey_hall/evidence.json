@@ -1,23 +1,28 @@
 {
-  "building": null,
+  "building": "Ralph and Bettye Bailey Hall",
   "asset_id": "massing_ralph_bettye_bailey_hall_406c4db",
-  "status": "Detailed asset updated; pending independent grade",
+  "status": "Official FID 411 footprint and five-level attributes recorded; source-image facade update reviewed; independent grade pending",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
-    "feature_id": null,
-    "building_code": null,
-    "source_name": null,
-    "retrieval_date": "2026-10-22 (repository-preserved source snapshot)",
-    "source_date": "Not supplied in the service snapshot",
+    "feature_id": 411,
+    "building_code": "BALY",
+    "source_name": "Ralph and Bettye Bailey Hall",
+    "retrieval_date": "2026-10-22 (repository-preserved snapshot; source base timestamp 2026-10-22T03:45:50Z)",
+    "source_date": "Not supplied for the campus feature; snapshot timestamp recorded separately.",
     "source_crs": "EPSG:4326 (WGS 84)",
-    "source_record": null,
-    "reference_status": "Official campus map polygon; not a certified survey",
+    "source_record": "source_feature_411_raw.json",
+    "reference_status": "Official campus GIS polygon, FID 411 / BALY; not a certified survey. The feature reports NUM_LEVELS=5 and CountOfFLO=5, which are source attributes, not measured height.",
     "secondary_visual_references": [
       {
-        "url": "https://www.purdue.edu/operations/emergency-preparedness/baly/",
-        "use": "Official exterior photo for brick, trim, windows and entrance context; no measurements inferred",
-        "provider": "Purdue University Office of Emergency Preparedness"
+        "provider": "Purdue University Office of Emergency Preparedness",
+        "use": "Official BALY page provides an exterior image and address for identifying the building and reviewing brick, windows and entrance context; no dimensions inferred.",
+        "url": "https://www.purdue.edu/operations/emergency-preparedness/baly/"
+      },
+      {
+        "provider": "Purdue University Archives and Special Collections",
+        "use": "Identifies Bailey Hall as completed in 2014 and home of Purdue Musical Organizations; no facade dimensions inferred.",
+        "url": "https://blogs.lib.purdue.edu/asc/2016/12/01/bailey-hall-and-purdues-musical-myth/"
       }
     ]
   },
@@ -30,12 +35,15 @@
     "units": "meters; local project approximation, not surveyed CRS"
   },
   "measurements": {
-    "method": "Compared the structural wall polygon built from the official feature ring using the repository transform; facade details and entrance are excluded from plan comparison",
-    "official_footprint_aabb_xy_m": [
-      null
-    ],
+    "method": "Reprojected the 22 distinct vertices of official FID 411 using the documented approximate project-local conversion. The build script constructs the structural shell directly from that ring; entry and canopy details are excluded from structural plan comparison.",
+    "official_footprint_aabb_xy_m": {
+      "min_x": 295.7079179361737,
+      "max_x": 322.0309784439278,
+      "min_y": -39.44971756734731,
+      "max_y": -3.8080796788517546
+    },
     "official_minimum_rotated_rectangle": null,
-    "official_polygon_area_m2": null,
+    "official_polygon_area_m2": 1455.69140625,
     "before_asset_aabb_xy_m": [
       295.60736083984375,
       -45.14886474609375,
@@ -46,14 +54,31 @@
       0.0,
       16.0
     ],
-    "after_structural_shell": "Built from all distinct official source-ring vertices; intended to match official footprint within coordinate conversion precision",
-    "after_modeled_height_m": null,
-    "position_status": "Structural footprint set to the official map polygon coordinates; underlying source positional uncertainty is unpublished",
-    "plan_dimension_status": "Footprint matches official source polygon; polygon is not a survey",
-    "orientation_status": "Structural shell follows official polygon vertex orientation",
-    "height_status": null,
-    "official_num_levels_attribute": null,
-    "official_extrution_attribute": null
+    "after_structural_shell": "Built directly from all 22 distinct FID 411 source vertices; entrance/canopy details extend slightly outside the source shell bounds.",
+    "after_modeled_height_m": 16.0,
+    "position_status": "Structural wall coordinates match the official GIS source transform; the service does not publish positional uncertainty, so absolute location accuracy is unverified.",
+    "plan_dimension_status": "Structural shell uses the official source polygon; boundary is a campus map outline, not a surveyed wall footprint.",
+    "orientation_status": "Structural shell follows source polygon order; independent true-north/entrance orientation review remains open.",
+    "height_status": "16 m retained from the original massing and unverified. Official attributes report five levels, but do not certify this modeled height.",
+    "official_num_levels_attribute": 5,
+    "official_extrution_attribute": 28,
+    "after_asset_bounds_including_facade_additions_m": {
+      "min_x": 294.2593994140625,
+      "max_x": 322.32122802734375,
+      "min_y": -39.739967346191406,
+      "max_y": -3.5178298950195312,
+      "min_z": 0.0,
+      "max_z": 16.0
+    },
+    "official_count_of_floors_attribute": 5,
+    "reopen_check": {
+      "object_name": "Ralph & Bettye Bailey Hall",
+      "asset_id": "massing_ralph_bettye_bailey_hall_406c4db",
+      "exported_collection_object_count": 1,
+      "mesh_vertex_count": 6840,
+      "mesh_face_count": 4992,
+      "saved_asset_reopened": true
+    }
   },
   "geometry_edits": [
     "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
@@ -61,16 +86,15 @@
     "Added an entrance marker oriented toward west; exact facade detail placement remains approximate."
   ],
   "uncertainties": [
-    "The official map polygon is not a certified survey and has no published position/dimension uncertainty.",
-    "Height has not been checked against elevation drawings or on-site measurement; GIS level/Extrution fields are not treated as height measurements.",
-    "GIS levels attribute 5; above-grade storeys and total height unverified",
-    "Facade details, window spacing and entrance position are approximate and need independent visual review.",
+    "The official campus GIS polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
+    "The modeled 16 m height is unverified; GIS five-level attributes are recorded without converting them to a height.",
+    "Facade rhythm, entrance location and sign/canopy details need independent exterior-image review.",
     "No independent grader has reviewed this revision."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
     "build_config": "build_config.json",
-    "raw_source": null,
+    "raw_source": "source_feature_411_raw.json",
     "preview": "preview_detail.png"
   }
 }
