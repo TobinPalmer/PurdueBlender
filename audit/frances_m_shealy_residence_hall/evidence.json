@@ -1,0 +1,82 @@
+{
+  "building": "Frances M. Shealy Residence Hall",
+  "asset_id": "massing_shealy_frances_m_residence_hall_a210e50",
+  "status": "Detailed asset updated; pending independent grade",
+  "source": {
+    "provider": "Purdue University official campus building footprint service",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 277,
+    "building_code": "SHLY",
+    "source_name": "Frances M. Shealy Residence Hall",
+    "retrieval_date": "2026-10-22 (repository-preserved source snapshot)",
+    "source_date": "Not supplied in the service snapshot",
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "source_record": "source_feature_277_raw.json",
+    "reference_status": "Official campus map polygon; not a certified survey",
+    "secondary_visual_references": [
+      {
+        "url": "https://archives.lib.purdue.edu/agents/corporate_entities/579",
+        "use": "English Tudor design, brick and Indiana limestone, and lion sculpture over front entry",
+        "provider": "Purdue University Archives and Special Collections"
+      }
+    ]
+  },
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not surveyed CRS"
+  },
+  "measurements": {
+    "method": "Compared the structural wall polygon built from the official feature ring using the repository transform; facade details and entrance are excluded from plan comparison",
+    "official_footprint_aabb_xy_m": [
+      -628.8862072952205,
+      -169.38941965594495,
+      -561.673300779924,
+      -134.35865554729617
+    ],
+    "official_minimum_rotated_rectangle": {
+      "width_m": 67.213777602611,
+      "depth_m": 34.86761690223349,
+      "angle_degrees_east_ccw": 0.2917021648656371
+    },
+    "official_polygon_area_m2": 1815.01171875,
+    "before_asset_aabb_xy_m": [
+      -629.1505126953125,
+      -169.32489013671875,
+      -561.437744140625,
+      -133.3146209716797
+    ],
+    "before_asset_height_m": [
+      0.0,
+      15.199999809265137
+    ],
+    "after_structural_shell": "Built from all distinct official source-ring vertices; intended to match official footprint within coordinate conversion precision",
+    "after_modeled_height_m": 15.2,
+    "position_status": "Structural footprint set to the official map polygon coordinates; underlying source positional uncertainty is unpublished",
+    "plan_dimension_status": "Footprint matches official source polygon; polygon is not a survey",
+    "orientation_status": "Structural shell follows official polygon vertex orientation",
+    "height_status": "estimated; no verified elevation drawing or measured height",
+    "official_num_levels_attribute": 5,
+    "official_extrution_attribute": 60
+  },
+  "geometry_edits": [
+    "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
+    "Added facade materials, repeated window bays, window surrounds, floor bands, plinth and roof coping.",
+    "Added an entrance marker oriented toward west; exact facade detail placement remains approximate."
+  ],
+  "uncertainties": [
+    "The official map polygon is not a certified survey and has no published position/dimension uncertainty.",
+    "Height has not been checked against elevation drawings or on-site measurement; GIS level/Extrution fields are not treated as height measurements.",
+    "GIS levels attribute 5; height unverified",
+    "Facade details, window spacing and entrance position are approximate and need independent visual review.",
+    "No independent grader has reviewed this revision."
+  ],
+  "artifacts": {
+    "build_script": "build_detail.py",
+    "build_config": "build_config.json",
+    "raw_source": "source_feature_277_raw.json"
+  }
+}
