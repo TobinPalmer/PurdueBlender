@@ -1,0 +1,162 @@
+{
+  "building": "Marriott Hall",
+  "asset_id": "massing_marriot_hall_7cd3eb5",
+  "status": "Source-based rebuild passed independent grade (8.5/10); roof form and four-level interpretation remain uncertain",
+  "asset": {
+    "path": "modular/buildings/massing_marriot_hall_7cd3eb5.blend",
+    "object_name": "Marriot Hall",
+    "collection_name": "Asset_massing_marriot_hall_7cd3eb5",
+    "collection_object_count": 1,
+    "mesh_vertices": 4688,
+    "mesh_faces": 3344,
+    "coordinate_frame": "Existing campus world coordinates, meters; asset remains a massing-kind library in the shared manifest",
+    "preview": "preview_exterior.png",
+    "plan_preview": "preview_plan.png",
+    "reopen_validation": "validation.json"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/862?f=pjson",
+      "layer_metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "feature_id": 862,
+      "feature_code": "MRRT",
+      "feature_name": "Marriott Hall",
+      "feature_address": "900 Mitch Daniels Blvd",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Not supplied by the service for this feature",
+      "source_crs": "EPSG:3857 (ArcGIS WKID 102100; latestWKID 3857), verified from the feature-layer metadata snapshot",
+      "raw_snapshots": [
+        "sources/purdue_feature_862_raw.json",
+        "sources/purdue_feature_layer_metadata.json"
+      ],
+      "use": "Identity, official footprint, source feature level count, and recorded extrusion value.",
+      "measurement_method": "Converted each of the 33 distinct Web Mercator ring vertices to WGS84 and then applied the project's documented latitude/longitude-to-campus-meters approximation. Built perimeter walls at Z=0 directly from the transformed ring.",
+      "uncertainty": "Official GIS polygon is not a certified survey. Position and dimension accuracy are unpublished. The Extrution field has no units documented in the metadata; it is not treated as a measured building height."
+    },
+    {
+      "provider": "Purdue University Events Calendar",
+      "url": "https://events.purdue.edu/marriott_hall",
+      "feature_id": "Marriott Hall venue listing and photo attached by Purdue Events user; listing identifies 900 Mitch Daniels Blvd",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Photo posted May 30, 2022, as indicated on the venue page",
+      "source_crs": "Not applicable",
+      "raw_snapshots": [
+        "sources/purdue_events_marriott_hall.html",
+        "sources/purdue_events_marriott_hall.jpg"
+      ],
+      "use": "Exterior facade reference: red brick piers, light horizontal bands, large upper glass bays, lower punched windows, deep roof overhang, reddish gabled roof, and entrance/canopy.",
+      "measurement_method": "Visual reference only; photo perspective is not used for dimensional measurement.",
+      "uncertainty": "Camera angle obscures the building's full facade rhythm and unseen elevations."
+    },
+    {
+      "provider": "CSO Architects, project architect",
+      "url": "https://www.csoinc.net/projects/marriott-hall/",
+      "feature_id": "Marriott Hall project page and exterior image 01_Marriott_Hall.jpg",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Photo date not stated; page describes the building and its exterior design",
+      "source_crs": "Not applicable",
+      "raw_snapshots": [
+        "sources/cso_architect_marriott_hall.html",
+        "sources/cso_marriott_hall_exterior_01.jpg"
+      ],
+      "use": "Architect's reference for red brick, transparent facade, broad pitched tile/metal roof, massing and entry-side canopy. Page identifies Purdue as client and describes a 35,000 sq ft facility.",
+      "measurement_method": "Qualitative design corroboration; reported gross area is not used to scale the footprint.",
+      "uncertainty": "Photo perspective and undocumented date prevent exact measurement; architect page's 35,000 sf differs from the 2009 project approval's 42,500 GSF."
+    },
+    {
+      "provider": "Indiana Commission for Higher Education / Purdue University project description",
+      "url": "https://www.in.gov/che/files/0910DecB2.pdf",
+      "feature_id": "Decision Item B-2, Marriott Hall construction approval, dated October 9, 2009",
+      "retrieval_date": "2026-10-26",
+      "source_date": "2009-10-09; project description dated 2009-09-30",
+      "source_crs": "Not applicable",
+      "snapshot": "sources/state_higher_ed_marriott_2009.pdf",
+      "use": "Independent institutional identity and planned 42,500 GSF project area; the report describes program spaces and planned schedule.",
+      "measurement_method": "Area/context corroboration only; total gross floor area is not equivalent to footprint and is not used to scale geometry.",
+      "uncertainty": "Planned area differs from CSO's 35,000 sf project-page figure; sources may describe different area conventions or project stages. No measured exterior elevations are provided."
+    },
+    {
+      "provider": "Purdue University News Service",
+      "url": "https://www.purdue.edu/uns/x/2007b/071030CelMarriott.html",
+      "feature_id": "Purdue News Service article, October 30, 2007",
+      "retrieval_date": "2026-10-26",
+      "source_date": "2007-10-30",
+      "source_crs": "Not applicable",
+      "snapshot": "sources/purdue_news_2007_marriott_hall.html",
+      "use": "Confirms the planned Marriott Hall location at the northwest corner of State and University streets and establishes the building's identity and program history.",
+      "measurement_method": "Identity and placement context only; the 2007 time-capsule image is not used as a building facade reference.",
+      "uncertainty": "The article predates construction and does not provide as-built elevations."
+    }
+  ],
+  "transform": {
+    "source_projection": "Web Mercator / EPSG:3857 (ArcGIS WKID 102100; latestWKID 3857)",
+    "inverse_projection": "longitude = degrees(x / 6378137); latitude = degrees(2*atan(exp(y/6378137)) - pi/2)",
+    "campus_origin_latitude": 40.4274,
+    "campus_origin_longitude": -86.9137,
+    "campus_x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "campus_y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not a surveyed CRS"
+  },
+  "measurements": {
+    "source_outline_vertices": 33,
+    "source_bbox_xy_m": {
+      "min_x": -299.787,
+      "max_x": -261.287,
+      "min_y": -343.416,
+      "max_y": -278.517
+    },
+    "before_model_bounds_xy_m": {
+      "min_x": -299.4578,
+      "max_x": -260.7926,
+      "min_y": -345.7452,
+      "max_y": -274.9906
+    },
+    "after_structural_footprint": "Perimeter wall base follows official FID 862 ring at Z=0; roof overhang and entry steps are excluded from the footprint comparison.",
+    "gis_level_attribute": 4,
+    "gis_extrution_attribute": 39,
+    "gis_extrution_units": "Not documented",
+    "modeled_eave_height_m": 9.6,
+    "modeled_roof_ridge_height_m": 12.6,
+    "vertical_status": "Estimated from the four-level GIS record and facade/roof proportions in exterior photographs. These heights are not surveyed or measured.",
+    "roof_and_orientation": "Source footprint is geospatially oriented through the documented transform; main gable ridge runs north/south along the long building axis. Roof form follows the architect's exterior reference, not a measured roof plan.",
+    "after_model_world_bounds_m": {
+      "min_x": -299.97271728515625,
+      "max_x": -261.1019287109375,
+      "min_y": -343.5812683105469,
+      "max_y": -278.3309631347656,
+      "min_z": -0.0700000524520874,
+      "max_z": 12.600000381469727
+    },
+    "source_ring_vertex_max_error_m": 6.48265E-05,
+    "source_Shape__Area_raw_attribute": 3423.21484375,
+    "source_Shape__Area_units": "Not documented; do not treat as local campus-plan area. The raw value exceeds the local-transform ring bbox area; evaluator recomputed ring area independently.",
+    "source_Shape__Length_raw_attribute": 278.65190645749067,
+    "source_Shape__Length_units": "Not documented in field metadata.",
+    "polygon_area_recomputed_under_campus_transform_m2": 1980.407239892862
+  },
+  "geometry_edits": [
+    "Replaced the original single-box massing mesh with the 33-vertex official Purdue GIS footprint at grade.",
+    "Built a red-brick perimeter shell with limestone base and horizontal belt bands.",
+    "Added three above-grade facade bands, with a two-level glazed bay treatment on longer facade segments and punched lower-story windows with aluminum mullions.",
+    "Added a gabled roof silhouette with deep eaves, an approximate paired-entry door, a light metal canopy, and shallow steps.",
+    "Kept the existing asset ID, blend path, object name, collection name, identity world transform, and one-object export collection."
+  ],
+  "uncertainties": [
+    "Purdue GIS provides a source footprint but not certified survey accuracy; the source polygon appears to match the Marriott Hall identity and placement, but exact wall-to-GIS registration remains dependent on the source mapping.",
+    "No measured building height or roof elevations were found. GIS Extrution=39 has no documented units; modeled heights remain estimates.",
+    "The GIS level count is 4, while the exterior model depicts three above-grade facade bands; interpretation of the fourth level is unverified.",
+    "Two institutional/project sources give different building-area figures (42,500 GSF in the 2009 approval and 35,000 sf on the architect page); neither is used as footprint area.",
+    "Window bay spacing, facade material color, canopy proportions, and roof overhang are visual estimates.",
+    "This asset remains a campus-coordinate massing library; Tobin owns master integration.",
+    "The GIS Shape__Area raw value (3423.2) is not consistent with the campus-transform polygon bounds when read as local square meters; field units/meaning are unclear, so the grader recomputed polygon area from the ring (about 1,980.4 m²) and did not use the field for scale."
+  ],
+  "artifacts": {
+    "builder": "modular/buildings/build_massing_marriot_hall_7cd3eb5.py",
+    "preview_script": "render_preview.py",
+    "exterior_preview": "preview_exterior.png",
+    "plan_preview": "preview_plan.png",
+    "source_snapshots": "sources/"
+  }
+}

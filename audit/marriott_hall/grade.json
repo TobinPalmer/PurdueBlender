@@ -1,0 +1,210 @@
+{
+  "building_id": "massing_marriot_hall_7cd3eb5",
+  "score": 8.5,
+  "max_score": 10,
+  "passing_standard": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue ArcGIS feature FID 862 identifies Marriott Hall (MRRT) at 900 Mitch Daniels Blvd (the service's separate BUILDING_1 field is 1423).",
+        "Recomputed source polygon has 33 unique ring vertices and approximately 1980.4 m\u00b2 area under the mandated local campus transform.",
+        "Purdue venue listing identifies Marriott Hall and the same street address; independent architect project page names Purdue as client and describes the same building.",
+        "Feature identity is cross-checked by ID, abbreviation, name, and address rather than nearest-location alone. GIS outline is not a certified survey."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Independent Blender reopen found 33/33 transformed source vertices in the evaluated mesh within 1 mm; maximum nearest-vertex error 0.000019 m.",
+        "GIS ring bounds XY are [[-299.7865766779865, -261.28748134106917], [-343.41612464947957, -278.51680255299016]]; evaluated model bounds XY are [[-299.97271728515625, -261.1019287109375], [-343.5812683105469, -278.3309631347656]] m. Extra bounds are roof overhang/steps, not the structural footprint.",
+        "Footprint and cardinal orientation follow the official EPSG:3857 feature using its documented inverse projection and the project\u2019s approximate WGS84-to-campus conversion. This verifies geometric registration to that GIS source, not survey-grade position."
+      ]
+    },
+    {
+      "criterion": "Height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "GIS record lists four levels; model height is 12.67 m with eave/ridge estimates of 9.6/12.6 m.",
+        "The builder and source evidence correctly label vertical dimensions estimates; ArcGIS Extrution=39 has no documented units and is not treated as a measured elevation.",
+        "Architect and Purdue photos confirm a broad red pitched roof with deep eaves, so a gable silhouette is evidence-based. The rendered roof is an irregular collection of overlapping/faceted roof planes across the GIS footprint, unlike the dominant long continuous gable seen in the reference photos; exact roof plan and height remain unverified.",
+        "The exterior reads as roughly three above-grade facade bands despite a GIS four-level attribute; the fourth level's interpretation is unresolved."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Architect and Purdue source photos show red brick, light horizontal masonry bands, vertical brick piers, upper transparent glazing, lower punched windows, deep roof eaves, and a visible glazed entrance/canopy.",
+        "Preview captures brick, light belt courses, upper glazing, lower windows, gabled red roof, overhang, entrance doors, a metal canopy, and steps.",
+        "Facade rhythm is schematic: source photos show prominent vertical piers, tall upper curtain-wall bays, a larger entrance-side covered plaza, and a more legible lobby. The preview's entrance canopy/doors are much smaller and less distinctive, and window dimensions are not measured."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Independent Blender 5.2 reopen found expected scene Building_massing_marriot_hall_7cd3eb5, collection Asset_massing_marriot_hall_7cd3eb5, one mesh, 4688 vertices, and 3344 faces.",
+        "Model has 0 modifiers, 0 linked libraries, and 0 unpacked image dependencies; the identity world matrix preserves the massing library's campus-coordinate convention.",
+        "Manifest entry matches asset ID, file, collection, scene, and one-object export. Evidence has raw feature and layer metadata, source photos/pages, architect information, project approval PDF, retrieval dates, projection/method notes, uncertainty, two previews, and a separate reopen-validation record."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "severity": "major",
+      "finding": "Roof geometry needs review: the preview has large intersecting/faceted roof surfaces that create multiple apparent ridges over the irregular footprint, while the source photos primarily show a long, clear gable roof with deep eaves. The model height and roof dimensions remain estimates.",
+      "criterion": "Height, floors, and roof form"
+    },
+    {
+      "severity": "moderate",
+      "finding": "The four-level GIS attribute is not reconciled with the approximately three visible above-grade facade bands in the model/reference view. Clarify whether the extra level is below grade or whether a facade level is missing before claiming floor-count fidelity.",
+      "criterion": "Height, floors, and roof form"
+    },
+    {
+      "severity": "moderate",
+      "finding": "The principal entrance and upper glazed lobby are present in simplified form, but the real building's broad entrance-side canopy/plaza and tall glazed bays are more prominent than the model preview suggests.",
+      "criterion": "Facade, entrances, and distinctive architecture"
+    },
+    {
+      "severity": "uncertainty",
+      "finding": "The GIS footprint is an official Purdue polygon and matches the transformed mesh ring within 0.1 mm, but the service does not publish survey accuracy or a feature edit date. Height, facade bay spacing, and exact roof plan are not dimensioned in the collected sources.",
+      "criterion": "Position, orientation, and dimensions"
+    },
+    {
+      "severity": "uncertainty",
+      "finding": "The 2009 approval lists 42,500 gross square feet while the architect project page lists 35,000 square feet; neither is used to scale the source footprint, and the difference remains unexplained.",
+      "criterion": "Identity and source-backed footprint"
+    },
+    {
+      "severity": "uncertainty",
+      "finding": "The GIS Shape__Area attribute stored in the evidence is 3,423.2, which exceeds the approximate 2,499 m\u00b2 source bounding rectangle; its units/meaning are unclear, so the evaluator recomputes polygon area from the source ring and does not rely on that attribute.",
+      "criterion": "Identity and source-backed footprint"
+    }
+  ],
+  "evidence": {
+    "asset_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_marriot_hall_7cd3eb5.blend",
+    "grader_code": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\marriott_hall\\evaluate_marriott.py",
+    "source_evidence_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\marriott_hall\\evidence.json",
+    "raw_gis_snapshot": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\marriott_hall\\sources\\purdue_feature_862_raw.json",
+    "architect_page_snapshot": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\marriott_hall\\sources\\cso_architect_marriott_hall.html",
+    "official_feature": {
+      "FID": 862,
+      "abbreviation": "MRRT",
+      "name": "Marriott Hall",
+      "address": "1423"
+    },
+    "gis_ring": {
+      "unique_vertices": 33,
+      "projected_area_m2_approx": 1980.407239892862,
+      "bounds_xy_m": [
+        [
+          -299.7865766779865,
+          -261.28748134106917
+        ],
+        [
+          -343.41612464947957,
+          -278.51680255299016
+        ]
+      ]
+    },
+    "independent_blender_reopen": {
+      "scene": "Building_massing_marriot_hall_7cd3eb5",
+      "collection": "Asset_massing_marriot_hall_7cd3eb5",
+      "collection_object_count": 1,
+      "objects": [
+        "Marriot Hall"
+      ],
+      "object_name": "Marriot Hall",
+      "object_type": "MESH",
+      "vertex_count": 4688,
+      "face_count": 3344,
+      "bounds_world_m": [
+        [
+          -299.97271728515625,
+          -261.1019287109375
+        ],
+        [
+          -343.5812683105469,
+          -278.3309631347656
+        ],
+        [
+          -0.0700000524520874,
+          12.600000381469727
+        ]
+      ],
+      "dimensions_m": [
+        38.87078857421875,
+        65.25030517578125,
+        12.670000076293945
+      ],
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "modifier_count": 0,
+      "materials": [
+        "MRRT_Red_Brick",
+        "MRRT_Brick_Shadow",
+        "MRRT_Limestone_Bands",
+        "MRRT_Glazing",
+        "MRRT_Aluminum_Frames",
+        "MRRT_Terracotta_Metal_Roof",
+        "MRRT_Canopy_Aluminum"
+      ],
+      "linked_libraries": 0,
+      "unpacked_external_images": [],
+      "source_ring_vertex_count": 33,
+      "source_ring_vertices_found_within_1mm": 33,
+      "source_ring_max_nearest_error_m": 1.8766328019550703e-05,
+      "source_ring_mean_nearest_error_m": 1.2004143655018656e-05
+    },
+    "manifest_entry": {
+      "id": "massing_marriot_hall_7cd3eb5",
+      "file": "buildings/massing_marriot_hall_7cd3eb5.blend",
+      "collection": "Asset_massing_marriot_hall_7cd3eb5",
+      "scene": "Building_massing_marriot_hall_7cd3eb5",
+      "object_count": 1
+    },
+    "preexisting_builder_validation": "audit/marriott_hall/validation.json",
+    "source_uncertainties": [
+      "Purdue GIS provides a source footprint but not certified survey accuracy; the source polygon appears to match the Marriott Hall identity and placement, but exact wall-to-GIS registration remains dependent on the source mapping.",
+      "No measured building height or roof elevations were found. GIS Extrution=39 has no documented units; modeled heights remain estimates.",
+      "The GIS level count is 4, while the exterior model depicts three above-grade facade bands; interpretation of the fourth level is unverified.",
+      "Two institutional/project sources give different building-area figures (42,500 GSF in the 2009 approval and 35,000 sf on the architect page); neither is used as footprint area.",
+      "Window bay spacing, facade material color, canopy proportions, and roof overhang are visual estimates.",
+      "This asset remains a campus-coordinate massing library; Tobin owns master integration."
+    ],
+    "architect_visual_style_evidence_found": true
+  }
+}
