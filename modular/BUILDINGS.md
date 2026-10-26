@@ -208,6 +208,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Student Health Center (PUSH) | [massing_student_health_center_push_1200c3b.blend](buildings/massing_student_health_center_push_1200c3b.blend) | 1 |
 | Telecommunications Building (TEL) | [massing_telecommunications_building_tel_8dfaccf.blend](buildings/massing_telecommunications_building_tel_8dfaccf.blend) | 1 |
 | Twin Pines Cooperative | [massing_twin_pines_cooperative_8f606f9.blend](buildings/massing_twin_pines_cooperative_8f606f9.blend) | 1 |
+| Union Club Hotel | [massing_union_club_hotel_0d22460.blend](buildings/massing_union_club_hotel_0d22460.blend) | 28 |
 
 Hillel retains campus-world coordinates. Its 8.3/10 grade supports the main shell and GIS footprint; the proposed 845 sq ft addition is unresolved, and height, roof depth/pitch, and facade opening details remain schematic. See [Hillel grade](../audit/massing_hillel_36d2ba1/independent_grade/r2/result.json).
 
@@ -240,6 +241,8 @@ Student Health Center (PUSH) retains campus-world coordinates. Its 8.2/10 grade 
 Telecommunications Building (TEL) retains campus-world coordinates. Its 8.0/10 grade verifies the Purdue GIS FID 199 footprint and the 29 source ring vertices within 0.1 mm. A broad flat roof and approximate roof equipment positions are supported by 2018 orthophoto; the 9.14 m height is an estimate from unclassified LiDAR returns, while facade material and windows remain unverified. See [TEL grade](../audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json).
 
 Twin Pines Cooperative retains campus-world coordinates. Its 8.3/10 grade verifies the six-vertex OSM FID 766 footprint against the mesh within 0.1 mm and supports the two-story gable, porch, and siding from Purdue and house photographs. The 9.05 m roof ridge and many facade details remain estimates; the south-facing frontage is inferred. See [Twin Pines grade](../audit/massing_twin_pines_cooperative_8f606f9/independent_grade/twin_pines_independent_grade.json).
+
+Union Club Hotel retains campus-world coordinates. Its 8.1/10 independent grade verifies the Purdue GIS FID 663 / PMUC identity and all 53 shell vertices within 0.000019 m. Circle Design Group/White Lodging and Marriott exterior photos support the pale stone entrance tower, gabled entry, slate roof planes, brick wings, and paired windows. Roof/eave heights, floor spacing, and facade proportions remain estimates; Tobin must integrate the asset into the master and verify a single linked instance. See [Union Club Hotel grade](../audit/massing_union_club_hotel_0d22460/independent_grade_r2.json).
 
 Herrick Laboratories (historic Herrick Acoustics) retains campus-world coordinates. Its 8.4/10 grade verifies Purdue GIS FID 246 / HERL and distinguishes it from Ray W. Herrick Labs; height estimates and GIS area discrepancy remain unresolved. See [Herrick grade](../audit/massing_herrick_laboratories_2138103/independent_grade/r2/result.json).
 
