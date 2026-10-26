@@ -9,6 +9,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Cary Quadrangle East (CQE) | [massing_cary_quadrangle_east_cqe_230c813.blend](buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | 23 |
 | Cary Quadrangle South (CQS) | [massing_cary_quadrangle_south_cqs_7ee2283.blend](buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend) | 1 |
 | Chapel of the Good Shepherd | [massing_chapel_of_the_good_shepherd_5d4d103.blend](buildings/massing_chapel_of_the_good_shepherd_5d4d103.blend) | 1 |
+| Chaney-Hale Hall of Science | [massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend](buildings/massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend) | 1 |
 | American Railway Building | [american_railway_building.blend](buildings/american_railway_building.blend) | 693 |
 | Alpha Chi Rho | [massing_alpha_chi_rho_0cb591a.blend](buildings/massing_alpha_chi_rho_0cb591a.blend) | 1 |
 | Alpha Kappa Lambda | [massing_alpha_kappa_lambda_88dda6c.blend](buildings/massing_alpha_kappa_lambda_88dda6c.blend) | 1 |
