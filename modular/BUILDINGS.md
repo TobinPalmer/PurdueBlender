@@ -127,6 +127,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 572 |
 | Physics Building | [physics_building_phys_3bf42f3.blend](buildings/physics_building_phys_3bf42f3.blend) | 319 |
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](buildings/ray_w_herrick_laboratories.blend) | 80 |
+| Redeemer Lutheran Church | [massing_redeemer_lutheran_church_2e5ce2f.blend](buildings/massing_redeemer_lutheran_church_2e5ce2f.blend) | 1 |
 
 SAMARA retains its legacy massing filename and campus-coordinate direct link for compatibility with the existing master. Its measured geometry, independent grade, and remaining registration uncertainty are documented in the [SAMARA evidence record](../audit/samara/EVIDENCE.md).
 

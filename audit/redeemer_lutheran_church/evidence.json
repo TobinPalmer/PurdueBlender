@@ -1,7 +1,7 @@
 {
   "building": "Redeemer Lutheran Church",
   "asset_id": "massing_redeemer_lutheran_church_2e5ce2f",
-  "status": "Original OSM source feature and footprint import consistency documented; independent spatial/architectural grade pending",
+  "status": "Independently graded pass (8.0/10); awaiting Tobin-owned master integration",
   "source": {
     "provider": "OpenStreetMap via Overpass API",
     "url": "https://www.openstreetmap.org/way/473799725",
@@ -73,8 +73,7 @@
     "OpenStreetMap way 473799725 is the original imported source and has no independent source survey; match does not certify positional accuracy or a structural wall footprint.",
     "The project-local conversion is approximate and not a surveyed CRS.",
     "Wall eaves (4.8 m), gable peak (10.8 m), gable position and footprint subdivision are illustrative; neither the photo nor source feature provides measured elevations or a full roof plan.",
-    "Facade fenestration and entrance placement are approximate. The source OSM feature has no height or building:levels tags.",
-    "No independent grader has reviewed this revision."
+    "Facade fenestration and entrance placement are approximate. The source OSM feature has no height or building:levels tags."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
@@ -86,6 +85,108 @@
     "build_preview": "preview_detail_r2.png",
     "original_preview": "preview_detail.png",
     "reopen_validation": "reopen_validation.json",
-    "validation_script": "validate_asset.py"
+    "validation_script": "validate_asset.py",
+    "canonical_build_script": "modular/buildings/build_massing_redeemer_lutheran_church_2e5ce2f.py",
+    "raw_source_snapshots": "sources/",
+    "latest_reopen_validation": "reopen_validation.json",
+    "independent_grade": "independent_grade_kyle.json"
+  },
+  "raw_source_snapshots": [
+    {
+      "feature_id": "way/473799725",
+      "crs": "EPSG:4326",
+      "source_date": "2026-10-22T03:48:50Z",
+      "file": "source_osm_way_473799725_raw.json",
+      "retrieval_date": "2026-10-22",
+      "url": "https://www.openstreetmap.org/way/473799725",
+      "provider": "OpenStreetMap via Overpass API"
+    },
+    {
+      "feature_id": "Official contact page",
+      "crs": "Not applicable",
+      "source_date": "Not stated",
+      "file": "sources/redeemer_contact.html",
+      "retrieval_date": "2026-10-26",
+      "url": "https://www.redeemerwlin.org/contact",
+      "provider": "Redeemer Lutheran Church"
+    },
+    {
+      "feature_id": "Official church website",
+      "crs": "Not applicable",
+      "source_date": "Not stated",
+      "file": "sources/redeemer_homepage.html",
+      "retrieval_date": "2026-10-26",
+      "url": "https://www.redeemerwlin.org/",
+      "provider": "Redeemer Lutheran Church"
+    },
+    {
+      "feature_id": "2017-08-17/18 newspaper page 20",
+      "crs": "Not applicable",
+      "source_date": "2017-08-17/18",
+      "file": "sources/purdue_exponent_redeemer_2017.pdf",
+      "retrieval_date": "2026-10-26",
+      "url": "https://bloximages.newyork1.vip.townnews.com/purdueexponent.org/content/tncms/assets/v3/editorial/c/c7/cc7ac664-843e-11e7-bdd5-335a6bc6456b/59972adb59de1.pdf.pdf",
+      "provider": "Purdue Exponent"
+    },
+    {
+      "url": "https://www.redeemerwlin.org/",
+      "file": "sources/redeemer_homepage.html",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Not supplied",
+      "crs": "Not applicable",
+      "feature_id": "Official church homepage",
+      "provider": "Redeemer Lutheran Church"
+    },
+    {
+      "feature_id": "Official website interior photo",
+      "file": "sources/official_site_home_page_2021.jpg",
+      "crs": "Not applicable",
+      "provider": "Redeemer Lutheran Church",
+      "source_date": "Not supplied",
+      "url": "https://images.squarespace-cdn.com/content/v1/5887f6b6f5e231fe41ec7deb/1613575183703-B049KVM2B23050EP66SN/Home+Page.JPG",
+      "retrieval_date": "2026-10-26",
+      "use": "Interior vaulted ceiling and sanctuary wall; supports a gabled interior form only, no exterior dimensions inferred."
+    },
+    {
+      "feature_id": "Official website interior photo",
+      "file": "sources/official_site_home_page_2018.jpg",
+      "crs": "Not applicable",
+      "provider": "Redeemer Lutheran Church",
+      "source_date": "Not supplied",
+      "url": "https://images.squarespace-cdn.com/content/v1/5887f6b6f5e231fe41ec7deb/1542057790462-7YEQALC02D75EHRMK20L/Home+Page.JPG",
+      "retrieval_date": "2026-10-26",
+      "use": "Interior sanctuary view; not used to infer exterior dimensions."
+    },
+    {
+      "feature_id": "Official website image",
+      "file": "sources/official_site_dsc03217.jpg",
+      "crs": "Not applicable",
+      "provider": "Redeemer Lutheran Church",
+      "source_date": "Not supplied",
+      "url": "https://images.squarespace-cdn.com/content/v1/5887f6b6f5e231fe41ec7deb/1492748450182-2DVWXRPBN8TLSY2OX656/DSC03217.JPG",
+      "retrieval_date": "2026-10-26",
+      "use": "Congregational identity image; not used to infer exterior geometry."
+    },
+    {
+      "feature_id": "Official website image",
+      "file": "sources/official_site_dsc03321.jpg",
+      "crs": "Not applicable",
+      "provider": "Redeemer Lutheran Church",
+      "source_date": "Not supplied",
+      "url": "https://images.squarespace-cdn.com/content/v1/5887f6b6f5e231fe41ec7deb/1556217713188-GWPLF6FMKV1PW2YU9FMQ/DSC03321.JPG",
+      "retrieval_date": "2026-10-26",
+      "use": "Congregational identity image; not used to infer exterior geometry."
+    }
+  ],
+  "independent_grade": {
+    "evaluator": "independent_grade_kyle.py",
+    "findings": [
+      "Heights, gable placement, wing roof forms, and facade dimensions remain estimates.",
+      "OSM-to-mesh agreement validates source import consistency, not independent survey accuracy.",
+      "The historic exterior photo is a small halftone; the gable feature and entrance remain simplified."
+    ],
+    "score": 8.0,
+    "max_score": 10,
+    "result": "independent_grade_kyle.json"
   }
 }

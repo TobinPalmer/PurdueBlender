@@ -1,0 +1,93 @@
+{
+  "score": 8.0,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "identity/OSM feature verified; source accuracy uncertain",
+      "evidence": "Raw OSM way/473799725 names Redeemer Lutheran Church and tags it as a Lutheran place of worship. The official congregation contact snapshot lists 510 Lindberg Avenue, West Lafayette; the 2017 newspaper ad image identifies Redeemer Lutheran Church at Salisbury & Lindberg. The 24-vertex OSM outline is the source footprint, but it is volunteered mapping rather than survey evidence."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2,
+      "status": "matches source feature; geodetic accuracy not independently surveyed",
+      "evidence": "Reprojected the preserved OSM ring using the documented project transform, then reproduced the 0.3 m importer point filter. The model has 24 unique grade vertices; source-to-model symmetric nearest-vertex error is 0.000120 m. Source XY bounds=[-25.91812063210944, 7.251306657117547, 2067.7868800000647, 2112.0807360001118]; model overall bounds including roofs/details=[-25.918121337890625, 7.251306533813477, 2067.786865234375, 2112.080810546875]. This confirms import consistency, not positional accuracy versus survey control."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "status": "roof form photo-supported; heights and dimensions estimated",
+      "evidence": "The source photo shows a low, one-level building with a steep gabled main volume and small side windows. OSM supplies no height or level tags and the image has no scale. Model height is 10.80 m, comprising estimated 4.8 m eaves and 10.8 m ridge; these are not measured."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.25,
+      "max_score": 2,
+      "status": "partly photo-supported and simplified",
+      "evidence": "The saved preview shows perimeter walls, a central gabled volume, repeated small windows, and a paired-entry marker. The low-resolution newspaper image supports a gabled form and side windows, but the front feature is indistinct and entrance/window spacing cannot be measured. Mesh face material counts: {'massing_redeemer_lutheran_church_2e5ce2f_Masonry': 26, 'massing_redeemer_lutheran_church_2e5ce2f_Glazing': 102, 'massing_redeemer_lutheran_church_2e5ce2f_Limestone': 378, 'massing_redeemer_lutheran_church_2e5ce2f_Low_Roof': 22, 'massing_redeemer_lutheran_church_2e5ce2f_Shingle_Roof': 2}."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified in reopened asset",
+      "evidence": "Asset reopened in Blender 5.2.3 with stable ID/path, expected object and collection, and one mesh object (816 vertices, 530 faces). Dedicated builder, source snapshots, structured evidence, photo observation, render, and reopen validation are present=True. Materials are embedded in the mesh; no external texture dependency is required."
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular\\buildings\\massing_redeemer_lutheran_church_2e5ce2f.blend",
+    "asset_id": "massing_redeemer_lutheran_church_2e5ce2f",
+    "source_way_id": 473799725,
+    "source_tags": {
+      "amenity": "place_of_worship",
+      "building": "yes",
+      "denomination": "lutheran",
+      "name": "Redeemer Lutheran Church",
+      "religion": "christian"
+    },
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "source_vertex_count_after_filter": 24,
+    "model_unique_grade_vertex_count": 24,
+    "source_to_model_symmetric_vertex_error_m": 0.00011999973763520178,
+    "source_bounds_xy_m": [
+      -25.91812063210944,
+      7.251306657117547,
+      2067.7868800000647,
+      2112.0807360001118
+    ],
+    "model_bounds_xy_m_including_additions": [
+      -25.918121337890625,
+      7.251306533813477,
+      2067.786865234375,
+      2112.080810546875
+    ],
+    "model_z_bounds_m": [
+      0.0,
+      10.800000190734863
+    ],
+    "export_collection_object_count": 1,
+    "mesh_vertices": 816,
+    "mesh_faces": 530,
+    "materials": [
+      "massing_redeemer_lutheran_church_2e5ce2f_Masonry",
+      "massing_redeemer_lutheran_church_2e5ce2f_Limestone",
+      "massing_redeemer_lutheran_church_2e5ce2f_Glazing",
+      "massing_redeemer_lutheran_church_2e5ce2f_Shingle_Roof",
+      "massing_redeemer_lutheran_church_2e5ce2f_Low_Roof"
+    ],
+    "official_contact_address_match": true,
+    "photo_source_date": "Purdue Exponent, Thursday-Friday, August 17-18, 2017, page 20",
+    "reopened_in_blender": true,
+    "preview_path": "audit\\redeemer_lutheran_church\\preview_detail_r2.png",
+    "source_snapshots_present": true
+  },
+  "findings": [
+    "Keep eave and ridge heights, gable placement, roof treatment for unphotographed wings, and facade dimensions marked estimated; no measured elevations or plan source was found.",
+    "The OSM-to-mesh agreement is extremely close but tests consistency with the original import, not independent survey accuracy or structural-wall registration.",
+    "The only architectural photograph is a small 2017 halftone; the central gable feature, entrance, and side-wing roof forms remain simplified or uncertain."
+  ]
+}
