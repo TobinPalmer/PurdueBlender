@@ -1,0 +1,83 @@
+{
+  "score": 7.25,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Purdue GIS BuildingShapesZip4 feature FID 781 is named Chi Omega and lists 402 Waldron St.",
+        "Fresh Blender 4.5.15 reopen found 14 ground-ring vertices; ordered reversed ring error is 0.000013 m and the symmetric nearest-vertex error is 0.0001 m.",
+        "Purdue Board of Trustees 2023 property memorandum identifies 402 Waldron as the existing house site and distinguishes the separately proposed new facility parcels."
+      ],
+      "findings": "Identity and horizontal footprint are well-supported. GIS snapshot does not state a capture date; address corroboration is present."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified within source transform",
+      "evidence": [
+        "The massing is stored in campus coordinates with identity object transform, as required for simple massing assets.",
+        "The building perimeter matches the GIS polygon after the repository documented WGS84-to-local approximation; the ordered perimeter matches in reverse winding, so orientation and plan dimensions follow that source polygon.",
+        "The comparison inherits the local geographic approximation and GIS source accuracy; this is not a surveyed coordinate verification."
+      ],
+      "findings": "Position, orientation and plan dimensions are verified against the selected GIS feature, subject to its source precision and local conversion."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2.0,
+      "status": "partially supported; height estimated",
+      "evidence": [
+        "Indiana orthophoto (2022\u20132025 mosaic; local capture date unspecified) visibly supports a multi-wing roof silhouette and several roof zones.",
+        "The model contains four simplified hip-roof volumes; no retrieved elevation, section, or dated source validates roof pitch, exact roof segmentation, eave height, or peak height.",
+        "GIS NUM_LEVELS and CountOfFLO both say 1, but the source provides no definitions or measurement basis; GIS Extrution=12 has no declared unit. The model correctly labels 7.8 m eave and 10.3 m peak as estimates."
+      ],
+      "findings": "Roof massing is aerial-informed but approximate. Floor count and all vertical dimensions remain unverified, so half credit is withheld."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.25,
+      "max_score": 2.0,
+      "status": "largely unverified",
+      "evidence": [
+        "No building elevation or usable facade photograph is included in the evidence set; the archive inventory only identifies historical Chi Omega photographs, without a retrieved image used for this candidate.",
+        "The rendered preview shows generic repeated two-row windows, neutral masonry, and trim. The build script labels these elements illustrative; no entrance or verified distinctive feature is modeled.",
+        "The Purdue property memo and chapter address corroborate identity and site only; neither supports facade details."
+      ],
+      "findings": "Visual plausibility is not source evidence. Minimal credit recognizes the candidate records these elements as illustrative rather than claiming verification."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Fresh Blender 4.5.15 process reopened the asset and found the expected scene, asset collection, and one mesh object named Chi Omega.",
+        "The object transform is identity, with no modifiers, linked libraries, or unpacked external images; the asset is a portable campus-coordinate massing library.",
+        "Building-specific evidence includes raw GIS JSON, orthophoto snapshots, Board memorandum, source metadata, build result, preview, and a builder reopen record. Sources record URL/provider, feature, retrieval date, source date when known, CRS/method, and uncertainty."
+      ],
+      "findings": "Export and evidence organization meet the modular requirements. Source dates and vertical evidence limitations are disclosed."
+    }
+  ],
+  "evidence": {
+    "fresh_reopen_probe": "audit/chi_omega_independent_grade/reopen_probe.json",
+    "source_record": "audit/chi_omega/sources/source_record.json",
+    "raw_GIS": "audit/chi_omega/sources/purdue_gis_fid781_chi_omega_2026-10-26.json",
+    "orthophoto": "audit/chi_omega/sources/indiana_ortho_chi_omega_close_2022_2025.jpg",
+    "preview": "audit/chi_omega/chi_omega_preview.png",
+    "builder_reopen_record": "audit/chi_omega/reopen_validation.json",
+    "inspected_render": "audit/chi_omega/chi_omega_preview.png"
+  },
+  "findings": [
+    "The GIS footprint and XY placement match strongly, and the library reopens cleanly.",
+    "Only the general roof-zone silhouette is supported by the available aerial image. Height and story count are estimates/unverified.",
+    "Facade rhythm, entrance, materials, and architectural identity are illustrative and lack a retrieved building-specific elevation/photo.",
+    "Overall score is below the required 8/10. Candidate requires revision plus a fresh independent grade before acceptance."
+  ]
+}
