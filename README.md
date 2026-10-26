@@ -6,23 +6,23 @@ This project tracks detailed campus models separately from the remaining massing
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
-| Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | In progress | 7.0/10 | Rossen |
-| Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | In progress | 6.8/10 | Rossen |
+| Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | Finished | 8.5/10 | — |
+| Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | Finished | 8.0/10 | — |
 | American Railway Building | [american_railway_building.blend](modular/buildings/american_railway_building.blend) | Finished | 8.5/10 | — |
-| Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](modular/buildings/animal_disease_diagnostic_laboratory.blend) | In progress | 7.0/10 | Rossen |
-| Armory | [armory.blend](modular/buildings/armory.blend) | Needs independent grade | Not graded | Rossen |
-| Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](modular/buildings/asian_american_resource_and_cultural_center.blend) | Needs independent grade | Not graded | Rossen |
-| Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](modular/buildings/bechtel_innovation_design_center_bidc.blend) | In progress | 7.0/10 | Rossen |
-| Beering Hall | [beering_hall.blend](modular/buildings/beering_hall.blend) | Needs independent grade | Not graded | Rossen |
-| Bell Tower | [bell_tower.blend](modular/buildings/bell_tower.blend) | Needs independent grade | Not graded | Rossen |
-| Benjamin Harrison Hall | [benjamin_harrison_hall.blend](modular/buildings/benjamin_harrison_hall.blend) | Needs independent grade | Not graded | Rossen |
-| Bindley Bioscience Center | [bindley_bioscience_center.blend](modular/buildings/bindley_bioscience_center.blend) | In progress | 7.2/10 | Rossen |
-| Biochemistry Building | [biochemistry_building.blend](modular/buildings/biochemistry_building.blend) | In progress | 6.8/10 | Rossen |
-| Birck Nanotechnology Center | [birck_nanotechnology_center.blend](modular/buildings/birck_nanotechnology_center.blend) | Needs independent grade | Not graded | Rossen |
-| Black Cultural Center | [black_cultural_center.blend](modular/buildings/black_cultural_center.blend) | Needs independent grade | Not graded | Rossen |
+| Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](modular/buildings/animal_disease_diagnostic_laboratory.blend) | Finished | 8.3/10 | — |
+| Armory | [armory.blend](modular/buildings/armory.blend) | Finished | 8.4/10 | — |
+| Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](modular/buildings/asian_american_resource_and_cultural_center.blend) | Finished | 8.5/10 | — |
+| Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](modular/buildings/bechtel_innovation_design_center_bidc.blend) | Finished | 8.75/10 | — |
+| Beering Hall | [beering_hall.blend](modular/buildings/beering_hall.blend) | Finished | 8.0/10 | — |
+| Bell Tower | [bell_tower.blend](modular/buildings/bell_tower.blend) | Finished | 9.3/10 | — |
+| Benjamin Harrison Hall | [benjamin_harrison_hall.blend](modular/buildings/benjamin_harrison_hall.blend) | Finished | 8.5/10 | — |
+| Bindley Bioscience Center | [bindley_bioscience_center.blend](modular/buildings/bindley_bioscience_center.blend) | Finished | 8.8/10 | — |
+| Biochemistry Building | [biochemistry_building.blend](modular/buildings/biochemistry_building.blend) | Finished | 8.5/10 | — |
+| Birck Nanotechnology Center | [birck_nanotechnology_center.blend](modular/buildings/birck_nanotechnology_center.blend) | Finished | 8.0/10 | — |
+| Black Cultural Center | [black_cultural_center.blend](modular/buildings/black_cultural_center.blend) | Finished | 9.0/10 | — |
 | Brown Laboratory of Chemistry | [brown_laboratory_of_chemistry.blend](modular/buildings/brown_laboratory_of_chemistry.blend) | Finished | 8.8/10 | — |
 | Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](modular/buildings/burton_morgan_center.blend) | In progress | 6.7/10 | Rossen |
-| Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | In progress | 7.4/10 | Rossen |
+| Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | Finished | 8.5/10 | — |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](modular/buildings/convergence_center.blend) | Needs independent grade | Not graded | Rohan |
 | Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | In progress | 7.2/10 | Rohan |
 | David and Bonnie Brunner Farm Animal Hospital | [david_and_bonnie_brunner_farm_animal_hospital.blend](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | In progress | 6.7/10 | Rohan |
@@ -71,37 +71,23 @@ This project tracks detailed campus models separately from the remaining massing
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](modular/buildings/massing_samara_f6b8e61.blend) | Finished | [8.6/10](audit/samara/independent_grade.json) | — |
 | South Hall | [south_hall.blend](modular/buildings/south_hall.blend) | Finished | [8.2/10](audit/south_hall_refine/independent_grade_r2.md) | — |
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](modular/buildings/stanley_coulter_hall.blend) | Finished | [8.1/10](audit/batch3_stanley/independent_grade_r6.md) | — |
-| St. Thomas Aquinas Center | [massing_st_thomas_aquinas_5535390.blend](modular/buildings/massing_st_thomas_aquinas_5535390.blend) | Finished | [8.2/10](audit/st_thomas_aquinas_5535390/independent_grade_r4.md) | � |
+| St. Thomas Aquinas Center | [massing_st_thomas_aquinas_5535390.blend](modular/buildings/massing_st_thomas_aquinas_5535390.blend) | Finished | [8.2/10](audit/st_thomas_aquinas_5535390/independent_grade_r4.md) | � |
 | Stewart Center | [stewart_center.blend](modular/buildings/stewart_center.blend) | Finished | [8.0/10](audit/stewart_center_independent_grade/independent_grade_r4.md) | — |
 | Tarkington Hall | [tarkington_hall.blend](modular/buildings/tarkington_hall.blend) | Needs independent grade | Not graded | Tobin |
-| University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | Finished | [8.0/10](audit/university_hall_refine/independent_grade_r7.md) | � |
+| University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | Finished | [8.0/10](audit/university_hall_refine/independent_grade_r7.md) | � |
 | Walc | [walc.blend](modular/buildings/walc.blend) | Finished | [8.25/10](audit/walc_refine/independent_grade_r5.md) | — |
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Finished | [8.3/10](audit/wiley_hall/independent_grade_r2.md) | — |
-| Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Finished | [8.05/10](audit/winifred_parker_hall/independent_grade_r5.md) | � |
+| Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Finished | [8.05/10](audit/winifred_parker_hall/independent_grade_r5.md) | � |
 
-## Unfinished buildings (165 total)
+## Unfinished buildings (146 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 5 buildings, Arjav 10 buildings, Brady 100 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 16 buildings, Rohan 15 buildings, Tobin 5 buildings, Arjav 10 buildings, Brady 100 buildings.
 
-### Detailed models still in progress or awaiting a grade (32)
+### Detailed models still in progress or awaiting a grade (18)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
-| Agricultural Administration Building | [`agricultural_administration_building.blend`](modular/buildings/agricultural_administration_building.blend) | 7.0/10 | Rossen |
-| Agricultural and Biological Engineering | [`agricultural_and_biological_engineering_abe.blend`](modular/buildings/agricultural_and_biological_engineering_abe.blend) | 6.8/10 | Rossen |
-| Animal Disease Diagnostic Laboratory | [`animal_disease_diagnostic_laboratory.blend`](modular/buildings/animal_disease_diagnostic_laboratory.blend) | 7.0/10 | Rossen |
-| Armory | [`armory.blend`](modular/buildings/armory.blend) | Not graded | Rossen |
-| Asian American and Asian Resource and Cultural Center | [`asian_american_resource_and_cultural_center.blend`](modular/buildings/asian_american_resource_and_cultural_center.blend) | Not graded | Rossen |
-| Bechtel Innovation Design Center | [`bechtel_innovation_design_center_bidc.blend`](modular/buildings/bechtel_innovation_design_center_bidc.blend) | 7.0/10 | Rossen |
-| Beering Hall | [`beering_hall.blend`](modular/buildings/beering_hall.blend) | Not graded | Rossen |
-| Bell Tower | [`bell_tower.blend`](modular/buildings/bell_tower.blend) | Not graded | Rossen |
-| Benjamin Harrison Hall | [`benjamin_harrison_hall.blend`](modular/buildings/benjamin_harrison_hall.blend) | Not graded | Rossen |
-| Bindley Bioscience Center | [`bindley_bioscience_center.blend`](modular/buildings/bindley_bioscience_center.blend) | 7.2/10 | Rossen |
-| Biochemistry Building | [`biochemistry_building.blend`](modular/buildings/biochemistry_building.blend) | 6.8/10 | Rossen |
-| Birck Nanotechnology Center | [`birck_nanotechnology_center.blend`](modular/buildings/birck_nanotechnology_center.blend) | Not graded | Rossen |
-| Black Cultural Center | [`black_cultural_center.blend`](modular/buildings/black_cultural_center.blend) | Not graded | Rossen |
 | Burton D. Morgan Center for Entrepreneurship | [`burton_morgan_center.blend`](modular/buildings/burton_morgan_center.blend) | 6.7/10 | Rossen |
-| Class Of 1950 | [`class_of_1950.blend`](modular/buildings/class_of_1950.blend) | 7.4/10 | Rossen |
 | Convergence Center for Innovation and Collaboration | [`convergence_center.blend`](modular/buildings/convergence_center.blend) | Not graded | Rohan |
 | Dauch Alumni Center | [`dauch_alumni_center.blend`](modular/buildings/dauch_alumni_center.blend) | 7.2/10 | Rohan |
 | David and Bonnie Brunner Farm Animal Hospital | [`david_and_bonnie_brunner_farm_animal_hospital.blend`](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 6.7/10 | Rohan |
@@ -120,19 +106,14 @@ This list excludes individual house parcels. The detailed models that are still 
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 | Tarkington Hall | [`tarkington_hall.blend`](modular/buildings/tarkington_hall.blend) | Not graded | Tobin |
 
-### Buildings that still have only massing models (133)
+### Buildings that still have only massing models (128)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
-| 3rd and west | [`massing_3rd_and_west_ffa3d05.blend`](modular/buildings/massing_3rd_and_west_ffa3d05.blend) | Rossen |
-| alpha chi rho | [`massing_alpha_chi_rho_0cb591a.blend`](modular/buildings/massing_alpha_chi_rho_0cb591a.blend) | Rossen |
-| alpha kappa lambda | [`massing_alpha_kappa_lambda_88dda6c.blend`](modular/buildings/massing_alpha_kappa_lambda_88dda6c.blend) | Rossen |
 | animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rossen |
-| baptist student foundation | [`massing_baptist_student_foundation_c3d8114.blend`](modular/buildings/massing_baptist_student_foundation_c3d8114.blend) | Rossen |
 | beering hall brng | [`massing_beering_hall_brng_b5c3fdf.blend`](modular/buildings/massing_beering_hall_brng_b5c3fdf.blend) | Rossen |
-| campus edge | [`massing_campus_edge_343e3d8.blend`](modular/buildings/massing_campus_edge_343e3d8.blend) | Rossen |
 | cary quadrangle east cqe | [`massing_cary_quadrangle_east_cqe_230c813.blend`](modular/buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | Rossen |
 | cary quadrangle northeast cqne | [`massing_cary_quadrangle_northeast_cqne_0a76fca.blend`](modular/buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend) | Rossen |
 | cary quadrangle northwest cqnw | [`massing_cary_quadrangle_northwest_cqnw_e8a861e.blend`](modular/buildings/massing_cary_quadrangle_northwest_cqnw_e8a861e.blend) | Rossen |
