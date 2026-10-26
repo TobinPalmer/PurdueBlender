@@ -1,0 +1,62 @@
+{
+  "building": "Riverside Covenant Church",
+  "asset_id": "massing_riverside_covenannt_church_3a60684",
+  "status": "Facade details updated; source footprint match and independent grade pending",
+  "source": {
+    "provider": "Building owner/congregation official website",
+    "url": "https://www.rcovenant.org/our-history/",
+    "feature_identifier": "No matching feature in the preserved official Purdue campus GIS snapshot",
+    "retrieval_date": "2026-10-25",
+    "source_crs": "Original library uses project campus-local X east, Y north, Z up; church-specific source CRS/coordinate conversion not independently established",
+    "source_record": "source_mesh_snapshot.json",
+    "reference_status": "Official owner confirms building name/location, but there is no independent polygon match",
+    "secondary_visual_references": [
+      {
+        "provider": "Building owner/congregation",
+        "use": "Church history identifies the 1850 Woodland Avenue location; architect project page documents a 2022 renovation to lobby and entry; no measured geometry inferred",
+        "url": "https://www.kjgarchitecture.com/portfolio-1/covenant-curch"
+      }
+    ]
+  },
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "axes": "X east, Y north, Z up in original library",
+    "units": "meters as project metadata; church-specific geographic transform is unverified"
+  },
+  "measurements": {
+    "method": "Recorded bounds of the source mesh and retained its shell; no independent footprint or elevation comparison possible",
+    "before_and_after_asset_bounds_m": {
+      "max_y": 2014.287841796875,
+      "min_z": 0.0,
+      "min_y": 2000.5743408203125,
+      "min_x": -157.0013885498047,
+      "max_z": 16.0,
+      "max_x": -124.4256362915039
+    },
+    "original_vertex_count": 8,
+    "original_face_count": 8,
+    "after_footprint_status": "Retained original source mesh footprint; not independently verified",
+    "orientation_status": "Unverified; original mesh orientation retained",
+    "height_status": "16 m retained from original massing; unverified",
+    "position_status": "Original local campus coordinates retained; not verified against an independent map source"
+  },
+  "geometry_edits": [
+    "Retained the original mesh vertices and structural faces.",
+    "Added masonry, glazing and limestone trim materials, repeated window bays, and an approximate entry glazing marker.",
+    "Preserved object, collection, scene, asset ID and asset path."
+  ],
+  "uncertainties": [
+    "Purdue GIS snapshot has no matching named record for this church.",
+    "The preserved mesh snapshot records the original geometry but does not identify its upstream geometry source or geographic precision.",
+    "Facade fenestration, entrance placement, footprint identity, orientation and height remain unverified.",
+    "The official page is not an elevation drawing; details have not been matched to a measured photo.",
+    "No independent grader has reviewed this revision."
+  ],
+  "artifacts": {
+    "build_script": "build_detail.py",
+    "build_config": "build_config.json",
+    "raw_source": "source_mesh_snapshot.json",
+    "preview": "preview_detail.png"
+  }
+}
