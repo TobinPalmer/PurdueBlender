@@ -1,0 +1,92 @@
+{
+  "building_id": "massing_hockmeyer_hall_of_structural_biology_hock_4d524ab",
+  "asset": "modular/buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend",
+  "evaluator": "independent Hockmeyer Hall review r2",
+  "score": 7.75,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.75,
+      "max_score": 2,
+      "evidence": [
+        "Purdue BuildingShapes feature FID 669 is named 'Hockmeyer Hall of Structural Biology'; code HOCK and address are also recorded.",
+        "The reopened shell matches all 58 exterior-ring vertices from the official Purdue feature; maximum XY vertex error is 0.000035 m.",
+        "The previous Shape__Area conflict is credibly resolved: feature area is in native EPSG:3857, and the observed ratio to locally projected area matches expected Web Mercator inflation within about 0.2%.",
+        "OSM way 283274991 is independent identity/outline corroboration, but a localized outline difference remains (reported maximum Hausdorff distance about 16.27 m); no survey plan distinguishes the edge."
+      ],
+      "deduction": "Small deduction for a localized difference between the official GIS perimeter and independent OSM outline, despite a transparent, defensible source choice."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2,
+      "evidence": [
+        "Asset keeps all 58 source vertices in the repo campus coordinate frame; direct reopen comparison reports 0.000035 m maximum XY error.",
+        "The builder applies the repository's documented lon/lat-to-local-meter approximation to the official GIS geometry; OSM broadly overlaps as an independent check.",
+        "No survey control points or independent measured dimensions are available; localized GIS/OSM outline disagreement remains."
+      ],
+      "deduction": "Chosen-source placement and shape are strongly verified, but independent surveyed dimensions/registration are unavailable."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "Purdue Biological Sciences' 2010 article and current emergency plan support three occupied stories; the emergency plan also states penthouse and basement.",
+        "The shell is three stories and 11.4 m high, but the 3.8 m floor-to-floor scaffold is explicitly an estimate, not measured height.",
+        "A flat roof cap is a massing placeholder; a separate penthouse block was removed because the available official photos do not locate or dimension it, despite the plan confirming its presence.",
+        "Undocumented GIS NUM_LEVELS=6 and Extrution=60 are preserved as raw fields and not treated as height evidence."
+      ],
+      "deduction": "Story count is supported. Quantitative height, penthouse form/location, and detailed roof form remain unverified or estimated."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Official Purdue 2009 exterior photo directly shows red brick, large pale opaque upper cladding, extensive blue-green multi-story courtyard glazing, and glazed arrival frontage.",
+        "Revised renders show red brick, a broad pale-clad upper volume, and enlarged curtainwall strips on the shell's re-entrant/courtyard edges; this addresses the prior review's major omitted facade cues.",
+        "The images are not registered to the GIS polygon, so facade-to-edge alignment and bay placement remain schematic. No doorway/canopy is modeled because its precise location is not georeferenced."
+      ],
+      "deduction": "Major materials and courtyard glazing are now represented, but facade registration/detail and exact entrance placement are still uncertain."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Saved asset exists: True; expected exported collection 'Asset_massing_hockmeyer_hall_of_structural_biology_hock_4d524ab' is present with 6 objects.",
+        "Reopen validation reports no external unpacked file dependencies: [].",
+        "All three review renders exist and exceed 100 KB: True; raw Purdue GIS, official photo/page snapshots, emergency plan, OSM, layer metadata, build evidence, and reopen evidence are present.",
+        "Expected scene ID does not match reopened scene: expected 'Building_massing_hockmeyer_hall_of_structural_biology_hock_4d524ab', actual 'Building_massing_hockmeyer_hall_of_structural_biology_hock_4d52'. Blender 4.5.15 truncation is explicitly recorded; collection contract passes=True."
+      ],
+      "deduction": "Strong collection/export evidence and portable asset, but the expected scene-name contract remains a recorded compatibility failure."
+    }
+  ],
+  "evidence": {
+    "build_evidence": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/build_evidence.json",
+    "reopen_validation": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/reopen_validation.json",
+    "visual_review": [
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/renders/hockmeyer_exterior_oblique.png",
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/renders/hockmeyer_courtyard_entry.png",
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/renders/hockmeyer_roof_plan.png",
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/purdue_hockmeyer_exterior_2009.jpg"
+    ],
+    "gis_feature_id": 669,
+    "source_to_shell_xy_vertex_error_m": 3.539e-05,
+    "expected_collection_found": true,
+    "expected_scene_name_matches": false,
+    "external_unpacked_file_dependencies": [],
+    "all_review_renders_present": true
+  },
+  "findings": [
+    "FAIL (7.75/10; minimum passing standard 8/10).",
+    "The r1 area criticism is resolved: the apparent 73% area mismatch comes from native Web Mercator area distortion, not an incorrect target area; the chosen shell follows official Purdue FID 669.",
+    "Do not claim the 11.4 m height or penthouse/roof geometry as measured; obtain elevation/roof-plan evidence if vertical accuracy is required.",
+    "Resolve the full expected scene-name contract in the compatible Blender version/export workflow; reopen currently confirms collection success but not the expected scene ID.",
+    "Retain the localized Purdue/OSM perimeter difference and unregistered facade/entrance placement as stated limitations."
+  ]
+}

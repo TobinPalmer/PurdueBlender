@@ -1,0 +1,197 @@
+{
+  "building_id": "massing_hockmeyer_hall_of_structural_biology_hock_4d524ab",
+  "assigned_owner": "Rossen",
+  "asset": "modular/buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend",
+  "collection": "Asset_massing_hockmeyer_hall_of_structural_biology_hock_4d524ab",
+  "expected_scene": "Building_massing_hockmeyer_hall_of_structural_biology_hock_4d524ab",
+  "builder_script": "modular/buildings/build_massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.py",
+  "date_built": "2026-10-26",
+  "source_feature_id": 669,
+  "building_code": "HOCK",
+  "building_name": "Hockmeyer Hall of Structural Biology",
+  "source_address": "240 S Martin Jischke Drive",
+  "gis_source": {
+    "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer, layer 0",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D669&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "feature_id": 669,
+    "retrieved": "2026-10-26",
+    "service_native_crs": "EPSG:3857 (WKID 102100); query geometry output EPSG:4326",
+    "snapshot_output_crs": "EPSG:4326",
+    "snapshot": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/purdue_building_shapes_hock.json",
+    "measurement_method": "Projected the exact feature exterior ring with the project local geographic approximation X=(lon+86.9137)*111412.84*cos(40.4274°), Y=(lat-40.4274)*111040; retained campus coordinates.",
+    "layer_metadata_snapshot": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/purdue_building_shapes_layer_metadata.json",
+    "area_interpretation": "Shape__Area is reported in the service-native Web Mercator coordinate space (Esri meters). Its 3358.578 m² divided by the locally projected ground estimate 1943.099 m² is 1.7285, matching the expected Web Mercator areal scale factor 1/cos(latitude)^2 = 1.7257 at 40.4274° within 0.2%. This is projection distortion, not evidence the perimeter is 73% too large. The model uses the feature ring, not Shape__Area as an area target.",
+    "service_metadata_snapshot_date": "2026-10-26"
+  },
+  "gis_vertical_attributes": {
+    "raw_values": {
+      "NUM_LEVELS": 6,
+      "Extrution": 60,
+      "Shape__Area_m2": 3358.578125
+    },
+    "field_metadata": "Layer metadata gives native horizontal WKID 102100/3857 and Shape__Area in Esri meters, but does not define units/semantics for vertical fields. NUM_LEVELS and Extrution are preserved as raw numeric attributes only.",
+    "model_use": "Official biological sciences article and current emergency plan independently support three floors. The emergency plan also mentions penthouse and basement, but the penthouse is not isolated as a separate visible mass in available official exterior photos and has no measured size/location; it is not modeled as a separate block. Extrution=60 is unused."
+  },
+  "additional_sources": [
+    {
+      "provider": "Purdue University News Service",
+      "url": "https://www.purdue.edu/newsroom/releases/2009/Q3/hockmeyer-hall-dedicated.html",
+      "retrieved": "2026-10-26",
+      "source_date": "2009-10-02",
+      "snapshot": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/purdue_news_2009_dedication.html; purdue_hockmeyer_exterior_2009.jpg",
+      "supports": "Building identity and exterior palette/forms visible in the official photo; photo is not georeferenced and does not establish measured dimensions."
+    },
+    {
+      "provider": "Purdue Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/hock/",
+      "retrieved": "2026-10-26",
+      "source_date": "page revision 2026-03-26",
+      "snapshot": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/purdue_emergency_plan_page.html",
+      "supports": "Address and description of three occupied floors, penthouse, basement; does not state physical height."
+    },
+    {
+      "provider": "Storrow Kinsella landscape architecture",
+      "url": "https://storrowkinsella.com/portfolio/discovery-park-south-gateway-purdue-university/",
+      "retrieved": "2026-10-26",
+      "source_date": "design/site development plans 2009; master-plan completion 2014, per page",
+      "snapshot": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/storrowkinsella_discovery_park_south_gateway.html and supporting Hockmeyer GIF images",
+      "supports": "Site/courtyard and roof imagery, entrance-plaza and arrival context; imagery is not survey-controlled."
+    },
+    {
+      "provider": "Purdue University Department of Biological Sciences",
+      "url": "https://bio.purdue.edu/news/articles/2010/structural-biologists-welcome-home-2.html",
+      "retrieved": "2026-10-26",
+      "source_date": "2010-01-07",
+      "snapshot": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/purdue_biological_sciences_2010_three_story.html (retrieved via www.bio.purdue.edu alias)",
+      "supports": "Describes the facility as a three-story, 65,690-square-foot building. Supports floor count and identity, not floor-to-floor dimensions or roof height."
+    },
+    {
+      "provider": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/283274991",
+      "retrieved": "2026-10-26",
+      "source_date": "snapshot date 2026-10-26",
+      "snapshot": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/osm_local_map.xml",
+      "supports": "Independent identity and approximate footprint corroboration: 96.28% intersection-over-union and 3.72% symmetric difference; 3.603 m boundary Hausdorff using polygon boundary-to-segment distance. Prior 16.27 m point-to-point vertex comparison overstated mismatch because sampling differs. Purdue GIS remains primary campus footprint; no vertices blended."
+    },
+    {
+      "provider": "Purdue University News Service",
+      "url": "https://www.purdue.edu/uns/x/2009b/091002HockmeyerDedicate.html",
+      "retrieved": "2026-10-26",
+      "source_date": "2009-10-02",
+      "snapshot": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/purdue_news_2009_dedication_page.html; official exterior image purdue_hockmeyer_exterior_2009.jpg",
+      "supports": "Identity, location at Harrison Street and Martin Jischke Drive, and official exterior cues: brick, extensive glazing, and pale upper opaque cladding. No door-to-GIS alignment or measured dimensions."
+    }
+  ],
+  "geometry": {
+    "method": "Build the exact 58-vertex Purdue GIS FID 669 exterior ring in campus coordinates using the repository local approximation; create a three-story main envelope with photo-supported facade zones.",
+    "gis_footprint_area_computed_m2_local_approx": 1943.099,
+    "gis_shape_area_attribute_m2": 3358.578125,
+    "area_uncertainty": "The apparent 73% area difference is explained by the service native Web Mercator area field: at campus latitude the expected area inflation factor 1/cos(latitude)^2 is 1.7257, versus observed 1.7285. Purdue FID 669 perimeter is used as the building footprint. Independent OSM outline comparison has IoU 0.9628, 3.72% symmetric difference and 3.603 m boundary Hausdorff when measured boundary-to-segment; the previously reported 16.27 m was vertex-to-vertex and was inflated by different vertex sampling. No survey plan was located.",
+    "ring_vertices": 58,
+    "local_bounds_xy_m": [
+      [
+        -661.447904,
+        -610.523054
+      ],
+      [
+        -721.20234,
+        -654.522389
+      ]
+    ],
+    "modeled_floors": 3,
+    "main_wall_height_estimate_m": 11.4,
+    "total_height_estimate_m": 11.4,
+    "height_status": "Three stories are supported by Purdue Biological Sciences (2010) and the current emergency plan. 11.4 m is an illustrative 3 x 3.8 m floor-to-floor scaffold, not a measured height. The emergency plan mentions a penthouse and basement, but the penthouse is not clearly separable in official exterior photos and its dimensions/position are unknown; no separate rooftop block is modeled. GIS Extrution=60 is undocumented and unused.",
+    "facade": "Red brick lower volume, extensive blue-green multi-story courtyard curtainwall, and broad pale upper opaque panel cladding are directly supported by Purdue's official 2009 exterior photo. GIS re-entrant edges provide schematic courtyard-facing candidates; the photo is not georeferenced, so exact facade-edge registration, panel bay positions, and entry location remain estimates.",
+    "entry_location": "No specific door or canopy is modeled. Purdue describes the building near Harrison Street and Martin Jischke Drive and the official photo shows glazed courtyard/entry frontage, but no source georeferences the doorway to the GIS ring.",
+    "roof": "Flat cap is a massing placeholder. Emergency plan mentions a penthouse but available official exterior photos do not clearly show a discrete rooftop penthouse volume, and no plan/height dimensions were found; separate penthouse mass omitted.",
+    "interior": "Not modeled; no verified floor plan used.",
+    "gis_shape_area_attribute_m2_native_3857": 3358.578125,
+    "validation_note": "Purdue GIS is the selected campus footprint. OSM remains a separate non-authoritative comparison; no vertices were combined.",
+    "gis_osm_comparison_metrics": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/geometry/gis_osm_footprint_metrics.json",
+    "osm_gis_validation": {
+      "comparison_id": "HOCK Purdue GIS FID 669 vs OSM way 283274991",
+      "retrieved": "2026-10-26",
+      "method": "Transform both independent raw polygon outlines to the repository local approximation; compute shapely 2.2 polygon areas, polygon intersection-over-union, symmetric-difference area and directed boundary-vertex-to-opposite-boundary distances. Do not compare vertex indices because vertex sampling density/order differs (58 vs 28 vertices).",
+      "gis_source": "Purdue University BuildingShapes FeatureServer FID 669; EPSG:4326 query geometry",
+      "osm_source": "OpenStreetMap way 283274991 from saved local XML; WGS84",
+      "gis_area_ground_approx_m2": 1943.099,
+      "osm_area_ground_approx_m2": 2000.642,
+      "intersection_over_union": 0.962832,
+      "symmetric_difference_area_m2": 74.678,
+      "symmetric_difference_pct_of_union": 3.717,
+      "boundary_hausdorff_m": 3.603,
+      "purdue_vertices_to_osm_boundary_m": {
+        "mean": 0.225,
+        "median": 0.203,
+        "p90": 0.375,
+        "max": 0.902
+      },
+      "osm_vertices_to_purdue_boundary_m": {
+        "mean": 0.488,
+        "median": 0.152,
+        "p90": 0.744,
+        "max": 3.603
+      },
+      "interpretation": "The two outlines overlap over 96.28% of their union area; symmetric difference is 3.72%. The earlier 16.27 m maximum came from point-to-point vertex comparison, which overstates disagreement when two polygons sample the same curved boundary at different vertices. Boundary-to-segment comparison yields 3.603 m Hausdorff. Local residual mismatch remains, but this independent OSM snapshot broadly corroborates the official Purdue footprint. Purdue remains selected as primary campus source; no vertices were blended."
+    },
+    "gross_floor_area_cross_check": {
+      "official_reported_floor_area_sqft": 65690,
+      "converted_total_floor_area_m2_approx": 6101.44,
+      "computed_local_footprint_area_m2": 1943.099,
+      "implied_floor_area_to_footprint_ratio": 3.14,
+      "interpretation": "The published total area is about 3.14 times the source footprint, broadly consistent with three occupied floors; this corroborates story count only and does not establish exact floor plates, height, or basement/penthouse area."
+    },
+    "source_registration_status": "Exact placement/orientation of the facades and exact door location remain unverified. The official Purdue exterior photo has no geospatial metadata. Storrow|Kinsella imagery labels views looking north/south across the courtyard and describes entrance/arrival space, which supports a courtyard-facing glazing zone but does not identify a precise GIS ring edge or doorway. No doorway/canopy is modeled.",
+    "roof_validation_status": "A flat top face is present at the estimated main-envelope elevation. No slope, roof silhouette, or discrete penthouse geometry is claimed; the current plan says penthouse exists but available official exterior image does not show a distinct rooftop block."
+  },
+  "validation": {
+    "exported_collection": "Asset_massing_hockmeyer_hall_of_structural_biology_hock_4d524ab",
+    "asset_object_count": 6,
+    "rendered_previews": [
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/renders/hockmeyer_exterior_oblique.png",
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/renders/hockmeyer_courtyard_entry.png",
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/renders/hockmeyer_roof_plan.png"
+    ],
+    "original_5_2_asset_preserved": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/original_asset_blender_5_2.blend",
+    "reopen_validation": {
+      "reopened": true,
+      "blender_version": "4.5.15 LTS",
+      "collection_object_count": 6,
+      "scene_name_matches_expected": false,
+      "scene_name_custom_property_matches": true,
+      "source_shell_vertex_error_m": 3.539e-05,
+      "main_shell_height_estimate_m": 11.4,
+      "separate_rooftop_penthouse_block_modeled": false,
+      "external_dependencies": []
+    },
+    "software_limit": "The pre-existing Blender 5.2.45 source is preserved untouched. The bundled Blender 5.2.0 binary exits before running Python with WM_OT_drop_blend_file; rebuild/reopen/render therefore used Blender 4.5.15. Blender 4.5 truncates the long required scene name; collection and asset contract IDs remain intact. See reopen_validation.json.",
+    "expected_collection_object_count": 6,
+    "asset_sha256_after_rebuild": "d332e54a518ee251a2129defd0959064908210d00c642899924926dc97ad85dc",
+    "reopened_with": "4.5.15 LTS",
+    "scene_name_matches_expected": false,
+    "main_shell_xy_vertex_error_m": 3.539e-05,
+    "rooftop_penthouse_block_modeled": false,
+    "expected_scene_name_custom_property_matches": true,
+    "actual_scene_name": "Building_massing_hockmeyer_hall_of_structural_biology_hock_4d52",
+    "expected_scene_name": "Building_massing_hockmeyer_hall_of_structural_biology_hock_4d524ab",
+    "scene_contract_note": "Actual Blender 4.5 ID still truncates; the full expected scene string is preserved in scene custom property and validator records actual-name failure. Do not claim scene-name pass.",
+    "collection_object_names": [
+      "Hockmeyer Hall of Structural Biology (HOCK)",
+      "HOCK | mullions and brick window frames",
+      "HOCK | courtyard curtainwall and window glazing",
+      "HOCK | estimated floor bands",
+      "HOCK | pale opaque upper facade panels",
+      "HOCK | pale facade panel joints"
+    ],
+    "main_shell_height_estimate_m": 11.4,
+    "separate_rooftop_penthouse_block_modeled": false
+  },
+  "geometry_edits": [
+    "Rebuilt HOCK from the full 58-vertex Purdue GIS FID 669 ring and retained that exact campus footprint; did not mix OSM vertices into the source shell.",
+    "Explained the Shape__Area versus local ground area ratio using source metadata and Web Mercator scale distortion; preserved the separate localized OSM edge difference as uncertainty.",
+    "Added broad pale opaque upper cladding plus extended multi-story courtyard curtainwall following the official Purdue 2009 photo; facade edge registration remains schematic because photo is not georeferenced.",
+    "Removed the unsupported custom doorway/canopy and separate rooftop block. The official plan supports a penthouse exists, but official exterior photos do not clearly isolate its shape/location.",
+    "Kept 3-story, 11.4 m total main-envelope height as an illustrative estimate; did not use undocumented GIS Extrution=60."
+  ]
+}

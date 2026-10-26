@@ -1,0 +1,26 @@
+{
+  "comparison_id": "HOCK Purdue GIS FID 669 vs OSM way 283274991",
+  "retrieved": "2026-10-26",
+  "method": "Transform both independent raw polygon outlines to the repository local approximation; compute shapely 2.2 polygon areas, polygon intersection-over-union, symmetric-difference area and directed boundary-vertex-to-opposite-boundary distances. Do not compare vertex indices because vertex sampling density/order differs (58 vs 28 vertices).",
+  "gis_source": "Purdue University BuildingShapes FeatureServer FID 669; EPSG:4326 query geometry",
+  "osm_source": "OpenStreetMap way 283274991 from saved local XML; WGS84",
+  "gis_area_ground_approx_m2": 1943.099,
+  "osm_area_ground_approx_m2": 2000.642,
+  "intersection_over_union": 0.962832,
+  "symmetric_difference_area_m2": 74.678,
+  "symmetric_difference_pct_of_union": 3.717,
+  "boundary_hausdorff_m": 3.603,
+  "purdue_vertices_to_osm_boundary_m": {
+    "mean": 0.225,
+    "median": 0.203,
+    "p90": 0.375,
+    "max": 0.902
+  },
+  "osm_vertices_to_purdue_boundary_m": {
+    "mean": 0.488,
+    "median": 0.152,
+    "p90": 0.744,
+    "max": 3.603
+  },
+  "interpretation": "The two outlines overlap over 96.28% of their union area; symmetric difference is 3.72%. The earlier 16.27 m maximum came from point-to-point vertex comparison, which overstates disagreement when two polygons sample the same curved boundary at different vertices. Boundary-to-segment comparison yields 3.603 m Hausdorff. Local residual mismatch remains, but this independent OSM snapshot broadly corroborates the official Purdue footprint. Purdue remains selected as primary campus source; no vertices were blended."
+}

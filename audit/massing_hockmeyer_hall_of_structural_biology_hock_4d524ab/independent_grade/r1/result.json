@@ -1,0 +1,93 @@
+{
+  "building_id": "massing_hockmeyer_hall_of_structural_biology_hock_4d524ab",
+  "asset": "modular/buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend",
+  "evaluator": "independent Hockmeyer Hall review r1",
+  "score": 6.25,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Purdue BuildingShapes feature FID 669 is named 'Hockmeyer Hall of Structural Biology'; build evidence also records HOCK and the matching address.",
+        "The saved shell uses all 58 vertices from that feature's exterior ring.",
+        "OSM way 283274991 independently matches the name/address, but its outline differs (reported Hausdorff distance about 16.27 m).",
+        "Purdue Shape__Area 3358.58 m² conflicts with local ring area 1943.10 m² (about 73%); its semantics are undocumented. The discrepancy is disclosed but not resolved against a survey source."
+      ],
+      "deduction": "Partial credit: building identity is well supported and a traceable Purdue footprint is used, but footprint-source conflict remains material."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Reopen check compared source and shell XY vertices; maximum recorded error is 0.000035 m, with 58 vertices at both shell levels.",
+        "Builder uses the repository's documented local geographic approximation and keeps the source in campus coordinates.",
+        "No independent survey/control-point check is included, and the compared Purdue/OSM outlines differ by up to about 16.27 m."
+      ],
+      "deduction": "The model faithfully reproduces its chosen GIS ring, but independent positional/dimensional corroboration is weakened by the conflicting outline and undocumented area field."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue emergency-preparedness source supports three occupied floors, a penthouse, and a basement.",
+        "Official 2009 exterior photo and Storrow Kinsella imagery support a roof/penthouse presence and broad roof/courtyard context.",
+        "Main wall height 11.4 m, 3.8 m floor bands, penthouse 2.8 m, and 14.2 m total are explicitly estimates; no measured height/elevation source is supplied.",
+        "GIS Extrution=60 is undocumented and correctly not treated as height evidence."
+      ],
+      "deduction": "Floor count and the existence of rooftop mass are supported; quantitative height, floor-to-floor spacing, penthouse dimensions/location, and precise roof silhouette remain estimates."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.75,
+      "max_score": 2,
+      "evidence": [
+        "The saved Purdue photo visibly supports red brick, substantial multi-story blue-green glazing, and a courtyard-facing glazed entrance; the model includes these broad material cues.",
+        "The three renders show a three-level brick mass with localized windows, selected glass curtainwall strips, a simple canopy, and a centered rooftop block.",
+        "Photo comparison reveals a major facade cue not represented in the model: extensive pale opaque upper cladding alongside the large glazed curtainwall. The model presents an almost entirely brick shell outside localized glass strips.",
+        "Exact bay placement, entry location/orientation, and facade proportions are explicitly visual interpretations from non-georeferenced images."
+      ],
+      "deduction": "Only coarse palette and courtyard glazing are supported. Facade composition is materially incomplete relative to the official photo, while entrance registration and specific detailing remain speculative."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Saved asset exists: True; builder exists: True.",
+        "Reopen evidence confirms the stable collection 'Asset_massing_hockmeyer_hall_of_structural_biology_hock_4d524ab' with 6 objects and no external unpacked dependencies.",
+        "Source snapshots and all three review renders are present: True, True, True, True, and renders=True.",
+        "Expected scene name 'Building_massing_hockmeyer_hall_of_structural_biology_hock_4d524ab' does not match reopened scene 'Building_massing_hockmeyer_hall_of_structural_biology_hock_4d52': Blender 4.5.15 truncation is explicitly recorded; scene contract passed=False, collection contract passed=True."
+      ],
+      "deduction": "Collection export, dependencies, and evidence are strong; the expected scene-name contract is an explicit integration failure even though the stable collection survives."
+    }
+  ],
+  "evidence": {
+    "build_evidence": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/build_evidence.json",
+    "reopen_validation": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/reopen_validation.json",
+    "visual_review": [
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/renders/hockmeyer_exterior_oblique.png",
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/renders/hockmeyer_courtyard_entry.png",
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/renders/hockmeyer_roof_plan.png",
+      "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/purdue_hockmeyer_exterior_2009.jpg"
+    ],
+    "gis_snapshot": "audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/sources/purdue_building_shapes_hock.json",
+    "gis_feature_id": 669,
+    "source_to_shell_xy_vertex_error_m": 3.539e-05,
+    "expected_collection_found": true,
+    "expected_scene_name_matches": false,
+    "all_review_renders_present": true
+  },
+  "findings": [
+    "FAIL (6.25/10; minimum pass 8/10). Do not accept as complete yet.",
+    "Resolve the GIS versus OSM footprint/area conflict with authoritative survey or plan evidence, or retain the issue as an integration limitation.",
+    "Restore the expected full scene name in a compatible Blender version or update the export contract through the coordinator; do not assume the collection name alone satisfies consumers that expect the scene ID.",
+    "Improve the facade massing to represent the large pale cladding volume and extensive curtainwall seen in the official exterior photo; georeference the principal entrance before claiming its location is verified.",
+    "Keep total height and penthouse dimensions labeled estimated until a measured source is found."
+  ]
+}
