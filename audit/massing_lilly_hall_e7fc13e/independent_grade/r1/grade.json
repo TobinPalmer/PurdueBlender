@@ -1,0 +1,92 @@
+{
+  "building_id": "massing_lilly_hall_e7fc13e",
+  "building": "Lilly Hall of Life Sciences",
+  "grade_round": "r1",
+  "grader": "independent subagent",
+  "score": 8.0,
+  "max_score": 10,
+  "result": "PASS",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Saved Purdue GIS BuildingShapesZip4 feature FID 581 identifies BLDG_ABBR LILY, Lilly Hall of Life Sciences, at 915 Mitch Daniels Blvd.",
+        "The model shell follows the saved 34-vertex exterior ring; independent reopen report gives maximum nearest-vertex error 0.000023 m and reports a closed manifold.",
+        "Purdue Biological Sciences contact page corroborates the name and address; saved archival Purdue Libraries photo is a separate identity/character reference."
+      ],
+      "findings": []
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "GIS EPSG:3857 ring was independently transformed with the documented repository local campus conversion and matches the shell coordinates within the reported tolerance.",
+        "The outline preserves the GIS orientation and full footprint extent; no survey or measured wall offset is available, so this validates the massing outline and campus frame rather than surveyed fa\u00e7ade dimensions."
+      ],
+      "findings": [
+        "The shared manifest still lists different bounds (approximately X -451.379..-320.881, Y -518.324..-408.905, Z 0..16) than the reopened asset (X -458.888..-320.999, Y -518.187..-408.020, Z 0..25.055). Coordinator should reconcile shared manifest metadata before integration."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS reports CountOfFLO=6 and six occupied floors; this supports the represented floor count.",
+        "The saved GIS has R=82.2 and floor levels in 12-unit increments, but publishes no units. The 25.055 m height comes from interpreting R as feet; that remains an estimate, not a measured height.",
+        "The exterior footprint/GIS polygon does not establish roof pitch, setbacks, or rooftop plant. The model uses a single flat top; roof articulation is unverified."
+      ],
+      "findings": [
+        "Height and roof form remain partly unverified because the source field units and roof geometry are undocumented."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "Archival Purdue Libraries exterior photo shows masonry, long repetitive window bands, and a prominent pale vertically framed entrance block.",
+        "The model includes repeated glazing and a simple entry portal/canopy, but omits the photo's distinctive pale vertical entry frame and does not establish current entrance location or contemporary facade changes.",
+        "The saved preview shows the massing and window rhythm; the entry is not legible from the preview camera angle."
+      ],
+      "findings": [
+        "The facade/entrance model is schematic and only partly matched to the archival photograph; the current entrance frontage and bay registration are unverified."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Fresh direct Blender 4.5.15 LTS reopen succeeded with scene Building_massing_lilly_hall_e7fc13e and collection Asset_massing_lilly_hall_e7fc13e.",
+        "The collection contains 4 mesh objects with no modifiers and no external image dependencies; source snapshots, evidence record, preview, and reopen validation are present.",
+        "The manifest declares one object named 'Lilly Hall' and bounds/height that do not match the reopened collection (four objects; 25.055 m shell). This shared metadata discrepancy needs coordinator reconciliation before relying on automatic integration checks."
+      ],
+      "findings": [
+        "Manifest object list/count and bounds are stale relative to the asset; collection/scene names themselves match the manifest."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_lilly_hall_e7fc13e.blend",
+    "build_script": "modular/buildings/build_massing_lilly_hall_e7fc13e.py",
+    "source_snapshot": "audit/massing_lilly_hall_e7fc13e/sources/purdue_gis_fid_581.json",
+    "archival_photo": "audit/massing_lilly_hall_e7fc13e/sources/lilly_hall_archival_exterior.jpg",
+    "preview": "audit/massing_lilly_hall_e7fc13e/preview.png",
+    "reopen_validation": "audit/massing_lilly_hall_e7fc13e/reopen_validation.json",
+    "direct_reopen_performed_by_grader": true,
+    "gis_feature": {
+      "FID": 581,
+      "building_code": "LILY",
+      "ring_vertices": 34
+    },
+    "max_nearest_vertex_difference_m": 2.3207141500897045e-05
+  },
+  "findings": [
+    "The exact official GIS plan outline and library packaging validate well, but unverified height/roof and schematic facade limit source fidelity.",
+    "Shared modular/manifest metadata is inconsistent with the asset and should be repaired by the coordinator before indexing or integration."
+  ]
+}

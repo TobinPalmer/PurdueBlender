@@ -1,0 +1,82 @@
+{
+  "building_id": "massing_lilly_hall_e7fc13e",
+  "building": "Lilly Hall of Life Sciences",
+  "assignment": "Rossen (README.md)",
+  "retrieved_date": "2026-10-26",
+  "asset": "modular/buildings/massing_lilly_hall_e7fc13e.blend",
+  "build_script": "modular/buildings/build_massing_lilly_hall_e7fc13e.py",
+  "collection": "Asset_massing_lilly_hall_e7fc13e",
+  "scene": "Building_massing_lilly_hall_e7fc13e",
+  "source_evidence": [
+    {
+      "role": "identity, authoritative building footprint, floor metadata",
+      "provider": "Purdue University GIS, BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "query": "FID=581; outFields=*; returnGeometry=true",
+      "feature_id": 581,
+      "building_code": "LILY",
+      "building_name": "Lilly Hall of Life Sciences",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Not exposed in the feature response",
+      "source_crs": "EPSG:3857 (wkid 102100 / latestWkid 3857)",
+      "raw_snapshot": "audit/massing_lilly_hall_e7fc13e/sources/purdue_gis_fid_581.json",
+      "attributes_used": {
+        "address": "915 Mitch Daniels Blvd",
+        "owner": "PURDUE",
+        "CountOfFLO": 6,
+        "G": 12,
+        "M": "24",
+        "F01": 36,
+        "F02": 48,
+        "F03": 60,
+        "R": 82.2,
+        "Extrution": 28,
+        "Elevation": 622.5
+      },
+      "measurement_method": "Used the service polygon's single 34-vertex exterior ring. Transformed EPSG:3857 to longitude/latitude, then into the repository's approximate campus frame using the prescribed local conversion. Floor/roof metadata was transcribed; the service does not document units for these attributes.",
+      "uncertainty": "GIS confirms identity and plan boundary. It is not a survey of façade or roof geometry. The meaning/units of R, Extrution, and the floor elevation fields are undocumented. The asset interprets R=82.2 as feet (25.05 m) because the level sequence is in 12-unit increments; vertical size is an estimate, not a measured height."
+    },
+    {
+      "role": "historic facade form and entrance character",
+      "provider": "Purdue University Libraries, Karnes Archives and Special Collections, Purdue Buildings and Campus Scenes",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/785/",
+      "image_url": "https://earchives.lib.purdue.edu/digital/iiif/pbuildings/785/full/full/0/default.jpg",
+      "record_id": "PPBUC00712",
+      "source_date": "Undated exterior photograph; digitized 2006-11-08",
+      "retrieved_date": "2026-10-26",
+      "source_crs": "Not applicable; archival photograph",
+      "raw_snapshot": "audit/massing_lilly_hall_e7fc13e/sources/lilly_hall_archival_exterior.jpg",
+      "measurement_method": "Visual reference only. Photograph shows a prominent vertically framed entry block with light-colored vertical elements, adjoining long horizontal wings with repetitive glazing, and masonry walls.",
+      "uncertainty": "The image is historic and undated. It does not reveal present-day additions, façade orientation, measured bay spacing, or the present entrance location. The model's uniform window bay pattern and north-facing portal placement are schematic."
+    },
+    {
+      "role": "identity corroboration and building address",
+      "provider": "Purdue Department of Biological Sciences",
+      "url": "https://www.bio.purdue.edu/About/contact.html",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Page date not shown",
+      "source_crs": "Not applicable",
+      "measurement_method": "The department lists Lilly Hall of Life Sciences, 915 Mitch Daniels Blvd.",
+      "uncertainty": "Address corroborates identity only; it does not verify a particular entrance door."
+    }
+  ],
+  "geometry_and_validation": {
+    "source_footprint_vertices": 34,
+    "source_coordinate_transform": "EPSG:3857 -> geographic lon/lat -> project local frame X east / Y north, origin 40.4274, -86.9137; approximate conversion per modular/AGENTS.md",
+    "shell_bounds_xy_z_m": [-458.888031, -320.999878, -518.186584, -408.019501, 0.0, 25.05456],
+    "source_bounds_xy_m": [-458.888023, -320.999883, -518.186584, -408.019494],
+    "max_nearest_vertex_difference_m": 0.00002321,
+    "shell_closed_manifold": true,
+    "evaluated_modifiers": 0,
+    "external_image_dependencies": 0,
+    "preview": "audit/massing_lilly_hall_e7fc13e/preview.png",
+    "reopen_report": "audit/massing_lilly_hall_e7fc13e/reopen_validation.json",
+    "validation_command": "..\\blender\\blender-4.5.15-windows-x64\\blender.exe --background modular/buildings/massing_lilly_hall_e7fc13e.blend --python audit/massing_lilly_hall_e7fc13e/reopen_validation.py",
+    "validation_status": "PASS; reopened in Blender 4.5.15 LTS"
+  },
+  "remaining_uncertainty": [
+    "The service's numeric floor and roof fields have no published unit metadata; 25.05 m overall height is estimated from R=82.2 interpreted as feet.",
+    "Only a historical archival exterior photograph was found. Current elevation drawings, verified entrance coordinates, and contemporary roof articulation were not available.",
+    "The GIS footprint provides a single continuous outline. The model preserves it exactly but does not infer unseen courtyard voids or variable roof heights."
+  ]
+}
