@@ -1,0 +1,145 @@
+{
+  "building_id": "massing_circle_k_fa39c23",
+  "building_name": "Circle K / Mobil, 706 Northwestern Avenue",
+  "assignment": {
+    "readme_owner": "Rossen",
+    "asset_path": "modular/buildings/massing_circle_k_fa39c23.blend",
+    "expected_collection": "Asset_massing_circle_k_fa39c23",
+    "expected_scene": "Building_massing_circle_k_fa39c23",
+    "coordinate_frame": "Purdue local approximate meters; X east, Y north, Z up; origin lat 40.4274, lon -86.9137",
+    "manifest_entry_verified": true
+  },
+  "sources": [
+    {
+      "provider": "OpenStreetMap contributors",
+      "url": "https://api.openstreetmap.org/api/0.6/way/345144282/full.json",
+      "feature_id": "way/345144282",
+      "retrieved": "2026-10-26",
+      "source_date": "2024-06-22T11:28:43Z (way version 9; check_date tag 2024-06-19)",
+      "crs": "WGS84 geographic coordinates (EPSG:4326)",
+      "raw_snapshot": "sources/osm_way_345144282_full_2026-10-26.json",
+      "measurement_method": "Store polygon vertices transformed with the modular project's approximate longitude and latitude meter factors. Resulting shell bounds are 21.152 m east-west by 11.126 m north-south, center (-25.121, 488.454) m.",
+      "relevant_tags": {
+        "name": "Circle K",
+        "brand": "Circle K",
+        "operator": "Mobil",
+        "amenity": "fuel",
+        "building": "retail",
+        "building:levels": "1",
+        "website": "https://www.circlek.com/store-locator/US/west-lafayette/706-northwestern-ave/4702240"
+      },
+      "uncertainty": "Good identity and shell-plan source; the OSM way does not provide a measured height or elevations."
+    },
+    {
+      "provider": "Indiana Geographic Information Office / IndianaMap",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "feature_id": "OBJECTID 438753, county Tippecanoe",
+      "retrieved": "2026-10-26",
+      "source_date": "2018 LiDAR-derived footprint (lidaryear field)",
+      "crs": "Source query returned WGS84 (EPSG:4326); source layer advertises Web Mercator (EPSG:3857)",
+      "raw_snapshots": [
+        "sources/indiana_footprints_layer_metadata_2026-10-26.json",
+        "sources/indiana_building_footprints_point_query_2026-10-26.json"
+      ],
+      "measurement_method": "Point intersection at the official Circle K address coordinates; polygon vertices transformed to Purdue local meters. Reported area is 403.72 m2. Its outline extends roughly 0.2 to 1.0 m beyond the OSM shell and has an east-side jog.",
+      "uncertainty": "The LiDAR-derived polygon has no building name. It is spatially matched to the store, but whether its extra outline represents roof overhang or an attached structure is unresolved; it was used as a shape cross-check, not copied over the OSM store shell."
+    },
+    {
+      "provider": "Esri World Imagery",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      "feature_id": "XYZ tiles z20, x271131-271133, y395320-395322, around 40.4318 N, 86.9140 W",
+      "retrieved": "2026-10-26",
+      "source_date": "Imagery acquisition date not exposed in the tile response; unknown",
+      "crs": "Web Mercator / XYZ tile scheme (EPSG:3857)",
+      "raw_snapshots": [
+        "sources/world_imagery_layer_metadata_2026-10-26.json",
+        "sources/world_imagery_site_mosaic_2026-10-26.jpg",
+        "sources/footprint_source_overlay_2026-10-26.png"
+      ],
+      "measurement_method": "Visual plan comparison at z20, approximately 0.15 m per pixel at the site latitude. The mosaic shows a long east-west store roof with a separate, parallel fuel canopy south of the store. The canopy dimensions and offset in the model are approximate pixel measurements.",
+      "uncertainty": "Supports orientation and canopy location; imagery date is unknown and it cannot verify heights or facade elevations."
+    },
+    {
+      "provider": "Circle K official store locator",
+      "url": "https://www.circlek.com/station/706-northwestern-ave-west-lafayette-us",
+      "feature_id": "Station at 706 Northwestern Ave, West Lafayette, IN 47906-2659",
+      "retrieved": "2026-10-26",
+      "source_date": "Live listing accessed 2026-10-26",
+      "crs": "Address only; geocoded position cross-checked against Indiana state food inspection listing",
+      "raw_snapshot": "sources/circle_k_official_location_page_2026-10-26.html",
+      "measurement_method": "Identity/address check; listing confirms gas and convenience-store services.",
+      "uncertainty": "The listing has no architectural plans, dimensions, or photos of the envelope."
+    },
+    {
+      "provider": "City of West Lafayette, Report of Permits Issued",
+      "url": "https://d3n9y02raazwpg.cloudfront.net/westlafayette/66b2d034-dbcc-11ee-98bb-0050569183fa-cff30912-cddf-4b95-ab44-f6b7a2c8f869-1728333358.pdf",
+      "feature_id": "Permit 27035, 706 Northwestern Ave",
+      "retrieved": "2026-10-26",
+      "source_date": "Issued 2024-09-16",
+      "crs": "Not applicable",
+      "raw_snapshot": "sources/west_lafayette_permits_sep2024.pdf",
+      "measurement_method": "Address and use cross-check; permit describes an interior remodel for the Circle K convenience store.",
+      "uncertainty": "Interior-only permit does not provide exterior design or dimensions."
+    },
+    {
+      "provider": "LocalityBiz page with location-identified storefront photos",
+      "url": "https://localitybiz.com/31011885/circle-k-west-lafayette",
+      "feature_id": "Photo gallery for the 706 Northwestern Avenue Circle K listing; individual image URLs are embedded in evidence notes",
+      "retrieved": "2026-10-26",
+      "source_date": "Photo dates not given",
+      "crs": "Not applicable; visual source",
+      "raw_snapshots": [
+        "sources/circle_k_photo_1.jpg",
+        "sources/circle_k_photo_2.jpg",
+        "sources/circle_k_photo_3.jpg",
+        "sources/circle_k_photo_4.jpg",
+        "sources/circle_k_photo_5.jpg",
+        "sources/photo_contact_sheet_2026-10-26.jpg"
+      ],
+      "image_urls": [
+        "https://img.localitybiz.com/ANXAkqHHS43IEUmkXJy5QSOX8SrMz1Xokwe6s7bH2Tgc5kcz4YA_lwSdEQ2QfP8O8BC_IQmPlHa-aSpdy0MygaFjRB9cs9GKvqOdtqk%3Ds1600-w480",
+        "https://img.localitybiz.com/ANXAkqEnrKTJdJ8PdqG3dXC2LITWgbKCn-Iew8U4YDJwmZ4-5TSlxXdeKYoa2M01sKiptlJuwmmyvbHVF4oJJzvzhHi1tVOdVeAtFds%3Ds1600-w480",
+        "https://img.localitybiz.com/ANXAkqHcv2dG8IjzlOa04PJscGdJB2AklzRIh1mweK4wkb3zoQtXBnyFWqeo1R8ZffeLoBO2YwJM-2iecdaIyrc8qI96Ba8S0kgaSpU%3Ds1600-w480",
+        "https://img.localitybiz.com/ANXAkqFyGdXuhqJ7hX4zyU1Lef8C6ZB5bNaMzl0Y3rWMspFq7Mt1L8xzQPrzKqXj7ANUSvd4JA_HL1fn2SuX0iCT3C6Ai67-LB2WF2c%3Ds1600-w480",
+        "https://img.localitybiz.com/ANXAkqFd3rEODG689C3JteDzBLSyw2ztkGH_7s6LYOnZv68xlkikCM6VPYXDIu_M9Cgh7xSqHyQewIuv5i_ab_If-wyvmTbQUHmLyKY%3Ds1600-w480"
+      ],
+      "measurement_method": "Oblique exterior photos show a one-story beige convenience store, dark low-pitch roof, long glass storefront, a red Circle K fascia/sign, and a separate blue-and-white Mobil fuel canopy. Interior photo was retained as source material but not used for exterior geometry.",
+      "uncertainty": "Photo dates are unknown; facade is modeled at massing detail and no exact wall or roof elevations are measured."
+    },
+    {
+      "provider": "Purdue GIS BuildingShapesZip4, candidate checked against Indiana imagery",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": "FID 414, code LG, Lambert Green Dining",
+      "retrieved": "2026-10-26 (candidate details from repository audit snapshot dated 2026-10-22)",
+      "source_date": "Dataset date not available in the audit record",
+      "crs": "Repository candidate bounds are in Purdue local meter comparison frame; source service CRS recorded in its layer metadata",
+      "raw_snapshot": "../../master_building_audit.json (focused candidate record)",
+      "measurement_method": "Rejected as a Circle K match: source identity is Lambert Green Dining, and its outline does not overlap the OSM Circle K shell.",
+      "uncertainty": "This is a nearby official Purdue GIS feature and must not be misattributed to the station."
+    }
+  ],
+  "model_decisions": {
+    "position_and_rotation": "Store polygon placed at its source-derived Purdue local coordinates with identity transforms. Its long axis follows the east-west OSM edges; front faces south toward the separate canopy visible in imagery.",
+    "store_shell": "The building body follows OSM way 345144282. Indiana 2018 footprint is a cross-check and has a larger, jogged outline whose relation to overhangs/appurtenances is uncertain.",
+    "floors_and_height": "One level is source-tagged by OSM. Wall eave height 3.55 m and roof ridge 4.75 m are estimates from the oblique facade photo, not measurements.",
+    "roof": "Low hipped dark shingle roof interpreted from site orthophoto and oblique storefront photo; exact pitch and eave line are unmeasured.",
+    "facade": "South storefront uses the observed continuous red fascia, white trim, dark glazing, entrance, and square red sign. The Circle K logo text is simplified for massing.",
+    "fuel_canopy": "Separate Mobil canopy placed south of the store from the site imagery. Footprint 22.6 by 7.6 m and height 5.15 m are estimates. Three islands and six dispenser blocks are modeled as appurtenances, consistent with visible site imagery and a location review; not included in the store footprint comparison.",
+    "asset_scope": "The asset includes the store plus its attached station-service appurtenance canopy. No ground/site plane or unrelated structures are in the exported collection.",
+    "edits": [
+      "Replaced the original single 8-vertex cuboid with an OSM-footprint shell.",
+      "Added a low hipped roof, south-facing storefront bays and door, fascia, and simplified brand signage using the location photos.",
+      "Added a separately named Mobil fuel canopy, supports, three pump islands, and six dispenser masses using imagery and the exact-site gallery."
+    ],
+    "unresolved": [
+      "No measured elevations, construction drawings, or current image acquisition dates were available.",
+      "Indiana LiDAR footprint boundary extends beyond the OSM shell; the exact relationship of its jogged portion is unresolved.",
+      "Canopy footprint and height are approximate."
+    ]
+  },
+  "validation": {
+    "asset_reopened_after_save": "pass; reopened with Blender 4.5.15 and confirmed expected scene and asset collection",
+    "evaluated_geometry_review": "pass; 69 objects (64 mesh, 5 font), all evaluated meshes non-empty; world bounds [-36.2718,-13.5209] x [465.3339,494.3170] x [0,5.34] m; store shell dimensions 21.1518 x 11.1262 x 3.43 m; zero modifiers and no external library links",
+    "independent_grade": "pending"
+  }
+}
