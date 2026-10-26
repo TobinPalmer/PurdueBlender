@@ -1,0 +1,42 @@
+{
+  "building_id": "bell_tower",
+  "grader": "independent review of the reopened asset and source evidence",
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 290,
+      "building_code": "BELL",
+      "building_name": "Bell Tower",
+      "address": "325 Centennial Mall Drive",
+      "source_crs": "WGS 84 / EPSG:4326",
+      "retrieved": "2026-10-25",
+      "snapshot": "audit/bell_tower_independent_grade/gis_feature_290.geojson",
+      "measurement": "Projected each exterior-ring vertex using the project's documented local geographic conversion, then shifted to the manifest local origin. Compared the convex hull of evaluated vertices at the four actual ground foot objects to the GIS ring using symmetric sampled boundary distance at 0.05 m interval."
+    },
+    {
+      "provider": "Purdue University News",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2020/Q4/university-to-mark-25th-birthday-of-purdue-bell-tower.html",
+      "source_date": "2020-10-12",
+      "claims_used": ["160-foot overall height", "red brick with limestone trim", "Heavilon Hall bells and clock design inspiration", "1995 dedication"]
+    },
+    {
+      "provider": "Purdue University / Purdue News exposure story",
+      "url": "https://purduenews.exposure.co/happy-birthday-purdue-bell-tower",
+      "source_date": "2020-10-11",
+      "claims_used": ["four original 1895 bells", "current photographic views of belfry, clocks, roof, brick and limestone"],
+      "local_visual_comparison": "modular/bell_tower_work/reference_official_full.jpg and reference_2006.jpg"
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/544",
+      "claims_used": ["approximately 160 ft tall", "located south of Elliott Hall of Music", "Heavilon design elements and bells", "Class of 1948 sponsorship"]
+    }
+  ],
+  "limitations": [
+    "GIS envelope is not a certified structural survey; horizontal source precision is not specified.",
+    "No measured construction drawings or detailed vertical survey were used.",
+    "The rendered review used the standalone asset and manifest origin; the master Placement_bell_tower instance was not opened.",
+    "Subordinate dimensions and plaque inscription are not proven facsimiles."
+  ]
+}
