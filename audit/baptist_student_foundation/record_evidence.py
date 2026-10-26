@@ -8,6 +8,8 @@ SOURCES = HERE / "sources"
 raw_path = SOURCES / "indiana_lidar_building_footprints_near_bsf_2026-10-25.geojson"
 raw = json.loads(raw_path.read_text(encoding="utf-8"))
 feature = next(f for f in raw["features"] if f["properties"].get("objectid") == 441814)
+probe_path = HERE / "blender_probe.json"
+probe = json.loads(probe_path.read_text(encoding="utf-8")) if probe_path.exists() else {}
 (SOURCES / "indiana_lidar_building_footprint_feature_441814_raw.json").write_text(
     json.dumps(feature, indent=2), encoding="utf-8"
 )
@@ -56,6 +58,7 @@ comparison = {
         "x": [-445.57794189453125, -422.2210998535156],
         "y": [-112.2392349243164, -90.18669128417969],
         "height_m": 16.0, "bbox_center_xy_m": list(old_center),
+        "height_note": "Historical pre-revision simple-massing bound only; current reopened detailed asset height is recorded separately as 6.0 m.",
     },
     "prior_bbox_center_to_source_centroid_m": offset,
     "prior_bbox_center_to_source_bbox_center_m": bbox_offset,
@@ -68,7 +71,9 @@ comparison = {
             "basis": "Design proxies guided by 2018 NDHM roof-surface samples (roughly 4.45 m p10 to 5.81 m p90 after canopy/outlier filtering); these are not measured eave/ridge elevations.",
         },
         "resulting_xy_envelope_m": [max(xs) - min(xs), max(ys) - min(ys)],
-        "vertical_height_total_m": 8.9,
+        "vertical_height_total_m": 6.0,
+        "reopened_asset_bounds_m": probe.get("all_geometry_bounds_m"),
+        "reopened_asset_collection_object_count": probe.get("collection_object_count"),
     },
     "uncertainty": "The Indiana statewide footprint is LiDAR-derived and not a survey. SHAPE__Area/Length are service properties in EPSG:3857 map units; local-plan metrics above use the repository approximate ground conversion. The 2018 NDHM is 5-ft resolution, normalized roof/vegetation surface height; 2-25 ft cells were retained for robust roof summaries, but possible canopy overlap remains. It does not provide measured eave/ridge values, exact floor count, gable pitch, facade rhythm, or entrance dimensions.",
 }
@@ -144,6 +149,10 @@ record = {
     "validation": {
         "asset_rebuilt_from_source": True,
         "source_snapshot_preserved": True,
+        "reopened_blender_probe": "audit/baptist_student_foundation/blender_probe.json",
+        "reopened_asset_bounds_m": probe.get("all_geometry_bounds_m"),
+        "reopened_asset_collection_object_count": probe.get("collection_object_count"),
+        "mesh_topology": probe.get("mesh_topology"),
         "rendered_preview": "audit/baptist_student_foundation/preview.png",
         "rendered_roof_plan_view": "audit/baptist_student_foundation/roof_plan_view.png",
         "remaining_uncertainty": [

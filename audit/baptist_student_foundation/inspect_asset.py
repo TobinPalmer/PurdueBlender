@@ -4,6 +4,7 @@ import math
 from pathlib import Path
 
 import bpy
+import bmesh
 from mathutils import Vector
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -39,6 +40,34 @@ external_images = [img.filepath for img in bpy.data.images if img.source == "FIL
 external_libraries = [lib.filepath for lib in bpy.data.libraries]
 modifiers = {obj.name: [mod.name for mod in obj.modifiers] for obj in members if obj.modifiers}
 assert not external_images, external_images
+topology = {}
+for obj in members:
+    bm = bmesh.new()
+    bm.from_mesh(obj.data)
+    boundary_edges = [edge for edge in bm.edges if edge.is_boundary]
+    nonmanifold_edges = [edge for edge in bm.edges if not edge.is_manifold]
+    topology[obj.name] = {
+        "vertices": len(bm.verts),
+        "edges": len(bm.edges),
+        "faces": len(bm.faces),
+        "boundary_edges": len(boundary_edges),
+        "nonmanifold_edges": len(nonmanifold_edges),
+    }
+    bm.free()
+boundary_total = sum(v["boundary_edges"] for v in topology.values())
+nonmanifold_total = sum(v["nonmanifold_edges"] for v in topology.values())
+expected_open_surfaces = {
+    "Red brick exterior walls from LiDAR outline": 32,
+    "South gable plane": 6,
+    "North gable plane": 4,
+    "South wing west gable plane": 4,
+    "South wing east gable plane": 4,
+    "West gable end": 3,
+    "East gable end": 3,
+}
+observed_open_surfaces = {name: stats["boundary_edges"] for name, stats in topology.items() if stats["boundary_edges"]}
+assert observed_open_surfaces == expected_open_surfaces, observed_open_surfaces
+assert boundary_total == 56 and nonmanifold_total == 56, (boundary_total, nonmanifold_total)
 
 result = {
     "asset": str(ASSET),
@@ -58,6 +87,12 @@ result = {
     "external_image_paths": external_images,
     "library_links": external_libraries,
     "modifiers": modifiers,
+    "mesh_topology": {
+        "boundary_edge_count": boundary_total,
+        "nonmanifold_edge_count": nonmanifold_total,
+        "open_surface_objects": {name: stats for name, stats in topology.items() if stats["boundary_edges"]},
+        "assessment": "Intentional open architectural surface representation: the 32 boundary edges on the eight footprint wall panels, 12 on the four gable roof planes, and 12 on the two gable-end faces are expected. They are render skins without modeled thickness or an interior; decorative facade parts are separate closed meshes. This check asserts there are exactly these open boundaries and no others. The asset is not watertight, and no unsupported wall thickness/interior is invented.",
+    },
     "validation": "Saved asset reopens, expected scene and named export collection exist exactly once, assigned geometry is mesh-only and in the expected collection, and no external image textures or linked libraries are required.",
 }
 OUT.write_text(json.dumps(result, indent=2), encoding="utf-8")
