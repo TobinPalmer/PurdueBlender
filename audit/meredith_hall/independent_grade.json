@@ -1,0 +1,133 @@
+{
+  "building": "Virginia C. Meredith Residence Hall",
+  "asset_id": "massing_meredith_hall_4bb4188",
+  "score": 8.5,
+  "max_score": 10,
+  "passing_standard": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "points": 2.0,
+      "max_points": 2.0,
+      "status": "verified with map-source limitation",
+      "evidence": [
+        "Purdue BuildingShapes FeatureServer FID 253 is explicitly named Virginia C. Meredith Residence Hall and carries BLDG_ABBR MRDH.",
+        "Purdue Housing source describes Meredith's unique X-shaped plan; the model's plan preview matches the X form.",
+        "All 20/20 transformed GIS perimeter edges match structural model wall edges within 0.002 m; maximum edge error 0.000030 m.",
+        "GIS polygon positional accuracy is unpublished and is not a certified survey."
+      ],
+      "limitations": [
+        "Footprint identity is strongly supported by the named Purdue GIS record and independent housing description, but survey accuracy is unknown."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and dimensions",
+      "points": 2.0,
+      "max_points": 2.0,
+      "status": "verified against GIS geometry; geodetic uncertainty retained",
+      "evidence": [
+        "The model retains the massing asset's campus coordinate frame and identity transform: True.",
+        "Model structural wall outline follows the GIS source ring exactly; source extents are {'min_x': -866.7221048548315, 'max_x': -766.2762023131565, 'min_y': -171.38947884291838, 'max_y': -70.58563782755755} m and model overall extents are {'min': [-866.9352416992188, -171.6017608642578, -0.12999999523162842], 'max': [-766.0626220703125, -70.37311553955078, 15.65999984741211]} m (small differences are porch/cornice projections).",
+        "The independently named OSM way 128488696 is Meredith Hall at 201 Martin Jischke Drive; its polygon centroid differs from GIS FID 253 by 0.66 m.",
+        "Dimensions/orientation are independently represented by 20 GIS source wall edges; campus conversion is the project's local approximation, not a surveyed CRS."
+      ],
+      "limitations": [
+        "GIS positional accuracy is unpublished; the OSM shape is a community-maintained cross-check rather than survey control."
+      ]
+    },
+    {
+      "criterion": "Floors, height, and roof form",
+      "points": 1.0,
+      "max_points": 2.0,
+      "status": "partly supported; height and roof uncertain",
+      "evidence": [
+        "The model has four visible above-grade window bands/floors and OSM way 128488696 has building:levels=4.",
+        "Purdue GIS FID 253 reports both NUM_LEVELS=5 and CountOfFLO=5, conflicting with OSM's four levels.",
+        "Modeled wall height is 15.2 m and roof top 15.649999999999999 m, both explicitly estimates from a 3.8 m floor-to-floor assumption.",
+        "The rendered model uses a shallow flat roof/cornice; source set provides no elevation or roof measurement."
+      ],
+      "limitations": [
+        "No published elevations or verified height are present; the 4-versus-5 floor discrepancy is unresolved, and roof silhouette remains unverified."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 1.5,
+      "max_points": 2.0,
+      "status": "qualitatively supported; entrance placement inferred",
+      "evidence": [
+        "Official Purdue exterior photo shows red brick, pale window trim, repeated window rows, a courtyard/front lawn, and a porch; model includes corresponding red brick, light-framed repeated sash windows, and porch.",
+        "Purdue Housing page confirms a front lawn and porch and calls out a large porch at the main entrance.",
+        "Model's entrance is assigned to an east-facing edge based on address/street context; no compass-tagged plan confirms that bearing.",
+        "Only one oblique official photo is available, so other elevations and exact bay/porch dimensions cannot be compared."
+      ],
+      "limitations": [
+        "The rendered porch reads as a small isolated canopy; the source describes a large main-entrance porch, but the lone photo cannot firmly resolve size or exact facade placement.",
+        "Window spacing and all unpictured elevations are generalized."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 2.0,
+      "max_points": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Reopened asset at C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_meredith_hall_4bb4188.blend; it contains object Meredith Hall in expected export collection Asset_massing_meredith_hall_4bb4188 (1 object(s)).",
+        "Manifest points to the same massing asset ID, file, object, and collection; model has 87356 mesh vertices, 21848 faces, and no modifiers.",
+        "No file-backed image dependencies: []; materials are ['MRDH_Dark_Roof', 'MRDH_Entrance_Door', 'MRDH_Painted_Window_Frame', 'MRDH_Pale_Stone', 'MRDH_Porch_Concrete', 'MRDH_Red_Brick', 'MRDH_Window_Glass'].",
+        "Evidence includes source URLs/providers/feature IDs, retrieval/source dates, CRS or not-applicable status, method, uncertainty, raw GIS/OSM snapshots, official housing pages/photo, rebuild/reopen scripts, reopened check JSON, and both plan/exterior previews.",
+        "Dedicated preview files exist: [True, True]."
+      ]
+    }
+  ],
+  "evidence": {
+    "reopened_asset": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_meredith_hall_4bb4188.blend",
+    "object": "Meredith Hall",
+    "collection": "Asset_massing_meredith_hall_4bb4188",
+    "identity_transform": true,
+    "gis_feature_id": 253,
+    "gis_ring_vertices": 20,
+    "matched_source_wall_edges": 20,
+    "max_source_wall_edge_error_m": 3.014472551752206e-05,
+    "gis_source_area_m2": 3810.566612642415,
+    "osm_way_id": 128488696,
+    "osm_gis_centroid_delta_m": 0.6613636052368344,
+    "model_bounds_xyz_m": {
+      "min": [
+        -866.9352416992188,
+        -171.6017608642578,
+        -0.12999999523162842
+      ],
+      "max": [
+        -766.0626220703125,
+        -70.37311553955078,
+        15.65999984741211
+      ]
+    },
+    "estimated_wall_height_m": 15.2,
+    "estimated_roof_top_m": 15.649999999999999,
+    "file_backed_images": [],
+    "preview_files_exist": [
+      true,
+      true
+    ]
+  },
+  "findings": [
+    {
+      "severity": "major uncertainty",
+      "finding": "Vertical height and roof are not source-verified; Purdue GIS reports five levels while OSM and the model indicate four.",
+      "improvement": "Find a reliable elevation/plan or document the lower-level interpretation; keep the present height marked estimated until then."
+    },
+    {
+      "severity": "minor",
+      "finding": "The east-facing main entrance is inferred, and the modeled porch appears smaller and more isolated than the official description/photo suggests.",
+      "improvement": "Use a second ground-level facade photo or site plan to locate and size the main porch, then add supported entrance/porch details."
+    },
+    {
+      "severity": "limitation",
+      "finding": "Official GIS plan is an authoritative named source, but published positional accuracy is unavailable.",
+      "improvement": "If survey or higher-resolution orthophoto data becomes available, compare wall control points and update the stated uncertainty."
+    }
+  ]
+}
