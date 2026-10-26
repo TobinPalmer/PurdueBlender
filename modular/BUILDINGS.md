@@ -176,6 +176,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Hillel | [massing_hillel_36d2ba1.blend](buildings/massing_hillel_36d2ba1.blend) | 1 |
 | Hillenbrand Hall | [massing_hillenbrand_hall_a71e418.blend](buildings/massing_hillenbrand_hall_a71e418.blend) | 1 |
 | Hockmeyer Hall of Structural Biology (HOCK) | [massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend](buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | 6 |
+| Islamic Society of Greater Lafayette (ISGL) | [massing_islamic_societyof_greater_lafayette_0130012.blend](buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | 1 |
 | Jimmy John's | [massing_jimmy_john_s_12edba1.blend](buildings/massing_jimmy_john_s_12edba1.blend) | 1 |
 | Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](buildings/massing_kappa_sigma_c1b36ec.blend) | 1 |
 
@@ -184,6 +185,8 @@ Hillel retains campus-world coordinates. Its 8.3/10 grade supports the main shel
 Hillenbrand Hall retains campus-world coordinates. Its 8.0/10 grade supports two towers and eight floors per tower from a Purdue project summary; exact as-built height, roof, fenestration, and entrance remain uncertain. See [Hillenbrand grade](../audit/massing_hillenbrand_hall_a71e418/independent_grade/r3/result.json).
 
 Hockmeyer Hall retains campus-world coordinates. Its 8.0/10 grade supports the source footprint and a three-story mass; exact height, penthouse, facade registration, and entrance remain partly estimated. Blender 4.5.15 truncates the long scene name on reopen, recorded in [Hockmeyer validation](../audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/reopen_validation.json).
+
+ISGL retains campus-world coordinates and the rebuilt shell bounds are recorded in the manifest. Its 8.0/10 grade uses Purdue GIS FID 771 without scaling. GIS identity/address and Shape__Area conflicts remain, while height, roof, and facade details are partly estimated. See [ISGL grade](../audit/massing_islamic_societyof_greater_lafayette_0130012/independent_grade/r2/result.json).
 
 Jimmy John's retains campus-world coordinates. Its 8.0/10 grade uses the Indiana 2018 LiDAR-derived roof ring with OSM and dated orthophoto cross-checks; exact wall edge, height, roof, and facade dimensions remain uncertain. See [Jimmy John's grade](../audit/massing_jimmy_john_s_12edba1/independent_grade/r3/result.json).
 
