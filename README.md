@@ -164,7 +164,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (30)
+### Detailed models still in progress or awaiting a grade (31)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -195,13 +195,14 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Smith Hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | [8.5/10](audit/smith_hall/independent_grade_kyle.json); awaiting master integration | Kyle |
 | Marriott Hall | [`massing_marriot_hall_7cd3eb5.blend`](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | [8.5/10](audit/marriott_hall/grade.json); awaiting master integration | Kyle |
 | Martin C. Jischke Hall of Biomedical Engineering | [`massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend`](modular/buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | [8.0/10](audit/martin_c_jischke_hall/grade.json); awaiting master integration | Kyle |
+| Virginia C. Meredith Residence Hall | [`massing_meredith_hall_4bb4188.blend`](modular/buildings/massing_meredith_hall_4bb4188.blend) | [8.5/10](audit/meredith_hall/independent_grade.json); awaiting master integration | Kyle |
 | Telecommunications Building (TEL) | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | [8.0/10](audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json); awaiting master integration | Rossen |
 | Twin Pines Cooperative | [`massing_twin_pines_cooperative_8f606f9.blend`](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | [8.3/10](audit/massing_twin_pines_cooperative_8f606f9/independent_grade/twin_pines_independent_grade.json); awaiting master integration | Rossen |
 | Unitarian Universalist Church of Tippecanoe County | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | [8.5/10](audit/unitarian_universalist_church_of_tippecanoe_county_2a6793d/independent_grade_kyle.json); awaiting master integration | Kyle |
 
 
 
-### Buildings that still have only massing models (40)
+### Buildings that still have only massing models (39)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -215,7 +216,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | life science ranges greenhouse and service building | [`massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend`](modular/buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | Tobin |
 | marstellar | [`massing_marstellar_0c2ea90.blend`](modular/buildings/marstellar_0c2ea90.blend) | Kyle |
 | mcdonald s | [`massing_mcdonald_s_ab77b70.blend`](modular/buildings/massing_mcdonald_s_ab77b70.blend) | Kyle |
-| meredith hall | [`massing_meredith_hall_4bb4188.blend`](modular/buildings/massing_meredith_hall_4bb4188.blend) | Kyle |
 | meredith hall south | [`massing_meredith_hall_south_ffbc444.blend`](modular/buildings/massing_meredith_hall_south_ffbc444.blend) | Kyle |
 | mri modular facility mri1 | [`massing_mri_modular_facility_mri1_a93e22b.blend`](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | Kyle |
 | northwestern parking garage | [`massing_northwestern_parking_garage_979f1a2.blend`](modular/buildings/massing_northwestern_parking_garage_979f1a2.blend) | Kyle |
@@ -481,7 +481,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 250 | Philip E. Nelson Hall of Food Science | [massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 251 | Steven C. Beering Hall of Liberal Arts & Education | [beering_hall](modular/buildings/beering_hall.blend) | Duplicate BRNG massing record removed from the master; see `TODO.md` |
 | 252 | Hangar No. 4 | — | No direct FID crosswalk; reconcile to a master asset or create one |
-| 253 | Virginia C. Meredith Residence Hall | [massing_meredith_hall_4bb4188](modular/buildings/massing_meredith_hall_4bb4188.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 253 | Virginia C. Meredith Residence Hall | [massing_meredith_hall_4bb4188](modular/buildings/massing_meredith_hall_4bb4188.blend) | Direct FID 253 verified; 20 structural edges match within 0.000031 m; 8.5/10 pass; awaiting master integration |
 | 254 | Wood Street Parking Garage | [massing_house_1040689750_cf5f616](modular/buildings/massing_house_1040689750_cf5f616.blend)<br>[massing_wood_street_garage_pgw_2fa056e](modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 255 | Drew & Brittany Brees Student Athletic Center | [massing_drew_and_brittany_brees_student_athletic_academic_center_bres_da89033](modular/buildings/massing_drew_and_brittany_brees_student_athletic_academic_center_bres_da89033.blend)<br>[massing_house_1095763314_3ae3005](modular/buildings/massing_house_1095763314_3ae3005.blend)<br>[massing_house_1095763315_77ff7a6](modular/buildings/massing_house_1095763315_77ff7a6.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 256 | Armory | [armory](modular/buildings/armory.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
