@@ -1,0 +1,80 @@
+{
+  "score": 8.75,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Raw Purdue GIS OBJECTID=216 names 'Grant Street Parking Garage', ABBR=PGG, address=120 N. Grant Street; the saved foundation ring matches the independently projected source polygon with max nearest-vertex error 0.000020 m (mean 0.000010 m, 30 vertices).",
+      "status": "verified"
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "GIS polygon and mesh are in campus coordinates; bounds (296.3609796081398, 371.74638646338934, -292.5725223306699, -190.73364834431231); source-derived XY envelope 75.385 x 101.839 m, evaluated full asset dimensions 75.385 x 102.029 x 16.985 m. Plan orientation follows ordered GIS polygon edges. Comparison uses the same GIS feature that generated the footprint, so it verifies implementation fidelity, not independent survey accuracy.",
+      "status": "source geometry reproduced; absolute survey accuracy unverified"
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": "The saved mesh contains 5 named upper deck polygons and a flat parking roof. The ARSEE source photo visibly supports a multi-level open parking deck and rooftop parking. Modeled total vertical extent is 16.99 m; neither the photo nor cited road-school clearance supplies a full building height or surveyed floor elevations. The recorded 3.18 m level intervals and 16.83 m top are therefore estimates, not verified measurements.",
+      "status": "form visually supported; dimensions estimated"
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "Direct comparison of the ARSEE project photo with the saved three-quarter and south-fa\u00e7ade renders confirms red-brown brick piers/cores, pale horizontal floor bands, open parking bays, stair/elevator glazing, and an entry feature are represented. The model simplifies the photo's arched precast/spandrel openings and brick core/entry shapes; entrance orientation is explicitly inferred.",
+      "status": "major visual features represented with simplifications"
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Loaded file matches expected path: True; exported collection 'Asset_massing_grant_street_parking_garage_pgg_f46c894' contains 13 objects (12 mesh objects); no unpacked external images/textures detected (0 paths). Evidence record and all three render files exist: {'pgg_three_quarter.png': True, 'pgg_topdown.png': True, 'pgg_south_facade.png': True}.",
+      "status": "verified"
+    }
+  ],
+  "evidence": {
+    "asset": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_grant_street_parking_garage_pgg_f46c894.blend",
+    "source_feature": {
+      "objectid": 216,
+      "name": "Grant Street Parking Garage",
+      "address": "120 N. Grant Street",
+      "source_area_m2": 11504.894593835,
+      "projected_ring_vertices": 30
+    },
+    "footprint_max_vertex_error_m": 2.001135375295787e-05,
+    "footprint_mean_vertex_error_m": 1.0065544157749865e-05,
+    "gis_envelope_dimensions_m": [
+      75.38540685524953,
+      101.83887398635761
+    ],
+    "evaluated_asset_dimensions_m": [
+      75.38540649414062,
+      102.02886962890625,
+      16.985000759363174
+    ],
+    "upper_deck_meshes": [
+      "PGG_Deck_02",
+      "PGG_Deck_03",
+      "PGG_Deck_04",
+      "PGG_Deck_05",
+      "PGG_Deck_06"
+    ],
+    "unpacked_external_image_paths": [],
+    "render_files": {
+      "pgg_three_quarter.png": true,
+      "pgg_topdown.png": true,
+      "pgg_south_facade.png": true
+    }
+  },
+  "findings": [
+    "Footprint geometry is a near-exact reproduction of the identified Purdue GIS polygon, but that polygon is not a wall survey and the project\u2019s local geographic approximation is not a surveyed CRS.",
+    "No cited source establishes the garage\u2019s full measured height or floor elevations; retain the model height and 3.18 m intervals as estimates.",
+    "The undated project photo supports the architectural family, but the current render simplifies the prominent arched floor openings and entrance/core geometry; improve these if closer visual fidelity is required."
+  ]
+}

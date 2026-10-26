@@ -1,0 +1,83 @@
+{
+  "building_id": "massing_grant_street_parking_garage_pgg_f46c894",
+  "asset_path": "modular/buildings/massing_grant_street_parking_garage_pgg_f46c894.blend",
+  "collection": "Asset_massing_grant_street_parking_garage_pgg_f46c894",
+  "scene": "Building_massing_grant_street_parking_garage_pgg_f46c894",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "source": "Purdue CampusBuilding FeatureServer, layer 0, OBJECTID 216",
+      "provider": "Purdue University Library GIS / Purdue Maps",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/FeatureServer/0/query?where=OBJECTID%3D216&outFields=*&returnGeometry=true&f=json",
+      "feature_id": "OBJECTID=216; ABBR=PGG; buildingidlong=95",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Campus GIS service queried 2026-10-26; feature metadata reports current garage constructed 1994-1995",
+      "source_crs": "EPSG:3857 (Esri WKID 102100), meters",
+      "measurement_method": "Footprint polygon vertices inverse-Mercator projected to longitude/latitude and transformed using the project-documented local approximation (origin 40.4274,-86.9137).",
+      "uncertainty": "Purdue project approximation is not a surveyed CRS; polygon is GIS building footprint, not a wall survey."
+    },
+    {
+      "source": "Purdue Road School 2026 Parking Tips and Options PDF",
+      "provider": "Purdue University Road School",
+      "url": "https://roadschool.purdue.edu/Attendees/2026_Road_School_Parking_Tips_Options.pdf",
+      "feature_id": "Grant Street Garage at 120 N. Grant St.",
+      "retrieval_date": "2026-10-26",
+      "source_date": "2026 event guidance",
+      "source_crs": "Not applicable",
+      "measurement_method": "Published address and vehicle entry clearance (7 ft 6 in); does not establish building height.",
+      "uncertainty": "Visitor guidance can be transient; clearance is not a full-floor height measurement."
+    },
+    {
+      "source": "Purdue Grant Street Parking Garage project photograph",
+      "provider": "ARSEE Engineers",
+      "url": "https://www.arsee-engineers.com/images/Parking/Purdue%20Grant%20Street%20Parking%20Garage.jpg",
+      "feature_id": "Caption/page labels image Purdue Grant Street Parking Garage",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Image date not stated",
+      "source_crs": "Not georeferenced; oblique aerial photograph",
+      "measurement_method": "Visual comparison of brick stair/elevator cores, pale concrete floor bands, open-air deck bays, flat roof parking and entrance canopy/sign.",
+      "uncertainty": "Photo orientation and capture date are unstated; it supports architectural pattern but not precise facade dimensions or present condition."
+    },
+    {
+      "source": "Purdue University West Lafayette Campus Map 2025",
+      "provider": "Purdue University",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "feature_id": "PGG, campus-map grid H7",
+      "retrieval_date": "2026-10-26",
+      "source_date": "2025 map",
+      "source_crs": "Schematic campus map, not a measurement CRS",
+      "measurement_method": "Identity and relative campus placement cross-check against Grant Street / Purdue Memorial Union context.",
+      "uncertainty": "Map is schematic and not suitable for plan dimensions."
+    }
+  ],
+  "source_attributes": {
+    "official_name": "Grant Street Parking Garage",
+    "address": "120 N. Grant Street",
+    "constructed": "1994-1995",
+    "parking_spaces": "1,450 per Purdue GIS historical description; current capacity not independently reverified",
+    "recorded_area_sqft": 439037,
+    "shape_area_m2_epsg3857": 11504.894593835
+  },
+  "dimensions_m": {
+    "x": 75.38540685524953,
+    "y": 101.83887398635761,
+    "z": 16.985
+  },
+  "campus_bounds_m": {
+    "xmin": 296.3609796081398,
+    "xmax": 371.74638646338934,
+    "ymin": -292.5725223306699,
+    "ymax": -190.73364834431231
+  },
+  "geometry_changes": [
+    "Replaced one fallback massing mesh with a GIS-footprint-based multi-deck garage.",
+    "Added six deck planes (ground plus five upper planes at 3.18 m increments) with open guard bays, brick structural piers, two brick/glazed circulation cores, an inferred entry vestibule, roof parapet and parking stripes."
+  ],
+  "vertical_status": "Unverified. The saved mesh bounds span z=-0.16 m to z=16.825 m (16.985 m total); five 3.18 m story intervals and six deck planes are visual/architectural estimates, not surveyed elevations.",
+  "orientation_status": "Plan orientation derives from GIS polygon; architectural entrance direction is inferred from an undated oblique photo.",
+  "renders": [
+    "renders/pgg_three_quarter.png",
+    "renders/pgg_topdown.png",
+    "renders/pgg_south_facade.png"
+  ]
+}

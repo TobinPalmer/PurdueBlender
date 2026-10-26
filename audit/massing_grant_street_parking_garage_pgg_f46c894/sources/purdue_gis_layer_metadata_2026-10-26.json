@@ -1,0 +1,533 @@
+{
+ "isCoGoEnabled": false,
+ "extent": {
+  "ymin": 4925466.4167999998,
+  "xmin": -9689168.2851,
+  "ymax": 4934401.3409999982,
+  "xmax": -9673420.9893999994,
+  "spatialReference": {
+   "falseM": -100000,
+   "xyTolerance": 0.001,
+   "mUnits": 10000,
+   "zUnits": 1,
+   "latestWkid": 3857,
+   "zTolerance": 2,
+   "wkid": 102100,
+   "xyUnits": 148923141.928385377,
+   "mTolerance": 0.001,
+   "falseX": -20037700,
+   "falseY": -30241100,
+   "falseZ": 0
+  }
+ },
+ "isDataBranchVersioned": false,
+ "supportsApplyEditsWithGlobalIds": false,
+ "maxRecordCount": 2000,
+ "infoInEstimates": ["extent"],
+ "datesInUnknownTimezone": false,
+ "ownershipBasedAccessControlForFeatures": null,
+ "type": "Feature Layer",
+ "onlyAllowTrueCurveUpdatesByTrueCurveClients": true,
+ "relationships": [],
+ "cimVersion": "3.7.0",
+ "isDataArchived": false,
+ "id": 0,
+ "archivingInfo": {
+  "startArchivingMoment": -1,
+  "supportsQueryWithHistoricMoment": false
+ },
+ "spatialReference": {
+  "falseM": -100000,
+  "xyTolerance": 0.001,
+  "mUnits": 10000,
+  "zUnits": 1,
+  "latestWkid": 3857,
+  "zTolerance": 2,
+  "wkid": 102100,
+  "xyUnits": 148923141.928385377,
+  "mTolerance": 0.001,
+  "falseX": -20037700,
+  "falseY": -30241100,
+  "falseZ": 0
+ },
+ "supportsStatistics": true,
+ "supportedExportFormats": "sqlite,filegdb,shapefile,csv,geojson,kml,excel,featureCollection",
+ "hasLastEditTime": false,
+ "standardMaxRecordCount": 4000,
+ "isDataVersioned": true,
+ "hasGeometryProperties": true,
+ "templates": [{
+  "name": "PuGeoDB.DBO.CampusBuilding",
+  "description": "",
+  "drawingTool": "esriFeatureEditToolPolygon",
+  "prototype": {"attributes": {
+   "cost": null,
+   "OTHER_ABBR": null,
+   "constructionbeginyear": null,
+   "description": null,
+   "buildingidlong": null,
+   "ChangeYear": null,
+   "ABBR": null,
+   "Name": null,
+   "OWNER": null,
+   "BUILTYear": null,
+   "OCCUPIEDYear": null,
+   "RazeYear": null,
+   "squarefootage": null,
+   "ADDRESS": null,
+   "constructionendyear": null,
+   "presidentatconstruction": null,
+   "dedicationinfo": null,
+   "dedicationdate": null
+  }}
+ }],
+ "supportsAdvancedQueries": true,
+ "parentLayer": null,
+ "currentVersion": 12.1,
+ "canScaleSymbols": false,
+ "hasZ": false,
+ "advancedEditingCapabilities": {
+  "supportsSessionBasedAddAttachments": true,
+  "supportsAsyncApplyEdits": true,
+  "supportsApplyEditsbyUploadID": true,
+  "supportsSessionBasedUpdateFeatures": true,
+  "supportsSessionBasedDeleteAttachments": true,
+  "supportsDivideCombineGroupedObjects": true,
+  "supportsDeleteAssociations": true,
+  "supportsSessionBasedUpdateAttachments": true,
+  "supportedSqlFormatsInCalculate": ["standard"],
+  "supportedApplyEditsUploadIDFormats": "JSON,PBF",
+  "supportsSessionBasedDeleteFeatures": true,
+  "supportsSessionBasedAddFeatures": true
+ },
+ "supportsQuantizationEditMode": true,
+ "timeInfo": {
+  "startTimeField": "BUILTYear",
+  "trackIdField": null,
+  "exportOptions": {
+   "timeOffsetUnits": null,
+   "timeDataCumulative": false,
+   "useTime": true,
+   "timeOffset": null
+  },
+  "endTimeField": "RazeYear",
+  "timeRelation": "esriTimeRelationOverlaps",
+  "timeInterval": 2,
+  "timeExtent": [
+   -3060961200000,
+   1420088400000
+  ],
+  "type": "field",
+  "timeReference": {
+   "timeZoneIANA": "Etc/GMT+5",
+   "respectsDaylightSaving": false,
+   "timeZone": "Eastern Standard Time"
+  },
+  "hasLiveData": false,
+  "timeIntervalUnits": "esriTimeUnitsYears"
+ },
+ "objectIdField": "OBJECTID",
+ "name": "PuGeoDB.DBO.CampusBuilding",
+ "allowTrueCurvesUpdates": true,
+ "displayField": "Name",
+ "supportsCalculate": true,
+ "fields": [
+  {
+   "modelName": "OBJECTID",
+   "nullable": false,
+   "editable": false,
+   "defaultValue": null,
+   "domain": null,
+   "name": "OBJECTID",
+   "alias": "OBJECTID",
+   "type": "esriFieldTypeOID"
+  },
+  {
+   "modelName": "ABBR",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "ABBR",
+   "length": 5,
+   "alias": "ABBR",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "Name",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "Name",
+   "length": 120,
+   "alias": "Name",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "OTHER_ABBR",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "OTHER_ABBR",
+   "length": 5,
+   "alias": "OTHER_ABBR",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "OWNER",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "OWNER",
+   "length": 40,
+   "alias": "OWNER",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "ADDRESS",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "ADDRESS",
+   "length": 40,
+   "alias": "ADDRESS",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "BUILTYear",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "BUILTYear",
+   "length": 8,
+   "alias": "BUILTYear",
+   "type": "esriFieldTypeDate"
+  },
+  {
+   "modelName": "OCCUPIEDYear",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "OCCUPIEDYear",
+   "length": 8,
+   "alias": "OCCUPIEDYear",
+   "type": "esriFieldTypeDate"
+  },
+  {
+   "modelName": "RazeYear",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "RazeYear",
+   "length": 8,
+   "alias": "RazeYear",
+   "type": "esriFieldTypeDate"
+  },
+  {
+   "modelName": "Shape.STArea()",
+   "nullable": true,
+   "editable": false,
+   "defaultValue": null,
+   "domain": null,
+   "name": "Shape__Area",
+   "alias": "Shape.STArea()",
+   "type": "esriFieldTypeDouble",
+   "required": true
+  },
+  {
+   "modelName": "Shape.STLength()",
+   "nullable": true,
+   "editable": false,
+   "defaultValue": null,
+   "domain": null,
+   "name": "Shape__Length",
+   "alias": "Shape.STLength()",
+   "type": "esriFieldTypeDouble",
+   "required": true
+  },
+  {
+   "modelName": "description",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "description",
+   "length": 1000,
+   "alias": "description",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "buildingidlong",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "buildingidlong",
+   "alias": "buildingidlong",
+   "type": "esriFieldTypeInteger"
+  },
+  {
+   "modelName": "ChangeYear",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "ChangeYear",
+   "length": 8,
+   "alias": "ChangeYear",
+   "type": "esriFieldTypeDate"
+  },
+  {
+   "modelName": "constructionbeginyear",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "constructionbeginyear",
+   "alias": "constructionbeginyear",
+   "type": "esriFieldTypeInteger"
+  },
+  {
+   "modelName": "constructionendyear",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "constructionendyear",
+   "alias": "constructionendyear",
+   "type": "esriFieldTypeInteger"
+  },
+  {
+   "modelName": "cost",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "cost",
+   "alias": "cost",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "modelName": "dedicationdate",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "dedicationdate",
+   "length": 50,
+   "alias": "dedicationdate",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "dedicationinfo",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "dedicationinfo",
+   "length": 1000,
+   "alias": "dedicationinfo",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "presidentatconstruction",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "presidentatconstruction",
+   "length": 50,
+   "alias": "presidentatconstruction",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "modelName": "squarefootage",
+   "nullable": true,
+   "editable": true,
+   "defaultValue": null,
+   "domain": null,
+   "name": "squarefootage",
+   "alias": "squarefootage",
+   "type": "esriFieldTypeInteger"
+  }
+ ],
+ "maxRecordCountFactor": 1,
+ "dateFieldsTimeReference": {
+  "timeZoneIANA": "Etc/UTC",
+  "respectsDaylightSaving": false,
+  "timeZone": "UTC"
+ },
+ "bigIntegerRestrictedTo53Bits": true,
+ "hasM": false,
+ "allowGeometryUpdates": true,
+ "preferredTimeReference": null,
+ "useStandardizedQueries": true,
+ "sourceSpatialReference": {
+  "falseM": 0,
+  "xyTolerance": 0.001,
+  "mUnits": 1,
+  "zUnits": 1,
+  "latestWkid": 3857,
+  "zTolerance": 0.001,
+  "wkid": 102100,
+  "xyUnits": 10000,
+  "mTolerance": 0.001,
+  "falseX": -20037700,
+  "falseY": -30241100,
+  "falseZ": 0
+ },
+ "globalIdField": "",
+ "description": "",
+ "syncCanReturnChanges": false,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "geometryProperties": {
+  "shapeAreaFieldName": "Shape__Area",
+  "shapeLengthFieldName": "Shape__Length",
+  "units": "esriMeters"
+ },
+ "supportsRollbackOnFailureParameter": false,
+ "isDataReplicaTracked": false,
+ "standardMaxRecordCountNoGeometry": 32000,
+ "indexes": [
+  {
+   "name": "R303_pk",
+   "isUnique": true,
+   "description": "",
+   "isAscending": true,
+   "fields": "OBJECTID"
+  },
+  {
+   "name": "S252_idx",
+   "isUnique": true,
+   "description": "",
+   "isAscending": true,
+   "fields": "Shape"
+  }
+ ],
+ "editFieldsInfo": null,
+ "supportsDatumTransformation": true,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "minScale": 0,
+ "hasAttachments": false,
+ "advancedQueryCapabilities": {
+  "supportsSqlExpression": true,
+  "supportsQueryWithResultType": true,
+  "supportsUseEstimateForExceedsLimit": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsQueryWithCacheHint": false,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsCurrentUserQueries": true,
+  "fullTextSearchCapabilities": {
+   "supportsSqlExpressionInFullText": true,
+   "supportsOperator": false,
+   "supportsSearchOperator": true
+  },
+  "supportsQueryWithLodSR": false,
+  "supportsPagination": true,
+  "supportsMaxRecordCountFactor": false,
+  "fullTextSearchableFields": [],
+  "supportsStatistics": true,
+  "supportsTrueCurve": true,
+  "supportsOrderBy": true,
+  "supportsFullTextSearch": true,
+  "supportsQueryWithDistance": true,
+  "supportsLod": false,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsReturningQueryExtent": true,
+  "supportsReturningGeometryEnvelope": true,
+  "supportedCurveTypes": [
+   "esriGeometryCircularArc",
+   "esriGeometryEllipticArc",
+   "esriGeometryBezier3Curve"
+  ],
+  "supportsDistinct": true,
+  "supportsReturningGeometryCentroid": true,
+  "supportsQueryAnalytic": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true
+ },
+ "subtypeField": "",
+ "supportsValidateSQL": true,
+ "serviceItemId": "052f4406f2b447ceb7b802324f5bae26",
+ "supportsCoordinatesQuantization": true,
+ "types": [],
+ "capabilities": "Query,Update,Uploads,Editing",
+ "maxScale": 0,
+ "supportsAppend": true,
+ "supportsExceedsLimitStatistics": true,
+ "defaultVisibility": true,
+ "advancedQueryAnalyticCapabilities": {
+  "supportsAsync": true,
+  "supportsLinearRegression": true,
+  "supportsPercentileAnalytic": true
+ },
+ "supportedTrueCurvePbfFeatureEncodings": [
+  "esriCompressedShapeBuffer",
+  "esriDefault"
+ ],
+ "hasMetadata": true,
+ "supportedAppendFormats": "FILEGDB,PBF,CSV",
+ "tileMaxRecordCount": 4000,
+ "typeIdField": "",
+ "supportsASyncCalculate": true,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "drawingInfo": {
+  "renderer": {
+   "symbol": {
+    "outline": {
+     "color": [
+      110,
+      110,
+      110,
+      255
+     ],
+     "width": 0.40000000000000002,
+     "style": "esriSLSSolid",
+     "type": "esriSLS"
+    },
+    "color": [
+     203,
+     220,
+     245,
+     255
+    ],
+    "style": "esriSFSSolid",
+    "type": "esriSFS"
+   },
+   "type": "simple"
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "geometryField": {
+  "modelName": "Shape",
+  "nullable": true,
+  "editable": true,
+  "defaultValue": null,
+  "domain": null,
+  "name": "Shape",
+  "alias": "Shape",
+  "type": "esriFieldTypeGeometry"
+ },
+ "copyrightText": "",
+ "geometryType": "esriGeometryPolygon"
+}
