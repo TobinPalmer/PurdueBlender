@@ -1,0 +1,102 @@
+import json
+from pathlib import Path
+
+RESULT = {
+  "building_id": "massing_hi_vine_dbdf0c5",
+  "review_type": "independent asset grade r1",
+  "reviewer": "independent reviewer",
+  "max_score": 10,
+  "score": 8.3,
+  "pass": True,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified with roof-outline limitation",
+      "evidence": [
+        "Independent identity chain: OSM way 860826644 names Hi Vine at 302 Vine Street; county student-housing profile and Weida operator page independently identify Hi ViNE at the same address.",
+        "Directly inspected ArcGIS imagery overlay: the modeled 24-point perimeter coincides closely with the visible white-roof building; the large Indiana LiDAR object 407783 spans a broader compound and is correctly excluded as the shell source.",
+        "Recomputed polygon comparison in the saved validation: OSM outline/model IoU 0.9999786 and Hausdorff distance 0.00056 m in the repository's approximate local XY transform."
+      ],
+      "limitations": ["The OSM and imagery perimeter represents roof edge, not a surveyed structural wall line; small eaves offsets remain unknown."]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "status": "strong horizontal match; approximate CRS",
+      "evidence": [
+        "Asset coordinates and alignment place the outline on Hi Vine at Vine Street; overlay visually registers to the roof and street block.",
+        "Structural footprint dimensions are approximately 42.90 m east-west by 81.32 m north-south; local transform and source method are documented.",
+        "Direct reopen reports world bounds X 482.128–525.192 m, Y -171.401–-89.911 m, Z 0–19.700 m; slightly enlarged XY bounds include modeled projections."
+      ],
+      "limitations": ["The project local-degree conversion is approximate rather than surveyed; no independent control points are supplied."]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "status": "partially verified",
+      "evidence": [
+        "Flat roof is supported by the top-down imagery and KJG project rendering; the modeled roof is flat.",
+        "Saved mesh height is 19.7 m. The builder labels this as an estimate based on a rendering and secondary listings, not a measured elevation.",
+        "Story count remains ambiguous: source render appears to show a retail ground level and repeated upper levels, while secondary sources conflict between five and six stories; no final measured elevation or permit sheet was found in the supplied evidence."
+      ],
+      "limitations": ["Height and exact floor count are unverified; 19.7 m is an estimate."]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.7,
+      "max_score": 2,
+      "status": "design-intent resemblance; schematic detail",
+      "evidence": [
+        "Direct comparison with the KJG project image supports the brick piers, pale masonry fields, repeated apartment windows, retail glazing, corner glazing, and balconies represented in the model.",
+        "The reviewed hero render shows the long mixed-use elevations and the aerial render confirms the L-shaped plan; asset has six named material slots and balcony projections in the mesh."
+      ],
+      "limitations": ["KJG image is a design rendering, not verified as-built documentation. The model simplifies facade relief and does not establish exact entrance positions, balcony count, or as-built openings."]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "status": "asset portable; shared manifest needs coordinator refresh",
+      "evidence": [
+        "Directly reopened the saved Blender file in Blender 5.2.0: expected scene Building_massing_hi_vine_dbdf0c5, expected collection Asset_massing_hi_vine_dbdf0c5, one mesh object Hi Vine, 6,304 vertices, 1,566 faces, no modifiers, external library links, or unpacked image dependencies.",
+        "Source evidence includes raw OSM, imagery, project page/render, operator page, county profile, and LiDAR context; source record identifies URLs, providers, retrieval/source dates, CRS/method, and uncertainty.",
+        "Review folder includes hero/aerial renders, footprint and LiDAR overlays, and build reopen validation."
+      ],
+      "limitations": ["Coordinator-owned modular/manifest.json still lists the former 16.0 m height in bounds; current asset reopens at 19.7 m. This reviewer did not edit shared indexes."]
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_hi_vine_dbdf0c5.blend",
+    "builder": "modular/buildings/build_massing_hi_vine_dbdf0c5.py",
+    "source_record": "audit/massing_hi_vine_dbdf0c5/sources/source_record.json",
+    "direct_reopen": "audit/massing_hi_vine_dbdf0c5_independent_grade_r1/direct_reopen.json",
+    "reviewed_views": [
+      "audit/massing_hi_vine_dbdf0c5/review/hi_vine_hero_r1.png",
+      "audit/massing_hi_vine_dbdf0c5/review/hi_vine_aerial_r1.png",
+      "audit/massing_hi_vine_dbdf0c5/review/current_asset_aerial_overlay.jpg",
+      "audit/massing_hi_vine_dbdf0c5/review/indiana_lidar_overlay.jpg",
+      "audit/massing_hi_vine_dbdf0c5/sources/kjg_hi_vine_project_render.jpg",
+      "audit/massing_hi_vine_dbdf0c5/sources/world_imagery_hi_vine_2026-10-26.jpg"
+    ],
+    "direct_reopen_log": "audit/massing_hi_vine_dbdf0c5_independent_grade_r1/blender_reopen.log"
+  },
+  "findings": [
+    "PASS at 8.3/10 (minimum 8/10). The horizontal footprint/identity and portable asset structure are well supported.",
+    "Height and story count remain estimated; preserve that uncertainty in any summary or index update.",
+    "Notify the coordinator to update the manifest's recorded Hi Vine vertical bounds from 16.0 m to the reviewed asset height of 19.7 m; do not alter the manifest in this independent review."
+  ]
+}
+
+def evaluate():
+    assert sum(c['score'] for c in RESULT['criteria']) == RESULT['score']
+    assert all(c['score'] <= c['max_score'] for c in RESULT['criteria'])
+    return RESULT
+
+if __name__ == '__main__':
+    out = Path(__file__).with_name('grade_result.json')
+    out.write_text(json.dumps(evaluate(), indent=2), encoding='utf-8')
+    print(f"{RESULT['building_id']}: {RESULT['score']}/{RESULT['max_score']} ({'PASS' if RESULT['pass'] else 'FAIL'})")

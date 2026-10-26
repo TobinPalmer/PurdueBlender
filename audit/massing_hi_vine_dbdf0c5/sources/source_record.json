@@ -1,0 +1,105 @@
+{
+  "building_id": "massing_hi_vine_dbdf0c5",
+  "building_name": "Hi Vine (Hi ViNE)",
+  "address": "302 Vine Street, West Lafayette, Indiana 47906",
+  "retrieved_utc_date": "2026-10-26",
+  "transform": "Local campus metric coordinates using project origin lat 40.4274 lon -86.9137; X=(lon+86.9137)*111412.84*cos(40.4274 deg); Y=(lat-40.4274)*111040.0; WGS84 geographic inputs. Approximate local transform, not a surveyed CRS.",
+  "sources": [
+    {
+      "source_id": "osm_hi_vine_way_860826644",
+      "provider": "OpenStreetMap contributors",
+      "source_date": "OSM way version 1 last edited 2020-10-19T20:49:06Z; retrieved from current API snapshot 2026-10-26.",
+      "url": "https://www.openstreetmap.org/way/860826644",
+      "raw_snapshot": "sources/osm_map_area_302_vine_2026-10-26.xml",
+      "feature_snapshot": "sources/osm_hi_vine_way_860826644_2026-10-26.geojson",
+      "feature_id": "way 860826644, building=apartments, name=Hi Vine",
+      "source_crs": "EPSG:4326 WGS84",
+      "method": "Convert the way vertex coordinates to project campus X/Y using the repository's documented approximate geographic transform; compare ring overlay with separately fetched ArcGIS World Imagery.",
+      "uncertainty": "Crowd-mapped outline; positional tolerance is not declared by source. The current orthophoto visually confirms the roof outline, but the roof edge may overhang structural walls by a small amount."
+    },
+    {
+      "source_id": "world_imagery_hi_vine",
+      "provider": "Esri World Imagery MapServer export",
+      "source_date": "Imagery acquisition date not exposed in exported image metadata; retrieve date 2026-10-26",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-86.909,40.4254,-86.9068,40.4269&bboxSR=4326&imageSR=4326&size=1200,1100&format=jpg&f=image",
+      "raw_snapshot": "sources/world_imagery_hi_vine_2026-10-26.jpg",
+      "feature_id": "Hi Vine roof visible near 302 Vine Street",
+      "source_crs": "Request bbox and image extent EPSG:4326; imagery provider mosaic projection is service-managed",
+      "method": "Visually compare the mapped roof perimeter and site position. Red overlay is the existing footprint from the saved asset, transformed back into the image bbox.",
+      "uncertainty": "Mosaic date and ground control precision are unknown. Roof plan is clear; imagery does not provide height, facade, or wall line."
+    },
+    {
+      "source_id": "kjg_hi_vine_project",
+      "provider": "KJG Engineering, project team and constructor role",
+      "source_date": "Project 2019; web page captured 2026-10-26",
+      "url": "https://www.kjgengineering.com/portfolio-1/hi-vine",
+      "raw_snapshot": "sources/kjg_project_page_2026-10-26.html",
+      "image_snapshot": "sources/kjg_hi_vine_project_render.jpg",
+      "feature_id": "Project page Hi ViNE, West Lafayette, IN",
+      "source_crs": "Not applicable",
+      "method": "Use the architectural project rendering for facade composition and published text for mixed brick/modern metal facade and precast parking deck. Project role and source identity are direct; render is design intent, not a measured as-built elevation.",
+      "uncertainty": "Published rendering may differ from final built condition; it does not state dimensions, exact floor elevations, or finish schedule."
+    },
+    {
+      "source_id": "weida_hi_vine_official",
+      "provider": "Weida Apartments, operator",
+      "source_date": "Current operator page retrieved 2026-10-26",
+      "url": "https://www.weidaapartments.com/hi-vine-apartments",
+      "raw_snapshot": "sources/weida_hi_vine_page_2026-10-26.html",
+      "feature_id": "302 Vine Street address and 9-foot apartment ceilings",
+      "source_crs": "Not applicable",
+      "method": "Identity/address match and apartment ceiling-height context; no fa\u00c3\u00a7ade/elevation dimensions inferred from interiors.",
+      "uncertainty": "Operator advertises apartment ceiling height, not floor-to-floor height or whole-building height."
+    },
+    {
+      "source_id": "tippecanoe_housing_profile_2023",
+      "provider": "Tippecanoe County, student housing profile",
+      "source_date": "Profile published around 2023, based on report citation; accessed 2026-10-26",
+      "url": "https://www.tippecanoe.in.gov/DocumentCenter/View/39966/Hi-ViNE---West-Lafayette",
+      "raw_snapshot": "sources/tippecanoe_2023_student_housing_profile_hi_vine.pdf",
+      "feature_id": "Hi ViNE at 302 Vine Street, 2019, 73 units and 115 bedrooms",
+      "source_crs": "Not applicable",
+      "method": "Independent official project identity and completed-year context.",
+      "uncertainty": "Does not document footprint, story count, roof, or facade measurements."
+    },
+    {
+      "source_id": "indiana_lidar_context_407783",
+      "provider": "Indiana Geographic Information Office, Indiana Building Footprints 2016-2020 (IUPUI Polis Center, FEMA/IDNR cooperating technical partner dataset)",
+      "source_date": "LiDAR year 2018 for queried features; layer metadata retrieved 2026-10-26",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "raw_snapshot": "sources/indiana_lidar_buildings_around_hi_vine_2026-10-26.geojson",
+      "feature_id": "objectid 407783 intersects the Hi Vine site, but its polygon spans the larger compound/context instead of matching the single building footprint",
+      "source_crs": "EPSG:4326 in saved query output; original service CRS EPSG:3857",
+      "method": "Context cross-check only; not used as Hi Vine wall geometry. Overlay demonstrates the queried compound outline is broader than the Hi Vine building outline.",
+      "uncertainty": "2018 capture predates completion (2019) and may capture construction/site conditions; feature is not a reliable single-building footprint match."
+    },
+    {
+      "source_id": "secondary_floor_count",
+      "provider": "Apartments.com listing; secondary property listing",
+      "source_date": "Current listing page retrieved 2026-10-26",
+      "url": "https://www.apartments.com/hi-vine-west-lafayette-in/3ts9czf/",
+      "feature_id": "Listing states 73 units / six stories; conflicts with some secondary sources calling Hi Vine five stories",
+      "source_crs": "Not applicable",
+      "method": "Story count cross-check only; compared against six total levels visible in KJG rendering (ground retail plus five residential rows).",
+      "uncertainty": "Story count is not corroborated by a final permit or elevation. Treat as estimated, not a survey measurement."
+    }
+  ],
+  "building_geometry": {
+    "footprint_source": "OSM way 860826644; roof outline checked against 2026-10-26 ArcGIS World Imagery. Current asset footprint retained because it overlays roof outline closely.",
+    "wall_footprint_area_m2_estimate": 2847.22,
+    "dimensions": "Approximate structural outline bounds from OSM/local transform: 42.90 m east-west by 81.32 m north-south; footprint area about 2,847.22 m\u00b2. Asset object bounds are slightly larger due to balcony projection.",
+    "orientation": "Direct campus X east/Y north axis; position retained from manifest campus coordinates, confirmed against geocoded 302 Vine address and imagery.",
+    "height_m_estimate": 19.7,
+    "floor_count_estimate": 6,
+    "roof_form": "Flat roof with low parapet, supported by top-down current imagery and project rendering.",
+    "facade": "Mixed red/brown brick piers, light masonry panels, metal bands, upper windows/balconies, glazed corner and transparent ground-floor retail. Composition modeled from KJG project rendering and published description; exact elevation schedule unavailable.",
+    "entry": "Ground-floor retail frontage and glazed corner are shown in project render; exact entrance doors/locations are schematic.",
+    "footprint_area_method": "Shoelace area of OSM way 860826644 after the repository local XY transform; treat this as a roof/perimeter proxy, not surveyed wall-line area."
+  },
+  "uncertainty_summary": [
+    "Footprint/position are strong at roof-perimeter level, with very close independent aerial overlay. Structural wall offsets are not directly surveyed.",
+    "Height is estimated from a six-level reading of the KJG rendering (ground retail plus five residential floors) and secondary listing. Other sources say five stories; exact story count is unresolved.",
+    "Flat roof is strongly supported by aerial and rendering; roof edge parapet dimensions are schematic.",
+    "Facade architecture is supported as design intent, not verified as-built; use as representative visual massing only."
+  ]
+}

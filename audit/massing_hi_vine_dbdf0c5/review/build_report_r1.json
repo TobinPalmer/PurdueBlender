@@ -1,0 +1,33 @@
+{
+  "building_id": "massing_hi_vine_dbdf0c5",
+  "pass": "builder safe pause for fresh independent grade",
+  "work_summary": [
+    "Confirmed exact Rossen assignment and manifest contract: simple campus-coordinate massing asset, expected scene Building_massing_hi_vine_dbdf0c5, collection Asset_massing_hi_vine_dbdf0c5, single mesh object Hi Vine.",
+    "Reopened original asset and inspected original mesh: irregular/L-shaped footprint bbox 42.897 x 81.315 m; original height 16.0 m; unverified plain mass.",
+    "Sourced OSM way 860826644 (building=apartments, name=Hi Vine) and compared to an independently retrieved ArcGIS World Imagery export. Retained the original XY footprint because the outline overlay matches the visible roof, and it agrees with the OSM way to under 0.001 m in the documented approximate local projection.",
+    "Added an estimated six-story mass at 19.7 m overall height, flat roof/parapet, ground-floor retail glazing, repeated apartment windows and restrained brick/masonry/metal facade treatment based on the KJG project rendering and description. The official project rendering is design intent; the modeled story count and height remain estimated because sources conflict and there is no final measured elevation.",
+    "Ignored Indiana 2018 LiDAR polygon OBJECTID 407783 as a single-building footprint: it spans a compound/context broader than the Hi Vine roof; preserved a visual overlay to document why it was not used as the structural shell."
+  ],
+  "geometry_edits": [
+    {"property":"XY footprint and position","before":"existing 24-point outline in campus coordinates","after":"retained exact XY outline; roof-outline ring area 2847.24 m² vs OSM way 2847.22 m²; IoU 0.9999786; Hausdorff 0.00056 m", "reason":"direct OSM source match and aerial visual confirmation"},
+    {"property":"overall height","before":"16.0 m, source unverified","after":"19.7 m, estimate; six levels total", "reason":"six-level interpretation of project rendering with five upper residential rows and retail ground floor; no survey/elevation available"},
+    {"property":"facade/roof","before":"plain untextured mass","after":"flat parapet roof, warm brick pilasters, light masonry infill, metal bands, windows, retail glazing and schematic balconies", "reason":"KJG project rendering/text and current aerial roof evidence"}
+  ],
+  "asset_path":"modular/buildings/massing_hi_vine_dbdf0c5.blend",
+  "builder_path":"modular/buildings/build_massing_hi_vine_dbdf0c5.py",
+  "source_record":"audit/massing_hi_vine_dbdf0c5/sources/source_record.json",
+  "review_outputs": [
+    "audit/massing_hi_vine_dbdf0c5/review/hi_vine_hero_r1.png",
+    "audit/massing_hi_vine_dbdf0c5/review/hi_vine_aerial_r1.png",
+    "audit/massing_hi_vine_dbdf0c5/review/current_asset_aerial_overlay.jpg",
+    "audit/massing_hi_vine_dbdf0c5/review/indiana_lidar_overlay.jpg",
+    "audit/massing_hi_vine_dbdf0c5/review/reopen_validation_r1.json"
+  ],
+  "validation":"Saved asset reopened directly in Blender 5.2.0; one named scene and one expected asset collection; one mesh object, 6304 vertices / 1566 faces; no modifiers, external libraries, or external images; direct campus XY, flat 19.7 m roof. OSM overlap and bbox checks in reopen_validation_r1.json all pass.",
+  "unresolved": [
+    "No surveyed structural wall line; OSM and aerial represent roof/perimeter with possible eaves offset.",
+    "Height/story count is uncertain: project rendering reads as one retail plus five residential floors; some listings call it six stories, other secondary sources say five. 19.7 m is an estimate, not measured.",
+    "Facade rendering is a design visualization and may not exactly match final as-built cladding/openings; entrance placement and balcony configuration are schematic.",
+    "Indiana LiDAR data is 2018 and its large objectid 407783 polygon is unsuitable for identifying this single building shell."
+  ]
+}
