@@ -65,7 +65,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Psychological Sciences Building | [psychological_sciences.blend](modular/buildings/psychological_sciences.blend) | Finished | 9.0/10 | — |
 | Purdue Memorial Union | [purdue_memorial_union.blend](modular/buildings/purdue_memorial_union.blend) | Finished | [8.0/10](audit/purdue_memorial_union_independent_grade/independent_grade_r4.md) | — |
 | R. B. Wetherill Laboratory of Chemistry | [wetherill_laboratory_of_chemistry.blend](modular/buildings/wetherill_laboratory_of_chemistry.blend) | Finished | 8.3/10 | — |
-| Rawls Hall | [rawls_hall.blend](modular/buildings/rawls_hall.blend) | In progress | 7.0/10 | Tobin |
+| Rawls Hall | [rawls_hall.blend](modular/buildings/rawls_hall.blend) | Finished | [8.14/10](audit/batch4_rawls/independent_review_round11.md) | — |
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](modular/buildings/ray_w_herrick_laboratories.blend) | Finished | [8.1/10](audit/ray_w_herrick_refine/independent_grade_r2.md) | — |
 | Ross Ade | [ross_ade.blend](modular/buildings/ross_ade.blend) | Finished | [8.0/10](audit/ross_ade/independent_grade.md) | — |
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](modular/buildings/massing_samara_f6b8e61.blend) | Finished | [8.6/10](audit/samara/independent_grade.json) | — |
@@ -73,16 +73,16 @@ This project tracks detailed campus models separately from the remaining massing
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](modular/buildings/stanley_coulter_hall.blend) | Finished | [8.1/10](audit/batch3_stanley/independent_grade_r6.md) | — |
 | Stewart Center | [stewart_center.blend](modular/buildings/stewart_center.blend) | Finished | [8.0/10](audit/stewart_center_independent_grade/independent_grade_r4.md) | — |
 | Tarkington Hall | [tarkington_hall.blend](modular/buildings/tarkington_hall.blend) | Needs independent grade | Not graded | Tobin |
-| University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | Needs independent grade | Not graded | Tobin |
-| Walc | [walc.blend](modular/buildings/walc.blend) | Needs independent grade | Not graded | Tobin |
+| University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | In progress | 6.8/10 | Tobin |
+| Walc | [walc.blend](modular/buildings/walc.blend) | Finished | [8.25/10](audit/walc_refine/independent_grade_r5.md) | — |
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (171 total)
+## Unfinished buildings (169 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 71 buildings, Arjav 10 buildings, Brady 40 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 69 buildings, Arjav 10 buildings, Brady 40 buildings.
 
-### Detailed models still in progress or awaiting a grade (37)
+### Detailed models still in progress or awaiting a grade (35)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -117,11 +117,8 @@ This list excludes individual house parcels. The detailed models that are still 
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Rohan |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
-| Rawls Hall | [`rawls_hall.blend`](modular/buildings/rawls_hall.blend) | 7.0/10 | Tobin |
-
 | Tarkington Hall | [`tarkington_hall.blend`](modular/buildings/tarkington_hall.blend) | Not graded | Tobin |
-| University Hall | [`university_hall.blend`](modular/buildings/university_hall.blend) | Not graded | Tobin |
-| Walc | [`walc.blend`](modular/buildings/walc.blend) | Not graded | Tobin |
+| University Hall | [`university_hall.blend`](modular/buildings/university_hall.blend) | 6.8/10 | Tobin |
 | Wiley Hall | [`wiley_hall.blend`](modular/buildings/wiley_hall.blend) | Not graded | Tobin |
 | Winifred Parker Hall | [`winifred_parker_hall.blend`](modular/buildings/winifred_parker_hall.blend) | Not graded | Tobin |
 

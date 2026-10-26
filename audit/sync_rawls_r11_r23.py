@@ -13,13 +13,16 @@ MASTER = ROOT / "purdue_campus_master.blend"
 MODULAR = ROOT / "modular"
 MANIFEST_PATH = MODULAR / "manifest.json"
 VERIFICATION_PATH = MODULAR / "verification.json"
-REPORT_PATH = ROOT / "audit/master_sync_r22.json"
+REPORT_PATH = ROOT / "audit/master_sync_r23.json"
 ASSET_ID = "rawls_hall"
 ASSET_PATH = MODULAR / "buildings/rawls_hall.blend"
 EXPECTED_SHA256 = "19d2ec5828daee8b2529d8b0790422b9a43a9f795b41c6fb2e6bc8c21e1ec9eb"
 EXPECTED_OBJECTS = 761
 GRADE_PATH = "../audit/batch4_rawls/independent_review_round11.md"
 EVIDENCE_PATH = "audit/batch4_rawls/independent_reopen_r11.json"
+
+if Path(bpy.data.filepath).resolve() != MASTER.resolve():
+    raise RuntimeError("Start Blender with purdue_campus_master.blend already loaded; open_mainfile resets this script")
 
 
 def read_json(path: Path):
@@ -60,7 +63,6 @@ record = next((item for item in manifest["assets"] if item["id"] == ASSET_ID), N
 if record is None:
     raise RuntimeError(f"Manifest is missing {ASSET_ID}")
 collection_name = record["collection"]
-bpy.ops.wm.open_mainfile(filepath=str(MASTER))
 scene = bpy.context.scene
 collection = bpy.data.collections.get(collection_name)
 marker = bpy.data.objects.get(f"Placement_{ASSET_ID}")
@@ -93,11 +95,10 @@ if any(abs(float(value) - 1.0) > 1e-6 for value in marker.scale):
 if any(abs(float(value)) > 1e-6 for value in marker.rotation_euler):
     raise RuntimeError("Rawls Hall master marker rotation changed")
 
-local_bounds = reopen["bounds_local_axis_major_m"]
+local_bounds = exterior_bounds["bounds_local_axis_major_m"]
 record["objects"] = [obj.name for obj in objects]
 record["object_count"] = len(objects)
 record["local_bounds_m"] = local_bounds
-record["exterior_bounds_world_m"] = exterior_bounds["world_bounds_axis_major_m"]
 record["bounds_world_m"] = [
     [float(local_bounds[i][0]) + float(origin[i]), float(local_bounds[i][1]) + float(origin[i])]
     if i < 2 else [float(local_bounds[i][0]), float(local_bounds[i][1])]
@@ -131,28 +132,10 @@ bpy.ops.wm.save_as_mainfile(filepath=str(MASTER))
 write_json(MANIFEST_PATH, manifest)
 write_json(VERIFICATION_PATH, verification)
 
-# Fresh disk reopen verifies linked source, object count, and placement marker.
-bpy.ops.wm.open_mainfile(filepath=str(MASTER))
-scene = bpy.context.scene
-collection = bpy.data.collections.get(collection_name)
-marker = bpy.data.objects.get(f"Placement_{ASSET_ID}")
-if collection is None or collection.library is None or marker is None:
-    raise RuntimeError("Rawls Hall disappeared on fresh master reopen")
-if len(collection.all_objects) != EXPECTED_OBJECTS or marker.instance_collection != collection:
-    raise RuntimeError("Fresh master reopen has an incorrect Rawls Hall collection or marker")
-if Path(bpy.path.abspath(collection.library.filepath)).resolve() != asset_path:
-    raise RuntimeError("Fresh master reopen points Rawls Hall to an unexpected source library")
-if any(child.name == collection_name for child in scene.collection.children):
-    raise RuntimeError("Fresh master reopen would directly duplicate Rawls Hall")
-post_error = ((float(marker.location.x) - float(origin[0])) ** 2 +
-              (float(marker.location.y) - float(origin[1])) ** 2) ** 0.5
-if post_error > 0.001:
-    raise RuntimeError(f"Fresh master reopen changed Rawls Hall marker placement by {post_error:.6f} m")
-
 report = {
-    "status": "PASS",
+    "status": "SAVED_PENDING_FRESH_REOPEN",
     "master": str(MASTER),
-    "master_reopened_after_save": True,
+    "master_reopened_after_save": False,
     "scene_object_count": len(scene.objects),
     "placement_marker_count": placement_count,
     "manifest_source_object_count": verification["source_asset_object_count"],
@@ -165,9 +148,9 @@ report = {
         "placement_marker": marker.name,
         "marker_xy_m": [float(marker.location.x), float(marker.location.y)],
         "manifest_xy_m": [float(origin[0]), float(origin[1])],
-        "placement_error_m": post_error,
+        "placement_error_m": position_error,
     }],
-    "notes": ["Only the passing Rawls Hall library was explicitly reloaded by this integration."],
+    "notes": ["Only the passing Rawls Hall library was explicitly reloaded; only overall asset bounds were refreshed. Run verify_rawls_r23.py in a fresh Blender process before treating integration as passed."],
 }
 write_json(REPORT_PATH, report)
 print(json.dumps(report, indent=2, ensure_ascii=False))
