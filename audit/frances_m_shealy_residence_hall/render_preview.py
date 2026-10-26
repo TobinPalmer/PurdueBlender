@@ -26,9 +26,13 @@ for i,a in enumerate(pts):
   tangent=Vector((delta.x/length,delta.y/length,0)); normal=Vector((tangent.y,-tangent.x,0))*sign
   if normal.x < -0.7: edges.append((length,a,b,tangent,normal))
 if edges:
- length,a,b,tangent,normal=max(edges,key=lambda e:e[0]); midpoint=(a+b)*0.5
- target=Vector((midpoint.x,midpoint.y,3.5))+normal*0.25
- cam.location=target+normal*8+Vector((0,0,2.0)); cam.rotation_euler=(target-cam.location).to_track_quat('-Z','Y').to_euler(); cam_data.ortho_scale=6.8
+ length,a,b,tangent,normal=max(edges,key=lambda e:e[0]); entry=a.lerp(b,0.22)
+ target=Vector((entry.x,entry.y,10.0))+normal*0.25
+ cam.location=target+normal*25; cam.rotation_euler=(target-cam.location).to_track_quat('-Z','Y').to_euler(); cam_data.ortho_scale=26.0
  scene.render.filepath=os.path.join(here,'preview_entrance.png'); bpy.ops.render.render(write_still=True)
+# A plan view documents the official U-shaped footprint and roof planes.
+top_target=center
+cam.location=top_target+Vector((0,0,size*1.8)); cam.rotation_euler=(0,0,0); cam_data.ortho_scale=size*1.12
+scene.render.filepath=os.path.join(here,'preview_roof_plan.png'); bpy.ops.render.render(write_still=True)
 print('PREVIEW_RENDER='+os.path.join(here,'preview_detail.png'))
 
