@@ -1,0 +1,194 @@
+{
+  "building_id": "massing_matthews_hall_mthw_9326885",
+  "score": 8.75,
+  "max_score": 10,
+  "passing_standard": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue feature 235 identifies Matthews Hall (MTHW) at 812 Mitch Daniels Blvd; Purdue Emergency Plan and Events snapshots also identify Matthews Hall at the same address.",
+        "The official 14-edge ring is geometrically matched to 14 grade-level structural wall edges of the reopened asset, each within 2 mm; maximum error is 0.000014 m.",
+        "This confirms the model represents the named Purdue GIS footprint. The GIS outline is not a certified survey and does not establish survey-grade wall positions."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "All 14 absolute XY structural outline edges match the GIS ring within 2 mm after the project's approximate WGS84-to-campus coordinate transform.",
+        "Source footprint dimensions are about 26.12 \u00d7 76.60 m; evaluated whole-object bounds include the front portico/roof eave and are 27.08 \u00d7 81.74 \u00d7 11.95 m.",
+        "Identity matrix retains the asset's campus-coordinate placement and GIS-derived orientation. Survey accuracy remains unpublished."
+      ]
+    },
+    {
+      "criterion": "Height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "Purdue Emergency Plan text check for three stories: True. GIS NUM_LEVELS/CountOfFLO values indicate four (True); the conflicting GIS level fields and undocumented Extrution=27 remain unresolved.",
+        "The evaluated mesh reaches 11.95 m. The evidence labels 11.4 m wall height and 11.95 m roof height as estimates; no measured vertical source was found.",
+        "The official oblique image supports a shallow dark roof edge, and the model shows three facade tiers with a low roof edge. Roof plane, pitch, underside, and exact height are not dimensioned."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "The saved Purdue Events photograph visibly supports red brick, pale horizontal masonry courses, repeated sash windows, and a columned entrance portico.",
+        "The preview includes brick walls, floor bands, repeated windows, and a centered portico on the photographed frontage.",
+        "Only one oblique elevation is available. The modeled frontage is a plausible match, but the bearing is inferred, window and portico dimensions are approximate, and hidden elevations/material extents are unverified. The shallow roof edge is shown as a nearly flat dark cap with limited roof geometry."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Independent Blender 5.2.3 reopen found scene Building_massing_matthews_hall_mthw_9326885, expected collection Asset_massing_matthews_hall_mthw_9326885, one mesh object, 4320 evaluated vertices, and 1387 faces.",
+        "The asset has 0 modifiers, 0 linked libraries, 0 unpacked image dependencies, and preserves an identity campus transform.",
+        "Manifest file/collection and required evidence snapshots, preview, and reopen record match: buildings/massing_matthews_hall_mthw_9326885.blend; complete=True."
+      ]
+    }
+  ],
+  "findings": [
+    "Passes overall at 8.75/10 (minimum 8/10).",
+    "Footprint, campus position, orientation, and plan dimensions are verified against the named official GIS geometry within the chosen 2 mm coordinate-comparison tolerance.",
+    "Three stories are directly stated in the Emergency Plan, but the GIS level count indicates four and its extrusion field has undocumented units; roof height remains an estimate.",
+    "The photographed front's brick, pale courses, window rhythm, and portico are represented. Other elevations and precise architectural dimensions remain unverified."
+  ],
+  "comparison_to_previous_grade": {
+    "previous_score": 8.75,
+    "independent_score": 8.75,
+    "difference": 0.0,
+    "comment": "Independent review uses the same 10-point rubric and independently reopens the current asset; the result is compared only after recomputing the evidence."
+  },
+  "evidence": {
+    "asset_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_matthews_hall_mthw_9326885.blend",
+    "grader_code": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\matthews_hall_mthw_9326885\\independent_grade_kyle2.py",
+    "gis_snapshot": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\matthews_hall_mthw_9326885\\sources\\feature_235_wgs84.json",
+    "emergency_plan_snapshot": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\matthews_hall_mthw_9326885\\sources\\purdue_emergency_plan.html",
+    "events_page_snapshot": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\matthews_hall_mthw_9326885\\sources\\purdue_events_page.html",
+    "reference_photo": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\matthews_hall_mthw_9326885\\sources\\purdue_events_matthews_hall.jpg",
+    "source_identity": {
+      "FID": 235,
+      "abbreviation": "MTHW",
+      "name": "Matthews Hall",
+      "address": "812 Mitch Daniels Blvd"
+    },
+    "source_outline": {
+      "vertices": 14,
+      "bounds_xy_m": [
+        [
+          -240.4051076297429,
+          -214.2868474815519
+        ],
+        [
+          -332.7182394914166,
+          -256.1210229704352
+        ]
+      ],
+      "dimensions_xy_m": [
+        26.118260148191013,
+        76.59721652098142
+      ]
+    },
+    "independent_blender_reopen": {
+      "scene": "Building_massing_matthews_hall_mthw_9326885",
+      "collection": "Asset_massing_matthews_hall_mthw_9326885",
+      "collection_object_count": 1,
+      "collection_objects": [
+        "Matthews Hall (MTHW)"
+      ],
+      "object_name": "Matthews Hall (MTHW)",
+      "object_type": "MESH",
+      "evaluated_vertex_count": 4320,
+      "evaluated_face_count": 1387,
+      "world_bounds_m": [
+        [
+          -240.88510131835938,
+          -213.80685424804688
+        ],
+        [
+          -337.3826599121094,
+          -255.6410369873047
+        ],
+        [
+          0.0,
+          11.949999809265137
+        ]
+      ],
+      "dimensions_m": [
+        27.0782470703125,
+        81.74162292480469,
+        11.949999809265137
+      ],
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "modifier_count": 0,
+      "material_names": [
+        "MTHW_Red_Brick",
+        "MTHW_Pale_Limestone",
+        "MTHW_Window_Glass",
+        "MTHW_Dark_Metal",
+        "MTHW_Roof_Membrane",
+        "MTHW_Entry_Steps"
+      ],
+      "source_edge_count": 14,
+      "candidate_grade_edge_count": 26,
+      "source_edges_matched_within_2mm": 14,
+      "max_source_edge_error_m": 1.4298866087191274e-05,
+      "mean_source_edge_error_m": 1.2173634337830412e-05,
+      "external_images": [],
+      "linked_libraries": 0
+    },
+    "manifest_entry": {
+      "id": "massing_matthews_hall_mthw_9326885",
+      "file": "buildings/massing_matthews_hall_mthw_9326885.blend",
+      "collection": "Asset_massing_matthews_hall_mthw_9326885",
+      "scene": "Building_massing_matthews_hall_mthw_9326885",
+      "object_count": 1
+    },
+    "source_text_checks": {
+      "emergency_plan_three_stories": true,
+      "venue_page_identity_address": true
+    },
+    "builder_evidence_uncertainties": [
+      "GIS footprint positional and dimensional accuracy is unpublished; it is not a survey.",
+      "Purdue's Emergency Plan describes three stories while GIS level count fields indicate four; the model follows the current BEP and exterior photograph, and treats the GIS count conflict as unresolved.",
+      "Wall height and floor spacing are visual/story-count estimates; GIS Extrution=27 is not used because its units and meaning are undocumented.",
+      "One oblique photo cannot verify all facade elevations, rear additions, precise window spacing, roof pitch, or materials on every side.",
+      "Primary entrance orientation toward the south frontage is inferred from address/photo context; no plan or compass-tagged elevation was found."
+    ],
+    "previous_grade_result_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\matthews_hall_mthw_9326885\\grade_result.json"
+  }
+}

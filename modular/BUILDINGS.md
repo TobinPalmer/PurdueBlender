@@ -63,6 +63,10 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 619 |
 | Mackey Arena | [mackey_arena.blend](buildings/mackey_arena.blend) | 391 |
 | Math Sciences | [math_sciences.blend](buildings/math_sciences.blend) | 593 |
+| Marc and Sharon Hagle Hall (HAGL) | [massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend](buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | 1 |
+| Marriott Hall | [massing_marriot_hall_7cd3eb5.blend](buildings/massing_marriot_hall_7cd3eb5.blend) | 1 |
+| Martin C. Jischke Hall of Biomedical Engineering | [massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend](buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | 1 |
+| Matthews Hall (MTHW) | [massing_matthews_hall_mthw_9326885.blend](buildings/massing_matthews_hall_mthw_9326885.blend) | 1 |
 | Mccutcheon Hall | [mccutcheon_hall.blend](buildings/mccutcheon_hall.blend) | 219 |
 | Mechanical Engineering | [mechanical_engineering.blend](buildings/mechanical_engineering.blend) | 55 |
 | Neil Armstrong Hall | [neil_armstrong_hall.blend](buildings/neil_armstrong_hall.blend) | 446 |
@@ -229,4 +233,21 @@ Telecommunications Building (TEL) retains campus-world coordinates. Its 8.0/10 g
 Twin Pines Cooperative retains campus-world coordinates. Its 8.3/10 grade verifies the six-vertex OSM FID 766 footprint against the mesh within 0.1 mm and supports the two-story gable, porch, and siding from Purdue and house photographs. The 9.05 m roof ridge and many facade details remain estimates; the south-facing frontage is inferred. See [Twin Pines grade](../audit/massing_twin_pines_cooperative_8f606f9/independent_grade/twin_pines_independent_grade.json).
 
 Herrick Laboratories (historic Herrick Acoustics) retains campus-world coordinates. Its 8.4/10 grade verifies Purdue GIS FID 246 / HERL and distinguishes it from Ray W. Herrick Labs; height estimates and GIS area discrepancy remain unresolved. See [Herrick grade](../audit/massing_herrick_laboratories_2138103/independent_grade/r2/result.json).
+
+## Kyle detailed models — October 26, 2026
+
+| Building | File | Objects |
+| --- | --- | ---: |
+| Marc and Sharon Hagle Hall (HAGL) | [massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend](buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | 1 |
+| Marriott Hall | [massing_marriot_hall_7cd3eb5.blend](buildings/massing_marriot_hall_7cd3eb5.blend) | 1 |
+| Martin C. Jischke Hall of Biomedical Engineering | [massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend](buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | 1 |
+| Matthews Hall (MTHW) | [massing_matthews_hall_mthw_9326885.blend](buildings/massing_matthews_hall_mthw_9326885.blend) | 1 |
+
+Marriott Hall retains campus-world coordinates. Its 8.5/10 independent grade verifies all 33 Purdue GIS FID 862 footprint vertices within 0.1 mm. Roof planes, the lobby canopy, and height remain estimated; GIS's four-level field does not clearly resolve the visible above-grade facade bands. See [Marriott evidence](../audit/marriott_hall/evidence.json).
+
+Martin C. Jischke Hall retains campus-world coordinates. Its 8.0/10 independent grade verifies the transformed Purdue GIS FID 407 footprint within 1.02 m after generalization. Purdue confirms three floors over a basement; the 14.2 m height is estimated, and the model simplifies the prominent curtain wall and entrances. See [Jischke evidence](../audit/martin_c_jischke_hall/evidence.json).
+
+Marc and Sharon Hagle Hall retains campus-world coordinates. Its 8.5/10 grade matches Purdue GIS FID 430 and reviews Purdue completion photographs; the projecting canopy extends beyond the GIS wall ring, so keep updated manifest bounds. Height remains estimated and the entrance/canopy are simplified. See [HAGL grade](../audit/massing_marc_and_sharon_hagle_hall_hagl_071ffd6/grade.json).
+
+Matthews Hall retains campus-world coordinates. Its 8.75/10 grade matches all 14 Purdue GIS FID 235 structural edges within 0.000015 m; a Purdue photo supports the brick/stone facade and columned entry. Roof height is estimated and unseen elevations remain unverified. See [MTHW grade](../audit/matthews_hall_mthw_9326885/grade_result.json).
 
