@@ -1,0 +1,114 @@
+{
+  "building": "Chaney-Hale Hall of Science (CHAS)",
+  "asset_id": "massing_chaney_hale_hall_of_science_chas_6bb9ef7",
+  "owner": "Rossen",
+  "retrieved_utc": "2026-10-26",
+  "manifest": {
+    "asset_path": "modular/buildings/massing_chaney_hale_hall_of_science_chas_6bb9ef7.blend",
+    "collection": "Asset_massing_chaney_hale_hall_of_science_chas_6bb9ef7",
+    "scene": "Building_massing_chaney_hale_hall_of_science_chas_6bb9ef7",
+    "coordinate_mode": "campus coordinates; identity transform; directly linked massing asset"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D945&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 945,
+      "retrieved_date": "2026-10-26",
+      "source_date": "Not provided by service",
+      "crs": "EPSG:4326",
+      "snapshot": "sources/purdue_gis_fid945_live.json",
+      "use": "Identity, plan boundary and campus position",
+      "measurement_method": "Converted the single returned GIS ring into local project coordinates using X=(longitude+86.9137)*111412.84*cos(40.4274\u00b0), Y=(latitude\u221240.4274)*111040.0. Area and axis-aligned dimensions computed in that local approximation.",
+      "uncertainty": "Public map footprint, not a structural-wall survey; service does not state its imagery date or positional accuracy. The footprint is one polygon ring with no interior holes."
+    },
+    {
+      "provider": "Purdue University News",
+      "url": "https://www.purdue.edu/newsroom/archive/purduetoday/releases/2020/Q3/chaney-hale-hall-of-science-opens-for-fall-2020-semester.html",
+      "feature_id": "Article and official Purdue photo",
+      "retrieved_date": "2026-10-26",
+      "source_date": "2020 (Fall opening; exact photo capture date not stated)",
+      "crs": "Not spatial data",
+      "snapshot": "sources/purdue_opening_article_2020.html; sources/purdue_chaney_hale_2020_exterior.jpg",
+      "use": "Confirms four stories, 111,000 gross square feet, adjacent-to-Elliott identity; photo documents brick, extensive glazing, floor bands and broad roof edge",
+      "measurement_method": "Qualitative visual comparison; no pixel-to-meter dimensions taken",
+      "uncertainty": "Perspective photograph; does not establish exact dimensions, height, hidden facades, or individual window spacing."
+    },
+    {
+      "provider": "Purdue Engineering Computer Network / OPP webcam",
+      "url": "https://engineering.purdue.edu/OPP/ECN/WebCam/cam45/2020_09_22_15_50.jpg",
+      "feature_id": "cam45 capture 2020_09_22_15_50",
+      "retrieved_date": "2026-10-26",
+      "source_date": "2020-09-22 15:50 (filename timestamp; timezone not independently verified)",
+      "crs": "Not spatial data",
+      "snapshot": "sources/purdue_webcam_cam45_2020-09-22.jpg",
+      "use": "Second photographic view of curtainwall bays, brick end zones, light horizontal bands and dark transparent ground floor",
+      "measurement_method": "Qualitative visual comparison only",
+      "uncertainty": "Oblique rooftop webcam image; capture orientation and camera calibration are not supplied."
+    },
+    {
+      "provider": "Ennead Architects, project architect",
+      "url": "https://www.ennead.com/work/purdue-university-chaney-hale-hall-of-science",
+      "feature_id": "Project page and design description",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Project completed 2020; page revision date not stated",
+      "crs": "Not spatial data",
+      "snapshot": "sources/ennead_project_page.html",
+      "use": "Independent project identity and design intent; page describes transparent east/west facades and entries receiving campus traffic in multiple directions",
+      "measurement_method": "Descriptive text only",
+      "uncertainty": "Design narrative supports facade treatment but provides no measured elevations or dimensions."
+    },
+    {
+      "provider": "FRP, Inc. project portfolio",
+      "url": "https://frpinc.com/projects/purdue-chaney-hale-hall-of-science-stem-teaching-lab/",
+      "feature_id": "Project gallery slider 0",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Image capture date not stated; project is completed",
+      "crs": "Not spatial data",
+      "snapshot": "sources/frp_chaney_hale_view01.jpg",
+      "use": "Independent project construction photo confirms connected wing massing, red brick, dark base, curtainwall, pale bands and deep wood-tone roof soffit",
+      "measurement_method": "Qualitative visual comparison only",
+      "uncertainty": "Perspective image and vendor portfolio; no measured dimensions."
+    }
+  ],
+  "footprint_local_m": {
+    "ring_vertex_count": 53,
+    "bbox_x_m": [
+      -190.95317182139948,
+      -116.33259126103889
+    ],
+    "bbox_y_m": [
+      102.69923936090208,
+      161.59685592440383
+    ],
+    "polygon_area_m2_project_approx": 2219.650811891762,
+    "placement": "GIS-mapped campus position; no translation baked into asset"
+  },
+  "vertical_geometry": {
+    "stories": "4 stories, confirmed by Purdue News",
+    "model_height_m": 16.0,
+    "height_status": "estimate only; no surveyed elevation or roof datum found, modeled at approximately 4 m per story",
+    "roof": "flat roof with broad wood-tone soffit; overhang 0.72 m estimated from photographs; exact roof datum and overhang unverified"
+  },
+  "facade": "Brick volumes with extensive blue-gray glazing, pale horizontal bands, dark transparent ground floor and broad roof soffit; visual cues are photo-supported, exact bay widths and all hidden elevations remain unverified.",
+  "build_changes": [
+    "Rebuilt the shell from live Purdue GIS feature FID 945 in the project local approximation.",
+    "Added photo-based curtainwall panels and pale horizontal bands to longer facade runs.",
+    "Used a four-story, 16 m height and 0.72 m roof overhang as visual estimates; these are not measurements.",
+    "Kept the manifest asset ID, collection, scene name, and direct campus-coordinate placement unchanged."
+  ],
+  "unresolved": [
+    "No surveyed structural-wall footprint or published elevations found.",
+    "GIS footprint may represent roof/map edge rather than wall face; overhang is excluded from ground footprint comparison.",
+    "Exact facade orientation, bay dimensions, entrance locations on all sides, floor-to-floor heights, roof height, interior, and materials are not fully verified."
+  ],
+  "validation_status": "PASS: rebuilt asset freshly reopened in Blender 4.5.15; expected scene, collection, and one mesh; identity transform; no modifiers or external images; all 52 official ground-ring vertices match within 0.000011 m. Independent grade 8.15/10 PASS.",
+  "reopen_validation": "reopen_validation.json",
+  "preview_views": [
+    "preview.png",
+    "topdown.png"
+  ],
+  "independent_grade": "audit/chaney_hale_hall_of_science_chas_independent_grade/result.json",
+  "independent_grade_score": 8.15,
+  "independent_grade_passed": true
+}
