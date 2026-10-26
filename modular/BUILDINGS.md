@@ -125,6 +125,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | France A. Córdova Recreational Sports Center | [massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend](buildings/massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend) | 199 |
 | Turf Recreation Exercise Center (TREC) | [massing_turf_recreation_exercise_center_9622f45.blend](buildings/massing_turf_recreation_exercise_center_9622f45.blend) | 274 |
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](buildings/hall_for_discovery_and_learning_research.blend) | 396 |
+| The Church of Jesus Christ of Latter-day Saints Institute of Religion | [massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend](buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | 1 |
 | Heine Pharmacy | [heine_pharmacy.blend](buildings/heine_pharmacy.blend) | 133 |
 | Horticulture Building | [horticulture_building.blend](buildings/horticulture_building.blend) | 728 |
 | Krach Leadership Center | [krach_leadership_center.blend](buildings/krach_leadership_center.blend) | 36 |

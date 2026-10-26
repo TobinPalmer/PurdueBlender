@@ -169,6 +169,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
 | The Caretaker’s Cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | [8.1/10](audit/massing_the_caretaker_s_cottage_6b24af9/independent_grade_r2.json); awaiting master integration | Rossen |
+| The Church of Jesus Christ of Latter-day Saints Institute of Religion | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | [8.3/10](audit/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451/independent_grade_r2.json); awaiting master integration | Rossen |
 | Convergence Center for Innovation and Collaboration | [`convergence_center.blend`](modular/buildings/convergence_center.blend) | Not graded | Rohan |
 | Dauch Alumni Center | [`dauch_alumni_center.blend`](modular/buildings/dauch_alumni_center.blend) | 7.2/10 | Rohan |
 | David and Bonnie Brunner Farm Animal Hospital | [`david_and_bonnie_brunner_farm_animal_hospital.blend`](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 6.7/10 | Rohan |
@@ -238,7 +239,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | shreve hall | [`massing_shreve_hall_06d270a.blend`](modular/buildings/massing_shreve_hall_06d270a.blend) | Arjav |
 | slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Arjav |
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
-| the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Rossen |
 | the moosehead lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | Rossen |
 | union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Rossen |
 
@@ -731,7 +731,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 776 | Sigma Pi | [massing_house_301836568_0fbca0e](modular/buildings/massing_house_301836568_0fbca0e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 777 | Triangle | [massing_triangle_fraternity_8477ad9](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 778 | Farmhouse | [massing_farmhouse_fraternity_purdue_chapter_0b8908b](modular/buildings/massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 779 | Lds Institute of Religion | [massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 779 | Lds Institute of Religion | [massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Official 14 Waldron identity and GIS wall ring verified; independently graded 8.3/10; awaiting master integration (see TODO.md); roof heights and facade stationing remain estimated |
 | 780 | Sigma Kappa | [massing_house_301840869_1b80ace](modular/buildings/massing_house_301840869_1b80ace.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 781 | Chi Omega | [massing_chi_omega_a9eb08d](modular/buildings/massing_chi_omega_a9eb08d.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 782 | Kappa Kappa Gamma | [massing_house_301840871_5d1bc06](modular/buildings/massing_house_301840871_5d1bc06.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
