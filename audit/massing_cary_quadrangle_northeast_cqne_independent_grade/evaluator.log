@@ -1,0 +1,157 @@
+BlenderMCP addon registered
+{
+  "building_id": "massing_cary_quadrangle_northeast_cqne_0a76fca",
+  "grade_type": "fresh independent source and saved-asset review",
+  "grade_date": "2026-10-26",
+  "asset": "modular/buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend",
+  "source_evidence": [
+    "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/build_evidence.json",
+    "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/purdue_gis_feature_638_cqne_4326.json"
+  ],
+  "score": 7.0,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 2.0,
+      "score": 2.0,
+      "evidence": [
+        "Purdue GIS FeatureServer Feature 638 identifies Franklin Levering Cary Quadrangle (NE), abbreviation CQNE.",
+        "The asset wall mesh has 54 unique plan vertices versus 54 in the raw GIS ring after the repository local approximation; maximum bidirectional vertex mismatch=3.210717715298183e-05 m (float precision tolerance 0.001 m).",
+        "The service feature describes an individual CQNE footprint, though its broader historic label is the Cary Quadrangle."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 2.0,
+      "score": 2.0,
+      "evidence": [
+        "Asset uses campus-coordinate massing geometry; walls reproduce source coordinates after the repository's documented approximate conversion.",
+        "Raw GIS axis-aligned bounds in local metres: [-359.5188048381953, 582.1593466128138, -294.1676781088491, 597.8955473949236]; wall mesh bounds: [-359.518798828125, 582.1593627929688, -294.16766357421875, 597.8955688476562]; max edge delta 2.1452732653415296e-05 m.",
+        "Rendered aggregate bounds include roof/window projections and measure [65.85113525390625, 19.77618408203125, 14.780399709939957] m; these are not the structural plan dimensions."
+      ],
+      "findings": [
+        "The coordinate conversion is a local approximation, not a surveyed CRS; GIS source units and survey tolerance are not documented in the snapshot."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 2.0,
+      "score": 0.5,
+      "evidence": [
+        "Purdue GIS records CountOfFLO=5 and Extrution=48.",
+        "FeatureServer schema describes Extrution only as an editable integer field; it provides no unit or semantic definition. The 48 ft interpretation and 14.6304 m peak are therefore not established by the source metadata.",
+        "The five window rows match the five-level count. Roof form is acknowledged by the author as an aerial-informed schematic; the aerial shows the Cary complex collectively, not CQNE-specific measured roof structure."
+      ],
+      "findings": [
+        "Claimed 48 ft / 14.63 m height is unsupported by available field metadata; retain as unverified.",
+        "Exact eave height, roof pitch, and CQNE-specific roof bays are unverified."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 2.0,
+      "score": 0.75,
+      "evidence": [
+        "Preview visibly renders five storeys of repeated windows, brick color, stone courses, projecting gabled bays and an entry cue.",
+        "Purdue's current Cary aerial and historic general-quadrangle photograph support broad material/style context only; neither isolates CQNE or locates its entrance.",
+        "Builder evidence correctly labels facade bays, entrance, and material dimensions as schematic/estimated."
+      ],
+      "findings": [
+        "No source verifies this building's exact facade rhythm, entrance location, trim, or projecting dormers; these are visual interpretation rather than source-backed details."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 2.0,
+      "score": 1.75,
+      "evidence": [
+        "Expected scene and collection: Building_massing_cary_quadrangle_northeast_cqne_0a76fca; Asset_massing_cary_quadrangle_northeast_cqne_0a76fca. Collection has 18 mesh objects.",
+        "Evaluated mesh world bounds: min=[-359.768798828125, 580.1393432617188, -0.15000000596046448], max=[-293.91766357421875, 599.91552734375, 14.630399703979492], dimensions=[65.85113525390625, 19.77618408203125, 14.780399709939957] m.",
+        "Modifiers={}; missing external image files=[].",
+        "Evidence includes raw GIS JSON, raw official housing page, aerial image, historical image, URLs, retrieval date, CRS/method, and uncertainty statements."
+      ],
+      "findings": [
+        "Evidence has no field definition or source-date/tolerance for GIS vertical attributes; height evidence remains incomplete."
+      ]
+    }
+  ],
+  "evidence": {
+    "checks": {
+      "expected_scene": true,
+      "expected_collection": true,
+      "GIS_feature_identity": true,
+      "source_footprint_vertex_set_exact": true,
+      "footprint_bbox_max_abs_delta_m": 2.1e-05,
+      "all_mesh_geometry_in_expected_collection": true,
+      "no_missing_external_images": true,
+      "no_modifiers": true
+    },
+    "scene": "Building_massing_cary_quadrangle_northeast_cqne_0a76fca",
+    "collection": "Asset_massing_cary_quadrangle_northeast_cqne_0a76fca",
+    "object_count": 18,
+    "mesh_count": 18,
+    "world_bounds_m": [
+      [
+        -359.768798828125,
+        580.1393432617188,
+        -0.15000000596046448
+      ],
+      [
+        -293.91766357421875,
+        599.91552734375,
+        14.630399703979492
+      ]
+    ],
+    "world_dimensions_m": [
+      65.85113525390625,
+      19.77618408203125,
+      14.780399709939957
+    ],
+    "source_footprint_bounds_local_m": [
+      -359.5188048381953,
+      582.1593466128138,
+      -294.1676781088491,
+      597.8955473949236
+    ],
+    "wall_footprint_bounds_local_m": [
+      -359.518798828125,
+      582.1593627929688,
+      -294.16766357421875,
+      597.8955688476562
+    ],
+    "source_feature_attributes": {
+      "FID": 638,
+      "BUILDING_N": "Franklin Levering Cary Quadrangle (NE)",
+      "BLDG_ABBR": "CQNE",
+      "NUM_LEVELS": 5,
+      "CountOfFLO": 5,
+      "Extrution": 48,
+      "Shape__Area": 1493.6640625,
+      "Shape__Length": 218.83990203831098
+    },
+    "source_service_metadata": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+    "source_urls": [
+      "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D638&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
+      "https://www.housing.purdue.edu/images/banners/ur-aerial-view-of-cary-visit-hero.jpg",
+      "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/159/"
+    ]
+  },
+  "findings": [
+    "The coordinate conversion is a local approximation, not a surveyed CRS; GIS source units and survey tolerance are not documented in the snapshot.",
+    "Claimed 48 ft / 14.63 m height is unsupported by available field metadata; retain as unverified.",
+    "Exact eave height, roof pitch, and CQNE-specific roof bays are unverified.",
+    "No source verifies this building's exact facade rhythm, entrance location, trim, or projecting dormers; these are visual interpretation rather than source-backed details.",
+    "Evidence has no field definition or source-date/tolerance for GIS vertical attributes; height evidence remains incomplete."
+  ],
+  "evaluator": "audit/massing_cary_quadrangle_northeast_cqne_independent_grade/evaluator.py"
+}
+BlenderMCP addon unregistered
+Blender 4.5.15 LTS (hash 5afeabba6097 built 2026-10-22 01:35:27)
+Read blend: "C:\Users\gotse\Documents\Codex\2026-10-25\github-plugin-github-openai-curated-remote\outputs\PurdueBlender\modular\buildings\massing_cary_quadrangle_northeast_cqne_0a76fca.blend"
+
+Blender quit
