@@ -1,0 +1,70 @@
+{
+  "score": 8.0,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "max_points": 2,
+      "points": 2,
+      "status": "verified",
+      "evidence": "Independent read of raw Purdue GIS FID 604 identifies Birck Nanotechnology Center (BRK) at 1205 Mitch Daniels Blvd. After project-coordinate conversion and closure removal, the 201-vertex evaluated shell perimeter is within 0.0190 m symmetric point-to-boundary distance of the official polygon; relative plan-area difference is 0.0006820%.",
+      "limitation": "Purdue campus GIS polygon is a public map feature, not a certified survey."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "max_points": 2,
+      "points": 2,
+      "status": "verified",
+      "evidence": "Manifest origin [-927.154, -525.43] m; independently reopened master has one collection-instance marker at [-927.1539916992188, -525.4299926757812], maximum marker/manifest difference 0.000008 m. Master collection link is relative and includes exactly 110 objects. GIS perimeter comparison confirms plan scale, footprint and orientation.",
+      "limitation": "GIS is mapped in EPSG:4326 using the project local meters-per-degree approximation, not a surveyed local CRS. Facade photographs are perspective and were not used to estimate orientation or dimensions."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "max_points": 2,
+      "points": 1,
+      "status": "partially verified",
+      "evidence": "Purdue News Service source describes a two-floor facility with a third level housing air-filtration equipment. Reopened model shows three facade bands and a distinct rooftop mechanical level.",
+      "limitation": "The floor description dates to 2005 and precedes a 2024 renovation program. No verified elevation, floor-to-floor dimensions, roof section, or current equipment layout supports model bounds of 16.2 m; these remain estimates."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "max_points": 2,
+      "points": 1.5,
+      "status": "photo-supported broad cues; details remain schematic",
+      "evidence": "Direct comparison of two Purdue-published photos with the fresh front render supports the broad central bronze/brown name volume, flanking glazed wings, curved/angled glazing, and an entrance next to the cladding. The raw page/image snapshots and fresh render are in the grade folder.",
+      "limitation": "Unregistered perspective photos support motifs only. Exact panel width/joints, curtain-wall module rhythm, glazing extent, entry proportions/location, rooftop details, and facades outside the pictured view are not measured or fully verified."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "max_points": 2,
+      "points": 1.5,
+      "status": "export verified; source metadata partly incomplete",
+      "evidence": "Canonical builder rebuilt from the raw GIS/source snapshot in an isolated replica. Actual and rebuilt collection-only exports reopen in Blender 4.5.15 LTS; each contains 110 objects with names identical to the manifest and source collection, no camera/light, external image or linked-library dependencies; the text font is Blender's built-in Bfont. The canonical asset's evidence and raw source files are preserved.",
+      "limitation": "The building evidence records source providers, URLs, hashes and use but does not explicitly record retrieval dates for source snapshots; this loses 0.5 point under evidence completeness."
+    }
+  ],
+  "evidence": {
+    "actual_probe": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\birck_nanotechnology_center_independent_grade\\probe_actual.json",
+    "rebuilt_probe": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\birck_nanotechnology_center_independent_grade\\probe_rebuilt.json",
+    "master_placement_probe": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\birck_nanotechnology_center_independent_grade\\probe_master_placement.json",
+    "reopened_collection_export": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\birck_nanotechnology_center_independent_grade\\export_actual_reopened.json",
+    "source_review": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\birck_nanotechnology_center_independent_grade\\source_review.json",
+    "builder_rebuild_log": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\birck_nanotechnology_center_independent_grade\\canonical_builder_rebuild.log",
+    "views": [
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\birck_nanotechnology_center_independent_grade\\views\\birck_official_front_2026.jpeg",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\birck_nanotechnology_center_independent_grade\\views\\purdue_ece_birck_2023.jpg",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\birck_nanotechnology_center_independent_grade\\views\\birck_front_rebuilt.png",
+      "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\birck_nanotechnology_center_independent_grade\\views\\birck_plan_rebuilt.png"
+    ],
+    "original_asset_sha256": "7333d994867fe2a87981cdbb5e8404f0ca503168864c4cf31fb0532602fbdd3b",
+    "isolated_rebuild_sha256": "a7d16752260cac00edf370ace2d0ee7db74fa3ae08de9549c8c50e2bc81f64fb"
+  },
+  "findings": [
+    "FID 604 identity and GIS-derived plan geometry, orientation, and manifest placement were independently checked; actual master placement marker matches the refreshed manifest.",
+    "Broad facade motifs agree with Purdue official photographs, but no perspective image was treated as a dimensioned or georeferenced elevation.",
+    "Height, current floor datums, roof form and rooftop equipment layout remain estimated/unverified; the two-floor-plus-equipment story source is historic and renovation is documented in 2024.",
+    "The builder and asset were not edited; a fresh rebuild was produced only inside the audit replica."
+  ]
+}

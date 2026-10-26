@@ -1,84 +1,95 @@
 {
-  "building_id": "massing_birck_nanotechnology_center_362d0b7",
-  "new_library": "modular/buildings/birck_nanotechnology_center.blend",
+  "building_id": "birck_nanotechnology_center",
+  "asset_file": "modular/buildings/birck_nanotechnology_center.blend",
   "exported_collection": "Asset_birck_nanotechnology_center",
-  "retrieved_utc": "2026-10-23",
-  "source_feature": {
-    "provider": "Purdue University BuildingShapes ArcGIS feature service",
-    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
-    "feature_id": 604,
-    "global_id": "{C34DA8CD-E37B-40F3-8963-0E302517014B}",
-    "source_code": "BRK",
-    "building_name": "Birck Nanotechnology Center",
-    "record_address": "1205 Mitch Daniels Blvd",
-    "feature_service_crs": "EPSG:3857 (WKID 102100 / latestWKID 3857)",
-    "local_snapshot": "audit/official_purdue_buildings_wgs84.json (WGS84/EPSG:4326 coordinate snapshot)",
-    "retrieval_date": "2026-10-23",
-    "service_item_modified_ms": 1788192824000,
-    "service_item_modified_utc": "2026-08-31T16:13:44Z",
-    "source_attributes": {
-      "NUM_LEVELS": 3,
-      "CountOfFLO": 3,
-      "Extrution": 42,
-      "Elevation": 626.8,
-      "BUILT": 1049155200000,
-      "OCCUPIED": 1120348800000,
-      "Shape__Area": 15105.4453125,
-      "Shape__Length": 710.96253275437
-    }
-  },
-  "photos": [
+  "scene": "Scene",
+  "source_files": [
     {
+      "path": "audit/birck_nanotechnology_center/sources/purdue_gis_feature_604_raw.json",
+      "provider": "Purdue University BuildingShapes ArcGIS feature service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "use": "Feature 604 outline and attributes; GIS is plan evidence only.",
+      "bytes": 19207,
+      "sha256": "462610c56d58bacb4e27152555b7da7eb988b3bb10a3bf8583752a5f1d7ff7cd"
+    },
+    {
+      "path": "audit/birck_nanotechnology_center/sources/purdue_ece_birck_2023.html",
       "provider": "Purdue ECE",
-      "date": "2023 page publication; image source current as page",
+      "url": "https://engineering.purdue.edu/ECE/News/2023/seeing-stars-purdue-trains-next-generation-of-semiconductor-engineers",
+      "use": "Purdue-hosted page context and source-image link.",
+      "bytes": 73896,
+      "sha256": "d0a907f5a76d410c8d2fbff492568283ad4f6443635cd70a0825693dc2bda691"
+    },
+    {
+      "path": "audit/birck_nanotechnology_center/sources/purdue_ece_birck_2023.jpg",
+      "provider": "Purdue ECE",
       "url": "https://engineering.purdue.edu/ECE/News/2023/seeing-stars-purdue-trains-next-generation-of-semiconductor-engineers/Birck.jpg",
-      "observed_details": "large glass entrance/curtain wall, warm rust/wood-tone panel volume and entrance signage"
+      "use": "Exterior facade comparison: central bronze/brown name wall and glazed wings.",
+      "bytes": 409998,
+      "sha256": "ded45b3bea6bb12c3f0e38878abc6d3742437fa2b416940d4bd6b0f6042eb197"
     },
     {
-      "provider": "Birck Nanotechnology Center official site",
-      "date": "current 2026 site image",
+      "path": "audit/birck_nanotechnology_center/sources/birck_official_homepage.html",
+      "provider": "Birck Nanotechnology Center",
+      "url": "https://birck.research.purdue.edu/",
+      "use": "Official center page and image context.",
+      "bytes": 75946,
+      "sha256": "b7531e36f5e42382a173e45a8f7a51ef8d154399672f2c9e7f0d93cd56cc61b6"
+    },
+    {
+      "path": "audit/birck_nanotechnology_center/sources/birck_official_front_2026.jpeg",
+      "provider": "Birck Nanotechnology Center official website",
       "url": "https://birck.research.purdue.edu/app/uploads/2026/01/Front-of-Birck-500-pxl.jpeg",
-      "observed_details": "front facade with curved glazing, bronze-brown cladding and low landscaping"
+      "use": "Exterior facade comparison: broad central bronze-brown cladding and curved glazed wings. Capture date is not stated; filename indicates a January 2026 upload path.",
+      "bytes": 85366,
+      "sha256": "3327fc6e910e3b2f995cf6eb166b99638f8ac7bb2a9e64fdef5b20a1a7af8dfa"
     },
     {
-      "provider": "Purdue News Service/David Umberger",
-      "date": "2005-10-08",
-      "url": "https://www.purdue.edu/uns/uns/images/+2005/birck-nanocenter-ext.jpg",
-      "observed_details": "original exterior composition: curved glass wing, rust-colored panels, campus setting"
+      "path": "audit/birck_nanotechnology_center/sources/purdue_news_birck_2005.html",
+      "provider": "Purdue News Service",
+      "url": "https://www.purdue.edu/uns/html3month/2005/051008.Celebrate.Birck.html",
+      "use": "Original facility description: two occupied floors and a third equipment level.",
+      "bytes": 21303,
+      "sha256": "b43f394475780911d4191f1e5b34b75ec5321d5d9b496e62d7ff9d4505bf1bb1"
     },
     {
+      "path": "audit/birck_nanotechnology_center/sources/purdue_ece_birck_2024_update.html",
       "provider": "Purdue ECE",
-      "date": "2024-04-29 news page",
       "url": "https://engineering.purdue.edu/ECE/News/2024/nsf-director-panchanathan-us-sen-young-tout-value-of-university-private-sector-partnerships-to-grow-national-economic-security",
-      "observed_details": "entrance to Scifres lab and building exterior; renovation announced, not modeled as complete"
+      "use": "Renovation context; current as-built state may differ from the photos.",
+      "bytes": 61280,
+      "sha256": "966ae67f2f18b4c96658599d982e8fef2b03696a94e89174e80014a09ec8e419"
     }
   ],
-  "street_level_map": {
-    "provider": "Google Maps Street View",
-    "url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=40.42275,-86.92385",
-    "retrieved_date": "2026-10-23",
-    "viewpoint_lat_lon": [
-      40.42275,
-      -86.92385
-    ],
-    "observation": "visible pale laboratory/service facade, three horizontal window levels, rooftop/service equipment and a glazed connector; the panoramic point is just east of the mapped Birck polygon and may include the attached or neighboring lab wing",
-    "pano_capture_date": "not exposed in the inspected Maps view",
-    "limitations": "center-of-building viewpoint at 40.42276,-86.92465 reports no Street View imagery; the usable panorama is nearby and exact wall identity is ambiguous"
-  },
-  "footprint_transform": {
-    "input_crs": "EPSG:4326 geographic coordinates in local source JSON, transformed from ArcGIS EPSG:3857 snapshot",
-    "project_formula_x": "(lon + 86.9137) * 111412.84 * cos(radians(40.4274)",
-    "project_formula_y": "(lat - 40.4274) * 111040.0",
+  "footprint": {
+    "provider": "Purdue University BuildingShapes ArcGIS feature service",
+    "feature_id": 604,
+    "global_id": "{C34DA8CD-E37B-40F3-8963-0E302517014B}",
+    "abbr": "BRK",
+    "name": "Birck Nanotechnology Center",
+    "address": "1205 Mitch Daniels Blvd",
+    "service_crs": "EPSG:3857 (WKID 102100 / latestWKID 3857)",
+    "snapshot_coordinates": "EPSG:4326 in saved raw feature snapshot",
+    "original_vertices": 220,
+    "used_vertices": 201,
     "local_origin_project_m": [
       -927.1537475585938,
       -525.4301910400391
     ],
-    "transform_status": "project approximate local coordinate transform; not surveyed CRS"
+    "transform": "local approximation around lon -86.9137, lat 40.4274; x scale includes cos(latitude); not a surveyed project CRS",
+    "local_footprint_bounds_m": {
+      "min": [
+        -57.5968398182265,
+        -50.16582085246864
+      ],
+      "max": [
+        57.141939775575565,
+        50.828873682474295
+      ]
+    }
   },
   "dimensions": {
-    "footprint_vertices_original": 220,
-    "footprint_vertices_used": 201,
-    "local_bounds_m": {
+    "asset_bounds_m": {
       "min": [
         -57.723873138427734,
         -50.273075103759766,
@@ -90,76 +101,43 @@
         16.200000762939453
       ]
     },
-    "old_massing_envelope_m": {
-      "x": [
-        -984.744384765625,
-        -869.5631103515625
-      ],
-      "y": [
-        -575.8645629882812,
-        -474.9958190917969
-      ],
-      "z": [
-        0,
-        16
-      ]
-    },
-    "height_basis": "unverified estimate: GIS NUM_LEVELS=3 and nearby east-side Street View shows three horizontal levels; a 2005 Purdue release described the original facility as two-floor. Current model uses a 12.8m roof datum with low rooftop plant to ~16m; both heights are estimates because GIS Extrution=42 unit is unconfirmed and no surveyed elevation/section was found."
+    "main_shell_roof_z_m": 12.8,
+    "roof_plant_top_z_m_estimate": 16.2,
+    "height_basis": "GIS NUM_LEVELS and CountOfFLO both report 3; Purdue 2005 article calls the building two-floor and says the third level houses air-filtration equipment. GIS Extrution=42 has no verified unit, so modeled heights are estimates."
   },
-  "geometry_edits": [
-    "replaced one-object placeholder only in newly created detailed library; no massing source/master/manifest edited",
-    "extruded GIS footprint into three-level flat-roof shell",
-    "added glazed perimeter ribbons and mullions to selected south/east/north/west facades",
-    "added bronze/corten rainscreen at south entry wing, entrance doors/canopy/sign",
-    "added a visible lobby mezzanine floor, structural columns, terrazzo and warm soffit lighting",
-    "added flat membrane roof, HVAC penthouses and low exhaust stacks"
+  "facade_comparison": {
+    "observed_in_purdue_photos": [
+      "broad central bronze-brown cladding/name wall",
+      "glazed wings flank the center volume",
+      "facade glazing follows a curved/angled frontage"
+    ],
+    "implemented": [
+      "central solid bronze-brown panel on the GIS-derived presentation frontage",
+      "flanking glazed ribbons and aluminum mullions",
+      "entry and lettering aligned beside the name wall"
+    ],
+    "estimated_parameters": [
+      "frontage orientation assigned by longest south/east-facing GIS wall; photo viewpoint is not georeferenced",
+      "name-wall width is a proportion estimate capped at 15m",
+      "window spacing, floor-to-floor heights, cladding panel joints and canopy dimensions are not specified in source drawings"
+    ]
+  },
+  "model_scope": [
+    "GIS footprint-derived shell and selected photo-supported facade treatment",
+    "two occupied floors plus a simplified upper mechanical level, represented in a continuous shell",
+    "roof plant, lobby and interior components are illustrative estimates; no verified plan/section was found"
   ],
-  "materials": [
-    {
-      "name": "BIRCK \u2022 anodized aluminum mullions",
-      "connected_texture_inputs": true
-    },
-    {
-      "name": "BIRCK \u2022 blue-gray reflective curtain glazing",
-      "connected_texture_inputs": true
-    },
-    {
-      "name": "BIRCK \u2022 cast concrete plinth",
-      "connected_texture_inputs": true
-    },
-    {
-      "name": "BIRCK \u2022 charcoal membrane roof",
-      "connected_texture_inputs": true
-    },
-    {
-      "name": "BIRCK \u2022 interior timber soffit",
-      "connected_texture_inputs": true
-    },
-    {
-      "name": "BIRCK \u2022 lobby limestone terrazzo",
-      "connected_texture_inputs": true
-    },
-    {
-      "name": "BIRCK \u2022 oxidized copper / warm bronze rainscreen",
-      "connected_texture_inputs": true
-    },
-    {
-      "name": "BIRCK \u2022 pale warm-gray insulated metal panel",
-      "connected_texture_inputs": true
-    },
-    {
-      "name": "BIRCK \u2022 warm lobby lighting",
-      "connected_texture_inputs": false
-    }
-  ],
+  "object_count": 110,
   "previews": [
     "audit/birck_nanotechnology_center/birck_front_preview.png",
     "audit/birck_nanotechnology_center/birck_plan_preview.png"
   ],
   "uncertainty": [
-    "GIS polygon can validate only plan extent/shape, not facade divisions or height; the GIS feature\u2019s exact source date is not present in the downloaded item record.",
-    "Only exterior imagery was used for facade organization. Interior plan/access was unavailable; the lobby insert is a restrained plausible interpretation visible behind the glass, not a verified floor plan.",
-    "Current 2024 renovation work is scheduled through 2027; latest completion/as-built state could differ from the 2023\u20132026 photographs.",
-    "Street View link points at the building but Google panorama capture date/heading was not independently captured in this environment."
-  ]
+    "The ArcGIS outline supports the plan footprint, not building height or facade divisions.",
+    "No dimensioned architectural elevations, sections or floor plans were found in the preserved primary-source set.",
+    "Exact current facade condition is uncertain because the official image capture date is unstated and Purdue documented renovation work in 2024.",
+    "Interior organization and mechanical equipment locations are illustrative."
+  ],
+  "collection_export_file": "audit/birck_nanotechnology_center/birck_asset_collection_export.blend",
+  "validation_report": "audit/birck_nanotechnology_center/validation.json"
 }

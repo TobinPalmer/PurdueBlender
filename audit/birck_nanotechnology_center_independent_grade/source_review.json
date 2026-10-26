@@ -1,0 +1,122 @@
+{
+  "review_date": "2026-10-25",
+  "rubric": "AGENT.md; 5 criteria x 2 points; passing threshold 8/10.",
+  "asset": {
+    "path": "modular/buildings/birck_nanotechnology_center.blend",
+    "sha256": "7333d994867fe2a87981cdbb5e8404f0ca503168864c4cf31fb0532602fbdd3b",
+    "builder": "modular/buildings/build_birck_nanotechnology_center.py",
+    "builder_sha256": "fec88639be7cc3bce3f9503a6fb2fb5337b7bf254728455f08d75255a60011aa",
+    "manifest_path": "modular/manifest.json",
+    "manifest_sha256": "4bd2f05b12e327438f1575fb50bf0a081a8055dde22226f9338c9ffe80775c2e",
+    "source_asset_and_builder_modified": false
+  },
+  "provenance_caveat": "Preserved building evidence lists provider, URL, purpose, byte size and hashes, but does not explicitly record retrieval dates for the source snapshots. This is recorded as a completeness deduction; the independent review date is not substituted for missing source retrieval dates.",
+  "sources": [
+    {
+      "provider": "Purdue University official campus map / BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 604,
+      "retrieval_date_in_source_record": null,
+      "snapshot": "source_snapshots/purdue_gis_feature_604_raw.json",
+      "source_crs": "FeatureServer service native EPSG:3857 (WKID 102100/latestWKID 3857); preserved query geometry coordinates are EPSG:4326 per building evidence.",
+      "supports": "BRK / Birck Nanotechnology Center / 1205 Mitch Daniels Blvd and the exterior plan ring.",
+      "method": "Converted lon/lat to project meters with the documented local approximation and translated by the manifest origin; compared source boundary polyline to evaluated base perimeter.",
+      "limitations": "Public campus GIS polygon is not a certified survey and verifies horizontal plan only."
+    },
+    {
+      "provider": "Purdue News Service",
+      "url": "https://www.purdue.edu/uns/html3month/2005/051008.Celebrate.Birck.html",
+      "source_date": "2005 (URL article ID 051008; page content says building completed in September)",
+      "retrieval_date_in_source_record": null,
+      "snapshot": "source_snapshots/purdue_news_birck_2005.html",
+      "supports": "Calls the facility two-floor and says a third level houses air-filtration equipment.",
+      "limitations": "Historic narrative; does not establish current measured heights, floor-to-floor values or current rooftop layout."
+    },
+    {
+      "provider": "Purdue ECE",
+      "url": "https://engineering.purdue.edu/ECE/News/2023/seeing-stars-purdue-trains-next-generation-of-semiconductor-engineers",
+      "source_date": "2023 (URL path)",
+      "retrieval_date_in_source_record": null,
+      "snapshot": "source_snapshots/purdue_ece_birck_2023.html",
+      "image": "source_snapshots/purdue_ece_birck_2023.jpg",
+      "supports": "Page caption identifies a photo of the Birck Nanotechnology building; visual shows the bronze/brown name volume and glazed front wings."
+    },
+    {
+      "provider": "Birck Nanotechnology Center official site",
+      "url": "https://birck.research.purdue.edu/",
+      "source_date": "Image path contains 2026/01; capture date unreported",
+      "retrieval_date_in_source_record": null,
+      "snapshot": "source_snapshots/birck_official_homepage.html",
+      "image": "source_snapshots/birck_official_front_2026.jpeg",
+      "supports": "Building-specific photo visually shows central bronze-brown cladding with name lettering and flanking curved/angled curtain glazing."
+    },
+    {
+      "provider": "Purdue ECE",
+      "url": "https://engineering.purdue.edu/ECE/News/2024/nsf-director-panchanathan-us-sen-young-tout-value-of-university-private-sector-partnerships-to-grow-national-economic-security",
+      "source_date": "2024 (URL path; story describes April 25 event)",
+      "retrieval_date_in_source_record": null,
+      "snapshot": "source_snapshots/purdue_ece_birck_2024_update.html",
+      "supports": "Confirms $100m renovation/enhancement program and cautions older photos may not represent current as-built state."
+    }
+  ],
+  "facade_visual_review": {
+    "reference_images": [
+      "source_snapshots/birck_official_front_2026.jpeg",
+      "source_snapshots/purdue_ece_birck_2023.jpg"
+    ],
+    "fresh_model_views": [
+      "views/birck_front_rebuilt.png",
+      "views/birck_plan_rebuilt.png"
+    ],
+    "method": "Visual cue comparison only. Images are perspective and not camera-registered, so they were not used for orientation, dimensions or metrology.",
+    "cues": [
+      {
+        "cue": "Broad bronze/brown central cladding volume with building name",
+        "source_support": "Directly visible in both Purdue images.",
+        "model_support": "Central bronze/brown facade section and text object appear in fresh render.",
+        "status": "supported broadly; width, panel seams, sign size and position are not measured."
+      },
+      {
+        "cue": "Glazed wings flanking center",
+        "source_support": "Directly visible in both Purdue images.",
+        "model_support": "Glazed ribbons with aluminum mullion bands flank the center section.",
+        "status": "supported broadly; exact amount of glazing and module spacing are not measured."
+      },
+      {
+        "cue": "Curved or angled glazed frontage",
+        "source_support": "The ECE 2023 photo shows a curved/angled glazed facade; the official center-site photo shows the wings curving around the center.",
+        "model_support": "The source GIS perimeter and rendered glazing follow the faceted/curved plan.",
+        "status": "supported broadly; image is not registered to compass direction and no radius is inferred."
+      },
+      {
+        "cue": "Entrance adjoining glazing and central name wall",
+        "source_support": "Entry doors are visible in the ECE 2023 photograph and right of the center volume in the center-site photograph.",
+        "model_support": "Entrance doors and canopy are placed beside the bronze wall in the preview.",
+        "status": "broad composition supported; exact entrance position/proportion remains approximate."
+      },
+      {
+        "cue": "Rooftop mechanical equipment and interior lobby organization",
+        "source_support": "Not established by the exterior photos.",
+        "model_support": "Illustrative equipment/lobby objects modeled.",
+        "status": "unverified; no points awarded for detail accuracy."
+      }
+    ]
+  },
+  "horizontal_measurement": {
+    "source_nonclosing_vertices": 219,
+    "model_shell_vertices": 201,
+    "symmetric_vertex_to_polyline_hausdorff_m": 0.019019387119767982,
+    "area_difference_relative": 6.820019346272479e-06,
+    "method": "Measured independently from raw FID 604 coordinates and evaluated shell base; detailed numerical outputs in probe_actual.json."
+  },
+  "source_snapshot_sha256": {
+    "birck_official_front_2026.jpeg": "3327fc6e910e3b2f995cf6eb166b99638f8ac7bb2a9e64fdef5b20a1a7af8dfa",
+    "birck_official_homepage.html": "b7531e36f5e42382a173e45a8f7a51ef8d154399672f2c9e7f0d93cd56cc61b6",
+    "manifest_snapshot.json": "4a6d0742c7dd8015ed4230bac331a878914d67fe69ec3051b5c0702b334a7a83",
+    "purdue_ece_birck_2023.html": "d0a907f5a76d410c8d2fbff492568283ad4f6443635cd70a0825693dc2bda691",
+    "purdue_ece_birck_2023.jpg": "ded45b3bea6bb12c3f0e38878abc6d3742437fa2b416940d4bd6b0f6042eb197",
+    "purdue_ece_birck_2024_update.html": "966ae67f2f18b4c96658599d982e8fef2b03696a94e89174e80014a09ec8e419",
+    "purdue_gis_feature_604_raw.json": "462610c56d58bacb4e27152555b7da7eb988b3bb10a3bf8583752a5f1d7ff7cd",
+    "purdue_news_birck_2005.html": "b43f394475780911d4191f1e5b34b75ec5321d5d9b496e62d7ff9d4505bf1bb1"
+  }
+}
