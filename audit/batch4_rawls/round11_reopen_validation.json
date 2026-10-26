@@ -1,0 +1,69 @@
+{
+  "validation": "Blender 5.2.3 fresh reopen",
+  "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\rawls_hall.blend",
+  "sha256": "19d2ec5828daee8b2529d8b0790422b9a43a9f795b41c6fb2e6bc8c21e1ec9eb",
+  "r10_baseline_sha256": "d361f211a8177e234d475493d6242ad396981b7f3fed29dc57f37f54e1026d9e",
+  "scene_object_count": 761,
+  "scene_mesh_count": 753,
+  "root_world_matrix": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "source_guide": "Purdue RAWL 1086 Classroom Guide (2023), accessed 2026-10-25; source lists 62 seats, fixed tiered tables, lecturer and dual projectors.",
+  "desk_objects": 42,
+  "chair_objects": 62,
+  "modeled_chair_object_count": 62,
+  "r11_additional_schematic_chairs": 20,
+  "projection_surfaces": 2,
+  "projection_content_cues": 6,
+  "lectern_parts": 2,
+  "schematic_tier_platforms": 5,
+  "se_glass_pane_count": 44,
+  "baseline_structural_objects_compared": 16,
+  "structural_geometry_changes_from_r10": [],
+  "glass_material": {
+    "base_color": [
+      0.47999998927116394,
+      0.5899999737739563,
+      0.6200000047683716,
+      1.0
+    ],
+    "roughness": 0.25999999046325684,
+    "transmission": 0.8999999761581421,
+    "specular_ior": 0.03999999910593033
+  },
+  "materialless_meshes": [],
+  "missing_external_images": [],
+  "linked_libraries": [],
+  "passes_basic_integrity": true,
+  "limitations": [
+    "42 desk/table objects remain schematic; 20 additional chair objects bring the model's chair count to the 62 seats listed by the 2023 guide. This does not reproduce a verified seat-by-seat layout or exact dimensions, and all 62 are not shown at once in a single exterior render.",
+    "Dual projection surfaces are source-informed but their size, location and arrangement are not surveyed. Screen content marks and luminous treatment are generic visual cues.",
+    "The 44 pane positions and plan-shell geometry match R10 exactly. The approximately 1 m plan-to-shell registration uncertainty remains.",
+    "No wall geometry was changed. Upper-floor partitions and circulation remain unverified.",
+    "The R11 render-only interior fill light is solely for evidence visibility and is not saved as an installed fixture in the building asset.",
+    "The glass material remains a visual legibility estimate; no measured curtain-wall specification was found."
+  ]
+}

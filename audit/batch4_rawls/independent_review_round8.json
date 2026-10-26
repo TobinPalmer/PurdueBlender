@@ -1,0 +1,67 @@
+{
+  "asset": "modular/buildings/rawls_hall.blend",
+  "review_round": 8,
+  "asset_sha256": "613174849a753f73aef4299d72223adeb0ceed01cf0fbc7aba4068d05bdf8088",
+  "independent_reopen_evidence": "audit/batch4_rawls/independent_reopen_r8.json",
+  "overall_score": 7.1,
+  "weighted_score_unrounded": 7.13,
+  "threshold": 8.0,
+  "passed": false,
+  "weights": {
+    "exterior_form_and_detail": 0.30,
+    "materials_and_texturing": 0.20,
+    "interior_completeness": 0.30,
+    "technical_integrity_and_placement": 0.10,
+    "evidence_and_source_fit": 0.10
+  },
+  "category_scores": {
+    "exterior_form_and_detail": 7.7,
+    "materials_and_texturing": 7.0,
+    "interior_completeness": 6.1,
+    "technical_integrity_and_placement": 9.1,
+    "evidence_and_source_fit": 6.8
+  },
+  "reopen": {
+    "blender": "5.2.3 LTS",
+    "sha256_matches_expected": true,
+    "scene": "Building_rawls_hall",
+    "asset_collection": "Asset_rawls_hall",
+    "objects": 722,
+    "meshes": 714,
+    "identity_root": true,
+    "all_eight_repaired_parent_inverses_identity": true,
+    "materialless_meshes": 0,
+    "external_images": 0,
+    "linked_libraries": 0,
+    "mesh_bounds_outliers_over_120m": 0,
+    "asset_modified": false
+  },
+  "repair_assessment": {
+    "parent_inverse_repair": "pass",
+    "local_bounds_restored": true,
+    "black_render_defect_in_supplied_round8_views": "not observed; four presented renders are normally shaded; this does not test every possible renderer/camera configuration",
+    "structural_shell_geometry_changed": false,
+    "glazing_consistency": "partial; north reads as glazed; most broad south recesses remain opaque-looking in the full elevation",
+    "interior_cutaway_readability": "partial; first-floor plan overlay and sparse Room 1086/atrium cutaways remain; no new R8 through-glass view or verified upper-floor/circulation detail",
+    "portability": "pass; no external images or linked libraries found",
+    "placement_uncertainty": "approximately 1-2 m GIS/plan registration uncertainty remains"
+  },
+  "top_refinements": [
+    "Complete source-supported glazing and frame/reveal geometry across the south elevation and verify in a normal full-elevation view.",
+    "Show a real pane-to-interior sightline with pane and source-supported partitions visible; improve interiors only where evidence supports it.",
+    "Save a dated, location-identified current facade reference and measurable map/plan control points before making tighter placement claims.",
+    "Refine simplified base and roof equipment only against reproducible evidence; preserve uncertainty labels for upper-floor and atrium circulation."
+  ],
+  "reviewed_renders": [
+    "north_exterior_round8.png",
+    "south_exterior_round8.png",
+    "south_aperture_detail_round8.png",
+    "sidewalk_southwest_round8.png"
+  ],
+  "prior_reviews_considered": [
+    "independent_review_round4.md (6.6/10)",
+    "independent_review_round6.md (7.0/10)"
+  ],
+  "master_or_shared_files_modified": false,
+  "commit_created": false
+}

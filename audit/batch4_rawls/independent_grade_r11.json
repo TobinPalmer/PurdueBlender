@@ -1,0 +1,98 @@
+{
+  "building": "Rawls Hall",
+  "round": "R11",
+  "asset": "modular/buildings/rawls_hall.blend",
+  "sha256": "19d2ec5828daee8b2529d8b0790422b9a43a9f795b41c6fb2e6bc8c21e1ec9eb",
+  "baseline_r10_sha256": "d361f211a8177e234d475493d6242ad396981b7f3fed29dc57f37f54e1026d9e",
+  "review_date": "2026-10-25",
+  "score": 8.14,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": true,
+  "weights": {
+    "exterior_form_and_detail": 0.30,
+    "materials_and_texturing": 0.20,
+    "interior_completeness": 0.30,
+    "technical_integrity_and_placement": 0.10,
+    "evidence_and_source_fit": 0.10
+  },
+  "criteria": [
+    {
+      "name": "Exterior form and detail",
+      "score": 8.2,
+      "evidence": "The four-storey brick facade, repeated southeast windows and glazed roof penthouse read clearly. No exterior geometry changed from R10; secondary elevations, base, roof details and exact pane layout remain simplified or unverified."
+    },
+    {
+      "name": "Materials and texturing",
+      "score": 7.9,
+      "evidence": "R11 lowers curtain-wall roughness to 0.26, transmission to 0.90 and specular IOR level to 0.04. The through-glass view now reveals the room and screen cues better than R10, but a broad dark reflection remains across the upper interior and strong central glare/occlusion persists. Glass values are visual estimates, not measured specifications."
+    },
+    {
+      "name": "Interior completeness",
+      "score": 7.9,
+      "evidence": "Independent reopen confirms 62 chair objects, 42 schematic desk/table objects, five tier platforms, two projection surfaces, six generic content cues and two lectern parts. The 62 chair objects meaningfully address the 2023 guide's stated 62 seats, but do not prove a dimensioned or exact seating layout. In the submitted through-glass image, rows of tables/chairs and both screen cues can be discerned, although one major pane is obscured by a pale wall/column and reflections, and the room remains a simplified visual schematic."
+    },
+    {
+      "name": "Technical integrity and placement",
+      "score": 9.3,
+      "evidence": "Fresh standalone reopen of the exact SHA in Blender 5.2.3 LTS confirms 761 scene objects, 753 meshes, 761 objects in Asset_rawls_hall and identity root transform. No materialless meshes, invalid material slots, missing external images or linked libraries. All 16 compared plan/shell/glass structural objects have identical transforms and mesh geometry to the exact R10 baseline; all 44 pane polygons remain. The R10 independent audit had 44/44 pane-center rays clear both exterior shell and tested classroom wall; R11 keeps that structural geometry unchanged. Master placement is outside this asset review."
+    },
+    {
+      "name": "Evidence and source fit",
+      "score": 8.0,
+      "evidence": "The saved asset SHA, R10 baseline SHA, reopen evidence, change set, render evidence, source dates and uncertainties are recorded. Purdue's 2023 guide supports 62 seats, fixed tiered tables and dual projectors; the separate room FAQ lists occupancy 136, so it is not conflated with seat count. The 2024 plan is explicitly first-floor only. Exact furniture/screen layout, upper-floor partitions, glazing layout and roughly 1 m plan-shell registration remain unverified."
+    }
+  ],
+  "weighted_unrounded_score": 8.14,
+  "findings": [
+    "R11 resolves the R10 count mismatch at the object-count level by adding 20 schematic chairs, bringing chair objects to 62 in line with the room guide; no claim is made that exact seat positions are reconstructed.",
+    "Two repositioned projection surfaces with six generic cues are now visible in the through-glass evidence, addressing R10's absent screen visibility.",
+    "The reduced-specular glass improves interior readability compared with R10, though residual reflection and partial facade occlusion still weaken the view.",
+    "The measured structural comparison confirms no geometry changes to the 16 R10 plan/shell/glass objects. The facade and wall alignment uncertainties therefore remain.",
+    "Standalone review does not verify master placement or surrounding-campus alignment."
+  ],
+  "evidence": {
+    "independent_reopen": "audit/batch4_rawls/independent_reopen_r11.json",
+    "independent_reopen_script": "audit/batch4_rawls/independent_reopen_r11.py",
+    "baseline_signatures": "audit/batch4_rawls/r11_baseline_signatures.json",
+    "builder_reopen": "audit/batch4_rawls/round11_reopen_validation.json",
+    "handoff": "audit/batch4_rawls/round11_handoff.md",
+    "change_set": "audit/batch4_rawls/round11_change_set.json",
+    "sightline_matrix": "audit/batch4_rawls/r11_sightline_matrix.json",
+    "previous_review": "audit/batch4_rawls/independent_review_round10.md",
+    "renders": [
+      "audit/batch4_rawls/se_curtainwall_full_round11.png",
+      "audit/batch4_rawls/se_curtainwall_through_glass_round11.png"
+    ],
+    "sources": [
+      {
+        "title": "Purdue RAWL 1086 Classroom Guide (2023)",
+        "url": "https://kcc.krannert.purdue.edu/Faq/Item/Download/2194",
+        "notes": "Search-indexed primary Purdue guide identifies RAWL 1086, 62 seats, tiered fixed tables, dual projectors and lectern. The direct download timed out during this review; the guide's indexed record and saved prior review identify the same source."
+      },
+      {
+        "title": "Purdue Rawls 1086 room listing",
+        "url": "https://kcc.krannert.purdue.edu/Faq/Item/811",
+        "notes": "Purdue room FAQ lists occupancy 136 and tiered table type; occupancy is kept distinct from the guide seat count."
+      },
+      {
+        "title": "Purdue Road School Rawls Hall first-floor plan (2024)",
+        "url": "https://roadschool.purdue.edu/maps/2024%20Rawls%20Hall.pdf",
+        "notes": "Primary source; PDF identifies the Rawls Hall first floor and labels room 1086. Does not verify upper floors or furniture geometry."
+      },
+      {
+        "title": "Fink Roberts & Petrie Rawls Hall project",
+        "url": "https://frpinc.com/projects/rawls-hall-krannert-school-of-management/",
+        "notes": "Project architect page supports four-storey building, atrium roof penthouse and fourth-floor bridge context."
+      }
+    ]
+  },
+  "limitations": [
+    "Standalone asset grade does not verify master placement or nearby campus alignment.",
+    "Chair count matches the guide's 62 seats but no exact seating layout is documented.",
+    "Tier rise, table dimensions, screen locations and actual AV content remain schematic or unverified.",
+    "Pane layout is inherited and not independently surveyed; plan-to-shell registration uncertainty remains approximately 1 m.",
+    "Upper-floor partitions, circulation and current interior finishes remain unverified.",
+    "Through-glass view improves but still includes reflection and partial occlusion."
+  ]
+}
