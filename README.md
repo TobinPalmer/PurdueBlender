@@ -2,7 +2,7 @@
 
 This project tracks detailed campus models separately from the remaining massing-only building assets. A detailed model counts as finished here only when its latest recorded independent grader score is at least 8/10. Scores describe the reviewed model revision; ungraded assets are explicitly marked.
 
-## Detailed models: status and latest grader score (98 buildings)
+## Detailed models: status and latest grader score (99 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -13,6 +13,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Alpha Kappa Lambda | [massing_alpha_kappa_lambda_88dda6c.blend](modular/buildings/massing_alpha_kappa_lambda_88dda6c.blend) | Finished | [8.0/10](audit/alpha_kappa_lambda_independent_grade_r3/result.json) | — |
 | American Railway Building | [american_railway_building.blend](modular/buildings/american_railway_building.blend) | Finished | 8.5/10 | — |
 | Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](modular/buildings/animal_disease_diagnostic_laboratory.blend) | Finished | 8.3/10 | — |
+| Animal Holding Facility | [massing_animal_holding_facility_4733f46.blend](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Finished | [8.25/10](audit/animal_holding_facility_independent_grade_r7/result.json) | — |
 | Armory | [armory.blend](modular/buildings/armory.blend) | Finished | 8.4/10 | — |
 | Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](modular/buildings/asian_american_resource_and_cultural_center.blend) | Finished | 8.5/10 | — |
 | Baptist Student Foundation | [massing_baptist_student_foundation_c3d8114.blend](modular/buildings/massing_baptist_student_foundation_c3d8114.blend) | Finished | [8.0/10](audit/baptist_student_foundation_independent_grade_r2/result.json) | — |
@@ -105,9 +106,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (117 total)
+## Unfinished buildings (116 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 1 building, Rohan 15 buildings, Tobin 1 building, Arjav 10 buildings, Brady 90 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 0 buildings, Rohan 15 buildings, Tobin 1 building, Arjav 10 buildings, Brady 90 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -130,13 +131,12 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 
-### Buildings that still have only massing models (101)
+### Buildings that still have only massing models (100)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
-| animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rossen |
 | fuse | [`massing_fuse_39cf4b5.blend`](modular/buildings/massing_fuse_39cf4b5.blend) | Brady |
 | granite student living | [`massing_granite_student_living_3732ce0.blend`](modular/buildings/massing_granite_student_living_3732ce0.blend) | Brady |
 | grant street parking garage pgg | [`massing_grant_street_parking_garage_pgg_f46c894.blend`](modular/buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | Brady |

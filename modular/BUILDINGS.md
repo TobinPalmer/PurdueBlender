@@ -11,6 +11,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Cary Quadrangle Northeast (CQNE) | [massing_cary_quadrangle_northeast_cqne_0a76fca.blend](buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend) | 7 |
 | Cary Quadrangle Northwest (CQNw) | [massing_cary_quadrangle_northwest_cqnw_e8a861e.blend](buildings/massing_cary_quadrangle_northwest_cqnw_e8a861e.blend) | 1 |
 | Crosswalk Commons | [massing_crosswalk_commons_7c01ecd.blend](buildings/massing_crosswalk_commons_7c01ecd.blend) | 1 |
+| Animal Holding Facility | [massing_animal_holding_facility_4733f46.blend](buildings/massing_animal_holding_facility_4733f46.blend) | 1 |
 | Delta Tau Delta | [massing_delta_tau_delta_e06b0b5.blend](buildings/massing_delta_tau_delta_e06b0b5.blend) | 85 |
 | Dudley Hall | [dudley_hall.blend](buildings/dudley_hall.blend) | 6 |
 | Circle K | [massing_circle_k_fa39c23.blend](buildings/massing_circle_k_fa39c23.blend) | 69 |
