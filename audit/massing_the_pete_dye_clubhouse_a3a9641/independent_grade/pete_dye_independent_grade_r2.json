@@ -1,0 +1,112 @@
+{
+  "asset_id": "massing_the_pete_dye_clubhouse_a3a9641",
+  "display_name": "Pete Dye Clubhouse",
+  "independent": true,
+  "grade_revision": "r2",
+  "score": 8.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Current OSM way 1319175917 is explicitly named The Pete Dye Clubhouse and tagged as a golf clubhouse; the saved structural foundation is checked against the closed source ring in repository local XY with maximum vertex residual 0.000047 m. The archived Purdue GIS OBJECTID 233 is the distinct old 1998 clubhouse and is not used for the new building.",
+      "assessment": "Verified identity and source polygon."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": "Directly reopened asset foundation matches source vertices within 0.000047 m; polygon-defined axes give approximately 40.47 x 17.43 m (architectural perimeter). Evaluated world bounds are [[-1064.35009765625, -1019.2555541992188], [1240.967529296875, 1278.2586669921875], [0.0, 15.649999618530273]]. The source polygon verifies plan scale, location, and orientation; architectural projections and which photographed elevation faces the course are photo-interpreted.",
+      "assessment": "Footprint placement and scale verified; facade direction and roof/terrace projections remain inferred."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": "Purdue Administrative Operations documentation supports two above-grade stories. CE Solutions photos exterior_04 and exterior_37 show intersecting gables, a large glazed front gable, and a lower offset wing. The revision replaces repeated uniform gables with one long ridge, a taller projecting cross-gable, and an offset lower west wing, which better matches the photographed hierarchy. Story elevations and 8.55 m eave / 15.65 m maximum roof height remain estimates; no measured elevations or grade survey are present, and the documented cart-storage basement is not modeled.",
+      "assessment": "General story count and roof family supported; dimensions, exact intersections, and grade/basement unresolved."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": "Source photos show warm stone, dark framed glazing, a tall central glazed gable, deep charcoal vertical window volumes, and an elevated course-side terrace. Those major features now appear in the saved model (9 course-side glazing/gable meshes, 9 parking-side glazing meshes, 4 dark facade-volume meshes). The rendered facade still simplifies the stone surface, exact irregular bay proportions, door/entry placement, and side/rear fenestration; the correspondence between model frontage and photographed entrance is not georeferenced.",
+      "assessment": "Recognizable signature features match; facade rhythm and entrance orientation remain approximate."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": "Blender directly opened the expected .blend; scene=Building_massing_the_pete_dye_clubhouse_a3a9641, expected scene=True; asset collection present=True; asset path matches expected=True; 122 mesh objects and 0 non-mesh objects in exported collection; collection instance offset=[0.0, 0.0, 0.0]; portable image references=True. All three required renders exist=True; raw source snapshots/photographs present=True.",
+      "assessment": "Reopened export and evidence set are complete for the required viewpoints; no portability issue found."
+    }
+  ],
+  "evidence": {
+    "model_path": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_the_pete_dye_clubhouse_a3a9641.blend",
+    "scene": "Building_massing_the_pete_dye_clubhouse_a3a9641",
+    "scene_name_matches": true,
+    "collection": "Asset_massing_the_pete_dye_clubhouse_a3a9641",
+    "collection_name_matches": true,
+    "foundation_xy_max_vertex_error_m": 4.657682673570458e-05,
+    "evaluated_bounds_world_m": [
+      [
+        -1064.35009765625,
+        -1019.2555541992188
+      ],
+      [
+        1240.967529296875,
+        1278.2586669921875
+      ],
+      [
+        0.0,
+        15.649999618530273
+      ]
+    ],
+    "evaluated_mesh_count": 122,
+    "modifier_count": 34,
+    "non_mesh_objects": [],
+    "collection_instance_offset": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "portable_image_dependencies": true,
+    "preview_files": {
+      "course_facing_view.png": true,
+      "roof_and_footprint_view.png": true,
+      "parking_side_view.png": true
+    },
+    "source_files": {
+      "exterior_04.webp": true,
+      "exterior_08.webp": true,
+      "exterior_13.webp": true,
+      "exterior_37.webp": true,
+      "golf_complex_09.webp": true,
+      "purdue_admin_ops_clubhouse.html": true,
+      "ce_solutions_page.html": true,
+      "osm_way_1319175917.json": true
+    },
+    "roof_object_count": 6,
+    "course_glazing_and_gable_mesh_count": 9,
+    "parking_glazing_mesh_count": 9,
+    "dark_vertical_facade_volume_count": 4
+  },
+  "findings": [
+    "Passes the 8/10 independent threshold after revised roof/facade hierarchy.",
+    "Keep 8.55 m eave height and 15.65 m ridge height explicitly labeled estimates; no measured elevations were found.",
+    "Exact entry orientation and detailed side/rear facade openings remain photo-interpreted.",
+    "Purdue sources identify basement-level golf-cart storage; current geometry does not model a below-grade volume."
+  ],
+  "sources_reviewed": [
+    "https://www.openstreetmap.org/way/1319175917",
+    "https://www.purdue.edu/operations/blog/2026/09/28/pete-dye-clubhouse-receives-recognition-for-engineering-excellence/",
+    "https://www.cesolutionsinc.com/pete-dye-clubhouse",
+    "https://stories.purdue.edu/get-a-drone-tour-of-purdues-pete-dye-clubhouse/",
+    "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=OBJECTID%3D233&outFields=*&returnGeometry=true&outSR=4326&f=json"
+  ],
+  "visual_comparison": "Directly inspected all three saved renders and the archived CE Solutions exterior_04, exterior_37 and aerial golf_complex_09 photos. The new long main ridge, taller cross-gable, offset wing, terrace, glazing and dark vertical zones improve alignment with the photos. Render material and bay detail remain simplified; images are perspective only, so exact dimensions and cardinal elevation identity remain unresolved.",
+  "rubric": "AGENT.md five-part 10-point rubric; score based on direct Blender reopen, OSM vertex comparison, source snapshots, and visual inspection of all three renders versus source photographs."
+}

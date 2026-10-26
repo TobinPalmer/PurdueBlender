@@ -1,0 +1,93 @@
+{
+  "asset_id": "massing_the_pete_dye_clubhouse_a3a9641",
+  "display_name": "Pete Dye Clubhouse",
+  "independent": true,
+  "score": 7.8,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "pass": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Current OSM way 1319175917 is named 'The Pete Dye Clubhouse', tagged golf=clubhouse, and operated by Purdue. Four source ring vertices independently convert to the saved foundation with max XY vertex error 0.000047 m. A separate 1998 GIS feature OBJECTID 233 is correctly documented as the old clubhouse and excluded.",
+      "assessment": "Verified."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": "The saved foundation is compared vertex-by-vertex in the repository's stated local geographic approximation; the polygon defines center, plan orientation, and about 40.47 x 17.43 m. Evaluated asset bounds are [[-1064.52978515625, -1019.0758666992188], [1241.1297607421875, 1278.2845458984375], [0.0, 15.649999618530273]] m. A terrace and roof eaves extend beyond the wall polygon by design; the course-facing direction is inferred from images, not independently georeferenced.",
+      "assessment": "Source footprint position/orientation and scale verified to sub-centimeter vertex agreement; architectural projections and facade direction remain inferred."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.1,
+      "max_score": 2.0,
+      "evidence": "Purdue Administrative Operations source (2026-09-28) supports two above-ground stories; the model contains the two story shells (2 named shells). CE Solutions photographs support a multi-gabled roof and a tall glazed gable; 6 simple gable-slope objects are in the asset. Eave/ridge values of 8.55/15.65 m are explicitly estimates, with no measured elevations. The current roof is three repeated gables along the long axis, while source photos show an irregular, intersecting set of gables and varying roof masses; terrain/basement level also remains unresolved.",
+      "assessment": "Story count and general gable family supported; exact roof silhouette/massing and all vertical dimensions are uncertain or estimated."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.9,
+      "max_score": 2.0,
+      "evidence": "CE Solutions exterior photos show warm stone, dark-framed glazing, a prominent glazed gable, major dark vertical facade panels, and an elevated terrace with slender dark railing. The model captures stone, glazing, a central glazed gable, and a terrace, but replaces the source's strongly varied/intersecting facade bays and articulated dark volumes with repetitive, nearly uniform window slots and a simplified continuous horizontal belt. Main entry location/orientation is an inference, not shown to be verified by a plan or orthographic source.",
+      "assessment": "Several high-level materials/features are evidence-matched; facade bay rhythm, dark volumes, entry position, and side elevations are generalized or unverified."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": "Reopened saved asset at expected path: True; scene/collection identity: True/True; collection objects: 191; meshes: 191; non-mesh objects: []; collection instance offset zero: True; image dependencies portable: True. Source register snapshots present: True; preview renders present: True. Manifest record found: True.",
+      "assessment": "Export, reopen, and evidence are nearly complete. No rear/side preview is provided, and the official video page snapshot gives contextual identity rather than measured architecture."
+    }
+  ],
+  "evidence": {
+    "asset_path_matches_expected": true,
+    "expected_scene_and_collection": true,
+    "identity_tags_match": true,
+    "foundation_xy_max_vertex_error_m": 4.657682673570458e-05,
+    "manifest_entry_present": true,
+    "zero_collection_instance_offset": true,
+    "portable_image_dependencies": true,
+    "source_snapshots_present": true,
+    "preview_renders_present": true,
+    "evaluated_bounds_world_m": [
+      [
+        -1064.52978515625,
+        -1019.0758666992188
+      ],
+      [
+        1241.1297607421875,
+        1278.2845458984375
+      ],
+      [
+        0.0,
+        15.649999618530273
+      ]
+    ],
+    "mesh_count": 191,
+    "non_mesh_objects": []
+  },
+  "findings": [
+    "Grade is below the required 8/10 threshold; revise and request a fresh independent grade before the model can be accepted.",
+    "Use the CE Solutions exterior photos to revise roof intersections and the asymmetrical front/rear massing; current three equal longitudinal gables do not reproduce the visible roof hierarchy.",
+    "Revise facade zoning around the dark vertical panel/window volumes and irregular glazing bays shown in exterior_04.webp and exterior_37.webp; current repeated uniform bays overstate regularity.",
+    "Keep height and story elevations labeled estimates unless measured drawings or survey evidence are found. The documented cart-storage basement is absent and should either be represented with defensible grade evidence or explicitly retained as unresolved.",
+    "Add a side/rear preview view and record which photographed facade is represented by the course-facing entrance; current entrance alignment is an inference."
+  ],
+  "sources_reviewed": [
+    "https://www.openstreetmap.org/way/1319175917",
+    "https://www.purdue.edu/operations/blog/2026/09/28/pete-dye-clubhouse-receives-recognition-for-engineering-excellence/",
+    "https://www.cesolutionsinc.com/pete-dye-clubhouse",
+    "https://stories.purdue.edu/get-a-drone-tour-of-purdues-pete-dye-clubhouse/",
+    "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=OBJECTID%3D233&outFields=*&returnGeometry=true&outSR=4326&f=json"
+  ],
+  "model_file": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_the_pete_dye_clubhouse_a3a9641.blend",
+  "preview_files": [
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_the_pete_dye_clubhouse_a3a9641\\preview\\course_facing_view.png",
+    "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\audit\\massing_the_pete_dye_clubhouse_a3a9641\\preview\\roof_and_footprint_view.png"
+  ],
+  "rubric": "AGENT.md 5-part rubric; each criterion is scored from current saved asset and raw source evidence."
+}

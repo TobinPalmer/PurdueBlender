@@ -1,0 +1,80 @@
+{
+  "asset_id": "massing_the_pete_dye_clubhouse_a3a9641",
+  "display_name": "Pete Dye Clubhouse",
+  "owner": "Rossen",
+  "build_status": "Revised first model rendered and reopened; awaiting fresh independent grade",
+  "manifest_contract": {
+    "asset_file": "modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend",
+    "collection": "Asset_massing_the_pete_dye_clubhouse_a3a9641",
+    "scene": "Building_massing_the_pete_dye_clubhouse_a3a9641",
+    "coordinate_mode": "Simple massing asset retained in campus world coordinates; no marker or local-frame change"
+  },
+  "identity_and_footprint": {
+    "current_feature": "OSM way 1319175917, named The Pete Dye Clubhouse",
+    "gis_crosswalk": "README FID 545 New Pete Dye Clubhouse candidate; OSM way name and footprint confirm the new clubhouse",
+    "source_crs": "EPSG:4326",
+    "local_transform": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0",
+    "footprint_dimensions_m_estimated_from_polygon": {
+      "long_edge": 40.47,
+      "short_edge": 17.43,
+      "area": 705.35
+    },
+    "footprint_match_error_m": 4.66E-05,
+    "centroid_world_xy_m": [
+      -1041.8029,
+      1259.7072
+    ],
+    "rotation": "Long axis is 149.06 degrees counterclockwise from world east, as derived from OSM polygon vertices",
+    "status": "Footprint source and position verified against the supplied current OSM polygon. Architectural walls follow the same four corners. Roof eaves and course terrace intentionally overhang the wall footprint."
+  },
+  "model_measurements": {
+    "evaluated_world_bounds_m": {
+      "x": [
+        -1064.3501,
+        -1019.2556
+      ],
+      "y": [
+        1240.9675,
+        1278.2587
+      ],
+      "z": [
+        0.0,
+        15.65
+      ]
+    },
+    "above_grade_story_count": 2,
+    "eave_height_m_estimate": 8.55,
+    "ridge_height_m_estimate": 15.65,
+    "grade_reference": "Building foundation at Z=0 in the source massing coordinate frame; terrain survey/elevation datum unavailable",
+    "basement": "Official project sources describe basement-level cart storage; a below-grade volume or exposed basement facade was not modeled because grading/elevations were unavailable."
+  },
+  "geometry_changes": [
+    "Replaced the original unverified eight-vertex massing prism with a model using the source outline.",
+    "Rebuilt the foundation with four OSM source corners and retained the asset collection and campus-coordinate frame.",
+    "Added two stone-clad stories, an irregular rhythm of course-side and parking-side window bays, tall dark vertical facade volumes, and a central glazed gable.",
+    "Replaced repeated gabled roof bands with a dominant long ridge, a taller projecting central cross-gable, and a lower offset west wing; roof massing is photo-interpreted and its dimensions remain estimates.",
+    "Added a course-side terrace/deck with posts and railing."
+  ],
+  "source_backed_and_estimated_attributes": {
+    "two_above_grade_stories": "Supported by Purdue Administrative Operations page, 2026-09-28.",
+    "2025_opening_and_use": "Supported by Purdue Administrative Operations; room/program details also described by CE Solutions.",
+    "warm_stone_cladding_gabled_roof_glazed_gable_terrace": "Interpreted from CE Solutions project photos and the official Purdue drone-tour page; facade dimensions and roof silhouette segments remain estimates.",
+    "roof_heights_and_floor_heights": "Estimated from photographic proportions; no verified elevations or survey heights located.",
+    "main_entrance_orientation": "The photographs establish a prominent course-side glazed facade and terrace. The exact cardinal orientation and the pictured facade relationship to the main entrance are inferred from the aerial portfolio photograph and OSM site geometry, not verified by a plan."
+  },
+  "reopen_validation": {
+    "script": "validation/validate_asset.py",
+    "result": "Reopened the saved .blend in Blender 4.5.15; expected scene and collection load, 122 mesh objects, 34 modifiers, no cameras/lights/non-mesh objects in the asset collection, zero collection offset, footprint vertex error 0.0000466 m, evaluated bounds as recorded, and portable image paths.",
+    "preview_images": [
+      "preview/course_facing_view.png",
+      "preview/roof_and_footprint_view.png",
+      "preview/parking_side_view.png"
+    ]
+  },
+  "unresolved": [
+    "No verified floor plans, elevations, measured wall/roof heights, or terrain data were located. Story count is sourced; detailed vertical dimensions remain estimates.",
+    "Basement cart storage is documented but not represented as an excavated or grade-exposed volume.",
+    "The Purdue campus GIS service returns a distinct 1998 DYE clubhouse feature (OBJECTID 233); that older feature was excluded. The current asset footprint matches the newer OSM clubhouse feature instead."
+  ],
+  "source_register": "source_register.json"
+}

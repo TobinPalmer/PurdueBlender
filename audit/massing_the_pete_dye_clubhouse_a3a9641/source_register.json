@@ -1,0 +1,62 @@
+{
+  "asset_id": "massing_the_pete_dye_clubhouse_a3a9641",
+  "owner": "Rossen",
+  "retrieved_on": "2026-10-26",
+  "sources": [
+    {
+      "role": "current building identity and footprint",
+      "provider": "OpenStreetMap / Overpass API; project-supplied campus building snapshot",
+      "url": "https://www.openstreetmap.org/way/1319175917",
+      "feature_id": "OSM way 1319175917",
+      "source_date": "Overpass osm_base 2026-10-22T03:45:50Z",
+      "raw_snapshot": "sources/osm_way_1319175917.json",
+      "source_crs": "WGS 84 geographic, EPSG:4326",
+      "measurement_method": "Converted the four closed-ring vertices using the repository local approximation X=(lon+86.9137)*111412.84*cos(40.4274 degrees), Y=(lat-40.4274)*111040. Compared vertex-by-vertex with saved foundation mesh. Approximate edge dimensions 40.47 m by 17.43 m; polygon area 705.35 m2.",
+      "uncertainty": "The footprint has a current OSM name and golf-clubhouse tags. OSM is community-maintained; the separate architectural detail beyond this polygon is not supplied by OSM."
+    },
+    {
+      "role": "building story count, use, opening year, and overall gross area",
+      "provider": "Purdue Administrative Operations",
+      "url": "https://www.purdue.edu/operations/blog/2026/09/28/pete-dye-clubhouse-receives-recognition-for-engineering-excellence/",
+      "feature_id": "Pete Dye Clubhouse at Birck Boilermaker Golf Complex",
+      "source_date": "2026-09-28",
+      "raw_snapshot": "sources/purdue_admin_ops_clubhouse.html",
+      "source_crs": "Not applicable",
+      "measurement_method": "Used the official description for two above-ground stories and program (retail, dining, event space, locker rooms, golf-cart storage); opening date April 2025.",
+      "uncertainty": "No elevations, floor plans, measured height, or individual facade dimensions were published in this page."
+    },
+    {
+      "role": "structural information, approximate overall area, and exterior/interior photographic reference",
+      "provider": "CE Solutions, structural engineer project portfolio",
+      "url": "https://www.cesolutionsinc.com/pete-dye-clubhouse",
+      "feature_id": "Pete Dye Clubhouse at Purdue's Birck Boilermaker Golf Complex",
+      "source_date": "Project constructed 2025; page accessed 2026-10-26",
+      "raw_snapshot": "sources/ce_solutions_page.html; exterior_04.webp; exterior_08.webp; exterior_13.webp; exterior_37.webp; golf_complex_09.webp",
+      "source_crs": "Not applicable for photographs",
+      "measurement_method": "Used project photographs to interpret gabled roof silhouette, warm stone cladding, central glazed gable, window rhythm, and course-facing terrace. Used published 23,900 SF area only as an overall project-reported gross area; used the stated 80-foot steel ridge beam as a dimensional reference, not as a measured roof height.",
+      "uncertainty": "Photographs are perspective views without a surveyed camera position or elevation dimensions. Individual geometry and height values modeled from the photographs remain estimates."
+    },
+    {
+      "role": "official Purdue exterior/drone-view context",
+      "provider": "Purdue Stories",
+      "url": "https://stories.purdue.edu/get-a-drone-tour-of-purdues-pete-dye-clubhouse/",
+      "feature_id": "Get a drone tour of Purdue's Pete Dye Clubhouse",
+      "source_date": "2025-09-15",
+      "raw_snapshot": "sources/purdue_stories_drone_tour.html",
+      "source_crs": "Not applicable; video imagery is not georeferenced",
+      "measurement_method": "Used the official page's drone-tour embed as contextual identification and a cross-check of the clubhouse's golf destination setting.",
+      "uncertainty": "Video frames are not orthorectified and were not used for measured footprint or dimensions."
+    },
+    {
+      "role": "identity cross-check; excluded as a footprint source for the new building",
+      "provider": "Purdue Libraries campus ArcGIS MapServer layer 0",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=OBJECTID%3D233&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "feature_id": "OBJECTID 233, DYE Pete Dye Clubhouse, 1300 Cherry Lane",
+      "source_date": "Campus GIS attributes construction end year 1998; service time extent ends 2015",
+      "raw_snapshot": "sources/purdue_campus_gis_old_clubhouse_fid233.json",
+      "source_crs": "WGS 84 geographic, EPSG:4326",
+      "measurement_method": "Compared the service's polygon coordinates with the OSM way 1319175917 location and attributes.",
+      "uncertainty": "This is a distinct older feature and lies about 200 m from the current clubhouse polygon. It was not used to set this asset's geometry."
+    }
+  ]
+}
