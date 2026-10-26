@@ -21,6 +21,16 @@
   },
   "height_and_architecture": {
     "historical_description": "Purdue Archives corporate record search-index text: 42 x 269 ft historic envelope; brick, stone, reinforced concrete; three stories plus basement; Tudor Gothic.",
+    "independent_height_evidence": {
+      "source": "Indiana 2018 3DEP LiDAR Normalized Digital Height Model, 5-ft cells, EPSG:2968",
+      "footprint": "Purdue BuildingShapesZip4 FID 639 (CQE), transformed from EPSG:4326 to EPSG:2968",
+      "analysis_file": "cqe_ndhm_analysis.json",
+      "inside_outline_samples": 474,
+      "surface_height_ftUS_min_median_p90_max": [36.67, 46.20, 52.14, 61.07],
+      "surface_height_m_min_median_p90_max": [11.18, 14.08, 15.89, 18.61],
+      "interpretation": "The 15.08 m modeled maximum falls within the 11.94-15.89 m p10-p90 roof-surface range. This is corroborative surface-height evidence, not a surveyed ridge/eave measurement; vegetation and edge mixing remain possible.",
+      "neighbor_check": "Within a 50-ft buffer outside the footprint, the raw NDHM median is 0.37 ft (0.11 m), p75 is 23.29 ft (7.10 m), and p90 is 37.59 ft (11.46 m), consistent with near-ground terrain plus taller vegetation."
+    },
     "official_gis_attributes": {
       "NUM_LEVELS": 5,
       "CountOfFLO": 5,
@@ -28,13 +38,13 @@
       "Elevation": 631
     },
     "modeled_visible_storeys": 3,
-    "modeled_overall_height_m": 14.63,
-    "height_basis": "The GIS Extrution field has undocumented units; 48 ft converted to 14.63 m is an explicit tentative interpretation, not a verified measurement.",
+    "modeled_overall_height_m": 15.08,
+    "height_basis": "2018 3DEP NDHM inside the CQE GIS footprint has median surface height 14.08 m and p10-p90 11.94-15.89 m; modeled maximum 15.08 m is plausible. GIS Extrution=48 has undocumented units, and its tentative 48-ft (14.63 m) interpretation is corroborative only. Overall modeled height remains an estimate, not a surveyed elevation.",
     "uncertainties": [
-      "Historic source says three stories plus basement whereas two GIS floor-count fields say five; the visible modeled level count follows the building-specific historic description.",
-      "No surveyed facade elevation, storey height, window schedule, entrance drawing, or roof plan was found.",
-      "Tudor-Gothic material/color, vertical window rhythm, stone bands, pilasters, pointed entrance, and dormer-like forms are schematic interpretations; general Cary images are not labeled CQE.",
-      "The orthophoto supports the footprint and a complex roof surface with interruptions, but does not resolve exact roof dormer geometry."
+      "The building-specific Purdue Archives description says three stories plus basement, while two GIS fields say five levels. A five-level count could include the basement, three stories, and an attic/roof level, but source field definitions do not verify that interpretation.",
+      "NDHM supplies approximate above-ground surface heights, not surveyed facade elevations, storey heights, eave/ridge heights, window schedules, entrance drawings, or a roof plan.",
+      "The Cary East-specific renovation article corroborates retained Collegiate Gothic character, but its published photos show interiors. Purdue Archives 1928 Cary exterior photos show gabled bays and small gable windows but are not labeled as CQE; these forms are contextual interpretations only.",
+      "The orthophoto supports the footprint and a complex roof surface with interruptions, but does not resolve exact roof form or gable count."
     ]
   },
   "validation": {
@@ -43,14 +53,14 @@
     "result_file": "reopen_validation.json",
     "result": "passed",
     "asset_collection": "Asset_massing_cary_quadrangle_east_cqe_230c813",
-    "asset_mesh_object_count": 13,
+    "asset_mesh_object_count": 23,
     "all_asset_objects_identity_transforms": true,
     "external_object_libraries": false,
     "previews": ["cqe_detailed_preview.png", "cqe_top_preview.png"],
     "source_alignment_image": "cqe_orthophoto_footprint_overlay.png"
   },
   "coordinator_owned_follow_up": [
-    "Refresh the manifest bounds for this source-aligned replacement: geometry footprint XY [-284.8783,-270.8745] x [510.8767,592.9309] m; full asset extents including roof overhang and entry detail [-286.0694,-270.4039] x [510.4223,593.3852] x [0,14.63] m.",
+    "Refresh the manifest bounds for this source-aligned replacement: geometry footprint XY [-284.8783,-270.8745] x [510.8767,592.9309] m; full asset extents including roof overhang and entry detail [-286.0694,-270.4039] x [510.4223,593.3852] x [0,15.08] m.",
     "Update README and shared index/assignment status after independent grading; those shared files are intentionally unchanged by this builder."
   ]
 }

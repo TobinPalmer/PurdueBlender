@@ -152,6 +152,56 @@ def create_gable_roof(name, axis_origin, longitudinal, crosswise, u_bounds, v_bo
     return obj
 
 
+def create_cross_gable_bay(name, center_u, outside_v, outward_sign, longitudinal, crosswise,
+                           base_z, ridge_z, width, depth, brick_material,
+                           roof_material, collection):
+    """Create a conservative projecting cross-gable bay on a long elevation.
+
+    The 1928 Cary exterior photograph indexed by Purdue Archives shows repeated
+    projecting gables. The image is Cary-complex context and not explicitly
+    tagged East, so these are simplified architectural interpretations.
+    """
+    half = width / 2
+    inside_v = outside_v - outward_sign*depth
+
+    def xyz(u, v, z):
+        return (longitudinal[0]*u + crosswise[0]*v,
+                longitudinal[1]*u + crosswise[1]*v, z)
+
+    # Triangular gable end, duplicated at its inner plane for a closed mesh.
+    front = [xyz(center_u-half, outside_v, base_z),
+             xyz(center_u+half, outside_v, base_z),
+             xyz(center_u, outside_v, ridge_z)]
+    back = [xyz(center_u-half, inside_v, base_z),
+            xyz(center_u+half, inside_v, base_z),
+            xyz(center_u, inside_v, ridge_z)]
+    verts = front + back
+    faces = [(0, 1, 2), (5, 4, 3), (0, 3, 4, 1),
+             (1, 4, 5, 2), (2, 5, 3, 0)]
+    mesh = bpy.data.meshes.new(name + "EndMesh")
+    mesh.from_pydata(verts, [], faces)
+    mesh.update()
+    end = bpy.data.objects.new(name + "_Brick_Gable_End", mesh)
+    collection.objects.link(end)
+    mesh.materials.append(brick_material)
+
+    # Two simple pitched roof planes extend from the projecting gable to the
+    # main roof ridge. This conveys the roof silhouette without fake dormers.
+    roof_verts = [xyz(center_u-half, outside_v, base_z),
+                  xyz(center_u, outside_v, ridge_z),
+                  xyz(center_u+half, outside_v, base_z),
+                  xyz(center_u-half, inside_v, base_z),
+                  xyz(center_u, inside_v, ridge_z),
+                  xyz(center_u+half, inside_v, base_z)]
+    roof_faces = [(0, 3, 4, 1), (1, 4, 5, 2)]
+    roof_mesh = bpy.data.meshes.new(name + "RoofMesh")
+    roof_mesh.from_pydata(roof_verts, [], roof_faces)
+    roof_mesh.update()
+    roof = bpy.data.objects.new(name + "_Slate_Roof", roof_mesh)
+    collection.objects.link(roof)
+    roof_mesh.materials.append(roof_material)
+
+
 def create_pointed_entry(name, center_xy, tangent, normal, angle, materials, collection):
     """A shallow stone pointed-arch surround over a dark recessed door panel."""
     stone, door, glass = materials
@@ -310,35 +360,44 @@ def build_geometry(points, feature, raw_vertex_count, collection):
             py = start[1]+dy*t+normal[1]*0.07
             add_box(pilaster_buffer, (px, py, 5.25), 0.32, 0.24, 9.1, angle)
 
-    # Two careful dormer interpretations are repeated along each roof plane;
-    # the 2023 orthophoto supports roof protrusions but not their exact form.
-    dormer_buffer = {"verts": [], "faces": []}
-    dormer_top_buffer = {"verts": [], "faces": []}
+    # The 2023 orthophoto supports an interrupted roof silhouette. A Purdue
+    # Archives exterior photo dated 1928 shows repeated cross-gable bays in a
+    # Cary building, but is not individually labeled CQE; keep these forms
+    # simplified and explicitly interpreted rather than asserting exact count.
     v_mid = (v_bounds[1]+v_bounds[0])/2
     vhalf = (v_bounds[1]-v_bounds[0])/2
-    rise = ROOF_RIDGE_M - ROOF_EAVES_M
     u_span = u_bounds[1]-u_bounds[0]
-    dormer_count = 0
+    cross_gable_count = 0
     for side in (-1, 1):
-        for frac in (0.18, 0.34, 0.50, 0.66, 0.82):
+        outside_v = v_mid + side*(vhalf+0.18)
+        for frac in (0.10, 0.50, 0.90):
             u = u_bounds[0] + u_span*frac
-            v_offset = side*vhalf*0.60
-            v = v_mid + v_offset
-            z = ROOF_RIDGE_M - rise*(abs(v_offset)/vhalf)
-            world_x = axis_origin[0] + long_axis.x*u + cross_axis.x*v
-            world_y = axis_origin[1] + long_axis.y*u + cross_axis.y*v
-            roof_angle = math.atan2(long_axis.y, long_axis.x)
-            add_box(dormer_buffer, (world_x, world_y, z+0.42), 1.6, 1.15, 0.95, roof_angle)
-            add_box(dormer_top_buffer, (world_x, world_y, z+0.98), 1.9, 1.35, 0.15, roof_angle)
-            dormer_count += 1
+            create_cross_gable_bay(
+                f"CQE_Cross_Gable_{side}_{frac:.2f}", u, outside_v, side,
+                (long_axis.x, long_axis.y), (cross_axis.x, cross_axis.y),
+                ROOF_EAVES_M, min(ROOF_RIDGE_M+0.45, 15.1), 7.6, 3.7,
+                brick, roof_mat, collection)
+            # Small attic windows are visible in the archival Cary gable
+            # photographs and also make the GIS five-level count compatible
+            # with three documented stories plus basement only as a possibility.
+            window_u = u
+            window_v = outside_v + side*0.06
+            window_z = ROOF_EAVES_M + 2.35
+            facade_angle = math.atan2(long_axis.y, long_axis.x)
+            add_box(frame_buffer,
+                    (long_axis.x*window_u + cross_axis.x*window_v,
+                     long_axis.y*window_u + cross_axis.y*window_v, window_z),
+                    1.42, 0.24, 1.62, facade_angle)
+            add_box(GLASS_DETAIL_BUFFER,
+                    (long_axis.x*window_u + cross_axis.x*(window_v+side*0.13),
+                     long_axis.y*window_u + cross_axis.y*(window_v+side*0.13), window_z),
+                    1.12, 0.13, 1.32, facade_angle)
+            cross_gable_count += 1
 
     create_box_batch("CQE_Window_Glass_Bays", window_buffer, glass, collection)
     create_box_batch("CQE_Limestone_Window_Trim", frame_buffer, limestone, collection)
     create_box_batch("CQE_Story_Belt_Courses", belt_buffer, limestone, collection)
     create_box_batch("CQE_Brick_and_Stone_Pilasters", pilaster_buffer, brick_dark, collection)
-    create_box_batch("CQE_Gothic_Roof_Dormers_Approximate", dormer_buffer, brick, collection)
-    create_box_batch("CQE_Dormer_Roof_Caps", dormer_top_buffer, roof_mat, collection)
-
     # Entrance is placed on the west-facing long elevation, toward Cary's central
     # quadrangle. Its exact bay/location is an architectural interpretation.
     entry = max(west_candidates, key=lambda item: item[0], default=None)
@@ -360,8 +419,8 @@ def build_geometry(points, feature, raw_vertex_count, collection):
     collection["building_name"] = "Franklin Levering Cary Quadrangle (East)"
     collection["source_feature"] = "Purdue BuildingShapesZip4 FID 639, BLDG_ABBR CQE"
     collection["coordinate_contract"] = "Simple massing asset in campus world coordinates; X east, Y north, Z up, meters."
-    collection["height_status"] = "approximate; GIS Extrution=48 interpreted as feet (14.63 m), source units not explicitly documented; historic source says three stories plus basement."
-    collection["source_uncertainty"] = "Facade bays, entrance position, dormers, and Tudor-Gothic trim are interpreted. Official archive photo is a Cary Hall image without a verified East label. Historical 3-story+bsmnt and GIS 5-level counts differ."
+    collection["height_status"] = "estimated, not surveyed; 2018 3DEP NDHM inside source footprint has median surface height 14.08 m (p10-p90 11.94-15.89 m), which corroborates the modeled maximum 15.08 m. GIS Extrution=48 has undocumented units; its tentative feet interpretation is not the sole height basis. Historic source says three stories plus basement; GIS level count conflict remains unresolved."
+    collection["source_uncertainty"] = "Facade bays, entrance position, cross-gable count, and Tudor-Gothic trim are approximate interpretations. Purdue Archives exterior images are Cary-wide context and do not identify CQE. Historic three-stories-plus-basement and GIS five-level fields may have different counting conventions; this is unresolved."
 
     return {
         "source_fid": feature["properties"].get("FID"),
@@ -369,14 +428,15 @@ def build_geometry(points, feature, raw_vertex_count, collection):
         "raw_footprint_vertices": raw_vertex_count,
         "built_footprint_vertices": len(points),
         "window_bay_count": detail_count,
-        "dormer_count": dormer_count,
+        "cross_gable_bay_count": cross_gable_count,
         "footprint_bounds_world_m": [
             [min(p[0] for p in points), max(p[0] for p in points)],
             [min(p[1] for p in points), max(p[1] for p in points)],
         ],
         "wall_eaves_height_estimate_m": WALL_TOP_M,
         "roof_ridge_height_estimate_m": ROOF_RIDGE_M,
-        "overall_height_estimate_m": ROOF_RIDGE_M,
+        "cross_gable_ridge_height_estimate_m": min(ROOF_RIDGE_M+0.45, 15.1),
+        "overall_height_estimate_m": min(ROOF_RIDGE_M+0.45, 15.1),
         "visible_storeys_estimated": 3,
         "basement": "historically documented; only the upper foundation band is modeled above grade",
         "facade_orientation": "west elevation treated as the quadrangle-facing entrance side; estimated from the site arrangement",
