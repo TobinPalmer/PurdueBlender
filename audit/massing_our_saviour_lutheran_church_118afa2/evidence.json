@@ -1,0 +1,194 @@
+{
+  "asset_id": "massing_our_saviour_lutheran_church_118afa2",
+  "building": "Our Saviour Lutheran Church",
+  "assignment": {
+    "owner_source": "README.md pending-building table",
+    "owner": "Kyle",
+    "manifest_id": "massing_our_saviour_lutheran_church_118afa2",
+    "manifest_file": "buildings/massing_our_saviour_lutheran_church_118afa2.blend",
+    "manifest_collection": "Asset_massing_our_saviour_lutheran_church_118afa2",
+    "manifest_scene": "Building_massing_our_saviour_lutheran_church_118afa2",
+    "manifest_object": "Our Saviour Lutheran Church",
+    "source_identity_confirmed": true
+  },
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "OpenStreetMap contributors, OSM way 860901797",
+      "purpose": "Direct church identity, address tags, and building footprint polygon",
+      "feature_id": "way/860901797",
+      "feature_tags": {
+        "name": "Our Saviour Lutheran Church",
+        "amenity": "place_of_worship",
+        "building": "yes",
+        "religion": "christian",
+        "denomination": "lutheran",
+        "description": "ELCA",
+        "addr:housenumber": "300",
+        "addr:street": "Fowler Avenue",
+        "addr:city": "West Lafayette",
+        "addr:state": "IN",
+        "addr:postcode": "47906",
+        "website": "https://osluth.org/"
+      },
+      "url": "https://api.openstreetmap.org/api/0.6/way/860901797/full",
+      "map_snapshot_url": "https://api.openstreetmap.org/api/0.6/map?bbox=-86.9095,40.4268,-86.9075,40.4288",
+      "raw_snapshot": "sources/osm_way_860901797_full.xml",
+      "context_snapshot": "sources/osm_map.xml",
+      "source_date": "Way timestamp 2026-07-30T10:29:04Z; retrieved 2026-10-26",
+      "source_crs": "WGS 84 longitude/latitude, EPSG:4326",
+      "measurement_method": "Use the closed polygon for named way 860901797 (10 coordinates including closure; 9 distinct vertices) and transform vertices to approximate campus meters using modular/AGENTS.md conversion. Keep original OSM orientation; do not rotate or rescale.",
+      "uncertainty": "Community-maintained map, not a building survey or dimensioned plan. The exact footprint has a clear name, worship amenity, address, and official church website tags and matches the official church map pin. Treat height and roof details as unverified unless separately evidenced. OSM attribution and ODbL terms apply.",
+      "overpass_endpoint": "https://overpass-api.de/api/interpreter",
+      "overpass_snapshot": "sources/osm_around_church.json",
+      "overpass_source_timestamp": "2026-10-26T21:09:21Z"
+    },
+    {
+      "provider": "Our Saviour Lutheran Church official website",
+      "purpose": "Cross-check name/address/map position, history, and exterior imagery",
+      "url": "https://osluth.org/",
+      "raw_snapshot": "sources/church_home.html",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Current homepage; building map-link coordinate is 40.4278394, -86.9084334. The page provides 300 W Fowler Ave, West Lafayette.",
+      "source_crs": "Map link opens a Google Maps WGS 84 location; inferred coordinate from URL is EPSG:4326",
+      "measurement_method": "Extracted the official 300 W Fowler address and map link from the church page. Map point transforms to approximate campus XY (446.664 m, 48.791 m), within the OSM building polygon. The link confirms placement, not wall dimensions.",
+      "uncertainty": "The map marker is a location reference, not a surveyed entrance or centroid.",
+      "map_link_url": "https://maps.app.goo.gl/o31Dvsnd9xjtxbo48",
+      "resolved_map_url": "https://www.google.com/maps/place/Our+Saviour+Lutheran+Church/@40.4278394,-86.9084334"
+    },
+    {
+      "provider": "Our Saviour Lutheran Church official Welcome/About page",
+      "purpose": "Building history and exterior photographs",
+      "url": "https://osluth.org/welcome/",
+      "raw_snapshot": "sources/welcome.html",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page states the current building was dedicated in 1966 and expanded in 1994. Photo file names indicate 2020-04-05, 2020-04-20, and 2023-07-16; the exact capture dates are not separately verified.",
+      "photo_urls": [
+        "https://osluth.org/wp-content/uploads/2023/07/2020-0405_110e3.png",
+        "https://osluth.org/wp-content/uploads/2023/07/2020-0420_115e-scaled.jpg",
+        "https://osluth.org/wp-content/uploads/2023/07/2023-0716_105-scaled.jpg"
+      ],
+      "photo_snapshots": [
+        "sources/oslc_photo_2020_0405_110e3.png",
+        "sources/oslc_photo_2020_0420_115e.jpg",
+        "sources/oslc_photo_2023_0716_105.jpg"
+      ],
+      "source_crs": "Not applicable to history; perspective photographs are uncalibrated",
+      "measurement_method": "Visual observation supports warm brick lower walls, teal vertical gable cladding, dark steep/asymmetric shingle roof, large triangular stained-glass gable, entry doors, and roof cross. Photographs do not yield measured dimensions or roof pitch.",
+      "uncertainty": "All height, wall-to-roof ratios, roof pitch, and facade feature dimensions remain estimates."
+    },
+    {
+      "provider": "Our Saviour Lutheran Church official Contact page",
+      "purpose": "Exterior image cross-check",
+      "url": "https://osluth.org/contact/",
+      "raw_snapshot": "sources/contact.html",
+      "image_url": "https://osluth.org/wp-content/uploads/2023/08/2020-0920_02-scaled.jpg",
+      "image_snapshot": "sources/oslc_photo_2020_0920_02.jpg",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page image alt/file name indicates 2020-09-20; exact capture date is not separately verified.",
+      "source_crs": "Not applicable; perspective exterior photograph",
+      "measurement_method": "Visual cross-check of roof silhouette, teal cladding, brick wall, large glazed gable, and entry.",
+      "uncertainty": "Image has no surveyed scale or camera calibration."
+    },
+    {
+      "provider": "Purdue University ArcGIS Online BuildingShapesZip4 FeatureServer, nearby feature disambiguation",
+      "purpose": "Reject queued false source match; do not use for church geometry",
+      "feature_id": 823,
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/823?f=pjson",
+      "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D823&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "nearby_query_snapshot": "sources/nearby_by_pin.json",
+      "feature_snapshot": "sources/feature_823.json",
+      "geometry_snapshot": "sources/query_823.json",
+      "source_date": "Retrieved 2026-10-26; layer metadata source date not stated",
+      "source_crs": "Feature query geometry EPSG:4326; source layer WKID 102100/latestWkid 3857",
+      "measurement_method": "Compared GIS attributes and transformed location with the official church address/map point.",
+      "uncertainty": "This is not Our Saviour Lutheran Church. FID 823 is BLDG_ABBR SOF, BUILDING_N Fairway, address 1320 David Ross Rd, OWNER COOP. It lies nearby, but name and address differ; the assignment queue's `initial_source_fid=823` is a false crosswalk and is explicitly rejected."
+    }
+  ],
+  "footprint_and_position": {
+    "matched_feature": "OSM way 860901797",
+    "official_map_pin_wgs84": {
+      "latitude": 40.4278394,
+      "longitude": -86.9084334
+    },
+    "official_pin_campus_xy_m_approx": {
+      "x": 446.664,
+      "y": 48.791
+    },
+    "pin_relation_to_osm_polygon": "inside",
+    "transform": "X=(longitude + 86.9137) * 111412.84 * cos(radians(40.4274)); Y=(latitude - 40.4274) * 111040.0",
+    "transform_note": "Approximate local campus conversion specified in modular/AGENTS.md; not a surveyed CRS.",
+    "source_vertex_count_distinct": 9,
+    "source_bounds_world_m": {
+      "x": [
+        426.6313,
+        453.9318
+      ],
+      "y": [
+        33.3897,
+        62.7376
+      ]
+    },
+    "source_dimensions_m": {
+      "east_west": 27.3005,
+      "north_south": 29.3479
+    },
+    "approximate_local_plan_area_m2": 615.413,
+    "manifest_placeholder_bounds_world_m": {
+      "x": [
+        426.6313,
+        453.9318
+      ],
+      "y": [
+        33.3897,
+        62.7376
+      ]
+    },
+    "result": "OSM wall polygon exactly matches manifest placeholder XY extents to source precision; using polygon vertices instead of placeholder bounding box."
+  },
+  "vertical_and_architecture": {
+    "published_height_or_story_count": "Not found",
+    "OSM_building_levels_tag": "Not present",
+    "modeled_story_assumption": "Single main wall level under a tall sanctuary roof; qualitative estimate from exterior photographs, not a verified count.",
+    "estimated_dimensions_m": {
+      "wall_eave": 4.8,
+      "main_roof_ridge": 14.2,
+      "raised_entry_gable": 16.0,
+      "cross_top": 18.1
+    },
+    "roof_form": "Steep gabled sanctuary roof with an asymmetric raised north-facing gable/swept fascia; simple lower roof over west shoulder. Photo-supported form, estimated dimensions and pitch.",
+    "facade": "Warm buff brick walls, teal vertical gable cladding, broad triangular stained glass with restrained mullions, dark shingle roof, and cross; door placement and all opening dimensions are approximate.",
+    "remaining_uncertainty": [
+      "No dimensioned elevation, roof schedule, or verified height was found; every vertical dimension is estimated from unscaled perspectives.",
+      "Story count is not documented in the available GIS/OSM or church website material; the above-ground wall level is a visual approximation.",
+      "The building was expanded in 1994; available OSM polygon likely reflects current exterior but source history does not identify which addition boundary is which.",
+      "The queried ArcGIS FID 823 is a nearby Fairway cooperative building and is not the church."
+    ]
+  },
+  "geometry_edits": [
+    "Replaced the unverified rectangular massing box with the named OSM church polygon; retained all source vertices and the campus-coordinate identity transform.",
+    "Added photo-based brick walls, asymmetric steep gabled roof, teal gable cladding, stained-glass feature, entry panel, simple side windows, and cross.",
+    "Kept manifest object name, collection, scene, one-object export, and asset path stable."
+  ],
+  "validation": {
+    "blender_version": "5.2.3 LTS",
+    "saved_asset_reopened": true,
+    "reopen_validation_script": "reopen_validate.py",
+    "reopen_validation_result": "reopen_validation.json",
+    "preview": "preview.png",
+    "build_metrics": "build_metrics.json",
+    "portable_dependencies": "Generated materials only; no external images or linked libraries expected.",
+    "builder_script": "modular/buildings/build_massing_our_saviour_lutheran_church_118afa2.py"
+  },
+  "source_resolution": {
+    "rejected_arcgis_crosswalk": {
+      "fid": 823,
+      "reason": "Feature attributes identify Fairway (SOF), 1320 David Ross Rd, OWNER COOP; not Our Saviour Lutheran Church at 300 W Fowler Ave."
+    },
+    "non_geometry_geocoder": {
+      "snapshot": "sources/osm_geocode.json",
+      "result": "Nominatim address search returned a Fowler Avenue road centerline, not the church parcel/building; excluded from footprint and placement calculations."
+    },
+    "accepted_building_footprint": "OSM way 860901797; its tags directly name Our Saviour Lutheran Church and match the address and official church website."
+  }
+}

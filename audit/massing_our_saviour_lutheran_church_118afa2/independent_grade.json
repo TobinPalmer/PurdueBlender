@@ -1,0 +1,151 @@
+{
+  "score": 8.75,
+  "max_score": 10,
+  "pass": true,
+  "building": "Our Saviour Lutheran Church",
+  "asset_id": "massing_our_saviour_lutheran_church_118afa2",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Directly named OSM way 860901797 carries the church name, place-of-worship/Lutheran tags, 300 Fowler Ave address, and official website; the church homepage independently states 300 W Fowler Ave and links map directions whose resolved pin (40.4278394, -86.9084334) is inside the polygon. Reopened mesh represents all 9 source ring vertices within 0.00001484 m.",
+      "limitations": "OSM is community maintained and is not a survey; the nearby Purdue ArcGIS FID 823 is a different building (Fairway, COOP, 1320 David Ross Rd) and is excluded."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "The source polygon's transformed campus bounds are [[426.63126319444285, 453.9317966755379], [33.38972800043621, 62.737600000189104]]; the saved structural base bounds match those source bounds, and object transform is identity. Official map pin is contained in the footprint. The exact crosswalk rejection avoids substituting the nearby GIS feature.",
+      "limitations": "Horizontal accuracy is unpublished; campus projection is approximate and no survey/dimensioned plan is available."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": "Church exterior photographs directly support the steep/asymmetric gabled sanctuary roof and raised sail-like gable. The modeled roof silhouette uses these photographed features.",
+      "limitations": "No measured height, story count, roof schedule, or calibrated photo is provided. All reported heights (eaves 4.8 m, ridge 14.2 m, gable 16.0 m, cross 18.1 m) and roof pitch are estimates; the reopen bounds top at 18.10 m."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": "The church\u2019s own exterior photographs show the warm brick base, teal vertical cladding, large triangular stained-glass gable, steep dark roof, cross, and glazed entrance. The saved render/model includes these principal visual elements.",
+      "limitations": "The photo is perspective and unscaled; exact door offset, side-window placement, color values, glass segmentation, and all feature dimensions remain illustrative."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Independent cold reopen passed expected manifest path/collection, one mesh, identity transform, no modifiers, no linked libraries, and no external image files. The building folder includes raw OSM and official church source snapshots, the rejected GIS candidate, preview, source metrics, and reopen results. Checks: {\"identity transform\": true, \"manifest path and collection match\": true, \"no linked libraries or file-backed images\": true, \"no modifiers\": true, \"one named mesh in expected collection\": true, \"saved .blend loaded\": true}",
+      "limitations": "No packaging or export defects found."
+    }
+  ],
+  "evidence": {
+    "saved_blend": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_our_saviour_lutheran_church_118afa2.blend",
+    "osm_way_id": "860901797",
+    "osm_tags": {
+      "addr:city": "West Lafayette",
+      "addr:housenumber": "300",
+      "addr:postcode": "47906",
+      "addr:state": "IN",
+      "addr:street": "Fowler Avenue",
+      "amenity": "place_of_worship",
+      "building": "yes",
+      "denomination": "lutheran",
+      "description": "ELCA",
+      "name": "Our Saviour Lutheran Church",
+      "religion": "christian",
+      "service_times": "Su 09:00",
+      "website": "https://osluth.org/"
+    },
+    "source_ring_vertices": 9,
+    "source_polygon_area_approx_m2": 615.4128533648827,
+    "source_bounds_xy_m": [
+      [
+        426.63126319444285,
+        453.9317966755379
+      ],
+      [
+        33.38972800043621,
+        62.737600000189104
+      ]
+    ],
+    "model_structural_base_bounds_xy_m": [
+      [
+        426.6312561035156,
+        453.9317932128906
+      ],
+      [
+        33.38972854614258,
+        62.73759841918945
+      ]
+    ],
+    "source_vertex_max_error_m": 1.4843770032743976e-05,
+    "official_map_pin_wgs84": {
+      "latitude": 40.4278394,
+      "longitude": -86.9084334
+    },
+    "official_map_pin_inside_source_polygon": true,
+    "rejected_gis_feature_823": {
+      "building": "Fairway",
+      "abbreviation": "SOF",
+      "address": "1320 David Ross Rd",
+      "owner": "COOP"
+    },
+    "evaluated_bounds_xyz_m": [
+      [
+        426.6312561035156,
+        453.9317932128906
+      ],
+      [
+        33.38972854614258,
+        63.327598571777344
+      ],
+      [
+        0.0,
+        18.100000381469727
+      ]
+    ],
+    "mesh_vertices": 124,
+    "mesh_faces": 35,
+    "materials": [
+      "OSLC | warm buff brick (official photo)",
+      "OSLC | charcoal shingle roof (photo estimate)",
+      "OSLC | teal vertical gable cladding (official photo)",
+      "OSLC | blue stained glass (photo estimate)",
+      "OSLC | amber stained glass (photo estimate)",
+      "OSLC | light window/cross trim",
+      "OSLC | dark entry glazing"
+    ],
+    "checks": {
+      "identity": {
+        "OSM exact name": true,
+        "OSM place-of-worship and denomination": true,
+        "OSM address and official website": true,
+        "official site address/map link corroboration": true,
+        "resolved official map pin lies inside named OSM footprint": true,
+        "nearby FID 823 rejected by names/address/owner": true
+      },
+      "export": {
+        "saved .blend loaded": true,
+        "manifest path and collection match": true,
+        "one named mesh in expected collection": true,
+        "identity transform": true,
+        "no modifiers": true,
+        "no linked libraries or file-backed images": true
+      }
+    },
+    "photos_reviewed": [
+      "audit/massing_our_saviour_lutheran_church_118afa2/sources/oslc_photo_2020_0405_110e3.png",
+      "audit/massing_our_saviour_lutheran_church_118afa2/sources/oslc_photo_2020_0920_02.jpg"
+    ],
+    "preview": "audit/massing_our_saviour_lutheran_church_118afa2/preview.png",
+    "source_record": "audit/massing_our_saviour_lutheran_church_118afa2/evidence.json"
+  },
+  "findings": [
+    "PASS at 8.75/10; the named OSM footprint and official church identity are independently corroborated, and the false ArcGIS FID 823 crosswalk is correctly rejected.",
+    "Keep every vertical measurement marked as estimated; no measured height or verified story count was found.",
+    "If improving detail further, add dimensioned elevations or a calibrated current survey/photo to validate roof heights and pitch; verify exact entrance/window offsets against orthographic source material."
+  ]
+}
