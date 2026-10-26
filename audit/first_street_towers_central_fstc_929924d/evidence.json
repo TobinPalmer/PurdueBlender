@@ -1,0 +1,76 @@
+{
+  "building_id": "massing_first_street_towers_central_fstc_929924d",
+  "name": "First Street Towers Central (FSTC)",
+  "asset": "modular/buildings/massing_first_street_towers_central_fstc_929924d.blend",
+  "scene": "Building_massing_first_street_towers_central_fstc_929924d",
+  "collection": "Asset_massing_first_street_towers_central_fstc_929924d",
+  "objects": [
+    "First Street Towers, Central (FSTC)"
+  ],
+  "geometry_vertices": 50756,
+  "geometry_faces": 37487,
+  "gis_feature": {
+    "provider": "Purdue University BuildingShapes GIS FeatureServer",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 664,
+    "retrieved": "2026-10-26",
+    "crs": "EPSG:4326 transformed to project local campus meters using AGENT.md approximate origin",
+    "original_ring_vertices": 293,
+    "used_outline_vertices": 136,
+    "area_m2_projected": 1484.9337147616025,
+    "bounds_xy_m": [
+      [
+        -958.4741726853302,
+        -884.1777756472944
+      ],
+      [
+        -289.5536323647343,
+        -252.24514286673184
+      ]
+    ]
+  },
+  "dimensions": {
+    "levels": 7,
+    "source": "Purdue GIS NUM_LEVELS=7 and CountOfFLO=7",
+    "story_height_m_estimate": 3.42,
+    "roof_height_m_estimate": 23.939999999999998,
+    "height_uncertainty": "GIS Extrution=46 has undocumented units; modeled floor-to-floor and roof heights are estimates, not surveyed values."
+  },
+  "footprint_comparison": {
+    "comparison": "Purdue GIS FID 664 vs OSM way 283274998 saved in osm_buildings_bbox_2026-10-26.json",
+    "gis_outline": "Official GIS outline used for structural walls. Projected area ~1481 m2; bounds recorded above.",
+    "osm_outline": "OSM polygon covers ~1720 m2 and extends farther south/west. Prior calculated intersection-over-union ~0.846 and Hausdorff distance ~4.24m.",
+    "uncertainty": "Official CAD/GIS outline and OSM roof/building outline disagree; source-specific outlines are preserved and not combined."
+  },
+  "architecture_evidence": [
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/first-street.html",
+      "retrieved": "2026-10-26",
+      "supports": "Residential use, cluster rooms, central lounge/dinette and community kitchen. Bedrooms reported as 9 ft 8 in by 13 ft 9 in."
+    },
+    {
+      "provider": "Purdue University Residences photo",
+      "url": "https://www.housing.purdue.edu/images/get-reconnected-old-images/BrianTedeschi2.JPG",
+      "source_date": "2019",
+      "retrieved": "2026-10-26",
+      "supports": "Red-brown brick, pale stone entrance surround, arched entrance canopy and sign."
+    },
+    {
+      "provider": "Purdue University Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/fst/",
+      "retrieved": "2026-10-26",
+      "supports": "Building identity and address, 1250 First Street."
+    }
+  ],
+  "model_notes": [
+    "Portable procedural brick/stone/glass materials; no external texture dependency.",
+    "Main entrance is placed on the south-facing First Street side, based on the published address and 2019 photo; exact GIS door position is not provided and remains estimated.",
+    "Seven floors are source supported. Window spacing, wall detailing, parapet, story height and roof treatment are visual estimates.",
+    "Interior is a schematic illustration of documented room clusters and shared lounge/dinette, not an architectural plan.",
+    "Decorative facades/interior components are consolidated in the named object; expected scene and collection names preserved."
+  ],
+  "preview": "fstc_exterior_preview.png",
+  "candidate_sha256": "8c8930544d517f572d4ea1e405cb0a35abc028cd40835ed9706ee7f8f1dd5b76",
+  "window_count_estimate": 469
+}

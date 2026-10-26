@@ -1,0 +1,121 @@
+{
+  "building_id": "massing_first_street_towers_east_fste_c9b22d3",
+  "asset_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_first_street_towers_east_fste_c9b22d3.blend",
+  "candidate_sha256_expected": "7f92c5bb44c8a5d1f1f5aee145003234e0fb3dd9e6e77dc18fb2dee84dfe94ae",
+  "candidate_sha256_verified": "7f92c5bb44c8a5d1f1f5aee145003234e0fb3dd9e6e77dc18fb2dee84dfe94ae",
+  "fresh_opened_in_blender": true,
+  "independent_fresh_open_performed_by_grader": false,
+  "score": 8.1,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "status": "PASS",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Raw Purdue BuildingShapesZip4 feature FID 651 identifies FSTE / First Street Towers Eastern at 1230 1st Street.",
+        "Independent 0.10 m raster overlay from raw EPSG:4326 source and candidate outline gives IoU 0.9934; candidate area from the fresh-open record is 1304.58 m\u00b2.",
+        "Top-down candidate render follows the irregular GIS footprint, including its setbacks and projecting wings."
+      ],
+      "finding": "Identity and structural footprint are strongly verified against Purdue's directly identified GIS feature."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Candidate structural wall bounds in the fresh-open record agree with Purdue GIS bounds to 4 decimal places in the repository's local XY conversion.",
+        "Independent raster comparison reports 0.9934 IoU at 0.10 m sampling."
+      ],
+      "finding": "The plan orientation, dimensions, and local campus placement match the GIS outline. The documented transform is an approximation, not a surveyed control network."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.1,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS FID 651 reports six levels; the asset contains six floor plates and repeated residential stories.",
+        "The Purdue 2009 complex photograph visibly supports peaked gable roof language, but does not identify the East wing; exact 23.25 m top height, floor spacing, and two FSTE gables remain estimates."
+      ],
+      "finding": "Floor count is supported and the roof interpretation is plausible at complex level. Height and the East tower's precise roof configuration are not independently verified."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "The reviewed exterior render shows warm red-brown brick, pale window frames, blue-gray glazing, floor-course bands, and modeled gable forms consistent with the complex-level Purdue reference.",
+        "A glazed representative entry is modeled on the 1st Street-facing edge; the model evidence documents its distance and alignment to OSM way 5332639. The exact East-wing door and facade bay rhythm are not sourced."
+      ],
+      "finding": "Material and residential-window language are plausible. The modeled entry and facade rhythm remain interpreted because available imagery is not East-wing-specific."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Exact candidate SHA-256: 7f92c5bb44c8a5d1f1f5aee145003234e0fb3dd9e6e77dc18fb2dee84dfe94ae; expected revision hash matches: True.",
+        "Candidate's fresh-open record confirms scene and named export collection, 87 mesh objects, 13 materials, and no external texture files or validation errors.",
+        "Building evidence includes source snapshots, footprint diagnostics, exterior and entry views, and a six-level 22-room schematic interior cutaway with uncertainty disclosed."
+      ],
+      "finding": "The saved collection and materials are self-contained according to the fresh-open validation record, and evidence is complete for a schematic asset. The shared manifest still has stale object-count and height metadata and needs coordinator reconciliation before integration."
+    }
+  ],
+  "evidence": {
+    "source": "Purdue University BuildingShapesZip4 FeatureServer layer 0, FID 651; EPSG:4326 snapshot retrieved 2026-10-26",
+    "source_attributes": {
+      "BLDG_ABBR": "FSTE",
+      "BUILDING_N": "First Street Towers Eastern",
+      "ADDRESS": "1230 1st Street",
+      "NUM_LEVELS": 6,
+      "CountOfFLO": 6
+    },
+    "independent_footprint_comparison": {
+      "resolution_m": 0.1,
+      "intersection_over_union": 0.9933827523160367,
+      "intersection_area_m2": 1298.5400000000002,
+      "union_area_m2": 1307.1900000000003,
+      "source_raster_area_m2": 1300.9800000000002,
+      "candidate_raster_area_m2": 1304.75
+    },
+    "candidate_reported_exact_footprint_metrics": {
+      "source_area_m2": 1302.265173,
+      "candidate_wall_area_m2": 1304.578488,
+      "area_delta_m2": 2.313315,
+      "area_delta_percent": 0.177638,
+      "iou": 0.992455,
+      "symmetric_hausdorff_m": 0.253702,
+      "source_bounds": [
+        -875.1398107402381,
+        -316.92984917675403,
+        -837.8525879941669,
+        -242.59013112092362
+      ],
+      "candidate_bounds": [
+        -875.13983154,
+        -316.92984009,
+        -837.8526001,
+        -242.59013367
+      ]
+    },
+    "visuals_reviewed": [
+      "audit/first_street_towers_east/fste_exterior_candidate.png",
+      "audit/first_street_towers_east/fste_entry_detail_candidate.png",
+      "audit/first_street_towers_east/fste_footprint_top_candidate.png",
+      "audit/first_street_towers_east/fste_interior_cutaway_candidate.png",
+      "audit/first_street_towers_east/fste_interior_cluster_detail_candidate.png",
+      "audit/first_street_towers_east/sources/purdue_first_street_towers_2009_exterior.jpg"
+    ],
+    "fresh_open_probe": "audit/first_street_towers_east/validation_fresh_open.json"
+  },
+  "findings": [
+    "Purdue GIS independently verifies identity, orientation, plan dimensions, and near-exact structural footprint.",
+    "The source supports six floors and complex-level brick/window/gable design language; East-specific height, entry, facade schedule, and roof details remain estimated.",
+    "The modeled interior is clearly schematic, uses the published 22-room cluster and private-bath program, and does not claim an as-built plan.",
+    "The fresh-open validation is from the candidate evidence; the grader environment has no Blender executable, so a second independent Blender reopen could not be run.",
+    "The shared manifest remains stale for this revision and should be corrected by the coordinator before master integration."
+  ],
+  "methodology": "Exact asset hash check; raw GIS GeoJSON read directly and transformed with the project local approximation; independently rasterized polygon overlap at 0.10 m resolution from GIS ring and candidate fresh-open structural outline; reviewed candidate renders and original Purdue complex-level photo. The candidate's exact Shapely metrics and Blender reopen record were treated as corroborating evidence, not as the independent comparison. No builder score was used."
+}

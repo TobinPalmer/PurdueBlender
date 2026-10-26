@@ -1,0 +1,111 @@
+{
+  "revision": "independent revision grade 2",
+  "candidate_path": "modular/buildings/massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend",
+  "candidate_sha256": "C5EB7B496C8D5A2D70F57C9054ED65C58768F14E434195E64CE51C67F7FBC98A",
+  "sha256_verified": true,
+  "fresh_open_verified": true,
+  "score": 8.1,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passes": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "OSM way 301923755 is named FarmHouse Fraternity, Purdue Chapter and tagged 1028 State Street; local source photographs show the FarmHouse identity and red-brick residence.",
+        "Building mesh and evidence follow the 17-vertex OSM outline (27.67 x 38.99 m, 740.24 m\u00b2) and the stated campus-coordinate conversion.",
+        "Purdue/Tippecanoe GIS FID 778 remains a conflicting geometry (~29.90 x 21.85 m, 636.39 m\u00b2; 0.536 AABB IoU); source record exposes no date."
+      ],
+      "findings": [
+        "OSM is a defensible named source for the modeled outline, but its disagreement with Purdue GIS is unresolved. No historical/partial chronology claim is supported."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Candidate remains in the campus XY frame and its structural polygon uses the named OSM geometry; overall mesh bounds include porch/roof projections separately.",
+        "Fresh-open mesh bounds are x [-506.737,-476.337], y [-342.083,-299.657], z [-1.35,19.23] m.",
+        "OSM and original massing extents support placement; there is no independent survey control, and GIS conflict limits dimensional certainty."
+      ],
+      "findings": [
+        "Placement and plan scale are well-supported but not surveyed."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "KJG Architecture states the project is four stories over a basement; revised facade has four above-grade window rows and evidence records four modeled gabled roof wings.",
+        "Saved Purdue/KJG photos show steep intersecting gables; revised fresh-open render now has multiple steep intersecting roof forms rather than the previous broad shallow roof.",
+        "No measured roof/eave elevation is supplied; the model labels total height and ridges as estimated."
+      ],
+      "findings": [
+        "Roof intersections remain simplified and the roof-plan render reads as overlapping masses, but the main roof silhouette is substantially closer to photo evidence. Height remains estimated."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": [
+        "Fresh-open render confirms a long covered porch with seven ground-connected columns, masonry plinths, and a readable FarmHouse sign; the separate corner entry portico remains.",
+        "KJG exterior reference images show a long covered courtyard arcade, a prominent white-columned gabled entry marked 1028, red brick, limestone bands/quoins, and divided-light windows. The revision now represents the long arcade and signage as well as the entry gable."
+      ],
+      "findings": [
+        "The long porch is modeled as a straight single facade run; reference imagery shows it turning around the courtyard, so its full plan extent is not captured. The main gabled entry still reads smaller and less integrated than the source entrance. Facade openings and quoins remain repetitive/schematic."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Blender 5.2.3 freshly opened the exact candidate and rendered its saved camera without errors. Expected asset collection and one joined mesh are present.",
+        "Asset has one mesh, 13,469 vertices, 8,147 polygons; no external linked libraries or image files. Ten procedural materials retain portability.",
+        "Building evidence includes source providers, URLs, IDs, dates/CRS/method/uncertainties and revision measurements; exterior, porch/sign, and roof-plan review renders are saved."
+      ],
+      "findings": [
+        "Materials remain procedural rather than photo-mapped, and the interior is a schematic plan representation rather than a detailed furnished interior."
+      ]
+    }
+  ],
+  "source_conflict": {
+    "OSM_way_301923755": {
+      "bounds_xy_m": [
+        -506.4974091356661,
+        -338.88297599950647,
+        -478.8237089967033,
+        -299.8968319999449
+      ],
+      "area_m2": 740.2436644972913
+    },
+    "Purdue_Tippecanoe_FID_778": {
+      "bounds_xy_m": [
+        -508.37669847431505,
+        -331.24119297156767,
+        -478.4804126050594,
+        -309.3890019593937
+      ],
+      "area_m2": 636.3878981889284,
+      "aabb_iou_vs_osm": 0.536366164927635,
+      "resolution": "Unresolved; no exposed source date or survey. No chronology/partial-footprint assertion."
+    },
+    "resolution": "Grade accepts the named OSM way as a defensible basis while retaining the Purdue GIS discrepancy as unresolved."
+  },
+  "overall_findings": [
+    "The revision addresses the prior high-impact issues: four facade rows now match the published four-story program, roof planes form intersecting steep gables, and a long seven-column porch and readable FarmHouse sign are present.",
+    "Passes narrowly at 8.1/10; remaining uncertainty concerns survey-level footprint/height and the porch/corner-entry geometry."
+  ],
+  "reference_files": [
+    "audit/farmhouse_fraternity_purdue_chapter/sources/kjg_farmhouse_1.jpg",
+    "audit/farmhouse_fraternity_purdue_chapter/sources/kjg_farmhouse_2.jpg",
+    "audit/farmhouse_fraternity_purdue_chapter/sources/purdue_farmhouse_front.jpg",
+    "audit/farmhouse_fraternity_purdue_chapter/sources/purdue_farmhouse_aerial.jpg"
+  ],
+  "fresh_open_render": "audit/farmhouse_fraternity_purdue_chapter_independent_grade/revision2_fresh_open_render.png"
+}

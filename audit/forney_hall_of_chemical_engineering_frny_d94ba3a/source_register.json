@@ -1,0 +1,88 @@
+{
+  "building": "Forney Hall of Chemical Engineering (FRNY)",
+  "stable_asset_id": "massing_forney_hall_of_chemical_engineering_frny_d94ba3a",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University Libraries Maps Web ArcGIS REST service",
+      "title": "Purdue/campus MapServer, layer 0 PuGeoDB.DBO.CampusBuilding, FRNY query",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0/query?where=ABBR%3D%27FRNY%27&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "feature_identifier": "OBJECTID 12 (2002-2004 addition/current whole-building footprint entry); OBJECTID 485 (1938-1939 historical footprint entry)",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Service page retrieved 2026-10-26; feature fields report construction 2002-2004 for OBJECTID 12, ChangeYear 2018. Historical OBJECTID 485 records construction 1938-1939.",
+      "snapshot": "purdue_gis_current.json",
+      "source_crs": "EPSG:4326 output (service layer is Web Mercator 102100)",
+      "measurement_method": "Converted longitude/latitude to the repository's approximate campus XY frame using X=(lon+86.9137)*111412.84*cos(40.4274 degrees), Y=(lat-40.4274)*111040. Simplified the current FRNY ring with closed-loop Ramer-Douglas-Peucker at 0.4 m for model edges.",
+      "uncertainty": "ArcGIS Shape.STArea is reported as 6261.056 m2, while the returned polygon area after the project local conversion is about 3621.9 m2. This discrepancy is retained and not treated as resolved. GIS level count is 6, while source photographs visually suggest four principal upper stories plus a low base; roof height is not measured."
+    },
+    {
+      "provider": "OpenStreetMap contributors, OSM API",
+      "title": "Forney Hall OSM way 117146497 full geometry",
+      "url": "https://api.openstreetmap.org/api/0.6/way/117146497/full.json",
+      "feature_identifier": "way 117146497, version 9, changeset 122822455",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Last OSM way edit 2022-06-25T00:59:48Z",
+      "snapshot": "openstreetmap_way_117146497_full.json",
+      "source_crs": "WGS 84 longitude/latitude (EPSG:4326)",
+      "measurement_method": "Transformed the closed footprint into the repository's approximate local campus coordinates using the conversion above; compared with Purdue OBJECTID 12 by polygon intersection and symmetric difference.",
+      "uncertainty": "Contributed building outline, not a survey. The outline overlaps Purdue's current GIS geometry by 3578.3 m2 of 3621.9 m2 (98.8% of local GIS area); OSM geometry area is about 3718.0 m2."
+    },
+    {
+      "provider": "Purdue University Events Calendar",
+      "title": "Forney Hall of Chemical Engineering photo used as street-level facade reference",
+      "page_url": "https://events.purdue.edu/forney_hall_of_chemical_engineering",
+      "image_url": "https://localist-images.azureedge.net/photos/40101243390676/card%402x/f375d9c71d6f6774cfc402e29f461543de8dced5.jpg",
+      "feature_identifier": "photo 40101243390676",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Photograph capture date not shown in accessible page metadata.",
+      "snapshot": "official_exterior.jpg",
+      "source_crs": "Not geospatially tagged in accessible metadata",
+      "measurement_method": "Visual comparison only; photo supports red brick, pale stone horizontal courses and window rhythm. It is not used to infer dimensions or orientation.",
+      "uncertainty": "Image capture date and camera azimuth are not published with the image snapshot."
+    },
+    {
+      "provider": "Purdue University College of Engineering",
+      "title": "Building Excitement \u2013 Forney Hall facilities description",
+      "url": "https://engineering.purdue.edu/Engr/AboutUs/Facilities",
+      "feature_identifier": "Forney Hall of Chemical Engineering section",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page retrieved 2026-10-26; facility completion/dedication information states 2004 / occupancy January 2005.",
+      "snapshot": "Source page accessible as online text (not separately downloaded).",
+      "source_crs": "Not applicable",
+      "measurement_method": "Used the page's description for addition, 200-seat auditorium, classrooms and laboratory uses; used the stated five-story addition as context, not a precise whole-building storey count.",
+      "uncertainty": "Page lists 44,687 assignable square feet for the new addition, while other Purdue publications describe roughly 96,000-100,000 square feet; area figures are not used as footprint measurements."
+    },
+    {
+      "provider": "Purdue University Davidson School of Chemical Engineering",
+      "title": "School history and seminar page",
+      "urls": [
+        "https://engineering.purdue.edu/ChE/about/history",
+        "https://engineering.purdue.edu/ChE/aboutus/seminars"
+      ],
+      "feature_identifier": "Forney Hall; official seminar photo page",
+      "retrieval_date": "2026-10-26",
+      "source_date": "History page states 1939 original construction and 2004 renaming/expansion. Seminar photo capture date is not published.",
+      "source_crs": "Not applicable",
+      "measurement_method": "Contextual support for the 1939 original wing and interior seminar/lecture use; internal room positions and layout are intentionally marked schematic.",
+      "uncertainty": "The direct seminar image URL returned a Purdue HTML block page during snapshot capture; therefore it was not embedded as a local image. The internal plan remains schematic."
+    },
+    {
+      "provider": "Google Maps",
+      "title": "Forney Hall place record and map view",
+      "url": "https://www.google.com/maps/place/Forney+Hall+of+Chemical+Engineering/@40.4294512,-86.9165346,17z/data=!3m1!4b1!4m6!3m5!1s0x8812e2b2e7bca98f:0xd7f0e0aa24b2c211!8m2!3d40.4294512!4d-86.9139597!16s%2Fg%2F1td260zx",
+      "feature_identifier": "Google Maps place listing, 480 Stadium Mall Drive",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Place map queried 2026-10-26; base-map labels and footprint context visible. No imagery date displayed.",
+      "source_crs": "WGS 84 coordinates in place record",
+      "measurement_method": "Read-only map context checked the building orientation and neighbor relationships. A Street View panorama request at the building point returned 'No Street View imagery available here.'",
+      "uncertainty": "No Street View panorama was available at the sampled building coordinate. The place map is not used for dimensional measurements."
+    }
+  ],
+  "model_scope": {
+    "footprint": "Purdue GIS OBJECTID 12 polygon; simplified to 0.4 m tolerance; map location fixed in campus coordinates.",
+    "height": "Estimated 13.9 m wall top and 14.35 m coping. The source's legacy R field is 46 ft (~14.02 m), used only as a roof-height estimate.",
+    "exterior": "Street-photo-informed brick and limestone palette, window cadence and entrance portal; decorative detail is inferred, not surveyed.",
+    "interior": "Clearly labeled schematic: Henson Atrium/distillation-tower feature, lab benches and 200-seat auditorium. Interior position and room plans are not georeferenced.",
+    "street_imagery_limit": "The Google Street View point query at 40.42952,-86.91401 returned no panorama. The Purdue photo has no capture date in accessible metadata; imagery recency is therefore not independently verified."
+  }
+}

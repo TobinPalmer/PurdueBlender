@@ -22,6 +22,14 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Earhart Hall | [massing_earhart_hall_0f14209.blend](buildings/massing_earhart_hall_0f14209.blend) | 25 |
 | Electrical Engineering | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4169 |
 | Elliott Hall Of Music | [elliott_hall_of_music.blend](buildings/elliott_hall_of_music.blend) | 137 |
+| Fairway Cooperative | [massing_fairway_cooperative_2101b77.blend](buildings/massing_fairway_cooperative_2101b77.blend) | 571 |
+| Family Express | [massing_family_express_a07e1fb.blend](buildings/massing_family_express_a07e1fb.blend) | 503 |
+| Faith West Community Center | [massing_faith_west_community_center_84aa829.blend](buildings/massing_faith_west_community_center_84aa829.blend) | 34 |
+| Forney Hall of Chemical Engineering | [massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend](buildings/massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend) | 21 |
+| FarmHouse Fraternity, Purdue Chapter | [massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend](buildings/massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend) | 1 |
+| First Street Towers, Central (FSTC) | [massing_first_street_towers_central_fstc_929924d.blend](buildings/massing_first_street_towers_central_fstc_929924d.blend) | 1 |
+| First Street Towers, East (FSTE) | [massing_first_street_towers_east_fste_c9b22d3.blend](buildings/massing_first_street_towers_east_fste_c9b22d3.blend) | 87 |
+| First Street Towers, West (FSTW) | [massing_first_street_towers_west_fstw_b6c3bbe.blend](buildings/massing_first_street_towers_west_fstw_b6c3bbe.blend) | 32 |
 | Felix Haas Hall | [felix_haas_hall.blend](buildings/felix_haas_hall.blend) | 879 |
 | Frieda Parker Hall | [frieda_parker_hall.blend](buildings/frieda_parker_hall.blend) | 539 |
 | Hansen Life Sciences | [hansen_life_sciences.blend](buildings/hansen_life_sciences.blend) | 816 |

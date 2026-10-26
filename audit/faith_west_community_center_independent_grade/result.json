@@ -1,0 +1,176 @@
+{
+  "building_id": "massing_faith_west_community_center_84aa829",
+  "candidate_sha256": "d0fa26385ce4a813a18a82e9948a88a641b25753014434a0292b900096eec820",
+  "expected_sha256": "d0fa26385ce4a813a18a82e9948a88a641b25753014434a0292b900096eec820",
+  "sha_verified": true,
+  "score": 8.0,
+  "max_score": 10,
+  "status": "PASS",
+  "pass_threshold": 8,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "The named Faith West Community Center matches the saved OSM way 743763888 at 1920 Northwestern Avenue. Independently projected the raw 39-vertex closed ring using the documented campus transform and compared it to ground-level vertices of the podium wall mesh: max OSM-vertex-to-model-vertex distance 0.0250 m; max model-vertex-to-OSM-segment distance 0.0251 m. Projected source polygon area 3102.36 m² agrees with the preserved footprint record.",
+      "findings": []
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "The projected source bounds and structural podium bounds agree within 0.025 m on X and Y. Vertex order preserves the mapped orientation and irregular multi-wing footprint. The complete decorative model extends beyond the structural bounds because of porches/balconies; the OSM footprint is the reference for the podium shell.",
+      "findings": [
+        "The source is volunteered OpenStreetMap geometry transformed with the project's local approximation, not a surveyed wall line."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.1,
+      "max_score": 2,
+      "evidence": "KJG Architecture and Titan Construction imagery support a four-story residential wing, lower community podium, dark sloped roofs, and rooftop services. The model has a podium plus three upper wall levels, three gable pieces, flat community-wing roof panels, and HVAC objects. Its 15.93 m ridge/overall height and story elevations are modeled estimates; the roof deck reads as one broad continuous plane and the source images show more articulated intersecting roof slopes.",
+      "findings": [
+        "No measured elevation or as-built roof-height drawing was found.",
+        "The modeled roof silhouette is simplified compared with the multiple joined roof slopes visible in the aerial and exterior references."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": "The model includes the dark brick community podium, lighter upper housing levels, repeated windows and frames, selective balconies, cafe patio/umbrellas, entry and community/fitness/preschool signs. The references support these broad features. The candidate render is noticeably more uniform and less articulated than the KJG and Faith Church photos; the curved public-facing podium facade and roof-to-wall transitions are simplified, and the material mapping appears banded in places.",
+      "findings": [
+        "Exterior finish and entrance geometry need refinement to match the source photos more closely."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "The exact SHA was independently verified and freshly opened in Blender 5.2.3. Expected scene and collection contain 34 named objects (31 meshes and 3 text objects), 17 materials, no empty mesh objects, no linked libraries, no unpacked external images, and no cameras/lights in the export collection. The evidence folder preserves raw OSM data, provider/source metadata, several project/reference photos, a footprint plot, and exterior/interior renders.",
+      "findings": [
+        "Interior partitions and furniture are schematic and follow the published program; no source-backed floor plan is available. The saved cutaway preview is separated/exploded and does not clearly show a coherent occupied interior."
+      ]
+    }
+  ],
+  "evidence": {
+    "fresh_open": {
+      "fresh_process_opened": true,
+      "blender_version": "5.2.3 LTS",
+      "scene": "Building_massing_faith_west_community_center_84aa829",
+      "collection": "Asset_massing_faith_west_community_center_84aa829",
+      "object_count": 34,
+      "object_types": {
+        "FONT": 3,
+        "MESH": 31
+      },
+      "faithwest_material_count": 17,
+      "source_asset_bounds_world_m": [
+        [
+          -701.8318481445312,
+          2138.94873046875,
+          0.0
+        ],
+        [
+          -634.4000244140625,
+          2225.978759765625,
+          15.930000305175781
+        ]
+      ],
+      "linked_libraries": [],
+      "unpacked_external_images": [],
+      "pass": true
+    },
+    "gis_comparison": {
+      "source_provider": "OpenStreetMap via Overpass API",
+      "feature_id": 743763888,
+      "name": "Faith West Community Center",
+      "source_crs": "WGS84/EPSG:4326",
+      "project_transform": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0",
+      "unique_ring_vertices": 39,
+      "source_area_m2": 3102.364312446094,
+      "max_source_vertex_to_model_vertex_m": 0.025030536009444267,
+      "max_model_vertex_to_source_segment_m": 0.025119020102534324,
+      "max_structural_bounds_delta_m": 0.02498614079922845
+    },
+    "sources": [
+      {
+        "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates",
+        "provider": "ArcGIS World Geocoding Service",
+        "retrieval_date": "2026-10-26",
+        "result_address": "1920 Northwestern Ave, West Lafayette, Indiana, 47906",
+        "score": 100,
+        "coordinates_lon_lat": [
+          -86.92152523758,
+          40.447113411709
+        ]
+      },
+      {
+        "url": "https://overpass-api.de/api/interpreter",
+        "provider": "OpenStreetMap via Overpass API",
+        "retrieval_date": "2026-10-26",
+        "feature": "way 743763888 Faith West Community Center",
+        "source_crs": "WGS84 / EPSG:4326",
+        "measurement_method": "40-point named building outline transformed with project local geographic approximation; footprint includes all mapped wings",
+        "uncertainty": "OSM outline is volunteer mapping and not a surveyed wall line; positional and facade detail need independent imagery comparison."
+      },
+      {
+        "url": "https://www.kjgarchitecture.com/portfolio-1/faith-west-community-center",
+        "provider": "KJG Architecture project page",
+        "retrieval_date": "2026-10-26",
+        "source_image": "kjg_exterior_01.jpg",
+        "supports": "four-story mixed-use facility; ground-level community uses, upper student housing; brick and light siding, repetitive windows, balconies, charcoal pitched roof"
+      },
+      {
+        "url": "https://www.titanconstructionservices.com/commercial-projects/faith-west-community-center",
+        "provider": "Titan Construction project page",
+        "retrieval_date": "2026-10-26",
+        "source_image": "faithwest_aerial.jpg",
+        "supports": "large irregular wings, curved fitness frontage, courtyard/patio, four levels, rooftop service elements, 92,410 square foot project; structural steel/masonry/stud construction"
+      },
+      {
+        "url": "https://www.faithlafayette.org/church/locations/west-campus",
+        "provider": "Faith Church",
+        "retrieval_date": "2026-10-26",
+        "source_image": "faithwest_campus_photo.jpg",
+        "supports": "front entrance, brick podium, yellow sign lettering, entrance glazing, patio"
+      },
+      {
+        "url": "https://www.faithlafayette.org/church/about/history",
+        "provider": "Faith Church history page",
+        "retrieval_date": "2026-10-26",
+        "supports": "facility program includes community sports gymnasium, preschool/childcare, meeting areas, fitness center, cafe, covenant housing for 119"
+      },
+      {
+        "url": "https://www.faithlafayette.org/community-centers/west/virtual-tour",
+        "provider": "Faith Church virtual tour",
+        "retrieval_date": "2026-10-26",
+        "supports": "common areas, fitness and gym, outdoor seating, walking trail, playground, patio"
+      },
+      {
+        "url": "https://www.wbaa.org/business-economy-and-consumer-affairs/2013-08-06/faith-west-opens-in-west-lafayette",
+        "provider": "WBAA public radio, 2013 report",
+        "retrieval_date": "2026-10-26",
+        "supports": "opening in 2013, residents, fitness center, preschool, restaurant and leased cafe details"
+      }
+    ],
+    "review_renders": [
+      "../faith_west_community_center/faith_west_exterior_preview.png",
+      "../faith_west_community_center/faith_west_interior_cutaway.png"
+    ],
+    "reviewed_reference_images": [
+      "../faith_west_community_center/kjg_exterior_01.jpg",
+      "../faith_west_community_center/faithwest_aerial.jpg",
+      "../faith_west_community_center/faithwest_campus_photo.jpg"
+    ]
+  },
+  "findings": [
+    "The source is volunteered OpenStreetMap geometry transformed with the project's local approximation, not a surveyed wall line.",
+    "No measured elevation or as-built roof-height drawing was found.",
+    "The modeled roof silhouette is simplified compared with the multiple joined roof slopes visible in the aerial and exterior references.",
+    "Exterior finish and entrance geometry need refinement to match the source photos more closely.",
+    "Interior partitions and furniture are schematic and follow the published program; no source-backed floor plan is available. The saved cutaway preview is separated/exploded and does not clearly show a coherent occupied interior."
+  ],
+  "evaluator": "Independent reviewer; source-backed GIS comparison and direct fresh-open/render inspection.",
+  "pass": true
+}

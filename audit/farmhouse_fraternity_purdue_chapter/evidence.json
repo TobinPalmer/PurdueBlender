@@ -1,0 +1,142 @@
+{
+  "building_id": "massing_farmhouse_fraternity_purdue_chapter_0b8908b",
+  "asset_path": "modular/buildings/massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend",
+  "retrieved_on": "2026-10-26",
+  "sources": [
+    {
+      "provider": "OpenStreetMap / Overpass",
+      "url": "https://overpass-api.de/api/interpreter",
+      "feature": "way 301923755, name=FarmHouse Fraternity, Purdue Chapter; addr 1028 State Street",
+      "snapshot": "audit/farmhouse_fraternity_purdue_chapter/sources/overpass_buildings_near_farmhouse_2026-10-26.json",
+      "source_date": "OSM base timestamp 2026-07-24T11:04:51Z",
+      "crs": "WGS84 EPSG:4326",
+      "method": "OSM polygon vertices converted to campus local XY using project approximation",
+      "uncertainty": "crowdsourced outline; source is building-tagged but not a survey"
+    },
+    {
+      "provider": "Purdue University GIS / Tippecanoe County ArcGIS",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D778&outFields=*&returnGeometry=true&f=pjson",
+      "feature": "FID 778, BLDG_ABBR SOFH, BUILDING_N Farmhouse",
+      "snapshot": "audit/farmhouse_fraternity_purdue_chapter/sources/tippecanoe_buildings_feature_778_2026-10-26.json",
+      "source_date": "not exposed in feature attributes",
+      "crs": "EPSG:3857 Web Mercator (inferred from coordinate magnitude and service)",
+      "method": "converted ring vertices from Web Mercator to WGS84, then project campus-local XY",
+      "uncertainty": "conflicting footprint with different orientation and extent from OSM; evidence does not establish which outline is current or authoritative"
+    },
+    {
+      "provider": "KJG Architecture",
+      "url": "https://www.kjgarchitecture.com/portfolio-1/farmhouse-fraternity",
+      "feature": "FarmHouse Fraternity Purdue project page",
+      "source_date": "2016 project as stated on page",
+      "snapshot": "audit/farmhouse_fraternity_purdue_chapter/sources/kjg_farmhouse_1.jpg; kjg_farmhouse_2.jpg; kjg_farmhouse_3.jpg; kjg_farmhouse_4.jpg",
+      "crs": "not applicable",
+      "method": "visual facade/roof/interior-form reference; four stories above basement per project description",
+      "uncertainty": "photos are architectural project imagery, not dimensioned elevations"
+    },
+    {
+      "provider": "Shiel Sexton",
+      "url": "https://www.shielsexton.com/project/purdue-university-projects",
+      "feature": "Purdue FarmHouse new construction project",
+      "source_date": "not shown",
+      "snapshot": "web page only",
+      "crs": "not applicable",
+      "method": "published facility area and four-story / 56-bed program description",
+      "uncertainty": "project page gives gross floor area, not geodetic footprint"
+    },
+    {
+      "provider": "FarmHouse Fraternity Purdue Chapter",
+      "url": "https://www.purduefarmhousefraternity.com/",
+      "feature": "Official chapter site and address/contact page",
+      "source_date": "not shown",
+      "snapshot": "audit/farmhouse_fraternity_purdue_chapter/sources/purdue_farmhouse_aerial.jpg; purdue_farmhouse_front.jpg",
+      "crs": "not applicable",
+      "method": "identity/address and visual entrance/brick/roof corroboration",
+      "uncertainty": "website photography is not dimensioned"
+    }
+  ],
+  "geometry": {
+    "footprint_vertex_count": 17,
+    "area_m2_from_osm": 740.2436644972913,
+    "structural_footprint_bounds_xy_m": [
+      -506.4974091356661,
+      -338.88297599950647,
+      -478.8237089967033,
+      -299.8968319999449
+    ],
+    "structural_footprint_width_depth_m": [
+      27.673700138962772,
+      38.98614399956159
+    ],
+    "asset_geometry_bounds_xyz_m": [
+      [
+        -506.7373962402344,
+        -476.33734130859375
+      ],
+      [
+        -342.0829772949219,
+        -299.6568298339844
+      ],
+      [
+        -1.350000023841858,
+        19.229999542236328
+      ]
+    ],
+    "above_grade_window_rows": 4,
+    "roof_ridge_heights_m": [
+      19.15,
+      17.95,
+      18.3,
+      17.35
+    ],
+    "roof_pitch_estimates_degrees": [
+      33.4,
+      39.4,
+      38.4,
+      48.4
+    ],
+    "vertical_bounds_m": [
+      -1.350000023841858,
+      19.229999542236328
+    ],
+    "height_status": "estimated from published four-story-over-basement program and project imagery; no measured elevation found",
+    "asset_bounds_note": "Overall mesh bounds include porch columns, projecting canopies, roof eaves, and entrance steps; use the OSM structural footprint bounds for wall-plan comparison."
+  },
+  "comparison": {
+    "osm_bounds_xy_m": [
+      -506.4974091356661,
+      -338.88297599950647,
+      -478.8237089967033,
+      -299.8968319999449
+    ],
+    "tippecanoe_fid_778_bounds_xy_m": [
+      -508.37669847431505,
+      -331.24119297156767,
+      -478.4804126050594,
+      -309.3890019593937
+    ],
+    "tippecanoe_polygon_area_m2": 636.3878981889284,
+    "osm_aabb_iou_vs_tippecanoe": 0.536366164927635,
+    "bbox_center_offset_m": 1.2024148753188644,
+    "original_massing_mesh_dimensions_m": [
+      27.674,
+      38.986,
+      16.0
+    ],
+    "original_manifest_bounds_xy_m": [
+      -506.4974060059,
+      -478.8236999512,
+      -338.8829650879,
+      -299.8968200684
+    ],
+    "finding": "OSM bounds align with the original massing placement and its 27.674 x 38.986 m dimensions within rounding; Purdue GIS FID 778 is about 29.90 x 21.85 m, with 0.536 axis-aligned bbox IoU. This conflict remains unresolved: no source establishes which footprint is current or authoritative; an as-built survey or stronger dated source is needed."
+  },
+  "model_edits": [
+    "Replaced cuboid mass with the named OSM outline and a separate basement plinth / four above-grade story brick shell",
+    "Reduced facade fenestration from five rows to four above-grade window rows; added limestone sills/jambs, story bands, quoin blocks, and divided-light sash",
+    "Replaced the broad shallow roof with four steep intersecting gabled wing roofs, based on KJG and Purdue photo references; ridge/valley geometry is estimated",
+    "Added a long white columned south porch with ground-connected supports and stone walking surface, plus a separate white gabled corner entrance portico, oak double entry, address plaque, and readable FarmHouse / Purdue Chapter sign",
+    "Added schematic basement and four-level floor plates, corridor/room partitions, elevator core, dining counter, chapter table",
+    "Added procedural running-bond brick UVs, stone, roof, glass, plaster, wood, and metal materials",
+    "Saved full exterior, porch/name-sign close, and roof-plan review renders"
+  ]
+}

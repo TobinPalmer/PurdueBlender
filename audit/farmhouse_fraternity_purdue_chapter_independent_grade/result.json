@@ -1,0 +1,106 @@
+{
+  "candidate_path": "modular/buildings/massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend",
+  "candidate_sha256": "FA28A3E30FA5BB437026309CF1915EB5A30F928814A2BB9CEE3B9AADA8E83C04",
+  "sha256_verified": true,
+  "fresh_open_verified": true,
+  "evaluator": "Independent evaluator; direct Blender reopen/probe plus source snapshot and image inspection",
+  "score": 6.7,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passes": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "OSM way 301923755 is explicitly named FarmHouse Fraternity, Purdue Chapter and tagged with 1028 State Street; the local source image shows the FarmHouse name sign and brick building.",
+        "The candidate building mesh bounds align with the OSM polygon bounds at approximately 27.67 x 38.99 m; the dedicated build script uses that exact outline.",
+        "Purdue/Tippecanoe GIS FID 778 is a conflicting authoritative geometry: approximately 29.90 x 21.85 m with 636.39 m\u00b2 area vs OSM 740.24 m\u00b2 and only 0.536 axis-aligned bounding-box IoU. The candidate record acknowledges this mismatch."
+      ],
+      "findings": [
+        "The conflict cannot be dated or resolved from available evidence: FID 778 exposes no source date and neither source supplies a survey. Calling the GIS polygon historical/partial is not established. Identity is strong, footprint source choice is defensible but uncertain."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "The asset is in campus-coordinate XY (not local-origin coordinates), matching the simple-massing compatibility rule.",
+        "Its base footprint is built directly from the OSM way\u2019s campus-local transform and overall mesh bounds include the expected entry/roof projections.",
+        "Source conflict leaves exact surveyed dimensions unverified; no independent geodetic control or measured elevation was found."
+      ],
+      "findings": [
+        "Plan placement is supported by the OSM named geometry and aligns with the project\u2019s original massing location, but this is not an independent survey check."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 0.8,
+      "max_score": 2,
+      "evidence": [
+        "KJG project information supports four stories over a basement; the asset correctly labels overall height as estimated, not measured.",
+        "The saved render shows five repeated window rows above the basement/plinth, while the documented program says four stories above basement; build script defines five window bands and five floor-plate levels.",
+        "The main roof spans nearly the entire footprint at about 3.1 m rise over half-span about 12.5 m, roughly 14 degrees, and is a single simple gable. Source aerial/project photos show steep, intersecting roof wings and clear gables."
+      ],
+      "findings": [
+        "The floor/window stack appears one story too tall relative to the four-story source description. Main roof silhouette and pitch materially disagree with source photos; roof intersections/wings are omitted. Absolute eave/ridge heights remain unverified estimates."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.8,
+      "max_score": 2,
+      "evidence": [
+        "Brick, limestone bands/quoins, divided sash, white eaves, and an entry portico are recognizable elements visible in the saved source photographs.",
+        "Fresh-open render has a repeated brick facade and window grid with material differentiation.",
+        "Reference entrance photos show a large white columned porch/portico extending along the facade and around the corner, along with a prominent FarmHouse name sign; the candidate has only a small corner canopy/entry and no sign.",
+        "Source photos show materially steeper, articulated roof edges and detailed gable treatment, while the model\u2019s top reads nearly flat from the saved review camera."
+      ],
+      "findings": [
+        "Main entry scale and porch footprint are underrepresented; signature FarmHouse sign absent. Window rhythm is generic and appears five rows. Corner quoins are isolated small blocks, unlike the substantial repeated limestone blocks in photos."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Fresh-open in Blender 5.2 succeeds. Scene is Building_massing_farmhouse_fraternity_purdue_chapter_0b8908b; expected Asset_ collection exists.",
+        "The asset is compacted into one mesh object with 8,469 vertices and 4,009 polygons; no linked libraries, external images, or missing texture dependencies. Ten procedural material definitions are present.",
+        "Building evidence records source providers, URLs, feature IDs, retrieval date, CRS/method, source uncertainty, geometry, and edits."
+      ],
+      "findings": [
+        "All surface materials are procedural with no image textures; this is portable but provides no mapped photographic facade detail. The interior is only schematic and is not visible in the exterior-only saved review."
+      ]
+    }
+  ],
+  "source_conflict": {
+    "OSM_way_301923755": {
+      "bounds_xy_m": [
+        -506.4974091356661,
+        -338.88297599950647,
+        -478.8237089967033,
+        -299.8968319999449
+      ],
+      "area_m2": 740.2436644972913,
+      "aabb_iou_vs_gis": 0.536366164927635
+    },
+    "Purdue_Tippecanoe_FID_778": {
+      "bounds_xy_m": [
+        -508.37669847431505,
+        -331.24119297156767,
+        -478.4804126050594,
+        -309.3890019593937
+      ],
+      "area_m2": 636.3878981889284,
+      "aabb_iou_vs_osm": 0.536366164927635,
+      "resolution": "Unresolved: source date is absent from FID 778 record; available photos corroborate a substantial complex but cannot adjudicate its surveyed outline. Do not label FID 778 historical/partial as a fact."
+    }
+  },
+  "overall_findings": [
+    "Strong building identity and evidence-supported placement, but the building fails the 8/10 threshold due to the floor-count/window-row mismatch, roof silhouette, and missing principal porch/signature entrance details.",
+    "The OSM outline is a reasonable current-model choice because it is named and matches the original campus massing extents, but the source conflict remains open."
+  ]
+}

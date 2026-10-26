@@ -1,0 +1,94 @@
+{
+  "identity": "Faith West Community Center, 1920 Northwestern Ave, West Lafayette, IN",
+  "sources": [
+    {
+      "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates",
+      "provider": "ArcGIS World Geocoding Service",
+      "retrieval_date": "2026-10-26",
+      "result_address": "1920 Northwestern Ave, West Lafayette, Indiana, 47906",
+      "score": 100,
+      "coordinates_lon_lat": [
+        -86.92152523758,
+        40.447113411709
+      ]
+    },
+    {
+      "url": "https://overpass-api.de/api/interpreter",
+      "provider": "OpenStreetMap via Overpass API",
+      "retrieval_date": "2026-10-26",
+      "feature": "way 743763888 Faith West Community Center",
+      "source_crs": "WGS84 / EPSG:4326",
+      "measurement_method": "40-point named building outline transformed with project local geographic approximation; footprint includes all mapped wings",
+      "uncertainty": "OSM outline is volunteer mapping and not a surveyed wall line; positional and facade detail need independent imagery comparison."
+    },
+    {
+      "url": "https://www.kjgarchitecture.com/portfolio-1/faith-west-community-center",
+      "provider": "KJG Architecture project page",
+      "retrieval_date": "2026-10-26",
+      "source_image": "kjg_exterior_01.jpg",
+      "supports": "four-story mixed-use facility; ground-level community uses, upper student housing; brick and light siding, repetitive windows, balconies, charcoal pitched roof"
+    },
+    {
+      "url": "https://www.titanconstructionservices.com/commercial-projects/faith-west-community-center",
+      "provider": "Titan Construction project page",
+      "retrieval_date": "2026-10-26",
+      "source_image": "faithwest_aerial.jpg",
+      "supports": "large irregular wings, curved fitness frontage, courtyard/patio, four levels, rooftop service elements, 92,410 square foot project; structural steel/masonry/stud construction"
+    },
+    {
+      "url": "https://www.faithlafayette.org/church/locations/west-campus",
+      "provider": "Faith Church",
+      "retrieval_date": "2026-10-26",
+      "source_image": "faithwest_campus_photo.jpg",
+      "supports": "front entrance, brick podium, yellow sign lettering, entrance glazing, patio"
+    },
+    {
+      "url": "https://www.faithlafayette.org/church/about/history",
+      "provider": "Faith Church history page",
+      "retrieval_date": "2026-10-26",
+      "supports": "facility program includes community sports gymnasium, preschool/childcare, meeting areas, fitness center, cafe, covenant housing for 119"
+    },
+    {
+      "url": "https://www.faithlafayette.org/community-centers/west/virtual-tour",
+      "provider": "Faith Church virtual tour",
+      "retrieval_date": "2026-10-26",
+      "supports": "common areas, fitness and gym, outdoor seating, walking trail, playground, patio"
+    },
+    {
+      "url": "https://www.wbaa.org/business-economy-and-consumer-affairs/2013-08-06/faith-west-opens-in-west-lafayette",
+      "provider": "WBAA public radio, 2013 report",
+      "retrieval_date": "2026-10-26",
+      "supports": "opening in 2013, residents, fitness center, preschool, restaurant and leased cafe details"
+    }
+  ],
+  "geometry": {
+    "projection": "Project local geographic approximation: X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0",
+    "source_outline_vertices": 40,
+    "source_outline_area_m2": 3102.364312446094,
+    "bounds_world_m": [
+      [
+        -701.6720525014293,
+        2140.0295040000833,
+        0
+      ],
+      [
+        -635.3501600440067,
+        2225.8190079998258,
+        15.929999999999998
+      ]
+    ],
+    "model_to_OSM_footprint": "outline used directly, transformed from OSM WGS84 coordinates",
+    "vertical_dimensions": "Estimated from published four-story description and project massing record; not measured elevation data"
+  },
+  "design_notes": {
+    "base": "Full source outline as one-story red-brick community podium",
+    "upper": "Clipped footprint for three residential stories, tan lower cladding, cream top story, repetitive windows and selective balconies",
+    "roof": "Gray pitched roof approximated as three wing roof ridges; roof lines estimated from KJG and Titan aerial imagery",
+    "interior": "Gym court, representative apartment room layout and cafe patio furniture are schematic, not a measured plan"
+  },
+  "uncertainty": [
+    "No as-built elevation or roof height drawing was found.",
+    "The exact residential floor plate shape and allocation of uses are inferred from aerial imagery and public project descriptions.",
+    "OSM floor outline is volunteer-mapped and may include parapets, canopies, or minor footprint simplification."
+  ]
+}

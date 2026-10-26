@@ -2,7 +2,7 @@
 
 This project tracks detailed campus models separately from the remaining massing-only building assets. A detailed model counts as finished here only when its latest recorded independent grader score is at least 8/10. Scores describe the reviewed model revision; ungraded assets are explicitly marked.
 
-## Detailed models: status and latest grader score (84 buildings)
+## Detailed models: status and latest grader score (92 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -38,9 +38,17 @@ This project tracks detailed campus models separately from the remaining massing
 | Electrical Engineering | [electrical_engineering.blend](modular/buildings/electrical_engineering.blend) | In progress | 5.2/10 | Rohan |
 | Earhart Hall | [massing_earhart_hall_0f14209.blend](modular/buildings/massing_earhart_hall_0f14209.blend) | Finished | [8.0/10](audit/earhart_hall_independent_grade/result.json) | — |
 | Elliott Hall Of Music | [elliott_hall_of_music.blend](modular/buildings/elliott_hall_of_music.blend) | In progress | 7.1/10 | Rohan |
+| Fairway Cooperative | [massing_fairway_cooperative_2101b77.blend](modular/buildings/massing_fairway_cooperative_2101b77.blend) | Finished | [8.1/10](audit/fairway_cooperative_independent_grade/result.json) | — |
+| Family Express | [massing_family_express_a07e1fb.blend](modular/buildings/massing_family_express_a07e1fb.blend) | Finished | [8.4/10](audit/family_express_independent_grade/result.json) | — |
+| FarmHouse Fraternity, Purdue Chapter | [massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend](modular/buildings/massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend) | Finished | [8.1/10](audit/farmhouse_fraternity_purdue_chapter_independent_grade/revision2_result.json) | — |
+| Faith West Community Center | [massing_faith_west_community_center_84aa829.blend](modular/buildings/massing_faith_west_community_center_84aa829.blend) | Finished | [8.0/10](audit/faith_west_community_center_independent_grade/result.json) | — |
 | Felix Haas Hall | [felix_haas_hall.blend](modular/buildings/felix_haas_hall.blend) | In progress | 7.4/10 | Rohan |
+| First Street Towers, Central (FSTC) | [massing_first_street_towers_central_fstc_929924d.blend](modular/buildings/massing_first_street_towers_central_fstc_929924d.blend) | Finished | [8.4/10](audit/first_street_towers_central_fstc_independent_grade/result.json) | — |
+| First Street Towers, East (FSTE) | [massing_first_street_towers_east_fste_c9b22d3.blend](modular/buildings/massing_first_street_towers_east_fste_c9b22d3.blend) | Finished | [8.1/10](audit/first_street_towers_east_independent_grade_r2/result.json) | — |
+| First Street Towers, West (FSTW) | [massing_first_street_towers_west_fstw_b6c3bbe.blend](modular/buildings/massing_first_street_towers_west_fstw_b6c3bbe.blend) | Finished | [8.7/10](audit/first_street_towers_west_fstw_independent_grade/grade_result.json) | — |
 | Flex Lab | [flex_lab.blend](modular/buildings/flex_lab.blend) | In progress | 7.5/10 | Rohan |
 | Ford Dining Court | [ford_dining_court.blend](modular/buildings/ford_dining_court.blend) | In progress | 6.8/10 | Rohan |
+| Forney Hall of Chemical Engineering | [massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend](modular/buildings/massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend) | Finished | [8.2/10](audit/forney_hall_of_chemical_engineering_frny_d94ba3a_independent_grade/result.json) | — |
 | France A. Córdova Recreational Sports Center | [massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend](modular/buildings/massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend) | Finished | 8.1/10 | — |
 | Frieda Parker Hall | [frieda_parker_hall.blend](modular/buildings/frieda_parker_hall.blend) | Needs independent grade | Not graded | Rohan |
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](modular/buildings/hall_for_discovery_and_learning_research.blend) | In progress | 7.3/10 | Rohan |
@@ -91,9 +99,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (136 total)
+## Unfinished buildings (128 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 12 buildings, Rohan 15 buildings, Tobin 1 buildings, Arjav 10 buildings, Brady 98 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 12 buildings, Rohan 15 buildings, Tobin 1 buildings, Arjav 10 buildings, Brady 90 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -116,7 +124,7 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
 
-### Buildings that still have only massing models (120)
+### Buildings that still have only massing models (112)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -134,14 +142,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | crosswalk commons | [`massing_crosswalk_commons_7c01ecd.blend`](modular/buildings/massing_crosswalk_commons_7c01ecd.blend) | Rossen |
 | delta tau delta | [`massing_delta_tau_delta_e06b0b5.blend`](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Rossen |
 | dudley | [`dudley_hall.blend`](modular/buildings/dudley_hall.blend) | Rossen |
-| fairway cooperative | [`massing_fairway_cooperative_2101b77.blend`](modular/buildings/massing_fairway_cooperative_2101b77.blend) | Brady |
-| faith west community center | [`massing_faith_west_community_center_84aa829.blend`](modular/buildings/massing_faith_west_community_center_84aa829.blend) | Brady |
-| family express | [`massing_family_express_a07e1fb.blend`](modular/buildings/massing_family_express_a07e1fb.blend) | Brady |
-| farmhouse fraternity purdue chapter | [`massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend`](modular/buildings/massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend) | Brady |
-| first street towers central fstc | [`massing_first_street_towers_central_fstc_929924d.blend`](modular/buildings/massing_first_street_towers_central_fstc_929924d.blend) | Brady |
-| first street towers east fste | [`massing_first_street_towers_east_fste_c9b22d3.blend`](modular/buildings/massing_first_street_towers_east_fste_c9b22d3.blend) | Brady |
-| first street towers west fstw | [`massing_first_street_towers_west_fstw_b6c3bbe.blend`](modular/buildings/massing_first_street_towers_west_fstw_b6c3bbe.blend) | Brady |
-| forney hall of chemical engineering frny | [`massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend`](modular/buildings/massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend) | Brady |
 | fuse | [`massing_fuse_39cf4b5.blend`](modular/buildings/massing_fuse_39cf4b5.blend) | Brady |
 | granite student living | [`massing_granite_student_living_3732ce0.blend`](modular/buildings/massing_granite_student_living_3732ce0.blend) | Brady |
 | grant street parking garage pgg | [`massing_grant_street_parking_garage_pgg_f46c894.blend`](modular/buildings/massing_grant_street_parking_garage_pgg_f46c894.blend) | Brady |

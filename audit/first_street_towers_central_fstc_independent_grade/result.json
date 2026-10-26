@@ -1,0 +1,110 @@
+{
+  "evaluator": "independent evidence-based rubric evaluator",
+  "candidate": "modular/buildings/massing_first_street_towers_central_fstc_929924d.blend",
+  "candidate_sha256": "8c8930544d517f572d4ea1e405cb0a35abc028cd40835ed9706ee7f8f1dd5b76",
+  "expected_sha256": "8c8930544d517f572d4ea1e405cb0a35abc028cd40835ed9706ee7f8f1dd5b76",
+  "sha_verified": true,
+  "fresh_open_verified": true,
+  "score": 8.4,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue University BuildingShapes FeatureServer FID 664 names First Street Towers Central (FSTC), address evidence also identifies 1250 First Street.",
+        "Candidate base ring vs official GIS outer ring: IoU 0.99747; centroid offset 0.015 m; Hausdorff distance 0.950 m; maximum bounds delta 0.000 m.",
+        "Candidate stable ID, asset filename, scene, collection, object name, and evidence record consistently identify FSTC."
+      ],
+      "findings": [
+        "The official GIS outline is a strong and well-matched source for the modeled structural footprint.",
+        "Source conflict: OSM way 283274998 has the same name/address but covers about 1,720 m\u00b2 versus about 1,481 m\u00b2 for the official GIS polygon; candidate-to-OSM IoU is 0.848 and Hausdorff distance is 4.24 m. The model transparently follows the official GIS source rather than blending the incompatible outlines."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Fresh-open candidate plan bounds match official GIS bounds within 0.000 m; centroid offset is 0.015 m.",
+        "All comparisons use the project\u2019s documented local campus conversion and campus-coordinate massing convention.",
+        "Structural base outline has the same detailed non-rectangular plan shape as GIS, rather than relying on an overall decorative-object bounding box."
+      ],
+      "findings": [
+        "Footprint position, orientation, and plan scale are independently verified to sub-meter tolerance; dimensional confidence is high within the stated approximate projection."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "Official GIS attributes NUM_LEVELS=7 and CountOfFLO=7 support seven modeled levels.",
+        "Fresh-open mesh reaches 24.68 m in the model; the evidence record estimates 3.42 m floor-to-floor and about 23.94 m to roof.",
+        "Preview shows a largely flat roof and low parapet."
+      ],
+      "findings": [
+        "Total height, story height, and roof silhouette are not corroborated by a surveyed elevation or architectural section.",
+        "GIS Extrution=46 is documented in the source but its units and meaning are unknown; treating that value as a verified height would be unsupported."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": [
+        "The Purdue 2019 exterior photo shows red-brown brick, pale stone entrance surround, a broad arched entry, glazing, and First Street Towers lettering.",
+        "Candidate preview models brick bond, repetitive windows, pale horizontal trim, glazed entry, an arched pale entry surround, and building lettering.",
+        "The official residences page supports residential use and shared cluster lounge/dinette/kitchen; the candidate includes a schematic interior with partitions and furnishings."
+      ],
+      "findings": [
+        "Facade vocabulary and materials match available photo evidence, but the elevation is largely repetitive and generic outside the entrance.",
+        "In the overall candidate view, the entry arch and sign read smaller and less prominent than in the available close reference photo; no full elevation or entrance survey was found to settle exact proportions.",
+        "Interior is illustrative rather than plan-accurate; the available lounge photo validates use and furnishings only, not layout."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Fresh-opened in Blender 5.2.3 LTS; expected scene/collection present and collection contains one named mesh (50756 vertices, 37487 faces).",
+        "Nine named materials and UV layers ['Brick bond | metric UV', 'UVMap'] are present; materials are procedural and the blend has no external images, libraries, or mesh external data.",
+        "Building-specific evidence contains raw GIS/OSM/page/photo snapshots, dimensions, uncertainty, source URLs and retrieval date, plus a preview and fresh-open validation."
+      ],
+      "findings": [
+        "Standalone asset is portable and follows the expected modular scene/collection naming. Minor deduction because the interior remains schematic and the saved evidence has only a single exterior preview rather than dedicated interior/roof views."
+      ]
+    }
+  ],
+  "evidence": {
+    "fresh_open_probe": "audit/first_street_towers_central_fstc_independent_grade/candidate_probe.json",
+    "building_evidence": "audit/first_street_towers_central_fstc_929924d/evidence.json",
+    "official_gis_feature": "Purdue BuildingShapes FID 664, snapshot retrieved 2026-10-26",
+    "conflicting_osm_feature": "OSM way 283274998, snapshot timestamp 2026-10-26T07:42:01Z",
+    "geometry_metrics": {
+      "candidate_vs_gis_iou": 0.997466,
+      "candidate_vs_gis_hausdorff_m": 0.9505,
+      "candidate_vs_gis_centroid_error_m": 0.0146,
+      "candidate_vs_gis_bounds_max_delta_m": 0.0,
+      "candidate_vs_osm_iou": 0.84761,
+      "candidate_vs_osm_hausdorff_m": 4.2446,
+      "candidate_footprint_area_m2": 1484.933,
+      "official_gis_footprint_area_m2": 1481.18,
+      "osm_footprint_area_m2": 1720.343
+    },
+    "visual_sources": [
+      "audit/first_street_towers_central_fstc_929924d/fstc_exterior_preview.png",
+      "audit/first_street_towers_central_fstc_929924d/sources/purdue_first_street_towers_exterior_BrianTedeschi2_2019.jpg",
+      "audit/first_street_towers_central_fstc_929924d/sources/purdue_first_street_towers_interior_lounge_fall2022.jpg"
+    ]
+  },
+  "findings": [
+    "Exact requested SHA was independently recomputed and matched; fresh-open report confirms this exact asset opened in Blender 5.2.3 LTS.",
+    "Strongest verified feature is the official-GIS-matched footprint. Height/roof and fine facade proportions remain estimated because source elevations/plans are unavailable.",
+    "OSM and official GIS disagree materially on the footprint; the candidate clearly adopts official GIS FID 664 and retains the OSM discrepancy as uncertainty."
+  ]
+}

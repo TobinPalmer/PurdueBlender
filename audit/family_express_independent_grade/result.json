@@ -1,0 +1,195 @@
+{
+  "building_id": "massing_family_express_a07e1fb",
+  "candidate_sha256": "a2614d71fa198caf826a495aca4a0076c4ec3a82756e43b195d0e779481953d2",
+  "expected_sha256": "a2614d71fa198caf826a495aca4a0076c4ec3a82756e43b195d0e779481953d2",
+  "fresh_process_opened": true,
+  "blender_version": "5.2.3 LTS",
+  "scene": "Building_massing_family_express_a07e1fb",
+  "collection": "Asset_massing_family_express_a07e1fb",
+  "object_count": 503,
+  "mesh_count": 500,
+  "font_count": 3,
+  "material_count": 19,
+  "materials": [
+    "FEXP black structural steel",
+    "FEXP canopy white coated metal",
+    "FEXP charcoal gray roof shingles",
+    "FEXP forecourt concrete",
+    "FEXP illuminated digital display",
+    "FEXP interior tile",
+    "FEXP pump porcelain white",
+    "FEXP reflective storefront glass",
+    "FEXP safety bollard yellow",
+    "FEXP shelving gray",
+    "FEXP warm interior finish",
+    "FEXP warm red-brown brick",
+    "FEXP warm white trim",
+    "Family Express cyan blue",
+    "Family Express light blue stripes",
+    "Retail package blue",
+    "Retail package cream",
+    "Retail package green",
+    "Retail package red"
+  ],
+  "linked_libraries": [],
+  "unpacked_external_images": [],
+  "world_bounds_m": [
+    [
+      -592.7498779296875,
+      -551.31640625
+    ],
+    [
+      1984.93701171875,
+      2021.104248046875
+    ],
+    [
+      0.0,
+      8.399999618530273
+    ]
+  ],
+  "source": {
+    "provider": "OpenStreetMap contributors",
+    "feature_type": "way",
+    "feature_id": 374563309,
+    "name": "Family Express",
+    "address": "1812 Northwestern Avenue",
+    "crs": "EPSG:4326",
+    "source_timestamp": "2024-01-17T03:51:07Z",
+    "project_transform": "project local approximation"
+  },
+  "footprint": {
+    "source_vertex_count": 9,
+    "model_vertex_count": 9,
+    "max_source_to_model_boundary_m": 5.190201216051257e-05,
+    "max_model_to_source_boundary_m": 3.840491765447115e-05,
+    "source_area_m2": 380.32244437222835,
+    "model_area_m2": 380.3215803988278,
+    "area_delta_fraction": 2.271686599989258e-06,
+    "model_ring_xy_m": [
+      [
+        -576.9241333007812,
+        2007.6142578125
+      ],
+      [
+        -569.4014282226562,
+        1995.0001220703125
+      ],
+      [
+        -567.8324584960938,
+        1995.932861328125
+      ],
+      [
+        -565.8987426757812,
+        1992.70166015625
+      ],
+      [
+        -552.4478149414062,
+        2000.6632080078125
+      ],
+      [
+        -563.9481201171875,
+        2019.9285888671875
+      ],
+      [
+        -569.9781494140625,
+        2016.3531494140625
+      ],
+      [
+        -578.0181884765625,
+        2011.5894775390625
+      ],
+      [
+        -575.9742431640625,
+        2008.1695556640625
+      ]
+    ],
+    "source_ring_xy_m": [
+      [
+        -576.9241348344543,
+        2007.6143039998692
+      ],
+      [
+        -569.4014342456569,
+        1995.0001599999996
+      ],
+      [
+        -567.8324380677374,
+        1995.9328959998538
+      ],
+      [
+        -565.8987562930685,
+        1992.7016319999643
+      ],
+      [
+        -552.447794471927,
+        2000.6631999999036
+      ],
+      [
+        -563.9481123973683,
+        2019.9286400001802
+      ],
+      [
+        -569.9781463534897,
+        2016.353152000213
+      ],
+      [
+        -578.0181916283183,
+        2011.589535999774
+      ],
+      [
+        -575.9742560675486,
+        2008.1695040000454
+      ]
+    ]
+  },
+  "grade": {
+    "score": 8.4,
+    "max_score": 10,
+    "pass_threshold": 8,
+    "status": "PASS",
+    "criteria": [
+      {
+        "name": "Correct identity and source-backed footprint",
+        "score": 2.0,
+        "max_score": 2,
+        "evidence": "The official Family Express FAQ lists its Purdue location at 1812 Northwestern Avenue. OSM way 374563309 independently carries the same name/address and retail/convenience tags. This fresh-open evaluator projected its raw nine-vertex ring and compared it to the floor slab ring in both directions."
+      },
+      {
+        "name": "Position, orientation, and scale/dimensions",
+        "score": 2.0,
+        "max_score": 2,
+        "evidence": "The model keeps the campus-coordinate footprint in the expected master location. The evaluator compares every projected source edge against the model floor-ring edges; bounds and plan orientation agree within the local project transform. This confirms agreement with the volunteered outline, not a surveyed wall location."
+      },
+      {
+        "name": "Evidence-backed height, floors, and roof form",
+        "score": 1.2,
+        "max_score": 2,
+        "evidence": "The address-associated MapQuest exterior result depicts a one-story brick retail store with a low charcoal hip roof. The model has one occupied level and a charcoal hipped roof. Exact eave/ridge heights and roof pitch are estimated; neither OSM nor the source photograph supplies measured elevations."
+      },
+      {
+        "name": "Facade, entrances, and distinctive architecture",
+        "score": 1.5,
+        "max_score": 2,
+        "evidence": "The model has red-brown brick, a broad glazed storefront/double entry, pale fascia, blue Family Express signs, and a separate white canopy with black supports and six dispenser assemblies, matching the location-associated exterior reference at a broad architectural level. The simplified pumps, signage, absent site paving/vehicles, and low visual detail reduce correspondence."
+      },
+      {
+        "name": "Modular export, portability, and complete evidence",
+        "score": 1.7,
+        "max_score": 2,
+        "evidence": "Fresh Blender open confirms the expected scene/collection, 503 objects (500 meshes and 3 fonts), 19 materials, and no linked libraries or unpacked images. OSM raw snapshot, source metadata, address evidence, builder script, and exterior/top/interior previews are present. The interior is schematic, roof height and canopy placement are estimated, and the matched image itself is cited by URL rather than preserved locally."
+      }
+    ],
+    "evidence": [
+      "Official Family Express FAQ: https://familyexpress.zendesk.com/hc/en-us/articles/360018927412-Where-are-the-Pet-Washes-located-what-are-the-hours-offered (Purdue store address).",
+      "OSM source snapshot: audit/family_express/sources/osm_way_374563309_2026-10-26.json; building way 374563309, last edited 2024-01-17.",
+      "Address-associated MapQuest exterior listing/image: https://www.mapquest.com/us/indiana/family-express-378696207 and https://a.mktgcdn.com/p/Q6dWIcLGo--LQCuVeEj1P7dUFpVXkHcROmqnBpKyuqE/2048x1362.jpg (retrieved in image search; date not exposed).",
+      "Independent fresh-open visual inspection: audit/family_express/exterior_preview.png, top_preview.png, and interior_cutaway_preview.png."
+    ],
+    "findings": [
+      "Roof pitch, eave/ridge height, canopy geolocation/dimensions, and pump placement remain estimates.",
+      "The interior shows representative store fixtures but has no source floor plan.",
+      "The preview uses a uniform gray background; the saved exterior view does not include site paving, approach roads, vehicles, or surrounding campus context.",
+      "The OSM outline is community mapped, not a surveyed wall footprint."
+    ]
+  }
+}
