@@ -1,0 +1,188 @@
+{
+  "asset_id": "massing_cary_quadrangle_south_cqs_7ee2283",
+  "asset_path": "modular/buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend",
+  "grade_date": "2026-10-26",
+  "grader": "Independent audit agent",
+  "score": 8.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 2,
+      "score": 2.0,
+      "evidence": [
+        "Raw Purdue BuildingShapesZip4 feature FID=653 reports BLDG_ABBR=CQS and BUILDING_N='Franklin Levering Cary Quadrangle (South)'.",
+        "The feature polygon has 340 source ring vertices, projects to 3331.1 m\u00b2, and is the correct Cary Quadrangle South record (1016 W Stadium Avenue).",
+        "Model custom properties identify the same FID and CQS abbreviation; the closed GIS outline forms the expected courtyard plan."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation and scale/dimensions",
+      "points": 2,
+      "score": 2.0,
+      "evidence": [
+        "Independently reopened asset has 289 ground-plane outline vertices; recomputed GIS versus model ground bounds differ by at most 0.0000 m.",
+        "The geometry remains in campus coordinates with zero location/rotation, unit scale, and identity collection offset; source outline orientation is preserved."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Evidence-backed height, floors and roof form",
+      "points": 2,
+      "score": 1.0,
+      "evidence": [
+        "The 2023 Indiana orthophoto supports the courtyard and roof-wing plan; the building-specific 2006 photograph provides only unscaled height proportions.",
+        "Reopened mesh height is 22.12 m. Purdue GIS records NUM_LEVELS=7 and CountOfFLO=7, but neither proves above-grade storeys; Extrution=54 has undocumented units."
+      ],
+      "findings": [
+        "Overall height and tower dimensions remain estimates; no measured elevation or dependable floor count was found.",
+        "Roof pitch, ridge heights, and gable segmentation are inferred from aerial appearance rather than a measured roof plan/elevation."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances and distinctive architecture",
+      "points": 2,
+      "score": 1.5,
+      "evidence": [
+        "Direct inspection of the saved Wikimedia Commons photograph, identified as Cary Quadrangle's South building looking north, confirms red brick, pale stone vertical bands, paired crenellated entrance towers, central projecting bay, and pointed central arch.",
+        "The rendered saved south view includes these distinctive elements and a coherent window rhythm."
+      ],
+      "findings": [
+        "The photograph is perspective-based and does not measure fa\u00e7ade width or detail sizes; windows and bay spacing are schematic, and the model's tower/storey proportions remain approximate."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability and complete evidence",
+      "points": 2,
+      "score": 2.0,
+      "evidence": [
+        "Independent Blender 4.5.15 reopen finds scene 'Building_massing_cary_quadrangle_south_cqs_7ee2283', collection 'Asset_massing_cary_quadrangle_south_cqs_7ee2283', and exactly one expected mesh object.",
+        "Object has 1396 vertices, 1478 polygons, 0 modifiers, 0 boundary edges, and 0 nonmanifold edges.",
+        "Asset uses named materials without external texture dependencies; raw GIS, service metadata, orthophoto, building-specific photo, source record, builder evidence, and reopen validation are present.",
+        "Evidence inventory checks: {'raw_gis_snapshot_present': True, 'layer_metadata_snapshot_present': True, 'orthophoto_snapshot_present': True, 'building_specific_facade_photo_present': True, 'source_record_present': True, 'build_evidence_present': True, 'reopen_validation_present': True, 'portable_material_only_asset': True}"
+      ],
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "raw_source": "audit\\massing_cary_quadrangle_south_cqs_7ee2283\\sources\\purdue_building_shapes_fid653_cqs_2026-10-26.geojson",
+    "source_identity": {
+      "FID": 653,
+      "BLDG_ABBR": "CQS",
+      "BUILDING_N": "Franklin Levering Cary Quadrangle (South)",
+      "address": "1016 W Stadium Avenue"
+    },
+    "recomputed_source_bounds_m": [
+      [
+        -447.6234033325401,
+        -277.5605650247181
+      ],
+      [
+        477.30151838966776,
+        525.4642748965625
+      ]
+    ],
+    "recomputed_source_area_m2": 3331.06,
+    "saved_model_ground_bounds_m": [
+      [
+        -447.6234130859375,
+        -277.5605773925781
+      ],
+      [
+        477.301513671875,
+        525.4642944335938
+      ]
+    ],
+    "max_bounds_delta_m": 0.0,
+    "blender_probe": {
+      "opened_asset": "modular\\buildings\\massing_cary_quadrangle_south_cqs_7ee2283.blend",
+      "scene": "Building_massing_cary_quadrangle_south_cqs_7ee2283",
+      "collection": "Asset_massing_cary_quadrangle_south_cqs_7ee2283",
+      "collection_object_count": 1,
+      "object_name": "Cary Quadrangle South (CQS)",
+      "object_type": "MESH",
+      "stable_building_id": "massing_cary_quadrangle_south_cqs_7ee2283",
+      "source_feature_property": "Purdue BuildingShapesZip4 FID 653 / BLDG_ABBR CQS",
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "collection_instance_offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bounds_world_m": [
+        [
+          -447.973388671875,
+          -277.2105712890625
+        ],
+        [
+          476.9515075683594,
+          525.8142700195312
+        ],
+        [
+          0.0,
+          22.125
+        ]
+      ],
+      "ground_vertex_count": 289,
+      "ground_vertex_bounds_m": [
+        [
+          -447.6234130859375,
+          -277.5605773925781
+        ],
+        [
+          477.301513671875,
+          525.4642944335938
+        ]
+      ],
+      "vertex_count": 1396,
+      "polygon_count": 1478,
+      "material_names": [
+        "CQS red brick",
+        "CQS dark slate roof",
+        "CQS pale limestone trim",
+        "CQS recessed dark glazing",
+        "CQS foundation stone"
+      ],
+      "modifier_count": 0,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "custom_properties": {
+        "stable_building_id": "massing_cary_quadrangle_south_cqs_7ee2283",
+        "source_feature": "Purdue BuildingShapesZip4 FID 653 / BLDG_ABBR CQS",
+        "height_status": "Estimated from south elevation photograph; GIS Extrution=54 has undocumented units",
+        "floor_status": "GIS NUM_LEVELS=7; exact above-grade count is unverified",
+        "footprint_simplification_tolerance_m": 0.22
+      }
+    },
+    "direct_visual_review": [
+      "cqs_gis_footprint_orthophoto_overlay.png",
+      "cqs_top_preview.png",
+      "cqs_south_preview.png",
+      "sources/cary_south_photo_wikimedia_2006.jpg",
+      "sources/indiana_2023_orthophoto_cqs.jpg"
+    ]
+  },
+  "findings": [
+    "Overall height and tower dimensions remain estimates; no measured elevation or dependable floor count was found.",
+    "Roof pitch, ridge heights, and gable segmentation are inferred from aerial appearance rather than a measured roof plan/elevation.",
+    "The photograph is perspective-based and does not measure fa\u00e7ade width or detail sizes; windows and bay spacing are schematic, and the model's tower/storey proportions remain approximate."
+  ],
+  "grading_note": "Appearance is not used to validate dimensions. Roof and vertical geometry retain explicit uncertainty; the score gives partial credit for the direct photographic and aerial evidence without treating estimated height as measured."
+}
