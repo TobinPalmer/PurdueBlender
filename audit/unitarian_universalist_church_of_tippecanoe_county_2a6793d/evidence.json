@@ -1,0 +1,108 @@
+{
+  "building": "Unitarian Universalist Church of Tippecanoe County",
+  "asset_id": "massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d",
+  "status": "Independently graded pass: 8.5/10",
+  "asset": {
+    "path": "modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend",
+    "object": "Unitarian Universalist Church of Tippecanoe County",
+    "collection": "Asset_massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d",
+    "object_count": 1,
+    "reopen_check": "Reopened with Blender 5.2.3 and rebuilt from the saved asset; one exported mesh object retained.",
+    "mesh_vertices": 530,
+    "mesh_faces": 137,
+    "render": "preview_exterior.png"
+  },
+  "sources": [
+    {
+      "provider": "OpenStreetMap contributors, OSM API",
+      "url": "https://api.openstreetmap.org/api/0.6/way/860918857/full.json",
+      "feature_id": "way/860918857",
+      "feature_name": "Unitarian Universalist Church of Tippecanoe County",
+      "address": "333 Meridian Street, West Lafayette, Indiana 47906",
+      "retrieval_date": "2026-10-26",
+      "source_date": "2020-10-20T05:23:36Z (OSM way version 1)",
+      "source_crs": "EPSG:4326 (WGS 84)",
+      "snapshot": "sources/osm_way_860918857_full.json",
+      "use": "Closed 19-vertex footprint and location; identity and address tags match the assigned building.",
+      "measurement_method": "Projected every source vertex with the repository's documented latitude/longitude-to-campus-meters approximation. Structural wall outline uses all 19 distinct source vertices at Z=0; decorative roof overhangs are excluded from footprint comparison.",
+      "uncertainty": "OSM outline is a volunteered map feature, not a survey; positional/dimensional accuracy is unpublished."
+    },
+    {
+      "provider": "Unitarian Universalist Church of Tippecanoe County",
+      "url": "https://uuctc.org/about-us/our-stories/history/a-brief-history-of-the-unitarian-universalist-church-tippecanoe-county/",
+      "feature_id": "Congregation history page",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Not stated in saved page",
+      "source_crs": "Not applicable",
+      "snapshot": "sources/official_church_history.html",
+      "use": "Confirms the congregation's 333 Meridian location and acquisition of the former St. Andrew United Methodist building in 2007.",
+      "measurement_method": "Identity and historical context only; no dimensions inferred.",
+      "uncertainty": "The page does not supply architectural plans or elevations for the current facade."
+    },
+    {
+      "provider": "Wedding Spot",
+      "url": "https://cdn.wedding-spot.com/__sized__/images/venues/6917/Unitarian-Universalist-Church-of-Tippecanoe-County-West-Lafayette-IN-ad2ef781-c1f5-47b3-afb7-48110366baea-97450e389c42885476f1fbe9bc5bca5a.jpeg",
+      "feature_id": "Venue exterior photograph; sign reads Unitarian Universalist Church",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Not supplied",
+      "source_crs": "Not applicable",
+      "snapshot": "sources/wedding_spot_church_photo.jpg",
+      "use": "Visual reference for the west-facing gabled sanctuary, stained-glass window, paired entrance doors, pale exterior, and lower side wings.",
+      "measurement_method": "Qualitative facade reference only; no dimensions inferred.",
+      "uncertainty": "Photo date and camera perspective are unknown; obscured wall/roof sections cannot be measured."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not a surveyed CRS",
+    "source_geometry_status": "OSM footprint is outside Purdue's campus BuildingShapes feature coverage; no matching Purdue campus polygon was found."
+  },
+  "measurements": {
+    "source_outline_vertices": 19,
+    "source_bbox_xy_m": {
+      "min_x": 360.0464,
+      "max_x": 418.2605,
+      "min_y": 710.6449,
+      "max_y": 756.1935
+    },
+    "model_structural_footprint": "Follows the transformed OSM outline at Z=0.",
+    "modeled_sanctuary_eaves_m": 5.4,
+    "modeled_wing_eaves_m": 4.5,
+    "modeled_ridge_m": 10.2,
+    "vertical_status": "Estimates based on visual proportions only; no measured elevation or verified floor count located.",
+    "facade_orientation": "Gabled entrance facade modeled on the west-facing short frontage identified by the footprint and exterior photo; exact orientation-to-photograph registration is approximate."
+  },
+  "geometry_edits": [
+    "Replaced the starter massing mesh with perimeter walls following OSM way 860918857's 19 distinct footprint vertices.",
+    "Added a low roof over the footprint wings and an estimated west-facing sanctuary gable and roof.",
+    "Added a colored multi-panel stained-glass feature, paired glass entry doors, and repeated side-wing window bays guided by the exterior image.",
+    "Kept the existing file path, asset ID, object name, collection name, campus coordinate frame, and single-object exported collection."
+  ],
+  "uncertainties": [
+    "No surveyed footprint or measured dimensions were located; OSM is the available mapped outline.",
+    "All roof/eave heights and sanctuary depth are estimates from the exterior photograph and plan shape.",
+    "The OSM outline and photograph do not establish all facade openings, materials, or hidden elevations; side-window rhythm and details remain approximate.",
+    "This asset remains a campus-frame massing-library record in the manifest. Master integration requires Tobin-owned marker/library handling."
+  ],
+  "artifacts": {
+    "builder": "modular/buildings/build_massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.py",
+    "preview_script": "render_preview.py",
+    "preview": "preview_exterior.png",
+    "raw_sources": "sources/"
+  },
+  "independent_grade": {
+    "evaluator": "independent_grade_kyle.py",
+    "score": 8.5,
+    "findings": [
+      "Eave and ridge heights remain visual estimates; no measured elevations or reliable story count were located.",
+      "Facade materials, mullions, and side-window details are simplified from a single exterior photograph.",
+      "Tobin-owned master integration is pending; asset remains a campus-frame massing library."
+    ],
+    "max_score": 10,
+    "result": "independent_grade_kyle.json"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "building": "Smith Hall",
   "asset_id": "massing_smith_hall_4c2018f",
-  "status": "Official footprint shell and photo-referenced double-door limestone entry updated; independent grade pending",
+  "status": "Independently graded pass: 8.5/10",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -93,14 +93,24 @@
     "The official campus polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
     "The modeled 12 m height is estimated from the GIS three-level attribute; no measured elevation source was located.",
     "The official exterior image confirms material and entrance features but does not provide elevations or measured facade geometry.",
-    "Window spacing and entrance placement remain approximate and need independent visual review.",
-    "No independent grader has reviewed this revision."
+    "Window spacing and entrance placement remain approximate and need independent visual review."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
     "build_config": "build_config.json",
     "raw_source": "source_feature_249_raw.json",
     "preview_render_script": "render_preview.py",
-    "preview": "preview_detail.png"
+    "preview": "preview_detail.png",
+    "canonical_build_script": "modular/buildings/build_massing_smith_hall_4c2018f.py"
+  },
+  "independent_grade": {
+    "result": "independent_grade_kyle.json",
+    "score": 8.5,
+    "evaluator": "independent_grade_kyle.py",
+    "max_score": 10,
+    "findings": [
+      "12 m height is estimated from the three-level GIS attribute; the source Extrution value has no documented units.",
+      "Facade and roof dimensions remain approximate; official GIS is not survey-grade."
+    ]
   }
 }

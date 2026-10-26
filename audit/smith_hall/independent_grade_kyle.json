@@ -1,0 +1,73 @@
+{
+  "score": 8.5,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Raw Purdue BuildingShapes feature FID=249, code=SMTH, name=Smith Hall; 46 distinct official EPSG:4326 ring vertices. Builder rebuilds shell from that ring; GIS source is official but not survey-grade."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2,
+      "evidence": "Recomputed source-ring bbox via repository transform: [-307.75940550035415, -229.44217684119883, -484.47628505290595, -403.0344312639909]; saved mesh world XY bbox: [-307.9342346191406, -229.25146484375, -484.538818359375, -402.8434143066406]; edge deltas (m): [-0.17482911878647656, 0.1907119974488296, -0.06253330646904942, 0.19101695735025714]. Facade additions slightly extend the shell; exact footprint polygon shape cannot be reconstructed from aggregate bbox alone."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": "Source GIS reports 3 levels and an Extrution field of 26 with no published units. Mesh height is 12.00 m, set to 12 m by estimating from floors; no measured elevation or explicit roof-form source is recorded. Preview shows a flat roof."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.75,
+      "max_score": 2,
+      "evidence": "Preview shows red brick walls, three rows of repeated windows, a paired entrance with stone surround/lintel, and flat roof. Purdue Events source snapshot is an independent photo reference for brick facade and entrance, but window spacing and dimensions remain approximate."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Saved source library reopens in Blender; expected collection contains 1 object(s): ['Smith Hall']. Dedicated builder, config, raw GIS snapshot, captured Purdue Events page/photo, structured evidence, and preview are present. No external texture dependency is required."
+    }
+  ],
+  "evidence": {
+    "blend_path": "modular\\buildings\\massing_smith_hall_4c2018f.blend",
+    "render_path": "audit\\smith_hall\\preview_detail.png",
+    "reopened_in_blender": true,
+    "source_feature_id": 249,
+    "source_ring_vertices": 46,
+    "source_bbox_xy_m": [
+      -307.75940550035415,
+      -229.44217684119883,
+      -484.47628505290595,
+      -403.0344312639909
+    ],
+    "model_bbox_xy_m": [
+      -307.9342346191406,
+      -229.25146484375,
+      -484.538818359375,
+      -402.8434143066406
+    ],
+    "bbox_delta_m": [
+      -0.17482911878647656,
+      0.1907119974488296,
+      -0.06253330646904942,
+      0.19101695735025714
+    ],
+    "model_z_m": [
+      0.0,
+      12.0
+    ],
+    "collection_objects": [
+      "Smith Hall"
+    ]
+  },
+  "findings": [
+    "12 m is an estimate based on the three-level GIS attribute; the source's Extrution=26 is undocumented here and should be investigated before claiming a verified height.",
+    "No measured facade dimensions or roof plans were found; keep the roof, window rhythm, and entrance dimensions marked approximate.",
+    "The modeled shell follows the official feature ring; small bbox differences come from doorway/facade additions and the source is not a certified survey."
+  ]
+}

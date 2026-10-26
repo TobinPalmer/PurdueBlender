@@ -149,7 +149,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Mann Hall | [massing_mann_hall_2b4ebda.blend](modular/buildings/massing_mann_hall_2b4ebda.blend) | Finished | [8.2/10](audit/massing_mann_hall_2b4ebda/independent_grade/r1/grade.json) | — |
 ## Unfinished buildings (129 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 127 projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 129 known unfinished projects. Owners: Tobin 30, Rossen 30, Kyle 20, Rohan 28, Arjav 21, Brady 0. The 30/30/20 assignments cover 80 projects.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 127 projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 129 known unfinished projects. Owners: Tobin 30, Rossen 29, Kyle 22, Rohan 28, Arjav 20, Brady 0. The 30/29/22 assignments cover 81 projects.
 
 ### New West Lafayette construction projects (2)
 
@@ -160,7 +160,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (19)
+### Detailed models still in progress or awaiting a grade (21)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -182,11 +182,13 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Johnson Hall of Nursing (JNSN) | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | [9.3/10](audit/massing_johnson_hall_of_nursing_jnsn_823fca7/independent_grade/r2/result.json); awaiting master integration | Tobin |
 | Purdue Police Department (TERY) | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | [8.4/10](audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json); awaiting master integration | Rossen |
 | Stone Hall (STON) | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | [8.0/10](audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json); awaiting master integration | Rossen |
+| Smith Hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | [8.5/10](audit/smith_hall/independent_grade_kyle.json); awaiting master integration | Kyle |
 | Telecommunications Building (TEL) | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | [8.0/10](audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json); awaiting master integration | Rossen |
+| Unitarian Universalist Church of Tippecanoe County | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | [8.5/10](audit/unitarian_universalist_church_of_tippecanoe_county_2a6793d/independent_grade_kyle.json); awaiting master integration | Kyle |
 
 
 
-### Buildings that still have only massing models (51)
+### Buildings that still have only massing models (49)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -227,7 +229,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | shreve hall | [`massing_shreve_hall_06d270a.blend`](modular/buildings/massing_shreve_hall_06d270a.blend) | Arjav |
 | slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Arjav |
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
-| smith hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | Arjav |
 | student health center push | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Rossen |
 | the caretaker s cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | Rossen |
 | the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Rossen |
@@ -235,7 +236,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | the pete dye clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Rossen |
 | turf recreation exercise center | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Rossen |
 | union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Rossen |
-| unitarian universalist church of tippecanoe county | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | Rossen |
 
 | village bottle shoppe | [`massing_village_bottle_shoppe_6a17e23.blend`](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | Tobin |
 | von s | [`massing_von_s_d207e41.blend`](modular/buildings/massing_von_s_d207e41.blend) | Tobin |
@@ -477,7 +477,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 246 | Herrick Acoustics | [massing_house_117396597_757136b](modular/buildings/massing_house_117396597_757136b.blend)<br>[massing_house_117396616_13da063](modular/buildings/massing_house_117396616_13da063.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 247 | Herbert C. Brown Laboratory of Chemistry | [massing_brown_laboratory_of_chemistry_brwn_aed3885](modular/buildings/massing_brown_laboratory_of_chemistry_brwn_aed3885.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 248 | Terminal Building (Hangar No. 2) | — | No direct FID crosswalk; reconcile to a master asset or create one |
-| 249 | Smith Hall | [massing_smith_hall_4c2018f](modular/buildings/massing_smith_hall_4c2018f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 249 | Smith Hall | [massing_smith_hall_4c2018f](modular/buildings/massing_smith_hall_4c2018f.blend) | Direct FID 249 footprint rebuilt; independent grade 8.5/10; awaiting master integration; height remains estimated |
 | 250 | Philip E. Nelson Hall of Food Science | [massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 251 | Steven C. Beering Hall of Liberal Arts & Education | [beering_hall](modular/buildings/beering_hall.blend) | Duplicate BRNG massing record removed from the master; see `TODO.md` |
 | 252 | Hangar No. 4 | — | No direct FID crosswalk; reconcile to a master asset or create one |

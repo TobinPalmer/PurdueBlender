@@ -74,11 +74,13 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Rawls Hall | [rawls_hall.blend](buildings/rawls_hall.blend) | 761 |
 | Ross Ade | [ross_ade.blend](buildings/ross_ade.blend) | 2118 |
 | SAMARA (John and Catherine Christian House) | [massing_samara_f6b8e61.blend](buildings/massing_samara_f6b8e61.blend) | 1102 |
+| Smith Hall | [massing_smith_hall_4c2018f.blend](buildings/massing_smith_hall_4c2018f.blend) | 1 |
 | South Hall | [south_hall.blend](buildings/south_hall.blend) | 25 |
 | St. Thomas Aquinas Center | [massing_st_thomas_aquinas_5535390.blend](buildings/massing_st_thomas_aquinas_5535390.blend) | 1275 |
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](buildings/stanley_coulter_hall.blend) | 760 |
 | Stewart Center | [stewart_center.blend](buildings/stewart_center.blend) | 2764 |
 | Tarkington Hall | [tarkington_hall.blend](buildings/tarkington_hall.blend) | 1361 |
+| Unitarian Universalist Church of Tippecanoe County | [massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend](buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | 1 |
 | University Hall | [university_hall.blend](buildings/university_hall.blend) | 1377 |
 | Walc | [walc.blend](buildings/walc.blend) | 969 |
 | Wiley Hall | [wiley_hall.blend](buildings/wiley_hall.blend) | 398 |

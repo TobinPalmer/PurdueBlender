@@ -1,0 +1,89 @@
+{
+  "score": 8.5,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified",
+      "basis": "OSM way/860918857 tags match exact building name and 333 Meridian; closed 19-vertex outline; official congregation history HTML also supports address/history. Exact source snapshots present."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified within source geometry",
+      "basis": "Reprojected OSM source ring with repository transform and compared with unique mesh grade vertices; symmetric vertex-set Hausdorff error=0.000036 m; source bbox=[[360.0464578640481, 418.260456562517, 710.644895999792, 756.1935040003004]]; model bounds incl. overhangs=[360.04644775390625, 418.2604675292969, 710.6448974609375, 756.7434692382812]. This validates against OSM, not survey control."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "status": "partially estimated",
+      "basis": "Source photo supports a gabled sanctuary silhouette; no measured eave/ridge elevation or reliable floor count was found. Model world z=[0.0, 10.390000343322754] m, with evidence correctly labeling 4.5/5.4/10.2 m as visual estimates."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "photo-supported but simplified",
+      "basis": "The retained exterior photo visibly shows the gabled stained-glass frontage, paired doors, and low side wings. The mesh has stained-glass materials and window/facade faces; these features are represented, but modeled frontage/mullions/materials remain simplified and only one facade photo is available."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified as massing library",
+      "basis": "Saved asset reopened in Blender; expected object and export collection retained with one mesh; file name/ID stable; no image/texture objects required by the mesh; source snapshots, structured evidence, builder, and preview script/render all exist. Manifest kind remains campus-frame massing, matching current coordinate frame."
+    }
+  ],
+  "evidence": {
+    "identity_tags": {
+      "addr:city": "West Lafayette",
+      "addr:housenumber": "333",
+      "addr:postcode": "47906",
+      "addr:state": "IN",
+      "addr:street": "Meridian Street",
+      "building": "church",
+      "name": "Unitarian Universalist Church of Tippecanoe County"
+    },
+    "source_outline_vertex_count": 19,
+    "grade_vertex_count": 19,
+    "grade_vertex_symmetric_hausdorff_m": 3.60555127897327e-05,
+    "source_bbox_xy_m": [
+      360.0464578640481,
+      418.260456562517,
+      710.644895999792,
+      756.1935040003004
+    ],
+    "model_bounds_xy_m_including_overhangs": [
+      360.04644775390625,
+      418.2604675292969,
+      710.6448974609375,
+      756.7434692382812
+    ],
+    "model_z_bounds_m": [
+      0.0,
+      10.390000343322754
+    ],
+    "facade_feature_checks": {
+      "seven distinct colored stained_glass bays": true,
+      "paired glass entrance modeled": true,
+      "multiple facade/window faces exist": true,
+      "visual reference retained": true
+    },
+    "export_collection_objects": 1,
+    "mesh_vertices": 530,
+    "mesh_faces": 137,
+    "history_mentions_location": true,
+    "saved_asset_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend"
+  },
+  "findings": [
+    "Keep sanctuary, wing eave, and ridge heights labeled as estimates until measured elevations or plans are sourced.",
+    "The master file is Tobin-owned; placement/integration remains a coordinator task if this asset is promoted from its current massing library record."
+  ],
+  "evaluator": "Independent geometry/source review using Blender mesh vertex data and raw OSM feature 860918857",
+  "review_date": "2026-10-26",
+  "asset_path": "modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend"
+}
