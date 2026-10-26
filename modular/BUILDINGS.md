@@ -45,11 +45,13 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | St. Thomas Aquinas Center | [massing_st_thomas_aquinas_5535390.blend](buildings/massing_st_thomas_aquinas_5535390.blend) | 1275 |
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](buildings/stanley_coulter_hall.blend) | 760 |
 | Stewart Center | [stewart_center.blend](buildings/stewart_center.blend) | 2764 |
-| Tarkington Hall | [tarkington_hall.blend](buildings/tarkington_hall.blend) | 814 |
+| Tarkington Hall | [tarkington_hall.blend](buildings/tarkington_hall.blend) | 1361 |
 | University Hall | [university_hall.blend](buildings/university_hall.blend) | 1377 |
 | Walc | [walc.blend](buildings/walc.blend) | 969 |
 | Wiley Hall | [wiley_hall.blend](buildings/wiley_hall.blend) | 398 |
 | Winifred Parker Hall | [winifred_parker_hall.blend](buildings/winifred_parker_hall.blend) | 582 |
+| Yue-Kong Pao Hall | [massing_yue_kong_pao_hall_a3cb766.blend](buildings/massing_yue_kong_pao_hall_a3cb766.blend) | 363 |
+| Zeta Tau Alpha | [zeta_tau_alpha.blend](buildings/zeta_tau_alpha.blend) | 563 |
 
 ## Newly added buildings — October 24–25, 2026
 
