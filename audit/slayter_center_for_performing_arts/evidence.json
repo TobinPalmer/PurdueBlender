@@ -1,7 +1,7 @@
 {
   "building": "Slayter Center of Performing Arts",
   "asset_id": "massing_slayter_center_for_performing_arts_f45259b",
-  "status": "Venue model refined with published stage dimensions; independent orientation, canopy-height and quality review pending",
+  "status": "Independent review passed at 8.3/10; photo uploader attribution and CC BY-SA 3.0 license recorded",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -22,6 +22,14 @@
         "provider": "Purdue University Arboretum",
         "use": "Confirms Slayter is an outdoor amphitheater; no structural measurements inferred.",
         "url": "https://www.arboretum.purdue.edu/outdoor-attractions-and-learning-spaces/"
+      },
+      {
+        "provider": "Wikimedia Commons photo by Nowimnthing (CC BY-SA 3.0)",
+        "use": "Geotagged 2006 photograph directly shows stage, flaring canopy, tripod, suspension cables, rear fins, steps, and audience hillside. Camera location and compass view direction inform approximate stage orientation; not a surveyed plan.",
+        "url": "https://commons.wikimedia.org/wiki/File:Slayter_center.jpg",
+        "local_image": "slayter_center_geotagged_2006.jpg",
+        "camera_location_wgs84": [40.432306, -86.922861],
+        "camera_heading_degrees": 160
       },
       {
         "provider": "Wikipedia (secondary reference)",
@@ -56,12 +64,12 @@
       0.0,
       16.0
     ],
-    "after_venue_envelope_xy_m": "Reopened venue geometry, including stage, canopy, supports, steps and seating, lies within the source feature AABB; this AABB check does not verify internal placement or fit to the mapped polygon boundary.",
-    "modeled_stage_canopy_apex_m": 9.0,
-    "position_status": "Venue feature envelope retained from the official GIS source; stage is placed near the western quarter and audience rows extend east by construction, but no georeferenced plan confirms this internal orientation or placement.",
+    "after_venue_envelope_xy_m": "Reopened geometry fits within the source feature AABB in X and extends approximately 0.033 m beyond its north edge in Y, due to canopy/support geometry. An AABB check does not verify fit to the mapped polygon boundary.",
+    "modeled_tripod_apex_estimate_m": 15.5,
+    "position_status": "The stage is modeled near the center of the mapped venue envelope. The geotagged camera is approximately 51.1 m from the envelope center, giving a bearing consistent within 5.25 degrees of the image's approximately 160-degree compass heading. Stage center remains approximate because no georeferenced plan exists.",
     "plan_dimensions_status": "Stage plan uses the secondary source dimensions (56 ft front x 34 ft rear x 46 ft deep); seating rows and backstage block are approximate. Official GIS feature is a mapped envelope, not a certified stage footprint.",
-    "orientation_status": "Stage faces approximately east in the project-local frame; estimated, with no verified plan or georeferenced photo alignment.",
-    "height_status": "Canopy apex is modeled at approximately 9 m; reopened mesh bounds reach 9.157 m because of support geometry. Height is unverified.",
+    "orientation_status": "The stage-front axis faces approximately 334.4 degrees clockwise from north (north-northwest). This estimate aligns the stage with the audience-side location of the geotagged 2006 photo; the camera compass heading differs from the camera-to-envelope-center bearing by approximately 5.25 degrees.",
+    "height_status": "Estimated canopy edge 7.7 m and tripod apex 15.5 m; no measured elevations were found. Reopened mesh bounds are recorded in slayter_reopen_validation.json.",
     "official_num_levels_attribute": 2,
     "official_extrution_attribute": 43,
     "stage_front_width_m": 17.0688,
@@ -69,30 +77,39 @@
     "stage_depth_m": 14.020800000000001,
     "stage_dimension_source_method": "Converted the secondary source’s published 56 ft front, 34 ft rear, and 46 ft depth to meters and built a trapezoidal platform. These are source-published dimensions, not independently measured here.",
     "after_asset_bounds_including_venue_details_m": {
-      "min_x": -771.1778564453125,
-      "max_x": -733.4110107421875,
-      "min_y": 484.9438781738281,
-      "max_y": 512.1038818359375,
-      "min_z": 0.03999999910593033,
-      "max_z": 9.156761169433594
-    }
+      "min_x": -776.101746,
+      "max_x": -741.564575,
+      "min_y": 479.385345,
+      "max_y": 522.985168,
+      "min_z": 0.04,
+      "max_z": 15.745397
+    },
+    "reopen_validation": "Saved asset reopened in Blender 5.2.3 LTS; exact measurements and checks are in slayter_reopen_validation.json."
   },
   "geometry_edits": [
-    "Replaced the solid extrusion with a trapezoidal stage platform using published 56 ft front width, 34 ft rear width and 46 ft depth dimensions.",
-    "Modeled a raised backstage block, front steps, eight approximate audience tiers, three steel tripod supports, a faceted canopy and four suspension cables.",
+    "Rebuilt the stage-and-audience layout around the venue envelope center and oriented its audience approach north-northwest using the geotagged photo camera location and compass heading.",
+    "Built a trapezoidal stage platform from secondary published 56 ft front width, 34 ft rear width and 46 ft depth dimensions.",
+    "Modeled a raised backstage block, front steps, eight approximate audience tiers, three steel tripod supports, an elliptical shallow canopy slab, thirteen acoustic reflector fins and sixteen radial suspension cables.",
     "Preserved the building object, collection, scene, asset ID, file path and single-object exported collection."
   ],
   "uncertainties": [
-    "The official GIS polygon is a mapped venue envelope, not a certified stage or structural-wall perimeter; internal building position and orientation remain unverified.",
+    "The official GIS polygon is a mapped venue envelope, not a certified stage or structural-wall perimeter; internal stage center remains approximate.",
     "Stage dimensions are from a secondary written source, not an original or surveyed drawing.",
-    "Canopy form, height, cable attachment points, audience tier spacing and backstage block geometry remain estimates.",
+    "Canopy form and dimensions, height, cable attachment points, acoustic fin spacing, audience tier spacing and backstage block geometry remain estimates.",
     "The natural amphitheater hillside and full audience grounds are not represented as a complete landscape model.",
-    "No independent grader has reviewed this revision."
+    "The uploader describes the photograph as taken on 2006-06-21, while embedded EXIF capture time reports 2004.",
+    "Independent grade and criterion-level findings are saved under independent_grade_codex/; the evaluator was refreshed after the photo attribution correction and returned 8.3/10."
   ],
   "artifacts": {
-    "build_script": "build_detail.py",
+    "build_script": "../../modular/buildings/build_massing_slayter_center_for_performing_arts_f45259b.py",
     "build_config": "build_config.json",
     "raw_source": "source_feature_228_raw.json",
+    "source_observations": "source_observations.json",
+    "photo_metadata": "commons_imageinfo_slayter_center_2006.json",
+    "reopen_validation": "slayter_reopen_validation.json",
+    "reopen_validation_script": "validate_saved_asset.py",
+    "independent_grade": "independent_grade_codex/result.json",
+    "independent_evaluator": "independent_grade_codex/evaluate.py",
     "preview_render_script": "render_preview.py",
     "preview": "preview_detail.png"
   }

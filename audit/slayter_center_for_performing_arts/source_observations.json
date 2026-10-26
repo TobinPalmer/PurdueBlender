@@ -1,0 +1,65 @@
+{
+  "building": "Slayter Center of Performing Arts",
+  "retrieval_date": "2026-10-26",
+  "coordinate_transform": {
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "project_crs": "Project-local approximate campus XY meters; X east, Y north, Z up",
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University official campus building footprint service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 228,
+      "source_name": "Slayter Center of Performing Arts",
+      "building_code": "SCPA",
+      "source_date": null,
+      "retrieved": "2026-10-22 (preserved source snapshot)",
+      "crs": "EPSG:4326 (WGS 84)",
+      "measurement_method": "Official feature polygon transformed with the repository's project-local conversion; polygon area and XY bounds computed from source ring.",
+      "observation": "The polygon represents the mapped venue grounds/envelope. It is not interpreted as a structural-wall outline or surveyed stage boundary.",
+      "uncertainty": "No source survey metadata establishes which physical edges the envelope follows."
+    },
+    {
+      "provider": "Wikimedia Commons photo by Nowimnthing; image page and metadata",
+      "url": "https://commons.wikimedia.org/wiki/File:Slayter_center.jpg",
+      "source_date": "Uploader states photo was taken 2006-06-21; Commons upload timestamp 2006-06-22",
+      "retrieved": "2026-10-26",
+      "crs": "WGS 84 GPS coordinates (40.432306, -86.922861); image dimensions 2304 x 1536 pixels",
+      "measurement_method": "Camera location converted into project-local XY and compared with transformed GIS venue envelope. The photo metadata reports camera compass heading approximately 160 degrees; camera-to-envelope-center bearing is approximately 154.75 degrees, a 5.25-degree difference.",
+      "observation": "The view shows the open stage with a flaring canopy, tripod steel support, many suspension cables, rear acoustic reflector fins, front steps, and audience seating on a sloped lawn. The photographed audience approach is consistent with a stage front facing approximately 334.4 degrees (north-northwest) in campus azimuth.",
+      "license": "CC BY-SA 3.0; attribution required; share-alike terms apply.",
+      "uncertainty": "A single oblique photo supports feature identification and approximate viewing direction, not a surveyed stage center, roof dimensions, elevations, or exact internal placement. Embedded EXIF capture time reports 2004, conflicting with the uploader's 2006-06-21 date."
+    },
+    {
+      "provider": "Purdue University Arboretum",
+      "url": "https://www.arboretum.purdue.edu/outdoor-attractions-and-learning-spaces/",
+      "source_date": null,
+      "retrieved": "2026-10-26",
+      "crs": null,
+      "measurement_method": "Official facility description; no measurements taken.",
+      "observation": "Identifies Slayter as an outdoor amphitheater.",
+      "uncertainty": "The page does not provide a plan, dimensions, orientation, or elevation."
+    },
+    {
+      "provider": "Wikipedia (secondary written reference)",
+      "url": "https://en.wikipedia.org/wiki/Slayter_Center_of_Performing_Arts",
+      "source_date": null,
+      "retrieved": "2026-10-22",
+      "crs": null,
+      "measurement_method": "Secondary published text; stage dimensions converted from feet to meters.",
+      "observation": "Reports stage dimensions of 56 ft front width, 34 ft rear width, and 46 ft depth, a flaring-horn plan, and a concrete roof suspended from a steel tripod.",
+      "uncertainty": "No original drawing or independent survey was located to confirm the secondary dimensions."
+    }
+  ],
+  "derived_geometry": {
+    "camera_xy_m": [-776.94994, 544.76224],
+    "venue_envelope_center_xy_m": [-755.14255, 498.52388],
+    "camera_to_center_distance_m": 51.1229,
+    "camera_to_center_bearing_degrees_clockwise_from_north": 154.75,
+    "estimated_stage_front_azimuth_degrees_clockwise_from_north": 334.4,
+    "estimated_stage_center_xy_m": [-755.14255, 498.52388],
+    "height_status": "Estimated canopy edge 7.7 m and steel tripod apex 15.5 m; no measured elevations."
+  }
+}
