@@ -17,7 +17,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Bell Tower | [bell_tower.blend](modular/buildings/bell_tower.blend) | Finished | 9.3/10 | — |
 | Benjamin Harrison Hall | [benjamin_harrison_hall.blend](modular/buildings/benjamin_harrison_hall.blend) | Finished | 8.5/10 | — |
 | Bindley Bioscience Center | [bindley_bioscience_center.blend](modular/buildings/bindley_bioscience_center.blend) | Finished | 8.8/10 | — |
-| Biochemistry Building | [biochemistry_building.blend](modular/buildings/biochemistry_building.blend) | In progress | 6.8/10 | Rossen |
+| Biochemistry Building | [biochemistry_building.blend](modular/buildings/biochemistry_building.blend) | Finished | 8.5/10 | — |
 | Birck Nanotechnology Center | [birck_nanotechnology_center.blend](modular/buildings/birck_nanotechnology_center.blend) | Finished | 8.0/10 | — |
 | Black Cultural Center | [black_cultural_center.blend](modular/buildings/black_cultural_center.blend) | Finished | 9.0/10 | — |
 | Brown Laboratory of Chemistry | [brown_laboratory_of_chemistry.blend](modular/buildings/brown_laboratory_of_chemistry.blend) | Finished | 8.8/10 | — |
@@ -78,15 +78,14 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (161 total)
+## Unfinished buildings (160 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 22 buildings, Rohan 15 buildings, Tobin 44 buildings, Arjav 10 buildings, Brady 70 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 21 buildings, Rohan 15 buildings, Tobin 44 buildings, Arjav 10 buildings, Brady 70 buildings.
 
-### Detailed models still in progress or awaiting a grade (27)
+### Detailed models still in progress or awaiting a grade (26)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
-| Biochemistry Building | [`biochemistry_building.blend`](modular/buildings/biochemistry_building.blend) | 6.8/10 | Rossen |
 | Burton D. Morgan Center for Entrepreneurship | [`burton_morgan_center.blend`](modular/buildings/burton_morgan_center.blend) | 6.7/10 | Rossen |
 | Convergence Center for Innovation and Collaboration | [`convergence_center.blend`](modular/buildings/convergence_center.blend) | Not graded | Rohan |
 | Dauch Alumni Center | [`dauch_alumni_center.blend`](modular/buildings/dauch_alumni_center.blend) | 7.2/10 | Rohan |
