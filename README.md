@@ -4,7 +4,7 @@ This project tracks detailed campus models separately from the remaining massing
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-## Detailed models: status and latest grader score (132 buildings)
+## Detailed models: status and latest grader score (133 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -27,6 +27,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Jimmy John's | [massing_jimmy_john_s_12edba1.blend](modular/buildings/massing_jimmy_john_s_12edba1.blend) | Finished | [8.0/10](audit/massing_jimmy_john_s_12edba1/independent_grade/r3/result.json) | — |
 | Joyful Journeys | [massing_joyful_journeys_abaf5c3.blend](modular/buildings/massing_joyful_journeys_abaf5c3.blend) | Finished | [8.0/10](audit/massing_joyful_journeys_abaf5c3/independent_grade/r2/result.json) | — |
 | Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](modular/buildings/massing_kappa_sigma_c1b36ec.blend) | Finished | [8.5/10](audit/massing_kappa_sigma_c1b36ec/independent_grade/result.json) | — |
+| Lilly Hall of Life Sciences | [massing_lilly_hall_e7fc13e.blend](modular/buildings/massing_lilly_hall_e7fc13e.blend) | Finished | [8.0/10](audit/massing_lilly_hall_e7fc13e/independent_grade/r1/grade.json) | — |
 | 3rd and West | [massing_3rd_and_west_ffa3d05.blend](modular/buildings/massing_3rd_and_west_ffa3d05.blend) | Finished | [8.1/10](audit/massing_3rd_and_west_ffa3d05_independent_grade/result.json) | — |
 | Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | Finished | 8.5/10 | — |
 | Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | Finished | 8.0/10 | — |
@@ -142,9 +143,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
-## Unfinished buildings (89 total)
+## Unfinished buildings (88 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 51 buildings, Rohan 15 buildings, Tobin 13 buildings, Arjav 10 buildings, Brady 0 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 50 buildings, Rohan 15 buildings, Tobin 13 buildings, Arjav 10 buildings, Brady 0 buildings.
 
 ### Detailed models still in progress or awaiting a grade (16)
 
@@ -167,7 +168,7 @@ This list excludes individual house parcels and the duplicate Beering Hall BRNG 
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | [7.8/10](audit/lambert_fieldhouse/independent_grade_r7.json) | Tobin |
 
-### Buildings that still have only massing models (66)
+### Buildings that still have only massing models (65)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -179,7 +180,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | latino cultural center | [`massing_latino_cultural_center_5f0d139.blend`](modular/buildings/massing_latino_cultural_center_5f0d139.blend) | Rossen |
 | latino cultural center lcc | [`massing_latino_cultural_center_lcc_9cc71b3.blend`](modular/buildings/massing_latino_cultural_center_lcc_9cc71b3.blend) | Rossen |
 | life science ranges greenhouse and service building | [`massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend`](modular/buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | Rossen |
-| lilly hall | [`massing_lilly_hall_e7fc13e.blend`](modular/buildings/massing_lilly_hall_e7fc13e.blend) | Rossen |
 | mann hall | [`massing_mann_hall_2b4ebda.blend`](modular/buildings/massing_mann_hall_2b4ebda.blend) | Rossen |
 | marc and sharon hagle hall hagl | [`massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend`](modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | Rossen |
 | marriot hall | [`massing_marriot_hall_7cd3eb5.blend`](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | Rossen |

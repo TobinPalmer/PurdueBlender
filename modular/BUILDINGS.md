@@ -180,6 +180,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Jimmy John's | [massing_jimmy_john_s_12edba1.blend](buildings/massing_jimmy_john_s_12edba1.blend) | 1 |
 | Joyful Journeys | [massing_joyful_journeys_abaf5c3.blend](buildings/massing_joyful_journeys_abaf5c3.blend) | 1 |
 | Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](buildings/massing_kappa_sigma_c1b36ec.blend) | 1 |
+| Lilly Hall of Life Sciences | [massing_lilly_hall_e7fc13e.blend](buildings/massing_lilly_hall_e7fc13e.blend) | 4 |
 
 Hillel retains campus-world coordinates. Its 8.3/10 grade supports the main shell and GIS footprint; the proposed 845 sq ft addition is unresolved, and height, roof depth/pitch, and facade opening details remain schematic. See [Hillel grade](../audit/massing_hillel_36d2ba1/independent_grade/r2/result.json).
 
@@ -194,6 +195,8 @@ Jimmy John's retains campus-world coordinates. Its 8.0/10 grade uses the Indiana
 Joyful Journeys retains campus-world coordinates. Its 8.0/10 grade supports the OSM roof-perimeter proxy and a photo-informed two-level gable mass; exact wall footprint, story count, height, roof geometry, and opening locations remain uncertain. The manifest Z maximum was corrected to the reopened 8.76 m asset bound. See [Joyful Journeys grade](../audit/massing_joyful_journeys_abaf5c3/independent_grade/r2/result.json).
 
 Kappa Sigma retains campus-world coordinates. Its 8.5/10 grade verifies the Purdue GIS footprint against independent LiDAR; height and detailed entrance/window geometry remain estimated, and current use is conflicted. See [Kappa Sigma grade](../audit/massing_kappa_sigma_c1b36ec/independent_grade/result.json).
+
+Lilly Hall of Life Sciences retains campus-world coordinates. Its 8.0/10 grade confirms the Purdue GIS FID 581 footprint within 0.000023 m. GIS supports six floors; 25.055 m height is estimated by interpreting undocumented R=82.2 as feet, and roof/current facade details remain partly schematic. See [Lilly Hall grade](../audit/massing_lilly_hall_e7fc13e/independent_grade/r1/grade.json).
 
 Herrick Laboratories (historic Herrick Acoustics) retains campus-world coordinates. Its 8.4/10 grade verifies Purdue GIS FID 246 / HERL and distinguishes it from Ray W. Herrick Labs; height estimates and GIS area discrepancy remain unresolved. See [Herrick grade](../audit/massing_herrick_laboratories_2138103/independent_grade/r2/result.json).
 
