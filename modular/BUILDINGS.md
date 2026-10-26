@@ -180,7 +180,6 @@ Grissom Hall retains campus-world direct-link coordinates. Its 8.0/10 grade veri
 
 Hampton Hall of Civil Engineering retains campus-world coordinates. Its 8.2/10 grade confirms the shell matches the campus-map polygon within 0.00001472 m; height and entrance placement remain estimated. See [HAMP grade](../audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/independent_grade/result.json).
 
-
 Hawkins Hall retains campus-world coordinates. Its 8.2/10 grade verifies Purdue BuildingShapes FID 83; GIS level/height fields conflict with story counts and have undocumented units. Connector height and entry location are estimated. See [Hawkins grade](../audit/massing_hawkins_hall_282335f/independent_grade/result.json).
 
 Harrison Street Parking Garage retains campus-world coordinates. Its 8.2/10 grade verifies Purdue GIS FID 892 and aerial-supported rooftop parking/canopy; floor spacing and facade details remain estimates. See [Harrison grade](../audit/massing_harrison_street_parking_garage_823c7d2_independent_grade_r3/grade_result.json).
@@ -207,10 +206,13 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Mann Hall | [massing_mann_hall_2b4ebda.blend](buildings/massing_mann_hall_2b4ebda.blend) | 1 |
 | Pete Dye Clubhouse | [massing_the_pete_dye_clubhouse_a3a9641.blend](buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | 122 |
 | Phi Delta Theta | [massing_phi_delta_theta_258cddd.blend](buildings/massing_phi_delta_theta_258cddd.blend) | 313 |
+| Pi Kappa Alpha (Pike) | [massing_house_301841252_e4f8f05.blend](buildings/massing_house_301841252_e4f8f05.blend) | 608 |
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
 | Purdue University Daniel Turf Center | [massing_purdue_university_daniel_turf_center_e69b7da.blend](buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | 1 |
 | Purdue Village Administration Building | [massing_purdue_village_administration_building_3faae6c.blend](buildings/massing_purdue_village_administration_building_3faae6c.blend) | 1 |
 | Provenance Apartments 005 | [massing_provenance_apartments_005_960f6b0.blend](buildings/massing_provenance_apartments_005_960f6b0.blend) | 1 |
+| Sigma Nu | [massing_house_301841330_f58ae87.blend](buildings/massing_house_301841330_f58ae87.blend) | 29 |
+| Sigma Phi Epsilon | [massing_house_301841250_d63b09a.blend](buildings/massing_house_301841250_d63b09a.blend) | 639 |
 | Stone Hall (STON) | [massing_stone_hall_ston_d3f479a.blend](buildings/massing_stone_hall_ston_d3f479a.blend) | 1 |
 | Student Health Center (PUSH) | [massing_student_health_center_push_1200c3b.blend](buildings/massing_student_health_center_push_1200c3b.blend) | 1 |
 | Telecommunications Building (TEL) | [massing_telecommunications_building_tel_8dfaccf.blend](buildings/massing_telecommunications_building_tel_8dfaccf.blend) | 1 |
@@ -290,3 +292,8 @@ MRI Modular Facility retains campus-world coordinates. Its 8.0/10 independent gr
 
 Our Saviour Lutheran Church retains campus-world coordinates. Its 8.75/10 independent grade verifies all 9 vertices of named OSM way 860901797 within 0.000015 m; the official church map pin falls inside the outline. Purdue FID 823 is Fairway and is explicitly rejected. Official church photos support the brick, teal gable, stained glass, asymmetric roof, and cross; heights, roof pitch, and exact feature dimensions remain estimated. See [Our Saviour grade](../audit/massing_our_saviour_lutheran_church_118afa2/independent_grade.json).
 
+Pi Kappa Alpha (Pike) retains campus-world coordinates. Its 8.7/10 independent grade confirms Purdue GIS FID 790 and a shell match within 0.000017 m; the official chapter photo supports the three-storey brick facade and portico. Wall height and roof dimensions remain estimates. See [Pike grade](../audit/massing_house_301841252_e4f8f05/independent_grade_r1/grade.json).
+
+Sigma Nu retains campus-world coordinates. Its 8.0/10 independent grade confirms the FID 758 chapter-house identity and a 10-point base-ring match within 0.000038 m. Newsletter text supports at least three occupied floors; exact wall line, facade bearing, height and roof form remain uncertain. See [Sigma Nu grade](../audit/sigma_nu/independent_grade_r3/independent_grade_r3.json).
+
+Sigma Phi Epsilon retains campus-world coordinates. Its 8.65/10 independent grade confirms OSM way 301841250 and a 21-point shell-ring match within 0.000021 m. The chapter photo and facility page support the multi-wing brick facade and three occupied levels; dimensions and hidden elevations remain estimated. See [Sigma Phi Epsilon grade](../audit/sigma_phi_epsilon/independent_grade_r3/independent_grade_r3.json).
