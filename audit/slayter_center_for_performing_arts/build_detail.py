@@ -25,9 +25,16 @@ def beam(a,b,w,mi):
  p=[a-side-up,a+side-up,a+side+up,a-side+up,b-side-up,b+side-up,b+side+up,b-side+up]
  for q in ((0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)): poly([p[i] for i in q],mi)
 # Raised stage apron and low backstage block.
-stage_w=13.5; stage_d=7.5
-box((stage_x+stage_d*.5,stage_y,.48),(stage_d,0,0),(0,stage_w,0),.48,concrete)
-box((stage_x+stage_d*.88,stage_y,2.25),(0,5.6,0),(.8,0,0),3.5,dark)
+stage_back_w=float(cfg['stage_back_width_ft'])*0.3048; stage_front_w=float(cfg['stage_front_width_ft'])*0.3048; stage_d=float(cfg['stage_depth_ft'])*0.3048
+def prism_xy(outline,z0,z1,mi):
+ bottom=[(x,y,z0) for x,y in outline]; top=[(x,y,z1) for x,y in outline]
+ poly(list(reversed(bottom)),mi); poly(top,mi)
+ for i in range(len(outline)): poly([bottom[i],bottom[(i+1)%len(outline)],top[(i+1)%len(outline)],top[i]],mi)
+# The published stage is a flaring horn: 34 ft at the rear, 56 ft at the front, and 46 ft deep.
+stage_outline=[(stage_x,stage_y-stage_back_w/2),(stage_x+stage_d,stage_y-stage_front_w/2),(stage_x+stage_d,stage_y+stage_front_w/2),(stage_x,stage_y+stage_back_w/2)]
+prism_xy(stage_outline,.24,.72,concrete)
+# Backstage service block sits behind the stage; its footprint remains approximate.
+box((stage_x-.55,stage_y,2.05),(0,5.6,0),(.9,0,0),3.2,dark)
 # A radial fan of eight rising seating tiers faces the stage. Rows are kept within the mapped center envelope.
 rows=int(cfg.get('audience_rows',8)); row_start=stage_x+stage_d+3.0; row_step=max(1.6,(xmax-row_start-2.0)/max(rows,1))
 for i in range(rows):
@@ -37,14 +44,16 @@ for i in range(rows):
   seg=width*.27; box((x,stage_y+yc,z),(row_step*.62,0,0),(0,seg,0),.36,seatmat)
   box((x,stage_y+yc,z+.34),(row_step*.48,0,0),(0,seg*.9,0),.14,concrete)
 # Concrete tripodal roof canopy and steel support legs, kept separate from the seating envelope.
-apex=9.0; roofx=stage_x+2.4; roofy=stage_y
-for p in ((stage_x-1.6,stage_y-6.8,.4),(stage_x-1.6,stage_y+6.8,.4),(stage_x+7.4,stage_y,.4)):
- beam(p,(roofx,roofy,apex),.32,steel)
-# Four faceted concrete panels approximate the suspended, folded canopy; its exact geometry is unverified.
-corners=[(stage_x-3,stage_y-8,6.4),(stage_x+8,stage_y-8,7.6),(stage_x+8,stage_y+8,7.6),(stage_x-3,stage_y+8,6.4)]
+apex=9.0; roofx=stage_x+stage_d*.42; roofy=stage_y
+for p in ((stage_x-1.8,stage_y-6.8,.4),(stage_x-1.8,stage_y+6.8,.4),(stage_x+stage_d-1.6,stage_y,.4)):
+ beam(p,(roofx,roofy,apex),.30,steel)
+# Faceted panels approximate the suspended concrete canopy; its shape and height remain estimates.
+corners=[(stage_x-2.8,stage_y-9.0,6.4),(stage_x+stage_d+1.4,stage_y-9.0,7.5),(stage_x+stage_d+1.4,stage_y+9.0,7.5),(stage_x-2.8,stage_y+9.0,6.4)]
 poly(corners,canopy); poly([corners[0],corners[1],(roofx,roofy,apex)],canopy); poly([corners[1],corners[2],(roofx,roofy,apex)],canopy); poly([corners[2],corners[3],(roofx,roofy,apex)],canopy); poly([corners[3],corners[0],(roofx,roofy,apex)],canopy)
-# Small front apron and stairs.
-for i in range(5): box((stage_x+stage_d+0.4+i*.45,stage_y,0.12+i*.10),(.55,0,0),(0,3.2,0),.20,concrete)
+# Steel suspension cables converge at the central tripod head and attach to the canopy corners.
+for q in corners: beam((roofx,roofy,apex-0.1),q,.055,steel)
+# Front apron steps descend away from the raised stage toward the audience.
+for i in range(5): box((stage_x+stage_d+0.35+i*.42,stage_y,.40-i*.07),(.48,0,0),(0,3.8,0),.16,concrete)
 old=obj.data; oldname=old.name; mesh=bpy.data.meshes.new(oldname+'_amphitheater'); mesh.from_pydata(verts,[],faces)
 for m in mats: mesh.materials.append(m)
 mesh.update()
@@ -53,4 +62,4 @@ bm=bmesh.new(); bm.from_mesh(mesh); bmesh.ops.recalc_face_normals(bm,faces=list(
 if old.users==0: bpy.data.meshes.remove(old)
 mesh.name=oldname; obj.location=(0,0,0); obj.rotation_euler=(0,0,0); obj.scale=(1,1,1)
 bpy.ops.wm.save_as_mainfile(filepath=blend)
-print('BUILD_RESULT_JSON='+json.dumps({'asset_id':cfg['asset_id'],'source_fid':feature['attributes']['FID'],'mapped_envelope_xy_m':[[round(xmin,3),round(xmax,3)],[round(ymin,3),round(ymax,3)]],'vertices':len(mesh.vertices),'faces':len(mesh.polygons),'stage_apex_estimate_m':apex,'seating_rows':rows,'collection_objects':len(coll.objects)}))
+print('BUILD_RESULT_JSON='+json.dumps({'asset_id':cfg['asset_id'],'source_fid':feature['attributes']['FID'],'mapped_envelope_xy_m':[[round(xmin,3),round(xmax,3)],[round(ymin,3),round(ymax,3)]],'vertices':len(mesh.vertices),'faces':len(mesh.polygons),'stage_apex_estimate_m':apex,'stage_dimensions_m':{'front_width':stage_front_w,'back_width':stage_back_w,'depth':stage_d},'seating_rows':rows,'collection_objects':len(coll.objects)}))
