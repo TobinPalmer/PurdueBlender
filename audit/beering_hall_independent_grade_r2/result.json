@@ -1,0 +1,158 @@
+{
+  "building_id": "beering_hall",
+  "score": 8.0,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS feature 251 matches BRNG, the full Beering Hall name, and 100 N University Street.",
+        "The 51-point converted GIS envelope and two masonry masses differ by 0.36 m and 0.07 m in their bounding dimensions.",
+        "The GIS ring includes a curved southern frontage that the rectilinear structural wall masses do not represent or verify vertex-by-vertex."
+      ],
+      "findings": [
+        "Identity and overall envelope are supported; the irregular detailed footprint remains approximated."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "The library preserves its manifest local frame and origin [-201.3499984741211, -206.14999389648438] m.",
+        "The wall-envelope bbox center differs from the GIS bbox center by 0.29 m; the greatest bounding dimension delta is 0.36 m.",
+        "The tower and wing follow the cardinal orientation of the GIS footprint; the master Placement marker was not reopened."
+      ],
+      "findings": [
+        "Horizontal registration is close at the envelope level, but exact perimeter fit and master-marker placement are unverified."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS reports NUM_LEVELS=9 and CountOfFLO=9, but these fields do not establish measured floor elevations.",
+        "The reopened model is 29.70 m tall. GIS R=95.1 and Extrution=38 have undocumented units/semantics; height remains an estimate.",
+        "The source photo supports a white ring-like rooftop room with vertical openings. The current room is centered at [16.150009155273438, 22.149993896484375] m on top of the tall office-tower mass; its exact dimensions and elevation are not measured."
+      ],
+      "findings": [
+        "The signature roof form and location are now photo-supported; total height, floor datums, current roof construction, and rooftop-room dimensions remain uncertain."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": [
+        "The model has brick masonry, varied glazing, and five photo-interpreted tall glazing bays; the Purdue oblique image supports brick, vertical glazing, and the white rooftop ring.",
+        "The overview and close render show the corrected shallow white annular room atop the high tower, matching the photo more closely than the previous green dome on the lower wing.",
+        "The west entrance dimensions and most other elevations are not verified by the available oblique photo."
+      ],
+      "findings": [
+        "The distinctive roof form and some glazing now match evidence; the entrance and unseen facades remain qualitative."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Blender 4.5.15 LTS reopened the expected scene/collection with 1137 objects.",
+        "A collection-only export reopened with 1137 objects; no cameras/lights, external images, or linked libraries are present.",
+        "The dedicated builder, raw GIS snapshot, Purdue photo, provenance, reopen validation, and renders are saved for this building.",
+        "The shared manifest still lists 1162 objects/names versus 1137 in the reopened collection."
+      ],
+      "findings": [
+        "The asset is portable and reproducible. The coordinator should refresh the shared manifest object list/count before integration."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/beering_hall.blend",
+    "asset_sha256": "c87471882181febc90e23bef215bae5f9634c710358aa3294fb5321c27e9c81a",
+    "builder_script": "modular/buildings/build_beering_hall.py",
+    "source_record": "audit/beering_hall/source_record.json",
+    "gis_feature_id": 251,
+    "gis_attributes": {
+      "BLDG_ABBR": "BRNG",
+      "BUILDING_N": "Steven C. Beering Hall of Liberal Arts & Education",
+      "ADDRESS": "100 N University Street",
+      "NUM_LEVELS": 9,
+      "CountOfFLO": 9,
+      "Extrution": 38,
+      "R": 95.1
+    },
+    "gis_local_bounds_m": [
+      [
+        -36.503111176287746,
+        38.73238407323197
+      ],
+      [
+        -33.925298707228194,
+        41.40363601136505
+      ]
+    ],
+    "structural_wall_bounds_local_m": [
+      [
+        -36.649993896484375,
+        38.950008392333984
+      ],
+      [
+        -34.250003814697266,
+        41.14999771118164
+      ]
+    ],
+    "bounding_dimension_delta_m": [
+      0.36450703929864403,
+      0.07106680728566062
+    ],
+    "bbox_center_error_m": 0.2913269087257373,
+    "overall_asset_bounds_local_m": [
+      [
+        -39.14999008178711,
+        39.18000030517578
+      ],
+      [
+        -41.350006103515625,
+        41.37999725341797
+      ],
+      [
+        0.0,
+        29.700000762939453
+      ]
+    ],
+    "roof_room_bounds_local_m": [
+      [
+        10.680009841918945,
+        21.62000846862793
+      ],
+      [
+        16.679994583129883,
+        27.619993209838867
+      ],
+      [
+        26.649999618530273,
+        29.700000762939453
+      ]
+    ],
+    "roof_room_center_over_tower": true,
+    "asset_object_count": 1137,
+    "manifest_object_count": 1162,
+    "export_object_count": 1137,
+    "external_image_dependencies": [],
+    "linked_libraries": [],
+    "preview": "audit/beering_hall/beering_hall_repaired_preview.png",
+    "roof_detail": "audit/beering_hall/beering_hall_rooftop_room_detail.png",
+    "official_photo": "audit/beering_hall/purdue_college_of_education_beering_exterior.jpg"
+  },
+  "findings": [
+    "The white annular room is now on the high tower and visually supported by the Purdue exterior photo.",
+    "The GIS supports identity, plan envelope, cardinal orientation, and a nine-level attribute, but not exact curved walls or measured height.",
+    "The coordinator-owned manifest object names/count are stale and need synchronization before integration."
+  ]
+}

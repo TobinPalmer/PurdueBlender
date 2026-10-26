@@ -1,0 +1,223 @@
+{
+  "asset_id": "beering_hall",
+  "building": "Steven C. Beering Hall of Liberal Arts & Education",
+  "owner": "Rosen",
+  "retrieved_date": "2026-10-25",
+  "manifest_contract": {
+    "asset_path": "modular/buildings/beering_hall.blend",
+    "collection": "Asset_beering_hall",
+    "scene": "Building_beering_hall",
+    "placement_origin_xy_m": [
+      -201.3499984741211,
+      -206.14999389648438
+    ],
+    "placement_origin_changed": false
+  },
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=BLDG_ABBR%3D%27BRNG%27&outFields=*&returnGeometry=true&f=geojson",
+      "feature_id": 251,
+      "retrieved": "2026-10-25",
+      "source_date": "not supplied in response",
+      "source_crs": "EPSG:4326, GeoJSON",
+      "raw_snapshot": "audit/beering_hall/purdue_gis_feature_251.json",
+      "attributes": {
+        "BLDG_ABBR": "BRNG",
+        "BUILDING_N": "Steven C. Beering Hall of Liberal Arts & Education",
+        "ADDRESS": "100 N University Street",
+        "NUM_LEVELS": 9,
+        "CountOfFLO": 9,
+        "Extrution": 38,
+        "Elevation": 622.4,
+        "F01": 0,
+        "F02": 14,
+        "F03": 27.5,
+        "F04": 41.1,
+        "F05": 54.7,
+        "F06": 68.3,
+        "F07": 81.6,
+        "F08": 0,
+        "F09": 0,
+        "R": 95.1,
+        "Shape__Area": 6110.87109375,
+        "Shape__Length": 396.1712060621267
+      },
+      "conversion": "x=(longitude+86.9137)*111412.84*cos(radians(40.4274)); y=(latitude-40.4274)*111040.0; local coordinates subtract manifest placement origin. Project local approximation, not surveyed CRS.",
+      "ring_vertex_count_including_closure": 51,
+      "projected_local_bbox_m": [
+        [
+          -36.503111176287746,
+          38.73238407323197
+        ],
+        [
+          -33.925298707228194,
+          41.40363601136505
+        ]
+      ],
+      "projected_local_polygon_area_m2_approx": 3535.236,
+      "supports": "Identity BRNG, full building name/address, horizontal footprint, nine-level attribute.",
+      "uncertainty": "FeatureShape and projected local ring are not a survey. Attributes R=95.1 and Extrution=38 have no documented unit or measurement definition; GIS cannot verify roof shape, vertical height, or exact floor arrangement."
+    },
+    {
+      "provider": "Purdue University College of Education",
+      "url": "https://education.purdue.edu/about/?alpha=B",
+      "source_date": "Page text places building in 1990-1992 period; photo date/capture metadata not established",
+      "retrieved": "2026-10-25",
+      "raw_snapshot": "audit/beering_hall/purdue_college_of_education_beering_exterior.jpg",
+      "supports": "Official oblique exterior photo identifies Beering Hall; visible red brick, varied window bays, and a white shallow circular/annular rooftop room with vertical openings on top of a tall brick volume.",
+      "method": "Qualitative photo interpretation; perspective view is not georeferenced and has no metric scale.",
+      "uncertainty": "Exact roof-room location within roof, diameter, height, glazing construction, facade count, and photo date are not measured."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, corporate entity record",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/693",
+      "retrieved": "2026-10-25",
+      "source_date": "Record history describes the building as constructed in 1993; another official College page places completion in 1992",
+      "supports": "Building identity and occupancy by Liberal Arts and Education.",
+      "uncertainty": "No elevation, measured height, roof detail, or floor plan was collected from this source."
+    },
+    {
+      "provider": "Purdue University campus map",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "retrieved": "2026-10-25",
+      "source_date": "PDF edition not established in this snapshot",
+      "supports": "BRNG abbreviation and campus location grid G7.",
+      "uncertainty": "Map is not a building elevation or survey."
+    }
+  ],
+  "initial_independent_grade": {
+    "score": 6.75,
+    "max_score": 10,
+    "passed": false,
+    "report": "audit/beering_hall_independent_grade/result.json",
+    "key_roof_finding": "Official image shows shallow white ring-like rooftop room on tall brick tower; prior model had a green tiered dome over a tall drum on the lower classroom wing."
+  },
+  "model_changes": {
+    "footprint": "Preserved existing structural shell and manifest origin; no structural wall dimensions or transforms changed. Prior independent assessment found bounding dimensions within 0.29 m but did not demonstrate vertex-by-vertex GIS registration. The detailed curved south frontage remains unverified.",
+    "roof": "Removed unsupported lower-wing brick drum, green copper-tiered dome, finial, repeated rings, and associated observatory furnishings. Added shallow white annular glazed room, white vertical piers, and flat crown on the center of the existing tall office-tower roof; location and dimensions are interpreted from oblique photograph and existing tower geometry, not surveyed. The first repair run removed 135 legacy BRNG_Rotunda_/BRNG_Vision21_ objects; an idempotence rerun removed the 103 generated room/facade objects and recreated the same 103-object repair set.",
+    "facade": "Added five vertical two-level glazed bays with mullions on the long west-facing classroom-wing elevation as a qualitative interpretation of the official oblique photo; cardinal registration of that image is not proven. Other elevations and exact entrance geometry remain partly unverified.",
+    "height_and_floors": "Preserved former model top elevation (29.70m) and main shell. GIS reports NUM_LEVELS=9, but total story arrangement, roof datum, and actual height are unverified. No assertion treats 38 or 95.1 as meters.",
+    "export": "Expected modular collection and local frame retained. New camera/lights/ground plane are placed in Beering_Preview_Setup and excluded from Asset_beering_hall."
+  },
+  "uncertainties": [
+    "No authoritative total height or measured elevation found.",
+    "GIS R=95.1 and Extrution=38 lack documented units/definitions.",
+    "Photo supports a white rooftop room on the tall tower, but exact position/dimensions are not measured.",
+    "Exact plan vertex fit and curving facade geometry are not yet verified against the entire GIS ring.",
+    "Story count: GIS field reports nine; accessible external evidence does not independently confirm the complete floor arrangement."
+  ],
+  "verification": {
+    "builder": "modular/buildings/build_beering_hall.py",
+    "validator": "audit/beering_hall/reopen_validate.py",
+    "asset": "modular/buildings/beering_hall.blend",
+    "scene": "Building_beering_hall",
+    "collection": "Asset_beering_hall",
+    "collection_object_count_after_reopen": 1137,
+    "evaluated_asset_bounds_local_m": [
+      [
+        -39.14999008178711,
+        39.18000030517578
+      ],
+      [
+        -41.350006103515625,
+        41.37999725341797
+      ],
+      [
+        0.0,
+        29.700000762939453
+      ]
+    ],
+    "structural_wall_bounds_local_m": {
+      "BRNG_Classroom_Wing_Masonry": [
+        [
+          -36.649993896484375,
+          -6.649993896484375
+        ],
+        [
+          -34.250003814697266,
+          41.14999771118164
+        ],
+        [
+          0.0,
+          12.0
+        ]
+      ],
+      "BRNG_Office_Tower_Masonry": [
+        [
+          -6.649990081787109,
+          38.950008392333984
+        ],
+        [
+          3.149993896484375,
+          41.149993896484375
+        ],
+        [
+          0.0,
+          26.600000381469727
+        ]
+      ]
+    },
+    "gis_feature_251_local_bbox_m": [
+      [
+        -36.503111176287746,
+        38.73238407323197
+      ],
+      [
+        -33.925298707228194,
+        41.40363601136505
+      ]
+    ],
+    "manifest_origin_xy_m": [
+      -201.3499984741211,
+      -206.14999389648438
+    ],
+    "manifest_origin_preserved": true,
+    "structural_walls_changed": false,
+    "legacy_roof_cluster_remaining": false,
+    "new_rooftop_room_object_count": 75,
+    "asset_cameras_lights": [],
+    "unpacked_external_images": [],
+    "linked_libraries": [],
+    "collection_only_export_probe": "audit/beering_hall/beering_hall_collection_probe.blend",
+    "collection_probe_reopens": true,
+    "collection_probe_object_count": 1137,
+    "asset_sha256": "c87471882181febc90e23bef215bae5f9634c710358aa3294fb5321c27e9c81a",
+    "blender_version": "4.5.15 LTS",
+    "preview": "audit/beering_hall/beering_hall_repaired_preview.png",
+    "rooftop_detail": "audit/beering_hall/beering_hall_rooftop_room_detail.png",
+    "independent_regrade": "pending with coordinator"
+  },
+  "plan_geometry_comparison": {
+    "source_local_bbox_m": [
+      [
+        -36.503111176287746,
+        38.73238407323197
+      ],
+      [
+        -33.925298707228194,
+        41.40363601136505
+      ]
+    ],
+    "structural_wall_union_bbox_m": [
+      [
+        -36.649993896484375,
+        38.950008392333984
+      ],
+      [
+        -34.250003814697266,
+        41.149993896484375
+      ]
+    ],
+    "wall_union_bbox_size_delta_m": {
+      "x": 0.3645,
+      "y": 0.0711
+    },
+    "wall_union_bbox_center_delta_m": {
+      "x": 0.0354,
+      "y": -0.2892,
+      "magnitude_approx": 0.291
+    },
+    "status": "Preserved existing wall placement/shape; prior independent review measured an approximate envelope match, while detailed curved frontage and wall-by-wall vertex fit remain unverified."
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "building_id": "beering_hall",
+  "score": 6.75,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": [
+        "Official Purdue GIS feature 251 matches BRNG, full building name and address 100 N University Street.",
+        "The 51-coordinate GIS ring converts to 75.24 x 75.33 m in project axes; the two primary wall meshes span 75.53 x 75.33 m.",
+        "Bounding-size deltas are 0.29 m and 0.00 m; their centers differ by 0.29 m.",
+        "The source GIS footprint includes a detailed curved southern frontage; the model uses large rectilinear wall masses plus a separate rotunda drum, so envelope match does not prove full perimeter agreement."
+      ],
+      "findings": [
+        "Identity and overall envelope are strongly supported; detailed boundary registration has not been demonstrated against all GIS vertices."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "Manifest local-placement origin is [-201.3499984741211, -206.14999389648438] m; Blender scene bounds are local and the library scene is Building_beering_hall.",
+        "The main structural envelope's bbox-center offset from GIS is 0.29 m; the bbox dimensions differ by at most 0.29 m.",
+        "Primary wing meshes follow the GIS's cardinal N/S and E/W orientation."
+      ],
+      "findings": [
+        "No exact wall-by-wall perimeter or master placement-marker reopen was supplied, so this score is based on local asset geometry and manifest origin."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.1,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS reports NUM_LEVELS=9 and floor-level fields F02–F07; model evaluated height is 29.70 m.",
+        "GIS R=95.1 and Extrution=38 have no documented unit/measurement definition in the retrieved service metadata. If R is feet it implies 28.99 m, close to the model, but this is a conditional inference rather than verified height.",
+        "The Purdue College of Education exterior photo shows a white circular rooftop room/rotunda; the model uses a green copper-tier dome and places a tall drum on a separate lower-volume wing."
+      ],
+      "findings": [
+        "Nine-level count and roof datum are not independently resolved; the model's rotunda height, location and green dome finish conflict with the official photo."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "The model uses dark red brick, limestone base/details, repeated windows and a circular rooftop feature; Purdue's photo confirms brick, variable window bays and a white circular upper room.",
+        "The current model view shows highly uniform small windows and continuous white floor bands; Purdue's photo shows varied larger vertical glazing and a white ring with vertical openings.",
+        "The model includes a west entrance door and limestone pediment, but the reviewed exterior view/source image do not verify the entrance dimensions or side."
+      ],
+      "findings": [
+        "Some architectural cues are present, but the signature rooftop form/material and facade rhythm are only partially supported; entrance evidence is thin."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.45,
+      "max_score": 2,
+      "evidence": [
+        "Actual asset reopened in Blender 4.5.15 LTS; 1162 collection objects, expected scene/collection and manifest object count match.",
+        "Collection-only export reopened with 1162 objects; it contains no cameras/lights, unpacked image paths, or linked libraries.",
+        "The model uses procedural materials and has no external image dependencies.",
+        "This legacy building has no dedicated build script or building-specific source/evidence folder; this review had to assemble the source record and direct provenance itself."
+      ],
+      "findings": [
+        "The library contract and portability pass; reproducible builder logic and original source provenance are absent from the repository."
+      ]
+    }
+  ],
+  "evidence": {
+    "gis_feature_id": 251,
+    "gis_attributes": {
+      "BLDG_ABBR": "BRNG",
+      "BUILDING_N": "Steven C. Beering Hall of Liberal Arts & Education",
+      "ADDRESS": "100 N University Street",
+      "NUM_LEVELS": 9,
+      "CountOfFLO": 9,
+      "Extrution": 38,
+      "R": 95.1
+    },
+    "gis_local_bounds_m": [
+      [
+        -36.503111176287746,
+        38.73238407323197
+      ],
+      [
+        -33.925298707228194,
+        41.40363601136505
+      ]
+    ],
+    "wall_shell_local_bounds_m": [
+      [
+        -36.614994,
+        38.915009
+      ],
+      [
+        -34.215004,
+        41.114998
+      ]
+    ],
+    "bbox_size_delta_m": [
+      0.2945077504802782,
+      0.001067281406761822
+    ],
+    "bbox_center_error_m": 0.29132688795607753,
+    "model_evaluated_bounds_local_m": [
+      [
+        -39.14999008178711,
+        39.18000030517578
+      ],
+      [
+        -41.350006103515625,
+        41.37999725341797
+      ],
+      [
+        0.0,
+        29.700000762939453
+      ]
+    ],
+    "asset_sha256": "93213e19f771ac77b44f6ff98eae3f41388ccb44b0a707dea995daeefcd79c4c",
+    "asset_path": "modular/buildings/beering_hall.blend",
+    "preview_path": "audit/texture_batch_1/beering_hall.png",
+    "official_photo_path": "audit/beering_hall_independent_grade/source_beering_education_purdue.jpeg",
+    "source_record_path": "audit/beering_hall_independent_grade/source_record.json",
+    "blender_probe_path": "audit/beering_hall_independent_grade/blender_probe.json",
+    "export_probe_path": "audit/beering_hall_independent_grade/export_probe_result.json"
+  },
+  "findings": [
+    "Overall identity and horizontal envelope are credible, but the source perimeter's curved southern edge is represented by an approximate combination of rectangular walls and a detached circular drum.",
+    "Height inferred from GIS R=95.1 is conditional because the GIS field units are undocumented; story count is not reconciled with the nine-level attribute.",
+    "The official Purdue photo places a white ring-like rotunda atop the principal brick tower. The model instead has a green tiered dome and a tall drum on its lower southern wing.",
+    "The model's main facade is more repetitive than the source photo, and no building-specific builder/source-evidence package exists.",
+    "Blender emitted a compatibility warning because the file was saved with a newer Blender build (5.02.45) and reopened in 4.5.15; checks succeeded, but the newer file should be preserved to avoid loss on save."
+  ]
+}
