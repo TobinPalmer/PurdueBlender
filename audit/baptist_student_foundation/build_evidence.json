@@ -56,7 +56,7 @@
       "retrieved": "2026-10-25",
       "source_date": "2018 LiDAR collection",
       "crs": "EPSG:2968 NAD83(HARN) Indiana West (ftUS)",
-      "method": "Sampled raster cell centers inside feature 441814 after projection from EPSG:3857. 191 raw cells were sampled; 177 values between 2 and 25 ft were retained for robust roof-surface quantiles. p10\u2013p90 are approximately 4.45\u20135.81 m overall; crossbar and south stem medians are 5.07 m and 5.14 m. Source tile, tile query, and reproducible sampling script/results are preserved beside this record.",
+      "method": "Sampled raster cell centers inside feature 441814 after projection from EPSG:3857. 191 raw cells were sampled; 177 values between 2 and 25 ft were retained for robust roof-surface quantiles. p10–p90 are approximately 4.45–5.81 m overall; crossbar and south stem medians are 5.07 m and 5.14 m. Source tile, tile query, and reproducible sampling script/results are preserved beside this record.",
       "uncertainty": "5-ft cells, automated footprint, and tree canopy/edge mixing limit the reading. NDHM values are normalized roof/vegetation surface heights and are not measured wall, eave, or ridge elevations. Values above 25 ft were excluded as likely canopy returns, but some vegetation may remain; no floor count or roof pitch is directly measured."
     },
     {
@@ -228,6 +228,19 @@
       "Vertical design proxies are estimates guided by 2018 NDHM roof-surface quantiles; no eave/ridge elevations or floor count are measured. Facade windows, entrance dimensions/location, roof pitch, and colors remain approximate from dated imagery.",
       "The NDHM sample distribution is similar on the north crossbar and south stem; a distinct low roof level is not supported by these samples.",
       "The 2018 LiDAR footprint is automated; no cadastral or boundary survey was available."
+    ]
+  },
+  "independent_grade": {
+    "score": 8.0,
+    "max_score": 10,
+    "passing_threshold": 8,
+    "pass": true,
+    "result": "../baptist_student_foundation_independent_grade_r2/result.json",
+    "reviewed_revision": "6.0 m asset height; 183 objects; correct 2018 NDHM tile and revised roof profile",
+    "remaining_uncertainty": [
+      "No surveyed absolute XY control point or published measured height/floor plan.",
+      "Facade/window/entrance details, floor count, and roof pitch remain approximate from dated low-resolution imagery.",
+      "The asset uses intentional open architectural surface skins; it is not a watertight solid and has no modeled interior."
     ]
   }
 }

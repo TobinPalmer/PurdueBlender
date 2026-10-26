@@ -78,9 +78,9 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (152 total)
+## Unfinished buildings (151 total)
 
-This list excludes individual house parcels and duplicate building records. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 16 buildings, Rohan 15 buildings, Tobin 71 buildings, Arjav 10 buildings, Brady 40 buildings. The Beering Hall BRNG massing record duplicates the finished Beering Hall detailed asset (both match official GIS feature 251); it is excluded from unique building-work totals, but the linked campus scene still contains both libraries and needs a Tobin-owned master integration fix. See `audit/beering_hall_brng_duplicate_check.json`.
+This list excludes individual house parcels and duplicate building records. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 15 buildings, Rohan 15 buildings, Tobin 71 buildings, Arjav 10 buildings, Brady 40 buildings. The Beering Hall BRNG massing record duplicates the finished Beering Hall detailed asset (both match official GIS feature 251); it is excluded from unique building-work totals, but the linked campus scene still contains both libraries and needs a Tobin-owned master integration fix. See `audit/beering_hall_brng_duplicate_check.json`.
 
 ### Detailed models still in progress or awaiting a grade (22)
 
@@ -110,14 +110,13 @@ This list excludes individual house parcels and duplicate building records. The 
 | Wiley Hall | [`wiley_hall.blend`](modular/buildings/wiley_hall.blend) | Not graded | Tobin |
 | Winifred Parker Hall | [`winifred_parker_hall.blend`](modular/buildings/winifred_parker_hall.blend) | Not graded | Tobin |
 
-### Buildings that still have only massing models (130)
+### Buildings that still have only massing models (129)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
 | animal holding facility | [`massing_animal_holding_facility_4733f46.blend`](modular/buildings/massing_animal_holding_facility_4733f46.blend) | Rossen |
-| baptist student foundation | [`massing_baptist_student_foundation_c3d8114.blend`](modular/buildings/massing_baptist_student_foundation_c3d8114.blend) | Rossen |
 | campus edge | [`massing_campus_edge_343e3d8.blend`](modular/buildings/massing_campus_edge_343e3d8.blend) | Rossen |
 | cary quadrangle east cqe | [`massing_cary_quadrangle_east_cqe_230c813.blend`](modular/buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | Rossen |
 | cary quadrangle northeast cqne | [`massing_cary_quadrangle_northeast_cqne_0a76fca.blend`](modular/buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend) | Rossen |
