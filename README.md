@@ -6,17 +6,17 @@ This project tracks detailed campus models separately from the remaining massing
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
-| Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | In progress | 7.0/10 | Rosen |
-| Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | In progress | 6.8/10 | Rosen |
+| Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | Finished | 8.5/10 | — |
+| Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | Finished | 8.0/10 | — |
 | American Railway Building | [american_railway_building.blend](modular/buildings/american_railway_building.blend) | Finished | 8.5/10 | — |
-| Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](modular/buildings/animal_disease_diagnostic_laboratory.blend) | In progress | 7.0/10 | Rosen |
-| Armory | [armory.blend](modular/buildings/armory.blend) | Needs independent grade | Not graded | Rosen |
+| Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](modular/buildings/animal_disease_diagnostic_laboratory.blend) | Finished | 8.3/10 | — |
+| Armory | [armory.blend](modular/buildings/armory.blend) | Finished | 8.4/10 | — |
 | Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](modular/buildings/asian_american_resource_and_cultural_center.blend) | Needs independent grade | Not graded | Rosen |
-| Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](modular/buildings/bechtel_innovation_design_center_bidc.blend) | In progress | 7.0/10 | Rosen |
-| Beering Hall | [beering_hall.blend](modular/buildings/beering_hall.blend) | Needs independent grade | Not graded | Rosen |
-| Bell Tower | [bell_tower.blend](modular/buildings/bell_tower.blend) | Needs independent grade | Not graded | Rosen |
-| Benjamin Harrison Hall | [benjamin_harrison_hall.blend](modular/buildings/benjamin_harrison_hall.blend) | Needs independent grade | Not graded | Rosen |
-| Bindley Bioscience Center | [bindley_bioscience_center.blend](modular/buildings/bindley_bioscience_center.blend) | In progress | 7.2/10 | Rosen |
+| Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](modular/buildings/bechtel_innovation_design_center_bidc.blend) | Finished | 8.75/10 | — |
+| Beering Hall | [beering_hall.blend](modular/buildings/beering_hall.blend) | Finished | 8.0/10 | — |
+| Bell Tower | [bell_tower.blend](modular/buildings/bell_tower.blend) | Finished | 9.3/10 | — |
+| Benjamin Harrison Hall | [benjamin_harrison_hall.blend](modular/buildings/benjamin_harrison_hall.blend) | In progress | 7.7/10 | Rosen |
+| Bindley Bioscience Center | [bindley_bioscience_center.blend](modular/buildings/bindley_bioscience_center.blend) | In progress | 7.5/10 | Rosen |
 | Biochemistry Building | [biochemistry_building.blend](modular/buildings/biochemistry_building.blend) | In progress | 6.8/10 | Rosen |
 | Birck Nanotechnology Center | [birck_nanotechnology_center.blend](modular/buildings/birck_nanotechnology_center.blend) | Needs independent grade | Not graded | Rosen |
 | Black Cultural Center | [black_cultural_center.blend](modular/buildings/black_cultural_center.blend) | Needs independent grade | Not graded | Rosen |
@@ -78,24 +78,17 @@ This project tracks detailed campus models separately from the remaining massing
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Needs independent grade | Not graded | Tobin |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
 
-## Unfinished buildings (174 total)
+## Unfinished buildings (167 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 15 buildings, Rohan 15 buildings, Tobin 84 buildings, Brady 60 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rosen 8 buildings, Rohan 15 buildings, Tobin 84 buildings, Brady 60 buildings.
 
-### Detailed models still in progress or awaiting a grade (40)
+### Detailed models still in progress or awaiting a grade (33)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
-| Agricultural Administration Building | [`agricultural_administration_building.blend`](modular/buildings/agricultural_administration_building.blend) | 7.0/10 | Rosen |
-| Agricultural and Biological Engineering | [`agricultural_and_biological_engineering_abe.blend`](modular/buildings/agricultural_and_biological_engineering_abe.blend) | 6.8/10 | Rosen |
-| Animal Disease Diagnostic Laboratory | [`animal_disease_diagnostic_laboratory.blend`](modular/buildings/animal_disease_diagnostic_laboratory.blend) | 7.0/10 | Rosen |
-| Armory | [`armory.blend`](modular/buildings/armory.blend) | Not graded | Rosen |
 | Asian American and Asian Resource and Cultural Center | [`asian_american_resource_and_cultural_center.blend`](modular/buildings/asian_american_resource_and_cultural_center.blend) | Not graded | Rosen |
-| Bechtel Innovation Design Center | [`bechtel_innovation_design_center_bidc.blend`](modular/buildings/bechtel_innovation_design_center_bidc.blend) | 7.0/10 | Rosen |
-| Beering Hall | [`beering_hall.blend`](modular/buildings/beering_hall.blend) | Not graded | Rosen |
-| Bell Tower | [`bell_tower.blend`](modular/buildings/bell_tower.blend) | Not graded | Rosen |
-| Benjamin Harrison Hall | [`benjamin_harrison_hall.blend`](modular/buildings/benjamin_harrison_hall.blend) | Not graded | Rosen |
-| Bindley Bioscience Center | [`bindley_bioscience_center.blend`](modular/buildings/bindley_bioscience_center.blend) | 7.2/10 | Rosen |
+| Benjamin Harrison Hall | [`benjamin_harrison_hall.blend`](modular/buildings/benjamin_harrison_hall.blend) | 7.7/10 | Rosen |
+| Bindley Bioscience Center | [`bindley_bioscience_center.blend`](modular/buildings/bindley_bioscience_center.blend) | 7.5/10 | Rosen |
 | Biochemistry Building | [`biochemistry_building.blend`](modular/buildings/biochemistry_building.blend) | 6.8/10 | Rosen |
 | Birck Nanotechnology Center | [`birck_nanotechnology_center.blend`](modular/buildings/birck_nanotechnology_center.blend) | Not graded | Rosen |
 | Black Cultural Center | [`black_cultural_center.blend`](modular/buildings/black_cultural_center.blend) | Not graded | Rosen |
