@@ -1,0 +1,91 @@
+{
+  "asset_id": "massing_alpha_kappa_lambda_88dda6c",
+  "assignment": "Rossen",
+  "retrieved_at": "2026-10-25",
+  "manifest_contract": {
+    "asset_path": "modular/buildings/massing_alpha_kappa_lambda_88dda6c.blend",
+    "collection": "Asset_massing_alpha_kappa_lambda_88dda6c",
+    "scene": "Building_massing_alpha_kappa_lambda_88dda6c",
+    "object": "Alpha Kappa Lambda",
+    "coordinate_contract": "Simple massing stays in campus coordinates; X east, Y north, Z up; geographic origin 40.4274, -86.9137; identity object transform"
+  },
+  "sources": [
+    {
+      "role": "identity, perimeter, GIS attributes",
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D784&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 784,
+      "source_name": "Alpha Kappa Lambda",
+      "building_abbreviation": "SOAKL",
+      "address": "417 Waldron St",
+      "retrieved_at": "2026-10-25",
+      "source_data_date": "Layer metadata dataLastEditDate 2026-08-31T16:13:41.596Z; feature BUILT and OCCUPIED fields null; per-feature edit date fields blank",
+      "source_crs": "EPSG:4326 (WGS 84)",
+      "measurement_method": "Use the feature's 20-vertex outer ring, transform each lon/lat with the project README local approximation (x=(lon+86.9137)*111412.84*cos(40.4274deg), y=(lat-40.4274)*111040), and extrude as a simple massing; coordinates remain in campus world space.",
+      "reported_attributes": {
+        "NUM_LEVELS": 1,
+        "CountOfFLO": 1,
+        "Extrution": 12,
+        "Shape__Area_m2_from_service": 822.7578125,
+        "Shape__Length_m_from_service": 161.29066795929523
+      },
+      "uncertainty": "The Extrution field's units are undocumented; NUM_LEVELS and CountOfFLO conflict with the previous 11.4 m massing height and cannot establish actual vertical form. GIS Shape__Area (822.76 m2) conflicts with the polygon's 475.96 m2 area under the README approximation; the ring bounds and identity match the asset location, but area discrepancy remains unexplained. GIS geometry is not a survey and the documented local projection is approximate."
+    },
+    {
+      "role": "historical chapter identity and house location context",
+      "provider": "The Logos of Alpha Kappa Lambda, Fall 1950, hosted by Alpha Kappa Lambda national organization",
+      "url": "https://akl.org/wp-content/uploads/sites/2017/2025/05/0053.-The-Logos-Fall-1950.pdf",
+      "retrieved_at": "2026-10-25",
+      "source_date": "Fall 1950",
+      "source_crs": "Not applicable",
+      "measurement_method": "Document text mentions the Purdue chapter house at 417 Waldron and a new basement kitchen, dining room, and recreation room; this is historical identity/context only, not current building measurement or facade evidence.",
+      "local_snapshot": "audit/alpha_kappa_lambda/sources/akl_logos_fall_1950.pdf",
+      "uncertainty": "Historical text does not establish that the current building mass or facade is the same as in 1950."
+    },
+    {
+      "role": "archival photo inventory and chapter identity",
+      "provider": "Purdue University Archives and Special Collections, J.C. Allen negatives and photographs inventory",
+      "url": "https://collections.lib.purdue.edu/fa/pdf/MSP25_JC%20Allen_inventory.pdf",
+      "retrieved_at": "2026-10-25",
+      "source_date": "Inventory describes AKL group photos outside its house from Nov. 1946 and Fall 1947",
+      "source_crs": "Not applicable",
+      "measurement_method": "Used catalog description only; images were not inspected or georeferenced and are not used to design the present facade.",
+      "local_snapshot": "audit/alpha_kappa_lambda/sources/purdue_archives_jc_allen_inventory.pdf",
+      "uncertainty": "The listing confirms that building-specific historic photographs exist but does not establish current-building continuity or current architectural details."
+    },
+    {
+      "role": "archival history and publication index",
+      "provider": "Purdue University Archives and Special Collections; Purdue Archived Publications index",
+      "url": "https://archives.lib.purdue.edu/repositories/2/archival_objects/34578 ; https://collections.lib.purdue.edu/pupindex/search.php?fq=subjectStr%3A%22Alpha+Kappa+Lambda%22&q=Alpha+Kappa+Lambda&qtype=SubjectHeading",
+      "retrieved_at": "2026-10-25",
+      "source_date": "Archive item covers Kappa Chapter history 1934-1996; index lists a 1967 Exponent item titled Fraternities build new houses on campus",
+      "source_crs": "Not applicable",
+      "measurement_method": "Catalog and indexed publication metadata only; not used as dimension evidence.",
+      "local_snapshot": "audit/alpha_kappa_lambda/sources/purdue_archived_publications_akl_index.html; archive item page returned HTTP 403 to local snapshot request",
+      "uncertainty": "Index metadata alone does not provide design drawings, current facade imagery, or a reliable construction date."
+    }
+  ],
+  "geometry_edits": [
+    "Replaced the prior unverified shell with a single closed mesh extruded from Purdue GIS FID 784's official outer ring.",
+    "Kept the manifest stable ID, asset path, scene, exported collection, object name, identity transform, and campus-coordinate massing contract.",
+    "Updated footprint coordinates from the prior bounding box (-404.0717..-380.0109 E, 131.4603..170.5908 N) to the transformed official ring bounds (-403.5462..-379.7322 E, 131.3342..169.2831 N).",
+    "Used GIS Extrution=12 as a provisional 12 m extrusion solely for massing; this is not a measured height.",
+    "Removed unsupported facade/entrance details and used a flat top cap as a generic massing convention; roof form remains unverified."
+  ],
+  "uncertainties": [
+    "Height: provisional 12 m interpretation of GIS Extrution=12; units undocumented. NUM_LEVELS=1 is insufficient to verify height or stories.",
+    "Roof: unknown; flat cap is only a massing convention.",
+    "Facade, openings, materials, and entrance: unverified; no current source image or drawing was identified.",
+    "Area: official Shape__Area differs from area of source ring projected under the documented approximation; discrepancy not resolved.",
+    "Historical chapter records and photos are not evidence that the present shell is architecturally unchanged."
+  ],
+  "validation": {
+    "preview": "audit/alpha_kappa_lambda/alpha_kappa_lambda_preview.png",
+    "build_result": "audit/alpha_kappa_lambda/build_result.json",
+    "portability_report": "audit/alpha_kappa_lambda/portability_check.json",
+    "reopen_and_collection_link_test": "PASS: reopened saved asset; expected scene and collection found; one mesh linked from the saved blend into a fresh empty scene; object identity transform; no modifiers or unpacked external images.",
+    "height_and_facade": "Explicitly unverified/provisional; see uncertainty entries.",
+    "ready_for_independent_grading": true
+  }
+}
