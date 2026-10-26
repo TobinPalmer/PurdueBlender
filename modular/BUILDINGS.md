@@ -52,7 +52,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Agricultural Administration Building | [agricultural_administration_building.blend](buildings/agricultural_administration_building.blend) | 6 |
 | Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](buildings/agricultural_and_biological_engineering_abe.blend) | 956 |
 | Animal Disease Diagnostic Laboratory | [animal_disease_diagnostic_laboratory.blend](buildings/animal_disease_diagnostic_laboratory.blend) | 8 |
-| Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](buildings/asian_american_resource_and_cultural_center.blend) | 411 |
+| Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](buildings/asian_american_resource_and_cultural_center.blend) | 433 |
 | Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](buildings/bechtel_innovation_design_center_bidc.blend) | 276 |
 | Bindley Bioscience Center | [bindley_bioscience_center.blend](buildings/bindley_bioscience_center.blend) | 528 |
 | Biochemistry Building | [biochemistry_building.blend](buildings/biochemistry_building.blend) | 1623 |
