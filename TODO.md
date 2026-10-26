@@ -2,6 +2,10 @@
 
 These building assets are independently graded at or above 8/10 and pushed to `master`. Tobin owns the master blend and should integrate each latest asset, place it from the manifest coordinates, remove or replace any older instance, and reopen the master to verify placement.
 
+- **Purdue Village Administration Building** — pass: 8.5/10 (`audit/massing_purdue_village_administration_building_3faae6c/independent_grade/evaluation_r2.json`); model commit `777df68`. Asset: `modular/buildings/massing_purdue_village_administration_building_3faae6c.blend`. Replace its massing in `purdue_campus_master.blend`, preserve manifest placement, and verify it appears once after reopening. Height, facade bearing, and GIS area discrepancy remain uncertain.
+
+- **Student Health Center (PUSH)** — pass: 8.2/10 (`audit/massing_student_health_center_push_1200c3b/independent_grade/independent_grade_r2.json`); model commit `e565128`. Asset: `modular/buildings/massing_student_health_center_push_1200c3b.blend`. Replace the PUSH massing in `purdue_campus_master.blend`, preserve manifest placement, and verify it appears once after reopening. Roof heights/story interpretation and facade opening details remain partly estimated.
+
 - **Twin Pines Cooperative** — pass: 8.3/10 (`audit/massing_twin_pines_cooperative_8f606f9/independent_grade/twin_pines_independent_grade.json`); model commit `aaa338d`. Asset: `modular/buildings/massing_twin_pines_cooperative_8f606f9.blend`. Replace the Twin Pines massing in `purdue_campus_master.blend`, preserve its manifest campus coordinates, and verify it appears once after reopening the master. Roof height, exact facade details, and frontage direction remain photo-based estimates.
 
 - **Stone Hall (STON)** — pass: 8.0/10 (`audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json`); model commit `8d426a3`. Asset: `modular/buildings/massing_stone_hall_ston_d3f479a.blend`. Integrate at the manifest coordinates, replace the Stone Hall massing, reconcile the second candidate asset listed for FID 240, verify a single intended building instance, then remove this handoff after integration.

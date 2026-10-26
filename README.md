@@ -164,7 +164,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (23)
+### Detailed models still in progress or awaiting a grade (25)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -185,7 +185,9 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Johnson Hall of Nursing (JNSN) | [`massing_johnson_hall_of_nursing_jnsn_823fca7.blend`](modular/buildings/massing_johnson_hall_of_nursing_jnsn_823fca7.blend) | [9.3/10](audit/massing_johnson_hall_of_nursing_jnsn_823fca7/independent_grade/r2/result.json); awaiting master integration | Tobin |
 | Purdue Police Department (TERY) | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | [8.4/10](audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json); awaiting master integration | Rossen |
+| Purdue Village Administration Building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | [8.5/10](audit/massing_purdue_village_administration_building_3faae6c/independent_grade/evaluation_r2.json); awaiting master integration | Rossen |
 | Stone Hall (STON) | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | [8.0/10](audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json); awaiting master integration | Rossen |
+| Student Health Center (PUSH) | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | [8.2/10](audit/massing_student_health_center_push_1200c3b/independent_grade/independent_grade_r2.json); awaiting master integration | Rossen |
 | Redeemer Lutheran Church | [`massing_redeemer_lutheran_church_2e5ce2f.blend`](modular/buildings/massing_redeemer_lutheran_church_2e5ce2f.blend) | [8.0/10](audit/redeemer_lutheran_church/independent_grade_kyle.json); awaiting master integration | Kyle |
 | Smith Hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | [8.5/10](audit/smith_hall/independent_grade_kyle.json); awaiting master integration | Kyle |
 | Telecommunications Building (TEL) | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | [8.0/10](audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json); awaiting master integration | Rossen |
@@ -194,7 +196,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 
 
 
-### Buildings that still have only massing models (47)
+### Buildings that still have only massing models (45)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -225,7 +227,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | provenance apartments 004 | [`massing_provenance_apartments_004_1bc10e3.blend`](modular/buildings/massing_provenance_apartments_004_1bc10e3.blend) | Kyle |
 | provenance apartments 005 | [`massing_provenance_apartments_005_960f6b0.blend`](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | Rossen |
 | purdue university daniel turf center | [`massing_purdue_university_daniel_turf_center_e69b7da.blend`](modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | Rossen |
-| purdue village administration building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | Rossen |
 | ralph bettye bailey hall | [`massing_ralph_bettye_bailey_hall_406c4db.blend`](modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend) | Tobin |
 | riverside covenannt church | [`massing_riverside_covenannt_church_3a60684.blend`](modular/buildings/massing_riverside_covenannt_church_3a60684.blend) | Arjav |
 | schleman hall schm | [`massing_schleman_hall_schm_ad4b05b.blend`](modular/buildings/massing_schleman_hall_schm_ad4b05b.blend) | Arjav |
@@ -233,7 +234,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | shreve hall | [`massing_shreve_hall_06d270a.blend`](modular/buildings/massing_shreve_hall_06d270a.blend) | Arjav |
 | slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Arjav |
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
-| student health center push | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Rossen |
 | the caretaker s cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | Rossen |
 | the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Rossen |
 | the moosehead lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | Rossen |
@@ -501,7 +501,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 271 | Well House No. 6 | [massing_house_936947592_2c9982f](modular/buildings/massing_house_936947592_2c9982f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 272 | Delon and Elizabeth Hampton Hall of Civil Engineering | [massing_hampton_hall_of_civil_engineering_hamp_9715f0e](modular/buildings/massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 273 | Physics Building | [massing_physics_building_phys_3bf42f3](modular/buildings/massing_physics_building_phys_3bf42f3.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 274 | Purdue University Student Health Center | [massing_student_health_center_push_1200c3b](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 274 | Purdue University Student Health Center | [massing_student_health_center_push_1200c3b](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Independently graded 8.2/10; orthophoto-supported massing and FID 274 footprint; awaiting master integration (see TODO.md); vertical dimensions remain estimates |
 | 275 | Oliver Perkins Terry House | [massing_purdue_police_department_19f467e](modular/buildings/massing_purdue_police_department_19f467e.blend) | Verified operational PUPD / TERY match; independently graded 8.4/10; awaiting master integration (see TODO.md) |
 | 276 | Oliver Perkins Terry Garage | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 277 | Frances M. Shealy Residence Hall | [massing_shealy_frances_m_residence_hall_a210e50](modular/buildings/massing_shealy_frances_m_residence_hall_a210e50.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -599,7 +599,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 517 | Aspire at Discovery Park Building C | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 518 | Aspire at Discovery Park Building C | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 519 | Aspire at Discovery Park Building C | — | No direct FID crosswalk; reconcile to a master asset or create one |
-| 524 | Purdue Village Administration Building | [massing_purdue_village_administration_building_3faae6c](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 524 | Purdue Village Administration Building | [massing_purdue_village_administration_building_3faae6c](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | Independently graded 8.5/10; 14-vertex FID 524 footprint and archived facade photo documented; awaiting master integration (see TODO.md); height and facade bearing remain uncertain |
 | 526 | Purdue Graduate Student Center | [massing_purdue_graduate_student_center_af9c5c7](modular/buildings/massing_purdue_graduate_student_center_af9c5c7.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 527 | Amelia Earhart Terminal | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 528 | South Hall | [massing_house_1558636642_742e366](modular/buildings/massing_house_1558636642_742e366.blend)<br>[south_hall](modular/buildings/south_hall.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
