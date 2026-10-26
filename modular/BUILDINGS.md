@@ -55,7 +55,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Asian American and Asian Resource and Cultural Center | [asian_american_resource_and_cultural_center.blend](buildings/asian_american_resource_and_cultural_center.blend) | 433 |
 | Bechtel Innovation Design Center | [bechtel_innovation_design_center_bidc.blend](buildings/bechtel_innovation_design_center_bidc.blend) | 276 |
 | Bindley Bioscience Center | [bindley_bioscience_center.blend](buildings/bindley_bioscience_center.blend) | 528 |
-| Biochemistry Building | [biochemistry_building.blend](buildings/biochemistry_building.blend) | 1623 |
+| Biochemistry Building | [biochemistry_building.blend](buildings/biochemistry_building.blend) | 2049 |
 | Birck Nanotechnology Center | [birck_nanotechnology_center.blend](buildings/birck_nanotechnology_center.blend) | 110 |
 | Black Cultural Center | [black_cultural_center.blend](buildings/black_cultural_center.blend) | 621 |
 | Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](buildings/burton_morgan_center.blend) | 384 |
