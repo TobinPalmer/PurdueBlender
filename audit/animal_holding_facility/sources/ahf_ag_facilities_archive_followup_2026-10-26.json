@@ -1,0 +1,40 @@
+{
+  "retrieved": "2026-10-26",
+  "purpose": "One more targeted search for building-specific facade, entrance, or elevation evidence in Purdue Ag/EVPR facilities and administrative sources, in addition to previously checked maps, standard official building pages, KartaView, and the Historic Facilities Database.",
+  "queries_and_routes": [
+    "site:ag.purdue.edu \"Animal Holding Facility\" Purdue construction",
+    "site:engineering.purdue.edu Purdue \"Animal Holding Facility\" 1990",
+    "\"Animal Holding Facility\" \"Purdue\" architect",
+    "Purdue \"AHF\" \"Animal Holding Facility\" building exterior",
+    "Purdue Emergency Preparedness AHF EVPR Animal Holding Facility",
+    "Purdue Libraries CONTENTdm Board of Trustees minutes \"Animal Holding Facility\" (API search across bot collection)"
+  ],
+  "findings": [
+    {
+      "source": "Purdue Office of Emergency Preparedness, AHF - EVPR Animal Holding Facility",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/ahf-evpr/",
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "page_revision_date": "2026-04-13",
+      "retrieval": "The building-specific page identifies the address as 410 S University St and describes AHF as a single-floor animal building. It includes an image titled/alt-texted 'AHF Exits' (https://www.purdue.edu/operations/emergency-preparedness/wp-content/uploads/sites/3/2026/04/AHF-Exits-1024x589.jpg) and says occupants should use the nearest emergency exit, which may not be the main entrance.",
+      "relevance": "This is an AHF-specific facilities source and confirms single-floor use, but it is an emergency-exit resource, not an exterior photograph or architectural elevation. The text does not identify the public/main entrance location, facade materials, window pattern, exterior wall divisions, or roof form. It therefore does not support a facade/entrance geometry revision. The exit diagram may be useful for circulation only after a reviewer can inspect it and determine whether its door symbols distinguish the main entrance.",
+      "access_note": "The page HTML was directly readable; the web preview service could not render the page or linked image during this check."
+    },
+    {
+      "source": "Purdue University Libraries Archives and Special Collections, CONTENTdm Board of Trustees Minutes search",
+      "url": "https://earchives.lib.purdue.edu/digital/api/search/collection/bot/searchterm/Animal%20Holding%20Facility/field/all/mode/all/conn/and/order/nosort",
+      "provider": "Purdue University Libraries Archives and Special Collections",
+      "retrieval": "The public API returned 15 hits, including Board of Trustees meeting records from 1989, 1990, 1991, 1992, 1993, 1998, and 1999 and later Physical Facilities Committee records. Individual minutes are compound documents; their item metadata exposed page manifests but no searchable text or facade/elevation scan in this pass.",
+      "relevance": "Confirms additional administrative records exist, but no AHF-specific exterior or entry detail was available from the accessible search/index metadata. The underlying minutes would need page-by-page archival review to establish whether they contain a relevant project attachment."
+    },
+    {
+      "source": "Purdue Campus Facilities and Buildings Historic Database, Animal Holding Facility (AHF)",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/294",
+      "provider": "Purdue University Libraries Archives and Special Collections",
+      "retrieval": "The AHF record describes phased construction beginning in 1990, but its public record has no building image and does not supply facade materials, architect, or elevations. This source was rechecked as the relevant Purdue facilities archive endpoint.",
+      "relevance": "Chronology and facility identity only; no facade/entrance evidence."
+    }
+  ],
+  "decision": "No new source supports a defensible AHF facade or main-entrance model. The emergency-preparedness page is useful building-specific context but does not identify exterior appearance or the main entrance. Do not increase the facade/entrance grade or add guessed exterior detail on this evidence alone.",
+  "concrete_next_input_needed": "A dated exterior photograph that clearly shows at least one AHF facade and a recognizable entrance, or Purdue Facilities/Architect project drawings for AHF Phase I/II/III showing exterior elevations and a site/floor plan that labels the main entrance. Best archival target remains Purdue University Architect records, Campus Construction Slides, 1991-2000, Box 4, Folder 25 (UA 154, Series 1, Sub-Series 4, File 13), with Archives asked to identify any AHF slides; also request original AHF Phase III/renovation elevation sheets from Purdue Facilities/EVPR. If no drawing is available, a ground-level photo with capture date and camera direction would resolve the present blocker.",
+  "limitations": "Public web search and API metadata do not prove that no such source exists in non-digitized, restricted, or project-file archives. No image or drawing was used to infer unobserved facade details, and no building geometry or shared index was changed."
+}
