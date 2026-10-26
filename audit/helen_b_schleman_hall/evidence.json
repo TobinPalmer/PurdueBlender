@@ -1,0 +1,82 @@
+{
+  "building": "Helen B. Schleman Hall",
+  "asset_id": "massing_schleman_hall_schm_ad4b05b",
+  "status": "Detailed asset updated; pending independent grade",
+  "source": {
+    "provider": "Purdue University official campus building footprint service",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 224,
+    "building_code": "SCHM",
+    "source_name": "Helen B. Schleman Hall",
+    "retrieval_date": "2026-10-22 (repository-preserved source snapshot)",
+    "source_date": "Not supplied in the service snapshot",
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "source_record": "source_feature_224_raw.json",
+    "reference_status": "Official campus map polygon; not a certified survey",
+    "secondary_visual_references": [
+      {
+        "url": "https://www.purdue.edu/operations/sustainable-ops/home/initiatives/buildings/dsai/",
+        "use": "Confirms former building identity and 2024 renovation; no measurements inferred",
+        "provider": "Purdue University Sustainable Operations"
+      }
+    ]
+  },
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not surveyed CRS"
+  },
+  "measurements": {
+    "method": "Compared the structural wall polygon built from the official feature ring using the repository transform; facade details and entrance are excluded from plan comparison",
+    "official_footprint_aabb_xy_m": [
+      -140.9559561570748,
+      -203.92196816058913,
+      -114.65490184721604,
+      -149.6090063940892
+    ],
+    "official_minimum_rotated_rectangle": {
+      "width_m": 53.76803743396508,
+      "depth_m": 25.154644474263463,
+      "angle_degrees_east_ccw": 91.2725140048102
+    },
+    "official_polygon_area_m2": 2095.83984375,
+    "before_asset_aabb_xy_m": [
+      -140.9559561570748,
+      -203.92196816058913,
+      -114.65490184721604,
+      -149.6090063940892
+    ],
+    "before_asset_height_m": [
+      0.0,
+      11.399999618530273
+    ],
+    "after_structural_shell": "Built from all distinct official source-ring vertices; intended to match official footprint within coordinate conversion precision",
+    "after_modeled_height_m": 11.4,
+    "position_status": "Structural footprint set to the official map polygon coordinates; underlying source positional uncertainty is unpublished",
+    "plan_dimension_status": "Footprint matches official source polygon; polygon is not a survey",
+    "orientation_status": "Structural shell follows official polygon vertex orientation",
+    "height_status": "unverified estimate retained from existing massing; GIS level attribute is 4",
+    "official_num_levels_attribute": 4,
+    "official_extrution_attribute": 48
+  },
+  "geometry_edits": [
+    "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
+    "Added facade materials, repeated window bays, window surrounds, floor bands, plinth and roof coping.",
+    "Added an entrance marker oriented toward west; exact facade detail placement remains approximate."
+  ],
+  "uncertainties": [
+    "The official map polygon is not a certified survey and has no published position/dimension uncertainty.",
+    "Height has not been checked against elevation drawings or on-site measurement; GIS level/Extrution fields are not treated as height measurements.",
+    "GIS levels attribute 4; height unverified",
+    "Facade details, window spacing and entrance position are approximate and need independent visual review.",
+    "No independent grader has reviewed this revision."
+  ],
+  "artifacts": {
+    "build_script": "build_detail.py",
+    "build_config": "build_config.json",
+    "raw_source": "source_feature_224_raw.json"
+  }
+}
