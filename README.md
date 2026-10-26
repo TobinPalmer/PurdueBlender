@@ -21,7 +21,7 @@ This project tracks detailed campus models separately from the remaining massing
 | Birck Nanotechnology Center | [birck_nanotechnology_center.blend](modular/buildings/birck_nanotechnology_center.blend) | Finished | 8.0/10 | — |
 | Black Cultural Center | [black_cultural_center.blend](modular/buildings/black_cultural_center.blend) | Finished | 9.0/10 | — |
 | Brown Laboratory of Chemistry | [brown_laboratory_of_chemistry.blend](modular/buildings/brown_laboratory_of_chemistry.blend) | Finished | 8.8/10 | — |
-| Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](modular/buildings/burton_morgan_center.blend) | In progress | 6.7/10 | Rossen |
+| Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](modular/buildings/burton_morgan_center.blend) | Finished | [8.4/10](audit/burton_morgan_center_independent_grade/result.json) | — |
 | Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | Finished | 8.5/10 | — |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](modular/buildings/convergence_center.blend) | Needs independent grade | Not graded | Rohan |
 | Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | In progress | 7.2/10 | Rohan |
@@ -81,15 +81,14 @@ This project tracks detailed campus models separately from the remaining massing
 | Yue-Kong Pao Hall | [massing_yue_kong_pao_hall_a3cb766.blend](modular/buildings/massing_yue_kong_pao_hall_a3cb766.blend) | Finished | [8.0/10](audit/yue_kong_pao_hall/independent_grade_r1.md) | — |
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
-## Unfinished buildings (140 total)
+## Unfinished buildings (139 total)
 
-This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 13 buildings, Rohan 15 buildings, Tobin 2 buildings, Arjav 10 buildings, Brady 100 buildings.
+This list excludes individual house parcels and the duplicate Beering Hall BRNG massing record (Purdue GIS feature 251, see `audit/beering_hall_brng_duplicate_check.json`). Its removal from the Tobin-owned master is recorded in `TODO.md`. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current unique-building assignments among the unfinished list: Rossen 12 buildings, Rohan 15 buildings, Tobin 2 buildings, Arjav 10 buildings, Brady 100 buildings.
 
-### Detailed models still in progress or awaiting a grade (17)
+### Detailed models still in progress or awaiting a grade (16)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
-| Burton D. Morgan Center for Entrepreneurship | [`burton_morgan_center.blend`](modular/buildings/burton_morgan_center.blend) | 6.7/10 | Rossen |
 | Convergence Center for Innovation and Collaboration | [`convergence_center.blend`](modular/buildings/convergence_center.blend) | Not graded | Rohan |
 | Dauch Alumni Center | [`dauch_alumni_center.blend`](modular/buildings/dauch_alumni_center.blend) | 7.2/10 | Rohan |
 | David and Bonnie Brunner Farm Animal Hospital | [`david_and_bonnie_brunner_farm_animal_hospital.blend`](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 6.7/10 | Rohan |
