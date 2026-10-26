@@ -1,0 +1,153 @@
+{
+  "building": "Zeta Tau Alpha (Alpha Theta)",
+  "asset_id": "massing_zeta_tau_alpha_af8a443",
+  "asset_path": "modular/buildings/zeta_tau_alpha.blend",
+  "reviewer": "Independent evaluator",
+  "review_date": "2026-10-26",
+  "blender_version": "5.2.3 LTS",
+  "reviewed_sha256": "1e9b54a032ac508e3e473e1757b6edce6ee8724b581c884d54e984572ed8a7af",
+  "score": 8.2,
+  "passing_threshold": 8.0,
+  "passes": true,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue ArcGIS BuildingShapesZip4 FID 773 identifies Zeta Tau Alpha at 118 Waldron St (SOZTA). I independently inverse-projected the raw EPSG:3857 ring and transformed it with the repository local approximation, then rebuilt the saved shell base ring from the fresh Blender extraction. Shape IoU=0.999999969, area 744.706199 vs 744.706208 m², centroid error 0.00000003 m. This verifies transfer of the public GIS ring, not a surveyed structural wall line."
+    },
+    {
+      "criterion": "Campus position, orientation, and scale",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": "The model keeps campus-coordinate geometry and records origin XY [-320.5144435379624, -187.07450048567304] m, within 0.000000 m of the transformed GIS centroid. The outline supports the plan dimensions; facade direction is plausible from the chapter-house photo and saved reference, but the standalone candidate has not yet been checked as an installed instance in the current master. The local geographic conversion is approximate."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof",
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": "Fresh asset bounds give a maximum Z of 11.91 m; the R2 report now correctly describes this as the model's estimated peak, removing the former 12.5 m discrepancy. ArcGIS Extrution=12 is undocumented, while NUM_LEVELS and CountOfFLO are 1, so actual stories/height remain unverified. The 2022 official photo supports a pitched dark roof and portico silhouette; the multiple dormers/roof layout are modeled interpretation."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive details",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": "The R2 front render now shows the ZTA mark on the outward-facing pediment plane, resolving the R1 occlusion. Red brick, pale trim, a white columned portico, cross-muntin windows, and dark pitched roof broadly match the official 2022 chapter-house photo. The model is stylized, has fewer/simpler facade details than the photo, and its windows are layered over a continuous shell rather than cut-through openings."
+    },
+    {
+      "criterion": "Technical integrity, materials, interior, and evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "Fresh Blender 5.2.3 LTS process reopened the exact SHA 1e9b54a032ac508e3e473e1757b6edce6ee8724b581c884d54e984572ed8a7af. The stable scene/collection has 563 objects (562 meshes plus the ZTA lettering), 13 named materials, no materialless meshes, and 4 image dependencies, all packed. The interior collection has 112 schematic objects including three floor plates, a corridor, dining furniture, bedrooms/stair furniture; no measured plan or bathrooms/partition layout is verified."
+    }
+  ],
+  "independent_metrics": {
+    "candidate_sha256": "1e9b54a032ac508e3e473e1757b6edce6ee8724b581c884d54e984572ed8a7af",
+    "source_fid": 773,
+    "source_name": "Zeta Tau Alpha",
+    "source_address": "118 Waldron St",
+    "source_crs": "EPSG:3857 (verified by ArcGIS layer metadata WKID 102100/latest 3857)",
+    "transform": "Inverse Web Mercator, then modular/AGENTS.md approximate local conversion; source polygon centered on transformed centroid for shape comparison. Model base ring extracted from saved shell mesh in fresh Blender process.",
+    "source_ring_vertices": 14,
+    "model_shell_vertices": 14,
+    "source_area_m2": 744.7061992808598,
+    "model_base_area_m2": 744.7062076182464,
+    "iou": 0.999999969048823,
+    "centroid_error_m": 2.5465345011637125e-08,
+    "symmetric_sampled_boundary_mean_m": 1.802479326790475e-07,
+    "symmetric_sampled_boundary_p95_m": 4.3453512267293577e-07,
+    "symmetric_hausdorff_m": 6.241943227812903e-07,
+    "origin_xy_m": [
+      -320.5144435379624,
+      -187.07450048567304
+    ],
+    "transformed_source_centroid_xy_m": [
+      -320.5144435379715,
+      -187.07450048590124
+    ],
+    "asset_world_bounds_xyz": [
+      [
+        -16.232135772705078,
+        13.844943046569824
+      ],
+      [
+        -21.712425231933594,
+        19.65256118774414
+      ],
+      [
+        -0.004999995231628418,
+        11.910000801086426
+      ]
+    ],
+    "shell_height_m": 8.030000299215317,
+    "total_height_m": 11.915000796318054,
+    "gis_attributes": {
+      "BLDG_ABBR": "SOZTA",
+      "BUILDING_N": "Zeta Tau Alpha",
+      "ADDRESS": "118 Waldron St",
+      "NUM_LEVELS": 1,
+      "CountOfFLO": 1,
+      "Extrution": 12,
+      "Shape__Area": 1287.27734375,
+      "Shape__Length": 169.80670885848198
+    },
+    "limitations": [
+      "GIS footprint is not surveyed wall line; shell directly reproduces public ring.",
+      "Local geographic conversion is approximate, not survey-grade.",
+      "No detailed instance marker/master check was performed for this isolated candidate."
+    ]
+  },
+  "fresh_reopen": {
+    "status": "PASS",
+    "scene": "Building_massing_zeta_tau_alpha_af8a443",
+    "collection": "Asset_massing_zeta_tau_alpha_af8a443",
+    "object_count": 563,
+    "mesh_count": 562,
+    "material_count": 13,
+    "all_images_packed": true,
+    "evidence_file": "audit/zeta_tau_alpha/independent_grade_r2_extract.json"
+  },
+  "evidence_files": [
+    "audit/zeta_tau_alpha/independent_grade_r2_extract.py",
+    "audit/zeta_tau_alpha/independent_grade_r2_extract.json",
+    "audit/zeta_tau_alpha/independent_grade_r2_extract.log",
+    "audit/zeta_tau_alpha/independent_grade_r2_metrics.json",
+    "audit/zeta_tau_alpha/independent_grade_r2_interior.py",
+    "audit/zeta_tau_alpha/independent_grade_r2_interior.json",
+    "audit/zeta_tau_alpha/candidate_front_review_r2.png",
+    "audit/zeta_tau_alpha/official_2022_centennial_house_photo.jpg",
+    "audit/zeta_tau_alpha/gis_fid773_raw.json",
+    "audit/zeta_tau_alpha/gis_layer_metadata.json"
+  ],
+  "sources": [
+    {
+      "title": "Purdue ArcGIS BuildingShapesZip4 FID 773",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/773?f=pjson"
+    },
+    {
+      "title": "Purdue ArcGIS BuildingShapesZip4 layer metadata",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson"
+    },
+    {
+      "title": "Alpha Theta celebrates 101 years at Purdue, Zeta Tau Alpha official article and photo",
+      "url": "https://zetataualpha.org/news/alpha-theta-celebrates-101-years-at-purdue"
+    },
+    {
+      "title": "Google Maps Street View reference (builder archived URL; this page was not independently rendered by web reader)",
+      "url": "https://www.google.com/maps/place/118+Waldron+St,+West+Lafayette,+IN+47906/@40.4255967,-86.91789,3a,75y,65.05h,90t/data=!3m5!1e1!3m3!1s8sVKIehKbcyb50bjkmpU1Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3D8sVKIehKbcyb50bjkmpU1Q%26yaw%3D65.04872"
+    }
+  ],
+  "findings": [
+    "The R2 lettering correction is visible in the saved front review render and its text bounds lie on the outward-facing side of the pediment.",
+    "R2 corrected the height statement to match the actual 11.91 m asset maximum, explicitly an estimate rather than a measured elevation.",
+    "The shell follows the GIS ring nearly exactly; this does not establish a surveyed wall line.",
+    "Final master placement/orientation remains unverified until the coordinator replaces/reloads the massing library and checks the campus instance.",
+    "Interior remains schematic and the roof dormer arrangement is not fully established by the available photo evidence."
+  ],
+  "limitations": [
+    "GIS footprint is a generalized map polygon, not a survey.",
+    "GIS Extrution units and level-count fields are inconsistent/undocumented; actual height and floor count are estimated/unverified.",
+    "The Google Maps Street View page could not be rendered independently through this evaluator; it relies on the source URL and archived official photograph for facade comparison.",
+    "No master placement marker check was made during this asset-only grade."
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "building_id": "massing_yue_kong_pao_hall_a3cb766",
+  "building_name": "Yue-Kong Pao Hall of Visual and Performing Arts",
+  "retrieval_date": "2026-10-25",
+  "sources": [
+    {
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/72?f=pjson",
+      "provider": "Purdue University ArcGIS BuildingShapes feature service",
+      "feature_identifier": "FeatureServer layer 0, FID 72, BLDG_ABBR PAO, GlobalID {52D50805-16AD-4974-BC8F-088A63745FD6}",
+      "source_crs": "ArcGIS WKID 102100 / latestWKID 3857, Web Mercator metres",
+      "source_date": "Layer metadata reports last edit epoch 1788192821596 ms UTC; polygon source date is not separately documented.",
+      "measurement_method": "Converted source polygon from EPSG:3857 to lon/lat by inverse spherical Mercator, then to project local XY using modular/AGENTS.md approximate origin formula. Compared polygon and bounding box with the original simplified massing ring.",
+      "observed_attributes": {
+        "address": "552 W Wood Street",
+        "NUM_LEVELS": 6,
+        "CountOfFLO": 6,
+        "Extrution": 60,
+        "Elevation": 615.4,
+        "Shape__Area": 7901.00390625,
+        "Shape__Length": 446.2239125967109
+      },
+      "uncertainty": "Layer does not document units for Elevation, Extrution, level fields, or geometry source/line accuracy. Elevation 615.4 likely uses feet but is not treated as a metric elevation here. The footprint is a campus GIS polygon, not a surveyed wall line."
+    },
+    {
+      "url": "https://cla.purdue.edu/academic/rueffschool/theatre-and-dance/visit/images/pao-hall.jpg",
+      "provider": "Purdue College of Liberal Arts / Department of Theatre and Dance",
+      "feature_identifier": "Official exterior photograph embedded on PAO visit page",
+      "source_crs": "Not applicable (photograph)",
+      "source_date": "Photograph date not stated; page and image retrieved 2026-10-25.",
+      "measurement_method": "Qualitative visual check of south/plaza facade, red brick, long glazed bays, vertical mullion rhythm, west entry, pale stone details, and facade sign; not used to infer precise dimensions.",
+      "uncertainty": "Single perspective photograph; perspective and lens distort apparent proportions. No architectural elevations or dimension strings available."
+    },
+    {
+      "url": "https://cla.purdue.edu/academic/rueffschool/theatre-and-dance/visit/index.html",
+      "provider": "Purdue College of Liberal Arts / Department of Theatre and Dance",
+      "feature_identifier": "Official PAO visit page",
+      "source_crs": "Not applicable",
+      "source_date": "Page accessed 2026-10-25.",
+      "measurement_method": "Used to confirm building name and 552 W Wood Street identity.",
+      "uncertainty": "Identity and address source only; no geometry or facade measurements."
+    },
+    {
+      "url": "https://www.cla.purdue.edu/theatre/documents/PurdueTheatreFacilities.pdf",
+      "provider": "Purdue University / Department of Theatre and Dance facilities brochure",
+      "feature_identifier": "Yue-Kong Pao Hall facilities page",
+      "source_crs": "Not applicable",
+      "source_date": "Retrieved 2026-10-25; publication date not confirmed by the source search result.",
+      "measurement_method": "Used for supported program: four arts divisions; Hansen Theatre (300 seats); Mallett Theatre (100–155 seats); classrooms, offices, shops, and studios; published total floor area 176,000 sq ft.",
+      "uncertainty": "Published gross area does not define footprint or height; program information does not locate rooms within floor plan."
+    },
+    {
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/691",
+      "provider": "Purdue University Archives and Special Collections",
+      "feature_identifier": "Yue-Kong Pao Hall corporate entity record",
+      "source_crs": "Not applicable",
+      "source_date": "Accessed 2026-10-25; record cites Purdue Campus Facilities and Buildings Historic Database, accessed 2020-04-28.",
+      "measurement_method": "Used for phase history and program context: phase one completed/opened 2003, phase two began 2004; record mentions theaters, studios/labs, classroom, and support spaces.",
+      "uncertainty": "Historical/program description only; does not provide surveyed elevations or current plan."
+    },
+    {
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-9675268,4927477,-9675068,4927677&bboxSR=3857&imageSR=3857&size=1200,1200&format=jpg&f=image",
+      "provider": "Esri World Imagery MapServer",
+      "feature_identifier": "Map export covering PAO Hall and adjacent campus blocks",
+      "source_crs": "EPSG:3857",
+      "source_date": "Retrieved 2026-10-25; imagery acquisition date not exposed by the export endpoint.",
+      "measurement_method": "Qualitative top-down context check to distinguish the south plaza facade from the north/service side and confirm long-axis orientation; geometry measured from the separate Purdue GIS polygon.",
+      "uncertainty": "Imagery vintage and mosaic alignment are unknown; not used as a surveyed building outline."
+    }
+  ],
+  "evidence_files": [
+    "gis_fid72_raw.json",
+    "gis_layer_metadata.json",
+    "world_imagery_context.jpg",
+    "purdue_pao_reference.jpg",
+    "build_report.json",
+    "footprint_comparison.json",
+    "fresh_reopen_validation.json",
+    "south_facade_candidate.png"
+  ],
+  "height_and_interior_caveat": "The source asset started as a 16 m high massing extrusion. Exterior reference supports a lower public south wing and a taller set-back performance wing qualitatively. The 16 m upper wing and 11.5 m lower roof are estimates, not survey measurements. A 2.7 m rooftop penthouse and interior room layout are illustrative. Program names and theatre capacity are source-supported; exact room placement and interior floor plans remain unverified."
+}

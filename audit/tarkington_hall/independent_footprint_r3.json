@@ -1,0 +1,98 @@
+{
+  "building": "Tarkington Hall",
+  "revision": "R3 independent",
+  "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\tarkington_hall.blend",
+  "sha256": "825d57329797fd45b6eb7784c8a6011f99a575bed6a97c11ed06e098eb618ee1",
+  "feature_id": 662,
+  "building_code": "TARK",
+  "shell_object_count": 35,
+  "shell_objects": [
+    "Tark_NW_Wing_Brick_Shaft",
+    "Tark_SW_Wing_GF_Wall_N",
+    "Tark_SW_Wing_GF_Wall_S",
+    "Tark_SW_Wing_GF_Wall_E",
+    "Tark_SW_Wing_GF_Wall_W",
+    "Tark_SW_Wing_Upper_Brick_Shaft",
+    "Tark_NE_Wing_Brick_Shaft",
+    "Tark_SE_Wing_Brick_Shaft",
+    "Tark_Commons_Hub_GF_Wall_N",
+    "Tark_Commons_Hub_GF_Wall_S",
+    "Tark_Commons_Hub_GF_Wall_E",
+    "Tark_Commons_Hub_GF_Wall_W",
+    "Tark_Commons_Hub_Upper_Brick_Shaft",
+    "Tark_North_Entrance_Pavilion_Brick_Shaft",
+    "Tark_South_Entrance_Pavilion_GF_Wall_N",
+    "Tark_South_Entrance_Pavilion_GF_Wall_S",
+    "Tark_South_Entrance_Pavilion_GF_Wall_E",
+    "Tark_South_Entrance_Pavilion_GF_Wall_W",
+    "Tark_South_Entrance_Pavilion_Upper_Brick_Shaft",
+    "Tark_East_Connector_Brick_Shaft",
+    "Tark_East_Connector_Limestone_Base",
+    "Tark_East_Connector_Limestone_Belt_1",
+    "Tark_East_Connector_Limestone_Belt_2",
+    "Tark_East_Connector_Limestone_Belt_3",
+    "Tark_East_Connector_Limestone_Belt_4",
+    "Tark_East_Connector_Roof_Membrane",
+    "Tark_East_Connector_Roof_Parapet",
+    "Tark_West_Connector_Brick_Shaft",
+    "Tark_West_Connector_Limestone_Base",
+    "Tark_West_Connector_Limestone_Belt_1",
+    "Tark_West_Connector_Limestone_Belt_2",
+    "Tark_West_Connector_Limestone_Belt_3",
+    "Tark_West_Connector_Limestone_Belt_4",
+    "Tark_West_Connector_Roof_Membrane",
+    "Tark_West_Connector_Roof_Parapet"
+  ],
+  "source_polygon_area_m2": 5501.738673487712,
+  "model_shell_union_area_m2": 4392.145095901484,
+  "intersection_area_m2": 4031.3218367677914,
+  "union_area_m2": 5862.561932621404,
+  "polygon_iou": 0.6876382515186861,
+  "boundary_sample_step_m": 0.25,
+  "symmetric_sample_count": 4995,
+  "symmetric_sampled_boundary_mean_m": 2.1017826380534546,
+  "symmetric_sampled_boundary_p95_m": 9.371642715688008,
+  "symmetric_boundary_hausdorff_m": 11.340871475034497,
+  "source_centroid_local_xy_m": [
+    -3.9257626377274306,
+    8.537344983664157
+  ],
+  "model_centroid_local_xy_m": [
+    -4.177476791956726,
+    9.196360821826337
+  ],
+  "centroid_delta_m": [
+    -0.2517141542292958,
+    0.6590158381621798
+  ],
+  "centroid_delta_length_m": 0.7054515507020805,
+  "source_bounds_local_m": [
+    [
+      -48.55443224943372,
+      42.00447997122808
+    ],
+    [
+      -54.34920643081614,
+      64.38232966683199
+    ]
+  ],
+  "model_bounds_local_m": [
+    [
+      -46.79887771606445,
+      40.901123046875
+    ],
+    [
+      -54.5,
+      64.5
+    ]
+  ],
+  "source_crs": "EPSG:4326",
+  "local_transform": "X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0; origin=(-591.6124877929688,348.0)",
+  "method": "Reopened canonical .blend in fresh Blender 5.2.3 process, extracted all vertices only from Asset_tarkington_hall shell candidate meshes, transformed by matrix_world, convex-hulled each XY set, and unioned. Metrics recomputed from raw saved Purdue GIS FID 662 snapshot.",
+  "limitations": [
+    "GIS outline is not documented as surveyed wall faces and may follow roof/eave/cartographic edges.",
+    "Project-local geographic conversion is approximate rather than a projected survey CRS.",
+    "Convex hull of each selected shell object bridges openings and local setbacks.",
+    "This metric excludes non-shell details and does not claim exact wall-to-map alignment."
+  ]
+}

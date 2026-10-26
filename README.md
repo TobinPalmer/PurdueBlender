@@ -2,7 +2,7 @@
 
 This project tracks detailed campus models separately from the remaining massing-only building assets. A detailed model counts as finished here only when its latest recorded independent grader score is at least 8/10. Scores describe the reviewed model revision; ungraded assets are explicitly marked.
 
-## Detailed models: status and latest grader score (71 buildings)
+## Detailed models: status and latest grader score (73 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -73,17 +73,19 @@ This project tracks detailed campus models separately from the remaining massing
 | Stanley Coulter Hall | [stanley_coulter_hall.blend](modular/buildings/stanley_coulter_hall.blend) | Finished | [8.1/10](audit/batch3_stanley/independent_grade_r6.md) | â€” |
 | St. Thomas Aquinas Center | [massing_st_thomas_aquinas_5535390.blend](modular/buildings/massing_st_thomas_aquinas_5535390.blend) | Finished | [8.2/10](audit/st_thomas_aquinas_5535390/independent_grade_r4.md) | — |
 | Stewart Center | [stewart_center.blend](modular/buildings/stewart_center.blend) | Finished | [8.0/10](audit/stewart_center_independent_grade/independent_grade_r4.md) | â€” |
-| Tarkington Hall | [tarkington_hall.blend](modular/buildings/tarkington_hall.blend) | Needs independent grade | Not graded | Tobin |
+| Tarkington Hall | [tarkington_hall.blend](modular/buildings/tarkington_hall.blend) | Finished | [8.0/10](audit/tarkington_hall/independent_grade_r4.md) | — |
 | University Hall | [university_hall.blend](modular/buildings/university_hall.blend) | Finished | [8.0/10](audit/university_hall_refine/independent_grade_r7.md) | — |
 | Walc | [walc.blend](modular/buildings/walc.blend) | Finished | [8.25/10](audit/walc_refine/independent_grade_r5.md) | â€” |
 | Wiley Hall | [wiley_hall.blend](modular/buildings/wiley_hall.blend) | Finished | [8.3/10](audit/wiley_hall/independent_grade_r2.md) | â€” |
 | Winifred Parker Hall | [winifred_parker_hall.blend](modular/buildings/winifred_parker_hall.blend) | Finished | [8.05/10](audit/winifred_parker_hall/independent_grade_r5.md) | — |
+| Yue-Kong Pao Hall | [massing_yue_kong_pao_hall_a3cb766.blend](modular/buildings/massing_yue_kong_pao_hall_a3cb766.blend) | Finished | [8.0/10](audit/yue_kong_pao_hall/independent_grade_r1.md) | — |
+| Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 
-## Unfinished buildings (165 total)
+## Unfinished buildings (162 total)
 
-This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 5 buildings, Arjav 10 buildings, Brady 100 buildings.
+This list excludes individual house parcels. The detailed models that are still in progress or awaiting an independent grade are included first; the massing-only backlog follows. Current assignments among the unfinished list: Rossen 35 buildings, Rohan 15 buildings, Tobin 2 buildings, Arjav 10 buildings, Brady 100 buildings.
 
-### Detailed models still in progress or awaiting a grade (32)
+### Detailed models still in progress or awaiting a grade (31)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -118,9 +120,8 @@ This list excludes individual house parcels. The detailed models that are still 
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Rohan |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Lambert Fieldhouse | [`lambert_fieldhouse.blend`](modular/buildings/lambert_fieldhouse.blend) | 8.0/10 | Tobin |
-| Tarkington Hall | [`tarkington_hall.blend`](modular/buildings/tarkington_hall.blend) | Not graded | Tobin |
 
-### Buildings that still have only massing models (133)
+### Buildings that still have only massing models (131)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -256,8 +257,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | windsor halls | [`massing_windsor_halls_80aeb51.blend`](modular/buildings/massing_windsor_halls_80aeb51.blend) | Brady |
 | wood street garage pgw | [`massing_wood_street_garage_pgw_2fa056e.blend`](modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend) | Brady |
 | young hall yong | [`massing_young_hall_yong_cae1b95.blend`](modular/buildings/massing_young_hall_yong_cae1b95.blend) | Brady |
-| yue kong pao hall | [`massing_yue_kong_pao_hall_a3cb766.blend`](modular/buildings/massing_yue_kong_pao_hall_a3cb766.blend) | Tobin |
-| zeta tau alpha | [`massing_zeta_tau_alpha_af8a443.blend`](modular/buildings/massing_zeta_tau_alpha_af8a443.blend) | Tobin |
 | zundo family dentistry | [`massing_zundo_family_dentistry_f840e2b.blend`](modular/buildings/massing_zundo_family_dentistry_f840e2b.blend) | Tobin |
 
 ## Adding a building

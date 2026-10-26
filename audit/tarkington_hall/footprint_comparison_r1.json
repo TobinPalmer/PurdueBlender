@@ -1,0 +1,80 @@
+{
+  "building": "Tarkington Hall",
+  "feature_id": 662,
+  "building_code": "TARK",
+  "model_asset": "modular/buildings/tarkington_hall.blend",
+  "model_shell_objects": [
+    "Tark_Commons_Hub_GF_Wall_E",
+    "Tark_Commons_Hub_GF_Wall_N",
+    "Tark_Commons_Hub_GF_Wall_S",
+    "Tark_Commons_Hub_GF_Wall_W",
+    "Tark_Commons_Hub_Upper_Brick_Shaft",
+    "Tark_NE_Wing_Brick_Shaft",
+    "Tark_North_Entrance_Pavilion_Brick_Shaft",
+    "Tark_NW_Wing_Brick_Shaft",
+    "Tark_SE_Wing_Brick_Shaft",
+    "Tark_South_Entrance_Pavilion_GF_Wall_E",
+    "Tark_South_Entrance_Pavilion_GF_Wall_N",
+    "Tark_South_Entrance_Pavilion_GF_Wall_S",
+    "Tark_South_Entrance_Pavilion_GF_Wall_W",
+    "Tark_South_Entrance_Pavilion_Upper_Brick_Shaft",
+    "Tark_SW_Wing_GF_Wall_E",
+    "Tark_SW_Wing_GF_Wall_N",
+    "Tark_SW_Wing_GF_Wall_S",
+    "Tark_SW_Wing_GF_Wall_W",
+    "Tark_SW_Wing_Upper_Brick_Shaft"
+  ],
+  "source_crs": "EPSG:4326",
+  "project_conversion": "X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0",
+  "model_local_origin_world_m": [
+    -591.6124877929688,
+    348.0
+  ],
+  "measurement_method": "Source GIS outline transformed into project-local meters; model structural-shell object vertices transformed through saved object matrices; each selected shell object convex-hulled in XY and unioned. Decoration, windows, paths, and landscaping excluded by the existing master audit shell selection.",
+  "source_polygon_area_m2": 5501.738673487712,
+  "model_shell_union_area_m2": 6810.0,
+  "intersection_area_m2": 4031.8131017309897,
+  "union_area_m2": 8279.925571756723,
+  "polygon_iou": 0.4869383265332389,
+  "symmetric_sampled_boundary_mean_m": 5.034708148743398,
+  "symmetric_sampled_boundary_p95_m": 13.357306545467768,
+  "symmetric_boundary_hausdorff_m": 17.964700676213493,
+  "source_centroid_local_xy_m": [
+    -3.9257626377274306,
+    8.537344983664157
+  ],
+  "model_centroid_local_xy_m": [
+    -3.3875122070312536,
+    5.000000000000001
+  ],
+  "centroid_delta_m": [
+    0.5382504306961771,
+    -3.5373449836641564
+  ],
+  "source_bounds_local_m": [
+    [
+      -48.55443224943372,
+      42.00447997122808
+    ],
+    [
+      -54.34920643081614,
+      64.38232966683199
+    ]
+  ],
+  "model_bounds_local_m": [
+    [
+      -48.38751220703125,
+      41.61248779296875
+    ],
+    [
+      -54.5,
+      64.5
+    ]
+  ],
+  "limitations": [
+    "The Purdue map polygon is not documented as surveyed wall faces.",
+    "The convex hull of each selected structural shell object can bridge local setbacks and openings.",
+    "The model shell selection follows the existing audit list, which is named and repeatable but not a surveyed wall classification.",
+    "The project coordinate transform is a local approximation, not a projected survey CRS."
+  ]
+}

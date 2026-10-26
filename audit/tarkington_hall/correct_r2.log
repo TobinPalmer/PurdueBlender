@@ -1,0 +1,62 @@
+00:01.656  blend            | Read blend: "C:\Users\Tobin\Documents\Blender\PurdueMap\audit\tarkington_hall\baseline_tarkington_hall_r1.blend"
+BlenderMCP addon registered
+{
+  "asset": "Tarkington Hall",
+  "changes": "Four wing structural-shell vertices remapped along X to GIS/orthophoto roof-edge proxy; southeast wing shortened to registered termination; wing facade windows and sills repositioned; end-facade aperture widths adjusted; roof penthouse/HVAC centers moved with wings; missing north connector bridges added with brick, limestone, roof finish, and room-bay windows.",
+  "mapping_source_wall_face_x_to_target_proxy_x_m": {
+    "NW": [
+      -48.39,
+      -21.39,
+      -45.8,
+      -33.6
+    ],
+    "SW": [
+      -48.39,
+      -21.39,
+      -46.8,
+      -34.6
+    ],
+    "NE": [
+      14.61,
+      41.61,
+      28.0,
+      40.2
+    ],
+    "SE": [
+      14.61,
+      41.61,
+      28.7,
+      40.9
+    ]
+  },
+  "southeast_source_y_to_target_proxy_y_m": {
+    "source": [
+      -54.5,
+      -7.0
+    ],
+    "target": [
+      -43.4,
+      -7.0
+    ]
+  },
+  "structural_shell_meshes_deformed": 36,
+  "side_facade_windows_sills_repositioned": 384,
+  "north_south_facade_openings_width_adjusted": 192,
+  "roof_equipment_centers_moved": 8,
+  "north_connector_bridges_added": [
+    "West connector x=-33.60..-15.3875, y=19..33 m",
+    "East connector x=8.6125..28.00, y=19..33 m"
+  ],
+  "preserved": [
+    "Dorm room 118 and room furnishings dimensions/locations",
+    "central core",
+    "wing Y/Z dimensions and floor heights",
+    "window/sill vertical dimensions and spacing"
+  ],
+  "source_uncertainty": "Purdue GIS FID 662 documents a building outline but not whether its digitized edges are wall faces, roof eaves, or another cartographic edge. Targets were selected at straight mid-wing sections and aligned with the visible Spring 2023 Indiana orthophoto roofs. Metrics quantify model-to-GIS outline agreement, not a surveyed wall offset."
+}
+Info: Saved as "tarkington_hall_r2_candidate.blend"
+BlenderMCP addon unregistered
+Blender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)
+
+Blender quit

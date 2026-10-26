@@ -1,0 +1,295 @@
+{
+  "building": "Tarkington Hall",
+  "revision": "R2",
+  "score": 5.9,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": "The saved GIS feature is Purdue FID 662/code TARK, matching Newton Booth Tarkington Residence Hall. The 2023 Indiana orthophoto is georeferenced and overlaid. For the actual named export collection, the structural-shell union has IoU 0.630; mean boundary residual is 2.22 m. P95 is 9.59 m and Hausdorff distance is 11.68 m. The full scene, including unexported connector objects, yields IoU 0.688; that is not the delivered export. The GIS outline is explicitly not a surveyed wall outline and the orthophoto comparison is a roof-edge proxy."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.0,
+      "max_score": 2.0,
+      "evidence": "The model-shell centroid differs from the transformed GIS centroid by -0.49 m east-west and -1.65 m north-south (about 1.72 m total); axis bounds are broadly similar. The older exhaustive master audit still records position error and orientation error as unverified (None, None); its AABB screening is not a placement or orientation measurement. No surveyed wall dimensions are available."
+    },
+    {
+      "name": "Massing, floors, height, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": "The exterior shows the four-arm residential-hall organization, central core, four occupied floors, flat roof masses, and roof equipment. Purdue's emergency plan supports the four-floor wing program. The model reaches about 19.1 m, but the sources do not provide a measured elevation; roof heights, penthouse sizes, and central-core outline remain estimates. The corrected footprint comparison still shows substantial perimeter residuals."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": "The fresh exterior image shows a readable four-wing brick residence hall with repeated window bays, light horizontal bands, roof penthouses, and a marked central entrance. The source-backed corrections move wing windows and roof equipment with the revised shells and add two north connector forms. However, the mapped connectors' structural shells and most associated window objects are outside the named export collection, so the delivered module omits part of the represented form."
+    },
+    {
+      "name": "Modular export, portability, and evidence",
+      "score": 0.8,
+      "max_score": 2.0,
+      "evidence": "A fresh Blender 5.2.3 process reopened the exact canonical SHA. The identity root is present; the named export collection contains 814 objects/795 meshes in the export collection, with no materialless meshes, invalid material indices, missing image files, or foreign linked libraries. Yet the scene has 910 objects while Asset_tarkington_hall contains only 814; 96 newly added connector objects are linked to Scene Collection instead of Asset_tarkington_hall. They therefore do not travel with the manifest/master library link. GIS, orthophoto, room, and change evidence is extensive, but the canonical export membership defect is blocking."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/tarkington_hall.blend",
+    "sha256": "75aad771c9da9e454bbea76ef48852519fa58997747547f9120977e81a6aede5",
+    "blender_version": "5.2.3 LTS",
+    "fresh_reopen": {
+      "fresh_process_reopen": true,
+      "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\tarkington_hall.blend",
+      "sha256": "75aad771c9da9e454bbea76ef48852519fa58997747547f9120977e81a6aede5",
+      "blender_version": "5.2.3 LTS",
+      "scene": "Building_tarkington_hall",
+      "export_collection": "Asset_tarkington_hall",
+      "object_count": 814,
+      "mesh_count": 795,
+      "used_material_count": 16,
+      "root_exists": true,
+      "root_transform_identity": true,
+      "collection_object_count": 814,
+      "nonfinite_meshes": [],
+      "materialless_meshes": [],
+      "invalid_material_meshes": [],
+      "missing_external_images": [],
+      "linked_libraries": [],
+      "world_bounds_xyz_m": [
+        [
+          -51.612510681152344,
+          51.61248779296875
+        ],
+        [
+          -70.0,
+          70.0
+        ],
+        [
+          0.0,
+          19.100000381469727
+        ]
+      ],
+      "room118_floor_dimensions_m": [
+        5.599999904632568,
+        4.400000095367432,
+        0.11999999731779099
+      ]
+    },
+    "collection_membership": {
+      "scene_object_count": 910,
+      "export_collection_object_count": 814,
+      "connector_objects_outside_export": 96
+    },
+    "footprint_metrics": {
+      "asset_sha256": "75aad771c9da9e454bbea76ef48852519fa58997747547f9120977e81a6aede5",
+      "feature_id": 662,
+      "building_code": "TARK",
+      "shell_selection": "Only named structural-shell objects whose object names belong to Asset_tarkington_hall",
+      "shell_object_names": [
+        "Tark_Commons_Hub_GF_Wall_E",
+        "Tark_Commons_Hub_GF_Wall_N",
+        "Tark_Commons_Hub_GF_Wall_S",
+        "Tark_Commons_Hub_GF_Wall_W",
+        "Tark_Commons_Hub_Upper_Brick_Shaft",
+        "Tark_NE_Wing_Brick_Shaft",
+        "Tark_North_Entrance_Pavilion_Brick_Shaft",
+        "Tark_NW_Wing_Brick_Shaft",
+        "Tark_SE_Wing_Brick_Shaft",
+        "Tark_South_Entrance_Pavilion_GF_Wall_E",
+        "Tark_South_Entrance_Pavilion_GF_Wall_N",
+        "Tark_South_Entrance_Pavilion_GF_Wall_S",
+        "Tark_South_Entrance_Pavilion_GF_Wall_W",
+        "Tark_South_Entrance_Pavilion_Upper_Brick_Shaft",
+        "Tark_SW_Wing_GF_Wall_E",
+        "Tark_SW_Wing_GF_Wall_N",
+        "Tark_SW_Wing_GF_Wall_S",
+        "Tark_SW_Wing_GF_Wall_W",
+        "Tark_SW_Wing_Upper_Brick_Shaft"
+      ],
+      "shell_object_count": 19,
+      "source_polygon_area_m2": 5501.738673487712,
+      "export_shell_union_area_m2": 3862.579995079039,
+      "intersection_area_m2": 3617.906645142106,
+      "union_area_m2": 5746.412023424644,
+      "export_shell_iou": 0.6295940197803587,
+      "mean_symmetric_boundary_residual_m": 2.216336657247125,
+      "p95_symmetric_boundary_residual_m": 9.592889221150248,
+      "symmetric_boundary_hausdorff_m": 11.684619274929643,
+      "centroid_delta_m": [
+        -0.49238307254969893,
+        -1.645887092052031
+      ],
+      "source_bounds_local_xy_m": [
+        [
+          -48.55443224943372,
+          42.00447997122808
+        ],
+        [
+          -54.34920643081614,
+          64.38232966683199
+        ]
+      ],
+      "export_shell_bounds_local_xy_m": [
+        [
+          -46.79887771606445,
+          40.901123046875
+        ],
+        [
+          -54.5,
+          64.5
+        ]
+      ],
+      "excluded_shells": [
+        "Tark_East_Connector_Brick_Shaft",
+        "Tark_East_Connector_Limestone_Base",
+        "Tark_East_Connector_Limestone_Belt_1",
+        "Tark_East_Connector_Limestone_Belt_2",
+        "Tark_East_Connector_Limestone_Belt_3",
+        "Tark_East_Connector_Limestone_Belt_4",
+        "Tark_East_Connector_Roof_Membrane",
+        "Tark_East_Connector_Roof_Parapet",
+        "Tark_West_Connector_Brick_Shaft",
+        "Tark_West_Connector_Limestone_Base",
+        "Tark_West_Connector_Limestone_Belt_1",
+        "Tark_West_Connector_Limestone_Belt_2",
+        "Tark_West_Connector_Limestone_Belt_3",
+        "Tark_West_Connector_Limestone_Belt_4",
+        "Tark_West_Connector_Roof_Membrane",
+        "Tark_West_Connector_Roof_Parapet"
+      ],
+      "limitations": [
+        "The Purdue GIS outline is not documented as a surveyed wall-face polygon.",
+        "The official 2023 orthophoto is a roof-edge proxy; roof overhangs can differ from wall faces.",
+        "Shell object convex hulls can bridge local setbacks and openings.",
+        "The local geographic conversion is approximate, not a surveyed projection."
+      ]
+    },
+    "full_scene_candidate_footprint_metrics_including_unexported_geometry": {
+      "building": "Tarkington Hall",
+      "feature_id": 662,
+      "building_code": "TARK",
+      "model_asset": "modular/buildings/tarkington_hall.blend",
+      "model_shell_objects": [
+        "Tark_Commons_Hub_GF_Wall_E",
+        "Tark_Commons_Hub_GF_Wall_N",
+        "Tark_Commons_Hub_GF_Wall_S",
+        "Tark_Commons_Hub_GF_Wall_W",
+        "Tark_Commons_Hub_Upper_Brick_Shaft",
+        "Tark_East_Connector_Brick_Shaft",
+        "Tark_East_Connector_Limestone_Base",
+        "Tark_East_Connector_Limestone_Belt_1",
+        "Tark_East_Connector_Limestone_Belt_2",
+        "Tark_East_Connector_Limestone_Belt_3",
+        "Tark_East_Connector_Limestone_Belt_4",
+        "Tark_East_Connector_Roof_Membrane",
+        "Tark_East_Connector_Roof_Parapet",
+        "Tark_NE_Wing_Brick_Shaft",
+        "Tark_North_Entrance_Pavilion_Brick_Shaft",
+        "Tark_NW_Wing_Brick_Shaft",
+        "Tark_SE_Wing_Brick_Shaft",
+        "Tark_South_Entrance_Pavilion_GF_Wall_E",
+        "Tark_South_Entrance_Pavilion_GF_Wall_N",
+        "Tark_South_Entrance_Pavilion_GF_Wall_S",
+        "Tark_South_Entrance_Pavilion_GF_Wall_W",
+        "Tark_South_Entrance_Pavilion_Upper_Brick_Shaft",
+        "Tark_SW_Wing_GF_Wall_E",
+        "Tark_SW_Wing_GF_Wall_N",
+        "Tark_SW_Wing_GF_Wall_S",
+        "Tark_SW_Wing_GF_Wall_W",
+        "Tark_SW_Wing_Upper_Brick_Shaft",
+        "Tark_West_Connector_Brick_Shaft",
+        "Tark_West_Connector_Limestone_Base",
+        "Tark_West_Connector_Limestone_Belt_1",
+        "Tark_West_Connector_Limestone_Belt_2",
+        "Tark_West_Connector_Limestone_Belt_3",
+        "Tark_West_Connector_Limestone_Belt_4",
+        "Tark_West_Connector_Roof_Membrane",
+        "Tark_West_Connector_Roof_Parapet"
+      ],
+      "source_crs": "EPSG:4326",
+      "project_conversion": "X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0",
+      "model_local_origin_world_m": [
+        -591.6124877929688,
+        348.0
+      ],
+      "measurement_method": "Source GIS outline transformed into project-local meters; model structural-shell object vertices transformed through saved object matrices; each selected shell object convex-hulled in XY and unioned. Decoration, windows, paths, and landscaping excluded by the existing master audit shell selection.",
+      "source_polygon_area_m2": 5501.738673487712,
+      "model_shell_union_area_m2": 4392.145095901484,
+      "intersection_area_m2": 4031.3218367677914,
+      "union_area_m2": 5862.561932621404,
+      "polygon_iou": 0.6876382515186861,
+      "symmetric_sampled_boundary_mean_m": 2.1017826380534523,
+      "symmetric_sampled_boundary_p95_m": 9.371642715688008,
+      "symmetric_boundary_hausdorff_m": 11.340871475034497,
+      "source_centroid_local_xy_m": [
+        -3.9257626377274306,
+        8.537344983664157
+      ],
+      "model_centroid_local_xy_m": [
+        -4.177476791956726,
+        9.196360821826337
+      ],
+      "centroid_delta_m": [
+        -0.2517141542292958,
+        0.6590158381621798
+      ],
+      "source_bounds_local_m": [
+        [
+          -48.55443224943372,
+          42.00447997122808
+        ],
+        [
+          -54.34920643081614,
+          64.38232966683199
+        ]
+      ],
+      "model_bounds_local_m": [
+        [
+          -46.79887771606445,
+          40.901123046875
+        ],
+        [
+          -54.5,
+          64.5
+        ]
+      ],
+      "limitations": [
+        "The Purdue map polygon is not documented as surveyed wall faces.",
+        "The convex hull of each selected structural shell object can bridge local setbacks and openings.",
+        "The model shell selection follows the existing audit list, which is named and repeatable but not a surveyed wall classification.",
+        "The project coordinate transform is a local approximation, not a projected survey CRS."
+      ]
+    },
+    "source_records": {
+      "gis": "audit/tarkington_hall/gis_feature_662.json (Purdue GIS FID 662, TARK)",
+      "orthophoto_overlay": "audit/tarkington_hall/ortho_footprint_overlay_r2.png",
+      "official_orthophoto": "audit/tarkington_hall/indiana_2023_ortho_r1.png",
+      "housing_and_program_sources": "audit/tarkington_hall/refinement_r2.md",
+      "room_view": "audit/tarkington_hall/room_r6.png",
+      "exterior_view": "audit/tarkington_hall/exterior_r2.png",
+      "master_audit": "audit/master_building_audit.json (position/orientation/height unverified)"
+    }
+  },
+  "findings": [
+    {
+      "priority": "blocker",
+      "finding": "Move the 96 connector objects currently outside Asset_tarkington_hall into the named export collection, then reopen the canonical library and master link to verify their presence."
+    },
+    {
+      "priority": "high",
+      "finding": "Export-only footprint mismatch remains material: IoU 0.630, mean boundary residual 2.22 m, P95 9.59 m, and Hausdorff 11.68 m. Diagnose the central-core contribution against the orthophoto; retain the GIS roof-versus-wall uncertainty."
+    },
+    {
+      "priority": "high",
+      "finding": "Obtain or document a fresh master-marker position/orientation check; the root master audit continues to label both values unverified."
+    },
+    {
+      "priority": "medium",
+      "finding": "Add an interior view beyond the single representative dorm room and keep room dimensions labeled as approximate unless supported by an as-built plan."
+    }
+  ]
+}

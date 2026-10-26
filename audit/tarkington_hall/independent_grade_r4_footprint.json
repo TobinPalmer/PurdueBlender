@@ -1,0 +1,59 @@
+{
+  "building": "Tarkington Hall",
+  "candidate_sha256": "b844a77e35ad44bf722ea0432ed40dc47a6b01fff24c095cbabf68e760f87065",
+  "source_provider": "Purdue University ArcGIS BuildingShapesZip4 FeatureServer layer 0",
+  "feature_id": 662,
+  "building_code": "TARK",
+  "source_crs": "EPSG:4326",
+  "source_retrieved_date": "2026-10-22 snapshot; packed 2026-10-25",
+  "source_to_model_transform": {
+    "longitude_origin": -86.9137,
+    "latitude_origin": 40.4274,
+    "x_scale_m_per_degree": 84810.60416539927,
+    "y_scale_m_per_degree": 111040.0,
+    "subtract_master_placement_origin_m": [
+      -591.6124877929688,
+      348.0
+    ],
+    "limitation": "Local geographic approximation, not survey-grade CRS."
+  },
+  "shell_selection": "Read-only fresh Blender reopen. Source shell candidate names from master_building_audit.json; plus only named connector/core structural shell components. Decorative, glazing, furniture, and paths excluded.",
+  "shell_object_count": 59,
+  "source_polygon_area_m2": 5501.738673487712,
+  "model_shell_union_area_m2": 5375.674614296759,
+  "intersection_area_m2": 5306.3009672543885,
+  "union_area_m2": 5571.1123205300855,
+  "polygon_iou": 0.9524670589928977,
+  "symmetric_mean_boundary_residual_m": 0.6092043363270927,
+  "symmetric_p95_boundary_residual_m": 2.2197085294177867,
+  "symmetric_hausdorff_m": 8.701984269892876,
+  "centroid_offset_xy_m": [
+    -0.3030695327341224,
+    -0.23413845375232256
+  ],
+  "source_bounds_model_local_m": [
+    [
+      -48.55443224943372,
+      42.00447997122808
+    ],
+    [
+      -54.34920643081614,
+      64.38232966683199
+    ]
+  ],
+  "model_bounds_local_m": [
+    [
+      -48.54999923706055,
+      41.099998474121094
+    ],
+    [
+      -54.5,
+      64.5
+    ]
+  ],
+  "limitations": [
+    "GIS outline has no documented wall-face survey semantics; 2023 orthophoto supports it as roof/edge proxy.",
+    "Model shell union uses convex hulls per named structural shell; local setbacks and openings may bridge.",
+    "The Hausdorff maximum is an isolated extreme and should be read with mean/P95 and visual overlay."
+  ]
+}

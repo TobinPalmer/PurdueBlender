@@ -1,0 +1,233 @@
+{
+  "building": "Tarkington Hall",
+  "revision": "R3 independent regrade",
+  "score": 7.2,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": "The official Purdue GIS snapshot is FID 662/code TARK; the 2023 Indiana ortho overlay agrees on the characteristic four-arm residence-hall form. Fresh export-only shell extraction yields IoU 0.688, mean symmetric boundary residual 2.10 m, P95 9.37 m, and Hausdorff 11.34 m. The footprint now includes the two connector shell groups. The central/core perimeter and selected shell proxy still diverge materially. The GIS perimeter is not documented as surveyed wall faces; the orthophoto comparison may represent roof edges."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.2,
+      "max_score": 2.0,
+      "evidence": "On the same local GIS transform, the export-shell centroid is offset -0.25 m east-west and 0.66 m north-south (0.71 m resultant); plan bounds are broadly similar. The independent asset reopen verifies the root transform is identity, but the campus Placement_tarkington_hall marker is outside this building library and was not checked in this pass, so campus position/orientation remain unverified here. GIS-to-local conversion is approximate; no surveyed wall dimensions were found."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": "The model has four occupied floors and a flat-roof, four-wing massing with roof penthouses/equipment. Purdue’s current emergency plan identifies East and West wings with four floors each and central lounge, reception, dining/kitchen, study/recreation, mail, laundry, linen, mechanical, and staff uses. The reopened asset bounds reach 19.1 m, but the public material reviewed provides no measured building elevation; roof/penthouse heights and parts of the core remain modeled estimates. Orthophoto/GIS residuals include outliers above 9 m."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": "The exterior render reads as a brick residence hall with four wings, repetitive window bays, light horizontal bands, roof masses, and a central entrance. R3 connector forms are now included in the actual export, correcting a major omission in R2. The facade treatment remains highly repetitive and simplified, with limited entrance articulation and no detailed representation of the verified central uses. The one available room cutaway has beds/desks but sparse finishes and little room-specific detailing; no representative central lounge/dining or typical full-floor interior is evidenced."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": "Fresh Blender 5.2.3 LTS reopened the exact canonical SHA. Asset_tarkington_hall contains all 910 expected objects/891 meshes, including all 96 connector meshes (48 each side), all connector objects are linked only to the asset collection and parented to the identity root, and no duplicate names, nonfinite vertices, materialless meshes, invalid material indices, missing external images, or foreign linked libraries were found. Sixteen used materials are present. Source snapshots, exterior/room renders, and footprint overlays exist; evidence remains limited for campus marker transform, measured elevations, and the interior program."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/tarkington_hall.blend",
+    "sha256": "825d57329797fd45b6eb7784c8a6011f99a575bed6a97c11ed06e098eb618ee1",
+    "blender_version": "5.2.3 LTS",
+    "fresh_reopen": {
+      "fresh_process_reopen": true,
+      "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\tarkington_hall.blend",
+      "sha256": "825d57329797fd45b6eb7784c8a6011f99a575bed6a97c11ed06e098eb618ee1",
+      "blender_version": "5.2.3 LTS",
+      "scene": "Building_tarkington_hall",
+      "export_collection": "Asset_tarkington_hall",
+      "root_transform_identity": true,
+      "membership": {
+        "collection_object_count": 910,
+        "mesh_count": 891,
+        "connector_count": 96,
+        "west_connector_count": 48,
+        "east_connector_count": 48,
+        "all_connectors_only_in_asset_collection": true,
+        "all_connectors_parented_to_root": true,
+        "connector_meshes_missing_materials": [],
+        "duplicate_object_names_in_asset": [],
+        "nonfinite_mesh_vertices": [],
+        "materialless_meshes": [],
+        "invalid_material_indices": [],
+        "external_linked_libraries": [],
+        "used_materials": [
+          "Beering_Executive_Dark_Oak",
+          "Beering_Honey_Oak_Woodwork",
+          "Beering_Lobby_Terrazzo",
+          "Beering_Purdue_Red_Brick",
+          "Beering_Roof_Membrane",
+          "Beering_Solar_Ribbon_Glass",
+          "Campus_Teak_Wood_Bench",
+          "Indiana_Bedford_Limestone",
+          "Tark_Appliance_White",
+          "Tark_Architectural_Bronze",
+          "Tark_Billiard_Green_Felt",
+          "Tark_Black_Countertop",
+          "Tark_Display_Emission",
+          "Tark_PetesZa_Red_Sign",
+          "Tark_Stainless_Steel",
+          "Tarkington_Navy_Carpet"
+        ]
+      },
+      "used_material_count": 16,
+      "missing_external_images": [],
+      "world_bounds_xyz_m": [
+        [
+          -51.612510681152344,
+          51.61248779296875
+        ],
+        [
+          -70.0,
+          70.0
+        ],
+        [
+          0.0,
+          19.100000381469727
+        ]
+      ],
+      "shell_vertices_file": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\tarkington_hall\\independent_shell_vertices_r3.json"
+    },
+    "export_only_footprint_metrics": {
+      "building": "Tarkington Hall",
+      "revision": "R3 independent",
+      "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\tarkington_hall.blend",
+      "sha256": "825d57329797fd45b6eb7784c8a6011f99a575bed6a97c11ed06e098eb618ee1",
+      "feature_id": 662,
+      "building_code": "TARK",
+      "shell_object_count": 35,
+      "shell_objects": [
+        "Tark_NW_Wing_Brick_Shaft",
+        "Tark_SW_Wing_GF_Wall_N",
+        "Tark_SW_Wing_GF_Wall_S",
+        "Tark_SW_Wing_GF_Wall_E",
+        "Tark_SW_Wing_GF_Wall_W",
+        "Tark_SW_Wing_Upper_Brick_Shaft",
+        "Tark_NE_Wing_Brick_Shaft",
+        "Tark_SE_Wing_Brick_Shaft",
+        "Tark_Commons_Hub_GF_Wall_N",
+        "Tark_Commons_Hub_GF_Wall_S",
+        "Tark_Commons_Hub_GF_Wall_E",
+        "Tark_Commons_Hub_GF_Wall_W",
+        "Tark_Commons_Hub_Upper_Brick_Shaft",
+        "Tark_North_Entrance_Pavilion_Brick_Shaft",
+        "Tark_South_Entrance_Pavilion_GF_Wall_N",
+        "Tark_South_Entrance_Pavilion_GF_Wall_S",
+        "Tark_South_Entrance_Pavilion_GF_Wall_E",
+        "Tark_South_Entrance_Pavilion_GF_Wall_W",
+        "Tark_South_Entrance_Pavilion_Upper_Brick_Shaft",
+        "Tark_East_Connector_Brick_Shaft",
+        "Tark_East_Connector_Limestone_Base",
+        "Tark_East_Connector_Limestone_Belt_1",
+        "Tark_East_Connector_Limestone_Belt_2",
+        "Tark_East_Connector_Limestone_Belt_3",
+        "Tark_East_Connector_Limestone_Belt_4",
+        "Tark_East_Connector_Roof_Membrane",
+        "Tark_East_Connector_Roof_Parapet",
+        "Tark_West_Connector_Brick_Shaft",
+        "Tark_West_Connector_Limestone_Base",
+        "Tark_West_Connector_Limestone_Belt_1",
+        "Tark_West_Connector_Limestone_Belt_2",
+        "Tark_West_Connector_Limestone_Belt_3",
+        "Tark_West_Connector_Limestone_Belt_4",
+        "Tark_West_Connector_Roof_Membrane",
+        "Tark_West_Connector_Roof_Parapet"
+      ],
+      "source_polygon_area_m2": 5501.738673487712,
+      "model_shell_union_area_m2": 4392.145095901484,
+      "intersection_area_m2": 4031.3218367677914,
+      "union_area_m2": 5862.561932621404,
+      "polygon_iou": 0.6876382515186861,
+      "boundary_sample_step_m": 0.25,
+      "symmetric_sample_count": 4995,
+      "symmetric_sampled_boundary_mean_m": 2.1017826380534546,
+      "symmetric_sampled_boundary_p95_m": 9.371642715688008,
+      "symmetric_boundary_hausdorff_m": 11.340871475034497,
+      "source_centroid_local_xy_m": [
+        -3.9257626377274306,
+        8.537344983664157
+      ],
+      "model_centroid_local_xy_m": [
+        -4.177476791956726,
+        9.196360821826337
+      ],
+      "centroid_delta_m": [
+        -0.2517141542292958,
+        0.6590158381621798
+      ],
+      "centroid_delta_length_m": 0.7054515507020805,
+      "source_bounds_local_m": [
+        [
+          -48.55443224943372,
+          42.00447997122808
+        ],
+        [
+          -54.34920643081614,
+          64.38232966683199
+        ]
+      ],
+      "model_bounds_local_m": [
+        [
+          -46.79887771606445,
+          40.901123046875
+        ],
+        [
+          -54.5,
+          64.5
+        ]
+      ],
+      "source_crs": "EPSG:4326",
+      "local_transform": "X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0; origin=(-591.6124877929688,348.0)",
+      "method": "Reopened canonical .blend in fresh Blender 5.2.3 process, extracted all vertices only from Asset_tarkington_hall shell candidate meshes, transformed by matrix_world, convex-hulled each XY set, and unioned. Metrics recomputed from raw saved Purdue GIS FID 662 snapshot.",
+      "limitations": [
+        "GIS outline is not documented as surveyed wall faces and may follow roof/eave/cartographic edges.",
+        "Project-local geographic conversion is approximate rather than a projected survey CRS.",
+        "Convex hull of each selected shell object bridges openings and local setbacks.",
+        "This metric excludes non-shell details and does not claim exact wall-to-map alignment."
+      ]
+    },
+    "sources": {
+      "Purdue GIS": "audit/tarkington_hall/gis_feature_662.json (FID 662, TARK)",
+      "orthophoto": "audit/tarkington_hall/indiana_2023_ortho_r1.png and ortho_footprint_overlay_r2.png",
+      "Purdue housing page": "https://www.housing.purdue.edu/my-housing/options/residence-halls/tarkington.html",
+      "Purdue emergency plan": "https://www.purdue.edu/operations/emergency-preparedness/tark/",
+      "exterior view": "audit/tarkington_hall/exterior_r2.png",
+      "interior view": "audit/tarkington_hall/room_r6.png"
+    },
+    "evaluation_limits": [
+      "This score checks the canonical building library, not its master scene placement transform.",
+      "The GIS feature is not identified as a surveyed wall-face boundary.",
+      "Height and central-program details lack complete measured/as-built documentation."
+    ]
+  },
+  "findings": [
+    {
+      "priority": "high",
+      "finding": "Footprint agreement is improved but still not acceptance-grade for a faithful footprint: IoU 0.688; mean residual 2.10 m; P95 9.37 m; Hausdorff 11.34 m. Inspect the central core and wing endings against the ortho while retaining uncertainty about whether the GIS boundary is a roof or wall edge."
+    },
+    {
+      "priority": "high",
+      "finding": "Verify the canonical master Placement_tarkington_hall marker, linked asset orientation, and site position in a read-only master check; that transform is not stored in this building asset and is not proven by the local shell-to-GIS centroid comparison."
+    },
+    {
+      "priority": "medium",
+      "finding": "Improve façade and interior evidence beyond one simplified dorm-room cutaway. Model recognizable central lounge/dining/reception/common functions and provide a typical room/floor view using the official program as evidence."
+    },
+    {
+      "priority": "medium",
+      "finding": "Document reliable height/floor-elevation sources or clearly keep the 19.1 m roof height and roof-top masses labeled as estimates."
+    }
+  ]
+}

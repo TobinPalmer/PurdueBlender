@@ -1,0 +1,5 @@
+import json,hashlib
+from pathlib import Path
+out=Path('audit/tarkington_hall'); asset=out/'tarkington_hall_r4_candidate.blend'; sha=hashlib.sha256(asset.read_bytes()).hexdigest()
+p=out/'footprint_comparison_r4.json'; d=json.loads(p.read_text(encoding='utf8')); d['model_asset']=str(asset); d['model_sha256']=sha; p.write_text(json.dumps(d,indent=2)+'\n',encoding='utf8')
+p=out/'refinement_r4_changes.json'; d=json.loads(p.read_text(encoding='utf8')); d['candidate_sha256']=sha; d['standard_room_module']={'modeled_dimensions_m':[3.53,4.93],'source_dimensions':'Purdue housing page approximate 11 ft 7 in x 16 ft 2 in','layout':'two beds, two desks/chairs, window/curtains, closet and dresser','placement':'schematic within west wing; plan does not publish room coordinates'}; d['evidence_renders']=['exterior_r4.png','ortho_footprint_overlay_r4.png','lobby_cutaway_r4.png','dining_recreation_cutaway_r4.png','standard_double_room_program_r4.png']; p.write_text(json.dumps(d,indent=2)+'\n',encoding='utf8')

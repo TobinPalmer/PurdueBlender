@@ -1,0 +1,83 @@
+{
+  "building": "Tarkington Hall",
+  "revision": "R4 independent grade",
+  "candidate": "audit/tarkington_hall/tarkington_hall_r4_candidate.blend",
+  "sha256": "b844a77e35ad44bf722ea0432ed40dc47a6b01fff24c095cbabf68e760f87065",
+  "review_date": "2026-10-26",
+  "reviewer": "Independent grader",
+  "score": 8.0,
+  "max_score": 10.0,
+  "pass_threshold": 8.0,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": "The frozen candidate was checked against Purdue GIS FID 662/code TARK and the Spring 2023 Indiana orthophoto. I freshly extracted the named structural shell from the R4 file and independently recomputed polygon IoU 0.9525, symmetric mean boundary residual 0.61 m, P95 2.22 m, and Hausdorff 8.70 m. The top-down orthophoto overlay shows close four-wing and central crossbar agreement. The GIS ring is not documented as a surveyed wall boundary; a localized maximum discrepancy remains, and the proxy uses per-object convex hulls."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.2,
+      "max_score": 2.0,
+      "evidence": "Fresh reopen confirms an identity asset-root transform. Independent local XY shell bounds are approximately X -48.55 to 42.00 m and Y -54.35 to 64.38 m, against the transformed GIS bounds X -48.55 to 42.00 m and Y -54.35 to 64.38 m; the independent shell centroid offset is about 0.38 m. However, the master placement marker was not freshly inspected in this grading pass, and the conversion remains a local geographic approximation rather than survey control."
+    },
+    {
+      "name": "Evidence-backed floors, height, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": "Purdue's October 2026 emergency plan describes four floors in each East and West wing and identifies the central lounge/reception, dining/kitchen, study/recreation, mail, laundry, linen, mechanical, and staff programs. The model shows four occupied levels and a flat-roofed, four-wing plan with roof equipment. The reopened model reaches 19.1 m, but no measured roof elevation was found; height and penthouse dimensions remain estimates. GIS height-related fields are not sufficiently defined to prove exact elevation."
+    },
+    {
+      "name": "Facade, entrances, and interior program",
+      "score": 1.75,
+      "max_score": 2.0,
+      "evidence": "The exterior render now reads as the mapped four-arm brick hall with repetitive windows, light horizontal floor bands, an articulated central crossbar, entry pavilions, and roof masses. The lobby/reception/mail, dining/recreation, and representative double-room cutaways add evidence-backed program missing from R3. Purdue's standard layout dimensions and listed furnishings are represented. Facade bays and most interior placements remain simplified or schematic, and the room cutaways are sparse compared with a complete floor plan."
+    },
+    {
+      "name": "Modular export, materials, portability, and evidence",
+      "score": 1.85,
+      "max_score": 2.0,
+      "evidence": "A fresh Blender 5.2.3 LTS process opened the exact candidate SHA. Asset_tarkington_hall contains 1,361 objects/1,342 meshes; all 329 connector-named objects are in the export collection and parented to the identity root. The file has 22 used materials, no materialless meshes, invalid material slots, nonfinite vertices, duplicate names, missing external image files, or foreign library dependencies. GIS, official room-program references, orthophoto, build edits, and renders are retained. Topology and master-marker placement remain outside the verified checks."
+    }
+  ],
+  "independent_geometry_check": "audit/tarkington_hall/independent_grade_r4_footprint.json",
+  "fresh_reopen_check": "audit/tarkington_hall/independent_grade_r4_reopen.json",
+  "orthophoto_overlay": "audit/tarkington_hall/independent_grade_r4_footprint_overlay.png",
+  "sources": [
+    {
+      "title": "Purdue GIS BuildingShapesZip4, feature FID 662 / TARK",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/662?f=pjson",
+      "source_crs": "EPSG:4326",
+      "snapshot_retrieved": "2026-10-22"
+    },
+    {
+      "title": "Indiana 2023 Imagery ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
+      "source_crs": "EPSG:4326 request; 6-inch 2023 orthophoto",
+      "imagery_downloaded": "2026-10-25"
+    },
+    {
+      "title": "Purdue University Residences — Tarkington room dimensions and furnishings",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/tarkington.html",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "Purdue Office of Emergency Preparedness — Tarkington Building Emergency Plan",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/tark/",
+      "revision_date": "2026-10-13",
+      "accessed": "2026-10-26"
+    },
+    {
+      "title": "Purdue University Residences — Tarkington exterior image",
+      "url": "https://housing.purdue.edu/images/_hero/tarkington-exterior-640x360.jpg",
+      "accessed": "2026-10-26"
+    }
+  ],
+  "limitations": [
+    "Campus placement marker was not independently re-opened during this grade; candidate root geometry is local and identity transformed.",
+    "Purdue GIS footprint is a generalized map boundary and may trace roof/eave edges rather than wall faces.",
+    "Roof, penthouse, and building-height dimensions are estimates because no measured elevation was found.",
+    "Interior room positions and floor distribution remain schematic; no architectural floor plans were found."
+  ]
+}
