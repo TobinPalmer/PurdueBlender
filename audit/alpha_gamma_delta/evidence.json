@@ -1,0 +1,111 @@
+{
+  "building": "Alpha Gamma Delta, Beta Xi Chapter",
+  "asset_id": "massing_house_301841608_d56a4c4",
+  "status": "Complete; passed fresh independent grade at 8.25/10; ready for master integration handoff",
+  "source": {
+    "provider": "Purdue University official campus building footprint service",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 757,
+    "building_code": "SOAGD",
+    "source_name": "Alpha Gamma Delta",
+    "address": "1010 David Ross Rd",
+    "retrieval_date": "2026-10-26",
+    "source_crs": "EPSG:4326 (WGS 84); outSR=4326 explicitly requested",
+    "source_record": "source_feature_757_raw.json",
+    "reference_status": "Official campus map polygon, not a certified survey",
+    "secondary_visual_references": [
+      {
+        "provider": "Alpha Gamma Delta Fraternity Housing Corporation",
+        "use": "Confirms Beta Xi address, 1965 year built, capacity 74, and published size 23,288 sq ft; no dimensions or elevations inferred.",
+        "url": "https://alphagammadeltahousing.org/locations/purdue-university/"
+      },
+      {
+        "provider": "Meyer Najem construction manager",
+        "use": "Identifies a 5,000 sq ft renovation and two-story house; renovation size is not treated as whole-building size.",
+        "url": "https://www.meyer-najem.com/project/alpha-gamma-delta-sorority-house-purdue-university/"
+      },
+      {
+        "provider": "Two Tulips Boutique; illustration by Courtney Day",
+        "use": "Exact-address stylized house illustration informs pitched roof, columned entry, cream exterior, and red doors; not a scaled drawing or survey.",
+        "url": "https://twotulips.com/products/purdue-sorority-custom-house-drawing"
+      }
+    ]
+  },
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not surveyed CRS"
+  },
+  "measurements": {
+    "official_footprint_aabb_xy_m": [
+      -896.7978560613567,
+      -846.5794736610017,
+      864.4553731868496,
+      903.1197568790208
+    ],
+    "official_minimum_rotated_rectangle_approx_m": {
+      "width": 37.0481,
+      "depth": 43.7307,
+      "orientation_axis_degrees_east_ccw": 137.0
+    },
+    "official_polygon_area_m2": 1785.99609375,
+    "official_source_ring_vertices": 30,
+    "before_asset_dimensions_m": [
+      54.058,
+      39.475,
+      16.0
+    ],
+    "after_structural_shell": "Reopened asset base matches all 30 distinct transformed source-ring points with 0.0 m maximum residual.",
+    "after_asset_bounds_including_details_m": {
+      "min_x": -896.93042,
+      "max_x": -846.446472,
+      "min_y": 864.327393,
+      "max_y": 903.250122,
+      "min_z": 0.0,
+      "max_z": 10.0
+    },
+    "modeled_floors": 2,
+    "official_num_levels_attribute": 1,
+    "official_extrution_attribute": 40,
+    "position_status": "Base footprint exactly follows the transformed 30-point official campus map polygon; the source publishes no positional accuracy.",
+    "plan_dimension_status": "Footprint follows the official polygon. FHC's 23,288 sq ft listing has no stated area convention; Meyer Najem's 5,000 sq ft refers to a renovation scope, not total building area.",
+    "orientation_status": "Wall orientation follows the source-ring edges. A west-facing long edge was selected for the portico from address and illustrative context only; the entry side has not been georeferenced.",
+    "height_status": "Estimated 7.6 m eaves and 10.0 m ridge; no measured elevation found. GIS NUM_LEVELS=1 conflicts with contractor description of two stories; source field convention is undocumented."
+  },
+  "geometry_edits": [
+    "Replaced the simple massing with a two-level mesh whose base preserves all 30 official source-ring vertices.",
+    "Added repeated window bays, floor band, plinth, light trim, and a low roof membrane across the full mapped outline.",
+    "Added a compact estimated gable roof, a columned entrance porch, red entry doors, and front steps using the exact-address house illustration for broad visual vocabulary.",
+    "Removed unused placeholder texture materials so the saved building library has no external image dependencies.",
+    "Preserved the assigned asset ID, path, object name, one-object collection, campus coordinate frame, and identity object transform."
+  ],
+  "uncertainties": [
+    "Purdue campus GIS is not a certified survey and publishes no positional or dimensional uncertainty.",
+    "GIS NUM_LEVELS=1 conflicts with the contractor's two-story description and the stylized operator-address illustration; the GIS field definition is unknown.",
+    "Eaves, ridge, central gable size, facade rhythm, entry position/orientation, and material colors are estimates; no measured elevation or georeferenced facade photograph was located.",
+    "The FHC published square footage and the GIS area use unspecified or different area conventions and should not be treated as directly equivalent."
+  ],
+  "artifacts": {
+    "build_script": "../../modular/buildings/build_massing_house_301841608_d56a4c4.py",
+    "build_config": "build_config.json",
+    "raw_source": "source_feature_757_raw.json",
+    "source_observations": "source_observations.json",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py",
+    "preview_render_script": "render_preview.py",
+    "preview": "preview_detail.png",
+    "independent_grade": "independent_grade_codex/result.json",
+    "independent_evaluator": "independent_grade_codex/evaluate.py"
+  },
+  "independent_grade": {
+    "score": 8.25,
+    "max_score": 10,
+    "status": "PASS",
+    "result": "independent_grade_codex_r2/result.json",
+    "evaluator": "independent_grade_codex_r2/evaluate.py",
+    "summary": "Exact GIS footprint match and modular export pass; GIS floor-count conflict, unmeasured heights/roof, facade details, and entry bearing remain uncertain."
+  }
+}

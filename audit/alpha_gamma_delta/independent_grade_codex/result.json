@@ -1,0 +1,83 @@
+{
+  "score": 7.8,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS feature FID 757 identifies Alpha Gamma Delta (SOAGD) at 1010 David Ross Road.",
+        "The saved mesh base contains all 30 distinct transformed source-ring vertices; independently recomputed maximum residual is 0.000000000 m.",
+        "The housing operator independently lists the Beta Xi property at the same address."
+      ],
+      "uncertainty": "The campus-map polygon is not a certified survey and its structural-edge convention and positional tolerance are unpublished."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": [
+        "The footprint vertices match the Purdue WGS 84 polygon after the documented local-campus transform.",
+        "Saved mesh bounds are X [-896.93042, -846.446472] m, Y [864.327393, 903.250122] m, Z [0.0, 10.0] m.",
+        "The wall shell preserves source orientation and scale."
+      ],
+      "uncertainty": "No source records georeference the front door or porch; the selected west-facing side is a builder estimate."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "The Meyer Najem project description calls the house two stories, consistent with the modeled two levels.",
+        "The GIS NUM_LEVELS field reports 1, so the level-count conflict remains unresolved.",
+        "A stylized exact-address illustration supports a pitched roof silhouette, but the model's 7.6 m eaves, 10.0 m ridge, and compact central gable are not dimensioned by a plan."
+      ],
+      "uncertainty": "No measured elevations or roof plan were found; roof profile and absolute height are estimates."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "The custom illustration depicts a two-story cream house with pitched roof, columned entry, and red double doors.",
+        "The model includes repeated windows, a portico, red door, front steps, cream walls, and a central gable.",
+        "Visual inspection of preview_detail.png shows the intended elements, though the gable reads as a small central roof block and the facade rhythm is schematic."
+      ],
+      "uncertainty": "The illustration is stylized rather than a measured photo, and no georeferenced facade reference confirms the door side, proportions, materials, or window rhythm."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Blender reopened massing_house_301841608_d56a4c4.blend with exactly one mesh object in Asset_massing_house_301841608_d56a4c4 and identity transforms.",
+        "The asset contains 2098 vertices and 1412 faces, with 0 external unpacked images.",
+        "A dedicated builder, raw GIS feature, structured source notes, validation, and preview are present."
+      ],
+      "uncertainty": "No portability issue was found in the assigned library."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_house_301841608_d56a4c4.blend",
+    "source_paths": [
+      "audit/alpha_gamma_delta/source_feature_757_raw.json",
+      "audit/alpha_gamma_delta/source_observations.json"
+    ],
+    "reopen_validation": "audit/alpha_gamma_delta/reopen_validation.json",
+    "preview": "audit/alpha_gamma_delta/preview_detail.png",
+    "direct_source_checks": [
+      "Fraternity Housing Corporation page lists Beta Xi at 1010 David Ross Road, year built 1965, capacity 74, and 23,288 square feet.",
+      "Meyer Najem page identifies a 5,000-square-foot renovation and calls the project two stories; it does not establish total-building area or elevations.",
+      "Two Tulips product page identifies the illustration as the house at 1010 David Ross Road; it is a stylized design reference, not an architectural drawing."
+    ]
+  },
+  "findings": [
+    "Identity and source footprint are strong; all 30 GIS base vertices match at project-transform precision.",
+    "The two-story model conflicts with the GIS NUM_LEVELS=1 field, whose counting convention is not documented.",
+    "The roof and entry vocabulary have an exact-address illustration as a reference, but the gable scale and entrance orientation are not verified.",
+    "The facade reads as a basic massing with sparse schematic windows; roof, heights, and entrance details remain uncertain."
+  ],
+  "independent_review": true,
+  "rubric_pass": false
+}

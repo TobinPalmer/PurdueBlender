@@ -1,0 +1,76 @@
+{
+  "building": "Alpha Gamma Delta, Beta Xi Chapter",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University official campus building footprint service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 757,
+      "source_name": "Alpha Gamma Delta",
+      "building_code": "SOAGD",
+      "address": "1010 David Ross Rd",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": "EPSG:4326 (WGS 84); query explicitly requested outSR=4326",
+      "raw_snapshot": "source_feature_757_raw.json",
+      "measurement_method": "30 distinct WGS 84 footprint vertices transformed to project-local campus XY using the documented repository approximation; opened .blend base vertices compared to every source ring point.",
+      "observation": "FID 757 / SOAGD identifies Alpha Gamma Delta at 1010 David Ross Road. The polygon area attribute is 1785.996 m2. It reports NUM_LEVELS=1 and Extrution=40, but the service publishes no definitions or units for these fields.",
+      "uncertainty": "Campus GIS is not a certified survey and gives no positional accuracy, structural edge convention, vertical datum, or extrusion field definition."
+    },
+    {
+      "provider": "Alpha Gamma Delta Fraternity Housing Corporation (property operator)",
+      "url": "https://alphagammadeltahousing.org/locations/purdue-university/",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": null,
+      "measurement_method": "Operator property listing, no geometry measurements taken.",
+      "observation": "Lists the Beta Xi house at 1010 David Ross Road, capacity 74, year built 1965, and size 23,288 square feet. The page links to property images; no drawing, field dimensions, or elevation is supplied.",
+      "uncertainty": "The published square footage is not identified as footprint area or a particular gross-area convention. It is not directly comparable to the GIS polygon area."
+    },
+    {
+      "provider": "Meyer Najem, construction manager project portfolio",
+      "url": "https://www.meyer-najem.com/project/alpha-gamma-delta-sorority-house-purdue-university/",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "measurement_method": "Project description; renovation scope, no new dimensions inferred.",
+      "observation": "Confirms a 5,000-square-foot renovation to an existing sorority house and describes the project as a two-story house.",
+      "uncertainty": "5,000 square feet is the renovation scope, not a whole-building area or measured footprint; the page supplies no elevations or roof plan."
+    },
+    {
+      "provider": "Two Tulips Boutique, Purdue sorority-house illustration by Courtney Day",
+      "url": "https://twotulips.com/products/purdue-sorority-custom-house-drawing",
+      "image_url": "https://twotulips.com/cdn/shop/files/image_6483441_5.jpg?v=1730144552&width=1946",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": null,
+      "measurement_method": "Commercial custom illustration explicitly identified as 1010 David Ross Road; visual vocabulary only, not scaled or treated as a measured elevation.",
+      "observation": "The stylized drawing depicts a two-story cream-colored house with a pitched roof, a columned entrance, red double doors, Greek letters, and front shrubs.",
+      "uncertainty": "Illustration is not a construction drawing or georeferenced photograph; proportions, exact materials, roof footprint, entrance side and details are approximate."
+    },
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life / Panhellenic Association",
+      "url": "https://www.purdue.edu/fscl/councils/pha/chapters.php",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": null,
+      "measurement_method": "Chapter identity cross-check; no dimensions inferred.",
+      "observation": "Lists the Purdue Alpha Gamma Delta chapter and links its official chapter website.",
+      "uncertainty": "Establishes chapter identity only."
+    }
+  ],
+  "coordinate_transform": {
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "project_frame": "Meters; X east, Y north, Z up; campus origin latitude 40.4274, longitude -86.9137",
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "limitation": "Project-local approximation, not a surveyed projected CRS."
+  },
+  "modeling_decisions": {
+    "footprint": "Preserve all 30 official polygon vertices at the building base; verified in the reopened library.",
+    "floors": "Two modeled stories, supported by the contractor project description and operator house illustration; GIS NUM_LEVELS=1 conflicts and its field convention is undocumented.",
+    "height": "Estimated eaves 7.6 m and ridge 10.0 m; no measured elevation or structural drawing found.",
+    "roof": "A compact central gable with low roof membrane over the remaining mapped outline is an illustrative interpretation; the exact roof plan is not known.",
+    "entry": "Columned porch and red double-door vocabulary follows the exact-address commercial illustration. West-facing longest-edge placement is only a model approximation, since source imagery is not georeferenced.",
+    "materials": "Cream walls, light trim, charcoal roof, and red doors are schematic color choices informed by the illustration; not measured or confirmed from an authoritative photo."
+  }
+}
