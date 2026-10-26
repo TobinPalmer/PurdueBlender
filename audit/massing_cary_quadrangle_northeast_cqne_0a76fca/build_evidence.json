@@ -1,0 +1,97 @@
+{
+  "building_id": "massing_cary_quadrangle_northeast_cqne_0a76fca",
+  "asset": "modular/buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend",
+  "collection": "Asset_massing_cary_quadrangle_northeast_cqne_0a76fca",
+  "scene": "Building_massing_cary_quadrangle_northeast_cqne_0a76fca",
+  "export_mode": "campus-coordinate massing, identity transform",
+  "source_feature": {
+    "provider": "Purdue University GIS, BuildingShapesZip4 FeatureServer layer 0",
+    "feature_id": 638,
+    "name": "Franklin Levering Cary Quadrangle (NE)",
+    "code": "CQNE",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D638&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "retrieved": "2026-10-26",
+    "source_crs": "WGS 84 geographic coordinates (EPSG:4326)",
+    "raw_snapshot": "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/purdue_gis_feature_638_cqne_4326.json",
+    "measurement_method": "Transform the authoritative footprint ring using the repository's documented local latitude/longitude approximation; preserve ring topology.",
+    "vertical_fields": {
+      "CountOfFLO": 5,
+      "Extrution": 48,
+      "interpretation": "Five levels are used. Extrution=48 is retained as an uninterpreted integer because the field has no unit or semantic metadata."
+    }
+  },
+  "plan_measurement_m": {
+    "length_axis_x": 65.351,
+    "depth_axis_y": 15.736,
+    "footprint_area_source_m2": 1493.6640625,
+    "source_ring_vertex_count": 54
+  },
+  "vertical": {
+    "storeys": 5,
+    "overall_height_m_estimate": 16.0,
+    "eave_height_m_estimate": 12.5,
+    "height_source": "Indiana 2013 NDHM tile, 5-ft GSD; 366 pixels within Feature 638 footprint, p90=52.015 and p95=52.558 native units. If interpreted as US survey feet, these are about 15.85-16.02 m.",
+    "height_unit_status": "NDHM values are native and retained in the measurement report; the GeoTIFF horizontal CRS is US survey feet, but raster vertical units are not explicitly declared. Meter conversion is an estimate, not surveyed height.",
+    "roof_form": "longitudinal gable; the cross-building NDHM profile has higher central bands than outer bands. Exact eaves and pitch remain estimated"
+  },
+  "additional_sources": [
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/cary-quad.html",
+      "retrieved": "2026-10-26",
+      "snapshot": "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/purdue_housing_cary_quad.html",
+      "use": "Cary overview identifies Northeast as one of four outer buildings renovated in 2007 and records suite renovation; no individual elevation dimensions."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/images/banners/ur-aerial-view-of-cary-visit-hero.jpg",
+      "retrieved": "2026-10-26",
+      "snapshot": "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/purdue_housing_cary_aerial.jpg",
+      "use": "Current oblique aerial illustrates Cary roof pitch, brick color, gables, and window character; image covers the whole quad and is not a CQNE-specific survey."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://www.housing.purdue.edu/images/_hero/ur-caryquad3.jpg",
+      "retrieved": "2026-10-26",
+      "snapshot": "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/purdue_housing_cary_quad_hero_3.jpg",
+      "use": "Official Cary image supports general brick, stone, and window character only; it depicts the complex entrance rather than a verified CQNE elevation."
+    },
+    {
+      "provider": "Indiana 3DEP LiDAR products hosted by Purdue GDSL/iDiF and Indiana Geographic Information Office open-data bucket",
+      "url": "https://giselevationingov.s3.us-east-2.amazonaws.com/ndhmoptimized/statewide/2013/SPW/5ft/in2013_29951885_12_ndhm.tif",
+      "retrieved": "2026-10-26",
+      "source_date": "2011-2013 program; exact acquisition date not stated in tile metadata",
+      "source_crs": "NAD83 / Indiana West (ftUS), EPSG:2966",
+      "measurement_method": "Mask 5-ft GSD raster cell centers with Purdue GIS Feature 638 transformed to EPSG:2966; NDHM represents object height above underlying ground. 366 cells intersect. Native quantiles and unit uncertainty are recorded in ndhm_measurement.json.",
+      "snapshot": "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/indiana_2013_ndhm_tile_29951885.tif",
+      "derived_measurement": "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/ndhm_measurement.json",
+      "visualization": "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/ndhm_cqne_profile.png",
+      "use": "5-ft sampled height distribution and cross-section. Peak estimate is interpreted as 16.0 m only if native values are US survey feet; vertical units are not explicit in the GeoTIFF."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/793",
+      "retrieved": "2026-10-26",
+      "use": "Historical database says Cary Hall Northeast is the second building of the quad and dates its existence from 1931; direct HTML was blocked by the site challenge."
+    },
+    {
+      "provider": "Purdue e-Archives, Purdue Buildings and Campus Scenes",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/pbuildings/id/159/",
+      "retrieved": "2026-10-26",
+      "snapshot": "audit/massing_cary_quadrangle_northeast_cqne_0a76fca/sources/purdue_archives_cary_quad_1950s.jpg",
+      "use": "1950s general Cary exterior photograph; historical context only, not attributed to CQNE."
+    }
+  ],
+  "uncertainty": [
+    "GIS plan footprint and reported 5 levels are used; Extrution=48 is not used because its semantics and units are undocumented.",
+    "Height is estimated from a 2013 NDHM at 5-ft grid spacing. Raster vertical units are not explicitly declared, so the 16.0 m estimate remains conditional.",
+    "Exact CQNE facade bays, entrance location, roof pitch, and material course dimensions remain unverified; generic facade rhythm is schematic.",
+    "The official oblique aerial depicts the Cary complex collectively and does not isolate the northeast wing."
+  ],
+  "validation": {
+    "status": "Blender 4.5.15 reopen/render passed; fresh independent grade pending",
+    "geometry_edits": [
+      "Replaced the source single-extrusion mass with the same GIS feature outline, five window rows, floor courses, and a longitudinal gable guided by NDHM cross-section; removed unsupported projecting roof bays and entry marker."
+    ]
+  }
+}
