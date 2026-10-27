@@ -1,0 +1,56 @@
+{
+  "asset_id": "massing_purdue_university_daniel_turf_center_e69b7da",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University GIS / ArcGIS",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D208&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": "FID 208; DANL",
+      "source_crs": "WKID 102100/latestWKID 3857; saved query geometry returned in EPSG:4326",
+      "snapshot": "purdue_buildings_fid208_query_2026-10-26.json",
+      "metadata_snapshot": "purdue_buildings_layer_metadata_2026-10-26.json",
+      "measurement_method": "Polygon ring projected using the project's approximate local degrees-to-meters transform; GIS NUM_LEVELS=1 and Extrution=14 recorded, but Extrution's unit is undocumented."
+    },
+    {
+      "provider": "Purdue University GIS / ArcGIS native geometry query",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D208&outFields=*&returnGeometry=true&outSR=3857&f=pjson",
+      "feature_id": "FID 208; DANL",
+      "source_crs": "EPSG:3857 / Web Mercator",
+      "snapshot": "purdue_buildings_fid208_native3857_2026-10-26.json",
+      "measurement_method": "Native projected-coordinate ring shoelace area 1170.62890625 m2 compared to Shape__Area 1170.62109375 m2. 0.0078125 m2 residual is consistent with coordinate quantization."
+    },
+    {
+      "provider": "Esri World Imagery",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export",
+      "source_date": "Not supplied in response; imagery date unknown",
+      "source_crs": "EPSG:4326 export extent; service expanded the extent to match the output image aspect ratio",
+      "snapshot": "esri_world_imagery_daniel_center_matched_aspect.jpg",
+      "extent_metadata": "esri_world_imagery_export_metadata.json",
+      "derivative": "gis_fid208_aerial_overlay.png",
+      "measurement_method": "Visual plan-position and outline comparison only; no height or facade verification."
+    },
+    {
+      "provider": "Purdue University Horticulture & Landscape Architecture",
+      "url": "https://ag.purdue.edu/department/hla/facilities/turf-center.html",
+      "source_date": "Page states last modified July 15, 2026",
+      "snapshot": "purdue_daniel_turf_center_page_2026-10-26.html",
+      "relevant_information": "Official Daniel Turf Center identity, address 1340 Cherry Lane, and institutional description."
+    },
+    {
+      "provider": "J&D Turf / Smart Turf blog, Daniel Center visit report",
+      "url": "https://janddturf.blogspot.com/2011/06/day-at-purdue-daniel-center.html",
+      "source_date": "2011-06-11; report describes a visit the preceding Tuesday",
+      "snapshot": "daniel_center_exterior_2011_janddturf.jpg",
+      "image_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0GmvOw8ue2CzGyK4pERK7j_H3qBQ0B0IQuIf2nsvPlAP0uA304UNgnxxtyTnLsxIH-krxiFXxsFxJEI7NWzmn4Js9-JRTO5v5xiZhiFPFpTyR28KM8WcnlH33LkX-AMePlLsdCGWYrHw/s1600/Purdue_Daniel+Center.jpg",
+      "relevant_information": "The report explicitly describes its attached photo as the exterior of the building at the Daniel Center. Photo supports the elongated single-story form, metal cladding, shallow gable roof, centered entrance canopy and window band. No dimensions are supplied; vertical scale is visual-only and low confidence."
+    },
+    {
+      "provider": "Purdue University HLA page-linked expansion concept image",
+      "url": "https://ag.purdue.edu/department/hla/facilities/_media/mrtf-expansion.png",
+      "source_date": "Proposal date not encoded in image",
+      "snapshot": "purdue_expansion_concept.png",
+      "use": "Conflict documentation only. Shows proposed expansion, explicitly not used as the current building model."
+    }
+  ],
+  "coordinate_transform": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0; Z up. This is the project approximation, not a survey-grade reprojection."
+}

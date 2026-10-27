@@ -1,0 +1,191 @@
+{
+  "building": "McDonald's",
+  "building_code": null,
+  "asset_id": "massing_mcdonald_s_ab77b70",
+  "status": "Independent grade pass 9.0/10; awaiting master integration",
+  "asset": {
+    "path": "modular/buildings/massing_mcdonald_s_ab77b70.blend",
+    "object": "McDonald's",
+    "collection": "Asset_massing_mcdonald_s_ab77b70",
+    "kind": "massing",
+    "coordinate_frame": "Existing campus-coordinate frame retained; identity object transform",
+    "reopen_check": "Saved asset reopened successfully; expected collection and object present, one mesh, no modifiers, no external file images, exact OSM perimeter points retained.",
+    "preview": "preview_exterior.png",
+    "mesh_vertices": 3008,
+    "mesh_faces": 1765
+  },
+  "source_match": {
+    "identity": "OpenStreetMap way 256640455 tags name=McDonald's, brand=McDonald's, amenity=fast_food, address=605 Stadium Avenue, West Lafayette, and website=https://www.mcdonalds.com/us/en-us/location/1570.html.",
+    "official_store": "McDonald's official store URL identifies location 1570; the current official delivery page is titled McDonald's (1570-W. LAFAY-STADIUM). Waze independently lists 605 W Stadium Ave and links the official page. Direct official page HTML was Cloudflare-blocked to this shell, so the saved OSM way and listing metadata are the reproducible identity sources.",
+    "purdue_gis": "Queried Purdue BuildingShapesZip4 layer 0 (946 feature names); none is named McDonald's. The master audit's prior spatial candidate FID 895 is Seng-Liang Wang Hall and is not this asset. Do not use FID 895 as the building footprint.",
+    "manifest_comparison": "Transformed OSM way 256640455 bounds match the pre-existing manifest/source bounds within 0.000002 m in XY; source ring is used directly for structural walls."
+  },
+  "sources": [
+    {
+      "provider": "OpenStreetMap contributors / OSM API",
+      "url": "https://api.openstreetmap.org/api/0.6/way/256640455/full",
+      "feature_id": "Way 256640455",
+      "retrieval_date": "2026-10-26",
+      "source_date": "OSM object version 12 timestamp 2024-07-17T21:29:03Z",
+      "source_crs": "WGS 84 / EPSG:4326 longitude, latitude",
+      "snapshot": "sources/osm_way_256640455_full.xml",
+      "context_snapshot": "sources/osm_map_bbox.xml",
+      "use": "Identity, address, brand, store URL, amenity, and 16-vertex closed building footprint; OSM way identity/shape is corroborated by its McDonald's tags and exact match to the assigned manifest bounds.",
+      "measurement_method": "Converted each raw longitude/latitude pair to the project's campus frame: X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. Used the way ring directly at Z=0; no rotation or rescaling.",
+      "uncertainty": "Community-mapped footprint and tags; survey accuracy is not published. The way has no levels, height, facade, entrance, or roof tags."
+    },
+    {
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer, layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": "Full 946-feature name inventory; no McDonald's feature",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Layer metadata does not provide a feature-level date for this query",
+      "source_crs": "Layer EPSG:102100 / latest WKID 3857; name inventory query has no geometry",
+      "snapshots": [
+        "sources/purdue_gis_building_name_inventory.json",
+        "sources/purdue_gis_buildings_layer_metadata.json"
+      ],
+      "use": "Checked whether Purdue provides a separate named structure footprint; none found.",
+      "measurement_method": "Queried all features with FID, BUILDING_N, BLDG_ABBR, ADDRESS; name inventory count 946.",
+      "uncertainty": "Absence from this campus-building layer does not mean no footprint exists in other mapping sources; it is not a survey inventory of every commercial structure."
+    },
+    {
+      "provider": "Tippecanoe County Assessor GIS / Schneider Geospatial ArcGIS service",
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/58/query?where=Address%20LIKE%20%27%25605%25STADIUM%25%27&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "feature_id": "Parcels addressed 605 W STADIUM AVE; parcel IDs 79-07-19-200-002.000-026 and 79-07-19-200-001.000-026",
+      "retrieval_date": "2026-10-26",
+      "source_date": "No parcel-edit date in returned response",
+      "source_crs": "Layer EPSG:2245 / latest WKID 2966, US survey feet; saved query geometry requested in EPSG:4326",
+      "snapshots": [
+        "sources/tippecanoe_parcel_query.json",
+        "sources/tippecanoe_parcels_layer_metadata.json"
+      ],
+      "use": "Independent address and parcel context only; parcel boundary was not substituted for the building outline.",
+      "measurement_method": "Address SQL query; used returned address, parcel IDs, property assessment fields, and parcel geometry as site context only.",
+      "uncertainty": "The service returned multiple parcel records/versions and boundaries represent land parcels, not the building footprint."
+    },
+    {
+      "provider": "Esri World Imagery (credits: Esri, Vantor, Earthstar Geographics, GIS User Community)",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/20/395324/271135",
+      "feature_id": "World Imagery cached map tiles z20 y395324 x271135 and z19 y197662 x135567",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Underlying imagery vintage not exposed in tile response; treat as unknown",
+      "source_crs": "EPSG:102100 / latest WKID 3857 Web Mercator tiles",
+      "snapshots": [
+        "sources/esri_world_imagery_tile_z20_y395324_x271135.jpg",
+        "sources/esri_world_imagery_tile_z19_y197662_x135567.jpg",
+        "sources/esri_world_imagery_service_metadata.json"
+      ],
+      "use": "Roof/site context and confirmation of low, broad, flat-roof massing only.",
+      "measurement_method": "Tiles centered on the georeferenced McDonald's footprint; no pixel-derived dimensions or heights claimed.",
+      "uncertainty": "Tile date is not published in the retrieved service metadata; aerial view cannot verify wall height or facade openings."
+    },
+    {
+      "provider": "McDonald's official location listing / McDonald's Delivery service; cross-listed by Waze",
+      "url": "https://www.mcdonalds.com/us/en-us/location/IN/WEST-LAFAYETTE/605-STADIUM-AVE/1570.html",
+      "secondary_url": "https://delivery.mcdonalds.com/store/23922426",
+      "feature_id": "Store 1570, 605 W Stadium Ave, West Lafayette, IN 47906-2667",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Current listing; page date not stated",
+      "source_crs": "Not applicable; address source",
+      "snapshot": "Official listing identity is also embedded in OSM way 256640455; direct HTML access was blocked to automated retrieval, and the official listing metadata was cross-checked in indexed page content and Waze.",
+      "use": "Restaurant identity and address, not geometry, dimensions, or facade details.",
+      "measurement_method": "Matched the official store identifier and street address to the OSM way address/website tags and existing manifest position.",
+      "uncertainty": "The official restaurant listing provides no architectural dimensions or building plans."
+    },
+    {
+      "provider": "USA Restaurants listing, user-submitted location photo gallery",
+      "url": "https://usarestaurants.info/explore/united-states/indiana/tippecanoe-county/wabash-township/west-lafayette/370991-mcdonalds.htm",
+      "feature_id": "McDonalds, 605 W Stadium Ave; exterior photo attributed to Akash Patil",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Listing displays 2026-08-13; photo capture date is not stated",
+      "source_crs": "Not applicable; one oblique nighttime street-side image",
+      "snapshot": "sources/usarestaurants_gallery_source_record.json",
+      "photo_snapshot": "sources/usarestaurants_photo_03.jpg",
+      "photo_url": "https://cdn.usarestaurants.info/assets/uploads/21cf74c64e94d921f9d7c7cdb54c6f2c_-united-states-indiana-tippecanoe-county-wabash-township-west-lafayette-370991-mcdonaldshtm.jpg",
+      "use": "Visible exact-address exterior features: dark entry bay, light gray facade panels, dark-framed storefront glazing, projecting yellow roofline canopy/arch, small golden arches mark, and white Welcome legend.",
+      "measurement_method": "Qualitative photo inspection only; no dimensions, height, compass orientation, or hidden elevations inferred from perspective.",
+      "uncertainty": "Photo is associated with this exact-address page but has no capture date and could predate remodeling; it shows one nighttime corner only."
+    }
+  ],
+  "transform": {
+    "geographic_origin": {
+      "latitude": 40.4274,
+      "longitude": -86.9137
+    },
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not a surveyed CRS",
+    "coordinate_frame": "Massing asset keeps campus coordinates and identity transform."
+  },
+  "measurements": {
+    "source_outline_vertices_distinct": 16,
+    "source_outline_bounds_xy_m": {
+      "min_x": 29.0306698058,
+      "max_x": 61.3689531741,
+      "min_y": 390.8608,
+      "max_y": 419.264832
+    },
+    "source_bbox_dimensions_m": {
+      "east_west": 32.3382833683,
+      "north_south": 28.404032
+    },
+    "source_area_m2_approx": 511.54,
+    "manifest_position_and_dimensions": "OSM outline bounds align with pre-existing assigned manifest bounds; this is a source comparison, not a survey-quality accuracy claim.",
+    "reopened_model_bounds_including_fascia_sign_m": {
+      "min": [
+        28.470417022705078,
+        390.4246826171875,
+        0.0
+      ],
+      "max": [
+        61.396575927734375,
+        419.8265075683594,
+        4.699999809265137
+      ],
+      "dimensions": [
+        32.9261589050293,
+        29.401824951171875,
+        4.699999809265137
+      ]
+    },
+    "reopened_source_wall_vertex_error_max_m": 1.4863405287851023E-05,
+    "modeled_floors": 1,
+    "floor_status": "One visible story is supported qualitatively by the exact-address exterior photo; exact store way has no building:levels tag, and no floor-to-floor or measured elevation source was found.",
+    "estimated_wall_height_m": 4.15,
+    "estimated_roof_top_m": 4.7,
+    "height_status": "Estimated only; no measured elevation or floor height source found.",
+    "roof_status": "Flat roof with a low parapet estimated from aerial imagery; roof services and precise parapet height are unverified.",
+    "facade_status": "Revised from an exact-address exterior corner photo attributed to Akash Patil: dark entrance cladding, adjacent light gray panels, large dark-framed storefront glazing, yellow projecting roofline canopy/arch, small golden arches mark, and Welcome sign are now represented. The photo is undated and has no compass bearing; it may predate a remodel, and other elevations/facade dimensions remain unverified.",
+    "reopen_validation": "reopen_check.json"
+  },
+  "geometry_edits": [
+    "Replaced the original 32-vertex, 44-face rectangular massing block with structural walls extruded from the exact 16-vertex OSM way 256640455 outline.",
+    "Rebuilt the photographed front corner with a dark entry bay, visible Welcome panel, adjacent light-gray paneled storefront, large dark-framed windows, projecting yellow roofline canopy, and small golden arches mark; details are drawn from the exact-address exterior photo.",
+    "Kept other elevations neutral because only one exterior corner is photographed; retained a flat low parapet roof and explicitly estimated height.",
+    "Preserved asset file, stable ID, collection/object names, identity transform, campus-coordinate frame, and exact source plan ring."
+  ],
+  "uncertainties": [
+    "Purdue BuildingShapesZip4 has no separate McDonald's footprint; the prior spatial-only candidate FID 895 is neighboring Seng-Liang Wang Hall and is not the assigned building.",
+    "OSM way 256640455 provides identity, address, store URL, and structural outline but no published survey accuracy, height, or floor count.",
+    "County parcel geometry is land-parcel context, not the building footprint; the service returned multiple parcel records for this address.",
+    "Aerial tile source vintage is not stated; top-down imagery only supports site and low roof massing, not height or facade openings.",
+    "Wall height, story treatment, parapet height, and dimensions remain estimates; no measured elevation or height source was located.",
+    "The exact-address exterior photo is nighttime, attributed to Akash Patil, has no capture date or compass bearing, and may predate a remodel; it supports only the photographed front corner. Other elevations, facade dimensions, and entrance bearing remain unverified."
+  ],
+  "artifacts": {
+    "build_script": "modular/buildings/build_massing_mcdonald_s_ab77b70.py",
+    "preview": "preview_exterior.png",
+    "raw_sources": "sources/",
+    "reopen_check_script": "reopen_check.py",
+    "reopen_check": "reopen_check.json",
+    "independent_grade": "independent_grade_revision2.json"
+  },
+  "previous_independent_grade": {
+    "score": 7.5,
+    "max_score": 10,
+    "pass": false,
+    "comment": "Identity/footprint 2/2; position 2/2; height 1/2; facade 0.5/2; export/evidence 2/2. Primary finding: original facade and entrance details lacked exact-location photo evidence."
+  }
+}

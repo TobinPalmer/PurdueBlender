@@ -1,0 +1,156 @@
+{
+  "building_id": "massing_phi_delta_theta_258cddd",
+  "asset_path": "modular/buildings/massing_phi_delta_theta_258cddd.blend",
+  "evaluator": "independent grader r1",
+  "score": 8.3,
+  "max_score": 10,
+  "passes_minimum_8": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified",
+      "evidence": "Independent Blender reopen and raw official Purdue GIS snapshot: FID 796 identifies SOFDH / Phi Delta Theta, 503 State St, owner GREEK. The 30-vertex source ring and 30 shell base vertices have symmetric nearest-vertex XY Hausdorff error 0.00001552 m. GIS crosswalk is direct by name, abbreviation, and address."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "status": "verified_with_crs_limit",
+      "evidence": "The simple massing asset is in campus coordinates. Independently measured shell bounds match converted GIS bounds; the direct transformed ring preserves plan orientation and scale. The source is EPSG:4326 converted with the repository local approximation, not a surveyed projected CRS; campus position is therefore source-derived, not independently surveyed."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2,
+      "status": "partly_estimated",
+      "evidence": "The saved 2017 chapter photo directly shows three occupied levels and multi-part dark roof masses; it supports general story count and roof silhouette. The model eave/wall levels and peaks (10.15 m and up to 13.26 m by independent Blender evaluation) are estimates without scale or elevations. GIS has Extrution=12, but the service metadata defines no units or height semantics, so that field cannot validate the model dimensions."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.7,
+      "max_score": 2,
+      "status": "photo_supported_but_approximate",
+      "evidence": "Direct comparison of the archived Purdue chapter photo with the street-facade render supports the brick lower facade, light upper siding, three-level window rhythm, centered classical portico, balcony, triangular pediment and round vent. The photo is one oblique 2017 view without scale; exact proportions, detailed cornice/column work, facade dimensions, and unphotographed elevations remain uncertain."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "asset_valid_shared_index_stale",
+      "evidence": "Independently reopened the actual .blend in Blender 5.2.3 LTS: expected scene and collection exist; the collection has 313 objects (309 mesh, 4 curve/font); it is present once in the scene; no external image paths or temporary render objects; required source snapshots and four renders exist. However the shared manifest still describes one object and unrelated old bounds/status, so index consistency is incomplete and requires coordinator correction."
+    }
+  ],
+  "evidence": {
+    "actual_asset_sha256": "a1373be3594c694db5ca01097b06fa12433b3d4dbb3471d34ae659ba80c32923",
+    "validation_sha256_matches_asset": true,
+    "independently_reopened_asset": true,
+    "blender_inspection": {
+      "blender_version": "5.2.3 LTS",
+      "asset_path": "modular/buildings/massing_phi_delta_theta_258cddd.blend",
+      "scene_present": true,
+      "collection_present": true,
+      "collection_object_count": 313,
+      "mesh_count": 309,
+      "curve_count": 4,
+      "other_count": 0,
+      "shell_present": true,
+      "shell_base_vertices": 30,
+      "source_vertices": 30,
+      "source_to_shell_hausdorff_xy_m": 1.5521665525838472e-05,
+      "shell_to_source_hausdorff_xy_m": 1.5521665525838472e-05,
+      "source_xy_bounds_m": [
+        [
+          67.57702681764745,
+          110.57538983065753
+        ],
+        [
+          -417.51770284545046,
+          -392.9709359367507
+        ]
+      ],
+      "asset_evaluated_bounds_m": [
+        [
+          67.5199966430664,
+          110.80999755859375
+        ],
+        [
+          -417.5177001953125,
+          -390.1700134277344
+        ],
+        [
+          0.0,
+          13.2603178024292
+        ]
+      ],
+      "scene_asset_direct_link_count": 1,
+      "external_image_paths": [],
+      "temporary_render_objects": [],
+      "gis_identity": {
+        "FID": 796,
+        "BLDG_ABBR": "SOFDH",
+        "BUILDING_N": "Phi Delta Theta",
+        "ADDRESS": "503 State St",
+        "OWNER": "GREEK",
+        "Extrution": 12
+      }
+    },
+    "official_gis_identity": {
+      "FID": 796,
+      "BLDG_ABBR": "SOFDH",
+      "BUILDING_N": "Phi Delta Theta",
+      "ADDRESS": "503 State St",
+      "OWNER": "GREEK",
+      "Extrution": 12
+    },
+    "rendered_views_present": [
+      "01_street_facade.png",
+      "02_north_elevation.png",
+      "03_plan.png",
+      "gis_footprint_imagery_overlay.png"
+    ],
+    "raw_source_snapshots_present": [
+      "purdue_gis_fid_796_current.json",
+      "purdue_gis_building_shapes_metadata.json",
+      "purdue_phi_delta_state_street_makeover_2017.html",
+      "phi_delta_state_street_front_2017.jpg",
+      "esri_world_imagery_mosaic_z20.jpg",
+      "phi_delta_theta_scroll_1910_issue.pdf"
+    ],
+    "build_report_hash_matches_reopened_hash": false,
+    "manifest_entry": {
+      "object_count": 1,
+      "bounds_world_m": [
+        [
+          67.46683502197266,
+          110.83049774169922
+        ],
+        [
+          -417.6436462402344,
+          -392.8817138671875
+        ],
+        [
+          0.0,
+          16.0
+        ]
+      ],
+      "accuracy_status": "Named OSM way 860901797 and official map pin independently verified; 9 structural vertices match within 0.000015 m; photo-backed exterior details; height and roof dimensions estimated; see ../audit/massing_our_saviour_lutheran_church_118afa2/independent_grade.json",
+      "evidence_file": null
+    }
+  },
+  "findings": [
+    {
+      "severity": "limitation",
+      "finding": "All vertical measurements, floor heights, roof pitches, and roof peak values remain estimated; the oblique 2017 photo has no scale. GIS Extrution=12 has no documented units/meaning in the service metadata."
+    },
+    {
+      "severity": "coordinator_action",
+      "finding": "modular/manifest.json is stale for this asset: it reports object_count=1, old bounds, and an unrelated accuracy_status/evidence path, while the reopened asset has 313 collection objects and campus extents approximately X 67.52–110.81, Y -417.52–-390.17, Z 0–13.26 m. Shared manifest edits are outside grader ownership."
+    },
+    {
+      "severity": "limitation",
+      "finding": "Esri imagery acquisition date is unavailable; facade evidence is from a 2017 chapter photo and hidden elevations are schematic."
+    }
+  ]
+}

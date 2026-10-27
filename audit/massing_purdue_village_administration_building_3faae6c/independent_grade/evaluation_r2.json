@@ -1,0 +1,236 @@
+{
+  "building_id": "massing_purdue_village_administration_building_3faae6c",
+  "evaluator": "independent_grade/evaluate_pvab_r2.py",
+  "evaluated_asset": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_purdue_village_administration_building_3faae6c.blend",
+  "score": 8.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "ring geometry verified; area attribute conflicts",
+      "evidence": [
+        "Freshly reopened mesh is Purdue Village Administration Building; Purdue ArcGIS FID 524 identifies Purdue Village Administration Building (PVAB).",
+        "OSM way 283274993 independently carries the same building name (match=True).",
+        "The mesh bottom ring matches all 14 GIS vertices within 0.000034 m; shoelace area of the transformed source ring is 2481.327 m2.",
+        "The source's Shape__Area field says 4288.801 m2, a 72.8% difference from the raw ring coordinates."
+      ],
+      "findings": [
+        "ArcGIS Shape__Area attribute conflicts with the area computed from its raw ring; the model follows the ring coordinates, but the metadata discrepancy is unresolved."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2,
+      "max_score": 2,
+      "status": "verified against project GIS transform",
+      "evidence": [
+        "Reopened evaluated bounds are [[-904.51171875, -834.7618408203125], [-832.5831909179688, -761.7974853515625], [0.0, 4.199999809265137]] m and dimensions are [69.75, 70.786, 4.2] m.",
+        "Footprint coordinates and orientation follow the official GIS ring using the project's documented local lon/lat approximation; object transform is identity.",
+        "Independent vertex error is 0.000034 m; saved reopen validation reports 3.3813577529347136e-05 m."
+      ],
+      "findings": [
+        "The campus coordinate conversion is an approximate local transform, not survey-grade georeferencing."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1,
+      "max_score": 2,
+      "status": "partly supported; height remains estimated",
+      "evidence": [
+        "The Purdue Archives building-specific photo visibly supports one low above-grade storey and a horizontal parapeted roof edge; its observation record states this explicitly: ['One low above-grade storey is visible at the photographed principal facade.', 'The visible roof edge is horizontal and parapeted; the membrane/roof surface itself is not visible.'].",
+        "The reopened mesh is 4.20 m high with a flat cap, but the evidence record labels height as an estimate; source GIS NUM_LEVELS=0 and Extrution=0 are zero/unpopulated.",
+        "Photograph hides the roof surface, so only the low horizontal parapet/roof edge is supported; exact height and roof construction remain unverified."
+      ],
+      "findings": [
+        "Model height (4.2 m) is estimated rather than measured; photo does not show roof surface or establish roof construction."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 2,
+      "max_score": 2,
+      "status": "facade features visually supported; bearing uncertain",
+      "evidence": [
+        "Direct visual comparison of the saved facade preview and Purdue Archives photo shows the same composition: reddish-brown brick segment, broad pale vertically ribbed metal cladding, recessed dark glazed entry, and shallow dark canopy.",
+        "Reopened mesh has source-named material slots for the four observed facade elements (present=True); material face counts are {'PVAB side-wall neutral': 15, 'PVAB flat-roof neutral': 1, 'PVAB archive brick': 1, 'PVAB pale vertical metal panels': 82, 'PVAB dark entrance glazing': 3, 'PVAB charcoal frames and canopy': 18, 'PVAB entrance metal hardware': 2}.",
+        "The Archives photo is a building-specific official source; it does not encode camera compass bearing, so exact campus side/orientation of the pictured entrance is uncertain."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2,
+      "max_score": 2,
+      "status": "verified",
+      "evidence": [
+        "Saved file reopened; expected collection Asset_massing_purdue_village_administration_building_3faae6c has 1 object(s).",
+        "Required source/evidence files present: {'build_log.txt': True, 'evidence_record.json': True, 'preview_oblique.png': True, 'preview_top.png': True, 'preview_facade.png': True, 'reopen_validation.json': True, 'sources/arcgis_fid524_raw.json': True, 'sources/osm_way_283274993_raw.json': True, 'sources/purdue_archives_record_snapshot.json': True, 'sources/purdue_archives_photo_evidence.json': True, 'sources/purdue_archives_building74.jpeg': True}.",
+        "No external absolute file dependencies detected: [].",
+        "Evidence record and reopen validation are present; saved mesh has 436 vertices and 122 faces."
+      ],
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "reopened": true,
+    "evaluated_vertex_count": 436,
+    "evaluated_face_count": 122,
+    "evaluated_bounds_m": [
+      [
+        -904.51171875,
+        -834.7618408203125
+      ],
+      [
+        -832.5831909179688,
+        -761.7974853515625
+      ],
+      [
+        0.0,
+        4.199999809265137
+      ]
+    ],
+    "evaluated_dimensions_m": [
+      69.7498779296875,
+      70.78570556640625,
+      4.199999809265137
+    ],
+    "official_gis_fid": 524,
+    "official_gis_name": "Purdue Village Administration Building",
+    "official_gis_ring_vertex_count": 14,
+    "projected_raw_ring_area_m2": 2481.3272053937544,
+    "gis_shape_area_attribute_m2": 4288.80078125,
+    "maximum_source_vertex_error_m": 3.3813577529347136e-05,
+    "osm_name_match": true,
+    "archive_photo_found": true,
+    "archive_source_observations": [
+      "One low above-grade storey is visible at the photographed principal facade.",
+      "The visible roof edge is horizontal and parapeted; the membrane/roof surface itself is not visible.",
+      "The long facade has a reddish-brown brick segment, a broad pale vertically ribbed metal-clad segment, a recessed dark glazed entry bay, and a shallow dark canopy above the glazing.",
+      "The photo does not encode its compass bearing or provide scale/exif camera measurements, so facade orientation and absolute height remain uncertain."
+    ],
+    "material_names": [
+      "PVAB side-wall neutral",
+      "PVAB flat-roof neutral",
+      "PVAB archive brick",
+      "PVAB pale vertical metal panels",
+      "PVAB dark entrance glazing",
+      "PVAB charcoal frames and canopy",
+      "PVAB entrance metal hardware"
+    ],
+    "material_face_counts": {
+      "PVAB side-wall neutral": 15,
+      "PVAB flat-roof neutral": 1,
+      "PVAB archive brick": 1,
+      "PVAB pale vertical metal panels": 82,
+      "PVAB dark entrance glazing": 3,
+      "PVAB charcoal frames and canopy": 18,
+      "PVAB entrance metal hardware": 2
+    },
+    "external_absolute_file_paths": [],
+    "evidence_files_present": {
+      "build_log.txt": true,
+      "evidence_record.json": true,
+      "preview_oblique.png": true,
+      "preview_top.png": true,
+      "preview_facade.png": true,
+      "reopen_validation.json": true,
+      "sources/arcgis_fid524_raw.json": true,
+      "sources/osm_way_283274993_raw.json": true,
+      "sources/purdue_archives_record_snapshot.json": true,
+      "sources/purdue_archives_photo_evidence.json": true,
+      "sources/purdue_archives_building74.jpeg": true
+    },
+    "reopen_validation": {
+      "building_id": "massing_purdue_village_administration_building_3faae6c",
+      "reopened_file": "C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_purdue_village_administration_building_3faae6c.blend",
+      "reopen_success": true,
+      "collection": "Asset_massing_purdue_village_administration_building_3faae6c",
+      "collection_object_count": 1,
+      "collection_transform": {
+        "instance_offset": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "note": "massing direct-link; identity object transforms retained"
+      },
+      "object": "Purdue Village Administration Building",
+      "object_type": "MESH",
+      "object_location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "evaluated_bounds_world_m_including_decorative_projections": [
+        [
+          -904.51171875,
+          -834.7618408203125
+        ],
+        [
+          -832.5831909179688,
+          -761.7974853515625
+        ],
+        [
+          0.0,
+          4.199999809265137
+        ]
+      ],
+      "evaluated_dimensions_m_including_decorative_projections": [
+        69.7498779296875,
+        70.78570556640625,
+        4.199999809265137
+      ],
+      "structural_wall_footprint_bounds_world_m": [
+        [
+          -904.51171875,
+          -834.8258056640625
+        ],
+        [
+          -832.55859375,
+          -761.7974853515625
+        ]
+      ],
+      "structural_wall_height_m": 4.199999809265137,
+      "decorative_facade_projection_max_m": 0.15,
+      "evaluated_vertex_count": 436,
+      "evaluated_face_count": 122,
+      "modifier_count": 0,
+      "footprint_vertex_count": 14,
+      "footprint_plan_area_m2": 2481.326880246401,
+      "official_gis_feature_id": 524,
+      "official_gis_feature_name": "Purdue Village Administration Building",
+      "official_gis_source_crs": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "max_vertex_error_vs_live_gis_project_transform_m": 3.3813577529347136e-05,
+      "estimated_height_m": 4.2,
+      "height_status": "4.2 m estimate from one-storey photo and area cross-check; not measured",
+      "facade_status": "front facade details based on Purdue Archives building 74 image; image compass bearing not encoded",
+      "roof_status": "image supports a low horizontal parapet/flat roofline; hidden roof surface form unverified",
+      "external_unpacked_image_dependencies": [],
+      "geometry_change": "rebuilt shell on unchanged official FID 524 footprint; added source-photo facade overlays as faces in the same mesh; campus coordinates retained"
+    },
+    "evidence_record_present": true
+  },
+  "findings": [
+    "ArcGIS Shape__Area attribute conflicts with the area computed from its raw ring; the model follows the ring coordinates, but the metadata discrepancy is unresolved.",
+    "The campus coordinate conversion is an approximate local transform, not survey-grade georeferencing.",
+    "Model height (4.2 m) is estimated rather than measured; photo does not show roof surface or establish roof construction."
+  ]
+}

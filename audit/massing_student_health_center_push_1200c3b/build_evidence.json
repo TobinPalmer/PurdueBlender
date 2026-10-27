@@ -1,0 +1,115 @@
+{
+  "asset_id": "massing_student_health_center_push_1200c3b",
+  "build_status": "ready for fresh independent grading",
+  "assignment": {
+    "owner": "Rossen",
+    "stable_id": "massing_student_health_center_push_1200c3b",
+    "asset_path": "modular/buildings/massing_student_health_center_push_1200c3b.blend",
+    "export_collection": "Asset_massing_student_health_center_push_1200c3b",
+    "placement": "Campus-coordinate massing; retains existing identity/campus placement. No manifest origin or placement marker changed."
+  },
+  "starting_asset": {
+    "source": "Existing asset before rebuild, reopened using Blender 4.5.15.",
+    "object_count": 1,
+    "object_type": "MESH",
+    "object_dimensions_m": [
+      56.7213,
+      71.0434,
+      16.0
+    ],
+    "shape": "One rectangular box; no differentiated building footprint or facade features."
+  },
+  "geometry_edits": [
+    "Retained the exact 13-vertex Purdue BuildingShapes FID 274 exterior footprint and campus coordinates.",
+    "Partitioned the footprint into the main block (838.21 m2), low entrance wing (62.58 m2), and lower southeast extension (303.68 m2); the internal partitions are interpretations of the Purdue 2020 oblique photo and IGIO 2023 orthophoto, not surveyed internal building boundaries.",
+    "Added three distinct estimated roof/wall zones: main eave 10.45 m / ridge 14.6304 m, entrance wing eave 3.8 m / ridge 5.6 m, southeast extension eave 5.8 m / flat cap 6.4 m.",
+    "Replaced uniform small windows with broader repeated pale-trimmed upper facade openings guided by Purdue\u2019s 2020 image. Exact opening sizes and elevations remain approximate.",
+    "Added broad glazed doors, side lights, surround, steps and illustrative medical emblem on the exterior frontage of the lower entrance wing, following the photo direction; exact surveyed entrance orientation is unavailable.",
+    "Preserved stable ID, .blend path, export collection, asset mesh-only collection, and campus coordinate frame."
+  ],
+  "footprint": {
+    "provider": "Purdue BuildingShapesZip4 ArcGIS FeatureServer, layer 0, FID 274",
+    "identity": "Purdue University Student Health Center (PUSH), 601 Stadium Mall Drive",
+    "vertices": 13,
+    "projected_area_m2": 1204.4798,
+    "source_coordinates_crs": "WGS84 EPSG:4326 query geometry; source layer is Web Mercator EPSG:3857",
+    "campus_transform": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040",
+    "source_bounds_xy_m": [
+      [
+        -229.04404,
+        294.14559
+      ],
+      [
+        -172.68895,
+        364.79266
+      ]
+    ],
+    "status": "matched to the named/addressed Purdue GIS feature"
+  },
+  "vertical_geometry": {
+    "gis_attributes": {
+      "NUM_LEVELS": 5,
+      "CountOfFLO": 5,
+      "B": -11.3,
+      "F01": 11.3,
+      "F02": 22.6,
+      "F03": 33.9,
+      "F04": 45.2,
+      "Extrution": 48,
+      "R": 69.8
+    },
+    "conflict": "Explicit unresolved source conflict: GIS records five levels (B plus F01-F04) and fields Extrution=48 / R=69.8, while Purdue\u2019s 2020 exterior photo appears to show three above-grade facade bands. The GIS record does not define units or these fields\u2019 vertical semantics.",
+    "model_interpretation": "Three visible facade bands are a visual reading of the photo. The 14.6304 m main ridge keeps the earlier 48 ft conversion only as one possible estimate; it is not a verified height. Wing heights and roof breaks are relative visual estimates informed by the 2023 orthophoto.",
+    "estimated_region_eaves_m": {
+      "main": 10.45,
+      "entry_wing": 3.8,
+      "southeast_wing": 5.8
+    },
+    "estimated_region_roof_peaks_m": {
+      "main": 14.6304,
+      "entry_wing": 5.6,
+      "southeast_wing": 6.4
+    },
+    "status": "uncertain; no dimensioned elevations, roof plan, or documented GIS units/field semantics located"
+  },
+  "render_and_reopen": {
+    "preview": "renders/push_exterior_preview.png",
+    "footprint_preview": "renders/push_footprint_preview.png",
+    "gis_overlay": "renders/push_orthophoto_gis_overlay.jpg",
+    "roof_zone_reference": "sources/indiana_2023_push_orthophoto.jpg",
+    "reopen_validation": "reopen_verification.json",
+    "reopen_status": "pass",
+    "evaluated_bounds_world_m": [
+      [
+        -229.04404,
+        -172.66684
+      ],
+      [
+        294.11847,
+        364.81485
+      ],
+      [
+        0.0,
+        14.6304
+      ]
+    ],
+    "evaluated_height_m": 14.6304,
+    "evaluated_mesh_vertices": 7437,
+    "evaluated_mesh_polygons": 1867,
+    "material_count": 6,
+    "unpacked_external_images": [],
+    "roof_zone_overlay": "renders/push_orthophoto_regions_overlay.jpg"
+  },
+  "remaining_uncertainty": [
+    "GIS fields NUM_LEVELS/CountOfFLO, B, F01-F04, Extrution, and R conflict with or cannot be reconciled to the photo-based visual story reading; units and semantics remain undocumented.",
+    "The three-zone roof plan is an interpretation of a 2023 orthophoto and a single 2020 oblique photo. Internal zone seams, elevations, and roof pitch are estimates.",
+    "Facade window rhythm, dimensions, entrance placement, and side/rear facade details are photo-informed estimates; no measured elevations were found."
+  ],
+  "references": [
+    "source_register.json",
+    "mass_regions.json",
+    "build_result.json",
+    "reopen_verification.json"
+  ],
+  "revision_summary": "Second geometry revision after independent 7.4/10 grade: added evidence-led low entry wing and lower southeast roof mass, variable wall/roof heights, photo-informed larger upper-window rhythm, and an explicit glazed entrance frontage."
+}

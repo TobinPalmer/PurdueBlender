@@ -1,0 +1,222 @@
+{
+  "building_id": "massing_provenance_apartments_005_960f6b0",
+  "building_name": "Provenance Apartments 005 (FID 506 Building F candidate)",
+  "reviewer": "independent evaluator; direct FID 506 GIS snapshot/layer metadata, first-party project/residences pages, three Studio M photographs, two renders, and Blender 5.2.3 direct reopen",
+  "score": 6.1,
+  "max_score": 10,
+  "passing_standard": 8,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.0,
+      "max_score": 2.0,
+      "status": "FID 506 is an explicit Building F candidate, but the feature is pre-planning and the as-built identity/wall line is unverified",
+      "evidence": [
+        "Purdue Campus Map FeatureServer layer 0 FID 506 is named Building F (BLDG_ABBR 143; Building_F field 4000-WHFS-1509). Its layer attribute is 'BLDG Building Pre-planning', BUILDING_1 is '1509', while ADDRESS is blank, NUM_LEVELS is 0, and BUILT/OCCUPIED are null.",
+        "The 32-vertex model base ring matches this FID 506 polygon after inverse Web Mercator and the repository's campus projection to 0.000059 m maximum vertex residual. This verifies reproduction of the candidate geometry, not that the pre-planning polygon is the as-built Building F wall line.",
+        "The Purdue Residences page confirms Provenance as the apartment community, and Studio M's project page confirms the development and seven three-story buildings, but neither source cross-identifies this GIS polygon as the completed individual Building F."
+      ],
+      "findings": [
+        "Treat FID 506 as a candidate only; a current as-built campus footprint or identifiable Building F address/elevation is needed to verify the selected individual building and wall registration."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.5,
+      "max_score": 2.0,
+      "status": "campus coordinates and dimensions match the direct GIS candidate; physical as-built registration remains uncertain",
+      "evidence": [
+        "Direct Blender reopen bounds are X -1573.270..-1523.543 m, Y -466.864..-447.562 m, and Z 0.000..11.400 m. The transformed FID 506 candidate envelope is 49.73 m by 19.28 m.",
+        "The single mesh retains campus-world coordinates and identity transform, and its shell ring reproduces the candidate polygon at sub-millimetre numerical error. The uncertainty is upstream in whether the pre-planning polygon represents the as-built footprint, rather than in the Blender transformation."
+      ],
+      "findings": [
+        "Validate the candidate position/orientation/dimensions against current orthophoto or as-built survey before treating them as verified for the completed building."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2.0,
+      "status": "three-story character and repeated gables are supported at project level; building-specific dimensions are estimates",
+      "evidence": [
+        "Studio M's project description states that the Provenance development has seven three-story apartment buildings; project photographs show repeated gabled roofs. This supports the general storey count and roof vocabulary but does not assign an elevation or exact gable sequence to FID 506.",
+        "The model uses estimated 8.9 m wall/eave and 11.4 m ridge heights. The Purdue FID 506 record itself has NUM_LEVELS=0 and Extrution=0, so it provides no height measurement."
+      ],
+      "findings": [
+        "Keep wall and ridge heights and the five-segment roof layout labeled as estimates; no Building F section, survey, or individually attributable roof image is present."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.8,
+      "max_score": 2.0,
+      "status": "project material palette and repeated gables are recognizable; individual facade composition is generalized",
+      "evidence": [
+        "Studio M images show a three-story apartment facade with brick, dark framed windows, balconies, dark vertical accent bays/panels, and repeated gabled roof masses. The secondary project material description supports brick and dark panel/cherry finishes, though those finishes are not assigned to individual FID 506 elevations.",
+        "The southwest render conveys a long three-story brick block with repeated roof breaks and windows, but the facade is highly schematic: no balconies, entrances, canopy/door details, or clear dark accent panels are visible; window placement and gable-to-facade correspondence are not attributable to this individual building. The top preview is useful for plan inspection but does not add facade evidence."
+      ],
+      "findings": [
+        "The model's facades lack prominent visible elements in the official project photographs, especially balconies, framed glazing, dark accent bays, and identifiable entries. Building-specific reference imagery is needed before assigning exact arrangement."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.6,
+      "max_score": 2.0,
+      "status": "saved library and evidence reopen cleanly; shared manifest bounds still describe the superseded proxy",
+      "evidence": [
+        "Blender 5.2.3 LTS reopened scene Building_massing_provenance_apartments_005_960f6b0 and collection Asset_massing_provenance_apartments_005_960f6b0 with one mesh (684 vertices, 458 faces), no modifiers, 0 unpacked image dependencies, and 0 linked Blender libraries.",
+        "The audit folder includes the raw official FID 506 feature and layer metadata, source register, project/residences snapshots, three project photographs, two previews, build evidence, and a separate-process reopen validation.",
+        "The shared manifest still declares bounds [[-1627.371337890625, -1489.2232666015625], [-474.5072326660156, -446.1253967285156], [0.0, 11.399999618530273]]; reopened geometry bounds are [[-1573.270263671875, -1523.542724609375], [-466.8640441894531, -447.56170654296875], [0.0, 11.399999618530273]]. This mismatch is up to 54.10 m and shows that the coordinator-owned manifest was not reconciled with the rebuilt candidate asset. The asset itself and dedicated evidence are portable."
+      ],
+      "findings": [
+        "Coordinator should reconcile the shared manifest bounds with the rebuilt asset after independent source identity/footprint review."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular\\buildings\\massing_provenance_apartments_005_960f6b0.blend",
+    "blender": "5.2.3 LTS",
+    "reopened_scene": "Building_massing_provenance_apartments_005_960f6b0",
+    "reopened_collection": "Asset_massing_provenance_apartments_005_960f6b0",
+    "direct_reopen_measurements": {
+      "object": "Provenance Apartments.005",
+      "type": "MESH",
+      "collection_count": 1,
+      "vertices": 684,
+      "faces": 458,
+      "bounds": [
+        [
+          -1573.270263671875,
+          -1523.542724609375
+        ],
+        [
+          -466.8640441894531,
+          -447.56170654296875
+        ],
+        [
+          0.0,
+          11.399999618530273
+        ]
+      ],
+      "materials": [
+        "Provenance warm brick",
+        "Provenance dark brick",
+        "Provenance dark cherry accent",
+        "Provenance charcoal roof",
+        "Provenance window glazing"
+      ],
+      "unpacked_images": [],
+      "libraries": 0,
+      "modifiers": []
+    },
+    "source_identity": {
+      "FID": 506,
+      "BUILDING_N": "Building F",
+      "Layer": "BLDG Building Pre-planning",
+      "BLDG_ABBR": "143",
+      "BUILDING_1": "1509",
+      "ADDRESS": " ",
+      "NUM_LEVELS": 0,
+      "BUILT": null,
+      "OCCUPIED": null,
+      "Building_F": "4000-WHFS-1509"
+    },
+    "candidate_footprint": {
+      "source_crs": "EPSG:3857 confirmed by FeatureServer metadata",
+      "source_ring_vertex_count": 32,
+      "projected_candidate_envelope_m": [
+        49.72756747263816,
+        19.284092127631993
+      ],
+      "per_vertex_residuals_m": [
+        3.417837614874679e-05,
+        4.2699042212954966e-05,
+        1.6632154489377555e-05,
+        2.008697649207545e-05,
+        1.5379226141544113e-05,
+        1.7714344053181588e-05,
+        2.223405334072582e-05,
+        2.6503625147356875e-05,
+        1.2338100516158815e-05,
+        3.9970289313276256e-05,
+        2.6978134415776085e-06,
+        1.6602093298564995e-05,
+        5.0934984903396684e-05,
+        3.507486146587268e-05,
+        1.2551395245825493e-06,
+        4.111579306620698e-05,
+        4.573572181632833e-05,
+        1.7633403897449407e-05,
+        8.252899955048651e-06,
+        4.796883215194632e-05,
+        3.7882832344114016e-05,
+        3.971168877177333e-06,
+        4.005203204943437e-05,
+        1.4743649011324061e-05,
+        3.309640636310766e-05,
+        4.263310362558715e-05,
+        8.7794100472249e-06,
+        8.418104952965236e-06,
+        2.905661309912386e-05,
+        5.9327458276095637e-05,
+        3.1499050520270365e-05,
+        1.3219568713364379e-05
+      ],
+      "max_vertex_residual_m": 5.9327458276095637e-05,
+      "as_built_status": "unverified; source layer says BLDG Building Pre-planning"
+    },
+    "manifest_bounds_m": [
+      [
+        -1627.371337890625,
+        -1489.2232666015625
+      ],
+      [
+        -474.5072326660156,
+        -446.1253967285156
+      ],
+      [
+        0.0,
+        11.399999618530273
+      ]
+    ],
+    "manifest_delta_vs_mesh_bounds_m": [
+      [
+        54.10107421875,
+        -34.3194580078125
+      ],
+      [
+        7.6431884765625,
+        -1.436309814453125
+      ],
+      [
+        0.0,
+        0.0
+      ]
+    ],
+    "reviewed_files": [
+      "audit\\massing_provenance_apartments_005_960f6b0\\source_register.json",
+      "audit\\massing_provenance_apartments_005_960f6b0\\build_evidence.json",
+      "audit\\massing_provenance_apartments_005_960f6b0\\reopen_validation.json",
+      "audit\\massing_provenance_apartments_005_960f6b0\\preview_southwest.png",
+      "audit\\massing_provenance_apartments_005_960f6b0\\preview_top.png",
+      "audit\\massing_provenance_apartments_005_960f6b0\\sources\\studio_m_photo_1.jpg",
+      "audit\\massing_provenance_apartments_005_960f6b0\\sources\\studio_m_photo_2.jpg",
+      "audit\\massing_provenance_apartments_005_960f6b0\\sources\\studio_m_photo_poi26.jpg"
+    ],
+    "limitations": [
+      "FID 506 candidate identity and as-built wall footprint are not confirmed by current survey or individual-building imagery.",
+      "GIS record has zero levels, zero extrusion, and blank address; heights are estimates.",
+      "Studio M photographs establish development-wide architectural vocabulary but do not identify the FID 506 block.",
+      "Shared manifest bounds remain from the earlier, much wider massing proxy."
+    ]
+  },
+  "findings": [
+    "Treat FID 506 as a candidate only; a current as-built campus footprint or identifiable Building F address/elevation is needed to verify the selected individual building and wall registration.",
+    "Validate the candidate position/orientation/dimensions against current orthophoto or as-built survey before treating them as verified for the completed building.",
+    "Keep wall and ridge heights and the five-segment roof layout labeled as estimates; no Building F section, survey, or individually attributable roof image is present.",
+    "The model's facades lack prominent visible elements in the official project photographs, especially balconies, framed glazing, dark accent bays, and identifiable entries. Building-specific reference imagery is needed before assigning exact arrangement.",
+    "Coordinator should reconcile the shared manifest bounds with the rebuilt asset after independent source identity/footprint review."
+  ],
+  "recommendation": "The asset scores 6.1/10 and does not pass the 8/10 gate. The saved mesh faithfully reproduces the FID 506 pre-planning polygon, but the individual as-built identity/footprint is unverified, building-specific height/facade evidence is absent, and the shared manifest bounds still need reconciliation."
+}

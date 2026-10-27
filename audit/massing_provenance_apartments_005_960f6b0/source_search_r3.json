@@ -1,0 +1,23 @@
+{
+  "asset_id": "massing_provenance_apartments_005_960f6b0",
+  "revision": "r3",
+  "retrieved": "2026-10-26",
+  "scope": "Exact Building F / 143 central block only; search for building-specific current street imagery and approved architectural elevations/sections.",
+  "conclusion": "No defensible Building F-specific street-level image, approved elevation, or section was found in accessible sources. The facade is therefore left undetailed and neutral. The 2025 overhead imagery supports only the roof outline and a rough five-break roof rhythm; all ridge placement and roof heights remain estimates.",
+  "searches": [
+    {"query": "\\\"Building F\\\" \\\"Provenance\\\" West Lafayette apartments 143", "result": "No exact-block image or elevation."},
+    {"query": "\\\"Provenance Apartments\\\" \\\"Building F\\\" elevation", "result": "No Building F architectural elevation or section."},
+    {"query": "\\\"1509 Mitch Daniels\\\" Provenance apartment Building F", "result": "Address context only; no individual facade documentation."},
+    {"query": "site:tippecanoe.in.gov Provenance Building F 143 elevations sections", "result": "The accessible approved packet contains civil/construction site plans; no individual architectural elevation/section located."},
+    {"query": "PD-20-01 Provenance final detailed plans Building F elevations", "result": "Resolution and site-plan materials surfaced; no F/143 elevation/section located."},
+    {"query": "Provenance Apartments 1509 Mitch Daniels exterior Building F", "result": "No exact-block street photo identified."}
+  ],
+  "reviewed_sources": [
+    {"title": "Tippecanoe County approved Phase 1 & 2 construction-plan packet, sheet C1.4", "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/ArchivedAgenda/_01022020-1597?packet=true", "local_copy": "sources/county_provenance_phase1_2_construction_plans.pdf", "finding": "Sheet explicitly labels BLDG F / 143 and its site position, but is a civil/stormwater plan, not an architectural elevation or section."},
+    {"title": "Indiana Current Orthophotography ImageServer", "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer", "local_copy": "indiana_current_orthophoto_2025_fid506_overlay.jpg", "finding": "Current overhead view supports the central block roof outline and approximate roof breaks, not facade features, roof heights, or surveyed wall registration."},
+    {"title": "Purdue University EHPS annual fire statistics", "url": "https://www.purdue.edu/ehps/police/images/reports/west-lafayette.pdf", "finding": "Contains a 1509 Mitch Daniels Blvd address in the Provenance context, but no image or geometry for Building F."},
+    {"title": "Studio M Provenance project page", "url": "https://www.studiomarchitecture.net/provenance-at-discovery-park", "finding": "Project-wide description/photos only; no photo labels or drawing identify Building F. Excluded from F-specific facade geometry."}
+  ],
+  "excluded_nearby_image": {"source": "Apartments.com search result photo showing address 1505", "reason": "1505 is not 1509 and is not identified as Building F / 143; not used as target evidence."},
+  "modeling_decision": "Keep plain neutral shell. Retain the five-break roof rhythm only as an overhead-derived estimate; explicitly mark roof ridge count, ridge positions, pitch, eave height, and ridge height as uncertain. Do not treat GIS ring as surveyed wall footprint."
+}

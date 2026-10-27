@@ -1,0 +1,210 @@
+{
+  "building_id": "massing_marc_and_sharon_hagle_hall_hagl_071ffd6",
+  "score": 8.5,
+  "max_score": 10,
+  "passing_standard": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue BuildingShapesZip4 snapshot identifies FID 430 as Marc and Sharon Hagle Hall (HAGL).",
+        "University project announcement identifies Hagle Hall and states 37,500 square feet and four stories.",
+        "The modeled ring is generated from the same 74 GIS vertices; projected ring area recomputes to 845.68 m\u00b2 (~9103 ft\u00b2), 24.3% of stated gross floor area (plausible for four floors).",
+        "Footprint evidence is an official campus GIS polygon, not a survey; no building-shape ambiguity is present in the provided crosswalk and article."
+      ]
+    },
+    {
+      "name": "Position, orientation, and dimensions",
+      "score": 1.75,
+      "max_score": 2,
+      "evidence": [
+        "The asset is a campus-coordinate massing object with identity location/rotation/scale, and its plan bounds closely follow the GIS polygon after the project-mandated approximate WGS84-to-campus conversion.",
+        "Reopened asset bounds XY are [-451.5719299316406, -416.123779296875] \u00d7 [-50.744808197021484, -19.362131118774414] m; source ring bounds XY are [[-450.1382674717019, -416.27185669748286], [-50.59472286256323, -21.862355199016292]] m.",
+        "Position and orientation derive from a single official GIS source. That layer has no populated feature edit date and is explicitly not survey-grade, so independent positional verification remains uncertain."
+      ]
+    },
+    {
+      "name": "Height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "The official Purdue project announcement supports four stories; the reopened mesh metadata also records 4 stories.",
+        "Reopened model height is 15.10 m, but both the source record and model label it estimated; no measured elevation was found.",
+        "The revised mesh contains 91 blue canopy-material polygons, extending to Z=15.100000381469727 m. The source photo supports a projecting blue angular roof/canopy above the curved bay, while exact canopy geometry and elevations remain visual estimates.",
+        "A broad flat top plate is still present; the source photo is oblique and does not provide a roof plan or measured elevations."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "The Purdue construction photo supports dark brick wings, a pale curved glazed bay, and a glazed ground level; corresponding colors, corner treatment, and broad window bands are present in the preview.",
+        "Freshly reopened mesh contains 51 glazing faces along the NW curved-bay coordinate region; this verifies that the revision added a broadly glazed faceted curve. The source image shows glazing across the curve but also stone/opaque divisions that remain simplified.",
+        "The mesh includes 1 inset low-level entry glazing face(s) and 5 nearby metal-frame face(s), verifying that a framed door is present. In the single saved perspective it is still small and difficult to distinguish from adjacent storefront glazing; exact placement is not dimensioned."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Independent Blender 5.2 background reopen found scene Building_massing_marc_and_sharon_hagle_hall_hagl_071ffd6, expected collection Asset_massing_marc_and_sharon_hagle_hall_hagl_071ffd6, one mesh object, 4716 vertices, and 1144 faces.",
+        "Object transform is location=[0.0, 0.0, 0.0], rotation=[0.0, 0.0, 0.0], scale=[1.0, 1.0, 1.0]; there are 0 modifiers, 0 linked libraries, and 0 file-backed images.",
+        "Manifest names the same asset, scene, collection, and object (['Marc and Sharon Hagle Hall (HAGL)']); structured evidence includes raw GIS, official project announcements, project photos, source URLs, dates, CRS/method notes, and a preview.",
+        "Preview exists: True."
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "severity": "moderate",
+      "finding": "The rebuilt blue canopy projects above/out from the curved bay and is visible in the preview, addressing the prior missing-feature finding. It reads as a multi-faceted curved ribbon rather than the sharper angular canopy in the source photo, and exact canopy dimensions are unsupported.",
+      "criterion": "Height, floors, and roof form"
+    },
+    {
+      "severity": "moderate",
+      "finding": "The NW curve now has continuous glazing, the projecting blue canopy is present, and the reopened mesh contains an inset framed door. The source photo shows opaque stone bands/divisions within the curved volume; the entrance is still difficult to pick out in the saved camera view, and the canopy reads as a curved ribbon rather than the sharper angular form in the photo.",
+      "criterion": "Facade, entrances, and distinctive architecture"
+    },
+    {
+      "severity": "uncertainty",
+      "finding": "The 15.1 m height is an estimate from four stories and assumed floor heights/parapet; the sources do not establish measured eave, roof, or parapet heights.",
+      "criterion": "Height, floors, and roof form"
+    },
+    {
+      "severity": "uncertainty",
+      "finding": "The GIS polygon supplies footprint and orientation evidence but no survey accuracy or populated feature edit date; campus placement is supported by that geometry and the official address/location description, not an independent survey.",
+      "criterion": "Position, orientation, and dimensions"
+    }
+  ],
+  "evidence": {
+    "asset_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\modular\\buildings\\massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend",
+    "preview_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\massing_marc_and_sharon_hagle_hall_hagl_071ffd6\\hagle_hall_preview.png",
+    "grader_code": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\massing_marc_and_sharon_hagle_hall_hagl_071ffd6\\evaluate_hagle.py",
+    "source_evidence_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\massing_marc_and_sharon_hagle_hall_hagl_071ffd6\\evidence.json",
+    "gis_snapshot_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\massing_marc_and_sharon_hagle_hall_hagl_071ffd6\\sources\\purdue_buildings_fid430_wgs84.geojson",
+    "official_announcement_snapshot_path": "C:\\Users\\45347\\OneDrive\\Documents\\Blender\\purduemap\\audit\\massing_marc_and_sharon_hagle_hall_hagl_071ffd6\\sources\\purdue_bands_hagle_project_announcement_2020.html",
+    "gis_feature": {
+      "FID": 430,
+      "abbreviation": "HAGL",
+      "name": "Marc and Sharon Hagle Hall"
+    },
+    "gis_recomputed_metrics": {
+      "vertex_count": 74,
+      "area_m2": 845.6757611572548,
+      "bounds_xy_m": [
+        [
+          -450.1382674717019,
+          -416.27185669748286
+        ],
+        [
+          -50.59472286256323,
+          -21.862355199016292
+        ]
+      ]
+    },
+    "gross_area_context": {
+      "official_gross_area_sqft": 37500,
+      "footprint_area_sqft_approx": 9103,
+      "footprint_to_gross_area_percent": 24.3
+    },
+    "independent_blender_reopen": {
+      "scene": "Building_massing_marc_and_sharon_hagle_hall_hagl_071ffd6",
+      "collection": "Asset_massing_marc_and_sharon_hagle_hall_hagl_071ffd6",
+      "object_count": 1,
+      "object_name": "Marc and Sharon Hagle Hall (HAGL)",
+      "object_type": "MESH",
+      "vertex_count": 4716,
+      "face_count": 1144,
+      "bounds_world_m": [
+        [
+          -451.5719299316406,
+          -416.123779296875
+        ],
+        [
+          -50.744808197021484,
+          -19.362131118774414
+        ],
+        [
+          0.0,
+          15.100000381469727
+        ]
+      ],
+      "dimensions_m": [
+        35.448150634765625,
+        31.38267707824707,
+        15.100000381469727
+      ],
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "stories_property": 4,
+      "height_status_property": "estimated from official four-story count; no measured elevation located",
+      "modifier_count": 0,
+      "materials": [
+        "HAGL | warm dark brick",
+        "HAGL | pale stone and curved bay",
+        "HAGL | blue gray glazing",
+        "HAGL | dark metal frames",
+        "HAGL | dark blue roof canopy"
+      ],
+      "material_face_counts": {
+        "HAGL | warm dark brick": 172,
+        "HAGL | pale stone and curved bay": 126,
+        "HAGL | blue gray glazing": 252,
+        "HAGL | dark metal frames": 503,
+        "HAGL | dark blue roof canopy": 91
+      },
+      "canopy_geometry": {
+        "polygon_count": 91,
+        "bounds_world_m": [
+          [
+            -451.5719299316406,
+            -416.2718505859375
+          ],
+          [
+            -50.594722747802734,
+            -19.362131118774414
+          ],
+          [
+            13.960000038146973,
+            15.100000381469727
+          ]
+        ]
+      },
+      "nw_curve_glazing_face_count": 51,
+      "framed_entry_pane_face_count": 1,
+      "frame_faces_at_entry": 5,
+      "linked_libraries": 0,
+      "image_paths": []
+    },
+    "manifest_entry": {
+      "id": "massing_marc_and_sharon_hagle_hall_hagl_071ffd6",
+      "file": "buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend",
+      "collection": "Asset_massing_marc_and_sharon_hagle_hall_hagl_071ffd6",
+      "scene": "Building_massing_marc_and_sharon_hagle_hall_hagl_071ffd6",
+      "object_count": 1
+    },
+    "builder_evidence_uncertainty": [
+      "No surveyed elevation or authoritative measured building height located; all vertical dimensions are estimates.",
+      "No dimensioned elevations or floor plans located; facade bays, exact entrance, curved bay, canopy, and material colors are visual approximations.",
+      "The local lon/lat conversion is approximate and the Purdue GIS polygon is not a survey; positional accuracy is not represented as survey-grade."
+    ]
+  }
+}

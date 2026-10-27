@@ -1,0 +1,206 @@
+{
+  "building_id": "massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451",
+  "building_name": "The Church of Jesus Christ of Latter-day Saints Institute of Religion",
+  "reviewer": "independent evaluator r2; raw official GIS, first-party location sources, Street View photograph, three renders, and Blender 5.2.3 direct reopen",
+  "score": 8.3,
+  "max_score": 10,
+  "passing_standard": 8,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "official GIS identity/address and the assigned wall ring verified",
+      "evidence": [
+        "Raw Purdue GIS FID 779 names Lds Institute of Religion at 14 WALDRON ST.; the first-party Church location index lists the West Lafayette Waldron and Jasper Street locations separately.",
+        "The current Blender mesh's four lower shell corners match the transformed official GIS ring within 0.000016 m maximum nearest-corner distance. The separate access ramp lies outside the wall ring and is treated as ancillary geometry.",
+        "The preserved July 2023 Street View image shows the long, low brick Institute building across the street at the mapped Waldron location; the separate Jasper Street meetinghouse is not used as a source."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "GIS campus placement and plan scale reproduced",
+      "evidence": [
+        "Direct Blender 5.2.3 reopen confirms XY mesh bounds X -342.526..-319.107 m and Y -306.716..-273.774 m; transformed GIS wall ring is approximately 18.77 m east-west by 32.94 m north-south.",
+        "The footprint orientation follows the official north-south major axis and retains the library's direct campus-world coordinates. The GIS ring conversion uses the repository's documented local approximation."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2.0,
+      "status": "one-story low building and secondary roof glimpse are supported; heights and roof plan are estimates",
+      "evidence": [
+        "Purdue GIS records NUM_LEVELS=1; the July 2023 view shows a one-story low roof and a reddish raised roof section behind the main dark roof.",
+        "Reopened mesh bounds reach 5.90 m and the builder estimates 4.15 m eaves, 5.45 m main ridge, and 5.90 m secondary ridge. These vertical values are not measured by an elevation/survey source.",
+        "GIS field `Extrution` is 12 but its units are undocumented, so it cannot independently validate modeled metric height. The one available photo is oblique and tree-occluded; it does not establish roof pitch, hidden roof footprint, or wall heights."
+      ],
+      "findings": [
+        "Keep the vertical datums and secondary roof plan explicitly estimated; no scaled section/elevation or measured height source was found."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.1,
+      "max_score": 2.0,
+      "status": "material palette and entrance/ramp concept are photo-supported; composition is only approximate",
+      "evidence": [
+        "The direct July 2023 image supports a red-brown brick exterior, dark low main roof, reddish higher roof behind, a broad glazed/recessed entrance zone, brick piers, ramp/steps, and small windows.",
+        "The current west-facade render includes those general elements, including recessed glazing and an access ramp. Its entry zone sits farther toward the middle of the long wall than the source image's strongly off-center entrance; the source's glazed front zone/brick-pier arrangement is not closely reproduced.",
+        "The model has two small, widely separated windows and a broad simple entry screen. Window count, exact position, framing, roof material and stationing remain estimates from one oblique view; the tree-obscured and unseen facades have no direct visual support."
+      ],
+      "findings": [
+        "Refine the entry stationing and the recessed multi-bay glazing/brick-pier composition against the photograph; retain a clear uncertainty note for the unobserved facades and roof section."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "status": "saved asset and source package reopen; manifest bounds agree within 0.25 m of the reopened asset",
+      "evidence": [
+        "Blender 5.2.3 LTS reopened the assigned asset with expected scene and collection, one mesh object named The Church of Jesus Christ of Latter-day Saints, 264 vertices and 183 faces.",
+        "The standalone mesh has 0 unpacked file-linked images, 0 linked Blender libraries, and 0 object modifiers; the asset is self-contained.",
+        "The dedicated audit folder contains the raw GIS snapshot, first-party location pages, an attributable July 2023 Street View image, source register/notes, build and reopen records, and three rendered views.",
+        "The current shared manifest bounds are [[-342.4059, -319.1073], [-306.7158, -273.7745], [-0.2512, 5.9]]; reopened mesh bounds are [[-342.5260925292969, -319.1072998046875], [-306.7158203125, -273.77447509765625], [-0.25119999051094055, 5.900000095367432]]. Manifest agreement check: within 0.25 m on every bound; the small westward residual is at the ancillary ramp tip."
+      ],
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular\\buildings\\massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend",
+    "blender": "5.2.3 LTS",
+    "reopened_scene": "Building_massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451",
+    "reopened_collection": "Asset_massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451",
+    "direct_reopen_measurements": {
+      "object_name": "The Church of Jesus Christ of Latter-day Saints",
+      "object_type": "MESH",
+      "collection_objects": 1,
+      "vertices": 264,
+      "faces": 183,
+      "bounds": [
+        [
+          -342.5260925292969,
+          -319.1072998046875
+        ],
+        [
+          -306.7158203125,
+          -273.77447509765625
+        ],
+        [
+          -0.25119999051094055,
+          5.900000095367432
+        ]
+      ],
+      "materials": [
+        "LDS_Institute_Brick",
+        "LDS_Institute_Brick_Accent",
+        "LDS_Institute_Glass",
+        "LDS_Institute_Dark_Frame",
+        "LDS_Institute_Low_Dark_Roof",
+        "LDS_Institute_Red_Metal_Roof",
+        "LDS_Institute_Stone",
+        "LDS_Institute_Concrete",
+        "LDS_Institute_Rail"
+      ],
+      "unpacked_images": [],
+      "linked_libraries": 0,
+      "modifiers": []
+    },
+    "source_identity": {
+      "purdue_fid": 779,
+      "name": "Lds Institute of Religion",
+      "address": "14 WALDRON ST.",
+      "levels_attribute": 1
+    },
+    "source_footprint": {
+      "source_crs": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "gis_ring_latlon": [
+        [
+          -86.9174720332725,
+          40.4249344517941
+        ],
+        [
+          -86.9174625872088,
+          40.424641795643
+        ],
+        [
+          -86.9176744065274,
+          40.4246377896928
+        ],
+        [
+          -86.9176838535086,
+          40.4249304458286
+        ]
+      ],
+      "projected_xy_m": [
+        [
+          -319.90842077248504,
+          -273.774472782859
+        ],
+        [
+          -319.1072944030926,
+          -306.27101180135696
+        ],
+        [
+          -337.0718187869188,
+          -306.7158325110722
+        ],
+        [
+          -337.87302297085677,
+          -274.2192951920515
+        ]
+      ],
+      "nearest_asset_base_vertex_residuals_m": [
+        4.642670451380372e-06,
+        1.576427838615538e-05,
+        1.6376009773259215e-05,
+        7.794088986519102e-06
+      ],
+      "max_residual_m": 1.6376009773259215e-05,
+      "dimensions_ew_ns_m": [
+        18.765728567764143,
+        32.94135972821323
+      ]
+    },
+    "manifest_bounds_m": [
+      [
+        -342.4059,
+        -319.1073
+      ],
+      [
+        -306.7158,
+        -273.7745
+      ],
+      [
+        -0.2512,
+        5.9
+      ]
+    ],
+    "reviewed_files": [
+      "audit\\massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451\\source_notes.md",
+      "audit\\massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451\\sources\\google_street_view_23_waldron_2023.jpg",
+      "audit\\massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451\\renders\\01_west_northwest_hero.png",
+      "audit\\massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451\\renders\\02_west_facade.png",
+      "audit\\massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451\\renders\\03_top.png"
+    ],
+    "limitations": [
+      "One July 2023 oblique photograph from 23 Waldron St. is the only direct exterior view; trees obscure the building.",
+      "Purdue GIS Extrution field does not document units; all model heights are estimates.",
+      "Purdue Archives entries are catalog leads; original photos were not accessible.",
+      "Manifest bounds agree within 0.25 m with the reopened asset; the remaining small westward difference is at the ancillary ramp tip."
+    ]
+  },
+  "findings": [
+    "Keep the vertical datums and secondary roof plan explicitly estimated; no scaled section/elevation or measured height source was found.",
+    "Refine the entry stationing and the recessed multi-bay glazing/brick-pier composition against the photograph; retain a clear uncertainty note for the unobserved facades and roof section."
+  ],
+  "recommendation": "The asset passes the 8/10 gate at 8.3/10. The official footprint and campus placement are accurately represented and the current manifest agrees within a small ramp-envelope tolerance. The remaining limitations are estimated roof heights/secondary roof and an only approximate visible facade entry composition."
+}

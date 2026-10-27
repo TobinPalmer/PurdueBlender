@@ -1,0 +1,119 @@
+{
+  "asset_id": "massing_provenance_apartments_005_960f6b0",
+  "assignment": {
+    "owner": "Rossen",
+    "asset_path": "modular/buildings/massing_provenance_apartments_005_960f6b0.blend",
+    "manifest_collection": "Asset_massing_provenance_apartments_005_960f6b0",
+    "manifest_scene": "Building_massing_provenance_apartments_005_960f6b0",
+    "type": "massing"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University Campus Map FeatureServer, BuildingShapesZip4 layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/506?f=pjson",
+      "feature_id": 506,
+      "feature_name": "Building F",
+      "feature_abbreviation": "143",
+      "attribute_caution": "BUILDING_1 is 1509 but ADDRESS is blank; do not treat this feature as a verified street address or as-built record.",
+      "stable_asset_crosswalk_record": "crosswalk_analysis.json",
+      "source_layer": "BLDG Building Pre-planning",
+      "retrieved": "2026-10-26",
+      "source_date": "Not supplied by the service response",
+      "source_crs": "EPSG:3857 (confirmed from FeatureServer layer metadata)",
+      "snapshot": "sources/official_purdue_fid506.json",
+      "layer_metadata_snapshot": "sources/official_feature_layer_metadata.json",
+      "measurement_method": "Used only the FID 506 Building F polygon. Inverse Web Mercator to WGS84, then the project's documented local campus approximation from origin latitude 40.4274, longitude -86.9137; X east and Y north, metres. Result agrees with the project snapshot of the same FID within about 0.0001 m.",
+      "uncertainty": "The feature is explicitly in a pre-planning layer and is not a certified or as-built survey. It crosswalks to BLDG F / 143 in the county's approved detailed construction plan, and its transformed outline closely matches the 2025 roof outline in current orthophoto. This strongly supports the assigned block identity and footprint location; exact wall-line registration remains approximate because GIS is pre-planning and the orthophoto shows roof/eaves, not walls. The legacy asset AABB was much wider than this feature; it was replaced rather than used as a neighbor footprint."
+    },
+    {
+      "provider": "Tippecanoe County Area Plan Commission, approved Provenance PD Phase 1 & 2 construction-plan packet; sheet C1.4",
+      "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/ArchivedAgenda/_01022020-1597?packet=true",
+      "feature_id": "Plan sheet C1.4; BLDG F, code 143; county resolution PD-20-01",
+      "retrieved": "2026-10-26",
+      "source_date": "Sheet dated 2019-10-14; final detailed Phase 1 & 2 construction plans considered/approved January 2020",
+      "source_crs": "Local engineering drawing coordinates; plan north arrow and 0\u2013120 ft scale bar; no georeferencing metadata in PDF",
+      "snapshot": "sources/county_provenance_phase1_2_construction_plans.pdf",
+      "rendered_sheet": "sources/county_plan_sheet_C1_4_landscape.png",
+      "target_crop": "sources/county_plan_sheet_C1_4_apartment_cluster.png",
+      "measurement_method": "Read the explicit BLDG F / 143 label in the apartment group north of District Boulevard, between BLDG E / 144 and BLDG G / 142. Compared its plan silhouette and orientation qualitatively with GIS FID 506 and the current orthophoto. This sheet is an erosion-control / construction-plan sheet, not an architectural elevation, and the PDF is not georeferenced; it is used for identity and proposed site layout, not surveyed dimensions.",
+      "uncertainty": "Approved detailed construction plans provide a direct label and planned site location, not an as-built certification. The exact stable asset crosswalk is an evidence-based inference from the inherited .005 object's campus location, the explicit F/143 plan feature, and current roof imagery. No plan-level elevation or facade schedule was located."
+    },
+    {
+      "provider": "Indiana Geographic Information Office / Indiana Current Orthophotography ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "feature_id": "ImageServer identify catalog at Purdue FID 506 centroid: Indiana_2025_SPW_2ft_exportraster and in2023_29921882_06",
+      "retrieved": "2026-10-26",
+      "source_date": "2025 dataset identified (2023 Tippecanoe 6-inch item also identified); tile-level flight date not exposed",
+      "source_crs": "EPSG:3857 for image export and overlay; input Purdue ring is EPSG:3857",
+      "snapshot": "sources/indiana_current_orthophoto_2025_raw.jpg",
+      "overlay": "indiana_current_orthophoto_2025_fid506_overlay.jpg",
+      "registration_record": "indiana_current_orthophoto_2025_registration.json",
+      "service_metadata_snapshot": "sources/indiana_current_orthophoto_layer_metadata.json",
+      "measurement_method": "Exported an 1800\u00d71050 image in EPSG:3857 around the FID 506 ring; inverse-projected the ring from Web Mercator and reprojected to EPSG:3857 before drawing it without a further fit/warp. Visually checked outline against roof edges and repeated roof breaks.",
+      "uncertainty": "GIS polygon lies close to the central BLDG F / 143 roof outline and matches its orientation, providing strong current location/identity corroboration. Eaves project beyond walls; orthophoto cannot confirm a surveyed wall line, heights, or facade layout. Project local transform remains approximate. Indiana imagery service metadata documents CC0."
+    },
+    {
+      "provider": "Studio M Architecture and Planning, Provenance at Discovery Park project page",
+      "url": "https://www.studiomarchitecture.net/provenance-at-discovery-park",
+      "feature_id": "Project portfolio page; multiple images, no feature ID",
+      "retrieved": "2026-10-26",
+      "source_date": "Not stated; page describes Phase I built and Phase II under construction",
+      "source_crs": "Not applicable",
+      "snapshots": [
+        "sources/studio_m_page.html",
+        "sources/studio_m_photo_1.jpg",
+        "sources/studio_m_photo_2.jpg",
+        "sources/studio_m_photo_poi26.jpg"
+      ],
+      "measurement_method": "Reviewed as a project-wide reference only. Images do not identify Building F / 143 and are excluded from this asset\u2019s facade geometry.",
+      "uncertainty": "No image labels the Building F elevation. No facade openings, finishes, entries, balconies, or color stationing are modeled from these images."
+    },
+    {
+      "provider": "Purdue University Residences, Provenance page",
+      "url": "https://housing.purdue.edu/my-housing/options/apartments/provenance.html",
+      "feature_id": "Residence listing, no GIS feature ID",
+      "retrieved": "2026-10-26",
+      "source_date": "Page last modified 2026-08-20",
+      "source_crs": "Not applicable",
+      "snapshot": "sources/purdue_residences_page.html",
+      "measurement_method": "Used for site identity and address context (1501 Mitch Daniels Boulevard), not as geometric measurement.",
+      "uncertainty": "The address is for the apartment community, not a separately geocoded Building F entrance."
+    },
+    {
+      "provider": "Engage Building Products, Provenance Apartments project entry",
+      "url": "https://engagebp.com/project/provenance-apartments/",
+      "feature_id": "Project material case study, no feature ID",
+      "retrieved": "2026-10-26",
+      "source_date": "Not stated",
+      "source_crs": "Not applicable",
+      "snapshot": null,
+      "measurement_method": "Search-indexed project description reports brick, black QuickPanel, and Dark Cherry FastPlank finishes; the page blocked local snapshot retrieval with HTTP 403. Not used for dimensions.",
+      "uncertainty": "Project-level materials are not assigned to an individual FID 506 elevation."
+    },
+    {
+      "provider": "Exact-block source search, revision r3",
+      "url": "source_search_r3.json",
+      "feature_id": "Building F / 143 central Provenance block",
+      "retrieved": "2026-10-26",
+      "source_date": "Search performed 2026-10-26",
+      "source_crs": "Not applicable",
+      "snapshot": "source_search_r3.json",
+      "measurement_method": "Searched for block-specific street-level imagery and approved elevations/sections; excluded a nearby 1505-address image. The county C1.4 civil sheet, current orthophoto, Purdue address context, and project-wide Studio M page were reviewed.",
+      "uncertainty": "No exact-block street image, approved elevation, or section was located. Facade details are omitted; vertical dimensions and roof rhythm remain estimates."
+    }
+  ],
+  "geometry_actions": [
+    "Inspected the inherited mesh and found one low-detail 12-vertex object with a 138.148 m by 28.382 m AABB, compared with FID 506 plan envelope.",
+    "Rebuilt the single assigned asset from Purdue GIS FID 506 only; no adjacent Provenance footprint was reused.",
+    "Crosswalked the assigned block to BLDG F / 143 using the county approved construction-plan sheet C1.4 and current 2025 orthophoto. The GIS ring closely matches the roof outline, but is not a surveyed wall registration.",
+    "Used three stories only as project-level evidence. The 8.9 m eave and 11.4 m ridge are estimates \u00b11.5 m; no F/143 elevation or section was located.",
+    "Retained a five-break roof rhythm as an estimate from exact-block overhead imagery. Ridge count, ridge placement, pitch, and heights are unmeasured.",
+    "Removed unsupported windows, frames, balconies, entries, canopies, and facade color/material stationing. The shell uses neutral display materials and has no facade relief because no exact-block street image or elevation was found."
+  ],
+  "unresolved": [
+    "The county plan supports BLDG F / 143 identity and planned position. Purdue FID 506 remains a pre-planning feature; its ring matches the current roof outline closely but cannot establish surveyed wall registration.",
+    "No Building F / 143 street-level image, approved elevation, or section was located in the accessible sources. Facade openings, entries, balconies, finishes, and color stationing remain unknown and are omitted.",
+    "No measured Building F height was found. The project description supports three stories; 8.9 m eave / 11.4 m ridge remain estimates with about \u00b11.5 m uncertainty.",
+    "The five-break roof rhythm is inferred from current overhead imagery; exact ridge count, placement, pitch, seam locations, and elevations remain uncertain."
+  ]
+}

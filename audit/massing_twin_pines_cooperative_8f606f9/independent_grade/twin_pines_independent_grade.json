@@ -1,0 +1,110 @@
+{
+  "building_id": "massing_twin_pines_cooperative_8f606f9",
+  "building_name": "Twin Pines Cooperative",
+  "asset_path": "modular/buildings/massing_twin_pines_cooperative_8f606f9.blend",
+  "grader": "independent evaluator authored and run by twin_pines_grader",
+  "evaluated_at": "2026-10-26",
+  "score": 8.3,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "criterion": "Identity and footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Raw OSM snapshot identifies named way 301934836 as Twin Pines Cooperative (FID 766 crosswalk).",
+        "Official Twin Pines contact snapshot includes 322 Waldron; Purdue cooperative listing and 2023 Purdue profile corroborate identity/site.",
+        "Saved mesh ground ring has 6 unique Z=0 XY vertices; max nearest-node error against raw projected OSM polygon = 0.000014 m."
+      ],
+      "findings": [
+        "The footprint is community-mapped OSM geometry rather than a surveyed wall line; it may generalize the envelope or include porch/roof edges."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "Direct evaluated mesh world bounds: X [-342.000, -316.148], Y [61.833, 79.252], Z [0.000, 9.050] m.",
+        "Raw OSM projected footprint measures about 24.61 x 13.51 m; the source-derived structural base preserves this plan and its long east-west axis.",
+        "Object transform is identity, consistent with this simple-massing asset remaining in campus coordinates; contact page and Purdue profile corroborate the 322 Waldron location."
+      ],
+      "findings": [
+        "No independent survey or orthographic aerial registration verifies wall footprint or exact rotation; front/south bearing is inferred from the photograph and site context. Overall bounds extend beyond the footprint due to porch/roof details."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "The 2011 Purdue HHS Ambassadors exterior photograph directly shows two occupied stories and a gabled roof; the current builder-render silhouette is broadly consistent.",
+        "Saved model roof ridge is 9.05 m above base, explicitly marked estimated in evidence; inherited 16 m fallback was removed."
+      ],
+      "findings": [
+        "No measured elevation, architectural plan, or reliable story-height source was found. Eave/ridge height and rear roof wing remain photo-based estimates; attic/roof volume is not a verified occupied floor."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": [
+        "Direct comparison of saved front/east renders with the archived Purdue exterior photo supports horizontal siding, shuttered double-hung windows, front porch, posts/brick piers, railing, entrance, and gable silhouette.",
+        "Current official site photo of the porch supports white round columns, brick piers, railing, and muted gray-green siding."
+      ],
+      "findings": [
+        "Only one older oblique exterior photo and a current partially occluded porch photo are available. Exact window count/spacing, door position, colors across the whole current facade, and side/rear elevations are not independently established; some repeated details are plausible interpretation rather than direct measurements."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Saved file re-opened here; expected collection 'Asset_massing_twin_pines_cooperative_8f606f9' contains 1 object(s), including the stable named mesh.",
+        "Evaluated mesh has 2758 vertices and 1900 polygons; saved object transform location=(0.0, 0.0, 0.0), scale=(1.0, 1.0, 1.0).",
+        "Materials: 8 slots; file image dependencies: 0.",
+        "Raw evidence/source snapshots present: 4/4 mandatory identity/footprint snapshots; reopen validation record and three preview renders are present."
+      ],
+      "findings": [
+        "The asset is portable and collection structure is stable. Evidence is detailed but no surveyed elevation/orthographic site comparison is included, so dimensional confidence remains limited."
+      ]
+    }
+  ],
+  "evidence": {
+    "direct_blend_inspection": true,
+    "blender_version": "4.5.15 LTS",
+    "collection": "Asset_massing_twin_pines_cooperative_8f606f9",
+    "object": "Twin Pines Cooperative",
+    "evaluated_bounds_world_m": [
+      [
+        -341.999634,
+        61.83308,
+        0.0
+      ],
+      [
+        -316.147614,
+        79.251648,
+        9.05
+      ]
+    ],
+    "mesh_vertices": 2758,
+    "mesh_polygons": 1900,
+    "base_z0_unique_xy_vertices": 6,
+    "raw_osm_nearest_vertex_error_m": 1.4e-05,
+    "raw_identity_crosscheck": true,
+    "historical_exterior_photo_present": true,
+    "external_file_image_dependencies": [],
+    "reopen_validation_json_read_as_context_only": true
+  },
+  "findings": [
+    "The footprint is community-mapped OSM geometry rather than a surveyed wall line; it may generalize the envelope or include porch/roof edges.",
+    "No independent survey or orthographic aerial registration verifies wall footprint or exact rotation; front/south bearing is inferred from the photograph and site context. Overall bounds extend beyond the footprint due to porch/roof details.",
+    "No measured elevation, architectural plan, or reliable story-height source was found. Eave/ridge height and rear roof wing remain photo-based estimates; attic/roof volume is not a verified occupied floor.",
+    "Only one older oblique exterior photo and a current partially occluded porch photo are available. Exact window count/spacing, door position, colors across the whole current facade, and side/rear elevations are not independently established; some repeated details are plausible interpretation rather than direct measurements.",
+    "The asset is portable and collection structure is stable. Evidence is detailed but no surveyed elevation/orthographic site comparison is included, so dimensional confidence remains limited."
+  ]
+}

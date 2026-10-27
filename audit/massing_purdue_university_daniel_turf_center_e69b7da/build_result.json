@@ -1,0 +1,71 @@
+{
+  "asset_id": "massing_purdue_university_daniel_turf_center_e69b7da",
+  "building": "Purdue University Daniel Turf Center",
+  "build_script": "modular/buildings/build_massing_purdue_university_daniel_turf_center_e69b7da.py",
+  "asset_path": "modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend",
+  "source": {
+    "provider": "Purdue University GIS BuildingShapesZip4 FeatureServer/0",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": "FID 208 / DANL",
+    "retrieved": "2026-10-26",
+    "source_crs": "Saved identity query is EPSG:4326; native service geometry was also captured in Web Mercator (EPSG:3857)",
+    "measurement_method": "Plan coordinates transformed with the modular project's documented local degrees-to-meters approximation. Native EPSG:3857 ring shoelace area independently reconciles with Shape__Area; local ground-scale area differs because Web Mercator area includes latitude distortion.",
+    "identity_evidence": "GIS feature name William H. Daniel Turfgrass Research & Diagnostic Court, abbreviation DANL, address 1340 Cherry Lane; outline overlays the long building roof in Esri World Imagery. A 2011 turf-industry visit account explicitly labels its attached exterior photo as the Daniel Center building.",
+    "source_conflicts": [
+      "The stale assignment_queue screening links FID 855, which the campus index identifies as the Old Purdue Exponent Building; this candidate was rejected. Named Purdue GIS FID 208 at 1340 Cherry Lane is used instead.",
+      "Turf Recreation Exercise Center (TREC) is a separate RecWell facility; this model uses the outdoor-research Daniel Center's DANL/FID 208 identity and footprint.",
+      "Native EPSG:3857 ring shoelace area=1170.6289 m2 matches Shape__Area=1170.6211 m2 within 0.0078 m2. The earlier apparent mismatch compared distorted Web Mercator area with a latitude-corrected local ground projection.",
+      "The ring appears to follow the roof projection in aerial imagery; a surveyed wall line/overhang offset was not located, so the model records that limitation rather than treating it as a measured wall boundary.",
+      "GIS Extrution=14 has undocumented units and is not used as a height. Vertical scale is a low-confidence visual estimate because no measured elevation or height source was found.",
+      "The Purdue expansion flyer and Synthesis feasibility renderings describe proposed changes and were excluded as evidence of as-built form.",
+      "The attributed 2011 exterior photo supports pale metal cladding, a long window band, and a centered canopy. The long facade is assigned to the south side by matching the photo's central entrance to the centered south GIS roof-outline bump and the parking apron in the north-up aerial; the photograph has no compass heading, so this orientation remains an inference."
+    ],
+    "uncertainty": "GIS footprint is roof-projection-like in the orthophoto; surveyed wall line and eave overhang are unavailable. Exterior photo directly supports pale metal siding, a long window band, centered entrance canopy, and shallow gable, but supplies no dimensions or compass heading. South-facing facade mapping is inferred by matching the centered photo entrance/canopy to the centered south GIS projection bump and the parking apron in the north-up aerial. Window band position and canopy Z dimensions are visual estimates; exact roof pitch and eave/ridge heights remain unmeasured, low-confidence visual estimates."
+  },
+  "gis": {
+    "abbreviation": "DANL",
+    "official_name": "William H. Daniel Turfgrass Research & Diagnostic Court",
+    "address": "1340 Cherry Lane",
+    "num_levels": 1,
+    "extrution_raw_uninterpreted": 14,
+    "visual_eave_height_estimate_m_low_confidence": 3.25,
+    "visual_ridge_height_estimate_m_low_confidence": 4.05,
+    "ring_vertex_count_closed": 13,
+    "unique_ring_vertex_count": 12,
+    "footprint_boundary_vertex_count_after_gable_end_splits": 12,
+    "approx_local_polygon_area_m2": 677.0611263930332,
+    "native_epsg3857_ring_area_m2": 1170.62890625,
+    "shape_area_service_m2": 1170.62109375,
+    "native_area_attribute_delta_m2": 0.0078125,
+    "campus_world_bounds_m": [
+      [
+        -1408.480414999073,
+        -1363.8764102746127
+      ],
+      [
+        1609.4888380968223,
+        1627.1294848642287
+      ],
+      [
+        0.0,
+        4.05
+      ]
+    ],
+    "transform": "X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040; Z up"
+  },
+  "model": {
+    "kind": "simple massing",
+    "objects_in_export_collection": 1,
+    "vertices": 58,
+    "faces": 54,
+    "footprint": "Exact FID 208 plan extent retained in campus-world coordinates; main wall outline bridges the centered south projection bump and centered canopy restores its exact outer plan extent",
+    "roof": "Shallow gable supported by a Daniel Center exterior photo; pitch and absolute vertical scale unmeasured",
+    "modifiers": [],
+    "external_dependencies": [],
+    "preview_renders": [
+      "renders/daniel_turf_center_top.png",
+      "renders/daniel_turf_center_oblique.png"
+    ]
+  },
+  "validation": "Generated build record; clean-process reopen validation is recorded separately in reopen_validation.json."
+}

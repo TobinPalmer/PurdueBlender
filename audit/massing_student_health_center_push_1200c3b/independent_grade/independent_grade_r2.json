@@ -1,0 +1,171 @@
+{
+  "asset_id": "massing_student_health_center_push_1200c3b",
+  "asset_file": "modular/buildings/massing_student_health_center_push_1200c3b.blend",
+  "grader": "fresh independent subagent (revision 2)",
+  "score": 8.2,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "status": "pass",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Raw Purdue BuildingShapes layer-0 feature FID 274 identifies Purdue University Student Health Center (PUSH), 601 Stadium Mall Drive. The 13-vertex official ring is reproduced by the model's campus-coordinate wall/roof plan. Raw record, layer metadata, and map/address cross-check are saved. The 2023 orthophoto independently supports the roof-plan interpretation.",
+      "finding": "Identity and exterior plan are strongly verified. The internal division into three roof zones is interpretive, but the exterior footprint itself is the official FID 274 geometry."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Direct reopened Blender vertex bounds [[-229.04403686523438, -172.66683959960938], [294.11846923828125, 364.8148498535156], [0.0, 14.630399703979492]]; transformed GIS-ring XY bounds [[-229.04404003272322, -172.688954800859], [294.1455908182911, 364.79266116020653]]; max XY bound error 0.027 m. Geometry remains in the existing campus-coordinate frame; no manifest origin or placement marker changed.",
+      "finding": "Horizontal extent, orientation, and placement closely match the authoritative ring. The repository's documented local geographic approximation is not a surveyed projection; small residual edge/overhang mismatch is visible in the overall bounds."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": "Model/reopen height is 14.63 m. The 2023 orthophoto roof overlay and raw orthophoto support three plan-level zones: {'main': 'tiled_gable', 'entry_wing': 'tiled_hip', 'southeast_wing': 'flat'}, areas {'main': 838.21, 'entry_wing': 62.58, 'southeast_wing': 303.68} m2. Evidence explicitly records the official GIS fields NUM_LEVELS/CountOfFLO=5, B=-11.3, F01-F04, Extrution=48, R=69.8 and their undocumented units/semantics; the rendered facade-level reading and all three zone heights are labeled estimates.",
+      "finding": "The revised model differentiates the main pitched roof, lower entrance-side roof and lower southeast extension, which is a material improvement over one continuous roof. The main 14.63 m peak and wing eaves/ridges are still estimates, not established by the photo or orthophoto; GIS floor/extrusion fields remain unresolved and conflict with the visual three-band reading."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": "Direct comparison of the saved exterior render with Purdue's 2020 exterior photograph confirms red brick, pale horizontal trim, upper-story openings, red tile roofing, a lower entry volume, glazing and a medical emblem are represented. The source photo directly shows a much broader, multi-panel glazed entrance and varied upper window proportions.",
+      "finding": "The massing revision adds lower wings and the entrance frontage. In the render, windows remain small, repetitive and applied uniformly across long elevations; the visible entrance is substantially less legible and simpler than the broad source portal. The exact side/rear fenestration and entrance orientation remain unverified because there is one oblique facade photograph."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Directly reopened massing_student_health_center_push_1200c3b.blend: expected collection present=True, object count=1, mesh count=1, evaluated polygons=1867, materials=['PUSH blue gray glazing', 'PUSH dark entrance glazing', 'PUSH metal hardware', 'PUSH pale limestone trim', 'PUSH terracotta tile roof', 'PUSH warm red brick'], unpacked external images=[]. Reopen report passes and matches the evaluated asset. Required raw GIS, official photo and page snapshot, orthophoto/metadata, source register, overlays, renders, build record, and uncertainty record are present=True.",
+      "finding": "Stable asset ID/path and single-collection export are preserved; the library reopens, has no external image dependency, and has a complete source/evidence trail. A single combined mesh limits part-level editing but is valid for this massing library."
+    }
+  ],
+  "evidence": {
+    "direct_asset_inspection": {
+      "collection_present": true,
+      "object_count": 1,
+      "mesh_object_count": 1,
+      "evaluated_vertex_count": 7437,
+      "evaluated_polygon_count": 1867,
+      "evaluated_bounds_xyz_m": [
+        [
+          -229.04403686523438,
+          -172.66683959960938
+        ],
+        [
+          294.11846923828125,
+          364.8148498535156
+        ],
+        [
+          0.0,
+          14.630399703979492
+        ]
+      ],
+      "gis_xy_bounds_m": [
+        [
+          -229.04404003272322,
+          -172.688954800859
+        ],
+        [
+          294.1455908182911,
+          364.79266116020653
+        ]
+      ],
+      "max_xy_bound_error_m": 0.027121580009861646,
+      "materials": [
+        "PUSH blue gray glazing",
+        "PUSH dark entrance glazing",
+        "PUSH metal hardware",
+        "PUSH pale limestone trim",
+        "PUSH terracotta tile roof",
+        "PUSH warm red brick"
+      ],
+      "unpacked_external_images": []
+    },
+    "source_inspection": {
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+      "feature_id": 274,
+      "feature_name": "Purdue University Student Health Center",
+      "abbreviation": "PUSH",
+      "address": "601 Stadium Mall Drive",
+      "vertex_count": 13,
+      "source_providers": [
+        "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+        "Purdue University / John Underwood, Purdue Today archive",
+        "Purdue University Student Health Services",
+        "Purdue University Campus Map",
+        "Indiana Geographic Information Office (IGIO), Indiana 2023 Imagery ImageServer"
+      ]
+    },
+    "height_roof_inspection": {
+      "zones": [
+        "entry_wing",
+        "main",
+        "southeast_wing"
+      ],
+      "zone_areas_m2": {
+        "main": 838.21,
+        "entry_wing": 62.58,
+        "southeast_wing": 303.68
+      },
+      "roof_forms": {
+        "main": "tiled_gable",
+        "entry_wing": "tiled_hip",
+        "southeast_wing": "flat"
+      },
+      "vertical_conflict_recorded": true,
+      "orthophoto_source": "sources/indiana_2023_push_orthophoto.jpg",
+      "facade_source": "sources/purdue_push_exterior_2020.jpg"
+    },
+    "visual_inspection": {
+      "model_render": "renders/push_exterior_preview.png",
+      "footprint_render": "renders/push_footprint_preview.png",
+      "GIS_overlay": "renders/push_orthophoto_gis_overlay.jpg",
+      "roof_zone_overlay": "renders/push_orthophoto_regions_overlay.jpg",
+      "raw_orthophoto": "sources/indiana_2023_push_orthophoto.jpg",
+      "raw_facade_photo": "sources/purdue_push_exterior_2020.jpg"
+    },
+    "reopen_validation": {
+      "asset_id": "massing_student_health_center_push_1200c3b",
+      "blend_reopened": true,
+      "scene": "Building_massing_student_health_center_push_1200c3b",
+      "collection": "Asset_massing_student_health_center_push_1200c3b",
+      "collection_object_count": 1,
+      "object": "Student Health Center (PUSH)",
+      "object_type": "MESH",
+      "evaluated_vertex_count": 7437,
+      "evaluated_polygon_count": 1867,
+      "material_count": 6,
+      "evaluated_bounds_world_m": [
+        [
+          -229.04403686523438,
+          -172.66683959960938
+        ],
+        [
+          294.11846923828125,
+          364.8148498535156
+        ],
+        [
+          0.0,
+          14.630399703979492
+        ]
+      ],
+      "max_xy_bound_error_m": 0.027120761718776976,
+      "evaluated_height_m": 14.630399703979492,
+      "minimum_elevation_m": 0.0,
+      "modifiers": [],
+      "unpacked_external_images": [],
+      "result": "pass"
+    },
+    "evidence_snapshots_complete": true
+  },
+  "findings": [
+    "The revised saved asset directly matches the official named/addressed FID 274 footprint and campus placement within a few centimeters in bounding extents.",
+    "The newly differentiated roof zones are supported in plan by the raw 2023 orthophoto overlay; their wall/roof elevations remain estimates because the GIS height field semantics are undocumented and no dimensioned elevation was found.",
+    "Compared with Purdue's 2020 photo, the broad lower entrance wing is now represented, but the opening/window proportions and facade rhythm remain simplified and the precise entry orientation is not verified.",
+    "The asset reopens as the expected self-contained one-mesh collection, and raw source snapshots, renders and uncertainty notes are present."
+  ]
+}

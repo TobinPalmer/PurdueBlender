@@ -156,6 +156,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Lambertus Hall | [lambertus_hall.blend](modular/buildings/lambertus_hall.blend) | Finished; 16 m height and some facade-wing attribution estimated | [8.0/10](audit/lambertus_hall/independent_grade/grade.json) | — |
 | Latino Cultural Center (current, FID 925) | [massing_latino_cultural_center_lcc_9cc71b3.blend](modular/buildings/massing_latino_cultural_center_lcc_9cc71b3.blend) | Finished; height and schematic interior remain estimates | [9.0/10](audit/latino_cultural_center_lcc_9cc71b3/independent_grade/grade.json) | — |
 | Life Science Ranges Greenhouse & Service Building (LSR) | [massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend](modular/buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | Finished; master fresh-open PASS; heights remain estimates | [8.1/10](audit/life_science_ranges_greenhouse_and_service_building_c96231f/independent_grade_r2/result.json) | — |
+| Ward L. Lambert Fieldhouse and Gymnasium | [lambert_fieldhouse.blend](modular/buildings/lambert_fieldhouse.blend) | Finished; exact FID 261 footprint registered, grade and master link verified; height/roof and historic hall/gym arrangement remain estimated | [8.2/10](audit/lambert_fieldhouse/independent_grade_r9_clean/result.json) | — |
 | Lilly Hall of Life Sciences | [massing_lilly_hall_e7fc13e.blend](modular/buildings/massing_lilly_hall_e7fc13e.blend) | Finished | [8.0/10](audit/massing_lilly_hall_e7fc13e/independent_grade/r1/grade.json) | — |
 | Mann Hall | [massing_mann_hall_2b4ebda.blend](modular/buildings/massing_mann_hall_2b4ebda.blend) | Finished | [8.2/10](audit/massing_mann_hall_2b4ebda/independent_grade/r1/grade.json) | — |
 | Ralph & Bettye Bailey Hall (BALY) | [massing_ralph_bettye_bailey_hall_406c4db.blend](modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend) | Finished; master fresh-open PASS; facade direction, heights, and first-floor interior layout remain estimates or schematic | [8.1/10](audit/ralph_bettye_bailey_hall/independent_grade_new/grade.json) | — |
@@ -175,10 +176,14 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a grade (20)
+### Detailed models in progress, awaiting a grade, or awaiting master integration (48)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
+| The Caretaker’s Cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | [8.1/10](audit/massing_the_caretaker_s_cottage_6b24af9/independent_grade_r2.json); awaiting master integration | Rossen |
+| Purdue University Daniel Turf Center | [`massing_purdue_university_daniel_turf_center_e69b7da.blend`](modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | [8.6/10](audit/massing_purdue_university_daniel_turf_center_e69b7da/independent_grade_r3/independent_grade_r3.json); awaiting master integration | Rossen |
+| The Moosehead Lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | [8.2/10](audit/massing_the_moosehead_lounge_f81529e/independent_grade_r2.json); awaiting master integration | Rossen |
+| The Church of Jesus Christ of Latter-day Saints Institute of Religion | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | [8.3/10](audit/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451/independent_grade_r2.json); awaiting master integration | Rossen |
 | Convergence Center for Innovation and Collaboration | [`convergence_center.blend`](modular/buildings/convergence_center.blend) | Not graded | Rohan |
 | Dauch Alumni Center | [`dauch_alumni_center.blend`](modular/buildings/dauch_alumni_center.blend) | 7.2/10 | Rohan |
 | David and Bonnie Brunner Farm Animal Hospital | [`david_and_bonnie_brunner_farm_animal_hospital.blend`](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 6.7/10 | Rohan |
@@ -195,56 +200,61 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Rohan |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rohan |
 | Purdue Police Department (TERY) | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | [8.4/10](audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json); awaiting master integration | Rossen |
+| Purdue Village Administration Building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | [8.5/10](audit/massing_purdue_village_administration_building_3faae6c/independent_grade/evaluation_r2.json); awaiting master integration | Rossen |
+| Provenance Apartments 005 | [`massing_provenance_apartments_005_960f6b0.blend`](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | [8.3/10](audit/massing_provenance_apartments_005_960f6b0/independent_grade_r4.json); awaiting master integration | Rossen |
+| Pete Dye Clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | [8.5/10](audit/massing_the_pete_dye_clubhouse_a3a9641/independent_grade/pete_dye_independent_grade_r2.json); awaiting master integration | Rossen |
+| Phi Delta Theta | [`massing_phi_delta_theta_258cddd.blend`](modular/buildings/massing_phi_delta_theta_258cddd.blend) | [8.3/10](audit/massing_phi_delta_theta_258cddd/independent_grade_r1/independent_grade.json); awaiting master integration | Rossen |
+| Pi Kappa Alpha (Pike) | [`massing_house_301841252_e4f8f05.blend`](modular/buildings/massing_house_301841252_e4f8f05.blend) | [8.7/10](audit/massing_house_301841252_e4f8f05/independent_grade_r1/grade.json); awaiting master integration | Rossen |
+| Sigma Nu | [`massing_house_301841330_f58ae87.blend`](modular/buildings/massing_house_301841330_f58ae87.blend) | [8.0/10](audit/sigma_nu/independent_grade_r3/independent_grade_r3.json); awaiting master integration | Rossen |
+| Sigma Phi Epsilon | [`massing_house_301841250_d63b09a.blend`](modular/buildings/massing_house_301841250_d63b09a.blend) | [8.65/10](audit/sigma_phi_epsilon/independent_grade_r3/independent_grade_r3.json); awaiting master integration | Rossen |
 | Stone Hall (STON) | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | [8.0/10](audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json); awaiting master integration | Rossen |
+| Student Health Center (PUSH) | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | [8.2/10](audit/massing_student_health_center_push_1200c3b/independent_grade/independent_grade_r2.json); awaiting master integration | Rossen |
+| Union Club Hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | [8.1/10](audit/massing_union_club_hotel_0d22460/independent_grade_r2.json); awaiting master integration | Rossen |
+| Redeemer Lutheran Church | [`massing_redeemer_lutheran_church_2e5ce2f.blend`](modular/buildings/massing_redeemer_lutheran_church_2e5ce2f.blend) | [8.0/10](audit/redeemer_lutheran_church/independent_grade_kyle.json); awaiting master integration | Kyle |
+| Marc and Sharon Hagle Hall (HAGL) | [`massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend`](modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | [8.5/10](audit/massing_marc_and_sharon_hagle_hall_hagl_071ffd6/grade.json); awaiting master integration | Kyle |
+| Matthews Hall (MTHW) | [`massing_matthews_hall_mthw_9326885.blend`](modular/buildings/massing_matthews_hall_mthw_9326885.blend) | [8.75/10](audit/matthews_hall_mthw_9326885/grade_result.json); awaiting master integration | Kyle |
+| McDonald's | [`massing_mcdonald_s_ab77b70.blend`](modular/buildings/massing_mcdonald_s_ab77b70.blend) | [9.0/10](audit/mcdonald_s/independent_grade_revision2.json); awaiting master integration | Kyle |
+| MRI Modular Facility (MRI1 / PMRI) | [`massing_mri_modular_facility_mri1_a93e22b.blend`](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | [8.0/10](audit/mri_modular_facility/independent_grade_mri.json); awaiting master integration | Kyle |
+| Our Saviour Lutheran Church | [`massing_our_saviour_lutheran_church_118afa2.blend`](modular/buildings/massing_our_saviour_lutheran_church_118afa2.blend) | [8.75/10](audit/massing_our_saviour_lutheran_church_118afa2/independent_grade.json); awaiting master integration | Kyle |
 | Smith Hall | [`massing_smith_hall_4c2018f.blend`](modular/buildings/massing_smith_hall_4c2018f.blend) | [8.5/10](audit/smith_hall/independent_grade_kyle.json); awaiting master integration | Kyle |
+| Marriott Hall | [`massing_marriot_hall_7cd3eb5.blend`](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | [8.5/10](audit/marriott_hall/grade.json); awaiting master integration | Kyle |
+| Martin C. Jischke Hall of Biomedical Engineering | [`massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend`](modular/buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | [8.0/10](audit/martin_c_jischke_hall/grade.json); awaiting master integration | Kyle |
+| Philip E. Nelson Hall of Food Science (NLSN) | [`massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend`](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | [8.5/10](audit/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b/independent_grade_kyle.json); awaiting master integration | Kyle |
+| Virginia C. Meredith Residence Hall | [`massing_meredith_hall_4bb4188.blend`](modular/buildings/massing_meredith_hall_4bb4188.blend) | [8.5/10](audit/meredith_hall/independent_grade.json); awaiting master integration | Kyle |
 | Telecommunications Building (TEL) | [`massing_telecommunications_building_tel_8dfaccf.blend`](modular/buildings/massing_telecommunications_building_tel_8dfaccf.blend) | [8.0/10](audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json); awaiting master integration | Rossen |
+| Twin Pines Cooperative | [`massing_twin_pines_cooperative_8f606f9.blend`](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | [8.3/10](audit/massing_twin_pines_cooperative_8f606f9/independent_grade/twin_pines_independent_grade.json); awaiting master integration | Rossen |
+| Turf Recreation Exercise Center (TREC) | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | [8.1/10](audit/massing_turf_recreation_exercise_center_9622f45/independent_grade_r4.json); awaiting master integration | Rossen |
 | Unitarian Universalist Church of Tippecanoe County | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | [8.5/10](audit/unitarian_universalist_church_of_tippecanoe_county_2a6793d/independent_grade_kyle.json); awaiting master integration | Kyle |
 
 
 
-### Buildings that still have only massing models (40)
+| Islamic Society of Greater Lafayette (ISGL) | [massing_islamic_societyof_greater_lafayette_0130012.blend](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | [8.2/10](audit/islamic_society_greater_lafayette/independent_grade_codex_r3/result.json); awaiting master integration | Tobin |
+| Kappa Delta Rho | [massing_house_1089876362_14ecd2c.blend](modular/buildings/massing_house_1089876362_14ecd2c.blend) | Fresh-opened; independent exact-SHA grade pending | Tobin |
+| Village Bottle Shoppe | [massing_village_bottle_shoppe_6a17e23.blend](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | [8.7/10](audit/village_bottle_shoppe/independent_grade_r3/result.json); awaiting master integration | Tobin |
+### Buildings that still have only massing models (21)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
-| islamic societyof greater lafayette | [`massing_islamic_societyof_greater_lafayette_0130012.blend`](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | Tobin |
-| marc and sharon hagle hall hagl | [`massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend`](modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | Kyle |
-| marriot hall | [`massing_marriot_hall_7cd3eb5.blend`](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | Kyle |
+| lambertus | [`lambertus_hall.blend`](modular/buildings/lambertus_hall.blend) | Tobin |
+| latino cultural center | [`massing_latino_cultural_center_5f0d139.blend`](modular/buildings/massing_latino_cultural_center_5f0d139.blend) | Tobin |
 | marstellar | [`massing_marstellar_0c2ea90.blend`](modular/buildings/marstellar_0c2ea90.blend) | Kyle |
-| martin c jischke hall of biomedical engineering | [`massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend`](modular/buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | Kyle |
-| matthews hall mthw | [`massing_matthews_hall_mthw_9326885.blend`](modular/buildings/massing_matthews_hall_mthw_9326885.blend) | Kyle |
-| mcdonald s | [`massing_mcdonald_s_ab77b70.blend`](modular/buildings/massing_mcdonald_s_ab77b70.blend) | Kyle |
-| meredith hall | [`massing_meredith_hall_4bb4188.blend`](modular/buildings/massing_meredith_hall_4bb4188.blend) | Kyle |
 | meredith hall south | [`massing_meredith_hall_south_ffbc444.blend`](modular/buildings/massing_meredith_hall_south_ffbc444.blend) | Kyle |
-| mri modular facility mri1 | [`massing_mri_modular_facility_mri1_a93e22b.blend`](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | Kyle |
 | northwestern parking garage | [`massing_northwestern_parking_garage_979f1a2.blend`](modular/buildings/massing_northwestern_parking_garage_979f1a2.blend) | Kyle |
-| our saviour lutheran church | [`massing_our_saviour_lutheran_church_118afa2.blend`](modular/buildings/massing_our_saviour_lutheran_church_118afa2.blend) | Kyle |
-| philip e nelson hall of food science nlsn | [`massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend`](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | Kyle |
 | provenance apartments | [`massing_provenance_apartments_d913384.blend`](modular/buildings/massing_provenance_apartments_d913384.blend) | Kyle |
 | provenance apartments 001 | [`massing_provenance_apartments_001_1b3223b.blend`](modular/buildings/massing_provenance_apartments_001_1b3223b.blend) | Kyle |
 | provenance apartments 002 | [`massing_provenance_apartments_002_a9a7f4a.blend`](modular/buildings/massing_provenance_apartments_002_a9a7f4a.blend) | Kyle |
 | provenance apartments 003 | [`massing_provenance_apartments_003_682c8e8.blend`](modular/buildings/massing_provenance_apartments_003_682c8e8.blend) | Kyle |
 | provenance apartments 004 | [`massing_provenance_apartments_004_1bc10e3.blend`](modular/buildings/massing_provenance_apartments_004_1bc10e3.blend) | Kyle |
-| provenance apartments 005 | [`massing_provenance_apartments_005_960f6b0.blend`](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | Rossen |
-| purdue university daniel turf center | [`massing_purdue_university_daniel_turf_center_e69b7da.blend`](modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | Rossen |
-| purdue village administration building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | Rossen |
-| redeemer lutheran church | [`massing_redeemer_lutheran_church_2e5ce2f.blend`](modular/buildings/massing_redeemer_lutheran_church_2e5ce2f.blend) | Kyle |
+| ralph bettye bailey hall | [`massing_ralph_bettye_bailey_hall_406c4db.blend`](modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend) | Tobin |
 | riverside covenannt church | [`massing_riverside_covenannt_church_3a60684.blend`](modular/buildings/massing_riverside_covenannt_church_3a60684.blend) | Arjav |
 | schleman hall schm | [`massing_schleman_hall_schm_ad4b05b.blend`](modular/buildings/massing_schleman_hall_schm_ad4b05b.blend) | Arjav |
 | shealy frances m residence hall | [`massing_shealy_frances_m_residence_hall_a210e50.blend`](modular/buildings/massing_shealy_frances_m_residence_hall_a210e50.blend) | Arjav |
 | shreve hall | [`massing_shreve_hall_06d270a.blend`](modular/buildings/massing_shreve_hall_06d270a.blend) | Arjav |
 | slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Arjav |
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
-| student health center push | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Rossen |
-| the caretaker s cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | Rossen |
-| the church of jesus christ of latter day saints | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Rossen |
-| the moosehead lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | Rossen |
-| the pete dye clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Rossen |
-| turf recreation exercise center | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Rossen |
-| union club hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | Rossen |
 
-| village bottle shoppe | [`massing_village_bottle_shoppe_6a17e23.blend`](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | Tobin |
 | von s | [`massing_von_s_d207e41.blend`](modular/buildings/massing_von_s_d207e41.blend) | Tobin |
 | west lafayette intermediate school | [`massing_west_lafayette_intermediate_school_d72f0fa.blend`](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Tobin |
 | west lafayette junior senior high school | [`massing_west_lafayette_junior_senior_high_school_fa45bd1.blend`](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Tobin |
@@ -265,23 +275,22 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Beta Theta Pi | FID 826; New asset/source mapping required | No reliable asset match; build from GIS FID 826 and house evidence | Tobin |
 | Chi Psi | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Tobin |
 | Delta Chi | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Tobin |
-| Kappa Delta Rho | FID 801; [massing_house_1089876362_14ecd2c](modular/buildings/massing_house_1089876362_14ecd2c.blend) | Massing asset; verify and detail | Tobin |
+| Kappa Delta Rho | FID 801; [massing_house_1089876362_14ecd2c](modular/buildings/massing_house_1089876362_14ecd2c.blend) | Detailed model built; fresh-open passed; independent grade pending | Tobin |
 | Phi Gamma Delta | FID 787; [massing_house_301837281_58ead22](modular/buildings/massing_house_301837281_58ead22.blend) | Massing asset; verify and detail | Tobin |
 | Phi Kappa Psi | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Tobin |
 | Phi Kappa Sigma | FID 829; New asset/source mapping required | No reliable asset match; reconcile GIS FID 829 | Tobin |
 | Phi Kappa Theta | FID 762; [massing_house_301841332_9b3bd1f](modular/buildings/massing_house_301841332_9b3bd1f.blend) | Spatial candidate; verify before detailing | Tobin |
-| Pi Kappa Alpha (Pike) | FID 790; [massing_house_301841252_e4f8f05](modular/buildings/massing_house_301841252_e4f8f05.blend) | Massing only; verify footprint and detail | Rossen |
+| Pi Kappa Alpha (Pike) | FID 790; [massing_house_301841252_e4f8f05](modular/buildings/massing_house_301841252_e4f8f05.blend) | Independently graded 8.7/10; awaiting master integration; wall height and roof remain estimates | Rossen |
 | Psi Upsilon | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Rossen |
 | Sigma Alpha Epsilon | FID 849; New asset/source mapping required | No reliable asset match; reconcile GIS FID 849 | Rossen |
 | Sigma Alpha Mu | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Rossen |
 | Sigma Chi | FID 828; New asset/source mapping required | No reliable asset match; reconcile GIS FID 828 | Rossen |
-| Sigma Nu | FID 758; [massing_house_301841330_f58ae87](modular/buildings/massing_house_301841330_f58ae87.blend) | Massing asset; verify and detail | Rossen |
-| Sigma Phi Epsilon | FID 789; [massing_house_301841250_d63b09a](modular/buildings/massing_house_301841250_d63b09a.blend) | Massing asset; verify and detail | Rossen |
+| Sigma Nu | FID 758; [massing_house_301841330_f58ae87](modular/buildings/massing_house_301841330_f58ae87.blend) | Independently graded 8.0/10; awaiting master integration; wall line, height and roof remain uncertain | Rossen |
+| Sigma Phi Epsilon | FID 789; [massing_house_301841250_d63b09a](modular/buildings/massing_house_301841250_d63b09a.blend) | Independently graded 8.65/10; awaiting master integration; dimensions and roof remain estimates | Rossen |
 | Sigma Pi | FID 776; [massing_house_301836568_0fbca0e](modular/buildings/massing_house_301836568_0fbca0e.blend) | Massing asset; verify and detail | Rossen |
 | Theta Chi | FID 760; [massing_house_301841328_39f169f](modular/buildings/massing_house_301841328_39f169f.blend) | Spatial candidate; verify before detailing | Rossen |
 | Zeta Beta Tau | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Rossen |
 | Zeta Psi | FID 748; [massing_house_301841600_c1351aa](modular/buildings/massing_house_301841600_c1351aa.blend) | Spatial candidate; verify before detailing | Rossen |
-| Phi Delta Theta | FID 796; [massing_phi_delta_theta_258cddd](modular/buildings/massing_phi_delta_theta_258cddd.blend) | Existing assignment; massing only | Rossen |
 | Phi Kappa Tau | FID 856; [massing_phi_kappa_tau_139b9d7](modular/buildings/massing_phi_kappa_tau_139b9d7.blend) | Existing assignment; massing only | Rossen |
 | Pi Kappa Phi | FID 799; [massing_pi_kappa_phi_50e4645](modular/buildings/massing_pi_kappa_phi_50e4645.blend) | Existing assignment; massing only | Rossen |
 | Triangle | FID 777; [massing_triangle_fraternity_8477ad9](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Existing assignment; massing only | Rossen |
@@ -323,7 +332,6 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Maclure | FID 822; New asset/source mapping required | Nearest candidate is over 112 m away; build/reconcile from official GIS reference | Rohan |
 | Stewart | FID 802; [massing_house_1089875810_8c9b95d](modular/buildings/massing_house_1089875810_8c9b95d.blend) | Massing asset; verify and detail | Arjav |
 | Shoemaker | FID 800; [massing_shoemaker_cooperative_2159ea4](modular/buildings/massing_shoemaker_cooperative_2159ea4.blend) | Existing assignment; massing only | Arjav |
-| Twin Pines | FID 766; [massing_twin_pines_cooperative_8f606f9](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | Existing assignment; massing only | Rossen |
 
 #### Other Greek/co-ed house buildings (1 unfinished)
 
@@ -440,7 +448,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 205 | Hilltop Apartment 32 | [massing_house_301841839_64126a1](modular/buildings/massing_house_301841839_64126a1.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 206 | Hilltop Apartment 28 | [massing_house_301842868_b9233d2](modular/buildings/massing_house_301842868_b9233d2.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 207 | Hilltop Apartment 31 | [massing_house_301841838_ae21839](modular/buildings/massing_house_301841838_ae21839.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 208 | William H. Daniel Turfgrass Research & Diagnostic Court | [massing_purdue_university_daniel_turf_center_e69b7da](modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 208 | William H. Daniel Turfgrass Research & Diagnostic Court | [massing_purdue_university_daniel_turf_center_e69b7da](modular/buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | FID 208 identity and plan ring verified; independently graded 8.6/10; awaiting master integration; height and facade bearing remain estimated |
 | 209 | Airport Service Building | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 210 | Intramural Storage Shed | [massing_house_301911802_84bf1cd](modular/buildings/massing_house_301911802_84bf1cd.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 211 | Clayton W. Dement Fire Station | [massing_purdue_fire_department_520430b](modular/buildings/massing_purdue_fire_department_520430b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -462,7 +470,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 231 | Life Science Animal Building | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 232 | Horticulture Building | [massing_horticulture_286a904](modular/buildings/massing_horticulture_286a904.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 233 | Felix Haas Hall | [felix_haas_hall](modular/buildings/felix_haas_hall.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 235 | Matthews Hall | [massing_matthews_hall_mthw_9326885](modular/buildings/massing_matthews_hall_mthw_9326885.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 235 | Matthews Hall | [massing_matthews_hall_mthw_9326885](modular/buildings/massing_matthews_hall_mthw_9326885.blend) | Direct FID 235 verified; 8.75/10 pass; awaiting master integration |
 | 236 | Grissom Hall | [massing_grissom_hall_01fd0e0](modular/buildings/massing_grissom_hall_01fd0e0.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 237 | Arthur G. Hansen Life Sciences Research Building | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 238 | Biochemistry Building | [massing_biochemistry_building_a267b8d](modular/buildings/massing_biochemistry_building_a267b8d.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -477,10 +485,10 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 247 | Herbert C. Brown Laboratory of Chemistry | [massing_brown_laboratory_of_chemistry_brwn_aed3885](modular/buildings/massing_brown_laboratory_of_chemistry_brwn_aed3885.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 248 | Terminal Building (Hangar No. 2) | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 249 | Smith Hall | [massing_smith_hall_4c2018f](modular/buildings/massing_smith_hall_4c2018f.blend) | Direct FID 249 footprint rebuilt; independent grade 8.5/10; awaiting master integration; height remains estimated |
-| 250 | Philip E. Nelson Hall of Food Science | [massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 250 | Philip E. Nelson Hall of Food Science | [massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b](modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | Direct FID 250 verified; all 24 ring vertices match within 0.000028 m; independent grade 8.5/10; awaiting master integration |
 | 251 | Steven C. Beering Hall of Liberal Arts & Education | [beering_hall](modular/buildings/beering_hall.blend) | Duplicate BRNG massing record removed from the master; see `TODO.md` |
 | 252 | Hangar No. 4 | — | No direct FID crosswalk; reconcile to a master asset or create one |
-| 253 | Virginia C. Meredith Residence Hall | [massing_meredith_hall_4bb4188](modular/buildings/massing_meredith_hall_4bb4188.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 253 | Virginia C. Meredith Residence Hall | [massing_meredith_hall_4bb4188](modular/buildings/massing_meredith_hall_4bb4188.blend) | Direct FID 253 verified; 20 structural edges match within 0.000031 m; 8.5/10 pass; awaiting master integration |
 | 254 | Wood Street Parking Garage | [massing_house_1040689750_cf5f616](modular/buildings/massing_house_1040689750_cf5f616.blend)<br>[massing_wood_street_garage_pgw_2fa056e](modular/buildings/massing_wood_street_garage_pgw_2fa056e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 255 | Drew & Brittany Brees Student Athletic Center | [massing_drew_and_brittany_brees_student_athletic_academic_center_bres_da89033](modular/buildings/massing_drew_and_brittany_brees_student_athletic_academic_center_bres_da89033.blend)<br>[massing_house_1095763314_3ae3005](modular/buildings/massing_house_1095763314_3ae3005.blend)<br>[massing_house_1095763315_77ff7a6](modular/buildings/massing_house_1095763315_77ff7a6.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 256 | Armory | [armory](modular/buildings/armory.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -500,7 +508,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 271 | Well House No. 6 | [massing_house_936947592_2c9982f](modular/buildings/massing_house_936947592_2c9982f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 272 | Delon and Elizabeth Hampton Hall of Civil Engineering | [massing_hampton_hall_of_civil_engineering_hamp_9715f0e](modular/buildings/massing_hampton_hall_of_civil_engineering_hamp_9715f0e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 273 | Physics Building | [massing_physics_building_phys_3bf42f3](modular/buildings/massing_physics_building_phys_3bf42f3.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 274 | Purdue University Student Health Center | [massing_student_health_center_push_1200c3b](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 274 | Purdue University Student Health Center | [massing_student_health_center_push_1200c3b](modular/buildings/massing_student_health_center_push_1200c3b.blend) | Independently graded 8.2/10; orthophoto-supported massing and FID 274 footprint; awaiting master integration (see TODO.md); vertical dimensions remain estimates |
 | 275 | Oliver Perkins Terry House | [massing_purdue_police_department_19f467e](modular/buildings/massing_purdue_police_department_19f467e.blend) | Verified operational PUPD / TERY match; independently graded 8.4/10; awaiting master integration (see TODO.md) |
 | 276 | Oliver Perkins Terry Garage | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 277 | Frances M. Shealy Residence Hall | [massing_shealy_frances_m_residence_hall_a210e50](modular/buildings/massing_shealy_frances_m_residence_hall_a210e50.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -528,14 +536,14 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 404 | Ross-Ade Stadium | [massing_house_1095763312_0b46f63](modular/buildings/massing_house_1095763312_0b46f63.blend)<br>[massing_house_1095763313_928099c](modular/buildings/massing_house_1095763313_928099c.blend)<br>[ross_ade](modular/buildings/ross_ade.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 405 | Devonshire Coop | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 406 | Agricultural And Biological Engineering | [massing_agricultural_and_biological_engineering_abe_0ebc7b3](modular/buildings/massing_agricultural_and_biological_engineering_abe_0ebc7b3.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 407 | Martin C. Jischke Hall of Biomedical Engineering | [massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a](modular/buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 407 | Martin C. Jischke Hall of Biomedical Engineering | [massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a](modular/buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | Direct FID 407 verified; generalized outline maximum deviation 1.011 m; 8.0/10 pass; awaiting master integration |
 | 408 | David and Bonnie Brunner Farm Animal Hospital | [massing_david_and_bonnie_brunner_farm_animal_hospital_dada82b](modular/buildings/massing_david_and_bonnie_brunner_farm_animal_hospital_dada82b.blend)<br>[massing_house_938230644_776d050](modular/buildings/massing_house_938230644_776d050.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 409 | Frieda Parker Residence Hall | [frieda_parker_hall](modular/buildings/frieda_parker_hall.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 410 | Virginia C. Meredith Residence Hall South | [massing_meredith_hall_south_ffbc444](modular/buildings/massing_meredith_hall_south_ffbc444.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 411 | Ralph and Bettye Bailey Hall | [massing_ralph_bettye_bailey_hall_406c4db](modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend) | Finished; exact 22-vertex FID 411 shell, independent grade 8.1/10, master fresh-open PASS; alternate legacy candidates remain separate reconciliation work |
 | 413 | Hangar No. 6 Addition | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 414 | Lambert Green Dining | [massing_circle_k_fa39c23](modular/buildings/massing_circle_k_fa39c23.blend)<br>[massing_house_1034040095_378b714](modular/buildings/massing_house_1034040095_378b714.blend)<br>[massing_house_1034040098_68f2f90](modular/buildings/massing_house_1034040098_68f2f90.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+3 more candidates) |
-| 430 | Marc and Sharon Hagle Hall | [massing_marc_and_sharon_hagle_hall_hagl_071ffd6](modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 430 | Marc and Sharon Hagle Hall | [massing_marc_and_sharon_hagle_hall_hagl_071ffd6](modular/buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | Direct FID 430 verified; 8.5/10 pass; canopy extends beyond GIS wall outline; awaiting master integration |
 | 431 | Bob & Trudy Marching Band Complex | [massing_hull_all_american_marching_band_complex_665bcb7](modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend) | Integrated detailed asset; independent grade 8.4/10; master fresh-open PASS; height/facade remain estimated |
 | 432 | Dudley Hall | [massing_house_860822250_df21db0](modular/buildings/massing_house_860822250_df21db0.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 433 | Lambertus Hall | [lambertus_hall](modular/buildings/lambertus_hall.blend) | Detailed asset independently graded 8.0/10; FID 433 footprint matched; master fresh-open integration PASS; five-level height/facade attribution partly estimated |
@@ -590,7 +598,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 503 | Building C | [massing_provenance_apartments_d913384](modular/buildings/massing_provenance_apartments_d913384.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 504 | Building B | [massing_provenance_apartments_001_1b3223b](modular/buildings/massing_provenance_apartments_001_1b3223b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 505 | Building A | [massing_provenance_apartments_002_a9a7f4a](modular/buildings/massing_provenance_apartments_002_a9a7f4a.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 506 | Building F | [massing_provenance_apartments_005_960f6b0](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 506 | Building F | [massing_provenance_apartments_005_960f6b0](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | County C1.4 labels Building F / 143; independently graded 8.3/10; awaiting master integration (see TODO.md); GIS is pre-planning/roof-level, not a surveyed wall line |
 | 507 | Building G | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 508 | Building I | [massing_provenance_apartments_003_682c8e8](modular/buildings/massing_provenance_apartments_003_682c8e8.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 509 | Building H | [massing_provenance_apartments_004_1bc10e3](modular/buildings/massing_provenance_apartments_004_1bc10e3.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -598,7 +606,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 517 | Aspire at Discovery Park Building C | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 518 | Aspire at Discovery Park Building C | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 519 | Aspire at Discovery Park Building C | — | No direct FID crosswalk; reconcile to a master asset or create one |
-| 524 | Purdue Village Administration Building | [massing_purdue_village_administration_building_3faae6c](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 524 | Purdue Village Administration Building | [massing_purdue_village_administration_building_3faae6c](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | Independently graded 8.5/10; 14-vertex FID 524 footprint and archived facade photo documented; awaiting master integration (see TODO.md); height and facade bearing remain uncertain |
 | 526 | Purdue Graduate Student Center | [massing_purdue_graduate_student_center_af9c5c7](modular/buildings/massing_purdue_graduate_student_center_af9c5c7.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 527 | Amelia Earhart Terminal | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 528 | South Hall | [massing_house_1558636642_742e366](modular/buildings/massing_house_1558636642_742e366.blend)<br>[south_hall](modular/buildings/south_hall.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -611,7 +619,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 542 | WALDRON 19 | [massing_house_301838782_35890d9](modular/buildings/massing_house_301838782_35890d9.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 543 | Continuum Discovery Park | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 544 | Lees-Such Tower | [massing_honors_college_and_residences_north_3de3b7c](modular/buildings/massing_honors_college_and_residences_north_3de3b7c.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 545 | New Pete Dye Clubhouse | [massing_the_pete_dye_clubhouse_a3a9641](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 545 | New Pete Dye Clubhouse | [massing_the_pete_dye_clubhouse_a3a9641](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | Independently graded 8.5/10; matches the new clubhouse OSM footprint; legacy FID 233 is the distinct 1998 clubhouse; awaiting master integration (see TODO.md); height and facade remain estimated |
 | 546 | Darr-Chaney Hall of Pharmacy and Dauch Hall of Nursing | [massing_house_1558638276_ff1ad9e](modular/buildings/massing_house_1558638276_ff1ad9e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 547 | Third and West | [massing_3rd_and_west_ffa3d05](modular/buildings/massing_3rd_and_west_ffa3d05.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 548 | Daniels School of Business | — | No direct FID crosswalk; reconcile to a master asset or create one |
@@ -658,7 +666,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 660 | Airport Storage Building No. 1 | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 661 | Harvey W. Wiley Residence Hall | [wiley_hall](modular/buildings/wiley_hall.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 662 | Newton Booth Tarkington Residence Hall | [tarkington_hall](modular/buildings/tarkington_hall.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 663 | Purdue Memorial Union Club | [massing_union_club_hotel_0d22460](modular/buildings/massing_union_club_hotel_0d22460.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 663 | Purdue Memorial Union Club | [massing_union_club_hotel_0d22460](modular/buildings/massing_union_club_hotel_0d22460.blend) | Independently graded 8.1/10; all 53 GIS shell vertices match within 0.000019 m; awaiting master integration (see TODO.md); roof heights, floor spacing, and facade proportions remain estimated |
 | 664 | First Street Towers Central | [massing_first_street_towers_central_fstc_929924d](modular/buildings/massing_first_street_towers_central_fstc_929924d.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 667 | Schowe House | [massing_house_1096999537_7fd4916](modular/buildings/massing_house_1096999537_7fd4916.blend)<br>[massing_house_1096999538_459c2d6](modular/buildings/massing_house_1096999538_459c2d6.blend)<br>[massing_house_1096999539_fee06bc](modular/buildings/massing_house_1096999539_fee06bc.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+2 more candidates) |
 | 668 | Coal Handling Control/Fire Pump Bldg | — | No direct FID crosswalk; reconcile to a master asset or create one |
@@ -708,7 +716,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 755 | Evans Scholars | [massing_house_301841610_b6ad6ed](modular/buildings/massing_house_301841610_b6ad6ed.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 756 | Alpha Omicron Pi | [massing_house_301841607_63d85b5](modular/buildings/massing_house_301841607_63d85b5.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 757 | Alpha Gamma Delta | [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 758 | Sigma Nu | [massing_house_301841330_f58ae87](modular/buildings/massing_house_301841330_f58ae87.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 758 | Sigma Nu | [massing_house_301841330_f58ae87](modular/buildings/massing_house_301841330_f58ae87.blend) | Confirmed FID 758 and parcel identity; independently graded 8.0/10; awaiting master integration; GIS ring matches within 0.000038 m |
 | 759 | Gamma Phi Beta | [massing_house_301841329_bed5cb6](modular/buildings/massing_house_301841329_bed5cb6.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 760 | Theta Chi | [massing_house_301841328_39f169f](modular/buildings/massing_house_301841328_39f169f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 761 | Circle Pines | [massing_house_301841609_c6c9ac4](modular/buildings/massing_house_301841609_c6c9ac4.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -729,7 +737,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 776 | Sigma Pi | [massing_house_301836568_0fbca0e](modular/buildings/massing_house_301836568_0fbca0e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 777 | Triangle | [massing_triangle_fraternity_8477ad9](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 778 | Farmhouse | [massing_farmhouse_fraternity_purdue_chapter_0b8908b](modular/buildings/massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 779 | Lds Institute of Religion | [massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 779 | Lds Institute of Religion | [massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Official 14 Waldron identity and GIS wall ring verified; independently graded 8.3/10; awaiting master integration (see TODO.md); roof heights and facade stationing remain estimated |
 | 780 | Sigma Kappa | [massing_house_301840869_1b80ace](modular/buildings/massing_house_301840869_1b80ace.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 781 | Chi Omega | [massing_chi_omega_a9eb08d](modular/buildings/massing_chi_omega_a9eb08d.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 782 | Kappa Kappa Gamma | [massing_house_301840871_5d1bc06](modular/buildings/massing_house_301840871_5d1bc06.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -739,14 +747,14 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 786 | Kappa Alpha Theta | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 787 | Phi Gamma Delta | [massing_house_301837281_58ead22](modular/buildings/massing_house_301837281_58ead22.blend) | Current fraternity site; 600 N Russell former LCC parcel was added to the unified property and Lyles Addition/parking reconfiguration (see audit/latino_cultural_center_5f0d139/identity_review.md) |
 | 788 | Alpha Xi Delta | [massing_house_301841248_fe939c7](modular/buildings/massing_house_301841248_fe939c7.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 789 | Sigma Phi Epsilon | [massing_house_301841250_d63b09a](modular/buildings/massing_house_301841250_d63b09a.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 790 | Pi Kappa Alpha | [massing_house_301841252_e4f8f05](modular/buildings/massing_house_301841252_e4f8f05.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 789 | Sigma Phi Epsilon | [massing_house_301841250_d63b09a](modular/buildings/massing_house_301841250_d63b09a.blend) | Named chapter sources and OSM way 301841250 confirmed; independently graded 8.65/10; awaiting integration; shell matches within 0.000021 m |
+| 790 | Pi Kappa Alpha | [massing_house_301841252_e4f8f05](modular/buildings/massing_house_301841252_e4f8f05.blend) | Named FID 790 / Beta Phi chapter identity confirmed; independently graded 8.7/10; awaiting integration; shell matches within 0.000017 m |
 | 791 | Acacia | [massing_house_301841251_8a9a05b](modular/buildings/massing_house_301841251_8a9a05b.blend) | Finished; 8.35/10 independent grade and master integration PASS; see audit/acacia/ |
 | 792 | Alpha Gamma Rho | [massing_house_301841253_f0b3be3](modular/buildings/massing_house_301841253_f0b3be3.blend) | Purdue FID 792 remains a spatial candidate; independently graded 8.4/10 and integrated through a placement marker. OSM footprint is community mapped; campus registration remains unverified |
 | 793 | Beta Sigma Psi | [massing_house_301841254_29ab02d](modular/buildings/massing_house_301841254_29ab02d.blend) | Direct Purdue GIS FID 793 asset; independently graded 9.0/10 in master and integrated through its placement marker. Shape__Area/Length attributes conflict with polygon vertices; floor count conflicts with current Street View |
 | 794 | Glenwood | [massing_house_301841249_f827941](modular/buildings/massing_house_301841249_f827941.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 795 | Sigma Alpha | [massing_house_970455228_6d2e64a](modular/buildings/massing_house_970455228_6d2e64a.blend)<br>[massing_house_970455234_bfc586d](modular/buildings/massing_house_970455234_bfc586d.blend)<br>[massing_house_970455236_6e54930](modular/buildings/massing_house_970455236_6e54930.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+6 more candidates) |
-| 796 | Phi Delta Theta | [massing_phi_delta_theta_258cddd](modular/buildings/massing_phi_delta_theta_258cddd.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 796 | Phi Delta Theta | [massing_phi_delta_theta_258cddd](modular/buildings/massing_phi_delta_theta_258cddd.blend) | Official FID 796 / SOFDH identity and 30-point ring verified; independently graded 8.3/10; awaiting master integration; heights and roof dimensions remain estimated |
 | 797 | University Church | [massing_university_church_84b2a1b](modular/buildings/massing_university_church_84b2a1b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 798 | Delta Sigma Phi | [massing_house_860826641_2c90f97](modular/buildings/massing_house_860826641_2c90f97.blend) | Exact GIS match, detailed model independently graded 8.3/10; adjacent candidate 860826640 is not this building |
 | 799 | Pi Kappa Phi | [massing_pi_kappa_phi_50e4645](modular/buildings/massing_pi_kappa_phi_50e4645.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -788,8 +796,8 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 859 | Grounds Maintenance Greenhouse Facilities | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 860 | Grounds Maintenance Pesticide Storage Facility | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 861 | Bill & Sally Hanley Human Development Institute | [massing_hanley_hall_c8a4551](modular/buildings/massing_hanley_hall_c8a4551.blend)<br>[massing_house_988509816_d9662c5](modular/buildings/massing_house_988509816_d9662c5.blend)<br>[massing_house_988509817_c56a2a6](modular/buildings/massing_house_988509817_c56a2a6.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+1 more candidates) |
-| 862 | Marriott Hall | [massing_marriot_hall_7cd3eb5](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 863 | Turf Recreation Center | [massing_turf_recreation_exercise_center_9622f45](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 862 | Marriott Hall | [massing_marriot_hall_7cd3eb5](modular/buildings/massing_marriot_hall_7cd3eb5.blend) | Direct FID 862 verified; 33 source vertices match within 0.000065 m; 8.5/10 pass; awaiting master integration |
+| 863 | Turf Recreation Center | [massing_turf_recreation_exercise_center_9622f45](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | Independently graded 8.1/10; named GIS and OSM identity confirmed, but perimeter/area conflicts remain unresolved (see TODO.md) |
 | 864 | A. A. Potter Engineering Center | [massing_potter_engineering_center_potr_89c4c33](modular/buildings/massing_potter_engineering_center_potr_89c4c33.blend)<br>[potter_engineering](modular/buildings/potter_engineering.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 865 | Salt Storage | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 866 | Heavy Equipment Storage | — | No direct FID crosswalk; reconcile to a master asset or create one |
@@ -826,8 +834,8 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 915 | Life Science Ranges | [massing_life_science_ranges_greenhouse_and_service_building_c96231f](modular/buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend)<br>Other spatial candidates: [massing_house_159752239_8e7a81a](modular/buildings/massing_house_159752239_8e7a81a.blend), [massing_house_587549840_07f2e96](modular/buildings/massing_house_587549840_07f2e96.blend) | Current LSR model independently graded 8.1/10 and integrated; FID 915 candidate/GIS IoU 0.8757; other spatial candidates remain unreviewed |
 | 916 | Ag Alumni Seed Phenotyping Facility | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 917 | Life Science Plant And Soils Laboratory | [massing_house_587540581_cd4d006](modular/buildings/massing_house_587540581_cd4d006.blend)<br>[massing_life_science_plant_and_soils_laboratory_5963acd](modular/buildings/massing_life_science_plant_and_soils_laboratory_5963acd.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 918 | Purdue Magnetic Resonance Imagin | [massing_mri_modular_facility_mri1_a93e22b](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 925 | Latino Cultural Center at Purdue | [massing_latino_cultural_center_lcc_9cc71b3](modular/buildings/massing_latino_cultural_center_lcc_9cc71b3.blend) | Integrated campus asset; independent grade 9.0/10; 12 GIS footprint vertices match within 0.00002 m; height and interior plan remain estimated |
+| 918 | Purdue Magnetic Resonance Imagin | [massing_mri_modular_facility_mri1_a93e22b](modular/buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | Direct FID 918 verified; four structural edges match within 0.000028 m; 8.0/10 pass; awaiting master integration |
+| 925 | Latino Cultural Center at Purdue | [massing_latino_cultural_center_lcc_9cc71b3](modular/buildings/massing_latino_cultural_center_lcc_9cc71b.blend) | Integrated campus asset; independent grade 9.0/10; 12 GIS footprint vertices match within 0.00002 m; height and interior plan remain estimated |
 | 926 | Asian American Resource and Cultural Center | [massing_asian_american_and_asian_resource_and_cultural_center_aacc_da08bb2](modular/buildings/massing_asian_american_and_asian_resource_and_cultural_center_aacc_da08bb2.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 927 | Native American Educational and Cultural Center | [massing_native_american_educational_and_cultural_center_nacc_faa0f59](modular/buildings/massing_native_american_educational_and_cultural_center_nacc_faa0f59.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 928 | 440 HARRISON ST | [massing_house_1149668154_e3d2416](modular/buildings/massing_house_1149668154_e3d2416.blend)<br>[massing_house_301836115_31fe152](modular/buildings/massing_house_301836115_31fe152.blend)<br>[massing_house_301836117_14fb0cb](modular/buildings/massing_house_301836117_14fb0cb.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+1 more candidates) |

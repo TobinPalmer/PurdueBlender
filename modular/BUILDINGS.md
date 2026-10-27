@@ -66,8 +66,18 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 619 |
 | Mackey Arena | [mackey_arena.blend](buildings/mackey_arena.blend) | 391 |
 | Math Sciences | [math_sciences.blend](buildings/math_sciences.blend) | 593 |
+| Marc and Sharon Hagle Hall (HAGL) | [massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend](buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | 1 |
+| Marriott Hall | [massing_marriot_hall_7cd3eb5.blend](buildings/massing_marriot_hall_7cd3eb5.blend) | 1 |
+| Martin C. Jischke Hall of Biomedical Engineering | [massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend](buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | 1 |
+| Matthews Hall (MTHW) | [massing_matthews_hall_mthw_9326885.blend](buildings/massing_matthews_hall_mthw_9326885.blend) | 1 |
+| Philip E. Nelson Hall of Food Science (NLSN) | [massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend](buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend) | 1 |
+| Virginia C. Meredith Residence Hall (MRDH) | [massing_meredith_hall_4bb4188.blend](buildings/massing_meredith_hall_4bb4188.blend) | 1 |
 | Mccutcheon Hall | [mccutcheon_hall.blend](buildings/mccutcheon_hall.blend) | 219 |
+| McDonald's | [massing_mcdonald_s_ab77b70.blend](buildings/massing_mcdonald_s_ab77b70.blend) | 1 |
+| Our Saviour Lutheran Church | [massing_our_saviour_lutheran_church_118afa2.blend](buildings/massing_our_saviour_lutheran_church_118afa2.blend) | 1 |
 | Mechanical Engineering | [mechanical_engineering.blend](buildings/mechanical_engineering.blend) | 55 |
+| MRI Modular Facility (MRI1 / PMRI) | [massing_mri_modular_facility_mri1_a93e22b.blend](buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | 1 |
+| Our Saviour Lutheran Church | [massing_our_saviour_lutheran_church_118afa2.blend](buildings/massing_our_saviour_lutheran_church_118afa2.blend) | 1 |
 | Neil Armstrong Hall | [neil_armstrong_hall.blend](buildings/neil_armstrong_hall.blend) | 446 |
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](buildings/niswonger_aviation_tech.blend) | 2314 |
 | Owen Hall | [owen_hall.blend](buildings/owen_hall.blend) | 958 |
@@ -116,7 +126,9 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Flex Lab | [flex_lab.blend](buildings/flex_lab.blend) | 121 |
 | Ford Dining Court | [ford_dining_court.blend](buildings/ford_dining_court.blend) | 69 |
 | France A. Córdova Recreational Sports Center | [massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend](buildings/massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend) | 199 |
+| Turf Recreation Exercise Center (TREC) | [massing_turf_recreation_exercise_center_9622f45.blend](buildings/massing_turf_recreation_exercise_center_9622f45.blend) | 274 |
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](buildings/hall_for_discovery_and_learning_research.blend) | 396 |
+| The Church of Jesus Christ of Latter-day Saints Institute of Religion | [massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend](buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | 1 |
 | Heine Pharmacy | [heine_pharmacy.blend](buildings/heine_pharmacy.blend) | 133 |
 | Horticulture Building | [horticulture_building.blend](buildings/horticulture_building.blend) | 728 |
 | Krach Leadership Center | [krach_leadership_center.blend](buildings/krach_leadership_center.blend) | 36 |
@@ -125,11 +137,13 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Lyles-Porter Hall | [lyles_porter_hall.blend](buildings/lyles_porter_hall.blend) | 11 |
 | Materials Science and Electrical Engineering | [materials_science_and_electrical_engineering_msee.blend](buildings/materials_science_and_electrical_engineering_msee.blend) | 1200 |
 | Morgan J. Burke Boilermaker Aquatic Center | [morgan_j_burke_boilermaker_aquatic_center.blend](buildings/morgan_j_burke_boilermaker_aquatic_center.blend) | 1129 |
+| The Moosehead Lounge | [massing_the_moosehead_lounge_f81529e.blend](buildings/massing_the_moosehead_lounge_f81529e.blend) | 1 |
 | National Soil Erosion Laboratory | [national_soil_erosion_laboratory.blend](buildings/national_soil_erosion_laboratory.blend) | 560 |
 | Native American Educational and Cultural Center | [native_american_educational_and_cultural_center_nacc.blend](buildings/native_american_educational_and_cultural_center_nacc.blend) | 806 |
 | Northwest Chiller Plant | [northwest_chiller_plant.blend](buildings/northwest_chiller_plant.blend) | 572 |
 | Physics Building | [physics_building_phys_3bf42f3.blend](buildings/physics_building_phys_3bf42f3.blend) | 319 |
 | Ray W. Herrick Laboratories | [ray_w_herrick_laboratories.blend](buildings/ray_w_herrick_laboratories.blend) | 80 |
+| Redeemer Lutheran Church | [massing_redeemer_lutheran_church_2e5ce2f.blend](buildings/massing_redeemer_lutheran_church_2e5ce2f.blend) | 1 |
 
 SAMARA retains its legacy massing filename and campus-coordinate direct link for compatibility with the existing master. Its measured geometry, independent grade, and remaining registration uncertainty are documented in the [SAMARA evidence record](../audit/samara/EVIDENCE.md).
 
@@ -169,7 +183,6 @@ Grissom Hall retains campus-world direct-link coordinates. Its 8.0/10 grade veri
 
 Hampton Hall of Civil Engineering retains campus-world coordinates. Its 8.2/10 grade confirms the shell matches the campus-map polygon within 0.00001472 m; height and entrance placement remain estimated. See [HAMP grade](../audit/massing_hampton_hall_of_civil_engineering_hamp_9715f0e/independent_grade/result.json).
 
-
 Hawkins Hall retains campus-world coordinates. Its 8.2/10 grade verifies Purdue BuildingShapes FID 83; GIS level/height fields conflict with story counts and have undocumented units. Connector height and entry location are estimated. See [Hawkins grade](../audit/massing_hawkins_hall_282335f/independent_grade/result.json).
 
 Harrison Street Parking Garage retains campus-world coordinates. Its 8.2/10 grade verifies Purdue GIS FID 892 and aerial-supported rooftop parking/canopy; floor spacing and facade details remain estimates. See [Harrison grade](../audit/massing_harrison_street_parking_garage_823c7d2_independent_grade_r3/grade_result.json).
@@ -184,6 +197,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 
 | Building | File | Objects |
 | --- | --- | ---: |
+| The Caretaker’s Cottage | [massing_the_caretaker_s_cottage_6b24af9.blend](buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | 71 |
 | Hillel | [massing_hillel_36d2ba1.blend](buildings/massing_hillel_36d2ba1.blend) | 1 |
 | Hillenbrand Hall | [massing_hillenbrand_hall_a71e418.blend](buildings/massing_hillenbrand_hall_a71e418.blend) | 1 |
 | Hockmeyer Hall of Structural Biology (HOCK) | [massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend](buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | 6 |
@@ -197,9 +211,28 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Roy L. Whistler Hall of Agricultural Research (WSLR) | [massing_whistler_hall_6f6bf8d.blend](buildings/massing_whistler_hall_6f6bf8d.blend) | 791 |
 | Wiley Dining Court (WDCT) | [massing_wiley_dining_court_wdct_8a6c669.blend](buildings/massing_wiley_dining_court_wdct_8a6c669.blend) | 1054 |
 | Joyful Journeys | [massing_joyful_journeys_abaf5c.blend](buildings/massing_joyful_journeys_abaf5c.blend) | 1 |
+| Pete Dye Clubhouse | [massing_the_pete_dye_clubhouse_a3a9641.blend](buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | 122 |
+| Phi Delta Theta | [massing_phi_delta_theta_258cddd.blend](buildings/massing_phi_delta_theta_258cddd.blend) | 313 |
+| Pi Kappa Alpha (Pike) | [massing_house_301841252_e4f8f05.blend](buildings/massing_house_301841252_e4f8f05.blend) | 608 |
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
+| Purdue University Daniel Turf Center | [massing_purdue_university_daniel_turf_center_e69b7da.blend](buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | 1 |
+| Purdue Village Administration Building | [massing_purdue_village_administration_building_3faae6c.blend](buildings/massing_purdue_village_administration_building_3faae6c.blend) | 1 |
+| Provenance Apartments 005 | [massing_provenance_apartments_005_960f6b0.blend](buildings/massing_provenance_apartments_005_960f6b0.blend) | 1 |
+| Sigma Nu | [massing_house_301841330_f58ae87.blend](buildings/massing_house_301841330_f58ae87.blend) | 29 |
+| Sigma Phi Epsilon | [massing_house_301841250_d63b09a.blend](buildings/massing_house_301841250_d63b09a.blend) | 639 |
 | Stone Hall (STON) | [massing_stone_hall_ston_d3f479a.blend](buildings/massing_stone_hall_ston_d3f479a.blend) | 1 |
+| Student Health Center (PUSH) | [massing_student_health_center_push_1200c3b.blend](buildings/massing_student_health_center_push_1200c3b.blend) | 1 |
 | Telecommunications Building (TEL) | [massing_telecommunications_building_tel_8dfaccf.blend](buildings/massing_telecommunications_building_tel_8dfaccf.blend) | 1 |
+| Twin Pines Cooperative | [massing_twin_pines_cooperative_8f606f9.blend](buildings/massing_twin_pines_cooperative_8f606f9.blend) | 1 |
+| Union Club Hotel | [massing_union_club_hotel_0d22460.blend](buildings/massing_union_club_hotel_0d22460.blend) | 28 |
+
+The Caretaker’s Cottage retains campus-world coordinates. Its 8.1/10 independent grade matches all ten OSM wall/base points within 0.000058 m and supports the porch from official library and city imagery. Wall and ridge heights are estimates; the LiDAR roof envelope differs from the OSM wall footprint, and roof junctions/openings remain approximate. See [Caretaker’s Cottage grade](../audit/massing_the_caretaker_s_cottage_6b24af9/independent_grade_r2.json).
+
+Daniel Turf Center retains campus-world coordinates. Its 8.6/10 independent grade verifies the Purdue GIS FID 208 crosswalk and source-ring match; a building-specific 2011 photo supports the shallow gable, light metal siding, horizontal window band and centered canopy. The GIS outline may follow roof projection rather than surveyed walls; height and facade bearing remain estimates. See [Daniel Turf Center grade](../audit/massing_purdue_university_daniel_turf_center_e69b7da/independent_grade_r3/independent_grade_r3.json).
+
+Phi Delta Theta retains campus-world coordinates. Its 8.3/10 independent grade verifies the named FID 796 / SOFDH feature at 503 State St; all 30 shell base vertices match the source ring within 0.000016 m. The chapter photo supports the broad facade features, while heights, roof dimensions, exact proportions and hidden elevations remain estimated. See [Phi Delta Theta grade](../audit/massing_phi_delta_theta_258cddd/independent_grade_r1/independent_grade.json).
+
+Provenance Apartments 005 retains campus-world coordinates. Its 8.3/10 independent grade supports the Building F / 143 crosswalk using County plan sheet C1.4 and Purdue GIS FID 506. The GIS is pre-planning/roof-level rather than a surveyed wall line; heights, roof, and facade remain partly estimated. See [Provenance Apartments 005 grade](../audit/massing_provenance_apartments_005_960f6b0/independent_grade_r4.json).
 
 Hillel retains campus-world coordinates. Its 8.3/10 grade supports the main shell and GIS footprint; the proposed 845 sq ft addition is unresolved, and height, roof depth/pitch, and facade opening details remain schematic. See [Hillel grade](../audit/massing_hillel_36d2ba1/independent_grade/r2/result.json).
 
@@ -219,13 +252,58 @@ Lilly Hall of Life Sciences retains campus-world coordinates. Its 8.0/10 grade c
 
 Mann Hall retains campus-world coordinates. Its 8.2/10 grade confirms the Purdue GIS FID 635 footprint within 0.000032 m and a portable Blender 4.5.15 export. The 11.278 m height matches GIS R=37 ft, while GIS level fields conflict with the architect's two-story plus lower-level description; official-photo facade cues remain simplified. See [Mann Hall grade](../audit/massing_mann_hall_2b4ebda/independent_grade/r1/grade.json).
 
+Pete Dye Clubhouse retains campus-world coordinates. Its 8.5/10 grade verifies the new facility footprint against OSM within 0.000047 m and supports the continuous ridge, projecting cross-gable, lower wing, and varied glazing from CE Solutions and Purdue photos. Roof heights and entrance orientation remain estimates. The older 1998 clubhouse (GIS FID 233) is distinct. See [Pete Dye grade](../audit/massing_the_pete_dye_clubhouse_a3a9641/independent_grade/pete_dye_independent_grade_r2.json).
+
 Purdue Police Department (TERY) retains campus-world coordinates. Its 8.4/10 grade verifies the Purdue GIS FID 275 footprint to under 1 mm and the identity match to Oliver Perkins Terry House, where Purdue identifies police operations. One-story brick and ribbon glazing are photo-informed; 4.45 m roof height, entrance position, facade bay rhythm, and the unmodeled utility basement remain uncertain. See [PUPD grade](../audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json).
+
+Purdue Village Administration Building retains campus-world coordinates. Its 8.5/10 grade verifies all 14 Purdue GIS FID 524 footprint vertices within 0.000034 m and compares the modeled brick, cladding, glazed entrance, mullions, doors, and canopy with the Purdue Archives photo. The 4.2 m wall height is estimated; roof surface and photo bearing remain unverified. See [PVAB grade](../audit/massing_purdue_village_administration_building_3faae6c/independent_grade/evaluation_r2.json).
 
 Stone Hall (STON) retains campus-world coordinates. Its 8.0/10 independent grade confirms that the mesh’s 12 base-ring vertices match the Purdue GIS FID 240 polygon. The 13.716 m total height is an estimate from GIS Extrution=45 with undocumented units; source area and perimeter attributes conflict with polygon-ring measurements. Broad steps and the central three-panel entrance reflect archive photographs, while exact window proportions remain interpretive. See [Stone Hall grade](../audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json).
 
+Student Health Center (PUSH) retains campus-world coordinates. Its 8.2/10 grade confirms the Purdue GIS FID 274 location and footprint; the revised three-zone roof plan uses the 2023 orthophoto, and the entrance wing follows the Purdue facade photo. Roof heights/story interpretation and exact facade openings remain uncertain. See [PUSH grade](../audit/massing_student_health_center_push_1200c3b/independent_grade/independent_grade_r2.json).
+
 Telecommunications Building (TEL) retains campus-world coordinates. Its 8.0/10 grade verifies the Purdue GIS FID 199 footprint and the 29 source ring vertices within 0.1 mm. A broad flat roof and approximate roof equipment positions are supported by 2018 orthophoto; the 9.14 m height is an estimate from unclassified LiDAR returns, while facade material and windows remain unverified. See [TEL grade](../audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json).
+
+Twin Pines Cooperative retains campus-world coordinates. Its 8.3/10 grade verifies the six-vertex OSM FID 766 footprint against the mesh within 0.1 mm and supports the two-story gable, porch, and siding from Purdue and house photographs. The 9.05 m roof ridge and many facade details remain estimates; the south-facing frontage is inferred. See [Twin Pines grade](../audit/massing_twin_pines_cooperative_8f606f9/independent_grade/twin_pines_independent_grade.json).
+
+Union Club Hotel retains campus-world coordinates. Its 8.1/10 independent grade verifies the Purdue GIS FID 663 / PMUC identity and all 53 shell vertices within 0.000019 m. Circle Design Group/White Lodging and Marriott exterior photos support the pale stone entrance tower, gabled entry, slate roof planes, brick wings, and paired windows. Roof/eave heights, floor spacing, and facade proportions remain estimates; Tobin must integrate the asset into the master and verify a single linked instance. See [Union Club Hotel grade](../audit/massing_union_club_hotel_0d22460/independent_grade_r2.json).
 
 Herrick Laboratories (historic Herrick Acoustics) retains campus-world coordinates. Its 8.4/10 grade verifies Purdue GIS FID 246 / HERL and distinguishes it from Ray W. Herrick Labs; height estimates and GIS area discrepancy remain unresolved. See [Herrick grade](../audit/massing_herrick_laboratories_2138103/independent_grade/r2/result.json).
 | Latino Cultural Center (current FID 925) | [massing_latino_cultural_center_lcc_9cc71b3.blend](buildings/massing_latino_cultural_center_lcc_9cc71b3.blend) | 426 |
 | Life Science Ranges Greenhouse & Service Building (LSR) | [massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend](buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | 49 |
 | Alpha Tau Omega | [massing_house_301840870_c45a5f4.blend](buildings/massing_house_301840870_c45a5f4.blend) | 126 |
+
+## Kyle detailed models — October 26, 2026
+
+| Building | File | Objects |
+| --- | --- | ---: |
+| Marc and Sharon Hagle Hall (HAGL) | [massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend](buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | 1 |
+| Marriott Hall | [massing_marriot_hall_7cd3eb5.blend](buildings/massing_marriot_hall_7cd3eb5.blend) | 1 |
+| Martin C. Jischke Hall of Biomedical Engineering | [massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend](buildings/massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a.blend) | 1 |
+| Matthews Hall (MTHW) | [massing_matthews_hall_mthw_9326885.blend](buildings/massing_matthews_hall_mthw_9326885.blend) | 1 |
+| McDonald's (605 W Stadium Ave) | [massing_mcdonald_s_ab77b70.blend](buildings/massing_mcdonald_s_ab77b70.blend) | 1 |
+| MRI Modular Facility (MRI1 / PMRI) | [massing_mri_modular_facility_mri1_a93e22b.blend](buildings/massing_mri_modular_facility_mri1_a93e22b.blend) | 1 |
+
+Marriott Hall retains campus-world coordinates. Its 8.5/10 independent grade verifies all 33 Purdue GIS FID 862 footprint vertices within 0.1 mm. Roof planes, the lobby canopy, and height remain estimated; GIS's four-level field does not clearly resolve the visible above-grade facade bands. See [Marriott evidence](../audit/marriott_hall/evidence.json).
+
+Martin C. Jischke Hall retains campus-world coordinates. Its 8.0/10 independent grade verifies the transformed Purdue GIS FID 407 footprint within 1.02 m after generalization. Purdue confirms three floors over a basement; the 14.2 m height is estimated, and the model simplifies the prominent curtain wall and entrances. See [Jischke evidence](../audit/martin_c_jischke_hall/evidence.json).
+
+Marc and Sharon Hagle Hall retains campus-world coordinates. Its 8.5/10 grade matches Purdue GIS FID 430 and reviews Purdue completion photographs; the projecting canopy extends beyond the GIS wall ring, so keep updated manifest bounds. Height remains estimated and the entrance/canopy are simplified. See [HAGL grade](../audit/massing_marc_and_sharon_hagle_hall_hagl_071ffd6/grade.json).
+
+Matthews Hall retains campus-world coordinates. Its 8.75/10 grade matches all 14 Purdue GIS FID 235 structural edges within 0.000015 m; a Purdue photo supports the brick/stone facade and columned entry. Roof height is estimated and unseen elevations remain unverified. See [MTHW grade](../audit/matthews_hall_mthw_9326885/grade_result.json).
+
+Virginia C. Meredith Residence Hall retains campus-world coordinates. Its 8.5/10 independent grade matches all 20 Purdue GIS FID 253 structural edges within 0.000031 m and verifies the X-shaped footprint. Height/floor count conflict across sources, roof form is unverified, and the main porch is simplified. See [Meredith evidence](../audit/meredith_hall/independent_grade.json).
+
+Philip E. Nelson Hall of Food Science retains campus-world coordinates. Its 8.5/10 independent grade verifies all 24 Purdue GIS FID 250 ring vertices within 0.000028 m; the entry canopy and raised gable extend beyond the walls. Purdue's area field agrees with the ring when using its EPSG:3857 layer CRS. Height/roof and exact facade layout remain estimated. See [NLSN grade](../audit/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b/independent_grade_kyle.json).
+
+McDonald's at 605 W Stadium Ave retains campus-world coordinates. Its 9.0/10 independent grade verifies all 16 structural edges against named OSM way 256640455 within 0.000015 m; Purdue's building-shape layer has no separate McDonald's feature. The facade follows an attributed exact-address exterior photo, but the image is undated and covers only one corner. Height and other elevations remain estimated. See [McDonald's grade](../audit/mcdonald_s/independent_grade_revision2.json).
+
+MRI Modular Facility retains campus-world coordinates. Its 8.0/10 independent grade verifies all four Purdue GIS FID 918 structural edges within 0.000028 m. A contractor description supports masonry veneer and aluminum openings; one-story/flat-roof massing is supported by GIS and aerial imagery. Height, HVAC top, detailed facade, and entry bearing remain estimates. See [MRI grade](../audit/mri_modular_facility/independent_grade_mri.json).
+
+Our Saviour Lutheran Church retains campus-world coordinates. Its 8.75/10 independent grade verifies all 9 vertices of named OSM way 860901797 within 0.000015 m; the official church map pin falls inside the outline. Purdue FID 823 is Fairway and is explicitly rejected. Official church photos support the brick, teal gable, stained glass, asymmetric roof, and cross; heights, roof pitch, and exact feature dimensions remain estimated. See [Our Saviour grade](../audit/massing_our_saviour_lutheran_church_118afa2/independent_grade.json).
+
+Pi Kappa Alpha (Pike) retains campus-world coordinates. Its 8.7/10 independent grade confirms Purdue GIS FID 790 and a shell match within 0.000017 m; the official chapter photo supports the three-storey brick facade and portico. Wall height and roof dimensions remain estimates. See [Pike grade](../audit/massing_house_301841252_e4f8f05/independent_grade_r1/grade.json).
+
+Sigma Nu retains campus-world coordinates. Its 8.0/10 independent grade confirms the FID 758 chapter-house identity and a 10-point base-ring match within 0.000038 m. Newsletter text supports at least three occupied floors; exact wall line, facade bearing, height and roof form remain uncertain. See [Sigma Nu grade](../audit/sigma_nu/independent_grade_r3/independent_grade_r3.json).
+
+Sigma Phi Epsilon retains campus-world coordinates. Its 8.65/10 independent grade confirms OSM way 301841250 and a 21-point shell-ring match within 0.000021 m. The chapter photo and facility page support the multi-wing brick facade and three occupied levels; dimensions and hidden elevations remain estimated. See [Sigma Phi Epsilon grade](../audit/sigma_phi_epsilon/independent_grade_r3/independent_grade_r3.json).

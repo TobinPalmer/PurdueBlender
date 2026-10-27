@@ -1,0 +1,109 @@
+{
+  "retrieved_utc": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "provider": "Purdue University GIS / ArcGIS FeatureServer",
+      "feature_id": 758,
+      "record_name": "Sigma Nu",
+      "record_code": "SOSN",
+      "address": "1301 Tower Dr",
+      "source_snapshot": "purdue_gis_fid_758.json",
+      "source_retrieval_date": "2026-10-22 (repository snapshot); selected 2026-10-26",
+      "source_crs": "EPSG:4326",
+      "measurement_method": "Closed GIS ring converted to project campus coordinates with documented local geographic approximation; compare the saved Blender base ring vertex by vertex.",
+      "fields": {
+        "Shape__Area_m2": 829.7578125,
+        "Shape__Length_m": 150.20310238027108,
+        "NUM_LEVELS": 1,
+        "Extrution": 44,
+        "BUILDING_1": "6975",
+        "OWNER": "GREEK"
+      },
+      "uncertainty": "The footprint is a roof/building polygon, not a surveyed wall line. NUM_LEVELS and Extrution units/source semantics are not documented; neither is used as a measured height."
+    },
+    {
+      "url": "https://www.epageflip.net/i/1189246-fall-2019-newsletter/2",
+      "provider": "Beta Zeta / Purdue Sigma Nu alumni newsletter (The Serpent, Fall 2019, p. 3), hosted by ePageFlip",
+      "source_date": "Fall 2019",
+      "source_snapshot": "beta_zeta_fall_2019_newsletter_page2_900.jpg",
+      "retrieval_date": "2026-10-26",
+      "measurement_method": "Visual interpretation of the captioned 1301 Tower Drive entrance and exterior images. The page identifies this as the Beta Zeta chapter house and shows a two-level composition, lighter lower masonry, red-brick upper walls, a recessed entrance/canopy, horizontal trim and a projecting side bay window. These cues are generalized in the model.",
+      "uncertainty": "The printed newsletter raster is perspective-distorted and partly occluded; it does not establish exact dimensions, floor elevations, roof silhouette, or unseen elevations. The pictured building is not georeferenced to a particular GIS edge."
+    },
+    {
+      "url": "https://www.purduesigmanu.org/history",
+      "provider": "Beta Zeta Chapter official website (archived/indexed content)",
+      "source_date": "Current page as indexed, accessed 2026-10-26",
+      "measurement_method": "Text states Beta Zeta moved to a new Tower Drive chapter house in 1991. The live domain currently serves a parking page; indexed page content is recorded through web research.",
+      "uncertainty": "Does not provide dimensional or facade information."
+    },
+    {
+      "url": "https://boilerlink.purdue.edu/organization/sigmanu",
+      "provider": "Purdue BoilerLink",
+      "source_date": "Accessed 2026-10-26; indexed last week",
+      "measurement_method": "Organization record confirms Sigma Nu Beta Zeta and the address 1301 Tower Drive, West Lafayette.",
+      "uncertainty": "JavaScript-only page; no dimensional data."
+    },
+    {
+      "url": "https://api.openstreetmap.org/api/0.6/way/327252145/full.json",
+      "provider": "OpenStreetMap API",
+      "feature_id": 327252145,
+      "feature_name": "Tower Drive",
+      "source_snapshot": "osm_tower_drive_way_327252145.json",
+      "retrieval_date": "2026-10-26",
+      "source_crs": "WGS84 / EPSG:4326",
+      "measurement_method": "Road alignment adjacent north/northwest of the FID 758 polygon is used only as contextual support for choosing the north/northwest-facing long facade edge.",
+      "uncertainty": "Road geometry is volunteered mapping and does not directly measure the building facade bearing; the front selection remains an inference."
+    },
+    {
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/69/query?where=ParcelNo%3D%2779-06-13-478-002.000-029%27&outFields=Address,ParcelNo,OBJECTID,Year_Built,Grade,ConditionCode,FinishLivingArea,ClassCode&returnGeometry=false&f=json",
+      "provider": "Tippecanoe County GIS / Schneider Geospatial ArcGIS MapServer, layer 69 (Year Built)",
+      "feature_id": 5880051,
+      "parcel_number": "79-06-13-478-002.000-029",
+      "address": "1301 TOWER DR",
+      "source_snapshot": "tippecanoe_assessor_parcel_79-06-13-478-002.000-029.json",
+      "retrieval_date": "2026-10-26",
+      "source_crs": "N/A; tabular assessor record",
+      "measurement_method": "Exact ParcelNo and Address query. Use year built and finished living area only as parcel context; not converted to floor count or height.",
+      "fields": {
+        "Address": "1301 TOWER DR",
+        "ParcelNo": "79-06-13-478-002.000-029",
+        "OBJECTID": 5880051,
+        "Year_Built": 1990,
+        "Grade": "B",
+        "ConditionCode": "AV",
+        "FinishLivingArea": 14619,
+        "ClassCode": "699"
+      },
+      "uncertainty": "This assessor layer does not provide stories, elevation, roof form, or wall height. Finished living area is parcel-wide and does not establish vertical geometry."
+    },
+    {
+      "url": "https://www.epageflip.net/i/1467079-spring-2022-newsletter",
+      "provider": "Sigma Nu Beta Zeta official Spring 2022 newsletter, ePageFlip-hosted",
+      "source_date": "Spring 2022",
+      "source_snapshot": "beta_zeta_spring_2022_floor_evidence.json",
+      "page_reference": "Printed p. 1 labels first-floor, second-floor, and third-floor rooms; printed p. 6 contains exterior/context photography.",
+      "retrieval_date": "2026-10-26",
+      "measurement_method": "Text labels a First Floor Blue Room Area, Second Floor Bathroom, and Third Floor Study Room; supports at least three occupied floors. Photographs provide house context but do not establish exact exterior floor lines or height.",
+      "uncertainty": "Does not provide exterior dimensions, total wall height, exact roof form, or wall-to-roof registration. It does not prove that every floor is above grade."
+    },
+    {
+      "url": "https://bbnc14919nc.sky.blackbaud.com/image/educational-foundation/priorities/chapter-educational-funds/beta-zeta-chapter-house.jpg",
+      "provider": "Sigma Nu Fraternity Educational Foundation, official Beta Zeta Chapter House campaign page",
+      "source_date": "Current page accessed 2026-10-26",
+      "source_snapshot": "Listed and linked from beta_zeta_chapter_house_fund_campaign page, no local image snapshot",
+      "parent_page": "https://bbnc14919nc.sky.blackbaud.com/educational-foundation/priorities/chapter-educational-funds/beta-zeta-chapter-educational-fund",
+      "measurement_method": "Official foundation page labels this image Beta Zeta Chapter House and associates the campaign with Tower Drive; image is identity/context evidence only.",
+      "uncertainty": "No georeferenced elevation or dimensional information; not used to estimate height or facade bearing."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_m": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_m": "(latitude - 40.4274) * 111040.0",
+    "z_m": "up; ground datum set to 0 for library massing",
+    "projection_note": "Project-local approximate geographic conversion, not a surveyed CRS."
+  }
+}

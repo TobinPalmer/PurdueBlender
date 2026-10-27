@@ -1,0 +1,98 @@
+{
+  "provider": "Indiana Geographic Information Office / Indiana Current Orthophotography ImageServer",
+  "service_url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+  "imagery_dataset": "Indiana_2025_SPW_2ft_exportraster, confirmed by ImageServer identify at the FID 506 centroid; ImageServer catalog also reports in2023_29921882_06 and Indiana_2023_SPW_06in.",
+  "retrieved": "2026-10-26",
+  "source_date": "2025 imagery catalog item (Indiana_2025_SPW_2ft_exportraster); 2023 items are also returned. Tile-level flight date was not exposed by identify.",
+  "license": "Indiana GIS metadata states CC0 for statewide orthophotography.",
+  "service_metadata_snapshot": "audit/massing_provenance_apartments_005_960f6b0/sources/indiana_current_orthophoto_layer_metadata.json",
+  "source_feature": {
+    "provider": "Purdue University Campus Map FeatureServer, BuildingShapesZip4 layer 0",
+    "feature_id": 506,
+    "name": "Building F",
+    "abbreviation": "143",
+    "layer": "BLDG Building Pre-planning",
+    "source_snapshot": "sources/official_purdue_fid506.json",
+    "polygon_crs": "EPSG:3857"
+  },
+  "request_bbox_epsg3857": [
+    -9677291.847613709,
+    4927593.842370919,
+    -9677150.57691385,
+    4927695.23744345
+  ],
+  "image_px": [
+    1800,
+    1050
+  ],
+  "raw_image": "audit/massing_provenance_apartments_005_960f6b0/sources/indiana_current_orthophoto_2025_raw.jpg",
+  "overlay_image": "audit/massing_provenance_apartments_005_960f6b0/indiana_current_orthophoto_2025_fid506_overlay.jpg",
+  "catalog_items_at_centroid": [
+    {
+      "OBJECTID": 1,
+      "Name": "Indiana_2025_SPW_2ft_exportraster",
+      "MinPS": 0.609601219202439,
+      "MaxPS": 3047,
+      "LowPS": 0.6096012192024385,
+      "HighPS": 78.02895605791213,
+      "Category": 2,
+      "Tag": "Dataset",
+      "GroupName": "",
+      "ProductName": "",
+      "CenterX": -9671836.271129418,
+      "CenterY": 4859750.006095828,
+      "ZOrder": 8099,
+      "Image_Year": null,
+      "County": null,
+      "Pixel_Size": null,
+      "Shape_Length": 1418573.2940079733,
+      "Shape_Area": 89872153363.15088
+    },
+    {
+      "OBJECTID": 270870,
+      "Name": "in2023_29921882_06",
+      "MinPS": 0,
+      "MaxPS": 1.21920243840488,
+      "LowPS": 0.15240030480060962,
+      "HighPS": 0.30480060960121924,
+      "Category": 1,
+      "Tag": "Dataset",
+      "GroupName": "",
+      "ProductName": "",
+      "CenterX": -9677680.029690985,
+      "CenterY": 4927171.6903873375,
+      "ZOrder": 4046,
+      "Image_Year": "2023",
+      "County": "Tippecanoe",
+      "Pixel_Size": "06 in.",
+      "Shape_Length": 4005.9220647195275,
+      "Shape_Area": 1002959.4121547221
+    },
+    {
+      "OBJECTID": 4,
+      "Name": "Indiana_2023_SPW_06in",
+      "MinPS": 1.21920243840488,
+      "MaxPS": 3048,
+      "LowPS": 1.219202438404877,
+      "HighPS": 78.02895605791213,
+      "Category": 2,
+      "Tag": "Dataset",
+      "GroupName": "",
+      "ProductName": "",
+      "CenterX": -9714468.921875834,
+      "CenterY": 4832418.417377355,
+      "ZOrder": 506,
+      "Image_Year": null,
+      "County": null,
+      "Pixel_Size": null,
+      "Shape_Length": 1594892.59096127,
+      "Shape_Area": 123964021517.47235
+    }
+  ],
+  "overlay_method": "The Purdue polygon is inverse-projected from EPSG:3857 to WGS84 then projected to EPSG:3857; it is drawn over the current orthophoto in the same EPSG:3857 request envelope. No image rescaling/warping beyond service export is applied.",
+  "limitations": [
+    "The Purdue polygon is explicitly tagged pre-planning; an overlay over current orthophoto tests registration and outline similarity but does not by itself prove the source polygon is an as-built wall line.",
+    "Orthophoto confirms roof plan position/shape and current construction presence, not wall heights, elevations, entries, or facade openings.",
+    "The project-local coordinate conversion used elsewhere in the model is approximate, not surveyed geodetic control."
+  ]
+}

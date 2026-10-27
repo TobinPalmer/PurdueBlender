@@ -1,0 +1,117 @@
+{
+  "building_id": "massing_the_caretaker_s_cottage_6b24af9",
+  "grader": "independent subagent",
+  "evaluator": "independent_grade.py::evaluate",
+  "asset": "modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend",
+  "score": 7.8,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 1.9,
+      "max_points": 2,
+      "evidence": [
+        "West Lafayette Public Library and City of West Lafayette sources independently identify the 1903 Caretaker's Cottage at 1496 N Salisbury Street.",
+        "OSM way 953041335 is explicitly named for the cottage; its 10 unique points independently match the reopened shell base vertices: True.",
+        "Indiana LiDAR footprint 433415 provides an independent roof-envelope check (IoU 0.722), while OSM is used as the wall/base outline."
+      ],
+      "deduction": "0.1: community-mapped OSM outline is not a surveyed foundation, and the larger LiDAR polygon has a disclosed interpretation rather than a definitive structural boundary."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 1.9,
+      "max_points": 2,
+      "evidence": [
+        "Reopened structural shell ring matches all ten transformed OSM points: True.",
+        "World-space asset bounds directly measured from reopened exported meshes: [[382.68206787109375, 1460.251953125, -0.03999999910593033], [406.21533203125, 1480.8961181640625, 5.550000190734863]] meters.",
+        "The massing remains in the project campus coordinate convention; individual object transforms are identity and no detailed-asset placement marker is expected."
+      ],
+      "deduction": "0.1: local longitude/latitude approximation and OSM are not survey-grade controls; roof-overhang bounds are not a wall-dimension measurement."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.1,
+      "max_points": 2,
+      "evidence": [
+        "Official historic photograph and current orthophoto support a terracotta multi-plane roof silhouette; roof components exist in the reopened asset.",
+        "Official historic photo shows a low, articulated roof over a one-story cottage, but no scale or elevation is supplied.",
+        "Builder explicitly labels 3.35 m wall height, 3.48 m eaves, 5.55 m ridge, roof pitch and roof intersection as qualitative estimates; no height-derived survey evidence is present.",
+        "Top render shows broad roof planes and exposed gray areas/gaps; the generated roof footprint does not cleanly reproduce the stepped LiDAR/orthophoto roof outline."
+      ],
+      "deduction": "0.9: height and ridge are unmeasured, and despite qualitative photo support, modeled roof outline/intersection is approximate and visibly incomplete in plan."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 1.0,
+      "max_points": 2,
+      "evidence": [
+        "Official sources support Bedford limestone, terracotta tile, and double porches; the asset includes textured stone, a tile material, front porch, and short return porch.",
+        "Historic photo directly shows rough rubble-stone walls and a broad porch/veranda under deep eaves.",
+        "The street oblique render has a generic smooth/noisy stone surface, modeled windows and an entrance whose count, positions and dimensions are explicitly estimated; front and return porches are schematic.",
+        "Renders show a detached-looking ramp/rail element and porch-to-wall gaps; no facade elevation or dimensioned plan verifies these placements."
+      ],
+      "deduction": "1.0: distinctive materials and porch concept are supported, but modeled facade layout/porch treatment only loosely follows the photo and the openings/access elements are unverified estimates."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 1.9,
+      "max_points": 2,
+      "evidence": [
+        "Reopened scene and named asset collection are present; exported collection has 74 mesh objects.",
+        "All exported meshes have materials: True; no unpacked external images: True; presentation collection is outside export: True.",
+        "Source index has provider/URL, feature/source identifiers, retrieval/source date or date caveat, CRS where relevant, measurement method and uncertainty: urls=True, dates=True, uncertainty=True.",
+        "Four named renders and raw OSM, Indiana LiDAR, orthophoto, official-library and City snapshots are present in the building-specific audit folder."
+      ],
+      "deduction": "0.1: geometry is a simple massing approximation and the saved presentation relies on studio lighting; complete placement within the campus master remains a coordinator integration check."
+    }
+  ],
+  "evidence": {
+    "reopened_asset": "modular\\buildings\\massing_the_caretaker_s_cottage_6b24af9.blend",
+    "actual_blender_version": "4.5.15 LTS",
+    "source_evidence": "audit/massing_the_caretaker_s_cottage_6b24af9/source_index.json, source_registration.json, and preserved source snapshots",
+    "actual_renders_reviewed": [
+      "audit/massing_the_caretaker_s_cottage_6b24af9/renders/top.png",
+      "audit/massing_the_caretaker_s_cottage_6b24af9/renders/street_oblique.png",
+      "audit/massing_the_caretaker_s_cottage_6b24af9/renders/north_oblique.png",
+      "audit/massing_the_caretaker_s_cottage_6b24af9/renders/side_oblique.png"
+    ],
+    "reopened_geometry": {
+      "object_count": 74,
+      "mesh_count": 74,
+      "shell_ring_matches_osm": true,
+      "max_shell_ring_error_m": 6.082762538303222e-05,
+      "world_bounds_m": [
+        [
+          382.68206787109375,
+          1460.251953125,
+          -0.03999999910593033
+        ],
+        [
+          406.21533203125,
+          1480.8961181640625,
+          5.550000190734863
+        ]
+      ],
+      "roof_components": [
+        "Main_Terracotta_Hipped_Roof",
+        "Cross_Terracotta_Hipped_Roof",
+        "Front_Porch_Terracotta_Canopy",
+        "Return_Porch_Terracotta_Canopy"
+      ],
+      "identity_object_transforms": true
+    },
+    "source_comparison": {
+      "osm_way": 953041335,
+      "indiana_lidar_objectid": 433415,
+      "liDAR_osm_iou": 0.722134923008098,
+      "liDAR_osm_centroid_separation_m": 0.8592974631881117
+    }
+  },
+  "findings": [
+    "Required before passing: rebuild the roof geometry to follow the stepped L-shaped roof envelope visible in the orthophoto and the Indiana LiDAR outline; remove visible exposed-gray gaps and overlapping roof artifacts, then regenerate all four views.",
+    "Improve stone wall/porch treatment against the official 2017 photo: represent the broad continuous low veranda/parapet and heavy limestone piers more faithfully; review the detached ramp and rails against the actual front access side.",
+    "Keep wall, eave and ridge heights explicitly estimated unless a measured elevation source is found; do not present current values as verified."
+  ]
+}

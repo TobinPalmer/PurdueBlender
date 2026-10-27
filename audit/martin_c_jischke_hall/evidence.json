@@ -1,0 +1,57 @@
+{
+  "building_id": "massing_martin_c_jischke_hall_of_biomedical_engineering_1a34d6a",
+  "building": "Martin C. Jischke Hall of Biomedical Engineering (MJIS)",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D407&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "provider": "Purdue University ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
+      "feature_id": "FID 407; BLDG_ABBR=MJIS",
+      "source_date": "feature-service edit date unavailable; retrieved 2026-10-26",
+      "crs": "EPSG:4326 response, projected with project approximate local conversion: X=(lon+86.9137)*111412.84*cos(40.4274 degrees), Y=(lat-40.4274)*111040",
+      "method": "GIS polygon transformed into the project campus frame and used as the structural roof/wall plan. Source shape area 5054.0195 square map units; source line length 456.2124 map units.",
+      "uncertainty": "Public GIS feature is an architectural/map outline rather than a surveyed wall footprint; coordinate conversion is locally approximate. Attribute NUM_LEVELS=4, CountOfFLO=4, Extrution=36 has undocumented extrusion units."
+    },
+    {
+      "url": "https://engineering.purdue.edu/BME/AboutUs/Safety/Section2",
+      "provider": "Purdue Weldon School of Biomedical Engineering building information",
+      "feature_id": "MJIS building information page",
+      "source_date": "page date unavailable; retrieved 2026-10-26",
+      "crs": "not spatial",
+      "method": "Used the page statement that the building has three stories and a basement, the address 206 S. Martin Jischke Drive, and the listed west/east public entrances and north service entrance.",
+      "uncertainty": "Page does not provide exterior elevations or measured heights."
+    },
+    {
+      "url": "https://events.purdue.edu/martin_c_jischke_hall_of_biomedical_eng",
+      "provider": "Purdue University Events",
+      "feature_id": "Purdue-published photo attached to MJIS place page",
+      "source_date": "photo posted 2022-05-30",
+      "crs": "not spatial",
+      "method": "Visual evidence for three-level massing, glazed upper central facade, brick lower facade, pale opaque end masses, and recessed entrance. Raw page and image are saved in sources/.",
+      "uncertainty": "Single oblique photo shows one corner only; it cannot establish all sides, dimensions, or exact facade bay spacing."
+    },
+    {
+      "url": "https://engineering.purdue.edu/BME/about-us/facilities",
+      "provider": "Purdue Weldon School of Biomedical Engineering",
+      "feature_id": "Facilities page entry for Martin C. Jischke Hall",
+      "source_date": "page last modified 2026-10-06",
+      "crs": "not spatial",
+      "method": "Used to confirm the building identity, Discovery Park context, and 2019 opening of the Innovation Wing.",
+      "uncertainty": "The page does not supply a georeferenced footprint or elevations."
+    }
+  ],
+  "geometry": {
+    "modeled_floors": 3,
+    "height_m": 14.2,
+    "height_status": "estimated; three floors per official BME page, no measured elevation available",
+    "roof": "flat low-slope roof modeled from GIS footprint; height and parapet are estimates",
+    "edits": "Replace imported massing mesh with an 88-vertex generalized version of the 178-vertex official GIS ring (0.45 m local simplification tolerance; maximum original source vertex deviation 1.02 m), a three-level shell, brick lower band, pale end walls, upper window bays, two schematic public-entrance markers on west/east sides, and restrained roof parapet. Keep the existing object, collection, asset path, campus coordinate frame, and campus placement."
+  },
+  "validation": {
+    "reopened_saved_blend": true,
+    "reopen_report": "validation.json; saved Blender library reopened in Blender 5.2.3, expected one mesh in exported collection, 6,482 evaluated vertices and 4,402 evaluated faces, no external image or library paths, XY campus bounds compared against GIS polygon; vertical bounds 0 to 14.2 m (estimated)",
+    "preview_render": "preview_detail.png",
+    "independent_grade": "8.0/10 pass, audit/martin_c_jischke_hall/grade.json",
+    "uncertainty": "The independent grade identified the broad upper curtain wall as under-modeled; entrance markers are schematic rather than surveyed door locations. Upper window spacing and facade dimensions are estimates from one oblique photo. Height and roof dimensions remain estimated; the source GIS footprint is not survey-grade."
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "building_id": "massing_house_301841330_f58ae87",
+  "grader": "independent_grader_r2",
+  "grade_round": 2,
+  "score": 7.4,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Raw Purdue GIS record FID 758 names Sigma Nu / SOSN at 1301 Tower Dr; the independent Beta Zeta newsletter photo visibly shows the 1301 address plaque.",
+        "GIS polygon has 10 vertices. Builder's saved-file report claims symmetric base-ring vertex error 0.00003749 m; I could not independently recompute this from Blender geometry.",
+        "Visual comparison of the current preview and source photo supports a broad match in building identity and massing footprint, with the GIS polygon treated as a roof/building proxy rather than measured wall line."
+      ],
+      "uncertainty": [
+        "No surveyed wall footprint; roof edge offset is unknown."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": [
+        "The saved evidence records the repository's approximate EPSG:4326-to-campus conversion and provides raw GIS and OSM snapshots.",
+        "Preview geometry is consistent with the GIS polygon; the reopen report states 0.00003749 m ring error and world bounds, but those Blender values remain builder-reported because a new Blender reopen was unavailable.",
+        "OSM Tower Drive context supports the chosen north/northwest-facing edge only indirectly; source register itself correctly calls the facade bearing an inference (Road geometry is volunteered mapping and does not directly measure the building facade bearing; the front selection remains an inference.)."
+      ],
+      "uncertainty": [
+        "No independent survey/CRS check. The photo is not georeferenced, so front-bearing assignment is still inferred."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 0.6,
+      "max_score": 2.0,
+      "evidence": [
+        "The image supports a low, broad, multi-level appearance but supplies no known scale or elevation; the model's 7.2 m wall and 7.45 m top values are estimates.",
+        "The GIS NUM_LEVELS=1 and Extrution=44 metadata are undocumented and do not verify storey count or height.",
+        "The preview shows a low flat cap; the provided photos do not establish its form or dimensions."
+      ],
+      "uncertainty": [
+        "Actual story count, wall height, roof profile, and overall height remain unverified."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": [
+        "Fall 2019 newsletter photograph of the address plaque provides direct facade imagery. Its front photo supports brickwork, a broad central entrance zone with light trim, and multiple front openings; the lower side photo supports a projecting bay and red-brick side wall.",
+        "The current preview uses subdued red-brown upper brick, a light lower band, two main facade windows, a central opening/canopy, and a restrained side bay. These are broad, defensible generalizations from the visible image.",
+        "Newsletter record explicitly disclaims exact elevations and measurements: The printed newsletter raster is perspective-distorted and partly occluded; it does not establish exact dimensions, floor elevations, roof silhouette, or unseen elevations. The pictured building is not georeferenced to a particular GIS edge."
+      ],
+      "uncertainty": [
+        "Exact window count/spacing, sill/lintel details, story split, trim material, and unseen elevations cannot be confirmed; facade bearing is not tied to photo by georeferencing."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": [
+        "Expected .blend, builder script, preview, raw GIS/newsletter/OSM snapshots, and source register are present.",
+        "Builder's reopen record reports expected scene Building_massing_house_301841330_f58ae87, export collection Asset_massing_house_301841330_f58ae87, 24 mesh objects, no modifiers or relative dependencies; these claims could not be independently confirmed with Blender in this review.",
+        "Saved validation records geometry bounds and uncertainty; asset appears self-contained from source and render evidence."
+      ],
+      "uncertainty": [
+        "Independent load of the final .blend and inspection of collection membership, world matrices, dependencies, and evaluated meshes could not be performed in this environment."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_house_301841330_f58ae87.blend",
+    "builder_script": "modular/buildings/build_massing_house_301841330_f58ae87.py",
+    "preview": "audit/sigma_nu/sigma_nu_preview.png",
+    "source_register": "audit/sigma_nu/sources/source_register.json",
+    "raw_gis": "audit/sigma_nu/sources/purdue_gis_fid_758.json",
+    "newsletter_photo": "audit/sigma_nu/sources/beta_zeta_fall_2019_newsletter_page2_900.jpg",
+    "road_context": "audit/sigma_nu/sources/osm_tower_drive_way_327252145.json",
+    "builder_reopen_record": {
+      "blender_reopened": true,
+      "blender_version": "5.2.3 LTS",
+      "scene": "Building_massing_house_301841330_f58ae87",
+      "scene_collection_present": true,
+      "export_collection": "Asset_massing_house_301841330_f58ae87",
+      "export_collection_object_count": 24,
+      "mesh_object_count": 24,
+      "body_object": "House_301841330",
+      "body_vertex_count": 30,
+      "base_ring_vertices": 10,
+      "source_ring_vertices": 10,
+      "symmetric_nearest_vertex_error_m": 3.749126333686267e-05,
+      "world_bounds_m": [
+        [
+          -1009.4022827148438,
+          -975.5484008789062
+        ],
+        [
+          606.5393676757812,
+          636.4332885742188
+        ],
+        [
+          0.0,
+          7.449999809265137
+        ]
+      ],
+      "body_modifiers": [],
+      "review_only_objects": [
+        "Review camera",
+        "Review key light"
+      ],
+      "relative_dependencies": [],
+      "facade_bearing": "North/northwest-facing long GIS edge toward Tower Drive, bearing inferred from OSM road context; image is not georeferenced.",
+      "visual_review": "Reopened and inspected preview; exact GIS shell, two-level light base/red brick upper wall, dark low roof cap, front entry, two main-elevation windows and one restrained side bay are present."
+    },
+    "independent_fresh_reopen": {
+      "attempted": true,
+      "completed": false,
+      "reason": "Blender connector reported it could not connect to Blender; no local blender.exe or bpy Python module was available."
+    },
+    "missing_required_files": []
+  },
+  "findings": [
+    "Score is below the 8/10 threshold. The current iteration improves the previously criticized facade generalization: broad brick/light-masonry contrast and the entrance/bay now align with visible newsletter imagery, with fewer unsupported openings.",
+    "Most limiting criterion is height/floors/roof (0.6/2): current sources do not establish story count, heights, or roof silhouette. Find measured elevation/assessor imagery with an exact parcel match, or continue to mark these as provisional estimates.",
+    "Independent Blender reopen was unavailable, so all numerical mesh/export properties from reopen_validation.json are reported builder evidence, not independently reproduced checks. A reviewer with Blender access should freshly load the exact saved asset before sign-off.",
+    "The GIS ring is an excellent reported plan-shape match but remains a building/roof polygon proxy; facade bearing is contextual inference only."
+  ]
+}

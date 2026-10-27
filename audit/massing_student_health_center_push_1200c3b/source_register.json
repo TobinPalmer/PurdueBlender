@@ -1,0 +1,76 @@
+{
+  "asset_id": "massing_student_health_center_push_1200c3b",
+  "retrieved_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D274&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "layer_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "layer": 0,
+      "feature_id": 274,
+      "feature_name": "Purdue University Student Health Center",
+      "abbreviation": "PUSH",
+      "address": "601 Stadium Mall Drive",
+      "source_crs": "The source layer is Web Mercator (EPSG:3857); this query returns WGS84 (EPSG:4326).",
+      "source_date": "Feature layer metadata dataLastEditDate is preserved in the metadata snapshot; feature record has no edit date.",
+      "measurement_method": "Transform the official WGS84 ring coordinates with the repository's documented local campus approximation; compute planar area and bounds in meters.",
+      "evidence": "Feature name, code, address, campus position, 13-vertex exterior ring, area/shape, NUM_LEVELS=5, CountOfFLO=5, floor level fields, and Extrution=48.",
+      "uncertainty": "The GIS extrusion units and floor metadata interpretation are not explicitly documented in the retrieved feature; 48 is interpreted as feet for estimated total height. GIS shows four above-grade levels while the official exterior photograph visually appears to show three.",
+      "snapshot": "sources/purdue_gis_fid274_raw.json",
+      "metadata_snapshot": "sources/purdue_gis_layer_metadata.json"
+    },
+    {
+      "provider": "Purdue University / John Underwood, Purdue Today archive",
+      "url": "https://www.purdue.edu/newsroom/archive/purduetoday/releases/2020/Q3/push-offering-weekend-hours-during-fall-semester.html",
+      "image_url": "https://www.purdue.edu/uns/images/2020/pt-purdue-student-health-center.jpg",
+      "source_date": "2020-08-19",
+      "feature_id": "Purdue University Student Health Center exterior photograph",
+      "source_crs": "Not applicable; photograph",
+      "measurement_method": "Visual inspection of the published exterior image; no dimensions inferred from pixel measurements.",
+      "evidence": "Red brick facade, repeated upper-story windows with pale trim, a broad glazed entrance, medical emblem, and red tiled pitched roof.",
+      "uncertainty": "Single oblique viewpoint; trees obscure portions of the facade, exact entrance wall orientation and roof framing are not verified. Apparent three story levels are in tension with the GIS level fields.",
+      "snapshot": "sources/purdue_push_exterior_2020.jpg",
+      "page_snapshot": "sources/purdue_push_news_page.html"
+    },
+    {
+      "provider": "Purdue University Student Health Services",
+      "url": "https://www.purdue.edu/push/about/general-info/index.php",
+      "source_date": "Page retrieved 2026-10-26; source publication date not listed.",
+      "feature_id": "PUSH contact page",
+      "source_crs": "Not applicable",
+      "measurement_method": "Direct address lookup in the official page.",
+      "evidence": "PUSH is at 601 Stadium Mall Drive, West Lafayette, IN 47907.",
+      "uncertainty": "Address source does not describe building form or dimensions.",
+      "snapshot": "sources/purdue_push_contact_page.html"
+    },
+    {
+      "provider": "Purdue University Campus Map",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "source_date": "July 2025 modification date shown on published map.",
+      "feature_id": "PUSH campus map entry, grid F/G5",
+      "source_crs": "Not applicable; indexed campus map",
+      "measurement_method": "Name and campus grid cross-check.",
+      "evidence": "Purdue's campus map identifies Purdue University Student Health Center (PUSH) in grid F/G5.",
+      "uncertainty": "Map grid is not a surveyed coordinate source and is not used for footprint dimensions.",
+      "snapshot": "sources/purdue_west_lafayette_campus_map_2025.pdf"
+    },
+    {
+      "provider": "Indiana Geographic Information Office (IGIO), Indiana 2023 Imagery ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
+      "source_date": "2023 spring imagery (per layer metadata); retrieved 2026-10-26",
+      "feature_id": "Orthophoto crop centered on Purdue Student Health Center (PUSH), FID 274",
+      "source_crs": "ImageServer source EPSG:3857; export requested in EPSG:4326",
+      "extent_wgs84": [
+        -86.91655,
+        40.42995,
+        -86.9156,
+        40.43078
+      ],
+      "measurement_method": "Visual roof-plan interpretation only; no height measurements derived. Compared roof footprints against the official Purdue GIS FID 274 outline.",
+      "evidence": "Visible red/tiled main roof, distinct low entrance-side roof mass, and lower light/flat-roof southeast extension.",
+      "uncertainty": "Orthophoto identifies plan-level roof zones but cannot establish wall height, floor count, roof pitch, or exact entrance elevation.",
+      "snapshot": "sources/indiana_2023_push_orthophoto.jpg",
+      "metadata_snapshot": "sources/indiana_2023_imagery_layer_metadata.json"
+    }
+  ]
+}

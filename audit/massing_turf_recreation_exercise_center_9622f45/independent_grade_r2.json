@@ -1,0 +1,161 @@
+{
+  "building_id": "massing_turf_recreation_exercise_center_9622f45",
+  "building_name": "Turf Recreation Exercise Center (TREC)",
+  "reviewer": "independent evaluator; raw-source and reopened-library inspection",
+  "score": 6.5,
+  "max_score": 10,
+  "passing_standard": 8,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "verified with a source conflict",
+      "evidence": [
+        "Raw Purdue feature 312 is named 'Turf Recreation Exercise Center', ABBR='TREC'; raw OSM way 283275002 is tagged name=Turf Recreation Exercise Center/ref=TREC.",
+        "Saved wall envelope's maximum XY nearest-source-vertex deviation from current Purdue GIS is 0.0000 m; GIS ring has 32 non-closure vertices and computed area 3170.2 m\u00b2.",
+        "Area cross-check remains imperfect: raw Purdue GIS squarefootage attribute is 36210 ft\u00b2, while the Purdue RecWell fact sheet reports TREC project size as 29,037 ft\u00b2; polygon plan area is 34124 ft\u00b2.",
+        "The official campus map and the 2023 orthophoto identify the right long-roofed field hall; no confusion with CoRec/Aquatic Center or the Intercollegiate Athletic Sports Turf Building is evident.",
+        "Orthophoto overlay shows the Purdue red line and OSM blue line on the same roof, but not coincident: GIS center relative to OSM is -2.38 m east-west and -0.44 m north-south; OSM outline tracks the visible roof edge more closely."
+      ],
+      "findings": [
+        "Building identity is strong; structural wall ring follows the named current Purdue polygon. The roof-edge evidence favors the OSM ring, so actual wall/roof-perimeter relationship remains a source conflict."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.0,
+      "max_score": 2,
+      "status": "partly verified; source/manifest position conflict",
+      "evidence": [
+        "Wall plan dimensions from raw Purdue GIS are 44.84 m east-west by 74.83 m north-south; model wall ring matches GIS vertices within 0.0000 m.",
+        "Orthophoto and both polygon sources show a long north-south axis; model ridge is north-south.",
+        "GIS is -2.38 m west and -0.44 m south of OSM/prior manifest bounds; GIS is -1.21 m narrower east-west. Overlay indicates the GIS perimeter is inside the observed roof edge along portions of the building.",
+        "The saved asset retains the required direct campus-coordinate massing convention, but the shared manifest still contains the previous OSM-matching bounds pending coordinator update."
+      ],
+      "findings": [
+        "Do not treat placement as fully resolved until the coordinator updates the manifest/crosswalk and validates the roof-to-wall perimeter. The geometric scale is accurate to the selected GIS record, not confirmed against a definitive as-built outline."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2,
+      "status": "roof form and band direction supported; vertical dimensions unverified estimates",
+      "evidence": [
+        "Orthophoto supports the pale roof and two-plane gable silhouette with a north-south ridge; saved gable shape matches this broad profile.",
+        "The revised top view shows repeated east-west transverse bands perpendicular to the north-south ridge, consistent with the visible orthophoto pattern; exact spacing remains estimated.",
+        "Wall mesh rises from 0.00 m to 7.40 m; evidence labels eave 7.4 m and ridge 11.2 m as estimates, not measured.",
+        "No cited plan, elevation, section, lidar, or source confirms eave/ridge heights or floor count. The model's single clear-span hall is consistent with facility use, but floors/height are not evidence-backed."
+      ],
+      "findings": [
+        "Height and story count remain unsupported. Roof band direction now matches the orthophoto, but band spacing and vertical profile are still estimates."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.5,
+      "max_score": 2,
+      "status": "neutral placeholder; facade and entry remain unverified",
+      "evidence": [
+        "The revised saved views show a plain neutral wall envelope. The builder has removed the prior generic cladding ribs and illustrative west door.",
+        "No facade/elevation/street-level evidence in the provided sources establishes cladding material, rib spacing, door count, or entry side/location.",
+        "A blank neutral facade avoids asserting unsupported details, but no evidence-backed entrance or distinctive facade feature is represented."
+      ],
+      "findings": [
+        "The neutral facade removes unsupported door/rib claims but does not add source-backed facade or entrance fidelity; score is unchanged for this criterion."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified for standalone asset",
+      "evidence": [
+        "Saved library reopened independently with expected scene/collection; collection has 86 objects and types ['MESH']; stable asset path and collection names are preserved.",
+        "All three requested views exist ([True, True, True]) and the registered orthophoto overlay exists (True).",
+        "No unpacked external file images are referenced by the blend: [].",
+        "Evidence folder contains raw official Purdue GIS and OSM snapshots, official RecWell/campus-map material, 2023 Indiana orthophoto, comparison overlay, method, CRS, dates, and uncertainties.",
+        "Master integration/neighboring context was not part of this isolated asset grade."
+      ],
+      "findings": [
+        "Standalone export and evidence organization are complete; master placement and integration remain coordinator-owned."
+      ]
+    }
+  ],
+  "evidence": {
+    "raw_source_checks": {
+      "purdue_feature_id": 312,
+      "purdue_name": "Turf Recreation Exercise Center",
+      "purdue_abbr": "TREC",
+      "gis_vertex_count": 32,
+      "gis_area_m2": 3170.2,
+      "osm_way_id": 283275002,
+      "osm_tags": {
+        "building": "yes",
+        "leisure": "sports_centre",
+        "name": "Turf Recreation Exercise Center",
+        "ref": "TREC"
+      },
+      "osm_area_m2": 3198.04,
+      "purdue_gis_squarefootage_attribute_ft2": 36210,
+      "purdue_recwell_fact_sheet_area_ft2": 29037,
+      "computed_gis_polygon_area_ft2": 34124,
+      "gis_center_minus_osm_center_m": [
+        -2.376,
+        -0.443
+      ],
+      "gis_minus_osm_dimensions_m": [
+        -1.212,
+        -0.049
+      ]
+    },
+    "saved_asset_checks": {
+      "asset": "modular\\buildings\\massing_turf_recreation_exercise_center_9622f45.blend",
+      "scene": "Building_massing_turf_recreation_exercise_center_9622f45",
+      "collection": "Asset_massing_turf_recreation_exercise_center_9622f45",
+      "object_count": 86,
+      "object_types": [
+        "MESH"
+      ],
+      "wall_unique_xy_points": 32,
+      "max_wall_xy_to_gis_vertex_m": 3e-05,
+      "wall_z_bounds_m": [
+        0.0,
+        7.4
+      ],
+      "three_views_exist": [
+        true,
+        true,
+        true
+      ],
+      "view_file_bytes": [
+        976903,
+        920645,
+        967644
+      ],
+      "unpacked_external_images": []
+    },
+    "visual_review": {
+      "files": [
+        "preview.png",
+        "preview_top.png",
+        "preview_north_gable.png",
+        "orthophoto_footprint_overlay.png"
+      ],
+      "roof_seam_axis_review": "revised model bands run E-W perpendicular to the N-S ridge and match the observed orthophoto direction; spacing remains estimated",
+      "limitations": [
+        "Orthophoto is plan-only and cannot verify facade or height.",
+        "No source establishes the facade treatment or entrance locations; those details are omitted from this neutral placeholder."
+      ]
+    }
+  },
+  "findings": [
+    "Building identity is strong; structural wall ring follows the named current Purdue polygon. The roof-edge evidence favors the OSM ring, so actual wall/roof-perimeter relationship remains a source conflict.",
+    "Do not treat placement as fully resolved until the coordinator updates the manifest/crosswalk and validates the roof-to-wall perimeter. The geometric scale is accurate to the selected GIS record, not confirmed against a definitive as-built outline.",
+    "Height and story count remain unsupported. Roof band direction now matches the orthophoto, but band spacing and vertical profile are still estimates.",
+    "The neutral facade removes unsupported door/rib claims but does not add source-backed facade or entrance fidelity; score is unchanged for this criterion.",
+    "Standalone export and evidence organization are complete; master placement and integration remain coordinator-owned."
+  ],
+  "recommendation": "Below 8/10. Seek facade/entrance and vertical evidence where available; coordinator must reconcile the GIS-vs-OSM roof-edge/perimeter and shared manifest position before accepting placement."
+}

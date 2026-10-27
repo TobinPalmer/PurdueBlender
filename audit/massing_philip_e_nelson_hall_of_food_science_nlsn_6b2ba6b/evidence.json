@@ -1,0 +1,164 @@
+{
+  "asset_id": "massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b",
+  "building": "Philip E. Nelson Hall of Food Science (NLSN)",
+  "assignment": {
+    "owner_source": "README.md pending-building table",
+    "owner": "Kyle",
+    "manifest_id": "massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b",
+    "manifest_collection": "Asset_massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b",
+    "manifest_scene": "Building_massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b",
+    "asset": "modular/buildings/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b.blend",
+    "source_identity_confirmed": true
+  },
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University ArcGIS Online, BuildingShapesZip4 FeatureServer layer 0",
+      "purpose": "Building identity, footprint polygon, address, owner, GIS level attributes",
+      "feature_id": 250,
+      "feature_attributes": {
+        "BLDG_ABBR": "NLSN",
+        "BUILDING_N": "Philip E. Nelson Hall of Food Science",
+        "ADDRESS": "745 Agriculture Mall Drive",
+        "OWNER": "PURDUE",
+        "NUM_LEVELS": 5,
+        "CountOfFLO": 5,
+        "Extrution": 33,
+        "F02": 16,
+        "F03": 31.3,
+        "R": 46.6,
+        "Shape__Area": 5889.3203125,
+        "Shape__Length": 323.7094047191415
+      },
+      "raw_snapshot": "sources/query.json",
+      "feature_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/250?f=pjson",
+      "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D250&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "layer_metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "source_date": "Not stated in layer metadata snapshot",
+      "source_crs": "Query geometry EPSG:4326; layer metadata WKID 102100/latestWkid 3857",
+      "measurement_method": "Use all 24 non-closure vertices; transform lon/lat to the approximate campus meters using the conversion specified in modular/AGENTS.md. No rotation or scale adjustment was applied.",
+      "uncertainty": "GIS geometry is an identified building polygon, not a surveyed wall line. GIS vertical attributes have undocumented semantics. The Shape__Area field is calculated in the layer spatial reference EPSG:3857; reprojecting the EPSG:4326 query ring to EPSG:3857 yields approximately 5889.32 m2, matching the published 5889.3203 m2 field. The smaller 3407.26 m2 area is in approximate ground coordinates and is a CRS-dependent value, not a source conflict. Shape__Length field units/semantics remain undocumented."
+    },
+    {
+      "provider": "Purdue University Events building page (Localist-hosted image)",
+      "purpose": "Exterior materials, broad facade rhythm, entry canopy and raised entrance gable",
+      "url": "https://events.purdue.edu/philip_e_nelson_hall_of_food_science",
+      "photo_url": "https://localist-images.azureedge.net/photos/40247384552165/card/9b7119235c463fca5c060f47647927d5204ccc1e.jpg",
+      "raw_snapshot": "sources/events.html",
+      "image_snapshot": "sources/events_building_photo_large.jpg",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Not stated on page or in image metadata",
+      "source_crs": "Not applicable",
+      "measurement_method": "Visual reference only; image has no camera calibration or scale. Used to choose red-brown brick, light-colored trim, dark glazing, a recessed main entrance, a projecting pale canopy and a raised gabled entrance feature.",
+      "uncertainty": "Exact orientation, dimensions, window-bay positions, story count visible in the image, and entrance coordinates relative to the footprint are not measurable from this undated perspective image."
+    },
+    {
+      "provider": "Purdue College of Agriculture, Food Science history page",
+      "purpose": "Building history and proper entrance context",
+      "url": "https://ag.purdue.edu/department/foodsci/history.html",
+      "raw_snapshot": "sources/history.html",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page publication date not stated in snapshot",
+      "source_crs": "Not applicable",
+      "measurement_method": "Textual cross-check only; page says the hall was named in 2010 and a proper front entrance was built in 2011.",
+      "uncertainty": "Historical text does not provide the entrance plan, measured height, roof form, or facade dimensions."
+    },
+    {
+      "provider": "Purdue College of Agriculture, Food Science contact page",
+      "purpose": "Address and departmental location cross-check",
+      "url": "https://ag.purdue.edu/department/foodsci/contact-us.html",
+      "raw_snapshot": "sources/contact.html",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page publication date not stated in snapshot",
+      "source_crs": "Not applicable",
+      "measurement_method": "Textual address cross-check.",
+      "uncertainty": "Does not independently establish the footprint or building dimensions."
+    }
+  ],
+  "footprint": {
+    "feature_id": 250,
+    "source_vertices_excluding_closure": 24,
+    "transform": "X=(longitude + 86.9137) * 111412.84 * cos(radians(40.4274)); Y=(latitude - 40.4274) * 111040.0",
+    "transform_note": "Approximate local campus conversion from modular/AGENTS.md; not a surveyed CRS.",
+    "bounds_world_m": {
+      "x": [
+        -179.8848,
+        -124.1099
+      ],
+      "y": [
+        -680.3951,
+        -614.7986
+      ]
+    },
+    "computed_plan_area_m2": 3407.26,
+    "orientation": "GIS vertex order retained without rotation; long footprint axis is approximately north-south.",
+    "evidence_status": "Source-backed approximate footprint. The ArcGIS Shape__Area field agrees with the ring after reprojection to the layer CRS EPSG:3857; ground-approximate local coordinates yield a smaller CRS-dependent area."
+  },
+  "vertical_and_architecture": {
+    "modeled_levels": 5,
+    "level_count_source": "Purdue GIS NUM_LEVELS and CountOfFLO both report 5; semantics are not documented.",
+    "estimated_main_roof_height_m": 14.2,
+    "estimated_entry_gable_peak_m": 16.4,
+    "height_method": "R=46.6 is treated as likely feet (46.6 ft = 14.2 m) only as a working estimate; GIS vertical field meaning and unit were not found. Raised entrance gable is an additional visual estimate based on the photo.",
+    "roof": "Flat massing roof with a compact raised gabled entrance feature; only the entrance gable is photo-supported. The full roof silhouette is unverified.",
+    "facade": "Photo-supported red-brown brick, repeated dark window openings, pale entrance trim/canopy, and recessed front door. Bay spacing and side facade treatment are estimated.",
+    "remaining_uncertainty": [
+      "GIS does not provide documented height units or a reliable story-height schedule.",
+      "The exterior reference has no publication date or calibrated dimensions.",
+      "Roof shape outside the entrance gable and exact facade rhythm are unverified.",
+      "The layer Shape__Area is a projected EPSG:3857 area, while the mesh plan area uses the approximate local ground transform; their numeric difference reflects CRS scale, not disagreement."
+    ]
+  },
+  "geometry_edits": [
+    "Replaced the original single rectangular massing box with the GIS FID 250 polygon extruded vertically.",
+    "Added photo-supported brick facade color, repeated dark window bays, recessed entrance, pale canopy/portico, and compact raised entrance gable.",
+    "Kept the manifest object, collection, scene, campus-coordinate frame, object identity transforms, and one-object export stable."
+  ],
+  "before_after": {
+    "before": {
+      "bounds_world_m": [
+        [
+          -180.24797,
+          -124.12032
+        ],
+        [
+          -680.89728,
+          -614.97284
+        ],
+        [
+          0.0,
+          16.0
+        ]
+      ],
+      "mesh_vertices": 48,
+      "mesh_faces": 68
+    },
+    "after": {
+      "bounds_world_m": [
+        [
+          -179.88481,
+          -124.10089
+        ],
+        [
+          -681.63623,
+          -614.79858
+        ],
+        [
+          0.0,
+          16.4
+        ]
+      ],
+      "mesh_vertices": 908,
+      "mesh_faces": 233
+    }
+  },
+  "validation": {
+    "blender_version": "5.2.3 LTS",
+    "asset_reopened_after_save": true,
+    "reopen_validation_script": "reopen_validate.py",
+    "reopen_validation_result": "reopen_validation.json",
+    "preview": "preview.png",
+    "build_metrics": "build_metrics.json",
+    "portable_dependencies": "No external textures or linked libraries; simple generated materials only."
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "building_id": "massing_purdue_village_administration_building_3faae6c",
+  "building_name": "Purdue Village Administration Building",
+  "assignment": "Rossen",
+  "asset_path": "modular/buildings/massing_purdue_village_administration_building_3faae6c.blend",
+  "export_collection": "Asset_massing_purdue_village_administration_building_3faae6c",
+  "sources": [
+    {
+      "provider": "Purdue University linked campus GIS, ArcGIS FeatureServer BuildingShapesZip4 layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D524&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "snapshot": "sources/arcgis_fid524_raw.json",
+      "feature_id": "FID 524; BLDG_ABBR PVAB; BUILDING_N Purdue Village Administration Building; GlobalID FC084ACE-9B3C-429C-9D57-07922B3A3BD9",
+      "retrieved": "2026-10-26",
+      "source_date": "Feature edit date unavailable; BUILT/OCCUPIED attributes decode to 1980-05-01",
+      "source_crs": "EPSG:4326 longitude/latitude; project tangent-plane meters use X=(lon+86.9137)*111412.84*cos(radians(40.4274)), Y=(lat-40.4274)*111040",
+      "measurement_method": "Raw GIS perimeter transformed vertex by vertex with the project's local approximation and compared to the first 14 evaluated mesh vertices; structural wall perimeter is the source ring.",
+      "uncertainty": "Official campus GIS, not a survey. NUM_LEVELS and Extrution are zero/unpopulated and provide no usable height evidence."
+    },
+    {
+      "provider": "OpenStreetMap via Overpass snapshot included in project",
+      "url": "https://www.openstreetmap.org/way/283274993",
+      "snapshot": "sources/osm_way_283274993_raw.json",
+      "feature_id": "way 283274993; building=university; name=Purdue Village Administration Building",
+      "retrieved": "2026-10-26; project snapshot timestamp 2026-10-22T03:45:50Z",
+      "source_date": "OSM snapshot 2026-10-22T03:45:50Z",
+      "source_crs": "WGS84 latitude/longitude, EPSG:4326; transformed using project local approximation",
+      "measurement_method": "Independent named footprint compared in transformed plan coordinates with official FID 524.",
+      "uncertainty": "Community-mapped footprint; no height, facade or roof tags."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, Purdue Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/74",
+      "snapshot": "sources/historic_database_record74.html; sources/historic_database_record74_payload.json",
+      "feature_id": "Historic database building record 74, Purdue Village Administration Building / PVAB",
+      "retrieved": "2026-10-26",
+      "source_date": "Record dates facility to 1980; photograph date is unspecified",
+      "source_crs": "Not applicable; photograph has no documented bearing, scale, camera metadata or visible roof surface",
+      "measurement_method": "Official embedded record identifies the building and its archived JPEG. Photo visually inspected for visible facade features only; no dimensions inferred from pixels.",
+      "documented_attributes": "Constructed 1980; architect Purdue University Planning and Engineering Department; contractor Buildings Systems, Inc.; record fields list 23,360 sq ft and its narrative says 23,000 gross sq ft.",
+      "uncertainty": "The archived image does not state date or viewpoint compass bearing and does not show roof membrane. No plans, measured elevation or facade specification were available."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, Purdue Building Images Collection UA 149",
+      "url": "https://archives.lib.purdue.edu/repositories/2/archival_objects/24014",
+      "snapshot": "sources/ua149_archival_slide_inventory.json",
+      "feature_id": "P Slides, 1989-2000, UA 149 File 20, Box 3 Folder 2; catalog names PVAB among slide holdings",
+      "retrieved": "2026-10-26",
+      "source_date": "Catalog covers 1989-2000; individual slide date unavailable",
+      "source_crs": "Not applicable",
+      "measurement_method": "Finding-aid listing corroborates historical photo holdings; inaccessible undigitized slides were not used to change geometry.",
+      "uncertainty": "Slide imagery itself is not online in the catalog."
+    }
+  ],
+  "before": {
+    "asset_state": "One mesh, 22 vertices and 29 faces; generic block to Z=16 m and outline followed a coarse OSM-derived plan.",
+    "known_issue": "The previous model did not use the official GIS ring and had unsupported height with no source-backed facade details."
+  },
+  "after": {
+    "identity": "Official FID 524 / PVAB, cross-identified by the named OSM feature and Purdue Archives historic database building 74.",
+    "footprint": "Official GIS ring, 14 unique vertices, 2,481.327 m2; project tangent-plane comparison is recorded in reopen_validation.json. Structural wall perimeter remains unexpanded; facade trim has up to 0.15 m outward decorative projection.",
+    "placement": "Campus-coordinate massing kept at the existing world position and object origin; location, rotation, scale, collection and asset IDs unchanged.",
+    "height_and_floors": "4.2 m structural shell is an estimate only. One low above-grade storey is visually apparent in the official archive photo; neither a certified floor count nor measured height was found. Historic gross area is 23,360 sq ft in the record fields and 23,000 sq ft in its text, versus 26,708.8 sq ft GIS plan area; the areas are a broad plausibility check, not height evidence.",
+    "roof": "A low horizontal parapet/flat roofline is visible in the archive photo. The concealed roof surface and roof construction are unverified; a simple flat cap is modeled only as low-detail massing.",
+    "facade": "The official building photo shows a reddish-brown brick portion, pale vertically ribbed metal cladding, a broad dark glazed entrance bay with mullions/double doors, and a shallow dark canopy. These are represented as planes and shallow geometry on the likely long frontage. Compass bearing is unknown; frontage was aligned to the longest GIS boundary edge as a best-fit interpretation, not a verified orientation.",
+    "geometry_edits": [
+      "Replaced the generic shell with the 14-vertex FID 524 GIS footprint extruded to an explicitly estimated 4.2 m.",
+      "Added single-mesh facade material panels, vertical ribs, dark glazing and frames, double doors/handles, and a shallow canopy based on the official historic photograph; detailed dimensions are approximate because no elevation or scale is published.",
+      "Retained the same single mesh object, collection, campus coordinates, asset path, stable ID and no external image dependency."
+    ]
+  },
+  "remaining_uncertainty": [
+    "No measured height, verified floor count, scale-bearing elevation, architectural plan, or roof-surface depiction was available.",
+    "Photo date and compass bearing are unknown. Facade style is source-backed, but its assignment to the longest GIS edge remains a best-fit interpretation.",
+    "GIS is not survey-grade and uses the repository's approximate local geographic conversion."
+  ],
+  "validation": "Fresh-open measurements, exact footprint comparison, modular collection checks and dependency check are in reopen_validation.json; rendered views are preview_facade.png, preview_oblique.png and preview_top.png. Independent regrade is still required."
+}

@@ -1,0 +1,83 @@
+{
+  "building_id": "massing_house_301841252_e4f8f05",
+  "building": "Pi Kappa Alpha (Pike), Beta Phi Chapter, Purdue University",
+  "asset": "modular/buildings/massing_house_301841252_e4f8f05.blend",
+  "assignment": "Rossen, confirmed in README.md",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue GIS (ArcGIS FeatureServer)",
+      "title": "BuildingShapesZip4, FID 790",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D790&outFields=*&returnGeometry=true&f=pjson",
+      "snapshot": "sources/purdue_gis_fid790.json",
+      "feature_id": "FID 790; BUILDING_N Pi Kappa Alpha; BLDG_ABBR SOPKA; address 629 University St; owner GREEK",
+      "source_date": "Undocumented in feature attributes; service describes Purdue buildings",
+      "source_crs": "EPSG:3857 (Web Mercator), WKID 102100 / 3857",
+      "measurement_method": "Inverse Web Mercator to WGS84 then project-local approximation documented in modular/AGENTS.md: X=(lon+86.9137)*111412.84*cos(40.4274); Y=(lat-40.4274)*111040. Compare polygon plan boundary to OSM way 301841252.",
+      "result": "13-point ring; converted bounds X -285.869..-271.581 m, Y 382.365..424.921 m; projected area 537.674 m2. Feature Shape__Area is not treated as metric truth because its units/semantics are not documented.",
+      "uncertainty": "Identity and horizontal location are strongly supported by name/address and footprint overlap. GIS floor fields (NUM_LEVELS=1, CountOfFLO=1) conflict with the three visible storeys in chapter imagery. Extrution=29 has no documented unit and is not used as a measured height."
+    },
+    {
+      "provider": "OpenStreetMap API",
+      "title": "Way 301841252",
+      "url": "https://api.openstreetmap.org/api/0.6/way/301841252/full.json",
+      "snapshot": "sources/osm_way_301841252.json",
+      "feature_id": "Way 301841252; addr:housenumber=629; building=school",
+      "source_date": "Way last edited 2022-02-22T03:04:07Z; current snapshot retrieved 2026-10-26",
+      "source_crs": "WGS84 geographic coordinates (node latitude/longitude)",
+      "measurement_method": "Transform vertices with the project's documented local approximation and compare polygon boundaries (symmetric Hausdorff distance via planar geometry).",
+      "result": "Compared with Purdue FID 790, boundary Hausdorff distance 0.446 m; centroid offset 0.368 m; areas 544.729 m2 OSM and 537.674 m2 Purdue GIS. The OSM tags alone do not establish fraternity identity; address and Purdue GIS name do.",
+      "uncertainty": "This is community-mapped, not a survey. Footprints are close but differ at sub-metre scale; Purdue GIS ring is used as the model wall outline."
+    },
+    {
+      "provider": "Beta Phi Chapter of Pi Kappa Alpha at Purdue University",
+      "title": "Undergraduate Chapter page",
+      "url": "https://pikapurdue.org/about/undergraduate-chapter/",
+      "snapshot": "sources/pike_chapter_house_page.html",
+      "feature_id": "Current chapter-house statement",
+      "source_date": "Page retrieved 2026-10-26",
+      "source_crs": "Not applicable",
+      "measurement_method": "Text identifies the current chapter house as 629 University Street, corroborating GIS FID 790 address and identity.",
+      "uncertainty": "Identity corroboration only; no dimensions."
+    },
+    {
+      "provider": "Beta Phi Chapter of Pi Kappa Alpha at Purdue University",
+      "title": "Completed Chapter House Renovations: Chapter House photograph",
+      "url": "https://pikapurdue.org/wp-content/uploads/2023/09/Chapter-House-scaled.jpg",
+      "context_url": "https://pikapurdue.org/photo-gallery/completed-chapter-house-renovations/",
+      "snapshot": "sources/pike_chapter_house_2023.jpg",
+      "feature_id": "Photo captioned Chapter House",
+      "source_date": "Image uploaded 2023-09; photo exposure date undocumented",
+      "source_crs": "Not applicable",
+      "measurement_method": "Visual inspection for visible building identity and facade/roof features only.",
+      "result": "Visible long red-brick facade, three storeys, repeated white-framed/shuttered windows, four-column white classical portico, triangular pediment and lettering, centered entry with smaller door hood and entry steps, shallow gray metal roof.",
+      "uncertainty": "Single front elevation photo; scale, height, side/rear facade and exact roof pitch cannot be measured from this image."
+    },
+    {
+      "provider": "Pi Kappa Alpha fraternity archive (Pike Archive), Sheaf and Diamond",
+      "title": "March 1965 issue, describing the new Purdue chapter house",
+      "url": "https://www.pikearchive.org/wp-content/uploads/2017/11/PKA_SD_1965_MAR.pdf",
+      "snapshot": "sources/pike_sheaf_and_diamond_1965.pdf",
+      "feature_id": "Beta Phi chapter-house description in 1965 issue",
+      "source_date": "1965-03 publication",
+      "source_crs": "Not applicable",
+      "measurement_method": "Historical text/search-indexed page describes an 80-man house at the Stadium Avenue / University Street / Stadium Mall intersection on a quarter city block.",
+      "result": "Supports scale and campus location history; not used as measured geometry or exact facade plan.",
+      "uncertainty": "No plans, elevations, dimensioned drawings or publication page number were extracted; historical description alone does not prove current construction details."
+    }
+  ],
+  "modeling_decisions": {
+    "footprint": "Purdue FID 790 structural polygon converted into the project's campus coordinate frame; no XY rescaling or hand-drawn footprint change.",
+    "orientation": "Official polygon orientation retained. East facade detailed as the photographed front; exact facing direction is inferred from address/street context and GIS footprint.",
+    "vertical_geometry": "Three visible levels are modeled with a 9.1 m wall/eave and 10.75 m roof ridge, estimates. No measured elevation was available.",
+    "roof": "Shallow hipped metal roof with modest overhang, estimated from the front photograph.",
+    "facade": "Red brick, white shuttered sash windows, four-column central portico, white pediment with chapter lettering, centered entry and steps, all supported qualitatively by the 2023 chapter image.",
+    "unpictured_facades": "Rear and end windows are conservative extrapolations, explicitly lower confidence than front facade."
+  },
+  "validation": {
+    "source_identity": "Purdue FID 790 name/address and current chapter official webpage match; OSM address/geometry corroborate location.",
+    "source_conflict": "GIS floor count attributes say 1 while official chapter photo shows three visible levels; image is used for apparent story count while GIS height fields remain untrusted.",
+    "registration": "Footprint boundary Hausdorff 0.446 m to OSM; centroid offset 0.368 m; transformed GIS bounds are within 0.4 m of the current OSM-derived massing envelope.",
+    "remaining_uncertainty": "No surveyed wall footprint, dimensional elevations, measured height, roof plan/pitch, or rear/side elevation evidence."
+  }
+}

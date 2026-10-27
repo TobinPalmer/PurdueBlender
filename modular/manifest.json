@@ -9,6 +9,25 @@
     "longitude_to_meters": 84810.60416539927
   },
   "source_object_count": 15745,
+  "detailed_asset_count": 95,
+  "placement_model": "Detailed assets are local-coordinate linked collections. Placement_<id> empties in the master supply XY campus coordinates. Massing assets retain their original campus coordinates and are linked directly.",
+  "last_master_build": "2026-10-26",
+  "excluded_assets": [
+    {
+      "id": "massing_granite_student_living_3732ce0",
+      "file": "buildings/massing_granite_student_living_3732ce0.blend",
+      "collection": "Asset_massing_granite_student_living_3732ce0",
+      "reason": "Private off-campus student housing is out of project scope; Greek chapter houses are the explicit off-campus exception.",
+      "grade_record": "audit/massing_granite_student_living_3732ce0/independent_grade_r2/result.json"
+    },
+    {
+      "id": "massing_latino_cultural_center_5f0d139",
+      "file": "buildings/massing_latino_cultural_center_5f0d139.blend",
+      "collection": "Asset_massing_latino_cultural_center_5f0d139",
+      "reason": "Historical former Latino Cultural Center at 600 N Russell (2006–2017). Evidence supports demolition and incorporation of the parcel into Phi Gamma Delta’s Lyles Addition/parking reconfiguration; no separate current building to model.",
+      "evidence": "audit/latino_cultural_center_5f0d139/identity_review.md"
+    }
+  ],
   "assets": [
     {
       "id": "armory",
@@ -16825,7 +16844,7 @@
           15.079999923706055
         ]
       ],
-      "accuracy_status": "R3 independently graded 8.0/10 and passed. Fresh Blender 4.5.15 reopen confirmed 23 local meshes. Purdue GIS FID 639 supports the identity and mapped outline; independently measured footprint area differs by 0.109 m\u00b2 and boundary distances are sub-decimeter using the project approximation. Roof geometry follows the 2023 orthophoto and source-backed gable pattern; height and story count remain estimates/conflicted (3 above grade plus basement vs GIS 5 levels). See ../audit/massing_cary_quadrangle_east_cqe_independent_grade_r3/result.json.",
+      "accuracy_status": "R3 independently graded 8.0/10 and passed. Fresh Blender 4.5.15 reopen confirmed 23 local meshes. Purdue GIS FID 639 supports the identity and mapped outline; independently measured footprint area differs by 0.109 m² and boundary distances are sub-decimeter using the project approximation. Roof geometry follows the 2023 orthophoto and source-backed gable pattern; height and story count remain estimates/conflicted (3 above grade plus basement vs GIS 5 levels). See ../audit/massing_cary_quadrangle_east_cqe_independent_grade_r3/result.json.",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -23114,7 +23133,7 @@
       ],
       "geometry_detail": "detailed; legacy campus-world direct-link coordinate contract retained",
       "legacy_source_objects": [
-        "France A. C\u00f3rdova Recreational Sports Center"
+        "France A. Córdova Recreational Sports Center"
       ],
       "evidence_record": "../audit/france_a_cordova_rec_center/source_record.json",
       "independent_grade_file": "../audit/france_a_cordova_rec_center/independent_grade_r4.md"
@@ -84781,51 +84800,689 @@
       "collection": "Asset_massing_house_301841250_d63b09a",
       "scene": "Building_massing_house_301841250_d63b09a",
       "objects": [
-        "House_301841250"
+        "ChapterLetters_SPE",
+        "ChapterPlaque_Stone",
+        "EntryGate_Cap_1",
+        "EntryGate_Cap_2",
+        "EntryGate_Lantern_1",
+        "EntryGate_Lantern_2",
+        "EntryGate_Pillar_1",
+        "EntryGate_Pillar_2",
+        "EntryStep_1",
+        "EntryStep_2",
+        "EntryStep_3",
+        "EntryStep_4",
+        "Entry_Sidelight_394.95",
+        "Entry_Sidelight_397.25",
+        "FacadeWindow_001_F1_Frame_B",
+        "FacadeWindow_001_F1_Frame_L",
+        "FacadeWindow_001_F1_Frame_R",
+        "FacadeWindow_001_F1_Frame_T",
+        "FacadeWindow_001_F1_Glass",
+        "FacadeWindow_001_F1_MullionH",
+        "FacadeWindow_001_F1_MullionV",
+        "FacadeWindow_001_F1_Sill",
+        "FacadeWindow_002_F2_Frame_B",
+        "FacadeWindow_002_F2_Frame_L",
+        "FacadeWindow_002_F2_Frame_R",
+        "FacadeWindow_002_F2_Frame_T",
+        "FacadeWindow_002_F2_Glass",
+        "FacadeWindow_002_F2_MullionH",
+        "FacadeWindow_002_F2_MullionV",
+        "FacadeWindow_002_F2_Sill",
+        "FacadeWindow_003_F3_Frame_B",
+        "FacadeWindow_003_F3_Frame_L",
+        "FacadeWindow_003_F3_Frame_R",
+        "FacadeWindow_003_F3_Frame_T",
+        "FacadeWindow_003_F3_Glass",
+        "FacadeWindow_003_F3_MullionH",
+        "FacadeWindow_003_F3_MullionV",
+        "FacadeWindow_003_F3_Sill",
+        "FacadeWindow_004_F1_Frame_B",
+        "FacadeWindow_004_F1_Frame_L",
+        "FacadeWindow_004_F1_Frame_R",
+        "FacadeWindow_004_F1_Frame_T",
+        "FacadeWindow_004_F1_Glass",
+        "FacadeWindow_004_F1_MullionH",
+        "FacadeWindow_004_F1_MullionV",
+        "FacadeWindow_004_F1_Sill",
+        "FacadeWindow_005_F2_Frame_B",
+        "FacadeWindow_005_F2_Frame_L",
+        "FacadeWindow_005_F2_Frame_R",
+        "FacadeWindow_005_F2_Frame_T",
+        "FacadeWindow_005_F2_Glass",
+        "FacadeWindow_005_F2_MullionH",
+        "FacadeWindow_005_F2_MullionV",
+        "FacadeWindow_005_F2_Sill",
+        "FacadeWindow_006_F3_Frame_B",
+        "FacadeWindow_006_F3_Frame_L",
+        "FacadeWindow_006_F3_Frame_R",
+        "FacadeWindow_006_F3_Frame_T",
+        "FacadeWindow_006_F3_Glass",
+        "FacadeWindow_006_F3_MullionH",
+        "FacadeWindow_006_F3_MullionV",
+        "FacadeWindow_006_F3_Sill",
+        "FacadeWindow_007_F1_Frame_B",
+        "FacadeWindow_007_F1_Frame_L",
+        "FacadeWindow_007_F1_Frame_R",
+        "FacadeWindow_007_F1_Frame_T",
+        "FacadeWindow_007_F1_Glass",
+        "FacadeWindow_007_F1_MullionH",
+        "FacadeWindow_007_F1_MullionV",
+        "FacadeWindow_007_F1_Sill",
+        "FacadeWindow_008_F2_Frame_B",
+        "FacadeWindow_008_F2_Frame_L",
+        "FacadeWindow_008_F2_Frame_R",
+        "FacadeWindow_008_F2_Frame_T",
+        "FacadeWindow_008_F2_Glass",
+        "FacadeWindow_008_F2_MullionH",
+        "FacadeWindow_008_F2_MullionV",
+        "FacadeWindow_008_F2_Sill",
+        "FacadeWindow_009_F3_Frame_B",
+        "FacadeWindow_009_F3_Frame_L",
+        "FacadeWindow_009_F3_Frame_R",
+        "FacadeWindow_009_F3_Frame_T",
+        "FacadeWindow_009_F3_Glass",
+        "FacadeWindow_009_F3_MullionH",
+        "FacadeWindow_009_F3_MullionV",
+        "FacadeWindow_009_F3_Sill",
+        "FacadeWindow_010_F1_Frame_B",
+        "FacadeWindow_010_F1_Frame_L",
+        "FacadeWindow_010_F1_Frame_R",
+        "FacadeWindow_010_F1_Frame_T",
+        "FacadeWindow_010_F1_Glass",
+        "FacadeWindow_010_F1_MullionH",
+        "FacadeWindow_010_F1_MullionV",
+        "FacadeWindow_010_F1_Sill",
+        "FacadeWindow_011_F2_Frame_B",
+        "FacadeWindow_011_F2_Frame_L",
+        "FacadeWindow_011_F2_Frame_R",
+        "FacadeWindow_011_F2_Frame_T",
+        "FacadeWindow_011_F2_Glass",
+        "FacadeWindow_011_F2_MullionH",
+        "FacadeWindow_011_F2_MullionV",
+        "FacadeWindow_011_F2_Sill",
+        "FacadeWindow_012_F3_Frame_B",
+        "FacadeWindow_012_F3_Frame_L",
+        "FacadeWindow_012_F3_Frame_R",
+        "FacadeWindow_012_F3_Frame_T",
+        "FacadeWindow_012_F3_Glass",
+        "FacadeWindow_012_F3_MullionH",
+        "FacadeWindow_012_F3_MullionV",
+        "FacadeWindow_012_F3_Sill",
+        "FacadeWindow_013_F1_Frame_B",
+        "FacadeWindow_013_F1_Frame_L",
+        "FacadeWindow_013_F1_Frame_R",
+        "FacadeWindow_013_F1_Frame_T",
+        "FacadeWindow_013_F1_Glass",
+        "FacadeWindow_013_F1_MullionH",
+        "FacadeWindow_013_F1_MullionV",
+        "FacadeWindow_013_F1_Sill",
+        "FacadeWindow_014_F2_Frame_B",
+        "FacadeWindow_014_F2_Frame_L",
+        "FacadeWindow_014_F2_Frame_R",
+        "FacadeWindow_014_F2_Frame_T",
+        "FacadeWindow_014_F2_Glass",
+        "FacadeWindow_014_F2_MullionH",
+        "FacadeWindow_014_F2_MullionV",
+        "FacadeWindow_014_F2_Sill",
+        "FacadeWindow_015_F3_Frame_B",
+        "FacadeWindow_015_F3_Frame_L",
+        "FacadeWindow_015_F3_Frame_R",
+        "FacadeWindow_015_F3_Frame_T",
+        "FacadeWindow_015_F3_Glass",
+        "FacadeWindow_015_F3_MullionH",
+        "FacadeWindow_015_F3_MullionV",
+        "FacadeWindow_015_F3_Sill",
+        "FacadeWindow_016_F1_Frame_B",
+        "FacadeWindow_016_F1_Frame_L",
+        "FacadeWindow_016_F1_Frame_R",
+        "FacadeWindow_016_F1_Frame_T",
+        "FacadeWindow_016_F1_Glass",
+        "FacadeWindow_016_F1_MullionH",
+        "FacadeWindow_016_F1_MullionV",
+        "FacadeWindow_016_F1_Sill",
+        "FacadeWindow_017_F2_Frame_B",
+        "FacadeWindow_017_F2_Frame_L",
+        "FacadeWindow_017_F2_Frame_R",
+        "FacadeWindow_017_F2_Frame_T",
+        "FacadeWindow_017_F2_Glass",
+        "FacadeWindow_017_F2_MullionH",
+        "FacadeWindow_017_F2_MullionV",
+        "FacadeWindow_017_F2_Sill",
+        "FacadeWindow_018_F3_Frame_B",
+        "FacadeWindow_018_F3_Frame_L",
+        "FacadeWindow_018_F3_Frame_R",
+        "FacadeWindow_018_F3_Frame_T",
+        "FacadeWindow_018_F3_Glass",
+        "FacadeWindow_018_F3_MullionH",
+        "FacadeWindow_018_F3_MullionV",
+        "FacadeWindow_018_F3_Sill",
+        "FacadeWindow_019_F1_Frame_B",
+        "FacadeWindow_019_F1_Frame_L",
+        "FacadeWindow_019_F1_Frame_R",
+        "FacadeWindow_019_F1_Frame_T",
+        "FacadeWindow_019_F1_Glass",
+        "FacadeWindow_019_F1_MullionH",
+        "FacadeWindow_019_F1_MullionV",
+        "FacadeWindow_019_F1_Sill",
+        "FacadeWindow_020_F2_Frame_B",
+        "FacadeWindow_020_F2_Frame_L",
+        "FacadeWindow_020_F2_Frame_R",
+        "FacadeWindow_020_F2_Frame_T",
+        "FacadeWindow_020_F2_Glass",
+        "FacadeWindow_020_F2_MullionH",
+        "FacadeWindow_020_F2_MullionV",
+        "FacadeWindow_020_F2_Sill",
+        "FacadeWindow_021_F3_Frame_B",
+        "FacadeWindow_021_F3_Frame_L",
+        "FacadeWindow_021_F3_Frame_R",
+        "FacadeWindow_021_F3_Frame_T",
+        "FacadeWindow_021_F3_Glass",
+        "FacadeWindow_021_F3_MullionH",
+        "FacadeWindow_021_F3_MullionV",
+        "FacadeWindow_021_F3_Sill",
+        "FacadeWindow_022_F1_Frame_B",
+        "FacadeWindow_022_F1_Frame_L",
+        "FacadeWindow_022_F1_Frame_R",
+        "FacadeWindow_022_F1_Frame_T",
+        "FacadeWindow_022_F1_Glass",
+        "FacadeWindow_022_F1_MullionH",
+        "FacadeWindow_022_F1_MullionV",
+        "FacadeWindow_022_F1_Sill",
+        "FacadeWindow_023_F2_Frame_B",
+        "FacadeWindow_023_F2_Frame_L",
+        "FacadeWindow_023_F2_Frame_R",
+        "FacadeWindow_023_F2_Frame_T",
+        "FacadeWindow_023_F2_Glass",
+        "FacadeWindow_023_F2_MullionH",
+        "FacadeWindow_023_F2_MullionV",
+        "FacadeWindow_023_F2_Sill",
+        "FacadeWindow_024_F3_Frame_B",
+        "FacadeWindow_024_F3_Frame_L",
+        "FacadeWindow_024_F3_Frame_R",
+        "FacadeWindow_024_F3_Frame_T",
+        "FacadeWindow_024_F3_Glass",
+        "FacadeWindow_024_F3_MullionH",
+        "FacadeWindow_024_F3_MullionV",
+        "FacadeWindow_024_F3_Sill",
+        "FacadeWindow_025_F1_Frame_B",
+        "FacadeWindow_025_F1_Frame_L",
+        "FacadeWindow_025_F1_Frame_R",
+        "FacadeWindow_025_F1_Frame_T",
+        "FacadeWindow_025_F1_Glass",
+        "FacadeWindow_025_F1_MullionH",
+        "FacadeWindow_025_F1_MullionV",
+        "FacadeWindow_025_F1_Sill",
+        "FacadeWindow_026_F2_Frame_B",
+        "FacadeWindow_026_F2_Frame_L",
+        "FacadeWindow_026_F2_Frame_R",
+        "FacadeWindow_026_F2_Frame_T",
+        "FacadeWindow_026_F2_Glass",
+        "FacadeWindow_026_F2_MullionH",
+        "FacadeWindow_026_F2_MullionV",
+        "FacadeWindow_026_F2_Sill",
+        "FacadeWindow_027_F3_Frame_B",
+        "FacadeWindow_027_F3_Frame_L",
+        "FacadeWindow_027_F3_Frame_R",
+        "FacadeWindow_027_F3_Frame_T",
+        "FacadeWindow_027_F3_Glass",
+        "FacadeWindow_027_F3_MullionH",
+        "FacadeWindow_027_F3_MullionV",
+        "FacadeWindow_027_F3_Sill",
+        "FacadeWindow_028_F1_Frame_B",
+        "FacadeWindow_028_F1_Frame_L",
+        "FacadeWindow_028_F1_Frame_R",
+        "FacadeWindow_028_F1_Frame_T",
+        "FacadeWindow_028_F1_Glass",
+        "FacadeWindow_028_F1_MullionH",
+        "FacadeWindow_028_F1_MullionV",
+        "FacadeWindow_028_F1_Sill",
+        "FacadeWindow_029_F2_Frame_B",
+        "FacadeWindow_029_F2_Frame_L",
+        "FacadeWindow_029_F2_Frame_R",
+        "FacadeWindow_029_F2_Frame_T",
+        "FacadeWindow_029_F2_Glass",
+        "FacadeWindow_029_F2_MullionH",
+        "FacadeWindow_029_F2_MullionV",
+        "FacadeWindow_029_F2_Sill",
+        "FacadeWindow_030_F3_Frame_B",
+        "FacadeWindow_030_F3_Frame_L",
+        "FacadeWindow_030_F3_Frame_R",
+        "FacadeWindow_030_F3_Frame_T",
+        "FacadeWindow_030_F3_Glass",
+        "FacadeWindow_030_F3_MullionH",
+        "FacadeWindow_030_F3_MullionV",
+        "FacadeWindow_030_F3_Sill",
+        "FacadeWindow_031_F1_Frame_B",
+        "FacadeWindow_031_F1_Frame_L",
+        "FacadeWindow_031_F1_Frame_R",
+        "FacadeWindow_031_F1_Frame_T",
+        "FacadeWindow_031_F1_Glass",
+        "FacadeWindow_031_F1_MullionH",
+        "FacadeWindow_031_F1_MullionV",
+        "FacadeWindow_031_F1_Sill",
+        "FacadeWindow_032_F2_Frame_B",
+        "FacadeWindow_032_F2_Frame_L",
+        "FacadeWindow_032_F2_Frame_R",
+        "FacadeWindow_032_F2_Frame_T",
+        "FacadeWindow_032_F2_Glass",
+        "FacadeWindow_032_F2_MullionH",
+        "FacadeWindow_032_F2_MullionV",
+        "FacadeWindow_032_F2_Sill",
+        "FacadeWindow_033_F3_Frame_B",
+        "FacadeWindow_033_F3_Frame_L",
+        "FacadeWindow_033_F3_Frame_R",
+        "FacadeWindow_033_F3_Frame_T",
+        "FacadeWindow_033_F3_Glass",
+        "FacadeWindow_033_F3_MullionH",
+        "FacadeWindow_033_F3_MullionV",
+        "FacadeWindow_033_F3_Sill",
+        "FacadeWindow_034_F1_Frame_B",
+        "FacadeWindow_034_F1_Frame_L",
+        "FacadeWindow_034_F1_Frame_R",
+        "FacadeWindow_034_F1_Frame_T",
+        "FacadeWindow_034_F1_Glass",
+        "FacadeWindow_034_F1_MullionH",
+        "FacadeWindow_034_F1_MullionV",
+        "FacadeWindow_034_F1_Sill",
+        "FacadeWindow_035_F2_Frame_B",
+        "FacadeWindow_035_F2_Frame_L",
+        "FacadeWindow_035_F2_Frame_R",
+        "FacadeWindow_035_F2_Frame_T",
+        "FacadeWindow_035_F2_Glass",
+        "FacadeWindow_035_F2_MullionH",
+        "FacadeWindow_035_F2_MullionV",
+        "FacadeWindow_035_F2_Sill",
+        "FacadeWindow_036_F3_Frame_B",
+        "FacadeWindow_036_F3_Frame_L",
+        "FacadeWindow_036_F3_Frame_R",
+        "FacadeWindow_036_F3_Frame_T",
+        "FacadeWindow_036_F3_Glass",
+        "FacadeWindow_036_F3_MullionH",
+        "FacadeWindow_036_F3_MullionV",
+        "FacadeWindow_036_F3_Sill",
+        "FacadeWindow_037_F1_Frame_B",
+        "FacadeWindow_037_F1_Frame_L",
+        "FacadeWindow_037_F1_Frame_R",
+        "FacadeWindow_037_F1_Frame_T",
+        "FacadeWindow_037_F1_Glass",
+        "FacadeWindow_037_F1_MullionH",
+        "FacadeWindow_037_F1_MullionV",
+        "FacadeWindow_037_F1_Sill",
+        "FacadeWindow_038_F2_Frame_B",
+        "FacadeWindow_038_F2_Frame_L",
+        "FacadeWindow_038_F2_Frame_R",
+        "FacadeWindow_038_F2_Frame_T",
+        "FacadeWindow_038_F2_Glass",
+        "FacadeWindow_038_F2_MullionH",
+        "FacadeWindow_038_F2_MullionV",
+        "FacadeWindow_038_F2_Sill",
+        "FacadeWindow_039_F3_Frame_B",
+        "FacadeWindow_039_F3_Frame_L",
+        "FacadeWindow_039_F3_Frame_R",
+        "FacadeWindow_039_F3_Frame_T",
+        "FacadeWindow_039_F3_Glass",
+        "FacadeWindow_039_F3_MullionH",
+        "FacadeWindow_039_F3_MullionV",
+        "FacadeWindow_039_F3_Sill",
+        "FacadeWindow_040_F1_Frame_B",
+        "FacadeWindow_040_F1_Frame_L",
+        "FacadeWindow_040_F1_Frame_R",
+        "FacadeWindow_040_F1_Frame_T",
+        "FacadeWindow_040_F1_Glass",
+        "FacadeWindow_040_F1_MullionH",
+        "FacadeWindow_040_F1_MullionV",
+        "FacadeWindow_040_F1_Sill",
+        "FacadeWindow_041_F2_Frame_B",
+        "FacadeWindow_041_F2_Frame_L",
+        "FacadeWindow_041_F2_Frame_R",
+        "FacadeWindow_041_F2_Frame_T",
+        "FacadeWindow_041_F2_Glass",
+        "FacadeWindow_041_F2_MullionH",
+        "FacadeWindow_041_F2_MullionV",
+        "FacadeWindow_041_F2_Sill",
+        "FacadeWindow_042_F3_Frame_B",
+        "FacadeWindow_042_F3_Frame_L",
+        "FacadeWindow_042_F3_Frame_R",
+        "FacadeWindow_042_F3_Frame_T",
+        "FacadeWindow_042_F3_Glass",
+        "FacadeWindow_042_F3_MullionH",
+        "FacadeWindow_042_F3_MullionV",
+        "FacadeWindow_042_F3_Sill",
+        "FacadeWindow_043_F1_Frame_B",
+        "FacadeWindow_043_F1_Frame_L",
+        "FacadeWindow_043_F1_Frame_R",
+        "FacadeWindow_043_F1_Frame_T",
+        "FacadeWindow_043_F1_Glass",
+        "FacadeWindow_043_F1_MullionH",
+        "FacadeWindow_043_F1_MullionV",
+        "FacadeWindow_043_F1_Sill",
+        "FacadeWindow_044_F2_Frame_B",
+        "FacadeWindow_044_F2_Frame_L",
+        "FacadeWindow_044_F2_Frame_R",
+        "FacadeWindow_044_F2_Frame_T",
+        "FacadeWindow_044_F2_Glass",
+        "FacadeWindow_044_F2_MullionH",
+        "FacadeWindow_044_F2_MullionV",
+        "FacadeWindow_044_F2_Sill",
+        "FacadeWindow_045_F3_Frame_B",
+        "FacadeWindow_045_F3_Frame_L",
+        "FacadeWindow_045_F3_Frame_R",
+        "FacadeWindow_045_F3_Frame_T",
+        "FacadeWindow_045_F3_Glass",
+        "FacadeWindow_045_F3_MullionH",
+        "FacadeWindow_045_F3_MullionV",
+        "FacadeWindow_045_F3_Sill",
+        "FacadeWindow_046_F1_Frame_B",
+        "FacadeWindow_046_F1_Frame_L",
+        "FacadeWindow_046_F1_Frame_R",
+        "FacadeWindow_046_F1_Frame_T",
+        "FacadeWindow_046_F1_Glass",
+        "FacadeWindow_046_F1_MullionH",
+        "FacadeWindow_046_F1_MullionV",
+        "FacadeWindow_046_F1_Sill",
+        "FacadeWindow_047_F2_Frame_B",
+        "FacadeWindow_047_F2_Frame_L",
+        "FacadeWindow_047_F2_Frame_R",
+        "FacadeWindow_047_F2_Frame_T",
+        "FacadeWindow_047_F2_Glass",
+        "FacadeWindow_047_F2_MullionH",
+        "FacadeWindow_047_F2_MullionV",
+        "FacadeWindow_047_F2_Sill",
+        "FacadeWindow_048_F3_Frame_B",
+        "FacadeWindow_048_F3_Frame_L",
+        "FacadeWindow_048_F3_Frame_R",
+        "FacadeWindow_048_F3_Frame_T",
+        "FacadeWindow_048_F3_Glass",
+        "FacadeWindow_048_F3_MullionH",
+        "FacadeWindow_048_F3_MullionV",
+        "FacadeWindow_048_F3_Sill",
+        "FacadeWindow_049_F1_Frame_B",
+        "FacadeWindow_049_F1_Frame_L",
+        "FacadeWindow_049_F1_Frame_R",
+        "FacadeWindow_049_F1_Frame_T",
+        "FacadeWindow_049_F1_Glass",
+        "FacadeWindow_049_F1_MullionH",
+        "FacadeWindow_049_F1_MullionV",
+        "FacadeWindow_049_F1_Sill",
+        "FacadeWindow_050_F2_Frame_B",
+        "FacadeWindow_050_F2_Frame_L",
+        "FacadeWindow_050_F2_Frame_R",
+        "FacadeWindow_050_F2_Frame_T",
+        "FacadeWindow_050_F2_Glass",
+        "FacadeWindow_050_F2_MullionH",
+        "FacadeWindow_050_F2_MullionV",
+        "FacadeWindow_050_F2_Sill",
+        "FacadeWindow_051_F3_Frame_B",
+        "FacadeWindow_051_F3_Frame_L",
+        "FacadeWindow_051_F3_Frame_R",
+        "FacadeWindow_051_F3_Frame_T",
+        "FacadeWindow_051_F3_Glass",
+        "FacadeWindow_051_F3_MullionH",
+        "FacadeWindow_051_F3_MullionV",
+        "FacadeWindow_051_F3_Sill",
+        "FacadeWindow_052_F1_Frame_B",
+        "FacadeWindow_052_F1_Frame_L",
+        "FacadeWindow_052_F1_Frame_R",
+        "FacadeWindow_052_F1_Frame_T",
+        "FacadeWindow_052_F1_Glass",
+        "FacadeWindow_052_F1_MullionH",
+        "FacadeWindow_052_F1_MullionV",
+        "FacadeWindow_052_F1_Sill",
+        "FacadeWindow_053_F2_Frame_B",
+        "FacadeWindow_053_F2_Frame_L",
+        "FacadeWindow_053_F2_Frame_R",
+        "FacadeWindow_053_F2_Frame_T",
+        "FacadeWindow_053_F2_Glass",
+        "FacadeWindow_053_F2_MullionH",
+        "FacadeWindow_053_F2_MullionV",
+        "FacadeWindow_053_F2_Sill",
+        "FacadeWindow_054_F3_Frame_B",
+        "FacadeWindow_054_F3_Frame_L",
+        "FacadeWindow_054_F3_Frame_R",
+        "FacadeWindow_054_F3_Frame_T",
+        "FacadeWindow_054_F3_Glass",
+        "FacadeWindow_054_F3_MullionH",
+        "FacadeWindow_054_F3_MullionV",
+        "FacadeWindow_054_F3_Sill",
+        "FacadeWindow_055_F1_Frame_B",
+        "FacadeWindow_055_F1_Frame_L",
+        "FacadeWindow_055_F1_Frame_R",
+        "FacadeWindow_055_F1_Frame_T",
+        "FacadeWindow_055_F1_Glass",
+        "FacadeWindow_055_F1_MullionH",
+        "FacadeWindow_055_F1_MullionV",
+        "FacadeWindow_055_F1_Sill",
+        "FacadeWindow_056_F2_Frame_B",
+        "FacadeWindow_056_F2_Frame_L",
+        "FacadeWindow_056_F2_Frame_R",
+        "FacadeWindow_056_F2_Frame_T",
+        "FacadeWindow_056_F2_Glass",
+        "FacadeWindow_056_F2_MullionH",
+        "FacadeWindow_056_F2_MullionV",
+        "FacadeWindow_056_F2_Sill",
+        "FacadeWindow_057_F3_Frame_B",
+        "FacadeWindow_057_F3_Frame_L",
+        "FacadeWindow_057_F3_Frame_R",
+        "FacadeWindow_057_F3_Frame_T",
+        "FacadeWindow_057_F3_Glass",
+        "FacadeWindow_057_F3_MullionH",
+        "FacadeWindow_057_F3_MullionV",
+        "FacadeWindow_057_F3_Sill",
+        "FacadeWindow_058_F1_Frame_B",
+        "FacadeWindow_058_F1_Frame_L",
+        "FacadeWindow_058_F1_Frame_R",
+        "FacadeWindow_058_F1_Frame_T",
+        "FacadeWindow_058_F1_Glass",
+        "FacadeWindow_058_F1_MullionH",
+        "FacadeWindow_058_F1_MullionV",
+        "FacadeWindow_058_F1_Sill",
+        "FacadeWindow_059_F2_Frame_B",
+        "FacadeWindow_059_F2_Frame_L",
+        "FacadeWindow_059_F2_Frame_R",
+        "FacadeWindow_059_F2_Frame_T",
+        "FacadeWindow_059_F2_Glass",
+        "FacadeWindow_059_F2_MullionH",
+        "FacadeWindow_059_F2_MullionV",
+        "FacadeWindow_059_F2_Sill",
+        "FacadeWindow_060_F3_Frame_B",
+        "FacadeWindow_060_F3_Frame_L",
+        "FacadeWindow_060_F3_Frame_R",
+        "FacadeWindow_060_F3_Frame_T",
+        "FacadeWindow_060_F3_Glass",
+        "FacadeWindow_060_F3_MullionH",
+        "FacadeWindow_060_F3_MullionV",
+        "FacadeWindow_060_F3_Sill",
+        "FacadeWindow_061_F1_Frame_B",
+        "FacadeWindow_061_F1_Frame_L",
+        "FacadeWindow_061_F1_Frame_R",
+        "FacadeWindow_061_F1_Frame_T",
+        "FacadeWindow_061_F1_Glass",
+        "FacadeWindow_061_F1_MullionH",
+        "FacadeWindow_061_F1_MullionV",
+        "FacadeWindow_061_F1_Sill",
+        "FacadeWindow_062_F2_Frame_B",
+        "FacadeWindow_062_F2_Frame_L",
+        "FacadeWindow_062_F2_Frame_R",
+        "FacadeWindow_062_F2_Frame_T",
+        "FacadeWindow_062_F2_Glass",
+        "FacadeWindow_062_F2_MullionH",
+        "FacadeWindow_062_F2_MullionV",
+        "FacadeWindow_062_F2_Sill",
+        "FacadeWindow_063_F3_Frame_B",
+        "FacadeWindow_063_F3_Frame_L",
+        "FacadeWindow_063_F3_Frame_R",
+        "FacadeWindow_063_F3_Frame_T",
+        "FacadeWindow_063_F3_Glass",
+        "FacadeWindow_063_F3_MullionH",
+        "FacadeWindow_063_F3_MullionV",
+        "FacadeWindow_063_F3_Sill",
+        "House_301841250",
+        "MainEntry_DoubleDoor",
+        "MainVeranda_Deck",
+        "RoofDormer_1_Face",
+        "RoofDormer_1_Glass",
+        "RoofDormer_1_Sill",
+        "RoofDormer_1_TileGable",
+        "RoofDormer_2_Face",
+        "RoofDormer_2_Glass",
+        "RoofDormer_2_Sill",
+        "RoofDormer_2_TileGable",
+        "RoofDormer_3_Face",
+        "RoofDormer_3_Glass",
+        "RoofDormer_3_Sill",
+        "RoofDormer_3_TileGable",
+        "RoofDormer_4_Face",
+        "RoofDormer_4_Glass",
+        "RoofDormer_4_Sill",
+        "RoofDormer_4_TileGable",
+        "RoofDormer_5_Face",
+        "RoofDormer_5_Glass",
+        "RoofDormer_5_Sill",
+        "RoofDormer_5_TileGable",
+        "StoneCourse_0.42_00",
+        "StoneCourse_0.42_01",
+        "StoneCourse_0.42_02",
+        "StoneCourse_0.42_03",
+        "StoneCourse_0.42_04",
+        "StoneCourse_0.42_05",
+        "StoneCourse_0.42_06",
+        "StoneCourse_0.42_07",
+        "StoneCourse_0.42_08",
+        "StoneCourse_0.42_09",
+        "StoneCourse_0.42_10",
+        "StoneCourse_0.42_11",
+        "StoneCourse_0.42_12",
+        "StoneCourse_0.42_13",
+        "StoneCourse_0.42_14",
+        "StoneCourse_0.42_15",
+        "StoneCourse_0.42_16",
+        "StoneCourse_0.42_17",
+        "StoneCourse_0.42_18",
+        "StoneCourse_0.42_19",
+        "StoneCourse_0.42_20",
+        "StoneCourse_3.25_00",
+        "StoneCourse_3.25_01",
+        "StoneCourse_3.25_02",
+        "StoneCourse_3.25_03",
+        "StoneCourse_3.25_04",
+        "StoneCourse_3.25_05",
+        "StoneCourse_3.25_06",
+        "StoneCourse_3.25_07",
+        "StoneCourse_3.25_08",
+        "StoneCourse_3.25_09",
+        "StoneCourse_3.25_10",
+        "StoneCourse_3.25_11",
+        "StoneCourse_3.25_12",
+        "StoneCourse_3.25_13",
+        "StoneCourse_3.25_14",
+        "StoneCourse_3.25_15",
+        "StoneCourse_3.25_16",
+        "StoneCourse_3.25_17",
+        "StoneCourse_3.25_18",
+        "StoneCourse_3.25_19",
+        "StoneCourse_3.25_20",
+        "StoneCourse_6.35_00",
+        "StoneCourse_6.35_01",
+        "StoneCourse_6.35_02",
+        "StoneCourse_6.35_03",
+        "StoneCourse_6.35_04",
+        "StoneCourse_6.35_05",
+        "StoneCourse_6.35_06",
+        "StoneCourse_6.35_07",
+        "StoneCourse_6.35_08",
+        "StoneCourse_6.35_09",
+        "StoneCourse_6.35_10",
+        "StoneCourse_6.35_11",
+        "StoneCourse_6.35_12",
+        "StoneCourse_6.35_13",
+        "StoneCourse_6.35_14",
+        "StoneCourse_6.35_15",
+        "StoneCourse_6.35_16",
+        "StoneCourse_6.35_17",
+        "StoneCourse_6.35_18",
+        "StoneCourse_6.35_19",
+        "StoneCourse_6.35_20",
+        "StoneCourse_8.58_00",
+        "StoneCourse_8.58_01",
+        "StoneCourse_8.58_02",
+        "StoneCourse_8.58_03",
+        "StoneCourse_8.58_04",
+        "StoneCourse_8.58_05",
+        "StoneCourse_8.58_06",
+        "StoneCourse_8.58_07",
+        "StoneCourse_8.58_08",
+        "StoneCourse_8.58_09",
+        "StoneCourse_8.58_10",
+        "StoneCourse_8.58_11",
+        "StoneCourse_8.58_12",
+        "StoneCourse_8.58_13",
+        "StoneCourse_8.58_14",
+        "StoneCourse_8.58_15",
+        "StoneCourse_8.58_16",
+        "StoneCourse_8.58_17",
+        "StoneCourse_8.58_18",
+        "StoneCourse_8.58_19",
+        "StoneCourse_8.58_20",
+        "TileCanopy_MainVeranda",
+        "TileCanopy_NorthVeranda",
+        "TileGable_EastWing",
+        "TileGable_NorthWing",
+        "TileGable_SouthwestWing",
+        "Veranda_Pier_1",
+        "Veranda_Pier_2",
+        "Veranda_Pier_3",
+        "Veranda_Pier_4",
+        "Veranda_Pier_Cap_1",
+        "Veranda_Pier_Cap_2",
+        "Veranda_Pier_Cap_3",
+        "Veranda_Pier_Cap_4",
+        "WindingWalk_StraightApproach"
       ],
-      "object_count": 1,
+      "object_count": 639,
       "bounds_world_m": [
         [
-          -330.62567138671875,
-          -312.11151123046875
+          -334.3900146484375,
+          -311.90447998046875
         ],
         [
-          376.4700012207031,
-          416.6997985839844
+          376.2618408203125,
+          416.90802001953125
         ],
         [
           0.0,
-          16.0
+          12.699999809265137
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -330.62567138671875,
-          -312.11151123046875
+          -334.3900146484375,
+          -311.90447998046875
         ],
         [
-          376.4700012207031,
-          416.6997985839844
+          376.2618408203125,
+          416.90802001953125
         ],
         [
           0.0,
-          16.0
+          12.699999809265137
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "Independently graded 8.65/10 in r3; pass, awaiting master integration. OSM way 301841250 is corroborated by the chapter and City sources; the 21-vertex shell matches within 0.000021 m. Three occupied levels and the red-brick, multi-gable facade are source-supported; dimensions, roof form and hidden elevations remain estimated. See ../audit/sigma_phi_epsilon/independent_grade_r3/independent_grade_r3.json.",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
-          -330.62567138671875,
-          -312.11151123046875
+          -330.625659278145,
+          -312.1115043888191
         ],
         [
-          376.4700012207031,
-          416.6997985839844
+          376.4700160000757,
+          416.6998079999689
         ],
         [
           0.0,
-          16.0
+          0.0
         ]
       ]
     },
@@ -85426,51 +86083,658 @@
       "collection": "Asset_massing_house_301841252_e4f8f05",
       "scene": "Building_massing_house_301841252_e4f8f05",
       "objects": [
-        "House_301841252"
+        "Chapter_Emblem_Letter_1",
+        "Chapter_Emblem_Letter_2",
+        "Chapter_Emblem_Letter_3",
+        "East_Window_F1_1_Center_Mullion",
+        "East_Window_F1_1_Louver_-1_0",
+        "East_Window_F1_1_Louver_-1_1",
+        "East_Window_F1_1_Louver_-1_2",
+        "East_Window_F1_1_Louver_-1_3",
+        "East_Window_F1_1_Louver_-1_4",
+        "East_Window_F1_1_Louver_-1_5",
+        "East_Window_F1_1_Louver_-1_6",
+        "East_Window_F1_1_Louver_1_0",
+        "East_Window_F1_1_Louver_1_1",
+        "East_Window_F1_1_Louver_1_2",
+        "East_Window_F1_1_Louver_1_3",
+        "East_Window_F1_1_Louver_1_4",
+        "East_Window_F1_1_Louver_1_5",
+        "East_Window_F1_1_Louver_1_6",
+        "East_Window_F1_1_Meeting_Rail",
+        "East_Window_F1_1_Recess",
+        "East_Window_F1_1_Shutter_-1",
+        "East_Window_F1_1_Shutter_1",
+        "East_Window_F1_1_Sill",
+        "East_Window_F1_1_Trim_Head",
+        "East_Window_F1_1_Trim_Left",
+        "East_Window_F1_1_Trim_Right",
+        "East_Window_F1_2_Center_Mullion",
+        "East_Window_F1_2_Louver_-1_0",
+        "East_Window_F1_2_Louver_-1_1",
+        "East_Window_F1_2_Louver_-1_2",
+        "East_Window_F1_2_Louver_-1_3",
+        "East_Window_F1_2_Louver_-1_4",
+        "East_Window_F1_2_Louver_-1_5",
+        "East_Window_F1_2_Louver_-1_6",
+        "East_Window_F1_2_Louver_1_0",
+        "East_Window_F1_2_Louver_1_1",
+        "East_Window_F1_2_Louver_1_2",
+        "East_Window_F1_2_Louver_1_3",
+        "East_Window_F1_2_Louver_1_4",
+        "East_Window_F1_2_Louver_1_5",
+        "East_Window_F1_2_Louver_1_6",
+        "East_Window_F1_2_Meeting_Rail",
+        "East_Window_F1_2_Recess",
+        "East_Window_F1_2_Shutter_-1",
+        "East_Window_F1_2_Shutter_1",
+        "East_Window_F1_2_Sill",
+        "East_Window_F1_2_Trim_Head",
+        "East_Window_F1_2_Trim_Left",
+        "East_Window_F1_2_Trim_Right",
+        "East_Window_F1_3_Center_Mullion",
+        "East_Window_F1_3_Louver_-1_0",
+        "East_Window_F1_3_Louver_-1_1",
+        "East_Window_F1_3_Louver_-1_2",
+        "East_Window_F1_3_Louver_-1_3",
+        "East_Window_F1_3_Louver_-1_4",
+        "East_Window_F1_3_Louver_-1_5",
+        "East_Window_F1_3_Louver_-1_6",
+        "East_Window_F1_3_Louver_1_0",
+        "East_Window_F1_3_Louver_1_1",
+        "East_Window_F1_3_Louver_1_2",
+        "East_Window_F1_3_Louver_1_3",
+        "East_Window_F1_3_Louver_1_4",
+        "East_Window_F1_3_Louver_1_5",
+        "East_Window_F1_3_Louver_1_6",
+        "East_Window_F1_3_Meeting_Rail",
+        "East_Window_F1_3_Recess",
+        "East_Window_F1_3_Shutter_-1",
+        "East_Window_F1_3_Shutter_1",
+        "East_Window_F1_3_Sill",
+        "East_Window_F1_3_Trim_Head",
+        "East_Window_F1_3_Trim_Left",
+        "East_Window_F1_3_Trim_Right",
+        "East_Window_F1_6_Center_Mullion",
+        "East_Window_F1_6_Louver_-1_0",
+        "East_Window_F1_6_Louver_-1_1",
+        "East_Window_F1_6_Louver_-1_2",
+        "East_Window_F1_6_Louver_-1_3",
+        "East_Window_F1_6_Louver_-1_4",
+        "East_Window_F1_6_Louver_-1_5",
+        "East_Window_F1_6_Louver_-1_6",
+        "East_Window_F1_6_Louver_1_0",
+        "East_Window_F1_6_Louver_1_1",
+        "East_Window_F1_6_Louver_1_2",
+        "East_Window_F1_6_Louver_1_3",
+        "East_Window_F1_6_Louver_1_4",
+        "East_Window_F1_6_Louver_1_5",
+        "East_Window_F1_6_Louver_1_6",
+        "East_Window_F1_6_Meeting_Rail",
+        "East_Window_F1_6_Recess",
+        "East_Window_F1_6_Shutter_-1",
+        "East_Window_F1_6_Shutter_1",
+        "East_Window_F1_6_Sill",
+        "East_Window_F1_6_Trim_Head",
+        "East_Window_F1_6_Trim_Left",
+        "East_Window_F1_6_Trim_Right",
+        "East_Window_F1_7_Center_Mullion",
+        "East_Window_F1_7_Louver_-1_0",
+        "East_Window_F1_7_Louver_-1_1",
+        "East_Window_F1_7_Louver_-1_2",
+        "East_Window_F1_7_Louver_-1_3",
+        "East_Window_F1_7_Louver_-1_4",
+        "East_Window_F1_7_Louver_-1_5",
+        "East_Window_F1_7_Louver_-1_6",
+        "East_Window_F1_7_Louver_1_0",
+        "East_Window_F1_7_Louver_1_1",
+        "East_Window_F1_7_Louver_1_2",
+        "East_Window_F1_7_Louver_1_3",
+        "East_Window_F1_7_Louver_1_4",
+        "East_Window_F1_7_Louver_1_5",
+        "East_Window_F1_7_Louver_1_6",
+        "East_Window_F1_7_Meeting_Rail",
+        "East_Window_F1_7_Recess",
+        "East_Window_F1_7_Shutter_-1",
+        "East_Window_F1_7_Shutter_1",
+        "East_Window_F1_7_Sill",
+        "East_Window_F1_7_Trim_Head",
+        "East_Window_F1_7_Trim_Left",
+        "East_Window_F1_7_Trim_Right",
+        "East_Window_F1_8_Center_Mullion",
+        "East_Window_F1_8_Louver_-1_0",
+        "East_Window_F1_8_Louver_-1_1",
+        "East_Window_F1_8_Louver_-1_2",
+        "East_Window_F1_8_Louver_-1_3",
+        "East_Window_F1_8_Louver_-1_4",
+        "East_Window_F1_8_Louver_-1_5",
+        "East_Window_F1_8_Louver_-1_6",
+        "East_Window_F1_8_Louver_1_0",
+        "East_Window_F1_8_Louver_1_1",
+        "East_Window_F1_8_Louver_1_2",
+        "East_Window_F1_8_Louver_1_3",
+        "East_Window_F1_8_Louver_1_4",
+        "East_Window_F1_8_Louver_1_5",
+        "East_Window_F1_8_Louver_1_6",
+        "East_Window_F1_8_Meeting_Rail",
+        "East_Window_F1_8_Recess",
+        "East_Window_F1_8_Shutter_-1",
+        "East_Window_F1_8_Shutter_1",
+        "East_Window_F1_8_Sill",
+        "East_Window_F1_8_Trim_Head",
+        "East_Window_F1_8_Trim_Left",
+        "East_Window_F1_8_Trim_Right",
+        "East_Window_F2_1_Center_Mullion",
+        "East_Window_F2_1_Louver_-1_0",
+        "East_Window_F2_1_Louver_-1_1",
+        "East_Window_F2_1_Louver_-1_2",
+        "East_Window_F2_1_Louver_-1_3",
+        "East_Window_F2_1_Louver_-1_4",
+        "East_Window_F2_1_Louver_-1_5",
+        "East_Window_F2_1_Louver_-1_6",
+        "East_Window_F2_1_Louver_1_0",
+        "East_Window_F2_1_Louver_1_1",
+        "East_Window_F2_1_Louver_1_2",
+        "East_Window_F2_1_Louver_1_3",
+        "East_Window_F2_1_Louver_1_4",
+        "East_Window_F2_1_Louver_1_5",
+        "East_Window_F2_1_Louver_1_6",
+        "East_Window_F2_1_Meeting_Rail",
+        "East_Window_F2_1_Recess",
+        "East_Window_F2_1_Shutter_-1",
+        "East_Window_F2_1_Shutter_1",
+        "East_Window_F2_1_Sill",
+        "East_Window_F2_1_Trim_Head",
+        "East_Window_F2_1_Trim_Left",
+        "East_Window_F2_1_Trim_Right",
+        "East_Window_F2_2_Center_Mullion",
+        "East_Window_F2_2_Louver_-1_0",
+        "East_Window_F2_2_Louver_-1_1",
+        "East_Window_F2_2_Louver_-1_2",
+        "East_Window_F2_2_Louver_-1_3",
+        "East_Window_F2_2_Louver_-1_4",
+        "East_Window_F2_2_Louver_-1_5",
+        "East_Window_F2_2_Louver_-1_6",
+        "East_Window_F2_2_Louver_1_0",
+        "East_Window_F2_2_Louver_1_1",
+        "East_Window_F2_2_Louver_1_2",
+        "East_Window_F2_2_Louver_1_3",
+        "East_Window_F2_2_Louver_1_4",
+        "East_Window_F2_2_Louver_1_5",
+        "East_Window_F2_2_Louver_1_6",
+        "East_Window_F2_2_Meeting_Rail",
+        "East_Window_F2_2_Recess",
+        "East_Window_F2_2_Shutter_-1",
+        "East_Window_F2_2_Shutter_1",
+        "East_Window_F2_2_Sill",
+        "East_Window_F2_2_Trim_Head",
+        "East_Window_F2_2_Trim_Left",
+        "East_Window_F2_2_Trim_Right",
+        "East_Window_F2_3_Center_Mullion",
+        "East_Window_F2_3_Louver_-1_0",
+        "East_Window_F2_3_Louver_-1_1",
+        "East_Window_F2_3_Louver_-1_2",
+        "East_Window_F2_3_Louver_-1_3",
+        "East_Window_F2_3_Louver_-1_4",
+        "East_Window_F2_3_Louver_-1_5",
+        "East_Window_F2_3_Louver_-1_6",
+        "East_Window_F2_3_Louver_1_0",
+        "East_Window_F2_3_Louver_1_1",
+        "East_Window_F2_3_Louver_1_2",
+        "East_Window_F2_3_Louver_1_3",
+        "East_Window_F2_3_Louver_1_4",
+        "East_Window_F2_3_Louver_1_5",
+        "East_Window_F2_3_Louver_1_6",
+        "East_Window_F2_3_Meeting_Rail",
+        "East_Window_F2_3_Recess",
+        "East_Window_F2_3_Shutter_-1",
+        "East_Window_F2_3_Shutter_1",
+        "East_Window_F2_3_Sill",
+        "East_Window_F2_3_Trim_Head",
+        "East_Window_F2_3_Trim_Left",
+        "East_Window_F2_3_Trim_Right",
+        "East_Window_F2_4_Center_Mullion",
+        "East_Window_F2_4_Louver_-1_0",
+        "East_Window_F2_4_Louver_-1_1",
+        "East_Window_F2_4_Louver_-1_2",
+        "East_Window_F2_4_Louver_-1_3",
+        "East_Window_F2_4_Louver_-1_4",
+        "East_Window_F2_4_Louver_-1_5",
+        "East_Window_F2_4_Louver_-1_6",
+        "East_Window_F2_4_Louver_1_0",
+        "East_Window_F2_4_Louver_1_1",
+        "East_Window_F2_4_Louver_1_2",
+        "East_Window_F2_4_Louver_1_3",
+        "East_Window_F2_4_Louver_1_4",
+        "East_Window_F2_4_Louver_1_5",
+        "East_Window_F2_4_Louver_1_6",
+        "East_Window_F2_4_Meeting_Rail",
+        "East_Window_F2_4_Recess",
+        "East_Window_F2_4_Shutter_-1",
+        "East_Window_F2_4_Shutter_1",
+        "East_Window_F2_4_Sill",
+        "East_Window_F2_4_Trim_Head",
+        "East_Window_F2_4_Trim_Left",
+        "East_Window_F2_4_Trim_Right",
+        "East_Window_F2_5_Center_Mullion",
+        "East_Window_F2_5_Louver_-1_0",
+        "East_Window_F2_5_Louver_-1_1",
+        "East_Window_F2_5_Louver_-1_2",
+        "East_Window_F2_5_Louver_-1_3",
+        "East_Window_F2_5_Louver_-1_4",
+        "East_Window_F2_5_Louver_-1_5",
+        "East_Window_F2_5_Louver_-1_6",
+        "East_Window_F2_5_Louver_1_0",
+        "East_Window_F2_5_Louver_1_1",
+        "East_Window_F2_5_Louver_1_2",
+        "East_Window_F2_5_Louver_1_3",
+        "East_Window_F2_5_Louver_1_4",
+        "East_Window_F2_5_Louver_1_5",
+        "East_Window_F2_5_Louver_1_6",
+        "East_Window_F2_5_Meeting_Rail",
+        "East_Window_F2_5_Recess",
+        "East_Window_F2_5_Shutter_-1",
+        "East_Window_F2_5_Shutter_1",
+        "East_Window_F2_5_Sill",
+        "East_Window_F2_5_Trim_Head",
+        "East_Window_F2_5_Trim_Left",
+        "East_Window_F2_5_Trim_Right",
+        "East_Window_F2_6_Center_Mullion",
+        "East_Window_F2_6_Louver_-1_0",
+        "East_Window_F2_6_Louver_-1_1",
+        "East_Window_F2_6_Louver_-1_2",
+        "East_Window_F2_6_Louver_-1_3",
+        "East_Window_F2_6_Louver_-1_4",
+        "East_Window_F2_6_Louver_-1_5",
+        "East_Window_F2_6_Louver_-1_6",
+        "East_Window_F2_6_Louver_1_0",
+        "East_Window_F2_6_Louver_1_1",
+        "East_Window_F2_6_Louver_1_2",
+        "East_Window_F2_6_Louver_1_3",
+        "East_Window_F2_6_Louver_1_4",
+        "East_Window_F2_6_Louver_1_5",
+        "East_Window_F2_6_Louver_1_6",
+        "East_Window_F2_6_Meeting_Rail",
+        "East_Window_F2_6_Recess",
+        "East_Window_F2_6_Shutter_-1",
+        "East_Window_F2_6_Shutter_1",
+        "East_Window_F2_6_Sill",
+        "East_Window_F2_6_Trim_Head",
+        "East_Window_F2_6_Trim_Left",
+        "East_Window_F2_6_Trim_Right",
+        "East_Window_F2_7_Center_Mullion",
+        "East_Window_F2_7_Louver_-1_0",
+        "East_Window_F2_7_Louver_-1_1",
+        "East_Window_F2_7_Louver_-1_2",
+        "East_Window_F2_7_Louver_-1_3",
+        "East_Window_F2_7_Louver_-1_4",
+        "East_Window_F2_7_Louver_-1_5",
+        "East_Window_F2_7_Louver_-1_6",
+        "East_Window_F2_7_Louver_1_0",
+        "East_Window_F2_7_Louver_1_1",
+        "East_Window_F2_7_Louver_1_2",
+        "East_Window_F2_7_Louver_1_3",
+        "East_Window_F2_7_Louver_1_4",
+        "East_Window_F2_7_Louver_1_5",
+        "East_Window_F2_7_Louver_1_6",
+        "East_Window_F2_7_Meeting_Rail",
+        "East_Window_F2_7_Recess",
+        "East_Window_F2_7_Shutter_-1",
+        "East_Window_F2_7_Shutter_1",
+        "East_Window_F2_7_Sill",
+        "East_Window_F2_7_Trim_Head",
+        "East_Window_F2_7_Trim_Left",
+        "East_Window_F2_7_Trim_Right",
+        "East_Window_F2_8_Center_Mullion",
+        "East_Window_F2_8_Louver_-1_0",
+        "East_Window_F2_8_Louver_-1_1",
+        "East_Window_F2_8_Louver_-1_2",
+        "East_Window_F2_8_Louver_-1_3",
+        "East_Window_F2_8_Louver_-1_4",
+        "East_Window_F2_8_Louver_-1_5",
+        "East_Window_F2_8_Louver_-1_6",
+        "East_Window_F2_8_Louver_1_0",
+        "East_Window_F2_8_Louver_1_1",
+        "East_Window_F2_8_Louver_1_2",
+        "East_Window_F2_8_Louver_1_3",
+        "East_Window_F2_8_Louver_1_4",
+        "East_Window_F2_8_Louver_1_5",
+        "East_Window_F2_8_Louver_1_6",
+        "East_Window_F2_8_Meeting_Rail",
+        "East_Window_F2_8_Recess",
+        "East_Window_F2_8_Shutter_-1",
+        "East_Window_F2_8_Shutter_1",
+        "East_Window_F2_8_Sill",
+        "East_Window_F2_8_Trim_Head",
+        "East_Window_F2_8_Trim_Left",
+        "East_Window_F2_8_Trim_Right",
+        "East_Window_F3_1_Center_Mullion",
+        "East_Window_F3_1_Louver_-1_0",
+        "East_Window_F3_1_Louver_-1_1",
+        "East_Window_F3_1_Louver_-1_2",
+        "East_Window_F3_1_Louver_-1_3",
+        "East_Window_F3_1_Louver_-1_4",
+        "East_Window_F3_1_Louver_-1_5",
+        "East_Window_F3_1_Louver_-1_6",
+        "East_Window_F3_1_Louver_1_0",
+        "East_Window_F3_1_Louver_1_1",
+        "East_Window_F3_1_Louver_1_2",
+        "East_Window_F3_1_Louver_1_3",
+        "East_Window_F3_1_Louver_1_4",
+        "East_Window_F3_1_Louver_1_5",
+        "East_Window_F3_1_Louver_1_6",
+        "East_Window_F3_1_Meeting_Rail",
+        "East_Window_F3_1_Recess",
+        "East_Window_F3_1_Shutter_-1",
+        "East_Window_F3_1_Shutter_1",
+        "East_Window_F3_1_Sill",
+        "East_Window_F3_1_Trim_Head",
+        "East_Window_F3_1_Trim_Left",
+        "East_Window_F3_1_Trim_Right",
+        "East_Window_F3_2_Center_Mullion",
+        "East_Window_F3_2_Louver_-1_0",
+        "East_Window_F3_2_Louver_-1_1",
+        "East_Window_F3_2_Louver_-1_2",
+        "East_Window_F3_2_Louver_-1_3",
+        "East_Window_F3_2_Louver_-1_4",
+        "East_Window_F3_2_Louver_-1_5",
+        "East_Window_F3_2_Louver_-1_6",
+        "East_Window_F3_2_Louver_1_0",
+        "East_Window_F3_2_Louver_1_1",
+        "East_Window_F3_2_Louver_1_2",
+        "East_Window_F3_2_Louver_1_3",
+        "East_Window_F3_2_Louver_1_4",
+        "East_Window_F3_2_Louver_1_5",
+        "East_Window_F3_2_Louver_1_6",
+        "East_Window_F3_2_Meeting_Rail",
+        "East_Window_F3_2_Recess",
+        "East_Window_F3_2_Shutter_-1",
+        "East_Window_F3_2_Shutter_1",
+        "East_Window_F3_2_Sill",
+        "East_Window_F3_2_Trim_Head",
+        "East_Window_F3_2_Trim_Left",
+        "East_Window_F3_2_Trim_Right",
+        "East_Window_F3_3_Center_Mullion",
+        "East_Window_F3_3_Louver_-1_0",
+        "East_Window_F3_3_Louver_-1_1",
+        "East_Window_F3_3_Louver_-1_2",
+        "East_Window_F3_3_Louver_-1_3",
+        "East_Window_F3_3_Louver_-1_4",
+        "East_Window_F3_3_Louver_-1_5",
+        "East_Window_F3_3_Louver_-1_6",
+        "East_Window_F3_3_Louver_1_0",
+        "East_Window_F3_3_Louver_1_1",
+        "East_Window_F3_3_Louver_1_2",
+        "East_Window_F3_3_Louver_1_3",
+        "East_Window_F3_3_Louver_1_4",
+        "East_Window_F3_3_Louver_1_5",
+        "East_Window_F3_3_Louver_1_6",
+        "East_Window_F3_3_Meeting_Rail",
+        "East_Window_F3_3_Recess",
+        "East_Window_F3_3_Shutter_-1",
+        "East_Window_F3_3_Shutter_1",
+        "East_Window_F3_3_Sill",
+        "East_Window_F3_3_Trim_Head",
+        "East_Window_F3_3_Trim_Left",
+        "East_Window_F3_3_Trim_Right",
+        "East_Window_F3_4_Center_Mullion",
+        "East_Window_F3_4_Louver_-1_0",
+        "East_Window_F3_4_Louver_-1_1",
+        "East_Window_F3_4_Louver_-1_2",
+        "East_Window_F3_4_Louver_-1_3",
+        "East_Window_F3_4_Louver_-1_4",
+        "East_Window_F3_4_Louver_-1_5",
+        "East_Window_F3_4_Louver_-1_6",
+        "East_Window_F3_4_Louver_1_0",
+        "East_Window_F3_4_Louver_1_1",
+        "East_Window_F3_4_Louver_1_2",
+        "East_Window_F3_4_Louver_1_3",
+        "East_Window_F3_4_Louver_1_4",
+        "East_Window_F3_4_Louver_1_5",
+        "East_Window_F3_4_Louver_1_6",
+        "East_Window_F3_4_Meeting_Rail",
+        "East_Window_F3_4_Recess",
+        "East_Window_F3_4_Shutter_-1",
+        "East_Window_F3_4_Shutter_1",
+        "East_Window_F3_4_Sill",
+        "East_Window_F3_4_Trim_Head",
+        "East_Window_F3_4_Trim_Left",
+        "East_Window_F3_4_Trim_Right",
+        "East_Window_F3_5_Center_Mullion",
+        "East_Window_F3_5_Louver_-1_0",
+        "East_Window_F3_5_Louver_-1_1",
+        "East_Window_F3_5_Louver_-1_2",
+        "East_Window_F3_5_Louver_-1_3",
+        "East_Window_F3_5_Louver_-1_4",
+        "East_Window_F3_5_Louver_-1_5",
+        "East_Window_F3_5_Louver_-1_6",
+        "East_Window_F3_5_Louver_1_0",
+        "East_Window_F3_5_Louver_1_1",
+        "East_Window_F3_5_Louver_1_2",
+        "East_Window_F3_5_Louver_1_3",
+        "East_Window_F3_5_Louver_1_4",
+        "East_Window_F3_5_Louver_1_5",
+        "East_Window_F3_5_Louver_1_6",
+        "East_Window_F3_5_Meeting_Rail",
+        "East_Window_F3_5_Recess",
+        "East_Window_F3_5_Shutter_-1",
+        "East_Window_F3_5_Shutter_1",
+        "East_Window_F3_5_Sill",
+        "East_Window_F3_5_Trim_Head",
+        "East_Window_F3_5_Trim_Left",
+        "East_Window_F3_5_Trim_Right",
+        "East_Window_F3_6_Center_Mullion",
+        "East_Window_F3_6_Louver_-1_0",
+        "East_Window_F3_6_Louver_-1_1",
+        "East_Window_F3_6_Louver_-1_2",
+        "East_Window_F3_6_Louver_-1_3",
+        "East_Window_F3_6_Louver_-1_4",
+        "East_Window_F3_6_Louver_-1_5",
+        "East_Window_F3_6_Louver_-1_6",
+        "East_Window_F3_6_Louver_1_0",
+        "East_Window_F3_6_Louver_1_1",
+        "East_Window_F3_6_Louver_1_2",
+        "East_Window_F3_6_Louver_1_3",
+        "East_Window_F3_6_Louver_1_4",
+        "East_Window_F3_6_Louver_1_5",
+        "East_Window_F3_6_Louver_1_6",
+        "East_Window_F3_6_Meeting_Rail",
+        "East_Window_F3_6_Recess",
+        "East_Window_F3_6_Shutter_-1",
+        "East_Window_F3_6_Shutter_1",
+        "East_Window_F3_6_Sill",
+        "East_Window_F3_6_Trim_Head",
+        "East_Window_F3_6_Trim_Left",
+        "East_Window_F3_6_Trim_Right",
+        "East_Window_F3_7_Center_Mullion",
+        "East_Window_F3_7_Louver_-1_0",
+        "East_Window_F3_7_Louver_-1_1",
+        "East_Window_F3_7_Louver_-1_2",
+        "East_Window_F3_7_Louver_-1_3",
+        "East_Window_F3_7_Louver_-1_4",
+        "East_Window_F3_7_Louver_-1_5",
+        "East_Window_F3_7_Louver_-1_6",
+        "East_Window_F3_7_Louver_1_0",
+        "East_Window_F3_7_Louver_1_1",
+        "East_Window_F3_7_Louver_1_2",
+        "East_Window_F3_7_Louver_1_3",
+        "East_Window_F3_7_Louver_1_4",
+        "East_Window_F3_7_Louver_1_5",
+        "East_Window_F3_7_Louver_1_6",
+        "East_Window_F3_7_Meeting_Rail",
+        "East_Window_F3_7_Recess",
+        "East_Window_F3_7_Shutter_-1",
+        "East_Window_F3_7_Shutter_1",
+        "East_Window_F3_7_Sill",
+        "East_Window_F3_7_Trim_Head",
+        "East_Window_F3_7_Trim_Left",
+        "East_Window_F3_7_Trim_Right",
+        "East_Window_F3_8_Center_Mullion",
+        "East_Window_F3_8_Louver_-1_0",
+        "East_Window_F3_8_Louver_-1_1",
+        "East_Window_F3_8_Louver_-1_2",
+        "East_Window_F3_8_Louver_-1_3",
+        "East_Window_F3_8_Louver_-1_4",
+        "East_Window_F3_8_Louver_-1_5",
+        "East_Window_F3_8_Louver_-1_6",
+        "East_Window_F3_8_Louver_1_0",
+        "East_Window_F3_8_Louver_1_1",
+        "East_Window_F3_8_Louver_1_2",
+        "East_Window_F3_8_Louver_1_3",
+        "East_Window_F3_8_Louver_1_4",
+        "East_Window_F3_8_Louver_1_5",
+        "East_Window_F3_8_Louver_1_6",
+        "East_Window_F3_8_Meeting_Rail",
+        "East_Window_F3_8_Recess",
+        "East_Window_F3_8_Shutter_-1",
+        "East_Window_F3_8_Shutter_1",
+        "East_Window_F3_8_Sill",
+        "East_Window_F3_8_Trim_Head",
+        "East_Window_F3_8_Trim_Left",
+        "East_Window_F3_8_Trim_Right",
+        "End_Eaves_Board_N",
+        "End_Eaves_Board_S",
+        "Entry_Door_Hood_Beam",
+        "Entry_Door_Leaf",
+        "Entry_Door_Panel_-0.55",
+        "Entry_Door_Panel_0.55",
+        "Entry_Door_Pediment",
+        "Entry_Door_Reveal",
+        "Entry_Door_Upper_Glass",
+        "Entry_Step_1",
+        "Entry_Step_2",
+        "Entry_Step_3",
+        "Foundation_Brick_Course",
+        "House_301841252",
+        "North_Window_F1_1_Recess",
+        "North_Window_F1_1_Trim",
+        "North_Window_F1_2_Recess",
+        "North_Window_F1_2_Trim",
+        "North_Window_F2_1_Recess",
+        "North_Window_F2_1_Trim",
+        "North_Window_F2_2_Recess",
+        "North_Window_F2_2_Trim",
+        "North_Window_F3_1_Recess",
+        "North_Window_F3_1_Trim",
+        "North_Window_F3_2_Recess",
+        "North_Window_F3_2_Trim",
+        "Pediment_Rake_Left",
+        "Pediment_Rake_Right",
+        "Portico_Column_Base_1",
+        "Portico_Column_Base_2",
+        "Portico_Column_Base_3",
+        "Portico_Column_Base_4",
+        "Portico_Column_Capital_1",
+        "Portico_Column_Capital_2",
+        "Portico_Column_Capital_3",
+        "Portico_Column_Capital_4",
+        "Portico_Column_Shaft_1",
+        "Portico_Column_Shaft_2",
+        "Portico_Column_Shaft_3",
+        "Portico_Column_Shaft_4",
+        "Portico_Entablature",
+        "Portico_Front_Lettering",
+        "Portico_Pedestal_1",
+        "Portico_Pedestal_2",
+        "Portico_Pedestal_3",
+        "Portico_Pedestal_4",
+        "Portico_Triangular_Pediment",
+        "Roof_Hip_Planes",
+        "Roof_Ridge_Cap",
+        "Roof_Standing_Seam_1_E",
+        "Roof_Standing_Seam_1_W",
+        "Roof_Standing_Seam_2_E",
+        "Roof_Standing_Seam_2_W",
+        "Roof_Standing_Seam_3_E",
+        "Roof_Standing_Seam_3_W",
+        "Roof_Standing_Seam_4_E",
+        "Roof_Standing_Seam_4_W",
+        "Roof_Standing_Seam_5_E",
+        "Roof_Standing_Seam_5_W",
+        "Roof_Standing_Seam_6_E",
+        "Roof_Standing_Seam_6_W",
+        "Roof_Standing_Seam_7_E",
+        "Roof_Standing_Seam_7_W",
+        "South_Window_F1_1_Recess",
+        "South_Window_F1_1_Trim",
+        "South_Window_F1_2_Recess",
+        "South_Window_F1_2_Trim",
+        "South_Window_F2_1_Recess",
+        "South_Window_F2_1_Trim",
+        "South_Window_F2_2_Recess",
+        "South_Window_F2_2_Trim",
+        "South_Window_F3_1_Recess",
+        "South_Window_F3_1_Trim",
+        "South_Window_F3_2_Recess",
+        "South_Window_F3_2_Trim",
+        "West_Window_F1_1_Recess",
+        "West_Window_F1_1_Trim",
+        "West_Window_F1_2_Recess",
+        "West_Window_F1_2_Trim",
+        "West_Window_F1_3_Recess",
+        "West_Window_F1_3_Trim",
+        "West_Window_F1_4_Recess",
+        "West_Window_F1_4_Trim",
+        "West_Window_F2_1_Recess",
+        "West_Window_F2_1_Trim",
+        "West_Window_F2_2_Recess",
+        "West_Window_F2_2_Trim",
+        "West_Window_F2_3_Recess",
+        "West_Window_F2_3_Trim",
+        "West_Window_F2_4_Recess",
+        "West_Window_F2_4_Trim",
+        "West_Window_F3_1_Recess",
+        "West_Window_F3_1_Trim",
+        "West_Window_F3_2_Recess",
+        "West_Window_F3_2_Trim",
+        "West_Window_F3_3_Recess",
+        "West_Window_F3_3_Trim",
+        "West_Window_F3_4_Recess",
+        "West_Window_F3_4_Trim"
       ],
-      "object_count": 1,
+      "object_count": 608,
       "bounds_world_m": [
         [
-          -285.91351318359375,
-          -271.3769836425781
+          -286.1435241699219,
+          -269.2939147949219
         ],
         [
-          382.0220031738281,
-          424.52813720703125
+          382.1136779785156,
+          425.2009582519531
         ],
         [
-          0.0,
-          16.0
+          -0.2199999988079071,
+          11.54835319519043
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -285.91351318359375,
-          -271.3769836425781
+          -286.1435241699219,
+          -269.2939147949219
         ],
         [
-          382.0220031738281,
-          424.52813720703125
+          382.1136779785156,
+          425.2009582519531
         ],
         [
-          0.0,
-          16.0
+          -0.2199999988079071,
+          11.54835319519043
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "Independently graded 8.7/10 in r1; pass, awaiting master integration. Purdue GIS FID 790 and the Beta Phi chapter address/photo confirm the identity; the structural shell matches the GIS ring within 0.000017 m. Three visible storeys and facade cues are photo-supported; wall height, roof geometry, and unseen elevations remain estimates. See ../audit/massing_house_301841252_e4f8f05/independent_grade_r1/grade.json.",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
-          -285.91351318359375,
-          -271.3769836425781
+          -285.86853995692275,
+          -271.58148120408765
         ],
         [
-          382.0220031738281,
-          424.52813720703125
+          382.36499766195266,
+          424.92126969327273
         ],
         [
           0.0,
-          16.0
+          0.0
         ]
       ]
     },
@@ -85853,51 +87117,79 @@
       "collection": "Asset_massing_house_301841330_f58ae87",
       "scene": "Building_massing_house_301841330_f58ae87",
       "objects": [
-        "House_301841330"
+        "Dark rectangular window",
+        "Dark rectangular window.001",
+        "Dark rectangular window.002",
+        "Dark rectangular window.003",
+        "Entrance canopy",
+        "Estimated low roof silhouette",
+        "Front facade pale horizontal band",
+        "Front facade pale horizontal band.001",
+        "Front facade pale horizontal band.002",
+        "House_301841330",
+        "Pale entrance pier",
+        "Pale entrance pier.001",
+        "Pale side bay surround",
+        "Pale window surround",
+        "Pale window surround.001",
+        "Pale window surround.002",
+        "Pale window surround.003",
+        "Recessed central entrance",
+        "Roof fascia",
+        "Roof fascia.001",
+        "Roof fascia.002",
+        "Roof fascia.003",
+        "Roof fascia.004",
+        "Roof fascia.005",
+        "Roof fascia.006",
+        "Roof fascia.007",
+        "Roof fascia.008",
+        "Roof fascia.009",
+        "Side bay glazing"
       ],
-      "object_count": 1,
+      "object_count": 29,
       "bounds_world_m": [
         [
-          -1011.3749389648438,
-          -974.9487915039062
+          -1009.4022827148438,
+          -975.5484008789062
         ],
         [
-          603.7578125,
-          636.6033935546875
+          606.5393676757812,
+          636.4332885742188
         ],
         [
           0.0,
-          16.0
+          7.449999809265137
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -1011.3749389648438,
-          -974.9487915039062
+          -1009.4022827148438,
+          -975.5484008789062
         ],
         [
-          603.7578125,
-          636.6033935546875
+          606.5393676757812,
+          636.4332885742188
         ],
         [
           0.0,
-          16.0
+          7.449999809265137
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "Independently graded 8.0/10 in r3; pass, awaiting master integration. Purdue GIS FID 758 / assessor parcel and chapter sources identify Sigma Nu Beta Zeta. Ten-point shell matches the GIS base ring within 0.000038 m; newsletter supports at least three occupied floors. Wall line, facade bearing, absolute height, roof form, and unseen elevations remain uncertain. See ../audit/sigma_nu/independent_grade_r3/independent_grade_r3.json.",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
-          -1011.3749389648438,
-          -974.9487915039062
+          -1009.3639994858728,
+          -975.5866650011466
         ],
         [
-          603.7578125,
-          636.6033935546875
+          606.5776968276577,
+          636.3950446370882
         ],
         [
           0.0,
-          16.0
+          0.0
         ]
       ]
     },
@@ -122835,7 +124127,7 @@
           16.0
         ]
       ],
-      "accuracy_status": "Historical FID 743 / former Latino Cultural Center (2006\u20132017); the building is no longer a separate current facility. The 600 N Russell site was transferred to Phi Gamma Delta and is part of its property/parking reconfiguration. Excluded from the current master; see audit/latino_cultural_center_5f0d139/identity_review.md.",
+      "accuracy_status": "Historical FID 743 / former Latino Cultural Center (2006–2017); the building is no longer a separate current facility. The 600 N Russell site was transferred to Phi Gamma Delta and is part of its property/parking reconfiguration. Excluded from the current master; see audit/latino_cultural_center_5f0d139/identity_review.md.",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -123751,33 +125043,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -452.4136962890625,
-          -416.5642395019531
+          -451.5719,
+          -416.1238
         ],
         [
-          -51.233856201171875,
-          -22.674367904663086
+          -50.7448,
+          -19.3621
         ],
         [
           0.0,
-          15.199999809265137
+          15.1
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -452.4136962890625,
-          -416.5642395019531
+          -451.5719,
+          -416.1238
         ],
         [
-          -51.233856201171875,
-          -22.674367904663086
+          -50.7448,
+          -19.3621
         ],
         [
           0.0,
-          15.199999809265137
+          15.1
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.5/10; awaiting master integration; canopy extends beyond GIS footprint; see ../audit/massing_marc_and_sharon_hagle_hall_hagl_071ffd6",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -123806,33 +125098,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -299.457763671875,
-          -260.7926025390625
+          -299.9727,
+          -261.1019
         ],
         [
-          -345.7452392578125,
-          -274.9905700683594
+          -343.5813,
+          -278.331
         ],
         [
-          0.0,
-          16.0
+          -0.07,
+          12.6
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -299.457763671875,
-          -260.7926025390625
+          -299.9727,
+          -261.1019
         ],
         [
-          -345.7452392578125,
-          -274.9905700683594
+          -343.5813,
+          -278.331
         ],
         [
-          0.0,
-          16.0
+          -0.07,
+          12.6
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.5/10; awaiting master integration; height and roof remain estimated; see ../audit/marriott_hall",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -123916,33 +125208,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -653.74560546875,
-          -569.6304321289062
+          -655.3953,
+          -569.9009
         ],
         [
-          -608.2216186523438,
-          -550.12548828125
+          -608.1069,
+          -549.7646
         ],
         [
           0.0,
-          16.0
+          14.2
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -653.74560546875,
-          -569.6304321289062
+          -655.3953,
+          -569.9009
         ],
         [
-          -608.2216186523438,
-          -550.12548828125
+          -608.1069,
+          -549.7646
         ],
         [
           0.0,
-          16.0
+          14.2
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.0/10; awaiting master integration; height estimated; see ../audit/martin_c_jischke_hall",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -124031,33 +125323,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -240.3447723388672,
-          -214.121337890625
+          -240.8851,
+          -213.8069
         ],
         [
-          -332.9090270996094,
-          -256.4913024902344
+          -337.3827,
+          -255.641
         ],
         [
           0.0,
-          16.0
+          11.95
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -240.3447723388672,
-          -214.121337890625
+          -240.8851,
+          -213.8069
         ],
         [
-          -332.9090270996094,
-          -256.4913024902344
+          -337.3827,
+          -255.641
         ],
         [
           0.0,
-          16.0
+          11.95
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.75/10; awaiting master integration; height estimated; see ../audit/matthews_hall_mthw_9326885",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -124142,33 +125434,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          29.030670166015625,
-          61.368953704833984
+          28.470417022705078,
+          61.396575927734375
         ],
         [
-          390.8608093261719,
-          419.26483154296875
+          390.4246826171875,
+          419.8265075683594
         ],
         [
           0.0,
-          16.0
+          4.699999809265137
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          29.030670166015625,
-          61.368953704833984
+          28.470417022705078,
+          61.396575927734375
         ],
         [
-          390.8608093261719,
-          419.26483154296875
+          390.4246826171875,
+          419.8265075683594
         ],
         [
           0.0,
-          16.0
+          4.699999809265137
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "OSM way 256640455 named identity and 16-point footprint independently verified within 0.000015 m; one exact-address facade photo supports front-corner massing; height and unseen elevations remain estimated; see ../audit/mcdonald_s/independent_grade_revision2.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -124253,33 +125545,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -866.9594116210938,
-          -765.7040405273438
+          -866.9352416992188,
+          -766.0626220703125
         ],
         [
-          -171.50128173828125,
-          -70.58812713623047
+          -171.6017608642578,
+          -70.37311553955078
         ],
         [
-          0.0,
-          15.199999809265137
+          -0.12999999523162842,
+          15.65999984741211
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -866.9594116210938,
-          -765.7040405273438
+          -866.9352416992188,
+          -766.0626220703125
         ],
         [
-          -171.50128173828125,
-          -70.58812713623047
+          -171.6017608642578,
+          -70.37311553955078
         ],
         [
-          0.0,
-          15.199999809265137
+          -0.12999999523162842,
+          15.65999984741211
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "Purdue GIS FID 253 footprint independently verified (20 edges; max structural-edge deviation 0.000031 m); vertical dimensions and roof estimated; see ../audit/meredith_hall/independent_grade.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -124475,33 +125767,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -156.29745483398438,
-          -134.98455810546875
+          -158.1762237548828,
+          -136.34835815429688
         ],
         [
-          -700.3626098632812,
-          -682.5184936523438
+          -700.0474243164062,
+          -681.8410034179688
         ],
         [
           0.0,
-          16.0
+          5.849999904632568
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -156.29745483398438,
-          -134.98455810546875
+          -158.1762237548828,
+          -136.34835815429688
         ],
         [
-          -700.3626098632812,
-          -682.5184936523438
+          -700.0474243164062,
+          -681.8410034179688
         ],
         [
           0.0,
-          16.0
+          5.849999904632568
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "Purdue GIS FID 918 identity and four structural edges independently verified within 0.000028 m; one-story masonry facade and low roof supported qualitatively; height/HVAC top and detailed facade estimated; see ../audit/mri_modular_facility/independent_grade_mri.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -124759,7 +126051,7 @@
         ],
         [
           33.38972854614258,
-          62.73759841918945
+          63.327598571777344
         ],
         [
           0.0,
@@ -124773,11 +126065,11 @@
         ],
         [
           33.38972854614258,
-          62.73759841918945
+          63.327598571777344
         ],
         [
           0.0,
-          16.0
+          18.100000381469727
         ]
       ],
       "accuracy_status": "unverified; see ../audit/master_building_audit.json",
@@ -124804,51 +126096,363 @@
       "collection": "Asset_massing_phi_delta_theta_258cddd",
       "scene": "Building_massing_phi_delta_theta_258cddd",
       "objects": [
-        "Phi Delta Theta"
+        "Central_Facade_F1_W1_frame_L",
+        "Central_Facade_F1_W1_frame_R",
+        "Central_Facade_F1_W1_glass",
+        "Central_Facade_F1_W1_lintel",
+        "Central_Facade_F1_W1_mullion_h",
+        "Central_Facade_F1_W1_mullion_v",
+        "Central_Facade_F1_W1_sill",
+        "Central_Facade_F1_W2_frame_L",
+        "Central_Facade_F1_W2_frame_R",
+        "Central_Facade_F1_W2_glass",
+        "Central_Facade_F1_W2_lintel",
+        "Central_Facade_F1_W2_mullion_h",
+        "Central_Facade_F1_W2_mullion_v",
+        "Central_Facade_F1_W2_sill",
+        "Central_Facade_F1_W3_frame_L",
+        "Central_Facade_F1_W3_frame_R",
+        "Central_Facade_F1_W3_glass",
+        "Central_Facade_F1_W3_lintel",
+        "Central_Facade_F1_W3_mullion_h",
+        "Central_Facade_F1_W3_mullion_v",
+        "Central_Facade_F1_W3_sill",
+        "Central_Facade_F1_W4_frame_L",
+        "Central_Facade_F1_W4_frame_R",
+        "Central_Facade_F1_W4_glass",
+        "Central_Facade_F1_W4_lintel",
+        "Central_Facade_F1_W4_mullion_h",
+        "Central_Facade_F1_W4_mullion_v",
+        "Central_Facade_F1_W4_sill",
+        "Central_Facade_F2_W1_frame_L",
+        "Central_Facade_F2_W1_frame_R",
+        "Central_Facade_F2_W1_glass",
+        "Central_Facade_F2_W1_lintel",
+        "Central_Facade_F2_W1_mullion_h",
+        "Central_Facade_F2_W1_mullion_v",
+        "Central_Facade_F2_W1_sill",
+        "Central_Facade_F2_W2_frame_L",
+        "Central_Facade_F2_W2_frame_R",
+        "Central_Facade_F2_W2_glass",
+        "Central_Facade_F2_W2_lintel",
+        "Central_Facade_F2_W2_mullion_h",
+        "Central_Facade_F2_W2_mullion_v",
+        "Central_Facade_F2_W2_sill",
+        "Central_Facade_F2_W3_frame_L",
+        "Central_Facade_F2_W3_frame_R",
+        "Central_Facade_F2_W3_glass",
+        "Central_Facade_F2_W3_lintel",
+        "Central_Facade_F2_W3_mullion_h",
+        "Central_Facade_F2_W3_mullion_v",
+        "Central_Facade_F2_W3_sill",
+        "Central_Facade_F2_W4_frame_L",
+        "Central_Facade_F2_W4_frame_R",
+        "Central_Facade_F2_W4_glass",
+        "Central_Facade_F2_W4_lintel",
+        "Central_Facade_F2_W4_mullion_h",
+        "Central_Facade_F2_W4_mullion_v",
+        "Central_Facade_F2_W4_sill",
+        "Central_Facade_F3_W1_frame_L",
+        "Central_Facade_F3_W1_frame_R",
+        "Central_Facade_F3_W1_glass",
+        "Central_Facade_F3_W1_lintel",
+        "Central_Facade_F3_W1_mullion_h",
+        "Central_Facade_F3_W1_mullion_v",
+        "Central_Facade_F3_W1_shutter_-1",
+        "Central_Facade_F3_W1_shutter_1",
+        "Central_Facade_F3_W1_sill",
+        "Central_Facade_F3_W2_frame_L",
+        "Central_Facade_F3_W2_frame_R",
+        "Central_Facade_F3_W2_glass",
+        "Central_Facade_F3_W2_lintel",
+        "Central_Facade_F3_W2_mullion_h",
+        "Central_Facade_F3_W2_mullion_v",
+        "Central_Facade_F3_W2_shutter_-1",
+        "Central_Facade_F3_W2_shutter_1",
+        "Central_Facade_F3_W2_sill",
+        "Central_Facade_F3_W3_frame_L",
+        "Central_Facade_F3_W3_frame_R",
+        "Central_Facade_F3_W3_glass",
+        "Central_Facade_F3_W3_lintel",
+        "Central_Facade_F3_W3_mullion_h",
+        "Central_Facade_F3_W3_mullion_v",
+        "Central_Facade_F3_W3_shutter_-1",
+        "Central_Facade_F3_W3_shutter_1",
+        "Central_Facade_F3_W3_sill",
+        "Central_Facade_F3_W4_frame_L",
+        "Central_Facade_F3_W4_frame_R",
+        "Central_Facade_F3_W4_glass",
+        "Central_Facade_F3_W4_lintel",
+        "Central_Facade_F3_W4_mullion_h",
+        "Central_Facade_F3_W4_mullion_v",
+        "Central_Facade_F3_W4_shutter_-1",
+        "Central_Facade_F3_W4_shutter_1",
+        "Central_Facade_F3_W4_sill",
+        "Central_Pavilion_East_Fascia",
+        "Central_Pavilion_East_Gable",
+        "Central_Pavilion_Roof_Planes",
+        "Central_Pavilion_West_Fascia",
+        "Central_Pavilion_West_Gable",
+        "East_End_F1_W1_frame_-1",
+        "East_End_F1_W1_frame_1",
+        "East_End_F1_W1_glass",
+        "East_End_F1_W1_lintel",
+        "East_End_F1_W1_mullion_v",
+        "East_End_F1_W1_sill",
+        "East_End_F1_W2_frame_-1",
+        "East_End_F1_W2_frame_1",
+        "East_End_F1_W2_glass",
+        "East_End_F1_W2_lintel",
+        "East_End_F1_W2_mullion_v",
+        "East_End_F1_W2_sill",
+        "East_End_F1_W3_frame_-1",
+        "East_End_F1_W3_frame_1",
+        "East_End_F1_W3_glass",
+        "East_End_F1_W3_lintel",
+        "East_End_F1_W3_mullion_v",
+        "East_End_F1_W3_sill",
+        "East_End_F2_W1_frame_-1",
+        "East_End_F2_W1_frame_1",
+        "East_End_F2_W1_glass",
+        "East_End_F2_W1_lintel",
+        "East_End_F2_W1_mullion_v",
+        "East_End_F2_W1_sill",
+        "East_End_F2_W2_frame_-1",
+        "East_End_F2_W2_frame_1",
+        "East_End_F2_W2_glass",
+        "East_End_F2_W2_lintel",
+        "East_End_F2_W2_mullion_v",
+        "East_End_F2_W2_sill",
+        "East_End_F2_W3_frame_-1",
+        "East_End_F2_W3_frame_1",
+        "East_End_F2_W3_glass",
+        "East_End_F2_W3_lintel",
+        "East_End_F2_W3_mullion_v",
+        "East_End_F2_W3_sill",
+        "East_End_F3_W1_frame_-1",
+        "East_End_F3_W1_frame_1",
+        "East_End_F3_W1_glass",
+        "East_End_F3_W1_lintel",
+        "East_End_F3_W1_mullion_v",
+        "East_End_F3_W1_sill",
+        "East_End_F3_W2_frame_-1",
+        "East_End_F3_W2_frame_1",
+        "East_End_F3_W2_glass",
+        "East_End_F3_W2_lintel",
+        "East_End_F3_W2_mullion_v",
+        "East_End_F3_W2_sill",
+        "East_End_F3_W3_frame_-1",
+        "East_End_F3_W3_frame_1",
+        "East_End_F3_W3_glass",
+        "East_End_F3_W3_lintel",
+        "East_End_F3_W3_mullion_v",
+        "East_End_F3_W3_sill",
+        "East_Wing_East_Fascia",
+        "East_Wing_East_Gable",
+        "East_Wing_Roof_Planes",
+        "East_Wing_West_Fascia",
+        "East_Wing_West_Gable",
+        "Main_Entry_Door",
+        "Main_Entry_Pilaster_-1",
+        "Main_Entry_Pilaster_1",
+        "Main_Entry_Sidelight_-1",
+        "Main_Entry_Sidelight_1",
+        "Main_Entry_Transom",
+        "PHI_DELTA_THETA_ENTABLATURE",
+        "Pediment_Base_Cornice",
+        "Pediment_Rake_-1",
+        "Pediment_Rake_1",
+        "Pediment_Round_Vent",
+        "Phi Delta Theta",
+        "Phi_Delta_Theta_Wall_Mark_1",
+        "Phi_Delta_Theta_Wall_Mark_2",
+        "Phi_Delta_Theta_Wall_Mark_3",
+        "Portico_Balcony_Deck",
+        "Portico_Baluster_01",
+        "Portico_Baluster_02",
+        "Portico_Baluster_03",
+        "Portico_Baluster_04",
+        "Portico_Baluster_05",
+        "Portico_Baluster_06",
+        "Portico_Baluster_07",
+        "Portico_Baluster_08",
+        "Portico_Baluster_09",
+        "Portico_Baluster_10",
+        "Portico_Baluster_11",
+        "Portico_Baluster_12",
+        "Portico_Baluster_13",
+        "Portico_Baluster_14",
+        "Portico_Baluster_15",
+        "Portico_Baluster_16",
+        "Portico_Baluster_17",
+        "Portico_Balustrade_Base",
+        "Portico_Balustrade_Top",
+        "Portico_Column_100.80_Base",
+        "Portico_Column_100.80_Capital",
+        "Portico_Column_100.80_Neck",
+        "Portico_Column_100.80_Shaft",
+        "Portico_Column_103.80_Base",
+        "Portico_Column_103.80_Capital",
+        "Portico_Column_103.80_Neck",
+        "Portico_Column_103.80_Shaft",
+        "Portico_Column_106.80_Base",
+        "Portico_Column_106.80_Capital",
+        "Portico_Column_106.80_Neck",
+        "Portico_Column_106.80_Shaft",
+        "Portico_Column_94.80_Base",
+        "Portico_Column_94.80_Capital",
+        "Portico_Column_94.80_Neck",
+        "Portico_Column_94.80_Shaft",
+        "Portico_Column_97.80_Base",
+        "Portico_Column_97.80_Capital",
+        "Portico_Column_97.80_Neck",
+        "Portico_Column_97.80_Shaft",
+        "Portico_Entablature",
+        "Portico_Pediment_Infill",
+        "West_Facade_F1_W1_frame_L",
+        "West_Facade_F1_W1_frame_R",
+        "West_Facade_F1_W1_glass",
+        "West_Facade_F1_W1_lintel",
+        "West_Facade_F1_W1_mullion_h",
+        "West_Facade_F1_W1_mullion_v",
+        "West_Facade_F1_W1_sill",
+        "West_Facade_F1_W2_frame_L",
+        "West_Facade_F1_W2_frame_R",
+        "West_Facade_F1_W2_glass",
+        "West_Facade_F1_W2_lintel",
+        "West_Facade_F1_W2_mullion_h",
+        "West_Facade_F1_W2_mullion_v",
+        "West_Facade_F1_W2_sill",
+        "West_Facade_F1_W3_frame_L",
+        "West_Facade_F1_W3_frame_R",
+        "West_Facade_F1_W3_glass",
+        "West_Facade_F1_W3_lintel",
+        "West_Facade_F1_W3_mullion_h",
+        "West_Facade_F1_W3_mullion_v",
+        "West_Facade_F1_W3_sill",
+        "West_Facade_F1_W4_frame_L",
+        "West_Facade_F1_W4_frame_R",
+        "West_Facade_F1_W4_glass",
+        "West_Facade_F1_W4_lintel",
+        "West_Facade_F1_W4_mullion_h",
+        "West_Facade_F1_W4_mullion_v",
+        "West_Facade_F1_W4_sill",
+        "West_Facade_F2_W1_frame_L",
+        "West_Facade_F2_W1_frame_R",
+        "West_Facade_F2_W1_glass",
+        "West_Facade_F2_W1_lintel",
+        "West_Facade_F2_W1_mullion_h",
+        "West_Facade_F2_W1_mullion_v",
+        "West_Facade_F2_W1_sill",
+        "West_Facade_F2_W2_frame_L",
+        "West_Facade_F2_W2_frame_R",
+        "West_Facade_F2_W2_glass",
+        "West_Facade_F2_W2_lintel",
+        "West_Facade_F2_W2_mullion_h",
+        "West_Facade_F2_W2_mullion_v",
+        "West_Facade_F2_W2_sill",
+        "West_Facade_F2_W3_frame_L",
+        "West_Facade_F2_W3_frame_R",
+        "West_Facade_F2_W3_glass",
+        "West_Facade_F2_W3_lintel",
+        "West_Facade_F2_W3_mullion_h",
+        "West_Facade_F2_W3_mullion_v",
+        "West_Facade_F2_W3_sill",
+        "West_Facade_F2_W4_frame_L",
+        "West_Facade_F2_W4_frame_R",
+        "West_Facade_F2_W4_glass",
+        "West_Facade_F2_W4_lintel",
+        "West_Facade_F2_W4_mullion_h",
+        "West_Facade_F2_W4_mullion_v",
+        "West_Facade_F2_W4_sill",
+        "West_Facade_F3_W1_frame_L",
+        "West_Facade_F3_W1_frame_R",
+        "West_Facade_F3_W1_glass",
+        "West_Facade_F3_W1_lintel",
+        "West_Facade_F3_W1_mullion_h",
+        "West_Facade_F3_W1_mullion_v",
+        "West_Facade_F3_W1_shutter_-1",
+        "West_Facade_F3_W1_shutter_1",
+        "West_Facade_F3_W1_sill",
+        "West_Facade_F3_W2_frame_L",
+        "West_Facade_F3_W2_frame_R",
+        "West_Facade_F3_W2_glass",
+        "West_Facade_F3_W2_lintel",
+        "West_Facade_F3_W2_mullion_h",
+        "West_Facade_F3_W2_mullion_v",
+        "West_Facade_F3_W2_shutter_-1",
+        "West_Facade_F3_W2_shutter_1",
+        "West_Facade_F3_W2_sill",
+        "West_Facade_F3_W3_frame_L",
+        "West_Facade_F3_W3_frame_R",
+        "West_Facade_F3_W3_glass",
+        "West_Facade_F3_W3_lintel",
+        "West_Facade_F3_W3_mullion_h",
+        "West_Facade_F3_W3_mullion_v",
+        "West_Facade_F3_W3_shutter_-1",
+        "West_Facade_F3_W3_shutter_1",
+        "West_Facade_F3_W3_sill",
+        "West_Facade_F3_W4_frame_L",
+        "West_Facade_F3_W4_frame_R",
+        "West_Facade_F3_W4_glass",
+        "West_Facade_F3_W4_lintel",
+        "West_Facade_F3_W4_mullion_h",
+        "West_Facade_F3_W4_mullion_v",
+        "West_Facade_F3_W4_shutter_-1",
+        "West_Facade_F3_W4_shutter_1",
+        "West_Facade_F3_W4_sill",
+        "West_Front_Eave_Cornice",
+        "West_Front_First_Floor_Belt",
+        "West_Front_Second_Floor_Belt",
+        "West_Wing_East_Fascia",
+        "West_Wing_East_Gable",
+        "West_Wing_Roof_Planes",
+        "West_Wing_West_Fascia",
+        "West_Wing_West_Gable"
       ],
-      "object_count": 1,
+      "object_count": 313,
       "bounds_world_m": [
         [
-          67.46683502197266,
-          110.83049774169922
+          67.5199966430664,
+          110.80999755859375
         ],
         [
-          -417.6436462402344,
-          -392.8817138671875
+          -417.5177001953125,
+          -390.1700134277344
         ],
         [
           0.0,
-          16.0
+          13.2603178024292
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          67.46683502197266,
-          110.83049774169922
+          67.5199966430664,
+          110.80999755859375
         ],
         [
-          -417.6436462402344,
-          -392.8817138671875
+          -417.5177001953125,
+          -390.1700134277344
         ],
         [
           0.0,
-          16.0
+          13.2603178024292
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "Independently graded 8.3/10 in r1; pass, awaiting master integration. Official Purdue GIS FID 796 identifies SOFDH / Phi Delta Theta at 503 State St; all 30 shell base vertices match the source ring within 0.000016 m. The chapter photo supports facade features; heights, roof dimensions, and unseen elevations remain estimated. See ../audit/massing_phi_delta_theta_258cddd/independent_grade_r1/independent_grade.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
-          67.46683502197266,
-          110.83049774169922
+          67.57702681764745,
+          110.57538983065753
         ],
         [
-          -417.6436462402344,
-          -392.8817138671875
+          -417.51770284545046,
+          -392.9709359367507
         ],
         [
           0.0,
-          16.0
+          0.0
         ]
       ]
     },
@@ -124919,33 +126523,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -180.2479705810547,
-          -124.12031555175781
+          -179.8848114013672,
+          -124.10089111328125
         ],
         [
-          -680.8972778320312,
-          -614.9728393554688
+          -681.63623046875,
+          -614.798583984375
         ],
         [
           0.0,
-          16.0
+          16.399999618530273
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -180.2479705810547,
-          -124.12031555175781
+          -179.8848114013672,
+          -124.10089111328125
         ],
         [
-          -680.8972778320312,
-          -614.9728393554688
+          -681.63623046875,
+          -614.798583984375
         ],
         [
           0.0,
-          16.0
+          16.399999618530273
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "Purdue GIS FID 250 identity and 24-point footprint independently verified within 0.000028 m; entry canopy/gable projections included in bounds; roof and height estimated; see ../audit/massing_philip_e_nelson_hall_of_food_science_nlsn_6b2ba6b/independent_grade_kyle.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -125421,12 +127025,12 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -1627.371337890625,
-          -1489.2232666015625
+          -1573.270263671875,
+          -1523.542724609375
         ],
         [
-          -474.5072326660156,
-          -446.1253967285156
+          -466.8532409667969,
+          -447.56915283203125
         ],
         [
           0.0,
@@ -125435,32 +127039,32 @@
       ],
       "exterior_bounds_world_m": [
         [
-          -1627.371337890625,
-          -1489.2232666015625
+          -1573.270263671875,
+          -1523.542724609375
         ],
         [
-          -474.5072326660156,
-          -446.1253967285156
+          -466.8532409667969,
+          -447.56915283203125
         ],
         [
           0.0,
           11.399999618530273
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.3/10 in r4; pass, awaiting integration into purdue_campus_master.blend. County construction plan sheet C1.4 labels Building F / 143 and Purdue GIS FID 506 crosswalk to the same building. The GIS is pre-planning/roof-level, not a surveyed wall line; heights, roof, and facade remain partly estimated. See ../audit/massing_provenance_apartments_005_960f6b0/independent_grade_r4.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
-          -1627.371337890625,
-          -1489.2232666015625
+          -1573.270263671875,
+          -1523.542724609375
         ],
         [
-          -474.5072326660156,
-          -446.1253967285156
+          -466.8532409667969,
+          -447.56915283203125
         ],
         [
           0.0,
-          11.399999618530273
+          0.0
         ]
       ]
     },
@@ -126891,46 +128495,46 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -1409.1790771484375,
-          -1364.9842529296875
+          -1408.48046875,
+          -1363.87646484375
         ],
         [
-          1610.6795654296875,
-          1626.6361083984375
+          1609.4888916015625,
+          1627.1295166015625
         ],
         [
           0.0,
-          3.799999952316284
+          4.050000190734863
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -1409.1790771484375,
-          -1364.9842529296875
+          -1408.48046875,
+          -1363.87646484375
         ],
         [
-          1610.6795654296875,
-          1626.6361083984375
+          1609.4888916015625,
+          1627.1295166015625
         ],
         [
           0.0,
-          3.799999952316284
+          4.050000190734863
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "Independently graded 8.6/10 in r3; pass, awaiting master integration. Purdue GIS FID 208 identifies the Daniel Turf Center at 1340 Cherry Lane; source-ring max vertex error is 0.000078 m. The footprint may represent a roof projection rather than surveyed walls; eave/ridge heights are low-confidence visual estimates and facade bearing is inferred. See ../audit/massing_purdue_university_daniel_turf_center_e69b7da/independent_grade_r3/independent_grade_r3.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
-          -1409.1790771484375,
-          -1364.9842529296875
+          -1408.480414999073,
+          -1363.8764102746127
         ],
         [
-          1610.6795654296875,
-          1626.6361083984375
+          1609.4888380968223,
+          1627.1294848642287
         ],
         [
           0.0,
-          3.799999952316284
+          0.0
         ]
       ]
     },
@@ -126946,33 +128550,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -904.0725708007812,
-          -835.0875854492188
+          -904.51171875,
+          -834.7618408203125
         ],
         [
-          -832.30029296875,
-          -762.16748046875
+          -832.5831909179688,
+          -761.7974853515625
         ],
         [
           0.0,
-          16.0
+          4.199999809265137
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -904.0725708007812,
-          -835.0875854492188
+          -904.51171875,
+          -834.7618408203125
         ],
         [
-          -832.30029296875,
-          -762.16748046875
+          -832.5831909179688,
+          -761.7974853515625
         ],
         [
           0.0,
-          16.0
+          4.199999809265137
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.5/10; FID 524 footprint and facade features match Purdue Archives photo; height estimated, roof and facade bearing unverified; awaiting master integration",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -130319,33 +131923,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -229.36180114746094,
-          -172.64047241210938
+          -229.04403686523438,
+          -172.66683959960938
         ],
         [
-          293.6341857910156,
-          364.6775817871094
+          294.11846923828125,
+          364.8148498535156
         ],
         [
           0.0,
-          16.0
+          14.630399703979492
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -229.36180114746094,
-          -172.64047241210938
+          -229.04403686523438,
+          -172.66683959960938
         ],
         [
-          293.6341857910156,
-          364.6775817871094
+          294.11846923828125,
+          364.8148498535156
         ],
         [
           0.0,
-          16.0
+          14.630399703979492
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.2/10; FID 274 footprint and orthophoto-supported massing verified; roof and floor heights estimated, facade openings simplified; awaiting master integration",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -130424,51 +132028,121 @@
       "collection": "Asset_massing_the_caretaker_s_cottage_6b24af9",
       "scene": "Building_massing_the_caretaker_s_cottage_6b24af9",
       "objects": [
-        "The Caretaker's Cottage"
+        "The Caretaker's Cottage",
+        "Terracotta_Roof_Envelope_Infill",
+        "North_Terracotta_Hipped_Roof",
+        "South_Terracotta_Hipped_Roof",
+        "Stepped_Connector_Terracotta_Roof",
+        "Front_Porch_Stone_Deck",
+        "Front_Porch_Stone_Pier_-1",
+        "Front_Porch_Stone_Pier_0",
+        "Front_Porch_Stone_Pier_1",
+        "Front_Porch_Beam",
+        "Front_Porch_Low_Stone_Wall_-1",
+        "Front_Porch_Low_Stone_Wall_1",
+        "Window_0_0_Glazing",
+        "Window_0_0_Jamb_-1",
+        "Window_0_0_Jamb_1",
+        "Window_0_0_HeadSill_-1",
+        "Window_0_0_HeadSill_1",
+        "Window_0_0_Mullion",
+        "Window_0_1_Glazing",
+        "Window_0_1_Jamb_-1",
+        "Window_0_1_Jamb_1",
+        "Window_0_1_HeadSill_-1",
+        "Window_0_1_HeadSill_1",
+        "Window_0_1_Mullion",
+        "Window_0_2_Glazing",
+        "Window_0_2_Jamb_-1",
+        "Window_0_2_Jamb_1",
+        "Window_0_2_HeadSill_-1",
+        "Window_0_2_HeadSill_1",
+        "Window_0_2_Mullion",
+        "Window_1_0_Glazing",
+        "Window_1_0_Jamb_-1",
+        "Window_1_0_Jamb_1",
+        "Window_1_0_HeadSill_-1",
+        "Window_1_0_HeadSill_1",
+        "Window_1_0_Mullion",
+        "Window_3_0_Glazing",
+        "Window_3_0_Jamb_-1",
+        "Window_3_0_Jamb_1",
+        "Window_3_0_HeadSill_-1",
+        "Window_3_0_HeadSill_1",
+        "Window_3_0_Mullion",
+        "Window_5_0_Glazing",
+        "Window_5_0_Jamb_-1",
+        "Window_5_0_Jamb_1",
+        "Window_5_0_HeadSill_-1",
+        "Window_5_0_HeadSill_1",
+        "Window_5_0_Mullion",
+        "Window_6_0_Glazing",
+        "Window_6_0_Jamb_-1",
+        "Window_6_0_Jamb_1",
+        "Window_6_0_HeadSill_-1",
+        "Window_6_0_HeadSill_1",
+        "Window_6_0_Mullion",
+        "Window_7_0_Glazing",
+        "Window_7_0_Jamb_-1",
+        "Window_7_0_Jamb_1",
+        "Window_7_0_HeadSill_-1",
+        "Window_7_0_HeadSill_1",
+        "Window_7_0_Mullion",
+        "Window_8_0_Glazing",
+        "Window_8_0_Jamb_-1",
+        "Window_8_0_Jamb_1",
+        "Window_8_0_HeadSill_-1",
+        "Window_8_0_HeadSill_1",
+        "Window_8_0_Mullion",
+        "Entry_Door",
+        "Entry_Door_Limestone_Lintel",
+        "Return_Porch_Stone_Deck",
+        "Return_Porch_Stone_Pier_-1",
+        "Return_Porch_Stone_Pier_1"
       ],
-      "object_count": 1,
+      "object_count": 71,
       "bounds_world_m": [
         [
-          384.6500244140625,
-          401.6715087890625
+          382.2562561035156,
+          403.4278564453125
         ],
         [
-          1463.70703125,
-          1480.8961181640625
+          1461.9686279296875,
+          1484.1754150390625
         ],
         [
           0.0,
-          16.0
+          5.550000190734863
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          384.6500244140625,
-          401.6715087890625
+          382.2562561035156,
+          403.4278564453125
         ],
         [
-          1463.70703125,
-          1480.8961181640625
+          1461.9686279296875,
+          1484.1754150390625
         ],
         [
           0.0,
-          16.0
+          5.550000190734863
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.1/10; see ../audit/massing_the_caretaker_s_cottage_6b24af9/independent_grade_r2.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
-          384.6500244140625,
-          401.6715087890625
+          382.2562561035156,
+          403.4278564453125
         ],
         [
-          1463.70703125,
-          1480.8961181640625
+          1461.9686279296875,
+          1484.1754150390625
         ],
         [
           0.0,
-          16.0
+          5.550000190734863
         ]
       ]
     },
@@ -130484,46 +132158,46 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -337.32568359375,
-          -319.43914794921875
+          -342.5260925292969,
+          -319.1072998046875
         ],
         [
-          -307.5141906738281,
-          -273.9023742675781
+          -306.7158203125,
+          -273.77447509765625
         ],
         [
-          0.0,
-          16.0
+          -0.25119999051094055,
+          5.900000095367432
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -337.32568359375,
-          -319.43914794921875
+          -342.5260925292969,
+          -319.1072998046875
         ],
         [
-          -307.5141906738281,
-          -273.9023742675781
+          -306.7158203125,
+          -273.77447509765625
         ],
         [
-          0.0,
-          16.0
+          -0.25119999051094055,
+          5.900000095367432
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.3/10; official Purdue GIS FID 779 / 14 Waldron identity and wall ring verified within 0.000016 m; direct Blender 5.2.3 reopen confirmed one self-contained mesh. Heights/roof and facade stationing remain estimated; see ../audit/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451/independent_grade_r2.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
-          -337.32568359375,
-          -319.43914794921875
+          -337.87302297085677,
+          -319.1072944030926
         ],
         [
-          -307.5141906738281,
-          -273.9023742675781
+          -306.7158325110722,
+          -273.774472782859
         ],
         [
           0.0,
-          16.0
+          0.0
         ]
       ]
     },
@@ -130539,7 +132213,7 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          294.6150817871094,
+          294.5706481933594,
           322.02587890625
         ],
         [
@@ -130553,19 +132227,19 @@
       ],
       "exterior_bounds_world_m": [
         [
-          294.6150817871094,
-          322.02587890625
+          294.61508,
+          322.02588
         ],
         [
-          145.68447875976562,
-          158.78720092773438
+          145.68448,
+          158.7872
         ],
         [
           0.0,
-          7.599999904632568
+          7.6
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.2/10; reopened asset matches named OSM way 910910470 structural ring within 0.01 m; identity additionally supported by City of West Lafayette BPW map. Purdue FID 855 is excluded as Old Purdue Exponent. Indiana footprint 409924 overlaps but includes an adjacent roof; exact wall boundary remains uncertain. Heights/roof are estimates and facade details unverified; see ../audit/massing_the_moosehead_lounge_f81529e/independent_grade_r2.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -130591,36 +132265,36 @@
       "objects": [
         "The Pete Dye Clubhouse"
       ],
-      "object_count": 1,
+      "object_count": 122,
       "bounds_world_m": [
         [
-          -1063.66064453125,
-          -1019.9407958984375
+          -1064.35009765625,
+          -1019.2555541992188
         ],
         [
-          1241.8380126953125,
-          1277.5706787109375
+          1240.967529296875,
+          1278.2586669921875
         ],
         [
           0.0,
-          16.0
+          15.649999618530273
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -1063.66064453125,
-          -1019.9407958984375
+          -1064.35009765625,
+          -1019.2555541992188
         ],
         [
-          1241.8380126953125,
-          1277.5706787109375
+          1240.967529296875,
+          1278.2586669921875
         ],
         [
           0.0,
-          16.0
+          15.649999618530273
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.5/10; new clubhouse footprint and roof/facade form photo-informed; roof heights and entrance orientation estimated; legacy FID 233 is a distinct 1998 clubhouse; awaiting master integration",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -130704,33 +132378,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -919.4317626953125,
-          -873.3795776367188
+          -921.7515258789062,
+          -874.5935668945312
         ],
         [
-          85.51190185546875,
-          160.38616943359375
+          84.54356384277344,
+          161.20765686035156
         ],
         [
           0.0,
-          16.0
+          14.510000228881836
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -919.4317626953125,
-          -873.3795776367188
+          -921.7515258789062,
+          -874.5935668945312
         ],
         [
-          85.51190185546875,
-          160.38616943359375
+          84.54356384277344,
+          161.20765686035156
         ],
         [
           0.0,
-          16.0
+          14.510000228881836
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.1/10; direct Blender 4.5.15 reopen confirmed 274 meshes and bounds; named GIS/OSM identity and roof form supported, but footprint perimeter/area and wall-versus-roof registration remain conflicting. Eaves and ridge are LiDAR-supported estimates, facade stationing remains approximate; see ../audit/massing_turf_recreation_exercise_center_9622f45/independent_grade_r4.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -130759,33 +132433,33 @@
       "object_count": 1,
       "bounds_world_m": [
         [
-          -341.379638671875,
-          -316.7676086425781
+          -341.9996337890625,
+          -316.1476135253906
         ],
         [
-          65.45807647705078,
-          78.97164916992188
+          61.83308029174805,
+          79.25164794921875
         ],
         [
           0.0,
-          16.0
+          9.050000190734863
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          -341.379638671875,
-          -316.7676086425781
+          -341.9996337890625,
+          -316.1476135253906
         ],
         [
-          65.45807647705078,
-          78.97164916992188
+          61.83308029174805,
+          79.25164794921875
         ],
         [
           0.0,
-          16.0
+          9.050000190734863
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "independently graded 8.3/10; OSM FID 766 footprint and photo-informed form verified with estimated roof and facade details; awaiting master integration",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
@@ -130811,45 +132485,45 @@
       "objects": [
         "Union Club Hotel"
       ],
-      "object_count": 1,
+      "object_count": 28,
       "bounds_world_m": [
         [
-          235.162841796875,
-          276.73699951171875
+          235.5140380859375,
+          278.71722412109375
         ],
         [
-          -275.93438720703125,
-          -165.3607635498047
+          -284.97137451171875,
+          -163.16600036621094
         ],
         [
           0.0,
-          16.0
+          21.75
         ]
       ],
       "exterior_bounds_world_m": [
         [
-          235.162841796875,
-          276.73699951171875
+          235.5140380859375,
+          278.71722412109375
         ],
         [
-          -275.93438720703125,
-          -165.3607635498047
+          -284.97137451171875,
+          -163.16600036621094
         ],
         [
           0.0,
-          16.0
+          21.75
         ]
       ],
       "accuracy_status": "unverified; see ../audit/master_building_audit.json",
       "placement_transform": "identity; object coordinates retained in campus world space",
       "source_bounds_world_m": [
         [
-          235.162841796875,
-          276.73699951171875
+          235.80162331753857,
+          276.50746427367886
         ],
         [
-          -275.93438720703125,
-          -165.3607635498047
+          -284.82632661101434,
+          -165.4135114005885
         ],
         [
           0.0,
@@ -155285,12 +156959,12 @@
           28.5
         ]
       ],
-      "accuracy_status": "R4 independently graded 8.05/10 and synced into the master. Eight occupied floors per tower are supported by Indiana CHE records; 2017\u201318 LiDAR suggests a lower roof profile, but its vertical accuracy is N/A and it contains no class-6 building returns. Tall penthouses were removed as unsupported; see audit/mccutcheon_hall/independent_review_r4.md and mccutcheon_r4_evidence.json.",
+      "accuracy_status": "R4 independently graded 8.05/10 and synced into the master. Eight occupied floors per tower are supported by Indiana CHE records; 2017–18 LiDAR suggests a lower roof profile, but its vertical accuracy is N/A and it contains no class-6 building returns. Tall penthouses were removed as unsupported; see audit/mccutcheon_hall/independent_review_r4.md and mccutcheon_r4_evidence.json.",
       "placement_transform": "master collection-instance marker translates local geometry to placement_origin_xy_m",
       "source_metadata": {
         "evidence_file": "audit/mccutcheon_hall/mccutcheon_r4_evidence.json",
         "gis_feature_id": 57,
-        "lidar_source": "2017\u201318 USGS 3DEP point-cloud tile; product vertical accuracy N/A"
+        "lidar_source": "2017–18 USGS 3DEP point-cloud tile; product vertical accuracy N/A"
       },
       "source_bounds_world_m": [
         [
@@ -160312,116 +161986,116 @@
       "collection": "Asset_birck_nanotechnology_center",
       "scene": "Scene",
       "objects": [
-        "Birck \u2022 full GIS-footprint research block",
-        "Birck \u2022 glazed window bands",
-        "Birck \u2022 consolidated aluminum facade frames",
-        "Birck \u2022 main double-height entrance doors",
-        "Birck \u2022 entry canopy",
-        "Birck \u2022 canopy blade",
-        "Birck \u2022 canopy blade.001",
-        "Birck \u2022 facade lettering",
-        "Birck \u2022 lobby lower terrazzo",
-        "Birck \u2022 lobby upper bridge",
-        "Birck \u2022 lobby upper bridge.001",
-        "Birck \u2022 lobby timber soffit",
-        "Birck \u2022 lobby structural column",
-        "Birck \u2022 lobby structural column.001",
-        "Birck \u2022 warm lobby light",
-        "Birck \u2022 rooftop mechanical penthouse 1",
-        "Birck \u2022 rooftop plant curb 1",
-        "Birck \u2022 HVAC exhaust 1-1",
-        "Birck \u2022 HVAC exhaust 1-2",
-        "Birck \u2022 HVAC exhaust 1-3",
-        "Birck \u2022 rooftop mechanical penthouse 2",
-        "Birck \u2022 rooftop plant curb 2",
-        "Birck \u2022 HVAC exhaust 2-1",
-        "Birck \u2022 HVAC exhaust 2-2",
-        "Birck \u2022 HVAC exhaust 2-3",
-        "Birck \u2022 rooftop mechanical penthouse 3",
-        "Birck \u2022 rooftop plant curb 3",
-        "Birck \u2022 HVAC exhaust 3-1",
-        "Birck \u2022 HVAC exhaust 3-2",
-        "Birck \u2022 rooftop mechanical penthouse 4",
-        "Birck \u2022 rooftop plant curb 4",
-        "Birck \u2022 HVAC exhaust 4-1",
-        "Birck \u2022 HVAC exhaust 4-2",
-        "Birck \u2022 flat-roof parapet segment 000",
-        "Birck \u2022 flat-roof parapet segment 003",
-        "Birck \u2022 flat-roof parapet segment 004",
-        "Birck \u2022 flat-roof parapet segment 006",
-        "Birck \u2022 flat-roof parapet segment 009",
-        "Birck \u2022 flat-roof parapet segment 012",
-        "Birck \u2022 flat-roof parapet segment 016",
-        "Birck \u2022 flat-roof parapet segment 021",
-        "Birck \u2022 flat-roof parapet segment 026",
-        "Birck \u2022 flat-roof parapet segment 027",
-        "Birck \u2022 flat-roof parapet segment 031",
-        "Birck \u2022 flat-roof parapet segment 037",
-        "Birck \u2022 flat-roof parapet segment 048",
-        "Birck \u2022 flat-roof parapet segment 052",
-        "Birck \u2022 flat-roof parapet segment 056",
-        "Birck \u2022 flat-roof parapet segment 060",
-        "Birck \u2022 flat-roof parapet segment 066",
-        "Birck \u2022 flat-roof parapet segment 131",
-        "Birck \u2022 flat-roof parapet segment 135",
-        "Birck \u2022 flat-roof parapet segment 139",
-        "Birck \u2022 flat-roof parapet segment 143",
-        "Birck \u2022 flat-roof parapet segment 154",
-        "Birck \u2022 flat-roof parapet segment 160",
-        "Birck \u2022 flat-roof parapet segment 164",
-        "Birck \u2022 flat-roof parapet segment 168",
-        "Birck \u2022 flat-roof parapet segment 172",
-        "Birck \u2022 flat-roof parapet segment 173",
-        "Birck \u2022 flat-roof parapet segment 174",
-        "Birck \u2022 flat-roof parapet segment 175",
-        "Birck \u2022 flat-roof parapet segment 176",
-        "Birck \u2022 flat-roof parapet segment 177",
-        "Birck \u2022 flat-roof parapet segment 179",
-        "Birck \u2022 flat-roof parapet segment 180",
-        "Birck \u2022 flat-roof parapet segment 181",
-        "Birck \u2022 flat-roof parapet segment 182",
-        "Birck \u2022 flat-roof parapet segment 183",
-        "Birck \u2022 flat-roof parapet segment 185",
-        "Birck \u2022 flat-roof parapet segment 186",
-        "Birck \u2022 flat-roof parapet segment 188",
-        "Birck \u2022 flat-roof parapet segment 191",
-        "Birck \u2022 flat-roof parapet segment 193",
-        "Birck \u2022 intake louver 0-0",
-        "Birck \u2022 intake louver 0-1",
-        "Birck \u2022 intake louver 0-2",
-        "Birck \u2022 intake louver 0-3",
-        "Birck \u2022 intake louver 0-4",
-        "Birck \u2022 intake louver 0-5",
-        "Birck \u2022 intake louver 0-6",
-        "Birck \u2022 intake louver 0-7",
-        "Birck \u2022 intake louver 0-8",
-        "Birck \u2022 intake louver 0-9",
-        "Birck \u2022 intake louver 0-10",
-        "Birck \u2022 intake louver 0-11",
-        "Birck \u2022 intake louver 1-0",
-        "Birck \u2022 intake louver 1-1",
-        "Birck \u2022 intake louver 1-2",
-        "Birck \u2022 intake louver 1-3",
-        "Birck \u2022 intake louver 1-4",
-        "Birck \u2022 intake louver 1-5",
-        "Birck \u2022 intake louver 1-6",
-        "Birck \u2022 intake louver 1-7",
-        "Birck \u2022 intake louver 1-8",
-        "Birck \u2022 intake louver 1-9",
-        "Birck \u2022 intake louver 1-10",
-        "Birck \u2022 intake louver 1-11",
-        "Birck \u2022 intake louver 2-0",
-        "Birck \u2022 intake louver 2-1",
-        "Birck \u2022 intake louver 2-2",
-        "Birck \u2022 intake louver 2-3",
-        "Birck \u2022 intake louver 2-4",
-        "Birck \u2022 intake louver 2-5",
-        "Birck \u2022 intake louver 2-6",
-        "Birck \u2022 intake louver 2-7",
-        "Birck \u2022 intake louver 2-8",
-        "Birck \u2022 intake louver 2-9",
-        "Birck \u2022 intake louver 2-10",
-        "Birck \u2022 intake louver 2-11"
+        "Birck • full GIS-footprint research block",
+        "Birck • glazed window bands",
+        "Birck • consolidated aluminum facade frames",
+        "Birck • main double-height entrance doors",
+        "Birck • entry canopy",
+        "Birck • canopy blade",
+        "Birck • canopy blade.001",
+        "Birck • facade lettering",
+        "Birck • lobby lower terrazzo",
+        "Birck • lobby upper bridge",
+        "Birck • lobby upper bridge.001",
+        "Birck • lobby timber soffit",
+        "Birck • lobby structural column",
+        "Birck • lobby structural column.001",
+        "Birck • warm lobby light",
+        "Birck • rooftop mechanical penthouse 1",
+        "Birck • rooftop plant curb 1",
+        "Birck • HVAC exhaust 1-1",
+        "Birck • HVAC exhaust 1-2",
+        "Birck • HVAC exhaust 1-3",
+        "Birck • rooftop mechanical penthouse 2",
+        "Birck • rooftop plant curb 2",
+        "Birck • HVAC exhaust 2-1",
+        "Birck • HVAC exhaust 2-2",
+        "Birck • HVAC exhaust 2-3",
+        "Birck • rooftop mechanical penthouse 3",
+        "Birck • rooftop plant curb 3",
+        "Birck • HVAC exhaust 3-1",
+        "Birck • HVAC exhaust 3-2",
+        "Birck • rooftop mechanical penthouse 4",
+        "Birck • rooftop plant curb 4",
+        "Birck • HVAC exhaust 4-1",
+        "Birck • HVAC exhaust 4-2",
+        "Birck • flat-roof parapet segment 000",
+        "Birck • flat-roof parapet segment 003",
+        "Birck • flat-roof parapet segment 004",
+        "Birck • flat-roof parapet segment 006",
+        "Birck • flat-roof parapet segment 009",
+        "Birck • flat-roof parapet segment 012",
+        "Birck • flat-roof parapet segment 016",
+        "Birck • flat-roof parapet segment 021",
+        "Birck • flat-roof parapet segment 026",
+        "Birck • flat-roof parapet segment 027",
+        "Birck • flat-roof parapet segment 031",
+        "Birck • flat-roof parapet segment 037",
+        "Birck • flat-roof parapet segment 048",
+        "Birck • flat-roof parapet segment 052",
+        "Birck • flat-roof parapet segment 056",
+        "Birck • flat-roof parapet segment 060",
+        "Birck • flat-roof parapet segment 066",
+        "Birck • flat-roof parapet segment 131",
+        "Birck • flat-roof parapet segment 135",
+        "Birck • flat-roof parapet segment 139",
+        "Birck • flat-roof parapet segment 143",
+        "Birck • flat-roof parapet segment 154",
+        "Birck • flat-roof parapet segment 160",
+        "Birck • flat-roof parapet segment 164",
+        "Birck • flat-roof parapet segment 168",
+        "Birck • flat-roof parapet segment 172",
+        "Birck • flat-roof parapet segment 173",
+        "Birck • flat-roof parapet segment 174",
+        "Birck • flat-roof parapet segment 175",
+        "Birck • flat-roof parapet segment 176",
+        "Birck • flat-roof parapet segment 177",
+        "Birck • flat-roof parapet segment 179",
+        "Birck • flat-roof parapet segment 180",
+        "Birck • flat-roof parapet segment 181",
+        "Birck • flat-roof parapet segment 182",
+        "Birck • flat-roof parapet segment 183",
+        "Birck • flat-roof parapet segment 185",
+        "Birck • flat-roof parapet segment 186",
+        "Birck • flat-roof parapet segment 188",
+        "Birck • flat-roof parapet segment 191",
+        "Birck • flat-roof parapet segment 193",
+        "Birck • intake louver 0-0",
+        "Birck • intake louver 0-1",
+        "Birck • intake louver 0-2",
+        "Birck • intake louver 0-3",
+        "Birck • intake louver 0-4",
+        "Birck • intake louver 0-5",
+        "Birck • intake louver 0-6",
+        "Birck • intake louver 0-7",
+        "Birck • intake louver 0-8",
+        "Birck • intake louver 0-9",
+        "Birck • intake louver 0-10",
+        "Birck • intake louver 0-11",
+        "Birck • intake louver 1-0",
+        "Birck • intake louver 1-1",
+        "Birck • intake louver 1-2",
+        "Birck • intake louver 1-3",
+        "Birck • intake louver 1-4",
+        "Birck • intake louver 1-5",
+        "Birck • intake louver 1-6",
+        "Birck • intake louver 1-7",
+        "Birck • intake louver 1-8",
+        "Birck • intake louver 1-9",
+        "Birck • intake louver 1-10",
+        "Birck • intake louver 1-11",
+        "Birck • intake louver 2-0",
+        "Birck • intake louver 2-1",
+        "Birck • intake louver 2-2",
+        "Birck • intake louver 2-3",
+        "Birck • intake louver 2-4",
+        "Birck • intake louver 2-5",
+        "Birck • intake louver 2-6",
+        "Birck • intake louver 2-7",
+        "Birck • intake louver 2-8",
+        "Birck • intake louver 2-9",
+        "Birck • intake louver 2-10",
+        "Birck • intake louver 2-11"
       ],
       "object_count": 110,
       "bounds_world_m": [
@@ -171649,7 +173323,7 @@
           11.639999389648438
         ]
       ],
-      "accuracy_status": "Finished at independent full-building grade 8.0/10; six floor plates match the Purdue GIS perimeter. Roof equipment, below-grade layout, fa\u00e7ade details, and vertical GIS semantics retain documented uncertainty in audit/batchC_life_science_plant_soils_evidence.json and audit/batchC_life_science_plant_soils/INDEPENDENT_REVIEW_round6.md",
+      "accuracy_status": "Finished at independent full-building grade 8.0/10; six floor plates match the Purdue GIS perimeter. Roof equipment, below-grade layout, façade details, and vertical GIS semantics retain documented uncertainty in audit/batchC_life_science_plant_soils_evidence.json and audit/batchC_life_science_plant_soils/INDEPENDENT_REVIEW_round6.md",
       "placement_transform": "master Placement_<id> translates local geometry to placement_origin_xy_m",
       "source_metadata": {
         "evidence_file": "audit/batchC_life_science_plant_soils_evidence.json",
@@ -177916,25 +179590,6 @@
       "independent_grade": 8.25,
       "master_integration_status": "PASS: fresh-opened master marker and linked library match manifest; world bounds error <= 0.01 m",
       "master_integration_evidence": "audit/alpha_epsilon_pi/master_integration_2026-10-26.json"
-    }
-  ],
-  "detailed_asset_count": 95,
-  "placement_model": "Detailed assets are local-coordinate linked collections. Placement_<id> empties in the master supply XY campus coordinates. Massing assets retain their original campus coordinates and are linked directly.",
-  "last_master_build": "2026-10-26",
-  "excluded_assets": [
-    {
-      "id": "massing_granite_student_living_3732ce0",
-      "file": "buildings/massing_granite_student_living_3732ce0.blend",
-      "collection": "Asset_massing_granite_student_living_3732ce0",
-      "reason": "Private off-campus student housing is out of project scope; Greek chapter houses are the explicit off-campus exception.",
-      "grade_record": "audit/massing_granite_student_living_3732ce0/independent_grade_r2/result.json"
-    },
-    {
-      "id": "massing_latino_cultural_center_5f0d139",
-      "file": "buildings/massing_latino_cultural_center_5f0d139.blend",
-      "collection": "Asset_massing_latino_cultural_center_5f0d139",
-      "reason": "Historical former Latino Cultural Center at 600 N Russell (2006\u20132017). Evidence supports demolition and incorporation of the parcel into Phi Gamma Delta\u2019s Lyles Addition/parking reconfiguration; no separate current building to model.",
-      "evidence": "audit/latino_cultural_center_5f0d139/identity_review.md"
     }
   ]
 }

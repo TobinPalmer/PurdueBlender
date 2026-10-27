@@ -1,0 +1,176 @@
+{
+  "building": "Virginia C. Meredith Residence Hall",
+  "building_code": "MRDH",
+  "asset_id": "massing_meredith_hall_4bb4188",
+  "asset": {
+    "path": "modular/buildings/massing_meredith_hall_4bb4188.blend",
+    "object": "Meredith Hall",
+    "collection": "Asset_massing_meredith_hall_4bb4188",
+    "status": "GIS-footprint reconstruction with source-supported X plan and facade cues; independent grade pending"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/253?f=pjson",
+      "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D253&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "feature_id": "FID 253; GlobalID {CF076D31-6BE9-48FF-95C9-EBADDA76AD1D}",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Feature-level edits blank; layer metadata last edited 2026-08-31T16:13:41Z.",
+      "source_crs": "EPSG:102100 (latest WKID 3857); query also saved in EPSG:4326",
+      "snapshots": [
+        "sources/feature_253_raw.json",
+        "sources/feature_253_wgs84.geojson",
+        "sources/purdue_buildings_layer_metadata.json"
+      ],
+      "use": "Exact named Purdue feature for perimeter footprint and position.",
+      "measurement_method": "Transformed official EPSG:4326 vertices with project's approximate campus conversion; structural walls use source ring.",
+      "uncertainty": "Official GIS map polygon, not a certified survey; accuracy is unpublished."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://housing.purdue.edu/my-housing/options/residence-halls/meredith.html",
+      "feature_id": "Meredith Hall residence page",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page last modified 2026-08-10",
+      "source_crs": "Not applicable",
+      "snapshot": "sources/purdue_housing_meredith.html",
+      "use": "Identity, construction year 1952, X-shaped plan, porch, and front-lawn context.",
+      "measurement_method": "Qualitative massing and architecture descriptions only.",
+      "uncertainty": "No elevations, story count, or facade dimensions."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://housing.purdue.edu/visit/conferences/accommodations.html",
+      "photo_url": "https://housing.purdue.edu/images/_hero/meredith-exterior-640x360.jpg",
+      "feature_id": "Photo labelled Meredith Exterior",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Photo capture date not stated",
+      "source_crs": "Not applicable",
+      "snapshots": [
+        "sources/purdue_conference_accommodations.html",
+        "sources/purdue_meredith_exterior.jpg"
+      ],
+      "use": "Qualitative red brick, light window trim, repeated facade rows, and porch reference.",
+      "measurement_method": "Visual comparison only; perspective is not used for dimensions.",
+      "uncertainty": "One view of a facade/courtyard; other sides, exact material, entry bearing, and roof are unclear."
+    },
+    {
+      "provider": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/way/128488696",
+      "feature_id": "Way 128488696, name=Meredith Hall",
+      "retrieval_date": "2026-10-22 (Overpass source snapshot)",
+      "source_date": "Snapshot timestamp 2026-10-22T03:45:50Z; element-specific edit date unavailable.",
+      "source_crs": "WGS84 (EPSG:4326)",
+      "snapshot": "sources/osm_way_128488696_snapshot.json",
+      "use": "Independent name/address/4-level cross-check and source topology comparison.",
+      "measurement_method": "OSM way node coordinates and building tags from repository's raw Overpass snapshot.",
+      "uncertainty": "Community-maintained data; not survey control; levels conflict with Purdue GIS count."
+    }
+  ],
+  "transform": {
+    "geographic_origin": {
+      "latitude": 40.4274,
+      "longitude": -86.9137
+    },
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not a surveyed CRS",
+    "coordinate_frame": "Campus coordinates retained; manifest asset remains kind=massing."
+  },
+  "measurements": {
+    "footprint_vertices": 20,
+    "gis_source_bbox_xy_m": {
+      "min_x": -866.7221069335938,
+      "max_x": -766.2761840820312,
+      "min_y": -171.3894805908203,
+      "max_y": -70.58563995361328
+    },
+    "gis_area_m2": 3810.5660390811972,
+    "model_bounds_xyz_m": {
+      "min": [
+        -866.9352416992188,
+        -171.6017608642578,
+        -0.12999999523162842
+      ],
+      "max": [
+        -766.0626220703125,
+        -70.37311553955078,
+        15.65999984741211
+      ]
+    },
+    "modeled_above_grade_floors": 4,
+    "floor_to_floor_m": 3.8,
+    "estimated_wall_height_m": 15.2,
+    "estimated_roof_top_m": 15.649999999999999,
+    "height_status": "Estimated. Purdue GIS CountOfFLO/NUM_LEVELS indicate 5; OSM building:levels indicates 4. Built 4 above-grade levels; no source verifies the lower-level convention or measured vertical height.",
+    "roof_status": "Low flat roof with shallow cornice modeled from image cues; exact roof form/elevation unverified.",
+    "entry_orientation": "Modeled on east-facing edge toward Martin Jischke Drive based on address/context; no compass-tagged source establishes the main-door bearing.",
+    "main_entrance_edge_index": 2,
+    "reopen_validation": "audit/meredith_hall/reopen_check.json"
+  },
+  "geometry_edits": [
+    "Replaced legacy 44-node OSM-derived massing footprint with the 20-vertex named Purdue GIS feature 253 outline.",
+    "Extruded the exact source plan to four above-grade stories; 3.8 m floor spacing and total height are estimates.",
+    "Added repeated red-brick facade bays, pale window frames, horizontal stone courses, dark low roof/cornice, and a modest columned porch based on available qualitative references.",
+    "Preserved asset ID, object name, collection name, campus-coordinate frame, identity object transform, and manifest asset path."
+  ],
+  "uncertainties": [
+    "GIS positional accuracy is unpublished; it is not a survey.",
+    "Official GIS count is 5 levels but OSM says 4 and GIS level-code fields are incomplete; 4 above-grade modeled levels and height remain uncertain.",
+    "Roof form and exact height have no reliable elevation source; height is estimated.",
+    "One official exterior image shows only one facade/courtyard view; window dimensions and all other elevations remain unverified.",
+    "Main entrance orientation is inferred from street/address context, not a compass-tagged plan."
+  ],
+  "artifacts": {
+    "build_script": "modular/buildings/build_massing_meredith_hall_4bb4188.py",
+    "preview_script": "audit/meredith_hall/render_preview.py",
+    "preview": "audit/meredith_hall/preview_exterior.png",
+    "raw_sources": "audit/meredith_hall/sources/",
+    "reopen_check_script": "audit/meredith_hall/reopen_check.py",
+    "independent_evaluator": "audit/meredith_hall/independent_grade.py",
+    "independent_grade_result": "audit/meredith_hall/independent_grade.json"
+  },
+  "grade": {
+    "reviewer": "Independent grader agent",
+    "score": 8.5,
+    "max_score": 10,
+    "minimum_passing_score": 8,
+    "pass": true,
+    "result": "audit/meredith_hall/independent_grade.json",
+    "evaluator": "audit/meredith_hall/independent_grade.py",
+    "criteria": [
+      {
+        "name": "Identity and source-backed footprint",
+        "score": 2,
+        "max_score": 2
+      },
+      {
+        "name": "Position, orientation, and dimensions",
+        "score": 2,
+        "max_score": 2
+      },
+      {
+        "name": "Floors, height, and roof form",
+        "score": 1,
+        "max_score": 2
+      },
+      {
+        "name": "Facade, entrances, and distinctive architecture",
+        "score": 1.5,
+        "max_score": 2
+      },
+      {
+        "name": "Modular export, portability, and complete evidence",
+        "score": 2,
+        "max_score": 2
+      }
+    ],
+    "findings": [
+      "All 20 GIS structural wall edges matched within 0.000031 m; OSM centroid is 0.66 m from GIS centroid.",
+      "Purdue GIS reports five levels while OSM and the model indicate four; model wall height (15.2 m) and roof top (15.65 m) are estimates, with roof form unverified.",
+      "East-facing entrance bearing is inferred. The modeled canopy reads smaller and more isolated than the Purdue description of a large main-entrance porch.",
+      "Purdue GIS positional accuracy is unpublished; unpictured facades and precise window/porch dimensions remain unverified."
+    ]
+  }
+}

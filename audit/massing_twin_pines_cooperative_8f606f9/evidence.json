@@ -1,0 +1,172 @@
+{
+  "building_id": "massing_twin_pines_cooperative_8f606f9",
+  "building_name": "Twin Pines Cooperative",
+  "asset_path": "modular/buildings/massing_twin_pines_cooperative_8f606f9.blend",
+  "builder": "Rossen building lane",
+  "retrieval_date": "2026-10-26",
+  "identity": {
+    "status": "corroborated",
+    "evidence": "README assigns Twin Pines to Rossen and maps FID 766. The bundled OSM campus dataset has named way 301934836, Twin Pines Cooperative, at the asset coordinates. The current Twin Pines contact page lists 322 Waldron Street. Purdue FSCL lists Twin Pines as an active cooperative house; Purdue's 2023 story says Twin Pines remains at 322 Waldron in the same house and same spot as the alumna's time there.",
+    "facility_match": "No indication of the historical Shoemaker/Twin Pines 1940 location at 103 Russell Street: the current Twin Pines facility is 322 Waldron, and Purdue's 2023 facility story confirms the persistent Waldron location."
+  },
+  "sources": [
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life",
+      "url": "https://www.purdue.edu/fscl/councils/cooperatives/houses.php",
+      "source_date": "undated current web page; captured 2026-10-26",
+      "source_crs": "not applicable",
+      "source_feature": "Twin Pines listing and official website link",
+      "measurement_method": "Facility identity cross-check only",
+      "uncertainty": "Does not provide building dimensions or a map footprint.",
+      "snapshot": "sources/purdue_cooperative_houses.html"
+    },
+    {
+      "provider": "Twin Pines Cooperative official website",
+      "url": "https://tpcooperative.wixsite.com/twinpines/contact-us",
+      "source_date": "undated current contact page; captured 2026-10-26",
+      "source_crs": "not applicable",
+      "source_feature": "Twin Pines contact/address listing",
+      "measurement_method": "Published postal address cross-check",
+      "uncertainty": "Address does not give wall dimensions or facade bearing.",
+      "snapshot": "sources/twin_pines_official_contact.html"
+    },
+    {
+      "provider": "Purdue University Vice Provost for Student Life",
+      "url": "https://www.purdue.edu/vpsl/news/featured-stories/2023-bob-joyce.php",
+      "source_date": "2023",
+      "source_crs": "not applicable",
+      "source_feature": "Purdue story quoting alumna that Twin Pines is at the same house/spot on Waldron Street, bracketed address 322 Waldron",
+      "measurement_method": "Independent identity and location cross-check",
+      "uncertainty": "Narrative source, no building survey or measured elevation.",
+      "snapshot": "sources/purdue_student_life_bob_joyce_2023.html"
+    },
+    {
+      "provider": "OpenStreetMap / Overpass campus snapshot included in repository",
+      "url": "https://www.openstreetmap.org/way/301934836",
+      "source_date": "dataset OSM base timestamp 2026-10-22T03:45:50Z",
+      "source_crs": "Source node coordinates are WGS84 latitude/longitude. Converted to campus local approximate coordinates using modular/AGENTS.md formulas; X east, Y north, meters, not a surveyed CRS.",
+      "source_feature": "Way 301934836, name=Twin Pines Cooperative; local building crosswalk FID 766",
+      "measurement_method": "Projected each source node with x=(lon+86.9137)*111412.84*cos(radians(40.4274)); y=(lat-40.4274)*111040.0; compared against original asset's six base vertices",
+      "uncertainty": "Community mapping, not surveyed wall line; may be generalized or include porch/roof extent. The asset polygon and projected source vertices agree within 0.0001 m because the asset was generated from this source geometry; this is not an independent survey accuracy result.",
+      "snapshot": "sources/osm_way_301934836_fid766.json"
+    },
+    {
+      "provider": "Purdue College of Health and Human Sciences Ambassadors blog",
+      "url": "https://hhsambassadors.blogspot.com/2011/11/best-decision-i-made-senior-year-of.html",
+      "source_date": "post dated 2011-11-16; image published with this Twin Pines/cooperative housing post",
+      "source_crs": "not georeferenced",
+      "source_feature": "Exterior photo of Twin Pines Cooperative at 322; sign in photo labels Twin Pines Cooperative, Est. 1952",
+      "measurement_method": "Visual inspection supports two occupied stories, attic/gable form, white horizontal lap siding, dark shutters, covered front porch with posts/brick bases and porch rail; no dimensions measured",
+      "uncertainty": "Single perspective, trees obscure portions; image is historical and shows white siding / shutters which may have changed. Does not establish facade azimuth, exact counts, or height.",
+      "snapshot": "sources/purdue_hhs_ambassadors_2011_blog.html",
+      "image_snapshot": "sources/purdue_hhs_ambassadors_twin_pines_exterior.jpg"
+    },
+    {
+      "provider": "Twin Pines Cooperative current official website",
+      "url": "https://tpcooperative.wixsite.com/twinpines/accomodations",
+      "source_date": "undated live photo; source path includes 20260427_151135; captured 2026-10-26",
+      "source_crs": "not georeferenced",
+      "source_feature": "Image of the current front porch / entrance with 322 address and house members",
+      "measurement_method": "Visual inspection supports porch roof/ceiling, white round columns with decorative capitals, brick piers, white railing and muted gray-green lap siding",
+      "uncertainty": "People obscure the entrance and lower facade; no overall exterior or dimensions. Current page's image metadata is not a verified photo capture date.",
+      "snapshot": "sources/twin_pines_official_accommodations.html"
+    },
+    {
+      "provider": "Twin Pines Cooperative current official website",
+      "url": "https://tpcooperative.wixsite.com/twinpines/accomodations",
+      "source_date": "undated live photo; captured 2026-10-26",
+      "source_crs": "not georeferenced",
+      "source_feature": "Interior house photo",
+      "measurement_method": "Visual inspection indicates interior stairs and shared-house context only; not used to establish exterior geometry",
+      "uncertainty": "No exterior evidence.",
+      "snapshot": "sources/twin_pines_official_accommodations.html"
+    }
+  ],
+  "source_footprint": {
+    "feature": "OSM way 301934836; named Twin Pines Cooperative; local README crosswalk FID 766",
+    "vertex_count": 6,
+    "wall_outline_bounds_xy_m": [
+      [
+        -341.379644,
+        -316.767607
+      ],
+      [
+        65.45808,
+        78.971648
+      ]
+    ],
+    "plan_extent_m": {
+      "east_west": 24.612037,
+      "north_south": 13.513568
+    },
+    "asset_source_geometry_vertex_error_m": "<= 0.0001 (source-derived geometry round-trip; no independent survey claim)",
+    "footprint_match": "Original asset six-node footprint retained as base structure; source feature and facility address align.",
+    "crs_note": "The WGS84 nodes are transformed with an approximate local conversion documented in modular/AGENTS.md, not a surveyed projection."
+  },
+  "changes": {
+    "original_asset_bounds_world_m": [
+      [
+        -341.379639,
+        -316.767609
+      ],
+      [
+        65.458076,
+        78.971649
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ],
+    "new_evaluated_bounds_world_m": [
+      [
+        -341.999634,
+        -316.147614
+      ],
+      [
+        61.83308,
+        79.251648
+      ],
+      [
+        0.0,
+        9.05
+      ]
+    ],
+    "object_location_rotation_scale": "unchanged (0,0,0), (0,0,0), (1,1,1); campus coordinates retained",
+    "collection_and_object": "Asset_massing_twin_pines_cooperative_8f606f9 / Twin Pines Cooperative; one unified mesh object retained",
+    "geometry_edits": [
+      "Replaced 16 m uniform prism with estimated two-storey residential walls and 9.05 m gabled roof ridge.",
+      "Added front covered porch with four round columns on brick piers, white railing, central entry and steps, matching photos.",
+      "Added lap-siding seam detail, shuttered windows, gable vent, roof eaves and a lower rear/northeast wing roof.",
+      "Preserved six source-derived ground vertices and campus object transform."
+    ],
+    "height_status": "estimated, not measured; no authoritative elevation or measured roof height was located",
+    "floors_status": "two occupied stories are visually supported; attic/upper roof volume is shown, no floor plan verified",
+    "orientation_status": "E-W long building axis follows the projected source footprint. Southern entrance/frontage is inferred from street/site position and the source photo viewpoints, not azimuth-surveyed."
+  },
+  "validation": {
+    "result": "passed",
+    "blender": "4.5.15 LTS",
+    "report": "reopen_validation.json",
+    "views": [
+      "renders/twin_pines_front_south.png",
+      "renders/twin_pines_top.png",
+      "renders/twin_pines_east.png"
+    ],
+    "checks": [
+      "Reopened saved blend.",
+      "Expected collection and object, exactly one unified mesh, zero modifiers.",
+      "Zero object transforms and no campus-coordinate shift.",
+      "All six source base points match within 0.0001 m.",
+      "Estimated ridge is 9.05 m; mesh is 2,758 vertices and 1,900 polygons.",
+      "No unpacked external image dependencies."
+    ]
+  },
+  "unresolved_uncertainties": [
+    "No measured height or architectural drawings found; eave and ridge heights (6.45 m, 9.05 m), story spacing and roof dimensions are visual estimates.",
+    "Exact number and placement of windows on all elevations are estimated from partial photos.",
+    "The old photo has dark shutters and white siding; the current porch image has muted gray-green siding but does not show the full facade, so current full-house finish remains uncertain.",
+    "The source footprint may include covered porch/roof or generalized edge rather than a surveyed structural wall line. Porch extension is therefore represented from photo evidence and extends slightly beyond the base footprint.",
+    "No aerial/orthographic imagery was captured for this task; roof/facade plan interpretation and south-front orientation remain approximate."
+  ]
+}

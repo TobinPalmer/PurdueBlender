@@ -1,0 +1,208 @@
+{
+  "building_id": "massing_purdue_university_daniel_turf_center_e69b7da",
+  "building_name": "Purdue University Daniel Turf Center (William H. Daniel Turfgrass Research & Diagnostic Court)",
+  "reviewer": "independent evaluator; direct Purdue FID 208 GIS and layer metadata, Purdue HLA source snapshot, Esri orthophoto/overlay, saved renders, and Blender 5.2.3 direct reopen",
+  "score": 6.5,
+  "max_score": 10,
+  "passing_standard": 8,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2.0,
+      "status": "named identity and candidate outline are strongly supported; apparent area discrepancy reconciles across coordinate systems",
+      "evidence": [
+        "Purdue GIS FID 208 / DANL names William H. Daniel Turfgrass Research & Diagnostic Court at 1340 Cherry Lane; Purdue HLA's saved facility page independently identifies Daniel Turf Center at the same address. This is distinct from the RecWell Turf Recreation Exercise Center.",
+        "The red GIS overlay follows the long low roof in the Esri imagery. The model's 12 lower footprint vertices reproduce the FID 208 ring after the documented local projection within 0.000078 m maximum vertex residual.",
+        "Service Shape__Area is 1170.621 m\u00b2; the ring in the project local ground frame is 677.061 m\u00b2 (ratio 1.729), but shoelace area after reprojecting the same query ring to the source layer's EPSG:3857 is 1170.633 m\u00b2 (relative error 1.00107e-05). Thus the apparent conflict in the notes results from comparing projected-plane area to ground-frame area; the remaining uncertainty is whether the ring outlines wall or roof edges.",
+        "The initial FID 855 screening candidate is correctly rejected: it refers to the Old Purdue Exponent Building, not Daniel Turf Center."
+      ],
+      "findings": [
+        "Confirm whether the GIS ring follows the structural wall line or roof edge before calling its area/as-built dimensions verified."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.7,
+      "max_score": 2.0,
+      "status": "campus coordinates and plan shape match named GIS and aerial evidence; source edge interpretation remains uncertain",
+      "evidence": [
+        "Blender 5.2.3 reopened bounds X -1408.480..-1363.876 m, Y 1609.489..1627.130 m, Z 0.000..4.267 m. FID 208 ring plan envelope is approximately 44.60 m by 17.64 m.",
+        "The north-oriented outline occupies the long low building visible in the orthophoto overlay; projected ring vertices and reopened mesh are within sub-millimetre numerical residual. Campus coordinates use the documented local approximation, not a survey-grade CRS."
+      ],
+      "findings": [
+        "The aerial supports roof position and shape but does not prove the GIS ring is the structural wall line; keep that distinction explicit."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.8,
+      "max_score": 2.0,
+      "status": "one story is GIS-supported; 4.2672 m height is only a provisional interpretation of an undocumented field",
+      "evidence": [
+        "GIS NUM_LEVELS=1 supports a one-story mass. GIS Extrution=14 has no documented units. The model's 4.2672 m height assumes 14 ft = 4.2672 m; that interpretation is not independently verified.",
+        "The orthophoto shows a low elongated roof mass, but provides no height or roof pitch. The mesh uses a plain single-cap roof with no support for its vertical dimensions or roof profile from elevation/section evidence."
+      ],
+      "findings": [
+        "Treat 4.2672 m strictly as an estimate; do not label 14 as feet without a source documenting that unit. Roof height, pitch, and profile remain unverified."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.5,
+      "max_score": 2.0,
+      "status": "no facade or entrance source was found; model appropriately remains plain massing",
+      "evidence": [
+        "The official HLA facility page and overhead imagery establish the facility and plan form, but the inspected source package contains no identifiable elevation or street-level facade image for this building.",
+        "The oblique render is a plain single-cap volume with no facade, door, window, or distinguishing feature. Avoiding invented detail is appropriate, but the criterion is unverified rather than demonstrated accurate."
+      ],
+      "findings": [
+        "Facade layout, entrances, materials and distinctive architectural elements are unverified; seek attributable ground-level imagery or plans before adding detail."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.6,
+      "max_score": 2.0,
+      "status": "asset reopens and evidence package is complete; shared manifest still has prior bounds/height",
+      "evidence": [
+        "Direct Blender 5.2.3 LTS reopen confirms one mesh object in the expected scene/collection (24 vertices, 14 faces), 0 modifiers, 0 unpacked images, and 0 linked libraries. The dedicated fresh-process check records zero nonmanifold edges and sub-millimetre ring residual.",
+        "The audit package has raw FID 208 GIS and layer metadata, Purdue HLA page snapshot, Esri World Imagery with an aerial overlay, source register, two rendered views, build result, and reopen validation.",
+        "The coordinator-owned manifest bounds remain [[-1409.1790771484375, -1364.9842529296875], [1610.6795654296875, 1626.6361083984375], [0.0, 3.799999952316284]], versus reopened mesh bounds [[-1408.48046875, -1363.87646484375], [1609.4888916015625, 1627.1295166015625], [0.0, 4.267199993133545]]; maximum component difference is 1.191 m (including prior 3.8 m height versus current 4.2672 m)."
+      ],
+      "findings": [
+        "Coordinator should update the shared manifest bounds after accepting the source identity/geometry; the exported asset itself is self-contained."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular\\buildings\\massing_purdue_university_daniel_turf_center_e69b7da.blend",
+    "blender": "5.2.3 LTS",
+    "reopened_scene": "Building_massing_purdue_university_daniel_turf_center_e69b7da",
+    "reopened_collection": "Asset_massing_purdue_university_daniel_turf_center_e69b7da",
+    "direct_reopen_measurements": {
+      "object": "Purdue University Daniel Turf Center",
+      "type": "MESH",
+      "collection_count": 1,
+      "vertices": 24,
+      "faces": 14,
+      "bounds": [
+        [
+          -1408.48046875,
+          -1363.87646484375
+        ],
+        [
+          1609.4888916015625,
+          1627.1295166015625
+        ],
+        [
+          0.0,
+          4.267199993133545
+        ]
+      ],
+      "materials": [
+        "Daniel Center | warm light-gray massing",
+        "Daniel Center | muted standing-seam roof massing"
+      ],
+      "unpacked_images": [],
+      "libraries": 0,
+      "modifiers": [],
+      "object_location": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "source_identity": {
+      "FID": 208,
+      "BLDG_ABBR": "DANL",
+      "BUILDING_N": "William H. Daniel Turfgrass Research & Diagnostic Court",
+      "ADDRESS": "1340 Cherry Lane",
+      "NUM_LEVELS": 1,
+      "Extrution": 14,
+      "Shape__Area": 1170.62109375,
+      "Shape__Length": 163.49306448425634
+    },
+    "footprint": {
+      "coordinate_system": "query geometry EPSG:4326; local ground frame via modular/AGENTS.md approximation",
+      "unique_ring_vertices": 12,
+      "projected_envelope_m": [
+        44.60400472446008,
+        17.64064676740645
+      ],
+      "local_ground_ring_area_m2": 677.0611263930332,
+      "source_epsg3857_ring_area_m2": 1170.6328125,
+      "service_shape_area_m2": 1170.62109375,
+      "service_to_local_area_ratio": 1.7289740144827865,
+      "source_area_relative_error_after_epsg3857_reprojection": 1.0010711461263552e-05,
+      "vertex_residuals_m": [
+        3.703910115072504e-05,
+        5.717942198709825e-05,
+        6.548200452732122e-05,
+        7.773535471323269e-05,
+        5.2740361894220625e-05,
+        7.556290711158536e-05,
+        2.7120340128422844e-05,
+        5.2144346798179645e-05,
+        5.651026467633308e-05,
+        3.6494647026294894e-05,
+        5.4243198948160025e-05,
+        7.24070754329746e-05
+      ],
+      "max_vertex_residual_m": 7.773535471323269e-05
+    },
+    "manifest_bounds_m": [
+      [
+        -1409.1790771484375,
+        -1364.9842529296875
+      ],
+      [
+        1610.6795654296875,
+        1626.6361083984375
+      ],
+      [
+        0.0,
+        3.799999952316284
+      ]
+    ],
+    "manifest_delta_vs_asset_m": [
+      [
+        0.6986083984375,
+        1.1077880859375
+      ],
+      [
+        -1.190673828125,
+        0.493408203125
+      ],
+      [
+        0.0,
+        0.46720004081726074
+      ]
+    ],
+    "reviewed_files": [
+      "audit\\massing_purdue_university_daniel_turf_center_e69b7da\\README.md",
+      "audit\\massing_purdue_university_daniel_turf_center_e69b7da\\sources\\source_register.json",
+      "audit\\massing_purdue_university_daniel_turf_center_e69b7da\\sources\\purdue_buildings_fid208_query_2026-10-26.json",
+      "audit\\massing_purdue_university_daniel_turf_center_e69b7da\\sources\\purdue_buildings_layer_metadata_2026-10-26.json",
+      "audit\\massing_purdue_university_daniel_turf_center_e69b7da\\sources\\gis_fid208_aerial_overlay.png",
+      "audit\\massing_purdue_university_daniel_turf_center_e69b7da\\sources\\purdue_daniel_turf_center_page_2026-10-26.html",
+      "audit\\massing_purdue_university_daniel_turf_center_e69b7da\\renders\\daniel_turf_center_top.png",
+      "audit\\massing_purdue_university_daniel_turf_center_e69b7da\\renders\\daniel_turf_center_oblique.png"
+    ],
+    "limitations": [
+      "FID 208 identifies the Daniel Turfgrass Research & Diagnostic Court, not TREC; FID 855 is stale and unrelated.",
+      "The Shape__Area difference is reconciled by reprojection to the source layer's EPSG:3857 plane (1.00107e-05 relative area error); GIS ring may still follow the roof outline rather than the structural wall footprint.",
+      "Extrution=14 units are undocumented; 14 ft and 4.2672 m are estimates only.",
+      "Facade, entrances and roof profile have no attributable elevation evidence.",
+      "Shared manifest still contains older bounds and height."
+    ]
+  },
+  "findings": [
+    "Confirm whether the GIS ring follows the structural wall line or roof edge before calling its area/as-built dimensions verified.",
+    "The aerial supports roof position and shape but does not prove the GIS ring is the structural wall line; keep that distinction explicit.",
+    "Treat 4.2672 m strictly as an estimate; do not label 14 as feet without a source documenting that unit. Roof height, pitch, and profile remain unverified.",
+    "Facade layout, entrances, materials and distinctive architectural elements are unverified; seek attributable ground-level imagery or plans before adding detail.",
+    "Coordinator should update the shared manifest bounds after accepting the source identity/geometry; the exported asset itself is self-contained."
+  ],
+  "recommendation": "The asset scores 6.5/10, below the 8/10 gate. Named Purdue GIS FID 208 and the orthophoto strongly support identity and plan placement; the Shape__Area/ring-area difference reconciles when measured in the source EPSG:3857 plane versus the local ground frame. The 14-ft height inference, wall-versus-roof outline, and facade/roof-form details remain uncertain. The shared manifest bounds also need coordinator reconciliation."
+}

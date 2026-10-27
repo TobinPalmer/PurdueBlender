@@ -1,0 +1,136 @@
+{
+  "asset_id": "massing_provenance_apartments_005_960f6b0",
+  "source_feature": {
+    "provider": "Purdue University Campus Map FeatureServer, layer 0",
+    "fid": 506,
+    "name": "Building F",
+    "abbreviation": "143",
+    "layer": "BLDG Building Pre-planning",
+    "BUILDING_1_attribute": "1509",
+    "ADDRESS_attribute": "blank",
+    "retrieved": "2026-10-26",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/506?f=pjson",
+    "source_crs": "EPSG:3857",
+    "raw_snapshot": "sources/official_purdue_fid506.json",
+    "crosswalk": "County Area Plan Commission construction-plan sheet C1.4 explicitly labels the central target block BLDG F / 143. The transformed GIS polygon closely overlays the matching central roof in Indiana 2025 orthophoto. This resolves the individual-block match, while exact wall registration remains uncertain because the Purdue source layer is pre-planning."
+  },
+  "footprint": {
+    "vertex_count": 32,
+    "area_source_web_mercator_m2": 1596.859375,
+    "area_project_ground_approx_m2": 923.840082266659,
+    "perimeter_source_web_mercator_m": 185.89695871198919,
+    "conversion": "EPSG:3857 inverse Web Mercator -> WGS84 -> Purdue project approximation; origin 40.4274,-86.9137; X east and Y north; not a surveyed CRS",
+    "campus_bounds_xy_m": [
+      [
+        -1573.2703057040926,
+        -1523.5427382314542
+      ],
+      [
+        -466.8532489260133,
+        -447.5691567983813
+      ]
+    ],
+    "uncertainty": "cross-checked against the planned BLDG F / 143 site-plan location and current roof outline, but the source feature is pre-planning and not a certified wall-line survey"
+  },
+  "dimensions": {
+    "footprint_x_m": 49.727567472638384,
+    "footprint_y_m": 19.284092127631993,
+    "wall_height_m": 8.9,
+    "ridge_height_m": 11.4,
+    "vertical_status": "estimated; no measured elevations located",
+    "height_uncertainty_m": {
+      "eave_plus_minus": 1.5,
+      "ridge_plus_minus": 1.5
+    },
+    "story_count": 3,
+    "story_evidence": "Studio M Provenance project description states seven three-story apartment buildings; not individually attributed to Building F."
+  },
+  "site_plan_evidence": {
+    "provider": "Tippecanoe County Area Plan Commission",
+    "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/ArchivedAgenda/_01022020-1597?packet=true",
+    "sheet": "C1.4, construction drawings / post-stormwater pollution prevention plan",
+    "sheet_date": "2019-10-14",
+    "approval": "Final detailed Phase 1 & 2 plan resolution PD-20-01, January 2020",
+    "target_label": "BLDG F / 143, between BLDG E / 144 and BLDG G / 142",
+    "snapshot": "audit/massing_provenance_apartments_005_960f6b0/sources/county_provenance_phase1_2_construction_plans.pdf",
+    "method": "explicit plan label + block order/location; drawing not georeferenced and not an elevation"
+  },
+  "current_orthophoto_evidence": {
+    "provider": "Indiana Geographic Information Office / Indiana Current Orthophotography ImageServer",
+    "service_url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+    "dataset": "Indiana_2025_SPW_2ft_exportraster; identify also returned a 2023 Tippecanoe 6-inch source item",
+    "retrieved": "2026-10-26",
+    "source_crs": "EPSG:3857",
+    "overlay": "audit/massing_provenance_apartments_005_960f6b0/indiana_current_orthophoto_2025_fid506_overlay.jpg",
+    "license": "CC0 per ImageServer metadata",
+    "method": "EPSG:3857 overlay against the transformed Purdue ring; matching central roof outlined without fitting/warping",
+    "uncertainty": "overhead imagery supports block position and roof outline, not wall-line survey, height, roof pitch or facade layout"
+  },
+  "appearance_evidence": {
+    "provider": "Exact-block search and project-wide references",
+    "url": "audit/massing_provenance_apartments_005_960f6b0/source_search_r3.json",
+    "source_date": "not stated; project Phase I built / Phase II under construction at retrieval",
+    "retrieved": "2026-10-26",
+    "project_description": "Studio M describes seven three-story buildings; general project photos were reviewed but excluded from Building F facade geometry",
+    "project_wide_reference": "https://www.studiomarchitecture.net/provenance-at-discovery-park",
+    "visible_features": [
+      "current overhead roof outline and roof breaks only"
+    ],
+    "uncertainty": "No Building F street-level photo, approved elevation, or section was located; facade openings, finish, entries, balconies, and color stationing remain unknown and are omitted"
+  },
+  "geometry": {
+    "object_count": 1,
+    "object_name": "Provenance Apartments.005",
+    "vertex_count": 132,
+    "polygon_count": 44,
+    "world_bounds_m": [
+      [
+        -1573.270263671875,
+        -1523.542724609375
+      ],
+      [
+        -466.8532409667969,
+        -447.56915283203125
+      ],
+      [
+        0.0,
+        11.399999618530273
+      ]
+    ],
+    "roof_segments_estimated": 5,
+    "roof_segment_status": "five-break plan rhythm is an estimate from exact-block overhead imagery; ridge count, placement, pitch, and elevations are not measured",
+    "facade_features_estimated": {
+      "modeled": "none beyond the plain massing shell; exact-block sources do not resolve openings, entries, balconies, or finishes"
+    },
+    "portable_external_dependencies": []
+  },
+  "geometry_edit": {
+    "before_bounds_world_m": [
+      [
+        -1627.371337890625,
+        -1489.2232666015625
+      ],
+      [
+        -474.5072326660156,
+        -446.1253967285156
+      ],
+      [
+        0.0,
+        11.4
+      ]
+    ],
+    "action": "replaced inherited 138.1m-wide unverified aggregate proxy with the FID 506 ring crosswalked to BLDG F / 143 by county plan C1.4 and corroborated against current 2025 roof imagery; removed unsupported facade details and material stationing; retained only plain shell massing and an estimated roof rhythm",
+    "limits": "FID 506 remains tagged BLDG Building Pre-planning; its ring closely matches the current roof outline but is not a surveyed wall registration. Building-specific street imagery and approved elevations/sections were not found; all vertical dimensions and roof rhythm are estimates"
+  },
+  "outputs": {
+    "blend": "modular/buildings/massing_provenance_apartments_005_960f6b0.blend",
+    "preview": "audit/massing_provenance_apartments_005_960f6b0/preview_southwest.png",
+    "plan_preview": "audit/massing_provenance_apartments_005_960f6b0/preview_top.png",
+    "site_plan": "audit/massing_provenance_apartments_005_960f6b0/sources/county_plan_sheet_C1_4_apartment_cluster.png",
+    "current_orthophoto_overlay": "audit/massing_provenance_apartments_005_960f6b0/indiana_current_orthophoto_2025_fid506_overlay.jpg",
+    "crosswalk_analysis": "audit/massing_provenance_apartments_005_960f6b0/crosswalk_analysis.json",
+    "source_register": "audit/massing_provenance_apartments_005_960f6b0/source_register.json",
+    "source_search_r3": "audit/massing_provenance_apartments_005_960f6b0/source_search_r3.json",
+    "reopen_validation": "audit/massing_provenance_apartments_005_960f6b0/reopen_validation.json"
+  }
+}
