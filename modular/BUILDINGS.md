@@ -218,10 +218,12 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Pete Dye Clubhouse | [massing_the_pete_dye_clubhouse_a3a9641.blend](buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | 122 |
 | Phi Delta Theta | [massing_phi_delta_theta_258cddd.blend](buildings/massing_phi_delta_theta_258cddd.blend) | 313 |
 | Pi Kappa Alpha (Pike) | [massing_house_301841252_e4f8f05.blend](buildings/massing_house_301841252_e4f8f05.blend) | 608 |
+| Pi Kappa Phi (Omega) | [massing_pi_kappa_phi_50e4645.blend](buildings/massing_pi_kappa_phi_50e4645.blend) | 239 |
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
 | Purdue University Daniel Turf Center | [massing_purdue_university_daniel_turf_center_e69b7da.blend](buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | 1 |
 | Purdue Village Administration Building | [massing_purdue_village_administration_building_3faae6c.blend](buildings/massing_purdue_village_administration_building_3faae6c.blend) | 1 |
 | Provenance Apartments 005 | [massing_provenance_apartments_005_960f6b0.blend](buildings/massing_provenance_apartments_005_960f6b0.blend) | 1 |
+| Sigma Alpha Epsilon | [massing_sigma_alpha_epsilon_fid849.blend](buildings/massing_sigma_alpha_epsilon_fid849.blend) | 520 |
 | Sigma Nu | [massing_house_301841330_f58ae87.blend](buildings/massing_house_301841330_f58ae87.blend) | 29 |
 | Sigma Phi Epsilon | [massing_house_301841250_d63b09a.blend](buildings/massing_house_301841250_d63b09a.blend) | 639 |
 | Theta Chi | [massing_house_301841328_39f169f.blend](buildings/massing_house_301841328_39f169f.blend) | 1 |
@@ -310,6 +312,10 @@ MRI Modular Facility retains campus-world coordinates. Its 8.0/10 independent gr
 Our Saviour Lutheran Church retains campus-world coordinates. Its 8.75/10 independent grade verifies all 9 vertices of named OSM way 860901797 within 0.000015 m; the official church map pin falls inside the outline. Purdue FID 823 is Fairway and is explicitly rejected. Official church photos support the brick, teal gable, stained glass, asymmetric roof, and cross; heights, roof pitch, and exact feature dimensions remain estimated. See [Our Saviour grade](../audit/massing_our_saviour_lutheran_church_118afa2/independent_grade.json).
 
 Pi Kappa Alpha (Pike) retains campus-world coordinates. Its 8.7/10 independent grade confirms Purdue GIS FID 790 and a shell match within 0.000017 m; the official chapter photo supports the three-storey brick facade and portico. Wall height and roof dimensions remain estimates. See [Pike grade](../audit/massing_house_301841252_e4f8f05/independent_grade_r1/grade.json).
+
+Pi Kappa Phi (Omega) retains campus-world coordinates. Its 8.4/10 independent grade supports the named FID 799 house and transformed GIS footprint; current chapter photos guide the facade and Tudor roof massing. Height, roof dimensions, and facade spacing remain estimates, and the approved replacement variances do not establish that a permit issued. See [Pi Kappa Phi grade](../audit/pi_kappa_phi/independent_grade/grade_result.json).
+
+Sigma Alpha Epsilon retains campus-world coordinates. Its 8.0/10 independent grade supports the FID 849 identity, county-parcel crosswalk, and GIS roof-outline placement. The architect's renovation renderings guide the facade, while roof form, height, and floor interpretation remain estimated. See [SAE grade](../audit/sae_fid849/independent_grade_result.json).
 
 Sigma Nu retains campus-world coordinates. Its 8.0/10 independent grade confirms the FID 758 chapter-house identity and a 10-point base-ring match within 0.000038 m. Newsletter text supports at least three occupied floors; exact wall line, facade bearing, height and roof form remain uncertain. See [Sigma Nu grade](../audit/sigma_nu/independent_grade_r3/independent_grade_r3.json).
 

@@ -179,7 +179,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models in progress, awaiting a grade, or awaiting master integration (48)
+### Detailed models in progress, awaiting a grade, or awaiting master integration (50)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -208,7 +208,9 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Pete Dye Clubhouse | [`massing_the_pete_dye_clubhouse_a3a9641.blend`](modular/buildings/massing_the_pete_dye_clubhouse_a3a9641.blend) | [8.5/10](audit/massing_the_pete_dye_clubhouse_a3a9641/independent_grade/pete_dye_independent_grade_r2.json); awaiting master integration | Rossen |
 | Phi Delta Theta | [`massing_phi_delta_theta_258cddd.blend`](modular/buildings/massing_phi_delta_theta_258cddd.blend) | [8.3/10](audit/massing_phi_delta_theta_258cddd/independent_grade_r1/independent_grade.json); awaiting master integration | Rossen |
 | Pi Kappa Alpha (Pike) | [`massing_house_301841252_e4f8f05.blend`](modular/buildings/massing_house_301841252_e4f8f05.blend) | [8.7/10](audit/massing_house_301841252_e4f8f05/independent_grade_r1/grade.json); awaiting master integration | Rossen |
+| Pi Kappa Phi (Omega) | [`massing_pi_kappa_phi_50e4645.blend`](modular/buildings/massing_pi_kappa_phi_50e4645.blend) | [8.4/10](audit/pi_kappa_phi/independent_grade/grade_result.json); awaiting master integration; proposed replacement permit status unverified | Rossen |
 | Sigma Nu | [`massing_house_301841330_f58ae87.blend`](modular/buildings/massing_house_301841330_f58ae87.blend) | [8.0/10](audit/sigma_nu/independent_grade_r3/independent_grade_r3.json); awaiting master integration | Rossen |
+| Sigma Alpha Epsilon | [`massing_sigma_alpha_epsilon_fid849.blend`](modular/buildings/massing_sigma_alpha_epsilon_fid849.blend) | [8.0/10](audit/sae_fid849/independent_grade_result.json); awaiting master integration; roof, height and facade remain estimated | Rossen |
 | Sigma Phi Epsilon | [`massing_house_301841250_d63b09a.blend`](modular/buildings/massing_house_301841250_d63b09a.blend) | [8.65/10](audit/sigma_phi_epsilon/independent_grade_r3/independent_grade_r3.json); awaiting master integration | Rossen |
 | Sigma Pi | [`massing_house_301836568_0fbca0e.blend`](modular/buildings/massing_house_301836568_0fbca0e.blend) | Prior candidate graded 6.5/10; revised model and evidence in progress, regrade pending | Rossen |
 | Theta Chi | [`massing_house_301841328_39f169f.blend`](modular/buildings/massing_house_301841328_39f169f.blend) | [8.5/10](audit/theta_chi/independent_grade/grade_result.json); awaiting master integration | Rossen |
@@ -234,7 +236,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 
 
 | Kappa Delta Rho | [massing_house_1089876362_14ecd2c.blend](modular/buildings/massing_house_1089876362_14ecd2c.blend) | [7.9/10](audit/kappa_delta_rho/independent_grade_r2/grade_report.md), below 8.0; remediation and independent rerate required | Tobin |
-### Buildings that still have only massing models (18)
+### Buildings that still have only massing models (16)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -267,7 +269,7 @@ Unfinished current IFC chapter-house assignments are nearly even: 7 assigned to 
 
 Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/councils/ifc/chapters.php), [Panhellenic](https://www.purdue.edu/fscl/councils/pha/chapters.php), [MGC](https://www.purdue.edu/fscl/councils/mgc/chapters.php), [NPHC](https://www.purdue.edu/fscl/councils/nphc/chapters.php), and [cooperative-house](https://www.purdue.edu/fscl/councils/cooperatives/houses.php) lists. Purdue describes FSCL as five councils with 90 organizations; the model inventory tracks physical facilities rather than treating each organization as a separate building ([FSCL overview](https://www.purdue.edu/vpsl/news/featured-stories/2026_0105-fscl-150-recap.php)). Add any MGC or NPHC facility if a dedicated physical house is verified. A spatial candidate is not treated as a confirmed match until its footprint is checked.
 
-#### Fraternity houses (22 unfinished: Tobin 7, Rossen 15)
+#### Fraternity houses (20 unfinished: Tobin 7, Rossen 13)
 
 | House / building | GIS FID and asset | Work status | Assigned to |
 | --- | --- | --- | --- |
@@ -281,7 +283,6 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Phi Kappa Theta | FID 762; [massing_house_301841332_9b3bd1f](modular/buildings/massing_house_301841332_9b3bd1f.blend) | Spatial candidate; verify before detailing | Tobin |
 | Pi Kappa Alpha (Pike) | FID 790; [massing_house_301841252_e4f8f05](modular/buildings/massing_house_301841252_e4f8f05.blend) | Independently graded 8.7/10; awaiting master integration; wall height and roof remain estimates | Rossen |
 | Psi Upsilon | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Rossen |
-| Sigma Alpha Epsilon | FID 849; New asset/source mapping required | No reliable asset match; reconcile GIS FID 849 | Rossen |
 | Sigma Alpha Mu | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Rossen |
 | Sigma Chi | FID 828; New asset/source mapping required | No reliable asset match; reconcile GIS FID 828 | Rossen |
 | Sigma Nu | FID 758; [massing_house_301841330_f58ae87](modular/buildings/massing_house_301841330_f58ae87.blend) | Independently graded 8.0/10; awaiting master integration; wall line, height and roof remain uncertain | Rossen |
@@ -291,7 +292,6 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Zeta Beta Tau | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Rossen |
 | Zeta Psi | FID 748; [massing_house_301841600_c1351aa](modular/buildings/massing_house_301841600_c1351aa.blend) | Spatial match at 950 David Ross; Zeta Psi and Chi Psi primary sources both claim the address, so exclusive occupancy is unresolved; see [crosswalk review](audit/zeta_psi/crosswalk_resolution.md) | Rossen |
 | Phi Kappa Tau | FID 856; [massing_phi_kappa_tau_139b9d7](modular/buildings/massing_phi_kappa_tau_139b9d7.blend) | Existing assignment; massing only | Rossen |
-| Pi Kappa Phi | FID 799; [massing_pi_kappa_phi_50e4645](modular/buildings/massing_pi_kappa_phi_50e4645.blend) | Existing assignment; massing only | Rossen |
 | Triangle | FID 777; [massing_triangle_fraternity_8477ad9](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Existing assignment; massing only | Rossen |
 
 #### Panhellenic chapters and house coverage (16 unfinished houses; two chapters have no house)
@@ -756,7 +756,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 796 | Phi Delta Theta | [massing_phi_delta_theta_258cddd](modular/buildings/massing_phi_delta_theta_258cddd.blend) | Official FID 796 / SOFDH identity and 30-point ring verified; independently graded 8.3/10; awaiting master integration; heights and roof dimensions remain estimated |
 | 797 | University Church | [massing_university_church_84b2a1b](modular/buildings/massing_university_church_84b2a1b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 798 | Delta Sigma Phi | [massing_house_860826641_2c90f97](modular/buildings/massing_house_860826641_2c90f97.blend) | Exact GIS match, detailed model independently graded 8.3/10; adjacent candidate 860826640 is not this building |
-| 799 | Pi Kappa Phi | [massing_pi_kappa_phi_50e4645](modular/buildings/massing_pi_kappa_phi_50e4645.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 799 | Pi Kappa Phi | [massing_pi_kappa_phi_50e4645](modular/buildings/massing_pi_kappa_phi_50e4645.blend) | Named FID 799 / Omega chapter house confirmed; independently graded 8.4/10; awaiting master integration; proposed replacement permit status unverified |
 | 800 | Shoemaker | [massing_house_1497291146_031c06e](modular/buildings/massing_house_1497291146_031c06e.blend)<br>[massing_house_1497291147_0af41bc](modular/buildings/massing_house_1497291147_0af41bc.blend)<br>[massing_house_860903232_2890c53](modular/buildings/massing_house_860903232_2890c53.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+1 more candidates) |
 | 801 | Kappa Delta Rho | [massing_house_1089876359_12372d0](modular/buildings/massing_house_1089876359_12372d0.blend)<br>[massing_house_1089876360_afad48a](modular/buildings/massing_house_1089876360_afad48a.blend)<br>[massing_house_1089876361_11903de](modular/buildings/massing_house_1089876361_11903de.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+13 more candidates) |
 | 802 | Stewart | [massing_fuse_39cf4b5](modular/buildings/massing_fuse_39cf4b5.blend)<br>[massing_house_1089875805_7e35374](modular/buildings/massing_house_1089875805_7e35374.blend)<br>[massing_house_1089875807_2bd9d47](modular/buildings/massing_house_1089875807_2bd9d47.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+5 more candidates) |
@@ -785,7 +785,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 844 | 115W | [massing_house_301921257_b7eb626](modular/buildings/massing_house_301921257_b7eb626.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 845 | Baptist Student Foundation | [massing_house_301934830_7cb26ae](modular/buildings/massing_house_301934830_7cb26ae.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 846 | SODC | [massing_house_301840867_1cab527](modular/buildings/massing_house_301840867_1cab527.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 849 | Sigma Alpha Epsilon | — | No direct FID crosswalk; reconcile to a master asset or create one |
+| 849 | Sigma Alpha Epsilon | [massing_sigma_alpha_epsilon_fid849](modular/buildings/massing_sigma_alpha_epsilon_fid849.blend) | FID/name/address reconciled to 406 Littleton and county parcel; independently graded 8.0/10; awaiting master integration; roof and height estimated |
 | 850 | Levee Plaza | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 852 | St. Thomas Aquinas Center | [massing_st_thomas_aquinas_5535390](modular/buildings/massing_st_thomas_aquinas_5535390.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 855 | Old Purdue Exponent Building | [massing_house_301932783_497fc8a](modular/buildings/massing_house_301932783_497fc8a.blend)<br>[massing_house_301932785_141a3c3](modular/buildings/massing_house_301932785_141a3c3.blend)<br>[massing_house_301932786_5e0e793](modular/buildings/massing_house_301932786_5e0e793.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+6 more candidates) |
