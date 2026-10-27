@@ -1,0 +1,75 @@
+{
+  "asset": "modular/buildings/chi_psi.blend",
+  "sha256": "2b6ff1154b245fbe6b8a4c600f3aeadb3b0a0c238825e204ab275e69f84eba04",
+  "score": 8.1,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Identity and site placement",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "Chi Psi's Summer 2024 alumni newsletter labels the pictured building as the new Chi Psi Lodge at Purdue and gives Epsilon Tau Lodge as 950 David Ross Rd.",
+        "The chapter's current national listing identifies Epsilon Tau at Purdue; the Purdue local site identifies Alpha Epsilon Tau.",
+        "Purdue ArcGIS FID 748 and a Tippecanoe parcel both associate 950 David Ross Rd with the site, but GIS labels it Zeta Psi. The asset's placement origin is based on the 2018 Indiana LiDAR outline near that address."
+      ],
+      "rationale": "The house-specific first-party photo/address and independent parcel/site references make the modeled location credible. Deducted 0.4 because the current exclusive occupancy crosswalk remains unresolved, Purdue GIS conflicts by naming Zeta Psi, and the approximate local transform has no stated survey tolerance."
+    },
+    {
+      "name": "Footprint and form",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Direct Blender inspection confirmed the foundation and main shell dimensions align with the 2018 state LiDAR quadrilateral: approximately 24.869 m by 19.014 m.",
+        "The source photo depicts a two-storey brick lodge with twin front gables; the saved model reproduces this overall footprint, two-storey massing, paired gables, and raised offset entrance.",
+        "The fresh-open record confirms the footprint dimensions and 0–11 m evaluated asset bounds."
+      ],
+      "rationale": "The 2018 state outline is the better-supported structural footprint than Purdue FID 748, which is explicitly a poor fit. The approximation uses an unprojected local conversion and is based on a LiDAR roof/building outline rather than a surveyed wall plan; detailed elevations/heights are photo-derived estimates."
+    },
+    {
+      "name": "Facade, material, and source fidelity",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "The official Chi Psi newsletter photo visibly matches the model's warm red brick, dark shingle roof, twin front gables, paired tall arched windows, repeated sash openings, and offset entrance.",
+        "Direct inspection found named materials for red brick, mortar, limestone trim, architectural shingles, reflective glass, painted trim, stained wood door, concrete, and metal; the source image provides color and architectural evidence.",
+        "The model adds explicit masonry courses and window/roof trim; its central sign reads CHI PSI while the source photo shows a Greek-letter crest, and no current Street View or current dated facade photo was available."
+      ],
+      "rationale": "Exterior form and material palette align closely with the first-party reference. Minor deduction for estimated dimensions/current appearance and the signage/crest simplification; the lack of Street View is a disclosed evidence limit, not a claimed match."
+    },
+    {
+      "name": "Interior",
+      "score": 0.9,
+      "max_score": 2,
+      "evidence": [
+        "The saved asset contains 11 explicitly labeled schematic interior objects, including two floor plates, three partitions, a common-room table and chairs, and a dining counter.",
+        "Evidence.md states no authoritative interior plan was located and all interior elements are marked schematic."
+      ],
+      "rationale": "The model provides a small amount of useful interior massing and shared-room cues, but it is not a source-backed plan and lacks verified circulation, stairs, bedrooms, kitchens, and other room-specific layout."
+    },
+    {
+      "name": "Portability and fresh-open validation",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "I independently opened the exact saved asset in Blender 5.2.3 LTS and confirmed scene Building_chi_psi and export collection Asset_chi_psi.",
+        "The asset contains 225 recursive objects, including 216 meshes and the 11-item schematic interior collection; direct inspection found no external image dependencies.",
+        "The provided fresh_open_verification.json reports PASS for the same SHA, including evaluated bounds, material checks, expected counts, and a fresh-open render. Preview render equipment is isolated in Preview_Only_Render_Rig."
+      ],
+      "rationale": "The dedicated blend file opens cleanly, carries its own procedural material setup, and has reproducible fresh-open evidence without external texture paths."
+    }
+  ],
+  "limitations": [
+    "Current Chi Psi/Zeta Psi occupancy is unresolved. Chi Psi's first-party 2024 lodge newsletter ties Chi Psi to the address and pictured lodge; Purdue GIS FID 748 labels the same address Zeta Psi, and another Zeta Psi profile reportedly self-reports the address. This grade does not claim exclusive or current occupancy.",
+    "No current Street View or newly dated current facade image was available. The visible exterior comparison uses Chi Psi's official 2024 newsletter image.",
+    "The structural shell follows Indiana's 2018 LiDAR footprint because Purdue FID 748 has a poor outline fit. Both source area attributes conflict with areas from the approximate transformed rings; the model uses spatial geometry and does not assert the source area fields as measurements.",
+    "Exact elevation, roof pitch, facade dimensions/colors, entry coordinates, and interior layout are estimates where no measured plans/elevations exist."
+  ],
+  "findings": [
+    "PASS at 8.1/10. The first-party address-specific lodge photo strongly supports the modeled exterior, the state LiDAR outline supports its footprint, and the asset is portable and fresh-open validated.",
+    "No fixes are required to clear 8/10. To raise confidence, resolve the current Chi Psi/Zeta Psi occupancy conflict, obtain current georegistered exterior images or measured elevations, and source an actual interior plan."
+  ],
+  "evaluator": "Independent saved-asset and evidence review"
+}

@@ -355,6 +355,7 @@ Zeta Beta Tau at FID 762 / 900 David Ross retains campus-world coordinates in th
 | Beta Theta Pi | [massing_beta_theta_pi_fid826.blend](buildings/massing_beta_theta_pi_fid826.blend) | 349 |
 | Alpha Chi Omega (independently graded 8.1/10; integrated and fresh-open PASS) | [alpha_chi_omega_fid765.blend](buildings/alpha_chi_omega_fid765.blend) | 834 |
 | Convergence Center for Innovation and Collaboration (independently graded 8.6/10; integrated and fresh-open PASS) | [convergence_center.blend](buildings/convergence_center.blend) | 764 |
+| Chi Psi (independently graded 8.1/10; integrated and fresh-open PASS; Zeta Psi occupancy conflict remains unresolved) | [chi_psi.blend](buildings/chi_psi.blend) | 214 |
 | Dauch Alumni Center | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 663 |
 | Electrical Engineering | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4774 |
 | Frieda Parker Hall | [frieda_parker_hall.blend](buildings/frieda_parker_hall.blend) | 541 |
