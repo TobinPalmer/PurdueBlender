@@ -115,6 +115,7 @@ superseded = {
     "massing_house_301841602_8190d79": "alpha_chi_omega_fid765",
     "massing_house_301841600_c1351aa": "chi_psi",
     "massing_house_301840867_1cab527": "delta_chi",
+    "massing_house_970455239_8e2123c": "massing_chauncey_cooperative_fid805; spatially overlapping Chauncey FID 805 candidate replaced by exact source-backed footprint",
     "massing_lyles_porter_hall_lyle_604c08e": "lyles_porter_hall",
     "massing_agricultural_administration_building_120d92c": "agricultural_administration_building",
     "massing_agricultural_and_biological_engineering_abe_0ebc7b3": "agricultural_and_biological_engineering_abe",

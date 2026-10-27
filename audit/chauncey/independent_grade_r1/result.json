@@ -1,0 +1,52 @@
+{
+  "building_id": "massing_chauncey_cooperative_fid805",
+  "building_name": "Chauncey Cooperative House",
+  "asset_path": "modular/buildings/massing_chauncey_cooperative_fid805.blend",
+  "asset_sha256": "ce6fa6770e4fc76546f50f7a3889a84bdc0ed676e6ea10e1cb9c06d6757242ef",
+  "grader": "independent reviewer",
+  "rubric": "Five categories scored 0-2 each; pass threshold >=8/10.",
+  "categories": {
+    "identity_and_site_evidence": {
+      "score": 2.0,
+      "max": 2,
+      "evidence": "Purdue GIS FID 805 identifies Chauncey Cooperative at 215 S Chauncey; the official house site gives the same address, and Purdue's cooperative directory corroborates active status. The saved official exterior photo matches the modeled house identity."
+    },
+    "footprint_form_and_orientation": {
+      "score": 1.5,
+      "max": 2,
+      "evidence": "The fresh-open report records a 16-vertex foundation-ring match to FID 805 with 4.6e-7 m maximum vertex error and a documented centroid origin for master placement. The two-story front-gabled form is plausible, while roof pitch, eaves and the simplified continuous roof envelope remain estimates."
+    },
+    "facade_material_and_source_fidelity": {
+      "score": 1.5,
+      "max": 2,
+      "evidence": "Pale clapboard, dark roof, gable louver, shuttered sash windows, stone porch base, porch rails, steps and sign represent key visible features. Procedural materials distinguish major surfaces and are portable. Porch canopy, window rhythm and surface condition remain simplified or estimated. The builder documents March 2026 Street View corroboration, but the panorama itself was not independently retrievable during this review."
+    },
+    "interior": {
+      "score": 1.0,
+      "max": 2,
+      "evidence": "Floor plates, partitions, kitchen counter, dining furniture, common-room seating and bedroom blocks make an illustrative interior. It remains coarse and not plan-verified; available room imagery was not modeled in fine detail."
+    },
+    "portability_and_fresh_open": {
+      "score": 2.0,
+      "max": 2,
+      "evidence": "The current asset SHA matches the builder's Blender 5.2.3 fresh-open report. Expected asset collection reopened with 260 meshes and 13 materials, with no external image dependencies; GIS foundation-ring check passes."
+    }
+  },
+  "total": 8.0,
+  "maximum": 10,
+  "result": "PASS",
+  "limitations": [
+    "The official house photo is archival and non-geotagged; hidden elevations and facade dimensions remain estimates.",
+    "The builder's cited March 2026 Street View panorama could not be independently retrieved during this review.",
+    "The interior is schematic; no registered floor plan was located.",
+    "The model omits a chimney; its current presence remains unresolved because the current panorama reportedly does not clearly show it."
+  ],
+  "reviewed_files": [
+    "audit/chauncey/evidence.md",
+    "audit/chauncey/fresh_open_validation.json",
+    "audit/chauncey/chauncey_preview.png",
+    "audit/chauncey/sources/House.jpg",
+    "audit/chauncey/sources/FRUP.jpg",
+    "audit/chauncey/sources/purdue_fid805.geojson"
+  ]
+}

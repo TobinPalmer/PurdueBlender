@@ -1,15 +1,17 @@
 {
   "method": "Exhaustive asset ledger against official Purdue 2D polygon snapshot. Aggregate bounds are screening evidence, not measured shell error; direct footprint checks, source matching, independent grades, and master integration are recorded per asset. Not all campus buildings are certified. Explicit placement corrections are recorded separately; this audit does not mutate geometry.",
-  "asset_count": 1980,
-  "building_count": 1979,
+  "asset_count": 1981,
+  "building_count": 1980,
   "status_counts": {
     "needs_shell_and_height_verification": 103,
-    "ambiguous_source_match": 434,
+    "ambiguous_source_match": 432,
     "environment_not_building": 1,
     "independent_grade_pass_8.5_waiting_master_integration": 2,
     "no_official_match": 1420,
+    "superseded_by_detailed_replacement": 1,
     "independently_graded_and_master_integrated": 5,
-    "finished_graded_and_master_verified": 6,
+    "superseded_spatial_candidate": 1,
+    "finished_graded_and_master_verified": 7,
     "historical_demolished_not_current_building": 1,
     "independent_grade_pass_8.5_awaiting_master_integration": 2,
     "independent_grade_pass_8.0_awaiting_master_integration": 1,
@@ -56585,12 +56587,12 @@
       "file": "buildings/massing_house_970455239_8e2123c.blend",
       "kind": "massing",
       "object_count": 1,
-      "status": "ambiguous_source_match",
+      "status": "superseded_spatial_candidate",
       "height_status": "unverified",
       "orientation_status": "unverified",
       "position_status": "unverified",
       "plan_dimensions_status": "unverified",
-      "action": "reference comparison only; no geometry mutation",
+      "action": "Suppressed in master and replaced by exact FID 805 detailed Chauncey model; original candidate identity remains unverified.",
       "match_confidence": "spatial_candidate_only_identity_unverified",
       "source_fid": 805,
       "source_code": "SOC",
@@ -56606,7 +56608,7 @@
       "source_date_retrieved": "2026-10-22",
       "shell_candidates": [],
       "duplicate_extent_assets": [],
-      "uncertainty": "No measured height/elevations; shell polygon and orientation require geometric review.",
+      "uncertainty": "Candidate shell overlaps the official FID 805 feature (polygon IoU 0.535) but does not establish identity; detailed source-backed footprint is authoritative for the modeled Chauncey building.",
       "official_reference_bounds_xy_m": [
         463.8476087767361,
         -658.4566695212948,
@@ -65959,6 +65961,55 @@
         976.9788685803222
       ],
       "screening_flag": "bounds_close_not_verified"
+    },
+    {
+      "id": "massing_chauncey_cooperative_fid805",
+      "file": "buildings/massing_chauncey_cooperative_fid805.blend",
+      "kind": "detailed",
+      "object_count": 260,
+      "status": "finished_graded_and_master_verified",
+      "match_confidence": "official_purdue_fid_805_address_and_exact_polygon_ring",
+      "source_code": "SOC",
+      "source_fid": 805,
+      "source_name": "Chauncey Cooperative",
+      "aabb_center_difference_m": "",
+      "aabb_width_difference_m": "",
+      "aabb_depth_difference_m": "",
+      "aabb_overlap_iou": "",
+      "position_status": "verified GIS polygon centroid used as placement origin",
+      "position_error_m": 0,
+      "orientation_status": "verified from exact GIS polygon ring",
+      "orientation_error_degrees": 0,
+      "plan_dimensions_status": "verified exact 16-vertex FID 805 foundation ring",
+      "height_status": "estimated from reference imagery; not survey verified",
+      "screening_flag": "independent grade 8.0/10; master fresh-open pass",
+      "duplicate_status": "overlapping source massing candidate suppressed; original identity remains unverified",
+      "action": "Integrated as detailed local-coordinate collection instance at FID 805 polygon centroid; old spatial candidate suppressed to prevent duplicate.",
+      "uncertainty": "Roof, facade spacing, height and interior remain estimated/schematic; source Shape__Area/Length units not trusted as metric. See audit/chauncey/evidence.md and crosswalk_candidate_970455239.json.",
+      "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "source_date_retrieved": "2026-10-27",
+      "duplicate_extent_assets": [
+        "massing_house_970455239_8e2123c"
+      ],
+      "footprint_method": "Exact vertex-by-vertex comparison between the asset foundation ring and official Purdue GIS FID 805 outer ring after the documented project transform; maximum error 4.51e-7 m.",
+      "official_reference_bounds_xy_m": [
+        463.8476087767361,
+        -658.4566695212948,
+        486.5389351801893,
+        -643.567942220136
+      ],
+      "model_bounds_xy_m": [
+        458.3801075970459,
+        -659.2323375952453,
+        487.3489348446655,
+        -642.7922755491943
+      ],
+      "placement_origin_xy_m": [
+        476.038305,
+        -651.340747
+      ],
+      "independent_grade": 8.0,
+      "master_verification": "audit/chauncey/master_integration_2026-10-27.json; global 106/106 fresh-open check passes"
     }
   ],
   "duplicate_extent_groups": [
@@ -66712,5 +66763,5 @@
     ]
   ],
   "duplicate_extent_asset_count": 374,
-  "detailed_asset_count": 95
+  "detailed_asset_count": 96
 }

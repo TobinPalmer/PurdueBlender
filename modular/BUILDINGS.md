@@ -18,6 +18,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | 3rd and West | [massing_3rd_and_west_ffa3d05.blend](buildings/massing_3rd_and_west_ffa3d05.blend) | 19 |
 | Campus Edge | [massing_campus_edge_343e3d8.blend](buildings/massing_campus_edge_343e3d8.blend) | 15 |
 | Cary Quadrangle East (CQE) | [massing_cary_quadrangle_east_cqe_230c813.blend](buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | 23 |
+| Chauncey Cooperative | [massing_chauncey_cooperative_fid805.blend](buildings/massing_chauncey_cooperative_fid805.blend) | 260 |
 | Cary Quadrangle South (CQS) | [massing_cary_quadrangle_south_cqs_7ee2283.blend](buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend) | 1 |
 | Cary Quadrangle Northeast (CQNE) | [massing_cary_quadrangle_northeast_cqne_0a76fca.blend](buildings/massing_cary_quadrangle_northeast_cqne_0a76fca.blend) | 7 |
 | Cary Quadrangle Northwest (CQNw) | [massing_cary_quadrangle_northwest_cqnw_e8a861e.blend](buildings/massing_cary_quadrangle_northwest_cqnw_e8a861e.blend) | 1 |

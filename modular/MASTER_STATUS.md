@@ -1,14 +1,14 @@
-# Master build status — October 24, 2026
+# Master build status — October 27, 2026
 
 The current project master is `../purdue_campus_master.blend`. It links the smaller building libraries with project relative paths. The linked master workspace copy is `purdue_campus_linked.blend`.
 
 ## Current build
 
-- 1,979 registered assets: 1,978 building assets and one campus site asset.
-- 69 models use local-coordinate linked collections, each with a `Placement_<id>` empty in the master. SAMARA and France A. Córdova Recreational Sports Center are finished detailed models that retain their legacy campus-world direct links.
-- The master scene has 3,533 scene objects and references 53,557 objects across its source libraries.
-- 44 matching massing assets are superseded by detailed models.
-- All 69 placement markers reference their expected source library paths; the root master reopens with no missing library paths.
+- 1,989 registered assets: 1,988 building assets and one campus site asset.
+- 106 detailed models use local-coordinate linked collections, each with a `Placement_<id>` empty in the master.
+- The master scene has 19,014 scene objects and 1,938 linked source libraries.
+- 52 massing records are suppressed from direct linking by detailed replacements or master overrides.
+- All 106 placement markers reference their expected source library paths; fresh-open verification passes with no missing library paths.
 - `purdue_campus_master_before_modular_linking.blend` preserves the former root master. Per-building world-coordinate copies are in `source_backups/buildings_world_coordinates/`.
 
 ## Accuracy status
@@ -18,6 +18,10 @@ These assembly checks confirm that assets are linked and placements are present.
 ## Editing workflow
 
 Edit one source file under `buildings/`, save it, and reopen the root master. Move a detailed building by changing its `Placement_<id>` empty. Keep its local geometry and manifest origin aligned. For new or replaced modules, update `manifest.json` and use `rebuild_linked_master.py` to refresh the linked master.
+
+## October 27 integration
+
+Chauncey Cooperative passed independent review at 8.0/10 and is integrated through `Placement_massing_chauncey_cooperative_fid805` at Purdue GIS FID 805’s computed centroid. Fresh-open checks confirm the expected linked library, 260 objects, correct placement, all 106 detailed markers, and no missing libraries. The old spatial candidate `massing_house_970455239_8e2123c` is suppressed in the master to prevent overlap; its identity remains unverified. The exact GIS foundation ring is preserved, while roof, facade spacing, height, and interior remain estimated or schematic. See `../audit/chauncey/`.
 
 ## WALC neighborhood review
 

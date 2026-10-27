@@ -1,0 +1,75 @@
+{
+  "candidate_asset_id": "massing_house_970455239_8e2123c",
+  "official_feature": {
+    "provider": "Purdue GIS BuildingShapesZip4 FeatureServer layer 0",
+    "fid": 805,
+    "label": "Chauncey",
+    "retrieved": "2026-10-27",
+    "raw_geometry": "sources/purdue_fid805.geojson"
+  },
+  "candidate_audit_screening": {
+    "aabb_center_difference_m": 3.957,
+    "aabb_overlap_iou": 0.4747,
+    "interpretation": "screening metric only"
+  },
+  "geometry_check": {
+    "method": "Extracted all candidate mesh faces whose vertices lie at minimum Z from the source .blend; unioned the two bottom triangles into one polygon. Converted all 16 official GIS ring vertices from EPSG:4326 with the documented campus local-meter transform; compared projected polygons with Shapely intersection/union.",
+    "candidate_source_asset": "../../modular/buildings/massing_house_970455239_8e2123c.blend",
+    "candidate_mesh_name": "House_970455239",
+    "candidate_bounds_world_m": [
+      [
+        469.740478515625,
+        486.0241394042969
+      ],
+      [
+        -659.9107055664062,
+        -647.9183959960938
+      ],
+      [
+        0.0,
+        10.0
+      ]
+    ],
+    "candidate_base_faces_xy_m": [
+      [
+        [
+          486.024139,
+          -648.029419
+        ],
+        [
+          469.825317,
+          -647.918396
+        ],
+        [
+          469.740479,
+          -659.799683
+        ]
+      ],
+      [
+        [
+          486.024139,
+          -659.910706
+        ],
+        [
+          486.024139,
+          -648.029419
+        ],
+        [
+          469.740479,
+          -659.799683
+        ]
+      ]
+    ],
+    "candidate_polygon_area_m2": 192.9715550418,
+    "official_gis_ring_projected_area_m2": 253.3522750926,
+    "intersection_area_m2": 155.5542525769,
+    "polygon_iou": 0.5349743047,
+    "candidate_footprint_covered_by_gis_fraction": 0.8060993888,
+    "gis_footprint_covered_by_candidate_fraction": 0.6139840367
+  },
+  "disposition": {
+    "master_visibility": "suppressed as a possible duplicate of detailed FID 805 building",
+    "source_identity": "unverified; spatial overlap alone is not accepted as identity proof",
+    "source_file": "preserved in repository"
+  }
+}

@@ -4,8 +4,8 @@ This project covers Purdue West Lafayette campus buildings and Purdue-operated r
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.json) passed for 105/105 detailed placement markers and 1,938 linked libraries, with no missing library files.
-## Detailed models: status and latest grader score (211 buildings)
+Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.json) passed for 106/106 detailed placement markers and 1,938 linked libraries, with no missing library files.
+## Detailed models: status and latest grader score (212 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -44,6 +44,7 @@ Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.j
 | Cary Quadrangle East (CQE) | [massing_cary_quadrangle_east_cqe_230c813.blend](modular/buildings/massing_cary_quadrangle_east_cqe_230c813.blend) | Finished | [8.0/10](audit/massing_cary_quadrangle_east_cqe_independent_grade_r3/result.json) | — |
 | Cary Quadrangle South (CQS) | [massing_cary_quadrangle_south_cqs_7ee2283.blend](modular/buildings/massing_cary_quadrangle_south_cqs_7ee2283.blend) | Finished | [8.5/10](audit/massing_cary_quadrangle_south_cqs_independent_grade/result.json) | — |
 | Cary Quadrangle West (CQW) | [massing_cary_quadrangle_west_cqw_3d47a7d.blend](modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend) | Finished | [8.7/10](audit/massing_cary_quadrangle_west_cqw_independent_grade_r3/independent_grade_result.json) | — |
+| Chauncey Cooperative | [massing_chauncey_cooperative_fid805.blend](modular/buildings/massing_chauncey_cooperative_fid805.blend) | Finished; exact FID 805 foundation ring; integrated and fresh-open verified; roof, height, facade spacing and schematic interior remain estimated | [8.0/10](audit/chauncey/independent_grade_r1/result.json) | — |
 | Chi Omega | [massing_chi_omega_a9eb08d.blend](modular/buildings/massing_chi_omega_a9eb08d.blend) | Finished | [9.0/10](audit/chi_omega_independent_grade_r2/result.json) | — |
 | Chi Psi | [chi_psi.blend](modular/buildings/chi_psi.blend) | Finished; source-backed lodge model integrated; GIS label/exclusive occupancy conflict with Zeta Psi remains unresolved | [8.1/10](audit/chi_psi/independent_grade_r1/grade_report.md) | — |
 | Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | Finished | 8.5/10 | — |
@@ -221,9 +222,9 @@ Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.j
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
 
-## Unfinished buildings (44 total)
+## Unfinished buildings (43 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 42 current map projects below plus two newer West Lafayette construction projects make 44 unfinished projects. Open assignment records: Tobin 6, Rossen 8, Kyle 10, Rohan 0, Arjav 20, Brady 0. Seven of the 14 former Rohan projects were assigned to Tobin and seven to Rossen; four of Tobin’s and all seven of Rossen’s former Rohan projects remain open after Brees, Felix Haas Hall, and Heine Pharmacy were completed. There are no buildings currently assigned to Brady. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, Heine Pharmacy, Kappa Alpha Theta, Convergence Center, Gamma Phi Beta, Alpha Chi Omega, Chi Psi, and Delta Chi are synchronized to the master and removed from the open queue. Rossen’s eight remaining records comprise five buildings and three unresolved facility-research leads; the leads are not confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 24 projects; 20 remain with Arjav.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 41 current map projects below plus two newer West Lafayette construction projects make 43 unfinished projects. Open assignment records: Tobin 5, Rossen 8, Kyle 10, Rohan 0, Arjav 20, Brady 0. Seven of the 14 former Rohan projects were assigned to Tobin and seven to Rossen; four of Tobin’s and all seven of Rossen’s former Rohan projects remain open after Brees, Felix Haas Hall, and Heine Pharmacy were completed. There are no buildings currently assigned to Brady. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, Heine Pharmacy, Kappa Alpha Theta, Convergence Center, Gamma Phi Beta, Alpha Chi Omega, Chi Psi, Delta Chi, and Chauncey Cooperative are synchronized to the master and removed from the open queue. Rossen’s eight remaining records comprise five buildings and three unresolved facility-research leads; the leads are not confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 23 projects; 20 remain with Arjav.
 
 ### New West Lafayette construction projects (2)
 
@@ -401,7 +402,7 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
   </tbody>
 </table>
 
-#### Cooperative houses (11 unfinished)
+#### Cooperative houses (9 unfinished)
 
 <table>
   <thead>
@@ -413,12 +414,6 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Chauncey</td>
-      <td>FID 805; New asset/source mapping required</td>
-      <td>Several competing nearby assets; reconcile before modeling</td>
-      <td>Tobin</td>
-    </tr>
     <tr>
       <td>Ann Tweedale</td>
       <td>FID 824; New asset/source mapping required</td>
@@ -900,7 +895,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 802 | Stewart | [massing_fuse_39cf4b5](modular/buildings/massing_fuse_39cf4b5.blend)<br>[massing_house_1089875805_7e35374](modular/buildings/massing_house_1089875805_7e35374.blend)<br>[massing_house_1089875807_2bd9d47](modular/buildings/massing_house_1089875807_2bd9d47.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+5 more candidates) |
 | 803 | Hillel Foundation | [massing_hillel_36d2ba1](modular/buildings/massing_hillel_36d2ba1.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 804 | Kappa Sigma | [massing_house_301838017_9e20680](modular/buildings/massing_house_301838017_9e20680.blend)<br>[massing_house_301838020_d902112](modular/buildings/massing_house_301838020_d902112.blend)<br>[massing_house_671108497_7c12a3a](modular/buildings/massing_house_671108497_7c12a3a.blend) | Direct FID crosswalk; graded 8.5/10 and integrated in master; see audit/massing_kappa_sigma_c1b36ec/independent_grade/result.json |
-| 805 | Chauncey | [massing_house_1149668160_21c8b31](modular/buildings/massing_house_1149668160_21c8b31.blend)<br>[massing_house_860808220_b0ead89](modular/buildings/massing_house_860808220_b0ead89.blend)<br>[massing_house_970455229_ac730ab](modular/buildings/massing_house_970455229_ac730ab.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+9 more candidates) |
+| 805 | Chauncey | [massing_chauncey_cooperative_fid805](modular/buildings/massing_chauncey_cooperative_fid805.blend) (detailed)<br>[massing_house_970455239_8e2123c](modular/buildings/massing_house_970455239_8e2123c.blend) (superseded source candidate)<br>+11 other candidates remain unverified | Exact 16-vertex FID 805 foundation ring; independently graded 8.0/10 and integrated. The nearby massing candidate is suppressed in the master to avoid a duplicate; its identity remains spatially inferred. See the [candidate crosswalk analysis](audit/chauncey/crosswalk_candidate_970455239.json) and [Chauncey evidence](audit/chauncey/evidence.md). |
 | 820 | Historic Theta Tau / current Phi Kappa Tau | [massing_phi_kappa_tau_139b9d7](modular/buildings/massing_phi_kappa_tau_139b9d7.blend)<br>[massing_house_970736968_fa1edef](modular/buildings/massing_house_970736968_fa1edef.blend)<br>[massing_house_970737027_6544e29](modular/buildings/massing_house_970737027_6544e29.blend) | Current Phi Kappa Tau at 416 N Chauncey is supported by its chapter House page and alumni house-transition history; corrected massing independently graded 8.3/10, awaiting integration |
 | 821 | Alpha Epsilon Pi | — | Legacy/alternate GIS label at 116 Fowler is not used for the current 1051 David Ross address model; reconcile whether this is a separate in-scope facility or a stale map label. See audit/alpha_epsilon_pi/evidence.md |
 | 822 | Maclure | — | No direct FID crosswalk; reconcile to a master asset or create one |
