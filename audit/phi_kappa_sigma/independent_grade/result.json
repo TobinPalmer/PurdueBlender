@@ -1,0 +1,79 @@
+{
+  "building": "Phi Kappa Sigma",
+  "building_id": "massing_phi_kappa_sigma_fid829",
+  "source_feature_id": 829,
+  "asset_path": "modular/buildings/massing_phi_kappa_sigma_fid829.blend",
+  "asset_sha256": "B5F590CA2DEBC61C7F58E4FB6D9E9CA575D4C2957387C6BB54243F74C23305C5",
+  "review_type": "independent visual and structural review",
+  "review_basis": [
+    "audit/phi_kappa_sigma/evidence.md",
+    "audit/phi_kappa_sigma/fresh_open_validation.json",
+    "audit/phi_kappa_sigma/previews/phi_kappa_sigma_front.png",
+    "audit/phi_kappa_sigma/sources/fid829_footprint_overlay.png",
+    "audit/phi_kappa_sigma/sources/chapter_photo_4.jpg",
+    "audit/phi_kappa_sigma/sources/chapter_photo_5.jpg",
+    "read-only Blender 5.2.3 inspection of the saved asset"
+  ],
+  "score": 7.6,
+  "max_score": 10.0,
+  "passes_8_0": false,
+  "categories": [
+    {
+      "name": "Building identity and source match",
+      "score": 1.0,
+      "max_score": 1.0,
+      "finding": "Purdue FID 829, 234 Littleton Street, the chapter website, and exterior photographs agree."
+    },
+    {
+      "name": "GIS footprint and campus coordinates",
+      "score": 1.9,
+      "max_score": 2.0,
+      "finding": "The transformed official footprint matches the pale multi-wing roof in the aerial overlay; source imagery is not survey-grade."
+    },
+    {
+      "name": "Massing, story count, and roof",
+      "score": 1.3,
+      "max_score": 2.0,
+      "finding": "Three-storey height is photo-supported but estimated, wings are extruded to one height, and the roof object duplicates a full-height extrusion of the footprint instead of a cap."
+    },
+    {
+      "name": "Facade and architectural details",
+      "score": 1.35,
+      "max_score": 2.0,
+      "finding": "Broad classical character is captured, but repeated openings and simplified entrance lack the photographed facade articulation and upper terrace/parapet detail."
+    },
+    {
+      "name": "Materials and texturing",
+      "score": 1.15,
+      "max_score": 1.5,
+      "finding": "Portable procedural painted masonry and separate trim, roof, glazing, shutter, and door materials exist; the rendered wall texture is faint/noisy at this scale."
+    },
+    {
+      "name": "Interior / interior decision",
+      "score": 0.35,
+      "max_score": 0.75,
+      "finding": "No interior is modeled; the lack of source floor plans is documented, but a complete-building interior remains unmet if required."
+    },
+    {
+      "name": "Evidence and file validation",
+      "score": 0.55,
+      "max_score": 0.75,
+      "finding": "The evidence and fresh-open validation are strong; master integration and placement verification are not included in this standalone grade."
+    }
+  ],
+  "blocking_corrections": [
+    "Replace the duplicate full-height roof extrusion with a roof cap/parapet and eliminate coincident shell surfaces.",
+    "Reflect supported roof-height steps between attached wings and add the photographed terrace/parapet treatment.",
+    "Refine the entry pavilion and facade opening rhythm using the chapter photos.",
+    "Improve procedural brick scale/mapping so it reads as painted masonry at the asset scale.",
+    "Reopen and rerender after corrections; request a new independent grade against the updated asset SHA."
+  ],
+  "uncertainties": [
+    "No survey-grade height or measured elevations were found.",
+    "Available exterior photographs lack a confirmed capture date.",
+    "No reliable floor plan was found, so interior layout cannot be verified.",
+    "Aerial imagery supports plan identity but not facade geometry or roof heights."
+  ],
+  "fresh_open_validation": "PASS in audit/phi_kappa_sigma/fresh_open_validation.json",
+  "master_integration": "not verified"
+}

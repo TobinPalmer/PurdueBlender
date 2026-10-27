@@ -1,0 +1,112 @@
+{
+  "building": "Phi Kappa Sigma",
+  "building_id": "massing_phi_kappa_sigma_fid829",
+  "source_feature_id": 829,
+  "revision": 2,
+  "asset_path": "modular/buildings/massing_phi_kappa_sigma_fid829.blend",
+  "asset_sha256": "4392D2BDD1F2D51F81F730DAEBFE12FBD160D4A0A3A406003D1495E8F18C97C5",
+  "score": 8.55,
+  "max_score": 10.0,
+  "minimum_passing_score": 8.0,
+  "passes": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue BuildingShapesZip4 FID 829 names Phi Kappa Sigma at 234 Littleton Street.",
+        "The official Alpha Xi chapter site independently identifies the same address.",
+        "The archived Esri imagery overlay associates the GIS ring with the pale multi-wing roof."
+      ],
+      "finding": "Identity and footprint attribution are strongly established by official GIS, chapter-site address, and aerial evidence."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": [
+        "All 13 official GIS ring vertices match the saved shell base under the documented campus transform within 0.000024 m maximum nearest-vertex error.",
+        "The model selects the longest southwest-facing GIS edge as its photographed main facade.",
+        "The project conversion is approximate local XY, not surveyed geodetic control; master marker placement is outside this standalone grade."
+      ],
+      "finding": "Plan location, orientation, and scale closely follow the source; project-coordinate approximation and unverified master integration remain limits."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": [
+        "Official chapter photos show three principal facade storeys and a lower attached terrace wing.",
+        "Revision 2 models three roof planes at estimated 10.1 m, 9.5 m, and 6.7 m and a lower-wing terrace.",
+        "Photo 5 shows baluster detailing along the upper roofline; the model uses solid parapets on the main roof and an open balustrade only on the low terrace wing.",
+        "No surveyed elevations or reliable numerical height source were found."
+      ],
+      "finding": "Stepped masses and terrace concept have photo support, but heights are estimates and the principal roof-edge railing is simplified."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.35,
+      "max_score": 2.0,
+      "evidence": [
+        "Official chapter photos show white painted masonry, dark shutters, three window rows, and a prominent centered classical entrance.",
+        "Revision 2 adds seven bays per floor, belt courses, sidelights, pilasters, canopy, steps, and procedural brick/mortar relief.",
+        "The close facade render shows the small upper pediment overlapping the centered second-floor window; the source has a larger, more integrated entry pavilion.",
+        "The exterior photos are undated; exact finishes, sash sizes, and hidden elevations remain uncertain."
+      ],
+      "finding": "The facade now reads much closer to the photographed house and brick scale is improved; entry composition and upper roofline articulation remain approximate."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Fresh-open validation passed with the expected one-scene library contract, 654 objects, and 653 meshes.",
+        "The named GIS shell, three planar roof caps, and 104 terrace rail meshes are present.",
+        "The procedural brick node is linked to a physical UV layer; the file has no unpacked external images.",
+        "Building-specific evidence preserves GIS metadata, chapter page/photos, imagery, source transform, estimates, and revision renders; absence of an interior plan is explicitly recorded."
+      ],
+      "finding": "The expected modular asset, portability, and evidence requirements are met. Master integration is not claimed in this standalone grade."
+    }
+  ],
+  "checks": {
+    "blender_version": "5.2.3 LTS",
+    "fresh_open": true,
+    "scene": "Building_massing_phi_kappa_sigma_fid829",
+    "collection": "Asset_massing_phi_kappa_sigma_fid829",
+    "scene_count": 1,
+    "object_count": 654,
+    "mesh_count": 653,
+    "gis_fid": 829,
+    "gis_name": "Phi Kappa Sigma",
+    "gis_vertices": 13,
+    "shell_base_vertices": 13,
+    "footprint_nearest_vertex_max_error_m": 2.3992360248456215e-05,
+    "roof_cap_count": 3,
+    "roof_caps_planar": true,
+    "terrace_rail_mesh_count": 104,
+    "facade_uv_layer": true,
+    "brick_texture_uv_link": true,
+    "unpacked_external_images": []
+  },
+  "sources": [
+    "audit/phi_kappa_sigma/evidence.md",
+    "audit/phi_kappa_sigma/sources/purdue_gis_fid829_2026-10-26.json",
+    "audit/phi_kappa_sigma/sources/purdue_skulls_home_2026-10-26.html",
+    "audit/phi_kappa_sigma/sources/chapter_photo_4.jpg",
+    "audit/phi_kappa_sigma/sources/chapter_photo_5.jpg",
+    "audit/phi_kappa_sigma/sources/fid829_footprint_overlay.png"
+  ],
+  "renders_reviewed": [
+    "audit/phi_kappa_sigma/previews/phi_kappa_sigma_front.png",
+    "audit/phi_kappa_sigma/previews/phi_kappa_sigma_roof_terrace_3q.png",
+    "audit/phi_kappa_sigma/previews/phi_kappa_sigma_facade_detail.png"
+  ],
+  "findings": [
+    "The photographed baluster treatment on the principal roofline is reduced to a solid parapet; the open railing is limited to the lower terrace wing.",
+    "The small upper pediment overlaps the central second-floor window in the close render and does not fully reproduce the larger photographed entrance pavilion.",
+    "Wing elevations are photo-derived estimates; no surveyed height data were found.",
+    "No reliable floor plan was located, so the interior was not modeled rather than inventing an unsupported plan.",
+    "This asset-only grade does not validate master placement/integration."
+  ]
+}
