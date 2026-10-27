@@ -1,0 +1,220 @@
+{
+  "score": 8.25,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Official Purdue GIS FID 752 identifies Delta Zeta (SODZ) at 825 Hilltop Dr; Xi Omega chapter history corroborates the address and Purdue chapter identity.",
+        "All 11 unique GIS ring vertices match the reopened mesh base within tolerance; maximum residual 0.00003111 m.",
+        "The building is independently named as Xi Omega in the official Delta Zeta exterior-photo feature."
+      ],
+      "findings": [
+        "Purdue GIS is not a certified survey and publishes no positional tolerance."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2.0,
+      "evidence": [
+        "Reopened asset retains campus placement with identity location, rotation, and scale.",
+        "Evaluated mesh bounds are X [-867.5491943359375, -808.2540893554688] m, Y [722.0260620117188, 759.3250122070312] m, Z [0.0, 14.649999618530273] m; the new roof envelope differs from the GIS outline by only about 0.229 m at its greatest horizontal edge."
+      ],
+      "findings": [
+        "The official image is not georeferenced, so the facade bearing and which footprint edge is the photographed front cannot be independently verified.",
+        "Roof/eave overhang relative to GIS bounds (west/east/south/north): {'west_m': 0.145, 'east_m': -0.0, 'south_m': 0.229, 'north_m': -0.0}; this is a small envelope difference, not the former multi-meter overrun."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": [
+        "The official 2023 oblique photo visibly supports a multi-level brick house and multiple steep gabled roof sections.",
+        "The model depicts two principal facade levels, repeated gables, and a taller arched entry bay; the reopened total height is 14.65 m."
+      ],
+      "findings": [
+        "No measured height, floor plan, or elevation source is available; eaves, ridges, and entry tower heights remain visual estimates.",
+        "GIS NUM_LEVELS=1 is inconsistent with the photo's apparent multi-level facade; Extrution=36 has no documented unit or semantics. Do not infer either model height or story count from those fields.",
+        "The photo shows a stepped row of gabled wings, while the preview's roof masses and intersections remain simplified and are not dimensionally verified."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": [
+        "The source image supports brick walls, dark shingles, pale trim, a tall entry bay with arched upper glazing, and dark doors; the preview includes those broad features and repeated windows."
+      ],
+      "findings": [
+        "In the photo, the tall arched entrance is at the near end of the visible long facade; in the preview it sits around two-thirds across the shown facade. The photo has no camera pose, so this mismatch is concerning but cannot be conclusively mapped to compass orientation.",
+        "The roof planes and intersections are blocky/simplified, and window rhythm is more regular than the visible source facade."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Fresh Blender 5.2.3 reopen confirms the expected collection with exactly one mesh object; mesh has 6,820 evaluated vertices and 1,686 faces.",
+        "Identity object transform, all 11 GIS base vertices, and no external image dependencies are confirmed.",
+        "Building evidence includes raw GIS JSON, official photo, source observations, preview, configuration, and reopen validation."
+      ],
+      "findings": [
+        "The saved asset is self-contained and follows the expected single-object campus-coordinate export."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/massing_house_301841601_7ae6159.blend",
+    "probe": {
+      "blend_reopened": true,
+      "asset_path": "C:\\Users\\arjav\\Documents\\Blender\\PurdueMap-worktree-arjav\\modular\\buildings\\massing_house_301841601_7ae6159.blend",
+      "collection_exists": "Asset_massing_house_301841601_7ae6159",
+      "collection_object_names": [
+        "House_301841601"
+      ],
+      "object_name": "House_301841601",
+      "object_type": "MESH",
+      "object_location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "object_scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "mesh_vertex_count": 6820,
+      "mesh_face_count": 1686,
+      "evaluated_bounds_xyz_m": [
+        [
+          -867.5491943359375,
+          -808.2540893554688
+        ],
+        [
+          722.0260620117188,
+          759.3250122070312
+        ],
+        [
+          0.0,
+          14.649999618530273
+        ]
+      ],
+      "gis_fid": 752,
+      "gis_name": "Delta Zeta",
+      "gis_address": "825 Hilltop Dr",
+      "gis_unique_vertices": 11,
+      "gis_base_match_count": 11,
+      "gis_max_base_residual_m": 3.110824121620217e-05,
+      "gis_base_residuals_m": [
+        2.6445856222284915e-05,
+        2.4947434825867794e-05,
+        3.110824121620217e-05,
+        1.7560013716407328e-05,
+        2.0573507272164244e-05,
+        7.953982921796162e-06,
+        2.7052729828686053e-05,
+        1.9512797881585968e-05,
+        2.388947408019574e-05,
+        2.2967700759669864e-05,
+        3.091397141353453e-05
+      ],
+      "external_image_paths": [],
+      "material_names": [
+        "Hilltop brown brick",
+        "Entry bay brick",
+        "Warm ivory stone",
+        "White gable/window trim",
+        "Deep blue glass",
+        "Dark gray shingles",
+        "Deep green-blue doors",
+        "Foundation stone"
+      ]
+    },
+    "official_gis_attributes": {
+      "FID": 752,
+      "Level_": 8,
+      "Layer": "BLDG Building Private Owned",
+      "Color": 206,
+      "Linetype": "Solid",
+      "Elevation": 682,
+      "LineWt": 0,
+      "RefName": " ",
+      "BLDG_ABBR": "SODZ",
+      "BUILDING_N": "Delta Zeta",
+      "OTHER_ABBR": "SODZ",
+      "BUILDING_1": "6932",
+      "NUM_LEVELS": 1,
+      "OWNER": "GREEK",
+      "ADDRESS": "825 Hilltop Dr",
+      "COMMENTS": " ",
+      "BUILT": null,
+      "OCCUPIED": null,
+      "CountOfFLO": 1,
+      "Extrution": 36,
+      "Floorplans": "G:\\GIS\\web_pages\\html_pages\\SODZ.html",
+      "SB": 0,
+      "B": 0,
+      "G": 0,
+      "M": " ",
+      "F01": 0,
+      "F02": 0,
+      "F03": 0,
+      "F04": 0,
+      "F05": 0,
+      "F06": 0,
+      "F07": 0,
+      "F08": 0,
+      "F09": 0,
+      "F10": 0,
+      "F11": 0,
+      "F12": 0,
+      "F13": 0,
+      "F14": 0,
+      "F15": 0,
+      "F16": " ",
+      "R": 0,
+      "RuleID": 6,
+      "PU_Occupie": "N",
+      "DEMO": null,
+      "Zip": 0,
+      "Plus4": 0,
+      "Zone": " ",
+      "Entity": "Closed Shape",
+      "ZONES": 99,
+      "Building_F": " ",
+      "GlobalID": "{69063F2E-37FE-4F05-8709-DAB55649F2D8}",
+      "created_us": " ",
+      "created_da": null,
+      "last_edite": " ",
+      "last_edi_1": null,
+      "Shape__Area": 1956.1875,
+      "Shape__Length": 228.9320995884003
+    },
+    "official_photo_path": "audit/delta_zeta/sources/delta_zeta_house_official_front_2023.jpg",
+    "preview_path": "audit/delta_zeta/preview.png",
+    "roof_overhang_vs_gis_bounds_m": {
+      "west_m": 0.145,
+      "east_m": -0.0,
+      "south_m": 0.229,
+      "north_m": -0.0
+    },
+    "score_threshold": 8,
+    "passed": true
+  },
+  "findings": [
+    "PASS: score meets the 8/10 minimum.",
+    "The new version substantially reduces the former roof-envelope overrun; the current score reflects the revised bounds and mesh, not the stale earlier model.",
+    "Story count, measured heights, and exact facade bearing remain uncertain; GIS vertical fields are undefined and the photo has no scale or geolocation."
+  ]
+}

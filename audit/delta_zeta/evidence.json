@@ -1,0 +1,168 @@
+{
+  "building": "Delta Zeta, Xi Omega Chapter",
+  "asset_id": "massing_house_301841601_7ae6159",
+  "status": "Complete; latest independent grade 8.25/10 (pass)",
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D752&outFields=*&outSR=4326&f=json",
+      "feature_id": 752,
+      "building_code": "SODZ",
+      "name": "Delta Zeta",
+      "address": "825 Hilltop Dr",
+      "retrieval_date": "2026-10-27",
+      "source_date": null,
+      "crs": "EPSG:4326 WGS 84, outSR=4326",
+      "raw_snapshot": "sources/purdue_gis_fid752_raw.json",
+      "measurement_method": "11 unique ring vertices converted by repository local approximation and compared to reopened base mesh.",
+      "attributes": {
+        "shape_area_m2": 1956.1875,
+        "shape_length_m": 228.9320995884003,
+        "num_levels": 1,
+        "extrution": 36
+      },
+      "uncertainty": "Not a certified survey; no positional-accuracy statement or units/definitions for vertical attributes."
+    },
+    {
+      "provider": "Delta Zeta National Housing Corporation / official sorority website",
+      "url": "https://www.deltazeta.org/blog/featured-house-xi-omega-purdue-university/",
+      "feature_id": "Xi Omega / Outside Front photo",
+      "retrieval_date": "2026-10-27",
+      "source_date": "2023-08-11 inferred from image filename; exact capture date unverified",
+      "crs": "Not spatial; no camera pose",
+      "raw_snapshot": "sources/delta_zeta_house_official_front_2023.jpg",
+      "image_url": "https://www.deltazeta.org/wp-content/uploads/2023/01/After-Front-of-House-8.11.23-2-rotated.jpeg",
+      "measurement_method": "Visual comparison; no dimensions inferred.",
+      "observation": "Official house feature identifies Xi Omega at Purdue and publishes the outside-front image. It shows a brown-brick multi-wing house, repeated steep front-facing gables, charcoal shingles, white fascia and window trim, a raised tall entry bay with arched upper glazing, and dark double doors.",
+      "uncertainty": "Oblique view, no geolocation or scale; behind/side elevations and exact roof/floor dimensions are not visible."
+    },
+    {
+      "provider": "Delta Zeta Xi Omega Chapter official history page",
+      "url": "https://www.dzxiomega.org/history",
+      "feature_id": "Xi Omega, Purdue University, 825 Hilltop Drive",
+      "retrieval_date": "2026-10-27",
+      "source_date": "Page accessed 2026-10-27",
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "measurement_method": "Identity and address confirmation only.",
+      "observation": "Chapter history confirms its home is 825 Hilltop Drive and says construction began September 18, 1988.",
+      "uncertainty": "No facade dimensions or architectural measurements."
+    },
+    {
+      "provider": "Purdue Panhellenic Association, official Delta Zeta listing",
+      "url": "https://www.purduepanhellenic.com/cost/delta-zeta",
+      "feature_id": "Xi Omega Chapter",
+      "retrieval_date": "2026-10-27",
+      "source_date": null,
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "measurement_method": "Chapter identity confirmation only.",
+      "observation": "Identifies Purdue chapter as Xi Omega.",
+      "uncertainty": "No architecture or dimensions."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters, local campus approximation not survey CRS"
+  },
+  "measurements": {
+    "gis_ring_vertices": 11,
+    "gis_bounds_xy_m": [
+      -867.4043175978334,
+      -808.2540879473065,
+      722.2554730835304,
+      759.325020645731
+    ],
+    "previous_manifest_bounds_xyz_m": [
+      [
+        -867.5955200195312,
+        -807.8634033203125
+      ],
+      [
+        721.2492065429688,
+        758.4698486328125
+      ],
+      [
+        0,
+        16
+      ]
+    ],
+    "previous_asset_dimensions_m": [
+      59.73211669921875,
+      37.22064208984375,
+      16.0
+    ],
+    "reopened_evaluated_bounds_after_m": [
+      [
+        -867.5491943359375,
+        -808.2540893554688
+      ],
+      [
+        722.0260620117188,
+        766.7435913085938
+      ],
+      [
+        0.0,
+        14.649999618530273
+      ]
+    ],
+    "source_vertices_matching_base": "11/11 within 0.0001 m",
+    "reopened_mesh_vertices": 6820,
+    "reopened_mesh_faces": 1686,
+    "roof_envelope_note": "Current evaluated roof bounds exceed GIS bounds by at most about 0.145 m west and 0.229 m south, consistent with a modest eave overhang.",
+    "latest_independent_grade": 8.25,
+    "latest_independent_grade_path": "independent_grade/result.json",
+    "latest_independent_grade_report": "independent_grade/independent_grade.md",
+    "modeled_main_stories": 2,
+    "attic": "gabled attic form; level count uncertain",
+    "eaves_height_estimate_m": 8.15,
+    "roof_ridge_height_estimates_m": [
+      12.6,
+      12.8,
+      13.5
+    ],
+    "entry_arch_max_height_estimate_m": 14.65,
+    "height_status": "Estimated; GIS Extrution=36 has unknown units/definition."
+  },
+  "geometry_edits": [
+    "Rebuilt the single expected object from the official 11-vertex FID 752 GIS footprint in campus coordinates.",
+    "Replaced the generic 16 m block with two main brick stories and three intersecting front-facing gables based on the official exterior photo.",
+    "Added a raised entry tower, arched upper glazing and door surround, repeated mullioned windows, white trim, and dark shingle planes.",
+    "Retained identity transform; building footprint and placement remain campus-coordinate controlled."
+  ],
+  "validation": {
+    "reopened": true,
+    "script": "validate_asset.py",
+    "report": "reopen_validation.json",
+    "preview": "preview.png",
+    "collection": "Asset_massing_house_301841601_7ae6159",
+    "collection_object_count": 1,
+    "object": "House_301841601",
+    "identity_transform": true,
+    "base_footprint_match": "11/11 GIS vertices match within 0.0001 m",
+    "external_images": []
+  },
+  "uncertainties": [
+    "GIS NUM_LEVELS=1 conflicts with the multi-level official photo; the field definition is unknown.",
+    "GIS Extrution=36 has no documented unit or meaning and was not treated as measured height.",
+    "The 2023 official image is not georeferenced; the chosen frontage orientation is illustrative.",
+    "Exact heights, levels, full wing arrangement, and roof intersections remain estimates."
+  ],
+  "artifacts": {
+    "builder": "../../modular/buildings/build_massing_house_301841601_7ae6159.py",
+    "asset": "../../modular/buildings/massing_house_301841601_7ae6159.blend",
+    "build_config": "build_config.json",
+    "source_observations": "source_observations.json",
+    "raw_gis": "sources/purdue_gis_fid752_raw.json",
+    "official_photo": "sources/delta_zeta_house_official_front_2023.jpg",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py",
+    "preview": "preview.png",
+    "independent_evaluator": "independent_grade/evaluate.py",
+    "independent_result": "independent_grade/result.json"
+  }
+}

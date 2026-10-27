@@ -1,0 +1,118 @@
+{
+  "building": "Delta Zeta, Xi Omega Chapter",
+  "retrieval_date": "2026-10-27",
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; project approximation not a survey CRS"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D752&outFields=*&outSR=4326&f=json",
+      "feature_id": 752,
+      "name": "Delta Zeta",
+      "building_code": "SODZ",
+      "address": "825 Hilltop Dr",
+      "retrieved": "2026-10-27",
+      "source_date": null,
+      "crs": "EPSG:4326 WGS 84, outSR=4326 explicitly requested",
+      "raw_snapshot": "sources/purdue_gis_fid752_raw.json",
+      "method": "11 unique ring vertices transformed using documented campus approximation and compared at the base of the reopened asset.",
+      "observation": "Official feature identifies Delta Zeta at 825 Hilltop Dr; Shape__Area=1956.1875 m2, Shape__Length=228.9320995884003 m; NUM_LEVELS=1; Extrution=36.",
+      "uncertainty": "GIS is not a certified survey; positional accuracy and vertical attribute definitions are unpublished."
+    },
+    {
+      "provider": "Delta Zeta National Housing Corporation / official sorority blog",
+      "url": "https://www.deltazeta.org/blog/featured-house-xi-omega-purdue-university/",
+      "feature_id": "Xi Omega Purdue Featured House; Outside Front image",
+      "retrieved": "2026-10-27",
+      "source_date": "2023-08-11 (from official image filename; exact capture date not independently verified)",
+      "crs": "Not georeferenced",
+      "raw_snapshot": "sources/delta_zeta_house_official_front_2023.jpg",
+      "image_url": "https://www.deltazeta.org/wp-content/uploads/2023/01/After-Front-of-House-8.11.23-2-rotated.jpeg",
+      "method": "Visual comparison to official exterior image; no dimensions inferred.",
+      "observation": "The official page identifies Xi Omega at Purdue and labels an exterior image Outside Front. Visible architecture includes a large brown-brick, multi-wing house, multiple gabled roof sections, dark shingles, white fascia/window trim, a tall central entry bay with high arched glazing, and dark entry doors.",
+      "uncertainty": "Photo is oblique and not georeferenced; landscaping/monument sign is separate from building; exact dimensions and hidden elevations unavailable."
+    },
+    {
+      "provider": "Delta Zeta Xi Omega Chapter official history page",
+      "url": "https://www.dzxiomega.org/history",
+      "feature_id": "Xi Omega Chapter / 825 Hilltop Drive",
+      "retrieved": "2026-10-27",
+      "source_date": "Chapter site accessed 2026-10-27",
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "method": "Identity/address/built-era corroboration only.",
+      "observation": "Confirms Purdue Xi Omega chapter and says the 825 Hilltop Drive home began construction on September 18, 1988.",
+      "uncertainty": "No dimensions or facade measurements."
+    },
+    {
+      "provider": "Delta Zeta at Purdue, official Panhellenic listing",
+      "url": "https://www.purduepanhellenic.com/cost/delta-zeta",
+      "feature_id": "Xi Omega Chapter",
+      "retrieved": "2026-10-27",
+      "source_date": null,
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "method": "Chapter identity corroboration only.",
+      "observation": "Identifies the Purdue chapter as Xi Omega.",
+      "uncertainty": "No house geometry or measurements."
+    }
+  ],
+  "transformed_gis_ring_xy_m": [
+    [
+      -828.2663746310453,
+      722.2554730835304
+    ],
+    [
+      -867.4043175978334,
+      732.0707536363307
+    ],
+    [
+      -863.3198140597216,
+      748.3642261800105
+    ],
+    [
+      -829.4805736856529,
+      739.8782997399894
+    ],
+    [
+      -824.6072810414909,
+      759.325020645731
+    ],
+    [
+      -808.2540879473065,
+      755.2232133947473
+    ],
+    [
+      -814.4378106253174,
+      730.5423929354288
+    ],
+    [
+      -816.1066381623332,
+      730.9599440319789
+    ],
+    [
+      -821.3978743419029,
+      726.3548168341458
+    ],
+    [
+      -824.5638505746994,
+      724.3976224407561
+    ],
+    [
+      -828.6537787173139,
+      725.3560101246057
+    ]
+  ],
+  "gis_bounds_xy_m": [
+    -867.4043175978334,
+    -808.2540879473065,
+    722.2554730835304,
+    759.325020645731
+  ]
+}
