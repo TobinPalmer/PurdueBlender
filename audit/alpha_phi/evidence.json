@@ -1,0 +1,121 @@
+{
+  "building": "Alpha Phi, Alpha Eta Chapter",
+  "asset_id": "massing_house_301841331_735e92f",
+  "status": "Complete; passed fresh independent grade at 8.2/10; ready for master integration handoff",
+  "source": {
+    "provider": "Purdue University official campus building footprint service",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 764,
+    "building_code": "SOAF",
+    "source_name": "Alpha Phi",
+    "address": "801 David Ross Rd",
+    "retrieval_date": "2026-10-26",
+    "source_crs": "EPSG:4326 (WGS 84), outSR=4326 explicitly requested",
+    "source_record": "sources/purdue_gis_fid764_raw.json",
+    "reference_status": "Official campus-map polygon, not a certified survey."
+  },
+  "secondary_visual_references": [
+    {
+      "provider": "HUBERart, artist and Etsy listing",
+      "url": "https://www.etsy.com/listing/237335509/alpha-phi-sorority-house-purdue",
+      "snapshot": "sources/alpha_phi_purdue_artist_illustration.jpg",
+      "use": "Listing explicitly describes the artist\u2019s pen-and-ink drawing as the Alpha Phi Sorority house on Purdue\u2019s campus. The illustration supports a mid-century modern masonry building, three visible window levels, flat roof, horizontal floor bands, covered entry, and tall sign wall with A\u03a6/Alpha Phi lettering. It is unscaled; no dimensions taken."
+    },
+    {
+      "provider": "Purdue University Debris yearbook, e-Yearbook digitization",
+      "url": "https://www.e-yearbook.com/yearbooks/Purdue_University_Debris_Yearbook/1966/Page_1.html",
+      "snapshot": "sources/debris_1966_alpha_phi_source.html",
+      "use": "1966 yearbook text says Alpha Phi sisters showed off their new house at 801 David Ross Road, confirming use by 1966."
+    },
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life / Panhellenic Association",
+      "url": "https://www.purdue.edu/fscl/councils/pha/chapters.php",
+      "use": "Confirms current Purdue Alpha Phi chapter identity; no measured architectural data."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not a surveyed CRS"
+  },
+  "measurements": {
+    "official_local_footprint_bounds_xy_m": [
+      -1138.078,
+      -1097.914,
+      750.471,
+      779.037
+    ],
+    "official_polygon_bounds_dimensions_m": [
+      40.164,
+      28.566
+    ],
+    "official_polygon_area_attribute_m2": 945.6015625,
+    "official_polygon_length_attribute_m": 156.348659238104,
+    "official_source_ring_vertices": 16,
+    "before_asset_dimensions_m": [
+      43.728,
+      35.844,
+      16.0
+    ],
+    "after_asset_bounds_world_m": {
+      "x": [
+        -1138.235596,
+        -1097.756226
+      ],
+      "y": [
+        750.312805,
+        781.663757
+      ],
+      "z": [
+        0.0,
+        17.4
+      ]
+    },
+    "after_wall_base": "All 16 transformed GIS ring vertices matched the reopened base with 0.0 m maximum residual.",
+    "official_num_levels_attribute": 1,
+    "official_extrution_attribute": 12,
+    "modeled_floors": 3,
+    "position_status": "Wall ring follows the source map feature point-for-point; source accuracy is unpublished.",
+    "plan_dimension_status": "The irregular 16-point official polygon is retained. Sign wall and roof details project slightly beyond the GIS ring as modeled facade features.",
+    "orientation_status": "Longest mapped edge used as the visual principal facade from the exact-house illustration; no georeferenced photo confirms compass bearing.",
+    "height_status": "Estimated 13.4 m main eaves and 17.4 m raised sign wall; GIS NUM_LEVELS=1 conflicts with the artist illustration\u2019s three visible levels, and field meaning is undocumented."
+  },
+  "geometry_edits": [
+    "Rebuilt the massing object as a single detailed mesh with the exact 16-point official GIS base outline.",
+    "Added three main facade levels, repeated vertical glazing bays, floor bands and light masonry surfaces following the exact-house artist illustration.",
+    "Added the flat roof cap, raised end sign wall, readable A\u03a6 and Alpha Phi sign, centered covered entry, posts and steps.",
+    "Removed unused original image datablocks so the saved library contains no external image dependencies.",
+    "Preserved the assigned asset path, ID, collection, object name, campus coordinate frame, and identity object transform."
+  ],
+  "uncertainties": [
+    "Campus GIS is not a certified survey and publishes no positional accuracy, vertical datum, or meanings for NUM_LEVELS/Extrution.",
+    "The three-story interpretation is based on an unscaled artist drawing; the GIS NUM_LEVELS=1 attribute conflicts and has no documented convention.",
+    "Eaves/sign wall heights, exact facade rhythm, material finish, sign-wall dimensions, and entry bearing remain estimated or unverified.",
+    "The artist illustration is not dated or georeferenced, and current conditions may differ from it. No measured floor plan or elevation was found."
+  ],
+  "artifacts": {
+    "build_script": "../../modular/buildings/build_massing_house_301841331_735e92f.py",
+    "build_config": "build_config.json",
+    "raw_source": "sources/purdue_gis_fid764_raw.json",
+    "artist_illustration": "sources/alpha_phi_purdue_artist_illustration.jpg",
+    "yearbook_snapshot": "sources/debris_1966_alpha_phi_source.html",
+    "source_observations": "source_observations.json",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py",
+    "preview_render_script": "render_preview.py",
+    "preview": "preview.png",
+    "independent_grade": "independent_grade/result.json",
+    "independent_evaluator": "independent_grade/evaluate.py"
+  },
+  "independent_grade": {
+    "score": 8.2,
+    "max_score": 10,
+    "status": "PASS",
+    "result": "independent_grade/result.json",
+    "evaluator": "independent_grade/evaluate.py",
+    "summary": "Exact GIS footprint, yearbook identity/address, and modular export pass. Three-level facade and raised sign-wall heights are estimated; facade bearing is unregistered and GIS NUM_LEVELS=1 conflicts with visual evidence."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "building": "Alpha Phi, Alpha Eta Chapter",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 764,
+      "source_name": "Alpha Phi",
+      "building_code": "SOAF",
+      "address": "801 David Ross Rd",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": "EPSG:4326 (WGS 84), outSR=4326 explicitly requested",
+      "raw_snapshot": "sources/purdue_gis_fid764_raw.json",
+      "measurement_method": "16 unique WGS 84 ring vertices transformed with the repository local-campus approximation; Blender base ring compared against source vertices after reopen.",
+      "observation": "FID 764 / SOAF identifies Alpha Phi at 801 David Ross Rd; Shape__Area=945.6015625 m\u00b2; Shape__Length=156.348659238104 m. GIS NUM_LEVELS=1 and Extrution=12 retained without interpreting their field conventions.",
+      "uncertainty": "Campus GIS is not a certified survey and publishes no positional accuracy, height datum, or definition of NUM_LEVELS/Extrution."
+    },
+    {
+      "provider": "HUBERart, artist and Etsy listing",
+      "url": "https://www.etsy.com/listing/237335509/alpha-phi-sorority-house-purdue",
+      "feature_id": "Artist illustration explicitly described as the Alpha Phi Sorority house on Purdue University campus",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": "Not spatial",
+      "raw_snapshot": "sources/alpha_phi_purdue_artist_illustration.jpg",
+      "measurement_method": "Exact-address chapter-house illustration; no scaled dimensions inferred.",
+      "observation": "The pen-and-ink drawing shows the named Purdue Alpha Phi house with an asymmetric modern masonry facade, three visible levels of narrow windows, horizontal floor bands, a covered entry with posts, a flat roofline, and a taller end sign wall marked A\u03a6 / Alpha Phi. It is not a measured drawing.",
+      "uncertainty": "Illustration not dated or scaled; current condition and compass direction are not independently verified."
+    },
+    {
+      "provider": "Purdue University Debris yearbook, 1966 (e-Yearbook digitization)",
+      "url": "https://www.e-yearbook.com/yearbooks/Purdue_University_Debris_Yearbook/1966/Page_1.html",
+      "feature_id": "1966 Alpha Phi chapter entry",
+      "retrieved": "2026-10-26",
+      "source_date": "1966",
+      "crs": "Not spatial",
+      "raw_snapshot": "sources/debris_1966_alpha_phi_source.html",
+      "measurement_method": "Yearbook text searched for chapter and house address; no dimensions taken.",
+      "observation": "Yearbook text says Alpha Phi sisters showed off their new house at 801 David Ross Rd. in 1966, supporting the official GIS address crosswalk and the broad mid-century date.",
+      "uncertainty": "The online text extraction is OCR and no exact architectural measurements are provided."
+    },
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life / Panhellenic Association",
+      "url": "https://www.purdue.edu/fscl/councils/pha/chapters.php",
+      "feature_id": "Alpha Phi / Alpha Eta chapter",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "measurement_method": "Official chapter list verifies current Purdue chapter identity, not building geometry.",
+      "observation": "Lists Alpha Phi and links its Purdue chapter social media.",
+      "uncertainty": "No architectural or height data."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not surveyed CRS"
+  },
+  "gis_local_bounds_m": [
+    -1138.078,
+    -1097.914,
+    750.471,
+    779.037
+  ]
+}
