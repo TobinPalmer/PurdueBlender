@@ -1,0 +1,138 @@
+{
+  "building": "Horticulture Building",
+  "stable_building_id": "horticulture_building",
+  "assigned_owner": "Rossen",
+  "asset_path": "modular/buildings/horticulture_building.blend",
+  "export_collection": "Asset_horticulture_building",
+  "manifest_massing_replacement": "massing_horticulture_286a904",
+  "placement_origin_xy_m": [
+    -61.82494487966297,
+    -630.9233289999372
+  ],
+  "source_register": [
+    {
+      "provider": "Purdue University Campus GIS ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
+      "feature_id": 232,
+      "feature_name": "Horticulture Building",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D232&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "retrieved_date": "2026-10-22 (existing project snapshot); copied to this evidence folder 2026-10-27",
+      "source_date": "not provided in feature attributes",
+      "source_crs": "EPSG:4326 response; Purdue service identifies EPSG:3857/102100 as its source spatial reference",
+      "raw_snapshot": "sources/purdue_gis_fid232.json",
+      "measurement_method": "Transformed the FID 232 source ring using the documented project local geographic approximation: X=(longitude - -86.9137) * 84810.6041653993; Y=(latitude - 40.4274) * 111040.0. Removed duplicate points below 0.04m, simplified vertices only when iterative maximum point-to-segment error was at most 0.25m, and centered the local frame on the original transformed bounding-box center.",
+      "uncertainty": "GIS service publishes no survey tolerance or source date. The local geographic approximation is not a surveyed projected CRS; wall-to-outline association and overhang extent are not specified."
+    },
+    {
+      "provider": "Purdue University Events Calendar",
+      "url": "https://events.purdue.edu/horticulture_building",
+      "image_url": "https://localist-images.azureedge.net/photos/40247317614471/card/62557aff04e4ef3407a980bb42b7c3e0f9f7eb90.jpg",
+      "retrieved_date": "2026-10-27",
+      "source_date": "not stated on the page",
+      "source_crs": "not applicable; photograph",
+      "raw_snapshot": "sources/purdue_events_horticulture_building.html and sources/purdue_events_exterior.jpg",
+      "measurement_method": "Visual inspection only. Used to support red brick, three visible window levels of tall narrow grouped sash openings, brick piers, pale base, centered carved stone portal, balcony rail, and a flat/corniced roof edge. No pixel-to-meter measurement was used.",
+      "uncertainty": "One oblique/current photo does not establish hidden elevations, exact bay spacing, entry offset along wall, roof construction, measured height, or the complete facade perimeter."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/545",
+      "retrieved_date": "2026-10-27 via search index; direct page blocked by an anti-bot challenge in this runtime",
+      "source_date": "institutional historical entry; page says constructed 1926, with a large addition in 1938",
+      "source_crs": "not applicable",
+      "raw_snapshot": null,
+      "measurement_method": "Identity and historic construction context only; no geometry derived from this record.",
+      "uncertainty": "No raw HTML snapshot could be captured because the page returned a Cloudflare challenge; this contextual source is not used to set dimensions."
+    },
+    {
+      "provider": "Purdue University Campus Map",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "retrieved_date": "2026-10-27",
+      "source_date": "not stated",
+      "source_crs": "Campus map; north-up",
+      "raw_snapshot": "sources/purdue_campus_map.pdf; rendered crops in sources/purdue_campus_map_hort_crop.png and sources/purdue_campus_map_detail.png",
+      "measurement_method": "Used north-up mapped positions of HORT, Agriculture Mall, Agriculture Mall Drive, Nelson/Whistler, and the Horticulture/Forestry area. HORT lies east of the planted Agriculture Mall, supporting registration of the official photo elevation toward the west.",
+      "uncertainty": "Map supports facade direction and neighborhood relationship, but does not show which door or precise wall segment appears in the oblique photo."
+    },
+    {
+      "provider": "Purdue University College of Agriculture",
+      "url": "https://ag.purdue.edu/news/2021/05/student-redesign-of-agriculture-mall-earns-national-recognition.html",
+      "retrieved_date": "2026-10-27",
+      "source_date": "2021-05",
+      "source_crs": "not applicable; campus context",
+      "raw_snapshot": "sources/purdue_agriculture_mall_context.html",
+      "measurement_method": "Page describes Agriculture Mall as the green strips between Whistler/Nelson to the west and Horticulture/Forestry to the east, surrounded by Agriculture Mall Drive. Used only to corroborate west-facing photo registration.",
+      "uncertainty": "Context only; no facade geometry or measurements derived from the article."
+    },
+    {
+      "provider": "Federal Aviation Administration, Purdue University Airport",
+      "url": "https://www.faa.gov/flight_deck/laf",
+      "retrieved_date": "2026-10-27",
+      "source_date": "current airport reference; checked 2026-10-27",
+      "source_crs": "not applicable; airport field elevation",
+      "raw_snapshot": null,
+      "measurement_method": "Airport field elevation is approximately 606 ft and is used as a nearby plausibility check: GIS Elevation=615.9 is numerically consistent with feet. This supports, but does not prove, a feet interpretation for the other GIS vertical attributes.",
+      "uncertainty": "Airport datum/elevation does not establish the units or semantics of custom building fields. Not used as the building height."
+    }
+  ],
+  "model_interpretation": {
+    "footprint": "The 14-vertex closed GIS outline is used for the structural shell and flat roof deck. Its concave/reentrant plan is preserved; no bounding-box bridge was added.",
+    "placement": "Local asset origin remains the manifest's original FID 232 bounding-box center. Campus placement is still controlled by the master Placement_horticulture_building marker; master was not edited.",
+    "orientation": "The principal photo elevation is registered to the west-facing long edge. Purdue\u00e2\u20ac\u2122s north-up campus map places HORT east of Agriculture Mall and west of the Forestry/Horticulture area; the official building photo shows planted greenspace in front. The article describing the mall\u00e2\u20ac\u2122s green strips corroborates this. Direction is supported; exact door offset along the wall remains an estimate.",
+    "height_m": 10.69848,
+    "height_status": "Estimated, not surveyed. BuildingShapes layer metadata has verticalSpatialReference=null and does not document attribute units. F02=11.7, F03=23.4, and R=35.1 form 11.7-unit intervals. Purdue Airport elevation (606 ft) makes Elevation=615.9 plausibly feet, but does not prove the custom fields use feet. Under that hypothesis R=35.1 ft gives 10.70m; Extrution=48 ft gives 14.63m upper bound. Three photo-visible levels align with F01/F02/F03; B=-10 is below grade; NUM_LEVELS/CountOfFLO=5 may count basement/ground levels. Model uses the roof field R for best estimate and explicitly retains the range.",
+    "roof": "Flat roof with restrained perimeter cornice; supported by the official photo. No dormers, projecting canopy, or freestanding portal piers.",
+    "interior": "Three generic floor plates only; they do not claim an exact room layout.",
+    "materials": "Procedural node materials only. No external image or texture dependencies.",
+    "height_range_m": [
+      10.69848,
+      14.6304
+    ],
+    "facade": "The photographed west elevation has tall narrow sash openings: the upper two rows include a central single-pair-single group above the entry, with paired flanking groups and outer singles. The ground row keeps the center open for the doorway. Fine horizontal bed joints, shallow brick pilasters, pale foundation, carved stone portal and balcony rail follow the photo; exact dimensions and spacing remain estimated."
+  },
+  "change_record": {
+    "prior_asset": "The manifest and README referenced this detailed asset, but it was absent from the current repository checkout and origin/master; only the source evidence and shared batch preview existed locally.",
+    "geometry_edits": [
+      "Built the standalone asset from official GIS FID 232 with stable local coordinates and a 14-vertex footprint.",
+      "Registered the pictured entrance elevation to the west-facing GIS wall using the north-up Purdue campus map and Agriculture Mall context; exact entrance offset is estimated.",
+      "Replaced uniform square openings with tall narrow sash; restored the source central single-pair-single group on each upper row, flanking window rhythm, fine brick courses, and pale foundation.",
+      "Aligned the shallow carved portal, centered inscription, and balcony rail; preserved an open ground-floor doorway bay and removed the unsupported canopy/piers.",
+      "Kept the explicit conditional height estimate/range and flat roof; preview stage and lights remain outside the exported asset collection."
+    ],
+    "campus_origin_changed": false,
+    "master_blend_changed": false
+  },
+  "validation": {
+    "blender_version": "5.2.3 LTS",
+    "saved_and_reopened": true,
+    "validation_record": "reopen_validation.json",
+    "reopen_validator": "reopen_validate.py",
+    "views": [
+      "renders/horticulture_exterior.png",
+      "renders/horticulture_top.png",
+      "renders/horticulture_entry.png"
+    ],
+    "asset_sha256": "20aed83e827c75d57c12e7dfc417bc6d1e4ccaebf5336b4e96c6121e13297cb7",
+    "limits": [
+      "GIS verticalSpatialReference is null and custom vertical field units/semantics are undocumented; building height is a feet-hypothesis estimate (10.70m roof level, with a 14.63m Extrution-based upper bound), not a survey.",
+      "Campus map and Agriculture Mall source support a west-facing principal elevation; the exact entrance offset along that wall remains estimated.",
+      "Facade dimensions and bay spacing are photo-based estimates; no measured elevations or plans were retrieved.",
+      "Master placement marker and neighborhood context in the project master were not modified or validated by this source-asset task."
+    ],
+    "height_m": 10.698480000000002,
+    "height_range_m": [
+      10.698480000000002,
+      14.630400000000002
+    ],
+    "independent_grade": "pending fresh grade after revision",
+    "object_count": 39
+  },
+  "independent_grade": {
+    "score": 8.3,
+    "max_score": 10,
+    "round": 3,
+    "result_file": "audit/horticulture_building/independent_grade_r3/result.json",
+    "asset_sha256": "20aed83e827c75d57c12e7dfc417bc6d1e4ccaebf5336b4e96c6121e13297cb7",
+    "master_validation": "awaiting Tobin"
+  },
+  "coordinator_caveat": "Any frozen asset/report text calling 14.63m an upper bound is conditional on undocumented fields being feet. It is a scenario, not a measured or verified bound."
+}

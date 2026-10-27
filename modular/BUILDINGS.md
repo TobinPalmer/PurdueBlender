@@ -136,7 +136,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](buildings/hall_for_discovery_and_learning_research.blend) | 396 |
 | The Church of Jesus Christ of Latter-day Saints Institute of Religion | [massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend](buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | 1 |
 | Heine Pharmacy | [heine_pharmacy.blend](buildings/heine_pharmacy.blend) | 133 |
-| Horticulture Building | [horticulture_building.blend](buildings/horticulture_building.blend) | 728 |
+| Horticulture Building ([8.3/10](../audit/horticulture_building/independent_grade_r3/result.json); Tobin validation pending) | [horticulture_building.blend](buildings/horticulture_building.blend) | 39 |
 | Krach Leadership Center | [krach_leadership_center.blend](buildings/krach_leadership_center.blend) | 36 |
 | Lambert Fieldhouse | [lambert_fieldhouse.blend](buildings/lambert_fieldhouse.blend) | 932 |
 | Life Science Plant and Soils Laboratory | [life_science_plant_and_soils_laboratory.blend](buildings/life_science_plant_and_soils_laboratory.blend) | 641 |

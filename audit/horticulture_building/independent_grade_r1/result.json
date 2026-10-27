@@ -1,0 +1,307 @@
+{
+  "building_id": "horticulture_building",
+  "reviewer": "independent grader r1",
+  "score": 7.0,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "status": "verified within source limits",
+      "evidence": [
+        "Official GIS raw snapshot FID232 names Horticulture/HORT and 625 Agriculture Mall Drive.",
+        "Reopened evaluated shell has 14 floor vertices; bidirectional source vertex error <0.001m; reentrant footprint preserved."
+      ],
+      "uncertainty": "GIS survey tolerance/source date and exact wall-versus-eave association unavailable."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.6,
+      "max_score": 2,
+      "status": "horizontal geometry verified; architectural facade registration unverified",
+      "evidence": [
+        "Shell extent and 14 geographic vertices match documented local transform.",
+        "Asset origin matches manifest exactly; local coordinates and meter scale preserved."
+      ],
+      "deduction": "0.4: entrance facade selected by longest edge without geographic registration of source photo; complete master placement/neighbors not inspected."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "status": "three visible rows and flat roof edge supported; height uncertain",
+      "evidence": [
+        "Source photo directly supports three visible window levels and corniced flat roof edge.",
+        "Reopened shell height14.63m. Raw GIS says five levels and Extrution48 but also F02=11.7,F03=23.4,R=35.1."
+      ],
+      "deduction": "1.0: 48 interpreted as feet without field unit evidence and competing roof attribute not reconciled; no height measurement/elevation; total height and internal floor elevations unverified."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.6,
+      "max_score": 2,
+      "status": "material colors/row count supported; important source details mismatch",
+      "evidence": [
+        "Red brick, pale stone and dark sash palette present; three rows.",
+        "Direct photo-versus-render review shows tall grouped source openings/pilasters differ from uniform square candidate openings; projecting canopy/piers unsupported."
+      ],
+      "deduction": "1.4: missing source-supported grouping/pilasters/portal detail; unsupported projecting portico; unregistered hidden elevations generalized without corroboration."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "status": "reopened library portable; integration evidence incomplete",
+      "evidence": [
+        "Expected collection reopens; all seven assigned procedural materials have linked outputs; no external image/library dependencies.",
+        "Dedicated builder, saved GIS/photo/HTML, provenance, uncertainty, three views and builder reopen validation present.",
+        "Preview stage objects outside exported Asset collection."
+      ],
+      "deduction": "0.2: master links/replacement/neighborhood check unavailable; archived contextual source has no raw capture; prior detailed asset missing so before/after geometric comparison not possible."
+    }
+  ],
+  "evidence": {
+    "asset_sha256": "b0923d8aec82006c218893ea8bf473c62257de1f71c57d635d884c587ee98c8e",
+    "reopened_blender_version": "5.2.3 LTS",
+    "collection": "Asset_horticulture_building",
+    "object_count": 24,
+    "source_identity": "Horticulture Building",
+    "source_fid": 232,
+    "source_to_evaluated_shell_vertex_error_m": 9.461494427494995e-07,
+    "evaluated_shell_to_source_vertex_error_m": 9.461494427494995e-07,
+    "shell_local_bounds_m": [
+      [
+        -32.25010299682617,
+        32.25010299682617
+      ],
+      [
+        -20.768705368041992,
+        20.768705368041992
+      ],
+      [
+        0.0,
+        14.630000114440918
+      ]
+    ],
+    "shell_dimensions_m": [
+      64.50020599365234,
+      41.537410736083984,
+      14.630000114440918
+    ],
+    "origin_xy_m": [
+      -61.82494487966297,
+      -630.9233289999372
+    ],
+    "manifest_origin_xy_m": [
+      -61.82494487966297,
+      -630.9233289999372
+    ],
+    "origin_error_m": 0.0,
+    "material_surface_connected": {
+      "Horticulture | warm red brick": true,
+      "Horticulture | cast concrete base": true,
+      "Horticulture | charcoal flat roof": true,
+      "Horticulture | blue-black sash glazing": true,
+      "Horticulture | light limestone": true,
+      "Horticulture | dark bronze door": true,
+      "Horticulture | schematic floor plates": true
+    },
+    "external_images": [],
+    "linked_libraries": [],
+    "modifiers": {
+      "HORT structural shell | official GIS FID 232 outline": [],
+      "HORT raised foundation plinth": [],
+      "HORT flat roof deck | GIS outline": [],
+      "Historic sash windows | glazing": [],
+      "Historic sash windows | pale stone surrounds": [],
+      "Historic sash windows | meeting rails": [],
+      "Continuous limestone string course": [],
+      "Continuous limestone string course.001": [],
+      "Continuous limestone string course.002": [],
+      "Central entry | glazed double doors": [],
+      "Central entry | upper glazed transom": [],
+      "Central entry | limestone left jamb": [
+        {
+          "name": "Small stone arris",
+          "type": "BEVEL",
+          "enabled": true,
+          "render": true
+        },
+        {
+          "name": "Weighted normals",
+          "type": "WEIGHTED_NORMAL",
+          "enabled": true,
+          "render": true
+        }
+      ],
+      "Central entry | limestone right jamb": [
+        {
+          "name": "Small stone arris",
+          "type": "BEVEL",
+          "enabled": true,
+          "render": true
+        },
+        {
+          "name": "Weighted normals",
+          "type": "WEIGHTED_NORMAL",
+          "enabled": true,
+          "render": true
+        }
+      ],
+      "Central entry | carved limestone lintel": [
+        {
+          "name": "Small stone arris",
+          "type": "BEVEL",
+          "enabled": true,
+          "render": true
+        },
+        {
+          "name": "Weighted normals",
+          "type": "WEIGHTED_NORMAL",
+          "enabled": true,
+          "render": true
+        }
+      ],
+      "Central entry | upper stone balcony sill": [
+        {
+          "name": "Small stone arris",
+          "type": "BEVEL",
+          "enabled": true,
+          "render": true
+        },
+        {
+          "name": "Weighted normals",
+          "type": "WEIGHTED_NORMAL",
+          "enabled": true,
+          "render": true
+        }
+      ],
+      "Central entry | step 1": [
+        {
+          "name": "Small stone arris",
+          "type": "BEVEL",
+          "enabled": true,
+          "render": true
+        },
+        {
+          "name": "Weighted normals",
+          "type": "WEIGHTED_NORMAL",
+          "enabled": true,
+          "render": true
+        }
+      ],
+      "Central entry | step 2": [
+        {
+          "name": "Small stone arris",
+          "type": "BEVEL",
+          "enabled": true,
+          "render": true
+        },
+        {
+          "name": "Weighted normals",
+          "type": "WEIGHTED_NORMAL",
+          "enabled": true,
+          "render": true
+        }
+      ],
+      "Central entry | step 3": [
+        {
+          "name": "Small stone arris",
+          "type": "BEVEL",
+          "enabled": true,
+          "render": true
+        },
+        {
+          "name": "Weighted normals",
+          "type": "WEIGHTED_NORMAL",
+          "enabled": true,
+          "render": true
+        }
+      ],
+      "Central entry | shallow portico canopy": [
+        {
+          "name": "Small stone arris",
+          "type": "BEVEL",
+          "enabled": true,
+          "render": true
+        },
+        {
+          "name": "Weighted normals",
+          "type": "WEIGHTED_NORMAL",
+          "enabled": true,
+          "render": true
+        }
+      ],
+      "Central entry | portico pier": [
+        {
+          "name": "Small stone arris",
+          "type": "BEVEL",
+          "enabled": true,
+          "render": true
+        },
+        {
+          "name": "Weighted normals",
+          "type": "WEIGHTED_NORMAL",
+          "enabled": true,
+          "render": true
+        }
+      ],
+      "Central entry | portico pier.001": [
+        {
+          "name": "Small stone arris",
+          "type": "BEVEL",
+          "enabled": true,
+          "render": true
+        },
+        {
+          "name": "Weighted normals",
+          "type": "WEIGHTED_NORMAL",
+          "enabled": true,
+          "render": true
+        }
+      ],
+      "Schematic floor plate 1 | no room layout implied": [],
+      "Schematic floor plate 2 | no room layout implied": [],
+      "Schematic floor plate 3 | no room layout implied": []
+    },
+    "source_vertical_attributes": {
+      "NUM_LEVELS": 5,
+      "CountOfFLO": 5,
+      "Extrution": 48,
+      "B": -10,
+      "G": 0,
+      "F01": 0,
+      "F02": 11.7,
+      "F03": 23.4,
+      "R": 35.1
+    },
+    "direct_visual_review": {
+      "source_photo": "sources/purdue_events_exterior.jpg: inspected raw 478x310 Purdue photograph; official saved HTML identifies Horticulture and embeds exactly this photo.",
+      "source_facade": "Three visible window levels, tall narrow sash windows, grouped central paired windows and flanking single windows, brick pilasters, pale foundation, carved flush/recessed stone entrance surround and projecting cornice. No freestanding canopy piers visible.",
+      "candidate_facade": "Supplied exterior and entry renders inspected. Uniform nearly square windows replace source grouping. Pale full-height surrounds and continuous horizontal bands replace prominent brick pilasters. Entry has a large projecting canopy with unsupported detached piers; carved portal/pediment/name block missing. Brick is continuous noise rather than recognizable masonry.",
+      "roof_plan": "Top render and reopened structural floor vertices preserve reentrant source plan. Flat roof visible in source at the parapet edge; concealed roof construction remains uncertain.",
+      "registration": "Geographic shell coordinates preserved. The source photo is not geographically registered; placing entrance on the longest GIS edge is unsupported."
+    }
+  },
+  "findings": [
+    {
+      "priority": "required",
+      "action": "Rebuild photographed facade with tall narrow grouped sash windows, brick pilasters, pale base and the source portal; remove unsupported freestanding portico canopy/piers. Render comparable frontal view. Do not infer hidden elevations as verified."
+    },
+    {
+      "priority": "required",
+      "action": "Register the photographed entry elevation to GIS using a map/street/aerial view or other geolocated source. Document geographic side and entry offset."
+    },
+    {
+      "priority": "required",
+      "action": "Resolve vertical fields: establish units/meaning of Extrution48 versus R35.1 and three visible levels. Obtain independent height/elevation support or use a bounded documented estimate that accounts for all fields."
+    },
+    {
+      "priority": "handoff",
+      "action": "Coordinator/Tobin must verify master asset link once, placement, massing replacement and immediate neighbor context; grader did not open/save master."
+    }
+  ]
+}
