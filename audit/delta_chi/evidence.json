@@ -1,0 +1,179 @@
+{
+  "building_id": "delta_chi",
+  "asset": "modular/buildings/delta_chi.blend",
+  "collection": "Asset_delta_chi",
+  "retrieved_date": "2026-10-27",
+  "status": "independently graded 8.0/10 (PASS); integrated into master and master fresh-open verified",
+  "independent_grade": {
+    "score": 8.0,
+    "maximum": 10,
+    "result": "PASS",
+    "grader": "independent reviewer",
+    "review_file": "audit/delta_chi/independent_grade_r1/result.json",
+    "report_file": "audit/delta_chi/independent_grade_r1/grade_report.md",
+    "graded_asset_sha256": "9b3df6a36a3de940b08f1319e6bbffd475b7c5083615e90e240160025f20e696",
+    "limitations": [
+      "Landscaping is sparser and more schematic than the photographed foundation beds; exact plants and placement are not verified.",
+      "Roof profile, height, dormers, and entrance location/dimensions remain photo-derived estimates.",
+      "The interior is simplified schematic geometry; no verified floor plan was found.",
+      "The limited oblique facade photo is not georegistered and constrains facade-detail verification."
+    ]
+  },
+  "master_sync": {
+    "status": "PASS; integrated and freshly reopened",
+    "master_file": "purdue_campus_master.blend",
+    "verification_file": "modular/verification.json",
+    "verified_on": "2026-10-27",
+    "detailed_asset_count": 105,
+    "master_placement_markers": 105,
+    "linked_library_count": 1938,
+    "missing_library_paths": 0,
+    "superseded_source_massing": "massing_house_301840867_1cab527 is unlinked from the rebuilt master",
+    "note": "Counts and PASS status reflect the coordinator's completed master rebuild and fresh-open verification; modular/verification.json records 105 detailed assets and markers with no errors."
+  },
+  "sources": [
+    {
+      "provider": "Delta Chi International Fraternity",
+      "url": "https://deltachi.org/chapter-directory/indiana/",
+      "use": "official Purdue chapter listing and 501 N Russell address"
+    },
+    {
+      "provider": "Delta Chi Purdue chapter",
+      "url": "https://deltachipurdue.org/rush",
+      "use": "current address and 2026 house-tour schedule"
+    },
+    {
+      "provider": "501 Russell property site",
+      "url": "https://501russell.com/gallery/",
+      "photo_url": "https://501russell.com/wp-content/uploads/2025/06/IMG_4032-scaled.jpeg",
+      "gallery_upload_date": "2025-06",
+      "photo_capture_date_exif": "2021-08-06",
+      "use": "exterior and interior reference photographs; image was not embedded in model"
+    },
+    {
+      "provider": "Indiana GIS Data Hub",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "feature_id": 409891,
+      "source_date": "2018 lidar year",
+      "source_crs": "source EPSG:3857, requested EPSG:4326",
+      "use": "building shell footprint; not height"
+    },
+    {
+      "provider": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/301840867",
+      "feature_id": 301840867,
+      "tags_used": {
+        "addr:housenumber": "501",
+        "building": "school"
+      },
+      "use": "20-vertex building footprint crosswalk to Indiana LiDAR footprint; OSM building category is not treated as a verified Delta Chi identity label"
+    },
+    {
+      "provider": "Tippecanoe County GIS / Schneider Corp",
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/58",
+      "feature_id": "PIN 164018000124 / parcel 79-07-19-127-011.000-026",
+      "use": "address-parcel cross-check; parcel boundary is not the building wall"
+    },
+    {
+      "provider": "Tippecanoe County GIS / Schneider Corp Finished SQFT",
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/79",
+      "feature_id": "PIN 164018000124",
+      "use": "assessor 1952 year built and 25,352 finished sq ft; not measured height"
+    }
+  ],
+  "placement": {
+    "origin_xy_m_projected": [
+      -496.69663676022526,
+      238.53526084630937
+    ],
+    "formula": "X=(lon+86.9137)*84810.60416539927; Y=(lat-40.4274)*111040.0",
+    "origin_method": "area centroid of building-footprint objectid 409891 in project local metric frame"
+  },
+  "geometry": {
+    "footprint_area_m2": 646.1015595036297,
+    "vertex_count": 8,
+    "source_area_attribute": 1116.895550862967,
+    "lidar_year": "2018",
+    "window_count_per_floor": 62,
+    "eaves_estimate_m": 7.35,
+    "roof_peak_estimate_m": 9.25
+  },
+  "spatial_crosswalk": {
+    "comparison_frame": "project local metric frame, using the building project geographic-to-local conversion recorded under placement",
+    "osm_way_id": 301840867,
+    "osm_footprint_vertex_count": 20,
+    "osm_tags": {
+      "addr:housenumber": "501",
+      "building": "school"
+    },
+    "indiana_lidar_objectid": 409891,
+    "polygon_intersection_over_union": 0.883,
+    "centroid_offset_m": 0.82,
+    "existing_source_massing_name": "massing_house_301840867_1cab527",
+    "source_massing_bounds_match": "The existing source massing's bounds match OSM way 301840867.",
+    "purdue_fid_candidate": {
+      "fid": 846,
+      "label": "SODC",
+      "status": "spatial candidate only; label and building identity are not confirmed"
+    },
+    "identity_interpretation": "The OSM-to-LiDAR geometric overlap and address tag support the footprint crosswalk. Delta Chi's official sources identify its current facility at 501 N Russell, but the OSM building=school tag and Purdue FID 846 label SODC do not independently confirm a Delta Chi identity."
+  },
+  "edits": [
+    "Built local-coordinate shell from Indiana 2018 footprint.",
+    "Added red brick procedural texture, white cornice and trim, double-hung windows, dormers and an estimated hipped roof from the 2025 property photograph.",
+    "Added a principal east-side porch/entry toward Russell Street; exact historic entrance position remains estimated.",
+    "Added a schematic multi-floor interior (bedrooms, dining/study, lounge/game room) based on gallery room types; no registered floor plan was found.",
+    "Added photo-inspired beds, shrubs and grasses; species and exact planting positions are unverified."
+  ],
+  "uncertainties": [
+    "Delta Chi official and chapter sources identify 501 N Russell as current facility and schedule house tours; a May 2024 city record listed Alpha Tau Omega at the same address, indicating an occupancy/branding transition whose exact timing and changeover remain unresolved.",
+    "Indiana building footprint is from 2018; no current registered architectural drawing or current official building footprint was found.",
+    "The exterior reference photo is in the property-site gallery uploaded in June 2025 but its EXIF capture date is 2021-08-06, so post-2021 facade changes may be unshown.",
+    "Roof shape, height, storey count, dormers and entrance dimensions are photo-derived estimates; assessor square footage is not a height measurement.",
+    "Interior floor plan and room coordinates are schematic, not surveyed.",
+    "Property gallery photos are not georegistered to individual facades."
+  ],
+  "evidence_files": [
+    "audit/delta_chi/indiana_building_footprint_objectid_409891.json",
+    "audit/delta_chi/osm_buildings_around_501_russell.json",
+    "audit/delta_chi/tippecanoe_parcel_501_n_russell.json",
+    "audit/delta_chi/finished_sqft_501_russell.json",
+    "audit/delta_chi/501russell_gallery.html",
+    "audit/delta_chi/gallery_ref_61.jpeg",
+    "audit/delta_chi/gallery_ref_60.jpeg",
+    "audit/delta_chi/osm_geocode_501_russell.json",
+    "audit/delta_chi/preview_overview.png",
+    "audit/delta_chi/preview_schematic_interior.png"
+  ],
+  "validation": {
+    "saved_and_reopened": true,
+    "asset_sha256": "9b3df6a36a3de940b08f1319e6bbffd475b7c5083615e90e240160025f20e696",
+    "blender_version": "5.2.3 LTS",
+    "object_count": 564,
+    "mesh_count": 564,
+    "material_count": 13,
+    "mesh_bounds_local_m": [
+      [
+        -14.06768798828125,
+        16.644861221313477
+      ],
+      [
+        -18.8739070892334,
+        21.437814712524414
+      ],
+      [
+        -0.029999971389770508,
+        9.25
+      ]
+    ],
+    "fresh_open_report": "audit/delta_chi/fresh_open_validation.json",
+    "fresh_open_render": "audit/delta_chi/fresh_open_preview.png",
+    "previews": [
+      "audit/delta_chi/preview_overview.png",
+      "audit/delta_chi/preview_front_elevation.png",
+      "audit/delta_chi/preview_schematic_interior.png"
+    ],
+    "texture_check": "All assigned materials have connected Principled Base Color inputs; brick uses shell UVs and noise materials use connected procedural texture nodes.",
+    "note": "Fresh-open validation checks export collection tags, exact project origin, source footprint identifier, UV map, material wiring, selected room and window objects, and a fresh render. It does not establish a registered floor plan or a full scene collision review."
+  }
+}

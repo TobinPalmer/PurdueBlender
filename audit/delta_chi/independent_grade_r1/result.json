@@ -1,0 +1,51 @@
+{
+  "building_id": "delta_chi",
+  "asset_path": "modular/buildings/delta_chi.blend",
+  "asset_sha256": "9b3df6a36a3de940b08f1319e6bbffd475b7c5083615e90e240160025f20e696",
+  "grader": "independent reviewer",
+  "rubric": "Five categories scored 0-2 each; pass threshold >=8/10.",
+  "categories": {
+    "identity_and_site_evidence": {
+      "score": 2.0,
+      "max": 2,
+      "evidence": "Delta Chi International's Indiana chapter directory and the Purdue chapter rush page both identify 501 N Russell; the latter advertises 2026 house tours there. County parcel data is cross-referenced. The 2024 ATO city record is preserved as an occupancy transition/conflict rather than silently ignored."
+    },
+    "footprint_form_and_orientation": {
+      "score": 1.5,
+      "max": 2,
+      "evidence": "The model is built from Indiana 2018 LiDAR footprint objectid 409891 and its local origin exactly matches the reported projected centroid [-496.69663676022526, 238.53526084630937]. The L-shaped building form and two-story massing are plausible against the exterior reference. Roof shape, height, dormers, and precise entry location are still estimated from oblique imagery; no independent measured height or current footprint comparison is supplied."
+    },
+    "facade_material_and_source_fidelity": {
+      "score": 1.5,
+      "max": 2,
+      "evidence": "The model shows the documented red-brick facade, light trim/cornice, repeated double-hung windows, an entry porch, and dormer cues. The available property photo shows these key facade/material cues, but only a limited oblique view is georegistered; window spacing, roof/dormer layout, and landscaping remain approximate. Rendered planting is much sparser and more schematic than the photographed foundation beds."
+    },
+    "interior": {
+      "score": 1.0,
+      "max": 2,
+      "evidence": "A multilevel schematic interior and room/furniture cues are present and draw on the property's room photographs. The preview shows simplified slab, partition, and furniture blocks rather than source-matched room geometry, and no registered floor plan was found."
+    },
+    "portability_and_fresh_open": {
+      "score": 2.0,
+      "max": 2,
+      "evidence": "The asset was saved and freshly reopened in Blender 5.2.3 LTS. The validation report matches the exact SHA, finds 564 mesh objects, 13 materials with connected Base Color inputs, a shell UV map, 62 upper-window objects, the expected collection and origin, and no missing external image dependencies."
+    }
+  },
+  "total": 8.0,
+  "maximum": 10,
+  "result": "PASS",
+  "limitations": [
+    "The footprint source is from 2018 and supports plan geometry, not facade or height.",
+    "The main exterior image was uploaded in 2025 but EXIF-dated 2021-08-06.",
+    "Roof, height, story count, dormers, entrance dimensions, and planting positions are estimated.",
+    "The interior is schematic, not a surveyed plan.",
+    "No evidence indicates the two external image datablocks reported in the validation object are needed as external dependencies; the validator reports no missing image paths."
+  ],
+  "reviewed_files": [
+    "audit/delta_chi/evidence.json",
+    "audit/delta_chi/fresh_open_validation.json",
+    "audit/delta_chi/fresh_open_preview.png",
+    "audit/delta_chi/preview_schematic_interior.png",
+    "audit/delta_chi/gallery_ref_61.jpeg"
+  ]
+}

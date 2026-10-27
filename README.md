@@ -4,8 +4,8 @@ This project covers Purdue West Lafayette campus buildings and Purdue-operated r
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.json) passed for 104/104 detailed placement markers and 1,938 linked libraries, with no missing library files.
-## Detailed models: status and latest grader score (210 buildings)
+Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.json) passed for 105/105 detailed placement markers and 1,938 linked libraries, with no missing library files.
+## Detailed models: status and latest grader score (211 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -53,6 +53,7 @@ Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.j
 | Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | Finished; exact FID 71 shell/placement; story count and roof dimensions remain uncertain | [8.45/10](audit/dauch_alumni_center/independent_grade_r3/result.json) | — |
 | David and Bonnie Brunner Farm Animal Hospital | [david_and_bonnie_brunner_farm_animal_hospital.blend](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | Finished; linked-library sync and fresh-open placement verification PASS 2026-10-27; model-specific uncertainty remains documented in its evidence record | [8.4/10](audit/brunner_farm_animal_hospital/independent_grade_r2/result.json) | — |
 | Delta Delta Delta | [massing_house_301841333_affe21e.blend](modular/buildings/massing_house_301841333_affe21e.blend) | Finished; FID 753 / Gamma Iota identity supported; height, roof and two-level interpretation remain estimated; 1200 vs. 898 Tower Dr label conflict remains | [8.3/10](audit/delta_delta_delta/independent_grade_r1/result.json) | — |
+| Delta Chi | [delta_chi.blend](modular/buildings/delta_chi.blend) | Finished; 501 N Russell is source-supported; master fresh-open verified; FID 846 “SODC” label remains unresolved; roof, entry, planting and schematic interior retain documented limits | [8.0/10](audit/delta_chi/independent_grade_r1/result.json) | — |
 | Delta Sigma Phi | [massing_house_860826641_2c90f97.blend](modular/buildings/massing_house_860826641_2c90f97.blend) | Finished; FID 798 identity and wall footprint verified; no interior and roof/story details remain estimated | [8.3/10](audit/delta_sigma_phi/independent_grade_codex/result.json) | — |
 | Delta Tau Delta | [massing_delta_tau_delta_e06b0b5.blend](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Finished | [8.25/10](audit/delta_tau_delta_e06b0b5/independent_grade_r2/result.json) | — |
 | Delta Upsilon | [massing_house_301841256_1cc7641.blend](modular/buildings/massing_house_301841256_1cc7641.blend) | Finished; exact FID 751 wall footprint; master fresh-open PASS; height/roof estimated; no interior plan found | [8.4/10](audit/delta_upsilon/independent_grade_codex/result.json) | — |
@@ -220,9 +221,9 @@ Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.j
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
 
-## Unfinished buildings (45 total)
+## Unfinished buildings (44 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 43 current map projects below plus two newer West Lafayette construction projects make 45 unfinished projects. Open assignment records: Tobin 7, Rossen 8, Kyle 10, Rohan 0, Arjav 20, Brady 0. Seven of the 14 former Rohan projects were assigned to Tobin and seven to Rossen; four of Tobin’s and all seven of Rossen’s former Rohan projects remain open after Brees, Felix Haas Hall, and Heine Pharmacy were completed. There are no buildings currently assigned to Brady. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, Heine Pharmacy, Kappa Alpha Theta, Convergence Center, Gamma Phi Beta, Alpha Chi Omega, and Chi Psi are synchronized to the master and removed from the open queue. Rossen’s eight remaining records comprise five buildings and three unresolved facility-research leads; the leads are not confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 25 projects; 20 remain with Arjav.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 42 current map projects below plus two newer West Lafayette construction projects make 44 unfinished projects. Open assignment records: Tobin 6, Rossen 8, Kyle 10, Rohan 0, Arjav 20, Brady 0. Seven of the 14 former Rohan projects were assigned to Tobin and seven to Rossen; four of Tobin’s and all seven of Rossen’s former Rohan projects remain open after Brees, Felix Haas Hall, and Heine Pharmacy were completed. There are no buildings currently assigned to Brady. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, Heine Pharmacy, Kappa Alpha Theta, Convergence Center, Gamma Phi Beta, Alpha Chi Omega, Chi Psi, and Delta Chi are synchronized to the master and removed from the open queue. Rossen’s eight remaining records comprise five buildings and three unresolved facility-research leads; the leads are not confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 24 projects; 20 remain with Arjav.
 
 ### New West Lafayette construction projects (2)
 
@@ -262,13 +263,13 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 
 ### Fraternity, sorority, and cooperative facilities
 
-The unfinished fraternity table below lists six open cases, three assigned to Tobin and three to Rossen. Passing fraternity models synchronized to the master are listed in the finished table above. The legacy Kappa Sigma house is independently graded 8.5/10 and appears in the finished table above. Seventeen of the current 36 IFC-listed organizations have finished entries above: Acacia, Alpha Chi Rho, Alpha Epsilon Pi, Alpha Gamma Rho, Alpha Kappa Lambda, Alpha Sigma Phi, Alpha Tau Omega, Beta Sigma Psi, Beta Upsilon Chi (formerly Fairway Cooperative), Chi Psi, Delta Sigma Phi, Delta Tau Delta, Delta Upsilon, FarmHouse, Kappa Delta Rho, Phi Gamma Delta, and Phi Kappa Sigma. Chi Psi's Lodge model is source-backed, but its exclusive current occupancy at 950 David Ross is unresolved against Zeta Psi's conflicting claim. Rows without a confirmed campus-map match remain facility-research work; do not invent a house location from organization membership alone.
+The unfinished fraternity table below lists five open cases, two assigned to Tobin and three to Rossen. Passing fraternity models synchronized to the master are listed in the finished table above. The legacy Kappa Sigma house is independently graded 8.5/10 and appears in the finished table above. Eighteen of the current 36 IFC-listed organizations have finished entries above: Acacia, Alpha Chi Rho, Alpha Epsilon Pi, Alpha Gamma Rho, Alpha Kappa Lambda, Alpha Sigma Phi, Alpha Tau Omega, Beta Sigma Psi, Beta Upsilon Chi (formerly Fairway Cooperative), Chi Psi, Delta Chi, Delta Sigma Phi, Delta Tau Delta, Delta Upsilon, FarmHouse, Kappa Delta Rho, Phi Gamma Delta, and Phi Kappa Sigma. Chi Psi's Lodge model is source-backed, but its exclusive current occupancy at 950 David Ross is unresolved against Zeta Psi's conflicting claim. Delta Chi's current 501 N Russell address is supported by chapter sources, while a 2024 city record names ATO at that address and the transition timing remains unclear. Rows without a confirmed campus-map match remain facility-research work; do not invent a house location from organization membership alone.
 
 Across the detailed-model and fraternity tables, Rossen has eight open assignment records: five buildings and three unresolved facility-research leads. Seven of the 14 former Rohan projects were assigned to Tobin and seven to Rossen; four Tobin-assigned and all seven Rossen-assigned projects remain open after Brees, Felix Haas Hall, and Heine Pharmacy were completed. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, and Heine Pharmacy are integrated and fresh-open verified. The three research leads are Psi Upsilon, Sigma Alpha Mu, and Zeta Psi. Sigma Alpha Mu has credible chapter-house lease evidence, but 930 N Grant remains a plausible address candidate and its provisional model scored 6/10, so it is not accepted. Zeta Psi’s earlier supposed 2023 house-move evidence was a misattribution to Tau Theta at Ontario Tech; the current conflict over 950 David Ross remains unresolved. See [the latest master integration audit](audit/rossen_master_integration_audit_2026-10-26.md) and the building-specific research records.
 
 Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/councils/ifc/chapters.php), [Panhellenic](https://www.purdue.edu/fscl/councils/pha/chapters.php), [MGC](https://www.purdue.edu/fscl/councils/mgc/chapters.php), [NPHC](https://www.purdue.edu/fscl/councils/nphc/chapters.php), and [cooperative-house](https://www.purdue.edu/fscl/councils/cooperatives/houses.php) lists. Purdue describes FSCL as five councils with 90 organizations; the model inventory tracks physical facilities rather than treating each organization as a separate building ([FSCL overview](https://www.purdue.edu/vpsl/news/featured-stories/2026_0105-fscl-150-recap.php)). Add any MGC or NPHC facility if a dedicated physical house is verified. A spatial candidate is not treated as a confirmed match until its footprint is checked.
 
-#### Fraternity houses (6 open cases: Tobin 3, Rossen 3)
+#### Fraternity houses (5 open cases: Tobin 2, Rossen 3)
 
 <table>
   <thead>
@@ -280,12 +281,6 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Delta Chi</td>
-      <td>No reliable map FID; New asset/source mapping required</td>
-      <td>No official map feature or asset match; research chapter facility</td>
-      <td>Tobin</td>
-    </tr>
     <tr>
       <td>Phi Kappa Psi</td>
       <td>FID 856 is a candidate at 1307 Tower Dr; GIS label conflicts with the current official chapter address</td>
@@ -927,7 +922,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 843 | 24R | [massing_house_301921260_4bea287](modular/buildings/massing_house_301921260_4bea287.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 844 | 115W | [massing_house_301921257_b7eb626](modular/buildings/massing_house_301921257_b7eb626.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 845 | Baptist Student Foundation | [massing_house_301934830_7cb26ae](modular/buildings/massing_house_301934830_7cb26ae.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 846 | SODC | [massing_house_301840867_1cab527](modular/buildings/massing_house_301840867_1cab527.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 846 | SODC (label conflicts with the 501 N Russell address) | [delta_chi](modular/buildings/delta_chi.blend) (detailed)<br>[massing_house_301840867_1cab527](modular/buildings/massing_house_301840867_1cab527.blend) (source massing) | OSM way 301840867 / address 501 matches the 2018 Indiana LiDAR shell (IoU 0.883); Delta Chi sources identify 501 N Russell. Purdue FID 846’s SODC label remains an unresolved spatial crosswalk; see audit/delta_chi/evidence.json |
 | 849 | Sigma Alpha Epsilon | [massing_sigma_alpha_epsilon_fid849](modular/buildings/massing_sigma_alpha_epsilon_fid849.blend) | FID/name/address reconciled to 406 Littleton and county parcel; independently graded 8.0/10; master sync and fresh-open placement PASS 2026-10-27; roof and height estimated |
 | 850 | Levee Plaza | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 852 | St. Thomas Aquinas Center | [massing_st_thomas_aquinas_5535390](modular/buildings/massing_st_thomas_aquinas_5535390.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
