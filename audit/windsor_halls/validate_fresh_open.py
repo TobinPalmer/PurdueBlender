@@ -12,10 +12,11 @@ SOURCE = os.path.join(HERE, "sources", "purdue_gis_windsor_fids_63_66_277_278_20
 RAW = os.path.join(HERE, "fresh_open_raw.json")
 OUT = os.path.join(HERE, "validation.json")
 ORIGIN_LAT, ORIGIN_LON = 40.4274, -86.9137
+PLACEMENT_XY = (-617.8, -96.6)
 
 def project_ring(coords):
-    return [((lon-ORIGIN_LON)*111412.84*math.cos(math.radians(ORIGIN_LAT)),
-             (lat-ORIGIN_LAT)*111040.0) for lon,lat,*_ in coords[:-1]]
+    return [((lon-ORIGIN_LON)*111412.84*math.cos(math.radians(ORIGIN_LAT))-PLACEMENT_XY[0],
+             (lat-ORIGIN_LAT)*111040.0-PLACEMENT_XY[1]) for lon,lat,*_ in coords[:-1]]
 
 source=json.load(open(SOURCE,encoding="utf-8"))
 raw=json.load(open(RAW,encoding="utf-8"))
@@ -53,13 +54,15 @@ validation={
     "sha256":hashlib.sha256(open(ASSET,"rb").read()).hexdigest(),
     "asset":"modular/buildings/massing_windsor_halls_80aeb51.blend",
     "fresh_open":raw,
-    "footprint_comparison_method":"Shapely polygon IoU and Hausdorff boundary distance; official FID polygons and fresh-open structural shell bottom rings, project conversion documented in evidence.md",
+    "footprint_comparison_method":"Shapely polygon IoU and Hausdorff boundary distance; official FID polygons and fresh-open structural shell bottom rings transformed to local coordinates using the documented approximate campus transform and placement origin",
     "components":components,
     "source_polygon_relationships_included_and_adjacent":relationships,
     "source_crs":"EPSG:4326",
     "retrieval_date":"2026-10-26",
     "included_fids":[63,64,65,66],
     "excluded_fids":[277,278],
+    "coordinate_system":"local building meters; X east, Y north, Z up",
+    "placement_origin_campus_xy_m":list(PLACEMENT_XY),
 }
 json.dump(validation,open(OUT,"w",encoding="utf-8"),indent=2)
 print("validated",OUT,validation["sha256"])

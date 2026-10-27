@@ -12,13 +12,14 @@ SOURCE=os.path.join(HERE,"sources","purdue_gis_windsor_fids_63_66_277_278_2026-1
 OUT=os.path.join(HERE,"roof_surfaces.json")
 ORIGIN_LAT,ORIGIN_LON=40.4274,-86.9137
 INSETS={63:3.0,64:3.0,65:3.0,66:.35}
-RIDGE_EXPONENT={63:0.95,64:0.92,65:0.98}
+RIDGE_EXPONENT={63:1.38,64:1.48,65:1.28}
 SUBDIVISION_LEVELS=3
+SMOOTHING_PASSES=4
 ROOF_EDGE_INSET_M=0.3
 ROOF_PLAN_SIMPLIFY_M=0.55
 data=json.load(open(SOURCE,encoding="utf-8"))
 features={f["properties"]["FID"]:f for f in data["features"]}
-output={"method":"Warren/Wood/Vawter use separately constrained, midpoint-refined roof plans inset 0.3m and simplified 0.55m solely to smooth GIS digitization steps. Height follows a near-linear distance-to-roof-boundary profile normalized by sampled inradius, yielding estimated ridge planes without broad flat caps. Structural shells remain on the exact GIS ring. FID66 retains its previous low roof form because its subgrade relationship is unresolved.","source_crs":"EPSG:4326","project_transform":"X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040","inset_m":INSETS,"roof_edge_inset_m":ROOF_EDGE_INSET_M,"roof_plan_simplify_m":ROOF_PLAN_SIMPLIFY_M,"ridge_height_profile_exponent":RIDGE_EXPONENT,"subdivision_levels":SUBDIVISION_LEVELS,"components":{}}
+output={"method":"Warren/Wood/Vawter use separately constrained, midpoint-refined roof plans inset 0.3m and simplified 0.55m solely to smooth GIS digitization steps. Estimated height follows a convex power distance-to-roof-boundary profile normalized by sampled inradius, preserving sharper ridges. Structural shells remain on the exact GIS ring. FID66 retains its previous low roof form because its subgrade relationship is unresolved.","source_crs":"EPSG:4326","project_transform":"X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040","inset_m":INSETS,"roof_edge_inset_m":ROOF_EDGE_INSET_M,"roof_plan_simplify_m":ROOF_PLAN_SIMPLIFY_M,"ridge_height_profile_exponent":RIDGE_EXPONENT,"subdivision_levels":SUBDIVISION_LEVELS,"smoothing_passes":SMOOTHING_PASSES,"components":{}}
 for fid,inset in INSETS.items():
     ring=[((lon+86.9137)*111412.84*math.cos(math.radians(ORIGIN_LAT)),(lat-40.4274)*111040) for lon,lat,*_ in features[fid]["geometry"]["coordinates"][0]]
     footprint=Polygon(ring)
@@ -76,7 +77,7 @@ for fid,inset in INSETS.items():
         # The distance field has ridges where a vertex becomes equidistant from
         # multiple walls. A short constrained Laplacian pass removes sampling
         # spikes while keeping eaves at zero and leaving the medial ridges high.
-        for _ in range(18):
+        for _ in range(SMOOTHING_PASSES):
             updated=heights[:]
             for i,adj in enumerate(neighbors):
                 if adj and not fixed[i]:

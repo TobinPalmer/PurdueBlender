@@ -1,0 +1,183 @@
+{
+  "building": "Alpha Omicron Pi, Phi Upsilon chapter house",
+  "verified_address": "242 S Grant St, West Lafayette, Indiana",
+  "identity_conflict_resolution": {
+    "README_claim": "AOII -> Purdue GIS FID 756 / massing_house_301841607_63d85b5",
+    "finding": "Incorrect crosswalk. Current AOII official chapter site gives 242 S Grant. FID 756 is near 1001 David Ross Rd, not 242 S Grant; current Phi Sigma Rho identifies 1001 David Ross as its address.",
+    "asset_used": "massing_house_970455277_a3fb72a",
+    "fid_756_asset_left_untouched": "massing_house_301841607_63d85b5",
+    "sources": [
+      "https://purdue.alphaomicronpi.org/house",
+      "https://purdue.alphaomicronpi.org/",
+      "https://purdue.phisigmarho.org/contact"
+    ]
+  },
+  "retrieval_date": "2026-10-27",
+  "sources": [
+    {
+      "name": "Alpha Omicron Pi Phi Upsilon official house page",
+      "url": "https://purdue.alphaomicronpi.org/house",
+      "provider": "AOII Phi Upsilon / ChapterSpot",
+      "source_feature_id": "Chapter house address 242 S Grant St",
+      "source_date": "Current page; publication date not displayed",
+      "source_crs": "Not applicable",
+      "method": "Directly checked current chapter house page; identifies the house address.",
+      "uncertainty": "Provides identity/address, not dimensions, facade elevations, or floor plans.",
+      "snapshot": "sources/aoii_chapter_house.html"
+    },
+    {
+      "name": "AOII Phi Upsilon current chapter homepage",
+      "url": "https://purdue.alphaomicronpi.org/",
+      "provider": "AOII Phi Upsilon / ChapterSpot",
+      "source_feature_id": "Phi Upsilon chapter",
+      "source_date": "Current page; publication date not displayed",
+      "source_crs": "Not applicable",
+      "method": "Cross-checked the current chapter and linked house information.",
+      "uncertainty": "Dynamic site, no construction drawings.",
+      "snapshot": "sources/aoii_chapter_house.html"
+    },
+    {
+      "name": "City of West Lafayette APC staff report Z-2618",
+      "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/Item/198?fileID=184",
+      "provider": "Tippecanoe Area Plan Commission / City of West Lafayette",
+      "source_feature_id": "Z-2618, northeast corner Grant and Harrison",
+      "source_date": "2015",
+      "source_crs": "Report/site-plan CRS not specified",
+      "method": "Used written site description and site-plan sheet: approximate 0.44-acre site, parking/garage at grade, two residential stories above, terrace, alley access, screening/planters, and 15 bedrooms plus house-mother bedroom.",
+      "uncertainty": "Site plan supports massing/site features but is not an as-built survey/elevation; heights and room layout remain estimates.",
+      "snapshot": "sources/z2618_staff_report_2015.pdf"
+    },
+    {
+      "name": "Lambert Construction AOII project portfolio",
+      "url": "https://lambertconstructionco.com/project-portfolio/alpha-omicron-pi-sorority/",
+      "provider": "Lambert Construction Co.",
+      "source_feature_id": "Alpha Omicron Pi Sorority project",
+      "source_date": "Page publication date not displayed",
+      "source_crs": "Not applicable",
+      "method": "Used public project description as scale/program corroboration: about 19,500 sq ft, three levels, 2,800-sq-ft lower level, shared kitchen/lounge/library/reflection spaces and guest suites.",
+      "uncertainty": "Portfolio summary is not a measured drawing; the total reported floor area does not reconcile cleanly with the GIS footprint times three floors. Treat area/program as contextual only.",
+      "snapshot": "sources/lambert_alpha_omicron_pi_project.html"
+    },
+    {
+      "name": "OpenStreetMap way 970455277 footprint",
+      "url": "https://www.openstreetmap.org/way/970455277",
+      "provider": "OpenStreetMap (OSM contributors; source tags indicate Microsoft Building Footprints import)",
+      "source_feature_id": "way/970455277; nodes preserved in XML snapshot",
+      "source_date": "OSM node edits timestamped 2021-08-04",
+      "source_crs": "WGS 84 / EPSG:4326, transformed to Purdue project local approximate XY",
+      "method": "Compared the original source asset ring to the OSM polygon; same parcel footprint. Local transform uses project convention X=(lon+86.9137)*111412.84*cos(40.4274°), Y=(lat-40.4274)*111040. Exact original asset ring match was within ~0.00002 m. Re-centered geometry by the polygon bounds midpoint; campus origin recorded separately.",
+      "uncertainty": "Not a survey; source polygon is a footprint approximation. Does not establish roof overhangs or vertical dimensions.",
+      "snapshot": "osm_way_970455277.xml"
+    },
+    {
+      "name": "Phi Sigma Rho current contact page",
+      "url": "https://purdue.phisigmarho.org/contact",
+      "provider": "Phi Sigma Rho Purdue",
+      "source_feature_id": "Current chapter contact/address",
+      "source_date": "Current page; publication date not displayed",
+      "source_crs": "Not applicable",
+      "method": "Used as independent identity check for the 1001 David Ross address conflicting with README AOII/FID 756 association.",
+      "uncertainty": "Address is not itself parcel geometry.",
+      "snapshot": "sources/phisigma_rho_contact_1001_david_ross.html"
+    },
+    {
+      "name": "Google Maps Street View panorama directly across from 242 S Grant",
+      "url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=40.4209197,-86.9103025&heading=90&pitch=0",
+      "provider": "Google Maps Street View",
+      "source_feature_id": "pano 7sss79LqLjoubGgmBPYxng; panorama pin approx. 40.4209197,-86.9103025",
+      "source_date": "March 2026 capture as shown by Google watermark/metadata",
+      "source_crs": "WGS 84 / EPSG:4326 pano camera location; not a survey position",
+      "method": "Downloaded the 1200x800 Street View panorama thumbnail at yaw 90° from the saved camera point. Camera is about 22 m west of the OSM parcel centroid on the Grant Street side and looks directly at the parcel facade. Matched the central 3-level house in the image to the OSM polygon/official 242 S Grant address and 2015 report corner. It visibly shows brick ground story, beige horizontal siding on two upper stories, dark shutters and a low-pitched dark hip roof.",
+      "uncertainty": "Google panorama is perspective imagery; no elevations or measured roof pitch. Adjacent buildings frame the view. Visual material/feature identification is strong; precise dimensions and unobserved side/rear elevations remain estimated.",
+      "snapshot": "aoii_streetview_reference.jpg"
+    },
+    {
+      "name": "Current AOII Phi Upsilon house page and interior images",
+      "url": "https://purdue.alphaomicronpi.org/house",
+      "provider": "AOII Phi Upsilon / ChapterSpot",
+      "source_feature_id": "Official chapter house page; address 242 S Grant St; image assets house_omicron_ch_house_left.jpg, house_welcome_home_right.jpg, house_bottom_photo_left.jpg, house_bottom_photo_middle.jpg, house_bottom_photo_right.jpg",
+      "source_date": "Current site retrieved 2026-10-27; image publication dates not shown",
+      "source_crs": "Not applicable",
+      "method": "Verified official address and inspected current official interior photographs for common-space context. The official site photo assets inspected are interior views; they do not show an exterior elevation.",
+      "uncertainty": "No current official exterior photograph or as-built drawings found on the official page.",
+      "snapshot": "sources/aoii_chapter_house.html; house_omicron_ch_house_left.jpg; house_welcome_home_right.jpg; house_bottom_photo_left.jpg; house_bottom_photo_middle.jpg; house_bottom_photo_right.jpg"
+    }
+  ],
+  "model": {
+    "asset_id": "massing_house_970455277_a3fb72a",
+    "file": "../../modular/buildings/massing_house_970455277_a3fb72a.blend",
+    "scene": "Building_massing_house_970455277_a3fb72a",
+    "collection": "Asset_massing_house_970455277_a3fb72a",
+    "placement_origin_world_xy_m": [
+      308.7021179199219,
+      -719.9722595214844
+    ],
+    "footprint_local_vertices_m": [
+      [
+        7.972198486328125,
+        2.442901611328125
+      ],
+      [
+        3.222808837890625,
+        2.553924560546875
+      ],
+      [
+        3.222808837890625,
+        9.771514892578125
+      ],
+      [
+        -7.88739013671875,
+        9.771514892578125
+      ],
+      [
+        -7.972198486328125,
+        -9.771514892578125
+      ],
+      [
+        7.972198486328125,
+        -9.7715146484375
+      ]
+    ],
+    "footprint_area_m2": 276.23032251292466,
+    "detailed_local_bounds_including_site_furniture_m": {
+      "x": [
+        -11.300000190734863,
+        8.212198257446289
+      ],
+      "y": [
+        -10.011514663696289,
+        10.011514663696289
+      ],
+      "z": [
+        -0.10000000149011612,
+        9.78499984741211
+      ]
+    },
+    "estimated_levels_m": [
+      0,
+      3.1,
+      6.2,
+      9.15,
+      9.25
+    ],
+    "object_count": 1780,
+    "material_count": 14,
+    "interior": "Estimated garage support/parking, two residential levels, shared kitchen/dining/lounge/study furniture, and 15 bedroom bays; floor plan and furniture layout are not sourced drawings.",
+    "roof": "Two shallow dark hip roof volumes over the L-shaped wings; separate geometry keeps the documented northeast terrace notch open. Roof pitch and exact ridge layout are estimated from Street View.",
+    "audit_views": [
+      "preview_front_west.png",
+      "preview_entry_isometric.png",
+      "preview_terrace_aerial.png"
+    ],
+    "validation": "Fresh-opened in Blender 5.2.3 LTS; required scene/collection, 1780 mesh objects, and 14 materials verified; three new inspection renders saved.",
+    "street_view_correction": "R1 correction applied: lower street frontage is brick with a grade-level centered entry and three flanking windows; both residential levels use beige horizontal lap siding; four front windows per floor have dark burgundy louvered shutters; former upper-front entry and elevated stairs/landing removed; replaced broad flat roof with two adjoining low-pitched hip-roof volumes while retaining the northeast terrace recess.",
+    "asset_sha256": "3ac83c2841058b6de3a7f19c587e151df6b3751589a82f03ec4f1c6460da5ec7",
+    "build_script_sha256": "014e9ae03861455294898ff60767fc9fdf5d2ba19adb78be571b540be7ccfeea"
+  },
+  "unresolved_uncertainties": [
+    "Exact as-built elevations, roof ridge layout/pitch, facade/window schedule, and interior plans were not found.",
+    "The city staff report is a July 9, 2015 planning report, not an as-built survey. Contractor-reported floor area does not reconcile neatly with footprint times floor count.",
+    "Street View directly verifies the Grant-facing exterior appearance; beige siding and shutters were extrapolated around unobserved side/rear upper facades.",
+    "Interior partitions and room layouts remain plausible estimates, not surveyed drawings."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "building": "Evans Scholars House (Purdue Chapter)",
+  "asset": "modular/buildings/massing_house_301841610_b6ad6ed.blend",
+  "asset_sha256": "4f14bbdf897f8416d1b1e67c0d2e8b5041c9c3e7376efcf371e9266260f62cb7",
+  "independent_reopen": "audit/evans_scholars_house/independent_grade_r1/fresh_open_probe.json",
+  "independent_footprint_recheck": "audit/evans_scholars_house/independent_grade_r1/gis_comparison.json",
+  "verdict": "PASS",
+  "score": 8.4,
+  "threshold": 8.0,
+  "criteria": {
+    "identity_and_footprint": {"score": 1.9, "max": 2.0},
+    "placement_and_scale": {"score": 1.8, "max": 2.0},
+    "floors_height_and_roof": {"score": 1.5, "max": 2.0},
+    "facade_and_entrance": {"score": 1.7, "max": 2.0},
+    "interior_portability_and_evidence": {"score": 1.5, "max": 2.0}
+  },
+  "sources_reviewed": [
+    {
+      "title": "Purdue GIS BuildingShapesZip4, FID 755",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D755&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "supports": "Named Evans Scholars feature and 1001 Hilltop Dr address; mapped footprint and one-story attribute."
+    },
+    {
+      "title": "Purdue Evans Scholars Chapter gallery",
+      "url": "https://purdueevansscholars.weebly.com/gallery.html",
+      "supports": "Exterior photographs showing the brick one-story house, gabled shingle roof, portico/columns, small roof lantern, signage, flags, and patio; gallery also provides interior use references."
+    },
+    {
+      "title": "Esri World Imagery",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-86.9240%2C40.4347%2C-86.9225%2C40.4357&bboxSR=4326&imageSR=4326&size=1200%2C800&format=jpg&f=image",
+      "supports": "Roof silhouette, approach/parking side, and site orientation."
+    },
+    {
+      "title": "Waze live listing",
+      "url": "https://www.waze.com/live-map/directions/evans-scholars-%28purdue-chapter%29-hilltop-dr-1001-west-lafayette?to=place.w.178979220.1789661132.1960526",
+      "supports": "Current chapter name and 1001 Hilltop Drive address corroboration."
+    }
+  ],
+  "limitations": [
+    "Footprint recheck compares against the same GIS ring used to originate the asset. Its near-perfect fit verifies serialization and transform, not surveyed wall-line truth.",
+    "Wall/eave height, roof pitches and intersections, window spacing, and secondary elevations are photo-based estimates; GIS Extrution has no dependable unit or vertical datum.",
+    "Interior room functions are represented by schematic partitions and furniture from gallery use references; no measured floor plan was found.",
+    "Gallery exterior photos date to 2017; current identity/address are supported by the GIS and live listing, while current exterior condition has not been independently photographed."
+  ],
+  "report": "grade_report.md"
+}

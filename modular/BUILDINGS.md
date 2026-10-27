@@ -36,6 +36,8 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Alpha Chi Rho | [massing_alpha_chi_rho_0cb591a.blend](buildings/massing_alpha_chi_rho_0cb591a.blend) | 1 |
 | Alpha Gamma Rho | [massing_house_301841253_f0b3be3.blend](buildings/massing_house_301841253_f0b3be3.blend) | 727 |
 | Alpha Kappa Lambda | [massing_alpha_kappa_lambda_88dda6c.blend](buildings/massing_alpha_kappa_lambda_88dda6c.blend) | 1 |
+| Alpha Omicron Pi (R2 independently graded 8.4/10; integrated) | [massing_house_970455277_a3fb72a.blend](buildings/massing_house_970455277_a3fb72a.blend) | 1780 |
+| Windsor Halls (R4 independently graded 8.1/10; integrated) | [massing_windsor_halls_80aeb51.blend](buildings/massing_windsor_halls_80aeb51.blend) | 196 |
 | Baptist Student Foundation | [massing_baptist_student_foundation_c3d8114.blend](buildings/massing_baptist_student_foundation_c3d8114.blend) | 183 |
 | Beta Sigma Psi | [massing_house_301841254_29ab02d.blend](buildings/massing_house_301841254_29ab02d.blend) | 2 |
 | Armory | [armory.blend](buildings/armory.blend) | 703 |
@@ -47,6 +49,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Duhme (Ophelia) Residence Hall | [massing_duhme_ophelia_residence_hall_1bb4e9c.blend](buildings/massing_duhme_ophelia_residence_hall_1bb4e9c.blend) | 1491 |
 | Earhart Hall | [massing_earhart_hall_0f14209.blend](buildings/massing_earhart_hall_0f14209.blend) | 25 |
 | Electrical Engineering (R2 independently graded 8.3/10; accepted) | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4774 |
+| Evans Scholars House (R1 independently graded 8.4/10; integrated) | [massing_house_301841610_b6ad6ed.blend](buildings/massing_house_301841610_b6ad6ed.blend) | 202 |
 | Elliott Hall Of Music | [elliott_hall_of_music.blend](buildings/elliott_hall_of_music.blend) | 137 |
 | Fairway Cooperative | [massing_fairway_cooperative_2101b77.blend](buildings/massing_fairway_cooperative_2101b77.blend) | 571 |
 | Family Express | [massing_family_express_a07e1fb.blend](buildings/massing_family_express_a07e1fb.blend) | 503 |
@@ -355,9 +358,12 @@ Zeta Beta Tau at FID 762 / 900 David Ross retains campus-world coordinates in th
 | Flex Lab | [flex_lab.blend](buildings/flex_lab.blend) | 407 |
 | Hansen Life Sciences | [hansen_life_sciences.blend](buildings/hansen_life_sciences.blend) | 816 |
 | Hicks Library | [hicks_library.blend](buildings/hicks_library.blend) | 343 |
+| Alpha Omicron Pi (R2 independently graded 8.4/10; accepted) | [massing_house_970455277_a3fb72a.blend](buildings/massing_house_970455277_a3fb72a.blend) | 1780 |
+| Windsor Halls (R4 independently graded 8.1/10; accepted) | [massing_windsor_halls_80aeb51.blend](buildings/massing_windsor_halls_80aeb51.blend) | 196 |
 | Pi Beta Phi (R1 independently graded 8.5/10; accepted) | [massing_house_301838781_891384f.blend](buildings/massing_house_301838781_891384f.blend) | 698 |
 | Delta Delta Delta (R1 independently graded 8.3/10; accepted) | [massing_house_301841333_affe21e.blend](buildings/massing_house_301841333_affe21e.blend) | 1328 |
+| Evans Scholars House (R1 independently graded 8.4/10; accepted) | [massing_house_301841610_b6ad6ed.blend](buildings/massing_house_301841610_b6ad6ed.blend) | 202 |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | 11 |
 | West Lafayette Intermediate School (R3 independently graded 8.4/10; accepted) | [massing_west_lafayette_intermediate_school_d72f0fa.blend](buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | 1862 |
 
-The fresh-open master audit confirms one correct master reference for Dauch Alumni Center, Electrical Engineering, Frieda Parker Hall, Hansen Life Sciences, Hicks Library, Flex Lab, Pi Beta Phi, and Delta Delta Delta through their Placement markers, and for West Lafayette Intermediate School through its direct link. Their linked paths, collection counts, placement markers, and campus-world bounds pass fresh-open checks. Earlier audits also passed for Beta Theta Pi and West Lafayette Junior-Senior High School. All eleven meet the grade gate: Frieda Parker Hall 8.5/10, Hicks Library 8.5/10, Flex Lab 8.4/10, Dauch 8.45/10, Electrical Engineering 8.3/10, West Lafayette Intermediate School 8.4/10, Hansen Life Sciences 8.0/10, Pi Beta Phi 8.5/10, Delta Delta Delta 8.3/10, Beta Theta Pi 8.4/10, and West Lafayette Junior-Senior High School 8.0/10. West Lafayette Intermediate School height, roof elevations, room positions, and some facade details remain estimated.
+The fresh-open master audit confirms one correct master reference for Dauch Alumni Center, Electrical Engineering, Frieda Parker Hall, Hansen Life Sciences, Hicks Library, Flex Lab, Pi Beta Phi, Delta Delta Delta, Alpha Omicron Pi, Windsor Halls, and Evans Scholars House through their Placement markers, and for West Lafayette Intermediate School through its direct link. Their linked paths, collection counts, placement markers, and campus-world bounds pass fresh-open checks. Earlier audits also passed for Beta Theta Pi and West Lafayette Junior-Senior High School. All fourteen meet the grade gate: Frieda Parker Hall 8.5/10, Hicks Library 8.5/10, Flex Lab 8.4/10, Dauch 8.45/10, Electrical Engineering 8.3/10, West Lafayette Intermediate School 8.4/10, Hansen Life Sciences 8.0/10, Pi Beta Phi 8.5/10, Delta Delta Delta 8.3/10, Alpha Omicron Pi 8.4/10, Windsor Halls 8.1/10, Evans Scholars House 8.4/10, Beta Theta Pi 8.4/10, and West Lafayette Junior-Senior High School 8.0/10. AOII's hip roof reads more prominently pitched than the low roof edge in Street View; exact roof form, unseen elevations, and interior remain estimated. Windsor's roof profiles/heights are estimates and its interiors are schematic. Evans Scholars' height, roof dimensions, and interior layout remain estimated. West Lafayette Intermediate School height, roof elevations, room positions, and some facade details remain estimated.

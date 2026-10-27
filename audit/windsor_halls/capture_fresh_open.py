@@ -8,6 +8,7 @@ if collection is None: raise RuntimeError("Stable Windsor asset collection is mi
 mesh_objects=[o for o in collection.objects if o.type=="MESH"]
 all_points=[o.matrix_world @ Vector(corner) for o in mesh_objects for corner in o.bound_box]
 shells={}
+placement=( -617.8, -96.6 )
 for fid in (63,64,65,66):
     obj=next((o for o in mesh_objects if f"FID {fid}) | structural footprint shell" in o.name),None)
     if obj is None: raise RuntimeError(f"Missing GIS shell for FID {fid}")
@@ -29,6 +30,9 @@ report={
                  "ymin":min(p.y for p in all_points),"ymax":max(p.y for p in all_points),
                  "zmin":min(p.z for p in all_points),"zmax":max(p.z for p in all_points)},
     "structural_shell_xy":shells,
+    "coordinate_system":"local building meters; X east, Y north, Z up",
+    "placement_origin_campus_xy_m":list(placement),
+    "placement_marker_object":next((o.name for o in collection.objects if o.type=="EMPTY" and o.get("asset_id")=="massing_windsor_halls_80aeb51"),None),
 }
 out=os.path.join(os.path.dirname(__file__),"fresh_open_raw.json")
 with open(out,"w",encoding="utf-8") as f: json.dump(report,f,indent=2)

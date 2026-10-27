@@ -4,7 +4,7 @@ This project covers Purdue West Lafayette campus buildings and Purdue-operated r
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-## Detailed models: status and latest grader score (165 buildings)
+## Detailed models: status and latest grader score (168 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -34,6 +34,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Alpha Chi Rho | [massing_alpha_chi_rho_0cb591a.blend](modular/buildings/massing_alpha_chi_rho_0cb591a.blend) | Finished | [8.15/10](audit/alpha_chi_rho_independent_grade_r2/result.json) | — |
 | Alpha Epsilon Pi | [alpha_epsilon_pi.blend](modular/buildings/alpha_epsilon_pi.blend) | Finished; current address/roof match modeled, GIS name conflict remains | [8.25/10](audit/alpha_epsilon_pi/independent_grade_revision_2/result.json) | — |
 | Alpha Gamma Rho | [massing_house_301841253_f0b3be3.blend](modular/buildings/massing_house_301841253_f0b3be3.blend) | Finished | [8.4/10](audit/alpha_gamma_rho/independent_grade_master_integration/master_integration_grade.json) | — |
+| Alpha Omicron Pi | [massing_house_970455277_a3fb72a.blend](modular/buildings/massing_house_970455277_a3fb72a.blend) | Finished; current Phi Upsilon house at 242 S Grant; master fresh-open PASS; roof reads steeper than Street View and unseen elevations/interior remain estimated | [8.4/10](audit/alpha_omicron_pi/independent_grade_r2/result.json) | — |
+| Evans Scholars House | [massing_house_301841610_b6ad6ed.blend](modular/buildings/massing_house_301841610_b6ad6ed.blend) | Finished; FID 755 / 1001 Hilltop Dr identity and footprint supported; master fresh-open PASS; roof dimensions and interior layout remain estimated | [8.4/10](audit/evans_scholars_house/independent_grade_r1/result.json) | — |
+| Windsor Halls | [massing_windsor_halls_80aeb51.blend](modular/buildings/massing_windsor_halls_80aeb51.blend) | Finished; Warren, Wood, Vawter, and Dining Court shells match FIDs 63–66; master fresh-open PASS; roofs/heights are estimated and interiors schematic | [8.1/10](audit/windsor_halls/independent_grade_r4/result.json) | — |
 | Beta Sigma Psi | [massing_house_301841254_29ab02d.blend](modular/buildings/massing_house_301841254_29ab02d.blend) | Finished | [9.0/10](audit/beta_sigma_psi/independent_grade_master_integration/result.json) | — |
 | Alpha Sigma Phi | [massing_house_301841603_654031c.blend](modular/buildings/massing_house_301841603_654031c.blend) | Finished | [8.2/10](audit/alpha_sigma_phi/independent_grade_current/result.json) | — |
 | Alpha Tau Omega | [massing_house_301840870_c45a5f4.blend](modular/buildings/massing_house_301840870_c45a5f4.blend) | Finished; historic tower/roof-wing silhouette remains estimated | [8.5/10](audit/alpha_tau_omega/independent_grade/result.json) | — |
@@ -175,9 +178,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | West Lafayette Intermediate School | [massing_west_lafayette_intermediate_school_d72f0fa.blend](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Finished; GIS shell verified; height, roof elevations, room positions, and some facade details remain estimated | [8.4/10](audit/west_lafayette_intermediate_school/independent_grade_r3/result.json) | — |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Finished; direct master link fresh-open PASS; facade proportions remain a noted improvement opportunity | [8.0/10](audit/west_lafayette_junior_senior_high_school/independent_grade/result.json) | — |
 
-## Unfinished buildings (96 total)
+## Unfinished buildings (93 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 94 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 96 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 11, Rossen 43, Kyle 22, Rohan 0, Arjav 20, Brady 0. Rossen's 43 records break down to **14 reassigned projects from Rohan, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 76 projects; 20 remain with Arjav and Brady.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 91 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 93 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 8, Rossen 43, Kyle 22, Rohan 0, Arjav 20, Brady 0. Rossen's 43 records break down to **14 reassigned projects from Rohan, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 73 projects; 20 remain with Arjav and Brady.
 
 ### New West Lafayette construction projects (2)
 
@@ -236,7 +239,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Turf Recreation Exercise Center (TREC) | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | [8.1/10](audit/massing_turf_recreation_exercise_center_9622f45/independent_grade_r4.json); linked in latest master; awaiting Tobin validation | Rossen |
 | Triangle | [`massing_triangle_fraternity_8477ad9.blend`](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | [8.0/10](audit/triangle/independent_grade/result.json); linked in latest master; awaiting Tobin validation; height, story count and facade detail remain estimated | Rossen |
 | Unitarian Universalist Church of Tippecanoe County | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | [8.5/10](audit/unitarian_universalist_church_of_tippecanoe_county_2a6793d/independent_grade_kyle.json); awaiting master integration | Kyle |
-### Buildings that still have only massing models (15)
+### Buildings that still have only massing models (14)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -257,7 +260,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Arjav |
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
 
-| windsor halls | [`massing_windsor_halls_80aeb51.blend`](modular/buildings/massing_windsor_halls_80aeb51.blend) | Tobin |
 
 
 ### Fraternity, sorority, and cooperative facilities
@@ -290,7 +292,7 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Phi Kappa Tau | FID 820 (historic GIS label Theta Tau); [massing_phi_kappa_tau_139b9d7](modular/buildings/massing_phi_kappa_tau_139b9d7.blend) | Independently graded 8.3/10; linked in latest master; awaiting Tobin validation; current chapter source and alumni history support 416 N Chauncey; height and roof details remain estimated | Rossen |
 | Triangle | FID 777; [massing_triangle_fraternity_8477ad9](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Independently graded 8.0/10; linked in latest master; awaiting Tobin validation; height, floor count, and facade detail remain estimated | Rossen |
 
-#### Panhellenic chapters and house coverage (14 unfinished houses; two chapters have no house)
+#### Panhellenic chapters and house coverage (13 unfinished houses; two chapters have no house)
 
 | House / building | GIS FID and asset | Work status | Assigned to |
 | --- | --- | --- | --- |
@@ -298,7 +300,6 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Kappa Delta | No reliable map FID; New asset/source mapping required | No official map feature or asset; research the chapter-house location | Rossen |
 | Alpha Gamma Delta | FID 757; [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Massing asset; verify and detail | Arjav |
 | Kappa Kappa Gamma | FID 782; [massing_house_301840871_5d1bc06](modular/buildings/massing_house_301840871_5d1bc06.blend) | Massing asset; verify and detail | Arjav |
-| Alpha Omicron Pi | 242 S Grant St; [massing_house_970455277_a3fb72a](modular/buildings/massing_house_970455277_a3fb72a.blend); see [identity evidence](audit/alpha_omicron_pi/source_register.json) | R1 grade 7.6/10; revised siding, shutters and hip roof await independent R2 grade. GIS FID 756 is a separate current Phi Sigma Rho facility, despite its stale AOII label | Tobin |
 | Phi Beta Chi | No verified house asset | PHA says two chapters have no house; no dedicated physical facility verified here, so hold outside the building backlog | — |
 | Alpha Phi | FID 764; [massing_house_301841331_735e92f](modular/buildings/massing_house_301841331_735e92f.blend) | Massing asset; verify and detail | Arjav |
 | Phi Mu | FID 772; [massing_house_301836574_fff1661](modular/buildings/massing_house_301836574_fff1661.blend) | Massing asset; verify and detail | Arjav |
@@ -325,12 +326,6 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Maclure | FID 822; New asset/source mapping required | Nearest candidate is over 112 m away; build/reconcile from official GIS reference | Tobin |
 | Stewart | FID 802; [massing_house_1089875810_8c9b95d](modular/buildings/massing_house_1089875810_8c9b95d.blend) | Massing asset; verify and detail | Arjav |
 | Shoemaker | FID 800; [massing_shoemaker_cooperative_2159ea4](modular/buildings/massing_shoemaker_cooperative_2159ea4.blend) | Existing assignment; massing only | Arjav |
-
-#### Other Greek/co-ed house buildings (1 unfinished)
-
-| House / building | GIS FID and asset | Work status | Assigned to |
-| --- | --- | --- | --- |
-| Evans Scholars House | FID 755; [massing_house_301841610_b6ad6ed](modular/buildings/massing_house_301841610_b6ad6ed.blend) | Co-ed Greek housing; separate from the current IFC assignment split | Tobin |
 
 ### Complete official campus-map reference inventory (508 records)
 
@@ -363,10 +358,10 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 60 | Franklin Levering Cary Quadrangle (West) | [massing_cary_quadrangle_west_cqw_3d47a7d](modular/buildings/massing_cary_quadrangle_west_cqw_3d47a7d.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 61 | Amelia Earhart Residence Hall | [massing_earhart_hall_0f14209](modular/buildings/massing_earhart_hall_0f14209.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 62 | Tom Spurgeon Golf Training Center | [massing_house_278460783_2bd1220](modular/buildings/massing_house_278460783_2bd1220.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 63 | Martha E. & Eugene K. Warren Residence Hall | [massing_windsor_halls_80aeb51](modular/buildings/massing_windsor_halls_80aeb51.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 64 | Elizabeth G. & William R. Wood Residence Hall | — | No direct FID crosswalk; reconcile to a master asset or create one |
-| 65 | Everett B. Vawter Residence Hall | — | No direct FID crosswalk; reconcile to a master asset or create one |
-| 66 | Windsor Dining Court | — | No direct FID crosswalk; reconcile to a master asset or create one |
+| 63 | Martha E. & Eugene K. Warren Residence Hall | [massing_windsor_halls_80aeb51](modular/buildings/massing_windsor_halls_80aeb51.blend) | Detailed Windsor component; independent grade 8.1/10; master fresh-open PASS; GIS shell IoU 0.999999935 |
+| 64 | Elizabeth G. & William R. Wood Residence Hall | [massing_windsor_halls_80aeb51](modular/buildings/massing_windsor_halls_80aeb51.blend) | Detailed Windsor component; independent grade 8.1/10; master fresh-open PASS; GIS shell IoU 0.999999865 |
+| 65 | Everett B. Vawter Residence Hall | [massing_windsor_halls_80aeb51](modular/buildings/massing_windsor_halls_80aeb51.blend) | Detailed Windsor component; independent grade 8.1/10; master fresh-open PASS; GIS shell IoU 0.999999844 |
+| 66 | Windsor Dining Court | [massing_windsor_halls_80aeb51](modular/buildings/massing_windsor_halls_80aeb51.blend) | Detailed Windsor component; independent grade 8.1/10; master fresh-open PASS; GIS shell IoU 0.999999950 |
 | 67 | Melvin L. Ollman Golf Cart Barn | [massing_house_278460782_43e46e7](modular/buildings/massing_house_278460782_43e46e7.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 68 | Water Tower | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 69 | Jerry S. Rawls Hall | [massing_house_1040689751_60aed07](modular/buildings/massing_house_1040689751_60aed07.blend)<br>[massing_house_1040689752_dcf4072](modular/buildings/massing_house_1040689752_dcf4072.blend)<br>[massing_house_1040689753_0542323](modular/buildings/massing_house_1040689753_0542323.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+6 more candidates) |
@@ -706,7 +701,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 752 | Delta Zeta | [massing_crosswalk_commons_7c01ecd](modular/buildings/massing_crosswalk_commons_7c01ecd.blend)<br>[massing_house_301841601_7ae6159](modular/buildings/massing_house_301841601_7ae6159.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 753 | Delta Delta Delta | [massing_house_301841333_affe21e](modular/buildings/massing_house_301841333_affe21e.blend) | Detailed asset; independent grade 8.3/10; master fresh-open PASS; exact wall line, levels, roof and address label retain uncertainty |
 | 754 | Chi Phi | [massing_house_301841605_8eef95d](modular/buildings/massing_house_301841605_8eef95d.blend)<br>[alpha_epsilon_pi](modular/buildings/alpha_epsilon_pi.blend) | FID 754 address/roof is used for current AEPi listing; GIS still says Chi Phi. AEPi graded 8.25/10 and integrated; prior massing superseded to prevent duplication; current occupancy conflict remains documented |
-| 755 | Evans Scholars | [massing_house_301841610_b6ad6ed](modular/buildings/massing_house_301841610_b6ad6ed.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 755 | Evans Scholars | [massing_house_301841610_b6ad6ed](modular/buildings/massing_house_301841610_b6ad6ed.blend) | Detailed FID 755 asset; independent grade 8.4/10; fresh-open master PASS; exact footprint and address cross-check supported; vertical/interior details estimated |
 | 756 | Phi Sigma Rho (current chapter evidence; GIS label Alpha Omicron Pi) | [massing_house_301841607_63d85b5](modular/buildings/massing_house_301841607_63d85b5.blend) | Current Phi Sigma Rho sources support 1001 David Ross; GIS chapter label is stale; massing awaits Rossen modeling/review |
 | 757 | Alpha Gamma Delta | [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 758 | Sigma Nu | [massing_house_301841330_f58ae87](modular/buildings/massing_house_301841330_f58ae87.blend) | Confirmed FID 758 and parcel identity; independently graded 8.0/10; awaiting master integration; GIS ring matches within 0.000038 m |

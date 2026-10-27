@@ -1,0 +1,42 @@
+{
+  "asset": "modular/buildings/massing_house_970455277_a3fb72a.blend",
+  "asset_sha256_actual": "3ac83c2841058b6de3a7f19c587e151df6b3751589a82f03ec4f1c6460da5ec7",
+  "expected_sha256_supplied": "3ac83c2841058b6de3a7f19c587e151df6b3751589a82f03ecf1c6460da5ec7",
+  "hash_status": "Mismatch: supplied digest is malformed/transcribed incorrectly; asset actual digest is stable and 64 hex chars.",
+  "verdict": "PASS",
+  "score": 8.4,
+  "threshold": 8.0,
+  "criteria": {
+    "identity_and_footprint": {"score": 2.0, "max": 2.0},
+    "placement_and_scale": {"score": 1.8, "max": 2.0},
+    "floors_height_and_roof": {"score": 1.5, "max": 2.0},
+    "facade_and_entrance": {"score": 1.7, "max": 2.0},
+    "interior_portability_and_evidence": {"score": 1.4, "max": 2.0}
+  },
+  "footprint_comparison": {
+    "source": "OSM way 970455277",
+    "iou": 0.9999989675776323,
+    "symmetric_hausdorff_m": 0.0000181517609,
+    "source_area_m2": 276.230281765265,
+    "model_area_m2": 276.2303245133975,
+    "qualification": "Serialization/transform recheck; the source polygon was used to originate the asset."
+  },
+  "fresh_open": {
+    "blender": "5.2.3 LTS",
+    "scene": "Building_massing_house_970455277_a3fb72a",
+    "collection": "Asset_massing_house_970455277_a3fb72a",
+    "objects": 1780,
+    "used_materials": 14,
+    "linked_libraries": 0,
+    "unpacked_file_images": 0,
+    "errors": []
+  },
+  "main_findings": [
+    "Current official AOII address and directly-facing Street View support parcel identity.",
+    "Brick grade story, beige lap siding, dark shutters, and centered entry broadly match the Street View facade.",
+    "Model roof reads steeper/more prominent than the very low roof edge in the reference.",
+    "Interior is detailed but estimated rather than verified from an as-built plan.",
+    "Supplied hash value must be corrected in provenance metadata."
+  ],
+  "report": "grade_report.md"
+}

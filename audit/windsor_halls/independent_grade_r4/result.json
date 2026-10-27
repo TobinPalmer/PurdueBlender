@@ -1,0 +1,82 @@
+{
+  "building": "Windsor Halls component asset",
+  "asset": "modular/buildings/massing_windsor_halls_80aeb51.blend",
+  "asset_sha256": "c6dd5a4fa121afa0619e545de29717ab759396396654c16075ebbd7899bdd1a9",
+  "review_round": "independent R4",
+  "review_date": "2026-10-27",
+  "reviewer": "independent subagent",
+  "blender_version": "5.2.3 LTS",
+  "score": 8.1,
+  "threshold": 8.0,
+  "passed": true,
+  "score_calculation": {
+    "gis_identity_shell_footprint_and_position": {"score": 9.9, "weight_percent": 20},
+    "separate_shells_and_component_relationships": {"score": 9.5, "weight_percent": 10},
+    "roof_silhouette": {"score": 6.8, "weight_percent": 20},
+    "hall_specific_facades": {"score": 7.4, "weight_percent": 15},
+    "entrances": {"score": 7.0, "weight_percent": 10},
+    "materials_and_textures": {"score": 8.2, "weight_percent": 10},
+    "schematic_interiors": {"score": 7.2, "weight_percent": 10},
+    "reopen_and_portability": {"score": 10.0, "weight_percent": 2.5},
+    "evidence_and_uncertainty": {"score": 9.5, "weight_percent": 2.5},
+    "weighted_total_unrounded": 8.1275
+  },
+  "fresh_open_probe": "audit/windsor_halls/independent_grade_r4/fresh_open_probe.json",
+  "independent_gis_comparison": "audit/windsor_halls/independent_grade_r4/gis_comparison.json",
+  "independent_visual_inspection": [
+    "audit/windsor_halls/previews/windsor_halls_overview_r4.png",
+    "audit/windsor_halls/previews/warren_frontage_r4.png",
+    "audit/windsor_halls/previews/wood_frontage_r4.png",
+    "audit/windsor_halls/previews/vawter_frontage_r4.png",
+    "audit/windsor_halls/previews/windsor_schematic_interior_r4.png",
+    "audit/windsor_halls/previews/windsor_dining_schematic_r4.png"
+  ],
+  "strengths": [
+    "Independently fresh-opened the exact hash in Blender 5.2.3; stable scene and collection are present, with 196 objects and 195 meshes.",
+    "Recomputed the four structural wall rings from the reopened asset against raw GIS FIDs 63-66 using the documented local transform. IoU ranges from 0.999999845 to 0.999999950 and maximum boundary Hausdorff error is 0.000003793 m.",
+    "Warren, Wood, Vawter, and Windsor Dining Court remain separate source-backed components. The file preserves a portable local coordinate frame and has no linked libraries or unpacked external images.",
+    "R4 roof profiles are more varied by hall and reveal the dormer/gable accents more clearly than the previously reviewed R3. The dining schematic view is also legible now.",
+    "Brick, pale courses, dark glazing/sashes, slate-like roofs, and entrance stones are distinguishable; the Wood entry bay reads separately from Warren and Vawter.",
+    "Purdue Housing confirms that Windsor is five connected buildings and that the Dining Court is under Warren and Vawter; the separate FID 66 treatment is documented rather than merged into a fabricated horizontal footprint."
+  ],
+  "remaining_limitations": [
+    "The broad roof masses still read as large, smoothly modeled caps in the frontage renders. Their overall roof form, pitch, dormer sizes, and ridge placement are not supported by surveyed elevations; roof planes could be made more convincingly hall-specific.",
+    "Warren and Vawter remain similar in their repeated window cadence and understated entry portals. The source review did not establish per-hall facade elevations, so this is a conservative estimate rather than a confirmed mismatch.",
+    "Wood's pale central gable/pediment remains visually dominant and simplified relative to the project-photo reference; smaller stone detailing and roof junctions are missing.",
+    "Residential rooms and Dining Court furnishings are readable diagrams, not building-specific measured floor plans. Dining Court's underground relationship and vertical level remain uncertain.",
+    "Exact story heights, base elevations, GIS elevation units, and roof heights remain estimates. The assessment verifies the shell's XY fit, not vertical accuracy."
+  ],
+  "sources_reviewed": [
+    {
+      "title": "Purdue University Residences — Windsor",
+      "url": "https://housing.purdue.edu/my-housing/options/residence-halls/windsor.html",
+      "use": "Current official building composition, connected-building relationship, Dining Court below Warren and Vawter, and generic room information."
+    },
+    {
+      "title": "Purdue University Residences — Windsor exterior reference image",
+      "url": "https://purdue.starrezhousing.com/StarRezPortalXConference/File/GetImage?dateCreatedTicks=638309106832699833&hash=3B0DB762&imageName=52483840151_ea5f2e6ade_k.jpg&tableID=13617&tableName=PortalPageWidget",
+      "use": "Official Windsor exterior reference; supports red-brown masonry, pale stone trim, dark roof material and historic residence-hall character. It is not identified as an individual hall and does not establish elevations."
+    },
+    {
+      "title": "RGCollaborative — Purdue University Wood Hall",
+      "url": "https://www.rgcollaborative.com/projects/Education/purdue-university-wood-hall",
+      "use": "Architect's renovation project page and linked exterior photos; relevant to Wood's historic central entry bay and stone emphasis, without measured elevation data."
+    },
+    {
+      "title": "Purdue Office of Emergency Preparedness — Warren Hall",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/warn/",
+      "use": "Official address and current four-story/partial-basement building description."
+    },
+    {
+      "title": "Purdue Office of Emergency Preparedness — Vawter Hall",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/vawt/",
+      "use": "Official address and current four-story/partial-basement building description."
+    },
+    {
+      "title": "Purdue GIS source GeoJSON snapshot",
+      "url": "audit/windsor_halls/sources/purdue_gis_windsor_fids_63_66_277_278_2026-10-26.geojson",
+      "use": "Independent geometry comparison against the source boundaries for FIDs 63-66; no vertical measurements inferred from the XY fit."
+    }
+  ],
+  "scope_note": "This grade applies only to the asset SHA listed above. It does not certify master placement; coordinator must verify the Placement_massing_windsor_halls_80aeb51 marker when integrating. Shealy and Duhme are outside this component asset and are represented separately."
+}

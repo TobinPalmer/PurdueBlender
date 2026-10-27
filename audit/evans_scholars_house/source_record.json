@@ -1,0 +1,128 @@
+{
+  "building": {
+    "stable_id": "massing_house_301841610_b6ad6ed",
+    "name": "Evans Scholars House (Purdue Chapter)",
+    "gis_feature_id": 755,
+    "address": "1001 Hilltop Dr, West Lafayette, IN",
+    "asset": "modular/buildings/massing_house_301841610_b6ad6ed.blend",
+    "source_identity_check": "The Purdue BuildingShapesZip4 feature itself is named Evans Scholars (BLDG_ABBR SOES), gives 1001 Hilltop Dr, and its outline overlays the house visible in the aerial image. Purdue Evans Scholars' own gallery photos show the same red-brick chapter house and the 1001 Hilltop Drive sign. Waze lists Evans Scholars (Purdue Chapter) at 1001 Hilltop Dr. Identity match is high confidence.",
+    "retrieved": "2026-10-27"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University GIS, BuildingShapesZip4 FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D755&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "feature_id": 755,
+      "retrieved": "2026-10-27",
+      "source_crs": "Layer native CRS is EPSG:3857 (from saved FeatureServer layer metadata); query geometry explicitly requested as EPSG:4326.",
+      "raw_snapshot": "audit/evans_scholars_house/fid755_arcgis.geojson",
+      "layer_metadata": "audit/evans_scholars_house/arcgis_layer_metadata.json",
+      "relevant_attributes": {
+        "BUILDING_N": "Evans Scholars",
+        "BLDG_ABBR": "SOES",
+        "ADDRESS": "1001 Hilltop Dr",
+        "NUM_LEVELS": 1,
+        "OWNER": "GREEK",
+        "PU_Occupie": "N",
+        "Shape__Area": 1613.90625,
+        "Shape__Length": 219.9447409828804
+      },
+      "measurement_method": "Used the FID 755 exterior ring and the project conversion documented in modular/AGENTS.md: X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040. The ring was centered at its polygon centroid for the library's local origin; dimensions and orientation follow the converted ring. This is a local approximate geographic projection, not a survey.",
+      "derived_measurements_m": {
+        "centroid_in_project_frame": [
+          -811.9594174329835,
+          865.1373550740957
+        ],
+        "local_bounds": [
+          [
+            -27.198738785278692,
+            27.134979920643218
+          ],
+          [
+            -19.239932447960427,
+            20.601535082878627
+          ]
+        ],
+        "envelope_width": 54.333718,
+        "envelope_depth": 39.841468,
+        "projected_polygon_area": 933.537966,
+        "projected_perimeter": 167.31942
+      },
+      "uncertainty": "GIS fields report one floor, consistent with the low one-storey exterior photos. Shape__Area/Shape__Length appear to be stored in EPSG:3857 measurement units and should not be compared directly with the local projected area/perimeter; Web Mercator area is latitude-distorted. The GIS PU_Occupie=N conflicts with the chapter's occupied-house photographs and current chapter address listing, and is treated as stale/unknown rather than evidence of vacancy. The field Extrution=31 has no trustworthy vertical datum or unit and was not used for height."
+    },
+    {
+      "provider": "Purdue Evans Scholars Chapter, official chapter gallery",
+      "url": "https://purdueevansscholars.weebly.com/gallery.html",
+      "retrieved": "2026-10-27",
+      "source_date": "Exterior images img-2832_orig.jpg, img-2834_1_orig.jpg, img-2836_orig.jpg, img-2839_orig.jpg and interiors have EXIF capture times on 2017-02-26. img-9802_orig.jpg has no EXIF date.",
+      "source_crs": "Photographs; no geographic metadata used.",
+      "raw_snapshot": "audit/evans_scholars_house/purdue_evans_gallery.html",
+      "raw_images": [
+        "audit/evans_scholars_house/img-2799_1_orig.jpg",
+        "audit/evans_scholars_house/img-2832_orig.jpg",
+        "audit/evans_scholars_house/img-2834_1_orig.jpg",
+        "audit/evans_scholars_house/img-2836_orig.jpg",
+        "audit/evans_scholars_house/img-2839_orig.jpg",
+        "audit/evans_scholars_house/img-2845_orig.jpg",
+        "audit/evans_scholars_house/img-2802_1_orig.jpg",
+        "audit/evans_scholars_house/img-9802_orig.jpg"
+      ],
+      "measurement_method": "Visual reading only. Exterior references show red brick, one main level, dark shingle roofs, a front pediment/portico with white columns and round green Evans Scholars emblem, a small roof lantern with gold cap, exterior flagpoles, side patio, green fabric canopy, and an entry monument sign. Interior photos show kitchen/dining, study, lounge, hallway, laundry, gym/rec functions.",
+      "uncertainty": "Photos are not dimensioned elevations. Their original dimensions and camera perspective limit exact window spacing, heights, and roof geometry. The gallery images support program types but no exact floor plan or furniture positions."
+    },
+    {
+      "provider": "Esri World Imagery MapServer",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-86.9240%2C40.4347%2C-86.9225%2C40.4357&bboxSR=4326&imageSR=4326&size=1200%2C800&format=jpg&f=image",
+      "retrieved": "2026-10-27",
+      "source_date": "Image mosaic acquisition date not exposed by the export response.",
+      "source_crs": "Exported with bboxSR=4326 and imageSR=4326.",
+      "raw_snapshot": "audit/evans_scholars_house/esri_world_imagery.jpg",
+      "measurement_method": "Compared the building roof outline and paved parking/approach side visually with the FID 755 footprint. The main entry elevation is modeled on the side facing the parking/approach apron in the south of the imagery.",
+      "uncertainty": "Imagery is a mosaic with unknown capture date and image registration; it supports orientation/context and roof silhouette only, not measured roof height or exact roof-to-wall alignment."
+    },
+    {
+      "provider": "Waze live map listing",
+      "url": "https://www.waze.com/live-map/directions/evans-scholars-%28purdue-chapter%29-hilltop-dr-1001-west-lafayette?to=place.w.178979220.1789661132.1960526",
+      "retrieved": "2026-10-27",
+      "source_date": "Current listing accessed on retrieval date; Waze provides no establishment date.",
+      "source_crs": "Address listing; no coordinate geometry used.",
+      "raw_snapshot": "audit/evans_scholars_house/waze_listing.html",
+      "measurement_method": "Cross-checked address and chapter name against Purdue GIS FID 755 and the chapter's own sign photo.",
+      "uncertainty": "Third-party listing confirms current address/name but is not an authoritative source for geometry or architecture."
+    },
+    {
+      "provider": "Purdue University Stories",
+      "url": "https://stories.purdue.edu/sam-allen-and-his-familys-generous-gift-to-purdue-golf/",
+      "retrieved": "2026-10-27",
+      "source_date": "November 15, 2021.",
+      "source_crs": "Narrative source; no coordinates used.",
+      "raw_snapshot": "audit/evans_scholars_house/purdue_story.html",
+      "measurement_method": "Identity/context cross-check: Purdue says the current house is on the eighth hole of the new Ackerman-Allen course; used as context only, not for geometry.",
+      "uncertainty": "Supports broad context only; not used to size or detail the building."
+    }
+  ],
+  "model_decisions": {
+    "footprint": "Exact GIS FID 755 ring transformed to local meters and centered on its centroid. Exterior wall centerlines remain on the source ring; roof overhang, wall thickness, the front porch, steps, monument sign, and flagpoles extend beyond the footprint as architectural/site details.",
+    "orientation": "The long main facade edge is GIS ring edge 14 in the project frame. The main entrance is placed on this south-facing elevation because it matches the chapter's entry photos and the approach/parking side in the aerial imagery. Building stays aligned to the GIS north/east axes.",
+    "height": "Estimated one-storey exterior: wall top/eave about 4.15 m, main ridge about 7.30 m, cupola/finial top about 8.85 m. These are visual estimates from photos, not measured elevations.",
+    "roof": "Main long shingle gable roof plus cross-wing roofs approximate the roof silhouette visible in the aerial and oblique photos. The exact roof intersections and pitches remain estimated.",
+    "facade": "Photo-supported brick exterior, white/limestone trim, divided sash windows, central entry door, two-column portico, round green emblem, cupola, front flagpoles, and patio canopy. Window dimensions and count are inferred where photos do not expose the whole side.",
+    "interior": "Schematic only: partitions and simple furniture represent the kitchen, communal dining, study, lounge, laundry, and recreation uses shown in gallery photos. Exact internal room arrangement is unknown because no plan was found.",
+    "placement": "Library origin is local footprint centroid at (0,0,0), axes X east, Y north, Z up. Master agent must set the Placement_massing_house_301841610_b6ad6ed marker to projected centroid [-811.959417, 865.137355] m using the existing campus-local conversion. No campus-world coordinates are embedded in this detailed asset."
+  },
+  "validation": {
+    "fresh_open": "audit/evans_scholars_house/fresh_open_validation.json",
+    "renders": [
+      "audit/evans_scholars_house/front_approach.png",
+      "audit/evans_scholars_house/roof_aerial.png",
+      "audit/evans_scholars_house/interior_schematic.png"
+    ],
+    "build_script": "modular/buildings/build_evans_scholars_house.py",
+    "independent_grade": {
+      "status": "PASS",
+      "score": 8.4,
+      "file": "audit/evans_scholars_house/independent_grade_r1/result.json"
+    },
+    "master_integration": "Integrated through Placement_massing_house_301841610_b6ad6ed; fresh-open validation is in audit/master_integration_evans_scholars_house_2026-10-27.json."
+  }
+}
