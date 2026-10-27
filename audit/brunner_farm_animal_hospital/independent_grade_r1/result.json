@@ -1,0 +1,140 @@
+{
+  "score": 7.8,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Official Purdue GIS FID 408 explicitly names BRFM and address 415 S Grant Street.",
+        "Reopened evaluated shell reproduces all 16 source-ring vertices within 0.00000107 m."
+      ],
+      "findings": [
+        "The Mercator Shape__Area field is not ground area; local polygon area is 2757.9 m2. Published 23,900 sq ft is floor area and is not enough to contradict mapped footprint."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, scale/dimensions",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": [
+        "Independently computed origin agrees with manifest to 0.00000000 m.",
+        "Identity shell world matrix and direct X-east/Y-north source transformation preserve GIS orientation and approximately 62.13 by 50.28 m extents."
+      ],
+      "findings": [
+        "Standalone frame verified; master link replacement and nearby context remain a coordinator/Tobin integration check."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "BEP source pixels show a low one-story service block with flat parapet roof and a clay-tile hip over the reception volume.",
+        "Reopened shell is 0.35 to 6.2 m; one principal floor; tile feature present."
+      ],
+      "findings": [
+        "6.2 m wall and roof elevations remain unmeasured estimates; GIS NUM_LEVELS and Extrution are zero.",
+        "The model tile feature reads as a small projecting triangular/canopy shape rather than the raised, four-sided reception roof visible in the photo.",
+        "Generic three tall exhaust stacks and large mechanical screen are not justified by the building-specific photograph; aerial Farm Animal Hospital is mostly cropped above the image."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, distinctive architecture",
+      "score": 0.9,
+      "max_score": 2,
+      "evidence": [
+        "Reopened model includes red brick, pale belt, personnel door, one vehicle bay and glazing at reception, all recognisable in the photo."
+      ],
+      "findings": [
+        "Visible row of at least seven narrow vertical windows on the left-hand reception wing is absent from model.",
+        "Repeated pale vertical piers around the shell are not supported by source image.",
+        "Photo entrance has a recessed portal within a pronounced brick reception block; model uses shallow freestanding pale portal and a dark door panel. Opening proportions and positions are estimates.",
+        "Roof trim, corner massing and louvered right side differ visibly from source."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Independent Blender reopen succeeds; expected Asset collection with 159 objects; local frame intact.",
+        "No unpacked file images, external libraries or drivers. Dedicated script and raw source snapshots/register are present."
+      ],
+      "findings": [
+        "Schematic interior is explicitly labeled; no as-built claim.",
+        "Master integration has not been independently confirmed and old shared manifest statistics need coordinator refresh.",
+        "BEP retrieval and source date are recorded, but exact image acquisition date is unavailable."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_sha256": "17da01b00ae68eb026967ed364e65a99cf239bb761c3ec09787b000f71af1cc9",
+    "blender_version": "5.2.3 LTS",
+    "reopened": true,
+    "object_count": 159,
+    "collection": "Asset_david_and_bonnie_brunner_farm_animal_hospital",
+    "source_FID": 408,
+    "source_code": "BRFM",
+    "source_local_origin_xy_m": [
+      220.99837938145174,
+      -1034.9719771652944
+    ],
+    "manifest_origin_xy_m": [
+      220.99837938145174,
+      -1034.971977165294
+    ],
+    "origin_error_m": 4.547473508864641e-13,
+    "source_to_evaluated_shell_max_vertex_error_m": 1.0716574941933338e-06,
+    "shell_bounds_m": [
+      [
+        -31.017866134643555,
+        31.113882064819336
+      ],
+      [
+        -24.10195541381836,
+        26.176990509033203
+      ],
+      [
+        0.3499999940395355,
+        6.199999809265137
+      ]
+    ],
+    "shell_local_footprint_area_m2": 2757.9409525938827,
+    "published_floor_area_m2": 2220.382656,
+    "external_unpacked_image_dependencies": [],
+    "shell_matrix_world": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "library_paths": [],
+    "drivers_count": 0
+  },
+  "findings": [
+    "FAIL minimum 8/10. Improve source-visible facade windows and reception roof volume, remove unsupported generic piers/stacks or substantiate them, then freeze and request fresh independent grading."
+  ],
+  "method": "Independent evaluator read raw source pixels directly, opened frozen asset in Blender 5.2.3, measured evaluated shell and portability, and rendered own south oblique view. Model never saved."
+}

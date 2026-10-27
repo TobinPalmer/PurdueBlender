@@ -127,7 +127,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](buildings/burton_morgan_center.blend) | 384 |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](buildings/convergence_center.blend) | 894 |
 | Dauch Alumni Center (R3 independently graded 8.45/10; accepted) | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 663 |
-| David and Bonnie Brunner Farm Animal Hospital | [david_and_bonnie_brunner_farm_animal_hospital.blend](buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 640 |
+| David and Bonnie Brunner Farm Animal Hospital ([8.4/10](../audit/brunner_farm_animal_hospital/independent_grade_r2/result.json); Tobin validation pending) | [david_and_bonnie_brunner_farm_animal_hospital.blend](buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 147 |
 | Drew and Brittany Brees Student Athletic Academic Center | [brees_student_athletic_academic_center.blend](buildings/brees_student_athletic_academic_center.blend) | 97 |
 | Flex Lab (R2 independently graded 8.4/10; accepted) | [flex_lab.blend](buildings/flex_lab.blend) | 407 |
 | Ford Dining Court | [ford_dining_court.blend](buildings/ford_dining_court.blend) | 69 |

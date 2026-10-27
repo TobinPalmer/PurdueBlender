@@ -1,0 +1,147 @@
+{
+  "score": 8.4,
+  "max_score": 10,
+  "pass": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS snapshot FID 408 / BRFM names the hospital at 415 S Grant Street.",
+        "Independently reopened evaluated shell matches all 16 raw source vertices within 0.00000107 m."
+      ],
+      "findings": [
+        "Local approximate ground footprint 2757.94 m2; published 23900 sq ft is floor area, not a direct footprint check."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, scale/dimensions",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": [
+        "Independent GIS-centroid origin matches manifest to 0.00000000 m.",
+        "Identity shell transform and project X-east/Y-north conversion retain mapped orientation and 62.13 by 50.28 m plan extents."
+      ],
+      "findings": [
+        "Standalone placement frame verified; master instance replacement and neighboring context require coordinator/Tobin integration review."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, roof form",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": [
+        "Raw BEP pixels show one low principal story, flat service parapet, raised reception brick and a clay-tile hip roof.",
+        "Fresh r2 render now has a recognizable four-sided hip over the reception end and no unsupported tall stack/screen clutter."
+      ],
+      "findings": [
+        "Wall height 6.2 m, raised reception elevations and all roof dimensions remain perspective estimates, not surveyed dimensions.",
+        "Broad roof geometry beyond the photographed frontage and two low HVAC positions are incompletely substantiated; annotated aerial has the farm hospital mostly cropped at top."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, distinctive architecture",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": [
+        "Compared raw BEP photo directly with r2 facade/overview pixels: the formerly missing seven narrow reception windows are present, in correct ordering left of glazed entrance.",
+        "Brick reception volume, recessed door cue, pale belt, personnel door, vehicle opening and right-return louver give source-specific architecture. Unsupported repeated pale vertical piers are removed."
+      ],
+      "findings": [
+        "Portal and service openings remain approximate in scale and depth; personnel door is narrower and less recessed than the prominent dark photo opening.",
+        "Pale roof cap/belt proportions, reception-to-service height relationship and unseen elevations are not backed by measured elevations.",
+        "The source photo shows a recessed, darker client portal with a more pronounced brick surround; r2 is a simplified exterior representation."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, complete evidence",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Independently reopened frozen library exports expected local Asset collection with 147 objects.",
+        "No external file images, libraries or drivers. Dedicated builder, source snapshots, register and reopen evidence exist."
+      ],
+      "findings": [
+        "Interior is explicitly schematic, not as-built.",
+        "Shared manifest contains old object statistics; coordinator must refresh them and arrange master integration.",
+        "Photo acquisition date and measurement-grade exterior elevation are unavailable."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_sha256": "a318b252db4b5530910cde1adbb0708d881d2a92e297351a6de9dcc658686a9e",
+    "blender_version": "5.2.3 LTS",
+    "reopened": true,
+    "object_count": 147,
+    "collection": "Asset_david_and_bonnie_brunner_farm_animal_hospital",
+    "source_FID": 408,
+    "source_code": "BRFM",
+    "source_local_origin_xy_m": [
+      220.99837938145174,
+      -1034.9719771652944
+    ],
+    "manifest_origin_xy_m": [
+      220.99837938145174,
+      -1034.971977165294
+    ],
+    "origin_error_m": 4.547473508864641e-13,
+    "source_to_evaluated_shell_max_vertex_error_m": 1.0716574941933338e-06,
+    "shell_bounds_m": [
+      [
+        -31.017866134643555,
+        31.113882064819336
+      ],
+      [
+        -24.10195541381836,
+        26.176990509033203
+      ],
+      [
+        0.3499999940395355,
+        6.199999809265137
+      ]
+    ],
+    "shell_local_footprint_area_m2": 2757.9409525938827,
+    "published_floor_area_m2": 2220.382656,
+    "external_unpacked_image_dependencies": [],
+    "shell_matrix_world": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "library_paths": [],
+    "drivers_count": 0,
+    "removed_generic_objects_remaining": [],
+    "source_specific_objects_confirmed": [
+      "BRFM_raised_reception_brick_volume",
+      "BRFM_reception_narrow_window_7",
+      "BRFM_right_return_louver_recess",
+      "BRFM_entry_clay_tile_hip_roof_estimated"
+    ]
+  },
+  "findings": [
+    "PASS standalone modular building at 8.4/10; height, opening dimensions and unseen elevations remain estimated. Final master integration and context review remain outstanding."
+  ],
+  "method": "Independent r2 grader re-read raw source photo pixels, inspected r2 reopened render pixels, reopened exact SHA in Blender and measured evaluated shell/portability. Own south-oblique render generated without saving asset."
+}

@@ -1,0 +1,117 @@
+{
+  "building_id": "massing_david_and_bonnie_brunner_farm_animal_hospital_dada82b",
+  "detailed_asset_id": "david_and_bonnie_brunner_farm_animal_hospital",
+  "asset_file": "modular\\buildings\\david_and_bonnie_brunner_farm_animal_hospital.blend",
+  "exported_collection": "Asset_david_and_bonnie_brunner_farm_animal_hospital",
+  "scene": "Scene",
+  "source_feature": {
+    "provider": "Purdue University BuildingShapes ArcGIS FeatureServer",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 408,
+    "building_code": "BRFM",
+    "building_name_source": "David and Bonnie Brunner Farm Animal Hospital",
+    "source_address": "415 S Grant Street",
+    "retrieved": "2026-10-24",
+    "source_crs": "Service EPSG:3857; checked-in snapshot stored WGS84/EPSG:4326",
+    "attributes": {
+      "NUM_LEVELS": 0,
+      "Extrution": 0,
+      "Elevation": 611.8,
+      "BUILT": 1590969600000,
+      "OCCUPIED": 1651363200000,
+      "Shape__Area": 4766.7421875,
+      "Shape__Length": 290.6790217334788
+    },
+    "snapshot": "audit\\brunner_farm_animal_hospital\\sources\\purdue_gis_feature_408.json"
+  },
+  "references": [
+    {
+      "provider": "Purdue Veterinary Medicine Farm Hospital virtual tour",
+      "url": "https://vet.purdue.edu/hospital/virtual-tour/hospital.php?id=3",
+      "observed_or_supports": "Official exterior/context tour and hospital organization."
+    },
+    {
+      "provider": "Purdue BRFM emergency plan",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/brfm/",
+      "observed_or_supports": "Official address/building identity and exterior reference image."
+    }
+  ],
+  "street_view": {
+    "status": "not independently confirmed in this pass",
+    "method": "Google Maps Street View availability requires a linked in-app review; no street panorama evidence is claimed for this asset"
+  },
+  "geometry": {
+    "coordinates": "local meters at polygon centroid; X east, Y north, Z up",
+    "local_origin_xy_m": [
+      220.99837938145174,
+      -1034.971977165294
+    ],
+    "footprint_vertex_count": 16,
+    "plan_bounds_local_m": [
+      -31.0178658855408,
+      31.11388143596804,
+      -24.10195607632886,
+      26.176989669188515
+    ],
+    "footprint_source": "Exact first exterior ring of matched official Purdue GIS feature, with satellite-attached courtyard/hole rings omitted from shell; no rescaling",
+    "levels_modeled": 1,
+    "height_m": 6.2,
+    "height_status": "estimated from building count/use and photo/story cues; not survey-verified",
+    "facade_description": "Low flat-roof service wing; raised brick reception wing with seven narrow windows, recessed double-door portal and four-sided clay-tile hip; one large vehicle opening and right-return louver. Heights and dimensions are estimated from source pixels.",
+    "interior": "Procedural schematic multi-floor circulation, core, rooms, stairs and furniture silhouettes. It is intentionally labeled NOT AS-BUILT; no room plan claimed. BIDC official posted plan availability exists but was not traced into geometry."
+  },
+  "materials": {
+    "count": 7,
+    "all_procedural_and_portable": true,
+    "texture_network": "Generated-coordinate noise/ramp color with bump, no external image paths"
+  },
+  "validation": {
+    "preview": "audit\\brunner_farm_animal_hospital\\david_and_bonnie_brunner_farm_animal_hospital_preview.png",
+    "saved_source_library": true,
+    "expected_collection": "Asset_david_and_bonnie_brunner_farm_animal_hospital",
+    "object_count": 147,
+    "shell_object": "david_and_bonnie_brunner_farm_animal_hospital_GIS_outline_primary_shell",
+    "geometry_edit": "Created new source library; original campus massing library untouched",
+    "overview_preview": "audit\\brunner_farm_animal_hospital\\david_and_bonnie_brunner_farm_animal_hospital_overview.png",
+    "facade_detail_preview": "audit\\brunner_farm_animal_hospital\\david_and_bonnie_brunner_farm_animal_hospital_facade_detail.png",
+    "final_object_count": 147,
+    "estimated_wall_height_m": 6.2,
+    "modeled_principal_levels": 1,
+    "reopen_validation": "audit/brunner_farm_animal_hospital/reopen_validation.json",
+    "reopened_successfully": true,
+    "asset_sha256": "a318b252db4b5530910cde1adbb0708d881d2a92e297351a6de9dcc658686a9e",
+    "reopened_object_count": 147,
+    "source_shell_max_vertex_error_m": 1.0716572343035043e-06,
+    "placement_origin_error_m": 0.0,
+    "reopened_overview": "audit/brunner_farm_animal_hospital/reopened_overview.png",
+    "reopened_facade": "audit/brunner_farm_animal_hospital/reopened_facade.png",
+    "unpacked_external_image_dependencies": []
+  },
+  "uncertainties": [
+    "Purdue GIS polygon can include footprint geometry updated by survey/cartography; the matched record was checked by code, name and address but not by an on-site survey.",
+    "Wall height and roof elevations are estimates; GIS level/extrusion attributes are not treated as a surveyed elevation.",
+    "The seven-window reception row and louver location are read from source pixels; opening dimensions and exact placement remain estimates because no measured elevation was located.",
+    "Interior is schematic only and not an as-built plan.",
+    "Street View was not available/verified in this modeling pass."
+  ],
+  "revision_history": [
+    {
+      "date": "2026-10-27",
+      "review_request": "Restore missing detailed library as a dedicated reproducible asset; replace generic two-story massing cues with current building-specific source evidence.",
+      "geometry_edits": [
+        "Kept the estimated 6.2 m one-story service shell and the official GIS FID 408 footprint/origin.",
+        "Added the photo-visible reception-frontage window row, a recessed entry, a raised brick reception volume, and a four-sided tile hip roof over the reception wing.",
+        "Removed unsupported generic facade piers and tall rooftop stacks/screens, and added the source-visible right-return louver. Service-door and architectural dimensions remain estimates."
+      ],
+      "source_interpretation": "Purdue BEP photo pixels directly support the reception window row, raised brick entry wing, four-sided clay-tile hip, recessed double-door portal, service bay and right-return louver. Rooftop detail remains restrained because the Farm Animal Hospital is mostly cropped in the available aerial.",
+      "footprint_and_origin": "Official GIS shell and manifest local origin retained."
+    }
+  ],
+  "independent_grade": {
+    "score": 8.4,
+    "max_score": 10,
+    "result": "audit/brunner_farm_animal_hospital/independent_grade_r2/result.json",
+    "asset_sha256": "a318b252db4b5530910cde1adbb0708d881d2a92e297351a6de9dcc658686a9e",
+    "master_validation": "awaiting Tobin"
+  }
+}
