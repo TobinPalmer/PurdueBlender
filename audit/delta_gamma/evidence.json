@@ -1,0 +1,164 @@
+{
+  "building": "Delta Gamma, Beta Iota Chapter",
+  "asset_id": "massing_house_301840872_582df9d",
+  "status": "Complete; independently graded 8.25/10 (minimum 8/10 passed)",
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D783&outFields=*&outSR=4326&f=json",
+      "feature_id": 783,
+      "building_code": "SODG",
+      "name": "Delta Gamma",
+      "address": "303 Waldron St",
+      "retrieval_date": "2026-10-27",
+      "source_date": null,
+      "crs": "EPSG:4326 WGS 84, outSR=4326 explicitly requested",
+      "raw_snapshot": "sources/purdue_gis_fid783_raw.json",
+      "measurement_method": "14 unique ring vertices transformed using repository campus conversion; compared to bottom-wall vertices after reopening.",
+      "attributes": {
+        "shape_area_m2": 1136.41796875,
+        "shape_length_m": 139.69555623996027,
+        "num_levels": 1,
+        "extrution": 12
+      },
+      "uncertainty": "Campus GIS is not a certified survey and publishes no positional accuracy; field definitions undocumented."
+    },
+    {
+      "provider": "Christina Van Zelst, Purdue Delta Gamma chapter member, chapter blog",
+      "url": "https://cvanzelst.wordpress.com/2015/02/15/31/",
+      "feature_id": "Exterior image delta_gamma_house_exterior_2014.png",
+      "retrieval_date": "2026-10-27",
+      "source_date": "2014-11-17 filename timestamp; not independently verified",
+      "crs": "Not georeferenced",
+      "image_snapshot": "sources/delta_gamma_house_exterior_2014.png",
+      "page_snapshot": "sources/member_photo_page.html",
+      "measurement_method": "Direct visual comparison; no dimensions inferred.",
+      "observation": "Member labels the post as an exterior view of Delta Gamma. It shows two visible facade levels, a raised center bay with arched upper window and gold Delta Gamma letters, red-brick wings, grouped windows, and a broad approach stair.",
+      "uncertainty": "No camera position/bearing or scale; roof is cropped."
+    },
+    {
+      "provider": "Delta Gamma at Purdue official chapter website",
+      "url": "https://purdue.deltagamma.org/the-house",
+      "feature_id": "Beta Iota Chapter, 303 Waldron Street",
+      "retrieval_date": "2026-10-27",
+      "source_date": "page last updated 2016-06-16",
+      "crs": "Not spatial",
+      "snapshot": null,
+      "measurement_method": "Official page identity and address confirmation only.",
+      "observation": "Confirms the chapter house is at 303 Waldron Street and references its front porch.",
+      "uncertainty": "No architectural measurements or elevation."
+    },
+    {
+      "provider": "Purdue University Libraries Archives and Special Collections eArchives, Debris Yearbook",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/debris/id/39903/",
+      "feature_id": "1969 Debris, page 261 OCR record",
+      "retrieval_date": "2026-10-27",
+      "source_date": "1969",
+      "crs": "Not spatial",
+      "snapshot": null,
+      "measurement_method": "Not used for model geometry.",
+      "observation": "Search result OCR mentions Delta Gamma; surfaced scan does not contain an exterior view.",
+      "uncertainty": "Not a useful facade source."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters, project approximation, not a survey CRS"
+  },
+  "measurements": {
+    "gis_ring_vertices": 14,
+    "gis_bounds_xy_m": [
+      -402.44201971092093,
+      -379.57333205434537,
+      -0.4914157035932476,
+      29.331953083908502
+    ],
+    "previous_manifest_bounds_xyz_m": [
+      [
+        -402.9351806640625,
+        -379.53594970703125
+      ],
+      [
+        -0.966048002243042,
+        29.13689613342285
+      ],
+      [
+        0,
+        16
+      ]
+    ],
+    "reopened_evaluated_bounds_xyz_m": [
+      [
+        -402.4420166015625,
+        -376.21331787109375
+      ],
+      [
+        -0.6914157271385193,
+        29.531953811645508
+      ],
+      [
+        0,
+        11.255000114440918
+      ]
+    ],
+    "all_source_base_vertices_match": true,
+    "vertex_tolerance_m": 0.0001,
+    "modeled_facade_floors": 2,
+    "main_wing_roofline_height_estimate_m": 8.2,
+    "central_bay_height_estimate_m": 10.8,
+    "height_status": "Estimated; no measured elevation source found"
+  },
+  "geometry_edits": [
+    "Rebuilt House_301840872 from the exact 14-vertex GIS footprint in campus coordinates.",
+    "Replaced the generic 16 m massing with two visible facade levels, red brick wings, and a raised central entry bay aligned to the footprint\u2019s east-side jogs.",
+    "Added a stone-arched center entry, upper arched window, stylized Delta Gamma letters, grouped wing windows, and broad entry steps based on the exterior photo.",
+    "Used a low hidden roof cap because the image crops the roof; exact form and heights remain unknown."
+  ],
+  "validation": {
+    "reopened": true,
+    "script": "validate_asset.py",
+    "report": "reopen_validation.json",
+    "preview": "preview.png",
+    "collection": "Asset_massing_house_301840872_582df9d",
+    "collection_object_count": 1,
+    "object": "House_301840872",
+    "identity_transform": true,
+    "source_ring_match": "14/14 source vertices present within 0.0001 m",
+    "external_image_paths": []
+  },
+  "uncertainties": [
+    "Official GIS NUM_LEVELS=1 conflicts with two facade levels visible in the photo; meaning of NUM_LEVELS is undocumented.",
+    "No measured height or complete roof image exists in available sources.",
+    "Member photograph is not georeferenced; selected east-facing frontage is illustrative, not verified.",
+    "Window patterns, floor heights, central bay dimensions, and stair sizes are schematic estimates."
+  ],
+  "artifacts": {
+    "builder": "../../modular/buildings/build_massing_house_301840872_582df9d.py",
+    "asset": "../../modular/buildings/massing_house_301840872_582df9d.blend",
+    "build_config": "build_config.json",
+    "source_observations": "source_observations.json",
+    "gis_raw": "sources/purdue_gis_fid783_raw.json",
+    "facade_photo": "sources/delta_gamma_house_exterior_2014.png",
+    "photo_page": "sources/member_photo_page.html",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py",
+    "preview": "preview.png",
+    "independent_evaluator": "independent_grade/evaluate.py",
+    "independent_result": "independent_grade/result.json",
+    "independent_report": "independent_grade/independent_grade.md"
+  },
+  "independent_grade": {
+    "score": 8.25,
+    "max_score": 10,
+    "status": "pass",
+    "evaluator": "independent_grade/evaluate.py",
+    "result": "independent_grade/result.json",
+    "report": "independent_grade/independent_grade.md",
+    "reviewer": "independent subagent",
+    "max_footprint_residual_m": 1.471e-05
+  }
+}

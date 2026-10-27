@@ -1,0 +1,120 @@
+{
+  "score": 8.25,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS FID 783 identifies Delta Gamma at 303 Waldron St.",
+        "The source has 14 distinct polygon vertices; the rebuilt base includes all vertices."
+      ],
+      "findings": [
+        "GIS positional accuracy is unpublished; the raw layer is not a certified survey."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "Maximum residual to the exact transformed GIS ring is 0.00001471 m.",
+        "The massing asset retains campus coordinates and identity object transform; plan outline is source-matched."
+      ],
+      "findings": [
+        "The photo is not georeferenced, so the selected east-facing frontage/entrance bearing cannot be verified.",
+        "Decorative entry stairs extend beyond the GIS wall outline; this is a reasonable projection but not a wall-footprint match."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "The member photo shows at least two facade levels and a raised central bay; the model represents these features.",
+        "The model reopens to a 11.255 m total vertical bound."
+      ],
+      "findings": [
+        "GIS NUM_LEVELS=1 conflicts with the photo interpretation; field meaning is unknown.",
+        "No measured eaves, ridge, or total height source is available; the photo crops the roof, and the flat/low roof cap is an estimate."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": [
+        "The photo shows brick wings, a raised central entrance bay with an arched upper panel, Greek-letter signage, grouped windows, and broad approach steps.",
+        "The preview includes brick wings, raised central bay, upper and entry arches, stylized \u0394\u0393 marks, windows, and steps."
+      ],
+      "findings": [
+        "The symbol/sign and window rhythm are simplified; exact facade dimensions and color details are not measured.",
+        "The official chapter page mentions a front porch, but the photo and map do not establish its exact size or compass orientation."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Reopened .blend has exactly the expected one-object mesh collection and identity transform.",
+        "No external file images or modifiers; expected asset object is present.",
+        "Raw GIS snapshot, member image/page, transform, preview, validation, and source uncertainties are recorded."
+      ],
+      "findings": [
+        "Master integration is still pending and is correctly left to the coordinator."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/massing_house_301840872_582df9d.blend",
+    "reopened_in_blender": true,
+    "collection_objects": [
+      "House_301840872"
+    ],
+    "object_type": "MESH",
+    "identity_transform": {
+      "location": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "evaluated_bounds_xyz_m": [
+      [
+        -402.4420166015625,
+        -376.21331787109375
+      ],
+      [
+        -0.6914157271385193,
+        29.531953811645508
+      ],
+      [
+        0.0,
+        11.255000114440918
+      ]
+    ],
+    "GIS_feature_id": 783,
+    "GIS_vertices": 14,
+    "max_base_ring_residual_m": 1.4707575636700632e-05,
+    "external_image_paths": [],
+    "rendered_view": "../preview.png",
+    "reviewed_source_image": "../sources/delta_gamma_house_exterior_2014.png",
+    "official_address_source": "https://purdue.deltagamma.org/the-house"
+  },
+  "findings": [
+    "PASS: score meets the 8/10 minimum.",
+    "The exact campus footprint is verified; height, roof form, and facade bearing remain uncertain."
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "building": "Delta Gamma, Beta Iota Chapter",
+  "retrieval_date": "2026-10-27",
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters, local campus approximation not a survey CRS"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D783&outFields=*&outSR=4326&f=json",
+      "feature_id": 783,
+      "name": "Delta Gamma",
+      "building_code": "SODG",
+      "address": "303 Waldron St",
+      "retrieved": "2026-10-27",
+      "source_date": null,
+      "crs": "EPSG:4326 WGS 84, outSR=4326 explicitly requested",
+      "raw_snapshot": "sources/purdue_gis_fid783_raw.json",
+      "method": "14 unique ring vertices transformed using repository campus approximation; compared with reopened base mesh.",
+      "observation": "Official feature identifies Delta Gamma at 303 Waldron St. Shape__Area=1136.41796875 m2; Shape__Length=139.69555623996027 m.",
+      "uncertainty": "Not a certified survey; no positional accuracy or definitions for NUM_LEVELS=1 and Extrution=12."
+    },
+    {
+      "provider": "Purdue Delta Gamma member Christina Van Zelst, chapter house blog",
+      "url": "https://cvanzelst.wordpress.com/2015/02/15/31/",
+      "feature_id": "Photo file delta_gamma_house_exterior_2014.png",
+      "retrieved": "2026-10-27",
+      "source_date": "2014-11-17 timestamp in screenshot filename; uncertain",
+      "crs": "Not spatial / no camera pose metadata",
+      "raw_snapshot": "sources/delta_gamma_house_exterior_2014.png",
+      "page_snapshot": "sources/member_photo_page.html",
+      "method": "Direct visual comparison; no dimensions inferred.",
+      "observation": "Member describes the post as showing Delta Gamma from outside. The photo shows a long two-level brick facade, raised central entrance bay with arched upper panel and Delta Gamma letters, wing windows, and a broad entry stair.",
+      "uncertainty": "Image is oblique/frontal and undated except filename; roof top is partly cropped and facade compass bearing is not known."
+    },
+    {
+      "provider": "Delta Gamma at Purdue official chapter website",
+      "url": "https://purdue.deltagamma.org/the-house",
+      "feature_id": "Beta Iota Chapter, 303 Waldron Street",
+      "retrieved": "2026-10-27",
+      "source_date": "page updated 2016-06-16",
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "method": "Official text confirms chapter and address only.",
+      "observation": "Official chapter page confirms its house is at 303 Waldron Street and mentions a front porch.",
+      "uncertainty": "Page provides no floor count, measured dimensions, roof details or elevation image."
+    },
+    {
+      "provider": "Purdue University Debris Yearbook via eArchives",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/debris/id/39903/",
+      "feature_id": "1969 Debris page, OCR mentions Delta Gamma but is not an architectural view",
+      "retrieved": "2026-10-27",
+      "source_date": "1969",
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "method": "No geometry inferred; not relied on for facade.",
+      "observation": "Yearbook OCR mentions Delta Gamma and house traditions, but the surfaced page is not a house elevation.",
+      "uncertainty": "No usable architectural drawing/photo located in this yearbook query."
+    }
+  ],
+  "transformed_gis_ring_xy_m": [
+    [
+      -380.00922647641346,
+      -0.4914157035932476
+    ],
+    [
+      -402.44201971092093,
+      -0.15689569969026707
+    ],
+    [
+      -402.1391524097227,
+      20.12717827866254
+    ],
+    [
+      -402.003188450226,
+      29.331953083908502
+    ],
+    [
+      -379.57333205434537,
+      29.000488212273012
+    ],
+    [
+      -379.70575185440566,
+      20.085254948926377
+    ],
+    [
+      -379.7231267743455,
+      18.936175053815987
+    ],
+    [
+      -380.3567453219567,
+      18.943462087211174
+    ],
+    [
+      -380.40527527249964,
+      15.797986025575028
+    ],
+    [
+      -379.85389609226854,
+      15.79085280433901
+    ],
+    [
+      -379.89942245848215,
+      12.62098168800776
+    ],
+    [
+      -380.45079570294973,
+      12.631165899331336
+    ],
+    [
+      -380.496168044235,
+      9.54359716441786
+    ],
+    [
+      -379.85948236286515,
+      9.536304412447407
+    ]
+  ],
+  "gis_bounds_xy_m": [
+    -402.44201971092093,
+    -379.57333205434537,
+    -0.4914157035932476,
+    29.331953083908502
+  ]
+}
