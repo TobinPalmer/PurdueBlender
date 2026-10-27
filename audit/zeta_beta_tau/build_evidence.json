@@ -1,0 +1,109 @@
+{
+  "building": "Zeta Beta Tau \u2014 Alpha Alpha, Purdue University",
+  "asset_id": "massing_house_301841332_9b3bd1f",
+  "asset_path": "modular/buildings/massing_house_301841332_9b3bd1f.blend",
+  "collection": "Asset_massing_house_301841332_9b3bd1f",
+  "scene": "Building_massing_house_301841332_9b3bd1f",
+  "source": {
+    "provider": "Purdue University GIS",
+    "feature_id": 762,
+    "feature_name": "Phi Kappa Theta",
+    "address": "900 David Ross Rd",
+    "source_crs": "EPSG:4326 (ArcGIS outSR=4326)",
+    "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D762&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "snapshot": "audit/zeta_beta_tau/sources/purdue_gis_fid762_2026-10-26_wgs84.json",
+    "retrieved": "2026-10-26",
+    "source_geometry_date": "not populated by service",
+    "identity_note": "FID 762 is at the current official ZBT address; the GIS name is the historic/conflicting Phi Kappa Theta label. See crosswalk_resolution.md."
+  },
+  "transform": {
+    "x": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y": "(latitude - 40.4274) * 111040.0",
+    "z": "meters above local model ground; not a surveyed elevation",
+    "geographic_origin_lat_lon": [
+      40.4274,
+      -86.9137
+    ]
+  },
+  "footprint": {
+    "ring_vertex_count_closed": 13,
+    "ring_vertex_count_unique": 12,
+    "area_m2_from_transformed_ring": 892.489,
+    "bounds_world_m": [
+      [
+        -994.483,
+        -952.059
+      ],
+      [
+        721.324,
+        775.79
+      ]
+    ],
+    "maximum_bbox_dimensions_m": [
+      42.425,
+      54.466
+    ],
+    "comparison": "The main envelope and flat roof projection use the transformed GIS ring. GIS footprint is a map/roof outline, not a surveyed wall-face survey.",
+    "Shape__Area_attribute": 1542.9140625,
+    "area_attribute_units": "undocumented; conflicts with transformed ring area and not used for geometry"
+  },
+  "geometry_edits": [
+    "Replaced the generic 4-corner 16 m extrusion with a source-ring 12-corner envelope and flat roof.",
+    "Added two photo-guided facade levels, repeated glazing, and a shallow flat-roof parapet.",
+    "Added the long front deck, railings, schematic entry stair, and ZBT frontage sign from chapter-photo cues.",
+    "Preserved the stable asset path, ID, collection, scene, and campus-world XY frame."
+  ],
+  "dimensions": {
+    "ground_z_m": 0.0,
+    "roof_top_z_m": 7.65,
+    "height_status": "estimated from two visible facade levels and person/window proportions in chapter photos; not measured",
+    "story_count": 2,
+    "story_count_status": "photo-guided estimate; GIS NUM_LEVELS=1 is retained as conflicting legacy metadata",
+    "roof_form": "flat/low-slope roof with shallow parapet; visually supported by current official chapter photo and aerial imagery; exact pitch/elevation unknown",
+    "orientation_status": "FID 762 roof ring orientation verified in campus transform; frontage edge inferred from the longest face and aerial context, not a georeferenced facade photo",
+    "frontage_edge_index_in_transformed_ccw_ring": 4,
+    "frontage_edge_length_m": 43.881,
+    "frontage_outward_normal_xy": [
+      0.710642,
+      -0.703553
+    ]
+  },
+  "facade_evidence": [
+    {
+      "url": "https://zbt.org/undergraduates/chapter-locator/alpha-alpha-purdue-university/",
+      "provider": "Zeta Beta Tau International",
+      "source_date": "photo upload path 2017/10; capture date unknown",
+      "supports": "Alpha Alpha chapter house identity, ZBT/900 David Ross signage, broad light facade, broad horizontal timber-railed deck."
+    },
+    {
+      "url": "https://zbtpurdue.com/",
+      "provider": "Zeta Beta Tau at Purdue",
+      "source_date": "homepage accessed 2026-10-26; image path 2024/08; image capture date unknown",
+      "supports": "Current ZBT identity and current photo cues: broad light facade, large regular glazing, shallow flat roof edge, long deck/railing."
+    },
+    {
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export",
+      "provider": "Esri World Imagery mosaic",
+      "source_date": "mosaic capture date not supplied; accessed 2026-10-26",
+      "source_crs": "EPSG:3857 request; 1000x750; bbox -9676616.3,4929120,-9676316.3,4929345 m",
+      "supports": "Aerial roof context and broad source-ring alignment; see audit/zeta_beta_tau/fid762_aerial_overlay.png."
+    }
+  ],
+  "uncertainty": [
+    "The GIS polygon and `Shape__Area` field disagree; the field's units are undocumented, and the transformed polygon area was used for horizontal geometry.",
+    "Purdue GIS retains Phi Kappa Theta (`SOFKH`) at the same address; current ZBT sources support present occupancy, but transition date and any temporary shared occupancy are unknown.",
+    "The facade photographs are not georeferenced elevations; the frontage edge and window spacing are estimated, and unpictured sides are schematic.",
+    "The GIS's Extrution=36 has undocumented units and NUM_LEVELS=1; neither is used as a measured height or story count.",
+    "No interior plan, measured wall line, roof survey, or surveyed vertical datum was found; interior layout is not modeled."
+  ],
+  "blender_version": "5.2.3 LTS",
+  "mesh_object_count_in_export_collection": 12,
+  "preview_render": "audit/zeta_beta_tau/zbt_preview.png",
+  "asset_sha256": "7ad90208e909dba1300ea2a5dc11e039e440d70135b2dd3bc28c0ec43521895f",
+  "validation": "Fresh reopen and clean-file linked append passed; independent grade pending.",
+  "fresh_reopen_validation_file": "audit/zeta_beta_tau/fresh_reopen_validation.json",
+  "fresh_reopen_validation": "PASS in Blender 5.2.3; GIS outline max XY error 0.000043 m (float32 rounding).",
+  "preview_render_fresh_reopen": "audit/zeta_beta_tau/zbt_preview_fresh_reopen.png",
+  "fresh_append_validation_file": "audit/zeta_beta_tau/fresh_append_validation.json",
+  "fresh_linked_append_validation": "PASS in an empty Blender 5.2.3 file; stable collection linked with 12 mesh objects in campus-world coordinates."
+}

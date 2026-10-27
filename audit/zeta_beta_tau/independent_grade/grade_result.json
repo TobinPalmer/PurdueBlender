@@ -1,0 +1,210 @@
+{
+  "building": "Zeta Beta Tau — Alpha Alpha, Purdue University",
+  "asset_id": "massing_house_301841332_9b3bd1f",
+  "asset_path": "modular/buildings/massing_house_301841332_9b3bd1f.blend",
+  "asset_sha256": "7ad90208e909dba1300ea2a5dc11e039e440d70135b2dd3bc28c0ec43521895f",
+  "grader": "Independent subagent; evaluator written from direct source and Blender data review; does not import builder validators.",
+  "blender_version": "5.2.0 LTS",
+  "score": 8.5,
+  "max_score": 10,
+  "pass": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "PASS, with documented historic GIS label conflict. Current chapter contact and homepage identify ZBT at 900 David Ross; the captured national chapter photo shows ZBT/Alpha Alpha and the same address, while the GIS FID 762 at that address retains historic Phi Kappa Theta/SOFKH. The crosswalk compares 2007, 2017, 2018, and 2026 evidence and properly resolves this as one physical site while noting transition/shared-occupancy uncertainty. The building shell and roof plan ring independently agree with all 12 GIS vertices.",
+      "evidence": {
+        "current_contact_has_address": true,
+        "current_homepage_mentions_address": true,
+        "crosswalk_documents_conflicting_GIS_name": true,
+        "crosswalk_documents_ZBT_historical_and_current_sources": true,
+        "current_photo_present": true,
+        "national_chapter_house_photo_present": true,
+        "historical_Purdue_report_present": true,
+        "2018_occupancy_report_present": true,
+        "GIS_feature_id": 762,
+        "GIS_name": "Phi Kappa Theta",
+        "GIS_address": "900 David Ross Rd",
+        "ring_unique_vertices": 12,
+        "shell_ring_bidirectional_error_m": 4.261593257196912e-05
+      }
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2,
+      "assessment": "Strongly supported in horizontal location and plan shape by the source ring in the repository coordinate transform. The building occupies the same campus-world XY as the GIS ring; the main shell and roof ring match to float precision. Plan orientation comes from that mapped polygon. Its bounds and dimensions remain map-outline estimates rather than a surveyed wall-face measurement, and the chosen photo-facing edge is inferred, so a small deduction applies.",
+      "evidence": {
+        "asset_world_bounds_m": [
+          [
+            -994.4834594726562,
+            -952.058837890625
+          ],
+          [
+            721.3237915039062,
+            775.7902221679688
+          ],
+          [
+            0.0,
+            7.650000095367432
+          ]
+        ],
+        "source_ring_bidirectional_error_m": 4.261593257196912e-05,
+        "source_ring_vertices": 12,
+        "frontage_selection": "longest GIS edge, not georeferenced facade alignment"
+      }
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "assessment": "Flat/low-slope roof and shallow parapet are consistent with the captured chapter photos and aerial imagery. The 7.65 m height and two-floor interpretation are clearly labeled as estimates; the GIS NUM_LEVELS=1 conflict and absence of a measured elevation make these less than fully verified.",
+      "evidence": {
+        "shell_vertical_extent_m": [
+          0.0,
+          7.650000095367432
+        ],
+        "height_status": "photo-guided estimate; no surveyed vertical datum",
+        "story_count_status": "estimated from photos; GIS legacy value conflicts",
+        "roof_form_status": "photo/aerial supported; pitch and elevation uncertain"
+      }
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "assessment": "The light broad facade, regular glazing, large timber-railed deck, ZBT sign, and stair are recognizable from the saved national/current chapter imagery. The render contains a continuous deck and railings with repeated window bays. The images do not supply a georeferenced elevation or reliable entry-door location; unseen elevations and some window placement remain schematic, so this receives partial credit.",
+      "evidence": {
+        "reference_images": [
+          "sources/zbt_alpha_alpha_chapter_house_photo.jpg",
+          "sources/zbt_purdue_current_website_photo.png"
+        ],
+        "preview": "zbt_preview_fresh_reopen.png",
+        "visible modeled features": [
+          "light wall envelope",
+          "repeated divided windows",
+          "long timber-railed frontage deck",
+          "ZBT lettering",
+          "front stair"
+        ]
+      }
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "assessment": "PASS. Stable scene/collection names and asset path are present, the collection contains the dedicated building meshes, the project has a dedicated reproducible build script and source/evidence folder, and independently inspected Blender data show no nonempty external image dependencies. Existing fresh reopen/linked append logs use the same exact frozen SHA and report success.",
+      "evidence": {
+        "asset_sha256": "7ad90208e909dba1300ea2a5dc11e039e440d70135b2dd3bc28c0ec43521895f",
+        "scene": "Building_massing_house_301841332_9b3bd1f",
+        "collection": "Asset_massing_house_301841332_9b3bd1f",
+        "object_count": 12,
+        "mesh_count": 12,
+        "all_objects_local_data": true,
+        "external_image_paths": [],
+        "external_paths_relative": true,
+        "existing_fresh_reopen": "PASS, same frozen SHA",
+        "existing_fresh_linked_append": "PASS, same frozen SHA"
+      }
+    }
+  ],
+  "evidence": {
+    "gis_source_attributes": {
+      "FID": 762,
+      "Level_": 8,
+      "Layer": "BLDG Building Private Owned",
+      "Color": 206,
+      "Linetype": "Solid",
+      "Elevation": 663,
+      "LineWt": 0,
+      "RefName": " ",
+      "BLDG_ABBR": "SOFKH",
+      "BUILDING_N": "Phi Kappa Theta",
+      "OTHER_ABBR": "SOFKH",
+      "BUILDING_1": "6940",
+      "NUM_LEVELS": 1,
+      "OWNER": "GREEK",
+      "ADDRESS": "900 David Ross Rd",
+      "COMMENTS": " ",
+      "BUILT": null,
+      "OCCUPIED": null,
+      "CountOfFLO": 1,
+      "Extrution": 36,
+      "Floorplans": "G:\\GIS\\web_pages\\html_pages\\SOFKH.html",
+      "SB": 0,
+      "B": 0,
+      "G": 0,
+      "M": " ",
+      "F01": 0,
+      "F02": 0,
+      "F03": 0,
+      "F04": 0,
+      "F05": 0,
+      "F06": 0,
+      "F07": 0,
+      "F08": 0,
+      "F09": 0,
+      "F10": 0,
+      "F11": 0,
+      "F12": 0,
+      "F13": 0,
+      "F14": 0,
+      "F15": 0,
+      "F16": " ",
+      "R": 0,
+      "RuleID": 6,
+      "PU_Occupie": "N",
+      "DEMO": null,
+      "Zip": 0,
+      "Plus4": 0,
+      "Zone": " ",
+      "Entity": "Closed Shape",
+      "ZONES": 99,
+      "Building_F": " ",
+      "GlobalID": "{497E0B2A-9A1F-4F2F-A51F-83C843B1802E}",
+      "created_us": " ",
+      "created_da": null,
+      "last_edite": " ",
+      "last_edi_1": null,
+      "Shape__Area": 1542.9140625,
+      "Shape__Length": 238.66088825457607
+    },
+    "crosswalk_evidence_checks": {
+      "current_contact_has_address": true,
+      "current_homepage_mentions_address": true,
+      "crosswalk_documents_conflicting_GIS_name": true,
+      "crosswalk_documents_ZBT_historical_and_current_sources": true,
+      "current_photo_present": true,
+      "national_chapter_house_photo_present": true,
+      "historical_Purdue_report_present": true,
+      "2018_occupancy_report_present": true
+    },
+    "direct_geometry_measurement": {
+      "GIS_to_shell_bidirectional_max_xy_error_m": 4.261593257196912e-05,
+      "estimated_shell_bounds_m": [
+        [
+          -994.4834594726562,
+          -952.058837890625
+        ],
+        [
+          721.3237915039062,
+          775.7902221679688
+        ],
+        [
+          0.0,
+          7.650000095367432
+        ]
+      ],
+      "object_count": 12,
+      "mesh_object_count": 12,
+      "nonempty_external_image_paths": []
+    }
+  },
+  "findings": [
+    "PASS threshold met (8/10).",
+    "Historic GIS naming conflict is acknowledged rather than silently overwritten: the asset represents the currently documented ZBT facility at 900 David Ross, while transition timing and possible temporary shared occupancy remain unresolved.",
+    "Treat the polygon-derived shell as a GIS roof/map-outline proxy, not a surveyed wall footprint; the GIS geometry and Shape__Area field are inconsistent and the imagery has canopy/seam occlusion.",
+    "Retain explicit uncertainty on the 7.65 m height, story count, frontage-edge choice, window rhythm, door position, and unpictured sides; these are not surveyed facts."
+  ]
+}
