@@ -209,6 +209,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Islamic Society of Greater Lafayette (ISGL) | [massing_islamic_societyof_greater_lafayette_0130012.blend](buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | 3 |
 | Jimmy John's | [massing_jimmy_john_s_12edba1.blend](buildings/massing_jimmy_john_s_12edba1.blend) | 1 |
 | Joyful Journeys | [massing_joyful_journeys_abaf5c3.blend](buildings/massing_joyful_journeys_abaf5c3.blend) | 1 |
+| Kappa Delta Rho | [massing_house_1089876362_14ecd2c.blend](buildings/massing_house_1089876362_14ecd2c.blend) | 12 |
 | Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](buildings/massing_kappa_sigma_c1b36ec.blend) | 1 |
 | Lilly Hall of Life Sciences | [massing_lilly_hall_e7fc13e.blend](buildings/massing_lilly_hall_e7fc13e.blend) | 4 |
 | Mann Hall | [massing_mann_hall_2b4ebda.blend](buildings/massing_mann_hall_2b4ebda.blend) | 1 |
@@ -221,6 +222,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Phi Delta Theta | [massing_phi_delta_theta_258cddd.blend](buildings/massing_phi_delta_theta_258cddd.blend) | 313 |
 | Pi Kappa Alpha (Pike) | [massing_house_301841252_e4f8f05.blend](buildings/massing_house_301841252_e4f8f05.blend) | 608 |
 | Pi Kappa Phi (Omega) | [massing_pi_kappa_phi_50e4645.blend](buildings/massing_pi_kappa_phi_50e4645.blend) | 239 |
+| Phi Kappa Sigma | [massing_phi_kappa_sigma_fid829.blend](buildings/massing_phi_kappa_sigma_fid829.blend) | 654 |
 | Phi Kappa Tau | [massing_phi_kappa_tau_139b9d7.blend](buildings/massing_phi_kappa_tau_139b9d7.blend) | 1 |
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
 | Purdue University Daniel Turf Center | [massing_purdue_university_daniel_turf_center_e69b7da.blend](buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | 1 |
