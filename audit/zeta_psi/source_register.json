@@ -2,7 +2,7 @@
   "building_id": "massing_house_301841600_c1351aa",
   "assigned_name": "Zeta Psi / Tau Gamma",
   "review_date": "2026-10-26",
-  "disposition": "Crosswalk unresolved; no modeling, asset edits, or grade requested.",
+  "disposition": "Crosswalk and exclusive occupancy unresolved; no modeling, asset edits, or grade requested.",
   "sources": [
     {
       "provider": "Purdue University BuildingShapes ArcGIS FeatureServer, layer 0",
@@ -84,6 +84,41 @@
       "source_crs": "Not applicable; public profile page",
       "evidence": "Profile description says 950 David Ross Rd and Rechartered 2024; conflicts with Chi Psi's 2024 primary-source lodge announcement at the same address; snapshot does not expose dated post captions sufficient to determine whether the bio is stale",
       "snapshot": "sources/zetapsipurdue_instagram_page.html"
+    },
+    {
+      "provider": "Zeta Psi Fraternity of North America, official collegiate chapter directory, page 2",
+      "url": "https://zetapsi.org/about/chapter-type/collegiate/page/2/",
+      "retrieved": "2026-10-26",
+      "source_crs": "Not applicable; web page",
+      "evidence": "Current listing includes Tau Gamma at Purdue University, West Lafayette; no address or inactive status for Tau Gamma. Snapshot checked directly; nearby inactive label belongs to another chapter.",
+      "snapshot": "sources/zeta_psi_national_collegiate_page2_current_2026-10-26.html"
+    },
+    {
+      "provider": "Chi Psi Fraternity, official national chapter directory",
+      "url": "https://chipsi.org/where-we-are/",
+      "retrieved": "2026-10-26",
+      "source_crs": "Not applicable; web page",
+      "evidence": "Current listing includes Alpha Epsilon Tau at Purdue; no address.",
+      "snapshot": "sources/chi_psi_national_chapters_current_2026-10-26.html"
+    },
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life, current IFC chapters page",
+      "url": "https://www.purdue.edu/fscl/councils/ifc/chapters.php",
+      "retrieved": "2026-10-26",
+      "source_crs": "Not applicable; web page",
+      "evidence": "Current roster lists Zeta Psi; no chapter-house address.",
+      "snapshot": "sources/purdue_ifc_current_chapters_recheck_2026-10-26.html"
+    },
+    {
+      "provider": "Indiana Geographic Information Office, Indiana Statewide 3DEP LiDAR Dates MapServer, layer 5",
+      "url": "https://gisdata.in.gov/server/rest/services/Indiana_Statewide_3DEP_Lidar_Dates/MapServer/5/query?geometry=-86.924604%2C40.434486&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": "OBJECTID 14469; tile in2018_29951885_12",
+      "source_date": "2018-04-20",
+      "retrieved": "2026-10-26",
+      "source_crs": "EPSG:4326 output; layer geometry",
+      "evidence": "Point query at Purdue FID 748 coordinate intersects 2018 tile; project year 2018 and acquisition date 2018-04-20. Avg_Field3 is a tile-average elevation and cannot be interpreted as building height.",
+      "snapshot": "sources/indiana_lidar_acquisition_fid748_2026-10-26.json",
+      "metadata_snapshot": "sources/indiana_lidar_dates_layer_metadata_2026-10-26.json"
     }
   ]
 }
