@@ -4,7 +4,7 @@ This project covers Purdue West Lafayette campus buildings and Purdue-operated r
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-## Detailed models: status and latest grader score (163 buildings)
+## Detailed models: status and latest grader score (165 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -64,6 +64,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | Finished | 8.5/10 | — |
 | Delta Sigma Phi | [massing_house_860826641_2c90f97.blend](modular/buildings/massing_house_860826641_2c90f97.blend) | Finished; FID 798 identity and wall footprint verified; no interior and roof/story details remain estimated | [8.3/10](audit/delta_sigma_phi/independent_grade_codex/result.json) | — |
 | Delta Tau Delta | [massing_delta_tau_delta_e06b0b5.blend](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Finished | [8.25/10](audit/delta_tau_delta_e06b0b5/independent_grade_r2/result.json) | — |
+| Delta Delta Delta | [massing_house_301841333_affe21e.blend](modular/buildings/massing_house_301841333_affe21e.blend) | Finished; FID 753 / Gamma Iota identity supported; height, roof and two-level interpretation remain estimated; 1200 vs. 898 Tower Dr label conflict remains | [8.3/10](audit/delta_delta_delta/independent_grade_r1/result.json) | — |
 | Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | Finished; exact FID 71 shell/placement; story count and roof dimensions remain uncertain | [8.45/10](audit/dauch_alumni_center/independent_grade_r3/result.json) | — |
 | Delta Upsilon | [massing_house_301841256_1cc7641.blend](modular/buildings/massing_house_301841256_1cc7641.blend) | Finished; exact FID 751 wall footprint; master fresh-open PASS; height/roof estimated; no interior plan found | [8.4/10](audit/delta_upsilon/independent_grade_codex/result.json) | — |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](modular/buildings/convergence_center.blend) | Needs independent grade | Not graded | Rossen |
@@ -116,6 +117,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Owen Hall | [owen_hall.blend](modular/buildings/owen_hall.blend) | Finished | [8.0/10](audit/owen_hall_independent_grade/independent_report_r3.md) | — |
 | Peirce Hall | [peirce_hall.blend](modular/buildings/peirce_hall.blend) | Finished | 8.8/10 | — |
 | Physics Building | [physics_building_phys_3bf42f3.blend](modular/buildings/physics_building_phys_3bf42f3.blend) | Finished | [8.4/10](audit/physics_building/independent_report_r2.md) | — |
+| Pi Beta Phi | [massing_house_301838781_891384f.blend](modular/buildings/massing_house_301838781_891384f.blend) | Finished; current Indiana Delta house at 1012 State St; FID 774 shell verified; roof, exact heights, floor plan and interior remain estimates | [8.5/10](audit/pi_beta_phi/independent_grade_r1/result.json) | — |
 | Potter Engineering | [potter_engineering.blend](modular/buildings/potter_engineering.blend) | Finished | [8.0/10](audit/potter_engineering_refine/INDEPENDENT_GRADE_R3.md) | — |
 | Psychological Sciences Building | [psychological_sciences.blend](modular/buildings/psychological_sciences.blend) | Finished | 9.0/10 | — |
 | Purdue Center for Regional Development (Schowe House) | [massing_purdue_center_for_regional_development_scho_a2375c9.blend](modular/buildings/massing_purdue_center_for_regional_development_scho_a2375c9.blend) | Finished | [8.5/10](audit/schowe_house/independent_grade_localized/result.json) | — |
@@ -173,9 +175,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | West Lafayette Intermediate School | [massing_west_lafayette_intermediate_school_d72f0fa.blend](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Finished; GIS shell verified; height, roof elevations, room positions, and some facade details remain estimated | [8.4/10](audit/west_lafayette_intermediate_school/independent_grade_r3/result.json) | — |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Finished; direct master link fresh-open PASS; facade proportions remain a noted improvement opportunity | [8.0/10](audit/west_lafayette_junior_senior_high_school/independent_grade/result.json) | — |
 
-## Unfinished buildings (98 total)
+## Unfinished buildings (96 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 96 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 98 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 13, Rossen 43, Kyle 22, Rohan 0, Arjav 20, Brady 0. Rossen's 43 records break down to **14 reassigned projects from Rohan, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 78 projects; 20 remain with Arjav and Brady.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 94 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 96 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 11, Rossen 43, Kyle 22, Rohan 0, Arjav 20, Brady 0. Rossen's 43 records break down to **14 reassigned projects from Rohan, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 76 projects; 20 remain with Arjav and Brady.
 
 ### New West Lafayette construction projects (2)
 
@@ -288,7 +290,7 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Phi Kappa Tau | FID 820 (historic GIS label Theta Tau); [massing_phi_kappa_tau_139b9d7](modular/buildings/massing_phi_kappa_tau_139b9d7.blend) | Independently graded 8.3/10; linked in latest master; awaiting Tobin validation; current chapter source and alumni history support 416 N Chauncey; height and roof details remain estimated | Rossen |
 | Triangle | FID 777; [massing_triangle_fraternity_8477ad9](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Independently graded 8.0/10; linked in latest master; awaiting Tobin validation; height, floor count, and facade detail remain estimated | Rossen |
 
-#### Panhellenic chapters and house coverage (16 unfinished houses; two chapters have no house)
+#### Panhellenic chapters and house coverage (14 unfinished houses; two chapters have no house)
 
 | House / building | GIS FID and asset | Work status | Assigned to |
 | --- | --- | --- | --- |
@@ -296,14 +298,12 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Kappa Delta | No reliable map FID; New asset/source mapping required | No official map feature or asset; research the chapter-house location | Rossen |
 | Alpha Gamma Delta | FID 757; [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Massing asset; verify and detail | Arjav |
 | Kappa Kappa Gamma | FID 782; [massing_house_301840871_5d1bc06](modular/buildings/massing_house_301840871_5d1bc06.blend) | Massing asset; verify and detail | Arjav |
-| Alpha Omicron Pi | FID 756; [massing_house_301841607_63d85b5](modular/buildings/massing_house_301841607_63d85b5.blend) | Massing asset; verify and detail | Tobin |
+| Alpha Omicron Pi | 242 S Grant St; [massing_house_970455277_a3fb72a](modular/buildings/massing_house_970455277_a3fb72a.blend); see [identity evidence](audit/alpha_omicron_pi/source_register.json) | R1 grade 7.6/10; revised siding, shutters and hip roof await independent R2 grade. GIS FID 756 is a separate current Phi Sigma Rho facility, despite its stale AOII label | Tobin |
 | Phi Beta Chi | No verified house asset | PHA says two chapters have no house; no dedicated physical facility verified here, so hold outside the building backlog | — |
 | Alpha Phi | FID 764; [massing_house_301841331_735e92f](modular/buildings/massing_house_301841331_735e92f.blend) | Massing asset; verify and detail | Arjav |
 | Phi Mu | FID 772; [massing_house_301836574_fff1661](modular/buildings/massing_house_301836574_fff1661.blend) | Massing asset; verify and detail | Arjav |
 | Alpha Xi Delta | FID 788; [massing_house_301841248_fe939c7](modular/buildings/massing_house_301841248_fe939c7.blend) | Massing asset; verify and detail | Arjav |
-| Phi Sigma Rho | FID 744; [massing_house_301840873_a67ad63](modular/buildings/massing_house_301840873_a67ad63.blend) | Possible spatial candidate is 22.5 m from GIS center; confirm before reuse | Rossen |
-| Pi Beta Phi | FID 774; [massing_house_301838781_891384f](modular/buildings/massing_house_301838781_891384f.blend) | Massing asset; verify and detail | Tobin |
-| Delta Delta Delta | FID 753; [massing_house_301841333_affe21e](modular/buildings/massing_house_301841333_affe21e.blend) | Massing asset; verify and detail | Tobin |
+| Phi Sigma Rho | FID 756; [massing_house_301841607_63d85b5](modular/buildings/massing_house_301841607_63d85b5.blend) | Current chapter sources support 1001 David Ross; the GIS AOII label is stale. Massing asset still needs modeling and grading; FID 744 remains a conflicting map record | Rossen |
 | Sigma Alpha | No verified house asset | Purdue College of Agriculture reports this chapter has no house; GIS FID 795 stays in the general campus building queue pending identity review | — |
 | Delta Gamma | FID 783; [massing_house_301840872_582df9d](modular/buildings/massing_house_301840872_582df9d.blend) | Massing asset; verify and detail | Arjav |
 | Delta Zeta | FID 752; [massing_house_301841601_7ae6159](modular/buildings/massing_house_301841601_7ae6159.blend) | Massing asset; verify and detail | Arjav |
@@ -696,7 +696,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 740 | Purdue West - Building B | [massing_house_283526730_8a84f50](modular/buildings/massing_house_283526730_8a84f50.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 741 | Purdue West - Building D | [massing_house_283526729_9075050](modular/buildings/massing_house_283526729_9075050.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 743 | Latino Cultural Center (former 2006–2017 site) | [massing_latino_cultural_center_5f0d139](modular/buildings/massing_latino_cultural_center_5f0d139.blend) | Historical feature only: former building demolished; 600 N Russell parcel now incorporated into Phi Gamma Delta property/parking reconfiguration. Excluded from current master; see audit/latino_cultural_center_5f0d139/identity_review.md |
-| 744 | Phi Sigma Rho | — | No direct FID crosswalk; reconcile to a master asset or create one |
+| 744 | Phi Sigma Rho (map label conflicts with current chapter address evidence) | — | Current chapter sources support FID 756 / 1001 David Ross; resolve whether FID 744 is an old or duplicate record |
 | 746 | na | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 747 | 252-254 MARSTELLAR ST | [massing_house_302407517_95bad8f](modular/buildings/massing_house_302407517_95bad8f.blend)<br>[massing_house_302407520_3c52fd4](modular/buildings/massing_house_302407520_3c52fd4.blend)<br>[massing_house_302407521_340fbd2](modular/buildings/massing_house_302407521_340fbd2.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+1 more candidates) |
 | 748 | Zeta Psi / Chi Psi address conflict | [massing_house_301841600_c1351aa](modular/buildings/massing_house_301841600_c1351aa.blend) | Spatial match at 950 David Ross; Zeta Psi and Chi Psi primary sources both claim the address; exclusive occupancy unresolved (see audit/zeta_psi/crosswalk_resolution.md) |
@@ -704,10 +704,10 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 750 | 224 SHEETZ ST | [massing_house_301831861_e126d5c](modular/buildings/massing_house_301831861_e126d5c.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 751 | Delta Upsilon | [massing_house_301841256_1cc7641](modular/buildings/massing_house_301841256_1cc7641.blend) | Exact GIS match; independently graded 8.4/10; master fresh-open PASS |
 | 752 | Delta Zeta | [massing_crosswalk_commons_7c01ecd](modular/buildings/massing_crosswalk_commons_7c01ecd.blend)<br>[massing_house_301841601_7ae6159](modular/buildings/massing_house_301841601_7ae6159.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 753 | Delta Delta Delta | [massing_house_301841333_affe21e](modular/buildings/massing_house_301841333_affe21e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 753 | Delta Delta Delta | [massing_house_301841333_affe21e](modular/buildings/massing_house_301841333_affe21e.blend) | Detailed asset; independent grade 8.3/10; master fresh-open PASS; exact wall line, levels, roof and address label retain uncertainty |
 | 754 | Chi Phi | [massing_house_301841605_8eef95d](modular/buildings/massing_house_301841605_8eef95d.blend)<br>[alpha_epsilon_pi](modular/buildings/alpha_epsilon_pi.blend) | FID 754 address/roof is used for current AEPi listing; GIS still says Chi Phi. AEPi graded 8.25/10 and integrated; prior massing superseded to prevent duplication; current occupancy conflict remains documented |
 | 755 | Evans Scholars | [massing_house_301841610_b6ad6ed](modular/buildings/massing_house_301841610_b6ad6ed.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 756 | Alpha Omicron Pi | [massing_house_301841607_63d85b5](modular/buildings/massing_house_301841607_63d85b5.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 756 | Phi Sigma Rho (current chapter evidence; GIS label Alpha Omicron Pi) | [massing_house_301841607_63d85b5](modular/buildings/massing_house_301841607_63d85b5.blend) | Current Phi Sigma Rho sources support 1001 David Ross; GIS chapter label is stale; massing awaits Rossen modeling/review |
 | 757 | Alpha Gamma Delta | [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 758 | Sigma Nu | [massing_house_301841330_f58ae87](modular/buildings/massing_house_301841330_f58ae87.blend) | Confirmed FID 758 and parcel identity; independently graded 8.0/10; awaiting master integration; GIS ring matches within 0.000038 m |
 | 759 | Gamma Phi Beta | [massing_house_301841329_bed5cb6](modular/buildings/massing_house_301841329_bed5cb6.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
@@ -725,7 +725,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 771 | Muslim Student Association | [massing_house_1089328580_bcd08c0](modular/buildings/massing_house_1089328580_bcd08c0.blend)<br>[massing_islamic_societyof_greater_lafayette_0130012](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 772 | Phi Mu | [massing_house_301836574_fff1661](modular/buildings/massing_house_301836574_fff1661.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 773 | Zeta Tau Alpha | [massing_zeta_tau_alpha_af8a443](modular/buildings/zeta_tau_alpha.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 774 | Pi Beta Phi | [massing_house_301838781_891384f](modular/buildings/massing_house_301838781_891384f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 774 | Pi Beta Phi | [massing_house_301838781_891384f](modular/buildings/massing_house_301838781_891384f.blend) | Detailed asset; independent grade 8.5/10; master fresh-open PASS; height, roof, floor plan and interior remain estimated |
 | 775 | Alpha Chi Rho | [massing_alpha_chi_rho_0cb591a](modular/buildings/massing_alpha_chi_rho_0cb591a.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 776 | Sigma Pi | [massing_house_301836568_0fbca0e](modular/buildings/massing_house_301836568_0fbca0e.blend) | Named FID 776 / 130 N Russell identity verified; R5 independently graded 8.1/10; awaiting master integration; GIS ring max error 0.000017 m; height/story remain estimates |
 | 777 | Triangle | [massing_triangle_fraternity_8477ad9](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | FID 777 / SOTRI at 103 University St; 20-point GIS shell matches within 0.000014 m; independent 2018 IndianaMap outline has 0.856 IoU; independently graded 8.0/10; awaiting master integration |

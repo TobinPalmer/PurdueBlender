@@ -1,0 +1,98 @@
+{
+  "building_id": "massing_house_301841333_affe21e",
+  "building_name": "Delta Delta Delta (Gamma Iota)",
+  "source_fid": 753,
+  "asset_path": "modular/buildings/massing_house_301841333_affe21e.blend",
+  "asset_sha256": "0890efdbbb2eff92dfbfd6a60d69a6d4006108a029e8d209ef7791b34182b376",
+  "asset_collection": "Asset_massing_house_301841333_affe21e",
+  "asset_scene": "Building_massing_house_301841333_affe21e",
+  "owner": "Tobin",
+  "retrieved": "2026-10-27",
+  "identity_evidence": {
+    "purdue_gis": {
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D753&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "snapshot": "sources/purdue_building_fid_753.geojson",
+      "fid": 753,
+      "building_name": "Delta Delta Delta",
+      "address_field": "1200 Tower Dr",
+      "source_crs": "EPSG:4326",
+      "outer_ring_vertices": 55
+    },
+    "official_chapter": {
+      "directory_url": "https://www.purdue.edu/fscl/councils/pha/chapters.php",
+      "chapter_home_url": "https://purdue.tridelta.org/our_home",
+      "snapshots": [
+        "sources/purdue_pha_chapters.html",
+        "sources/gamma_iota_our_home.html"
+      ],
+      "finding": "Purdue lists Delta Delta Delta and links the Gamma Iota chapter; the current official home page has no house address or architectural description."
+    },
+    "current_imagery": {
+      "maps_url": "https://www.google.com/maps/place/1200+Tower+Dr,+West+Lafayette,+IN+47906/@40.433603,-86.923797,19z/data=!3m1!1e3",
+      "maps_place_label": "Delta Delta Delta Sorority",
+      "maps_place_coordinate_wgs84": [
+        40.4336547,
+        -86.9237822
+      ],
+      "pano_url": "https://www.google.com/maps/@40.4333842,-86.9237953,208a,75y,2.82h,90t/data=!3m7!1e1!3m5!1s8Cx1vxoZgMx2Av3IRRSqtQ!2e0!6shttps://streetviewpixels-pa.clients6.google.com/v1/thumbnail?cb_client=maps_sv.tactile%26w=900%26h=600%26pitch=0%26panoid=8Cx1vxoZgMx2Av3IRRSqtQ%26yaw=2.8247807!7i16384!8i8192?entry=ttu",
+      "capture_label": "Apr 2026",
+      "finding": "Maps shows the Delta Delta Delta Sorority place result at the GIS address and aerial footprint. The street panorama shows a centered round portico with four columns, a two-level buff masonry facade, arched lower windows, and front stairs. The panorama viewpoint card says 898 Tower Dr; the map search/place is 1200 Tower Dr, and exact street-number reconciliation is unknown."
+    }
+  },
+  "placement": {
+    "method": "GIS FID 753 outer-ring centroid projected using repository campus approximation",
+    "origin_xy_m": [
+      -855.1682348028055,
+      694.7302276340654
+    ],
+    "source_to_maps_place_point_error_m": 0.2273,
+    "local_coordinates": true,
+    "master_integration_required": "Integrated via Placement_massing_house_301841333_affe21e; fresh-open master verification is recorded in audit/master_integration_pi_beta_phi_delta_delta_delta_2026-10-27.json."
+  },
+  "geometry": {
+    "change": "Replaced the one-object extrusion with a 55-vertex GIS-shaped two-story detailed library.",
+    "local_plan_bounds_m": [
+      [
+        -28.7499334217,
+        -15.2923298977
+      ],
+      [
+        28.7793713834,
+        15.9962835548
+      ]
+    ],
+    "estimated_height_to_ridge_m": 10.05,
+    "estimated_storeys": 2,
+    "design_features": [
+      "buff brick and pale stone courses",
+      "arched first-floor and rectangular upper-level windows",
+      "round projecting portico, four columns, upper balcony rail and fascia emblem",
+      "dark low-pitch shingle roof",
+      "central double-door entry, broad stairs and metal rails",
+      "schematic interior floors, hall, partitions, stairs and common-room tables"
+    ],
+    "footprint_check": "footprint_comparison.json",
+    "footprint_check_caveat": "The asset ring is derived from the same GIS polygon. The near-zero overlay error validates projection, local recentering, and serialization only; it is not independent proof of the correct wall line."
+  },
+  "validation": {
+    "fresh_open": "fresh_open_validation.json",
+    "fresh_open_status": "PASS",
+    "blender_version": "5.2.3",
+    "collection_object_count": 1328,
+    "mesh_object_count": 1327,
+    "linked_libraries": [],
+    "external_unpacked_images": [],
+    "preview": "delta_delta_delta_front.png"
+  },
+  "uncertainties": [
+    "GIS NUM_LEVELS reports 1 while the April 2026 street image visibly shows two occupied levels; modeled two floors are visual estimates.",
+    "No verified elevations, wall heights, floor plans, or roof survey were found; the 10.05 m ridge and internal room layout are estimates.",
+    "Google Maps panorama viewpoint card lists 898 Tower Dr while the GIS feature and map search list 1200 Tower Dr; the view visibly shows the Tri Delta facade mark and is adjacent to the mapped building, but the street-number discrepancy remains unresolved.",
+    "The facade rhythm and interior partitions are schematic approximations based on available imagery, not construction documentation."
+  ],
+  "independent_grade": {
+    "status": "PASS",
+    "score": 8.3,
+    "file": "audit/delta_delta_delta/independent_grade_r1/result.json"
+  }
+}

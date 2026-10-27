@@ -1,0 +1,109 @@
+{
+  "building_id": "massing_house_301841333_affe21e",
+  "building_name": "Delta Delta Delta (Gamma Iota)",
+  "grade": "R1",
+  "independent": true,
+  "score": 8.3,
+  "max_score": 10,
+  "pass_threshold": 8.0,
+  "pass": true,
+  "asset_sha256": "0890efdbbb2eff92dfbfd6a60d69a6d4006108a029e8d209ef7791b34182b376",
+  "checks": {
+    "sha_matches_frozen_candidate": true,
+    "fresh_open_expected_scene_and_collection": true,
+    "portable_without_linked_library_or_external_images": true,
+    "independent_gis_overlay_computed": true
+  },
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS FID 753 attributes name Delta Delta Delta at 1200 Tower Dr; Purdue's current FSCL directory links the active Gamma Iota chapter; a current map place result also identifies Delta Delta Delta at the GIS coordinate. The official chapter-home page itself provides no address or architecture. The Street View panorama is visually attributed to the same house in the evidence package, but its viewpoint card says 898 Tower Dr, leaving an unresolved address mismatch.",
+      "findings": "Identity is well supported by GIS, current chapter listing and map place result, with a small location-label uncertainty. The footprint is source-derived and is not independent confirmation that the chosen feature is the house's true structural wall line."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "The local foundation ring independently recomputed from the fresh-open asset matches the GIS polygon with IoU 0.999999965 and Hausdorff distance 0.000000885 m. The local coordinate origin derives from the GIS polygon centroid; the mapped place-point offset is recorded as 0.2273 m.",
+      "findings": "Near-perfect ring agreement is a same-source transform/serialization check because the mesh was generated from the same GIS polygon. The campus Placement marker has not yet been integrated or fresh-open checked in the master, and exact wall registration/dimensions are not independently surveyed."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": "The candidate models two occupied levels and a low, dark roof consistent with the described current Street View silhouette. The measured asset bounds reach 10.05 m in local Z.",
+      "findings": "Two floors and 10.05 m are visual estimates, not measured elevations; Purdue GIS reports NUM_LEVELS=1 and its significance is unresolved. Roof pitch and ridge height lack plans or survey evidence."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": "The render shows buff masonry, lower arched windows, upper rectangular windows, a central rounded portico with four columns, balcony rail, double doors, and broad entrance stairs. The source imagery description supports these overall features.",
+      "findings": "Facade rhythm and material blocks are simplified; no measured elevations were found. A distinctive Greek-letter/three-triangle feature is reported in the source description but does not read clearly in the supplied front render. Interior is schematic, with generic halls/partitions/stairs/tables and no verified plan."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "Independent fresh-open in Blender 5.2.3 LTS found the expected scene/collection, 1328 objects (1327 mesh objects), nine used procedural material families, no linked libraries, and no unpacked external images. The asset preserves the stable library path and records its local origin, source register, uncertainty, and fresh-open checks.",
+      "findings": "The master Placement marker and shared manifest still need root integration and fresh-open validation. Height, roof, street-number crosswalk, and room-layout uncertainties are explicitly recorded."
+    }
+  ],
+  "gis_comparison": {
+    "fid": 753,
+    "model_ring_vertices": 55,
+    "gis_ring_vertices_including_closure": 56,
+    "iou": 0.999999964552335,
+    "symmetric_hausdorff_m": 8.854665726688784e-07,
+    "centroid_delta_m": [
+      -2.2634847114411405e-08,
+      1.39123357673909e-07
+    ],
+    "caveat": "Model foundation ring was generated from this same GIS polygon; agreement verifies projection/recentering/serialization, not independent correctness of the wall line or FID identity."
+  },
+  "fresh_open": {
+    "blender_version": "5.2.3 LTS",
+    "scene": "Building_massing_house_301841333_affe21e",
+    "collection": "Asset_massing_house_301841333_affe21e",
+    "collection_object_count": 1328,
+    "mesh_object_count": 1327,
+    "evaluated_local_bounds_m": [
+      [
+        -28.879446029663086,
+        28.908884048461914
+      ],
+      [
+        -18.709999084472656,
+        16.12579345703125
+      ],
+      [
+        0.0,
+        10.050000190734863
+      ]
+    ],
+    "materials": [
+      "DeltaDeltaDelta_BlueGrayGlazing",
+      "DeltaDeltaDelta_BuffBrick",
+      "DeltaDeltaDelta_CharcoalShingle",
+      "DeltaDeltaDelta_DeepBlueDoors",
+      "DeltaDeltaDelta_InteriorWood",
+      "DeltaDeltaDelta_LightLimestone",
+      "DeltaDeltaDelta_PaintedWhite",
+      "DeltaDeltaDelta_RailingMetal",
+      "DeltaDeltaDelta_WarmInterior"
+    ],
+    "unpacked_external_images": [],
+    "linked_libraries": []
+  },
+  "findings": [
+    "The candidate meets the independent 8/10 gate for the available evidence.",
+    "Purdue GIS FID 753 and current Gamma Iota chapter identity are supported, but the 1200 Tower Dr GIS/map label versus 898 Tower Dr panorama card still needs reconciliation.",
+    "The GIS footprint comparison checks the same polygon used to construct the model, so it does not independently establish structural-wall fidelity.",
+    "Floor count, 10.05 m height, roof form/dimensions, and interior plan remain estimated; GIS NUM_LEVELS=1 conflicts with the two-level imagery interpretation.",
+    "The master Placement marker is pending root integration and has not contributed to this asset-only score beyond the small placement deduction."
+  ],
+  "render_review": "audit/delta_delta_delta/delta_delta_delta_front.png",
+  "source_register": "audit/delta_delta_delta/source_register.md"
+}

@@ -1,0 +1,102 @@
+{
+  "asset": {
+    "path": "modular/buildings/massing_house_301838781_891384f.blend",
+    "stable_id": "massing_house_301838781_891384f",
+    "scene": "Building_massing_house_301838781_891384f",
+    "collection": "Asset_massing_house_301838781_891384f",
+    "sha256": "8c1684ed6e4486fe2200af68600821c6c1f739db8939dd495ac5bdfe5b8e58c7",
+    "blender_version": "5.2.3 LTS",
+    "coordinate_frame": "local meters; master placement origin XY (-429.57778493112545, -311.88038117902056)",
+    "local_bounds_xyz_m": [
+      [
+        -12.1258611679,
+        15.9687786102
+      ],
+      [
+        -25.2996196747,
+        16.6918849945
+      ],
+      [
+        -0.0249999762,
+        8.6599998474
+      ]
+    ],
+    "counts": {
+      "objects": 698,
+      "mesh_objects": 696,
+      "vertices": 6291,
+      "polygons": 4295
+    }
+  },
+  "identity": {
+    "purdue_arcgis_fid": 774,
+    "name": "Pi Beta Phi / Indiana Delta chapter house",
+    "address": "1012 State Street, West Lafayette, Indiana",
+    "separate_fid_841_excluded": true,
+    "sources": [
+      "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "https://www.purdue.edu/fscl/councils/pha/chapters.php",
+      "https://purdue.pibetaphi.org/about",
+      "https://fliphtml5.com/ngqes/ugqj/The_Tiny_Arrow%3A_Pi_Beta_Phi_Purdue_Chapter_Spring_2026/",
+      "https://web.ics.purdue.edu/~piphi/spring04_history.pdf",
+      "https://www.google.com/maps/place/Pi+Beta+Phi/@40.4241352,-86.9186216,191a,75y,342.02h,90t/data=!3m7!1e1!3m5!1sy7STh3iQONkOklWyDYT8-w!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dy7STh3iQONkOklWyDYT8-w%26yaw%3D342.01508!7i16384!8i8192",
+      "https://www.penningtonco.com/campaigns/pi-beta-phi-purdue-university"
+    ],
+    "raw_snapshots": "audit/pi_beta_phi/sources/"
+  },
+  "footprint_validation": {
+    "method": "Compare local shell lower-ring polygon to live Purdue FID 774 GIS ring transformed with project approximate local-meter projection and official polygon centroid origin.",
+    "iou": 0.9999999753,
+    "symmetric_hausdorff_m": 9.087e-07,
+    "centroid_delta_m": [
+      2.64e-08,
+      1.166e-07
+    ],
+    "gis_footprint_xy_bounds_local_m": [
+      [
+        -11.9515,
+        15.7936
+      ],
+      [
+        -20.8982,
+        16.5197
+      ]
+    ]
+  },
+  "modeled_features": [
+    "GIS-footprint brick shell",
+    "procedural brick-course facade material",
+    "two-story street elevation",
+    "regular sash windows",
+    "white cornice/parapet",
+    "classical white portico and columns",
+    "double entry doors and transom",
+    "entry landing and stairs",
+    "roof screening and small rooftop elements",
+    "conceptual interior partitions and rooms",
+    "illustrative furnishings for documented room types"
+  ],
+  "previews": [
+    "audit/pi_beta_phi/view_front.png",
+    "audit/pi_beta_phi/view_three_quarter.png",
+    "audit/pi_beta_phi/view_interior_cutaway.png"
+  ],
+  "validation": {
+    "fresh_open_report": "audit/pi_beta_phi/fresh_open_validation.json",
+    "pass": true,
+    "external_images": 0,
+    "linked_libraries": 0
+  },
+  "limitations": [
+    "Exact measured floor plans, story heights, foundation datum, and roof construction were not found; these details are estimates.",
+    "Interior layout/furniture are illustrative and informed by chapter-house descriptions; room positions and dimensions are not documented.",
+    "GIS location conversion is approximate local-meter georeferencing, not a land survey.",
+    "FID 841 is a distinct smaller Pi Beta Phi-labeled GIS polygon; its identity was not established and it is not part of this FID 774 model."
+  ],
+  "independent_grade": {
+    "status": "PASS",
+    "score": 8.5,
+    "file": "audit/pi_beta_phi/independent_grade_r1/result.json"
+  },
+  "integration_note": "Detailed local-coordinate library integrated into purdue_campus_master.blend via Placement_massing_house_301838781_891384f; fresh-open master verification is recorded in audit/master_integration_pi_beta_phi_2026-10-27.json."
+}

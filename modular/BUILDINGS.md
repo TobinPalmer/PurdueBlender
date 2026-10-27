@@ -25,6 +25,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Animal Holding Facility | [massing_animal_holding_facility_4733f46.blend](buildings/massing_animal_holding_facility_4733f46.blend) | 1 |
 | Delta Tau Delta | [massing_delta_tau_delta_e06b0b5.blend](buildings/massing_delta_tau_delta_e06b0b5.blend) | 85 |
 | Delta Sigma Phi | [massing_house_860826641_2c90f97.blend](buildings/massing_house_860826641_2c90f97.blend) | 165 |
+| Delta Delta Delta (R1 independently graded 8.3/10; integrated) | [massing_house_301841333_affe21e.blend](buildings/massing_house_301841333_affe21e.blend) | 1328 |
 | Delta Upsilon | [massing_house_301841256_1cc7641.blend](buildings/massing_house_301841256_1cc7641.blend) | 14 |
 | Dudley Hall | [dudley_hall.blend](buildings/dudley_hall.blend) | 6 |
 | Circle K | [massing_circle_k_fa39c23.blend](buildings/massing_circle_k_fa39c23.blend) | 69 |
@@ -82,6 +83,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Niswonger Aviation Tech | [niswonger_aviation_tech.blend](buildings/niswonger_aviation_tech.blend) | 2314 |
 | Owen Hall | [owen_hall.blend](buildings/owen_hall.blend) | 958 |
 | Peirce Hall | [peirce_hall.blend](buildings/peirce_hall.blend) | 1236 |
+| Pi Beta Phi (R1 independently graded 8.5/10; integrated) | [massing_house_301838781_891384f.blend](buildings/massing_house_301838781_891384f.blend) | 698 |
 | Potter Engineering | [potter_engineering.blend](buildings/potter_engineering.blend) | 500 |
 | Psychological Sciences Building | [psychological_sciences.blend](buildings/psychological_sciences.blend) | 80 |
 | Purdue Memorial Union | [purdue_memorial_union.blend](buildings/purdue_memorial_union.blend) | 650 |
@@ -353,7 +355,9 @@ Zeta Beta Tau at FID 762 / 900 David Ross retains campus-world coordinates in th
 | Flex Lab | [flex_lab.blend](buildings/flex_lab.blend) | 407 |
 | Hansen Life Sciences | [hansen_life_sciences.blend](buildings/hansen_life_sciences.blend) | 816 |
 | Hicks Library | [hicks_library.blend](buildings/hicks_library.blend) | 343 |
+| Pi Beta Phi (R1 independently graded 8.5/10; accepted) | [massing_house_301838781_891384f.blend](buildings/massing_house_301838781_891384f.blend) | 698 |
+| Delta Delta Delta (R1 independently graded 8.3/10; accepted) | [massing_house_301841333_affe21e.blend](buildings/massing_house_301841333_affe21e.blend) | 1328 |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | 11 |
 | West Lafayette Intermediate School (R3 independently graded 8.4/10; accepted) | [massing_west_lafayette_intermediate_school_d72f0fa.blend](buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | 1862 |
 
-The fresh-open master audit confirmed one correct master reference for Dauch Alumni Center, Electrical Engineering, Frieda Parker Hall, Hansen Life Sciences, Hicks Library, and Flex Lab through their Placement markers and for West Lafayette Intermediate School through its direct link; all seven use the expected library paths and match manifest object counts and world bounds. The earlier audit also passed for Beta Theta Pi and West Lafayette Junior-Senior High School. All nine meet the grade gate: Frieda Parker Hall 8.5/10, Hicks Library 8.5/10, Flex Lab 8.4/10, Dauch 8.45/10, Electrical Engineering 8.3/10, West Lafayette Intermediate School 8.4/10, Hansen Life Sciences 8.0/10, Beta Theta Pi 8.4/10, and West Lafayette Junior-Senior High School 8.0/10. West Lafayette Intermediate School height, roof elevations, room positions, and some facade details remain estimated.
+The fresh-open master audit confirms one correct master reference for Dauch Alumni Center, Electrical Engineering, Frieda Parker Hall, Hansen Life Sciences, Hicks Library, Flex Lab, Pi Beta Phi, and Delta Delta Delta through their Placement markers, and for West Lafayette Intermediate School through its direct link. Their linked paths, collection counts, placement markers, and campus-world bounds pass fresh-open checks. Earlier audits also passed for Beta Theta Pi and West Lafayette Junior-Senior High School. All eleven meet the grade gate: Frieda Parker Hall 8.5/10, Hicks Library 8.5/10, Flex Lab 8.4/10, Dauch 8.45/10, Electrical Engineering 8.3/10, West Lafayette Intermediate School 8.4/10, Hansen Life Sciences 8.0/10, Pi Beta Phi 8.5/10, Delta Delta Delta 8.3/10, Beta Theta Pi 8.4/10, and West Lafayette Junior-Senior High School 8.0/10. West Lafayette Intermediate School height, roof elevations, room positions, and some facade details remain estimated.

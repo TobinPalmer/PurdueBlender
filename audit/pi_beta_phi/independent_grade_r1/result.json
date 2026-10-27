@@ -1,0 +1,113 @@
+{
+  "building": "Pi Beta Phi / Indiana Delta chapter house",
+  "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_house_301838781_891384f.blend",
+  "stable_id": "massing_house_301838781_891384f",
+  "grade": "R1",
+  "independent_review": true,
+  "score": 8.5,
+  "max_score": 10,
+  "pass": true,
+  "threshold": 8.0,
+  "sha256": "8c1684ed6e4486fe2200af68600821c6c1f739db8939dd495ac5bdfe5b8e58c7",
+  "expected_sha256": "8c1684ed6e4486fe2200af68600821c6c1f739db8939dd495ac5bdfe5b8e58c7",
+  "sha_match": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "GIS FID 774 names Pi Beta Phi at 1012 State St; chapter sources support Indiana Delta identity. Fresh-open shell vs GIS: IoU 0.9999999752, symmetric Hausdorff 0.000000903 m.",
+      "findings": "FID 841 is a distinct smaller mapped feature, explicitly excluded; its relationship remains unresolved."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "The GIS-derived local shell matches the source ring; the asset origin is based on the source feature center and its local bounds have plausible scale.",
+      "findings": "The local-coordinate asset has not yet been checked through the master Placement marker."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": "Two primary facade levels, small upper openings, continuous white parapet/cornice and screened flat roof are represented; total bounds height is 8.66 m.",
+      "findings": "Exact floor heights, foundation datum, roof height/construction are unsupported; the roof/attic and three interior floor plates are estimates."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": "Inspected renders show red brick, regular sash windows, white classical portico/columns, curved balcony rail, double doors/transom, address number and stairs.",
+      "findings": "Rear/side roof and terrace-like surfaces are simplified; facade details are not dimensioned; Greek-letter sign is small and low contrast."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": "Fresh-open Blender 5.2.3 LTS confirmed expected scene/collection, 698 objects, 696 meshes, eight material families, no links or external image dependencies; evidence and renders are present.",
+      "findings": "Shared manifest conversion and master placement marker still need root integration and fresh-open validation."
+    }
+  ],
+  "evidence": {
+    "fresh_open": {
+      "blender_version": "5.2.3 LTS",
+      "scene": "Building_massing_house_301838781_891384f",
+      "collection_present": true,
+      "object_count": 698,
+      "mesh_count": 696,
+      "bounds_local_m": [
+        [
+          -12.125861167907715,
+          15.968778610229492
+        ],
+        [
+          -25.299619674682617,
+          16.691884994506836
+        ],
+        [
+          -0.02499997615814209,
+          8.65999984741211
+        ]
+      ],
+      "material_count": 8,
+      "linked_libraries": [],
+      "external_file_images": []
+    },
+    "independent_gis_comparison": {
+      "gis_area_local_m2": 694.7541670493162,
+      "model_area_local_m2": 694.7541670343132,
+      "iou": 0.9999999752459705,
+      "symmetric_hausdorff_m": 9.034588937770143e-07,
+      "centroid_delta_m": [
+        2.7071973564171463e-08,
+        1.1699825151804418e-07
+      ],
+      "gis_bounds": [
+        -11.951477178311848,
+        -20.898222076478532,
+        15.793591512846547,
+        16.519699030133552
+      ],
+      "model_bounds": [
+        -11.95147705078125,
+        -20.898221969604492,
+        15.793591499328613,
+        16.519699096679688
+      ]
+    },
+    "source_register": "audit/pi_beta_phi/source_register.md",
+    "render_review": [
+      "audit/pi_beta_phi/view_front.png",
+      "audit/pi_beta_phi/view_three_quarter.png",
+      "audit/pi_beta_phi/view_interior_cutaway.png"
+    ],
+    "visual_review": "Front and three-quarter renders show a coherent GIS-shaped brick shell with a modeled entry. Interior cutaway shows floor plates, partitions and use cues, but is schematic."
+  },
+  "findings": [
+    "Passes the 8/10 building-candidate threshold.",
+    "Roof/story height and room plan remain estimates or conceptual interpretation.",
+    "Root must integrate through Placement_massing_house_301838781_891384f and verify campus-world placement.",
+    "Do not merge the separate FID 841 polygon without confirming its identity."
+  ],
+  "grader_notes": "Independent review of the asset itself; pending master placement integration is deducted rather than presumed complete."
+}
