@@ -179,7 +179,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models in progress, awaiting a grade, or awaiting master integration (46)
+### Detailed models in progress, awaiting a grade, or awaiting master integration (48)
 
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
@@ -210,6 +210,8 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Pi Kappa Alpha (Pike) | [`massing_house_301841252_e4f8f05.blend`](modular/buildings/massing_house_301841252_e4f8f05.blend) | [8.7/10](audit/massing_house_301841252_e4f8f05/independent_grade_r1/grade.json); awaiting master integration | Rossen |
 | Sigma Nu | [`massing_house_301841330_f58ae87.blend`](modular/buildings/massing_house_301841330_f58ae87.blend) | [8.0/10](audit/sigma_nu/independent_grade_r3/independent_grade_r3.json); awaiting master integration | Rossen |
 | Sigma Phi Epsilon | [`massing_house_301841250_d63b09a.blend`](modular/buildings/massing_house_301841250_d63b09a.blend) | [8.65/10](audit/sigma_phi_epsilon/independent_grade_r3/independent_grade_r3.json); awaiting master integration | Rossen |
+| Sigma Pi | [`massing_house_301836568_0fbca0e.blend`](modular/buildings/massing_house_301836568_0fbca0e.blend) | Prior candidate graded 6.5/10; revised model and evidence in progress, regrade pending | Rossen |
+| Theta Chi | [`massing_house_301841328_39f169f.blend`](modular/buildings/massing_house_301841328_39f169f.blend) | [8.5/10](audit/theta_chi/independent_grade/grade_result.json); awaiting master integration | Rossen |
 | Stone Hall (STON) | [`massing_stone_hall_ston_d3f479a.blend`](modular/buildings/massing_stone_hall_ston_d3f479a.blend) | [8.0/10](audit/massing_stone_hall_ston_d3f479a/independent_grade_r2.json); awaiting master integration | Rossen |
 | Student Health Center (PUSH) | [`massing_student_health_center_push_1200c3b.blend`](modular/buildings/massing_student_health_center_push_1200c3b.blend) | [8.2/10](audit/massing_student_health_center_push_1200c3b/independent_grade/independent_grade_r2.json); awaiting master integration | Rossen |
 | Union Club Hotel | [`massing_union_club_hotel_0d22460.blend`](modular/buildings/massing_union_club_hotel_0d22460.blend) | [8.1/10](audit/massing_union_club_hotel_0d22460/independent_grade_r2.json); awaiting master integration | Rossen |
@@ -285,9 +287,9 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Sigma Nu | FID 758; [massing_house_301841330_f58ae87](modular/buildings/massing_house_301841330_f58ae87.blend) | Independently graded 8.0/10; awaiting master integration; wall line, height and roof remain uncertain | Rossen |
 | Sigma Phi Epsilon | FID 789; [massing_house_301841250_d63b09a](modular/buildings/massing_house_301841250_d63b09a.blend) | Independently graded 8.65/10; awaiting master integration; dimensions and roof remain estimates | Rossen |
 | Sigma Pi | FID 776; [massing_house_301836568_0fbca0e](modular/buildings/massing_house_301836568_0fbca0e.blend) | Massing asset; verify and detail | Rossen |
-| Theta Chi | FID 760; [massing_house_301841328_39f169f](modular/buildings/massing_house_301841328_39f169f.blend) | Spatial candidate; verify before detailing | Rossen |
+| Theta Chi | FID 760; [massing_house_301841328_39f169f](modular/buildings/massing_house_301841328_39f169f.blend) | Independently graded 8.5/10; awaiting master integration; 8.8 m height and roof details remain estimates | Rossen |
 | Zeta Beta Tau | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Rossen |
-| Zeta Psi | FID 748; [massing_house_301841600_c1351aa](modular/buildings/massing_house_301841600_c1351aa.blend) | Spatial candidate; verify before detailing | Rossen |
+| Zeta Psi | FID 748; [massing_house_301841600_c1351aa](modular/buildings/massing_house_301841600_c1351aa.blend) | Spatial match at 950 David Ross; Zeta Psi and Chi Psi primary sources both claim the address, so exclusive occupancy is unresolved; see [crosswalk review](audit/zeta_psi/crosswalk_resolution.md) | Rossen |
 | Phi Kappa Tau | FID 856; [massing_phi_kappa_tau_139b9d7](modular/buildings/massing_phi_kappa_tau_139b9d7.blend) | Existing assignment; massing only | Rossen |
 | Pi Kappa Phi | FID 799; [massing_pi_kappa_phi_50e4645](modular/buildings/massing_pi_kappa_phi_50e4645.blend) | Existing assignment; massing only | Rossen |
 | Triangle | FID 777; [massing_triangle_fraternity_8477ad9](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Existing assignment; massing only | Rossen |
@@ -703,7 +705,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 744 | Phi Sigma Rho | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 746 | na | — | No direct FID crosswalk; reconcile to a master asset or create one |
 | 747 | 252-254 MARSTELLAR ST | [massing_house_302407517_95bad8f](modular/buildings/massing_house_302407517_95bad8f.blend)<br>[massing_house_302407520_3c52fd4](modular/buildings/massing_house_302407520_3c52fd4.blend)<br>[massing_house_302407521_340fbd2](modular/buildings/massing_house_302407521_340fbd2.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+1 more candidates) |
-| 748 | Zeta Psi | [massing_house_301841600_c1351aa](modular/buildings/massing_house_301841600_c1351aa.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 748 | Zeta Psi / Chi Psi address conflict | [massing_house_301841600_c1351aa](modular/buildings/massing_house_301841600_c1351aa.blend) | Spatial match at 950 David Ross; Zeta Psi and Chi Psi primary sources both claim the address; exclusive occupancy unresolved (see audit/zeta_psi/crosswalk_resolution.md) |
 | 749 | 818 Northwestern Avenue | [massing_house_1089875804_27ad64c](modular/buildings/massing_house_1089875804_27ad64c.blend)<br>[massing_house_1089875806_71bd68b](modular/buildings/massing_house_1089875806_71bd68b.blend)<br>[massing_house_1089875813_c6129f5](modular/buildings/massing_house_1089875813_c6129f5.blend) | Direct FID crosswalk candidate; geometry/grade still require review (+6 more candidates) |
 | 750 | 224 SHEETZ ST | [massing_house_301831861_e126d5c](modular/buildings/massing_house_301831861_e126d5c.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 751 | Delta Upsilon | [massing_house_301841256_1cc7641](modular/buildings/massing_house_301841256_1cc7641.blend) | Exact GIS match; independently graded 8.4/10; master fresh-open PASS |
@@ -715,7 +717,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 757 | Alpha Gamma Delta | [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 758 | Sigma Nu | [massing_house_301841330_f58ae87](modular/buildings/massing_house_301841330_f58ae87.blend) | Confirmed FID 758 and parcel identity; independently graded 8.0/10; awaiting master integration; GIS ring matches within 0.000038 m |
 | 759 | Gamma Phi Beta | [massing_house_301841329_bed5cb6](modular/buildings/massing_house_301841329_bed5cb6.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 760 | Theta Chi | [massing_house_301841328_39f169f](modular/buildings/massing_house_301841328_39f169f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 760 | Theta Chi | [massing_house_301841328_39f169f](modular/buildings/massing_house_301841328_39f169f.blend) | Named FID 760 / 800 David Ross identity verified; independently graded 8.5/10; awaiting master integration; source ring matches within 0.000049 m |
 | 761 | Circle Pines | [massing_house_301841609_c6c9ac4](modular/buildings/massing_house_301841609_c6c9ac4.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 762 | Phi Kappa Theta | [massing_house_301841332_9b3bd1f](modular/buildings/massing_house_301841332_9b3bd1f.blend)<br>[massing_house_301841334_fa7e5a2](modular/buildings/massing_house_301841334_fa7e5a2.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 763 | Alpha Sigma Phi | [massing_house_301841603_654031c](modular/buildings/massing_house_301841603_654031c.blend) | Integrated detailed asset; independent grade 8.2/10; master fresh-open PASS; story count/facade details remain uncertain |
@@ -731,7 +733,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 773 | Zeta Tau Alpha | [massing_zeta_tau_alpha_af8a443](modular/buildings/zeta_tau_alpha.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 774 | Pi Beta Phi | [massing_house_301838781_891384f](modular/buildings/massing_house_301838781_891384f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 775 | Alpha Chi Rho | [massing_alpha_chi_rho_0cb591a](modular/buildings/massing_alpha_chi_rho_0cb591a.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 776 | Sigma Pi | [massing_house_301836568_0fbca0e](modular/buildings/massing_house_301836568_0fbca0e.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
+| 776 | Sigma Pi | [massing_house_301836568_0fbca0e](modular/buildings/massing_house_301836568_0fbca0e.blend) | Named FID 776 / 130 N Russell identity verified; prior detailed candidate scored 6.5/10; revised candidate under review |
 | 777 | Triangle | [massing_triangle_fraternity_8477ad9](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 778 | Farmhouse | [massing_farmhouse_fraternity_purdue_chapter_0b8908b](modular/buildings/massing_farmhouse_fraternity_purdue_chapter_0b8908b.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 779 | Lds Institute of Religion | [massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | Official 14 Waldron identity and GIS wall ring verified; independently graded 8.3/10; awaiting master integration (see TODO.md); roof heights and facade stationing remain estimated |
