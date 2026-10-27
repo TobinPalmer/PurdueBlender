@@ -1,0 +1,100 @@
+{
+  "retrieval_date": "2026-10-27",
+  "question": "Current Tau Gamma / Zeta Psi address-to-footprint crosswalk and 950 David Ross occupancy conflict",
+  "official_zeta_psi": [
+    {
+      "url": "https://zetapsi.org/about/chapter-type/collegiate/page/2/",
+      "snapshot": "zeta_psi_collegiate_directory_live_2026-10-27.html",
+      "finding": "Tau Gamma is listed at Purdue; no inactive label and no house address."
+    },
+    {
+      "url": "https://zetapsi.org/2026/08/12/2026-convention-award-winners/",
+      "snapshot": "zeta_psi_2026_convention_awards_live_2026-10-27.html",
+      "finding": "Names an undergraduate award recipient as Sebastian Ramirez, Tau Gamma '28; chapter affiliation into 2026, no housing address."
+    },
+    {
+      "url": "https://zetapsi.org/2026/10/20/introducing-the-flanders-fellows-program/",
+      "snapshot": "zeta_psi_flanders_fellows_live_2026-10-27.html",
+      "finding": "Lists Dan Luby under Tau Gamma (Purdue); chapter affiliation only, no facility address."
+    },
+    {
+      "url": "https://www.instagram.com/zetapsipurdue/",
+      "snapshot": "zetapsipurdue_instagram_profile_live_2026-10-27.html",
+      "finding": "Live chapter profile bio still says 950 David Ross Rd and Est. 1968 - Rechartered 2024. The bio is not timestamped and does not resolve exclusive occupancy."
+    },
+    {
+      "url": "https://zetapsi.org/alumni/40-under-40/recipient/zach-ruyle/",
+      "snapshot": "zeta_psi_zach_ruyle_bio_live_2026-10-27.html",
+      "finding": "The official alumni bio says the chapter transitioned from its history at Grant Street to its then-current home on David Ross Road. Supports Grant Street as historical by the 2020 recognition context; it does not name a current street number."
+    },
+    {
+      "url": "https://zetapsi.org/wp-content/uploads/2023/05/ZetaPsi-Circle-FAR-5.15.23-1.pdf",
+      "snapshot": "zetapsi_tau_gamma_2023_chapter_report.pdf",
+      "finding": "On printed p. 9, Tau Gamma / Purdue is followed by 'Chapter update not available at press time.' The adjacent house-move paragraph is labeled Tau Theta / University of Ontario Institute of Technology. It is not a Tau Gamma move report."
+    }
+  ],
+  "current_purdue_and_chi_psi": [
+    {
+      "url": "https://www.purdue.edu/fscl/councils/ifc/chapters.php",
+      "snapshot": "purdue_ifc_current_chapters.html",
+      "finding": "Current Purdue IFC roster lists both Chi Psi and Zeta Psi and links Chi Psi's local Purdue site and each chapter's public Instagram profile."
+    },
+    {
+      "url": "https://purduechipsi.com/",
+      "snapshot": "purdue_chi_psi_local_site_home_2026-10-27.html",
+      "additional_snapshot": "purdue_chi_psi_local_site_bundle_2026-10-27.js",
+      "finding": "Current local site uses lodge-life framing but gives no street address; its gallery had no photos in the retained capture."
+    },
+    {
+      "url": "https://chipsi.org/wp-content/uploads/2025/07/Chi-Psi-Alumni-Newsletter-Summer-2024-1.pdf",
+      "snapshot": "chipsi_alumni_newsletter_summer_2024.pdf",
+      "finding": "First-party July 2024 newsletter names Epsilon Tau Lodge at 950 David Ross Road and announces a September 2024 opening event, with move-in planned for the coming months; it is not a later occupancy statement."
+    }
+  ],
+  "property_and_tax": [
+    {
+      "source": "Tippecanoe County parcel and assessor GIS",
+      "snapshots": [
+        "tippecanoe_parcel_at_fid748_2026-10-27.json",
+        "tippecanoe_assessor_improvement_fid748_2026-10-27.json",
+        "tippecanoe_parcel_at_237_s_grant_2026-10-26.json"
+      ],
+      "finding": "County parcel at FID 748 is 950 David Ross Rd; public fields do not identify occupancy. 237 S Grant parcel has CurImpAV=0 in the retained assessment data."
+    },
+    {
+      "source": "Purdue BuildingShapes and Indiana Building Footprints",
+      "snapshots": [
+        "purdue_gis_FID748_2026-10-27.json",
+        "purdue_gis_near_237_s_grant_2026-10-26.json",
+        "indiana_footprint_at_237_s_grant_2026-10-26.json",
+        "indiana_footprint_fid748_2026-10-27.json"
+      ],
+      "finding": "FID 748 and the 2018 footprint support one physical structure at 950 David Ross; point queries at 237 S Grant returned no Purdue BuildingShapes or Indiana footprint feature. GIS identity labels are not current occupancy proof."
+    },
+    {
+      "source": "IRS return index snapshots and raw Form 990",
+      "snapshots": [
+        "irs_990_index_2025_tmp.csv",
+        "irs_990_index_2026_tmp.csv",
+        "irs_990_index_row_351525397_2025.csv",
+        "indiana_association_zeta_psi_irs_filing_2025.xml"
+      ],
+      "finding": "Targeted EIN lookup found the 2025 index row for tax period ending 2025-05; no match appeared in the retained 2026 index. The return describes Purdue housing but has no facility address, parcel, or chapter-occupancy statement."
+    },
+    {
+      "source": "West Lafayette Building Department / Rental Housing indexed pages",
+      "urls": [
+        "https://www.westlafayette.in.gov/government/building-rental-housing",
+        "https://www.westlafayette.in.gov/government/building-rental-housing/rental-housing",
+        "https://www.westlafayette.in.gov/government/building-rental-housing/building-department-reports"
+      ],
+      "finding": "Pages describe permits, rental-registration and occupancy forms, and reports archive; exact-address searches found no matching current occupancy/permit result for 950 David Ross, 237 S Grant, Zeta Psi, or Tau Gamma. City pages were blocked from direct retrieval in the browser environment."
+    }
+  ],
+  "scope_limits": [
+    "No person was contacted.",
+    "No occupancy was inferred from the GIS label or registered-agent/mailing address alone.",
+    "No current deed-owner result or address-level rental-license result was obtained.",
+    "No alternative current Tau Gamma address with a defensible Purdue footprint was identified."
+  ]
+}

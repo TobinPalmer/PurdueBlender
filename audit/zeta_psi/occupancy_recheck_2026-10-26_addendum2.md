@@ -1,5 +1,8 @@
 # Zeta Psi / Chi Psi occupancy recheck — third pass
 
+
+> **Correction note — 2026-10-27:** Earlier wording in this audit incorrectly attributed a 2022 house move to Tau Gamma. The official May 15, 2023 *Zeta Psi Circle* report lists Tau Gamma / Purdue with “Chapter update not available at press time”; the adjacent “This year we moved our chapter house” paragraph is for Tau Theta / University of Ontario Institute of Technology. Source: `sources/zetapsi_tau_gamma_2023_chapter_report.pdf`, printed p. 9 (PDF page 10); see also `occupancy_recheck_2026-10-27_addendum10.md`. This note records the prior misreading for provenance; it must not be used as evidence.
+
 **Review date:** 2026-10-26 (America/Indiana/Indianapolis)  
 **Question:** Does current public evidence resolve who occupies the single GIS-matched building at 950 David Ross Road (Purdue GIS FID 748)?  
 **Disposition:** No. New first-party evidence confirms that Chi Psi's Purdue Alpha was classified nationally as a rental chapter for both 2024–25 and 2025–26, while the Purdue-linked Tau Gamma account currently self-lists 950 David Ross Road and Zeta Psi's housing association reported an active Purdue student-housing program for the fiscal year ending May 2025. These records support ongoing housing activity and the overlapping address claims, but do not identify the rental property, landlord, current residents, or whether the two chapters share/overlap at the site. Keep the assignment unresolved and the FID-to-address link spatial only.
@@ -24,7 +27,7 @@ The current Purdue IFC roster (retrieved 2026-10-26, saved at `sources/purdue_if
 
 Chi Psi's official July 17, 2024 newsletter (saved at `sources/chipsi_alumni_newsletter_summer_2024.pdf`) announces a new lodge, gives 950 David Ross Road, and invites alumni to its September 14 opening ceremony. Its text says the chapter expected to move into the lodge in the coming months; the source supports a planned move and lodge association at that address, but does not independently verify actual or continuing occupancy after the opening.
 
-Zeta Psi's May 15, 2023 official Tau Gamma chapter report (`sources/zetapsi_tau_gamma_2023_chapter_report.pdf`, p. 10) says it moved its chapter house “this year” without stating either address. Purdue GIS FID 748, Tippecanoe parcel GIS, and the 2018 Indiana LiDAR footprint still support that 950 David Ross Road is one physical building; those spatial records do not establish the occupants. The existing evidence and geometry calculations remain in `crosswalk_resolution.md` and `footprint_comparison.json`.
+Correction: the May 15, 2023 official report (`sources/zetapsi_tau_gamma_2023_chapter_report.pdf`, printed p. 9; PDF page 10) lists Tau Gamma / Purdue with “Chapter update not available at press time.” The nearby house-move sentence belongs to Tau Theta / Ontario Tech; it is not a Tau Gamma move report. Purdue GIS FID 748, Tippecanoe parcel GIS, and the 2018 Indiana LiDAR footprint still support that 950 David Ross Road is one physical building; those spatial records do not establish the occupants. The existing evidence and geometry calculations remain in `crosswalk_resolution.md` and `footprint_comparison.json`.
 
 ## Assessment
 

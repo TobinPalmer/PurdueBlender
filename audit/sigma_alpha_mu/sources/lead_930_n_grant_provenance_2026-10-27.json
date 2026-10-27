@@ -1,0 +1,43 @@
+{
+  "researchDate": "2026-10-27",
+  "chapterMedia": {
+    "url": "https://www.instagram.com/purdue.sammy/p/Db6zGNklUe2/",
+    "publisher": "Sigma Alpha Mu / @purdue.sammy; Purdue IFC roster links this official chapter account",
+    "visibleDate": "2026-08-11",
+    "visibleCaption": "Rush is on! Join us August 24th as we go full throttle into the fall semester!",
+    "visibleAddress": "930 N Grant St",
+    "archive": "purdue_sammy_2026-08-11_post_public_page.html"
+  },
+  "countyParcel": {
+    "provider": "Tippecanoe County public GIS",
+    "service": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/58",
+    "query": "Address LIKE '%930 N GRANT%'",
+    "outFields": "PIN,Address,ParcelID,ParcelNo",
+    "returnGeometry": true,
+    "outSR": 4326,
+    "archive": "parcels_930_n_grant_2026-10-27.json",
+    "returnedAddress": "930 N GRANT ST",
+    "pin": "164013000052",
+    "parcelNo": "79-07-18-431-002.000-026"
+  },
+  "stateFootprint": {
+    "provider": "Indiana Geographic Information Office; Hosted/Building_Footprints FeatureServer",
+    "layer": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+    "query": "esriSpatialRelIntersects with parcel envelope, outSR=4326",
+    "queriedEnvelope": {
+      "xmin": -86.910478,
+      "ymin": 40.435288,
+      "xmax": -86.909933,
+      "ymax": 40.435479,
+      "spatialReference": 4326
+    },
+    "archive": "indiana_building_footprints_930_n_grant_2026-10-27.json",
+    "layerMetadata": "indiana_building_footprints_layer_0_metadata_2026-10-27.json",
+    "returnedFeatureCount": 1,
+    "objectid": 436512,
+    "lidarYear": "2018",
+    "county": "Tippecanoe",
+    "shapeAreaSquareMeters": 341.9228728471643
+  },
+  "ownership": "County parcel layer exposes no ownership field; no legal owner/entity crosswalk established in this pass."
+}

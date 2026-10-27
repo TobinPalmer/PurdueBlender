@@ -1,5 +1,8 @@
 # Zeta Psi / Tau Gamma occupancy and footprint recheck — 2026-10-27
 
+
+> **Correction note — 2026-10-27:** Earlier wording in this audit incorrectly attributed a 2022 house move to Tau Gamma. The official May 15, 2023 *Zeta Psi Circle* report lists Tau Gamma / Purdue with “Chapter update not available at press time”; the adjacent “This year we moved our chapter house” paragraph is for Tau Theta / University of Ontario Institute of Technology. Source: `sources/zetapsi_tau_gamma_2023_chapter_report.pdf`, printed p. 9 (PDF page 10); see also `occupancy_recheck_2026-10-27_addendum10.md`. This note records the prior misreading for provenance; it must not be used as evidence.
+
 **Assignment:** Rossen. **Question:** Does current evidence resolve Tau Gamma's Purdue residence or validate FID 748 as its facility?
 
 ## Findings
@@ -8,7 +11,7 @@ The [official Zeta Psi Indiana chapter page](https://zetapsi.org/about/chapter-l
 
 The live Purdue BuildingShapes query for [FID 748](https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D748&outFields=*&returnGeometry=true&outSR=4326&f=pjson) still labels the site Zeta Psi / SOZY at 950 David Ross Road. The current county parcel query at that point still returns parcel 79-06-13-476-005.000-029 and assessable improvements. These records confirm a physical site and parcel, but they identify neither current occupant nor the structural perimeter. The matching Indiana building footprint is from 2018 and remains a historical geometry source, not current occupancy evidence.
 
-The identity conflict persists: [Chi Psi's 2024 alumni newsletter](https://chipsi.org/wp-content/uploads/2025/07/Chi-Psi-Alumni-Newsletter-Summer-2024-1.pdf) identifies the building at 950 David Ross as its new lodge, while a Zeta Psi 2023 report says Tau Gamma moved its house during 2022 without giving a destination. The live GIS name and old, undated social bio do not resolve whether Tau Gamma occupied, shared, or left this site.
+The identity conflict persists: [Chi Psi's 2024 alumni newsletter](https://chipsi.org/wp-content/uploads/2025/07/Chi-Psi-Alumni-Newsletter-Summer-2024-1.pdf) identifies the building at 950 David Ross as its new lodge, while Tau Gamma’s entry in the Zeta Psi 2023 report says “Chapter update not available at press time”; the adjacent house-move paragraph concerns Tau Theta / Ontario Tech. The live GIS name and old, undated social bio do not resolve whether Tau Gamma occupied, shared, or left this site.
 
 The undated 237 South Grant lead remains unsupported as a current building; its address-level parcel, footprint, and imagery checks are documented in [the prior occupancy recheck](occupancy_recheck_2026-10-26_addendum7.md).
 

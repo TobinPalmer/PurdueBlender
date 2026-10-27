@@ -1,8 +1,11 @@
 # Zeta Psi / Chi Psi occupancy and evidence sufficiency recheck — 2026-10-26
 
+
+> **Correction note — 2026-10-27:** Earlier wording in this audit incorrectly attributed a 2022 house move to Tau Gamma. The official May 15, 2023 *Zeta Psi Circle* report lists Tau Gamma / Purdue with “Chapter update not available at press time”; the adjacent “This year we moved our chapter house” paragraph is for Tau Theta / University of Ontario Institute of Technology. Source: `sources/zetapsi_tau_gamma_2023_chapter_report.pdf`, printed p. 9 (PDF page 10); see also `occupancy_recheck_2026-10-27_addendum10.md`. This note records the prior misreading for provenance; it must not be used as evidence.
+
 **Review date:** 2026-10-26 (America/Indiana/Indianapolis)  
 **Question:** Do current official chapter listings, current geospatial acquisition records, or other new evidence resolve exclusive occupancy at 950 David Ross Road (Purdue GIS FID 748), or justify a detailed Zeta Psi model?  
-**Disposition:** No. The current official directories list both Purdue chapters but do not provide a house address. The strongest dated address-specific source remains Chi Psi’s July 2024 announcement identifying 950 David Ross as its new lodge. Zeta Psi’s exact-address social bio has no dated update; its 2023 report says it moved during 2022 but omits the destination. The current geospatial acquisition index points to 2018 data, which is useful for plan footprint comparison but does not establish present occupancy or building height. The exclusive crosswalk and asset sufficiency remain unresolved; no model or grade is justified.
+**Disposition:** No. The current official directories list both Purdue chapters but do not provide a house address. The strongest dated address-specific source remains Chi Psi’s July 2024 announcement identifying 950 David Ross as its new lodge. Zeta Psi’s exact-address social bio has no dated update; its 2023 report says no Tau Gamma update was available (the nearby move text is for Tau Theta / Ontario Tech). The current geospatial acquisition index points to 2018 data, which is useful for plan footprint comparison but does not establish present occupancy or building height. The exclusive crosswalk and asset sufficiency remain unresolved; no model or grade is justified.
 
 ## Current organization listings
 

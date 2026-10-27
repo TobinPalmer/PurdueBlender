@@ -1,5 +1,8 @@
 # FID 748 occupancy conflict recheck — 2026-10-27
 
+
+> **Correction note — 2026-10-27:** Earlier wording in this audit incorrectly attributed a 2022 house move to Tau Gamma. The official May 15, 2023 *Zeta Psi Circle* report lists Tau Gamma / Purdue with “Chapter update not available at press time”; the adjacent “This year we moved our chapter house” paragraph is for Tau Theta / University of Ontario Institute of Technology. Source: `sources/zetapsi_tau_gamma_2023_chapter_report.pdf`, printed p. 9 (PDF page 10); see also `occupancy_recheck_2026-10-27_addendum10.md`. This note records the prior misreading for provenance; it must not be used as evidence.
+
 **Question:** Has a dated first-party Zeta Psi, Chi Psi, Purdue, property, or permit source after Chi Psi's July 2024 lodge announcement resolved who occupies the building at 950 David Ross Road or identified a different current Tau Gamma address?
 
 **Disposition:** No. FID 748 remains a useful spatial match to a real building at 950 David Ross Road, but it is not usable as a verified *current Zeta Psi facility*. No later official source found in this pass explicitly places Tau Gamma at 950, confirms that Chi Psi moved in, states that the chapters share the facility, or names a different Tau Gamma address. The new Chi Psi local website, linked from the national fraternity's current “Where We Are” page, confirms Chi Psi's active Purdue Alpha and uses the section title “Life at the Lodge,” but gives no lodge street address. It therefore maintains the housing conflict without resolving its location or exclusivity.
@@ -10,7 +13,7 @@ Chi Psi's official national directory lists Epsilon Tau (Purdue University) amon
 
 This new source is current first-party evidence that Chi Psi represents itself as an active Purdue Alpha associated with lodge life. It does **not** establish that Chi Psi currently occupies 950 David Ross. The earlier, dated Chi Psi Summer 2024 newsletter remains the only first-party source found that ties Chi Psi's Purdue Lodge to that exact address. No later Chi Psi directory, local-site page, or national property page gives a street address for Epsilon Tau.
 
-The current Zeta Psi national Indiana listing and Collegiate Archives directory still list Tau Gamma at Purdue but give no house address. Zeta Psi's 2023 chapter report said the chapter moved its house during 2022 without naming its destination; the self-reported 950 address remains undated. The latest national Zeta Psi membership/award notices confirm Purdue affiliation but say nothing about housing. These sources do not resolve whether the old 950 claim is stale, whether the two groups share a building, or whether Tau Gamma moved again.
+The current Zeta Psi national Indiana listing and Collegiate Archives directory still list Tau Gamma at Purdue but give no house address. Zeta Psi's 2023 report says Tau Gamma had no update available at press time; the nearby house-move text concerns Tau Theta / Ontario Tech; the self-reported 950 address remains undated. The latest national Zeta Psi membership/award notices confirm Purdue affiliation but say nothing about housing. These sources do not resolve whether the old 950 claim is stale, whether the two groups share a building, or whether Tau Gamma moved at all; the 2023 report provides no evidence of a move.
 
 ## Current property, GIS, and permit checks
 
