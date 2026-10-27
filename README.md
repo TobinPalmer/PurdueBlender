@@ -228,7 +228,7 @@ Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.j
 
 ## Unfinished buildings (38 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 36 current map projects below plus two newer West Lafayette construction projects make 38 unfinished projects. Open assignment records: Tobin 0, Rossen 8, Kyle 10, Rohan 0, Arjav 20, Brady 0. Seven of the 14 former Rohan projects were assigned to Tobin and seven to Rossen; four of Tobin’s and all seven of Rossen’s former Rohan projects remain open after Brees, Felix Haas Hall, and Heine Pharmacy were completed. There are no buildings currently assigned to Tobin or Brady. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, Heine Pharmacy, Kappa Alpha Theta, Convergence Center, Gamma Phi Beta, Alpha Chi Omega, Chi Psi, Delta Chi, Chauncey Cooperative, Kappa Delta, Maclure Cooperative, Phi Kappa Psi, and Gemini Cooperative are synchronized to the master and removed from the open queue. Rossen’s eight remaining records comprise five buildings and three unresolved facility-research leads; the leads are not confirmed buildings. The Rossen and Kyle queues now contain 18 projects; 20 remain with Arjav.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 36 current map projects below plus two newer West Lafayette construction projects make 38 unfinished projects. Open assignment records are split among three contributors: Tobin 19, Rossen 9, and Kyle 10. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, Heine Pharmacy, Kappa Alpha Theta, Convergence Center, Gamma Phi Beta, Alpha Chi Omega, Chi Psi, Delta Chi, Chauncey Cooperative, Kappa Delta, Maclure Cooperative, Phi Kappa Psi, and Gemini Cooperative are synchronized to the master and removed from the open queue. All 38 unfinished projects are assigned to Tobin, Rossen, or Kyle.
 
 ### New West Lafayette construction projects (2)
 
@@ -259,18 +259,18 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | provenance apartments 002 | [`massing_provenance_apartments_002_a9a7f4a.blend`](modular/buildings/massing_provenance_apartments_002_a9a7f4a.blend) | Kyle |
 | provenance apartments 003 | [`massing_provenance_apartments_003_682c8e8.blend`](modular/buildings/massing_provenance_apartments_003_682c8e8.blend) | Kyle |
 | provenance apartments 004 | [`massing_provenance_apartments_004_1bc10e3.blend`](modular/buildings/massing_provenance_apartments_004_1bc10e3.blend) | Kyle |
-| riverside covenannt church | [`massing_riverside_covenannt_church_3a60684.blend`](modular/buildings/massing_riverside_covenannt_church_3a60684.blend) | Arjav |
-| schleman hall schm | [`massing_schleman_hall_schm_ad4b05b.blend`](modular/buildings/massing_schleman_hall_schm_ad4b05b.blend) | Arjav |
-| shealy frances m residence hall | [`massing_shealy_frances_m_residence_hall_a210e50.blend`](modular/buildings/massing_shealy_frances_m_residence_hall_a210e50.blend) | Arjav |
-| shreve hall | [`massing_shreve_hall_06d270a.blend`](modular/buildings/massing_shreve_hall_06d270a.blend) | Arjav |
-| slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Arjav |
-| smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
+| riverside covenannt church | [`massing_riverside_covenannt_church_3a60684.blend`](modular/buildings/massing_riverside_covenannt_church_3a60684.blend) | Tobin |
+| schleman hall schm | [`massing_schleman_hall_schm_ad4b05b.blend`](modular/buildings/massing_schleman_hall_schm_ad4b05b.blend) | Tobin |
+| shealy frances m residence hall | [`massing_shealy_frances_m_residence_hall_a210e50.blend`](modular/buildings/massing_shealy_frances_m_residence_hall_a210e50.blend) | Tobin |
+| shreve hall | [`massing_shreve_hall_06d270a.blend`](modular/buildings/massing_shreve_hall_06d270a.blend) | Tobin |
+| slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Tobin |
+| smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Tobin |
 
 ### Fraternity, sorority, and cooperative facilities
 
 The unfinished fraternity table below lists three open cases, all assigned to Rossen. Purdue's active Phi Kappa Theta colony has no independently verified current facility address or distinct campus-map footprint; the only GIS match, FID 762 at 900 David Ross, is already modeled once as the current Zeta Beta Tau facility. Keep the identity question documented in the [Phi Kappa Theta facility review](audit/phi_kappa_theta/coverage_disposition_2026-10-27.md), outside the physical-building queue, unless a current source verifies a separate property. Passing fraternity models synchronized to the master are listed in the finished table above. The legacy Kappa Sigma house is independently graded 8.5/10 and appears in the finished table above. Eighteen of the current 36 IFC-listed organizations have finished entries above: Acacia, Alpha Chi Rho, Alpha Epsilon Pi, Alpha Gamma Rho, Alpha Kappa Lambda, Alpha Sigma Phi, Alpha Tau Omega, Beta Sigma Psi, Beta Upsilon Chi (formerly Fairway Cooperative), Chi Psi, Delta Chi, Delta Sigma Phi, Delta Tau Delta, Delta Upsilon, FarmHouse, Kappa Delta Rho, Phi Gamma Delta, and Phi Kappa Sigma. Chi Psi's Lodge model is source-backed, but its exclusive current occupancy at 950 David Ross is unresolved against Zeta Psi's conflicting claim. Delta Chi's current 501 N Russell address is supported by chapter sources, while a 2024 city record names ATO at that address and the transition timing remains unclear. Rows without a confirmed campus-map match remain facility-research work; do not invent a house location from organization membership alone.
 
-Across the detailed-model and fraternity tables, Rossen has eight open assignment records: five buildings and three unresolved facility-research leads. Seven of the 14 former Rohan projects were assigned to Tobin and seven to Rossen; four Tobin-assigned and all seven Rossen-assigned projects remain open after Brees, Felix Haas Hall, and Heine Pharmacy were completed. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, and Heine Pharmacy are integrated and fresh-open verified. The three research leads are Psi Upsilon, Sigma Alpha Mu, and Zeta Psi. Sigma Alpha Mu has credible chapter-house lease evidence, but 930 N Grant remains a plausible address candidate and its provisional model scored 6/10, so it is not accepted. Zeta Psi’s earlier supposed 2023 house-move evidence was a misattribution to Tau Theta at Ontario Tech; the current conflict over 950 David Ross remains unresolved. See [the latest master integration audit](audit/rossen_master_integration_audit_2026-10-26.md) and the building-specific research records.
+Across the open project tables, assignments are Tobin 19, Rossen 9, and Kyle 10. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, and Heine Pharmacy are integrated and fresh-open verified. The three unresolved fraternity research leads are Psi Upsilon, Sigma Alpha Mu, and Zeta Psi. Sigma Alpha Mu has credible chapter-house lease evidence, but 930 N Grant remains a plausible address candidate and its provisional model scored 6/10, so it is not accepted. Zeta Psi’s earlier supposed 2023 house-move evidence was a misattribution to Tau Theta at Ontario Tech; the current conflict over 950 David Ross remains unresolved. See [the latest master integration audit](audit/rossen_master_integration_audit_2026-10-26.md) and the building-specific research records.
 
 Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/councils/ifc/chapters.php), [Panhellenic](https://www.purdue.edu/fscl/councils/pha/chapters.php), [MGC](https://www.purdue.edu/fscl/councils/mgc/chapters.php), [NPHC](https://www.purdue.edu/fscl/councils/nphc/chapters.php), and [cooperative-house](https://www.purdue.edu/fscl/councils/cooperatives/houses.php) lists. Purdue describes FSCL as five councils with 90 organizations; the model inventory tracks physical facilities rather than treating each organization as a separate building ([FSCL overview](https://www.purdue.edu/vpsl/news/featured-stories/2026_0105-fscl-150-recap.php)). Add any MGC or NPHC facility if a dedicated physical house is verified. A spatial candidate is not treated as a confirmed match until its footprint is checked.
 
@@ -286,29 +286,29 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 
 | House / building | GIS FID and asset | Work status | Assigned to |
 | --- | --- | --- | --- |
-| Alpha Gamma Delta | FID 757; [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Massing asset; verify and detail | Arjav |
-| Kappa Kappa Gamma | FID 782; [massing_house_301840871_5d1bc06](modular/buildings/massing_house_301840871_5d1bc06.blend) | Massing asset; verify and detail | Arjav |
+| Alpha Gamma Delta | FID 757; [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Massing asset; verify and detail | Tobin |
+| Kappa Kappa Gamma | FID 782; [massing_house_301840871_5d1bc06](modular/buildings/massing_house_301840871_5d1bc06.blend) | Massing asset; verify and detail | Tobin |
 | Phi Beta Chi | No verified house asset | PHA says two chapters have no house; no dedicated physical facility verified here, so hold outside the building backlog | — |
-| Alpha Phi | FID 764; [massing_house_301841331_735e92f](modular/buildings/massing_house_301841331_735e92f.blend) | Massing asset; verify and detail | Arjav |
-| Phi Mu | FID 772; [massing_house_301836574_fff1661](modular/buildings/massing_house_301836574_fff1661.blend) | Massing asset; verify and detail | Arjav |
-| Alpha Xi Delta | FID 788; [massing_house_301841248_fe939c7](modular/buildings/massing_house_301841248_fe939c7.blend) | Massing asset; verify and detail | Arjav |
+| Alpha Phi | FID 764; [massing_house_301841331_735e92f](modular/buildings/massing_house_301841331_735e92f.blend) | Massing asset; verify and detail | Tobin |
+| Phi Mu | FID 772; [massing_house_301836574_fff1661](modular/buildings/massing_house_301836574_fff1661.blend) | Massing asset; verify and detail | Tobin |
+| Alpha Xi Delta | FID 788; [massing_house_301841248_fe939c7](modular/buildings/massing_house_301841248_fe939c7.blend) | Massing asset; verify and detail | Tobin |
 | Phi Sigma Rho | FID 756; [massing_house_301841607_63d85b5](modular/buildings/massing_house_301841607_63d85b5.blend) | Current chapter sources support 1001 David Ross; the GIS AOII label is stale. Massing asset still needs modeling and grading; FID 744 remains a conflicting map record | Rossen |
 | Sigma Alpha | No verified house asset | Purdue College of Agriculture reports this chapter has no house; GIS FID 795 stays in the general campus building queue pending identity review | — |
-| Delta Gamma | FID 783; [massing_house_301840872_582df9d](modular/buildings/massing_house_301840872_582df9d.blend) | Massing asset; verify and detail | Arjav |
-| Delta Zeta | FID 752; [massing_house_301841601_7ae6159](modular/buildings/massing_house_301841601_7ae6159.blend) | Massing asset; verify and detail | Arjav |
-| Sigma Kappa | FID 780; [massing_house_301840869_1b80ace](modular/buildings/massing_house_301840869_1b80ace.blend) | Massing asset; verify and detail | Arjav |
+| Delta Gamma | FID 783; [massing_house_301840872_582df9d](modular/buildings/massing_house_301840872_582df9d.blend) | Massing asset; verify and detail | Tobin |
+| Delta Zeta | FID 752; [massing_house_301841601_7ae6159](modular/buildings/massing_house_301841601_7ae6159.blend) | Massing asset; verify and detail | Tobin |
+| Sigma Kappa | FID 780; [massing_house_301840869_1b80ace](modular/buildings/massing_house_301840869_1b80ace.blend) | Massing asset; verify and detail | Tobin |
 
 #### Cooperative houses (7 unfinished)
 
 | House / building | GIS FID and asset | Work status | Assigned to |
 | --- | --- | --- | --- |
 | Ann Tweedale | FID 824; New asset/source mapping required | No nearby reliable asset match; build from official GIS reference | Rossen |
-| Circle Pines | FID 761; [massing_house_301841609_c6c9ac4](modular/buildings/massing_house_301841609_c6c9ac4.blend) | Massing asset; verify and detail | Arjav |
-| Devonshire | FID 405; New asset/source mapping required | No reliable asset match; research current house location | Arjav |
-| Glenwood | FID 794; [massing_house_301841249_f827941](modular/buildings/massing_house_301841249_f827941.blend) | Massing asset; verify and detail | Arjav |
-| Marwood | FID 827; New asset/source mapping required | No nearby reliable asset match; build from official GIS reference | Arjav |
-| Stewart | FID 802; [massing_house_1089875810_8c9b95d](modular/buildings/massing_house_1089875810_8c9b95d.blend) | Massing asset; verify and detail | Arjav |
-| Shoemaker | FID 800; [massing_shoemaker_cooperative_2159ea4](modular/buildings/massing_shoemaker_cooperative_2159ea4.blend) | Existing assignment; massing only | Arjav |
+| Circle Pines | FID 761; [massing_house_301841609_c6c9ac4](modular/buildings/massing_house_301841609_c6c9ac4.blend) | Massing asset; verify and detail | Tobin |
+| Devonshire | FID 405; New asset/source mapping required | No reliable asset match; research current house location | Rossen |
+| Glenwood | FID 794; [massing_house_301841249_f827941](modular/buildings/massing_house_301841249_f827941.blend) | Massing asset; verify and detail | Tobin |
+| Marwood | FID 827; New asset/source mapping required | No nearby reliable asset match; build from official GIS reference | Tobin |
+| Stewart | FID 802; [massing_house_1089875810_8c9b95d](modular/buildings/massing_house_1089875810_8c9b95d.blend) | Massing asset; verify and detail | Tobin |
+| Shoemaker | FID 800; [massing_shoemaker_cooperative_2159ea4](modular/buildings/massing_shoemaker_cooperative_2159ea4.blend) | Existing assignment; massing only | Tobin |
 
 ### Complete official campus-map reference inventory (508 records)
 
