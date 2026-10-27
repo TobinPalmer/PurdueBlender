@@ -232,14 +232,12 @@ These projects are absent from the modeled-asset inventory and need current plan
 
 
 | Kappa Delta Rho | [massing_house_1089876362_14ecd2c.blend](modular/buildings/massing_house_1089876362_14ecd2c.blend) | [7.9/10](audit/kappa_delta_rho/independent_grade_r2/grade_report.md), below 8.0; remediation and independent rerate required | Tobin |
-### Buildings that still have only massing models (21)
+### Buildings that still have only massing models (18)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
 | Building | Current massing asset | Assigned to |
 | --- | --- | --- |
-| lambertus | [`lambertus_hall.blend`](modular/buildings/lambertus_hall.blend) | Tobin |
-| latino cultural center | [`massing_latino_cultural_center_5f0d139.blend`](modular/buildings/massing_latino_cultural_center_5f0d139.blend) | Tobin |
 | marstellar | [`massing_marstellar_0c2ea90.blend`](modular/buildings/marstellar_0c2ea90.blend) | Kyle |
 | meredith hall south | [`massing_meredith_hall_south_ffbc444.blend`](modular/buildings/massing_meredith_hall_south_ffbc444.blend) | Kyle |
 | northwestern parking garage | [`massing_northwestern_parking_garage_979f1a2.blend`](modular/buildings/massing_northwestern_parking_garage_979f1a2.blend) | Kyle |
@@ -248,7 +246,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | provenance apartments 002 | [`massing_provenance_apartments_002_a9a7f4a.blend`](modular/buildings/massing_provenance_apartments_002_a9a7f4a.blend) | Kyle |
 | provenance apartments 003 | [`massing_provenance_apartments_003_682c8e8.blend`](modular/buildings/massing_provenance_apartments_003_682c8e8.blend) | Kyle |
 | provenance apartments 004 | [`massing_provenance_apartments_004_1bc10e3.blend`](modular/buildings/massing_provenance_apartments_004_1bc10e3.blend) | Kyle |
-| ralph bettye bailey hall | [`massing_ralph_bettye_bailey_hall_406c4db.blend`](modular/buildings/massing_ralph_bettye_bailey_hall_406c4db.blend) | Tobin |
 | riverside covenannt church | [`massing_riverside_covenannt_church_3a60684.blend`](modular/buildings/massing_riverside_covenannt_church_3a60684.blend) | Arjav |
 | schleman hall schm | [`massing_schleman_hall_schm_ad4b05b.blend`](modular/buildings/massing_schleman_hall_schm_ad4b05b.blend) | Arjav |
 | shealy frances m residence hall | [`massing_shealy_frances_m_residence_hall_a210e50.blend`](modular/buildings/massing_shealy_frances_m_residence_hall_a210e50.blend) | Arjav |
