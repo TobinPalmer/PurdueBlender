@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="re:Members">
+  <title>
+Contact Form | Indiana Zeta | Phi Kappa Theta Fraternity
+  </title>
+
+  <link rel="stylesheet" href="/assets/css/app.css" />
+  <script defer type="text/javascript" src="/assets/js/app.js"></script>
+</head>
+
+  <body>
+    <main role="main" class="container">
+<section class="section">
+
+  <div class="columns is-centered">
+    <div class="column is-half">
+
+      <section class="hero is-small is-primary" style="background-color: #75140c;">
+        <div class="hero-body">
+          <p class="title">
+            Contact Indiana Zeta
+          </p>
+        </div>
+      </section>
+
+      <section>
+
+<form action="/contact_form" method="post"><input name="_csrf_token" type="hidden" hidden value="NB4HZyMyNXpMJgY4TmkVAXBsFBdlJxlduVK8hjxKzvjKz6VQFUxN0a-i">
+          <fieldset>
+<script src="https://www.google.com/recaptcha/api.js?hl=" async defer></script>
+
+
+<script type="text/javascript">
+  var form = null;
+
+  function onSubmit(event) {
+    event.preventDefault();
+
+    form = this;
+
+    var recaptchaObject = this.querySelector('div[class="g-recaptcha"]');
+
+    if (recaptchaObject) {
+      grecaptcha.execute();
+    } else {
+      this.submit();
+    }
+  }
+
+  function recaptchaCallback() {
+    form.submit();
+  }
+
+  var forms = document.querySelectorAll("form");
+
+  for (var i = 0; i < forms.length; i++) {
+    forms[i].addEventListener('submit', onSubmit);
+  };
+</script>
+
+
+<div class="g-recaptcha"
+    data-sitekey="6Ld3vp0bAAAAAOPpaNxgVF6K62w5rhEu-LkqEnpm"
+    data-theme=""
+    data-type=""
+    data-tabindex=""
+    data-size="invisible"
+    data-badge=""
+    data-callback="recaptchaCallback">
+</div>
+
+
+
+            <div class="field">
+<label class="label" for="contact_form_sender_name">Your Name</label>
+              <div class="control">
+<input class="input" id="contact_form_sender_name" name="contact_form[sender_name]" type="text">
+              </div>
+
+            </div>
+
+            <div class="field">
+<label class="label" for="contact_form_sender_email">Your Email</label>
+              <div class="control">
+<input class="input" id="contact_form_sender_email" name="contact_form[sender_email]" type="text">
+              </div>
+
+            </div>
+
+            <div class="field">
+<label class="label" for="contact_form_message">Your Message</label>
+              <div class="control">
+<textarea class="textarea" id="contact_form_message" name="contact_form[message]" rows="3">
+</textarea>
+              </div>
+
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <div class="buttons is-right">
+<button class="button is-link is-medium" style="background-color: #75140c" type="submit">Submit</button>
+                </div>
+              </div>
+            </div>
+
+          </fieldset>
+</form>
+      </section>
+
+    </div>
+  </div>
+
+</section>
+
+    </main>
+  </body>
+
+</html>

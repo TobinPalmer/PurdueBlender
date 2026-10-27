@@ -1,0 +1,20 @@
+# Phi Kappa Theta facility queue disposition (2026-10-27)
+
+## Decision
+
+Close the Tobin-assigned **building-modeling** queue item for Phi Kappa Theta as **no separate physical building identified**. Keep the current-occupancy identity question documented, but outside the physical-building backlog. Do not create a second asset for FID 762.
+
+This is a bounded project disposition, not a claim that the colony cannot rent or use a facility. The available records do not establish a current Phi Kappa Theta property or a distinct roof/footprint to model. FID 762 at 900 David Ross is one GIS building and is already represented in the master as the current Zeta Beta Tau facility; its detailed asset passed an independent 8.5/10 grade and fresh-open master verification. A second model would duplicate the only mapped structure.
+
+## Evidence reviewed
+
+- Purdue BoilerLink lists Phi Kappa Theta as active but publishes no address in its public contact fields. The chapter's current Purdue and national pages provide contact/recruitment information and no house address. Captures are in `sources/boilerlink_2026-10-27.html`, `sources/phikapp_2026-10-27.html`, and `sources/phikapp_about_2026-10-27.html`.
+- Purdue GIS has one organization-name match: FID 762 at 900 David Ross Rd, historically labeled Phi Kappa Theta. Purdue's 2007 investigation confirms the historic association. The source snapshots and query details are in `sources/purdue_gis_phikappa_theta_query_2026-10-27.json` and `sources/purdue_2007_investigation_pdf.pdf`.
+- Current ZBT chapter contact and event pages list 900 David Ross, and a 2017 national chapter-house photo and 2018 Purdue Exponent listing corroborate ZBT there. The single FID 762 asset is modeled as ZBT and is graded 8.5/10; see [`../zeta_beta_tau/crosswalk_resolution.md`](../zeta_beta_tau/crosswalk_resolution.md), [`../zeta_beta_tau/independent_grade/grade_result.json`](../zeta_beta_tau/independent_grade/grade_result.json), and README's FID 762 inventory row.
+- A WhereOrg commercial listing, crawled roughly five months before this review, also repeats 900 David Ross for Phi Kappa Theta and names Sam Brooks. Its provenance and verification date are unknown, and it conflicts with the current ZBT evidence. This remains an identity lead, not proof of Phi Kappa Theta occupancy; details are in [`crosswalk_followup_2026-10-27.md`](crosswalk_followup_2026-10-27.md).
+- The IRS-derived FY2025 Form 990 profile for the Indiana Zeta Alumni title-holding corporation reports $1,616,533 in assets, including $1,612,755 in publicly traded securities, $3,778 in cash/savings, no net rental income, and no separately reported land/buildings. Its Chicago principal address does not identify a Purdue property. The saved Cause IQ profile snapshot is [`sources/causeiq_profile_2026-10-27.html`](sources/causeiq_profile_2026-10-27.html); the public filing index is <https://www.causeiq.com/organizations/phi-kappa-theta-fraternity-indiana-zeta-alumni,351095809/>. This supports that the alumni corporation's current filing does not identify a local real-estate asset; it does not rule out a private lease, a separately held property, or a change after the fiscal-year close.
+- A September 2026 GreekRank user review says the chapter has no house. Treat this as anecdotal corroboration only, not as a primary occupancy source: <https://www.greekrank.net/uni/48/fraternity/Phi-Kappa-Theta-Phi-Kaps/79/rating/>.
+
+## Scope and reopen condition
+
+No separate candidate FID, property, coordinates, or footprint is verified. No Phi Kappa Theta model was built or graded because there is no distinct building asset to evaluate. Reopen the physical-building task if a current chapter, FSCL, property, or dated occupancy source identifies a different address/parcel, or if primary evidence confirms current Phi Kappa Theta use of FID 762 and changes the building-identity crosswalk. If the latter occurs, update the existing single physical asset's organization attribution; do not create a duplicate geometry.
