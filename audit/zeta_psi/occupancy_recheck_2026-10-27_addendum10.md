@@ -14,7 +14,7 @@
 
 The official May 15, 2023 *Zeta Psi Circle* chapter report has been misattributed in earlier audit notes. On printed page 9, Tau Gamma's entry (Purdue; membership `M 6`, initiates `I N/A`) says **“Chapter update not available at press time.”** The nearby paragraph saying “This year we moved our chapter house and had a fresh start” is explicitly part of the **Tau Theta Chapter, University of Ontario Institute of Technology** update, not Tau Gamma. The raw official PDF is `sources/zetapsi_tau_gamma_2023_chapter_report.pdf`; the official URL is [Zeta Psi Circle, May 15, 2023](https://zetapsi.org/wp-content/uploads/2023/05/ZetaPsi-Circle-FAR-5.15.23-1.pdf).
 
-Therefore this report provides no evidence that Tau Gamma moved in 2022/2023. Earlier audit statements attributing that move to Tau Gamma should be corrected by the coordinator when updating the relevant crosswalk/feasibility summaries. This correction removes one unsupported reason to suspect that Tau Gamma's address at 950 is stale; it does not resolve Chi Psi's conflicting address-specific Lodge announcement.
+Therefore this report provides no evidence that Tau Gamma moved in 2022/2023. The affected crosswalk, feasibility, source-register, and occupancy summaries have been corrected, with dated notes preserving the prior misreading for provenance. This correction removes one unsupported reason to suspect that Tau Gamma's address at 950 is stale; it does not resolve Chi Psi's conflicting address-specific Lodge announcement.
 
 ## Alternatives and property crosswalk
 
