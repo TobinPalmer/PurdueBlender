@@ -1,0 +1,112 @@
+{
+  "score": 6.0,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "points": 1.2,
+      "max_points": 2,
+      "assessment": "Partial: a dated chapter social post associates Sigma Alpha Mu with 930 N Grant, and county parcel/state footprint data identify a plausible residential building at that address. The post is an event location, not an explicit house/property crosswalk; the latest facility recheck says property identity is not established."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 1.2,
+      "max_points": 2,
+      "assessment": "Footprint orientation and scale agree closely with the official ring (max bidirectional vertex error 0.000000 m). Geometry is centroid-local around (0,0), but there is no matching manifest entry or collection-instance placement, so campus position is not registered."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.0,
+      "max_points": 2,
+      "assessment": "The 2018 photo supports a low, one-story-looking house, dark pitched roof, and chimney; the orthophoto supports a broad roof plan. Eave/ridge values are estimates, listing floor counts conflict, and the roof simplifies the stepped footprint."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 1.2,
+      "max_points": 2,
+      "assessment": "Light siding, red-brown shutters, front entry, pitched roof, and chimney are visible in the listing photo and represented. Window count/spacing and entry surround are estimated; the available photo does not establish attached garage door placement."
+    },
+    {
+      "criterion": "Modular export, portability, and evidence completeness",
+      "points": 1.4,
+      "max_points": 2,
+      "assessment": "The exact asset reopens with the expected named collection and scene (62 objects), previews and source/evidence records; inspection found no collection instance, external libraries, or images. Candidate is absent from modular/manifest.json, so it is not registered for campus integration; source records retain identity/area conflicts."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "modular/buildings/massing_sigma_alpha_mu_930_n_grant.blend",
+      "observation": "SHA-256 B59AB4D2A6B9E33C4F514CB4AE62BCF840AEB1BFA58D6C50D6F0EB3ACF660447; reopened read-only in Blender 5.2.3; scene Building_massing_sigma_alpha_mu_930_n_grant, collection Asset_massing_sigma_alpha_mu_930_n_grant, 62 objects."
+    },
+    {
+      "path": "audit/sigma_alpha_mu/sources/indiana_building_footprints_930_n_grant_2026-10-27.json",
+      "observation": "Indiana GI Office feature 436512, 2018 LiDAR, EPSG:4326. Independent projection and bidirectional nearest-vertex check against the saved wall base gives 0.000000 m max error; source bbox [14.193478662688108, 20.70873792134762] m; ring-derived area 197.78 m2."
+    },
+    {
+      "path": "audit/sigma_alpha_mu/sources/parcels_930_n_grant_2026-10-27.json",
+      "observation": "County GIS returns 930 N GRANT ST; parcel response has no ownership or occupant crosswalk."
+    },
+    {
+      "path": "audit/sigma_alpha_mu/sources/lead_930_n_grant_provenance_2026-10-27.json",
+      "observation": "Dated public chapter post visibly gives 930 N Grant as event location; it supports activity at the address, not explicitly a chapter-house property identity."
+    },
+    {
+      "path": "audit/sigma_alpha_mu/sources/tippecanoe_2018_orthophoto_930_n_grant.jpg and audit/sigma_alpha_mu/sources/redfin_2018_listing_exterior_930_n_grant.jpg",
+      "observation": "Direct visual review: orthophoto roof partly obscured by trees; listing photo shows a low light-sided house with dark pitched roof, shutters, entry, chimney. No exact heights or all elevations."
+    },
+    {
+      "path": "audit/sigma_alpha_mu/preview.png and audit/sigma_alpha_mu/roof_plan_view.png",
+      "observation": "Current previews show a coherent low massing model and simplified gable roof over stepped outline; no campus/site context."
+    },
+    {
+      "path": "modular/manifest.json",
+      "observation": "No stable-ID entry found among 1983 entries; placement/integration is absent."
+    },
+    {
+      "path": "audit/sigma_alpha_mu/current_facility_recheck_2026-10-27.md and audit/sigma_alpha_mu/model_evidence.md",
+      "observation": "Reviewed both recheck and model evidence; recheck says exact property identity remains unresolved, while model evidence uses a chapter event location."
+    }
+  ],
+  "findings": [
+    "Score is below the 8/10 passing threshold; deductions reflect incomplete property identity, unregistered campus placement, and estimated height/roof/facade details.",
+    "The state footprint does not establish Sigma Alpha Mu occupancy by itself. Chapter post provides an address association as an event location; current facility recheck says no property crosswalk is established.",
+    "The GIS SHAPE__Area field (341.92 m2) conflicts with area computed from returned ring (197.78 m2); the model follows ring geometry.",
+    "Model geometry is centroid-local, but there is no manifest entry/instance placement. Campus position is not represented in the modular integration system.",
+    "The 2018 exterior image is a single secondary-source view; heights, story count, window rhythm, garage-door location, and exact roof form remain estimates. Listing sources conflict on stories."
+  ],
+  "method": {
+    "evaluator": "independent_grader_codex_r1.evaluate",
+    "asset_sha256": "B59AB4D2A6B9E33C4F514CB4AE62BCF840AEB1BFA58D6C50D6F0EB3ACF660447",
+    "asset_checksum_matches_builder": true,
+    "blender_inspection": "Saved .blend opened read-only in Blender 5.2.3; scene, export collection and evaluated mesh vertices inspected. Source footprint projected independently using repository tangent approximation and compared by bidirectional nearest-vertex error. Visual review used current previews and raw image snapshots.",
+    "manifest_entry_found": false,
+    "footprint_metrics": {
+      "source_bbox_m": [
+        14.193478662688108,
+        20.70873792134762
+      ],
+      "wall_bbox_m": [
+        14.19347858428955,
+        20.708738327026367
+      ],
+      "max_bidirectional_vertex_error_m": 4.859692141334226e-07,
+      "computed_source_area_m2": 197.77833373208705,
+      "service_area_attribute_m2": 341.9228728471643
+    },
+    "roof_peak_m": 6.05,
+    "external_libraries": [],
+    "images": [
+      {
+        "name": "Render Result",
+        "filepath": "",
+        "packed": false
+      },
+      {
+        "name": "Viewer Node",
+        "filepath": "",
+        "packed": false
+      }
+    ],
+    "parcel_address": "930 N GRANT ST"
+  }
+}
