@@ -167,6 +167,7 @@ CREC retains its legacy massing filename and campus-world direct-link coordinate
 | University Street Parking Garage (PGU) | [massing_university_street_parking_garage_pgu_be81bec.blend](buildings/massing_university_street_parking_garage_pgu_be81bec.blend) | 857 |
 | University Lutheran Church | [massing_university_lutheran_church_20903f1.blend](buildings/massing_university_lutheran_church_20903f1.blend) | 541 |
 | Utility Plant Office Facility | [massing_utility_plant_office_facility_e219ef5.blend](buildings/massing_utility_plant_office_facility_e219ef5.blend) | 361 |
+| Village Bottle Shoppe | [massing_village_bottle_shoppe_6a17e23.blend](buildings/massing_village_bottle_shoppe_6a17e23.blend) | 1 |
 | Veterinary Animal Isolation Building 2 (VA2) | [massing_veterinary_animal_isolation_building_2_ebb4142.blend](buildings/massing_veterinary_animal_isolation_building_2_ebb4142.blend) | 1113 |
 | Veterinary Medicine Isolation Facility | [massing_veterinary_medicine_isolation_facility_66d1305.blend](buildings/massing_veterinary_medicine_isolation_facility_66d1305.blend) | 145 |
 | Veterinary Pathology Building | [massing_veterinary_pathology_building_48b5a5b.blend](buildings/massing_veterinary_pathology_building_48b5a5b.blend) | 1 |
@@ -201,7 +202,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Hillel | [massing_hillel_36d2ba1.blend](buildings/massing_hillel_36d2ba1.blend) | 1 |
 | Hillenbrand Hall | [massing_hillenbrand_hall_a71e418.blend](buildings/massing_hillenbrand_hall_a71e418.blend) | 1 |
 | Hockmeyer Hall of Structural Biology (HOCK) | [massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend](buildings/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab.blend) | 6 |
-| Islamic Society of Greater Lafayette (ISGL) | [massing_islamic_societyof_greater_lafayette_0130012.blend](buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | 1 |
+| Islamic Society of Greater Lafayette (ISGL) | [massing_islamic_societyof_greater_lafayette_0130012.blend](buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | 3 |
 | Jimmy John's | [massing_jimmy_john_s_12edba1.blend](buildings/massing_jimmy_john_s_12edba1.blend) | 1 |
 | Joyful Journeys | [massing_joyful_journeys_abaf5c3.blend](buildings/massing_joyful_journeys_abaf5c3.blend) | 1 |
 | Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](buildings/massing_kappa_sigma_c1b36ec.blend) | 1 |
@@ -240,7 +241,9 @@ Hillenbrand Hall retains campus-world coordinates. Its 8.0/10 grade supports two
 
 Hockmeyer Hall retains campus-world coordinates. Its 8.0/10 grade supports the source footprint and a three-story mass; exact height, penthouse, facade registration, and entrance remain partly estimated. Blender 4.5.15 truncates the long scene name on reopen, recorded in [Hockmeyer validation](../audit/massing_hockmeyer_hall_of_structural_biology_hock_4d524ab/reopen_validation.json).
 
-ISGL retains campus-world coordinates and the rebuilt shell bounds are recorded in the manifest. Its 8.0/10 grade uses Purdue GIS FID 771 without scaling. GIS identity/address and Shape__Area conflicts remain, while height, roof, and facade details are partly estimated. See [ISGL grade](../audit/massing_islamic_societyof_greater_lafayette_0130012/independent_grade/r2/result.json).
+ISGL retains campus-world coordinates and is linked into the master. Its 8.2/10 grade preserves the FID 771 footprint; identity/address conflict (1021 vs. 1022 First St), height, roof, and facade details remain unresolved or estimated. A clearly labeled open floor patch is schematic, not a verified plan. See [ISGL grade](../audit/islamic_society_greater_lafayette/independent_grade_codex_r3/result.json).
+
+Village Bottle Shoppe retains campus-world coordinates and is linked into the master. Its 8.7/10 grade matches Indiana footprint objectid 409442 to 1832 Northwestern Ave. Height, unseen elevations, and possible side-entry bearing remain uncertain; the interior has no reliable plan evidence. See [Village Bottle Shoppe grade](../audit/village_bottle_shoppe/independent_grade_r3/result.json).
 
 Jimmy John's retains campus-world coordinates. Its 8.0/10 grade uses the Indiana 2018 LiDAR-derived roof ring with OSM and dated orthophoto cross-checks; exact wall edge, height, roof, and facade dimensions remain uncertain. See [Jimmy John's grade](../audit/massing_jimmy_john_s_12edba1/independent_grade/r3/result.json).
 

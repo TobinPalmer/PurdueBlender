@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-26",
+  "blender_version": "5.2.3 LTS",
+  "master_file": "purdue_campus_master.blend",
+  "saved": true,
+  "rebuild_script": "modular/rebuild_linked_master.py",
+  "verification": "modular/verification.json",
+  "verification_status": "PASS",
+  "master_counts": {
+    "assets": 1980,
+    "buildings": 1979,
+    "detailed_assets": 95,
+    "placement_markers": 95,
+    "scene_objects": 14673,
+    "source_asset_objects": 72590
+  },
+  "integrated_assets": [
+    {
+      "id": "massing_islamic_societyof_greater_lafayette_0130012",
+      "sha256": "57d4bdacd2dde6759bbc4892e153266ea0f4856368fa792179a002f5fe9f24fe",
+      "grade": 8.2,
+      "independent_grade": "audit/islamic_society_greater_lafayette/independent_grade_codex_r3/result.json",
+      "source_object_count": 3,
+      "objects": [
+        "Islamic Society of Greater Lafayette",
+        "ISGL_Schematic_Interior_Open_Gathering_Space_Floor",
+        "ISGL_Schematic_Interior_Label"
+      ]
+    },
+    {
+      "id": "massing_village_bottle_shoppe_6a17e23",
+      "sha256": "E5210EC34D7159932586D92059FDD010E4D235C5102898E13DF4EA797D155E83",
+      "grade": 8.7,
+      "independent_grade": "audit/village_bottle_shoppe/independent_grade_r3/result.json",
+      "source_object_count": 1,
+      "bounds_world_m": [
+        [
+          -627.8328247070312,
+          -595.0392456054688
+        ],
+        [
+          2011.3504638671875,
+          2040.7344970703125
+        ],
+        [
+          0.03999999910593033,
+          4.659999847412109
+        ]
+      ]
+    }
+  ],
+  "notes": "The rebuild script loaded current linked massing libraries from stable manifest paths and saved the master. Overall master verification passed with no errors. The master .blend remains local to Tobin’s computer and is not included in Git."
+}
