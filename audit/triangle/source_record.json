@@ -1,0 +1,97 @@
+{
+  "building_id": "massing_triangle_fraternity_8477ad9",
+  "assigned_owner": "Rossen",
+  "retrieved_date": "2026-10-26",
+  "asset_path": "modular/buildings/massing_triangle_fraternity_8477ad9.blend",
+  "collection": "Asset_massing_triangle_fraternity_8477ad9",
+  "scene": "Building_massing_triangle_fraternity_8477ad9",
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D777&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "layer": 0,
+      "feature_id": 777,
+      "feature_name": "Triangle",
+      "abbreviation": "SOTRI",
+      "address": "103 University St",
+      "source_crs": "EPSG:3857; query geometry returned in EPSG:4326",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Layer metadata dataLastEditDate is recorded in the retained metadata snapshot; feature has no per-feature edit date",
+      "method": "Closed 20-vertex GIS ring queried directly by FID. Converted lon/lat using repository approximate campus formula (origin 40.4274, -86.9137; X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040).",
+      "derived_local_area_m2": 719.336,
+      "derived_local_bounds_m": [[-301.557, -264.678], [-235.574, -204.052]],
+      "uncertainty": "Source geometry and repository degrees-to-metres conversion are not a survey. ArcGIS Shape__Area and Shape__Length are not treated as metric dimensions because they conflict with measurements from the returned ring.",
+      "snapshot": "sources/purdue_gis_fid777_triangle_2026-10-26.json",
+      "metadata_snapshot": "sources/purdue_buildingshapes_layer0_metadata_2026-10-26.json"
+    },
+    {
+      "provider": "Purdue Triangle chapter",
+      "url": "https://www.purduetriangle.com/about",
+      "feature_id": "Chapter house at 103 N University Street",
+      "source_crs": "Not applicable",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page copyright 2026; reports house built 1963, addition 1968, major renovations during the 1990s and updates through summer 2026",
+      "method": "First-party chapter identity/address/history text.",
+      "uncertainty": "Supports identity and chronology only, not geometry or measured vertical dimensions.",
+      "snapshot": "sources/purdue_triangle_about_2026-10-26.html"
+    },
+    {
+      "provider": "Purdue Triangle chapter homepage",
+      "url": "https://www.purduetriangle.com/",
+      "feature_id": "Image filename PurdueTriangleHouse-Current2023-Screen-623537.jpg",
+      "source_crs": "Not applicable; oblique unrectified photograph",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Filename labels image Current2023; exact capture date is not independently confirmed",
+      "method": "Visual comparison of current chapter-home image for visible levels, wall material, roofline, window rhythm, entrance canopy, and terrace only.",
+      "uncertainty": "Perspective, vegetation, and image crop prevent reliable dimension measurements; unphotographed elevations and exact details remain unverified.",
+      "snapshot": "sources/purduetriangle_house_current2023.jpg",
+      "page_snapshot": "sources/purdue_triangle_home_2026-10-26.html"
+    },
+    {
+      "provider": "Indiana Geographic Information Office, Indiana Statewide 3DEP Lidar Dates MapServer",
+      "url": "https://gisdata.in.gov/server/rest/services/Indiana_Statewide_3DEP_Lidar_Dates/MapServer/5/query?where=1%3D1&geometry=-86.9172%2C40.4254&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=false&f=pjson",
+      "layer": 5,
+      "feature_id": 14469,
+      "tile": "in2018_29951885_12",
+      "source_crs": "Indiana West State Plane, US survey feet for raster tile; point query EPSG:4326",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Acquisition year 2018; acquisition date 2018-04-20",
+      "method": "DSM cells intersecting converted FID 777 polygon; 5-ft cell size; median DSM elevation 653.94 ft over 316 selected cells.",
+      "uncertainty": "DSM includes ground and possible vegetation/roof edge contamination; vertical datum is unverified. A defensible building height cannot be derived without decoded and aligned DTM or surveyed elevations.",
+      "snapshot": "sources/indiana_3dep_2018_tile_index_2026-10-26.json",
+      "raster_snapshot_in_repository": "audit/batch3_math/indiana_3dep_2018_dsm_in2018_29951885_12_dsm.tif"
+    },
+    {
+      "provider": "IndianaMap / Indiana Geographic Information Office, Indiana LiDAR-derived Building Footprints FeatureServer",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0/query?geometry=-86.9172%2C40.4254&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "layer": 0,
+      "feature_id": 410069,
+      "county": "Tippecanoe",
+      "source_crs": "EPSG:4326 query output; native FeatureServer layer CRS recorded in metadata snapshot",
+      "retrieval_date": "2026-10-26",
+      "source_date": "LiDAR year 2018; dataset described as 2016-2020 Indiana building footprints",
+      "method": "Point query at Purdue FID777 location. Converted both rings with repository approximate campus transform; compared planar polygon areas, centroid separation, intersection-over-union, symmetric difference, and boundary Hausdorff distance.",
+      "derived_comparison": "Purdue GIS area 719.336 m2; Indiana LiDAR area 758.909 m2; centroid separation 1.422 m; IoU 0.8561; symmetric difference 114.606 m2; Hausdorff boundary distance 3.307 m.",
+      "uncertainty": "LiDAR-derived feature is independent, but retains acquisition, classification, and outline generalization error; difference shows neither polygon is a surveyed structural wall line.",
+      "snapshot": "sources/indiana_lidar_footprint_fid777_site_2026-10-26.json",
+      "metadata_snapshot": "sources/indiana_lidar_building_footprints_layer_metadata_2026-10-26.json",
+      "comparison_script": "compare_footprints.py",
+      "comparison_result": "footprint_comparison.json"
+    }
+  ],
+  "gis_fields_conflicting_with_visual_evidence": {
+    "NUM_LEVELS": 1,
+    "CountOfFLO": 1,
+    "Extrution": 12,
+    "Elevation": 614,
+    "notes": "Vertical field units, meaning, and datum are undocumented. They are not used as measured height or story count."
+  },
+  "model_estimates": {
+    "visible_story_count": 3,
+    "wall_height_m": 10.2,
+    "parapet_m": 0.45,
+    "estimated_total_height_m": 10.65,
+    "entry_side": "west/University Street side inferred from address and map",
+    "note": "Photo-based appearance estimate only; no measured elevation or roof plan was found."
+  }
+}
