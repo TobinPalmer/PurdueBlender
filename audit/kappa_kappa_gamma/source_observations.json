@@ -1,0 +1,59 @@
+{
+  "building": "Kappa Kappa Gamma, Gamma Delta Chapter",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 782,
+      "source_name": "Kappa Kappa Gamma",
+      "building_code": "SOKKG",
+      "address": "325 Waldron St",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": "EPSG:4326 (WGS 84), outSR=4326 explicitly requested",
+      "raw_snapshot": "sources/purdue_gis_fid782_raw.json",
+      "measurement_method": "13 unique WGS 84 polygon vertices; transformed to project-local XY with the repository approximation. Reopened Blender base vertices are compared point-by-point.",
+      "observation": "Official map feature identifies Kappa Kappa Gamma / SOKKG at 325 Waldron St; Shape__Area=1123.734375 m\u00b2, Shape__Length=191.05564180055424 m. NUM_LEVELS=1 and Extrution=12 are retained as source attributes but not interpreted as measured height or story count because definitions/units are undocumented.",
+      "uncertainty": "Campus GIS is not a certified survey and publishes no positional uncertainty, vertical datum, or definitions for NUM_LEVELS/Extrution."
+    },
+    {
+      "provider": "Kappa Kappa Gamma, The Key magazine archive",
+      "url": "https://wiki.kkg.org/pages/Gamma_Delta",
+      "feature_id": "Gamma Delta chapter history; separate cited 1952 issue: https://wiki.kkg.org/images/8/89/THE_KEY_VOL_69_NO_1_FEB_1952.pdf",
+      "retrieved": "2026-10-26",
+      "source_date": "1952-02 (The Key Vol. 69 No. 1, p.14); historical chapter page undated",
+      "crs": "Not spatial",
+      "raw_snapshot": "sources/the_key_1952_page16.png",
+      "measurement_method": "Historical text and black-and-white photograph; no scaled dimensions taken.",
+      "observation": "The 1952 caption identifies Gamma Delta\u2019s present home, describes white rostone and the nickname \u201cmarble vault\u201d; the article says it was built as a French Provincial chapter home of white rostone in 1935. The photo visibly shows two main facade levels, a steep mansard-like roof with dormers, regular windows with shutters, and a centered entry. Kappapedia chapter history says the site of the present chapter house was obtained in 1929 and the Waldron Street home became a reality in 1936\u201337.",
+      "uncertainty": "The photo is historical and no georeferenced camera view or measured elevation/plan is available. Source histories conflict slightly on construction year (1935 vs 1936\u201337). Current facade may have changed."
+    },
+    {
+      "provider": "Purdue University Panhellenic Association",
+      "url": "https://www.purdue.edu/fscl/councils/pha/chapters.php",
+      "feature_id": "Kappa Kappa Gamma / Gamma Delta chapter",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "measurement_method": "Official chapter list confirms Purdue chapter identity; it does not provide architectural or address details.",
+      "observation": "Lists Kappa Kappa Gamma and links its Gamma Delta chapter website.",
+      "uncertainty": "No building geometry or height information."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "formula_x": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274)",
+    "formula_y": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local approximation, not a surveyed CRS"
+  },
+  "gis_local_bounds_m": [
+    -403.7895640951486,
+    -379.74916307847616,
+    43.715863963286665,
+    82.88693005907817
+  ]
+}

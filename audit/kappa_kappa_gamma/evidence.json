@@ -1,0 +1,122 @@
+{
+  "building": "Kappa Kappa Gamma, Gamma Delta Chapter",
+  "asset_id": "massing_house_301840871_5d1bc06",
+  "status": "Complete; passed fresh independent grade at 8.0/10; ready for master integration handoff",
+  "source": {
+    "provider": "Purdue University official campus building footprint service",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 782,
+    "building_code": "SOKKG",
+    "source_name": "Kappa Kappa Gamma",
+    "address": "325 Waldron St",
+    "retrieval_date": "2026-10-26",
+    "source_crs": "EPSG:4326 (WGS 84), outSR=4326 explicitly requested",
+    "source_record": "sources/purdue_gis_fid782_raw.json",
+    "reference_status": "Official campus-map polygon; not a certified survey."
+  },
+  "secondary_visual_references": [
+    {
+      "provider": "Kappa Kappa Gamma, The Key, Vol. 69 No. 1 (February 1952), p.14",
+      "url": "https://wiki.kkg.org/images/8/89/THE_KEY_VOL_69_NO_1_FEB_1952.pdf",
+      "snapshot": "sources/the_key_1952_page16.png",
+      "use": "Photo and caption identify Gamma Delta\u2019s present home, describe white rostone and a French Provincial chapter home built in 1935. Visible two main facade levels, steep roof with dormers, repeated windows and shutters, and centered entry inform the broad form; no scaled measurements."
+    },
+    {
+      "provider": "Kappa Kappa Gamma, Gamma Delta chapter history",
+      "url": "https://wiki.kkg.org/pages/Gamma_Delta",
+      "use": "Historical narrative reports present site obtained in 1929 and Waldron Street home became a reality in 1936\u201337; conflicts slightly with 1952 magazine construction year."
+    },
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life / Panhellenic Association",
+      "url": "https://www.purdue.edu/fscl/councils/pha/chapters.php",
+      "use": "Confirms Kappa Kappa Gamma Gamma Delta as a current Purdue chapter; no architectural data."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not surveyed CRS"
+  },
+  "measurements": {
+    "official_local_polygon_aabb_xy_m": [
+      -403.79,
+      -379.749,
+      43.716,
+      82.887
+    ],
+    "official_polygon_aabb_dimensions_m": [
+      24.04,
+      39.171
+    ],
+    "official_polygon_area_attribute": 1123.734375,
+    "official_polygon_length_attribute": 191.05564180055424,
+    "official_ring_vertices": 12,
+    "before_asset_dimensions_m": [
+      24.79,
+      40.485,
+      16.0
+    ],
+    "after_shell_base": "All 12 transformed GIS ring points matched on reopen with 0.0 m maximum residual.",
+    "after_asset_bounds_world_m": {
+      "x": [
+        -404.90387,
+        -379.490173
+      ],
+      "y": [
+        43.455208,
+        83.147774
+      ],
+      "z": [
+        0.0,
+        11.017
+      ]
+    },
+    "modeled_main_floors": 2,
+    "visible_attic_dormers": 3,
+    "official_num_levels_attribute": 1,
+    "official_extrution_attribute": 12,
+    "position_status": "Base wall ring follows all 12 source points; source positional accuracy is unpublished.",
+    "plan_dimension_status": "GIS polygon supports plan dimensions; its concave multi-wing shape is retained. Roof overhangs extend slightly beyond the source outline.",
+    "orientation_status": "Long west-facing facade modeled from historical photo; street bearing and entry compass orientation are not verified.",
+    "height_status": "Estimated 7.3 m eaves and 11.0 m ridge; no measured elevation source. GIS NUM_LEVELS=1 conflicts with two main facade levels visible in the historical photo; GIS field definition unknown."
+  },
+  "geometry_edits": [
+    "Rebuilt the assigned one-object massing library as a detailed mesh using the official FID 782 footprint ring as the exact ground-level base.",
+    "Added two main facade levels, repeated sash-window openings and muted-blue shutters based on the historical house photograph; their exact rhythm and dimensions are estimated.",
+    "Added a source-informed steep slate roof over the main mapped wing, a roof cap following the concave footprint, and three dormers.",
+    "Added a centered wood entry, simple portico, plinth, floor bands, and warm light stone trim based on the historical facade photo.",
+    "Removed unused original brick-texture image datablocks so the saved model has no external image dependencies.",
+    "Preserved assigned asset ID, manifest file path, collection name, object name, campus coordinate frame, and identity object transform."
+  ],
+  "uncertainties": [
+    "Purdue campus GIS is not a certified survey and publishes no positional accuracy.",
+    "GIS NUM_LEVELS=1 conflicts with two main facade levels visible in the 1952 photo; field definition is undocumented.",
+    "Eaves and ridge heights, exact current roof plan, detailed facade rhythm, materials, and entry bearing are estimates or unverified.",
+    "1952 publication reports the house was built in 1935, while the Kappa history says the Waldron home became a reality in 1936\u201337. The source photo may predate later alterations.",
+    "No georeferenced elevation photo, measured floor plan, or contemporary surveyed facade was located."
+  ],
+  "artifacts": {
+    "build_script": "../../modular/buildings/build_massing_house_301840871_5d1bc06.py",
+    "build_config": "build_config.json",
+    "raw_source": "sources/purdue_gis_fid782_raw.json",
+    "source_observations": "source_observations.json",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py",
+    "historical_photo": "sources/the_key_1952_page16.png",
+    "preview_render_script": "render_preview.py",
+    "preview": "preview.png",
+    "independent_grade": "independent_grade/result.json",
+    "independent_evaluator": "independent_grade/evaluate.py"
+  },
+  "independent_grade": {
+    "score": 8.0,
+    "max_score": 10,
+    "status": "PASS",
+    "result": "independent_grade/result.json",
+    "evaluator": "independent_grade/evaluate.py",
+    "summary": "Exact concave GIS footprint and modular export pass. Height, roof detail, facade interpretation, and entry bearing remain uncertain; the one-level GIS attribute conflicts with the historical two-level photograph."
+  }
+}
