@@ -1,0 +1,58 @@
+{
+  "score": 8.7,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue ArcGIS FID 761 explicitly identifies Circle Pines at 1000 David Ross Rd. All 44 unique GIS ring vertices are retained in the plan. Direct Blender inspection of the reopened asset and its base vertices agrees with the transformed GIS XY bounds within 0.0001 m.",
+      "findings": "The local campus-coordinate conversion is approximate rather than survey control."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": "The saved asset is one mesh object in the expected collection at identity transform. The structural base agrees with GIS bounds to 0.000030 m. Decorative window/trim elements extend up to 0.128 m beyond the wall footprint.",
+      "findings": "Structural plan position and dimensions are verified. The small decorative projection is a minor departure from the GIS wall outline."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": "The April 2026 Street View panorama supports two apparent occupied levels and a low flat/parapet roofline. The model follows that broad silhouette. Its 7.3 m total height and floor-to-floor dimensions remain estimates; the GIS NUM_LEVELS and Extrution fields are undocumented and are not measurement evidence.",
+      "findings": "Floor count and roof silhouette are visually supported, but overall height and roof construction remain unmeasured."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": "Direct inspection of the Street View panorama shows two apparent levels of red-brown brick, regular dark rectangular windows, light horizontal courses, a low parapet, and a road-facing entrance area. The current previews reproduce those broad cues. Window spacing/dimensions and the modeled entrance position remain approximate.",
+      "findings": "The panorama is labeled 1001 David Ross Rd, not Circle Pines. Its WGS84 viewpoint and southeast heading face across David Ross Road toward the FID 761 footprint, so the match is strong but not explicitly labeled."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Blender 5.2.3 directly reopened the saved blend. The expected scene, collection, and single mesh object are present with identity transforms, no modifiers, and no external image dependencies. The audit includes raw GIS and page snapshots, source observations, build configuration, two previews, reopen validation, evaluator, and result.",
+      "findings": "The assigned building package is portable and its uncertainty is clearly recorded."
+    }
+  ],
+  "evidence": [
+    "audit/circle_pines/sources/purdue_gis_fid761_raw.json",
+    "audit/circle_pines/sources/google_streetview_panorama_apr2026.html",
+    "audit/circle_pines/sources/purdue_cooperative_living_report.pdf",
+    "audit/circle_pines/source_observations.json",
+    "audit/circle_pines/preview.png",
+    "audit/circle_pines/preview_street.png",
+    "audit/circle_pines/reopen_validation.json",
+    "Direct Blender 5.2.3 inspection of the saved blend"
+  ],
+  "findings": [
+    "The GIS footprint and campus position are strongly supported; the structural base matches the transformed source polygon.",
+    "Current Street View supports the broad two-level red-brick facade, regular dark windows, light horizontal courses, and low parapet.",
+    "The exact 7.3 m height, roof build-up, window dimensions/spacing, and entrance location remain estimated or uncertain."
+  ],
+  "passing_standard": 8.0,
+  "passed": true
+}

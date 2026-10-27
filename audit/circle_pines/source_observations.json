@@ -1,0 +1,62 @@
+{
+  "building": "Circle Pines",
+  "retrieval_date": "2026-10-27",
+  "sources": [
+    {
+      "provider": "Purdue University Facilities GIS / ArcGIS BuildingShapesZip4",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D761&outFields=*&outSR=4326&f=json",
+      "snapshot": "audit/circle_pines/sources/purdue_gis_fid761_raw.json",
+      "feature_id": "FID 761; BUILDING_N Circle Pines; BLDG_ABBR CPCOP; 1000 David Ross Rd",
+      "source_date": "No feature edit date supplied",
+      "crs": "EPSG:4326 geometry; returned Shape__Area/Shape__Length units are esriMeters",
+      "measurement_method": "Retained all 44 unique polygon vertices; converted longitude/latitude with the project's local approximate campus-coordinate formulas",
+      "supports": ["building identity/address cross-check", "footprint outline", "footprint area and perimeter", "campus placement"],
+      "uncertainty": "Local conversion is approximate, not surveyed. GIS attributes NUM_LEVELS=1 and misspelled Extrution=32 have no documented units or derivation and are not treated as verified floors or height."
+    },
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life",
+      "url": "https://www.purdue.edu/fscl/councils/cooperatives/houses.php",
+      "snapshot": "audit/circle_pines/sources/purdue_cooperative_houses.html",
+      "feature_id": "Circle Pines entry; official house website link",
+      "source_date": "Current page retrieved 2026-10-27",
+      "crs": "Not applicable",
+      "measurement_method": "Page inspection",
+      "supports": ["official identity as a Purdue cooperative", "official website link"],
+      "uncertainty": "Page contains no building dimensions or exterior elevation. Linked Circle Pines website and Instagram did not provide retrievable facade evidence during this pass."
+    },
+    {
+      "provider": "Purdue University FSCL research report",
+      "url": "https://www.purdue.edu/fscl/resources/Cooperative-Life-Best-Practices,-Assessment,-and-Alumni-Engagement-1.pdf",
+      "snapshot": "audit/circle_pines/sources/purdue_cooperative_living_report.pdf",
+      "feature_id": "Circle Pines Cooperative history and capacity entry",
+      "source_date": "Report publication date not established in snapshot",
+      "crs": "Not applicable",
+      "measurement_method": "Text extraction/inspection",
+      "supports": ["Circle Pines cooperative identity", "founded 1939", "listed capacity 64"],
+      "uncertainty": "Capacity is not an architectural dimension and does not establish the current floor count or height."
+    },
+    {
+      "provider": "Google Maps Street View",
+      "url": "https://www.google.com/maps/place/1000+David+Ross+Rd,+West+Lafayette,+IN+47906/@40.4353213,-86.9249145,203a,75y,134.15h,90t/data=!3m7!1e1!3m5!1s-ajSYiIY3zITZylW1dLZVw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3D-ajSYiIY3zITZylW1dLZVw%26yaw%3D134.1493!7i16384!8i8192!4m15!1m8!3m7!1s0x8812fd35b7abf601:0x25751dfa7a31b948!2s1000+David+Ross+Rd,+West+Lafayette,+IN+47906!3b1!8m2!3d40.4349192!4d-86.9243637!16s%2Fg%2F11c1ybgk5s!3m5!1s0x8812fd35b7abf601:0x25751dfa7a31b948!8m2!3d40.4349192!4d-86.9243637!16s%2Fg%2F11c1ybgk5s",
+      "snapshot": "audit/circle_pines/sources/google_streetview_panorama_apr2026.html",
+      "feature_id": "Google Street View panorama -ajSYiIY3zITZylW1dLZVw, camera at 40.4353213, -86.9249145 and heading 134.15 degrees; panorama label 1001 David Ross Rd, facing the mapped 1000 David Ross Rd building across the street",
+      "source_date": "Image capture April 2026",
+      "crs": "WGS84 camera position metadata",
+      "measurement_method": "Visual inspection of the street-level panorama; not used for surveyed dimensions",
+      "supports": ["two apparent occupied facade levels", "red-brown brick across both levels", "low flat/parapet roofline", "regular dark rectangular windows", "a light horizontal facade course", "visible road-facing entrance area"],
+      "uncertainty": "The panorama's nearest-place label is 1001 David Ross Rd, while the requested building is 1000 David Ross Rd. Camera location and heading place the photographed building across the road at the target GIS polygon, but the panorama does not identify Circle Pines by name. Facade details are current visual observations; exact heights, dimensions, and entrance position remain unmeasured."
+    },
+    {
+      "provider": "Purdue University Libraries Archives and Special Collections, Archived Purdue Publications index",
+      "url": "https://collections.lib.purdue.edu/pupindex/search.php?fq=PublicationYear%3A%221968%22+AND+subjectStr%3A%22Fraternities%22+AND+subjectStr%3A%22Fraternities%22&q=Fraternities&qtype=SubjectHeading&submit=submit",
+      "snapshot": "Search result inspected online; no page scan retrieved",
+      "feature_id": "The Seven houses on David Ross Road (photos), Purdue Alumnus, January 1968, p. 4",
+      "source_date": "January 1968 issue",
+      "crs": "Not applicable",
+      "measurement_method": "Archive catalog metadata inspection",
+      "supports": ["a potentially useful historical photo article exists"],
+      "uncertainty": "The catalog entry gives no link to the scan, and the page/image could not be accessed; no facade detail was inferred from its title."
+    }
+  ],
+  "visual_evidence_status": "A current April 2026 street-level panorama across David Ross Road is available. It supports a two-level red-brick facade, low flat/parapet roof, regular dark windows, and a light horizontal course. Exact height and architectural dimensions remain unmeasured."
+}

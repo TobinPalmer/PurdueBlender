@@ -1,0 +1,47 @@
+{
+  "building": "Circle Pines",
+  "manifest_id": "massing_house_301841609_c6c9ac4",
+  "fid": 761,
+  "retrieval_date": "2026-10-27",
+  "source_record": "audit/circle_pines/source_observations.json",
+  "previews": ["audit/circle_pines/preview.png", "audit/circle_pines/preview_street.png"],
+  "asset": "modular/buildings/massing_house_301841609_c6c9ac4.blend",
+  "footprint": {
+    "status": "verified against official Purdue GIS FID 761",
+    "source_ring_vertices": 44,
+    "source_area_m2": 1920.28125,
+    "source_perimeter_m": 293.58043415557194,
+    "coordinate_transform": "Project local campus approximation from EPSG:4326; formulas recorded in build_config.json",
+    "result": "All source ring vertices used for the exterior wall boundary and roof plan; no rescaling applied"
+  },
+  "position": {
+    "status": "verified from GIS coordinate conversion within project approximation",
+    "object_transform": "identity",
+    "dimensions_xy_m": "Measured directly from transformed GIS ring; see reopen_validation.json"
+  },
+  "height_and_roof": {
+    "status": "estimated/unverified",
+    "estimated_height_m": 7.3,
+    "estimated_storeys": 2,
+    "rationale": "The April 2026 street-level view supports two occupied facade levels and a low parapet, but cannot establish a measured height. GIS level and extrusion fields are undocumented. Overall height is an estimate, not a measurement.",
+    "roof_form": "low flat/parapet roofline is visible in current Street View; exact roof build-up remains unverified"
+  },
+  "facade": {
+    "status": "partially source-supported",
+    "details": ["red-brown brick across two apparent levels", "regular dark rectangular windows", "light horizontal facade course", "low parapet roofline", "illustrative entrance on the observed road-facing side"],
+    "basis": "Current April 2026 Street View panorama; exact window spacing, entrance position, heights, and finish details remain estimated."
+  },
+  "modularity": {
+    "status": "validated",
+    "expected_collection": "Asset_massing_house_301841609_c6c9ac4",
+    "expected_object": "House_301841609",
+    "object_count": 1,
+    "external_image_dependencies": 0,
+    "identity_transform": true
+  },
+  "remaining_uncertainty": [
+    "Street View supports the broad facade character but does not establish exact entrance position, window spacing, or material composition.",
+    "Floor count and total height are estimated; GIS NUM_LEVELS and Extrution fields are undocumented.",
+    "No retrieved published plan confirms whether the GIS polygon includes all enclosed wings or covered connectors."
+  ]
+}
