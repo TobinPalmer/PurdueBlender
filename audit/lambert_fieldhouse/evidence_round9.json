@@ -1,0 +1,104 @@
+{
+  "revision": 9,
+  "review_date": "2026-10-26",
+  "building_id": "massing_lambert_ward_l_fieldhouse_and_gymnasium_1656862",
+  "name": "Ward L. Lambert Fieldhouse and Gymnasium",
+  "candidate_asset": "audit/lambert_fieldhouse/lambert_fieldhouse_r9_candidate.blend",
+  "canonical_manifest_asset_not_overwritten": "modular/buildings/lambert_fieldhouse.blend",
+  "export_collection": "Asset_lambert_fieldhouse",
+  "candidate_sha256": "b15f99d5bd78b9f09f541f4fd26fa5286d7414034fb51583a62a2495299d36b7",
+  "source_references": [
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 261,
+      "retrieved": "2026-10-24 (source snapshot already present in the project)",
+      "source_crs": "WGS84 geographic coordinates; converted using the project's documented local approximate conversion",
+      "snapshot": "audit/batchC_lambert_official_footprint.json",
+      "use": "20-edge current GIS outline and local plan registration; it does not identify the internal hall/gym allocation or verify height, roof, facade, or interior."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, Purdue Campus Facilities and Buildings Historic Database",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/92",
+      "retrieved": "2024-10-24 (date in the prior evidence record)",
+      "source_date": "Historical record for original 1937 building",
+      "use": "Supports one-story 303 x 172 ft fieldhouse and separate four-story 210 x 110 ft gym; dimensions converted with 0.3048 m/ft. It does not georeference either volume or measure elevations, floor-to-floor heights, roof profile, or present tower status."
+    },
+    {
+      "provider": "Purdue Athletics",
+      "url": "https://purduesports.com/facilities/lambert-fieldhouse",
+      "retrieved": "2024-10-24 (date in prior evidence record)",
+      "use": "Current identity and use as home of Purdue track and field; official description supports the six-lane 200 m track."
+    },
+    {
+      "provider": "Dave Wegiel Photography, Gene Edmonds Invitational at Lambert Fieldhouse",
+      "url": "https://pinolaphoto.com/2019/01/14/gene-edmonds-invitational/",
+      "source_date": "2019 event coverage",
+      "retrieved": "2024-10-24 (date in prior evidence record)",
+      "use": "Interior visual context for track, seating, the arched steel roof and competition-event equipment. It is not measured documentation."
+    },
+    {
+      "provider": "Boston Public Library Tichnor Brothers postcard collection, via Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Purdue_fieldhouse_and_gymnasium,_Purdue_University,_West_Lafayette,_Indiana_(77515).jpg",
+      "source_date": "Circa 1930-1945",
+      "retrieved": "2024-10-24 (date in prior evidence record)",
+      "use": "Historical material and massing context only. The postcard documents a past tower, but current survival is unverified and the tower conjecture is omitted from the R9 export."
+    }
+  ],
+  "registration_recheck": {
+    "gis_feature_id": 261,
+    "footprint_mesh_changed": false,
+    "local_footprint_bounds_m": {
+      "min_xy": [-49.655663, -46.919765],
+      "max_xy": [49.655663, 46.919765]
+    },
+    "fieldhouse_roof_world_bounds_m": {
+      "min_xyz": [-46.1772, -5.4606, 11.2],
+      "max_xyz": [46.1772, 46.9650, 17.6632],
+      "plan_size_xy": [92.3544, 52.4256]
+    },
+    "gym_roof_world_bounds_m": {
+      "min_xyz": [-32.3540, -39.4650, 12.9750],
+      "max_xyz": [32.3540, -5.2370, 13.4250],
+      "slab_plan_size_xy": [64.708, 34.228]
+    },
+    "track": {
+      "lanes": 6,
+      "boundary_meshes": 7,
+      "measured_lane_one_centerline_perimeter_m": 199.9889567,
+      "geometry_changed": false
+    },
+    "placement_status": "The GIS polygon and track dimensions are retained. Archival volume dimensions match the built geometry within the listed conversion, but the archive does not register the two volumes against the U-shaped GIS polygon. Hall/gym allocation and their relative placement remain an illustrative, unverified hypothesis. No source provides measured elevations."
+  },
+  "changes_since_round8": [
+    "Assigned a material to each of the 24 previously unassigned event hurdle meshes: all 24 crossbar/upright/foot components now have either the existing painted crossbar material or the new dark steel upright/foot material.",
+    "Removed the detached GIS-derived stone-band mesh and the GIS-edge horizontal datum segments whose path extends through the outline's unbuilt/notched portions.",
+    "Removed the unsupported south clerestory strip and the detached north wall-banner plus gold-stripe row (14 objects) beyond the supported footprint and archival fieldhouse envelope.",
+    "Removed the 22 previously hidden historic entrance-tower conjecture objects from the export; sources do not confirm current survival, location, or dimensions. This also removed their invalid negative-Z extent from the active asset bounds.",
+    "Removed the 98 m Stadium Avenue sidewalk, curb, and roadway meshes from the building export. They are site-context geometry and should be supplied by the coordinator/master if needed, not duplicated with this building asset.",
+    "Added meter-scale procedural color variation and subtle bump relief to brick, roof membrane, concrete, limestone, asphalt, track, and gym glazing. Retained the packed R8 brick image texture; all material dependencies are internal to the blend.",
+    "Reframed the exterior and both interior/event review cameras. Interior images are cutaway evidence renders with shell, roof, unrelated gym layers, and review-only context hidden temporarily; all original visibility flags are restored before the file is saved."
+  ],
+  "validation": "audit/lambert_fieldhouse/validation_round9.json",
+  "previews": {
+    "exterior": "audit/lambert_fieldhouse/exterior_round9.png",
+    "interior_cutaway": "audit/lambert_fieldhouse/interior_round9_cutaway.png",
+    "event_detail": "audit/lambert_fieldhouse/interior_event_round9.png"
+  },
+  "source_limitations": [
+    "No available source georeferences the archival hall/gym rectangles to the current GIS footprint; this remains an unresolved registration issue.",
+    "No available source provides surveyed elevations, floor-to-floor dimensions, current roof curvature or ridge/eave heights, truss spacing, facade bay measurements, or confirms survival of the historic entrance tower.",
+    "Event fixtures, interior seating layout, gym interior, and the four-story gym elevation remain schematic/estimated; the track is verified by official source identity and model centerline measurement.",
+    "The historic and contemporary image sources are visual references only. The GIS JSON snapshot is retained locally; the web pages are cited but not archived as raw HTML in this revision."
+  ],
+  "coordinator_integration": {
+    "asset_to_promote_after_review": "audit/lambert_fieldhouse/lambert_fieldhouse_r9_candidate.blend",
+    "canonical_asset_path": "modular/buildings/lambert_fieldhouse.blend",
+    "expected_collection": "Asset_lambert_fieldhouse",
+    "master_instance_transform": "No changes; preserve current Placement_<building_id> marker and manifest placement.",
+    "site_context": "Do not import the removed Stadium Avenue sidewalk/curb/road from this building asset; coordinator may use shared master/context geometry if needed.",
+    "shared_files_modified": false,
+    "master_blend_modified": false,
+    "commit_or_push": false
+  }
+}

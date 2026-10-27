@@ -1,0 +1,103 @@
+{
+  "building": "Veterinary Medicine Isolation Facility (VMIF)",
+  "asset": "16690ade5f9bdc6c73a45e332bf7ee6a231f2d84705dc466921164349db9f324",
+  "score": 7.75,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "pass": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue BuildingShapesZip4 FID 78 identifies Veterinary Medicine Isolation Facility (VMIF), at 402 S University Street.",
+        "The 12 perimeter vertices of the modeled wall shell match the projected source polygon; maximum XY error is 0.000000939 m.",
+        "The Purdue Archives source separately supports VMIF identity and the eight-stall animal-care program."
+      ],
+      "limits": [
+        "GIS Shape__Area reports 849.074 m\u00b2 while the captured ring coordinates produce 491.252 m\u00b2 under the documented local projection (357.822 m\u00b2 / 72.8% difference). The model follows the polygon ring and does not reconcile this provider conflict."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2.0,
+      "evidence": [
+        "The saved scene anchor matches the source polygon centroid within 0.000000000 m.",
+        "The wall outline preserves the official GIS ring shape and rotation without rescaling."
+      ],
+      "limits": [
+        "The master placement marker and nearby campus context were not part of this isolated-asset review.",
+        "Plinth and fascia extend beyond the source wall perimeter, so the overall mesh bounds are slightly larger than the GIS envelope."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue GIS reports one level, matching the single-storey shell.",
+        "Fresh-open local geometry reaches 3.92 m above its origin."
+      ],
+      "limits": [
+        "The 3.66 m eave height interprets GIS Extrution=12 as feet although field units are undocumented.",
+        "No captured source verifies the flat/low-slope roof form, roof elevation, parapet profile, or HVAC arrangement."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.75,
+      "max_score": 2.0,
+      "evidence": [
+        "The outline is distinctive and follows the cross-shaped GIS perimeter; the interior cutaway includes a schematic corridor, eight stalls and support/mechanical rooms consistent with the Archives program description."
+      ],
+      "limits": [
+        "The exterior has no modeled windows or entrance doors; the builder explicitly left openings out because target-specific facade evidence was not found.",
+        "Wall, roof and trim materials are visual assumptions. The model reads as a generic blank service building in its exterior preview."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Blender 5.2.3 LTS reopened the saved source scene and expected exported collection successfully.",
+        "The collection contains 70 local mesh objects with 584 vertices and 416 faces.",
+        "Every mesh has a material assigned; there are no external image dependencies or linked libraries.",
+        "Structured provenance, builder notes, two preview renders and a fresh-open probe are present."
+      ],
+      "limits": []
+    }
+  ],
+  "evidence": {
+    "fresh_open_probe": "fresh_open_probe.json",
+    "fresh_open_probe_script": "fresh_open_probe.py",
+    "evaluator": "evaluator.py",
+    "source_evidence": "../evidence.json",
+    "GIS_feature_snapshot": "../purdue_gis_VMIF_feature.json",
+    "exterior_preview": "../vmif_preview.png",
+    "cutaway_preview": "../vmif_cutaway.png",
+    "GIS_coordinate_area_m2": 491.252,
+    "GIS_reported_shape_area_m2": 849.07421875,
+    "GIS_area_difference_percent": 72.8
+  },
+  "findings": [
+    {
+      "severity": "major source conflict",
+      "finding": "The GIS Shape__Area value (849.074 m\u00b2) conflicts with the area derived from the returned polygon coordinates (491.252 m\u00b2). The model exactly follows the vertices, but the source discrepancy remains unresolved."
+    },
+    {
+      "severity": "major visual incompleteness",
+      "finding": "The exterior shell has no doors or windows and no target-specific facade evidence; the current exterior therefore appears as a generic blank volume. Obtain reliable target-specific facade imagery or plans before adding these details."
+    },
+    {
+      "severity": "uncertainty",
+      "finding": "The roof form and height are estimates. The 12-unit extrusion is interpreted as feet without documented units. The interior program is evidence-informed, while its spatial layout is illustrative."
+    },
+    {
+      "severity": "integration not reviewed",
+      "finding": "This grade covers the standalone asset only; the master placement and overlap with neighboring models were not inspected."
+    }
+  ]
+}

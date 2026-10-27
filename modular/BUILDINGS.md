@@ -24,6 +24,8 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Crosswalk Commons | [massing_crosswalk_commons_7c01ecd.blend](buildings/massing_crosswalk_commons_7c01ecd.blend) | 1 |
 | Animal Holding Facility | [massing_animal_holding_facility_4733f46.blend](buildings/massing_animal_holding_facility_4733f46.blend) | 1 |
 | Delta Tau Delta | [massing_delta_tau_delta_e06b0b5.blend](buildings/massing_delta_tau_delta_e06b0b5.blend) | 85 |
+| Delta Sigma Phi | [massing_house_860826641_2c90f97.blend](buildings/massing_house_860826641_2c90f97.blend) | 165 |
+| Delta Upsilon | [massing_house_301841256_1cc7641.blend](buildings/massing_house_301841256_1cc7641.blend) | 14 |
 | Dudley Hall | [dudley_hall.blend](buildings/dudley_hall.blend) | 6 |
 | Circle K | [massing_circle_k_fa39c23.blend](buildings/massing_circle_k_fa39c23.blend) | 69 |
 | Chapel of the Good Shepherd | [massing_chapel_of_the_good_shepherd_5d4d103.blend](buildings/massing_chapel_of_the_good_shepherd_5d4d103.blend) | 1 |
@@ -60,6 +62,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Hovde Hall | [hovde_hall.blend](buildings/hovde_hall.blend) | 760 |
 | Knoy Hall | [knoy_hall.blend](buildings/knoy_hall.blend) | 158 |
 | Krannert Building | [krannert_building.blend](buildings/krannert_building.blend) | 670 |
+| Lambertus Hall | [lambertus_hall.blend](buildings/lambertus_hall.blend) | 102 |
 | Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 619 |
 | Mackey Arena | [mackey_arena.blend](buildings/mackey_arena.blend) | 391 |
 | Math Sciences | [math_sciences.blend](buildings/math_sciences.blend) | 593 |
@@ -190,6 +193,10 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](buildings/massing_kappa_sigma_c1b36ec.blend) | 1 |
 | Lilly Hall of Life Sciences | [massing_lilly_hall_e7fc13e.blend](buildings/massing_lilly_hall_e7fc13e.blend) | 4 |
 | Mann Hall | [massing_mann_hall_2b4ebda.blend](buildings/massing_mann_hall_2b4ebda.blend) | 1 |
+| Ralph & Bettye Bailey Hall (BALY) | [massing_ralph_bettye_bailey_hall_406c4db.blend](buildings/massing_ralph_bettye_bailey_hall_406c4db.blend) | 1 |
+| Roy L. Whistler Hall of Agricultural Research (WSLR) | [massing_whistler_hall_6f6bf8d.blend](buildings/massing_whistler_hall_6f6bf8d.blend) | 791 |
+| Wiley Dining Court (WDCT) | [massing_wiley_dining_court_wdct_8a6c669.blend](buildings/massing_wiley_dining_court_wdct_8a6c669.blend) | 1054 |
+| Joyful Journeys | [massing_joyful_journeys_abaf5c.blend](buildings/massing_joyful_journeys_abaf5c.blend) | 1 |
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
 | Stone Hall (STON) | [massing_stone_hall_ston_d3f479a.blend](buildings/massing_stone_hall_ston_d3f479a.blend) | 1 |
 | Telecommunications Building (TEL) | [massing_telecommunications_building_tel_8dfaccf.blend](buildings/massing_telecommunications_building_tel_8dfaccf.blend) | 1 |
@@ -219,4 +226,6 @@ Stone Hall (STON) retains campus-world coordinates. Its 8.0/10 independent grade
 Telecommunications Building (TEL) retains campus-world coordinates. Its 8.0/10 grade verifies the Purdue GIS FID 199 footprint and the 29 source ring vertices within 0.1 mm. A broad flat roof and approximate roof equipment positions are supported by 2018 orthophoto; the 9.14 m height is an estimate from unclassified LiDAR returns, while facade material and windows remain unverified. See [TEL grade](../audit/massing_telecommunications_building_tel_8dfaccf/independent_grade/grade.json).
 
 Herrick Laboratories (historic Herrick Acoustics) retains campus-world coordinates. Its 8.4/10 grade verifies Purdue GIS FID 246 / HERL and distinguishes it from Ray W. Herrick Labs; height estimates and GIS area discrepancy remain unresolved. See [Herrick grade](../audit/massing_herrick_laboratories_2138103/independent_grade/r2/result.json).
-
+| Latino Cultural Center (current FID 925) | [massing_latino_cultural_center_lcc_9cc71b3.blend](buildings/massing_latino_cultural_center_lcc_9cc71b3.blend) | 426 |
+| Life Science Ranges Greenhouse & Service Building (LSR) | [massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend](buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | 49 |
+| Alpha Tau Omega | [massing_house_301840870_c45a5f4.blend](buildings/massing_house_301840870_c45a5f4.blend) | 126 |

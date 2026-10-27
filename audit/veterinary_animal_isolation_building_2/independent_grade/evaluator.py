@@ -1,0 +1,34 @@
+from pathlib import Path
+import json, math
+HERE=Path(__file__).resolve().parent
+AUDIT=HERE.parent
+PROBE=json.loads((HERE/'fresh_open_probe.json').read_text(encoding='utf-8'))
+EVID=json.loads((AUDIT/'evidence.json').read_text(encoding='utf-8'))
+
+def polygon_area_local_m2(ring):
+    lat0,lon0=40.4274,-86.9137
+    sx=111412.84*math.cos(math.radians(lat0)); sy=111040.0
+    pts=[((p[0]-lon0)*sx,(p[1]-lat0)*sy) for p in ring]
+    return abs(sum(pts[i][0]*pts[(i+1)%len(pts)][1]-pts[(i+1)%len(pts)][0]*pts[i][1] for i in range(len(pts)))/2)
+
+geo=json.loads((AUDIT/'sources/purdue_va2_fid942.geojson').read_text(encoding='utf-8'))
+ring=geo['features'][0]['geometry']['coordinates'][0]
+geom_area=polygon_area_local_m2(ring)
+shape_area=EVID['gis']['source_fields']['Shape__Area']
+criteria=[
+ {'criterion':'Correct identity and source-backed footprint','score':2.0,'max_score':2.0,'evidence':['Official Purdue GIS FID 942 names VA2 / Veterinary Animal Isolation Building 2 at 400 S University Street.','Fresh-open probe compared the exported foundation bounding box against all source polygon vertices after the documented coordinate conversion; maximum bound error was 0.00000067 m.','Feature global ID and BLDG_ABBR are preserved in evidence.json.'],'limits':['GIS Shape__Area reports 838.125 m² while the source polygon coordinate-derived area is about %.1f m²; area disagreement is unresolved.'%geom_area]},
+ {'criterion':'Position, orientation, and scale/dimensions','score':1.75,'max_score':2.0,'evidence':['Asset origin is the documented GIS bbox center (-201.1700, -948.4519) m in the campus frame.','Long north-south orientation and foundation dimensions match the GIS polygon to sub-millimetre bbox precision.','The outermost modeled envelope exceeds the GIS foundation bounds by up to about 0.20 m on each side, consistent with exterior louver/panel overhangs; campus-placement marker is not part of this isolated library asset.'],'limits':['No on-campus linked placement was independently verified in the master blend during this isolated-asset grade.']},
+ {'criterion':'Evidence-backed height, floors, and roof form','score':1.25,'max_score':2.0,'evidence':['GIS lists one level; official Purdue OEP source describes two floors, with the second an HVAC interstitial and no basement. The asset presents a low occupied volume beneath one roofline.','Aerial evidence supports the long flat roof, central service strip, and rooftop equipment arrangement.','Fresh-open inspection confirms roof equipment is geometrically at roof level; sampled roof unit starts at z=4.617 m against roof plane about 4.62 m.'],'limits':['Roof/parapet heights are estimates (4.62/4.87 m), not surveyed measurements. The source field conflict remains unresolved; rooftop unit count/type is only aerially inferred.']},
+ {'criterion':'Facade, entrances, and distinctive architecture','score':1.0,'max_score':2.0,'evidence':['Exterior preview shows restrained long wall bands, high louver strips, sparse windows/doors and service-oriented detailing.','Official OEP page supports animal research/teaching use and a bathroom at one end, but does not disclose elevation details or which end.'],'limits':['No reliable street-level facade image or elevation was available in evidence. Wall materials, colors, opening rhythm, precise entrances, and most facade details are interpretive rather than verified.']},
+ {'criterion':'Modular export, portability, and complete evidence','score':2.0,'max_score':2.0,'evidence':['Fresh Blender 5.2.3 process opened the saved .blend successfully and verified expected scene, building ID, and asset collection.','1,113 local mesh objects; 13 procedural materials; no file-image dependencies or linked external libraries.','Evidence folder records source URLs, retrieval dates, conversion, estimates, and uncertainty.'],'limits':['The interior floor plan and animal-care equipment are explicitly illustrative, not a claim of the real plan.']}
+]
+score=round(sum(c['score'] for c in criteria),2)
+findings=[
+ {'severity':'material source conflict','finding':'GIS Shape__Area is 838.125 m², but the polygon coordinates produce approximately %.1f m² area (bbox approx 527 m²). Model follows the polygon vertices and must not be considered area-validated until the provider discrepancy is resolved.'%geom_area},
+ {'severity':'preview artifact','finding':'preview_interior_cutaway.png shows rooftop service units and wall fragments floating above/behind the cutaway. The cutaway script hides selected roof/wall shells only for rendering and leaves related explanatory geometry visible. This is a cutaway-preview artifact; fresh-open saved asset and exterior preview show rooftop objects seated at roof height. Do not treat the cutaway as a faithful assembly view.'},
+ {'severity':'uncertainty','finding':'Facade elevations, measured height, precise HVAC specification, and room plan are not evidenced. Interior layout is a visualization inferred from the published facility use.'}
+]
+result={'building':'Veterinary Animal Isolation Building 2 (VA2)','asset':PROBE['asset_sha256'],'score':score,'max_score':10,'passing_threshold':8,'pass':score>=8,'criteria':criteria,'evidence':{'independent_fresh_open_probe':'fresh_open_probe.json','exterior_preview':'../preview_exterior.png','roof_preview':'../preview_roof.png','cutaway_preview':'../preview_interior_cutaway.png','source_evidence':'../evidence.json','source_polygon_area_m2_coordinate_derived':round(geom_area,2),'gis_shape_area_m2':shape_area,'gis_polygon_bbox_area_m2':round((PROBE['gis_footprint_xy']['max'][0]-PROBE['gis_footprint_xy']['min'][0])*(PROBE['gis_footprint_xy']['max'][1]-PROBE['gis_footprint_xy']['min'][1]),2)},'findings':findings}
+(HERE/'result.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+print(json.dumps(result,indent=2))
+

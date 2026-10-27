@@ -1,0 +1,50 @@
+{
+  "revision": "02 after independent review 7.75/10",
+  "reviewer_audit": "audit/veterinary_medicine_isolation_facility/independent_grade (read-only; untouched)",
+  "asset_sha256": "14fae094e5a857d6ca9f4cb8b73f619df8df003728fd6a9acc9570bce45162b5",
+  "exported_objects": 145,
+  "anchor_campus_xy_m": [
+    -120.02533746747042,
+    -1042.3516060860252
+  ],
+  "changed_scope": [
+    "modular/buildings/massing_veterinary_medicine_isolation_facility_66d1305.blend",
+    "modular/buildings/build_massing_veterinary_medicine_isolation_facility_66d1305.py",
+    "audit/veterinary_medicine_isolation_facility/"
+  ],
+  "evidence_added": [
+    "Purdue News Service VMIF article and full-resolution interior photo",
+    "Esri World Imagery tile z19 with tile-to-WGS84 GIS ring overlay",
+    "Purdue Treasurer building area inventory and historic database area comparison"
+  ],
+  "model_changes": [
+    "One west-side, 3.0 m inferred large-animal service door cut through the GIS shell at the aerial-visible paved approach. Its exact facade location is not visible in overhead imagery and remains labeled inferred.",
+    "Eight documented 12-by-12-ft stall modules with corridor-side doors and viewing windows based on the Purdue News report and photograph. Room arrangement remains interpretive.",
+    "Cream painted masonry course material based on the official interior photograph, used conservatively on the exterior with extrapolation stated.",
+    "White low-slope roof and two roof plant masses from aerial imagery; roof form is observed from above, while pitch and eave height are estimated.",
+    "Eave 3.60 m and roof top 3.80 m are visualization estimates; GIS Extrution=12 has undocumented units and is not represented as a measured height.",
+    "Foundation trim and fascia were moved inside the GIS outline so aggregate XY mesh bounds no longer exceed the GIS wall envelope."
+  ],
+  "area_conflict": {
+    "gis_shape_area_field_m2": 849.07421875,
+    "gis_shape_area_field_sqft": 9139.4,
+    "area_from_GIS_ring_after_documented_local_projection_m2": 491.25196095184947,
+    "ring_area_sqft": 5287.8,
+    "field_vs_ring_difference_m2": 357.822,
+    "field_vs_ring_difference_percent_of_ring": 72.8,
+    "purdue_news_2005_sqft": 5740,
+    "historic_database_sqft": 5324,
+    "treasurer_inventory_sqft": 5323.99,
+    "interpretation": "The GIS Shape__Area attribute (849.074 m\u00b2) materially disagrees with area calculated from its own 12 polygon vertices in the documented local projection (491.252 m\u00b2). Published 5,324 sq ft facility area is close to the projected ring area; 2005 Purdue News reports 5,740 sq ft. These values may reflect different measurement bases, but the provider field-vs-ring discrepancy remains unresolved. Model follows source vertices without scaling."
+  },
+  "remaining_uncertainty": [
+    "GIS Shape__Area field 849.074 m\u00b2 disagrees with polygon coordinate ring area 491.252 m\u00b2; no explanation is established.",
+    "Historic database and Treasurer inventory report 5,324/5,323.99 sq ft, close to ring area (~5,288 sq ft); Purdue News 2005 reports 5,740 sq ft. These may represent different area bases. Model remains faithful to GIS vertices and is not scaled to the conflicting field value.",
+    "Aerial imagery does not reveal exterior windows or door leaf. Exterior windows were not invented; the west service door location is inferred from paved service approach and facility use.",
+    "No target-specific exterior elevation or measured height was found."
+  ],
+  "fresh_open_validation": "audit/veterinary_medicine_isolation_facility/fresh_open_validation.json",
+  "preview": "audit/veterinary_medicine_isolation_facility/vmif_preview.png",
+  "cutaway": "audit/veterinary_medicine_isolation_facility/vmif_cutaway.png",
+  "evidence_record": "audit/veterinary_medicine_isolation_facility/evidence.json"
+}

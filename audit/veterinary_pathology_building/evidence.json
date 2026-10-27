@@ -1,0 +1,125 @@
+{
+  "building": "Veterinary Pathology Building (VPTH)",
+  "stable_asset_id": "massing_veterinary_pathology_building_48b5a5b",
+  "asset_file": "modular/buildings/massing_veterinary_pathology_building_48b5a5b.blend",
+  "builder_script": "modular/buildings/build_massing_veterinary_pathology_building_48b5a5b.py",
+  "retrieved_utc": "2026-10-26",
+  "coordinate_frame": {
+    "asset": "building-local meters; X east, Y north, Z up",
+    "local_origin_campus_xy_m": [
+      -162.82127231466023,
+      -816.2568072720078
+    ],
+    "anchor_method": "Area centroid of Purdue campus GIS OBJECTID 165 footprint after applying the project local approximate geographic conversion. This gives a stable translation origin; centroid is not asserted to be an entrance or an interior point.",
+    "master_placement": "A `Placement_massing_veterinary_pathology_building_48b5a5b` marker should instance the collection at the local-origin campus XY above. The asset object remains at local (0,0,0); the mesh vertices are no longer stored at campus-wide coordinates.",
+    "geographic_origin_latitude": 40.4274,
+    "geographic_origin_longitude": -86.9137,
+    "geographic_to_project_xy": "X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0",
+    "note": "Approximate local transform per modular/AGENTS.md, not a surveyed CRS."
+  },
+  "sources": [
+    {
+      "provider": "Purdue Libraries GIS / Purdue campus ArcGIS MapServer",
+      "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0",
+      "feature_id": 165,
+      "building_code": "VPTH",
+      "source_crs": "EPSG:4326 requested from ArcGIS service (service native spatial reference 102100 / Web Mercator)",
+      "retrieval_date": "2026-10-26",
+      "snapshot": "purdue_campus_building_vpth_raw.geojson",
+      "data": "footprint polygon, campus building identity/address, legacy description, source area 1944.517 m2, source perimeter 288.012 m",
+      "method": "Used the source polygon ring without scaling. Coordinates converted to campus meters using the project documented approximate formula. GIS polygon is used as exterior wall footprint; source polygon may generalize small recesses or updates.",
+      "uncertainty": "High confidence for identity and general plan footprint; survey/imagery date and positional accuracy are not published in the queried response."
+    },
+    {
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/vpth/",
+      "feature_id": "official VPTH Building Emergency Plan, revision 2026-04-17",
+      "source_crs": "not applicable",
+      "retrieval_date": "2026-10-26",
+      "snapshot": "official_vpth_emergency_plan.html",
+      "data": "address 725 Harrison Street; basement, floors 1-3, attic; research labs, offices, classroom, cooler; elevator SE side, three outside exit sides, two Lynn Hall tunnels and one VPRB tunnel",
+      "method": "Used directly to establish floor count, functional interior use and the existence of an approximate southeast elevator core. No interior plan or room coordinates are published on this source.",
+      "uncertainty": "High confidence on listed building facts; room positions and interior partitions are unverified."
+    },
+    {
+      "provider": "Purdue University Campus Map",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "feature_id": "VPTH / Veterinary Pathology Building, grid G9",
+      "source_crs": "not applicable",
+      "retrieval_date": "2026-10-26",
+      "snapshot": "URL retained in this record; PDF endpoint response was not preserved as a valid PDF in the local audit folder.",
+      "data": "Building code VPTH, official name and campus-map identification.",
+      "method": "Cross-check of building name and location context.",
+      "uncertainty": "Identity only, no architectural dimensions."
+    },
+    {
+      "provider": "Purdue University Timelines / Archives and Special Collections",
+      "url": "https://collections.lib.purdue.edu/timelines/puhistorical",
+      "feature_id": "1916 buildings timeline entry",
+      "source_crs": "not applicable",
+      "retrieval_date": "2026-10-26",
+      "data": "Veterinary Pathology Building completed in 1916; later Lynn Hall complex built adjacent.",
+      "method": "Used only as historical context; no facade geometry inferred from this source.",
+      "uncertainty": "Does not document current exterior or renovation history."
+    }
+  ],
+  "measurements": {
+    "footprint_source_area_m2": 1125.022779,
+    "footprint_estimated_bounds_m": {
+      "x": [
+        -182.040441,
+        -127.412776
+      ],
+      "y": [
+        -840.030371,
+        -797.853202
+      ]
+    },
+    "footprint_bounds_method": "Bounds of the raw GIS polygon after documented local approximate conversion; plan extents approximately 54.63 m east-west by 42.18 m north-south.",
+    "vertical_extent_model_m": [
+      0.0,
+      15.925
+    ],
+    "vertical_extent_status": "Estimated envelope: existing massing object in modular manifest has a 0 to 16 m vertical envelope; official emergency plan confirms floors basement through third plus attic but publishes no heights. Story heights, attic/service penthouse, and roof are illustrative estimates, not measurements.",
+    "orientation": "Inherited exactly from the GIS coordinate polygon and its campus transform; no image-based facade azimuth verification was available.",
+    "local_model_bounds_m": [
+      [
+        -19.50333,
+        35.468475
+      ],
+      [
+        -24.078596,
+        18.66634
+      ],
+      [
+        -1.9,
+        15.925
+      ]
+    ],
+    "asset_object_location_local_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "placement_anchor_campus_xy_m": [
+      -162.82127231466023,
+      -816.2568072720078
+    ],
+    "placement_check": "Adding local model XY bounds to the stated anchor returns campus bounds [-182.325,-127.353] X and [-840.335,-797.590] Y; extra extent beyond the GIS wall footprint comes from decorative window, belt, roof and cornice geometry, not whole-asset rescaling.",
+    "source_area_note": "Raw geographic ring converted with the project approximate formula has shoelace area 1125.023 m\u00b2. ArcGIS Shape.STArea() is 1944.517 in its native EPSG:3857/Web Mercator spatial reference, whose area is inflated by latitude scale distortion; do not interpret that field as ground area."
+  },
+  "model_method": "Extruded the GIS outline as three visible above-grade floors with procedural masonry, regular estimated window bays, stone story bands/cornice, and a simple roof/attic volume. Included generic interior floor plates only; avoided inventing room partitions because no plan was available. One named building object resides in the expected asset collection. Preview camera/light are outside the asset collection.",
+  "uncertainty": [
+    "No georeferenced current facade/street imagery or elevations were located in accessible evidence during this build. Brick tone, window pattern, stone trim, roof treatment, entrance bay positions, detailed height and internal plan are visual estimates.",
+    "GIS footprint identifies the correct campus asset but is not represented as a surveyed foundation plan.",
+    "The emergency-plan elevator side and exits support general features only; their exact coordinates are not known."
+  ],
+  "review_status": "Builder self-review only; independent grader/regrade and master marker integration are pending.",
+  "validation": "validation.json (fresh-open passed with Blender 5.2.3 LTS; local frame and placement anchor checked)",
+  "preview": "preview_exterior.png (rendered after local-coordinate rebuild)",
+  "before_after": {
+    "before": "Mesh vertices were stored in campus-wide coordinates; library object location was zero.",
+    "after": "Subtract GIS footprint area centroid (-162.821272, -816.256807) m from every building mesh vertex; asset object remains at local zero. Add that campus anchor through a master Placement collection instance to recover intended campus position. No footprint rotation or scale applied."
+  },
+  "material_cleanup": "Removed the unassigned darker-brick material slot after the independent grade; re-exported and fresh-open validated."
+}

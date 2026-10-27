@@ -1,0 +1,92 @@
+{
+  "score": 7.9,
+  "max_score": 10,
+  "passing_threshold": 8.0,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 2.0,
+      "max_points": 2.0,
+      "status": "verified",
+      "evidence": "Raw Purdue GIS feature FID=296 / UPOF is Utility Plant Office Facility; official OEP snapshot identifies the address. Independently recomputed shell-vs-feature ring RMS error 0.0004 m, max vertex error 0.0006 m, area 446.009 vs 446.006 m\u00b2 (0.0007% difference)."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 1.8,
+      "max_points": 2.0,
+      "status": "verified for library anchor and plan; master registration pending",
+      "evidence": "Source geometry centroid independently recomputes to (105.208, -1052.104) campus meters; declared local-library anchor is (105.208, -1052.104). Structural plan bounds are 20.862 \u00d7 23.945 m, matching the converted GIS outline; major axis is about 0.44\u00b0 from north. The master placement marker was not part of this asset review."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.2,
+      "max_points": 2.0,
+      "status": "partial; height estimated",
+      "evidence": "Purdue OEP describes two floors; aerial tile shows a bright, ribbed, low-looking roof. GIS feature NUM_LEVELS=2; its Extrution=24 value lacks documented units. The 7.32 m parapet height is a plausible but unverified feet interpretation. Rooftop equipment height is above the roof silhouette and should not be counted as structural height."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 1.0,
+      "max_points": 2.0,
+      "status": "partly supported; most facade detailing uncertain",
+      "evidence": "OEP confirms the main entry on the east wall and official room use, but neither the saved OEP page nor the available aerial tile verifies facade material, window pattern, floor-band trim, or the four modeled large rooftop HVAC cabinets. Current model has 2 door leaves and 50 glazing panels. The facade is a generic, mostly opaque envelope from the review view; exact architectural features are therefore not verified."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 1.9,
+      "max_points": 2.0,
+      "status": "pass with integration handoff remaining",
+      "evidence": "Fresh Blender 5.2.3 open succeeded; expected scene and collection exist and contain 355 objects. Procedural materials have no missing external image dependencies. GIS/OEP/aerial snapshots and provenance are present. Interior groups ['Interior_Schematic_Floor_1_Unverified', 'Interior_Schematic_Floor_2_Unverified'] are labeled schematic. Master linkage/integration is coordinator-owned and remains pending."
+    }
+  ],
+  "evidence": {
+    "fresh_open_scene": "Building_massing_utility_plant_office_facility_e219ef5",
+    "fresh_open_collection": "Asset_massing_utility_plant_office_facility_e219ef5",
+    "asset_objects": 355,
+    "source_fid": 296,
+    "source_code": "UPOF",
+    "source_area_m2": 446.0092,
+    "shell_area_m2": 446.0062,
+    "shell_rms_vertex_error_m": 0.00036,
+    "shell_max_vertex_error_m": 0.00055,
+    "shell_area_delta_percent": 0.00068,
+    "footprint_bounds_local_m": {
+      "x": [
+        -9.5224,
+        11.3396
+      ],
+      "y": [
+        -11.9154,
+        12.0296
+      ]
+    },
+    "placement_origin_xy_m": [
+      105.20840981346892,
+      -1052.103607498187
+    ],
+    "unpacked_missing_images": [],
+    "source_snapshots": [
+      "sources/arcgis_fid296_feature.json",
+      "sources/purdue_oep_upof.html",
+      "sources/esri_world_imagery_tile_z19.jpg"
+    ],
+    "imagery_acquisition_date": "Not reported for this tile by the basemap endpoint.",
+    "height_source_value": {
+      "NUM_LEVELS": 2,
+      "Extrution": 24
+    },
+    "oep_facts_used": [
+      "The facility is an administrative building with two floors, mostly cubicle workspace.",
+      "There is no elevator.",
+      "The main entry and AED are on the east wall.",
+      "The first-floor restrooms used for shelter are at the southwest corner.",
+      "The second floor contains Utility Engineering and BAS staff."
+    ]
+  },
+  "findings": [
+    "The GIS-derived footprint and anchor pass at the stated local-meters tolerance. The assigned library is not placed in the master by this review, so marker registration remains a separate integration check.",
+    "Height is estimated, not measured: ArcGIS field `Extrution=24` has no units in service metadata. Confirm units or keep the 7.32 m value explicitly estimated.",
+    "The available high-resolution overhead image shows a mostly uninterrupted bright roof with narrow parallel seams; the model's multiple large HVAC cabinets and hatch are not evidenced by the captured tile. Reduce or reposition those only with stronger imagery/plans.",
+    "No current direct UPOF facade image or architectural elevation was supplied. East entry location and two-floor office use are supported, while window rhythm and warm-gray facade material remain visual estimates. Do not report those as verified."
+  ]
+}

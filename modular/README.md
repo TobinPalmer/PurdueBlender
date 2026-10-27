@@ -37,7 +37,7 @@ When reporting completion, give counts of verified, corrected, ambiguous, and un
 ## Files to start with
 
 - `purdue_campus_linked.blend`: assembled campus with relative library links.
-- `BUILDINGS.md`: clickable index of 148 detailed and massing building assets.
+- `BUILDINGS.md`: clickable index of 159 detailed and massing building assets.
 - `manifest.json`: complete index including every simple background building and house.
 - `verification.json`: file/link/object-count checks and documented transform changes.
 - `rebuild_linked_master.py`: rebuilds detailed placement markers and removes matching massing blocks when a detailed library replaces them.

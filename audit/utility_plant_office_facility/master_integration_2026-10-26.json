@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "building_id": "massing_utility_plant_office_facility_e219ef5",
+  "asset_path": "modular/buildings/massing_utility_plant_office_facility_e219ef5.blend",
+  "master_path": "purdue_campus_master.blend",
+  "master_sha256": "9d16c7a63c5ae75c6b5c1651df0db74e7b88637d9f8741b2e2d0ed1803794dab",
+  "grade": {
+    "score": 8.45,
+    "max_score": 10.0,
+    "passes": true,
+    "result": "audit/utility_plant_office_facility/independent_grade_r2/evaluation.json"
+  },
+  "placement": {
+    "marker": "Placement_massing_utility_plant_office_facility_e219ef5",
+    "anchor_xy_m": [
+      105.20840981346892,
+      -1052.103607498187
+    ],
+    "asset_bounds_world_m": [
+      [
+        95.38100865227507,
+        117.29101994377898
+      ],
+      [
+        -1064.3239930496397,
+        -1039.7690165863219
+      ],
+      [
+        0.0,
+        7.319999694824219
+      ]
+    ],
+    "collection": "Asset_massing_utility_plant_office_facility_e219ef5",
+    "object_count": 361,
+    "linked_library_path": "//buildings\\massing_utility_plant_office_facility_e219ef5.blend",
+    "master_rebuild_status": "PASS",
+    "master_verification_errors": []
+  },
+  "master_counts": {
+    "detailed_assets": 88,
+    "placement_markers": 88,
+    "scene_objects": 9641
+  },
+  "source_evidence": "audit/utility_plant_office_facility/build_evidence.json",
+  "remaining_uncertainty": [
+    {
+      "severity": "positive",
+      "finding": "The roof equipment and hatch removal is a well-supported correction: the z20 outline overlays a largely uninterrupted roof and does not identify those objects."
+    },
+    {
+      "severity": "positive",
+      "finding": "E-W roof rib direction now agrees with the north-up orthophoto."
+    },
+    {
+      "severity": "limitation",
+      "finding": "Facade treatment remains uncertain because no direct UPOF elevation is provided by the available OEP, ECN, or overhead imagery."
+    },
+    {
+      "severity": "actionable",
+      "finding": "For a higher facade score, seek a clearly geolocated/direct UPOF street or ground-level facade image; then replace the estimated repeated dark panels with evidenced window sizes, spacing, glazing reflectance, and cladding breaks. Keep these marked estimated until direct imagery is found."
+    },
+    {
+      "severity": "limitation",
+      "finding": "The ArcGIS Extrution field unit is undocumented. Do not describe the 6.88 m shell / 7.32 m total as verified height; preserve as an estimate unless a reliable elevation source is found."
+    },
+    {
+      "severity": "limitation",
+      "finding": "Interior rooms are schematic because the OEP page gives limited program facts rather than a measured architectural plan."
+    }
+  ]
+}

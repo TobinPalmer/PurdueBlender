@@ -1,0 +1,191 @@
+{
+  "retrieved_date": "2026-10-26",
+  "building_identity": {
+    "chapter": "Delta Sigma Phi, Delta Delta Chapter, Purdue University",
+    "address": "341 Northwestern Avenue, West Lafayette, IN 47906",
+    "identity_decision": "Confirmed: Purdue ArcGIS FID 798 attributes explicitly name Delta Sigma Phi and 341 Northwestern Av; chapter-linked address listing and West Lafayette municipal planning source independently identify 341 Northwestern as the Delta Sigma Phi house. The 860826641 candidate footprint is the corresponding source geometry; adjacent candidate 860826640 is a neighboring building and not FID 798.",
+    "sources": [
+      {
+        "title": "Purdue Campus Map BuildingShapes FeatureServer, layer metadata",
+        "provider": "Purdue University campus map ArcGIS service",
+        "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+        "retrieved_date": "2026-10-26",
+        "snapshot": "purdue_campus_buildings_layer_metadata.json",
+        "relevant_fields": [
+          "FID",
+          "BUILDING_N",
+          "ADDRESS",
+          "OWNER",
+          "Shape__Area",
+          "Shape__Length"
+        ],
+        "source_crs": "layer metadata Web Mercator (WKID 102100 / latest WKID 3857); query geometry requested in WGS84 (WKID 4326)"
+      },
+      {
+        "title": "Purdue Campus Map BuildingShapes feature FID 798",
+        "provider": "Purdue University campus map ArcGIS service",
+        "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D798&outFields=*&returnGeometry=true&outSR=4326&f=json",
+        "retrieved_date": "2026-10-26",
+        "snapshot": "purdue_gis_fid798_delta_sigma_phi_2026-10-26_wgs84.json",
+        "feature_id": 798,
+        "attributes": {
+          "BUILDING_N": "Delta Sigma Phi",
+          "ADDRESS": "341 Northwestern Av",
+          "OWNER": "GREEK",
+          "NUM_LEVELS": 1,
+          "Shape__Area": 861.02734375,
+          "Shape__Length": 156.90357754774482
+        },
+        "source_crs": "EPSG:4326 response geometry; original service metadata is WKID 102100/3857"
+      },
+      {
+        "title": "Delta Sigma Phi Purdue Delta Delta Chapter website",
+        "provider": "Chapter-associated site",
+        "url": "https://purdue.deltasig.org/",
+        "retrieved_date": "2026-10-26",
+        "relevant_use": "Confirms current Purdue chapter identity; no reliable interior plan accessed."
+      },
+      {
+        "title": "Delta Sigma Phi: Delta Delta Purdue chapter page (2012) ",
+        "provider": "Purdue-hosted chapter page",
+        "url": "https://web.ics.purdue.edu/~yitbos/?page_id=828",
+        "retrieved_date": "2026-10-26",
+        "source_date": "2012-01-17 page; address text retained",
+        "relevant_use": "Identifies 341 Northwestern Avenue as the Delta Sigma Phi chapter location; historical, not relied on alone for present occupancy."
+      },
+      {
+        "title": "Delta Sigma Phi Fraternity - Delta Delta Chapter, location listing",
+        "provider": "Chapter-linked LinkedIn page",
+        "url": "https://www.linkedin.com/company/delta-sigma-phi-delta-delta-chapter",
+        "retrieved_date": "2026-10-26",
+        "relevant_use": "Lists 341 Northwestern Ave as the chapter's primary West Lafayette location."
+      },
+      {
+        "title": "West Lafayette Downtown Plan, 2020",
+        "provider": "City of West Lafayette / Tippecanoe County planning document",
+        "url": "https://www.tippecanoe.in.gov/DocumentCenter/View/24767/West-Lafayette-Downtown-Plan-2020-PDF?bidId=",
+        "retrieved_date": "2026-10-26",
+        "source_date": "2020",
+        "relevant_use": "Municipal historic-property section explicitly calls 341 Northwestern Avenue the Delta Sigma Phi House."
+      }
+    ]
+  },
+  "imagery": [
+    {
+      "title": "Google Street View, Mar 2026",
+      "provider": "Google Maps Street View",
+      "address_label": "339 Northwestern Ave, West Lafayette, Indiana (pano directly across/near 341 Northwestern Ave)",
+      "capture_date": "2026-03",
+      "retrieved_date": "2026-10-26",
+      "pano_id": "_pIsdy9qsEkhXRqClC_kvg",
+      "yaw_degrees": 278.6056,
+      "pitch_degrees": 0,
+      "url": "https://www.google.com/maps/@40.4268731,-86.9091972,189a,75y,278.61h,90t/data=!3m7!1e1!3m5!1s_pIsdy9qsEkhXRqClC_kvg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3D_pIsdy9qsEkhXRqClC_kvg%26yaw%3D278.6056!7i16384!8i8192",
+      "saved_snapshot": "google_street_view_2026-03_front.jpg",
+      "use": "Visual reference only; not used as a texture map. Shows long buff/brown brick facade, steep dark roof, gable entry, dormer windows, arched lower-level openings and steps."
+    },
+    {
+      "title": "Google Street View, Jun 2009",
+      "provider": "Google Maps Street View",
+      "address_label": "339 Northwestern Ave, West Lafayette, Indiana (pano directly across/near 341 Northwestern Ave)",
+      "capture_date": "2009-06",
+      "retrieved_date": "2026-10-26",
+      "pano_id": "_nIbZNYrUjcqQ-V7nnBCfQ",
+      "yaw_degrees": 278.6056,
+      "pitch_degrees": 0,
+      "url": "https://www.google.com/maps/@40.4268911,-86.9091843,189a,75y,278.61h,90t/data=!3m6!1e1!3m4!1s_nIbZNYrUjcqQ-V7nnBCfQ!2e0!5s20230701T000000!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3D_nIbZNYrUjcqQ-V7nnBCfQ%26yaw%3D278.6056!7i16384!8i8192",
+      "saved_snapshot": "google_street_view_2009-06_oblique.jpg",
+      "use": "Historical comparison: confirms tall steep-gable brick massing persisted; heavy foliage obscures facade and dormers, so it is not used for fine details."
+    }
+  ],
+  "geometry": {
+    "geometry_source": "Purdue GIS FID 798 outer polygon; source bounds correspond to the 860826641 building candidate, while the 860826640 candidate is adjacent and outside this FID geometry.",
+    "source_crs": "EPSG:4326 response; converted with project approximate local formula, origin (lat 40.4274, lon -86.9137), x=(lon+86.9137)*84810.60416539927 m, y=(lat-40.4274)*111040 m; X east, Y north, Z up.",
+    "local_frame": "Geometry is centered at polygon centroid (357.7400581597, -73.8297415800) m in campus-local XY and rotated so local u follows official minimum-rotated-rectangle long axis 129.444055 degrees east-CCW; local v is perpendicular. Detailed asset geometry is local; parent manifest/master placement must use this centroid.",
+    "polygon_vertex_count": 22,
+    "computed_area_project_m2": 498.10959,
+    "computed_perimeter_project_m": 119.335394,
+    "bounds_world_xy_m": [
+      338.26780307793706,
+      -89.57374682248883,
+      377.5963972373767,
+      -58.21281307337813
+    ],
+    "source_attributes_conflict": {
+      "Shape__Area_attribute_m2": 861.02734375,
+      "Shape__Length_attribute_m": 156.90357754774482,
+      "decision": "ArcGIS Shape__Area and Shape__Length attributes disagree with the retrieved WGS84 polygon after the documented approximate project transform (computed 498.110 m2 and 119.335 m; attributes 861.027 m2 and 156.904 m). The geometry ring was used for walls; attributes were not used for geometry or height."
+    },
+    "legacy_asset_footprint_comparison": {
+      "method": "Shapely polygon comparison of original massing object's six base vertices against FID 798 outer ring, both in documented campus-local approximation",
+      "old_massing_area_m2": 507.03357,
+      "GIS_ring_area_m2": 498.10959,
+      "intersection_over_union": 0.916571,
+      "symmetric_difference_m2": 43.754082,
+      "hausdorff_distance_m": 2.224464,
+      "interpretation": "Original block is a close but simplified footprint; updated wall perimeter uses the source ring itself. Added facade/roof/site details are excluded from wall-footprint matching."
+    },
+    "height": "Wall height 7.55 m and roof ridge 11.95 m are visual estimates from Street View/story rhythm, not surveyed values. Approximate uncertainty ±2 m. GIS Extrution=12 and NUM_LEVELS=1 are inconsistent with the visible multi-level facade and were not used as measured height."
+  },
+  "geometry_edits": [
+    "Replaced one 13-vertex, single-material massing block with exact FID 798 polygon wall shell and dedicated plinth surfaces.",
+    "Added procedural textured buff/red brick and dark slate/shingle materials; no external image dependencies.",
+    "Added two-story exterior window pattern, three arched lower windows, door/limestone surround, belt course, entrance steps, projecting gable and four front dormers based on current facade imagery.",
+    "Added a perpendicular roofed wing over the rear L-shaped footprint area.",
+    "No interior was modeled because no reliable plan evidence was located; no interior claims are made."
+  ],
+  "asset": {
+    "id": "massing_house_860826641_2c90f97",
+    "file": "modular/buildings/massing_house_860826641_2c90f97.blend",
+    "scene": "Building_massing_house_860826641_2c90f97",
+    "collection": "Asset_massing_house_860826641_2c90f97",
+    "coordinate_status": "local coordinates; proposed master placement centroid is (357.7400581597, -73.8297415800) m. Shared manifest remains coordinator-owned and still needs a detailed-instance conversion before master integration."
+  },
+  "validation": {
+    "fresh_open": "PASS; opened the saved asset in a new Blender 5.2.3 LTS background process",
+    "sha256": "1f1b3efa2fd0d3dd756ccbd6556ee5a4f8fce0539eae0f5088e1190c8992c976",
+    "scene": "Building_massing_house_860826641_2c90f97",
+    "collection": "Asset_massing_house_860826641_2c90f97",
+    "asset_object_count": 165,
+    "mesh_object_count": 164,
+    "mesh_vertex_count": 1062,
+    "mesh_polygon_count": 609,
+    "unique_material_count": 8,
+    "local_bounds_m": [
+      [
+        -21.73243522644043,
+        20.609188079833984
+      ],
+      [
+        -16.501022338867188,
+        16.73260498046875
+      ],
+      [
+        0.0,
+        12.010000228881836
+      ]
+    ],
+    "world_bounds_proposed_m": [
+      [
+        336.0076229332557,
+        378.3492462395301
+      ],
+      [
+        -90.33076391886883,
+        -57.09713659953289
+      ],
+      [
+        0.0,
+        12.010000228881836
+      ]
+    ],
+    "max_wall_vertex_xy_error_vs_gis_m": 8.637087089297851e-07,
+    "external_image_dependencies": [],
+    "linked_library_dependencies": [],
+    "interior_or_floorplan_objects": [],
+    "preview_files": [
+      "../previews/delta_sigma_phi_front.png",
+      "../previews/delta_sigma_phi_oblique.png"
+    ]
+  }
+}

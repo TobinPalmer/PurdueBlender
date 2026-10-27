@@ -1,0 +1,76 @@
+{
+  "building": "Delta Upsilon, Purdue chapter",
+  "asset": "modular/buildings/massing_house_301841256_1cc7641.blend",
+  "asset_sha256": "94ce070ec9329d2ed1ba4f8dc264a55f9e3eb5d682190948d570f29d8fef7328",
+  "review_type": "independent",
+  "reviewer": "Codex independent asset review",
+  "blender_version": "5.2.3 LTS",
+  "fresh_open": "PASS",
+  "score": 8.4,
+  "weighted_score_unrounded": 8.43,
+  "threshold": 8.0,
+  "pass": true,
+  "rubric": [
+    {
+      "criterion": "Identity and source attribution",
+      "score": 9.8,
+      "weight_percent": 10,
+      "finding": "Purdue GIS FID 751 explicitly identifies Delta Upsilon at 1300 Stadium, and the chapter contact page corroborates the current address. The OSM outline is a nearby geometric cross-check only, not identity evidence."
+    },
+    {
+      "criterion": "Wall footprint",
+      "score": 9.8,
+      "weight_percent": 20,
+      "finding": "Independent fresh-open measurement of the saved House_301841256 base vertices against the nine-vertex projected FID 751 ring found a maximum symmetric boundary distance of 0.0000033 m. The modeled wall shell follows the authoritative polygon; this is not an as-built survey."
+    },
+    {
+      "criterion": "Placement readiness",
+      "score": 9.2,
+      "weight_percent": 10,
+      "finding": "The detailed source is localized around the documented GIS-derived origin (-1057.421769, 496.563548) m and has a stable scene/collection. The placement marker has not yet been checked in the rebuilt master, so campus integration remains coordinator work."
+    },
+    {
+      "criterion": "Roof and silhouette",
+      "score": 7.4,
+      "weight_percent": 20,
+      "finding": "The low intersecting gray hip roof and articulated footprint are plausible and consistent with the documented aerial interpretation, but the inspected aerial has no preserved snapshot or exposed acquisition date. Roof geometry and ridge heights remain estimates, and the available chapter photograph does not show the roof."
+    },
+    {
+      "criterion": "Facade and entrance",
+      "score": 7.8,
+      "weight_percent": 20,
+      "finding": "Red brick, dark blue sash glazing, light trim/bands, entry steps, a wood door, and the freestanding Delta Upsilon / 1914 sign respond to the official 2023 chapter photo. Repeated window spacing is generalized; some modeled window proportions appear squarer than the tall windows in the reference, and sign placement and obscured openings are inferred."
+    },
+    {
+      "criterion": "Materials and texturing",
+      "score": 8.6,
+      "weight_percent": 10,
+      "finding": "Nine distinct procedural materials cover brick, slate, limestone, foundation, wood, hardware, painted sash, glass, and sign. The fresh-opened asset has no external images or linked libraries. In the provided render the overall lighting is quite bright, which makes brick and stone read paler than the reference photograph."
+    },
+    {
+      "criterion": "Interior",
+      "score": 4.0,
+      "weight_percent": 5,
+      "finding": "No interior is modeled. The evidence package clearly documents the lack of a reliable floor plan, so this review does not reward invented room layouts; the requested interior detail remains absent."
+    },
+    {
+      "criterion": "Geometry quality, portability, reopen, and evidence",
+      "score": 9.4,
+      "weight_percent": 5,
+      "finding": "An independent Blender 5.2.3 reopen verified the exact requested SHA, stable scene and collection, 11 meshes plus three text objects, nine used materials, zero stray objects, no empty/materialless meshes, no invalid material indices, and no external images or linked libraries. Source dates, CRS, transform, projection caveats, estimates, and omissions are documented."
+    }
+  ],
+  "independent_fresh_open_report": "audit/delta_upsilon/independent_grade_codex/fresh_open_probe.json",
+  "visual_references_reviewed": [
+    "audit/delta_upsilon/official_du_house_2023.jpg",
+    "audit/delta_upsilon/delta_upsilon_fresh_open_preview.png",
+    "audit/delta_upsilon/delta_upsilon_entry_preview.png"
+  ],
+  "limitations": [
+    "No reliable floor plan was located; interior geometry is absent.",
+    "Roof plan interpretation, roof pitch/ridge heights, story heights, and total height remain estimates.",
+    "The chapter photograph does not show the roof and has tree/person occlusion; the aerial evidence does not preserve the inspected image or its acquisition date.",
+    "Exact campus placement is ready in the manifest proposal but still requires master marker integration and post-integration verification.",
+    "The 2023 photo supports broad facade materials and details, not every window bay, dimension, or sign location."
+  ]
+}

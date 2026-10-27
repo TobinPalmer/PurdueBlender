@@ -1,0 +1,70 @@
+{
+  "asset_id": "massing_veterinary_animal_isolation_building_2_ebb4142",
+  "building": "Veterinary Animal Isolation Building 2 (VA2)",
+  "retrieved_utc_date": "2026-10-26",
+  "gis": {
+    "provider": "Purdue University ArcGIS REST, BuildingShapesZip4 FeatureServer layer 0",
+    "feature_id": 942,
+    "global_id": "{E34033B7-E51E-4DBF-AE76-346970ECF3D8}",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D942&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+    "feature_layer_metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+    "source_crs": "EPSG:4326 (requested); layer geometry metadata reports esriMeters for area/length fields",
+    "source_fields": {
+      "BLDG_ABBR": "VA2",
+      "BUILDING_N": "Veterinary Animal Isolation Building 2",
+      "ADDRESS": "400 S University Street",
+      "NUM_LEVELS": 1,
+      "CountOfFLO": 1,
+      "Extrution": 15,
+      "Shape__Area": 838.125,
+      "Shape__Length": 137.12981120217285
+    },
+    "provider_data_last_edit_ms": 1788192821596,
+    "local_copy": "sources/purdue_va2_fid942.geojson",
+    "method": "Preserved all emitted polygon vertices. Converted lon/lat to the project local metric frame using X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040, then subtracted the polygon bounding-box center as the asset-local anchor.",
+    "anchor_local_origin_world_xy_m": [-201.17001685170442, -948.4519000771968],
+    "converted_footprint_bbox_world_xy_m": {
+      "min": [-208.0365067, -967.6385487],
+      "max": [-194.3035270, -929.2652514]
+    },
+    "uncertainty": "The source Shape__Area value (838.125 m2 per metadata) exceeds the footprint's coordinate-derived bounding-box area (~527 m2), so it is internally inconsistent with the returned geometry. The vertex geometry was used; the area field was not used to scale the model. Existing asset report bounds differed from GIS by about 0.6m horizontally. Coordinate conversion uses the project's local tangent approximation."
+  },
+  "building_information": {
+    "provider": "Purdue University Office of Emergency Preparedness",
+    "url": "https://www.purdue.edu/operations/emergency-preparedness/va2/",
+    "page_revision_date": "2026-08-24",
+    "local_copy": "sources/purdue_va2_emergency_plan_2026-10-26.html",
+    "evidence": [
+      "The official page identifies VA2 at 400 S University Street and says it is a two-floor building for research and teaching animals, including poultry, rodents, swine and small ruminants.",
+      "It says the second floor is an interstitial HVAC space and there is no basement.",
+      "It says a bathroom at the end of the building is designated as shelter-in-place space; it does not identify which end or reveal its plan."
+    ],
+    "uncertainty": "GIS lists NUM_LEVELS=1 while OEP describes two floors. The model treats the occupied floor plus low HVAC interstitial as one roofline volume. Height is estimated; no dimensions or surveyed elevations were available. Interior layout and location of the bathroom are illustrative only."
+  },
+  "imagery": {
+    "provider": "Esri World Imagery (provider attribution: Esri, Vantor, Earthstar Geographics, and GIS User Community)",
+    "service_url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+    "service_metadata_local_copy": "sources/esri_world_imagery_service_metadata.json",
+    "local_tile": "sources/esri_world_imagery_va2_2026-10-26.jpg",
+    "request_crs": "EPSG:4326",
+    "request_date": "2026-10-26",
+    "acquisition_date": null,
+    "method": "Downloaded a 1200x1200 map export around the GIS footprint and visually aligned the long north-south roof, central dark service strip, repeated low rooftop units/exhausts, and east-side paved parking.",
+    "uncertainty": "The displayed tile does not expose per-pixel acquisition date or a feature-specific imagery citation. Service metadata describes multiple resolutions/providers; the local tile's exact source/resolution cannot be established from this export. Imagery supports roof plan/details and surrounding paving, but not precise elevations, facade construction, windows, or interior."
+  },
+  "modeling_decisions": {
+    "footprint": "Source polygon vertices, unscaled.",
+    "height_m": "Estimated 4.62m roof top, 4.87m parapet top; no direct height survey found. The GIS Extrution field is preserved as evidence but unit semantics are undocumented and is not used as a 15m building height.",
+    "materials": "Procedural, self-contained shaders only; no external image texture dependencies. Restrained light gray warm wall panels, pale membrane roof, darker HVAC slots, and metallic service details are chosen conservatively from aerial appearance and building use; facade color/material are not verified by a photograph.",
+    "interior": "Illustrative cleanable animal-care rooms, corridor, generic pens and wash fixtures. Included as contextual visualization based on the official stated use, not as an asserted representation of the actual inaccessible plan.",
+    "excluded_claims": ["Exact window pattern", "Exact exterior material/color", "Exact room layout", "Exact HVAC equipment count/type", "Exact roof and floor elevations"]
+  },
+  "deliverables": {
+    "builder_script": "../../modular/buildings/build_massing_veterinary_animal_isolation_building_2_ebb4142.py",
+    "fresh_validation": "fresh_open_validation.json",
+    "fresh_open_validation_script": "fresh_open_validate.py",
+    "exterior_preview": "preview_exterior.png",
+    "roof_preview": "preview_roof.png",
+    "interior_cutaway_preview": "preview_interior_cutaway.png"
+  }
+}

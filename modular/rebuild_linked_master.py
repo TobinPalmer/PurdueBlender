@@ -11,6 +11,26 @@ scene = bpy.context.scene
 root_collection = scene.collection
 asset_by_id = {a["id"]: a for a in manifest["assets"]}
 detailed = [a for a in manifest["assets"] if a.get("kind") == "detailed"]
+excluded_assets = manifest.get("excluded_assets", [])
+excluded_ids = {record["id"] for record in excluded_assets}
+
+# Drop stale collection-instance markers left behind when an asset was
+# reclassified from detailed to massing or removed from the manifest. The
+# manifest is the placement source of truth; retaining one of these markers
+# would duplicate the direct-linked asset or an out-of-scope building.
+expected_marker_names = {f"Placement_{asset['id']}" for asset in detailed}
+removed_stale_markers = []
+for obj in list(scene.objects):
+    if obj.name.startswith("Placement_") and obj.name not in expected_marker_names:
+        removed_stale_markers.append(obj.name)
+        bpy.data.objects.remove(obj, do_unlink=True)
+
+# Exclusions are explicit in the manifest so rebuilding from an existing master
+# also removes any previously linked collection that is now out of project scope.
+for record in excluded_assets:
+    collection = bpy.data.collections.get(record["collection"])
+    if collection is not None and collection in list(root_collection.children):
+        root_collection.children.unlink(collection)
 
 def resolve_library(collection):
     if collection.library is None:
@@ -78,6 +98,8 @@ superseded = {
     "massing_max_w_maileen_brown_family_hall_of_electrical_engineering_bhee_078fbfb": "electrical_engineering",
     "massing_house_1033674920_dcd3b76": "elliott_hall_of_music",
     "massing_house_860822250_df21db0": "dudley_hall and lambertus_hall",
+    "massing_house_860826641_2c90f97": "delta_sigma_phi",
+    "massing_house_301841605_8eef95d": "alpha_epsilon_pi; probable duplicate at FID 754/current 1051 David Ross address, GIS label Chi Phi remains unresolved",
     "massing_knoy_hall_knoy_f598616": "knoy_hall",
     "massing_american_railway_building_rail_fc0f9a2": "american_railway_building",
     "massing_brown_laboratory_of_chemistry_brwn_aed3885": "brown_laboratory_of_chemistry",
@@ -124,6 +146,7 @@ superseded = {
     "massing_university_church_84b2a1b": "university_church",
     "massing_university_lutheran_church_20903f1": "university_lutheran_church",
     "massing_university_street_parking_garage_pgu_be81bec": "university_street_parking_garage_pgu",
+    "massing_utility_plant_office_facility_e219ef5": "utility_plant_office_facility",
     "massing_wang_hall_wang_0dac5ab": "wang_hall",
     "massing_northwestern_parking_garage_979f1a2": "master_override_with_pgsc_opening",
 }
@@ -133,6 +156,12 @@ for old_id, replacement in superseded.items():
         orphan = bpy.data.collections.get('Asset_' + old_id)
         if orphan is not None and orphan in list(root_collection.children):
             root_collection.children.unlink(orphan)
+        continue
+    # A source asset may be upgraded in-place from massing to detailed while
+    # keeping its stable ID and library path. The detailed placement loop has
+    # already unlinked its campus-coordinate collection; don't label the new
+    # detailed asset itself as superseded.
+    if old.get("kind") != "massing":
         continue
     collection = bpy.data.collections.get(old["collection"])
     if collection is not None and collection in list(root_collection.children):
@@ -220,6 +249,8 @@ if pgsc_record is not None and pgsc_record.get("kind") == "detailed":
 for record in manifest['assets']:
     if record.get('kind') != 'massing' or record['id'] in superseded or record.get('master_visibility','').startswith('superseded'):
         continue
+    if record['id'] in excluded_ids:
+        continue
     collection = get_linked_collection(record)
     if collection not in list(root_collection.children):
         root_collection.children.link(collection)
@@ -276,12 +307,23 @@ for name, record in expected.items():
     actual_xy = marker.location[:2]
     if any(abs(float(actual_xy[i]) - float(expected_xy[i])) > 0.001 for i in range(2)):
         errors.append(f"wrong placement on {name}: actual={list(actual_xy)}, expected={expected_xy}")
+actual_marker_names = {o.name for o in scene.objects if o.name.startswith("Placement_")}
+if actual_marker_names != expected_marker_names:
+    errors.append(
+        "placement marker set differs from manifest: "
+        f"missing={sorted(expected_marker_names - actual_marker_names)}, "
+        f"extra={sorted(actual_marker_names - expected_marker_names)}"
+    )
 for old_id in superseded:
     old = asset_by_id.get(old_id)
     if old:
         col = bpy.data.collections.get(old["collection"])
         if col is not None and col in list(root_collection.children):
             errors.append(f"superseded massing still linked: {old_id}")
+for record in excluded_assets:
+    collection = bpy.data.collections.get(record["collection"])
+    if collection is not None and collection in list(root_collection.children):
+        errors.append(f"out-of-scope collection still linked: {record['id']}")
 
 verification = {
     "status": "PASS" if not errors else "FAIL",
@@ -289,9 +331,12 @@ verification = {
     "building_count": sum(a.get("kind") != "site" for a in manifest["assets"]),
     "detailed_asset_count": len(detailed),
     "master_placement_markers": sum(1 for o in scene.objects if o.name.startswith("Placement_")),
+    "removed_stale_placement_markers": removed_stale_markers,
     "master_scene_object_count": len(scene.objects),
     "source_asset_object_count": sum(a.get("object_count", 0) for a in manifest["assets"]),
-    "superseded_massing_assets": list(superseded),
+    "superseded_massing_assets": [asset_id for asset_id in superseded
+                                   if asset_by_id.get(asset_id, {}).get("kind") == "massing"],
+    "excluded_from_master": [a["id"] for a in excluded_assets],
     "pgsc_garage_master_override": {
         "collection": garage_override_name if pgsc_record is not None and pgsc_record.get("kind") == "detailed" else None,
         "status": "PASS" if pgsc_record is not None and pgsc_record.get("kind") == "detailed" else "NOT_APPLIED",

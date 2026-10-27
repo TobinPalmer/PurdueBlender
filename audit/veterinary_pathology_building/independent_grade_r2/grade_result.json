@@ -1,0 +1,93 @@
+{
+  "building": "Veterinary Pathology Building (VPTH)",
+  "asset_sha256": "af5322599937769084f6cc3b80fd66e7b6725cbf62914fc773fd09ee604f9aa8",
+  "score": 8.2,
+  "max_score": 10,
+  "passing_threshold": 8.0,
+  "pass": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue GIS OBJECTID 165 identifies Veterinary Pathology Building (VPTH), 725 Harrison Street.",
+        "Fresh Blender 5.2.3 reopen compared the model base to all converted GIS ring points; bidirectional Hausdorff error is 0.000001375 m.",
+        "The raw GIS polygon was preserved without rotation or scale."
+      ],
+      "limits": [
+        "The GIS response does not publish a survey accuracy statement; coordinates use the project's documented local tangent approximation."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "The building mesh is now in local coordinates about documented campus anchor (-162.821272, -816.256807) m; the source object transform is (0,0,0).",
+        "Local plan bounds are 54.972 x 42.745 m, consistent with the converted source polygon; vertex orientation is preserved.",
+        "Adding the documented anchor reconstructs the campus location; the placement convention is ready for a master marker."
+      ],
+      "limits": [
+        "The master placement marker and neighboring building context were not part of this isolated asset grade."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2.0,
+      "evidence": [
+        "The Purdue 2026 emergency plan lists a basement, first through third floors, and attic; the model shows the same broad vertical organization.",
+        "The historic GIS description also notes a basement and attic and reports that the original building was two stories.",
+        "Model top height of 15.925 m and the roof/attic volume are explicitly recorded as estimates."
+      ],
+      "limits": [
+        "No measured elevations or floor-to-floor heights were found. Roof profile, penthouse form, and 15.925 m top elevation remain unverified; historical two-story description and current three-floor emergency plan do not resolve exact vertical geometry."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2.0,
+      "evidence": [
+        "The rendered exterior presents a coherent masonry shell, repeated windows, story bands, entrance portals and the GIS-derived irregular plan.",
+        "The emergency plan confirms exits on the north, south, and west and an elevator dock entrance on the southeast, but does not locate facade bays or specify exterior materials."
+      ],
+      "limits": [
+        "No usable current exterior photographs or elevation drawings were found in the local evidence set or targeted search. Brick/stone colors, window rhythm, portal design, and exact facade detailing remain interpretive; the preview looks like a clean visualization but is not photo-verified."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "A fresh Blender 5.2.3 process opened the saved asset and found the expected scene, collection, stable asset ID, and one named building mesh.",
+        "The mesh has 5,858 vertices and 4,152 polygons; all 7 material slots are used (slot assignments total 4152 polygons).",
+        "The asset has no file-image dependencies or linked external libraries and stores the model in local coordinates.",
+        "The evidence folder contains the official GIS snapshot, current emergency plan, source/method notes, preview, and fresh-open validation."
+      ],
+      "limits": [
+        "The interior is represented only by generic floor plates; room partitions and tunnel connections are not modeled or verified."
+      ]
+    }
+  ],
+  "evidence": {
+    "independent_fresh_open_probe": "fresh_open_probe.json",
+    "source_evidence": "../evidence.json",
+    "source_gis_snapshot": "../purdue_campus_building_vpth_raw.geojson",
+    "exterior_preview": "../preview_exterior.png",
+    "builder_validation": "../validation.json",
+    "rubric": "AGENT.md five-criterion rubric"
+  },
+  "findings": [
+    {
+      "severity": "pass with substantial architectural uncertainty",
+      "finding": "Local-coordinate conversion resolved the previous modular-placement blocker. The footprint is nearly exact against the saved GIS ring, but roof/attic height and facade character still lack measured or photographic support."
+    },
+    {
+      "severity": "scope limit",
+      "finding": "This is an isolated building asset review. The master placement marker, neighboring campus context, and interior layout are not included in this grade."
+    }
+  ]
+}

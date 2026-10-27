@@ -1,0 +1,120 @@
+{
+  "building_id": "massing_veterinary_medicine_isolation_facility_66d1305",
+  "asset_path": "modular/buildings/massing_veterinary_medicine_isolation_facility_66d1305.blend",
+  "collection": "Asset_massing_veterinary_medicine_isolation_facility_66d1305",
+  "scene": "Building_massing_veterinary_medicine_isolation_facility_66d1305",
+  "source_feature": {
+    "provider": "Purdue University GIS / BuildingShapesZip4",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 78,
+    "building_abbreviation": "VMIF",
+    "name": "Veterinary Medicine Isolation Facility",
+    "address": "402 S University Street",
+    "repository_snapshot": "audit/official_purdue_buildings_wgs84.json; source audit ledger retrieved 2026-10-22",
+    "snapshot": "audit/veterinary_medicine_isolation_facility/purdue_gis_VMIF_feature.json",
+    "crs": "EPSG:4326 WGS84",
+    "transform": "Project documented local approximation: X=(lon+86.9137)*111412.84*cos(40.4274\u00b0), Y=(lat-40.4274)*111040; meters east/north; area centroid local origin",
+    "reported_polygon_area_m2": 849.07421875,
+    "coordinate_ring_area_projected_m2": 491.25196095184947,
+    "reported_perimeter_m": 151.02413177496157,
+    "stories": 1,
+    "extrusion_field_value": 12,
+    "extrusion_units": "not specified in layer metadata",
+    "measurement_method": "GIS polygon converted without scaling; anchor is GIS polygon area centroid."
+  },
+  "official_news_source": {
+    "provider": "Purdue News Service",
+    "url": "https://www.purdue.edu/uns/html4ever/2005/050112.Levy.isolation.html",
+    "published": "2005-01-12",
+    "retrieved": "2026-10-26",
+    "raw_snapshot": "audit/veterinary_medicine_isolation_facility/purdue_news_vmif_2005.html",
+    "photo_url": "https://www.purdue.edu/uns/images/+2004/vet-isolation.jpg",
+    "photo_file": "audit/veterinary_medicine_isolation_facility/vet-isolation.jpg",
+    "content": "Reports eight 12-by-12-foot stalls, one configured for cattle; treatment/sterilization/storage/office spaces; hallway viewing windows; stall doors display protocol notices. Image depicts interior, not exterior elevations."
+  },
+  "official_historic_database_source": {
+    "provider": "Purdue University Libraries Archives and Special Collections",
+    "url": "https://collections.lib.purdue.edu/campus/buildings/24",
+    "retrieved": "2026-10-26",
+    "page_snapshot": "audit/veterinary_medicine_isolation_facility/page_0.html",
+    "recorded_square_footage": 5324
+  },
+  "official_facilities_inventory_source": {
+    "provider": "Purdue University Treasurer / Facilities inventory",
+    "url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/03/Space-Report_1.13.1HE_Buiding_List_Oct2021.pdf",
+    "published": "2021 inventory; retrieved 2026-10-26",
+    "reported_square_footage": 5323.99
+  },
+  "area_conflict": {
+    "gis_shape_area_field_m2": 849.07421875,
+    "gis_shape_area_field_sqft": 9139.4,
+    "area_from_GIS_ring_after_documented_local_projection_m2": 491.25196095184947,
+    "ring_area_sqft": 5287.8,
+    "field_vs_ring_difference_m2": 357.822,
+    "field_vs_ring_difference_percent_of_ring": 72.8,
+    "purdue_news_2005_sqft": 5740,
+    "historic_database_sqft": 5324,
+    "treasurer_inventory_sqft": 5323.99,
+    "interpretation": "The GIS Shape__Area attribute (849.074 m\u00b2) materially disagrees with area calculated from its own 12 polygon vertices in the documented local projection (491.252 m\u00b2). Published 5,324 sq ft facility area is close to the projected ring area; 2005 Purdue News reports 5,740 sq ft. These values may reflect different measurement bases, but the provider field-vs-ring discrepancy remains unresolved. Model follows source vertices without scaling."
+  },
+  "aerial_source": {
+    "provider": "Esri World Imagery",
+    "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+    "tile_url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/197687/135564",
+    "service_metadata": "audit/veterinary_medicine_isolation_facility/esri_world_imagery_service_metadata.json",
+    "tile_snapshot": "audit/veterinary_medicine_isolation_facility/esri_world_imagery_vmif_z19.jpg",
+    "gis_overlay": "audit/veterinary_medicine_isolation_facility/esri_world_imagery_vmif_gis_overlay.png",
+    "retrieved": "2026-10-26",
+    "tile": "level 19, column 135564, row 197687",
+    "crs": "Web Mercator / WKID 3857 tile scheme, imagery reprojection verified by GIS overlay",
+    "source_capture_date": "not exposed for this tile",
+    "method": "Tile projected from WGS84 Web Mercator quad; GIS ring overlaid. Roof plan broadly aligns; roof is pale/white and two rooftop equipment clusters are visible; wall openings are occluded from above."
+  },
+  "additional_identity_source": {
+    "provider": "Purdue University campus map",
+    "url": "https://assets.simpleviewinc.com/simpleview/image/upload/v1/clients/westlafayettein/Purdue_414cab09-65bd-4c2d-9fe4-89b4771056ef.pdf",
+    "content": "Lists VMIF as Veterinary Medicine Isolation Facility in map grid G10."
+  },
+  "anchor_campus_xy_m": [
+    -120.02533746747042,
+    -1042.3516060860252
+  ],
+  "local_footprint_dimensions_m": {
+    "major": 37.16891387443808,
+    "minor": 20.40847012918543,
+    "source_area": 849.07421875
+  },
+  "modeled_detail": {
+    "exterior_service_door": "One approximately 3 m sliding animal/service door on west facade; conservative placement on aerial-visible paved service side, inferred because aerial does not show door elevation.",
+    "exterior_windows": "No unambiguous exterior window pattern is visible in aerial/current sources; none invented.",
+    "interior_stall_doors": 8,
+    "interior_observation_windows": 8,
+    "stall_clear_dimensions_m": [
+      3.6576000000000004,
+      3.6576000000000004
+    ],
+    "roof_units": 2,
+    "facade": "Light painted block courses based on the official 2005 interior photo; extending the finish to exterior is an assumption."
+  },
+  "model_notes": [
+    "Exterior footprint follows the official GIS ring at native scale; projected coordinate ring area is 491.252 m\u00b2 while the same feature Shape__Area attribute says 849.074 m\u00b2. The roof outline broadly aligns with the imagery; geometry was not rescaled.",
+    "Interior stall bays are dimensioned to documented 12 x 12 ft; room arrangement remains inferred because no plan was found.",
+    "Single storey follows official GIS NUM_LEVELS=1 / CountOfFLO=1.",
+    "Eave is set to 3.60 m and roof top to 3.80 m as visual estimates only. GIS Extrution=12 has undocumented units and was not treated as measured height.",
+    "Low-slope, pale roof form and two rooftop equipment clusters follow aerial imagery; exact pitch, parapet and vertical dimensions are unknown.",
+    "Wall course detail is visible in official interior photo; matching exterior material/course is a cautious visual extrapolation.",
+    "GIS Shape__Area attribute 849.074 m\u00b2 conflicts with the 491.252 m\u00b2 calculated from source vertices (72.8% relative to ring area). The projected ring area is close to 5,324 sq ft in Purdue inventory; Purdue News reports 5,740 sq ft. The footprint remains unscaled.",
+    "Existing massing used 16 m fallback height; no master or shared placement data was edited."
+  ],
+  "uncertainty": [
+    "GIS identity is supported by FID 78, VMIF abbreviation, name, address and GlobalID.",
+    "GIS Shape__Area versus coordinate ring area is an unresolved internal provider conflict; the GIS ring itself aligns closely with roof imagery and remains unscaled.",
+    "Aerial tile capture date is unknown; it confirms roof silhouette and visible rooftop plant but not elevation.",
+    "Exterior service door is a clearly marked inference on the west paved service side, not directly visible in aerial.",
+    "Exterior window locations, materials beyond the interior photo, exact eave/roof elevations and room positions remain unverified."
+  ],
+  "preview": "audit/veterinary_medicine_isolation_facility/vmif_preview.png",
+  "cutaway_preview": "audit/veterinary_medicine_isolation_facility/vmif_cutaway.png",
+  "blend_sha256": "14fae094e5a857d6ca9f4cb8b73f619df8df003728fd6a9acc9570bce45162b5",
+  "object_count_exported": 145
+}

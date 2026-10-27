@@ -1,0 +1,134 @@
+{
+  "building_id": "massing_utility_plant_office_facility_e219ef5",
+  "prepared_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "source_id": "purduE_building_shapes_fid296",
+      "provider": "Purdue University GIS / ArcGIS REST feature service",
+      "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D296&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "layer_metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "feature_id": 296,
+      "feature_code": "UPOF",
+      "feature_name": "Utility Plant Office Facility",
+      "retrieved": "2026-10-26",
+      "snapshot": "sources/arcgis_fid296_feature.json",
+      "metadata_snapshot": "sources/building_shapes_layer_metadata.json",
+      "native_source_crs": "WKID 102100 / EPSG:3857 (from layer metadata)",
+      "geometry_request_crs": "EPSG:4326 (explicit outSR=4326)",
+      "method": "Transformed source polygon coordinates from WGS84 into the project local tangent approximation: X=(lon+86.9137)*111412.84*cos(40.4274 degrees); Y=(lat-40.4274)*111040.0. Used the 10 unique ring vertices; retained the non-rectangular east-side projection.",
+      "computed_outline": {
+        "area_m2": 446.009,
+        "perimeter_m": 88.989,
+        "bounds_x_m": [95.686, 116.548],
+        "bounds_y_m": [-1064.019, -1040.074],
+        "length_east_west_m": 20.862,
+        "length_north_south_m": 23.945,
+        "orientation": "long axis approximately north-south; polygon edge bearing differs from cardinal axis by about 0.4 degrees"
+      },
+      "source_attributes_relevant": {
+        "FID": 296,
+        "BLDG_ABBR": "UPOF",
+        "BUILDING_N": "Utility Plant Office Facility",
+        "ADDRESS": "419 S Grant Street",
+        "NUM_LEVELS": 2,
+        "Extrution": 24,
+        "Elevation": 589.6,
+        "Shape__Area": 770.87109375,
+        "Shape__Length": 117.00451763292948
+      },
+      "uncertainty": "ArcGIS metadata does not document units for Extrution or the shape summary fields. The polygon is the measured input; 24 was interpreted as feet only to guide an approximately 7.3 m total-height estimate. The service geometry is map data, not a survey certificate."
+    },
+    {
+      "source_id": "purdue_oep_bep_upof",
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "source_url": "https://www.purdue.edu/operations/emergency-preparedness/upof/",
+      "retrieved": "2026-10-26",
+      "page_revision_date": "2026-03-23",
+      "snapshot": "sources/purdue_oep_upof.html",
+      "crs": "Not applicable; official building description and program source.",
+      "facts_used": [
+        "The facility is an administrative building with two floors, mostly cubicle workspace.",
+        "There is no elevator.",
+        "The main entry and AED are on the east wall.",
+        "The first-floor restrooms used for shelter are at the southwest corner.",
+        "The second floor contains Utility Engineering and BAS staff."
+      ],
+      "uncertainty": "The emergency plan is not an architectural elevation or complete floor plan; interior partition geometry is schematic and not to scale."
+    },
+    {
+      "source_id": "esri_world_imagery_tile",
+      "provider": "Esri World Imagery (basemap tile service; imagery contributors vary by area)",
+      "service_metadata_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer?f=pjson",
+      "tile_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/197687/135568",
+      "tile_snapshot": "sources/esri_world_imagery_tile_z19.jpg",
+      "metadata_snapshot": "sources/esri_world_imagery_service.json",
+      "retrieved": "2026-10-26",
+      "tile_crs": "Web Mercator Auxiliary Sphere, WKID 102100 / EPSG:3857",
+      "tile_zoom": 19,
+      "tile_resolution_at_feature_latitude_m_per_pixel": 0.229,
+      "imagery_acquisition_date": "Not reported for this tile by the basemap endpoint.",
+      "visual_observations_used": [
+        "The roof is bright/light-valued and shows repeated narrow seams or ribs.",
+        "A few small tonal breaks are visible but their identity as equipment is uncertain; the low, flat-looking roof silhouette is clearer.",
+        "The footprint form includes a main rectangular mass and an east-side projection."
+      ],
+      "uncertainty": "Overhead imagery supports roof texture and footprint/context, but cannot establish facade materials, window positions, exact roof pitch, or height."
+    },
+    {
+      "source_id": "esri_world_imagery_zoom20_tiles",
+      "provider": "Esri World Imagery (basemap tile service; imagery contributors vary by area)",
+      "service_metadata_url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer?f=pjson",
+      "tile_urls": [
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/20/395374/271136",
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/20/395374/271137",
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/20/395375/271136",
+        "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/20/395375/271137"
+      ],
+      "raw_tile_snapshots": [
+        "sources/esri_world_imagery_z20_x271136_y395374.jpg",
+        "sources/esri_world_imagery_z20_x271137_y395374.jpg",
+        "sources/esri_world_imagery_z20_x271136_y395375.jpg",
+        "sources/esri_world_imagery_z20_x271137_y395375.jpg"
+      ],
+      "mosaic_snapshot": "sources/esri_world_imagery_upof_orthomosaic_z20.png",
+      "GIS_overlay_preview": "previews/utility_plant_office_facility_gis_orthophoto_overlay.png",
+      "retrieved": "2026-10-26",
+      "tile_crs": "Web Mercator Auxiliary Sphere, WKID 102100 / EPSG:3857",
+      "tile_zoom": 20,
+      "tile_resolution_at_feature_latitude_m_per_pixel": 0.114,
+      "imagery_acquisition_date": "Not reported for this tile by the basemap endpoint.",
+      "method": "Assembled the four native 256×256 tiles without resampling; the source GIS feature ring was projected to tile pixels and drawn as a magenta outline for visual footprint comparison.",
+      "visual_observations_used": [
+        "The source outline aligns with a bright, nearly continuous main roof and an east-side projection.",
+        "Roof seams run approximately east-west in the north-up image.",
+        "The roof image does not substantiate four raised HVAC cabinets or an access hatch, so none are included in the revised model."
+      ],
+      "uncertainty": "The acquisition date is not reported; shadows and low-resolution roof details can obscure small features."
+    },
+    {
+      "source_id": "purdue_ecn_webcam_from_upof_2026_05_18_11_00",
+      "provider": "Purdue University Engineering Computer Network (ECN) webcam gallery",
+      "page_url": "https://engineering.purdue.edu/ECN/WebCam/cam90/grid",
+      "image_url": "https://engineering.purdue.edu/ECN/WebCam/cam90/2026_05_18_11_00.jpg",
+      "gallery_caption": "from UPOF",
+      "capture_time_in_filename": "2026-05-18 11:00 (Purdue local time; filename timestamp)",
+      "retrieved": "2026-10-26",
+      "page_snapshot": "sources/purdue_ecn_webcam_cam90_grid.html",
+      "image_snapshot": "sources/purdue_ecn_webcam_from_upof_2026_05_18_11_00.jpg",
+      "crs": "Not georeferenced; oblique fixed webcam view.",
+      "visual_observations": "The camera is labeled 'from UPOF' and shows Wade Utility Plant context. A close wall in frame has pale gray vertically ribbed cladding, a horizontal divider, a lower masonry-looking section, and small windows/service doors.",
+      "use_and_uncertainty": "Context only: exact camera bearing and the identity of the close wall are not documented, so its cladding was not treated as a direct verified UPOF elevation. It supports only a restrained light-gray industrial facade treatment; facade window positions remain estimates."
+    },
+    {
+      "source_id": "google_streetview_context_2007",
+      "provider": "Google Maps Street View",
+      "source_url": "https://www.google.com/maps/@40.4182655,-86.9120491,181a,90y,90t/data=!3m7!1e1!3m5!1sgd1MTUrrYiA2KCnBY-1Ldw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dgd1MTUrrYiA2KCnBY-1Ldw%26yaw%3D0!7i3328!8i1664",
+      "pano_id": "gd1MTUrrYiA2KCnBY-1Ldw",
+      "capture_date": "2007-09",
+      "retrieved": "2026-10-26",
+      "snapshot": null,
+      "role": "Context only. The nearest panorama is northeast of UPOF and does not provide a direct facade view of UPOF; it was not used to infer facade details.",
+      "uncertainty": "Old capture and oblique viewpoint; inadequate for current facade verification."
+    }
+  ]
+}
