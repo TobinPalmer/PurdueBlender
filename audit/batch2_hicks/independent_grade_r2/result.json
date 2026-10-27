@@ -1,0 +1,98 @@
+{
+  "building_id": "hicks_library",
+  "building_name": "John W. Hicks Undergraduate Library",
+  "asset": "modular/buildings/hicks_library.blend",
+  "expected_sha256": "3fc4a157b3ee6ce863edcb74155c1463706f75e7b7fb9170e2849b25cde48cf0",
+  "inspected_sha256": "3fc4a157b3ee6ce863edcb74155c1463706f75e7b7fb9170e2849b25cde48cf0",
+  "sha_match": true,
+  "review_revision": "R2 independent",
+  "reviewer": "independent grader",
+  "blender_version": "5.2.3 LTS",
+  "fresh_open": true,
+  "score": 8.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue Campus GIS BuildingShapesZip4 identifies FID 197 as John W. Hicks Undergraduate Library at 504 Mitch Daniels Blvd.",
+        "The saved shell object HIKS_Exterior_Masonry_Walls has X/Y bounds matching the official polygon within 0.000026 m; 20 unique source vertices are within 0.000029 m of shell vertices."
+      ],
+      "limitations": [
+        "The public GIS record is an official map polygon but is explicitly not a certified survey; it supports footprint, not wall section."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": [
+        "The source polygon was independently transformed to the manifest local frame at placement origin [88.25, -317.24000549316406]; orientation and structural XY bounds match, with max vertex error 0.000029 m.",
+        "The sloped masonry loft’s upper perimeter is at Z=2.438 m and agrees with all 20 GIS points within 0.000623 m. The local asset bounds are plausible for its basement and roof forms."
+      ],
+      "limitations": [
+        "The actual master Placement_hicks_library object was outside this asset-only review; no independent marker-placement error is claimed. The sloped apron lower-ring scale is estimated."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue GIS lists three levels and elevation attributes for ground floor, basement and roof/skylight; the model contains subterranean levels, roof deck, atrium and three pyramidal skylights.",
+        "The exterior reference supports the low square form and sloped masonry apron."
+      ],
+      "limitations": [
+        "GIS metadata says these heights are unverified; it is not a surveyed elevation record. No measured section or full roof schedule was found. The roof/slab verticals, 2.438 m upper slope contact, skylight peak and basement topology remain provisional."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": [
+        "The exterior photo shows the same low brick cube with broad sloped masonry walls; the asset models four GIS-perimeter lofted sloped faces.",
+        "Purdue’s 2013 renovation announcement/photo supports lounge banquettes, bistro tables, privacy screens, quick-access computers and an iDesk; the asset contains these categories."
+      ],
+      "limitations": [
+        "The visible R2 render is schematic: the sloped brick reads pale/salmon compared with the darker red-brown exterior photo, entrance/exterior facade details remain sparse, and the interior has a limited camera view with uneven brightness. Furniture sizes and locations are interpretive rather than as-built."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "A separate Blender 5.2.3 LTS process freshly reopened the exact requested asset SHA; expected scene and exported collection exist, with 343 objects, assigned procedural materials, and no external image dependencies.",
+        "R2 evidence includes official GIS/photo/2013 renovation and master-plan sources, raw snapshots, renders, and explicit uncertainty notes."
+      ],
+      "limitations": [
+        "The shared manifest currently caches object_count={next(a.get(\"object_count\") for a in json.loads((ROOT/\"modular/manifest.json\").read_text(encoding=\"utf-8\"))[\"assets\"] if a[\"id\"]==\"hicks_library\")}, while the actual export has {probe[\"object_count\"]}; coordinator must refresh this count during integration."
+      ]
+    }
+  ],
+  "evidence": [
+    "audit/batch2_hicks/independent_grade_r2/probe.json",
+    "audit/batch2_hicks/independent_grade_r2/compare_gis.json",
+    "audit/batch2_hicks/independent_grade_r2/sloped_top_compare.json",
+    "audit/batch2_hicks/evidence_r2.json",
+    "audit/batch2_hicks/source_register_r2.md",
+    "audit/batch2_hicks/fresh_open_exterior.png",
+    "audit/batch2_hicks/fresh_open_interior.png",
+    "audit/batch2_hicks/purdue_physics_2023_hicks_exterior.jpg",
+    "audit/batch2_hicks/purdue_2013_hicks_renovation.jpg"
+  ],
+  "findings": [
+    "The official GIS footprint and upper sloped-wall perimeter are an exceptionally close match.",
+    "The visual form and documented furniture categories are represented, but wall slope, height, roof verticals and interior positions remain estimates.",
+    "Master integration should update the manifest object count; this does not change the exact asset grade."
+  ],
+  "limitations": [
+    "No current public floor plan or dimensioned wall section was available.",
+    "The 2013 furnishing image documents the historical renovation, not current as-built furniture placement."
+  ]
+}

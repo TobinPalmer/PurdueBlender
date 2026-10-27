@@ -90,7 +90,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](modular/buildings/hall_for_discovery_and_learning_research.blend) | In progress | 7.3/10 | Rossen |
 | Hansen Life Sciences | [hansen_life_sciences.blend](modular/buildings/hansen_life_sciences.blend) | Needs independent grade | Not graded | Tobin |
 | Heine Pharmacy | [heine_pharmacy.blend](modular/buildings/heine_pharmacy.blend) | In progress | 7.5/10 | Rossen |
-| Hicks Library | [hicks_library.blend](modular/buildings/hicks_library.blend) | In progress | 6.6/10 | Tobin |
+| Hicks Library | [hicks_library.blend](modular/buildings/hicks_library.blend) | Finished; FID 197 shell and sloped masonry verified; height, roof, and interior remain estimated | [8.5/10](audit/batch2_hicks/independent_grade_r2/result.json) | — |
 | Horticulture Building | [horticulture_building.blend](modular/buildings/horticulture_building.blend) | In progress | 7.0/10 | Rossen |
 | Honors College and Residences North | [massing_honors_college_and_residences_north_3de3b7c.blend](modular/buildings/massing_honors_college_and_residences_north_3de3b7c.blend) | Finished | [8.0/10](audit/honors_college_and_residences_north/independent_grade/grade_result.json) | — |
 | Honors College and Residences South | [massing_honors_college_and_residences_south_c663781.blend](modular/buildings/massing_honors_college_and_residences_south_c663781.blend) | Finished | [8.5/10](audit/honors_college_residences_south_c663781/independent_grade/grade_result.json) | — |
@@ -173,9 +173,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | West Lafayette Intermediate School | [massing_west_lafayette_intermediate_school_d72f0fa.blend](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Finished; GIS shell verified; height, roof elevations, room positions, and some facade details remain estimated | [8.4/10](audit/west_lafayette_intermediate_school/independent_grade_r3/result.json) | — |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Finished; direct master link fresh-open PASS; facade proportions remain a noted improvement opportunity | [8.0/10](audit/west_lafayette_junior_senior_high_school/independent_grade/result.json) | — |
 
-## Unfinished buildings (102 total)
+## Unfinished buildings (101 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 100 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 102 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 17, Rossen 43, Kyle 22, Rohan 0, Arjav 20, Brady 0. Rossen's 43 records break down to **14 reassigned projects from Rohan, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 82 projects; 20 remain with Arjav and Brady.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 99 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 101 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 16, Rossen 43, Kyle 22, Rohan 0, Arjav 20, Brady 0. Rossen's 43 records break down to **14 reassigned projects from Rohan, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 81 projects; 20 remain with Arjav and Brady.
 
 ### New West Lafayette construction projects (2)
 
@@ -186,7 +186,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models in progress, awaiting a grade, or awaiting master integration (49)
+### Detailed models in progress, awaiting a grade, or awaiting master integration (48)
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
 | The Caretaker’s Cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | [8.1/10](audit/massing_the_caretaker_s_cottage_6b24af9/independent_grade_r2.json); linked in latest master; awaiting Tobin validation | Rossen |
@@ -204,7 +204,6 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Hall for Discovery and Learning Research | [`hall_for_discovery_and_learning_research.blend`](modular/buildings/hall_for_discovery_and_learning_research.blend) | 7.3/10 | Rossen |
 | Hansen Life Sciences | [`hansen_life_sciences.blend`](modular/buildings/hansen_life_sciences.blend) | Not graded | Tobin |
 | Heine Pharmacy | [`heine_pharmacy.blend`](modular/buildings/heine_pharmacy.blend) | 7.5/10 | Rossen |
-| Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Tobin |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rossen |
 | Purdue Police Department (TERY) | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | [8.4/10](audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json); linked in latest master; awaiting Tobin validation | Rossen |
 | Purdue Village Administration Building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | [8.5/10](audit/massing_purdue_village_administration_building_3faae6c/independent_grade/evaluation_r2.json); linked in latest master; awaiting Tobin validation | Rossen |

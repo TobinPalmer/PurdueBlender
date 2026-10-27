@@ -58,7 +58,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Felix Haas Hall | [felix_haas_hall.blend](buildings/felix_haas_hall.blend) | 879 |
 | Frieda Parker Hall | [frieda_parker_hall.blend](buildings/frieda_parker_hall.blend) | 539 |
 | Hansen Life Sciences | [hansen_life_sciences.blend](buildings/hansen_life_sciences.blend) | 816 |
-| Hicks Library | [hicks_library.blend](buildings/hicks_library.blend) | 250 |
+| Hicks Library (R2 independently graded 8.5/10; accepted) | [hicks_library.blend](buildings/hicks_library.blend) | 343 |
 | Hovde Hall | [hovde_hall.blend](buildings/hovde_hall.blend) | 760 |
 | Knoy Hall | [knoy_hall.blend](buildings/knoy_hall.blend) | 158 |
 | Krannert Building | [krannert_building.blend](buildings/krannert_building.blend) | 670 |
@@ -349,7 +349,8 @@ Zeta Beta Tau at FID 762 / 900 David Ross retains campus-world coordinates in th
 | Beta Theta Pi | [massing_beta_theta_pi_fid826.blend](buildings/massing_beta_theta_pi_fid826.blend) | 349 |
 | Dauch Alumni Center | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 663 |
 | Electrical Engineering | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4774 |
+| Hicks Library | [hicks_library.blend](buildings/hicks_library.blend) | 343 |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | 11 |
 | West Lafayette Intermediate School (R3 independently graded 8.4/10; accepted) | [massing_west_lafayette_intermediate_school_d72f0fa.blend](buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | 1862 |
 
-The fresh-open master audit confirmed one correct master reference for Dauch Alumni Center and Electrical Engineering through their Placement markers and for West Lafayette Intermediate School through its direct link; all three use the expected library paths and match manifest object counts and world bounds. The earlier audit also passed for Beta Theta Pi and West Lafayette Junior-Senior High School. All five meet the grade gate: Dauch 8.45/10, Electrical Engineering 8.3/10, West Lafayette Intermediate School 8.4/10, Beta Theta Pi 8.4/10, and West Lafayette Junior-Senior High School 8.0/10. West Lafayette Intermediate School height, roof elevations, room positions, and some facade details remain estimated.
+The fresh-open master audit confirmed one correct master reference for Dauch Alumni Center, Electrical Engineering, and Hicks Library through their Placement markers and for West Lafayette Intermediate School through its direct link; all four use the expected library paths and match manifest object counts and world bounds. The earlier audit also passed for Beta Theta Pi and West Lafayette Junior-Senior High School. All six meet the grade gate: Hicks Library 8.5/10, Dauch 8.45/10, Electrical Engineering 8.3/10, West Lafayette Intermediate School 8.4/10, Beta Theta Pi 8.4/10, and West Lafayette Junior-Senior High School 8.0/10. West Lafayette Intermediate School height, roof elevations, room positions, and some facade details remain estimated.
