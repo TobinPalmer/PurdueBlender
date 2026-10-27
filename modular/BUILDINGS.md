@@ -341,3 +341,13 @@ Sigma Pi retains campus-world coordinates. Its 8.1/10 independent grade verifies
 Sigma Chi (FID 828) at 202 Littleton retains campus-world coordinates. Its 8.25/10 independent grade verifies the six-point wall ring against the transformed Purdue GIS outline within 0.000030 m; the current chapter history confirms the address and historic photos guide the Tudor roof/facade. Height and floor count remain unverified, and the facade and gable composition are simplified. Tobin must replace the existing massing in the master and verify one linked instance; see the [Sigma Chi grade](../audit/sigma_chi/independent_grade_r3/sigma_chi_independent_grade_r3.json) and [TODO.md](../TODO.md).
 
 Zeta Beta Tau at FID 762 / 900 David Ross retains campus-world coordinates in the existing stable asset. Its 8.5/10 independent grade verifies the transformed GIS roof ring within 0.000043 m; height, two floors, frontage edge, facade, and the Phi Kappa Theta occupancy transition retain uncertainty. Tobin must replace the massing in the master and verify one linked instance; see the [ZBT grade](../audit/zeta_beta_tau/independent_grade/grade_result.json), [crosswalk evidence](../audit/zeta_beta_tau/crosswalk_resolution.md), and [TODO.md](../TODO.md).
+
+## Master integration — October 27, 2026
+
+| Building | File | Objects |
+| --- | --- | ---: |
+| Beta Theta Pi | [massing_beta_theta_pi_fid826.blend](buildings/massing_beta_theta_pi_fid826.blend) | 349 |
+| West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | 11 |
+| West Lafayette Intermediate School (R2 in progress; 7.60/10, below gate) | [massing_west_lafayette_intermediate_school_d72f0fa.blend](buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | 1667 |
+
+The fresh-open master audit found each of these libraries linked exactly once at the expected path and matching its manifest bounds. Beta Theta Pi and West Lafayette Junior-Senior High School meet the grade gate; the Intermediate School remains unfinished while its R2 geometry is revised.
