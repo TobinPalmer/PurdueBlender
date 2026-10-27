@@ -66,7 +66,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Delta Tau Delta | [massing_delta_tau_delta_e06b0b5.blend](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Finished | [8.25/10](audit/delta_tau_delta_e06b0b5/independent_grade_r2/result.json) | — |
 | Delta Upsilon | [massing_house_301841256_1cc7641.blend](modular/buildings/massing_house_301841256_1cc7641.blend) | Finished; exact FID 751 wall footprint; master fresh-open PASS; height/roof estimated; no interior plan found | [8.4/10](audit/delta_upsilon/independent_grade_codex/result.json) | — |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](modular/buildings/convergence_center.blend) | Needs independent grade | Not graded | Rossen |
-| Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | In progress | 7.2/10 | Tobin |
+| Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | In progress | [7.65/10](audit/dauch_alumni_center/independent_grade_r2/result.json) | Tobin |
 | David and Bonnie Brunner Farm Animal Hospital | [david_and_bonnie_brunner_farm_animal_hospital.blend](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | In progress | 6.7/10 | Rossen |
 | Drew and Brittany Brees Student Athletic Academic Center | [brees_student_athletic_academic_center.blend](modular/buildings/brees_student_athletic_academic_center.blend) | In progress | 7.3/10 | Rossen |
 | Duhme (Ophelia) Residence Hall | [massing_duhme_ophelia_residence_hall_1bb4e9c.blend](modular/buildings/massing_duhme_ophelia_residence_hall_1bb4e9c.blend) | Finished | [8.5/10](audit/duhme_ophelia_residence_hall_independent_grade/result.json) | — |
@@ -194,7 +194,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | The Moosehead Lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | [8.2/10](audit/massing_the_moosehead_lounge_f81529e/independent_grade_r2.json); linked in latest master; awaiting Tobin validation | Rossen |
 | The Church of Jesus Christ of Latter-day Saints Institute of Religion | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | [8.3/10](audit/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451/independent_grade_r2.json); linked in latest master; awaiting Tobin validation | Rossen |
 | Convergence Center for Innovation and Collaboration | [`convergence_center.blend`](modular/buildings/convergence_center.blend) | Not graded | Rossen |
-| Dauch Alumni Center | [`dauch_alumni_center.blend`](modular/buildings/dauch_alumni_center.blend) | 7.2/10 | Tobin |
+| Dauch Alumni Center | [`dauch_alumni_center.blend`](modular/buildings/dauch_alumni_center.blend) | [7.65/10](audit/dauch_alumni_center/independent_grade_r2/result.json); revision required | Tobin |
 | David and Bonnie Brunner Farm Animal Hospital | [`david_and_bonnie_brunner_farm_animal_hospital.blend`](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 6.7/10 | Rossen |
 | Drew and Brittany Brees Student Athletic Academic Center | [`brees_student_athletic_academic_center.blend`](modular/buildings/brees_student_athletic_academic_center.blend) | 7.3/10 | Rossen |
 | Electrical Engineering | [`electrical_engineering.blend`](modular/buildings/electrical_engineering.blend) | 5.2/10 | Tobin |
