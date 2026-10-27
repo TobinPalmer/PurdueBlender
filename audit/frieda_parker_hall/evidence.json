@@ -1,0 +1,125 @@
+{
+  "building_id": "frieda_parker_hall",
+  "display_name": "Frieda Parker Hall (Purdue source name: Frieda Parker Residence Hall)",
+  "owner": "Tobin",
+  "retrieved_date": "2026-10-27",
+  "asset": "modular/buildings/frieda_parker_hall.blend",
+  "sha256": "cc27ae34084d14dc845a3cb29dbaed42a465dbef96e4efb2877dad57f5b85949",
+  "scene": "Building_frieda_parker_hall",
+  "collection": "Asset_frieda_parker_hall",
+  "root": "AssetRoot_frieda_parker_hall",
+  "placement_origin_master_xy_m": [-499.7250061, 97.475],
+  "placement_changed": false,
+  "sources": [
+    {
+      "kind": "official campus GIS polygon",
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 FeatureServer, layer 0",
+      "feature_id": 409,
+      "building_abbreviation": "PKRF",
+      "address": "401 N Russell Street",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D409&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+      "response_crs": "EPSG:4326",
+      "geometry": "single exterior polygon ring; 42 unique vertices plus closure",
+      "occupied_date_source_attribute": "2020-08-31"
+    },
+    {
+      "kind": "official residence hall information",
+      "provider": "Purdue University Housing",
+      "url": "https://www.housing.purdue.edu/my-housing/options/residence-halls/parker-north.html",
+      "retrieved_date": "2026-10-27",
+      "supports": ["six-story scale", "suite/semi-suite residential use", "ground-floor dining/retail", "lounges and study areas"]
+    },
+    {
+      "kind": "architect project page and photographs",
+      "provider": "Mackey Mitchell Architects, Griffin Hall",
+      "url": "https://www.mackeymitchell.com/projects/griffin-hall/",
+      "retrieved_date": "2026-10-27",
+      "supports": ["red-brick exterior volumes", "glazed upper bridge/vertical connector", "active ground floor", "oblique elevation window language"]
+    }
+  ],
+  "transform": {
+    "formula": "X_project=(longitude+86.9137)*84810.60416539927; Y_project=(latitude-40.4274)*111040.0; X_local=X_project-(-499.7250061); Y_local=Y_project-97.475; Z up, meters",
+    "kind": "project approximate local geographic conversion; not a surveyed CRS",
+    "gis_polygon_local_envelope_m": {
+      "x": [-35.4133222, 24.4635018],
+      "y": [-48.8669871, 49.5754346]
+    },
+    "gis_envelope_center_local_m": [-5.4749102, 0.3542237],
+    "asset_bounds_local_m": {
+      "x": [-35.7599983, 35.7250061],
+      "y": [-49.75, 49.7250023],
+      "z": [0.0, 25.8000011]
+    },
+    "alignment_uncertainty": "The transformed GIS-envelope center is about 5.48 m west and 0.35 m north of the asset origin. The source does not provide positional accuracy, and the assigned master placement was retained unchanged. The full asset bound includes site paving/detail objects, so the structural-shell envelope is reported separately below."
+  },
+  "r2_footprint_comparison": {
+    "calculation": "Shapely polygon/rectangle intersection using the documented approximate transform; source GeoJSON FID 409 ring; major shell bounds from the pre-R2 Blender inventory.",
+    "gis_polygon_area_m2": 2315.244,
+    "upper_shell_union_before_m2": 3180.12,
+    "upper_shell_union_before_iou": 0.69194,
+    "removed_shell": {
+      "name": "Frieda_NorthWing_Upper",
+      "rect_area_m2": 778.14,
+      "intersection_with_gis_m2": 14.745,
+      "outside_gis_m2": 763.395,
+      "inside_fraction": 0.01895
+    },
+    "upper_shell_union_after_m2": 2401.98,
+    "upper_shell_union_after_intersection_m2": 2232.65,
+    "upper_shell_union_after_iou": 0.89860,
+    "retained_shell_bounds_local_m": {
+      "x": [-35.475, 22.725],
+      "y": [-49.475, 49.525]
+    },
+    "retained_shell_coverage_fraction": {
+      "Frieda_EastWing_Upper_South": 0.93383,
+      "Frieda_EastWing_Upper_North": 0.97108,
+      "Frieda_WestWing_Upper": 0.88396
+    },
+    "floor_coverage_fraction": {
+      "Frieda_Ground_Ceiling_Slab": 0.89499,
+      "Frieda_CFA_Floor": 0.96369,
+      "Frieda_JM_Floor": 1.0
+    },
+    "outdoor_patio_slab": "391 m²; outside the building polygon and treated as nonstructural site paving."
+  },
+  "changes": [
+    "Removed Frieda_NorthWing_Upper after the raw FID 409 overlap showed 98.1% of its plan rectangle outside the GIS footprint; its unsupported facade window details were not regenerated.",
+    "Removed the opaque brick upper breezeway/bridge mass and rebuilt its perimeter as glazed curtainwall with bronze mullions and transoms, following the official architect photographs.",
+    "Added repeated, material-differentiated windows to previously blank north, south, and west-facing elevations, following the official oblique imagery and documented residential program.",
+    "Combined repeated details by material into four meshes, keeping the asset at 542 objects total rather than thousands of independent window-part objects."
+  ],
+  "uncertainties": [
+    "No whole-building elevation or curtainwall shop drawings were found in the reviewed public sources. Exact side-window positions, bay spacing, floor levels, and mullion spacing are visual interpretations.",
+    "Purdue GIS geometry was served in EPSG:4326 but does not publish positional accuracy; the project frame is a local approximation, so the footprint comparison is an alignment check rather than a survey result. The retained shell still has modest edge differences; those were not forcibly clipped to an uncertain GIS outline.",
+    "The five side/top previews are Blender Workbench inspection renders rather than photorealistic outputs."
+  ],
+  "fresh_open_validation": {
+    "file": "audit/frieda_parker_hall/fresh_open_validation.json",
+    "blender_version": "5.2.3 LTS",
+    "status": "passed",
+    "scene_collection_root_identity": "passed",
+    "root_origin": "passed",
+    "object_count": 541,
+    "mesh_count": 540,
+    "refinement_meshes": 4,
+    "linked_libraries": [],
+    "external_images": []
+  },
+  "preview_files": [
+    "audit/frieda_parker_hall/view_east.png",
+    "audit/frieda_parker_hall/view_west.png",
+    "audit/frieda_parker_hall/view_north.png",
+    "audit/frieda_parker_hall/view_south.png",
+    "audit/frieda_parker_hall/view_top.png"
+  ],
+  "footprint_audit_files": [
+    "audit/frieda_parker_hall/footprint_compare.py",
+    "audit/frieda_parker_hall/footprint_comparison.json",
+    "audit/frieda_parker_hall/footprint_overlay.png"
+  ],
+  "independent_grade": {
+    "status": "pending",
+    "frozen_asset_sha256": "cc27ae34084d14dc845a3cb29dbaed42a465dbef96e4efb2877dad57f5b85949"
+  }
+}

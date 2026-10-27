@@ -1,0 +1,76 @@
+{
+  "building": "Flex Lab",
+  "stable_id": "flex_lab",
+  "asset": "modular/buildings/flex_lab.blend",
+  "sha256": "523426ab0f460b4bb7eca72aaf1f85a822300930388cba9e52ba6fa8620b82e9",
+  "status": "finished_master_verified",
+  "scene": "Scene",
+  "collection": "Asset_flex_lab",
+  "collection_object_count": 407,
+  "source_evidence": [
+    {
+      "provider": "Ennead Architects",
+      "url": "https://www.ennead.com/work/purdue/",
+      "local_images": [
+        "audit/flex_lab/sources/ennead_AW06_curtainwall.jpg",
+        "audit/flex_lab/sources/ennead_AW07_interior.jpg",
+        "audit/flex_lab/sources/ennead_AW12_context.jpg",
+        "audit/flex_lab/sources/ennead_AW13_context.jpg",
+        "audit/flex_lab/sources/ennead_AW19_entry.jpg"
+      ],
+      "used_for": "Exterior AW06/AW19/AW12/AW13 support curtainwall, brick-plane composition and entry; AW07 is an interior view and is used only for interior context."
+    },
+    {
+      "provider": "CE Solutions",
+      "url": "https://www.cesolutionsinc.com/flex-lab-1",
+      "local_images": [
+        "audit/flex_lab/sources/ce_solutions_entry.jpg"
+      ],
+      "used_for": "Three stories plus basement; 20-foot canopy projection and steel vestibule"
+    },
+    {
+      "provider": "Purdue Engineering",
+      "url": "https://engineering.purdue.edu/FlexLab",
+      "used_for": "Facility identity and engineering research use"
+    },
+    {
+      "provider": "Purdue campus building GIS",
+      "feature_id": 909,
+      "local_baseline": "audit/flex_lab/flex_lab_before_r2.blend",
+      "used_for": "Existing shell geometry and stepped facade bay locations; shell vertices and transform were compared directly with the baseline"
+    }
+  ],
+  "geometry_changes": [
+    "Removed the opaque south shell face to show the recessed entry curtainwall.",
+    "Opened 11 stepped long-facade wall faces and added three-story curtainwall lites, floor spandrels, mullions and projecting fins.",
+    "Removed duplicate facade and canopy systems; retained one 6.10 m canopy projection.",
+    "Preserved all 170 GIS shell vertices and its world matrix exactly; only 12 shell faces were removed for openings."
+  ],
+  "render_evidence": [
+    "audit/flex_lab/flex_r2_front.png",
+    "audit/flex_lab/flex_r2_oblique.png",
+    "audit/flex_lab/flex_r2_interior.png"
+  ],
+  "fresh_open_validation": "audit/flex_lab/fresh_open_validation_r2.json",
+  "source_register": "audit/flex_lab/source_register_r2.md",
+  "remaining_uncertainty": [
+    "No dimensioned facade elevations were available; exact floor heights and bay widths remain estimates.",
+    "Interior room/furniture layout is schematic and not verified against plans.",
+    "The GIS service CRS and vintage for FID 909 were not preserved with the baseline; geometry and transform were checked against the saved baseline asset."
+  ],
+  "independent_grade": {
+    "score": 8.4,
+    "max_score": 10,
+    "passed": true,
+    "result_file": "audit/flex_lab/independent_grade_r2/result.json",
+    "inspected_sha256": "523426ab0f460b4bb7eca72aaf1f85a822300930388cba9e52ba6fa8620b82e9",
+    "summary": "FID 909 boundary within 0.0973 m symmetric Hausdorff distance; facade/canopy remains simplified; height, bay widths and interior layout remain estimated."
+  },
+  "master_integration": {
+    "status": "PASS",
+    "report_file": "audit/master_integration_2026-10-27_r5.json",
+    "placement_object": "Placement_flex_lab",
+    "library_object_count": 407,
+    "fresh_open_blender": "5.2.3 LTS"
+  }
+}

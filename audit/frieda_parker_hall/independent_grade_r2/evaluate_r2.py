@@ -1,0 +1,36 @@
+import hashlib, json
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[3]
+ASSET=ROOT/'modular/buildings/frieda_parker_hall.blend'
+PROBE=Path(__file__).with_name('fresh_open_probe.json')
+GIS=Path(__file__).with_name('gis_comparison_r2.json')
+EXPECTED='cc27ae34084d14dc845a3cb29dbaed42a465dbef96e4efb2877dad57f5b85949'
+CRITERIA=[
+ {'name':'Correct identity and source-backed footprint','score':1.8,'max_score':2.0,'evidence':['The raw Purdue ArcGIS BuildingShapesZip4 feature FID 409 identifies Frieda Parker Residence Hall (PKRF), 401 N Russell Street, with one 42-vertex exterior ring.','I independently freshly opened the asset and compared the three retained upper structural mesh bounding footprints to the raw FID 409 polygon in the documented approximate project transform. The union plan area is 2,401.98 m²; intersection is 2,232.65 m²; IoU is 0.89860, with 92.95% of the modeled shell area inside the polygon.','The unsupported NorthWing upper block is absent from the fresh-opened asset. The remaining overlap is strong but not exact; the GIS service publishes no positional accuracy and may generalize the wall line.'],'findings':['Identity and broad plan shape are supported. About 169.33 m² of the modeled upper-shell union remains outside the GIS ring; because the source is not survey-certified this is a residual discrepancy, not proof that all such edges are wrong.']},
+ {'name':'Position, orientation, and scale/dimensions','score':1.7,'max_score':2.0,'evidence':['The fresh-opened asset root has identity location, rotation, scale, and world matrix; no asset-local placement drift was found.','The retained upper-shell envelope differs from the transformed GIS envelope by approximately 0.06–1.74 m across its four sides. The shell centroid is about 1.06 m from the GIS polygon centroid in the same approximate local frame.','The assigned project placement origin documented in the source register is [-499.7250061, 97.475] m and was not changed by this revision.'],'findings':['Local plan alignment and scale are close. The geographic conversion is approximate, the GIS source gives no accuracy, and this asset-only pass did not freshly reopen the campus master placement marker; absolute placement is therefore not certified.']},
+ {'name':'Evidence-backed height, floors, and roof form','score':1.4,'max_score':2.0,'evidence':['Purdue Housing’s primary source describes the hall as six stories; the asset reaches 25.8 m, a plausible but estimated six-story height.','The inspected views show the three retained upper volumes and rooftop equipment/penthouse masses. No measured elevation or roof schedule was found in the reviewed Purdue Housing/architect sources.'],'findings':['Story count is supported, but floor-to-floor levels, total height, roof profile, and penthouse dimensions remain visual estimates.']},
+ {'name':'Facade, entrances, and distinctive architecture','score':1.6,'max_score':2.0,'evidence':['The fresh-open review views show red-brown brick wings, pale horizontal courses, repeated residential windows, active glazed ground-floor frontage, and a glazed multi-story connector/bridge. The Mackey Mitchell architect photos support these broad features.','The R2 asset no longer contains the opaque bridge block; the unsupported north upper shell was removed while the other three shells and the connector were preserved.'],'findings':['The facade reads as the correct building type and major composition, but many window bays remain repetitive/schematic, some large side-wall areas are blank, and the bridge/mullion subdivision is interpreted rather than measured.']},
+ {'name':'Modular export, portability, and complete evidence','score':2.0,'max_score':2.0,'evidence':['Independent Blender 5.2.3 fresh-open found the expected scene `Building_frieda_parker_hall`, scene-linked collection `Asset_frieda_parker_hall`, and identity root. The asset has 541 objects / 540 mesh objects.','No linked Blender libraries, file-backed image dependencies, or missing images were found.','The building-specific folder contains the raw GIS snapshot, Purdue Housing and architect snapshots/photos, transform/uncertainty notes, geometry comparison, and review views.'],'findings':[]}
+]
+
+def evaluate():
+ digest=hashlib.sha256(ASSET.read_bytes()).hexdigest()
+ probe=json.loads(PROBE.read_text(encoding='utf-8'))
+ gis=json.loads(GIS.read_text(encoding='utf-8'))
+ assert digest==EXPECTED, f'Asset changed: {digest}'
+ assert probe.get('sha256')==EXPECTED and probe.get('fresh_open') is True
+ assert probe.get('scene')=='Building_frieda_parker_hall'
+ assert probe.get('collection')=='Asset_frieda_parker_hall'
+ assert probe.get('collection_is_scene_linked') is True
+ assert probe.get('object_count')==541 and probe.get('mesh_count')==540
+ assert probe.get('linked_libraries')==[] and probe.get('missing_images')==[]
+ assert gis.get('asset_sha256')==EXPECTED
+ assert gis['upper_shell_union']['iou']>=0.89
+ assert gis['northwing_upper_object_present'] is False
+ score=round(sum(c['score'] for c in CRITERIA),2)
+ return {'building_id':'frieda_parker_hall','building':'Frieda Parker Hall','asset':'modular/buildings/frieda_parker_hall.blend','inspected_sha256':digest,'expected_sha256':EXPECTED,'sha_match':True,'review_revision':'R2 independent review','blender_version':probe['blender_version'],'fresh_open':True,'score':score,'max_score':10.0,'pass_threshold':8.0,'passed':score>=8.0,'status':'PASS' if score>=8.0 else 'FAIL','criteria':CRITERIA,'evidence':['audit/frieda_parker_hall/independent_grade_r2/fresh_open_probe.json','audit/frieda_parker_hall/independent_grade_r2/gis_comparison_r2.json','audit/frieda_parker_hall/source_register.md','audit/frieda_parker_hall/sources/purdue_arcgis_fid_409.geojson','audit/frieda_parker_hall/sources/purdue_housing_frieda_parker.html','audit/frieda_parker_hall/sources/mackey_mitchell_project.html','audit/frieda_parker_hall/view_east.png','audit/frieda_parker_hall/view_north.png','audit/frieda_parker_hall/view_south.png','audit/frieda_parker_hall/view_top.png'],'findings':[f for c in CRITERIA for f in c['findings']],'limits':['Purdue GIS feature positional accuracy is unspecified and the local linear transform is approximate.','The grader did not inspect a fresh-opened master instance; root-local transform and documented placement origin were checked.','Height, roof elevations, and many facade bay details remain estimates.'],'scope_note':'Only independent grading artifacts were written; model/shared/master files were not modified.'}
+
+if __name__=='__main__':
+ result=evaluate()
+ Path(__file__).with_name('result.json').write_text(json.dumps(result,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+ print(json.dumps({'score':result['score'],'status':result['status'],'sha':result['inspected_sha256']},indent=2))

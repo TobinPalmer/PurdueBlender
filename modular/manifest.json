@@ -14264,7 +14264,6 @@
         "Frieda_EastWing_Upper_South",
         "Frieda_EastWing_Upper_North",
         "Frieda_WestWing_Upper",
-        "Frieda_NorthWing_Upper",
         "Frieda_Breezeway_Paved_Floor",
         "Frieda_Breezeway_Ceiling",
         "Frieda_Breezeway_SignHeader_East",
@@ -14804,7 +14803,7 @@
         "Frieda_R2_Combined_R2_Window_Glass",
         "Frieda_R2_Combined_R2_Window_Spandrel"
       ],
-      "object_count": 542,
+      "object_count": 541,
       "bounds_world_m": [
         [
           -535.4850044250488,
@@ -14833,7 +14832,7 @@
           25.80000114440918
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/master_building_audit.json",
+      "accuracy_status": "Independent R2 grade 8.5/10; removing an unsupported north upper wing improved upper-shell IoU against Purdue GIS FID 409 from 0.69194 to 0.89860. GIS accuracy is unpublished; master placement and some roof/facade dimensions remain approximate.",
       "placement_transform": "master collection-instance marker translates local geometry to placement_origin_xy_m",
       "source_bounds_world_m": [
         [
@@ -14867,7 +14866,10 @@
         -499.7250061035156,
         97.4749984741211
       ],
-      "local_coordinates": true
+      "local_coordinates": true,
+      "independent_grade_score": 8.5,
+      "independent_grade_file": "../audit/frieda_parker_hall/independent_grade_r2/result.json",
+      "sha256": "cc27ae34084d14dc845a3cb29dbaed42a465dbef96e4efb2877dad57f5b85949"
     },
     {
       "id": "hovde_hall",
@@ -158019,7 +158021,7 @@
           24.14699935913086
         ]
       ],
-      "accuracy_status": "unverified; see ../audit/MASTER_AUDIT.md",
+      "accuracy_status": "Independent R1 grade 8.0/10; structural plan matches Purdue GIS FID 237 with IoU 0.999999 and symmetric Hausdorff distance 0.000030 m. Roof/equipment heights, six-level GIS versus four-story archival conflict, facade details, and interior CAD remain uncertain or unavailable.",
       "placement_transform": "master collection-instance marker translates local geometry to placement_origin_xy_m",
       "source_metadata": {
         "building_id": "hansen_life_sciences",
@@ -158062,7 +158064,11 @@
         -288.0,
         -570.0
       ],
-      "local_coordinates": true
+      "local_coordinates": true,
+      "independent_grade_score": 8.0,
+      "independent_grade_file": "../audit/hansen_life_sciences/independent_grade_r1/result.json",
+      "sha256": "fe0bc4834a9a14f3300587fff02d75171a7a54cc25ba6a12fd99f6c44526e552",
+      "evidence_file": "../audit/hansen_life_sciences/evidence.json"
     },
     {
       "id": "hicks_library",
@@ -173379,7 +173385,7 @@
           16.600000381469727
         ]
       ],
-      "accuracy_status": "Purdue GIS footprint/source identity and imagery evidence documented; remaining facade, height, interior and position limits are listed in audit/batch_b_buildings/flex_lab_evidence.json",
+      "accuracy_status": "Independent R2 grade 8.4/10; official FID 909 outline has 0.0973 m symmetric Hausdorff distance from the 85-point model boundary, with preserved shell coordinates and GIS origin. Facade/canopy details remain simplified; exact height, bay widths and interior layout are estimated or unverified.",
       "placement_transform": "master Placement_<id> translates local geometry to placement_origin_xy_m",
       "source_metadata": {
         "evidence_file": "audit/batch_b_buildings/flex_lab_evidence.json",
@@ -173435,7 +173441,10 @@
           -1.090000033378601,
           16.600000381469727
         ]
-      ]
+      ],
+      "independent_grade_score": 8.4,
+      "independent_grade_file": "../audit/flex_lab/independent_grade_r2/result.json",
+      "sha256": "523426ab0f460b4bb7eca72aaf1f85a822300930388cba9e52ba6fa8620b82e9"
     },
     {
       "id": "hall_for_discovery_and_learning_research",

@@ -1,0 +1,151 @@
+{
+  "building_id": "hansen_life_sciences",
+  "building_code": "HANS",
+  "official_name": "Arthur G. Hansen Life Sciences Research Building",
+  "asset_path": "modular/buildings/hansen_life_sciences.blend",
+  "asset_sha256": "fe0bc4834a9a14f3300587fff02d75171a7a54cc25ba6a12fd99f6c44526e552",
+  "export_collection": "Asset_hansen_life_sciences",
+  "scene": "Building_hansen_life_sciences",
+  "audit_date": "2026-10-27",
+  "asset_edit_status": "Existing detailed asset retained; no geometry edits made during this evidence pass because the structural footprint already matches the official GIS polygon at sub-millimeter precision in the project local transform.",
+  "placement": {
+    "manifest_origin_xy_m": [
+      -288.0,
+      -570.0
+    ],
+    "local_frame": "AssetRoot_hansen_life_sciences at [0,0,0]; local X east, Y north, Z up; no object-space relocation applied."
+  },
+  "sources": [
+    {
+      "provider": "Purdue University Campus GIS, BuildingShapesZip4 ArcGIS FeatureServer layer 0",
+      "feature_id": 237,
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D237&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "retrieved": "2026-10-27",
+      "source_crs": "EPSG:4326 (requested outSR=4326; returned WKID 4326)",
+      "raw_snapshot": "audit/hansen_life_sciences/hansen_fid_237_gis.json",
+      "identity_attributes": {
+        "BLDG_ABBR": "HANS",
+        "BUILDING_N": "Arthur G. Hansen Life Sciences Research Building",
+        "ADDRESS": "201 S University Street",
+        "BUILT": "1983 timestamp",
+        "NUM_LEVELS": 6,
+        "CountOfFLO": 6,
+        "Extrution": 60,
+        "R": 67,
+        "B": -13,
+        "F01": 0,
+        "F02": 15,
+        "F03": 30,
+        "F04": 45
+      },
+      "method": "Transformed every WGS84 ring vertex using project formula X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040; subtracted manifest placement [-288,-570] for local coordinates. Compared GIS ring with top perimeter vertices of evaluated HANS_StructuralSlab_Basement mesh.",
+      "uncertainty": "ArcGIS polygon is a campus building-shape representation, not a surveyed wall line; source capture date is not exposed in attributes. Project conversion is local approximate geographic conversion, not a formal projected/survey CRS."
+    },
+    {
+      "provider": "Purdue University Campus Facilities and Buildings Historic Database",
+      "feature_id": "Hansen Life Sciences Research Building record",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/692",
+      "retrieved": "2026-10-27",
+      "source_date": "Existence dates shown as 1983–; citation references the Campus Facilities and Buildings Historic Database, accessed 2020-04-28.",
+      "supports": [
+        "building use/research context",
+        "four-story description",
+        "named Purdue Center for Cancer Research, NMR, imaging and animal research facilities",
+        "official archival entity description states four stories and use"
+      ],
+      "uncertainty": "Narrative description is not a dimensional drawing."
+    },
+    {
+      "provider": "Purdue University Building Emergency Plan (HANS BEP)",
+      "feature_id": "2013 building emergency plan, pp. 1 and 12",
+      "url": "https://www.bio.purdue.edu/Resources/pdf/HANS%20BEP%202013.pdf",
+      "retrieved": "2026-10-27",
+      "source_date": "Revised October 2013",
+      "supports": [
+        "201 S University Street",
+        "listed occupied levels: basement and floors 1 through 4; labs, offices, conference and support use"
+      ],
+      "uncertainty": "Emergency plan identifies floor access and occupancy but does not provide as-built facade elevations or reliable architectural dimensions. Its five occupied floor levels plus basement label differ from GIS NUM_LEVELS/CountOfFLO=6 in categorization; model keeps a basement plus four above-grade floor plates.",
+      "availability_note": "The official Purdue URL is indexed with the PDF text, but the source server returned a Page Not Found page when fetched on 2026-10-27. Facts are retained as an indexed source reference; no raw PDF snapshot is included."
+    },
+    {
+      "provider": "Purdue University Events Calendar (photo attached to HANS location page)",
+      "feature_id": "place page photo asset; posted 2022-05-29 EDT",
+      "url": "https://events.purdue.edu/arthur_g_hansen_life_sciences_res_bldg",
+      "image_url": "https://localist-images.azureedge.net/photos/40096633653841/card/e24de127277db4d804ced8f18f72c00cbebe2212.jpg",
+      "retrieved": "2026-10-27",
+      "supports": [
+        "current-ish exterior visual cross-check; image captioned Hansen Life Sciences Building"
+      ],
+      "uncertainty": "User-posted image on Purdue-hosted calendar, not an authoritative measured elevation or design record; source image is not redistributed in repo."
+    },
+    {
+      "provider": "Purdue University historical timeline",
+      "feature_id": "Purdue University timeline entry for 1984",
+      "url": "https://collections.lib.purdue.edu/timelines/puhistorical",
+      "retrieved": "2026-10-27",
+      "supports": [
+        "timeline says Hansen Life Sciences Building completion in 1984"
+      ],
+      "uncertainty": "This conflicts with the archive entity record existence date 1983 and manifest completion year 1983. Completion year should remain unresolved."
+    }
+  ],
+  "comparison": {
+    "source_ring_vertices_excluding_closure": 26,
+    "model_structural_perimeter_vertices": 26,
+    "source_polygon_area_m2": 2129.129687214695,
+    "model_polygon_area_m2": 2129.129542717051,
+    "intersection_over_union": 0.9999989877345865,
+    "symmetric_hausdorff_m": 2.9942340749701874e-05,
+    "source_model_bounds_local_m": [
+      -22.801802843695953,
+      -20.821099407949077,
+      36.97721978357956,
+      25.22744338506982
+    ],
+    "method_caveat": "Near-perfect agreement is expected because source GIS appears to have informed the asset; it is an internal geometry consistency check, not independent evidence of surveyed wall placement. Decorative site geometry was excluded."
+  },
+  "geometry_and_portability": {
+    "mesh_object_count": 815,
+    "collection_object_count_including_root_and_cameras": 816,
+    "asset_collection": "Asset_hansen_life_sciences",
+    "root": "AssetRoot_hansen_life_sciences",
+    "scene": "Building_hansen_life_sciences",
+    "local_xy_origin_preserved": true,
+    "absolute_file_dependencies": [],
+    "textures": "Materials are authored within the blend. Fresh-open dependency inspection found no external images or linked libraries.",
+    "fresh_open_validation": "Opened source blend in a new background Blender 5.2.3 process, evaluated structural slab mesh, generated preview_oblique.png."
+  },
+  "dimensions": {
+    "verified_plan_bounds_local_m": [
+      59.77902262727551,
+      46.048542793019
+    ],
+    "height": "GIS attributes Extrution=60 and R=67 (units not explicitly labelled by service); BEP confirms basement and levels 1-4. Asset modeled base/main roof deck at z=17.5m, parapet/penthouse roof to 20.572m, roof exhaust stacks to z=24.147m. Exact finished grade-to-roof height remains unverified; do not treat GIS numbers or modeled rooftop equipment as measured elevation."
+  },
+  "interior_limitation": "Official Purdue GIS floorplans point to a restricted internal server path. The emergency plan is not an as-built plan. Interior lab/room layouts remain unmodeled/unverified; no room arrangement is claimed.",
+  "render": "audit/hansen_life_sciences/preview_oblique.png",
+  "remaining_uncertainties": [
+    "No authoritative as-built facade elevations/section were found.",
+    "GIS vertical attribute units and datum meaning are not documented in exposed layer schema.",
+    "Official description calls it four stories; GIS records six levels/60 extrusion and the BEP identifies basement plus floors 1-4. Basement grade relationship and actual roof height need survey or official elevations.",
+    "Window bay rhythm, brick/precast colors, entrance canopy/courtyard relationships and rooftop equipment positions lack a published elevation/photo set with multiple documented views.",
+    "Interior layout is unavailable outside restricted Purdue internal CAD.",
+    "Purdue sources conflict on completion year (1983 archive entity record versus 1984 campus timeline)."
+  ],
+  "independent_grade": {
+    "score": 8.0,
+    "max_score": 10,
+    "passed": true,
+    "result_file": "audit/hansen_life_sciences/independent_grade_r1/result.json",
+    "inspected_sha256": "fe0bc4834a9a14f3300587fff02d75171a7a54cc25ba6a12fd99f6c44526e552",
+    "summary": "FID 237 plan matches with IoU 0.999999 and symmetric Hausdorff distance 0.000030 m; roof/height, level conflict and facade evidence remain uncertain."
+  },
+  "master_integration": {
+    "status": "PASS",
+    "report_file": "audit/master_integration_2026-10-27_r5.json",
+    "placement_object": "Placement_hansen_life_sciences",
+    "library_object_count": 816,
+    "fresh_open_blender": "5.2.3 LTS"
+  }
+}

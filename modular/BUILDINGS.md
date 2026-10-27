@@ -56,8 +56,8 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | First Street Towers, East (FSTE) | [massing_first_street_towers_east_fste_c9b22d3.blend](buildings/massing_first_street_towers_east_fste_c9b22d3.blend) | 87 |
 | First Street Towers, West (FSTW) | [massing_first_street_towers_west_fstw_b6c3bbe.blend](buildings/massing_first_street_towers_west_fstw_b6c3bbe.blend) | 32 |
 | Felix Haas Hall | [felix_haas_hall.blend](buildings/felix_haas_hall.blend) | 879 |
-| Frieda Parker Hall | [frieda_parker_hall.blend](buildings/frieda_parker_hall.blend) | 539 |
-| Hansen Life Sciences | [hansen_life_sciences.blend](buildings/hansen_life_sciences.blend) | 816 |
+| Frieda Parker Hall (R2 independently graded 8.5/10; accepted) | [frieda_parker_hall.blend](buildings/frieda_parker_hall.blend) | 541 |
+| Hansen Life Sciences (R1 independently graded 8.0/10; accepted) | [hansen_life_sciences.blend](buildings/hansen_life_sciences.blend) | 816 |
 | Hicks Library (R2 independently graded 8.5/10; accepted) | [hicks_library.blend](buildings/hicks_library.blend) | 343 |
 | Hovde Hall | [hovde_hall.blend](buildings/hovde_hall.blend) | 760 |
 | Knoy Hall | [knoy_hall.blend](buildings/knoy_hall.blend) | 158 |
@@ -124,7 +124,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Dauch Alumni Center (R3 independently graded 8.45/10; accepted) | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 663 |
 | David and Bonnie Brunner Farm Animal Hospital | [david_and_bonnie_brunner_farm_animal_hospital.blend](buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 640 |
 | Drew and Brittany Brees Student Athletic Academic Center | [brees_student_athletic_academic_center.blend](buildings/brees_student_athletic_academic_center.blend) | 97 |
-| Flex Lab | [flex_lab.blend](buildings/flex_lab.blend) | 121 |
+| Flex Lab (R2 independently graded 8.4/10; accepted) | [flex_lab.blend](buildings/flex_lab.blend) | 407 |
 | Ford Dining Court | [ford_dining_court.blend](buildings/ford_dining_court.blend) | 69 |
 | France A. Córdova Recreational Sports Center | [massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend](buildings/massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend) | 199 |
 | Turf Recreation Exercise Center (TREC) | [massing_turf_recreation_exercise_center_9622f45.blend](buildings/massing_turf_recreation_exercise_center_9622f45.blend) | 274 |
@@ -349,8 +349,11 @@ Zeta Beta Tau at FID 762 / 900 David Ross retains campus-world coordinates in th
 | Beta Theta Pi | [massing_beta_theta_pi_fid826.blend](buildings/massing_beta_theta_pi_fid826.blend) | 349 |
 | Dauch Alumni Center | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 663 |
 | Electrical Engineering | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4774 |
+| Frieda Parker Hall | [frieda_parker_hall.blend](buildings/frieda_parker_hall.blend) | 541 |
+| Flex Lab | [flex_lab.blend](buildings/flex_lab.blend) | 407 |
+| Hansen Life Sciences | [hansen_life_sciences.blend](buildings/hansen_life_sciences.blend) | 816 |
 | Hicks Library | [hicks_library.blend](buildings/hicks_library.blend) | 343 |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | 11 |
 | West Lafayette Intermediate School (R3 independently graded 8.4/10; accepted) | [massing_west_lafayette_intermediate_school_d72f0fa.blend](buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | 1862 |
 
-The fresh-open master audit confirmed one correct master reference for Dauch Alumni Center, Electrical Engineering, and Hicks Library through their Placement markers and for West Lafayette Intermediate School through its direct link; all four use the expected library paths and match manifest object counts and world bounds. The earlier audit also passed for Beta Theta Pi and West Lafayette Junior-Senior High School. All six meet the grade gate: Hicks Library 8.5/10, Dauch 8.45/10, Electrical Engineering 8.3/10, West Lafayette Intermediate School 8.4/10, Beta Theta Pi 8.4/10, and West Lafayette Junior-Senior High School 8.0/10. West Lafayette Intermediate School height, roof elevations, room positions, and some facade details remain estimated.
+The fresh-open master audit confirmed one correct master reference for Dauch Alumni Center, Electrical Engineering, Frieda Parker Hall, Hansen Life Sciences, Hicks Library, and Flex Lab through their Placement markers and for West Lafayette Intermediate School through its direct link; all seven use the expected library paths and match manifest object counts and world bounds. The earlier audit also passed for Beta Theta Pi and West Lafayette Junior-Senior High School. All nine meet the grade gate: Frieda Parker Hall 8.5/10, Hicks Library 8.5/10, Flex Lab 8.4/10, Dauch 8.45/10, Electrical Engineering 8.3/10, West Lafayette Intermediate School 8.4/10, Hansen Life Sciences 8.0/10, Beta Theta Pi 8.4/10, and West Lafayette Junior-Senior High School 8.0/10. West Lafayette Intermediate School height, roof elevations, room positions, and some facade details remain estimated.

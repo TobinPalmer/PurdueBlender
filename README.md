@@ -82,13 +82,13 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | First Street Towers, Central (FSTC) | [massing_first_street_towers_central_fstc_929924d.blend](modular/buildings/massing_first_street_towers_central_fstc_929924d.blend) | Finished | [8.4/10](audit/first_street_towers_central_fstc_independent_grade/result.json) | — |
 | First Street Towers, East (FSTE) | [massing_first_street_towers_east_fste_c9b22d3.blend](modular/buildings/massing_first_street_towers_east_fste_c9b22d3.blend) | Finished | [8.1/10](audit/first_street_towers_east_independent_grade_r2/result.json) | — |
 | First Street Towers, West (FSTW) | [massing_first_street_towers_west_fstw_b6c3bbe.blend](modular/buildings/massing_first_street_towers_west_fstw_b6c3bbe.blend) | Finished | [8.7/10](audit/first_street_towers_west_fstw_independent_grade/grade_result.json) | — |
-| Flex Lab | [flex_lab.blend](modular/buildings/flex_lab.blend) | In progress | 7.5/10 | Tobin |
+| Flex Lab | [flex_lab.blend](modular/buildings/flex_lab.blend) | Finished; FID 909 shell preserved; curtainwall and canopy refined; exact heights/interior remain estimated | [8.4/10](audit/flex_lab/independent_grade_r2/result.json) | — |
 | Ford Dining Court | [ford_dining_court.blend](modular/buildings/ford_dining_court.blend) | In progress | 6.8/10 | Rossen |
 | Forney Hall of Chemical Engineering | [massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend](modular/buildings/massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend) | Finished | [8.2/10](audit/forney_hall_of_chemical_engineering_frny_d94ba3a_independent_grade/result.json) | — |
 | France A. Córdova Recreational Sports Center | [massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend](modular/buildings/massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend) | Finished | 8.1/10 | — |
-| Frieda Parker Hall | [frieda_parker_hall.blend](modular/buildings/frieda_parker_hall.blend) | Needs independent grade | Not graded | Tobin |
+| Frieda Parker Hall | [frieda_parker_hall.blend](modular/buildings/frieda_parker_hall.blend) | Finished; upper shell aligns with FID 409 (IoU 0.899); GIS accuracy, roof and facade dimensions remain approximate | [8.5/10](audit/frieda_parker_hall/independent_grade_r2/result.json) | — |
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](modular/buildings/hall_for_discovery_and_learning_research.blend) | In progress | 7.3/10 | Rossen |
-| Hansen Life Sciences | [hansen_life_sciences.blend](modular/buildings/hansen_life_sciences.blend) | Needs independent grade | Not graded | Tobin |
+| Hansen Life Sciences | [hansen_life_sciences.blend](modular/buildings/hansen_life_sciences.blend) | Finished; FID 237 footprint verified; roof/height and facade details remain uncertain | [8.0/10](audit/hansen_life_sciences/independent_grade_r1/result.json) | — |
 | Heine Pharmacy | [heine_pharmacy.blend](modular/buildings/heine_pharmacy.blend) | In progress | 7.5/10 | Rossen |
 | Hicks Library | [hicks_library.blend](modular/buildings/hicks_library.blend) | Finished; FID 197 shell and sloped masonry verified; height, roof, and interior remain estimated | [8.5/10](audit/batch2_hicks/independent_grade_r2/result.json) | — |
 | Horticulture Building | [horticulture_building.blend](modular/buildings/horticulture_building.blend) | In progress | 7.0/10 | Rossen |
@@ -173,9 +173,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | West Lafayette Intermediate School | [massing_west_lafayette_intermediate_school_d72f0fa.blend](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Finished; GIS shell verified; height, roof elevations, room positions, and some facade details remain estimated | [8.4/10](audit/west_lafayette_intermediate_school/independent_grade_r3/result.json) | — |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Finished; direct master link fresh-open PASS; facade proportions remain a noted improvement opportunity | [8.0/10](audit/west_lafayette_junior_senior_high_school/independent_grade/result.json) | — |
 
-## Unfinished buildings (101 total)
+## Unfinished buildings (98 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 99 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 101 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 16, Rossen 43, Kyle 22, Rohan 0, Arjav 20, Brady 0. Rossen's 43 records break down to **14 reassigned projects from Rohan, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 81 projects; 20 remain with Arjav and Brady.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 96 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 98 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 13, Rossen 43, Kyle 22, Rohan 0, Arjav 20, Brady 0. Rossen's 43 records break down to **14 reassigned projects from Rohan, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 78 projects; 20 remain with Arjav and Brady.
 
 ### New West Lafayette construction projects (2)
 
@@ -186,7 +186,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models in progress, awaiting a grade, or awaiting master integration (48)
+### Detailed models in progress, awaiting a grade, or awaiting master integration (45)
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
 | The Caretaker’s Cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | [8.1/10](audit/massing_the_caretaker_s_cottage_6b24af9/independent_grade_r2.json); linked in latest master; awaiting Tobin validation | Rossen |
@@ -198,11 +198,8 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Drew and Brittany Brees Student Athletic Academic Center | [`brees_student_athletic_academic_center.blend`](modular/buildings/brees_student_athletic_academic_center.blend) | 7.3/10 | Rossen |
 | Elliott Hall Of Music | [`elliott_hall_of_music.blend`](modular/buildings/elliott_hall_of_music.blend) | 7.1/10 | Rossen |
 | Felix Haas Hall | [`felix_haas_hall.blend`](modular/buildings/felix_haas_hall.blend) | 7.4/10 | Rossen |
-| Flex Lab | [`flex_lab.blend`](modular/buildings/flex_lab.blend) | 7.5/10 | Tobin |
 | Ford Dining Court | [`ford_dining_court.blend`](modular/buildings/ford_dining_court.blend) | 6.8/10 | Rossen |
-| Frieda Parker Hall | [`frieda_parker_hall.blend`](modular/buildings/frieda_parker_hall.blend) | Not graded | Tobin |
 | Hall for Discovery and Learning Research | [`hall_for_discovery_and_learning_research.blend`](modular/buildings/hall_for_discovery_and_learning_research.blend) | 7.3/10 | Rossen |
-| Hansen Life Sciences | [`hansen_life_sciences.blend`](modular/buildings/hansen_life_sciences.blend) | Not graded | Tobin |
 | Heine Pharmacy | [`heine_pharmacy.blend`](modular/buildings/heine_pharmacy.blend) | 7.5/10 | Rossen |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rossen |
 | Purdue Police Department (TERY) | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | [8.4/10](audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json); linked in latest master; awaiting Tobin validation | Rossen |

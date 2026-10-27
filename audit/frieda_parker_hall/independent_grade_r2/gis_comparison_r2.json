@@ -1,0 +1,120 @@
+{
+  "asset_sha256": "cc27ae34084d14dc845a3cb29dbaed42a465dbef96e4efb2877dad57f5b85949",
+  "source_provider": "Purdue University ArcGIS BuildingShapesZip4 layer 0",
+  "feature_id": 409,
+  "feature_name": "Frieda Parker Residence Hall",
+  "address": "401 N Russell Street",
+  "raw_source": "audit/frieda_parker_hall/sources/purdue_arcgis_fid_409.geojson",
+  "source_crs": "EPSG:4326 response; transformed into the project local frame with X=(lon+86.9137)*84810.60416539927 and Y=(lat-40.4274)*111040, then subtracting assigned origin [-499.7250061,97.475] m.",
+  "gis_polygon": {
+    "valid": true,
+    "area_m2": 2315.244,
+    "bounds_local_xy_m": [
+      [
+        -35.413,
+        24.464
+      ],
+      [
+        -48.867,
+        49.575
+      ]
+    ],
+    "centroid_local_xy_m": [
+      4.738,
+      5.085
+    ],
+    "unique_ring_vertices": 42
+  },
+  "shell_method": "Independently fresh-opened Blender object world-space mesh bound boxes for the three remaining major upper shells; these are rectangular volumes so their XY bounds are their plan footprints. Union compared with GIS polygon using Shapely 2.2.0.",
+  "upper_shells": {
+    "Frieda_EastWing_Upper_South": {
+      "bounds_local_xy_m": [
+        [
+          4.725,
+          22.725
+        ],
+        [
+          -49.475,
+          -4.475
+        ]
+      ],
+      "bbox_plan_area_m2": 810.0,
+      "fraction_inside_gis": 0.93383
+    },
+    "Frieda_EastWing_Upper_North": {
+      "bounds_local_xy_m": [
+        [
+          4.725,
+          22.725
+        ],
+        [
+          5.525,
+          49.525
+        ]
+      ],
+      "bbox_plan_area_m2": 792.0,
+      "fraction_inside_gis": 0.97108
+    },
+    "Frieda_WestWing_Upper": {
+      "bounds_local_xy_m": [
+        [
+          -35.475,
+          4.725
+        ],
+        [
+          3.025,
+          22.925
+        ]
+      ],
+      "bbox_plan_area_m2": 799.98,
+      "fraction_inside_gis": 0.88396
+    }
+  },
+  "upper_shell_union": {
+    "area_m2": 2401.98,
+    "intersection_with_gis_m2": 2232.646,
+    "outside_gis_m2": 169.334,
+    "iou": 0.8986,
+    "fraction_shell_area_inside_gis": 0.9295,
+    "bounds_local_xy_m": [
+      [
+        -35.475,
+        22.725
+      ],
+      [
+        -49.475,
+        49.525
+      ]
+    ]
+  },
+  "envelope_difference_model_minus_gis_m": [
+    [
+      -0.061645749080412315,
+      -1.7384956828328768
+    ],
+    [
+      -0.6080113675833729,
+      -0.050433059053744955
+    ]
+  ],
+  "northwing_upper_object_present": false,
+  "full_asset_bounds_local_xyz_m": [
+    [
+      -35.7599983215332,
+      35.725006103515625
+    ],
+    [
+      -49.75,
+      49.72500228881836
+    ],
+    [
+      0.0,
+      25.80000114440918
+    ]
+  ],
+  "limits": [
+    "The GIS service does not publish positional accuracy/date; it may be generalized and cannot certify wall lines.",
+    "The project geographic conversion is an approximate local linear transform, not a surveyed CRS.",
+    "The shell geometry is represented with rectangular upper-shell meshes; mesh bounds are appropriate for these volumes but do not fully capture every wall/footprint detail."
+  ]
+}
