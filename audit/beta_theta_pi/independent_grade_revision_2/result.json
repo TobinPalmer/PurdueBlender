@@ -1,0 +1,169 @@
+{
+  "building": "Beta Theta Pi (Beta Mu Chapter)",
+  "asset_path": "modular/buildings/massing_beta_theta_pi_fid826.blend",
+  "asset_sha256": "4E45D55F49DB9796F8C3780CD29AB83B3D27B4C3E1ABA6FD6140AFE3CD2455B1",
+  "score": 7.65,
+  "max_score": 10.0,
+  "passes": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue BuildingShapesZip4 FID 826 and both Purdue/official chapter address records identify Beta Theta Pi at 150 Littleton Street. The wall shell follows the official GIS polygon; the saved GIS/aerial overlay supports the property match."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": "The project geographic transform and full GIS polygon are used without box rescaling. Evaluated asset bounds in Blender are [[805.983, 827.11], [-417.268, -375.652], [-0.12, 15.0]]. Aerial overlay supports plan placement, but the photo facade has no surveyed compass bearing and the roof/facade alignment to individual GIS edges is interpretive."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 0.8,
+      "max_score": 2.0,
+      "evidence": "Three facade levels now match the official front photographs, and the housing directory reports four floors plus a basement; above-grade count remains an interpretation. Roof bands and the tower are now differentiated, but the east/west/aerial views still show oversized intersecting facets, abrupt roof seams, and exposed triangular wall-top areas. The roof silhouette/pitch does not yet read like the photo's discrete slate gables. The GIS height fields remain contradictory/unusable."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.35,
+      "max_score": 2.0,
+      "evidence": "The revision adds the tall pale bay with three arched glazed levels, a separate central brick gable, and an arched stone entry with plaque, all recognizable in chapter photos 1, 11, 14, 15 and 16. Brick tone and pale stone/window trim are source-consistent. Several west/east windows still appear partly occluded by or set into roof planes, while secondary elevations use a repeated generic sash layout; exact facade bearing and openings remain unregistered to GIS."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "Fresh-open check is this independent Blender 5.2.3 process: expected scene and collection loaded; 339 collection objects/339 meshes, five materials (['Beta Theta Pi | charcoal slate roof', 'Beta Theta Pi | dark reflective window glass', 'Beta Theta Pi | painted cream window frames', 'Beta Theta Pi | pale limestone trim', 'Beta Theta Pi | warm red-brown brick']), and no missing external image paths ([]). The evidence record includes raw GIS, layer metadata, official chapter gallery and address sources, aerial overlay, source-derived decisions and uncertainties. No public interior plan is available, so the interior is correctly omitted but remains unmodeled."
+    }
+  ],
+  "evidence": {
+    "scene": "Building_massing_beta_theta_pi_fid826",
+    "collection": "Asset_massing_beta_theta_pi_fid826",
+    "object_count": 339,
+    "mesh_count": 339,
+    "bounds_world_m": [
+      [
+        805.9833374023438,
+        827.1098022460938
+      ],
+      [
+        -417.2682800292969,
+        -375.6522521972656
+      ],
+      [
+        -0.11999999731779099,
+        15.0
+      ]
+    ],
+    "materials": [
+      "Beta Theta Pi | charcoal slate roof",
+      "Beta Theta Pi | dark reflective window glass",
+      "Beta Theta Pi | painted cream window frames",
+      "Beta Theta Pi | pale limestone trim",
+      "Beta Theta Pi | warm red-brown brick"
+    ],
+    "missing_external_images": [],
+    "roof_objects": [
+      "North_end_gable_roof",
+      "North_wing_roof",
+      "West_central_wing_roof",
+      "Central_tower_roof",
+      "East_central_wing_roof",
+      "South_end_gable_roof"
+    ],
+    "central_bay_objects": [
+      "Pale_bay_main_panel",
+      "Pale_bay_left_pilaster",
+      "Pale_bay_right_pilaster",
+      "Pale_bay_level_1_arched_glass",
+      "Pale_bay_level_1_left_pier",
+      "Pale_bay_level_1_right_pier",
+      "Pale_bay_level_1_arch_stone_1",
+      "Pale_bay_level_1_arch_stone_2",
+      "Pale_bay_level_1_arch_stone_3",
+      "Pale_bay_level_1_arch_stone_4",
+      "Pale_bay_level_1_arch_stone_5",
+      "Pale_bay_level_1_arch_stone_6",
+      "Pale_bay_level_1_arch_stone_7",
+      "Pale_bay_level_1_arch_stone_8",
+      "Pale_bay_level_1_arch_stone_9",
+      "Pale_bay_level_1_sill",
+      "Pale_bay_level_1_central_mullion",
+      "Pale_bay_level_1_transom_1",
+      "Pale_bay_level_1_transom_2",
+      "Pale_bay_level_2_arched_glass",
+      "Pale_bay_level_2_left_pier",
+      "Pale_bay_level_2_right_pier",
+      "Pale_bay_level_2_arch_stone_1",
+      "Pale_bay_level_2_arch_stone_2",
+      "Pale_bay_level_2_arch_stone_3",
+      "Pale_bay_level_2_arch_stone_4",
+      "Pale_bay_level_2_arch_stone_5",
+      "Pale_bay_level_2_arch_stone_6",
+      "Pale_bay_level_2_arch_stone_7",
+      "Pale_bay_level_2_arch_stone_8",
+      "Pale_bay_level_2_arch_stone_9",
+      "Pale_bay_level_2_sill",
+      "Pale_bay_level_2_central_mullion",
+      "Pale_bay_level_2_transom_1",
+      "Pale_bay_level_2_transom_2",
+      "Pale_bay_level_3_arched_glass",
+      "Pale_bay_level_3_left_pier",
+      "Pale_bay_level_3_right_pier",
+      "Pale_bay_level_3_arch_stone_1",
+      "Pale_bay_level_3_arch_stone_2",
+      "Pale_bay_level_3_arch_stone_3",
+      "Pale_bay_level_3_arch_stone_4",
+      "Pale_bay_level_3_arch_stone_5",
+      "Pale_bay_level_3_arch_stone_6",
+      "Pale_bay_level_3_arch_stone_7",
+      "Pale_bay_level_3_arch_stone_8",
+      "Pale_bay_level_3_arch_stone_9",
+      "Pale_bay_level_3_sill",
+      "Pale_bay_level_3_central_mullion",
+      "Pale_bay_level_3_transom_1",
+      "Pale_bay_level_3_transom_2",
+      "Pale_bay_cornice"
+    ],
+    "arched_feature_objects": [
+      "Pale_bay_level_1_arched_glass",
+      "Pale_bay_level_2_arched_glass",
+      "Pale_bay_level_3_arched_glass",
+      "Entry_arch_left_jamb",
+      "Entry_arch_right_jamb",
+      "Entry_arch voussoir_1",
+      "Entry_arch voussoir_2",
+      "Entry_arch voussoir_3",
+      "Entry_arch voussoir_4",
+      "Entry_arch voussoir_5",
+      "Entry_arch voussoir_6",
+      "Entry_arch voussoir_7",
+      "Entry_arch voussoir_8",
+      "Entry_arch voussoir_9",
+      "Entry_arch voussoir_10",
+      "Entry_arch voussoir_11",
+      "Entry_arch voussoir_12",
+      "Entry_arch voussoir_13"
+    ],
+    "visual_references": [
+      "audit/beta_theta_pi/preview_west.png",
+      "audit/beta_theta_pi/preview_east.png",
+      "audit/beta_theta_pi/preview_north.png",
+      "audit/beta_theta_pi/preview_south.png",
+      "audit/beta_theta_pi/preview_aerial.png",
+      "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-1.jpg",
+      "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-11.jpg",
+      "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-14.jpg",
+      "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-15.jpg",
+      "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-16.jpg",
+      "audit/beta_theta_pi/sources/gis_overlay_esri_aerial.jpg"
+    ]
+  },
+  "findings": [
+    "Rebuild the roof panels so they follow each concave GIS cross-section instead of spanning between only the global minimum and maximum X intersections; the current rendered roof still has bridged/overlapping facets and exposed wall-top triangles.",
+    "Align upper-floor windows and the pale bay/portal to the roof eaves so they remain visible and do not intersect or disappear behind the roof surfaces.",
+    "Retain the improved three-level central bay, central gable, and entry, while using additional source views to resolve roof bearings and hidden elevations.",
+    "No reliable floor plan was found; interior remains unmodeled rather than invented."
+  ]
+}

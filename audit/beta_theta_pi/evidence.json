@@ -1,0 +1,149 @@
+{
+  "building": "Beta Theta Pi (Beta Mu Chapter), Purdue University",
+  "building_id": "massing_beta_theta_pi_fid826",
+  "assigned_owner": "Tobin",
+  "identity_crosswalk": {
+    "status": "confirmed",
+    "reason": "Purdue's BuildingShapesZip4 feature FID 826 names BUILDING_N=Beta Theta Pi, BLDG_ABBR=SOBTP, ADDRESS=150 Littleton St, OWNER=GREEK. The Purdue Beta Mu chapter site identifies its chapter house at 150 Littleton Street, and Purdue BoilerLink lists the same address for Beta Theta Pi.",
+    "master_asset_match": "No reliable pre-existing asset match was present in the project library; this new asset explicitly represents GIS FID 826.",
+    "chapter_address_crosswalk": "GIS feature address and two chapter/university directory sources agree. This confirms the building identity/address but does not independently survey the doorway or identify which facade faces the public street."
+  },
+  "asset": {
+    "path": "modular/buildings/massing_beta_theta_pi_fid826.blend",
+    "build_script": "modular/buildings/build_beta_theta_pi_fid826.py",
+    "scene": "Building_massing_beta_theta_pi_fid826",
+    "collection": "Asset_massing_beta_theta_pi_fid826",
+    "coordinate_frame": "Meters, X east, Y north, Z up; campus project origin latitude 40.4274, longitude -86.9137.",
+    "geometry_summary": "Exact GIS perimeter walls with six individually named roof bands whose eaves are clipped to GIS cross-sections; a taller central tower roof/gable; three-level facade rows; a pale projecting bay with three vertically stacked arched glazed openings; an arched stone entry portal, shield plaque, steps, and GIS-footprint foundation cap.",
+    "materials": "Portable node materials: procedural warm red-brown brick, charcoal slate, limestone trim, cream-painted window frames, and dark reflective glass. No external material paths or packed image dependencies.",
+    "interior": "Not modeled. Purdue GIS references a private G: drive floorplan path, but no registered public plan was available. The official Beta housing record says four floors and a basement; it does not establish which levels are above grade or supply an interior plan, so interior geometry remains omitted."
+  },
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D826&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "feature_id": 826,
+      "retrieved": "2026-10-26",
+      "source_crs": "EPSG:3857 / WKID 102100 (native layer geometry); a second preserved query snapshot explicitly transforms to EPSG:4326 / WKID 4326.",
+      "source_snapshot": "audit/beta_theta_pi/sources/purdue_buildings_fid826_4326.json",
+      "native_snapshot": "audit/beta_theta_pi/sources/purdue_buildings_fid826_native.json",
+      "layer_metadata_snapshot": "audit/beta_theta_pi/sources/purdue_buildings_layer_metadata.json",
+      "source_attributes": {
+        "BUILDING_N": "Beta Theta Pi",
+        "BLDG_ABBR": "SOBTP",
+        "ADDRESS": "150 Littleton St",
+        "OWNER": "GREEK",
+        "NUM_LEVELS": 1,
+        "Extrution": 12,
+        "Shape__Area": 618.68359375,
+        "Shape__Length": 161.54269980658248
+      },
+      "measurements": {
+        "method": "Transform the EPSG:4326 ring to project campus XY using X=(longitude + 86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude - 40.4274)*111040.0; compute polygon area, perimeter, and axis-aligned bounds in those local approximate meters.",
+        "footprint_area_m2_approx": 357.93,
+        "perimeter_m_approx": 122.83,
+        "bounds_xy_m_approx": [
+          806.137,
+          -417.268,
+          827.11,
+          -375.652
+        ],
+        "centroid_xy_m_approx": [
+          815.416,
+          -397.949
+        ],
+        "area_note": "The GIS Shape__Area value is in web-Mercator units, whose scale inflates ground area at this latitude. The local approximate area above is derived from the returned polygon ring, not copied from Shape__Area."
+      },
+      "uncertainty": "The GIS footprint is authoritative for plan placement. The local coordinate transform is approximate, not a surveyed CRS. GIS NUM_LEVELS=1 conflicts with the three visible facade levels in official photos, while Extrution=12 has no interpretable units in the available metadata; neither provides a reliable height."
+    },
+    {
+      "provider": "Beta Mu Chapter of Beta Theta Pi at Purdue University, official Chapter House gallery",
+      "url": "https://purduebeta.com/chapter-house/",
+      "retrieved": "2026-10-26",
+      "source_crs": "Not applicable (photographs).",
+      "source_snapshot": "audit/beta_theta_pi/sources/purduebeta_chapter_house_gallery.html",
+      "image_urls": [
+        "https://purduebeta.com/wp-content/uploads/2023/09/Beta-Mu-Chapter-House-1.jpg",
+        "https://purduebeta.com/wp-content/uploads/2023/09/Beta-Mu-Chapter-House-11.jpg",
+        "https://purduebeta.com/wp-content/uploads/2023/09/Beta-Mu-Chapter-House-14.jpg",
+        "https://purduebeta.com/wp-content/uploads/2023/09/Beta-Mu-Chapter-House-15.jpg",
+        "https://purduebeta.com/wp-content/uploads/2023/09/Beta-Mu-Chapter-House-16.jpg"
+      ],
+      "image_snapshots": [
+        "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-1.jpg",
+        "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-11.jpg",
+        "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-14.jpg",
+        "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-15.jpg",
+        "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-16.jpg"
+      ],
+      "source_date": "The official photo page is currently available and the uploaded files use a 2023/09 URL path; the original capture date of the exterior views is not stated.",
+      "measurement_method": "Visual comparison of warm brick, stepped slate roof masses, tall central brick gable, pale vertical bay with vertically stacked glazing, arched stone entrance, and three visible facade levels. These photographs provide appearance cues but no measured elevation, facade bearing, or full orthogonal elevation set.",
+      "uncertainty": "The photos establish the facade composition but do not geo-register that elevation to a GIS edge or establish the exact orientation of every facade, hidden elevations, precise window coordinates, or present-day condition."
+    },
+    {
+      "provider": "Purdue University BoilerLink organization listing",
+      "url": "https://boilerlink.purdue.edu/organization/betathetapi",
+      "retrieved": "2026-10-26",
+      "source_date": "Current listing at retrieval.",
+      "identity_use": "Official Purdue organization page lists Beta Theta Pi at 150 Littleton Street, West Lafayette, IN 47906; used as independent address crosswalk evidence."
+    },
+    {
+      "provider": "Esri World Imagery tile service",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/19/197676/135580",
+      "retrieved": "2026-10-26",
+      "source_date": "Imagery date was not exposed by the tile response.",
+      "source_crs": "Web Mercator XYZ tile scheme, EPSG:3857.",
+      "source_snapshot": "audit/beta_theta_pi/sources/esri_aerial_z19.jpg",
+      "overlay_snapshot": "audit/beta_theta_pi/sources/gis_overlay_esri_aerial.jpg",
+      "measurement_method": "Context check of roof/footprint position and neighborhood orientation; the official GIS polygon was transformed into tile pixels for the overlay.",
+      "uncertainty": "Aerial pixels establish location and plan context, not facade detail, roof height, or an exact imagery date."
+    },
+    {
+      "provider": "Google Maps Street View",
+      "url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=40.42384,-86.90405",
+      "retrieved": "2026-10-26",
+      "source_date": "No Street View image returned at the address/coordinate queried; Google Maps displayed 'No Street View imagery available here.'",
+      "source_crs": "WGS84 coordinate in the URL.",
+      "measurement_method": "Opened the address-centered panorama view and checked the visible result.",
+      "uncertainty": "Street View cannot be used to verify the facade in this location from the queried viewpoint."
+    },
+    {
+      "provider": "Beta Theta Pi official chapter housing directory (Beta Mu - Purdue)",
+      "url": "https://my.beta.org/ors/chapterhousing.aspx?id=100188",
+      "retrieved": "2026-10-26",
+      "identity_use": "Official Beta chapter housing result identifies Beta Mu - Purdue at 150 Littleton St and lists Year Built 1927, Last Remodeled 2010, Number of Floors 4, and Basement Yes.",
+      "source_date": "Search result page captured within the last two years; current live page was checked on retrieval date.",
+      "uncertainty": "The listing’s floor count and basement field do not specify which levels are above grade, and it supplies no measured elevation or interior plan."
+    }
+  ],
+  "modelling_decisions": {
+    "footprint": "Used the full official FID 826 polygon ring after the documented campus-coordinate transform; wall perimeter and roof eaves follow this GIS geometry.",
+    "height": "Wall height is modeled at approximately 9.3 m to represent three visible above-grade facade levels. The official Beta housing page lists four floors and a basement, but does not clarify whether the reported floor count includes the basement; this model choice is therefore photographic, not surveyed. Purdue GIS NUM_LEVELS=1 and Extrution=12 remain conflicting/unclear fields.",
+    "roof": "Replaced the single continuous triangulated slab with six separate adjoining roof bands. Eaves are calculated from the GIS footprint cross-section at each band boundary to avoid floating oversize roof panels. A raised central tower ridge and visible front gable follow official photos 1 and 15. Ridge height, pitch and exact band layout are photo-based estimates, not surveyed.",
+    "windows_and_entrance": "Three facade levels follow official photos 1, 11, 14, 15 and 16. The facade has a prominent pale projecting bay with three stacked arched openings, a tall central brick gable with high sash, and an arched stone entry with shield plaque. Positions relative to GIS footprint are approximate because no source geo-registers the pictured elevation to a compass bearing.",
+    "interior": "Omitted because no registered floor plan was available to substantiate its geometry."
+  },
+  "validation": {
+    "blender_version": "Blender 5.2.3 LTS",
+    "fresh_open": "passed: opened the final saved library in a separate Blender 5.2.3 background process; stable scene and collection names, 339 mesh objects, 5 materials, 0 external image dependencies; six GIS-clipped roof bands loaded.",
+    "scene_and_collection_names": "passed: scene Building_massing_beta_theta_pi_fid826; linked collection Asset_massing_beta_theta_pi_fid826",
+    "object_counts": {
+      "collection_objects": 339,
+      "mesh_objects": 339,
+      "materials": 5,
+      "file_image_dependencies": 0,
+      "front_bay_arched_glass_panels": 3
+    },
+    "sha256": "4E45D55F49DB9796F8C3780CD29AB83B3D27B4C3E1ABA6FD6140AFE3CD2455B1",
+    "expected_collection": "Asset_massing_beta_theta_pi_fid826",
+    "expected_scene": "Building_massing_beta_theta_pi_fid826",
+    "review_views": [
+      "audit/beta_theta_pi/preview_west.png",
+      "audit/beta_theta_pi/preview_east.png",
+      "audit/beta_theta_pi/preview_south.png",
+      "audit/beta_theta_pi/preview_north.png",
+      "audit/beta_theta_pi/preview_aerial.png"
+    ],
+    "review_script": "audit/beta_theta_pi/render_review.py"
+  }
+}

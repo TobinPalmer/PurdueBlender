@@ -1,0 +1,84 @@
+{
+  "building": "Beta Theta Pi (Beta Mu Chapter)",
+  "asset_path": "modular/buildings/massing_beta_theta_pi_fid826.blend",
+  "asset_sha256": "1439047830952845050C68AD300C182151A7A3C6DF150C0B93A52BFBE73DD430",
+  "score": 6.75,
+  "max_score": 10.0,
+  "passes": false,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS FID 826, the Purdue Beta Mu page, and BoilerLink all identify Beta Theta Pi at 150 Littleton Street. The shell perimeter is built from the FID 826 ring and the saved aerial overlay aligns it to the roof footprint."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": "Campus coordinates use the documented local conversion; observed bounds are [[805.418, 827.11], [-417.268, -375.652], [-0.12, 11.8]]. GIS controls plan position and dimensions. The photo set does not independently establish the photographed facade's bearing or all elevations, so facade assignment/orientation remains partly interpreted."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 0.55,
+      "max_score": 2.0,
+      "evidence": "Wall height and roof ridge are estimates. The official exterior shows a taller, articulated roof and multiple roof masses; the saved model's continuous roof reads as one broad, jagged slab from several sides, with an isolated triangular entrance gable. The two-storey wall treatment also underrepresents the photographed central bay's vertical, multi-level composition. GIS level/extrusion fields are explicitly contradictory, so they do not support the chosen height."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.75,
+      "max_score": 2.0,
+      "evidence": "Warm red-brown brick and pale window trim are source-consistent. However, the photographed front is distinguished by a tall pale central bay with vertically stacked/arched glazing and a more elaborate entry; the model substitutes a small triangular gable, simple door, and repeated generic sash windows. The entrance and facade rhythm therefore do not yet match the strongest reference view."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.85,
+      "max_score": 2.0,
+      "evidence": "Expected scene/collection exist; 161 collection objects and 161 meshes were read. Materials are ['Beta Theta Pi | charcoal slate roof', 'Beta Theta Pi | dark reflective window glass', 'Beta Theta Pi | painted cream window frames', 'Beta Theta Pi | pale limestone trim', 'Beta Theta Pi | warm red-brown brick']; missing external file images: []. The audit contains raw GIS, chapter/address sources, photographs, aerial overlay, uncertainty notes, and five inspection renders. No interior plan was available; omitting a speculative interior is appropriate, but interior coverage remains absent."
+    }
+  ],
+  "evidence": {
+    "scene": "Building_massing_beta_theta_pi_fid826",
+    "collection": "Asset_massing_beta_theta_pi_fid826",
+    "object_count": 161,
+    "mesh_count": 161,
+    "materials": [
+      "Beta Theta Pi | charcoal slate roof",
+      "Beta Theta Pi | dark reflective window glass",
+      "Beta Theta Pi | painted cream window frames",
+      "Beta Theta Pi | pale limestone trim",
+      "Beta Theta Pi | warm red-brown brick"
+    ],
+    "missing_external_images": [],
+    "mesh_bounds_world_m": [
+      [
+        805.417724609375,
+        827.1098022460938
+      ],
+      [
+        -417.2682800292969,
+        -375.6522521972656
+      ],
+      [
+        -0.11999999731779099,
+        11.800000190734863
+      ]
+    ],
+    "visual_references": [
+      "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-1.jpg",
+      "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-11.jpg",
+      "audit/beta_theta_pi/preview_west.png",
+      "audit/beta_theta_pi/preview_east.png",
+      "audit/beta_theta_pi/preview_north.png",
+      "audit/beta_theta_pi/preview_south.png",
+      "audit/beta_theta_pi/preview_aerial.png"
+    ]
+  },
+  "findings": [
+    "Replace the continuous jagged roof cap with roof masses that follow the visible multi-wing roof silhouette.",
+    "Reconstruct the distinctive pale central bay and its vertically stacked/arched glazing from the official exterior photo.",
+    "Rework the entrance and upper facade composition; the current small triangular gable does not match the reference facade.",
+    "Use additional dated/orthogonal sources before claiming roof, height, facade bearing, or hidden elevations are verified.",
+    "No registered interior plan was found; the interior remains unmodeled and unverified."
+  ]
+}
