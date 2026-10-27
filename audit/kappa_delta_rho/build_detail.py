@@ -60,8 +60,8 @@ wood_noise=tnt.nodes.new('ShaderNodeTexNoise'); wood_noise.inputs['Scale'].defau
 wood_ramp=tnt.nodes.new('ShaderNodeValToRGB'); wood_ramp.color_ramp.elements[0].color=(0.018,0.014,0.012,1); wood_ramp.color_ramp.elements[1].color=(0.075,0.052,0.035,1)
 tnt.links.new(wood_noise.outputs['Fac'],wood_ramp.inputs['Fac']); tnt.links.new(wood_ramp.outputs['Color'],tbs.inputs['Base Color'])
 light_wall,lbs,lnt=mat_principled('KDR_Light_Wall_Infill_Photo37_Estimate',(0.56,0.49,0.37),0.88)
-wall_noise=lnt.nodes.new('ShaderNodeTexNoise'); wall_noise.inputs['Scale'].default_value=23; wall_noise.inputs['Detail'].default_value=2
-wall_ramp=lnt.nodes.new('ShaderNodeValToRGB'); wall_ramp.color_ramp.elements[0].color=(0.34,0.30,0.24,1); wall_ramp.color_ramp.elements[1].color=(0.73,0.67,0.55,1)
+wall_noise=lnt.nodes.new('ShaderNodeTexNoise'); wall_noise.inputs['Scale'].default_value=5; wall_noise.inputs['Detail'].default_value=2
+wall_ramp=lnt.nodes.new('ShaderNodeValToRGB'); wall_ramp.color_ramp.elements[0].color=(0.49,0.44,0.36,1); wall_ramp.color_ramp.elements[1].color=(0.63,0.57,0.46,1)
 lnt.links.new(wall_noise.outputs['Fac'],wall_ramp.inputs['Fac']); lnt.links.new(wall_ramp.outputs['Color'],lbs.inputs['Base Color'])
 
 slate,bs2,nt2=mat_principled('KDR_Blue_Charcoal_Slate_Roof_Estimate',(0.075,0.09,0.105),0.78)
@@ -96,7 +96,7 @@ for i in range(n): faces.append((i,(i+1)%n,n+(i+1)%n,n+i))
 faces.append(tuple(reversed(range(n))))
 faces.append(tuple(range(n,2*n)))
 newmesh=bpy.data.meshes.new('House_1089876362_GIS_footprint_shell')
-newmesh.from_pydata(verts,[],faces); newmesh.materials.clear(); newmesh.materials.append(brick); newmesh.materials.append(limestone)
+newmesh.from_pydata(verts,[],faces); newmesh.materials.clear(); newmesh.materials.append(light_wall); newmesh.materials.append(limestone)
 newmesh.update()
 for i,p in enumerate(newmesh.polygons):
     p.material_index=1 if i==len(faces)-1 else 0
@@ -221,7 +221,7 @@ front=max((e for e in edges if e[5][0]<-0.55),key=lambda e:e[3])
 front_len=front[3]; front_center=front[6]; front_t=front[4]; front_n=front[5]
 door_y=front_center[1]
 # Photo 37 shows the main entry near the right end of the broad visible elevation.
-door_frac=0.84
+door_frac=0.92
 door_center=(front_center[0]+front_t[0]*(door_frac-0.5)*front_len,front_center[1]+front_t[1]*(door_frac-0.5)*front_len)
 # Restrained window bays, with no shutters on the Photo 37-facing elevation.
 front_window_fracs=(0.13,0.34,0.55,0.72)
@@ -237,15 +237,10 @@ for z in (3.95,7.23):
     a=(timber_y[0]+front_t[0]*(-front_len/2+0.10),timber_y[1]+front_t[1]*(-front_len/2+0.10),z)
     b=(timber_y[0]+front_t[0]*(front_len/2-0.10),timber_y[1]+front_t[1]*(front_len/2-0.10),z)
     timberB.beam(a,b,0.22,0.20,front_n)
-for frac in (0.04,0.27,0.50,0.73,0.96):
+for frac in (0.04,0.25,0.46,0.67,0.80,0.97):
     px=front_center[0]+front_t[0]*(frac-0.5)*front_len+front_n[0]*0.20
     py=front_center[1]+front_t[1]*(frac-0.5)*front_len+front_n[1]*0.20
     timberB.beam((px,py,3.95),(px,py,7.23),0.20,0.20,front_n)
-# Short diagonal braces reinforce the Period Revival timber pattern between bays.
-for frac in (0.04,0.27,0.73,0.96):
-    p0=(front_center[0]+front_t[0]*(frac-0.5)*front_len+front_n[0]*0.20,front_center[1]+front_t[1]*(frac-0.5)*front_len+front_n[1]*0.20,4.02)
-    p1=(p0[0]+front_t[0]*1.10,p0[1]+front_t[1]*1.10,4.90)
-    timberB.beam(p0,p1,0.13,0.20,front_n)
 # Dark timber triangle on the visible north gable, a clear Photo 37 feature.
 gable_n=(0.0,1.0)
 for p0,p1,w in [((xl,yt+0.14,eave_z),(xr,yt+0.14,eave_z),0.22),
@@ -325,8 +320,8 @@ for side in (-1,):
         for s in (-1,1): trimB.box((gc[0]+no[0]*0.05,gc[1],gc[2]+s*0.46),wt,no,1.18,0.13,0.08)
         trimB.box((gc[0]+no[0]*0.08,gc[1],gc[2]),wt,no,0.045,0.15,0.82)
 # Two modest brick chimneys punctuate the roof; size/positions are visual estimates from the aerial.
-for j,(cx,cy) in enumerate(((mx-2.0,mid_y),)):
-    z=eave_z+(abs(cx-mx)/(mx-xl))*(ridge_z-eave_z)+0.62
+for j,(cx,cy) in enumerate(((mx,mid_y+1.0),)):
+    z=ridge_z+0.62
     brickDetailB.box((cx,cy,z),(1,0),(0,1),0.70,0.78,1.24)
     stoneB.box((cx,cy,z+0.62),(1,0),(0,1),0.95,1.00,0.18)
 
@@ -393,7 +388,7 @@ scene.render.filepath=str(EXPORT/'kappa_delta_rho_exterior.png'); bpy.ops.render
 old_vis={o.name:o.hide_render for o in bpy.data.objects}
 for o in (obj,): o.hide_render=True
 for o in created:
-    if o.name.startswith('KDRDetail_Roof') or o.name.startswith('KDRDetail_Chimneys') or o.name.startswith('KDRDetail_Architectural_Trim') or o.name.startswith('KDRDetail_Limestone') or o.name.startswith('KDRDetail_Window_Glazing') or o.name.startswith('KDRDetail_Woodwork'):
+    if o.name.startswith('KDRDetail_Roof') or o.name.startswith('KDRDetail_Chimneys') or o.name.startswith('KDRDetail_Architectural_Trim') or o.name.startswith('KDRDetail_Limestone') or o.name.startswith('KDRDetail_Window_Glazing') or o.name.startswith('KDRDetail_Woodwork') or o.name.startswith('KDRDetail_Tudor_Gables') or o.name.startswith('KDRDetail_Tudor_HalfTimber'):
         o.hide_render=True
 cam.location=(mid_x-22,mid_y+25,22); cam_data.type='ORTHO'; cam_data.ortho_scale=38; aim(cam,(mid_x,mid_y,1.1))
 # Put an explicit, camera-facing note on the interior preview. The note and
@@ -430,7 +425,7 @@ bpy.ops.wm.save_as_mainfile(filepath=str(ASSET))
 
 # Reopen this exact saved file in a separate Blender process for final verification.
 sha=hashlib.sha256(ASSET.read_bytes()).hexdigest()
-report={'building':'Kappa Delta Rho','asset':str(ASSET),'sha256':sha,'gis_fid':801,'gis_name':geo['properties'].get('BUILDING_N'),'gis_address':geo['properties'].get('ADDRESS'),'gis_vertices':len(ring),'area_m2':abs(area),'model_bounds_xy_m':[xmin,xmax,ymin,ymax],'wall_height_m':wall_h,'roof_peak_m':ridge_z,'geometry_edit':'Preserved exact 20-vertex Purdue GIS FID 801 wall outline. Used the directly address-identified NPS Photo 37 (caption: Kappa Delta Rho, Northwestern Ave, N, facing southeast; Jane Evans, June 2001) to refine the visible Tudor Revival facade: upper-story dark half-timbering, pale wall infill, an offset entry, a steep gabled roof, three visible-slope dormers, and a single visible chimney. Converted roof planes and schematic floor to closed thin slabs; kept the interior preview caveat.','architectural_uncertainties':['Photo 37 is monochrome; exact facade color, material hues, dimensions, and concealed elevations remain uncertain. Wall finish is labeled an estimate; NPS district-wide form materials are not treated as building-specific proof.','Photo 37 supports a 2001 view toward the visible elevation and roof profile, but not surveyed wall or ridge heights; 7.5 m wall and 11.4 m ridge remain estimates.','Interior partitions and furnishings are generic schematic common-room, hall and dining zones, not an as-built plan. Far roof slope and opposite gable end are not shown clearly in Photo 37.'],'materials':{'exterior':'procedural brick/light wall infill; hues and exact masonry finish are estimates','roof':'procedural dark slate-like roof with subtle variation; Photo 37 supports steep dark roof appearance, exact material unverified','timber':'dark Tudor half-timbering supported on visible upper facade and north gable in NPS Photo 37','trim':'procedural limestone and painted wood; estimate','windows':'dark reflective glazing with estimated sash divisions; opening groupings follow Photo 37 broadly','interior':'schematic wood floor, plaster partitions and furnishings'},'objects_added':[o.name for o in created],'previews':[str(EXPORT/'kappa_delta_rho_exterior.png'),str(EXPORT/'kappa_delta_rho_schematic_interior.png')],'nps_photo37':{'asset_id':'d392afd2-253a-41d8-a3f6-d8faaf7d0c14','source_url':'https://npgallery.nps.gov/GetAsset/d392afd2-253a-41d8-a3f6-d8faaf7d0c14/','pdf_page_image':71,'caption_page':72,'caption_date':'June 2001','caption_author':'Jane Evans','facing_direction':'southeast','exposure_date_status':'caption states June 2001; exact exposure date not independently confirmed'},'fresh_open_status':'pending separate validation'}
+report={'building':'Kappa Delta Rho','asset':str(ASSET),'sha256':sha,'gis_fid':801,'gis_name':geo['properties'].get('BUILDING_N'),'gis_address':geo['properties'].get('ADDRESS'),'gis_vertices':len(ring),'area_m2':abs(area),'model_bounds_xy_m':[xmin,xmax,ymin,ymax],'wall_height_m':wall_h,'roof_peak_m':ridge_z,'geometry_edit':'Preserved exact 20-vertex Purdue GIS FID 801 wall outline. Used directly identified NPS Photo 37 (caption: Kappa Delta Rho, Northwestern Ave, N, facing southeast; Jane Evans, June 2001) to refine the visible Tudor Revival facade: upper-story dark half-timbering, pale wall infill, an offset entry, steep gabled roof, three visible-slope dormers, and one visible chimney. Converted roof panels and schematic floor to closed thin slabs; retained the preview-only interior caveat.','architectural_uncertainties':['Photo 37 is monochrome; exact facade color, material hues, dimensions, and concealed elevations remain uncertain. Wall finish is labeled an estimate; NPS district-wide form materials are not treated as building-specific proof.','Photo 37 supports a 2001 view toward the visible elevation and roof profile, but not surveyed wall or ridge heights; 7.5 m wall and 11.4 m ridge remain estimates.','Interior partitions and furnishings are generic schematic common-room, hall and dining zones, not an as-built plan. Far roof slope and opposite gable end are not shown clearly in Photo 37.'],'materials':{'exterior':'procedural pale wall infill; color and exact masonry finish are estimates','roof':'procedural dark slate-like roof with subtle variation; Photo 37 supports steep dark roof appearance, exact material unverified','timber':'dark Tudor half-timbering supported on visible upper facade and north gable in NPS Photo 37','trim':'procedural limestone and painted wood; estimate','windows':'dark reflective glazing with estimated sash divisions; opening groupings follow Photo 37 broadly','interior':'schematic wood floor, plaster partitions and furnishings'},'objects_added':[o.name for o in created],'previews':[str(EXPORT/'kappa_delta_rho_exterior.png'),str(EXPORT/'kappa_delta_rho_schematic_interior.png')],'nps_photo37':{'asset_id':'d392afd2-253a-41d8-a3f6-d8faaf7d0c14','source_url':'https://npgallery.nps.gov/GetAsset/d392afd2-253a-41d8-a3f6-d8faaf7d0c14/','pdf_page_image':71,'caption_page':72,'caption_date':'June 2001','caption_author':'Jane Evans','facing_direction':'southeast','exposure_date_status':'caption states June 2001; exact exposure date not independently confirmed'},'fresh_open_status':'pending separate validation'}
 (AUDIT/'build_report.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
 print(json.dumps(report))
 

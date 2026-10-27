@@ -1,7 +1,7 @@
 {
   "building": "Kappa Delta Rho",
   "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_house_1089876362_14ecd2c.blend",
-  "sha256": "c871289baa956e828d607fe7065b8b0e001ef39acc147fbb3318ee4a4655758e",
+  "sha256": "b6adaf3369e04593b2b65ea6d5b62c470076c1f913a6f7ae36e6439534488567",
   "gis_fid": 801,
   "gis_name": "Kappa Delta Rho",
   "gis_address": "1134 Northwestern Av",
@@ -14,18 +14,19 @@
     1034.0564964661098
   ],
   "wall_height_m": 7.5,
-  "roof_peak_m": 10.0,
-  "geometry_edit": "Preserved exact 20-vertex Purdue GIS FID 801 wall outline; retained 7.5 m estimated wall height and 10.0 m estimated ridge. Converted all roof planes and the schematic floor from open polygons into closed thin slabs; roof panels still follow the 2023 aerial roof pattern. Added a preview-only schematic/not-surveyed annotation to the interior rendering.",
+  "roof_peak_m": 11.4,
+  "geometry_edit": "Preserved exact 20-vertex Purdue GIS FID 801 wall outline. Used directly identified NPS Photo 37 (caption: Kappa Delta Rho, Northwestern Ave, N, facing southeast; Jane Evans, June 2001) to refine the visible Tudor Revival facade: upper-story dark half-timbering, pale wall infill, an offset entry, steep gabled roof, three visible-slope dormers, and one visible chimney. Converted roof panels and schematic floor to closed thin slabs; retained the preview-only interior caveat.",
   "architectural_uncertainties": [
-    "Facade color/material, window arrangement, entry portico and dormer profile are schematic estimates; no direct current facade photograph or measured facade drawing was found. The NPS nomination cites Photo 37 as an index entry without supplying a facade photograph.",
-    "GIS story count conflicts with a high wall extrusion and fraternity-house scale; vertical geometry retains the source 7.5 m wall level plus estimated roof to 10.0 m.",
-    "Interior partitions and furnishings are generic schematic common-room, hall and dining zones, not an as-built plan."
+    "Photo 37 is monochrome; exact facade color, material hues, dimensions, and concealed elevations remain uncertain. Wall finish is labeled an estimate; NPS district-wide form materials are not treated as building-specific proof.",
+    "Photo 37 supports a 2001 view toward the visible elevation and roof profile, but not surveyed wall or ridge heights; 7.5 m wall and 11.4 m ridge remain estimates.",
+    "Interior partitions and furnishings are generic schematic common-room, hall and dining zones, not an as-built plan. Far roof slope and opposite gable end are not shown clearly in Photo 37."
   ],
   "materials": {
-    "exterior": "procedural brick with mortar and relief; color/style estimate",
-    "roof": "procedural dark slate with subtle variation; aerial tone supported, exact material unverified",
+    "exterior": "procedural pale wall infill; color and exact masonry finish are estimates",
+    "roof": "procedural dark slate-like roof with subtle variation; Photo 37 supports steep dark roof appearance, exact material unverified",
+    "timber": "dark Tudor half-timbering supported on visible upper facade and north gable in NPS Photo 37",
     "trim": "procedural limestone and painted wood; estimate",
-    "windows": "dark reflective blue glazing with 6-over-6-inspired estimated sash divisions",
+    "windows": "dark reflective glazing with estimated sash divisions; opening groupings follow Photo 37 broadly",
     "interior": "schematic wood floor, plaster partitions and furnishings"
   },
   "objects_added": [
@@ -34,6 +35,8 @@
     "KDRDetail_Window_Glazing",
     "KDRDetail_Woodwork",
     "KDRDetail_Roof",
+    "KDRDetail_Tudor_Gables",
+    "KDRDetail_Tudor_HalfTimber",
     "KDRInterior_Schematic_Partitions",
     "KDRInterior_Schematic_Floor",
     "KDRDetail_Chimneys",
@@ -43,5 +46,16 @@
     "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\kappa_delta_rho\\previews\\kappa_delta_rho_exterior.png",
     "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\kappa_delta_rho\\previews\\kappa_delta_rho_schematic_interior.png"
   ],
-  "fresh_open_status": "PASS in separate Blender 5.2.3 process; exact SHA recorded in fresh_open_report.json"
+  "nps_photo37": {
+    "asset_id": "d392afd2-253a-41d8-a3f6-d8faaf7d0c14",
+    "source_url": "https://npgallery.nps.gov/GetAsset/d392afd2-253a-41d8-a3f6-d8faaf7d0c14/",
+    "pdf_page_image": 71,
+    "caption_page": 72,
+    "caption_date": "June 2001",
+    "caption_author": "Jane Evans",
+    "facing_direction": "southeast",
+    "exposure_date_status": "caption states June 2001; exact exposure date not independently confirmed"
+  },
+  "fresh_open_status": "passed in separate Blender 5.2.3 process; stable scene/collection/object, exact GIS FID 801 base ring, local detail collections and portable materials verified",
+  "fresh_open_sha256": "b6adaf3369e04593b2b65ea6d5b62c470076c1f913a6f7ae36e6439534488567"
 }
