@@ -1,0 +1,107 @@
+{
+  "asset_id": "massing_von_s_d207e41",
+  "asset_path": "modular/buildings/massing_von_s_d207e41.blend",
+  "asset_sha256": "4c2715c05d93ec977e878a231355fe465268d7ab32be798ff12262cfb92a0f76",
+  "scene": "Building_massing_von_s_d207e41",
+  "collection": "Asset_massing_von_s_d207e41",
+  "stable_root_object": "Von's",
+  "model_status": "detailed library asset saved and reopened successfully",
+  "source_footprint": {
+    "provider": "OpenStreetMap project snapshot",
+    "feature_type": "way",
+    "feature_id": 116427236,
+    "tags": {
+      "building": "retail",
+      "name": "Von's"
+    },
+    "source_snapshot": "purdue_campus_buildings.json; OSM base timestamp 2026-10-22T03:45:50Z",
+    "source_crs": "EPSG:4326",
+    "transform": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040; metres; Z up",
+    "source_ring_vertex_count": 8,
+    "source_ring_vertices_confirmed_after_reopen": 8,
+    "transformed_bounds_m": [
+      [390.01004431572136, 433.61117591747],
+      [-416.932991999538, -389.3062400001736]
+    ],
+    "evidence_file": "sources/osm_way_116427236_footprint.json"
+  },
+  "identity_sources": [
+    {
+      "provider": "Von's official website",
+      "url": "https://www.vonsshops.com/business-info",
+      "claim": "Current store address is 315 W State St, West Lafayette, IN 47906; the site identifies the Chauncey Village location."
+    },
+    {
+      "provider": "Von's official website",
+      "url": "https://www.vonsshops.com/history",
+      "claim": "History describes the acquired main building as holding retail departments and apartments on upper floors, and separately refers to other Von's buildings."
+    },
+    {
+      "provider": "Von's official website, storefront photograph on Products page",
+      "url": "https://www.vonsshops.com/products",
+      "image": "IMG_0619_edited_edited.jpg",
+      "claim": "Photograph shows red brick, a wall-painted Von's Shops name/category mural, small openings and a window AC unit."
+    }
+  ],
+  "geometry_and_materials": {
+    "vertex_count": 15864,
+    "face_count": 11732,
+    "scene_object_count": 1,
+    "world_bounds_m": [
+      [389.8697509765625, 433.7541809082031],
+      [-417.07403564453125, -389.1648864746094],
+      [0.0, 8.450000762939453]
+    ],
+    "estimated_parapet_height_m": 8.45,
+    "materials": [
+      "VonS_Warm_Red_Brick",
+      "VonS_Flat_Roof_Membrane",
+      "VonS_Dark_Brick",
+      "VonS_Limestone_Trim",
+      "VonS_Storefront_Glass",
+      "VonS_Painted_Window_Frame",
+      "VonS_Dark_Metal",
+      "VonS_Sign_Green",
+      "VonS_Sign_Dark_Ink",
+      "VonS_Sign_Lavender",
+      "VonS_Sign_Dusty_Pink",
+      "VonS_Sign_Cream",
+      "VonS_Apartment_Glass"
+    ],
+    "uv_layers": ["Facade_Meters", "UVMap"],
+    "external_image_dependencies": []
+  },
+  "modeling_decisions": {
+    "included": [
+      "Exact unsimplified GIS-derived footprint and preserved campus-world placement",
+      "Procedural warm red brick with UV-mapped brick courses",
+      "Flat roof membrane with thin parapet",
+      "Ground-floor retail glazing and entry, schematic apartment-level windows",
+      "Wall mural with the photographed Von's name and department categories",
+      "One small window AC detail supported by the official storefront image"
+    ],
+    "not_modeled": [
+      "Interior: no public floor plan was found",
+      "Exact upper-floor count, vertical dimensions, and every opening: no measured elevations were found"
+    ],
+    "uncertainty": "The official history mentions apartments above the retail space. A public parcel summary for the 315 W State address reports a one-story brick assessment; these sources may describe different portions of the combined Von's footprint. The model's 8.45 m parapet and facade rhythm are explicitly schematic estimates."
+  },
+  "previews": [
+    "previews/von_s_three_quarter.png",
+    "previews/von_s_state_street_facade.png",
+    "previews/von_s_mural_detail.png",
+    "previews/von_s_roof_footprint.png"
+  ],
+  "validation": {
+    "fresh_open_check": "PASS",
+    "fresh_open_report": "reopen_verification.json",
+    "fresh_open_checks": [
+      "Exact scene, collection, stable root object and one-object scene reopened",
+      "All 8 exact GIS boundary vertices still exist in the saved mesh",
+      "Campus-world identity transform retained",
+      "Procedural materials and UV layer reopened with no external image references",
+      "All 4 preview images exist"
+    ]
+  },
+  "independent_grade": "pending"
+}
