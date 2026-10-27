@@ -125,7 +125,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Birck Nanotechnology Center | [birck_nanotechnology_center.blend](buildings/birck_nanotechnology_center.blend) | 110 |
 | Black Cultural Center | [black_cultural_center.blend](buildings/black_cultural_center.blend) | 621 |
 | Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](buildings/burton_morgan_center.blend) | 384 |
-| Convergence Center for Innovation and Collaboration | [convergence_center.blend](buildings/convergence_center.blend) | 894 |
+| Convergence Center for Innovation and Collaboration | [convergence_center.blend](buildings/convergence_center.blend) | 764 |
 | Dauch Alumni Center (R3 independently graded 8.45/10; accepted) | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 663 |
 | David and Bonnie Brunner Farm Animal Hospital ([8.4/10](../audit/brunner_farm_animal_hospital/independent_grade_r2/result.json); master fresh-open PASS 2026-10-27) | [david_and_bonnie_brunner_farm_animal_hospital.blend](buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 147 |
 | Drew and Brittany Brees Student Athletic Academic Center ([8.5/10](../audit/batch_b_buildings/brees_student_athletic_academic_center_independent_grade_r2/result.json); master fresh-open PASS 2026-10-27) | [brees_student_athletic_academic_center.blend](buildings/brees_student_athletic_academic_center.blend) | 106 |
@@ -353,6 +353,7 @@ Zeta Beta Tau at FID 762 / 900 David Ross retains campus-world coordinates in th
 | Building | File | Objects |
 | --- | --- | ---: |
 | Beta Theta Pi | [massing_beta_theta_pi_fid826.blend](buildings/massing_beta_theta_pi_fid826.blend) | 349 |
+| Convergence Center for Innovation and Collaboration (independently graded 8.6/10; integrated and fresh-open PASS) | [convergence_center.blend](buildings/convergence_center.blend) | 764 |
 | Dauch Alumni Center | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 663 |
 | Electrical Engineering | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4774 |
 | Frieda Parker Hall | [frieda_parker_hall.blend](buildings/frieda_parker_hall.blend) | 541 |
@@ -364,6 +365,7 @@ Zeta Beta Tau at FID 762 / 900 David Ross retains campus-world coordinates in th
 | Pi Beta Phi (R1 independently graded 8.5/10; accepted) | [massing_house_301838781_891384f.blend](buildings/massing_house_301838781_891384f.blend) | 698 |
 | Delta Delta Delta (R1 independently graded 8.3/10; accepted) | [massing_house_301841333_affe21e.blend](buildings/massing_house_301841333_affe21e.blend) | 1328 |
 | Evans Scholars House (R1 independently graded 8.4/10; accepted) | [massing_house_301841610_b6ad6ed.blend](buildings/massing_house_301841610_b6ad6ed.blend) | 202 |
+| Gamma Phi Beta (independently graded 8.3/10; integrated and fresh-open PASS) | [gamma_phi_beta.blend](buildings/gamma_phi_beta.blend) | 255 |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | 11 |
 | West Lafayette Intermediate School (R3 independently graded 8.4/10; accepted) | [massing_west_lafayette_intermediate_school_d72f0fa.blend](buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | 1862 |
 

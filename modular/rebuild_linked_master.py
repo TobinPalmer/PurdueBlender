@@ -111,6 +111,7 @@ superseded = {
     "massing_birck_nanotechnology_center_362d0b7": "birck_nanotechnology_center",
     "massing_asian_american_and_asian_resource_and_cultural_center_aacc_da08bb2": "asian_american_resource_and_cultural_center",
     "massing_convergence_center_for_innovation_and_collaboration_conv_ce5226e": "convergence_center",
+    "massing_house_301841329_bed5cb6": "gamma_phi_beta",
     "massing_lyles_porter_hall_lyle_604c08e": "lyles_porter_hall",
     "massing_agricultural_administration_building_120d92c": "agricultural_administration_building",
     "massing_agricultural_and_biological_engineering_abe_0ebc7b3": "agricultural_and_biological_engineering_abe",

@@ -134,6 +134,79 @@ def wall_strip(name, a, b, s0, s1, z0, z1, offset, collection, material):
         [(0, 1, 2, 3)], collection, material)
 
 
+def facade_skin_with_punched_windows(outline, floor_z, collection, material, fin_material):
+    """Thin cladding skin with real openings matching individually glazed bays."""
+    verts, faces, fin_verts, fin_faces = [], [], [], []
+
+    def quad(target_verts, target_faces, a, b, s0, s1, z0, z1, offset):
+        length, tangent, normal = edge_basis(a, b)
+        p0=(a[0]+tangent[0]*s0+normal[0]*offset,a[1]+tangent[1]*s0+normal[1]*offset)
+        p1=(a[0]+tangent[0]*s1+normal[0]*offset,a[1]+tangent[1]*s1+normal[1]*offset)
+        i=len(target_verts)
+        # Winding faces the outward normal, including edges with either tangent sign.
+        target_verts.extend([(p0[0],p0[1],z0),(p0[0],p0[1],z1),(p1[0],p1[1],z1),(p1[0],p1[1],z0)])
+        target_faces.append((i,i+1,i+2,i+3))
+
+    for i,a in enumerate(outline):
+        b=outline[(i+1)%len(outline)]
+        length,t,nrm=edge_basis(a,b)
+        if length < 1.25: continue
+        for story in range(1,5):
+            zlow=4.15 if story==1 else floor_z[story]
+            zhigh=floor_z[story+1]
+            win_low=floor_z[story]+1.02
+            win_high=zhigh-.56
+            bay_size=4.8
+            bay_count=max(1,int((length-.8)/bay_size))
+            usable=length-.8
+            module=usable/bay_count
+            window_width=min(2.55,module*.62)
+            intervals=[]
+            for j in range(bay_count):
+                center=.4+(j+.5)*module
+                intervals.append((center-window_width/2,center+window_width/2))
+            # The façade panels rise below/above each window and between the bays.
+            quad(verts,faces,a,b,0,length,zlow,win_low,.025)
+            quad(verts,faces,a,b,0,length,win_high,zhigh,.025)
+            cursor=0.0
+            for s0,s1 in intervals:
+                if s0>cursor+.04:
+                    quad(verts,faces,a,b,cursor,s0,win_low,win_high,.025)
+                    # Fine vertical reveals/fins on the opaque panel piers only.
+                    n_fins=max(0,int((s0-cursor)/.42))
+                    for k in range(1,n_fins+1):
+                        s=cursor+(s0-cursor)*k/(n_fins+1)
+                        quad(fin_verts,fin_faces,a,b,s-.018,s+.018,zlow+.12,zhigh-.12,.12)
+                cursor=max(cursor,s1)
+            if cursor<length-.04:
+                quad(verts,faces,a,b,cursor,length,win_low,win_high,.025)
+                n_fins=max(0,int((length-cursor)/.42))
+                for k in range(1,n_fins+1):
+                    s=cursor+(length-cursor)*k/(n_fins+1)
+                    quad(fin_verts,fin_faces,a,b,s-.018,s+.018,zlow+.12,zhigh-.12,.12)
+    skin=mesh_object("CONV_GIS_five_story_cladding_volume",verts,faces,collection,material)
+    fins=mesh_object("CONV_vertical_metal_panel_fins",fin_verts,fin_faces,collection,fin_material)
+    return skin,fins
+
+
+def text_on_plane(name, body, size, loc, tangent, normal, material, collection, vertical=False):
+    curve=bpy.data.curves.new(name+" font", "FONT")
+    curve.body=body; curve.size=size; curve.extrude=.006
+    curve.align_x="CENTER"; curve.align_y="CENTER"
+    text=bpy.data.objects.new(name,curve); collection.objects.link(text)
+    if vertical:
+        baseline=Vector((0,0,1)); face_normal=Vector((normal[0],normal[1],0)).normalized()
+        up=face_normal.cross(baseline).normalized()
+        matrix=Matrix((baseline,up,face_normal)).transposed()
+    else:
+        up=Vector((0,0,1))
+        face_normal=Vector((normal[0],normal[1],0)).normalized()
+        baseline=up.cross(face_normal).normalized()
+        matrix=Matrix((baseline,up,face_normal)).transposed()
+    text.rotation_euler=matrix.to_euler(); text.location=loc; curve.materials.append(material)
+    return text
+
+
 def main():
     remove_scene()
     scene = bpy.context.scene
@@ -168,9 +241,13 @@ def main():
 
     # Architectural readings: GIS footprint is authoritative for plan shape;
     # floor heights and curtain-wall module are estimates from five-story imagery.
-    mat_shell = make_material("Convergence | pale cool-gray metal cladding", (0.47, 0.51, 0.53), 0.68, 0.25, 38, 0.11)
-    mat_light = make_material("Convergence | light aluminum trim", (0.73, 0.76, 0.74), 0.38, 0.48, 60, 0.06)
-    mat_spandrel = make_material("Convergence | charcoal spandrel", (0.12, 0.16, 0.18), 0.34, 0.25, 26, 0.06)
+    mat_shell = make_material("Convergence | pale vertical ribbed metal cladding", (0.55, 0.58, 0.59), 0.62, 0.30, 48, 0.08)
+    mat_light = make_material("Convergence | satin aluminum trim and fins", (0.78, 0.80, 0.78), 0.38, 0.42, 60, 0.045)
+    mat_spandrel = make_material("Convergence | charcoal horizontal spandrel", (0.14, 0.17, 0.18), 0.38, 0.24, 26, 0.05)
+    mat_brick = make_material("Convergence | dark red ground-floor brick piers", (0.29, 0.105, 0.065), 0.82, 0.0, 52, 0.14)
+    mat_wood = make_material("Convergence | warm oak lobby furniture", (0.34, 0.18, 0.075), 0.42, 0.02, 25, 0.045)
+    mat_fabric = make_material("Convergence | muted blue-gray lobby upholstery", (0.18, 0.26, 0.29), 0.86, 0.0, 32, 0.04)
+    mat_green = make_material("Convergence | lobby planting foliage", (0.09, 0.22, 0.12), 0.9, 0.0, 11, 0.06)
     mat_glass = bpy.data.materials.new("Convergence | blue-gray low-e glazing")
     mat_glass.diffuse_color = (0.075, 0.16, 0.20, 1.0)
     mat_glass.use_nodes = True
@@ -178,6 +255,11 @@ def main():
     glass_bsdf.inputs["Base Color"].default_value = (0.075, 0.16, 0.20, 1)
     glass_bsdf.inputs["Roughness"].default_value = 0.2
     glass_bsdf.inputs["Metallic"].default_value = 0.28
+    glass_bsdf.inputs["Alpha"].default_value = 0.58
+    if hasattr(mat_glass, "surface_render_method"):
+        mat_glass.surface_render_method = "DITHERED"
+    if "Transmission Weight" in glass_bsdf.inputs:
+        glass_bsdf.inputs["Transmission Weight"].default_value = 0.18
     if "IOR" in glass_bsdf.inputs:
         glass_bsdf.inputs["IOR"].default_value = 1.46
     glass_nodes, glass_links = mat_glass.node_tree.nodes, mat_glass.node_tree.links
@@ -204,12 +286,14 @@ def main():
     mat_sign = make_material("Convergence | identity sign charcoal", (0.055, 0.066, 0.071), 0.45, 0.12, 28, 0.03)
 
     # GIS polygon produces the main wall envelope at 35 x 84 m with the verified
-    # stepped south extension.  5 stories = official count; 20.4 m is an estimate.
+    # stepped southern shoulders. Five floors are source-backed; vertical dimensions
+    # remain estimates. The facade skin is split around window bays so the glazing
+    # is not buried against a solid massing prism.
     floor_z = [0.0, 4.25, 8.3, 12.35, 16.4, 20.45]
     roof_z = 20.45
-    # Ground-level plinth + five-storey upper envelope; keep footprint geometry local.
+    # Ground-level slab and a five-storey articulated exterior skin.
     prism("CONV_GIS_ground_plate", outline, -0.25, 0.20, asset, mat_concrete)
-    prism("CONV_GIS_five_story_cladding_volume", outline, 4.15, roof_z, asset, mat_shell)
+    facade_skin_with_punched_windows(outline, floor_z, asset, mat_shell, mat_light)
     prism("CONV_flat_roof", outline, roof_z, roof_z + 0.32, asset, mat_roof)
 
     # A recessed shadow line and floor bands clearly articulate five levels.
@@ -229,21 +313,33 @@ def main():
             cx = a[0] + t[0] * s + nrm[0] * 0.13
             cy = a[1] + t[1] * s + nrm[1] * 0.13
             box(f"CONV_lobby_mullion_{i:02d}_{j:02d}", (cx, cy, 2.24), (0.065, 0.065, 3.48), mat_spandrel, asset)
+        # The built photos show intermittent red-brown masonry piers at grade,
+        # separating storefront glazing from the white lobby portal.
+        if length > 6.0:
+            pier_count=max(1,int(length/5.8))
+            for j in range(1,pier_count):
+                s=length*j/pier_count
+                px=a[0]+t[0]*s+nrm[0]*.22
+                py=a[1]+t[1]*s+nrm[1]*.22
+                dims=(.52,.55,3.35) if abs(t[1])>abs(t[0]) else (.55,.52,3.35)
+                box(f"CONV_ground_floor_brick_pier_{i:02d}_{j:02d}",(px,py,2.18),dims,mat_brick,asset,.025)
 
-        # Upper storeys: inset ribbon glazing with repeated light-metal vertical bays.
+        # Upper storeys: punched, tall window bays separated by metal-panel piers.
         for story in range(1, 5):
             z0 = floor_z[story] + 1.02
             z1 = floor_z[story + 1] - 0.56
             if z1 <= z0:
                 continue
-            # Main ribbon is broken into individual panes with visible metal mullions.
-            bay = 3.05
-            n_bays = max(1, int((length - 1.1) / bay))
-            usable = length - 0.9
+            # Discrete window openings match the architect's built exterior photo.
+            bay = 4.8
+            n_bays = max(1, int((length - 0.8) / bay))
+            usable = length - 0.8
             actual_bay = usable / n_bays
+            window_width = min(2.55, actual_bay * .62)
             for j in range(n_bays):
-                s0 = 0.45 + j * actual_bay + 0.13
-                s1 = 0.45 + (j + 1) * actual_bay - 0.13
+                center_s = .4 + (j + .5) * actual_bay
+                s0 = center_s - window_width / 2
+                s1 = center_s + window_width / 2
                 if s1 > s0:
                     wall_strip(f"CONV_upper_glazing_F{story}_{i:02d}_{j:02d}", a, b, s0, s1, z0, z1, 0.075, asset, mat_glass)
                     # Light metal panel piers separate the windows from neighbors.
@@ -256,12 +352,12 @@ def main():
                             [(p0[0],p0[1],z0),(p1[0],p1[1],z0),(p1[0],p1[1],z1),(p0[0],p0[1],z1)],
                             [(0,1,2,3)], asset, mat_light)
 
-        # Continuous light-colored cornice emphasizes the measured plan perimeter.
-        wall_strip(f"CONV_roof_edge_{i:02d}", a, b, 0.0, length, 20.72, 21.02, 0.14, asset, mat_light)
+        # Thin charcoal coping follows the flat roof, without inventing a penthouse.
+        wall_strip(f"CONV_roof_edge_{i:02d}", a, b, 0.0, length, 20.72, 20.98, 0.14, asset, mat_spandrel)
 
-    # Entry canopy and glazed vestibule on the long west frontage facing Foundry
-    # Drive, inferred from the official address/photos and Google Maps site layout.
-    # Exact door bay remains approximate because no elevation was available.
+    # The west frontage faces Foundry Drive. Purdue's 2020 photo shows a large
+    # white portal around the glazed lobby and a separate plaza monument sign.
+    # The exact bay and sign offset are inferred, not dimensioned.
     west_edge = max(range(len(outline)), key=lambda i: edge_basis(outline[i], outline[(i + 1) % len(outline)])[0]
                     if abs((outline[i][0] + outline[(i + 1) % len(outline)][0]) * 0.5 - min(x for x, _ in outline)) < 0.7 else 0)
     a, b = outline[west_edge], outline[(west_edge + 1) % len(outline)]
@@ -269,30 +365,106 @@ def main():
     center_s = length * 0.50
     cx = a[0] + t[0] * center_s
     cy = a[1] + t[1] * center_s
-    # On the south face the outward normal is expected to point south.
-    canopy_center = (cx + nrm[0] * 1.10, cy + nrm[1] * 1.10, 4.20)
     longitudinal = abs(t[1]) > abs(t[0])
-    canopy_dims = (2.25, 12.5, 0.32) if longitudinal else (12.5, 2.25, 0.32)
-    vestibule_dims = (1.10, 5.0, 3.65) if longitudinal else (5.0, 1.10, 3.65)
-    box("CONV_west_entry_canopy", canopy_center, canopy_dims, mat_spandrel, asset, 0.08)
-    vestibule_center = (cx + nrm[0] * 0.58, cy + nrm[1] * 0.58, 2.05)
+    portal_width=min(23.0,length*.48)
+    portal_depth=3.4
+    portal_face=(cx+nrm[0]*.70,cy+nrm[1]*.70)
+    if longitudinal:
+        beam_dims=(.72,portal_width,.85); column_dims=(.72,.78,4.55)
+        canopy_dims=(portal_depth,portal_width+1.2,.42); vestibule_dims=(1.15,9.5,3.65)
+    else:
+        beam_dims=(portal_width,.72,.85); column_dims=(.78,.72,4.55)
+        canopy_dims=(portal_width+1.2,portal_depth,.42); vestibule_dims=(9.5,1.15,3.65)
+    beam_center=(portal_face[0]+nrm[0]*.12,portal_face[1]+nrm[1]*.12,4.40)
+    box("CONV_west_entry_canopy",(cx+nrm[0]*2.35,cy+nrm[1]*2.35,4.46),canopy_dims,mat_light,asset,.07)
+    box("CONV_white_portal_head",beam_center,beam_dims,mat_light,asset,.035)
+    for side,sign in (("A",-1.0),("B",1.0)):
+        jamb_center=(portal_face[0]+t[0]*sign*(portal_width/2),portal_face[1]+t[1]*sign*(portal_width/2),2.25)
+        box(f"CONV_white_portal_jamb_{side}",jamb_center,column_dims,mat_light,asset,.035)
+    vestibule_center=(cx+nrm[0]*.72,cy+nrm[1]*.72,2.05)
     box("CONV_glazed_entry_vestibule", vestibule_center, vestibule_dims, mat_glass, asset, 0.02)
-    for side, sign in (("A", -1.0), ("B", 1.0)):
-        col_center = (cx + t[0] * sign * 5.35 + nrm[0] * 1.20,
-                      cy + t[1] * sign * 5.35 + nrm[1] * 1.20, 2.05)
-        box(f"CONV_canopy_support_column_{side}", col_center, (0.20, 0.20, 4.0), mat_light, asset)
+    # Main double doors, side-lights, and an over-door Convergence identity.
+    door_center=(cx+nrm[0]*1.38,cy+nrm[1]*1.38,1.82)
+    door_dims=(.10,3.15,2.85) if longitudinal else (3.15,.10,2.85)
+    box("CONV_glazed_pair_of_entry_doors",door_center,door_dims,mat_glass,asset,.015)
+    for side,sign in (("A",-1.0),("B",1.0)):
+        post=(cx+t[0]*sign*portal_width*.34+nrm[0]*2.4,cy+t[1]*sign*portal_width*.34+nrm[1]*2.4,2.12)
+        support_dims=(.24,.24,4.2)
+        box(f"CONV_canopy_support_column_{side}",post,support_dims,mat_light,asset,.025)
 
-    # Evidence-supported visible lobby hint: warm floor and a compact welcome desk,
-    # with no unsupported room layouts or upper-floor interiors.
+    sign_loc=(cx+nrm[0]*.42,cy+nrm[1]*.42,4.02)
+    sign_dims=(.24,8.0,.72) if longitudinal else (8.0,.24,.72)
+    box("CONV_convergence_identity_sign_backing",sign_loc,sign_dims,mat_sign,asset,.035)
+    text_on_plane("CONV_identity_sign_text","CONVERGENCE",.70,
+        (cx+nrm[0]*.56,cy+nrm[1]*.56,4.02),t,nrm,mat_light,asset)
+
+    # Source-supported freestanding entry monument in the public plaza. Its
+    # exact position relative to the entrance is approximate from the photos.
+    sign_s=length*.34
+    sign_xy=(a[0]+t[0]*sign_s+nrm[0]*5.7,a[1]+t[1]*sign_s+nrm[1]*5.7)
+    sign_body_dims=(.92,3.25,4.25) if longitudinal else (3.25,.92,4.25)
+    monument_center=(sign_xy[0],sign_xy[1],2.22)
+    box("CONV_freestanding_monument_sign_body",monument_center,sign_body_dims,mat_light,asset,.035)
+    front_dims=(.06,2.72,3.25) if longitudinal else (2.72,.06,3.25)
+    front_center=(sign_xy[0]+nrm[0]*.50,sign_xy[1]+nrm[1]*.50,2.35)
+    box("CONV_monument_sign_address_face",front_center,front_dims,mat_sign,asset,.025)
+    text_on_plane("CONV_monument_address_text","101 Foundry Drive",.34,
+        (front_center[0]+nrm[0]*.045,front_center[1]+nrm[1]*.045,3.45),t,nrm,mat_light,asset)
+    side_n=(-nrm[1],nrm[0])
+    side_dims=(.92,.06,3.25) if longitudinal else (.06,.92,3.25)
+    side_offset=1.625 if longitudinal else .46
+    side_center=(sign_xy[0]+side_n[0]*side_offset,sign_xy[1]+side_n[1]*side_offset,2.35)
+    box("CONV_monument_sign_identity_face",side_center,side_dims,mat_sign,asset,.025)
+    text_on_plane("CONV_monument_vertical_convergence_text","CONVERGENCE",.27,
+        (side_center[0]+side_n[0]*.045,side_center[1]+side_n[1]*.045,2.28),t,side_n,mat_light,asset,vertical=True)
+
+    # Interior visible through the glass is a source-guided but schematic lobby:
+    # architect photos show a reception desk, large social area, mezzanine edge,
+    # black display wall, wood/metal tables, lounge chairs, and plantings.
     lobby_cx = cx - nrm[0] * 5.0
     lobby_cy = cy - nrm[1] * 5.0
     prism("CONV_visible_lobby_floor", [
-        (lobby_cx - 8.0, lobby_cy - 8.0), (lobby_cx + 8.0, lobby_cy - 8.0),
-        (lobby_cx + 8.0, lobby_cy + 8.0), (lobby_cx - 8.0, lobby_cy + 8.0)],
+        (lobby_cx - 11.0, lobby_cy - 11.0), (lobby_cx + 11.0, lobby_cy - 11.0),
+        (lobby_cx + 11.0, lobby_cy + 11.0), (lobby_cx - 11.0, lobby_cy + 11.0)],
         0.42, 0.52, asset, mat_interior)
-    # keep reception element near the glazed entrance, scaled as a silhouette.
-    desk_center = (cx - nrm[0] * 3.2, cy - nrm[1] * 3.2, 1.35)
-    box("CONV_lobby_reception_desk_visible_cue", desk_center, (3.5, 0.75, 0.95), mat_concrete, asset, 0.12)
+    # Desk and its oak transaction counter face the public entry.
+    desk_center=(cx-nrm[0]*4.1,cy-nrm[1]*4.1,1.10)
+    desk_dims=(1.05,5.8,1.05) if longitudinal else (5.8,1.05,1.05)
+    box("CONV_lobby_reception_desk_visible_cue",desk_center,desk_dims,mat_concrete,asset,.10)
+    counter_center=(desk_center[0],desk_center[1],1.66)
+    counter_dims=(1.18,6.1,.16) if longitudinal else (6.1,1.18,.16)
+    box("CONV_lobby_oak_reception_counter",counter_center,counter_dims,mat_wood,asset,.035)
+    # Dark screen wall with a restrained lobby wordmark; its exact bay is schematic.
+    wall_center=(cx-nrm[0]*16.0,cy-nrm[1]*16.0,4.2)
+    wall_dims=(.38,16.0,7.2) if longitudinal else (16.0,.38,7.2)
+    box("CONV_schematic_double_height_lobby_feature_wall",wall_center,wall_dims,mat_sign,asset,.02)
+    text_on_plane("CONV_lobby_feature_wall_wordmark","CONVERGENCE",1.05,
+        (wall_center[0]+nrm[0]*.22,wall_center[1]+nrm[1]*.22,4.5),t,nrm,mat_light,asset)
+    # Partial mezzanine/bridge at the rear of the public atrium leaves the entry
+    # volume open, matching the architect's double-height lobby image.
+    mx=cx-nrm[0]*12.0; my=cy-nrm[1]*12.0
+    mezz_poly=[(mx-5.0,my-10.0),(mx+5.0,my-10.0),(mx+5.0,my+10.0),(mx-5.0,my+10.0)]
+    prism("CONV_schematic_lobby_mezzanine",mezz_poly,4.28,4.52,asset,mat_concrete)
+    rail_z=5.65
+    rail_a=(mx-5.0,my-10.0); rail_b=(mx-5.0,my+10.0)
+    wall_strip("CONV_schematic_mezzanine_guardrail",rail_a,rail_b,0,20,rail_z-.045,rail_z+.045,0,asset,mat_spandrel)
+    for j in range(1,13):
+        ry=my-10.0+j*(20.0/13.0)
+        box(f"CONV_schematic_mezzanine_baluster_{j:02d}",(mx-5.0,ry,5.1),(.08,.08,.9),mat_spandrel,asset)
+    # Small lounge group: source supports loose seating and low tables, not an exact plan.
+    for i,(dx,dy) in enumerate([(5.7,-4.4),(10.5,-4.1),(7.8,4.6)]):
+        sx=cx-nrm[0]*dx+t[0]*dy; sy=cy-nrm[1]*dx+t[1]*dy
+        sofa_dims=(2.7,1.15,.72) if longitudinal else (1.15,2.7,.72)
+        box(f"CONV_schematic_lobby_lounge_seat_{i+1}",(sx,sy,.88),sofa_dims,mat_fabric,asset,.12)
+        table_dims=(1.25,.85,.14) if longitudinal else (.85,1.25,.14)
+        box(f"CONV_schematic_lobby_coffee_table_{i+1}",(sx-nrm[0]*1.0,sy-nrm[1]*1.0,.66),table_dims,mat_wood,asset,.025)
+    for i,dy in enumerate((-8.0,8.0)):
+        px=cx-nrm[0]*7.2+t[0]*dy; py=cy-nrm[1]*7.2+t[1]*dy
+        box(f"CONV_schematic_lobby_planter_{i+1}",(px,py,.75),(.9,.9,.55),mat_concrete,asset,.04)
+        for leaf in range(7):
+            ang=leaf*math.tau/7
+            lx=px+.38*math.cos(ang); ly=py+.38*math.sin(ang)
+            box(f"CONV_schematic_lobby_plant_leaf_{i+1}_{leaf}",(lx,ly,1.48),(.10,.10,1.2),mat_green,asset,.045)
 
     # Roof screen and rooftop mechanical units are intentionally restrained and
     # not treated as verified equipment locations.
@@ -301,35 +473,29 @@ def main():
     for i, a in enumerate(outline):
         b = outline[(i + 1) % len(outline)]
         length, t, nrm = edge_basis(a, b)
-        wall_strip(f"CONV_roof_screen_panel_{i:02d}", a, b, 0.0, length, 21.02, 22.15, -1.0, asset, mat_shell)
+        wall_strip(f"CONV_roof_screen_panel_{i:02d}", a, b, 0.0, length, 21.02, 21.62, -1.0, asset, mat_shell)
         nslats = max(2, int(length / 1.5))
         for j in range(1, nslats):
             s = length * j / nslats
             px = a[0] + t[0] * s + nrm[0] * -0.86
             py = a[1] + t[1] * s + nrm[1] * -0.86
-            box(f"CONV_roof_screen_louver_{i:02d}_{j:02d}", (px, py, 21.57), (0.075, 0.075, 1.05), mat_spandrel, asset)
+            box(f"CONV_roof_screen_louver_{i:02d}_{j:02d}", (px, py, 21.32), (0.075, 0.075, 0.56), mat_spandrel, asset)
     for idx, (x, y, sx, sy) in enumerate([(-8, 15, 5, 3.2), (0, 15, 5, 3.2), (8, 15, 5, 3.2), (-5, 6, 3.8, 2.8), (4, 6, 3.8, 2.8)]):
         box(f"CONV_roof_HVAC_estimated_{idx+1}", (x, y, 21.45), (sx, sy, 0.85), mat_spandrel, asset, 0.08)
 
-    # Discreet building identity panel. Text is oriented to the west frontage.
-    sign_loc = (cx + nrm[0] * 0.18, cy + nrm[1] * 0.18, 6.15)
-    sign_dims = (0.25, 5.0, 1.05) if longitudinal else (5.0, 0.25, 1.05)
-    box("CONV_convergence_identity_sign_backing", sign_loc, sign_dims, mat_sign, asset, 0.04)
-    curve = bpy.data.curves.new("CONV_identity_text_curve", "FONT")
-    curve.body = "CONVERGENCE"
-    curve.size = 0.36
-    curve.extrude = 0.003
-    text_obj = bpy.data.objects.new("CONV_identity_sign_text", curve)
-    asset.objects.link(text_obj)
-    text_obj.data.materials.append(mat_light)
-    # Font local x is baseline, local y is up, local z faces out from the wall.
-    up = Vector((0.0, 0.0, 1.0))
-    normal = Vector((nrm[0], nrm[1], 0.0))
-    baseline = up.cross(normal).normalized()
-    rot = Matrix((baseline, up, normal)).transposed()
-    text_obj.location = (cx + nrm[0] * 0.34 + baseline.x * 1.45,
-                         cy + nrm[1] * 0.34 + baseline.y * 1.45, 5.98)
-    text_obj.rotation_euler = rot.to_euler()
+    # Stable source identity and placement metadata for the modular integrator.
+    asset["source_feature_id"] = 946
+    asset["building_id"] = "convergence_center"
+    asset["placement_origin_xy_m"] = list(CENTROID_XY)
+    asset["local_coordinates"] = True
+    asset["stories_verified"] = 5
+    asset["main_roof_height_estimate_m"] = roof_z
+    asset["GIS_footprint_area_estimate_m2"] = gis_area_m2
+    asset["GIS_footprint_vertices"] = len(outline)
+    asset["footprint_local_bounds_m"] = [[min(x for x,_ in outline),max(x for x,_ in outline)],
+                                           [min(y for _,y in outline),max(y for _,y in outline)]]
+    asset["monument_sign_position_status"] = "photo-supported design; precise plaza offset estimated"
+    asset["interior_layout_status"] = "schematic; no georegistered full-building floor plan used"
 
     # Preview-only ground, naturalistic daylight and two views; not part of asset.
     ground_mat = make_material("Preview | neutral pavement", (0.23, 0.26, 0.27), 0.88, 0, 9, 0.12)
@@ -377,7 +543,32 @@ def main():
     preview.hide_render = True
     # render with preview visibility enabled temporarily
     preview.hide_render = False
+    original_camera=(cam.location.copy(),cam.rotation_euler.copy(),cam_data.lens,cam_data.type,cam_data.ortho_scale)
     bpy.ops.render.render(write_still=True)
+    # Long west elevation, entrance/monument close view, lobby interior cue, and roof plan.
+    cam_data.type='PERSP'; cam_data.lens=35
+    cam.location=Vector((cx+nrm[0]*80,cy+nrm[1]*80,15.0))
+    cam.rotation_euler=(Vector((cx,cy,10.0))-cam.location).to_track_quat('-Z','Y').to_euler()
+    scene.render.filepath=os.path.join(os.path.dirname(__file__),'convergence_center_west_elevation.png')
+    bpy.ops.render.render(write_still=True)
+    cam_data.lens=35
+    cam.location=Vector((cx+nrm[0]*55,cy+nrm[1]*55,5.2))
+    entry_target=Vector((cx+nrm[0]*1.5,cy+nrm[1]*1.5,3.6))
+    cam.rotation_euler=(entry_target-cam.location).to_track_quat('-Z','Y').to_euler()
+    scene.render.filepath=os.path.join(os.path.dirname(__file__),'convergence_center_entry_detail.png')
+    bpy.ops.render.render(write_still=True)
+    cam_data.lens=38
+    lobby_target=Vector((cx-nrm[0]*14+t[0]*1,cy-nrm[1]*14+t[1]*1,4.1))
+    cam.location=Vector((cx-nrm[0]*4+t[0]*-8,cy-nrm[1]*4+t[1]*-8,3.1))
+    cam.rotation_euler=(lobby_target-cam.location).to_track_quat('-Z','Y').to_euler()
+    scene.render.filepath=os.path.join(os.path.dirname(__file__),'convergence_center_lobby_detail.png')
+    bpy.ops.render.render(write_still=True)
+    cam_data.type='ORTHO'; cam_data.ortho_scale=125
+    cam.location=Vector((0,0,145)); cam.rotation_euler=(Vector((0,0,0))-cam.location).to_track_quat('-Z','Y').to_euler()
+    scene.render.filepath=os.path.join(os.path.dirname(__file__),'convergence_center_roof_plan.png')
+    bpy.ops.render.render(write_still=True)
+    cam.location=original_camera[0]; cam.rotation_euler=original_camera[1]
+    cam_data.lens=original_camera[2]; cam_data.type=original_camera[3]; cam_data.ortho_scale=original_camera[4]
     preview.hide_render = True
 
     # Save a clean asset file; collection is the only content to be linked by the master.
@@ -396,11 +587,17 @@ def main():
         "asset_file": "modular/buildings/convergence_center.blend",
         "exported_collection": "Asset_convergence_center",
         "original_massing_asset_preserved": "modular/buildings/massing_convergence_center_for_innovation_and_collaboration_conv_ce5226e.blend",
-        "retrieved_utc_date": "2026-10-23",
+        "retrieved_utc_date": "2026-10-27",
         "sources": [
             {"provider": "Purdue University News", "url": "https://www.purdue.edu/newsroom/archive/releases/2018/Q4/discovery-park-district-lays-welcome-mat-with-construction-of-145,000-square-foot,-five-story-building.html", "use": "official name, five-story count, 145,000-sq-ft area, large lobby/plaza, first-floor retail; 2018 construction announcement includes design rendering"},
+            {"provider": "Purdue University News / Purdue Research Foundation", "url": "https://www.purdue.edu/uns/images/2018/convergence-rendering.jpg", "use": "official 2018 design rendering: glazed ground-floor portal, light vertical metal cladding, five-floor window rhythm and original branding; design intent, not an as-built survey"},
+            {"provider": "Purdue University News / Purdue Research Foundation", "url": "https://www.purdue.edu/uns/images/2020/convergence-traskLO.jpg", "use": "official 2020 as-built daylight exterior: punched window bays, pale vertically ribbed metal panels, large white entrance frame, glass lobby and freestanding monument sign labeled 101 Foundry Drive / Convergence"},
+            {"provider": "Purdue University News / Purdue Research Foundation", "url": "https://www.purdue.edu/uns/images/2021/convergence-buildingLO.jpg", "use": "official exterior/sign close view: freestanding entry monument profile and legible Convergence identity"},
             {"provider": "Purdue University News / Purdue Research Foundation", "url": "https://www.purdue.edu/newsroom/archive/releases/2021/Q3/purdue,-purdue-research-foundation-launch-lab-to-life-6g-digital-innovation-at-discovery-park-district.html", "use": "official building photo caption and operational identity"},
             {"provider": "Purdue University News / Purdue Research Foundation", "url": "https://www.purdue.edu/newsroom/archive/releases/2021/Q1/wabash-national-set-to-open-collaboration-space-in-purdues-discovery-park-district.html", "use": "official exterior photo associated with occupied Convergence Center"},
+            {"provider": "CSO Architects (project architect)", "url": "https://www.csoinc.net/projects/convergence-center/", "use": "architect's built exterior and interior photos; confirms five stories, 157,172-sq-ft project data, large atrium, class-A office/retail, coworking and meeting/event program"},
+            {"provider": "CSO Architects image gallery", "url": "https://www.csoinc.net/wp-content/uploads/2026/02/03_Convergence.jpg", "use": "architect exterior night view for flat roof, dark cladding, window grid and plaza context"},
+            {"provider": "CSO Architects image gallery", "url": "https://www.csoinc.net/wp-content/uploads/2026/02/02_Convergence.jpg", "use": "architect interior photo for double-height lobby, reception desk, mezzanine guardrail, lounge seating and feature wall; room placement is not georegistered"},
             {"provider": "Purdue Innovates", "url": "https://purdueinnovates.org/venue/the-convergence-center-for-innovation-and-collaboration/", "use": "current venue identity and exact address 101 Foundry Drive"},
             {"provider": "Google Maps", "url": "https://www.google.com/maps/place/The+Convergence+Center+for+Innovation+and+Collaboration/@40.4237313,-86.929787,17z/data=!3m1!4b1!4m6!3m5!1s0x8812e38bd7e04541:0xc20b61b4bddde859!8m2!3d40.4237313!4d-86.9272121!16s%2Fg%2F11j7kpptjx", "use": "verified exact place listing/address and site map context; map places the west frontage on Foundry Drive with State Street north of the site and District Boulevard south; frontage inference only, not dimensional evidence"},
             {"provider": "Google Maps Street View", "url": "https://www.google.com/maps/@40.4235695,-86.9268681,3a,75y/data=!3m7!1e1!3m5!1s0x0:0x0!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D90%26panoid%3D0x0%253A0x0%26yaw%3D0!7i8192!8i4096", "use": "street-view coverage attempted on 2026-10-23; Google reports no street-level imagery at selected point and serves a Carr Workplaces interior panorama instead. Exterior facade therefore comes from official Purdue images, not Street View."},
@@ -410,11 +607,20 @@ def main():
         "coordinate_frame": {"units": "meters", "axes": "X east, Y north, Z up", "project_origin_latitude": ORIGIN_LAT, "project_origin_longitude": ORIGIN_LON, "local_origin_xy_m": list(CENTROID_XY), "origin_definition": "official GIS polygon largest-ring centroid from existing Purdue official footprint reference; use master placement marker at this XY", "transform": "X=(longitude + 86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude - 40.4274)*111040; local XY subtract centroid"},
         "footprint_local_bounds_m": bounds,
         "footprint_validation": {"GIS_polygon_area_m2_projected": gis_area_m2, "centroid_xy_m_projected": list(gis_centroid), "local_origin_centroid_delta_m": list(centroid_delta), "transform_method": "ArcGIS EPSG:3857 source was requested as EPSG:4326 GeoJSON; vertices were transformed to the project's local approximate east/north metric frame, then the ring centroid was recalculated by shoelace formula. The independently calculated centroid matches the saved campus reference center exactly."},
-        "geometry_edits": ["replaced one-object rectangular massing with 5-story local-coordinate shell following official stepped GIS footprint", "added light gray metal panel facade, restrained floor bands, ribbon windows, metal mullions, ground-floor curtain wall", "added west-facing Foundry Drive entrance canopy/vestibule, low-detail lobby cue, approximate identity panel, roof screen and estimated mechanical units", "used procedural material texture variation on cladding, concrete, roof and metal trim"],
-        "vertical_evidence": {"story_count": {"value": 5, "status": "verified from official 2018 Purdue construction release"}, "roof_height_m": {"value_estimate": 22.25, "status": "estimated, not measured; based on five-story contemporary office-building scale and modeled roof screen"}, "floor_heights": "estimated: ground floor 4.25 m, four upper stories approximately 4.05 m each"},
-        "uncertainty": ["No survey or dimensioned architectural elevation was found; vertical dimensions and window spacing are estimated.", "Footprint identity verified by FID/code/name and address; GIS is an official campus-map polygon, not a certified survey.", "South-side entry/canopy placement is inferred from official facade imagery and local street/address context; exact entrance bay not dimensioned.", "Roof screen/HVAC placement is illustrative and unverified.", "Interior modeling is limited to a subtle lobby floor/reception cue because public evidence confirms a large ground-floor lobby but does not expose complete interior layouts."],
+        "geometry_edits": ["preserved the official FID 946 stepped footprint and local centroid", "replaced the solid upper mass prism with an outward cladding skin split around discrete glazing openings", "changed continuous ribbons to source-matched punched windows with broad pale vertical panel piers and fine vertical metal fins", "added a tall white portal frame and broad canopy around the Foundry-side glazed lobby", "added the source-supported freestanding 101 Foundry Drive / Convergence plaza monument rather than attaching the sign to the roof or facade", "added first-floor brick piers, dark horizontal floor spandrels, flat dark roof coping and restrained estimated roof equipment", "expanded the visible lobby into a photo-guided schematic with reception, screen wall, partial mezzanine, seating, tables and planters", "used connected procedural materials only; no source photos are embedded as textures"],
+        "source_snapshots": [
+            {"path": "audit/convergence_center/official_purdue_2018_rendering.jpg", "source_url": "https://www.purdue.edu/uns/images/2018/convergence-rendering.jpg", "retrieved_date": "2026-10-27", "use": "design intent comparison"},
+            {"path": "audit/convergence_center/official_purdue_2020_photo.jpg", "source_url": "https://www.purdue.edu/uns/images/2020/convergence-traskLO.jpg", "retrieved_date": "2026-10-27", "use": "as-built daylight facade, portal and monument sign comparison"},
+            {"path": "audit/convergence_center/official_purdue_2021_exterior.jpg", "source_url": "https://www.purdue.edu/uns/images/2021/convergence-buildingLO.jpg", "retrieved_date": "2026-10-27", "use": "as-built monument sign close comparison"},
+            {"path": "audit/convergence_center/official_cso_convergence_03.jpg", "source_url": "https://www.csoinc.net/wp-content/uploads/2026/02/03_Convergence.jpg", "retrieved_date": "2026-10-27", "use": "project architect's built exterior view"},
+            {"path": "audit/convergence_center/official_cso_convergence_02.jpg", "source_url": "https://www.csoinc.net/wp-content/uploads/2026/02/02_Convergence.jpg", "retrieved_date": "2026-10-27", "use": "project architect's double-height lobby/interior finishes and furniture"}
+        ],
+        "vertical_evidence": {"story_count": {"value": 5, "status": "verified from Purdue construction release and CSO architect project page"}, "main_roof_height_m": {"value_estimate": 20.45, "status": "estimated, not measured; derived from five-story count and approximate floor-to-floor heights"}, "freestanding_monument_height_m": {"value_estimate": 4.25, "status": "photo-scaled estimate; not surveyed"}, "floor_heights": "estimated: ground floor 4.25 m, four upper stories approximately 4.05 m each"},
+        "interior_interpretation": "Schematic only. The architect photo supports a double-height public lobby, reception counter, dark display wall, partial mezzanine/guardrail, lounge seating, low tables and planting. No complete, georegistered building plan was found; furniture, atrium extent, orientation, partition locations and individual room layouts are not surveyed.",
+        "uncertainty": ["The official GIS FID 946 confirms the building identity and plan polygon but is not a certified survey; its 12-point ring cannot verify the wall line, openings, dimensions or entrance offset.", "The five-story count is verified; individual floor-to-floor heights, roof elevation and monument height remain photo-scaled estimates.", "The West/Foundry frontage and portal direction are inferred from official address, source photos and Google Maps context; the precise door bay and freestanding sign offset are estimated.", "The flat roof and parapet are photo-supported, while exact roof equipment type and locations remain illustrative.", "The interior is a source-guided lobby vignette; it is not a reconstructed floor plan because no full plan could be registered to the GIS shell."],
         "preview": "audit/convergence_center_preview.png",
-        "source_urls_and_retrieval_date": "URL/provider/date recorded above; sources consulted 2026-10-23",
+        "additional_previews": ["audit/convergence_center_west_elevation.png", "audit/convergence_center_entry_detail.png", "audit/convergence_center_lobby_detail.png", "audit/convergence_center_roof_plan.png"],
+        "source_urls_and_retrieval_date": "URLs, providers and source snapshots recorded above; sources consulted 2026-10-27",
     }
     with open(OUT_EVIDENCE, "w", encoding="utf-8") as f:
         json.dump(evidence, f, indent=2)

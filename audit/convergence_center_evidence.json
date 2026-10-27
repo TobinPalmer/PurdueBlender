@@ -3,12 +3,27 @@
   "asset_file": "modular/buildings/convergence_center.blend",
   "exported_collection": "Asset_convergence_center",
   "original_massing_asset_preserved": "modular/buildings/massing_convergence_center_for_innovation_and_collaboration_conv_ce5226e.blend",
-  "retrieved_utc_date": "2026-10-23",
+  "retrieved_utc_date": "2026-10-27",
   "sources": [
     {
       "provider": "Purdue University News",
       "url": "https://www.purdue.edu/newsroom/archive/releases/2018/Q4/discovery-park-district-lays-welcome-mat-with-construction-of-145,000-square-foot,-five-story-building.html",
       "use": "official name, five-story count, 145,000-sq-ft area, large lobby/plaza, first-floor retail; 2018 construction announcement includes design rendering"
+    },
+    {
+      "provider": "Purdue University News / Purdue Research Foundation",
+      "url": "https://www.purdue.edu/uns/images/2018/convergence-rendering.jpg",
+      "use": "official 2018 design rendering: glazed ground-floor portal, light vertical metal cladding, five-floor window rhythm and original branding; design intent, not an as-built survey"
+    },
+    {
+      "provider": "Purdue University News / Purdue Research Foundation",
+      "url": "https://www.purdue.edu/uns/images/2020/convergence-traskLO.jpg",
+      "use": "official 2020 as-built daylight exterior: punched window bays, pale vertically ribbed metal panels, large white entrance frame, glass lobby and freestanding monument sign labeled 101 Foundry Drive / Convergence"
+    },
+    {
+      "provider": "Purdue University News / Purdue Research Foundation",
+      "url": "https://www.purdue.edu/uns/images/2021/convergence-buildingLO.jpg",
+      "use": "official exterior/sign close view: freestanding entry monument profile and legible Convergence identity"
     },
     {
       "provider": "Purdue University News / Purdue Research Foundation",
@@ -19,6 +34,21 @@
       "provider": "Purdue University News / Purdue Research Foundation",
       "url": "https://www.purdue.edu/newsroom/archive/releases/2021/Q1/wabash-national-set-to-open-collaboration-space-in-purdues-discovery-park-district.html",
       "use": "official exterior photo associated with occupied Convergence Center"
+    },
+    {
+      "provider": "CSO Architects (project architect)",
+      "url": "https://www.csoinc.net/projects/convergence-center/",
+      "use": "architect's built exterior and interior photos; confirms five stories, 157,172-sq-ft project data, large atrium, class-A office/retail, coworking and meeting/event program"
+    },
+    {
+      "provider": "CSO Architects image gallery",
+      "url": "https://www.csoinc.net/wp-content/uploads/2026/02/03_Convergence.jpg",
+      "use": "architect exterior night view for flat roof, dark cladding, window grid and plaza context"
+    },
+    {
+      "provider": "CSO Architects image gallery",
+      "url": "https://www.csoinc.net/wp-content/uploads/2026/02/02_Convergence.jpg",
+      "use": "architect interior photo for double-height lobby, reception desk, mezzanine guardrail, lounge seating and feature wall; room placement is not georegistered"
     },
     {
       "provider": "Purdue Innovates",
@@ -90,29 +120,111 @@
     "transform_method": "ArcGIS EPSG:3857 source was requested as EPSG:4326 GeoJSON; vertices were transformed to the project's local approximate east/north metric frame, then the ring centroid was recalculated by shoelace formula. The independently calculated centroid matches the saved campus reference center exactly."
   },
   "geometry_edits": [
-    "replaced one-object rectangular massing with 5-story local-coordinate shell following official stepped GIS footprint",
-    "added light gray metal panel facade, restrained floor bands, ribbon windows, metal mullions, ground-floor curtain wall",
-    "added west-facing Foundry Drive entrance canopy/vestibule, low-detail lobby cue, approximate identity panel, roof screen and estimated mechanical units",
-    "used procedural material texture variation on cladding, concrete, roof and metal trim"
+    "preserved the official FID 946 stepped footprint and local centroid",
+    "replaced the solid upper mass prism with an outward cladding skin split around discrete glazing openings",
+    "changed continuous ribbons to source-matched punched windows with broad pale vertical panel piers and fine vertical metal fins",
+    "added a tall white portal frame and broad canopy around the Foundry-side glazed lobby",
+    "added the source-supported freestanding 101 Foundry Drive / Convergence plaza monument rather than attaching the sign to the roof or facade",
+    "added first-floor brick piers, dark horizontal floor spandrels, flat dark roof coping and restrained estimated roof equipment",
+    "expanded the visible lobby into a photo-guided schematic with reception, screen wall, partial mezzanine, seating, tables and planters",
+    "used connected procedural materials only; no source photos are embedded as textures"
+  ],
+  "source_snapshots": [
+    {
+      "path": "audit/convergence_center/official_purdue_2018_rendering.jpg",
+      "source_url": "https://www.purdue.edu/uns/images/2018/convergence-rendering.jpg",
+      "retrieved_date": "2026-10-27",
+      "use": "design intent comparison"
+    },
+    {
+      "path": "audit/convergence_center/official_purdue_2020_photo.jpg",
+      "source_url": "https://www.purdue.edu/uns/images/2020/convergence-traskLO.jpg",
+      "retrieved_date": "2026-10-27",
+      "use": "as-built daylight facade, portal and monument sign comparison"
+    },
+    {
+      "path": "audit/convergence_center/official_purdue_2021_exterior.jpg",
+      "source_url": "https://www.purdue.edu/uns/images/2021/convergence-buildingLO.jpg",
+      "retrieved_date": "2026-10-27",
+      "use": "as-built monument sign close comparison"
+    },
+    {
+      "path": "audit/convergence_center/official_cso_convergence_03.jpg",
+      "source_url": "https://www.csoinc.net/wp-content/uploads/2026/02/03_Convergence.jpg",
+      "retrieved_date": "2026-10-27",
+      "use": "project architect's built exterior view"
+    },
+    {
+      "path": "audit/convergence_center/official_cso_convergence_02.jpg",
+      "source_url": "https://www.csoinc.net/wp-content/uploads/2026/02/02_Convergence.jpg",
+      "retrieved_date": "2026-10-27",
+      "use": "project architect's double-height lobby/interior finishes and furniture"
+    }
   ],
   "vertical_evidence": {
     "story_count": {
       "value": 5,
-      "status": "verified from official 2018 Purdue construction release"
+      "status": "verified from Purdue construction release and CSO architect project page"
     },
-    "roof_height_m": {
-      "value_estimate": 22.25,
-      "status": "estimated, not measured; based on five-story contemporary office-building scale and modeled roof screen"
+    "main_roof_height_m": {
+      "value_estimate": 20.45,
+      "status": "estimated, not measured; derived from five-story count and approximate floor-to-floor heights"
+    },
+    "freestanding_monument_height_m": {
+      "value_estimate": 4.25,
+      "status": "photo-scaled estimate; not surveyed"
     },
     "floor_heights": "estimated: ground floor 4.25 m, four upper stories approximately 4.05 m each"
   },
+  "interior_interpretation": "Schematic only. The architect photo supports a double-height public lobby, reception counter, dark display wall, partial mezzanine/guardrail, lounge seating, low tables and planting. No complete, georegistered building plan was found; furniture, atrium extent, orientation, partition locations and individual room layouts are not surveyed.",
   "uncertainty": [
-    "No survey or dimensioned architectural elevation was found; vertical dimensions and window spacing are estimated.",
-    "Footprint identity verified by FID/code/name and address; GIS is an official campus-map polygon, not a certified survey.",
-    "South-side entry/canopy placement is inferred from official facade imagery and local street/address context; exact entrance bay not dimensioned.",
-    "Roof screen/HVAC placement is illustrative and unverified.",
-    "Interior modeling is limited to a subtle lobby floor/reception cue because public evidence confirms a large ground-floor lobby but does not expose complete interior layouts."
+    "The official GIS FID 946 confirms the building identity and plan polygon but is not a certified survey; its 12-point ring cannot verify the wall line, openings, dimensions or entrance offset.",
+    "The five-story count is verified; individual floor-to-floor heights, roof elevation and monument height remain photo-scaled estimates.",
+    "The West/Foundry frontage and portal direction are inferred from official address, source photos and Google Maps context; the precise door bay and freestanding sign offset are estimated.",
+    "The flat roof and parapet are photo-supported, while exact roof equipment type and locations remain illustrative.",
+    "The interior is a source-guided lobby vignette; it is not a reconstructed floor plan because no full plan could be registered to the GIS shell."
   ],
   "preview": "audit/convergence_center_preview.png",
-  "source_urls_and_retrieval_date": "URL/provider/date recorded above; sources consulted 2026-10-23"
+  "additional_previews": [
+    "audit/convergence_center_west_elevation.png",
+    "audit/convergence_center_entry_detail.png",
+    "audit/convergence_center_lobby_detail.png",
+    "audit/convergence_center_roof_plan.png"
+  ],
+  "source_urls_and_retrieval_date": "URLs, providers and source snapshots recorded above; sources consulted 2026-10-27",
+  "validation": {
+    "saved_and_reopened": true,
+    "fresh_open_check": "Separate Blender 5.2.3 process opened the exact saved asset, verified FID 946 and stable local-coordinate export collection/origin, material texture wiring and absence of external image dependencies, checked the punched facade/window separation, and rerendered the scene.",
+    "asset_sha256": "304515ac91cedeef967349e120c87ae387071806845d129a97128c0e1c231928",
+    "object_count": 764,
+    "mesh_count": 760,
+    "material_count": 12,
+    "mesh_bounds_local_m": [
+      [
+        -23.463144302368164,
+        18.201183319091797
+      ],
+      [
+        -42.623252868652344,
+        42.30495071411133
+      ],
+      [
+        -0.25,
+        21.875
+      ]
+    ],
+    "fresh_open_report": "audit/convergence_center/fresh_open_validation.json",
+    "fresh_open_render": "audit/convergence_center/fresh_open_preview.png",
+    "previews": {
+      "overview": "audit/convergence_center_preview.png",
+      "west_elevation": "audit/convergence_center_west_elevation.png",
+      "entry_detail": "audit/convergence_center_entry_detail.png",
+      "lobby_detail": "audit/convergence_center_lobby_detail.png",
+      "roof_plan": "audit/convergence_center_roof_plan.png"
+    },
+    "external_image_paths": [],
+    "packed_images": [],
+    "targeted_sign_canopy_intersection": false,
+    "note": "AABB check tests sign/canopy separation only, not all-scene collision geometry. Source photographs were used for reference and are not linked or embedded as textures."
+  }
 }

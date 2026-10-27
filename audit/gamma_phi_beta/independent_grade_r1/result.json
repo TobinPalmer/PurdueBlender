@@ -1,0 +1,74 @@
+{
+  "asset": "modular/buildings/gamma_phi_beta.blend",
+  "sha256": "c9dbc1da41f87962022c39795751d797e0f5ff2a8aa0bf64cd89fa4257f89f25",
+  "score": 8.3,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Verified identity and site placement",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "The preserved Purdue ArcGIS feature FID 759 identifies Gamma Phi Beta, abbreviation SOGFB, Greek ownership, and 810 David Ross Rd.",
+        "The saved model uses all 12 transformed GIS ring vertices as the shell footprint; independent comparison to the raw feature geometry found maximum nearest-vertex residual 0.0000052 m.",
+        "Purdue FSCL, BoilerLink, and the chapter's official site independently support current chapter identity/location crosswalk; the official chapter archive identifies the Delta Iota house in the 1979 image."
+      ],
+      "rationale": "Strong multi-source identity and direct GIS shell correspondence. Deducted 0.2 because the source is an approximate local projection without a positional tolerance, and its Shape__Area attribute conflicts materially with area from the transformed ring."
+    },
+    {
+      "name": "Footprint and form",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": [
+        "Direct Blender inspection confirmed 12 named GIS-edge exterior wall panels and a matching local envelope; independently checked GIS-to-shell vertex residual is at most 0.0000052 m.",
+        "The archival exterior photograph and 1979 chapter article support the broad low, flat-roofed modernist form and hillside setting."
+      ],
+      "rationale": "The GIS outline is reproduced closely and the modeled form is consistent with the archival reference. Exact current terrain relationship and facade-side orientation are not established by georegistered imagery."
+    },
+    {
+      "name": "Facade, materials, and source fidelity",
+      "score": 1.6,
+      "max_score": 2,
+      "evidence": [
+        "The saved file has assigned materials for coated-steel skin, standing ribs, aluminized-steel roof, glazing, metal frames, concrete, and wood door; no missing external images were reported and direct inspection found no unpacked file textures.",
+        "The 1979 article documents an acrylic-coated outside steel skin, aluminized-steel roof, and hand-carved front door; the archived photo shows vertical facade articulation, grouped windows, and a flat roof/parapet.",
+        "The fresh-open render shows the intended repeated vertical ribs and three bands of grouped windows, but material colors and current facade details are not validated by a recent authoritative color/elevation source."
+      ],
+      "rationale": "The major source-supported architectural cues are represented. Materials are coherent named shaders rather than externally textured surfaces; color, exact window rhythm, and unpictured elevations remain estimated."
+    },
+    {
+      "name": "Interior",
+      "score": 1.1,
+      "max_score": 2,
+      "evidence": [
+        "Direct inspection found three schematic floor slabs and clearly labeled schematic tables, benches, and partitions on each modeled level.",
+        "The 1979 article supports dining, study, and upper-floor living uses but no georegisterable floor plan was found."
+      ],
+      "rationale": "There is a useful, explicitly schematic interior indication across three levels, but no source-backed room layout, circulation, stairs, kitchen/bath facilities, or detailed interior architecture is demonstrated."
+    },
+    {
+      "name": "Portability and fresh-open validation",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "The exact target file was independently opened in Blender 5.2.3 LTS; scene Building_gamma_phi_beta and collection Asset_gamma_phi_beta were present.",
+        "The asset contains 255 mesh objects, all assigned materials and no non-mesh dependencies; direct inspection found no unpacked external textures.",
+        "The supplied fresh-open verification is PASS for this exact SHA and includes a fresh-open render, GIS ring check, object-count validation, and missing-texture check."
+      ],
+      "rationale": "The dedicated asset opens cleanly and is self-contained, with a reproducible validation record."
+    }
+  ],
+  "limitations": [
+    "ArcGIS Shape__Area is 1160.34375 m² while the documented approximate local projection of the ring yields 671.1901 m²; source units/geometry provenance and survey tolerance are not resolved.",
+    "GIS NUM_LEVELS=1 conflicts with the official 1979 article's second- and third-floor living references. Three modeled above-grade bands and approximately 12 m height are plausible but unverified.",
+    "The archival photo is monochrome and not georegistered; exact entrance edge, current exterior colors, facade dimensions, and present-day appearance remain uncertain.",
+    "Interior furnishings and partitions are schematic, not a documented floor plan."
+  ],
+  "findings": [
+    "PASS at 8.3/10. Identity and GIS footprint are unusually well supported, and the saved asset passed fresh-open checks.",
+    "No corrections are required to meet the 8/10 threshold. For a higher-confidence revision, resolve the GIS area discrepancy using a documented CRS/authoritative footprint, find current georegistered elevations or imagery, and add a source-backed interior plan if one becomes available."
+  ],
+  "evaluator": "Independent saved-asset and evidence review"
+}
