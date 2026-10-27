@@ -1,0 +1,80 @@
+{
+  "building_id": "massing_house_301836568_0fbca0e",
+  "retrieved_date": "2026-10-26",
+  "source": {
+    "provider": "Indiana Statewide Elevation Data / Purdue GIS Data Service Lab",
+    "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019/Tippecanoe_Co_2018_3DEP/Elev18_LAS1.4SPW_IN/copc/in2018_29951885_12.copc.laz",
+    "tile": "sigma_pi_in2018_29951885_12.copc.laz",
+    "sha256": "bf86ba1431c8a568b536a3993475390a004bddd6896cbb4652e8c2b42b503257",
+    "bytes": 57793150,
+    "header_point_count": 11278927,
+    "header_crs": "COMPD_CS[\"NAD83(HARN) / Indiana West (ftUS) + NAVD88 height - Geoid12B (ftUS)\",PROJCS[\"NAD83(HARN) / Indiana West (ftUS)\",GEOGCS[\"NAD83(HARN)\",DATUM[\"NAD83_High_Accuracy_Reference_Network\",SPHEROID[\"GRS 1980\",6378137,298.257222101,AUTHORITY[\"EPSG\",\"7019\"]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY[\"EPSG\",\"6152\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4152\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",37.5],PARAMETER[\"central_meridian\",-87.08333333333333],PARAMETER[\"scale_factor\",0.999966667],PARAMETER[\"false_easting\",2952750],PARAMETER[\"false_northing\",820208.3330000002],UNIT[\"US survey foot\",0.3048006096012192,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"X\",EAST],AXIS[\"Y\",NORTH],AUTHORITY[\"EPSG\",\"2968\"]],VERT_CS[\"NAVD88 height - Geoid12B (ftUS)\",VERT_DATUM[\"North American Vertical Datum 1988\",2005,AUTHORITY[\"EPSG\",\"5103\"]],UNIT[\"US survey foot\",0.3048006096012192,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Gravity-related height\",UP],AUTHORITY[\"EPSG\",\"6360\"]]]",
+    "header_scales": [
+      0.01,
+      0.01,
+      0.01
+    ],
+    "header_offsets": [
+      2997500.0,
+      1887500.0,
+      623.0
+    ],
+    "acquisition_period": "2018 Tippecanoe County QL2 LiDAR (tile name / distribution metadata)",
+    "vertical_datum": "NAVD88 height, US survey feet",
+    "horizontal_crs": "EPSG:2968 NAD83(HARN) / Indiana West (ftUS)"
+  },
+  "footprint": {
+    "source": "purdue_gis_fid776_sigma_pi_2026-10-26.json",
+    "source_feature_id": 776,
+    "source_crs": "EPSG:4326; projected to EPSG:2968 for exact membership",
+    "ring_vertices": 36,
+    "project_local_xy": "matches modular/AGENTS.md local geographic approximation; origin -86.9137, 40.4274"
+  },
+  "method": {
+    "returns_inside_footprint": "LAS returns whose XY are covered by the exact transformed GIS ring",
+    "ground_sample": "Class 2 returns outside the ring within 10 m; median used as local datum",
+    "roof_candidate_filter": "Class 1 returns at or above 650 ft NAVD88. Threshold is an analysis filter (>8.3 m above ground median), not a semantic roof classification.",
+    "height_formula": "(source_z_NAVD88_usft - nearby_class2_ground_median_usft) * 0.3048006096012192",
+    "roof_surface": "Filtered unclassified surface returns indicate high central bands and depressed perimeter; vegetation and other objects cannot be fully excluded."
+  },
+  "counts": {
+    "returns_inside": 1244,
+    "classification_counts": {
+      "1": 1240,
+      "2": 4
+    },
+    "nearby_class2_ground_returns": 2207,
+    "surface_filter_returns": 1094
+  },
+  "statistics": {
+    "nearby_ground_class2_median_navd88_usft": 622.83,
+    "class1_inside_z_navd88_usft": {
+      "p10": 639.0880000000001,
+      "p50": 660.275,
+      "p90": 662.97,
+      "p100": 665.36
+    },
+    "filtered_surface_navd88_usft": {
+      "p10": 654.792,
+      "p25": 656.86,
+      "p50": 661.415,
+      "p75": 662.67,
+      "p90": 663.02
+    },
+    "filtered_surface_height_above_ground_m": {
+      "p10": 9.742037084074164,
+      "p25": 10.372364744729481,
+      "p50": 11.760731521463018,
+      "p75": 12.143256286512548,
+      "p90": 12.24993649987298,
+      "p100": 12.963169926339843
+    }
+  },
+  "snapshot": "sigma_pi_lidar_fid776_returns.csv",
+  "snapshot_sha256": "2730fcd4dbd6925a9efac103798c910fb46d6a658ef54ceabf2b74eccf49846f",
+  "limits": [
+    "No class-6 building returns were present within the ring; class 1 means unclassified.",
+    "The LiDAR supports surface heights and roof articulation, but does not independently identify wall lines, floors, or stories.",
+    "LiDAR point density, return classification, roof-edge trees, and local ground sample introduce uncertainty."
+  ]
+}

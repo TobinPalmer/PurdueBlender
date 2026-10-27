@@ -1,0 +1,109 @@
+{
+  "score": 6.6,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passes": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Purdue GIS raw snapshot identifies FID 776 as Sigma Pi (SOSP), 130 Russell St; Sigma Pi official location page independently names the Purdue Chapter House at 130 N Russell. Fresh-opened shell bottom vertices compare to 36 unique FID ring vertices; max nearest distance 0.000017 m. The saved current-state orthophoto overlay visually places that exact ring on the roof perimeter.",
+      "uncertainty": "GIS Shape__Area=817.3945 m\u00b2 and Shape__Length=154.0032 m conflict with geodesic calculations from supplied ring (~473.1593 m\u00b2, ~117.1197 m). Orthophoto supports roof outline; structural wall line behind roof edge is not established."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "Fresh-opened structural shell bounds in campus coordinates are [[-439.1611328125, -419.6351013183594], [-179.7059326171875, -146.538818359375], [0.25, 9.25]]. It reproduces the project-transformed source vertices with max nearest error 0.000017 m; the overlay registers this plan with current orthophotography.",
+      "uncertainty": "This demonstrates source-ring roof-plan registration, not surveyed wall position or dimensions. No independent surveyed coordinate/control points were found."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.7,
+      "max_score": 2,
+      "evidence": "The saved mesh is about 9.00 m wall height with roof-object top at 9.39 m. Render depicts three occupied-level bands; 2004 chapter newsletter references second-/third-deck work; assessor living-area record is corroborative only.",
+      "uncertainty": "Height, floor count, and roof elevation are not measured. GIS NUM_LEVELS=1 and Extrution=12 conflict with multi-deck evidence; newsletter and assessment do not resolve this. Aerial roof image does not establish a reliable roof section. Flat roof is explicitly a placeholder."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.6,
+      "max_score": 2,
+      "evidence": "2004 chapter newsletter supports broad stucco and wood-trim material cues. The asset contains repeated window/detail objects and a single modest entry; preview shows restrained three-band treatment.",
+      "uncertainty": "No inspected current facade photograph, elevation, opening schedule, or plan was available. Window count/rhythm, entrance position, current facade configuration, and distinctive architecture remain estimated."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "Fresh Blender 5.2.3 LTS process reopened the exact hash asset. Expected asset collection and scene are present; collection holds 186 objects (186 meshes); shell is manifold-edge clean count=0; there are 0 linked libraries, 0 unpacked external images, and 0 unpacked texture paths. Audit includes source register, raw GIS and imagery snapshots/overlay, 2004 chapter newsletter, build/reopen record, and preview render.",
+      "uncertainty": "Coordinator-owned manifest entry still reports the previous one-object massing bounds (Z 0\u201316 m), inconsistent with this asset's 186-object export and Z 0.25\u20139.25 m shell. Integration/index reconciliation remains needed."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_house_301836568_0fbca0e.blend",
+    "asset_sha256": "ea316fbd452abebd0130f032cc7b328bc137da41bc296d5c349ee93b416a2b5a",
+    "expected_sha256": "ea316fbd452abebd0130f032cc7b328bc137da41bc296d5c349ee93b416a2b5a",
+    "sha_matches_expected": true,
+    "fresh_reopen": true,
+    "blender_version": "5.2.3 LTS",
+    "building_identity": {
+      "FID": 776,
+      "BUILDING_N": "Sigma Pi",
+      "BLDG_ABBR": "SOSP",
+      "ADDRESS": "130 Russell St",
+      "OWNER": "GREEK"
+    },
+    "export_collection": "Asset_massing_house_301836568_0fbca0e",
+    "scene": "Building_massing_house_301836568_0fbca0e",
+    "export_object_count": 186,
+    "export_mesh_count": 186,
+    "export_instance_offset": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shell_world_bounds_m": [
+      [
+        -439.1611328125,
+        -419.6351013183594
+      ],
+      [
+        -179.7059326171875,
+        -146.538818359375
+      ],
+      [
+        0.25,
+        9.25
+      ]
+    ],
+    "shell_vertex_count": 72,
+    "shell_face_count": 38,
+    "shell_nonmanifold_edge_count": 0,
+    "gis_unique_outer_ring_vertices": 36,
+    "gis_ring_to_shell_bottom_nearest_m_max": 1.695725090761422e-05,
+    "gis_ring_to_shell_bottom_nearest_m_mean": 8.979604472491035e-06,
+    "roof_object_top_z_m": 9.390000343322754,
+    "window_named_object_count": 135,
+    "entry_named_object_count": 3,
+    "linked_library_paths": [],
+    "unpacked_external_images": [],
+    "unpacked_external_texture_paths": [],
+    "gis_area_attribute_m2": 817.39453125,
+    "gis_length_attribute_m": 154.00322265834043,
+    "source_ring_geodesic_area_perimeter_m2_m": [
+      473.1593305882179,
+      117.11970027902831
+    ],
+    "orthophoto_overlay": "audit/sigma_pi/sources/indiana_current_aerial_sigma_pi_3857_overlay.jpg",
+    "historical_newsletter": "audit/sigma_pi/sources/sigma_pi_eta_data_2004.pdf",
+    "manifest_record_status": "Stale relative to saved asset: records 1 object and old Z 0-16 m bounds; coordinator owns manifest update."
+  },
+  "findings": [
+    "Identity and roof-plan registration are strongly supported by the official GIS FID, independent address source, raw ring comparison, and current orthophoto overlay.",
+    "GIS area/length attributes conflict substantially with supplied ring coordinates; structural wall alignment remains unverified because the imagery traces the roof perimeter.",
+    "The modeled 9 m wall height, ~9.39 m roof top, apparent three-level treatment, and flat roof are uncertain; available sources do not give a measured section or roof survey.",
+    "Facade details, entrance placement, and opening rhythm are visually modeled without inspected current elevation evidence.",
+    "The current asset is portable and has complete source evidence; coordinator-owned manifest bounds and object count are stale and need reconciliation."
+  ]
+}

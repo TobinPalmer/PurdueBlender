@@ -1,0 +1,108 @@
+{
+  "score": 6.9,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passes": false,
+  "asset_sha256": "eb792483ebbf168162dea5134b1b9a405c9127ec7f2d92e2782e798b5b2aecce",
+  "expected_sha256": "eb792483ebbf168162dea5134b1b9a405c9127ec7f2d92e2782e798b5b2aecce",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Purdue GIS raw feature FID 776 identifies Sigma Pi (SOSP), 130 Russell St; Sigma Pi's official chapter-house address provides an independent name/address match (source register). In a fresh Blender 5.2.3 LTS process the exact candidate shell bottom was compared with 36 unique GIS ring vertices; max nearest distance is 0.000017 m. The preserved current Indiana imagery overlay shows the ring closely tracing today's roof perimeter.",
+      "uncertainty": "The GIS ring matches the visible roof plan, not a surveyed structural wall line; the hidden offset between eaves and walls is unknown."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "The fresh-opened shell retains campus coordinates and reproduces the 36 source vertices under the project local approximation with maximum point error 0.000017 m. The ring is registered to the current orthophoto in its native Web Mercator coordinate system; latest GIS Shape__Area/Length values reconcile with direct EPSG:3857 ring projection (817.3945 vs 817.3858 m\u00b2; lengths agree within rounding).",
+      "uncertainty": "No independent survey/control point or structural-wall footprint is available; the current evidence measures the roof outline and locates it to the source image."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.8,
+      "max_score": 2,
+      "evidence": "Model shell is 9.00 m high and roof cap reaches 9.39 m. The 2004 Eta Data newsletter describes second-/third-deck work and an addition, county assessment lists 18,680 ft\u00b2 of finished living area, and the 1932 Sigma Pi yearbook illustration depicts a multi-story, multi-gabled historic house.",
+      "uncertainty": "No source measures present-day height or exact floor count. GIS NUM_LEVELS=1 conflicts with the chapter/county clues. The 1932 gables predate the documented 1989 addition and cannot establish today's roof; current aerial shows roof articulation that the model's flat cap does not represent. Wall height, deck bands, roof height/profile remain estimates."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.6,
+      "max_score": 2,
+      "evidence": "The 2004 newsletter supports broad exterior stucco and wood-trim cues; the model applies these restrained material cues and contains repeated window and entry detail objects.",
+      "uncertainty": "No current facade photo/elevation or inspectable entry image is preserved. Window count/rhythm, entry position, and present facade details are not source-backed. The 1932 illustration is a historic depiction only; its multi-gabled architecture is not represented in the model."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "Fresh Blender process reopened the exact SHA256 candidate. Expected named scene and asset collection are present; the collection contains 186 objects (186 meshes), shell nonmanifold edge count=0, linked libraries=0, unpacked external images=0, and unpacked image texture paths=0. The R3 evidence set includes source register, raw GIS/metadata, current orthophoto and ring overlay, county assessment, chapter newsletter, historic yearbook scan, LiDAR footprint comparison with uncertainty, geometry cross-check, build/reopen record, and preview render.",
+      "uncertainty": "The coordinator-owned manifest still reports the former one-object, Z 0\u201316 m massing bounds instead of this 186-object, Z 0.25\u20139.25 m asset; coordinator reconciliation and master integration are pending."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_house_301836568_0fbca0e.blend",
+    "fresh_reopen": true,
+    "blender_version": "5.2.3 LTS",
+    "identity": {
+      "FID": 776,
+      "building_name": "Sigma Pi",
+      "abbreviation": "SOSP",
+      "address": "130 Russell St"
+    },
+    "collection": "Asset_massing_house_301836568_0fbca0e",
+    "scene": "Building_massing_house_301836568_0fbca0e",
+    "collection_objects": 186,
+    "collection_meshes": 186,
+    "instance_offset": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "shell_bounds_xyz": [
+      [
+        -439.1611328125,
+        -419.6351013183594
+      ],
+      [
+        -179.7059326171875,
+        -146.538818359375
+      ],
+      [
+        0.25,
+        9.25
+      ]
+    ],
+    "shell_vertex_count": 72,
+    "shell_face_count": 38,
+    "shell_nonmanifold_edge_count": 0,
+    "gis_unique_ring_vertex_count": 36,
+    "gis_to_shell_bottom_nearest_error_max_m": 1.695725090761422e-05,
+    "gis_to_shell_bottom_nearest_error_mean_m": 8.979604472491035e-06,
+    "roof_cap_top_z_m": 9.390000343322754,
+    "named_window_objects": 135,
+    "named_entry_or_door_objects": 3,
+    "linked_library_paths": [],
+    "unpacked_external_images": [],
+    "unpacked_external_texture_paths": [],
+    "gis_shape_area_epsg3857_m2": 817.39453125,
+    "gis_shape_length_epsg3857_m": 154.00322265834043,
+    "projected_ring_area_epsg3857_m2": 817.385769025312,
+    "geodesic_ring_area_m2": 473.1593305882179,
+    "geodesic_ring_perimeter_m": 117.11970027902831,
+    "orthophoto_overlay": "audit/sigma_pi/sources/indiana_current_aerial_sigma_pi_3857_overlay.jpg",
+    "historic_visual_source": "audit/sigma_pi/sources/purdue_debris_1932_page323.jpg",
+    "lidar_footprint_comparison": "audit/sigma_pi/sources/lidar_footprint_comparison_metrics.json",
+    "manifest_status": "stale; root coordinator owns reconciliation"
+  },
+  "findings": [
+    "Identity and current roof-plan footprint are strongly supported: GIS name/address, independent chapter address, exact ring reconstruction, and current orthophoto agree.",
+    "The earlier apparent GIS area/perimeter discrepancy is resolved: service metrics are planar EPSG:3857 and agree with projecting the supplied ring. The 2018 LiDAR footprint is a separate generalized extraction (IoU 0.769; Hausdorff 15.99 m), not a surveyed correction and was appropriately not substituted.",
+    "Current structural wall footprint remains unknown because GIS ring traces roof perimeter and imagery does not reveal the wall/eave offset.",
+    "Modeled wall/deck heights, floor count and roof profile remain unsupported. The 1932 gabled house image is explicitly historical and predates the 1989 addition; it cannot directly validate current form. Current aerial indicates a roof silhouette more articulated than the modeled flat cap.",
+    "Facade window rhythm, entry location, and distinctive current features remain estimates because no inspectable current facade image or elevation is in the audit.",
+    "Asset export is portable and well documented, but the coordinator manifest is stale and integration remains open."
+  ]
+}

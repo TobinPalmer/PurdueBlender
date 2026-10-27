@@ -1,0 +1,111 @@
+{
+  "building_id": "massing_house_301836568_0fbca0e",
+  "asset": "modular/buildings/massing_house_301836568_0fbca0e.blend",
+  "assignment_owner": "Rossen",
+  "source_identity": "Purdue GIS FID 776, BUILDING_N Sigma Pi, BLDG_ABBR SOSP; owner GREEK, address 130 Russell St. Official Sigma Pi page independently confirms the Purdue Chapter House at 130 N. Russell St.",
+  "source_date": "GIS and county assessor records retrieved 2026-10-26; state imagery coverage 2022-2025; 2018 QL2 LiDAR; Eta Data November 2004 chapter-house photographs; Purdue Debris 1932 historical illustration.",
+  "source_crs_and_transform": "EPSG:4326; Purdue project local approximate-meter conversion as written in modular/AGENTS.md. Asset retained campus coordinates because it remains a simple massing library.",
+  "position": {
+    "status": "gis_ring_registered_to_current_roof_orthophoto",
+    "method": "Projected all 37 GIS outer-ring vertices into Purdue campus coordinates and built the shell from those vertices. Independently transformed the source ring to the state imagery service's native EPSG:3857 and overlaid it on current Indiana orthophotography; the boundary tracks the visible roof outline closely.",
+    "asset_origin_changed": false,
+    "position_error_m": 0.0,
+    "limitation": "Current orthophotography corroborates roof-plan registration; the hidden structural wall line relative to the roof overhang is not visible or measured."
+  },
+  "plan_geometry": {
+    "status": "corrected_to_gis_outer_ring",
+    "method": "Exact vertex-preserving reconstruction of the single official FID 776 ring in project local approximate meters; per-vertex nearest error checked after fresh reopen.",
+    "rotation_difference_degrees": 0.0,
+    "gis_ring_vertex_count": 36,
+    "gis_geometry_area_recomputed_m2": 473.1593305882179,
+    "gis_geometry_perimeter_recomputed_m": 117.11970027902831,
+    "project_local_approximate_area_m2": 472.8667,
+    "gis_shape_area_attribute_m2": 817.39453125,
+    "gis_shape_length_attribute_m": 154.00322265834043,
+    "discrepancy": "The layer metadata reports EPSG:3857 (latestWkid 3857), and direct projection of the delivered EPSG:4326 ring gives 817.385769 m2 / 154.003222677 m, matching the stored Shape__Area/Shape__Length within rounding (817.39453125 / 154.003222658). These are planar Web Mercator values; WGS84 geodesic ground-surface values are 473.159331 m2 / 117.119700 m. Current orthophoto supports the ring as roof perimeter only; the structural wall line is unverified.",
+    "web_mercator_projected_ring_area_m2": 817.385769025312,
+    "web_mercator_projected_ring_perimeter_m": 154.003222676916
+  },
+  "vertical_geometry": {
+    "status": "roof_surface_supported_by_2018_lidar; wall_height_and_story_count_estimated",
+    "modeled_wall_height_m": 9.35,
+    "modeled_roof_surface_range_above_local_ground_m": [
+      9.4464,
+      12.362
+    ],
+    "evidence": "2018 QL2 tile in2018_29951885_12.copc.laz overlaps the exact FID 776 ring. Nearby class-2 ground median is 622.83 ft NAVD88. Class-1 returns >=650 ft (a transparent analysis filter, not a semantic roof class) have p10=654.792, median=661.415, p90=663.02, max=665.36 ft NAVD88, equivalent to about 9.74-12.25 m above the ground median at p10-p90 and 12.96 m at max. After clipping candidate source heights to the 5th-95th percentile range and interpolating a 0.9 m constrained mesh, the asset roof surface ranges 9.45-12.36 m above the local ground datum; depressed edges and central high bands support roof articulation. Dated November 2004 house photos support broad facade and roof-form cues after the 1989 addition, but do not measure vertical dimensions.",
+    "uncertainty": "No class-6 building returns were present. Class-1 returns are unclassified; vegetation or other surface points may remain. The source supports roof-surface heights/articulation but does not establish the wall line, occupied story count, or surveyed roof structure. Wall height (9.35 m), window arrangement, and entry dimensions remain estimates."
+  },
+  "geometry_changes": [
+    "Replaced generic 16-vertex massing shell (16.0 m tall) with the exact 37-vertex FID 776 GIS outer ring; the original bounds were already within about 0.3 m of the projected ring.",
+    "Changed the unsupported 16.0 m shell to an estimated 9.35 m wall height, set just below the robust LiDAR-derived roof surface so the simplified wall volume meets the roof skin; wall height and story count remain estimates.",
+    "Applied restrained stucco and exterior wood-trim material cues grounded in the 2004 chapter newsletter.",
+    "Corrected the area/perimeter interpretation: GIS Shape__Area/Length are EPSG:3857 planar metrics and reconcile with the source ring after projection; geodesic metrics are reported separately. Added the 1932 Sigma Pi page as historical visual evidence with explicit pre-1989 limits and stored these source/uncertainty notes as Blender custom properties.",
+    "Replaced the flat roof cap with a constrained 0.9 m mesh clipped to the exact GIS ring and interpolated from 1,094 2018 QL2 class-1 returns at or above the documented 650 ft analysis threshold. Source heights are clipped to their 5th-95th percentile range to reduce isolated-return influence; vegetation and classification limits are recorded.",
+    "Updated the street-facing facade with masonry at the lower level, Tudor half-timber cues above, multiple window tiers, and a street entry based on the November 2004 Eta Data house photographs; architectural dimensions remain unknown, so these remain qualitative cues.",
+    "Kept the 9.35 m wall shell, window count, and entry dimensions explicitly estimated; LiDAR constrains roof surface only and does not resolve wall height or floor count.",
+    "Replaced the sparse single-segment trim with a readable Tudor half-timber pattern across three east-facing GIS facade runs, including vertical stiles, horizontal rails, crossed braces, and divided window casings. November 2004 Eta Data photographs on pp. 1 and 6 support these qualitative cues; exact layout and dimensions remain schematic."
+  ],
+  "evidence_files": [
+    "sources/purdue_gis_fid776_sigma_pi_2026-10-26.json",
+    "sources/geometry_imagery_crosscheck.json",
+    "sources/tippecanoe_parcel_130_russell.json",
+    "sources/tippecanoe_layer_80_130_russell.json",
+    "sources/tippecanoe_layer_79_sigma_pi.json",
+    "sources/indiana_current_imagery_metadata.json",
+    "sources/indiana_current_aerial_sigma_pi_3857.jpg",
+    "sources/indiana_current_aerial_sigma_pi_3857_overlay.jpg",
+    "sources/sigma_pi_eta_data_2004.pdf",
+    "source_register.json",
+    "reopen_validation.py",
+    "build_result.json",
+    "renders/sigma_pi_preview.png",
+    "sources/purdue_gis_feature_layer_metadata_2026-10-26.json",
+    "sources/purdue_debris_1932_page323.jpg",
+    "sources/purdue_debris_1932_page323_metadata.json",
+    "sources/indiana_lidar_buildings_sigma_pi_query_2026-10-26.json",
+    "sources/lidar_footprint_comparison_metrics.json",
+    "sources/indiana_lidar_fid776_roof_outline_comparison.png",
+    "sources/extract_lidar_surface.py",
+    "sources/sigma_pi_lidar_fid776_returns.csv",
+    "sources/sigma_pi_lidar_surface_analysis.json",
+    "sources/derive_lidar_roof_mesh.py",
+    "sources/sigma_pi_lidar_roof_mesh.json",
+    "sources/eta_data_2004_page1_house_photo.png",
+    "sources/eta_data_2004_page6_house_photo.png",
+    "build_result_r4.json",
+    "renders/sigma_pi_preview_r4.png",
+    "renders/sigma_pi_preview_r5.png"
+  ],
+  "review": {
+    "independent_reviewer": "pending R5",
+    "score_out_of_10": null,
+    "unresolved": [
+      "The November 2004 house photos provide dated-in-context visual evidence after the 1989 addition, but no measured elevation or exact opening schedule; facade spacing and all architectural dimensions remain schematic.",
+      "No measured current wall line or floor count; shell height and structural wall registration remain estimated. 2018 LiDAR returns are unclassified, so vegetation and interpolation uncertainty remain in the roof surface.",
+      "The 2018 LiDAR-derived footprint differs materially from the Purdue GIS ring and is not substituted for FID 776.",
+      "Master integration remains pending; contributors do not own the master blend."
+    ]
+  },
+  "asset_sha256_r5": "9ce88b7bb8da63593d90ca9aaa303f2afde88433e94600e265c9361580997c1b",
+  "validation": {
+    "fresh_process_reopen": true,
+    "blender_version": "5.2.3 LTS",
+    "blender_version_tuple": [
+      5,
+      2,
+      3
+    ],
+    "asset_sha256": "9ce88b7bb8da63593d90ca9aaa303f2afde88433e94600e265c9361580997c1b",
+    "structural_shell_nonmanifold_edges": 0,
+    "gis_ring_to_shell_max_nearest_error_m": 1.695725090761422e-05,
+    "roof_surface_range_m_above_local_ground": [
+      9.446380615234375,
+      12.361950874328613
+    ],
+    "facade_timber_object_count": 41,
+    "external_images": [],
+    "preview_sha256": "cb76adaa0689f113058ce467540dec9bcf1ef67468552551cd60ef58a3460630",
+    "note": "A fresh Blender 5.2.3 LTS background process opened the saved .blend read-only and ran audit/sigma_pi/reopen_validation.py."
+  }
+}

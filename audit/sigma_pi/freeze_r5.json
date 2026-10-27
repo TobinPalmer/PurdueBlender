@@ -1,0 +1,45 @@
+{
+  "candidate": "R5",
+  "asset": "modular/buildings/massing_house_301836568_0fbca0e.blend",
+  "asset_sha256": "9ce88b7bb8da63593d90ca9aaa303f2afde88433e94600e265c9361580997c1b",
+  "independent_reopen": {
+    "script": "audit/sigma_pi/reopen_validation.py",
+    "result": "audit/sigma_pi/build_result.json",
+    "blender_version": "5.2.3 LTS",
+    "blender_version_tuple": [
+      5,
+      2,
+      3
+    ],
+    "fresh_process": true,
+    "read_only": true
+  },
+  "render": {
+    "path": "audit/sigma_pi/renders/sigma_pi_preview_r5.png",
+    "sha256": "cb76adaa0689f113058ce467540dec9bcf1ef67468552551cd60ef58a3460630"
+  },
+  "source_evidence": [
+    {
+      "path": "audit/sigma_pi/sources/sigma_pi_eta_data_2004.pdf",
+      "sha256": "ddd4b0e8dc776763544f2bc46b22544a2cbbda60c9991baa3d45b0aa51c418fc",
+      "note": "Raw Nov 2004 chapter newsletter PDF."
+    },
+    {
+      "path": "audit/sigma_pi/sources/eta_data_2004_page1_house_photo.png",
+      "sha256": "f123fdf90ead6f8723f0c3b28b0c2381c798bc7273d8681ae5a38e2996e062e3",
+      "note": "Homecoming 2004 at Eta Chapter; p.1 text identifies 130 Russell."
+    },
+    {
+      "path": "audit/sigma_pi/sources/eta_data_2004_page6_house_photo.png",
+      "sha256": "bbcbc33012c76b985660dd915b61a7168373a26b9e523e97fceba40918167c61",
+      "note": "Nov 2004 house-improvement page, dated-in-context facade photo."
+    }
+  ],
+  "changes": "Expanded photo-backed Tudor half-timber framing across the three east-facing GIS runs with stiles, rails and braces; added divided street-facing window casings; preserved exact GIS ring; saved an R5 facade-focused preview.",
+  "known_uncertainty": [
+    "The dated photos support qualitative facade/roof cues but no dimensions or exact openings.",
+    "Wall line and story count remain estimated/unverified; roof mesh is interpolated from unclassified LiDAR returns and may include vegetation.",
+    "Current orthophoto verifies roof-plan registration, not hidden wall location."
+  ],
+  "grade_status": "PASS \u2014 8.1/10; result: audit/sigma_pi/independent_grade/grade_result_r5.json"
+}

@@ -1,0 +1,213 @@
+{
+ "currentVersion": 11.3,
+ "cimVersion": "3.3.0",
+ "id": 49,
+ "name": "Cyclical Photos",
+ "type": "Feature Layer",
+ "description": "",
+ "geometryType": "esriGeometryPoint",
+ "sourceSpatialReference": {
+  "wkid": 4326,
+  "latestWkid": 4326,
+  "vcsWkid": 115700,
+  "latestVcsWkid": 115700,
+  "xyTolerance": 8.98315284119522E-9,
+  "zTolerance": 0.001,
+  "mTolerance": 0.001,
+  "falseX": -400,
+  "falseY": -400,
+  "xyUnits": 9.999999999999999E8,
+  "falseZ": -100000,
+  "zUnits": 10000,
+  "falseM": -100000,
+  "mUnits": 10000
+ },
+ "sourceHeightModelInfo": {
+  "heightModel": "ellipsoidal",
+  "vertCRS": "WGS_1984",
+  "heightUnit": "meter"
+ },
+ "copyrightText": "",
+ "parentLayer": null,
+ "subLayers": [],
+ "minScale": 4800,
+ "maxScale": 0,
+ "referenceScale": 0.0,
+ "drawingInfo": {
+  "renderer": {
+   "type": "simple",
+   "symbol": {
+    "type": "esriPMS",
+    "url": "f85bb568028729e881fcba34283cb5cc",
+    "imageData": "iVBORw0KGgoAAAANSUhEUgAAABcAAAAWCAYAAAArdgcFAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABh0lEQVQ4jeXVPUhVYRzA4Se6mpAQ2VLQUnIJ1CGoHFwdKhuiRQwEcZBAuhAYDi1RDVk0ZHfq3kCQ6GOoMIgQqUt+ZKkgQh8OFQ2XrAylSURS8Q5RcfWcYwlCv/H9w3M4h/d9T8waFvsP8Iv2GXFFoTq3ffl3eIsLpp3Wrsh5rzU5Ke3O3+HXbfFCj0oH1P5c2yapU71jbqrDQnT8nCOe63RWiV1/zBIKDKk1a79SB7V5Fx5P6DCvXlpMwTIPr8y9xW6tRp1yxlXJlfFrdnrpqRpxhwS3FWnFkto1OKrKYSfM5cd7PJYSt120EjboVi0lhcb8+EYZMyqsps/mfdPx69Lv+KQ29zVpURQZfyarV+/y+IBP4t6jPBI8iwmvgnfLlAETyu2IgD+x4LsbYfBLHmjQbFNo/JGsQQ+D8X4f7Ml9mrJQ8NL5/GgcP4LxpSYNm1KmRHDD+OpuvlF+fNplXY5rVBiI35M14lZ4vM8bMW+N2RyID+XulZnwOGTslQmkV2yd/IlW0SIhImQTtFuO2AAAAABJRU5ErkJggg==",
+    "contentType": "image/png",
+    "width": 17,
+    "height": 16,
+    "angle": 0,
+    "xoffset": 0,
+    "yoffset": 0
+   }
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "defaultVisibility": false,
+ "extent": {
+  "xmin": 2948432.017755392,
+  "ymin": -1.2801364628379801E7,
+  "xmax": 2.1400303456352763E7,
+  "ymax": 5553171.152963815,
+  "spatialReference": {
+   "wkid": 2245,
+   "latestWkid": 2966,
+   "xyTolerance": 0.003280833333333333,
+   "zTolerance": 0.001,
+   "mTolerance": 0.001,
+   "falseX": -1.729449535677468E7,
+   "falseY": -4.8896422239334375E7,
+   "xyUnits": 1.247705344014658E8,
+   "falseZ": -100000,
+   "zUnits": 10000,
+   "falseM": -100000,
+   "mUnits": 10000
+  }
+ },
+ "hasAttachments": false,
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "displayField": "Name",
+ "typeIdField": null,
+ "subtypeFieldName": null,
+ "subtypeField": null,
+ "defaultSubtypeCode": null,
+ "fields": [
+  {
+   "name": "OBJECTID",
+   "type": "esriFieldTypeOID",
+   "alias": "OBJECTID",
+   "domain": null
+  },
+  {
+   "name": "Shape",
+   "type": "esriFieldTypeGeometry",
+   "alias": "Shape",
+   "domain": null
+  },
+  {
+   "name": "Path",
+   "type": "esriFieldTypeString",
+   "alias": "Path",
+   "length": 184,
+   "domain": null
+  },
+  {
+   "name": "Name",
+   "type": "esriFieldTypeString",
+   "alias": "Name",
+   "length": 14,
+   "domain": null
+  },
+  {
+   "name": "DateTime",
+   "type": "esriFieldTypeString",
+   "alias": "DateTime",
+   "length": 100,
+   "domain": null
+  },
+  {
+   "name": "Direction",
+   "type": "esriFieldTypeDouble",
+   "alias": "Direction",
+   "domain": null
+  }
+ ],
+ "geometryField": {
+  "name": "Shape",
+  "type": "esriFieldTypeGeometry",
+  "alias": "Shape"
+ },
+ "indexes": [
+  {
+   "name": "FDO_OBJECTID",
+   "fields": "OBJECTID",
+   "isAscending": true,
+   "isUnique": true,
+   "description": ""
+  },
+  {
+   "name": "CYCLICALPHOTOS_IDX",
+   "fields": "Path,Name,DateTime,Direction",
+   "isAscending": true,
+   "isUnique": false,
+   "description": ""
+  },
+  {
+   "name": "FDO_Shape",
+   "fields": "Shape",
+   "isAscending": true,
+   "isUnique": false,
+   "description": ""
+  }
+ ],
+ "subtypes": [],
+ "relationships": [],
+ "canModifyLayer": true,
+ "canScaleSymbols": false,
+ "hasLabels": false,
+ "capabilities": "Map,Query,Data",
+ "maxRecordCount": 2000,
+ "supportsStatistics": true,
+ "supportsExceedsLimitStatistics": true,
+ "supportsAdvancedQueries": true,
+ "hasZ": true,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "isDataVersioned": false,
+ "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+ "useStandardizedQueries": true,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "advancedQueryCapabilities": {
+  "useStandardizedQueries": true,
+  "supportsStatistics": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true,
+  "supportsOrderBy": true,
+  "supportsDistinct": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsPagination": true,
+  "supportsLod": false,
+  "supportsQueryWithLodSR": false,
+  "supportsTrueCurve": true,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsReturningQueryExtent": true,
+  "supportsQueryWithDistance": true,
+  "supportsSqlExpression": true,
+  "supportsTimeRelation": true,
+  "supportsSqlFormat": false,
+  "supportsQueryAnalytic": false,
+  "supportsCurrentUserQueries": true
+ },
+ "supportsDatumTransformation": true,
+ "dateFieldsTimeReference": null,
+ "preferredTimeReference": null,
+ "datesInUnknownTimezone": false,
+ "hasMetadata": true,
+ "isDataArchived": false,
+ "archivingInfo": {
+  "supportsQueryWithHistoricMoment": false,
+  "startArchivingMoment": -1
+ },
+ "supportsCoordinatesQuantization": true,
+ "supportsDynamicLegends": true
+}

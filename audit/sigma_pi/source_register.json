@@ -1,0 +1,137 @@
+{
+  "building_id": "massing_house_301836568_0fbca0e",
+  "building_name": "Sigma Pi Eta Chapter, Purdue University",
+  "source_feature_id": 776,
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University GIS, BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 776,
+      "snapshot": "sources/purdue_gis_fid776_sigma_pi_2026-10-26.json",
+      "source_crs": "EPSG:4326 (WGS 84)",
+      "source_date": "Not supplied in feature attributes; current service record retrieved 2026-10-26",
+      "measurement_method": "Reconstructed outer ring using modular/AGENTS.md conversion and preserved all 36 unique vertices. The layer metadata identifies EPSG:3857 (latestWkid 3857). Direct projection of the EPSG:4326 ring yields 817.385769 m2 / 154.003222677 m, matching stored Shape__Area/Shape__Length within rounding. Independent WGS84 geodesic ground metrics are 473.159331 m2 / 117.119700 m. Current-state orthophoto overlay supports roof-plan registration only.",
+      "attributes": {
+        "BUILDING_N": "Sigma Pi",
+        "BLDG_ABBR": "SOSP",
+        "ADDRESS": "130 Russell St",
+        "OWNER": "GREEK",
+        "NUM_LEVELS": 1,
+        "Extrution": 12,
+        "Shape__Area_m2": 817.39453125,
+        "Shape__Length_m": 154.00322265834043,
+        "Elevation": 625
+      },
+      "uncertainty": "Stored Shape__Area/Shape__Length are EPSG:3857 planar measurements and are not conflicting ground-surface metrics. Current orthophoto supports roof perimeter, not a measured exterior wall line. GIS NUM_LEVELS=1 and Extrution=12 conflict with historical multi-deck evidence and are not treated as measured vertical values.",
+      "layer_metadata_snapshot": "sources/purdue_gis_feature_layer_metadata_2026-10-26.json"
+    },
+    {
+      "provider": "Sigma Pi Fraternity (official chapter-house location page)",
+      "url": "https://sigmapi.org/event-location/purdue-chapter-house/",
+      "source_date": "Current page accessed 2026-10-26",
+      "measurement_method": "Identity/address cross-check only; the page lists Purdue Chapter House at 130 N. Russell St.",
+      "uncertainty": "Confirms name and address, not architectural measurements."
+    },
+    {
+      "provider": "Eta Chapter of Sigma Pi, Purdue University, The Eta Data, November 2004, Issue MMIV No. 1",
+      "url": "https://web.ics.purdue.edu/~sigpieta/web/etadata/etadata2004.pdf",
+      "snapshot": "sources/sigma_pi_eta_data_2004.pdf",
+      "source_date": "November 2004",
+      "measurement_method": "Published Eta Chapter newsletter, November 2004, Issue MMIV No. 1. Pages 1 and 6 contain dated-in-context house photographs: p.1 identifies Homecoming 2004 at Eta Chapter and 130 Russell; p.6 appears with the house-improvement article and shows the post-1989 exterior, half-timber upper facade, gables, window bays, masonry base, and entries. Full PDF retained; transparent page-image crops preserved as raw visual evidence.",
+      "uncertainty": "Photos document the chapter house as of the November 2004 issue; p.6 is not a measured elevation and capture day is not stated. Qualitative Tudor/half-timber, roof silhouette, masonry, window-bay, and entry cues only; do not infer dimensions, exact opening counts, current 2026 condition, or unpictured sides.",
+      "photo_snapshots": [
+        {
+          "page": 1,
+          "path": "sources/eta_data_2004_page1_house_photo.png",
+          "sha256": "f123fdf90ead6f8723f0c3b28b0c2381c798bc7273d8681ae5a38e2996e062e3",
+          "context": "Homecoming 2004 at Eta Chapter; page text identifies 130 Russell St."
+        },
+        {
+          "page": 6,
+          "path": "sources/eta_data_2004_page6_house_photo.png",
+          "sha256": "bbcbc33012c76b985660dd915b61a7168373a26b9e523e97fceba40918167c61",
+          "context": "November 2004 issue, house-improvement section; facade photo."
+        }
+      ]
+    },
+    {
+      "provider": "Purdue University Off-Campus Housing listing (street view image; third-party listing)",
+      "url": "https://offcampushousing.purdue.edu/housing/property/sigma-pi-fraternity/ocpjv0sz75",
+      "source_date": "Listing accessed 2026-10-26; listing updated about two weeks before access; image acquisition date not supplied",
+      "measurement_method": "The listing identifies Sigma Pi Fraternity at 130 N Russell and labels the image \u201cOutside street view - Sigma Pi Fraternity.\u201d The image was visually inspected at the vendor image URL. It supports visible street-front cues: masonry lower facade, Tudor half-timber upper facade, multiple window tiers, and entry doors/steps.",
+      "uncertainty": "The individual image capture date is unknown. It is not used for dimensions, height, floor count, exact opening count, or roof profile; its top crop does not show the whole roof. It does not establish side/rear elevations.",
+      "image_url": "https://img.offcampusimages.com/dKfuu6SsfjNC5_lqQ_bnTJxlTDQ%3D/660x440/left/top/smart/images/cunylohwcwaydabfe_gtw8il7hdkw5lhtx5yiuihsxs.jpeg?p=1"
+    },
+    {
+      "provider": "Tippecanoe County Assessor GIS, Parcels and Street Address layers",
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer",
+      "snapshot": [
+        "sources/tippecanoe_parcel_130_russell.json",
+        "sources/tippecanoe_layer_80_130_russell.json",
+        "sources/tippecanoe_layer_79_sigma_pi.json",
+        "sources/geometry_imagery_crosscheck.json"
+      ],
+      "source_date": "Current county service records retrieved 2026-10-26",
+      "measurement_method": "Address point and parcel attributes queried by 130 N RUSSELL ST / parcel key 79-07-19-176-045.000-026. County record lists Year_Built=1916 and FinishLivingArea=18,680 sq ft. Parcel geometry is not used as the building footprint; the parcel is larger than the roof outline.",
+      "uncertainty": "County assessment fields are property-record attributes, not a measured elevation, building section, or independently surveyed footprint. Finished living area divided by the GIS roof outline area is about 3.67 floor-area equivalents; this is corroborative only and may include non-overlapping/deck areas or assessment conventions."
+    },
+    {
+      "provider": "Indiana Geographic Information Office, Indiana Current Imagery ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "snapshot": [
+        "sources/indiana_current_imagery_metadata.json",
+        "sources/indiana_current_aerial_sigma_pi_3857.jpg",
+        "sources/indiana_current_aerial_sigma_pi_3857_overlay.jpg",
+        "sources/indiana_current_aerial_sigma_pi_request.json"
+      ],
+      "source_date": "Current orthophotography service metadata retrieved 2026-10-26; coverage is stated as 2022-2025",
+      "measurement_method": "Requested current imagery in native EPSG:3857 around the FID 776 ring; overlaid the exact FID 776 outer ring in the same native coordinates. The overlay visually confirms that the GIS ring follows the present roof plan closely. Imagery service states 6-inch imagery with some 3-inch areas.",
+      "uncertainty": "Orthophotography verifies roof-plan registration at its stated raster accuracy/resolution, not the hidden exterior wall line, facade openings, roof height, or exact roof section. Visible roof planes provide plan-level visual cues only. Individual acquisition date for this tile is not identified in captured metadata."
+    },
+    {
+      "provider": "Tippecanoe County GIS Metadata",
+      "url": "https://www.tippecanoe.in.gov/560/GIS-Metadata",
+      "source_date": "Accessed 2026-10-26",
+      "measurement_method": "Official metadata page describes county aerial imagery as 3-inch pixel resolution and says the imagery made available on the county GIS page was captured in October 2020; it also gives county horizontal accuracy of +/-2.5 feet at 90% confidence.",
+      "uncertainty": "This describes county GIS layers generally and is not used as the basis for FID 776 ring geometry; current roof overlay uses state imagery. County cyclical-photo query records nearby 2014 frames, but published file paths did not resolve through public service endpoints during this audit; those images were not inspected or used."
+    },
+    {
+      "provider": "Purdue University Libraries Archives and Special Collections, Debris Yearbooks, Purdue University",
+      "url": "https://earchives.lib.purdue.edu/iiif/2/debris:18615/full/full/0/default.jpg",
+      "snapshot": [
+        "sources/purdue_debris_1932_page323.jpg",
+        "sources/purdue_debris_1932_page323_metadata.json"
+      ],
+      "source_date": "1932 Debris, page 323; item metadata says digitized 2007-12-26",
+      "measurement_method": "Scanned page is explicitly headed Sigma Pi and states \u201cEstablished at Purdue in 1912\u201d; a house illustration appears within the chapter page. Strong historical chapter-associated evidence for an older multi-story, multi-gabled house. The 2004 Eta Data identifies a 1912 old part and an addition rededicated in 1989.",
+      "uncertainty": "Yearbook illustration, not measured elevation or contemporary photograph. Page context strongly associates it with Purdue Sigma Pi, but does not independently prove exact address, surviving fabric, or which portions remain. Predates the 1989 addition and is not used to claim current roof profile, dimensions, or window arrangement."
+    },
+    {
+      "provider": "Indiana Geographic Information Office, Indiana Statewide LiDAR Derived Building Footprints (2016-2020), FeatureServer layer 0",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0",
+      "snapshot": [
+        "sources/indiana_lidar_buildings_sigma_pi_query_2026-10-26.json",
+        "sources/lidar_footprint_comparison_metrics.json",
+        "sources/indiana_lidar_fid776_roof_outline_comparison.png"
+      ],
+      "source_date": "2018 LiDAR-derived footprint feature for Tippecanoe County; queried 2026-10-26",
+      "measurement_method": "Compared OID 410045 with FID 776 and the current orthophoto; LiDAR polygon geodesic area 556.025 m2/perimeter 102.421 m; local projected IoU 0.769 and Hausdorff boundary distance 15.99 m.",
+      "uncertainty": "Automated LiDAR-derived polygon is a separate generalized extraction, not measured wall survey. Its mismatch with FID 776 is retained as a caution and it is not used to alter asset geometry or infer elevation/roof profile."
+    },
+    {
+      "provider": "Indiana Statewide Elevation Data / Purdue GIS Data Service Lab, 2018 Tippecanoe County QL2 point cloud",
+      "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019/Tippecanoe_Co_2018_3DEP/Elev18_LAS1.4SPW_IN/copc/in2018_29951885_12.copc.laz",
+      "source_date": "2018 LiDAR tile; source downloaded and examined 2026-10-26",
+      "snapshot": [
+        "sources/extract_lidar_surface.py",
+        "sources/sigma_pi_lidar_fid776_returns.csv",
+        "sources/sigma_pi_lidar_surface_analysis.json",
+        "sources/derive_lidar_roof_mesh.py",
+        "sources/sigma_pi_lidar_roof_mesh.json"
+      ],
+      "measurement_method": "Exact EPSG:2968 footprint membership against the Purdue FID 776 ring. Tile horizontal CRS EPSG:2968 (US survey feet), vertical NAVD88 (US survey feet). 1,244 returns occur inside the ring: 1,240 class 1 and 4 class 2; no class-6 returns. Nearby class-2 ground median within 10 m is 622.83 ft NAVD88. An analysis filter of class-1 returns >=650 ft yields 1,094 candidate surface returns (median 661.415 ft; p10 654.792, p90 663.02, max 665.36 ft), about 9.74-12.25 m above nearby ground for p10-p90 and 12.96 m at max. A constrained mesh of 0.9 m grid cells clipped to the exact GIS ring uses IDW from the 16 nearest filtered returns; source heights are clipped to their 5th-95th percentile range to reduce isolated returns.",
+      "uncertainty": "Class 1 means unclassified, not building-classified. The 650 ft threshold is an analysis filter, not a source semantic label. Vegetation or other returns may remain. Evidence supports roof-surface elevation/articulation, not wall registration, story count, or a surveyed roof. Ground samples and interpolation introduce uncertainty."
+    }
+  ]
+}

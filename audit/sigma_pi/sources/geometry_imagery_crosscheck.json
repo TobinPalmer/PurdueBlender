@@ -1,0 +1,48 @@
+{
+  "source_feature": {
+    "FID": 776,
+    "name": "Sigma Pi",
+    "address": "130 Russell St",
+    "source_crs": "EPSG:4326",
+    "unique_ring_vertices": 36
+  },
+  "ring_geometry": {
+    "wgs84_geodesic_area_m2": 473.1593305882179,
+    "wgs84_geodesic_perimeter_m": 117.11970027902831,
+    "native_web_mercator_epsg3857_bbox_m": [
+      -9675765.254814932,
+      4928009.991245767,
+      -9675739.62558914,
+      4928053.670486051
+    ],
+    "project_local_approximate_area_m2": 472.8667,
+    "web_mercator_projected_area_m2": 817.385769025312,
+    "web_mercator_projected_perimeter_m": 154.003222676916,
+    "gis_shape_area_attribute_m2": 817.39453125,
+    "gis_shape_length_attribute_m": 154.00322265834043,
+    "source_spatial_reference": "EPSG:3857 (latestWkid 3857; layer metadata reports Shape__Area/Shape__Length in esriMeters)",
+    "attribute_comparison": "The service Shape__Area/Shape__Length agree with direct EPSG:3857 projection of the supplied EPSG:4326 ring within precision/rounding (area difference 0.008762 m2; perimeter difference <0.000001 m). Their larger values are Web Mercator planar values, not a conflict with ground-surface geodesic measurements.",
+    "assessment": "The delivered ring has WGS84 geodesic area/perimeter ~473.159 m2 / 117.120 m and project-local approximate area ~472.867 m2. Its stored service fields are planar EPSG:3857 measures (~817.39 m2 / 154.003 m), which reconcile after projection. The ring traces the roof perimeter in the state current orthophoto overlay; the exterior wall line is not verified."
+  },
+  "county_assessment": {
+    "parcel_address": "130 N RUSSELL ST",
+    "parcel_number": "79-07-19-176-045.000-026",
+    "year_built": 1916,
+    "finished_living_area_sqft": 18680,
+    "finished_living_area_m2": 1735.4287872000002,
+    "ring_floor_area_equivalents": 3.6677471519848623,
+    "parcel_shape_area_sqft": 26949.320896672845,
+    "assessment_caveat": "Tax parcel area is not building footprint area. FinishLivingArea/floor-area-equivalent is corroborative, not a direct floor count or measured height."
+  },
+  "imagery": {
+    "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+    "native_crs": "EPSG:3857",
+    "service_coverage": "2022-2025",
+    "pixel_size_m": 0.0762001524,
+    "rendered_image": "indiana_current_aerial_sigma_pi_3857.jpg",
+    "registered_overlay": "indiana_current_aerial_sigma_pi_3857_overlay.jpg",
+    "image_sha256": "6238ef87d8ac18c8918945db3a794f51770f61ea4bbeea3da93630c4d99b54d0",
+    "overlay_sha256": "dc9ccd55ac7aaa7c7c1085a5261f8a197c111fe92977b78f5f218c2f0432faa6",
+    "registration_method": "Transform same raw feature ring to native EPSG:3857; raster bounding box and overlay vertices generated from those projected coordinates."
+  }
+}

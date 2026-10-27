@@ -1,0 +1,135 @@
+{
+  "score": 7.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passes": false,
+  "asset_sha256": "562853c102de946d253c893b984032d9b7525f55638b5390d4ac3d76e3d30c73",
+  "expected_sha256": "562853c102de946d253c893b984032d9b7525f55638b5390d4ac3d76e3d30c73",
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "The opened asset is the expected Sigma Pi collection; raw Purdue GIS feature FID 776 names Sigma Pi (SOSP) at 130 Russell St. The official Sigma Pi location page and Purdue Off-Campus Housing listing independently identify 130 N Russell. The exported shell bottom was directly compared to all 36 unique GIS vertices; maximum nearest error is 0.000017 m. Current state orthophoto overlay corroborates the GIS ring as roof-plan perimeter.",
+      "uncertainty": "GIS and orthophoto identify the roof outline; the exterior structural wall line and eave offset are not surveyed."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Direct inspection of the loaded mesh gives shell world bounds [[-439.1611328125, -419.6351013183594], [-179.7059326171875, -146.538818359375], [0.25, 9.350000381469727]]; the 36-vertex source ring is reconstructed with max XY error 0.000017 m. Source ring projection reconciles GIS planar EPSG:3857 area/length with the layer values within rounding, and the overlay matches current orthophoto.",
+      "uncertainty": "Plan location and roof perimeter are strong; no surveyed structural wall line or height control is available."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": "The actual saved asset contains a separate triangulated roof mesh with 1436 vertices and 2708 faces, world bounds [[-439.1572570800781, -419.6893005371094], [-179.653076171875, -146.5334014892578], [9.486756324768066, 12.568769454956055]], and 0 nonmanifold edges. The 2018 LiDAR source records 1,094 filtered unclassified surface returns, with percentile roof heights around 9.74\u201312.25 m above local ground; the mesh follows a varied surface rather than a flat cap.",
+      "uncertainty": "The LiDAR returns are class 1 and may include vegetation; no class-6 returns were available. Shell height/story count remain estimates and GIS NUM_LEVELS conflicts with chapter multi-deck clues. Neither current roof structure nor present floor count is measured."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.8,
+      "max_score": 2,
+      "evidence": "The loaded asset has 135 named window objects and 3 named entry/door objects, visible fa\u00e7ade materials and an entry in its saved preview. The 2004 Eta Data supports broad stucco/wood-trim cues and multi-deck use; the undated Off-Campus Housing street-view photo supports masonry lower fa\u00e7ade, Tudor half-timber cues, window tiers, and an entry.",
+      "uncertainty": "The saved preview's fa\u00e7ades are mostly plain, with the half-timber pattern and distinctive fa\u00e7ade organization from the photo not clearly represented. The photo is undated, cropped above the roof, and no raw photo was preserved in the audit; opening count and side/rear details remain unverified."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "The SHA-256 matches the frozen target exactly and the file opened without errors in bpy 4.5.15 LTS; the loaded asset contains 208 collection objects (208 meshes), 0 shell nonmanifold edges, 0 linked libraries, 0 unpacked external images, and 0 unpacked image textures. 12/12 expected key source/evidence files are present.",
+      "uncertainty": "The available inspector is Blender Python 4.5.15, not the builder's Blender 5.2.3; Blender warned that it was reading a newer 5.2 file and removed some UI region data. Mesh geometry was inspected read-only, but a matching 5.2.3 runtime was unavailable. Coordinator manifest reconciliation and master integration remain pending."
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_house_301836568_0fbca0e.blend",
+    "asset_sha256_verified": true,
+    "fresh_open_read_only": true,
+    "inspector_version": "4.5.15 LTS",
+    "newer_file_version_warning": "Asset authored in Blender 5.2.3; read by bpy 4.5.15. No save performed.",
+    "identity": {
+      "FID": 776,
+      "BUILDING_N": "Sigma Pi",
+      "BLDG_ABBR": "SOSP",
+      "ADDRESS": "130 Russell St",
+      "NUM_LEVELS": 1
+    },
+    "collection": "Asset_massing_house_301836568_0fbca0e",
+    "scene": "Building_massing_house_301836568_0fbca0e",
+    "collection_objects": 208,
+    "collection_mesh_objects": 208,
+    "shell": {
+      "name": "SigmaPi_Stucco_Shell_FID776",
+      "vertex_count": 72,
+      "face_count": 38,
+      "nonmanifold_edges": 0,
+      "world_bounds_xyz": [
+        [
+          -439.1611328125,
+          -419.6351013183594
+        ],
+        [
+          -179.7059326171875,
+          -146.538818359375
+        ],
+        [
+          0.25,
+          9.350000381469727
+        ]
+      ],
+      "gis_ring_unique_vertices": 36,
+      "gis_to_shell_bottom_max_nearest_error_m": 1.695725090761422e-05,
+      "gis_to_shell_bottom_mean_nearest_error_m": 8.979604472491037e-06
+    },
+    "roof": {
+      "name": "SigmaPi_Roof_Surface_LiDAR_2018_Interpolated",
+      "vertex_count": 1436,
+      "face_count": 2708,
+      "nonmanifold_edges": 0,
+      "world_bounds_xyz": [
+        [
+          -439.1572570800781,
+          -419.6893005371094
+        ],
+        [
+          -179.653076171875,
+          -146.5334014892578
+        ],
+        [
+          9.486756324768066,
+          12.568769454956055
+        ]
+      ]
+    },
+    "named_window_object_count": 135,
+    "named_entry_or_door_object_count": 3,
+    "linked_libraries": [],
+    "unpacked_external_images": [],
+    "unpacked_external_texture_paths": [],
+    "evidence_files_present": [
+      "source_register.json",
+      "accuracy_record.json",
+      "build_result.json",
+      "reopen_validation.py",
+      "sources/purdue_gis_fid776_sigma_pi_2026-10-26.json",
+      "sources/indiana_current_aerial_sigma_pi_3857_overlay.jpg",
+      "sources/sigma_pi_lidar_surface_analysis.json",
+      "sources/sigma_pi_lidar_roof_mesh.json",
+      "sources/lidar_footprint_comparison_metrics.json",
+      "sources/sigma_pi_eta_data_2004.pdf",
+      "sources/purdue_debris_1932_page323.jpg",
+      "renders/sigma_pi_preview.png"
+    ],
+    "evidence_files_missing": [],
+    "preview": "audit/sigma_pi/renders/sigma_pi_preview.png",
+    "read_only_inspection": true
+  },
+  "findings": [
+    "Identity and exact GIS roof-plan registration are strongly supported by official chapter location, GIS feature, raw geometry, and current aerial overlay.",
+    "The revised asset includes an articulated LiDAR-derived roof surface; this is a clear improvement over the prior flat roof cap, but class-1 returns do not prove roof-only surfaces and the wall height/story count remain estimated.",
+    "Facade evidence has improved with an inspected street-view listing photo, but it is undated and not saved locally; the preview does not show clear Tudor half-timber detailing and has limited distinctive fa\u00e7ade detail.",
+    "The file opened read-only in bpy 4.5.15 and mesh geometry was inspected directly, but an exact-version Blender 5.2.3 independent reopen was unavailable. No asset data was saved or changed.",
+    "Overall score is below the 8/10 gate. Improve source-matched facade detail and strengthen independent verification of height/story and current roof form before passing."
+  ]
+}

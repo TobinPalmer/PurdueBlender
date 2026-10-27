@@ -1,0 +1,97 @@
+{
+  "score": 6.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passes": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "Purdue GIS FID 776 identifies Sigma Pi (SOSP), 130 Russell St; the official Sigma Pi location page independently confirms the chapter house at 130 N. Russell. Shell ring is rebuilt from the GIS outer ring with maximum nearest-vertex difference 0.000017 m.",
+      "deduction": "GIS Shape__Area is 817.39 m2 while the recorded projected ring area is 472.87 m2; the service geometry's correspondence to structural wall line rather than roof edge is unverified."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "The modeled shell reproduces the GIS ring in the project local campus approximation. Its wall bounds are [[-439.1611328125, -419.6351013183594], [-179.7059326171875, -146.538818359375], [0.25, 9.25]]; no independent rotation is introduced.",
+      "deduction": "This verifies registration to the source polygon only, not independently surveyed building walls or dimensions. The GIS area conflict reduces confidence."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.6,
+      "max_score": 2,
+      "evidence": "The 2004 chapter newsletter reports second-/third-deck work, which supports a multi-deck residential form. Asset wall height is 9.0 m, marked as an estimate.",
+      "deduction": "No measured height or authoritative roof survey was found. The flat roof plane is explicitly estimated; source GIS NUM_LEVELS=1 and Extrution=12 conflict with the historical deck reference."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.7,
+      "max_score": 2,
+      "evidence": "Historical source supports broad stucco/wood trim cues; preview shows three window rows, horizontal courses, and a modest entry on the shell.",
+      "deduction": "No inspected current facade photo, plan, or elevation supports window rhythm, counts, entry placement, or roof silhouette. These features are model estimates, not source-verified architectural details."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Saved asset reopens under Blender 5.2.3; the expected named asset collection and scene exist, with one building library and no external unpacked image/material texture paths. The audit includes a raw GIS snapshot, historical PDF, source register, reopen record, and preview.",
+      "deduction": "None. The manifest discrepancy and pending master integration are recorded separately as coordinator handoff findings; they do not reduce this criterion's asset export, portability, or evidence score."
+    }
+  ],
+  "evidence": {
+    "blender_version": "5.2.3 LTS",
+    "asset_sha256": "606484f5812b1d690e66cb66bb2ff4b412b354ba95a94d01ab59870ac4cdcd7b",
+    "identity": {
+      "FID": 776,
+      "BUILDING_N": "Sigma Pi",
+      "BLDG_ABBR": "SOSP",
+      "ADDRESS": "130 Russell St",
+      "OWNER": "GREEK"
+    },
+    "source_ring_vertices": 36,
+    "shell_bottom_vertices": 36,
+    "shell_top_vertices": 36,
+    "source_to_shell_nearest_error_max_m": 1.695725090761422e-05,
+    "shell_bounds_m": [
+      [
+        -439.1611328125,
+        -419.6351013183594
+      ],
+      [
+        -179.7059326171875,
+        -146.538818359375
+      ],
+      [
+        0.25,
+        9.25
+      ]
+    ],
+    "export_collection_object_count": 186,
+    "export_collection_mesh_count": 186,
+    "export_collection_transform": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "scene_present": true,
+    "roof_object_present": true,
+    "detail_object_count": 138,
+    "unpacked_external_images": [],
+    "unpacked_material_texture_paths": [],
+    "gis_area_attribute_m2": 817.39453125,
+    "source_register_present": true,
+    "raw_gis_snapshot_present": true,
+    "raw_historical_newsletter_present": true,
+    "reopen_record_present": true,
+    "preview_present": true,
+    "historical_source_summary": "The November 2004 Eta Data newsletter describes a 1912 older section, an addition rededicated in 1989, stucco/wood-trim exterior work, and second-/third-deck work. It provides no measured dimensions, facade schedule, or roof survey."
+  },
+  "findings": [
+    "Strong source-derived campus footprint and identity; the registered shell tracks the GIS ring to sub-millimeter precision.",
+    "GIS ring area and Shape__Area attribute conflict substantially; wall-to-ring alignment is not independently established.",
+    "Height, roof form, windows, and entrance remain mostly estimated due lack of inspected current facade imagery or measured plans.",
+    "Shared manifest still has stale original object count and 16 m bounds; coordinator should update it before closing the building handoff."
+  ]
+}
