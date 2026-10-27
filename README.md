@@ -4,7 +4,7 @@ This project covers Purdue West Lafayette campus buildings and Purdue-operated r
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.json) passed for 102/102 detailed placement markers and 1,938 linked libraries, with no missing library files.
+Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.json) passed for 103/103 detailed placement markers and 1,938 linked libraries, with no missing library files.
 ## Detailed models: status and latest grader score (209 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
@@ -13,7 +13,7 @@ Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.j
 | Acacia | [massing_house_301841251_8a9a05b.blend](modular/buildings/massing_house_301841251_8a9a05b.blend) | Finished | [8.35/10](audit/acacia/independent_grade_r2/result.json) | — |
 | Agricultural Administration Building | [agricultural_administration_building.blend](modular/buildings/agricultural_administration_building.blend) | Finished | 8.5/10 | — |
 | Agricultural and Biological Engineering | [agricultural_and_biological_engineering_abe.blend](modular/buildings/agricultural_and_biological_engineering_abe.blend) | Finished | 8.0/10 | — |
-| Alpha Chi Omega | [alpha_chi_omega_fid765.blend](modular/buildings/alpha_chi_omega_fid765.blend) | In progress; revising roof silhouette, dormers and entry arches after 7.7/10 grade | [7.7/10](audit/alpha_chi_omega_fid765/independent_grade_r1/grade_report.md) | Tobin |
+| Alpha Chi Omega | [alpha_chi_omega_fid765.blend](modular/buildings/alpha_chi_omega_fid765.blend) | Finished; integrated and fresh-open verified; roof still broad versus reference and interior remains schematic | [8.1/10](audit/alpha_chi_omega_fid765/independent_grade_r2/grade_report.md) | — |
 | Alpha Chi Rho | [massing_alpha_chi_rho_0cb591a.blend](modular/buildings/massing_alpha_chi_rho_0cb591a.blend) | Finished | [8.15/10](audit/alpha_chi_rho_independent_grade_r2/result.json) | — |
 | Alpha Epsilon Pi | [alpha_epsilon_pi.blend](modular/buildings/alpha_epsilon_pi.blend) | Finished; current address/roof match modeled, GIS name conflict remains | [8.25/10](audit/alpha_epsilon_pi/independent_grade_revision_2/result.json) | — |
 | Alpha Gamma Rho | [massing_house_301841253_f0b3be3.blend](modular/buildings/massing_house_301841253_f0b3be3.blend) | Finished | [8.4/10](audit/alpha_gamma_rho/independent_grade_master_integration/master_integration_grade.json) | — |
@@ -221,7 +221,7 @@ Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.j
 
 ## Unfinished buildings (49 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 45 current map projects below plus two newer West Lafayette construction projects make 47 unfinished projects. Open assignment records: Tobin 9, Rossen 8, Kyle 10, Rohan 0, Arjav 20, Brady 0. Seven of the 14 former Rohan projects were assigned to Tobin and seven to Rossen; four of Tobin’s and all seven of Rossen’s former Rohan projects remain open after Brees, Felix Haas Hall, and Heine Pharmacy were completed. There are no buildings currently assigned to Brady. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, Heine Pharmacy, Kappa Alpha Theta, Convergence Center, and Gamma Phi Beta are synchronized to the master and removed from the open queue. Rossen’s eight remaining records comprise five buildings and three unresolved facility-research leads; the leads are not confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 27 projects; 20 remain with Arjav.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 44 current map projects below plus two newer West Lafayette construction projects make 46 unfinished projects. Open assignment records: Tobin 8, Rossen 8, Kyle 10, Rohan 0, Arjav 20, Brady 0. Seven of the 14 former Rohan projects were assigned to Tobin and seven to Rossen; four of Tobin’s and all seven of Rossen’s former Rohan projects remain open after Brees, Felix Haas Hall, and Heine Pharmacy were completed. There are no buildings currently assigned to Brady. The 28 passing Rossen models, 12 passing Kyle models, Brees, Felix Haas Hall, Heine Pharmacy, Kappa Alpha Theta, Convergence Center, Gamma Phi Beta, and Alpha Chi Omega are synchronized to the master and removed from the open queue. Rossen’s eight remaining records comprise five buildings and three unresolved facility-research leads; the leads are not confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 26 projects; 20 remain with Arjav.
 
 ### New West Lafayette construction projects (2)
 
@@ -232,10 +232,9 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models still in progress or awaiting a passing grade (4)
+### Detailed models still in progress or awaiting a passing grade (3)
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
-| Alpha Chi Omega | [`alpha_chi_omega_fid765.blend`](modular/buildings/alpha_chi_omega_fid765.blend) | 7.7/10 | Tobin |
 | Elliott Hall Of Music | [`elliott_hall_of_music.blend`](modular/buildings/elliott_hall_of_music.blend) | 7.1/10 | Rossen |
 | Ford Dining Court | [`ford_dining_court.blend`](modular/buildings/ford_dining_court.blend) | 6.8/10 | Rossen |
 | Hall for Discovery and Learning Research | [`hall_for_discovery_and_learning_research.blend`](modular/buildings/hall_for_discovery_and_learning_research.blend) | 7.3/10 | Rossen |
@@ -280,11 +279,10 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Sigma Alpha Mu | A founding president's public profile supports that the Purdue chapter secured a house lease; 930 N Grant is a plausible candidate from the chapter's Aug. 2026 rush post, but no source links the lease to that address | Research lead remains open. Provisional 930 N Grant model scored [6/10](audit/sigma_alpha_mu/independent_grade_codex_r1/result.json) and is not accepted; see the [residence identity addendum](audit/sigma_alpha_mu/residence_identity_research_2026-10-27_addendum.md), [independent identity challenge](audit/sigma_alpha_mu/identity_challenge_930_n_grant_2026-10-27.md), and [address-record crosswalk addendum](audit/sigma_alpha_mu/residence_identity_address_records_2026-10-27_addendum.md) | Rossen |
 | Zeta Psi | Tau Gamma affiliation is current and its live profile still lists 950 David Ross; Chi Psi's 2024 Lodge announcement names the same address. A supposed 2023 Tau Gamma house-move report was misattributed from Tau Theta/Ontario Tech | No defensible current occupancy/footprint crosswalk yet; see the [corrected 2026-10-27 crosswalk recheck](audit/zeta_psi/occupancy_recheck_2026-10-27_addendum10.md), [Indiana entity-registry lead](audit/zeta_psi/occupancy_recheck_2026-10-27_addendum11.md), and [build feasibility assessment](audit/zeta_psi/build_feasibility_2026-10-26.md) | Rossen |
 
-#### Panhellenic chapters and house coverage (11 unfinished houses; two chapters have no house)
+#### Panhellenic chapters and house coverage (10 unfinished houses; two chapters have no house)
 
 | House / building | GIS FID and asset | Work status | Assigned to |
 | --- | --- | --- | --- |
-| Alpha Chi Omega | FID 765; [alpha_chi_omega_fid765](modular/buildings/alpha_chi_omega_fid765.blend) detailed model; [massing_house_301841602_8190d79](modular/buildings/massing_house_301841602_8190d79.blend) source candidate | In progress; model uses GIS-derived shell/origin and has a 7.7/10 first grade; revising source-visible roof, dormers and entrance arches | Tobin |
 | Kappa Delta | No reliable map FID; New asset/source mapping required | No official map feature or asset; research the chapter-house location | Tobin |
 | Alpha Gamma Delta | FID 757; [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Massing asset; verify and detail | Arjav |
 | Kappa Kappa Gamma | FID 782; [massing_house_301840871_5d1bc06](modular/buildings/massing_house_301840871_5d1bc06.blend) | Massing asset; verify and detail | Arjav |
@@ -697,7 +695,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 762 | Zeta Beta Tau (current sources) / Phi Kappa Theta (historic GIS label) | [massing_house_301841332_9b3bd1f](modular/buildings/massing_house_301841332_9b3bd1f.blend) is independently graded 8.5/10; [massing_house_301841334_fa7e5a2](modular/buildings/massing_house_301841334_fa7e5a2.blend) remains a separate nearby candidate outside this assignment | One GIS feature at 900 David Ross; current ZBT identity is source-supported; the stable FID 762 asset now matches the transformed roof ring within 0.000043 m; Phi Kappa Theta's current site remains unresolved. See audit/zeta_beta_tau/crosswalk_resolution.md |
 | 763 | Alpha Sigma Phi | [massing_house_301841603_654031c](modular/buildings/massing_house_301841603_654031c.blend) | Integrated detailed asset; independent grade 8.2/10; master fresh-open PASS; story count/facade details remain uncertain |
 | 764 | Alpha Phi | [massing_house_301841331_735e92f](modular/buildings/massing_house_301841331_735e92f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 765 | Alpha Chi Omega | [alpha_chi_omega_fid765](modular/buildings/alpha_chi_omega_fid765.blend) (detailed)<br>[massing_house_301841602_8190d79](modular/buildings/massing_house_301841602_8190d79.blend) (source candidate) | FID 765 identity, GIS shell/origin and portability supported; first independent grade 7.7/10; roof, dormers and arches undergoing revision |
+| 765 | Alpha Chi Omega | [alpha_chi_omega_fid765](modular/buildings/alpha_chi_omega_fid765.blend) (detailed)<br>[massing_house_301841602_8190d79](modular/buildings/massing_house_301841602_8190d79.blend) (source candidate) | FID 765 identity, GIS shell/origin, and master placement verified; independently graded 8.1/10 and fresh-open PASS; roof and interior limitations documented |
 | 766 | Twin Pines | [massing_twin_pines_cooperative_8f606f9](modular/buildings/massing_twin_pines_cooperative_8f606f9.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 767 | Phi Sigma Kappa | [massing_house_301934833_f6640d1](modular/buildings/massing_house_301934833_f6640d1.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 768 | SO115 | [massing_house_1035795838_d0eb5ac](modular/buildings/massing_house_1035795838_d0eb5ac.blend)<br>[massing_house_301921256_ccfad26](modular/buildings/massing_house_301921256_ccfad26.blend) | Direct FID crosswalk candidate; geometry/grade still require review |

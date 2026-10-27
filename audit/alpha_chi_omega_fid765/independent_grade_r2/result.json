@@ -1,0 +1,52 @@
+{
+  "asset_path": "modular/buildings/alpha_chi_omega_fid765.blend",
+  "evaluated_sha256": "6b78e8672babcdabe630369fdd6d441ce5b9b7e061378a21186881e241763be3",
+  "score": 8.1,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Identity and site",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Archived Purdue ArcGIS BuildingShapesZip4 feature FID 765 identifies SOACO / Alpha Chi Omega at 851 David Ross Rd. The recorded origin (-1081.0865435, 817.2396546) m matches the source polygon centroid using the repository's documented local approximation."
+    },
+    {
+      "name": "Footprint and form",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "The detailed shell and foundation follow the official FID 765 GIS polygon after removal of sub-0.08 m snap segments. The GIS/massing overlay supports choosing this polygon over the divergent rough massing candidate. Site coordinates remain an approximate local transform rather than survey-grade positioning."
+    },
+    {
+      "name": "Facade and material fidelity",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": "Compared with R1, the candidate render now shows three unmistakable semicircular entrance bays, thicker pale supports, a balcony/rail directly above them, and narrower taller roof dormers. Red brick, dark roof, central gable/sign, limestone trim, chimney, and three visible window levels correspond to the chapter-owned 2016 rendering. Remaining difference: the roof still reads as a very broad, high hipped/mansard cap with a wide flat upper plane, and its overall roof-to-wall proportion is larger than the reference; the reference has a more compact, steep dormered roof and more prominent upper facade/balcony. Six modeled dormers also do not match the denser source rhythm exactly."
+    },
+    {
+      "name": "Interior",
+      "score": 0.9,
+      "max_score": 2,
+      "evidence": "The evidence continues to label floor plates, corridor bars, and basement common/dining furniture as schematic and nondimensional. No georegisterable or dimensioned plan was found, so the model does not establish room layout or interior dimensions."
+    },
+    {
+      "name": "Portability and fresh-open validation",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "The exact file SHA matches the requested R2 revision. Fresh-open validation reports the expected scene and export collection, 834 objects / 832 meshes, and no external file images, image texture nodes, or linked Blender libraries."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "minor",
+      "finding": "Roof cap remains broader and visually heavier than the chapter rendering, despite the more legible sloped mansard band and taller dormers.",
+      "recommended_fix": "If another refinement is warranted, reduce the flat upper plane and overall roof mass, increase the steep mansard shoulder, and tune the dormer count/spacing against the source image. Retain height labels as estimates unless new evidence supports measured values."
+    },
+    {
+      "severity": "limitation",
+      "finding": "Interior layout and dimensions remain unverified.",
+      "recommended_fix": "Continue to label the interior schematic unless a dimensioned or georegisterable plan becomes available."
+    }
+  ]
+}

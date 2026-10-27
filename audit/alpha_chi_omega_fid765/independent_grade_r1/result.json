@@ -1,0 +1,57 @@
+{
+  "asset_path": "modular/buildings/alpha_chi_omega_fid765.blend",
+  "evaluated_sha256": "e2d7f8724084fc10394acdb84e85b8509f8f12a7e267f67d9bd3cfeb7b11f117",
+  "score": 7.7,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Verified identity and site placement",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "Archived Purdue ArcGIS BuildingShapesZip4 feature FID 765 identifies SOACO / Alpha Chi Omega at 851 David Ross Rd. The archived source polygon centroid is (-1081.0865435, 817.2396546) m in the documented local transform, matching the asset origin to sub-millimeter precision."
+    },
+    {
+      "name": "Footprint and form",
+      "score": 1.8,
+      "max_score": 2,
+      "evidence": "The builder constructs the foundation and exterior wall ring from the official FID 765 polygon after documented removal of sub-0.08 m snap segments. The overlay shows the GIS polygon separately from the rough massing candidate, and the detailed shell follows the GIS footprint. The transform is a project-local approximation and should not be represented as surveyed georeferencing."
+    },
+    {
+      "name": "Facade, materials, and source fidelity",
+      "score": 0.9,
+      "max_score": 2,
+      "evidence": "The render has red brick, dark roof, a centered AXΩ gable, balcony rail, chimney, limestone trim, and repeated windows, consistent with broad cues in the chapter-owned Spring 2016 rendering. However, the modeled roof reads as a large, shallow pyramidal/hipped mass with a broad flat top; the reference has a dark, steep, dormered mansard-like roof with taller vertical dormer windows. The render's six short block dormers are substantially unlike the reference's tall repeated dormers. The three entry bays also read as squared dark openings under a broad balcony rather than the reference's prominent stone-trimmed round arches."
+    },
+    {
+      "name": "Interior",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": "The asset contains schematic floor plates, corridor bars, and basement dining/common furniture, but the evidence explicitly says the interior is nondimensional and no georegisterable plan was found. The available newsletter only supports broad basement use labels, not room geometry. This is a useful placeholder, not a source-verified interior."
+    },
+    {
+      "name": "Portability and fresh-open validation",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": "The saved asset hash matches the requested SHA. Fresh-open validation reports the expected scene and export collection, 834 objects (832 meshes), no external image files or image texture nodes, and no linked Blender libraries. The procedural materials and native text/mesh geometry are self-contained."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "major",
+      "finding": "Roof silhouette and dormers are the strongest mismatch against the chapter-owned exterior rendering.",
+      "recommended_fix": "Replace the broad pyramid-like roof shell with a steeper mansard-like roof profile and raise/narrow the dormers so they read as tall vertical windows; retain the documented 12.8 m peak as an estimate unless better height evidence is found."
+    },
+    {
+      "severity": "major",
+      "finding": "The signature three-bay entrance arcade is not legible as three substantial round arches in the saved frontal render.",
+      "recommended_fix": "Rebuild the three front bays with clear semicircular stone arch surrounds and visible columns/piers, matching the 2016 rendering's taller arcade and upper balcony relationship."
+    },
+    {
+      "severity": "limitation",
+      "finding": "Interior layout and story heights lack an independently georegisterable or dimensioned plan.",
+      "recommended_fix": "Keep interior claims labeled schematic; only refine when a dimensioned or otherwise registerable plan is found."
+    }
+  ]
+}
