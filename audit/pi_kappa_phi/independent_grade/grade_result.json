@@ -1,0 +1,110 @@
+{
+  "building_id": "massing_pi_kappa_phi_50e4645",
+  "candidate_commit": "ec62153bbb1f79c8850e9737892dea2baad51ca3",
+  "asset_path": "modular/buildings/massing_pi_kappa_phi_50e4645.blend",
+  "asset_sha256": "5fb0a1ff41c5c5e6b811987051e03bd9c9750c39a128a35b2cb84569b4401694",
+  "commit_lfs_asset_sha256": "5fb0a1ff41c5c5e6b811987051e03bd9c9750c39a128a35b2cb84569b4401694",
+  "hash_matches_commit": true,
+  "score": 8.4,
+  "max_score": 10,
+  "pass": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS snapshot feature FID 799 identifies Pi Kappa Phi at 330 N Grant; official chapter history and Purdue BoilerLink corroborate chapter/address.",
+        "Build script uses that feature ring directly for the wall perimeter; build evidence reports transformed plan dimensions 16.4906 by 23.2054 m and 341.9657 m2.",
+        "Official 2019 and 2023 photos show the same post-fire house at the address."
+      ],
+      "findings": [
+        "Footprint confidence is strong for identity/location, but source Shape__Area/Shape__Length conflict with coordinate-derived measures; builder appropriately records and avoids using those attributes."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": [
+        "GIS WGS84 footprint transformed with the documented campus approximation; candidate world XY bounds match transformed polygon extent (300.1518\u2013317.6823 E, -89.3119\u2013-65.6666 N).",
+        "West/front orientation is supported by BZA staff report west setback along Grant Street.",
+        "Fresh-reopen log records finite evaluated bounds matching the candidate dimensions."
+      ],
+      "findings": [
+        "No surveyed control point or explicit independent placement-marker cross-check is in this massing asset review; campus coordinate approximation has small systematic uncertainty."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": [
+        "2019/2023 photos show two occupied levels, attic/dormer elements, and intersecting gabled roof forms.",
+        "Candidate carries the GIS plan to 9.4 m estimated wall height and 14.0 m maximum roof height; evidence labels heights as estimates, not measurements."
+      ],
+      "findings": [
+        "No measured elevation or confirmed story count was retrieved. Roof pitches, ridge heights, and dormer proportions are inferred. Aerial render combines broad roof planes and does not establish concealed roof geometry."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": [
+        "Official chapter photos support pale gray stone cladding, paired round-headed entrance openings, repeated dark windows, gabled wings, and central dormers.",
+        "Front preview reproduces paired arches, fenestration rhythm, stone-course motif, gable composition, and four dormers."
+      ],
+      "findings": [
+        "Direct image comparison shows the model front is substantially flatter and more regular than the photographed facade: photographed wings and bays have strong depth/setback changes, while most modeled west wall remains one plane. Window positions/proportions and roof transitions are approximate; material is more tan than the source image."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Expected stable asset path, scene, and collection names are present in manifest and build evidence.",
+        "Committed fresh-reopen validation log reports Blender 5.2.3, 239 scene/collection mesh objects, expected collection, and finite bounds; the two saved preview renders and structured source/lifecycle registers are present.",
+        "Asset is an individual campus-coordinate massing library and the script uses project-relative paths. No external image textures are required by the asset."
+      ],
+      "findings": [
+        "The independent grading environment has no Blender executable and the live Blender MCP was unreachable, so I could not personally perform a second fresh reopen. I verified the committed reopen log and exact asset bytes/hash against the target commit."
+      ]
+    }
+  ],
+  "evidence": {
+    "source_feature_id": 799,
+    "source_ring_vertices": 8,
+    "model_object_count": 239,
+    "model_world_bounds_m": {
+      "min": [
+        300.1518,
+        -89.3119,
+        0.0
+      ],
+      "max": [
+        317.6823,
+        -65.6666,
+        14.0
+      ]
+    },
+    "reported_height_status": "Estimated maximum 14.0 m; not measured.",
+    "fresh_reopen_log": "00:02.344  blend            | Read blend: \"C:\\Users\\gotse\\Documents\\Codex\\2026-10-25\\github-plugin-github-openai-curated-remote\\outputs\\PurdueBlender\\modular\\buildings\\massing_pi_kappa_phi_50e4645.blend\"\nFRESH_REOPEN {\"version\": \"5.2.3 LTS\", \"scene\": \"Building_massing_pi_kappa_phi_50e4645\", \"collection_exists\": true, \"object_count\": 239, \"collection_objects\": 239, \"types\": {\"MESH\": 239}, \"bounds\": {\"min\": [300.1517639160156, -89.31193542480469, 0.0], \"max\": [317.68231201171875, -65.66658020019531, 14.0]}}\nBlender 5.2.3 LTS (hash e13b728c6880 built 2026-10-22 01:37:16)\n\nBlender quit",
+    "rendered_views": [
+      "audit/pi_kappa_phi/preview_front.png",
+      "audit/pi_kappa_phi/preview_aerial.png"
+    ],
+    "independent_inspection": [
+      "Compared both rendered views directly with chapter exterior photos from 2019 and 2023.",
+      "Verified current .blend SHA256 equals the asset bytes stored in the candidate commit.",
+      "Reviewed GIS source snapshot, chapter source register, lifecycle evidence, build script and reopen log."
+    ]
+  },
+  "findings": [
+    "Passes the 8/10 minimum at the boundary-adjacent score.",
+    "Most consequential remaining visual fidelity issue is missing facade depth/bay articulation; height and roof dimensions remain estimates.",
+    "Lifecycle decision to model the extant house is appropriately cautious: May 2026 zoning variance approval is not treated as proof of demolition/construction, and August 2026 chapter use is documented.",
+    "Independent fresh Blender reopen could not be run in this grader environment; saved candidate validation was reviewed instead."
+  ]
+}
