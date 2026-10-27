@@ -1,0 +1,79 @@
+{
+  "score": 8.5,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Raw Purdue BuildingShapesZip4 FID 760 labels BUILDING_N='Theta Chi', ADDRESS='800 David Ross Rd'.",
+        "Saved official chapter housing source is independently registered and identifies the Alpha Delta house at the same address.",
+        "Fresh Blender base vertices at Z=0 match the 10 unique projected GIS ring vertices; maximum nearest-vertex error 0.000049 m."
+      ],
+      "status": "verified"
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.75,
+      "max_score": 2,
+      "evidence": [
+        "The 10-point structural ground ring matches the transformed GIS boundary within 0.000049 m; XY bounds are independently recoverable from the fresh Blender mesh.",
+        "GIS ring supplies polygon orientation and dimensions; coordinates use the documented project WGS84-to-campus approximation.",
+        "Photo-to-compass facade bearing is not registered, so correspondence between photographed front and selected GIS long face remains estimated."
+      ],
+      "status": "mostly verified; facade-to-compass registration estimated"
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "Independent inspection confirms mesh Z range 0.0\u20138.8 m; two occupied levels and a low roof are visible in the two saved official exterior photographs.",
+        "The 8.8 m ridge/eave heights and story dimensions have no scaled photo, plan, or survey support and are estimates.",
+        "The GIS NUM_LEVELS=1 conflicts with the two visible levels; the modeled roof is a simplified low hip whose exact silhouette is not established by measured evidence."
+      ],
+      "status": "partly supported; vertical dimensions and precise roof silhouette estimated"
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": [
+        "Direct comparison of saved official chapter photos with preview supports red brick, pale base/trim, two-level windows, entrance accent, and three arched porch bays.",
+        "The model carries these features in simplified geometry; photo-scale, window dimensions, exact facade bearing, and unseen elevations are unavailable.",
+        "The broad horizontal cream band/cornice and layered roof setbacks visible in the photo are simplified or omitted, limiting facade fidelity."
+      ],
+      "status": "partly supported; simplified and incomplete architectural detail"
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Fresh Blender 5.2.3 LTS process reopened the expected one-object mesh collection; 1810 vertices and 1304 faces; identity object transform and no modifiers.",
+        "Fresh reopen found no external images or linked libraries. Asset SHA-256 is 09dfab7f1478da679678036e36cdae64f50c019ce72265ababcb3c48631756e5.",
+        "Building-specific source snapshots, source register, evidence record, footprint comparison, validation record, preview, and dedicated build script are present."
+      ],
+      "status": "verified"
+    }
+  ],
+  "evidence": {
+    "asset": "modular/buildings/massing_house_301841328_39f169f.blend",
+    "asset_sha256": "09dfab7f1478da679678036e36cdae64f50c019ce72265ababcb3c48631756e5",
+    "fresh_blender_inspection": "audit/theta_chi/independent_grade/asset_inspection.json",
+    "gis_source": "audit/theta_chi/sources/purdue_gis_fid760_2026-10-26.json",
+    "source_register": "audit/theta_chi/source_register.json",
+    "preview": "audit/theta_chi/renders/theta_chi_preview.png",
+    "max_base_ring_nearest_vertex_error_m": 4.9116785416382155e-05,
+    "identity_and_footprint_checks_pass": true,
+    "modular_export_check_pass": true
+  },
+  "findings": [
+    "PASS: score meets the repository's 8/10 minimum.",
+    "The GIS base ring is exceptionally well supported and numerically matches the official named feature.",
+    "The asset's elevations and photo-to-map facade bearing remain estimates; these should stay explicit in downstream records.",
+    "No interior, unseen elevations, measured height, or detailed roof construction is verified by the available sources."
+  ],
+  "result": "PASS"
+}

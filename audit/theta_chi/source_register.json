@@ -1,0 +1,72 @@
+{
+  "building_id": "massing_house_301841328_39f169f",
+  "building_name": "Theta Chi (Alpha Delta Chapter)",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "id": "purdue_gis_fid760",
+      "provider": "Purdue University campus GIS, BuildingShapesZip4 layer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D760&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": "FID 760",
+      "snapshot": "sources/purdue_gis_fid760_2026-10-26.json",
+      "metadata_snapshot": "sources/purdue_gis_layer_metadata_2026-10-26.json",
+      "source_crs": "WGS 84 (EPSG:4326) in saved query geometry; source layer is Web Mercator (WKID 102100/3857)",
+      "measurement_method": "The saved polygon ring was converted to the project local campus XY frame using the formula documented in modular/AGENTS.md.",
+      "supports": ["official FID identity", "building label", "800 David Ross Rd address", "GIS footprint polygon"],
+      "uncertainty": "Purdue GIS reports NUM_LEVELS=1 and an extrusion field of 12, which conflict with/are not directly reconcilable with the two-story exterior photographs. These attributes were not used for modeled height. Shape__Area is planar Web Mercator area and was not treated as ground area."
+    },
+    {
+      "id": "theta_chi_chapter_housing",
+      "provider": "Purdue Theta Chi Alpha Delta Chapter (official chapter website)",
+      "url": "https://purduethetachi.com/about-us/housing-information/",
+      "snapshot": "sources/theta_chi_official_housing_2026-10-26.html",
+      "source_date": "Current page retrieved 2026-10-26; publication date not shown",
+      "measurement_method": "Direct textual address statement",
+      "supports": ["chapter house identity", "800 David Ross Road", "Tower Acres location", "1999 renovation"],
+      "uncertainty": "No measured dimensions or facade elevations are given."
+    },
+    {
+      "id": "theta_chi_chapter_history",
+      "provider": "Purdue Theta Chi Alpha Delta Chapter (official chapter website)",
+      "url": "https://purduethetachi.com/about-us/",
+      "snapshot": "sources/theta_chi_official_history_2026-10-26.html",
+      "source_date": "Current page retrieved 2026-10-26; publication date not shown",
+      "measurement_method": "Direct textual building history",
+      "supports": ["present house at 800 David Ross Road", "present house built 1966", "renovated 1999"],
+      "uncertainty": "No architectural drawings or dimensions are given."
+    },
+    {
+      "id": "theta_chi_national_exterior_photo",
+      "provider": "Theta Chi Fraternity (official national chapter page)",
+      "page_url": "https://thetachi.org/chapter/alpha-delta/",
+      "image_url": "https://cdn.zephyrcms.com/2e3e0d69-fa94-4429-96d8-ad9f3ca51544/-/progressive/yes/alpha-delta-haus.jpg",
+      "snapshot": "sources/theta_chi_national_alpha_delta_house.jpg",
+      "source_date": "Photo date not given; retrieved 2026-10-26",
+      "measurement_method": "Visual facade observation",
+      "supports": ["red brick elevations", "light masonry plinth and trim", "two visible occupied levels", "low dark hipped roof", "tall entrance accent with arched window and chapter panel", "three arched entrance bays"],
+      "uncertainty": "Single winter oblique view; no measured scale, roof framing, or unseen elevations."
+    },
+    {
+      "id": "theta_chi_archived_exterior_photo",
+      "provider": "Theta Chi Alpha Delta chapter legacy page hosted by Purdue University",
+      "page_url": "https://web.ics.purdue.edu/~thetachi/index_files/Page474.htm",
+      "image_url": "https://web.ics.purdue.edu/~thetachi/index_files/image316.jpg",
+      "snapshot": "sources/image316.jpg",
+      "source_date": "EXIF DateTime 2004-05-02 03:08:20; page describes house renovation in 1999",
+      "measurement_method": "EXIF date extraction and visual facade observation",
+      "supports": ["same red brick and pale trim house", "two-level fenestration", "hipped roof with a front entrance gable/accent", "overall low-rise residential massing"],
+      "uncertainty": "Camera bearing and photographic scale unavailable; trees obscure part of facade."
+    },
+    {
+      "id": "osm_way_301841328",
+      "provider": "OpenStreetMap API",
+      "url": "https://api.openstreetmap.org/api/0.6/way/301841328/full.json",
+      "snapshot": "sources/osm_way_301841328_full.json",
+      "source_date": "Way timestamp 2024-01-08; member-node timestamps 2024-09-29",
+      "source_crs": "WGS 84 (EPSG:4326)",
+      "measurement_method": "OSM polygon vertices transformed with the project local-coordinate approximation and compared with GIS FID 760 using Shapely polygons.",
+      "supports": ["spatial candidate association for stable asset ID massing_house_301841328_39f169f"],
+      "uncertainty": "OSM way is tagged building=school and has no chapter/address identity. Association is spatial only; identity is established by Purdue FID 760 plus the chapter's matching address, not by the OSM tag."
+    }
+  ]
+}
