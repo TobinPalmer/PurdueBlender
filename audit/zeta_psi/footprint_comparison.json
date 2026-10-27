@@ -1,0 +1,51 @@
+{
+  "review_date": "2026-10-26",
+  "building_id": "massing_house_301841600_c1351aa",
+  "asset_path": "modular/buildings/massing_house_301841600_c1351aa.blend",
+  "asset_sha256": "7e6194d86eb4ce7a75303ba27605d0a907425b81ffd9d0b14204e6dbcc8a77e4",
+  "candidate_ground_polygon_project_approx": [
+    [-926.0809326171875, 808.3712158203125],
+    [-938.480224609375, 787.7066650390625],
+    [-921.9166870117188, 777.8463134765625],
+    [-909.5173950195312, 798.5108642578125]
+  ],
+  "conversion": "Project local approximation: X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. Source geometry queried in EPSG:4326. This is not a surveyed CRS.",
+  "candidate_area_approx_m2": 464.539357,
+  "purdue_fid748": {
+    "source_snapshot": "sources/purdue_gis_FID748_2026-10-26.json",
+    "feature_id": 748,
+    "name": "Zeta Psi",
+    "address": "950 David Ross Rd",
+    "shape_area_attribute": 1177.921875,
+    "converted_ring_area_approx_m2": 681.354532,
+    "candidate_iou": 0.422212,
+    "candidate_fraction_covered_by_fid_ring": 0.732298,
+    "fid_ring_fraction_covered_by_candidate": 0.499272,
+    "centroid_separation_m": 6.241558,
+    "interpretation": "Address and broad location agree; ring does not tightly fit candidate. GIS shape-area attribute and approximate converted ring area also differ materially."
+  },
+  "indiana_2018_lidar": {
+    "source_snapshot": "sources/indiana_lidar_footprints_near_fid748_2026-10-26.json",
+    "objectid": 409718,
+    "lidaryear": 2018,
+    "shape_area_attribute": 817.4508044166972,
+    "converted_ring_area_approx_m2": 472.843589,
+    "candidate_iou": 0.828556,
+    "candidate_fraction_covered_by_lidar": 0.914341,
+    "lidar_fraction_covered_by_candidate": 0.898283,
+    "centroid_separation_m": 1.611613,
+    "interpretation": "Strong match to the physical roof/building outline at the same parcel, not proof of chapter occupancy. Source Shape__Area differs from the approximate transformed ring area; compare shape spatially rather than treating those areas as interchangeable."
+  },
+  "parcel": {
+    "source_snapshot": "sources/tippecanoe_parcel_at_fid748_2026-10-26.json",
+    "objectid": 5926645,
+    "address": "950 DAVID ROSS RD",
+    "parcel_no": "79-06-13-476-005.000-029",
+    "parcel_area_source_units_sqft": 52204.947842
+  },
+  "occupancy_conflict": {
+    "chi_psi_primary_source": "sources/chipsi_alumni_newsletter_summer_2024.pdf",
+    "zeta_psi_primary_source": "sources/zetapsi_tau_gamma_2023_chapter_report.pdf",
+    "note": "Chi Psi's July 2024 newsletter assigns the pictured new Lodge at 950 David Ross Rd; Zeta Psi's 2023 report says Tau Gamma moved its chapter house during 2022; Zeta Psi's current social profile also repeats 950 David Ross Rd. The physical association and current occupancy therefore remain conflicted."
+  }
+}

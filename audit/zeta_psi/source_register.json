@@ -1,0 +1,89 @@
+{
+  "building_id": "massing_house_301841600_c1351aa",
+  "assigned_name": "Zeta Psi / Tau Gamma",
+  "review_date": "2026-10-26",
+  "disposition": "Crosswalk unresolved; no modeling, asset edits, or grade requested.",
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer, layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D748&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 748,
+      "retrieved": "2026-10-26",
+      "source_crs": "EPSG:4326 output; layer metadata snapshot retained",
+      "evidence": "GIS name Zeta Psi, abbreviation SOZY, owner GREEK, address 950 David Ross Rd, source polygon",
+      "snapshot": "sources/purdue_gis_FID748_2026-10-26.json",
+      "metadata_snapshot": "sources/purdue_gis_buildings_metadata_2026-10-26.json"
+    },
+    {
+      "provider": "Indiana Geographic Information Office hosted Building Footprints FeatureServer",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0/query?geometry=-86.924604%2C40.434486&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 409718,
+      "source_date": "2018 LiDAR building footprints",
+      "retrieved": "2026-10-26",
+      "source_crs": "EPSG:4326 output",
+      "evidence": "Independent building footprint at the candidate's address; geometric match to candidate shell",
+      "snapshot": "sources/indiana_lidar_footprints_near_fid748_2026-10-26.json"
+    },
+    {
+      "provider": "Tippecanoe County parcel GIS (Schneider Corp ArcGIS service; parcel layer 58)",
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/58/query?geometry=-86.9246%2C40.43449&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": "OBJECTID 5926645",
+      "retrieved": "2026-10-26",
+      "source_crs": "EPSG:4326 output; layer source uses WKID 2966",
+      "evidence": "Parcel and situs address 950 DAVID ROSS RD",
+      "snapshot": "sources/tippecanoe_parcel_at_fid748_2026-10-26.json"
+    },
+    {
+      "provider": "Chi Psi, Purdue Alpha Epsilon Tau official alumni newsletter",
+      "url": "https://chipsi.org/wp-content/uploads/2025/07/Chi-Psi-Alumni-Newsletter-Summer-2024-1.pdf",
+      "source_date": "2024-07-17",
+      "retrieved": "2026-10-26",
+      "source_crs": "Not applicable; source PDF/photo",
+      "evidence": "Page 3 announces the lodge opening at 950 David Ross Rd for September 14, 2024 and labels its exterior photo as the new Chi Psi Lodge at Purdue University",
+      "snapshot": "sources/chipsi_alumni_newsletter_summer_2024.pdf",
+      "rendered_evidence": "sources/chipsi_newsletter_p3_preview.png"
+    },
+    {
+      "provider": "Zeta Psi Fraternity of North America, official Tau Gamma chapter report",
+      "url": "https://zetapsi.org/wp-content/uploads/2023/05/ZetaPsi-Circle-FAR-5.15.23-1.pdf",
+      "source_date": "2023-05-15",
+      "retrieved": "2026-10-26",
+      "source_crs": "Not applicable; chapter report PDF",
+      "evidence": "Page 10 says the Purdue Tau Gamma chapter moved its chapter house during 2022; it gives no street address or photograph of the new facility",
+      "snapshot": "sources/zetapsi_tau_gamma_2023_chapter_report.pdf"
+    },
+    {
+      "provider": "Zeta Psi Fraternity, official Indiana chapter page",
+      "url": "https://zetapsi.org/about/chapter-location/indiana/",
+      "retrieved": "2026-10-26",
+      "source_crs": "Not applicable; web page",
+      "evidence": "Lists Tau Gamma at Purdue, West Lafayette, est. 1968; no facility address/photo",
+      "snapshot": "sources/zetapsi_indiana_chapter_page.html"
+    },
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life, current IFC chapters page",
+      "url": "https://www.purdue.edu/fscl/councils/ifc/chapters.php",
+      "retrieved": "2026-10-26",
+      "source_crs": "Not applicable; web page",
+      "evidence": "Lists Zeta Psi and links its @zetapsipurdue account; no house address",
+      "snapshot": "sources/purdue_ifc_current_chapters.html"
+    },
+    {
+      "provider": "Purdue FSCL, Fall 2021 president/contact list",
+      "url": "https://www.purdue.edu/fscl/about/President-Contact-Info---Fall-2021---Website.pdf",
+      "source_date": "2021 fall",
+      "retrieved": "2026-10-26",
+      "source_crs": "Not applicable; PDF",
+      "evidence": "Lists a Purdue Zeta Psi chapter president; does not identify a facility address",
+      "snapshot": "sources/purdue_fscl_president_contact_info_fall_2021.pdf"
+    },
+    {
+      "provider": "Purdue Tau Gamma public Instagram account linked by Purdue IFC",
+      "url": "https://www.instagram.com/zetapsipurdue/",
+      "retrieved": "2026-10-26",
+      "source_crs": "Not applicable; public profile page",
+      "evidence": "Profile description says 950 David Ross Rd and Rechartered 2024; conflicts with Chi Psi's 2024 primary-source lodge announcement at the same address; snapshot does not expose dated post captions sufficient to determine whether the bio is stale",
+      "snapshot": "sources/zetapsipurdue_instagram_page.html"
+    }
+  ]
+}
