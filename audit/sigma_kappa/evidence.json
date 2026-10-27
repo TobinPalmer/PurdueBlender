@@ -1,0 +1,153 @@
+{
+  "building": "Sigma Kappa, Beta Sigma Chapter",
+  "asset_id": "massing_house_301840869_1b80ace",
+  "status": "Complete; latest independent grade 8.25/10 (pass)",
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D780&outFields=*&outSR=4326&f=json",
+      "feature_id": 780,
+      "building_code": "SOSK",
+      "name": "Sigma Kappa",
+      "address": "427 Russell St",
+      "retrieval_date": "2026-10-27",
+      "source_date": null,
+      "crs": "EPSG:4326 WGS 84; outSR=4326 explicitly requested",
+      "raw_snapshot": "sources/purdue_gis_fid780_raw.json",
+      "measurement_method": "21 unique polygon vertices transformed using the documented project campus approximation and compared to the reopened mesh base.",
+      "attributes": {
+        "shape_area_m2": 1078.62109375,
+        "shape_length_m": 175.42974979181577,
+        "num_levels": 1,
+        "extrution": 12
+      },
+      "uncertainty": "GIS is not a certified survey; horizontal tolerance and vertical attribute definitions/units are unpublished."
+    },
+    {
+      "provider": "Beta Sigma Chapter of Sigma Kappa newsletter",
+      "url": "https://www.epageflip.net/i/1502402-spring-2023-newsletter",
+      "feature_id": "Beta Sigma Chapter, page 0",
+      "retrieval_date": "2026-10-27",
+      "source_date": "Summer 2023",
+      "crs": "Not spatial",
+      "raw_snapshot": "sources/sigma_kappa_2023_newsletter_page0.jpg",
+      "measurement_method": "Chapter identity and address confirmation only; saved page image is a group photograph, not a building elevation.",
+      "observation": "Chapter newsletter identifies Beta Sigma at Purdue and calls 427 Russell Street its chapter house.",
+      "uncertainty": "No building dimensions or facade geometry on the saved page image."
+    },
+    {
+      "provider": "Purdue Panhellenic Association, Sigma Kappa chapter profile",
+      "url": "https://www.purduepanhellenic.com/cost/sigma-kappa",
+      "feature_id": "Beta Sigma Chapter",
+      "retrieval_date": "2026-10-27",
+      "source_date": "Page accessed 2026-10-27; includes Fall 2026 recruitment information",
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "measurement_method": "Current Purdue chapter identity corroboration only.",
+      "observation": "Purdue Panhellenic identifies Sigma Kappa as the Beta Sigma Chapter.",
+      "uncertainty": "No address or building measurements on the profile."
+    },
+    {
+      "provider": "Two Tulips Boutique; artist Courtney Day custom Purdue sorority house drawing",
+      "url": "https://twotulips.com/products/purdue-sorority-custom-house-drawing",
+      "feature_id": "Sigma Kappa house illustration labeled 427 N Russell Street",
+      "retrieval_date": "2026-10-27",
+      "source_date": null,
+      "crs": "Not georeferenced",
+      "raw_snapshot": "sources/two_tulips_house_illustration.jpg",
+      "image_url": "https://twotulips.com/cdn/shop/files/image_6483441_2.jpg?v=1730144552&width=1946",
+      "measurement_method": "Visual comparison only; signed artist illustration, not a scale drawing or photograph.",
+      "observation": "Shows a broad two-story red-brick house with symmetrical end gables, a centered pale columned portico and pediment, dormer windows, and a chimney.",
+      "uncertainty": "Stylized, unscaled, and unlocated image; dimensions and facade bearing remain unverified."
+    },
+    {
+      "provider": "Sigma Kappa Purdue chapter newsletter",
+      "url": "https://www.epageflip.net/i/678678-spring-2016-newsletter/1",
+      "feature_id": "Spring 2016 newsletter page 1",
+      "retrieval_date": "2026-10-27",
+      "source_date": "Spring 2016",
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "measurement_method": "Chapter-house history and housing scale context only.",
+      "observation": "Says Sigma Kappa moved into its 427 Russell Street house in 1952 and housed about 80–82 members in 2016.",
+      "uncertainty": "No structural dimensions or exterior photos cited here."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local campus approximation, not surveyed CRS"
+  },
+  "measurements": {
+    "gis_ring_vertices": 21,
+    "gis_bounds_xy_m": [
+      [-509.76188066371986, -482.564584349055],
+      [162.815485657372, 201.153880948675]
+    ],
+    "previous_manifest_bounds_xyz_m": [
+      [-510.6107177734375, -482.58929443359375],
+      [162.38490295410156, 202.11500549316406],
+      [0.0, 16.0]
+    ],
+    "reopened_evaluated_bounds_after_m": [
+      [-513.1018676757812, -482.3445739746094],
+      [162.51864624023438, 201.45071411132812],
+      [0.0, 15.300000190734863]
+    ],
+    "source_vertices_matching_base": "21/21 within 0.0001 m",
+    "maximum_base_residual_m": 0.00001420614602598205,
+    "latest_independent_grade": 8.25,
+    "latest_independent_grade_path": "independent_grade/result.json",
+    "portico_steps_projection_note": "Portico and entry steps project about 3.34 m west of the structural GIS wall envelope; roof eaves extend about 0.22 m.",
+    "reopened_mesh_vertices": 3589,
+    "reopened_mesh_faces": 849,
+    "modeled_main_floors": 2,
+    "attic": "Four dormer windows inferred from the artist illustration; interior level count unknown",
+    "eaves_height_estimate_m": 7.15,
+    "gable_ridge_height_estimate_m": 11.65,
+    "chimney_top_height_estimate_m": 15.3,
+    "height_status": "Estimated; GIS Extrution=12 has unknown units and definition."
+  },
+  "geometry_edits": [
+    "Rebuilt wall base from the exact 21-vertex official FID 780 footprint in campus coordinates.",
+    "Replaced the generic massing block with two estimated brick stories and twin front-facing gables joined by a central dormered roof.",
+    "Added a columned central portico with pediment, entry door, repeated trimmed windows, dormers, chimney, and steps based on the non-scaled artist illustration.",
+    "Retained the expected campus-coordinate object identity transform and manifest collection name."
+  ],
+  "validation": {
+    "reopened": true,
+    "script": "validate_asset.py",
+    "report": "reopen_validation.json",
+    "preview": "preview.png",
+    "collection": "Asset_massing_house_301840869_1b80ace",
+    "collection_object_count": 1,
+    "object": "House_301840869",
+    "identity_transform": true,
+    "base_footprint_match": "21/21 GIS vertices match within 0.0001 m",
+    "external_images": []
+  },
+  "uncertainties": [
+    "GIS NUM_LEVELS=1 conflicts with the two visible stories in the unscaled illustration; the GIS field meaning is unknown.",
+    "GIS Extrution=12 has no documented unit or meaning and was not treated as measured height.",
+    "The artist illustration is not georeferenced; west-facing frontage toward Russell Street is illustrative.",
+    "Exact floor heights, full roof plan, chimney dimensions, window rhythm, and all hidden elevations remain unverified."
+  ],
+  "artifacts": {
+    "builder": "../../modular/buildings/build_massing_house_301840869_1b80ace.py",
+    "asset": "../../modular/buildings/massing_house_301840869_1b80ace.blend",
+    "build_config": "build_config.json",
+    "source_observations": "source_observations.json",
+    "raw_gis": "sources/purdue_gis_fid780_raw.json",
+    "illustration": "sources/two_tulips_house_illustration.jpg",
+    "newsletter_page": "sources/sigma_kappa_2023_newsletter_page0.jpg",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py",
+    "preview": "preview.png",
+    "independent_evaluator": "independent_grade/evaluate.py",
+    "independent_result": "independent_grade/result.json",
+    "independent_grade_report": "independent_grade/independent_grade.md"
+  }
+}

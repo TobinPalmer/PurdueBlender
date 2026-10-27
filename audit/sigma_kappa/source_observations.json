@@ -1,0 +1,85 @@
+{
+  "building": "Sigma Kappa, Beta Sigma Chapter",
+  "retrieval_date": "2026-10-27",
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; project approximation, not a survey CRS"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D780&outFields=*&outSR=4326&f=json",
+      "feature_id": 780,
+      "name": "Sigma Kappa",
+      "building_code": "SOSK",
+      "address": "427 Russell St",
+      "retrieved": "2026-10-27",
+      "source_date": null,
+      "crs": "EPSG:4326 WGS 84, outSR=4326 explicitly requested",
+      "raw_snapshot": "sources/purdue_gis_fid780_raw.json",
+      "method": "21 unique ring vertices transformed using the documented campus approximation and compared against the base of the reopened mesh.",
+      "observation": "The feature identifies Sigma Kappa at 427 Russell St, with Shape__Area 1078.62109375 m2, Shape__Length 175.42974979181577 m, NUM_LEVELS=1, and Extrution=12.",
+      "uncertainty": "Not a certified survey; positional accuracy and vertical attribute definitions are unpublished."
+    },
+    {
+      "provider": "Beta Sigma Chapter of Sigma Kappa newsletter",
+      "url": "https://www.epageflip.net/i/1502402-spring-2023-newsletter",
+      "feature_id": "Beta Sigma Chapter, Spring/Summer 2023 newsletter page 0",
+      "retrieved": "2026-10-27",
+      "source_date": "Summer 2023",
+      "crs": "Not spatial",
+      "raw_snapshot": "sources/sigma_kappa_2023_newsletter_page0.jpg",
+      "method": "Chapter identity and address confirmation only; the page image is a group photograph, not a building elevation.",
+      "observation": "The chapter newsletter identifies Beta Sigma at Purdue and calls 427 Russell Street its chapter house.",
+      "uncertainty": "No exterior geometry or dimensions are shown on the saved page image."
+    },
+    {
+      "provider": "Purdue Panhellenic Association, Sigma Kappa chapter profile",
+      "url": "https://www.purduepanhellenic.com/cost/sigma-kappa",
+      "feature_id": "Beta Sigma Chapter",
+      "retrieved": "2026-10-27",
+      "source_date": "Page accessed 2026-10-27; page lists Fall 2026 recruitment information",
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "method": "Current Purdue chapter identity corroboration only.",
+      "observation": "Purdue Panhellenic identifies Sigma Kappa as the Beta Sigma Chapter.",
+      "uncertainty": "No address or building measurements on the chapter profile."
+    },
+    {
+      "provider": "Two Tulips Boutique, Purdue Sorority custom House Drawing (artist Courtney Day)",
+      "url": "https://twotulips.com/products/purdue-sorority-custom-house-drawing",
+      "feature_id": "Sigma Kappa house illustration labeled 427 N Russell Street",
+      "retrieved": "2026-10-27",
+      "source_date": null,
+      "crs": "Not georeferenced",
+      "raw_snapshot": "sources/two_tulips_house_illustration.jpg",
+      "image_url": "https://twotulips.com/cdn/shop/files/image_6483441_2.jpg?v=1730144552&width=1946",
+      "method": "Visual comparison only. The image is a signed artist illustration, not a photograph or scale drawing.",
+      "observation": "Shows a broad two-story red-brick house with symmetrical end gables, a centered white columned portico and pediment, dormer windows, and a chimney.",
+      "uncertainty": "Illustration is stylized, unscaled, and not georeferenced; facade orientation and dimensions are not measured."
+    },
+    {
+      "provider": "Sigma Kappa Purdue chapter newsletter",
+      "url": "https://www.epageflip.net/i/678678-spring-2016-newsletter/1",
+      "feature_id": "Spring 2016 newsletter page 1",
+      "retrieved": "2026-10-27",
+      "source_date": "Spring 2016",
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "method": "Chapter house history and occupancy scale context only.",
+      "observation": "Says Sigma Kappa moved into its 427 Russell Street chapter house in 1952 and housed about 80–82 members in 2016.",
+      "uncertainty": "No structural or measured architecture details."
+    }
+  ],
+  "modeling_observations": {
+    "footprint": "The asset base uses the official 21-vertex FID 780 ring in campus coordinates.",
+    "main_levels": "Two visible exterior levels inferred from the artist illustration; source GIS NUM_LEVELS=1 is undocumented.",
+    "roof": "Twin front gables and a lower central roof with four dormers inferred from the illustration.",
+    "frontage": "West-facing frontage toward Russell Street is illustrative; the art image has no geolocation.",
+    "height": "Eaves, ridges, chimney, floor count, and all vertical dimensions are estimates; GIS Extrution=12 is undefined."
+  }
+}
