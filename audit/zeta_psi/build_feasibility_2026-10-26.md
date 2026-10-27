@@ -1,8 +1,8 @@
 # FID 748 build feasibility assessment
 
-**Assessment date:** 2026-10-26  
-**Assigned asset:** `massing_house_301841600_c1351aa`  
-**Candidate site:** Purdue GIS FID 748, 950 David Ross Road  
+**Assessment date:** 2026-10-26
+**Assigned asset:** `massing_house_301841600_c1351aa`
+**Candidate site:** Purdue GIS FID 748, 950 David Ross Road
 **Decision:** A neutral model of the physical structure is conceptually possible without naming an exclusive occupant, but the available evidence is not sufficient to deliver and pass a detailed building asset now. Keep the Rossen Zeta Psi assignment open. Do not label the structure exclusively as Zeta Psi or Chi Psi.
 
 ## What the evidence supports
@@ -10,7 +10,7 @@
 - Purdue GIS FID 748 identifies a Greek-owned building named Zeta Psi at 950 David Ross Road. The official county parcel query independently returns that situs address.
 - An Indiana Geographic Information Office footprint from 2018 (OBJECTID 409718) spatially matches the existing massing shell well: IoU 0.829 and centroid separation 1.61 m. The local-coordinate comparison is approximate, not a survey.
 - Chi Psi's July 2024 official Purdue Alpha Epsilon Tau newsletter identifies the pictured two-story brick lodge as its new lodge at 950 David Ross Road. This is usable visual evidence for the photographed facade and broad roof silhouette.
-- Zeta Psi's 2023 official chapter report says Tau Gamma moved its house during 2022. A Purdue-linked chapter profile self-lists the same 950 address. The 2025 IRS return supports an active Purdue student-housing program but gives no address. Chi Psi's 2024–25 and 2025–26 official dues schedules classify its Purdue chapter as rental housing, without naming a property.
+- Zeta Psi's 2023 official chapter report says Tau Gamma moved its house during 2022. A Purdue-linked chapter profile self-lists the same 950 address. The 2025 IRS return supports an active Purdue student-housing program but gives no address. Chi Psi's 2024â€“25 and 2025â€“26 official dues schedules classify its Purdue chapter as rental housing, without naming a property.
 
 These sources establish a physical candidate and provide one facade view. They do not establish whether Zeta Psi occupies this structure, whether it shares space with Chi Psi, or which chapter's housing program the address represents. See `crosswalk_resolution.md` and `occupancy_recheck_2026-10-26_addendum2.md` for the detailed source chain.
 
@@ -34,4 +34,4 @@ Under the project rubric, identity/footprint, dimensions and orientation, eviden
 
 ## Source records
 
-Raw snapshots and exact source metadata are retained under `audit/zeta_psi/sources/`. The quantitative footprint comparison and project-local coordinate approximation are recorded in `footprint_comparison.json`. This assessment makes no edits to the asset, manifest, shared trackers, or campus master.
+Raw snapshots and exact source metadata are retained under `audit/zeta_psi/sources/`. The quantitative footprint comparison and project-local coordinate approximation are recorded in `footprint_comparison.json`. This assessment makes no edits to the asset, manifest, shared trackers, or campus master.\n
