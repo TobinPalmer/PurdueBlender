@@ -213,8 +213,11 @@ def facade(ring, brick, glass, trim, metal, col):
             make_box(f"Window sill {edge_id:02d}-{j+1:02d}",(px,py,1.18),(ww+0.10,0.19,0.10),trim,col["Facade"],ang)
             if ww > 1.4:
                 make_box(f"Window mullion {edge_id:02d}-{j+1:02d}",(px,py,2.12),(0.055,0.13,1.70),trim,col["Facade"],ang)
-        # Warm pale upper panel band below the roof, broken at module joints.
-        make_box(f"Light metal spandrel {edge_id:02d}",((a[0]+b[0])*0.5,(a[1]+b[1])*0.5,4.05),(length,0.10,0.66),metal,col["Facade"],ang)
+        # Warm pale metal spandrel and selective high clerestory ribbon. The
+        # award photos support this material language; exact bays are estimates.
+        make_box(f"Light metal spandrel {edge_id:02d}",((a[0]+b[0])*0.5,(a[1]+b[1])*0.5,3.91),(length,0.10,0.50),metal,col["Facade"],ang)
+        if edge_id % 2 == 0:
+            make_box(f"Exterior clerestory ribbon {edge_id:02d}",((a[0]+b[0])*0.5,(a[1]+b[1])*0.5,4.48),(length*0.72,0.10,0.42),glass,col["Facade"],ang)
 
 
 def structural_volumes(ring, brick, panel, glass, steel, roof, col):
@@ -222,10 +225,20 @@ def structural_volumes(ring, brick, panel, glass, steel, roof, col):
     x0,x1,y0,y1=min(xs),max(xs),min(ys),max(ys)
     # Elevated central learning commons and clerestory node. Both masses sit
     # inside the existing broad footprint; exact roof dimensions are estimated.
-    hub=(108.0,1939.0)
-    make_box("Central learning commons | clerestory volume",(hub[0],hub[1],6.0),(23.0,20.0,2.5),panel,col["Shell"],math.radians(42),0.08)
-    make_box("Central commons clerestory glazing",(hub[0],hub[1],6.05),(21.6,18.6,1.7),glass,col["Facade"],math.radians(42))
-    make_box("Central commons roof cap",(hub[0],hub[1],7.1),(24.5,21.5,0.28),roof,col["Shell"],math.radians(42),0.05)
+    hub=(95.0,1958.0)
+    hub_angle=math.radians(45)
+    make_box("Central learning commons | compact clerestory node",(hub[0],hub[1],5.85),(20.0,16.0,2.2),panel,col["Shell"],hub_angle,0.08)
+    # Four glazed clerestory ribbons and red mullions sit on the outside faces
+    # of the raised node, following the architect's bright corridor imagery.
+    for side in (-1,1):
+        for axis,span,offset,angle in [(0,19.2,side*7.86,hub_angle),(1,15.2,side*9.86,hub_angle+math.pi/2)]:
+            center=(hub[0]-math.sin(angle)*offset,hub[1]+math.cos(angle)*offset,5.92)
+            make_box(f"Central commons clerestory glass band {axis}-{side}",center,(span,0.14,1.22),glass,col["Facade"],angle)
+            for m in range(1,5):
+                along=-span*0.5+m*span/5
+                mullion=(center[0]+math.cos(angle)*along,center[1]+math.sin(angle)*along,5.92)
+                make_box(f"Central commons red steel mullion {axis}-{side}-{m}",mullion,(0.13,0.19,1.35),steel,col["Facade"],angle)
+    make_box("Central commons clerestory roof cap",(hub[0],hub[1],7.03),(20.6,16.6,0.26),roof,col["Shell"],hub_angle,0.05)
     # Gym volume: architect photographs show the only very tall roof, exposed
     # open-web steel trusses, clerestory windows, and red folding bleachers.
     gym=(156.0,1911.0)
@@ -246,10 +259,13 @@ def structural_volumes(ring, brick, panel, glass, steel, roof, col):
     # The north-west/east classroom bars and south-west arm create visible
     # stepped transitions instead of one undifferentiated roof polygon.
     roof_plates = [
-        (78.0, 1977.0, 73.0, 18.0, math.radians(-43)),
-        (128.0, 1928.0, 77.0, 20.0, math.radians(-43)),
-        (98.0, 1965.0, 69.0, 17.0, math.radians(43)),
-        (154.0, 1892.0, 39.0, 25.0, math.radians(-35)),
+        # Two roof bars cross at the central learning node, matching the
+        # diagonal NW-SE and SW-NE classroom wings visible in the aerial.
+        (85.0, 1967.0, 110.0, 16.0, math.radians(-44)),
+        (95.0, 1960.0, 72.0, 12.0, math.radians(52)),
+        # The aerial shows a wider, irregular southeast gym/multipurpose wing.
+        (145.0, 1917.0, 36.0, 22.0, math.radians(-35)),
+        (145.0, 1895.0, 24.0, 18.0, math.radians(-35)),
     ]
     for i, (rx, ry, length, width, angle) in enumerate(roof_plates, 1):
         make_box(f"Classroom wing roof plate {i:02d}", (rx, ry, 4.88),
@@ -259,10 +275,10 @@ def structural_volumes(ring, brick, panel, glass, steel, roof, col):
                  (length + 0.35, width + 0.35, 0.07), panel, col["Roof"], angle, 0.025)
     # Low rooftop daylight monitors and small mechanical housings are visible
     # in the overhead reference. Their dimensions are schematic, not surveyed.
-    for i, (vx, vy) in enumerate([(72,1981),(91,1964),(119,1942),(137,1924),(159,1892)], 1):
+    for i, (vx, vy) in enumerate([(56,1998),(83,1970),(101,1958),(124,1933),(147,1909)], 1):
         make_box(f"Roof monitor {i:02d} | glazed curb", (vx,vy,5.18),
                  (3.2,1.2,0.34), glass, col["Roof"], math.radians(-43), 0.04)
-    for i, (vx, vy) in enumerate([(122,1946),(142,1921),(160,1898)], 1):
+    for i, (vx, vy) in enumerate([(136,1923),(151,1905),(143,1892)], 1):
         make_box(f"Roof mechanical screen {i:02d}", (vx,vy,5.32),
                  (3.0,2.2,0.65), panel, col["Roof"], math.radians(-43), 0.06)
     # Five open-web red steel trusses, matching the documented gym imagery.
@@ -279,50 +295,91 @@ def structural_volumes(ring, brick, panel, glass, steel, roof, col):
         make_curve(f"Gym red steel roof truss {k+1}",points,0.085,steel,col["Interior"])
 
 
+def point_in_ring(x,y,ring):
+    inside=False
+    for (x1,y1),(x2,y2) in zip(ring,ring[1:]+ring[:1]):
+        if (y1>y)!=(y2>y) and x<(x2-x1)*(y-y1)/(y2-y1)+x1:
+            inside=not inside
+    return inside
+
+
+def classroom_sites(ring):
+    # The original radial layout placed a number of rooms in OSM cut-outs.
+    # Pack 36 small schematic rooms on a 45-degree grid, in three broad
+    # source-supported classroom wings (NW, SW and NE). Check all four room
+    # corners against the GIS polygon before accepting any center.
+    angle=math.radians(45)
+    u=Vector((math.cos(angle),math.sin(angle),0))
+    v=Vector((-math.sin(angle),math.cos(angle),0))
+    origin=Vector((108.0,1950.0,0))
+    spacing=5.3
+    half=2.12
+    groups=[[],[],[]]
+    for i in range(-24,25):
+        for j in range(-24,25):
+            p=origin+u*(i*spacing)+v*(j*spacing)
+            corners=[p+u*a+v*b for a in (-half,half) for b in (-half,half)]
+            if not all(point_in_ring(q.x,q.y,ring) for q in corners):
+                continue
+            if p.x<100 and p.y>=1950: group=0
+            elif p.x<100 and p.y<1950: group=1
+            elif p.x>=100 and p.y>=1950: group=2
+            else: continue
+            groups[group].append((p.copy(),angle))
+    targets=[Vector((62,1980,0)),Vector((60,1925,0)),Vector((140,1980,0))]
+    sites=[]
+    for wing,(candidates,target) in enumerate(zip(groups,targets),1):
+        chosen=[]
+        while candidates and len(chosen)<12:
+            if not chosen:
+                item=min(candidates,key=lambda q:(q[0]-target).length)
+            else:
+                item=max(candidates,key=lambda q:(min((q[0]-c[0]).length for c in chosen),q[0].x,q[0].y))
+            chosen.append(item)
+            candidates.remove(item)
+        if len(chosen)!=12:
+            raise RuntimeError(f"Wing {wing} has only {len(chosen)} GIS-contained room sites")
+        sites.extend((p,angle,wing) for p,angle in chosen)
+    return sites
+
+
 def classroom_interior(ring, floor, partition, glass, red, furniture, board, col):
-    # Broad room organization: three classroom wings converge on a shared
-    # learning hub. The 36 classroom count is source-backed; exact room
-    # positions, individual partitions and dimensions are schematic estimates.
-    xs,ys=[x for x,y in ring],[y for x,y in ring]
-    hub=Vector(((min(xs)+max(xs))*0.5,(min(ys)+max(ys))*0.5,0))
     floor_ring=[(x,y,0.24) for x,y in ring]
     make_mesh("Main finished floor | GIS clipped footprint",floor_ring,[tuple(range(len(floor_ring)))],floor,col["Interior"])
-    # Each ray defines a wing axis and a perpendicular. Place 6 classrooms on
-    # each side of its circulation spine: 3 wings x 12 rooms = 36.
-    rays=[Vector((-0.70,0.68,0)),Vector((0.78,0.62,0)),Vector((-0.80,-0.52,0))]
-    room_id=0
-    for wi,ray in enumerate(rays,1):
-        ray.normalize()
+    sites=classroom_sites(ring)
+    if len(sites)!=36:
+        raise RuntimeError(f"Expected 36 contained classrooms, got {len(sites)}")
+    room_half=2.05
+    for room_id,(rc,angle,wing) in enumerate(sites,1):
+        ray=Vector((math.cos(angle),math.sin(angle),0))
         perp=Vector((-ray.y,ray.x,0))
-        for k in range(6):
-            along=14.0+k*6.1
-            center=hub+ray*along
-            for side in (-1,1):
-                room_id+=1
-                rc=center+perp*side*5.25
-                angle=math.atan2(ray.y,ray.x)
-                # Low glazed/opaque classroom dividers, casework and furniture.
-                corridor_edge=rc-perp*side*0.95
-                make_box(f"Classroom {room_id:02d} | corridor partition",(corridor_edge.x,corridor_edge.y,1.65),(5.45,0.12,3.05),partition,col["Interior"],angle)
-                door_center=rc+ray*2.0-perp*side*0.95
-                make_box(f"Classroom {room_id:02d} | interior door",(door_center.x,door_center.y,1.12),(0.92,0.15,2.18),red,col["Interior"],angle)
-                for q in range(3):
-                    desk=rc+ray*((q-1)*1.35)+perp*(side*2.75)
-                    make_box(f"Classroom {room_id:02d} | student table {q+1}",(desk.x,desk.y,0.78),(1.05,0.68,0.10),furniture,col["Interior"],angle,0.035)
-                    chair=desk-perp*(side*0.62)
-                    make_box(f"Classroom {room_id:02d} | student chair seat {q+1}",(chair.x,chair.y,0.58),(0.44,0.44,0.08),red,col["Interior"],angle,0.035)
-                    back=chair-perp*(side*0.18)
-                    make_box(f"Classroom {room_id:02d} | student chair back {q+1}",(back.x,back.y,0.88),(0.42,0.08,0.56),red,col["Interior"],angle,0.025)
-                # A teacher station and a dark teaching wall make the classroom
-                # program legible in the close cutaway review view.
-                teach=rc+perp*(side*4.3)
-                make_box(f"Classroom {room_id:02d} | teacher desk",(teach.x,teach.y,0.82),(1.55,0.78,0.12),furniture,col["Interior"],angle+math.pi/2,0.04)
-                board_pos=rc+perp*(side*5.0)
-                make_box(f"Classroom {room_id:02d} | teaching board",(board_pos.x,board_pos.y,2.15),(4.4,0.10,1.15),board,col["Interior"],angle+math.pi/2,0.025)
-                # Continuous high glazing on the corridor partition.
-                lite=rc-perp*side*0.95
-                make_box(f"Classroom {room_id:02d} | clerestory interior lite",(lite.x,lite.y,2.55),(2.65,0.10,0.7),glass,col["Interior"],angle)
+        def pos(a,b,z):
+            q=rc+ray*a+perp*b
+            return (q.x,q.y,z)
+        # Each bay is a compact 4.1 m square schematic room fully inside the
+        # OSM roof shell; three partition walls and a corridor-side door wall
+        # make the room perimeter legible in both plan and close review renders.
+        left=make_box(f"Classroom {room_id:02d} | corridor partition",pos(-1.25,-room_half,1.65),(1.6,0.14,3.05),partition,col["Interior"],angle)
+        left["classroom_center_xy"]=(float(rc.x),float(rc.y))
+        left["classroom_wing"]=("NW","SW","NE")[wing-1]
+        left["footprint_source"]="OSM way 772742586"
+        make_box(f"Classroom {room_id:02d} | corridor door panel",pos(0,-1.97,1.13),(0.88,0.15,2.12),red,col["Interior"],angle,0.025)
+        make_box(f"Classroom {room_id:02d} | corridor partition right",pos(1.25,-room_half,1.65),(1.6,0.14,3.05),partition,col["Interior"],angle)
+        make_box(f"Classroom {room_id:02d} | rear partition",pos(0,room_half,1.65),(4.1,0.14,3.05),partition,col["Interior"],angle)
+        make_box(f"Classroom {room_id:02d} | side partition left",pos(-room_half,0,1.65),(4.1,0.14,3.05),partition,col["Interior"],angle+math.pi/2)
+        make_box(f"Classroom {room_id:02d} | side partition right",pos(room_half,0,1.65),(4.1,0.14,3.05),partition,col["Interior"],angle+math.pi/2)
+        # Narrow clerestory glazing on the corridor divider is supported by
+        # award photography; exact position and glazing dimensions are estimates.
+        make_box(f"Classroom {room_id:02d} | clerestory interior lite",pos(0,-1.97,2.54),(1.95,0.075,0.52),glass,col["Interior"],angle)
+        for q,a in enumerate((-1.15,0,1.15),1):
+            make_box(f"Classroom {room_id:02d} | student table {q}",pos(a,0.28,0.79),(0.86,0.66,0.10),furniture,col["Interior"],angle,0.035)
+            make_box(f"Classroom {room_id:02d} | student chair seat {q}",pos(a,-0.62,0.60),(0.42,0.42,0.08),red,col["Interior"],angle,0.035)
+            make_box(f"Classroom {room_id:02d} | student chair back {q}",pos(a,-0.82,0.88),(0.40,0.08,0.55),red,col["Interior"],angle,0.025)
+        make_box(f"Classroom {room_id:02d} | teacher desk",pos(0,1.26,0.82),(1.25,0.62,0.12),furniture,col["Interior"],angle,0.04)
+        make_box(f"Classroom {room_id:02d} | teaching board",pos(0,1.98,2.22),(2.7,0.08,1.0),board,col["Interior"],angle,0.025)
+
     # Central media center and book-wall/book-island forms from project photos.
+    hub=Vector((95.0,1958.0,0))
     for i in range(7):
         xx=hub.x-8.0+i*2.6
         make_box(f"Media center | bookcase {i+1}",(xx,hub.y+4.7,1.15),(2.1,0.42,1.9),partition,col["Interior"])
@@ -354,7 +411,7 @@ def classroom_interior(ring, floor, partition, glass, red, furniture, board, col
         points=[(hoop[0]+0.23*math.cos(2*math.pi*i/24),hoop[1]+0.23*math.sin(2*math.pi*i/24),hoop[2]) for i in range(25)]
         make_curve(f"Gymnasium | hoop rim {side}",points,0.035,red,col["Interior"])
     # Cafeteria service counter and multipurpose stage.
-    make_box("Cafeteria | service counter",(hub.x+23.0,hub.y-15.0,1.0),(12.0,1.2,1.7),partition,col["Interior"])
+    make_box("Cafeteria | service counter",(145.0,1892.0,1.0),(12.0,1.2,1.7),partition,col["Interior"],math.radians(-35))
 
 
 def main_entry(ring, brick, red, glass, roof, col):
@@ -362,23 +419,33 @@ def main_entry(ring, brick, red, glass, roof, col):
     x0,x1,y0,y1=min(xs),max(xs),min(ys),max(ys)
     # Public photographs identify the south-facing entry by its exposed red
     # steel tower and asymmetric glazed canopy. Cardinal placement is estimated.
-    ex,ey=x0+(x1-x0)*0.71,y0+0.035*(y1-y0)
-    for i,dx in enumerate((-4.6,4.6),1):
-        make_box(f"Entry tower red steel column {i}",(ex+dx,ey-1.3,3.55),(0.24,0.28,7.1),red,col["Entry"])
-        make_box(f"Entry tower brick pier {i}",(ex+dx,ey-0.45,1.8),(0.80,0.85,3.6),brick,col["Entry"])
-    # Trussed canopy: red steel roof frame with a translucent cover.
-    make_box("Entry canopy front beam",(ex,ey-5.4,6.65),(10.0,0.25,0.24),red,col["Entry"])
-    make_box("Entry canopy rear beam",(ex,ey+1.2,5.55),(10.0,0.22,0.22),red,col["Entry"])
-    for i in range(7):
-        xx=ex-4.3+i*1.43
-        make_box(f"Entry canopy red rafter {i+1}",(xx,ey-2.1,6.0),(0.13,6.7,0.16),red,col["Entry"],math.radians(-8))
-    make_box("Entry canopy translucent roof",(ex,ey-2.1,6.3),(9.7,6.6,0.12),glass,col["Entry"],math.radians(-8))
-    make_box("Entry glass vestibule",(ex,ey+0.2,2.4),(8.1,0.2,4.5),glass,col["Entry"])
-    for s in range(9):
-        xx=ex-4.0+s*1.0
-        make_box(f"Vestibule mullion {s+1}",(xx,ey+0.07,2.5),(0.075,0.12,4.25),red,col["Entry"])
+    ex,ey=145.0,1872.0
+    for i,dx in enumerate((-5.6,5.6),1):
+        make_box(f"Entry tower red steel column {i}",(ex+dx,ey-1.0,4.1),(0.28,0.30,8.2),red,col["Entry"])
+        make_box(f"Entry tower brick pier {i}",(ex+dx,ey-0.40,1.9),(0.90,0.90,3.8),brick,col["Entry"])
+    # The photographed entry has a tall red open-web portal, a sloped canopy,
+    # masonry piers, and a broad glazed vestibule behind the steel structure.
+    canopy_w=12.6
+    make_box("Entry canopy front beam",(ex,ey-5.5,7.12),(canopy_w,0.28,0.28),red,col["Entry"])
+    make_box("Entry canopy rear beam",(ex,ey+1.0,6.15),(canopy_w,0.26,0.26),red,col["Entry"])
+    for i in range(9):
+        xx=ex-(canopy_w*0.5-0.4)+i*(canopy_w-0.8)/8
+        make_box(f"Entry canopy red rafter {i+1}",(xx,ey-2.25,6.65),(0.15,6.8,0.18),red,col["Entry"],math.radians(-8))
+    # Triangulated red open-web trusses are visible from the pedestrian approach.
+    for side in (-1,1):
+        x=ex+side*(canopy_w*0.5-0.45)
+        make_curve(f"Entry open-web red truss chord {side}",[(x,ey-5.4,7.12),(x,ey+0.9,6.15)],0.09,red,col["Entry"])
+        for k in range(5):
+            yy=ey-5.0+k*1.15
+            z=7.06-k*0.17
+            make_curve(f"Entry open-web red truss diagonal {side}-{k}",[(x,yy,z),(x,yy+1.15,z-0.18)],0.065,red,col["Entry"])
+    make_box("Entry canopy translucent sloped roof",(ex,ey-2.25,6.78),(12.2,6.8,0.14),glass,col["Entry"],math.radians(-8))
+    make_box("Entry glass vestibule",(ex,ey+0.18,2.55),(9.6,0.20,4.8),glass,col["Entry"])
+    for s in range(11):
+        xx=ex-4.75+s*0.95
+        make_box(f"Vestibule mullion {s+1}",(xx,ey+0.05,2.55),(0.075,0.12,4.55),red,col["Entry"])
     # Flagpole and footpath/crosswalk directly in front of the entry.
-    pole_x,pole_y=ex-7.5,ey-10.0
+    pole_x,pole_y=ex-8.0,ey-11.0
     make_box("Main entry flagpole",(pole_x,pole_y,6.1),(0.12,0.12,12.2),roof,col["Entry"])
     flag_white=material("WLIS | flag white",(0.93,0.92,0.85),0.55)
     flag_blue=material("WLIS | flag blue",(0.035,0.10,0.31),0.5)
@@ -386,7 +453,7 @@ def main_entry(ring, brick, red, glass, roof, col):
         stripe_mat=red if stripe%2==0 else flag_white
         make_box(f"American flag | stripe {stripe+1}",(pole_x+1.25,pole_y,10.20+stripe*0.155),(2.5,0.055,0.155),stripe_mat,col["Entry"])
     make_box("American flag | blue canton",(pole_x+0.46,pole_y-0.04,11.02),(0.92,0.06,0.58),flag_blue,col["Entry"])
-    make_box("Front entry walk",(ex,ey-11.0,0.08),(7.0,12.0,0.16),roof,col["Entry"])
+    make_box("Front entry walk",(ex,ey-8.0,0.08),(8.0,16.0,0.16),roof,col["Entry"])
 
 
 def camera_at(scene, name, position, target, lens=50):
@@ -443,13 +510,13 @@ def setup_render(scene, ring, render_helpers):
 def render_views(scene, target, cols, ring):
     xs,ys=[x for x,y in ring],[y for x,y in ring]
     x0,x1,y0,y1=min(xs),max(xs),min(ys),max(ys)
-    entry=(x0+0.71*(x1-x0),y0+0.035*(y1-y0),3.2)
+    entry=(145.0,1872.0,3.4)
     gym_target=(156.0,1911.0,5.2)
     nw_target=(x0+46.0,y0+110.0,3.2)
-    specs=[("preview_aerial.png",(target[0]+90,target[1]-145,340),target,38),
-           ("preview_main_entry.png",(entry[0]+10,entry[1]-66,19),entry,48),
-           ("preview_northwest.png",(nw_target[0]-75,nw_target[1]+72,35),nw_target,48),
-           ("preview_gym.png",(gym_target[0]+52,gym_target[1]-45,23),gym_target,48)]
+    specs=[("preview_r3_aerial.png",(target[0],target[1],300),target,36),
+           ("preview_r3_main_entry.png",(entry[0]+1,entry[1]-31,11),entry,48),
+           ("preview_r3_northwest.png",(nw_target[0]-75,nw_target[1]+72,35),nw_target,48),
+           ("preview_r3_gym.png",(gym_target[0]+52,gym_target[1]-45,23),gym_target,48)]
     cam=camera_at(scene,"WLIS review camera",specs[0][1],specs[0][2])
     scene.camera=cam
     for filename,pos,view_target,lens in specs:
@@ -470,7 +537,7 @@ def render_views(scene, target, cols, ring):
     cam.data.lens=56
     direction=Vector((target[0],target[1],0))-cam.location
     cam.rotation_euler=direction.to_track_quat("-Z","Y").to_euler()
-    scene.render.filepath=os.path.join(AUDIT,"preview_interior_cutaway.png")
+    scene.render.filepath=os.path.join(AUDIT,"preview_r3_interior_cutaway.png")
     bpy.ops.render.render(write_still=True)
     # Close, near-plan review views isolate the source-supported classroom
     # furniture and gym court so the schematic arrangement is clearly visible.
@@ -478,16 +545,20 @@ def render_views(scene, target, cols, ring):
     # interior renders so they do not obscure the court below.
     trusses=[o for o in cols["Interior"].objects if o.name.startswith("Gym red steel roof truss")]
     for o in trusses: o.hide_render=True
+    representative=classroom_sites(ring)[0][0]
     interior_specs=[
-        ("preview_classroom_interior.png",(106.4,1959.1,18),(106.4,1959.1,0.4),12.5),
-        ("preview_gym_interior.png",(156,1911,29),(156,1911,0.3),31.0)]
+        ("preview_r3_classroom_interior.png",(representative.x,representative.y,12),(representative.x,representative.y,0.4),8.8),
+        ("preview_r3_gym_interior.png",(156,1911,29),(156,1911,0.3),31.0)]
     for filename,pos,view_target,scale in interior_specs:
         if floor_obj: floor_obj.hide_render=False
         cam.location=pos
         cam.data.type="ORTHO"
         cam.data.ortho_scale=scale
-        direction=Vector(view_target)-cam.location
-        cam.rotation_euler=direction.to_track_quat("-Z","Y").to_euler()
+        if filename in ("preview_r3_classroom_interior.png","preview_r3_gym_interior.png"):
+            cam.rotation_euler=(0.0,0.0,0.0)
+        else:
+            direction=Vector(view_target)-cam.location
+            cam.rotation_euler=direction.to_track_quat("-Z","Y").to_euler()
         scene.render.filepath=os.path.join(AUDIT,filename)
         bpy.ops.render.render(write_still=True)
     cam.data.type="PERSP"

@@ -1,0 +1,88 @@
+import json
+from pathlib import Path
+
+ROOT = Path(r"C:/Users/Tobin/Documents/Blender/PurdueMap")
+OUTDIR = ROOT / "audit/electrical_engineering_independent_grade_r2"
+EXPECTED_SHA = "535ff224bd0105389a2fea01c5542e219d48716ad6089b173a42efbe0a7b4612"
+
+def evaluate(probe):
+    criteria = [
+        {
+            "name": "Correct identity and source-backed footprint",
+            "score": 1.9, "max_score": 2,
+            "evidence": [
+                "The Purdue ArcGIS BuildingShapesZip4 snapshot names both FID 292 and FID 109 as Max W & Maileen Brown Family Hall.",
+                "The independent fresh-open probe found both footprint plate meshes. Their XY extents match the source rings to under 0.01 m; the FID 109 boundary vertices coincide exactly, and FID 292's largest source vertex-to-mesh-vertex difference is 0.09552 m, consistent with the courtyard boolean clipping.",
+                "The source snapshot says survey accuracy and epoch are unpublished, so GIS alignment is not survey-grade certification."
+            ]
+        },
+        {
+            "name": "Position, orientation, and scale/dimensions",
+            "score": 1.7, "max_score": 2,
+            "evidence": [
+                "Asset geometry is centered in the documented local frame around placement origin [143.8499984741211, 135.0] m; structural walls follow the GIS ring edges, and measured slab extents match both GIS components.",
+                "The manifest origin plus current asset bounds place the building in the documented campus area; the source façade direction is represented by the south-facing elevation.",
+                "The asset's actual collection bounds differ from the manifest's cached local bounds by up to about 0.30 m in Y and 0.21 m in X. This appears to include revised decorative/facade geometry, but the manifest bounds should be refreshed during integration. The underlying GIS footprint plate extents still agree."
+            ]
+        },
+        {
+            "name": "Evidence-backed height, floors, and roof form",
+            "score": 1.2, "max_score": 2,
+            "evidence": [
+                "The Purdue 2013 ECE Building Emergency Plan identifies basement, ground, first, second, third, and attic designations. The model represents four above-grade floor levels, consistent with the documented ground-through-third levels.",
+                "The 18.5 m top height is an estimate, not a measured elevation; no surveyed building height or as-built floor elevations were found.",
+                "The current roof is mostly a flat plane with a photo-supported front eave/cornice. The available street-facing photo does not establish the complete roof silhouette, roof pitch, or mechanical equipment; the roof form remains weakly verified."
+            ]
+        },
+        {
+            "name": "Facade, entrances, and distinctive architecture",
+            "score": 1.6, "max_score": 2,
+            "evidence": [
+                "The Purdue ECE 2025 exterior photograph supports red brick, limestone inscription band, dark multi-pane windows, a grouped three-door stone portal composition, and red roof-edge tile/cornice. The model includes these recognizable features on the corresponding south elevation.",
+                "The model uses repeated regular bays and generic window modules. Most sides are not directly evidenced; pilaster relief, exact bay spacing, portal profiles, and other facade details remain approximate. The entrance surround is simplified compared with the photograph.",
+                "Interior cutaway includes lab benches/equipment, collaboration furniture, and exposed services matching Purdue 2024 renovation photos, but exact room positions are not as-built verified; the published floor plan is explicitly a proposal."
+            ]
+        },
+        {
+            "name": "Modular export, portability, and complete evidence",
+            "score": 1.9, "max_score": 2,
+            "evidence": [
+                "A fresh-open in Blender 5.2.3 found the expected Building_electrical_engineering scene, Asset_electrical_engineering collection, and AssetRoot at identity transform.",
+                "The collection contains 4,774 objects (4,772 meshes) and the file has assigned procedural materials. No missing external image dependencies were found.",
+                "Building-specific source evidence records the GIS IDs, transform, retrieval dates, official Purdue ECE photo/article, life-safety plan, renovation proposal, and explicit uncertainty. A fresh-open validation script and rendered views are present.",
+                "The master link itself was not the subject of this library grading pass; the stale manifest bounds need updating when Tobin performs integration."
+            ]
+        }
+    ]
+    score = round(sum(c["score"] for c in criteria), 2)
+    return {
+        "building_id": "electrical_engineering",
+        "building_name": "Max W & Maileen Brown Family Hall of Electrical Engineering (BHEE)",
+        "asset": "modular/buildings/electrical_engineering.blend",
+        "inspected_sha256": probe["inspected_sha256"],
+        "expected_sha256": EXPECTED_SHA,
+        "sha_match": probe["sha_matches_requested"],
+        "score": score, "max_score": 10,
+        "pass_threshold": 8,
+        "passed": score >= 8 and probe["sha_matches_requested"],
+        "criteria": criteria,
+        "evidence": [
+            "Independent Blender 5.2.3 fresh-open inspection: audit/electrical_engineering_independent_grade_r2/probe.json and blender.log.",
+            "Purdue ArcGIS BuildingShapesZip4 feature snapshot (FID 292, FID 109): audit/official_building_references.json; source URL https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0.",
+            "Purdue ECE exterior feature: https://engineering.purdue.edu/ECE/News/2025/a-century-of-circuits-and-community-purdues-electrical-engineering-building-turns-100; local image audit/complete_bhee/facade.jpg.",
+            "Purdue ECE Building Emergency Plan (2013-12-03): https://engineering.purdue.edu/ECE/Safety/EE_BEP_12-3-2013.pdf; local copy audit/complete_bhee/electrical_engineering_bep.pdf.",
+            "Purdue ECE renovation article/photos (2024-12-11): https://engineering.purdue.edu/ECE/Wavelinks/2024/articles/max-w-and-maileen-brown-family-hall-of-electrical-engineering; local snapshot and photos under audit/complete_bhee/.",
+            "Proposed first-floor renovation plan: https://engineering.purdue.edu/ECE/Giving/BHEE/BHEE_First_Floor_Renovation.pdf; local copy audit/complete_bhee/renovation.pdf. The document says the design is subject to change."
+        ],
+        "findings": [
+            "PASS at 8.3/10 for the frozen library. Identity and plan geometry have strong GIS support, and the visible south facade and first-floor use are anchored by Purdue sources.",
+            "The vertical height and full roof geometry remain estimates; upper-floor/basement interiors and most unphotographed facades remain approximate.",
+            "Tobin should refresh the manifest local/world collection bounds when integrating this revision. Keep the historical 5.2/10 score labeled as an earlier-asset score until the shared README is updated to this result."
+        ],
+        "probe_summary": {k: probe[k] for k in ["scene", "collection_name", "collection_object_count", "mesh_object_count", "materials", "missing_external_images", "collection_bounds_xyz", "footprint_vertex_comparison"]}
+    }
+
+probe = json.loads((OUTDIR / "probe.json").read_text(encoding="utf-8"))
+result = evaluate(probe)
+(OUTDIR / "result.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
+print(json.dumps({k: result[k] for k in ["score", "max_score", "passed", "inspected_sha256", "findings"]}, indent=2))

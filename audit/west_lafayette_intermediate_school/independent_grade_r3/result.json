@@ -1,0 +1,67 @@
+{
+  "building": "West Lafayette Intermediate School",
+  "building_id": "massing_west_lafayette_intermediate_school_d72f0fa",
+  "asset_path": "modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend",
+  "asset_sha256": "4564b0c307b781ec5f5135e58db29fc33b35c2bd813ad011d8ff4471e24cab2b",
+  "grade_type": "independent review",
+  "grade_revision": "r3",
+  "score": 8.4,
+  "max_score": 10,
+  "threshold": 8.0,
+  "result": "PASS",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "The asset identity agrees with the official WL Community School Corporation listing and address. I freshly opened the asset and independently compared its 45 unique low shell vertices against OSM way 772742586, after applying the project's documented local geographic transform. Maximum nearest-vertex discrepancy was 0.0000607 m; independently calculated shell area was 10,899.5491 m² versus source polygon 10,899.5474 m².",
+      "limitations": "The mapped footprint is OpenStreetMap community data, not survey-certified wall line geometry."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "The GIS-derived building shell remains in campus coordinates and matches source ring position, orientation, and plan shape at the stated numerical tolerance. The asset's whole-mesh bounds include entry/approach details outside the shell and are not used as the wall footprint.",
+      "limitations": "The placement is only as authoritative as the OSM ring and the project's local approximate coordinate transform."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.1,
+      "max_score": 2.0,
+      "evidence": "The overhead Esri image supports the broad crossed-wing roof plan and southeast gym/multipurpose cluster. The model contains a central clerestory node, low roof plates, monitors, and a taller gym volume. The official project/architect sources support a one-story school organization and gym/media areas only at a broad program level.",
+      "limitations": "No measured elevations, dimensioned plans, or roof schedule were found. The 12.2 m maximum height, parapet heights, roof levels and exact vertical profiles remain estimates."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.3,
+      "max_score": 2.0,
+      "evidence": "The architect photograph supports red-brown brick, large glazing, light metal panels, and a prominent exposed-red-steel entry. The asset includes brick piers, a red steel portal/canopy, glazed vestibule, clerestory glazing, and a gym with red trusses and bleachers. I visually inspected the saved exterior, entry, classroom, and gym renders.",
+      "limitations": "Facade bay rhythm and entry canopy proportions are schematic; the rendered entry reads as a simplified flat/sloped portal compared with the photographed canopy. Exact facade orientation is not established by a cardinally oriented elevation. Classroom contents and positions are interpretive."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "A separate Blender 5.2.3 process reopened the exact hashed asset with the expected scene and collection. The collection is scene-linked, includes 1,862 objects (1,838 meshes), uses native procedural materials, and has no external file-backed image dependencies. Building-specific source register, raw GIS snapshot, evidence record, validation data, and views are present."
+    }
+  ],
+  "evidence_files": [
+    "audit/west_lafayette_intermediate_school/independent_grade_r3/fresh_open_probe.json",
+    "audit/west_lafayette_intermediate_school/independent_grade_r3/compare_osm_shell.json",
+    "audit/west_lafayette_intermediate_school/evidence.json",
+    "audit/west_lafayette_intermediate_school/source_register.md",
+    "audit/west_lafayette_intermediate_school/sources/osm_way_772742586_full.json",
+    "audit/west_lafayette_intermediate_school/sources/esri_world_imagery_site_aerial.jpg",
+    "audit/west_lafayette_intermediate_school/sources/schmidt_exterior_main_entry.jpg",
+    "audit/west_lafayette_intermediate_school/preview_r3_aerial.png",
+    "audit/west_lafayette_intermediate_school/preview_r3_main_entry.png",
+    "audit/west_lafayette_intermediate_school/preview_r3_classroom_interior.png",
+    "audit/west_lafayette_intermediate_school/preview_r3_gym_interior.png"
+  ],
+  "findings": [
+    "The independent fresh-open and source-ring comparison confirm the GIS shell and modular asset are intact at the frozen SHA.",
+    "The three-wing/central-node arrangement and southeast program massing are plausible against the aerial and architect narrative; interior room positions and the roof's vertical detailing are not source-verifiable.",
+    "The model includes a clearly supported entry language and gym character, though its facade and canopy remain conceptual rather than measured.",
+    "No model edits were made during grading."
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "building": "Dick & Sandy Dauch Alumni Center",
+  "building_id": "dauch_alumni_center",
+  "review_revision": 3,
+  "asset": "modular/buildings/dauch_alumni_center.blend",
+  "asset_sha256": "de1e3735f6b9f206f53cc1affb13c208ae62e96f1322eea6aeed378af9d37d14",
+  "expected_sha256": "de1e3735f6b9f206f53cc1affb13c208ae62e96f1322eea6aeed378af9d37d14",
+  "exact_sha_match": true,
+  "review_date": "2026-10-27",
+  "reviewer": "independent grader",
+  "blender_version": "5.2.3 LTS",
+  "fresh_open": true,
+  "score": 8.45,
+  "max_score": 10.0,
+  "threshold": 8.0,
+  "accepted": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue BuildingShapesZip4 feature FID 71 names Dick & Sandy Dauch Alumni Center at 403 W Wood Street.",
+        "Independent source-ring comparison found 109 unique GIS perimeter points and 109 shell XY positions; maximum nearest-point error is 0.00000146 m."
+      ],
+      "finding": "Building identity and plan geometry are strongly and directly supported by the official Purdue GIS footprint."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": [
+        "The independently calculated GIS polygon centroid is [241.198987, -618.185206] m; the asset placement origin differs by less than 1e-11 m.",
+        "The exported geometry remains in the expected local coordinate frame. The structural shell reproduces the source ring without rescaling; full asset bounds include a documented southward sign/landscape extension."
+      ],
+      "finding": "Horizontal placement, orientation, and footprint scale are well supported. Decorative bounds extend beyond the GIS wall footprint as expected; height and exact architectural dimensions are separately uncertain."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": [
+        "The saved Purdue GIS feature reports four levels and its level datum fields; Purdue’s historic building database describes the facility as three-story. Evidence explicitly preserves rather than guesses away this conflict.",
+        "The roof membrane is a separate 1,075-vertex surface with a 0.90 m crown above the structural cap. The roof profile/material now read as a subtle curved gray membrane in the R3 views, consistent with the cited exterior photo, but no measured section or roof schedule was found.",
+        "The 14.4 m shell top, 15.305 m roof crest, and overall height are estimates. The above-grade floor count remains provisional."
+      ],
+      "finding": "R3 fixes the incorrect winding and flat striped roof presentation, but the roof curve and vertical dimensions are not measured, and the story-count conflict remains unresolved."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.5,
+      "max_score": 2.0,
+      "evidence": [
+        "The overview shows brick exterior, horizontal light courses, a projecting glazed entrance, approach flagpoles, and a readable freestanding identity sign; these features are supported by Purdue for Life and Home of Purdue building-specific photos.",
+        "The curved frontage and roof edge are present, but window subdivisions, facade bay rhythm, precise entry proportions, side elevations, and sign/landscape placement remain approximate. The interiors are schematic because the Archives floorplan was not retrieved."
+      ],
+      "finding": "Recognizable brick-and-glass character and entrance/site identity are represented; facade details and interiors remain interpretive."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "Separate Blender 5.2.3 process reopened the requested exact SHA and found the expected Scene and scene-linked Asset_dauch_alumni_center collection, with 663 objects including 659 meshes.",
+        "The 29 used materials are node-based; no external image dependencies or zero-area mesh faces were found. The shell is closed and consistently wound with positive signed volume 25,313.66 m³.",
+        "Building evidence records source URLs, GIS feature ID, retrieval dates, coordinate method, changes, bounds, and unresolved limits. The absent archival floorplan and non-surveyed vertical dimensions remain documented."
+      ],
+      "finding": "The library is portable and well documented. Master linkage and shared manifest refresh are outside this isolated asset grade; the bounds report is ready for coordinator integration."
+    }
+  ],
+  "evidence": {
+    "footprint_max_error_m": 1.4644900680452221e-06,
+    "gis_polygon_centroid_world_m": [
+      241.19898675231596,
+      -618.1852061961849
+    ],
+    "placement_origin_xy_m": [
+      241.19898675231826,
+      -618.1852061961912
+    ],
+    "origin_error_m": [
+      2.3021584638627246e-12,
+      -6.252776074688882e-12
+    ],
+    "shell_topology": {
+      "vertices": 218,
+      "edges": 327,
+      "faces": 111,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume_m3": 25313.661909409657,
+      "side_normals": {
+        "outward": 109,
+        "inward": 0,
+        "ambiguous": 0
+      },
+      "min_outward_dot": 0.005599276524197227,
+      "caps": [
+        {
+          "mean_z": 0.3499999940395355,
+          "normal_z": -1.0
+        },
+        {
+          "mean_z": 14.399999618530273,
+          "normal_z": 0.9999999403953552
+        }
+      ]
+    },
+    "asset_bounds_local_m": [
+      [
+        -30.668752670288086,
+        29.90838050842285
+      ],
+      [
+        -25.125,
+        16.93138313293457
+      ],
+      [
+        -0.05000000074505806,
+        17.84500503540039
+      ]
+    ],
+    "roof_surfaces": [
+      {
+        "name": "DAUC_roof_membrane_surface",
+        "vertices": 1075,
+        "bounds": [
+          [
+            -30.668752670288086,
+            29.725934982299805
+          ],
+          [
+            -19.686561584472656,
+            16.850446701049805
+          ],
+          [
+            14.404999732971191,
+            15.304998397827148
+          ]
+        ],
+        "materials": [
+          "dauch_alumni_center_roof_membrane",
+          "DAUC_r3_curved_roof_membrane"
+        ]
+      }
+    ],
+    "used_material_count": 29,
+    "external_image_dependencies": [],
+    "zero_area_mesh_faces": 0,
+    "source_records": [
+      "Purdue BuildingShapesZip4, feature 71 (audit/dauch_alumni_center/dauch_alumni_center_gis_feature_71.json)",
+      "Purdue for Life Foundation, Dauch Alumni Center photo (URL and limits in audit/dauch_alumni_center/dauch_alumni_center_evidence.json)",
+      "Home of Purdue building-specific photo (URL and limits in audit/dauch_alumni_center/dauch_alumni_center_evidence.json)",
+      "Purdue Campus Facilities and Buildings Historic Database: Dick & Sandy Dauch Alumni Center",
+      "Purdue Archives UA 137 Dauch Alumni Center records/finding aid"
+    ]
+  },
+  "findings": [
+    "The 109 GIS footprint vertices align within 0.00000146 m and the asset origin matches the computed footprint centroid within 1e-11 m.",
+    "All 109 GIS shell side faces point outward; the closed shell has positive signed volume and correctly oriented top and bottom caps.",
+    "The roof is now modeled with an estimated curved crown and neutral-gray membrane. Its exact section, elevation, and upper facade levels lack measured documentation.",
+    "Purdue’s historic record says three-story while GIS reports four levels; this conflict remains explicitly unresolved. The rendered building remains recognizably brick-and-glass with a glazed entrance, flags, and sign, but facade rhythm and interior remain schematic."
+  ]
+}

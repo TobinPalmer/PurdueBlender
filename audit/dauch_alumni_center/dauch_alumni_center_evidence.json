@@ -1,0 +1,139 @@
+{
+  "building_id": "dauch_alumni_center",
+  "asset_file": "modular/buildings/dauch_alumni_center.blend",
+  "exported_collection": "Asset_dauch_alumni_center",
+  "scene": "Scene",
+  "evidence_updated": "2026-10-27",
+  "source_records": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 71,
+      "building_code": "DAUC",
+      "source_name": "Dick & Sandy Dauch Alumni Center",
+      "address": "403 W Wood Street",
+      "retrieved": "2026-10-24",
+      "source_crs": "EPSG:3857 service; checked-in feature snapshot stores geometry in WGS84/EPSG:4326",
+      "snapshot": "audit/dauch_alumni_center/dauch_alumni_center_gis_feature_71.json",
+      "snapshot_sha256": "ba2ad6a22c67c51a6daf28449b03899d96b4b7a129f1122702ce989ea0aebad2",
+      "measurement_method": "Used matched official feature 71 primary exterior ring, transformed using the project local geographic conversion and centered to the existing detailed asset frame. Kept the full shell and did not rescale. GIS attribute NUM_LEVELS=4 and Extrution=36 are recorded as source attributes, not treated as surveyed height.",
+      "uncertainty": "GIS boundary supports identity and plan geometry but is not an on-site survey; vertical attributes and wall/roof heights are not survey verified."
+    },
+    {
+      "provider": "Purdue for Life Foundation",
+      "url": "https://www.purdueforlife.org/about/",
+      "photo_url": "https://www.purdueforlife.org/app/uploads/Dauch_Alumni_Center_2.jpg",
+      "retrieved": "2026-10-27",
+      "source_date": "Not stated on page",
+      "observed": "Building-specific exterior photograph shows the brick and glass composition, curved glazed frontage, flagpoles, landscaped approach, and freestanding pale stone identity sign. Used to add the missing freestanding sign and its readable two-line name; no dimensional measurement was inferred from the photo."
+    },
+    {
+      "provider": "Home of Purdue / Visit West Lafayette listing",
+      "url": "https://www.homeofpurdue.com/listing/dauch-alumni-center/31/",
+      "retrieved": "2026-10-27",
+      "source_date": "Not stated",
+      "observed": "Independent building-specific exterior image provides a second photo comparison for the curved brick-and-glass facade and three-pole approach. The image supports visual identity only, not measured dimensions."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/repositories/2/resources/1484",
+      "collection_id": "UA 137",
+      "retrieved": "2026-10-27",
+      "source_date": "Collection creation 2004; finding aid dated 2017-10-06",
+      "observed": "Finding aid confirms dedication on October 15, 2004, home of Purdue Alumni Association, the Spurgeon Hall of Spirit interior, and that the records include an information booklet and floorplan. The floorplan itself was not retrieved for this revision; interior remains schematic."
+    },
+    {
+      "provider": "Purdue Campus Facilities and Buildings Historic Database, Purdue University Libraries Archives and Special Collections",
+      "url": "https://collections.lib.purdue.edu/campus/buildings/19",
+      "retrieved": "2026-10-27",
+      "source_date": "Database entry covers 2004-present; page retrieval 2026-10-27",
+      "observed": "The official entry describes the center as three-story, brick with glass accents; it lists 69,154 gross square feet, CSO Architects, and 2002-2004 construction. This is direct contradictory story-count evidence against the GIS feature's NUM_LEVELS=4."
+    }
+  ],
+  "level_count_reconciliation": {
+    "GIS": "Matched Purdue feature 71 reports NUM_LEVELS=4, Level_=4, F01=0, F02=15.3, F03=29.3, F04=43.3 and B=-16; units and semantics for these floor datum fields are not documented in the feature snapshot.",
+    "historic_database": "Purdue's campus facilities historic entry describes the building as three-story.",
+    "imagery": "Purdue for Life's building-specific exterior photo supports the curved roof, brick/glass facade, and entrance identity. Its oblique facade view is not a registered elevation and does not resolve whether a partial/below-grade level is counted by GIS.",
+    "model_policy": "Keep the existing four GIS-informed facade bands provisionally; do not claim the above-grade story count is measured or resolved. A basement/partial-level interpretation could explain the difference, but the undocumented B field is insufficient to establish it.",
+    "remaining_uncertainty": "No measured section, codebook for F01-F04/B fields, or retrieved as-built floorplan was available to reconcile three-story wording with four GIS levels. Overall building height remains an estimate."
+  },
+  "revision": {
+    "date": "2026-10-27",
+    "reason": "Independent r2 review found all vertical GIS shell normals inward, the roof cap visually read as a flat pink-striped plane, and full-asset bounds omitted the southward sign and planting extent.",
+    "added_objects": [
+      "DAUC_site_sign_base",
+      "DAUC_site_sign_stone_panel",
+      "DAUC_site_sign_title",
+      "DAUC_site_sign_subtitle",
+      "DAUC_site_sign_mulch_bed",
+      "DAUC_site_sign_west_evergreen_1",
+      "DAUC_site_sign_west_evergreen_2",
+      "DAUC_site_sign_west_evergreen_3",
+      "DAUC_site_sign_east_evergreen_1",
+      "DAUC_site_sign_east_evergreen_2",
+      "DAUC_site_sign_east_evergreen_3"
+    ],
+    "geometry_edits": [
+      "Reversed the winding of the 109 GIS shell vertical side faces; upper and lower cap normals remain up/down, respectively.",
+      "Subdivided the roof membrane from 109 to 1,075 vertices and lifted it into a 0.90 m estimated barrel-like crown along the long axis, following the photo-documented gentle roof curve.",
+      "Replaced the brick-shaded roof cap appearance with a neutral gray roof membrane shader with subtle roughness/bump; no external image textures were added.",
+      "Raised 21 coping pieces and four roof equipment objects to follow the roof crown; retained the existing freestanding entry sign and planting, with smooth-shaded sign shrubs."
+    ],
+    "geometry_and_materials": "Structural GIS XY vertices are unchanged; only vertical side-face winding was corrected. The roof membrane is a separate curved surface and is an estimated profile rather than a measured roof section. Existing site sign and planting remain photo-based context, separate from structural shell.",
+    "footprint_origin_height": "Official GIS shell perimeter and local origin remain unchanged. The shell's planar top stays at z=14.4 m; the separate roof membrane now crowns to z=15.305 m. Roof elevation and building height remain estimates. Campus placement marker/origin was not edited.",
+    "level_count_reconciliation": "The four GIS-informed facade bands remain provisional because the GIS NUM_LEVELS=4 conflicts with Purdue's official three-story narrative; neither the photo nor the unavailable floorplan resolves above-grade count. See level_count_reconciliation.",
+    "interior_status": "Existing interior remains a schematic visualization only, not an as-built plan. No accessible public floorplan was retrieved for this revision."
+  },
+  "validation": {
+    "method": "Saved the .blend, then opened it in a fresh Blender 5.2.3 background process. Rechecked each GIS shell side face against the outward edge normal of the source ring, signed volume and caps, exact shell vertex agreement, full evaluated-asset bounds, materials, and external image paths.",
+    "fresh_open": true,
+    "collection": "Asset_dauch_alumni_center",
+    "object_count": 663,
+    "unique_material_count": 30,
+    "gis_shell": "dauch_alumni_center_GIS_outline_primary_shell",
+    "gis_shell_bounds_local_m": [
+      [-30.668753, -19.686562, 0.35],
+      [29.725935, 16.850447, 14.4]
+    ],
+    "gis_shell_side_normals": {"outward": 109, "inward": 0, "ambiguous": 0},
+    "gis_shell_signed_volume_m3": 25313.661909409657,
+    "gis_shell_caps": {"bottom_normal_z": -1.0, "top_normal_z": 0.99999994},
+    "footprint_max_nearest_error_m": 0.000001464490068,
+    "footprint_rms_nearest_error_m": 0.00000071728145,
+    "roof_membrane_vertices": 1075,
+    "roof_membrane_bounds_local_m": [
+      [-30.668753, -19.686562, 14.405],
+      [29.725935, 16.850447, 15.305]
+    ],
+    "full_asset_bounds_local_m": [
+      [-30.668753, -25.125, -0.05],
+      [29.907841, 16.930883, 17.845005]
+    ],
+    "placement_origin_xy_m": [241.198987, -618.185206],
+    "full_asset_bounds_world_xy_m": [
+      [210.530234, 271.106827],
+      [-643.310206, -601.254323]
+    ],
+    "southward_extension_from_old_record_m": 1.5951004,
+    "origin_and_shell_preserved": true,
+    "zero_area_mesh_faces": 0,
+    "missing_external_image_files": [],
+    "asset_sha256": "de1e3735f6b9f206f53cc1affb13c208ae62e96f1322eea6aeed378af9d37d14",
+    "bounds_report": "audit/dauch_alumni_center/asset_bounds_r3.json",
+    "fresh_open_geometry_report": "audit/dauch_alumni_center/asset_validation_r3.json",
+    "previews": [
+      "audit/dauch_alumni_center/dauch_alumni_center_r3_overview.png",
+      "audit/dauch_alumni_center/dauch_alumni_center_r3_roof_profile.png",
+      "audit/dauch_alumni_center/dauch_alumni_center_r3_sign_detail.png"
+    ]
+  },
+  "remaining_uncertainty": [
+    "Footprint comes from the official Purdue GIS feature and was not independently checked against a survey.",
+    "Building height, roof crown/elevation, facade dimensions, and exact window spacing remain estimated from GIS level metadata and photos.",
+    "Story count is unresolved: the GIS says four levels, while Purdue's historic database says three stories; no measured section or available floorplan resolves whether one level is partial or below grade.",
+    "Sign and planting dimensions and precise placement are photo-based approximations.",
+    "Street View was not independently verified in this pass.",
+    "The archives finding aid documents a floorplan in the collection, but the floorplan was not retrieved; the modeled interior is schematic."
+  ],
+  "independent_grade": "Pending coordinator's independent r3 evaluator; no score is claimed by the builder."
+}

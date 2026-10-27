@@ -1,0 +1,48 @@
+"""Independent 0-10 rubric for the frozen Dauch Alumni Center asset."""
+import json
+from pathlib import Path
+HERE=Path(__file__).resolve().parent
+F=json.loads((HERE/'fresh_open_findings.json').read_text(encoding='utf-8'))
+EXPECTED='f110473f7d30b3e3e01072e3c4ed0287d5c36eaa720e25cd2eaaad7ffd649bda'
+assert F['fresh_open'] and F['blender_version'].startswith('5.2.3')
+assert F['asset_sha256']==EXPECTED
+assert F['collection']=='Asset_dauch_alumni_center'
+criteria=[
+ {'criterion':'Correct identity and source-backed footprint','score':2.0,'max_score':2.0,
+  'evidence':['Purdue BuildingShapesZip4 FID 71 names Dick & Sandy Dauch Alumni Center at 403 W Wood Street.','The preserved outer ring has 109 unique points. Independent local-frame comparison finds 109 shell XY positions and max nearest-point error 0.0000015 m.'],
+  'finding':'Identity and GIS plan outline are directly supported and exceptionally closely reproduced.'},
+ {'criterion':'Position, orientation, and scale/dimensions','score':1.8,'max_score':2.0,
+  'evidence':['The manifest placement origin [241.198987, -618.185206] m equals the independently computed GIS polygon centroid to within 0.00000000001 m.','Asset shell local bounds are X -30.669..29.726 m, Y -19.687..16.850 m, Z 0.35..14.40 m; adding the origin places the footprint at the expected campus location.','Facade photo bearing and dimensions are not independently survey-verified. Manifest full-asset Y bounds are stale: the current sign/plant geometry reaches 1.595 m farther south than the recorded local bound.'],
+  'finding':'Building shell placement is precise; some decorative extents are not current in manifest metadata, and photo orientation/dimensions remain unverified.'},
+ {'criterion':'Evidence-backed height, floors, and roof form','score':0.9,'max_score':2.0,
+  'evidence':['Purdue GIS attributes list NUM_LEVELS=4 and Extrution=36, while Purdue’s Campus Facilities and Buildings Historic Database describes the Dauch Alumni Center as three-story. The model uses 4 levels and a 14.4 m roof height; these are not reconciled by a measured section.','Purdue’s historic database describes a brick building with glass accents (2004–present); evidence notes a curved roofline. The render shows a broad flat, strongly striped roof surface. No surveyed roof profile or height was located.','The GIS shell is closed (218 vertices, 327 edges, 111 faces; zero boundary, nonmanifold, or zero-area faces), but signed volume is -8437.89 m³. Independent face-normal comparison finds all 109 vertical wall faces point inward; the top cap points upward and base cap downward. The mesh is topologically closed but the side-face winding is inconsistent and needs correction.'],
+  'finding':'Plan geometry is excellent, but roof profile/height conflict with source descriptions and all shell wall normals point inward. Correct the side-face winding and resolve the three-story/four-level evidence before claiming vertical fidelity.'},
+ {'criterion':'Facade, entrances, and distinctive architecture','score':1.4,'max_score':2.0,
+  'evidence':['The overview presents brick-and-glass frontage, a glazed entrance volume, flagpoles, and a freestanding pale sign labeled Dauch Alumni Center / Purdue University. The cited Purdue for Life photo and Home of Purdue exterior image are the sources for the sign, brick/glass, approach, and poles.','The sign is a useful identity detail and the close view makes its two-line lettering legible, but planting uses faceted low-poly spheres. The main overview is broadly massed and repetitive, with sparse window subdivisions and a large flat striped roof.','Purdue source descriptions support a three-story brick-and-glass Alumni Center; exact facade bay sizes, entry placement, and sign/plant placement are explicitly interpretive rather than measured.'],
+  'finding':'Building-specific brick/glass and entrance cues are recognizable and the new sign adds a useful feature; facade rhythms and roof appearance are still stylized.'},
+ {'criterion':'Modular export, portability, and complete evidence','score':1.55,'max_score':2.0,
+  'evidence':['The fresh-open file contains the expected `Asset_dauch_alumni_center` collection (663 total objects; 659 meshes) and `Scene`. The shell remains centered in local coordinates around the independently verified GIS centroid; the manifest origin supplies campus placement.','All 29 used materials are native node graphs; there are no external file-image dependencies, missing images, or zero-area mesh faces.','Current evidence links the GIS feature, Purdue for Life, Home of Purdue, and Purdue Archives record; it documents source dates/limits and labels interiors, heights, and sign placement as schematic/estimated. The Archives collection indicates a floorplan exists, but it was not retrieved or used. The manifest local bounds need a small update for the new sign/plant extent.'],
+  'finding':'Good portable modular asset and transparent provenance. Update aggregate bounds and retain uncertainty about unsupported interiors and dimensions.'}
+]
+score=round(sum(c['score'] for c in criteria),2)
+findings=[
+ 'The shell is topologically closed, but all 109 side-face normals point inward while the caps point up/down as expected. Recalculate side-face winding, then fresh-open and recheck per-face orientation and positive signed volume.',
+ 'Resolve the conflict between the 3-story Purdue historic database and GIS NUM_LEVELS=4; label dimensions as estimated unless stronger elevation evidence is available.',
+ 'The flat pink-striped roof reads unlike the documented curved roofline; refine the silhouette and use a roof material that reads more like the source building.',
+ 'Update manifest full-asset/local bounds to include the newly added southward sign and planting extents (about 1.595 m beyond the stored minimum Y).',
+ 'Keep the interior identified as schematic; the Archives finding aid says a floorplan is in the collection, but it was not obtained for this grade.'
+]
+result={'building':'Dick & Sandy Dauch Alumni Center','building_id':'dauch_alumni_center','review_revision':2,
+ 'asset':'modular/buildings/dauch_alumni_center.blend','asset_sha256':F['asset_sha256'],'expected_sha256':EXPECTED,
+ 'exact_sha_match':F['asset_sha256']==EXPECTED,'review_date':'2026-10-27','reviewer':'independent grader',
+ 'blender_version':F['blender_version'],'fresh_open':F['fresh_open'],'score':score,'max_score':10.0,
+ 'threshold':8.0,'accepted':score>=8.0,'criteria':criteria,
+ 'evidence':{'footprint_max_error_m':F['footprint_max_nearest_error_m'],'centroid_world_m':F['calculated_source_polygon_centroid_world_m'],
+   'manifest_origin_xy_m':F['manifest_placement_origin_xy_m'],'shell_topology':F['shell_topology'],
+   'bounds_local_m':F['asset_bounds_local_m'],'manifest_world_bounds_from_local_and_origin':F['manifest_world_bounds_from_local_and_origin'],
+   'material_count':len(F['materials']),'external_image_count':len(F['file_image_dependencies']),
+   'preview_images':['audit/dauch_alumni_center/dauch_alumni_center_refinement_overview.png','audit/dauch_alumni_center/dauch_alumni_center_refinement_sign_detail.png'],
+   'cited_sources':['Purdue BuildingShapesZip4 FID 71','Purdue Campus Facilities and Buildings Historic Database: Dick and Sandy Dauch Alumni Center','Purdue for Life Foundation: About Us / Dauch Alumni Center','Home of Purdue: Dauch Alumni Center listing','Purdue Archives UA 137 Dauch Alumni Center records']},
+ 'findings':findings}
+(HERE/'result.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'score':score,'accepted':result['accepted'],'sha256':result['asset_sha256']},indent=2))

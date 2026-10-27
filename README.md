@@ -4,7 +4,7 @@ This project covers Purdue West Lafayette campus buildings and Purdue-operated r
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-## Detailed models: status and latest grader score (162 buildings)
+## Detailed models: status and latest grader score (163 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -64,14 +64,14 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Class Of 1950 | [class_of_1950.blend](modular/buildings/class_of_1950.blend) | Finished | 8.5/10 | — |
 | Delta Sigma Phi | [massing_house_860826641_2c90f97.blend](modular/buildings/massing_house_860826641_2c90f97.blend) | Finished; FID 798 identity and wall footprint verified; no interior and roof/story details remain estimated | [8.3/10](audit/delta_sigma_phi/independent_grade_codex/result.json) | — |
 | Delta Tau Delta | [massing_delta_tau_delta_e06b0b5.blend](modular/buildings/massing_delta_tau_delta_e06b0b5.blend) | Finished | [8.25/10](audit/delta_tau_delta_e06b0b5/independent_grade_r2/result.json) | — |
+| Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | Finished; exact FID 71 shell/placement; story count and roof dimensions remain uncertain | [8.45/10](audit/dauch_alumni_center/independent_grade_r3/result.json) | — |
 | Delta Upsilon | [massing_house_301841256_1cc7641.blend](modular/buildings/massing_house_301841256_1cc7641.blend) | Finished; exact FID 751 wall footprint; master fresh-open PASS; height/roof estimated; no interior plan found | [8.4/10](audit/delta_upsilon/independent_grade_codex/result.json) | — |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](modular/buildings/convergence_center.blend) | Needs independent grade | Not graded | Rossen |
-| Dauch Alumni Center | [dauch_alumni_center.blend](modular/buildings/dauch_alumni_center.blend) | In progress | [7.65/10](audit/dauch_alumni_center/independent_grade_r2/result.json) | Tobin |
 | David and Bonnie Brunner Farm Animal Hospital | [david_and_bonnie_brunner_farm_animal_hospital.blend](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | In progress | 6.7/10 | Rossen |
 | Drew and Brittany Brees Student Athletic Academic Center | [brees_student_athletic_academic_center.blend](modular/buildings/brees_student_athletic_academic_center.blend) | In progress | 7.3/10 | Rossen |
 | Duhme (Ophelia) Residence Hall | [massing_duhme_ophelia_residence_hall_1bb4e9c.blend](modular/buildings/massing_duhme_ophelia_residence_hall_1bb4e9c.blend) | Finished | [8.5/10](audit/duhme_ophelia_residence_hall_independent_grade/result.json) | — |
 | Dudley Hall | [dudley_hall.blend](modular/buildings/dudley_hall.blend) | Finished | [8.0/10](audit/dudley_hall/independent_grade/result.json) | — |
-| Electrical Engineering | [electrical_engineering.blend](modular/buildings/electrical_engineering.blend) | In progress | 5.2/10 | Tobin |
+| Electrical Engineering | [electrical_engineering.blend](modular/buildings/electrical_engineering.blend) | Finished; FID 292 and 109 footprints match; height and full roof remain estimated | [8.3/10](audit/electrical_engineering_independent_grade_r2/result.json) | — |
 | Earhart Hall | [massing_earhart_hall_0f14209.blend](modular/buildings/massing_earhart_hall_0f14209.blend) | Finished | [8.0/10](audit/earhart_hall_independent_grade/result.json) | — |
 | Elliott Hall Of Music | [elliott_hall_of_music.blend](modular/buildings/elliott_hall_of_music.blend) | In progress | 7.1/10 | Rossen |
 | Fairway Cooperative | [massing_fairway_cooperative_2101b77.blend](modular/buildings/massing_fairway_cooperative_2101b77.blend) | Finished | [8.1/10](audit/fairway_cooperative_independent_grade/result.json) | — |
@@ -170,11 +170,12 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Wiley Dining Court (WDCT) | [massing_wiley_dining_court_wdct_8a6c669.blend](modular/buildings/massing_wiley_dining_court_wdct_8a6c669.blend) | Finished; master fresh-open PASS; eaves/ridge height and dining layout remain estimated or schematic | [8.0/10](audit/wiley_dining_court/independent_grade/grade.json) | — |
 | Joyful Journeys | [massing_joyful_journeys_abaf5c3.blend](modular/buildings/massing_joyful_journeys_abaf5c3.blend) | Finished; independently regraded on exact SHA and linked in master; height/facade details estimated; no interior modeled | [8.0/10](audit/joyful_journeys/independent_grade_current/grade.json) | — |
 | Beta Theta Pi | [massing_beta_theta_pi_fid826.blend](modular/buildings/massing_beta_theta_pi_fid826.blend) | Finished; master link verified once and fresh-open PASS; interior and several dimensions remain estimated or unavailable | [8.40/10](audit/beta_theta_pi/independent_grade_revision_4/result.json) | — |
+| West Lafayette Intermediate School | [massing_west_lafayette_intermediate_school_d72f0fa.blend](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Finished; GIS shell verified; height, roof elevations, room positions, and some facade details remain estimated | [8.4/10](audit/west_lafayette_intermediate_school/independent_grade_r3/result.json) | — |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Finished; direct master link fresh-open PASS; facade proportions remain a noted improvement opportunity | [8.0/10](audit/west_lafayette_junior_senior_high_school/independent_grade/result.json) | — |
 
-## Unfinished buildings (105 total)
+## Unfinished buildings (102 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 103 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 105 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 20, Rossen 43, Kyle 22, Rohan 0, Arjav 20, Brady 0. Rossen's 43 records break down to **14 reassigned projects from Rohan, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 85 projects; 20 remain with Arjav and Brady.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 100 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 102 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 17, Rossen 43, Kyle 22, Rohan 0, Arjav 20, Brady 0. Rossen's 43 records break down to **14 reassigned projects from Rohan, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 82 projects; 20 remain with Arjav and Brady.
 
 ### New West Lafayette construction projects (2)
 
@@ -185,8 +186,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Nursing and Pharmacy Education Building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); no confirmed campus-map FID or master asset | Build from current plans and site imagery; establish footprint and placement | Kyle |
 | Daniels School of Business, new building | [Purdue project page](https://www.purdue.edu/provost/academic-facilities-upcoming-facilities/); campus-map reference FID 548 has no linked asset | Reconcile FID 548 with the construction footprint, then build and place the new facility | Kyle |
 
-### Detailed models in progress, awaiting a grade, or awaiting master integration (52)
-
+### Detailed models in progress, awaiting a grade, or awaiting master integration (49)
 | Building | Current detailed model | Latest grader score | Assigned to |
 | --- | --- | ---: | --- |
 | The Caretaker’s Cottage | [`massing_the_caretaker_s_cottage_6b24af9.blend`](modular/buildings/massing_the_caretaker_s_cottage_6b24af9.blend) | [8.1/10](audit/massing_the_caretaker_s_cottage_6b24af9/independent_grade_r2.json); linked in latest master; awaiting Tobin validation | Rossen |
@@ -194,10 +194,8 @@ These projects are absent from the modeled-asset inventory and need current plan
 | The Moosehead Lounge | [`massing_the_moosehead_lounge_f81529e.blend`](modular/buildings/massing_the_moosehead_lounge_f81529e.blend) | [8.2/10](audit/massing_the_moosehead_lounge_f81529e/independent_grade_r2.json); linked in latest master; awaiting Tobin validation | Rossen |
 | The Church of Jesus Christ of Latter-day Saints Institute of Religion | [`massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend`](modular/buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | [8.3/10](audit/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451/independent_grade_r2.json); linked in latest master; awaiting Tobin validation | Rossen |
 | Convergence Center for Innovation and Collaboration | [`convergence_center.blend`](modular/buildings/convergence_center.blend) | Not graded | Rossen |
-| Dauch Alumni Center | [`dauch_alumni_center.blend`](modular/buildings/dauch_alumni_center.blend) | [7.65/10](audit/dauch_alumni_center/independent_grade_r2/result.json); revision required | Tobin |
 | David and Bonnie Brunner Farm Animal Hospital | [`david_and_bonnie_brunner_farm_animal_hospital.blend`](modular/buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 6.7/10 | Rossen |
 | Drew and Brittany Brees Student Athletic Academic Center | [`brees_student_athletic_academic_center.blend`](modular/buildings/brees_student_athletic_academic_center.blend) | 7.3/10 | Rossen |
-| Electrical Engineering | [`electrical_engineering.blend`](modular/buildings/electrical_engineering.blend) | 5.2/10 | Tobin |
 | Elliott Hall Of Music | [`elliott_hall_of_music.blend`](modular/buildings/elliott_hall_of_music.blend) | 7.1/10 | Rossen |
 | Felix Haas Hall | [`felix_haas_hall.blend`](modular/buildings/felix_haas_hall.blend) | 7.4/10 | Rossen |
 | Flex Lab | [`flex_lab.blend`](modular/buildings/flex_lab.blend) | 7.5/10 | Tobin |
@@ -208,7 +206,6 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Heine Pharmacy | [`heine_pharmacy.blend`](modular/buildings/heine_pharmacy.blend) | 7.5/10 | Rossen |
 | Hicks Library | [`hicks_library.blend`](modular/buildings/hicks_library.blend) | 6.6/10 | Tobin |
 | Horticulture Building | [`horticulture_building.blend`](modular/buildings/horticulture_building.blend) | 7.0/10 | Rossen |
-| West Lafayette Intermediate School | [`massing_west_lafayette_intermediate_school_d72f0fa.blend`](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | [7.60/10](audit/west_lafayette_intermediate_school/independent_grade_r2/result.json); revision in progress; room placement and roof plan remain below the acceptance gate | Tobin |
 | Purdue Police Department (TERY) | [`massing_purdue_police_department_19f467e.blend`](modular/buildings/massing_purdue_police_department_19f467e.blend) | [8.4/10](audit/massing_purdue_police_department_19f467e/independent_grade/grade_result.json); linked in latest master; awaiting Tobin validation | Rossen |
 | Purdue Village Administration Building | [`massing_purdue_village_administration_building_3faae6c.blend`](modular/buildings/massing_purdue_village_administration_building_3faae6c.blend) | [8.5/10](audit/massing_purdue_village_administration_building_3faae6c/independent_grade/evaluation_r2.json); linked in latest master; awaiting Tobin validation | Rossen |
 | Provenance Apartments 005 | [`massing_provenance_apartments_005_960f6b0.blend`](modular/buildings/massing_provenance_apartments_005_960f6b0.blend) | [8.3/10](audit/massing_provenance_apartments_005_960f6b0/independent_grade_r4.json); linked in latest master; awaiting Tobin validation | Rossen |
@@ -241,9 +238,6 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Turf Recreation Exercise Center (TREC) | [`massing_turf_recreation_exercise_center_9622f45.blend`](modular/buildings/massing_turf_recreation_exercise_center_9622f45.blend) | [8.1/10](audit/massing_turf_recreation_exercise_center_9622f45/independent_grade_r4.json); linked in latest master; awaiting Tobin validation | Rossen |
 | Triangle | [`massing_triangle_fraternity_8477ad9.blend`](modular/buildings/massing_triangle_fraternity_8477ad9.blend) | [8.0/10](audit/triangle/independent_grade/result.json); linked in latest master; awaiting Tobin validation; height, story count and facade detail remain estimated | Rossen |
 | Unitarian Universalist Church of Tippecanoe County | [`massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend`](modular/buildings/massing_unitarian_universalist_church_of_tippecanoe_county_2a6793d.blend) | [8.5/10](audit/unitarian_universalist_church_of_tippecanoe_county_2a6793d/independent_grade_kyle.json); awaiting master integration | Kyle |
-
-
-
 ### Buildings that still have only massing models (15)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.

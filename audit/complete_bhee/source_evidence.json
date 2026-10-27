@@ -1,0 +1,68 @@
+{
+  "building_id": "electrical_engineering",
+  "building_name": "Max W & Maileen Brown Family Hall of Electrical Engineering (BHEE)",
+  "retrieved": "2026-10-27",
+  "geometry": {
+    "provider": "Purdue University campus map ArcGIS BuildingShapesZip4 FeatureServer layer 0",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "source_snapshot": "audit/official_building_references.json (shared, read-only)",
+    "source_snapshot_date": "2026-10-22",
+    "feature_ids": [292, 109],
+    "source_crs": "EPSG:4326 (ArcGIS geometry converted into the project's local linear approximation)",
+    "local_transform": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0; Z=up; metres. Asset vertices are shifted by manifest placement origin [143.8499984741211,135.0].",
+    "method": "Both official polygons named BHEE are retained as separate footprint components. Exterior wall centerlines and clipped floor/roof slabs derive directly from the GIS rings. No footprint scaling was applied. Facade bay rhythm and story elevations are estimates based on photographs and the life-safety plan.",
+    "uncertainty": "Official campus GIS shapes are not certified survey data, and source epoch/positional accuracy are not published. Feature 109 appears as the curved southeast addition attached to the main footprint; its exterior height is not established by the polygon."
+  },
+  "architecture": [
+    {
+      "provider": "Purdue ECE",
+      "url": "https://engineering.purdue.edu/ECE/News/2025/a-century-of-circuits-and-community-purdues-electrical-engineering-building-turns-100",
+      "source_date": "2025-09-01",
+      "use": "Current exterior facade photo supports red brick, limestone inscription band, grouped stone entrance portals, dark metal-framed windows, projecting cornice and red tile eave. The article documents the 1924 cornerstone, 1925 construction, and 1932/1940 additions.",
+      "limits": "Photo is a single oblique elevation; it does not establish exact building-wide bay spacing, roof plan, facade height, or interior plan."
+    },
+    {
+      "provider": "Purdue ECE",
+      "url": "https://engineering.purdue.edu/ECE/Safety/EE_BEP_12-3-2013.pdf",
+      "source_date": "2013-12-03",
+      "local_copy": "audit/complete_bhee/electrical_engineering_bep.pdf",
+      "use": "Life-safety plan states five floors: basement, ground, first, second, third, plus attic. The Duncan Annex is identified as office and research-laboratory space.",
+      "limits": "This supports floor count and use, not a surveyed vertical dimension, present-day room configuration, or roof shape."
+    },
+    {
+      "provider": "Purdue ECE",
+      "url": "https://engineering.purdue.edu/ECE/Wavelinks/2024/articles/max-w-and-maileen-brown-family-hall-of-electrical-engineering",
+      "source_date": "2024-12-11",
+      "local_copy": "audit/complete_bhee/article.html",
+      "use": "As-built renovation photographs support teaching labs, graduate research, collaboration/lounge functions, accessible ground-floor circulation, exposed white services, workbenches and green fabric seating."
+    },
+    {
+      "provider": "Purdue ECE / Purdue for Life Foundation",
+      "url": "https://engineering.purdue.edu/ECE/Giving/BHEE/BHEE_First_Floor_Renovation.pdf",
+      "source_date": "2022",
+      "local_copy": "audit/complete_bhee/renovation.pdf",
+      "use": "Fundraising proposal is a functional first-floor zoning reference for labs, offices, shop, collaboration areas and lounge.",
+      "limits": "The proposal states designs subject to change; it is not proof of as-built room boundaries."
+    },
+    {
+      "provider": "MSKTD, renovation architect",
+      "url": "https://msktd.com/project/purdue-university-brown-family-hall-bhee/",
+      "source_date": "accessed 2026-10-27",
+      "use": "Architect's project description confirms renovation kept the historic footprint without expansion, and prioritized circulation, accessibility, natural light and collaborative spaces."
+    }
+  ],
+  "changes_in_this_revision": [
+    "Added the previously omitted official FID 109 BHEE footprint as a separate, locally modeled building component, with facade bays and floor/roof plates.",
+    "Replaced the low placeholder for FID 109 with the polygon-shaped component; roof and height remain estimated.",
+    "Replaced blank opaque courtyard wall slabs with window bays, brick piers, glazing, sills and limestone courses; courtyard details remain estimated from available imagery and plan.",
+    "Repositioned three front portals and the Electrical Engineering inscription band onto the photo-supported south elevation derived from FID 292.",
+    "Increased exterior window bay spacing and opening width to better match the documented multi-story academic facade.",
+    "Kept the modular scene/collection names and origin unchanged; no external texture dependencies were introduced."
+  ],
+  "remaining_uncertainty": [
+    "No surveyed elevation or height source was found; 18 m is an estimate, and the five-floor count includes basement/ground/three upper floors plus attic.",
+    "The precise present-day facade bay rhythm and courtyard elevations remain unverified outside the photographed south elevation.",
+    "Upper-floor and basement interiors, stairs, accessibility routes, and the exact 2024 as-built room layout are not fully modeled.",
+    "The roof is a flat working roof plane with a photo-supported front eave/cornice; full roof shape and radio equipment are not verified for the present-day building."
+  ]
+}

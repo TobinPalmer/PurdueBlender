@@ -45,7 +45,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Class Of 1950 | [class_of_1950.blend](buildings/class_of_1950.blend) | 2431 |
 | Duhme (Ophelia) Residence Hall | [massing_duhme_ophelia_residence_hall_1bb4e9c.blend](buildings/massing_duhme_ophelia_residence_hall_1bb4e9c.blend) | 1491 |
 | Earhart Hall | [massing_earhart_hall_0f14209.blend](buildings/massing_earhart_hall_0f14209.blend) | 25 |
-| Electrical Engineering | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4169 |
+| Electrical Engineering (R2 independently graded 8.3/10; accepted) | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4774 |
 | Elliott Hall Of Music | [elliott_hall_of_music.blend](buildings/elliott_hall_of_music.blend) | 137 |
 | Fairway Cooperative | [massing_fairway_cooperative_2101b77.blend](buildings/massing_fairway_cooperative_2101b77.blend) | 571 |
 | Family Express | [massing_family_express_a07e1fb.blend](buildings/massing_family_express_a07e1fb.blend) | 503 |
@@ -121,7 +121,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Black Cultural Center | [black_cultural_center.blend](buildings/black_cultural_center.blend) | 621 |
 | Burton D. Morgan Center for Entrepreneurship | [burton_morgan_center.blend](buildings/burton_morgan_center.blend) | 384 |
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](buildings/convergence_center.blend) | 894 |
-| Dauch Alumni Center | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 652 |
+| Dauch Alumni Center (R3 independently graded 8.45/10; accepted) | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 663 |
 | David and Bonnie Brunner Farm Animal Hospital | [david_and_bonnie_brunner_farm_animal_hospital.blend](buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 640 |
 | Drew and Brittany Brees Student Athletic Academic Center | [brees_student_athletic_academic_center.blend](buildings/brees_student_athletic_academic_center.blend) | 97 |
 | Flex Lab | [flex_lab.blend](buildings/flex_lab.blend) | 121 |
@@ -347,7 +347,9 @@ Zeta Beta Tau at FID 762 / 900 David Ross retains campus-world coordinates in th
 | Building | File | Objects |
 | --- | --- | ---: |
 | Beta Theta Pi | [massing_beta_theta_pi_fid826.blend](buildings/massing_beta_theta_pi_fid826.blend) | 349 |
+| Dauch Alumni Center | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 663 |
+| Electrical Engineering | [electrical_engineering.blend](buildings/electrical_engineering.blend) | 4774 |
 | West Lafayette Junior-Senior High School | [massing_west_lafayette_junior_senior_high_school_fa45bd1.blend](buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | 11 |
-| West Lafayette Intermediate School (R2 in progress; 7.60/10, below gate) | [massing_west_lafayette_intermediate_school_d72f0fa.blend](buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | 1667 |
+| West Lafayette Intermediate School (R3 independently graded 8.4/10; accepted) | [massing_west_lafayette_intermediate_school_d72f0fa.blend](buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | 1862 |
 
-The fresh-open master audit found each of these libraries linked exactly once at the expected path and matching its manifest bounds. Beta Theta Pi and West Lafayette Junior-Senior High School meet the grade gate; the Intermediate School remains unfinished while its R2 geometry is revised.
+The fresh-open master audit confirmed one correct master reference for Dauch Alumni Center and Electrical Engineering through their Placement markers and for West Lafayette Intermediate School through its direct link; all three use the expected library paths and match manifest object counts and world bounds. The earlier audit also passed for Beta Theta Pi and West Lafayette Junior-Senior High School. All five meet the grade gate: Dauch 8.45/10, Electrical Engineering 8.3/10, West Lafayette Intermediate School 8.4/10, Beta Theta Pi 8.4/10, and West Lafayette Junior-Senior High School 8.0/10. West Lafayette Intermediate School height, roof elevations, room positions, and some facade details remain estimated.
