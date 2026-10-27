@@ -4,7 +4,7 @@ This project covers Purdue West Lafayette campus buildings and Purdue-operated r
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-## Detailed models: status and latest grader score (159 buildings)
+## Detailed models: status and latest grader score (160 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -156,6 +156,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
 | Islamic Society of Greater Lafayette (ISGL) | [massing_islamic_societyof_greater_lafayette_0130012.blend](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | Finished; GIS identity/address and roof/height details remain uncertain; interior is schematic | [8.2/10](audit/islamic_society_greater_lafayette/independent_grade_codex_r3/result.json) | — |
 | Village Bottle Shoppe | [massing_village_bottle_shoppe_6a17e23.blend](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | Finished; entry bearing, height, and unseen elevations remain uncertain | [8.7/10](audit/village_bottle_shoppe/independent_grade_r3/result.json) | — |
+| Von’s Shops | [massing_von_s_d207e41.blend](modular/buildings/massing_von_s_d207e41.blend) | Finished; master linked once and fresh-open PASS ([integration check](audit/von_s/master_integration_2026-10-27.json)); height/roof and facade rhythm remain estimates; no verified interior plan | [8.35/10](audit/von_s/independent_grade_r1/grade_report.md) | - |
 | Phi Gamma Delta | [massing_house_301837281_58ead22.blend](modular/buildings/massing_house_301837281_58ead22.blend) | Finished; facade divisions, roof, heights remain estimated; interior unmodeled because plans are not registered to GIS | [8.5/10](audit/phi_gamma_delta/independent_grade_r2/grade_report.md) | — |
 | Phi Kappa Sigma | [massing_phi_kappa_sigma_fid829.blend](modular/buildings/massing_phi_kappa_sigma_fid829.blend) | Finished; master fresh-open PASS; wing heights remain estimates; interior omitted because no verified plan was found | [8.55/10](audit/phi_kappa_sigma/independent_grade_revision_2/result.json) | — |
 | Lambertus Hall | [lambertus_hall.blend](modular/buildings/lambertus_hall.blend) | Finished; 16 m height and some facade-wing attribution estimated | [8.0/10](audit/lambertus_hall/independent_grade/grade.json) | — |
@@ -168,9 +169,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Roy L. Whistler Hall of Agricultural Research (WSLR) | [massing_whistler_hall_6f6bf8d.blend](modular/buildings/massing_whistler_hall_6f6bf8d.blend) | Finished; master fresh-open PASS; roof, facade, and interior details remain estimates or schematic | [8.9/10](audit/whistler_hall/independent_grade_r2/result.json) | — |
 | Wiley Dining Court (WDCT) | [massing_wiley_dining_court_wdct_8a6c669.blend](modular/buildings/massing_wiley_dining_court_wdct_8a6c669.blend) | Finished; master fresh-open PASS; eaves/ridge height and dining layout remain estimated or schematic | [8.0/10](audit/wiley_dining_court/independent_grade/grade.json) | — |
 | Joyful Journeys | [massing_joyful_journeys_abaf5c3.blend](modular/buildings/massing_joyful_journeys_abaf5c3.blend) | Finished; independently regraded on exact SHA and linked in master; height/facade details estimated; no interior modeled | [8.0/10](audit/joyful_journeys/independent_grade_current/grade.json) | — |
-## Unfinished buildings (108 total)
+## Unfinished buildings (107 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 106 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 108 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 9, Rossen 29, Kyle 22, Rohan 28, Arjav 20, Brady 0. Rossen's 29 records break down to **0 confirmed models still needing an initial build, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 60 projects; 48 remain with Rohan, Arjav, and Brady.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 105 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 107 known unfinished projects. Open assignment records (including work awaiting master integration): Tobin 8, Rossen 29, Kyle 22, Rohan 28, Arjav 20, Brady 0. Rossen's 29 records break down to **0 confirmed models still needing an initial build, 26 independently passed models awaiting Tobin's master-file validation, and 3 unresolved facility-research leads**. Those 3 leads are not yet confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 59 projects; 48 remain with Rohan, Arjav, and Brady.
 
 ### New West Lafayette construction projects (2)
 
@@ -239,7 +240,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 
 
 
-### Buildings that still have only massing models (16)
+### Buildings that still have only massing models (17)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
 
@@ -260,7 +261,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Arjav |
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
 
-| von s | [`massing_von_s_d207e41.blend`](modular/buildings/massing_von_s_d207e41.blend) | Tobin |
 | west lafayette intermediate school | [`massing_west_lafayette_intermediate_school_d72f0fa.blend`](modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend) | Tobin |
 | west lafayette junior senior high school | [`massing_west_lafayette_junior_senior_high_school_fa45bd1.blend`](modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend) | Tobin |
 | windsor halls | [`massing_windsor_halls_80aeb51.blend`](modular/buildings/massing_windsor_halls_80aeb51.blend) | Tobin |

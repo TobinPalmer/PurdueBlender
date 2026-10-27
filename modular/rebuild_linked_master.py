@@ -1,6 +1,7 @@
 """Rebuild the campus scene from linked building libraries and placement markers."""
 import bpy
 import json
+from datetime import date
 from pathlib import Path
 from mathutils import Vector
 
@@ -286,7 +287,7 @@ for record in detailed:
 # Persist the placement convention and current build details.
 manifest["detailed_asset_count"] = len(detailed)
 manifest["placement_model"] = "Detailed assets are local-coordinate linked collections. Placement_<id> empties in the master supply XY campus coordinates. Massing assets retain their original campus coordinates and are linked directly."
-manifest["last_master_build"] = "2026-10-26"
+manifest["last_master_build"] = date.today().isoformat()
 manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
 
 bpy.context.view_layer.update()

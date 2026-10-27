@@ -170,6 +170,7 @@ CREC retains its legacy massing filename and campus-world direct-link coordinate
 | University Lutheran Church | [massing_university_lutheran_church_20903f1.blend](buildings/massing_university_lutheran_church_20903f1.blend) | 541 |
 | Utility Plant Office Facility | [massing_utility_plant_office_facility_e219ef5.blend](buildings/massing_utility_plant_office_facility_e219ef5.blend) | 361 |
 | Village Bottle Shoppe | [massing_village_bottle_shoppe_6a17e23.blend](buildings/massing_village_bottle_shoppe_6a17e23.blend) | 1 |
+| Von’s Shops | [massing_von_s_d207e41.blend](buildings/massing_von_s_d207e41.blend) | 1 |
 | Veterinary Animal Isolation Building 2 (VA2) | [massing_veterinary_animal_isolation_building_2_ebb4142.blend](buildings/massing_veterinary_animal_isolation_building_2_ebb4142.blend) | 1113 |
 | Veterinary Medicine Isolation Facility | [massing_veterinary_medicine_isolation_facility_66d1305.blend](buildings/massing_veterinary_medicine_isolation_facility_66d1305.blend) | 145 |
 | Veterinary Pathology Building | [massing_veterinary_pathology_building_48b5a5b.blend](buildings/massing_veterinary_pathology_building_48b5a5b.blend) | 1 |
@@ -257,6 +258,7 @@ Hockmeyer Hall retains campus-world coordinates. Its 8.0/10 grade supports the s
 ISGL retains campus-world coordinates and is linked into the master. Its 8.2/10 grade preserves the FID 771 footprint; identity/address conflict (1021 vs. 1022 First St), height, roof, and facade details remain unresolved or estimated. A clearly labeled open floor patch is schematic, not a verified plan. See [ISGL grade](../audit/islamic_society_greater_lafayette/independent_grade_codex_r3/result.json).
 
 Village Bottle Shoppe retains campus-world coordinates and is linked into the master. Its 8.7/10 grade matches Indiana footprint objectid 409442 to 1832 Northwestern Ave. Height, unseen elevations, and possible side-entry bearing remain uncertain; the interior has no reliable plan evidence. See [Village Bottle Shoppe grade](../audit/village_bottle_shoppe/independent_grade_r3/result.json).
+Von’s Shops retains campus-world coordinates. Its 8.35/10 independent grade verifies OSM way 116427236 and exact eight-point footprint registration; facade rhythm, roof/height remain estimated, and no public interior plan was found. The visual asset has high open-edge count and is not watertight. See [Von’s independent grade](../audit/von_s/independent_grade_r1/grade_report.md).
 
 Jimmy John's retains campus-world coordinates. Its 8.0/10 grade uses the Indiana 2018 LiDAR-derived roof ring with OSM and dated orthophoto cross-checks; exact wall edge, height, roof, and facade dimensions remain uncertain. See [Jimmy John's grade](../audit/massing_jimmy_john_s_12edba1/independent_grade/r3/result.json).
 
