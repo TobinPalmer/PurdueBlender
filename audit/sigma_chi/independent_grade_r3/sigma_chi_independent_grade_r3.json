@@ -1,0 +1,124 @@
+{
+  "building": "Sigma Chi Delta Delta chapter house (Purdue GIS FID 828)",
+  "asset_path": "modular/buildings/massing_sigma_chi_fid828.blend",
+  "asset_sha256": "f8f3fe8e061ce25b32e8cffa732c12d596a5af841887ea0d9d5752ebe2b8b4d7",
+  "grader": "Independent source, GIS, matching-SHA validation-record, and rendered-view review; criterion scores assigned by this evaluator",
+  "blender_version_in_builder_validation": "5.2.3 LTS",
+  "independent_fresh_reopen": false,
+  "score": 8.25,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Raw Purdue GIS FID 828 identifies Sigma Chi at 202 Littleton St; the chapter house page directly matches name and address.",
+        "GIS source contains 6 unique ring vertices; independent project conversion gives bounds X 861.387..899.855 m, Y -283.996..-251.474 m and polygon area 535.206 m\u00b2.",
+        "Matching-SHA fresh-reopen report records a six-vertex wall comparison with max XY error 0.00002976 m."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "The saved wall plan is reported compared against the complete transformed Purdue GIS ring; the transformed source controls campus position, orientation, and plan dimensions.",
+        "The local project conversion is approximate and is not a surveyed CRS; no independent survey was found to compare against."
+      ],
+      "findings": [
+        "Horizontal dimensions and placement are verified to the Purdue GIS source, not an independent survey."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "The inspected candidate render and roof view show multiple gables, dormers, chimneys, and a steep roof, consistent with broad cues in the preserved chapter photos.",
+        "Eaves (8.8 m), primary ridge (13.1 m), and chimney tops (16.96 m) are estimates; no elevation drawing, point cloud, or survey establishes height.",
+        "GIS floor attributes say one level but conflict with the visible multi-storey house; modeled floor count remains unverified."
+      ],
+      "findings": [
+        "Height and floor count remain unverified. Roof form is recognizable but the modeled gable layout remains schematic versus the historic photos."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.25,
+      "max_score": 2,
+      "evidence": [
+        "The inspected render includes an entry porch, grouped and divided windows, an arched gable opening, gabled roof breaks, and chimneys.",
+        "The 1960\u201362 and 2006 construction photographs show a more irregular Tudor Revival composition with substantial stone surrounds, timber framing, and complex gables.",
+        "The model facade remains regular and flat in the render; the signature stone/timber treatment and historic entrance proportions are only weakly represented."
+      ],
+      "findings": [
+        "Facade details and overall composition remain simplified relative to the available photographs."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Exact asset SHA verified: f8f3fe8e061ce25b32e8cffa732c12d596a5af841887ea0d9d5752ebe2b8b4d7.",
+        "The exact-SHA Blender 5.2.3 LTS reopen report records the expected scene and collection, 597 mesh objects, zero nonmanifold/loose edges, and PASS.",
+        "Required raw sources, provenance metadata, and inspection renders are present. The evidence record names the stable asset ID, expected collection, and asset path.",
+        "The independent grader could not personally reopen the .blend because Blender CLI was absent and the live Blender addon was unreachable; this gate relies on the builder's matching-SHA fresh-reopen report."
+      ],
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "identity_attributes": {
+      "FID": 828,
+      "BUILDING_N": "Sigma Chi",
+      "BLDG_ABBR": "SOSC",
+      "ADDRESS": "202 Littleton St",
+      "OWNER": "GREEK",
+      "GlobalID": "{C8550BCE-BEC4-40EA-85AB-B9B81E75436D}"
+    },
+    "gis_unique_vertex_count": 6,
+    "gis_transformed_bounds_xy_m": [
+      [
+        861.3871961076584,
+        899.8546409735677
+      ],
+      [
+        -283.996331470928,
+        -251.47369900770627
+      ]
+    ],
+    "gis_projected_polygon_area_m2": 535.2056946092489,
+    "reported_wall_ring_max_xy_error_m": 2.975699506793544e-05,
+    "reported_mesh_object_count": 597,
+    "reported_nonmanifold_edges": 0,
+    "reported_loose_edges": 0,
+    "source_and_render_coverage": {
+      "sources/purdue_gis_fid828_raw.json": true,
+      "sources/sigma_chi_chapter_house.html": true,
+      "sources/sigma_chi_renovation.html": true,
+      "sources/house_1960_62.gif": true,
+      "sources/renovation_sept2006.jpg": true,
+      "sigma_chi_fresh_reopen_render.png": true,
+      "sigma_chi_front_oblique.png": true,
+      "sigma_chi_roof_plan.png": true
+    },
+    "inspected_views": [
+      "audit/sigma_chi/sigma_chi_fresh_reopen_render.png",
+      "audit/sigma_chi/sigma_chi_front_oblique.png",
+      "audit/sigma_chi/sigma_chi_roof_plan.png",
+      "audit/sigma_chi/sources/house_1960_62.gif",
+      "audit/sigma_chi/sources/renovation_sept2006.jpg"
+    ],
+    "independent_runtime_limitation": "Blender executable unavailable on PATH/standard installation locations; live Blender MCP connection failed. The matching-SHA builder report is used for reopen/topology gate only."
+  },
+  "findings": [
+    "Horizontal dimensions and placement are verified to the Purdue GIS source, not an independent survey.",
+    "Height and floor count remain unverified. Roof form is recognizable but the modeled gable layout remains schematic versus the historic photos.",
+    "Facade details and overall composition remain simplified relative to the available photographs."
+  ],
+  "pass_threshold": 8,
+  "result": "PASS"
+}

@@ -1,0 +1,112 @@
+{
+  "building": "Sigma Chi Delta Delta chapter house (Purdue GIS FID 828)",
+  "asset_path": "modular/buildings/massing_sigma_chi_fid828.blend",
+  "asset_sha256": "b158aa1cb6c1ed72b54c0af6e61a3b53b37696b05a1b2e786cb65ddd5002af3c",
+  "grader": "independent Blender asset review following root AGENT.md rubric",
+  "blender_version": "5.2.3 LTS",
+  "score": 7.0,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Preserved Purdue GIS FID 828 record names Sigma Chi, gives 202 Littleton St and GlobalID {C8550BCE-BEC4-40EA-85AB-B9B81E75436D}.",
+        "Preserved chapter-house page identifies the Delta Delta house at 202 Littleton; the identity crosswalk is consistent across independent sources.",
+        "The saved structural wall shell's first six XY vertices match the transformed FID 828 ring; independently measured maximum difference is 0.00002976 m."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Asset uses campus coordinates as required for this massing library; source wall ring follows the FID 828 geographic outline with XY error 0.00002976 m.",
+        "The source ring itself determines plan shape, orientation, and dimensions; transformed AABB is X=861.387..899.855 m, Y=-283.996..-251.474 m.",
+        "Independent inventory minimum-rotated-rectangle direction is documented as a secondary check, not substituted for the source ring."
+      ],
+      "findings": [
+        "No independent current survey is available; the position/dimension match is to Purdue GIS and the project's approximate local conversion."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.5,
+      "max_score": 2,
+      "evidence": [
+        "Asset bounds reach Z=13.100 m; evidence correctly labels 8.8 m eaves and 13.1 m ridge as estimates.",
+        "Historic chapter photos support steep roofs and gable/dormer cues, but are perspective views and cannot establish measured height, current roof layout, or floors.",
+        "GIS floor attributes both say 1 but conflict with the facade's three courses and are not independent reliable storey evidence; the builder labels floor count unverified."
+      ],
+      "findings": [
+        "No elevation, survey, point-cloud height, or verified floor-count source: most of this criterion remains unsupported."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.5,
+      "max_score": 2,
+      "evidence": [
+        "Historic chapter photographs show Tudor Revival character, prominent intersecting gables, masonry/stucco, an entry porch/canopy, and varied/arcuated openings.",
+        "The saved render shows repeated plain rectangular windows and floor-course stripes on an otherwise box-like L mass; no prominent entrance, chimney, masonry articulation, or photo-matched gable composition is visible. Two small dormers are only generic roof cues.",
+        "The overall appearance is schematic and is not sufficient evidence of architectural fidelity under AGENT.md."
+      ],
+      "findings": [
+        "The model omits the identifiable entrance and most distinctive Tudor/masonry details visible in the source photos; facade rhythm is generic."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Fresh open succeeded for the exact requested SHA-256; expected scene and named asset collection are present.",
+        "Collection has 230 objects (230 mesh objects); 0 nonmanifold edges and 0 loose edges were found.",
+        "No unpacked missing external image dependencies were found: none.",
+        "Audit folder preserves GIS/chapter-page source snapshots, render views, source metadata, transformation method, uncertainties, and fresh-open record."
+      ],
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "reopened_saved_asset": true,
+    "scene": "Building_massing_sigma_chi_fid828",
+    "collection": "Asset_massing_sigma_chi_fid828",
+    "collection_object_count": 230,
+    "mesh_object_count": 230,
+    "source_ring_vertex_count": 6,
+    "source_ring_max_xy_error_m": 2.975699506793544e-05,
+    "world_bounds_m": [
+      [
+        860.9611206054688,
+        900.2807006835938
+      ],
+      [
+        -284.74212646484375,
+        -249.5157470703125
+      ],
+      [
+        0.0,
+        13.100000381469727
+      ]
+    ],
+    "nonmanifold_edges": 0,
+    "loose_edges": 0,
+    "missing_unpacked_image_dependencies": [],
+    "inspected_views": [
+      "audit/sigma_chi/sigma_chi_fresh_reopen_render.png",
+      "audit/sigma_chi/sigma_chi_roof_plan.png",
+      "audit/sigma_chi/sources/house_1960_62.gif",
+      "audit/sigma_chi/sources/renovation_sept2006.jpg"
+    ]
+  },
+  "findings": [
+    "No independent current survey is available; the position/dimension match is to Purdue GIS and the project's approximate local conversion.",
+    "No elevation, survey, point-cloud height, or verified floor-count source: most of this criterion remains unsupported.",
+    "The model omits the identifiable entrance and most distinctive Tudor/masonry details visible in the source photos; facade rhythm is generic."
+  ],
+  "pass_threshold": 8,
+  "result": "FAIL"
+}

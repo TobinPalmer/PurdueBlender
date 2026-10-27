@@ -1,0 +1,116 @@
+{
+  "building": "Sigma Chi Delta Delta chapter house (Purdue GIS FID 828)",
+  "asset_path": "modular/buildings/massing_sigma_chi_fid828.blend",
+  "asset_sha256": "c92ba432fd0b7593f6043929aece4d4b2c1dc07a9a9216f63fe72d5033543de4",
+  "grader": "Fresh independent re-open, source comparison, render review, and evaluator following root AGENT.md rubric",
+  "blender_version": "5.2.3 LTS",
+  "score": 7.5,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Preserved FID 828 attributes identify Sigma Chi at 202 Littleton Street; current chapter house page crosswalks the house identity/address.",
+        "Saved wall shell compared vertex-by-vertex against the transformed GIS ring; independently computed maximum XY error 0.00002976 m."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Massing asset uses campus coordinates; GIS ring sets plan orientation and dimensions.",
+        "Model world bounds: X 860.896..900.281 m, Y -284.899..-249.516 m, Z 0.000..16.960 m.",
+        "Recorded coordinate conversion is the project approximate local conversion, not a survey CRS."
+      ],
+      "findings": [
+        "Position and size are verified against Purdue GIS only; independent survey unavailable."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.75,
+      "max_score": 2,
+      "evidence": [
+        "Saved bounds reach 16.96 m; eaves and roof heights are explicitly estimates, not measurements.",
+        "Historic 1960\u201362 and 2006 construction-stage photographs support steep intersecting roofs, dormers, chimneys, and gable cues.",
+        "The saved render has a tall, steep main roof, two dormers, and chimneys, but the dominant uninterrupted roof plane does not reproduce the more articulated intersecting gable roof visible in source photographs.",
+        "Floor count remains unverified; available GIS level fields are unreliable/conflicting evidence."
+      ],
+      "findings": [
+        "No elevation or point-cloud source establishes height or floor count. Roof massing is only partly matched: subdivide the long roof plane with the photo-supported intersecting cross-gables and roof breaks."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.75,
+      "max_score": 2,
+      "evidence": [
+        "Photo sources show Tudor Revival, rough masonry/stucco, prominent cross-gables, an arched opening, a substantial timbered entrance, and irregularly grouped openings.",
+        "The model now includes a visible gabled entry porch, divided windows, trim, dormers, chimney stacks, and an L-shaped shell.",
+        "Rendered facades remain mostly uniform flat wall courses with evenly repeated rectangular windows; stone/masonry articulation, arched feature, timbering and historic entrance proportions are weak or absent."
+      ],
+      "findings": [
+        "Photo-backed identity cues improved, but signature Tudor features and facade composition are not well reproduced. Add the photo-supported entry timber framing/stone surround, arched gable opening, and irregular window groupings."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Exact expected asset SHA verified and file opened in Blender 5.2.3 LTS.",
+        "Expected scene and asset collection exist; 566 collection objects, 566 mesh objects.",
+        "Topology scan: 0 non-manifold and 0 loose edges.",
+        "External unpacked missing image dependencies: none.",
+        "Source snapshots and metadata coverage: complete.",
+        "Fresh reopen record separately reports Blender 5.2.3 and matching candidate SHA."
+      ],
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "reopened_saved_asset": true,
+    "scene": "Building_massing_sigma_chi_fid828",
+    "collection": "Asset_massing_sigma_chi_fid828",
+    "collection_object_count": 566,
+    "mesh_object_count": 566,
+    "source_ring_vertex_count": 6,
+    "source_ring_max_xy_error_m": 2.975699506793544e-05,
+    "world_bounds_m": [
+      [
+        860.89599609375,
+        900.2807006835938
+      ],
+      [
+        -284.8992614746094,
+        -249.5157470703125
+      ],
+      [
+        0.0,
+        16.96000099182129
+      ]
+    ],
+    "nonmanifold_edges": 0,
+    "loose_edges": 0,
+    "missing_unpacked_image_dependencies": [],
+    "source_snapshots_present": true,
+    "inspected_views": [
+      "audit/sigma_chi/sigma_chi_fresh_reopen_render.png",
+      "audit/sigma_chi/sigma_chi_roof_plan.png",
+      "audit/sigma_chi/sigma_chi_front_oblique.png",
+      "audit/sigma_chi/sources/house_1960_62.gif",
+      "audit/sigma_chi/sources/renovation_sept2006.jpg"
+    ]
+  },
+  "findings": [
+    "Position and size are verified against Purdue GIS only; independent survey unavailable.",
+    "No elevation or point-cloud source establishes height or floor count. Roof massing is only partly matched: subdivide the long roof plane with the photo-supported intersecting cross-gables and roof breaks.",
+    "Photo-backed identity cues improved, but signature Tudor features and facade composition are not well reproduced. Add the photo-supported entry timber framing/stone surround, arched gable opening, and irregular window groupings."
+  ],
+  "pass_threshold": 8,
+  "result": "FAIL"
+}

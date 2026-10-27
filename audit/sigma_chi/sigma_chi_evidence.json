@@ -1,0 +1,133 @@
+{
+  "building": "Sigma Chi Delta Delta chapter house",
+  "assignment_owner": "Rossen",
+  "stable_asset_id": "massing_sigma_chi_fid828",
+  "asset_path": "modular/buildings/massing_sigma_chi_fid828.blend",
+  "collection": "Asset_massing_sigma_chi_fid828",
+  "scene": "Building_massing_sigma_chi_fid828",
+  "campus_coordinates": true,
+  "crosswalk": {
+    "identity_status": "resolved",
+    "provider": "Purdue University GIS BuildingShapesZip4 FeatureServer layer 0",
+    "feature_id": 828,
+    "global_id": "{C8550BCE-BEC4-40EA-85AB-B9B81E75436D}",
+    "building_name": "Sigma Chi",
+    "building_abbreviation": "SOSC",
+    "address": "202 Littleton St, West Lafayette, IN",
+    "gis_owner": "GREEK",
+    "current_chapter_identity_source": "https://thesighouse.com/our-heritage/chapter-house/",
+    "existing_asset_match": null,
+    "similarly_named_asset_ruled_out": {
+      "id": "massing_kappa_sigma_c1b36ec",
+      "reason": "Kappa Sigma is a different organization; its asset campus bounds X=353.296..395.268 m, Y=-153.713..-131.416 m do not match FID 828."
+    }
+  },
+  "sources": [
+    {
+      "provider": "Purdue University GIS BuildingShapesZip4 FeatureServer layer 0",
+      "feature_identifier": "FID 828; GlobalID {C8550BCE-BEC4-40EA-85AB-B9B81E75436D}",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D828&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "raw_snapshot": "audit/sigma_chi/sources/purdue_gis_fid828_raw.json",
+      "retrieved_date": "2026-10-26",
+      "source_date": "not provided by service",
+      "source_crs": "EPSG:4326 (wkid 4326)",
+      "attributes": {
+        "NUM_LEVELS": 1,
+        "CountOfFLO": 1,
+        "Extrution": 12,
+        "Shape__Area": 925.125,
+        "Shape__Length": 151.51657046031892
+      }
+    },
+    {
+      "provider": "Sigma Chi Delta Delta Purdue chapter site",
+      "feature_identifier": "Current Delta Delta chapter house, 202 Littleton Street",
+      "url": "https://thesighouse.com/our-heritage/chapter-house/",
+      "raw_snapshot": "audit/sigma_chi/sources/sigma_chi_chapter_house.html",
+      "retrieved_date": "2026-10-26",
+      "source_date": "page says house built 1912 and remains the Purdue Sigma Chi house; page copyright 2026",
+      "source_crs": "not applicable",
+      "measurement_method": "Used for name/address/occupancy resolution and broad historic form only."
+    },
+    {
+      "provider": "Sigma Chi Delta Delta Purdue chapter site",
+      "feature_identifier": "Chapter house renovation history and gallery",
+      "url": "https://thesighouse.com/our-heritage/chapter-renovation/",
+      "raw_snapshot": "audit/sigma_chi/sources/sigma_chi_renovation.html",
+      "retrieved_date": "2026-10-26",
+      "source_date": "renovation completed July 2007; gallery images date 2006-2007",
+      "source_crs": "not applicable",
+      "measurement_method": "Used for broad gable, roof, wall, and opening cues; construction-stage photo is not treated as current-condition evidence."
+    }
+  ],
+  "measurement": {
+    "campus_origin": {
+      "latitude": 40.4274,
+      "longitude": -86.9137
+    },
+    "project_transform": {
+      "x": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+      "y": "(latitude - 40.4274) * 111040.0",
+      "units": "meters; approximate local project conversion, not a surveyed projected CRS"
+    },
+    "method": "Transform each raw EPSG:4326 FID 828 ring coordinate with the repository conversion; use all six unique points as the wall-shell perimeter; compare the saved shell vertices to transformed source vertices.",
+    "transformed_ring_bounds_xy_m": {
+      "x_min": 861.3871961076584,
+      "x_max": 899.8546409735677,
+      "y_min": -283.996331470928,
+      "y_max": -251.47369900770627
+    },
+    "transformed_ring_area_shoelace_m2": 535.2056946092489,
+    "transformed_ring_perimeter_m": 115.24561072945335,
+    "source_field_discrepancy": "Service Shape__Area=925.125 and Shape__Length=151.5166 differ from values calculated after the explicit project transform. The source field units/derivation are not documented here; they are not treated as comparable dimensions.",
+    "independent_inventory_mrr_check": {
+      "width_m": 31.242219680845523,
+      "depth_m": 27.778935025691908,
+      "angle_degrees_east_ccw": 64.6951488989826,
+      "use": "directional check only; official source ring controls modeled wall plan"
+    }
+  },
+  "geometry": {
+    "changes": [
+      "Created the new stable massing library because no existing Sigma Chi asset matched FID 828.",
+      "Built the closed wall shell from the complete six-vertex official GIS ring in campus coordinates.",
+      "Kept the L-shaped notch open and composed the roof from two primary gable wings plus three photo-informed cross-gable bays that interrupt the long roof plane.",
+      "Added a gabled entry porch with timber knee braces, an extruded stone arch surround, irregular window groupings, a wider mullioned opening, dormers, and ridge chimneys based on chapter photos.",
+      "Kept eaves, roof heights, gable sizes, and opening locations as estimates from perspective photos; GIS floor fields remain unverified.",
+      "Stored the expected named scene and exported collection; audit cameras/lights remain outside the exported collection."
+    ],
+    "object_count": 597,
+    "wall_plan_source_match": "exact transformed source ring vertex sequence",
+    "height_m": {
+      "eaves": 8.8,
+      "primary_ridge": 13.1,
+      "status": "estimated; not measured",
+      "uncertainty": "No current elevation drawing or point-cloud sample. Eaves, roof ridges, and chimney stacks are proportion estimates from perspective historic photos. GIS Extrution=12 is an undocumented service attribute and is not treated as a measured height.",
+      "chimney_top": 16.96
+    },
+    "floor_count": {
+      "status": "unverified",
+      "uncertainty": "GIS NUM_LEVELS and CountOfFLO both say 1; facade course spacing in the illustrative asset is not evidence of floor count."
+    },
+    "roof_and_facade": {
+      "status": "estimated / schematic",
+      "uncertainty": "Only historic 1960-62 and 2006-07 chapter photos were available; no measured current elevations or construction drawings. Two main roof wings, three cross-gable bays, window groupings, and exact detail positions are source-informed estimates; the 2006 image is during construction."
+    }
+  },
+  "validation": {
+    "record": "audit/sigma_chi/fresh_reopen_validation.json",
+    "blender": "5.2.3 LTS",
+    "fresh_process_reopen": true,
+    "saved_collection_object_count": 597,
+    "nonmanifold_mesh_edges": 0,
+    "loose_mesh_edges": 0,
+    "gis_wall_ring_vertex_count": 6,
+    "gis_wall_ring_max_xy_error_m": 2.975699506793544e-05,
+    "asset_sha256": "f8f3fe8e061ce25b32e8cffa732c12d596a5af841887ea0d9d5752ebe2b8b4d7",
+    "oblique_render": "audit/sigma_chi/sigma_chi_fresh_reopen_render.png",
+    "front_oblique_render": "audit/sigma_chi/sigma_chi_front_oblique.png",
+    "roof_plan_render": "audit/sigma_chi/sigma_chi_roof_plan.png",
+    "candidate_render": "audit/sigma_chi/sigma_chi_candidate_render.png"
+  },
+  "candidate_sha256": "f8f3fe8e061ce25b32e8cffa732c12d596a5af841887ea0d9d5752ebe2b8b4d7"
+}
