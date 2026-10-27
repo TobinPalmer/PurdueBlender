@@ -1,0 +1,53 @@
+{
+  "captured_utc_date": "2026-10-27",
+  "purpose": "Targeted public-record and current-address check for Tau Gamma / Zeta Psi occupancy",
+  "search_captures": [
+    {
+      "source": "City of West Lafayette — Rental Housing",
+      "url": "https://www.westlafayette.in.gov/government/building-rental-housing/rental-housing",
+      "capture_type": "search-indexed page excerpt",
+      "excerpt": "The City of West Lafayette established a rental housing inspection program ... managed by the Building Department. Registration Forms: Property Owner Registration; Occupancy Affidavit.",
+      "direct_fetch": "403 Forbidden",
+      "relevance": "Confirms a registration/inspection process exists; no address-level roster or named facility occupant was returned."
+    },
+    {
+      "source": "Tippecanoe County Treasurer — Tax List",
+      "url": "https://treasurer.tippecanoecounty79.us/cgi.exe?CALL_PROGRAM=C009LIST&PAGEID=0002",
+      "capture_type": "search-indexed page excerpt",
+      "excerpt": "Last Updated: 10/26/2026. Search fields include Property/Parcel Number, Name, and Property Address.",
+      "direct_fetch": "Timed out in browser retrieval; direct request returned 404",
+      "relevance": "Indicates a current parcel tax query is available in principle; no result for parcel 79-06-13-476-005.000-029 was obtained in this pass."
+    },
+    {
+      "source": "Tippecanoe County — Access Property Tax & Assessment Records",
+      "url": "https://tippecanoe.in.gov/151/Access-Property-Tax-Assessment-Records",
+      "capture_type": "official page",
+      "excerpt": "The county directs the public to Beacon, tied directly to the local assessment database, for latest property information, maps, imagery, and online tax payment.",
+      "direct_fetch": "Available; Beacon linked service returned 402 Payment Required through browser retrieval",
+      "relevance": "Officially identifies the current property-record provider; no current owner result was retrievable here."
+    },
+    {
+      "source": "BusinessProfiles — Indiana Association of Zeta Psi Inc registered-agent record",
+      "url": "https://businessprofiles.com/details/indiana-association-of-zeta-psi-inc/IN-197004-504/alumni-president",
+      "capture_type": "third-party company directory page",
+      "excerpt": "Lists ALUMNI PRESIDENT as registered agent and shows a registered-agent address at 950 David Ross Rd, West Lafayette, IN 47906; lists Daniel King as Treasurer.",
+      "relevance": "Un-dated non-primary corporate address listing; does not establish current occupancy and conflicts with the later Oregon mailing address in the IRS return."
+    },
+    {
+      "source": "Indiana Association of Zeta Psi Inc — IRS Form 990 raw XML already archived in this audit",
+      "path": "indiana_association_zeta_psi_irs_filing_2025.xml",
+      "capture_type": "raw filing data",
+      "tax_period_end": "2025-05-31",
+      "filing_timestamp": "2025-09-25T15:40:52-04:00",
+      "filer_address": "13217 Fox Run, Lake Oswego, OR 97034",
+      "program_description": "Operation of a college fraternity house at Purdue University providing room and board for up to 25 students and space for college student social and educational activities.",
+      "relevance": "Recent federal tax filing documents Purdue student-housing operations but gives no facility street address, parcel, chapter occupant, or exclusive-use statement."
+    }
+  ],
+  "additional_checks": [
+    "Exact-address and exact-entity web searches for West Lafayette rental/occupancy, city permit, and Tau Gamma address evidence returned no address-level official record.",
+    "Targeted searches of current public official Zeta Psi, Purdue, and public local social sources surfaced no newer Tau Gamma street address.",
+    "Indiana Secretary of State INBiz direct business-search page returned 403; targeted indexed searches did not produce an official dated entity filing for the 950 David Ross address.",
+    "No person was contacted."
+  ]
+}
