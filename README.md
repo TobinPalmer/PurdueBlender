@@ -216,6 +216,7 @@ Master sync 2026-10-27: [fresh-open verification](audit/master_sync_2026-10-27.j
 | Zeta Beta Tau | [massing_house_301841332_9b3bd1f.blend](modular/buildings/massing_house_301841332_9b3bd1f.blend) | Finished; linked-library sync and fresh-open placement verification PASS 2026-10-27; a separate overlapping source object remains an identity-resolution issue | [8.5/10](audit/zeta_beta_tau/independent_grade/grade_result.json) | — |
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](modular/buildings/zeta_tau_alpha.blend) | Finished | [8.2/10](audit/zeta_tau_alpha/independent_grade_r2.md) | — |
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
+
 ## Unfinished buildings (52 total)
 
 This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 50 current map projects below plus two newer West Lafayette construction projects make 52 unfinished projects. Open assignment records: Tobin 14, Rossen 8, Kyle 10, Rohan 0, Arjav 20, Brady 0. Seven of the 14 open projects formerly assigned to Rohan are now assigned to Tobin and seven remain with Rossen; there are no buildings currently assigned to Brady. The 28 Rossen and 12 Kyle models that passed independent grading are now synchronized to the master and removed from the open queue; Kappa Alpha Theta is also complete. Rossen’s eight remaining records comprise five buildings and three unresolved facility-research leads; the leads are not confirmed buildings. The Tobin, Rossen, and Kyle queues now contain 32 projects; 20 remain with Arjav.
@@ -239,6 +240,7 @@ These projects are absent from the modeled-asset inventory and need current plan
 | Ford Dining Court | [`ford_dining_court.blend`](modular/buildings/ford_dining_court.blend) | 6.8/10 | Rossen |
 | Hall for Discovery and Learning Research | [`hall_for_discovery_and_learning_research.blend`](modular/buildings/hall_for_discovery_and_learning_research.blend) | 7.3/10 | Rossen |
 | Heine Pharmacy | [`heine_pharmacy.blend`](modular/buildings/heine_pharmacy.blend) | 7.5/10 | Tobin |
+
 ### Buildings that still have only massing models (14)
 
 Verify each stable asset ID in `modular/manifest.json` before starting a new model. The master scene controls campus placement through its placement markers.
@@ -260,8 +262,6 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 | slayter center for performing arts | [`massing_slayter_center_for_performing_arts_f45259b.blend`](modular/buildings/massing_slayter_center_for_performing_arts_f45259b.blend) | Arjav |
 | smalley center | [`massing_smalley_center_1902608.blend`](modular/buildings/massing_smalley_center_1902608.blend) | Arjav |
 
-
-
 ### Fraternity, sorority, and cooperative facilities
 
 The unfinished fraternity table below lists seven open cases, four assigned to Tobin and three to Rossen. Passing fraternity models synchronized to the master are listed in the finished table above. The legacy Kappa Sigma house is independently graded 8.5/10 and appears in the finished table above. Sixteen of the current 36 IFC-listed organizations have finished entries above: Acacia, Alpha Chi Rho, Alpha Epsilon Pi, Alpha Gamma Rho, Alpha Kappa Lambda, Alpha Sigma Phi, Alpha Tau Omega, Beta Sigma Psi, Beta Upsilon Chi (formerly Fairway Cooperative), Delta Sigma Phi, Delta Tau Delta, Delta Upsilon, FarmHouse, Kappa Delta Rho, Phi Gamma Delta, and Phi Kappa Sigma. Rows without a confirmed campus-map match remain facility-research work; do not invent a house location from organization membership alone.
@@ -274,7 +274,6 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 
 | House / building | GIS FID and asset | Work status | Assigned to |
 | --- | --- | --- | --- |
-
 | Chi Psi | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Tobin |
 | Delta Chi | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Tobin |
 | Phi Kappa Psi | FID 856 is a candidate at 1307 Tower Dr; GIS label conflicts with the current official chapter address | Reconcile the FID 856 / existing asset crosswalk before modeling | Tobin |
@@ -698,7 +697,7 @@ The reference layer includes named buildings, infrastructure/support structures,
 | 759 | Gamma Phi Beta | [massing_house_301841329_bed5cb6](modular/buildings/massing_house_301841329_bed5cb6.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 760 | Theta Chi | [massing_house_301841328_39f169f](modular/buildings/massing_house_301841328_39f169f.blend) | Named FID 760 / 800 David Ross identity verified; independently graded 8.5/10; master sync and fresh-open placement PASS 2026-10-27; source ring matches within 0.000049 m |
 | 761 | Circle Pines | [massing_house_301841609_c6c9ac4](modular/buildings/massing_house_301841609_c6c9ac4.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
-| 762 | Zeta Beta Tau (current sources) / Phi Kappa Theta (historic GIS label) | [massing_house_301841332_9b3bd1f](modular/buildings/massing_house_301841332_9b3bd1f.blend) is independently graded 8.5/10; [massing_house_301841334_fa7e5a2](modular/buildings/massing_house_301841334_fa7e5a2.blend) remains a separate nearby candidate outside this assignment | One GIS feature at 900 David Ross; current ZBT identity is source-supported; the stable FID 762 asset now matches the transformed roof ring within 0.000043 m; Phi Kappa Theta's current site remains unresolved. See audit/zeta_beta_tau/crosswalk_resolution.md
+| 762 | Zeta Beta Tau (current sources) / Phi Kappa Theta (historic GIS label) | [massing_house_301841332_9b3bd1f](modular/buildings/massing_house_301841332_9b3bd1f.blend) is independently graded 8.5/10; [massing_house_301841334_fa7e5a2](modular/buildings/massing_house_301841334_fa7e5a2.blend) remains a separate nearby candidate outside this assignment | One GIS feature at 900 David Ross; current ZBT identity is source-supported; the stable FID 762 asset now matches the transformed roof ring within 0.000043 m; Phi Kappa Theta's current site remains unresolved. See audit/zeta_beta_tau/crosswalk_resolution.md |
 | 763 | Alpha Sigma Phi | [massing_house_301841603_654031c](modular/buildings/massing_house_301841603_654031c.blend) | Integrated detailed asset; independent grade 8.2/10; master fresh-open PASS; story count/facade details remain uncertain |
 | 764 | Alpha Phi | [massing_house_301841331_735e92f](modular/buildings/massing_house_301841331_735e92f.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
 | 765 | Alpha Chi Omega | [massing_house_301841602_8190d79](modular/buildings/massing_house_301841602_8190d79.blend) | Direct FID crosswalk candidate; geometry/grade still require review |
