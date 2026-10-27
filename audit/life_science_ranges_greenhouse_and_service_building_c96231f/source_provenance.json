@@ -1,0 +1,100 @@
+{
+  "building_id": "massing_life_science_ranges_greenhouse_and_service_building_c96231f",
+  "retrieved_date": "2026-10-26",
+  "sources": [
+    {
+      "source_id": "purdue_gis_fid915",
+      "provider": "Purdue University Campus GIS; ArcGIS BuildingShapesZip4 Feature Layer, layer 0",
+      "feature_id": 915,
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D915&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "snapshot": "sources/purdue_gis_fid915.geojson",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Feature layer metadata reports last edit 2026-08-31T16:13:41.596Z; the feature has no separate creation or survey date.",
+      "coordinate_reference": "The layer metadata's native spatial reference is EPSG:3857 (WKID 102100/latestWKID 3857). The saved GeoJSON query response is EPSG:4326 longitude/latitude.",
+      "measurement_method": "Use FID 915, BLDG_ABBR LSR, Life Science Ranges, 180 S Russell Street. Convert its Polygon rings to the project XY system; use the envelope midpoint as the proposed collection origin. Preserve outer and inner rings.",
+      "fields_relevant_to_height": {
+        "NUM_LEVELS": 2,
+        "CountOfFLO": 2,
+        "Extrution": 12,
+        "Elevation": 620.1,
+        "interpretation": "The layer schema exposes Extrution as an editable nullable integer with no units, field description, domain, or definition. The value 12 is recorded but cannot be verified as meters, feet, a height, or an extrusion instruction. NUM_LEVELS and CountOfFLO are counts, not vertical dimensions. Elevation is also not used as building height because its vertical datum/units are not documented in this layer response. None of these values are treated as a measured building height."
+      },
+      "uncertainty": "No survey accuracy or feature-specific vertical units are published in the saved layer metadata. The GIS geometry is authoritative for horizontal envelope only; the approximate project conversion is not survey-grade."
+    },
+    {
+      "source_id": "purdue_gis_layer_metadata",
+      "provider": "Purdue University Campus GIS / ArcGIS REST",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "snapshot": "sources/purdue_building_shapes_layer_metadata.json",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Layer metadata last edit 2026-08-31T16:13:41.596Z.",
+      "coordinate_reference": "Native EPSG:3857 (WKID 102100); feature query returned EPSG:4326.",
+      "measurement_method": "Inspect schema and spatial-reference metadata to interpret the saved FID 915 feature response and determine whether its height attributes have units or definitions.",
+      "uncertainty": "The layer schema supplies no description/domain that defines Extrution or its units."
+    },
+    {
+      "source_id": "esri_world_imagery",
+      "provider": "Esri World Imagery service",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-86.9200%2C40.4215%2C-86.9165%2C40.4238&bboxSR=4326&imageSR=4326&size=1800%2C1200&format=jpg&f=image",
+      "service_url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      "snapshot": "sources/esri_world_imagery_2026_extent.jpg",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Mosaic acquisition date is not embedded in the saved crop and is unknown.",
+      "coordinate_reference": "Export request bbox and image output EPSG:4326; World Imagery service source tiles use Web Mercator display.",
+      "measurement_method": "Use the saved 1800 x 1200 crop extent and its EPSG:4326 bounds to trace seven greenhouse roof blocks and the adjacent service wing. The builder's pixel rectangles are the candidate footprints used for the reproducible overlay and IoU report.",
+      "uncertainty": "Mosaic date is unknown; pixel edge selection is approximate and roof edges can be affected by shadows, roof transparency, and image resampling. It supports roof layout and plan orientation, not height."
+    },
+    {
+      "source_id": "purdue_lilly_greenhouse_page",
+      "provider": "Purdue College of Agriculture, Department of Botany and Plant Pathology",
+      "url": "https://ag.purdue.edu/department/btny/lilly-greenhouse/index.html",
+      "image_url": "https://ag.purdue.edu/department/btny/lilly-greenhouse/_media/greenhouse-aerial.jpg",
+      "snapshot": ["sources/purdue_lilly_greenhouse_page.html", "sources/purdue_greenhouse_aerial.jpg"],
+      "retrieved_date": "2026-10-26",
+      "source_date": "Page last modified 2026-02-10; the aerial photograph itself has no confirmed capture date.",
+      "coordinate_reference": "No georeferencing/CRS supplied for the page photo.",
+      "measurement_method": "Use the page for facility identity, relationship south of Lilly Hall, greenhouse use, and an additional aerial view; do not take metric measurements from this unreferenced photograph.",
+      "uncertainty": "The page aerial's capture date and camera geometry are not stated; it is contextual rather than a dimensional source."
+    },
+    {
+      "source_id": "purdue_2026_greenhouse_opening_story",
+      "provider": "Purdue College of Agriculture, Agricultural Research and Graduate Education",
+      "url": "https://ag.purdue.edu/news/2026/04/purdue-institute-for-plant-sciences-opens-new-high-tech-greenhouses.html",
+      "snapshot": "sources/purdue_greenhouse_expansion_article.html",
+      "retrieved_date": "2026-10-26",
+      "source_date": "Published 2026-04-27; article reports the project completed fall 2025 and 18,654 square feet of new greenhouses.",
+      "images": [
+        {"url": "https://ag.purdue.edu/news/2026/04/_media/new-lilly-greenhouses-social-photo.jpg", "snapshot": "sources/purdue_2026_greenhouse_social_photo.jpg", "caption": "Exterior west-side greenhouse view; article Open Graph photo."},
+        {"url": "https://ag.purdue.edu/news/2026/04/_media/new-lilly-greenhouses-conveyor-belt.jpg", "snapshot": "sources/purdue_2026_greenhouse_conveyor.jpg", "caption": "Conveyor belt and closed metal door."},
+        {"url": "https://ag.purdue.edu/news/2026/04/_media/new-lilly-greenhouses-air-conditioner.jpg", "snapshot": "sources/purdue_2026_greenhouse_air_conditioner.jpg", "caption": "Air conditioner mounted in greenhouse with brick wall behind."}
+      ],
+      "coordinate_reference": "No spatial CRS; photographs are unreferenced.",
+      "measurement_method": "Use photos and article text for glazing, opaque base, brick service wall, HVAC, conveyor, and operational details only. Do not infer dimensions from pixels.",
+      "uncertainty": "Photographs show details but do not identify full building orientation or dimensioned elevations. Specific dimensions and interior locations remain estimates."
+    },
+    {
+      "source_id": "purdue_2022_board_project_approval",
+      "provider": "Purdue University Board of Trustees, Physical Facilities Committee",
+      "url": "https://www.purdue.edu/bot/meetings/past-meetings/2022/01.%20feb/pfc/LSR%20Phenotyping%20Greenhouse.pdf",
+      "snapshot": ["sources/purdue_2022_board_project_approval.pdf", "previews/board_exhibit-3.png"],
+      "retrieved_date": "2026-10-26",
+      "source_date": "Approval packet dated 2022-01-26; Board meeting 2022-02-04.",
+      "coordinate_reference": "The planning exhibit is not a georeferenced survey; no CRS supplied.",
+      "measurement_method": "Use the project description and Exhibit A/site plan to identify the new greenhouse connection, phenotyping function, and relationship to AAPF. Do not read exact heights from the schematic.",
+      "uncertainty": "The packet is a proposed/planning exhibit, not an as-built record; completed design may differ."
+    }
+  ],
+  "height_decision": {
+    "raw_gis_Extrution": 12,
+    "raw_gis_NUM_LEVELS": 2,
+    "raw_gis_CountOfFLO": 2,
+    "measured_height_available": false,
+    "model_values_m": {
+      "greenhouse_eave": 3.65,
+      "greenhouse_ridge": 5.95,
+      "service_wing_shell": 6.8,
+      "overall_asset_bounds_top": 7.875
+    },
+    "status": "All model vertical dimensions are estimates. The GIS field Extrution=12 is an integer of undocumented meaning/units and is explicitly not treated as measured height. No dimensioned as-built section or elevation was found in the reviewed sources."
+  }
+}

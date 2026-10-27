@@ -1,0 +1,143 @@
+{
+  "score": 8.4,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 1.8,
+      "max_points": 2,
+      "evidence": "The saved raw OSM way 301841253 has address 607 and a 20-node closed ring. The official AGR Delta chapter site lists 607 N University; Purdue Agriculture identifies the chapter and shows its house. The builder source script constructs the principal shell directly from the saved ring.",
+      "finding": "Identity and shell trace are well cross-checked. The footprint is community mapped and not an official survey."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 1.6,
+      "max_points": 2,
+      "evidence": "Fresh master has one identity-rotation, unit-scale collection-instance marker at [-280.37158203125, 346.0006408691406]; it references the correct linked asset and is not also linked directly under the scene root. The reconstructed current world bounds differ from the pre-localization fresh-open bounds by at most 0.0450 m, preserving the prior campus placement through the local-coordinate conversion. The OSM polygon is 25.036 x 36.821 m, with a north-south long axis.",
+      "finding": "Preservation through integration is verified, but the source coordinate transform is approximate and there is no independent Purdue survey control confirming the absolute campus registration."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.4,
+      "max_points": 2,
+      "evidence": "KJG Architecture identifies the Purdue AGR project as four levels and its project imagery supports a pitched dark roof, dormers, and brick/portico form; Purdue Agriculture house imagery corroborates the facade. The model represents four levels and pitched roof/dormers.",
+      "finding": "Wall top, roof ridge, story spacing, and basement relationship remain estimates; no measured elevations or dimensioned plans were found."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 1.7,
+      "max_points": 2,
+      "evidence": "Reviewed saved facade and oblique renders; they show warm red brick, repeated sash windows/shutters, pale belt courses, white columned portico, blue-gray fascia, arched entry glazing, and green AGR lettering, consistent with the saved Purdue Agriculture and KJG references. The source collection includes interior geometry, supported by the saved first-floor interior render.",
+      "finding": "The model communicates the chapter-house identity, but roof and portico proportions are stylized; bay spacing and exact elevations are not source measured. The interior plan is illustrative."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 1.9,
+      "max_points": 2,
+      "evidence": "Fresh-open master inspection passes: the detailed local-coordinate asset is linked from the manifest path, marker points to its expected collection exactly once, the collection is not a direct scene-root child, marker transform is identity, and manifest/source object counts agree (727). Prior fresh-open asset validation found no external file images; the current library retains its source path, scene, collection, evidence, renders, and evaluator records.",
+      "finding": "Master link and local placement are correct. Some textures and all interior room dimensions are schematic/illustrative rather than measured."
+    }
+  ],
+  "evidence": {
+    "master_inspection": "audit/alpha_gamma_rho/independent_grade_master_integration/master_inspection.json",
+    "source_evidence": "audit/alpha_gamma_rho/evidence.json",
+    "prior_fresh_open_validation": "audit/alpha_gamma_rho/reopen_validation_2026-10-26.json",
+    "prior_grade": "audit/alpha_gamma_rho/independent_grade_2026-10-26.json",
+    "renders": [
+      "audit/alpha_gamma_rho/renders/alpha_gamma_rho_facade.png",
+      "audit/alpha_gamma_rho/renders/alpha_gamma_rho_oblique.png",
+      "audit/alpha_gamma_rho/renders/alpha_gamma_rho_first_floor_interior.png"
+    ],
+    "marker": {
+      "name": "Placement_massing_house_301841253_f0b3be3",
+      "location": [
+        -280.37158203125,
+        346.0006408691406,
+        0.0
+      ],
+      "rotation_euler": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "instance_type": "COLLECTION",
+      "instance_collection": "Asset_massing_house_301841253_f0b3be3"
+    },
+    "library_path_matches": true,
+    "collection_directly_linked_under_scene_root": false,
+    "source_object_count": 727,
+    "manifest_object_count": 727,
+    "world_bounds_current_m": [
+      [
+        -296.37579345703125,
+        327.04022216796875,
+        -1.25
+      ],
+      [
+        -264.3674011230469,
+        364.9610595703125,
+        13.90999984741211
+      ]
+    ],
+    "world_bounds_before_localization_m": [
+      [
+        -296.37579345703125,
+        327.04022216796875,
+        -1.25
+      ],
+      [
+        -264.41241455078125,
+        364.9610595703125,
+        13.90999984741211
+      ]
+    ],
+    "max_world_bounds_delta_m": 0.045013427734375,
+    "source_footprint": {
+      "provider": "OpenStreetMap",
+      "feature_type": "way",
+      "feature_id": 301841253,
+      "last_source_edit": "2022-02-27T17:08:01Z",
+      "retrieved": "2026-10-26",
+      "raw_snapshot": "sources/osm_way_301841253_2026-10-26.json",
+      "tags": {
+        "addr:housenumber": "607",
+        "building": "school"
+      },
+      "source_crs": "WGS84 latitude/longitude (EPSG:4326)",
+      "transform": "PurdueMap approximate local conversion, X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040; units metres",
+      "node_count": 20,
+      "bounds_xy_m": [
+        [
+          -295.7685009661899,
+          327.59020800008784
+        ],
+        [
+          -270.73241061686105,
+          364.4110720003823
+        ]
+      ],
+      "dimensions_xy_m": [
+        25.036090349328845,
+        36.82086400029448
+      ],
+      "polygon_area_m2": 687.0619897218421,
+      "measurement_method": "ordered closed OSM way ring converted to local XY; planar shoelace area and axis-aligned bounds",
+      "uncertainty": "OSM outline is community-mapped and last edited 2022-02-27; local conversion is approximate, not survey control; campus master has no verified wall survey."
+    }
+  },
+  "findings": [
+    "Localization and master integration preserve the previously graded campus-world geometry within 0.10 m; computed difference is 0.0450 m.",
+    "One Placement_massing_house_301841253_f0b3be3 marker references the expected Asset_massing_house_301841253_f0b3be3 collection, and no direct root link duplicates it.",
+    "Manifest now records the local-coordinate detailed asset and matching source object count.",
+    "Absolute site registration relies on a 2022 community-mapped OSM footprint and an approximate local projection; Purdue survey confirmation is absent.",
+    "Roof heights, exact floor heights, basement relationship, and interior layout remain estimated or illustrative."
+  ],
+  "grader": "independent master-integration review",
+  "date": "2026-10-26",
+  "verification_errors": []
+}

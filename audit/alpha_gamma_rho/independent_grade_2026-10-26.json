@@ -1,0 +1,104 @@
+{
+  "score": 8.2,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 1.8,
+      "max_points": 2,
+      "evidence": "OSM way 301841253 has addr:housenumber=607; the official chapter page lists 607 N University; Purdue Agriculture identifies Alpha Gamma Rho and provides a chapter-house image; shell polygon has 20 source vertices, 687.06 m² area, and OSM-aligned bounds.",
+      "finding": "Identity and plan trace are strongly cross-checked, but the polygon is a community-mapped 2022 trace and is not an official measured survey."
+    },
+    {
+      "criterion": "Position, orientation, scale/dimensions",
+      "points": 1.6,
+      "max_points": 2,
+      "evidence": "The raw ring maps to 25.036 m E-W by 36.821 m N-S; the shell geometry is built from that same ring in the documented project conversion, with north-south long axis and east-facing address frontage.",
+      "finding": "No independent Purdue GIS feature for 607 or survey control was returned; the GIS address query is empty. Campus-world horizontal registration beyond the OSM transform remains unverified."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.4,
+      "max_points": 2,
+      "evidence": "KJG Architecture describes the Purdue project as four levels and approximately 24,100 sq ft; its saved project render depicts a dark pitched roof, dormers, and brick/portico composition, corroborated by Purdue Agriculture photograph.",
+      "finding": "The model uses a 10.35 m wall top and 13.8 m ridge by estimate. The source says four levels but does not clarify which are above grade; roof heights and exact roof geometry are not measured."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 1.7,
+      "max_points": 2,
+      "evidence": "Purdue Agriculture photo and KJG project image directly show red brick, blue shutters/fascia, white columned portico, arched transom, and green ΑΓΡ pediment lettering. Exterior hero includes those features and four dormers.",
+      "finding": "The modeled gable/roof and entrance proportions are stylized and the roof reads as a broad, simplified plane; no elevation drawing was supplied for exact bay spacing or proportions."
+    },
+    {
+      "criterion": "Modular export, portability, complete evidence",
+      "points": 1.7,
+      "max_points": 2,
+      "evidence": "Saved asset reopens with scene and collection names intact; 726 collection objects and 725 meshes evaluate; no external file images; exterior/interior renders and source snapshots are present.",
+      "finding": "Manifest path/collection are preserved, but shared manifest still reports the old one-object count while the exported collection is now detailed multi-object geometry; coordinator review is needed."
+    }
+  ],
+  "evidence": {
+    "asset_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_house_301841253_f0b3be3.blend",
+    "sources_folder": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\alpha_gamma_rho\\sources",
+    "renders": [
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\alpha_gamma_rho\\renders\\alpha_gamma_rho_hero.png",
+      "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\alpha_gamma_rho\\renders\\alpha_gamma_rho_first_floor_interior.png"
+    ],
+    "footprint_measurement": {
+      "osm_way_id": 301841253,
+      "area_m2": 687.0619897218421,
+      "bounds_xy_m": [
+        -295.7685009661899,
+        327.59020800008784,
+        -270.73241061686105,
+        364.4110720003823
+      ],
+      "long_axis": "north-south"
+    },
+    "fresh_open": {
+      "status": "passed",
+      "reopened_asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_house_301841253_f0b3be3.blend",
+      "scene": "Building_massing_house_301841253_f0b3be3",
+      "camera": "AGR Hero Camera",
+      "collection": "Asset_massing_house_301841253_f0b3be3",
+      "object_count": 726,
+      "mesh_count": 725,
+      "modifier_count": 1414,
+      "evaluated_bounds_world_m": [
+        [
+          -296.37579345703125,
+          327.04022216796875,
+          -1.25
+        ],
+        [
+          -264.41241455078125,
+          364.9610595703125,
+          13.90999984741211
+        ]
+      ],
+      "dimensions_world_m": [
+        31.96337890625,
+        37.92083740234375,
+        15.15999984741211
+      ],
+      "collection_instance_transform": "identity; campus-world coordinates retained",
+      "external_file_images": [],
+      "checks": {
+        "asset_and_scene_names": "passed",
+        "hero_camera_present": "passed",
+        "evaluated_geometry": "passed",
+        "relative_texture_portability": "passed"
+      }
+    },
+    "purdue_gis_address_query_features": 0
+  },
+  "findings": [
+    "Current identity/address match is strong despite no direct OSM name tag.",
+    "Footprint match is exact by construction and dimensions; position is only as trustworthy as the community mapping and local conversion.",
+    "Vertical dimensions and interior room layout remain estimates.",
+    "The manifest object-count field is stale and needs a coordinator update during integration."
+  ],
+  "grader": "independent evidence review",
+  "date": "2026-10-26"
+}

@@ -1,0 +1,40 @@
+{
+  "building": "Wiley Dining Court (WDCT)",
+  "asset_id": "massing_wiley_dining_court_wdct_8a6c669",
+  "reviewer": "independent subagent",
+  "review_date": "2026-10-26",
+  "candidate_sha256": "0A12600FB6D4C297CED05A5FD0382007C984180763DF3642F5AEF62E5565D16A",
+  "score": 8.0,
+  "max_score": 10,
+  "threshold": 8,
+  "result": "PASS for candidate; coordinator must update master placement/linking and reopen the master before marking finished",
+  "criteria": [
+    {"name":"identity_and_footprint","points":2.0,"max_points":2.0,"status":"strong_source_match_and_footprint_fit","rationale":"Official Purdue BuildingShapes FID 649 identifies WDCT and Purdue ownership. The feature's 81.63 x 46.62 m projected outline is reconstructed from the returned geometry; the candidate has 0.9959 polygon IoU, with maximum axis-aligned bounds differences of about 0.016 m. Adjacency to Wiley Hall corroborates identity. Esri Shape__Area disagrees with area calculated from the returned ring, so the ring, not that field, was used. GIS is not a surveyed wall survey."},
+    {"name":"position_orientation_and_dimensions","points":1.6,"max_points":2.0,"status":"asset_localized_master_marker_pending","rationale":"The asset geometry is local to the proposed centroid (-597.574, 124.804) m with identity root transform. The structural shell fits the FID ring and long axis is nearly east-west. Master manifest still marks the asset as massing/world-coordinate; a Placement marker and master reopen are required. The local tangent transform is approximate, not survey control."},
+    {"name":"height_and_roof_form","points":1.3,"max_points":2.0,"status":"photo_supported_shape_estimated_height","rationale":"A tall central gabled dining volume with lower side wings is supported by Purdue and architect images. One-story-plus-basement is supported by FRP; the GIS reports three levels, and its height-like fields have no documented units. Modeled 6.15 m eaves, 10.85 m ridge and 11.55 m crest are estimates; basement is not modeled."},
+    {"name":"exterior_facade_and_materials","points":1.7,"max_points":2.0,"status":"recognizable_and_procedurally_textured","rationale":"Brick, limestone bands/piers, large dark-framed glazing, gable, metal roof, secondary openings and roof equipment are present and recognizable. Twelve node materials cover the exterior/interior without external file dependencies. In previews the façade reads quite dark and stylized, brick relief/detail is subtle, and window/wing placement is generalized relative to the reference photos."},
+    {"name":"interior_modularity_and_evidence","points":1.4,"max_points":2.0,"status":"furnished_schematic_and_portable","rationale":"Fresh Blender 5.2.3 open confirms the expected 1,054-object collection, including 1,053 meshes; every mesh has a material, and the source file has no external images. The layout contains dining tables/chairs, a ring of serving counters, tiled circulation, exposed timber ceiling/trusses and pendants, all program features supported by Purdue sources. The cutaway preview is dim and the repeated furniture is blocky/simple compared with the real photos; exact room layout and furniture placement are not documented or measured. Overall interior should be treated as schematic."}
+  ],
+  "fresh_open": {
+    "report": "fresh_open.json",
+    "blender_version": "5.2.3 LTS",
+    "sha256_verified": true,
+    "scene": "Building_massing_wiley_dining_court_wdct_8a6c669",
+    "collection": "Asset_massing_wiley_dining_court_wdct_8a6c669",
+    "collection_objects": 1054,
+    "mesh_objects": 1053,
+    "unmaterialed_meshes": 0,
+    "external_images": 0
+  },
+  "sources_reviewed": [
+    {"provider":"Purdue University GIS BuildingShapesZip4 FeatureServer","feature_id":649,"source_abbreviation":"WDCT","source_name":"Wiley Dinning Court","saved_snapshot":"../sources/purdue_gis_fid649.json","crs":"EPSG:4326 response; native layer 102100/3857","limitation":"Shape__Area conflicts with recomputed returned-ring area; geometry used."},
+    {"provider":"Purdue News Service","url":"https://www.purdue.edu/uns/x/2008b/081001CelSautter.html","source_date":"2008-10-02","use":"Building location south of Wiley Hall, freestanding 500-seat dining court; brick exterior, large windows, vaulted wood ceiling, glass/steel/tile."},
+    {"provider":"Fink Roberts & Petrie, Inc.","url":"https://frpinc.com/projects/wiley-dining-court/","source_date":"Project completion 2011; gallery images undated","use":"Single-story with basement and 500 seats; project-image gallery reviewed for exterior and interior features."}
+  ],
+  "findings": [
+    "The candidate meets the 8/10 threshold for coordinator integration, with strong identity and GIS footprint fit.",
+    "Do not mark finished until the shared manifest is converted from campus-world massing bounds to local detailed geometry at (-597.574,124.804) m, its Placement marker is built, and the assembled master is reopened and checked for duplicates and contextual fit.",
+    "Keep height and the GIS level/height-field discrepancy explicitly estimated/unresolved; the basement is not modeled.",
+    "The interior is a plausible schematic program representation rather than a measured room-by-room reconstruction; its lighting and furniture detail are visibly weaker than the reference imagery."
+  ]
+}

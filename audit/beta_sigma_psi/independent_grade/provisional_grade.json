@@ -1,0 +1,85 @@
+{
+  "building": "Beta Sigma Psi",
+  "purdue_gis_fid": 793,
+  "phase": "provisional",
+  "score": 6.25,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Identity and source-backed footprint",
+      "points": 2.0,
+      "max_points": 2.0,
+      "status": "verified",
+      "evidence": [
+        "Raw Purdue GIS snapshot identifies FID 793 as Beta Sigma Psi at 525 University St.",
+        "Builder evidence records source FID 793, 14 footprint vertices, area 709.7734375 m\u00b2; builder script converts the captured GIS ring directly into wall/foundation geometry."
+      ],
+      "findings": []
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 1.75,
+      "max_points": 2.0,
+      "status": "source-derived; approximate projection",
+      "evidence": [
+        "GIS vertices are converted by the documented campus approximation; reported plan dimensions are {'length': 23.044, 'width': 22.129} m and center [-284.481, 285.442].",
+        "Dedicated builder script derives geometry from the source polygon and uses its principal direction for the roof/room grid."
+      ],
+      "findings": [
+        "Campus conversion is an approximation; independent surveyed registration, orientation residual, and dimension overlay were not supplied."
+      ]
+    },
+    {
+      "criterion": "Height, floors, and roof form",
+      "points": 1.0,
+      "max_points": 2.0,
+      "status": "partly verified; height/roof uncertain",
+      "evidence": [
+        "Raw GIS lists NUM_LEVELS=1.",
+        "Model record gives wall 3.5 m, eave 3.75 m, peak 6.7 m; record labels these estimates and roof form uncertain."
+      ],
+      "findings": [
+        "No independently supported measured elevation or roof-form source; the 6.7 m peak and low-pitch hip roof are speculative."
+      ]
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "points": 0.25,
+      "max_points": 2.0,
+      "status": "unverified",
+      "evidence": [
+        "Current exterior render visibly contains masonry walls, windows, and a south entry; build record explicitly says these are estimates."
+      ],
+      "findings": [
+        "No current building-specific photographs/elevations support facade material, window rhythm, entrance configuration, or distinctive architectural features. Render appearance alone is not source evidence."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "points": 1.25,
+      "max_points": 2.0,
+      "status": "provisional; fresh-open verification pending",
+      "evidence": [
+        "Expected asset path: modular/buildings/massing_house_301841254_29ab02d.blend; collection: Asset_massing_house_301841254_29ab02d; named object: House_301841254.",
+        "Evidence bundle contains raw GIS and layer metadata snapshots, build record, exterior/interior previews, and a fresh-open validator."
+      ],
+      "findings": [
+        "Fresh-open validation JSON is absent or does not pass all portability/export checks."
+      ]
+    }
+  ],
+  "evidence": {
+    "build_evidence": "audit\\beta_sigma_psi\\build_evidence.json",
+    "gis_snapshot": "audit\\beta_sigma_psi\\sources\\purdue_gis_fid793_2026-10-26.json",
+    "reopen_verification": null,
+    "fresh_open_passed": false
+  },
+  "findings": [
+    "Campus conversion is an approximation; independent surveyed registration, orientation residual, and dimension overlay were not supplied.",
+    "No independently supported measured elevation or roof-form source; the 6.7 m peak and low-pitch hip roof are speculative.",
+    "No current building-specific photographs/elevations support facade material, window rhythm, entrance configuration, or distinctive architectural features. Render appearance alone is not source evidence.",
+    "Fresh-open validation JSON is absent or does not pass all portability/export checks."
+  ],
+  "passing_standard": 8,
+  "result": "below passing standard"
+}

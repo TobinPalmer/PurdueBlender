@@ -1,0 +1,90 @@
+{
+  "building": "Ernest C. Young Hall (YONG)",
+  "asset_id": "massing_young_hall_yong_cae1b95",
+  "asset_path": "modular/buildings/massing_young_hall_yong_cae1b95.blend",
+  "export_collection": "Asset_massing_young_hall_yong_cae1b95",
+  "source_script": "modular/buildings/build_massing_young_hall_yong_cae1b95.py",
+  "retrieved_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University GIS, BuildingShapesZip4 FeatureServer, layer 0",
+      "feature_id": "FID 70; GlobalID {458D2DFF-4164-4592-A353-B77014FF7221}; BLDG_ABBR YONG",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=BLDG_ABBR%3D%27YONG%27&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "snapshot": "purdue_gis_yong_fid70.json",
+      "source_crs": "EPSG:4326 response requested from ArcGIS REST API",
+      "source_date": "Not supplied in feature attributes; created_da and last_edi_1 are null",
+      "measurement_method": "Transformed all 34 non-closure ring vertices using project-local conversion X=(lon+86.9137)*111412.84*cos(40.4274 degrees), Y=(lat-40.4274)*111040.0. Kept GIS footprint in campus coordinates.",
+      "horizontal_result": {
+        "projected_bounds_m": [[241.624, 274.347], [-564.602, -442.431]],
+        "source_ring_vertices": 34,
+        "gis_shape_area": 3443.3984375,
+        "gis_shape_length": 428.1938209320276
+      },
+      "vertical_attributes": {
+        "NUM_LEVELS": 11,
+        "CountOfFLO": 11,
+        "R": 102,
+        "F02_to_F10": [13.1, 21.85, 30.6, 39.35, 48.1, 56.85, 65.6, 74.35, 83.1],
+        "B": -13.1,
+        "unit_uncertainty": "The layer metadata gives no unit annotation for R or floor fields. Values are interpreted as feet because the repeated floor increments and Purdue records are consistent with feet. The model roof height is therefore an estimate (102 ft = 31.09 m), not surveyed height."
+      },
+      "uncertainty": "Footprint is source-backed. Geographic conversion is a local approximation, not survey control. GIS service does not provide source/edit dates."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "feature_id": "Ernest C. Young Hall (West Lafayette, Ind.), corporate entity record 656",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/656",
+      "additional_record_url": "https://collections.lib.purdue.edu/campus/buildings/18",
+      "snapshot": "purdue_archives_building_record.html; young_graduate_house_archive_photo_1415.jpg, young_graduate_house_archive_photo_1417.jpg, young_graduate_house_archive_photo_1418.jpg",
+      "source_crs": "Not applicable",
+      "source_date": "Record consulted 2026-10-26; building record gives 1962 construction. Individual photograph dates are not provided.",
+      "measurement_method": "Archival record states 10 stories, 1962 construction and original use; the downloaded archival exterior photographs directly inform the original long-slab massing, panelized light facade and narrow vertical window rhythm. The record lists limestone as a material.",
+      "uncertainty": "Historical photographs have no individual capture dates and do not establish the current full exterior; the current Purdue facade detail photo supports only the red-brick sign wall and its finish."
+    },
+    {
+      "provider": "Purdue University Campus Map",
+      "feature_id": "West Lafayette campus map, modification date July 2025; YONG at H8",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "snapshot": "purdue_campus_map_2025.pdf",
+      "source_crs": "Campus grid H8; map is not a survey",
+      "source_date": "July 2025",
+      "measurement_method": "Identity and campus district cross-check only.",
+      "uncertainty": "Map grid is not sufficiently detailed for footprint measurement."
+    },
+    {
+      "provider": "Purdue University Pre-Professional Advising",
+      "feature_id": "Student Ambassadors page, image Vincent_Calhoun_photo_cropped.jpg",
+      "url": "https://www.purdue.edu/preprofessional/About%20Us/Ambassadors.php",
+      "image_url": "https://purdue.edu/preprofessional/images/Vincent_Calhoun_photo_cropped.jpg",
+      "snapshot": "purdue_young_hall_facade_reference.jpg",
+      "source_crs": "Not applicable",
+      "source_date": "Capture date not stated; page was current and last modified October 2, 2026",
+      "measurement_method": "Visual material reference for red brick, contrasting light mortar/stone surround, metal-framed glazing and wall-mounted Young Hall sign.",
+      "uncertainty": "Photograph is a crop of one facade detail; it cannot establish whole-building facade rhythm, color on every elevation or current condition."
+    }
+  ],
+  "model_edits": [
+    "Replaced the original one-piece block with a GIS-ring extrusion at the original campus coordinates and stable object/collection names.",
+    "Added a ten-level narrow vertical-window rhythm, light exterior panels with vertical facade piers, red-brick entry sign wall, pale trim, recessed entrance, flat roof finish, and a small representative lobby/corridor slice.",
+    "Window proportions, entry details, roof treatment and interior layout are visual estimates; no public measured elevations or floor plan were found."
+  ],
+  "estimated_dimensions": {
+    "footprint_bounds_m": [[241.624, 274.347], [-564.602, -442.431]],
+    "shell_height_m": 31.09,
+    "height_basis": "GIS R=102, interpreted as feet; not independently surveyed",
+    "horizontal_coordinates": "Project local equirectangular approximation, campus-world coordinates retained"
+  },
+  "validation": {
+    "status": "PASS: Blender 5.2.3 fresh process reopened standalone library; stable scene, collection and shell verified; GIS ring vertex max error 0.000032 m; no external image dependencies; no modifiers or parent on structural shell; preview camera target is no longer in the export collection.",
+    "validation_record": "fresh_open_validation.json",
+    "preview": "preview_exterior.png",
+    "interior_preview": "preview_interior_schematic.png"
+  },
+  "unresolved": [
+    "GIS floor count attributes say 11 while Purdue Archives describes 10 stories; likely includes basement, but this is not explicit in the GIS metadata.",
+    "GIS vertical values have no unit metadata. The feet interpretation is plausible but remains an inference.",
+    "No measured architectural elevations, roof plan, published floor plans or current multi-elevation photo set were available in the gathered evidence. Archive photos establish an original facade pattern, but their dates are not supplied and later alterations are not ruled out.",
+    "Interior is representative and schematic, not a reconstructed surveyed plan.",
+    "The GIS feature supplies no source date or last-edit timestamp."
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "building_id": "lambertus_hall",
+  "score": 8.0,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Purdue GIS feature FID 433 identifies LMBS / Lambertus Hall at 363 N Grant St..",
+        "The GIS ring has 39 distinct perimeter vertices; candidate shell has 39 per level.",
+        "Independent paired local-vertex comparison max error=1.88110211e-06 m; mean=6.5310384e-07 m.",
+        "Adjacent FID 432 is recorded as DUDL / Dudley Hall, reducing risk of selecting the neighboring GIS polygon."
+      ],
+      "findings": []
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Fresh-open shell is at local origin with unit scale; shell local bounds are [[-4.33110237121582, 21.982175827026367], [-34.17417907714844, 35.69482421875], [0.0, 16.0]] m.",
+        "Evidence placement origin differs from independent conversion by 0 m.",
+        "After applying that origin, shell bounds differ from source-derived global bounds by at most 9.57682914e-07 m.",
+        "The model uses the project's documented local approximate lon/lat conversion; no independent survey CRS or survey control is available."
+      ],
+      "findings": []
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "The asset is five levels and 16 m high, consistent with the cited fifth-floor Nuclear Engineering use and overall project imagery.",
+        "The top is modeled as a flat roof with parapet and a small screened plant; render 02 exposes the roof footprint.",
+        "The 16 m height and 3.1 m story spacing are explicitly estimates; no Lambertus-only elevation or measured height was found."
+      ],
+      "findings": [
+        "Height and floor elevations remain estimates, and the rooftop plant has no Lambertus-specific source confirmation."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": [
+        "The model includes glazed panels, brick-colored areas, concrete-colored piers/belts, terracotta-colored sunshades, and entry canopies.",
+        "The Ennead massing diagrams support a transparent ground level and multiple entry points; the BSA exterior photo supports glass, horizontal screening, and pale vertical structure.",
+        "The strongest exterior photo visibly labels Dudley Hall; the packet itself says exact Lambertus-vs-Dudley facade allocation is unclear."
+      ],
+      "findings": [
+        "Facade rhythm/material mapping is only partly attributable to Lambertus; the render's repeated vertical shade fins and entrances are not checked against a Lambertus-only elevation."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2,
+      "evidence": [
+        "Independent fresh-open found scene 'Building_lambertus_hall', collection 'Asset_lambertus_hall', 102 mesh objects, and 14 assigned materials.",
+        "SHA-256 2DFE8E5EA016A29F5EE11228D8B0BA62C654BE7661DD103452BCCF56165FD7B4; expected hash matches: True.",
+        "No linked libraries; missing external texture paths: 0.",
+        "Evidence includes raw FID 433 and FID 432 snapshots, design diagrams, project photography, three renders, coordinate method, and explicit uncertainty notes."
+      ],
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "asset": "modular\\buildings\\lambertus_hall.blend",
+    "asset_sha256": "2DFE8E5EA016A29F5EE11228D8B0BA62C654BE7661DD103452BCCF56165FD7B4",
+    "expected_sha256": "2DFE8E5EA016A29F5EE11228D8B0BA62C654BE7661DD103452BCCF56165FD7B4",
+    "sha_match": true,
+    "fresh_open_probe": "audit\\lambertus_hall\\independent_grade\\fresh_probe.json",
+    "source_feature_id": 433,
+    "source_official_code": "LMBS",
+    "distinct_source_vertices": 39,
+    "candidate_shell_vertices_per_level": 39,
+    "max_source_vertex_error_m": 1.8811021130860188e-06,
+    "mean_source_vertex_error_m": 6.531038397418897e-07,
+    "placement_origin_m": [
+      164.53257208127454,
+      23.3184000003007
+    ],
+    "independently_converted_placement_origin_m": [
+      164.53257208127454,
+      23.3184000003007
+    ],
+    "placement_origin_error_m": 0.0,
+    "global_bounds_error_m": 9.576829143043142e-07,
+    "source_footprint_area_m2": 1702.0608054758413,
+    "estimated_height_m": 16.0,
+    "facade_image_wing_ambiguity": true,
+    "linked_libraries": [],
+    "missing_external_textures": [],
+    "master_manifest_state": "Manifest/master integration is coordinator-owned and is not changed or graded as part of this asset-only review.",
+    "render_paths": [
+      "renders/01_exterior_axon.png",
+      "renders/02_roof_perimeter.png",
+      "renders/03_high_bay_interior.png"
+    ]
+  },
+  "findings": [
+    "Height and floor elevations remain estimates, and the rooftop plant has no Lambertus-specific source confirmation.",
+    "Facade rhythm/material mapping is only partly attributable to Lambertus; the render's repeated vertical shade fins and entrances are not checked against a Lambertus-only elevation."
+  ],
+  "remaining_uncertainties": [
+    "Exact Lambertus-vs-Dudley allocation of facade photographs",
+    "No published Lambertus-only elevation or floor plan located",
+    "Story elevations and top-of-roof height estimated",
+    "Geographic conversion is not a survey-grade projection"
+  ]
+}

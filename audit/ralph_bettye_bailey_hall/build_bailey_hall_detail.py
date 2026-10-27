@@ -90,6 +90,10 @@ mats = [
     material('Bailey_Entry_Metal', (0.055, 0.065, 0.07), 0.36, 0.35),
 ]
 BRICK, STONE, GLASS, ROOF, METAL = range(len(mats))
+INTERIOR_LOBBY = len(mats); mats.append(material('Bailey_Schematic_Lobby', (0.72, 0.68, 0.57), 0.9))
+INTERIOR_REHEARSAL = len(mats); mats.append(material('Bailey_Schematic_Rehearsal', (0.55, 0.18, 0.12), 0.9))
+INTERIOR_SUPPORT = len(mats); mats.append(material('Bailey_Schematic_Support', (0.74, 0.74, 0.64), 0.9))
+INTERIOR_CIRCULATION = len(mats); mats.append(material('Bailey_Schematic_Circulation', (0.62, 0.60, 0.52), 0.9))
 verts = []
 faces = []
 face_materials = []
@@ -133,6 +137,20 @@ signed_area2 = sum(ring[i].x * ring[(i + 1) % len(ring)].y - ring[(i + 1) % len(
 orientation_sign = 1.0 if signed_area2 > 0 else -1.0
 min_x, max_x = min(p.x for p in ring), max(p.x for p in ring)
 min_y, max_y = min(p.y for p in ring), max(p.y for p in ring)
+
+# GIS-derived local origin: the source polygon centroid in the project's documented
+# local approximation. Localized geometry is later instanced at this proposed campus XY.
+cross_sum = 0.0
+centroid_x_num = 0.0
+centroid_y_num = 0.0
+for i, point in enumerate(ring):
+    nxt = ring[(i + 1) % len(ring)]
+    cross = point.x * nxt.y - nxt.x * point.y
+    cross_sum += cross
+    centroid_x_num += (point.x + nxt.x) * cross
+    centroid_y_num += (point.y + nxt.y) * cross
+placement_x = centroid_x_num / (3.0 * cross_sum)
+placement_y = centroid_y_num / (3.0 * cross_sum)
 
 # Structural shell follows the official 23-vertex (closed-ring) campus footprint.
 base_z = 0.0
@@ -265,6 +283,59 @@ if entry_edge is not None:
     plaque_center = p + entry_normal * 1.72 + Vector((0, 0, 3.65))
     add_box(plaque_center, entry_tangent, entry_normal, 3.8, 0.18, 0.55, ROOF)
 
+# First-floor room arrangement from Purdue OEP's official BALY plan image. The plan
+# has no north arrow or scale bar in the published page, so this is a labeled schematic
+# inset mapped proportionally into the GIS envelope; room dimensions/orientation stay
+# explicitly unverified. Names and room groupings follow the source plan itself.
+def point_inside(poly, x, y):
+    inside = False
+    j = len(poly) - 1
+    for i in range(len(poly)):
+        xi, yi = poly[i]; xj, yj = poly[j]
+        if ((yi > y) != (yj > y)) and (x < (xj - xi) * (y - yi) / (yj - yi + 1e-15) + xi):
+            inside = not inside
+        j = i
+    return inside
+
+room_regions = [
+    ([(248,446),(377,446),(377,573),(248,573)], INTERIOR_REHEARSAL), # Lounge
+    ([(484,108),(679,108),(725,155),(725,315),(680,330),(484,330)], INTERIOR_REHEARSAL), # L.R.1
+    ([(482,410),(690,410),(690,573),(486,573)], INTERIOR_REHEARSAL), # L.R.2
+    ([(687,420),(767,420),(767,573),(687,573)], INTERIOR_REHEARSAL), # S.R.2
+    ([(767,410),(875,410),(875,573),(767,573)], INTERIOR_REHEARSAL), # S.R.1
+    ([(382,331),(482,331),(482,446),(382,446)], INTERIOR_LOBBY),
+    ([(249,215),(484,215),(484,330),(249,330)], INTERIOR_SUPPORT), # restrooms/custodial
+    ([(759,108),(882,108),(882,339),(759,339)], INTERIOR_SUPPORT), # storage/services
+    ([(687,215),(764,215),(764,319),(687,319)], INTERIOR_SUPPORT), # stairs
+    ([(687,330),(759,330),(759,409),(687,409)], INTERIOR_SUPPORT), # telecom
+]
+
+# Rasterize source-backed room zones into a low-resolution first-floor plate, clipped
+# to the actual GIS polygon. The image is rotated to fit its long axis to the GIS
+# envelope; this establishes a visual schematic only, not georeferenced room geometry.
+def inside_source_outline(x, y):
+    return point_inside([(p.x,p.y) for p in ring], x, y)
+
+cell = 0.55
+x = min_x
+while x + cell <= max_x:
+    y = min_y
+    while y + cell <= max_y:
+        corners = [(x,y),(x+cell,y),(x+cell,y+cell),(x,y+cell)]
+        if all(inside_source_outline(cx,cy) for cx,cy in corners):
+            cx, cy = x + cell/2, y + cell/2
+            local_x, local_y = cx - placement_x, cy - placement_y
+            px = 569.0 + local_y * (893.0 - 245.0) / (max_y - min_y)
+            py = 342.0 - local_x * (578.0 - 108.0) / (max_x - min_x)
+            mat_index = INTERIOR_CIRCULATION
+            for room_poly, room_mat in room_regions:
+                if point_inside(room_poly, px, py):
+                    mat_index = room_mat
+                    break
+            add_quad([(x,y,0.08),(x+cell,y,0.08),(x+cell,y+cell,0.08),(x,y+cell,0.08)], mat_index)
+        y += cell
+    x += cell
+
 # Replace the original simplified extrusion while preserving its object, collection, and exported asset IDs.
 old_mesh = obj.data
 old_mesh_name = old_mesh.name
@@ -295,6 +366,21 @@ if old_mesh.users == 0:
     bpy.data.meshes.remove(old_mesh)
 mesh.name = old_mesh_name
 
+# Convert all geometry from campus-world XY to local coordinates. The parent master
+# collection instance should be placed at the GIS polygon centroid reported below.
+for vertex in mesh.vertices:
+    vertex.co.x -= placement_x
+    vertex.co.y -= placement_y
+mesh.update()
+obj['asset_id'] = ASSET_ID
+obj['gis_feature_id'] = int(attrs['FID'])
+obj['proposed_master_placement_xy_m'] = [placement_x, placement_y]
+obj['coordinate_frame'] = 'local geometry; placement at projected FID 411 polygon centroid'
+obj['interior_status'] = 'first-floor room zones follow Purdue OEP plan; scale and north orientation are schematic/unverified'
+obj['interior_source'] = 'Purdue OEP BALY first floor plan; page revision 2026-04-03'
+obj['interior_schematic_assumptions'] = 'Room zones traced and proportionally fitted inside GIS outline; no plan scale or north arrow; dimensions, exact walls, and orientation unverified.'
+obj['documented_first_floor_spaces'] = 'Lounge; Large Rehearsal 1; Large Rehearsal 2; Small Rehearsal 1; Small Rehearsal 2; Lobby; Reception; Restrooms; Custodial; Storage; Stairs; Telecom; Elevator; Vestibules; Sound Lock'
+
 bpy.context.view_layer.update()
 # Keep the asset portable and preserve all existing collection/scene names.
 bpy.ops.wm.save_as_mainfile(filepath=blend_path)
@@ -310,10 +396,12 @@ result = {
     'mesh_faces': len(mesh.polygons),
     'materials': [m.name for m in mats],
     'structural_bounds_xy_m': [[round(min_x, 3), round(max_x, 3)], [round(min_y, 3), round(max_y, 3)]],
+    'proposed_master_placement_xy_m': [round(placement_x, 6), round(placement_y, 6)],
     'estimated_height_m': HEIGHT_M,
     'estimated_entry_tower_height_m': ENTRY_TOWER_HEIGHT_M,
     'floor_count_attribute': FLOOR_COUNT,
     'height_status': 'lower-wing parapet estimated at 7.5 m from Purdue exterior photos; entry tower apex estimated at 10.18 m by tentatively interpreting GIS R=33.4 as feet; field units are undocumented',
+    'interior_status': 'schematic first-floor room zones mapped from official OEP plan; floor-plan scale and north orientation unavailable',
 }
 print('BUILD_RESULT_JSON=' + json.dumps(result))
 

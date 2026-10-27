@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "building_id": "massing_house_301841603_654031c",
+  "independent_grade": 8.2,
+  "grade_threshold": 8.0,
+  "grade_result": "audit/alpha_sigma_phi/independent_grade_current/result.json",
+  "graded_asset_sha256": "fb713777b45c7e2d9b98e94c4acaf4b5ccdb11a45dc225e88a1af929a2d96d3e",
+  "integrated_asset_sha256": "6163aa08f55eb94e3c56144b6b455b7d28e8c354ccb84743fd000018665b9af0",
+  "integrated_hash_matches_graded_candidate": false,
+  "localization_record": "audit/alpha_sigma_phi/master_localization.json",
+  "world_geometry_preservation_record": "audit/alpha_sigma_phi/world_geometry_preservation.json",
+  "geometry_preservation": {
+    "status": "PASS",
+    "source_graded_candidate": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\scratch\\alpha_sigma_before_localization.blend",
+    "localized_asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_house_301841603_654031c.blend",
+    "collection": "Asset_massing_house_301841603_654031c",
+    "placement_origin_xy_m": [
+      -1021.3538818359375,
+      852.5899047851562
+    ],
+    "source_geometry_object_count": 870,
+    "localized_geometry_object_count": 870,
+    "compared_evaluated_vertices": 6984,
+    "max_world_space_vertex_delta_m": 0.0,
+    "max_delta_object": null,
+    "errors": [],
+    "method": "Evaluated vertex coordinates from the independently graded source were compared to the localized asset after restoring the master marker's XY origin; per-object vertex and polygon counts were also compared."
+  },
+  "master_fresh_open_report": "audit/master_integration/fresh_open_master_2026-10-26.json",
+  "master_rebuild_verification": "modular/verification.json",
+  "marker": "Placement_massing_house_301841603_654031c",
+  "linked_library_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_house_301841603_654031c.blend",
+  "placement_origin_xy_m": [
+    -1021.3538818359375,
+    852.5899047851562
+  ],
+  "source_object_count": 871,
+  "local_bounds_m": [
+    [
+      -14.4105224609375,
+      17.25836181640625
+    ],
+    [
+      -22.31634521484375,
+      21.80926513671875
+    ],
+    [
+      -0.029999999329447746,
+      10.4399995803833
+    ]
+  ],
+  "reconstructed_world_bounds_m": [
+    [
+      -1035.764404296875,
+      -1004.0955200195312
+    ],
+    [
+      830.2735595703125,
+      874.399169921875
+    ],
+    [
+      -0.029999999329447746,
+      10.4399995803833
+    ]
+  ],
+  "manifest_bounds_m": [
+    [
+      -1035.764404296875,
+      -1004.0955200195312
+    ],
+    [
+      830.2735595703125,
+      874.399169921875
+    ],
+    [
+      -0.029999999329447746,
+      10.4399995803833
+    ]
+  ],
+  "maximum_world_bounds_error_m": 0.0,
+  "limitations": [
+    "Passes 8/10 at 8.2/10, with explicit uncertainty deducted for the unsupported floor count and target-specific facade details.",
+    "Keep the three-level arrangement labeled as an interpretation: LiDAR supports roof envelope, but the GIS floor-count attributes conflict and do not establish stories.",
+    "At master integration, coordinator should update stale manifest metadata (currently massing/object_count 1/bounds Z max 7.6 m) to reflect this 870-object detailed asset and actual dimensions; grader did not edit shared files.",
+    "If later photographic evidence becomes available, verify the front entry, facade/window rhythm, and chapter signage before increasing the architectural-detail score."
+  ]
+}

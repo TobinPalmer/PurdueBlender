@@ -1,0 +1,100 @@
+{
+  "building_id": "alpha_epsilon_pi",
+  "candidate_sha256": "8074f7c27f1b0ba25e0699f056db21611249679335d2796a035db4b40673a961",
+  "candidate_matches_frozen_revision_2": true,
+  "reviewer": "independent subagent; fresh-open inspection, source comparison, node-link inspection, and four review renders",
+  "rubric": "AGENT.md, five criteria at 2 points each",
+  "score": 8.25,
+  "max_score": 10.0,
+  "threshold": 8.0,
+  "status": "PASS",
+  "pass": true,
+  "criteria": {
+    "identity_and_source_backed_footprint": {
+      "score": 1.35,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue BoilerLink's current AEPi page lists 1051 David Ross Road; its searchable page content was available on review date 2026-10-26.",
+        "Official Purdue GIS FID 754 also lists 1051 David Ross Road, and the project's saved satellite overlay aligns its polygon with a visible roof.",
+        "The same GIS feature's BUILDING_N label is Chi Phi, so address/roof correspondence does not conclusively resolve current occupancy.",
+        "GIS FID 821 is a separate Alpha Epsilon Pi candidate at 116 Fowler Avenue and is documented as not used for this model."
+      ],
+      "findings": [
+        "The current official address and GIS/address match support the selected footprint, but the official GIS name conflict and absence of recent direct occupancy evidence remain unresolved."
+      ]
+    },
+    "position_orientation_and_plan_dimensions": {
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Fresh-open geometry compares all 60 selected foundation ring vertices to GIS FID 754; maximum corresponding XY error is 1.11e-06 m.",
+        "The exported library declares local coordinates and placement origin [-948.801726, 959.29698] m; fresh-open local bounds are {'min': [-17.770278930664062, -24.427825927734375, 0.0], 'max': [16.458385467529297, 17.681888580322266, 13.570000648498535]} m.",
+        "The local coordinate transform and foundation ring preserve the source plan outline and its orientation rather than scaling to an unrelated bounding box."
+      ],
+      "findings": [
+        "The sub-millimetre comparison is to the GIS polygon transformed into the project frame; it does not establish the GIS roof/wall edge or survey accuracy."
+      ]
+    },
+    "evidence_backed_height_floors_and_roof": {
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": [
+        "The attributed 2009 Purdue AEPi photograph supports a three-visible-story brick house with a mansard roof and dormer cues; it is historical style evidence only.",
+        "Fresh-open bounds reach 13.57 m; wall and roof components are separately modeled, with the chimney cap reaching 13.57 m.",
+        "No surveyed elevation or current roof-height source was supplied; wall levels, roof breaks, dormers, chimney and total height remain estimates."
+      ],
+      "findings": [
+        "Retain explicit estimated status for floor heights and roof geometry until a current elevation, measured plan, or suitably classified LiDAR surface is available."
+      ]
+    },
+    "facade_entrances_and_distinctive_architecture": {
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": [
+        "The revised exterior preview now reads as horizontal red masonry at the saved camera distance; independent fresh-open node inspection confirms UV coordinates feed the Brick Texture, its color feeds Principled Base Color, and its factor drives bump relief.",
+        "Fresh-open object-name inspection found 30 facade window fronts, 20 AC units, 9 dormer glazing objects and 36 entrance-related objects.",
+        "Fresh Blender renders from front, east, west and rear show fenestrated side/rear elevations and the mansard silhouette; exposed internal/recessed faces remain comparatively plain and are not supported by a current elevation.",
+        "The visible entry, Greek-letter sign, projecting window treatments, dark shingle roof and masonry match the broad historic-photo cues, while exact bay/window rhythm and current materials remain unverified."
+      ],
+      "findings": [
+        "The key revision-1 defect (brick appearing as vertical siding) is corrected. Side/rear details and exposed recessed surfaces remain schematic because current target-facing imagery and measured elevations are unavailable."
+      ]
+    },
+    "modular_export_portability_and_complete_evidence": {
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": [
+        "An independent Blender 5.2.3 process reopened the exact candidate SHA256 8074f7c27f1b0ba25e0699f056db21611249679335d2796a035db4b40673a961 and found the expected scene, stable asset collection and local-coordinate flag.",
+        "The collection contains 710 objects (708 meshes) and 20 referenced materials; missing-material meshes, mesh-parent errors and unpacked external images are all zero.",
+        "The audit includes current-address/GIS records, the geometry transform, fresh-open probe, exterior/interior views and four independent review renders; the asset has 155 named representative interior objects.",
+        "The interior is still illustrative rather than tied to a public floor plan, and this standalone grade does not establish integration into the campus master."
+      ],
+      "findings": [
+        "The model is portable and its evidence is organized; confirm and document master integration separately. Interior room positions remain representative estimates."
+      ]
+    }
+  },
+  "evidence": [
+    "audit/alpha_epsilon_pi/independent_grade_revision_2/fresh_open_probe.json",
+    "audit/alpha_epsilon_pi/independent_grade_revision_2/front_review.png",
+    "audit/alpha_epsilon_pi/independent_grade_revision_2/east_review.png",
+    "audit/alpha_epsilon_pi/independent_grade_revision_2/west_review.png",
+    "audit/alpha_epsilon_pi/independent_grade_revision_2/rear_review.png",
+    "audit/alpha_epsilon_pi/evidence.json and evidence.md",
+    "audit/alpha_epsilon_pi/purdue_gis_features_fid754_821.json and satellite_footprint_overlay.png",
+    "Purdue BoilerLink AEPi listing: https://boilerlink.purdue.edu/organization/aepi",
+    "Historical facade source: https://commons.wikimedia.org/wiki/File:PurdueAEPIhouse.jpg"
+  ],
+  "findings": [
+    "The current official address and GIS/address match support the selected footprint, but the official GIS name conflict and absence of recent direct occupancy evidence remain unresolved.",
+    "The sub-millimetre comparison is to the GIS polygon transformed into the project frame; it does not establish the GIS roof/wall edge or survey accuracy.",
+    "Retain explicit estimated status for floor heights and roof geometry until a current elevation, measured plan, or suitably classified LiDAR surface is available.",
+    "The key revision-1 defect (brick appearing as vertical siding) is corrected. Side/rear details and exposed recessed surfaces remain schematic because current target-facing imagery and measured elevations are unavailable.",
+    "The model is portable and its evidence is organized; confirm and document master integration separately. Interior room positions remain representative estimates."
+  ],
+  "limitations": [
+    "FID 754's official GIS name is Chi Phi despite the matching current AEPi listing address; current occupancy remains unresolved.",
+    "The 2009 photo supports historic design character but not current condition; height, roof breaks, exact facade details, and interior plan remain estimated.",
+    "Campus master integration has not been assessed by this standalone-asset grade."
+  ]
+}

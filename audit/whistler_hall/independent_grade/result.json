@@ -1,0 +1,60 @@
+{
+  "building_id": "massing_whistler_hall_6f6bf8d",
+  "asset_path": "modular/buildings/massing_whistler_hall_6f6bf8d.blend",
+  "sha256_expected": "CE3C33048AC70467C25317192839AD4B6290542F23024F909351EC05F84115DD",
+  "sha256_observed": "CE3C33048AC70467C25317192839AD4B6290542F23024F909351EC05F84115DD",
+  "score_out_of_10": 7.9,
+  "threshold_out_of_10": 8.0,
+  "passes_threshold": false,
+  "placement_integration_resolved": false,
+  "evidence": [
+    "modular/AGENTS.md",
+    "audit/whistler_hall/source_register.md",
+    "audit/whistler_hall/placement.json",
+    "audit/whistler_hall/sources/purdue_fid84_whistler.json",
+    "audit/whistler_hall/sources/purdue_whistler_greenhouse_2015.jpg",
+    "audit/whistler_hall/whistler_exterior.png",
+    "audit/whistler_hall/whistler_topdown.png",
+    "audit/whistler_hall/fresh_open_validation.json"
+  ],
+  "score_breakdown": {
+    "identity_and_source_traceability": {
+      "score": 1.0,
+      "max": 1.0
+    },
+    "gis_footprint": {
+      "score": 2.0,
+      "max": 2.0
+    },
+    "plan_orientation": {
+      "score": 1.0,
+      "max": 1.0
+    },
+    "campus_placement_and_library_convention": {
+      "score": 0.2,
+      "max": 1.5
+    },
+    "height_and_levels": {
+      "score": 0.5,
+      "max": 1.0
+    },
+    "exterior_architecture": {
+      "score": 1.0,
+      "max": 1.5
+    },
+    "materials": {
+      "score": 0.75,
+      "max": 1.0
+    },
+    "interior_and_use_evidence": {
+      "score": 0.6,
+      "max": 1.0
+    },
+    "portability_and_saved_file_check": {
+      "score": 0.85,
+      "max": 1.0
+    }
+  },
+  "primary_issue": "The asset is local-centered despite being a simple massing library. The existing manifest still describes the old campus-space bounds with identity transform; current local geometry must not be linked at identity.",
+  "recommended_resolution": "Translate the asset geometry into campus coordinates at the documented proposed origin and update manifest bounds, or deliberately migrate it to the detailed-building placement-marker workflow."
+}

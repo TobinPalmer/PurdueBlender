@@ -1,0 +1,102 @@
+{
+  "score": 8.45,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 2.0,
+      "max_points": 2.0,
+      "evidence": "Purdue GIS FID 70 identifies Ernest C. Young Hall (YONG), and shell lower ring has 34 vertices matching the GIS ring within 0.000032 m. Purdue Archives corporate record identifies Ernest C. Young Hall.",
+      "findings": "Footprint and identity are strong; conversion uses the project local approximation, not survey control."
+    },
+    {
+      "criterion": "Position, orientation, scale and plan dimensions",
+      "points": 2.0,
+      "max_points": 2.0,
+      "evidence": "Campus-world bounds derived from official GIS ring: [[241.6241101801989, 274.3472704819721], [-564.6024027420435, -442.4307640084635], [0.0, 0.0]]; polygon geometry preserves the source vertex sequence; max projected-ring deviation is 0.000032 m.",
+      "findings": "No independent cadastral survey control exists in the saved evidence, so absolute registration inherits the approximate project geographic conversion."
+    },
+    {
+      "criterion": "Evidence-backed height, floors and roof form",
+      "points": 1.35,
+      "max_points": 2.0,
+      "evidence": "Saved shell is 31.090 m tall (approximately 102 ft inferred from GIS R=102). Purdue Archives explicitly describes 10 stories; GIS NUM_LEVELS/CountOfFLO each report 11. Archival exterior photos show a flat-topped slab form.",
+      "findings": "10-story history and flat-roof massing have archival support. 11 GIS levels vs 10 archival stories is unresolved; R units are undocumented and interpreted as feet, so height is an estimate. Floor spacing and rooftop details are not measured."
+    },
+    {
+      "criterion": "Facade, entrance and distinctive architecture",
+      "points": 1.55,
+      "max_points": 2.0,
+      "evidence": "Three Purdue Archives exterior photos show a long slab, pale panelized elevations, repeated narrow vertical window bays and a flat roof; current Purdue detail photo supports the localized red-brick YOUNG HALL sign wall. The revised render follows the historic facade rhythm and the current brick sign detail.",
+      "findings": "References are undated historical views plus a close crop of a current sign wall. They do not establish all current elevations, window spacing, entrance placement or roof fittings. Render is bright enough to obscure some panel contrast; facade detail remains schematic."
+    },
+    {
+      "criterion": "Modular export, portability and evidence completeness",
+      "points": 1.55,
+      "max_points": 2.0,
+      "evidence": "Fresh Blender 5.2.3 LTS open contains stable scene/collection and 22 members ({'FONT': 1, 'MESH': 21}); 21 mesh objects / 18984 polygons; 10 named material slots; no missing external image dependencies. Fresh sources include official GIS, map, Archives record and 3 archival photos. Interior cutaway is a compact schematic lobby/corridor only.",
+      "findings": "No source floor plan is supplied; interior represents a small lobby slice rather than the building-wide graduate-house/program layout. Dimensions and partitions are illustrative."
+    }
+  ],
+  "evidence": {
+    "asset_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_young_hall_yong_cae1b95.blend",
+    "scene": "Building_massing_young_hall_yong_cae1b95",
+    "collection": "Asset_massing_young_hall_yong_cae1b95",
+    "collection_objects": 22,
+    "object_types": {
+      "FONT": 1,
+      "MESH": 21
+    },
+    "mesh_count": 21,
+    "polygon_count": 18984,
+    "materials": [
+      "YONG | blue gray glazing",
+      "YONG | charcoal flat roof",
+      "YONG | dark bronze aluminum",
+      "YONG | furniture",
+      "YONG | interior floor",
+      "YONG | interior wall",
+      "YONG | pale exterior wall panels",
+      "YONG | pale limestone trim",
+      "YONG | red brick",
+      "YONG | subtly varied exterior panels"
+    ],
+    "external_image_dependencies": [],
+    "gis_feature_id": 70,
+    "gis_building_abbr": "YONG",
+    "gis_ring_vertex_count": 34,
+    "asset_ring_vertex_count": 34,
+    "gis_ring_max_error_m": 3.186718162043741e-05,
+    "shell_bounds_world_m": [
+      [
+        241.62411499023438,
+        274.3472595214844
+      ],
+      [
+        -564.6024169921875,
+        -442.4307556152344
+      ],
+      [
+        0.0,
+        31.089599609375
+      ]
+    ],
+    "shell_height_m": 31.089599609375,
+    "archives_10_story_text_found": true,
+    "archives_photo_count": 3,
+    "current_facade_detail_photo_present": true,
+    "exterior_render": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\young_hall_yong_cael95\\preview_exterior.png",
+    "interior_render": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\young_hall_yong_cael95\\preview_interior_schematic.png",
+    "fresh_open_errors": []
+  },
+  "findings": [
+    "Footprint/identity checks pass directly against the saved official Purdue GIS geometry.",
+    "Height remains an estimate: GIS units are undocumented; 102 was interpreted as feet. The 10-vs-11 story-count conflict is recorded, not resolved.",
+    "Historical archival photos support the revised light panelized facade and vertical window rhythm but do not prove the current entire facade.",
+    "Current reference supports red-brick sign wall only; other elevation details, entrance placement and roof equipment are partly inferred.",
+    "Interior is only a representative schematic slice; there is no plan-level interior reconstruction.",
+    "Asset is standalone/portable and the preview-only helper EMPTY is absent from the export collection."
+  ],
+  "result": "pass",
+  "passing_standard": 8
+}

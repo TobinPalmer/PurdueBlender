@@ -1,0 +1,94 @@
+{
+  "building": "Bob & Trudy Hull \"All-American\" Marching Band Complex",
+  "stable_asset_id": "massing_hull_all_american_marching_band_complex_665bcb7",
+  "asset_path": "modular/buildings/massing_hull_all_american_marching_band_complex_665bcb7.blend",
+  "asset_sha256": "4d525feb45716cab403a20181bb9486b8973e34212b548efb5e7c4bd5d7f8c08",
+  "expected_candidate_sha256": "4D525FEB45716CAB403A20181BB9486B8973E34212B548EFB5E7C4BD5D7F8C08",
+  "hash_matches_candidate": true,
+  "independent_grader": "Codex subagent; did not build or modify the asset",
+  "rubric": "AGENT.md, five criteria at 2 points each",
+  "score": 8.4,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "pass": true,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "max_points": 2,
+      "score": 1.9,
+      "evidence": [
+        "Purdue GIS source snapshot is FID 431 / BLDG_ABBR HULL; the asset name identifies the All-American Marching Band Complex.",
+        "Independent comparison of the Blender slab outline to the GIS ring in the documented campus XY approximation: polygon IoU=0.999997; Hausdorff distance=0.000040 m.",
+        "Esri imagery places the compact roof beside Hull Field; Purdue Bands schedules identify the Hull complex/garage as a separate band facility."
+      ],
+      "deductions": "The official sources identify the campus complex, but do not uniquely label this precise GIS polygon in an as-built plan; exact material and building subcomponent naming retain minor uncertainty."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "max_points": 2,
+      "score": 2.0,
+      "evidence": [
+        "The source ring and model slab compare at IoU=0.999997 and Hausdorff=0.000040 m; model slab area=262.051 m\u00b2 versus GIS ring area=262.051 m\u00b2.",
+        "The candidate preserves the project campus coordinate frame (X east, Y north, Z up), has zero declared asset instance offset, and its long axis follows the GIS polygon.",
+        "The fresh-open bounds are approximately 14.20 m by 21.59 m, matching the GIS plan dimensions within the boundary treatment."
+      ],
+      "deductions": "None for the assessed library geometry. The master manifest still records the pre-rebuild 7.6 m envelope and should be refreshed by the coordinator during integration."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "max_points": 2,
+      "score": 1.2,
+      "evidence": [
+        "Street View and Esri imagery support a low, single-story appearance and flat/low-slope light roof.",
+        "The candidate has an evaluated maximum height of 5.36 m."
+      ],
+      "deductions": "No measured height, floor plan, or elevation was located. The 5.36 m envelope and exact roof build-up remain visual estimates; single-story status is inferred from a distant oblique view."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "max_points": 2,
+      "score": 1.3,
+      "evidence": [
+        "The model shows repeated tall service-bay doors and a high window band, consistent with the distant April 2026 Street View rhythm.",
+        "Aerial imagery supports the low rectangular roof mass; the render includes a pale metal roof, base masonry, and simple service-building envelope.",
+        "The cutaway includes open equipment handling/practice space, lockers, cases, benches, changing/restroom partitions and fixtures, consistent with documented band storage/changing uses."
+      ],
+      "deductions": "Facade openings/count, cladding, masonry, and interior room layout are not established by plans or close-range imagery. The facade reads as a plausible service building but is not strongly distinctive; interior is explicitly schematic."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "max_points": 2,
+      "score": 2.0,
+      "evidence": [
+        "Independent fresh-process Blender 5.2.3 inspection reopens the exact asset hash 4d525feb45716cab403a20181bb9486b8973e34212b548efb5e7c4bd5d7f8c08; expected scene and asset collection exist.",
+        "The collection contains 404 objects (403 meshes), no materialless meshes, and no unpacked external images; all evaluated geometry is in the designated asset collection.",
+        "Dedicated builder source, structured source provenance/uncertainty, GIS overlay, exterior and cutaway previews, and a fresh-open validation record are present under the building-specific audit directory."
+      ],
+      "deductions": "The root manifest is shared coordinator-owned and currently has the earlier 7.6 m envelope; this grading does not modify or certify master integration."
+    }
+  ],
+  "evidence": {
+    "gis_fid": 431,
+    "slab_gis_polygon_iou": 0.9999972292734955,
+    "slab_gis_hausdorff_m": 3.973437015638756e-05,
+    "fresh_open_validation": "audit/hull_all_american_marching_band_complex/fresh_open_validation.json",
+    "independent_probe": "audit/hull_all_american_marching_band_complex/independent_grade_current/blender_probe.json",
+    "preview_exterior": "audit/hull_all_american_marching_band_complex/exterior_preview.png",
+    "preview_interior": "audit/hull_all_american_marching_band_complex/interior_cutaway_preview.png",
+    "gis_overlay": "audit/hull_all_american_marching_band_complex/gis_footprint_overlay.jpg",
+    "sources": [
+      "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D431&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/20/395336/271102",
+      "https://www.purdue.edu/bands/10-million-gift-sets-the-stage-for-new-bands-and-orchestras-building/",
+      "https://www.purdue.edu/vpsl/news/perspectives-stories/new-bands-building.php",
+      "https://www.purdue.edu/bands/wp-content/uploads/2025/08/2025-Band-Camp-Schedule-Updated-Aug-19.pdf",
+      "https://www.google.com/maps/@40.4273749,-86.9240424,191a,75y,120h,90t/data=!3m7!1e1!3m5!1s4G_u-T0PyopGT1ZNTYrK4Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3D4G_u-T0PyopGT1ZNTYrK4Q%26yaw%3D120!7i16384!8i8192",
+      "https://www.purdue.edu/bands/wp-content/uploads/2024/09/Alumni-Band-2024-Schedule.pdf"
+    ]
+  },
+  "findings": [
+    "PASS: the GIS-derived plan and campus placement are strongly supported by the available footprint and aerial evidence.",
+    "REMAINS ESTIMATED: absolute height, roof build-up, exact facade material/opening count, and interior plan.",
+    "COORDINATOR FOLLOW-UP: update the shared manifest/master integration records to reflect the revised 5.36 m envelope and rerun complete-master validation."
+  ]
+}

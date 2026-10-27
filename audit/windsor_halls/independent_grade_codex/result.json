@@ -1,0 +1,42 @@
+{
+  "building": "Windsor Halls (Warren, Wood, Vawter, Windsor Dining Court)",
+  "asset": "modular/buildings/massing_windsor_halls_80aeb51.blend",
+  "sha256": "667db1b371209d8ddd46aaf57ecf3edaafe1e7840f4353eb8344a5b0db2302cc",
+  "review_date": "2026-10-26",
+  "reviewer": "independent Codex reviewer",
+  "decision": "below_threshold",
+  "threshold": 8.0,
+  "overall_score": 7.4,
+  "weighted_unrounded": 7.38,
+  "weights_percent": {
+    "identity_footprint_plan_placement": 25,
+    "massing_height_levels_vertical_placement": 20,
+    "roof_facade_specificity": 25,
+    "materials_texturing": 10,
+    "interior_completeness": 10,
+    "file_integrity_editability_evidence": 10
+  },
+  "scores": {
+    "identity_footprint_plan_placement": 9.8,
+    "massing_height_levels_vertical_placement": 7.0,
+    "roof_facade_specificity": 6.4,
+    "materials_texturing": 6.8,
+    "interior_completeness": 3.0,
+    "file_integrity_editability_evidence": 9.5
+  },
+  "fresh_open_probe": "fresh_open_probe.json",
+  "result_markdown": "result.md",
+  "top_findings": [
+    "FIDs 63-66 have reported footprint IoU 0.9999984-0.9999990 and boundary error <=0.000031 m, subject to the approximate source projection and validation method.",
+    "Roof silhouettes remain generic and read low/broad; official photo reference indicates steeper/gabled character.",
+    "Facade window patterns, entrances and ornament are mostly procedural approximations rather than hall-specific verified elevations.",
+    "No interior is modeled. Lack of hall-specific plans explains the omission but does not make the asset complete against an interior criterion.",
+    "Fresh-open passed with 28 meshes, 20,236 vertices, 9,232 faces, six procedural material slots and no external image dependencies."
+  ],
+  "priority_changes": [
+    "Verify and model source-supported roof silhouettes/dormers/chimneys per hall.",
+    "Refine each hall's facade and entrance patterns using hall-specific views.",
+    "Add clearly labeled schematic interior zones or have coordinator determine whether evidence-limited interiors may be omitted.",
+    "Improve brick/limestone relief, glazing and frame depth while preserving GIS wall footprints."
+  ]
+}

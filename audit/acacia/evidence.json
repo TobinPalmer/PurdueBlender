@@ -1,0 +1,87 @@
+{
+  "building": "Acacia, Purdue Chapter House",
+  "stable_asset_id": "massing_house_301841251_8a9a05b",
+  "source_fid": 791,
+  "asset_path": "modular/buildings/massing_house_301841251_8a9a05b.blend",
+  "collection": "Asset_massing_house_301841251_8a9a05b",
+  "scene": "Building_massing_house_301841251_8a9a05b",
+  "date_retrieved": "2026-10-26",
+  "coordinate_frame": "project local approximate campus coordinates, meters; geographic origin 40.4274N, 86.9137W; x east, y north; retained original massing footprint coordinates",
+  "sources": [
+    {
+      "provider": "Purdue BuildingShapes GIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D791&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": "FID 791",
+      "snapshot": "audit/acacia/sources/purdue_gis_fid791_2026-10-26_wgs84.json",
+      "crs": "WGS84 EPSG:4326",
+      "method": "converted by documented project local approximation; used extant original massing mesh as plan outline",
+      "uncertainty": "GIS Shape__Area=798.445 m2 conflicts with area computed from projected polygon (~461.88 m2); original massing footprint vertices retained; GIS NUM_LEVELS=1 is inconsistent with published plans"
+    },
+    {
+      "provider": "Acacia Fraternity, Purdue chapter",
+      "url": "https://purdueacacia.org/renew-acacia",
+      "snapshot": "audit/acacia/sources/acacia_purdue_renew_2026-10-26.html",
+      "source_date": "renovation updates through 2026",
+      "method": "current porch/atrium restoration and renovations; front photograph saved locally",
+      "uncertainty": "photograph is a point-in-time image and can show construction activity"
+    },
+    {
+      "provider": "Acacia Fraternity, Purdue chapter",
+      "url": "https://purdueacacia.org/",
+      "snapshot": "audit/acacia/sources/acacia_front_porch.jpg",
+      "method": "front facade visual reference: brick tower, half-timbered upper gable, shingle roof, dormer, porch and illuminated name arch",
+      "uncertainty": "photograph provides no exact dimensions or compass bearing"
+    },
+    {
+      "provider": "Acacia Fraternity, Purdue chapter",
+      "url": "https://purdueacacia.org/renew-acacia",
+      "snapshot": "audit/acacia/sources/acacia_plan_gallery_1.jpeg through acacia_plan_gallery_5.jpeg",
+      "method": "architectural elevations and floorplans; first/second/third-floor levels noted; room arrangement guides representative interior",
+      "uncertainty": "design drawings document plans and may not fully reflect latest renovation; architectural dimensions were not legible/available"
+    },
+    {
+      "provider": "Acacia Fraternity, Purdue chapter",
+      "url": "https://purdueacacia.org/contact",
+      "snapshot": "audit/acacia/sources/acacia_purdue_contact_2026-10-26.html",
+      "method": "confirms Acacia House at 608 Waldron Street",
+      "uncertainty": "address confirms identity, not footprint/height"
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/578",
+      "method": "historical identity: current 608 Waldron house was Oliver Perkins Terry House and transferred to Acacia in 1959",
+      "uncertainty": "history does not establish current architectural dimensions"
+    },
+    {
+      "provider": "Esri World Imagery",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer?f=pjson",
+      "snapshot": "audit/acacia/sources/esri_world_imagery_acacia_z20_mosaic.jpg; see audit/acacia/sources/esri_world_imagery_acacia_metadata.json",
+      "source_date": "retrieved 2026-10-26; imagery acquisition date not disclosed by tile service",
+      "method": "north-up z20 current basemap footprint comparison; matched GIS ring and official porch/elevation drawings to west-side approach context to infer west-facing long facade",
+      "uncertainty": "Aerial verifies footprint and context but not facade details; the official porch image is not geotagged, so bearing is a supported inference rather than direct photo bearing"
+    }
+  ],
+  "modeling_decisions": {
+    "floors": "three above-grade floors; level spacings estimated from official drawing callouts 100 ft, 110 ft 7 in, and 119 ft 10 in",
+    "roof": "steep gabled dark shingle roof and dormers modeled from official front image and elevations; geometry estimated",
+    "exterior": "red-brown brick base, cream panel and dark timber upper facade, white porch framing, illuminated ACACIA arch, tower and chimney based on official imagery/drawings",
+    "interior": "representative lobby/atrium, library, heritage room, study hall, bedrooms, upper corridor, stairs, beds, tables and shelves based on the official plans; room dimensions, materials, furniture and exact wall positions are estimates",
+    "porch": "West-facing long elevation, inferred by matching the official porch/elevation plan with north-up Esri imagery and the west-side approach path. The GIS ring extends about 3.15 m south of the retained wall shell at a small projection consistent with an entry/porch area. Porch dimensions are estimates."
+  },
+  "validation": {
+    "fresh_open": "passed in a separate Blender 5.2.3 process; 508 collection objects, 502 meshes, 55 interior-related objects, stable scene/collection/FID/path, zero collection offset, original campus placement and wall-shell bounds retained; every mesh has assigned procedural material.",
+    "renders": [
+      "audit/acacia/exterior.png",
+      "audit/acacia/interior.png"
+    ],
+    "stable_identity": "README row confirms Tobin assignment, FID 791, stable ID massing_house_301841251_8a9a05b, and asset path; manifest asset collection and scene names retained.",
+    "limitations": [
+      "Official facade photo is not geotagged; west-facing bearing is inferred by matching official elevation/photo features to the north-up imagery and approach path.",
+      "Floorplan drawings may describe a renovation/project rather than the exact as-built interior; room placement, furniture, roof geometry and dimensions are estimates.",
+      "Encoded WGS84 and state-plane GIS rings agree within 0.226 m2 (0.049%); shell residual is -2.812 m2 (-0.609%). The GIS ring extends 3.148 m farther south than the structural shell; shell remains unshifted. ArcGIS Shape__Area and Shape__Length summary attributes conflict with the encoded geometry and are treated as stale."
+    ],
+    "gis_overlay": "audit/acacia/gis_topdown_overlay.png",
+    "aerial_overlay": "audit/acacia/aerial_gis_orientation_overlay.png",
+    "gis_comparison": "audit/acacia/gis_comparison.json"
+  }
+}

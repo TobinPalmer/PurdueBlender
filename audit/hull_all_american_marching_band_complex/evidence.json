@@ -1,0 +1,134 @@
+{
+  "building": "Bob & Trudy Marching Band Complex",
+  "stable_asset_id": "massing_hull_all_american_marching_band_complex_665bcb7",
+  "source_feature_id": 431,
+  "building_abbreviation": "HULL",
+  "address": "1252 3rd Street",
+  "asset_path": "modular\\buildings\\massing_hull_all_american_marching_band_complex_665bcb7.blend",
+  "collection": "Asset_massing_hull_all_american_marching_band_complex_665bcb7",
+  "scene": "Building_massing_hull_all_american_marching_band_complex_665bcb7",
+  "date_retrieved": "2026-10-26",
+  "coordinate_frame": "project campus-coordinate approximation, meters; X east, Y north, Z up; origin 40.4274 N, -86.9137 W; original massing asset stays in this frame pending coordinator localization",
+  "sources": [
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D431&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "snapshot": "sources/purdue_gis_fid431.json",
+      "source_feature_id": "FID 431 / BLDG_ABBR HULL",
+      "source_crs": "WGS84 EPSG:4326",
+      "measurement_method": "encoded GIS ring converted with the project local geographic approximation",
+      "uncertainty": "Shape__Area field (452.99) conflicts with area computed from projected ring (262.05 m2); GIS outline may be roof/cartographic edge rather than surveyed wall line."
+    },
+    {
+      "provider": "Esri World Imagery",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/20/395336/271102",
+      "snapshot": "sources/esri_world_imagery_fid431_z20_mosaic.jpg",
+      "source_crs": "Web Mercator Auxiliary Sphere EPSG:3857",
+      "source_date": "tile acquisition date not disclosed",
+      "measurement_method": "north-up zoom-20 imagery mosaic and GIS overlay; confirms a compact light-colored low-slope roof beside Hull Field; does not establish wall height or facade detailing",
+      "uncertainty": "Imagery date not disclosed; roof edge appears to project beyond mapped footprint."
+    },
+    {
+      "provider": "Purdue Bands & Orchestras official announcement",
+      "url": "https://www.purdue.edu/bands/10-million-gift-sets-the-stage-for-new-bands-and-orchestras-building/",
+      "snapshot": "sources/purdue_band_2020_building_update.html",
+      "source_date": "2019",
+      "measurement_method": "program and relationship to Hull Field/TREC; states the addition provides restrooms, changing facilities, instrument/uniform storage",
+      "uncertainty": "No floor plan, facade elevations, or building dimensions."
+    },
+    {
+      "provider": "Purdue Vice Provost for Student Life",
+      "url": "https://www.purdue.edu/vpsl/news/perspectives-stories/new-bands-building.php",
+      "snapshot": "sources/purdue_vpsl_new_bands_building.html",
+      "source_date": "2020 article; construction anticipated 2020-2021",
+      "measurement_method": "independent Purdue source for addition to TREC and indoor practice/storage use",
+      "uncertainty": "No plan drawings, measured height, or facade materials."
+    },
+    {
+      "provider": "Purdue Bands & Orchestras",
+      "url": "https://www.purdue.edu/bands/wp-content/uploads/2025/08/2025-Band-Camp-Schedule-Updated-Aug-19.pdf",
+      "snapshot": "sources/purdue_aamb_2025_band_camp_schedule.pdf",
+      "source_date": "2025",
+      "measurement_method": "confirms ongoing rehearsal and camp activity at Hull Complex",
+      "uncertainty": "Schedule does not describe architecture."
+    },
+    {
+      "provider": "Google Maps Street View",
+      "url": "https://www.google.com/maps/@40.4273749,-86.9240424,191a,75y,120h,90t/data=!3m7!1e1!3m5!1s4G_u-T0PyopGT1ZNTYrK4Q!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3D4G_u-T0PyopGT1ZNTYrK4Q%26yaw%3D120!7i16384!8i8192",
+      "snapshot": "sources/google_streetview_apr2026.json",
+      "source_date": "April 2026",
+      "measurement_method": "visual facade review from a pano about 80 m south of the footprint; supports low single-story silhouette, repeated tall ground openings and upper window band",
+      "uncertainty": "Distant oblique view; no exact door/window counts, dimensions, material, or height can be measured."
+    },
+    {
+      "provider": "Purdue Bands & Orchestras",
+      "url": "https://www.purdue.edu/bands/wp-content/uploads/2024/09/Alumni-Band-2024-Schedule.pdf",
+      "snapshot": "sources/purdue_alumni_band_2024_schedule_search_snapshot.json",
+      "source_date": "2024",
+      "measurement_method": "Purdue search-result index excerpt identifies the Hull “All-American” Marching Band Complex garage separately from Hull Field; supports the garage identity but does not tie the name to a specific GIS polygon. Direct PDF retrieval returned HTTP 404 on 2026-10-26; saved snapshot records that limitation.",
+      "uncertainty": "No accessible original PDF snapshot; the indexed excerpt does not provide a floor plan, dimensions, facade, or height."
+    }
+  ],
+  "geometry": {
+    "gis_footprint_xy_m": [
+      [
+        -900.2003,
+        -886.6747
+      ],
+      [
+        64.7019,
+        85.6129
+      ]
+    ],
+    "gis_area_projected_m2": 262.0506,
+    "gis_centroid_xy_m": [
+      -893.3867,
+      74.9102
+    ],
+    "long_axis_orientation_degrees_from_east": 88.6,
+    "wall_height_m": 4.78,
+    "parapet_height_m": 5.36,
+    "height_status": "unverified visual estimate; April 2026 Street View establishes a low single-story silhouette but provides no scale; 5.36 m overall envelope is estimated from apparent bay-door proportions, not measured",
+    "roof_form": "flat low-slope light-colored roof; observed in Esri aerial imagery and Street View; exact roof build-up inferred"
+  },
+  "modeling_decisions": {
+    "identity_scope": "The modeled feature is the compact Hull All-American Marching Band Complex garage/support building at Hull Field, not Hagle Hall. Purdue’s 2024 Alumni Band schedule identifies the Hull Complex garage separately from Hull Field; GIS FID 431 location and the aerial roof support this small-building match.",
+    "exterior": "GIS-ring wall shell with a low masonry base, light gray upper cladding, five repeated field-facing vehicle/equipment service bays, a high window band, light low-slope roof, and parapets. Street View supports the low single-story form and repeated opening/window rhythm; bay count, dimensions and material are estimates because the facade is distant and no elevations were found.",
+    "interior": "illustrative support space with open equipment handling, lockers, storage racks, benches and wash-area fixtures. Purdue sources document changing facilities and instrument/uniform storage for the TREC addition; exact room positions, dimensions, finishes and fixtures are not available and are schematic.",
+    "placement": "no translation, rotation, or scale change to campus location; rebuilt footprint directly from GIS FID 431. West wall designated service edge because it faces adjacent Hull Field."
+  },
+  "validation": {
+    "fresh_open": "see fresh_open_validation.json; saved asset reopened successfully in Blender 5.2.3",
+    "collection_objects": 404,
+    "mesh_objects": 403,
+    "materialless_meshes": 0,
+    "unpacked_external_images": 0,
+    "asset_instances_offset": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "previews": [
+      "exterior_preview.png",
+      "interior_cutaway_preview.png"
+    ],
+    "gis_overlay": "gis_footprint_overlay.jpg",
+    "baseline_footprint_iou": 0.8821,
+    "baseline_vs_gis_hausdorff_m": 1.4258,
+    "geometry_edits": [
+      "Replaced 26-vertex fallback shell footprint with the 8-edge GIS FID 431 boundary (after removing repeated ring close).",
+      "Reduced the previous fallback 7.60 m envelope to a Street View-informed but unmeasured 5.36 m estimate.",
+      "Added five repeated field-facing service bays and an upper window band to match the April 2026 Street View rhythm.",
+      "Added procedural masonry/metal envelope, low-slope seam roof, parapet and rain leaders.",
+      "Added program-informed but explicitly schematic interior partitions and equipment, changing and storage fit-out.",
+      "Kept campus XY coordinate frame and asset collection/scene identifiers unchanged."
+    ],
+    "limitations": [
+      "No measured height or facade elevations found; 5.36 m height and individual bay/window dimensions/count are visual estimates from a distant Street View image.",
+      "Interior plan layout and fittings are schematic because no as-built floor plan was found for this compact TREC/garage feature.",
+      "Exterior wall material is uncertain; light cladding and masonry base are interpretive.",
+      "GIS Shape__Area field does not agree with polygon-derived area; use encoded ring for plan geometry, not the summary field.",
+      "Esri imagery acquisition date is undisclosed; roof edge differs slightly from the GIS polygon."
+    ]
+  }
+}

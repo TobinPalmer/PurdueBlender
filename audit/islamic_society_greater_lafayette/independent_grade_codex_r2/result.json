@@ -1,0 +1,83 @@
+{
+  "building": "Islamic Society of Greater Lafayette (ISGL)",
+  "asset": "modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend",
+  "asset_sha256": "c84126f5b1f549db17faa7282e449fc6de171e632b6e627062ad46379247c39b",
+  "review_type": "independent_exact_hash",
+  "reviewer": "Independent evaluator",
+  "blender_version": "5.2.3 LTS",
+  "fresh_open": "PASS",
+  "score": 7.9,
+  "weighted_score_unrounded": 7.917,
+  "threshold": 8.0,
+  "pass": false,
+  "rubric": [
+    {
+      "criterion": "Identity and source attribution",
+      "score": 7.8,
+      "weight_percent": 10,
+      "finding": "The official ISGL about page and labeled Visit Lafayette photo support the 1022 1st St physical facility. Purdue GIS FID 771 is a close physical-site match, and Purdue Engineering connects the ISGL venue with MSA activity, but the map feature still explicitly names Muslim Student Association at 1021 First St. The formal parcel/name crosswalk remains unresolved."
+    },
+    {
+      "criterion": "Structural footprint and campus placement",
+      "score": 9.8,
+      "weight_percent": 22,
+      "finding": "In a fresh Blender 5.2.3 open of this exact SHA, the 11 projected FID 771 ring points fall within 0.00001437 m of bottom structural vertices. The saved model bounds are plausible for the GIS footprint. This verifies the model follows the candidate ring, not that the candidate polygon is formally ISGL or that the ring is a surveyed wall survey."
+    },
+    {
+      "criterion": "Roof silhouette, floors, and height",
+      "score": 7.0,
+      "weight_percent": 15,
+      "finding": "The roof-plan image supports two intersecting hipped roof volumes, represented in the asset. Pitches and ridge/eave heights remain estimates; GIS floor fields conflict with the visibly multi-band elevation. The roof reads as a broad, simple envelope rather than a fully resolved architectural roof."
+    },
+    {
+      "criterion": "Facade and entrance character",
+      "score": 7.5,
+      "weight_percent": 18,
+      "finding": "The model reflects the source photo\u2019s red-brown brick, two window/facade bands, pale entrance surround, dark sign, and small domed canopy. Window spacing and unseen elevations are generalized, and the image provides only one cropped, non-georeferenced facade view."
+    },
+    {
+      "criterion": "Materials and texturing",
+      "score": 7.8,
+      "weight_percent": 12,
+      "finding": "Six portable procedural materials separate brick, roof, glazing, sign, canopy, and limestone. The front/approach renders are clean, but the surfaces read largely as flat color at the camera scale; stronger brick/roof surface relief and more nuanced roughness would better match the photograph."
+    },
+    {
+      "criterion": "Interior representation",
+      "score": 4.0,
+      "weight_percent": 8,
+      "finding": "No interior is modeled. No reliable plan was found, so an invented layout should not be presented as accurate. A small, clearly labeled schematic gathering/prayer-room interior could address the project\u2019s interior-detail goal without claiming to reproduce surveyed rooms."
+    },
+    {
+      "criterion": "Geometry detail and visual finish",
+      "score": 7.5,
+      "weight_percent": 5,
+      "finding": "One clean 982-vertex mesh holds the footprint shell, openings, roof volumes, bands, and canopy. The silhouette and dominant entrance cues are recognizable, though window, roof-edge, and corner detail are simplified."
+    },
+    {
+      "criterion": "Portability, reopen, and evidence",
+      "score": 9.5,
+      "weight_percent": 10,
+      "finding": "I independently reopened the exact SHA in Blender 5.2.3. Expected scene and collection are present, with 1 mesh, 982 vertices, 747 polygons, six used materials, no materialless slots, missing images, or linked libraries. Source imagery/GIS snapshots, retrieval dates, CRS transform, measurement method, and uncertainties are documented."
+    }
+  ],
+  "limitations": [
+    "Exact asset SHA is fresh-open verified; master integration/placement was not part of this review.",
+    "GIS FID 771 names MSA at 1021 First Street; evidence supports a strong physical-site relationship to ISGL at 1022 1st St, not a formal crosswalk.",
+    "GIS Shape__Area conflicts with the transformed polygon-ring area; the returned ring was used without scaling.",
+    "Roof planes, height, story count, window spacing on unseen elevations, and interior layout remain estimated or unverified."
+  ],
+  "revision_priorities": [
+    "Add a clearly marked schematic interior only if appropriate under coordinator direction; keep it visibly distinguishable from verified exterior geometry.",
+    "Improve brick and slate surface response with subtle relief/roughness variation, preserving portability.",
+    "Use additional directly sourced facade views or plans to refine openings and roof elevations; otherwise retain estimate labels.",
+    "Keep the FID 771/ISGL identity caveat in shared indexes until a parcel or official facility crosswalk is found."
+  ],
+  "independent_fresh_open_report": "audit/islamic_society_greater_lafayette/independent_grade_codex_r2/fresh_open_probe.json",
+  "visual_references_reviewed": [
+    "audit/massing_islamic_societyof_greater_lafayette_0130012/renders/isgl_front_elevation.png",
+    "audit/massing_islamic_societyof_greater_lafayette_0130012/renders/isgl_exterior_approach.png",
+    "audit/massing_islamic_societyof_greater_lafayette_0130012/renders/isgl_roof_plan.png",
+    "audit/massing_islamic_societyof_greater_lafayette_0130012/sources/isgl_exterior_homeofpurdue.jpg",
+    "audit/massing_islamic_societyof_greater_lafayette_0130012/sources/indiana_current_imagery_isgl.jpg"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "source": "Indiana 3DEP 2018 Tippecanoe County LiDAR COPC, tile in2018_29951885_12",
+  "source_url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019/Tippecanoe_Co_2018_3DEP/Elev18_LAS1.4SPW_IN/copc/in2018_29951885_12.copc.laz",
+  "tile_metadata": "sources/indiana_lidar_target_tile_metadata.json",
+  "horizontal_crs": "EPSG:2968 NAD83(HARN) / Indiana West (ftUS)",
+  "vertical_crs": "NAVD88 height - Geoid12B (ftUS)",
+  "classification_method": "COPC query within 4 ft of GIS ring bbox; class 1 unclassified returns inside exact GIS polygon are used only as a roof-surface proxy because no class 6 returns occur within the mapped ring; class 2 ground returns within 6 ft of boundary and outside polygon are the local base estimate",
+  "point_counts": {
+    "queried": 4470,
+    "class_1_inside_ring": 1412,
+    "class_2_inside_ring": 72,
+    "class_6_inside_ring": 0,
+    "ground_class_2_nearby": 336
+  },
+  "building_ground_median_ft": 665.35,
+  "building_roof_returns_ft_percentiles": {
+    "5": 695.85,
+    "50": 698.34,
+    "95": 702.67,
+    "99": 723.36
+  },
+  "building_height_estimate_m": 10.06,
+  "building_height_upper_estimate_m": 11.37,
+  "roof_z_spread_5_to_95_m": 2.08,
+  "unclassified_roof_proxy_linear_fit": {
+    "z_ft = ax + by + c": [
+      -0.0797647,
+      0.0263453,
+      189950.67104364
+    ],
+    "r_squared": 0.0894,
+    "rmse_ft": 6.24
+  },
+  "gis_footprint_vertices_transformed_ft": [
+    [
+      2996619.35,
+      1889232.97
+    ],
+    [
+      2996576.65,
+      1889270.27
+    ],
+    [
+      2996601.36,
+      1889298.54
+    ],
+    [
+      2996675.79,
+      1889233.52
+    ],
+    [
+      2996650.8,
+      1889204.9
+    ],
+    [
+      2996647.73,
+      1889207.57
+    ],
+    [
+      2996601.47,
+      1889154.62
+    ],
+    [
+      2996572.79,
+      1889179.68
+    ]
+  ],
+  "note": "LiDAR-derived approximate roof elevation is not a surveyed wall-height measure; boundary ground sample, roof-edge returns, and 2018 acquisition date contribute uncertainty. It informs roof level but does not resolve facade materials or story arrangement."
+}

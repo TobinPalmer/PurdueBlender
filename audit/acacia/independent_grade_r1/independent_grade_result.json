@@ -1,0 +1,103 @@
+{
+  "score": 5.25,
+  "max_score": 10,
+  "pass": false,
+  "asset": "Acacia, Purdue Chapter House",
+  "asset_id": "massing_house_301841251_8a9a05b",
+  "asset_path": "modular/buildings/massing_house_301841251_8a9a05b.blend",
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "score": 1.0,
+      "max_score": 2,
+      "evidence": "Purdue GIS FID 791 identifies a cooperative at 608 Waldron Street; the Acacia contact/history and official chapter imagery support the building identity. The source massing shell is preserved. Fresh-open evaluated primary shell bounds are X [-334.714,-315.275], Y [342.136,370.629], Z [0,9.45] m (19.44 x 28.49 m footprint envelope). The evidence record itself identifies a Shape__Area conflict, and WGS84 source ring extents converted by the documented approximate transform do not reconcile cleanly to the shell bounds; the exact structural footprint therefore remains only partially verified.",
+      "findings": [
+        "Resolve/document the GIS area and projected-footprint conflict with a top-down overlay or authoritative survey before claiming verified footprint."
+      ]
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "score": 0.5,
+      "max_score": 2,
+      "evidence": "The asset is stored in direct-linked campus coordinates with identity collection offset and primary object location (0,0,0), satisfying the simple-massing convention. The saved evidence explicitly says the facade bearing is unverified and the porch position is estimated; no geotagged facade or current orthophoto comparison substantiates its rotation or sub-building placement. Envelope bounds are inspectable, but the footprint conflict also weakens dimensional verification.",
+      "findings": [
+        "Verify the facade bearing and asset centroid/footprint against a current orthophoto or surveyed GIS overlay; record orientation and translation residuals."
+      ]
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "score": 1.5,
+      "max_score": 2,
+      "evidence": "Official chapter drawings in the saved source set show three above-grade floor levels with elevations 100 ft, 110 ft 7 in, and 119 ft 10 in; elevation imagery supports a steep shingle roof, dormers and chimney. The saved model bounds give a 9.45 m overall primary-shell height. Roof geometry and overall height are modeled estimates, not surveyed/as-built dimensions.",
+      "findings": [
+        "Overall height and roof profile remain estimates because the available plans are renovation/project drawings and no as-built height measurement was found."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 0.5,
+      "max_score": 2,
+      "evidence": "The exterior render contains the brick tower with vertical ACACIA letters, a porch/sign arch, chimney, steep roof, dormers, windows and a gabled end. Direct visual comparison to the official front photo shows major facade mismatches: the modeled visible upper facade is brick where the reference has prominent cream panels and dark half-timber framing; the tall right gable is nearly blank rather than detailed; the entrance/porch proportions and window arrangement are simplified. The exterior render also shows a large uninterrupted brick side wall. The interior render is a low-contrast top-down cutaway in which walls obscure most room detail; some beds, partitions and labels are present but it does not substantiate convincing interior fidelity.",
+      "findings": [
+        "Rebuild the source-facing upper facade as cream infill with the photographed dark timber pattern; match the central entrance, porch opening, gable and window rhythm to the reference.",
+        "Add an interior view that makes the rooms legible, with material and furnishing detail; current pale overhead render is difficult to assess."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.75,
+      "max_score": 2,
+      "evidence": "Fresh-open asset has the expected scene/collection/stable ID, 489 objects (483 meshes), 12 in-file mesh materials, no external linked libraries, and 0 unpacked absolute-path image dependencies. The material audit reports 0 meshes with missing slots. The evidence folder contains raw GIS JSON, official chapter page snapshots, plans, a facade photo, and exterior/interior renders. Procedural materials are local to the asset.",
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "fresh_open": "passed in a new Blender 5.2.3 background process by opening the saved asset directly",
+    "scene": "Building_massing_house_301841251_8a9a05b",
+    "collection": "Asset_massing_house_301841251_8a9a05b",
+    "collection_object_count": 489,
+    "mesh_object_count": 483,
+    "primary_object": "House_301841251",
+    "primary_evaluated_bounds_world_m": [
+      [
+        -334.7135314941406,
+        -315.2749328613281
+      ],
+      [
+        342.1364440917969,
+        370.6293029785156
+      ],
+      [
+        0.0,
+        9.449999809265137
+      ]
+    ],
+    "primary_location": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "collection_instance_offset": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "material_count": 12,
+    "meshes_missing_material_slots": [],
+    "external_image_dependencies": [],
+    "linked_blend_libraries": [],
+    "sources_reviewed": [
+      "audit/acacia/evidence.json",
+      "audit/acacia/sources/purdue_gis_fid791_2026-10-26_wgs84.json",
+      "audit/acacia/sources/purdue_gis_fid791_2026-10-26_stateplane_2968.json",
+      "audit/acacia/sources/acacia_front_porch.jpg",
+      "audit/acacia/sources/acacia_plan_gallery_1.jpeg",
+      "audit/acacia/exterior.png",
+      "audit/acacia/interior.png"
+    ]
+  },
+  "findings": [
+    "Overall score is below the 8/10 passing threshold.",
+    "The strongest evidence-backed improvements are the front-facing half-timber facade and measured GIS placement/orientation; do not treat the current completion as a pass."
+  ]
+}

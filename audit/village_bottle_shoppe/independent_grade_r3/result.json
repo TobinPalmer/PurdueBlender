@@ -1,0 +1,39 @@
+{
+  "building": "Village Bottle Shoppe",
+  "asset": "modular/buildings/massing_village_bottle_shoppe_6a17e23.blend",
+  "tested_sha256": "E5210EC34D7159932586D92059FDD010E4D235C5102898E13DF4EA797D155E83",
+  "score": 8.7,
+  "threshold": 8.0,
+  "decision": "pass",
+  "blender_version": "5.2.3 LTS",
+  "fresh_open": "pass",
+  "categories": {
+    "site_identity_and_source_confidence": {"score": 8.5, "weight": 0.15},
+    "footprint_orientation_and_placement": {"score": 9.5, "weight": 0.25},
+    "massing_and_architectural_details": {"score": 7.5, "weight": 0.25},
+    "materials_and_texturing": {"score": 8.3, "weight": 0.15},
+    "interior_evidence_handling": {"score": 9.0, "weight": 0.10},
+    "blender_integrity_and_portability": {"score": 9.8, "weight": 0.10}
+  },
+  "fresh_open_probe": "fresh_open_probe.json",
+  "primary_evidence": [
+    "../../README.md",
+    "../../sources/google_business_photo_1.jpg",
+    "../../sources/google_business_photo_4.jpg",
+    "../../sources/esri_world_imagery_near_1832_northwestern.jpg",
+    "../../sources/indiana_building_footprints_nearby.geojson",
+    "../../preview_village_bottle_shoppe.png"
+  ],
+  "findings": {
+    "site_identity": "The official store location and Indiana FSSA record support 1832 Northwestern Ave. Indiana footprint objectid 409442 is explicitly cross-checked against that address. The separate 302 Vine St Hi ViNE tenant photos were correctly rejected as another branch.",
+    "footprint": "The four projected GIS ring corners are within 0.000059 m of a mesh vertex; computed area 472.920 m2 is consistent with the model property. Undocumented raw SHAPE__Area/Length attributes are not used. Height remains estimated.",
+    "facade": "The exact-address photo supports the red raised shop sign, red brick, tan masonry base, dark storefront glazing, and broad white fascia. The saved model captures these and replaces the unsupported house-like gable with a shallow commercial roof. The smaller second photo appears to show a glazed entry on an adjacent elevation; the model has no entry, and that image's orientation is not documented, so this remains a detail gap.",
+    "materials": "Eight portable node-based materials cover brick, tan block, flat roof membrane, fascia, aluminum, storefront glass, concrete, and sign. Brick and block use procedural textures. No file images or linked libraries are present.",
+    "interior": "No reliable plan evidence was found. Omitting an invented interior is appropriate.",
+    "integrity": "Exact saved asset reopened in Blender 5.2.3 LTS. Stable scene, collection, and mesh names are intact. The mesh has 2,488 vertices, 1,866 faces, and zero non-manifold, boundary, or wire edges."
+  },
+  "recommended_follow_up": [
+    "If another exact-address image establishes the small glazed entry's elevation and position, model it; otherwise keep its location unverified rather than guessing.",
+    "Preserve the raw source listing snapshot; the audit README references google_business_photo_listing.html, but that file is absent from the submitted source folder."
+  ]
+}

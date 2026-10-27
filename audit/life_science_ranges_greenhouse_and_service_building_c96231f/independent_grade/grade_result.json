@@ -1,0 +1,99 @@
+{
+  "score": 7.5,
+  "max_score": 10,
+  "passing_threshold": 8,
+  "status": "REVISION_REQUIRED",
+  "asset_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend",
+  "asset_sha256": "5A33EFE401C37523D184430A692AD10FEA04A3F71F098E083B488D5064C38B1C",
+  "expected_sha256": "5A33EFE401C37523D184430A692AD10FEA04A3F71F098E083B488D5064C38B1C",
+  "source_identity": {
+    "feature_id": 915,
+    "building_abbr": "LSR",
+    "building_name": "Life Science Ranges",
+    "address": "180 S Russell Street"
+  },
+  "measurements": {
+    "gis_envelope_width_m": 94.75,
+    "gis_envelope_height_m": 122.181,
+    "asset_bounds_x_m": [
+      -47.48503875732422,
+      47.612091064453125
+    ],
+    "asset_bounds_y_m": [
+      -61.20061492919922,
+      61.20062255859375
+    ],
+    "asset_width_m": 95.097,
+    "asset_height_m": 122.401,
+    "width_delta_m": 0.347,
+    "height_delta_m": 0.22
+  },
+  "criteria": [
+    {
+      "name": "Correct identity and source-backed footprint",
+      "points": 2.0,
+      "max_points": 2,
+      "evidence": "Official Purdue GIS feature 915 identifies BLDG_ABBR LSR, BUILDING_N Life Science Ranges, address 180 S Russell Street. The saved aerial and GIS overlay locate the feature on the greenhouse complex; board Exhibit A names the facility and ranges.",
+      "findings": "Identity and footprint are strongly supported. GIS feature has an outer ring and an internal ring; builder traces the envelope curb and draws range rows from the aerial."
+    },
+    {
+      "name": "Position, orientation, and scale/dimensions",
+      "points": 1.5,
+      "max_points": 2,
+      "evidence": "Builder projects lon/lat into the project's local XY convention and derives origin from FID 915 bounds. Projected GIS envelope is 94.75 m E-W by 122.18 m N-S; model bounds are 95.10 by 122.40 m (delta +0.35, +0.22 m). Rows are drawn in the same east-west orientation as the orthophoto.",
+      "findings": "Asset-local dimensions and axes closely match GIS, but the candidate evidence does not verify the corresponding master placement marker or a direct top-down overlay of the new candidate geometry against GIS. The yellow outline in the saved overlay is explicitly the old massing bounds."
+    },
+    {
+      "name": "Evidence-backed height, floors, and roof form",
+      "points": 1.0,
+      "max_points": 2,
+      "evidence": "Purdue GIS records NUM_LEVELS=2 and Extrution=12 (the field's units/meaning are not documented in the saved evidence). The aerial, board plan, and Purdue photos support low multi-span pitched greenhouse roofs and a service wing.",
+      "findings": "Builder uses 3.65 m eaves, 5.95 m greenhouse ridge, and 6.8 m service-wing height without a dimensioned section/elevation or verified interpretation of the GIS Extrution field. These are estimates; roof appearance is plausible but measured height and exact roof geometry remain unsupported."
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "points": 1.5,
+      "max_points": 2,
+      "evidence": "2026 Purdue exterior photo shows glazed greenhouse framing, low opaque base, attached brick/service portion and facility sign. Conveyor photo supports the phenotyping equipment concept. Renders show glazing, repeated frames, service doors, louvers, sign and planted benches.",
+      "findings": "Distinctive materials and greenhouse structure are recognizable. Some service-wing facade/entrance proportions and equipment placement are reconstructed from limited views rather than dimensioned or surveyed evidence; interior benches/plants are a plausible interpretation."
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "points": 1.5,
+      "max_points": 2,
+      "evidence": "Expected SHA-256 match: True. Fresh-open report passes with 49 objects, 17 materials and 0 unpacked external image dependencies; expected scene/collection names are present. Required preview/source files: 12/12 present.",
+      "findings": "Modular collection and clean reopen are verified. Evidence is substantial, but the saved source notes do not consistently record exact source URLs/provider retrieval dates/source dates/CRS/method/uncertainty per AGENT.md. The existing overlay is not a candidate-asset-vs-GIS validation."
+    }
+  ],
+  "evidence_files": {
+    "sources/purdue_gis_fid915.geojson": true,
+    "sources/purdue_building_shapes_layer_metadata.json": true,
+    "sources/esri_world_imagery_2026_extent.jpg": true,
+    "sources/purdue_2022_board_project_approval.pdf": true,
+    "sources/purdue_2026_greenhouse_social_photo.jpg": true,
+    "sources/purdue_2026_greenhouse_conveyor.jpg": true,
+    "previews/gis_footprint_overlay.jpg": true,
+    "previews/board_exhibit-3.png": true,
+    "previews/exterior_oblique.png": true,
+    "previews/roof_plan.png": true,
+    "previews/interior_research_bench.png": true,
+    "fresh_open_validation.json": true
+  },
+  "findings": [
+    "Identity and footprint are strongly supported. GIS feature has an outer ring and an internal ring; builder traces the envelope curb and draws range rows from the aerial.",
+    "Asset-local dimensions and axes closely match GIS, but the candidate evidence does not verify the corresponding master placement marker or a direct top-down overlay of the new candidate geometry against GIS. The yellow outline in the saved overlay is explicitly the old massing bounds.",
+    "Builder uses 3.65 m eaves, 5.95 m greenhouse ridge, and 6.8 m service-wing height without a dimensioned section/elevation or verified interpretation of the GIS Extrution field. These are estimates; roof appearance is plausible but measured height and exact roof geometry remain unsupported.",
+    "Distinctive materials and greenhouse structure are recognizable. Some service-wing facade/entrance proportions and equipment placement are reconstructed from limited views rather than dimensioned or surveyed evidence; interior benches/plants are a plausible interpretation.",
+    "Modular collection and clean reopen are verified. Evidence is substantial, but the saved source notes do not consistently record exact source URLs/provider retrieval dates/source dates/CRS/method/uncertainty per AGENT.md. The existing overlay is not a candidate-asset-vs-GIS validation."
+  ],
+  "revision_requests": [
+    "Provide a fresh candidate-asset top-down footprint overlay against GIS FID 915 (not the legacy massing outline), and verify the proposed origin against the master Placement marker or document that the master owner must apply it.",
+    "Add authoritative height/section evidence or retain explicit estimated labels and document why the proposed 3.65 m / 5.95 m / 6.8 m values are reasonable; clarify the GIS Extrution=12 field units/meaning if possible.",
+    "Complete per-source provenance with exact URL/provider, retrieval date, source date, CRS, measurement method, and uncertainty; ensure the saved evidence agrees with the candidate geometry and source interpretation."
+  ],
+  "remaining_uncertainties": [
+    "No dimensioned as-built elevations/sections found in the inspected evidence.",
+    "Greenhouse interior bench, plant, bay and equipment arrangement is inferred from public imagery and plans.",
+    "Master placement instance was not part of this independent asset-grade validation."
+  ]
+}

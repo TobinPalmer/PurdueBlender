@@ -1,0 +1,104 @@
+{
+  "building": "Ralph & Bettye Bailey Hall",
+  "asset_id": "massing_ralph_bettye_bailey_hall_406c4db",
+  "revision": "Local-coordinate model with Purdue OEP first-floor schematic",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University ArcGIS FeatureServer / BuildingShapesZip4",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D411&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 411,
+      "identity": "BALY; Ralph and Bettye Bailey Hall; 359 Northwestern Avenue",
+      "snapshot": "source_feature_411_raw.json",
+      "snapshot_date": "2026-10-22; original repository snapshot timestamp 2026-10-22T03:45:50Z",
+      "response_crs": "EPSG:4326 (WGS 84); output requested in WGS84 from the feature service",
+      "layer_metadata": "source_gis_layer_metadata.xml; native CRS is NAD83 StatePlane Indiana West, US survey feet",
+      "notes": "The feature service has no positional uncertainty statement. GIS NUM_LEVELS=5 and CountOfFLO=5 are attributes, not measured facade rows or elevations. Shape__Area/Shape__Length reflect service projection values and were not used as ground dimensions."
+    },
+    {
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "page_url": "https://www.purdue.edu/operations/emergency-preparedness/baly/",
+      "page_revision": "2026-04-03",
+      "exterior_image_url": "https://www.purdue.edu/operations/emergency-preparedness/wp-content/uploads/sites/3/2026/04/BALY-Ralph-Bettye-Bailey-Hall-PMO-1-1024x768.jpg",
+      "exterior_snapshot": "source_bailey_exterior_photo.jpg",
+      "floor_plan_image_url": "https://www.purdue.edu/operations/emergency-preparedness/wp-content/uploads/sites/3/2026/03/BALY-First-Floor-1-e1775487644661-1024x791.jpg",
+      "floor_plan_snapshot": "source_baly_first_floor_plan_2026.jpg",
+      "retrieval_date": "2026-10-26",
+      "source_date": "Page revision 2026-04-03; image capture dates not supplied",
+      "photo_crs": "Not applicable; oblique photo",
+      "plan_crs": "Not georeferenced; no north arrow or scale bar shown",
+      "use": "Exterior image supports brick, light stone bands/trim, flat parapet, two visible above-grade window rows and entry context. Official first-floor plan supports the room names and relative room groupings represented in the schematic. Neither provides calibrated exterior dimensions or a geographic plan orientation."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "page_url": "https://blogs.lib.purdue.edu/asc/2016/12/01/bailey-hall-and-purdues-musical-myth/",
+      "image_url": "https://blogs.lib.purdue.edu/asc/files/2016/10/Bailey-Hall-Outside.jpg",
+      "snapshot": "source_bailey_archives_exterior.jpg",
+      "publication_date": "2016-12-01; image capture date and photographer not stated",
+      "use": "Corroborates the raised lobby/entry tower, glazing, vertical panel, brick and pale trim. Oblique view cannot establish dimensions or true-north orientation."
+    }
+  ],
+  "coordinate_transform": {
+    "project_origin_lat_lon": [40.4274, -86.9137],
+    "formula": "X=(longitude + 86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude - 40.4274)*111040",
+    "axes": "X east, Y north, Z up",
+    "units": "meters",
+    "method_limit": "Project-compatible local approximation; not a surveyed CRS transform."
+  },
+  "placement": {
+    "proposed_master_origin_xy_m": [308.0088963323173, -22.748264063867406],
+    "origin_method": "Planar centroid of the raw FID 411 polygon after the documented project-local conversion",
+    "asset_geometry": "Local XY around the proposed origin; root object transform remains identity",
+    "integration_note": "The shared manifest and master placement marker were not changed. The master coordinator must set this collection instance origin before the local-coordinate asset can replace the existing campus-coordinate massing library.",
+    "source_polygon_bounds_xy_m": [[295.7079179361737, 322.0309784439278], [-39.44971756734731, -3.8080796788517546]],
+    "source_polygon_dimensions_m": [26.3230605077541, 35.6416378884996],
+    "source_polygon_area_local_conversion_m2": 842.1236505231673,
+    "independent_area_cross_check": "EPSG:26916 (NAD83 / UTM zone 16N) projection of raw WGS84 ring: 841.956 m2, perimeter 129.508 m. The roughly 0.02% area difference from the project approximation is projection-method variance.",
+    "structural_shell_comparison": "Outer structural wall base and upper wall ring are generated from all 22 distinct transformed FID 411 vertices. Therefore the modeled structural footprint coincides with the source ring by construction; GIS is a campus map outline, not a certified survey. Entry tower/canopy and facade trim intentionally project beyond that wall footprint.",
+    "whole_model_bounds_if_origin_applied_xy_m": [[292.79940841727824, 322.3212284856376], [-39.739967097314675, -3.517829646142797]],
+    "pre_edit_mass_bounds_xy_m": [[295.60736083984375, 322.33966064453125], [-45.14886474609375, -4.108479976654053]],
+    "orientation": "Structural shell follows source polygon vertices. Entrance location/orientation is selected from the long west-facing wall per photo interpretation, but oblique imagery does not independently prove the true-north-facing facade."
+  },
+  "height_and_levels": {
+    "modeled_lower_wing_parapet_m": 7.5,
+    "modeled_entry_tower_apex_m": 10.180320739746094,
+    "highest_model_z_m": 10.180320739746094,
+    "status": "Estimated, not measured. The 7.5 m wall height is photo-scaled. Tower height tentatively uses GIS R=33.4 interpreted as feet; the field definition/units are not documented and this is not treated as verified height evidence.",
+    "source_conflict": "GIS NUM_LEVELS=5 and CountOfFLO=5 conflict with two visible above-grade facade rows in Purdue's current exterior image. Actual level accounting and any lower-level contribution are unresolved."
+  },
+  "interior": {
+    "source_supported_names": ["Lounge", "Large Rehearsal 1", "Large Rehearsal 2", "Small Rehearsal 1", "Small Rehearsal 2", "Lobby", "Reception", "Restrooms", "Custodial", "Storage", "Stairs", "Telecom", "Elevator", "Vestibules", "Sound Lock"],
+    "modeled_detail": "2,610 flat first-floor room-zone/circulation faces are included in the stable building mesh and clipped to the official GIS shell polygon. No unsourced furniture or upper-floor room layout was invented.",
+    "assumptions": "Plan regions were traced from Purdue OEP's published image and proportionally mapped to the GIS footprint envelope. The plan has no scale bar or north arrow; room dimensions, exact wall locations, and orientation are schematic/unverified."
+  },
+  "geometry_and_materials": {
+    "geometry_edits": [
+      "Replaced campus-world one-box extrusion with a detailed local-coordinate closed shell using the official GIS ring.",
+      "Added photo-supported red-brick pattern, two rows of repeated windows, limestone surrounds/bands and plinth, flat parapet coping, raised entry tower, tall glazing, vertical panel, entrance surround and canopy.",
+      "Added a source-backed colored first-floor room-zone schematic and neutral circulation plate; no unsourced furnishings or upper floors were added."
+    ],
+    "materials": ["Purdue_Red_Brick", "Indiana_Bedford_Limestone", "Bailey_Dark_Glazing", "Bailey_Roof_Slate", "Bailey_Entry_Metal", "Bailey_Schematic_Lobby", "Bailey_Schematic_Rehearsal", "Bailey_Schematic_Support", "Bailey_Schematic_Circulation"],
+    "remaining_uncertainty": [
+      "Campus GIS geometry is not a certified wall survey and has no published positional tolerance.",
+      "Parapet/tower heights and tower projection are estimated; GIS elevation-like field meanings/units are not defined.",
+      "Facade orientation, entry exact location and unseen facades remain approximate from oblique photos.",
+      "First-floor plan alignment, dimensions and north orientation are schematic; no sections or height measurements were found."
+    ]
+  },
+  "validation": {
+    "fresh_open": true,
+    "blender_version": "5.2.3 LTS",
+    "sha256": "99E0F25C9028151179F7C28A98F2B358AD65B64C4F4BDBBC81F8658816F23B76",
+    "scene": "Building_massing_ralph_bettye_bailey_hall_406c4db",
+    "collection": "Asset_massing_ralph_bettye_bailey_hall_406c4db",
+    "collection_objects": 1,
+    "mesh_vertices": 13408,
+    "mesh_faces": 4698,
+    "materials": 9,
+    "external_image_files": 4,
+    "missing_external_image_files": 0,
+    "report": "fresh_open_validation.json"
+  },
+  "previews": ["preview_exterior_front.png", "preview_exterior_three_quarter.png", "preview_interior_schematic.png"],
+  "grading": "The repository's earlier 8/10 grade predates this local-coordinate/interior revision; this revision is intentionally stopped for a new independent grade."
+}

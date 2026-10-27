@@ -1,0 +1,93 @@
+{
+  "building": "Alpha Gamma Rho, Delta Chapter, Purdue University",
+  "owner": "Tobin",
+  "manifest_id": "massing_house_301841253_f0b3be3",
+  "README_FID": 792,
+  "source_footprint": {
+    "provider": "OpenStreetMap",
+    "feature_type": "way",
+    "feature_id": 301841253,
+    "last_source_edit": "2022-02-27T17:08:01Z",
+    "retrieved": "2026-10-26",
+    "raw_snapshot": "sources/osm_way_301841253_2026-10-26.json",
+    "tags": {
+      "addr:housenumber": "607",
+      "building": "school"
+    },
+    "source_crs": "WGS84 latitude/longitude (EPSG:4326)",
+    "transform": "PurdueMap approximate local conversion, X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040; units metres",
+    "node_count": 20,
+    "bounds_xy_m": [
+      [
+        -295.7685009661899,
+        327.59020800008784
+      ],
+      [
+        -270.73241061686105,
+        364.4110720003823
+      ]
+    ],
+    "dimensions_xy_m": [
+      25.036090349328845,
+      36.82086400029448
+    ],
+    "polygon_area_m2": 687.0619897218421,
+    "measurement_method": "ordered closed OSM way ring converted to local XY; planar shoelace area and axis-aligned bounds",
+    "uncertainty": "OSM outline is community-mapped and last edited 2022-02-27; local conversion is approximate, not survey control; campus master has no verified wall survey."
+  },
+  "identity_evidence": [
+    {
+      "provider": "Alpha Gamma Rho Delta official chapter site",
+      "url": "https://agrpurdue.com/donate.html",
+      "retrieved": "2026-10-26",
+      "evidence": "Lists 607 N University St and chapter house renovation campaign.",
+      "snapshot": "sources/agr_delta_official_site_2026-10-26.html"
+    },
+    {
+      "provider": "Purdue Agriculture",
+      "url": "https://ag.purdue.edu/department/agecon/undergraduate-program/success-2025-26/greek-life-leadership-on-campus.html",
+      "retrieved": "2026-10-26",
+      "page_last_modified": "2026-06-08",
+      "evidence": "Identifies Alpha Gamma Rho and embeds chapter-house photo with green ΑΓΡ pediment. Photo date unspecified.",
+      "snapshot": "sources/purdue_ag_greek_life_page_2026-10-26.html"
+    },
+    {
+      "provider": "KJG Architecture",
+      "url": "https://www.kjgarchitecture.com/portfolio-1/alpha-gamma-rho-fraternity",
+      "retrieved": "2026-10-26",
+      "project_year": 2018,
+      "evidence": "Identifies Purdue AGR renovation as four levels and approximately 24,100 square feet; visual reference for brick, gable, dormers, shutters, white portico, interior stairs/common rooms.",
+      "snapshot": "sources/kjg_agr_project_page_2026-10-26.html"
+    }
+  ],
+  "purdue_gis": {
+    "provider": "Purdue Campus MapServer, layer 0 (CampusBuilding)",
+    "url": "https://mapsweb.lib.purdue.edu/arcgis/rest/services/Purdue/campus/MapServer/0",
+    "retrieved": "2026-10-26",
+    "query": "ADDRESS LIKE %607%",
+    "result_count": 0,
+    "snapshots": [
+      "sources/purdue_campus_building_layer_metadata_2026-10-26.json",
+      "sources/purdue_campus_607_address_query_2026-10-26.json"
+    ],
+    "uncertainty": "No matching Alpha Gamma Rho chapter-house record was returned by this campus-building layer. This is not a parcel/municipal cadastral survey."
+  },
+  "model_estimates": {
+    "stories": "four levels, per architect page; source does not identify above-grade vs basement configuration",
+    "wall_top_m": 10.35,
+    "roof_ridge_m": 13.8,
+    "height_uncertainty": "both heights are illustrative estimates; no measured elevations or construction drawings found",
+    "room_layout": "illustrative four-level chapter-house spaces, not sourced plans",
+    "orientation": "north-south long axis from OSM outline; entrance on eastern side, correlated with 607 N University address and east-facing photo",
+    "horizontal_registration": "coordinate placement inherited from OSM; no independent survey/GIS verification"
+  },
+  "asset_path": "modular/buildings/massing_house_301841253_f0b3be3.blend",
+  "builder_path": "modular/buildings/build_massing_house_301841253_f0b3be3.py",
+  "render_paths": [
+    "renders/alpha_gamma_rho_facade.png",
+    "renders/alpha_gamma_rho_oblique.png",
+    "renders/alpha_gamma_rho_hero.png",
+    "renders/alpha_gamma_rho_first_floor_interior.png"
+  ],
+  "fresh_open_validation": "reopen_validation_2026-10-26.json"
+}

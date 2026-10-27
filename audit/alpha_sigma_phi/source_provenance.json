@@ -1,0 +1,132 @@
+{
+  "building_id": "massing_house_301841603_654031c",
+  "building": "Alpha Sigma Phi, Alpha Pi chapter",
+  "address": "951 David Ross Road, West Lafayette, Indiana 47906",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer layer 0",
+      "feature_id": 763,
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D763&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "native_crs": "EPSG:3857 / WKID 102100; source geometry also saved in 3857",
+      "query_crs": "EPSG:4326 for local vertex conversion",
+      "snapshot": "sources/arcgis_fid763_feature.json",
+      "native_snapshot": "sources/arcgis_fid763_feature_native_3857.json",
+      "source_attributes": {
+        "BUILDING_N": "Alpha Sigma Phi",
+        "ADDRESS": "951 David Ross Rd",
+        "BLDG_ABBR": "SOASF",
+        "NUM_LEVELS": 1,
+        "CountOfFLO": 1,
+        "Extrution": 34,
+        "Shape__Area_m2_web_mercator": 1028.785,
+        "Shape__Length_m_web_mercator": 166.004,
+        "Elevation": 663,
+        "Floorplans": "G:\\GIS\\web_pages\\html_pages\\SOASF.html (private server path, not retrieved)"
+      },
+      "geometry_method": "Polygon ring directly transformed to project campus XY using X=(lon+86.9137)*111412.84*cos(40.4274); Y=(lat-40.4274)*111040. This is the project\u2019s approximate geographic transform, not a survey CRS.",
+      "ground_plan_measurements_m": {
+        "bbox": [
+          [
+            -1035.635,
+            -1004.225
+          ],
+          [
+            830.403,
+            874.27
+          ]
+        ],
+        "bbox_dimensions": [
+          31.41,
+          43.867
+        ],
+        "area_approx": 595.08,
+        "ring_vertices": 8,
+        "method": "Shoelace area and bounds after project approximate transform"
+      },
+      "metadata_geometry_caveat": "Shape__Area and Shape__Length are in native Web Mercator map space and are not ground dimensions. Web Mercator inflates linear and area measures at this latitude; do not treat them as ground area/length. The polygon was visually compared to the April 2026 Esri aerial image in sources/esri_world_imagery_fid763_footprint_overlay.png and matches the L-shaped roof plan; red outline is GIS geometry, not a second survey."
+    },
+    {
+      "provider": "Esri World Imagery MapServer XYZ tiles",
+      "feature_id": "z20 tiles x271097-271099, y395308-395310",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      "snapshot": "sources/esri_world_imagery_z20_x*_y*.jpg; sources/esri_world_imagery_fid763_footprint_overlay.png",
+      "source_date": "Image date not exposed by tile endpoint; recent aerial image visually current but capture date unverified",
+      "method": "Nine z20 imagery tiles mosaicked with official GIS polygon overlay"
+    },
+    {
+      "provider": "Alpha Sigma Phi Alpha Pi Chapter chapter-history PDF (chapter-hosted) ",
+      "url": "https://img1.wsimg.com/blobby/go/f462eca5-24f6-4531-81f7-6819824ee6a1/CHAPTER%20HISTORY%20-%20ALPHAs.pdf",
+      "snapshot": "sources/alpha_pi_chapter_history.pdf",
+      "source_date": "PDF search index indicates crawled around 2023; publication date not established",
+      "supported_fact": "Current house address is 951 David Ross Road; chapter history says the chapter moved into this present house on 1966-09-04 after groundbreaking in 1965."
+    },
+    {
+      "provider": "Google Street View",
+      "url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=40.43505,-86.92572",
+      "observation_date": "2026-10-26",
+      "imagery_date": "Apr 2026 (visible in viewer)",
+      "method": "Viewed pano near 999/1001 David Ross Rd and rotated to see current fraternity-row context. The target building is partly obstructed and not a decisive facade-elevation source; facade color, window rhythm, and entry arrangement remain interpretive."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, archived Purdue publications search index",
+      "url": "https://collections.lib.purdue.edu/pupindex/search.php?fq=PublicationYear%3A%221968%22+AND+subjectStr%3A%22Fraternities%22&q=Fraternities&qtype=SubjectHeading&submit=submit",
+      "record": "Purdue Alumnus, January 1968, p. 4, \u201cThe Seven houses on David Ross Road (photos)\u201d",
+      "snapshot": "sources/purdue_archive_search_1968.html",
+      "retrieval_date": "2026-10-26",
+      "use": "Confirms an archival photo feature of the fraternity row existed soon after Alpha Sigma Phi moved into its present house. The official Past Issues page links to the digital archive, but its scan host blocked retrieval in this session. The index supplies no scan, caption, or house order, so this source was not used for facade geometry."
+    },
+    {
+      "provider": "Indiana Geographic Information Office, 3DEP 2018 Tippecanoe County LiDAR COPC",
+      "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019/Tippecanoe_Co_2018_3DEP/Elev18_LAS1.4SPW_IN/copc/in2018_29951885_12.copc.laz",
+      "tile_id": "in2018_29951885_12",
+      "snapshot": "sources/in2018_29951885_12.copc.laz",
+      "analysis": "lidar_height_evidence_2018.json; analyze_lidar.py",
+      "horizontal_crs": "EPSG:2968, NAD83(HARN) / Indiana West (ftUS)",
+      "vertical_crs": "NAVD88 height, Geoid12B (ftUS)",
+      "supported_fact": "2018 point-cloud roof-surface proxy inside the Alpha Sigma Phi GIS ring has 698.34 ft median elevation; nearby ground class-2 returns have a 665.35 ft median, yielding a 10.06 m vertical estimate. This is not a surveyed wall height and does not resolve storey count or roof pitch."
+    },
+    {
+      "provider": "Alpha Sigma Phi archives, chapter reports, Summer 1979, p. 4",
+      "url": "https://www.alphasigmaphiarchives.org/wp-content/uploads/2017/08/1979_Summer.pdf",
+      "snapshot": "sources/alpha_sigma_phi_archives_1979_summer.pdf; sources/alpha_sigma_phi_archives_1979_summer_page-04.png",
+      "supported_fact": "Alpha Pi/Purdue chapter report describes an 80-man house, a newly installed trophy case, a new social-room floor, and a redecorated ladies' room. The page's top photo caption identifies a hallway at Alpha Pi, Purdue. These are historical-use/interior clues, not an exact or present-day floor plan."
+    },
+    {
+      "provider": "Alpha Sigma Phi archives, chapter reports, Summer 1976",
+      "url": "https://www.alphasigmaphiarchives.org/wp-content/uploads/2017/08/1976_Summer.pdf",
+      "snapshot": "sources/alpha_sigma_phi_archives_1976_summer.pdf",
+      "supported_fact": "A chapter report says Alpha Pi's living room received new carpet, the dining room received drapes, and alumni provided an electric sign. Historical finishes; no room plan or facade image is given."
+    }
+  ],
+  "modeling": {
+    "stable_asset": "modular/buildings/massing_house_301841603_654031c.blend",
+    "stable_collection": "Asset_massing_house_301841603_654031c",
+    "scene": "Building_massing_house_301841603_654031c",
+    "root_object": "House_301841603",
+    "coordinates": "Direct-linked campus XY coordinates, as required for this massing asset; no localizing transform or manifest edits.",
+    "footprint": "GIS polygon vertices modeled directly; GIS/aerial agree on an L-shaped plan.",
+    "height": {
+      "modeled_m": 10.06,
+      "method": "2018 3DEP LiDAR roof-proxy median minus local ground-return median, transformed from LAS EPSG:2968; documented in lidar_height_evidence_2018.json",
+      "confidence": "medium for the approximate roof elevation, lower for wall height; unclassified returns and nearby ground estimate are approximate. GIS Extrution=34 has no documented unit. The layer's NUM_LEVELS/CountOfFLO fields conflict with the illustrative three-level facade, so story count remains uncertain."
+    },
+    "facade": {
+      "features": "dark brown running-bond masonry shader, three window levels with pale frames and muntins, low parapet roof, modest street-side entry canopy and steps",
+      "evidence": "General dark facade and multi-level residential character observed in the current street panorama; exact material, window count/spacing, roof height and entry location are not confirmed by a target-facing elevation.",
+      "confidence": "low; descriptive embellishment is visual estimate"
+    },
+    "interior": {
+      "type": "schematic student residence with kitchen/dining, hall, social-room/trophy-case, restroom, and upper bedroom partitions, beds, desks, and stairs",
+      "evidence": "1976/1979 Alpha Pi chapter reports document living-room carpeting, dining drapes, a hallway, trophy case, social-room floor, and restroom redecoration. No actual public floor plan was found.",
+      "confidence": "low for layout and current condition; only room uses/interior features are historically documented. All model room locations and fixtures remain illustrative."
+    }
+  },
+  "validation": {
+    "fresh_open_script": "audit/alpha_sigma_phi/render_validate.py",
+    "result": "audit/alpha_sigma_phi/fresh_open_validation.json",
+    "preview_exterior": "previews/alpha_sigma_phi_exterior.png",
+    "preview_interior": "previews/alpha_sigma_phi_interior_cutaway.png",
+    "note": "Fresh-open verification confirms stable scene, collection, root object, rendering and material assignment. The asset was not linked to or saved in the master file."
+  }
+}

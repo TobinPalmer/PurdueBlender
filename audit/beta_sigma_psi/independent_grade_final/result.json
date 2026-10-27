@@ -1,0 +1,182 @@
+{
+  "building": "Beta Sigma Psi",
+  "asset_id": "massing_house_301841254_29ab02d",
+  "asset_path": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_house_301841254_29ab02d.blend",
+  "score": 8.8,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "points": 1.85,
+      "max_points": 2.0,
+      "evidence": "Official Purdue GIS FeatureServer FID 793 identifies Beta Sigma Psi at 525 University St; exact-address April 2026 Street View image shows the Beta Sigma Psi roadside sign and house. The 14-vertex Purdue GIS ring is used directly for the foundation/wall plan. This evaluator independently computes 410.59 m² and 87.94 m from the published WGS84 vertices; the saved EPSG:2968 check computes 410.79 m² and 87.96 m.",
+      "findings": [
+        "Official Shape__Area/Shape__Length fields (709.77, 115.63) materially disagree with polygon-derived metrics; the model appropriately follows the polygon vertices, but that field discrepancy remains unresolved."
+      ]
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "points": 1.75,
+      "max_points": 2.0,
+      "evidence": "Asset is saved in the established campus-world massing coordinate frame with identity object transform. Plan-source bounding dimensions from the 14-point ring are approximately 21.51 × 22.99 m; builder script converts each authoritative GIS vertex with the project conversion and uses the west-facing front edge indicated by the Street View vantage. Reopened model geometry bounds are [[-300.47247314453125, -275.0757141113281], [278.157470703125, 301.62567138671875], [-0.15000000596046448, 9.0]] m.",
+      "findings": [
+        "No surveyed wall registration or independent residual overlay is provided; the project’s local geographic conversion is approximate, and full model bounds include roof/portico projections outside the GIS wall polygon."
+      ]
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "points": 1.5,
+      "max_points": 2.0,
+      "evidence": "The saved current Street View pano visibly supports two above-grade facade levels, a prominent left gable, a shallow dark roof and multiple small dormers. The model includes the observed two-level arrangement, left gable, dark shallow roof, dormers and a closed roof deck. The exact-address 2012 listing says bathrooms occur on each floor, providing additional program support.",
+      "findings": [
+        "GIS NUM_LEVELS/CountOfFlo fields report one level, in conflict with the current two-level facade and historical listing. Wall/eave/ridge/gable heights and roof pitches are estimated; no measured elevations or plans were found."
+      ]
+    },
+    {
+      "criterion": "Facade, entrance, and distinctive architecture",
+      "points": 1.8,
+      "max_points": 2.0,
+      "evidence": "Direct exact-address Street View supports the modeled warm red brick, pale window trim, dark shutters, white-column portico, red front door, left-facing gabled wing and roof dormers. The exterior render reproduces these features with procedural brick and roof textures. The interior cutaway shows schematic floors/rooms and circulation rather than a single solid block.",
+      "findings": [
+        "Hidden elevations and precise opening/column dimensions are not measured; the interior layout is schematic and is not validated by a floor plan."
+      ]
+    },
+    {
+      "criterion": "Modular export, portability, and evidence completeness",
+      "points": 1.9,
+      "max_points": 2.0,
+      "evidence": "Fresh-open Blender session confirms the expected asset/scene and Asset_massing_house_301841254_29ab02d collection, one identity-transform mesh named House_301841254, 12 material slots, 2 materials with procedural brick nodes, no modifiers, no external image dependencies, and a nonzero evaluated mesh (3538 vertices). Saved evidence includes current panorama source snapshot plus exterior/interior views and coordinate/GIS provenance.",
+      "findings": []
+    }
+  ],
+  "evidence": {
+    "gis_feature_attributes": {
+      "FID": 793,
+      "Level_": 8,
+      "Layer": "BLDG Building Private Owned",
+      "Color": 206,
+      "Linetype": "Solid",
+      "Elevation": 625,
+      "LineWt": 0,
+      "RefName": " ",
+      "BLDG_ABBR": "SOBSY",
+      "BUILDING_N": "Beta Sigma Psi",
+      "OTHER_ABBR": "SOBSY",
+      "BUILDING_1": "6916",
+      "NUM_LEVELS": 1,
+      "OWNER": "GREEK",
+      "ADDRESS": "525 University St",
+      "COMMENTS": " ",
+      "BUILT": null,
+      "OCCUPIED": null,
+      "CountOfFLO": 1,
+      "Extrution": 22,
+      "Floorplans": "G:\\GIS\\web_pages\\html_pages\\SOBSY.html",
+      "SB": 0,
+      "B": 0,
+      "G": 0,
+      "M": " ",
+      "F01": 0,
+      "F02": 0,
+      "F03": 0,
+      "F04": 0,
+      "F05": 0,
+      "F06": 0,
+      "F07": 0,
+      "F08": 0,
+      "F09": 0,
+      "F10": 0,
+      "F11": 0,
+      "F12": 0,
+      "F13": 0,
+      "F14": 0,
+      "F15": 0,
+      "F16": " ",
+      "R": 0,
+      "RuleID": 6,
+      "PU_Occupie": "N",
+      "DEMO": null,
+      "Zip": 0,
+      "Plus4": 0,
+      "Zone": " ",
+      "Entity": "Closed Shape",
+      "ZONES": 99,
+      "Building_F": " ",
+      "GlobalID": "{F9195F36-C4B3-4BA8-9773-BF3EBFC19E69}",
+      "created_us": " ",
+      "created_da": null,
+      "last_edite": " ",
+      "last_edi_1": null,
+      "Shape__Area": 709.7734375,
+      "Shape__Length": 115.62967481017868
+    },
+    "gis_vertex_metrics_local_approx": {
+      "area_m2": 410.5894854398939,
+      "perimeter_m": 87.94021992544171,
+      "bounds_xy_m": [
+        [
+          -297.98573051777475,
+          -276.4753526293987
+        ],
+        [
+          278.3181667349436,
+          301.3034886296987
+        ]
+      ]
+    },
+    "gis_vertex_metrics_stateplane_2968_m": {
+      "area_m2": 410.79376220703125,
+      "perimeter_m": 87.96136858961704
+    },
+    "gis_shape_attributes": {
+      "area": 709.7734375,
+      "length": 115.62967481017868,
+      "conflict": true
+    },
+    "model_evaluated_world_bounds_m": [
+      [
+        -300.47247314453125,
+        -275.0757141113281
+      ],
+      [
+        278.157470703125,
+        301.62567138671875
+      ],
+      [
+        -0.15000000596046448,
+        9.0
+      ]
+    ],
+    "evaluated_vertices": 3538,
+    "materials": [
+      "BetaSigmaPsi_Limestone_Trim_Estimated",
+      "BetaSigmaPsi_Warm_Masonry_Estimated",
+      "BetaSigmaPsi_Window_Glass_Estimated",
+      "BetaSigmaPsi_Dark_Roof_Estimated",
+      "BetaSigmaPsi_Dark_Window_Shutters_Estimated",
+      "BetaSigmaPsi_Entry_Door_Estimated",
+      "BetaSigmaPsi_Metal",
+      "BetaSigmaPsi_Interior_Wall_Schematic",
+      "BetaSigmaPsi_Interior_Floor_Schematic",
+      "BetaSigmaPsi_Interior_Wood_Schematic",
+      "BetaSigmaPsi_Upholstery_Schematic",
+      "BetaSigmaPsi_Bedding_Schematic"
+    ],
+    "procedural_brick_material_count": 2,
+    "external_image_dependencies": [],
+    "modifiers": [],
+    "streetview_image": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\beta_sigma_psi\\sources\\google_streetview_yaw270_pitch0.jpg",
+    "streetview_source_date": "April 2026",
+    "exterior_render": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\beta_sigma_psi\\beta_sigma_psi_exterior.png",
+    "interior_render": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\beta_sigma_psi\\beta_sigma_psi_interior.png",
+    "fresh_open_file": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_house_301841254_29ab02d.blend"
+  },
+  "findings": [
+    "Official Shape__Area/Shape__Length fields (709.77, 115.63) materially disagree with polygon-derived metrics; the model appropriately follows the polygon vertices, but that field discrepancy remains unresolved.",
+    "No surveyed wall registration or independent residual overlay is provided; the project’s local geographic conversion is approximate, and full model bounds include roof/portico projections outside the GIS wall polygon.",
+    "GIS NUM_LEVELS/CountOfFlo fields report one level, in conflict with the current two-level facade and historical listing. Wall/eave/ridge/gable heights and roof pitches are estimated; no measured elevations or plans were found.",
+    "Hidden elevations and precise opening/column dimensions are not measured; the interior layout is schematic and is not validated by a floor plan."
+  ],
+  "passing_standard": 8,
+  "result": "pass"
+}

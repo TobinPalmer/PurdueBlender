@@ -1,0 +1,36 @@
+{
+  "building": "Ralph & Bettye Bailey Hall",
+  "asset_id": "massing_ralph_bettye_bailey_hall_406c4db",
+  "reviewer": "independent subagent",
+  "review_date": "2026-10-26",
+  "candidate_sha256": "99E0F25C9028151179F7C28A98F2B358AD65B64C4F4BDBBC81F8658816F23B76",
+  "score": 8.1,
+  "max_score": 10,
+  "threshold": 8,
+  "result": "PASS for candidate; final master placement/reopen remains a coordinator integration gate",
+  "criteria": [
+    {"name":"identity_and_footprint","points":2.0,"max_points":2.0,"status":"verified_against_source_snapshot","rationale":"The fresh-opened asset identifies GIS FID 411/BALY. Its exterior shell is generated from all 22 unique vertices in the Purdue GIS ring without simplification; the recorded local-conversion area is 842.12 m2 and the independent UTM cross-check is 841.96 m2. GIS is a campus mapping outline, not a surveyed wall line."},
+    {"name":"position_orientation_and_plan_dimensions","points":1.5,"max_points":2.0,"status":"partially_verified","rationale":"The source polygon and projected model are internally registered by construction. The proposed master origin is (308.0089,-22.7483) m from the source polygon centroid. The model is correctly localized at zero with identity transform, but the final master marker has not yet been independently checked, and the oblique photos cannot confirm true-north facade orientation or survey position."},
+    {"name":"height_floors_and_roof","points":1.25,"max_points":2.0,"status":"estimated_with_source_conflict","rationale":"The flat parapet, two visible window rows, and higher entrance volume are supported by Purdue's current exterior photo. The 7.5 m parapet and 10.18 m tower are estimates. GIS reports five floors, conflicting with two visible above-grade window rows; the tower-height attribute is undocumented and cannot validate the model height."},
+    {"name":"facade_architecture_and_materials","points":1.75,"max_points":2.0,"status":"mostly_photo_supported","rationale":"The preview visibly represents red brick, pale horizontal trim/plinth, two window rows, a raised glazed entry volume, sign panel, and canopy. The brick UV/material reads clearly and has a plausible scale. Window schedules, exact tower proportions and position, and unpictured facades are generalized or inferred."},
+    {"name":"interior_modularity_and_evidence","points":1.6,"max_points":2.0,"status":"portable_with_schematic_interior","rationale":"Fresh Blender 5.2.3 open confirms the stable scene/collection/object, one mesh with 13,408 vertices and 4,698 faces, nine materials, and 2,610 room-zone faces. All four project-relative brick image dependencies exist. The interior is a flat color-coded room diagram rather than modeled partitions/walls or a walkable interior; its scale, orientation, and exact room positions remain explicitly schematic. Source snapshots and uncertainty notes are adequate."}
+  ],
+  "fresh_open": {
+    "report": "fresh_open.json",
+    "blender_version": "5.2.3 LTS",
+    "sha256_verified": true,
+    "external_images_found": 4,
+    "missing_external_images": 0
+  },
+  "sources_reviewed": [
+    {"provider":"Purdue University ArcGIS FeatureServer, BuildingShapesZip4","feature_id":411,"url":"https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D411&outFields=*&returnGeometry=true&outSR=4326&f=pjson","snapshot":"../source_feature_411_raw.json"},
+    {"provider":"Purdue University Office of Emergency Preparedness","url":"https://www.purdue.edu/operations/emergency-preparedness/baly/","page_revision":"2026-04-03","used_for":"Current exterior image, first-floor plan, building identity/address; plan has no scale bar or north arrow."},
+    {"provider":"Purdue University Archives and Special Collections","url":"https://blogs.lib.purdue.edu/asc/2016/12/01/bailey-hall-and-purdues-musical-myth/","used_for":"Older oblique exterior corroboration."}
+  ],
+  "findings": [
+    "The candidate reaches the 8/10 quality threshold for coordinator integration.",
+    "The master manifest and Placement marker still need to use the proposed origin; reopen the assembled master and confirm one correctly placed instance before marking the building finished.",
+    "Do not describe the colored first-floor diagram as a detailed interior: it is a source-backed schematic with flat room zones only.",
+    "Do not present the parapet/tower elevations as measured, or resolve the five-level GIS attribute versus two visible rows without additional evidence."
+  ]
+}

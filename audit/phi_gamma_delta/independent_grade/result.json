@@ -1,0 +1,44 @@
+{
+  "building": "Phi Gamma Delta",
+  "asset": "modular/buildings/massing_house_301837281_58ead22.blend",
+  "tested_sha256": "F018ED70CB67BFEF0D3195C2D65B9960AF50FE3AD5600FD07F7396032C115AFA",
+  "score": 7.8,
+  "threshold": 8.0,
+  "decision": "revise",
+  "blender_version": "5.2.3 LTS",
+  "fresh_open": "pass",
+  "categories": {
+    "site_identity_and_source_confidence": {"score": 9.0, "weight": 0.15},
+    "footprint_orientation_and_placement": {"score": 9.3, "weight": 0.25},
+    "massing_and_architectural_details": {"score": 6.8, "weight": 0.25},
+    "materials_and_texturing": {"score": 7.2, "weight": 0.15},
+    "interior_evidence_handling": {"score": 7.0, "weight": 0.10},
+    "blender_integrity_and_portability": {"score": 7.0, "weight": 0.10}
+  },
+  "fresh_open_probe": "fresh_open_probe.json",
+  "primary_evidence": [
+    "../evidence_and_geometry.md",
+    "../sources/purdue_fid787.geojson",
+    "../sources/construction_progress_june_2025.jpg",
+    "../sources/official_addition_render_2024.png",
+    "../sources/official_site_plan_2024.png",
+    "../sources/esri_fid787_footprint_overlay.jpg",
+    "../sources/esri_fid787_roof_detail.png",
+    "../phi_gamma_delta_south_oblique.png"
+  ],
+  "findings": {
+    "identity": "Purdue GIS FID 787 names Phi Gamma Delta at 640 Russell St; Purdue Fiji's dedication and renovation pages independently support the chapter-house identity and Lyles Addition context.",
+    "footprint": "The asset preserves the ten-vertex GIS-derived XY outline and the independently reopened bounds are consistent with the submitted validation. This checks retention of the supplied coordinates, not an independent survey of wall edges; the GIS record is roof/footprint-like and the feature date is not exposed.",
+    "massing": "The model improves substantially on a flat extrusion: it has a three-level original-house volume, lower addition/connector, hipped roof meshes, repeated windows, arched doors, stone accents and gutters. However, the rendered main facade is much more regular and symmetric than the June 2025 construction photograph, which shows a strong asymmetric opening pattern and unfinished/remodeled zones. The official 2024 addition render shows a more articulated low wing and prominent arched glazing than represented. The addition split and roof partitions remain inferred. The east-side GIS inset is preserved after the builder's revision.",
+    "materials": "The buff-brick color, light trim, dark glazing and slate-like roof are supported by the construction photo. Ten named materials are portable, node-based and have no image dependencies. The audit and inspection indicate simple color-driven materials; brick courses/mortar are mostly repeated geometric seams rather than convincing surface-scale color/roughness variation. The asset is textured enough to read, but still looks schematic in the render.",
+    "interior": "Official basement and first-floor plans exist and identify room programs, but their rotation/registration to the GIS outline was not established. Leaving the interior empty avoids fabricating a layout, but the requested interior is still absent. The plans should be registered to the site plan/GIS before adding room shells, stairs and circulation; no upper-floor interiors should be invented without plans.",
+    "integrity": "Fresh-open in Blender 5.2.3 LTS passed for the exact SHA. Stable scene, collection and root object are present; 187 mesh objects and all ten named materials loaded, with no external image paths. The simple visual meshes intentionally use many single-surface objects, but the probe counted 12,232 boundary/non-manifold edges across 14,480 mesh edges. Roof surfaces and decorative pieces are open, so the file is visually usable but not a clean watertight architectural model."
+  },
+  "recommended_follow_up": [
+    "Use the official plan and site plan to register the basement/first-floor layout to the GIS footprint, then add a restrained, reviewable interior shell with the documented rooms and circulation; leave unsupported upper floors unspecified.",
+    "Revise the visible facade asymmetry using the June 2025 construction photo and official addition views. Keep only opening locations supported by a source; document hidden elevations as estimates.",
+    "Improve roof articulation to follow the separate roof planes in the aerial close-up, and clarify which main-house planes meet the lower addition.",
+    "Add subtle wall/roof roughness and color variation to the current node materials, while retaining the supported buff brick and weathered dark roof palette.",
+    "Before a final 8.0+ review, rerender the important elevations and rerun fresh-open plus topology probes against the new exact SHA."
+  ]
+}

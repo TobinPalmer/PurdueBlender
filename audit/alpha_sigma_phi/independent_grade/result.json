@@ -1,0 +1,156 @@
+{
+  "asset": "modular/buildings/massing_house_301841603_654031c.blend",
+  "scene": "Building_massing_house_301841603_654031c",
+  "collection": "Asset_massing_house_301841603_654031c",
+  "root_object": "House_301841603",
+  "fid": 763,
+  "address": "951 David Ross Rd",
+  "footprint_vertex_count": 8,
+  "model_unique_footprint_vertices": 8,
+  "max_vertex_error_m": 6.2e-05,
+  "projected_footprint_area_m2": 595.079,
+  "world_bounds_m": [
+    [
+      -1035.764,
+      -1004.096
+    ],
+    [
+      830.274,
+      874.399
+    ],
+    [
+      -0.03,
+      10.743
+    ]
+  ],
+  "asset_object_count": 851,
+  "mesh_object_count": 851,
+  "materials": [
+    "Alpha Sigma Phi | blue-gray glazing",
+    "Alpha Sigma Phi | charcoal metal",
+    "Alpha Sigma Phi | dark brown brick (visual estimate)",
+    "Alpha Sigma Phi | gray roof membrane",
+    "Alpha Sigma Phi | interior floor",
+    "Alpha Sigma Phi | interior wood",
+    "Alpha Sigma Phi | pale trim",
+    "Alpha Sigma Phi | warm gray architectural concrete",
+    "Alpha Sigma Phi | warm painted interior walls"
+  ],
+  "material_nodes": {
+    "Alpha Sigma Phi | blue-gray glazing": [
+      "BSDF_PRINCIPLED",
+      "OUTPUT_MATERIAL"
+    ],
+    "Alpha Sigma Phi | charcoal metal": [
+      "BSDF_PRINCIPLED",
+      "OUTPUT_MATERIAL"
+    ],
+    "Alpha Sigma Phi | dark brown brick (visual estimate)": [
+      "BSDF_PRINCIPLED",
+      "OUTPUT_MATERIAL",
+      "TEX_BRICK",
+      "TEX_COORD",
+      "BUMP"
+    ],
+    "Alpha Sigma Phi | gray roof membrane": [
+      "BSDF_PRINCIPLED",
+      "OUTPUT_MATERIAL"
+    ],
+    "Alpha Sigma Phi | interior floor": [
+      "BSDF_PRINCIPLED",
+      "OUTPUT_MATERIAL"
+    ],
+    "Alpha Sigma Phi | interior wood": [
+      "BSDF_PRINCIPLED",
+      "OUTPUT_MATERIAL"
+    ],
+    "Alpha Sigma Phi | pale trim": [
+      "BSDF_PRINCIPLED",
+      "OUTPUT_MATERIAL"
+    ],
+    "Alpha Sigma Phi | warm gray architectural concrete": [
+      "BSDF_PRINCIPLED",
+      "OUTPUT_MATERIAL"
+    ],
+    "Alpha Sigma Phi | warm painted interior walls": [
+      "BSDF_PRINCIPLED",
+      "OUTPUT_MATERIAL"
+    ]
+  },
+  "validation": {
+    "stable_identity": true,
+    "gis_footprint_match": true,
+    "source_height_conflict": {
+      "extrution_attribute": 34,
+      "num_levels": 1,
+      "count_of_floors": 1,
+      "unit_documented": false
+    },
+    "public_floor_plan_available": false,
+    "direct_target_facade_reference_available": false,
+    "builder_fresh_open_record": "audit/alpha_sigma_phi/fresh_open_validation.json"
+  },
+  "review_evidence": {
+    "exterior_preview": "audit/alpha_sigma_phi/previews/alpha_sigma_phi_exterior.png",
+    "interior_cutaway_preview": "audit/alpha_sigma_phi/previews/alpha_sigma_phi_interior_cutaway.png",
+    "GIS_overlay": "audit/alpha_sigma_phi/sources/esri_world_imagery_fid763_footprint_overlay.png",
+    "chapter_address_and_history": "https://img1.wsimg.com/blobby/go/f462eca5-24f6-4531-81f7-6819824ee6a1/CHAPTER%20HISTORY%20-%20ALPHAs.pdf",
+    "Purdue_archived_fraternity_row_photo_index": "https://collections.lib.purdue.edu/pupindex/search.php?fq=PublicationYear%3A%221968%22+AND+subjectStr%3A%22Fraternities%22&q=Fraternities&qtype=SubjectHeading&submit=submit",
+    "current_Google_Street_View_pano": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=40.43505,-86.92572"
+  },
+  "score": 7.25,
+  "max_score": 10,
+  "passes_8_threshold": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Purdue GIS FID 763 identifies Alpha Sigma Phi at 951 David Ross Rd; independent vertex comparison finds 8/8 GIS vertices represented, with max error 0.000062 m. The aerial overlay shows the ring following the L-shaped roof.",
+      "finding": "Pass. Building identity and plan footprint are directly supported."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "Reopened asset has expected stable scene, collection, root, zero root translation, and campus-coordinate bounds matching the GIS ring. The two principal wings are aligned with the source polygon.",
+      "finding": "Pass for plan position/orientation/footprint scale. The building height is scored separately because source height metadata is contradictory."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.5,
+      "max_score": 2.0,
+      "evidence": "Aerial evidence supports the L-shaped roof plan but not the roof profile. The modeled 10.363 m height comes from interpreting GIS `Extrution=34` as feet; unit is undocumented. GIS also lists NUM_LEVELS=1 and CountOfFLO=1, while the model has three window levels.",
+      "finding": "Major unresolved contradiction. The flat roof is plausible from the aerial but not evidenced as the actual roof form; height and story count remain estimates."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 0.75,
+      "max_score": 2.0,
+      "evidence": "The model has brick, repeated windows, and a basic entrance canopy. The chapter history confirms the current address and 1966 move-in, but available Street View is partly obscured and is not a decisive elevation of the house; exact brick color, fenestration, and entry location are not verified.",
+      "finding": "Only generic residential character is supported. Current render shows a simple dark-brick box, evenly repeated windows, and an indistinct entry; distinctive facade features are missing or unverified."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "The expected .blend path reopens with the expected scene, collection, and root. 851 mesh objects are contained in the building asset. All nine assigned materials are node-based; brick uses a procedural shader, with no external image dependency observed. Source snapshots, provenance, fresh-open record, and exterior/interior previews are present.",
+      "finding": "Pass for source asset packaging and evidence completeness. Interior remains clearly labeled schematic; no public floor plan was found."
+    }
+  ],
+  "evidence": [
+    "Independent Blender 5.2.3 fresh-open inspection in this evaluator.",
+    "Purdue ArcGIS FID 763 source snapshot and official campus footprint.",
+    "Esri World Imagery footprint overlay saved with the builder's evidence.",
+    "Chapter-hosted history PDF confirms Alpha Pi address/history.",
+    "Google Street View pano and Purdue archive photo index were inspected; neither supplied a clear, target-facing contemporary elevation in the saved evidence.",
+    "Exterior and interior cutaway renders inspected directly."
+  ],
+  "findings": [
+    "Excellent source-backed footprint; keep it unchanged.",
+    "Resolve floor-count/height conflict with a direct target-facing elevation, measured imagery, or reliable Purdue plan. Do not infer GIS Extrution units without evidence.",
+    "Rework roof silhouette and window/entrance placement only when supported by a target-specific reference; current facade is generic and too weakly verified.",
+    "Improve the interior cutaway presentation: brighter, near-vertical camera, legible rooms/furnishings, and less shadow obstruction. Any room plan remains illustrative until a real plan is found.",
+    "The interior and several facade choices are estimates; they should not be described as verified architectural facts."
+  ]
+}

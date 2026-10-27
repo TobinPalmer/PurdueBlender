@@ -1,0 +1,189 @@
+{
+  "building_id": "massing_life_science_ranges_greenhouse_and_service_building_c96231f",
+  "reviewer": "Independent subagent; fresh-open Blender inspection and independently recomputed GIS/candidate footprint metrics",
+  "candidate_sha256": "B90ADA781E76E8C7C3A08B59D95A28CD97CFA763C59D09278DDDA99781F0707E",
+  "candidate_sha256_matches_requested": true,
+  "score": 8.1,
+  "max_score": 10.0,
+  "threshold": 8.0,
+  "status": "PASS",
+  "criteria": {
+    "correct_identity_and_source_backed_footprint": {
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Official Purdue GIS FID 915 names the feature Life Science Ranges (BLDG_ABBR LSR), address 180 S Russell Street; its saved geometry lies over the greenhouse rows and west service wing.",
+        "The Purdue 2022 board approval packet documents the LSR phenotyping greenhouse project and site relationship; Purdue College of Agriculture 2026 article/photos show the greenhouse facility and operations.",
+        "Independent GIS overlay recomputation gives candidate/GIS IoU 0.8757 using the seven greenhouse row footprints plus service wing from builder literals and the preserved GIS inner ring."
+      ],
+      "findings": [
+        "The candidate is correctly associated with the Life Science Ranges greenhouse complex; dimensions of individual roof rectangles are reconstructed from current imagery."
+      ]
+    },
+    "position_orientation_scale_and_dimensions": {
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": [
+        "Independent footprint overlay shows candidate area 7705.8 m\u00b2 vs GIS polygon 7305.7 m\u00b2, IoU 0.8757; candidate bounds agree closely with the GIS envelope and the row axes match the aerial.",
+        "Fresh-open Blender bounds are X -47.485 to 47.612 m, Y -61.201 to 61.201 m, with Z 0 to 7.875 m; proposed origin is [-440.05172262549604, -545.2148990903459] m from the GIS envelope midpoint.",
+        "Manifest still describes the previous massing bounds and identity transform in campus coordinates; the new local-coordinate candidate has not been checked in the master placement instance."
+      ],
+      "findings": [
+        "Tobin should reconcile the current local-coordinate asset with the master manifest/placement before considering the campus placement verified. Candidate geometry overlay is good but not exact (IoU about 0.876), and direct master-instance position is still unverified."
+      ]
+    },
+    "evidence_backed_height_floors_and_roof_form": {
+      "score": 1.2,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue GIS records NUM_LEVELS=2 and CountOfFLO=2, but raw Extrution=12 and Elevation=620.1 have no defined vertical units or datum; the builder explicitly avoids interpreting them as measured height.",
+        "Photographic and aerial evidence supports repeated pitched multi-span glass greenhouse roofs and a low service wing, consistent with the model\u2019s broad roof form.",
+        "Fresh-open custom properties label 3.65 m greenhouse eaves, 5.95 m ridges, 6.8 m service wing, and 7.875 m overall bound as estimates; no dimensioned as-built section/elevation was found."
+      ],
+      "findings": [
+        "The height treatment is honest and properly qualified, but the numerical heights and precise roof profile remain unmeasured estimates."
+      ]
+    },
+    "facade_entrances_distinctive_features_and_interior": {
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": [
+        "Exterior and roof views show seven greenhouse groups with low-iron glazing, repeated aluminum framing/mullions, pitched multi-span roofs and a distinct brick/service wing with curtain wall, service doors, vents, HVAC, sign and drainage.",
+        "The interior view includes research benches/trays, modeled plants, LED lighting and a phenotyping conveyor; the 2026 Purdue article/photos support the conveyor, LED/humidity technology and brick-backed HVAC context.",
+        "Photo geometry and interior object positions are illustrative because the source photos are unreferenced and no as-built plan/elevation dimension set was found."
+      ],
+      "findings": [
+        "The model is visually legible and source-informed; exact service-facade dimensions, greenhouse bay sizes and interior layout remain reconstruction."
+      ]
+    },
+    "modular_export_portability_and_complete_evidence": {
+      "score": 1.6,
+      "max_score": 2.0,
+      "evidence": [
+        "The exact candidate hash is B90ADA781E76E8C7C3A08B59D95A28CD97CFA763C59D09278DDDA99781F0707E, matching the requested revision. Fresh Blender 5.2.3 open found scene Building_massing_life_science_ranges_greenhouse_and_service_building_c96231f and expected asset collection Asset_massing_life_science_ranges_greenhouse_and_service_building_c96231f with 49 objects, 48 meshes and 16 used materials.",
+        "No mesh lacks a material; no external unpacked images are present. The builder uses procedural materials and a stable asset path/collection name.",
+        "The source provenance packet now records provider, exact URL, retrieval/source dates, CRS, measurement method and uncertainty for GIS, imagery, Purdue page/article photos and 2022 board material; the candidate overlay and IoU reproduction method are saved.",
+        "The manifest remains stale for this candidate revision (old world-space bounds, identity placement and massing kind), so project-level portability/instance loading still needs the master owner to reconcile."
+      ],
+      "findings": [
+        "Asset-level save/reopen and source documentation pass; update/check project metadata and the master instance before calling the library fully integrated."
+      ]
+    }
+  },
+  "findings": [
+    "The candidate is correctly associated with the Life Science Ranges greenhouse complex; dimensions of individual roof rectangles are reconstructed from current imagery.",
+    "Tobin should reconcile the current local-coordinate asset with the master manifest/placement before considering the campus placement verified. Candidate geometry overlay is good but not exact (IoU about 0.876), and direct master-instance position is still unverified.",
+    "The height treatment is honest and properly qualified, but the numerical heights and precise roof profile remain unmeasured estimates.",
+    "The model is visually legible and source-informed; exact service-facade dimensions, greenhouse bay sizes and interior layout remain reconstruction.",
+    "Asset-level save/reopen and source documentation pass; update/check project metadata and the master instance before calling the library fully integrated."
+  ],
+  "measurements": {
+    "feature_id": 915,
+    "building_abbr": "LSR",
+    "polygon_count": 8,
+    "gis_ring_count": 2,
+    "placement_origin_xy_m": [
+      -440.05172262549604,
+      -545.2148990903459
+    ],
+    "candidate_area_m2": 7705.822966877371,
+    "gis_area_m2": 7305.655157282374,
+    "intersection_m2": 7008.413120942072,
+    "union_m2": 8003.065003217673,
+    "iou": 0.8757161310228398,
+    "candidate_bounds_local_m": [
+      [
+        -47.090964299915015,
+        47.56709334958401
+      ],
+      [
+        -60.75814090956442,
+        60.340232424151736
+      ]
+    ],
+    "gis_bounds_local_m": [
+      [
+        -47.375044229782645,
+        47.375044229782645
+      ],
+      [
+        -61.090638652307234,
+        61.090638652307234
+      ]
+    ]
+  },
+  "fresh_open": {
+    "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend",
+    "sha256": "B90ADA781E76E8C7C3A08B59D95A28CD97CFA763C59D09278DDDA99781F0707E",
+    "scene": "Building_massing_life_science_ranges_greenhouse_and_service_building_c96231f",
+    "collection": "Asset_massing_life_science_ranges_greenhouse_and_service_building_c96231f",
+    "object_count": 49,
+    "mesh_count": 48,
+    "material_count": 16,
+    "materials": [
+      "Anodized aluminum framing",
+      "Dark galvanized greenhouse steel",
+      "Full spectrum grow-light diffuser",
+      "Galvanized growing bench",
+      "Green propagation trays",
+      "Greenhouse plant stems",
+      "Growing media",
+      "Horticultural low-iron glass",
+      "Nursery pot dark polymer",
+      "Phenotyping conveyor belt",
+      "Plant foliage deep green",
+      "Plant foliage fresh green",
+      "Plant foliage olive",
+      "Service building red-brown brick",
+      "Service wing standing-seam roof",
+      "Warm gray concrete plinth"
+    ],
+    "missing_material_meshes": [],
+    "unpacked_external_images": [],
+    "bounds_m": {
+      "min": [
+        -47.48503875732422,
+        -61.20061492919922,
+        0.0
+      ],
+      "max": [
+        47.612091064453125,
+        61.20062255859375,
+        7.875
+      ]
+    },
+    "collection_properties": {
+      "official_gis_feature_id": "915",
+      "official_gis_building_abbr": "LSR",
+      "official_gis_extrution_value": "12",
+      "official_gis_extrution_interpretation": "Raw integer attribute only; units and semantics are undocumented, so it is not used as a measured vertical height.",
+      "height_status": "Estimated visual reconstruction; no dimensioned as-built section/elevation located.",
+      "estimated_greenhouse_eave_height_m": "3.65",
+      "estimated_greenhouse_ridge_height_m": "5.95",
+      "estimated_service_wing_height_m": "6.8"
+    },
+    "feature_counts": {
+      "LSR_Greenhouse_": 0,
+      "LSR_Service_": 0,
+      "LSR_Interior_": 0,
+      "LSR_Conveyor": 0,
+      "LSR_Bench": 0,
+      "LSR_Plant": 0,
+      "LSR_Frame": 0,
+      "LSR_Glass": 0
+    }
+  },
+  "evidence": [
+    "audit/life_science_ranges_greenhouse_and_service_building_c96231f/source_provenance.json",
+    "audit/life_science_ranges_greenhouse_and_service_building_c96231f/candidate_gis_overlay_metrics.json (independent recomputation in this evaluator)",
+    "audit/life_science_ranges_greenhouse_and_service_building_c96231f/fresh_open_validation.json",
+    "audit/life_science_ranges_greenhouse_and_service_building_c96231f/previews/candidate_gis_footprint_overlay.png",
+    "audit/life_science_ranges_greenhouse_and_service_building_c96231f/previews/exterior_oblique.png",
+    "audit/life_science_ranges_greenhouse_and_service_building_c96231f/previews/roof_plan.png",
+    "audit/life_science_ranges_greenhouse_and_service_building_c96231f/previews/interior_research_bench.png"
+  ],
+  "limitations": [
+    "Master integration and placement marker were not changed or validated by this review; manifest still reflects superseded massing bounds/identity transform.",
+    "No measured vertical dimensions or complete as-built architectural plan were found."
+  ]
+}

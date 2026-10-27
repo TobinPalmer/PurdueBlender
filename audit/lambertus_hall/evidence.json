@@ -1,0 +1,146 @@
+{
+  "building_id": "lambertus_hall",
+  "asset": "modular\\buildings\\lambertus_hall.blend",
+  "asset_scene": "Building_lambertus_hall",
+  "collection": "Asset_lambertus_hall",
+  "retrieved_utc": "2026-10-26",
+  "coordinate_frame": {
+    "origin_lon_lat": [
+      -86.91176,
+      40.42761
+    ],
+    "axes": "X east, Y north, Z up",
+    "units": "m",
+    "conversion": "project local approximation: X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040; detailed mesh shifted by geographic anchor"
+  },
+  "master_integration": {
+    "placement_origin_xy_m": [
+      164.53257208127454,
+      23.3184000003007
+    ],
+    "expected_shell_local_bounds_m": [
+      [
+        -4.331102293440523,
+        21.982175564994037
+      ],
+      [
+        -34.17417864134677,
+        35.694823261067086
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ],
+    "required_shared_changes": "Set manifest kind to detailed; set placement_origin_xy_m and local bounds; make a Placement_lambertus_hall collection-instance marker using Asset_lambertus_hall; replace/suppress the campus-coordinate massing. Do not use geometry-world coordinates for this local asset."
+  },
+  "source_findings": [
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 FeatureServer/0",
+      "feature_id": 433,
+      "official_code": "LMBS",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D433&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "snapshot": "sources/purdue_fid433.json",
+      "retrieved": "2026-10-26",
+      "crs": "EPSG:4326 (returned geographic coordinates)",
+      "method": "40-vertex official building perimeter converted with project local approximation; duplicate closing coordinate removed for mesh",
+      "uncertainty": "No published survey accuracy metadata; local conversion is approximate; excludes facade projections and shared Dudley structure."
+    },
+    {
+      "provider": "Purdue University ArcGIS BuildingShapesZip4 FeatureServer/0",
+      "feature_id": 432,
+      "official_code": "DUDL",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D432&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "snapshot": "sources/related_dudley_fid432.json",
+      "retrieved": "2026-10-26",
+      "crs": "EPSG:4326",
+      "method": "Adjacent feature boundary comparison",
+      "uncertainty": "Lambertus and Dudley are joined in the architecture; GIS represents separate neighboring footprints and is treated as the Lambertus boundary."
+    },
+    {
+      "provider": "Ennead Architects",
+      "url": "https://ennead.com/work/purdue-university-dudley-and-lambertus-hall/",
+      "retrieved": "2026-10-26",
+      "source_date": "2022 project; page accessed 2026-10-26",
+      "snapshot": "sources/ennead_layer_1.jpg through sources/ennead_layer_6.jpg and Ennead project page",
+      "crs": "not applicable",
+      "method": "Design narrative and six massing-layer diagrams; used for campus gateway massing, entry, daylit transparent ground story, modulated scale, and connective corridor",
+      "uncertainty": "Published images describe combined Dudley/Lambertus complex; some elevations cannot be assigned unambiguously to one GIS wing."
+    },
+    {
+      "provider": "BSA LifeStructures",
+      "url": "https://www.bsadesign.com/project/dudley-hall-and-lambertus-hall/",
+      "retrieved": "2026-10-26",
+      "source_date": "project photography published 2022-2023",
+      "snapshot": "sources/bsa_exterior_n288.webp; sources/bsa_exterior_n313.webp; sources/ennead_interior_*.jpg",
+      "crs": "not applicable",
+      "method": "Exterior and interior photography used for brick/terracotta/glass/white frame material language, high-bay lab/catwalk and collaboration cues",
+      "uncertainty": "Photo facade wing labels are not consistently visible; facade assignment and detailed room layout are inferred."
+    },
+    {
+      "provider": "Purdue Board of Trustees",
+      "url": "https://www.purdue.edu/bot/meetings/past-meetings/2020/06.%20june/stated/lambertus%20hall.pdf",
+      "retrieved": "2026-10-26",
+      "source_date": "2020 naming proposal",
+      "snapshot": "online primary document (URL above)",
+      "crs": "not applicable",
+      "method": "Published Lambertus area and site relationship used as scale check",
+      "uncertainty": "Proposal says approximately 110,000 sq ft; GIS area is footprint, not floor area."
+    },
+    {
+      "provider": "Purdue School of Nuclear Engineering",
+      "url": "https://engineering.purdue.edu/NE/news/2023/the-dedication-of-dudley-and-lambertus-halls-marks-a-new-home-for-purdue8217s-school-of-nuclear-engineering-",
+      "retrieved": "2026-10-26",
+      "source_date": "2023 dedication",
+      "snapshot": "online primary document (URL above)",
+      "crs": "not applicable",
+      "method": "Supports 2023 opening, fifth-floor north-wing Nuclear Engineering use, offices, study and lab spaces",
+      "uncertainty": "Does not provide a Lambertus-only measured height or floor plan."
+    },
+    {
+      "provider": "Purdue Industrial Engineering / First Build @Scale",
+      "url": "https://engineering.purdue.edu/IE/Research/Gateway%20Labs/lambertus",
+      "retrieved": "2026-10-26",
+      "crs": "not applicable",
+      "method": "Ground-floor Build @Scale lab supports industrial machines, flexible automation and prototype line interior props",
+      "uncertainty": "Web description is functional evidence, not a floor plan."
+    }
+  ],
+  "verified_geometry": {
+    "world_bounds_m": [
+      [
+        160.20146978783401,
+        186.51474764626857
+      ],
+      [
+        -10.855778641046072,
+        59.013223261367784
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ],
+    "official_ring_vertices": 40,
+    "converted_ring_area_m2": 1702.0608054758416,
+    "footprint_match": "source ring modeled directly; raw GIS vertices retained without fitting/scaling"
+  },
+  "estimated_dimensions": {
+    "height_m": 16.0,
+    "stories": 5,
+    "story_spacing_m": 3.1,
+    "basis": "existing asset envelope plus published five-floor/fifth-floor evidence; not survey verified"
+  },
+  "interior": "High-bay manufacturing lab, overhead bridge crane, catwalk, collaboration/study zone, stairs and upper-floor nuclear-engineering study area are evidence-backed typologies but exact room locations and layout are plausible inferences; no public floor plan found.",
+  "renders": [
+    "renders/01_exterior_axon.png",
+    "renders/02_roof_perimeter.png",
+    "renders/03_high_bay_interior.png"
+  ],
+  "remaining_uncertainties": [
+    "Exact Lambertus-vs-Dudley allocation of facade photographs",
+    "No published Lambertus-only elevation or floor plan located",
+    "Story elevations and top-of-roof height estimated",
+    "Geographic conversion is not a survey-grade projection"
+  ]
+}

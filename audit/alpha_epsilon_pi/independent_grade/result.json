@@ -1,0 +1,76 @@
+{
+  "building_id": "alpha_epsilon_pi",
+  "reviewer": "independent subagent",
+  "review_date": "2026-10-26",
+  "overall_score": 7.5,
+  "threshold": 8.0,
+  "status": "needs_refinement",
+  "weights": {
+    "identity_and_evidence": 0.12,
+    "placement_and_footprint": 0.20,
+    "exterior_form": 0.22,
+    "facade_and_materials": 0.22,
+    "interior": 0.14,
+    "technical_integrity": 0.10
+  },
+  "categories": {
+    "identity_and_evidence": {
+      "score": 7.3,
+      "assessment": "Purdue BoilerLink lists 1051 David Ross Road, and official GIS FID 754 has the same address and an imagery-aligned roof footprint. However the GIS name is Chi Phi, so the AEPi-to-FID754 identity crosswalk is not proven. FID 821 is a separate AEPi-labeled feature at 116 Fowler and remains a possible legacy record. The audit documents this rather than silently merging the identities.",
+      "uncertainty": "No recent first-party chapter-house exterior image or public plan directly ties the roof at FID 754 to AEPi."
+    },
+    "placement_and_footprint": {
+      "score": 9.8,
+      "assessment": "The exported foundation has the same 60 vertices and ordering as FID 754 after applying the documented local transform. Independent polygon comparison gives area 569.0502295 m2 versus 569.0502174 m2 and IoU 0.99999995; maximum corresponding vertex error is 0.00000090 m. The collection origin is [-948.801726, 959.296980] m, matching the converted GIS polygon centroid within rounding. The saved satellite overlay shows the polygon around the roof.",
+      "uncertainty": "These are approximate local-tangent coordinates; GIS name/occupancy conflict remains outside the geometry comparison."
+    },
+    "exterior_form": {
+      "score": 7.2,
+      "assessment": "The rendered asset communicates a three-story brick fraternity building with a dark mansard roof, which matches the broad cues in the 2009 Purdue AEPi photograph. The roof follows the notched GIS outline and the entry-facing view is legible. The massing still reads as an oversized, complex multi-wing block with a large hipped roof; the historic photo is too old and too frontal to validate the current side/rear shape or present-day roof.",
+      "uncertainty": "Story heights, roof breaks, dormers, chimney and current wings are estimated."
+    },
+    "facade_and_materials": {
+      "score": 6.7,
+      "assessment": "Brick, charcoal shingles, pale trim, dark sash glazing, walnut double doors and ΑΕΠ sign are represented. In the exterior preview, long vertical tonal streaks dominate the brick and several side panels read as pale blank infill; bay proportions and small details are repetitive. Window AC units documented in the historic photo are not clearly legible from the principal preview, and the entry planting is blocky.",
+      "uncertainty": "No current high-resolution facade image was available for exact bay spacing, masonry details or sign placement."
+    },
+    "interior": {
+      "score": 4.6,
+      "assessment": "A representative lobby/lounge/dining/kitchen and upper bedroom program exists, with materials and furniture. The saved interior preview is primarily an overhead floor-plan cutaway: partition walls are suppressed, furnishings appear as small simple blocks, and there is no convincing human-scale room view. No measured interior plan was found, so layout is illustrative.",
+      "uncertainty": "All room positions, count and furnishings are estimates."
+    },
+    "technical_integrity": {
+      "score": 9.4,
+      "assessment": "A fresh Blender open succeeded. The file contains the named scene and collection, 696 asset objects (694 meshes), 20 assigned materials, local coordinates, stable placement origin, no unparented meshes, no missing-material meshes and no unpacked external image files. Preview renders were produced.",
+      "uncertainty": "The Blender API fresh-open check validates file structure, not master blend integration or current visual identity."
+    }
+  },
+  "independent_geometry_metrics": {
+    "source_feature": 754,
+    "vertices_source_and_asset": 60,
+    "source_area_local_m2": 569.0502294716226,
+    "asset_area_local_m2": 569.0502173780012,
+    "intersection_over_union": 0.9999999476450463,
+    "max_corresponding_vertex_error_m": 8.974469511942362e-7,
+    "placement_origin_xy_m": [-948.8017262431126, 959.2969802183368],
+    "fresh_open": true,
+    "asset_objects": 696,
+    "mesh_objects": 694,
+    "materials": 20
+  },
+  "refinements_recommended": [
+    "Obtain recent first-party or direct street imagery that verifies the building at 1051 David Ross is AEPi despite FID 754's Chi Phi label; keep identity conflict visible until reconciled.",
+    "Use current facade imagery to confirm the mansard profile, bays, side/rear volumes, window AC units, and which pale panels are actual wall materials.",
+    "Tune brick courses/material mapping to read as masonry at the rendered scale; reduce vertical streaking and improve edge/facade transitions.",
+    "Replace the sparse overhead-only interior preview with a human-scale furnished room view and make representative interior partitions/door openings visible."
+  ],
+  "source_files_reviewed": [
+    "audit/alpha_epsilon_pi/evidence.json",
+    "audit/alpha_epsilon_pi/validation.json",
+    "audit/alpha_epsilon_pi/satellite_footprint_overlay.png",
+    "audit/alpha_epsilon_pi/fid821_satellite_overlay.png",
+    "audit/alpha_epsilon_pi/previews/alpha_epsilon_pi_exterior.png",
+    "audit/alpha_epsilon_pi/previews/alpha_epsilon_pi_interior.png",
+    "modular/buildings/alpha_epsilon_pi.blend"
+  ]
+}

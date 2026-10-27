@@ -1,0 +1,142 @@
+{
+  "building": "Joyful Journeys (Joyful Journey Adult Day Service)",
+  "asset_id": "massing_joyful_journeys_abaf5c3",
+  "reviewer": "independent subagent",
+  "review_date": "2026-10-26",
+  "candidate_sha256": "0C42DE5F5392125F13F6B0DEFC0491F814602788E035477A3D2F4E7EC1D8DEC8",
+  "previous_independent_grade": "8.0/10 r2; this regrade verifies the exact same binary SHA-256",
+  "score": 8.0,
+  "max_score": 10,
+  "threshold": 8,
+  "result": "PASS for candidate; the manifest bounds were stale at assessment time and were corrected afterward to match the reopened asset.",
+  "criteria": [
+    {
+      "name": "identity_and_source_backed_footprint",
+      "points": 1.8,
+      "max_points": 2.0,
+      "status": "corroborated_roof_outline_not_surveyed_wall_line",
+      "rationale": "Current official operator page identifies Joyful Journey at 600 Lindberg Road, northwest corner of Lindberg/Salisbury, and invites visitors to tour the house; the 2019 Area IV guide image shows the entry number 600. OSM way 869182111 carries the matching name/address and its 12-point roof-perimeter outline registers visually on the saved Esri aerial. The OSM outline is a crowd-mapped roof-edge proxy, not survey-quality wall geometry; model agreement with it is not independent geodetic proof."
+    },
+    {
+      "name": "position_orientation_and_dimensions",
+      "points": 1.7,
+      "max_points": 2.0,
+      "status": "map_registered_approximate_local_transform",
+      "rationale": "Fresh-open geometry remains in campus coordinates with identity transform and world bounds X[-104.04565,-65.91480], Y[2056.23877,2078.08032], Z[0,8.76000] m. These XY values correspond to the OSM ring/project conversion, and the roof overlay places it on the same property. Bearing and 38.13 x 21.84 m envelope are based on the OSM roof proxy and approximate local transform; no survey control is available."
+    },
+    {
+      "name": "height_levels_and_roof",
+      "points": 1.2,
+      "max_points": 2.0,
+      "status": "photo_aerial_estimates",
+      "rationale": "The 2019 image supports a front gable with upper-level windows; aerial imagery supports a multi-facet pitched roof. Eave 5.4 m, roof peak 8.7 m, and two above-grade levels are photo-scaled estimates, not measured elevations or verified floor count. Exact ridge breaks and roof pitch remain uncertain."
+    },
+    {
+      "name": "facade_entrances_and_materials",
+      "points": 1.5,
+      "max_points": 2.0,
+      "status": "photo_informed_schematic_material_palette",
+      "rationale": "The model depicts muted green-gray siding, light window/roof trim, dark red-brown shutters, upper gable windows, and a covered entry, matching visible cues in the labeled 2019 photo. Materials are solid-color node shaders rather than surface-textured siding/roof/masonry. The reference also shows stone at the entry, a porch rail/columns, and a richer facade; these are omitted or simplified, and unpictured elevations are schematic."
+    },
+    {
+      "name": "technical_export_portability_and_evidence",
+      "points": 1.8,
+      "max_points": 2.0,
+      "status": "fresh_open_pass_bounds_corrected_post_grade",
+      "rationale": "Blender 5.2.3 fresh-open confirms the stable scene/collection and one mesh object (886 vertices/218 faces), identity transform, no modifiers, no linked libraries, and no external texture dependencies. Seven node materials are assigned. The prior independent r2 grade was also 8.0/10 and the exact binary SHA is now verified. At assessment time the shared manifest still recorded Z max 16.0 m; the coordinator subsequently corrected it to 8.7600002289 m, matching the exact saved candidate maximum. The asset remains directly linked in campus coordinates. No interior is modeled; no reliable interior plan was located in reviewed evidence."
+    }
+  ],
+  "fresh_open": {
+    "report": "fresh_open.json",
+    "blender_version": "5.2.3 LTS",
+    "sha256_verified_against_builder": true,
+    "scene": "Building_massing_joyful_journeys_abaf5c3",
+    "collection": "Asset_massing_joyful_journeys_abaf5c3",
+    "collection_objects": 1,
+    "mesh_vertices": 886,
+    "mesh_faces": 218,
+    "materials": 7,
+    "image_dependencies": 0,
+    "bounds_world_m": [
+      [
+        -104.04564666748047,
+        -65.91480255126953
+      ],
+      [
+        2056.23876953125,
+        2078.080322265625
+      ],
+      [
+        0.0,
+        8.760000228881836
+      ]
+    ],
+    "identity_transform": true
+  },
+  "placement_manifest_check": {
+    "kind": "massing",
+    "placement_transform": "identity; coordinates already in campus world space",
+    "xy_bounds_match_candidate": true,
+    "manifest_z_bounds": [
+      0.0,
+      8.760000228881836
+    ],
+    "candidate_z_bounds": [
+      0.0,
+      8.760000228881836
+    ],
+    "action_required": "Completed after the grade: coordinator corrected bounds_world_m, exterior_bounds_world_m, and source_bounds_world_m to the reopened asset extents. Keep the asset directly linked in campus coordinates. No interior is modeled."
+  },
+  "sources_reviewed": [
+    {
+      "provider": "Joyful Journey Inc, official operator site",
+      "url": "https://joyfuljourneywl.org/",
+      "reviewed_live": "2026-10-26",
+      "supports": "600 Lindberg Road, northwest corner of Lindberg and Salisbury; adult day service in a home-like setting."
+    },
+    {
+      "provider": "OpenStreetMap contributors",
+      "feature_id": "way 869182111",
+      "url": "https://www.openstreetmap.org/way/869182111",
+      "saved_snapshot": "../../massing_joyful_journeys_abaf5c3/sources/osm_way_869182111_full.json",
+      "limitation": "Crowd-mapped outline; used as roof-perimeter proxy, not as a surveyed building footprint."
+    },
+    {
+      "provider": "Esri World Imagery",
+      "saved_snapshot": "../../massing_joyful_journeys_abaf5c3/sources/world_imagery_lindberg_2026-10-26.jpg",
+      "limitation": "Roof placement context; acquisition date and positional control unavailable."
+    },
+    {
+      "provider": "Area IV Agency on Aging & Community Action, 2019 community resource guide",
+      "url": "https://www.familyhconline.com/wp-content/uploads/2019/03/Community-Resource-Guide-1.pdf",
+      "page": "printed page 85",
+      "saved_photo": "../../massing_joyful_journeys_abaf5c3/sources/joyful_journey_exterior_photo_page85.jpg",
+      "supports": "Entry, visible street number 600, light trim, shutters, upper gable windows; no scale or north orientation."
+    },
+    {
+      "provider": "Tippecanoe County Area Plan Commission",
+      "url": "https://maps.tippecanoe.in.gov/commitments/z2571.pdf",
+      "case": "Z-2571 (2014)",
+      "supports": "Property address/use context and existing home; not an architectural elevation or measured footprint."
+    }
+  ],
+  "residual_caveats": [
+    "Height, roof pitch/ridge breaks, facade dimensions/colors, and unseen elevations are estimates or unverified.",
+    "No modeled interior or floor plan was found in the reviewed sources; current geometry is an exterior model.",
+    "The existing r2 candidate had a passing 8.0/10 independent assessment; exact current SHA confirms it is the same file, not a changed revision."
+  ],
+  "post_grade_manifest_correction": {
+    "status": "corrected",
+    "corrected_after_grade": true,
+    "manifest_z_bounds_m": [
+      0.0,
+      8.760000228881836
+    ],
+    "fresh_open_z_bounds_m": [
+      0.0,
+      8.760000228881836
+    ],
+    "placement_transform": "identity; asset remains linked in campus coordinates",
+    "interior": "No modeled interior; no reliable interior plan was found in reviewed evidence."
+  }
+}

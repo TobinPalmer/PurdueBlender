@@ -1,0 +1,59 @@
+{
+  "building": "Phi Gamma Delta",
+  "asset": "modular/buildings/massing_house_301837281_58ead22.blend",
+  "tested_sha256": "9ECBCED89189735DC00E1DD93D5B63B36DABEEEC8B18AEF040D0D810B545E101",
+  "score": 8.5,
+  "threshold": 8.0,
+  "decision": "pass",
+  "blender_version": "5.2.3 LTS",
+  "fresh_open": "pass",
+  "categories": {
+    "site_identity_and_source_confidence": {
+      "score": 9.0,
+      "weight": 0.15
+    },
+    "footprint_orientation_and_placement": {
+      "score": 9.0,
+      "weight": 0.25
+    },
+    "massing_and_architectural_details": {
+      "score": 7.7,
+      "weight": 0.25
+    },
+    "materials_and_texturing": {
+      "score": 8.4,
+      "weight": 0.15
+    },
+    "interior_evidence_handling": {
+      "score": 7.5,
+      "weight": 0.1
+    },
+    "blender_integrity_and_portability": {
+      "score": 9.8,
+      "weight": 0.1
+    }
+  },
+  "weighted_total_unrounded": 8.515,
+  "findings": {
+    "identity": "Purdue GIS FID 787 explicitly names Phi Gamma Delta at 640 Russell St. Official chapter materials support the chapter house and Lyles Addition. The GIS record date is unavailable and some legacy story/height attributes conflict with the visible building.",
+    "footprint": "The retained 10-point model outline is within about 0.21\u20130.45 m nearest vertex of the raw FID 787 ring after the project documented EPSG:3857-to-geographic/local transform. Aerial overlay shows the east-side inset aligns with the roof outline. This is a useful footprint proxy, not a surveyed wall line; source outline and transform uncertainty remain.",
+    "massing": "Three-level main-house volumes, lower connector/addition, distinct shallow hip roofs, asymmetric opening groups, arched entrances, and prominent arched addition glazing are modeled. The June 2025 photo and official concept views support the overall character. Facade proportions, exact opening positions, roof pitch, and which GIS arm is historic versus addition are still estimates; the facades remain simplified compared with the references.",
+    "materials": "Portable procedural buff brick with UV coursing, mortar relief and roughness variation; slate uses noise-driven color, bump and roughness. Limestone, painted frames, glass, doors and metal accents are separate node materials. These are legible and source-supported but not photogrammetric material matches.",
+    "interior": "No interior geometry. The official basement/first-floor plans have not been registered to the GIS/site coordinates, so adding rooms would risk assigning them to the wrong wings. This is an evidence-based omission; it does mean interior modeling remains incomplete.",
+    "integrity": "Fresh-opened in Blender 5.2.3 LTS. Expected scene, export collection and root are present; 216 mesh objects, 1,842 vertices, 2,769 edges, 1,359 faces. Independent mesh-edge check reports zero boundary, nonmanifold, or wire edges. Procedural materials load; no missing linked libraries or external image files."
+  },
+  "primary_evidence": [
+    "../evidence_and_geometry.md",
+    "../sources/purdue_fid787.geojson",
+    "../sources/construction_progress_june_2025.jpg",
+    "../sources/official_addition_front_render_2024.png",
+    "../sources/official_addition_render_2024.png",
+    "../sources/esri_fid787_footprint_overlay.jpg",
+    "../phi_gamma_delta_south_oblique.png",
+    "../phi_gamma_delta_northeast_oblique.png"
+  ],
+  "recommended_follow_up": [
+    "Interior remains unmodeled until the official first-floor plan is registered to the GIS footprint and addition; no unsupported upper floors should be invented.",
+    "Exact elevations, roof measurements, hidden sides, and final as-built ivy/facade treatment are not established by the available references."
+  ]
+}

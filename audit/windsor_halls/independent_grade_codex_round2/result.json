@@ -1,0 +1,90 @@
+{
+  "building": "Windsor Halls components assigned to this asset: Warren, Wood, Vawter, and Windsor Dining Court",
+  "asset": "modular/buildings/massing_windsor_halls_80aeb51.blend",
+  "asset_sha256": "38f4aad7181339a573c2eeb5b6151d116d68bb9c60bb92c040b09516ae676135",
+  "review_type": "independent",
+  "blender_version": "5.2.3 LTS",
+  "fresh_open": "PASS",
+  "score": 7.8,
+  "score_unrounded": 7.79,
+  "threshold": 8.0,
+  "pass": false,
+  "rubric": [
+    {
+      "criterion": "Identity and source attribution",
+      "score": 9.5,
+      "weight_percent": 10,
+      "finding": "The dedicated evidence maps the four modeled components to Purdue GIS FIDs 63–66. Duhme (FID 278) and Shealy (FID 277) are explicitly excluded to avoid duplicate ownership. Purdue Housing confirms the five connected Windsor halls and Dining Court's relationship to Warren/Vawter."
+    },
+    {
+      "criterion": "Structural footprints",
+      "score": 9.9,
+      "weight_percent": 20,
+      "finding": "Independent reopen metrics report FID 63–66 structural-shell IoU between 0.9999984 and 0.9999990, with about 0.00003 m Hausdorff boundary error. Structural rings are compared separately from roofs and decorative overlays."
+    },
+    {
+      "criterion": "Placement and component relationships",
+      "score": 8.4,
+      "weight_percent": 10,
+      "finding": "Campus-world bounds and source CRS/transform are documented, and the four polygon positions are internally consistent. The Dining Court outline only touches the hall outlines despite Purdue describing it as underneath Warren and Vawter; the low/subgrade shell's exact horizontal extent and elevation therefore remain unresolved."
+    },
+    {
+      "criterion": "Roof and overall silhouette",
+      "score": 5.2,
+      "weight_percent": 20,
+      "finding": "The steep slate treatment and roof accents improve on the block massing, but the overview and individual frontage views show very broad continuous caps and tall faceted roof walls that obscure substantial portions of courtyards and upper facades. Hall-specific roof profiles are not supported by measured elevations or sufficiently direct per-hall imagery, and some transitions read as intersecting or floating geometry."
+    },
+    {
+      "criterion": "Facade and entrances",
+      "score": 6.9,
+      "weight_percent": 20,
+      "finding": "Brick running-bond texture, window frames, limestone courses, and entrance elements are present, with limited variation between Warren, Wood, and Vawter. The repeated window grid and simplified door canopies dominate; the close views show roof caps covering the top rows, and the Wood entry bay/other entrance differences remain interpretive."
+    },
+    {
+      "criterion": "Materials and texturing",
+      "score": 8.6,
+      "weight_percent": 10,
+      "finding": "Ten self-contained materials cover brick, slate, limestone, glazing, frames, doors, and schematic interiors. The procedural brick and trim read clearly, and there are no external texture dependencies. The slate material is visually flat at the overall view scale and the large roof surfaces make the whole complex appear more uniformly roofed than the reference evidence can support."
+    },
+    {
+      "criterion": "Interior representation",
+      "score": 5.0,
+      "weight_percent": 5,
+      "finding": "Named schematic dorm-room/lounges and dining tables/counter are a useful addition and are appropriately labeled as not surveyed. The supplied cutaway previews mostly read as empty wall/floor blocks; room furniture and circulation are not clearly legible, and no building-specific floor-plan source validates their placement."
+    },
+    {
+      "criterion": "Reopen, portability, and evidence",
+      "score": 9.8,
+      "weight_percent": 5,
+      "finding": "I independently opened the exact SHA in Blender 5.2.3 LTS. The expected scene and collection are present; 153 objects, 152 meshes, 10 used materials, no materialless meshes, no missing external images, and no linked libraries were found. Provenance and uncertainties are documented."
+    }
+  ],
+  "limitations": [
+    "This rating checks the standalone building asset and saved previews; it does not certify current master placement or neighboring-campus context.",
+    "Purdue's generic housing illustrations support room amenities and approximate 14 by 16 ft dimensions, not building-specific room locations or floor plans.",
+    "Warren and Vawter have official descriptions as four-story halls with a ground floor and partial basements. Exact wall heights, roof profiles, Wood story count, Dining Court subgrade footprint/elevation, and facade bay spacing remain estimated or unresolved.",
+    "Official GIS provides exact horizontal rings for FIDs 63–66 but its distinct FID 66 boundary does not horizontally overlap the Warren, Wood, or Vawter polygons, even though Purdue Housing says the Dining Court is underneath Warren and Vawter."
+  ],
+  "revision_priorities": [
+    "Redesign roof envelopes per hall so they stay close to the evidenced roofline, break up continuous caps, preserve visible upper-storey windows, and remove roof/facade intersections at courtyard edges. Keep unsupported roof details explicitly estimated.",
+    "Make the three hall elevations more legible as distinct components using supported entry and bay details; avoid relying on a uniform repeated window grid where the source views show variation.",
+    "Improve the cutaway presentation so a modest generic single/double room, corridor, and lounge furniture set is visibly readable, and make clear in the asset which content is schematic.",
+    "Resolve the Dining Court under-hall relationship through stronger vertical/plan evidence before altering its exact GIS shell or assigning a master elevation."
+  ],
+  "independent_fresh_open_report": "audit/windsor_halls/independent_grade_codex_round2/fresh_open_probe.json",
+  "visual_material_review": [
+    "audit/windsor_halls/previews/windsor_halls_overview.png",
+    "audit/windsor_halls/previews/warren_frontage.png",
+    "audit/windsor_halls/previews/wood_frontage.png",
+    "audit/windsor_halls/previews/vawter_frontage.png",
+    "audit/windsor_halls/previews/windsor_schematic_interior.png",
+    "audit/windsor_halls/previews/windsor_dining_schematic.png"
+  ],
+  "sources_reviewed": [
+    "https://housing.purdue.edu/my-housing/options/residence-halls/windsor.html",
+    "https://www.purdue.edu/operations/emergency-preparedness/warn/",
+    "https://www.purdue.edu/operations/emergency-preparedness/vawt/",
+    "https://www.rgcollaborative.com/projects/Education/purdue-university-wood-hall",
+    "https://purdue.starrezhousing.com/StarRezPortalXConference/File/GetImage?dateCreatedTicks=638309106832699833&hash=3B0DB762&imageName=52483840151_ea5f2e6ade_k.jpg&tableID=13617&tableName=PortalPageWidget"
+  ]
+}

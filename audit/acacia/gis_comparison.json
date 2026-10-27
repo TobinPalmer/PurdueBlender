@@ -1,0 +1,43 @@
+{
+  "source_feature_id": 791,
+  "coordinate_transform": "WGS84 to project-local approximate meters: X=(lon+86.9137)*111412.84*cos(40.4274 degrees); Y=(lat-40.4274)*111040",
+  "crs_stateplane": "EPSG:2968 NAD83(HARN) / Indiana West, US survey feet; converted at 0.304800609601219 m/ft",
+  "measurements": {
+    "gis_wgs84_ring_area_m2": 461.8768493573578,
+    "shell_area_m2": 459.06522795464844,
+    "shell_minus_ring_area_m2": -2.8116214027093633,
+    "shell_area_residual_percent_of_gis": -0.6087383263788546,
+    "gis_bbox_x_width_m": 19.51251761394775,
+    "shell_bbox_x_width_m": 19.4385986328125,
+    "shell_minus_gis_x_width_m": -0.0739189811352503,
+    "gis_bbox_y_length_m": 31.648459814346097,
+    "shell_bbox_y_length_m": 28.49285888671875,
+    "shell_minus_gis_y_length_m": -3.155600927627347,
+    "south_extension_beyond_shell_m": 3.147593084030632,
+    "intersection_over_union": 0.9332055427759622,
+    "symmetric_difference_area_m2": 31.819599534410095,
+    "centroid_delta_gis_minus_shell_xy_m": [
+      0.37458008799359277,
+      -0.5431512643696124
+    ],
+    "centroid_delta_distance_m": 0.6597905260820257,
+    "bidirectional_vertex_to_boundary_rms_m": 0.9892171620780443,
+    "bidirectional_vertex_to_boundary_max_m": 3.211174293122627,
+    "hausdorff_boundary_m": 3.211174293122608,
+    "shape_area_attribute": 798.4453125,
+    "shape_length_attribute": 138.59739220023835,
+    "stateplane_ring_area_m2_after_unit_conversion": 462.10251183313824,
+    "stateplane_ring_perimeter_m_after_unit_conversion": 105.39841685967694,
+    "stateplane_area_m2_minus_wgs84_ring_m2": 0.22566247578043885,
+    "stateplane_area_residual_percent": 0.0488577152317591,
+    "shape_area_attribute_minus_wgs84_ring_m2": 336.5684631426422,
+    "shape_length_attribute_minus_ring_perimeter_m": 33.219520443917176
+  },
+  "final_shell_transform_applied_m": [
+    0,
+    0,
+    0
+  ],
+  "source_field_resolution": "The encoded WGS84 ring area is 461.877 m2; the EPSG:2968 ring converts to 462.103 m2, a +0.226 m2 (+0.049%) residual, so the two geometries agree. The shell is 459.065 m2, -2.812 m2 (-0.609%) from the WGS84 ring. GIS bounds are 19.513 x 31.648 m; shell bounds are 19.439 x 28.493 m. The GIS ring extends 3.148 m farther south, consistent with its small entry/porch projection; shell-to-ring IoU is 0.933, centroid offset 0.660 m, and Hausdorff residual 3.211 m. ArcGIS Shape__Area=798.445 and Shape__Length=138.597 differ from the encoded rings by +336.568 m2 and +33.220 m and are treated as stale/legacy summary attributes. The modeled structural shell remains in its original campus coordinates without a transform.",
+  "porch_bearing": "West-facing long elevation, inferred by matching the official porch/elevation plan to the north-up aerial and its west-side approach path. The official facade image itself is not geotagged."
+}

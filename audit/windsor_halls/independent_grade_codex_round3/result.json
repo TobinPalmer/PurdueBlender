@@ -1,0 +1,42 @@
+{
+  "reviewer": "Codex independent reviewer",
+  "review_round": 3,
+  "target_asset": "modular/buildings/massing_windsor_halls_80aeb51.blend",
+  "target_sha256": "9985a554162b7bb9ee7d4ef8bbba888338b9e5cfeb7731c0b891aa7ee8f8b4aa",
+  "fresh_open": {
+    "blender_version": "5.2.3 LTS",
+    "passed": true,
+    "scene": "Building_massing_windsor_halls_80aeb51",
+    "collection": "Asset_massing_windsor_halls_80aeb51",
+    "objects": 196,
+    "meshes": 195,
+    "vertices": 29269,
+    "faces": 16831,
+    "materials": 13,
+    "external_libraries": 0,
+    "external_images": 0,
+    "sha256_verified": true
+  },
+  "score": 7.8,
+  "threshold": 8.0,
+  "passed": false,
+  "categories": [
+    {"name":"GIS identity, shell footprint, and placement evidence","weight":20,"score":9.9,"notes":"Official Purdue FIDs 63-66 are identified; fresh-open footprint IoUs are 0.9999984-0.9999990 and boundary error is about 0.00003 m using the documented local transform. These figures verify XY footprint only."},
+    {"name":"Separate shells and master placement readiness","weight":10,"score":9.5,"notes":"Warren, Wood, Vawter, and Dining Court are separate, named geometry in the stable collection. FID 66 remains a separate low volume and no false horizontal overlap is introduced. Dining's vertical/subsurface relationship remains estimated."},
+    {"name":"Warren, Wood, and Vawter roof silhouettes","weight":20,"score":6.2,"notes":"The broad roof surfaces still read as large, nearly flat caps in the overview and frontage previews. Warren and Vawter repeat similar small gable accents; Wood's central gable is distinctive but is visually crowded by the roof plate behind it. No measured roof source supports exact profiles, so precision remains unverified."},
+    {"name":"Hall-specific facade distinction","weight":15,"score":7.1,"notes":"Wood has a discernible central entry bay based on renovation imagery. Warren and Vawter remain very similar in window rhythm, floor bands, and twin roof accents; the visual identity difference is mostly their footprints."},
+    {"name":"Entrance details","weight":10,"score":6.5,"notes":"Each hall has a readable entrance marker, but Warren and Vawter entries are minimal canopies and dark openings. Wood's central gable bay is stronger, though its pale pediment dominates and the entry lacks richer door, stair, and lighting detail. Warren/Vawter locations are appropriately disclosed as estimates."},
+    {"name":"Materials and texture quality","weight":10,"score":7.8,"notes":"Brick, pale trim, dark glazing, and slate are coherent; the brick courses read at close view. Repetition and the uniform blue roof finish make the materials feel procedural, but no external texture dependency is present."},
+    {"name":"Schematic interior legibility","weight":10,"score":6.8,"notes":"The residential room and lounge schematic is easy to parse. The supplied Dining Court interior preview appears entirely near-black, so that interior is not visually verifiable from the requested preview set even though its fresh-open object list includes a dining floor, tables, and serving counter."},
+    {"name":"Portability","weight":2.5,"score":10,"notes":"Fresh-open succeeded in Blender 5.2.3. No linked libraries or external images are required."},
+    {"name":"Evidence and uncertainty disclosure","weight":2.5,"score":9.3,"notes":"The report distinguishes measured XY shells from estimated height, roofs, facade details, entrances, and schematic interiors. It documents the approximate campus conversion and the undocumented units for relevant GIS attributes."}
+  ],
+  "next_iteration_priorities": [
+    "Replace or reshape the broad Warren and Vawter roof caps so they produce intentional, individually recognizable silhouettes; keep roof height claims labeled as estimates unless a measured source is found.",
+    "Refine Wood's central gable and roof junction so the entrance bay reads as a deliberate architectural feature rather than a white overlay colliding with the cap.",
+    "Introduce source-supported facade differences between Warren and Vawter, or retain conservative distinction while clearly marking what is not verified; avoid making both elevations identical apart from footprint.",
+    "Give the three entrances clearer, better-proportioned doors, canopies/portals, and ground transitions while preserving the documented alignment as an estimate.",
+    "Regenerate the Dining Court schematic preview with a view that actually shows the floor, counter, and tables; retain schematic labeling because no verified plan was found."
+  ],
+  "scope_note": "Review applies only to revision 3 at the exact SHA above; source asset and master blend were not modified."
+}

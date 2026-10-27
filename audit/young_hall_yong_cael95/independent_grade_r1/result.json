@@ -1,0 +1,80 @@
+{
+  "score": 8.0,
+  "max_score": 10,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Official Purdue GIS feature FID 70 is Ernest C. Young Hall (BLDG_ABBR YONG).",
+        "Shell base ring has 34 vertices; projected source ring has 34; max paired point error 0.000032 m.",
+        "Source address is 155 S Grant Street."
+      ],
+      "findings": "Identity and horizontal outline are directly supported by the matching named Purdue GIS record."
+    },
+    {
+      "name": "Position, orientation, and plan dimensions",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Shell XY bounds from official ring: [[241.6241101801989, 274.3472704819721], [-564.6024027420435, -442.4307640084635]] m.",
+        "The shell geometry directly uses the project geographic conversion and retains campus coordinates; orientation and every ring point align with source.",
+        "Measured vertex deviation in Blender asset: 0.000032 m."
+      ],
+      "findings": "Position, orientation and plan geometry agree with GIS within the numerical tolerance of the projected vertices. Geographic conversion is approximate, not survey control."
+    },
+    {
+      "name": "Height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": [
+        "Shell height is 31.090 m; asset metadata identifies it as GIS R=102 interpreted as feet.",
+        "GIS NUM_LEVELS and CountOfFLO are 11 and 11; evidence cites Purdue Archives' description of 10 stories.",
+        "GIS vertical fields have no unit annotation, and no measured roof or elevation source is included."
+      ],
+      "findings": "Story count has authoritative archival support, but the 11-versus-10 discrepancy is unresolved. Roof height depends on an inferred unit conversion, and flat roof form is not verified."
+    },
+    {
+      "name": "Facade, entrance, and distinctive architecture",
+      "score": 1.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue facade image present: True; image shows red brick in a contrasting mortar grid, Young Hall lettering, and a metal-framed upper window.",
+        "The model has red brick and mortar materials, window bays, a Young Hall sign and a simulated entrance."
+      ],
+      "findings": "Material and sign are evidenced by a close crop, but it does not document overall elevations or entrance design. Window rhythm, bay spacing, entry canopy/stairs, and roof treatment are largely modeled from inference."
+    },
+    {
+      "name": "Modular export, portability, and evidence",
+      "score": 1.75,
+      "max_score": 2.0,
+      "evidence": [
+        "Expected collection exists: True; its 20 members have types ['EMPTY', 'FONT', 'MESH'].",
+        "Saved scene: Building_massing_young_hall_yong_cae1b95; external file references in images: [].",
+        "Raw GIS response, GIS metadata, July 2025 Purdue campus map, Purdue facade photo, evidence record, fresh-open validation and renders are present."
+      ],
+      "findings": "Stable names and portable standalone asset are present. A render-target EMPTY is included inside the export collection; removing preview-only helpers would keep the library cleaner."
+    }
+  ],
+  "evidence": {
+    "asset": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_young_hall_yong_cae1b95.blend",
+    "scene": "Building_massing_young_hall_yong_cae1b95",
+    "collection": "Asset_massing_young_hall_yong_cae1b95",
+    "gis_feature_id": 70,
+    "gis_building_abbr": "YONG",
+    "gis_ring_vertices": 34,
+    "asset_ring_vertices": 34,
+    "max_vertex_error_m": 3.186718162043741e-05,
+    "shell_height_m": 31.089599609375,
+    "external_file_dependencies": [],
+    "evidence_folder": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\audit\\young_hall_yong_cael95"
+  },
+  "findings": [
+    "The saved shell reproduces the full Purdue GIS polygon, but its absolute campus XY values come from the project's local approximate conversion.",
+    "The footprint is much better evidenced than the vertical model: height units are inferred and the roof silhouette is unverified.",
+    "Facade material/sign cues are supported by one Purdue crop; building-wide window, entrance and interior details remain schematic.",
+    "Interior layout is representative only; no floor plan was found in the source set.",
+    "The collection contains a preview-only render target helper alongside building geometry."
+  ]
+}

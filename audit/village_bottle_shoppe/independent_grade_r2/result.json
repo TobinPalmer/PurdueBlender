@@ -1,0 +1,33 @@
+{
+  "building": "Village Bottle Shoppe",
+  "asset": "modular/buildings/massing_village_bottle_shoppe_6a17e23.blend",
+  "tested_sha256": "5990CF81AF8BDA79474BD97D9CB727FBCA195CFF0B7DE21C73F7C1AF26A38A3F",
+  "score": 7.8,
+  "threshold": 8.0,
+  "decision": "revise_and_regrade",
+  "fresh_open": "pass",
+  "blender_version": "5.2.3 LTS",
+  "categories": {
+    "site_identity_and_source_confidence": 7.0,
+    "footprint_orientation_and_placement": 9.0,
+    "massing_and_architectural_details": 7.0,
+    "materials_and_texturing": 7.5,
+    "interior_evidence_handling": 8.5,
+    "blender_integrity_and_portability": 9.5
+  },
+  "evidence_files": [
+    "fresh_open_probe.json",
+    "fresh_open.log",
+    "../../README.md",
+    "../../preview_village_bottle_shoppe.png",
+    "../../sources/esri_world_imagery_near_1832_northwestern.jpg",
+    "../../sources/google_streetview_1832_northwestern_pano.jpg"
+  ],
+  "primary_issues": [
+    "The saved Street View panorama is adjacent context, not direct facade evidence.",
+    "The direct subject photos in the county appraisal report have not been visually reconciled to the modeled facade and footprint.",
+    "Facade is regular and lacks verified storefront/signage details.",
+    "34 non-manifold edges require a visual shell/roof check; no visible defect was established during this grade."
+  ],
+  "next_revision": "Verify the footprint-to-subject match and use the labeled appraisal subject photos to revise only confirmed facade details; then fresh-open and regrade the new exact asset hash."
+}

@@ -1,0 +1,176 @@
+{
+  "asset_id": "massing_house_301841254_29ab02d",
+  "asset_path": "modular/buildings/massing_house_301841254_29ab02d.blend",
+  "collection": "Asset_massing_house_301841254_29ab02d",
+  "scene": "Building_massing_house_301841254_29ab02d",
+  "object": "House_301841254",
+  "identity": {
+    "name": "Beta Sigma Psi",
+    "address": "525 University St",
+    "purdue_gis_fid": 793,
+    "osm_way_id": 301841254
+  },
+  "sources": [
+    {
+      "provider": "Purdue University campus GIS, BuildingShapesZip4 ArcGIS FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D793&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": "FID 793; Beta Sigma Psi; 525 University St",
+      "retrieved": "2026-10-26",
+      "source_date": "service last edit metadata not populated for this feature",
+      "source_crs": "WGS 84 (EPSG:4326) response; source layer metadata captured alongside snapshot",
+      "method": "projected all vertices using documented local campus approximation, then compared plan polygon, centroid, and dimensions",
+      "uncertainty": "GIS polygon represents mapped building outline; absolute exterior-wall registration may differ from roofing/overhang line; reported source area is not an as-built survey"
+    },
+    {
+      "provider": "Purdue University campus GIS, BuildingShapesZip4 ArcGIS FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D793&outFields=*&returnGeometry=true&outSR=2968&f=pjson",
+      "feature_id": "FID 793; projected comparison snapshot",
+      "retrieved": "2026-10-26",
+      "source_date": "service last edit metadata not populated for this feature",
+      "source_crs": "EPSG:2968 (NAD83 / Indiana West, US survey feet), converted to meters using 0.3048006096",
+      "method": "independent projected coordinate calculation of polygon area/perimeter and dimensions",
+      "uncertainty": "source Shape__Area/Shape__Length attributes do not match the geometry-derived measures; unresolved source-attribute units or update status"
+    },
+    {
+      "provider": "OpenStreetMap contributors, campus OSM snapshot",
+      "url": "https://www.openstreetmap.org/way/301841254",
+      "feature_id": "way 301841254; addr:housenumber=525; building=school",
+      "retrieved": "2026-10-22T03:45:50Z snapshot",
+      "source_date": "feature edit timestamp unavailable in snapshot",
+      "source_crs": "WGS 84 (EPSG:4326)",
+      "method": "way node coordinate polygon cross-check against official Purdue GIS footprint",
+      "uncertainty": "OSM building class tag is generic and provides no height or style evidence"
+    },
+    {
+      "provider": "Purdue University BoilerLink organization listing",
+      "url": "https://boilerlink.purdue.edu/organization/betasigmapsi",
+      "feature_id": "Beta Sigma Psi, Purdue University",
+      "retrieved": "2026-10-26",
+      "source_date": "current page; date unavailable",
+      "source_crs": "not applicable",
+      "method": "cross-check chapter name and address",
+      "uncertainty": "page identifies chapter and address but supplies no measured building plans or elevations"
+    },
+    {
+      "provider": "Beta Sigma Psi National Fraternity, Active Chapters",
+      "url": "https://www.betasigmapsi.org/active-chapters/",
+      "feature_id": "Purdue University, Beta Chapter",
+      "retrieved": "2026-10-26",
+      "source_date": "current page; date unavailable",
+      "source_crs": "not applicable",
+      "method": "cross-check chapter identity and active status",
+      "uncertainty": "does not document the Purdue house architecture"
+    },
+    {
+      "provider": "BoilerApartments historical rental listing for 525 N University",
+      "url": "https://www.boilerapartments.com/listing/15365",
+      "feature_id": "Beta Sigma Psi / 525 N University",
+      "retrieved": "2026-10-26",
+      "source_date": "listing source is circa 2012; exact page publication date not displayed",
+      "source_crs": "not applicable",
+      "method": "program/floor-count cross-check only",
+      "uncertainty": "describes a multi-unit house, shared bathrooms on each floor, porch, game room and parking; historical listing is not a current facade image or measured plan"
+    },
+    {
+      "provider": "Google Street View, pano Y4KmPWdSoh5sr7LgMX0bpw",
+      "url": "https://www.google.com/maps/@40.4300068,-86.9170988,2847a,13.1y/data=!3m5!1e1!3m3!1sY4KmPWdSoh5sr7LgMX0bpw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D90%26panoid%3DY4KmPWdSoh5sr7LgMX0bpw%26yaw%3D0?entry=ttu",
+      "thumbnail_url": "https://streetviewpixels-pa.clients6.google.com/v1/thumbnail?cb_client=maps_sv.tactile&w=900&h=600&pitch=0&panoid=Y4KmPWdSoh5sr7LgMX0bpw&yaw=270",
+      "image_snapshot": "audit/beta_sigma_psi/sources/google_streetview_pano_Y4KmPWdSoh5sr7LgMX0bpw_2026-04.jpg",
+      "feature_id": "Exact address 525 N University; Google place header and foreground Beta Sigma Psi sign in panorama",
+      "retrieved": "2026-10-26",
+      "source_date": "panorama dated April 2026",
+      "source_crs": "WGS 84 panorama location shown by Google Maps; image is perspective, not orthographic",
+      "method": "visual inspection of exact-address facade pano; yaw 270, pitch 0 thumbnail used for readable frontal view",
+      "observed": "two-story connected red-brick masses, left-facing front gable, prominent white-column portico, red entry door, pale window trim/shutters, low dark roof with small dormers, brick retaining wall and approach",
+      "uncertainty": "pano verifies visible facade elements and relative silhouette, but perspective does not establish measured height, exact window dimensions, roof pitch, or concealed elevations; model dimensions are estimates"
+    },
+    {
+      "provider": "Purdue University Debris Yearbook, 1966, accessed via e-yearbook.com",
+      "url": "https://www.e-yearbook.com/yearbooks/Purdue_University_Debris_Yearbook/1966/Page_1.html",
+      "feature_id": "Chapter narrative near printed page 326",
+      "retrieved": "2026-10-26",
+      "source_date": "1965-66 yearbook",
+      "source_crs": "not applicable",
+      "method": "historical identity/context source",
+      "uncertainty": "says Beta Sigma Psi took over its new chapter house from Alpha Chi Omega; does not provide verified elevations or dimensions"
+    }
+  ],
+  "footprint": {
+    "source_fid": 793,
+    "vertex_count": 14,
+    "geometry_derived_area_m2_local_approx": 410.589,
+    "geometry_derived_perimeter_m_local_approx": 87.94,
+    "stateplane_2968_geometry_derived_area_m2_approx": 410.79,
+    "stateplane_2968_geometry_derived_perimeter_m_approx": 87.96,
+    "api_shape_area_attribute": 709.7734375,
+    "api_shape_length_attribute": 115.62967481017868,
+    "api_shape_attribute_status": "unresolved metadata discrepancy: API attributes are not used as polygon area/length; values differ substantially from measures computed from vertices; units or stale-field status unknown",
+    "attribute_difference_pct_vs_geometry": {
+      "shape_area": 72.9,
+      "shape_length": 31.5
+    },
+    "projected_dimensions_m": {
+      "length": 23.044,
+      "width": 22.129
+    },
+    "campus_xy_center_m": [
+      -284.481,
+      285.442
+    ],
+    "projection": "X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040; independent check EPSG:2968 in US survey feet converted at 0.3048006096 m/ft",
+    "geometry_source": "authoritative GIS FID 793 polygon; used without rescaling"
+  },
+  "geometry": {
+    "wall_height_m_estimated": 6.3,
+    "roof_eave_m_estimated": 6.55,
+    "main_roof_ridge_m_estimated": 8.1,
+    "front_gable_apex_m_estimated": 9.0,
+    "maximum_model_height_m_estimated": 9.0,
+    "story_count_model": 2,
+    "height_status": "estimated; Street View visually supports two storeys but no surveyed elevations; GIS NUM_LEVELS=1 conflicts with 2012 listing's shared bathrooms on each floor; GIS Extrution=22 units/meaning not independently verified",
+    "roof_form": "shallow dark main roof and small dormers plus taller left front gable visible in April 2026 panorama; all pitches and structure are estimated",
+    "facade": "April 2026 exact-address panorama directly supports two connected red-brick masses, west-facing gabled wing, white-column portico, red entry door, pale-trim sash windows/shutters and dormers; dimensions and hidden details estimated",
+    "interior": "schematic lower-floor common room, dining, kitchen, bedrooms, bathrooms and circulation informed by historical 2012 program description; not a measured plan"
+  },
+  "validation": {
+    "asset_collection_objects": [
+      "House_301841254"
+    ],
+    "object_count": 1,
+    "materials": 12,
+    "preview_exterior": "audit/beta_sigma_psi/beta_sigma_psi_exterior.png",
+    "preview_interior": "audit/beta_sigma_psi/beta_sigma_psi_interior.png",
+    "saved": "fresh-open validation passed with Blender 5.2.3",
+    "fresh_open_validation_path": "audit/beta_sigma_psi/reopen_verification.json",
+    "fresh_open_passed": true,
+    "fresh_open_reopened_file": "C:\\Users\\Tobin\\Documents\\Blender\\PurdueMap\\modular\\buildings\\massing_house_301841254_29ab02d.blend",
+    "evaluated_vertices": 3538,
+    "evaluated_polygons": 2611,
+    "evaluated_triangle_estimate": 5280,
+    "asset_bounds_world_m": [
+      [
+        -300.47247314453125,
+        -275.0757141113281
+      ],
+      [
+        278.157470703125,
+        301.62567138671875
+      ],
+      [
+        -0.15000000596046448,
+        9.0
+      ]
+    ]
+  },
+  "edits": [
+    "Replaced the single 16 m placeholder block with the exact official GIS FID 793 footprint.",
+    "Added estimated two-storey wall envelope, photo-guided west facade, gabled wing, white-column portico, red entry, window rhythm, shallow roof and dormers.",
+    "Added schematic lower-floor shared-house room plan based on historical exact-address program evidence.",
+    "No campus position, origin, collection, object name or asset path was changed."
+  ],
+  "limitations": [
+    "GIS vertex-derived area/perimeter conflict with the API Shape__Area/Length attributes; the discrepancy remains unresolved metadata and the polygon vertices remain the geometry authority.",
+    "GIS NUM_LEVELS=1 conflicts with exact-address historical multi-floor bathroom evidence and the two-storey current panorama; story count and all heights remain estimates.",
+    "No measured elevations or as-built interior plan were located. Roof dimensions, facade dimensions, concealed elevations and room arrangement are approximate."
+  ]
+}

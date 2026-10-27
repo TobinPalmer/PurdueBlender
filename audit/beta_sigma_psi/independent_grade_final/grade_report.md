@@ -1,0 +1,16 @@
+# Independent grade: Beta Sigma Psi
+
+**Score: 8.80/10 — pass**
+
+- **Correct identity and source-backed footprint**: 1.85/2.0. Official Purdue GIS FeatureServer FID 793 identifies Beta Sigma Psi at 525 University St; exact-address April 2026 Street View image shows the Beta Sigma Psi roadside sign and house. The 14-vertex Purdue GIS ring is used directly for the foundation/wall plan. This evaluator independently computes 410.59 m² and 87.94 m from the published WGS84 vertices; the saved EPSG:2968 check computes 410.79 m² and 87.96 m.
+- **Position, orientation, and scale/dimensions**: 1.75/2.0. Asset is saved in the established campus-world massing coordinate frame with identity object transform. Plan-source bounding dimensions from the 14-point ring are approximately 21.51 × 22.99 m; builder script converts each authoritative GIS vertex with the project conversion and uses the west-facing front edge indicated by the Street View vantage. Reopened model geometry bounds are [[-300.47247314453125, -275.0757141113281], [278.157470703125, 301.62567138671875], [-0.15000000596046448, 9.0]] m.
+- **Evidence-backed height, floors, and roof form**: 1.50/2.0. The saved current Street View pano visibly supports two above-grade facade levels, a prominent left gable, a shallow dark roof and multiple small dormers. The model includes the observed two-level arrangement, left gable, dark shallow roof, dormers and a closed roof deck. The exact-address 2012 listing says bathrooms occur on each floor, providing additional program support.
+- **Facade, entrance, and distinctive architecture**: 1.80/2.0. Direct exact-address Street View supports the modeled warm red brick, pale window trim, dark shutters, white-column portico, red front door, left-facing gabled wing and roof dormers. The exterior render reproduces these features with procedural brick and roof textures. The interior cutaway shows schematic floors/rooms and circulation rather than a single solid block.
+- **Modular export, portability, and evidence completeness**: 1.90/2.0. Fresh-open Blender session confirms the expected asset/scene and Asset_massing_house_301841254_29ab02d collection, one identity-transform mesh named House_301841254, 12 material slots, 2 materials with procedural brick nodes, no modifiers, no external image dependencies, and a nonzero evaluated mesh (3538 vertices). Saved evidence includes current panorama source snapshot plus exterior/interior views and coordinate/GIS provenance.
+
+## Findings
+
+- Official Shape__Area/Shape__Length fields (709.77, 115.63) materially disagree with polygon-derived metrics; the model appropriately follows the polygon vertices, but that field discrepancy remains unresolved.
+- No surveyed wall registration or independent residual overlay is provided; the project’s local geographic conversion is approximate, and full model bounds include roof/portico projections outside the GIS wall polygon.
+- GIS NUM_LEVELS/CountOfFlo fields report one level, in conflict with the current two-level facade and historical listing. Wall/eave/ridge/gable heights and roof pitches are estimated; no measured elevations or plans were found.
+- Hidden elevations and precise opening/column dimensions are not measured; the interior layout is schematic and is not validated by a floor plan.
