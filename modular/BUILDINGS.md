@@ -219,6 +219,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Phi Delta Theta | [massing_phi_delta_theta_258cddd.blend](buildings/massing_phi_delta_theta_258cddd.blend) | 313 |
 | Pi Kappa Alpha (Pike) | [massing_house_301841252_e4f8f05.blend](buildings/massing_house_301841252_e4f8f05.blend) | 608 |
 | Pi Kappa Phi (Omega) | [massing_pi_kappa_phi_50e4645.blend](buildings/massing_pi_kappa_phi_50e4645.blend) | 239 |
+| Phi Kappa Tau | [massing_phi_kappa_tau_139b9d7.blend](buildings/massing_phi_kappa_tau_139b9d7.blend) | 1 |
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
 | Purdue University Daniel Turf Center | [massing_purdue_university_daniel_turf_center_e69b7da.blend](buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | 1 |
 | Purdue Village Administration Building | [massing_purdue_village_administration_building_3faae6c.blend](buildings/massing_purdue_village_administration_building_3faae6c.blend) | 1 |
@@ -231,6 +232,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Student Health Center (PUSH) | [massing_student_health_center_push_1200c3b.blend](buildings/massing_student_health_center_push_1200c3b.blend) | 1 |
 | Telecommunications Building (TEL) | [massing_telecommunications_building_tel_8dfaccf.blend](buildings/massing_telecommunications_building_tel_8dfaccf.blend) | 1 |
 | Twin Pines Cooperative | [massing_twin_pines_cooperative_8f606f9.blend](buildings/massing_twin_pines_cooperative_8f606f9.blend) | 1 |
+| Triangle | [massing_triangle_fraternity_8477ad9.blend](buildings/massing_triangle_fraternity_8477ad9.blend) | 1 |
 | Union Club Hotel | [massing_union_club_hotel_0d22460.blend](buildings/massing_union_club_hotel_0d22460.blend) | 28 |
 
 The Caretaker’s Cottage retains campus-world coordinates. Its 8.1/10 independent grade matches all ten OSM wall/base points within 0.000058 m and supports the porch from official library and city imagery. Wall and ridge heights are estimates; the LiDAR roof envelope differs from the OSM wall footprint, and roof junctions/openings remain approximate. See [Caretaker’s Cottage grade](../audit/massing_the_caretaker_s_cottage_6b24af9/independent_grade_r2.json).
@@ -322,3 +324,7 @@ Sigma Nu retains campus-world coordinates. Its 8.0/10 independent grade confirms
 Sigma Phi Epsilon retains campus-world coordinates. Its 8.65/10 independent grade confirms OSM way 301841250 and a 21-point shell-ring match within 0.000021 m. The chapter photo and facility page support the multi-wing brick facade and three occupied levels; dimensions and hidden elevations remain estimated. See [Sigma Phi Epsilon grade](../audit/sigma_phi_epsilon/independent_grade_r3/independent_grade_r3.json).
 
 Theta Chi retains campus-world coordinates. Its 8.5/10 independent grade verifies Purdue GIS FID 760 at 800 David Ross Rd and matches the 10-point ground ring within 0.000049 m. Official exterior photos support the two-level brick facade and three-bay arched porch; height, roof details, facade bearing, and unseen elevations remain estimated. The master integration handoff is in [TODO.md](../TODO.md); see the [Theta Chi grade](../audit/theta_chi/independent_grade/grade_result.json).
+
+Triangle Fraternity retains campus-world coordinates. Its 8.0/10 independent grade verifies Purdue GIS FID 777 / SOTRI; the 20-point shell matches within 0.000014 m, and a separate 2018 IndianaMap outline corroborates the broad footprint (IoU 0.856). The total height and visible floor count are estimates; the simple facade omits some photo-visible articulation. Tobin must integrate the asset and verify its single linked instance; see the [Triangle grade](../audit/triangle/independent_grade/result.json) and [TODO.md](../TODO.md).
+
+Phi Kappa Tau retains campus-world coordinates corrected to Purdue GIS FID 820 at 416 N Chauncey. Its 8.3/10 independent grade verifies the six-point structural ring within 0.000019 m and the asset reopens in Blender 5.2.3. Current chapter and alumni sources reconcile FID 820's historic Theta Tau label; FID 856 at 1307 Tower is a separate Phi Kappa Psi crosswalk conflict. Height, roof pitch, and dormer proportions remain estimated. Tobin must replace/reconcile the older FID 820 candidate assets with the corrected model and verify one linked instance; see the [Phi Kappa Tau grade](../audit/phi_kappa_tau/independent_grade/independent_grade_result.json) and [crosswalk evidence](../audit/phi_kappa_tau/crosswalk_findings.md).
