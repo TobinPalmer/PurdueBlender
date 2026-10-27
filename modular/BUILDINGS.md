@@ -59,7 +59,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | First Street Towers, Central (FSTC) | [massing_first_street_towers_central_fstc_929924d.blend](buildings/massing_first_street_towers_central_fstc_929924d.blend) | 1 |
 | First Street Towers, East (FSTE) | [massing_first_street_towers_east_fste_c9b22d3.blend](buildings/massing_first_street_towers_east_fste_c9b22d3.blend) | 87 |
 | First Street Towers, West (FSTW) | [massing_first_street_towers_west_fstw_b6c3bbe.blend](buildings/massing_first_street_towers_west_fstw_b6c3bbe.blend) | 32 |
-| Felix Haas Hall | [felix_haas_hall.blend](buildings/felix_haas_hall.blend) | 879 |
+| Felix Haas Hall ([8.4/10](../audit/batch3_haas/independent_grade_round12/result.json); master fresh-open PASS 2026-10-27) | [felix_haas_hall.blend](buildings/felix_haas_hall.blend) | 919 |
 | Frieda Parker Hall (R2 independently graded 8.5/10; accepted) | [frieda_parker_hall.blend](buildings/frieda_parker_hall.blend) | 541 |
 | Hansen Life Sciences (R1 independently graded 8.0/10; accepted) | [hansen_life_sciences.blend](buildings/hansen_life_sciences.blend) | 816 |
 | Hicks Library (R2 independently graded 8.5/10; accepted) | [hicks_library.blend](buildings/hicks_library.blend) | 343 |
@@ -128,14 +128,14 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Convergence Center for Innovation and Collaboration | [convergence_center.blend](buildings/convergence_center.blend) | 894 |
 | Dauch Alumni Center (R3 independently graded 8.45/10; accepted) | [dauch_alumni_center.blend](buildings/dauch_alumni_center.blend) | 663 |
 | David and Bonnie Brunner Farm Animal Hospital ([8.4/10](../audit/brunner_farm_animal_hospital/independent_grade_r2/result.json); master fresh-open PASS 2026-10-27) | [david_and_bonnie_brunner_farm_animal_hospital.blend](buildings/david_and_bonnie_brunner_farm_animal_hospital.blend) | 147 |
-| Drew and Brittany Brees Student Athletic Academic Center | [brees_student_athletic_academic_center.blend](buildings/brees_student_athletic_academic_center.blend) | 97 |
+| Drew and Brittany Brees Student Athletic Academic Center ([8.5/10](../audit/batch_b_buildings/brees_student_athletic_academic_center_independent_grade_r2/result.json); master fresh-open PASS 2026-10-27) | [brees_student_athletic_academic_center.blend](buildings/brees_student_athletic_academic_center.blend) | 106 |
 | Flex Lab (R2 independently graded 8.4/10; accepted) | [flex_lab.blend](buildings/flex_lab.blend) | 407 |
 | Ford Dining Court | [ford_dining_court.blend](buildings/ford_dining_court.blend) | 69 |
 | France A. Córdova Recreational Sports Center | [massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend](buildings/massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend) | 199 |
 | Turf Recreation Exercise Center (TREC) | [massing_turf_recreation_exercise_center_9622f45.blend](buildings/massing_turf_recreation_exercise_center_9622f45.blend) | 274 |
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](buildings/hall_for_discovery_and_learning_research.blend) | 396 |
 | The Church of Jesus Christ of Latter-day Saints Institute of Religion | [massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend](buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | 1 |
-| Heine Pharmacy | [heine_pharmacy.blend](buildings/heine_pharmacy.blend) | 133 |
+| Heine Pharmacy ([8.5/10](../audit/heine_pharmacy/independent_grade_r2/result.json); master fresh-open PASS 2026-10-27) | [heine_pharmacy.blend](buildings/heine_pharmacy.blend) | 108 |
 | Horticulture Building ([8.3/10](../audit/horticulture_building/independent_grade_r3/result.json); master fresh-open PASS 2026-10-27) | [horticulture_building.blend](buildings/horticulture_building.blend) | 39 |
 | Krach Leadership Center | [krach_leadership_center.blend](buildings/krach_leadership_center.blend) | 36 |
 | Lambert Fieldhouse | [lambert_fieldhouse.blend](buildings/lambert_fieldhouse.blend) | 932 |

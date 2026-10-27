@@ -1,0 +1,80 @@
+{
+  "building": "Drew and Brittany Brees Student Athletic Academic Center",
+  "asset": "modular/buildings/brees_student_athletic_academic_center.blend",
+  "asset_sha256_evaluated": "af9dbcb8ae17d42f827799bf8814d1c0af1e793f6915da9ce8be59081c40ce96",
+  "expected_sha256": "af9dbcb8ae17d42f827799bf8814d1c0af1e793f6915da9ce8be59081c40ce96",
+  "independent_grade": true,
+  "score": 7.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": false,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "Official Purdue ArcGIS FID 255 names Drew & Brittany Brees Student Athletic Center and the raw WGS84 feature is preserved. The described 26-vertex outline drives the shell. I confirmed the stable asset and FID fields in the saved-file verification. The source service supplies no survey date/tolerance, and I did not independently recover a surveyed wall-line comparison.",
+      "findings": "Identity is well supported; the footprint source is authoritative but its wall-versus-roof boundary and accuracy tolerance are unknown."
+    },
+    {
+      "name": "Position, orientation and dimensions",
+      "score": 1.4,
+      "max_score": 2,
+      "evidence": "The reopened asset origin is [-243.35271339058767, 745.9921385884661] and equals both the manifest and GIS-derived evidence origin; horizontal origin error is 0.000000 m. The shell is retained in the local frame. One official oblique facade photo supports broad front direction, but it does not establish surveyed bearing or exact dimensions.",
+      "findings": "Placement/origin is verified to the project transform. Front bearing and feature orientation remain photo-interpreted, and the broad local bounds alone do not prove each structural dimension."
+    },
+    {
+      "name": "Height, floors and roof",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": "Purdue GIS reports two levels; the model represents two above-grade floors and an approximately 11.5 m envelope with a flat roof. The legacy extrusion field is undocumented and the evidence correctly labels height as estimated. The reference photo is consistent with a low, flat-roofed two-storey academic wing.",
+      "findings": "Floor count and broad roof form have support, but absolute height and roof elevations remain estimates; no measured section or LiDAR comparison was supplied."
+    },
+    {
+      "name": "Facade, entrances and distinctive architecture",
+      "score": 1.2,
+      "max_score": 2,
+      "evidence": "The rendered model has red brick, a dark horizontal upper band, narrow dark windows, an ivy/banner bay, gold lettering, and a schematic entry. These features correspond to the cited official event photograph. In direct visual comparison, the reference has a substantially more prominent deep charcoal ribbed band, a large photo-composite banner with imagery, and much taller/slender window strips. The model substitutes text on a dark rectangle for the recognizable banner graphic; its openings read as short isolated panes in the supplied front render.",
+      "findings": "The material palette and broad composition are improved and source-based, but some of the most recognizable elevation details remain simplified or proportionally weak. Improve the banner imagery, increase the depth/height and horizontal rib definition of the dark upper cladding, and make the window strips match the photo proportions before claiming close facade fidelity."
+    },
+    {
+      "name": "Modular export, portability and evidence",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Fresh-open PASS for the exact saved SHA af9dbcb8ae17d42f827799bf8814d1c0af1e793f6915da9ce8be59081c40ce96; expected stable collection is present; the manifest/evidence/reopened origin all agree; 105 objects/102 meshes and 13 node materials are reported; no external image paths were found. Evidence preserves the official GIS response, renovation-plan PDF/page, and official photo; schematic interior limitations are stated.",
+      "findings": "Packaging and evidence are strong. The evaluation does not treat object density or the builder\u2019s own packaging verifier as evidence of architectural accuracy."
+    }
+  ],
+  "evidence": {
+    "fresh_open_verification": "audit/batch_b_buildings/brees_student_athletic_academic_center_fresh_open.json",
+    "building_evidence": "audit/batch_b_buildings/brees_student_athletic_academic_center_evidence.json",
+    "official_gis_snapshot": "audit/batch_b_buildings/brees_student_athletic_academic_center_gis_feature.json",
+    "renovation_plan": "audit/batch_b_buildings/brees_student_athletic_academic_center_2018_renovation_plan.pdf",
+    "visual_reference": "audit/batch_b_buildings/brees_student_athletic_academic_center_reference_2026-10-27.jpg",
+    "renders": [
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_front.png",
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_oblique.png",
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_top.png",
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_fresh_open.png"
+    ],
+    "manifest_origin_xy_m": [
+      -243.35271339058767,
+      745.9921385884661
+    ],
+    "reopened_origin_xy_m": [
+      -243.35271339058767,
+      745.9921385884661
+    ],
+    "origin_error_m": 0.0,
+    "fresh_open_status": "PASS",
+    "fresh_open_errors": [],
+    "external_image_texture_paths": [],
+    "rubric_total_matches": true
+  },
+  "findings": [
+    "The asset is safely packaged and correctly anchored to the recorded local placement, but that does not compensate for the remaining facade mismatch.",
+    "The exterior reference photo has a large inset photographic champions banner; the model currently renders only a dark text plaque.",
+    "The source photo shows long, narrow window strips and a broad ribbed charcoal upper facade band; these proportions are not yet convincing in the front render.",
+    "Interior room placement is schematic because the renovation plan is not georegistered; it should remain labeled schematic."
+  ]
+}

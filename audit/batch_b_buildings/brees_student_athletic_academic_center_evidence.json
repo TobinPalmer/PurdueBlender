@@ -3,7 +3,7 @@
   "manifest_massing_id": "massing_drew_and_brittany_brees_student_athletic_academic_center_bres_da89033",
   "detailed_collection": "Asset_brees_student_athletic_academic_center",
   "asset_file": "modular/buildings/brees_student_athletic_academic_center.blend",
-  "retrieved_date": "2026-10-22",
+  "retrieved_date": "2026-10-27",
   "official_gis": {
     "provider": "Purdue University campus GIS ArcGIS FeatureServer, BuildingShapesZip4 layer 0",
     "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -35,36 +35,39 @@
     "uncertainty": "GIS service gives no survey tolerance/date; vertex accuracy and wall-to-outline association unverified; overhangs not represented."
   },
   "architectural_references": {
-    "published_facts": "Athletics academic support, study/tutoring and computer center; 2004 opened; expanded/renovated 2012 and 2019. Reference shows red brick with ivy/gold lettering; massing is 2 GIS levels; height is estimated.",
+    "published_facts": "Purdue Athletics identifies the center as academic support for student-athletes and documents 2012 and 2019 renovations. Purdue GIS FID 255 reports two levels and 33 in its legacy extrusion field; that field has no documented unit/datum here, so height remains estimated. Purdue identifies the attached Holloway Gymnasium and the 2018 Board of Trustees plan shows group study rooms, tutoring, an open study/Vanguard hall, mentor lockers, and dividable classrooms. The official event photo supports red brick, dark horizontal upper cladding, climbing ivy, an athlete banner and gold facade lettering. Plan-derived room locations and the gym layout are schematic because the PDF is not georegistered to the GIS footprint.",
     "source_urls": [
       "https://purduesports.com/sports/2018/5/17/acad-services-brees-student-athlete-acad-center-html.aspx",
       "https://events.purdue.edu/drew_and_brittany_brees_student-athlete_academic_center",
-      "https://www.purdue.edu/operations/emergency-preparedness/bres/"
+      "https://www.purdue.edu/bot/meetings/past-meetings/2018/02.%20feb/pfc/Brees%20Student-Athlete%20Academic%20Center%20First%20Floor%20Renovation.pdf",
+      "https://www.purdue.edu/operations/emergency-preparedness/bres/",
+      "https://purduesports.com/news/2019/04/01/beneath-the-surface",
+      "https://purduesports.com/holloway-gymnasium-2"
     ],
     "visual_reference_url": "https://localist-images.azureedge.net/photos/40100423165002/card%402x/165f2d98622def2b85a5a24a280b7b72bbf40b7a.jpg",
     "google_maps_streetview": "Not directly inspected in this subtask; image sources used where cited; model detail claims limited accordingly.",
-    "revision_sources": [
-      {
-        "title": "Purdue Student Life \u2014 Brees Student Athletic Academic Center image",
-        "url": "https://localist-images.azureedge.net/photos/40100423165002/card%402x/165f2d98622def2b85a5a24a280b7b72bbf40b7a.jpg",
-        "accessed": "2026-10-24",
-        "observation": "Official image supports low brick massing, ivy, and gold building identity; gold name treatment, study glazing and visible desks are schematic details."
-      }
-    ]
+    "source_snapshots": {
+      "official_event_photo": "audit/batch_b_buildings/brees_student_athletic_academic_center_reference_2026-10-27.jpg",
+      "board_of_trustees_renovation_plan_pdf": "audit/batch_b_buildings/brees_student_athletic_academic_center_2018_renovation_plan.pdf",
+      "board_plan_page_3_render": "audit/batch_b_buildings/brees_plan_page3.png",
+      "official_2019_athletics_article": "https://purduesports.com/news/2019/04/01/beneath-the-surface",
+      "official_holloway_gymnasium_page": "https://purduesports.com/holloway-gymnasium-2"
+    }
   },
   "modeled_interpretation": {
     "above_grade_stories": 2,
     "approximate_wall_height_m": 11.5,
-    "height_evidence": "estimated or mixed: Athletics academic support, study/tutoring and computer center; 2004 opened; expanded/renovated 2012 and 2019. Reference shows red brick with ivy/gold lettering; massing is 2 GIS levels; height is estimated.",
+    "height_evidence": "estimated or mixed: Purdue Athletics identifies the center as academic support for student-athletes and documents 2012 and 2019 renovations. Purdue GIS FID 255 reports two levels and 33 in its legacy extrusion field; that field has no documented unit/datum here, so height remains estimated. Purdue identifies the attached Holloway Gymnasium and the 2018 Board of Trustees plan shows group study rooms, tutoring, an open study/Vanguard hall, mentor lockers, and dividable classrooms. The official event photo supports red brick, dark horizontal upper cladding, climbing ivy, an athlete banner and gold facade lettering. Plan-derived room locations and the gym layout are schematic because the PDF is not georegistered to the GIS footprint.",
     "materials": [
-      "procedural textured brick / facade masonry",
-      "procedural limestone/painted metal",
-      "procedural glazing",
-      "procedural roof metal/membrane",
-      "schematic concrete and interior floor"
+      "procedural running-bond red brick with warm mortar at approximately real brick scale",
+      "dark charcoal horizontal facade cladding/ribs on the upper band, based on the official exterior photo",
+      "narrow dark metal window frames and blue-charcoal glazing",
+      "gold facade lettering and a packed original illustrated athlete banner graphic with champions/scholars/citizens lettering; custom graphic is inspired by the official Purdue exterior photo and contains no copied athlete photograph",
+      "native low-poly ivy leaves over an irregular green backing panel",
+      "concrete entry steps and schematic interior finishes"
     ],
-    "interior": "schematic use-based furniture/zone cues only; no claim of architectural room layout except Heine first-floor circulation/lecture/retail cues follow published level-one plan",
-    "object_count": 8,
+    "interior": "Plan-derived but not georegistered schematic zones: tutoring, group-study rooms, an open Vanguard/study hall, classrooms, mentor/locker area, and an attached Holloway gym court with volleyball lines and bleachers. The gym/academic split is assigned by reading the unreferenced PDF diagram east/west and is uncertain; room placement, partitions, furniture, court scale, and bleachers are not surveyed.",
+    "object_count": 106,
     "local_bounds_m": [
       [
         -36.45840576500717,
@@ -79,25 +82,57 @@
         11.5
       ]
     ],
-    "geometry_method": "source polygon extruded as structural shell with story-level glazing, facade banding, building-specific massing and entrance cues; roof form as identified by image/source or explicitly estimated"
+    "geometry_method": "The 26-vertex FID 255 outline is preserved as the structural shell in the local coordinate frame. A two-floor brick envelope, narrow wall glazing, photo-supported dark upper cladding, ivy/banner/sign bay, and a plan-led north entry are modeled. Attached Holloway gym interior is included schematically without an unsupported external rooftop tower. Height and architectural subdivisions remain estimated."
   },
   "validation": {
     "saved_and_reopened": true,
-    "reopen_check": "Saved, reopened from the saved .blend in Blender 5.2.3, and rerendered from that reopened scene; stable collection, placement_origin_xy_m, geometry, materials and source-file hash checked.",
-    "preview_path": "audit\\batch_b_buildings\\brees_student_athletic_academic_center_preview.png",
+    "reopen_check": "Separate Blender 5.2.3 LTS process opened the saved asset, verified FID 255, stable export collection, exact expected campus origin, object/material inventory, procedural material node trees, and no external image paths; it rerendered the saved scene.",
+    "preview_path": "audit/batch_b_buildings/brees_student_athletic_academic_center_fresh_open.png",
     "texture_nodes_connected": true,
-    "source_sha256_after_save_and_render": "9ddb54c7b128dbbe53d58054e9e29f391acd6d3077913433e010825129b7a73c"
+    "source_sha256_after_save_and_fresh_open": "7e5f8b8c953911749e2b9f13453b9f6813657b45f4bfb55934c42bc5a5c4fc44",
+    "object_count": 106,
+    "mesh_count": 104,
+    "material_count": 15,
+    "external_image_texture_paths": [],
+    "packed_images": [
+      "brees_student_athletic_academic_center_banner_graphic.png"
+    ],
+    "unpacked_images": [],
+    "banner_art_path": "audit/batch_b_buildings/brees_student_athletic_academic_center_banner_graphic.png",
+    "banner_image_is_packed_into_blend": true,
+    "detail_clearance_checks": {
+      "raised_rib_to_continuous_backing_offset_m": 0.059999999999999984,
+      "banner_art_plane_clearance_from_backing_plaque_m": 0.03,
+      "upper_window_max_z_m": 8.84749984741211,
+      "upper_cladding_bottom_z_m": 8.9,
+      "window_to_band_clearance_m": 0.05250015258789098,
+      "passed": true,
+      "note": "Targeted clearance checks for repaired facade elements; other shell/detail overlaps are intentional. This is not a full-scene BVH scan."
+    },
+    "facade_preview_path": "audit/batch_b_buildings/brees_student_athletic_academic_center_front.png",
+    "oblique_preview_path": "audit/batch_b_buildings/brees_student_athletic_academic_center_oblique.png",
+    "top_preview_path": "audit/batch_b_buildings/brees_student_athletic_academic_center_top.png",
+    "banner_detail_preview_path": "audit/batch_b_buildings/brees_student_athletic_academic_center_banner_detail.png",
+    "verification_report_path": "audit/batch_b_buildings/brees_student_athletic_academic_center_fresh_open.json"
   },
   "revision": {
-    "date": "2026-10-24",
+    "date": "2026-10-27",
     "notes": [
-      "Expanded study-commons glazing on the visible front and long elevation; enlarged gold Brees name and placed it with restrained ivy at the academic entry.",
-      "Added occupied study-table cues visible through the glazing while retaining the low two-story profile and reduced parapet.",
-      "Preserved GIS footprint; exact sign size, ivy extent and study furniture are schematic.",
-      "Added a warm schematic vestibule cue behind the glazed entry, plus a short entry walk and paired low planters. Interior room layout, site furniture, and planting placement are interpretive, not survey-derived."
+      "Corrected the dormant style mismatch so the Brees-specific facade and interior logic is used.",
+      "Replaced stretched facade color variation with axis-aware, real-scale procedural running-bond brick and connected sash framing.",
+      "Added the photo-supported dark horizontal upper cladding, irregular dense ivy bay, banner text, and gold facade lettering.",
+      "R2: replaced the text plaque with a packed original athlete-collage banner graphic; no photo was copied into the artwork.",
+      "R2: extended and narrowed the slit windows, and added a continuous dark cladding backing with raised horizontal ribs.",
+      "R2 targeted intersection/clearance checks confirm the ribs and banner panel are layered clear of their backing surfaces and upper windows finish below the upper band.",
+      "Added plan-led schematic academic zones and an attached Holloway gym interior; removed an unsupported roof tower.",
+      "Preserved the source-derived 26-point structural footprint and exact project campus origin.",
+      "Independent grading is still required; this verifier checks asset packaging and fresh-open integrity, not architectural accuracy."
     ],
     "campus_origin_preserved": true,
-    "source_only": true,
-    "preview_path": "audit\\batch_b_buildings\\brees_student_athletic_academic_center_preview.png"
+    "preview_paths": [
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_front.png",
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_oblique.png",
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_top.png"
+    ]
   }
 }

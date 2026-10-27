@@ -1,0 +1,80 @@
+{
+  "building": "Drew and Brittany Brees Student Athletic Academic Center",
+  "asset": "modular/buildings/brees_student_athletic_academic_center.blend",
+  "asset_sha256_evaluated": "7e5f8b8c953911749e2b9f13453b9f6813657b45f4bfb55934c42bc5a5c4fc44",
+  "expected_sha256": "7e5f8b8c953911749e2b9f13453b9f6813657b45f4bfb55934c42bc5a5c4fc44",
+  "independent_grade": true,
+  "score": 8.5,
+  "max_score": 10,
+  "pass_threshold": 8,
+  "passed": true,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Official Purdue GIS FID 255 names Drew & Brittany Brees Student Athletic Center. I opened the saved asset and compared its 26-edge structural base boundary with the raw WGS84 source ring under the documented project transform: maximum source-to-model boundary deviation 0.00000127 m and model-to-source deviation 0.00000170 m. The asset retains the FID 255 custom property.",
+      "findings": "Identity and geometric outline match are strong. Purdue supplies no survey tolerance or source date, and the feature could trace roof edge rather than surveyed wall line."
+    },
+    {
+      "name": "Position, orientation and dimensions",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "The exact project origin [-243.35271339058767, 745.9921385884661] is identical in evidence, manifest and reopened collection metadata (0 m discrepancy). GIS ring and structural shell are the same size/shape within the comparison above. The reference photo supports a facade orientation, though there is no independent survey bearing or dimension set.",
+      "findings": "Origin and footprint dimensions are verified against this local GIS transform. Facade bearing remains inferred from imagery and the north-side entry is plan-interpreted."
+    },
+    {
+      "name": "Height, floors and roof",
+      "score": 1.3,
+      "max_score": 2,
+      "evidence": "Purdue GIS lists two levels; the current shell spans 11.5 m and the model uses two above-grade levels with a low flat roof, broadly consistent with the official image. The GIS extrusion value has no documented unit/datum and the evidence labels height as estimated.",
+      "findings": "The floor count and roof silhouette are plausible, but no reliable elevation, measured roof height, or section source verifies the 11.5 m height."
+    },
+    {
+      "name": "Facade, entrances and distinctive architecture",
+      "score": 1.7,
+      "max_score": 2,
+      "evidence": "The independently inspected front and banner-detail renders now show the photo-supported red brick, broad continuous dark ribbed band, ivy, gold two-line identification, and a custom athlete-collage/P banner graphic. Direct Blender inspection found 52 facade glazing quads, each 2.35 m tall; this matches the long slit-window proportion in the reference. The dark backing is a continuous 26-face perimeter layer with 312 raised rib faces.",
+      "findings": "R2 resolves the prominent R1 facade gaps. The banner artwork is an original stylized interpretation rather than a pixel match, and the exact north-side entrance surround and facade bearing remain uncertain."
+    },
+    {
+      "name": "Modular export, portability and evidence",
+      "score": 1.9,
+      "max_score": 2,
+      "evidence": "Blender 5.2.3 opened the exact saved SHA 7e5f8b8c953911749e2b9f13453b9f6813657b45f4bfb55934c42bc5a5c4fc44 in a separate background process. The stable `Asset_brees_student_athletic_academic_center` collection is present, and fresh-open validation passes. The illustrated banner is packed in the blend; the direct asset probe confirms it is used by its material and packed, with no external image path recorded. The renovation-plan-derived interior objects are consistently prefixed `SCHEMATIC_ONLY_`; GIS, plan, official photo and uncertainty records are preserved.",
+      "findings": "Packaging and provenance are strong. The renovation plan cannot be georegistered, so room layout and Holloway court placement remain visual cues, not verified interiors."
+    }
+  ],
+  "evidence": {
+    "prior_grade_context": "audit/batch_b_buildings/brees_student_athletic_academic_center_independent_grade_r1/result.json (used only to identify repaired shortcomings; R2 score assessed afresh)",
+    "fresh_open_verification": "audit/batch_b_buildings/brees_student_athletic_academic_center_fresh_open.json",
+    "direct_saved_asset_probe": "audit/batch_b_buildings/brees_student_athletic_academic_center_independent_grade_r2/direct_asset_probe.json",
+    "building_evidence": "audit/batch_b_buildings/brees_student_athletic_academic_center_evidence.json",
+    "gis_snapshot": "audit/batch_b_buildings/brees_student_athletic_academic_center_gis_feature.json",
+    "renovation_plan": "audit/batch_b_buildings/brees_student_athletic_academic_center_2018_renovation_plan.pdf",
+    "photo_reference": "audit/batch_b_buildings/brees_student_athletic_academic_center_reference_2026-10-27.jpg",
+    "renders": [
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_front.png",
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_oblique.png",
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_top.png",
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_banner_detail.png",
+      "audit/batch_b_buildings/brees_student_athletic_academic_center_fresh_open.png"
+    ],
+    "source_to_model_edge_error_m": 1.2683054394488361e-06,
+    "model_to_source_edge_error_m": 1.6960027213381666e-06,
+    "glazing_heights_m": [
+      2.35
+    ],
+    "glazing_quad_count": 52,
+    "upper_cladding_backing_faces": 26,
+    "rib_faces": 312,
+    "packed_banner_asset": true,
+    "origin_matches_manifest_and_reopened_asset": true,
+    "exact_sha_and_fresh_open_pass": true
+  },
+  "findings": [
+    "R2 corrects the R1 facade issues: packed custom athlete collage, substantially more prominent continuous ribbed cladding, and tall slit windows now correspond closely to the cited photo.",
+    "GIS shell outline matches the official FID 255 ring under the project transform to sub-micrometre edge distance; interpret this as agreement with that feature, not surveyed wall accuracy.",
+    "The 11.5 m height is estimated; the model correctly limits its factual story claim to two above-grade levels and states interior layout is schematic."
+  ]
+}

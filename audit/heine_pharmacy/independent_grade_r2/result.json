@@ -1,0 +1,90 @@
+{
+  "score": 8.5,
+  "max_score": 10.0,
+  "criteria": [
+    {
+      "name": "Identity and source-backed footprint",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": [
+        "Official Purdue GIS layer 0, FID 606 names Robert E. Heine Pharmacy Building / RHPH.",
+        "Independent comparison of its 92-point WGS84 ring (using the documented approximate campus transform and bbox-center origin) with the saved shell’s 22-point base ring found maximum point-to-segment deviation 0.267 m GIS→shell and 0.000002 m shell→GIS. The GIS source supplies no survey date/tolerance, so the project CRS approximation remains a limitation."
+      ],
+      "findings": [
+        "Identity and shell footprint are strongly supported. The small remaining deduction reflects the approximate transform and unsurveyed GIS tolerance."
+      ]
+    },
+    {
+      "name": "Position, orientation, and dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "The current saved asset retains the documented campus placement origin [-193.84218632570293, 259.60496004008974] m and local GIS shell bounds [[-36.168739318847656, 36.168739318847656], [-33.99116516113281, 33.99116516113281], [-1.0, 22.0]] m. R2 fresh-open validation confirms `shell_geometry_preserved=true` and no origin/manifest edit.",
+        "The prior master-sync record verified this origin on the placement marker. R2 did not alter that origin, but an updated master fresh-open check is still due after coordinator sync."
+      ],
+      "findings": [
+        "Local plan and campus anchor remain consistent with the GIS crosswalk. A fresh master-link check after the shared manifest count is corrected remains a coordinator integration step."
+      ]
+    },
+    {
+      "name": "Height, floors, and roof form",
+      "score": 1.25,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue OEP plan supports five above-grade floors plus a G-floor and basement; the model retains the five-level horizontal facade organization. The cited oblique photo supports a flat parapet and limited rooftop mechanical form.",
+        "Structural shell bounds retain Z [-1.0, 22.0] m; the asset’s penthouse/roof details raise total collection bounds to [-1.1799999475479126, 23.52248764038086] m. Absolute levels remain estimated. GIS attributes list 8 levels and roof value 61 with unresolved datum/units, conflicting with the OEP floor description."
+      ],
+      "findings": [
+        "Five above-grade floors are source-supported, but exact absolute height, lower-level exposure, roof datum and mechanical penthouse dimensions remain unverified. Interior floor/room boundaries are deliberately schematic."
+      ]
+    },
+    {
+      "name": "Facade, entrances, and distinctive architecture",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": [
+        "Compared the R2 fresh-open render with the cited 2023-10-18 exterior photo: the selected elevation now has seven tall narrow glazing bays, two long glazed sections per bay, broad pale stone mid-panels, restrained rails, brick fields and horizontal pale courses. The render’s four large stone arches and five substantial piers span a substantial portion of that facade, matching the photo’s defining entrance composition.",
+        "The fresh-open validation reports 14 long glazing faces, 21 broad stone faces, 4 arches, 17.25 m portal width and 7.35 m portal top. No source elevation establishes exact opening sizes or arch dimensions."
+      ],
+      "findings": [
+        "R2 resolves the R1 composition mismatch: window rhythm and arch scale read substantially closer to the one source elevation. Deduct slightly because the photo is oblique/partly occluded, exact dimensions and hidden elevations are unsupported, and the remaining facades are not validated against comparable images."
+      ]
+    },
+    {
+      "name": "Modular export, portability, and complete evidence",
+      "score": 1.75,
+      "max_score": 2.0,
+      "evidence": [
+        "Independent Blender 5.2.3 reopen found stable collection `Asset_heine_pharmacy`, 108 objects / 105 meshes and 18 used materials. The saved SHA matches the R2 verification record; no missing external texture path was found.",
+        "Evidence documents official GIS FID and transform, dated licensed source photo, official OEP floor/use evidence, uncertainties, R2 edits, and exact saved-file hash. Interior cues are explicitly labeled schematic in their object names and evidence."
+      ],
+      "findings": [
+        "The shared manifest still has object_count=133 while the current export contains 108 objects. The asset retains the stable collection and is fresh-open portable; update manifest and run master-link verification during integration.",
+        "No evidence of room-by-room interior accuracy is claimed; schematic labeling is appropriate."
+      ]
+    }
+  ],
+  "evidence": {
+    "asset_path": "modular/buildings/heine_pharmacy.blend",
+    "asset_sha256": "962fe3572903061e9d590759118ea945b28d32c338a0a5f6b8ce40da18e7d9d7",
+    "blender_version": "5.2.3 LTS",
+    "independent_probe_path": "audit/heine_pharmacy/independent_grade_r2/probe.json",
+    "gis_comparison": {
+      "source_ring_vertices": 92,
+      "shell_base_vertices": 22,
+      "gis_to_shell_max_point_to_segment_m": 0.2666673072698401,
+      "shell_to_gis_max_point_to_segment_m": 1.6502005091983395e-06,
+      "local_bbox_center_origin_m": [
+        -193.84218632570298,
+        259.60496004008974
+      ]
+    },
+    "source_photo": "audit/heine_pharmacy/heine_exterior_2023.jpg",
+    "fresh_open_render": "audit/heine_pharmacy/heine_pharmacy_fresh_open_r2.png",
+    "reopen_validation": "PASS"
+  },
+  "findings": [
+    "Passes the independent 8/10 threshold for a detailed exterior asset.",
+    "The main remaining limits are uncertainty in absolute height and unseen facades/interior. Shared manifest object count and fresh master-link verification remain coordinator-owned integration work."
+  ]
+}
