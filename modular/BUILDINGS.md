@@ -102,6 +102,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Winifred Parker Hall | [winifred_parker_hall.blend](buildings/winifred_parker_hall.blend) | 582 |
 | Young Hall (YONG) | [massing_young_hall_yong_cae1b95.blend](buildings/massing_young_hall_yong_cae1b95.blend) | 23 |
 | Yue-Kong Pao Hall | [massing_yue_kong_pao_hall_a3cb766.blend](buildings/massing_yue_kong_pao_hall_a3cb766.blend) | 363 |
+| Zeta Beta Tau | [massing_house_301841332_9b3bd1f.blend](buildings/massing_house_301841332_9b3bd1f.blend) | 12 |
 | Zeta Tau Alpha | [zeta_tau_alpha.blend](buildings/zeta_tau_alpha.blend) | 563 |
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](buildings/zundo_family_dentistry.blend) | 275 |
 
@@ -227,6 +228,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Sigma Alpha Epsilon | [massing_sigma_alpha_epsilon_fid849.blend](buildings/massing_sigma_alpha_epsilon_fid849.blend) | 520 |
 | Sigma Nu | [massing_house_301841330_f58ae87.blend](buildings/massing_house_301841330_f58ae87.blend) | 29 |
 | Sigma Phi Epsilon | [massing_house_301841250_d63b09a.blend](buildings/massing_house_301841250_d63b09a.blend) | 639 |
+| Sigma Pi | [massing_house_301836568_0fbca0e.blend](buildings/massing_house_301836568_0fbca0e.blend) | 266 |
 | Theta Chi | [massing_house_301841328_39f169f.blend](buildings/massing_house_301841328_39f169f.blend) | 1 |
 | Stone Hall (STON) | [massing_stone_hall_ston_d3f479a.blend](buildings/massing_stone_hall_ston_d3f479a.blend) | 1 |
 | Student Health Center (PUSH) | [massing_student_health_center_push_1200c3b.blend](buildings/massing_student_health_center_push_1200c3b.blend) | 1 |
@@ -328,3 +330,7 @@ Theta Chi retains campus-world coordinates. Its 8.5/10 independent grade verifie
 Triangle Fraternity retains campus-world coordinates. Its 8.0/10 independent grade verifies Purdue GIS FID 777 / SOTRI; the 20-point shell matches within 0.000014 m, and a separate 2018 IndianaMap outline corroborates the broad footprint (IoU 0.856). The total height and visible floor count are estimates; the simple facade omits some photo-visible articulation. Tobin must integrate the asset and verify its single linked instance; see the [Triangle grade](../audit/triangle/independent_grade/result.json) and [TODO.md](../TODO.md).
 
 Phi Kappa Tau retains campus-world coordinates corrected to Purdue GIS FID 820 at 416 N Chauncey. Its 8.3/10 independent grade verifies the six-point structural ring within 0.000019 m and the asset reopens in Blender 5.2.3. Current chapter and alumni sources reconcile FID 820's historic Theta Tau label; FID 856 at 1307 Tower is a separate Phi Kappa Psi crosswalk conflict. Height, roof pitch, and dormer proportions remain estimated. Tobin must replace/reconcile the older FID 820 candidate assets with the corrected model and verify one linked instance; see the [Phi Kappa Tau grade](../audit/phi_kappa_tau/independent_grade/independent_grade_result.json) and [crosswalk evidence](../audit/phi_kappa_tau/crosswalk_findings.md).
+
+Sigma Pi retains campus-world coordinates. Its 8.1/10 independent grade verifies the FID 776 roof-plan ring within 0.000017 m; wall height, story count, and LiDAR-derived roof elevations remain estimates. Tobin must replace the existing massing in the master and verify one linked instance; see the [Sigma Pi grade](../audit/sigma_pi/independent_grade/grade_result_r5.json) and [TODO.md](../TODO.md).
+
+Zeta Beta Tau at FID 762 / 900 David Ross retains campus-world coordinates in the existing stable asset. Its 8.5/10 independent grade verifies the transformed GIS roof ring within 0.000043 m; height, two floors, frontage edge, facade, and the Phi Kappa Theta occupancy transition retain uncertainty. Tobin must replace the massing in the master and verify one linked instance; see the [ZBT grade](../audit/zeta_beta_tau/independent_grade/grade_result.json), [crosswalk evidence](../audit/zeta_beta_tau/crosswalk_resolution.md), and [TODO.md](../TODO.md).

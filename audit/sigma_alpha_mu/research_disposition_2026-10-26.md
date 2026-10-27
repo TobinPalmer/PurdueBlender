@@ -38,3 +38,13 @@ Request or locate a current source from **Sigma Eta's chapter/property contact, 
 - Retrieval date for downloaded pages and GIS response: 2026-10-26.
 - Coordinates/CRS and geometry metrics: not applicable; no current GIS candidate was established.
 - Height, floors, facade, roof, and footprint: not modeled; all remain unknown for the present Sigma Eta facility.
+
+## Dated addendum — public address leads (2026-10-26)
+
+The current public evidence strengthens the case that Sigma Eta may have a physical facility, but still does not support a building assignment:
+
+- **Source-backed fact — active chapter:** SAM's [active chapter roll](https://sam.org/fraternity/chapter-roll/) lists Sigma Eta at Purdue. Its [property-management page](https://sam.org/fraternity/housing/) lists **Purdue — Manage Property**, without an address or building identity.
+- **Source-backed public claim — lease:** Sigma Eta's founder and former president states on his [public profile](https://www.linkedin.com/in/neal-ssingh) that he negotiated and secured a chapter-house lease by early 2025. The profile does not give the leased property's address. This is a named individual's account, not an address-confirming SAM or Purdue property record.
+- **Address ruled out:** **1165 W Stadium Avenue** is the mailing address for Purdue's [Tarkington Residence Hall](https://www.housing.purdue.edu/my-housing/options/residence-halls/tarkington.html), as also identified in Purdue's [building emergency plan](https://www.purdue.edu/operations/emergency-preparedness/tark/). It is therefore not evidence of Sigma Eta's chapter facility and should not be used as its address or GIS crosswalk.
+
+**Unresolved inference:** The lease statement and SAM's property-management listing make a current or recently secured chapter facility plausible, but neither identifies the property; the lease's present status is also unconfirmed. No address, GIS feature ID, or building asset can be assigned from these sources. A current address from Sigma Eta, its house corporation, SAM Property Management, or Purdue FSCL—and a parcel/footprint match—remains necessary.
