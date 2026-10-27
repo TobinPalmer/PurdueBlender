@@ -75,7 +75,15 @@
     "Exact facade dimensions, floor-to-floor heights, and total building height have not been surveyed.",
     "Some window spacing, dormer proportions, roof pitches, and unseen elevations remain photo-based estimates.",
     "Permit status and any post-August facade alterations remain unverified.",
-    "Independent grader score is pending."
+    "The independent grader scored the candidate 8.4/10 and passed it; see independent_grade/grade_result.json. The grader could not perform its own Blender reopen, but verified the committed asset SHA and the builder's fresh Blender 5.2.3 reopen log."
   ],
-  "status": "candidate frozen; awaiting independent grade"
+  "independent_grade": {
+    "score": 8.4,
+    "max_score": 10,
+    "pass": true,
+    "result": "independent_grade/grade_result.json",
+    "evaluator": "independent_grade/evaluate_pi_kappa_phi.py",
+    "grader_blender_reopen": "not performed; Blender executable/live instance unavailable to the grader. The grader verified the committed asset hash against the builder's fresh_reopen_validation.log."
+  },
+  "status": "candidate frozen; independently graded pass at 8.4/10"
 }
