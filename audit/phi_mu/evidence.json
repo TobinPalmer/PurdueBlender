@@ -1,0 +1,156 @@
+{
+  "building": "Phi Mu, Delta Epsilon Chapter",
+  "asset_id": "massing_house_301836574_fff1661",
+  "status": "Complete; independently graded 8.75/10 (minimum 8/10 passed)",
+  "source": {
+    "provider": "Purdue University official campus Building Shapes service",
+    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "feature_id": 772,
+    "building_code": "SOFM",
+    "source_name": "Phi Mu",
+    "address": "201 Waldron St",
+    "retrieval_date": "2026-10-26",
+    "source_crs": "EPSG:4326, outSR=4326 explicitly requested",
+    "source_record": "sources/purdue_gis_fid772_raw.json",
+    "reference_status": "Official campus-map polygon; not a certified survey."
+  },
+  "secondary_visual_references": [
+    {
+      "provider": "Purdue University Debris, digitized by Purdue eArchives",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/debris/id/41739",
+      "snapshot": "sources/phi_mu_debris_1965_page.jpg",
+      "use": "1965 yearbook photo supplies house-specific red-brick facade, two main stories, white shutters, central columned portico, and dormered roof; no measurements."
+    }
+  ],
+  "measurements": {
+    "official_source_ring_vertices": 18,
+    "official_polygon_area_attribute_m2": 1385.22265625,
+    "official_polygon_length_attribute_m": 213.23828916727575,
+    "official_local_bounds_xy_m": [
+      -402.618,
+      -375.749,
+      -115.692,
+      -74.883
+    ],
+    "official_num_levels_attribute": 1,
+    "official_extrution_attribute": 12,
+    "height_status": "Estimated; no measured elevation source found.",
+    "gis_source_bounds_xy_m": [
+      -402.6184391084219,
+      -375.7488769717147,
+      -115.69218767069742,
+      -74.88323666992073
+    ],
+    "reopened_evaluated_bounds_xyz_m": [
+      [
+        -402.7784423828125,
+        -375.5888671875
+      ],
+      [
+        -118.2421875,
+        -74.88323974609375
+      ],
+      [
+        0.0,
+        13.199999809265137
+      ]
+    ],
+    "reopened_object": {
+      "name": "House_301836574",
+      "type": "MESH",
+      "collection": "Asset_massing_house_301836574_fff1661",
+      "objects_in_collection": 1,
+      "transform_location": [
+        0,
+        0,
+        0
+      ],
+      "transform_rotation_euler": [
+        0,
+        0,
+        0
+      ],
+      "transform_scale": [
+        1,
+        1,
+        1
+      ],
+      "mesh_vertices": 6092,
+      "mesh_faces": 1469
+    },
+    "base_footprint_comparison": "All 18 distinct source ring XY points found among bottom-wall mesh vertices within 0.0001 m. Architectural additions extend slightly beyond this GIS ring.",
+    "previous_manifest_bounds_xyz_m": [
+      [
+        -402.74859619140625,
+        -375.7449035644531
+      ],
+      [
+        -116.08121490478516,
+        -75.21849822998047
+      ],
+      [
+        0.0,
+        16.0
+      ]
+    ]
+  },
+  "uncertainties": [
+    "Purdue GIS is not a certified survey and publishes no positional accuracy or definition for its level/extrusion fields.",
+    "Two main stories and dormered attic are interpreted from an oblique 1965 photograph while GIS NUM_LEVELS=1 conflicts.",
+    "Eaves/ridge heights, precise roof geometry, facade rhythm and entry bearing remain estimates or unverified.",
+    "The 1929 archive finding aid does not identify an address or provide a view of the original photo; continuity with the current site is uncertain.",
+    "The original massing height was 16 m per manifest, but this was a legacy unverified height; the rebuilt roof ridge is estimated at 13.2 m from the historical photo and is not survey-confirmed.",
+    "The independent grader notes the modeled window surrounds are simpler than the louvered shutters visible in the yearbook image.",
+    "No georeferenced facade elevation establishes the portico/entrance compass bearing."
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not a survey CRS"
+  },
+  "artifacts": {
+    "build_script": "../../modular/buildings/build_massing_house_301836574_fff1661.py",
+    "build_config": "build_config.json",
+    "raw_source": "sources/purdue_gis_fid772_raw.json",
+    "yearbook_photo": "sources/phi_mu_debris_1965_page.jpg",
+    "source_observations": "source_observations.json",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py",
+    "preview_render_script": "validate_asset.py",
+    "preview": "preview.png",
+    "independent_grade": "independent_grade/result.json",
+    "independent_evaluator": "independent_grade/evaluate.py"
+  },
+  "geometry_edits": [
+    "Rebuilt the single assigned House_301836574 mesh from the exact 18-vertex Purdue GIS FID 772 footprint in the prescribed campus coordinate approximation.",
+    "Replaced generic massing with estimated two-main-story brick facade and dormered hipped roof (ridge 13.2 m), while retaining identity object transform and expected asset collection.",
+    "Added illustrative white-trim windows, shutters/casings, central columned portico, entrance, and five dormers based on the 1965 Phi Mu yearbook photograph; entry compass bearing and roof/floor heights are not verified."
+  ],
+  "validation": {
+    "reopened": true,
+    "validation_script": "validate_asset.py",
+    "reopen_report": "reopen_validation.json",
+    "rendered_preview": "preview.png",
+    "external_texture_paths": [],
+    "geometry_and_collection_checks": "Passed: expected asset ID/name/collection, one mesh object, identity transform, all 18 source ring vertices represented."
+  },
+  "independent_grade": {
+    "score": 8.75,
+    "max_score": 10,
+    "status": "pass",
+    "criteria": [
+      "identity and footprint 2.0/2",
+      "position/orientation/dimensions 1.5/2",
+      "height/floors/roof 1.75/2",
+      "facade/entrance 1.5/2",
+      "modular export/evidence 2.0/2"
+    ],
+    "evaluator": "independent_grade/evaluate.py",
+    "result": "independent_grade/result.json",
+    "report": "independent_grade/independent_grade.md",
+    "reviewer": "independent subagent"
+  }
+}

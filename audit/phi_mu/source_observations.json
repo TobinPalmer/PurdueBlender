@@ -1,0 +1,71 @@
+{
+  "building": "Phi Mu, Delta Epsilon Chapter",
+  "retrieval_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 772,
+      "source_name": "Phi Mu",
+      "building_code": "SOFM",
+      "address": "201 Waldron St",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": "EPSG:4326 (WGS 84), outSR=4326 explicitly requested",
+      "raw_snapshot": "sources/purdue_gis_fid772_raw.json",
+      "measurement_method": "18 distinct WGS 84 ring vertices transformed using the repository local-campus approximation; reopened Blender base compared point-by-point.",
+      "observation": "Official map feature FID 772 / SOFM identifies Phi Mu at 201 Waldron St; Shape__Area=1385.22265625 m\u00b2 and Shape__Length=213.23828916727575 m. NUM_LEVELS=1 and Extrution=12 retained as attributes without assumed field conventions.",
+      "uncertainty": "Campus GIS is not a certified survey and publishes no positional accuracy or field definitions for NUM_LEVELS/Extrution."
+    },
+    {
+      "provider": "Purdue University Debris yearbook, eArchives CONTENTdm",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/debris/id/41739",
+      "feature_id": "1965 Debris, Phi Mu page 323",
+      "retrieved": "2026-10-26",
+      "source_date": "1965",
+      "crs": "Not spatial",
+      "raw_snapshot": "sources/phi_mu_debris_1965_page.jpg",
+      "measurement_method": "Contemporary black-and-white yearbook photograph/caption; no dimensions measured.",
+      "observation": "Phi Mu page includes a photograph of its chapter house and homecoming decoration. The image visibly shows a red-brick, two-main-story house with a broad central white columned portico, white shutters and several dormers on a steep dark roof. This is the most specific architectural source found.",
+      "uncertainty": "Photograph is oblique and not georeferenced; exact facade dimensions, current alterations and compass bearing are unknown."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections, J.C. Allen inventory",
+      "url": "https://archives.lib.purdue.edu/fa/MSP25_JC-Allen_inventory.pdf",
+      "feature_id": "25.8.88, Phi Mu Sorority house at Purdue University",
+      "retrieved": "2026-10-26",
+      "source_date": "1929-10-14",
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "measurement_method": "Finding-aid record only; no image or dimensions inferred.",
+      "observation": "The finding aid records a glass negative titled Phi Mu Sorority house at Purdue University dated October 14, 1929, corroborating long-standing house use.",
+      "uncertainty": "The catalog entry does not identify the street address or show the negative image; identity with the present GIS house is not independently established."
+    },
+    {
+      "provider": "Purdue University Panhellenic Association",
+      "url": "https://www.purduepanhellenic.com/cost/phi-mu",
+      "feature_id": "Phi Mu / Delta Epsilon chapter",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "measurement_method": "Official chapter info confirms local chapter identity only.",
+      "observation": "Identifies Purdue chapter as Delta Epsilon and reports its 1929 founding.",
+      "uncertainty": "No building geometry, dimensions or elevations."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; local project approximation, not a survey CRS"
+  },
+  "gis_local_bounds_m": [
+    -402.618,
+    -375.749,
+    -115.692,
+    -74.883
+  ]
+}
