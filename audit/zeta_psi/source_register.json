@@ -215,6 +215,42 @@
       "source_crs": "Not applicable; web page",
       "evidence": "Lists Tau Gamma — Purdue University, West Lafayette, Est. 1968. The page is labeled Collegiate Archives and provides no house address or current residential status.",
       "snapshot": "sources/zeta_psi_collegiate_directory_recheck_2026-10-26.html"
+    },
+    {
+      "provider": "Chi Psi Fraternity official national Where We Are page and its linked Purdue Alpha Epsilon Tau local website",
+      "url": "https://chipsi.org/where-we-are/; https://purduechipsi.com/",
+      "retrieved": "2026-10-27",
+      "source_crs": "Not applicable; web pages and JavaScript bundle",
+      "evidence": "National page lists Epsilon Tau at Purdue in the Active Alphas table and links purduechipsi.com. The linked Purdue site describes Alpha Epsilon Tau as a Purdue chapter, labels a section Life at the Lodge, and says Purdue is its home; the page has no lodge street address and the gallery says no photos yet. This is current evidence of Chi Psi's chapter presence and lodging language, not proof of exact occupancy at 950 or exclusive use.",
+      "snapshots": ["sources/purdue_chi_psi_local_site_home_2026-10-27.html", "sources/purdue_chi_psi_local_site_bundle_2026-10-27.js"]
+    },
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer, layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D748&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 748,
+      "retrieved": "2026-10-27",
+      "source_crs": "EPSG:4326 output",
+      "evidence": "Live requery unchanged: GIS label Zeta Psi, 950 David Ross Rd, owner GREEK; edit-date fields remain blank. Not a dated current-occupancy record.",
+      "snapshot": "sources/purdue_gis_FID748_2026-10-27.json"
+    },
+    {
+      "provider": "Tippecanoe County Assessor / Schneider Corp parcel GIS, parcel layer 58 and Improvements AV layer 63",
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/58/query?geometry=-86.9246%2C40.43449&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=true&outSR=4326&f=pjson; https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/63/query?where=ParcelNo%3D%2779-06-13-476-005.000-029%27&outFields=*&returnGeometry=false&f=pjson",
+      "feature_id": "OBJECTID 5926645; parcel 79-06-13-476-005.000-029",
+      "retrieved": "2026-10-27",
+      "source_crs": "EPSG:4326 output; layer source uses WKID 2966",
+      "evidence": "Current parcel record returns 950 DAVID ROSS RD; assessor improvement row reports Year_Built=2007, Grade=C+2, FinishLivingArea=7,840 sq ft, CurImpAV=611,500. These attributes describe a building/property but the public fields contain no owner or occupant identity and no structural footprint.",
+      "snapshots": ["sources/tippecanoe_parcel_at_fid748_2026-10-27.json", "sources/tippecanoe_assessor_improvement_fid748_2026-10-27.json"]
+    },
+    {
+      "provider": "Indiana Geographic Information Office hosted Building Footprints FeatureServer",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0/query?geometry=-86.924604%2C40.434486&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": 409718,
+      "source_date": "2018 LiDAR building footprints",
+      "retrieved": "2026-10-27",
+      "source_crs": "EPSG:4326 output",
+      "evidence": "Live requery returns the same dated footprint proxy as before; it corroborates the physical structure at the parcel but cannot establish current occupant or 2026 wall line.",
+      "snapshot": "sources/indiana_footprint_fid748_2026-10-27.json"
     }
   ]
 }
