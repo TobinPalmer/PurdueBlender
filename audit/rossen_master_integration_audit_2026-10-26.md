@@ -10,9 +10,9 @@ The current `purdue_campus_master.blend` was opened read-only in Blender. No cha
 
 - 24 expected asset paths appear as linked scene objects.
 - Two expected paths are absent: `massing_sigma_alpha_epsilon_fid849.blend` (Sigma Alpha Epsilon) and `massing_sigma_chi_fid828.blend` (Sigma Chi).
-- For the 24 linked assets, 20 match both the manifest object count and world bounds.
-- Zeta Beta Tau and TREC match manifest bounds, but their manifest object-count metadata is stale.
-- Sigma Pi and Union Club Hotel do not match manifest bounds. Sigma Pi's current model bounds differ from the manifest; Union Club Hotel's maximum X is about 0.128 m beyond the manifest value.
+- For the 24 linked assets, 19 match both the manifest object count and world bounds.
+- Sigma Pi, Zeta Beta Tau, and TREC have stale manifest object-count metadata. Zeta Beta Tau and TREC match manifest bounds; Sigma Pi's current model bounds differ from the manifest.
+- Union Club Hotel's object count matches, but its maximum X is about 0.128 m beyond the manifest value.
 
 Presence of a linked path does not verify that its previous massing was removed, that exactly one instance exists, or that the reopened scene is correct. Those checks remain with Tobin, the owner of the master blend, and the corresponding handoff rows should stay open until he validates them.
 
