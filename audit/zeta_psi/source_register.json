@@ -2,7 +2,7 @@
   "building_id": "massing_house_301841600_c1351aa",
   "assigned_name": "Zeta Psi / Tau Gamma",
   "review_date": "2026-10-26",
-  "disposition": "Crosswalk and exclusive occupancy unresolved; no modeling, asset edits, or grade requested.",
+  "disposition": "Zeta Psi occupancy and 237 S Grant building crosswalk unresolved; Columbia roll address appears historical or stale; no building at 237 is supported by current mapped footprint/imagery. Existing 950/FID 748 remains a spatial candidate only, not confirmed exclusive occupant.",
   "sources": [
     {
       "provider": "Purdue University BuildingShapes ArcGIS FeatureServer, layer 0",
@@ -119,6 +119,58 @@
       "evidence": "Point query at Purdue FID 748 coordinate intersects 2018 tile; project year 2018 and acquisition date 2018-04-20. Avg_Field3 is a tile-average elevation and cannot be interpreted as building height.",
       "snapshot": "sources/indiana_lidar_acquisition_fid748_2026-10-26.json",
       "metadata_snapshot": "sources/indiana_lidar_dates_layer_metadata_2026-10-26.json"
+    },
+    {
+      "provider": "Columbia University Alpha Chapter website, chapter-hosted Complete Roll of Zeta Psi Chapters",
+      "url": "https://www.columbia.edu/cu/zetapsi/chapters.htm",
+      "retrieved": "2026-10-26",
+      "source_date": "Not stated on page",
+      "source_crs": "Not applicable; web listing",
+      "evidence": "Purdue Tau Gamma row gives House: 237 South Grant Street, West Lafayette, IN, and phone 765-743-2112. Page introduction says inactive chapters remain listed and asks users to report errata/addenda; page has no update date. This is an undated chapter-roll record, not proof of current occupancy.",
+      "snapshot": "sources/columbia_zeta_psi_chapter_roll_excerpt_2026-10-26.txt"
+    },
+    {
+      "provider": "ArcGIS World Geocoding Service",
+      "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=237%20S%20Grant%20St%2C%20West%20Lafayette%2C%20IN%2047906&f=pjson&outFields=*",
+      "retrieved": "2026-10-26",
+      "source_crs": "EPSG:4326",
+      "evidence": "Exact 100-score PointAddress match for 237 S Grant St, West Lafayette, IN 47906 at -86.910818948835, 40.421002232666; used only to spatially crosswalk the county parcel, not as occupancy evidence.",
+      "snapshot": "sources/address_geocode_237_s_grant_2026-10-26.json"
+    },
+    {
+      "provider": "Tippecanoe County parcel GIS (Schneider Corp ArcGIS service; parcel layer 58)",
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/58/query?geometry=-86.910818948835%2C40.421002232666&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": "OBJECTID 5940025; PIN 164028000862; parcel 79-07-19-401-007.000-026",
+      "retrieved": "2026-10-26",
+      "source_crs": "EPSG:4326 output; source layer uses WKID 2966",
+      "evidence": "Address field 237 S GRANT ST. County assessment fields CurImpAv=0 and CurTotAV=CurLandAV=48700; assessor valuation is not a building-survey record.",
+      "snapshot": "sources/tippecanoe_parcel_at_237_s_grant_2026-10-26.json"
+    },
+    {
+      "provider": "Purdue University BuildingShapes FeatureServer, layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?geometry=-86.910818948835%2C40.421002232666&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "retrieved": "2026-10-26",
+      "source_crs": "EPSG:4326 output",
+      "evidence": "Point query at address geocode returned no campus BuildingShapes feature; coverage/nonpresence does not prove no privately owned historic building.",
+      "snapshot": "sources/purdue_gis_near_237_s_grant_2026-10-26.json"
+    },
+    {
+      "provider": "Indiana Geographic Information Office hosted Building Footprints FeatureServer",
+      "url": "https://gisdata.in.gov/server/rest/services/Hosted/Building_Footprints/FeatureServer/0/query?geometry=%7B%22xmin%22%3A-86.9112317481608%2C%22ymin%22%3A40.4209333028639%2C%22xmax%22%3A-86.9104234685964%2C%22ymax%22%3A40.4210351382505%7D&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelIntersects&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "retrieved": "2026-10-26",
+      "source_crs": "EPSG:4326 output",
+      "evidence": "No building footprint intersects the parcel extent; footprint layer coverage/date may not capture all structures, so absence is supporting evidence only.",
+      "snapshot": "sources/indiana_footprints_at_237_s_grant_parcel_2026-10-26.json"
+    },
+    {
+      "provider": "Esri World Imagery MapServer; imagery contributors as attributed by service",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-86.9116,40.4207,-86.9101,40.4213&bboxSR=4326&size=1024,700&imageSR=4326&format=jpg&f=image",
+      "retrieved": "2026-10-26",
+      "source_date": "Unknown; map export does not expose mosaic capture date",
+      "source_crs": "EPSG:4326",
+      "evidence": "Visual inspection shows paved parking/vehicle stalls over the address parcel area with no visible roof. Visual current land cover only; not evidence of historical occupancy.",
+      "snapshot": "sources/esri_world_imagery_237_s_grant_extent_2026-10-26.jpg",
+      "metadata_snapshot": "sources/esri_world_imagery_237_s_grant_record_2026-10-26.json"
     }
   ]
 }
