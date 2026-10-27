@@ -4,7 +4,7 @@ This project covers Purdue West Lafayette campus buildings and Purdue-operated r
 
 Current per-building Blender sources and builders live in [`modular/buildings/`](modular/buildings/). Shared building workflow tools, older building-specific scripts, and miscellaneous utilities are organized under [`scripts/`](scripts/README.md).
 
-## Detailed models: status and latest grader score (156 buildings)
+## Detailed models: status and latest grader score (157 buildings)
 
 | Building | Detailed model | Status | Latest independent grade | Assigned to |
 | --- | --- | --- | ---: | --- |
@@ -155,6 +155,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Zundo Family Dentistry | [zundo_family_dentistry.blend](modular/buildings/zundo_family_dentistry.blend) | Finished | [8.0/10](audit/zundo_family_dentistry/independent_grade_r2.md) | — |
 | Islamic Society of Greater Lafayette (ISGL) | [massing_islamic_societyof_greater_lafayette_0130012.blend](modular/buildings/massing_islamic_societyof_greater_lafayette_0130012.blend) | Finished; GIS identity/address and roof/height details remain uncertain; interior is schematic | [8.2/10](audit/islamic_society_greater_lafayette/independent_grade_codex_r3/result.json) | — |
 | Village Bottle Shoppe | [massing_village_bottle_shoppe_6a17e23.blend](modular/buildings/massing_village_bottle_shoppe_6a17e23.blend) | Finished; entry bearing, height, and unseen elevations remain uncertain | [8.7/10](audit/village_bottle_shoppe/independent_grade_r3/result.json) | — |
+| Phi Gamma Delta | [massing_house_301837281_58ead22.blend](modular/buildings/massing_house_301837281_58ead22.blend) | Finished; facade divisions, roof, heights remain estimated; interior unmodeled because plans are not registered to GIS | [8.5/10](audit/phi_gamma_delta/independent_grade_r2/grade_report.md) | — |
 | Lambertus Hall | [lambertus_hall.blend](modular/buildings/lambertus_hall.blend) | Finished; 16 m height and some facade-wing attribution estimated | [8.0/10](audit/lambertus_hall/independent_grade/grade.json) | — |
 | Latino Cultural Center (current, FID 925) | [massing_latino_cultural_center_lcc_9cc71b3.blend](modular/buildings/massing_latino_cultural_center_lcc_9cc71b3.blend) | Finished; height and schematic interior remain estimates | [9.0/10](audit/latino_cultural_center_lcc_9cc71b3/independent_grade/grade.json) | — |
 | Life Science Ranges Greenhouse & Service Building (LSR) | [massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend](modular/buildings/massing_life_science_ranges_greenhouse_and_service_building_c96231f.blend) | Finished; master fresh-open PASS; heights remain estimates | [8.1/10](audit/life_science_ranges_greenhouse_and_service_building_c96231f/independent_grade_r2/result.json) | — |
@@ -165,9 +166,9 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 | Roy L. Whistler Hall of Agricultural Research (WSLR) | [massing_whistler_hall_6f6bf8d.blend](modular/buildings/massing_whistler_hall_6f6bf8d.blend) | Finished; master fresh-open PASS; roof, facade, and interior details remain estimates or schematic | [8.9/10](audit/whistler_hall/independent_grade_r2/result.json) | — |
 | Wiley Dining Court (WDCT) | [massing_wiley_dining_court_wdct_8a6c669.blend](modular/buildings/massing_wiley_dining_court_wdct_8a6c669.blend) | Finished; master fresh-open PASS; eaves/ridge height and dining layout remain estimated or schematic | [8.0/10](audit/wiley_dining_court/independent_grade/grade.json) | — |
 | Joyful Journeys | [massing_joyful_journeys_abaf5c3.blend](modular/buildings/massing_joyful_journeys_abaf5c3.blend) | Finished; independently regraded on exact SHA and linked in master; height/facade details estimated; no interior modeled | [8.0/10](audit/joyful_journeys/independent_grade_current/grade.json) | — |
-## Unfinished buildings (111 total)
+## Unfinished buildings (110 total)
 
-This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 109 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 111 known unfinished projects. Current pending assignments: Tobin 12, Rossen 29, Kyle 22, Rohan 28, Arjav 20, Brady 0. The Tobin, Rossen, and Kyle queues now contain 63 projects; 48 remain with Rohan, Arjav, and Brady.
+This inventory covers the full 508-record campus-map snapshot; features can be duplicate or support structures, so unresolved source records remain under review rather than being invented as separate buildings. The 108 current projects below are supplemented by two newer West Lafayette construction projects not represented as modeled assets in that snapshot, for 110 known unfinished projects. Current pending assignments: Tobin 11, Rossen 29, Kyle 22, Rohan 28, Arjav 20, Brady 0. The Tobin, Rossen, and Kyle queues now contain 62 projects; 48 remain with Rohan, Arjav, and Brady.
 
 ### New West Lafayette construction projects (2)
 
@@ -263,11 +264,11 @@ Verify each stable asset ID in `modular/manifest.json` before starting a new mod
 
 ### Fraternity, sorority, and cooperative facilities
 
-Unfinished current IFC chapter-house assignments are nearly even: 8 assigned to Tobin and 15 to Rossen across 23 remaining current IFC houses. The legacy Kappa Sigma house is independently graded 8.5/10 and appears in the finished table above. Thirteen of the current 36 IFC-listed organizations have finished entries above: Acacia, Alpha Chi Rho, Alpha Epsilon Pi, Alpha Gamma Rho, Alpha Kappa Lambda, Alpha Sigma Phi, Alpha Tau Omega, Beta Sigma Psi, Beta Upsilon Chi (formerly Fairway Cooperative), Delta Sigma Phi, Delta Tau Delta, Delta Upsilon, and FarmHouse. Rows without a confirmed campus-map match remain facility-research work; do not invent a house location from organization membership alone.
+Unfinished current IFC chapter-house assignments are nearly even: 7 assigned to Tobin and 15 to Rossen across 22 remaining current IFC houses. The legacy Kappa Sigma house is independently graded 8.5/10 and appears in the finished table above. Fourteen of the current 36 IFC-listed organizations have finished entries above: Acacia, Alpha Chi Rho, Alpha Epsilon Pi, Alpha Gamma Rho, Alpha Kappa Lambda, Alpha Sigma Phi, Alpha Tau Omega, Beta Sigma Psi, Beta Upsilon Chi (formerly Fairway Cooperative), Delta Sigma Phi, Delta Tau Delta, Delta Upsilon, FarmHouse, and Phi Gamma Delta. Rows without a confirmed campus-map match remain facility-research work; do not invent a house location from organization membership alone.
 
 Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/councils/ifc/chapters.php), [Panhellenic](https://www.purdue.edu/fscl/councils/pha/chapters.php), [MGC](https://www.purdue.edu/fscl/councils/mgc/chapters.php), [NPHC](https://www.purdue.edu/fscl/councils/nphc/chapters.php), and [cooperative-house](https://www.purdue.edu/fscl/councils/cooperatives/houses.php) lists. Purdue describes FSCL as five councils with 90 organizations; the model inventory tracks physical facilities rather than treating each organization as a separate building ([FSCL overview](https://www.purdue.edu/vpsl/news/featured-stories/2026_0105-fscl-150-recap.php)). Add any MGC or NPHC facility if a dedicated physical house is verified. A spatial candidate is not treated as a confirmed match until its footprint is checked.
 
-#### Fraternity houses (23 unfinished: Tobin 8, Rossen 15)
+#### Fraternity houses (22 unfinished: Tobin 7, Rossen 15)
 
 | House / building | GIS FID and asset | Work status | Assigned to |
 | --- | --- | --- | --- |
@@ -276,7 +277,6 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 | Chi Psi | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Tobin |
 | Delta Chi | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Tobin |
 | Kappa Delta Rho | FID 801; [massing_house_1089876362_14ecd2c](modular/buildings/massing_house_1089876362_14ecd2c.blend) | Detailed model built; fresh-open passed; independent grade pending | Tobin |
-| Phi Gamma Delta | FID 787; [massing_house_301837281_58ead22](modular/buildings/massing_house_301837281_58ead22.blend) | Massing asset; verify and detail | Tobin |
 | Phi Kappa Psi | No reliable map FID; New asset/source mapping required | No official map feature or asset match; research chapter facility | Tobin |
 | Phi Kappa Sigma | FID 829; New asset/source mapping required | No reliable asset match; reconcile GIS FID 829 | Tobin |
 | Phi Kappa Theta | FID 762; [massing_house_301841332_9b3bd1f](modular/buildings/massing_house_301841332_9b3bd1f.blend) | Spatial candidate; verify before detailing | Tobin |

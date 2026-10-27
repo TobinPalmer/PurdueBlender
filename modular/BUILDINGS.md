@@ -156,6 +156,7 @@ CREC retains its legacy massing filename and campus-world direct-link coordinate
 
 | Building | File | Objects |
 | --- | --- | ---: |
+| Phi Gamma Delta | [massing_house_301837281_58ead22.blend](buildings/massing_house_301837281_58ead22.blend) | 216 |
 | Purdue Center for Regional Development (Schowe House) | [massing_purdue_center_for_regional_development_scho_a2375c9.blend](buildings/massing_purdue_center_for_regional_development_scho_a2375c9.blend) | 33 |
 | Purdue Drug Discovery Facility | [massing_purdue_drug_discovery_facility_fc72a4a.blend](buildings/massing_purdue_drug_discovery_facility_fc72a4a.blend) | 36 |
 | Purdue Fire Department | [massing_purdue_fire_department_520430b.blend](buildings/massing_purdue_fire_department_520430b.blend) | 100 |
@@ -173,6 +174,8 @@ CREC retains its legacy massing filename and campus-world direct-link coordinate
 | Veterinary Pathology Building | [massing_veterinary_pathology_building_48b5a5b.blend](buildings/massing_veterinary_pathology_building_48b5a5b.blend) | 1 |
 | Wang Hall | [massing_wang_hall_wang_0dac5ab.blend](buildings/massing_wang_hall_wang_0dac5ab.blend) | 12 |
 | Wood Street Parking Garage | [massing_wood_street_garage_pgw_2fa056e.blend](buildings/massing_wood_street_garage_pgw_2fa056e.blend) | 79 |
+
+Phi Gamma Delta (FID 787) retains campus-world coordinates and is linked into the master. Its 8.5/10 independent grade supports the ten-point GIS outline within approximately 0.21–0.45 m after the documented project transform; facade divisions, roof, and heights remain partly estimated. Interior plans are not registered to the GIS outline, so no unverified room layout was added. See [Phi Gamma Delta grade](../audit/phi_gamma_delta/independent_grade_r2/grade_report.md).
 
 FUSE retains its legacy filename and campus-world direct-link coordinates. Its 8.25/10 independent grade verifies the named OSM plan and horizontal placement; height, facade dimensions, entrances, and below-grade layout remain estimated. See [FUSE evidence](../audit/massing_fuse_39cf4b5/evidence.json).
 

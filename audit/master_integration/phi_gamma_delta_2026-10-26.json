@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-26",
+  "blender_version": "5.2.3 LTS",
+  "master_file": "purdue_campus_master.blend",
+  "master_sha256": "8CA9296043CBE59EE4B705E50BE2F1973CD009F5C2C0AA8A878F2AF0B4D02C33",
+  "saved": true,
+  "rebuild_script": "modular/rebuild_linked_master.py",
+  "verification": "modular/verification.json",
+  "verification_status": "PASS",
+  "master_counts": {
+    "assets": 1980,
+    "buildings": 1979,
+    "detailed_assets": 95,
+    "placement_markers": 95,
+    "scene_objects": 14702,
+    "source_asset_objects": 72805
+  },
+  "integrated_assets": [
+    {
+      "id": "massing_house_301837281_58ead22",
+      "sha256": "9ECBCED89189735DC00E1DD93D5B63B36DABEEEC8B18AEF040D0D810B545E101",
+      "grade": 8.5,
+      "independent_grade": "audit/phi_gamma_delta/independent_grade_r2/grade_report.md",
+      "source_object_count": 216,
+      "bounds_world_m": [
+        [
+          -443.32818603515625,
+          -417.4748840332031
+        ],
+        [
+          397.1831359863281,
+          423.7620849609375
+        ],
+        [
+          0.0,
+          12.0
+        ]
+      ],
+      "notes": "Purdue GIS FID 787; campus-world massing asset linked directly; ten-point outline compares within approximately 0.21–0.45 m after the project transform. Facade/roof/height estimates remain, and interior is omitted because floor-plan registration is unresolved."
+    }
+  ],
+  "notes": "The rebuild script reloaded linked building libraries from stable manifest paths and saved the root master. Overall master verification passed without errors. The master .blend remains local to Tobin’s computer and is not included in Git."
+}
