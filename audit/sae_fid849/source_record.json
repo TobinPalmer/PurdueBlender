@@ -1,0 +1,160 @@
+{
+  "building": "Sigma Alpha Epsilon, Purdue University",
+  "purdue_fid": 849,
+  "proposed_stable_id": "massing_sigma_alpha_epsilon_fid849",
+  "asset_path": "modular/buildings/massing_sigma_alpha_epsilon_fid849.blend",
+  "build_script": "modular/buildings/build_massing_sigma_alpha_epsilon_fid849.py",
+  "scene": "Building_massing_sigma_alpha_epsilon_fid849",
+  "collection": "Asset_massing_sigma_alpha_epsilon_fid849",
+  "retrieved_utc_date": "2026-10-26",
+  "identity_reconciliation": {
+    "assignment_crosswalk": "No direct legacy asset crosswalk; new ID proposed with coordinator confirmation.",
+    "purdue_gis_feature": "BUILDING_N Sigma Alpha Epsilon, FID 849, BLDG_ABBR SOSAE, address 406 N Littleton St; roof outline visually aligns with the house in current orthophoto inside its separately matched county parcel.",
+    "county_parcel": "Parcel address 406 LITTLETON ST, StKeyFull 79-07-20-107-017.000-026; parcel is ownership/site boundary, not building footprint.",
+    "geocoder_conflict": "Nominatim address point at 40.4279403,-86.9030086 is approximately 70-80 m west of GIS polygon centroid and outside parcel; excluded from building placement.",
+    "orthophoto_reconciliation": "fid849_orthophoto_parcel_overlay.png; FID boundary aligns with visible house roof in Esri World Imagery. Tile capture date not returned by service."
+  },
+  "geometry": {
+    "source_feature_id": 849,
+    "source_crs": "EPSG:4326 (WGS 84)",
+    "comparison_transform": "Project local approximation: X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040; Z in meters above grade. This is not a surveyed CRS.",
+    "fid_polygon_valid": true,
+    "fid_polygon_area_m2": 683.166,
+    "fid_polygon_perimeter_m": 152.256,
+    "fid_polygon_bounds_xy_m": [
+      984.009,
+      49.24,
+      1016.364,
+      99.252
+    ],
+    "fid_polygon_dimensions_m_approx": [
+      32.354,
+      50.013
+    ],
+    "county_parcel_contains_fid_polygon": true,
+    "fid_polygon_parcel_intersection_ratio": 1.0,
+    "asset_bounds_xyz_m": [
+      983.809,
+      49.038,
+      0.0,
+      1016.562,
+      99.454,
+      11.95
+    ],
+    "uncertainty": "GIS footprint is source-backed but no survey or dated orthophoto is available here. GIS Shape__Area/Shape__Length units are not inferred from raw values. Small entry projection extends beyond roof ring."
+  },
+  "sources": [
+    {
+      "provider": "Purdue University GIS / official building feature service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D849&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+      "feature_id": 849,
+      "raw_snapshot": [
+        "sources/purdue_fid849_feature_query.geojson",
+        "sources/purdue_fid849_raw_feature.json"
+      ],
+      "retrieved": "2026-10-26",
+      "source_date": "Service publication/update date not available in saved feature response",
+      "source_crs": "EPSG:4326",
+      "measurement_method": "Use official polygon vertices; transform with project local approximation; compute planar polygon area/perimeter and bounds.",
+      "uncertainty": "GIS has NUM_LEVELS=1 and Extrution=12, but no mapped date or vertical survey. Footprint accuracy limited to source layer."
+    },
+    {
+      "provider": "Purdue Sigma Alpha Epsilon chapter website",
+      "url": "https://saepurdue.com/",
+      "feature_id": "Official chapter homepage; written house address",
+      "raw_snapshot": "sources/saepurdue_homepage.html",
+      "retrieved": "2026-10-26",
+      "source_date": "Page date not shown",
+      "source_crs": "Not spatial data",
+      "measurement_method": "Read address text only; no dimensions inferred.",
+      "uncertainty": "Address is not a building footprint locator; considered with GIS, county parcel and imagery."
+    },
+    {
+      "provider": "Tippecanoe County GIS, Parcels layer 58",
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/58/query?where=StKeyFull%3D%2779-07-20-107-017.000-026%27&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": "OBJECTID 5903724; StKeyFull 79-07-20-107-017.000-026",
+      "raw_snapshot": [
+        "sources/county_406_littleton_parcel.json",
+        "sources/county_parcels_layer_metadata.json"
+      ],
+      "retrieved": "2026-10-26",
+      "source_date": "Layer metadata does not specify feature survey date",
+      "source_crs": "Service native WKID 2245 (Indiana StatePlane West, US feet); query output GeoJSON EPSG:4326",
+      "measurement_method": "Match street address/parcel key; transform query polygon using project local approximation for overlay and containment test.",
+      "uncertainty": "Parcel boundary identifies site ownership; not house walls. Parcel shape fields are county values and not interpreted as building metrics."
+    },
+    {
+      "provider": "Esri World Imagery basemap tiles",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+      "feature_id": "Web Mercator tiles z19, x135581-135585, y197665-197669",
+      "raw_snapshot": "sources/world_imagery_tiles/ (25 JPEG tile snapshots and tile manifest)",
+      "retrieved": "2026-10-26",
+      "source_date": "Tile imagery vintage not supplied by tile endpoint",
+      "source_crs": "EPSG:3857 web tiles",
+      "measurement_method": "Visual orthophoto overlay with Purdue FID polygon and county parcel boundary; no pixel measurement used as a survey.",
+      "uncertainty": "Capture date/resolution and roof edge certainty unavailable; visual check supports identity only."
+    },
+    {
+      "provider": "Kevin Murphy Sullivan Architects, project portfolio",
+      "url": "https://www.kevinmurphysullivan.com/sigma-alpha-epsilon---renovations-and-addition.html",
+      "feature_id": "Sigma Alpha Epsilon renovation and addition; portfolio images sae1.png, sae2.png, sae3.png",
+      "raw_snapshot": [
+        "sources/architect_portfolio_page.html",
+        "sources/architect_portfolio_images/sae1.png",
+        "sources/architect_portfolio_images/sae2.png",
+        "sources/architect_portfolio_images/sae3.png"
+      ],
+      "retrieved": "2026-10-26",
+      "source_date": "Portfolio page date not available",
+      "source_crs": "Not spatial data",
+      "measurement_method": "Visual interpretation of design renderings and textual project description.",
+      "uncertainty": "Design images are renderings, not surveyed elevations or as-built photographs; detailed heights, colors, and final facade layout are estimated."
+    },
+    {
+      "provider": "Sigma Alpha Epsilon Purdue, Spring 2018 newsletter",
+      "url": "https://saepurdue.com/wp-content/uploads/2018/09/SAE-Newsletter-Spring-2018.pdf",
+      "feature_id": "Newsletter describing renovation phases and dedication weekend",
+      "raw_snapshot": [
+        "sources/sae_purdue_spring_2018_newsletter.pdf",
+        "sources/sae2018_page-1.jpg",
+        "sources/sae2018_page-2.jpg",
+        "sources/sae2018_page-3.jpg",
+        "sources/sae2018_page-4.jpg"
+      ],
+      "retrieved": "2026-10-26",
+      "source_date": "Spring 2018",
+      "source_crs": "Not spatial data",
+      "measurement_method": "Textual historical context, no dimensions inferred.",
+      "uncertainty": "Does not establish current as-built appearance or measured heights."
+    },
+    {
+      "provider": "Sigma Alpha Epsilon Purdue, Spring 2025 newsletter",
+      "url": "https://saepurdue.com/wp-content/uploads/2025/04/SAE-Newsletter-Spring-2025.pdf",
+      "feature_id": "Newsletter discussion of house age, front porch and south wing",
+      "raw_snapshot": "sources/sae_purdue_spring_2025_newsletter.pdf",
+      "retrieved": "2026-10-26",
+      "source_date": "Spring 2025",
+      "source_crs": "Not spatial data",
+      "measurement_method": "Historical/contextual text only.",
+      "uncertainty": "Approximate house age and wing history; not dimensional/as-built evidence."
+    },
+    {
+      "provider": "Sigma Alpha Epsilon Purdue, Fall 2025 recruitment brochure",
+      "url": "https://saepurdue.com/wp-content/uploads/2025/08/SAE-Recruitment-Brochure-Fall-2025.pdf",
+      "feature_id": "Current chapter recruitment material",
+      "raw_snapshot": "sources/sae_purdue_fall_2025_recruitment_brochure.pdf",
+      "retrieved": "2026-10-26",
+      "source_date": "Fall 2025",
+      "source_crs": "Not spatial data",
+      "measurement_method": "Contextual visual/text reference; no dimensions inferred.",
+      "uncertainty": "Promotional source; not survey or construction record."
+    }
+  ],
+  "fresh_open": {
+    "result": "PASS",
+    "inspection": "fresh_open_inspection.json",
+    "blender_version": "5.2.0 LTS",
+    "sha256": "9756B5AE39B3070918DEBBE6E3F0A07913F79E1EAB04B956BA4F1D0AAEBDD20D"
+  },
+  "grade": "Pending independent grade"
+}
