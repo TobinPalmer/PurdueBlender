@@ -272,204 +272,44 @@ Coverage was checked against Purdue's current [IFC](https://www.purdue.edu/fscl/
 
 #### Fraternity houses (5 open cases: Tobin 2, Rossen 3)
 
-<table>
-  <thead>
-    <tr>
-      <th>House / building</th>
-      <th>GIS FID and asset</th>
-      <th>Work status</th>
-      <th>Assigned to</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Phi Kappa Psi</td>
-      <td>FID 856 is a candidate at 1307 Tower Dr; GIS label conflicts with the current official chapter address</td>
-      <td>Reconcile the FID 856 / existing asset crosswalk before modeling</td>
-      <td>Tobin</td>
-    </tr>
-    <tr>
-      <td>Phi Kappa Theta</td>
-      <td>No verified current house/FID; FID 762 at 900 David Ross is supported by current ZBT sources, while the Purdue GIS label remains Phi Kappa Theta</td>
-      <td>Verify Phi Kappa Theta&#x27;s current facility independently; do not duplicate FID 762</td>
-      <td>Tobin</td>
-    </tr>
-    <tr>
-      <td>Psi Upsilon</td>
-      <td>Delta Omicron&#x27;s Purdue chapter installation was confirmed in the 2026 national report, but no current residential address or property entity was found; the 648 Bourbon installation venue is event-only and historical 400 Northwestern / 1198 Third leads are unverified</td>
-      <td>Research lead remains open; IRS, county GIS, city permit/archive and state-entity checks did not establish a parcel crosswalk; see the <a href="audit/psi_upsilon/current_facility_records_followup_2026-10-27.md">2026-10-27 records follow-up</a></td>
-      <td>Rossen</td>
-    </tr>
-    <tr>
-      <td>Sigma Alpha Mu</td>
-      <td>A founding president&#x27;s public profile supports that the Purdue chapter secured a house lease; 930 N Grant is a plausible candidate from the chapter&#x27;s Aug. 2026 rush post, but no source links the lease to that address</td>
-      <td>Research lead remains open. Provisional 930 N Grant model scored <a href="audit/sigma_alpha_mu/independent_grade_codex_r1/result.json">6/10</a> and is not accepted; see the <a href="audit/sigma_alpha_mu/residence_identity_research_2026-10-27_addendum.md">residence identity addendum</a>, <a href="audit/sigma_alpha_mu/identity_challenge_930_n_grant_2026-10-27.md">independent identity challenge</a>, and <a href="audit/sigma_alpha_mu/residence_identity_address_records_2026-10-27_addendum.md">address-record crosswalk addendum</a></td>
-      <td>Rossen</td>
-    </tr>
-    <tr>
-      <td>Zeta Psi</td>
-      <td>Tau Gamma affiliation is current and its live profile still lists 950 David Ross; Chi Psi&#x27;s 2024 Lodge announcement names the same address. A supposed 2023 Tau Gamma house-move report was misattributed from Tau Theta/Ontario Tech</td>
-      <td>No defensible current occupancy/footprint crosswalk yet; see the <a href="audit/zeta_psi/occupancy_recheck_2026-10-27_addendum10.md">corrected 2026-10-27 crosswalk recheck</a>, <a href="audit/zeta_psi/occupancy_recheck_2026-10-27_addendum11.md">Indiana entity-registry lead</a>, and <a href="audit/zeta_psi/build_feasibility_2026-10-26.md">build feasibility assessment</a></td>
-      <td>Rossen</td>
-    </tr>
-  </tbody>
-</table>
+| House / building | GIS FID and asset | Work status | Assigned to |
+| --- | --- | --- | --- |
+| Phi Kappa Psi | FID 856 is a candidate at 1307 Tower Dr; GIS label conflicts with the current official chapter address | Reconcile the FID 856 / existing asset crosswalk before modeling | Tobin |
+| Phi Kappa Theta | No verified current house/FID; FID 762 at 900 David Ross is supported by current ZBT sources, while the Purdue GIS label remains Phi Kappa Theta | Verify Phi Kappa Theta's current facility independently; do not duplicate FID 762 | Tobin |
+| Psi Upsilon | Delta Omicron's Purdue chapter installation was confirmed in the 2026 national report, but no current residential address or property entity was found; the 648 Bourbon installation venue is event-only and historical 400 Northwestern / 1198 Third leads are unverified | Research lead remains open; IRS, county GIS, city permit/archive and state-entity checks did not establish a parcel crosswalk; see the [2026-10-27 records follow-up](audit/psi_upsilon/current_facility_records_followup_2026-10-27.md) | Rossen |
+| Sigma Alpha Mu | A founding president's public profile supports that the Purdue chapter secured a house lease; 930 N Grant is a plausible candidate from the chapter's Aug. 2026 rush post, but no source links the lease to that address | Research lead remains open. Provisional 930 N Grant model scored [6/10](audit/sigma_alpha_mu/independent_grade_codex_r1/result.json) and is not accepted; see the [residence identity addendum](audit/sigma_alpha_mu/residence_identity_research_2026-10-27_addendum.md), [independent identity challenge](audit/sigma_alpha_mu/identity_challenge_930_n_grant_2026-10-27.md), and [address-record crosswalk addendum](audit/sigma_alpha_mu/residence_identity_address_records_2026-10-27_addendum.md) | Rossen |
+| Zeta Psi | Tau Gamma affiliation is current and its live profile still lists 950 David Ross; Chi Psi's 2024 Lodge announcement names the same address. A supposed 2023 Tau Gamma house-move report was misattributed from Tau Theta/Ontario Tech | No defensible current occupancy/footprint crosswalk yet; see the [corrected 2026-10-27 crosswalk recheck](audit/zeta_psi/occupancy_recheck_2026-10-27_addendum10.md), [Indiana entity-registry lead](audit/zeta_psi/occupancy_recheck_2026-10-27_addendum11.md), and [build feasibility assessment](audit/zeta_psi/build_feasibility_2026-10-26.md) | Rossen |
 
 #### Panhellenic chapters and house coverage (10 unfinished houses; two chapters have no house)
 
-<table>
-  <thead>
-    <tr>
-      <th>House / building</th>
-      <th>GIS FID and asset</th>
-      <th>Work status</th>
-      <th>Assigned to</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Kappa Delta</td>
-      <td>No reliable map FID; New asset/source mapping required</td>
-      <td>No official map feature or asset; research the chapter-house location</td>
-      <td>Tobin</td>
-    </tr>
-    <tr>
-      <td>Alpha Gamma Delta</td>
-      <td>FID 757; <a href="modular/buildings/massing_house_301841608_d56a4c4.blend">massing_house_301841608_d56a4c4</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Kappa Kappa Gamma</td>
-      <td>FID 782; <a href="modular/buildings/massing_house_301840871_5d1bc06.blend">massing_house_301840871_5d1bc06</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Phi Beta Chi</td>
-      <td>No verified house asset</td>
-      <td>PHA says two chapters have no house; no dedicated physical facility verified here, so hold outside the building backlog</td>
-      <td>—</td>
-    </tr>
-    <tr>
-      <td>Alpha Phi</td>
-      <td>FID 764; <a href="modular/buildings/massing_house_301841331_735e92f.blend">massing_house_301841331_735e92f</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Phi Mu</td>
-      <td>FID 772; <a href="modular/buildings/massing_house_301836574_fff1661.blend">massing_house_301836574_fff1661</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Alpha Xi Delta</td>
-      <td>FID 788; <a href="modular/buildings/massing_house_301841248_fe939c7.blend">massing_house_301841248_fe939c7</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Phi Sigma Rho</td>
-      <td>FID 756; <a href="modular/buildings/massing_house_301841607_63d85b5.blend">massing_house_301841607_63d85b5</a></td>
-      <td>Current chapter sources support 1001 David Ross; the GIS AOII label is stale. Massing asset still needs modeling and grading; FID 744 remains a conflicting map record</td>
-      <td>Rossen</td>
-    </tr>
-    <tr>
-      <td>Sigma Alpha</td>
-      <td>No verified house asset</td>
-      <td>Purdue College of Agriculture reports this chapter has no house; GIS FID 795 stays in the general campus building queue pending identity review</td>
-      <td>—</td>
-    </tr>
-    <tr>
-      <td>Delta Gamma</td>
-      <td>FID 783; <a href="modular/buildings/massing_house_301840872_582df9d.blend">massing_house_301840872_582df9d</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Delta Zeta</td>
-      <td>FID 752; <a href="modular/buildings/massing_house_301841601_7ae6159.blend">massing_house_301841601_7ae6159</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Sigma Kappa</td>
-      <td>FID 780; <a href="modular/buildings/massing_house_301840869_1b80ace.blend">massing_house_301840869_1b80ace</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-  </tbody>
-</table>
+| House / building | GIS FID and asset | Work status | Assigned to |
+| --- | --- | --- | --- |
+| Kappa Delta | No reliable map FID; New asset/source mapping required | No official map feature or asset; research the chapter-house location | Tobin |
+| Alpha Gamma Delta | FID 757; [massing_house_301841608_d56a4c4](modular/buildings/massing_house_301841608_d56a4c4.blend) | Massing asset; verify and detail | Arjav |
+| Kappa Kappa Gamma | FID 782; [massing_house_301840871_5d1bc06](modular/buildings/massing_house_301840871_5d1bc06.blend) | Massing asset; verify and detail | Arjav |
+| Phi Beta Chi | No verified house asset | PHA says two chapters have no house; no dedicated physical facility verified here, so hold outside the building backlog | — |
+| Alpha Phi | FID 764; [massing_house_301841331_735e92f](modular/buildings/massing_house_301841331_735e92f.blend) | Massing asset; verify and detail | Arjav |
+| Phi Mu | FID 772; [massing_house_301836574_fff1661](modular/buildings/massing_house_301836574_fff1661.blend) | Massing asset; verify and detail | Arjav |
+| Alpha Xi Delta | FID 788; [massing_house_301841248_fe939c7](modular/buildings/massing_house_301841248_fe939c7.blend) | Massing asset; verify and detail | Arjav |
+| Phi Sigma Rho | FID 756; [massing_house_301841607_63d85b5](modular/buildings/massing_house_301841607_63d85b5.blend) | Current chapter sources support 1001 David Ross; the GIS AOII label is stale. Massing asset still needs modeling and grading; FID 744 remains a conflicting map record | Rossen |
+| Sigma Alpha | No verified house asset | Purdue College of Agriculture reports this chapter has no house; GIS FID 795 stays in the general campus building queue pending identity review | — |
+| Delta Gamma | FID 783; [massing_house_301840872_582df9d](modular/buildings/massing_house_301840872_582df9d.blend) | Massing asset; verify and detail | Arjav |
+| Delta Zeta | FID 752; [massing_house_301841601_7ae6159](modular/buildings/massing_house_301841601_7ae6159.blend) | Massing asset; verify and detail | Arjav |
+| Sigma Kappa | FID 780; [massing_house_301840869_1b80ace](modular/buildings/massing_house_301840869_1b80ace.blend) | Massing asset; verify and detail | Arjav |
 
 #### Cooperative houses (9 unfinished)
 
-<table>
-  <thead>
-    <tr>
-      <th>House / building</th>
-      <th>GIS FID and asset</th>
-      <th>Work status</th>
-      <th>Assigned to</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Ann Tweedale</td>
-      <td>FID 824; New asset/source mapping required</td>
-      <td>No nearby reliable asset match; build from official GIS reference</td>
-      <td>Rossen</td>
-    </tr>
-    <tr>
-      <td>Circle Pines</td>
-      <td>FID 761; <a href="modular/buildings/massing_house_301841609_c6c9ac4.blend">massing_house_301841609_c6c9ac4</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Devonshire</td>
-      <td>FID 405; New asset/source mapping required</td>
-      <td>No reliable asset match; research current house location</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Gemini</td>
-      <td>FID 825; New asset/source mapping required</td>
-      <td>No nearby reliable asset match; build from official GIS reference</td>
-      <td>Tobin</td>
-    </tr>
-    <tr>
-      <td>Glenwood</td>
-      <td>FID 794; <a href="modular/buildings/massing_house_301841249_f827941.blend">massing_house_301841249_f827941</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Marwood</td>
-      <td>FID 827; New asset/source mapping required</td>
-      <td>No nearby reliable asset match; build from official GIS reference</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Maclure</td>
-      <td>FID 822; New asset/source mapping required</td>
-      <td>Nearest candidate is over 112 m away; build/reconcile from official GIS reference</td>
-      <td>Tobin</td>
-    </tr>
-    <tr>
-      <td>Stewart</td>
-      <td>FID 802; <a href="modular/buildings/massing_house_1089875810_8c9b95d.blend">massing_house_1089875810_8c9b95d</a></td>
-      <td>Massing asset; verify and detail</td>
-      <td>Arjav</td>
-    </tr>
-    <tr>
-      <td>Shoemaker</td>
-      <td>FID 800; <a href="modular/buildings/massing_shoemaker_cooperative_2159ea4.blend">massing_shoemaker_cooperative_2159ea4</a></td>
-      <td>Existing assignment; massing only</td>
-      <td>Arjav</td>
-    </tr>
-  </tbody>
-</table>
+| House / building | GIS FID and asset | Work status | Assigned to |
+| --- | --- | --- | --- |
+| Ann Tweedale | FID 824; New asset/source mapping required | No nearby reliable asset match; build from official GIS reference | Rossen |
+| Circle Pines | FID 761; [massing_house_301841609_c6c9ac4](modular/buildings/massing_house_301841609_c6c9ac4.blend) | Massing asset; verify and detail | Arjav |
+| Devonshire | FID 405; New asset/source mapping required | No reliable asset match; research current house location | Arjav |
+| Gemini | FID 825; New asset/source mapping required | No nearby reliable asset match; build from official GIS reference | Tobin |
+| Glenwood | FID 794; [massing_house_301841249_f827941](modular/buildings/massing_house_301841249_f827941.blend) | Massing asset; verify and detail | Arjav |
+| Marwood | FID 827; New asset/source mapping required | No nearby reliable asset match; build from official GIS reference | Arjav |
+| Maclure | FID 822; New asset/source mapping required | Nearest candidate is over 112 m away; build/reconcile from official GIS reference | Tobin |
+| Stewart | FID 802; [massing_house_1089875810_8c9b95d](modular/buildings/massing_house_1089875810_8c9b95d.blend) | Massing asset; verify and detail | Arjav |
+| Shoemaker | FID 800; [massing_shoemaker_cooperative_2159ea4](modular/buildings/massing_shoemaker_cooperative_2159ea4.blend) | Existing assignment; massing only | Arjav |
 
 ### Complete official campus-map reference inventory (508 records)
 
