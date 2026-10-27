@@ -1,0 +1,157 @@
+{
+  "building": "Alpha Xi Delta, Alpha Eta Chapter",
+  "retrieval_date": "2026-10-26",
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters; project approximation, not a surveyed CRS"
+  },
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D788&outFields=*&outSR=4326&f=json",
+      "feature_id": 788,
+      "name": "Alpha Xi Delta",
+      "building_code": "SOAXD",
+      "address": "519 University St",
+      "retrieved": "2026-10-26",
+      "source_date": null,
+      "crs": "EPSG:4326 (WGS 84), outSR=4326 explicitly requested",
+      "raw_snapshot": "sources/purdue_gis_fid788_raw.json",
+      "method": "24 distinct ring vertices transformed using documented local campus approximation; compare against reopened base mesh.",
+      "observation": "Official campus feature identifies Alpha Xi Delta at 519 University St; Shape__Area=914.0625 m2, Shape__Length=169.62955618896558 m.",
+      "uncertainty": "GIS is not certified survey; no published horizontal accuracy. NUM_LEVELS=1 and Extrution=12 field meanings are undocumented."
+    },
+    {
+      "provider": "Huw Williams via Wikimedia Commons (photographer\u2019s public-domain release)",
+      "url": "https://commons.wikimedia.org/wiki/File:Alpha_Xi_Delta_sorority_rush.png",
+      "feature_id": "Photo geolocation 40.429528, -86.916583; camera heading 310 degrees",
+      "retrieved": "2026-10-26",
+      "source_date": "2008-09-07",
+      "crs": "WGS 84 camera location, heading 310 degrees",
+      "raw_snapshot": "sources/alpha_xi_delta_house_2008.png",
+      "method": "Direct visual comparison; photo is a close-range facade view, no dimensions inferred.",
+      "observation": "Photo is explicitly captioned as students lining up to rush the Purdue Alpha Eta chapter. It shows dark brickwork, sandstone/stone-trimmed arched entrance, recessed entry, mullioned windows, and a strong horizontal band. The camera is southeast of the GIS footprint and looks northwest.",
+      "uncertainty": "Image crops the roof and much of the building; exact height, roof, full facade arrangement, and entrance bearing cannot be established."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/repositories/2/archival_objects/3015",
+      "feature_id": "Milton Lauenstein photographs, Item 18, Alpha Xi Delta House",
+      "retrieved": "2026-10-26",
+      "source_date": "1945",
+      "crs": "Not spatial",
+      "raw_snapshot": null,
+      "method": "Finding-aid item title/date corroboration only; no image geometry used.",
+      "observation": "Official archival catalog lists a 1945 photograph titled Alpha Xi Delta House.",
+      "uncertainty": "The catalog record does not georeference the image; the image was not directly available for this build."
+    }
+  ],
+  "transformed_gis_ring_xy_m": [
+    [
+      -276.8264196285145,
+      241.977485598959
+    ],
+    [
+      -297.4689795057206,
+      242.12607317529546
+    ],
+    [
+      -297.38234737322387,
+      254.17780058547805
+    ],
+    [
+      -294.0038706758005,
+      254.1531564792558
+    ],
+    [
+      -293.9782700181457,
+      258.04849514304124
+    ],
+    [
+      -289.6706124033689,
+      258.01904952283166
+    ],
+    [
+      -289.6961064028857,
+      254.181623914601
+    ],
+    [
+      -287.69155501280164,
+      254.165665012913
+    ],
+    [
+      -287.62590944298506,
+      263.1572196764955
+    ],
+    [
+      -293.1825945019856,
+      263.1981514859149
+    ],
+    [
+      -293.17761972470885,
+      264.2222931707397
+    ],
+    [
+      -294.24082044435727,
+      264.2303773047274
+    ],
+    [
+      -294.2291524808377,
+      265.58062884623723
+    ],
+    [
+      -296.9465686593747,
+      265.5979458006709
+    ],
+    [
+      -296.9178513389861,
+      269.52983476904365
+    ],
+    [
+      -291.4403725903133,
+      269.4890548072067
+    ],
+    [
+      -291.4368245729319,
+      269.75422494507484
+    ],
+    [
+      -274.7545516023334,
+      269.63442262368744
+    ],
+    [
+      -274.79957358291637,
+      263.51711607353764
+    ],
+    [
+      -274.9305691926342,
+      263.51736290406734
+    ],
+    [
+      -274.97191753338524,
+      257.7414268598909
+    ],
+    [
+      -273.8234080238641,
+      257.73316063093944
+    ],
+    [
+      -273.8687519879814,
+      251.44516583636005
+    ],
+    [
+      -276.759826079297,
+      251.46586835540575
+    ]
+  ],
+  "gis_local_bounds_xy_m": [
+    -297.4689795057206,
+    -273.8234080238641,
+    241.977485598959,
+    269.75422494507484
+  ]
+}

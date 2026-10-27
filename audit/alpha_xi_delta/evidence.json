@@ -1,0 +1,152 @@
+{
+  "building": "Alpha Xi Delta, Alpha Eta Chapter",
+  "asset_id": "massing_house_301841248_fe939c7",
+  "status": "Complete; independently graded 8.0/10 (minimum 8/10 passed)",
+  "sources": [
+    {
+      "provider": "Purdue University official campus Building Shapes service",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D788&outFields=*&outSR=4326&f=json",
+      "feature_id": 788,
+      "building_code": "SOAXD",
+      "name": "Alpha Xi Delta",
+      "address": "519 University St",
+      "retrieval_date": "2026-10-26",
+      "source_date": null,
+      "source_crs": "EPSG:4326 WGS 84; outSR=4326",
+      "raw_snapshot": "sources/purdue_gis_fid788_raw.json",
+      "measurement_method": "24 distinct ring vertices transformed using repository campus approximation; compared with reopened base mesh.",
+      "official_attributes": {
+        "shape_area_m2": 914.0625,
+        "shape_length_m": 169.62955618896558,
+        "num_levels": 1,
+        "extrution": 12
+      },
+      "uncertainty": "Not a certified survey; no positional accuracy or field definitions published."
+    },
+    {
+      "provider": "Huw Williams, Wikimedia Commons (public-domain dedication)",
+      "url": "https://commons.wikimedia.org/wiki/File:Alpha_Xi_Delta_sorority_rush.png",
+      "feature_id": "Image of Purdue Alpha Eta chapter during recruitment; 40.429528,-86.916583 camera position",
+      "retrieval_date": "2026-10-26",
+      "source_date": "2008-09-07",
+      "source_crs": "WGS 84; camera heading 310 degrees",
+      "raw_snapshot": "sources/alpha_xi_delta_house_2008.png",
+      "metadata_snapshot": "sources/wikimedia_commons_metadata_raw.json",
+      "measurement_method": "Visual facade reference; image and heading metadata inspected; no dimensions inferred.",
+      "observation": "The geolocated photo specifically captions the Purdue Alpha Eta chapter house. Visible details include dark red-brown brick, stone-arched recessed entrance, strong horizontal facade band, and mullioned windows. Camera stood southeast of the mapped footprint and faced northwest.",
+      "uncertainty": "Close framing cuts off roof and full building; exact entrance bearing and all dimensions remain unverified."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/repositories/2/archival_objects/3015",
+      "feature_id": "Milton Lauenstein photographs, Item 18: Alpha Xi Delta House",
+      "retrieval_date": "2026-10-26",
+      "source_date": "1945",
+      "source_crs": "Not spatial",
+      "raw_snapshot": null,
+      "measurement_method": "Finding aid title/date only; image not geometrically interpreted.",
+      "observation": "Official archive catalog confirms a 1945 photograph titled Alpha Xi Delta House.",
+      "uncertainty": "No image was directly available and the catalog does not provide a spatial tie."
+    }
+  ],
+  "transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "axes": "X east, Y north, Z up",
+    "units": "meters, local campus approximation"
+  },
+  "measurements": {
+    "gis_ring_vertices": 24,
+    "gis_bounds_xy_m": [
+      -297.4689795057206,
+      -273.8234080238641,
+      241.977485598959,
+      269.75422494507484
+    ],
+    "legacy_asset_bounds_before_m": [
+      -297.60888671875,
+      -274.1078796386719,
+      241.6119384765625,
+      269.2497863769531,
+      0,
+      16
+    ],
+    "legacy_asset_dimensions_before_m": [
+      23.501007080078125,
+      27.637847900390625,
+      16.0
+    ],
+    "reopened_evaluated_bounds_after_m": [
+      [
+        -297.6689758300781,
+        -273.6234130859375
+      ],
+      [
+        240.98248291015625,
+        269.75421142578125
+      ],
+      [
+        0,
+        12.300000190734863
+      ]
+    ],
+    "reopened_object_dimensions_after_m": [
+      24.045562744140625,
+      28.771728515625,
+      12.300000190734863
+    ],
+    "base_ring_tolerance_m": 0.0001,
+    "base_ring_match": "24/24 GIS vertices matched the bottom of the wall mesh; decorative roof/entry pieces extend slightly beyond the GIS line.",
+    "modeled_floors": 2,
+    "eaves_height_status": "estimated 8.2 m",
+    "ridge_height_status": "estimated 12.3 m"
+  },
+  "geometry_edits": [
+    "Rebuilt House_301841248 with the exact FID 788 GIS base ring and identity object transform.",
+    "Replaced unverified 16 m massing with a two-level brick facade and estimated 12.3 m hipped roof.",
+    "Added source-backed stone-arched entry, recessed dark door, horizontal band, and mullioned windows; unsupported full facade and roof details remain schematic."
+  ],
+  "validation": {
+    "reopened": true,
+    "script": "validate_asset.py",
+    "report": "reopen_validation.json",
+    "preview": "preview.png",
+    "expected_collection": "Asset_massing_house_301841248_fe939c7",
+    "collection_object_count": 1,
+    "expected_object": "House_301841248",
+    "identity_transform": true,
+    "all_24_base_points_match": true,
+    "external_image_paths": []
+  },
+  "uncertainties": [
+    "The official GIS NUM_LEVELS=1 conflicts with two facade levels visible in the photo; its field definition is unknown.",
+    "Roof form and exact vertical dimensions cannot be verified from the cropped photograph.",
+    "Facade/entry compass bearing is illustrative; the photo camera is southeast and heading 310 degrees, but does not show the entire wall elevation.",
+    "The 1945 official archive record was not used for geometry because its photo was unavailable."
+  ],
+  "artifacts": {
+    "builder": "../../modular/buildings/build_massing_house_301841248_fe939c7.py",
+    "asset": "../../modular/buildings/massing_house_301841248_fe939c7.blend",
+    "build_config": "build_config.json",
+    "source_observations": "source_observations.json",
+    "raw_gis": "sources/purdue_gis_fid788_raw.json",
+    "reference_photo": "sources/alpha_xi_delta_house_2008.png",
+    "reopen_validation": "reopen_validation.json",
+    "validation_script": "validate_asset.py",
+    "preview": "preview.png",
+    "independent_evaluator": "independent_grade/evaluate.py",
+    "independent_result": "independent_grade/result.json",
+    "independent_report": "independent_grade/independent_grade.md"
+  },
+  "independent_grade": {
+    "score": 8.0,
+    "max_score": 10,
+    "status": "pass",
+    "evaluator": "independent_grade/evaluate.py",
+    "result": "independent_grade/result.json",
+    "report": "independent_grade/independent_grade.md",
+    "reviewer": "independent subagent"
+  }
+}
