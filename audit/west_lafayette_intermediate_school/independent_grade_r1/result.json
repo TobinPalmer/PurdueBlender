@@ -1,0 +1,230 @@
+{
+  "building": "West Lafayette Intermediate School",
+  "building_id": "massing_west_lafayette_intermediate_school_d72f0fa",
+  "review_revision": 1,
+  "asset": "modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend",
+  "asset_sha256": "89bd517ddc0024c6dba1c223cf3138b55af833847e3de94e7a85be34deaf915d",
+  "expected_sha256": "89bd517ddc0024c6dba1c223cf3138b55af833847e3de94e7a85be34deaf915d",
+  "exact_sha_match": true,
+  "review_date": "2026-10-27",
+  "reviewer": "independent grader",
+  "blender_version": "5.2.3 LTS",
+  "fresh_open": true,
+  "score": 7.9,
+  "max_score": 10.0,
+  "threshold": 8.0,
+  "accepted": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "WLCSC and NCES records identify the open West Lafayette Intermediate School at 1838 N Salisbury; OSM way 772742586 is named for the same school and address.",
+        "The exact shell base contains all 45 unique way vertices and matches the transformed source ring within 0.000061 m maximum nearest-vertex error. The base shell has no boundary, nonmanifold, or zero-area faces."
+      ],
+      "finding": "Identity and GIS outline are strongly supported. OSM remains community mapping rather than a surveyed wall line."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": [
+        "The shell and campus bounds are [[26.05060386657715, 196.213134765625], [1855.6624755859375, 2020.77685546875], [0.0, 12.199999809265137]]; the wall base reproduces the OSM campus transform.",
+        "The Esri aerial supports the broad campus position and wing arrangement; its capture date and pixel georeferencing are not documented. The project XY transform is approximate, not surveyed."
+      ],
+      "finding": "Placement and footprint scale are convincing; absolute survey control and facade compass bearing remain unverified."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.35,
+      "max_score": 2.0,
+      "evidence": [
+        "Architect/award sources support a low school mass, a three-wing central learning node, a larger gym and a southeast multipurpose/cafeteria wing. The aerial shows these broad plan components.",
+        "The screenshots show 4.75 m base walls, a raised central clerestory and an approximately 8.8 m gym roof, but no measured elevations or roof schedule were found.",
+        "The main school roof is largely represented by generic flat roof planes/parapets; aerial roof articulations and connecting edges are simplified, and exact placement/dimensions of the raised volumes remain interpretive."
+      ],
+      "finding": "The broad massing and special gym/central volumes match sources, but roof articulation and vertical dimensions remain schematic estimates."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.45,
+      "max_score": 2.0,
+      "evidence": [
+        "Architect photographs support red/brown brick, light metal spandrel, broad glazing, a red exposed-steel entry canopy, and the gym/clerestory language. These main motifs appear in the saved renders.",
+        "The generated facade repeats a uniform window module around long polygon edges; photographs show more varied glazing bands and wall/window proportions. The entry canopy and glazing are recognizable but simplified.",
+        "The interior includes 36 classroom partition/door/table sets, seven bookcases, a gym court, hoops and bleacher tiers, but the reviewed interior renders do not make the classrooms readily legible and omit the source photographs\u2019 richer classroom, library and corridor details. The placement of rooms is explicitly schematic."
+      ],
+      "finding": "The main visual identity is present, while the facade rhythm and interior presentation remain generic."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.2,
+      "max_score": 2.0,
+      "evidence": [
+        "Blender 5.2.3 independently opened the expected scene and collection; 1359 objects and 1348 meshes load.",
+        "Ten materials use procedural node graphs, including brick, floor and metal-panel nodes; there are 0 external image dependencies.",
+        "The source register and raw GIS/architect/aerial snapshots document identity, broad program and uncertainties. However, evidence.json still says geometry review is pending and reports the pre-build one-object/90-vertex massing; it does not record this model\u2019s exact SHA, independent footprint result, current 1,359-object count, or current fresh-open result."
+      ],
+      "finding": "The file is self-contained and opens correctly, but the project evidence must be refreshed against this exact asset before the handoff is complete."
+    }
+  ],
+  "sources_reviewed": [
+    "audit/west_lafayette_intermediate_school/evidence.json",
+    "audit/west_lafayette_intermediate_school/source_register.md",
+    "audit/west_lafayette_intermediate_school/sources/osm_way_772742586_full.json",
+    "audit/west_lafayette_intermediate_school/sources/esri_world_imagery_site_aerial.jpg",
+    "audit/west_lafayette_intermediate_school/sources/idea_award_p61.png",
+    "audit/west_lafayette_intermediate_school/sources/schmidt_exterior_main_entry.jpg",
+    "audit/west_lafayette_intermediate_school/sources/schmidt_interior_classroom.jpg",
+    "audit/west_lafayette_intermediate_school/sources/schmidt_interior_gymnasium.jpg",
+    "audit/west_lafayette_intermediate_school/sources/schmidt_interior_media_center.jpg"
+  ],
+  "renders_reviewed": [
+    "audit/west_lafayette_intermediate_school/preview_aerial.png",
+    "audit/west_lafayette_intermediate_school/preview_northwest.png",
+    "audit/west_lafayette_intermediate_school/preview_main_entry.png",
+    "audit/west_lafayette_intermediate_school/preview_interior_cutaway.png",
+    "audit/west_lafayette_intermediate_school/preview_classroom_interior.png",
+    "audit/west_lafayette_intermediate_school/preview_gym_interior.png"
+  ],
+  "geometry_validation": {
+    "fresh_open": true,
+    "asset_sha256": "89bd517ddc0024c6dba1c223cf3138b55af833847e3de94e7a85be34deaf915d",
+    "expected_sha256": "89bd517ddc0024c6dba1c223cf3138b55af833847e3de94e7a85be34deaf915d",
+    "exact_sha_match": true,
+    "scene": "Building_massing_west_lafayette_intermediate_school_d72f0fa",
+    "collection": "Asset_massing_west_lafayette_intermediate_school_d72f0fa",
+    "object_count": 1359,
+    "mesh_object_count": 1348,
+    "mesh_vertex_count": 10903,
+    "mesh_polygon_count": 8124,
+    "bounds_world_m": [
+      [
+        26.05060386657715,
+        196.213134765625
+      ],
+      [
+        1855.6624755859375,
+        2020.77685546875
+      ],
+      [
+        0.0,
+        12.199999809265137
+      ]
+    ],
+    "osm_way_id": 772742586,
+    "osm_tags": {
+      "addr:city": "West Lafayette",
+      "addr:housenumber": "1838",
+      "addr:postcode": "47906",
+      "addr:state": "IN",
+      "addr:street": "North Salisbury Street",
+      "building": "school",
+      "name": "West Lafayette Intermediate School"
+    },
+    "osm_node_count_closed": 46,
+    "osm_unique_perimeter_nodes": 45,
+    "shell_base_unique_vertices": 45,
+    "footprint_max_nearest_vertex_error_m": 6.0647392064789485e-05,
+    "footprint_rms_nearest_vertex_error_m": 3.612390582676561e-05,
+    "shell_mesh_diagnostics": {
+      "vertices": 90,
+      "edges": 135,
+      "faces": 47,
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "signed_volume_m3": 51772.858126
+    },
+    "object_counts_by_subcollection": {
+      "WLIS_Exterior_Shell": 50,
+      "WLIS_Facade_Detail": 1032,
+      "WLIS_Schematic_Interior": 243,
+      "WLIS_Roof_Equipment": 0,
+      "WLIS_Main_Entry": 34
+    },
+    "named_feature_counts": {
+      "classroom_partitions": 36,
+      "student_tables": 108,
+      "interior_doors": 36,
+      "classroom_clerestory_lites": 36,
+      "media_center_bookcases": 7,
+      "gym_bleacher_tiers": 5,
+      "gym_trusses": 0,
+      "gym_court_markings": 4,
+      "entry_red_steel_objects": 10
+    },
+    "material_names": [
+      "WLIS | blue-gray glazing",
+      "WLIS | charcoal low-slope roof membrane",
+      "WLIS | exposed structural crimson steel",
+      "WLIS | flag blue.002",
+      "WLIS | flag white.002",
+      "WLIS | pale aluminum window frames",
+      "WLIS | red-brown running-bond brick",
+      "WLIS | terrazzo and classroom floor",
+      "WLIS | warm light-gray metal panels",
+      "WLIS | warm white interior partitions"
+    ],
+    "material_node_types": {
+      "WLIS | blue-gray glazing": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial"
+      ],
+      "WLIS | charcoal low-slope roof membrane": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial"
+      ],
+      "WLIS | exposed structural crimson steel": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial"
+      ],
+      "WLIS | flag blue.002": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial"
+      ],
+      "WLIS | flag white.002": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial"
+      ],
+      "WLIS | pale aluminum window frames": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial"
+      ],
+      "WLIS | red-brown running-bond brick": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial",
+        "ShaderNodeTexBrick",
+        "ShaderNodeTexCoord",
+        "ShaderNodeBump"
+      ],
+      "WLIS | terrazzo and classroom floor": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial",
+        "ShaderNodeTexNoise",
+        "ShaderNodeTexCoord",
+        "ShaderNodeBump"
+      ],
+      "WLIS | warm light-gray metal panels": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial",
+        "ShaderNodeTexNoise",
+        "ShaderNodeTexCoord",
+        "ShaderNodeValToRGB"
+      ],
+      "WLIS | warm white interior partitions": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial"
+      ]
+    },
+    "external_image_dependencies": [],
+    "unpacked_missing_images": []
+  },
+  "findings": [
+    "Refresh evidence.json and source_register.md status with the exact asset SHA, new object/material counts, independent fresh-open result, and 45-vertex footprint comparison; remove the stale \u201cpending\u201d/one-object inspection text.",
+    "Improve and clearly present the interior: show classroom desks/chairs and coherent corridor/room boundaries, enrich the media-center/cafeteria/gym details from the supplied photos, or mark elements unavailable instead of implying detailed interiors.",
+    "Refine main roof planes/clerestory transitions and long facade glazing rhythm to match the aerial and architect photos more closely; retain height estimates as estimates.",
+    "Render at least one close exterior and one readable interior view with neutral lighting/material contrast so the distinctive brick, red steel, glazing, and school program can be judged."
+  ]
+}

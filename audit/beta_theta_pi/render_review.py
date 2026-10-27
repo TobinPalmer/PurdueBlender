@@ -33,5 +33,5 @@ for name, position in poses.items():
     camera.location = position
     camera.rotation_euler = (target - Vector(position)).to_track_quat("-Z", "Y").to_euler()
     camera_data.ortho_scale = 28 if name == "close" else (52 if name == "aerial" else 56)
-    scene.render.filepath = f"//../../audit/beta_theta_pi/preview_{name}.png"
+    scene.render.filepath = f"//../../audit/beta_theta_pi/preview_r4_{name}.png"
     bpy.ops.render.render(write_still=True)

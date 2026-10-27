@@ -1,0 +1,93 @@
+{
+  "building_id": "massing_west_lafayette_junior_senior_high_school_fa45bd1",
+  "display_name": "West Lafayette Junior-Senior High School",
+  "owner": "Tobin",
+  "captured_at_utc": "2026-10-27",
+  "sources": [
+    {
+      "provider": "OpenStreetMap",
+      "url": "https://www.openstreetmap.org/way/283537867",
+      "raw_snapshot": "sources/osm_way_283537867_raw.json",
+      "feature_id": "way/283537867",
+      "retrieved_at_utc": "2026-10-27",
+      "crs": "EPSG:4326 (WGS84); converted to project campus coordinates",
+      "method": "Downloaded OSM full-way API response; used ordered node coordinates, then projected with manifest origin and conversion scales.",
+      "source_date": "Way timestamp stored in raw snapshot",
+      "uncertainty": "OSM building outline and building:levels tags are not a measured building survey.",
+      "facts": {
+        "node_count_in_closed_ring": 35,
+        "unique_vertices": 34,
+        "closed_ring": true,
+        "building": "school",
+        "building:levels": "3",
+        "ele": "206",
+        "name": "West Lafayette Junior-Senior High School",
+        "address": "1105 North Grant Street, West Lafayette, IN 47906"
+      }
+    },
+    {
+      "provider": "KJG Architecture",
+      "url": "https://www.kjgarchitecture.com/portfolio-1/west-lafayette-jr.%2Fsr.-high-school",
+      "raw_snapshot": "sources/kjg_project_page.html",
+      "feature_id": "Project portfolio page",
+      "retrieved_at_utc": "2026-10-27",
+      "source_date": "Page identifies project as 2022",
+      "measurement_method": "Visual interpretation of architect-published exterior/interior photographs and project description.",
+      "photos": "sources/kjg_images/",
+      "uncertainty": "Photos establish material and architectural character but not photo compass orientation, exact dimensions, facade-by-facade material layout, or interior room locations."
+    },
+    {
+      "provider": "West Lafayette Community School Corporation",
+      "url": "https://www.wl.k12.in.us/jrsr",
+      "raw_snapshot": "sources/district_school_page.html",
+      "feature_id": "Jr./Sr. High School page",
+      "retrieved_at_utc": "2026-10-27",
+      "uncertainty": "Supports identity/address, not building geometry."
+    },
+    {
+      "provider": "National Center for Education Statistics",
+      "url": "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=181287002048",
+      "raw_snapshot": "sources/nces_school_record.html",
+      "feature_id": "NCES School ID 181287002048",
+      "retrieved_at_utc": "2026-10-27",
+      "source_date": "2025-2026 directory record",
+      "uncertainty": "Supports school identity/address/grades, not architecture."
+    },
+    {
+      "provider": "Tippecanoe County Area Plan Commission",
+      "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/Item/7299?fileID=12113",
+      "raw_snapshot": "sources/tippecanoe_s4749_site_plan.pdf",
+      "feature_id": "S-4749 West Lafayette High School Minor Subdivision",
+      "retrieved_at_utc": "2026-10-27",
+      "source_date": "2018",
+      "measurement_method": "Reviewed site-plan/staff-report context.",
+      "uncertainty": "Subdivision/site plan is not an architectural plan or elevation set."
+    }
+  ],
+  "geometry": {
+    "coordinate_system": "Campus world: X east, Y north, Z up; meters",
+    "source_outline_vertices": 34,
+    "source_outline_vertex_error_max_m": 0.0000494,
+    "footprint_method": "OSM closed way mapped through modular manifest origin and scale",
+    "height_m": {
+      "wall_top": 10.0,
+      "parapet_top": 10.5,
+      "roof_equipment_top": 11.4,
+      "status": "Estimated; OSM has building:levels=3 and no measured height"
+    },
+    "facade": "Brick, warm precast accents, regular classroom glazing, three-storey east curtain-wall/entry bay",
+    "roof": "Flat membrane roof, parapet and rooftop screened HVAC masses",
+    "interior": "Not modeled; no reliable room plan to assign the photographed pool, library/media center or performance space."
+  },
+  "asset": {
+    "path": "modular/buildings/massing_west_lafayette_junior_senior_high_school_fa45bd1.blend",
+    "builder": "modular/buildings/build_massing_west_lafayette_junior_senior_high_school_fa45bd1.py",
+    "collection": "Asset_massing_west_lafayette_junior_senior_high_school_fa45bd1",
+    "scene": "Building_massing_west_lafayette_junior_senior_high_school_fa45bd1"
+  },
+  "validation": {
+    "script": "fresh_open_validate.py",
+    "result": "validation.json",
+    "independent_grade": "pending"
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "building_id": "massing_west_lafayette_intermediate_school_d72f0fa",
+  "building_name": "West Lafayette Intermediate School",
+  "asset_path": "modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend",
+  "expected_scene": "Building_massing_west_lafayette_intermediate_school_d72f0fa",
+  "expected_collection": "Asset_massing_west_lafayette_intermediate_school_d72f0fa",
+  "research_date": "2026-10-26",
+  "source_crs": "EPSG:4326 for OSM geographic coordinates; project campus coordinates use the local approximate transform documented in modular/AGENTS.md",
+  "gis_footprint": {
+    "provider": "OpenStreetMap contributors",
+    "feature_type": "way",
+    "feature_id": 772742586,
+    "url": "https://www.openstreetmap.org/way/772742586",
+    "snapshot": "audit/west_lafayette_intermediate_school/sources/osm_way_772742586_full.json",
+    "name": "West Lafayette Intermediate School",
+    "tags": {
+      "building": "school",
+      "addr:housenumber": "1838",
+      "addr:street": "North Salisbury Street",
+      "addr:city": "West Lafayette",
+      "addr:state": "IN",
+      "addr:postcode": "47906"
+    },
+    "ring_nodes_closed": true,
+    "unique_perimeter_nodes": 45,
+    "project_transformed_bounds_world_m": [
+      [
+        26.1216660833,
+        196.1414842537
+      ],
+      [
+        1867.293056,
+        2020.70592
+      ]
+    ],
+    "project_transformed_planar_area_m2": 10899.5474,
+    "measurement_method": "Transform OSM way nodes from EPSG:4326 using the project local approximation; planar shoelace area in local meters.",
+    "uncertainty": "OSM feature and footprint are community mapped, not survey certified. Footprint appears to follow the large connected roof/building mass; detailed wall line and overhangs are not separately mapped."
+  },
+  "sources": [
+    {
+      "provider": "West Lafayette Community School Corporation",
+      "url": "https://www.wl.k12.in.us/wlis",
+      "snapshot": "audit/west_lafayette_intermediate_school/sources/wlisc_official_wlis.html",
+      "retrieved": "2026-10-26",
+      "supports": [
+        "current school identity",
+        "1838 North Salisbury Street address"
+      ],
+      "limitations": [
+        "no measured geometry or elevations"
+      ]
+    },
+    {
+      "provider": "National Center for Education Statistics",
+      "url": "https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?ID=181287002045&Miles=50&SchoolPageNum=31&Search=1&Zip=47954",
+      "retrieved": "2026-10-26",
+      "feature_id": "NCES school ID 181287002045",
+      "supports": [
+        "school identity",
+        "physical address",
+        "current open status",
+        "grades 4-6"
+      ],
+      "limitations": [
+        "not a geometry source"
+      ]
+    },
+    {
+      "provider": "Schmidt Associates",
+      "url": "https://schmidt-arch.com/project/west-lafayette-intermediate-school/",
+      "snapshot": "audit/west_lafayette_intermediate_school/sources/schmidt_associates_project.html",
+      "retrieved": "2026-10-26",
+      "supports": [
+        "project identity",
+        "reported size 114186 square feet",
+        "replacement facility",
+        "project context"
+      ],
+      "uncertainty": "Reported area is project-page area, not an independently measured footprint. Project photographs are visual references, not dimensioned elevations."
+    },
+    {
+      "provider": "KJG Architecture",
+      "url": "https://www.kjgarchitecture.com/portfolio-1/west-lafayette-new-intermediate-school",
+      "retrieved": "2026-10-26",
+      "supports": [
+        "KJG/Schmidt design identity",
+        "2019 project context"
+      ],
+      "limitations": [
+        "downloaded HTML blocked by site; page checked through search/open; not retained as raw local snapshot"
+      ]
+    },
+    {
+      "provider": "KJG Architecture project-account post",
+      "url": "https://www.linkedin.com/posts/kjg-architecture-inc._backtoschool-intermediateschool-architecture-activity-6960984573287555072-fYVh",
+      "source_date": "2022 (page listing)",
+      "retrieved": "2026-10-26",
+      "supports": [
+        "36 classrooms in three wings around a central node",
+        "new gym",
+        "media center",
+        "repurposed former Burtsfield gym for cafeteria/multipurpose use",
+        "red-steel main entry",
+        "clerestory-lit corridors"
+      ],
+      "limitations": [
+        "firm narrative, not a dimensioned or cardinally oriented plan/elevation"
+      ]
+    },
+    {
+      "provider": "IIDA Indiana / KJG Architecture",
+      "url": "https://iidaindiana.org/wp-content/uploads/2019/04/IDEAAwardsProgram.pdf",
+      "snapshot": "audit/west_lafayette_intermediate_school/sources/2019_IDEA_awards_program.pdf",
+      "relevant_page": 61,
+      "rendered_page": "audit/west_lafayette_intermediate_school/sources/idea_award_p61.png",
+      "retrieved": "2026-10-26",
+      "supports": [
+        "classroom finish palette",
+        "red exposed steel/clerestory corridor",
+        "gym with exposed trusses and red bleachers",
+        "library media center with book mural and flexible seating"
+      ],
+      "limitations": [
+        "photographs do not establish room locations, plan dimensions, or height"
+      ]
+    },
+    {
+      "provider": "Esri World Imagery",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox=-86.9134,40.4437,-86.9113,40.4458&bboxSR=4326&size=1200,1200&format=jpg&f=image",
+      "snapshot": "audit/west_lafayette_intermediate_school/sources/esri_world_imagery_site_aerial.jpg",
+      "retrieved": "2026-10-26",
+      "supports": [
+        "current-seeming roof-plan silhouette",
+        "broad wing arrangement",
+        "drop-off and parking context"
+      ],
+      "uncertainty": "The image export has no visible capture date or explicit pixel georeferencing metadata; use as a visual cross-check only."
+    }
+  ],
+  "geometry_review": {
+    "status": "fresh-open validation passed in Blender 5.2.3; see fresh_open_validation_r2.json",
+    "validation_file": "audit/west_lafayette_intermediate_school/fresh_open_validation_r2.json",
+    "fresh_open": true,
+    "scene": "Building_massing_west_lafayette_intermediate_school_d72f0fa",
+    "collection": "Asset_massing_west_lafayette_intermediate_school_d72f0fa",
+    "object_count": 1667,
+    "mesh_object_count": 1655,
+    "mesh_vertices": 13359,
+    "mesh_polygons": 9966,
+    "bounds_world_m": [
+      [
+        26.05060386657715,
+        196.213134765625
+      ],
+      [
+        1855.6624755859375,
+        2020.77685546875
+      ],
+      [
+        0.0,
+        12.199999809265137
+      ]
+    ],
+    "footprint_comparison": {
+      "source": "OSM way 772742586, 45 unique perimeter nodes",
+      "shell_base_unique_vertices": 45,
+      "max_nearest_vertex_error_m": 6.0647392064789485e-05,
+      "rms_nearest_vertex_error_m": 3.612390582676561e-05,
+      "shell_mesh_diagnostics": {
+        "vertices": 90,
+        "edges": 135,
+        "faces": 47,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "zero_area_faces": 0,
+        "signed_volume_m3": 51772.858126
+      }
+    },
+    "roof_and_facade": "Stepped low-slope wing plates and coping follow the broad intersecting roof plan visible in the Esri aerial. White/light roof material reflects the aerial; roof monitors and mechanical screens are schematic and dimensions are estimated. Repeated brick, metal panel, and glazing modules remain interpretive where elevations are unavailable.",
+    "interior": "Thirty-six schematic classroom bays have corridor partitions, doors, glazing, three student tables and chairs, a teacher desk, and a teaching board each; the close top-down render makes one representative bay legible. Gym preview shows sport floor, bleacher tiers, center circle, and court lines. Room positions/dimensions are not survey verified.",
+    "material_names": [
+      "WLIS | blue-gray glazing",
+      "WLIS | charcoal low-slope roof membrane",
+      "WLIS | dark classroom teaching board",
+      "WLIS | exposed structural crimson steel",
+      "WLIS | flag blue",
+      "WLIS | flag white",
+      "WLIS | gym court stripe warm white",
+      "WLIS | gymnasium maple sport floor",
+      "WLIS | maple classroom furniture",
+      "WLIS | pale aluminum window frames",
+      "WLIS | red-brown running-bond brick",
+      "WLIS | terrazzo and classroom floor",
+      "WLIS | warm light-gray metal panels",
+      "WLIS | warm white interior partitions"
+    ],
+    "external_image_dependencies": [],
+    "limitations": "No measured elevations, dimensioned plan, roof schedule, or surveyed wall line found. Interior layout and all height/roof dimensions remain approximate.",
+    "previews_reviewed": [
+      "preview_aerial.png",
+      "preview_main_entry.png",
+      "preview_northwest.png",
+      "preview_gym.png",
+      "preview_interior_cutaway.png",
+      "preview_classroom_interior.png",
+      "preview_gym_interior.png"
+    ]
+  },
+  "asset_sha256": "17e0af212022641e2e14d69df022dcf3b407366aa9ddf6e34a12926bfc98304a",
+  "asset_size_bytes": 626768
+}

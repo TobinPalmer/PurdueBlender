@@ -14,8 +14,8 @@
     "scene": "Building_massing_beta_theta_pi_fid826",
     "collection": "Asset_massing_beta_theta_pi_fid826",
     "coordinate_frame": "Meters, X east, Y north, Z up; campus project origin latitude 40.4274, longitude -86.9137.",
-    "geometry_summary": "Exact GIS perimeter walls with six individually named roof bands whose eaves are clipped to GIS cross-sections; a taller central tower roof/gable; three-level facade rows; a pale projecting bay with three vertically stacked arched glazed openings; an arched stone entry portal, shield plaque, steps, and GIS-footprint foundation cap.",
-    "materials": "Portable node materials: procedural warm red-brown brick, charcoal slate, limestone trim, cream-painted window frames, and dark reflective glass. No external material paths or packed image dependencies.",
+    "geometry_summary": "Exact GIS perimeter walls with the repeated closing vertex removed; a continuous closed slate roof shell tessellated within the concave GIS footprint, with a shallow photo-derived north-south ridge; three facade levels, a pale projecting bay with three stacked arched glazed openings, two west-wing gabled dormers, and an arched stone entrance with a raised Beta Mu shield and brass chevron.",
+    "materials": "Portable node materials: procedural warm red-brown brick, charcoal slate, limestone trim, cream-painted window frames, dark reflective glass, and aged-brass entrance crest details. No external material paths or unpacked image dependencies.",
     "interior": "Not modeled. Purdue GIS references a private G: drive floorplan path, but no registered public plan was available. The official Beta housing record says four floors and a basement; it does not establish which levels are above grade or supply an interior plan, so interior geometry remains omitted."
   },
   "sources": [
@@ -119,31 +119,44 @@
   "modelling_decisions": {
     "footprint": "Used the full official FID 826 polygon ring after the documented campus-coordinate transform; wall perimeter and roof eaves follow this GIS geometry.",
     "height": "Wall height is modeled at approximately 9.3 m to represent three visible above-grade facade levels. The official Beta housing page lists four floors and a basement, but does not clarify whether the reported floor count includes the basement; this model choice is therefore photographic, not surveyed. Purdue GIS NUM_LEVELS=1 and Extrution=12 remain conflicting/unclear fields.",
-    "roof": "Replaced the single continuous triangulated slab with six separate adjoining roof bands. Eaves are calculated from the GIS footprint cross-section at each band boundary to avoid floating oversize roof panels. A raised central tower ridge and visible front gable follow official photos 1 and 15. Ridge height, pitch and exact band layout are photo-based estimates, not surveyed.",
-    "windows_and_entrance": "Three facade levels follow official photos 1, 11, 14, 15 and 16. The facade has a prominent pale projecting bay with three stacked arched openings, a tall central brick gable with high sash, and an arched stone entry with shield plaque. Positions relative to GIS footprint are approximate because no source geo-registers the pictured elevation to a compass bearing.",
+    "roof": "Rebuilt the roof as one continuous watertight shell. The top surface is tessellated inside the exact concave GIS footprint and shares every perimeter vertex with the eave walls; its shallow north-south height field is a photo-derived pitch estimate. Two small west-facing gabled dormers are modeled on the slate wings from the official chapter-house elevations. Boundary edges, nonmanifold edges, and zero-area roof faces audit to zero; all 17 top facets point upward. This avoids the prior open, mismatched Y-band facets and self-crossing cap. Roof form remains an approximation because no surveyed ridge/elevation measurements or geo-registered orthogonal photos were available.",
+    "windows_and_entrance": "Three visible facade levels use repeating divided sash windows; east/rear openings are modeled on the opposite elevation. The pale projecting bay has three stacked arched glazed openings. The entry has a segmented stone arch, dark wood door, transom, steps, pale plaque, raised red shield, and brass chevron detail. Facade bearing and exact opening coordinates remain approximate because imagery does not geo-register the photographed elevation to a GIS edge.",
     "interior": "Omitted because no registered floor plan was available to substantiate its geometry."
   },
   "validation": {
     "blender_version": "Blender 5.2.3 LTS",
-    "fresh_open": "passed: opened the final saved library in a separate Blender 5.2.3 background process; stable scene and collection names, 339 mesh objects, 5 materials, 0 external image dependencies; six GIS-clipped roof bands loaded.",
+    "fresh_open": "passed: reopened the exact saved library in a separate Blender 5.2.3 background process. Expected scene/collection loaded with 349 mesh objects, 6 materials, and 0 external image dependencies; all mesh faces have nonzero area. The continuous roof shell has 38 vertices, 37 faces, 17 upward roof-top facets, and zero boundary, nonmanifold, or zero-area faces.",
     "scene_and_collection_names": "passed: scene Building_massing_beta_theta_pi_fid826; linked collection Asset_massing_beta_theta_pi_fid826",
     "object_counts": {
-      "collection_objects": 339,
-      "mesh_objects": 339,
-      "materials": 5,
+      "collection_objects": 349,
+      "mesh_objects": 349,
+      "materials": 6,
       "file_image_dependencies": 0,
-      "front_bay_arched_glass_panels": 3
+      "closed_roof_shell_vertices": 38,
+      "closed_roof_shell_faces": 37,
+      "upward_roof_top_facets": 17,
+      "zero_area_faces_all_meshes": 0,
+      "west_wing_gabled_dormers": 2
     },
-    "sha256": "4E45D55F49DB9796F8C3780CD29AB83B3D27B4C3E1ABA6FD6140AFE3CD2455B1",
+    "sha256": "34D0B02C5E76284E3751F1B533D6489074ACED3C9EDDB7F5BB006AE255957277",
     "expected_collection": "Asset_massing_beta_theta_pi_fid826",
     "expected_scene": "Building_massing_beta_theta_pi_fid826",
     "review_views": [
-      "audit/beta_theta_pi/preview_west.png",
-      "audit/beta_theta_pi/preview_east.png",
-      "audit/beta_theta_pi/preview_south.png",
-      "audit/beta_theta_pi/preview_north.png",
-      "audit/beta_theta_pi/preview_aerial.png"
+      "audit/beta_theta_pi/preview_r4_west.png",
+      "audit/beta_theta_pi/preview_r4_east.png",
+      "audit/beta_theta_pi/preview_r4_close.png",
+      "audit/beta_theta_pi/preview_r4_north.png",
+      "audit/beta_theta_pi/preview_r4_south.png",
+      "audit/beta_theta_pi/preview_r4_aerial.png"
     ],
-    "review_script": "audit/beta_theta_pi/render_review.py"
+    "review_script": "audit/beta_theta_pi/render_review.py",
+    "roof_topology": {
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "upward_top_facets": 17,
+      "top_facets_total": 17
+    },
+    "fresh_open_report": "audit/beta_theta_pi/fresh_open_r4.log"
   }
 }

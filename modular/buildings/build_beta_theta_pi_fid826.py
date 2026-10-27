@@ -8,6 +8,8 @@ import bpy
 import bmesh
 import json
 import math
+from mathutils import Vector
+from mathutils.geometry import tessellate_polygon
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -23,6 +25,11 @@ assert feature["attributes"]["BUILDING_N"] == "Beta Theta Pi"
 ring_ll = feature["geometry"]["rings"][0]
 ring = [((lon + 86.9137) * 111412.84 * math.cos(math.radians(40.4274)),
          (lat - 40.4274) * 111040.0) for lon, lat in ring_ll]
+# ArcGIS rings are explicitly closed. Keep the unique perimeter vertices so
+# shell caps never contain a zero-area face at the repeated closing point.
+if len(ring) > 1 and math.dist(ring[0], ring[-1]) < 1e-5:
+    ring.pop()
+assert len(ring) == len(set((round(x, 6), round(y, 6)) for x, y in ring))
 
 # Clean background state and make the requested stable names.
 bpy.ops.object.select_all(action="SELECT")
@@ -79,6 +86,12 @@ glass_bsdf.inputs["Base Color"].default_value = (0.055, 0.12, 0.15, 1)
 glass_bsdf.inputs["Roughness"].default_value = 0.2
 glass_bsdf.inputs["Metallic"].default_value = 0.18
 glass_bsdf.inputs["IOR"].default_value = 1.45
+gold = bpy.data.materials.new("Beta Theta Pi | aged brass crest details")
+gold.diffuse_color = (0.62, 0.36, 0.08, 1)
+gold.use_nodes = True
+gold.node_tree.nodes.get("Principled BSDF").inputs["Base Color"].default_value = (0.62, 0.36, 0.08, 1)
+gold.node_tree.nodes.get("Principled BSDF").inputs["Metallic"].default_value = 0.58
+gold.node_tree.nodes.get("Principled BSDF").inputs["Roughness"].default_value = 0.34
 
 def mesh_obj(name, verts, faces, material):
     mesh = bpy.data.meshes.new(name + "Mesh")
@@ -98,60 +111,60 @@ faces = [(i, (i + 1) % n, (i + 1) % n + n, i + n) for i in range(n)]
 faces.append(tuple(range(2 * n - 1, n - 1, -1)))
 mesh_obj("BetaThetaPi_GIS_826_exact_perimeter_walls", verts, faces, brick)
 
-# Build each eave interval from the actual polygon edges at each northing.
-# Concave cross-sections can contain multiple disjoint intervals; they become
-# separate roof facets so the roof never bridges a notch in the GIS outline.
-def edge_x(edge_id,y):
-    x1,y1=ring[edge_id]; x2,y2=ring[(edge_id+1)%len(ring)]
-    if abs(y2-y1)<1e-9: return (x1+x2)*0.5
-    return x1+(y-y1)*(x2-x1)/(y2-y1)
+# Build a single watertight roof shell from the exact concave GIS footprint.
+# Tessellate the polygon as one constrained top surface, then add the eaves and
+# underside. This avoids the self-crossing gable caps caused by changing GIS
+# cross-section topology at concave vertices. The shallow east-west ridge and
+# pitch are photo-derived approximations; the perimeter remains GIS-exact.
+def roof_shell():
+    center_x = (min(x for x, _ in ring) + max(x for x, _ in ring)) * 0.5
+    half_width = max(abs(x - center_x) for x, _ in ring)
+    rise = 2.3
+    top = []
+    for x, y in ring:
+        # A continuous shallow gable height field, clipped exactly to the GIS
+        # outline. The ridge runs north-south through the footprint center.
+        z = wall_h + rise * (1.0 - abs(x - center_x) / half_width)
+        top.append((x, y, z))
+    polygon_2d = [Vector((x, y, 0.0)) for x, y in ring]
+    triangles = tessellate_polygon([polygon_2d])
+    if not triangles:
+        raise RuntimeError("Could not tessellate GIS footprint for roof")
+    roof_faces = []
+    for tri in triangles:
+        ids = tuple(int(i) for i in tri)
+        a, b, c = (top[i] for i in ids)
+        nz = (b[0]-a[0])*(c[1]-a[1]) - (b[1]-a[1])*(c[0]-a[0])
+        roof_faces.append(ids if nz > 0 else tuple(reversed(ids)))
+    n = len(ring)
+    vertices = top + [(x, y, wall_h) for x, y in ring]
+    faces = list(roof_faces)
+    faces.extend((i, (i+1) % n, (i+1) % n + n, i+n) for i in range(n))
+    faces.append(tuple(range(2*n-1, n-1, -1)))
+    mesh = bpy.data.meshes.new("GIS_FID826_Continuous_Closed_RoofShell_Mesh")
+    mesh.from_pydata(vertices, [], faces)
+    mesh.materials.append(roof)
+    mesh.update()
+    bm = bmesh.new()
+    bm.from_mesh(mesh)
+    bmesh.ops.recalc_face_normals(bm, faces=list(bm.faces))
+    boundary_edges = sum(e.is_boundary for e in bm.edges)
+    nonmanifold_edges = sum(not e.is_manifold for e in bm.edges)
+    zero_area = sum(f.calc_area() < 1e-8 for f in bm.faces)
+    upward_faces = sum(f.normal.z > 0.05 for f in bm.faces if f.normal.z > -0.05)
+    if boundary_edges or nonmanifold_edges or zero_area:
+        bm.free()
+        raise RuntimeError(f"Roof shell is not closed: boundary={boundary_edges}, nonmanifold={nonmanifold_edges}, zero_area={zero_area}")
+    bm.to_mesh(mesh)
+    bm.free()
+    mesh.update()
+    obj = bpy.data.objects.new("GIS_FID826_Continuous_Closed_RoofShell", mesh)
+    collection.objects.link(obj)
+    print("ROOF_SHELL", json.dumps({"vertices": len(mesh.vertices), "faces": len(mesh.polygons),
+          "boundary_edges": boundary_edges, "nonmanifold_edges": nonmanifold_edges,
+          "zero_area_faces": zero_area, "upward_normals": sum(p.normal.z > 0 for p in mesh.polygons)}))
 
-def roof_panels():
-    levels=sorted(set(y for _,y in ring))
-    patches=[]
-    for band,(y0,y1) in enumerate(zip(levels,levels[1:]),start=1):
-        if y1-y0 < 1e-5: continue
-        ym=(y0+y1)*0.5
-        hits=[]
-        for ei,((x1,ey1),(x2,ey2)) in enumerate(zip(ring,ring[1:]+ring[:1])):
-            if min(ey1,ey2) < ym < max(ey1,ey2):
-                hits.append((edge_x(ei,ym),ei))
-        hits.sort()
-        if len(hits)%2: raise ValueError(f"Odd GIS crossing count in roof band {band}: {len(hits)}")
-        for component in range(0,len(hits),2):
-            left_edge=hits[component][1]; right_edge=hits[component+1][1]
-            xl0=edge_x(left_edge,y0); xr0=edge_x(right_edge,y0)
-            xl1=edge_x(left_edge,y1); xr1=edge_x(right_edge,y1)
-            if max(xr0-xl0,xr1-xl1) < 0.03: continue
-            yc=(y0+y1)*0.5
-            xc=((edge_x(left_edge,yc)+edge_x(right_edge,yc))*0.5)
-            # Keep eaves and ridge level consistent across adjoining facets;
-            # the source-backed raised tower silhouette is the brick gable wall.
-            ridge=11.6
-            stations=[(y0,xl0,xr0),(y1,xl1,xr1)]
-            verts=[]
-            for yy,xl,xr in stations:
-                verts.extend([(xl,yy,wall_h),(xr,yy,wall_h),((xl+xr)*0.5,yy,ridge)])
-            faces=[(0,2,5,3),(2,1,4,5)]
-            materials=[0,0]
-            patches.append({'band':band,'component':component//2+1,'y0':y0,'y1':y1,
-                            'xl0':xl0,'xr0':xr0,'xl1':xl1,'xr1':xr1,'ridge':ridge,
-                            'verts':verts,'faces':faces,'materials':materials})
-    # Roof facets remain open at their Y seams. The footprint wall shell and
-    # dedicated central gable close only the supported wall geometry; no
-    # synthetic end triangles bridge GIS notches or create false gable spikes.
-    for p in patches:
-        me=bpy.data.meshes.new(f"GIS_RoofBand_{p['band']:02d}_Facet_{p['component']}_Mesh")
-        me.from_pydata(p['verts'],[],p['faces'])
-        me.materials.append(roof); me.materials.append(brick); me.update()
-        bm=bmesh.new(); bm.from_mesh(me)
-        bmesh.ops.recalc_face_normals(bm,faces=bm.faces)
-        bm.to_mesh(me); bm.free(); me.update()
-        for poly,idx in zip(me.polygons,p['materials']): poly.material_index=idx
-        name=f"GIS_RoofBand_{p['band']:02d}_Facet_{p['component']}"
-        obj=bpy.data.objects.new(name,me); collection.objects.link(obj)
-
-roof_panels()
+roof_shell()
 
 """Legacy parametric helper retained as a recipe for other assets, but the
 Beta house now uses GIS-clipped roof bands above."""
@@ -272,6 +285,31 @@ tower_front = tower_x - 0.15
 mesh_obj("Central_tower_front_gable_brick", [(tower_front,tower_y-3.4,wall_h),(tower_front,tower_y+3.4,wall_h),(tower_front,tower_y,15.0)], [(0,1,2)], brick)
 window_x("Central_tower_high_sash", tower_front-0.18,tower_y,10.35,-1)
 
+# Two small front-facing gabled dormers sit on the long slate wings, as seen
+# in the official chapter-house elevations. They are placed on the west roof
+# slope and rise from the local height-field rather than floating above it.
+roof_center_x = (min(x for x, _ in ring) + max(x for x, _ in ring)) * 0.5
+roof_half_width = max(abs(x-roof_center_x) for x, _ in ring)
+def roof_elevation(x):
+    return wall_h + 2.3 * (1.0 - abs(x-roof_center_x)/roof_half_width)
+
+for dormer_index, dormer_y in enumerate((-411.8, -380.8), start=1):
+    wall_x, _ = x_boundaries_at_y(dormer_y)
+    x0 = wall_x + 3.7
+    x1 = x0 + 2.0
+    z0 = roof_elevation(x0)
+    z1 = roof_elevation(x1)
+    half_span = 1.02
+    peak0, peak1 = z0 + 1.45, z1 + 1.25
+    front = [(x0,dormer_y-half_span,z0),(x0,dormer_y+half_span,z0),(x0,dormer_y,peak0)]
+    rear = [(x1,dormer_y-half_span,z1),(x1,dormer_y+half_span,z1),(x1,dormer_y,peak1)]
+    mesh_obj(f"West_wing_dormer_{dormer_index}_brick_gable", front, [(0,1,2)], brick)
+    mesh_obj(f"West_wing_dormer_{dormer_index}_rear_gable", rear, [(0,2,1)], brick)
+    mesh_obj(f"West_wing_dormer_{dormer_index}_north_slate", [front[0],front[2],rear[2],rear[0]], [(0,1,2,3)], roof)
+    mesh_obj(f"West_wing_dormer_{dormer_index}_south_slate", [front[2],front[1],rear[1],rear[2]], [(0,1,2,3)], roof)
+    cube(f"West_wing_dormer_{dormer_index}_cream_frame", (x0-0.06,dormer_y,z0+0.56), (0.07,0.90,0.94), wood, 0.025)
+    cube(f"West_wing_dormer_{dormer_index}_sash", (x0-0.13,dormer_y,z0+0.56), (0.06,0.72,0.78), glass, 0.025)
+
 # Arched stone portal with heavy jambs, archivolt, glazed transom and shield.
 door_y = -405.2
 door_x, _ = x_boundaries_at_y(door_y)
@@ -286,6 +324,20 @@ cube("Entry_door_dark_wood", (door_x-0.27,door_y,1.43), (0.16,1.82,2.80), wood, 
 cube("Entry_door_glazed_transom", (door_x-0.36,door_y,2.78), (0.08,1.24,0.55), glass, 0.02)
 cube("Entry_door_center_rail", (door_x-0.41,door_y,1.74), (0.06,1.70,0.10), stone, 0.015)
 cube("Chapter_shield_plaque", (door_x-0.42,door_y,4.48), (0.12,0.70,0.82), stone, 0.08)
+# A small shield relief gives the otherwise plain entry plaque a readable
+# chapter-house focal detail. The red shield and brass chevron sit proud of the
+# pale plaque and remain portable as ordinary mesh geometry.
+shield_x = door_x - 0.50
+shield_outline = [(shield_x,door_y-0.34,4.78),(shield_x,door_y+0.34,4.78),
+                  (shield_x,door_y+0.34,4.35),(shield_x,door_y,4.03),
+                  (shield_x,door_y-0.34,4.35)]
+mesh_obj("Beta_Mu_entry_shield", shield_outline, [(0,1,2,3,4)], brick)
+crest_x = door_x - 0.54
+mesh_obj("Beta_Mu_brass_crest_chevron",
+         [(crest_x,door_y-0.24,4.60),(crest_x,door_y,4.37),(crest_x,door_y+0.24,4.60),
+          (crest_x,door_y+0.16,4.66),(crest_x,door_y,4.49),(crest_x,door_y-0.16,4.66)],
+         [(0,1,2,3,4,5)], gold)
+cube("Beta_Mu_brass_crest_bar", (door_x-0.55,door_y,4.69), (0.04,0.40,0.055), gold, 0.012)
 cube("Entry_step_lower", (door_x-0.35,door_y,0.17), (1.1,3.0,0.30), stone, 0.04)
 
 # GIS-derived ground slab is low and unobtrusive, retaining the precise polygon.

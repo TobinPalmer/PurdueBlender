@@ -1,0 +1,171 @@
+{
+  "building": "Beta Theta Pi",
+  "building_id": "massing_beta_theta_pi_fid826",
+  "revision": 3,
+  "asset": "modular/buildings/massing_beta_theta_pi_fid826.blend",
+  "asset_sha256": "18c78795b8e52b4d3566450745bb448d1116f7ded56c4312802a8e5f52fa5b25",
+  "expected_sha256": "18c78795b8e52b4d3566450745bb448d1116f7ded56c4312802a8e5f52fa5b25",
+  "exact_sha_match": true,
+  "review_date": "2026-10-26",
+  "reviewer": "independent grader",
+  "blender_version": "5.2.3 LTS",
+  "fresh_open": true,
+  "score": 7.8,
+  "max_score": 10.0,
+  "threshold": 8.0,
+  "accepted": false,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": [
+        "Purdue BuildingShapesZip4 FID 826 names Beta Theta Pi at 150 Littleton St; Purdue Beta chapter and university address records corroborate the chapter-house identity.",
+        "The model wall base contains all 19 unique source-ring vertices; independent campus transform comparison gives 0.0000294 m maximum nearest-vertex error."
+      ],
+      "finding": "Identity and GIS footprint are directly supported and geometrically faithful."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.9,
+      "max_score": 2.0,
+      "evidence": [
+        "Fresh-open bounds are [[805.9833374023438, 827.1098022460938], [-417.2682800292969, -375.6522521972656], [-0.11999999731779099, 15.0]]; XY bounds agree with the transformed FID 826 polygon within rounding.",
+        "The site-specific aerial overlay supports plan location. The official facade photos are not registered to GIS, so the absolute bearing of the photographed elevation is not proven."
+      ],
+      "finding": "Campus placement and plan scale are strong; photographed facade bearing remains uncertain."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 0.75,
+      "max_score": 2.0,
+      "evidence": [
+        "Official chapter photos support three visible facade levels; housing record lists four floors plus a basement but does not establish above-grade count. Modeled wall/roof elevations are explicitly estimates.",
+        "The r4 east, north, south, and aerial renders show conspicuous black triangular voids, roof facets that meet unevenly, and gable/roof intersections that do not read as the source house\u2019s stepped slate roof.",
+        "The fresh-open roof audit finds 22 facets and 44 faces, but only 63.6% of face normals have a positive upward component; open boundary edges are pervasive at the separate facet seams. The 19-point footprint remains exact."
+      ],
+      "finding": "The main roof silhouette and facet joins remain visibly incorrect. Roofs need contiguous, outward-facing surfaces with closed seams and the photographed gable/dormer profile."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.45,
+      "max_score": 2.0,
+      "evidence": [
+        "The west/front render reproduces the photographed red brick, pale multi-level bay, centered gabled feature, repeated sash rows, and offset arched stone entry.",
+        "The close render shows the bay and arch, but the door is a blank plaque-like panel rather than the photographed wood door/shield treatment; fine stone surrounds and facade projections are simplified.",
+        "East/rear and end elevations use largely repeated generic windows and plain wall fields; source coverage of hidden elevations is limited."
+      ],
+      "finding": "The main facade is recognisable and source-informed, though entry details and secondary elevations remain generic."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": [
+        "The file independently opens in Blender 5.2.3 with the expected scene and collection; it contains 356 objects and five assigned materials.",
+        "No external file-image dependencies are present; the asset uses portable node materials.",
+        "The audit folder preserves GIS, official chapter, and aerial sources plus six review views. The evidence.json SHA text does not match the actual 64-character asset SHA, and the wall-shell diagnostic contains one zero-area face.",
+        "No verified public interior plan was found; omitting invented interior geometry is appropriate but leaves interior completion unverified."
+      ],
+      "finding": "The modular file opens and is portable, with broad provenance. Correct the evidence hash and degenerate shell face; interior remains intentionally unmodeled pending a plan."
+    }
+  ],
+  "evidence": [
+    "audit/beta_theta_pi/sources/purdue_buildings_fid826_4326.json",
+    "audit/beta_theta_pi/sources/purduebeta_chapter_house_gallery.html",
+    "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-1.jpg",
+    "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-11.jpg",
+    "audit/beta_theta_pi/sources/Beta-Mu-Chapter-House-14.jpg",
+    "audit/beta_theta_pi/sources/gis_overlay_esri_aerial.jpg",
+    "audit/beta_theta_pi/preview_r4_west.png",
+    "audit/beta_theta_pi/preview_r4_east.png",
+    "audit/beta_theta_pi/preview_r4_north.png",
+    "audit/beta_theta_pi/preview_r4_south.png",
+    "audit/beta_theta_pi/preview_r4_aerial.png",
+    "audit/beta_theta_pi/independent_grade_revision_3/geometry_validation.json"
+  ],
+  "findings": [
+    "Do not bridge or cap the roof using mismatched planes. Rebuild a contiguous roof shell whose silhouette matches the photographed long slate wings, front gable, and dormers; remove the visible black gaps and spikes.",
+    "Unify winding across all roof faces so normals point outwards; verify with a fresh-open normal audit and review from east, north, south, and 45-degree aerial cameras.",
+    "Replace the duplicate closing point in the source wall-cap face to remove its zero-area polygon while preserving the 19 unique GIS vertices.",
+    "Correct validation.sha256 in evidence.json to the actual asset SHA reported here; rerun the evidence/hash check after any rebuild.",
+    "Improve the visible entry door/shield and finish secondary elevations where chapter imagery supports it."
+  ],
+  "geometry_validation": {
+    "fresh_open": true,
+    "asset_sha256": "18c78795b8e52b4d3566450745bb448d1116f7ded56c4312802a8e5f52fa5b25",
+    "expected_sha256": "18c78795b8e52b4d3566450745bb448d1116f7ded56c4312802a8e5f52fa5b25",
+    "exact_sha_match": true,
+    "scene": "Building_massing_beta_theta_pi_fid826",
+    "collection": "Asset_massing_beta_theta_pi_fid826",
+    "object_count": 356,
+    "mesh_object_count": 356,
+    "bounds_world_m": [
+      [
+        805.9833374023438,
+        827.1098022460938
+      ],
+      [
+        -417.2682800292969,
+        -375.6522521972656
+      ],
+      [
+        -0.11999999731779099,
+        15.0
+      ]
+    ],
+    "source_identity": {
+      "fid": 826,
+      "name": "Beta Theta Pi",
+      "address": "150 Littleton St",
+      "owner": "GREEK",
+      "num_levels": 1,
+      "gis_extrusion": 12
+    },
+    "source_ring_unique_vertices": 19,
+    "wall_base_unique_vertices": 19,
+    "footprint_max_nearest_vertex_error_m": 2.9409405137177637e-05,
+    "footprint_rms_nearest_vertex_error_m": 1.987957121388445e-05,
+    "roof_facet_object_count": 22,
+    "roof_facet_mesh_diagnostics": {
+      "faces": 44,
+      "edges": 154,
+      "boundary_edges": 132,
+      "nonmanifold_edges": 132,
+      "zero_area_faces": 0
+    },
+    "roof_facet_upward_face_fraction": 0.6363636363636364,
+    "roof_deck_present": true,
+    "roof_deck_diagnostics": {
+      "faces": 1,
+      "edges": 20,
+      "boundary_edges": 20,
+      "nonmanifold_edges": 20,
+      "zero_area_faces": 0,
+      "signed_volume_m3": null,
+      "normal_z_min": 1.0,
+      "normal_z_max": 1.0,
+      "all_faces_have_upward_component": true
+    },
+    "gis_wall_shell_diagnostics": {
+      "faces": 20,
+      "edges": 60,
+      "boundary_edges": 40,
+      "nonmanifold_edges": 40,
+      "zero_area_faces": 1,
+      "signed_volume_m3": null,
+      "normal_z_min": 0.0,
+      "normal_z_max": 1.0,
+      "all_faces_have_upward_component": false
+    },
+    "material_names": [
+      "Beta Theta Pi | charcoal slate roof",
+      "Beta Theta Pi | dark reflective window glass",
+      "Beta Theta Pi | painted cream window frames",
+      "Beta Theta Pi | pale limestone trim",
+      "Beta Theta Pi | warm red-brown brick"
+    ],
+    "file_image_dependencies": [],
+    "unpacked_external_images": []
+  }
+}

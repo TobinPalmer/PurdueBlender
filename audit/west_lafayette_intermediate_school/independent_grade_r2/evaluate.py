@@ -1,0 +1,62 @@
+"""Independent rubric record for the frozen WLIS r2 Blender asset."""
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+FINDINGS = json.loads((HERE / 'fresh_open_findings.json').read_text(encoding='utf-8'))
+EXPECTED = '17e0af212022641e2e14d69df022dcf3b407366aa9ddf6e34a12926bfc98304a'
+assert FINDINGS['fresh_open'] and FINDINGS['blender_version'].startswith('5.2.3')
+assert FINDINGS['asset_sha256'] == EXPECTED
+
+criteria = [
+    {'criterion':'Identity and source-backed GIS footprint','score':1.5,'max_score':1.5,
+     'evidence':['WLCSC/NCES identity and 1838 N Salisbury address align with OSM way 772742586.','The reopened shell contains all 45 unique OSM ring vertices; maximum nearest-vertex error is 0.000061 m and shell topology has no boundary, nonmanifold, or zero-area faces.'],
+     'finding':'Strongly verified identity and source outline; the OSM boundary is community mapped, not a surveyed wall line.'},
+    {'criterion':'Campus placement and scale','score':1.4,'max_score':1.5,
+     'evidence':['Footprint coordinates follow the project transform; model bounds are 26.05–196.21 m X and 1855.66–2020.78 m Y.','The school address and Esri aerial agree with the mapped site.','Absolute campus transform is approximate; height up to 12.2 m is estimated and no measured elevation is available.'],
+     'finding':'Plan position and plan scale are strong. Vertical scale is plausible but not source measured.'},
+    {'criterion':'Roof form and vertical massing','score':0.95,'max_score':1.5,
+     'evidence':['The model shows stepped low-slope plates, central raised zone, and larger gym volume.','The reference aerial has two long diagonal classroom wings crossing and a distinctive southeastern complex; the model previews read as a more regular orthogonal cross with oversized simple plates and sparse roof details.','No measured heights, roof schedule, or elevation supports the chosen heights or clerestory/mechanical placement.'],
+     'finding':'Broad low-school character is present, but roof plan articulation differs noticeably from the aerial and vertical claims remain estimates.'},
+    {'criterion':'Facade and recognizable architecture','score':1.05,'max_score':1.5,
+     'evidence':['Main-entry render includes red-brown brick, broad windows, light panels, a flag, and red-steel canopy, corresponding to the architect photo.','The real entry photo has a taller triangulated red canopy, a much more glazed high clerestory facade, and finer brick/window proportions; the render has a simplified low horizontal canopy, repetitive window modules, and blocky volumes.','Gym exterior render has repetitive dark vertical fins not established by available imagery.'],
+     'finding':'Distinctive school color/material cues are recognizable, though proportions and signature entrance/clerestory structure are simplified.'},
+    {'criterion':'Source-supported classroom and gym interior','score':0.55,'max_score':1.5,
+     'evidence':['Architect sources support 36 classrooms, three wings around a central learning node, a gym, and interior red steel. Classroom and gym previews contain tables, chairs, boards, partitions, court lines, baskets, and bleachers.','Independent point-in-polygon reconstruction of the builder classroom centers finds only 18 of 36 inside the OSM building outline; outside IDs are 13–24, 29–32, 34, and 36. Their contents render in open exterior/courtyard areas, so they cannot be treated as valid interior bays.','The classroom render exposes furniture with sparse partitions and no convincing classroom room envelope; gym preview lacks photo-supported trusses and wall/court-side richness. Exact room plan is not available, so layout detail is not otherwise penalized.'],
+     'finding':'Basic program cues exist, but half the schematic room centers lie beyond the source footprint, a serious placement defect visible in the previews.'},
+    {'criterion':'Materials, texture, and portability','score':1.25,'max_score':1.5,
+     'evidence':['The 14 materials are native procedural/material-node graphs; brick, metal, and terrazzo use procedural nodes. Fresh open finds no file images or missing external assets.','Materials broadly identify brick, glazing, metal panel, red steel, classroom furniture, and sport floor. Several rendered surfaces remain very flat and highly simplified.'],
+     'finding':'Portable and coherent stylized palette, with limited surface-level realism.'},
+    {'criterion':'Evidence and handoff quality','score':0.9,'max_score':1.0,
+     'evidence':['Official school listing, NCES, OSM snapshot, architect project page/images, an award document, and Esri aerial are retained/referenced with limitations.','Seven exterior/interior preview images are present and source limitations are documented.','Esri image has no capture-date/georeferencing metadata; no dimensioned floor plan or measured elevations were found.'],
+     'finding':'Good traceability and honest uncertainty statements; source material is strongest for identity, footprint, and visual cues rather than dimensions.'}
+]
+score = round(sum(c['score'] for c in criteria), 2)
+result = {
+  'building':'West Lafayette Intermediate School',
+  'building_id':'massing_west_lafayette_intermediate_school_d72f0fa',
+  'review_revision':2,
+  'asset':'modular/buildings/massing_west_lafayette_intermediate_school_d72f0fa.blend',
+  'asset_sha256':FINDINGS['asset_sha256'],
+  'expected_sha256':EXPECTED,
+  'exact_sha_match':FINDINGS['asset_sha256']==EXPECTED,
+  'review_date':'2026-10-27',
+  'reviewer':'independent grader',
+  'blender_version':FINDINGS['blender_version'],
+  'fresh_open':FINDINGS['fresh_open'],
+  'score':score,
+  'max_score':10.0,
+  'threshold':8.0,
+  'accepted':score>=8.0,
+  'criteria':criteria,
+  'fresh_open_findings':'audit/west_lafayette_intermediate_school/independent_grade_r2/fresh_open_findings.json',
+  'preview_images':['audit/west_lafayette_intermediate_school/'+n for n in ['preview_aerial.png','preview_main_entry.png','preview_northwest.png','preview_gym.png','preview_interior_cutaway.png','preview_classroom_interior.png','preview_gym_interior.png']],
+  'actionable_defects':[
+    'Reposition/rebuild the 18 schematic classroom bays whose centers fall outside the GIS shell (IDs 13–24, 29–32, 34, 36); recheck full room furniture and partitions against the shell, not only room centers.',
+    'Refine the roof-plan massing to the aerial: two long diagonal classroom wings crossing and the irregular southeastern gym/multipurpose cluster; retain roof heights as estimates.',
+    'Refine the entry canopy/clerestory and facade proportions from the architect entry photo; reconsider dark gym fins that lack source support.',
+    'Re-render a classroom interior with legible room boundaries and photo-supported furniture, and enrich the gym interior with supported red trusses/bleachers and clear court-side walls.'
+  ]
+}
+(HERE/'result.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+print(json.dumps({'score':score,'accepted':result['accepted'],'sha':result['asset_sha256']},indent=2))

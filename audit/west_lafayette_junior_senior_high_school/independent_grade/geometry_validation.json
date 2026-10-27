@@ -1,0 +1,141 @@
+{
+  "file_sha256": "cdd11e34dbd8bf79d00949837642dac55d96e6e704a0171761c1c3cd6845b911",
+  "fresh_open": true,
+  "scene_present": true,
+  "asset_collection_present": true,
+  "asset_object_count": 11,
+  "mesh_object_count": 11,
+  "primary_shell_present": true,
+  "osm_way_closed": true,
+  "osm_unique_point_count": 34,
+  "osm_vertices_matched": 34,
+  "max_osm_to_shell_vertex_error_m": 4.939590470919826e-05,
+  "zero_area_faces": [],
+  "materials": [
+    "WLSHS | blue gray insulated glazing",
+    "WLSHS | charcoal flat roof membrane",
+    "WLSHS | dark bronze aluminum",
+    "WLSHS | muted red-brown modular brick",
+    "WLSHS | rooftop equipment finish",
+    "WLSHS | school red accent",
+    "WLSHS | warm limestone / precast"
+  ],
+  "unpacked_external_images": [],
+  "scene_world_bounds_m": [
+    [
+      82.91316986083984,
+      228.31863403320312
+    ],
+    [
+      893.2509765625,
+      1032.387451171875
+    ],
+    [
+      0.0,
+      11.399999618530273
+    ]
+  ],
+  "preview_files": {
+    "aerial": true,
+    "east": true,
+    "south": true,
+    "northwest": true
+  },
+  "checks_passed": true,
+  "score": 8.0,
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Correct identity and source-backed footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "evidence": "OSM way 283537867 is explicitly named for West Lafayette Junior-Senior High School at 1105 N Grant; district and NCES records corroborate the identity. The reopened shell matches all 34 unique transformed OSM vertices within 0.0000494 m."
+    },
+    {
+      "criterion": "Position, orientation, and scale/dimensions",
+      "score": 1.8,
+      "max_score": 2.0,
+      "evidence": "The asset uses the project campus coordinate transform and reproduces the ordered OSM footprint. Exterior vertices and facade rows follow the polygon edges. No independent survey or orthorectified site reference was found to verify absolute placement and dimensions beyond OSM."
+    },
+    {
+      "criterion": "Evidence-backed height, floors, and roof form",
+      "score": 1.4,
+      "max_score": 2.0,
+      "evidence": "Three facade levels are consistent with OSM building:levels=3. The flat roof and parapet broadly agree with the available aerial/architect imagery; HVAC units are modeled. Wall/parapet/equipment heights are estimates (10.0/10.5/11.4 m), not measurements."
+    },
+    {
+      "criterion": "Facade, entrances, and distinctive architecture",
+      "score": 1.1,
+      "max_score": 2.0,
+      "evidence": "Brick, warm precast accents, divided glazing, entrance canopy and blue-gray curtain glazing reflect KJG photographs. Compared with the architect exterior photo, the model\u2019s facade composition remains generic: it lacks the large curtain-wall-to-stone-tower relationship and the varied entry-level masonry/glazing proportions, and most wings read as repeated small dark windows."
+    },
+    {
+      "criterion": "Modular export, portability, and complete evidence",
+      "score": 1.7,
+      "max_score": 2.0,
+      "evidence": "The fresh-open file contains the expected named scene and collection, 11 mesh objects, seven procedural materials, no unpacked external images, no zero-area faces, and four saved review renders. A dedicated reproducible builder, raw OSM snapshot, architect photos, source register and validation are present. No interior is modeled because no reliable room plan was available."
+    }
+  ],
+  "evidence": {
+    "graded_asset_sha256": "cdd11e34dbd8bf79d00949837642dac55d96e6e704a0171761c1c3cd6845b911",
+    "independent_blender_fresh_open": true,
+    "geometry_validation": {
+      "file_sha256": "cdd11e34dbd8bf79d00949837642dac55d96e6e704a0171761c1c3cd6845b911",
+      "fresh_open": true,
+      "scene_present": true,
+      "asset_collection_present": true,
+      "asset_object_count": 11,
+      "mesh_object_count": 11,
+      "primary_shell_present": true,
+      "osm_way_closed": true,
+      "osm_unique_point_count": 34,
+      "osm_vertices_matched": 34,
+      "max_osm_to_shell_vertex_error_m": 4.939590470919826e-05,
+      "zero_area_faces": [],
+      "materials": [
+        "WLSHS | blue gray insulated glazing",
+        "WLSHS | charcoal flat roof membrane",
+        "WLSHS | dark bronze aluminum",
+        "WLSHS | muted red-brown modular brick",
+        "WLSHS | rooftop equipment finish",
+        "WLSHS | school red accent",
+        "WLSHS | warm limestone / precast"
+      ],
+      "unpacked_external_images": [],
+      "scene_world_bounds_m": [
+        [
+          82.91316986083984,
+          228.31863403320312
+        ],
+        [
+          893.2509765625,
+          1032.387451171875
+        ],
+        [
+          0.0,
+          11.399999618530273
+        ]
+      ],
+      "preview_files": {
+        "aerial": true,
+        "east": true,
+        "south": true,
+        "northwest": true
+      },
+      "checks_passed": true
+    },
+    "visual_review": [
+      "previews/aerial.png",
+      "previews/east.png",
+      "previews/south.png",
+      "previews/northwest.png"
+    ],
+    "source_visual_review": "KJG exterior photograph 1ef8ff260e0c444887bfb229d99c1537.jpg and the KJG project contact sheet."
+  },
+  "findings": [
+    "Passes the project 8/10 gate at 8.0/10.",
+    "The footprint match is exact relative to the supplied OSM geometry, but OSM is not a measured survey.",
+    "Facade composition is the main visual limitation; use an orthogonal/photo-aligned elevation or additional source images to distinguish the major glass bay, adjacent stone tower and brick wings.",
+    "Height remains estimated and no interior is modeled because no trustworthy floor plan was available."
+  ]
+}
