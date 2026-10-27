@@ -1,0 +1,178 @@
+{
+  "building": "Gemini Cooperative",
+  "fid": 825,
+  "score": 8.15,
+  "max_score": 10.0,
+  "threshold": 8.0,
+  "verdict": "meets_threshold",
+  "asset_path": "modular/buildings/massing_gemini_cooperative_fid825.blend",
+  "sha256": {
+    "expected": "035cadd549309370dd2fdf67791bbb0e2919132e797a3dcc74819e00a897dff6",
+    "before_fresh_open": "035cadd549309370dd2fdf67791bbb0e2919132e797a3dcc74819e00a897dff6",
+    "after_fresh_open": "035cadd549309370dd2fdf67791bbb0e2919132e797a3dcc74819e00a897dff6",
+    "after_evaluation": "035cadd549309370dd2fdf67791bbb0e2919132e797a3dcc74819e00a897dff6",
+    "unchanged": true
+  },
+  "fresh_open": {
+    "blender_version": "5.2.3 LTS",
+    "scene": "Building_massing_gemini_cooperative_fid825",
+    "collection": "Asset_massing_gemini_cooperative_fid825",
+    "mesh_objects": 761,
+    "bounds_local_m": {
+      "x": [
+        -13.514049530029297,
+        12.031761169433594
+      ],
+      "y": [
+        -21.21605682373047,
+        21.508644104003906
+      ],
+      "z": [
+        -0.11999999731779099,
+        13.239999771118164
+      ]
+    },
+    "material_count": 10
+  },
+  "source_evidence": {
+    "gis_provider": "Purdue University GIS BuildingShapesZip4",
+    "gis_feature_id": 825,
+    "gis_source_crs": "EPSG:4326",
+    "gis_retrieval_date": "2026-10-27",
+    "gis_snapshot": "audit/gemini/fid825.geojson",
+    "gis_transform": "Project approximate conversion X=(lon+86.9137)*111412.84*cos(40.4274 degrees); Y=(lat-40.4274)*111040; centroid-local coordinates.",
+    "photo_provider": "Gemini Cooperative official website",
+    "official_page": "https://www.geminicooperative.com/",
+    "about_page": "https://www.geminicooperative.com/about",
+    "photo_snapshot": "audit/gemini/official_home_exterior.jpg",
+    "photo_url": "https://static.wixstatic.com/media/95e9bb_01c28615d8194b95a9831dc88772f86f~mv2.jpeg",
+    "photo_retrieval_date": "2026-10-27",
+    "current_site_checked": "2026-10-27; official home page shows gallery and address 172 Littleton Street; imagery depicts the house but is not dimension-calibrated."
+  },
+  "criteria": [
+    {
+      "name": "Identity and official footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "assessment": "The FID 825 source record names Gemini and the reopened lower-floor slab reproduces all 14 official GIS XY vertices within rounding precision. This confirms plan outline only, not elevation or walls above the slab.",
+      "evidence": {
+        "feature_id": 825,
+        "name": "Gemini",
+        "address": "172 Littleton St",
+        "source_crs": "EPSG:4326",
+        "gis_unique_vertices": 14,
+        "slab_unique_vertices": 14,
+        "max_nearest_vertex_error_m": 0.0,
+        "gis_area_m2_approx": 492.6426732387772
+      }
+    },
+    {
+      "name": "Scale and placement",
+      "score": 1.25,
+      "max_score": 1.5,
+      "assessment": "The 14-vertex footprint, local metric geometry, and overall plan proportions are consistent. Wall/story and roof elevations are image-based estimates, and the standalone asset does not include the master placement marker, so campus placement and surveyed vertical scale are not established here.",
+      "evidence": {
+        "units": "METRIC",
+        "mesh_bounds_local_m": {
+          "x": [
+            -13.514049530029297,
+            12.031761169433594
+          ],
+          "y": [
+            -21.21605682373047,
+            21.508644104003906
+          ],
+          "z": [
+            -0.11999999731779099,
+            13.239999771118164
+          ]
+        },
+        "gis_centroid_campus_xy_m_approx": [
+          832.864968388057,
+          -335.6691437738087
+        ],
+        "master_placement_checked": false,
+        "vertical_dimensions": "estimated from current photos; no surveyed elevation"
+      }
+    },
+    {
+      "name": "Roof form and height evidence",
+      "score": 1.45,
+      "max_score": 2.0,
+      "assessment": "Three separately named roof ranges, two cross-gables, three pitched dormers, and chimneys create a more articulated profile. The current official photo still shows deeper, more legible intersecting gable wings; in the model several roof planes merge into broad shallow bands and the gable/valley relationships are not fully convincing. Roof and chimney elevations remain estimates.",
+      "evidence": {
+        "roof_range_objects": 6,
+        "cross_gable_objects": 20,
+        "dormer_objects": 24,
+        "chimney_objects": 6,
+        "model_z_bounds_m": [
+          -0.11999999731779099,
+          13.239999771118164
+        ],
+        "height_status": "photo estimate, not surveyed"
+      }
+    },
+    {
+      "name": "Facade, raised entry, and materials",
+      "score": 1.55,
+      "max_score": 2.0,
+      "assessment": "Brick base, pale lap siding, contrasting sash, multiple window rhythms, porch piers, a raised landing, broad stairs, and guardrails address the main photo cues. The entry is clearly elevated and legible. Its porch roof and facade remain schematic compared with the official photo's deep recessed central porch, broad continuous porch railing, and more distinct wing projections; openings are still somewhat regular.",
+      "evidence": {
+        "facade_window_objects": 316,
+        "porch_related_objects": 63,
+        "material_names": [
+          "Gemini | blue gray glazing",
+          "Gemini | cream painted wood trim",
+          "Gemini | dark bronze window sash",
+          "Gemini | dark red-brown brick",
+          "Gemini | pale concrete entry landing and steps",
+          "Gemini | schematic interior partitions",
+          "Gemini | schematic warm interior floor",
+          "Gemini | subtle recessed siding joints",
+          "Gemini | warm ivory horizontal siding",
+          "Gemini | warm muted red-brown shingles"
+        ],
+        "porch_objects": {
+          "recessed_landing": 1,
+          "brick_piers": 4,
+          "stair_treads": 6,
+          "stair_handrails": 2
+        }
+      }
+    },
+    {
+      "name": "Interior and portability",
+      "score": 1.9,
+      "max_score": 2.5,
+      "assessment": "The fresh-open asset contains a schematic interior rather than an authoritative plan, so room arrangement remains unverified. Portability is strong: all mesh objects have material slots, and no linked libraries or unpacked external image dependencies were found. Geometry is a self-contained standalone collection.",
+      "evidence": {
+        "interior_named_objects": 54,
+        "mesh_objects": 761,
+        "vertices": 6063,
+        "materials": [
+          "Gemini | blue gray glazing",
+          "Gemini | cream painted wood trim",
+          "Gemini | dark bronze window sash",
+          "Gemini | dark red-brown brick",
+          "Gemini | pale concrete entry landing and steps",
+          "Gemini | schematic interior partitions",
+          "Gemini | schematic warm interior floor",
+          "Gemini | subtle recessed siding joints",
+          "Gemini | warm ivory horizontal siding",
+          "Gemini | warm muted red-brown shingles"
+        ],
+        "unassigned_mesh_count": 0,
+        "linked_libraries": [],
+        "unpacked_external_images": []
+      }
+    }
+  ],
+  "findings": [
+    "Fresh-opened standalone asset retains the expected scene and exported collection.",
+    "GIS ring agreement validates the plan outline, not above-grade wall offsets, facade locations, master placement, or height.",
+    "The revised gables, dormers, and porch improve the architectural cues; intersections, facade projection, and roof profiles remain simplified relative to the official exterior.",
+    "Interior arrangement is schematic because no reliable as-built plan was found.",
+    "Portability check found no library links or unpacked external image dependencies."
+  ],
+  "revision_fixes_if_below_8": []
+}

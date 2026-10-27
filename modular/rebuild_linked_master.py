@@ -116,6 +116,8 @@ superseded = {
     "massing_house_301841600_c1351aa": "chi_psi",
     "massing_house_301840867_1cab527": "delta_chi",
     "massing_house_970455239_8e2123c": "massing_chauncey_cooperative_fid805; spatially overlapping Chauncey FID 805 candidate replaced by exact source-backed footprint",
+    "massing_house_860903232_2890c53": "kappa_delta; confirmed matching OSM way 860903232 footprint replaced by detailed Kappa Delta model",
+    "massing_house_301841257_c23233c": "phi_kappa_psi_fid856; broad spatial roof/eave candidate at FID 856 address suppressed to avoid duplication; detailed model uses the official 12-point structural GIS outline and independently verified current chapter identity",
     "massing_lyles_porter_hall_lyle_604c08e": "lyles_porter_hall",
     "massing_agricultural_administration_building_120d92c": "agricultural_administration_building",
     "massing_agricultural_and_biological_engineering_abe_0ebc7b3": "agricultural_and_biological_engineering_abe",

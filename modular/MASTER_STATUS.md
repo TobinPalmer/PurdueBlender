@@ -4,11 +4,11 @@ The current project master is `../purdue_campus_master.blend`. It links the smal
 
 ## Current build
 
-- 1,989 registered assets: 1,988 building assets and one campus site asset.
-- 106 detailed models use local-coordinate linked collections, each with a `Placement_<id>` empty in the master.
-- The master scene has 19,014 scene objects and 1,938 linked source libraries.
-- 52 massing records are suppressed from direct linking by detailed replacements or master overrides.
-- All 106 placement markers reference their expected source library paths; fresh-open verification passes with no missing library paths.
+- 1,993 registered assets: 1,992 building assets and one campus site asset.
+- 110 detailed models use local-coordinate linked collections, each with a `Placement_<id>` empty in the master.
+- The master scene has 19,016 scene objects and 1,940 linked source libraries.
+- 54 massing records are suppressed from direct linking by detailed replacements or master overrides.
+- All 110 placement markers reference their expected source library paths; fresh-open verification passes with no missing library paths.
 - `purdue_campus_master_before_modular_linking.blend` preserves the former root master. Per-building world-coordinate copies are in `source_backups/buildings_world_coordinates/`.
 
 ## Accuracy status
@@ -21,7 +21,9 @@ Edit one source file under `buildings/`, save it, and reopen the root master. Mo
 
 ## October 27 integration
 
-Chauncey Cooperative passed independent review at 8.0/10 and is integrated through `Placement_massing_chauncey_cooperative_fid805` at Purdue GIS FID 805’s computed centroid. Fresh-open checks confirm the expected linked library, 260 objects, correct placement, all 106 detailed markers, and no missing libraries. The old spatial candidate `massing_house_970455239_8e2123c` is suppressed in the master to prevent overlap; its identity remains unverified. The exact GIS foundation ring is preserved, while roof, facade spacing, height, and interior remain estimated or schematic. See `../audit/chauncey/`.
+Kappa Delta / Theta Nu passed independent review at 8.3/10 and is integrated through `Placement_kappa_delta` at the centroid of OSM way 860903232. Fresh-open checks confirm the expected linked library, 1,216 asset objects, correct placement, all 110 detailed markers, and no missing libraries. The exact source massing with the same OSM footprint is suppressed in the master; facade, roof, height and interior limits remain documented. See `../audit/kappa_delta/`.
+
+Chauncey Cooperative passed independent review at 8.0/10 and is integrated through `Placement_massing_chauncey_cooperative_fid805` at Purdue GIS FID 805’s computed centroid. Fresh-open checks confirm the expected linked library, 260 objects, correct placement, all 110 detailed markers, and no missing libraries. The old spatial candidate `massing_house_970455239_8e2123c` is suppressed in the master to prevent overlap; its identity remains unverified. The exact GIS foundation ring is preserved, while roof, facade spacing, height, and interior remain estimated or schematic. See `../audit/chauncey/`.
 
 ## WALC neighborhood review
 
@@ -43,3 +45,9 @@ Knoy Hall remains below threshold: R17–R18 scored 7.8–7.9/10, R19 scored 7.7
 ## October 25 linked-library update
 
 France A. Córdova Recreational Sports Center R4 passed independent review at 8.1/10 and is synced through its existing direct-linked collection; the saved master resolves its library path once. The Aquatic Center R8 source is linked and validated at 1,080 objects, with a 7.9/10 independent grade; it remains unfinished. Neil Armstrong Hall R10 is linked and validated at 445 objects, with a 7.6/10 grade; roof extent, facade detail, and atrium circulation remain below threshold and evidence-limited. Master checks report 69 placement markers, no errors, 3,533 scene objects, and 53,557 referenced source objects.
+
+Maclure Cooperative (FID 822) passed independent review at 8.8/10 and is integrated through `Placement_maclure_cooperative` at the official GIS polygon centroid using the documented project transform. Fresh-open checks confirm the linked source, 348 asset objects, correct placement, all 110 detailed markers, and no missing libraries. The 12-point GIS wall ring matches to 0.0000 m; roof, height, facade dimensions, and schematic interior remain estimated. See `../audit/maclure/`.
+
+Phi Kappa Psi / Indiana Delta passed independent review at 8.5/10 and is integrated through `Placement_phi_kappa_psi_fid856` at the centroid of Purdue GIS FID 856. Current chapter contact and national magazine evidence identify Indiana Delta at 1307 Tower Drive; the GIS record has the correct address and Greek owner but a stale Phi Kappa Tau name. Fresh-open checks confirm the linked source, 969 asset objects, placement, all 110 markers, and no missing libraries. The exact structural ring is retained; the broad overlapping OSM roof/eave candidate is suppressed to avoid a duplicate. Roof/story heights and the schematic interior remain estimated. See `../audit/phi_kappa_psi_fid856/`.
+
+Gemini Cooperative passed independent review at 8.15/10 and is integrated through `Placement_massing_gemini_cooperative_fid825` at the official FID 825 polygon centroid. Fresh-open checks confirm the expected linked library, 761 mesh objects, correct placement, all 110 detailed markers, and no missing libraries. All 14 GIS footprint vertices match within 0.0000014 m under the project approximation; roof junctions, vertical dimensions, entry/facade details, and schematic interior remain estimated. See `../audit/gemini/`.

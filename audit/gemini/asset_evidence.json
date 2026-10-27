@@ -1,0 +1,137 @@
+{
+  "building": "Gemini Cooperative House",
+  "asset_id": "massing_gemini_cooperative_fid825",
+  "asset_path": "modular/buildings/massing_gemini_cooperative_fid825.blend",
+  "scene": "Building_massing_gemini_cooperative_fid825",
+  "collection": "Asset_massing_gemini_cooperative_fid825",
+  "source_feature": {
+    "provider": "Purdue University GIS BuildingShapesZip4",
+    "fid": 825,
+    "name": "Gemini",
+    "address": "172 Littleton St",
+    "source_crs": "EPSG:4326",
+    "source_file": "audit/gemini/fid825.geojson",
+    "retrieved": "2026-10-27"
+  },
+  "crosswalk": {
+    "official_address": "172 Littleton Street",
+    "official_site": "https://www.geminicooperative.com/about",
+    "purdue_coop_listing": "https://www.purdue.edu/fscl/councils/cooperatives/houses.php",
+    "fid_identity_match": "verified by name=Gemini, owner=COOP, address=172 Littleton St; current official exterior photo sign independently reads Gemini / 172 Littleton"
+  },
+  "geographic_centroid": {
+    "latitude": 40.424377043013564,
+    "longitude": -86.90387970716536,
+    "campus_xy_meters": [
+      832.864968388057,
+      -335.6691437738087
+    ]
+  },
+  "footprint": {
+    "official_gis_area_m2": 492.6426732387772,
+    "gis_ring_vertex_count": 14,
+    "measurement": "polygon shoelace on project's local approximate lon/lat conversion; building polygon retained in local frame",
+    "uncertainty": "GIS provider identifies feature as Gemini and wall outline candidate; imagery overlap/under-roof offsets cannot be independently separated; GIS area and conversion are approximate"
+  },
+  "local_geometry": {
+    "local_origin": "area centroid of FID 825 footprint",
+    "bounds_m": {
+      "x": [
+        -13.514049530029297,
+        12.031761169433594
+      ],
+      "y": [
+        -21.21605682373047,
+        21.508644104003906
+      ],
+      "z": [
+        -0.11999999731779099,
+        13.239999771118164
+      ]
+    },
+    "wall_footprint_xy_m": "official GIS polygon, translated to local origin",
+    "orientation": "unrotated local campus east/north axes; shape follows official ring",
+    "floor_count": "three visible levels estimated from official exterior image; GIS NUM_LEVELS=1 conflicts, source field meaning unclear",
+    "height": "main roof ridges estimated 9.72-11.25 m above datum; cross-gable peaks 10.65-11.1 m; entry porch ridge about 6.04 m; chimney stacks extend higher; interpreted, not surveyed",
+    "interior": "schematic representative common spaces, corridor, resident rooms; not a measured floor plan"
+  },
+  "photo_guided_detail_estimates": {
+    "roof_ranges_m": {
+      "west": {
+        "a_interval": [
+          -19.91477234363556,
+          -10.75
+        ],
+        "c_interval": [
+          -7.85,
+          8.0
+        ],
+        "eave_z": 8.15,
+        "ridge_z": 9.72
+      },
+      "connector": {
+        "a_interval": [
+          -11.25,
+          2.25
+        ],
+        "c_interval": [
+          -10.9,
+          9.65
+        ],
+        "eave_z": 8.05,
+        "ridge_z": 9.78
+      },
+      "east": {
+        "a_interval": [
+          1.75,
+          19.72219021320343
+        ],
+        "c_interval": [
+          -5.4,
+          9.85
+        ],
+        "eave_z": 8.35,
+        "ridge_z": 11.25
+      }
+    },
+    "front_entry": {
+      "door_center_z_m": 4.3,
+      "landing_center_z_m": 2.88,
+      "broad_stair_treads": 6,
+      "entry_edge": "long front GIS edge, offset toward the center-wing junction to match the photo; interpretation, not survey"
+    },
+    "dormers": "three pitched dormers with modeled cheeks, gables and roof planes; spacing/size estimated from the official image"
+  },
+  "render_views": [
+    "audit/gemini/gemini_preview.png (front elevation)",
+    "audit/gemini/gemini_preview_oblique.png (source-like oblique)"
+  ],
+  "imagery": [
+    {
+      "file": "audit/gemini/official_home_exterior.jpg",
+      "provider": "Gemini Cooperative official site (Wix CDN)",
+      "url": "https://static.wixstatic.com/media/95e9bb_01c28615d8194b95a9831dc88772f86f~mv2.jpeg",
+      "retrieved": "2026-10-27",
+      "used_for": "current exterior facade color, massing, roof, dormers, entry and lower brick/upper siding"
+    },
+    {
+      "url": "https://www.geminicooperative.com/about",
+      "provider": "Gemini Cooperative official site",
+      "retrieved": "2026-10-27",
+      "used_for": "current house identity/address and historic co-op information"
+    },
+    {
+      "url": "https://boilerlink.purdue.edu/organization/gemini",
+      "provider": "Purdue BoilerLink",
+      "retrieved": "2026-10-27",
+      "used_for": "independent address/organization crosswalk"
+    }
+  ],
+  "hash_sha256": "035cadd549309370dd2fdf67791bbb0e2919132e797a3dcc74819e00a897dff6",
+  "visible_elevation_interpretation": {
+    "reference": "official_home_exterior.jpg",
+    "features": "distinct west, connector, and east roof ranges; two deep street-facing cross gables; large recessed upper-floor entry; broad stair and guardrail; varied wall openings and pitched dormers",
+    "dimensions": "measured only as image proportions; all elevations and the entry edge/offset are estimates because no calibrated facade elevation was found"
+  },
+  "quality_notes": "Current official Gemini photo informs the separated stepped roof wings, deep intersecting front gables/valleys, varied pitched dormers with cheeks, brick base, less repetitive opening rhythm, elevated recessed porch, broad stair and continuous railing. GIS wall outline is directly preserved. Roof intersections, opening locations, porch depth and interior partitions remain estimates because no surveyed elevations or floor plans were found."
+}

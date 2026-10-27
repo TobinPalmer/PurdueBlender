@@ -1,17 +1,18 @@
 {
   "method": "Exhaustive asset ledger against official Purdue 2D polygon snapshot. Aggregate bounds are screening evidence, not measured shell error; direct footprint checks, source matching, independent grades, and master integration are recorded per asset. Not all campus buildings are certified. Explicit placement corrections are recorded separately; this audit does not mutate geometry.",
-  "asset_count": 1981,
-  "building_count": 1980,
+  "asset_count": 1985,
+  "building_count": 1984,
   "status_counts": {
     "needs_shell_and_height_verification": 103,
-    "ambiguous_source_match": 432,
+    "ambiguous_source_match": 430,
     "environment_not_building": 1,
     "independent_grade_pass_8.5_waiting_master_integration": 2,
     "no_official_match": 1420,
     "superseded_by_detailed_replacement": 1,
     "independently_graded_and_master_integrated": 5,
-    "superseded_spatial_candidate": 1,
-    "finished_graded_and_master_verified": 7,
+    "superseded_spatial_candidate": 2,
+    "superseded_confirmed_osm_match": 1,
+    "finished_graded_and_master_verified": 11,
     "historical_demolished_not_current_building": 1,
     "independent_grade_pass_8.5_awaiting_master_integration": 2,
     "independent_grade_pass_8.0_awaiting_master_integration": 1,
@@ -38778,13 +38779,13 @@
       "file": "buildings/massing_house_301841257_c23233c.blend",
       "kind": "massing",
       "object_count": 1,
-      "status": "ambiguous_source_match",
+      "status": "superseded_spatial_candidate",
       "height_status": "unverified",
       "orientation_status": "unverified",
       "position_status": "unverified",
       "plan_dimensions_status": "unverified",
-      "action": "reference comparison only; no geometry mutation",
-      "match_confidence": "spatial_candidate_only_identity_unverified",
+      "action": "Unlinked from master and preserved as a broad roof/eave candidate; detailed Phi Kappa Psi model replaces it to avoid duplicate geometry. OSM way is generically tagged school, and exact identity of that source feature remains uncertain.",
+      "match_confidence": "broad OSM roof/eave outline spatially overlaps official FID 856; exact wall footprint uses GIS ring",
       "source_fid": 856,
       "source_code": "SOFKT",
       "source_name": "Phi Kappa Tau",
@@ -38799,7 +38800,7 @@
       "source_date_retrieved": "2026-10-22",
       "shell_candidates": [],
       "duplicate_extent_assets": [],
-      "uncertainty": "No measured height/elevations; shell polygon and orientation require geometric review.",
+      "uncertainty": "Official FID 856 address and current chapter sources support Phi Kappa Psi identity; OSM way 301841257 is a larger roof/eave outline, not a structural-wall footprint. See audit/phi_kappa_psi_fid856/evidence.md.",
       "official_reference_bounds_xy_m": [
         -1134.3839503126273,
         591.389062467299,
@@ -43837,28 +43838,28 @@
       "file": "buildings/massing_house_860903232_2890c53.blend",
       "kind": "massing",
       "object_count": 1,
-      "status": "ambiguous_source_match",
+      "status": "superseded_confirmed_osm_match",
       "height_status": "unverified",
-      "orientation_status": "unverified",
-      "position_status": "unverified",
-      "plan_dimensions_status": "unverified",
-      "action": "reference comparison only; no geometry mutation",
-      "match_confidence": "spatial_candidate_only_identity_unverified",
-      "source_fid": 800,
-      "source_code": "SOSH",
-      "source_name": "Shoemaker",
+      "orientation_status": "verified exact source ring",
+      "position_status": "verified footprint centroid",
+      "plan_dimensions_status": "verified exact OSM footprint polygon IoU 0.9999995227",
+      "action": "Exact source OSM way 860903232 massing is suppressed in the master and replaced by the detailed Kappa Delta model; standalone source remains preserved.",
+      "match_confidence": "exact_osm_way_polygon_match",
+      "source_fid": "way/860903232",
+      "source_code": "OSM",
+      "source_name": "Kappa Delta / Theta Nu",
       "aabb_center_difference_m": 47.515,
       "aabb_width_difference_m": 16.054,
       "aabb_depth_difference_m": 14.791,
       "aabb_overlap_iou": 0.0,
-      "position_error_m": null,
-      "orientation_error_degrees": null,
+      "position_error_m": 2.1074769586e-06,
+      "orientation_error_degrees": 0,
       "footprint_method": "not measured; aggregate AABB is screening only",
-      "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
-      "source_date_retrieved": "2026-10-22",
+      "source_url": "https://www.openstreetmap.org/way/860903232",
+      "source_date_retrieved": "2026-10-27",
       "shell_candidates": [],
-      "duplicate_extent_assets": [],
-      "uncertainty": "No measured height/elevations; shell polygon and orientation require geometric review.",
+      "duplicate_extent_assets": "[\"kappa_delta\"]",
+      "uncertainty": "Source footprint and placement are verified against OSM; old massing height and facade detail remain unverified. New detailed model retains its own documented roof and interior estimates.",
       "official_reference_bounds_xy_m": [
         334.4441890273138,
         -59.578147744546186,
@@ -43871,7 +43872,8 @@
         398.7794494628906,
         7.994880199432373
       ],
-      "screening_flag": "large_bounds_discrepancy_review_shell"
+      "screening_flag": "replaced by detailed model grade 8.3/10",
+      "duplicate_status": "superseded by detailed kappa_delta"
     },
     {
       "id": "massing_house_860903238_2804c37",
@@ -66010,6 +66012,204 @@
       ],
       "independent_grade": 8.0,
       "master_verification": "audit/chauncey/master_integration_2026-10-27.json; global 106/106 fresh-open check passes"
+    },
+    {
+      "id": "kappa_delta",
+      "file": "buildings/kappa_delta.blend",
+      "kind": "detailed",
+      "object_count": 1216,
+      "status": "finished_graded_and_master_verified",
+      "match_confidence": "official_chapter_address_county_parcel_and_exact_osm_footprint",
+      "source_code": "OSM",
+      "source_fid": "way/860903232",
+      "source_name": "Kappa Delta / Theta Nu",
+      "aabb_center_difference_m": "",
+      "aabb_width_difference_m": "",
+      "aabb_depth_difference_m": "",
+      "aabb_overlap_iou": "",
+      "position_status": "verified from OSM footprint centroid",
+      "position_error_m": 0,
+      "orientation_status": "verified from exact four-vertex OSM ring",
+      "orientation_error_degrees": 0,
+      "plan_dimensions_status": "verified exact OSM way 860903232 foundation ring",
+      "height_status": "estimated from Street View and architect photographs; not survey verified",
+      "screening_flag": "independent grade 8.3/10; master fresh-open pass",
+      "duplicate_status": "exact source massing candidate suppressed from master",
+      "duplicate_extent_assets": [
+        "massing_house_860903232_2890c53"
+      ],
+      "action": "Integrated as detailed local-coordinate collection instance at OSM footprint centroid; exact matching legacy source massing suppressed.",
+      "uncertainty": "Roof/eave heights, some facade details and the photo-informed interior remain estimated or schematic; no Purdue BuildingShapesZip4 FID was found for this house. See audit/kappa_delta/evidence.md and crosswalk_legacy_massing_860903232.json.",
+      "source_url": "https://www.openstreetmap.org/way/860903232",
+      "source_date_retrieved": "2026-10-27",
+      "footprint_method": "Compare asset foundation ring vertex-by-vertex with OSM way 860903232 after the documented local transform; independent maximum vertex error 1.36e-6 m. Legacy source candidate polygon IoU 0.9999995227.",
+      "official_reference_bounds_xy_m": [
+        359.497,
+        -26.227,
+        398.634,
+        1.454
+      ],
+      "model_bounds_xy_m": [
+        359.523285291,
+        -25.596431674,
+        397.159685594,
+        0.22590731
+      ],
+      "placement_origin_xy_m": [
+        379.0652355612492,
+        -12.38651211152874
+      ],
+      "independent_grade": 8.3,
+      "master_verification": "audit/kappa_delta/master_integration_2026-10-27.json; global 110/110 fresh-open check passes"
+    },
+    {
+      "id": "maclure_cooperative",
+      "file": "buildings/maclure_cooperative.blend",
+      "kind": "detailed",
+      "object_count": 348,
+      "status": "finished_graded_and_master_verified",
+      "match_confidence": "official_purdue_gis_fid822_and_exact_12_vertex_wall_outline",
+      "source_code": "Purdue GIS",
+      "source_fid": 822,
+      "source_name": "Maclure Cooperative",
+      "aabb_center_difference_m": null,
+      "aabb_width_difference_m": null,
+      "aabb_depth_difference_m": null,
+      "aabb_overlap_iou": null,
+      "position_status": "verified from FID 822 polygon centroid using project transform",
+      "position_error_m": 0,
+      "orientation_status": "verified from exact 12-vertex wall ring",
+      "orientation_error_degrees": 0,
+      "plan_dimensions_status": "verified exact 12-point FID 822 wall-base ring; model and GIS vertices coincide to 0.0000 m",
+      "height_status": "estimated from official facade photographs; not survey verified",
+      "screening_flag": "independent grade 8.8/10; master fresh-open pass",
+      "duplicate_status": "no reliable prior master asset match; nearest candidate over 112 m away",
+      "duplicate_extent_assets": [],
+      "action": "Integrated as local-coordinate collection instance at FID 822 polygon centroid; exact footprint candidate independently graded and master-verified.",
+      "uncertainty": "Roof profile, wall/eave heights, facade dimensions, and room arrangement remain estimated; no measured elevation or architectural interior plans found. See audit/maclure/build_evidence.json.",
+      "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D822%26outFields%3D*%26returnGeometry%3Dtrue%26outSR%3D4326%26f%3Dgeojson",
+      "source_date_retrieved": "2026-10-27",
+      "footprint_method": "Compare exact 12-point GIS wall ring with evaluated wall-base vertices in the documented project tangent approximation; bidirectional nearest-vertex Hausdorff error 0.0000 m.",
+      "placement_origin_xy_m": [
+        588.724845,
+        -56.856275
+      ],
+      "local_bounds_m": [
+        [
+          -10.611,
+          6.724
+        ],
+        [
+          -10.438,
+          9.7
+        ],
+        [
+          -2.65,
+          10.42
+        ]
+      ],
+      "independent_grade": 8.8,
+      "master_verification": "audit/maclure_cooperative/master_integration_2026-10-27.json; global 110/110 fresh-open check passes"
+    },
+    {
+      "id": "phi_kappa_psi_fid856",
+      "file": "buildings/phi_kappa_psi_fid856.blend",
+      "kind": "detailed",
+      "object_count": 969,
+      "status": "finished_graded_and_master_verified",
+      "match_confidence": "current_official_chapter_and_national_sources_plus_fid856_address_owner_and_exact_structural_ring",
+      "source_code": "Purdue GIS",
+      "source_fid": 856,
+      "source_name": "Phi Kappa Tau (legacy label); Phi Kappa Psi / Indiana Delta at current address",
+      "aabb_center_difference_m": null,
+      "aabb_width_difference_m": null,
+      "aabb_depth_difference_m": null,
+      "aabb_overlap_iou": null,
+      "position_status": "verified from FID 856 polygon centroid using project transform",
+      "position_error_m": 0,
+      "orientation_status": "verified from exact 12-point FID 856 structural outline",
+      "orientation_error_degrees": 0,
+      "plan_dimensions_status": "verified from official FID 856 structural wall ring; exact footprint dimensions per crosswalk",
+      "height_status": "photo-guided estimate; GIS 53 ft extrusion and 2-level count conflict with visual evidence",
+      "screening_flag": "independent grade 8.5/10; master fresh-open pass",
+      "duplicate_status": "broad overlapping roof/eave massing candidate suppressed from master",
+      "duplicate_extent_assets": [
+        "massing_house_301841257_c23233c"
+      ],
+      "action": "Integrated local-coordinate detailed collection at 1307 Tower Drive FID 856; suppressed overlapping OSM-derived massing candidate.",
+      "uncertainty": "Roof pitch/height, exact story count, rear stack height, unseen facade and interior room arrangement remain estimates; OSM roof/eave way is larger than the GIS wall ring. See audit/phi_kappa_psi_fid856/evidence.md.",
+      "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D856%26outFields%3D*%26returnGeometry%3Dtrue%26outSR%3D4326%26f%3Dgeojson",
+      "source_date_retrieved": "2026-10-27",
+      "footprint_method": "Asset is built from all 12 official GIS FID 856 structural wall-ring vertices in its area-centroid local frame; exact comparison method and source metrics recorded in audit/phi_kappa_psi_fid856/gis_crosswalk.json.",
+      "placement_origin_xy_m": [
+        -1116.752906,
+        605.237879
+      ],
+      "local_bounds_m": [
+        [
+          -17.802,
+          17.774
+        ],
+        [
+          -14.614,
+          15.169
+        ],
+        [
+          -0.52,
+          18.15
+        ]
+      ],
+      "independent_grade": 8.5,
+      "master_verification": "audit/phi_kappa_psi_fid856/master_integration_2026-10-27.json; global 110/110 fresh-open check passes"
+    },
+    {
+      "id": "massing_gemini_cooperative_fid825",
+      "file": "buildings/massing_gemini_cooperative_fid825.blend",
+      "kind": "detailed",
+      "object_count": 761,
+      "status": "finished_graded_and_master_verified",
+      "match_confidence": "official_FID825_Gemini_address_and_exact_14_vertex_footprint",
+      "source_code": "Purdue GIS",
+      "source_fid": 825,
+      "source_name": "Gemini",
+      "aabb_center_difference_m": null,
+      "aabb_width_difference_m": null,
+      "aabb_depth_difference_m": null,
+      "aabb_overlap_iou": null,
+      "position_status": "verified from official FID 825 polygon centroid using documented project transform",
+      "position_error_m": 0,
+      "orientation_status": "verified from exact 14-point GIS slab ring",
+      "orientation_error_degrees": 0,
+      "plan_dimensions_status": "verified 14-point slab ring; maximum nearest vertex error 1.34e-6 m",
+      "height_status": "photo-interpreted estimates; GIS level count conflicts with visible facade",
+      "screening_flag": "independent grade 8.15/10; master fresh-open pass",
+      "duplicate_status": "no separate existing source asset candidate",
+      "duplicate_extent_assets": [],
+      "action": "Integrated local-coordinate detailed collection instance at 172 Littleton Street, official GIS centroid.",
+      "uncertainty": "Roof junctions, porch position, vertical dimensions, facade openings and schematic interior are not survey or plan verified. See audit/gemini/asset_evidence.json.",
+      "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D825%26outFields%3D*%26returnGeometry%3Dtrue%26outSR%3D4326%26f%3Dgeojson",
+      "source_date_retrieved": "2026-10-27",
+      "footprint_method": "Compare evaluated FID 825 slab vertices with the official 14-point GIS footprint in documented project local conversion; maximum nearest-vertex error 1.34e-6 m.",
+      "placement_origin_xy_m": [
+        832.864968388057,
+        -335.6691437738087
+      ],
+      "local_bounds_m": [
+        [
+          -13.51405,
+          12.031762
+        ],
+        [
+          -21.216057,
+          21.508644
+        ],
+        [
+          -0.12,
+          13.24
+        ]
+      ],
+      "independent_grade": 8.15,
+      "master_verification": "audit/massing_gemini_cooperative_fid825/master_integration_2026-10-27.json; global 110/110 fresh-open check passes"
     }
   ],
   "duplicate_extent_groups": [
@@ -66763,5 +66963,5 @@
     ]
   ],
   "duplicate_extent_asset_count": 374,
-  "detailed_asset_count": 96
+  "detailed_asset_count": 100
 }

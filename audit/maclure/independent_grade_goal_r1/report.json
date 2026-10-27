@@ -1,0 +1,184 @@
+{
+  "status": "graded",
+  "asset_path": "modular/buildings/maclure_cooperative.blend",
+  "asset_sha256": "F0830F8324640A585C8F4881FB67359C1AE8827DA33F4E8D4FEB04C266AC2609",
+  "method": {
+    "asset_inspection": "Blender 5.2.3 LTS background open of the exact .blend; evaluated depsgraph bounds/material/library checks; direct review of provided exterior and interior preview images.",
+    "footprint_comparison": "Read official raw GeoJSON FID 822; converted EPSG:4326 vertices with modular/AGENTS.md local approximation, computed polygon centroid, compared transformed mesh base vertices bidirectionally by nearest-neighbor distance.",
+    "source_review": "Independently read official GIS GeoJSON and preserved co-op/FSCL source notes and exterior photos; did not adopt builder ratings or claims."
+  },
+  "score": 7.3,
+  "evidence_score": 7.6,
+  "max_score": 10.0,
+  "criteria": [
+    {
+      "criterion": "footprint / placement",
+      "max_score": 2.0,
+      "model_score": 1.9,
+      "evidence_score": 1.9,
+      "model_finding": "Wall mesh is the 12-vertex GIS outline extruded to Z=6.0 m; bidirectional vertex Hausdorff error versus transformed FID 822 ring is 0.0000 m. Root placement stores GIS centroid (588.724845, -56.856275) m. Placement is correct in the local frame; master marker integration was not evaluated.",
+      "evidence_finding": "Official Purdue GIS FID 822 identifies Maclure / SOMC at 128 Wiggins St. Snapshot and CRS/approximate conversion are documented; source accuracy metadata and a surveyed control point are absent."
+    },
+    {
+      "criterion": "identity",
+      "max_score": 2.0,
+      "model_score": 1.7,
+      "evidence_score": 2.0,
+      "model_finding": "Asset root is labeled maclure_cooperative; source feature ID is 822. Rendered stone inscription is visibly misspelled/clipped in preview, so the visible identity cue is unreliable.",
+      "evidence_finding": "GIS name/address/owner attributes match the co-op official About page and Purdue FSCL cooperative list."
+    },
+    {
+      "criterion": "roof / height / facade",
+      "max_score": 2.0,
+      "model_score": 1.2,
+      "evidence_score": 1.2,
+      "model_finding": "Photo-supported white clapboard, charcoal roof, red shutters, brick chimney, gable, and raised deck are present. Exterior preview places access stairs near the middle; official facade photo shows them at the right end beside a recessed entrance. First-floor window/door arrangement also differs. Roof/wall heights are estimates (wall 6 m; roof peak 9 m), not measured.",
+      "evidence_finding": "Official co-op photo gallery supports overall style and visible features but has no verified capture date/current survey. GIS NUM_LEVELS=1 conflicts with the apparent two-story plus attic; roof form, facade dimensions, window spacing, and all Z values remain unverified estimates."
+    },
+    {
+      "criterion": "interior",
+      "max_score": 2.0,
+      "model_score": 0.8,
+      "evidence_score": 0.7,
+      "model_finding": "Asset includes 8 estimated partition pieces, 2 estimated interior floor slabs, furniture proxies (28 objects matching estimated labels), and an estimated basement. However, both floor slabs are render-hidden; the provided cutaway preview reads as sparse schematic partitions plus table/chairs, not a resolved floor plan.",
+      "evidence_finding": "Virtual-tour room names support a limited room program only. No architectural plans, measured partitions, door schedule, or verified furniture layout were found; placement and dimensions are estimates."
+    },
+    {
+      "criterion": "materials / portability",
+      "max_score": 2.0,
+      "model_score": 1.7,
+      "evidence_score": 1.8,
+      "model_finding": "16 assigned materials with procedural Blender materials; 0 linked libraries and 0 file/tiled image dependencies in the delivered scene. Colors broadly match the official photo. Facade siding edges read as repeated overhanging seams and garden/stone geometry is simplified.",
+      "evidence_finding": "Official imagery supports broad exterior colors and roofing/deck material appearance. Procedural materials and no external texture dependencies are directly verified from the asset; exact construction/material specification is unavailable."
+    }
+  ],
+  "evidence": [
+    {
+      "path": "audit/maclure/sources/official_gis_fid822.geojson",
+      "role": "Purdue GIS raw feature snapshot, FID 822; source CRS EPSG:4326 output from EPSG:3857 layer; source edit timestamp 2026-08-31; retrieved 2026-10-27."
+    },
+    {
+      "path": "audit/maclure/sources/mac_lure_about_source.txt",
+      "role": "Maclure Cooperative official site name/address/history note; retrieved 2026-10-27."
+    },
+    {
+      "path": "audit/maclure/sources/purdue_fscl_houses_source.txt",
+      "role": "Purdue FSCL official co-op listing note; retrieved 2026-10-27."
+    },
+    {
+      "path": "audit/maclure/sources/img-6426.jpg",
+      "role": "Official cooperative exterior gallery photo; supports facade, roof, windows, shutters, porch/stairs, and landscape; exact image date unknown."
+    },
+    {
+      "path": "audit/maclure/sources/img-6427.jpg",
+      "role": "Official cooperative close photo of porch deck, lattice, stairs, and identity rock; exact image date unknown."
+    },
+    {
+      "path": "audit/maclure/sources/img-6430.jpg",
+      "role": "Official cooperative gallery street view; supplemental massing/context; exact image date unknown."
+    },
+    {
+      "path": "audit/maclure/maclure_exterior_preview.png",
+      "role": "Model preview visually inspected."
+    },
+    {
+      "path": "audit/maclure/maclure_interior_preview.png",
+      "role": "Model cutaway preview visually inspected."
+    }
+  ],
+  "measured_asset": {
+    "scene": "Building_maclure_cooperative",
+    "collection": "Asset_maclure_cooperative",
+    "object_count": 359,
+    "local_project_xy_bounds_from_evaluated_asset_m": [
+      [
+        -10.611,
+        6.724
+      ],
+      [
+        -9.987,
+        9.7
+      ],
+      [
+        -2.65,
+        10.42
+      ]
+    ],
+    "wall_mesh_bounds_m": [
+      [
+        -5.577,
+        6.374
+      ],
+      [
+        -9.487,
+        8.805
+      ],
+      [
+        0.0,
+        6.0
+      ]
+    ],
+    "roof_mesh_bounds_m": [
+      [
+        -5.927,
+        6.724
+      ],
+      [
+        -9.987,
+        9.305
+      ],
+      [
+        6.0,
+        9.0
+      ]
+    ],
+    "cross_gable_bounds_m": [
+      [
+        -5.797,
+        0.049
+      ],
+      [
+        -8.487,
+        -3.487
+      ],
+      [
+        6.0,
+        8.7
+      ]
+    ],
+    "gis_ring_vertex_count": 12,
+    "wall_base_vertex_count": 12,
+    "gis_wall_bidirectional_vertex_hausdorff_m": 0.0,
+    "gis_polygon_area_projected_m2": 193.016,
+    "placement_centroid_xy_m": [
+      588.724845,
+      -56.856275
+    ],
+    "estimated_wall_top_m": 6.0,
+    "estimated_ridge_peak_m": 9.0,
+    "procedural_material_count": 16,
+    "external_file_image_count": 0,
+    "linked_library_count": 0,
+    "render_hidden_interior_floor_slabs": [
+      "Estimated interior floor slab",
+      "Estimated interior floor slab.001"
+    ]
+  },
+  "findings": [
+    "Exterior evidence supports broad identity and appearance; GIS geometry supports footprint and placement. No independent source verifies building height or roof topology.",
+    "The official facade photo places porch access at the right end next to the recessed entry; the current preview puts modeled access near the center and should be revised.",
+    "The current interior is not independently verifiable as a plan. The floor slabs are hidden in renders and source material provides only room names.",
+    "Materials are portable in the inspected asset: zero external image dependencies and zero linked libraries."
+  ],
+  "specific_fixes_to_reach_or_exceed_8_of_10": [
+    "Move the deck stairs to the documented right end and model the recessed entry bay; revise the first-floor openings to match the official front photo (remove the extra lower window where the entrance occupies that bay). This is the highest-value fidelity fix.",
+    "Render a clear, separate cutaway/floor-plan view with the estimated floor slabs visible, plus enough partition/door openings to show circulation; keep the layout explicitly labeled as estimated until a measured plan is obtained.",
+    "Correct the garden identity rock text to read MACLURE / est. 1966 and adjust its angle/contrast so the text is legible.",
+    "Keep roof peak and wall height labeled estimated; an independently measured elevation or reliable source is needed before height can score as verified."
+  ],
+  "blockers": [
+    "No measured elevation or architectural plan.",
+    "No verified source-photo date/current facade survey."
+  ],
+  "grade_scope_note": "Model score and source-evidence score are separate 10-point scales. Exact asset digest was checked before and after evaluation."
+}

@@ -70,6 +70,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Lambertus Hall | [lambertus_hall.blend](buildings/lambertus_hall.blend) | 102 |
 | Lawson Hall | [lawson_hall.blend](buildings/lawson_hall.blend) | 619 |
 | Mackey Arena | [mackey_arena.blend](buildings/mackey_arena.blend) | 391 |
+| Maclure Cooperative ([8.8/10](../audit/maclure/independent_grade_goal_r2/report.json); integrated and fresh-open verified) | [maclure_cooperative.blend](buildings/maclure_cooperative.blend) | 348 |
 | Math Sciences | [math_sciences.blend](buildings/math_sciences.blend) | 593 |
 | Marc and Sharon Hagle Hall (HAGL) | [massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend](buildings/massing_marc_and_sharon_hagle_hall_hagl_071ffd6.blend) | 1 |
 | Marriott Hall | [massing_marriot_hall_7cd3eb5.blend](buildings/massing_marriot_hall_7cd3eb5.blend) | 1 |
@@ -133,6 +134,7 @@ Edit geometry in its source library; campus placement is controlled by its Place
 | Flex Lab (R2 independently graded 8.4/10; accepted) | [flex_lab.blend](buildings/flex_lab.blend) | 407 |
 | Ford Dining Court | [ford_dining_court.blend](buildings/ford_dining_court.blend) | 69 |
 | France A. Córdova Recreational Sports Center | [massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend](buildings/massing_france_a_c_rdova_recreational_sports_center_ae69df0.blend) | 199 |
+| Gemini Cooperative ([8.15/10](../audit/gemini/independent_grade_goal_r3/result.json); integrated and fresh-open verified) | [massing_gemini_cooperative_fid825.blend](buildings/massing_gemini_cooperative_fid825.blend) | 761 |
 | Turf Recreation Exercise Center (TREC) | [massing_turf_recreation_exercise_center_9622f45.blend](buildings/massing_turf_recreation_exercise_center_9622f45.blend) | 274 |
 | Hall for Discovery and Learning Research | [hall_for_discovery_and_learning_research.blend](buildings/hall_for_discovery_and_learning_research.blend) | 396 |
 | The Church of Jesus Christ of Latter-day Saints Institute of Religion | [massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend](buildings/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451.blend) | 1 |
@@ -217,6 +219,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Jimmy John's | [massing_jimmy_john_s_12edba1.blend](buildings/massing_jimmy_john_s_12edba1.blend) | 1 |
 | Joyful Journeys | [massing_joyful_journeys_abaf5c3.blend](buildings/massing_joyful_journeys_abaf5c3.blend) | 1 |
 | Kappa Alpha Theta | [massing_house_301840865_cbf7de2.blend](buildings/massing_house_301840865_cbf7de2.blend) | 430 |
+| Kappa Delta | [kappa_delta.blend](buildings/kappa_delta.blend) | 1,216 |
 | Kappa Delta Rho | [massing_house_1089876362_14ecd2c.blend](buildings/massing_house_1089876362_14ecd2c.blend) | 12 |
 | Kappa Sigma | [massing_kappa_sigma_c1b36ec.blend](buildings/massing_kappa_sigma_c1b36ec.blend) | 1 |
 | Lilly Hall of Life Sciences | [massing_lilly_hall_e7fc13e.blend](buildings/massing_lilly_hall_e7fc13e.blend) | 4 |
@@ -231,6 +234,7 @@ Hi Vine retains campus-world coordinates. Its 8.3/10 grade finds strong agreemen
 | Pi Kappa Alpha (Pike) | [massing_house_301841252_e4f8f05.blend](buildings/massing_house_301841252_e4f8f05.blend) | 608 |
 | Pi Kappa Phi (Omega) | [massing_pi_kappa_phi_50e4645.blend](buildings/massing_pi_kappa_phi_50e4645.blend) | 239 |
 | Phi Kappa Sigma | [massing_phi_kappa_sigma_fid829.blend](buildings/massing_phi_kappa_sigma_fid829.blend) | 654 |
+| Phi Kappa Psi / Indiana Delta ([8.5/10](../audit/phi_kappa_psi_fid856/independent_grade_goal_r2/result.json); integrated, FID 856 crosswalk verified) | [phi_kappa_psi_fid856.blend](buildings/phi_kappa_psi_fid856.blend) | 969 |
 | Phi Kappa Tau | [massing_phi_kappa_tau_139b9d7.blend](buildings/massing_phi_kappa_tau_139b9d7.blend) | 1 |
 | Purdue Police Department (TERY) | [massing_purdue_police_department_19f467e.blend](buildings/massing_purdue_police_department_19f467e.blend) | 1 |
 | Purdue University Daniel Turf Center | [massing_purdue_university_daniel_turf_center_e69b7da.blend](buildings/massing_purdue_university_daniel_turf_center_e69b7da.blend) | 1 |

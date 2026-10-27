@@ -1,0 +1,170 @@
+{
+  "building": "Gemini Cooperative House",
+  "fid": 825,
+  "verdict": "below_threshold",
+  "score": 7.2,
+  "max_score": 10.0,
+  "threshold": 8.0,
+  "criteria": [
+    {
+      "name": "Identity and official footprint",
+      "score": 2.0,
+      "max_score": 2.0,
+      "assessment": "GIS FID 825 identifies Gemini, COOP, 172 Littleton St. The reopened slab reproduces the 14-vertex GIS outline at the local centroid; this checks the slab ring, not necessarily every facade wall or master placement.",
+      "evidence": {
+        "fid": 825,
+        "building_name": "Gemini",
+        "address": "172 Littleton St",
+        "ring_vertices": 14,
+        "gis_area_m2_approx": 492.6426732387772,
+        "slab_xy_unique_vertices": 14,
+        "max_nearest_vertex_error_m": 0.0
+      }
+    },
+    {
+      "name": "Scale and placement",
+      "score": 1.15,
+      "max_score": 1.5,
+      "assessment": "Metric units and centroid-local geometry are evident, and the footprint vertex agreement supports plan scale. Roof elevations, storey heights, and campus marker placement have no independent surveyed or master-scene validation in this standalone asset review.",
+      "evidence": {
+        "scene_units": "METRIC",
+        "local_bounds_m": {
+          "x": [
+            -14.400382041931152,
+            15.914502143859863
+          ],
+          "y": [
+            -22.096445083618164,
+            21.52412223815918
+          ],
+          "z": [
+            -0.11999999731779099,
+            13.619999885559082
+          ]
+        },
+        "gis_centroid_campus_xy_m": [
+          832.864968388057,
+          -335.6691437738087
+        ],
+        "placement_source": "manifest/master placement not independently reopened in this isolated-asset grading"
+      }
+    },
+    {
+      "name": "Roof form and height evidence",
+      "score": 1.25,
+      "max_score": 2.0,
+      "assessment": "Multiple ranges, two front cross-gables, dormer elements, and three chimney masses create a more articulated silhouette than a simple bar. Against the official oblique image, the main roof still reads as a broad continuous gable with thin, schematic intersections; dormers are shallow block forms. Ridge/chimney elevations are estimates, not measured evidence.",
+      "evidence": {
+        "roof_related_objects": 63,
+        "official_image": "audit/gemini/official_home_exterior.jpg",
+        "height_bounds_m": [
+          -0.11999999731779099,
+          13.619999885559082
+        ],
+        "height_status": "estimated from photo; no surveyed elevation"
+      }
+    },
+    {
+      "name": "Facade and entrance",
+      "score": 1.25,
+      "max_score": 2.0,
+      "assessment": "Dark brick base, light siding, windows, and a covered entry evoke the official house. The reference facade has strongly differentiated wings, an asymmetrical opening rhythm, a substantial recessed porch with a continuous railing and broad approach. The asset facade remains repetitive, porch details are comparatively minimal, and roof gable faces/window rhythm do not fully follow the photo.",
+      "evidence": {
+        "window_named_objects": 526,
+        "porch_named_objects": 28,
+        "photo": "current official exterior photo showing brick lower story, cream siding, multiple projecting gables, dormers, and deep center porch"
+      }
+    },
+    {
+      "name": "Materials, interior, and portability",
+      "score": 1.55,
+      "max_score": 2.5,
+      "assessment": "Named brick, siding, roof, trim, glazing, and interior materials support the intended look. The interior contains floor plates, corridor/room partitions, and a few common-room props but is schematic and visually not verified as an as-built plan. Fresh-open structure is self-contained without linked libraries or unpacked image dependencies.",
+      "evidence": {
+        "material_names": [
+          "Gemini | blue gray glazing",
+          "Gemini | cream painted wood trim",
+          "Gemini | dark bronze window sash",
+          "Gemini | dark red-brown brick",
+          "Gemini | entry stone piers",
+          "Gemini | schematic interior partitions",
+          "Gemini | schematic warm interior floor",
+          "Gemini | subtle recessed siding joints",
+          "Gemini | warm ivory horizontal siding",
+          "Gemini | warm muted red-brown shingles"
+        ],
+        "unassigned_meshes": 0,
+        "linked_libraries": [],
+        "unpacked_external_images": [],
+        "interior_named_object_count": 54,
+        "mesh_object_count": 936,
+        "vertex_count": 7538
+      }
+    }
+  ],
+  "source_evidence": {
+    "provider": "Purdue University GIS BuildingShapesZip4",
+    "source_file": "audit/gemini/fid825.geojson",
+    "source_crs": "EPSG:4326",
+    "retrieval_date": "2026-10-27",
+    "photo_provider": "Gemini Cooperative official site (Wix CDN)",
+    "photo_url": "https://static.wixstatic.com/media/95e9bb_01c28615d8194b95a9831dc88772f86f~mv2.jpeg",
+    "photo_retrieval_date": "2026-10-27",
+    "measurement_method": "Official GIS lon/lat polygon transformed using project approximate local conversion; vertex comparison on reopened slab XY; 3D extent from mesh world coordinates; visual comparison against current official exterior image.",
+    "uncertainty": "Approximate GIS conversion; no survey, measured elevations, authoritative plans, or master placement validation."
+  },
+  "fresh_open": {
+    "blender_version": "5.2.3 LTS",
+    "scene": "Building_massing_gemini_cooperative_fid825",
+    "collection": "Asset_massing_gemini_cooperative_fid825",
+    "mesh_objects": 936,
+    "materials": [
+      "Gemini | blue gray glazing",
+      "Gemini | cream painted wood trim",
+      "Gemini | dark bronze window sash",
+      "Gemini | dark red-brown brick",
+      "Gemini | entry stone piers",
+      "Gemini | schematic interior partitions",
+      "Gemini | schematic warm interior floor",
+      "Gemini | subtle recessed siding joints",
+      "Gemini | warm ivory horizontal siding",
+      "Gemini | warm muted red-brown shingles"
+    ],
+    "unassigned_meshes": [],
+    "linked_libraries": [],
+    "unpacked_external_images": [],
+    "bounds_local_m": {
+      "x": [
+        -14.400382041931152,
+        15.914502143859863
+      ],
+      "y": [
+        -22.096445083618164,
+        21.52412223815918
+      ],
+      "z": [
+        -0.11999999731779099,
+        13.619999885559082
+      ]
+    }
+  },
+  "sha256": {
+    "expected": "dd9789003b208747d2f80d4c4af35d27900ce2f7debcfea18c4f1a473f5c25a8",
+    "before_open": "dd9789003b208747d2f80d4c4af35d27900ce2f7debcfea18c4f1a473f5c25a8",
+    "after_open": "dd9789003b208747d2f80d4c4af35d27900ce2f7debcfea18c4f1a473f5c25a8",
+    "after_evaluation": "dd9789003b208747d2f80d4c4af35d27900ce2f7debcfea18c4f1a473f5c25a8",
+    "matches_all": true
+  },
+  "findings": [
+    "Official FID 825 wall-outline candidate matches the slab XY ring to rounding precision; walls may be offset from a GIS polygon and this does not validate the master placement.",
+    "The current official photo visibly supports a multi-wing house with a deep central porch, brick lower facade, pale siding, intersecting gables, dormers, and chimney stacks.",
+    "Asset materials and three-level schematic content are useful, but no reliable interior plan or surveyed height was available; the GIS record's NUM_LEVELS=1 remains conflicting, ambiguous source data.",
+    "Portability is strong on fresh open: no linked libraries or unpacked external image dependencies were found."
+  ],
+  "required_fixes_if_below_8": [
+    "Reshape the roof silhouette to match the photo's distinct stepped wings and deeper intersecting gables/valleys, preserving the GIS wall footprint; support heights with a measured elevation or keep the dimensions explicitly estimated.",
+    "Rework the front composition around the image-visible center porch: deeper/recessed entry, continuous rail line and broad stair/landing; shift and vary facade windows to match the separate wings.",
+    "Model dormers with clear pitched caps/cheeks and vary their sizes and spacing to match the current photo rather than using shallow box faces.",
+    "Retain interior as schematic unless a trustworthy floor plan is found; add clear floor/cutaway review evidence if interior usability is a goal."
+  ]
+}

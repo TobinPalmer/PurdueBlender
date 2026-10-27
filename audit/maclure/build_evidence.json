@@ -1,0 +1,102 @@
+{
+  "asset_id": "maclure_cooperative",
+  "stable_id_note": "New dedicated asset because the existing manifest contained no Maclure entry or asset; retain this ID and path when coordinator adds the shared manifest mapping.",
+  "asset_path": "modular/buildings/maclure_cooperative.blend",
+  "source_script": "modular/buildings/build_maclure_cooperative.py",
+  "collection": "Asset_maclure_cooperative",
+  "scene": "Building_maclure_cooperative",
+  "retrieved_utc": "2026-10-27",
+  "identity": {
+    "official_name": "Maclure",
+    "address": "128 Wiggins St",
+    "purdue_gis_fid": 822,
+    "gis_abbreviation": "SOMC",
+    "owner_class": "COOP",
+    "identity_check": "GIS attribute match is corroborated by the current official Maclure Cooperative site stating its original house is 128 Wiggins Street, and by Purdue FSCL cooperative houses list."
+  },
+  "placement": {
+    "crs": "Approximate project local tangent conversion per modular/AGENTS.md: X=(lon+86.9137)*111412.84*cos(40.4274deg), Y=(lat-40.4274)*111040; units meters; not surveyed.",
+    "origin_method": "Shoelace centroid of official GIS FID 822 polygon after conversion. Detailed asset geometry is centered on this point; master Placement_maclure_cooperative marker should use these coordinates.",
+    "origin_xy_m": [
+      588.724845,
+      -56.856275
+    ],
+    "local_polygon_bounds_m": [
+      -5.577,
+      -9.487,
+      6.374,
+      8.805
+    ],
+    "gis_polygon_area_m2_approx": 193.016,
+    "ring_vertex_count": 12,
+    "orientation": "Long axis is N-S; the official polygon and Esri imagery tile support the building orientation. Front facade toward Wiggins is inferred from address and official exterior photographs; no measured survey bearing."
+  },
+  "sources": [
+    {
+      "provider": "Purdue GIS / ArcGIS FeatureServer BuildingShapesZip4",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D822%26outFields%3D*%26returnGeometry%3Dtrue%26outSR%3D4326%26f%3Dgeojson",
+      "feature_id": "FID 822; GlobalID {67A0F2B9-9BDA-45EB-BE77-2EEF7AEF78A1}",
+      "retrieved_utc": "2026-10-27",
+      "source_crs": "EPSG:4326 output; source layer native EPSG:3857",
+      "source_data_last_edit_utc": "2026-08-31T16:13:41.596000+00:00",
+      "file": "audit/maclure/sources/official_gis_fid822.geojson",
+      "use": "Exact wall outline, footprint centroid, orientation. GIS NUM_LEVELS=1 conflicts with visible two-story plus attic house and is not used as measured height."
+    },
+    {
+      "provider": "Maclure Cooperative official site, About",
+      "url": "https://maclurecooperativepurdue.weebly.com/",
+      "retrieved_utc": "2026-10-27",
+      "file": "audit/maclure/sources/mac_lure_about_source.txt",
+      "use": "Name, original address 128 Wiggins Street, claimed house age 1900; confirms continuity of identity."
+    },
+    {
+      "provider": "Purdue University FSCL Cooperative Houses",
+      "url": "https://www.purdue.edu/fscl/councils/cooperatives/houses.php",
+      "retrieved_utc": "2026-10-27",
+      "file": "audit/maclure/sources/purdue_fscl_houses_source.txt",
+      "use": "Current official recognition/listing of Maclure as a Purdue cooperative and its official website link."
+    },
+    {
+      "provider": "Maclure Cooperative official Our Home photo gallery",
+      "url": "https://maclurecooperativepurdue.weebly.com/our-home.html",
+      "retrieved_utc": "2026-10-27",
+      "source_image_files": [
+        "audit/maclure/sources/img-6426.jpg",
+        "audit/maclure/sources/img-6427.jpg",
+        "audit/maclure/sources/img-6430.jpg",
+        "audit/maclure/sources/img-8619.jpg"
+      ],
+      "image_caption": "Outdoor section includes \u201cOur Home\u201d, \u201cWe have 5 parking spots\u201d and \u201cOur landscaping is under renovation\u201d; site states in page text the landscaping changes were in summer 2018.",
+      "use": "Visible exterior colors, two-level clapboard massing, dark roof, front-facing gable/window, chimney, burgundy shutters, raised reddish deck with stairs/rails and lattice, garden stone/landscape. Photo capture date otherwise not confirmed."
+    },
+    {
+      "provider": "Esri World Imagery MapServer",
+      "url": "https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/20/395340/271153",
+      "retrieved_utc": "2026-10-27",
+      "tile_zoom": 20,
+      "file": "audit/maclure/sources/world_tiles_z20/271153_395340.jpg",
+      "imagery_acquisition_date": "Not supplied by tile metadata; treat as date-unverified.",
+      "use": "Spatial check of roof outline and N-S footprint orientation against FID 822. This is a low-resolution neighborhood tile, not facade/height evidence."
+    },
+    {
+      "provider": "Maclure Cooperative official Our Home virtual tour",
+      "url": "https://maclurecooperativepurdue.weebly.com/our-home.html",
+      "retrieved_utc": "2026-10-27",
+      "use": "First-floor foyer/formal living room, second-floor study rooms, cold-air dorm, basement BUM and laundry room names support only a schematic interior program."
+    }
+  ],
+  "modeling": {
+    "walls": "Sides follow official GIS FID 822 boundary vertices exactly in the project local approximation.",
+    "exterior": "White horizontal siding; dark gray shingled gable roof; front cross-gable; red-brick chimney; paired shuttered windows; raised red-brown front deck, perimeter rails, lattice and stairs. Exterior details interpreted from official co-op photos.",
+    "estimated_dimensions": "Wall top 6.0 m; ridge peak 9.0 m; model massing is consistent with two stories plus attic visible in images. No surveyed height source; all Z values and roof topology are estimates.",
+    "interior": "Schematic room partitions, first-floor common living/dining, second-floor study-room beds/desks, basement lounge/laundry proxies; no architectural plans, arrangement and dimensions are unverified estimates.",
+    "materials": "Portable procedural Blender materials; no external image texture dependency."
+  },
+  "uncertainties": [
+    "GIS feature is a static layer; data last edited on 2026-08-31, but it provides no survey accuracy metadata.",
+    "Official exterior photos are from the co-op site and landscaping caption dates renovation to 2018; no recent close exterior facade source found.",
+    "Roof profile, eave/ridge heights, fenestration count/spacing, materials at hidden sides, basement extent, and interior partition dimensions are estimated.",
+    "The official GIS NUM_LEVELS field says 1, inconsistent with the visible two-story plus attic facade; only XY footprint is treated as verified."
+  ],
+  "grade_request": "Ready for independent visual and evidence grading; no independent score claimed by builder."
+}

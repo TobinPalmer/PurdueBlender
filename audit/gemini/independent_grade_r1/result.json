@@ -1,0 +1,52 @@
+{
+  "building": "Gemini Cooperative House",
+  "fid": 825,
+  "asset_path": "modular/buildings/massing_gemini_cooperative_fid825.blend",
+  "expected_sha256": "c9cf72b41dc43d919d0dea0c3740bf164c7411897d4857f7bd1f43b6978cc547",
+  "observed_sha256": "c9cf72b41dc43d919d0dea0c3740bf164c7411897d4857f7bd1f43b6978cc547",
+  "sha_match": true,
+  "verdict": "below_threshold",
+  "total_score": 7.0,
+  "threshold": 8.0,
+  "categories": {
+    "identity_site_footprint": {"score": 1.9, "out_of": 2.0},
+    "massing_story_form": {"score": 1.4, "out_of": 2.0},
+    "facade_entrance": {"score": 1.2, "out_of": 2.0},
+    "roof_silhouette": {"score": 0.8, "out_of": 2.0},
+    "schematic_interior_portability_evidence": {"score": 1.7, "out_of": 2.0}
+  },
+  "gis_comparison": {
+    "gis_fid": 825,
+    "ring_vertex_count": 14,
+    "source_area_m2_approx": 492.6426732387772,
+    "asset_slab_area_m2_approx": 492.6426766,
+    "intersection_over_union": 0.9999999562,
+    "hausdorff_distance_m_approx": 0.0000008337,
+    "note": "The comparison is a serialization/transform check of the slab polygon; it does not independently establish that every exterior wall is GIS-aligned."
+  },
+  "story_conflict": {
+    "raw_gis_NUM_LEVELS": 1,
+    "raw_gis_CountOfFLO": 1,
+    "official_photo_apparent_visible_levels_estimate": 3,
+    "resolution": "Unresolved source conflict. The official oblique photo visually suggests a brick ground floor, full siding-clad floor, and attic/upper level with gables and dormers; the GIS field semantics are unclear. Do not silently replace either observation with a surveyed claim."
+  },
+  "fresh_open": {
+    "blender_version": "5.2.3 LTS",
+    "scene_found": true,
+    "collection_found": true,
+    "mesh_objects": 809,
+    "materials": 10,
+    "mesh_objects_without_material": 0,
+    "linked_libraries": 0,
+    "unpacked_external_images": 0,
+    "status": "portable fresh open confirmed"
+  },
+  "required_changes_for_8": [
+    "Articulate the roof into photo-supported wings, intersecting gables, valleys, eaves, and varied dormers while preserving the GIS footprint.",
+    "Match the visible asymmetric wing and window/dormer rhythm instead of a regular grid.",
+    "Expand and detail the central covered entry with photo-supported piers, landing, and railings.",
+    "Add photo-supported ground-floor brick openings and facade variation.",
+    "Continue labeling interior layout as schematic; provide a clear cutaway or floor inspection view."
+  ],
+  "report": "audit/gemini/independent_grade_r1/grade_report.md"
+}

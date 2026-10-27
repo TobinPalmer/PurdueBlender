@@ -1,0 +1,116 @@
+{
+  "building": "Phi Kappa Psi / Indiana Delta",
+  "asset": "modular/buildings/phi_kappa_psi_fid856.blend",
+  "sha256": "70ebe6333250a2266005ca6d72983a7dbd709ed187ee82a96642099e7e4c5ba9",
+  "score": 8.5,
+  "max_score": 10,
+  "weighted_score_unrounded": 8.5,
+  "status": "ACCEPT",
+  "criteria": [
+    {
+      "name": "Identity and source crosswalk",
+      "score": 9.5,
+      "max_score": 10,
+      "weight_percent": 5,
+      "assessment": "Current Indiana Delta contact and the 2010 national magazine independently identify 1307 Tower Drive; Purdue FID 856 carries the exact address and Greek owner but stale Phi Kappa Tau name."
+    },
+    {
+      "name": "Structural footprint and local placement",
+      "score": 9.2,
+      "max_score": 10,
+      "weight_percent": 20,
+      "assessment": "The asset includes the FID 856 structural wall ring in its documented local centroid frame. Source outline area is 421.96 m² and dimensions about 34.74 × 28.28 m. The nearby OSM outline is correctly treated as broader roof/eave extent, not substituted as the wall ring."
+    },
+    {
+      "name": "Overall massing and roof silhouette",
+      "score": 8.3,
+      "max_score": 10,
+      "weight_percent": 20,
+      "assessment": "The front Georgian composition and broad pitched roof read clearly. The rear now has the projecting central bay, raised cross-gable and roof stack seen in contractor photo 3. Exact roof pitch, story count and stack height remain photo-based estimates; model top is about 18.15 m above local datum versus legacy GIS extrusion near 53 ft."
+    },
+    {
+      "name": "Facade composition and architectural detail",
+      "score": 8.5,
+      "max_score": 10,
+      "weight_percent": 20,
+      "assessment": "Front portico, central pediment and ΦΚΨ mark, balcony, brick wings, repeated window courses, pale trim, projecting rear bay, paired upper openings and lower windows are source-consistent. Fine service features, downspouts and detailed roof intersections remain generalized."
+    },
+    {
+      "name": "Materials and texture",
+      "score": 8.1,
+      "max_score": 10,
+      "weight_percent": 15,
+      "assessment": "Procedural running-bond brick and varied dark roof material render coherently with pale trim. Contractor references are monochrome, so red-brown brick color remains plausible rather than directly verified."
+    },
+    {
+      "name": "Interior",
+      "score": 7.4,
+      "max_score": 10,
+      "weight_percent": 15,
+      "assessment": "The cutaway now conveys the photographed lounge/common room and adjacent stair hall: defined walls and arched opening, extended stair/landing/guard, upper schematic room divisions, shelves, seating, and dining/coffee tables. The furniture and circulation broadly match photos 5–6, but the plan, dimensions and upper layout are schematic; the image composition has some clutter/occlusion."
+    },
+    {
+      "name": "Asset integrity and portability",
+      "score": 10.0,
+      "max_score": 10,
+      "weight_percent": 5,
+      "assessment": "Fresh-open in Blender 5.2.3 succeeded. Expected scene/collection, 969 objects and no external image dependencies were independently confirmed."
+    }
+  ],
+  "evidence": [
+    {
+      "type": "fresh_open",
+      "path": "independent_grade_goal_r2/fresh_open_inspection.json",
+      "summary": "Blender 5.2.3 independently opened the exact SHA; expected scene/collection; 969 objects; bounds X[-17.802,17.774], Y[-14.614,15.169], Z[-0.520,18.150] m; no external images."
+    },
+    {
+      "type": "geospatial",
+      "path": "audit/phi_kappa_psi_fid856/gis_crosswalk.json",
+      "summary": "FID 856 polygon: 421.96 m², approx 34.74 × 28.28 m; EPSG:3857 inverse Web Mercator followed by repository local conversion."
+    },
+    {
+      "type": "identity_and_sources",
+      "path": "audit/phi_kappa_psi_fid856/evidence.md",
+      "summary": "Official chapter contact page, national magazine evidence, Purdue GIS FID 856 and preserved contractor gallery record source identity and ambiguities."
+    },
+    {
+      "type": "visual_references",
+      "paths": [
+        "audit/phi_kappa_psi_fid856/sources/contractor_photos/photo_1.jpg",
+        "audit/phi_kappa_psi_fid856/sources/contractor_photos/photo_3.jpg",
+        "audit/phi_kappa_psi_fid856/sources/contractor_photos/photo_5.jpg",
+        "audit/phi_kappa_psi_fid856/sources/contractor_photos/photo_6.jpg"
+      ],
+      "summary": "Compared front, rear, lounge, and stair/lobby against corresponding asset renders in audit/phi_kappa_psi_fid856/renders/."
+    },
+    {
+      "type": "post_grade_integrity",
+      "sha256_before": "70ebe6333250a2266005ca6d72983a7dbd709ed187ee82a96642099e7e4c5ba9",
+      "sha256_after": "70ebe6333250a2266005ca6d72983a7dbd709ed187ee82a96642099e7e4c5ba9",
+      "unchanged": true
+    }
+  ],
+  "findings": [
+    {
+      "severity": "positive",
+      "finding": "The previously missing rear central projection, window rhythm, cross-gable/shingle infill and roof stack have been modeled and are legible in the rear render."
+    },
+    {
+      "severity": "positive",
+      "finding": "The interior revision adds recognizable walls, room boundaries, stair circulation, a landing/guard, and lounge furnishings supported by contractor photos 5–6."
+    },
+    {
+      "severity": "limitation",
+      "finding": "Interior plan, room dimensions, furnishing placement, exact vertical story interpretation, and roof/stack heights remain estimated or schematic because no architectural plan or surveyed elevation is available."
+    },
+    {
+      "severity": "limitation",
+      "finding": "The GIS identity attribute conflicts with current chapter evidence (FID 856 says Phi Kappa Tau; address and owner agree with Phi Kappa Psi). The model’s top is above the legacy GIS 53 ft extrusion; the height conflict remains unresolved."
+    },
+    {
+      "severity": "limitation",
+      "finding": "Contractor photographs establish major forms but do not state capture dates; their grayscale appearance does not verify brick hue."
+    }
+  ],
+  "remaining_fixes_if_below_8": []
+}
