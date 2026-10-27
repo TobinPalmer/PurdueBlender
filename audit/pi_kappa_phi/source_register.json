@@ -1,0 +1,116 @@
+{
+  "building_id": "massing_pi_kappa_phi_50e4645",
+  "retrieved_utc_date": "2026-10-26",
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D799&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "feature_id": "FID 799",
+      "source_date": "Live service response retrieved 2026-10-26; publication/edit date not exposed in feature",
+      "crs": "EPSG:4326 (WGS 84)",
+      "measurement_method": "Transformed the returned polygon coordinates using the campus approximation documented in modular/AGENTS.md; compared to the prior asset bounds and used the returned ring for the modeled perimeter.",
+      "uncertainty": "High confidence in identity and footprint location from matching name/address and chapter sources. Campus conversion is approximate; reported Shape__Area/Shape__Length are not used for geometry because they conflict with the coordinate-derived planar measurements. Feature attributes report NUM_LEVELS=1, which conflicts with the photographed three-level appearance; no level or elevation claim is taken from this field.",
+      "snapshot": "sources/purdue_gis_FID799_wgs84.json"
+    },
+    {
+      "provider": "Pi Kappa Phi Omega chapter official website",
+      "url": "https://purduepikapps.com/about/history-2/",
+      "feature_id": "Current chapter history page; current chapter house at 330 N Grant",
+      "source_date": "Page retrieved 2026-10-26; history states the house was rebuilt on the same lot after the June 11, 1987 fire",
+      "crs": "Not applicable",
+      "measurement_method": "Used the page's explicit chapter identity and street address for source crosswalk; read rebuilding history to exclude pre-fire exterior as a direct model reference.",
+      "uncertainty": "Strong for chapter/address continuity and rebuild statement; not a construction drawing or measured elevation.",
+      "snapshot": "sources/purduepikapps_history.html"
+    },
+    {
+      "provider": "Pi Kappa Phi Omega chapter official website photo",
+      "url": "https://purduepikapps.com/wp-content/uploads/2020/01/6898-front-of-house-5-19-1-1536x1025.jpg",
+      "feature_id": "Official exterior photograph, filename 6898-front-of-house-5-19-1; EXIF timestamp 2019-05-22",
+      "source_date": "2019-05-22 from image EXIF",
+      "crs": "Unreferenced camera image",
+      "measurement_method": "Visual inspection of the post-fire rebuilt west/front facade: pale ashlar-like stone, multiple gabled wings, central parapet/dormer zone, dark windows, and paired round-headed entrance openings.",
+      "uncertainty": "Perspective and foreground monument obscure dimensions; supports facade form/material relationships, not exact dimensions or height.",
+      "snapshot": "sources/chapter_house_front_2019.jpg"
+    },
+    {
+      "provider": "Pi Kappa Phi Omega chapter official website recruitment article and photograph",
+      "url": "https://purduepikapps.com/new-member-recruitment-starts-with-events-on-campus-at-chapter-house/",
+      "feature_id": "Official recruitment article dated 2023-08-20; wide exterior image, EXIF timestamp 2023-08-20",
+      "source_date": "2023-08-20",
+      "crs": "Unreferenced camera image",
+      "measurement_method": "Visual inspection of an oblique side view supporting the massing, gray stone cladding, roof gables, and repeated windows.",
+      "uncertainty": "Event setup, trees, and perspective hide sections of the exterior; no survey scale or measured elevations.",
+      "snapshot": "sources/recruitment_wide_view_2023.jpg"
+    },
+    {
+      "provider": "Pi Kappa Phi Omega chapter official website",
+      "url": "https://purduepikapps.com/",
+      "feature_id": "Current chapter homepage; current news and contact section identify the chapter house at 330 N Grant",
+      "source_date": "Retrieved 2026-10-26; page includes current 2026 chapter activity",
+      "crs": "Not applicable",
+      "measurement_method": "Cross-checked that the chapter and house remain active at the address.",
+      "uncertainty": "Address is explicit; page provides no architectural measurements.",
+      "snapshot": "sources/purduepikapps_homepage.html"
+    },
+    {
+      "provider": "Tippecanoe County Area Board of Zoning Appeals",
+      "url": "https://tippecanoe.in.gov/AgendaCenter/ViewFile/Agenda/_05272026-2478",
+      "feature_id": "BZA-2225 Omega Chapter of Pi Kappa Phi, May 27, 2026 packet and May 21 staff report",
+      "source_date": "Packet retrieved 2026-10-26; staff report dated 2026-05-21",
+      "crs": "Not applicable",
+      "measurement_method": "Lifecycle cross-check: the staff report describes the existing 1928 Tudor-inspired house and requested replacement; the packet includes BZA case materials.",
+      "uncertainty": "Proposal description is not a construction survey. Variance votes are zoning approvals, not permits or proof of completed replacement.",
+      "snapshot": "sources/tippecanoe_bza_2225_may_2026_packet.pdf"
+    },
+    {
+      "provider": "Tippecanoe County Area Board of Zoning Appeals",
+      "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/Minutes/_05272026-2478",
+      "feature_id": "BZA-2225 official hearing minutes",
+      "source_date": "Minutes dated 2026-05-27; retrieved 2026-10-26",
+      "crs": "Not applicable",
+      "measurement_method": "Read the official vote outcomes: all six requested variances were approved, one by 4-1 and the others 5-0.",
+      "uncertainty": "Minutes record zoning relief only. No demolition/building permit status is included.",
+      "snapshot": "sources/tippecanoe_bza_minutes_2026-05-27.pdf"
+    },
+    {
+      "provider": "Pi Kappa Phi Omega chapter official website",
+      "url": "https://purduepikapps.com/2026/",
+      "feature_id": "2026 news archive includes August 23-24 fall recruitment announcements at 330 N Grant",
+      "source_date": "Posts dated 2026-08-23 and 2026-08-24; retrieved 2026-10-26",
+      "crs": "Not applicable",
+      "measurement_method": "Used dated official event statements as evidence that chapter events were held at the existing house after the BZA approval.",
+      "uncertainty": "Confirms use of address, not exact facade condition or permit status.",
+      "snapshot": "sources/purduepikapps_2026_archive.html"
+    },
+    {
+      "provider": "Pi Kappa Phi Omega chapter official recruitment webpage",
+      "url": "https://purduepikapps.com/recruitment/",
+      "feature_id": "Fall 2026 recruitment schedule, including house tours and events at 330 N Grant",
+      "source_date": "Retrieved 2026-10-26; schedule for August 23-28, 2026",
+      "crs": "Not applicable",
+      "measurement_method": "Captured the chapter's current recruitment schedule as corroboration of continued use of the house address.",
+      "uncertainty": "Schedule documents planned events and is not itself a building-condition survey.",
+      "snapshot": "sources/purduepikapps_recruitment_current.html"
+    },
+    {
+      "provider": "City of West Lafayette Building Department",
+      "url": "https://www.westlafayette.in.gov/government/building-rental-housing",
+      "feature_id": "Official department states permits are required for new construction and points to city permitting services",
+      "source_date": "Retrieved 2026-10-26",
+      "crs": "Not applicable",
+      "measurement_method": "Searched indexed public sources for a matching issued demolition/building permit; no matching result surfaced. No live permit-status record was retrieved.",
+      "uncertainty": "Permit status remains unknown; absence of a search result is not evidence that no permit exists.",
+      "snapshot": null
+    },
+    {
+      "provider": "Purdue University BoilerLink",
+      "url": "https://boilerlink.purdue.edu/organization/pikappaphi",
+      "feature_id": "Pi Kappa Phi organization page",
+      "source_date": "Retrieved 2026-10-26; current listing page",
+      "crs": "Not applicable",
+      "measurement_method": "Independent Purdue-hosted cross-check of Omega chapter identity and 330 North Grant address.",
+      "uncertainty": "Page requires JavaScript and its raw snapshot is a limited server-rendered shell; it is supporting corroboration, not facade evidence.",
+      "snapshot": "sources/purdue_boilerlink_pikappaphi.html"
+    }
+  ]
+}

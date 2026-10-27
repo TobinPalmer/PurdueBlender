@@ -1,0 +1,81 @@
+{
+  "building_id": "massing_pi_kappa_phi_50e4645",
+  "assignment": {
+    "chapter": "Pi Kappa Phi Omega",
+    "gis_feature": "Purdue BuildingShapesZip4 FID 799",
+    "address": "330 N Grant Street, West Lafayette, Indiana",
+    "stable_asset": "modular/buildings/massing_pi_kappa_phi_50e4645.blend",
+    "source_script": "modular/buildings/build_massing_pi_kappa_phi_50e4645.py"
+  },
+  "source_crosswalk": {
+    "identity_confidence": "high",
+    "basis": [
+      "Purdue GIS FID 799 is named Pi Kappa Phi and lists 330 N Grant.",
+      "The chapter's official website and Purdue BoilerLink independently identify the Omega chapter at 330 North Grant.",
+      "The chapter's official 2019 and 2023 photographs show the post-1987 rebuilt house at the same address."
+    ],
+    "footprint_confidence": "high for footprint plan; converted from returned WGS84 polygon using the campus approximation in modular/AGENTS.md",
+    "facade_confidence": "moderate for overall massing and material; low for exact dimensions and concealed details",
+    "orientation": "West/front facade faces Grant Street, supported by the county BZA staff report describing the Grant Street setback as the west setback."
+  },
+  "footprint_metrics": {
+    "coordinate_derived_width_m": 16.4906,
+    "coordinate_derived_depth_m": 23.2054,
+    "coordinate_derived_area_m2": 341.9657,
+    "coordinate_derived_perimeter_m": 78.8,
+    "method": "GIS polygon coordinates transformed with campus_xy approximation from modular/AGENTS.md. GIS Shape__Area and Shape__Length attributes were not used because they conflict with coordinate-derived planar measurements.",
+    "model_wall_ring_matches_transformed_gis_polygon": true,
+    "notes": "Dimensions are approximate due to local coordinate approximation; roof overhangs and facade details extend beyond structural perimeter."
+  },
+  "model_summary": {
+    "collection": "Asset_massing_pi_kappa_phi_50e4645",
+    "scene": "Building_massing_pi_kappa_phi_50e4645",
+    "object_count": 239,
+    "object_types": {
+      "MESH": 239
+    },
+    "world_bounds_m": {
+      "min": [300.1518, -89.3119, 0.0],
+      "max": [317.6823, -65.6666, 14.0]
+    },
+    "features": [
+      "GIS-derived irregular building perimeter",
+      "photo-guided multi-wing Tudor-inspired gabled roof composition",
+      "estimated pale ashlar stone facade joints and belt courses",
+      "photo-guided dark window openings, central dormers, and paired arched entrances"
+    ],
+    "height_status": "Estimated maximum 14.0 m; not measured."
+  },
+  "visual_checks": {
+    "fresh_reopen": {
+      "result": "pass",
+      "blender_version": "5.2.3 LTS",
+      "log": "fresh_reopen_validation.log",
+      "checks": [
+        "Saved blend reopened in a new background Blender process.",
+        "Expected scene and collection exist.",
+        "All 239 scene objects are in the dedicated asset collection and are meshes; no camera/light/helper objects are included.",
+        "Evaluated world bounds are finite and match the recorded location/height."
+      ]
+    },
+    "renders": [
+      "preview_front.png",
+      "preview_aerial.png"
+    ],
+    "inspection": "Front preview visibly presents the west facade, paired arches, repeated windows, stone joint pattern, asymmetrical roof masses, and four dormers. Aerial preview shows the overall footprint-following massing and intersecting roof planes. Both are source-guided illustrations, not construction drawings."
+  },
+  "lifecycle": {
+    "decision": "Model the extant house shown in 2019/2023 official photos.",
+    "proposal": "A May 2026 BZA application sought variances for a planned tear-down and replacement at the same address; all six variances were approved May 27, 2026.",
+    "permit_status": "unverified; no matching public permit record was retrieved in this review, and no inference of nonexistence is made.",
+    "latest_direct_use_evidence": "Official chapter recruitment announcements identify house events at 330 N Grant on August 23-28, 2026; official homepage/archive contains September 2026 chapter activity.",
+    "full_record": "build_lifecycle_evidence.json"
+  },
+  "remaining_uncertainty": [
+    "Exact facade dimensions, floor-to-floor heights, and total building height have not been surveyed.",
+    "Some window spacing, dormer proportions, roof pitches, and unseen elevations remain photo-based estimates.",
+    "Permit status and any post-August facade alterations remain unverified.",
+    "Independent grader score is pending."
+  ],
+  "status": "candidate frozen; awaiting independent grade"
+}
