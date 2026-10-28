@@ -5,7 +5,15 @@
   "asset": "modular/buildings/massing_house_1089875810_8c9b95d.blend",
   "asset_sha256": "7339F13546EF06A0530A92BEE747157F22E09D2B449496B40DE51CFF5CD2DB5E",
   "grade_status": "PASS — independently graded 8.07/10 on exact asset SHA-256 7339f13546ef06a0530a92bee747157f22e09d2b449496b40de51cff5cd2db5e",
-  "independent_grade": {"result":"PASS","weighted_score":8.07,"threshold":8.0,"reviewer":"independent exact-SHA read-only review","review_date":"2026-10-28","asset_sha256":"7339f13546ef06a0530a92bee747157f22e09d2b449496b40de51cff5cd2db5e","report":"independent_grade_codex_2026-10-28.json"},
+  "independent_grade": {
+    "result": "PASS",
+    "weighted_score": 8.07,
+    "threshold": 8.0,
+    "reviewer": "independent exact-SHA read-only review",
+    "review_date": "2026-10-28",
+    "asset_sha256": "7339f13546ef06a0530a92bee747157f22e09d2b449496b40de51cff5cd2db5e",
+    "report": "independent_grade_codex_2026-10-28.json"
+  },
   "identity_sources": [
     {
       "url": "https://www.stewartcooperative.org/home",
@@ -61,7 +69,7 @@
     "mesh_objects": 11,
     "source_ring_vertices": 16,
     "wall_base_vertices": 16,
-    "maximum_nearest_source_vertex_error_m": 0.0000275501,
+    "maximum_nearest_source_vertex_error_m": 2.75501e-05,
     "nonmanifold_root_shell_edges": 76,
     "external_image_dependencies": [],
     "technical_note": "Root shell remains non-manifold along open architectural boundaries; mesh has not been represented as watertight."
@@ -75,5 +83,30 @@
     "interior_ground_plan.png",
     "interior_second_plan.png",
     "interior_third_plan.png"
-  ]
+  ],
+  "master_integration": {
+    "status": "PASS",
+    "date": "2026-10-28",
+    "master_file": "purdue_campus_master.blend",
+    "collection": "Asset_massing_house_1089875810_8c9b95d",
+    "linked_object_count": 11,
+    "linked_objects": [
+      "House_1089875810",
+      "House_1089875810_chimney",
+      "House_1089875810_roof",
+      "House_1089875810_schematic_floor_basement",
+      "House_1089875810_schematic_floor_ground",
+      "House_1089875810_schematic_floor_second",
+      "House_1089875810_schematic_floor_third",
+      "House_1089875810_schematic_interior_basement",
+      "House_1089875810_schematic_interior_ground",
+      "House_1089875810_schematic_interior_second",
+      "House_1089875810_schematic_interior_third"
+    ],
+    "root_object": "House_1089875810",
+    "library_relative": "//modular\\buildings\\massing_house_1089875810_8c9b95d.blend",
+    "master_library_count": 1941,
+    "verification": "Full master saved after linking the full asset collection, then fresh-opened in Blender 5.2.3 LTS; all 11 objects resolve to the expected project-relative asset.",
+    "verification_report": "../tobin_stewart_master_integration_2026-10-28.json"
+  }
 }
