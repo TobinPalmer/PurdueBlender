@@ -1,0 +1,91 @@
+{
+  "building": "Sigma Kappa — Beta Sigma Chapter",
+  "fid": 780,
+  "asset": "modular/buildings/massing_house_301840869_1b80ace.blend",
+  "collection": "Asset_massing_house_301840869_1b80ace",
+  "scene": "Building_massing_house_301840869_1b80ace",
+  "root_object": "House_301840869",
+  "primary_source": {
+    "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+    "feature_layer": "0",
+    "feature_id": 780,
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D780&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "retrieved_at": "2026-10-28",
+    "source_date": "Not supplied",
+    "source_crs": "EPSG:4326 (outSR=4326)",
+    "raw_snapshot": "source_fid780.json",
+    "attributes": {
+      "BUILDING_N": "Sigma Kappa",
+      "BLDG_ABBR": "SOSK",
+      "ADDRESS": "427 Russell St",
+      "OWNER": "GREEK",
+      "NUM_LEVELS": 1,
+      "Extrution": 12,
+      "Shape__Area": 1078.62109375,
+      "Shape__Length": 175.42974979181577
+    },
+    "identity_assessment": "Direct match: GIS FID 780 names Sigma Kappa, address 427 Russell St."
+  },
+  "projection": {
+    "method": "Project-local approximate transform required by modular/AGENTS.md",
+    "formula_x": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "formula_y": "(latitude - 40.4274) * 111040.0",
+    "source_ring_unique_vertices": 21,
+    "bounds_m": {
+      "x": [
+        -509.76188066371986,
+        -482.56458434905534
+      ],
+      "y": [
+        162.8154856573724,
+        201.15388094867512
+      ]
+    },
+    "projected_area_m2": 623.9676691000132,
+    "projected_perimeter_m": 133.39504902603392,
+    "source_shape_area_attribute": 1078.62109375,
+    "source_shape_length_attribute": 175.42974979181577,
+    "metric_discrepancy_note": "The local projected ring area/perimeter do not match the returned Shape__Area/Shape__Length attributes. Those service attributes are recorded but not used as geometry controls; source CRS and local conversion are disclosed. No independent survey validation is claimed."
+  },
+  "visual_sources": [
+    {
+      "provider": "Two Tulips Boutique; artist Courtney Day",
+      "url": "https://twotulips.com/products/purdue-sorority-custom-house-drawing",
+      "image_url": "https://twotulips.com/cdn/shop/files/image_6483441_2.jpg?v=1730144552&width=1946",
+      "retrieved_at": "2026-10-28",
+      "local_copy": "house_illustration_reference.jpg",
+      "source_date": "Unknown",
+      "use": "Secondary stylized chapter-house drawing naming Sigma Kappa and 427 N Russell Street; qualitative evidence for red-brown brick, light portico, gabled wing/front composition and four dormers; no dimensions or verified unseen elevations."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/fa/MSP19_News_Service.pdf",
+      "catalog_identifier": "19.003.277",
+      "catalog_title": "Sigma Kappa Sorority, 427 Russell St.",
+      "catalog_date": "1952-07-23",
+      "retrieved_at": "2026-10-28",
+      "use": "Catalog entry only; photograph scan not obtained. Supports historic identity/location, not geometry."
+    },
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life",
+      "url": "https://www.purdue.edu/fscl/councils/pha/chapters.php",
+      "retrieved_at": "2026-10-28",
+      "use": "Official current chapter listing/identity only; no facade measurements."
+    },
+    {
+      "provider": "Purdue Panhellenic chapter image (excluded visual)",
+      "url": "https://www.purduepanhellenic.com/cost/sigma-kappa",
+      "retrieved_at": "2026-10-28",
+      "local_copy": "facade_reference_current.png",
+      "use": "Excluded from facade evidence: downloaded carousel image shows a person in a Delta Zeta sweatshirt in a vehicle and no Sigma Kappa building."
+    }
+  ],
+  "limits": [
+    "The GIS ring is a source footprint and does not define story count, roof, window locations, entrance orientation or interior.",
+    "The chapter drawing is stylized secondary visual material, not an architectural survey/photo.",
+    "GIS NUM_LEVELS=1 conflicts with the two facade levels depicted in the illustration; source field and picture are both retained with the conflict documented.",
+    "GIS Extrution=12 has no supplied units or definition and is not treated as height.",
+    "The west-facing entry orientation is provisional from the 427 N Russell address and the modeled footprint; no source elevation establishes the entry side.",
+    "No floor plan or interior photo was found; the displayed one-level interior is schematic and not as-built."
+  ]
+}
