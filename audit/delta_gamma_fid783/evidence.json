@@ -1,0 +1,61 @@
+{
+  "building": "Delta Gamma (Beta Iota), Purdue University",
+  "feature_id": 783,
+  "address": "303 Waldron Street, West Lafayette, Indiana",
+  "asset_id": "massing_house_301840872_582df9d",
+  "asset_path": "modular/buildings/massing_house_301840872_582df9d.blend",
+  "asset_sha256": "3DB02B872BEF6649F6CB1488782222F6FCD260BF0B7C0C65DD1E01E3EA40C37D",
+  "source_record": "audit/delta_gamma_fid783/source_record.json",
+  "retrieval_date": "2026-10-28",
+  "geometry": {
+    "source": "Purdue GIS BuildingShapesZip4 FeatureServer layer 0, FID 783",
+    "source_crs": "WKID 102100 / latestWkid 3857, Web Mercator Auxiliary Sphere",
+    "transform": "Inverse Web Mercator followed by repository-local approximate transform; not survey control",
+    "ring_vertices": 14,
+    "footprint_evidence": "Exact transformed GIS ring used for modeled wall base. Final corner-to-nearest wall-base vertex maximum is 0.0000148 m due to float precision; see final_geometry.json and final_footprint_comparison.png.",
+    "vertical_status": "Unverified; no building elevation source or survey"
+  },
+  "identity_evidence": [
+    "Live Purdue GIS attributes identify Delta Gamma, address 303 Waldron St, chapter abbreviation SODG, FID 783.",
+    "Official Purdue Beta Iota chapter page search-indexed text gives 303 Waldron and a front porch.",
+    "Indiana State Budget Committee April 2026 minutes describe the current 303 Waldron property as nearly 18,000 gross square feet, two stories and a basement.",
+    "The official Delta Gamma history is indexed as describing a Georgian U-shaped 1959 house, but direct retrieval failed and this does not match the simplified GIS ring conclusively. This conflict remains unresolved."
+  ],
+  "geometry_edits": [
+    "Replaced eight-vertex rectangular legacy shell with the complete 14-vertex official feature footprint.",
+    "Added two-story illustrative facade, repeated windows, a front porch, and a shallow gable roof aligned to the longer footprint axis.",
+    "Added schematic upper-level lounge, bedroom and bunk-room inserts, informed only by a dated 2018 member blog."
+  ],
+  "interpretation_and_uncertainty": {
+    "stories": "Two modeled above-grade floors follow the more recent state budget committee description; Purdue GIS NUM_LEVELS=1 and CountOfFLO=1 conflict. Basement is not modeled above grade.",
+    "height": "Estimated: eave 7.2 m, ridge 10.3 m. No measured elevation is available.",
+    "roof": "Estimated shallow gable; no attributed roof-plan/elevation evidence.",
+    "facade_and_materials": "Brick-colored walls, light stone trim, blue glazing, and slate-colored roof are interpretive. Window count, rhythm, dimensions, and exact entrance location are estimates.",
+    "interior": "The room inserts are schematic, based on dated anecdotal description, and are not a current or measured floor plan.",
+    "historical_plan_conflict": "Chapter history's indexed Georgian U-shaped description is not established by the FID polygon. Current geometry is intentionally kept to the official source polygon; no unsupported courtyard wings were invented."
+  },
+  "fresh_open": {
+    "status": "PASS",
+    "report": "audit/delta_gamma_fid783/fresh_open_validation.json",
+    "blender_version": "5.2.3 LTS",
+    "mesh_vertices": 2290,
+    "mesh_faces": 1610,
+    "stable_scene_collection_object": "Building_massing_house_301840872_582df9d / Asset_massing_house_301840872_582df9d / House_301840872",
+    "collection_object_count": 1
+  },
+  "previews": {
+    "exterior": "audit/delta_gamma_fid783/exterior_three_quarter.png",
+    "interior_cutaway": "audit/delta_gamma_fid783/schematic_interior_cutaway.png",
+    "footprint_comparison": "audit/delta_gamma_fid783/final_footprint_comparison.png"
+  },
+  "independent_grade": {
+    "status": "PASS",
+    "score": 8.1,
+    "exact_weighted_score": 8.11,
+    "threshold": 8.0,
+    "report": "audit/delta_gamma_fid783/independent_grade_2026-10-28.md",
+    "scorecard": "audit/delta_gamma_fid783/independent_grade_2026-10-28.json",
+    "graded_asset_sha256": "3DB02B872BEF6649F6CB1488782222F6FCD260BF0B7C0C65DD1E01E3EA40C37D",
+    "grader": "Delta Gamma parallel peer reviewer, read-only, fresh-open verified"
+  }
+}

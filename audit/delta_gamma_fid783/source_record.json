@@ -1,0 +1,73 @@
+{
+  "building": "Delta Gamma, Beta Iota Chapter, Purdue University",
+  "source_date_retrieved": "2026-10-28",
+  "sources": [
+    {
+      "provider": "Purdue GIS BuildingShapesZip4 ArcGIS FeatureServer layer 0",
+      "feature_id": "FID 783",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D783&outFields=*&returnGeometry=true&outSR=3857&f=pjson",
+      "retrieved": "2026-10-28",
+      "local_snapshot": "audit/delta_gamma_fid783/sources/purdue_gis_fid783_2026-10-28_3857.json",
+      "layer_metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "layer_metadata_snapshot": "audit/delta_gamma_fid783/sources/purdue_gis_layer0_metadata_2026-10-28.json",
+      "source_crs": "WKID 102100 / latestWkid 3857, Web Mercator Auxiliary Sphere; query requested outSR=3857",
+      "attributes_of_interest": {
+        "BUILDING_N": "Delta Gamma",
+        "BLDG_ABBR": "SODG",
+        "ADDRESS": "303 Waldron St",
+        "OWNER": "GREEK",
+        "NUM_LEVELS": 1,
+        "CountOfFLO": 1,
+        "Extrution": 12,
+        "Shape__Area": 1136.41796875,
+        "Shape__Length": 139.69555623996027,
+        "BUILT": null
+      },
+      "limitations": "NUM_LEVELS and CountOfFLO conflict with an official 2026 state budget committee description of the existing house as two stories and a basement. Extrution units and floorplan path semantics are undocumented; the GIS polygon is not a survey."
+    },
+    {
+      "provider": "Delta Gamma at Purdue, official Beta Iota chapter house page",
+      "url": "https://purdue.deltagamma.org/the-house",
+      "retrieved": "2026-10-28",
+      "evidence": "Search-indexed page identifies the house at 303 Waldron Street and says residents use the front porch. The chapter page could not be fetched directly by the web reader; no photograph was copied. This supports identity and porch use, not dimensions or current facade details.",
+      "source_crs": null
+    },
+    {
+      "provider": "Indiana State Budget Committee, April 2026 meeting minutes",
+      "url": "https://www.in.gov/sba/files/April-2026-Minutes.pdf",
+      "retrieved": "2026-10-28",
+      "local_snapshot": "audit/delta_gamma_fid783/sources/indiana_state_budget_committee_april_2026_minutes.pdf",
+      "evidence": "The committee description of the existing 303 Waldron Street Delta Gamma property states nearly 18,000 gross square feet, two stories, and a basement. It discusses a purchase/leaseback while a new facility is constructed. This establishes a more recent building scale/story source than the contradictory GIS count, but does not supply a measured elevation or footprint plan."
+    },
+    {
+      "provider": "Delta Gamma Fraternity, Collegiate Chapter Histories (Beta Iota history)",
+      "url": "https://www.deltagamma.org/wp-content/uploads/2025/05/CollegiateChapterHistory.pdf",
+      "retrieved": "2026-10-28",
+      "evidence": "The search-indexed official history reports that the chapter broke ground in May 1958 on a Georgian U-shaped house with a courtyard and moved in February 1959. A direct retrieval attempt returned 404 on this date, so the text is retained as indexed evidence only. It supports the broad historical plan/style, not a measured current elevation.",
+      "source_crs": null
+    },
+    {
+      "provider": "Purdue chapter member blog, 303 Waldron",
+      "url": "https://purduesororityblogger.wordpress.com/2018/02/15/so-many-girls-so-little-places/",
+      "retrieved": "2026-10-28",
+      "evidence": "A first-person February 2018 post describes a front porch, crowded multi-person bedrooms, a communal top-floor 'cold air' bunk room, and common areas including a lounge. The post is dated and anecdotal; it provides qualitative layout/use context, not a current measured plan. Linked photographs were not copied.",
+      "source_crs": null
+    },
+    {
+      "provider": "OpenStreetMap Overpass snapshot retained at repository root",
+      "snapshot": "purdue_campus_buildings.json",
+      "source_id": "way 301840872",
+      "retrieved": "2026-10-22T03:45:50Z",
+      "evidence": "The way is tagged building=university without a name; its four-node rectangular outline provides a secondary location/extent cross-check only."
+    },
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life",
+      "url": "https://www.purdue.edu/fscl/councils/pha/chapters.php",
+      "retrieved": "2026-10-28",
+      "evidence": "Lists Delta Gamma among Panhellenic chapters and links the Purdue Beta Iota site; it supports chapter identity only."
+    }
+  ],
+  "coordinate_transform": "Inverse Web Mercator (WKID 102100/latestWkid 3857) to longitude/latitude, then repository-local approximation X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. This is approximate campus-local meters, not a surveyed CRS.",
+  "height_story_interpretation": "Use the official April 2026 description (two stories plus basement) as stronger current count evidence than the GIS NUM_LEVELS=1 field, while preserving the conflict. All modeled story heights, overall heights, roof geometry, fenestration, facade details, and interior partitions remain estimates unless directly dimensioned.",
+  "image_rights": "No remote photos or illustrations are copied into this source packet; URLs, dates, and observations are retained instead."
+}
