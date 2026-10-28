@@ -1,104 +1,122 @@
-{
-  "building": "Alpha Phi (Delta Mu Chapter), Purdue University",
-  "asset_id": "massing_house_301841331_735e92f",
-  "asset_path": "modular/buildings/massing_house_301841331_735e92f.blend",
-  "source_feature": {
-    "provider": "Purdue GIS, BuildingShapesZip4 ArcGIS FeatureServer, layer 0",
-    "feature_id": "FID 764",
-    "global_id": "{941CB367-C1ED-4496-BE53-83FE29345280}",
-    "attributes": {
-      "BUILDING_N": "Alpha Phi",
-      "BLDG_ABBR": "SOAF",
-      "OWNER": "GREEK",
-      "ADDRESS": "801 David Ross Rd",
-      "NUM_LEVELS": 1,
-      "Extrution": 12,
-      "Shape__Area": 945.6015625,
-      "Shape__Length": 156.348659238104
-    },
-    "raw_snapshot": "audit/alpha_phi_fid764/purdue_gis_fid764_2026-10-28_3857.json",
-    "retrieved": "2026-10-28",
-    "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D764&outFields=*&returnGeometry=true&outSR=3857&f=pjson",
-    "layer_metadata_snapshot": "audit/alpha_phi_fid764/purdue_gis_layer_0_metadata_2026-10-28.json",
-    "layer_metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
-    "source_url_note": "The endpoint was recovered by querying the current Purdue BuildingShapesZip4 layer on 2026-10-28. The new live query response exactly matches the pre-existing source_feature_764_raw.json attributes and geometry. Both snapshots are retained.",
-    "source_crs": "WKID 102100, latestWkid 3857, explicitly declared by the raw snapshot; Web Mercator Auxiliary Sphere",
-    "source_crs_metadata": "The live layer metadata snapshot independently confirms Web Mercator Auxiliary Sphere (WKID 102100 / latestWkid 3857). The fresh query was requested with outSR=3857 and declares the same WKID.",
-    "geometry_method": "Used all 16 non-duplicated ring vertices without simplification. Inverse Web Mercator conversion to longitude/latitude, followed by the repository local approximation X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. Coordinates are campus-local approximate meters, not a surveyed CRS.",
-    "native_projected_shape_area_m2": 945.6015625,
-    "projected_ring_area_note": "Shape__Area agrees with planar shoelace area of the raw ring in its native Web Mercator coordinates. The transformed local-coordinate shoelace area is about 547.0 m² because Web Mercator area is scale-distorted at this latitude; these values are not directly comparable.",
-    "transformed_ring_bounds_xy_m": {
-      "x": [-1138.078, -1097.914],
-      "y": [750.471, 779.037]
-    },
-    "transformed_axis_aligned_dimensions_m": [40.163, 28.567]
-  },
-  "identity_sources": [
-    {
-      "provider": "Purdue Panhellenic Association",
-      "url": "https://www.purduepanhellenic.com/cost/alpha-phi",
-      "retrieved": "2026-10-28",
-      "evidence": "Current chapter page identifies Alpha Phi as the Delta Mu Chapter. It supports chapter identity, not a building address or facade.",
-      "source_crs": null
-    },
-    {
-      "provider": "Dun & Bradstreet business directory",
-      "url": "https://www.dandb.com/businessdirectory/lafayette-indiana-in-sororityresidentialhouse-70410103.html",
-      "retrieved": "2026-10-28",
-      "evidence": "Search-indexed entry lists Alpha Phi at 801 David Ross Rd. This is secondary directory evidence and was not used to derive geometry.",
-      "source_crs": null
-    }
-  ],
-  "exterior_observation": "See source_observation.json for the exact HUBERart Etsy listing and retrieval date. The listing describes a pen-and-ink drawing as the Alpha Phi Purdue house and its accessible image description identifies a brick building, Alpha Phi sign, and entrance stairs. The page explicitly prohibits image duplication, so no local reference copy is included. The illustration is not a measured or verified current elevation; facade material, gable profile, window count/spacing, roof, and porch dimensions remain interpretive.",
-  "measurements_and_model": {
-    "placement": "Retains the converted GIS ring coordinates in the existing massing asset's campus coordinate frame. No manual translation, rotation, or scaling was applied.",
-    "footprint": "Exterior wall base follows the full 16-vertex converted FID 764 ring. Plan overlay in plan_overlay.png compares raw ring to extracted saved wall-base segments: maximum boundary vertex error 0.00006 m, RMS 0.00004 m, zero translation correction, and zero footprint rotation correction. This confirms mesh construction fidelity to the retained ring, not that the ring is a current surveyed wall line. Transformed axis-aligned bounds are 40.16 × 28.57 m; no independent CAD or aerial dimension check was retained.",
-    "height": "Estimated 7.4 m wall height and estimated 8.25 m top of the conservative roof cap. GIS NUM_LEVELS=1 and Extrution=12 have undocumented semantics/units. Neither field verifies actual height or story count; modeled two-level inserts remain interpretive.",
-    "story_count": "Two-level interpretation is schematic and unverified.",
-    "roof": "Revised to a low-profile cap whose perimeter follows the full GIS footprint; broad gable, ridge, and chimney were removed. This conservative roof mass avoids claiming a ridge direction unsupported by the qualitative illustration. Roof type, estimated 8.25 m top height, eave height, coverage, and as-built profile remain unverified.",
-    "facade": "Brick-colored material, rectangular windows, Alpha Phi signage, and covered entry/stairs are low-confidence visual interpretations informed by the cited HUBERart pen-and-ink drawing. The page forbids copying the image; the retained source URL/date/observation are in source_observation.json. Limestone-like trim, shutters, and all spacing are unsupported inventions. No current measured facade reference is retained.",
-    "interior": "Bedroom/lounge inserts remain schematic and are not an as-built plan. The updated roof-open cutaway shows lower perimeter walls and two upper bedroom modules against the full footprint for context; no floor plan, room count, circulation, or furnishing plan is verified.",
-    "topology": "Fresh-open Blender validation reports 543 boundary/non-manifold edges. The export is a visual composite with open/intersecting decorative and interior components, not a watertight fabrication solid.",
-    "material": "All materials are packed procedural/native materials; no external image or absolute-path dependencies are used."
-  },
-  "geometry_edits": [
-    "Replaced the original single-object massing mesh with a wall shell following the source polygon ring.",
-    "Added brick-colored facade, stone-like plinth and trim, rectangular windows, shutters, entry glazing, and a covered porch with steps.",
-    "Replaced the broad estimated gable/ridge/chimney with a low-profile cap following the GIS plan perimeter; roof top height remains an estimate.",
-    "Added roof-open schematic room modules with beds, desks, lounge seating, and partitions; exact room positions are unverified.",
-    "Kept the manifest asset ID, object name, collection name, scene name, and one-object export structure stable."
-  ],
-  "previews": [
-    "audit/alpha_phi_fid764/exterior_three_quarter.png",
-    "audit/alpha_phi_fid764/schematic_upper_rooms.png",
-    "audit/alpha_phi_fid764/plan_overlay.png",
-    "audit/alpha_phi_fid764/plan_comparison.json"
-  ],
-  "fresh_open_validation": "audit/alpha_phi_fid764/fresh_open_validation.json",
-  "independent_grade": {
-    "status": "PASS",
-    "minimum_required": 8.0,
-    "reviewer": "Independent reviewer; revision 3",
-    "score": 8.085,
-    "report": "audit/alpha_phi_fid764/independent_grade_r3/grade.md",
-    "artifact_sha256": "0E588FFDB41AA611CAB94CBD04B336ADFE816AF8C0FE6962C46A28782C060F03",
-    "verified_commit": "5470affcbe242aec3f823147b30b24cc441db3b4"
-  },
-  "independent_grade_history": [
-    {
-      "revision": 2,
-      "status": "FAIL",
-      "score": 7.6,
-      "report": "audit/alpha_phi_fid764/independent_grade_r2/grade.md",
-      "note": "Retained as prior review history; superseded by the revision 3 independent grade."
-    },
-    {
-      "revision": 3,
-      "status": "PASS",
-      "score": 8.085,
-      "report": "audit/alpha_phi_fid764/independent_grade_r3/grade.md",
-      "artifact_sha256": "0E588FFDB41AA611CAB94CBD04B336ADFE816AF8C0FE6962C46A28782C060F03"
-    }
-  ],
-  "master_integration": "Not performed; coordinator owns the master blend and shared files."
+﻿{
+    "building":  "Alpha Phi (Delta Mu Chapter), Purdue University",
+    "asset_id":  "massing_house_301841331_735e92f",
+    "asset_path":  "modular/buildings/massing_house_301841331_735e92f.blend",
+    "source_feature":  {
+                           "provider":  "Purdue GIS, BuildingShapesZip4 ArcGIS FeatureServer, layer 0",
+                           "feature_id":  "FID 764",
+                           "global_id":  "{941CB367-C1ED-4496-BE53-83FE29345280}",
+                           "attributes":  {
+                                              "BUILDING_N":  "Alpha Phi",
+                                              "BLDG_ABBR":  "SOAF",
+                                              "OWNER":  "GREEK",
+                                              "ADDRESS":  "801 David Ross Rd",
+                                              "NUM_LEVELS":  1,
+                                              "Extrution":  12,
+                                              "Shape__Area":  945.6015625,
+                                              "Shape__Length":  156.348659238104
+                                          },
+                           "raw_snapshot":  "audit/alpha_phi_fid764/purdue_gis_fid764_2026-10-28_3857.json",
+                           "retrieved":  "2026-10-28",
+                           "source_url":  "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D764\u0026outFields=*\u0026returnGeometry=true\u0026outSR=3857\u0026f=pjson",
+                           "layer_metadata_snapshot":  "audit/alpha_phi_fid764/purdue_gis_layer_0_metadata_2026-10-28.json",
+                           "layer_metadata_url":  "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+                           "source_url_note":  "The endpoint was recovered by querying the current Purdue BuildingShapesZip4 layer on 2026-10-28. The new live query response exactly matches the pre-existing source_feature_764_raw.json attributes and geometry. Both snapshots are retained.",
+                           "source_crs":  "WKID 102100, latestWkid 3857, explicitly declared by the raw snapshot; Web Mercator Auxiliary Sphere",
+                           "source_crs_metadata":  "The live layer metadata snapshot independently confirms Web Mercator Auxiliary Sphere (WKID 102100 / latestWkid 3857). The fresh query was requested with outSR=3857 and declares the same WKID.",
+                           "geometry_method":  "Used all 16 non-duplicated ring vertices without simplification. Inverse Web Mercator conversion to longitude/latitude, followed by the repository local approximation X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. Coordinates are campus-local approximate meters, not a surveyed CRS.",
+                           "native_projected_shape_area_m2":  945.6015625,
+                           "projected_ring_area_note":  "Shape__Area agrees with planar shoelace area of the raw ring in its native Web Mercator coordinates. The transformed local-coordinate shoelace area is about 547.0 mÂ² because Web Mercator area is scale-distorted at this latitude; these values are not directly comparable.",
+                           "transformed_ring_bounds_xy_m":  {
+                                                                "x":  [
+                                                                          -1138.078,
+                                                                          -1097.914
+                                                                      ],
+                                                                "y":  [
+                                                                          750.471,
+                                                                          779.037
+                                                                      ]
+                                                            },
+                           "transformed_axis_aligned_dimensions_m":  [
+                                                                         40.163,
+                                                                         28.567
+                                                                     ]
+                       },
+    "identity_sources":  [
+                             {
+                                 "provider":  "Purdue Panhellenic Association",
+                                 "url":  "https://www.purduepanhellenic.com/cost/alpha-phi",
+                                 "retrieved":  "2026-10-28",
+                                 "evidence":  "Current chapter page identifies Alpha Phi as the Delta Mu Chapter. It supports chapter identity, not a building address or facade.",
+                                 "source_crs":  null
+                             },
+                             {
+                                 "provider":  "Dun \u0026 Bradstreet business directory",
+                                 "url":  "https://www.dandb.com/businessdirectory/lafayette-indiana-in-sororityresidentialhouse-70410103.html",
+                                 "retrieved":  "2026-10-28",
+                                 "evidence":  "Search-indexed entry lists Alpha Phi at 801 David Ross Rd. This is secondary directory evidence and was not used to derive geometry.",
+                                 "source_crs":  null
+                             }
+                         ],
+    "exterior_observation":  "See source_observation.json for the exact HUBERart Etsy listing and retrieval date. The listing describes a pen-and-ink drawing as the Alpha Phi Purdue house and its accessible image description identifies a brick building, Alpha Phi sign, and entrance stairs. The page explicitly prohibits image duplication, so no local reference copy is included. The illustration is not a measured or verified current elevation; facade material, gable profile, window count/spacing, roof, and porch dimensions remain interpretive.",
+    "measurements_and_model":  {
+                                   "placement":  "Retains the converted GIS ring coordinates in the existing massing asset\u0027s campus coordinate frame. No manual translation, rotation, or scaling was applied.",
+                                   "footprint":  "Exterior wall base follows the full 16-vertex converted FID 764 ring. Plan overlay in plan_overlay.png compares raw ring to extracted saved wall-base segments: maximum boundary vertex error 0.00006 m, RMS 0.00004 m, zero translation correction, and zero footprint rotation correction. This confirms mesh construction fidelity to the retained ring, not that the ring is a current surveyed wall line. Transformed axis-aligned bounds are 40.16 Ã— 28.57 m; no independent CAD or aerial dimension check was retained.",
+                                   "height":  "Estimated 7.4 m wall height and estimated 8.25 m top of the conservative roof cap. GIS NUM_LEVELS=1 and Extrution=12 have undocumented semantics/units. Neither field verifies actual height or story count; modeled two-level inserts remain interpretive.",
+                                   "story_count":  "Two-level interpretation is schematic and unverified.",
+                                   "roof":  "Revised to a low-profile cap whose perimeter follows the full GIS footprint; broad gable, ridge, and chimney were removed. This conservative roof mass avoids claiming a ridge direction unsupported by the qualitative illustration. Roof type, estimated 8.25 m top height, eave height, coverage, and as-built profile remain unverified.",
+                                   "facade":  "Brick-colored material, rectangular windows, Alpha Phi signage, and covered entry/stairs are low-confidence visual interpretations informed by the cited HUBERart pen-and-ink drawing. The page forbids copying the image; the retained source URL/date/observation are in source_observation.json. Limestone-like trim, shutters, and all spacing are unsupported inventions. No current measured facade reference is retained.",
+                                   "interior":  "Bedroom/lounge inserts remain schematic and are not an as-built plan. The updated roof-open cutaway shows lower perimeter walls and two upper bedroom modules against the full footprint for context; no floor plan, room count, circulation, or furnishing plan is verified.",
+                                   "topology":  "Fresh-open Blender validation reports 543 boundary/non-manifold edges. The export is a visual composite with open/intersecting decorative and interior components, not a watertight fabrication solid.",
+                                   "material":  "All materials are packed procedural/native materials; no external image or absolute-path dependencies are used."
+                               },
+    "geometry_edits":  [
+                           "Replaced the original single-object massing mesh with a wall shell following the source polygon ring.",
+                           "Added brick-colored facade, stone-like plinth and trim, rectangular windows, shutters, entry glazing, and a covered porch with steps.",
+                           "Replaced the broad estimated gable/ridge/chimney with a low-profile cap following the GIS plan perimeter; roof top height remains an estimate.",
+                           "Added roof-open schematic room modules with beds, desks, lounge seating, and partitions; exact room positions are unverified.",
+                           "Kept the manifest asset ID, object name, collection name, scene name, and one-object export structure stable."
+                       ],
+    "previews":  [
+                     "audit/alpha_phi_fid764/exterior_three_quarter.png",
+                     "audit/alpha_phi_fid764/schematic_upper_rooms.png",
+                     "audit/alpha_phi_fid764/plan_overlay.png",
+                     "audit/alpha_phi_fid764/plan_comparison.json"
+                 ],
+    "fresh_open_validation":  "audit/alpha_phi_fid764/fresh_open_validation.json",
+    "independent_grade":  {
+                              "status":  "PASS",
+                              "minimum_required":  8.0,
+                              "reviewer":  "Independent reviewer; revision 3",
+                              "score":  8.085,
+                              "report":  "audit/alpha_phi_fid764/independent_grade_r3/grade.md",
+                              "artifact_sha256":  "0E588FFDB41AA611CAB94CBD04B336ADFE816AF8C0FE6962C46A28782C060F03",
+                              "verified_commit":  "5470affcbe242aec3f823147b30b24cc441db3b4"
+                          },
+    "independent_grade_history":  [
+                                      {
+                                          "revision":  2,
+                                          "status":  "FAIL",
+                                          "score":  7.6,
+                                          "report":  "audit/alpha_phi_fid764/independent_grade_r2/grade.md",
+                                          "note":  "Retained as prior review history; superseded by the revision 3 independent grade."
+                                      },
+                                      {
+                                          "revision":  3,
+                                          "status":  "PASS",
+                                          "score":  8.085,
+                                          "report":  "audit/alpha_phi_fid764/independent_grade_r3/grade.md",
+                                          "artifact_sha256":  "0E588FFDB41AA611CAB94CBD04B336ADFE816AF8C0FE6962C46A28782C060F03"
+                                      }
+                                  ],
+    "master_integration":  {
+                               "date":  "2026-10-28",
+                               "master_file":  "purdue_campus_master.blend",
+                               "audit":  "audit/tobin_alpha_phi_master_integration_2026-10-28.json",
+                               "result":  "pass",
+                               "fresh_open":  true,
+                               "object":  "House_301841331",
+                               "library":  "modular/buildings/massing_house_301841331_735e92f.blend"
+                           },
+    "coordinator_status":  "Independently graded 8.085/10 PASS; integrated and fresh-open verified in the master."
 }
