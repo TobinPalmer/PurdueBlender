@@ -39,8 +39,17 @@
     },
     "plan_reconciliation": {
       "method": "The 8 unique polygon vertices from the raw EPSG:4326 feature ring were converted with the project's approximate local transform and compared to the saved mesh base vertices.",
-      "source_local_bounds_m": [[-299.7981237230729, 221.04115643045134], [-270.8299272487369, 231.47401975488947]],
-      "max_nearest_vertex_error_m": 0.000016219215357729024,
+      "source_local_bounds_m": [
+        [
+          -299.7981237230729,
+          221.04115643045134
+        ],
+        [
+          -270.8299272487369,
+          231.47401975488947
+        ]
+      ],
+      "max_nearest_vertex_error_m": 1.6219215357729024e-05,
       "scope": "Internal check against the source ring used to construct the lower wall footprint. It does not independently verify the GIS placement, survey accuracy, roof, facades, height, or interior."
     }
   },
@@ -50,7 +59,14 @@
       "url": "https://www.purdue.edu/fscl/images/_hero/fscl-glenwood-hero.jpg",
       "saved_copy": "sources/purdue_fscl_glenwood_hero.jpg",
       "source_date": "Not found",
-      "observed_features": ["light horizontal siding", "dark shutters", "repeated windows", "entry portico and Glenwood sign", "dormer-like roof forms", "low masonry foundation"],
+      "observed_features": [
+        "light horizontal siding",
+        "dark shutters",
+        "repeated windows",
+        "entry portico and Glenwood sign",
+        "dormer-like roof forms",
+        "low masonry foundation"
+      ],
       "limits": "One oblique facade view; no dimensions, roof survey, compass orientation, floor plan or full elevation set."
     },
     {
@@ -58,7 +74,9 @@
       "url": "https://ag.purdue.edu/department/agecon/undergraduate-program/success-2025-26/cooperation-is-key.html",
       "saved_copy": "sources/purdue_ag_success_glenwood_house.jpg",
       "source_date": "2025-26 page; photo date not stated",
-      "observed_features": ["Glenwood identity/context"],
+      "observed_features": [
+        "Glenwood identity/context"
+      ],
       "limits": "Building is partly obscured by trees; not used for dimensions or facade detail."
     },
     {
@@ -66,20 +84,35 @@
       "url": "https://web.ics.purdue.edu/~glenwood/about.html",
       "saved_copy": null,
       "source_date": "Page crawled about 11 years before 2026-10-28",
-      "observed_features": ["Glenwood moved to 503 University Street in 1969"],
+      "observed_features": [
+        "Glenwood moved to 503 University Street in 1969"
+      ],
       "limits": "Identity/address history only; no model dimensions."
     }
   ],
   "modeling": {
-    "geometry_edits": ["Retained the GIS footprint ring as the lower wall perimeter.", "Added illustrative multi-level wall mass, roof and dormers, repeated shuttered windows, entry portico/sign, stairs, foundation band, and schematic interior floorplates, partitions, circulation and furniture."],
-    "estimated_or_unverified": ["GIS NUM_LEVELS=1 conflicts with the multi-level source photograph; story count is unresolved and modeled levels are interpretive.", "The 9.15 m ridge height, roof pitch, dormer sizes, facade bay count and spacing, porch/steps, hidden elevations, and facade compass orientation are estimates.", "GIS Extrution=12 is undocumented and is not treated as height.", "Interior plan, room use, circulation and furniture are schematic placeholders; not as built."],
+    "geometry_edits": [
+      "Retained the GIS footprint ring as the lower wall perimeter.",
+      "Added illustrative multi-level wall mass, roof and dormers, repeated shuttered windows, entry portico/sign, stairs, foundation band, and schematic interior floorplates, partitions, circulation and furniture."
+    ],
+    "estimated_or_unverified": [
+      "GIS NUM_LEVELS=1 conflicts with the multi-level source photograph; story count is unresolved and modeled levels are interpretive.",
+      "The 9.15 m ridge height, roof pitch, dormer sizes, facade bay count and spacing, porch/steps, hidden elevations, and facade compass orientation are estimates.",
+      "GIS Extrution=12 is undocumented and is not treated as height.",
+      "Interior plan, room use, circulation and furniture are schematic placeholders; not as built."
+    ],
     "external_image_dependencies": []
   },
   "technical_validation": {
     "result": "PASS",
     "method": "Blender 5.2.3 LTS fresh-open of saved asset followed by geometry/dependency checks and four temporary render passes.",
     "report": "fresh_open_validation.json",
-    "previews": ["fresh_open_exterior.png", "fresh_open_roof_oblique.png", "fresh_open_top.png", "fresh_open_schematic_interior_cutaway.png"],
+    "previews": [
+      "fresh_open_exterior.png",
+      "fresh_open_roof_oblique.png",
+      "fresh_open_top.png",
+      "fresh_open_schematic_interior_cutaway.png"
+    ],
     "mesh_object_count": 1,
     "vertices": 17364,
     "faces": 15735,
@@ -108,5 +141,15 @@
       "The footprint comparison is by construction using the GIS ring and approximate local transform, not independent placement or survey validation.",
       "Interior remains schematic; no as-built plan, room function or interior dimension is verified."
     ]
+  },
+  "master_integration": {
+    "status": "PASS",
+    "date": "2026-10-28",
+    "master_file": "purdue_campus_master.blend",
+    "object": "House_301841249",
+    "master_faces": 15735,
+    "library_relative": "//modular\\buildings\\massing_house_301841249_f827941.blend",
+    "verification": "Saved master followed by fresh-open full-master check; project-relative link resolves to the expected Glenwood asset.",
+    "verification_report": "../tobin_glenwood_master_integration_2026-10-28.json"
   }
 }
