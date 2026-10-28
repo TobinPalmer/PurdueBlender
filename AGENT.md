@@ -1,3 +1,16 @@
+# Second-pass agents — use for the ranked completed-building queue
+
+For every building selected from the [README second-pass exterior ranking](README.md#second-pass-exterior-ranking), use the [Second-pass exterior agent](modular/AGENTS.md#second-pass-exterior-agent) and a separate [Independent second-pass visual review agent](modular/AGENTS.md#independent-second-pass-visual-review-agent). Follow the full research, modeling, review, iteration, and handoff instructions at the top of `modular/AGENTS.md`.
+
+- **Second-pass exterior agent:** work on one assigned queue building at a time, in rank order. Research real exterior photographs from multiple angles and additional authoritative sources, then refine window placement, arches, entrances, roof silhouette, materials, and defining architectural details. Preserve source evidence, matched before/after renders, and uncertainty.
+- **Independent second-pass visual review agent:** a separate subagent independently inspects the exact saved asset against real references from all sides and scores exterior fidelity on a 0–10 rubric emphasizing windows and distinctive architecture. The default acceptance threshold is **9.9/10**; below it, revise and independently regrade. After more than two genuine independently reviewed attempts (the third or a later unsuccessful attempt), agents may [protest and ask the user for a lower bar](modular/AGENTS.md#protest-process-after-more-than-two-attempts) with score history, remaining discrepancies, and a justified proposed target. Only explicit user approval changes the threshold; agents cannot self-approve an exception.
+
+Use the queue's `Second-pass owner` column for second-pass assignments: initially the first 30 are assigned to Rossen and the rest remain unassigned. The older first-pass rubric and 8/10 threshold below do not accept a second pass. Existing file ownership, sync-before-commit, portability, Tobin-only master editing, and TODO handoff rules remain in effect. Independent review, all applicable review gates, and master-integration verification are still required under an approved threshold exception.
+
+The original first-pass instructions follow unchanged.
+
+---
+
 # AGENT.md — Add a detailed building
 
 Follow this workflow for each new building. The project-specific rules in [modular/AGENTS.md](modular/AGENTS.md) and [modular/README.md](modular/README.md) apply as well.
