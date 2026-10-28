@@ -42,11 +42,23 @@
     },
     "plan_reconciliation": {
       "unique_source_ring_vertices": 12,
-      "source_local_bounds_m": [[783.3857, -460.2064], [807.6787, -429.0747]],
-      "approximate_local_dimensions_m": [24.293, 31.132],
+      "source_local_bounds_m": [
+        [
+          783.3857,
+          -460.2064
+        ],
+        [
+          807.6787,
+          -429.0747
+        ]
+      ],
+      "approximate_local_dimensions_m": [
+        24.293,
+        31.132
+      ],
       "local_ring_area_m2": 386.6122,
       "local_ring_perimeter_m": 93.9833,
-      "max_nearest_vertex_error_m": 0.0000292361,
+      "max_nearest_vertex_error_m": 2.92361e-05,
       "method": "Converted the GIS FID 827 EPSG:4326 ring with the project local transform and compared the saved base footprint ring after Blender fresh-open.",
       "scope": "The near-zero error is by construction and verifies preservation of the input ring only. It does not independently verify placement, survey accuracy, structural wall locations, dimensions, roof, facades, height, or interior. Web Mercator Shape__Area/Length values differ by expected projection scale at this latitude."
     }
@@ -58,7 +70,16 @@
       "image_url": "https://static.wixstatic.com/media/d1c9c7_ac607255dd844d78aca331fe74bc8045~mv2.jpg",
       "saved_copy": "sources/marwood_official_house_photo.jpg",
       "source_date": "Not stated",
-      "observed_features": ["cream stucco", "dark brown Tudor framing", "broad gabled brown roof", "central projecting gable with attic window and MARWOOD name", "covered entry", "dark windows", "brick foundation/basement", "chimney"],
+      "observed_features": [
+        "cream stucco",
+        "dark brown Tudor framing",
+        "broad gabled brown roof",
+        "central projecting gable with attic window and MARWOOD name",
+        "covered entry",
+        "dark windows",
+        "brick foundation/basement",
+        "chimney"
+      ],
       "limits": "One oblique view only; capture date, bearing, dimensions, roof pitch and hidden elevations are unknown."
     }
   ],
@@ -66,8 +87,18 @@
     "scene": "Building_massing_marwood_cooperative_fid827",
     "collection": "Asset_massing_marwood_cooperative_fid827",
     "root_object": "House_Marwood_Cooperative",
-    "geometry_edits": ["Preserved the 12-vertex GIS ring as the base wall perimeter.", "Added an estimated one-main-story house with raised foundation/basement band, gable roof, central projecting gable and attic window, name lettering, covered entry, chimney, windows and stairs.", "Added schematic interior floor plate, partitions, stair placeholder and modest furniture blocks."],
-    "estimated_or_unverified": ["GIS NUM_LEVELS=1 does not resolve the partly exposed basement or attic; the modeled main story is an interpretation.", "GIS Extrution=12 is undocumented and was not used as height.", "Roof pitch, ridge and chimney heights, wall height, facade orientation and rhythm, entry dimensions, basement exposure and unseen elevations are estimates from one photo.", "Interior room count, use, dimensions and circulation are schematic and not as-built.", "No independent parcel-to-GIS or campus placement check was produced."],
+    "geometry_edits": [
+      "Preserved the 12-vertex GIS ring as the base wall perimeter.",
+      "Added an estimated one-main-story house with raised foundation/basement band, gable roof, central projecting gable and attic window, name lettering, covered entry, chimney, windows and stairs.",
+      "Added schematic interior floor plate, partitions, stair placeholder and modest furniture blocks."
+    ],
+    "estimated_or_unverified": [
+      "GIS NUM_LEVELS=1 does not resolve the partly exposed basement or attic; the modeled main story is an interpretation.",
+      "GIS Extrution=12 is undocumented and was not used as height.",
+      "Roof pitch, ridge and chimney heights, wall height, facade orientation and rhythm, entry dimensions, basement exposure and unseen elevations are estimates from one photo.",
+      "Interior room count, use, dimensions and circulation are schematic and not as-built.",
+      "No independent parcel-to-GIS or campus placement check was produced."
+    ],
     "external_image_dependencies": []
   },
   "technical_validation": {
@@ -81,12 +112,28 @@
     "procedural_material_count": 12,
     "cameras_and_lights_saved": 0,
     "external_image_dependencies": 0,
-    "previews": ["fresh_open_exterior.png", "fresh_open_roof_oblique.png", "fresh_open_top.png", "fresh_open_schematic_interior.png"]
+    "previews": [
+      "fresh_open_exterior.png",
+      "fresh_open_roof_oblique.png",
+      "fresh_open_top.png",
+      "fresh_open_schematic_interior.png"
+    ]
   },
   "independent_grade": {
     "status": "PENDING — separate read-only exact-SHA review required",
     "threshold": 8.0,
     "reviewed_asset_sha256": null,
     "result": null
+  },
+  "master_integration": {
+    "status": "PASS",
+    "date": "2026-10-28",
+    "master_file": "purdue_campus_master.blend",
+    "object": "House_Marwood_Cooperative",
+    "vertices": 8657,
+    "faces": 7965,
+    "library_relative": "//modular\\buildings\\massing_marwood_cooperative_fid827.blend",
+    "verification": "Full master saved after direct-linking the detailed asset, then fresh-opened in Blender 5.2.3 LTS; expected object, topology and relative library were confirmed.",
+    "verification_report": "../tobin_marwood_master_integration_2026-10-28.json"
   }
 }
