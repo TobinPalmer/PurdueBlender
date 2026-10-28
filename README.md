@@ -269,6 +269,9 @@ The landmark emphasis is informed by Purdue's [Must-See Tour](https://purduespor
 | 231 | [Horizon Bank](modular/buildings/massing_horizon_bank_debc8f2.blend) | [8.9/10](audit/horizon_bank/independent_grade/grade_result.json) | 1 | Support / peripheral / neighborhood context | 21.05 | Unassigned |
 | 232 | [McDonald's](modular/buildings/massing_mcdonald_s_ab77b70.blend) | [9.0/10](audit/mcdonald_s/independent_grade_revision2.json) | 1 | Support / peripheral / neighborhood context | 18.95 | Unassigned |
 
+
+Batch started: Rossen’s ranks **61–90** are being processed in queue order. See the [batch progress and per-building evidence](audit/second_pass_rossen_61_90/README.md); no second pass is marked complete until its independent visual review and master integration pass.
+
 <!-- second-pass-queue:end -->
 
 ## Detailed models: status and latest grader score (235 buildings)
