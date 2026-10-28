@@ -475,24 +475,33 @@ def build_high_roof(mb):
         if (i1 - i0).length > 0.01:
             red_tri(mb, o0, i1, i0, dn)
         red_edge(mb, o0, o1, dn)
-    # NW point: fan of planar triangles from the tip, leaving a symmetric triangular hole
-    d = ((No_w - T).normalized() + (So_w - T).normalized()).normalized()
+    # NW point ("wing"): a FLAT slab (level top and flat underside) that oversails the entrance corner and the
+    # northern part of the extended west wing, with a symmetric triangular hole and a support beam down its
+    # middle (photos 2016_01/04, DD_22; user review). LiDAR height ~19 m over the point.
+    zt, zb = 19.2, 18.6
+    T = Vector((-84.0, 21.0, zt))
+    P_n = Vector((-38.0, 19.2, zt))      # joins the north eyebrow
+    P_s = Vector((-72.0, -15.0, zt))     # south-west arm end over the west wing
+    P_se = Vector((-44.0, -15.0, zt))    # joins the south eyebrow
+    P_in = Vector((-38.0, 4.0, zt))      # inner corner over the main bar
+    d = ((P_n - T).normalized() + (P_s - T).normalized()).normalized()
     pdir = Vector((-d.y, d.x, 0))
-    N = T + d * 12.0
-    C = T + d * 24.0
-    NL, NR = C + pdir * 5.0, C - pdir * 5.0
+    N, C = T + d * 13.0, T + d * 27.0
+    NL, NR = C + pdir * 5.5, C - pdir * 5.5
     for P in (N, C, NL, NR):
-        P.z = ztip + (zin - ztip) * ((P - T).to_2d().length / 24.0)
-    for (a, b, c) in ((T, No_w, Ni_w), (T, Ni_w, NL), (T, NL, N), (T, N, NR), (T, NR, Si_w), (T, Si_w, So_w)):
-        red_tri(mb, a, b, c, dn)
-    for (a, b) in ((T, No_w), (So_w, T), (N, NL), (N, NR)):
-        red_edge(mb, a, b, dn)
-    # support beam down the middle of the hole (apex to base), in the roof plane
+        P.z = zt
+    dn2 = Vector((0, 0, zt - zb))
+    for (a, b, c) in ((T, P_n, NL), (T, NL, N), (T, N, NR), (T, NR, P_s), (NL, P_n, P_in), (NL, P_in, C), (C, P_in, NR),
+                      (NR, P_in, P_se), (NR, P_se, P_s)):
+        red_tri(mb, a, b, c, dn2)
+    for (a, b) in ((T, P_n), (P_s, T), (P_se, P_s), (N, NL), (N, NR), (NL, C), (C, NR)):
+        red_edge(mb, a, b, dn2)
+    # support beam down the middle of the hole (apex to base)
     L = (C - N).to_2d().length
-    mb.box("red", N.to_2d() - pdir.to_2d() * 0.35, d.to_2d(), pdir.to_2d(), L, 0.7, min(N.z, C.z) - 0.9, max(N.z, C.z) - th)
-    # red sloped panel seen through the hole, low on the building side (photos)
-    mb.quad("red", [NL - Vector((0, 0, 0.6)), NR - Vector((0, 0, 0.6)),
-                    NR.lerp(N, 0.45) - Vector((0, 0, 2.2)), NL.lerp(N, 0.45) - Vector((0, 0, 2.2))])
+    mb.box("red", N.to_2d() - pdir.to_2d() * 0.35, d.to_2d(), pdir.to_2d(), L, 0.7, zb - 0.6, zt)
+    # red sloped panel seen through the hole on the building side (photos)
+    mb.quad("red", [NL - Vector((0, 0, 1.2)), NR - Vector((0, 0, 1.2)),
+                    NR.lerp(N, 0.45) - Vector((0, 0, 3.0)), NL.lerp(N, 0.45) - Vector((0, 0, 3.0))])
     # flat top with clerestory glass steps on both long sides
     top = [(-60.0, 11.0), (52.0, 11.0), (68.0, -5.5), (-41.0, -5.5)]
     flat_poly(mb, "roof", top, 21.6)
