@@ -1,116 +1,220 @@
-{
-  "building": "Helen B. Schleman Hall",
-  "asset_id": "massing_schleman_hall_schm_ad4b05b",
-  "status": "Historic red-tile roof and brick-column entrance detailed from Purdue exterior reference; a Purdue basement plan plausibly reconciles three visible floors with the four-level GIS attribute; height remains estimated and independent grade pending",
-  "source": {
-    "provider": "Purdue University official campus building footprint service",
-    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
-    "feature_id": 224,
-    "building_code": "SCHM",
-    "source_name": "Helen B. Schleman Hall",
-    "retrieval_date": "2026-10-22 (repository-preserved source snapshot)",
-    "source_date": "Not supplied in the service snapshot",
-    "source_crs": "EPSG:4326 (WGS 84)",
-    "source_record": "source_feature_224_raw.json",
-    "reference_status": "Official campus map polygon; not a certified survey",
-    "secondary_visual_references": [
-      {
-        "provider": "Purdue University Events",
-        "use": "Current exterior photo and address reference; visual observations indicate red brick, red tile roof and a covered two-column entrance portico; apparent three visible storeys are a photo interpretation, not a measured count.",
-        "url": "https://events.purdue.edu/helen_b_schleman_hall_of_student_servcs"
-      },
-      {
-        "provider": "Purdue University Sustainable Operations",
-        "use": "Confirms the former Schleman Hall identity and the 2024 Data Science and AI renovation context; no dimensions inferred.",
-        "url": "https://www.purdue.edu/operations/sustainable-ops/home/initiatives/buildings/dsai/"
-      },
-      {
-        "provider": "Purdue University, Potter Engineering Center Renovation Study (American Structurepoint), page 78",
-        "use": "Interior floor-plan evidence that Schleman has a basement; not an exterior or measured-height source",
-        "url": "https://engineering.purdue.edu/~frosch/Renderings/Masterplans/POTR%20Study.pdf",
-        "observation_record": "source_floorplan_observation.json"
-      }
-    ]
-  },
-  "transform": {
-    "origin_latitude": 40.4274,
-    "origin_longitude": -86.9137,
-    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
-    "y_formula": "(latitude - 40.4274) * 111040.0",
-    "axes": "X east, Y north, Z up",
-    "units": "meters; local project approximation, not surveyed CRS"
-  },
-  "measurements": {
-    "method": "Compared the structural wall polygon built from the official feature ring using the repository transform; facade details and entrance are excluded from plan comparison",
-    "official_footprint_aabb_xy_m": [
-      -140.9559561570748,
-      -203.92196816058913,
-      -114.65490184721604,
-      -149.6090063940892
-    ],
-    "official_minimum_rotated_rectangle": {
-      "width_m": 53.76803743396508,
-      "depth_m": 25.154644474263463,
-      "angle_degrees_east_ccw": 91.2725140048102
-    },
-    "official_polygon_area_m2": 2095.83984375,
-    "before_asset_aabb_xy_m": [
-      -140.9559561570748,
-      -203.92196816058913,
-      -114.65490184721604,
-      -149.6090063940892
-    ],
-    "before_asset_height_m": [
-      0.0,
-      11.399999618530273
-    ],
-    "after_structural_shell": "Walls follow all 16 distinct official source-ring vertices. A new gable roof and portico are architectural additions and extend beyond the wall footprint.",
-    "after_modeled_height_m": 12.82,
-    "position_status": "The structural footprint follows official FID 224 after the approximate project conversion. Source positional uncertainty is unpublished; entrance side uses visual reference context and remains approximate.",
-    "plan_dimension_status": "Walls use official campus GIS feature polygon; the map polygon is not a surveyed wall outline. Roof eaves and entrance portico are estimated.",
-    "orientation_status": "Roof ridge follows the footprint long axis; entrance faces the west-side edge selected by the build script. No georeferenced photo confirms this orientation.",
-    "height_status": "Unverified estimate: 11.4 m wall height plus 1.4 m roof rise, giving about 12.82 m to the modeled ridge. The official four-level attribute is not a height measurement.",
-    "official_num_levels_attribute": 4,
-    "official_extrution_attribute": 48,
-    "after_asset_bounds_including_roof_and_portico_m": {
-      "min_x": -141.3151397705078,
-      "max_x": -114.2502212524414,
-      "min_y": -204.28115844726562,
-      "max_y": -149.24867248535156,
-      "min_z": 0.0,
-      "max_z": 12.819999694824219
-    },
-    "modeled_visible_storeys": 3,
-    "storey_count_interpretation": "The exterior photo shows approximately three above-grade facade levels and a Purdue renovation-study floor plan explicitly labels a Schleman basement (page 78). This makes three visible floors plus one basement a plausible reconciliation of GIS NUM_LEVELS=4, but the GIS counting convention and any basement exposure remain unverified.",
-    "reopen_check": {
-      "object_name": "Schleman Hall (SCHM)",
-      "asset_id": "massing_schleman_hall_schm_ad4b05b",
-      "exported_collection_object_count": 1,
-      "mesh_vertex_count": 3926,
-      "mesh_face_count": 2874,
-      "saved_asset_reopened": true
-    }
-  },
-  "geometry_edits": [
-    "Preserved the official campus GIS structural wall polygon and the existing asset object, collection, scene, ID and file path.",
-    "Replaced the flat cap with a shallow red-tile gable roof aligned to the footprint long axis.",
-    "Added a paired-glass entry under a portico with brick columns, limestone bases and capitals, a red roof canopy and limestone inscription panel.",
-    "Adjusted window bays to avoid overlap with the entrance; three visible facade levels are modeled, while the official GIS four-level attribute remains unresolved."
-  ],
-  "uncertainties": [
-    "The official campus GIS polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
-    "A Purdue study confirms an interior basement level, making the four-level GIS count plausible alongside three visible above-grade floors. The plan does not establish the GIS counting convention or how much basement is exposed at grade.",
-    "The wall height, 1.4 m roof rise, gable shape, portico dimensions and entrance location are estimates, not measured elevations.",
-    "The 2024 renovation context may affect current interior use; this model uses the visible exterior reference and does not reproduce recent interior changes.",
-    "No independent grader has reviewed this revision."
-  ],
-  "artifacts": {
-    "build_script": "build_detail.py",
-    "build_config": "build_config.json",
-    "raw_source": "source_feature_224_raw.json",
-    "exterior_reference_observation": "source_exterior_reference_observation.json",
-    "preview_render_script": "render_preview.py",
-    "preview": "preview_detail.png",
-    "floorplan_observation": "source_floorplan_observation.json"
-  }
+﻿{
+    "building":  "Helen B. Schleman Hall",
+    "asset_id":  "massing_schleman_hall_schm_ad4b05b",
+    "status":  "Independently graded 8.6/10 (pass); integrated into master and fresh-open verified 2026-10-28. Roof/entry geometry and schematic room divisions remain estimates.",
+    "source":  {
+                   "provider":  "Purdue University official campus building footprint service",
+                   "url":  "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+                   "feature_id":  224,
+                   "building_code":  "SCHM",
+                   "source_name":  "Helen B. Schleman Hall",
+                   "retrieval_date":  "2026-10-22 (repository-preserved source snapshot)",
+                   "source_date":  "Not supplied in the service snapshot",
+                   "source_crs":  "EPSG:4326 (WGS 84)",
+                   "source_record":  "source_feature_224_raw.json",
+                   "reference_status":  "Official campus map polygon; not a certified survey",
+                   "secondary_visual_references":  [
+                                                       {
+                                                           "provider":  "Purdue University Events",
+                                                           "use":  "Official current exterior image used for red brick, limestone bands, red tile roof, window bays and a covered brick-pier entrance; no dimensions or georeferenced orientation inferred.",
+                                                           "url":  "https://events.purdue.edu/helen_b_schleman_hall_of_student_servcs"
+                                                       },
+                                                       {
+                                                           "provider":  "Purdue University Sustainable Operations",
+                                                           "use":  "Confirms the former Schleman Hall identity and the 2024 Data Science and AI renovation context; no dimensions inferred.",
+                                                           "url":  "https://www.purdue.edu/operations/sustainable-ops/home/initiatives/buildings/dsai/"
+                                                       },
+                                                       {
+                                                           "provider":  "Purdue University, Potter Engineering Center Renovation Study (American Structurepoint), page 78",
+                                                           "use":  "Interior floor-plan evidence that Schleman has a basement; not an exterior or measured-height source",
+                                                           "url":  "https://engineering.purdue.edu/~frosch/Renderings/Masterplans/POTR%20Study.pdf",
+                                                           "observation_record":  "source_floorplan_observation.json"
+                                                       },
+                                                       {
+                                                           "provider":  "Purdue University Board of Trustees / Administrative Operations",
+                                                           "use":  "Official 2021 basement and Levels 1â€“3 floor-plan exhibits; informed a schematic interior layout of circulation, core, rooms and shared zones. Not a georeferenced or current as-built plan.",
+                                                           "url":  "https://www.purdue.edu/bot/meetings/past-meetings/2021/06.%20aug/pfc/stew-schl%20reno.pdf",
+                                                           "observation_record":  "source_full_floorplans_observation.json"
+                                                       }
+                                                   ]
+               },
+    "transform":  {
+                      "origin_latitude":  40.4274,
+                      "origin_longitude":  -86.9137,
+                      "x_formula":  "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+                      "y_formula":  "(latitude - 40.4274) * 111040.0",
+                      "axes":  "X east, Y north, Z up",
+                      "units":  "meters; local project approximation, not surveyed CRS"
+                  },
+    "measurements":  {
+                         "method":  "Compared the structural wall polygon built from the official feature ring using the repository transform; facade details and entrance are excluded from plan comparison",
+                         "official_footprint_aabb_xy_m":  [
+                                                              -140.9559561570748,
+                                                              -203.92196816058913,
+                                                              -114.65490184721604,
+                                                              -149.6090063940892
+                                                          ],
+                         "official_minimum_rotated_rectangle":  {
+                                                                    "width_m":  53.76803743396508,
+                                                                    "depth_m":  25.154644474263463,
+                                                                    "angle_degrees_east_ccw":  91.2725140048102
+                                                                },
+                         "official_polygon_area_m2":  2095.83984375,
+                         "before_asset_aabb_xy_m":  [
+                                                        -140.9559561570748,
+                                                        -203.92196816058913,
+                                                        -114.65490184721604,
+                                                        -149.6090063940892
+                                                    ],
+                         "before_asset_height_m":  [
+                                                       0.0,
+                                                       11.399999618530273
+                                                   ],
+                         "after_structural_shell":  "Structural wall perimeter continues to use all 16 distinct official GIS source-ring vertices; roof and portico remain architectural estimates.",
+                         "after_modeled_height_m":  12.81,
+                         "position_status":  "The structural footprint follows official FID 224 after the approximate project conversion. Source positional uncertainty is unpublished; entrance side uses visual reference context and remains approximate.",
+                         "plan_dimension_status":  "Walls use official campus GIS feature polygon; the map polygon is not a surveyed wall outline. Roof eaves and entrance portico are estimated.",
+                         "orientation_status":  "Roof ridge follows the footprint long axis; entrance faces the west-side edge selected by the build script. No georeferenced photo confirms this orientation.",
+                         "height_status":  "Unverified estimate: wall top 11.4 m; revised intersecting roof-wing geometry reaches 12.81 m above local grade in the saved asset. GIS extrusion is 48 ft (14.63 m) but is not treated as surveyed height.",
+                         "official_num_levels_attribute":  4,
+                         "official_extrution_attribute":  48,
+                         "after_asset_bounds_including_roof_and_portico_m":  {
+                                                                                 "min_x":  -141.88619995117188,
+                                                                                 "max_x":  -114.4636001586914,
+                                                                                 "min_y":  -204.37554931640625,
+                                                                                 "max_y":  -149.15426635742188,
+                                                                                 "min_z":  -2.8000001907348633,
+                                                                                 "max_z":  12.8100004196167
+                                                                             },
+                         "modeled_visible_storeys":  3,
+                         "storey_count_interpretation":  "The exterior photo shows approximately three above-grade facade levels and a Purdue renovation-study floor plan explicitly labels a Schleman basement (page 78). This makes three visible floors plus one basement a plausible reconciliation of GIS NUM_LEVELS=4, but the GIS counting convention and any basement exposure remain unverified.",
+                         "reopen_check":  {
+                                              "object_name":  "Schleman Hall (SCHM)",
+                                              "asset_id":  "massing_schleman_hall_schm_ad4b05b",
+                                              "exported_collection_object_count":  1,
+                                              "mesh_vertex_count":  7626,
+                                              "mesh_face_count":  4389,
+                                              "saved_asset_reopened":  true
+                                          },
+                         "interior_model_status":  "Embedded schematic partitions and central service/stair core are included at basement through third-floor levels as one mesh. The 2021 Purdue floor plans inform room/core organization; dimensions and current as-built arrangement are not verified. Basement interior extends below the exterior ground plane."
+                     },
+    "geometry_edits":  [
+                           "Preserved the official campus GIS structural wall polygon and the existing asset object, collection, scene, ID and file path.",
+                           "Replaced the flat cap with a shallow red-tile gable roof aligned to the footprint long axis.",
+                           "Added a paired-glass entry under a portico with brick columns, limestone bases and capitals, a red roof canopy and limestone inscription panel.",
+                           "Adjusted window bays to avoid overlap with the entrance; three visible facade levels are modeled, while the official GIS four-level attribute remains unresolved.",
+                           "Applied UV-mapped running-bond brick shader with subtle mortar relief to exterior brick surfaces.",
+                           "Applied procedural limestone and red clay tile materials; added UV coordinates per face orientation and retained project-local coordinates.",
+                           "Added UV-mapped running-bond brick, procedural limestone, and UV-mapped red clay tile materials; added face-oriented UV coordinates; all texture materials are procedural and use no external image dependencies.",
+                           "Cut actual window and entry openings into the exterior wall faces, then added glazing, limestone frames, and entry doors over those openings.",
+                           "Added embedded schematic partitions and service/stair core volumes at basement through third-floor levels, informed by the Purdue 2021 plans; the layout is not traced to exact room dimensions."
+                       ],
+    "uncertainties":  [
+                          "The official campus GIS polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
+                          "A Purdue study confirms an interior basement level, making the four-level GIS count plausible alongside three visible above-grade floors. The plan does not establish the GIS counting convention or how much basement is exposed at grade.",
+                          "The wall height, 1.4 m roof rise, gable shape, portico dimensions and entrance location are estimates, not measured elevations.",
+                          "The 2024 renovation context may affect current interior use; this model uses the visible exterior reference and does not reproduce recent interior changes.",
+                          "The Purdue 2021 floor plans are not registered to the GIS ring and represent renovation design context; interior partitions are schematic and may not match current as-built conditions."
+                      ],
+    "artifacts":  {
+                      "build_script":  "build_detail.py",
+                      "build_config":  "build_config.json",
+                      "raw_source":  "source_feature_224_raw.json",
+                      "exterior_reference_observation":  "source_exterior_reference_observation.json",
+                      "preview_render_script":  "render_preview.py",
+                      "preview":  "preview_detail.png",
+                      "floorplan_observation":  "source_floorplan_observation.json",
+                      "full_floorplan_observation":  "source_full_floorplans_observation.json",
+                      "fresh_open_validation":  "validate_asset.py",
+                      "pre_edit_backup":  "massing_schleman_hall_before_texture_interior.blend",
+                      "interior_observation":  "source_full_floorplans_observation.json",
+                      "cutaway_preview":  "preview_cutaway_interior.png",
+                      "cutaway_render_script":  "render_cutaway.py",
+                      "asset_backup_before_revision":  "asset_before_roof_entry_revision_2026-10-27.blend"
+                  },
+    "reopen_check":  {
+                         "object_name":  "Schleman Hall (SCHM)",
+                         "asset_id":  "massing_schleman_hall_schm_ad4b05b",
+                         "exported_collection_object_count":  1,
+                         "mesh_vertex_count":  7626,
+                         "mesh_face_count":  4389,
+                         "uv_layers":  [
+                                           "FacadeUV"
+                                       ],
+                         "material_slots":  6,
+                         "saved_asset_reopened":  true,
+                         "validation_script":  "validate_asset.py",
+                         "external_image_dependencies":  0,
+                         "bounds_world_m":  {
+                                                "min":  [
+                                                            -141.88619995117188,
+                                                            -204.37554931640625,
+                                                            -2.8000001907348633
+                                                        ],
+                                                "max":  [
+                                                            -114.4636001586914,
+                                                            -149.15426635742188,
+                                                            12.8100004196167
+                                                        ]
+                                            }
+                     },
+    "materials":  {
+                      "exterior_brick":  "UV-mapped procedural running-bond brick with mortar and bump",
+                      "limestone":  "procedural stone color/noise",
+                      "roof":  "UV-mapped procedural red-clay tile",
+                      "glazing":  "dark blue-gray glazing",
+                      "interior":  "schematic neutral partitions"
+                  },
+    "independent_grade":  {
+                              "date":  "2026-10-27",
+                              "score":  8.6,
+                              "result":  "pass",
+                              "review":  "independent read-only re-grade",
+                              "rubric":  {
+                                             "source_and_gis_footprint":  2.4,
+                                             "exterior_and_materials":  2.2,
+                                             "interior":  2.0,
+                                             "technical_quality":  2.0
+                                         },
+                              "report":  "independent_grade_r2/grade_report.md",
+                              "remaining_limits":  [
+                                                       "roof and entry dimensions/orientation are estimates",
+                                                       "room divisions are schematic and not verified current as-built"
+                                                   ]
+                          },
+    "revisions_2026_10_27":  {
+                                 "changes":  [
+                                                 "Replaced the single broad roof plane with a continuous roof membrane and three intersecting low-pitch gable wings, maintaining the existing red-clay tile material.",
+                                                 "Expanded the supported portico, stone piers/capitals and landing, and added broad approach steps.",
+                                                 "Added render_cutaway.py and preview_cutaway_interior.png. The render script removes roof and two near facade sections from a temporary duplicate only to expose the schematic interior; the exported asset remains intact."
+                                             ],
+                                 "validation":  "Fresh-open Blender 5.2.3 validation passed for the stable asset path, stable ID/object/collection, one mesh object, 7,626 vertices, 4,389 faces, six materials, FacadeUV, and zero external image dependencies.",
+                                 "limits":  [
+                                                "The 2021 Purdue plans are planning drawings, not verified current as-built partitions.",
+                                                "Roof intersections, building height, and entrance placement remain estimates; the photo is not georeferenced.",
+                                                "The cutaway render demonstrates only the schematic interior and is not a separate detailed scene asset."
+                                            ]
+                             },
+    "grade_history":  [
+                          {
+                              "date":  "2026-10-27",
+                              "score":  7.8,
+                              "result":  "revise",
+                              "report":  "independent_grade_r1/grade_report.md"
+                          },
+                          {
+                              "date":  "2026-10-27",
+                              "score":  8.6,
+                              "result":  "pass",
+                              "report":  "independent_grade_r2/grade_report.md"
+                          }
+                      ],
+    "fresh_open_validation":  "fresh-open verified in audit/tobin_shealy_schleman_master_integration_2026-10-28.json",
+    "master_integration":  {
+                               "date":  "2026-10-28",
+                               "master_file":  "purdue_campus_master.blend",
+                               "audit":  "audit/tobin_shealy_schleman_master_integration_2026-10-28.json",
+                               "result":  "pass",
+                               "fresh_open":  true
+                           }
 }

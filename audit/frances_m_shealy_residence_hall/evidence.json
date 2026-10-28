@@ -1,108 +1,183 @@
-{
-  "building": "Frances M. Shealy Residence Hall",
-  "asset_id": "massing_shealy_frances_m_residence_hall_a210e50",
-  "status": "Source-footprint shell and Shealy-specific Tudor entrance detailing updated; independent grade pending",
-  "source": {
-    "provider": "Purdue University official campus building footprint service",
-    "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
-    "feature_id": 277,
-    "building_code": "SHLY",
-    "source_name": "Frances M. Shealy Residence Hall",
-    "retrieval_date": "2026-10-22 (repository-preserved source snapshot)",
-    "source_date": "Not supplied in the service snapshot",
-    "source_crs": "EPSG:4326 (WGS 84)",
-    "source_record": "source_feature_277_raw.json",
-    "reference_status": "Official campus map polygon; not a certified survey",
-    "secondary_visual_references": [
-      {
-        "provider": "Purdue University Archives and Special Collections",
-        "use": "Historical description identifies English Tudor design, brick and Indiana limestone construction, and a lion holding a shield above the front entrance; exact form and dimensions are not supplied.",
-        "url": "https://archives.lib.purdue.edu/agents/corporate_entities/579"
-      }
-    ]
-  },
-  "transform": {
-    "origin_latitude": 40.4274,
-    "origin_longitude": -86.9137,
-    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
-    "y_formula": "(latitude - 40.4274) * 111040.0",
-    "axes": "X east, Y north, Z up",
-    "units": "meters; local project approximation, not surveyed CRS"
-  },
-  "measurements": {
-    "method": "Compared the structural wall polygon built from the official feature ring using the repository transform; facade details and entrance are excluded from plan comparison",
-    "official_footprint_aabb_xy_m": [
-      -628.8862072952205,
-      -169.38941965594495,
-      -561.673300779924,
-      -134.35865554729617
-    ],
-    "official_minimum_rotated_rectangle": {
-      "width_m": 67.213777602611,
-      "depth_m": 34.86761690223349,
-      "angle_degrees_east_ccw": 0.2917021648656371
-    },
-    "official_polygon_area_m2": 1815.01171875,
-    "before_asset_aabb_xy_m": [
-      -629.1505126953125,
-      -169.32489013671875,
-      -561.437744140625,
-      -133.3146209716797
-    ],
-    "before_asset_height_m": [
-      0.0,
-      15.199999809265137
-    ],
-    "after_structural_shell": "Structural walls continue to follow the official campus GIS feature ring; entrance and sculpture are facade additions and excluded from footprint comparison.",
-    "after_modeled_height_m": 15.2,
-    "position_status": "Structural footprint set to the official map polygon coordinates; underlying source positional uncertainty is unpublished",
-    "plan_dimension_status": "Footprint matches official source polygon; polygon is not a survey",
-    "orientation_status": "Structural shell follows official polygon vertex orientation",
-    "height_status": "estimated; no verified elevation drawing or measured height",
-    "official_num_levels_attribute": 5,
-    "official_extrution_attribute": 60,
-    "after_asset_bounds_including_facade_additions_m": {
-      "min_x": -629.0634765625,
-      "max_x": -561.4959716796875,
-      "min_y": -169.56663513183594,
-      "max_y": -134.16835021972656,
-      "min_z": 0.0,
-      "max_z": 15.199999809265137
-    },
-    "after_shell_source_match": {
-      "method": "Rebuilt from the 56 distinct projected vertices in official GIS feature 277; decorative entrance details are excluded from structural plan comparison.",
-      "position_status": "GIS polygon coordinates applied directly in the project-local approximation; source positional uncertainty is unpublished.",
-      "orientation_status": "Shell follows the official ring vertex order.",
-      "note": "This records implementation consistency with the GIS source, not independent positional or survey accuracy."
-    },
-    "reopen_check": {
-      "object_name": "Shealy (Frances M.) Residence Hall",
-      "asset_id": "massing_shealy_frances_m_residence_hall_a210e50",
-      "exported_collection_object_count": 1,
-      "mesh_vertex_count": 6848,
-      "mesh_face_count": 4859,
-      "saved_asset_reopened": true
-    }
-  },
-  "geometry_edits": [
-    "Rebuilt the structural wall shell from the official source polygon while preserving the asset object, collection, scene, ID and file path.",
-    "Added repeated brick-and-limestone window surrounds with divided-light muntins consistent with the documented Tudor/limestone vocabulary.",
-    "Added a limestone entrance portal and a schematic low-relief lion-and-shield motif based on the Purdue Archives description.",
-    "Kept the entry location and sculpture dimensions approximate because the source does not provide an elevation drawing or measured photo."
-  ],
-  "uncertainties": [
-    "The official campus map polygon is not a certified survey and has no published positional or dimensional uncertainty.",
-    "The 15.2 m height remains an estimate; the GIS level count is not a measured height.",
-    "The archive describes Tudor design, brick and Indiana limestone, and the lion-and-shield feature, but does not provide measured roof, window, entrance or sculptural geometry.",
-    "The entrance location, facade bay rhythm, divided-light pattern and lion relief are approximate and require independent visual review.",
-    "No independent grader has reviewed this revision."
-  ],
-  "artifacts": {
-    "build_script": "build_detail.py",
-    "build_config": "build_config.json",
-    "raw_source": "source_feature_277_raw.json",
-    "preview_render_script": "render_preview.py",
-    "preview": "preview_detail.png",
-    "entrance_preview": "preview_entrance.png"
-  }
+﻿{
+    "building":  "Frances M. Shealy Residence Hall",
+    "asset_id":  "massing_shealy_frances_m_residence_hall_a210e50",
+    "status":  "Independently graded 8.2/10 (pass); integrated into master and fresh-open verified 2026-10-28. Roof/facade, entrance placement, and representative interior remain estimates.",
+    "retrieval_date":  "2026-10-27",
+    "sources":  [
+                    {
+                        "provider":  "Purdue University official campus building footprint service",
+                        "url":  "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+                        "feature_id":  277,
+                        "attributes":  {
+                                           "BLDG_ABBR":  "SHLY",
+                                           "BUILDING_N":  "Frances M. Shealy Residence Hall",
+                                           "NUM_LEVELS":  5,
+                                           "Extrution":  60
+                                       },
+                        "source_crs":  "EPSG:4326 (WGS 84)",
+                        "source_date":  "Not supplied by service; preserved raw feature snapshot retrieved 2026-10-22",
+                        "measurement_method":  "Projected feature ring into repository-local east/north meters using the formulas below; retained the official 56-vertex polygon as the structural wall outline.",
+                        "uncertainty":  "Official campus mapping feature, not a certified survey; provider publishes no positional accuracy or field-unit definitions."
+                    },
+                    {
+                        "provider":  "Purdue University Archives and Special Collections",
+                        "url":  "https://archives.lib.purdue.edu/agents/corporate_entities/579",
+                        "use":  "Confirms 1937 construction, English Tudor style, brick and Indiana limestone, and a lion holding a shield above the front entrance. Records aligned lobby doors through Duhme, Shealy, Warren, and Vawter.",
+                        "limitations":  "No measured elevation, roof dimensions, window schedule, or exact entrance coordinates."
+                    },
+                    {
+                        "provider":  "Purdue University Residence Life, Windsor page",
+                        "url":  "https://www.housing.purdue.edu/my-housing/options/residence-halls/windsor.html",
+                        "local_reference_files":  [
+                                                      "source_windsor_single_layout.svg",
+                                                      "source_windsor_double_layout.svg"
+                                                  ],
+                        "use":  "Public single/double room-layout diagrams and room furnishings used for representative modules; published room dimensions are approximately 14 by 16 feet.",
+                        "limitations":  "Windsor-wide typical layouts, not Shealy as-built plans; dimensions and arrangements can vary."
+                    },
+                    {
+                        "provider":  "A2SO4 renovation project writeup via SchoolDesigns",
+                        "url":  "https://schooldesigns.com/Projects/purdue-university-shealy-hall-renovation/",
+                        "use":  "Documents lobby mosaic-tile flooring, quarter-sawn oak bookcases and wainscot, molded plaster ceilings, limestone fireplace mantels, and a dining-room conversion to a study with colonnade and slate flooring.",
+                        "limitations":  "Narrative description without a public dimensioned floor plan; modeled locations are schematic."
+                    },
+                    {
+                        "provider":  "Indiana State Historic Architectural and Engineering Review Board, September 2023 agenda",
+                        "url":  "https://www.in.gov/che/files/September-2023-Final-Commission-Meeting-Agenda4.pdf",
+                        "use":  "Roof replacement record establishes a substantial roof project; associated project specification identifies clay tile, copper and EPDM roof systems.",
+                        "supporting_project_url":  "https://projects.constructconnect.com/details/6420265-shealy-hall-roof-replacement%26find_loc%3Dindiana-47906",
+                        "limitations":  "Confirms material systems, not the exact roof-plan extents or gable geometry."
+                    },
+                    {
+                        "provider":  "Purdue University Emergency Preparedness building page",
+                        "url":  "https://www.purdue.edu/operations/emergency-preparedness/shly/",
+                        "use":  "Describes four floors plus a ground floor and partial basement, consistent with five above-ground levels in the GIS record.",
+                        "limitations":  "Does not establish measured floor-to-floor heights."
+                    },
+                    {
+                        "provider":  "Purdue University Housing, Windsor exterior image",
+                        "url":  "https://www.housing.purdue.edu/images/_hero/windsor-exterior-640x360.jpg",
+                        "local_reference_file":  "source_windsor_exterior.jpg",
+                        "use":  "Broad Windsor complex reference for brick and Tudor roof vocabulary only; it is not identified as a Shealy-specific faÃ§ade image."
+                    }
+                ],
+    "coordinate_transform":  {
+                                 "origin_latitude":  40.4274,
+                                 "origin_longitude":  -86.9137,
+                                 "x_formula":  "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+                                 "y_formula":  "(latitude - 40.4274) * 111040.0",
+                                 "axes":  "X east, Y north, Z up",
+                                 "units":  "meters; approximate local transform, not a surveyed projected CRS"
+                             },
+    "measurements":  {
+                         "official_polygon_vertices":  56,
+                         "official_polygon_area_m2":  1815.01171875,
+                         "official_xy_aabb_m":  [
+                                                    -628.8862072952205,
+                                                    -169.38941965594495,
+                                                    -561.673300779924,
+                                                    -134.35865554729617
+                                                ],
+                         "official_minimum_rotated_rectangle_m":  {
+                                                                      "width":  67.213777602611,
+                                                                      "depth":  34.86761690223349,
+                                                                      "angle_degrees_east_ccw":  0.2917021648656371
+                                                                  },
+                         "before_asset_xy_aabb_m":  [
+                                                        -629.1505126953125,
+                                                        -169.32489013671875,
+                                                        -561.437744140625,
+                                                        -133.3146209716797
+                                                    ],
+                         "before_asset_height_m":  [
+                                                       0.0,
+                                                       15.2
+                                                   ],
+                         "after_asset_xy_aabb_including_facade_additions_m":  [
+                                                                                  -629.0634765625,
+                                                                                  -169.56663513183594,
+                                                                                  -561.4959716796875,
+                                                                                  -134.16835021972656
+                                                                              ],
+                         "after_asset_z_bounds_m":  [
+                                                        0.0,
+                                                        18.3
+                                                    ],
+                         "structural_shell_status":  "Rebuilt from the official feature ring in the repository transform; structural plan dimensions and orientation follow that polygon. This is source consistency, not independent survey verification.",
+                         "wall_height_m":  15.2,
+                         "wall_height_status":  "estimated; no verified elevation drawing or measured height",
+                         "gable_peak_height_m":  18.3,
+                         "gable_peak_status":  "estimated roof peak above estimated wall height; the GIS Extrution field units and meaning are undocumented",
+                         "num_levels_attribute":  5,
+                         "position_status":  "GIS feature coordinates applied directly; source positional uncertainty is unpublished"
+                     },
+    "geometry_edits":  [
+                           "Rebuilt the structural shell on the official 56-vertex campus GIS footprint and kept the assigned object, collection, scene, ID, and asset path stable.",
+                           "Added procedurally textured red-brown brick, limestone plinth/cornices/window surrounds, divided-light windows, and Tudor timber gable details. Window spacing and exact facade pattern remain inferred.",
+                           "Added three longer clay-tile gable runs aligned with the GIS U-plan wings and a darker, subtly mottled EPDM field to make the documented roof-system zones visually distinct. Copper edging marks roof transitions; exact roof extents and form remain interpretive.",
+                           "Added a courtyard-facing entrance candidate with limestone surround, glazed double doors, a gabled canopy, and a layered heraldic lion-and-shield relief on the canopy face. Purdue Archives supports the motif, but the entrance location, plaque placement, and sculptural geometry are explicitly estimated because no measured elevation was found.",
+                           "Added representative room modules on upper residential levels using public Windsor single/double layout diagrams, with bed, desk, chair, dresser and reading-device details. A roof-open, locally cropped cutaway preview uses stronger temporary preview-only contrast and lighting; the saved library materials remain procedural. Added a schematic ground-floor lobby and study fit-out from the renovation writeup. These are examples, not a claimed Shealy floor plan."
+                       ],
+    "validation_summary":  {
+                               "fresh_open":  true,
+                               "exported_collection_object_count":  1,
+                               "vertices":  10820,
+                               "faces":  7475,
+                               "uv_layers":  1,
+                               "external_image_paths":  0,
+                               "material_graphs":  "Procedural brick/tile shaders and native materials; no external image dependencies"
+                           },
+    "artifacts":  {
+                      "build_script":  "build_detail.py",
+                      "build_config":  "build_config.json",
+                      "raw_gis_source":  "source_feature_277_raw.json",
+                      "preview_script":  "render_preview.py",
+                      "previews":  [
+                                       "preview_detail.png",
+                                       "preview_roof_plan.png",
+                                       "preview_entrance.png",
+                                       "preview_interior.png",
+                                       "preview_single_room.png"
+                                   ],
+                      "reference_images_and_layouts":  [
+                                                           "source_windsor_exterior.jpg",
+                                                           "source_windsor_single_layout.svg",
+                                                           "source_windsor_double_layout.svg"
+                                                       ],
+                      "fresh_open_script":  "fresh_open_check.py"
+                  },
+    "unresolved_limits":  [
+                              "No Shealy-specific measured elevations, roof plan, or public dimensioned interior plan was found in the consulted sources.",
+                              "Overall wall height (15.2 m), roof peak (18.3 m), gable placement, facade rhythm, and courtyard-side entrance/plaque placement remain estimates or interpretations. The archival lion-and-shield motif is supported, but its precise form and position are not.",
+                              "Interior room and public-room locations are schematic and derived from general Windsor references rather than Shealy as-built plans.",
+                              "The Windsor exterior reference is not building-specific.",
+                              "The previous independent review scored 7.5/10; this revision addresses its roof, entrance motif, and interior presentation findings and awaits a different independent re-grade."
+                          ],
+    "independent_grade":  {
+                              "date":  "2026-10-27",
+                              "score":  8.2,
+                              "result":  "pass",
+                              "review":  "independent read-only re-grade",
+                              "rubric":  {
+                                             "source_and_footprint":  9.0,
+                                             "exterior_and_materials":  7.4,
+                                             "interior":  7.2,
+                                             "technical_quality":  9.0
+                                         },
+                              "report":  "independent_grade_r2/grade_report.md",
+                              "remaining_limits":  [
+                                                       "roof and facade details are estimates",
+                                                       "entrance location remains estimated",
+                                                       "interior room module is representative Windsor layout, not an as-built Shealy room",
+                                                       "public-room/cutaway legibility remains limited"
+                                                   ]
+                          },
+    "fresh_open_validation":  "fresh-open verified in audit/tobin_shealy_schleman_master_integration_2026-10-28.json",
+    "master_integration":  {
+                               "date":  "2026-10-28",
+                               "master_file":  "purdue_campus_master.blend",
+                               "audit":  "audit/tobin_shealy_schleman_master_integration_2026-10-28.json",
+                               "result":  "pass",
+                               "fresh_open":  true
+                           }
 }
