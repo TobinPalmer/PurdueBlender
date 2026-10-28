@@ -26,7 +26,7 @@ light = bpy.data.objects.new("Shreve_Preview_Area", light_data)
 scene.collection.objects.link(light)
 light.location = target + Vector((-24.0, -15.0, 28.0))
 light.rotation_euler = (target-light.location).to_track_quat("-Z", "Y").to_euler()
-light_data.energy = 1300
+light_data.energy = 350
 light_data.shape = "DISK"
 light_data.size = 22.0
 scene.render.engine = "BLENDER_EEVEE"
@@ -36,7 +36,7 @@ scene.render.resolution_percentage = 100
 scene.render.image_settings.file_format = "PNG"
 scene.render.filepath = os.path.join(folder, "preview_detail_r2.png")
 scene.view_settings.view_transform = "AgX"
-scene.view_settings.exposure = -0.25
+scene.view_settings.exposure = -0.50
 scene.world.color = (0.035, 0.045, 0.06)
 bpy.ops.render.render(write_still=True)
 print("RENDERED=" + scene.render.filepath)

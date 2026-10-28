@@ -1,7 +1,7 @@
 {
   "building": "Eleanor B. Shreve Residence Hall",
   "asset_id": "massing_shreve_hall_06d270a",
-  "status": "Detailed asset updated; pending independent grade",
+  "status": "Detailed asset updated and fresh-open validated; awaiting independent grade and master integration.",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
@@ -15,20 +15,34 @@
     "reference_status": "Official campus map polygon; not a certified survey",
     "secondary_visual_references": [
       {
+        "provider": "Purdue University Residences",
         "url": "https://housing.purdue.edu/my-housing/options/residence-halls/shreve.html",
-        "use": "Building identity, use and opening year; no measured height or facade dimensions inferred",
-        "provider": "Purdue University Residences"
+        "retrieval_date": "2026-10-27",
+        "use": "Official building identity, address, open date, 10-floor uncertainty context, community/study/recreation amenities, and a standard bedroom layout. Published standard room dimensions are 11.5 x 16 ft; the university says its furnishing illustrations are approximate."
       },
       {
         "provider": "Purdue University Residences",
         "url": "https://www.housing.purdue.edu/move-in/west-lafayette/move-in/directions/shreve.html",
-        "use": "Official move-in directions distinguish unloading locations for floors 1-5 and 6-8; supports at least eight numbered floors but does not establish the total floor count or building height."
+        "retrieval_date": "2026-10-22",
+        "use": "Move-in directions distinguish floors 1-5 and 6-8; supports at least eight numbered floors, not a verified total height or story count."
       },
       {
-        "provider": "Pinterest page with a Shreve Hall entrance photograph; original photographer unknown",
+        "provider": "Purdue University Residences Support Center",
+        "url": "https://housing.purdue.edu/campus-living/residential-learning/ursc.html",
+        "retrieval_date": "2026-10-27",
+        "use": "Official Shreve support-center interior image/reference and study-space amenities; exact room location and dimensions are not established."
+      },
+      {
+        "provider": "Purdue University Residences (official standard-room illustration)",
+        "url": "https://housing.purdue.edu/my-housing/options/residence-halls/shreve.html",
+        "retrieval_date": "2026-10-27",
+        "use": "Room layout and furniture vocabulary; the illustration is approximate and is not a full floor plan."
+      },
+      {
+        "provider": "Pinterest page; original photographer unknown",
         "url": "https://www.pinterest.com/pin/shreve-hall--256283035018920877/",
-        "use": "Photo visibly labeled SHREVE HALL; supports red brick, light concrete base, glass entrance, column-supported canopy, and raised stair vocabulary. It is not georeferenced or scaled.",
-        "observation_record": "shreve_exterior_photo_observation.json"
+        "retrieval_date": "2026-10-22",
+        "use": "Visible red-brown brick, light concrete base, glazed entrance, canopy and stairs. Unscaled and not georeferenced; only used as visual vocabulary."
       }
     ]
   },
@@ -80,20 +94,63 @@
     },
     "official_num_levels_attribute": 10,
     "official_extrution_attribute": 42,
-    "floor_count_status": "Conflicting/partial evidence: Purdue GIS attributes NUM_LEVELS=10; official move-in directions refer to floors 6-8, establishing at least eight numbered floors but not the total. Modeled 10 floors remain an estimate pending plans or measured elevations."
+    "floor_count_status": "Conflicting/partial evidence: Purdue GIS attributes NUM_LEVELS=10; official move-in directions refer to floors 6-8, establishing at least eight numbered floors but not the total. Modeled 10 floors remain an estimate pending plans or measured elevations.",
+    "interior_layout": {
+      "status": "schematic, not a measured floor plan",
+      "standard_room_dimensions_m": [
+        3.5052,
+        4.8768
+      ],
+      "standard_room_source": "Purdue University Residences Shreve room page, retrieved 2026-10-27",
+      "floor_plate_count": 10,
+      "corridor_width_m": 2.1,
+      "module_width_m": 3.5,
+      "features": "Room partitions and door openings, corridor walls, room-floor overlays, paired beds and desks, wardrobe blocks, ground-floor desk and one recreation table",
+      "uncertainty": "The source publishes a typical room illustration and amenities, but not a full-building floor plan. Room arrangement and amenity locations are illustrative.",
+      "bedroom_module_note": "Room bay width follows the 11.5 ft official standard-room dimension to the nearest 0.01 m; the room depth is a schematic fit informed by the published 16 ft room length."
+    },
+    "reopen_validation": {
+      "saved_asset_reopened": true,
+      "export_collection_object_count": 1,
+      "official_ring_vertex_count": 24,
+      "max_source_ring_error_m": 3.011e-05,
+      "mesh_vertex_count": 112550,
+      "mesh_face_count": 78250,
+      "interior_material_face_counts": {
+        "floor_plates": 220,
+        "corridor_floor": 180,
+        "room_carpet": 5880,
+        "interior_partitions": 14520,
+        "furniture_wood": 18288,
+        "bedding": 9120
+      },
+      "pbr_uv_layer": "PBR_MetricUV",
+      "packed_texture_files": [
+        "diffuse.jpg",
+        "normal.jpg",
+        "rough.jpg",
+        "height.jpg"
+      ]
+    }
   },
   "geometry_edits": [
     "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
     "Added facade materials, repeated window bays, window surrounds, floor bands, plinth and roof coping.",
-    "Added a glass entrance, shallow column-supported canopy and raised stair/landing approach informed by the entrance photograph. Entry orientation and dimensions remain approximate because the image is not georeferenced or scaled."
+    "Added a glass entrance, shallow column-supported canopy and raised stair/landing approach informed by the entrance photograph. Entry orientation and dimensions remain approximate because the image is not georeferenced or scaled.",
+    "Rebuilt the floor-by-floor exterior wall panels with cutouts at glazed windows and the entrance so the glazing does not sit in front of solid brick.",
+    "Added ten schematic floor plates clipped to the official concave campus-map outline, two longitudinal corridors, a cross-wing connector, room partitions and door openings. Room modules use the published 11.5 x 16 ft standard-room dimensions as a scale reference.",
+    "Added simple paired beds, desks, wardrobes, carpet patches, a front-desk counter and a recreation table; interior partitions and furniture remain estimates because Purdue does not publish a full floor plan.",
+    "Applied the project’s shared Poly Haven CC0 red-brick color, normal, roughness and height maps using 1.4 m metric UVs; packed the maps into the library."
   ],
   "uncertainties": [
     "The official map polygon is not a certified survey and has no published position/dimension uncertainty.",
     "Height has not been checked against elevation drawings or on-site measurement; GIS level/Extrution fields are not treated as height measurements.",
     "GIS levels attribute 10; height estimate 29 m is not surveyed",
     "Facade details and window spacing are schematic; the local entrance features are photo-referenced but their campus-side placement and dimensions remain approximate.",
-    "No independent grader has reviewed this revision.",
-    "Official move-in directions refer to floors 6-8 but do not confirm the full floor count; GIS NUM_LEVELS=10 remains unverified."
+    "Official move-in directions refer to floors 6-8 but do not confirm the full floor count; GIS NUM_LEVELS=10 remains unverified.",
+    "Interior room positions, room repetitions and amenity-room locations are schematic. Only the typical room dimensions and listed amenities are sourced; no whole-building floor plan was found.",
+    "The exterior material is a representative CC0 red brick texture, not a physical sample from Shreve Hall; tint and finish should be checked against current on-site photographs.",
+    "The glass treatment and interior visibility are render-engine dependent; the building library uses blended glazing, and the review previews were rendered in Blender 5.2 EEVEE."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
@@ -104,6 +161,28 @@
     "entrance_photo_observation": "shreve_exterior_photo_observation.json",
     "render_script": "render_preview.py",
     "detailed_preview": "preview_detail_r2.png",
-    "validation_script": "validate_asset.py"
+    "validation_script": "validate_asset.py",
+    "overview_preview": "preview_overview.png",
+    "interior_preview": "preview_interior.png",
+    "interior_render_script": "render_interior_preview.py",
+    "overview_render_script": "render_overview.py",
+    "detail_preview": "preview_detail_r2.png",
+    "validation_result": "shreve_reopen_check.json"
+  },
+  "materials": {
+    "exterior_brick": {
+      "provider": "Poly Haven",
+      "url": "https://polyhaven.com/a/red_brick",
+      "license": "CC0",
+      "maps": [
+        "diffuse",
+        "normal (OpenGL)",
+        "roughness",
+        "height"
+      ],
+      "tile_width_m": 1.4,
+      "tint": "Warm red-brown tint selected against Shreve entrance photo; representative material, not a Shreve sample."
+    },
+    "path_status": "Project-relative texture paths are packed into the building library."
   }
 }

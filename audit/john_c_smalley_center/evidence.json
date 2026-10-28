@@ -1,14 +1,14 @@
 {
   "building": "John C. Smalley Center",
   "asset_id": "massing_smalley_center_1902608",
-  "status": "Official GIS footprint and archival addition/name history documented; facade geometry and height remain estimates",
+  "status": "Detailed exterior with recessed facade openings and schematic two-floor administrative interior built from the official FID 225 footprint; fresh-open asset validation passed after refinement; independent grade and master integration pending",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
     "feature_id": 225,
     "building_code": "SMLY",
     "source_name": "John C. Smalley Center For Housing & Food Service Administration",
-    "retrieval_date": "2026-10-22 (repository-preserved source snapshot)",
+    "retrieval_date": "2026-10-27 (official GIS footprint preserved locally; web references checked 2026-10-27)",
     "source_date": "Not supplied in the service snapshot",
     "source_crs": "EPSG:4326 (WGS 84)",
     "source_record": "source_feature_225_raw.json",
@@ -23,6 +23,25 @@
         "provider": "Purdue University Archives and Special Collections",
         "use": "Confirms the 1963 residence-halls administration building, a 1982 addition, and renaming in 1985; no dimensions or facade form inferred.",
         "url": "https://archives.lib.purdue.edu/agents/corporate_entities/698"
+      },
+      {
+        "provider": "WRTV / Scripps",
+        "use": "The article photo is captioned as the Purdue University Smalley Center sign; the nearby brick structure offers a broad brick-material clue only. It does not establish facade measurements, exact window layout, or entrance location.",
+        "url": "https://www.wrtv.com/news/local-news/purdue-students-frustrated-over-last-minute-housing-changes",
+        "image_url": "https://ewscripps.brightspotcdn.com/dims4/default/153a408/2147483647/strip/true/crop/1444x812%2B0%2B40/resize/1280x720%21/quality/90/?url=http%3A%2F%2Fewscripps-brightspot.s3.amazonaws.com%2Feb%2F19%2Fabcb9dd3473e89a04a8544288885%2Fpurdue-housing2.jpg",
+        "retrieval_date": "2026-10-27"
+      },
+      {
+        "provider": "Purdue University Honors College & Residences project blog",
+        "url": "https://purduehonorscollegeresidences.wordpress.com/2015/01/",
+        "use": "The January 27, 2015 entry places a service door behind Smalley Center off Third Street. This supports the west-side access direction only; it does not establish that door as the building's main public entrance or provide facade dimensions.",
+        "retrieval_date": "2026-10-27"
+      },
+      {
+        "provider": "Purdue University Residences",
+        "url": "https://www.housing.purdue.edu/connect/directory/index.html",
+        "use": "Current Central Assignments Office address is Smalley Center, 1225 Third Street; supports the address association, not exact entrance placement.",
+        "retrieval_date": "2026-10-27"
       }
     ]
   },
@@ -66,24 +85,47 @@
     "height_status": "estimated; no verified elevation drawing or measured height",
     "official_num_levels_attribute": 2,
     "official_extrution_attribute": 12,
-    "historical_phase_context": "Archive records a 1982 addition, but its outline and location are not provided. FID 225 represents the mapped current footprint; no phase boundary is inferred."
+    "historical_phase_context": "Archive records a 1982 addition, but its outline and location are not provided. FID 225 represents the mapped current footprint; no phase boundary is inferred.",
+    "after_geometry_validation": {
+      "fresh_open": "passed with Blender 5.2.3",
+      "scene": "Building_massing_smalley_center_1902608",
+      "collection": "Asset_massing_smalley_center_1902608",
+      "collection_objects": 1,
+      "vertices": 9454,
+      "faces": 6598,
+      "uv_layers": [
+        "Facade brick course mapping"
+      ],
+      "materials": 12,
+      "external_image_dependencies": 0
+    },
+    "interior_status": "Schematic two-level administrative-office layout; floor plates and partitions clipped to the concave GIS footprint. Room placement and furniture are conceptual because no public floor plan was located."
   },
   "geometry_edits": [
-    "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
-    "Added facade materials, repeated window bays, window surrounds, floor bands, plinth and roof coping.",
-    "Added an entrance marker oriented toward west; exact facade detail placement remains approximate."
+    "Rebuilt the structural shell from all 16 distinct vertices of official FID 225 while preserving the existing asset object, collection, scene, ID and library path.",
+    "Cut the repeating window bays into the wall surfaces, with recessed glazing, divided panes, stone surrounds, floor bands, plinth and coping; added a portable procedural brick material with UV courses and bump detail.",
+    "Added a west-facing service/access entry hypothesis, divided door leaves, a restrained canopy and approach treads. Its orientation is informed by the address and a Purdue project-blog reference to a service door off Third Street; exact facade and main entrance remain unverified.",
+    "Added two interior floor plates, approximate circulation partitions, generic administrative workstations, meeting tables, chairs, storage and planters. The fuller open-office layout is explicitly schematic and does not claim an as-built plan.",
+    "Rendered exterior, west-side entry, roof-open upper-floor and ground-floor review views; previews use temporary cameras, lights and ground that are not saved into the library."
   ],
   "uncertainties": [
-    "The official campus GIS polygon is not a certified survey and has no published position/dimension uncertainty.",
-    "The official GIS NUM_LEVELS attribute is 2; the 7.6 m height remains estimated, not measured.",
-    "The archive documents a 1982 addition but supplies no drawing to separate original and added footprint areas.",
-    "Facade materials, window spacing, roof form and entrance location remain approximate and need exterior-photo or drawing review.",
-    "No independent grader has reviewed this revision."
+    "The official campus GIS polygon is not a certified survey and publishes no position or dimension uncertainty.",
+    "The GIS reports two levels. Modeled total height of 7.6 m remains an estimate; no measured elevation was located.",
+    "The archive documents a 1982 addition but supplies no drawing to separate the original and added footprint areas.",
+    "Facade material has broad brick-photo support, but facade color, window spacing, roof form and exact entrance location remain approximate. The west-side service/access hypothesis is supported only directionally by the Third Street address and a 2015 Purdue project-blog note; it is not verified as the main entrance. No elevation photo with a clear full facade or measured architectural drawing was located.",
+    "Interior partitions, open-office arrangement, room assignments, doors and furniture are conceptual because no public floor plan was located. The schematic furniture is included to communicate administrative use and scale, not as-built placement.",
+    "Independent grading and master-blend integration are pending."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
     "build_config": "build_config.json",
     "raw_source": "source_feature_225_raw.json",
-    "archival_history_observation": "source_archival_history_observation.json"
+    "archival_history_observation": "source_archival_history_observation.json",
+    "exterior_preview": "preview_exterior.png",
+    "entry_preview": "preview_entry.png",
+    "upper_floor_cutaway": "preview_interior_cutaway.png",
+    "ground_floor_cutaway": "preview_first_floor_cutaway.png",
+    "render_script": "render_preview.py",
+    "fresh_open_validation": "fresh_open_validation.json"
   }
 }
