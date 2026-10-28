@@ -13,13 +13,22 @@
     "transform": "Inverse Web Mercator followed by repository-local approximate campus conversion; not surveyed control",
     "ring_vertices": 11,
     "gis_ring_area_local_m2": 1131.54,
-    "gis_ring_bbox_xy_m": [[-867.4043, -808.2541], [722.2555, 759.3250]],
+    "gis_ring_bbox_xy_m": [
+      [
+        -867.4043,
+        -808.2541
+      ],
+      [
+        722.2555,
+        759.325
+      ]
+    ],
     "wall_base_check": "Source ring used to define model wall base; maximum transformed GIS corner to nearest model wall-base vertex error is 0.0000311 m, from Blender float precision.",
     "osm_secondary_check": {
       "way": 301841601,
       "tags": "building=school (unnamed)",
       "footprint_intersection_over_union": 0.893,
-      "footprint_hausdorff_distance_m": 3.50,
+      "footprint_hausdorff_distance_m": 3.5,
       "centroid_offset_m": 1.16,
       "interpretation": "General location and footprint corroboration only. The OSM way has no Delta Zeta name and is not used as the primary identity or wall geometry source."
     }
@@ -76,5 +85,25 @@
     "scorecard": "audit/delta_zeta_fid752/independent_grade_codex_2026-10-28.json",
     "graded_asset_sha256": "E86CF1D70C54E93053F3224721D73D9734AB3924AB97A58927AC2D3317104509",
     "review_mode": "independent read-only review of exact saved asset and evidence packet"
-  }
+  },
+  "master_integration": {
+    "date": "2026-10-28",
+    "master_file": "purdue_campus_master.blend",
+    "backup_file": "scratch/purdue_campus_master_before_delta_zeta_phi_mu_refresh_2026-10-28.blend",
+    "audit": "audit/tobin_delta_zeta_fid752_master_integration_2026-10-28.json",
+    "result": "pass",
+    "fresh_open": true,
+    "object": "House_301841601",
+    "library": "modular/buildings/massing_house_301841601_7ae6159.blend",
+    "relative_library": true,
+    "mesh_faces": 1757,
+    "dimensions_m": [
+      59.33,
+      37.291,
+      9.0
+    ],
+    "independent_grade": 8.3,
+    "graded_asset_sha256": "E86CF1D70C54E93053F3224721D73D9734AB3924AB97A58927AC2D3317104509"
+  },
+  "coordinator_status": "Independently graded 8.3/10 PASS; linked-library sync saved and fresh-open verified in the master on 2026-10-28."
 }
