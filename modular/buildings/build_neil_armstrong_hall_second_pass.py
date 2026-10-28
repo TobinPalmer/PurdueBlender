@@ -220,28 +220,31 @@ def mats():
     return M
 
 
-# ---------------------------------------------------------------- footprint (LiDAR NDHM + 2018/2023 orthophotos)
-# Positions/heights from the lean-free 2017-2019 QL2 LiDAR height model (sources/na_ndhm_2018.*); walls set back
-# from the measured roof/eyebrow edges. See second_pass/ortho_trace_notes.md.
-BAR_S_Y = -13.0
+# ---------------------------------------------------------------- footprint
+# Plan traced from a user-supplied north-up satellite screenshot registered to the LiDAR height model by the two red
+# roof tips (scale ~0.111 m/px), cross-checked with the 2018/2023 IndianaMap aerials and the floor-plan figure.
+# Heights from the lean-free 2017-2019 QL2 LiDAR NDHM (sources/na_ndhm_2018.*). See change_log.md.
+BAR_S_Y = -12.5
+BAR_NW_Y = 17.0
+NORTH_GLASS = 22.0   # glass section on the north facade east of the entrance (drone photo; user: shorter than 34 m)
 EAST_NOTCH = (72.0, -5.0)   # inner corner of the inward east entrance notch (Street View, user)
 REAR_GLASS_X = (2.0, 16.0)  # full-height rear (courtyard) main entrance mid-facade (user photo)
-NORTH_GLASS = 34.0   # north curtain-wall length east of the entrance corner (photo estimate)
-BAR_NW_Y = 17.0
-NOTCH_CORNER = (-60.0, 3.0)    # re-entrant entrance corner under the NW roof point (user review + photos)
-ENTRY_GLASS_X0 = -66.0         # west end of the glazed entrance bay in the west wing's north face
-BAR = [(-44.0, BAR_S_Y), (EAST_NOTCH[0], BAR_S_Y), EAST_NOTCH, (76.5, EAST_NOTCH[1]), (53.0, BAR_NW_Y), (-60.0, BAR_NW_Y), (-60.0, 3.0), (-44.0, 3.0)]  # east end follows the diagonal outline under the east point (user review; LiDAR)
-SW_RECT = (-80.0, -31.0, -44.0, 3.0)   # west face length per entrance photos (user review)   # west wing: plain rectangle (x0, y0, x1, y1)
-SW_TOP_CTRL = (-82.5, -34.0)   # Bezier control of the separate curved top floor (rounded W/SW corner)
-SW_TOP_S_INSET = 18.0          # where the curve meets the straight south side of the top floor
-SE_WING = [(37.0, -13.0), (51.0, -37.5), (53.0, -37.5), (69.0, -13.0)]
-BAR_H = 17.0      # main-bar walls up to the sloped eyebrow (LiDAR: eyebrow 16.3-20 m, flat top 21.6 m)
-EAVE = 21.5       # red high roof: a flat plane (the soaring look of the NW point is perspective)
-TIP = (-81.0, 23.0, EAVE)
+U_DIAG = Vector((0.758, 0.652))   # direction of the west wing's NW/SE sides (satellite)
+W_W, W_S, W_E = Vector((-81.4, -2.9)), Vector((-60.1, -39.6)), Vector((-40.1, -22.4))   # west wing corners
+W_N = W_E + (W_W - W_S)                                                                  # north corner (under the bar)
+ENTRY_CORNER = W_W + U_DIAG * 20.0     # square inward entrance corner (west wing NW face meets the bar's west end)
+ENTRY_BAY = 6.0                        # glazed doors bay in the west wing's NW face next to the corner
+ARM_DIR = Vector((0.62, -0.78))        # red roof west arm / main-bar west end direction (NW -> SE)
+BAR_NW = ENTRY_CORNER - ARM_DIR * ((BAR_NW_Y - ENTRY_CORNER.y) / 0.78)
+BAR = [(-45.85, BAR_S_Y), (EAST_NOTCH[0], BAR_S_Y), EAST_NOTCH, (76.5, EAST_NOTCH[1]), (53.0, BAR_NW_Y),
+       tuple(BAR_NW), tuple(ENTRY_CORNER), (-55.0, -4.0)]
+SW_WING = [tuple(W_W), tuple(W_S), tuple(W_E), tuple(W_N)]
+SE_WING = [(30.6, BAR_S_Y), (50.0, -36.8), (75.5, BAR_S_Y)]   # ~90 deg corner at the south tip (satellite, user)
+BAR_H = 17.0      # main-bar walls up to the red roof soffit (LiDAR: roof top 18.4-20 m, flat top 21.6 m)
 WING_BRICK = 11.8
 WING_TOP = 14.8   # wing roofs ~15.5 m in the LiDAR
 FLOORS = [(1.2, 3.2), (5.2, 7.2), (9.2, 11.2), (13.0, 15.2)]
-CURTAIN_X = (-44.0, -22.0)  # south curtain wall with horizontal sun-shade blades (2016_02 photo)
+CURTAIN_X = (-45.8, -22.0)  # south curtain wall with horizontal sun-shade blades (2016_02, user photo 2)
 
 
 def ccw(poly):
@@ -321,9 +324,7 @@ def build_bar(mb):
             bar_bands(mb, A, A + t * (L - gw))
             for z in [4.2, 8.2, 12.2]:
                 mb.box("frame", A + t * (L - gw) + nn * 0.02, t, -nn, gw, 0.12, z, z + 0.1)
-            for k in range(4):  # pale vertical fins at the east end of the curtain wall
-                u = L - gw + 0.8 + k * 2.2
-                mb.box("lime", A + t * u + nn * 0.05, t, nn, 0.6, 1.4, 0.0, 12.5)
+            mb.box("lime", A + t * (L - gw - 0.8) + nn * 0.05, t, nn, 0.8, 1.2, 0.0, BAR_H - 0.5)  # pale pier at the glass end
         elif nn.y < -0.9 and abs(A.y - BAR_S_Y) < 0.1:
             # south face west->east pieces: curtain wall (separate), blank brick return, punched brick,
             # then the SE wing abuts (hidden)
@@ -365,114 +366,117 @@ def build_bar(mb):
         mb.box("roof", (-44.0, y - 0.2), (1, 0), (0, 1), 99.0, 0.4, BAR_H - 0.3, h)
 
 
+def glass_face(mb, A, B, H, doors=False):
+    _, t, nn, L = seg_frame(A, B)
+    ops = [(0.1, L - 0.1, 4.6 if doors else 0.4, H - 0.4, "win")]
+    if doors:
+        ops += [(0.4, L - 0.4, 0.0, 3.3, "door"), (0.1, 0.4, 0.4, 4.4, "win")]
+        mb.box("seawolf", A + t * 0.2 + nn * 0.05, t, -nn, L - 0.4, 0.35, 3.3, 4.5)   # flat door head / canopy
+        mb.box("seawolf", A + t * 0.2, t, nn, L - 0.4, 2.2, 3.9, 4.3)
+    wall(mb, A, B, 0.0, H, 0.25, ops, mullions=max(1, int(L / 1.6)) - 1, inset=0.12)
+    for z in [4.4 + 2.2 * q for q in range(6)]:
+        mb.box("frame", A + nn * 0.02, t, -nn, L, 0.1, z, z + 0.07)
+
+
 def build_atrium(mb):
-    """Square, INWARD entrance corner under the NW roof point: the glazed west end of the main bar and a glazed
-    entrance bay in the west wing's north face meet at a re-entrant corner; doors sit in the north-facing glass
-    under a Sea Wolf ACM head, the Armstrong statue in front (photos 2016_01/04/05, DD_22, user review)."""
-    H = 17.5
-    cx, cy = NOTCH_CORNER
-    # west-facing glass: main bar west end (CCW: north -> south)
-    A, B = Vector((cx, BAR_NW_Y)), Vector((cx, cy))
-    _, t, nn, L = seg_frame(A, B)
-    wall(mb, A, B, 0.0, H, 0.25, [(0.1, L - 0.1, 0.4, H - 0.4, "win")], mullions=max(1, int(L / 1.6)) - 1, inset=0.12)
-    for z in [4.4 + 2.2 * q for q in range(8)]:
-        mb.box("frame", A + nn * 0.02, t, -nn, L, 0.1, z, z + 0.07)
-    # north-facing glass entrance bay in the west wing (CCW: east -> west)
-    A, B = Vector((cx, cy)), Vector((ENTRY_GLASS_X0, cy))
-    _, t, nn, L = seg_frame(A, B)
-    ops = [(0.1, L - 0.1, 4.6, H - 0.4, "win"), (0.4, L - 0.4, 0.0, 3.3, "door")]
-    wall(mb, A, B, 0.0, H, 0.25, ops, mullions=max(1, int(L / 1.5)) - 1, inset=0.12)
-    for z in [4.4 + 2.2 * q for q in range(8)]:
-        mb.box("frame", A + nn * 0.02, t, -nn, L, 0.1, z, z + 0.07)
-    mb.box("seawolf", A + t * 0.2 + nn * 0.05, t, -nn, L - 0.4, 0.35, 3.3, 4.5)    # door head panel
-    mb.box("frame", (cx - 0.2, cy - 0.2), (1, 0), (0, 1), 0.4, 0.4, 0.0, H)      # re-entrant corner mullion
-    mb.box("lime", (ENTRY_GLASS_X0 - 2.0, cy), (1, 0), (0, 1), (cx - ENTRY_GLASS_X0) + 6.0, 8.0, -0.05, 0.12)  # entry plaza
+    """Square INWARD entrance corner under the NW roof point: the glazed diagonal west end of the main bar meets the
+    west wing's NW face, whose glazed bay next to the corner holds the doors (photos 2016_01/04, DD_22, Alamy,
+    satellite; user review). Statue in front."""
+    H = BAR_H
+    glass_face(mb, Vector(BAR_NW), ENTRY_CORNER, H)                                  # bar west end (faces SW-W)
+    glass_face(mb, ENTRY_CORNER, ENTRY_CORNER - U_DIAG * ENTRY_BAY, H, doors=True)    # wing NW face bay (faces NW)
+    mb.box("frame", (ENTRY_CORNER.x - 0.2, ENTRY_CORNER.y - 0.2), (1, 0), (0, 1), 0.4, 0.4, 0.0, H)
+    mb.box("lime", ENTRY_CORNER - U_DIAG * 10.0 + Vector((-6.0, 0.0)), U_DIAG, Vector((-U_DIAG.y, U_DIAG.x)), 16.0, 10.0, -0.05, 0.12)
 
 
-def bezier(p0, c, p1, n=12):
+def bezier(p0, c, p1, n=16):
     p0, c, p1 = Vector(p0), Vector(c), Vector(p1)
     return [(1 - u) ** 2 * p0 + 2 * (1 - u) * u * c + u ** 2 * p1 for u in [k / n for k in range(n + 1)]]
 
 
 def wing_bands(mb, A, B):
     band(mb, A, B, 0.0, 0.9, proj=0.10, ext=0.02)
-    band(mb, A, B, 4.3, 4.5, proj=0.05, ext=0.02)
+    band(mb, A, B, 4.0, 4.2, proj=0.05, ext=0.02)
     band(mb, A, B, WING_BRICK - 0.35, WING_BRICK + 0.15, proj=0.12, ext=0.02)
 
 
-def sw_units(mb, A, t, nn, L):
+def sw_units(L):
     """Two-storey limestone-framed window units with small paired windows above (DD_24)."""
     ops = []
     nb = max(1, int(L / 6.5))
     bw = L / nb
     for b in range(nb):
         c = b * bw + bw / 2
-        ops += [(c - 1.2, c + 1.2, 1.0, 8.4), (c - 1.0, c - 0.15, 9.6, 11.8), (c + 0.15, c + 1.0, 9.6, 11.8)]
+        ops += [(c - 1.2, c + 1.2, 1.0, 7.6), (c - 1.0, c - 0.15, 8.6, 10.8), (c + 0.15, c + 1.0, 8.6, 10.8)]
     return ops
 
 
 def limestone_surrounds(mb, A, t, nn, ops):
     for o in ops:
-        if len(o) == 4 and o[3] - o[2] > 6:
+        if len(o) == 4 and o[3] - o[2] > 5:
             for (u0, u1) in ((o[0] - 0.25, o[0]), (o[1], o[1] + 0.25)):
-                mb.box("lime", A + t * u0 + nn * 0.12, t, -nn, u1 - u0, 0.2, 0.9, 8.6)
-            mb.box("lime", A + t * (o[0] - 0.25) + nn * 0.12, t, -nn, o[1] - o[0] + 0.5, 0.2, 8.4, 8.75)
+                mb.box("lime", A + t * u0 + nn * 0.12, t, -nn, u1 - u0, 0.2, 0.9, 7.8)
+            mb.box("lime", A + t * (o[0] - 0.25) + nn * 0.12, t, -nn, o[1] - o[0] + 0.5, 0.2, 7.6, 7.95)
 
 
-def build_sw_wing(mb):
-    """West wing: a plain rectangular brick block; a separate curved glass top floor with white roof sits on it."""
-    x0, y0, x1, y1 = SW_RECT
-    cx, cy = NOTCH_CORNER
-    # north face: brick west of the glazed entrance bay (name letters), the rest is under the main bar
-    A, B = Vector((ENTRY_GLASS_X0, y1)), Vector((x0, y1))
-    _, t, nn, L = seg_frame(A, B)
-    wall(mb, A, B, 0.0, WING_BRICK, 0.4, [(L - 3.0, L - 1.8, 1.2, 8.4)])
-    wing_bands(mb, A, B)
-    # brick above the glazed entrance bay is replaced by glass (atrium) - bands continue across
-    # west face
-    A, B = Vector((x0, y1)), Vector((x0, y0))
-    _, t, nn, L = seg_frame(A, B)
-    ops = sw_units(mb, A, t, nn, L)
-    limestone_surrounds(mb, A, t, nn, ops)
-    wall(mb, A, B, 0.0, WING_BRICK, 0.4, ops)
-    wing_bands(mb, A, B)
-    # south face with the south-west entrance, steps and portal
-    A, B = Vector((x0, y0)), Vector((x1, y0))
-    _, t, nn, L = seg_frame(A, B)
-    ops = sw_units(mb, A, t, nn, L)
-    c = L * 0.35
-    ops = [o for o in ops if o[1] < c - 2.8 or o[0] > c + 2.8] + [(c - 2.4, c + 2.4, 0.0, 3.4, "door")]
-    limestone_surrounds(mb, A, t, nn, ops)
-    mb.box("lime", A + t * (c - 3.0) + nn * 0.15, t, -nn, 6.0, 0.3, 3.4, 4.3)
-    for k in range(3):
-        mb.box("lime", A + t * (c - 4.0) + nn * (2.4 - 0.6 * k), t, -nn, 8.0, 0.6 + 0.6 * k, -0.6 + 0.2 * k, -0.2 + 0.2 * k)
-    wall(mb, A, B, 0.0, WING_BRICK, 0.4, ops)
-    wing_bands(mb, A, B)
-    # east face: only the part south of the main bar faces the courtyard
-    A, B = Vector((x1, y0)), Vector((x1, BAR_S_Y))
-    _, t, nn, L = seg_frame(A, B)
-    wall(mb, A, B, 0.0, WING_BRICK, 0.4, punched(L, [(5.6, 7.8), (10.0, 12.2)], pitch=4.0))
-    wing_bands(mb, A, B)
-    flat_poly(mb, "roof", [(x0, y0), (x1, y0), (x1, y1), (x0, y1)], WING_BRICK + 0.1)
-    # separate curved top floor on the rectangle: straight N and E sides, rounded W/SW corner
-    i = 0.6
-    nw, se = Vector((x0 + i, y1 - i)), Vector((x1 - i, y0 + i))
-    top = [Vector((x1 - i, y1 - i)), nw] + bezier(nw, SW_TOP_CTRL, Vector((x0 + SW_TOP_S_INSET, y0 + i)))[1:] + [se]
-    T = [Vector(p) for p in ccw([(p.x, p.y) for p in top])]
-    nT = len(T)
-    for k in range(nT):
-        A, B = T[k], T[(k + 1) % nT]
+def top_floor(mb, outline):
+    T = [Vector(p) for p in ccw([(p.x, p.y) for p in outline])]
+    flat_poly(mb, "white", [(p.x, p.y) for p in T], WING_BRICK + 0.15)
+    n = len(T)
+    for k in range(n):
+        A, B = T[k], T[(k + 1) % n]
         _, t, nn, L = seg_frame(A, B)
         if L < 0.3:
             continue
         wall(mb, A, B, WING_BRICK + 0.15, WING_TOP, 0.25, [(0.03, L - 0.03, WING_BRICK + 0.6, WING_TOP - 0.35, "win")],
              mullions=max(0, int(L / 1.5) - 1), inset=0.1)
-        mb.box("white", A - t * 0.05 + nn * 1.5, t, -nn, L + 0.1, 1.6, WING_TOP, WING_TOP + 0.75)   # overhang fascia
-    flat_poly(mb, "white", [(p.x, p.y) for p in T], WING_TOP + 0.75)
+        mb.box("white", A - t * 0.05 + nn * 1.4, t, -nn, L + 0.1, 1.5, WING_TOP, WING_TOP + 0.7)
+    flat_poly(mb, "white", [(p.x, p.y) for p in T], WING_TOP + 0.7)
+
+
+def build_sw_wing(mb):
+    """West wing: a four-sided brick block turned along the red roof's west diagonal (satellite + floor plan), with a
+    separate glass top floor whose SW side sweeps in a convex curve; NW face = brick with the name, then the glazed
+    entrance bay at the inward corner (user review)."""
+    # NW face (exposed part): brick from the W corner to the entrance bay
+    A, B = ENTRY_CORNER - U_DIAG * ENTRY_BAY, W_W
+    _, t, nn, L = seg_frame(A, B)
+    wall(mb, A, B, 0.0, WING_BRICK, 0.4, [(L - 2.8, L - 1.6, 1.2, 7.6)])
+    wing_bands(mb, A, B)
+    # SW face (W -> S), SE face (S -> E)
+    for (A, B, entrance) in ((W_W, W_S, False), (W_S, W_E, True)):
+        _, t, nn, L = seg_frame(A, B)
+        ops = sw_units(L)
+        if entrance:   # SW entrance with steps and limestone portal near the S corner (DD_24)
+            c = 7.0
+            ops = [o for o in ops if o[1] < c - 2.8 or o[0] > c + 2.8] + [(c - 2.4, c + 2.4, 0.0, 3.4, "door")]
+            mb.box("lime", A + t * (c - 3.0) + nn * 0.15, t, -nn, 6.0, 0.3, 3.4, 4.3)
+            for k in range(3):
+                mb.box("lime", A + t * (c - 4.0) + nn * (2.4 - 0.6 * k), t, -nn, 8.0, 0.6 + 0.6 * k, -0.6 + 0.2 * k, -0.2 + 0.2 * k)
+        limestone_surrounds(mb, A, t, nn, ops)
+        wall(mb, A, B, 0.0, WING_BRICK, 0.4, ops)
+        wing_bands(mb, A, B)
+    # NE face: only the part south of the main bar is exposed
+    A = W_E
+    d = (W_N - W_E).normalized()
+    k = (BAR_S_Y - A.y) / d.y
+    B = A + d * k
+    _, t, nn, L = seg_frame(A, B)
+    wall(mb, A, B, 0.0, WING_BRICK, 0.4, punched(L, [(5.2, 7.2), (9.2, 11.2)], pitch=3.2, pair=False, w=1.0))
+    wing_bands(mb, A, B)
+    flat_poly(mb, "roof", [(p.x, p.y) for p in (W_W, W_S, W_E, W_N)], WING_BRICK + 0.1)
+    # separate curved glass top floor: straight on the NW/SE/NE sides, convex sweep on the SW side
+    mid = (W_W + W_S) / 2
+    sw_n = Vector(((W_S - W_W).y, -(W_S - W_W).x)).normalized()
+    if sw_n.dot(mid - (W_E + W_N) / 2) < 0:
+        sw_n = -sw_n
+    curve = bezier(W_W, mid + sw_n * 6.0, W_S)
+    top_floor(mb, curve + [W_E, W_N])
 
 
 def build_wing(mb, poly, style="se"):
-    """SE wing: brick with punched windows, straight glass top floor and white overhang (facades unseen)."""
+    """SE wing: brick right-angled wedge with evenly spaced single windows, glass top floor and white overhang
+    (ECN webcam, user Street View, satellite)."""
     P = [Vector(p) for p in ccw(poly)]
     n = len(P)
     for k in range(n):
@@ -480,13 +484,10 @@ def build_wing(mb, poly, style="se"):
         _, t, nn, L = seg_frame(A, B)
         if L < 0.5 or (nn.y > 0.9 and abs(A.y - BAR_S_Y) < 0.3):
             continue
-        wall(mb, A, B, 0.0, WING_BRICK, 0.4, punched(L, [(1.3, 3.1), (5.1, 6.9), (8.9, 10.7)], pitch=3.4, pair=False, w=1.1))
+        wall(mb, A, B, 0.0, WING_BRICK, 0.4, punched(L, [(1.3, 3.1), (5.1, 6.9), (8.4, 10.2)], pitch=3.4, pair=False, w=1.1))
         wing_bands(mb, A, B)
-        S0, S1 = A - nn * 0.6, B - nn * 0.6
-        wall(mb, S0, S1, WING_BRICK + 0.15, WING_TOP, 0.25, [(0.05, L - 0.05, WING_BRICK + 0.6, WING_TOP - 0.35, "win")],
-             mullions=max(0, int(L / 1.5) - 1), inset=0.1)
-        mb.box("white", A - t * 0.05 + nn * 1.5, t, -nn, L + 0.1, 2.3, WING_TOP, WING_TOP + 0.75)
-    flat_poly(mb, "white", [(p.x, p.y) for p in P], WING_TOP + 0.75)
+    flat_poly(mb, "roof", [(p.x, p.y) for p in P], WING_BRICK + 0.1)
+    top_floor(mb, [p - (p - sum(P, Vector((0, 0))) / n).normalized() * 0.4 for p in P])
 
 
 def red_tri(mb, a, b, c, dn):
@@ -495,24 +496,14 @@ def red_tri(mb, a, b, c, dn):
     mb.parts.setdefault("red", []).append([p - dn for p in tri][::-1])
 
 
-def red_edge(mb, a, b, dn):
-    mb.quad("red", [a - dn, b - dn, b, a])
-
-
 def build_high_roof(mb):
-    """The red Mayflower ACM roof is ONE continuous piece (user review): a ring around the main bar's flat top with
-    a flat underside everywhere, a top surface that falls toward the outer edge (LiDAR NDHM: ~20 m inside, lower
-    at the edge), a sharp NW point over the entrance and the west wing with a symmetric triangular hole and a
-    support beam down its middle, and a small east point just beyond the diagonal east wall."""
+    """The red Mayflower ACM roof is ONE continuous piece: a parallelogram ring (satellite) with a flat underside, a top
+    falling toward the outer edge (LiDAR), sharp NW and E points; at the NW the arms' inner corner and the main-bar roof
+    edge leave a triangular hole above the entrance with a support beam down its middle."""
     from mathutils.geometry import tessellate_polygon
     z_bot, z_edge, z_in = 17.8, 18.4, 20.0
-    T = Vector((-84.0, 21.0))
-    outer = [T, Vector((54.5, 18.7)), Vector((87.5, -14.7)), Vector((-44.0, -15.0)), Vector((-72.0, -15.0))]
-    inner = [Vector((-60.0, 11.0)), Vector((52.0, 11.0)), Vector((68.0, -5.5)), Vector((-41.0, -5.5))]
-    d = ((outer[1] - T).normalized() + (outer[4] - T).normalized()).normalized()
-    pdir = Vector((-d.y, d.x))
-    N, C = T + d * 9.0, T + d * 24.0
-    hole = [N, C + pdir * 6.0, C - pdir * 6.0]
+    outer = [Vector((-84.0, 21.0)), Vector((61.0, 17.3)), Vector((87.2, -14.9)), Vector((-59.5, -11.6))]
+    inner = [Vector((-70.7, 14.5)), Vector((57.2, 14.5)), Vector((68.9, -7.0)), Vector((-55.1, -5.5))]
 
     def dist_outer(p):
         best = 1e9
@@ -524,7 +515,7 @@ def build_high_roof(mb):
         return best
 
     def ztop(p):
-        return z_edge + (z_in - z_edge) * min(1.0, dist_outer(p) / 7.0)
+        return z_edge + (z_in - z_edge) * min(1.0, dist_outer(p) / 6.0)
 
     def densify(loop, step=3.0):
         out = []
@@ -533,43 +524,41 @@ def build_high_roof(mb):
             n = max(1, int((b - a).length / step))
             out += [a.lerp(b, i / n) for i in range(n)]
         return out
-    loops = [densify(outer), densify(inner), densify(hole, 2.0)]
+    loops = [densify(outer), densify(inner)]
     flat = [p for lp in loops for p in lp]
-    tris = tessellate_polygon([[Vector((p.x, p.y, 0)) for p in lp] for lp in loops])
-    for (i, j, k) in tris:
+    for (i, j, k) in tessellate_polygon([[Vector((p.x, p.y, 0)) for p in lp] for lp in loops]):
         a, b, c = (Vector((flat[q].x, flat[q].y, ztop(flat[q]))) for q in (i, j, k))
         tri = [a, b, c] if (b - a).cross(c - a).z >= 0 else [a, c, b]
-        mb.parts.setdefault("red", []).append(tri)                                    # sloped top
-        mb.parts.setdefault("red", []).append([Vector((p.x, p.y, z_bot)) for p in tri][::-1])  # flat soffit
-    for lp in loops:   # edge faces: outer fascia, inner edge, hole edges
+        mb.parts.setdefault("red", []).append(tri)
+        mb.parts.setdefault("red", []).append([Vector((p.x, p.y, z_bot)) for p in tri][::-1])
+    for lp in loops:
         for k in range(len(lp)):
             a, b = lp[k], lp[(k + 1) % len(lp)]
             mb.quad("red", [Vector((a.x, a.y, z_bot)), Vector((b.x, b.y, z_bot)), Vector((b.x, b.y, ztop(b))), Vector((a.x, a.y, ztop(a)))])
-    # support beam down the middle of the hole (apex to base)
-    Lb = (C - N).length
-    mb.box("red", N - pdir * 0.35, d, pdir, Lb, 0.7, z_bot - 0.7, z_bot)
-    # red sloped panel seen through the hole on the building side (photos)
-    hl, hr = C + pdir * 6.0, C - pdir * 6.0
-    mb.quad("red", [Vector((hl.x, hl.y, z_bot - 0.6)), Vector((hr.x, hr.y, z_bot - 0.6)),
-                    Vector((*(hr.lerp(N, 0.4)), z_bot - 2.4)), Vector((*(hl.lerp(N, 0.4)), z_bot - 2.4))])
-    # infill between the main-bar wall tops and the soffit
-    flat_poly(mb, "roof", [(p.x, p.y) for p in inner], z_bot)
-    # flat top with clerestory glass steps on both long sides
-    top = [(p.x, p.y) for p in inner]
-    flat_poly(mb, "roof", top, 21.6)
-    for (a, b) in (((52.0, 11.0), (-60.0, 11.0)), ((-41.0, -5.5), (68.0, -5.5))):
-        A, B = Vector(a), Vector(b)
-        _, t, nn, Ls = seg_frame(A, B)
-        wall(mb, A, B, z_in - 0.2, 21.6, 0.2, [(0.1, Ls - 0.1, z_in, 21.4, "win")], mullions=int(Ls / 2.0), inset=0.08)
-    for (a, b) in (((-60.0, 11.0), (-41.0, -5.5)), ((68.0, -5.5), (52.0, 11.0))):
-        A, B = Vector(a), Vector(b)
-        wall(mb, A, B, z_bot, 21.6, 0.2)
+    # triangular hole: apex = arms' inner corner, base = main-bar roof edge; beam down its middle
+    apex = inner[0]
+    bl = Vector((-60.0, 14.5))
+    br = inner[0].lerp(inner[3], 0.85)
+    base_mid = (bl + br) / 2
+    d = (base_mid - apex).normalized()
+    pdir = Vector((-d.y, d.x))
+    mb.box("red", apex - pdir * 0.35, d, pdir, (base_mid - apex).length, 0.7, z_bot - 0.6, z_in - 0.3)
+    mb.quad("red", [Vector((bl.x, bl.y, z_bot - 0.6)), Vector((br.x, br.y, z_bot - 0.6)),
+                    Vector((*(br.lerp(apex, 0.45)), z_bot - 2.6)), Vector((*(bl.lerp(apex, 0.45)), z_bot - 2.6))])
+    # main-bar roof: soffit infill, flat top at 21.6 m with clerestory steps (excluding the hole triangle)
+    top = [bl, inner[1], inner[2], inner[3], br]
+    flat_poly(mb, "roof", [(p.x, p.y) for p in top], z_bot)
+    flat_poly(mb, "roof", [(p.x, p.y) for p in top], 21.6)
+    for (a, b) in ((inner[1], bl), (inner[3], inner[2])):
+        _, t, nn, Ls = seg_frame(a, b)
+        wall(mb, a, b, z_in - 0.2, 21.6, 0.2, [(0.1, Ls - 0.1, z_in, 21.4, "win")], mullions=int(Ls / 2.0), inset=0.08)
+    for (a, b) in ((bl, br), (br, inner[3]), (inner[2], inner[1])):
+        wall(mb, a, b, z_bot, 21.6, 0.2)
     mb.box("unit", (40.0, -2.0), (1, 0), (0, 1), 9.0, 9.0, 21.6, 23.2)
 
 
 def floors(mb):
-    x0, y0, x1, y1 = SW_RECT
-    for poly in (BAR, [(x0, y0), (x1, y0), (x1, y1), (x0, y1)], SE_WING):
+    for poly in (BAR, SW_WING, SE_WING):
         flat_poly(mb, "floor", poly, 0.04)
 
 
@@ -580,7 +569,7 @@ DELETE_PREFIX = ("ARMS_East_", "ARMS_West_", "ARMS_R5_", "ARMS_R6_", "ARMS_R12_9
                  "ARMS_Gold_Lettering_Band", "ARMS_Atrium_Terrazzo_Floor", "ARMS_Moon_Plaza", "Apollo11_Bootprint",
                  "ARMS_Plaza_", "ARMS_Bike_Rack", "ARMS_LED_Bollard", "ARMS_SP_")
 STATUE = ("ARMS_Statue_",)
-STATUE_OFFSET = Vector((-65.75, -6.6, 0.0))     # in front of the entrance corner under the roof point (photos)
+STATUE_OFFSET = Vector((-75.95, -2.3, 0.0))     # in front of the entrance corner under the roof point (photos)
 INTERIOR_OFFSET = Vector((-4.0, 18.0, 0.0))    # interior program moved inside the corrected main bar
 
 
@@ -627,8 +616,9 @@ def main():
     cu.extrude = 0.03
     cu.align_x = "CENTER"
     ob = bpy.data.objects.new("ARMS_SP_Name_Letters", cu)
-    ob.location = (-69.5, 3.1, 2.2)
-    ob.rotation_euler = (math.radians(90), 0, math.radians(180))
+    mid = (ENTRY_CORNER - U_DIAG * ENTRY_BAY + W_W) / 2 + Vector((-0.652, 0.758)) * 0.1
+    ob.location = (mid.x, mid.y, 2.2)
+    ob.rotation_euler = (math.radians(90), 0, math.radians(220.7))
     cu.materials.append(M["letter"])
     bpy.data.collections[COLL].objects.link(ob)
     ob.parent = root
