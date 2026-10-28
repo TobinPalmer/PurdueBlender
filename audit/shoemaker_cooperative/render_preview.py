@@ -18,7 +18,8 @@ center = Vector((sum(p.x for p in points)/len(points), sum(p.y for p in points)/
 camera_data = bpy.data.cameras.new("Shoemaker_Preview_Camera")
 camera = bpy.data.objects.new("Shoemaker_Preview_Camera", camera_data)
 scene.collection.objects.link(camera)
-camera.location = center + Vector((-40.0, -20.0, 19.0))
+# Review from the likely gable-end quarter so the main roof and corner porch read together.
+camera.location = center + Vector((-40.0, 20.0, 19.0))
 camera.rotation_euler = (center - camera.location).to_track_quat("-Z", "Y").to_euler()
 camera_data.type = "ORTHO"
 camera_data.ortho_scale = 42.0

@@ -1,14 +1,14 @@
 {
   "building": "Shoemaker Cooperative",
   "asset_id": "massing_shoemaker_cooperative_2159ea4",
-  "status": "Operator exterior photo now informs the gable roof, two-level corner porch, and shutters; GIS level-count conflict, campus orientation, and height remain unresolved or estimated",
+  "status": "Detailed revision independently accepted at 8.3/10 (PASS) on exact asset SHA; pending coordinator master integration.",
   "source": {
     "provider": "Purdue University official campus building footprint service",
     "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
     "feature_id": 800,
     "building_code": "SOSH",
     "source_name": "Shoemaker",
-    "retrieval_date": "2026-10-22 (repository-preserved source snapshot)",
+    "retrieval_date": "2026-10-28",
     "source_date": "Not supplied in the service snapshot",
     "source_crs": "EPSG:4326 (WGS 84)",
     "source_record": "source_feature_800_raw.json",
@@ -16,13 +16,23 @@
     "secondary_visual_references": [
       {
         "provider": "Shoemaker Cooperative (building operator)",
-        "use": "Confirms address 351 Northwestern Avenue, labels an interior photo-tour section Floor Two, and provides a partial monochrome exterior photograph. It supports two above-grade levels and visible gable/porch/shutter vocabulary but supplies no scale or georeferenced orientation.",
-        "url": "https://www.shoemakercooperative.com/our-home"
+        "url": "https://www.shoemakercooperative.com/our-home",
+        "retrieval_date": "2026-10-28",
+        "source_date": "Photo is dated 2016-09-29 in its filename; webpage current when retrieved",
+        "snapshot": "source_owner_site_observation.json; operator_exterior_reference.jpg",
+        "use": "The owner photo shows a light monochrome two-storey gabled house, six visible sash-window openings in two rows, dark shutters, three attic vents, a corner upper porch/balcony, a low basement window band, and a small roof overhang. The page also lists a Floor Two photo-tour, 10 rooms, foyer, study, living/meeting room, bum room, and dining room. It gives no scale or georeferenced camera orientation."
       },
       {
         "provider": "Purdue University Archives and Special Collections",
-        "use": "Cooperative identity and historical context; no building measurements inferred.",
-        "url": "https://archives.lib.purdue.edu/agents/corporate_entities/611"
+        "url": "https://archives.lib.purdue.edu/agents/corporate_entities/611",
+        "retrieval_date": "2026-10-28",
+        "use": "Confirms cooperative identity and historical context only; no dimensions or current facade details inferred."
+      },
+      {
+        "provider": "Purdue University FSCL Cooperative Houses",
+        "url": "https://www.purdue.edu/fscl/councils/cooperatives/houses.php",
+        "retrieval_date": "2026-10-28",
+        "use": "Confirms Shoemaker is a current Purdue cooperative housing listing."
       }
     ]
   },
@@ -61,9 +71,9 @@
     "after_structural_shell": "Built from all distinct official source-ring vertices; intended to match official footprint within coordinate conversion precision",
     "after_modeled_height_m": 10.2,
     "position_status": "Structural footprint set to the official map polygon coordinates; underlying source positional uncertainty is unpublished",
-    "plan_dimension_status": "Footprint matches official source polygon; polygon is not a survey",
-    "orientation_status": "Structural shell follows official polygon vertex orientation",
-    "height_status": "6.7 m eaves and 10.2 m ridge are illustrative estimates informed by the operator exterior photo. The OSM/GIS source field reports Extrution=17 and NUM_LEVELS=1 but publishes no field-unit or counting definitions; neither is treated as a measured height.",
+    "plan_dimension_status": "Structural wall ring is mapped from all ten official source polygon vertices. Project transform is approximate local XY; this is not a survey. Structural ring vertex max discrepancy after fresh-open validation is 0.000014 m from floating-point conversion.",
+    "orientation_status": "GIS polygon orientation is followed exactly. A 128.544 degree ridge-axis approximation is selected from the polygon principal direction; the operator photo is not georeferenced, so facade-to-campus orientation remains unverified.",
+    "height_status": "6.7 m eaves and 10.2 m ridge are illustrative estimates based on two visible above-grade window rows and photo proportions. Official GIS reports NUM_LEVELS=1 and Extrution=17 without a field-unit/counting definition; no measured elevation is available.",
     "official_num_levels_attribute": 1,
     "official_extrution_attribute": 17,
     "storey_evidence": "GIS NUM_LEVELS=1 conflicts with both the operator photo-tour Floor Two label and the operator exterior image showing two above-grade window levels. The model uses two above-grade levels; the field counting convention and exact total levels remain unresolved.",
@@ -74,20 +84,23 @@
       "max_y": -33.46479,
       "min_z": 0.0,
       "max_z": 10.2
-    }
+    },
+    "interior_status": "In-mesh lower/upper floorplates, a central corridor, room partition bays, and doorway gaps are modeled schematically. Official operator page reports 10 rooms and shared foyer, study, living/meeting room, bum room and dining room, but publishes no floor plan or partition locations; room layout is unverified."
   },
   "geometry_edits": [
-    "Replaced the massing extrusion footprint with the official source polygon while preserving the asset object, collection, scene, ID and file path.",
-    "Added a pitched gable roof over an approximate main block, retaining a low roof over the remainder of the irregular footprint; exact roof wings are not documented.",
-    "Added a schematic two-level corner porch/balcony with posts and railing, a ground-floor entry marker, repeated windows, dark shutters, floor bands and plinth. The porch's campus-side orientation and all facade dimensions remain approximate.",
-    "Changed the exterior material to a neutral light tone because the operator image is monochrome and does not establish actual wall color."
+    "Replaced massing shell with exact official FID 800 footprint polygon, retaining asset path, object name, collection, scene and ID.",
+    "Modeled two-storey light-toned facade, six sash-window bays on the dominant gable elevation, dark shutters, sill/meeting rails, floor band and a low masonry/plinth base from owner photograph.",
+    "Added the three small gable vents, two window AC units, a two-level corner porch/balcony with posts, simple railing and a shallow canopy visible in the owner photo.",
+    "Rebuilt the roof as pitched surfaces clipped to the GIS outline; gable/ridge height and inferred roof-wing shape remain estimates.",
+    "Added procedural low-amplitude plaster and asphalt variation, glass, dark metal/shutter, stone, interior wall and floor materials; no external texture dependencies.",
+    "Added schematic floorplates, room bays, central hall and door openings inside the structural footprint; layout is explicitly not a verified floor plan."
   ],
   "uncertainties": [
     "The official campus polygon is not a certified survey and publishes no positional or dimensional uncertainty.",
-    "The map NUM_LEVELS attribute is 1, while the operator site provides a Floor Two gallery label and an exterior image showing two above-grade levels; field counting semantics remain unresolved.",
-    "The exterior photo is partial, monochrome, and unscaled; exact height, roof wings, campus orientation, window spacing, and porch location are not measured.",
-    "Wall color is unknown. The gable placement, entrance location, facade rhythms, and architectural dimensions remain approximate and need independent exterior review.",
-    "No independent grader has reviewed this revision."
+    "Official NUM_LEVELS=1 conflicts with the operator Floor Two gallery label and exterior photo showing two above-grade window levels; field counting semantics and total levels remain unresolved.",
+    "The operator exterior reference is monochrome, dated 2016, unscaled and not georeferenced. Wall/roof colors, exact height, facade-to-campus orientation, roof-wing arrangement, porch placement, exact window spacing and trim dimensions remain estimated.",
+    "The owner site states 10 rooms and shared rooms but does not publish a floor plan; modeled partitions and doors are schematic and unverified.",
+    "No independent grader has reviewed the final mesh SHA; do not mark this asset accepted until a reviewer grades the exact SHA."
   ],
   "artifacts": {
     "build_script": "build_detail.py",
@@ -97,6 +110,47 @@
     "build_preview": "preview_detail_r2.png",
     "render_script": "render_preview.py",
     "reopen_validation": "reopen_validation.json",
-    "validation_script": "validate_asset.py"
+    "validation_script": "validate_asset.py",
+    "operator_photo_snapshot": "operator_exterior_reference.jpg",
+    "interior_plan_preview": "interior_cutaway_plan.png",
+    "cutaway_render_script": "render_cutaway_plan.py"
+  },
+  "validation": {
+    "blender_version": "5.2.3 LTS",
+    "fresh_open": "PASS",
+    "expected_collection": "Asset_massing_shoemaker_cooperative_2159ea4",
+    "collection_object_count": 1,
+    "mesh_vertices": 2692,
+    "mesh_faces": 1911,
+    "source_ring_vertices": 10,
+    "max_source_ring_error_m": 1.39e-05,
+    "materials": [
+      "Exterior plaster (procedural noise/bump)",
+      "Limestone/plinth",
+      "Glazing",
+      "Roof asphalt (procedural noise/bump)",
+      "Metal",
+      "Shutters",
+      "Interior partitions",
+      "Interior floors",
+      "Gable vents",
+      "Window AC"
+    ]
+  },
+  "asset_sha256": "7DC9A6D7E32C0E1E788157200D98209CEF5322F9617CFBEC144259AC1EB975EB",
+  "independent_grade": {
+    "reviewer": "Codex subagent /root/kappa_kappa_gamma",
+    "date": "2026-10-28",
+    "score": 8.3,
+    "threshold": 8.0,
+    "result": "PASS",
+    "reviewed_sha256": "7DC9A6D7E32C0E1E788157200D98209CEF5322F9617CFBEC144259AC1EB975EB",
+    "report_markdown": "independent_grade_codex_r3_2026-10-28.md",
+    "report_json": "independent_grade_codex_r3_2026-10-28.json",
+    "noted_limits": [
+      "Interior is schematic with no as-built room plan and the cutaway is sparse.",
+      "Model has 44 open boundary/nonmanifold edges; not watertight.",
+      "Height, roof-wing composition, color, facade bearing and other unobserved details remain estimates."
+    ]
   }
 }

@@ -1,0 +1,37 @@
+{
+  "building": "Shoemaker Cooperative",
+  "fid": 800,
+  "asset": "modular/buildings/massing_shoemaker_cooperative_2159ea4.blend",
+  "reviewed_sha256": "7DC9A6D7E32C0E1E788157200D98209CEF5322F9617CFBEC144259AC1EB975EB",
+  "result": "PASS",
+  "score": 8.3,
+  "threshold": 8.0,
+  "review_type": "independent read-only exact-SHA evaluation",
+  "reviewer": "Codex subagent /root/kappa_kappa_gamma",
+  "review_date": "2026-10-28",
+  "categories": [
+    {"name": "Identity and provenance", "score": 9.2, "weight": 0.20, "weighted_points": 1.84},
+    {"name": "Plan geometry and placement", "score": 8.8, "weight": 0.25, "weighted_points": 2.20},
+    {"name": "Exterior silhouette and openings", "score": 8.1, "weight": 0.25, "weighted_points": 2.025},
+    {"name": "Materials and facade", "score": 7.8, "weight": 0.10, "weighted_points": 0.78},
+    {"name": "Interior usefulness", "score": 6.5, "weight": 0.10, "weighted_points": 0.65},
+    {"name": "Technical and presentation", "score": 8.5, "weight": 0.10, "weighted_points": 0.85}
+  ],
+  "evidence_reviewed": [
+    "audit/shoemaker_cooperative/review_r3.md",
+    "audit/shoemaker_cooperative/evidence.json",
+    "audit/shoemaker_cooperative/reopen_validation.json",
+    "audit/shoemaker_cooperative/source_owner_site_observation.json",
+    "audit/shoemaker_cooperative/preview_detail_r2.png",
+    "audit/shoemaker_cooperative/interior_cutaway_plan.png",
+    "audit/shoemaker_cooperative/operator_exterior_reference.jpg"
+  ],
+  "key_limits": [
+    "GIS NUM_LEVELS=1 conflicts with operator evidence for two above-grade levels; counting convention is unresolved.",
+    "Roof, heights, facade bearing, colors, exact openings, porch details and unseen sides remain estimates.",
+    "Interior partitions are schematic; no as-built plan exists and the cutaway has limited furnishing/context.",
+    "The GIS ring comparison is by construction, not independent survey verification.",
+    "The mesh has 44 open boundary/nonmanifold edges and is not watertight."
+  ],
+  "asset_modified": false
+}
