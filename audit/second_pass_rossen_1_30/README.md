@@ -8,8 +8,8 @@ The master remains Tobin-owned. Passing source revisions get individual scoped c
 
 | Rank | Building | State | Visual score | Evidence |
 | ---: | --- | --- | --- | --- |
-| 1 | Mackey Arena | Queued | — | `audit/mackey_arena/second_pass/` |
-| 2 | Neil Armstrong Hall | Queued | — | `audit/neil_armstrong_hall/second_pass/` |
+| 1 | Mackey Arena | In revision — r1 scored 5.10, r2 pending | 5.10/10 | `audit/mackey_arena/second_pass/` |
+| 2 | Neil Armstrong Hall | In revision — r1 under independent review | — | `audit/neil_armstrong_hall/second_pass/` |
 | 3 | Purdue Memorial Union | Queued | — | `audit/purdue_memorial_union/second_pass/` |
 | 4 | Ross Ade | Queued | — | `audit/ross_ade/second_pass/` |
 | 5 | University Hall | Queued | — | `audit/university_hall/second_pass/` |
