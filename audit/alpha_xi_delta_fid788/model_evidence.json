@@ -1,0 +1,124 @@
+{
+  "building": "Alpha Xi Delta",
+  "fid": 788,
+  "asset": "modular/buildings/massing_house_301841248_fe939c7.blend",
+  "asset_sha256": "add1d794c1b973ba330eebb72da09122188600da8e3f5a19fad7a4e107114028",
+  "source_record": {
+    "provider": "Purdue University official BuildingShapesZip4 ArcGIS FeatureServer",
+    "feature_layer": "0",
+    "feature_id": 788,
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D788&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "retrieved_at_utc": "2026-10-28",
+    "source_crs": "EPSG:4326 (outSR=4326)",
+    "raw_snapshot": "source_fid788.json",
+    "attributes": {
+      "BLDG_ABBR": "SOAXD",
+      "BUILDING_N": "Alpha Xi Delta",
+      "ADDRESS": "519 University St",
+      "OWNER": "GREEK",
+      "NUM_LEVELS": 1,
+      "Extrution": 12,
+      "Shape__Area": 914.0625,
+      "Shape__Length": 169.62955618896558,
+      "Floorplans": "G:\\GIS\\web_pages\\html_pages\\SOAXD.html"
+    },
+    "source_date": "Not supplied in returned record"
+  },
+  "identity_assessment": "Strong direct identity support: FID 788 is named Alpha Xi Delta and address 519 University St; official chapter page and recruitment photo independently show the Purdue Alpha Xi Delta chapter house.",
+  "coordinate_method": {
+    "formula": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0",
+    "interpretation": "Project-local approximate conversion per modular/AGENTS.md; not a surveyed CRS. Candidate retained its campus-coordinate frame.",
+    "source_footprint_projected_bounds_m": {
+      "x": {
+        "min": -297.4689795057206,
+        "max": -273.8234080238641
+      },
+      "y": {
+        "min": 241.977485598959,
+        "max": 269.75422494507484
+      }
+    },
+    "candidate_structural_footprint_bounds_m": {
+      "x": {
+        "min": -297.6089,
+        "max": -274.1079
+      },
+      "y": {
+        "min": 241.6119,
+        "max": 269.2498
+      }
+    },
+    "source_bbox_dimensions_m": {
+      "x": 23.645571481856507,
+      "y": 27.776739346115846
+    },
+    "candidate_bbox_dimensions_m": {
+      "x": 23.501000000000033,
+      "y": 27.637900000000002
+    },
+    "bbox_dimension_differences_m": {
+      "x": -0.145,
+      "y": -0.139
+    },
+    "projected_GIS_shoelace_area_m2": 528.771,
+    "candidate_footprint_shoelace_area_m2": 530.353,
+    "candidate_to_GIS_area_delta_percent": 0.299,
+    "method_note": "Area is shoelace from the provided GIS ring after the project-local approximation. GIS Shape__Area is reported separately in provider units and not treated as m\u00b2. The source and candidate boundaries are close in overall extent; the mesh uses a simplified 16-vertex outline versus a 24-vertex GIS ring."
+  },
+  "visual_sources": [
+    {
+      "provider": "Purdue Panhellenic Council",
+      "url": "https://www.purduepanhellenic.com/cost/alpha-xi-delta",
+      "retrieved_at_utc": "2026-10-28",
+      "local_copy": "facade_reference_1.png",
+      "supports": "Chapter name/Alpha Eta identification, chapter sign and current exterior glimpse with brick lower story, Tudor-style upper facade and two roof dormers. Image is a web-page collage, not a measured elevation."
+    },
+    {
+      "provider": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/File:Alpha_Xi_Delta_sorority_rush.png",
+      "retrieved_at_utc": "2026-10-28",
+      "local_copy": null,
+      "supports": "Purdue recruitment image at the house; supporting identity/entry context only, not dimensional evidence."
+    },
+    {
+      "provider": "Two Tulips Boutique, Courtney Day house-art product page",
+      "url": "https://twotulips.com/products/purdue-sorority-custom-house-drawing",
+      "retrieved_at_utc": "2026-10-28",
+      "local_copy": "illustrative_house_art.jpg",
+      "supports": "Supplementary stylized view explicitly naming 519 University Street; used only to corroborate Tudor/brick composition, dormers and entry/stair treatment. Not an authoritative survey/photo."
+    },
+    {
+      "provider": "City of West Lafayette permit reports",
+      "urls": [
+        "https://d3n9y02raazwpg.cloudfront.net/westlafayette/1d8683f3-a0a9-11ec-8a90-0050569183fa-cff30912-cddf-4b95-ab44-f6b7a2c8f869-1654624900.pdf",
+        "https://d3n9y02raazwpg.cloudfront.net/westlafayette/a287052e-b24c-11ef-ab4b-005056a89546-cff30912-cddf-4b95-ab44-f6b7a2c8f869-1744643225.pdf"
+      ],
+      "retrieved_at_utc": "2026-10-28",
+      "supports": "2022 listing describes basement-room and third-floor remodel at 519 University St; 2025 listing describes second-floor remodel. Confirms multi-level interior use but gives no usable dimensions or room plan."
+    }
+  ],
+  "model_edits": [
+    "Preserved stable scene Building_massing_house_301841248_fe939c7, collection Asset_massing_house_301841248_fe939c7, object House_301841248 and campus-coordinate footprint frame.",
+    "Rebuilt stable House_301841248 as the lower brick story over the existing 16-vertex footprint; added an estimated upper Tudor/plaster story, dark pitched roof with two dormers, windows, trim, entry porch/steps, chapter signage and materials.",
+    "Added interior floor plates, generic partitions, stairs and common-area/upper-room furniture as schematic visualization only. These are not from a recovered floor plan.",
+    "Added dedicated preview camera, lights and backdrop outside the named asset collection; no external image texture dependencies."
+  ],
+  "height_assessment": {
+    "status": "estimated",
+    "modeled_ridge_height_m": 13.25,
+    "basis": "Exterior image proportions and stylized secondary house artwork; no measured roof/eave height was located. GIS NUM_LEVELS=1 and Extrution=12 have unknown/uncorroborated units and are not treated as authoritative height measurements. Permits show basement, second-floor and third-floor work, but do not define exterior height."
+  },
+  "interior_assessment": {
+    "status": "schematic_unverified",
+    "basis": "No as-built floor plan located. Generic rooms and furnishings are illustrative only; room count, partitions, stairs, room use and furniture are not measured or verified."
+  },
+  "review": {
+    "status": "pending_independent_grade",
+    "reviewer": "Alpha Gamma Delta agent",
+    "pass_bar": ">=8/10",
+    "request_sent": true,
+    "asset_hash": "add1d794c1b973ba330eebb72da09122188600da8e3f5a19fad7a4e107114028",
+    "asset_sha256": "add1d794c1b973ba330eebb72da09122188600da8e3f5a19fad7a4e107114028"
+  },
+  "validation": "See fresh_open_validation.json; independent fresh-open in Blender 5.2.3 LTS passed."
+}
