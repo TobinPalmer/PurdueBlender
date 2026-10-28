@@ -1,0 +1,106 @@
+{
+  "retrieval_date": "2026-10-27",
+  "method": "Project each WGS84 vertex using the documented local approximation; calculate shoelace area and symmetric nearest-vertex distances. This compares mapped outlines, not structural wall faces or survey control.",
+  "project_transform": {
+    "origin_latitude": 40.4274,
+    "origin_longitude": -86.9137,
+    "x_formula": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+    "y_formula": "(latitude - 40.4274) * 111040.0",
+    "units": "meters; approximate local conversion, not surveyed CRS"
+  },
+  "osm": {
+    "feature": "way/860918859",
+    "vertex_count": 4,
+    "area_m2": 432.15993090519623,
+    "bounds_m": {
+      "x": [
+        -157.0013904301536,
+        -124.42563737099597
+      ],
+      "y": [
+        2000.5743680004434,
+        2014.2878080005357
+      ]
+    },
+    "vertices_projected_xy": [
+      [
+        -157.0013904301536,
+        2000.9630080002512
+      ],
+      [
+        -156.84025028216408,
+        2014.2878080005357
+      ],
+      [
+        -124.42563737099597,
+        2013.9102720000687
+      ],
+      [
+        -124.58677751898549,
+        2000.5743680004434
+      ]
+    ]
+  },
+  "indiana_state_footprint": {
+    "feature_layer": "Indiana Building Footprints 2016-2020",
+    "objectid": 409445,
+    "lidaryear": "2018",
+    "vertex_count": 4,
+    "reported_shape_area_field": 841.7667351745596,
+    "area_from_returned_geometry_m2": 486.82970916574413,
+    "bounds_m": {
+      "x": [
+        -156.94380402184618,
+        -123.25932194002006
+      ],
+      "y": [
+        2000.3129798519535,
+        2014.9632643294785
+      ]
+    },
+    "vertices_projected_xy": [
+      [
+        -123.33132613836837,
+        2000.3129798519535
+      ],
+      [
+        -156.94380402184618,
+        2000.4800950598633
+      ],
+      [
+        -156.8718846356156,
+        2014.9632643294785
+      ],
+      [
+        -123.25932194002006,
+        2014.7962601706513
+      ]
+    ]
+  },
+  "symmetric_nearest_vertex_distances_m": {
+    "osm_to_state": [
+      0.4863,
+      0.6762,
+      1.4647,
+      1.2824
+    ],
+    "max_osm_to_state": 1.4646729064691355,
+    "mean_osm_to_state": 0.9773943797573315,
+    "state_to_osm": [
+      1.2824,
+      0.4863,
+      0.6762,
+      1.4647
+    ],
+    "max_state_to_osm": 1.4646729064691355,
+    "mean_state_to_osm": 0.9773943797573315
+  },
+  "polygon_overlay": {
+    "intersection_area_m2": 431.9074985438879,
+    "union_area_m2": 487.082141527042,
+    "intersection_over_union": 0.8867241512690712,
+    "symmetric_difference_area_m2": 55.17464298315405,
+    "boundary_hausdorff_distance_m": 1.4646729064691355
+  },
+  "interpretation": "The state lidar-derived outline is slightly larger and near-coincident with the named OSM church outline. This is consistent with an outer roof/eave envelope around a core wall outline, but the dataset does not label roof edges and no survey plan verifies that interpretation. Keep the existing OSM wall base and model the roof overhang explicitly; do not treat the two polygons as identical ground-truth wall footprints."
+}

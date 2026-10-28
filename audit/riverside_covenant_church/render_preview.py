@@ -32,15 +32,18 @@ light_data.energy = 900
 light_data.shape = "DISK"
 light_data.size = 24.0
 
-scene.render.engine = "BLENDER_EEVEE"
+try:
+    scene.render.engine = "BLENDER_EEVEE_NEXT"
+except TypeError:
+    scene.render.engine = "BLENDER_EEVEE"
 scene.render.resolution_x = 1200
 scene.render.resolution_y = 800
 scene.render.resolution_percentage = 100
 scene.render.image_settings.file_format = "PNG"
 scene.render.film_transparent = False
-scene.render.filepath = os.path.join(folder, "preview_detail_r2.png")
+scene.render.filepath = os.path.join(folder, "preview_detail_r3.png")
 scene.view_settings.view_transform = "AgX"
-scene.view_settings.exposure = -0.6
+scene.view_settings.exposure = -0.25
 scene.world.color = (0.035, 0.045, 0.06)
 bpy.ops.render.render(write_still=True)
 print("RENDERED=" + scene.render.filepath)

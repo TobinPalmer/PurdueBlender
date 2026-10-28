@@ -1,31 +1,62 @@
 {
   "building": "Riverside Covenant Church",
-  "retrieval_date": "2026-10-26",
+  "retrieval_date": "2026-10-27",
   "references": [
     {
-      "provider": "Riverside Covenant Church",
+      "provider": "Riverside Covenant Church (owner/congregation)",
       "title": "Our History",
       "url": "https://www.rcovenant.org/our-history/",
       "observations": [
-        "Riverside acquired an existing church building in April 2006.",
-        "The congregation identifies its current location as 1850 Woodland Avenue near Salisbury and Lindberg in West Lafayette."
+        "Riverside purchased an existing West Lafayette church building in April 2006.",
+        "The congregation identifies its current location as 1850 Woodland Avenue near Salisbury and Lindberg."
       ],
-      "geometry_use": "Building identity and address corroboration only; no exterior dimensions, elevation, floor count, or roof description are provided."
+      "geometry_use": "Identity/address corroboration only; no measured dimensions or facade plans."
     },
     {
-      "provider": "KJG Architecture",
+      "provider": "KJG Architecture (project architect)",
       "title": "Covenant Curch — West Lafayette, IN (2022)",
       "url": "https://www.kjgarchitecture.com/portfolio-1/covenant-curch",
       "observations": [
-        "KJG describes a renovation of the church's sanctuary and entry spaces.",
-        "The project text mentions full-glass doors at an interior entry, a renovated lobby and lounge, and cantilevered entry canopies at childcare check-in."
+        "The 2022 renovation connected entry and sanctuary with full-glass doors.",
+        "The renovated lobby includes a coffee bar and lounge.",
+        "The sanctuary has theatrical scrims and textured partitions behind the stage.",
+        "The childcare area received new canopies at check-in."
       ],
-      "geometry_use": "Confirms a 2022 interior renovation scope. It does not identify the building's exterior roof shape, measured height, facade layout, or the location and dimensions of exterior doors and canopies."
+      "local_images": [
+        {
+          "file": "reference_kjg_04.jpg",
+          "image_url": "https://static.wixstatic.com/media/a35264_cbf4e0240a584509a4d6d8cd36deb1e4~mv2.jpg",
+          "observation": "Long brick elevation, deep dark metal canopies, pale stone piers, clerestory and lower windows, paved entry walk."
+        },
+        {
+          "file": "reference_kjg_01.jpg",
+          "image_url": "https://static.wixstatic.com/media/a35264_1ac1b26ba3f5479fa59c480ce8e3cc6f~mv2.jpg",
+          "observation": "Warm wood lobby floor, dark carpet zones, lounge seating, cafe tables, and open community room."
+        },
+        {
+          "file": "reference_kjg_06.jpg",
+          "image_url": "https://static.wixstatic.com/media/a35264_f0eb0d025dd2405f8b563be85cc3c234~mv2.jpg",
+          "observation": "Sanctuary seating, tall stained-glass end window, exposed timber frame, side glazing and corridor."
+        }
+      ],
+      "geometry_use": "Visual design evidence for exterior finish, canopies and interior program; photographs are not georeferenced, scaled elevations or whole-building floor plans."
+    },
+    {
+      "provider": "Church and States: Covenant Church, West Lafayette, Indiana (independent blog; original photographer not identified)",
+      "title": "Covenant Church, West Lafayette, Indiana",
+      "url": "https://deanandmindygotochurch.blogspot.com/2016/09/covenant-church-west-lafayette-indiana.html",
+      "image_url": "https://1.bp.blogspot.com/-p32YpxOvYb4/V9Yk994qgMI/AAAAAAABAFg/csxvzM2vO70eeJI4vPOJEudd-UZh6_ecgCPcB/s1600/DSC00625.JPG",
+      "local_image": "reference_covenant_exterior_2016.jpg",
+      "observations": [
+        "Entrance photo shows a low red-brown brick church, broad charcoal canopy, grouped glass doors, and a large triangular stained-glass window set in a pale A-frame surround above the roof line."
+      ],
+      "geometry_use": "Historical visual reference only. Photographer/camera position and image scale are unknown; not treated as survey evidence."
     }
   ],
   "modeling_limitations": [
-    "The selected OSM feature is a 4-node rectangle and contains no height or building:levels tag.",
-    "The 4.7 m wall eaves, 8.8 m roof ridge, single gable, roof overhang, and schematic side windows are estimates, not measured or photo-verified geometry.",
-    "No independent geographic survey or architectural elevation was found in the cited references."
+    "The OSM outline and state LiDAR footprint are independent mapped outlines, not a measured structural-wall plan.",
+    "Canopy and entrance positions are estimated from oblique/unscaled photos; their campus-side bearing cannot be independently recovered.",
+    "Eaves, roof ridge and stained-glass peak heights are unverified estimates; no elevation drawing was found.",
+    "The KJG project photos support a lobby and sanctuary layout, but no whole-building floor plan, room dimensions or exact program boundaries are published."
   ]
 }
