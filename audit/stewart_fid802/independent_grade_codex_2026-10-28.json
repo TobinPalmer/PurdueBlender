@@ -1,0 +1,65 @@
+{
+  "building": "Stewart Cooperative House",
+  "feature_id": 802,
+  "asset": "modular/buildings/massing_house_1089875810_8c9b95d.blend",
+  "verified_sha256": "7339f13546ef06a0530a92bee747157f22e09d2b449496b40de51cff5cd2db5e",
+  "review_type": "Independent read-only exact-SHA review",
+  "review_date": "2026-10-28",
+  "blender_version": "5.2.3 LTS (fresh-open validation record)",
+  "weights_percent": {
+    "identity_and_provenance": 20,
+    "plan_geometry_and_placement": 25,
+    "exterior_silhouette_and_openings": 25,
+    "materials_and_facade": 10,
+    "interior_and_cutaway": 10,
+    "presentation_and_technical": 10
+  },
+  "scores": {
+    "identity_and_provenance": 9.2,
+    "plan_geometry_and_placement": 8.5,
+    "exterior_silhouette_and_openings": 7.3,
+    "materials_and_facade": 8.0,
+    "interior_and_cutaway": 6.8,
+    "presentation_and_technical": 8.0
+  },
+  "weighted_total": 8.07,
+  "rounded_total": 8.07,
+  "threshold": 8.0,
+  "result": "PASS",
+  "category_findings": {
+    "identity_and_provenance": "Purdue GIS FID 802 names Stewart and gives 800 Northwestern Ave; Stewart Cooperative official home page and Purdue FSCL cooperative list corroborate the facility and address. Named-house official photograph visually ties the modeled visual style to Stewart. No independent parcel overlay was provided.",
+    "plan_geometry_and_placement": "The asset retains the 16-vertex FID 802 ring at wall base. Fresh-open validation reports maximum nearest source-ring vertex residual 0.00002755 m and approximate bounds 13.209 by 23.323 m. This is a by-construction match under the repository approximate local transform, not independent geodetic placement or survey verification; no independent orientation check is supplied.",
+    "exterior_silhouette_and_openings": "The undated, tree-obstructed official image supports pale masonry, dark gabled roofs, a tower-like end mass, tall windows, and an arched glazed entry. The model represents these cues, but its full roof plan/pitch, tower proportions, window rhythm, facade bearing and unseen elevations are estimates; the image does not validate the elevations quantitatively.",
+    "materials_and_facade": "Named procedural materials provide pale masonry, dark gray roofing, glazing, frames/trim and schematic interior surfaces with no external image dependencies. Palette aligns with the official photo, but surfaces are broad color assignments without sourced material texture or calibrated finish values.",
+    "interior_and_cutaway": "Four story/floor groups, stairs, partitions and illustrative furniture/use blocks plus a schematic basement give a legible cutaway and story plan. Official house-tour text supports second- and third-floor hallways and basement context, but no dimensioned/current as-built plan supports room count, circulation, placement or furniture; interiors remain schematic.",
+    "presentation_and_technical": "Blender 5.2.3 LTS fresh-open validation confirms the expected scene, collection and root with 11 meshes and no external image dependency; audit includes exterior, roof, overlay and interior previews. The main root shell has 76 non-manifold edges at architectural openings and is explicitly not watertight; this is documented, not a portability/open failure."
+  },
+  "reviewed_evidence": [
+    "audit/stewart_fid802/evidence.json",
+    "audit/stewart_fid802/source_record.json",
+    "audit/stewart_fid802/review_handoff.md",
+    "audit/stewart_fid802/revision_report_r1.md",
+    "audit/stewart_fid802/fresh_open_validation.json",
+    "audit/stewart_fid802/exterior_west_oblique.png",
+    "audit/stewart_fid802/exterior_south_oblique.png",
+    "audit/stewart_fid802/roof_plan_view.png",
+    "audit/stewart_fid802/footprint_overlay.png",
+    "audit/stewart_fid802/interior_basement_cutaway.png",
+    "audit/stewart_fid802/interior_ground_cutaway.png",
+    "audit/stewart_fid802/interior_second_plan.png",
+    "audit/stewart_fid802/interior_third_plan.png",
+    "audit/stewart_fid802/sources/official_about_stewart_sign.jpg",
+    "audit/stewart_fid802/sources/official_home_IMG_1630.jpg"
+  ],
+  "asset_modified": false,
+  "shared_files_modified": false,
+  "limitations": [
+    "Exact footprint residual is by construction; no independent parcel-to-footprint overlay, survey control, or verified master placement comparison.",
+    "The primary exterior photo is tree-obstructed, lacks a stated capture date and is not a measured elevation.",
+    "The GIS NUM_LEVELS=1 field conflicts with official second-/third-floor text; modeled three-story height remains an estimate.",
+    "Roof geometry, facade bearing, heights, story dimensions and unseen elevations remain estimated.",
+    "Interior is schematic, not as-built.",
+    "Root shell has 76 documented non-manifold edges at open architectural boundaries and is not watertight."
+  ],
+  "report": "independent_grade_codex_2026-10-28.json"
+}

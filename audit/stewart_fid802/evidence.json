@@ -1,0 +1,79 @@
+{
+  "building": "Stewart Cooperative House",
+  "fid": 802,
+  "address": "800 Northwestern Ave, West Lafayette, IN 47906",
+  "asset": "modular/buildings/massing_house_1089875810_8c9b95d.blend",
+  "asset_sha256": "7339F13546EF06A0530A92BEE747157F22E09D2B449496B40DE51CFF5CD2DB5E",
+  "grade_status": "PASS — independently graded 8.07/10 on exact asset SHA-256 7339f13546ef06a0530a92bee747157f22e09d2b449496b40de51cff5cd2db5e",
+  "independent_grade": {"result":"PASS","weighted_score":8.07,"threshold":8.0,"reviewer":"independent exact-SHA read-only review","review_date":"2026-10-28","asset_sha256":"7339f13546ef06a0530a92bee747157f22e09d2b449496b40de51cff5cd2db5e","report":"independent_grade_codex_2026-10-28.json"},
+  "identity_sources": [
+    {
+      "url": "https://www.stewartcooperative.org/home",
+      "retrieved": "2026-10-28",
+      "supports": "Official Stewart Cooperative identity and address at 800 Northwestern Ave; saved page snapshot: sources/official_home.html."
+    },
+    {
+      "url": "https://www.purdue.edu/fscl/councils/cooperatives/houses.php",
+      "retrieved": "2026-10-28",
+      "supports": "Purdue FSCL cooperative-house listing includes Stewart."
+    }
+  ],
+  "geometry_source": {
+    "provider": "Purdue GIS BuildingShapesZip4 ArcGIS FeatureServer layer 0",
+    "feature_id": 802,
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D802&outFields=*&returnGeometry=true&outSR=4326&f=json",
+    "retrieved": "2026-10-28",
+    "source_crs": "EPSG:4326 (query explicitly requested outSR=4326); source service metadata snapshot retained",
+    "raw_snapshot": "sources/purdue_gis_fid802_raw.json",
+    "service_metadata": "sources/purdue_gis_service_metadata.json",
+    "coordinate_transform": "Project local approximation X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0; not survey control.",
+    "footprint_result": "16-vertex ring retained at z=0; overlay shows modeled wall-base ring coincident with source polygon. Shoelace area approximately 260.019 m2; local XY bounds approximately 13.209 m by 23.323 m.",
+    "gis_attributes_of_note": "NUM_LEVELS=1 conflicts with the official house-tour text identifying second- and third-floor hallways. Extrution=12 is undocumented and not used as a height measurement."
+  },
+  "visual_source": {
+    "url": "https://www.stewartcooperative.org/about-stewart",
+    "image_url": "https://static.wixstatic.com/media/af4da7_8b78239f5ac0438fa248ddcdeea42624~mv2.jpg/v1/fill/w_699%2Ch_524%2Cal_c%2Cq_85%2Cusm_0.66_1.00_0.01%2Cenc_auto/stewart%20sign%20solo.jpg",
+    "retrieved": "2026-10-28",
+    "local_reference": "sources/official_about_stewart_sign.jpg",
+    "image_date": "Not stated on the official page.",
+    "use_and_limit": "Current named-house photo supports qualitative pale/light masonry, dark multi-gabled roof forms, a tower-like end mass, tall windows, and an arched glazed entrance. Photo is tree-obstructed and not a calibrated elevation; it does not establish orientation, dimensions, full roof plan, or unseen elevations."
+  },
+  "interior_source": {
+    "url": "https://www.stewartcooperative.org/house-tour",
+    "retrieved": "2026-10-28",
+    "local_snapshot": "sources/official_house_tour.html",
+    "supports": "Official page mentions second- and third-floor hallways and shows house-tour/bedroom imagery; text also mentions basement bathroom, foyer/laundry renovations. It does not provide a dimensioned floor plan.",
+    "model_limit": "All floor plates, partitions, stairs, room positions, furniture, and basement layout are schematic rather than current as-built documentation. Three above-grade stories are inferred from official text despite the GIS one-level attribute."
+  },
+  "model_estimates": {
+    "wall_eave_height_m": 8.7,
+    "main_ridge_height_m": 12.15,
+    "tower_peak_height_m": 13.35,
+    "basement_insert_z_m": -2.45,
+    "status": "All heights, story dimensions, roof plan and pitch, facade orientation, and hidden elevations are estimates; no measured elevation or plan source found."
+  },
+  "validation": {
+    "fresh_open": "PASS",
+    "blender_version": "5.2.3 LTS",
+    "validation_record": "fresh_open_validation.json",
+    "collection": "Asset_massing_house_1089875810_8c9b95d",
+    "root_object": "House_1089875810",
+    "mesh_objects": 11,
+    "source_ring_vertices": 16,
+    "wall_base_vertices": 16,
+    "maximum_nearest_source_vertex_error_m": 0.0000275501,
+    "nonmanifold_root_shell_edges": 76,
+    "external_image_dependencies": [],
+    "technical_note": "Root shell remains non-manifold along open architectural boundaries; mesh has not been represented as watertight."
+  },
+  "review_previews": [
+    "exterior_west_oblique.png",
+    "exterior_south_oblique.png",
+    "roof_plan_view.png",
+    "footprint_overlay.png",
+    "interior_basement_plan.png",
+    "interior_ground_plan.png",
+    "interior_second_plan.png",
+    "interior_third_plan.png"
+  ]
+}
