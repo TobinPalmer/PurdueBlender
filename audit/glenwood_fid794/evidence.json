@@ -1,0 +1,112 @@
+{
+  "building": "Glenwood Cooperative",
+  "feature_id": 794,
+  "asset": "modular/buildings/massing_house_301841249_f827941.blend",
+  "asset_sha256": "d0b2fa56be3b5db1352eddc202b83204012cf18c21b3ce3db9866e793e0e6319",
+  "identity": {
+    "gis_building_name": "Glenwood",
+    "gis_abbreviation": "SOGL",
+    "gis_owner": "COOP",
+    "gis_address": "503 University St",
+    "resolution": "The GIS name/address agrees with Glenwood Cooperative's official historic page, which gives the current location as 503 University Street. The current contact page spells it 503 N University Street. This is a street-name formatting variation, not a feature identity conflict.",
+    "identity_sources": [
+      "https://web.ics.purdue.edu/~glenwood/about.html",
+      "https://web.ics.purdue.edu/~glenwood/contact.html",
+      "https://ag.purdue.edu/department/agecon/undergraduate-program/success-2025-26/cooperation-is-key.html"
+    ]
+  },
+  "gis_source": {
+    "provider": "Purdue University campus GIS, BuildingShapesZip4 FeatureServer layer 0",
+    "service_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+    "metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+    "query_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D794&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "retrieved": "2026-10-28",
+    "snapshot_files": [
+      "sources/purdue_gis_fid794_2026-10-28_4326.json",
+      "sources/purdue_gis_fid794_2026-10-28_3857.json",
+      "sources/purdue_gis_layer0_metadata_2026-10-28.json"
+    ],
+    "crs": {
+      "primary_snapshot": "EPSG:4326 (WGS 84), requested as outSR=4326",
+      "comparison_snapshot": "ArcGIS WKID 102100, latest WKID 3857 (Web Mercator)",
+      "project_transform": "Approximate local campus transform from modular/AGENTS.md: X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040. This is not surveyed georeferencing."
+    },
+    "feature_attributes": {
+      "NUM_LEVELS": 1,
+      "Extrution": 12,
+      "Shape__Area_m2": 471.37890625,
+      "Shape__Length_m": 100.94248567330402
+    },
+    "plan_reconciliation": {
+      "method": "The 8 unique polygon vertices from the raw EPSG:4326 feature ring were converted with the project's approximate local transform and compared to the saved mesh base vertices.",
+      "source_local_bounds_m": [[-299.7981237230729, 221.04115643045134], [-270.8299272487369, 231.47401975488947]],
+      "max_nearest_vertex_error_m": 0.000016219215357729024,
+      "scope": "Internal check against the source ring used to construct the lower wall footprint. It does not independently verify the GIS placement, survey accuracy, roof, facades, height, or interior."
+    }
+  },
+  "visual_sources": [
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life",
+      "url": "https://www.purdue.edu/fscl/images/_hero/fscl-glenwood-hero.jpg",
+      "saved_copy": "sources/purdue_fscl_glenwood_hero.jpg",
+      "source_date": "Not found",
+      "observed_features": ["light horizontal siding", "dark shutters", "repeated windows", "entry portico and Glenwood sign", "dormer-like roof forms", "low masonry foundation"],
+      "limits": "One oblique facade view; no dimensions, roof survey, compass orientation, floor plan or full elevation set."
+    },
+    {
+      "provider": "Purdue Agriculture, Department of Agricultural Economics",
+      "url": "https://ag.purdue.edu/department/agecon/undergraduate-program/success-2025-26/cooperation-is-key.html",
+      "saved_copy": "sources/purdue_ag_success_glenwood_house.jpg",
+      "source_date": "2025-26 page; photo date not stated",
+      "observed_features": ["Glenwood identity/context"],
+      "limits": "Building is partly obscured by trees; not used for dimensions or facade detail."
+    },
+    {
+      "provider": "Glenwood Cooperative historical site",
+      "url": "https://web.ics.purdue.edu/~glenwood/about.html",
+      "saved_copy": null,
+      "source_date": "Page crawled about 11 years before 2026-10-28",
+      "observed_features": ["Glenwood moved to 503 University Street in 1969"],
+      "limits": "Identity/address history only; no model dimensions."
+    }
+  ],
+  "modeling": {
+    "geometry_edits": ["Retained the GIS footprint ring as the lower wall perimeter.", "Added illustrative multi-level wall mass, roof and dormers, repeated shuttered windows, entry portico/sign, stairs, foundation band, and schematic interior floorplates, partitions, circulation and furniture."],
+    "estimated_or_unverified": ["GIS NUM_LEVELS=1 conflicts with the multi-level source photograph; story count is unresolved and modeled levels are interpretive.", "The 9.15 m ridge height, roof pitch, dormer sizes, facade bay count and spacing, porch/steps, hidden elevations, and facade compass orientation are estimates.", "GIS Extrution=12 is undocumented and is not treated as height.", "Interior plan, room use, circulation and furniture are schematic placeholders; not as built."],
+    "external_image_dependencies": []
+  },
+  "technical_validation": {
+    "result": "PASS",
+    "method": "Blender 5.2.3 LTS fresh-open of saved asset followed by geometry/dependency checks and four temporary render passes.",
+    "report": "fresh_open_validation.json",
+    "previews": ["fresh_open_exterior.png", "fresh_open_roof_oblique.png", "fresh_open_top.png", "fresh_open_schematic_interior_cutaway.png"],
+    "mesh_object_count": 1,
+    "vertices": 17364,
+    "faces": 15735,
+    "procedural_material_count": 12
+  },
+  "independent_grade": {
+    "status": "PASS — separate read-only independent grade",
+    "reviewer": "Kappa Kappa Gamma agent",
+    "reviewed": "2026-10-28",
+    "asset_sha256": "d0b2fa56be3b5db1352eddc202b83204012cf18c21b3ce3db9866e793e0e6319",
+    "threshold": 8.0,
+    "weighted_score": 8.6,
+    "unrounded_total": 8.575,
+    "result": "PASS",
+    "report": "independent_grade_codex_2026-10-28.md",
+    "category_scores": {
+      "identity_and_provenance": 9.5,
+      "plan_geometry_and_placement": 9.5,
+      "exterior_silhouette_and_openings": 7.2,
+      "materials_and_facade": 8.5,
+      "interior_and_cutaway": 7.0,
+      "presentation_and_technical": 9.5
+    },
+    "remaining_limits": [
+      "Roof form, dormers, story interpretation, dimensions, compass orientation and hidden elevations remain estimates from one oblique exterior photo.",
+      "The footprint comparison is by construction using the GIS ring and approximate local transform, not independent placement or survey validation.",
+      "Interior remains schematic; no as-built plan, room function or interior dimension is verified."
+    ]
+  }
+}
