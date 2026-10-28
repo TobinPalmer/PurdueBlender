@@ -287,9 +287,11 @@ def build_bar(mb):
             mb.box("seawolf", A + t * (c - 5.5), t, nn, 11.0, 3.2, 3.5, 4.1)
             continue
         if nn.y > 0.9:
-            rows = FLOORS
-            wall(mb, A, B, 0.0, BAR_H, 0.4, punched(L, rows))
-            bar_bands(mb, A, B)
+            gw = 7.0  # glazed return at the west end next to the entrance corner
+            ops = [o for o in punched(L, FLOORS) if o[1] < L - gw - 0.6]
+            ops.append((L - gw, L - 0.05, 0.4, BAR_H - 0.4, "win"))
+            wall(mb, A, B, 0.0, BAR_H, 0.4, ops, mullions=4)
+            bar_bands(mb, A + (B - A).normalized() * 0.0, A + (B - A).normalized() * (L - gw))
         elif nn.y < -0.9 and abs(A.y - BAR_S_Y) < 0.1:
             # south face west->east pieces: curtain wall (separate), blank brick return, punched brick,
             # then the SE wing abuts (hidden)
@@ -456,62 +458,71 @@ def red_edge(mb, a, b, dn):
 
 
 def build_high_roof(mb):
-    """Main-bar roof from the 2017-2019 QL2 LiDAR height model (sources/na_ndhm_2018.*): a flat top at 21.6 m with
-    glazed clerestory steps, wrapped by sloped red Mayflower ACM eyebrows that fall from ~20 m to ~16.3 m at the
-    outer edge, ending in sharp straight points at the NW (~19 m, over the entrance) and the east. The NW point
-    has a triangular hole with a support beam down its middle (photos 2016_01/04, DD_22, user review)."""
-    th = 0.45
-    dn = Vector((0, 0, th))
-    zin, zout, ztip = 20.0, 16.3, 19.0
-    T = Vector((-82.0, 20.5, ztip))                 # NW point
-    E = Vector((87.5, -14.7, zout + 0.4))           # east point: small overhang beyond the diagonal east wall
-    No_w, No_e = Vector((-40.0, 18.7, zout)), Vector((54.5, 18.7, zout))
-    Ni_w, Ni_e = Vector((-40.0, 11.0, zin)), Vector((52.0, 11.0, zin))
-    So_e, So_w = Vector((80.0, -14.7, zout)), Vector((-46.0, -14.7, zout))
-    Si_e, Si_w = Vector((68.0, -5.5, zin)), Vector((-41.0, -5.5, zin))
-    # north eyebrow, east arm, south eyebrow (sloped quads split into triangles)
-    for (o0, o1, i0, i1) in ((No_w, No_e, Ni_w, Ni_e), (No_e, E, Ni_e, Si_e), (E, So_e, Si_e, Si_e), (So_e, So_w, Si_e, Si_w)):
-        red_tri(mb, o0, o1, i1, dn)
-        if (i1 - i0).length > 0.01:
-            red_tri(mb, o0, i1, i0, dn)
-        red_edge(mb, o0, o1, dn)
-    # NW point ("wing"): a FLAT slab (level top and flat underside) that oversails the entrance corner and the
-    # northern part of the extended west wing, with a symmetric triangular hole and a support beam down its
-    # middle (photos 2016_01/04, DD_22; user review). LiDAR height ~19 m over the point.
-    zt, zb = 19.2, 18.6
-    T = Vector((-84.0, 21.0, zt))
-    P_n = Vector((-38.0, 19.2, zt))      # joins the north eyebrow
-    P_s = Vector((-72.0, -15.0, zt))     # south-west arm end over the west wing
-    P_se = Vector((-44.0, -15.0, zt))    # joins the south eyebrow
-    P_in = Vector((-38.0, 4.0, zt))      # inner corner over the main bar
-    d = ((P_n - T).normalized() + (P_s - T).normalized()).normalized()
-    pdir = Vector((-d.y, d.x, 0))
-    N, C = T + d * 13.0, T + d * 27.0
-    NL, NR = C + pdir * 5.5, C - pdir * 5.5
-    for P in (N, C, NL, NR):
-        P.z = zt
-    dn2 = Vector((0, 0, zt - zb))
-    for (a, b, c) in ((T, P_n, NL), (T, NL, N), (T, N, NR), (T, NR, P_s), (NL, P_n, P_in), (NL, P_in, C), (C, P_in, NR),
-                      (NR, P_in, P_se), (NR, P_se, P_s)):
-        red_tri(mb, a, b, c, dn2)
-    for (a, b) in ((T, P_n), (P_s, T), (P_se, P_s), (N, NL), (N, NR), (NL, C), (C, NR)):
-        red_edge(mb, a, b, dn2)
+    """The red Mayflower ACM roof is ONE continuous piece (user review): a ring around the main bar's flat top with
+    a flat underside everywhere, a top surface that falls toward the outer edge (LiDAR NDHM: ~20 m inside, lower
+    at the edge), a sharp NW point over the entrance and the west wing with a symmetric triangular hole and a
+    support beam down its middle, and a small east point just beyond the diagonal east wall."""
+    from mathutils.geometry import tessellate_polygon
+    z_bot, z_edge, z_in = 17.8, 18.4, 20.0
+    T = Vector((-84.0, 21.0))
+    outer = [T, Vector((54.5, 18.7)), Vector((87.5, -14.7)), Vector((-44.0, -15.0)), Vector((-72.0, -15.0))]
+    inner = [Vector((-60.0, 11.0)), Vector((52.0, 11.0)), Vector((68.0, -5.5)), Vector((-41.0, -5.5))]
+    d = ((outer[1] - T).normalized() + (outer[4] - T).normalized()).normalized()
+    pdir = Vector((-d.y, d.x))
+    N, C = T + d * 9.0, T + d * 24.0
+    hole = [N, C + pdir * 6.0, C - pdir * 6.0]
+
+    def dist_outer(p):
+        best = 1e9
+        for k in range(len(outer)):
+            a, b = outer[k], outer[(k + 1) % len(outer)]
+            ab = b - a
+            t = max(0.0, min(1.0, (p - a).dot(ab) / ab.length_squared))
+            best = min(best, (p - (a + ab * t)).length)
+        return best
+
+    def ztop(p):
+        return z_edge + (z_in - z_edge) * min(1.0, dist_outer(p) / 7.0)
+
+    def densify(loop, step=3.0):
+        out = []
+        for k in range(len(loop)):
+            a, b = loop[k], loop[(k + 1) % len(loop)]
+            n = max(1, int((b - a).length / step))
+            out += [a.lerp(b, i / n) for i in range(n)]
+        return out
+    loops = [densify(outer), densify(inner), densify(hole, 2.0)]
+    flat = [p for lp in loops for p in lp]
+    tris = tessellate_polygon([[Vector((p.x, p.y, 0)) for p in lp] for lp in loops])
+    for (i, j, k) in tris:
+        a, b, c = (Vector((flat[q].x, flat[q].y, ztop(flat[q]))) for q in (i, j, k))
+        tri = [a, b, c] if (b - a).cross(c - a).z >= 0 else [a, c, b]
+        mb.parts.setdefault("red", []).append(tri)                                    # sloped top
+        mb.parts.setdefault("red", []).append([Vector((p.x, p.y, z_bot)) for p in tri][::-1])  # flat soffit
+    for lp in loops:   # edge faces: outer fascia, inner edge, hole edges
+        for k in range(len(lp)):
+            a, b = lp[k], lp[(k + 1) % len(lp)]
+            mb.quad("red", [Vector((a.x, a.y, z_bot)), Vector((b.x, b.y, z_bot)), Vector((b.x, b.y, ztop(b))), Vector((a.x, a.y, ztop(a)))])
     # support beam down the middle of the hole (apex to base)
-    L = (C - N).to_2d().length
-    mb.box("red", N.to_2d() - pdir.to_2d() * 0.35, d.to_2d(), pdir.to_2d(), L, 0.7, zb - 0.6, zt)
+    Lb = (C - N).length
+    mb.box("red", N - pdir * 0.35, d, pdir, Lb, 0.7, z_bot - 0.7, z_bot)
     # red sloped panel seen through the hole on the building side (photos)
-    mb.quad("red", [NL - Vector((0, 0, 1.2)), NR - Vector((0, 0, 1.2)),
-                    NR.lerp(N, 0.45) - Vector((0, 0, 3.0)), NL.lerp(N, 0.45) - Vector((0, 0, 3.0))])
+    hl, hr = C + pdir * 6.0, C - pdir * 6.0
+    mb.quad("red", [Vector((hl.x, hl.y, z_bot - 0.6)), Vector((hr.x, hr.y, z_bot - 0.6)),
+                    Vector((*(hr.lerp(N, 0.4)), z_bot - 2.4)), Vector((*(hl.lerp(N, 0.4)), z_bot - 2.4))])
+    # infill between the main-bar wall tops and the soffit
+    flat_poly(mb, "roof", [(p.x, p.y) for p in inner], z_bot)
     # flat top with clerestory glass steps on both long sides
-    top = [(-60.0, 11.0), (52.0, 11.0), (68.0, -5.5), (-41.0, -5.5)]
+    top = [(p.x, p.y) for p in inner]
     flat_poly(mb, "roof", top, 21.6)
     for (a, b) in (((52.0, 11.0), (-60.0, 11.0)), ((-41.0, -5.5), (68.0, -5.5))):
         A, B = Vector(a), Vector(b)
         _, t, nn, Ls = seg_frame(A, B)
-        wall(mb, A, B, zin - 0.2, 21.6, 0.2, [(0.1, Ls - 0.1, zin, 21.4, "win")], mullions=int(Ls / 2.0), inset=0.08)
-    # mechanical units on the flat top and the east trusses/columns (orthophoto)
+        wall(mb, A, B, z_in - 0.2, 21.6, 0.2, [(0.1, Ls - 0.1, z_in, 21.4, "win")], mullions=int(Ls / 2.0), inset=0.08)
+    for (a, b) in (((-60.0, 11.0), (-41.0, -5.5)), ((68.0, -5.5), (52.0, 11.0))):
+        A, B = Vector(a), Vector(b)
+        wall(mb, A, B, z_bot, 21.6, 0.2)
     mb.box("unit", (40.0, -2.0), (1, 0), (0, 1), 9.0, 9.0, 21.6, 23.2)
-
 
 
 def floors(mb):
