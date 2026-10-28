@@ -1,0 +1,86 @@
+{
+  "building": "Circle Pines Cooperative House",
+  "fid": 761,
+  "address": "1000 David Ross Rd, West Lafayette, IN 47906",
+  "retrieved_utc": "2026-10-28",
+  "sources": [
+    {
+      "role": "primary footprint and identity",
+      "provider": "Purdue University, BuildingShapes FeatureServer layer 0",
+      "url": "https://maps.purdue.edu/arcgis/rest/services/Hosted/BuildingShapes/FeatureServer/0/query?where=FID%3D761&outFields=*&returnGeometry=true&outSR=3857&f=pjson",
+      "feature_id": 761,
+      "local_snapshot": "sources/purdue_gis_fid761_2026-10-28_3857.json",
+      "layer_metadata_snapshot": "sources/purdue_gis_layer0_metadata_2026-10-28.json",
+      "retrieved": "2026-10-28",
+      "source_crs": "EPSG:3857 (service reports wkid 102100, latestWkid 3857)",
+      "units": "layer geometryProperties reports meters",
+      "attributes_used": [
+        "BUILDING_N",
+        "ADDRESS",
+        "NUM_LEVELS",
+        "Extrution",
+        "Shape__Area",
+        "Shape__Length"
+      ],
+      "limitations": "Extrution field units/meaning are undocumented; not used as a measured height. NUM_LEVELS=1 is a source attribute, not an elevation survey."
+    },
+    {
+      "role": "current institutional identity and official house link",
+      "provider": "Purdue FSCL Cooperative Houses",
+      "url": "https://www.purdue.edu/fscl/councils/cooperatives/houses.php",
+      "retrieved": "2026-10-28",
+      "use": "Lists Circle Pines and links to circlepines.org; confirms organization identity, not facade geometry."
+    },
+    {
+      "role": "current address/use corroboration",
+      "provider": "Purdue BoilerLink",
+      "url": "https://boilerlink.purdue.edu/event/11698774",
+      "retrieved": "2026-10-28",
+      "use": "Purdue event listing names Circle Pines at 1000 David Ross Road; supports location/use, not facade geometry."
+    },
+    {
+      "role": "secondary footprint comparison",
+      "provider": "OpenStreetMap snapshot already in project source packet",
+      "url": "https://www.openstreetmap.org/way/301841609",
+      "local_snapshot": "sources/osm_way_301841609_2026-10-22.json",
+      "retrieved": "2026-10-22",
+      "source_crs": "OSM WGS84 coordinates transformed using the repository approximate local conversion",
+      "use": "Secondary spatial check only; IoU 0.734, Hausdorff 5.55 m, centroid offset 2.87 m. It is not treated as the authoritative building wall outline."
+    },
+    {
+      "role": "historical visual reference, not current elevation",
+      "provider": "Purdue University Libraries, Archives and Special Collections, Debris Yearbook",
+      "url": "https://earchives.lib.purdue.edu/digital/collection/debris/id/50711",
+      "image_url": "https://earchives.lib.purdue.edu/iiif/2/debris%3A50711/full/730%2C/0/default.jpg",
+      "local_snapshot": "sources/purdue_archives_circle_pines_1954_55_50711.jpg",
+      "retrieved": "2026-10-28",
+      "source_date": "1954-1955 Debris yearbook page titled Circle Pines",
+      "visual_content": "Group portrait at a building entry with covered porch and columns; the page associates the image with Circle Pines.",
+      "limitations": "No street address is given and continuity with the present FID 761 building is unverified. The image is retained as dated historic context only and is not used to claim current facade, roof, or materials. Rights statement is the archive's: user is responsible for copyright issues."
+    },
+    {
+      "role": "current visual evidence for one facade and approximate target match",
+      "provider": "Google Maps Street View",
+      "url": "https://www.google.com/maps/place/Circle+Pines/@40.4350711,-86.9250796,202a,75y,98.54h,90t/data=!3m7!1e1!3m5!1sytu8Bz_eEp2xCv9QeF0xRw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dytu8Bz_eEp2xCv9QeF0xRw%26yaw%3D98.54251!7i16384!8i8192",
+      "thumbnail_url": "https://streetviewpixels-pa.clients6.google.com/v1/thumbnail?cb_client=maps_sv.tactile&w=900&h=600&pitch=0&panoid=ytu8Bz_eEp2xCv9QeF0xRw&yaw=98.54251",
+      "panoid": "ytu8Bz_eEp2xCv9QeF0xRw",
+      "retrieved": "2026-10-28",
+      "source_date": "April 2026 as displayed in the Google Maps listing UI; date not legible in downloaded thumbnail",
+      "local_snapshot": "sources/google_streetview_panoid_ytu8Bz_eEp2xCv9QeF0xRw_2026-04.jpg",
+      "capture_context": "Camera point/heading from the supplied Maps URL: 40.4350711,-86.9250796, yaw 98.54251 degrees. It looks across the parking apron toward FID 761; camera is approximately 62.77 m from transformed GIS centroid, centroid bearing differs from heading by 7.93 degrees, and nearest footprint edge is 42.53 m away.",
+      "use": "Visual support for only the camera-facing facade: red-brown brick, two visible window bands, tall central glazed entry bay and shallow light canopy. Roof mostly obscured; height is an estimate; unseen elevations and interior are not inferred.",
+      "limitations": "Alignment uses project approximate campus-local transform and URL camera coordinates, not survey control or an independent panorama metadata API. No dimensions or exact facade spacing are measured."
+    }
+  ],
+  "facade_evidence": {
+    "status": "one camera-facing facade visually supported; other elevations unverified",
+    "notes": "Google Maps Street View pano ytu8Bz_eEp2xCv9QeF0xRw (April 2026 date shown in listing) looks across the apron toward FID 761. The target alignment is plausible by approximate camera-to-FID bearing/distance calculation. Visible cues: red-brown brick, two bands of windows, central vertical glazed entry bay and shallow canopy. Trees obscure most of the roof. The two visible bands conflict with GIS NUM_LEVELS=1; model height is estimated, not measured. No floor plan or upper interior source was found."
+  },
+  "coordinate_method": {
+    "source_geometry": "ArcGIS polygon in EPSG:3857",
+    "project_transform": "Inverse Web Mercator to longitude/latitude, then project repository approximate local conversion: X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0",
+    "local_frame": "campus coordinates in meters; Z up",
+    "uncertainty": "Approximate local conversion, not survey control."
+  },
+  "streetview_target_reconciliation": "streetview_target_reconciliation.json"
+}

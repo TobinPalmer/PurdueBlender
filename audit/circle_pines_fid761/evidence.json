@@ -1,0 +1,208 @@
+{
+  "building_name": "Circle Pines Cooperative House",
+  "fid": 761,
+  "address": "1000 David Ross Rd, West Lafayette, IN 47906",
+  "asset_path": "modular/buildings/massing_house_301841609_c6c9ac4.blend",
+  "asset_sha256": "1E2048AF786DD3724A92DACCA5E59BC9C4FD33025DA9239930B72028F067EAD2",
+  "source_record": "audit/circle_pines_fid761/source_record.json",
+  "retrieved_date": "2026-10-28",
+  "source_identity": {
+    "primary": "Purdue GIS BuildingShapes FeatureServer layer 0, FID 761; BUILDING_N=Circle Pines; ADDRESS=1000 David Ross Rd",
+    "corroboration": [
+      "Purdue FSCL cooperative houses page lists Circle Pines and links its official house website",
+      "Purdue BoilerLink event listing locates Circle Pines at 1000 David Ross Road"
+    ],
+    "status": "Purdue GIS identity/address and current Google Maps Circle Pines Street View target corroborated by approximate camera-to-FID alignment; exact building dimensions and unseen elevations remain uncertain."
+  },
+  "footprint": {
+    "source_feature": 761,
+    "source_crs": "EPSG:3857 (service WKID 102100/latestWkid 3857)",
+    "measurement_transform": "Inverse Web Mercator to lon/lat, then Purdue project approximate local conversion in modular/AGENTS.md; local coordinates are not survey control",
+    "geometry_source": "sources/purdue_gis_fid761_2026-10-28_3857.json",
+    "unique_vertices": 44,
+    "planar_bounds_m": {
+      "x": [
+        -929.1169,
+        -879.2618
+      ],
+      "y": [
+        801.15,
+        865.5415
+      ]
+    },
+    "approximate_dimensions_m": {
+      "x": 49.8551,
+      "y": 64.3915
+    },
+    "transformed_local_plan_area_m2": 1110.75,
+    "service_shape_area_value": 1920.28125,
+    "area_note": "Service Shape__Area is in Web Mercator meter units and is not ground area; transformed local planar area is reported separately.",
+    "wall_base_comparison": "All 44 GIS ring vertices used in source order. Fresh-open mesh wall-base maximum component error is 0.0000305 m from Blender single-precision vertex storage.",
+    "preview": "footprint_overlay.png"
+  },
+  "mass_and_facade": {
+    "source_NUM_LEVELS": 1,
+    "estimated_wall_height_m": 5.4,
+    "estimated_roof_cap_m": 0.35,
+    "estimated_total_height_m": 5.75,
+    "elevation_status": "estimated from apparent two visible window bands; not measured; conflicts with GIS NUM_LEVELS=1 and remains unresolved",
+    "roof_status": "mostly obscured by trees in current Street View; only conservative planar cap retained; roof form unverified",
+    "materials_status": "red-brown brick modeled only on the camera-facing facade visible in April 2026 Google Street View; other elevations remain neutral/unverified",
+    "facade_status": "one camera-facing facade interpreted from April 2026 Google Street View: two visible window bands, central vertical glazed entry bay and shallow light canopy; dimensions/spacing are visual estimates; unseen elevations unverified",
+    "unsupported_GIS_field": "Extrution=32 is preserved in the source snapshot but its units/meaning are undocumented, so it was not used as a height measurement."
+  },
+  "historical_visual_context": {
+    "source": "Purdue Debris yearbook 1954-1955, e-Archives item 50711",
+    "local_copy": "sources/purdue_archives_circle_pines_1954_55_50711.jpg",
+    "url": "https://earchives.lib.purdue.edu/digital/collection/debris/id/50711",
+    "retrieved": "2026-10-28",
+    "content": "The page titled Circle Pines shows a group portrait at a covered porch with columns.",
+    "limitation": "No building address; continuity with current FID 761 is unverified. No historic facade feature is applied to the current model."
+  },
+  "interior": {
+    "status": "unverified 3D schematic only",
+    "preview": "interior_cutaway_3d.png",
+    "layout_source": "schematic_layout.json generated from the GIS footprint polygon",
+    "notes": "One-level room zones, partitions, circulation, a short stair feature and generic furniture remain schematic and not as-built. No floor plan was found; upper interior and actual story count are unknown."
+  },
+  "secondary_comparison": {
+    "source": "OpenStreetMap way 301841609 snapshot, retrieved 2026-10-22",
+    "source_tags": {
+      "building": "school"
+    },
+    "method": "OSM WGS84 nodes transformed with the same repository approximate local conversion and compared to Purdue GIS footprint",
+    "intersection_over_union": 0.734,
+    "hausdorff_distance_m": 5.55,
+    "centroid_offset_m": 2.87,
+    "interpretation": "Secondary geometry is less congruent and has no Circle Pines name tag; Purdue GIS FID 761 remains the footprint source of record."
+  },
+  "fresh_open_validation": "fresh_open_validation.json",
+  "blender_version": "5.2.3 LTS",
+  "latest_fresh_open_validation": {
+    "date": "2026-10-28",
+    "result": "PASS",
+    "report": "fresh_open_validation.json",
+    "asset_sha256": "1E2048AF786DD3724A92DACCA5E59BC9C4FD33025DA9239930B72028F067EAD2",
+    "asset_modified": true,
+    "blender_version": "5.2.3 LTS",
+    "object_count": 1,
+    "vertex_count": 1000,
+    "face_count": 713,
+    "material_count": 14,
+    "source_ring_vertices": 44,
+    "max_error_gis_wall_base_xy_m": 3.05e-05,
+    "external_image_dependencies": 0
+  },
+  "visual_source_search_r4": {
+    "report": "visual_source_search_r4.md",
+    "result": "Current Google Maps Street View found and aligned approximately to FID 761; one visible facade modeled conservatively.",
+    "source": {
+      "provider": "Google Maps Street View",
+      "panoid": "ytu8Bz_eEp2xCv9QeF0xRw",
+      "capture_date_shown_in_listing": "April 2026",
+      "retrieved_date": "2026-10-28",
+      "maps_listing_url": "https://www.google.com/maps/place/Circle+Pines/@40.4350711,-86.9250796,202a,75y,98.54h,90t/data=!3m7!1e1!3m5!1sytu8Bz_eEp2xCv9QeF0xRw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dytu8Bz_eEp2xCv9QeF0xRw%26yaw%3D98.54251!7i16384!8i8192",
+      "saved_image": "sources/google_streetview_panoid_ytu8Bz_eEp2xCv9QeF0xRw_2026-04.jpg"
+    },
+    "target_alignment": "Camera-to-FID centroid about 62.77 m; centroid bearing 106.48 deg vs pano heading 98.54 deg (7.93 deg delta); nearest FID edge about 42.53 m. Uses approximate project local conversion; not survey control or independent pano metadata.",
+    "observable": "Red-brown brick facade, two visible window bands, central vertical glazed bay/entry, shallow light canopy, low parapet-like edge partly visible; roof substantially tree-obscured.",
+    "scope": "Only camera-facing GIS wall received facade features. Other elevations, detailed roof, dimensions and interior remain unverified/estimated."
+  },
+  "geometry_edits": [
+    "Retained all 44 vertices of the official FID 761 wall outline in source order.",
+    "Raised estimated wall height from 3.6 m to 5.4 m and cap from 0.25 m to 0.35 m (5.75 m total), based on apparent two visible window bands; not measured and in conflict with GIS NUM_LEVELS=1.",
+    "Added red-brown brick material only to the source-facing long facade.",
+    "Added two rows of four rectangular window assemblies, central vertical glazed entry bay and shallow light canopy, interpreted visually and not dimensionally surveyed.",
+    "Kept all unseen elevations neutral, the tree-obscured roof as a conservative planar cap, and interior geometry explicitly schematic.",
+    "Retained one-object export, stable collection/object names and no external image texture dependency."
+  ],
+  "independent_grade": {
+    "status": "PASS",
+    "score": 8.3,
+    "score_status": "R4 independent read-only exact-SHA grade passed the 8.0 threshold",
+    "current_candidate_sha256": "1E2048AF786DD3724A92DACCA5E59BC9C4FD33025DA9239930B72028F067EAD2",
+    "current_review_request": {
+      "revision": "R4 source-backed exterior and evidence update",
+      "requested_sha256": "1E2048AF786DD3724A92DACCA5E59BC9C4FD33025DA9239930B72028F067EAD2",
+      "handoff": "review_handoff.md",
+      "fresh_open_validation": "PASS",
+      "asset_modified": true,
+      "status": "PASS",
+      "score": 8.3
+    },
+    "history": [
+      {
+        "status": "fail",
+        "score": 6.78,
+        "sha256": "BB8F6BDE52311FEC32979C9525EC6A6EAE29206672ECE2F07B59CD16112C4EE4",
+        "report": "independent_grade_2026-10-28.md"
+      },
+      {
+        "status": "fail",
+        "score": 7.6,
+        "sha256": "ECD7341DDA0162B1935821B2739081B241378E4586C864CB0507A7CC049E134B",
+        "report": "independent_regrade_codex_r2_2026-10-28.md"
+      },
+      {
+        "status": "fail",
+        "score": 7.8,
+        "sha256": "D21277A85B16C4E6A271785280EE311104D19D7E489D9034E3D0F896267AD21E",
+        "report": "independent_regrade_codex_r3_2026-10-28.md"
+      },
+      {
+        "status": "pending",
+        "score": null,
+        "sha256": "1E2048AF786DD3724A92DACCA5E59BC9C4FD33025DA9239930B72028F067EAD2",
+        "report": "review_handoff.md"
+      },
+      {
+        "status": "pass",
+        "score": 8.3,
+        "sha256": "1E2048AF786DD3724A92DACCA5E59BC9C4FD33025DA9239930B72028F067EAD2",
+        "report": "independent_regrade_codex_r4_2026-10-28.md"
+      }
+    ],
+    "grade_report": "independent_regrade_codex_r4_2026-10-28.md",
+    "grade_result_json": "independent_regrade_codex_r4_2026-10-28.json",
+    "categories": [
+      {
+        "name": "Identity and provenance",
+        "score": 9.0,
+        "weight": 0.2
+      },
+      {
+        "name": "Plan geometry and placement",
+        "score": 8.5,
+        "weight": 0.25
+      },
+      {
+        "name": "Exterior silhouette and openings",
+        "score": 7.9,
+        "weight": 0.25
+      },
+      {
+        "name": "Materials and facade",
+        "score": 8.2,
+        "weight": 0.1
+      },
+      {
+        "name": "Interior and cutaway",
+        "score": 7.1,
+        "weight": 0.1
+      },
+      {
+        "name": "Presentation and technical",
+        "score": 8.6,
+        "weight": 0.1
+      }
+    ],
+    "remaining_limits": [
+      "Only one current facade is visually supported; other elevations remain unverified.",
+      "Camera-to-FID alignment is approximate and not survey-verified.",
+      "Roof and height remain estimated or unverified; GIS story count conflicts with two visible window bands.",
+      "Interior remains schematic without an as-built floor plan.",
+      "No independent parcel-to-GIS placement check was produced.",
+      "The whole-building oblique preview is distant; front elevation is the useful facade comparison."
+    ]
+  }
+}

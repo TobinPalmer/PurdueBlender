@@ -1,0 +1,58 @@
+{
+  "building": "Circle Pines Cooperative House",
+  "feature_id": 761,
+  "asset": "modular/buildings/massing_house_301841609_c6c9ac4.blend",
+  "asset_sha256": "ECD7341DDA0162B1935821B2739081B241378E4586C864CB0507A7CC049E134B",
+  "review_mode": "independent read-only exact-SHA review",
+  "review_date": "2026-10-28",
+  "blender_version": "5.2.3 LTS (from fresh_open_validation.json)",
+  "weights_percent": {
+    "identity_and_provenance": 20,
+    "plan_geometry_and_placement": 25,
+    "exterior_silhouette_and_openings": 25,
+    "materials_and_facade": 10,
+    "interior_and_cutaway": 10,
+    "presentation_and_technical": 10
+  },
+  "scores": {
+    "identity_and_provenance": 9.0,
+    "plan_geometry_and_placement": 9.4,
+    "exterior_silhouette_and_openings": 5.5,
+    "materials_and_facade": 5.5,
+    "interior_and_cutaway": 6.8,
+    "presentation_and_technical": 8.5
+  },
+  "weighted_total": 7.605,
+  "rounded_total": 7.6,
+  "threshold": 8.0,
+  "result": "FAIL",
+  "evidence_reviewed": [
+    "review_handoff.md",
+    "revision_report_r2.md",
+    "evidence.json",
+    "source_record.json",
+    "fresh_open_validation.json",
+    "exterior_preview.png",
+    "interior_cutaway_3d.png",
+    "schematic_interior_plan_r2.png",
+    "footprint_overlay.png"
+  ],
+  "strengths": [
+    "Purdue GIS FID 761 names Circle Pines at 1000 David Ross Rd; Purdue FSCL and BoilerLink corroborate identity/current use.",
+    "All 44 GIS ring vertices define the wall base; fresh-open reports 0.0000305 m maximum XY vertex error after local approximate projection.",
+    "The asset now contains tangible 3D schematic room floors, partitions, circulation, short steps and furnishings; the cutaway and plan clearly say not as-built.",
+    "Fresh-open is technically clean: one stable mesh object, no external image dependencies, and no preview cameras/lights."
+  ],
+  "limitations": [
+    "The current exterior preview remains a plain low mass with an unverified planar cap and no supported openings, entry, roof style, or facade materials; the source search found no attributable exterior photo/elevation.",
+    "GIS reports NUM_LEVELS=1; 3.6 m walls and 0.25 m cap are estimates.",
+    "The source-defined wall shell remains open along its 44 base boundary edges; the report qualifies this as a shell topology rather than a closed solid.",
+    "Interior rooms and circulation are schematic inserts generated from footprint geometry; no floor plan, room dimensions, room uses, second story, or stair destination is established.",
+    "The OSM secondary polygon is materially less congruent and is not treated as identity or primary geometry evidence."
+  ],
+  "revisions_needed_to_reach_8": [
+    "A directly attributable current exterior photo/elevation is needed before adding facade-specific geometry or materials; without one, the exterior will remain a neutral unverified placeholder and the exterior score cannot be raised materially.",
+    "If new attributable visual evidence appears, revise roof/cap form, material, entry and opening rhythm only to the level supported by that evidence.",
+    "Add source-derived interior detail only if a plan/photo emerges; otherwise retain the explicitly schematic layout."
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "building": "Circle Pines Cooperative House",
+  "feature_id": 761,
+  "asset": "modular/buildings/massing_house_301841609_c6c9ac4.blend",
+  "asset_sha256": "D21277A85B16C4E6A271785280EE311104D19D7E489D9034E3D0F896267AD21E",
+  "review_mode": "Independent read-only exact-SHA review",
+  "review_date": "2026-10-28",
+  "blender_version": "5.2.3 LTS (from fresh_open_validation.json)",
+  "weights_percent": {
+    "identity_and_provenance": 20,
+    "plan_geometry_and_placement": 25,
+    "exterior_silhouette_and_openings": 25,
+    "materials_and_facade": 10,
+    "interior_and_cutaway": 10,
+    "presentation_and_technical": 10
+  },
+  "scores": {
+    "identity_and_provenance": 9.0,
+    "plan_geometry_and_placement": 9.4,
+    "exterior_silhouette_and_openings": 5.8,
+    "materials_and_facade": 6.3,
+    "interior_and_cutaway": 6.9,
+    "presentation_and_technical": 8.7
+  },
+  "weighted_total": 7.79,
+  "rounded_total": 7.8,
+  "threshold": 8.0,
+  "result": "FAIL",
+  "evidence_reviewed": [
+    "review_handoff.md",
+    "revision_report_r3.md",
+    "evidence.json",
+    "source_record.json",
+    "visual_source_search_r3.md",
+    "fresh_open_validation.json",
+    "exterior_preview.png",
+    "interior_cutaway_3d.png",
+    "schematic_interior_plan_r2.png",
+    "footprint_overlay.png"
+  ],
+  "strengths": [
+    "Official GIS FID 761, FSCL, and BoilerLink establish identity and address.",
+    "All 44 GIS outline vertices are retained by construction; same-source error is about 0.0000305 m under local approximate projection.",
+    "R3 neutralized the unsupported high-frequency exterior finish and improved preview lighting.",
+    "The one-mesh asset fresh-opens cleanly with no external image dependencies.",
+    "A labeled 3D schematic interior is an improvement, with a clear not-as-built plan evidence image."
+  ],
+  "limitations": [
+    "The current exterior remains a low blank shell with an unsupported thin planar cap and no sourced entry, fenestration, roof style or cladding. No attributable current exterior image/elevation was found.",
+    "The 1954-55 yearbook porch visual is historic context only; continuity with current FID 761 is unverified and it cannot be used to model the current facade.",
+    "Height 3.85 m and all facade details are unverified/estimated; GIS NUM_LEVELS=1 and Extrution=32 do not establish full architecture.",
+    "Interior layout is schematic and not an as-built plan.",
+    "Source-footprint agreement is by construction and is not independent placement/survey validation."
+  ],
+  "asset_modified": false,
+  "shared_files_modified": false,
+  "report": "independent_regrade_codex_r3_2026-10-28.md"
+}
