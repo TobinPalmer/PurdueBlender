@@ -10,6 +10,7 @@
 | West wing S/W faces (limestone-framed two-storey windows, SW entrance with steps) | DD_24 | O (counts E) | |
 | West wing separate curved top floor + white roof | DD_24, 2016_01, Arconic 1, aerials | O (curve E) | Rectangle below; rounded W/SW corner on top. |
 | Main bar south curtain wall with sun-shade blades | 2016_02 | O (extent E) | x≈-44…-22, brick return east of it. |
-| Main bar north facade (Stadium Ave) | 2016_03 (oblique, foliage) | E | Punched paired windows on four floors assumed. |
-| Main bar east end / mechanical yard / E roof point | aerials only | U (facade) | |
-| SE wing | aerials only | U (facades) | Brick + glass top floor assumed. |
+| Main bar north facade (Stadium Ave) | Kawneer hero (cited), 2016_03 | O (counts E) | 34 m curtain wall east of the entrance corner, then punched brick. |
+| East end / east entrance / E roof point | user Street View screenshots (cited), ECN webcam 2009 (cited), LiDAR | O (dimensions E) | Inward glazed notch with doors under the east point; blank brick diagonal face with bands. |
+| SE wing | ECN webcam (cited), user Street View, LiDAR | O (counts E) | Brick, single windows, glass top floor, white overhang. |
+| Main bar south facade rear main entrance | user photos 1–2 | O (width E) | Full-height glass mid-facade with pale pilasters; curtain wall with blades by the west wing. |

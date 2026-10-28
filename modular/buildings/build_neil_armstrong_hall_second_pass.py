@@ -224,10 +224,13 @@ def mats():
 # Positions/heights from the lean-free 2017-2019 QL2 LiDAR height model (sources/na_ndhm_2018.*); walls set back
 # from the measured roof/eyebrow edges. See second_pass/ortho_trace_notes.md.
 BAR_S_Y = -13.0
+EAST_NOTCH = (72.0, -5.0)   # inner corner of the inward east entrance notch (Street View, user)
+REAR_GLASS_X = (2.0, 16.0)  # full-height rear (courtyard) main entrance mid-facade (user photo)
+NORTH_GLASS = 34.0   # north curtain-wall length east of the entrance corner (photo estimate)
 BAR_NW_Y = 17.0
 NOTCH_CORNER = (-60.0, 3.0)    # re-entrant entrance corner under the NW roof point (user review + photos)
 ENTRY_GLASS_X0 = -66.0         # west end of the glazed entrance bay in the west wing's north face
-BAR = [(-44.0, BAR_S_Y), (85.0, BAR_S_Y), (53.0, BAR_NW_Y), (-60.0, BAR_NW_Y), (-60.0, 3.0), (-44.0, 3.0)]  # east end follows the diagonal outline under the east point (user review; LiDAR)
+BAR = [(-44.0, BAR_S_Y), (EAST_NOTCH[0], BAR_S_Y), EAST_NOTCH, (76.5, EAST_NOTCH[1]), (53.0, BAR_NW_Y), (-60.0, BAR_NW_Y), (-60.0, 3.0), (-44.0, 3.0)]  # east end follows the diagonal outline under the east point (user review; LiDAR)
 SW_RECT = (-80.0, -31.0, -44.0, 3.0)   # west face length per entrance photos (user review)   # west wing: plain rectangle (x0, y0, x1, y1)
 SW_TOP_CTRL = (-82.5, -34.0)   # Bezier control of the separate curved top floor (rounded W/SW corner)
 SW_TOP_S_INSET = 18.0          # where the curve meets the straight south side of the top floor
@@ -276,32 +279,71 @@ def build_bar(mb):
         _, t, nn, L = seg_frame(A, B)
         if L < 1.0:
             continue
-        if nn.x > 0.5:
-            # diagonal east end under the east roof point: glazed entrance bay with doors and a Sea Wolf canopy
+        if nn.x > 0.5 and nn.y > 0.3:
+            # diagonal east face: mostly blank brick with limestone bands and a glazed slot by the notch
+            ops = [(0.6, 2.4, 0.4, BAR_H - 0.6, "win")]
+            ops += [(o[0] + 5.0, o[1] + 5.0, o[2], o[3]) for o in punched(L - 6.0, FLOORS[1:3], pitch=6.0, pair=False, w=1.0)]
+            wall(mb, A, B, 0.0, BAR_H, 0.4, ops, mullions=0)
+            band(mb, A, B, 0.0, 1.0, proj=0.10, ext=0.02)
+            band(mb, A, B, 8.1, 8.35, proj=0.06, ext=0.02)
+            band(mb, A, B, 12.1, 12.35, proj=0.06, ext=0.02)
+            band(mb, A, B, 15.8, 16.2, proj=0.08, ext=0.02)
+            continue
+        if (nn.x > 0.9 or nn.y > 0.9) and abs(A.x - EAST_NOTCH[0]) < 0.1 or (nn.y > 0.9 and abs(A.y - EAST_NOTCH[1]) < 0.1):
+            # inward notch faces: full-height glass, doors in the east-facing face
+            ops = [(0.1, L - 0.1, 4.0, BAR_H - 0.3, "win")]
+            if nn.x > 0.9:
+                ops += [(0.4, L - 0.4, 0.0, 3.3, "door")]
+                mb.box("seawolf", A + t * 0.2 + nn * 0.05, t, -nn, L - 0.4, 0.35, 3.3, 4.0)
+            else:
+                ops += [(0.1, L - 0.1, 0.4, 3.8, "win")]
+            wall(mb, A, B, 0.0, BAR_H, 0.25, ops, mullions=max(1, int(L / 1.5)) - 1, inset=0.12)
+            for z in [4.0, 8.2, 12.2]:
+                mb.box("frame", A + nn * 0.02, t, -nn, L, 0.1, z, z + 0.08)
+            continue
+        if False and nn.x > 0.5:
+            # (superseded) diagonal east end under the east roof point: glazed entrance bay with doors and a Sea Wolf canopy
             # (location from the orthophoto paths converging under the point; facade unseen in photos)
-            c = L / 2
-            ops = [o for o in punched(L, FLOORS) if o[1] < c - 5.0 or o[0] > c + 5.0]
-            ops += [(c - 4.5, c + 4.5, 4.4, BAR_H - 1.2, "win"), (c - 4.5, c + 4.5, 0.0, 3.3, "door")]
-            wall(mb, A, B, 0.0, BAR_H, 0.4, ops, mullions=5)
-            bar_bands(mb, A, B)
-            mb.box("seawolf", A + t * (c - 5.5), t, nn, 11.0, 3.2, 3.5, 4.1)
+            # east end: full-height glazed entrance wall along the diagonal (ECN Physics webcam, 2009)
+            c = L * 0.4
+            ops = [(0.1, L - 0.1, 4.0, BAR_H - 0.3, "win"), (0.1, c - 3.5, 0.4, 3.8, "win"),
+                   (c + 3.5, L - 0.1, 0.4, 3.8, "win"), (c - 3.0, c + 3.0, 0.0, 3.3, "door")]
+            wall(mb, A, B, 0.0, BAR_H, 0.3, ops, mullions=int(L / 1.6), inset=0.12)
+            for z in [4.0, 8.2, 12.2]:
+                mb.box("frame", A + nn * 0.02, t, -nn, L, 0.12, z, z + 0.1)
+            mb.box("seawolf", A + t * (c - 4.0), t, nn, 8.0, 2.4, 3.6, 4.0)
             continue
         if nn.y > 0.9:
-            gw = 7.0  # glazed return at the west end next to the entrance corner
+            gw = NORTH_GLASS  # full-height curtain wall from the entrance corner eastward (Kawneer/AGM photos)
             ops = [o for o in punched(L, FLOORS) if o[1] < L - gw - 0.6]
             ops.append((L - gw, L - 0.05, 0.4, BAR_H - 0.4, "win"))
-            wall(mb, A, B, 0.0, BAR_H, 0.4, ops, mullions=4)
-            bar_bands(mb, A + (B - A).normalized() * 0.0, A + (B - A).normalized() * (L - gw))
+            wall(mb, A, B, 0.0, BAR_H, 0.4, ops, mullions=int(gw / 1.6))
+            bar_bands(mb, A, A + t * (L - gw))
+            for z in [4.2, 8.2, 12.2]:
+                mb.box("frame", A + t * (L - gw) + nn * 0.02, t, -nn, gw, 0.12, z, z + 0.1)
+            for k in range(4):  # pale vertical fins at the east end of the curtain wall
+                u = L - gw + 0.8 + k * 2.2
+                mb.box("lime", A + t * u + nn * 0.05, t, nn, 0.6, 1.4, 0.0, 12.5)
         elif nn.y < -0.9 and abs(A.y - BAR_S_Y) < 0.1:
             # south face west->east pieces: curtain wall (separate), blank brick return, punched brick,
             # then the SE wing abuts (hidden)
             y = A.y
-            for x0, x1, kind in ((CURTAIN_X[1], -15.0, "blank"), (-15.0, 37.0, "punched"), (69.0, 85.0, "punched")):
+            for x0, x1, kind in ((CURTAIN_X[1], -15.0, "blank"), (-15.0, REAR_GLASS_X[0], "punched"),
+                                 (REAR_GLASS_X[0], REAR_GLASS_X[1], "glass"), (REAR_GLASS_X[1], 37.0, "punched"),
+                                 (69.0, EAST_NOTCH[0], "blank")):
                 S0, S1 = Vector((x1, y)), Vector((x0, y))  # CCW order runs east->west on the south face
                 if (B - A).x > 0:
                     S0, S1 = S1, S0
                 LL = (S1 - S0).length
-                wall(mb, S0, S1, 0.0, BAR_H, 0.4, [] if kind == "blank" else punched(LL, FLOORS))
+                if kind == "glass":
+                    wall(mb, S0, S1, 0.0, BAR_H, 0.3, [(0.1, LL - 0.1, 4.2, BAR_H - 0.4, "win"), (0.1, LL - 0.1, 0.4, 3.9, "win"),
+                                                      (LL / 2 - 2.5, LL / 2 + 2.5, 0.0, 3.3, "door")], mullions=int(LL / 1.6), inset=0.12)
+                    for z in [4.2, 8.2, 12.2]:
+                        mb.box("frame", S0 - Vector((0, 0.02)), (S1 - S0).normalized(), Vector((0, 1)), LL, 0.1, z, z + 0.08)
+                    for xx in (min(S0.x, S1.x) - 0.6, max(S0.x, S1.x)):   # pale pilaster frame (photo)
+                        mb.box("lime", (xx, BAR_S_Y - 0.5), (1, 0), (0, 1), 0.6, 0.5, 0.0, BAR_H)
+                    continue
+                wall(mb, S0, S1, 0.0, BAR_H, 0.4, [] if kind == "blank" else punched(LL, FLOORS, pitch=3.0, pair=False, w=1.0))
                 bar_bands(mb, S0, S1)
         # remaining west-side edges are enclosed by the atrium / SW wing
 
@@ -438,7 +480,7 @@ def build_wing(mb, poly, style="se"):
         _, t, nn, L = seg_frame(A, B)
         if L < 0.5 or (nn.y > 0.9 and abs(A.y - BAR_S_Y) < 0.3):
             continue
-        wall(mb, A, B, 0.0, WING_BRICK, 0.4, punched(L, [(1.2, 3.4), (5.6, 7.8), (10.0, 12.2)], pitch=4.0))
+        wall(mb, A, B, 0.0, WING_BRICK, 0.4, punched(L, [(1.3, 3.1), (5.1, 6.9), (8.9, 10.7)], pitch=3.4, pair=False, w=1.1))
         wing_bands(mb, A, B)
         S0, S1 = A - nn * 0.6, B - nn * 0.6
         wall(mb, S0, S1, WING_BRICK + 0.15, WING_TOP, 0.25, [(0.05, L - 0.05, WING_BRICK + 0.6, WING_TOP - 0.35, "win")],

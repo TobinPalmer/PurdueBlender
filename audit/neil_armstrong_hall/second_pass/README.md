@@ -15,4 +15,4 @@ Builder: [`modular/buildings/build_neil_armstrong_hall_second_pass.py`](../../..
 | Rev | Asset SHA-256 | Independent score | Review |
 | --- | --- | --- | --- |
 | r0 (first pass) | `d8c78374b047fa1248d6d304db0cba1e7f39ff97d133ccc06d774eabf7558bf7` | — (first-pass 8.0, other rubric) | `../../neil_armstrong_hall_refine/INDEPENDENT_REVIEW_R12_9.md` |
-| r1 | `f0390c40de86ca6066a145451f493b577fb854714f9a8a7f3d0e3baa88d5c8d6` | pending | `review_r01/` |
+| r1 | `4e03dcb057a6b6d018e8d81c3be03b7d2fd637140dc9571df1294453b3fa1eff` | pending | `review_r01/` |
