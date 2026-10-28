@@ -1,0 +1,72 @@
+"""Independent evidence-based exterior evaluation. Run with standard Python.
+Awards are maximum minus individual observed/unsupported deductions, not target fitting.
+No asset mutation, no score credit for GIS, mesh count, or hidden interiors.
+"""
+import json,hashlib,datetime
+from pathlib import Path
+from decimal import Decimal
+D=Path(__file__).resolve().parent
+BASE=D.parent
+ASSET=BASE/'detail_color_r04/candidate.blend'
+SHA='7c608ff383548bfb2159fba7734d4cf461813f06ab024117a7d3201d4ba045fb'
+def deduction(points,reason,sources,views):
+    return {'points':str(points),'reason':reason,'source_citations':sources,'model_views':views}
+def criterion(id,name,maximum,positive,deductions):
+    awarded=Decimal(str(maximum))-sum((Decimal(d['points']) for d in deductions),Decimal(0))
+    return {'id':id,'name':name,'maximum':float(maximum),'awarded_points':float(awarded),'supported_features':positive,'citations':sorted(set(c for d in deductions for c in d['source_citations']+d['model_views'])),'deductions':deductions}
+def evaluate():
+    assert hashlib.sha256(ASSET.read_bytes()).hexdigest()==SHA
+    saved=json.loads((D/'independent_saved_inspection.json').read_text())
+    assert saved['asset_sha256']==SHA and saved['reopened']
+    source=lambda s:'sources/'+s
+    model=lambda s:'detail_color_r04/renders/'+s+'.png'
+    own=lambda s:'review_r04/'+s+'.png'
+    criteria=[
+      criterion('windows','Window/opening placement, counts, rhythm, proportions, frames and glazing divisions',3.0,
+        ['East pavilion: three upper groups, each three columns by two rows; two flanking segmental lower openings, each two columns with three horizontal levels; central door and two basement windows. These counts match the clear front photographs.',
+         'West: nine upper groups and nine narrow middle openings; three upper groups at north/door end are triple lights and remaining six double lights. Eight basement windows plus the rear door. Broad rhythm supported by elevated 2016 photograph and 2026 street views.',
+         'North model has five main-body bays plus two pavilion-return arches; south repeats five plus two. These are model counts, not full source verification. East wings have three upper groups on each side; vegetation limits full confirmation.'],[
+        deduction('.30','Unobstructed opening schedule is absent for south, pavilion returns and portions of east wings; branch-covered north bays also retain uncertainty. Repetition across these faces cannot receive full supported credit.', ['detail_color_r04/README.md',source('color_southwest_apr2026.png'),source('streetview_north_aug2019.png'),source('haas_hall_today_2017.jpg')],[model('south'),model('north'),model('east')]),
+        deduction('.15','West basement window immediately south of rear door is visibly too wide/squat relative to the photographed near-square two-by-two opening. Upper paired openings also read broad and shallow relative to the close view; dimensions need perspective-matched checking rather than a common width schedule.',[source('color_west_entry_apr2026.png'),source('streetview_university_entry_apr2026.png')],[model('rear_entry'),own('west_entry_eye')]),
+        deduction('.15','Rear door transom is too shallow in the saved model and retains a generic crossbar arrangement. Photo shows a substantially deeper gridded transom above the two door leaves. Confirm actual grid before remodeling.',[source('color_west_entry_apr2026.png'),source('streetview_university_entry_apr2026.png')],[model('rear_entry'),own('west_entry_eye')])]),
+      criterion('signature','Signature architecture: arches, entrances, columns and ornament',2.5,
+        ['Recessed narrow oak door, layered segmental portal, flanking keyed arches, quoined stone piers, paired lanterns, solid stair cheeks, north service door/alarm, rear light and camera are present and recognizable.'],[
+        deduction('.23','Front frieze/plaque and upper pier reliefs remain mostly blank rectangular proxies. Photographs show incised/relief ornament and a richer molded stone composition. Do not invent unreadable lettering; obtain adequate detail or preserve explicit uncertainty.',[source('user_front_detail_2026-10-28.png'),source('purdue_events_front.jpg')],[model('front_detail'),own('east_eye_oblique')]),
+        deduction('.17','Continuous stepped stone band above and around upper windows, including central crown blocks and small lower support blocks, is simplified to isolated rectangular frames plus thin strips; eave brackets are generic. This loses the characteristic linked cornice/window-head profile on both front and west.',[source('user_front_detail_2026-10-28.png'),source('streetview_west_upper_apr2026.png')],[model('front_detail'),model('west_windows'),own('west_entry_eye')]),
+        deduction('.15','Rear entry approach omits the photographed step run along the south retaining cheek; model is a simple channel with symmetrical cheeks. Front handrails also run along outer sides, whereas clear front photograph shows the paired central/offset rail arrangement. Verify and match both entry layouts within building boundary.',[source('streetview_university_entry_apr2026.png'),source('user_front_detail_2026-10-28.png')],[own('west_entry_eye'),own('northwest_eye'),own('east_eye_oblique')])]),
+      criterion('massing','Overall proportions, wings/setbacks, roof form and silhouette',2.0,
+        ['Large hipped main block and lower projecting entrance pavilion are recognizable across elevations and obliques. GIS-derived wall outline supports wings/setbacks only; it earns no facade points.'],[
+        deduction('.15','No measured height, calibrated elevation or true aerial/roof source verifies ridge heights, pavilion/main roof relationship or concealed roof junction. Elevated west photo supports broad hip silhouette but cannot verify entire roof.',[source('maps_side_jay_discovery_2016.png'),'detail_color_r04/README.md'],[model('roof'),model('southeast'),own('west_elevated')]),
+        deduction('.10','Roof reads as an uninterrupted flat hip sheet without the photographed ridge/tile-edge profile and small rooftop penetrations visible in 2016 elevated source. Present-day survival of the small penetrations needs verification, so they are not declared definitely missing in 2026.',[source('maps_side_jay_discovery_2016.png')],[own('west_elevated'),model('roof')])]),
+      criterion('materials','Material/color fidelity, surface scale, trim and facade depth',1.5,
+        ['Muted red brick, pale limestone, dark eaves, olive/bronze frames and honey oak door are in the correct broad material families. Both standard and daylight variants were inspected; exposure improvement is not treated as material accuracy.'],[
+        deduction('.15','Roof procedural pattern reads as a mottled rectangular masonry grid rather than the clearly horizontal overlapping clay-tile courses in the elevated source; tile profile/relief is absent.',[source('maps_side_jay_discovery_2016.png'),'detail_color_r04/material_palette.json'],[own('west_elevated'),model('roof')]),
+        deduction('.12','Glazing is uniformly opaque dark gray-green and the same frame treatment repeats on the basement and rear door. Photos show more distinct metallic rear-door framing, varied reflected glazing, and a stronger dark/light frame separation. Color is judged qualitatively because source images are uncalibrated.',[source('color_west_entry_apr2026.png'),source('user_front_detail_2026-10-28.png')],[model('rear_entry'),model('front_detail'),own('west_entry_eye')]),
+        deduction('.08','Stone coursing, shallow ornament and brick variation remain overly uniform at close distance. Photographed limestone joints and projecting trim carry a more differentiated depth profile; exact colorimetry remains unverified.',[source('user_front_detail_2026-10-28.png'),source('color_northwest_apr2026.png')],[model('front_detail'),own('northwest_eye')])]),
+      criterion('consistency','Whole-building visual consistency across all elevations and matched oblique views',1.0,
+        ['All four principal model elevations, both supplied elevated obliques, roof, close details and four independent perspective views show a coherent saved revision. No geometry credit for hidden schematic interior or polygon/object counts.'],[
+        deduction('.20','Source breadth is inadequate for whole-building acceptance: real evidence is concentrated at front and west with incomplete south/east-return coverage; a true aerial and several low/near return viewpoints are absent. Repeated views from one panorama are not independent positions.',[source('reference_index.json'),'review_r04/viewpoint_coverage.json'],[model('south'),model('southeast'),model('roof')]),
+        deduction('.10','Supplied review set is entirely orthographic and its obliques use camera height 38 m. Independent eye-level perspective views expose entry/depth discrepancies and remain approximate because reference camera calibration is unavailable.', ['detail_color_r04/render_settings.json','detail_color_r04_standard/render_settings.json'],[own('east_eye_oblique'),own('west_entry_eye'),own('northwest_eye')])])]
+    wall=[o for o in saved['objects'] if o['name'].startswith('HAAS_Rebuild_Wall_')]
+    bounds=[[min(o['bbox_world'][a][0] for o in wall),max(o['bbox_world'][a][1] for o in wall)] for a in range(2)]
+    gis=json.loads((BASE/'sources/haas_official_footprint_fid233.json').read_text())
+    ring=gis['building']['rings_xy_m'][0];origin=(-214.84998321533203,-64.0199966430664)
+    target=[[min(p[a]-origin[a] for p in ring),max(p[a]-origin[a] for p in ring)] for a in range(2)]
+    err=max(abs(bounds[a][b]-target[a][b]) for a in range(2) for b in range(2))
+    gates={
+      'correct_identity':{'pass':True,'evidence':'Purdue official place photograph, GIS FID 233, recognizable front portal and west rhythm agree with Felix Haas Hall.'},
+      'adequate_exterior_reference_coverage':{'pass':False,'evidence':'Missing unobstructed south, incomplete pavilion/east returns, no true roof/aerial source; see viewpoint_coverage.json.'},
+      'no_unresolved_material_exterior_discrepancies':{'pass':False,'evidence':'Opening proportions, rear transom/approach, front ornament/cornice, tile expression remain unresolved.'},
+      'saved_file_reopen':{'pass':True,'evidence':'Independent Blender 5.2.3 background reopen plus four renders; original hash unchanged.'},
+      'expected_collection_export':{'pass':saved['collection']=='Asset_felix_haas_hall','evidence':saved['collection']},
+      'portable_dependencies':{'pass':not saved['libraries'] and not saved['unpacked_images'],'evidence':'No linked libraries or unpacked external images on independent reopen.'},
+      'no_regression_to_verified_footprint_orientation_scale':{'pass':err<.0001 and all(o['scale']==[1,1,1] for o in wall),'evidence':{'method':'Saved structural-wall XY extent against official FID 233, with preserved manifest origin; excludes trim/stairs/roof. Not a survey or master-placement verification.','saved_local_xy_bounds_m':bounds,'gis_local_xy_bounds_m':target,'max_extent_difference_m':err,'wall_scale':'unit','axes':'X east, Y north, Z up'}},
+      'master_integration':{'pass':False,'applicable_to_visual_acceptance':False,'status':'Not evaluated; separate Tobin/coordinator responsibility; no bonus points.'}}
+    score=sum((Decimal(str(c['awarded_points'])) for c in criteria),Decimal(0))
+    names=['east','west','north','south','southeast','northwest','roof','west_windows','entrance','front_detail','rear_entry']
+    reviewed=[{'path':tag+'/renders/'+n+'.png','asset_sha256':SHA,'hash_basis':tag+'/render_settings.json','inspected':True} for tag in ['detail_color_r04','detail_color_r04_standard'] for n in names]
+    reviewed.extend({'path':own(n),'asset_sha256':SHA,'hash_basis':'review_r04/additional_view_settings.json','inspected':True} for n in ['east_eye_oblique','west_entry_eye','northwest_eye','west_elevated'])
+    findings=[{'id':'F'+str(i+1),'facade_feature':c['name'],'required_correction':d['reason'],'source_citations':d['source_citations'],'model_views':d['model_views']} for i,(c,d) in enumerate((c,d) for c in criteria for d in c['deductions'])]
+    return {'building_id':'felix_haas_hall','revision':'detail_color_r04','asset_path':str(ASSET),'asset_sha256':SHA,'reviewer':'Independent second-pass visual review agent /root/haas_r04_review; did not author or edit asset','reviewed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'score':float(score),'score_exact_decimal':str(score),'max_score':10,'criteria':criteria,'evidence':{'source_index':'sources/reference_index.json','directly_inspected_images':[str(p.relative_to(BASE)).replace('\\','/') for p in (BASE/'sources').iterdir() if p.suffix.lower() in ['.png','.jpg']],'saved_reopen':'review_r04/independent_saved_inspection.json','coverage_log':'review_r04/viewpoint_coverage.json','prior_score_consultation':'Current r04 visually assessed before any earlier review results were opened. No previous evaluator opened or reused. README historical score mention was disregarded.','no_modeler_proposed_score':True,'preview_approval':'Coordinator reports user approved preview and proceeded to Physics. This is not an explicit numeric threshold waiver.'},'reviewed_views':reviewed,'findings':findings,'uncertainties':['All dimensions from photographs are proportional estimates, not surveyed measurements.','Source dates vary: 2016 elevated roof view versus 2026 street views; small roof details may have changed.','Full south/east-return and branch-screened north opening schedules remain unverified.','Camera heights, focal lengths and precise distances of most real photos are unknown; new model cameras approximate view class only.','Source images are uncalibrated for material reflectance and color.','Master integration and campus context not inspected.'],'gates':gates,'acceptance_threshold':9.9,'threshold_approval':None,'accepted':score>=Decimal('9.9') and all(v['pass'] for v in gates.values() if v.get('applicable_to_visual_acceptance',True))}
+if __name__=='__main__':
+    result=evaluate();(D/'evaluation.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'score':result['score'],'score_exact_decimal':result['score_exact_decimal'],'accepted':result['accepted'],'asset_sha256':result['asset_sha256'],'gates':{k:v['pass'] for k,v in result['gates'].items()}},indent=2))
