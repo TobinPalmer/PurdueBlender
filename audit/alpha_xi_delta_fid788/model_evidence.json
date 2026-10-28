@@ -2,7 +2,7 @@
   "building": "Alpha Xi Delta",
   "fid": 788,
   "asset": "modular/buildings/massing_house_301841248_fe939c7.blend",
-  "asset_sha256": "add1d794c1b973ba330eebb72da09122188600da8e3f5a19fad7a4e107114028",
+  "asset_sha256": "2F863554345DD260E2708F50225CFFD595B8C55A18E8C49E38B620698B4E30B7",
   "source_record": {
     "provider": "Purdue University official BuildingShapesZip4 ArcGIS FeatureServer",
     "feature_layer": "0",
@@ -22,7 +22,8 @@
       "Shape__Length": 169.62955618896558,
       "Floorplans": "G:\\GIS\\web_pages\\html_pages\\SOAXD.html"
     },
-    "source_date": "Not supplied in returned record"
+    "source_date": "Not supplied in returned record",
+    "identity_assessment": "Direct source identity: official Purdue GIS FID 788 is named Alpha Xi Delta at 519 University St. This is corroborated by the official Purdue Panhellenic chapter page and the 2008 Purdue recruitment photo in Wikimedia Commons."
   },
   "identity_assessment": "Strong direct identity support: FID 788 is named Alpha Xi Delta and address 519 University St; official chapter page and recruitment photo independently show the Purdue Alpha Xi Delta chapter house.",
   "coordinate_method": {
@@ -40,12 +41,12 @@
     },
     "candidate_structural_footprint_bounds_m": {
       "x": {
-        "min": -297.6089,
-        "max": -274.1079
+        "min": -297.4689795057206,
+        "max": -273.8234080238641
       },
       "y": {
-        "min": 241.6119,
-        "max": 269.2498
+        "min": 241.977485598959,
+        "max": 269.75422494507484
       }
     },
     "source_bbox_dimensions_m": {
@@ -53,39 +54,70 @@
       "y": 27.776739346115846
     },
     "candidate_bbox_dimensions_m": {
-      "x": 23.501000000000033,
-      "y": 27.637900000000002
+      "x": 23.645599365234375,
+      "y": 27.7767333984375
     },
     "bbox_dimension_differences_m": {
-      "x": -0.145,
-      "y": -0.139
+      "x": 2.8e-05,
+      "y": -6e-06
     },
-    "projected_GIS_shoelace_area_m2": 528.771,
-    "candidate_footprint_shoelace_area_m2": 530.353,
-    "candidate_to_GIS_area_delta_percent": 0.299,
-    "method_note": "Area is shoelace from the provided GIS ring after the project-local approximation. GIS Shape__Area is reported separately in provider units and not treated as m\u00b2. The source and candidate boundaries are close in overall extent; the mesh uses a simplified 16-vertex outline versus a 24-vertex GIS ring."
+    "projected_GIS_shoelace_area_m2": 528.7713579389019,
+    "candidate_footprint_shoelace_area_m2": 528.7716664178297,
+    "candidate_to_GIS_area_delta_percent": 5.83388118762833e-05,
+    "method_note": "Exact boundary coincidence is by construction because candidate vertices were directly transformed from this same GIS ring; this is not independent validation. Projection is local approximate, not surveyed; outline describes GIS footprint and is not proof of all structural wall positions.",
+    "perimeter_m": {
+      "source": 129.0213305990693,
+      "candidate": 129.02139945661438,
+      "difference": 6.885754507379716e-05
+    },
+    "centroid_xy_m": {
+      "source": [
+        -285.25084088880504,
+        255.5050904621373
+      ],
+      "candidate": [
+        -285.2508408434049,
+        255.5050839160249
+      ],
+      "candidate_minus_source": [
+        4.540015652310103e-08,
+        -6.546112416572214e-06
+      ]
+    },
+    "pca_axis_deg_from_east": {
+      "source": 154.93614541918544,
+      "candidate": 154.93619746145313,
+      "difference_degrees": 5.2042267697061106e-05
+    },
+    "max_symmetric_vertex_distance_m": 1.568999916108175e-05,
+    "footprint_overlay": "footprint_overlay.svg"
   },
   "visual_sources": [
     {
       "provider": "Purdue Panhellenic Council",
       "url": "https://www.purduepanhellenic.com/cost/alpha-xi-delta",
       "retrieved_at_utc": "2026-10-28",
-      "local_copy": "facade_reference_1.png",
-      "supports": "Chapter name/Alpha Eta identification, chapter sign and current exterior glimpse with brick lower story, Tudor-style upper facade and two roof dormers. Image is a web-page collage, not a measured elevation."
+      "local_copy": "facade_reference_current.png",
+      "supports": "Official chapter page image collage with glimpses of the current house, Tudor upper facade, dark roof dormers and chapter identity/sign; not a measured elevation.",
+      "image_capture_date": "2026-03-10 (date included in official screenshot filename on chapter page; page retrieval 2026-10-28)"
     },
     {
       "provider": "Wikimedia Commons",
       "url": "https://commons.wikimedia.org/wiki/File:Alpha_Xi_Delta_sorority_rush.png",
       "retrieved_at_utc": "2026-10-28",
-      "local_copy": null,
-      "supports": "Purdue recruitment image at the house; supporting identity/entry context only, not dimensional evidence."
+      "local_copy": "facade_reference_2008.png",
+      "supports": "Purdue recruitment scene at the chapter house; facade and entry context, not dimensional evidence.",
+      "photographer": "Huw Williams (Huwmanbeing)",
+      "image_capture_date": "2008-09-07",
+      "camera_location_and_heading": "40.429528, -86.916583; heading 310 degrees, looking northwest from University Street (page metadata)"
     },
     {
       "provider": "Two Tulips Boutique, Courtney Day house-art product page",
       "url": "https://twotulips.com/products/purdue-sorority-custom-house-drawing",
       "retrieved_at_utc": "2026-10-28",
       "local_copy": "illustrative_house_art.jpg",
-      "supports": "Supplementary stylized view explicitly naming 519 University Street; used only to corroborate Tudor/brick composition, dormers and entry/stair treatment. Not an authoritative survey/photo."
+      "supports": "Supplementary stylized view naming 519 University Street; corroborates Tudor/brick composition, dormers and entry only. Not authoritative or measured.",
+      "image_capture_date": "Unknown; retrieved 2026-10-28"
     },
     {
       "provider": "City of West Lafayette permit reports",
@@ -98,27 +130,44 @@
     }
   ],
   "model_edits": [
-    "Preserved stable scene Building_massing_house_301841248_fe939c7, collection Asset_massing_house_301841248_fe939c7, object House_301841248 and campus-coordinate footprint frame.",
-    "Rebuilt stable House_301841248 as the lower brick story over the existing 16-vertex footprint; added an estimated upper Tudor/plaster story, dark pitched roof with two dormers, windows, trim, entry porch/steps, chapter signage and materials.",
-    "Added interior floor plates, generic partitions, stairs and common-area/upper-room furniture as schematic visualization only. These are not from a recovered floor plan.",
-    "Added dedicated preview camera, lights and backdrop outside the named asset collection; no external image texture dependencies."
+    "Preserved stable scene Building_massing_house_301841248_fe939c7, collection Asset_massing_house_301841248_fe939c7, root object House_301841248, and campus-coordinate frame.",
+    "Rebuilt the stable lower-shell mesh from all 24 unique GIS FID 788 polygon vertices using the project-local approximate conversion; boundary agreement in the overlay is by construction, not an independent survey check.",
+    "Added estimated brick lower story, cream Tudor upper story with dark timber, charcoal gabled roof wings, three front dormers, aligned window assemblies, entry/steps and chapter sign.",
+    "Added three schematic floor plates, generic partitions, stairs and furniture; the cutaway preview shows the ground-floor partition/furniture group with the exterior shell and upper floors hidden.",
+    "Merged repeated assemblies for a compact 37-mesh named asset collection; removed all preview cameras and lights before saving. No external image textures are embedded or required.",
+    "Closed the previously visible roof opening with a continuous dark roof field beneath the articulated roof wings; the roof transition and three dormers remain estimates rather than measured features.",
+    "Removed upper bed/headboard pieces that rose above the roof cover and hid the schematic interior from the exterior preview.",
+    "Added an image-level caption to the cutaway stating that the interior is schematic and not an as-built plan.",
+    "Joined the complete exterior and schematic interior geometry into the stable House_301841248 root mesh so the named asset collection and scene each contain exactly one object, matching the current shared manifest object_count=1. Temporary preview camera/lights and caption are removed before save."
   ],
   "height_assessment": {
     "status": "estimated",
-    "modeled_ridge_height_m": 13.25,
-    "basis": "Exterior image proportions and stylized secondary house artwork; no measured roof/eave height was located. GIS NUM_LEVELS=1 and Extrution=12 have unknown/uncorroborated units and are not treated as authoritative height measurements. Permits show basement, second-floor and third-floor work, but do not define exterior height."
+    "modeled_envelope_height_m": 9.7,
+    "modeled_eave_story_levels_m": [
+      3.75,
+      7.35
+    ],
+    "basis": "Facade proportions from the official current page and 2008 recruitment photograph, plus secondary illustration. Roof ridge and story heights are modeled estimates; no measured exterior height or as-built elevation was found. GIS NUM_LEVELS=1 and Extrution=12 have unknown/uncorroborated meanings and are not treated as authoritative."
   },
   "interior_assessment": {
     "status": "schematic_unverified",
-    "basis": "No as-built floor plan located. Generic rooms and furnishings are illustrative only; room count, partitions, stairs, room use and furniture are not measured or verified."
+    "basis": "No as-built floor plan located. Generic partitions, stair and furnishings are illustrative only; room count, partitions, stairs, room use and furniture are not measured or verified. The cutaway preview hides exterior shell and upper floors so the ground-floor schematic reads clearly."
   },
   "review": {
-    "status": "pending_independent_grade",
+    "status": "independent_pass_frozen_for_master_integration",
     "reviewer": "Alpha Gamma Delta agent",
-    "pass_bar": ">=8/10",
-    "request_sent": true,
-    "asset_hash": "add1d794c1b973ba330eebb72da09122188600da8e3f5a19fad7a4e107114028",
-    "asset_sha256": "add1d794c1b973ba330eebb72da09122188600da8e3f5a19fad7a4e107114028"
+    "review_date": "2026-10-28",
+    "result": "PASS",
+    "score": 8.65,
+    "pass_bar": 8.0,
+    "review_report": "independent_regrade_r2_2026-10-28.md",
+    "review_json": "independent_regrade_r2_2026-10-28.json",
+    "reviewed_asset_sha256": "2F863554345DD260E2708F50225CFFD595B8C55A18E8C49E38B620698B4E30B7",
+    "asset_frozen": true,
+    "remaining_limits": [
+      "Roof, height, window spacing, hidden elevations, and interior remain estimated or schematic.",
+      "Footprint agreement is by construction with the GIS ring and is not independent placement or survey validation."
+    ]
   },
-  "validation": "See fresh_open_validation.json; independent fresh-open in Blender 5.2.3 LTS passed."
+  "validation": "Fresh-open in Blender 5.2.3 LTS passed; exact 24-vertex source ring remains in the root mesh (max ring error 0.00001569 m), collection/scene object count is 1, no camera/light objects, no external image dependencies. See fresh_open_validation.json."
 }

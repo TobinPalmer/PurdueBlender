@@ -1,0 +1,80 @@
+{
+  "building": "Alpha Xi Delta",
+  "feature_id": 788,
+  "asset": "modular/buildings/massing_house_301841248_fe939c7.blend",
+  "verified_sha256": "2F863554345DD260E2708F50225CFFD595B8C55A18E8C49E38B620698B4E30B7",
+  "reviewed": "2026-10-28",
+  "review_type": "Independent read-only exact-SHA R2 regrade",
+  "result": "PASS",
+  "weighted_total": 8.65,
+  "threshold": 8.0,
+  "categories": [
+    {
+      "name": "Identity and provenance",
+      "weight": 0.2,
+      "score": 9.5,
+      "weighted_points": 1.9,
+      "evidence": "GIS FID 788 directly names Alpha Xi Delta at 519 University St; official Purdue chapter material and a dated 2008 house image corroborate identity.",
+      "limitations": "Auxiliary illustration is secondary; sources do not provide measured elevations."
+    },
+    {
+      "name": "Plan geometry and placement",
+      "weight": 0.25,
+      "score": 9.0,
+      "weighted_points": 2.25,
+      "evidence": "24-point ring; max source-to-root vertex error 0.00001569 m; saved bounds, area, perimeter, centroid, and PCA axis are closely matched.",
+      "limitations": "The source ring was used to construct the shell and uses an approximate local conversion; this is not independent placement or survey validation."
+    },
+    {
+      "name": "Exterior silhouette and openings",
+      "weight": 0.25,
+      "score": 7.8,
+      "weighted_points": 1.95,
+      "evidence": "R2 closes the previously unsupported roof opening; the Tudor composition, gables, three dormers, windows, entry and brick/plaster division are visually readable.",
+      "limitations": "Roof planes/transitions remain broad and simplified; opening rhythm, height, dimensions and unseen elevations are not measured."
+    },
+    {
+      "name": "Materials and facade",
+      "weight": 0.1,
+      "score": 8.5,
+      "weighted_points": 0.85,
+      "evidence": "Brick, ivory/cream plaster, dark timber, charcoal slate, trim and blue-gray glass form a coherent photo-supported palette.",
+      "limitations": "Procedural surfaces and facade details remain stylized."
+    },
+    {
+      "name": "Interior and cutaway clarity",
+      "weight": 0.1,
+      "score": 7.5,
+      "weighted_points": 0.75,
+      "evidence": "The cutaway is explicitly captioned schematic/not as-built and shows partitions and furniture placeholders.",
+      "limitations": "Sparse schematic; no sourced floor plan, room count, functions or circulation verification."
+    },
+    {
+      "name": "Presentation and technical",
+      "weight": 0.1,
+      "score": 9.5,
+      "weighted_points": 0.95,
+      "evidence": "Read-only Blender 5.2.3 open confirmed exact SHA, stable scene/collection/root, one scene/collection object, no cameras/lights, no external images.",
+      "limitations": "Independent geodetic placement was not checked."
+    }
+  ],
+  "fresh_open_read_only_check": {
+    "blender_version": "5.2.3 LTS",
+    "scene": "Building_massing_house_301841248_fe939c7",
+    "collection": "Asset_massing_house_301841248_fe939c7",
+    "scene_object_count": 1,
+    "collection_object_count": 1,
+    "root_object": "House_301841248",
+    "root_vertices": 18299,
+    "camera_light_object_count": 0,
+    "external_image_dependency_count": 0
+  },
+  "report": "independent_regrade_r2_2026-10-28.md",
+  "remaining_limitations": [
+    "Roof, height, window spacing, hidden elevations and interior are estimated or schematic.",
+    "GIS NUM_LEVELS=1 conflicts with the visible multi-level house; GIS Extrution=12 is undocumented and was not used as height.",
+    "Footprint agreement is by construction from the same ring and does not independently verify placement."
+  ],
+  "asset_modified": false,
+  "shared_files_modified": false
+}

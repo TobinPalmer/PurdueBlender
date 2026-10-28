@@ -1,5 +1,6 @@
 import bpy, math, json, os
 from mathutils import Vector
+from mathutils.geometry import tessellate_polygon
 
 BLEND=r'modular/buildings/massing_house_301841248_fe939c7.blend'
 OUT=r'audit/alpha_xi_delta_fid788'
@@ -7,13 +8,13 @@ bpy.ops.wm.open_mainfile(filepath=BLEND)
 scene=bpy.context.scene
 root=bpy.data.collections.get('Asset_massing_house_301841248_fe939c7')
 house=bpy.data.objects['House_301841248']
-# Use the asset's existing campus-coordinate footprint as the geometric source.
-pts=[(float(v.co.x),float(v.co.y)) for v in house.data.vertices[:16]]
-# ensure exact source outline order from bottom ring
-n=len(pts)
-xs=[p[0] for p in pts]; ys=[p[1] for p in pts]
-x0,x1=min(xs),max(xs); y0,y1=min(ys),max(ys)
-cx,cy=(x0+x1)/2,(y0+y1)/2
+# Build from the official FID 788 ring using the project local approximation.
+with open(OUT+'/source_fid788.json','r',encoding='utf-8-sig') as f: source_packet=json.load(f)
+source_ring=source_packet['features'][0]['geometry']['rings'][0][:-1]
+pts=[((lon+86.9137)*111412.84*math.cos(math.radians(40.4274)),(lat-40.4274)*111040.0) for lon,lat in source_ring]
+n=len(pts); xs=[p[0] for p in pts]; ys=[p[1] for p in pts]
+x0,x1=min(xs),max(xs); y0,y1=min(ys),max(ys); cx,cy=(x0+x1)/2,(y0+y1)/2
+signed_area=sum(pts[i][0]*pts[(i+1)%n][1]-pts[(i+1)%n][0]*pts[i][1] for i in range(n))/2
 
 # clear all objects from the one-building asset except its stable root object
 for ob in list(root.objects):
@@ -75,90 +76,93 @@ me=bpy.data.meshes.new('House_301841248_LowerBrickMesh')
 verts=[(x,y,z) for z in (0,3.75) for x,y in pts]
 faces=[tuple(reversed(range(n))),tuple(range(n,2*n))]+[(i,(i+1)%n,(i+1)%n+n,i+n) for i in range(n)]
 me.from_pydata(verts,[],faces); me.materials.append(brick); me.update()
-house.data=me; house.name='House_301841248'; house['building_id']='massing_house_301841248_fe939c7'; house['role']='Source-footprint lower brick story'; house['outline_source']='Purdue GIS BuildingShapesZip4 FeatureServer FID 788; footprint mesh simplified from imported candidate outline';
+house.data=me; house.name='House_301841248'; house['building_id']='massing_house_301841248_fe939c7'; house['role']='Source-footprint lower brick story'; house['outline_source']='Purdue GIS BuildingShapesZip4 FID 788; 24 unique GIS vertices transformed with project local approximation.';
 upper=extruded('AXiD_Upper_Tudor_Story',3.75,7.35,cream); upper['role']='Upper story massing inferred from exterior photography';
 # Main interior floors visible in cutaway
 for z in (0.12,3.72,7.28):
     ob=extruded('AXiD_FloorSlab_'+str(z).replace('.','_'),z,z+.12,lightwood if z>0 else stone)
     ob['role']='Schematic floor plate; internal plan is not documented'
-# Roof as a simple hip/gable envelope on the main footprint; ridge follows north-south axis.
-rx0,rx1=x0+.35,x1-.35; ry0,ry1=y0+.35,y1-.35; eave=7.35; ridge=13.25; half=(rx1-rx0)/2
-rv=[(rx0,ry0,eave),(rx1,ry0,eave),(rx1,ry1,eave),(rx0,ry1,eave),(cx,ry0,ridge),(cx,ry1,ridge)]
-rf=[(0,1,4),(1,2,5,4),(2,3,5),(3,0,4,5),(0,3,2,1)]
-roof=mesh_obj('AXiD_DarkSlate_GabledRoof',rv,rf,roofmat); roof['role']='Roof form estimated from current exterior photos and artist illustration'
-# roof thickness
-sol=roof.modifiers.new('Roof thickness','SOLIDIFY'); sol.thickness=.22
+# Estimated roof wings follow the source outline's articulated plan. Heights and pitches are inferred.
+def gable_wing(name,xa,xb,ya,yb,eave,ridge,axis='X'):
+    if axis=='X':
+        v=[(xa,ya,eave),(xb,ya,eave),(xb,yb,eave),(xa,yb,eave),(xa,(ya+yb)/2,ridge),(xb,(ya+yb)/2,ridge)]
+        f=[(0,1,5,4),(4,5,2,3),(0,4,3),(1,2,5),(0,3,2,1)]
+    else:
+        v=[(xa,ya,eave),(xb,ya,eave),(xb,yb,eave),(xa,yb,eave),((xa+xb)/2,ya,ridge),((xa+xb)/2,yb,ridge)]
+        f=[(0,1,4),(1,2,5,4),(4,5,3),(0,4,5,3),(0,3,2,1)]
+    ob=mesh_obj(name,v,f,roofmat); ob.modifiers.new('Slate thickness','SOLIDIFY').thickness=.18; return ob
+roof=mesh_obj('AXiD_DarkSlate_GabledRoof',[],[],roofmat)
+# Main south wing, north return and east return create a stepped roofline.
+roof_parts=[gable_wing('AXiD_RoofWing_Front',x0,x1,y0,y0+12.0,7.35,9.65,'X'),gable_wing('AXiD_RoofWing_North',x0+5.0,x1,y1-6.0,y1,7.35,9.70,'X'),gable_wing('AXiD_RoofWing_East',x1-6.0,x1,y0+10.0,y1-5.5,7.35,9.50,'Y'),gable_wing('AXiD_RoofWing_Northwest',x0,x0+5.6,y1-4.3,y1,7.35,9.20,'X')]
+bpy.data.objects.remove(roof,do_unlink=True)
 
-# Exterior windows as framed blue-gray glazing on perimeter elevations.
-def window_x(name,x,y,z,w=1.28,h=1.48,front=False):
-    # x is façade plane; slight offset toward outside
-    pane=box(name+'_Glass',(x,y,z),(0.11,w,h),glass,.015)
-    pane['role']='Window position approximated from exterior photo'
-    for yy in (y-w/2-.07,y+w/2+.07): box(name+'_Jamb',(x-.055,yy,z),(.18,.12,h+.20),frame,.02)
-    for zz in (z-h/2-.08,z+h/2+.08): box(name+'_SillHead',(x-.06,y,zz),(.20,w+.25,.13),frame,.02)
-    box(name+'_Mullion',(x-.12,y,z),(.12,.075,h),frame,.01)
-    box(name+'_Crossbar',(x-.12,y,z),(.12,w,.065),frame,.01)
-    return pane
+# Continuous dark roof field closes the unsupported central roof gap while the articulated wings remain visible above it.
+cover_verts=[(x0-.9,y0-.9,7.43),(x1+.9,y0-.9,7.43),(x1+.9,y1+.9,7.43),(x0-.9,y1+.9,7.43)]
+roof_cover=mesh_obj('AXiD_Roof_Continuity_Cover',cover_verts,[(0,1,2,3)],roofmat); roof_cover['role']='Continuous estimated roof deck beneath the articulated gabled wings; closes the prior unsupported open roof gap'
 
-def window_y(name,y,x,z,w=1.25,h=1.5):
-    box(name+'_Glass',(x,y,z),(w,.11,h),glass,.015)
-    for xx in (x-w/2-.07,x+w/2+.07): box(name+'_Jamb',(xx,y-.055,z),(.12,.18,h+.20),frame,.02)
-    for zz in (z-h/2-.08,z+h/2+.08): box(name+'_SillHead',(x,y-.06,zz),(w+.25,.20,.13),frame,.02)
-    box(name+'_Mullion',(x,y-.12,z),(.075,.12,h),frame,.01)
-    box(name+'_Crossbar',(x,y-.12,z),(w,.12,.065),frame,.01)
+# Nearly flush windows are placed on real straight GIS boundary segments.
+def window_edge(name,center,z,width,height,angle,outward):
+    nrm=Vector((outward[0],outward[1],0)); tangent=Vector((math.cos(angle),math.sin(angle),0)); c=Vector((center[0],center[1],z))
+    def fitted(label,pos,dims,material):
+        ob=box(name+'_'+label,(pos.x,pos.y,pos.z),dims,material,.01); ob.rotation_euler[2]=angle
+    fitted('Glass',c+nrm*.005,(width,.04,height),glass)
+    for side in (-1,1): fitted('Jamb',c+nrm*.024+tangent*side*(width/2+.06),(.12,.06,height+.18),frame)
+    for dz in (-height/2-.07,height/2+.07): fitted('SillHead',c+nrm*.024+Vector((0,0,dz)),(width+.23,.06,.12),frame)
+    fitted('Mullion',c+nrm*.035,(.055,.06,height),frame); fitted('Crossbar',c+nrm*.035,(width,.06,.055),frame)
+edges=[]
+for i,a in enumerate(pts):
+    b=pts[(i+1)%n]; edges.append((math.hypot(b[0]-a[0],b[1]-a[1]),a,b,math.atan2(b[1]-a[1],b[0]-a[0])))
+front_edge=max((e for e in edges if abs(e[2][1]-e[1][1])<.25),key=lambda e:e[0]); front_length,front_a,front_b,front_angle=front_edge
+entry_point=((front_a[0]+front_b[0])/2,(front_a[1]+front_b[1])/2); front_out=(0,-1) if signed_area<0 else (0,1)
+for ei,(length,a,b,angle) in enumerate(edges):
+    if length<5.2: continue
+    count=max(1,int(length//4.8)); tangent=(math.cos(angle),math.sin(angle)); left=(-tangent[1],tangent[0]); outward=left if signed_area<0 else (-left[0],-left[1])
+    for j in range(count):
+        t=(j+1)/(count+1); center=(a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t)
+        if ei==edges.index(front_edge) and math.dist(center,entry_point)<2.0: continue
+        window_edge('AXiD_Window_L%02d_%02d'%(ei,j),center,2.15,1.42,1.52,angle,outward)
+        window_edge('AXiD_Window_U%02d_%02d'%(ei,j),center,5.35,1.42,1.52,angle,outward)
+# Tudor framing follows the actual south/front wall segment, not the whole bounding box.
+normal=Vector((front_out[0],front_out[1],0)); facade_tangent=Vector((math.cos(front_angle),math.sin(front_angle),0))
+def front_bar(name,t,z,w,h,d=.17):
+    p=Vector((front_a[0]+(front_b[0]-front_a[0])*t,front_a[1]+(front_b[1]-front_a[1])*t,z))+normal*.04
+    ob=box(name,(p.x,p.y,p.z),(w,d,h),timber,.025); ob.rotation_euler[2]=front_angle; return ob
+for z in (3.8,4.02,7.22): front_bar('Tudor_Front_Band',.5,z,front_length,.18,.22)
+for j in range(6): front_bar('Tudor_Front_Post_%02d'%j,.03+j*.94/5,5.5,.18,3.35,.22)
+for t in (.18,.38,.62,.82):
+    ob=front_bar('Tudor_Front_Diagonal',t,5.45,.15,1.3,.22); ob.rotation_euler[0]=math.radians(45)
 
-# West elevation is presented as the front/courtyard approach; place windows away from central entry.
-frontx=x0-.08
-frontys=[y0+3.0,y0+6.8,y0+17.5,y0+21.2,y0+24.4]
-for i,y in enumerate(frontys):
-    window_x('AXiD_FrontWindow_%02d'%i,frontx,y,2.15,1.5,1.55,True)
-    window_x('AXiD_UpperWindow_%02d'%i,frontx-.10,y,5.35,1.45,1.55,True)
-# Tudor timber bands and uprights along the west and south facades
-for z in (3.82,4.02,7.22): box('Tudor_Horizontal_West',(x0-.20,cy,z),(.28,y1-y0,.20),timber,.035)
-for y in [y0+.35]+[y0+2.4*i for i in range(1,12) if y0+2.4*i<y1]:
-    box('Tudor_Upright_West',(x0-.20,y,5.5),(.28,.22,3.35),timber,.035)
-# modest diagonal braces in visible bays
-for y in (y0+3.6,y0+8.0,y0+19.0,y0+23.0):
-    # simple diagonal bars angled in facade plane
-    ob=box('Tudor_Diagonal_West',(x0-.22,y,5.5),(.24,1.9,.18),timber,.03); ob.rotation_euler[0]=math.radians(45)
-# windows on rear and end elevations
-for i,x in enumerate([x0+3.3,x0+7.2,x0+12.0,x0+16.7,x0+20.2]):
-    window_y('AXiD_SouthWindow_%02d'%i,y0-.06,x,2.15,1.35,1.48)
-    window_y('AXiD_NorthWindow_%02d'%i,y1+.06,x,2.15,1.35,1.48)
-for i,y in enumerate([y0+4.5,y0+10,y0+17,y0+23]):
-    window_x('AXiD_EastWindow_%02d'%i,x1+.06,y,2.15,1.35,1.48)
-
-# Entry portico, central stairs, stone surround, door and chapter mark.
-entry_y=cy
-portico_x=x0-.95
-box('AXiD_EntryPorchRoof',(portico_x,entry_y,4.05),(2.25,4.7,.28),timber,.06)
-for yy in (entry_y-1.95,entry_y+1.95): box('AXiD_PorticoPost',(portico_x,yy,2.0),(.28,.28,4.0),stone,.04)
-box('AXiD_EntryDoor',(x0-.14,entry_y,1.55),(.18,1.55,2.65),wood,.04)
-box('AXiD_EntryDoorPanel',(x0-.25,entry_y,1.55),(.08,1.12,2.15),timber,.03)
-# stone arch cue, lintel and side jambs
-for yy in (entry_y-.9,entry_y+.9): box('AXiD_StoneJamb',(x0-.22,yy,1.8),(.32,.22,3.05),stone,.04)
-box('AXiD_StoneLintel',(x0-.22,entry_y,3.32),(.32,2.02,.28),stone,.04)
+# Entry, stone surround, signage and steps center on the long south/front wall.
+entry_x,entry_y=entry_point; porch=Vector((entry_x,entry_y,0))+normal*1.0
+box('AXiD_EntryPorchRoof',(porch.x,porch.y,4.05),(4.7,2.25,.28),timber,.06)
+for side in (-1,1):
+    p=Vector((entry_x,entry_y,2.0))+normal*.95+facade_tangent*side*1.95; box('AXiD_PorticoPost',(p.x,p.y,p.z),(.28,.28,4.0),stone,.04)
+p=Vector((entry_x,entry_y,1.55))+normal*.04
+door=box('AXiD_EntryDoor',(p.x,p.y,p.z),(1.55,.16,2.65),wood,.04); door.rotation_euler[2]=front_angle
+panel=box('AXiD_EntryDoorPanel',(p.x+normal.x*.08,p.y+normal.y*.08,p.z),(1.12,.06,2.15),timber,.03); panel.rotation_euler[2]=front_angle
+for side in (-1,1):
+    p=Vector((entry_x,entry_y,1.8))+normal*.07+facade_tangent*side*.9; ob=box('AXiD_StoneJamb',(p.x,p.y,p.z),(.22,.30,3.05),stone,.04); ob.rotation_euler[2]=front_angle
+p=Vector((entry_x,entry_y,3.32))+normal*.07; ob=box('AXiD_StoneLintel',(p.x,p.y,p.z),(2.02,.30,.28),stone,.04); ob.rotation_euler[2]=front_angle
 for i in range(6):
-    z=.25+i*.28; d=(i+1)*.48
-    box('AXiD_EntryStep_%02d'%i,(x0-1.1-d/2,entry_y,z),(d,3.2,.25),stone,.04)
-# signage and three Greek letters on upper façade
-bpy.ops.object.text_add(location=(x0-.43,entry_y,3.78),rotation=(math.radians(90),0,math.radians(90)))
-t=bpy.context.object; t.name='AXiD_ChapterSign_Text'; t.data.body='ALPHA XI DELTA  •  ALPHA ETA'; t.data.size=.38; t.data.extrude=.015; t.data.materials.append(blue); root.objects.link(t)
+    z=.25+i*.28; d=(i+1)*.48; p=Vector((entry_x,entry_y,0))+normal*(1.1+d/2); ob=box('AXiD_EntryStep_%02d'%i,(p.x,p.y,z),(3.2,d,.25),stone,.04); ob.rotation_euler[2]=front_angle
+bpy.ops.object.text_add(location=(entry_x-2.2,entry_y+normal.y*.13,3.78),rotation=(math.radians(90),0,front_angle))
+t=bpy.context.object; t.name='AXiD_ChapterSign_Text'; t.data.body='ALPHA XI DELTA  •  ALPHA ETA'; t.data.size=.36; t.data.extrude=.012; t.data.materials.append(blue); root.objects.link(t)
 for c in list(t.users_collection):
     if c!=root: c.objects.unlink(t)
-t['role']='Sign text supported by current chapter photo; exact sign dimensions are illustrative'
-# prominent chapter letters to the right of entry
-bpy.ops.object.text_add(location=(x0-.36,entry_y-5.0,5.6),rotation=(math.radians(90),0,math.radians(90)))
-g=bpy.context.object; g.name='AXiD_GreekLetters'; g.data.body='ΑΞΔ'; g.data.size=1.0; g.data.extrude=.025; g.data.materials.append(gold); root.objects.link(g)
+t['role']='Official chapter text; exact sign dimensions/position are illustrative'
+bpy.ops.object.text_add(location=(entry_x+3.6,entry_y+normal.y*.14,5.6),rotation=(math.radians(90),0,front_angle))
+g=bpy.context.object; g.name='AXiD_GreekLetters'; g.data.body='ΑΞΔ'; g.data.size=.85; g.data.extrude=.018; g.data.materials.append(gold); root.objects.link(g)
 for c in list(g.users_collection):
     if c!=root: c.objects.unlink(g)
-
-# Two restrained roof dormers on the west-facing roof slope.
-for j,y in enumerate((cy-4.0,cy+4.0)):
-    dx=x0+2.8; z=9.35
-    box('AXiD_Dormer_%d'%j,(dx,y,z),(1.1,2.6,1.9),cream,.035)
-    window_x('AXiD_DormerWindow_%d'%j,x0+2.15,y,z,1.15,1.25,True)
-    ob=box('AXiD_DormerCap_%d'%j,(dx-.05,y,10.40),(2.05,2.9,.18),roofmat,.025)
+for j,x in enumerate((x0+5.2,cx,x1-5.2)):
+    yf=y0+2.05; yb=y0+3.75; zb=7.42; ze=8.72; zr=9.55
+    box('AXiD_Dormer_%d'%j,(x,(yf+yb)/2,(zb+ze)/2),(2.6,yb-yf,ze-zb),cream,.035)
+    box('AXiD_DormerWindow_%d'%j,(x,yf-.015,zb+.68),(1.22,.04,1.0),glass,.015)
+    for xx in (x-.69,x+.69): box('AXiD_DormerJamb_%d'%j,(xx,yf-.035,zb+.68),(.12,.07,1.15),frame,.012)
+    for zz in (zb+.10,zb+1.25): box('AXiD_DormerHeadSill_%d'%j,(x,yf-.035,zz),(1.5,.07,.12),frame,.012)
+    mesh_obj('AXiD_DormerGable_%d'%j,[(x-1.3,yf,ze),(x+1.3,yf,ze),(x,yf,zr)],[(0,1,2)],timber)
+    dr=[(x-1.35,yf,ze),(x+1.35,yf,ze),(x+1.35,yb,ze),(x-1.35,yb,ze),(x,yf,zr),(x,yb,zr)]
+    ob=mesh_obj('AXiD_DormerRoof_%d'%j,dr,[(0,4,5,3),(4,1,2,5)],roofmat); ob.modifiers.new('Dormer slate thickness','SOLIDIFY').thickness=.12
 
 # schematic interior: lobby/common room and generic partitions/furniture, intentionally not a claimed surveyed plan
 for y in (cy-4.4,cy+4.4):
@@ -191,41 +195,87 @@ for xx,yy in ((cx-5.0,cy-8.0),(cx+5.0,cy+8.0)):
     box('Interior_UpperBed',(xx,yy,7.48),(2.1,3.0,.25),white,.06)
     box('Interior_UpperHeadboard',(xx,yy-1.35,7.85),(2.2,.18,.65),wood,.04)
 
-# Arrange scene, create render camera and lighting. Render files are evidence only; saved asset opens with shell visible.
-def aim(ob, target): ob.rotation_euler=(Vector(target)-ob.location).to_track_quat('-Z','Y').to_euler()
-# backdrop/ground outside the asset collection is not added to the building library
-bpy.ops.mesh.primitive_plane_add(size=200, location=(cx,cy,-.24)); ground=bpy.context.object; ground.name='PreviewGround'; ground.data.materials.append(mat('Preview • neutral green ground',(.24,.29,.22))); ground.hide_set(True); ground.hide_render=False
-# camera
-camdata=bpy.data.cameras.new('AXiD_PreviewCamera'); cam=bpy.data.objects.new('AXiD_PreviewCamera',camdata); scene.collection.objects.link(cam)
-cam.location=(x0-47,y0-33,24); aim(cam,(cx,cy,4.4)); camdata.lens=52; scene.camera=cam
-# lights
-for name,loc,power,size in [('Key',(x0-22,y0-23,34),120,18),('Fill',(x1+20,cy+10,22),45,16),('Rim',(cx, y1+25,28),90,14)]:
-    ld=bpy.data.lights.new(name,'AREA'); lo=bpy.data.objects.new(name,ld); scene.collection.objects.link(lo); lo.location=loc; ld.energy=power; ld.shape='DISK'; ld.size=size; aim(lo,(cx,cy,4))
-scene.render.engine='BLENDER_EEVEE'; scene.eevee.taa_render_samples=32
+# Combine repetitive trim assemblies to keep the export collection compact.
+def join_prefix_groups(name,prefixes):
+    members=[o for o in list(root.objects) if any(o.name.startswith(p) for p in prefixes)]
+    if not members: return None
+    names=[o.name for o in members]
+    for nm in names:
+        ob=bpy.data.objects.get(nm)
+        bpy.ops.object.select_all(action='DESELECT'); ob.select_set(True); bpy.context.view_layer.objects.active=ob
+        if ob.type!='MESH': bpy.ops.object.convert(target='MESH')
+        elif ob.modifiers: bpy.ops.object.convert(target='MESH')
+    objects=[bpy.data.objects.get(nm) for nm in names if bpy.data.objects.get(nm) is not None]
+    bpy.ops.object.select_all(action='DESELECT')
+    for ob in objects: ob.select_set(True)
+    bpy.context.view_layer.objects.active=objects[0]
+    bpy.ops.object.join(); objects[0].name=name
+    return objects[0]
+join_prefix_groups('AXiD_WindowAssemblies',['AXiD_Window_'])
+join_prefix_groups('AXiD_TudorTimber',['Tudor_'])
+join_prefix_groups('AXiD_RoofWings',['AXiD_RoofWing_'])
+join_prefix_groups('AXiD_Dormers',['AXiD_Dormer'])
+join_prefix_groups('AXiD_EntryAssembly',['AXiD_Entry','AXiD_PorticoPost','AXiD_Stone','AXiD_ChapterSign','AXiD_GreekLetters'])
+join_prefix_groups('Interior_GroundFloorFurniture',['Interior_Ground','Interior_Lobby_Rug'])
+join_prefix_groups('Interior_GroundFloorPartitions',['Interior_Partition_Lower','Interior_CrossWall_Lower'])
+join_prefix_groups('Interior_UpperFloorPartitions',['Interior_Partition_Upper','Interior_CrossWall_Upper'])
+
+# Render previews in a temporary Workbench context; camera and backdrop are removed before the library is saved.
+def aim(ob,target): ob.rotation_euler=(Vector(target)-ob.location).to_track_quat('-Z','Y').to_euler()
+camdata=bpy.data.cameras.new('AXiD_TemporaryPreviewCamera'); cam=bpy.data.objects.new('AXiD_TemporaryPreviewCamera',camdata); scene.collection.objects.link(cam)
+cam.location=(x1+38,y0-40,25); aim(cam,(cx,cy,4.5)); camdata.lens=54; scene.camera=cam
+scene.render.engine='BLENDER_WORKBENCH'
+scene.display.shading.light='STUDIO'; scene.display.shading.studio_light='paint.sl'; scene.display.shading.color_type='MATERIAL'
+scene.display.shading.show_shadows=True; scene.display.shading.show_cavity=True; scene.display.shading.cavity_type='WORLD'
+scene.display.shading.curvature_ridge_factor=1.3; scene.display.shading.curvature_valley_factor=1.0
+scene.display.shading.background_type='VIEWPORT'; scene.display.shading.background_color=(.46,.50,.55); scene.display.shading.show_specular_highlight=False
+# Workbench uses diffuse colors; brighten only those preview colors while preserving shader materials.
+for m in (brick,cream,timber,roofmat,glass,frame,wood,lightwood,wallmat,stone,blue,gold,white):
+    c=m.diffuse_color; m.diffuse_color=(min(c[0]*1.25,1),min(c[1]*1.25,1),min(c[2]*1.25,1),1)
 scene.render.resolution_x=1500; scene.render.resolution_y=1125; scene.render.resolution_percentage=100
 scene.render.image_settings.file_format='PNG'; scene.render.film_transparent=False
-scene.world.color=(.02,.02,.02)
-if scene.world.use_nodes:
-    bg=next(n for n in scene.world.node_tree.nodes if n.type=='BACKGROUND'); bg.inputs['Color'].default_value=(.08,.08,.08,1)
-scene.view_settings.view_transform='Standard'; scene.view_settings.exposure=-1.25
 scene.render.filepath=os.path.abspath(OUT+'/exterior_preview.png')
-# Hide context objects from asset collection linking; only building content stays in named asset collection.
-for ob in (ground,cam):
-    pass
-# enforce materials and object transforms
+# Keep schematic contents below the roof cover so they cannot read as a roof opening in the exterior view.
+for ob in list(root.objects):
+    if ob.name.startswith('Interior_UpperBed') or ob.name.startswith('Interior_UpperHeadboard'):
+        bpy.data.objects.remove(ob,do_unlink=True)
+for ob in root.objects: ob.hide_render=ob.name.startswith('Interior_')
+bpy.ops.render.render(write_still=True)
+for ob in root.objects: ob.hide_render=False
+# The cutaway intentionally shows one schematic floor only; it is not an as-built plan.
+for ob in scene.objects: ob.hide_render=True
+keep={'Interior_GroundFloorFurniture','Interior_GroundFloorPartitions'}
+for ob in scene.objects:
+    if ob.name in keep or ob.name.startswith('Interior_GroundFloor'): ob.hide_render=False
+cam.location=(cx,cy,70); aim(cam,(cx,cy,.5)); camdata.type='ORTHO'; camdata.ortho_scale=47
+# Preview-only caption makes the unverified interior status explicit in the image itself.
+label_curve=bpy.data.curves.new('AXiD_SchematicCaption','FONT'); label_curve.body='SCHEMATIC INTERIOR - NOT AN AS-BUILT PLAN'; label_curve.size=.82; label_curve.extrude=.006
+label_obj=bpy.data.objects.new('AXiD_SchematicCaption',label_curve); scene.collection.objects.link(label_obj); label_obj.location=(x0+.8,y1+2.5,.15); label_obj.hide_render=False
+labelmat=mat('AXiD - preview caption',(.08,.10,.14)); label_curve.materials.append(labelmat)
+scene.render.filepath=os.path.abspath(OUT+'/interior_cutaway_preview.png'); bpy.ops.render.render(write_still=True)
+bpy.data.objects.remove(label_obj,do_unlink=True)
+if label_curve.users==0: bpy.data.curves.remove(label_curve)
+# Clear temporary visibility state and remove all preview-only scene objects from the saved asset.
+for ob in root.objects: ob.hide_render=False
+scene.camera=None
+for ob in (cam,): bpy.data.objects.remove(ob,do_unlink=True)
+if camdata.users==0: bpy.data.cameras.remove(camdata)
+# Keep the exported manifest contract: one stable root object in the named collection.
+# The cutaway preview above is rendered from this complete scene before merging.
+for ob in list(root.objects):
+    ob.select_set(False)
+for ob in list(root.objects): ob.select_set(True)
+bpy.context.view_layer.objects.active=house
+bpy.ops.object.join()
+house.name='House_301841248'; house.data.name='AXiD_CompleteExteriorAndSchematicInteriorMesh'
+house['asset_contract']='Single mesh object in the named asset collection to match the current shared manifest object_count=1.'
+house['interior_representation']='Schematic only; not an as-built floor plan. See interior_cutaway_preview.png.'
+house['roof_transition']='Continuous roof cover closes previous unsupported central opening; gabled wings and three dormers remain estimated from available visual sources.'
 bpy.ops.wm.save_as_mainfile(filepath=BLEND)
-bpy.ops.render.render(write_still=True)
-# Interior cutaway render: hide the two opaque mass volumes and roof, retaining floors, interior layout and exterior details.
-for ob in (house,upper,roof): ob.hide_render=True
-# Ground-floor cutaway: remove roof/envelope and upper floor plates to expose a single readable schematic level.
-for ob in bpy.data.objects:
-    if ob.name.startswith(('AXiD_FrontWindow','AXiD_UpperWindow','AXiD_EastWindow','AXiD_SouthWindow','AXiD_NorthWindow','Tudor_','AXiD_Dormer','AXiD_GreekLetters','AXiD_ChapterSign','AXiD_EntryPorch','AXiD_PorticoPost','AXiD_Stone','AXiD_EntryDoor','AXiD_EntryStep')):
-        ob.hide_render=True
-    if ob.name.startswith(('AXiD_FloorSlab_3_72','AXiD_FloorSlab_7_28','Interior_Partition_Upper','Interior_CrossWall_Upper','Interior_Upper')):
-        ob.hide_render=True
-# Raised oblique plan camera into the west side of the cutaway.
-cam.location=(x0-29,cy-20,31); aim(cam,(cx,cy,.7)); camdata.lens=58
-scene.render.filepath=os.path.abspath(OUT+'/interior_cutaway_preview.png')
-bpy.ops.render.render(write_still=True)
-print('SAVED',BLEND,'BOUNDS',(x0,x1,y0,y1),'N',n,'OBJECTS',len(scene.objects))
+print('SAVED',BLEND,'POINTS',n,'BOUNDS',(x0,x1,y0,y1),'ASSET_OBJECTS',len(root.objects),'SCENE_OBJECTS',len(scene.objects))
+
+
+
+
+
 
