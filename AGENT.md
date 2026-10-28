@@ -9,6 +9,8 @@ Use the queue's `Second-pass owner` column for second-pass assignments: the firs
 
 The original first-pass instructions follow unchanged.
 
+For second-pass research and review, emphasize as many useful distinct real viewpoints as available: different camera heights/elevations, near/medium/far distances, frontal and oblique perspectives, all building faces, and different positions along and around each facade. Follow the viewpoint coverage log and matched-view requirements in `modular/AGENTS.md`; four principal elevations alone are not sufficient evidence of complete visual accuracy. Repeated crops or rotations of one image/panorama do not replace distinct camera positions. Keep all missing or occluded coverage explicit.
+
 ---
 
 # AGENT.md — Add a detailed building
