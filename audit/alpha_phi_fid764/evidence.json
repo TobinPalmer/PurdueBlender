@@ -53,17 +53,18 @@
   "measurements_and_model": {
     "placement": "Retains the converted GIS ring coordinates in the existing massing asset's campus coordinate frame. No manual translation, rotation, or scaling was applied.",
     "footprint": "Exterior wall base follows the full 16-vertex converted FID 764 ring. Plan overlay in plan_overlay.png compares raw ring to extracted saved wall-base segments: maximum boundary vertex error 0.00006 m, RMS 0.00004 m, zero translation correction, and zero footprint rotation correction. This confirms mesh construction fidelity to the retained ring, not that the ring is a current surveyed wall line. Transformed axis-aligned bounds are 40.16 × 28.57 m; no independent CAD or aerial dimension check was retained.",
-    "height": "Estimated 7.4 m wall height and 10.0 m ridge. GIS NUM_LEVELS=1 and Extrution=12 have undocumented semantics/units, while the current chapter property context suggests residential use. Neither field verifies actual height or story count.",
+    "height": "Estimated 7.4 m wall height and estimated 8.25 m top of the conservative roof cap. GIS NUM_LEVELS=1 and Extrution=12 have undocumented semantics/units. Neither field verifies actual height or story count; modeled two-level inserts remain interpretive.",
     "story_count": "Two-level interpretation is schematic and unverified.",
-    "roof": "Broad gable roof and one chimney are visual interpretations; roof form, ridge direction, eave height, and dimensions are unverified. The estimated ridge axis is 53.13° from east, about 42.06° from the transformed polygon's 11.07° PCA major axis; the footprint does not resolve roof direction.",
+    "roof": "Revised to a low-profile cap whose perimeter follows the full GIS footprint; broad gable, ridge, and chimney were removed. This conservative roof mass avoids claiming a ridge direction unsupported by the qualitative illustration. Roof type, estimated 8.25 m top height, eave height, coverage, and as-built profile remain unverified.",
     "facade": "Brick-colored material, rectangular windows, Alpha Phi signage, and covered entry/stairs are low-confidence visual interpretations informed by the cited HUBERart pen-and-ink drawing. The page forbids copying the image; the retained source URL/date/observation are in source_observation.json. Limestone-like trim, shutters, and all spacing are unsupported inventions. No current measured facade reference is retained.",
-    "interior": "Upper-room bedrooms and a public lounge are illustrative inserts placed within the polygon for cutaway evidence. There is no verified floor plan, room count, circulation layout, or furnishing plan. The preview isolates the inserts and is not an as-built plan.",
+    "interior": "Bedroom/lounge inserts remain schematic and are not an as-built plan. The updated roof-open cutaway shows lower perimeter walls and two upper bedroom modules against the full footprint for context; no floor plan, room count, circulation, or furnishing plan is verified.",
+    "topology": "Fresh-open Blender validation reports 543 boundary/non-manifold edges. The export is a visual composite with open/intersecting decorative and interior components, not a watertight fabrication solid.",
     "material": "All materials are packed procedural/native materials; no external image or absolute-path dependencies are used."
   },
   "geometry_edits": [
     "Replaced the original single-object massing mesh with a wall shell following the source polygon ring.",
     "Added brick-colored facade, stone-like plinth and trim, rectangular windows, shutters, entry glazing, and a covered porch with steps.",
-    "Added estimated main gable roof, ridge/eave trim, and chimney.",
+    "Replaced the broad estimated gable/ridge/chimney with a low-profile cap following the GIS plan perimeter; roof top height remains an estimate.",
     "Added roof-open schematic room modules with beds, desks, lounge seating, and partitions; exact room positions are unverified.",
     "Kept the manifest asset ID, object name, collection name, scene name, and one-object export structure stable."
   ],

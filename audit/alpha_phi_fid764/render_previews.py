@@ -8,13 +8,14 @@ with open(os.path.join(HERE,'build_config.json'),encoding='utf8') as f: cfg=json
 bpy.ops.wm.open_mainfile(filepath=ASSET)
 obj=bpy.data.objects[cfg['object_name']]
 scene=bpy.context.scene
-scene.render.engine='BLENDER_WORKBENCH'
-scene.render.resolution_x=800; scene.render.resolution_y=600; scene.render.resolution_percentage=100
-scene.render.image_settings.file_format='PNG'
-scene.render.film_transparent=False
-scene.display.shading.light='STUDIO'; scene.display.shading.color_type='MATERIAL'; scene.display.shading.show_cavity=True; scene.display.shading.cavity_type='WORLD'
+scene.render.engine='BLENDER_EEVEE'
+scene.render.resolution_x=1200; scene.render.resolution_y=900; scene.render.resolution_percentage=100
+scene.render.image_settings.file_format='PNG'; scene.render.film_transparent=False
+scene.view_settings.view_transform='AgX'; scene.view_settings.look='AgX - Medium High Contrast'
 world=bpy.data.worlds.new('AlphaPhi Preview World') if not bpy.data.worlds else bpy.data.worlds[0]
-scene.world=world; world.use_nodes=True; world.node_tree.nodes['Background'].inputs['Color'].default_value=(0.45,0.53,0.62,1); world.node_tree.nodes['Background'].inputs['Strength'].default_value=0.65
+scene.world=world; world.use_nodes=True
+world.node_tree.nodes['Background'].inputs['Color'].default_value=(0.58,0.64,0.72,1)
+world.node_tree.nodes['Background'].inputs['Strength'].default_value=0.55
 for ob in list(scene.objects):
     if ob.type in {'CAMERA','LIGHT'}: bpy.data.objects.remove(ob,do_unlink=True)
 def aim(camera,target): camera.rotation_euler=(Vector(target)-camera.location).to_track_quat('-Z','Y').to_euler()
@@ -24,8 +25,6 @@ def area(name,loc,power,size,target):
 def camera(name,loc,target,scale):
     data=bpy.data.cameras.new(name); data.type='ORTHO'; data.ortho_scale=scale
     ob=bpy.data.objects.new(name,data); scene.collection.objects.link(ob); ob.location=loc; aim(ob,target); scene.camera=ob
-center=Vector(cfg['interior_module_center_xy'])
-# The GIS polygon center provides a stable camera target across reruns.
 ring=json.load(open(os.path.join(HERE,cfg['source_feature_file']),encoding='utf8'))['features'][0]['geometry']['rings'][0][:-1]
 R=6378137.0; lat0=cfg['coordinate_origin']['latitude']; lon0=cfg['coordinate_origin']['longitude']
 pts=[]
@@ -33,37 +32,49 @@ for mx,my in ring:
     lon=mx/R*180/math.pi; lat=(2*math.atan(math.exp(my/R))-math.pi/2)*180/math.pi
     pts.append(Vector(((lon-lon0)*111412.84*math.cos(math.radians(lat0)),(lat-lat0)*111040.0,0)))
 center=sum(pts,Vector((0,0,0)))/len(pts)
-target=center+Vector((0,0,4.5))
-area('Large soft key',center+Vector((26,-34,45)),5200,24,target)
-area('Cool fill',center+Vector((-35,-5,22)),2600,20,target)
-area('Roof rim',center+Vector((5,36,32)),3600,18,target)
-camloc=center+Vector((32,-42,27)); camera('Exterior Three Quarter',camloc,target,53)
+target=center+Vector((0,0,4.2))
+area('Large soft key',center+Vector((26,-34,45)),26000,30,target)
+area('Cool fill',center+Vector((-35,-5,22)),16000,26,target)
+area('Roof rim',center+Vector((5,36,32)),18000,24,target)
+camera('Exterior Three Quarter',center+Vector((32,-42,27)),target,53)
 scene.render.filepath=os.path.join(HERE,'exterior_three_quarter.png'); bpy.ops.render.render(write_still=True)
 
-# Create a temporary interior-only mesh from the saved mesh. This is a viewing aid,
-# not part of the exported one-object building collection.
-src=obj.data; keep_names={'ALPHAPHI_Interior_Bordeaux_Carpet','ALPHAPHI_Interior_Warm_Plaster','ALPHAPHI_Interior_Furniture','ALPHAPHI_Bed_Linen','ALPHAPHI_Entry_Oak'}
-preview_colors={'ALPHAPHI_Interior_Bordeaux_Carpet':(0.43,0.12,0.18,1),'ALPHAPHI_Interior_Warm_Plaster':(0.88,0.80,0.68,1),'ALPHAPHI_Interior_Furniture':(0.43,0.25,0.13,1),'ALPHAPHI_Bed_Linen':(0.98,0.94,0.82,1),'ALPHAPHI_Entry_Oak':(0.45,0.25,0.12,1)}
+# Render-only full-footprint upper cutaway; this temporary object is not saved in
+# the one-object building library and does not claim an as-built floor plan.
+src=obj.data
+interior_names={'ALPHAPHI_Interior_Bordeaux_Carpet','ALPHAPHI_Interior_Furniture','ALPHAPHI_Bed_Linen'}
+preview_colors={'ALPHAPHI_Interior_Bordeaux_Carpet':(0.52,0.12,0.20,1),'ALPHAPHI_Interior_Furniture':(0.52,0.31,0.17,1),'ALPHAPHI_Bed_Linen':(1.0,0.97,0.86,1)}
 for m in src.materials:
     if m and m.name in preview_colors: m.diffuse_color=preview_colors[m.name]
-mat_ids={i for i,m in enumerate(src.materials) if m and m.name in keep_names}
-verts=[]; faces=[]; mids=[]; used=set()
-upper_level=cfg['estimated_wall_height_m']/2+0.12
+keep_ids={i for i,m in enumerate(src.materials) if m and m.name in interior_names}
+story=cfg['estimated_wall_height_m']/2
+verts=[]; faces=[]; mids=[]
 for p in src.polygons:
-    if p.material_index not in mat_ids: continue
+    mat=src.materials[p.material_index] if p.material_index<len(src.materials) else None
+    name=mat.name if mat else ''
+    if name.startswith('ALPHAPHI_Mottled_Clay_Composite_Shingle'): continue
+    if name=='ALPHAPHI_Interior_Oak_Floor': continue
     coords=[src.vertices[i].co for i in p.vertices]
-    if sum(v.z for v in coords)/len(coords) < cfg['estimated_wall_height_m']/2: continue
+    if p.material_index not in keep_ids:
+        clipped=[]
+        for i,v in enumerate(coords):
+            w=coords[(i+1)%len(coords)]
+            vin=v.z<=story; win=w.z<=story
+            if vin: clipped.append(v.copy())
+            if vin!=win:
+                alpha=(story-v.z)/(w.z-v.z)
+                clipped.append(v.lerp(w,alpha))
+        coords=clipped
+    if len(coords)<3: continue
     base=len(verts); verts.extend(tuple(v) for v in coords); faces.append(tuple(range(base,base+len(coords)))); mids.append(p.material_index)
-mesh=bpy.data.meshes.new('AlphaPhi_Schematic_Upper_Interior_Preview'); mesh.from_pydata(verts,[],faces)
-for m in src.materials: mesh.materials.append(m)
-for p,mi in zip(mesh.polygons,mids): p.material_index=mi
-mesh.update(); interior=bpy.data.objects.new('Preview only — schematic upper rooms',mesh); scene.collection.objects.link(interior)
+preview=bpy.data.meshes.new('AlphaPhi_Full_Context_Schematic_Cutaway'); preview.from_pydata(verts,[],faces)
+for m in src.materials: preview.materials.append(m)
+for poly,mi in zip(preview.polygons,mids): poly.material_index=mi
+preview.update(); cut=bpy.data.objects.new('Preview only — full-footprint schematic upper cutaway',preview); scene.collection.objects.link(cut)
 obj.hide_render=True
-for ob in scene.objects:
+for ob in list(scene.objects):
     if ob.type=='LIGHT': bpy.data.objects.remove(ob,do_unlink=True)
-area('Interior key',center+Vector((3,-4,24)),3800,18,center+Vector((0,0,3.8)))
-area('Interior fill',center+Vector((-16,8,18)),1800,16,center+Vector((0,0,3.8)))
-floor_z=cfg['estimated_wall_height_m']/2+0.18
-interior_center=Vector((cfg['interior_module_center_xy'][0],cfg['interior_module_center_xy'][1],0))
-camera('Upper Schematic Plan',interior_center+Vector((0,0,24)),interior_center+Vector((0,0,floor_z)),20)
+area('Cutaway key',center+Vector((16,-20,46)),30000,30,center+Vector((0,0,3.8)))
+area('Cutaway fill',center+Vector((-28,16,34)),22000,26,center+Vector((0,0,3.8)))
+camera('Full Footprint Upper Cutaway',center+Vector((26,-30,52)),center+Vector((0,0,3.6)),54)
 scene.render.filepath=os.path.join(HERE,'schematic_upper_rooms.png'); bpy.ops.render.render(write_still=True)

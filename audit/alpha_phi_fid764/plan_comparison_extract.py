@@ -34,8 +34,6 @@ xs=[p[0] for p in source]; ys=[p[1] for p in source]
 mx=sum(xs)/len(xs); my=sum(ys)/len(ys)
 cov_xx=sum((x-mx)**2 for x,y in source); cov_xy=sum((x-mx)*(y-my) for x,y in source); cov_yy=sum((y-my)**2 for x,y in source)
 pca_axis=math.degrees(0.5*math.atan2(2*cov_xy,cov_xx-cov_yy))%180
-roof_axis=math.degrees(math.atan2(cfg['principal_axis_xy'][1],cfg['principal_axis_xy'][0]))%180
-roof_axis_delta=abs((pca_axis-roof_axis+90)%180-90)
 report={
  'asset_id':cfg['asset_id'],'feature_id':raw['features'][0]['attributes']['FID'],
  'comparison':'Raw FID 764 ring after documented transform vs. saved mesh base wall-plinth segments extracted at z=0.0 to 0.58 m.',
@@ -44,13 +42,13 @@ report={
  'axis_aligned_dimensions_m':[max(xs)-min(xs),max(ys)-min(ys)],
  'transformed_polygon_area_m2':abs(area),'transformed_polygon_centroid_xy_m':[cx,cy],
  'source_ring_pca_major_axis_degrees_from_east':pca_axis,
- 'estimated_roof_ridge_axis_degrees_from_east':roof_axis,
- 'estimated_roof_vs_footprint_pca_axis_difference_degrees':roof_axis_delta,
+ 'estimated_roof_ridge_axis_degrees_from_east':None,
+ 'estimated_roof_vs_footprint_pca_axis_difference_degrees':None,
  'source_vs_model_max_boundary_vertex_error_m':max(errors) if errors else None,
  'source_vs_model_rms_boundary_vertex_error_m':math.sqrt(sum(e*e for e in errors)/len(errors)) if errors else None,
  'translation_correction_m':[0.0,0.0],
  'rotation_correction_degrees':0.0,
- 'orientation_note':'The wall base is generated from the same transformed ring vertices in the same order. The 0 m translation and 0 degree wall-footprint rotation are by-construction checks, not independent ground-control validation. The estimated roof ridge axis differs from the footprint ring PCA axis; no roof evidence resolves that interpretation.',
+ 'orientation_note':'The wall base is generated from the same transformed ring vertices in the same order. The 0 m translation and 0 degree wall-footprint rotation are by-construction checks, not independent ground-control validation. The revised low-profile roof cap has no modeled ridge axis; no source supports a specific roof direction.',
  'evidence_limits':'No georeferenced orthophoto or survey/CAD plan was available in the retained packet. The overlay verifies faithful mesh construction from the retained ring, not whether the ring is a current wall footprint.'
 }
 with open(os.path.join(HERE,'plan_comparison.json'),'w',encoding='utf8') as f: json.dump(report,f,indent=2)

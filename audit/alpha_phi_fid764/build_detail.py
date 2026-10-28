@@ -88,7 +88,7 @@ floor_levels=(0.18,story+0.12,H-0.12)
 for z in floor_levels:
     for triidx in tessellate_polygon([points]):
         p=[Vector((points[int(k)].x,points[int(k)].y,z)) for k in triidx]; poly3(p,floor)
-tc=Vector((cfg['principal_axis_xy'][0],cfg['principal_axis_xy'][1],0)).normalized(); nc=Vector((-tc.y,tc.x,0))
+tc=Vector((cfg['interior_module_axis_xy'][0],cfg['interior_module_axis_xy'][1],0)).normalized(); nc=Vector((-tc.y,tc.x,0))
 center=Vector((cfg['interior_module_center_xy'][0],cfg['interior_module_center_xy'][1],0))
 def interior_room(c,z,double=False):
     w=5.0 if not double else 6.0; d=5.6; t=tc; n=nc
@@ -163,8 +163,16 @@ for step in range(3):
 plaque=Vector((p.x,p.y,4.35))+n*0.24
 box(plaque,t,n,2.1,0.16,0.72,stone)
 def front_bar(u,z,w,h,material,depth=0.18): box(plaque+t*u+Vector((0,0,z-4.35))+n*depth,t,n,w,0.065,h,material)
-# Alpha: two uprights and crossbar; Phi: oval ring and central staff.
-front_bar(-0.54,4.39,0.11,0.46,darkwood); front_bar(-0.12,4.39,0.11,0.46,darkwood); front_bar(-0.33,4.36,0.42,0.085,darkwood)
+# Alpha: angled strokes and crossbar; Phi: oval ring and central staff.
+def sign_stroke(p0,p1,width,material):
+    p0=Vector(p0); p1=Vector(p1); axis=(p1-p0).normalized(); depth_axis=n.normalized(); thick_axis=axis.cross(depth_axis).normalized()
+    mid=(p0+p1)*0.5; half=(p1-p0).length*0.5; depth=0.055; thick=width*0.5
+    corners=[mid+axis*a+depth_axis*b+thick_axis*c for a,b,c in ((-half,-depth,-thick),(half,-depth,-thick),(half,depth,-thick),(-half,depth,-thick),(-half,-depth,thick),(half,-depth,thick),(half,depth,thick),(-half,depth,thick))]
+    k=len(verts); verts.extend(tuple(v) for v in corners)
+    for inds in ((0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)): face(tuple(k+j for j in inds),material)
+left_top=plaque+t*(-0.43)+Vector((0,0,0.25))+n*0.19; apex=plaque+t*(-0.25)+Vector((0,0,0.52))+n*0.19; right_top=plaque+t*(-0.07)+Vector((0,0,0.25))+n*0.19
+sign_stroke(left_top,apex,0.09,darkwood); sign_stroke(apex,right_top,0.09,darkwood)
+sign_stroke(plaque+t*(-0.36)+Vector((0,0,0.37))+n*0.19,plaque+t*(-0.14)+Vector((0,0,0.37))+n*0.19,0.07,darkwood)
 for j in range(18):
     ang=2*math.pi*j/18; ang2=2*math.pi*(j+1)/18
     q0=plaque+t*(0.40+0.19*math.cos(ang))+Vector((0,0,0.05+0.23*math.sin(ang)))+n*0.19
@@ -197,23 +205,24 @@ for idx,a,b,L,t,n in edges:
     for zz in (story,): box(Vector(((a.x+b.x)/2,(a.y+b.y)/2,zz))+n*0.03,t,n,L,0.11,0.12,stone)
     box(Vector(((a.x+b.x)/2,(a.y+b.y)/2,H-0.08))+n*0.07,t,n,L+0.12,0.20,0.22,stone)
 
-# Main gable roof aligned with the long axis of the GIS plan, with clay/shingle texture.
-C=Vector((sum(q.x for q in points[:-1])/len(points[:-1]),sum(q.y for q in points[:-1])/len(points[:-1]),0)); t=tc; n=nc
-roof_eave=H-0.08; ridge=cfg['estimated_roof_ridge_height_m']; length=28.4; width=23.5
-e0=C-t*length/2-n*width/2+Vector((0,0,roof_eave)); e1=C+t*length/2-n*width/2+Vector((0,0,roof_eave))
-e2=C+t*length/2+n*width/2+Vector((0,0,roof_eave)); e3=C-t*length/2+n*width/2+Vector((0,0,roof_eave))
-r0=C-t*length/2+Vector((0,0,ridge)); r1=C+t*length/2+Vector((0,0,ridge))
-quad(e0,e1,r1,r0,roof); quad(r0,r1,e2,e3,roof)
-tri(e0,e3,r0,brick); tri(e1,r1,e2,brick)
-# Rake boards, ridge cap and eaves; entry porch canopy remains distinct below the main roof.
-box(C+Vector((0,0,ridge+0.04)),t,n,length,0.20,0.16,copper)
-for side in (-1,1): box(C+n*(side*width/2)+Vector((0,0,roof_eave)),t,n,length+0.35,0.18,0.18,copper)
-for end in (-1,1):
-    q=C+t*(end*length/2)+Vector((0,0,roof_eave+0.12))
-    box(q,n,t,width*0.92,0.16,0.16,stone)
-# One restrained chimney on the rear roof slope; estimated position and scale.
-chimney=C+t*7.0+n*4.5+Vector((0,0,8.7))
-box(chimney,t,n,1.1,1.0,2.0,brick); box(chimney+Vector((0,0,1.07)),t,n,1.32,1.20,0.18,stone)
+# Conservative, low-profile roof cap follows the complete footprint. No ridge,
+# gable, or chimney is asserted because the saved illustration is not a measured
+# elevation and does not resolve roof coverage or direction.
+C=Vector((sum(q.x for q in points)/len(points),sum(q.y for q in points)/len(points),0))
+roof_eave=H-0.08; roof_top=float(cfg['estimated_roof_top_height_m'])
+roof_bottom=[Vector((q.x,q.y,roof_eave)) for q in points]
+roof_upper=[Vector((q.x+(C.x-q.x)*0.025,q.y+(C.y-q.y)*0.025,roof_top)) for q in points]
+for i in range(len(points)):
+    j=(i+1)%len(points)
+    quad(roof_bottom[i],roof_bottom[j],roof_upper[j],roof_upper[i],roof)
+for triidx in tessellate_polygon([[Vector((q.x,q.y,roof_top)) for q in roof_upper]]):
+    poly3([roof_upper[int(k)] for k in triidx],roof)
+# A narrow perimeter cap emphasizes the roof edge without inventing a ridge axis.
+for i,a in enumerate(points):
+    b=points[(i+1)%len(points)]; delta=b-a; L=delta.length
+    if L>0.2:
+        t_edge=Vector((delta.x/L,delta.y/L,0)); n_edge=Vector((t_edge.y,-t_edge.x,0))*sign
+        box(Vector(((a.x+b.x)/2,(a.y+b.y)/2,roof_top-0.05)),t_edge,n_edge,L+0.08,0.14,0.12,copper)
 
 # Compact native entry lanterns and foundation shrubs (symbolic, not landscape survey data).
 for s in (-1,1):
@@ -255,5 +264,5 @@ mesh.update()
 if old.users==0: bpy.data.meshes.remove(old)
 obj.location=(0,0,0); obj.rotation_euler=(0,0,0); obj.scale=(1,1,1)
 bpy.ops.wm.save_as_mainfile(filepath=bpy.data.filepath)
-result={'asset_id':cfg['asset_id'],'source_fid':attrs['FID'],'source_way_id':cfg['source_way_id'],'vertices':len(mesh.vertices),'faces':len(mesh.polygons),'official_ring_vertices':len(points),'official_area_m2':attrs.get('Shape__Area'),'official_num_levels':attrs.get('NUM_LEVELS'),'official_extrution_attribute':attrs.get('Extrution'),'wall_height_estimate_m':H,'roof_ridge_estimate_m':ridge,'collection_objects':len(coll.objects)}
+result={'asset_id':cfg['asset_id'],'source_fid':attrs['FID'],'source_way_id':cfg['source_way_id'],'vertices':len(mesh.vertices),'faces':len(mesh.polygons),'official_ring_vertices':len(points),'official_area_m2':attrs.get('Shape__Area'),'official_num_levels':attrs.get('NUM_LEVELS'),'official_extrution_attribute':attrs.get('Extrution'),'wall_height_estimate_m':H,'roof_top_estimate_m':roof_top,'collection_objects':len(coll.objects)}
 print('BUILD_RESULT_JSON='+json.dumps(result))
