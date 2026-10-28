@@ -1,0 +1,126 @@
+{
+  "building": "Virginia C. Meredith Residence Hall South",
+  "asset_id": "massing_meredith_hall_south_ffbc444",
+  "asset": "modular/buildings/massing_meredith_hall_south_ffbc444.blend",
+  "status": "First-pass asset accepted at 8.075/10; master fresh-open verification is still running.",
+  "sources": [
+    {
+      "provider": "Purdue University BuildingShapes ArcGIS FeatureServer, layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/410?f=pjson",
+      "feature_id": "FID 410; Virginia C. Meredith Residence Hall South; MRDS",
+      "retrieval_date": "2026-10-22 (local official snapshot)",
+      "source_date": "Feature edit date not supplied in snapshot",
+      "source_crs": "Service layer WKID 102100/3857; saved response converted to EPSG:4326",
+      "snapshot": "audit/official_purdue_buildings_wgs84.json",
+      "use": "Identity, address, and structural footprint.",
+      "measurement_method": "WGS84 polygon converted with the project local approximation; geometry simplified by iterative collinear vertex removal at 0.2 m tolerance.",
+      "uncertainty": "Published GIS tolerance/date is unavailable; this is not a surveyed registration."
+    },
+    {
+      "provider": "Purdue Newsroom",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2020/Q3/student-housing-facilities-open-on-purdues-west-lafayette-campus.html",
+      "image_url": "https://www.purdue.edu/uns/images/2020/wasson-meredith.jpg",
+      "retrieval_date": "2026-10-28",
+      "source_date": "2020 project-opening coverage",
+      "use": "Qualitative brick, repeated window rows, glass stair enclosure, entrance and site context.",
+      "measurement_method": "Visual comparison only; perspective is not used for dimensions.",
+      "uncertainty": "Image does not establish compass orientation, exact dimensions, story height, or unseen elevations."
+    },
+    {
+      "provider": "Mackey Mitchell Architects",
+      "url": "https://www.mackeymitchell.com/projects/meredith-residence-hall-south/",
+      "retrieval_date": "2026-10-28",
+      "source_date": "Project completed 2020",
+      "use": "730-bed, approximately 202,000-square-foot program; double bedrooms, shared bathrooms, glassy study lounges, ground-floor multipurpose room, kitchen/lounge and east-end retail dining.",
+      "measurement_method": "Published project description; not used as dimensional evidence.",
+      "uncertainty": "No dimensioned elevations or fully legible floor plans were inspected in this pass."
+    },
+    {
+      "provider": "Gilbane Building Company",
+      "url": "https://info.gilbaneco.com/p3-5",
+      "retrieval_date": "2026-10-28",
+      "source_date": "Completion listed as July 2020",
+      "use": "Confirms project team, 201,815 square feet, and 730 beds.",
+      "measurement_method": "Published project description.",
+      "uncertainty": "Area and bed count do not establish height or facade dimensions."
+    },
+    {
+      "provider": "Purdue University Newsroom; photograph by Mark Simons",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2020/Q3/student-housing-facilities-open-on-purdues-west-lafayette-campus.html",
+      "image_url": "https://www.purdue.edu/uns/images/2020/wasson-meredith.jpg",
+      "local_reference": "audit/meredith_hall_south/source_purdue_meredith_south_2020.jpg",
+      "retrieval_date": "2026-10-28",
+      "source_date": "2020-08-21 opening coverage",
+      "use": "Primary qualitative reference for red-brown brick, narrow window rhythm, differently sized glazed stair/study bays, pale ground-floor canopy/columns, glazed public base, entry sign and site context.",
+      "measurement_method": "Visual comparison only; camera perspective is not used as a metric elevation or measured dimension.",
+      "uncertainty": "One oblique south-side photograph; it cannot establish exact bay coordinates, complete window counts, roof equipment, unseen elevations or current tenant storefront locations."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://housing.purdue.edu/my-housing/options/residence-halls/meredith-south.html",
+      "retrieval_date": "2026-10-28",
+      "source_date": "Current residence-hall page, retrieved 2026-10-28",
+      "use": "Room types include single/double/triple/quad; typical room illustration gives 11 ft 4 in × 16 ft 4 in and shows desk, bed, dresser and bathroom.",
+      "measurement_method": "Typical-room dimensions interpreted in meters for schematic 5.0 m × 3.45 m modules. This does not establish the building-wide floor plan.",
+      "uncertainty": "Published room illustration is explicitly approximate and does not document every room type, corridor, lounge or floor arrangement."
+    }
+  ],
+  "geometry": {
+    "source_feature_id": 410,
+    "source_ring_vertices": 37,
+    "model_structural_vertices_after_simplification": 30,
+    "simplification_tolerance_m": 0.2,
+    "source_to_model_xy_bounds_delta_m": 2.2e-05,
+    "transform": "X=(longitude + 86.9137) * 111412.84 * cos(radians(40.4274)); Y=(latitude - 40.4274) * 111040.0; X east, Y north, Z up; local approximation, not surveyed CRS.",
+    "model_bounds_xyz_m": [
+      [
+        -876.791626,
+        -730.005737
+      ],
+      [
+        -214.236282,
+        -186.491653
+      ],
+      [
+        0.0,
+        21.8
+      ]
+    ],
+    "height_status": "Purdue Emergency Plan revised 2026-10-16 identifies west A as 8 floors and middle B/east C as 6. The model uses 3.3 m floor-to-floor, B/C roof 19.8 m and west-A roof 26.4 m; these heights are estimates, not surveyed elevations.",
+    "orientation_status": "Footprint follows official GIS ring. Glass stairwell location is a qualitative estimate because the available photograph is not compass-tagged."
+  },
+  "model_changes": [
+    "Rebuilt the structural shell from official Purdue GIS FID 410 and retained campus coordinates; source-to-shell axis bound delta is 0.000022 m in the project local approximation.",
+    "Modeled Purdue BEP section counts: west A eight floors, middle B and east C six floors, with a B-section basement. Floor-to-floor and roof heights remain estimates.",
+    "Added narrow repeated window bays, dark red-brown procedural brick, unequal west/east multi-story glazing, a pale first-floor canopy with columns, ground-floor glass, two east retail storefront panels/signs, and roof mechanical screens. The photo supports broad visual features; exact façade dimensions remain estimated.",
+    "Added floor plates, central corridor strips, typical-size schematic room modules, room partitions, double beds, desks and lounge cues across the modeled levels. Layout is schematic and is not presented as a measured floor plan.",
+    "Added two-sided exterior renders and an isolated level-3 plan render for review."
+  ],
+  "validation": {
+    "blender_version": "5.2.3 LTS",
+    "saved_and_reopened": true,
+    "reopen_check": "audit/meredith_hall_south/reopen_check.json",
+    "preview": "audit/meredith_hall_south/preview_exterior.png",
+    "external_material_image_paths": [],
+    "master_integration": "Master rebuild was started against this asset and updated manifest; final file reopen and affected-building placement review are pending.",
+    "structural_shell_meshes": "Fresh-open QA: base shell, west-A extension, B/C roof, west-A roof and basement all have zero boundary and nonmanifold edges.",
+    "interior_preview": "audit/meredith_hall_south/preview_interior_level3_plan.png"
+  },
+  "independent_grade": {
+    "status": "PASS",
+    "score": 8.075,
+    "display_score": "8.08/10",
+    "minimum_passing_score": 8.0,
+    "asset_sha256": "0C53215206436F8C75ABB788F0355FCAAC15ED25FE397A9DCB25A4189359142D",
+    "review": "audit/meredith_hall_south/independent_grade_meredith_south_r2_2026-10-28.md",
+    "review_json": "audit/meredith_hall_south/independent_grade_meredith_south_r2_2026-10-28.json",
+    "reviewed_at": "2026-10-28",
+    "master_integration_review": "Pending"
+  },
+  "remaining_uncertainty": [
+    "No dimensioned elevations or survey height; 3.3 m floor-to-floor and total height values are estimates.",
+    "The official exterior reference is one south-side oblique photograph. Exact window counts, glass-bay dimensions, canopy alignment, storefront placement, roof equipment and the other elevations remain unverified.",
+    "Interior room modules use Purdue Residences typical-room dimensions, but the actual building-wide arrangement has not been confirmed from dimensioned plans.",
+    "Independent review flagged wedge-like forms on the west end in the reverse preview as unverified; only one exterior photo is available, so this facade detail needs a confirming source or later correction."
+  ]
+}

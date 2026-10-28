@@ -1,0 +1,193 @@
+{
+  "building": "Virginia C. Meredith Residence Hall South",
+  "building_id": "massing_meredith_hall_south_ffbc444",
+  "source_feature_id": 410,
+  "asset_path": "modular/buildings/massing_meredith_hall_south_ffbc444.blend",
+  "asset_sha256": "FDE6897067E878BB48E0BCDB42E828070E958426937E5F558DD76D2E595C7A70",
+  "reviewer": "Independent read-only reviewer",
+  "reviewed_at": "2026-10-28",
+  "score": 6.45,
+  "max_score": 10.0,
+  "acceptance_threshold": 8.0,
+  "accepted": false,
+  "criteria": [
+    {
+      "name": "Identity and provenance",
+      "weight": 0.2,
+      "score": 9.5,
+      "weighted_points": 1.9,
+      "max_weighted_points": 2.0,
+      "evidence": [
+        "Official Purdue BuildingShapes snapshot audit/official_purdue_buildings_wgs84.json has FID 410, BLDG_ABBR MRDS, BUILDING_N Virginia C. Meredith Residence Hall South, and address 1225 1st Street.",
+        "The official Purdue emergency plan names MRDS and gives 1225 1st Street; the MSKTD project page independently names Meredith South at Purdue."
+      ],
+      "deductions": [
+        "The GIS source is a map feature, not survey control. The official facade image has no stated capture date."
+      ]
+    },
+    {
+      "name": "Plan geometry and placement",
+      "weight": 0.25,
+      "score": 9.0,
+      "weighted_points": 2.25,
+      "max_weighted_points": 2.5,
+      "evidence": [
+        "Freshly opened asset in Blender 5.2.3; eight objects present in Asset_massing_meredith_hall_south_ffbc444.",
+        "The recorded transformed FID 410 perimeter extents and wall-shell extents differ by at most 0.000022 m on their axis-aligned bounds; the preview has the same long, articulated linear footprint character."
+      ],
+      "deductions": [
+        "Only bounds were independently checked here, not a full vertex-by-vertex polygon overlay or master placement marker. The campus conversion is explicitly approximate and GIS positional accuracy is unpublished."
+      ]
+    },
+    {
+      "name": "Exterior silhouette and openings",
+      "weight": 0.25,
+      "score": 4.0,
+      "weighted_points": 1.0,
+      "max_weighted_points": 2.5,
+      "evidence": [
+        "The single available official Purdue photo shows a long brick facade with articulated height/volume, prominent multi-story glazed vertical bays, and a highly glazed ground floor.",
+        "Mackey Mitchell\u2019s architect page describes extensive ground-floor glass and retail dining at the east end (https://www.mackeymitchell.com/projects/meredith-residence-hall-south/).",
+        "Purdue\u2019s current emergency plan says the hall has three sections: west A has eight floors; middle B and east C each have six floors (https://www.purdue.edu/operations/emergency-preparedness/mrds/)."
+      ],
+      "deductions": [
+        "The saved preview presents a mostly continuous six-band window grid and near-uniform roof height; it does not visibly express the documented eight-floor west A section versus six-floor B/C sections.",
+        "The large glass stair/study bays shown in the official photo are absent or only weakly represented by narrow end strips in the render.",
+        "The broad glazed and retail ground-floor frontage described by the architect is not modeled; windows remain small repeated punched openings down to grade.",
+        "Only one oblique exterior view is available, so other elevations and roofline transitions remain unchecked."
+      ]
+    },
+    {
+      "name": "Materials and facade",
+      "weight": 0.1,
+      "score": 5.5,
+      "weighted_points": 0.55,
+      "max_weighted_points": 1.0,
+      "evidence": [
+        "The preview conveys brick, pale trim and blue-gray glazing; material slots are present on the eight mesh objects.",
+        "The official Purdue image shows dark red-brown masonry, dark framing, brighter glazing, and high-contrast glazed volumes."
+      ],
+      "deductions": [
+        "The preview renders brick unusually pale/pink and flat compared with the source image; no close-up or material calibration image is available.",
+        "Facade bay rhythm and ground-floor glazing are materially more uniform and less articulated than the official source."
+      ]
+    },
+    {
+      "name": "Interior / cutaway",
+      "weight": 0.1,
+      "score": 0.5,
+      "weighted_points": 0.05,
+      "max_weighted_points": 1.0,
+      "evidence": [
+        "The current asset is explicitly exterior-focused and the current preview is an exterior view."
+      ],
+      "deductions": [
+        "No interior or cutaway is present in the opened asset; this criterion is therefore essentially unmet."
+      ]
+    },
+    {
+      "name": "Presentation and technical quality",
+      "weight": 0.1,
+      "score": 7.0,
+      "weighted_points": 0.7,
+      "max_weighted_points": 1.0,
+      "evidence": [
+        "The exact saved .blend reopened in Blender 5.2.3 and contains the expected eight-object export collection.",
+        "Referenced texture paths are relative and resolve from the project root to materials/textures/red_brick/."
+      ],
+      "deductions": [
+        "The only supplied review render is one oblique exterior view.",
+        "BMesh inspection found open/non-manifold boundaries on the wall shell (120 edges), parapet (120), and one-face roof slab (30); these may be intentional shell surfaces, but they are not closed solids and should be documented/checked for cutaway or downstream use.",
+        "The file-backed image records reported has_data=false on fresh open; their paths resolve, but actual texture image loading/use was not verified."
+      ]
+    }
+  ],
+  "reviewed_views": [
+    "audit/meredith_hall_south/preview_exterior.png (saved oblique asset render)",
+    "Direct visual inspection of the official Purdue photo embedded in audit/meredith_hall/sources/purdue_conference_accommodations.html, labeled MEREDITH SOUTH RESIDENCE HALL \u2013 MSKTD"
+  ],
+  "evidence_sources": [
+    {
+      "provider": "Purdue University BuildingShapes FeatureServer snapshot",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/410?f=pjson",
+      "local_snapshot": "audit/official_purdue_buildings_wgs84.json",
+      "feature": "FID 410",
+      "limitations": "Map polygon; positional accuracy unpublished."
+    },
+    {
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/mrds/",
+      "inspected_claim": "Page revision 2026-10-16; three sections, A west=8 floors; B middle=6 with basement; C east=6; two retail food operations on the first floor of east/C."
+    },
+    {
+      "provider": "Mackey Mitchell Architects (project architect; MSKTD architect of record)",
+      "url": "https://www.mackeymitchell.com/projects/meredith-residence-hall-south/",
+      "inspected_claim": "Ground floor has ample glass; retail dining venues at east end; 202,000 square feet."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://housing.purdue.edu/visit/conferences/accommodations.html",
+      "local_snapshot": "audit/meredith_hall/sources/purdue_conference_accommodations.html",
+      "inspected_claim": "Embedded photo of Meredith South labeled MSKTD; capture date unstated."
+    },
+    {
+      "provider": "MSKTD Architects",
+      "url": "https://msktd.com/project/purdue-university-meredith-south-residence-hall/",
+      "inspected_claim": "Large expanses of ground-floor glass and 730-bed program."
+    },
+    {
+      "provider": "Corvias (image URL supplied by coordinator)",
+      "url": "https://www.corvias.com/sites/default/files/2023-06/Purdue_Meredith_Exterior_Night_27-1500x1055-68ce50f.jpg",
+      "inspected_claim": "Coordinator reports this is the same exterior photograph embedded in Purdue Residences\u2019 accommodations page. Treated as qualitative corroboration only; direct image fetch timed out during review, so the Corvias host/metadata were not independently verified."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "major",
+      "location": "west A section / roofline",
+      "finding": "Model reads as a uniform six-floor block; Purdue emergency plan documents eight floors in west A and six in middle B and east C.",
+      "required_correction": "Model the 8/6/6 section-height changes and verify their orientation against plan or imagery."
+    },
+    {
+      "severity": "major",
+      "location": "ground floor / east C section",
+      "finding": "The documented glassy public base and east-end food retail are not represented in the saved preview.",
+      "required_correction": "Add broad ground-floor glazing and distinguish the east-end retail frontage."
+    },
+    {
+      "severity": "major",
+      "location": "vertical study/stair bays",
+      "finding": "Official photo shows multiple tall, multi-story glazed volumes that are missing or too weakly expressed in the current render.",
+      "required_correction": "Model prominent glazed vertical bays and their frame divisions from source imagery."
+    },
+    {
+      "severity": "moderate",
+      "location": "all visible facades",
+      "finding": "Repeated small windows and pale brick flatten the facade rhythm and color compared with the source photo.",
+      "required_correction": "Adjust window dimensions/spacing and brick value; retain unknown elevations as unverified until sourced."
+    }
+  ],
+  "uncertainties": [
+    "Only one official exterior photo was inspected; hidden/rear elevations and roof equipment are not verified.",
+    "The photo capture date is not stated; architect and Purdue text corroborate the program but do not supply elevations.",
+    "GIS plan positional accuracy and the local geographic conversion error are unknown.",
+    "The shell\u2019s open mesh boundaries may be deliberate massing surfaces; no solid-volume requirement was available.",
+    "No interior evidence was inspected and none is modeled.",
+    "The master blend and its placement for this asset were not reviewed.",
+    "The coordinator identified the inspected Purdue-embedded photo as matching a Corvias-hosted image URL; direct fetch of that URL timed out, so its Corvias publication context and metadata were not independently verified."
+  ],
+  "technical_checks": {
+    "fresh_open": "pass",
+    "blender_version": "5.2.3 LTS",
+    "expected_collection": "pass",
+    "collection_object_count": 8,
+    "asset_sha256_before": "FDE6897067E878BB48E0BCDB42E828070E958426937E5F558DD76D2E595C7A70",
+    "asset_sha256_after": "FDE6897067E878BB48E0BCDB42E828070E958426937E5F558DD76D2E595C7A70",
+    "wall_shell_boundary_edges": 120,
+    "roof_slab_boundary_edges": 30,
+    "parapet_boundary_edges": 120,
+    "relative_texture_paths_resolve": true,
+    "texture_images_loaded_or_used": "unverified"
+  },
+  "score_calculation": "0.20*9.5 + 0.25*9.0 + 0.25*4.0 + 0.10*5.5 + 0.10*0.5 + 0.10*7.0 = 6.45/10; below 8.0."
+}

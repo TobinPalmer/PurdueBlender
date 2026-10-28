@@ -1,0 +1,189 @@
+{
+  "building": "Virginia C. Meredith Residence Hall South",
+  "building_id": "massing_meredith_hall_south_ffbc444",
+  "source_feature_id": 410,
+  "asset_path": "modular/buildings/massing_meredith_hall_south_ffbc444.blend",
+  "asset_sha256": "0C53215206436F8C75ABB788F0355FCAAC15ED25FE397A9DCB25A4189359142D",
+  "revision": "final first-pass revision submitted 2026-10-28",
+  "reviewer": "Independent read-only reviewer",
+  "reviewed_at": "2026-10-28",
+  "score": 8.075,
+  "display_score": "8.08/10",
+  "max_score": 10.0,
+  "acceptance_threshold": 8.0,
+  "accepted": true,
+  "criteria": [
+    {
+      "name": "Identity and provenance",
+      "weight": 0.2,
+      "score": 9.5,
+      "weighted_points": 1.9,
+      "max_weighted_points": 2.0,
+      "evidence": [
+        "Official Purdue BuildingShapes snapshot names FID 410 \u201cVirginia C. Meredith Residence Hall South\u201d, MRDS, address 1225 1st Street.",
+        "Purdue Newsroom opening article and the supplied photo identify Meredith South; its address and official BEP corroborate the intended building."
+      ],
+      "deductions": [
+        "GIS snapshot edit date is unavailable and polygon accuracy is not survey-certified."
+      ]
+    },
+    {
+      "name": "Plan geometry and placement",
+      "weight": 0.25,
+      "score": 9.5,
+      "weighted_points": 2.375,
+      "max_weighted_points": 2.5,
+      "evidence": [
+        "Fresh reopen check reports the structural shell\u2019s source-derived XY bounds within 0.000022 m of transformed FID 410 bounds.",
+        "Asset preserves campus coordinates and stable asset/export collection."
+      ],
+      "deductions": [
+        "Only axis-aligned bounds were independently checked in this review; they do not prove every edge, orientation or placement marker. Project conversion is a local approximation, not surveyed control."
+      ]
+    },
+    {
+      "name": "Exterior silhouette and openings",
+      "weight": 0.25,
+      "score": 7.0,
+      "weighted_points": 1.75,
+      "max_weighted_points": 2.5,
+      "evidence": [
+        "Front preview now shows a taller west section and lower adjoining wings, matching Purdue BEP\u2019s A=8 floors and B/C=6 floors.",
+        "Preview includes broad dark glazed vertical bays, a glazed base, a First Street canopy with columns, and two east retail sign panels, addressing the prior major gaps.",
+        "Official 2020 Purdue photo shows brick residential wings, glazed vertical study/stair bays, a ground-floor public base, and a projecting canopy."
+      ],
+      "deductions": [
+        "Only one compass-untagged exterior photograph is available. Reverse-side features and the exact glazing-bay corner remain unverified.",
+        "The reverse preview still has a stack of large white triangular/wedge-like projections at the far west end. No inspected reference confirms these forms; they may be geometry artifacts.",
+        "The large glazed bays read as broad dark blue-green blocks at the overview scale; their frame divisions and exact proportions are not well resolved.",
+        "Purdue sources identify the east retail frontage, but the render overview does not make the two storefronts legible."
+      ]
+    },
+    {
+      "name": "Materials and facade",
+      "weight": 0.1,
+      "score": 7.5,
+      "weighted_points": 0.75,
+      "max_weighted_points": 1.0,
+      "evidence": [
+        "The revised red-brown brick is substantially closer to the Purdue source image; dark window frames, glazed bays and pale canopy/trim are present."
+      ],
+      "deductions": [
+        "Brick remains a uniform procedural field at overview scale; source image has visible masonry variation and stronger trim/frame separation. Glass reads nearly opaque in the renders."
+      ]
+    },
+    {
+      "name": "Interior / cutaway",
+      "weight": 0.1,
+      "score": 5.5,
+      "weighted_points": 0.55,
+      "max_weighted_points": 1.0,
+      "evidence": [
+        "Fresh-opened asset contains corridor floors, room partitions, double beds and desks across levels 1\u20138; a level-3 plan view is supplied.",
+        "Purdue Residences gives a typical room illustration dimension of 11 ft 4 in \u00d7 16 ft 4 in; the modeler documents using it as a module estimate."
+      ],
+      "deductions": [
+        "The level-3 view is an abstract linear diagram rather than a verified plan. The inspected sources do not establish the building-wide room layout or partition locations.",
+        "Shared bathrooms, lounges and other documented pod program are not clearly distinguished in the provided level-3 view."
+      ]
+    },
+    {
+      "name": "Presentation and technical quality",
+      "weight": 0.1,
+      "score": 7.5,
+      "weighted_points": 0.75,
+      "max_weighted_points": 1.0,
+      "evidence": [
+        "Exact saved asset fresh-opened in Blender 5.2.3; expected `Asset_massing_meredith_hall_south_ffbc444` contains 56 objects (54 meshes).",
+        "Reopen check reports closed structural wall, roof and basement meshes with zero boundary/nonmanifold edges; no external image dependencies are reported.",
+        "Front/reverse exterior and level-3 plan review renders are available."
+      ],
+      "deductions": [
+        "The unexplained west-end wedge projections remain visible in the reverse render and affect presentation quality.",
+        "The level-3 plan render is very low-contrast and hard to read as rooms, shared spaces and circulation."
+      ]
+    }
+  ],
+  "reviewed_views": [
+    "audit/meredith_hall_south/preview_exterior.png",
+    "audit/meredith_hall_south/preview_exterior_reverse.png",
+    "audit/meredith_hall_south/preview_interior_level3_plan.png",
+    "audit/meredith_hall_south/source_purdue_meredith_south_2020.jpg"
+  ],
+  "evidence_sources": [
+    {
+      "provider": "Purdue University BuildingShapes FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/410?f=pjson",
+      "feature": "FID 410, MRDS, Virginia C. Meredith Residence Hall South",
+      "local_snapshot": "audit/official_purdue_buildings_wgs84.json",
+      "limitations": "Map polygon; accuracy and feature edit date unavailable."
+    },
+    {
+      "provider": "Purdue Newsroom",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2020/Q3/student-housing-facilities-open-on-purdues-west-lafayette-campus.html",
+      "image_url": "https://www.purdue.edu/uns/images/2020/wasson-meredith.jpg",
+      "local_image": "audit/meredith_hall_south/source_purdue_meredith_south_2020.jpg",
+      "use": "Qualitative exterior material, glazing, entry and massing comparison; not dimensional evidence."
+    },
+    {
+      "provider": "Purdue University Office of Emergency Preparedness",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/mrds/",
+      "source_revision": "2026-10-16",
+      "use": "Documents west A=8 floors, middle B=6 floors and basement, east C=6 floors; two retail food operations at first floor of east/C."
+    },
+    {
+      "provider": "Mackey Mitchell Architects",
+      "url": "https://www.mackeymitchell.com/projects/meredith-residence-hall-south/",
+      "use": "Ground-floor glass and east-end retail dining description; no dimensioned elevations inspected."
+    },
+    {
+      "provider": "Purdue University Residences",
+      "url": "https://housing.purdue.edu/my-housing/options/residence-halls/meredith-south.html",
+      "use": "Typical single room illustration dimensions 11 ft 4 in \u00d7 16 ft 4 in; illustration is not a building-wide floor plan."
+    },
+    {
+      "provider": "MSKTD Architects",
+      "url": "https://msktd.com/project/purdue-university-meredith-south-residence-hall/",
+      "use": "Large ground-floor glazing and residence program."
+    }
+  ],
+  "findings": [
+    {
+      "severity": "moderate",
+      "location": "far west end in reverse preview",
+      "finding": "Six large white triangular/wedge forms protrude from the facade, with no inspected source support.",
+      "required_correction": "Verify against a reverse-side photo or remove/refine if these are accidental geometry; document their source if intentional."
+    },
+    {
+      "severity": "minor",
+      "location": "east C retail frontage",
+      "finding": "Two retail sign panels are represented, but storefront identities/frontage are not legible in the overview render.",
+      "required_correction": "Provide a closer review render and distinguish Panera and QDOBA entries/signs."
+    },
+    {
+      "severity": "minor",
+      "location": "level-3 plan",
+      "finding": "The schematic shows a long corridor and repeated room modules, but the supplied image does not make room boundaries, bathrooms or lounge pods easy to inspect.",
+      "required_correction": "Render a closer high-contrast plan and label or visually separate corridor, rooms, bathrooms and lounge zones. Keep unverified plan dimensions marked as estimates."
+    }
+  ],
+  "uncertainties": [
+    "Only one official exterior facade photo is available and it is not compass-tagged; other facades and the exact entrance/glazing orientation remain unverified.",
+    "GIS bounds match closely, but this review did not independently recompute every polygon edge or the master placement.",
+    "Story count is supported by Purdue BEP, but floor-to-floor and total heights are model estimates.",
+    "Room modules use Purdue Residences typical-room illustration dimensions; actual building-wide layout and bathroom/lounge placement remain unverified.",
+    "No master integration review was performed."
+  ],
+  "technical_checks": {
+    "fresh_open": "pass",
+    "blender_version": "5.2.3 LTS",
+    "expected_collection": "pass",
+    "object_count": 56,
+    "mesh_object_count": 54,
+    "interior_object_count": 40,
+    "structural_closed_mesh_check": "pass per current reopen_check.json",
+    "asset_sha256_before": "0C53215206436F8C75ABB788F0355FCAAC15ED25FE397A9DCB25A4189359142D",
+    "asset_sha256_after": "0C53215206436F8C75ABB788F0355FCAAC15ED25FE397A9DCB25A4189359142D"
+  },
+  "score_calculation": "0.20*9.5 + 0.25*9.5 + 0.25*7.0 + 0.10*7.5 + 0.10*5.5 + 0.10*7.5 = 8.075/10; passes 8.0 before rounding."
+}
