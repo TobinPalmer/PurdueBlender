@@ -2,7 +2,9 @@
 
 Rank 61 in Rossen's assigned queue. Stable ID `felix_haas_hall`; source `modular/buildings/felix_haas_hall.blend`; collection `Asset_felix_haas_hall`. The manifest origin `[-214.84998321533203, -64.0199966430664]` and local coordinate frame are preserved. No campus master edits are part of this work.
 
-**State: first candidate revision awaiting independent review; not accepted.** The first-pass score 8.4/10 is historical and does not establish second-pass acceptance. Default second-pass target remains 9.9/10.
+**Current state: [detail and color revision r04](detail_color_r04/README.md), opened in Blender for the user's inspection before independent review.** The exterior is newly built from official footprint data and real photographs. r04 refines front lighting fixtures, portal, relief borders, windows and stairs; rear service features; and brick/stone/roof/frame/door colors using the supplied photo and additional north, west and southwest street views. No current visual grade or second-pass completion is claimed. The first-pass 8.4/10 is historical; the second-pass target remains 9.9/10.
+
+r01 independently scored 5.2/10. r02 review was interrupted without a final score. r03 was opened for the user, who requested the additional detail/color work now represented by r04. Neither r03 nor r04 has been independently graded. The current facade coverage, limitations, source links and discrepancy checklist are in the r04 record. The older r01-focused coverage and revision notes below are historical, not current claims about r04.
 
 ## Exact starting state
 

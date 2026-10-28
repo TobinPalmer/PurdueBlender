@@ -10,7 +10,7 @@ The master remains Tobin-owned. Passing source revisions will receive individual
 
 | Rank | Building | State | Evidence |
 | ---: | --- | --- | --- |
-| 61 | Felix Haas Hall | r01: 5.2/10; revision required | `audit/felix_haas_hall/second_pass/` |
+| 61 | Felix Haas Hall | r04 detail/color preview; current independent score pending (r01: 5.2/10) | `audit/felix_haas_hall/second_pass/` |
 | 62 | Physics Building | Queued | `audit/physics_building/second_pass/` |
 | 63 | Wang Hall | Queued | `audit/massing_wang_hall_wang_0dac5ab/second_pass/` |
 | 64 | Dauch Alumni Center | Queued | `audit/dauch_alumni_center/second_pass/` |
