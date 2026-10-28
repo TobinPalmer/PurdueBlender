@@ -1,0 +1,80 @@
+{
+  "building": "Delta Zeta (Xi Omega Chapter), Purdue University",
+  "feature_id": 752,
+  "address": "825 Hilltop Drive, West Lafayette, Indiana",
+  "asset_id": "massing_house_301841601_7ae6159",
+  "asset_path": "modular/buildings/massing_house_301841601_7ae6159.blend",
+  "asset_sha256": "E86CF1D70C54E93053F3224721D73D9734AB3924AB97A58927AC2D3317104509",
+  "source_record": "audit/delta_zeta_fid752/source_record.json",
+  "retrieval_date": "2026-10-28",
+  "geometry": {
+    "primary_source": "Purdue GIS BuildingShapesZip4 FeatureServer layer 0, FID 752",
+    "source_crs": "WKID 102100 / latestWkid 3857, Web Mercator Auxiliary Sphere",
+    "transform": "Inverse Web Mercator followed by repository-local approximate campus conversion; not surveyed control",
+    "ring_vertices": 11,
+    "gis_ring_area_local_m2": 1131.54,
+    "gis_ring_bbox_xy_m": [[-867.4043, -808.2541], [722.2555, 759.3250]],
+    "wall_base_check": "Source ring used to define model wall base; maximum transformed GIS corner to nearest model wall-base vertex error is 0.0000311 m, from Blender float precision.",
+    "osm_secondary_check": {
+      "way": 301841601,
+      "tags": "building=school (unnamed)",
+      "footprint_intersection_over_union": 0.893,
+      "footprint_hausdorff_distance_m": 3.50,
+      "centroid_offset_m": 1.16,
+      "interpretation": "General location and footprint corroboration only. The OSM way has no Delta Zeta name and is not used as the primary identity or wall geometry source."
+    }
+  },
+  "identity_evidence": [
+    "Official Purdue GIS FID 752 identifies Delta Zeta, BLDG_ABBR SODZ, at 825 Hilltop Dr.",
+    "Current official Xi Omega chapter site gives 825 Hilltop Drive, West Lafayette; Purdue FSCL also lists the Delta Zeta chapter.",
+    "Purdue FSCL FAQ image and the Delta Zeta national chapter feature provide qualitative exterior support. The official Purdue photo description identifies red brick, broad concrete steps, wood double doors, a high arched window, globe lamp posts, and a stone chapter sign.",
+    "City permit search records identify a 2022 interior remodel and a 2023 exterior renovation at this address. These dates do not resolve the final as-built elevation."
+  ],
+  "geometry_edits": [
+    "Replaced the legacy 14-vertex, 17-face blank L-shaped block with a detailed one-object shell following the complete 11-vertex official GIS wall footprint.",
+    "Added estimated two-level brick facade, repeated sash openings, double entrance doors with an arched glazed panel, broad entry steps, lamp-post proxies, and a stone chapter marker based on qualitative photo evidence.",
+    "Added schematic foyer, living room, dining room, and kitchen furniture modules for cutaway evidence; room types follow chapter-feature photo labels, while positions and sizes remain illustrative."
+  ],
+  "interpretation_and_uncertainty": {
+    "story_count": "Two modeled above-grade levels are an estimate. Purdue GIS NUM_LEVELS=1 and CountOfFLO=1 conflict; photo appearance and a third-party public-area summary only weakly suggest a taller house. No source confirms exact story count.",
+    "height": "Estimated eave 7.2 m and roof peak 9.0 m. GIS Extrution=36 is recorded but its unit and meaning are undocumented; no elevation or survey was found.",
+    "roof": "Low shallow ridge/cap is an estimate. Available source imagery and metadata do not resolve roof profile, pitch, or materials.",
+    "facade": "Brick and entrance composition have qualitative image support. Window count/rhythm, dimensions, exact entry-edge alignment, facade proportions, trim and roof material remain interpretive.",
+    "interior": "The cutaway is schematic, not a measured or current as-built floor plan. Room locations, dimensions, walls, and furniture are illustrative.",
+    "site_elements": "Entry landing, steps, lamps, and chapter marker are interpretive proxies. They are excluded from structural footprint metrics.",
+    "crosswalk_candidate": "README crosswalk row also lists Crosswalk Commons. This separate nearby property is associated with 925 Hilltop Drive in its own OSM data; it was neither edited nor merged into the Delta Zeta 825 Hilltop asset."
+  },
+  "fresh_open": {
+    "status": "PASS",
+    "report": "audit/delta_zeta_fid752/fresh_open_validation.json",
+    "blender_version": "5.2.3 LTS",
+    "mesh_vertices": 2471,
+    "mesh_faces": 1757,
+    "collection_object_count": 1,
+    "external_image_datablocks": 0,
+    "saved_cameras_or_lights": 0
+  },
+  "evidence_files": {
+    "raw_gis_feature": "audit/delta_zeta_fid752/sources/purdue_gis_fid752_2026-10-28_3857.json",
+    "gis_layer_metadata": "audit/delta_zeta_fid752/sources/purdue_gis_layer0_metadata_2026-10-28.json",
+    "osm_feature_extract": "audit/delta_zeta_fid752/sources/osm_way_301841601_2026-10-22.json",
+    "crosswalk_candidate_identity_extract": "audit/delta_zeta_fid752/sources/osm_crosswalk_commons_925_hilltop_2026-10-22.json",
+    "geometry_report": "audit/delta_zeta_fid752/final_geometry.json",
+    "footprint_metrics": "audit/delta_zeta_fid752/footprint_comparison.json",
+    "footprint_overlay": "audit/delta_zeta_fid752/final_footprint_comparison.png",
+    "exterior": "audit/delta_zeta_fid752/exterior_three_quarter.png",
+    "front_entry_detail": "audit/delta_zeta_fid752/entry_front_detail.png",
+    "interior_cutaway": "audit/delta_zeta_fid752/schematic_interior_cutaway.png",
+    "schematic_room_layout": "audit/delta_zeta_fid752/room_layout.json"
+  },
+  "independent_grade": {
+    "status": "PASS",
+    "score": 8.3,
+    "exact_weighted_score": 8.27,
+    "threshold": 8.0,
+    "report": "audit/delta_zeta_fid752/independent_grade_codex_2026-10-28.md",
+    "scorecard": "audit/delta_zeta_fid752/independent_grade_codex_2026-10-28.json",
+    "graded_asset_sha256": "E86CF1D70C54E93053F3224721D73D9734AB3924AB97A58927AC2D3317104509",
+    "review_mode": "independent read-only review of exact saved asset and evidence packet"
+  }
+}

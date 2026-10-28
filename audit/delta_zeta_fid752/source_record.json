@@ -1,0 +1,108 @@
+{
+  "building": "Delta Zeta (Xi Omega Chapter), Purdue University",
+  "feature_id": 752,
+  "retrieval_date": "2026-10-28",
+  "sources": [
+    {
+      "provider": "Purdue GIS BuildingShapesZip4 FeatureServer layer 0",
+      "feature_id": "FID 752",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D752&outFields=*&returnGeometry=true&outSR=3857&f=pjson",
+      "retrieved": "2026-10-28",
+      "local_snapshot": "audit/delta_zeta_fid752/sources/purdue_gis_fid752_2026-10-28_3857.json",
+      "layer_metadata_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "layer_metadata_snapshot": "audit/delta_zeta_fid752/sources/purdue_gis_layer0_metadata_2026-10-28.json",
+      "crs": "WKID 102100 / latestWkid 3857, Web Mercator Auxiliary Sphere; query requested outSR=3857",
+      "attributes_of_interest": {
+        "BUILDING_N": "Delta Zeta",
+        "BLDG_ABBR": "SODZ",
+        "ADDRESS": "825 Hilltop Dr",
+        "OWNER": "GREEK",
+        "NUM_LEVELS": 1,
+        "CountOfFLO": 1,
+        "Extrution": 36,
+        "Shape__Area": 1956.1875,
+        "Shape__Length": 228.9320995884003,
+        "BUILT": null
+      },
+      "measurement_method": "Use source polygon ring vertices after inverse Web Mercator and the project's local approximate conversion. The geometry's local planar footprint area is not the Web Mercator Shape__Area attribute.",
+      "uncertainty": "The campus GIS polygon is not a survey. Floor-count, extrusion units, and floorplan path semantics are undocumented; no vertical control is provided."
+    },
+    {
+      "provider": "Purdue University Fraternity, Sorority and Cooperative Life FAQ",
+      "url": "https://www.purdue.edu/fscl/about/faq.php",
+      "image_url": "https://www.purdue.edu/fscl/images/_hero/delta-zeta-1280x720.jpg",
+      "retrieved": "2026-10-28",
+      "source_date": "not stated on page",
+      "evidence": "Official Purdue image search result identifies the Delta Zeta Omega chapter house at 825 and describes a red-brick exterior, a wide concrete stair leading to wood double doors beneath a tall arched window, white globe lamp posts, and a stone chapter sign. Use this as qualitative visual evidence, not a calibrated elevation. Image is linked but not copied; no reuse license was established.",
+      "crs": null
+    },
+    {
+      "provider": "Delta Zeta Sorority, official Xi Omega Purdue chapter site",
+      "url": "https://www.dzxiomega.org/",
+      "retrieved": "2026-10-28",
+      "evidence": "Current official chapter homepage names Purdue University and gives the address 825 Hilltop Drive, West Lafayette, Indiana 47906.",
+      "crs": null
+    },
+    {
+      "provider": "Purdue University FSCL, Panhellenic chapters page",
+      "url": "https://www.purdue.edu/fscl/councils/pha/chapters.php",
+      "retrieved": "2026-10-28",
+      "evidence": "Lists Delta Zeta and links the Xi Omega chapter site; supports active chapter identity, not building dimensions.",
+      "crs": null
+    },
+    {
+      "provider": "Delta Zeta Sorority, Featured House: Xi Omega – Purdue University",
+      "url": "https://www.deltazeta.org/blog/featured-house-xi-omega-purdue-university/",
+      "retrieved": "2026-10-28",
+      "source_date": "2023-01-20",
+      "evidence": "National organization's article says Xi Omega joined the National Housing Corporation in 2022 and describes house updates including new floors, paint, bathroom updates, and common-area furniture; page labels photos Foyer, Living Room, Dining Room, Kitchen, and Outside Front. These observations support room types and an exterior reference, not dimensions or a current plan.",
+      "crs": null
+    },
+    {
+      "provider": "City of West Lafayette permit activity report, May 2023",
+      "url": "https://d3n9y02raazwpg.cloudfront.net/westlafayette/cfcee721-764d-11ed-9024-0050569183fa-cff30912-cddf-4b95-ab44-f6b7a2c8f869-1686082412.pdf",
+      "retrieved": "2026-10-28",
+      "source_date": "May 2023",
+      "evidence": "Search-indexed permit row identifies Delta Zeta Sorority at 825 Hilltop Dr and a $1,000,000 exterior renovation (permit 26067, 2023-05-08). This corroborates site identity and renovation timing, not dimensions.",
+      "crs": null
+    },
+    {
+      "provider": "City of West Lafayette permit activity report, June 2022",
+      "url": "https://d3n9y02raazwpg.cloudfront.net/westlafayette/1d9b182f-a0a9-11ec-8a90-0050569183fa-cff30912-cddf-4b95-ab44-f6b7a2c8f869-1657050708.pdf",
+      "retrieved": "2026-10-28",
+      "source_date": "June 2022",
+      "evidence": "Search-indexed permit row identifies a Delta Zeta interior remodel at 825 Hilltop Dr (permit 25488, 2022-06-08). Another row says add deck to front of house. This supports a front deck/entry area but is not an elevation or measured plan.",
+      "crs": null
+    },
+    {
+      "provider": "OpenStreetMap Overpass snapshot retained at repository root",
+      "source_id": "way 301841601",
+      "snapshot": "purdue_campus_buildings.json",
+      "retrieved": "2026-10-22T03:45:50Z",
+      "local_extract": "audit/delta_zeta_fid752/sources/osm_way_301841601_2026-10-22.json",
+      "evidence": "The same numeric way ID has an eight-node polygon tagged building=school without a name. It is a secondary footprint/location cross-check only; the numeric match is not treated as independent identity proof.",
+      "crs": "WGS84"
+    },
+    {
+      "provider": "OpenStreetMap Overpass snapshot retained at repository root",
+      "source_id": "way 231217849, Crosswalk Commons",
+      "snapshot": "purdue_campus_buildings.json",
+      "retrieved": "2026-10-22T03:45:50Z",
+      "local_extract": "audit/delta_zeta_fid752/sources/osm_crosswalk_commons_925_hilltop_2026-10-22.json",
+      "evidence": "OSM way is named Crosswalk Commons and gives 925 Hilltop Drive, distinguishing the nearby Crosswalk Commons candidate from the official Delta Zeta address 825 Hilltop. This is used only to disambiguate the candidate asset; no edits were made to that other building.",
+      "crs": "WGS84"
+    },
+    {
+      "provider": "Zillow public-record summary (third-party, not assessor source)",
+      "url": "https://www.zillow.com/homedetails/825-Hilltop-Dr-West-Lafayette-IN-47906/206767255_zpid/",
+      "retrieved": "2026-10-28",
+      "source_date": "public record summary; page accessed at retrieval",
+      "evidence": "Non-primary assessor-derived listing reports 1989 construction, brick construction and asphalt roof, and approx. 22,716 sq ft. Used only as a weak dimensional/material consistency check; not a measured elevation or authoritative floor count.",
+      "crs": null
+    }
+  ],
+  "coordinate_transform": "Inverse Web Mercator (WKID 102100/latestWkid 3857) to longitude/latitude, then repository-local approximation X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040.0. This is approximate campus-local meters, not surveyed control.",
+  "story_height_and_roof": "GIS reports NUM_LEVELS=1 and CountOfFLO=1; the official Purdue facade photo shows a high arched window over the entrance but does not establish story count, roof form, or heights. The modeled story count, eave, and roof are explicit estimates. Extrution=36 is retained but units/meaning are undocumented.",
+  "interior": "National chapter article names foyer, living room, dining room, and kitchen images after a 2022 renovation; only schematic spatial modules are modeled. No floor-plan source was found; location, dimensions, partitions, and furniture are not as-built evidence.",
+  "crosswalk_candidate_note": "The README crosswalk row associates FID 752 with both this massing_house asset and a separate Crosswalk Commons model. The latter is a different nearby property at 925 Hilltop Drive by its own OSM identity/address and is not modified or merged into this Delta Zeta asset."
+}

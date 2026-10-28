@@ -1,0 +1,61 @@
+{
+  "building": "Delta Zeta (Xi Omega Chapter), Purdue University",
+  "feature_id": 752,
+  "asset": "modular/buildings/massing_house_301841601_7ae6159.blend",
+  "asset_sha256": "E86CF1D70C54E93053F3224721D73D9734AB3924AB97A58927AC2D3317104509",
+  "review_mode": "independent read-only review of saved preview and recorded fresh-open evidence",
+  "review_date": "2026-10-28",
+  "blender_version": "5.2.3 LTS (from fresh_open_validation.json)",
+  "weights_percent": {
+    "identity_and_provenance": 20,
+    "plan_geometry_and_placement": 25,
+    "exterior_silhouette_and_openings": 25,
+    "materials_and_facade": 10,
+    "interior_and_cutaway": 10,
+    "presentation_and_technical": 10
+  },
+  "scores": {
+    "identity_and_provenance": 9.0,
+    "plan_geometry_and_placement": 8.7,
+    "exterior_silhouette_and_openings": 7.5,
+    "materials_and_facade": 7.9,
+    "interior_and_cutaway": 7.7,
+    "presentation_and_technical": 8.6
+  },
+  "weighted_total": 8.27,
+  "rounded_total": 8.3,
+  "threshold": 8.0,
+  "result": "PASS",
+  "evidence_reviewed": [
+    "review_handoff.md",
+    "evidence.json",
+    "source_record.json",
+    "footprint_comparison.json",
+    "final_geometry.json",
+    "fresh_open_validation.json",
+    "exterior_three_quarter.png",
+    "entry_front_detail.png",
+    "schematic_interior_cutaway.png",
+    "final_footprint_comparison.png"
+  ],
+  "key_strengths": [
+    "Direct official GIS FID 752 identity and address evidence, with official chapter sources and dated supporting context.",
+    "Official 11-vertex GIS polygon defines the modeled wall-base ring; saved comparison reports 0.0000311 m max corner-to-vertex error, clearly qualified as same-source/by-construction.",
+    "Independent unnamed OSM ring provides a useful secondary general footprint check (IoU 0.893, Hausdorff 3.50 m, centroid offset 1.16 m) without being misrepresented as identity proof.",
+    "Entry composition and red brick align qualitatively with official Purdue photo description; cutaway is legible and correctly qualified as schematic.",
+    "Fresh-open report records stable one-object scene/collection, no external image datablocks, and no saved camera/light objects."
+  ],
+  "limitations": [
+    "Exterior massing is still a simplified two-level brick block with a very broad, shallow pale-blue roof cap; roof profile/material and story count are not resolved by reliable architectural evidence. GIS reports one level, so the modeled two-level interpretation remains an estimate.",
+    "Facade rhythm is repetitive and window openings are generic. Available imagery supports brick and entry features but not exact window count, dimensions, floor heights, or elevations.",
+    "Render colors are clean and separable but the pale roof, blue cast/background, and stylized near-white trim reduce resemblance to the likely physical palette.",
+    "Interior room names are supported by the 2023 chapter feature, while room locations, partitions, dimensions, and furnishings are schematic and not current as-built evidence.",
+    "The GIS outline is not surveyed control; OSM differs by up to 3.50 m and 1.16 m centroid offset."
+  ],
+  "recommended_refinements": [
+    "If another exterior source is found, refine roof slope/edge profile and facade proportions to match it; otherwise keep the roof explicitly labeled as an estimate.",
+    "Tune brick/roof colors toward the source photo and reduce the cool blue cast in the exterior preview.",
+    "Compare window spacing and door dimensions against a front elevation if one becomes available.",
+    "Keep the interior marked as schematic and avoid implying the labeled rooms are in measured positions."
+  ]
+}
