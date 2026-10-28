@@ -1,0 +1,482 @@
+{
+  "building": "Phi Mu",
+  "feature_id": 772,
+  "stable_asset_id": "massing_house_301836574_fff1661",
+  "asset_path": "modular/buildings/massing_house_301836574_fff1661.blend",
+  "asset_sha256": "8524c009a3931f1e04ca1ed313d43be3be1cb94ff07ea99c62797841db65d861",
+  "status": "passed_independent_grade_pending_master_integration",
+  "independent_grade": {
+    "status": "PASS",
+    "score": 8.29,
+    "weighted_score": 8.285,
+    "threshold": 8.0,
+    "asset_sha256": "8524c009a3931f1e04ca1ed313d43be3be1cb94ff07ea99c62797841db65d861",
+    "report": "audit/phi_mu_fid772/independent_grade_r2_2026-10-28.md"
+  },
+  "finished": true,
+  "retrieved_utc_date": "2026-10-28",
+  "provider": "Purdue University shared ArcGIS BuildingShapesZip4 FeatureServer layer 0",
+  "identity_attributes": {
+    "FID": 772,
+    "BLDG_ABBR": "SOFM",
+    "BUILDING_N": "Phi Mu",
+    "OTHER_ABBR": "SOFM",
+    "NUM_LEVELS": 1,
+    "OWNER": "GREEK",
+    "ADDRESS": "201 Waldron St",
+    "Extrution": 12,
+    "GlobalID": "{923B9D32-C5CA-4DC0-A403-1A89B486B88F}",
+    "Shape__Area": 1385.22265625,
+    "Shape__Length": 213.23828916727575
+  },
+  "identity_resolution": {
+    "result": "GIS name and address agree with Phi Mu Delta Epsilon chapter page for 201 Waldron Street.",
+    "conflict_found": false
+  },
+  "sources": [
+    {
+      "provider": "Purdue University ArcGIS",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "purpose": "Layer metadata; native spatial reference EPSG:102100/latestWkid 3857."
+    },
+    {
+      "provider": "Purdue University ArcGIS",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D772&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "purpose": "Exact feature identity and footprint; queried as EPSG:4326."
+    },
+    {
+      "provider": "Purdue University ArcGIS",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D772&outFields=*&returnGeometry=true&outSR=3857&f=pjson",
+      "purpose": "Native projected feature geometry and Shape__Area / Shape__Length comparison."
+    },
+    {
+      "provider": "Phi Mu Delta Epsilon Purdue chapter",
+      "url": "https://purdue.phimu.org/about",
+      "purpose": "Official identity and chapter address (201 Waldron Street)."
+    },
+    {
+      "provider": "C.M. Kelham WordPress blog",
+      "url": "https://cmkelham.wordpress.com/2010/08/09/phi-mu-pink-letters-201/",
+      "purpose": "2010 chapter-specific exterior photo; clearly documents one visible facade only."
+    },
+    {
+      "provider": "C.M. Kelham WordPress media",
+      "url": "https://cmkelham.wordpress.com/wp-content/uploads/2010/08/img003.jpg",
+      "purpose": "Saved property-specific exterior image; red brick, white pediment/cornice, columns, tall window bays, centered letters."
+    },
+    {
+      "provider": "Waze",
+      "url": "https://www.waze.com/live-map/directions/phi-mu-sorority-waldron-st-201-west-lafayette?to=place.w.178979220.1789661131.4902948",
+      "purpose": "Address cross-check only; low-resolution listing photo not used for fine facade details."
+    }
+  ],
+  "source_files": [
+    {
+      "path": "purdue_gis_fid772_2026-10-28_4326.json",
+      "sha256": "9fdd468e48c39577bcb40eec85a189ad3ac3c186ba20ab64b08a0a9b8ccce264",
+      "bytes": 15575
+    },
+    {
+      "path": "purdue_gis_fid772_2026-10-28_3857.json",
+      "sha256": "0350f5d7dd5a6c765799e5f5ccaf7b3d2bcb93e7eb124f6df900644f6f78c1ac",
+      "bytes": 15574
+    },
+    {
+      "path": "purdue_gis_layer_0_metadata_2026-10-28.json",
+      "sha256": "d2a7d5c51143397c63ab420ae284f06f22b8db773e8c167643b78a9e050ce07f",
+      "bytes": 32256
+    },
+    {
+      "path": "source_phi_mu_blog_page.html",
+      "sha256": "9e1eabcec2889f626568f5c6e9f46aed4f1710b379ad5385578bca2fb91af281",
+      "bytes": 102476
+    },
+    {
+      "path": "source_phi_mu_purdue_2010.jpg",
+      "sha256": "ede991743e73b0a78d1e9037c2b59de169ec7398077798865342ae905112ad8d",
+      "bytes": 335243
+    },
+    {
+      "path": "source_waze_listing_photo.jpg",
+      "sha256": "1b29f763b3f182b809cb310030da00e7286455dd6b659a819dbc5e3f7a260dd7",
+      "bytes": 3672
+    },
+    {
+      "path": "source_purdue_panhellenic_phi_mu.jpg",
+      "sha256": "b801467790324caacf94a0a745c0cc6da6825243e188b98263421637d3ce23f5",
+      "bytes": 19637
+    }
+  ],
+  "geometry_reconciliation": {
+    "feature_id": 772,
+    "geometry_vertex_count_excluding_close": 18,
+    "project_conversion": "README local approximation from EPSG:4326, origin lon -86.9137 / lat 40.4274; X=delta lon*111412.84*cos(40.4274deg), Y=delta lat*111040.",
+    "native_epsg3857": {
+      "area_m2": 1385.2265625,
+      "perimeter_m": 213.23828915008838,
+      "Shape__Area": 1385.22265625,
+      "Shape__Length": 213.23828916727575
+    },
+    "project_local_geometry": {
+      "area_m2": 801.361070772562,
+      "perimeter_m": 162.18758386433487,
+      "width_m": 26.869562136707202,
+      "depth_m": 40.80895100077669,
+      "bbox_xy_m": [
+        -402.6184391084219,
+        -115.69218767069742,
+        -375.7488769717147,
+        -74.88323666992073
+      ]
+    },
+    "starter_geometry": {
+      "bottom_ring_vertex_count": 15,
+      "area_m2": 839.086975665763,
+      "perimeter_m": 149.31946399260838,
+      "width_m": 27.003692626953125,
+      "depth_m": 40.86271667480469,
+      "bbox_xy_m": [
+        -402.74859619140625,
+        -116.08121490478516,
+        -375.7449035644531,
+        -75.21849822998047
+      ],
+      "symmetric_boundary_hausdorff_m": 5.633821954022328
+    },
+    "revised_geometry": {
+      "outline": "source FID 772 ring converted to project local coordinates; 18 distinct points",
+      "max_vertex_error_to_source_m": 1.4883290452693004e-05,
+      "area_difference_from_converted_source_m2": 0.00019635581520560663,
+      "perimeter_difference_from_converted_source_m": -3.360888283054919e-05
+    },
+    "native_to_local_area_ratio": 1.7285922825831248,
+    "native_to_local_perimeter_ratio": 1.3147633380398336,
+    "height": {
+      "revised_ridge_m_estimate": 9.4,
+      "source_NUM_LEVELS": 1,
+      "source_Extrution": 12,
+      "unit_for_Extrution": "undocumented; not treated as verified meters or feet"
+    },
+    "qualifications": [
+      "Geometry derives from source polygon only, using the project approximate local transform.",
+      "This does not independently verify campus placement relative to roads or adjacent buildings.",
+      "The new two-level facade reading conflicts with GIS NUM_LEVELS=1 and is interpretative; the photo clearly documents only the lower level.",
+      "Extrusion/height, facade orientation, detailed roof breaks, unseen facade openings and interior are not surveyed or verified."
+    ]
+  },
+  "method_and_edits": [
+    "Replaced the starter approximate 15-vertex bottom outline with the official 18-vertex FID 772 ring transformed from EPSG:4326 using the project README local approximation.",
+    "Rebuilt the wall mass with red-brown brick, light cornice/pediment, portico columns, door and window assemblies; added a dark simple gable roof and centered hand-built Phi Mu badge based only on clearly visible 2010 facade features.",
+    "Added an interpretative second window level at coordinator direction. It is not established by the 2010 crop and conflicts with GIS NUM_LEVELS=1; keep this prominent in review.",
+    "Modeled ridge at 9.4m as an estimate. GIS Extrution=12 has undocumented units and is not claimed as measured height.",
+    "No source-derived interior geometry is represented; no campus placement check or orientation survey was performed.",
+    "Added schematic floor areas at the ground level and an interpretative upper level, partition walls, stair treads/rail, and modest dining/lounge/sleeping furniture. These are generic placeholders because no reliable interior plan or interior photograph was found; no room use or placement is claimed as measured.",
+    "Created a roof-open interior-only preview from the saved joined mesh; the evidence view filters to the interior inserts and shows the full GIS footprint plate for legibility."
+  ],
+  "before_after": {
+    "starter": {
+      "asset_sha256": "unrecorded before builder overwrite",
+      "mesh_vertices": 30,
+      "mesh_faces": 41,
+      "bounds_m": [
+        27.0037,
+        40.8627,
+        16.0
+      ],
+      "outline_vertices": 15,
+      "outline_hausdorff_from_source_m": 5.633821954022328
+    },
+    "revised": {
+      "asset_sha256": "8524c009a3931f1e04ca1ed313d43be3be1cb94ff07ea99c62797841db65d861",
+      "mesh_vertices": 11469,
+      "mesh_faces": 10734,
+      "full_object_bounds_m": [
+        28.801116943359375,
+        44.35895538330078,
+        9.399999618530273
+      ],
+      "footprint_boundary_hausdorff_from_source_m": 0.0,
+      "material_count": 12
+    }
+  },
+  "fresh_open_validation": {
+    "result": "PASS",
+    "validation_mode": "Blender 5.2.3 background fresh-open of saved asset",
+    "asset_relative_path": "modular/buildings/massing_house_301836574_fff1661.blend",
+    "asset_sha256": "8524c009a3931f1e04ca1ed313d43be3be1cb94ff07ea99c62797841db65d861",
+    "scene": "Building_massing_house_301836574_fff1661",
+    "asset_collection": "Asset_massing_house_301836574_fff1661",
+    "object_names": [
+      "House_301836574"
+    ],
+    "mesh_vertex_count": 11469,
+    "mesh_face_count": 10734,
+    "source_outline_vertices": 18,
+    "max_source_to_saved_mesh_outline_vertex_error_m": 1.4883290452693004e-05,
+    "source_outline_area_m2": 801.361070772562,
+    "saved_outline_area_m2": 801.3612671283772,
+    "source_outline_perimeter_m": 162.18758386433487,
+    "saved_outline_perimeter_m": 162.18755025545204,
+    "saved_outline_area_difference_m2": 0.00019635581520560663,
+    "saved_outline_perimeter_difference_m": -3.360888283054919e-05,
+    "mesh_bounds_xyz_m": [
+      [
+        -404.0,
+        -116.04219055175781,
+        0.0
+      ],
+      [
+        -375.1988830566406,
+        -71.68323516845703,
+        9.399999618530273
+      ]
+    ],
+    "mesh_dimensions_xyz_m": [
+      28.801116943359375,
+      44.35895538330078,
+      9.399999618530273
+    ],
+    "material_count": 12,
+    "materials": [
+      {
+        "name": "PhiMu_Red_Brick_Illustrative",
+        "diffuse_rgba": [
+          0.25999999046325684,
+          0.06800000369548798,
+          0.035999998450279236,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.25999999046325684,
+          0.06800000369548798,
+          0.035999998450279236,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Painted_White_Trim",
+        "diffuse_rgba": [
+          0.8799999952316284,
+          0.8500000238418579,
+          0.7699999809265137,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.8799999952316284,
+          0.8500000238418579,
+          0.7699999809265137,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Dark_Slate_Roof",
+        "diffuse_rgba": [
+          0.03500000014901161,
+          0.0430000014603138,
+          0.052000001072883606,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.03500000014901161,
+          0.0430000014603138,
+          0.052000001072883606,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Entry_Door_Wood",
+        "diffuse_rgba": [
+          0.2199999988079071,
+          0.08500000089406967,
+          0.04500000178813934,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.2199999988079071,
+          0.08500000089406967,
+          0.04500000178813934,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Window_Glass_Dark",
+        "diffuse_rgba": [
+          0.04500000178813934,
+          0.07500000298023224,
+          0.09000000357627869,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.04500000178813934,
+          0.07500000298023224,
+          0.09000000357627869,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Window_Frame_White",
+        "diffuse_rgba": [
+          0.9100000262260437,
+          0.8799999952316284,
+          0.7900000214576721,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.9100000262260437,
+          0.8799999952316284,
+          0.7900000214576721,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Sign_Letter_Gold",
+        "diffuse_rgba": [
+          0.6600000262260437,
+          0.46000000834465027,
+          0.1899999976158142,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.6600000262260437,
+          0.46000000834465027,
+          0.1899999976158142,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Schematic_Floor",
+        "diffuse_rgba": [
+          0.20000000298023224,
+          0.17000000178813934,
+          0.14000000059604645,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.20000000298023224,
+          0.17000000178813934,
+          0.14000000059604645,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Schematic_Upper_Floor",
+        "diffuse_rgba": [
+          0.3799999952316284,
+          0.3100000023841858,
+          0.23000000417232513,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.3799999952316284,
+          0.3100000023841858,
+          0.23000000417232513,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Schematic_Partitions",
+        "diffuse_rgba": [
+          0.8600000143051147,
+          0.8100000023841858,
+          0.699999988079071,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.8600000143051147,
+          0.8100000023841858,
+          0.699999988079071,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Schematic_Furniture",
+        "diffuse_rgba": [
+          0.1599999964237213,
+          0.09000000357627869,
+          0.04500000178813934,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.1599999964237213,
+          0.09000000357627869,
+          0.04500000178813934,
+          1.0
+        ]
+      },
+      {
+        "name": "PhiMu_Schematic_Fabric",
+        "diffuse_rgba": [
+          0.11999999731779099,
+          0.2199999988079071,
+          0.36000001430511475,
+          1.0
+        ],
+        "base_color_rgba": [
+          0.11999999731779099,
+          0.2199999988079071,
+          0.36000001430511475,
+          1.0
+        ]
+      }
+    ],
+    "image_datablocks": [
+      {
+        "name": "Render Result",
+        "filepath": "",
+        "packed": false,
+        "users": 1
+      }
+    ],
+    "external_unpacked_image_dependencies": [],
+    "fresh_open_preview_files": [
+      "fresh_open_exterior.png",
+      "fresh_open_top.png",
+      "fresh_open_schematic_interior_cutaway.png"
+    ],
+    "limitations": [
+      "No source-derived interior plan was available; interior rooms and furniture are schematic only and not as-built.",
+      "Exterior front orientation is not source-verified; presentation gable is representative.",
+      "The two-level facade interpretation is not independently verified; GIS NUM_LEVELS=1 conflicts with it and the photo clearly documents only the lower level.",
+      "Height is estimated at a 9.4 m ridge; GIS Extrution=12 has undocumented units.",
+      "Detailed roof breaks and unseen facade openings remain unverified."
+    ]
+  },
+  "evidence_images": [
+    "fresh_open_exterior.png",
+    "fresh_open_top.png",
+    "exterior_preview.png",
+    "top_preview.png",
+    "exterior_rear_oblique.png",
+    "footprint_overlay.png",
+    "fresh_open_schematic_interior_cutaway.png",
+    "schematic_interior_cutaway.png"
+  ],
+  "limitations": [
+    "Exterior photo is from 2010 and is cropped; current facade/roof condition may differ.",
+    "Only one facade is directly documented; compass orientation and unseen sides remain unverified.",
+    "Two-level reading is interpretative and conflicts with GIS NUM_LEVELS=1.",
+    "Ridge height and roof profile are estimates; GIS Extrution=12 units are undocumented.",
+    "No source-derived interior plan or verified room layout is available.",
+    "Source footprint conversion uses project local approximation and does not independently verify absolute campus placement.",
+    "All interior floors, room divisions, stairs, and furnishings are schematic and not as-built; room arrangement and use are unverified.",
+    "Interior cutaway image is a filtered evidence view generated from the saved asset; it isolates interior inserts for legibility and does not depict an authoritative plan."
+  ],
+  "grade": {
+    "status": "PASS",
+    "score": 8.29,
+    "weighted_score": 8.285,
+    "threshold": 8.0,
+    "independent_reviewer": "Coordinator reviewer; read-only, separate from asset builder",
+    "report": "audit/phi_mu_fid772/independent_grade_r2_2026-10-28.md",
+    "report_sha256": "8524c009a3931f1e04ca1ed313d43be3be1cb94ff07ea99c62797841db65d861"
+  },
+  "grade_history": [
+    {
+      "revision": 1,
+      "score": 7.54,
+      "status": "FAIL",
+      "asset_sha256": "77d7d6075baa1f4948e48a0a0366891e33e28e0e9daf9f6290e9828ec8584f43",
+      "report": "audit/phi_mu_fid772/independent_grade_2026-10-28.md"
+    }
+  ]
+}
