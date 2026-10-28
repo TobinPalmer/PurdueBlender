@@ -1,0 +1,172 @@
+﻿{
+    "building":  "Alpha Gamma Delta (Beta Xi), Purdue University",
+    "purdue_gis_feature_id":  757,
+    "asset":  "modular/buildings/massing_house_301841608_d56a4c4.blend",
+    "audit_candidate":  "audit/alpha_gamma_delta_fid757/candidate_alpha_gamma_delta.blend",
+    "builder":  "audit/alpha_gamma_delta_fid757/build_detail.py",
+    "retrieval_date":  "2026-10-28",
+    "identity":  {
+                     "status":  "consistent",
+                     "gis_attributes":  {
+                                            "FID":  757,
+                                            "BUILDING_N":  "Alpha Gamma Delta",
+                                            "OWNER":  "GREEK",
+                                            "ADDRESS":  "1010 David Ross Rd"
+                                        },
+                     "corroborating_source":  {
+                                                  "url":  "https://alphagammadeltahousing.org/locations/purdue-university/",
+                                                  "provider":  "Alpha Gamma Delta Fraternity Housing Corporation",
+                                                  "retrieved":  "2026-10-28",
+                                                  "evidence":  "Lists Beta Xi at Purdue University, 1010 David Ross Road, as a house. The page also lists 1965, 23,288 square feet, and 74 capacity."
+                                              },
+                     "address_conflict":  null
+                 },
+    "sources":  [
+                    {
+                        "use":  "Footprint geometry and GIS attributes",
+                        "provider":  "Purdue GIS, BuildingShapesZip4 ArcGIS FeatureServer, layer 0",
+                        "feature_identifier":  "FID 757 / GlobalID {52E75856-4257-41B4-A4A8-3977C9E2E4D1}",
+                        "local_snapshot":  "audit/alpha_gamma_delta_fid757/purdue_gis_fid757_2026-10-27.json",
+                        "retrieved":  "2026-10-27",
+                        "source_url":  "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D757\u0026outFields=*\u0026returnGeometry=true\u0026outSR=4326\u0026f=pjson",
+                        "query_retrieved":  "2026-10-28",
+                        "live_query_snapshot":  "audit/alpha_gamma_delta_fid757/purdue_gis_fid757_2026-10-28_4326.json",
+                        "layer_metadata_url":  "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+                        "layer_metadata_snapshot":  "audit/alpha_gamma_delta_fid757/purdue_gis_layer_0_metadata_2026-10-28.json",
+                        "native_projection_area_snapshot":  "audit/alpha_gamma_delta_fid757/purdue_gis_fid757_2026-10-28_3857.json",
+                        "snapshot_reconciliation":  "The 2026-10-28 live FID 757 query in EPSG:4326 matches the 2026-10-27 snapshot exactly for all attributes and polygon coordinates. The live layer metadata declares its native spatial reference as WKID 102100/latestWkid 3857 (Web Mercator Auxiliary Sphere). A second live query requested in EPSG:3857 confirms the retained Shape__Area and Shape__Length against native projected ring measurements.",
+                        "source_crs":  "EPSG:4326 (WGS 84), as recorded in the snapshot spatialReference",
+                        "native_layer_crs":  "WKID 102100 / latestWkid 3857, Web Mercator Auxiliary Sphere, confirmed by the layer metadata snapshot",
+                        "geometry_method":  "Used the sole polygon ring, transformed each longitude/latitude with the project local approximation: X=(lon+86.9137)*111412.84*cos(radians(40.4274)); Y=(lat-40.4274)*111040.0. Simplified the 30-vertex closed ring at 1.2 m RDP tolerance to 25 structural outline vertices before producing the wall shell.",
+                        "attributes":  {
+                                           "Shape__Area_m2":  1785.99609375,
+                                           "Shape__Length_m":  221.33575509234083,
+                                           "Extrution_ft":  40,
+                                           "NUM_LEVELS":  1,
+                                           "Layer":  "BLDG Building Private Owned"
+                                       },
+                        "projected_area_reconciliation":  "The planar shoelace area of the EPSG:3857 query ring is 1,786.0039 m2 and its perimeter is 221.3357551 m, matching Shape__Area=1,785.9961 m2 and Shape__Length=221.3357551 m within rounding. The same ring transformed to the repository local approximation yields 1,033.1 m2 because Web Mercator scale distortion at Purdue is removed by the local lon/lat approximation; these area values are not directly comparable. There is no remaining source area conflict.",
+                        "native_projected_ring_area_m2":  1786.00390625,
+                        "native_projected_ring_perimeter_m":  221.33575505342765,
+                        "transformed_local_ring_area_m2":  1033.074429627799,
+                        "ring_bounds_project_xy_m":  {
+                                                         "x_min":  -896.7978560613567,
+                                                         "x_max":  -846.5794736610017,
+                                                         "y_min":  864.4553731868496,
+                                                         "y_max":  903.1197568790208
+                                                     }
+                    },
+                    {
+                        "use":  "Exterior silhouette and facade features",
+                        "provider":  "Third-party architectural illustration, local copy",
+                        "local_snapshot":  "audit/alpha_gamma_delta_fid757/purdue_house_illustration_reference.jpg",
+                        "source_url":  "https://www.etsy.com/listing/648583773/alpha-gamma-delta-sorority-house-purdue",
+                        "retrieved":  "2026-10-27",
+                        "source_crs":  null,
+                        "method":  "Visual reference only. It depicts a raised central volume, a large circular window over Greek lettering, lower wings, and a columned entry. It is an illustration rather than a measured elevation; facade orientation, window spacing, story heights, and roof dimensions are not survey verified."
+                    },
+                    {
+                        "use":  "Interior finish and furnishing character only",
+                        "provider":  "Alpha Gamma Delta Fraternity Housing Corporation gallery",
+                        "source_url":  "https://alphagammadeltahousing.org/locations/purdue-university/",
+                        "image_urls":  [
+                                           "https://alphagammadeltahousing.org/wp-content/uploads/2017/05/DSC_0154-485x485.jpg",
+                                           "https://alphagammadeltahousing.org/wp-content/uploads/2017/05/DSC_0160-485x485.jpg",
+                                           "https://alphagammadeltahousing.org/wp-content/uploads/2017/05/DSC_0198-485x485.jpg",
+                                           "https://alphagammadeltahousing.org/wp-content/uploads/2017/05/DSC_0200-485x485.jpg",
+                                           "https://alphagammadeltahousing.org/wp-content/uploads/2017/05/DSC_0212-485x485.jpg"
+                                       ],
+                        "local_snapshots":  [
+                                                "audit/alpha_gamma_delta_fid757/DSC_0154-485x485.jpg",
+                                                "audit/alpha_gamma_delta_fid757/DSC_0160-485x485.jpg",
+                                                "audit/alpha_gamma_delta_fid757/DSC_0198-485x485.jpg",
+                                                "audit/alpha_gamma_delta_fid757/DSC_0200-485x485.jpg",
+                                                "audit/alpha_gamma_delta_fid757/DSC_0212-485x485.jpg"
+                                            ],
+                        "retrieved":  "2026-10-27",
+                        "source_crs":  null,
+                        "method":  "Used to inform a schematic furnished lounge and finish palette only. Photos do not provide a measured plan or room-by-room layout."
+                    },
+                    {
+                        "use":  "Story-count context",
+                        "provider":  "Meyer Najem project page",
+                        "source_url":  "https://www.meyer-najem.com/project/alpha-gamma-delta-sorority-house-purdue-university/",
+                        "retrieved":  "2026-10-28",
+                        "evidence":  "Describes a 5,000-square-foot renovation of the existing house and labels the house 2 stories. Renovation area is not the whole building area and was not used as the footprint; the two-story descriptor is contextual and does not verify individual wing or tower heights."
+                    }
+                ],
+    "measurements_and_model":  {
+                                   "placement":  "Local geometry remains in the campus coordinate approximation derived from the source ring; no manual translation or rotation correction was applied.",
+                                   "footprint":  "Structural walls derive from the GIS ring; exterior entry steps and trim extend slightly beyond it. The ring was not independently matched to CAD or a georeferenced aerial outline.",
+                                   "height":  "Fresh-open mesh bounds are 12.10 m tall, approximately 39.7 ft. This was modeled to the GIS Extrution=40 ft attribute, but the attribute\u0027s vertical datum/meaning is not documented. It is not a surveyed roof-height measurement. GIS NUM_LEVELS=1 conflicts with the illustration and Meyer Najem\u0027s two-story descriptor.",
+                                   "facade":  "Warm cream stucco, deep charcoal roof, red entry, raised core, round window, Greek lettering, and pilasters are visual interpretations. A small hipped entry canopy was shaped to echo the illustrated portico. Exact facade orientation is not established by the non-georeferenced illustration.",
+                                   "interior":  "Schematic common/lounging, dining, study, and circulation zones. Furniture style is informed by property-specific gallery photos; partitions, room locations, and stairs are not as-built verified. No official plan was available in the retained files."
+                               },
+    "geometry_edits":  [
+                           "Replaced simple massing with a wall shell following the simplified FID 757 ring.",
+                           "Added two-level wings, parapeted roof, raised central block and gable, windows, floor bands, brick plinth, illustrative Greek lettering, and circular upper-story window.",
+                           "Added a schematic columned entrance, paired red doors, steps, and a low hipped entry canopy informed by the retained house illustration; partitions, stair, and photo-informed lounge/dining/study furnishings remain schematic.",
+                           "Merged exact duplicate mesh vertices and removed unused legacy external image datablocks."
+                       ],
+    "fresh_open_validation":  "audit/alpha_gamma_delta_fid757/fresh_open_validation.json",
+    "mesh_health":  "The saved mesh is a visually assembled, multi-part surface mesh. Fresh-open check reports 3,026 non-manifold edges, including 980 boundary edges, due to intersecting/open architectural details and schematic furniture. Do not treat the mesh as a watertight fabrication or structural model.",
+    "previews":  [
+                     "audit/alpha_gamma_delta_fid757/preview_exterior.png",
+                     "audit/alpha_gamma_delta_fid757/preview_cutaway_interior.png",
+                     "audit/alpha_gamma_delta_fid757/preview_lounge_schematic.png"
+                 ],
+    "independent_grade":  {
+                              "status":  "passed",
+                              "score":  8.1,
+                              "minimum_required":  8.0,
+                              "reviewer":  "Alpha Phi independent peer reviewer",
+                              "review_date":  "2026-10-28",
+                              "asset_sha256":  "DEECE5A3370C60670BD876ED940DBBDDBF16620B73A85B66D6B0A85D45A270FF",
+                              "grade_report":  "Coordinator reports an independent peer grade of 8.1/10 on this exact asset SHA; detailed reviewer report remains coordinator-held.",
+                              "weighted_scorecard":  {
+                                                         "identity_and_provenance":  {
+                                                                                         "score":  8.5,
+                                                                                         "weight":  0.2
+                                                                                     },
+                                                         "plan_geometry_and_placement":  {
+                                                                                             "score":  8.0,
+                                                                                             "weight":  0.25
+                                                                                         },
+                                                         "exterior_silhouette_and_openings":  {
+                                                                                                  "score":  8.0,
+                                                                                                  "weight":  0.25
+                                                                                              },
+                                                         "materials_and_facade":  {
+                                                                                      "score":  8.5,
+                                                                                      "weight":  0.1
+                                                                                  },
+                                                         "interior_and_legibility":  {
+                                                                                         "score":  7.5,
+                                                                                         "weight":  0.1
+                                                                                     },
+                                                         "presentation_and_technical":  {
+                                                                                            "score":  8.2,
+                                                                                            "weight":  0.1
+                                                                                        },
+                                                         "weighted_total":  8.12,
+                                                         "rounded_total":  8.1
+                                                     },
+                              "peer_findings":  [
+                                                    "No plan overlay or independent dimensions/position check; footprint matches the retained GIS ring, but that is not a survey validation.",
+                                                    "Facade orientation and window spacing remain illustrative; interior cutaway is sparse and not an as-built plan.",
+                                                    "The multi-part mesh has many open/non-manifold edges and is not watertight.",
+                                                    "The reviewer notes the Shape__Area versus local transformed ring area difference is explained by Web Mercator scale distortion at latitude 40.4 degrees, not a true geometry conflict."
+                                                ]
+                          },
+    "asset_sha256":  "DEECE5A3370C60670BD876ED940DBBDDBF16620B73A85B66D6B0A85D45A270FF",
+    "master_integration":  {
+                               "date":  "2026-10-28",
+                               "master_file":  "purdue_campus_master.blend",
+                               "audit":  "audit/tobin_agd_kkg_master_integration_2026-10-28.json",
+                               "result":  "pass",
+                               "fresh_open":  true,
+                               "object":  "House_301841608",
+                               "library":  "modular/buildings/massing_house_301841608_d56a4c4.blend"
+                           },
+    "coordinator_status":  "Independently graded above 8/10; integrated and fresh-open verified in the master."
+}

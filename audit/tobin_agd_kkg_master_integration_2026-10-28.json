@@ -1,0 +1,58 @@
+﻿{
+    "date":  "2026-10-28",
+    "master_file":  "purdue_campus_master.blend",
+    "backup_file":  "scratch/purdue_campus_master_before_agd_kkg_integration_2026-10-28.blend",
+    "verification":  {
+                         "saved_after_loading_current_linked_libraries":  true,
+                         "fresh_open":  true,
+                         "required_objects_present":  true,
+                         "missing_objects":  [
+
+                                             ],
+                         "library_links_relative":  true,
+                         "blender_version":  "5.2.3 LTS"
+                     },
+    "assets":  [
+                   {
+                       "building":  "Alpha Gamma Delta (Beta Xi)",
+                       "manifest_id":  "massing_house_301841608_d56a4c4",
+                       "library":  "modular/buildings/massing_house_301841608_d56a4c4.blend",
+                       "master_object":  "House_301841608",
+                       "master_polygon_count":  9681,
+                       "master_dimensions_m":  [
+                                                   50.576,
+                                                   42.89,
+                                                   12.1
+                                               ],
+                       "independent_grade":  8.1,
+                       "grade_report":  "audit/alpha_gamma_delta_fid757/independent_grade_r1/grade.md",
+                       "remaining_estimates":  [
+                                                   "facade orientation and window spacing",
+                                                   "40-foot GIS extrusion is not a surveyed roof height",
+                                                   "interior partitions/circulation",
+                                                   "master position is derived from the source ring"
+                                               ]
+                   },
+                   {
+                       "building":  "Kappa Kappa Gamma",
+                       "manifest_id":  "massing_house_301840871_5d1bc06",
+                       "library":  "modular/buildings/massing_house_301840871_5d1bc06.blend",
+                       "master_object":  "House_301840871",
+                       "master_polygon_count":  6767,
+                       "master_dimensions_m":  [
+                                                   24.814,
+                                                   39.945,
+                                                   13.54
+                                               ],
+                       "independent_grade":  8.5,
+                       "grade_report":  "audit/kappa_kappa_gamma_fid782/independent_grade_r1/grade.md",
+                       "remaining_estimates":  [
+                                                   "roof-wing proportions and heights",
+                                                   "entrance bearing and facade stationing",
+                                                   "schematic current interior",
+                                                   "plaque text legibility"
+                                               ]
+                   }
+               ],
+    "notes":  "The master save loaded the current project-relative library sources for both existing linked objects. Fresh-open Blender 5.2.3 validation found both objects, expected polygon counts/dimensions, and relative library paths. This confirms linked asset refresh and file integrity, not independent survey-grade campus placement."
+}

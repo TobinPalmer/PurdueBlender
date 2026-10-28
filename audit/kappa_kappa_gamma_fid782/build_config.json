@@ -1,0 +1,34 @@
+{
+  "asset_id": "massing_house_301840871_5d1bc06",
+  "asset_path": "modular/buildings/massing_house_301840871_5d1bc06.blend",
+  "scene": "Building_massing_house_301840871_5d1bc06",
+  "collection": "Asset_massing_house_301840871_5d1bc06",
+  "object": "House_301840871",
+  "geometry_mode": "Single mesh object; original direct campus-coordinate library convention retained.",
+  "official_footprint": {
+    "provider": "Purdue University BuildingShapesZip4 FeatureServer",
+    "fid": 782,
+    "source_snapshot": "source_fid_782_raw.json",
+    "crs": "EPSG:4326",
+    "distinct_ring_vertices": 12,
+    "coordinate_conversion": {
+      "origin_latitude": 40.4274,
+      "origin_longitude": -86.9137,
+      "x": "(longitude + 86.9137) * 111412.84 * cos(radians(40.4274))",
+      "y": "(latitude - 40.4274) * 111040.0"
+    },
+    "limitations": "Local approximation, not surveyed. Source level/extrusion fields are inconsistent with photo evidence and have no published units; not used for height."
+  },
+  "design": {
+    "wall_shell": "Built from all 12 GIS source-ring vertices. Pale ashlar/Rostone-like material and bands follow official 2017 image.",
+    "estimated_above_grade_form": "Two wall levels, slate mansard roof and dormers; roof height from image proportions only, not measured.",
+    "entrance_orientation": "Courtyard-facing inner wall inferred from the GIS notch and official 2017 courtyard photograph; photo is not georeferenced.",
+    "interior": "Schematic only: basement chapter room; first-floor entry/common areas; upper bedroom/study zones. Inspired by KKG archival descriptions (1937/1959/2014), not a current floorplan.",
+    "textures": "Procedural node materials with noise-driven color variation and bump. No external textures."
+  },
+  "build_script": "build_detail.py",
+  "renders": ["exterior_preview.png", "exterior_courtyard.png", "top_preview.png"],
+  "validation_script": "validate_asset.py",
+  "validation_report": "fresh_open_validation.json",
+  "build_report": "build_metrics.json"
+}
