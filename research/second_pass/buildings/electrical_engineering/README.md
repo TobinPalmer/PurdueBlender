@@ -77,3 +77,38 @@ Outside-footprint ground median is 623.01 ftUS. The one-metre-eroded footprint c
 - Build a floor-by-floor window/opening schedule with counts, sash divisions, louvers, blocked/infilled bays and sill/head elevations for every face. Current central entrance evidence is strong; full rear counts are unverified.
 - Inspect the complete study/drawing set and current roof references, register actual roof faces to the point cloud, and resolve building/neighbor/bridge ownership before model work. Plans are not a substitute for photographs of architectural detail.
 - When modeling resumes by user direction, create matched baseline comparisons and follow the separate independent visual review/iteration requirements. No model score, independent exterior acceptance or master change occurred here.
+
+## Focused depth pass — October 29, 2026
+
+This pass reinspected the official front photograph, August 2025 northwest bridge view and 2017 Duncan/service-side image, together with the retained architect account. It turns the visible street-front hierarchy into a concrete partial schedule and keeps post-renovation and historical service evidence separate. It adds no invented camera positions, facade symmetry or model score.
+
+### Street-front opening and inscription schedule
+
+Use [Purdue's front original](sources/purdue_front_2025.jpg), cross-checked against [August 2025 front Street View](sources/streetview_northeast_front_2025.png). Index the three main portals **D1–D3 from left to right while facing the avenue entrance**; use adjacent source-visible groups rather than interpreting the tight official crop as the entire long elevation.
+
+| Zone | Observed layout and detail | Limit before construction |
+| --- | --- | --- |
+| D1–D3 ground portals | Three separate pairs of dark glazed door leaves under deep pale rectangular stone surrounds; broad rectangular dark transom above each pair, projecting cap/cornice above each surround | Portal widths/leaf hardware and rise relative to grade remain photo estimates; do not merge the three into one curtain wall. |
+| C1–C3 above portals | Three aligned tall window groups with **two columns and three stacked tiers** visible in the central samples | These groups sit **lower than the flanking upper main-story openings**. The large brick panels above them are solid, not missing windows to fill for an even grid. |
+| A / attic strip | Shorter two-by-two divided window groups beneath the dark projecting eave | The official crop exposes eight complete groups and cuts the longer facade. Eight is the photographed span, not a whole-building row count. |
+| F-L / left flank in crop | Two complete taller upper groups left of C1; a different lower row beneath | Soldier-course heads, pale sills, dark reveals and small top inserts/louvers differ by opening. Some lower portions are tree-obscured. |
+| F-R / right flank in crop | Three complete taller upper groups right of C3 in the same cropped source | Corresponding lower groups include visible louver/infill variations; do not assume all rectangles are clear glass or infer a globally asymmetric whole-building count from a cropped photo. |
+| Upper historic inscription | Long incised **ELECTRICAL ENGINEERING** stone band, with joints and projecting small caps/brackets beneath | The source crop trims the extreme left; use the retained institutional identity and wider photo for full placement. Do not replace the incised lettering with the raised-family-name treatment. |
+| Lower family inscription | Raised lettering reading **MAX W AND MAILEEN BROWN FAMILY HALL**, over the central portals | This is a different elevation, scale, material/depth and letter spacing from the upper incised name; preserve the source's AND rather than automatically inserting an ampersand into the physical lettering. |
+| Low side openings | Shorter dark openings below a pale belt on either side of the entrance span | Planting hides some; totals and every grille/infill pattern remain incomplete. |
+
+### Connections and different facade families
+
+The [northwest August 2025 frame](sources/streetview_northwest_corner_2025.png) verifies an enclosed glazed bridge crossing toward the neighboring ME mass. It has its own roof, longitudinal mullions, lower solid fascia and visible diagonal/structural members. The bridge ends and underside are partly concealed by planting/perspective; attachment geometry and ownership remain unresolved. A broad dark band in a view is not permission to add a full extra floor to either building. ME remains a separate asset.
+
+The [2017 southern service frame](sources/streetview_south_service_2017.png) shows another facade family: a large near-blank brick field divided by tall pale strips, a lower service doorway, a higher glazed central connection and an open recessed drive/entry below a projecting horizontal platform/canopy. The left brick volume has its own upper short lights and taller main windows. The modern masses beyond are separate context until registered. Do not continue the avenue's stone-name/portal grid across these service walls.
+
+[The retained MSKTD account](sources/msktd_bhee_2025.html), [published September 10, 2025](https://msktd.com/design-journal/entry/behind-the-design-bhee-renovation-a-tradition-reimagined/), distinguishes an earlier lower-level phase from the later first-floor renovation and describes improved access through the Duncan Annex connection. It supports exterior preservation alongside changed interiors/circulation; it does not prove every 2014 proposed glazing panel was constructed. Interior gold accents and renderings are not exterior materials. The dated 2017 service wall still needs current visual confirmation even though August 2025 avenue views are available.
+
+### Depth, materials and construction brief
+
+Keep the dark bracketed eave and gutter as projecting elements; use the actual red/brown brick piers, soldier-course heads, pale belts/sills and recessed dark metal frames. Preserve both forms of lettering, portal cap projection and individual transom/louver differences. Match the tall central glazing separately from the flank and attic families. Compare official daylight, 2025 street shade and the architect corner image rather than making reflected blue sky an opaque blue facade material. No calibrated color or measured material roughness is established.
+
+When modeling is authorized: use the reviewed identity/footprint association already saved, retain primary FID292 for the bar and distinguish adjoining equipment FID109; build the connected mass/roof zones, locate the three portals and lowered C1–C3 group, then add each flank/attic/service/arch/bridge family from its own evidence. The recessed three-arch connector is a separate condition from the three rectangular avenue portals. Preserve lower roof and internal void changes; do not use the equipment feature as an occupied extra wing or import neighboring roofs.
+
+Remaining high-impact gaps are full wing-by-wing opening counts and sill/head levels, current rear/court/service conditions, bridge attachments/undersides, precise architectural profiles and registered roof planes/current services. The 2014/2022 proposed drawings and 2018 cloud cannot certify those by themselves. **Advance to rank 8, Potter Engineering**, retaining these targeted follow-ups rather than delaying the queue for repeated source retries.
