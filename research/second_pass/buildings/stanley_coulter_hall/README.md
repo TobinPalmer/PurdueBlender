@@ -1,6 +1,6 @@
 # Stanley Coulter Hall exterior research — in progress
 
-Research rank **9**, stable ID `stanley_coulter_hall`, asset `modular/buildings/stanley_coulter_hall.blend`, second-pass owner **Rossen**, first-pass grade **8.1/10**, priority **87.46**. **In progress checkpoint**, October 29, 2026. Continue this building before rank 10; this is not a prepared whole-building exterior dossier, modeling revision or second-pass visual acceptance.
+Research rank **9**, stable ID `stanley_coulter_hall`, asset `modular/buildings/stanley_coulter_hall.blend`, second-pass owner **Rossen**, first-pass grade **8.1/10**, priority **87.46**. **In progress checkpoint**, October 29, 2026. This is not a prepared whole-building exterior dossier, modeling revision or second-pass visual acceptance. The later bounded-pass update below permits advancing with documented gaps under the user's revised pace instruction.
 
 ## Identity and footprint
 
@@ -87,4 +87,26 @@ The packet is an approval/proposed renovation scope with shaded affected rooms, 
 | West | Only partial distant context toward northwest; plan/footprint support | Actual full west facade, southwest corner, shared-boundary/connection verification |
 | Inner space/roof | Overhead and three floor plans; LiDAR crop | Actual inner elevations; courtyard floor/roof levels; current roof services; elevated obliques |
 
-**Keep this building In progress.** Resolve west and inner-courtyard coverage, seek newer east/north imagery and additional heights/distances, and produce a source-linked opening schedule before advancing rank 10. No geometry or models were changed. This expanded checkpoint is neither a prepared whole-building dossier nor a visual acceptance.
+**Keep this source package In progress.** West and inner-space coverage, newer imagery and complete opening counts remain unresolved. The focused pass below adds a partial schedule and advances under the latest user instruction to avoid excessive time on a single building. No geometry or models were changed, and no whole-building readiness or visual acceptance is claimed.
+
+## Focused depth pass and handoff — October 29, 2026
+
+Reinspected the actual department entrance photograph, close north sequence, northeast-corner detail and north-up overhead together with the retained 2022 plan observations. This pass converts them into a partial opening/construction schedule, then advances to untouched rank 10. It does not upgrade the incomplete source-package status or imply that the missing west/inner faces are accurate.
+
+| Area / family | Source-backed arrangement and details | Remaining limit |
+| --- | --- | --- |
+| S-D / formal portal | Two smooth round pale columns with ornamental capitals in a deep rectangular stone frame; paired dark glazed doors below a curved-head transom | The inner curve has stepped masonry segments while the outer framing is rectangular. Preserve engraved name, base profiles, reveal and arch depth. Actual dimensions unmeasured. [Department photo](sources/purdue_english_front.jpg). |
+| S-W / flanking main windows | Three tall lights in the directly photographed groups beside the entrance; larger grouped glazing with top transoms above | Central entrance interrupts the grid. Upper image edge/trees prevent a full frontage count; do not apply three lights to every side/rear bay. Same source and 2019 south frontal cross-check. |
+| S-B / basement and bands | Low divided openings in pale-trimmed basement, a strong horizontal band, square trim blocks and inset brick fields around portal | Planting hides complete low runs. Pale trim has real projection and joints; not a continuous flat white texture. |
+| N-W / repeated north wing | Paired principal lights in tall rectangular groups, with shallow upper transom/panel zones; two main stories above basement | Seven north/NE camera positions resolve changing perspective along the wall, not seven separate facade elevations. Exact full row count/sash exceptions remain unresolved. [North middle](sources/streetview_north_middle_2017.png). |
+| N-E / stairwell corner | Tall multi-level vertical glazing on both returns of the northeast stairwell; lower rectangular pale-framed entry with stairs and dark rails | A distinct opening family from repeated paired windows. Preserve tall-glass depth and corner return; entry leaf count unclear. [Corner detail](sources/streetview_north_east_corner_detail_2017.png). |
+| N-B / lower/service | Pale stone basement fields between parallel belts; larger horizontal grilles and a sunken service enclosure toward the west | Some lower bays are infilled/vented, not identical windows. Enclosure coping, brick ends and pale inner face are supported; equipment function/ownership unclear. [North service](sources/streetview_north_service_2017.png). |
+| E / garden side | Historical near views show large grouped/stairwell glass, divided lower openings and terrace relation | Four historical garden positions add useful detail but are low resolution and dated by the 2004 page, not verified current exposure. [Westward detail](sources/garden_westward_2004.jpg). |
+| W / west outer face | Footprint, overhead and partial distant northwest context only | Current complete opening count, doors/vents and relationship to Class of 1950 remain unknown. No east/north mirroring. |
+| Inner space and roofs | Perimeter red/brown sloping roof zones, north gray/flat section and a central opening visible overhead | Upper plans mark open below; basement drawing differs and contains an unlabeled circular feature. Its function, floor/roof elevations and inner facades remain unverified. Do not assume a full-depth void or a solid infill. |
+
+For later authorized construction, register the four outer sides and inner-space boundaries to the plan/overhead; establish the two-story-over-basement north family separately from south glazed groups; lay out the north stairwell and south columned portal as distinct elements; then add actual trim-block pattern, basement grilles, eave supports, rainwater and entry grades. The neighboring Class of 1950 lecture-hall roof is separate; neither the 2018 cloud nor the 2022 proposed plan establishes present windows by itself.
+
+Color comparison remains face-specific: warm red/brown brick, pale cream/gray stone and dark soffits appear across the department, garden and north sources. North frames look lighter/bronzier in 2017 than the dark south frames in the department photo. Retain that unresolved material/date/lighting difference rather than forcing one shader based on the archive's pale sash. Glazing reflections, shadows and older print color are not permanent material colors. The HVAC work scheduled for 2028 is future scope.
+
+Principal follow-ups are full west/inner-space photos, recent north/east detail, complete opening counts and roof/inner-space level constraints. The retained sources are useful for building decisions but insufficient for an exact whole-building exterior. **Advance to rank 10, Lambertus Hall, with those gaps explicit**, following the user's request to maintain progress across many buildings.
