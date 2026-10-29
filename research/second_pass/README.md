@@ -32,7 +32,7 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 | 10 | Lambertus Hall | [Research](buildings/lambertus_hall/README.md) | Prepared with gaps |
 | 11 | Beering Hall | [Research](buildings/beering_hall/README.md) | Prepared with gaps |
 | 12 | Materials Science and Electrical Engineering | [Research](buildings/materials_science_and_electrical_engineering_msee/README.md) | Prepared with gaps |
-| 13 | Purdue Memorial Union | — | Queued |
+| 13 | Purdue Memorial Union | [Research](buildings/purdue_memorial_union/README.md) | In progress |
 | 14 | Forney Hall of Chemical Engineering | — | Queued |
 | 15 | Dudley Hall | — | Queued |
 | 16 | Stewart Center | — | Queued |
