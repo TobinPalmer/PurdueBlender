@@ -2,6 +2,8 @@
 
 User-directed research-only phase, 2026-10-28. There are 231 not-yet-second-passed buildings in the revised queue. Research proceeds in ascending new rank. No model, builder, placement or master asset is edited by this phase.
 
+**Research depth update, October 29, 2026:** apply the [research standard](research_standard.md) and [existing-dossier depth review](depth_review_2026-10-29.md). Prepared packages are provisional. The next depth work revisits rank 1, WALC, then proceeds in rank order; the package-progress summary below preserves the earlier acquisition checkpoint and does not assert modeling readiness.
+
 The [root queue](../../README.md#second-pass-exterior-ranking) is the order authority. Modeling owners are preserved by stable asset IDs; research authorization covers all rows. [Prior work](prior_work.md) and [the previous order](previous_queue_2026-10-28.json) remain separate from unfinished research.
 
 **Research status: 8 dossiers prepared with explicit gaps; 1 in progress; 222 queued. Next: rank 9, Stanley Coulter Hall.** Research will create one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.

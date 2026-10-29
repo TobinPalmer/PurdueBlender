@@ -1,0 +1,19 @@
+# Depth review of existing exterior research
+
+October 29, 2026. This is a review of the dossiers' own feature and unresolved-evidence sections, not a new inspection of every raw source, a new photograph survey or a model score. Apply the [research standard](research_standard.md) before treating any dossier as sufficient for future modeling. The eight previously prepared packages remain useful provisional research; their documented major gaps mean they are **not yet demonstrated ready to build**. Stanley Coulter remains in progress. No previous source evidence or research history has been discarded.
+
+| Rank | Existing dossier | Specific unfinished work documented in the dossier |
+| --- | --- | --- |
+| 1 | [WALC](buildings/walc/README.md) | East/service recesses, north/south frontal opening schedules, corner/eave detail and current roof equipment; segment roof returns and reconcile later condition with 2017/2018 evidence. |
+| 2 | [Mechanical Engineering](buildings/mechanical_engineering/README.md) | Recent post-renovation north/east/south elevations, rear/service and courtyard views, complete per-wing opening schedules, roof planes/level offsets and changes since older entrance photos. |
+| 3 | [Bell Tower](buildings/bell_tower/README.md) | Four-face close sequence, unequal bell/support arrangement, base/passage variations, clock/arch/roof seam and finial profiles, current services/lighting, and conflicting overall-height references. |
+| 4 | [Wetherill](buildings/wetherill_laboratory_of_chemistry/README.md) | Complete current per-face opening schedule, west frontal bay sequence, newer service/east views, updated roof equipment and facade/roof profiles; establish which dated louvers/AC units remain. |
+| 5 | [University Hall](buildings/university_hall/README.md) | Post-2025 close views of west/south/north, full opening schedule, elevated oblique roof coverage, roof/finial details and current accessibility/service arrangements. |
+| 6 | [Hovde](buildings/hovde_hall/README.md) | Sharper/newer northwest and southwest rear/bridge views, full per-floor opening schedule, connection ownership, current roof services and roof/portico dimensional constraints. |
+| 7 | [Electrical Engineering / Brown Family Hall](buildings/electrical_engineering/README.md) | Current rear/internal-court and bridge attachment/underside evidence, post-2024 changes versus old service photos/proposals, complete opening/louver schedule, roof segmentation and connector ownership. |
+| 8 | [Potter](buildings/potter_engineering/README.md) | Current full west and service/entrance views, conflicting study entrance directions, panel/window schedule for every floor/face, relief profiles, current roof/services and site/connection boundaries. |
+| 9 | [Stanley Coulter](buildings/stanley_coulter_hall/README.md) | Full west and inner-space photographs, newer north/east evidence and south opposing corners, source-linked opening schedule, courtyard level/roof reconciliation, side-specific frame colors and connection boundaries. |
+
+For each building, replace broad descriptions with source-linked schedules and detail/roof/material records as evidence is resolved. Preserve what remains unknown. The next depth work starts with rank 1, WALC, and proceeds down the existing priority order; Stanley Coulter's current checkpoint stays saved for its turn. Do not skip these earlier research gaps merely to increase the count of dossiers or begin lower-priority modeling.
+
+This table records identified gaps rather than proving that unlisted criteria are complete. A full readiness assessment requires inspecting the retained sources against every requirement in the standard. Existing queue labels track source-package progress; this review records the additional depth needed and does not reassign assets, certify current conditions or accept a model.
