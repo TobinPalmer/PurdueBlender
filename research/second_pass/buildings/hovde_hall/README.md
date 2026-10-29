@@ -81,3 +81,40 @@ The retained compound CRS is **NAD83(HARN) / Indiana West (ftUS) + NAVD88 height
 - Resolve which asset owns the connecting structure and site stairs/walls; never duplicate Elliott or assume all visible architecture belongs to Hovde.
 - Check actual roof slopes, eaves, pediment depth, ornament profile, penetrations and cloud-derived surfaces separately. The 2018 return percentiles are neither certified building heights nor a facade model.
 - When modeling is authorized, compare baseline/current renders against these registered source views, verify all facade and roof features, then obtain the separate independent visual review required by AGENT.md. No model review or 9.9 acceptance has occurred in this research phase.
+
+## Focused depth pass — October 29, 2026
+
+This pass reinspected the Commons front original, 2013 stair approach, 2019 southeast/rear, 2009 northwest/rear and published elevated mall photograph. It uses those existing independent sources to produce a practical component/opening schedule without counting another crop as a new camera. Further searches located an institutional construction-record lead, but did not resolve current hidden rear/bridge details. Per the user's pace instruction, advance with those gaps retained.
+
+### Opening and architectural schedule
+
+Name faces by their registered direction: **northeast main front**, **southeast end**, **southwest rear**, **northwest end**. Front image left/right is not a universal compass direction. Index central bays C1–C5 from northwest to southeast, using six columns as the boundaries.
+
+| Zone / IDs | Source-backed layout | Construction detail and uncertainty |
+| --- | --- | --- |
+| NE-C / portico | Six smooth round columns define five visible intercolumn bays, standing forward of the back wall | Molded bases, leaf/scroll capitals, deep portico shadow and top/bottom profiles. Use actual round shafts and source relief; do not replace with flat pilasters or square generic supports. Commons/2013/elevated views cross-check. |
+| NE-C upper main windows | Five back-wall window bays between columns at the taller level above entry | Pale divided sash, stone surrounds and sill/band alignment; columns and foliage obscure some edges. Bay count is supported, exact per-window pane/operable divisions not fully resolved. |
+| NE-C attic row | Five shorter paired opening groups above the taller row | Distinct height and division pattern under the deep portico ceiling; do not stretch main-story windows upward. Strongest in Commons and 2013 frontal source. |
+| NE-D1–D3 | Three central entrance groups behind the colonnade | Glazed leaves and geometric diamond/cross transom patterns; middle group has a curved hood and ornamental swag/panel, flanking treatments differ. Shadow/planting conceal exact leaf hardware. |
+| NE-W wings | Taller main-floor window families with pale vertical surrounds and some small triangular door/window hoods; short attic strip above | The 2013 image resolves differences from the portico, but trees prevent a complete bay count. Retain unknown totals rather than mirror a single photographed wing. |
+| SE end | Pale stone framing wraps the short end, separating main rows from the shorter attic | 2017/2019 obliques establish return depth and differing openings. Full end count, sash variations and local ground openings need sharper frontal evidence. |
+| SW-R, rear corner group | Three vertical window bays in the prominent pale frame near the southeast corner, with taller middle rows and shorter top groups | The 2019 rear oblique is more useful than the formal front here. A lower doorway sits among differing ground openings; count each level independently rather than copy the portico. |
+| SW-C, rear center/connection | Brick wall fields, irregular smaller openings, the second-story connection toward Elliott and changing grade | Current connection plan, supports/underside and full door/window schedule remain unresolved. The giant neighboring blank mass is Elliott, not a Hovde wing. |
+| NW end | Rectangular brick/stone termination, shorter upper windows and lower ground openings | 2009 sequence provides opposing context but cannot certify present sash/service details; tree and resolution gaps remain. |
+| Roof / pediment | Broad gray roof zone with reddish sloping perimeter bands and a separate central pediment projection | Elevated/overhead views distinguish Hovde from Elliott's larger roof. Not a uniform hipped solid; roof penetrations and actual slopes still need dated detail or segmented cloud analysis. |
+
+### Portico, stairs and material brief
+
+The triangular pediment has a layered projecting cornice with small repeated dentil-like elements on its horizontal and sloped edges, a plain jointed stone field and a crest/acanthus-like apex ornament. The entablature beneath is deep and layered, not a thin pale strip. Corner projection, column-capital relief, pediment depth and the back-wall recess matter in oblique views as much as the frontal outline. Exact carving measurements are unavailable.
+
+The 2013 near stair view resolves multiple wide flights/landings, **two central handrail lines**, pale outer picket balustrades, stepped cheek walls and lantern-bearing plinths. The closer stair/column view and farther Commons photograph separate actual stairs from adjacent curved landscape walls and square capped entrance piers. Do not merge those site walls into a single continuous building foundation without an ownership check. The at-grade southwest approach differs from the monumental front stair.
+
+Use Commons daylight and the 2015 front for warm pale stone, smooth shafts with carved capitals, brick/mortar scale, pale metal/sash and red-orange tile. The elevated mall source reinforces the roof-edge color and contrasting gray roof zone. Shade and foliage reflections darken the rear/portico; do not permanently color the portico black or flatten the column/capital relief into a material map. Stone, brick, glazing, frames, roof tile/membrane, rails and lanterns need separate material treatment. No physical color standard or measured roughness was acquired.
+
+### Dimensional constraints and archive lead
+
+[Footprint measurement notes](footprint_measurement_notes.json) preserve the raw source hash, polygon area and minimum rotated enclosing rectangle derived from the cached inventory ring projected to **EPSG:26916**. These are **plan-envelope constraints**, not measured clear facade or portico widths. The rectangle includes projections and must not become the entire occupied mass. No new survey, verified roof height, floor spacing, column diameter or staircase dimension is claimed. The source LiDAR statistics remain candidate-return distributions until actual roofs/vegetation are segmented.
+
+Purdue Archives lists **Office of the Architect records, Executive Building (Student Services and Administration / Hovde Hall), 1936–1940, Folder 17** in its [container record](https://archives.lib.purdue.edu/repositories/2/top_containers/4868). Its institutional description identifies construction records and blueprints in the wider collection. The finding aid was readable through web research; the underlying drawings were **not** accessed or inspected, and the record is a follow-up lead rather than acquired elevations. Broad searches otherwise returned many front views and unrelated Elliott buildings, which do not resolve Hovde's rear connection.
+
+For later authorized construction: preserve the registered bar and front projection, establish different level/opening families, place six actual round columns and three differing entrance groups, fit the back-wall window bays and pediment, then lay out wing/end/rear openings from their own sources. Verify the Hovde–Elliott boundary before adding any shared connection. Remaining high-impact gaps are current rear/northwest and bridge close views, complete wing/end opening counts, measured profiles and roof services/planes. **Advance to rank 7, Electrical Engineering / Brown Family Hall**, retaining this unfinished evidence honestly.
