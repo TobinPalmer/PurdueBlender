@@ -8,7 +8,7 @@ The [root queue](../../README.md#second-pass-exterior-ranking) is the order auth
 
 **Focused depth-pass progress:** WALC is user-handled. Ranked passes 2–11 are saved with specific remaining gaps; next is rank 12, Materials Science and Electrical Engineering. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
 
-**Research status: 10 dossiers prepared with explicit gaps; 1 in progress; 220 queued. Next focused work: rank 12, Materials Science and Electrical Engineering.** Research will create one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
+**Research status: 10 dossiers prepared with explicit gaps; 2 in progress; 219 queued. Rank 12, Materials Science and Electrical Engineering, is in progress.** Research will create one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
 
 Location now contributes **70%**, campus prominence **20%**, and existing first-pass score shortfall **10%**. WALC/Centennial Mall and Purdue Mall are the primary planning focal points, with Memorial Mall a secondary core. This deliberately brings central academic buildings ahead of distant athletics and peripheral facilities. These weights are project planning judgments, not measured pedestrian traffic or a new visual grade.
 
@@ -31,7 +31,7 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 | 9 | Stanley Coulter Hall | [Research](buildings/stanley_coulter_hall/README.md) | In progress |
 | 10 | Lambertus Hall | [Research](buildings/lambertus_hall/README.md) | Prepared with gaps |
 | 11 | Beering Hall | [Research](buildings/beering_hall/README.md) | Prepared with gaps |
-| 12 | Materials Science and Electrical Engineering | — | Queued |
+| 12 | Materials Science and Electrical Engineering | [Research](buildings/materials_science_and_electrical_engineering_msee/README.md) | In progress |
 | 13 | Purdue Memorial Union | — | Queued |
 | 14 | Forney Hall of Chemical Engineering | — | Queued |
 | 15 | Dudley Hall | — | Queued |

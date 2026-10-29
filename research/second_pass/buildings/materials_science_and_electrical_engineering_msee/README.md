@@ -1,0 +1,57 @@
+# Materials and Electrical Engineering (MSEE) — exterior research checkpoint
+
+2026-10-29. Rank 12; stable ID `materials_science_and_electrical_engineering_msee`; modeling owner Rossen. **In progress; exterior coverage is incomplete. Research only.**
+
+## Identity, limits and current condition
+
+The target is Purdue GIS FID646, building code MSEE, address 501 Northwestern Avenue. Use the existing asset `modular/buildings/materials_science_and_electrical_engineering_msee.blend` and preserve its origin. The cached Purdue footprint has four corner vertices and a rotated rectangular outline; the published GIS fields include `NUM_LEVELS=4`, `Extrution=36`, `Elevation=624.8` and `R=50.1`, with no documented vertical units or datum for these attributes. Do not read the four-level count or undocumented GIS extrusion as measured height.
+
+Purdue sources call the building opened/built/completed in 1988. The official archive record describes a two-story glass atrium and two pedestrian skyways connecting toward Electrical Engineering and Physics. The saved 2007 frontal image shows three visible above-grade facade bands below a shallow red roof; an official 2013 emergency plan describes sub-basement, basement, first, second and third floors plus attic equipment. These counts refer to different conventions and should remain separate until elevations or sections reconcile them. The 2017–2019 renovation substantially refreshed the interior atrium/student spaces; the sources located so far do not establish exterior alterations.
+
+FID646 is the building-shell reference, not a proof that the connecting skyways are MSEE-owned. Identify both attachments and their facade penetrations before any future model work. Keep approach paving, bollards, plantings and the mall outside the asset boundary.
+
+## Source and viewpoint log
+
+| ID / saved original | Viewpoint and evidence | Limits |
+| --- | --- | --- |
+| M01 [Jainrajat11, Wikimedia Commons original](sources/MSEE_jainrajat11_2007.jpg) | Frontal, ground-level view from the Engineering Mall of the long entry facade; 1280×853 JPEG. Photographer Jainrajat11; upload 2008-06-13; EXIF records Nikon D50 and 2007-11-23 capture time. Attribution: [Jainrajat11 via Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Material_Science_and_Electrical_Engineering_Building,_Purdue_University_(2007).jpg), licensed [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) (Commons page also retains a GFDL notice). | Camera coordinates and direction unknown. Winter branches obscure the lower left/right bays; central perspective compresses the facade ends. No north registration, scale object or roof plan. Retain source attribution and license. |
+| M02 [Purdue ECN “MSEE” image](sources/ECN_MSEE_exterior.jpg) | Official ECN page calls this MSEE; 200×150 JPEG. Same central entrance and mall viewpoint as M01; likely a low-resolution duplicate/crop of that composition, not an independent station. | Capture date/provider photographer not stated; weak detail. Used as corroboration of building identity, not as another viewpoint. |
+| P01 [MSEE Emergency Plan, revised 2013-12-03](sources/MSEE_building_emergency_plan_2013.pdf) | Official ECE safety attachment names MSEE. It says the building has sub-basement, basement, first, second and third floors plus attic mechanical equipment; Appendix F redirects users to the ECE safety page for evacuation-route sheets. | Safety/egress document, not an architectural set. It does not include facade elevations or the referenced plans in the saved PDF. Current ECE link now redirects to a general BEP index. |
+| P02 [current Purdue-hosted BEP PDF](sources/MSEE_building_emergency_plan_web_version.pdf) | This PDF remains reachable at an older MSE URL; the live ECE safety page now redirects to a general BEP index and does not link this static file. | Its static PDF is a dated/undated safety copy, not a plan or measured elevation. Check live responsive BEP page before relying on emergency content; no architectural drawings found in this file. |
+| D01 [Purdue ECN history page](sources/ECN_MSEE_history_page.html) | Official page states that MSEE opened in 1988 and provides the M01/M02 image plus an interior hallway image. | Its page was last modified in 2014; neither photo has a capture date. Interior photo does not establish the exterior. |
+| D02 [Purdue ECE 2019 atrium article](sources/ECE_MSEE_atrium_renovation_2019.html) | Reports the Max W. Brown Atrium reopened after renovation beginning August 2019 and a first-floor lab was converted to the Rice Design Studio. | Interior project report; no measured envelope changes or exterior elevations. |
+
+## Partial face and feature schedule
+
+Compass registration is unresolved. Use the reproducible label **Engineering Mall entrance face**, not a guessed cardinal direction. M01 is the only independently inspected full-size facade view in this checkpoint.
+
+| Face/anchor | Observed sequence | Evidence and unresolved detail |
+| --- | --- | --- |
+| Engineering Mall entrance face, M01, left-to-right | Broad, nearly symmetrical brick bar under one continuous shallow red tile-like roof. A close-set upper row has approximately 19 small, dark, nearly square punched openings. Below it, lighter horizontal masonry courses separate levels. The middle row alternates small punched openings and larger dark bays. Trees obscure much of the bottom row. | The upper count is a visual estimate because end bays are perspective-compressed and branches overlap several openings. Obtain a square-on, leaf-off and an oblique image before treating it as a complete elevation schedule. Middle/lower counts and exact floor-to-floor alignment remain unknown. |
+| Central entrance/atrium, M01 | Centered two-story opening reads as a broad half-round glazed arch over a rectangular glazed entrance. A radial fanlight pattern is visible within the arch; tall narrow glazed panels flank it. A horizontal pale band crosses the facade at the arch spring/adjacent bay level. | Exact arch radius, number of radial divisions, door leaves, frame depth and whether every visible band is masonry/metal are unmeasured. The archive description calls this an open two-story glass atrium; the photo supports its exterior opening, not the interior plan. |
+| Roof/eaves, M01 | Long, low red-brown tiled-looking sloped roof with broad projecting eave, dark underside and a pale fascia/edge band. Roof silhouette appears symmetrical from this frontal view. | No overhead or end view; ridge direction, hips/valleys, pitch, tile type, roof penetration/equipment and behind-parapet shape are unknown. Do not infer complete roof geometry from the frontal silhouette. |
+| Skyway interfaces | Archive description identifies two pedestrian skyways, toward Electrical Engineering and Physics. | No junction or opposite-side photograph in this pass. Attachment ownership, enclosure type, height, support, wall opening and current alignment remain unregistered. |
+
+## Materials and dimensional constraints
+
+M01 shows a red/brown brick field with contrasting pale horizontal bands, dark metal-framed glazing, and a red tile-like roof. This is a photographic color/material description under clear autumn daylight, not a calibrated palette or confirmed product specification. The Mall facade receives the strongest coverage; the other faces have no usable material comparison yet. M01's front-on composition supports a long low roofline and the centered two-level glazed atrium, but provides no defensible metric facade dimensions.
+
+The official GIS polygon is a horizontal location/boundary constraint only. Its cached elevation/extrusion/roof fields have undocumented meaning and must not be converted to building heights. No current orthophoto was registered, and no LiDAR point cloud, roof plane, eave or ridge height was acquired in this checkpoint.
+
+## Evidence-led construction brief for any future authorized pass
+
+Preserve the low broad rectangular mass, shallow long red roof, brick exterior with strong pale horizontal courses, small repeated upper openings, and the central two-level glazed arch/entry on the Engineering Mall face. Keep the separate hidden-wing opening schedules unresolved. Represent skyways only after confirming their attachment and ownership. Do not use the 2014 “EE–MSEE Study” as MSEE evidence: the report's own scope states it is an interior renovation within the older Electrical Engineering building; the existing copy is indexed in the neighboring Electrical Engineering dossier.
+
+No geometry, building library, placement or master asset was edited for this research checkpoint.
+
+## Gaps, conflicts and next evidence
+
+1. **Three other faces and skyway junctions:** no current opposite, end, service or elevated photos were located. Search independent campus photographers and Purdue archives; use the two archived skyways as wayfinding leads, not proof of their extents. This gap prevents a full perimeter opening schedule and hides major connections.
+2. **Face orientation/footprint fit:** M01 has no camera coordinates. Match FID646 to a current north-up orthophoto, then identify its entrance face and register the two skyway endpoints. The GIS ring is not a surveyed facade drawing.
+3. **Drawings/floor plans/roof:** Purdue Archive finding aids locate MSEE in the Purdue Building Images collection (UA 149, Box 2, Folder 6, slides dated 1989–1997) and in Office of Marketing and Media negatives (UA 62, Box 87, Folder 24, 1985–1991); neither source item was inspected. Request the original sheets/photos. The 2013 emergency plan's Appendix F only points outward to ECE safety sheets, and the current ECE link redirects. The similarly titled 2014 EE–MSEE Study is the adjacent EE building and is excluded. Missing roof, end elevations, sections and floor-to-facade registration block reliable dimensional reconstruction.
+4. **Older independent image lead:** Shih-Pei Chang's Flickr MSEE photo is dated 2008-10-20 but its static image request returned HTTP403 in this pass; only the page metadata was read, so no viewpoint or facade detail from it is claimed. The public Commons image M01 remains the only full-resolution inspected station.
+5. **Materials/current condition:** compare a contemporary sun/shade view, current atrium entrance and clear roof imagery. The 2019 project documents interior updates, not a verified exterior scope; the 2007 image cannot establish the present-day envelope.
+6. **Vertical level conflict:** resolve four GIS levels versus the five named emergency-plan floors plus attic, and determine grade changes around the perimeter, with an as-built section or measured survey. Do not assume a basement is visible on every face.
+7. **Archive summary access:** the Purdue Archives corporate-entity page and container record were discoverable through search but direct access returned HTTP403 here. Their summaries establish source leads; obtain the actual photographs/drawings before promoting any unviewed detail to evidence.
+
+Next action: request or locate original archive photos/drawings and acquire a second independent elevation/roof viewpoint, then register the Mall facade against FID646. This is an evidence-in-progress checkpoint, not research readiness or a new visual score.
