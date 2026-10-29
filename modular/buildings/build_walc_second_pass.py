@@ -484,10 +484,10 @@ def east_wing_face(mb, A, B, L, zt):
             cg = 1.0 + (L - 2.0) * (g + 0.5) / ng
             for k in (-1, 0, 1):
                 ops.append((cg + k * 1.12 - 0.5, cg + k * 1.12 + 0.5, 4.75, 6.05))
-        if L > 9:
-            cg = L / 2
-            for k in (-1, 0, 1):
-                ops.append((cg + k * 1.12 - 0.5, cg + k * 1.12 + 0.5, 2.1, 3.6))
+        if L > 9:   # lower band: two window triplets side by side (user review of r4)
+            for cg in (L / 2 - 1.74, L / 2 + 1.74):
+                for k in (-1, 0, 1):
+                    ops.append((cg + k * 1.12 - 0.5, cg + k * 1.12 + 0.5, 2.1, 3.6))
     ops = [o for o in ops if o[0] > 0.9 and o[1] < L - 0.9]
     wall(mb, A, B, LB, zt, 0.45, ops, mat="brick", frame="wframe", units=True)
     trims(mb, A, t, n, [o for o in ops if len(o) == 4])

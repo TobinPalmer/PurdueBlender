@@ -152,3 +152,7 @@ This revision follows the user's close-ups and back-of-building photos (`sources
   - **NE stair tower:** the white interior wall on the courtyard side (review r03 #1) was the NE stair tower poking out of the upper-floor outline. The floors 2–3 recess now stops at y = 17.6, so the tower is inside the shell.
   - **Removed:** a stray flat-roof strip that floated over the recess.
   - **Gap filled:** the gap at x = 40 above the wing (y −18…−12.7) is filled with brick and coping.
+
+## r5 (2026-10-29) — asset SHA-256 `105be24ca921240cfd7abe529864e4dd9f07773ee69113473035fb074e6198b1`
+
+This revision makes the user's r4 change and nothing else. The lower window band on the east wing's wall left of the east entrance (the x = 36 face) now has two window triplets side by side instead of one. Renders are in `r5/`, including the new view `r5_east_wall_left_of_entrance.png`. The asset reopens cleanly (`r5/validation_r5.json`).
