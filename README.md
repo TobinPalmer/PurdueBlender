@@ -30,14 +30,14 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 
 Location labels: **[location proxy]** means the official GIS name match is unresolved; **[location conflict]** means GIS and model positions disagree by over 100 m. Those ranks are provisional. Counts and every position are retained in the location audit.
 
-**3 research dossiers prepared with gaps; 1 in progress; 227 queued. Next: rank 4, R. B. Wetherill Laboratory of Chemistry.** See the [research index and per-building dossiers](research/second_pass/README.md). A queued row has not been researched. A completed research dossier is not a completed second pass. The 9.9 independent exterior review, protest and Tobin-only master-integration rules still apply when modeling resumes.
+**4 research dossiers prepared with gaps; 0 in progress; 227 queued. Next: rank 5, University Hall.** See the [research index and per-building dossiers](research/second_pass/README.md). A queued row has not been researched. A completed research dossier is not a completed second pass. The 9.9 independent exterior review, protest and Tobin-only master-integration rules still apply when modeling resumes.
 
 | Rank | Building / asset | Current first-pass grade | Centrality /100 | Importance /5 | Priority /100 | Modeling owner | Research |
 | ---: | --- | ---: | ---: | ---: | ---: | --- | --- |
 | 1 | [Walc](modular/buildings/walc.blend) | [8.25/10](audit/walc_refine/independent_grade_r5.md) | 100.0 | 5 | 98.68 | Rossen | [Prepared with gaps](research/second_pass/buildings/walc/README.md) |
 | 2 | [Mechanical Engineering](modular/buildings/mechanical_engineering.blend) | 8.0/10 | 100.0 | 4 | 95.00 | Rossen | [Prepared with gaps](research/second_pass/buildings/mechanical_engineering/README.md) |
 | 3 | [Bell Tower](modular/buildings/bell_tower.blend) | 9.3/10 | 100.0 | 5 | 93.16 | Rossen | [Prepared with gaps](research/second_pass/buildings/bell_tower/README.md) |
-| 4 | [R. B. Wetherill Laboratory of Chemistry](modular/buildings/wetherill_laboratory_of_chemistry.blend) | 8.3/10 | 99.6 | 4 | 93.14 | Rossen | [In progress](research/second_pass/buildings/wetherill_laboratory_of_chemistry/README.md) |
+| 4 | [R. B. Wetherill Laboratory of Chemistry](modular/buildings/wetherill_laboratory_of_chemistry.blend) | 8.3/10 | 99.6 | 4 | 93.14 | Rossen | [Prepared with gaps](research/second_pass/buildings/wetherill_laboratory_of_chemistry/README.md) |
 | 5 | [University Hall](modular/buildings/university_hall.blend) | [8.0/10](audit/university_hall_refine/independent_grade_r7.md) | 90.0 | 5 | 93.00 | Rossen | Queued |
 | 6 | [Hovde Hall](modular/buildings/hovde_hall.blend) | 8.7/10 | 100.0 | 4 | 91.32 | Rossen | Queued |
 | 7 | [Electrical Engineering](modular/buildings/electrical_engineering.blend) **[location proxy]** | [8.3/10](audit/electrical_engineering_independent_grade_r2/result.json) | 95.9 | 4 | 90.58 | Rossen | Queued |

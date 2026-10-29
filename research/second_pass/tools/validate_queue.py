@@ -4,7 +4,7 @@ Run with Python 3: python -X utf8 research/second_pass/tools/validate_queue.py
 Uses only the standard library. Does not edit source/model/placement files.
 """
 from pathlib import Path
-import json,math,hashlib,re,subprocess
+import json,math,hashlib,re,subprocess,sys
 D=Path(__file__).resolve().parents[1];R=D.parents[1]
 q=json.loads((D/'queue.json').read_text(encoding='utf-8'))
 inputs=json.loads((D/'shared/ranking_input_snapshot.json').read_text(encoding='utf-8'))
@@ -73,3 +73,5 @@ changed=subprocess.check_output(['git','diff','--name-only','67fedb8'],cwd=R,tex
 assert not any(x.endswith('.blend') or '/build_' in x or x=='modular/manifest.json' for x in changed)
 report={'result':'PASS','eligible':232,'queued_for_research':231,'excluded_prior_model':1,'rossen_assignments_preserved':90,'prepared_dossiers':len(prepared),'in_progress_dossiers':len(documented)-len(prepared),'source_hash_checks':source_hash_checks,'point_clip_hash_checks':clip_checks,'unresolved_location_proxies':sum(not x['official_feature_ids'] for x in rows),'location_conflicts':sum(bool(x['location_conflict']) for x in rows),'unavailable_source_assets':sum(not x['asset_available'] for x in rows),'top_five':[x['name'] for x in rows[:5]],'unchanged_models':True,'original_readme_outside_queue_preserved':True}
 print(json.dumps(report,indent=2))
+if '--write' in sys.argv:
+    (D/'validation_latest.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
