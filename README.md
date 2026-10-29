@@ -30,7 +30,7 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 
 Location labels: **[location proxy]** means the official GIS name match is unresolved; **[location conflict]** means GIS and model positions disagree by over 100 m. Those ranks are provisional. Counts and every position are retained in the location audit.
 
-**7 research dossiers prepared with gaps; 0 in progress; 224 queued. Next: rank 8, Potter Engineering.** See the [research index and per-building dossiers](research/second_pass/README.md). A queued row has not been researched. A completed research dossier is not a completed second pass. The 9.9 independent exterior review, protest and Tobin-only master-integration rules still apply when modeling resumes.
+**8 research dossiers prepared with gaps; 0 in progress; 223 queued. Next: rank 9, Stanley Coulter Hall.** See the [research index and per-building dossiers](research/second_pass/README.md). A queued row has not been researched. A completed research dossier is not a completed second pass. The 9.9 independent exterior review, protest and Tobin-only master-integration rules still apply when modeling resumes.
 
 | Rank | Building / asset | Current first-pass grade | Centrality /100 | Importance /5 | Priority /100 | Second-pass owner | Research |
 | ---: | --- | ---: | ---: | ---: | ---: | --- | --- |
@@ -41,7 +41,7 @@ Location labels: **[location proxy]** means the official GIS name match is unres
 | 5 | [University Hall](modular/buildings/university_hall.blend) | [8.0/10](audit/university_hall_refine/independent_grade_r7.md) | 90.0 | 5 | 93.00 | Rossen | [Prepared with gaps](research/second_pass/buildings/university_hall/README.md) |
 | 6 | [Hovde Hall](modular/buildings/hovde_hall.blend) | 8.7/10 | 100.0 | 4 | 91.32 | Rossen | [Prepared with gaps](research/second_pass/buildings/hovde_hall/README.md) |
 | 7 | [Electrical Engineering](modular/buildings/electrical_engineering.blend) | [8.3/10](audit/electrical_engineering_independent_grade_r2/result.json) | 95.4 | 4 | 90.17 | Rossen | [Prepared with gaps](research/second_pass/buildings/electrical_engineering/README.md) |
-| 8 | [Potter Engineering](modular/buildings/potter_engineering.blend) | [8.0/10](audit/potter_engineering_refine/INDEPENDENT_GRADE_R3.md) | 100.0 | 3 | 90.00 | Rossen | Queued |
+| 8 | [Potter Engineering](modular/buildings/potter_engineering.blend) | [8.0/10](audit/potter_engineering_refine/INDEPENDENT_GRADE_R3.md) | 100.0 | 3 | 90.00 | Rossen | [Prepared with gaps](research/second_pass/buildings/potter_engineering/README.md) |
 | 9 | [Stanley Coulter Hall](modular/buildings/stanley_coulter_hall.blend) | [8.1/10](audit/batch3_stanley/independent_grade_r6.md) | 97.1 | 3 | 87.46 | Rossen | Queued |
 | 10 | [Lambertus Hall](modular/buildings/lambertus_hall.blend) | [8.0/10](audit/lambertus_hall/independent_grade/grade.json) | 95.4 | 3 | 86.78 | Rossen | Queued |
 | 11 | [Beering Hall](modular/buildings/beering_hall.blend) | 8.0/10 | 86.7 | 4 | 85.71 | Rossen | Queued |
