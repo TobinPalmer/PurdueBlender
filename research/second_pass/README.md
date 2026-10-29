@@ -2,9 +2,13 @@
 
 User-directed research-only phase, 2026-10-28. There are 231 not-yet-second-passed buildings in the revised queue. Research proceeds in ascending new rank. No model, builder, placement or master asset is edited by this phase.
 
+**Research depth update, October 29, 2026:** apply the [research standard](research_standard.md) and [existing-dossier depth review](depth_review_2026-10-29.md). Prepared packages are provisional. Per the latest user direction, use bounded passes, retain explicit gaps and move through the list without exhaustive delays on one building. WALC is handled by the user and skipped for additional research. Focused depth work proceeds from rank 2 onward; the package-progress summary below preserves the earlier acquisition checkpoint and does not assert modeling readiness.
+
 The [root queue](../../README.md#second-pass-exterior-ranking) is the order authority. Modeling owners are preserved by stable asset IDs; research authorization covers all rows. [Prior work](prior_work.md) and [the previous order](previous_queue_2026-10-28.json) remain separate from unfinished research.
 
-**Research status: 8 dossiers prepared with explicit gaps; 0 in progress; 223 queued. Next: rank 9, Stanley Coulter Hall.** Research will create one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
+**Focused depth-pass progress:** WALC is user-handled. Ranked passes 2–10 are saved with specific remaining gaps; next is rank 11, Beering Hall. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
+
+**Research status: 9 dossiers prepared with explicit gaps; 1 in progress; 221 queued. Next: rank 9, Stanley Coulter Hall.** Research will create one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
 
 Location now contributes **70%**, campus prominence **20%**, and existing first-pass score shortfall **10%**. WALC/Centennial Mall and Purdue Mall are the primary planning focal points, with Memorial Mall a secondary core. This deliberately brings central academic buildings ahead of distant athletics and peripheral facilities. These weights are project planning judgments, not measured pedestrian traffic or a new visual grade.
 
@@ -24,8 +28,8 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 | 6 | Hovde Hall | [Research](buildings/hovde_hall/README.md) | Prepared with gaps |
 | 7 | Electrical Engineering | [Research](buildings/electrical_engineering/README.md) | Prepared with gaps |
 | 8 | Potter Engineering | [Research](buildings/potter_engineering/README.md) | Prepared with gaps |
-| 9 | Stanley Coulter Hall | — | Queued |
-| 10 | Lambertus Hall | — | Queued |
+| 9 | Stanley Coulter Hall | [Research](buildings/stanley_coulter_hall/README.md) | In progress |
+| 10 | Lambertus Hall | [Research](buildings/lambertus_hall/README.md) | Prepared with gaps |
 | 11 | Beering Hall | — | Queued |
 | 12 | Materials Science and Electrical Engineering | — | Queued |
 | 13 | Purdue Memorial Union | — | Queued |

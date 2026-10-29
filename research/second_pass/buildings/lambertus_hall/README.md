@@ -1,0 +1,67 @@
+# 10. Lambertus Hall exterior research
+
+Research collected **October 29, 2026**, stable ID `lambertus_hall`, asset `modular/buildings/lambertus_hall.blend`, second-pass owner **Rossen**. First-pass grade **8.0/10** and estimated-height history are preserved; they are not new exterior evidence. **Focused research package prepared with major explicit gaps; no model changed or accepted.** The user requested useful depth with bounded time per building, so unresolved views remain documented while the queue advances.
+
+## Identity, era and the connected-building boundary
+
+[Purdue Polytechnic](https://old.polytechnic.purdue.edu/dudley-hall-and-lambertus-hall) / [snapshot](sources/purdue_polytechnic_complex.html) identifies two connected halls in the Gateway Complex, opened to students in spring **2023**, replacing Nuclear Engineering and Michael Golden facilities. [Ennead's architect page](https://ennead.com/work/purdue-university-dudley-and-lambertus-hall/) / [snapshot](sources/ennead_project.html) describes the contemporary brick/curtainwall design and gives a 2022 project year. Keep design/completion/opening milestones separate; the photographs, not the former site buildings, establish the completed exterior.
+
+The [Purdue GIS feature](sources/purdue_footprint.json) is **FID433, LMBS, Lambertus Hall, building1813**, **363 N Grant St.**, EPSG:4326. **LAMB is Lambert Fieldhouse, a different building; Lambertus is LMBS.** Adjacent **FID432, DUDL, building1812** is Dudley Hall, a separate queued asset despite the common address and connected architecture. GIS zero floor/extrusion fields are unfilled inventory attributes, not a zero-height building. The prior asset's 16 m estimated height has not been independently verified by this research.
+
+[Boundary analysis](boundary_analysis.json) / [north-up footprint plan](boundary_plan.png) compares the actual cached source rings in EPSG:26916: Lambertus is the northern north–south bar; Dudley is the southern arm extending east. Their inventory polygons touch with **zero area overlap**. Derived plan areas are approximately **1,701.7 m² Lambertus** and **2,501.2 m² Dudley**. These are ground-plan polygon areas, not gross floor area or certified new measurements. Raw source hash and method are retained. These boundaries do not independently resolve every shared glazing/roof/entry/structure ownership decision. Do not copy the whole complex into both assets.
+
+## Sources, actual inspection and camera coverage
+
+[Acquisition index](sources/reference_download_index.json), [site-data index](sources/site_download_index.json) and [context/rejection records](sources/context_download_index.json) preserve URLs, provider credits, dates and hashes. Camera heights/metric distances are unknown unless explicitly stated. Publication/upload/retrieval dates do not automatically date an exposure.
+
+| ID / local evidence | Position and source era | Observations and limits |
+| --- | --- | --- |
+| L01 — [Ennead exterior 0007](sources/ennead_exterior_0007.jpg) | Ground-level near/frontal view of the shared west entrance/hinge, with Lambertus-labelled brick at image left; source upload path May 2023, capture date unknown | Pale projecting upper box, narrow vertical glazing bays, recessed lower entry, brick/name lettering and projecting horizontal screen. Tight framing does not cover all Lambertus faces or settle shared-element ownership. |
+| L02 — [Purdue dedication-day exterior](sources/purdue_dedication_2023.jpg) | Independent wider ground oblique looking along the west facade toward the shared southwest hinge; source caption identifies dedication day in spring 2023 | Repeated brick/glazing fields, deeper screen return, entrance and terraces. **Purdue University / John O'Malley** credit retained. Context and view inference use the GIS/site plan; no surveyed camera. |
+| L03 — [World Imagery overhead](sources/aerial_world_imagery.png) / [export metadata](sources/aerial_export.json) | Orthographic north-up; actual capture date unknown | Constructed L-shaped complex, black/gray flat roof zones, white-roof neighboring Knoy, roof equipment and terraces. Current complex is visibly present, but no exact capture-year claim. |
+| C01 — [Northwestern Avenue context, August 2025](sources/maps_northeast_context_2025.png) / [metadata](sources/maps_northeast_context_2025.txt) | Google camera **40.428378, -86.9109188**, pano `G5bZLxps9feaLCr20KxHRA`, looking southwest | Foreground brick mass/trees obstruct a decisive Lambertus face identification; retain only as limited site context, **not** an accepted complete north/east elevation or window-count reference. |
+| Rejected 2017 north attempt | [Metadata](sources/maps_north_rejected_2017_preconstruction.txt), Google camera40.427955,-86.912084 | Shows older low brick buildings before the new complex existed; excluded from finished Lambertus coverage. No current facade facts are taken from it. |
+
+Ennead's project credits photographers **Jeff Goldberg/Esto and Aislinn Weidele**; individual-image allocation is unresolved. Retain both credits and original provider rights; no open texture/republication license is inferred. L01 and L02 are distinct camera framings/positions but show the same broad entrance side, not opposite elevations.
+
+Five other downloaded Ennead photographs were inspected and classified as **interiors**: [5729](sources/ennead_5729.jpg), [4872](sources/ennead_4872.jpg), [4994](sources/ennead_4994.jpg), [6919](sources/ennead_6919.jpg), [6866](sources/ennead_6866.jpg). They are not five extra exterior viewpoints. The 5729 interior view can support the exterior screen's stand-off/strip relationship through the window, but its exact wing/face registration is incomplete. Lab cranes, furniture, interior glazing and yellow finishes must not be copied onto the exterior.
+
+## Architect drawings, massing and proposed-versus-real imagery
+
+[BSA's project story](sources/bsa_project_story.pdf), [original PDF](https://www.bsadesign.com/wp-content/uploads/2023/02/03590127.00A-Dudley-Hall-and-Lambertus-Hall-Project-Story.pdf), contains **12 PDF pages**, with a November 2022 project date in its details and a 2022 publication credit. Text was extracted throughout; pages **1, 2, 4 and 5** were rendered and visually inspected. The cover/early exterior scenes are **architectural renderings**, not additional real-camera evidence. Page 4 is a district/predecessor-site diagram; page 5 supplies a north arrow and proposed site/entry/landscape layout. Its role is interpreting orientation and relationships, not proving every rendered fin, window, tree or bench was built.
+
+The connected complex combines plain brick bars, tall glazed lab/commons areas, a pale projecting entrance volume and an extensive reddish horizontal screen. Different parts have different floor/high-bay relationships. A five-story description for the entire complex does not independently establish that all of the Lambertus bar has five identical occupied levels. Site plan and current aerial are useful for registration; a dimensioned as-built floor/elevation set and a reliable current height source remain missing.
+
+## Partial facade/opening and detail schedule
+
+Use **the Lambertus lettering on the brick left of the shared entrance** in L01/L02 as a reproducible anchor. This schedule separates Lambertus's observed west brick/glazing family from the shared hinge whose precise asset ownership is unresolved.
+
+| Zone | Actually observed arrangement | Depth/material and remaining uncertainty |
+| --- | --- | --- |
+| LM-W / west brick fields | At least three tall glazing assemblies framed/separated by projecting brick zones are visible along the Lambertus-labelled bar in L02; shorter ribbon-like lights occur above | Keep tall lab/commons glazing and short upper strips as distinct families. Perspective/crop and unclear floor breaks prevent a complete per-floor bay/pane count. |
+| LM-NAME | Individual **LAMBERTUS HALL** letters on brick beside entrance hinge | Raised/light metal-looking letters, different scale from the shared entry name. Exact font/letter dimensions unmeasured. |
+| SH-BOX / upper entrance volume | Pale rectangular projecting cladding wraps a tall glazed field; nine narrow vertical glass columns are visible across the clear L01 front field | Horizontal members and darker interstory/spandrel zones divide glass; don't treat it as nine undivided blue strips. Thin projecting top edge, deep underside and horizontal panel joints matter. Shared-volume ownership is unresolved. |
+| SH-ENTRY / lower shared approach | Recessed dark/glazed entry under the projecting upper volume; sign reads **DUDLEY & LAMBERTUS HALLS** | Ground curtainwall, transoms, door groups, ceiling/soffit depth and corner returns differ from upper glazing. People/reflections hide full door-leaf details. |
+| SH-SCREEN / hinge return | Closely spaced reddish horizontal strips stand forward of dark curtainwall, turning at a corner with slender vertical supports | L01/L02 show real gaps, stand-off and depth. Exact strip count, spacing, material specification and ownership are unverified. Not a flat striped texture or solid brick wall. |
+| LM-N / north end | GIS/roof outline, proposed site plan and limited distant street context | No accepted current close frontal sequence or complete north entrance/window schedule. Do not infer blankness from the obstructed context frame. |
+| LM-E / inner/east side | Inventory outline, current overhead and connected-site relationships | Full glass/solid/service-door distribution, vent and loading layout remain unverified. Interior gallery pictures are not a substitute for this elevation. |
+| LM-S / attachment | Lambertus touches Dudley's inventory polygon at the southern end; photos show the common hinge nearby | Resolve shared circulation, roof and facade ownership before building both assets. Avoid duplicated shared curtainwall or a seam through one entrance. |
+| Roof | Flat gray/black membrane planes, raised enclosures/ducts and parapet edges visible overhead | Exact heights, mechanical types/current arrangement and inner roof junctions not measured. Neighboring pale/white roof belongs to separate context; no generic campus red tile roof. |
+
+## Material and color matching
+
+Compare L01's clearer frontal daylight with L02's warmer wide daylight and the overhead for roof-only context. Brick is warm orange/red-brown with fine light mortar; pale cladding has staggered horizontal joints and edge depth; mullions are dark charcoal, glass is reflective gray/blue and the screen is reddish/terracotta-toned. Ennead describes a terracotta-shaded curtainwall, but that wording does not prove every screen member is fired ceramic rather than metal. Physical product/finish specifications, calibrated color targets and measured roughness are unavailable.
+
+Keep glazing, opaque spandrels, pale cladding, brick/mortar, screen strips, fascia/soffit and roof membrane distinct. Reflected clouds, artificial interior lights and shadows under the cantilever are not base-material colors. Screens must cast their own shadows through visible gaps. The architect's interiors have unrelated finishes and should not drive exterior color matching.
+
+## LiDAR availability and the temporal mismatch
+
+The [state delivery query](sources/lidar_delivery_tiles.json) selects **in2018_30001885_12**, **April 20, 2018**, with [actual COPC metadata](sources/in2018_30001885_12.copc.metadata.json) and [request/availability summary](sources/lidar_crop_summary.json). This predates demolition/construction of the completed 2022/2023 complex. **It is not usable as Lambertus's finished roof/eave/height measurement.** No building-height percentiles or new point crop are claimed. Retaining a metadata lead is different from downloading or inspecting the cloud.
+
+The same source tile's native compound CRS is NAD83(HARN) / Indiana West (ftUS) plus NAVD88 height, Geoid12B (ftUS), with US-survey-foot coordinates; source WKT/metadata and the shared [elevation-data notes](../../shared/lidar/) retain provenance. Any future measured use must verify actual header CRS/units and the building's existence at acquisition. A newer local dataset, dated survey or as-built elevation is required for current geometry. The checked date-index result does not prove that no newer data exists elsewhere.
+
+## Construction brief, coverage gaps and queue handoff
+
+When later authorized to build: preserve stable asset placement; use FID433 for Lambertus and coordinate the FID432/shared boundary separately; establish the actual bar/parapet/high-bay levels from current evidence; lay out distinct tall west glazing and shorter upper strips; fit brick projections and named signage; then resolve the shared pale cantilever, entrance and deep horizontal screen before adding them to either asset. Current finished photographs take priority over BSA's presentation renderings and demolished predecessor images.
+
+Priority follow-ups are real north/east/service views, more positions/heights along the west bar, exact per-floor opening and screen counts, measured roof/level/section dimensions, and shared-hinge ownership. Public architect/institutional sources and two panorama locations were checked in this bounded pass; incomplete coverage is explicit. This package is not demonstrated ready for exact whole-building modeling or independent 9.9 acceptance. **Advance to rank 11, Beering Hall**, carrying these targeted gaps forward rather than spending excessive time on one source.
