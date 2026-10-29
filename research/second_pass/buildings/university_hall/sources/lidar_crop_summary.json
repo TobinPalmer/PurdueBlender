@@ -1,0 +1,45 @@
+[
+  {
+    "source_tile": "in2018_29951885_12",
+    "acquisition_date_from_state_index": "2018-04-20",
+    "source_url": "https://giselevationingov.s3.amazonaws.com/copc/statewide/2018/SPW/ql2/in2018_29951885_12.copc.laz",
+    "failed_candidates": [],
+    "point_crop_status": "Downloaded full-resolution spatial query; regular LAZ, COPC hierarchy removed",
+    "point_count": 13636,
+    "points_inside_footprint": 4185,
+    "class_counts": {
+      "1": 7043,
+      "2": 6549,
+      "7": 44
+    },
+    "crs_wkt": "COMPOUNDCRS[\"NAD83(HARN) / Indiana West (ftUS) + NAVD88 height - Geoid12B (ftUS)\",BOUNDCRS[SOURCECRS[PROJCRS[\"NAD83(HARN) / Indiana West (ftUS)\",BASEGEOGCRS[\"NAD83(HARN)\",DATUM[\"NAD83 (High Accuracy Reference Network)\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4152]],CONVERSION[\"unnamed\",METHOD[\"Transverse Mercator\",ID[\"EPSG\",9807]],PARAMETER[\"Latitude of natural origin\",37.5,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8801]],PARAMETER[\"Longitude of natural origin\",-87.0833333333333,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"Scale factor at natural origin\",0.999966667,SCALEUNIT[\"unity\",1],ID[\"EPSG\",8805]],PARAMETER[\"False easting\",2952750,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",820208.333,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"x\",east,ORDER[1],LENGTHUNIT[\"US survey foot\",0.304800609601219]],AXIS[\"y\",north,ORDER[2],LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",2968]]],TARGETCRS[GEOGCRS[\"WGS 84\",DATUM[\"World Geodetic System 1984\",ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"latitude\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"longitude\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4326]]],ABRIDGEDTRANSFORMATION[\"Transformation from NAD83(HARN) to WGS84\",METHOD[\"Position Vector transformation (geog2D domain)\",ID[\"EPSG\",9606]],PARAMETER[\"X-axis translation\",0,ID[\"EPSG\",8605]],PARAMETER[\"Y-axis translation\",0,ID[\"EPSG\",8606]],PARAMETER[\"Z-axis translation\",0,ID[\"EPSG\",8607]],PARAMETER[\"X-axis rotation\",0,ID[\"EPSG\",8608]],PARAMETER[\"Y-axis rotation\",0,ID[\"EPSG\",8609]],PARAMETER[\"Z-axis rotation\",0,ID[\"EPSG\",8610]],PARAMETER[\"Scale difference\",1,ID[\"EPSG\",8611]]]],VERTCRS[\"NAVD88 height (ftUS)\",VDATUM[\"North American Vertical Datum 1988\"],CS[vertical,1],AXIS[\"gravity-related height\",up,LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",6360]]]",
+    "crs_name": "NAD83(HARN) / Indiana West (ftUS) + NAVD88 height - Geoid12B (ftUS)",
+    "axis_units": [
+      {
+        "name": "X",
+        "unit": "US survey foot",
+        "factor_to_m": 0.30480060960121924
+      },
+      {
+        "name": "Y",
+        "unit": "US survey foot",
+        "factor_to_m": 0.30480060960121924
+      },
+      {
+        "name": "Gravity-related height",
+        "unit": "US survey foot",
+        "factor_to_m": 0.30480060960121924
+      }
+    ],
+    "clip_repository_path": "data/lidar/in2018_29951885_12.university_hall_clip.laz",
+    "clip_sha256": "5a5e86d4828b5b674ed2a679990d26e1d621c59dab4f78a4cc655ddf9416b061",
+    "ground_class2_outside_footprint_median_native": 623.42,
+    "inside_eroded_footprint_class1_count": 3367,
+    "candidate_return_heights_above_local_ground_m_p50_p90_p99": [
+      19.970535941071915,
+      21.86639573279147,
+      25.803566167132367
+    ],
+    "limitations": "Return statistics are not measured eave/ridge heights. Class1 includes non-roof objects. Compound CRS and vertical datum retained; facade/window geometry cannot be inferred from airborne cloud. No model/placement changes."
+  }
+]
