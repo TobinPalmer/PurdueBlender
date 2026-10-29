@@ -24,4 +24,6 @@ def fetch(row):
 rows=list(concurrent.futures.ThreadPoolExecutor(max_workers=5).map(fetch,requests))
 index=S/'reference_download_index.json';old=json.loads(index.read_text()) if index.exists() else []
 replaced={x['url'] for x in rows};index.write_text(json.dumps([x for x in old if x['url'] not in replaced]+rows,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
-for r in rows:print(json.dumps({k:v for k,v in r.items() if k not in ('image_tags',)},ensure_ascii=False));print('Image candidates:',r.get('image_tags',[])[:12])
+for r in rows:
+    print(json.dumps({k:v for k,v in r.items() if k not in ('image_tags',)},ensure_ascii=False))
+    print('Image candidate count:',len(r.get('image_tags',[])),'; tags preserved in reference_download_index.json')
