@@ -1,0 +1,104 @@
+{
+  "building_id": "neil_armstrong_hall",
+  "revision": "r2",
+  "asset_path": "modular/buildings/neil_armstrong_hall.blend",
+  "asset_sha256": "0baafbd18a2f6079fb7b3064079d479fcf01ab5b61caf39ddba79c985322736d",
+  "asset_sha256_verified": true,
+  "reviewer": "independent second-pass visual reviewer subagent (did not author r2)",
+  "reviewed_at": "2026-10-28",
+  "review_depth": "quick",
+  "review_depth_note": "Quick review at the user's request. Used the existing r2 renders; no new renders. The asset was not reopened by the reviewer; reopen and collection checks come from r2/validation_r2.json (pass), and the hash was verified with sha256sum. Score is an unrounded sum of independently judged criteria, assessed before reading any modeler score.",
+  "score": 6.95,
+  "max_score": 10,
+  "criteria": {
+    "windows_openings": {
+      "max": 3.0,
+      "awarded": 1.55,
+      "deductions": [
+        {"points": 0.30, "reason": "Main-bar north facade: the ground-floor windows match the upper floors in size. Photos show taller ground-floor windows with limestone surrounds.", "evidence": "sources/Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_01.jpg (left), user_provided_drone_NW.jpg", "view": "r2/r2_elev_N.png, r2/r2_aerial_NW.png"},
+        {"points": 0.30, "reason": "Main-bar south (courtyard) facade: the windows are too widely spaced, about 2.4 window-widths apart against about 1.2 in the photo. They also lack the limestone sills and heads.", "evidence": "sources/user_provided_rear_entrance_1.jpg (right half)", "view": "r2/r2_rear_curtain.png, r2/r2_rear_dock.png"},
+        {"points": 0.30, "reason": "West wing SE (courtyard) face: the model has two-storey limestone-framed windows and tall paired slots. Photos show one row of small punched windows with sunshade fins below the glass top floor, and mostly blank brick below that.", "evidence": "sources/user_provided_rear_entrance_1.jpg (left), user_provided_rear_entrance_2.jpg", "view": "r2/r2_rear_curtain.png, r2/r2_obl_SE.png"},
+        {"points": 0.20, "reason": "West wing SW face, left of the limestone pier: the model has a tall two-storey window, and its upper windows are narrow slot pairs. DD_24 shows blank brick carrying the name letters there, and two near-square upper windows with horizontal sunshade fins.", "evidence": "sources/Purdue_University_West_Lafayette_Indiana_Estados_Unidos_2012-10-15_DD_24.jpg", "view": "r2/r2_dd24_wing_side.png"},
+        {"points": 0.15, "reason": "Rear sun-shade curtain wall: below the shade grid, the lower glazing is a blank dark panel with no mullions. In the photos the glazing grid runs down to the ground.", "evidence": "sources/user_provided_rear_entrance_1.jpg, user_provided_rear_entrance_2.jpg", "view": "r2/r2_rear_curtain.png, r2/r2_rear_doors.png"},
+        {"points": 0.10, "reason": "West wing north face: the window at its east end is a single narrow slot. The drone photo shows a wide gridded window bay, about 3 panes wide.", "evidence": "sources/user_provided_drone_NW.jpg", "view": "r2/r2_figA_entrance.png, r2/r2_aerial_NW.png"},
+        {"points": 0.10, "reason": "The east-end facades (bar diagonal east face with only 2 sparse rows; the blank stretch and corner glazing at the east end of the north facade) have no ground-photo coverage, so they cannot be credited.", "evidence": "no east-end photo in sources/", "view": "r2/r2_elev_E.png, r2/r2_elev_N.png, r2/r2_east_end.png"}
+      ]
+    },
+    "signature_architecture": {
+      "max": 2.5,
+      "awarded": 1.9,
+      "deductions": [
+        {"points": 0.25, "reason": "NW red point: from below, the triangular soffit opening with sky showing through it, the strut and the brighter red inner sloped panel barely read. The soffit looks almost solid. This is the building's defining view.", "evidence": "sources/Neil_Armstrong_Hall_of_Engineering_Purdue_University_2016_01.jpg, _2016_03.jpg", "view": "r2/r2_point_below.png, r2/r2_photo5_point_W.png, r2/r2_figA_entrance.png"},
+        {"points": 0.10, "reason": "Point soffit: the panel-joint grid is missing, and the red inner panel does not contrast with the dark soffit.", "evidence": "2016_01, 2016_03", "view": "r2/r2_photo5_point_W.png"},
+        {"points": 0.10, "reason": "West wing SW entrance: the opening under the canopy reads as a low multi-pane window, not two glazed door pairs.", "evidence": "DD_24", "view": "r2/r2_dd24_wing_side.png"},
+        {"points": 0.10, "reason": "West wing white cap: photos show the cap overhanging the glass top floor, with a sloped soffit. The model's cap is a thin flush slab. The user's no-overhang note concerns the glass storey over the brick, which is correctly fixed.", "evidence": "2016_01 (right), DD_24", "view": "r2/r2_figA_entrance.png, r2/r2_dd24_wing_side.png"},
+        {"points": 0.05, "reason": "The 'NEIL ARMSTRONG HALL OF ENGINEERING' letters are missing from the SW face of the west wing. They are present on the north face.", "evidence": "DD_24", "view": "r2/r2_dd24_wing_side.png"}
+      ]
+    },
+    "proportions_roof_silhouette": {
+      "max": 2.0,
+      "awarded": 1.7,
+      "deductions": [
+        {"points": 0.15, "reason": "East end (SE wing wedge, bar point, east entrance) is checked only against the aerial and the plan. No ground photo confirms its heights or the face of the point.", "evidence": "na_ortho_2023_hr.jpg only", "view": "r2/r2_top.png, r2/r2_east_end.png"},
+        {"points": 0.10, "reason": "The roof inside the parallelogram is one flat plane. The ortho shows two levels, with a diagonal west portion, and an exposed steel lattice in the opening at the east end.", "evidence": "sources/na_ortho_2023_hr.jpg", "view": "r2/r2_top.png"},
+        {"points": 0.05, "reason": "The west wing glass top floor is set back about 1 m. In photos the glazing sits close to the brick face line on the north and SE faces.", "evidence": "2016_01, user_provided_rear_entrance_1.jpg", "view": "r2/r2_obl_SW.png, r2/r2_rear_curtain.png"}
+      ]
+    },
+    "material_color": {
+      "max": 1.5,
+      "awarded": 1.0,
+      "deductions": [
+        {"points": 0.25, "reason": "The brick is too orange and too light. In matched daylight photos it is a darker red-brown with purple tones.", "evidence": "DD_24, 2016_01, user_provided_rear_entrance_1.jpg", "view": "r2/r2_dd24_wing_side.png, r2/r2_rear_dock.png"},
+        {"points": 0.15, "reason": "The glazing is a flat, opaque dark teal. The photos show reflective, lighter blue-green-grey glass that you can partly see through.", "evidence": "2016_01, 2016_03, rear_entrance_2", "view": "r2/r2_figA_entrance.png, r2/r2_rear_curtain.png"},
+        {"points": 0.10, "reason": "The windows are flat-set, with no limestone surrounds, sills or sunshade fins, so the facade lacks depth.", "evidence": "rear_entrance_1, DD_24", "view": "r2/r2_rear_dock.png"}
+      ]
+    },
+    "consistency": {
+      "max": 1.0,
+      "awarded": 0.8,
+      "deductions": [
+        {"points": 0.20, "reason": "The west wing's facade language (tall two-storey windows on the SE and SW faces) does not match the photo-verified pattern on two faces. The rest of the elevations and obliques agree with each other and with the top view.", "evidence": "rear_entrance_1/2, DD_24", "view": "r2/r2_obl_SE.png, r2/r2_obl_SW.png"}
+      ]
+    }
+  },
+  "user_feedback_status": [
+    {"point": "West wing curved glass top floor sits on the brick block, no overhang", "status": "fixed", "view": "r2/r2_dd24_wing_side.png, r2/r2_obl_SW.png"},
+    {"point": "West wing side entrance on the long SW face (DD_24)", "status": "fixed (placement); doors read as a window, name letters missing on that face", "view": "r2/r2_dd24_wing_side.png"},
+    {"point": "Rear entrance doors at the base of the sun-shade curtain wall next to the west wing", "status": "fixed; lower curtain-wall glazing lacks mullions", "view": "r2/r2_rear_curtain.png, r2/r2_rear_doors.png"},
+    {"point": "Small windowless loading dock further east, no mid-facade glass entrance", "status": "fixed", "view": "r2/r2_rear_dock.png, r2/r2_elev_S.png"},
+    {"point": "East end: SE triangular wing flush with the pointed end, no rectangular indent, no missing wall", "status": "fixed per top view and elevations (no east ground photo to confirm)", "view": "r2/r2_top.png, r2/r2_obl_SE.png, r2/r2_east_end.png"},
+    {"point": "No windows on the roof", "status": "fixed", "view": "r2/r2_top.png"},
+    {"point": "Red roof band uniform width, projecting past the walls", "status": "fixed", "view": "r2/r2_top.png, r2/r2_elev_N.png, r2/r2_elev_S.png"},
+    {"point": "NW red point extends further over the west wing and slopes gently up from the north glass section", "status": "fixed", "view": "r2/r2_elev_N.png, r2/r2_obl_SW.png, r2/r2_dd24_wing_side.png"},
+    {"point": "Support beam in the point's triangular hole flush with the band", "status": "fixed in plan (beam in plane in top view); the hole itself is barely legible from the ground", "view": "r2/r2_top.png, r2/r2_point_below.png"}
+  ],
+  "findings": [
+    {"rank": 1, "facade": "West wing SE (courtyard) face", "feature": "window pattern", "required_correction": "Replace the two-storey limestone-framed windows and paired slots with one row of small punched windows with projecting sunshade fins under the glass top floor. Leave the lower wall mostly blank brick, as in user_provided_rear_entrance_1/2."},
+    {"rank": 2, "facade": "NW roof point (soffit seen from below)", "feature": "triangular opening, strut, red inner panel", "required_correction": "Make the triangular opening read clearly from the ground, with sky visible through it. Show the diagonal strut and the brighter red inner sloped panel, and add the panel-joint grid to the soffit, matching 2016_01 and 2016_03."},
+    {"rank": 3, "facade": "Brick, all facades", "feature": "colour", "required_correction": "Darken the brick and shift it toward red-brown and purple, matching the daylight crops of DD_24 and 2016_01. Make the glazing lighter and more reflective blue-green-grey."},
+    {"rank": 4, "facade": "Main bar south and north facades", "feature": "window rhythm and trim", "required_correction": "South: tighten the window spacing to match rear_entrance_1, and add limestone sills and heads. North: make the ground-floor windows taller, with limestone surrounds, as in 2016_01 and the drone photo."},
+    {"rank": 5, "facade": "West wing SW face", "feature": "left-of-pier bay and entrance", "required_correction": "Left of the pier: replace the tall window with blank brick carrying the name letters, and use two near-square upper windows with sunshade fins. Under the canopy, make the opening read as two glazed door pairs (DD_24)."},
+    {"rank": 6, "facade": "Rear sun-shade curtain wall", "feature": "lower glazing", "required_correction": "Continue the mullion grid down to the ground beside the door vestibule. Do not leave a blank dark panel."},
+    {"rank": 7, "facade": "West wing north face", "feature": "east-end window bay", "required_correction": "Make the narrow slot a wide gridded window bay, as in the drone photo."},
+    {"rank": 8, "facade": "West wing roof cap", "feature": "cap overhang", "required_correction": "Give the white cap a modest overhang with a sloped soffit over the glass top floor (2016_01, DD_24). The glass storey itself should stay on the brick."}
+  ],
+  "uncertainties": [
+    "There is no ground photo of the east end. The SE wing wedge, the diagonal east face (its sparse 2-row windows), the east entrance glazing, and the blank stretch with corner glazing at the east end of the north facade are unverified.",
+    "The NW point's tilt (4 m) and reach (11 m) are the modeler's photo estimates. They look plausible against DD_24 and the drone photo, but are not measured.",
+    "The upper-floor punched windows above the loading dock are kept, which is consistent with rear_entrance_1. The user's note says the dock is windowless; this was read as applying to the dock itself.",
+    "Colour judgements come from non-calibrated photos in varying light.",
+    "Quick review: the asset was not reopened by the reviewer, and no new matched renders were made."
+  ],
+  "gates": {
+    "identity": "pass",
+    "reference_coverage": "partial (east end has no ground photo)",
+    "no_unresolved_material_exterior_discrepancies": "fail (west wing SE/SW window pattern; point soffit opening legibility)",
+    "saved_file_reopen": "pass per r2/validation_r2.json (not independently re-run)",
+    "collection_export": "pass per r2/validation_r2.json",
+    "portable_dependencies": "pass per r2/validation_r2.json (no libraries, images or absolute paths)",
+    "no_footprint_regression": "pass (top view consistent with na_ortho_2023_hr.jpg)"
+  },
+  "acceptance_threshold": 9.9,
+  "threshold_approval": null,
+  "accepted": false
+}
