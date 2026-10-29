@@ -410,6 +410,8 @@ def facade_openings(kind, L, z0, z1):
                 ops += [(c - w / 2, c + w / 2, 6.6, 9.4), (c - w / 2, c + w / 2, 11.4, 14.2)]
     elif kind == "strip":         # stair-tower bays at the corners of the glazed range: one tall window strip (V02, V01)
         ops = [(L / 2 - 0.7, L / 2 + 0.7, max(z0, 0.0) + 1.0, min(z1, 14.3))]
+    elif kind == "strip2":        # the bay left of the west entrance has the same strip twice, side by side (user review)
+        ops = [(c - 0.7, c + 0.7, max(z0, 0.0) + 1.0, min(z1, 14.3)) for c in (L / 2 - 0.8, L / 2 + 0.8)]
     elif kind == "east":          # east faces: regular punched windows per floor (plans; no photo)
         nb = max(1, int(L / 3.6))
         bw = L / nb
@@ -424,6 +426,8 @@ def facade_openings(kind, L, z0, z1):
 def facade_kind(A, B):
     _, t, n, L = seg_frame(A, B)
     if n.x < -0.9:
+        if 5 < L <= 15 and (A.y + B.y) / 2 > 0:
+            return "strip2"       # bay left (north) of the west entrance: two window strips side by side (user)
         return "end" if L > 15 else ("strip" if L > 5 else "plain")
     if n.y > 0.9:
         return "long" if L > 12 else ("strip" if L > 5 else "plain")
@@ -484,10 +488,10 @@ def east_wing_face(mb, A, B, L, zt):
             cg = 1.0 + (L - 2.0) * (g + 0.5) / ng
             for k in (-1, 0, 1):
                 ops.append((cg + k * 1.12 - 0.5, cg + k * 1.12 + 0.5, 4.75, 6.05))
-        if L > 9:   # lower band: two window triplets side by side (user review of r4)
-            for cg in (L / 2 - 1.74, L / 2 + 1.74):
-                for k in (-1, 0, 1):
-                    ops.append((cg + k * 1.12 - 0.5, cg + k * 1.12 + 0.5, 2.1, 3.6))
+        if L > 9:
+            cg = L / 2
+            for k in (-1, 0, 1):
+                ops.append((cg + k * 1.12 - 0.5, cg + k * 1.12 + 0.5, 2.1, 3.6))
     ops = [o for o in ops if o[0] > 0.9 and o[1] < L - 0.9]
     wall(mb, A, B, LB, zt, 0.45, ops, mat="brick", frame="wframe", units=True)
     trims(mb, A, t, n, [o for o in ops if len(o) == 4])

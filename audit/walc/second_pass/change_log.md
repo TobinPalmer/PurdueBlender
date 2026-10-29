@@ -153,6 +153,8 @@ This revision follows the user's close-ups and back-of-building photos (`sources
   - **Removed:** a stray flat-roof strip that floated over the recess.
   - **Gap filled:** the gap at x = 40 above the wing (y −18…−12.7) is filled with brick and coping.
 
-## r5 (2026-10-29) — asset SHA-256 `105be24ca921240cfd7abe529864e4dd9f07773ee69113473035fb074e6198b1`
+## r5 (2026-10-29) — asset SHA-256 `0a99506ef61a973a359e1375582d841c2b7105743e611a8152e85e850b98687d`
 
-This revision makes the user's r4 change and nothing else. The lower window band on the east wing's wall left of the east entrance (the x = 36 face) now has two window triplets side by side instead of one. Renders are in `r5/`, including the new view `r5_east_wall_left_of_entrance.png`. The asset reopens cleanly (`r5/validation_r5.json`).
+This revision makes the user's r4 change and nothing else. The small brick bay left (north) of the west entrance, between the north block and the glazed range, now has the same tall window strip twice, side by side, on all floors. It had one. Renders are in `r5/`, including the new view `r5_west_bay_left_of_entrance.png`. The asset reopens cleanly (`r5/validation_r5.json`).
+
+A first attempt doubled the lower windows on the east wing by mistake. That change was reverted and the east side is as in r4.
