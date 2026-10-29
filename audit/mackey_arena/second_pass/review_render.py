@@ -21,6 +21,9 @@ for o in scn.objects:
         v = o.matrix_world @ mathutils.Vector(c)
         for i in range(3):
             lo[i] = min(lo[i], v[i]); hi[i] = max(hi[i], v[i])
+# below-grade parts (e.g. a sunken arena bowl) must not move the ground plane / framing:
+# the asset's local z = 0 is grade.
+lo.z = max(lo.z, 0.0)
 ctr = (lo + hi) / 2
 size = hi - lo
 R = max(size.x, size.y)
