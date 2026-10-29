@@ -65,9 +65,12 @@ def textured(name, c1, c2, mortar, w, h, ms, rough=0.9, bump=0.2, metal=0.0):
     return m
 
 
+DIAPER_MODULE = 0.6   # diagonal lattice spacing of the dark headers (user close-up: ~3-4 diamonds per window height)
+
+
 def diaper_brick():
     """Brick with a diagonal lattice of dark headers (diaper work), on metre UVs (u along the wall, v = height)."""
-    m = textured("WALC_SP_Brick_Diaper", (0.235, 0.085, 0.06), (0.18, 0.065, 0.05), (0.30, 0.28, 0.25), 0.2032, 0.0677, 0.0045)
+    m = textured("WALC_SP_Brick_Diaper", (0.27, 0.125, 0.085), (0.16, 0.075, 0.055), (0.46, 0.44, 0.40), 0.2032, 0.0677, 0.006)
     nt = m.node_tree
     b = next(n for n in nt.nodes if n.type == "BSDF_PRINCIPLED")
     br = next(n for n in nt.nodes if n.type == "TEX_BRICK")
@@ -78,11 +81,11 @@ def diaper_brick():
     for op in ("ADD", "SUBTRACT"):
         m1 = nt.nodes.new("ShaderNodeMath"); m1.operation = op
         nt.links.new(sep.outputs[0], m1.inputs[0]); nt.links.new(sep.outputs[1], m1.inputs[1])
-        m2 = nt.nodes.new("ShaderNodeMath"); m2.operation = "DIVIDE"; m2.inputs[1].default_value = 1.4
+        m2 = nt.nodes.new("ShaderNodeMath"); m2.operation = "DIVIDE"; m2.inputs[1].default_value = DIAPER_MODULE
         nt.links.new(m1.outputs[0], m2.inputs[0])
         m3 = nt.nodes.new("ShaderNodeMath"); m3.operation = "FRACT"
         nt.links.new(m2.outputs[0], m3.inputs[0])
-        m4 = nt.nodes.new("ShaderNodeMath"); m4.operation = "LESS_THAN"; m4.inputs[1].default_value = 0.07
+        m4 = nt.nodes.new("ShaderNodeMath"); m4.operation = "LESS_THAN"; m4.inputs[1].default_value = 0.09
         nt.links.new(m3.outputs[0], m4.inputs[0])
         lines.append(m4)
     mx = nt.nodes.new("ShaderNodeMath"); mx.operation = "MAXIMUM"
@@ -90,7 +93,7 @@ def diaper_brick():
     mix = nt.nodes.new("ShaderNodeMix"); mix.data_type = "RGBA"
     nt.links.new(mx.outputs[0], mix.inputs["Factor"])
     nt.links.new(br.outputs["Color"], mix.inputs[6])
-    mix.inputs[7].default_value = (0.09, 0.04, 0.035, 1)
+    mix.inputs[7].default_value = (0.13, 0.075, 0.06, 1)   # darker brown headers, low contrast
     nt.links.new(mix.outputs[2], b.inputs["Base Color"])
     return m
 
@@ -100,12 +103,14 @@ def mats():
     frames, dark eaves, red tile roof, blue-grey glass); interior from the BSA/Turner photographs."""
     M = {}
     # darker red-brown brick; floors 2-3 of the end blocks carry a diaper lattice of dark headers (review r01, V02)
-    M["brick"] = textured("WALC_SP_Brick", (0.235, 0.085, 0.06), (0.18, 0.065, 0.05), (0.30, 0.28, 0.25), 0.2032, 0.0677, 0.0045)
+    # colours from the user's close-up (sources/color_samples_r3.json): browner variegated brick, light mortar
+    M["brick"] = textured("WALC_SP_Brick", (0.27, 0.125, 0.085), (0.16, 0.075, 0.055), (0.46, 0.44, 0.40), 0.2032, 0.0677, 0.006)
     M["brickd"] = diaper_brick()
-    M["stone"] = principled("WALC_SP_Limestone", (0.58, 0.54, 0.44), rough=0.8, spec=0.2)[0]
-    M["roof"] = textured("WALC_SP_Roof_Tile", (0.56, 0.17, 0.065), (0.49, 0.145, 0.055), (0.30, 0.09, 0.04), 0.30, 0.38, 0.012, rough=0.7, bump=0.4)
-    M["wframe"] = principled("WALC_SP_Window_Frame_White", (0.80, 0.79, 0.75), rough=0.4)[0]
-    M["gutter"] = principled("WALC_SP_Gutter_Bronze", (0.20, 0.17, 0.11), rough=0.35, metal=0.8)[0]
+    M["stone"] = principled("WALC_SP_Limestone", (0.60, 0.54, 0.45), rough=0.8, spec=0.2)[0]
+    # roof: muted brown-red (aerial sRGB ~150,120,100 in flat light); the 2017 drone photo is over-saturated (user: too orange)
+    M["roof"] = textured("WALC_SP_Roof_Tile", (0.30, 0.085, 0.045), (0.25, 0.07, 0.04), (0.16, 0.05, 0.03), 0.30, 0.38, 0.012, rough=0.75, bump=0.4)
+    M["wframe"] = principled("WALC_SP_Window_Frame_Taupe", (0.34, 0.33, 0.28), rough=0.45)[0]
+    M["gutter"] = principled("WALC_SP_Gutter_Bronze", (0.09, 0.067, 0.05), rough=0.4, metal=0.7)[0]
     M["eave"] = principled("WALC_SP_Eave_Dark", (0.10, 0.09, 0.08), rough=0.6, metal=0.3)[0]
     M["frame"] = principled("WALC_SP_Frame_Olive", (0.20, 0.20, 0.16), rough=0.45, metal=0.6)[0]
     M["glass"] = principled("WALC_SP_Glass", (0.15, 0.20, 0.22), rough=0.04, metal=0.55, spec=0.8)[0]
@@ -427,6 +432,23 @@ def trims(mb, A, t, n, ops):
             mb.box("stone", A + t * u0 + n * 0.02, t, -n, u1 - u0, 0.2, zp, zp + 0.35)
 
 
+def diaper_columns(mb, A, t, n, L, ops):
+    """Diaper (crossed) brick only in the window columns of floors 2-3: from the floor-2 belt course to the stone
+    course under the eave, the width of the window plus a margin; the piers and corners between the columns stay plain
+    running bond (user close-up of the west face, 2026-10-29)."""
+    cols = {}
+    for o in ops:
+        if len(o) > 4 or o[2] < L2:
+            continue
+        cols.setdefault((round(o[0], 2), round(o[1], 2)), []).append(o)
+    for (u0, u1), wins in cols.items():
+        a, b = max(0.05, u0 - 0.45), min(L - 0.05, u1 + 0.45)
+        P0 = A + t * a + n * 0.02
+        P1 = A + t * b + n * 0.02
+        voids = [(o[0] - a, o[1] - a, o[2], o[3], "void") for o in wins]
+        wall(mb, P0, P1, 5.55, 14.55, 0.02, voids, mat="brickd", inner="brickd")
+
+
 def exterior_walls(mb):
     for poly, z0, z1 in ((GROUND, LB, L2), (UPPER, L2, TOP)):
         P = [Vector(p) for p in poly]
@@ -441,8 +463,10 @@ def exterior_walls(mb):
             zt = 7.2 if low_hall else z1
             kind = facade_kind(A, B)
             ops = facade_openings(kind, L, max(z0, 0.0), zt)
-            mat = "brickd" if z0 >= L2 else "brick"       # diaper-patterned brick on floors 2-3 (V02, V05)
+            mat = "brick"
             wall(mb, A, B, z0, zt, 0.45, ops, mat=mat, frame="wframe", mull=0.6, trans=0.95)
+            if z0 >= L2:
+                diaper_columns(mb, A, t, n, L, ops)
             trims(mb, A, t, n, ops)
             if z0 < 0:
                 band(mb, A, B, -0.05, 1.0, proj=0.1)             # stone base

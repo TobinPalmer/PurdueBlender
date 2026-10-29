@@ -112,3 +112,15 @@ This revision makes every exterior fix from the quick review r01 (5.75/10, `revi
 - East faces still have no photo coverage.
 - The diaper module and the window pane counts are estimates from the photos.
 - Plaza planters and benches are not modelled; they are site assets.
+
+## r3 (2026-10-29) — asset SHA-256 `77980a63dbfa2fee546efc4af74ac1ad329468e7744da8c72ca9ef3090de8688`
+
+This revision follows the user's close-up of the west face (`sources/user_provided_brick_closeup.png`) and their note that the roof was too orange. Renders are in `r3/`, including the new view `r3_close_west_face_N_block.png`. The asset reopens cleanly (`r3/validation_r3.json`).
+
+- **Diaper brick only in the window columns.** On floors 2–3, the crossed pattern now fills only each window column: the width of the window plus about 0.45 m each side, from the floor-2 belt course to the stone course under the eave. Piers, corners and the ground floor are plain running bond (`diaper_columns`). The pattern is a fine, low-contrast lattice of darker headers (0.6 m module), no longer bold lines.
+- **Colours** are re-sampled from the close-up (`sources/color_samples_r3.json`):
+  - **Brick:** browner and variegated, with light mortar.
+  - **Window frames:** taupe-grey. The close-up shows the frames are not white.
+  - **Stone:** warm light grey.
+  - **Gutters and downpipes:** dark bronze.
+- **Roof** is now a muted brown-red, matched to the aerial at sRGB ~150,120,100 in flat light. The 2017 drone photo used before is over-saturated.
