@@ -4,7 +4,7 @@ User-directed research-only phase, 2026-10-28. There are 231 not-yet-second-pass
 
 The [root queue](../../README.md#second-pass-exterior-ranking) is the order authority. Modeling owners are preserved by stable asset IDs; research authorization covers all rows. [Prior work](prior_work.md) and [the previous order](previous_queue_2026-10-28.json) remain separate from unfinished research.
 
-**Research status: 2 dossiers prepared with explicit gaps; 229 queued. Next: rank 3, Bell Tower.** Research will create one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
+**Research status: 3 dossiers prepared with explicit gaps; 1 in progress; 227 queued. Next: rank 4, R. B. Wetherill Laboratory of Chemistry.** Research will create one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
 
 Location now contributes **70%**, campus prominence **20%**, and existing first-pass score shortfall **10%**. WALC/Centennial Mall and Purdue Mall are the primary planning focal points, with Memorial Mall a secondary core. This deliberately brings central academic buildings ahead of distant athletics and peripheral facilities. These weights are project planning judgments, not measured pedestrian traffic or a new visual grade.
 
@@ -18,8 +18,8 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 | ---: | --- | --- | --- |
 | 1 | Walc | [Research](buildings/walc/README.md) | Prepared with gaps |
 | 2 | Mechanical Engineering | [Research](buildings/mechanical_engineering/README.md) | Prepared with gaps |
-| 3 | Bell Tower | — | Queued |
-| 4 | R. B. Wetherill Laboratory of Chemistry | — | Queued |
+| 3 | Bell Tower | [Research](buildings/bell_tower/README.md) | Prepared with gaps |
+| 4 | R. B. Wetherill Laboratory of Chemistry | [Research](buildings/wetherill_laboratory_of_chemistry/README.md) | In progress |
 | 5 | University Hall | — | Queued |
 | 6 | Hovde Hall | — | Queued |
 | 7 | Electrical Engineering | — | Queued |

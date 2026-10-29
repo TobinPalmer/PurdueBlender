@@ -25,6 +25,8 @@ Directions follow source captions where provided. Approximate height/distance ca
 
 Historic 1932 and 1960s photographs from Purdue's history page are retained as chronology references. They do not substitute for contemporary elevation photos. Download URLs, SHA256 hashes and retrieval dates are in [photo/page downloads](sources/download_index.json), [webcam downloads](sources/webcam_download_index.json) and [site downloads](sources/site_download_index.json). Purdue and MSKTD retain their rights in their images; no general texture-reuse license is inferred.
 
+The building-information article was readable through the web research service, but its direct HTML download redirected to Purdue's homepage. The index explicitly labels that response as a redirect, not a source-article snapshot. PDF pages 42, 64 and 66 are retained exploratory extracts; the relevant cited references are pages 43 and 65. No extra exterior viewpoints are counted from the other extracts.
+
 ## Defining visual details
 
 The close contemporary old-wing entrance in M01 is a priority detail: a broad pale-stone semicircular surround, carved floral/scroll bands at its spring points and upper segments, a central upper keystone field, a square relief crest above, inset gridded half-round glazing and engraved two-line name panel above rectangular glazed doors. The arch has genuine depth and layered profiles. A plain white half-ring would omit much of its visual identity.

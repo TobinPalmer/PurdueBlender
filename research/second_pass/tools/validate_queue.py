@@ -33,15 +33,32 @@ for row in allrows:
 expected=sorted(rows,key=lambda x:(-x['priority'],-x['centrality'],-x['importance'],x['grade'],x['name'].casefold(),x['asset']))
 assert [x['asset'] for x in rows]==[x['asset'] for x in expected]
 assert [x['rank'] for x in rows]==list(range(1,232))
-prepared=[x for x in rows if x['dossier']]
-for x in prepared:
+documented=[x for x in rows if x['dossier']]
+prepared=[x for x in rows if x['research_status']=='Prepared with gaps']
+for x in documented:
     p=D/x['dossier'];assert p.is_file() and p.stat().st_size>3000
     assert x['research_status']!='Queued'
 provenance=json.loads((D/'shared/location_source_provenance.json').read_text())
 assert hashlib.sha256((D/'shared/official_purdue_buildings_wgs84_snapshot.json').read_bytes()).hexdigest()==provenance['source_sha256']
-for row in json.loads((D/'buildings/walc/sources/lidar_crop_summary.json').read_text()):
-    p=D/'buildings/walc'/row['clip_repository_path']
-    assert p.exists() and hashlib.sha256(p.read_bytes()).hexdigest()==row['clip_sha256']
+source_hash_checks=0;clip_checks=0
+for folder in (D/'buildings').iterdir():
+    if not (folder/'README.md').is_file():continue
+    for index in (folder/'sources').glob('*download_index.json'):
+        records=json.loads(index.read_text(encoding='utf-8'))
+        for row in records:
+            if row.get('file') and row.get('sha256'):
+                p=index.parent/row['file'];assert p.is_file(),str(p)
+                assert hashlib.sha256(p.read_bytes()).hexdigest()==row['sha256'],str(p)
+                source_hash_checks+=1
+    index=folder/'sources/lidar_crop_summary.json'
+    if index.exists():
+        for row in json.loads(index.read_text()):
+            if row.get('clip_repository_path'):
+                p=folder/row['clip_repository_path'];assert p.exists() and hashlib.sha256(p.read_bytes()).hexdigest()==row['clip_sha256']
+                clip_checks+=1
+    for target in re.findall(r'(?<!!)\[[^\]]+\]\(([^)]+)\)',(folder/'README.md').read_text(encoding='utf-8')):
+        if target.startswith(('https:','http:','#')):continue
+        p=folder/target.split('#')[0];assert p.exists(),'Broken dossier link '+str(p)
 current=(R/'README.md').read_text(encoding='utf-8')
 base=subprocess.check_output(['git','show','67fedb8:README.md'],cwd=R).decode('utf-8')
 def outside(text):
@@ -54,5 +71,5 @@ for row in rows:
     elif not row['official_feature_ids']:assert '[location proxy]' in line
 changed=subprocess.check_output(['git','diff','--name-only','67fedb8'],cwd=R,text=True).splitlines()
 assert not any(x.endswith('.blend') or '/build_' in x or x=='modular/manifest.json' for x in changed)
-report={'result':'PASS','eligible':232,'queued_for_research':231,'excluded_prior_model':1,'rossen_assignments_preserved':90,'prepared_dossiers':len(prepared),'unresolved_location_proxies':sum(not x['official_feature_ids'] for x in rows),'location_conflicts':sum(bool(x['location_conflict']) for x in rows),'unavailable_source_assets':sum(not x['asset_available'] for x in rows),'top_five':[x['name'] for x in rows[:5]],'unchanged_models':True,'original_readme_outside_queue_preserved':True}
+report={'result':'PASS','eligible':232,'queued_for_research':231,'excluded_prior_model':1,'rossen_assignments_preserved':90,'prepared_dossiers':len(prepared),'in_progress_dossiers':len(documented)-len(prepared),'source_hash_checks':source_hash_checks,'point_clip_hash_checks':clip_checks,'unresolved_location_proxies':sum(not x['official_feature_ids'] for x in rows),'location_conflicts':sum(bool(x['location_conflict']) for x in rows),'unavailable_source_assets':sum(not x['asset_available'] for x in rows),'top_five':[x['name'] for x in rows[:5]],'unchanged_models':True,'original_readme_outside_queue_preserved':True}
 print(json.dumps(report,indent=2))

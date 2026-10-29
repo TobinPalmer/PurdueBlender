@@ -30,7 +30,14 @@ tiles=json.loads(fetch('lidar_delivery_tiles.json',tile_url));assert 'error' not
 # Public orthographic context; export response includes actual geographic extent.
 ext=[bbox[0]-.00035,bbox[1]-.00025,bbox[2]+.00035,bbox[3]+.00025]
 aerial_url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?'+urllib.parse.urlencode({'f':'pjson','bbox':','.join(map(str,ext)),'bboxSR':4326,'imageSR':3857,'size':'1400,1400','format':'png32'})
-export=json.loads(fetch('aerial_export.json',aerial_url));assert 'href' in export,export
+export=json.loads(fetch('aerial_export.json',aerial_url))
+if not export.get('href'):
+    # Tiny sites can exceed World Imagery's supported export detail; widen context.
+    cx=(bbox[0]+bbox[2])/2;cy=(bbox[1]+bbox[3])/2
+    wide=[cx-.00125,cy-.001,cx+.00125,cy+.001]
+    aerial_url='https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?'+urllib.parse.urlencode({'f':'pjson','bbox':','.join(map(str,wide)),'bboxSR':4326,'imageSR':3857,'size':'1200,1200','format':'png32'})
+    export=json.loads(fetch('aerial_export_wide.json',aerial_url))
+assert export.get('href'),export
 fetch('aerial_world_imagery.png',export['href'])
 summary=[]
 for f in tiles.get('features',[]):
