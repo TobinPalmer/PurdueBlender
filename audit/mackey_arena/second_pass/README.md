@@ -24,4 +24,8 @@ Builder: [`modular/buildings/build_mackey_arena_second_pass.py`](../../../modula
 | Rev | Asset SHA-256 | Independent score | Review |
 | --- | --- | --- | --- |
 | r0 (first pass) | `b8d5c120004b189892a48a1bdae8b018e1ca190206f1ce0feaa573b435784e44` | — (first-pass 8.0, other rubric) | `../INDEPENDENT_REVIEW_round3.md` |
-| r1 | see `r1/validation_r1.json` | pending | `review_r01/` |
+| r1 | `0ee720103158d666f345f21adfc96aa6ef1f75cd1f6dde6617ff645edee31151` | 5.10 (not accepted) | `review_r01/` |
+| r2 | `5ad0172207cabd3d4a347f1ce86f9be8fb0f5faefd0c8948aa32a411836406a5` | not reviewed (superseded by r3) | renders `r2/` |
+| r3 | `a76d53697af42587b352b03820c13753efcc325cbbb1a345ff6679dcd821dc75` | pending independent review | renders `r3/`, comparisons `comparisons_r3/` |
+
+r3 adds `r3/before_r2/` (r2 at the r3 matched cameras), `compare_r3.py`, `drum_heights_r3.py`, `ndhm.py`, the 2025 west aerial and the LiDAR NDHM window in `sources/`.

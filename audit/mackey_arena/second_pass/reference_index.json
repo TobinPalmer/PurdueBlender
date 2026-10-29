@@ -36,7 +36,7 @@
    "image_date": "2016-08-24 19:04:24",
    "view_direction": "from S/SW looking NNE (camera 40.432786,-86.916825): southwest entrance, south concourse ring, drum S/SW",
    "features": [
-    "24-bay pilaster rhythm",
+    "pilaster rhythm (r1 read 24 bays; r2/r3: 36 bays of 10 deg, see purdue_athletics_2025_west_aerial)",
     "slot-window groups vs plain bays",
     "bronze/copper fascia",
     "ribbed dome",
@@ -58,7 +58,7 @@
    "image_date": "2 December 2009 (original upload date)",
    "view_direction": "elevated, from NW roof looking SE, pre-2011 renovation",
    "features": [
-    "drum pilaster count (~24)",
+    "drum pilaster rhythm (r1 read ~24; superseded by 36 from the 2025 west aerial)",
     "slot groups pattern two-slotted/one-plain",
     "dome ribbing"
    ],
@@ -272,6 +272,47 @@
    ],
    "uncertainty": "not exterior evidence",
    "sha256": "eedc22388e22140a6eb550cecee609e721ebd58193b249eadc9f34a54c266624"
+  },
+  {
+   "file": "purdue_athletics_2025_west_aerial.jpg",
+   "kind": "photo (elevated / drone)",
+   "provider": "Purdue Athletics (purduesports.com) facility page",
+   "source_url": "https://storage.googleapis.com/purduesports-com-prod/2025/05/14/qJbj0LfsPg7jOfY35zXKki1ijLwTw4fR7l7XOak5.jpg",
+   "source_page": "https://purduesports.com/facilities/mackey-arena",
+   "author": null,
+   "license": null,
+   "retrieved": "2026-10-28",
+   "image_date": "2025 (upload path 2025/05/14); summer sunset",
+   "view_direction": "elevated (~30-35 m) from the W/WSW looking E; camera fit ~135-165 m from the drum centre",
+   "features": [
+    "drum W/SW/NW bays: 15 pilasters visible -> 36 bays of 10 deg (consistent with LiDAR heights; 24 rejected)",
+    "slotted/plain rhythm (2 slotted : 1 plain) on the west half",
+    "louvre panels in the lower ~70 % of recessed brick channels; fascia : channel : louvre = 0.31 : 0.37 : 1",
+    "vertically corrugated fascia, gutter ledge with vents",
+    "west annex west facade window groups, door, overhanging white roof slab with pointed NW corner",
+    "concourse ring parapet stripes, ring roof"
+   ],
+   "uncertainty": "press/marketing photo saved as reference snapshot for evaluation only (r2 used it but did not save it; saved in r3); warm sunset colour cast - not used for colour sampling",
+   "sha256": "5837f503ceaf11d127108d6afa45589205b75a55ec94350cfaebeafe365a2dff"
+  },
+  {
+   "file": "mackey_ndhm_2018.npy",
+   "kind": "LiDAR-derived height raster (resampled window)",
+   "provider": "Indiana 2017-2019 QL2 3DEP LiDAR, Tippecanoe NDHM (height above ground) hosted by Purdue Digital Forestry",
+   "source_url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/cog/tippecanoe_ndhm_2018.tif",
+   "source_page": null,
+   "author": null,
+   "license": "public (USGS 3DEP / IndianaMap)",
+   "retrieved": "2026-10-28",
+   "image_date": "2018 (2017-2019 acquisition)",
+   "view_direction": "nadir; asset-local window x -80..80, y -90..150 m at 0.5 m (nearest 5 ft cell)",
+   "features": [
+    "ring roof 4.4 m, concourse coping 5.3 m, fascia/rim 12.1-12.4 m, dome profile to 24.7 m, cap 26.0 m",
+    "wing roof levels 10.0 / 9.5 / 8.7 m, penthouse tops 13.7-14.4 m, annex 6.6-7.1 m, south blocks",
+    "lean-free footprints of all parts"
+   ],
+   "uncertainty": "native 1.52 m (5 ft) cells, vertical +-0.3-0.5 m; source CRS EPSG:2968 (US ft) converted to the project lon/lat approximation; metadata mackey_ndhm_2018.json, extraction tool ../ndhm.py; r3 radial check drum_heights_r3.py",
+   "sha256": "fe221bdb9a4b520dc03a51415c5bf487e20005cca9edbcc53a256b6883fd4f9b"
   }
  ],
  "unsaved_sources": [
