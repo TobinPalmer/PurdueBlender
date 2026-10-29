@@ -1,0 +1,83 @@
+{
+ "building_id": "walc",
+ "revision": "r1",
+ "asset_path": "modular/buildings/walc.blend",
+ "asset_sha256": "eccc73f023c3c1dd5ffdefaa679290c8fbbf57e773f5a9d420a824ffb3e7f395",
+ "reviewer": "independent second-pass visual reviewer (Claude subagent, not the builder)",
+ "reviewed_at": "2026-10-29",
+ "review_depth": "quick, exterior only",
+ "score": 5.75,
+ "max_score": 10,
+ "criteria": {
+  "windows": {"max": 3.0, "awarded": 1.6, "deductions": [
+   {"points": 0.45, "reason": "End-block window frames are dark bronze with plain panes; photos (purdue_2018_facade, bsa_exterior, gallery_southeast_dean_2021) show white/off-white frames with transoms and divided lights."},
+   {"points": 0.3, "reason": "No cast-stone heads and sills on end-block windows; ground-floor windows lack the stone transom panel at about two-thirds height (purdue_2018_facade, north-block west face)."},
+   {"points": 0.3, "reason": "South face of the south block reuses the north-face schedule of tall two-storey units. gallery_southeast_dean_2021 shows punched single and paired windows per floor, with tall glazed strips only near the ends."},
+   {"points": 0.2, "reason": "Tall vertical stair-tower window strips at the junctions of the glazed range and the end blocks are missing (purdue_2018_facade, bsa_exterior). The model shows blank white panels there."},
+   {"points": 0.15, "reason": "Glazed-range bays lack the small-pane upper lights on floors 2 and 3 and the deep dark-bronze projecting frame (purdue_2022_student_life, bsa_exterior)."}
+  ]},
+  "signature_architecture": {"max": 2.5, "awarded": 1.25, "deductions": [
+   {"points": 0.35, "reason": "West ground floor is storefront flush with the piers. The photos show a recessed arcade: free-standing limestone piers, storefront set well back, brick piers between storefront bays, and visible double doors."},
+   {"points": 0.3, "reason": "Diaper (diagonal) brick pattern on the end-block upper floors is absent; it dominates the end-block faces in every close photo."},
+   {"points": 0.25, "reason": "No exposed rafter/bracket tails under the deep end-block eaves; the soffit is a flat dark slab."},
+   {"points": 0.15, "reason": "Name lettering sits behind the piers and is cut off ('MAS S. AND HA... D. WILMETH A...'). In the photos it runs continuously across the frieze over about five bays."},
+   {"points": 0.1, "reason": "'W' brackets are simplified into angled blocks; the photos show W-shaped paired steel struts on each pier."},
+   {"points": 0.1, "reason": "No projecting brick corner and bay pilasters on the end blocks (purdue_2018_facade north face, gallery_southeast_dean_2021)."}
+  ]},
+  "proportions_roof": {"max": 2.0, "awarded": 1.45, "deductions": [
+   {"points": 0.15, "reason": "Ground storey of the north block juts out and steps along the north face (GROUND polygon wider than UPPER), and the belt course follows the jogs. The photo shows a flush north face."},
+   {"points": 0.1, "reason": "Spurious stone band at z 10.2-10.45 between floors 2 and 3 on all end-block faces cuts the tall north-face windows. The photos have no band there; the real bands are a string course above the floor-3 heads plus a frieze."},
+   {"points": 0.1, "reason": "Eave edge reads as a thick flat slab with no gutter/fascia profile."},
+   {"points": 0.1, "reason": "Downpipes hang from the eave edge about 1.5 m off the wall down to grade. The photos show downpipes fixed to the wall at pilaster lines (about 5 on the north face) with goosenecks to the gutter."},
+   {"points": 0.1, "reason": "West-range eave underside shows red roof-tile material instead of a soffit finish (rv_G_V04_west_entrance)."}
+  ]},
+  "material_colour": {"max": 1.5, "awarded": 0.85, "deductions": [
+   {"points": 0.2, "reason": "Untextured white surfaces exposed on the exterior at the NW and SW range/block junctions, at the south-block east junction, and as a white box at the south-face ground floor. They look like the interior stair-tower/partition material showing through gaps in the exterior skin."},
+   {"points": 0.15, "reason": "Brick is uniform warm red/pink. The photos show darker red-brown brick with dark burnt headers forming the diaper."},
+   {"points": 0.15, "reason": "End-block window frame colour is wrong: dark instead of white."},
+   {"points": 0.1, "reason": "Roof tile is dull brown-red; the photos (purdue_2017_day, bsa_exterior) show brighter orange terracotta."},
+   {"points": 0.05, "reason": "Fascia/gutter is neutral grey; the photos show dark bronze to copper-patina edges."}
+  ]},
+  "consistency": {"max": 1.0, "awarded": 0.6, "deductions": [
+   {"points": 0.2, "reason": "Holes in the exterior shell exposing interior white walls."},
+   {"points": 0.1, "reason": "r1 review renders place the ground plane at the basement level (z = -5), so every photo-matched view shows a 5 m blank plinth, and the 'eye-height' cameras (z 1.7) are really 6.7 m above the render ground. Re-rendered here at grade (rv_G_*)."},
+   {"points": 0.05, "reason": "Small stray object floating at about floor-2 level on the south face near the SW corner (rv_G_V09_southeast)."},
+   {"points": 0.05, "reason": "Truncated name text."}
+  ]}
+ },
+ "findings": [
+  {"facade": "All end-block faces", "feature": "Window frames and divided lights", "required_correction": "White/off-white frames with transom and muntin grid matching the photos; keep glass dark."},
+  {"facade": "All end-block faces", "feature": "Diaper brickwork", "required_correction": "Add the diagonal dark-header diaper pattern to the brick fields of floors 2-3 and the frieze strip, as a texture or material."},
+  {"facade": "West glazed range, ground floor", "feature": "Recessed arcade", "required_correction": "Free-standing piers with storefront set back about 2.5-3 m, brick piers between storefront bays, double doors in the central bays, dark arcade ceiling."},
+  {"facade": "Glazed-range/end-block junctions (NW, SW), south-face ground floor, south-block east junction", "feature": "Exterior shell holes", "required_correction": "Close the exterior skin where segments are skipped. At the west junctions model the stair-tower bays as brick with tall continuous vertical window strips."},
+  {"facade": "End blocks, all faces", "feature": "Eave brackets / rafter tails and gutter", "required_correction": "Add regularly spaced exposed brackets under the deep eaves and a thin bronze/copper fascia-gutter in place of the thick slab edge."},
+  {"facade": "End blocks, all faces", "feature": "Horizontal stone courses", "required_correction": "Remove the z 10.2 band between floors 2 and 3. Add the string course above the floor-3 window heads plus the brick frieze and stone architrave under the eave."},
+  {"facade": "End blocks", "feature": "Window stone heads/sills and ground-floor transom panels", "required_correction": "Add cast-stone lintels and sills to every upper window and the stone transom panel on the tall ground-floor windows."},
+  {"facade": "South block, south face", "feature": "Window schedule", "required_correction": "Use punched single/paired windows on floors 2 and 3 with stone heads/sills per gallery_southeast_dean_2021, with tall glazed strips only near the corners, plus the projecting end pavilions."},
+  {"facade": "West glazed range", "feature": "Name band", "required_correction": "Bring the lettering forward of the piers onto one continuous frieze plane so the full name 'THOMAS S. AND HARVEY D. WILMETH ACTIVE LEARNING CENTER' reads; use dark bronze letters."},
+  {"facade": "End blocks", "feature": "Downpipes", "required_correction": "Attach downpipes to the wall at the pilaster lines (about 5 on the north face, plus corners) with goosenecks from the gutter; remove the free-hanging poles at the eave corners."},
+  {"facade": "End blocks", "feature": "Brick pilasters", "required_correction": "Add shallow projecting brick piers at the corners and between the window groups (north face, south-face pavilions)."},
+  {"facade": "North block, north face (ground floor)", "feature": "Ground-storey jogs", "required_correction": "Check the GROUND vs UPPER footprint. The photo shows a flush north face; remove the projections or limit them to the stone plinth."},
+  {"facade": "West glazed range", "feature": "Bays, W brackets, soffit", "required_correction": "Deepen the projecting dark-bronze bay frames, add the small-pane upper lights, model W-shaped strut brackets, and give the eave soffit a non-tile finish."},
+  {"facade": "Roofs", "feature": "Tile colour", "required_correction": "Brighten the terracotta toward orange-red (purdue_2017_day); the aerial is more muted, so aim between the two."},
+  {"facade": "Ground level", "feature": "Plinth and site", "required_correction": "Optional: stone plinth blocks at pier bases and low stone planters/benches along the west plaza (all west photos)."}
+ ],
+ "uncertainties": [
+  "Quick review (about 20 minutes), exterior only; interior ignored.",
+  "East faces have no photo coverage and were not scored in detail.",
+  "Colour comparisons are qualitative; lighting differs strongly between sources (sunlit summer vs overcast winter).",
+  "The identity of the white surfaces was inferred from the builder (exterior_walls skips west-facing segments at WEST_X; stair towers use the white material) and was not confirmed by raycast.",
+  "Whether the north-face ground-storey projection is real (for example a shallow plinth) could not be settled from the photos at hand."
+ ],
+ "evidence_renders": [
+  "audit/walc/second_pass/review_r01/rv_G_V02_northwest.png",
+  "audit/walc/second_pass/review_r01/rv_G_V01_southwest.png",
+  "audit/walc/second_pass/review_r01/rv_G_V04_west_entrance.png",
+  "audit/walc/second_pass/review_r01/rv_G_V09_southeast.png",
+  "audit/walc/second_pass/review_r01/rv_G_east_side.png",
+  "audit/walc/second_pass/review_r01/rv_G_NW_corner_eave.png"
+ ],
+ "acceptance_threshold": 9.9,
+ "threshold_approval": null,
+ "accepted": false
+}

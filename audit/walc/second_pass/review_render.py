@@ -56,7 +56,8 @@ scn.collection.objects.link(sun)
 sun.rotation_euler = (math.radians(50), 0, math.radians(35))  # light from SSW-ish, high
 
 # ground plane
-bpy.ops.mesh.primitive_plane_add(size=R * 4, location=(ctr.x, ctr.y, lo.z - 0.02))
+gz = float(os.environ.get('RR_GROUND_Z', '0.0'))   # WALC: street level, not the basement floor
+bpy.ops.mesh.primitive_plane_add(size=R * 4, location=(ctr.x, ctr.y, gz - 0.02))
 gp = bpy.context.active_object
 gm = bpy.data.materials.new("ReviewGround")
 gm.use_nodes = True
@@ -97,7 +98,7 @@ def shot(name, loc, target, ortho=None, lens=35, sun_rot=None):
 
 
 D = R * 2.2
-zt = lo.z + size.z * 0.4
+zt = max(lo.z, gz) + size.z * 0.4
 aspect = 1.6
 STD = os.environ.get("RR_ONLY_EXTRA") != "1"
 if STD:

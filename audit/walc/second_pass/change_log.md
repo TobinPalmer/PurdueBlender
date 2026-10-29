@@ -75,3 +75,40 @@ Built by `modular/buildings/build_walc_second_pass.py`. Renders are in `r1/` (ca
 - **Basement:** registration is approximate. Only the classrooms, commons and mechanical rooms are modelled.
 - **Rooms not drawn:** small offices, restrooms and the rooms inside the cores are not drawn individually.
 - **Surveyed rather than measured:** all heights are LiDAR or photo estimates, and the floor levels (B −5.0, 1 = 0, 2 = 5.5, 3 = 10.5, wall plate 15.6 m) are estimates.
+
+## r2 (2026-10-29) — asset SHA-256 `ab5770593106c435466da8c8dd288054134ff986df774fb658aa79ca765ccab1`
+
+This revision makes every exterior fix from the quick review r01 (5.75/10, `review_r01/`). The interior is unchanged apart from clipping. Renders are in `r2/` (cameras in `r2/cams_r2.json`, which adds the reviewer's ground-level `G_*` views). The asset reopens cleanly (`r2/validation_r2.json`, 179k triangles). This revision has not been re-reviewed.
+
+- **Render ground.** `review_render.py` now puts the ground at street level (z = 0, or `RR_GROUND_Z`), not at the basement floor. Every r1 view had shown a false 5 m blank base.
+- **Window frames.** The end blocks now have white frames with mullions at about 0.6 m and glazing bars at about 0.95 m (small panes), replacing dark frames with plain glass.
+- **Diaper brick.** Floors 2–3 of the end blocks have a diagonal lattice of dark headers (`WALC_SP_Brick_Diaper`, about a 1.4 m module). All brick is a darker red-brown.
+- **West entrance arcade.** The limestone piers now stand free with stone base blocks. Behind them, the shopfront glazing is set 2.8 m back under a stone soffit at 4.6 m. It has brick piers between the bays and double doors with leaves in the four middle bays.
+- **Wall holes.** These were partition walls poking through the outer wall: traced room boxes running past the angled bays and the north ground-floor steps.
+  - **Fix:** `room_walls` now keeps only the length of each wall that stays inside the building, and furniture and lights outside the floor outline are skipped.
+  - **Stair-tower bays:** the short bays where the glazed range meets the blocks are now brick with one tall window strip.
+- **North ground floor.** It is flush with the upper floors. The small FID906 steps on the north edge were removed, as the photo V02 shows a flush face.
+- **End-block eaves:**
+  - **Profile:** a thin dark soffit and fascia instead of a thick slab.
+  - **Brackets:** spaced every 1.8 m.
+  - **Gutter:** a bronze gutter along the edge.
+  - **Frieze:** a stone frieze fills the gap between the wall plate and the eave.
+- **Stone bands.**
+  - **Removed:** the band between floors 2 and 3 that cut across the windows.
+  - **Added:** a stone course above the floor-3 window heads and a frieze under the eave. The base and the floor-2 belt course are kept.
+- **Window trim.** Every window has a stone sill and lintel. The tall ground-floor windows have a stone panel about two-thirds of the way up.
+- **South faces.** Separate single and paired windows on each floor, with tall window strips near the corners, replacing a copy of the north face's tall windows.
+- **Brick piers.** Shallow projecting piers at the corners and between the window groups on the north faces.
+- **Downpipes.** Bronze, fixed to the wall at the piers, with goosenecks up to the gutter. Five sit on each long face. Previously they hung free from the eave corners.
+- **Name.** The full "THOMAS S. AND HARVEY D. WILMETH ACTIVE LEARNING CENTER" now runs on a stone band crossing in front of the piers, readable in one line.
+- **Glazed range:**
+  - **Window frames:** deeper projecting frames (0.9 m), with small panes in the upper section.
+  - **"W" struts:** real W-shaped dark steel struts with outriggers to the eave.
+  - **Eave underside:** a stone frieze closes the eave above each pier, so no roof tile shows underneath.
+- **Colours.** Roof tile brighter terracotta, stone a little less cream, gutters bronze.
+
+### Remaining
+
+- East faces still have no photo coverage.
+- The diaper module and the window pane counts are estimates from the photos.
+- Plaza planters and benches are not modelled; they are site assets.

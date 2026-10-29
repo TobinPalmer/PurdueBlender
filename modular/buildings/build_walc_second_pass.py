@@ -65,13 +65,47 @@ def textured(name, c1, c2, mortar, w, h, ms, rough=0.9, bump=0.2, metal=0.0):
     return m
 
 
+def diaper_brick():
+    """Brick with a diagonal lattice of dark headers (diaper work), on metre UVs (u along the wall, v = height)."""
+    m = textured("WALC_SP_Brick_Diaper", (0.235, 0.085, 0.06), (0.18, 0.065, 0.05), (0.30, 0.28, 0.25), 0.2032, 0.0677, 0.0045)
+    nt = m.node_tree
+    b = next(n for n in nt.nodes if n.type == "BSDF_PRINCIPLED")
+    br = next(n for n in nt.nodes if n.type == "TEX_BRICK")
+    uv = next(n for n in nt.nodes if n.type == "TEX_COORD")
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(uv.outputs["UV"], sep.inputs[0])
+    lines = []
+    for op in ("ADD", "SUBTRACT"):
+        m1 = nt.nodes.new("ShaderNodeMath"); m1.operation = op
+        nt.links.new(sep.outputs[0], m1.inputs[0]); nt.links.new(sep.outputs[1], m1.inputs[1])
+        m2 = nt.nodes.new("ShaderNodeMath"); m2.operation = "DIVIDE"; m2.inputs[1].default_value = 1.4
+        nt.links.new(m1.outputs[0], m2.inputs[0])
+        m3 = nt.nodes.new("ShaderNodeMath"); m3.operation = "FRACT"
+        nt.links.new(m2.outputs[0], m3.inputs[0])
+        m4 = nt.nodes.new("ShaderNodeMath"); m4.operation = "LESS_THAN"; m4.inputs[1].default_value = 0.07
+        nt.links.new(m3.outputs[0], m4.inputs[0])
+        lines.append(m4)
+    mx = nt.nodes.new("ShaderNodeMath"); mx.operation = "MAXIMUM"
+    nt.links.new(lines[0].outputs[0], mx.inputs[0]); nt.links.new(lines[1].outputs[0], mx.inputs[1])
+    mix = nt.nodes.new("ShaderNodeMix"); mix.data_type = "RGBA"
+    nt.links.new(mx.outputs[0], mix.inputs["Factor"])
+    nt.links.new(br.outputs["Color"], mix.inputs[6])
+    mix.inputs[7].default_value = (0.09, 0.04, 0.035, 1)
+    nt.links.new(mix.outputs[2], b.inputs["Base Color"])
+    return m
+
+
 def mats():
     """Exterior colours from research V01/V02/V04/V05/V09 (red-brown variegated brick, warm cream stone, olive-grey
     frames, dark eaves, red tile roof, blue-grey glass); interior from the BSA/Turner photographs."""
     M = {}
-    M["brick"] = textured("WALC_SP_Brick", (0.30, 0.11, 0.075), (0.22, 0.08, 0.06), (0.33, 0.30, 0.27), 0.2032, 0.0677, 0.0045)
-    M["stone"] = principled("WALC_SP_Limestone", (0.66, 0.60, 0.48), rough=0.8, spec=0.2)[0]
-    M["roof"] = textured("WALC_SP_Roof_Tile", (0.42, 0.12, 0.05), (0.36, 0.10, 0.045), (0.25, 0.07, 0.03), 0.30, 0.38, 0.012, rough=0.7, bump=0.4)
+    # darker red-brown brick; floors 2-3 of the end blocks carry a diaper lattice of dark headers (review r01, V02)
+    M["brick"] = textured("WALC_SP_Brick", (0.235, 0.085, 0.06), (0.18, 0.065, 0.05), (0.30, 0.28, 0.25), 0.2032, 0.0677, 0.0045)
+    M["brickd"] = diaper_brick()
+    M["stone"] = principled("WALC_SP_Limestone", (0.58, 0.54, 0.44), rough=0.8, spec=0.2)[0]
+    M["roof"] = textured("WALC_SP_Roof_Tile", (0.56, 0.17, 0.065), (0.49, 0.145, 0.055), (0.30, 0.09, 0.04), 0.30, 0.38, 0.012, rough=0.7, bump=0.4)
+    M["wframe"] = principled("WALC_SP_Window_Frame_White", (0.80, 0.79, 0.75), rough=0.4)[0]
+    M["gutter"] = principled("WALC_SP_Gutter_Bronze", (0.20, 0.17, 0.11), rough=0.35, metal=0.8)[0]
     M["eave"] = principled("WALC_SP_Eave_Dark", (0.10, 0.09, 0.08), rough=0.6, metal=0.3)[0]
     M["frame"] = principled("WALC_SP_Frame_Olive", (0.20, 0.20, 0.16), rough=0.45, metal=0.6)[0]
     M["glass"] = principled("WALC_SP_Glass", (0.15, 0.20, 0.22), rough=0.04, metal=0.55, spec=0.8)[0]
@@ -198,9 +232,9 @@ def rect_fill(u0, u1, z0, z1, holes):
     return out
 
 
-def wall(mb, A, B, z0, z1, thick, openings=(), mat="brick", inset=0.2, mull=1.3, frame="frame", inner="white"):
+def wall(mb, A, B, z0, z1, thick, openings=(), mat="brick", inset=0.2, mull=1.3, frame="frame", inner="white", trans=None):
     """Straight wall A->B (outer face on the line, thickness inward) with framed openings (u0, u1, zb, zt[, kind]).
-    The inner face gets the interior finish."""
+    The inner face gets the interior finish. trans: spacing of horizontal glazing bars (small panes)."""
     A, t, n, L = seg_frame(A, B)
     inw = -n
     for (u0, u1, za, zb) in rect_fill(0, L, z0, z1, [o[:4] for o in openings]):
@@ -222,9 +256,15 @@ def wall(mb, A, B, z0, z1, thick, openings=(), mat="brick", inset=0.2, mull=1.3,
         w = u1 - u0
         nm = max(0, int(round(w / mull)) - 1)
         for k in range(1, nm + 1):
-            mb.box(frame, p + t * (u0 + w * k / (nm + 1) - 0.03), t, inw, 0.06, 0.06, za, zb)
+            mb.box(frame, p + t * (u0 + w * k / (nm + 1) - 0.025), t, inw, 0.05, 0.06, za, zb)
         if kind == "door":
             mb.box(frame, p + t * u0, t, inw, w, 0.06, za + 2.5, za + 2.58)
+        elif trans:
+            k = 1
+            while za + k * trans < zb - 0.3:
+                zz = za + k * trans
+                mb.box(frame, p + t * u0, t, inw, w, 0.06, zz, zz + 0.05)
+                k += 1
         elif zb - za > 2.6:
             for zz in ([za + (zb - za) * 0.72] if zb - za < 6 else [za + 2.6 + k * 2.4 for k in range(int((zb - za - 2.6) / 2.4))]):
                 mb.box(frame, p + t * u0, t, inw, w, 0.06, zz, zz + 0.06)
@@ -299,8 +339,7 @@ def R(px0, px1, py0, py1, dx=0.0):
 # ---------------------------------------------------------------- footprint (FID906, lightly regularised) and upper-floor outline
 GROUND = ccw([(-10.8, -44.3), (-0.9, -44.2), (3.7, -39.7), (39.1, -39.7), (39.1, -26.6), (40.0, -26.6), (40.0, -12.7),
               (42.1, -12.7), (42.1, -7.8), (36.0, -7.8), (36.0, 10.7), (39.9, 10.7), (39.9, 25.1), (38.8, 25.1),
-              (38.8, 43.0), (25.2, 43.0), (25.2, 43.9), (3.0, 43.9), (3.0, 46.3), (-3.9, 46.3), (-3.9, 42.9),
-              (-11.0, 42.9), (-11.0, 46.2), (-16.9, 46.2), (-16.8, 23.6), (-14.7, 23.6), (-14.7, 16.6), (-10.5, 16.6),
+              (38.8, 43.9), (-16.9, 43.9), (-16.8, 23.6), (-14.7, 23.6), (-14.7, 16.6), (-10.5, 16.6),
               (-10.5, -18.4), (-16.7, -18.4), (-16.6, -39.7), (-15.4, -39.7)])
 EAST_RECESS_X, RECESS_Y = 30.5, (-18.0, 18.2)   # floors 2-3 step back over the one-storey lecture hall 1018 (plans p3/p4)
 UPPER = ccw([(-10.8, -44.3), (-0.9, -44.2), (3.7, -39.7), (39.1, -39.7), (39.1, -26.6), (40.0, -26.6), (40.0, -18.0),
@@ -309,6 +348,7 @@ UPPER = ccw([(-10.8, -44.3), (-0.9, -44.2), (3.7, -39.7), (39.1, -39.7), (39.1, 
              (-15.4, -39.7)])
 PIERS_Y = [(-14.2, -13.0), (-9.1, -7.9), (-4.0, -2.9), (1.0, 2.2), (6.1, 7.3), (11.2, 12.4)]   # west stone piers (FID906)
 WEST_X = -10.5
+ARCADE_D, ARCADE_H = 2.8, 4.6   # west entrance arcade: shopfront set back behind the piers, soffit height (V04, BSA N134)
 
 # voids
 ATRIUM = R(540, 830, 500, 600)               # open to above/below with the grand stair (plans p2/p3)
@@ -318,9 +358,9 @@ MONITOR = (5.0, 17.0, -15.0, 13.5)           # clerestory monitor over the atriu
 
 # ---------------------------------------------------------------- exterior
 def facade_openings(kind, L, z0, z1):
-    """Opening schedules per facade type (photos V01/V02/V05/V09; ground floor taller, upper floors grouped)."""
+    """Opening schedules per facade type (photos V01/V02/V05/V09 and review r01)."""
     ops = []
-    if kind == "long":            # north/south faces of the end blocks: tall two-storey units between brick piers
+    if kind == "long":            # north faces: tall two-storey units over paired ground-floor windows (V02)
         nb = max(1, int(L / 6.8))
         bw = L / nb
         for b in range(nb):
@@ -328,7 +368,18 @@ def facade_openings(kind, L, z0, z1):
             if z0 < 1.0:
                 ops += [(c - 1.45, c - 0.15, 1.1, 4.5), (c + 0.15, c + 1.45, 1.1, 4.5)]
             else:
-                ops += [(c - 1.3, c + 1.3, 6.2, 14.6)]
+                ops += [(c - 1.1, c + 1.1, 6.2, 14.3)]
+    elif kind == "south":         # south faces: separate single and paired windows per floor, tall strips near the
+        nb = max(1, int((L - 9.0) / 4.4))   # corners (gallery_southeast_dean_2021, V01)
+        bw = (L - 9.0) / nb
+        for b in range(nb):
+            c = 4.5 + b * bw + bw / 2
+            w = 2.3 if b % 2 == 0 else 1.1
+            for (za, zb) in ((1.2, 4.5), (6.6, 9.3), (11.4, 14.1)):
+                if z0 <= za and zb <= z1:
+                    ops.append((c - w / 2, c + w / 2, za, zb))
+        for c in (2.2, L - 2.2):
+            ops.append((c - 0.55, c + 0.55, max(z0, 0.0) + 1.2, min(z1, 14.3)))
     elif kind == "end":           # west faces of the end blocks: single, double, double, single (V05)
         widths = [1.1, 2.4, 2.4, 1.1]
         cs = [L * f for f in (0.14, 0.38, 0.62, 0.86)]
@@ -336,13 +387,15 @@ def facade_openings(kind, L, z0, z1):
             if z0 < 1.0:
                 ops += [(c - 1.2, c + 1.2, 1.1, 4.6)]
             else:
-                ops += [(c - w / 2, c + w / 2, 6.6, 9.4), (c - w / 2, c + w / 2, 11.6, 14.4)]
-    elif kind == "east":          # east faces: regular punched windows per floor (plans; no close photo)
+                ops += [(c - w / 2, c + w / 2, 6.6, 9.4), (c - w / 2, c + w / 2, 11.4, 14.2)]
+    elif kind == "strip":         # stair-tower bays at the corners of the glazed range: one tall window strip (V02, V01)
+        ops = [(L / 2 - 0.7, L / 2 + 0.7, max(z0, 0.0) + 1.0, min(z1, 14.3))]
+    elif kind == "east":          # east faces: regular punched windows per floor (plans; no photo)
         nb = max(1, int(L / 3.6))
         bw = L / nb
         for b in range(nb):
             c = b * bw + bw / 2
-            for (za, zb) in ((1.2, 4.4), (6.6, 9.4), (11.6, 14.4)):
+            for (za, zb) in ((1.2, 4.4), (6.6, 9.4), (11.4, 14.2)):
                 if z0 <= za and zb <= z1:
                     ops.append((c - 0.6, c + 0.6, za, zb))
     return [o for o in ops if o[0] > 0.4 and o[1] < L - 0.4]
@@ -351,12 +404,27 @@ def facade_openings(kind, L, z0, z1):
 def facade_kind(A, B):
     _, t, n, L = seg_frame(A, B)
     if n.x < -0.9:
-        return "end" if L > 15 else "plain"
-    if abs(n.y) > 0.9:
-        return "long" if L > 12 else "plain"
+        return "end" if L > 15 else ("strip" if L > 5 else "plain")
+    if n.y > 0.9:
+        return "long" if L > 12 else ("strip" if L > 5 else "plain")
+    if n.y < -0.9:
+        return "south" if L > 12 else ("strip" if L > 5 else "plain")
     if n.x > 0.9:
         return "east" if L > 6 else "plain"
     return "plain"
+
+
+def trims(mb, A, t, n, ops):
+    """Stone sill and lintel at every window; a stone panel two-thirds up the tall ground-floor windows (V02, V09)."""
+    for o in ops:
+        if len(o) > 4:
+            continue
+        u0, u1, za, zb = o
+        mb.box("stone", A + t * (u0 - 0.12) + n * 0.1, t, -n, u1 - u0 + 0.24, 0.16, za - 0.16, za)
+        mb.box("stone", A + t * (u0 - 0.15) + n * 0.1, t, -n, u1 - u0 + 0.3, 0.16, zb, zb + 0.32)
+        if za < 1.5 and zb - za > 3.0:
+            zp = za + (zb - za) * 0.66
+            mb.box("stone", A + t * u0 + n * 0.02, t, -n, u1 - u0, 0.2, zp, zp + 0.35)
 
 
 def exterior_walls(mb):
@@ -371,74 +439,113 @@ def exterior_walls(mb):
                 continue          # glazed west range: built separately
             low_hall = z0 < 0 and min(A.x, B.x) > EAST_RECESS_X - 0.1 and RECESS_Y[0] < A.y < RECESS_Y[1]
             zt = 7.2 if low_hall else z1
-            ops = [o for o in facade_openings(facade_kind(A, B), L, max(z0, 0.0), zt)]
-            wall(mb, A, B, z0, zt, 0.45, ops)
+            kind = facade_kind(A, B)
+            ops = facade_openings(kind, L, max(z0, 0.0), zt)
+            mat = "brickd" if z0 >= L2 else "brick"       # diaper-patterned brick on floors 2-3 (V02, V05)
+            wall(mb, A, B, z0, zt, 0.45, ops, mat=mat, frame="wframe", mull=0.6, trans=0.95)
+            trims(mb, A, t, n, ops)
             if z0 < 0:
                 band(mb, A, B, -0.05, 1.0, proj=0.1)             # stone base
                 band(mb, A, B, 5.0, 5.55, proj=0.12)             # belt course at floor 2
             else:
-                band(mb, A, B, 10.2, 10.45, proj=0.06)
-                band(mb, A, B, TOP - 0.55, TOP, proj=0.14)       # stone frieze under the eave
-    # lecture hall 1018 parapet cap / low roof at 7 m (LiDAR 7.0-7.7 m)
+                band(mb, A, B, 14.55, 14.8, proj=0.08)           # stone course above the floor-3 window heads
+                band(mb, A, B, TOP - 0.45, TOP, proj=0.14)       # stone frieze under the eave
+            # shallow brick piers at the corners and between window groups (V02, V09)
+            if kind in ("long", "south", "end") and not low_hall:
+                us = [0.0, L - 0.9]
+                if kind == "long":
+                    nb = max(1, int(L / 6.8))
+                    us += [L * b / nb - 0.45 for b in range(1, nb)]
+                for u in us:
+                    mb.box(mat, A + t * u + n * 0.16, t, -n, 0.9, 0.17, z0 if z0 >= 0 else 1.0, min(zt, TOP - 0.45))
+    # lecture hall 1018 low roof at 7 m (LiDAR 7.0-7.7 m)
     low = ccw([(EAST_RECESS_X, -18.0), (40.0, -18.0), (40.0, -12.7), (42.1, -12.7), (42.1, -7.8), (36.0, -7.8), (36.0, 10.7),
                (39.9, 10.7), (39.9, 18.2), (EAST_RECESS_X, 18.2)])
     slab(mb, "flat", low, [], 7.0, z_under=6.6)
 
 
 def west_range(mb):
-    """Glazed west range between the end blocks: six limestone piers, seven bays; ground floor storefront with doors
-    and suspended glass canopies; floors 2-3 a tall projecting olive-grey framed window per bay; name band;
-    paired 'W' brackets under the deep eave (V01/V04/V06/V07)."""
+    """Glazed west range between the end blocks: six free-standing limestone piers and seven bays.
+    Ground floor: an arcade - the shopfront glazing, double doors and brick piers stand ~2.8 m back behind the piers,
+    under a stone soffit; suspended glass canopies at the pier line. Floors 2-3: a deep projecting olive-grey framed
+    window per bay with small panes in its upper section; stone name band crossing the piers with the full name in
+    dark bronze; dark steel 'W' struts under the deep eave, which is closed by a stone frieze above the windows
+    (V01/V04/V06/V07, BSA N134, review r01)."""
     ys = [-18.4] + [v for p in PIERS_Y for v in p] + [16.6]
     bays = [(ys[i], ys[i + 1]) for i in range(0, len(ys), 2)]
     x = WEST_X
+    xs = x + ARCADE_D            # shopfront line
+    zr = 15.9 + (19.6 - 15.9) * (x - (-16.2)) / (-6.3 - (-16.2)) - 0.35   # roof underside at the wall line
     for (y0, y1) in bays:
         A, B = Vector((x, y1)), Vector((x, y0))         # outward normal -x
         L = y1 - y0
-        ops = [(0.15, L - 0.15, 0.4, 4.1, "door" if abs((y0 + y1) / 2) < 6 else "win"),
-               (0.35, L - 0.35, 6.0, 14.9, "win")]
-        wall(mb, A, B, LB, TOP, 0.3, ops, mat="stone", mull=0.9)
-        # projecting olive frame box around the upper window
-        mb.abox("frame", x - 0.55, x - 0.05, y1 - 0.35, y1 - 0.2, 5.7, 15.1)
-        mb.abox("frame", x - 0.55, x - 0.05, y0 + 0.2, y0 + 0.35, 5.7, 15.1)
-        mb.abox("frame", x - 0.55, x - 0.05, y0 + 0.2, y1 - 0.2, 15.0, 15.25)
-        mb.abox("frame", x - 0.55, x - 0.05, y0 + 0.2, y1 - 0.2, 5.6, 5.85)
-        mb.abox("frame", x - 0.45, x - 0.15, y0 + 0.35, y1 - 0.35, 10.2, 10.6)    # spandrel at floor 3
-        # suspended glass canopy with tie rods
+        # upper storeys at the pier line: deep framed window, small panes above the transom
+        wall(mb, A, B, ARCADE_H, zr, 0.3, [(0.35, L - 0.35, 6.0, 14.9, "win")], mat="stone", mull=0.8)
+        for zz in [12.4 + 0.5 * k for k in range(5)]:
+            mb.box("frame", (x - 0.12, y0 + 0.35), (0, 1), (1, 0), L - 0.7, 0.04, zz, zz + 0.04)
+        for k in range(1, int((L - 0.7) / 0.4)):
+            yy = y0 + 0.35 + k * 0.4
+            mb.abox("frame", x - 0.12, x - 0.08, yy - 0.015, yy + 0.015, 12.4, 14.9)
+        mb.abox("frame", x - 0.95, x - 0.05, y1 - 0.38, y1 - 0.2, 5.7, 15.1)
+        mb.abox("frame", x - 0.95, x - 0.05, y0 + 0.2, y0 + 0.38, 5.7, 15.1)
+        mb.abox("frame", x - 0.95, x - 0.05, y0 + 0.2, y1 - 0.2, 15.0, 15.25)
+        mb.abox("frame", x - 0.95, x - 0.05, y0 + 0.2, y1 - 0.2, 5.6, 5.85)
+        mb.abox("frame", x - 0.85, x - 0.15, y0 + 0.38, y1 - 0.38, 10.15, 10.55)    # spandrel at floor 3
+        # ground floor: shopfront set back in the arcade, double doors in the middle bays, brick piers between bays
+        S0, S1 = Vector((xs, y1 - 0.45)), Vector((xs, y0 + 0.45))
+        Ls = (S1 - S0).length
+        mid = abs((y0 + y1) / 2) < 9.0
+        ops = [(0.1, Ls - 0.1, 0.0, ARCADE_H - 0.3, "win")] if not mid else \
+              [(0.1, Ls / 2 - 0.95, 0.0, ARCADE_H - 0.3, "win"), (Ls / 2 - 0.9, Ls / 2 + 0.9, 0.0, 2.5, "door"),
+               (Ls / 2 - 0.9, Ls / 2 + 0.9, 2.65, ARCADE_H - 0.3, "win"), (Ls / 2 + 0.95, Ls - 0.1, 0.0, ARCADE_H - 0.3, "win")]
+        wall(mb, S0, S1, L1, ARCADE_H, 0.25, ops, mat="brick", mull=1.0, frame="frame")
+        mb.abox("brick", xs - 0.1, xs + 0.4, y1 - 0.45, y1 + 0.1, L1, ARCADE_H)
+        mb.abox("brick", xs - 0.1, xs + 0.4, y0 - 0.1, y0 + 0.45, L1, ARCADE_H)
+        if mid:   # door leaves
+            for yy in (S0.y - (Ls / 2 - 0.9), S0.y - Ls / 2, S0.y - (Ls / 2 + 0.9)):
+                mb.abox("frame", xs - 0.12, xs - 0.04, yy - 0.05, yy + 0.05, 0.0, 2.5)
+        mb.abox("stone", x - 0.05, xs, y0, y1, ARCADE_H - 0.05, ARCADE_H)              # arcade soffit
+        mb.abox("stone", x, x + 0.3, y0, y1, LB, L1)                                   # below grade
+        # suspended glass canopy with tie rods at the pier line
         mb.abox("glass", x - 2.2, x - 0.05, y0 + 0.2, y1 - 0.2, 4.15, 4.2)
         mb.abox("frame", x - 2.25, x - 0.05, y0 + 0.2, y1 - 0.2, 4.08, 4.15)
         for yy in (y0 + 0.5, y1 - 0.5):
-            p0, p1 = Vector((x - 2.1, yy)), Vector((x - 0.05, yy))
-            mb.box("frame", p0, (p1 - p0).normalized(), (0, 1), (p1 - p0).length, 0.04, 4.2, 4.24)
-            mb.box("frame", (x - 2.1, yy - 0.02), (1, 0), (0, 1), 0.04, 0.04, 4.2, 5.4)
-    for (p0, p1) in PIERS_Y:
+            strut(mb, Vector((x - 2.1, yy, 4.2)), Vector((x - 0.1, yy, 5.3)), 0.04, 0.04, mat="frame")
+    # free-standing limestone piers with base blocks, and the end piers against the blocks
+    for (p0, p1) in PIERS_Y + [(16.6 - 1.0, 16.6), (-18.4, -17.4)]:
         mb.abox("stone", x - 1.3, x + 0.1, p0, p1, -0.05, TOP + 0.2)
-        mb.abox("stone", x - 1.45, x + 0.1, p0 - 0.1, p1 + 0.1, -0.05, 1.0)
-        for s in (-1, 1):   # paired brackets forming the 'W' under the eave
-            yy = (p0 + p1) / 2 + s * 0.35
-            a, b = Vector((x - 1.3, yy)), Vector((x - 4.6, yy + s * 0.7))
-            d = (b - a)
-            mb.box("eave", a, d.normalized(), Vector((-d.normalized().y, d.normalized().x)), d.length, 0.18, TOP - 0.3, TOP + 0.9)
-    # stone band with the name (V04): across the range at floor-2 level
+        mb.abox("stone", x - 0.05, x + 0.3, p0 - 0.05, p1 + 0.05, TOP, zr + 0.05)   # frieze closes the eave above the pier
+        mb.abox("stone", x - 1.5, x + 0.2, p0 - 0.15, p1 + 0.15, -0.05, 0.9)
+        # dark steel 'W' struts under the eave on each pier (V04): five points, four diagonals, outriggers
+        c = (p0 + p1) / 2
+        xb = x - 1.45
+        top, bot = TOP + 0.55, TOP - 1.0
+        pts = [(c - 1.0, top), (c - 0.45, bot), (c, top), (c + 0.45, bot), (c + 1.0, top)]
+        for (ya, za), (yb, zb) in zip(pts, pts[1:]):
+            strut(mb, Vector((xb, ya, za)), Vector((xb, yb, zb)), 0.14, 0.14, mat="eave")
+        for yy in (c - 1.0, c, c + 1.0):
+            strut(mb, Vector((xb, yy, top)), Vector((-15.9, yy, 16.05)), 0.16, 0.12, mat="eave")
+    # stone name band crossing the piers at floor-2 level (V04)
+    mb.abox("stone", x - 1.55, x + 0.1, -16.0, 14.0, 4.6, 5.55)
     mb.abox("stone", x - 0.35, x + 0.1, -18.4, 16.6, 4.6, 5.6)
 
 
 def name_letters(M, root):
     cu = bpy.data.curves.new("WALC_SP_Name", "FONT")
     cu.body = "THOMAS S. AND HARVEY D. WILMETH ACTIVE LEARNING CENTER"
-    cu.size = 0.55
+    cu.size = 0.5
     cu.extrude = 0.03
     cu.align_x = "CENTER"
     cu.materials.append(M["letter"])
     ob = bpy.data.objects.new("WALC_SP_Name_Letters", cu)
-    ob.location = (WEST_X - 0.4, -1.0, 4.85)
+    ob.location = (WEST_X - 1.6, -1.0, 4.9)
     ob.rotation_euler = (math.radians(90), 0, math.radians(270))
     bpy.data.collections[COLL].objects.link(ob)
     ob.parent = root
 
 
-def hip_roof(mb, x0, x1, y0, y1, z_eave, z_ridge, mat="roof", t=0.35):
-    """Hip roof over a rectangle (eave line), ridge along the longer axis, with a dark soffit and fascia."""
+def hip_roof(mb, x0, x1, y0, y1, z_eave, z_ridge, mat="roof", t=0.18):
+    """Hip roof over a rectangle (eave line), ridge along the longer axis, with a thin dark soffit and fascia."""
     w, h = x1 - x0, y1 - y0
     half = min(w, h) / 2
     if w >= h:
@@ -455,7 +562,12 @@ def hip_roof(mb, x0, x1, y0, y1, z_eave, z_ridge, mat="roof", t=0.35):
     mb.poly("eave", [Vector((p.x, p.y, z_eave - t)) for p in c[::-1]])
     for k in range(4):
         a, b = c[k], c[(k + 1) % 4]
-        mb.poly("eave", [a - Vector((0, 0, t)), b - Vector((0, 0, t)), b, a])
+        mb.poly("gutter", [a - Vector((0, 0, t)), b - Vector((0, 0, t)), b, a])
+        # gutter: a thin bronze trough along the edge (V02)
+        A2, B2 = Vector((a.x, a.y)), Vector((b.x, b.y))
+        _, tt, nn, LL = seg_frame(A2, B2) if (B2 - A2).length > 0.1 else (None, None, None, 0)
+        if LL:
+            mb.box("gutter", A2 - tt * 0.05 + nn * 0.14, tt, -nn, LL + 0.1, 0.16, z_eave - 0.12, z_eave + 0.04)
 
 
 def gable_roof(mb, xw, xe, xr, y0, y1, zw, ze, zr, mat="roof", t=0.35):
@@ -471,10 +583,51 @@ def gable_roof(mb, xw, xe, xr, y0, y1, zw, ze, zr, mat="roof", t=0.35):
     mb.poly("eave", [W0 - Vector((0, 0, t)), W1 - Vector((0, 0, t)), W1, W0])
 
 
+def eave_brackets(mb, wall_rect, eave_rect, z_eave, step=1.8):
+    """Regularly spaced dark brackets under the end-block eaves, from the wall face to near the eave edge (V02)."""
+    wx0, wx1, wy0, wy1 = wall_rect
+    ex0, ex1, ey0, ey1 = eave_rect
+    zb, zt = z_eave - 0.75, z_eave - 0.18
+    for (fixed, a0, a1, out_from, out_to, axis) in ((wy1, wx0, wx1, wy1, ey1 - 0.15, "y"), (wy0, wx0, wx1, wy0, ey0 + 0.15, "y"),
+                                                    (wx0, wy0, wy1, wx0, ex0 + 0.15, "x"), (wx1, wy0, wy1, wx1, ex1 - 0.15, "x")):
+        n = int((a1 - a0) / step)
+        for k in range(1, n):
+            a = a0 + (a1 - a0) * k / n
+            if axis == "y":
+                mb.abox("eave", a - 0.09, a + 0.09, min(out_from, out_to), max(out_from, out_to), zb + 0.35, zt)
+                mb.abox("eave", a - 0.09, a + 0.09, min(out_from, out_from + (out_to - out_from) * 0.35),
+                        max(out_from, out_from + (out_to - out_from) * 0.35), zb, zt)
+            else:
+                mb.abox("eave", min(out_from, out_to), max(out_from, out_to), a - 0.09, a + 0.09, zb + 0.35, zt)
+                mb.abox("eave", min(out_from, out_from + (out_to - out_from) * 0.35),
+                        max(out_from, out_from + (out_to - out_from) * 0.35), a - 0.09, a + 0.09, zb, zt)
+
+
+def downpipe(mb, wx, wy, nx, ny, z_eave, reach):
+    """Downpipe fixed to the wall (at a brick pier) with a gooseneck out to the gutter (V02)."""
+    px, py = wx + nx * 0.32, wy + ny * 0.32
+    mb.cyl("gutter", px, py, 0.075, 0.25, z_eave - 0.6, n=8, cap=False)
+    strut(mb, Vector((px, py, z_eave - 0.6)), Vector((wx + nx * (reach - 0.1), wy + ny * (reach - 0.1), z_eave - 0.1)), 0.15, 0.15,
+          mat="gutter")
+
+
 def roofs(mb):
     # end blocks: hipped tile roofs with ~1.8 m eaves (LiDAR eaves 17.1-17.6 m, ridges 21.8 / 22.4 m)
-    hip_roof(mb, -18.7, 40.6, 21.8, 45.7, 17.3, 21.8)
-    hip_roof(mb, -18.4, 41.8, -41.5, -16.6, 17.4, 22.4)
+    NB_W, NB_E = (-16.9, 38.8, 23.6, 43.9), (-18.7, 40.6, 21.8, 45.7)
+    SB_W, SB_E = (-16.6, 39.1, -39.7, -18.4), (-18.4, 41.8, -41.5, -16.6)
+    hip_roof(mb, NB_E[0], NB_E[1], NB_E[2], NB_E[3], 17.3, 21.8)
+    hip_roof(mb, SB_E[0], SB_E[1], SB_E[2], SB_E[3], 17.4, 22.4)
+    eave_brackets(mb, NB_W, NB_E, 17.3)
+    eave_brackets(mb, SB_W, SB_E, 17.4)
+    # stone/brick fill between the wall plate and the eave soffit all round the blocks
+    for (wr, ze) in ((NB_W, 17.3), (SB_W, 17.4)):
+        x0, x1, y0, y1 = wr
+        for (A, B) in (((x0, y0), (x1, y0)), ((x1, y0), (x1, y1)), ((x1, y1), (x0, y1)), ((x0, y1), (x0, y0))):
+            wall(mb, Vector(A), Vector(B), TOP, ze - 0.15, 0.4, mat="stone")
+    # downpipes on the brick piers of the north and south faces and at the corners (V02, V09)
+    for xx in [-16.0] + [-16.9 + 55.7 * b / 8 for b in (2, 4, 6)] + [37.9]:
+        downpipe(mb, xx, 43.9, 0, 1, 17.3, 1.8)
+        downpipe(mb, xx, -39.7, 0, -1, 17.4, 1.8)
     # west range gable (LiDAR: west eave 15.9 m at x -16, ridge 19.6 m at x -6.3, east eave ~16 m at x 3.5)
     gable_roof(mb, -16.2, 3.5, -6.3, -22.5, 27.0, 15.9, 16.0, 19.6)
     # flat roof over the middle with the clerestory monitor (LiDAR 16.0 / 19.1 m)
@@ -488,12 +641,8 @@ def roofs(mb):
     # SW angled bay (theatre stage house): flat roof with parapet just under the block eave
     bay = ccw([(-15.4, -39.7), (3.7, -39.7), (-0.9, -44.2), (-10.8, -44.3)])
     slab(mb, "flat", bay, [], TOP + 0.4, z_under=TOP)
-    # SE/NE stair towers and east strip between the blocks share the flat roof height
     slab(mb, "flat", ccw([(EAST_RECESS_X, 18.2), (39.9, 18.2), (39.9, 21.8), (EAST_RECESS_X, 21.8)]), [], 16.0, z_under=TOP)
     slab(mb, "flat", ccw([(EAST_RECESS_X, -18.0), (40.0, -18.0), (40.0, -16.6), (EAST_RECESS_X, -16.6)]), [], 16.0, z_under=TOP)
-    # downpipes at the block corners (V02/V05)
-    for (px, py) in ((-17.2, 43.5), (-17.2, 24.0), (-17.1, -19.0), (-17.0, -39.3), (39.3, 43.4), (40.4, -39.3)):
-        mb.cyl("eave", px, py, 0.08, 0.0, 17.2, n=6, cap=False)
 
 
 # ---------------------------------------------------------------- interior: floors, rooms, furniture
@@ -519,17 +668,35 @@ def floors(mb):
 
 
 def room_walls(mb, box, z0, z1, glass=False, doors=1, skip_ext=True):
-    """Partition walls around a plan rectangle; walls lying on the exterior wall line are skipped."""
+    """Partition walls around a plan rectangle, clipped to stay inside the exterior walls (no stubs poking out);
+    walls lying on the exterior wall line are skipped."""
     x0, x1, y0, y1 = box
+    poly = UPPER if z0 >= L2 else GROUND
     edges = [((x0, y0), (x1, y0)), ((x1, y0), (x1, y1)), ((x1, y1), (x0, y1)), ((x0, y1), (x0, y0))]
     for (a, b) in edges:
         A, B = Vector(a), Vector(b)
         mid = (A + B) / 2
-        if skip_ext and (not inside((mid.x + 0.9, mid.y), UPPER if z0 >= L2 else GROUND)
-                         or not inside((mid.x - 0.9, mid.y), UPPER if z0 >= L2 else GROUND)
-                         or not inside((mid.x, mid.y + 0.9), UPPER if z0 >= L2 else GROUND)
-                         or not inside((mid.x, mid.y - 0.9), UPPER if z0 >= L2 else GROUND)):
+        if skip_ext and (not inside((mid.x + 0.9, mid.y), poly) or not inside((mid.x - 0.9, mid.y), poly)
+                         or not inside((mid.x, mid.y + 0.9), poly) or not inside((mid.x, mid.y - 0.9), poly)):
             continue
+        if skip_ext:   # keep the longest run of the edge that stays 0.5 m inside the building
+            L0 = (B - A).length
+            d = (B - A) / L0
+            nrm = Vector((-d.y, d.x))
+            ok = [all(inside(tuple(A + d * s + v), poly) for v in (nrm * 0.5, -nrm * 0.5, d * 0.5, -d * 0.5))
+                  for s in [L0 * i / 40 for i in range(41)]]
+            best, cur = (0, -1), None
+            for i, f in enumerate(ok):
+                if f and cur is None:
+                    cur = i
+                if (not f or i == 40) and cur is not None:
+                    e = i if f else i - 1
+                    if e - cur > best[1] - best[0]:
+                        best = (cur, e)
+                    cur = None
+            if best[1] <= best[0]:
+                continue
+            A, B = A + d * (L0 * best[0] / 40), A + d * (L0 * best[1] / 40)
         _, t, n, L = seg_frame(A, B)
         h = z1 - z0
         door = doors and L > 4.0
@@ -552,10 +719,21 @@ def lights(mb, box, z):
     for i in range(nx):
         for j in range(ny):
             cx, cy = x0 + (i + 0.5) * (x1 - x0) / nx, y0 + (j + 0.5) * (y1 - y0) / ny
+            if not indoors(cx, cy, 1.2):
+                continue
             mb.abox("light", cx - 0.15, cx + 0.15, cy - 1.0, cy + 1.0, z - 0.05, z)
 
 
+FURN_POLY = None   # footprint of the floor being furnished; items outside it (e.g. at the angled bays) are skipped
+
+
+def indoors(cx, cy, m=0.5):
+    return FURN_POLY is None or all(inside((cx + dx, cy + dy), FURN_POLY) for dx, dy in ((m, 0), (-m, 0), (0, m), (0, -m)))
+
+
 def chair(mb, cx, cy, z, ang, mat="chair"):
+    if not indoors(cx, cy):
+        return
     d = Vector((math.cos(ang), math.sin(ang)))
     p = Vector((-d.y, d.x))
     o = Vector((cx, cy)) - d * 0.22 - p * 0.22
@@ -565,6 +743,8 @@ def chair(mb, cx, cy, z, ang, mat="chair"):
 
 
 def round_table(mb, cx, cy, z, seats=6, r=0.8):
+    if not indoors(cx, cy, 1.4):
+        return
     mb.cyl("table", cx, cy, r, z + 0.72, z + 0.76, n=12)
     mb.cyl("steel", cx, cy, 0.06, z, z + 0.72, n=6, cap=False)
     for k in range(seats):
@@ -573,6 +753,8 @@ def round_table(mb, cx, cy, z, seats=6, r=0.8):
 
 
 def rect_table(mb, cx, cy, z, lx, ly, mat="table", chairs=True):
+    if not indoors(cx, cy, max(lx, ly) / 2 + 0.3):
+        return
     mb.abox(mat, cx - lx / 2, cx + lx / 2, cy - ly / 2, cy + ly / 2, z + 0.72, z + 0.76)
     for sx in (-1, 1):
         for sy in (-1, 1):
@@ -769,7 +951,7 @@ def reading_room(mb):
 
 def lounge_ceiling(mb):
     """First-floor west lobby/lounge behind the piers: dark wood-slat ceiling, round concrete columns (Turner 003)."""
-    x0, x1, y0, y1 = WEST_X + 0.5, X(745), -18.0, 16.4
+    x0, x1, y0, y1 = WEST_X + ARCADE_D + 0.4, X(745), -18.0, 16.4
     mb.abox("slats", x0, x1, y0, y1, L2 - 1.0, L2 - 0.95)
     for yy in [y0 + 3 + 6.2 * k for k in range(6)]:
         mb.cyl("column", x1 - 0.6, yy, 0.35, L1, L2 - 1.0, n=12)
@@ -875,8 +1057,10 @@ def interior(mb):
     floors(mb)
     heights = {LB: L1 - FLOOR_T, L1: L2 - FLOOR_T, L2: L3 - FLOOR_T, L3: TOP - 0.3}
     for z, rooms in ROOMS.items():
+        global FURN_POLY
+        FURN_POLY = UPPER if z >= L2 else GROUND
         for (name, box, kind) in rooms:
-            box = clamp_box(box, UPPER if z >= L2 else GROUND)
+            box = clamp_box(box, FURN_POLY)
             if kind != "pods":
                 room_walls(mb, box, z, heights[z], glass=kind in ("stacks", "study"))
             furnish(mb, kind, box, z, heights[z] - z)
