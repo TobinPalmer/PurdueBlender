@@ -43,6 +43,19 @@ assert hashlib.sha256((D/'shared/official_purdue_buildings_wgs84_snapshot.json')
 source_hash_checks=0;clip_checks=0
 for folder in (D/'buildings').iterdir():
     if not (folder/'README.md').is_file():continue
+    reviewed_path=folder/'sources/reviewed_identity.json'
+    if reviewed_path.exists():
+        reviewed=json.loads(reviewed_path.read_text(encoding='utf-8'))
+        snapshot=D/'shared/official_purdue_buildings_wgs84_snapshot.json'
+        assert hashlib.sha256(snapshot.read_bytes()).hexdigest()==reviewed['source_snapshot_sha256']
+        official={f['attributes']['FID']:f for f in json.loads(snapshot.read_text(encoding='utf-8'))['features']}
+        assert reviewed['building_id']==folder.name and reviewed['status']=='matched'
+        assert reviewed.get('review_basis') and reviewed.get('identity_evidence_urls')
+        assert reviewed['feature_ids']==[f['attributes']['FID'] for f in reviewed['raw_features']]
+        assert all(f==official[f['attributes']['FID']] for f in reviewed['raw_features'])
+        queue_row=next(r for r in rows if r['building_id']==folder.name)
+        assert queue_row['official_feature_ids']==reviewed['feature_ids']
+        assert queue_row['location_xy_m']==reviewed['centroid_xy_m']
     for index in (folder/'sources').glob('*download_index.json'):
         records=json.loads(index.read_text(encoding='utf-8'))
         for row in records:

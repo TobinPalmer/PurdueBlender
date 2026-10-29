@@ -14,6 +14,17 @@ from shapely import contains_xy
 D=Path(__file__).resolve().parents[1]
 building=sys.argv[1];S=D/'buildings'/building/'sources';S.mkdir(parents=True,exist_ok=True)
 row=next(x for x in json.loads((D/'shared/official_location_matches.json').read_text()) if x['building_id']==building)
+identity_path=S/'reviewed_identity.json'
+if identity_path.exists():
+    # Building-specific research can resolve an alias missed by ranking's name join.
+    reviewed=json.loads(identity_path.read_text(encoding='utf-8'))
+    assert reviewed['building_id']==building and reviewed.get('identity_evidence_urls') and reviewed.get('review_basis')
+    snapshot=D/'shared/official_purdue_buildings_wgs84_snapshot.json'
+    assert hashlib.sha256(snapshot.read_bytes()).hexdigest()==reviewed['source_snapshot_sha256']
+    official={f['attributes']['FID']:f for f in json.loads(snapshot.read_text())['features']}
+    assert reviewed['feature_ids']==[f['attributes']['FID'] for f in reviewed['raw_features']]
+    assert all(f==official[f['attributes']['FID']] for f in reviewed['raw_features']), 'Reviewed geometry must retain exact official source features'
+    row=reviewed
 assert row['status']=='matched','Resolve identity/footprint before treating data as building-specific'
 features=row['raw_features'];poly=unary_union([Polygon(f['geometry']['rings'][0]) for f in features]);bbox=poly.bounds
 (S/'purdue_footprint.json').write_text(json.dumps({'provider':'Purdue University GIS','source_crs':'EPSG4326','snapshot_provenance':'../../../shared/location_source_provenance.json','features':features},indent=2)+'\n')
