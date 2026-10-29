@@ -77,3 +77,39 @@ Outside-footprint ground median is **622.11 ftUS**. In the one-metre-eroded foot
 - Count every panel/window bay per floor and face, including AC/louver inserts, blank cells, ground-level glass and stair slots. Measure or estimate relief profiles transparently before constructing them.
 - Inspect relevant original/existing plan and facade drawings in the full studies, and compare dated real photos with any 2026 renovation changes. Proposed options and the capital plan must not be treated as completed geometry.
 - Resolve ownership of site terraces, ramps, tunnel roofs and neighboring connections; preserve existing campus placement and stable asset identity. Later modeling requires matched renders and the separate independent visual reviewer specified by AGENT.md. No model grade or acceptance is implied by this dossier.
+
+## Focused depth pass — October 29, 2026
+
+This pass reinspected the north panel/service, southeast entry, northwest loading and leaf-off terrace photographs, plus the actual 2016 study's architectural/structural assessment text on **PDF pages 61–62 / printed pages 49–50**. It adds useful dimensions and an opening-family schedule before advancing; it does not establish a current full facade count or approve geometry.
+
+### Dated dimensional constraints from the original study
+
+PDF page 61 describes **5 ft 4 in-wide precast panels**, windows of about **5.4 square feet each**, and a **1 ft 4 in precast overhang above each small window**. Conventional imperial-to-metric conversions are **1.6256 m panel width**, approximately **0.5017 m² window area**, and **0.4064 m overhang**. These are dated report constraints, not a new measurement, an exact window width/height, or the US-survey-foot coordinates of the state LiDAR. Do not derive both window dimensions from the area alone.
+
+The same page describes **seven large windows along the first story of the south face** as an exception to the small-panel openings. Treat seven as a **2016 report count**, to be reconciled with current imagery, not evidence that every face has seven bays. It also approximates the overall building as a **160 ft square** (about **48.77 m**); that is a coarse body/planning description, not exact extents including towers and canopies.
+
+PDF page 62 discusses **four stair shafts** and the structural system; this does not mean four identical rounded exterior towers. The real exterior evidence distinguishes the rounded projections from rectilinear brick volumes. The report's shear-wall interpretation is qualified, and structural text is not a direct facade survey. Basement/mezzanine descriptions also must not be turned into extra repeating exterior floors without checking the actual grade/openings.
+
+### Opening and component schedule
+
+| Zone / family | Supported arrangement and geometry | Evidence and unresolved parts |
+| --- | --- | --- |
+| P / repetitive precast fields | Narrow modules with deep vertical returns, horizontal projections and small recessed horizontal glazing; much of each cell is solid | North close view and terrace photo, study page 61. Use nominal module/overhang as dated constraints; full row/module counts on each face remain obscured. |
+| P-X / exceptions | At least one AC/louver insert interrupts the small-opening pattern near the service end | Northwest view shows a projecting unit in a window opening; do not repeat it in every module or infer it remains today. |
+| S-G1–G7 / south first-story group | Seven larger openings reported along the lower south facade, contrasting with the tiny upper-panel openings | 2016 report count, partly supported by terrace-level photographs; exact current seven-opening run and widths need registration. |
+| NE-T / rounded stair projection | Convex brick outer wall, straight brick return, sparse narrow vertical slot openings and a separate canopy/entry recess | North-entry photo plus overhead. Preserve curved-to-straight transitions and roof outline; complete slot count unresolved. |
+| SE-T / opposing stair projection | Rounded brick outer wall with **two plainly visible narrow slots above the canopy** in the 2017 southeast view | This is a visible span, not the total slots on all tower faces. Ground/service openings beneath/around canopy are partly concealed. |
+| D-NE / D-SE public corner entries | Dark recessed door planes beneath pale rectangular projecting canopies with patterned fascia/supports; broad stair/landing and rail approaches | Opposing corner sources reveal depth and different grade conditions. Actual leaf/transom pattern and current accessible approach need sharper recent evidence. |
+| NW-L / loading recess | Separate low canopy and deep service opening with yellow protective bollards/rails, lower brick and ramp/dock levels | Northwest view and embedded loading photo agree. Temporary bins, vehicles, lift and fencing do not define architecture. |
+| NW-R / red sloped enclosure | Red corrugated/sloped metal element below the precast wall beside loading | Strongly visible in 2017 and the study photo. Exact function/permanence/current presence unresolved; do not call it the building's roof or confidently label equipment. |
+| W / whole west face | Inventory/overhead outline and partial terrace/service context only | A complete current opening/panel schedule is still unavailable; do not substitute an east or north repeat. |
+
+### Depth, roof and material construction brief
+
+Build no geometry during this phase. When later authorized, establish the main body and separate rounded/rectilinear brick projections from the footprint; register public entries and loading at their own grades; then lay out precast fields as deep solid modules with small glass openings. A flat gray grid or fully glazed cell pattern would be wrong even if its bay spacing matched. Keep the seven larger south openings as a distinct family pending current verification. Fit canopies, lower brick/glazing, retaining walls, steps/ramps, rails and stair slots separately, with site ownership checked.
+
+The roof has several flat membrane levels/raised volumes, not one featureless slab; preserve tower-top and canopy outlines separately. Current equipment placement needs newer overhead/elevated evidence and roof-specific point selection. Neighboring WALC's red roofs and older brick academic wings must not enter Potter's roof/asset boundary.
+
+The sunlit terrace study shows warm cream precast and red/brown brick; the overcast 2017 view makes the precast greener/darker. Both show recessed glass nearly black in shade, but this is not an opaque black-glass specification. Use distinct materials for panel faces/returns, fine joints, brick/mortar, dark metal, reflective glazing, canopy and roof membrane. No calibrated color/roughness or manufacturer sample was obtained. Deep geometry should create its own shadows rather than painting them permanently onto panels.
+
+Unresolved follow-ups remain current full west and post-2017 facades, complete module/opening counts, source registration of the report's conflicting main-entrance directions, precise profiles and roof services. The 2026 capital-plan new entrance is future/proposed scope, not permission to replace the observed entrances now. **Advance to rank 9, Stanley Coulter**, retaining those targeted gaps.
