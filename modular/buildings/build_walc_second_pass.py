@@ -65,36 +65,30 @@ def textured(name, c1, c2, mortar, w, h, ms, rough=0.9, bump=0.2, metal=0.0):
     return m
 
 
-DIAPER_MODULE = 0.6   # diagonal lattice spacing of the dark headers (user close-up: ~3-4 diamonds per window height)
-
-
-def diaper_brick():
-    """Brick with a diagonal lattice of dark headers (diaper work), on metre UVs (u along the wall, v = height)."""
-    m = textured("WALC_SP_Brick_Diaper", (0.27, 0.125, 0.085), (0.16, 0.075, 0.055), (0.46, 0.44, 0.40), 0.2032, 0.0677, 0.006)
-    nt = m.node_tree
-    b = next(n for n in nt.nodes if n.type == "BSDF_PRINCIPLED")
-    br = next(n for n in nt.nodes if n.type == "TEX_BRICK")
-    uv = next(n for n in nt.nodes if n.type == "TEX_COORD")
-    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
-    nt.links.new(uv.outputs["UV"], sep.inputs[0])
-    lines = []
-    for op in ("ADD", "SUBTRACT"):
-        m1 = nt.nodes.new("ShaderNodeMath"); m1.operation = op
-        nt.links.new(sep.outputs[0], m1.inputs[0]); nt.links.new(sep.outputs[1], m1.inputs[1])
-        m2 = nt.nodes.new("ShaderNodeMath"); m2.operation = "DIVIDE"; m2.inputs[1].default_value = DIAPER_MODULE
-        nt.links.new(m1.outputs[0], m2.inputs[0])
-        m3 = nt.nodes.new("ShaderNodeMath"); m3.operation = "FRACT"
-        nt.links.new(m2.outputs[0], m3.inputs[0])
-        m4 = nt.nodes.new("ShaderNodeMath"); m4.operation = "LESS_THAN"; m4.inputs[1].default_value = 0.09
-        nt.links.new(m3.outputs[0], m4.inputs[0])
-        lines.append(m4)
-    mx = nt.nodes.new("ShaderNodeMath"); mx.operation = "MAXIMUM"
-    nt.links.new(lines[0].outputs[0], mx.inputs[0]); nt.links.new(lines[1].outputs[0], mx.inputs[1])
-    mix = nt.nodes.new("ShaderNodeMix"); mix.data_type = "RGBA"
-    nt.links.new(mx.outputs[0], mix.inputs["Factor"])
-    nt.links.new(br.outputs["Color"], mix.inputs[6])
-    mix.inputs[7].default_value = (0.13, 0.075, 0.06, 1)   # darker brown headers, low contrast
-    nt.links.new(mix.outputs[2], b.inputs["Base Color"])
+def image_brick(name, file, tile, rough=0.88):
+    """Brick material from a tileable texture made by audit/walc/second_pass/make_brick_textures.py (packed into the
+    .blend); metre UVs scaled by the tile size; bump from brightness so the mortar joints read."""
+    import os
+    m, nt, b = principled(name, (0.25, 0.11, 0.09), rough=rough, spec=0.15)
+    path = os.path.normpath(os.path.join(bpy.path.abspath("//"), "..", "..", "audit", "walc", "second_pass", "textures", file))
+    img = bpy.data.images.load(path, check_existing=True)
+    if not img.packed_file:
+        img.pack()
+    uv = nt.nodes.new("ShaderNodeTexCoord")
+    sc = nt.nodes.new("ShaderNodeVectorMath")
+    sc.operation = "SCALE"
+    sc.inputs["Scale"].default_value = 1.0 / tile
+    tex = nt.nodes.new("ShaderNodeTexImage")
+    tex.image = img
+    tex.interpolation = "Linear"
+    nt.links.new(uv.outputs["UV"], sc.inputs[0])
+    nt.links.new(sc.outputs[0], tex.inputs["Vector"])
+    nt.links.new(tex.outputs["Color"], b.inputs["Base Color"])
+    bp = nt.nodes.new("ShaderNodeBump")
+    bp.inputs["Strength"].default_value = 0.35
+    bp.inputs["Distance"].default_value = 0.004
+    nt.links.new(tex.outputs["Color"], bp.inputs["Height"])
+    nt.links.new(bp.outputs["Normal"], b.inputs["Normal"])
     return m
 
 
@@ -102,20 +96,22 @@ def mats():
     """Exterior colours from research V01/V02/V04/V05/V09 (red-brown variegated brick, warm cream stone, olive-grey
     frames, dark eaves, red tile roof, blue-grey glass); interior from the BSA/Turner photographs."""
     M = {}
-    # darker red-brown brick; floors 2-3 of the end blocks carry a diaper lattice of dark headers (review r01, V02)
-    # colours from the user's close-up (sources/color_samples_r3.json): browner variegated brick, light mortar
-    M["brick"] = textured("WALC_SP_Brick", (0.27, 0.125, 0.085), (0.16, 0.075, 0.055), (0.46, 0.44, 0.40), 0.2032, 0.0677, 0.006)
-    M["brickd"] = diaper_brick()
+    # running bond and the 45-degree three-brick basketweave of the spandrel panels, variegated red / plum bricks with
+    # buff mortar (user close-ups 2026-10-29; textures from make_brick_textures.py)
+    M["brick"] = image_brick("WALC_SP_Brick_Running", "walc_brick_running.png", 2.032)
+    M["brickd"] = image_brick("WALC_SP_Brick_Basketweave", "walc_brick_basketweave.png", 1.7242)
     M["stone"] = principled("WALC_SP_Limestone", (0.60, 0.54, 0.45), rough=0.8, spec=0.2)[0]
     # roof: muted brown-red (aerial sRGB ~150,120,100 in flat light); the 2017 drone photo is over-saturated (user: too orange)
-    M["roof"] = textured("WALC_SP_Roof_Tile", (0.30, 0.085, 0.045), (0.25, 0.07, 0.04), (0.16, 0.05, 0.03), 0.30, 0.38, 0.012, rough=0.75, bump=0.4)
-    M["wframe"] = principled("WALC_SP_Window_Frame_Taupe", (0.34, 0.33, 0.28), rough=0.45)[0]
+    # roof: deep red-brown / maroon tile (user aerial sRGB ~110-128, 83-97, 86-98; review r03: less orange)
+    M["roof"] = textured("WALC_SP_Roof_Tile", (0.19, 0.075, 0.065), (0.155, 0.06, 0.055), (0.10, 0.045, 0.04), 0.30, 0.38, 0.012, rough=0.75, bump=0.4)
+    M["wframe"] = principled("WALC_SP_Window_Frame_Taupe", (0.33, 0.30, 0.26), rough=0.45)[0]
     M["gutter"] = principled("WALC_SP_Gutter_Bronze", (0.09, 0.067, 0.05), rough=0.4, metal=0.7)[0]
-    M["eave"] = principled("WALC_SP_Eave_Dark", (0.10, 0.09, 0.08), rough=0.6, metal=0.3)[0]
-    M["frame"] = principled("WALC_SP_Frame_Olive", (0.20, 0.20, 0.16), rough=0.45, metal=0.6)[0]
-    M["glass"] = principled("WALC_SP_Glass", (0.15, 0.20, 0.22), rough=0.04, metal=0.55, spec=0.8)[0]
+    M["eave"] = principled("WALC_SP_Soffit_Warm_Dark", (0.045, 0.031, 0.022), rough=0.7, metal=0.1)[0]
+    M["frame"] = principled("WALC_SP_Frame_Bronze_Taupe", (0.30, 0.22, 0.14), rough=0.45, metal=0.5)[0]
+    M["glass"] = principled("WALC_SP_Glass", (0.035, 0.05, 0.055), rough=0.02, metal=0.75, spec=0.9)[0]
+    M["canopy"] = principled("WALC_SP_Canopy_Verdigris", (0.26, 0.30, 0.20), rough=0.15, metal=0.3)[0]
     M["flat"] = principled("WALC_SP_Flat_Roof", (0.16, 0.16, 0.17), rough=0.9)[0]
-    M["letter"] = principled("WALC_SP_Letter_Bronze", (0.30, 0.27, 0.22), rough=0.4, metal=0.8)[0]
+    M["letter"] = principled("WALC_SP_Letter_Bronze", (0.22, 0.155, 0.09), rough=0.4, metal=0.8)[0]
     # interior
     M["slab"] = principled("WALC_SP_Concrete_Slab", (0.62, 0.62, 0.60), rough=0.8)[0]
     M["white"] = principled("WALC_SP_Wall_White", (0.80, 0.80, 0.78), rough=0.85)[0]
@@ -237,7 +233,8 @@ def rect_fill(u0, u1, z0, z1, holes):
     return out
 
 
-def wall(mb, A, B, z0, z1, thick, openings=(), mat="brick", inset=0.2, mull=1.3, frame="frame", inner="white", trans=None):
+def wall(mb, A, B, z0, z1, thick, openings=(), mat="brick", inset=0.2, mull=1.3, frame="frame", inner="white", trans=None,
+         units=False):
     """Straight wall A->B (outer face on the line, thickness inward) with framed openings (u0, u1, zb, zt[, kind]).
     The inner face gets the interior finish. trans: spacing of horizontal glazing bars (small panes)."""
     A, t, n, L = seg_frame(A, B)
@@ -259,6 +256,24 @@ def wall(mb, A, B, z0, z1, thick, openings=(), mat="brick", inset=0.2, mull=1.3,
         mb.box(frame, p + t * u0, t, inw, u1 - u0, 0.06, za, za + fw)
         mb.box(frame, p + t * u0, t, inw, u1 - u0, 0.06, zb - fw, zb)
         w = u1 - u0
+        if units and kind == "win":
+            # WALC end-block units: two panes wide, short top pane, tall middle, short bottom pane; wide openings
+            # are pairs/groups of units split by a heavier frame mullion (user close-ups, purdue_2018, bsa)
+            nu = max(1, int(round(w / 1.25)))
+            uw = w / nu
+            for k in range(nu):
+                a = u0 + k * uw
+                if k:
+                    mb.box(frame, p + t * (a - 0.06), t, inw, 0.12, 0.08, za, zb)
+                mb.box(frame, p + t * (a + uw / 2 - 0.025), t, inw, 0.05, 0.06, za, zb)
+            bars = [za + 0.38, zb - 0.42]
+            h = zb - za
+            if h > 4.0:
+                nseg = int(round((h - 0.8) / 2.0))
+                bars += [za + 0.38 + (h - 0.8) * j / nseg for j in range(1, nseg)]
+            for zz in bars:
+                mb.box(frame, p + t * u0, t, inw, w, 0.06, zz, zz + 0.05)
+            continue
         nm = max(0, int(round(w / mull)) - 1)
         for k in range(1, nm + 1):
             mb.box(frame, p + t * (u0 + w * k / (nm + 1) - 0.025), t, inw, 0.05, 0.06, za, zb)
@@ -346,9 +361,9 @@ GROUND = ccw([(-10.8, -44.3), (-0.9, -44.2), (3.7, -39.7), (39.1, -39.7), (39.1,
               (42.1, -12.7), (42.1, -7.8), (36.0, -7.8), (36.0, 10.7), (39.9, 10.7), (39.9, 25.1), (38.8, 25.1),
               (38.8, 43.9), (-16.9, 43.9), (-16.8, 23.6), (-14.7, 23.6), (-14.7, 16.6), (-10.5, 16.6),
               (-10.5, -18.4), (-16.7, -18.4), (-16.6, -39.7), (-15.4, -39.7)])
-EAST_RECESS_X, RECESS_Y = 30.5, (-18.0, 18.2)   # floors 2-3 step back over the one-storey lecture hall 1018 (plans p3/p4)
+EAST_RECESS_X, RECESS_Y = 30.5, (-18.0, 17.6)   # floors 2-3 step back over lecture hall 1018, up to the NE stair tower (p3/p4)
 UPPER = ccw([(-10.8, -44.3), (-0.9, -44.2), (3.7, -39.7), (39.1, -39.7), (39.1, -26.6), (40.0, -26.6), (40.0, -18.0),
-             (30.5, -18.0), (30.5, 18.2), (39.9, 18.2), (39.9, 25.1), (38.8, 25.1), (38.8, 43.9), (-16.9, 43.9),
+             (30.5, -18.0), (30.5, 17.6), (39.9, 17.6), (39.9, 25.1), (38.8, 25.1), (38.8, 43.9), (-16.9, 43.9),
              (-16.8, 23.6), (-14.7, 23.6), (-14.7, 16.6), (-10.5, 16.6), (-10.5, -18.4), (-16.7, -18.4), (-16.6, -39.7),
              (-15.4, -39.7)])
 PIERS_Y = [(-14.2, -13.0), (-9.1, -7.9), (-4.0, -2.9), (1.0, 2.2), (6.1, 7.3), (11.2, 12.4)]   # west stone piers (FID906)
@@ -432,21 +447,68 @@ def trims(mb, A, t, n, ops):
             mb.box("stone", A + t * u0 + n * 0.02, t, -n, u1 - u0, 0.2, zp, zp + 0.35)
 
 
-def diaper_columns(mb, A, t, n, L, ops):
-    """Diaper (crossed) brick only in the window columns of floors 2-3: from the floor-2 belt course to the stone
-    course under the eave, the width of the window plus a margin; the piers and corners between the columns stay plain
-    running bond (user close-up of the west face, 2026-10-29)."""
+def basketweave_panels(mb, A, t, n, L, ops, frieze_top=None):
+    """Basketweave spandrel panels in the window columns of floors 2-3: the width of the window, filling the brick
+    between the floor-2 belt course, the windows (with their stone sills/heads) and the stone course above the floor-3
+    heads; on the end blocks also the brick frieze above that course. Piers and corners stay running bond
+    (user close-ups 2026-10-29)."""
     cols = {}
     for o in ops:
         if len(o) > 4 or o[2] < L2:
             continue
         cols.setdefault((round(o[0], 2), round(o[1], 2)), []).append(o)
     for (u0, u1), wins in cols.items():
-        a, b = max(0.05, u0 - 0.45), min(L - 0.05, u1 + 0.45)
-        P0 = A + t * a + n * 0.02
-        P1 = A + t * b + n * 0.02
-        voids = [(o[0] - a, o[1] - a, o[2], o[3], "void") for o in wins]
-        wall(mb, P0, P1, 5.55, 14.55, 0.02, voids, mat="brickd", inner="brickd")
+        a, b = max(0.05, u0 - 0.04), min(L - 0.05, u1 + 0.04)
+        P0, P1 = A + t * a + n * 0.006, A + t * b + n * 0.006
+        voids = [(o[0] - a - 0.2, o[1] - a + 0.2, o[2] - 0.17, o[3] + 0.33, "void") for o in wins]
+        wall(mb, P0, P1, 5.56, 14.54, 0.006, voids, mat="brickd", inner="brickd")
+        if frieze_top:
+            wall(mb, P0, P1, 14.81, frieze_top, 0.006, (), mat="brickd", inner="brickd")
+
+
+def east_wing_face(mb, A, B, L, zt):
+    """One-storey east wing (lecture hall 1018) faces, from the user's photos of the back of the building: tall stone
+    base, a basketweave field between plain brick corner piers, a stone band, an upper row of window triplets in
+    running bond, stone coping. The entrance bay on the east projection gets two pairs of doors under a glass canopy
+    on steel outriggers."""
+    _, t, n, _ = seg_frame(A, B)
+    entrance = n.x > 0.9 and abs(A.x - 42.1) < 0.2
+    ops = []
+    if entrance:
+        c = L / 2
+        ops = [(c - 2.0, c - 0.15, 0.0, 2.45, "door"), (c + 0.15, c + 2.0, 0.0, 2.45, "door"),
+               (c - 2.0, c - 0.15, 2.6, 3.3, "win"), (c + 0.15, c + 2.0, 2.6, 3.3, "win")]
+    else:
+        ng = max(0, int((L - 2.0) / 5.0))
+        for g in range(ng):
+            cg = 1.0 + (L - 2.0) * (g + 0.5) / ng
+            for k in (-1, 0, 1):
+                ops.append((cg + k * 1.12 - 0.5, cg + k * 1.12 + 0.5, 4.75, 6.05))
+        if L > 9:
+            cg = L / 2
+            for k in (-1, 0, 1):
+                ops.append((cg + k * 1.12 - 0.5, cg + k * 1.12 + 0.5, 2.1, 3.6))
+    ops = [o for o in ops if o[0] > 0.9 and o[1] < L - 0.9]
+    wall(mb, A, B, LB, zt, 0.45, ops, mat="brick", frame="wframe", units=True)
+    trims(mb, A, t, n, [o for o in ops if len(o) == 4])
+    band(mb, A, B, -0.05, 1.6, proj=0.12)                 # tall stone base
+    band(mb, A, B, 4.2, 4.45, proj=0.08)
+    band(mb, A, B, zt - 0.55, zt, proj=0.14)              # coping
+    if L > 2.4:                                           # basketweave field between the corner piers
+        P0, P1 = A + t * 0.9 + n * 0.006, A + t * (L - 0.9) + n * 0.006
+        voids = [(o[0] - 0.9 - 0.2, o[1] - 0.9 + 0.2, o[2] - 0.17, o[3] + 0.33, "void") for o in ops if o[2] < 4.2]
+        wall(mb, P0, P1, 1.61, 4.19, 0.006, voids, mat="brickd", inner="brickd")
+        wall(mb, P0, P1, 6.3, zt - 0.56, 0.006, (), mat="brickd", inner="brickd")
+    if entrance:
+        c = L / 2
+        o = A + t * (c - 2.6)
+        mb.box("canopy", o + n * 0.05, t, n, 5.2, 2.6, 3.55, 3.6)
+        for k in range(4):
+            uu = c - 2.4 + k * 1.6
+            q = A + t * uu
+            strut(mb, Vector((q.x, q.y, 3.5)), Vector((q.x + n.x * 2.6, q.y + n.y * 2.6, 3.5)), 0.18, 0.1, mat="gutter")
+            strut(mb, Vector((q.x, q.y, 4.4)), Vector((q.x + n.x * 2.0, q.y + n.y * 2.0, 3.58)), 0.03, 0.03, mat="gutter")
+        mb.box("stone", A + t * (c - 2.5) + n * 0.12, t, -n, 5.0, 0.15, 3.3, 3.5)
 
 
 def exterior_walls(mb):
@@ -459,32 +521,42 @@ def exterior_walls(mb):
                 continue
             if n.x < -0.9 and abs(A.x - WEST_X) < 0.2:
                 continue          # glazed west range: built separately
-            low_hall = z0 < 0 and min(A.x, B.x) > EAST_RECESS_X - 0.1 and RECESS_Y[0] < A.y < RECESS_Y[1]
-            zt = 7.2 if low_hall else z1
+            low_hall = z0 < 0 and min(A.x, B.x) > EAST_RECESS_X - 0.1 and RECESS_Y[0] < A.y < RECESS_Y[1] \
+                and RECESS_Y[0] < B.y < RECESS_Y[1] + 0.1
+            if low_hall:
+                east_wing_face(mb, A, B, L, 7.2)
+                continue
+            if z0 < 0 and min(A.x, B.x) > EAST_RECESS_X - 0.1:
+                # ground wall that runs on past the recess: carry the part beside the one-storey wing up to its coping
+                ya, yb = max(min(A.y, B.y), RECESS_Y[0]), min(max(A.y, B.y), RECESS_Y[1])
+                if yb - ya > 0.2:
+                    P0, P1 = (Vector((A.x, ya)), Vector((A.x, yb))) if B.y > A.y else (Vector((A.x, yb)), Vector((A.x, ya)))
+                    wall(mb, P0, P1, L2, 7.2, 0.45, (), mat="brick")
+                    band(mb, P0, P1, 6.65, 7.2, proj=0.14)
             kind = facade_kind(A, B)
-            ops = facade_openings(kind, L, max(z0, 0.0), zt)
-            mat = "brick"
-            wall(mb, A, B, z0, zt, 0.45, ops, mat=mat, frame="wframe", mull=0.6, trans=0.95)
+            ops = facade_openings(kind, L, max(z0, 0.0), z1)
+            wall(mb, A, B, z0, z1, 0.45, ops, mat="brick", frame="wframe", units=True)
+            mid = (A + B) / 2
+            on_block = mid.y > 21.0 or mid.y < -16.0
             if z0 >= L2:
-                diaper_columns(mb, A, t, n, L, ops)
+                basketweave_panels(mb, A, t, n, L, ops, frieze_top=16.75 if on_block else None)
             trims(mb, A, t, n, ops)
             if z0 < 0:
                 band(mb, A, B, -0.05, 1.0, proj=0.1)             # stone base
                 band(mb, A, B, 5.0, 5.55, proj=0.12)             # belt course at floor 2
             else:
                 band(mb, A, B, 14.55, 14.8, proj=0.08)           # stone course above the floor-3 window heads
-                band(mb, A, B, TOP - 0.45, TOP, proj=0.14)       # stone frieze under the eave
             # shallow brick piers at the corners and between window groups (V02, V09)
-            if kind in ("long", "south", "end") and not low_hall:
+            if kind in ("long", "south", "end"):
                 us = [0.0, L - 0.9]
                 if kind == "long":
                     nb = max(1, int(L / 6.8))
                     us += [L * b / nb - 0.45 for b in range(1, nb)]
                 for u in us:
-                    mb.box(mat, A + t * u + n * 0.16, t, -n, 0.9, 0.17, z0 if z0 >= 0 else 1.0, min(zt, TOP - 0.45))
+                    mb.box("brick", A + t * u + n * 0.16, t, -n, 0.9, 0.17, z0 if z0 >= 0 else 1.0, z1)
     # lecture hall 1018 low roof at 7 m (LiDAR 7.0-7.7 m)
     low = ccw([(EAST_RECESS_X, -18.0), (40.0, -18.0), (40.0, -12.7), (42.1, -12.7), (42.1, -7.8), (36.0, -7.8), (36.0, 10.7),
-               (39.9, 10.7), (39.9, 18.2), (EAST_RECESS_X, 18.2)])
+               (39.9, 10.7), (39.9, 17.6), (EAST_RECESS_X, 17.6)])
     slab(mb, "flat", low, [], 7.0, z_under=6.6)
 
 
@@ -501,6 +573,8 @@ def west_range(mb):
     xs = x + ARCADE_D            # shopfront line
     zr = 15.9 + (19.6 - 15.9) * (x - (-16.2)) / (-6.3 - (-16.2)) - 0.35   # roof underside at the wall line
     for (y0, y1) in bays:
+        y0 = max(y0, -17.4)            # end bays stop at the end piers against the blocks (review r03)
+        y1 = min(y1, 15.6)
         A, B = Vector((x, y1)), Vector((x, y0))         # outward normal -x
         L = y1 - y0
         # upper storeys at the pier line: deep framed window, small panes above the transom
@@ -531,7 +605,7 @@ def west_range(mb):
         mb.abox("stone", x - 0.05, xs, y0, y1, ARCADE_H - 0.05, ARCADE_H)              # arcade soffit
         mb.abox("stone", x, x + 0.3, y0, y1, LB, L1)                                   # below grade
         # suspended glass canopy with tie rods at the pier line
-        mb.abox("glass", x - 2.2, x - 0.05, y0 + 0.2, y1 - 0.2, 4.15, 4.2)
+        mb.abox("canopy", x - 2.2, x - 0.05, y0 + 0.2, y1 - 0.2, 4.15, 4.2)
         mb.abox("frame", x - 2.25, x - 0.05, y0 + 0.2, y1 - 0.2, 4.08, 4.15)
         for yy in (y0 + 0.5, y1 - 0.5):
             strut(mb, Vector((x - 2.1, yy, 4.2)), Vector((x - 0.1, yy, 5.3)), 0.04, 0.04, mat="frame")
@@ -540,15 +614,12 @@ def west_range(mb):
         mb.abox("stone", x - 1.3, x + 0.1, p0, p1, -0.05, TOP + 0.2)
         mb.abox("stone", x - 0.05, x + 0.3, p0 - 0.05, p1 + 0.05, TOP, zr + 0.05)   # frieze closes the eave above the pier
         mb.abox("stone", x - 1.5, x + 0.2, p0 - 0.15, p1 + 0.15, -0.05, 0.9)
-        # dark steel 'W' struts under the eave on each pier (V04): five points, four diagonals, outriggers
+        # slim dark-bronze paired struts on each pier, projecting from the pier face up and out to the eave edge,
+        # splayed slightly apart (bsa_exterior, V04; review r03 - not flat 'W' letters in the facade plane)
         c = (p0 + p1) / 2
-        xb = x - 1.45
-        top, bot = TOP + 0.55, TOP - 1.0
-        pts = [(c - 1.0, top), (c - 0.45, bot), (c, top), (c + 0.45, bot), (c + 1.0, top)]
-        for (ya, za), (yb, zb) in zip(pts, pts[1:]):
-            strut(mb, Vector((xb, ya, za)), Vector((xb, yb, zb)), 0.14, 0.14, mat="eave")
-        for yy in (c - 1.0, c, c + 1.0):
-            strut(mb, Vector((xb, yy, top)), Vector((-15.9, yy, 16.05)), 0.16, 0.12, mat="eave")
+        for s_ in (-1, 1):
+            strut(mb, Vector((x - 1.3, c + s_ * 0.22, TOP - 1.4)), Vector((-15.85, c + s_ * 0.55, 15.95)), 0.12, 0.1, mat="gutter")
+        strut(mb, Vector((x - 1.3, c, TOP + 0.15)), Vector((-15.85, c, 16.0)), 0.1, 0.1, mat="gutter")
     # stone name band crossing the piers at floor-2 level (V04)
     mb.abox("stone", x - 1.55, x + 0.1, -16.0, 14.0, 4.6, 5.55)
     mb.abox("stone", x - 0.35, x + 0.1, -18.4, 16.6, 4.6, 5.6)
@@ -601,6 +672,9 @@ def gable_roof(mb, xw, xe, xr, y0, y1, zw, ze, zr, mat="roof", t=0.35):
     R0, R1 = Vector((xr, y0, zr)), Vector((xr, y1, zr))
     mb.poly(mat, [W0, R0, R1, W1][::-1])
     mb.poly(mat, [R0, E0, E1, R1][::-1])
+    d = Vector((0, 0, 0.04))     # dark underside so no tile shows from below at the block junctions (review r03)
+    mb.poly("eave", [W0 - d, R0 - d, R1 - d, W1 - d])
+    mb.poly("eave", [R0 - d, E0 - d, E1 - d, R1 - d])
     # dark soffit under the deep west eave, parallel to the roof, back to the glazed wall; fascia at the edge
     zx = zw + (zr - zw) * (WEST_X - xw) / (xr - xw) - t
     mb.poly("eave", [Vector((xw, y0, zw - t)), Vector((WEST_X, y0, zx)), Vector((WEST_X, y1, zx)), Vector((xw, y1, zw - t))])
@@ -647,7 +721,8 @@ def roofs(mb):
     for (wr, ze) in ((NB_W, 17.3), (SB_W, 17.4)):
         x0, x1, y0, y1 = wr
         for (A, B) in (((x0, y0), (x1, y0)), ((x1, y0), (x1, y1)), ((x1, y1), (x0, y1)), ((x0, y1), (x0, y0))):
-            wall(mb, Vector(A), Vector(B), TOP, ze - 0.15, 0.4, mat="stone")
+            wall(mb, Vector(A), Vector(B), TOP, ze - 0.15, 0.4, mat="brick", inner="brick")
+            band(mb, Vector(A), Vector(B), ze - 0.5, ze - 0.15, proj=0.12)      # slim stone cornice under the soffit
     # downpipes on the brick piers of the north and south faces and at the corners (V02, V09)
     for xx in [-16.0] + [-16.9 + 55.7 * b / 8 for b in (2, 4, 6)] + [37.9]:
         downpipe(mb, xx, 43.9, 0, 1, 17.3, 1.8)
@@ -665,8 +740,7 @@ def roofs(mb):
     # SW angled bay (theatre stage house): flat roof with parapet just under the block eave
     bay = ccw([(-15.4, -39.7), (3.7, -39.7), (-0.9, -44.2), (-10.8, -44.3)])
     slab(mb, "flat", bay, [], TOP + 0.4, z_under=TOP)
-    slab(mb, "flat", ccw([(EAST_RECESS_X, 18.2), (39.9, 18.2), (39.9, 21.8), (EAST_RECESS_X, 21.8)]), [], 16.0, z_under=TOP)
-    slab(mb, "flat", ccw([(EAST_RECESS_X, -18.0), (40.0, -18.0), (40.0, -16.6), (EAST_RECESS_X, -16.6)]), [], 16.0, z_under=TOP)
+    slab(mb, "flat", ccw([(EAST_RECESS_X, 17.6), (39.9, 17.6), (39.9, 21.8), (EAST_RECESS_X, 21.8)]), [], 16.0, z_under=TOP)
 
 
 # ---------------------------------------------------------------- interior: floors, rooms, furniture

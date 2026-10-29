@@ -1,0 +1,116 @@
+{
+ "building_id": "walc",
+ "revision": "r3",
+ "asset_path": "modular/buildings/walc.blend",
+ "asset_sha256": "77980a63dbfa2fee546efc4af74ac1ad329468e7744da8c72ca9ef3090de8688",
+ "reviewer": "independent second-pass visual reviewer (Claude subagent, not the builder)",
+ "reviewed_at": "2026-10-29",
+ "review_depth": "quick, exterior only (about 20 minutes); interior ignored; explicit colour check",
+ "score": 8.02,
+ "max_score": 10,
+ "previous_score": {"revision": "r1", "score": 5.75, "review": "audit/walc/second_pass/review_r01/review_r01.json"},
+ "criteria": {
+  "windows": {"max": 3.0, "awarded": 2.45, "deductions": [
+   {"points": 0.35, "reason": "End-block muntin pattern is wrong. The model uses an equal 4-wide x 3-high grid (12 panes) on single wide openings. The user close-up, purdue_2018_facade (N-block west face) and bsa_exterior (end block) show units 2 lites wide: a short top pane, a tall middle pane and a short bottom pane. Wider openings are paired units with a frame pier between them (single, pair, pair, single on the N-block west face)."},
+   {"points": 0.1, "reason": "Glazed-range bay frames are neutral grey (render 128,126,121). The photos show a warm bronze-taupe (bsa_exterior 170,145,116 sunlit; purdue_2018 180,171,131)."},
+   {"points": 0.1, "reason": "Glass is a flat, uniform blue-grey (86,100,108) everywhere. The photos read dark (43,49,45 in the close-up) with strong sky reflections, so the windows look lighter and more painted than real."}
+  ]},
+  "signature_architecture": {"max": 2.5, "awarded": 1.9, "deductions": [
+   {"points": 0.25, "reason": "The glazed-range 'W' struts are large flat W shapes in the facade plane. From every oblique (G_V01, G_V02) they read as a row of letters 'W W W W' floating in front of the eave. bsa_exterior shows slim dark paired struts on each pier line that project out to the soffit, reading as thin brackets."},
+   {"points": 0.15, "reason": "The eave frieze on the end blocks is a tall (~1.5 m) plain light-grey band, rendered 120-128 grey in shade. purdue_2018 (N-block corner crop), bsa_exterior and the user close-up show, above the floor-3 heads: the stone string course, then a brick frieze about 0.8-1 m tall with diaper, then a slim stone cornice under the dark soffit."},
+   {"points": 0.15, "reason": "The diaper reads as bold drawn crossing lines (~0.6 m module, strokes about 2 courses thick), which make X-chains where the strips flank the windows. The photos show a fine, dense net of single dark headers that looks like texture rather than lines. Placement in the window columns is correct per the user close-up."},
+   {"points": 0.05, "reason": "Arcade canopies are plain grey (98,102,95). bsa_exterior shows verdigris/copper-patina canopies (146,155,123) with dark hangers."}
+  ]},
+  "proportions_roof": {"max": 2.0, "awarded": 1.85, "deductions": [
+   {"points": 0.1, "reason": "The eave zone is top-heavy. The plain grey frieze plus deep soffit make the cornice zone about twice the height seen in purdue_2018/bsa_exterior, where brick runs up close to the soffit."},
+   {"points": 0.05, "reason": "Red roof tile is visible under the glazed-range eave at the NW junction (G_V04 top left), and a frame/grille fragment sticks out past the first pier into the stair-tower bay."}
+  ]},
+  "material_colour": {"max": 1.5, "awarded": 1.02, "deductions": [
+   {"points": 0.2, "reason": "Roof tile is still too saturated and orange-red, the user's specific complaint. Top render vs aerial at the same viewpoint: render 146,86,69 (hue 13 deg, saturation 0.53) vs aerial 149-168,121-137,101-114 (hue 25 deg, saturation 0.32). purdue_2018 (S block, shade) shows a deeper red-brown, 103,60,61. Target about 140,100,85 sunlit, hue ~18-22 deg, saturation ~0.38-0.42. The change-log target of ~150,120,100 is not reached in the renders."},
+   {"points": 0.1, "reason": "A large untextured white surface (217,220,221) is exposed on the courtyard/east side, above the one-storey east wing against the far end block. It is visible in G_V09, G_east_side and obl_SE."},
+   {"points": 0.05, "reason": "Brick is slightly too pink and dark. Render 126,91,79 (hue 15 deg) vs close-up 144,112,90 (hue 24), bsa 136,103,84 (hue 22) and purdue_2018 sunlit 166,120,94 (hue 22). Shift about 8 deg toward orange-brown and lift value about 10%."},
+   {"points": 0.05, "reason": "Soffit and frieze are neutral grey (55,55,55 and 120-128). The photos show a warm dark bronze-brown soffit (purdue_2018 37,33,34 in shade; bsa 103,84,58 with bounce light)."},
+   {"points": 0.08, "reason": "Small hue misses: glazed-range bay frames neutral grey vs bronze-taupe; canopies grey vs verdigris; letters neutral grey (115,112,105) vs bronze (138,119,92)."}
+  ]},
+  "consistency": {"max": 1.0, "awarded": 0.8, "deductions": [
+   {"points": 0.15, "reason": "White untextured wall on the courtyard/east side. This is the r01 'south-block east junction' hole, still open, and it reads as missing exterior skin."},
+   {"points": 0.05, "reason": "Two stray bits: a small white box at the east (G_V09, about x1340-1385, y535-560), and the projecting frame fragment at the NW junction (G_V04)."}
+  ]}
+ },
+ "colour_check": {
+  "method": "Median sRGB of matched patches (percentile-selected for thin features) from the r3 renders and the reference photos; script and patch boxes in review_r03/sample_colours.py and colour_patches_*.json, montages colour_patches_*.png. Lighting differs between sources, so verdicts weigh hue and relative value more than absolute value.",
+  "pairs": [
+   {"material": "Brick field (plain)", "photo": "close-up 144,112,90; bsa sunlit 136,103,84; 2018 sunlit 166,120,94", "render": "126,91,79 (close_west_face)", "verdict": "close; slightly pink/dark, shift toward orange-brown"},
+   {"material": "Mortar", "photo": "light buff (close-up blurred, ~168,137,115 mix)", "render": "166,161,156", "verdict": "ok; could be a touch warmer"},
+   {"material": "Diaper headers", "photo": "112,91,69 (close-up)", "render": "101,80,73", "verdict": "colour/contrast match; pattern scale and stroke too bold"},
+   {"material": "Stone sills/heads/belt", "photo": "sill 213,204,185; belt 220,216,202 (close-up)", "render": "198,192,180", "verdict": "match"},
+   {"material": "Limestone piers (west)", "photo": "253,240,221 (bsa, strong sun)", "render": "198,192,180", "verdict": "match (lighting difference)"},
+   {"material": "End-block window frames", "photo": "close-up mullion 156,150,139 / transom in shade 112,107,89; bsa and 2018 read near-white in sun (252,243,227 / 245,242,236)", "render": "154,154,146", "verdict": "matches the user close-up; slightly cool. Sources conflict (white in sun); a light warm putty/taupe is the right compromise"},
+   {"material": "Glazed-range bay frames", "photo": "170,145,116 (bsa); 180,171,131 (2018)", "render": "128,126,121", "verdict": "off: too neutral/grey, needs warm bronze-taupe"},
+   {"material": "Glass", "photo": "dark 43,49,45 (close-up) to sky-reflection 139,169,172 (bsa)", "render": "86,100,108 uniform", "verdict": "acceptable average; flat, no reflection"},
+   {"material": "Roof tile", "photo": "aerial 149-168,121-137,101-114; 2018 S-block shade 103,60,61", "render": "143-146,84-86,66-69 (top and V03)", "verdict": "off: too saturated orange-red"},
+   {"material": "Soffit", "photo": "37,33,34 (2018 shade); 103,84,58 (bsa bounce)", "render": "55,55,55 end blocks; 81,82,82 range", "verdict": "value ok; should be warm brown, not neutral"},
+   {"material": "Eave frieze", "photo": "brick + slim stone cornice", "render": "120-128 neutral grey band", "verdict": "wrong material/proportion"},
+   {"material": "Downpipes/gutters", "photo": "97,85,70 (close-up)", "render": "83,64,60", "verdict": "match"},
+   {"material": "Name lettering", "photo": "138,119,92 bronze (bsa)", "render": "115,112,105", "verdict": "close in value; too neutral"},
+   {"material": "Arcade canopies", "photo": "146,155,123 verdigris (bsa)", "render": "98,102,95", "verdict": "off hue"},
+   {"material": "W brackets", "photo": "dark bronze (shade near-black; sunlit 190,172,142)", "render": "~60-70 dark grey", "verdict": "ok colour; wrong form"}
+  ]
+ },
+ "r01_findings_status": [
+  {"finding": "End-block window frames / divided lights", "status": "partly fixed", "note": "Taupe frames per user close-up; muntin layout wrong (4x3 grid vs 2-lite with top/bottom transoms, paired units)."},
+  {"finding": "Diaper brickwork", "status": "mostly fixed", "note": "Present and confined to window columns per user close-up; drawn too bold."},
+  {"finding": "Recessed west arcade", "status": "fixed"},
+  {"finding": "Exterior shell holes", "status": "partly fixed", "note": "West junctions now brick with tall window strip. The white courtyard/east wall remains."},
+  {"finding": "Eave brackets and gutter", "status": "fixed", "note": "Soffit colour still neutral grey."},
+  {"finding": "Horizontal stone courses", "status": "partly fixed", "note": "The spurious z10.2 band is gone and the string course is added; the frieze is an oversized plain grey band instead of brick frieze plus slim cornice."},
+  {"finding": "Window stone heads/sills and ground-floor transom panels", "status": "fixed"},
+  {"finding": "South-face window schedule", "status": "fixed"},
+  {"finding": "Name band", "status": "fixed"},
+  {"finding": "Downpipes", "status": "fixed"},
+  {"finding": "Brick pilasters", "status": "fixed"},
+  {"finding": "North-face ground-storey jogs", "status": "fixed"},
+  {"finding": "Glazed-range bays, W brackets, soffit", "status": "partly fixed", "note": "Bays deepened with small upper panes. The W struts read as flat letters, and tile still shows under the eave at the NW junction."},
+  {"finding": "Roof tile colour", "status": "not fixed (overcorrected in r2, r3 change not visible enough)", "note": "Still saturated orange-red vs aerial."},
+  {"finding": "Plinth/site planters (optional)", "status": "not done", "note": "Site asset, not scored."}
+ ],
+ "findings": [
+  {"facade": "Courtyard/east side, end block above the one-storey east wing", "feature": "Untextured white wall", "required_correction": "Skin this face in brick with belt/string courses and windows matching the adjacent east faces. It is visible in G_V09, G_east_side and obl_SE."},
+  {"facade": "Roofs (all)", "feature": "Tile colour", "required_correction": "Desaturate and shift toward brown: aim for sunlit render ~140,100,85 (hue ~20 deg, saturation ~0.4), checked in r3_top against aerial_world_imagery.png. The current render is 146,86,69."},
+  {"facade": "End blocks, all faces", "feature": "Window muntins", "required_correction": "Each unit 2 lites wide, with a short top pane, a tall middle pane and a short bottom pane (user close-up, purdue_2018, bsa_exterior). Split wide openings into paired units with a frame pier, following the photo rhythm (N-block west face: single, pair, pair, single)."},
+  {"facade": "West glazed range", "feature": "W struts", "required_correction": "Replace the facade-plane W shapes with slim dark-bronze paired struts on each pier centreline, projecting perpendicular to the facade from the pier face to the soffit (bsa_exterior)."},
+  {"facade": "End blocks, all faces", "feature": "Eave frieze", "required_correction": "Above the floor-3 string course, use a ~0.8-1 m brick frieze (with diaper per the user close-up and purdue_2018) topped by a ~0.3 m stone cornice. Remove the tall plain grey frieze band and give the soffit a warm dark bronze-brown (~60,48,40)."},
+  {"facade": "End blocks", "feature": "Diaper rendering", "required_correction": "Use a finer, single-header-width lattice: thinner strokes and a smaller module, so it reads as a brick net. Clip it at straight vertical edges of the window columns instead of ending in X-chains."},
+  {"facade": "West glazed range", "feature": "Bay frame / canopy / letter colours", "required_correction": "Bay frames warm bronze-taupe (~150,130,105 sunlit), canopies verdigris (~140,150,120), letters bronze (~130,110,85)."},
+  {"facade": "All brick", "feature": "Brick hue", "required_correction": "Shift about 8 deg toward orange-brown and lift value ~10% (target sunlit ~142,108,88)."},
+  {"facade": "NW range/block junction", "feature": "Tile under eave; stray frame fragment", "required_correction": "Close the eave underside with the soffit material and trim the first bay frame that sticks out past the pier."},
+  {"facade": "All windows", "feature": "Glass", "required_correction": "Darker base colour with some specular/sky reflection, so the glazing reads dark like the photos."}
+ ],
+ "uncertainties": [
+  "Quick review (about 20 minutes), exterior only; interior ignored. No extra renders were made; r3 renders were used as delivered.",
+  "Window-frame colour sources conflict: the user close-up shows taupe-grey, while bsa_exterior and purdue_2018 read near-white in direct sun. The user close-up was given priority as instructed.",
+  "Exactly how far the diaper extends beside each window could not be settled from the photos at hand. The user's description (window columns only, plain piers/corners) was accepted, and the model follows it.",
+  "Colour pairs mix lighting conditions (summer sun, winter low sun, overcast phone photo, hazy aerial); verdicts weigh hue and relative value.",
+  "East faces have no photo coverage; only obvious defects (untextured white wall) were scored there.",
+  "Downpipe stand-off from the wall was not measured; it looked acceptable in the G views."
+ ],
+ "evidence_renders": [
+  "audit/walc/second_pass/r3/r3_G_V02_northwest.png",
+  "audit/walc/second_pass/r3/r3_G_V01_southwest.png",
+  "audit/walc/second_pass/r3/r3_G_V04_west_entrance.png",
+  "audit/walc/second_pass/r3/r3_G_V09_southeast.png",
+  "audit/walc/second_pass/r3/r3_G_east_side.png",
+  "audit/walc/second_pass/r3/r3_G_NW_corner_eave.png",
+  "audit/walc/second_pass/r3/r3_close_west_face_N_block.png",
+  "audit/walc/second_pass/r3/r3_V03_elevated_west.png",
+  "audit/walc/second_pass/r3/r3_top.png",
+  "audit/walc/second_pass/r3/r3_obl_SE.png",
+  "audit/walc/second_pass/review_r03/colour_patches_1.png",
+  "audit/walc/second_pass/review_r03/colour_patches_2.png",
+  "audit/walc/second_pass/review_r03/photo_crop_2018_N_block_west.png",
+  "audit/walc/second_pass/review_r03/photo_crop_bsa_end_block.png"
+ ],
+ "acceptance_threshold": 9.9,
+ "threshold_approval": null,
+ "accepted": false
+}
