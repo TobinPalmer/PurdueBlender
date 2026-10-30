@@ -8,7 +8,7 @@ The [root queue](../../README.md#second-pass-exterior-ranking) is the order auth
 
 **Focused depth-pass progress:** WALC is user-handled. Ranked passes 2–26 are saved with specific remaining gaps; next is rank 27, Grissom Hall. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
 
-**Research status: 25 dossiers prepared with explicit gaps; 1 in progress; 205 queued. Stanley Coulter Hall is in progress.** Research creates one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
+**Research status: 25 dossiers prepared with explicit gaps; 2 in progress; 204 queued. Stanley Coulter Hall and Grissom Hall are in progress.** Research creates one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
 
 Location now contributes **70%**, campus prominence **20%**, and existing first-pass score shortfall **10%**. WALC/Centennial Mall and Purdue Mall are the primary planning focal points, with Memorial Mall a secondary core. This deliberately brings central academic buildings ahead of distant athletics and peripheral facilities. These weights are project planning judgments, not measured pedestrian traffic or a new visual grade.
 
@@ -46,7 +46,7 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 | 24 | Psychological Sciences Building | [Research](buildings/psychological_sciences/README.md) | Prepared with gaps |
 | 25 | Class Of 1950 | [Research](buildings/class_of_1950/README.md) | Prepared with gaps |
 | 26 | Lawson Hall | [Research](buildings/lawson_hall/README.md) | Prepared with gaps |
-| 27 | Grissom Hall | — | Queued |
+| 27 | Grissom Hall | [Research](buildings/massing_grissom_hall_01fd0e0/README.md) | In progress |
 | 28 | Hicks Library | — | Queued |
 | 29 | Helen B. Schleman Hall | — | Queued |
 | 30 | Math Sciences | — | Queued |
