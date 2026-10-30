@@ -45,7 +45,7 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 | 23 | Brown Laboratory of Chemistry | [Research](buildings/brown_laboratory_of_chemistry/README.md) | Prepared with gaps |
 | 24 | Psychological Sciences Building | [Research](buildings/psychological_sciences/README.md) | Prepared with gaps |
 | 25 | Class Of 1950 | [Research](buildings/class_of_1950/README.md) | Prepared with gaps |
-| 26 | Lawson Hall | — | Queued |
+| 26 | Lawson Hall | [Research](buildings/lawson_hall/README.md) | In progress |
 | 27 | Grissom Hall | — | Queued |
 | 28 | Hicks Library | — | Queued |
 | 29 | Helen B. Schleman Hall | — | Queued |
