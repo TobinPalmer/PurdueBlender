@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LiDAR Data hosted by iDiF @ Purdue</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" href="/css/leaflet-panel-layers.src.css" />
+		<link rel="stylesheet" href="/css/leaflet.css" />
+		<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="/js/Leaflet.markercluster-1.4.1/dist/MarkerCluster.css">
+		<link rel="stylesheet" type="text/css" href="/js/Leaflet.markercluster-1.4.1/dist/MarkerCluster.Default.css">
+		<link rel="stylesheet" type="text/css" href="/css/leaflet.draw.css">
+		<link rel="stylesheet" href="/js/Zebra_Dialog/dist/css/classic/zebra_dialog.min.css">
+
+		<style>
+			body { margin:0; padding:0; }
+			#map { position:absolute; top:0; bottom:0; width:100%; }
+		</style>
+
+		<script src="/js/leaflet.js"></script>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/leaflet-panel-layers.js"></script>
+		<script src="/js/jquery-ui.min.js"></script>
+		<script src="/js/leaflet.ajax.js"></script>
+		<script src="/js/Leaflet.markercluster-1.4.1/dist/leaflet.markercluster.js"></script>
+		<script src="/js/map.js"></script>
+		<script src="/js/leaflet.draw.js"></script>
+		<script src="/js/Zebra_Dialog/dist/zebra_dialog.min.js"></script>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-74661870-3"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-74661870-3');
+		</script>
+
+		<script src="/js/marker-main.js"></script>
+		<script>
+			$(document).ready(function(){
+
+				new $.Zebra_Dialog("Powered by <a href='https://gdslab.org' target='_blank'><img src='/images/gdsl-logo.png' height='35'></a> and <a href='https://ag.purdue.edu/digital-forestry/' target='_blank'>iDiF</a><p>Data provided by: The U.S. Department of Agriculture, Natural Resource Conservation Service (NRCS), Indiana State Office, and the Indiana Geographic Information Council (IGIC), under separate BAA Agreements in partnership with the United States Geological Services (USGS) 3DEP Program. The 3DEP data products are available through the USGS The National Map, the State of Indiana’s GIO Office, IGIC and IndianaMap, all are public domain (<a href='https://creativecommons.org/publicdomain/zero/1.0/' target='_blank'>CC0</a>) websites. 3DEP data products consist of lidar point clouds (LAS) and digital elevation model (DEM) data. All 3DEP products are available, free of charge and without use restrictions. Metadata won't be published by USGS until all data have been reviewed and vertical accuracy values have been analyzed. Acknowledgement of the originating agencies would be appreciated in products derived from these data. <p>For more information about the Indiana 3DEP program - <a href='https://igic.maps.arcgis.com/apps/MapJournal/index.html?appid=a0f9003d504446da8158f5efce5be5d5' target='_blank'>IGIC Story Map</a> <p>For more information about the USGS 3DEP program - <a href='https://www.usgs.gov/core-science-systems/ngp/3dep' target='_blank'>https://www.usgs.gov/core-science-systems/ngp/3dep</a> <p>In-depth review of the elevation accuracy for the LiDAR data - <a href='https://lidar.digitalforestry.org/docs/Indiana_3DEP_Lidar_Data_Products_Data_Accuracy_and_Data_Access.pdf' target='_blank'>Review document</a> <p> <a href='https://lidar.digitalforestry.org/outbox/Indiana_2016_2020_LiDAR_Metadata.zip' target='_blank'>2016-2020 LiDAR Metadata</a>", {
+					'type': "information",
+					'title': "Data Disclaimer",
+				});
+
+
+				//map.addLayer(projectMarkers);
+				map.addLayer(markers);
+
+				projectMarkers.on('clustermouseover', function (e) {
+					ShowClusterPopup(e.originalEvent);
+				});
+
+				projectMarkers.on('clustermouseout', function (e) {
+					$("#cluster-popup").hide();
+					isClusterPopupShow = false;
+
+				});
+
+				projectMarkers.on('clusterclick', function (e) {
+					$("#cluster-popup").hide();
+					isClusterPopupShow = false;
+
+				});
+
+				GetProjectList();
+				GetPointcloudList();
+
+				$("#project-search").on('keyup',function () {
+					$("#project-list li").each(function(){
+						var filter = $("#project-search").val().toUpperCase();
+						if ($(this).text().toUpperCase().indexOf(filter) > -1) {
+							$(this).show();
+						} else {
+							$(this).hide();
+						}
+					});
+
+				});
+
+				$("#pointcloud-search").on('keyup',function () {
+					$("#pointcloud-list li").each(function(){
+						var filter = $("#pointcloud-search").val().toUpperCase();
+						if ($(this).text().toUpperCase().indexOf(filter) > -1) {
+							$(this).show();
+						} else {
+							$(this).hide();
+						}
+					});
+
+				});
+
+			});
+
+
+		</script>
+
+		<!-- Piwik -->
+		<!-- <script type="text/javascript" src="/js/piwik.js"></script> -->
+		<!-- End Piwik Code -->
+
+	</head>
+	<body>
+		<div id="cluster-popup" class="cluster-popup">Click to expand</div>
+		<div id="map"></div>
+		<script>
+
+			var map = L.map('map', {
+				center: [39.7684, -86.1581],
+				zoom: 7,
+				minZoom: 1,
+				maxZoom: 15,
+			});
+
+			var osm_map = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+				zIndex: 0
+			});
+
+			var googleHybrid = L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}',{
+    		maxZoom: 20,
+    		subdomains:['mt0','mt1','mt2','mt3']
+			});
+
+			map.attributionControl.addAttribution('Powered by <a href="https://gdslab.org" target="_blank">GDSL@Purdue</a>');
+
+			map.addLayer(googleHybrid);
+
+			//------------------------------Adding drawing/editing control-------------------------------------
+				var drawnItems = new L.FeatureGroup();
+				map.addLayer(drawnItems);
+
+				// Initialise the draw control and pass it the FeatureGroup of editable layers
+				var drawControl = new L.Control.Draw({
+					edit: {
+						featureGroup: drawnItems,
+
+						polygon: {
+							allowIntersection : false
+						}
+
+					},
+					draw: {
+
+						polygon : {
+							allowIntersection: false,
+							guidelineDistance: 2
+						},
+						circle: false, // Turns off this drawing tool
+
+						polyline: false,
+						marker: false
+					}
+				});
+				map.addControl(drawControl);
+				//-----------------------------------------------------------------------------------------------
+
+				map.on('draw:created', function (e) {
+					var type = e.layerType,
+						layer = e.layer;
+						layer.on('click', function() {
+							UnSelectAll();
+							layer.setStyle({dashArray: "8,6"});
+
+							var jsondata = layer.toGeoJSON();
+
+							$('#geojson').val(JSON.stringify(jsondata));
+							CheckCalculateConditions();
+						});
+
+					drawnItems.addLayer(layer);
+
+				});
+
+				map.on('click', function(){
+					UnSelectAll();
+				});
+
+
+			// map.createPane('county');
+			// map.createPane('marker');
+			//
+			// map.getPane('county').style.zIndex = 600;
+			// map.getPane('marker').style.zIndex = 601;
+
+
+			// Styles
+			var boundaryStyle = {
+						"color": "#ff7800",
+						"weight": 2,
+						"fillOpacity": 0,
+						"opacity": 1.0,
+					};
+
+			var gridStyle = {
+						"color": "#0000ff",
+						"weight": 1,
+						"fillOpacity": 0,
+						"opacity": 1.0,
+					};
+
+			var county_boundary = new L.GeoJSON.AJAX("/gis_layers/in_counties_with_lidar_year.geojson",
+					{onEachFeature:boundary_popUp,
+					style: boundaryStyle,
+					});
+
+			var ndhm1 = L.tileLayer("http://lidar.digitalforestry.org/xyz/indiana_state/2011to2013/ndhm/{z}/{x}/{y}.png", {tms: false, zIndex: 60, opacity: 1.0});
+			var ndhm2 = L.tileLayer("http://lidar.digitalforestry.org/xyz/indiana_state/2017to2020/ndhm/{z}/{x}/{y}.png", {tms: false, zIndex: 70, opacity: 1.0});
+
+			var baseLayers = [
+				{
+					name: "Open Street Map",
+					layer: osm_map
+				},
+				{
+					name: "Satellite Map",
+					layer: googleHybrid
+				},
+			];
+
+			var overLayers = [
+				{
+					group: "GIS",
+					layers: [
+						{
+							name: "Counties",
+							active: "true",
+							layer: county_boundary,
+						}
+					]
+				},
+				{
+					group: "NDHM",
+					layers: [
+						{
+							name: "NDHM('11-'13)",
+							layer: ndhm1,
+						},
+						{
+							name: "NDHM('17-'20)",
+							layer: ndhm2,
+						}
+					]
+				}
+			]
+
+			// var overLayers = [
+			// 	{
+			// 		group: "GIS",
+			// 		layers: [
+			// 			{
+			// 				name: "Counties",
+			// 				active: "true",
+			// 				layer: county_boundary,
+			// 			},
+			// 			{
+			// 				name: "Tiles",
+			// 				active: "true",
+			// 				layer: tile_boundary,
+			// 			}
+			// 		]
+			// 	},
+			//
+			// 	{
+			// 		group: "LiDAR ('11-'13)",
+			// 		layers: [
+			// 			{
+			// 				name: "DTM",
+			// 				layer: dem1,
+			// 			},
+			// 			{
+			// 				name: "NDHM",
+			// 				layer: ndhm1,
+			// 			}
+			// 		]
+			// 	},
+			//
+			// 	{
+			// 		group: "LiDAR ('17-'20)",
+			// 		layers: [
+			// 			{
+			// 				name: "DTM",
+			// 				layer: dem2,
+			// 			},
+			// 			{
+			// 				name: "NDHM",
+			// 				layer: ndhm2,
+			// 			}
+			// 		]
+			// 	},
+			//
+			// ]
+
+
+
+			var panelLayers = new L.Control.PanelLayers(baseLayers, overLayers, {collapsibleGroups: true});
+			map.addControl(panelLayers);
+
+			county_boundary.addTo(map);
+
+			function boundary_popUp(f,l) {
+				var out = [];
+				if (f.properties) {
+					for (key in f.properties) {
+						if (key == 'NAME_L') {
+							out.push("<b>" + f.properties[key] + " county</b>");
+							var county_name = f.properties[key];
+						}
+
+						if (key == 'lidar_year') {
+							var years = f.properties[key];
+						}
+					}
+
+					// console.log(l._bounds);
+
+					// Calculate center of boundary
+					var swlat = l._bounds._southWest['lat'];
+					var swlon = l._bounds._southWest['lng'];
+					var nelat = l._bounds._northEast['lat'];
+					var nelon = l._bounds._northEast['lng'];
+
+					var clon = (swlon + nelon) / 2.0;
+					var clat = (swlat + nelat) / 2.0;
+
+					out.push("<br>");
+
+					if (county_name == 'Marion') {
+						out.push("<a href=/download_marion.php?cname=" + county_name.split(' ').join('').toLowerCase() + "&clon=" + clon + "&clat=" + clat + "&years=" + years + ">LiDAR data download </a>");
+					} else {
+						out.push("<a href=/download.php?cname=" + county_name.split(' ').join('').toLowerCase() + "&clon=" + clon + "&clat=" + clat + "&years=" + years + ">LiDAR data download </a>");
+					}
+
+
+					l.bindPopup(out.join("<br />"));
+
+					l.bindTooltip(f.properties['NAME_L'], {permanent: false, sticky: true, opacity: 0.7});
+				}
+			}
+
+		</script>
+
+	</body>
+</html>

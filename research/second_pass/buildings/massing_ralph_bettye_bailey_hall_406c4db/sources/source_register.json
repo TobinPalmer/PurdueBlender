@@ -1,0 +1,435 @@
+{
+  "building_id": "massing_ralph_bettye_bailey_hall_406c4db",
+  "review_date": "2026-10-30",
+  "source_ids": [
+    {
+      "id": "G1",
+      "provider": "Purdue University BuildingShapesZip4 FeatureServer layer metadata",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "date": "Retrieved 2026-10-30",
+      "local_files": [
+        {
+          "path": "sources/baly_arcgis_layer_metadata_2026-10-30.json",
+          "sha256": "d2a7d5c51143397c63ab420ae284f06f22b8db773e8c167643b78a9e050ce07f"
+        }
+      ],
+      "limitations": "Live layer reports native WKID 102100/latest WKID 3857 and field schema; does not define per-attribute vertical semantics."
+    },
+    {
+      "id": "G2",
+      "provider": "Purdue University BuildingShapesZip4 FID 411 query in WGS84",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D411&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "date": "Retrieved 2026-10-30",
+      "local_files": [
+        {
+          "path": "sources/baly_arcgis_fid411_wgs84_2026-10-30.json",
+          "sha256": "27fa6da6a647a79c50f65d10c58c76cf90d85a054e07a49bdb6fc6f8b160276c"
+        }
+      ],
+      "limitations": "Named BALY address and 22-vertex footprint; response ring is WGS84; outline is not a survey."
+    },
+    {
+      "id": "G3",
+      "provider": "Purdue University BuildingShapesZip4 FID 411 query in native Web Mercator",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D411&outFields=FID%2CBUILDING_N%2CBLDG_ABBR%2CShape__Area%2CShape__Length&returnGeometry=true&outSR=3857&f=pjson",
+      "date": "Retrieved 2026-10-30",
+      "local_files": [
+        {
+          "path": "sources/baly_arcgis_fid411_native3857_2026-10-30.json",
+          "sha256": "6629f74ec6c4ea97ed9032a0307164565ccfc58be6482588ed27c7ba38a69a7b"
+        }
+      ],
+      "limitations": "Native map-plane geometry used to identify why raw Shape__Area/Length differ from local ground-scale metrics."
+    },
+    {
+      "id": "G4",
+      "provider": "Derived local FID 411 geometry measurements",
+      "url": "Calculation method and formulas are recorded in the file",
+      "date": "2026-10-30",
+      "local_files": [
+        {
+          "path": "sources/fid411_local_geometry_metrics_2026-10-30.json",
+          "sha256": "e448f835c9847097585e31b2ebc9abbfc19f860d527e779932726b1fe4498c2a"
+        }
+      ],
+      "limitations": "Local tangent plane, map-derived dimensions only; not surveyed wall dimensions."
+    },
+    {
+      "id": "P1",
+      "provider": "Purdue University Office of Emergency Preparedness, current BALY page and exterior photo",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/baly/",
+      "date": "Page revision 2026-04-03; photograph EXIF capture 2026-04-02 15:05:11, timezone unknown",
+      "local_files": [
+        {
+          "path": "sources/baly_oep_page_2026-10-30.html",
+          "sha256": "182c87a73a3113179fe15a8f87d0b25a1e75f8890f49ac2f6ed2f1dcd3536048"
+        },
+        {
+          "path": "sources/baly_exterior_oep_2026-04-02.jpg",
+          "sha256": "8f6a70f8b40955408cb1908008b4f66fb7a4ed5e4bb53e9b1c926c6732acd247"
+        }
+      ],
+      "limitations": "Photo 1920x1440 JPEG; Samsung SM-S901U EXIF retained. No GPS, bearing or camera height; branches and oblique perspective obscure parts."
+    },
+    {
+      "id": "P2",
+      "provider": "Purdue University Archives and Special Collections, exterior photograph and Bailey Hall article",
+      "url": "https://blogs.lib.purdue.edu/asc/2016/12/01/bailey-hall-and-purdues-musical-myth/",
+      "date": "Article published 2016-12-01; photograph capture date/photographer unknown",
+      "local_files": [
+        {
+          "path": "sources/baly_archives_article_2016-12-01.html",
+          "sha256": "8c7107640879b7ea0b0a07cfc87556a0551d2169d38a763328d9467b5c925fcf"
+        },
+        {
+          "path": "sources/baly_archives_exterior_2016.jpg",
+          "sha256": "06c9ccd0ae79fc4775d85a80e694600c1bb9a6a5cebde93e14c1f47dc2ecc500"
+        }
+      ],
+      "limitations": "1007x558 JPEG second oblique; no GPS/bearing or calibrated scale."
+    },
+    {
+      "id": "P3",
+      "provider": "Purdue OEP / Schmidt Associates, BALY first-floor emergency plan",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/wp-content/uploads/sites/3/2026/03/BALY-First-Floor-edited.jpg",
+      "date": "Served on OEP page revision 2026-04-03; source path indicates 2026-03",
+      "local_files": [
+        {
+          "path": "sources/baly_oep_first_floor_plan_2026-03_original.jpg",
+          "sha256": "c4e11a3ce7e745ee048a7ce4df9a6ebc1a462058ee063baa098abe03fa929c2b"
+        }
+      ],
+      "limitations": "1650x1275 JPEG, plan title block credits Schmidt Associates; no north arrow, dimensions, scale, as-built status or elevations."
+    },
+    {
+      "id": "H1",
+      "provider": "Purdue University Archives and Special Collections, Bailey Hall and Purdue’s Musical Myth",
+      "url": "https://blogs.lib.purdue.edu/asc/2016/12/01/bailey-hall-and-purdues-musical-myth/",
+      "date": "Published 2016-12-01",
+      "local_files": [
+        {
+          "path": "sources/baly_archives_article_2016-12-01.html",
+          "sha256": "8c7107640879b7ea0b0a07cfc87556a0551d2169d38a763328d9467b5c925fcf"
+        }
+      ],
+      "limitations": "States completed in 2014 and public open house October 11, 2014; historical/function source, no as-built exterior dimensions."
+    },
+    {
+      "id": "H2",
+      "provider": "Purdue University News Service, Grant Street construction closure notice",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2013/Q2/grant-street-section-to-be-closed-july-8-12-due-to-construction.html",
+      "date": "Published 2013-06-27",
+      "local_files": [
+        {
+          "path": "sources/baly_purdue_grant_street_construction_notice_2013.html",
+          "sha256": "ead27ea951be4020ffdd0695a9916ca4a2b0402672464d6b28b6e2c517186447"
+        }
+      ],
+      "limitations": "Confirms Bailey site construction and a utility connection from Knoy Hall across street; not a building plan."
+    },
+    {
+      "id": "H3",
+      "provider": "Indiana Commission for Higher Education, February 2020 Commission agenda",
+      "url": "https://www.in.gov/che/files/February-2020-Commission-Meeting-Agenda.pdf",
+      "date": "Published 2020-02-13 meeting agenda",
+      "local_files": [
+        {
+          "path": "sources/baly_che_commission_agenda_2020.pdf",
+          "sha256": "ad179f15dc40a3c400b041bca62e352bb95c36671eaecf52b2e497e9ac359af4"
+        }
+      ],
+      "limitations": "Bailey Hall cited as an 18,000-GSF comparator; GSF is not a measured facade/floor schedule."
+    },
+    {
+      "id": "A1",
+      "provider": "Indiana Geographic Information Office, Indiana 2023 Imagery ImageServer export",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer/exportImage?bbox=-86.91090%2C40.42670%2C-86.90920%2C40.42775&bboxSR=4326&size=1600%2C1000&imageSR=4326&format=jpg&f=image",
+      "date": "Spring 2023 capture per IGIO service metadata; exported 2026-10-30",
+      "local_files": [
+        {
+          "path": "sources/baly_indiana_2023_context.jpg",
+          "sha256": "53f93f44449d87e5d1d6d3a25f476bab63964ad70ebbf67688ebb456fd057616"
+        },
+        {
+          "path": "sources/indiana_2023_imagery_service_metadata.json",
+          "sha256": "108180bb4520419f86587d4413c8b27dbe9f96816114d1aa5d1ddac6310cf35f"
+        },
+        {
+          "path": "sources/indiana_2023_crop_request.json",
+          "sha256": "4a15f43f78dcd6294e311bff31fd94dbc4c505abbaf309b0a024a7888baf8b77"
+        }
+      ],
+      "limitations": "Original local crop 1600x1000; source service 6-inch imagery, EPSG:3857, rendered north-up from recorded WGS84 extent."
+    },
+    {
+      "id": "A2",
+      "provider": "Derived FID 411 overlay on unaltered IGIO orthophoto",
+      "url": "Generated from G2 and A1; procedure and extent in source_register.json",
+      "date": "2026-10-30",
+      "local_files": [
+        {
+          "path": "sources/baly_2023_aerial_fid411_overlay.jpg",
+          "sha256": "b040b26125844a7064bd9760970a9b4ae0cb856a298f69f9ec7115305d63755a"
+        }
+      ],
+      "limitations": "GIS ring drawn over A1; derivative visualization, not a surveyed alignment."
+    },
+    {
+      "id": "L1",
+      "provider": "Purdue Integrated Digital Forestry (iDiF), Indiana LiDAR public portal",
+      "url": "https://lidar.digitalforestry.org/",
+      "date": "Retrieved 2026-10-30",
+      "local_files": [
+        {
+          "path": "sources/indiana_lidar_portal.html",
+          "sha256": "840a885272d44da36dbc83e0a3795137554d36f7e429bf5ba441eee6bd20eec3"
+        }
+      ],
+      "limitations": "Portal identifies public Indiana LiDAR point-cloud products and tile download mechanism; source delivery metadata retained separately."
+    },
+    {
+      "id": "L2",
+      "provider": "iDiF Purdue Indiana QL2 tile index and 2018 LAS delivery",
+      "url": "https://lidar.digitalforestry.org/gis_layers/tilemap_tippecanoe.geojson ; https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/las/in2018_30001885_12.las",
+      "date": "Tile file GPS-time acquisition 2018-04-20 22:01:52–53 UTC; source LAS header creation 2018-10-19",
+      "local_files": [
+        {
+          "path": "sources/indiana_lidar_download_page.html",
+          "sha256": "5a8dafedecbfd8d5eb80cb784cb00d2f5e1c6f185e70584a1c9875967e9cc15f"
+        },
+        {
+          "path": "sources/indiana_lidar_tippecanoe_tile_index.geojson",
+          "sha256": "3ac1d4df778735c17d01a07ef29605349a990b3dbec6843c789a3bf6181d580b"
+        },
+        {
+          "path": "sources/baly_lidar_crop_metrics_2018.json",
+          "sha256": "637c17f2f3cb5af45db11f71ee8006b2c6e5a8c0c3fd269e1951a3825c76fb99"
+        }
+      ],
+      "limitations": "Full LAS downloaded transiently (292598713 bytes; SHA-256 in crop metrics); repository retains only a five-metre crop around FID 411."
+    },
+    {
+      "id": "L3",
+      "provider": "Indiana 3DEP Lidar Data Products, Data Accuracy, and Data Access",
+      "url": "https://lidar.digitalforestry.org/docs/Indiana_3DEP_Lidar_Data_Products_Data_Accuracy_and_Data_Access.pdf",
+      "date": "Updated 2021-06-08",
+      "local_files": [
+        {
+          "path": "sources/indiana_3dep_lidar_accuracy_access_2021.pdf",
+          "sha256": "fa1910c336e583a8600a48770338d68fe299870389ab56d30e35d98b012644b3"
+        }
+      ],
+      "limitations": "QL2 product spec and statewide vertical accuracy statistics; no AOI-specific certification."
+    },
+    {
+      "id": "L4",
+      "provider": "Derived five-metre FID 411 crop of 2018 QL2 LAS and calculation record",
+      "url": "Derived from L2 source tile and G2 boundary",
+      "date": "Computed 2026-10-30",
+      "local_files": [
+        {
+          "path": "sources/baly_lidar_2018_fid411plus5m_crop.las",
+          "sha256": "eef64e6f8ae0ec4f7e71166c40d5974689783dd4d0e6f379150a0a91bd995ebb"
+        },
+        {
+          "path": "sources/baly_lidar_crop_metrics_2018.json",
+          "sha256": "637c17f2f3cb5af45db11f71ee8006b2c6e5a8c0c3fd269e1951a3825c76fb99"
+        }
+      ],
+      "limitations": "3,458 unfiltered points with CRS/VDatum and crop transform; high surface returns are class 1/unclassified, not class-6 building points; median nearby class-2 ground is a local statistical baseline."
+    },
+    {
+      "id": "L5",
+      "provider": "Derived LiDAR point-height analysis and north-up aerial overlay",
+      "url": "Derived from A1, G2 and L4",
+      "date": "Computed 2026-10-30",
+      "local_files": [
+        {
+          "path": "sources/baly_lidar_2018_height_analysis.png",
+          "sha256": "d5c6783b7228b6e81235048fa50f4a730125632b1566e787f03c0074b5eacde9"
+        },
+        {
+          "path": "sources/baly_lidar_height_aerial_overlay.jpg",
+          "sha256": "f848a2385ec81a009e993a32daa2e4d7b71ec2e3bd48eec120d673b72f23c690"
+        }
+      ],
+      "limitations": "Visualization only. Spatially shows dominant and lower roof zones but cannot measure wall eaves or assign every unclassified high return to roof material/equipment."
+    }
+  ],
+  "retained_files": [
+    {
+      "path": "sources/baly_2023_aerial_fid411_overlay.jpg",
+      "bytes": 312398,
+      "sha256": "b040b26125844a7064bd9760970a9b4ae0cb856a298f69f9ec7115305d63755a",
+      "format": "JPEG",
+      "width_px": 1600,
+      "height_px": 1000
+    },
+    {
+      "path": "sources/baly_arcgis_fid411_native3857_2026-10-30.json",
+      "bytes": 3143,
+      "sha256": "6629f74ec6c4ea97ed9032a0307164565ccfc58be6482588ed27c7ba38a69a7b",
+      "format": "JSON"
+    },
+    {
+      "path": "sources/baly_arcgis_fid411_wgs84_2026-10-30.json",
+      "bytes": 15862,
+      "sha256": "27fa6da6a647a79c50f65d10c58c76cf90d85a054e07a49bdb6fc6f8b160276c",
+      "format": "JSON"
+    },
+    {
+      "path": "sources/baly_arcgis_layer_metadata_2026-10-30.json",
+      "bytes": 32256,
+      "sha256": "d2a7d5c51143397c63ab420ae284f06f22b8db773e8c167643b78a9e050ce07f",
+      "format": "JSON"
+    },
+    {
+      "path": "sources/baly_archives_article_2016-12-01.html",
+      "bytes": 80363,
+      "sha256": "8c7107640879b7ea0b0a07cfc87556a0551d2169d38a763328d9467b5c925fcf",
+      "format": "HTML"
+    },
+    {
+      "path": "sources/baly_archives_exterior_2016.jpg",
+      "bytes": 142120,
+      "sha256": "06c9ccd0ae79fc4775d85a80e694600c1bb9a6a5cebde93e14c1f47dc2ecc500",
+      "format": "JPEG",
+      "width_px": 1007,
+      "height_px": 558
+    },
+    {
+      "path": "sources/baly_che_commission_agenda_2020.pdf",
+      "bytes": 9206600,
+      "sha256": "ad179f15dc40a3c400b041bca62e352bb95c36671eaecf52b2e497e9ac359af4",
+      "format": "PDF"
+    },
+    {
+      "path": "sources/baly_exterior_oep_2026-04-02.jpg",
+      "bytes": 878157,
+      "sha256": "8f6a70f8b40955408cb1908008b4f66fb7a4ed5e4bb53e9b1c926c6732acd247",
+      "format": "JPEG",
+      "width_px": 1920,
+      "height_px": 1440,
+      "exif_selected": {
+        "Make": "samsung",
+        "Model": "SM-S901U",
+        "DateTime": "2026:04:02 15:05:11",
+        "GPSInfo_present": false
+      }
+    },
+    {
+      "path": "sources/baly_indiana_2023_context.jpg",
+      "bytes": 170626,
+      "sha256": "53f93f44449d87e5d1d6d3a25f476bab63964ad70ebbf67688ebb456fd057616",
+      "format": "JPEG",
+      "width_px": 1600,
+      "height_px": 1000
+    },
+    {
+      "path": "sources/baly_lidar_2018_fid411plus5m_crop.las",
+      "bytes": 105223,
+      "sha256": "eef64e6f8ae0ec4f7e71166c40d5974689783dd4d0e6f379150a0a91bd995ebb",
+      "format": "LAS",
+      "version": "1.4",
+      "point_format": 6,
+      "point_count": 3458
+    },
+    {
+      "path": "sources/baly_lidar_2018_height_analysis.png",
+      "bytes": 57725,
+      "sha256": "d5c6783b7228b6e81235048fa50f4a730125632b1566e787f03c0074b5eacde9",
+      "format": "PNG",
+      "width_px": 1500,
+      "height_px": 720
+    },
+    {
+      "path": "sources/baly_lidar_crop_metrics_2018.json",
+      "bytes": 3485,
+      "sha256": "637c17f2f3cb5af45db11f71ee8006b2c6e5a8c0c3fd269e1951a3825c76fb99",
+      "format": "JSON"
+    },
+    {
+      "path": "sources/baly_lidar_height_aerial_overlay.jpg",
+      "bytes": 365039,
+      "sha256": "f848a2385ec81a009e993a32daa2e4d7b71ec2e3bd48eec120d673b72f23c690",
+      "format": "JPEG",
+      "width_px": 1600,
+      "height_px": 1000
+    },
+    {
+      "path": "sources/baly_oep_first_floor_plan_2026-03_original.jpg",
+      "bytes": 294649,
+      "sha256": "c4e11a3ce7e745ee048a7ce4df9a6ebc1a462058ee063baa098abe03fa929c2b",
+      "format": "JPEG",
+      "width_px": 1650,
+      "height_px": 1275
+    },
+    {
+      "path": "sources/baly_oep_page_2026-10-30.html",
+      "bytes": 117697,
+      "sha256": "182c87a73a3113179fe15a8f87d0b25a1e75f8890f49ac2f6ed2f1dcd3536048",
+      "format": "HTML"
+    },
+    {
+      "path": "sources/baly_purdue_grant_street_construction_notice_2013.html",
+      "bytes": 17134,
+      "sha256": "ead27ea951be4020ffdd0695a9916ca4a2b0402672464d6b28b6e2c517186447",
+      "format": "HTML"
+    },
+    {
+      "path": "sources/fid411_local_geometry_metrics_2026-10-30.json",
+      "bytes": 2186,
+      "sha256": "e448f835c9847097585e31b2ebc9abbfc19f860d527e779932726b1fe4498c2a",
+      "format": "JSON"
+    },
+    {
+      "path": "sources/indiana_2023_crop_request.json",
+      "bytes": 390,
+      "sha256": "4a15f43f78dcd6294e311bff31fd94dbc4c505abbaf309b0a024a7888baf8b77",
+      "format": "JSON"
+    },
+    {
+      "path": "sources/indiana_2023_imagery_service_metadata.json",
+      "bytes": 6782,
+      "sha256": "108180bb4520419f86587d4413c8b27dbe9f96816114d1aa5d1ddac6310cf35f",
+      "format": "JSON"
+    },
+    {
+      "path": "sources/indiana_3dep_lidar_accuracy_access_2021.pdf",
+      "bytes": 240687,
+      "sha256": "fa1910c336e583a8600a48770338d68fe299870389ab56d30e35d98b012644b3",
+      "format": "PDF"
+    },
+    {
+      "path": "sources/indiana_lidar_download_page.html",
+      "bytes": 11879,
+      "sha256": "5a8dafedecbfd8d5eb80cb784cb00d2f5e1c6f185e70584a1c9875967e9cc15f",
+      "format": "HTML"
+    },
+    {
+      "path": "sources/indiana_lidar_portal.html",
+      "bytes": 10558,
+      "sha256": "840a885272d44da36dbc83e0a3795137554d36f7e429bf5ba441eee6bd20eec3",
+      "format": "HTML"
+    },
+    {
+      "path": "sources/indiana_lidar_tippecanoe_tile_index.geojson",
+      "bytes": 237940,
+      "sha256": "3ac1d4df778735c17d01a07ef29605349a990b3dbec6843c789a3bf6181d580b",
+      "format": "GeoJSON"
+    }
+  ],
+  "crs_and_units": {
+    "gis_source_native": "EPSG:3857 (WKID 102100); FID query response in EPSG:4326 WGS84",
+    "project_local_xy": "x=(longitude+86.9137)*111412.84*cos(radians(40.4274)); y=(latitude-40.4274)*111040; metres; local map approximation, not survey",
+    "lidar_xy": "NAD83(HARN) / Indiana West (ftUS), EPSG:2968",
+    "lidar_z": "NAVD88 height - Geoid12B (ftUS), EPSG:6360",
+    "camera": "P1 EXIF has Samsung SM-S901U and 2026-04-02 15:05:11, no GPS/bearing and unknown timezone."
+  },
+  "source_tile_not_retained": {
+    "url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019_l2/tippecanoe/las/in2018_30001885_12.las",
+    "bytes": 292598713,
+    "sha256": "0fb18c13ac557b95497b80406add8f0fe4612b1fe76232d06c22594f3ce89f8f",
+    "reason": "The full county delivery tile is much larger than the building research package; a source-hashed exact 5 m crop with all returns is retained."
+  }
+}
