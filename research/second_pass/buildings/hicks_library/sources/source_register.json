@@ -1,0 +1,330 @@
+{
+  "building_id": "hicks_library",
+  "building_name": "Hicks Library / John W. Hicks Undergraduate Library",
+  "queue_rank": 28,
+  "retrieved_date": "2026-10-30",
+  "scope": "Exterior research only; no modeling. Source claims are limited to their phase and view.",
+  "sources": [
+    {
+      "id": "H-GIS-LIVE",
+      "title": "Purdue BuildingShapesZip4 live FID 197",
+      "provider": "Purdue University GIS / ArcGIS REST",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D197&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "retrieved": "2026-10-30",
+      "local_files": [
+        "live_feature_197_2026-10-30.json",
+        "geometry_summary.json"
+      ],
+      "method": "Reprojected the 20-vertex ring to EPSG:26916, calculated approximate plan area/perimeter/bounds and compared to retained 2026-10-22 source snapshot.",
+      "limits": "IoU 1.0, Hausdorff 0 m against snapshot; source survey accuracy is undocumented. Raw Shape__Area/Length differ substantially from projected calculations and are not used."
+    },
+    {
+      "id": "H-GIS-SCHEMA",
+      "title": "BuildingShapesZip4 schema",
+      "provider": "Purdue University GIS / ArcGIS REST",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "retrieved": "2026-10-30",
+      "local_files": [
+        "official_footprint_layer.json"
+      ],
+      "limits": "Vertical-looking GIS field units and semantics are not documented."
+    },
+    {
+      "id": "H23-AERIAL",
+      "title": "Esri World Imagery; Indiana GIO source imagery",
+      "provider": "Esri / Indiana Geographic Information Office",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer",
+      "capture_date": "2023-02-11",
+      "retrieved": "2026-10-30",
+      "source_crs": "Web Mercator EPSG:3857 export",
+      "resolution": "Source 0.0762 m; cited source accuracy 0.15 m; 1200 px export across 292.48 m (~0.244 m/px resampled).",
+      "local_files": [
+        "aerial_export.json",
+        "aerial_export_wide.json",
+        "aerial_world_imagery.png",
+        "aerial_footprint_overlay.png",
+        "world_imagery_metadata_at_hicks.json"
+      ],
+      "limits": "Overhead context cannot resolve facade openings, wall sections or small roof features; imagery predates the 2026 masonry work."
+    },
+    {
+      "id": "H18-3DEP",
+      "title": "Indiana Statewide 3DEP tile in2018_30001885_12",
+      "provider": "Indiana GIO / Indiana Statewide 3DEP",
+      "url": "https://giselevationingov.s3.amazonaws.com/copc/statewide/2018/SPW/ql2/in2018_30001885_12.copc.laz",
+      "capture_date": "2018-04-20",
+      "retrieved": "2026-10-30",
+      "source_crs": "NAD83(HARN) / Indiana West (US survey foot) + NAVD88 height Geoid12B (US survey foot)",
+      "local_files": [
+        "lidar_delivery_tiles.json",
+        "in2018_30001885_12.copc.metadata.json",
+        "lidar_point_cloud_summary.json",
+        "lidar_crop_summary.json",
+        "data/lidar/in2018_30001885_12.massing_hicks_library_clip.laz"
+      ],
+      "method": "Clipped the tile to the FID197 outline and summarized point classes / candidate heights relative to nearby ground returns.",
+      "limits": "Class 1 is unclassified and may include roof, facade, trees or other returns. Statistics are not measured roof or slope heights."
+    },
+    {
+      "id": "H17-WEST-ENTRY",
+      "title": "West entrance to Hicks Undergraduate Library",
+      "provider": "Purdue Libraries and School of Information Studies News",
+      "url": "https://blogs.lib.purdue.edu/news/2017/10/13/hicks-hours/",
+      "image_url": "https://i0.wp.com/blogs.lib.purdue.edu/news/files/2017/10/IMG_2087.jpg?fit=1200%2C1200&ssl=1",
+      "publication_date": "2017-10-13",
+      "image_dimensions": "1200×1200 served; camera, photographer and capture date not stated.",
+      "limits": "Trees obscure edges; predates 2026 work; only the entrance side is labeled; exact opening count/dimensions unsupported. Image is referenced, not redistributed."
+    },
+    {
+      "id": "H23-EXTERIOR",
+      "title": "Hicks exterior photograph",
+      "provider": "Purdue Department of Physics and Astronomy, Interactions Winter 2023",
+      "url": "https://www.physics.purdue.edu/interactions/2023/research/research-publications.php",
+      "image_url": "https://www.physics.purdue.edu/interactions/images/2023/Hicks-Undergraduate-Library-616x409.jpg",
+      "publication_date": "Winter 2023",
+      "image_dimensions": "616×409; no EXIF camera/date/photographer.",
+      "local_files": [
+        "../../../../audit/batch2_hicks/purdue_physics_2023_hicks_exterior.jpg"
+      ],
+      "method": "Inspected existing audit copy: two adjoining sloped masonry faces and upper brick enclosure are visible.",
+      "limits": "Camera position/cardinal direction and scale unknown; capture date is not established."
+    },
+    {
+      "id": "H25-BOT",
+      "title": "Board approval memo: Hicks masonry renovation",
+      "provider": "Purdue University Board of Trustees / Physical Facilities Committee",
+      "url": "https://www.purdue.edu/bot/meetings/past-meetings/2025/06.%20august/PFC/Memo%20Resolution%20HIKS%20Masonry.pdf",
+      "publication_date": "2025-07-28; approved 2025-08-08",
+      "method": "Inspected the 2-page Purdue Board PDF in browser. It schedules mortar/sealant replacement and metal coverings over four sloped walls, construction May–August 2026.",
+      "limits": "Approval and schedule are not proof of completion or installed material."
+    },
+    {
+      "id": "H25-CHE",
+      "title": "Indiana CHE Hicks Masonry Renovation project file",
+      "provider": "Indiana Commission for Higher Education / Purdue University",
+      "url": "https://secure.in.gov/che/files/September-25-Commission-Meeting.pdf",
+      "publication_date": "2025-09-18",
+      "local_files": [
+        "../../../../audit/batch2_hicks/indiana_chem_2025_hicks_masonry_project.pdf"
+      ],
+      "method": "Read project description and schedule on pages 46–48 and 50; occupancy/end listed September 2026.",
+      "limits": "Planned project scope only; no as-built drawings or completion confirmation."
+    },
+    {
+      "id": "H82-MSP215",
+      "title": "Hicks construction and Purdue Mall fountain photographs, MSP 215",
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/repositories/2/resources/589",
+      "publication_date": "Collection 1980–1990, mostly 1980–1982",
+      "method": "Indexed finding aid lists 132 exterior construction photographs from June 1980–October 1981.",
+      "limits": "Photographs themselves not retrieved or inspected; direct repository page was inaccessible to browser text retrieval."
+    },
+    {
+      "id": "H82-UA62",
+      "title": "Office of Marketing and Media photographs, UA62 Box 90",
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/fa/UA62_Series3.pdf",
+      "publication_date": "Folders include May–June/August 1982 and May–September 1983",
+      "method": "Finding-aid text identifies new-library exterior/contact-sheet images with landscape.",
+      "limits": "Contact sheets and negatives not inspected; directions and exact coverage unknown."
+    },
+    {
+      "id": "H17-BASEMENT",
+      "title": "Purdue Libraries FAQ: Hicks basement one level below ground",
+      "provider": "Purdue Libraries and School of Information Studies News",
+      "url": "https://blogs.lib.purdue.edu/news/author/tkoltzen/page/18/",
+      "publication_date": "2017-04-27",
+      "method": "Text identifies the basement as one level below the ground/underground library and lists two former IMPACT rooms.",
+      "limits": "Historic occupancy statement, not a current room plan or complete basement topology."
+    },
+    {
+      "id": "H13-RENOVATION",
+      "title": "Hicks renovation celebration",
+      "provider": "Purdue University Newsroom",
+      "url": "https://www.purdue.edu/newsroom/archive/releases/2013/Q3/purdue-libraries-celebrates-hicks-undergraduate-library-renovation-with-sept.-13-event.html",
+      "publication_date": "2013-09-04",
+      "local_files": [
+        "../../../../audit/batch2_hicks/purdue_2013_hicks_renovation.jpg"
+      ],
+      "method": "Documents the completed ground-floor renovation and interior furniture categories.",
+      "limits": "Historical interior evidence only; not facade or current as-built room layout."
+    },
+    {
+      "id": "H13-ALA",
+      "title": "Hicks Undergraduate Library renovation project feature",
+      "provider": "Association of College and Research Libraries / Purdue Libraries",
+      "url": "https://www.ala.org/sites/default/files/acrl/content/PurdueUniversity.pdf",
+      "publication_date": "2013-era project feature",
+      "method": "Searchable publication text names GMB Architecture + Engineering and August 2013 completion.",
+      "limits": "Interior-design publication; not as-built elevations or floor plans."
+    },
+    {
+      "id": "H23-LIB-MASTERPLAN",
+      "title": "Purdue Libraries Master Plan Volume 2",
+      "provider": "Purdue University Libraries / Perkins&Will",
+      "url": "https://lib.purdue.edu/wp-content/uploads/2024/03/Purdue_Libraries_Master_Plan_Vol2_Full_Doc_2023.09.29_Redacted_sm.pdf",
+      "publication_date": "2023-09-29",
+      "local_files": [
+        "../../../../audit/batch2_hicks/purdue_libraries_master_plan_vol2_2023.pdf"
+      ],
+      "limits": "Strategic proposals are not as-built changes; no exterior face schedule established."
+    },
+    {
+      "id": "H21-GMAPS",
+      "title": "Google Maps user-contributed panorama near Hicks Library",
+      "provider": "Google Maps, Kaho Sakaue",
+      "url": "https://www.google.com/maps/@40.4245302,-86.9126436,3a,80y,90t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgIC6h-fN5gE!2e10",
+      "capture_date": "2021-09 (as displayed)",
+      "method": "Opened and inspected; image is an indoor study-space view.",
+      "limits": "Does not provide exterior coverage, camera position or current condition; image not redistributed."
+    },
+    {
+      "id": "H-ARCHIVES-HISTORY",
+      "title": "John W. Hicks Undergraduate Library Archives authority record",
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/463",
+      "method": "Indexed description supports existence from 1982 and usage of Hicks name from 1989.",
+      "limits": "Page returned 403; some secondary accounts give a 1990 renaming date."
+    }
+  ],
+  "retained_files": [
+    {
+      "path": "sources/aerial_export.json",
+      "bytes": 263,
+      "sha256": "db3a1111d7d092121e9d8465c6b6a8ed166cde19d93dac320c3ddb2aa06d54a4"
+    },
+    {
+      "path": "sources/aerial_export_wide.json",
+      "bytes": 423,
+      "sha256": "324f8c474b001f0a961d6e172186fcb90cd8a71b850afbb6f2267ac1fa0a1efd"
+    },
+    {
+      "path": "sources/aerial_footprint_overlay.png",
+      "bytes": 1967978,
+      "sha256": "2fe14429edd5d98f25ff95e35cbcbca5c98a44be18b7a55cddc3d4bbaec438e0"
+    },
+    {
+      "path": "sources/aerial_world_imagery.png",
+      "bytes": 2186198,
+      "sha256": "c804141a84a8dd9ffa840ccb8d28da6cef43e364b9dd615fd695eca18214ef86"
+    },
+    {
+      "path": "sources/geometry_summary.json",
+      "bytes": 2225,
+      "sha256": "6e9003ac55f8c4d28a7eb97455a56b80f95eb310b572f9383b45c8413bc83813"
+    },
+    {
+      "path": "sources/in2018_30001885_12.copc.metadata.json",
+      "bytes": 48846,
+      "sha256": "c34c96934e58b10be583ab64f0699e7bffdc2f933fd09d3ff9bf85bd6957c24e"
+    },
+    {
+      "path": "sources/lidar_crop_summary.json",
+      "bytes": 4226,
+      "sha256": "8243cc907b325ec5a619db667576cab1631e27b3b8819b8bca58b53ac290e1dd"
+    },
+    {
+      "path": "sources/lidar_delivery_tiles.json",
+      "bytes": 1765,
+      "sha256": "73c157bb640c0fa5b216d64fa69365ce1dc737197c2d77a2d8aec1da00ebdbe7"
+    },
+    {
+      "path": "sources/lidar_point_cloud_summary.json",
+      "bytes": 4118,
+      "sha256": "3721f8ece28c15e24745d0d54a92f484ca9af10a556e29b6e8a53e877c1b0524"
+    },
+    {
+      "path": "sources/live_feature_197_2026-10-30.json",
+      "bytes": 9601,
+      "sha256": "dd6ecdf1287eae42c10ba3337990abeb387494b9c09715e4996ec767310dadeb"
+    },
+    {
+      "path": "sources/official_footprint_layer.json",
+      "bytes": 32256,
+      "sha256": "d2a7d5c51143397c63ab420ae284f06f22b8db773e8c167643b78a9e050ce07f"
+    },
+    {
+      "path": "sources/purdue_footprint.json",
+      "bytes": 3911,
+      "sha256": "fd00e7c13a78339064fab97aa944b121e0a0ef0f1d045ce9c834623daee4c4cb"
+    },
+    {
+      "path": "sources/site_download_index.json",
+      "bytes": 3334,
+      "sha256": "d961bafab12079c391cf65dc305f0285507233aa011f5ae00c799e6db966641c"
+    },
+    {
+      "path": "sources/world_imagery_metadata_at_hicks.json",
+      "bytes": 2248,
+      "sha256": "b48607746fcd30f3c0d8f62fb62ea5bffbbc5cdda32eae5e67744c2b11aa2d5c"
+    },
+    {
+      "path": "data/lidar/in2018_30001885_12.massing_hicks_library_clip.laz",
+      "bytes": 26373,
+      "sha256": "f9911ec115522cfef9c51beda90ff155bc989e1943c5559f5c971ccb09028e88"
+    }
+  ],
+  "preexisting_audit_files_inspected": [
+    {
+      "path": "../../../../audit/batch2_hicks/purdue_physics_2023_hicks_exterior.jpg",
+      "bytes": 51514,
+      "sha256": "eaf7ea03c0c87fe88a3a883ab95c336ad065f52d4c2e17b450415926e01d8276",
+      "inspection_note": "Existing audit/source/validation material consulted; not treated as independent building truth."
+    },
+    {
+      "path": "../../../../audit/batch2_hicks/purdue_2013_hicks_renovation.jpg",
+      "bytes": 1220903,
+      "sha256": "b920de8502e8d9e7e5111457d3e660b5e502225b1b710e246abc0130c6b0f718",
+      "inspection_note": "Existing audit/source/validation material consulted; not treated as independent building truth."
+    },
+    {
+      "path": "../../../../audit/batch2_hicks/indiana_chem_2025_hicks_masonry_project.pdf",
+      "bytes": 5686420,
+      "sha256": "6f21857203569b62c368e895641e84eaecc0239c54b8de5622bca0115048eb5b",
+      "inspection_note": "Existing audit/source/validation material consulted; not treated as independent building truth."
+    },
+    {
+      "path": "../../../../audit/batch2_hicks/purdue_libraries_master_plan_vol2_2023.pdf",
+      "bytes": 7614886,
+      "sha256": "0c56bac74d914d3aa81695252cd4f74f76ce5f0786f955f8b9814098a34e13fe",
+      "inspection_note": "Existing audit/source/validation material consulted; not treated as independent building truth."
+    },
+    {
+      "path": "../../../../audit/batch2_hicks/source_register_r2.md",
+      "bytes": 3120,
+      "sha256": "a31e1993fc7b8e9aba7a436a9c76fdf57c6d922fd7c6f93e1099e8cc6382a005",
+      "inspection_note": "Existing audit/source/validation material consulted; not treated as independent building truth."
+    },
+    {
+      "path": "../../../../audit/batch2_hicks/REVIEW.md",
+      "bytes": 7093,
+      "sha256": "1ba7cfca06d22d7b2d8b5d0c0ae8f88c35476766c7191bee68d8887cf80f0081",
+      "inspection_note": "Existing audit/source/validation material consulted; not treated as independent building truth."
+    },
+    {
+      "path": "../../../../audit/batch2_hicks/independent_grade_r2/grade_report.md",
+      "bytes": 1984,
+      "sha256": "9750ebe5e50bbf9433db2d5c24d24e22abfd024c2e2c0f6a8263067efe23e302",
+      "inspection_note": "Existing audit/source/validation material consulted; not treated as independent building truth."
+    },
+    {
+      "path": "../../../../audit/batch2_hicks/independent_grade_r2/compare_gis.json",
+      "bytes": 3037,
+      "sha256": "7046ab8d5bd51f6fceaac21e08b61c2570a7d1745c1476f821830f146c3027c1",
+      "inspection_note": "Existing audit/source/validation material consulted; not treated as independent building truth."
+    },
+    {
+      "path": "../../../../audit/batch2_hicks/independent_grade_r2/sloped_top_compare.json",
+      "bytes": 464,
+      "sha256": "17179a4536d514541c54485084fb4082d09019e48f60707e61342fddb649bc38",
+      "inspection_note": "Existing audit/source/validation material consulted; not treated as independent building truth."
+    },
+    {
+      "path": "../../../../audit/batch2_hicks/fresh_open_validation_r2.json",
+      "bytes": 421,
+      "sha256": "0fbfc59721170049671a15266a60ecb4f8509f522a3715646f1604fc39953ea8",
+      "inspection_note": "Existing audit/source/validation material consulted; not treated as independent building truth."
+    }
+  ],
+  "hash_policy": "SHA-256 applies to exact local bytes. source_register.json excludes its own hash; preexisting audit files are hashed without duplication."
+}

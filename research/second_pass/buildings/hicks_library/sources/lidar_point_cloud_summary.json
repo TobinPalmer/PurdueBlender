@@ -1,0 +1,51 @@
+{
+  "source_tile": "in2018_30001885_12",
+  "acquisition_date": "2018-04-20",
+  "source_url": "https://giselevationingov.s3.amazonaws.com/copc/statewide/2018/SPW/ql2/in2018_30001885_12.copc.laz",
+  "full_source_sha256": "44dec01a724afb37cb863a141e43752e3e7abd60facf4c9d208cd84aff100501",
+  "clip_path": "data/lidar/in2018_30001885_12.massing_hicks_library_clip.laz",
+  "clip_bytes": 26373,
+  "clip_sha256": "f9911ec115522cfef9c51beda90ff155bc989e1943c5559f5c971ccb09028e88",
+  "crs_name": "NAD83(HARN) / Indiana West (ftUS) + NAVD88 height - Geoid12B (ftUS)",
+  "crs_wkt": "COMPOUNDCRS[\"NAD83(HARN) / Indiana West (ftUS) + NAVD88 height - Geoid12B (ftUS)\",BOUNDCRS[SOURCECRS[PROJCRS[\"NAD83(HARN) / Indiana West (ftUS)\",BASEGEOGCRS[\"NAD83(HARN)\",DATUM[\"NAD83 (High Accuracy Reference Network)\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4152]],CONVERSION[\"unnamed\",METHOD[\"Transverse Mercator\",ID[\"EPSG\",9807]],PARAMETER[\"Latitude of natural origin\",37.5,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8801]],PARAMETER[\"Longitude of natural origin\",-87.0833333333333,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"Scale factor at natural origin\",0.999966667,SCALEUNIT[\"unity\",1],ID[\"EPSG\",8805]],PARAMETER[\"False easting\",2952750,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",820208.333,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"x\",east,ORDER[1],LENGTHUNIT[\"US survey foot\",0.304800609601219]],AXIS[\"y\",north,ORDER[2],LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",2968]]],TARGETCRS[GEOGCRS[\"WGS 84\",DATUM[\"World Geodetic System 1984\",ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"latitude\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"longitude\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4326]]],ABRIDGEDTRANSFORMATION[\"Transformation from NAD83(HARN) to WGS84\",METHOD[\"Position Vector transformation (geog2D domain)\",ID[\"EPSG\",9606]],PARAMETER[\"X-axis translation\",0,ID[\"EPSG\",8605]],PARAMETER[\"Y-axis translation\",0,ID[\"EPSG\",8606]],PARAMETER[\"Z-axis translation\",0,ID[\"EPSG\",8607]],PARAMETER[\"X-axis rotation\",0,ID[\"EPSG\",8608]],PARAMETER[\"Y-axis rotation\",0,ID[\"EPSG\",8609]],PARAMETER[\"Z-axis rotation\",0,ID[\"EPSG\",8610]],PARAMETER[\"Scale difference\",1,ID[\"EPSG\",8611]]]],VERTCRS[\"NAVD88 height (ftUS)\",VDATUM[\"North American Vertical Datum 1988\"],CS[vertical,1],AXIS[\"gravity-related height\",up,LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",6360]]]",
+  "axis_units": [
+    {
+      "name": "X",
+      "unit": "US survey foot",
+      "factor_to_m": 0.30480060960121924
+    },
+    {
+      "name": "Y",
+      "unit": "US survey foot",
+      "factor_to_m": 0.30480060960121924
+    },
+    {
+      "name": "Gravity-related height",
+      "unit": "US survey foot",
+      "factor_to_m": 0.30480060960121924
+    }
+  ],
+  "query_bbox_native": [
+    3000216.39070276,
+    1885365.8094108356,
+    3000318.990758315,
+    1885427.8794301217
+  ],
+  "total_bbox_returns": 3693,
+  "points_inside_footprint": 2950,
+  "classification_counts": {
+    "1": 2854,
+    "2": 839
+  },
+  "outside_footprint_class2_ground_count": 427,
+  "outside_footprint_class2_median_native": 621.66,
+  "inside_eroded_footprint_class1_count": 2139,
+  "inside_eroded_class1_height_delta_p05_p25_p50_p75_p95_m": [
+    1.0198628397256877,
+    4.200152400304828,
+    4.227584455168913,
+    4.255016510033031,
+    4.752146304292618
+  ],
+  "limitations": "Class 1 is unclassified and includes possible roof, facade, tree, and other returns. The outside-footprint Class 2 median is a local baseline, not a surveyed ground datum. Pooled returns are not roof-plane segmentation or measured wall/ridge heights."
+}
