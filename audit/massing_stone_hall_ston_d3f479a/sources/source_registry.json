@@ -11,7 +11,12 @@
       "snapshot": "purdue_building_gis_fid240_ston_4326.json",
       "source_crs": "EPSG:4326 (WGS 84)",
       "geometry": "Single GIS polygon ring; transformed using the approximate campus XY conversion specified in modular/AGENTS.md. Ring-derived approximate area is 2218.175 m2 and perimeter 227.855 m. The feature's stored Shape__Area=3834.203125 and Shape__Length=299.5811154716871 conflict with these ring-derived values and are not used for geometry or validation.",
-      "supports": ["building identity", "horizontal footprint outline", "six-level count attribute", "floor-level fields F01-F04"],
+      "supports": [
+        "building identity",
+        "horizontal footprint outline",
+        "six-level count attribute",
+        "floor-level fields F01-F04"
+      ],
       "uncertainty": "Official campus GIS feature, not a certified survey. Stored Shape__Area/Shape__Length do not match the WGS84 ring-derived metrics; the polygon ring is used as the mapped geometry while the aggregate fields are excluded. NUM_LEVELS and Extrution are attributes; the layer does not declare Extrution units."
     },
     {
@@ -23,24 +28,47 @@
       "image_url": "https://collections.lib.purdue.edu/campus/buildings/71-winthrop-e-stone-hall.jpeg",
       "retrieved_date": "2026-10-26",
       "source_date": "Record describes building as extant from 1957; renamed in November 1976.",
-      "supports": ["identity cross-check", "1957 construction/record date", "historic building name", "historic image and archive citations"],
+      "supports": [
+        "identity cross-check",
+        "1957 construction/record date",
+        "historic building name",
+        "historic image and archive citations"
+      ],
       "uncertainty": "Page data includes dated archival photographs, but current facade conditions and measured dimensions are not specified."
     },
     {
       "provider": "Purdue University Libraries, Archives and Special Collections via eArchives II",
       "dataset": "Purdue Buildings image collection, Purdue Campus Buildings (pbuildings)",
-      "feature_ids": [1371, 1372, 1373, 1374],
+      "feature_ids": [
+        1371,
+        1372,
+        1373,
+        1374
+      ],
       "urls": [
         "https://earchives.lib.purdue.edu/utils/ajaxhelper/?CISOROOT=pbuildings&action=2&CISOPTR=1371&DMSCALE=101.69491525424&DMWIDTH=600&DMHEIGHT=600&DMX=0&DMY=0&DMROTATE=0",
         "https://earchives.lib.purdue.edu/utils/ajaxhelper/?CISOROOT=pbuildings&action=2&CISOPTR=1372&DMSCALE=101.69491525424&DMWIDTH=600&DMHEIGHT=600&DMX=0&DMY=0&DMROTATE=0",
         "https://earchives.lib.purdue.edu/utils/ajaxhelper/?CISOROOT=pbuildings&action=2&CISOPTR=1373&DMSCALE=101.69491525424&DMWIDTH=600&DMHEIGHT=600&DMX=0&DMY=0&DMROTATE=0",
         "https://earchives.lib.purdue.edu/utils/ajaxhelper/?CISOROOT=pbuildings&action=2&CISOPTR=1374&DMSCALE=101.69491525424&DMWIDTH=600&DMHEIGHT=600&DMX=0&DMY=0&DMROTATE=0"
       ],
-      "snapshots": ["stone_hall_archive_1371.jpg", "stone_hall_1959_archive_1372.jpg", "stone_hall_archive_1373.jpg", "stone_hall_archive_1374.jpg"],
-      "source_dates": ["September 14, 1959 for IDs 1371 and 1372; other views undated in the linked record"],
+      "snapshots": [
+        "stone_hall_archive_1371.jpg",
+        "stone_hall_1959_archive_1372.jpg",
+        "stone_hall_archive_1373.jpg",
+        "stone_hall_archive_1374.jpg"
+      ],
+      "source_dates": [
+        "September 14, 1959 for IDs 1371 and 1372; other views undated in the linked record"
+      ],
       "source_crs": "Not applicable; photographs",
       "measurement_method": "Visual review only; no metric dimensions were inferred from perspective photographs.",
-      "supports": ["brick and light-stone facade contrast", "regular vertical facade bays", "repeated rectangular windows", "formal central entrance and steps", "simple flat/parapet roof silhouette"],
+      "supports": [
+        "brick and light-stone facade contrast",
+        "regular vertical facade bays",
+        "repeated rectangular windows",
+        "formal central entrance and steps",
+        "simple flat/parapet roof silhouette"
+      ],
       "uncertainty": "Photographs are historical and not orthorectified; do not use them for exact dimensions or claim current condition."
     },
     {
@@ -48,8 +76,39 @@
       "dataset": "Winthrop E. Stone Hall agent record",
       "url": "https://archives.lib.purdue.edu/agents/corporate_entities/689",
       "source_date": "Record states the building was originally the Home Economics Administration Building and renamed in November 1976.",
-      "supports": ["identity and name history"],
+      "supports": [
+        "identity and name history"
+      ],
       "uncertainty": "Historical context only; no geometry or dimensions."
+    },
+    {
+      "provider": "Indiana Geographic Information Office / IndianaMap",
+      "dataset": "Indiana Current Imagery ImageServer export",
+      "snapshot": "stone_hall_indianamap_current_2026-10-30.jpg",
+      "metadata": "stone_hall_indianamap_current_2026-10-30.json",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_Current_Imagery/ImageServer",
+      "retrieved_date": "2026-10-30",
+      "source_date": "Current mosaic; export response exposes no acquisition date",
+      "crs": "EPSG:3857",
+      "supports": [
+        "current roof plan and equipment context",
+        "north-up placement against the official GIS ring",
+        "entrance projection and courtyard/open-center visual check"
+      ],
+      "uncertainty": "Nadir roof view only; no eave, wall, story, material or point elevation. Orthophoto roof edges may extend past walls; central dark area’s roof/void status is not resolved."
+    },
+    {
+      "provider": "Purdue University Events Calendar (Localist)",
+      "dataset": "Winthrop E. Stone Hall place page and linked image",
+      "url": "https://events.purdue.edu/winthrop_e_stone_hall",
+      "image_url": "https://localist-images.azureedge.net/photos/40096720552986/huge/d456e4e0319eea915200168af8eb3058a648ed6e.jpg",
+      "retrieved_date": "2026-10-30",
+      "image_capture_date": "Not stated; page activity says a photo was posted 2022-05-29, but that does not date image capture",
+      "supports": [
+        "building identity/address",
+        "linked contemporary-looking entrance reference"
+      ],
+      "uncertainty": "No view pose, image metadata, photographer or reuse license identified; image was not downloaded. Treat as a limited external entry-view lead, not a measured facade or proof of 2022/2026 condition."
     }
   ],
   "height_interpretation": {
@@ -57,7 +116,13 @@
     "unit_status": "Undeclared in layer metadata/schema",
     "model_value_m": 13.716,
     "interpretation": "45 feet converted to meters solely as an illustrative height estimate; not measured and not verified.",
-    "alternate_source_attributes": {"NUM_LEVELS": 6, "F01": 3.78, "F02": 15.78, "F03": 27.78, "F04": 37.78},
+    "alternate_source_attributes": {
+      "NUM_LEVELS": 6,
+      "F01": 3.78,
+      "F02": 15.78,
+      "F03": 27.78,
+      "F04": 37.78
+    },
     "caution": "GIS does not define units for these floor/elevation fields; facade level rhythm is qualitative and should not be treated as verified floor-to-floor heights."
   }
 }
