@@ -1,0 +1,33 @@
+{
+  "provider": "Indiana Statewide 3DEP LiDAR",
+  "tile": "in2018_30001885_12",
+  "acquisition_date": "2018-04-20",
+  "retrieved_utc": "2026-10-30T16:00:12.533165+00:00",
+  "source_url": "https://giselevationingov.s3.amazonaws.com/copc/statewide/2018/SPW/ql2/in2018_30001885_12.copc.laz",
+  "source_metadata": "in2018_30001885_12.copc.metadata.json",
+  "full_tile_bytes": 61887121,
+  "full_tile_sha256": "44dec01a724afb37cb863a141e43752e3e7abd60facf4c9d208cd84aff100501",
+  "horizontal_unit": "US survey foot",
+  "vertical_datum": "NAVD88 height, Geoid12B; US survey foot",
+  "clip_path": "../data/lidar/in2018_30001885_12.massing_grissom_hall_01fd0e0_clip.laz",
+  "clip_bytes": 46345,
+  "clip_sha256": "376f1d219eee99d0bdf811567788cba4ddb0a9a3a0a1fc161db1d4569d19155a",
+  "clip_method": "Full COPC downloaded via urllib; spatial query against bbox of live FID236 ring; exact ring used for point-in-polygon stats. COPC hierarchy removed from regular LAZ clip.",
+  "points_query_bbox": 6126,
+  "points_inside_feature": 3893,
+  "classification_counts": {
+    "1": 4765,
+    "2": 1361
+  },
+  "class2_ground_outside_feature_count": 1309,
+  "class2_ground_outside_feature_median_ft": 615.86,
+  "class1_inside_1m_eroded_feature_count": 3385,
+  "class1_height_above_nearby_class2_ground_m_percentiles_p05_p25_p50_p75_p95": [
+    4.145897891795791,
+    15.502159004318015,
+    16.745745491491,
+    18.092964185928377,
+    19.348742697485402
+  ],
+  "limitations": "Class 1 is unclassified and includes roof, façade, trees and other returns. Height deltas are not a surveyed roof/eave/penthouse measurement. Exact building polygon, low-density scan pattern, point occlusion and ground baseline influence results."
+}

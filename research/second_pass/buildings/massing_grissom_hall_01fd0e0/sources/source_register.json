@@ -1,0 +1,346 @@
+{
+  "building_id": "massing_grissom_hall_01fd0e0",
+  "building_name": "Grissom Hall",
+  "queue_rank": 27,
+  "retrieved_date": "2026-10-30",
+  "scope": "Exterior research only; no modeling.",
+  "sources": [
+    {
+      "id": "GIS-FID236-LIVE",
+      "title": "BuildingShapesZip4 live feature FID 236 / Grissom Hall",
+      "provider": "Purdue University GIS, ArcGIS REST",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D236&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "retrieved": "2026-10-30",
+      "source_crs": "EPSG:4326 geometry; analysis reprojected to EPSG:26916",
+      "local_files": [
+        "live_feature_236_2026-10-30.json",
+        "geometry_summary.json"
+      ],
+      "method": "54? No: 22 unique ring vertices; polygon reprojected to EPSG:26916 for ground dimensions/area/perimeter and compared to cached official feature.",
+      "limits": "Source positional accuracy and vertical attribute semantics are undocumented. Shape aggregates are computed in service projection and differ from UTM ground values."
+    },
+    {
+      "id": "GIS-LAYER-SCHEMA",
+      "title": "BuildingShapesZip4 layer schema and service item",
+      "provider": "Purdue University GIS, ArcGIS REST",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "retrieved": "2026-10-26; live feature queried 2026-10-30",
+      "local_files": [
+        "official_footprint_layer.json",
+        "official_layer_item.json"
+      ],
+      "limits": "Field types/aliases are documented, but the vertical-looking FID236 fields have no definitions or units."
+    },
+    {
+      "id": "GIS-CACHED-CROSSWALK",
+      "title": "Purdue FID236 cached official footprint used in location crosswalk",
+      "provider": "Purdue University GIS",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D236&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "retrieved": "2026-10-26",
+      "local_files": [
+        "purdue_footprint.json"
+      ],
+      "limits": "Kept as comparison snapshot; live query is the current pass source."
+    },
+    {
+      "id": "G23-AERIAL",
+      "title": "World Imagery export over Grissom Hall",
+      "provider": "Esri World Imagery / Indiana GIO",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export",
+      "retrieved": "2026-10-30",
+      "source_capture_date": "2023-02-11 (citation layer query at FID centroid)",
+      "source_crs": "EPSG:3857 export extent; north-up",
+      "source_resolution_m": 0.0762,
+      "source_accuracy_m": 0.15,
+      "export_resolution": "1200x1200 px / 292.48 m extent; approx. 0.244 m per pixel",
+      "local_files": [
+        "aerial_world_imagery.png",
+        "aerial_export.json",
+        "aerial_export_wide.json",
+        "world_imagery_metadata_at_grissom.json"
+      ],
+      "limitations": "Resampled export; source accuracy is citation-layer metadata, not a new survey. Roof edges/details are obscured by shadows/trees and resolution."
+    },
+    {
+      "id": "LIDAR-2018",
+      "title": "Indiana Statewide 3DEP COPC tile in2018_30001885_12",
+      "provider": "Indiana Geographic Information Office / Statewide 3DEP",
+      "url": "https://giselevationingov.s3.amazonaws.com/copc/statewide/2018/SPW/ql2/in2018_30001885_12.copc.laz",
+      "retrieved": "2026-10-30",
+      "acquisition_date": "2018-04-20",
+      "horizontal_crs": "NAD83(HARN) / Indiana West; US survey foot",
+      "vertical_crs": "NAVD88 height, Geoid12B; US survey foot",
+      "local_files": [
+        "in2018_30001885_12.copc.metadata.json",
+        "lidar_delivery_tiles.json",
+        "lidar_point_cloud_summary.json",
+        "lidar_crop_summary.json",
+        "../data/lidar/in2018_30001885_12.massing_grissom_hall_01fd0e0_clip.laz"
+      ],
+      "method": "Full tile downloaded to temporary storage, spatially queried by live FID236 bbox, cropped to regular LAZ; exact live polygon used for inclusion and statistics. Full tile is not retained; original size/hash and metadata recorded.",
+      "limitations": "Class 1 is unclassified; can contain roof, facade, trees/other returns. Percentiles are not measured roof/eave heights."
+    },
+    {
+      "id": "G15-PURDUE-G1",
+      "title": "Grissom Hall exterior photograph on Purdue IE facilities page",
+      "provider": "Purdue University, Edwardson School of Industrial Engineering",
+      "url": "https://engineering.purdue.edu/IE/aboutus/facilities/g1.jpg",
+      "page_url": "https://engineering.purdue.edu/IE/aboutus/aboutus/facilities/facilities-reinvention",
+      "retrieved": "2026-10-26 in preceding audit",
+      "capture_date": "Not supplied",
+      "resolution": "2000x625 px",
+      "local_file_in_existing_audit": "audit/massing_grissom_hall_01fd0e0/sources/purdue_exterior_g1.jpg",
+      "license": "No redistribution license found; original remains in the already-tracked audit, not copied into this dossier.",
+      "limitations": "One foliage-obscured perspective; cardinal direction, camera position and dimensions unknown."
+    },
+    {
+      "id": "MSKTD-GALLERY",
+      "title": "Purdue University – Grissom Hall project gallery",
+      "provider": "MSKTD & Associates",
+      "url": "https://msktd.com/project/purdue-university-grissom-hall/",
+      "gallery_image_pattern": "https://msktd.com/wp-content/uploads/2019/09/project-pug-{f,1,2,3,4,5,6,7,8}.jpg",
+      "retrieved": "2026-10-26 in preceding audit",
+      "image_dimensions": "1500x1000 px each",
+      "local_files_in_existing_audit": [
+        "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-1.jpg",
+        "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-2.jpg",
+        "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-3.jpg",
+        "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-4.jpg",
+        "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-5.jpg",
+        "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-6.jpg",
+        "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-7.jpg",
+        "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-8.jpg",
+        "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-f.jpg"
+      ],
+      "limits": "All nine images inspected; interior-focused gallery, not exterior evidence. Images are not duplicated in this dossier; capture dates/redistribution terms are unstated, one bears 2015 photographer watermark."
+    },
+    {
+      "id": "IE-REINVENTION",
+      "title": "Grissom Hall Reinvention",
+      "provider": "Purdue University, Edwardson School of Industrial Engineering",
+      "url": "https://engineering.purdue.edu/IE/aboutus/aboutus/facilities/facilities-reinvention",
+      "published_or_modified": "Last modified 2023-06-12",
+      "retrieved": "2026-10-30",
+      "limits": "Institutional phase/use facts; no dimensioned exterior drawings."
+    },
+    {
+      "id": "IE-CELEBRATION",
+      "title": "Grissom Hall Celebration",
+      "provider": "Purdue University, Edwardson School of Industrial Engineering",
+      "url": "https://engineering.purdue.edu/IE/aboutus/facilities/facilities-celebration",
+      "retrieved": "2026-10-30",
+      "limits": "Post-renovation celebration/project phase context; does not establish measured facade details."
+    },
+    {
+      "id": "IE-2017-FEATURES",
+      "title": "Two new features at Grissom Hall",
+      "provider": "Purdue University, Edwardson School of Industrial Engineering",
+      "url": "https://engineering.purdue.edu/IE/news/2017/new-features-grissom",
+      "published": "2017; page last modified 2020-08-04",
+      "retrieved": "2026-10-30",
+      "limits": "Text locates de Bedout Piazza/water feature and the interior southwest hallway photo wall; no dimensions or full facade views."
+    },
+    {
+      "id": "MSKTD-PROJECT",
+      "title": "Purdue University – Grissom Hall",
+      "provider": "MSKTD & Associates",
+      "url": "https://msktd.com/project/purdue-university-grissom-hall/",
+      "retrieved": "2026-10-30",
+      "limits": "Project scope and 52,000 sq ft context; no public dimensioned elevations."
+    },
+    {
+      "id": "ARCHIVES-HISTORY",
+      "title": "Grissom Hall (West Lafayette, Ind.)",
+      "provider": "Purdue University Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/agents/corporate_entities/575",
+      "retrieved": "2026-10-30",
+      "limits": "Textual history; historical story description does not establish current post-renovation floor heights."
+    },
+    {
+      "id": "UA62-PHOTO-LEAD",
+      "title": "Office of Marketing and Media photographs collection, Series 3, box 94/folder 12",
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/fa/UA62_Series3.pdf",
+      "retrieved": "2026-10-30",
+      "limits": "Finding aid describes 1906, 1951 snow, 1969 and 1971 exterior-image leads. Images not retrieved or inspected."
+    },
+    {
+      "id": "UA82-1911-LEAD",
+      "title": "Framed 1911 Civil Engineers photograph catalog record",
+      "provider": "Purdue Archives and Special Collections",
+      "url": "https://archives.lib.purdue.edu/repositories/2/top_containers/14867",
+      "retrieved": "2026-10-30",
+      "limits": "Catalog item only; photograph not acquired or inspected."
+    },
+    {
+      "id": "Purdue-ENG-2013",
+      "title": "Civil Engineering anniversary history / Engineering Impact Winter 2013",
+      "provider": "Purdue University College of Engineering",
+      "url": "https://engineering.purdue.edu/Engr/AboutUs/News/Publications/EngineeringImpact-legacy/2013_1/COE/IMPACT_CoE_Winter_2013.pdf",
+      "published": "2013",
+      "retrieved": "2026-10-30",
+      "limits": "Text gives 1906 building and 1927 Grant Street addition; secondary to original drawings and conflicts with other recorded addition dates."
+    },
+    {
+      "id": "MASTERPLAN-2018",
+      "title": "Re-Envisioning Purdue’s Engineering Campus: Space Master Plan 2017–2027",
+      "provider": "Purdue University College of Engineering",
+      "url": "https://engineering.purdue.edu/Engr/AboutUs/News/Spotlights/2018/purdue-engineering-unveils-space-master-plan-2017-2027/Re-Envisioning.pdf",
+      "retrieved": "2026-10-30",
+      "local_file": "Not retained; web text inspected at pages 5–6; PDF screenshot retrieval failed.",
+      "limits": "Used only for text labels (1920 wing addition, 2015 rededication, three transformed floors); no image feature claimed."
+    },
+    {
+      "id": "STREETVIEW-LEAD",
+      "title": "Google Maps road-side panorama lead, pano CIHM0ogKEICAgICk5N3YjwE",
+      "provider": "Google Maps / user contributor Andrew Huang",
+      "url": "https://www.google.com/maps/@40.4266603,-86.911034,3a,80y,90h,90t/data=!3m7!1e1!3m5!1sCIHM0ogKEICAgICk5N3YjwE!2e10!6shttps:%2F%2Flh3.googleusercontent.com%2Fgpms-cs-s%2FAM4Q-U9D3xh_fr6NN28Wp41pgYIQK8zHd3Kya3b7LdZ5bxQT6W7CtgVZcCWhIJpNPwQwep_iksx0Uw6Ey1d43qifJU9bb-lZpmNfppMLqPghpmb2Q07LRgzGF2dbC04QH8PsbDxCZ7568A%3Dw900-h600-k-no-pi0-ya293-ro0-fo100!7i8704!8i4352",
+      "capture_date": "2018-10 (Maps UI metadata)",
+      "retrieved": "2026-10-30",
+      "limits": "Browser indicated no Street View imagery available at the tested point; panorama image was not inspected and no facade claim was extracted."
+    },
+    {
+      "id": "FALSE-LEAD-PDF",
+      "title": "purdue_renovation_levels_2015.pdf (excluded as unrelated)",
+      "provider": "Purdue University CFO/Treasurer project approval package",
+      "local_file_in_existing_audit": "audit/massing_grissom_hall_01fd0e0/sources/purdue_renovation_levels_2015.pdf",
+      "file_metadata": "6 pages, letter, PDF Creation 2021-09-01, Modification 2021-09-07",
+      "review": "All 6 pages rendered and inspected; document concerns Schleman Hall, Stewart Center and related 2021 renovations, not Grissom. No Grissom drawings/elevations. Excluded from building evidence."
+    }
+  ],
+  "retained_files": [
+    {
+      "path": "data/lidar/in2018_30001885_12.massing_grissom_hall_01fd0e0_clip.laz",
+      "bytes": 46345,
+      "sha256": "376f1d219eee99d0bdf811567788cba4ddb0a9a3a0a1fc161db1d4569d19155a"
+    },
+    {
+      "path": "sources/aerial_export.json",
+      "bytes": 263,
+      "sha256": "3c8fef9c820ed64030aca84e8459ef6037459b7d5b1e47cf0bd13a6462093c6a"
+    },
+    {
+      "path": "sources/aerial_export_wide.json",
+      "bytes": 423,
+      "sha256": "4161f5b1f7e72ba265ab4a6aa32db6a4a0b17a985ac1c4642d03d2c8c2b715eb"
+    },
+    {
+      "path": "sources/aerial_world_imagery.png",
+      "bytes": 2260301,
+      "sha256": "122f8a3bd0605856a20386044c465ca2ddcbb3b41842be2fb91340515f689827"
+    },
+    {
+      "path": "sources/geometry_summary.json",
+      "bytes": 2385,
+      "sha256": "853e7df17539c5f379839bcdd2cc3d602848cd38ce13216adb9449b30e5fbe77"
+    },
+    {
+      "path": "sources/in2018_30001885_12.copc.metadata.json",
+      "bytes": 48846,
+      "sha256": "c34c96934e58b10be583ab64f0699e7bffdc2f933fd09d3ff9bf85bd6957c24e"
+    },
+    {
+      "path": "sources/lidar_crop_summary.json",
+      "bytes": 486,
+      "sha256": "68ec47323556652a13d36c9fd0288263f4145d9230ea45cdd80e285e3f2df8cb"
+    },
+    {
+      "path": "sources/lidar_delivery_tiles.json",
+      "bytes": 1765,
+      "sha256": "73c157bb640c0fa5b216d64fa69365ce1dc737197c2d77a2d8aec1da00ebdbe7"
+    },
+    {
+      "path": "sources/lidar_point_cloud_summary.json",
+      "bytes": 1740,
+      "sha256": "70d837a19015ff257a562b7642d845b656866d5dcfbfc068b5cd8ec3a3c170f6"
+    },
+    {
+      "path": "sources/live_feature_236_2026-10-30.json",
+      "bytes": 9658,
+      "sha256": "469b6d0e54d86cca4d61bd11eebeace9b295f3889e5adc56b28366277e4bcbda"
+    },
+    {
+      "path": "sources/official_footprint_layer.json",
+      "bytes": 32256,
+      "sha256": "d2a7d5c51143397c63ab420ae284f06f22b8db773e8c167643b78a9e050ce07f"
+    },
+    {
+      "path": "sources/official_layer_item.json",
+      "bytes": 1614,
+      "sha256": "a02fc643fe9e779f1685f972471c28e0c386d2503cb140a3bf6664a92d59e73a"
+    },
+    {
+      "path": "sources/purdue_footprint.json",
+      "bytes": 4088,
+      "sha256": "905dd76e54b30c5d935f962c742bc9c2460aa060b0f1b2558dd9dd2f645edb54"
+    },
+    {
+      "path": "sources/site_download_index.json",
+      "bytes": 2230,
+      "sha256": "67790db0543e70700d0b6d4017ce4911f5388476675d609035f173da1506fd13"
+    },
+    {
+      "path": "sources/world_imagery_metadata_at_grissom.json",
+      "bytes": 2397,
+      "sha256": "a48e36482ab3581b0f0bda4e99a54cb56ebb9500df9c5f889121951786d86231"
+    }
+  ],
+  "preexisting_audit_files_inspected": [
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/purdue_exterior_g1.jpg",
+      "bytes": 427721,
+      "sha256": "7ab84334e6a0d12dd22c6ca5382d5454c8c9fab00d92f4f99899fbbb9c8a9922"
+    },
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-1.jpg",
+      "bytes": 1232736,
+      "sha256": "3e85eb3c797a1fb483c24a7b98366bc5d8c40117c1fe7ba370c63d9ce6b18953"
+    },
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-2.jpg",
+      "bytes": 1051815,
+      "sha256": "4cb090116543123c37d885cd71e046e382155198bb9cc05014fd5e2b00e8718d"
+    },
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-3.jpg",
+      "bytes": 885831,
+      "sha256": "e6e809e88d7394d1ca295142f51261d7358c6f4f3bff7bd6d186559c60d3d615"
+    },
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-4.jpg",
+      "bytes": 1061249,
+      "sha256": "a189036523dd74c8d8630952b14f0fc85e6275b17a88580f4a754e9eed19a2a2"
+    },
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-5.jpg",
+      "bytes": 1151644,
+      "sha256": "642b6dff003decf557a63823a0750eb20094759b0bd5439298a2456ebf118951"
+    },
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-6.jpg",
+      "bytes": 951625,
+      "sha256": "11e2df7c47f37a1ac4627085f8ac6ffe1ebf4edd1175772f54d4915e1d469960"
+    },
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-7.jpg",
+      "bytes": 928136,
+      "sha256": "d1f1b959afdba01f657e9611650680d904a693459e0e7826281883b5075b73a6"
+    },
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-8.jpg",
+      "bytes": 1047422,
+      "sha256": "1e3d29f025047717a99da8cd41398c71dedb402c4b5a18233f21b0035c0acd59"
+    },
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/msktd_project-pug-f.jpg",
+      "bytes": 1252884,
+      "sha256": "8716fb18269e06ebef73a08b7297c5464d8e984ccb257876da24d826eec8500f"
+    },
+    {
+      "path": "audit/massing_grissom_hall_01fd0e0/sources/purdue_renovation_levels_2015.pdf",
+      "bytes": 523233,
+      "sha256": "325a103c32682821b7b548deadeb12513b7f35ed356024facef3e915fc29bc5c"
+    }
+  ],
+  "hash_policy": "SHA-256 applies to exact local bytes. source_register.json excludes its own hash to avoid recursion."
+}
