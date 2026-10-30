@@ -3,7 +3,7 @@
 **Queue rank:** 13  
 **Official GIS feature:** FID 644 (queue match; not independently revalidated in this pass yet)  
 **Modeling owner:** Rossen (preserved; research does not change assignment)  
-**Pass status:** In progress; no modeling or model-readiness claim.
+**Pass status:** Evidence review saved; exterior asset refinement in progress under the October 30 user authorization. No master integration or independent acceptance claimed.
 
 ## Scope and method
 
@@ -18,7 +18,7 @@ Complete a bounded second-pass exterior evidence review. Separate inspected as-b
 
 ## Review checkpoint
 
-This is the start checkpoint. The source inspection, face schedule, current-vs-historic comparison, dimensional limits and detailed gap register are still to be completed. The available prior image set points to an unusually articulated south entrance, while full-building coverage is absent; the next iteration will verify that against source images and additional public records.
+This start checkpoint is retained as history. The October 30 supplement completes a bounded source inspection, visible-face schedule, GIS/LiDAR limits, discrepancy checklist and explicit gaps. It authorizes evidence-led exterior work on the named asset only; see the iteration log under `audit/purdue_memorial_union_refine/`.
 
 
 ## October 30 continuation: modeling authorized
