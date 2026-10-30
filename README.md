@@ -33,7 +33,7 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 
 Location labels: **[location proxy]** means the official GIS name match is unresolved; **[location conflict]** means GIS and model positions disagree by over 100 m. Those ranks are provisional. Counts and every position are retained in the location audit.
 
-**9 research dossiers prepared with gaps; 1 in progress; 221 queued. Next: rank 9, Stanley Coulter Hall.** See the [research index and per-building dossiers](research/second_pass/README.md). A queued row has not been researched. A completed research dossier is not a completed second pass. The 9.9 independent exterior review, protest and Tobin-only master-integration rules still apply when modeling resumes.
+**11 research dossiers prepared with gaps; 2 in progress; 218 queued. Next: rank 9, Stanley Coulter Hall.** See the [research index and per-building dossiers](research/second_pass/README.md). A queued row has not been researched. A completed research dossier is not a completed second pass. The 9.9 independent exterior review, protest and Tobin-only master-integration rules still apply when modeling resumes.
 
 | Rank | Building / asset | Current first-pass grade | Centrality /100 | Importance /5 | Priority /100 | Second-pass owner | Research |
 | ---: | --- | ---: | ---: | ---: | ---: | --- | --- |
@@ -47,9 +47,9 @@ Location labels: **[location proxy]** means the official GIS name match is unres
 | 8 | [Potter Engineering](modular/buildings/potter_engineering.blend) | [8.0/10](audit/potter_engineering_refine/INDEPENDENT_GRADE_R3.md) | 100.0 | 3 | 90.00 | Rossen | [Prepared with gaps](research/second_pass/buildings/potter_engineering/README.md) |
 | 9 | [Stanley Coulter Hall](modular/buildings/stanley_coulter_hall.blend) | [8.1/10](audit/batch3_stanley/independent_grade_r6.md) | 97.1 | 3 | 87.46 | Rossen | [In progress](research/second_pass/buildings/stanley_coulter_hall/README.md) |
 | 10 | [Lambertus Hall](modular/buildings/lambertus_hall.blend) | [8.0/10](audit/lambertus_hall/independent_grade/grade.json) | 95.4 | 3 | 86.78 | Rossen | [Prepared with gaps](research/second_pass/buildings/lambertus_hall/README.md) |
-| 11 | [Beering Hall](modular/buildings/beering_hall.blend) | 8.0/10 | 86.7 | 4 | 85.71 | Rossen | Queued |
-| 12 | [Materials Science and Electrical Engineering](modular/buildings/materials_science_and_electrical_engineering_msee.blend) | 8.2/10 | 94.4 | 3 | 85.06 | Rossen | Queued |
-| 13 | [Purdue Memorial Union](modular/buildings/purdue_memorial_union.blend) | [8.0/10](audit/purdue_memorial_union_independent_grade/independent_grade_r4.md) | 77.9 | 5 | 84.56 | Rossen | Queued |
+| 11 | [Beering Hall](modular/buildings/beering_hall.blend) | 8.0/10 | 86.7 | 4 | 85.71 | Rossen | [Prepared with gaps](research/second_pass/buildings/beering_hall/README.md) |
+| 12 | [Materials Science and Electrical Engineering](modular/buildings/materials_science_and_electrical_engineering_msee.blend) | 8.2/10 | 94.4 | 3 | 85.06 | Rossen | [Prepared with gaps](research/second_pass/buildings/materials_science_and_electrical_engineering_msee/README.md) |
+| 13 | [Purdue Memorial Union](modular/buildings/purdue_memorial_union.blend) | [8.0/10](audit/purdue_memorial_union_independent_grade/independent_grade_r4.md) | 77.9 | 5 | 84.56 | Rossen | [In progress](research/second_pass/buildings/purdue_memorial_union/README.md) |
 | 14 | [Forney Hall of Chemical Engineering](modular/buildings/massing_forney_hall_of_chemical_engineering_frny_d94ba3a.blend) | [8.2/10](audit/forney_hall_of_chemical_engineering_frny_d94ba3a_independent_grade/result.json) | 93.7 | 3 | 84.55 | Rossen | Queued |
 | 15 | [Dudley Hall](modular/buildings/dudley_hall.blend) | [8.0/10](audit/dudley_hall/independent_grade/result.json) | 92.1 | 3 | 84.48 | Rossen | Queued |
 | 16 | [Stewart Center](modular/buildings/stewart_center.blend) | [8.0/10](audit/stewart_center_independent_grade/independent_grade_r4.md) | 84.5 | 4 | 84.12 | Rossen | Queued |
