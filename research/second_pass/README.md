@@ -6,9 +6,9 @@ User-directed research-only phase, 2026-10-28. There are 231 not-yet-second-pass
 
 The [root queue](../../README.md#second-pass-exterior-ranking) is the order authority. Modeling owners are preserved by stable asset IDs; research authorization covers all rows. [Prior work](prior_work.md) and [the previous order](previous_queue_2026-10-28.json) remain separate from unfinished research.
 
-**Focused depth-pass progress:** WALC is user-handled. The depth sequence has completed rank 41, including Union Club Hotel (now rank 31 after its GIS-centroid correction), Physics Building (rank 32), Hampton Hall of Civil Engineering (rank 33), Peirce Hall (rank 34), Wang Hall (rank 35), Matthews Hall (rank 36), Heine Pharmacy (rank 37), Agricultural Administration Building (rank 38), University Lutheran Church (rank 39), Yue-Kong Pao Hall (rank 40), Marriott Hall (rank 41), and Purdue Graduate Student Center (rank 42); rank 43, Student Health Center (PUSH), is next. Stanley Coulter Hall and Purdue Memorial Union remain separately marked in progress. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
+**Focused depth-pass progress:** WALC is user-handled. The depth sequence has completed rank 43, including Union Club Hotel (now rank 31 after its GIS-centroid correction), Physics Building (rank 32), Hampton Hall of Civil Engineering (rank 33), Peirce Hall (rank 34), Wang Hall (rank 35), Matthews Hall (rank 36), Heine Pharmacy (rank 37), Agricultural Administration Building (rank 38), University Lutheran Church (rank 39), Yue-Kong Pao Hall (rank 40), Marriott Hall (rank 41), Purdue Graduate Student Center (rank 42), and Student Health Center (PUSH) (rank 43); rank 44, Ralph & Bettye Bailey Hall (BALY), is next. Stanley Coulter Hall and Purdue Memorial Union remain separately marked in progress. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
 
-**Research status: 39 dossiers prepared with explicit gaps; 2 in progress; 190 queued. Next depth rank: 43, Student Health Center (PUSH).** Research creates one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
+**Research status: 40 dossiers prepared with explicit gaps; 2 in progress; 189 queued. Next depth rank: 44, Ralph & Bettye Bailey Hall (BALY).** Research creates one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
 
 Location now contributes **70%**, campus prominence **20%**, and existing first-pass score shortfall **10%**. WALC/Centennial Mall and Purdue Mall are the primary planning focal points, with Memorial Mall a secondary core. This deliberately brings central academic buildings ahead of distant athletics and peripheral facilities. These weights are project planning judgments, not measured pedestrian traffic or a new visual grade.
 
@@ -62,7 +62,7 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 | 40 | Yue-Kong Pao Hall | [Research](buildings/massing_yue_kong_pao_hall_a3cb766/README.md) | Prepared with gaps |
 | 41 | Marriott Hall | [Research](buildings/massing_marriot_hall_7cd3eb5/README.md) | Prepared with gaps |
 | 42 | Purdue Graduate Student Center | [Research](buildings/massing_purdue_graduate_student_center_af9c5c7/README.md) | Prepared with gaps |
-| 43 | Student Health Center (PUSH) | — | Queued |
+| 43 | Student Health Center (PUSH) | [Research](buildings/massing_student_health_center_push_1200c3b/README.md) | Prepared with gaps |
 | 44 | Ralph & Bettye Bailey Hall (BALY) | — | Queued |
 | 45 | Krannert Building | — | Queued |
 | 46 | Triangle | — | Queued |

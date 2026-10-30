@@ -1,0 +1,179 @@
+{
+  "building_id": "massing_student_health_center_push_1200c3b",
+  "review_date": "2026-10-30",
+  "coordinate_notes": "G1 query returns WGS84; source layer is Web Mercator EPSG:3857. Project-local transform is documented in README; Z datum/units unavailable.",
+  "source_ids": [
+    {
+      "id": "G1",
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D274&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+      "source_or_retrieval_date": "2026-10-26 query snapshot; record has no per-feature edit timestamp",
+      "local_file": "sources/purdue_gis_fid274_raw.json",
+      "sha256": "078516536eaa91a126125d4a996bf6d02317b0e75765768f727ca02180b89fb0",
+      "format": "JSON",
+      "dimensions": null,
+      "limitations": "Named FID 274 outline and attributes; WGS84 response from native Web Mercator layer. Field units/vertical meanings undocumented."
+    },
+    {
+      "id": "G2",
+      "provider": "Purdue University BuildingShapesZip4 ArcGIS FeatureServer",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "source_or_retrieval_date": "Layer metadata retrieved 2026-10-26",
+      "local_file": "sources/purdue_gis_layer_metadata.json",
+      "sha256": "18ea8030df9880d2311676949f10b034ea2c5b27b28cbe9c729661c8f5aff8e5",
+      "format": "JSON",
+      "dimensions": null,
+      "limitations": "Identifies source CRS/schema; does not define vertical field units or datum."
+    },
+    {
+      "id": "P1",
+      "provider": "Purdue University / John Underwood, Purdue Today",
+      "url": "https://www.purdue.edu/newsroom/archive/purduetoday/releases/2020/Q3/push-offering-weekend-hours-during-fall-semester.html (image https://www.purdue.edu/uns/images/2020/pt-purdue-student-health-center.jpg)",
+      "source_or_retrieval_date": "Article 2020-08-19; image capture date not supplied",
+      "local_file": "sources/purdue_push_exterior_2020.jpg",
+      "sha256": "b2d9c440f5e6556b0502a91226c602f9f7786d1e983cb251d4bcdfb6c3e28db0",
+      "format": "JPEG",
+      "dimensions": [
+        2400,
+        1600
+      ],
+      "limitations": "2400x1600 JPEG; direct oblique only; tree and perspective obscure wall portions."
+    },
+    {
+      "id": "P2",
+      "provider": "Purdue University Student Health Services",
+      "url": "https://www.purdue.edu/push/about/general-info/index.php",
+      "source_or_retrieval_date": "Retrieved 2026-10-26; page publication date not listed",
+      "local_file": "sources/purdue_push_contact_page.html",
+      "sha256": "f203a960b193a709c115175a45924df0c6b3ceb7fccf34938edcf4f373f20511",
+      "format": "HTML",
+      "dimensions": null,
+      "limitations": "Current identity/address locator, not architectural evidence."
+    },
+    {
+      "id": "P3",
+      "provider": "Purdue University Student Health Services, Radiology Services",
+      "url": "https://www.purdue.edu/push/services/purdue-community/radiology.php",
+      "source_or_retrieval_date": "Retrieved 2026-10-30; page publication date not listed",
+      "local_file": "sources/purdue_push_radiology_page_2026-10-30.html",
+      "sha256": "2ba818f726d81398d9c7b52965ecc36579abba9987e960cd4b5a33568d9ab31f",
+      "format": "HTML",
+      "dimensions": null,
+      "limitations": "Service page text locates parking at rear off University Drive and Extended Care entrance via covered ramp; no elevation or map position."
+    },
+    {
+      "id": "P4",
+      "provider": "Purdue University Campus Map",
+      "url": "https://www.purdue.edu/campus-map/graphics/campusmap.pdf",
+      "source_or_retrieval_date": "July 2025 map modification date shown",
+      "local_file": "sources/purdue_west_lafayette_campus_map_2025.pdf",
+      "sha256": "4a9f67800aead2002385f39263224bd2117e99c36f5a11b67ae3608b21d55e9a",
+      "format": "PDF",
+      "dimensions": null,
+      "limitations": "PUSH name/grid locator only; not a surveyed footprint source."
+    },
+    {
+      "id": "H1",
+      "provider": "Purdue University Archives and Special Collections, Purdue University Historical Timeline",
+      "url": "https://collections.lib.purdue.edu/timelines/puhistorical",
+      "source_or_retrieval_date": "Retrieved 2026-10-30; page includes 1961 completion and first-surgery event",
+      "local_file": "sources/purdue_historical_timeline_2026-10-30.html",
+      "sha256": "6655c16e67e8a06b90fb4955f3aff53718fa331ae164575165d1f347a8afa890",
+      "format": "HTML",
+      "dimensions": null,
+      "limitations": "Historical chronology only; no elevations, author or building-change record."
+    },
+    {
+      "id": "A1",
+      "provider": "Indiana Geographic Information Office, Indiana 2023 Imagery ImageServer",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
+      "source_or_retrieval_date": "Spring 2023 imagery per service metadata; retrieved 2026-10-26",
+      "local_file": "sources/indiana_2023_push_orthophoto.jpg",
+      "sha256": "3138bf44ca22d3fedd53c97014ebaff0803d741c102b095f03d372dd3e3d97bf",
+      "format": "JPEG",
+      "dimensions": [
+        1800,
+        1600
+      ],
+      "limitations": "1800x1600 JPEG orthophoto; plan roof-zone reading only, low detail; no heights/pitch."
+    },
+    {
+      "id": "A2",
+      "provider": "Indiana Geographic Information Office, Indiana 2023 Imagery ImageServer metadata",
+      "url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2023_Imagery/ImageServer",
+      "source_or_retrieval_date": "Retrieved 2026-10-26",
+      "local_file": "sources/indiana_2023_imagery_layer_metadata.json",
+      "sha256": "8207634f06e1165874cca9d5e43f1c23f4a0bfb8372204acff77ee9ff1ba1a92",
+      "format": "JSON",
+      "dimensions": null,
+      "limitations": "Service/capture metadata; source EPSG:3857; imagery described as spring 2023."
+    }
+  ],
+  "retained_files": [
+    {
+      "path": "sources/indiana_2023_imagery_layer_metadata.json",
+      "bytes": 7861,
+      "sha256": "8207634f06e1165874cca9d5e43f1c23f4a0bfb8372204acff77ee9ff1ba1a92",
+      "format": "JSON"
+    },
+    {
+      "path": "sources/indiana_2023_push_orthophoto.jpg",
+      "bytes": 202169,
+      "sha256": "3138bf44ca22d3fedd53c97014ebaff0803d741c102b095f03d372dd3e3d97bf",
+      "format": "JPEG",
+      "width": 1800,
+      "height": 1600
+    },
+    {
+      "path": "sources/purdue_gis_fid274_raw.json",
+      "bytes": 15101,
+      "sha256": "078516536eaa91a126125d4a996bf6d02317b0e75765768f727ca02180b89fb0",
+      "format": "JSON"
+    },
+    {
+      "path": "sources/purdue_gis_layer_metadata.json",
+      "bytes": 31304,
+      "sha256": "18ea8030df9880d2311676949f10b034ea2c5b27b28cbe9c729661c8f5aff8e5",
+      "format": "JSON"
+    },
+    {
+      "path": "sources/purdue_historical_timeline_2026-10-30.html",
+      "bytes": 466440,
+      "sha256": "6655c16e67e8a06b90fb4955f3aff53718fa331ae164575165d1f347a8afa890",
+      "format": "HTML"
+    },
+    {
+      "path": "sources/purdue_push_contact_page.html",
+      "bytes": 86114,
+      "sha256": "f203a960b193a709c115175a45924df0c6b3ceb7fccf34938edcf4f373f20511",
+      "format": "HTML"
+    },
+    {
+      "path": "sources/purdue_push_exterior_2020.jpg",
+      "bytes": 957866,
+      "sha256": "b2d9c440f5e6556b0502a91226c602f9f7786d1e983cb251d4bcdfb6c3e28db0",
+      "format": "JPEG",
+      "width": 2400,
+      "height": 1600
+    },
+    {
+      "path": "sources/purdue_push_news_page.html",
+      "bytes": 21896,
+      "sha256": "9bea6a4c94d7258981612cb5424a2af9e294ff84d75f63bea80b5b4f3f7d58af",
+      "format": "HTML"
+    },
+    {
+      "path": "sources/purdue_push_radiology_page_2026-10-30.html",
+      "bytes": 80198,
+      "sha256": "2ba818f726d81398d9c7b52965ecc36579abba9987e960cd4b5a33568d9ab31f",
+      "format": "HTML"
+    },
+    {
+      "path": "sources/purdue_west_lafayette_campus_map_2025.pdf",
+      "bytes": 929087,
+      "sha256": "4a9f67800aead2002385f39263224bd2117e99c36f5a11b67ae3608b21d55e9a",
+      "format": "PDF"
+    }
+  ],
+  "note": "purdue_push_news_page.html is the article page snapshot. The source files are retained unaltered; image readings are documented in README."
+}
