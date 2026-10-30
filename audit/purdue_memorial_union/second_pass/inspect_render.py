@@ -25,7 +25,7 @@ sun_data=bpy.data.lights.new('PMU_Review_Sun','SUN');sun_data.energy=2;sun_data.
 sun=bpy.data.objects.new('PMU_Review_Sun',sun_data);scene.collection.objects.link(sun);sun.rotation_euler=(math.radians(30),math.radians(-25),math.radians(-25))
 scene.view_settings.view_transform='AgX'
 camera_data=bpy.data.cameras.new('PMU_Review_Camera');camera=bpy.data.objects.new('PMU_Review_Camera',camera_data);scene.collection.objects.link(camera);scene.camera=camera;camera_data.type='ORTHO'
-views={'south':((0,-230,19),(0,0,16),140),'north':((0,230,24),(0,0,15),140),'east':((230,0,24),(0,0,15),145),'west':((-230,0,24),(0,0,15),145),'southwest':((-155,-200,100),(0,0,12),165),'southeast':((160,-200,100),(0,0,12),165),'roof':((0,0,230),(0,0,0),145),'entry':((10.25,-150,16),(10.25,-44,15),34)}
+views={'south':((10,-230,11),(10,0,10),115),'north':((12,230,14),(12,5,10),115),'east':((230,10,14),(0,10,10),130),'west':((-230,10,14),(0,10,10),130),'southwest':((-155,-200,100),(0,0,10),155),'southeast':((160,-200,100),(0,0,10),155),'roof':((10,5,230),(10,5,0),175),'entry':((14.1,-150,10),(14.1,-42,10),30)}
 settings={}
 for name in a.views.split(','):
     pos,target,scale=views[name];camera.location=pos;camera.rotation_euler=(Vector(target)-camera.location).to_track_quat('-Z','Y').to_euler();camera_data.ortho_scale=scale
