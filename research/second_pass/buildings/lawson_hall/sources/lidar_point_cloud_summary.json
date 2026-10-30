@@ -1,0 +1,35 @@
+{
+  "provider": "Indiana Statewide 3DEP LiDAR",
+  "tile": "in2018_29951885_12",
+  "acquisition_date": "2018-04-20",
+  "retrieved_utc": "2026-10-30T15:50:34.856840+00:00",
+  "source_url": "https://giselevationingov.s3.amazonaws.com/copc/statewide/2018/SPW/ql2/in2018_29951885_12.copc.laz",
+  "source_metadata": "in2018_29951885_12.copc.metadata.json",
+  "full_tile_bytes": 62222305,
+  "full_tile_sha256": "406d98a16221f3493577fd9419b2d8219fc2e899c556a35759ba297b9c65a4a4",
+  "crs_wkt": "COMPOUNDCRS[\"NAD83(HARN) / Indiana West (ftUS) + NAVD88 height - Geoid12B (ftUS)\",BOUNDCRS[SOURCECRS[PROJCRS[\"NAD83(HARN) / Indiana West (ftUS)\",BASEGEOGCRS[\"NAD83(HARN)\",DATUM[\"NAD83 (High Accuracy Reference Network)\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4152]],CONVERSION[\"unnamed\",METHOD[\"Transverse Mercator\",ID[\"EPSG\",9807]],PARAMETER[\"Latitude of natural origin\",37.5,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8801]],PARAMETER[\"Longitude of natural origin\",-87.0833333333333,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"Scale factor at natural origin\",0.999966667,SCALEUNIT[\"unity\",1],ID[\"EPSG\",8805]],PARAMETER[\"False easting\",2952750,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",820208.333,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"x\",east,ORDER[1],LENGTHUNIT[\"US survey foot\",0.304800609601219]],AXIS[\"y\",north,ORDER[2],LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",2968]]],TARGETCRS[GEOGCRS[\"WGS 84\",DATUM[\"World Geodetic System 1984\",ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"latitude\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"longitude\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4326]]],ABRIDGEDTRANSFORMATION[\"Transformation from NAD83(HARN) to WGS84\",METHOD[\"Position Vector transformation (geog2D domain)\",ID[\"EPSG\",9606]],PARAMETER[\"X-axis translation\",0,ID[\"EPSG\",8605]],PARAMETER[\"Y-axis translation\",0,ID[\"EPSG\",8606]],PARAMETER[\"Z-axis translation\",0,ID[\"EPSG\",8607]],PARAMETER[\"X-axis rotation\",0,ID[\"EPSG\",8608]],PARAMETER[\"Y-axis rotation\",0,ID[\"EPSG\",8609]],PARAMETER[\"Z-axis rotation\",0,ID[\"EPSG\",8610]],PARAMETER[\"Scale difference\",1,ID[\"EPSG\",8611]]]],VERTCRS[\"NAVD88 height (ftUS)\",VDATUM[\"North American Vertical Datum 1988\"],CS[vertical,1],AXIS[\"gravity-related height\",up,LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",6360]]]",
+  "horizontal_unit": "US survey foot",
+  "vertical_datum": "NAVD88 height, geoid12B; US survey foot",
+  "clip_path": "../data/lidar/in2018_29951885_12.lawson_hall_clip.laz",
+  "clip_bytes": 82657,
+  "clip_sha256": "884d9ba03cd3e69059836442651654a16e41a7ce6877d7f4f60a54e4c4a9d4d0",
+  "clip_method": "COPC point query over the live FID59 footprint bounding rectangle; exact ring used for point-in-polygon stats",
+  "points_query_bbox": 12465,
+  "points_inside_feature": 10897,
+  "classification_counts": {
+    "1": 11736,
+    "2": 678,
+    "7": 51
+  },
+  "class2_ground_outside_feature_count": 305,
+  "class2_ground_outside_feature_median_ft": 621.96,
+  "class1_inside_1m_eroded_feature_count": 10256,
+  "class1_height_above_nearby_class2_ground_m_percentiles_p05_p25_p50_p75_p95": [
+    5.319532639065257,
+    14.770637541275061,
+    14.834645669291328,
+    18.434340868681744,
+    18.57759715519429
+  ],
+  "limitations": "Class 1 is unclassified and includes roof, facade, trees and other returns. Height deltas are not a surveyed roof/eave/penthouse measurement. Exact building polygon, low-density scan pattern, point occlusion and ground baseline influence the result."
+}
