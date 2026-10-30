@@ -6,9 +6,9 @@ User-directed research-only phase, 2026-10-28. There are 231 not-yet-second-pass
 
 The [root queue](../../README.md#second-pass-exterior-ranking) is the order authority. Modeling owners are preserved by stable asset IDs; research authorization covers all rows. [Prior work](prior_work.md) and [the previous order](previous_queue_2026-10-28.json) remain separate from unfinished research.
 
-**Focused depth-pass progress:** WALC is user-handled. The depth sequence reaches rank 30, Math Sciences, now in progress; rank 31, Physics Building, is next. Stanley Coulter Hall and Purdue Memorial Union remain separately marked in progress. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
+**Focused depth-pass progress:** WALC is user-handled. The depth sequence is complete through rank 30, Math Sciences; rank 31, Physics Building, is next. Stanley Coulter Hall and Purdue Memorial Union remain separately marked in progress. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
 
-**Research status: 26 dossiers prepared with explicit gaps; 3 in progress; 202 queued. Next depth rank: 31, Physics Building.** Research creates one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
+**Research status: 27 dossiers prepared with explicit gaps; 2 in progress; 202 queued. Next depth rank: 31, Physics Building.** Research creates one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
 
 Location now contributes **70%**, campus prominence **20%**, and existing first-pass score shortfall **10%**. WALC/Centennial Mall and Purdue Mall are the primary planning focal points, with Memorial Mall a secondary core. This deliberately brings central academic buildings ahead of distant athletics and peripheral facilities. These weights are project planning judgments, not measured pedestrian traffic or a new visual grade.
 
@@ -48,8 +48,8 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 | 26 | Lawson Hall | [Research](buildings/lawson_hall/README.md) | Prepared with gaps |
 | 27 | Grissom Hall | [Research](buildings/massing_grissom_hall_01fd0e0/README.md) | Prepared with gaps |
 | 28 | Hicks Library | [Research](buildings/hicks_library/README.md) | Prepared with gaps |
-| 29 | Helen B. Schleman Hall | [Research](buildings/massing_schleman_hall_schm_ad4b05b/README.md/README.md) | Prepared with gaps |
-| 30 | Math Sciences | [Research](buildings/math_sciences/README.md/README.md) | In progress |
+| 29 | Helen B. Schleman Hall | [Research](buildings/massing_schleman_hall_schm_ad4b05b/README.md) | Prepared with gaps |
+| 30 | Math Sciences | [Research](buildings/math_sciences/README.md) | Prepared with gaps |
 | 31 | Physics Building | — | Queued |
 | 32 | Union Club Hotel | — | Queued |
 | 33 | Hampton Hall of Civil Engineering (HAMP) | — | Queued |
