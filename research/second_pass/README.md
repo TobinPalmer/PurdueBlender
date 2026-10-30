@@ -6,7 +6,7 @@ User-directed research-only phase, 2026-10-28. There are 231 not-yet-second-pass
 
 The [root queue](../../README.md#second-pass-exterior-ranking) is the order authority. Modeling owners are preserved by stable asset IDs; research authorization covers all rows. [Prior work](prior_work.md) and [the previous order](previous_queue_2026-10-28.json) remain separate from unfinished research.
 
-**Focused depth-pass progress:** WALC is user-handled. Ranked passes 2–14 are saved with specific remaining gaps; next is rank 15, Dudley Hall. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
+**Focused depth-pass progress:** WALC is user-handled. Ranked passes 2–14 are saved with specific remaining gaps; rank 15, Dudley Hall, is in progress. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
 
 **Research status: 13 dossiers prepared with explicit gaps; 2 in progress; 216 queued. Stanley Coulter Hall remains in progress. Next is rank 15, Dudley Hall.** Research creates one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
 
