@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en-US" data-semplice="4.4.11">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<title>Purdue University &#8211; Workshop Architects</title>
+<meta name='robots' content='max-image-preview:large' />
+		<!-- This site uses the Google Analytics by ExactMetrics plugin v7.14.2 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=UA-152914387-1"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var em_version = '7.14.2';
+				var em_track_user = true;
+				var em_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-152914387-1',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.ExactMetricsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (em_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+							
+														parameters.send_to = exactmetrics_frontend.ua;
+							__gtagDataLayer(type, name, parameters);
+													} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dNDMyYj': true,
+											});
+															__gtagTracker('config', 'UA-152914387-1', {"forceSSL":"true"} );
+										window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by ExactMetrics -->
+		<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.workshoparchitects.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.8"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://www.workshoparchitects.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.8' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.workshoparchitects.com/wp-includes/css/classic-themes.min.css?ver=6.2.8' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='https://www.workshoparchitects.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.7.7' type='text/css' media='all' />
+<link rel='stylesheet' id='semplice-stylesheet-css' href='https://www.workshoparchitects.com/wp-content/themes/semplice4/style.css?ver=4.4.11' type='text/css' media='all' />
+<link rel='stylesheet' id='semplice-frontend-stylesheet-css' href='https://www.workshoparchitects.com/wp-content/themes/semplice4/assets/css/frontend.min.css?ver=4.4.11' type='text/css' media='all' />
+<link rel='stylesheet' id='mediaelement-css' href='https://www.workshoparchitects.com/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.workshoparchitects.com/wp-content/plugins/google-analytics-dashboard-for-wp/assets/js/frontend-gtag.min.js?ver=7.14.2' id='exactmetrics-frontend-script-js'></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='exactmetrics-frontend-script-js-extra'>/* <![CDATA[ */
+var exactmetrics_frontend = {"js_events_tracking":"true","download_extensions":"zip,mp3,mpeg,pdf,docx,pptx,xlsx,rar","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/www.workshoparchitects.com","hash_tracking":"false","ua":"UA-152914387-1","v4_id":""};/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.workshoparchitects.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.workshoparchitects.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='snazzymaps-js-js-extra'>
+/* <![CDATA[ */
+var SnazzyDataForSnazzyMaps = [];
+SnazzyDataForSnazzyMaps={"id":220961,"name":"Nobbas Clean & Simple","description":"Keep things subtle and clean with hints of colors on the parks and water. ","url":"https:\/\/snazzymaps.com\/style\/220961\/nobbas-clean-and-simple","imageUrl":"https:\/\/snazzy-maps-cdn.azureedge.net\/assets\/220961-nobbas-clean-and-simple.png?v=20180823083857","json":"[{\"featureType\":\"administrative\",\"elementType\":\"labels.text.fill\",\"stylers\":[{\"color\":\"#444444\"}]},{\"featureType\":\"landscape\",\"elementType\":\"all\",\"stylers\":[{\"color\":\"#f2f2f2\"}]},{\"featureType\":\"landscape.natural\",\"elementType\":\"labels.text\",\"stylers\":[{\"color\":\"#000000\"}]},{\"featureType\":\"landscape.natural\",\"elementType\":\"labels.text.fill\",\"stylers\":[{\"color\":\"#656565\"}]},{\"featureType\":\"landscape.natural\",\"elementType\":\"labels.text.stroke\",\"stylers\":[{\"color\":\"#ffffff\"}]},{\"featureType\":\"poi\",\"elementType\":\"all\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"poi.park\",\"elementType\":\"geometry.fill\",\"stylers\":[{\"visibility\":\"on\"},{\"color\":\"#c2ebaf\"}]},{\"featureType\":\"poi.park\",\"elementType\":\"labels.text\",\"stylers\":[{\"visibility\":\"on\"}]},{\"featureType\":\"road\",\"elementType\":\"all\",\"stylers\":[{\"saturation\":-100},{\"lightness\":45}]},{\"featureType\":\"road\",\"elementType\":\"geometry.fill\",\"stylers\":[{\"visibility\":\"on\"},{\"color\":\"#ffffff\"}]},{\"featureType\":\"road\",\"elementType\":\"geometry.stroke\",\"stylers\":[{\"visibility\":\"on\"},{\"color\":\"#e1e1e1\"}]},{\"featureType\":\"road.highway\",\"elementType\":\"geometry.fill\",\"stylers\":[{\"visibility\":\"on\"},{\"color\":\"#ffffff\"}]},{\"featureType\":\"road.highway\",\"elementType\":\"geometry.stroke\",\"stylers\":[{\"visibility\":\"on\"},{\"color\":\"#e2e2e2\"}]},{\"featureType\":\"road.arterial\",\"elementType\":\"geometry.fill\",\"stylers\":[{\"visibility\":\"on\"},{\"color\":\"#ffffff\"}]},{\"featureType\":\"road.arterial\",\"elementType\":\"geometry.stroke\",\"stylers\":[{\"visibility\":\"on\"},{\"color\":\"#e1e1e1\"}]},{\"featureType\":\"road.arterial\",\"elementType\":\"labels.icon\",\"stylers\":[{\"visibility\":\"off\"},{\"saturation\":\"0\"}]},{\"featureType\":\"road.local\",\"elementType\":\"geometry.stroke\",\"stylers\":[{\"visibility\":\"on\"},{\"color\":\"#e1e1e1\"}]},{\"featureType\":\"road.local\",\"elementType\":\"labels.icon\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"transit\",\"elementType\":\"all\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"water\",\"elementType\":\"all\",\"stylers\":[{\"color\":\"#46bcec\"},{\"visibility\":\"on\"}]},{\"featureType\":\"water\",\"elementType\":\"geometry.fill\",\"stylers\":[{\"visibility\":\"on\"},{\"saturation\":\"0\"},{\"color\":\"#aadaff\"}]}]","views":3885,"favorites":24,"createdBy":{"name":"Nobbas","url":null},"createdOn":"2018-07-03T19:33:48.783","tags":["light","simple"],"colors":["blue","gray","green"]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.workshoparchitects.com/wp-content/plugins/snazzy-maps/snazzymaps.js?ver=1.4.0' id='snazzymaps-js-js'></script>
+<link rel="https://api.w.org/" href="https://www.workshoparchitects.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.workshoparchitects.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.workshoparchitects.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.2.8" />
+<link rel="canonical" href="https://www.workshoparchitects.com/project/purdue-2" />
+<link rel='shortlink' href='https://www.workshoparchitects.com/?p=1330' />
+<link rel="alternate" type="application/json+oembed" href="https://www.workshoparchitects.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.workshoparchitects.com%2Fproject%2Fpurdue-2" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.workshoparchitects.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.workshoparchitects.com%2Fproject%2Fpurdue-2&#038;format=xml" />
+<link rel="stylesheet" href="https://use.typekit.net/tfy7qgb.css">
+
+<style type="text/css" id="semplice-webfonts-css">.font_tcd9ahbdb, [data-font="font_tcd9ahbdb"], [data-font="font_tcd9ahbdb"] li a {font-family: "belizio", " serif;", serif;font-weight: 400;font-style: italic;}.font_jv9gtztqd, [data-font="font_jv9gtztqd"], [data-font="font_jv9gtztqd"] li a {font-family: "belizio", " serif;", serif;font-weight: 400;font-style: normal;}.font_k6j8cx4yu, [data-font="font_k6j8cx4yu"], [data-font="font_k6j8cx4yu"] li a {font-family: "acumin-pro", "", sans-serif;font-weight: 600;font-style: normal;}.font_t9larsx2u, [data-font="font_t9larsx2u"], [data-font="font_t9larsx2u"] li a {font-family: "acumin-pro", " sans-serif; ", sans-serif;font-weight: 400;font-style: normal;}</style>
+		<style type="text/css" id="semplice-custom-css">
+			.container {
+			max-width: 1230px;
+		}
+			@media screen and (min-width: 992px) and (max-width: 1169.98px) { #content-holder h1 { font-size: 2.15rem; line-height: 2.76rem; }#content-holder h2 { font-size: 1.84rem; line-height: 2.45rem; }#content-holder h3 { font-size: 1.49rem; line-height: 1.92rem; }#content-holder h4 { font-size: 1.28rem; line-height: 1.92rem; }#content-holder h5 { font-size: 1.11rem; line-height: 1.78rem; }#content-holder h6 { font-size: 1rem; line-height: 1.67rem; }}@media screen and (min-width: 768px) and (max-width: 991.98px) { #content-holder h1 { font-size: 2.01rem; line-height: 2.58rem; }#content-holder h2 { font-size: 1.76rem; line-height: 2.35rem; }#content-holder h3 { font-size: 1.43rem; line-height: 1.84rem; }#content-holder h4 { font-size: 1.23rem; line-height: 1.84rem; }#content-holder h5 { font-size: 1.11rem; line-height: 1.78rem; }#content-holder h6 { font-size: 1rem; line-height: 1.67rem; }}@media screen and (min-width: 544px) and (max-width: 767.98px) { #content-holder h1 { font-size: 1.91rem; line-height: 2.46rem; }#content-holder h2 { font-size: 1.68rem; line-height: 2.24rem; }#content-holder h3 { font-size: 1.4rem; line-height: 1.8rem; }#content-holder h4 { font-size: 1.2rem; line-height: 1.8rem; }#content-holder h5 { font-size: 1.11rem; line-height: 1.78rem; }#content-holder h6 { font-size: 1rem; line-height: 1.67rem; }}@media screen and (max-width: 543.98px) { #content-holder h1 { font-size: 1.82rem; line-height: 2.34rem; }#content-holder h2 { font-size: 1.6rem; line-height: 2.13rem; }#content-holder h3 { font-size: 1.37rem; line-height: 1.76rem; }#content-holder h4 { font-size: 1.17rem; line-height: 1.76rem; }#content-holder h5 { font-size: 1.11rem; line-height: 1.78rem; }#content-holder h6 { font-size: 1rem; line-height: 1.67rem; }}
+			
+			
+		.project-panel {
+			background: #f5f5f5;
+			padding: 2.5rem 0rem;
+		}
+		.pp-thumbs {
+			margin-bottom: -1.666666666666667rem;
+		}
+		#content-holder .panel-label, .projectpanel-preview .panel-label {
+			color: #000000;
+			font-size: 1.777777777777778rem;
+			text-transform: none;
+			padding-left: 0rem;
+			padding-bottom: 1.666666666666667rem;
+			text-align: left;
+			line-height: 1;
+		}
+		.project-panel .pp-title {
+			padding: 0.5555555555555556rem 0rem 1.666666666666667rem 0rem;
+		}
+		.project-panel .pp-title a {
+			color: #000000; 
+			font-size: 0.7222222222222222rem; 
+			text-transform: none;
+		} 
+		.project-panel .pp-title span {
+			color: #999999;
+			font-size: 0.7222222222222222rem;
+			text-transform: none;
+		}
+	
+			a { color: #777777; }
+		</style>
+	
+		<style type="text/css" id="1330-post-css">
+			#content-1330 #section_36b6844a1 {padding-bottom: 1.1111111111111112rem;margin-left: 0rem;}#content-1330 #column_64b746ff1 {}#content-1330 #content_c9a79bf27 {}#content-1330 #content_c9a79bf27 .is-content {}#content-1330 #section_3e9ce6615 {padding-bottom: 2.7777777777777777rem;margin-bottom: 0.5555555555555556rem;padding-left: 0.5555555555555556rem;}#content-1330 #column_beeee2c2f {padding-bottom: 0rem;}#content-1330 #content_28d5ee81f {padding-top: 1.1111111111111112rem;padding-bottom: 1.1111111111111112rem;}#content-1330 #content_28d5ee81f .is-content {}#content-1330 #content_05f6435da .spacer { background-color: #000000; }#content-1330 #content_05f6435da .spacer { height: 0.16666666666666666rem; }#content-1330 #column_79ba485a1 {padding-top: 1.1111111111111112rem;padding-bottom: 1.1111111111111112rem;}#content-1330 #content_0d528caa1 {padding-top: 0rem;margin-top: 0rem;padding-bottom: 1.1111111111111112rem;}#content-1330 #content_0d528caa1 .is-content {}#content-1330 #content_9add3a3fb .spacer { background-color: #000000; }#content-1330 #content_9add3a3fb .spacer { height: 0.05555555555555555rem; }#content-1330 #content_825c3c240 {padding-top: 0rem;margin-top: 0rem;padding-bottom: 1.3888888888888888rem;}#content-1330 #content_825c3c240 .is-content {}#content-1330 #column_1cc18db9f {padding-top: 0rem;padding-bottom: 0rem;}#content-1330 #content_163d1c209 {margin-top: 0rem;margin-bottom: 0rem;}#content-1330 #content_163d1c209 .is-content {}#content-1330 #content_72otijsjq .spacer { background-color: #020202; }#content-1330 #content_72otijsjq .spacer { height: 0.05555555555555555rem; }#content-1330 #content_72otijsjq {padding-bottom: 0.5555555555555556rem;}#content-1330 #content_72otijsjq .is-content {}#content-1330 #content_kziyycgop {padding-bottom: 1.6666666666666667rem;}#content-1330 #content_kziyycgop .is-content {}#content-1330 #content_017b7fe2d .spacer { background-color: #000000; }#content-1330 #content_017b7fe2d .spacer { height: 0.05555555555555555rem; }#content-1330 #content_017b7fe2d {padding-bottom: 0.5555555555555556rem;}#content-1330 #content_017b7fe2d .is-content {}#content-1330 #content_75cddb3f1 {padding-bottom: 0.05555555555555555rem;}#content-1330 #content_75cddb3f1 .is-content {}#content-1330 #content_97dddcaf8 {padding-top: 1.1111111111111112rem;padding-bottom: 2.7777777777777777rem;}#content-1330 #content_97dddcaf8 .is-content {}#content-1330 #content_vwhvij9r3 .spacer { background-color: #000000; }#content-1330 #content_vwhvij9r3 .spacer { height: 0.05555555555555555rem; }#content-1330 #content_vwhvij9r3 {padding-bottom: 0.5555555555555556rem;}#content-1330 #content_vwhvij9r3 .is-content {}#content-1330 #content_2l45e5m6a .spacer { background-color: #000000; }#content-1330 #content_2l45e5m6a .spacer { height: 0.05555555555555555rem; }#content-1330 #content_2l45e5m6a {padding-top: 0.5555555555555556rem;}#content-1330 #content_2l45e5m6a .is-content {}#content-1330 #content_a54606cb1 {padding-top: 0rem;}#content-1330 #content_a54606cb1 .is-content {}#content-1330 #column_1o77uul3c {padding-top: 1.6666666666666667rem;}#content-1330 #content_03t79n6di .spacer { background-color: #020202; }#content-1330 #content_03t79n6di .spacer { height: 0.05555555555555555rem; }#content-1330 #content_03t79n6di {padding-bottom: 0.5555555555555556rem;}#content-1330 #content_03t79n6di .is-content {}#content-1330 #content_9e4ygjyol .spacer { background-color: #000000; }#content-1330 #content_9e4ygjyol .spacer { height: 0.05555555555555555rem; }#content-1330 #content_9e4ygjyol {padding-top: 0.8333333333333334rem;}#content-1330 #content_9e4ygjyol .is-content {}#content-1330 #content_krexog3tc {padding-top: 1.6666666666666667rem;}#content-1330 #content_krexog3tc .is-content {}#content-1330 #content_3c8740081 {padding-top: 1.6666666666666667rem;}#content-1330 #content_3c8740081 .is-content {}#content-1330 #content_xffo49wj0 .spacer { background-color: #000000; }#content-1330 #content_xffo49wj0 .spacer { height: 0.05555555555555555rem; }#content-1330 #content_xffo49wj0 {padding-top: 1.6666666666666667rem;padding-bottom: 0.5555555555555556rem;}#content-1330 #content_xffo49wj0 .is-content {}#content-1330 #content_88dno3u1i .spacer { background-color: #020202; }#content-1330 #content_88dno3u1i .spacer { height: 0.05555555555555555rem; }#content-1330 #content_88dno3u1i {padding-top: 0.5555555555555556rem;}#content-1330 #content_88dno3u1i .is-content {}#content-1330 #content_m2e6b2rsd {padding-top: 0.9444444444444444rem;padding-bottom: 1.6666666666666667rem;}#content-1330 #content_m2e6b2rsd .is-content {}#content-1330 #content_8kn620gcc .spacer { background-color: #000000; }#content-1330 #content_8kn620gcc .spacer { height: 0.05555555555555555rem; }#content-1330 #content_8kn620gcc {padding-bottom: 0.5555555555555556rem;}#content-1330 #content_8kn620gcc .is-content {}#content-1330 #content_kldae1jkh .spacer { background-color: #020202; }#content-1330 #content_kldae1jkh .spacer { height: 0.05555555555555555rem; }#content-1330 #content_kldae1jkh {padding-top: 0.5555555555555556rem;}#content-1330 #content_kldae1jkh .is-content {}#content-1330 #content_6573347f6 {padding-top: 0rem;padding-bottom: 1.6666666666666667rem;padding-left: 0rem;}#content-1330 #content_6573347f6 .is-content {}#content-1330 #section_00f36160f {padding-bottom: 1.3888888888888888rem;}#content-1330 #content_uwwpqhlty .spacer { background-color: #000000; }#content-1330 #content_uwwpqhlty .spacer { height: 0.05555555555555555rem; }#content-1330 #content_uwwpqhlty {padding-top: 1.1111111111111112rem;padding-bottom: 0.5555555555555556rem;}#content-1330 #content_uwwpqhlty .is-content {}#content-1330 #content_ix2n9sh9m .spacer { background-color: #020202; }#content-1330 #content_ix2n9sh9m .spacer { height: 0.05555555555555555rem; }#content-1330 #content_ix2n9sh9m {padding-top: 0.5555555555555556rem;}#content-1330 #content_ix2n9sh9m .is-content {}#content-1330 #column_30tlagjnh {padding-bottom: 1.3888888888888888rem;}#content-1330 #content_rowkcaj93 {padding-top: 1.1111111111111112rem;}#content-1330 #content_rowkcaj93 .is-content {}#content-1330 #content_06z8ule8b .spacer { background-color: #020202; }#content-1330 #content_06z8ule8b .spacer { height: 0.05555555555555555rem; }#content-1330 #content_06z8ule8b {padding-bottom: 0.5555555555555556rem;}#content-1330 #content_06z8ule8b .is-content {}#content-1330 #column_zb83g6vv3 {padding-top: 0rem;}#content-1330 #content_2pxd7xglt {padding-bottom: 1.6666666666666667rem;}#content-1330 #content_2pxd7xglt .is-content {}#content-1330 #content_z2a34j4ij .spacer { background-color: #000000; }#content-1330 #content_z2a34j4ij .spacer { height: 0.05555555555555555rem; }#content-1330 #content_z2a34j4ij {padding-top: 1.1111111111111112rem;padding-bottom: 0.5555555555555556rem;}#content-1330 #content_z2a34j4ij .is-content {}#content-1330 #content_3z3suuqwd .spacer { background-color: #020202; }#content-1330 #content_3z3suuqwd .spacer { height: 0.05555555555555555rem; }#content-1330 #content_3z3suuqwd {padding-top: 0.5555555555555556rem;}#content-1330 #content_3z3suuqwd .is-content {}#content-1330 #content_y5bajwxnm {padding-top: 1.1111111111111112rem;padding-bottom: 1.6666666666666667rem;}#content-1330 #content_y5bajwxnm .is-content {}#content-1330 #content_x529ty0tq {padding-top: 1.1111111111111112rem;}#content-1330 #content_x529ty0tq .is-content {}#content-1330 #content_pofu58tji {padding-top: 0.7222222222222222rem;}#content-1330 #content_pofu58tji .is-content {}#content-1330 #section_011489a47 {padding-top: 4.166666666666667rem;padding-bottom: 5.555555555555555rem;}#content-1330 #column_2697a43d2 {padding-top: 1.1111111111111112rem;}#content-1330 #content_1dd1e3057 .spacer { background-color: #000000; }#content-1330 #content_1dd1e3057 .spacer { height: 0.05555555555555555rem; }#content-1330 #content_2cedc436d .spacer { background-color: #ffffff; }#content-1330 #content_2cedc436d .spacer { height: 1.3888888888888888rem; }#content-1330 #column_5e3c15e97 {padding-bottom: 0.8333333333333334rem;}#content-1330 #content_03304cc30 {padding-bottom: 0rem;}#content-1330 #content_03304cc30 .is-content {}#content-1330 #content_e61b50bad {padding-bottom: 0rem;}#content-1330 #content_e61b50bad .is-content {}#content-1330 #column_d020543d3 {padding-top: 0.5555555555555556rem;padding-bottom: 0rem;}#content-1330 #content_e029a28e0 {padding-bottom: 1.3888888888888888rem;}#content-1330 #content_e029a28e0 .is-content {}#content-1330 #column_109ad7e9b {padding-bottom: 0.6111111111111112rem;}#content-1330 #content_71677a664 {}#content-1330 #content_71677a664 .is-content {}#content-1330 #content_f5709dec4 .spacer { background-color: #000000; }#content-1330 #content_f5709dec4 .spacer { height: 0.05555555555555555rem; }#content-1330 #column_293e4a264 {padding-top: 0.5555555555555556rem;padding-bottom: 1.6666666666666667rem;}#content-1330 #column_292711d5f {padding-top: 0.5555555555555556rem;}
+			.nav_aggff31mg { background-color: rgba(255, 255, 255, 1);; }.nav_aggff31mg { height: 5.555555555555555rem; }.is-frontend #content-1330 .sections { margin-top: 5.555555555555555rem; }.nav_aggff31mg .logo img, .nav_aggff31mg .logo svg { width: 13.88888888888889rem; }.nav_aggff31mg .navbar-inner .logo { align-items: flex-start; }.nav_aggff31mg .navbar-inner .hamburger a.menu-icon span { background-color: #000000; }.nav_aggff31mg .navbar-inner .hamburger a.menu-icon { width: 24; }.nav_aggff31mg .navbar-inner .hamburger a.menu-icon span { height: 2px; }.nav_aggff31mg .navbar-inner .hamburger a.open-menu span::before { transform: translateY(-6px); }.nav_aggff31mg .navbar-inner .hamburger a.open-menu span::after { transform: translateY(6px); }.nav_aggff31mg .navbar-inner .hamburger a.open-menu:hover span::before { transform: translateY(-8px); }.nav_aggff31mg .navbar-inner .hamburger a.open-menu:hover span::after { transform: translateY(8px); }.nav_aggff31mg .navbar-inner .hamburger a.menu-icon { height: 14px; }.nav_aggff31mg .navbar-inner .hamburger a.menu-icon span { margin-top: 7px; }.nav_aggff31mg .navbar-inner nav ul li a span { font-size: 0.8333333333333334rem; }.nav_aggff31mg .navbar-inner nav ul li a { padding-left: 1.0277777777778rem; }.nav_aggff31mg .navbar-inner nav ul li a { padding-right: 1.0277777777778rem; }.nav_aggff31mg .navbar-inner nav ul li a span { letter-spacing: 0.027777777777777776rem; }.nav_aggff31mg .navbar-inner nav.standard ul { align-items: center; }.nav_aggff31mg .navbar-inner nav ul li a:hover span, .navbar-inner nav ul li.current-menu-item a span, .navbar-inner nav ul li.current_page_item a span, .nav_aggff31mg .navbar-inner nav ul li.wrap-focus a span { color: #fc5800; }.nav_aggff31mg .navbar-inner nav ul li.current-menu-item a span { color: #fc5800; }.nav_aggff31mg .navbar-inner nav ul li.current_page_item a span { color: #fc5800; }[data-post-type="project"] .navbar-inner nav ul li.portfolio-grid a span, [data-post-type="post"] .navbar-inner nav ul li.blog-overview a span { color: #fc5800; }#overlay-menu { background-color: rgba(245, 245, 245, 1); }#overlay-menu .overlay-menu-inner nav { text-align: left; }#overlay-menu .overlay-menu-inner nav ul li a span { font-size: 2rem; }#overlay-menu .overlay-menu-inner nav ul li a { padding-top: 0.27777777777778rem; }#overlay-menu .overlay-menu-inner nav ul li a { padding-bottom: 0.27777777777778rem; }#overlay-menu .overlay-menu-inner nav ul li a span { border-bottom-width: 0rem; }@media screen and (min-width: 992px) and (max-width: 1169.98px) { .nav_aggff31mg .navbar-inner .hamburger a.menu-icon { height: 14px; }.nav_aggff31mg .navbar-inner .hamburger a.menu-icon span { margin-top: 7px; }}@media screen and (min-width: 768px) and (max-width: 991.98px) { .nav_aggff31mg .navbar-inner .hamburger a.menu-icon { height: 14px; }.nav_aggff31mg .navbar-inner .hamburger a.menu-icon span { margin-top: 7px; }}@media screen and (min-width: 544px) and (max-width: 767.98px) { .nav_aggff31mg .navbar-inner .hamburger a.menu-icon { height: 14px; }.nav_aggff31mg .navbar-inner .hamburger a.menu-icon span { margin-top: 7px; }}@media screen and (max-width: 543.98px) { .nav_aggff31mg .navbar-inner .hamburger a.menu-icon { height: 14px; }.nav_aggff31mg .navbar-inner .hamburger a.menu-icon span { margin-top: 7px; }}
+		</style>
+	<style id="wpforms-css-vars-root">
+				:root {
+					--wpforms-field-border-radius: 3px;
+--wpforms-field-background-color: #ffffff;
+--wpforms-field-border-color: rgba( 0, 0, 0, 0.25 );
+--wpforms-field-text-color: rgba( 0, 0, 0, 0.7 );
+--wpforms-label-color: rgba( 0, 0, 0, 0.85 );
+--wpforms-label-sublabel-color: rgba( 0, 0, 0, 0.55 );
+--wpforms-label-error-color: #d63637;
+--wpforms-button-border-radius: 3px;
+--wpforms-button-background-color: #066aab;
+--wpforms-button-text-color: #ffffff;
+--wpforms-field-size-input-height: 43px;
+--wpforms-field-size-input-spacing: 15px;
+--wpforms-field-size-font-size: 16px;
+--wpforms-field-size-line-height: 19px;
+--wpforms-field-size-padding-h: 14px;
+--wpforms-field-size-checkbox-size: 16px;
+--wpforms-field-size-sublabel-spacing: 5px;
+--wpforms-field-size-icon-size: 1;
+--wpforms-label-size-font-size: 16px;
+--wpforms-label-size-line-height: 19px;
+--wpforms-label-size-sublabel-font-size: 14px;
+--wpforms-label-size-sublabel-line-height: 17px;
+--wpforms-button-size-font-size: 17px;
+--wpforms-button-size-height: 41px;
+--wpforms-button-size-padding-h: 15px;
+--wpforms-button-size-margin-top: 10px;
+
+				}
+			</style>		<style>html{margin-top:0px!important;}#wpadminbar{top:auto!important;bottom:0;}</style>
+		<link rel="shortcut icon" type="image/png" href="https://www.workshoparchitects.com/wp-content/uploads/2019/08/waiconsq.jpg" sizes="32x32">	</head>
+	<body class="project-template-default single single-project postid-1330 is-frontend static-mode static-transitions mejs-semplice-ui" data-post-type="project" data-post-id="1330">
+		<div id="content-holder" data-active-post="1330">
+			
+						<header class="nav_aggff31mg semplice-navbar active-navbar sticky-nav " data-cover-transparent="disabled" data-bg-overlay-visibility="visible"data-mobile-fallback="enabled">
+							<div class="container" data-nav="logo-left-menu-right">
+								<div class="navbar-inner menu-type-text" data-xl-width="12" data-navbar-type="container">
+									<div class="logo navbar-left"><a href="https://www.workshoparchitects.com" title="Workshop Architects"><img src="https://www.workshoparchitects.com/wp-content/uploads/2026/03/Logo_Web.svg" alt="logo"></a></div>
+									<nav class="standard navbar-right" data-font="font_t9larsx2u"><ul class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218"><a href="https://www.workshoparchitects.com/work"><span>Work</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-555"><a href="https://www.workshoparchitects.com/about"><span>About</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1601"><a href="https://www.workshoparchitects.com/purpose"><span>Purpose</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-603"><a href="https://www.workshoparchitects.com/team"><span>Team</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-241"><a href="https://www.workshoparchitects.com/clients"><span>Clients</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1415"><a href="https://www.workshoparchitects.com/jobs"><span>Jobs</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223"><a href="https://www.workshoparchitects.com/news"><span>News</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-217"><a href="https://www.workshoparchitects.com/contact"><span>Contact</span></a></li>
+</ul></nav>
+									<div class="hamburger navbar-right semplice-menu"><a class="open-menu menu-icon"><span></span></a></div>
+								</div>
+							</div>
+						</header>
+						
+				<div id="overlay-menu">
+					<div class="overlay-menu-inner" data-xl-width="12">
+						<nav class="overlay-nav" data-justify="left" data-align="align-middle" data-font="font_k6j8cx4yu">
+							<ul class="container"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218"><a href="https://www.workshoparchitects.com/work"><span>Work</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-555"><a href="https://www.workshoparchitects.com/about"><span>About</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1601"><a href="https://www.workshoparchitects.com/purpose"><span>Purpose</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-603"><a href="https://www.workshoparchitects.com/team"><span>Team</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-241"><a href="https://www.workshoparchitects.com/clients"><span>Clients</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1415"><a href="https://www.workshoparchitects.com/jobs"><span>Jobs</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-223"><a href="https://www.workshoparchitects.com/news"><span>News</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-217"><a href="https://www.workshoparchitects.com/contact"><span>Contact</span></a></li>
+</ul>
+						</nav>
+					</div>
+				</div>
+			
+					
+			<div id="content-1330" class="content-container active-content  hide-on-init">
+				<div class="transition-wrap">
+					<div class="sections">
+						
+					<section id="section_36b6844a1" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single" data-layout="fluid" data-gutter="no" >
+						
+						<div class="container">
+						<div id="row_472314af4" class="row"><div id="column_64b746ff1" class="column" data-xl-width="12" >
+					<div class="content-wrapper">
+						
+				<div id="content_c9a79bf27" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="center"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2022/08/WorkshopPurdue_30-scaled-e1661792201753.jpg" width="2560" height="1043" alt="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" caption="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" data-width="grid-width" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div>
+						</div>
+					</section>				
+				
+					<section id="section_3e9ce6615" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single" >
+						
+						<div class="container">
+						<div id="row_14287ed3f" class="row"><div id="column_beeee2c2f" class="column" data-xl-width="12" >
+					<div class="content-wrapper">
+						
+				<div id="content_28d5ee81f" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.777778rem; line-height: 0.777778rem;" data-mce-style="font-size: 0.777778rem; line-height: 0.777778rem;"><span class="font_tcd9ahbdb"><span data-mce-style="color: #000000;" style="color: #000000;"><em>Strategic Vision / Master Planning / Programming / Architecture / Interior Design / Environmental Graphics</em></span></span></p></div></div>
+				</div>
+			
+				<div id="content_05f6435da" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div></div><div id="row_8fb6e7b9b" class="row"><div id="column_79ba485a1" class="column" data-xl-width="12" data-valign="stretch" >
+					<div class="content-wrapper">
+						
+				<div id="content_0d528caa1" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.944444rem; line-height: 1.27778rem;" data-mce-style="font-size: 0.944444rem; line-height: 1.27778rem;"><span class="font_k6j8cx4yu" style="color: rgb(119, 119, 119);" data-mce-style="color: #777777;"><span style="color: rgb(0, 0, 0);" data-mce-style="color: #000000;">Purdue University</span><br><span style="font-weight: 400;" data-mce-style="font-weight: 400;" class="font_t9larsx2u">Purdue Memorial Union Renovation<br>West Lafayette, Indiana<br></span></span></p></div></div>
+				</div>
+			
+				<div id="content_9add3a3fb" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div></div><div id="row_94de140c7" class="row"><div id="column_c13689058" class="column" data-xl-width="6" >
+					<div class="content-wrapper">
+						
+				<div id="content_825c3c240" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 1.94444rem; line-height: 2.5rem;" data-mce-style="font-size: 1.94444rem; line-height: 2.5rem;"><span class="font_tcd9ahbdb"><font face="belizio,  serif;, serif"><i>Reviving the Social Heart <br>of Campus</i></font></span></p></div></div>
+				</div>
+			
+					</div>
+				</div><div id="column_1cc18db9f" class="column" data-xl-width="6" >
+					<div class="content-wrapper">
+						
+				<div id="content_163d1c209" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 1rem; line-height: 1.55556rem;" data-mce-style="font-size: 1rem; line-height: 1.55556rem;"><span class="font_tcd9ahbdb" style="color: rgb(119, 119, 119);" data-mce-style="color: #777777;">As part of a broader student life district plan, which addressed several buildings and spaces, the newly renovated Purdue Memorial Union (PMU) is open! </span></p><p style="font-size: 0.777778rem; line-height: 1.11111rem;" data-mce-style="font-size: 0.777778rem; line-height: 1.11111rem;"><span class="font_t9larsx2u" style="color: rgb(119, 119, 119);" data-mce-style="color: #777777;">In addition to addressing much needed building system upgrades, the project reconfigured spaces and programs to address contemporary student needs. Through careful evaluation of administration and staff offices, redesigning building support spaces, and creatively integrating dining spaces with student lounge/study environments, the amount of area available to support student engagement was more than doubled — without expanding the building’s footprint. This strategy required a close working collaboration between Workshop’s designers and the Purdue’s food service contractor (Aramark). A new exterior plaza further adds student interaction space. The recently reopened facility is receiving rave reviews for the thoughtfully integrated branding and environmental graphics. Boiler up!&nbsp;</span></p><p style="font-size: 0.666667rem; line-height: 1.11111rem;" data-mce-style="font-size: 0.666667rem; line-height: 1.11111rem;"><a data-mce-href="http://www.kevinmiyazaki.com/interiors" href="http://www.kevinmiyazaki.com/interiors" target="_blank" rel="noopener" title="Architectural Photography by Kevin Miyazaki" data-mce-selected="1"><span class="font_t9larsx2u" style="color: rgb(119, 119, 119);" data-mce-style="color: #777777;">Architectural Photography by Kevin Miyazaki</span></a></p></div></div>
+				</div>
+			
+					</div>
+				</div></div>
+						</div>
+					</section>				
+				
+					<section id="section_q09br7yt9" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single" >
+						
+						<div class="container">
+						<div id="row_m2lwoiwtd" class="row"><div id="column_epv5kgwtq" class="column" data-xl-width="6" >
+					<div class="content-wrapper">
+						
+				<div id="content_72otijsjq" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+				<div id="content_hqjqxwjd2" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.611111rem; line-height: 1.11111rem;" data-mce-style="font-size: 0.611111rem; line-height: 1.11111rem;"><span class="font_k6j8cx4yu">ARCHITECTURAL PUZZLE: A TWO-STEP PROCESS</span></p><p style="font-size: 0.777778rem; line-height: 1.11111rem;" data-mce-style="font-size: 0.777778rem; line-height: 1.11111rem;"><span class="font_t9larsx2u">The first step was finding a new home for the displaced Welcome Station / Boilermaker Center and relieving the overcrowded functions. Next door to the PMU is the Stewart Center. For years, the Stewart Center was considered the “Union Annex” with many of the spillover functions and storage needs addressed. Moving the displaced functions and creating a longer vision for the Stewart Center as the official Union Annex was the obvious solution. </span></p><p style="font-size: 0.777778rem; line-height: 1.11111rem;" data-mce-style="font-size: 0.777778rem; line-height: 1.11111rem;"><span class="font_t9larsx2u">The second step was reconfiguring the ground floor to right-size the kitchen and back of house space for more efficiency and to increase the amount of social and meeting spaces. </span></p></div></div>
+				</div>
+			
+					</div>
+				</div><div id="column_xcga3bkfk" class="column" data-xl-width="6" >
+					<div class="content-wrapper">
+						
+				<div id="content_kziyycgop" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2021/05/Before_After.jpg" width="2198" height="1579" alt="Hotel" caption="" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div>
+						</div>
+					</section>				
+				
+					<section id="section_79f3abfa2" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single" >
+						
+						<div class="container">
+						<div id="row_b09fb3223" class="row"><div id="column_40ea446b4" class="column" data-xl-width="12" >
+					<div class="content-wrapper">
+						
+				<div id="content_017b7fe2d" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div></div><div id="row_a1483e3a8" class="row"><div id="column_5c68b1b4f" class="column" data-xl-width="12" >
+					<div class="content-wrapper">
+						
+				<div id="content_75cddb3f1" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.611111rem; line-height: 1rem;" data-mce-style="font-size: 0.611111rem; line-height: 1rem;"><span class="font_k6j8cx4yu">PURDUE MEMORIAL UNION RENOVATION</span></p></div></div>
+				</div>
+			
+					</div>
+				</div></div><div id="row_0u8wbnzgf" class="row"><div id="column_e19dc3cdb" class="column" data-xl-width="12" >
+					<div class="content-wrapper">
+						
+				<div id="content_97dddcaf8" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2021/05/Purdue_PMU_Diagram-2020-scaled-e1621589332209.jpg" width="2560" height="1561" alt="Purdue_PMU_Diagram 2020" caption="" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div><div id="row_p9sbo2h3i" class="row"><div id="column_u29xamwgf" class="column" data-xl-width="2" >
+					<div class="content-wrapper">
+						
+				<div id="content_vwhvij9r3" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+				<div id="content_5lduxe5mw" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.611111rem; line-height: 1rem;" data-mce-style="font-size: 0.611111rem; line-height: 1rem;"><span class="font_k6j8cx4yu">A NEW SOCIAL DESTINATION</span></p><p style="font-size: 0.777778rem; line-height: 1rem;" data-mce-style="font-size: 0.777778rem; line-height: 1rem;"><span class="font_tcd9ahbdb">The ground floor renovation includes a new South-facing terrace with full-height glass doors allowing significantly more natural light to a once basement-like space.</span></p></div></div>
+				</div>
+			
+				<div id="content_2l45e5m6a" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div><div id="column_5f1a4aea4" class="column" data-xl-width="10" >
+					<div class="content-wrapper">
+						
+				<div id="content_a54606cb1" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2022/08/WorkshopPurdue_32-scaled.jpg" width="2560" height="1707" alt="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" caption="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div>
+						</div>
+					</section>				
+				
+					<section id="section_oe6zaa78e" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single" >
+						
+						<div class="container">
+						<div id="row_lpl1zbtnx" class="row"><div id="column_1o77uul3c" class="column" data-xl-width="2" >
+					<div class="content-wrapper">
+						
+				<div id="content_03t79n6di" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+				<div id="content_vxqgkxyrc" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.611111rem; line-height: 1rem;" data-mce-style="font-size: 0.611111rem; line-height: 1rem;"><span class="font_k6j8cx4yu">A CONSISTENT EXPERIENCE</span></p><p style="font-size: 0.777778rem; line-height: 1.11111rem;" data-mce-style="font-size: 0.777778rem; line-height: 1.11111rem;"><span class="font_tcd9ahbdb">In addition to selecting a wide variety of furnishing and fixtures to accommodate the greater social and meeting capacity, the big goal for the interiors team was restoring the original beauty of this historic building and making the brand experience from the campus to the PMU&nbsp; more consistent.</span></p></div></div>
+				</div>
+			
+				<div id="content_9e4ygjyol" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div><div id="column_5y6v9h9c1" class="column" data-xl-width="10" >
+					<div class="content-wrapper">
+						
+				<div id="content_krexog3tc" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2022/08/WorkshopPurdue_09-scaled.jpg" width="2560" height="1707" alt="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" caption="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div>
+						</div>
+					</section>				
+				
+					<section id="section_a37858362" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single" >
+						
+						<div class="container">
+						<div id="row_6aef56567" class="row"><div id="column_ed644111d" class="column" data-xl-width="12" >
+					<div class="content-wrapper">
+						
+				<div id="content_3c8740081" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2023/08/20230425_WorkshopPurdue_39-scaled.jpg" width="2560" height="1600" alt="The Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" caption="The Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div>
+						</div>
+					</section>				
+				
+					<section id="section_3vhdgq4l1" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single" >
+						
+						<div class="container">
+						<div id="row_hwhuvs76h" class="row"><div id="column_a33a4no1v" class="column" data-xl-width="2" >
+					<div class="content-wrapper">
+						
+				<div id="content_xffo49wj0" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+				<div id="content_vl25xj11s" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.611111rem; line-height: 1rem;" data-mce-style="font-size: 0.611111rem; line-height: 1rem;"><span class="font_k6j8cx4yu">HIGHLIGHTING EVOLUTION</span></p><p style="font-size: 0.777778rem; line-height: 1rem;" data-mce-style="font-size: 0.777778rem; line-height: 1rem;"><span class="font_tcd9ahbdb">Black metal portals along the original 1922 foundation wall give context to the evolution of the building. The Purdue fight song and hymn lyrics are laser-etched into the jambs of the two main portals.</span></p></div></div>
+				</div>
+			
+				<div id="content_88dno3u1i" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div><div id="column_haibd1le8" class="column" data-xl-width="10" >
+					<div class="content-wrapper">
+						
+				<div id="content_m2e6b2rsd" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2022/08/WorkshopPurdue_14-scaled.jpg" width="1920" height="2560" alt="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" caption="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div>
+						</div>
+					</section>				
+				
+					<section id="section_7qp16m577" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single" >
+						
+						<div class="container">
+						<div id="row_bgtwo2qx5" class="row"><div id="column_a7kh3c0y2" class="column" data-xl-width="2" >
+					<div class="content-wrapper">
+						
+				<div id="content_8kn620gcc" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+				<div id="content_lu9j60msz" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.611111rem; line-height: 1rem;" data-mce-style="font-size: 0.611111rem; line-height: 1rem;"><span class="font_k6j8cx4yu">MORE OPPORTUNITY TO SHINE</span></p><p style="font-size: 0.777778rem; line-height: 1rem;" data-mce-style="font-size: 0.777778rem; line-height: 1rem;"><span class="font_tcd9ahbdb">The Hail Purdue stage is 1 of 3 programmable spaces. The back wall is inlaid aged brass into wood. The art deco style of the typography harkens back to when the building was constructed.</span></p></div></div>
+				</div>
+			
+				<div id="content_kldae1jkh" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div><div id="column_905082254" class="column" data-xl-width="10" >
+					<div class="content-wrapper">
+						
+				<div id="content_6573347f6" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2022/08/WorkshopPurdue_12-scaled.jpg" width="2560" height="1707" alt="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" caption="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div>
+						</div>
+					</section>				
+				
+					<section id="section_00f36160f" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single" >
+						
+						<div class="container">
+						<div id="row_61d585b80" class="row"><div id="column_1bhty4cyl" class="column" data-xl-width="2" >
+					<div class="content-wrapper">
+						
+				<div id="content_uwwpqhlty" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+				<div id="content_zs3moscus" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.611111rem; line-height: 1rem;" data-mce-style="font-size: 0.611111rem; line-height: 1rem;"><span class="font_k6j8cx4yu">CREATING A CONSISTENT EXPERIENCE</span></p><p style="font-size: 0.777778rem; line-height: 1rem;" data-mce-style="font-size: 0.777778rem; line-height: 1rem;"><span class="font_tcd9ahbdb">To make a connection to the rest of the building we carried the distinct wood paneling and window design from the upper levels down to the ground floor.</span></p></div></div>
+				</div>
+			
+				<div id="content_ix2n9sh9m" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div><div id="column_30tlagjnh" class="column" data-xl-width="10" >
+					<div class="content-wrapper">
+						
+				<div id="content_rowkcaj93" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2022/08/WorkshopPurdue_02-scaled.jpg" width="2560" height="1707" alt="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" caption="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div><div id="row_jnk9tcm7u" class="row"><div id="column_mhp1iwjq1" class="column" data-xl-width="2" >
+					<div class="content-wrapper">
+						
+				<div id="content_06z8ule8b" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+				<div id="content_bv0a61pcs" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.611111rem; line-height: 1rem;" data-mce-style="font-size: 0.611111rem; line-height: 1rem;"><span class="font_k6j8cx4yu">THESE WALLS CAN TALK</span></p><p style="font-size: 0.777778rem; line-height: 1rem;" data-mce-style="font-size: 0.777778rem; line-height: 1rem;"><span class="font_t9larsx2u">The graphics program includes identification and wayfinding, narrative displays and custom placemaking elements. The scale of this program is a first for the Purdue campus.</span></p><p style="font-size: 0.777778rem; line-height: 1rem;" data-mce-style="font-size: 0.777778rem; line-height: 1rem;"><span class="font_t9larsx2u">The theme for the graphics is, “If These Walls Could Talk, What Would They Say.” The overarching tone pays homage to the unbroken traditions of the University. With the PMU as the first impressions of campus for prospective students, the theme acts as an invitation to discover more and become part of the tradition.</span></p></div></div>
+				</div>
+			
+					</div>
+				</div><div id="column_zb83g6vv3" class="column" data-xl-width="10" >
+					<div class="content-wrapper">
+						
+				<div id="content_2pxd7xglt" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2022/08/WorkshopPurdue_08-scaled.jpg" width="2560" height="1707" alt="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" caption="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div><div id="row_9hxpfiw2t" class="row"><div id="column_ozw6shk6t" class="column" data-xl-width="2" >
+					<div class="content-wrapper">
+						
+				<div id="content_z2a34j4ij" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+				<div id="content_isj3v4g13" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.611111rem; line-height: 1rem;" data-mce-style="font-size: 0.611111rem; line-height: 1rem;"><span class="font_k6j8cx4yu">THE CLOSER YOU GET, THE MORE YOU LEARN</span></p><p style="font-size: 0.777778rem; line-height: 1rem;" data-mce-style="font-size: 0.777778rem; line-height: 1rem;"><span class="font_tcd9ahbdb">As a relief to the wood paneling, we created a damask pattern based on the wallcovering seen in the upstairs ball room. This decorative pattern is designed to be viewed at multiple distances. As one gets closer, you find the pattern is made up of beloved Purdue icons.</span></p></div></div>
+				</div>
+			
+				<div id="content_3z3suuqwd" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div><div id="column_lbnglbexm" class="column" data-xl-width="10" >
+					<div class="content-wrapper">
+						
+				<div id="content_y5bajwxnm" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2022/08/WorkshopPurdue_24.jpg" width="2555" height="1705" alt="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" caption="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div></div><div id="row_ifwpwpa5l" class="row"><div id="column_ltezv4a22" class="column" data-xl-width="12" >
+					<div class="content-wrapper">
+						
+				<div id="content_x529ty0tq" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2022/08/WorkshopPurdue_03-scaled.jpg" width="2560" height="1707" alt="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" caption="Purdue Memorial Union by Workshop Architects. Photo by Kevin J. Miyazaki" data-width="original" data-scaling="no"></div>
+				</div>
+			
+				<div id="content_pofu58tji" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.666667rem;" data-mce-style="font-size: 0.666667rem;"><a data-mce-href="http://www.kevinmiyazaki.com/interiors" href="http://www.kevinmiyazaki.com/interiors" title="Architectural Photography, Kevin Miyazaki" data-mce-selected="1"><span class="font_t9larsx2u">Architectural Photography by Kevin Miyazaki﻿</span></a></p></div></div>
+				</div>
+			
+					</div>
+				</div></div>
+						</div>
+					</section>				
+				
+					<section id="section_011489a47" class="content-block" data-column-mode-sm="single" data-column-mode-xs="single" >
+						
+						<div class="container">
+						<div id="row_4570cc3b3" class="row"><div id="column_2697a43d2" class="column" data-xl-width="12" >
+					<div class="content-wrapper">
+						
+				<div id="content_1dd1e3057" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+				<div id="content_2cedc436d" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div></div><div id="row_d66173366" class="row"><div id="column_5e3c15e97" class="column" data-xl-width="3" >
+					<div class="content-wrapper">
+						
+				<div id="content_718c506b0" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2019/08/letsworkshop_04.png" width="660" height="202" alt="letsworkshop_04" caption="" data-width="original" data-scaling="no"></div>
+				</div>
+			
+					</div>
+				</div><div id="column_2db7212ff" class="column spacer-column" data-xl-width="8" >
+					<div class="content-wrapper">
+						
+					</div>
+				</div><div id="column_b4ed61fe1" class="column" data-xl-width="1" >
+					<div class="content-wrapper">
+						
+				<div id="content_514e85edc" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><a href="https://www.linkedin.com/company/workshop-architects/mycompany/?viewAsMember=true" target="_blank"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2023/03/WSA-Website-Footer-Icons_LI-1.png" width="300" height="300" alt="WSA Website Footer Icons_LI" caption="" data-width="original" data-scaling="no"></a></div>
+				</div>
+			
+				<div id="content_03304cc30" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="right"><a href="https://www.instagram.com/workshopmke/" target="_blank"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2023/03/WSA-Website-Footer-Icons_IG-1.png" width="300" height="300" alt="WSA Website Footer Icons_IG" caption="" data-width="original" data-scaling="no"></a></div>
+				</div>
+			
+				<div id="content_e61b50bad" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="right"><a href="https://www.facebook.com/WORKSHOPMKE/" target="_blank"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2023/03/WSA-Website-Footer-Icons_FB-1.png" width="300" height="300" alt="WSA Website Footer Icons_FB" caption="" data-width="original" data-scaling="no"></a></div>
+				</div>
+			
+					</div>
+				</div></div><div id="row_016f5a1af" class="row"><div id="column_d020543d3" class="column" data-xl-width="11" >
+					<div class="content-wrapper">
+						
+				<div id="content_e029a28e0" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="line-height: 1rem; font-size: 0.777778rem;" data-mce-style="line-height: 1rem; font-size: 0.777778rem;"><span class="font_k6j8cx4yu" style="color: rgb(119, 119, 119);" data-mce-style="color: #777777;">201 E Pittsburgh Avenue, Suite 301</span><br><span class="font_k6j8cx4yu" style="color: rgb(119, 119, 119);" data-mce-style="color: #777777;">Milwaukee, WI 53204<br></span></p><p style="line-height: 1rem; font-size: 0.777778rem;" data-mce-style="line-height: 1rem; font-size: 0.777778rem;"><span class="font_k6j8cx4yu" style="color: rgb(255, 63, 0);" data-mce-style="color: #ff3f00;">Call us 414.272.8822</span></p></div></div>
+				</div>
+			
+					</div>
+				</div><div id="column_109ad7e9b" class="column" data-xl-width="1" data-valign="bottom" >
+					<div class="content-wrapper">
+						
+				<div id="content_71677a664" class="column-content" data-module="image" >
+					<div class="ce-image" data-align="left"><a href="https://bcorporation.net/" target="_blank"><img class="is-content"  src="https://www.workshoparchitects.com/wp-content/uploads/2020/11/BCorp-2.jpg" width="190" height="308" alt="BCorp 2" caption="" data-width="original" data-scaling="no"></a></div>
+				</div>
+			
+					</div>
+				</div></div><div id="row_083dbab7f" class="row"><div id="column_5e90d4864" class="column" data-xl-width="12" >
+					<div class="content-wrapper">
+						
+				<div id="content_f5709dec4" class="column-content" data-module="spacer" >
+					
+				<div class="spacer-container">
+					<div class="is-content">
+						<div class="spacer"><!-- horizontal spacer --></div>
+					</div>
+				</div>
+			
+				</div>
+			
+					</div>
+				</div></div><div id="row_872749da7" class="row"><div id="column_293e4a264" class="column" data-xl-width="6" >
+					<div class="content-wrapper">
+						
+				<div id="content_5452383f2" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.555556rem;" data-mce-style="font-size: 0.555556rem;"><span class="font_t9larsx2u">Copyright 2022 Workshop Architects, Inc</span></p></div></div>
+				</div>
+			
+					</div>
+				</div><div id="column_292711d5f" class="column" data-xl-width="6" >
+					<div class="content-wrapper">
+						
+				<div id="content_3f22ee894" class="column-content" data-module="paragraph" >
+					<div class="is-content"><div data-content-for="xl"><p style="font-size: 0.555556rem; text-align: right;" data-mce-style="font-size: 0.555556rem; text-align: right;"><span class="font_t9larsx2u">All Rights Reserved.</span></p></div></div>
+				</div>
+			
+					</div>
+				</div></div>
+						</div>
+					</section>				
+				
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="pswp__bg"></div>
+	<div class="pswp__scroll-wrap">
+		<div class="pswp__container">
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+		</div>
+		<div class="pswp__ui pswp__ui--hidden">
+			<div class="pswp__top-bar">
+				<div class="pswp__counter"></div>
+				<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+				<button class="pswp__button pswp__button--share" title="Share"></button>
+				<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+				<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+				<div class="pswp__preloader">
+					<div class="pswp__preloader__icn">
+					  <div class="pswp__preloader__cut">
+						<div class="pswp__preloader__donut"></div>
+					  </div>
+					</div>
+				</div>
+			</div>
+			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div> 
+			</div>
+			<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+			</button>
+			<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+			</button>
+			<div class="pswp__caption">
+				<div class="pswp__caption__center"></div>
+			</div>
+		</div>
+	</div>
+</div>	<div class="back-to-top">
+		<a class="semplice-event" data-event-type="helper" data-event="scrollToTop"><svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="53px" height="20px" viewBox="0 0 53 20" enable-background="new 0 0 53 20" xml:space="preserve">
+<g id="Ebene_3">
+</g>
+<g>
+	<polygon points="43.886,16.221 42.697,17.687 26.5,4.731 10.303,17.688 9.114,16.221 26.5,2.312 	"/>
+</g>
+</svg>
+</a>
+	</div>
+	<script type='text/javascript' src='https://www.workshoparchitects.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.7.7' id='swv-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.workshoparchitects.com\/wp-json\/","namespace":"contact-form-7\/v1"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.workshoparchitects.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.7.7' id='contact-form-7-js'></script>
+<script type='text/javascript' id='mediaelement-core-js-before'>
+var mejsL10n = {"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+</script>
+<script type='text/javascript' src='https://www.workshoparchitects.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.17' id='mediaelement-core-js'></script>
+<script type='text/javascript' src='https://www.workshoparchitects.com/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.2.8' id='mediaelement-migrate-js'></script>
+<script type='text/javascript' id='mediaelement-js-extra'>
+/* <![CDATA[ */
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive","audioShortcodeLibrary":"mediaelement","videoShortcodeLibrary":"mediaelement"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='semplice-frontend-js-js-extra'>
+/* <![CDATA[ */
+var semplice = {"default_api_url":"https:\/\/www.workshoparchitects.com\/wp-json","semplice_api_url":"https:\/\/www.workshoparchitects.com\/wp-json\/semplice\/v1\/frontend","template_dir":"https:\/\/www.workshoparchitects.com\/wp-content\/themes\/semplice4","category_base":"\/category\/","tag_base":"\/tag\/","nonce":"546fcce614","frontend_mode":"static","static_transitions":"enabled","site_name":"Workshop Architects","base_url":"https:\/\/www.workshoparchitects.com","frontpage_id":"1315","blog_home":"https:\/\/www.workshoparchitects.com","blog_navbar":"","sr_status":"enabled","blog_sr_status":"enabled","is_preview":"","password_form":"\r\n<div class=\"post-password-form\">\r\n\t<div class=\"inner\">\r\n\t\t<form action=\"https:\/\/www.workshoparchitects.com\/wp-login.php?action=postpass\" method=\"post\">\r\n\t\t\t<div class=\"password-lock\"><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"35\" height=\"52\" viewBox=\"0 0 35 52\">\r\n  <path id=\"Form_1\" data-name=\"Form 1\" d=\"M31.3,25.028H27.056a0.755,0.755,0,0,1-.752-0.757V14.654a8.8,8.8,0,1,0-17.608,0v9.616a0.755,0.755,0,0,1-.752.757H3.7a0.755,0.755,0,0,1-.752-0.757V14.654a14.556,14.556,0,1,1,29.111,0v9.616A0.755,0.755,0,0,1,31.3,25.028Zm-3.495-1.514h2.743V14.654a13.051,13.051,0,1,0-26.1,0v8.859H7.192V14.654a10.309,10.309,0,1,1,20.617,0v8.859Zm4.43,28.475H2.761A2.77,2.77,0,0,1,0,49.213V25.28a1.763,1.763,0,0,1,1.755-1.766H33.242A1.763,1.763,0,0,1,35,25.28V49.213A2.77,2.77,0,0,1,32.239,51.988ZM1.758,25.028a0.252,0.252,0,0,0-.251.252V49.213a1.259,1.259,0,0,0,1.254,1.262H32.239a1.259,1.259,0,0,0,1.254-1.262V25.28a0.252,0.252,0,0,0-.251-0.252H1.758ZM20.849,43h-6.7a0.75,0.75,0,0,1-.61-0.314,0.763,0.763,0,0,1-.1-0.682l1.471-4.44a4.1,4.1,0,1,1,5.184,0L21.563,42a0.763,0.763,0,0,1-.1.682A0.75,0.75,0,0,1,20.849,43ZM15.2,41.487H19.8l-1.319-3.979a0.76,0.76,0,0,1,.33-0.891,2.6,2.6,0,1,0-2.633,0,0.76,0.76,0,0,1,.33.891Z\"\/>\r\n<\/svg>\r\n<\/div>\r\n\t\t\t<p>This content is protected. <br \/><span>To view, please enter the password.<\/span><\/p>\r\n\t\t\t<div class=\"input-fields\">\r\n\t\t\t\t<input name=\"post_password\" class=\"post-password-input\" type=\"password\" size=\"20\" maxlength=\"20\" placeholder=\"Enter password\" \/><input type=\"submit\" name=\"Submit\" value=\"Submit\" \/>\t\t\t<\/div>\r\n\t\t<\/form>\r\n\t<\/div>\r\n<\/div>\r\n\r\n","portfolio_order":[112,109,108,1330,2299,1104,2006,114,1550,1602,121,702,119,1542,2003,2070,1326,1991,2001,2008,115,2002,110,1103,717,1236,867,893,900,111,1073,122,1498,1197,673,1101,1251,1223,1230,922,879,885,1325,873,921,1254,947,920,1244],"gallery":{"prev":"<svg version=\"1.1\" id=\"Ebene_1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" x=\"0px\" y=\"0px\"\r\n\twidth=\"18px\" height=\"40px\"  viewBox=\"0 0 18 40\" enable-background=\"new 0 0 18 40\" xml:space=\"preserve\">\r\n<g id=\"Ebene_2\">\r\n\t<g>\r\n\t\t<polygon points=\"16.3,40 0.3,20 16.3,0 17.7,1 2.5,20 17.7,39 \t\t\"\/>\r\n\t<\/g>\r\n<\/g>\r\n<\/svg>\r\n","next":"<svg version=\"1.1\" id=\"Ebene_1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" x=\"0px\" y=\"0px\"\r\n\twidth=\"18px\" height=\"40px\" viewBox=\"0 0 18 40\" enable-background=\"new 0 0 18 40\" xml:space=\"preserve\">\r\n<g id=\"Ebene_2\">\r\n\t<g>\r\n\t\t<polygon points=\"0.3,39 15.5,20 0.3,1 1.7,0 17.7,20 1.7,40 \t\t\"\/>\r\n\t<\/g>\r\n<\/g>\r\n<\/svg>\r\n"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.workshoparchitects.com/wp-content/themes/semplice4/assets/js/frontend.min.js?ver=4.4.11' id='semplice-frontend-js-js'></script>
+	<!-- WiredMinds eMetrics tracking with Enterprise Edition V5.4 START -->
+<script type='text/javascript' src='https://count.carrierzone.com/app/count_server/count.js'></script>
+<script type='text/javascript'><!--
+wm_custnum='51fc080e086b8432';
+wm_page_name='index.php';
+wm_group_name='/services/webpages/w/o/workshoparchitects.com/public';
+wm_campaign_key='campaign_id';
+wm_track_alt='';
+wiredminds.count();
+// -->
+</script>
+<!-- WiredMinds eMetrics tracking with Enterprise Edition V5.4 END -->
+</body>
+</html>

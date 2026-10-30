@@ -7,7 +7,7 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 Master sync 2026-10-28: [fresh-open verification](audit/tobin_buildings_master_sync_2026-10-28.json) passed for 110/110 detailed placement markers and 1,941 linked libraries, including the current Circle Pines, Sigma Kappa, and Shoemaker source assets.
 <!-- second-pass-queue:start -->
 
-**Research execution:** WALC is handled by the user. Focused research passes for ranks 2–10 are saved with explicit gaps; next is **rank 11, Beering Hall**. [Execution log](research/second_pass/depth_progress.json). Source-package statuses below do not imply model readiness, completion or a new visual score.
+**Active work:** Beering research is committed. The execution log records ranks 2–12 as saved focused passes, with explicit gaps; **rank 13, Purdue Memorial Union**, is now authorized for additional research and exterior modeling (October 30, 2026). WALC remains user-handled. [Execution log](research/second_pass/depth_progress.json).
 
 ## Second-pass exterior ranking
 

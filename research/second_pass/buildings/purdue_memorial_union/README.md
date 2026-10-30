@@ -20,3 +20,7 @@ Complete a bounded second-pass exterior evidence review. Separate inspected as-b
 
 This is the start checkpoint. The source inspection, face schedule, current-vs-historic comparison, dimensional limits and detailed gap register are still to be completed. The available prior image set points to an unusually articulated south entrance, while full-building coverage is absent; the next iteration will verify that against source images and additional public records.
 
+
+## October 30 continuation: modeling authorized
+
+The user authorized more research followed by the exterior build. See the [additional evidence, facade schedule and discrepancy brief](supplement_2026-10-30.md). The earlier start checkpoint is retained above; it does not describe the new evidence or certify visual acceptance.
