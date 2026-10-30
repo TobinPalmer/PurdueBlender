@@ -6,9 +6,9 @@ User-directed research-only phase, 2026-10-28. There are 231 not-yet-second-pass
 
 The [root queue](../../README.md#second-pass-exterior-ranking) is the order authority. Modeling owners are preserved by stable asset IDs; research authorization covers all rows. [Prior work](prior_work.md) and [the previous order](previous_queue_2026-10-28.json) remain separate from unfinished research.
 
-**Focused depth-pass progress:** WALC is user-handled. Ranked passes 2–16 are saved with specific remaining gaps; next is rank 17, Armory. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
+**Focused depth-pass progress:** WALC is user-handled. Ranked passes 2–17 are saved with specific remaining gaps; next is rank 18, Neil Armstrong Hall. See [execution details](depth_progress.json). This tracks research passes, not building/model completion or confirmed readiness.
 
-**Research status: 15 dossiers prepared with explicit gaps; 2 in progress; 214 queued. Stanley Coulter Hall and Armory are in progress. Next is rank 17, Armory.** Research creates one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
+**Research status: 16 dossiers prepared with explicit gaps; 1 in progress; 214 queued. Stanley Coulter Hall is in progress. Next is rank 18, Neil Armstrong Hall.** Research creates one actual building-specific document at `buildings/<stable_id>/README.md`, with source snapshots, a viewpoint/face coverage matrix, observed architectural features, material references, GIS/LiDAR metadata and unresolved gaps. Queued buildings do not receive empty reports presented as completed research.
 
 Location now contributes **70%**, campus prominence **20%**, and existing first-pass score shortfall **10%**. WALC/Centennial Mall and Purdue Mall are the primary planning focal points, with Memorial Mall a secondary core. This deliberately brings central academic buildings ahead of distant athletics and peripheral facilities. These weights are project planning judgments, not measured pedestrian traffic or a new visual grade.
 
@@ -36,7 +36,7 @@ For each focal point, centrality stays at its cap within 100 m, then decreases l
 | 14 | Forney Hall of Chemical Engineering | [Research](buildings/forney_hall_of_chemical_engineering/README.md) | Prepared with gaps |
 | 15 | Dudley Hall | [Research](buildings/dudley_hall/README.md) | Prepared with gaps |
 | 16 | Stewart Center | [Research](buildings/stewart_center/README.md) | Prepared with gaps |
-| 17 | Armory | [Research](buildings/armory/README.md) | In progress |
+| 17 | Armory | [Research](buildings/armory/README.md) | Prepared with gaps |
 | 18 | Neil Armstrong Hall | — | Queued |
 | 19 | Stone Hall (STON) | — | Queued |
 | 20 | Knoy Hall | — | Queued |
