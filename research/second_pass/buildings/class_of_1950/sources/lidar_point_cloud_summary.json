@@ -1,0 +1,42 @@
+{
+  "provider": "Indiana Statewide 3DEP LiDAR",
+  "tile": "in2018_29951885_12",
+  "acquisition_date": "2018-04-20",
+  "retrieved_utc": "2026-10-30T15:40:23.782907+00:00",
+  "source_url": "https://giselevationingov.s3.amazonaws.com/copc/statewide/2018/SPW/ql2/in2018_29951885_12.copc.laz",
+  "source_metadata": "in2018_29951885_12.copc.metadata.json",
+  "source_tile_sha256": "406d98a16221f3493577fd9419b2d8219fc2e899c556a35759ba297b9c65a4a4",
+  "source_tile_bytes": 62222305,
+  "source_crs_wkt": "COMPOUNDCRS[\"NAD83(HARN) / Indiana West (ftUS) + NAVD88 height - Geoid12B (ftUS)\",BOUNDCRS[SOURCECRS[PROJCRS[\"NAD83(HARN) / Indiana West (ftUS)\",BASEGEOGCRS[\"NAD83(HARN)\",DATUM[\"NAD83 (High Accuracy Reference Network)\",ELLIPSOID[\"GRS 1980\",6378137,298.257222101,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4152]],CONVERSION[\"unnamed\",METHOD[\"Transverse Mercator\",ID[\"EPSG\",9807]],PARAMETER[\"Latitude of natural origin\",37.5,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8801]],PARAMETER[\"Longitude of natural origin\",-87.0833333333333,ANGLEUNIT[\"degree\",0.0174532925199433],ID[\"EPSG\",8802]],PARAMETER[\"Scale factor at natural origin\",0.999966667,SCALEUNIT[\"unity\",1],ID[\"EPSG\",8805]],PARAMETER[\"False easting\",2952750,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8806]],PARAMETER[\"False northing\",820208.333,LENGTHUNIT[\"US survey foot\",0.304800609601219],ID[\"EPSG\",8807]]],CS[Cartesian,2],AXIS[\"x\",east,ORDER[1],LENGTHUNIT[\"US survey foot\",0.304800609601219]],AXIS[\"y\",north,ORDER[2],LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",2968]]],TARGETCRS[GEOGCRS[\"WGS 84\",DATUM[\"World Geodetic System 1984\",ELLIPSOID[\"WGS 84\",6378137,298.257223563,LENGTHUNIT[\"metre\",1]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433]],CS[ellipsoidal,2],AXIS[\"latitude\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433]],AXIS[\"longitude\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433]],ID[\"EPSG\",4326]]],ABRIDGEDTRANSFORMATION[\"Transformation from NAD83(HARN) to WGS84\",METHOD[\"Position Vector transformation (geog2D domain)\",ID[\"EPSG\",9606]],PARAMETER[\"X-axis translation\",0,ID[\"EPSG\",8605]],PARAMETER[\"Y-axis translation\",0,ID[\"EPSG\",8606]],PARAMETER[\"Z-axis translation\",0,ID[\"EPSG\",8607]],PARAMETER[\"X-axis rotation\",0,ID[\"EPSG\",8608]],PARAMETER[\"Y-axis rotation\",0,ID[\"EPSG\",8609]],PARAMETER[\"Z-axis rotation\",0,ID[\"EPSG\",8610]],PARAMETER[\"Scale difference\",1,ID[\"EPSG\",8611]]]],VERTCRS[\"NAVD88 height (ftUS)\",VDATUM[\"North American Vertical Datum 1988\"],CS[vertical,1],AXIS[\"gravity-related height\",up,LENGTHUNIT[\"US survey foot\",0.304800609601219]],ID[\"EPSG\",6360]]]",
+  "coordinate_units": "US survey foot",
+  "vertical_datum": "NAVD88 height, geoid12B; US survey foot",
+  "clip_method": "COPC query to FID230 feature bounding rectangle; no reclassification; exact footprint used only for point-in-polygon statistics",
+  "clip_path": "../data/lidar/in2018_29951885_12.class_of_1950_clip.laz",
+  "clip_sha256": "f56217ab133957127a3cd6e55b6012c3c401947701e5527d3164b24de41299f0",
+  "clip_bytes": 40460,
+  "points_in_clip_bbox": 6604,
+  "points_inside_feature": 6203,
+  "classification_counts": {
+    "1": 6259,
+    "2": 344,
+    "7": 1
+  },
+  "class_2_ground_outside_feature_count": 189,
+  "class_2_ground_outside_feature_median_ft": 623.09,
+  "class_1_unclassified_inside_1m_eroded_feature_count": 5919,
+  "class_1_unclassified_inside_1m_eroded_feature_percentiles_ft": [
+    640.13,
+    656.34,
+    656.47,
+    656.6800000000001,
+    657.45
+  ],
+  "naive_class_1_height_above_nearby_class_2_ground_p05_p25_p50_p75_p95_m": [
+    5.193802387604765,
+    10.13462026924054,
+    10.174244348488697,
+    10.238252476504965,
+    10.472948945897897
+  ],
+  "limitations": "Class 1 is unclassified and may include roof, walls, trees and other returns. Values describe point-height differences from nearby class 2 points, not measured roof/eave/ridge. Tree shadow, scan distribution and footprint boundary may bias samples. Do not treat as as-built elevation."
+}
