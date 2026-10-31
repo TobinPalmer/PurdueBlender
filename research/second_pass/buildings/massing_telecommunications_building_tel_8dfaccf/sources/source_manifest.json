@@ -1,0 +1,313 @@
+{
+  "manifest_version": 1,
+  "building_id": "massing_telecommunications_building_tel_8dfaccf",
+  "generated_on": "2026-10-30",
+  "hash_algorithm": "SHA-256",
+  "retrieval_policy": "Hashes cover retained local bytes. Street View capture dates are Google-displayed pano dates; four yaw files under one pano ID are a single station. Earlier audit files retain their original retrieval dates. GIS retrieval, photo capture, publication and local-copy dates are distinct.",
+  "sources": [
+    {
+      "file": "crosswalk_metrics.json",
+      "bytes": 1392,
+      "sha256": "5cf44cd294a50012b939312047862f819f590356f7d726aa72c3096fb78132b9",
+      "provider": "Local calculation from Purdue GIS and OSM",
+      "source_url": "https://api.openstreetmap.org/api/0.6/way/159752232/full",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "inputs retrieved 2026-10-26",
+      "role": "Polygon area, perimeter, centroid offset and boundary Hausdorff distance using documented campus transform."
+    },
+    {
+      "file": "crosswalk_metrics.py",
+      "bytes": 2432,
+      "sha256": "b257fbe87d6ea0c325350e448d948ec87d68672361656c4380a62fc4cbb4199e",
+      "provider": "Local metric script",
+      "source_url": "",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "method source saved 2026-10-26",
+      "role": "Reproducible geometry crosswalk; not an independent building source."
+    },
+    {
+      "file": "indiana_2018_ortho_tel_bbox.jpg",
+      "bytes": 168654,
+      "sha256": "7fdab99775058fa1d386e155677bb8b2acbf292a428154b2b0ae5da3cd95141e",
+      "provider": "Indiana Geographic Information Office ArcGIS ImageServer",
+      "source_url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2018_Imagery/ImageServer/exportImage?bbox=-9675613.885,4927996.399,-9675499.971,4928092.918&bboxSR=3857&size=1400,1400&imageSR=3857&format=jpg&f=image",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "2018 imagery; retrieved 2026-10-26",
+      "role": "Overhead roof/footprint view only; 1400 x 1400 px; no facade or vertical measurement.",
+      "crs": "EPSG:3857",
+      "resolution_px": [
+        1400,
+        1400
+      ]
+    },
+    {
+      "file": "measure_tel_lidar.py",
+      "bytes": 2835,
+      "sha256": "5d6287429ffdcbc4f57dfed323e78de589658f016ae2e97f24c9438f9fe9e78e",
+      "provider": "Local LiDAR measurement script",
+      "source_url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN/Tippecanoe_Co_2018_3DEP/Elev18_LAS1.4SPW_IN/copc/in2018_29951885_12.copc.laz",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "method source saved 2026-10-26",
+      "role": "Reproducible point selection and height calculation; result remains an estimate."
+    },
+    {
+      "file": "ortho_request.json",
+      "bytes": 859,
+      "sha256": "080b1b933f7234b96b5b9d07e2ad045ed52ffb6fa46396f4b82fa2f0a6a65140",
+      "provider": "Indiana Geographic Information Office ArcGIS ImageServer",
+      "source_url": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2018_Imagery/ImageServer/exportImage?bbox=-9675613.885,4927996.399,-9675499.971,4928092.918&bboxSR=3857&size=1400,1400&imageSR=3857&format=jpg&f=image",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "2018 imagery; request retrieved 2026-10-26",
+      "role": "Saved request bounds, CRS and limitations for the north-up image crop."
+    },
+    {
+      "file": "osm_way_159752232.xml",
+      "bytes": 4210,
+      "sha256": "849853f272a1b3c87c7d9d06b2978593c43a7ae9d4984dc117cc06396454c79d",
+      "provider": "OpenStreetMap API 0.6",
+      "source_url": "https://api.openstreetmap.org/api/0.6/way/159752232/full",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "way updated 2022-08-24; entrance node 2022-08-27",
+      "role": "Independent identity and outline comparison; crowd-sourced, not a survey.",
+      "crs": "WGS84"
+    },
+    {
+      "file": "prior_audit_source_record.json",
+      "bytes": 7855,
+      "sha256": "f6dd6220cf2d4e0bef077abdb6d8cd39329013caf57022c7656da1495f39ffd3",
+      "provider": "Local first-pass audit",
+      "source_url": "",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "record generated 2026-10-26",
+      "role": "Prior identity, geometry, roof, GIS and LiDAR assessment reconciled against retained primary data."
+    },
+    {
+      "file": "purdue_campus_map.pdf",
+      "bytes": 929087,
+      "sha256": "4a9f67800aead2002385f39263224bd2117e99c36f5a11b67ae3608b21d55e9a",
+      "provider": "Purdue University Campus Map",
+      "source_url": "https://www.purdue.edu/maps/graphics/campusmap.pdf",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "current at 2026-10-26 retrieval",
+      "role": "Official TEL label and F7 location; not detailed architectural evidence.",
+      "uncertainty": "Official space total/map context only; see dossier for scope."
+    },
+    {
+      "file": "purdue_gis_fid199_tel.json",
+      "bytes": 16217,
+      "sha256": "76ef7cc194446796848dc3cca4027489febfb07c3f399ed0e04a6d845931b710",
+      "provider": "Purdue University BuildingShapesZip4 FeatureServer layer 0",
+      "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D199&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "not supplied; prior audit snapshot retrieved 2026-10-26",
+      "role": "Prior-audit official feature response retained for comparison with fresh query."
+    },
+    {
+      "file": "purdue_gis_fid199_tel_2026-10-30.json",
+      "bytes": 16217,
+      "sha256": "76ef7cc194446796848dc3cca4027489febfb07c3f399ed0e04a6d845931b710",
+      "provider": "Purdue University BuildingShapesZip4 FeatureServer layer 0",
+      "source_url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D199&outFields=%2A&returnGeometry=true&outSR=4326&f=pjson",
+      "retrieved_date": "2026-10-30",
+      "source_date": "not supplied; captured 2026-10-30",
+      "role": "Fresh FID 199 identity, attributes and authoritative mapped footprint; 29-vertex ring matches Oct 26 snapshot.",
+      "crs": "EPSG:4326"
+    },
+    {
+      "file": "purdue_historic_buildings_index.html",
+      "bytes": 6155,
+      "sha256": "5cd986a884965a07c38e1a537fa5bb751ec966ffdf4fd761597bed4dc4611e54",
+      "provider": "Purdue Campus Facilities and Buildings Historic Database",
+      "source_url": "https://collections.lib.purdue.edu/campus/buildings",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "page saved in prior audit; retrieved 2026-10-26",
+      "role": "General index/page snapshot; no TEL-specific exterior content verified in this saved HTML."
+    },
+    {
+      "file": "purdue_space_report_oct2021.pdf",
+      "bytes": 721124,
+      "sha256": "0a7512765054ddc007bfe9e428bf15122ee9fb8b158cc690400600948e37f1a7",
+      "provider": "Purdue Treasurer / Finance",
+      "source_url": "https://www.purdue.edu/treasurer/finance/wp-content/uploads/2023/03/Space-Report_1.13.1HE_Buiding_List_Oct2021.pdf",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "October 2021",
+      "role": "Official TEL/code 1344 name, address and 19,044.26 sq ft space total; not footprint or height.",
+      "uncertainty": "Official space total/map context only; see dossier for scope."
+    },
+    {
+      "file": "streetview/181_university_pf3ue6qhCNHOtheywQ2qJw_yaw0.jpg",
+      "bytes": 147991,
+      "sha256": "f8fd7548b8fd31c661feb3edad5f9c7d3040d837b318049a5ef3e6ae493e1677",
+      "provider": "Google Street View",
+      "source_url": "https://www.google.com/maps/@40.4260098,-86.9166899,190a,90y,90t/data=!3m7!1e1!3m5!1spf3ue6qhCNHOtheywQ2qJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dpf3ue6qhCNHOtheywQ2qJw%26yaw%3D0!7i16384!8i8192",
+      "retrieved_date": "2026-10-30; image inspected in Google Maps",
+      "source_date": "August 2019",
+      "role": "181 N University St; 40.4260098,-86.9166899; pano pf3ue6qhCNHOtheywQ2qJw, yaw 0 degrees. Alternate heading from same station, not independent camera position.",
+      "pano_id": "pf3ue6qhCNHOtheywQ2qJw",
+      "station": "181 N University St; 40.4260098,-86.9166899",
+      "yaw_deg": 0,
+      "resolution_px": [
+        900,
+        600
+      ],
+      "uncertainty": "Street-level thumbnail; perspective/occlusion and no scale or camera height."
+    },
+    {
+      "file": "streetview/181_university_pf3ue6qhCNHOtheywQ2qJw_yaw180.jpg",
+      "bytes": 131460,
+      "sha256": "8c655f858e88a56c8384bcf78ad16cb8d809ad46640303a4032cbb831b9b7e7d",
+      "provider": "Google Street View",
+      "source_url": "https://www.google.com/maps/@40.4260098,-86.9166899,190a,90y,90t/data=!3m7!1e1!3m5!1spf3ue6qhCNHOtheywQ2qJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dpf3ue6qhCNHOtheywQ2qJw%26yaw%3D180!7i16384!8i8192",
+      "retrieved_date": "2026-10-30; image inspected in Google Maps",
+      "source_date": "August 2019",
+      "role": "181 N University St; 40.4260098,-86.9166899; pano pf3ue6qhCNHOtheywQ2qJw, yaw 180 degrees. Alternate heading from same station, not independent camera position.",
+      "pano_id": "pf3ue6qhCNHOtheywQ2qJw",
+      "station": "181 N University St; 40.4260098,-86.9166899",
+      "yaw_deg": 180,
+      "resolution_px": [
+        900,
+        600
+      ],
+      "uncertainty": "Street-level thumbnail; perspective/occlusion and no scale or camera height."
+    },
+    {
+      "file": "streetview/181_university_pf3ue6qhCNHOtheywQ2qJw_yaw270.jpg",
+      "bytes": 168185,
+      "sha256": "da8296bb5c07b8e807ea5ba146881b880927f9fc027240defdf98f0c68ad3568",
+      "provider": "Google Street View",
+      "source_url": "https://www.google.com/maps/@40.4260098,-86.9166899,190a,90y,90t/data=!3m7!1e1!3m5!1spf3ue6qhCNHOtheywQ2qJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dpf3ue6qhCNHOtheywQ2qJw%26yaw%3D270!7i16384!8i8192",
+      "retrieved_date": "2026-10-30; image inspected in Google Maps",
+      "source_date": "August 2019",
+      "role": "181 N University St; 40.4260098,-86.9166899; pano pf3ue6qhCNHOtheywQ2qJw, yaw 270 degrees. Alternate heading from same station, not independent camera position.",
+      "pano_id": "pf3ue6qhCNHOtheywQ2qJw",
+      "station": "181 N University St; 40.4260098,-86.9166899",
+      "yaw_deg": 270,
+      "resolution_px": [
+        900,
+        600
+      ],
+      "uncertainty": "Street-level thumbnail; perspective/occlusion and no scale or camera height."
+    },
+    {
+      "file": "streetview/181_university_pf3ue6qhCNHOtheywQ2qJw_yaw90.jpg",
+      "bytes": 153094,
+      "sha256": "22df5db4d8e6d7b4dd4bc58db32b0f9adb8eec1487b090b0b2b31e2cefd576e3",
+      "provider": "Google Street View",
+      "source_url": "https://www.google.com/maps/@40.4260098,-86.9166899,190a,90y,90t/data=!3m7!1e1!3m5!1spf3ue6qhCNHOtheywQ2qJw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dpf3ue6qhCNHOtheywQ2qJw%26yaw%3D90!7i16384!8i8192",
+      "retrieved_date": "2026-10-30; image inspected in Google Maps",
+      "source_date": "August 2019",
+      "role": "181 N University St; 40.4260098,-86.9166899; pano pf3ue6qhCNHOtheywQ2qJw, yaw 90 degrees. Alternate heading from same station, not independent camera position.",
+      "pano_id": "pf3ue6qhCNHOtheywQ2qJw",
+      "station": "181 N University St; 40.4260098,-86.9166899",
+      "yaw_deg": 90,
+      "resolution_px": [
+        900,
+        600
+      ],
+      "uncertainty": "Street-level thumbnail; perspective/occlusion and no scale or camera height."
+    },
+    {
+      "file": "streetview/947_2nd_qh-w_elYAdZhQWJxN375YQ_yaw0.jpg",
+      "bytes": 113095,
+      "sha256": "ddcc422455bb63fdb8500f1f92ac33435995e984b14eaf6cadfb6f133e5120e8",
+      "provider": "Google Street View",
+      "source_url": "https://www.google.com/maps/@40.4261987,-86.9170204,190a,90y,90t/data=!3m7!1e1!3m5!1sqh-w_elYAdZhQWJxN375YQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dqh-w_elYAdZhQWJxN375YQ%26yaw%3D0!7i16384!8i8192",
+      "retrieved_date": "2026-10-30; image inspected in Google Maps",
+      "source_date": "April 2026",
+      "role": "947 2nd St; 40.4261987,-86.9170204; pano qh-w_elYAdZhQWJxN375YQ, yaw 0 degrees. Alternate heading from same station, not independent camera position.",
+      "pano_id": "qh-w_elYAdZhQWJxN375YQ",
+      "station": "947 2nd St; 40.4261987,-86.9170204",
+      "yaw_deg": 0,
+      "resolution_px": [
+        900,
+        600
+      ],
+      "uncertainty": "Street-level thumbnail; perspective/occlusion and no scale or camera height."
+    },
+    {
+      "file": "streetview/947_2nd_qh-w_elYAdZhQWJxN375YQ_yaw180.jpg",
+      "bytes": 147619,
+      "sha256": "48399a2e2ad611d9dc28f520c536cb1896900c0029dc11e52523164f984bb8f0",
+      "provider": "Google Street View",
+      "source_url": "https://www.google.com/maps/@40.4261987,-86.9170204,190a,90y,90t/data=!3m7!1e1!3m5!1sqh-w_elYAdZhQWJxN375YQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dqh-w_elYAdZhQWJxN375YQ%26yaw%3D180!7i16384!8i8192",
+      "retrieved_date": "2026-10-30; image inspected in Google Maps",
+      "source_date": "April 2026",
+      "role": "947 2nd St; 40.4261987,-86.9170204; pano qh-w_elYAdZhQWJxN375YQ, yaw 180 degrees. Alternate heading from same station, not independent camera position.",
+      "pano_id": "qh-w_elYAdZhQWJxN375YQ",
+      "station": "947 2nd St; 40.4261987,-86.9170204",
+      "yaw_deg": 180,
+      "resolution_px": [
+        900,
+        600
+      ],
+      "uncertainty": "Street-level thumbnail; perspective/occlusion and no scale or camera height."
+    },
+    {
+      "file": "streetview/947_2nd_qh-w_elYAdZhQWJxN375YQ_yaw270.jpg",
+      "bytes": 123840,
+      "sha256": "900c3a77aa6cd76fbc4685fff0c80b7e845a2f4028a5959931dd7f124b57f1c1",
+      "provider": "Google Street View",
+      "source_url": "https://www.google.com/maps/@40.4261987,-86.9170204,190a,90y,90t/data=!3m7!1e1!3m5!1sqh-w_elYAdZhQWJxN375YQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dqh-w_elYAdZhQWJxN375YQ%26yaw%3D270!7i16384!8i8192",
+      "retrieved_date": "2026-10-30; image inspected in Google Maps",
+      "source_date": "April 2026",
+      "role": "947 2nd St; 40.4261987,-86.9170204; pano qh-w_elYAdZhQWJxN375YQ, yaw 270 degrees. Alternate heading from same station, not independent camera position.",
+      "pano_id": "qh-w_elYAdZhQWJxN375YQ",
+      "station": "947 2nd St; 40.4261987,-86.9170204",
+      "yaw_deg": 270,
+      "resolution_px": [
+        900,
+        600
+      ],
+      "uncertainty": "Street-level thumbnail; perspective/occlusion and no scale or camera height."
+    },
+    {
+      "file": "streetview/947_2nd_qh-w_elYAdZhQWJxN375YQ_yaw90.jpg",
+      "bytes": 93330,
+      "sha256": "7b112b9f0ad550f6dc22bd09e5d8b69025133f82116035de7817a39273cae691",
+      "provider": "Google Street View",
+      "source_url": "https://www.google.com/maps/@40.4261987,-86.9170204,190a,90y,90t/data=!3m7!1e1!3m5!1sqh-w_elYAdZhQWJxN375YQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dqh-w_elYAdZhQWJxN375YQ%26yaw%3D90!7i16384!8i8192",
+      "retrieved_date": "2026-10-30; image inspected in Google Maps",
+      "source_date": "April 2026",
+      "role": "947 2nd St; 40.4261987,-86.9170204; pano qh-w_elYAdZhQWJxN375YQ, yaw 90 degrees. Alternate heading from same station, not independent camera position.",
+      "pano_id": "qh-w_elYAdZhQWJxN375YQ",
+      "station": "947 2nd St; 40.4261987,-86.9170204",
+      "yaw_deg": 90,
+      "resolution_px": [
+        900,
+        600
+      ],
+      "uncertainty": "Street-level thumbnail; perspective/occlusion and no scale or camera height."
+    },
+    {
+      "file": "tel_lidar_height_measurement.json",
+      "bytes": 1553,
+      "sha256": "950032398f648d14a593a8b24582e25215f9f869be3c03637c3b61af2047418d",
+      "provider": "Purdue GDSL / Indiana 3DEP LiDAR",
+      "source_url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN/Tippecanoe_Co_2018_3DEP/Elev18_LAS1.4SPW_IN/copc/in2018_29951885_12.copc.laz",
+      "retrieved_date": "2026-10-26 (prior audit snapshot unless noted)",
+      "source_date": "2018 acquisition; measurement recorded 2026-10-26",
+      "role": "Saved height-method results; source uses 2018 class-1/class-2 points without class-6 building returns.",
+      "crs": "NAD83(HARN)/Indiana West ftUS EPSG:2968; vertical NAVD88 Geoid12B ftUS"
+    }
+  ],
+  "external_leads": [
+    {
+      "provider": "Purdue University Archives and Special Collections / Purdue University Architect records",
+      "title": "Telecommunications Center Drawing, Unknown Date, UA 154, Series 1, Sub-Series 6, Item 69",
+      "url": "https://archives.lib.purdue.edu/repositories/2/archival_objects/24785",
+      "status": "Catalog metadata inspected through indexed search result; direct page/API returned HTTP 403 on 2026-10-30. No drawing content or date inspected."
+    },
+    {
+      "provider": "Purdue University Archives and Special Collections",
+      "title": "Vertical-file index: BUILDINGS – TELECOMMUNICATIONS (1996)",
+      "url": "https://collections.lib.purdue.edu/fa/pdf/msk1_verticalfiles.pdf",
+      "status": "Search-indexed finding-aid entry inspected; file contents not obtained."
+    },
+    {
+      "provider": "Purdue IT",
+      "title": "Networks and Telecommunications",
+      "url": "https://it.purdue.edu/telecommunications/",
+      "status": "Current service-scope lead only; no exterior evidence."
+    }
+  ]
+}
