@@ -1,0 +1,97 @@
+{
+  "building_id": "massing_native_american_educational_and_cultural_center_nacc_faa0f59",
+  "detailed_asset_id": "native_american_educational_and_cultural_center_nacc",
+  "file": "modular\\buildings\\native_american_educational_and_cultural_center_nacc.blend",
+  "collection": "Asset_native_american_educational_and_cultural_center_nacc",
+  "scene": "Scene",
+  "retrieved_date": "2026-10-25",
+  "sources": [
+    {
+      "provider": "Purdue Office of Emergency Preparedness, NACC Building Emergency Plan",
+      "url": "https://www.purdue.edu/operations/emergency-preparedness/nacc/",
+      "source_revision": "2026-03-17",
+      "retrieved_date": "2026-10-25",
+      "observed": "former single-family white wood-frame house; two stories and basement; 3 entry/exits; Fifth Street front door, gravel parking-facing accessible door and ramp, rear kitchen door facing alley; a single-car storage garage in the back yard; room 110 is Back Porch; detached garage exact size/setback not stated. Room names and floor assignments recorded in the source."
+    },
+    {
+      "provider": "Purdue Native American Educational and Cultural Center",
+      "url": "https://purdue.edu/naecc/",
+      "retrieved_date": "2026-10-25",
+      "observed": "official center identity and address at 903 5th Street."
+    },
+    {
+      "provider": "Purdue BuildingShapes ArcGIS FeatureServer layer 0",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0",
+      "feature_id": 927,
+      "building_code": "NACC",
+      "address": "903 5th Street",
+      "retrieved_date": "2026-10-24",
+      "native_crs": "EPSG:3857 (WKID 102100); returned query coordinates in EPSG:4326",
+      "project_transform": "X=(longitude+86.9137)*111412.84*cos(radians(40.4274)); Y=(latitude-40.4274)*111040",
+      "attributes": {
+        "NUM_LEVELS": 1,
+        "Extrution": 18,
+        "Elevation": 624,
+        "Shape__Area": 216.1171875,
+        "Shape__Length": 73.0137671809916
+      },
+      "raw_snapshot": "audit\\build_nacc\\native_american_educational_and_cultural_center_nacc_gis_feature_927.json"
+    }
+  ],
+  "geometry": {
+    "origin_local_xy_m": [
+      -278.92799716565696,
+      190.0768944387499
+    ],
+    "axes": "X east, Y north, Z up; meters",
+    "footprint_vertices": 20,
+    "footprint_local_bounds_m": [
+      -8.311694309677648,
+      7.903022278376,
+      -5.593632561216793,
+      5.981996680598684
+    ],
+    "footprint_method": "official NACC/FID 927 GIS polygon transformed to project-local approximation and recentered on polygon area centroid; wall shell preserves the GIS perimeter.",
+    "stories": "2 above grade plus basement per Purdue BEP; ArcGIS NUM_LEVELS=1 conflicts and is not used as a story count.",
+    "modeled_eaves_ridge_m": [
+      6.55,
+      9.2
+    ],
+    "height_status": "estimated; no measured elevation/elevation drawing found",
+    "back_porch": "Added at the alley-facing rear kitchen door to represent source room 110, Back Porch. Footprint, height, columns, and roof dimensions are visual estimates because the BEP gives no porch dimensions.",
+    "front_entry": "Fifth Street front door and parking-lot accessible door are source-described; precise locations on the GIS perimeter are estimated. No separate covered front porch is claimed.",
+    "garage": "Purdue confirms detached single-car storage garage in rear yard; exact location and dimensions estimated.",
+    "interior": "Schematic room zones based on official floor/room list, clearly labeled NACC_SCHEMATIC_INTERIOR_NOT_AS_BUILT; partition positions and dimensions are not as-built."
+  },
+  "materials": {
+    "all_procedural_portable": true,
+    "count": 10,
+    "texture_network": "Procedural noise/color ramp/bump; no image paths."
+  },
+  "street_view": {
+    "status": "not independently inspected or date-verified",
+    "note": "No facade measurements or as-built plan located."
+  },
+  "validation": {
+    "saved": true,
+    "preview": "audit\\build_nacc\\native_american_educational_and_cultural_center_nacc_r2_preview.png",
+    "rear_preview": "audit\\build_nacc\\native_american_educational_and_cultural_center_nacc_r2_rear_preview.png",
+    "collection": "Asset_native_american_educational_and_cultural_center_nacc",
+    "object_count": 806
+  },
+  "revision": {
+    "date": "2026-10-25",
+    "changes": [
+      "Moved the covered porch from the undocumented Fifth Street front to the alley-facing rear kitchen entrance, corresponding to Purdue BEP room 110, Back Porch.",
+      "Kept porch dimensions explicitly estimated and separated documented facts from modeled assumptions."
+    ],
+    "prior_score": 7.0,
+    "new_score": "not graded; independent grading requested separately."
+  },
+  "uncertainties": [
+    "Roof pitch, eaves/ridge height, window count, porch dimensions, and historic house style are estimates; no measured elevations or current facade photo of this building were found in the consulted sources.",
+    "GIS NUM_LEVELS is 1 while the dated Purdue BEP states two stories and basement; model follows the written BEP.",
+    "Garage footprint/setback, ramp dimensions, and precise door positions remain estimated.",
+    "Interior partitions are schematic, derived from room names and not a measured floor plan."
+  ]
+}
