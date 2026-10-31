@@ -1,0 +1,49 @@
+{
+  "provider": "Indiana DNR/USGS 3DEP 2018 LiDAR; COPC mirror hosted by iDiF at Purdue",
+  "source_url": "https://lidar.digitalforestry.org/QL2_3DEP_LiDAR_IN_2017_2019/Tippecanoe_Co_2018_3DEP/Elev18_LAS1.4SPW_IN/copc/in2018_29951880_12.copc.laz",
+  "retrieved_date": "2026-10-30",
+  "tile": "in2018_29951880_12.copc.laz",
+  "query_resolution_source_units": 0.5,
+  "crop_file": "indiana_2018_copc_hansen_12m_buffer.las",
+  "crop_sha256": "2554822b1a1268145f97e8cca4646b11e4a8910d64e8ff14b05b88aba570160d",
+  "crop_point_count": 27878,
+  "crop": "Purdue GIS FID237 polygon plus 12 m buffer; COPC returns and classifications retained",
+  "horizontal_crs": "EPSG:2968 NAD83(HARN) / Indiana West (ftUS)",
+  "vertical_crs": "NAVD88 height - Geoid12B (ftUS)",
+  "transform": "GIS EPSG:4326 polygon transformed with pyproj to EPSG:2968; z retained in source vertical datum",
+  "statistics": {
+    "roof_proxy_class_1_inside_3m_eroded_polygon": {
+      "count": 7268,
+      "z_ftUS_percentiles": [
+        633.2,
+        681.61,
+        682.01,
+        689.74,
+        696.63,
+        697.23
+      ]
+    },
+    "ground_class_2_in_5m_external_ring": {
+      "count": 2903,
+      "z_ftUS_percentiles": [
+        608.49,
+        619.83,
+        620.45,
+        621.03,
+        623.17,
+        623.94
+      ]
+    },
+    "building_class_6_inside_polygon": {
+      "count": 0,
+      "z_ftUS_percentiles": []
+    },
+    "surface_minus_ground_median_p95_p99_m": [
+      18.764,
+      21.12,
+      23.22
+    ],
+    "method": "Class 1 returns inside GIS ring eroded by 3 m; class 2 ground returns in a 5 m outer ring. Subtract nearby ground median from class-1 percentiles. Class 1 is unclassified and may include roof, canopy or other surfaces; this distribution is not a measured roof plane/eave/ridge."
+  },
+  "uncertainty": "No class-6 building returns may be available; unclassified returns can include trees and roof equipment. Mapping bounds are not a survey. 2018 predates any later repair."
+}
