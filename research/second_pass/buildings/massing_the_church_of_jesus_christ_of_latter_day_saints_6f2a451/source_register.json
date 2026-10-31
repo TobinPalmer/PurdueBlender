@@ -1,0 +1,273 @@
+{
+  "generated_date": "2026-10-30",
+  "building_id": "massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451",
+  "rank": 58,
+  "hash_algorithm": "SHA-256",
+  "source_count": 17,
+  "sources": [
+    {
+      "id": "G1",
+      "provider": "Purdue University Campus Map / ArcGIS",
+      "title": "BuildingShapes layer metadata, current response",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "source_or_capture_date": "Service metadata; queried 2026-10-30",
+      "retrieved_date": "2026-10-30",
+      "use": "Defines source geometry type, field names and coordinate-reference metadata.",
+      "limits": "Does not establish undocumented field semantics or validate physical heights.",
+      "file": "sources/purdue_campus_buildings_layer_metadata_2026-10-30.json",
+      "bytes": 32256,
+      "sha256": "d2a7d5c51143397c63ab420ae284f06f22b8db773e8c167643b78a9e050ce07f",
+      "format": "application/json"
+    },
+    {
+      "id": "G2",
+      "provider": "Purdue University Campus Map / ArcGIS",
+      "title": "FID 779 feature query, WGS84",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D779&outFields=*&returnGeometry=true&outSR=4326&f=json",
+      "source_or_capture_date": "Queried 2026-10-30",
+      "retrieved_date": "2026-10-30",
+      "use": "Official feature name/address/owner and four-corner outer ring.",
+      "limits": "Service summary area/perimeter conflict with approximate project-transformed ring; not a wall or roof survey.",
+      "file": "sources/purdue_gis_fid779_2026-10-30_wgs84.json",
+      "bytes": 8977,
+      "sha256": "9fd4665951f25e5d3e5c1cd3dbfb5015b250cc75776538dba649cb70706ee03e",
+      "format": "application/json"
+    },
+    {
+      "id": "G3",
+      "provider": "Purdue University Campus Map / ArcGIS",
+      "title": "FID 779 prior snapshot, filtered feature",
+      "url": "https://purdueuniversity.maps.arcgis.com/",
+      "source_or_capture_date": "Feature snapshot present by 2026-10-26; original download date not recorded",
+      "retrieved_date": "2026-10-30",
+      "use": "Ring compared with fresh query; exact geometry match. Filtered from repository-wide snapshot of 946 records.",
+      "limits": "Derived filtered copy of prior repository snapshot, not a second survey.",
+      "file": "sources/purdue_gis_fid779_2026-10-26_wgs84.json",
+      "bytes": 2293,
+      "sha256": "9be077cce4e33b4b0d6990605336be93ebca9b6adeeede36e52f2a40d2a7c1c3",
+      "format": "application/json"
+    },
+    {
+      "id": "C1",
+      "provider": "The Church of Jesus Christ of Latter-day Saints",
+      "title": "West Lafayette official location index",
+      "url": "https://local.churchofjesuschrist.org/en/us/in/west-lafayette",
+      "source_or_capture_date": "Page date not stated",
+      "retrieved_date": "Snapshot retrieved 2026-10-26; rechecked from saved page 2026-10-30",
+      "use": "Identifies 14 Waldron Institute and distinguishes separate 3224 Jasper meetinghouse.",
+      "limits": "Location/use identity only; page does not describe architecture or footprint.",
+      "file": "sources/church_location_index.html",
+      "bytes": 68469,
+      "sha256": "3766a0a25076488eb3ad648d62b8c523cf0b0a7c0dd1e73f1cbc3f53bd35603f",
+      "format": "text/html"
+    },
+    {
+      "id": "C2",
+      "provider": "The Church of Jesus Christ of Latter-day Saints",
+      "title": "Lafayette YSA Ward official location page",
+      "url": "https://local.churchofjesuschrist.org/en/units/us/in/lafayette-ysa-ward",
+      "source_or_capture_date": "Page date not stated",
+      "retrieved_date": "Snapshot retrieved 2026-10-26; rechecked from saved page 2026-10-30",
+      "use": "Supports 14 Waldron Street location association.",
+      "limits": "Address/use evidence only; no exterior description or plan.",
+      "file": "sources/church_lafayette_ysa_ward.html",
+      "bytes": 81263,
+      "sha256": "020cc6a0e6a4273d66ee27f0e0fd3dab4addb1f9d5e2387ba0f8a90adc1fd02c",
+      "format": "text/html"
+    },
+    {
+      "id": "V1",
+      "provider": "Google Maps Street View",
+      "title": "23 Waldron St camera, pano iyVJi-tEDx_csjeK3GVwsA, front oblique",
+      "url": "https://www.google.com/maps/@40.4248225,-86.9179101,191a,75y,114.6h,90t/data=!3m7!1e1!3m5!1siyVJi-tEDx_csjeK3GVwsA!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DiyVJi-tEDx_csjeK3GVwsA%26yaw%3D114.6046!7i16384!8i8192",
+      "source_or_capture_date": "Capture Jul 2023, confirmed in Maps UI; station 40.4248225,-86.9179101, near 23 Waldron St",
+      "retrieved_date": "Original prior-audit snapshot retrieved 2026-10-26; re-inspected 2026-10-30",
+      "use": "Current frontage identity, one-story brick appearance, recessed entry, approach ramp/steps and roof edge.",
+      "limits": "Oblique, trees and landscaping block portions, cars foreground; no scale, photo color uncalibrated.",
+      "file": "sources/google_street_view_23_waldron_2023.jpg",
+      "bytes": 183585,
+      "sha256": "82239a4f19f57d851c548ab1835f9235d7e4ad8b522b5c06934ed6a2ce0d1029",
+      "format": "image/jpeg",
+      "resolution_px": [
+        1024,
+        682
+      ]
+    },
+    {
+      "id": "V2-0",
+      "provider": "Google Maps Street View",
+      "title": "Pano YOHVhoh0qFKfbkmSxmYq2A, yaw 0",
+      "url": "https://www.google.com/maps/@40.4251724,-86.9173697,191a,90y,90t/data=!3m7!1e1!3m5!1sYOHVhoh0qFKfbkmSxmYq2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DYOHVhoh0qFKfbkmSxmYq2A%26yaw%3D0!7i16384!8i8192",
+      "source_or_capture_date": "Capture Jul 2023, confirmed in Maps UI",
+      "retrieved_date": "Retrieved 2026-10-30",
+      "use": "Same July 2023 camera station at 917 1st Street, 40.4251724,-86.9173697. Yaw 202 is the target-facing candidate side view; other yaw images give only surrounding context. Rotations are not additional viewpoints.",
+      "limits": "Image is 900x600 thumbnail. Multiple nearby institutional buildings and parked cars make exact target attribution conditional; use GIS position/bearing and do not treat as complete orthogonal elevation.",
+      "file": "sources/streetview_YOHVhoh0qFKfbkmSxmYq2A_yaw0.jpg",
+      "bytes": 183734,
+      "sha256": "bc4d48ab47474edb280de6fd48c4d95d3952edda53854d246972ab5945573978",
+      "format": "image/jpeg",
+      "resolution_px": [
+        900,
+        600
+      ]
+    },
+    {
+      "id": "V2-90",
+      "provider": "Google Maps Street View",
+      "title": "Pano YOHVhoh0qFKfbkmSxmYq2A, yaw 90",
+      "url": "https://www.google.com/maps/@40.4251724,-86.9173697,191a,90y,90t/data=!3m7!1e1!3m5!1sYOHVhoh0qFKfbkmSxmYq2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DYOHVhoh0qFKfbkmSxmYq2A%26yaw%3D90!7i16384!8i8192",
+      "source_or_capture_date": "Capture Jul 2023, confirmed in Maps UI",
+      "retrieved_date": "Retrieved 2026-10-30",
+      "use": "Same July 2023 camera station at 917 1st Street, 40.4251724,-86.9173697. Yaw 202 is the target-facing candidate side view; other yaw images give only surrounding context. Rotations are not additional viewpoints.",
+      "limits": "Image is 900x600 thumbnail. Multiple nearby institutional buildings and parked cars make exact target attribution conditional; use GIS position/bearing and do not treat as complete orthogonal elevation.",
+      "file": "sources/streetview_YOHVhoh0qFKfbkmSxmYq2A_yaw90.jpg",
+      "bytes": 142100,
+      "sha256": "35cffe663ccc3dc3f99b2fafc4c2219ffd72145c7f4b35f090eb6901ef0bc941",
+      "format": "image/jpeg",
+      "resolution_px": [
+        900,
+        600
+      ]
+    },
+    {
+      "id": "V2-180",
+      "provider": "Google Maps Street View",
+      "title": "Pano YOHVhoh0qFKfbkmSxmYq2A, yaw 180",
+      "url": "https://www.google.com/maps/@40.4251724,-86.9173697,191a,90y,90t/data=!3m7!1e1!3m5!1sYOHVhoh0qFKfbkmSxmYq2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DYOHVhoh0qFKfbkmSxmYq2A%26yaw%3D180!7i16384!8i8192",
+      "source_or_capture_date": "Capture Jul 2023, confirmed in Maps UI",
+      "retrieved_date": "Retrieved 2026-10-30",
+      "use": "Same July 2023 camera station at 917 1st Street, 40.4251724,-86.9173697. Yaw 202 is the target-facing candidate side view; other yaw images give only surrounding context. Rotations are not additional viewpoints.",
+      "limits": "Image is 900x600 thumbnail. Multiple nearby institutional buildings and parked cars make exact target attribution conditional; use GIS position/bearing and do not treat as complete orthogonal elevation.",
+      "file": "sources/streetview_YOHVhoh0qFKfbkmSxmYq2A_yaw180.jpg",
+      "bytes": 125615,
+      "sha256": "cefea5797c6ef648776cce27b3eff36d45a9863dfa515ebcfb5101e57ad56cbb",
+      "format": "image/jpeg",
+      "resolution_px": [
+        900,
+        600
+      ]
+    },
+    {
+      "id": "V2-202",
+      "provider": "Google Maps Street View",
+      "title": "Pano YOHVhoh0qFKfbkmSxmYq2A, yaw 202",
+      "url": "https://www.google.com/maps/@40.4251724,-86.9173697,191a,90y,90t/data=!3m7!1e1!3m5!1sYOHVhoh0qFKfbkmSxmYq2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DYOHVhoh0qFKfbkmSxmYq2A%26yaw%3D202!7i16384!8i8192",
+      "source_or_capture_date": "Capture Jul 2023, confirmed in Maps UI",
+      "retrieved_date": "Retrieved 2026-10-30",
+      "use": "Same July 2023 camera station at 917 1st Street, 40.4251724,-86.9173697. Yaw 202 is the target-facing candidate side view; other yaw images give only surrounding context. Rotations are not additional viewpoints.",
+      "limits": "Image is 900x600 thumbnail. Multiple nearby institutional buildings and parked cars make exact target attribution conditional; use GIS position/bearing and do not treat as complete orthogonal elevation.",
+      "file": "sources/streetview_YOHVhoh0qFKfbkmSxmYq2A_yaw202.jpg",
+      "bytes": 120483,
+      "sha256": "a38c2641d2817001e7d1a52530718e2bcd226fb03c65b15fbf94a1640a95499f",
+      "format": "image/jpeg",
+      "resolution_px": [
+        900,
+        600
+      ]
+    },
+    {
+      "id": "V2-270",
+      "provider": "Google Maps Street View",
+      "title": "Pano YOHVhoh0qFKfbkmSxmYq2A, yaw 270",
+      "url": "https://www.google.com/maps/@40.4251724,-86.9173697,191a,90y,90t/data=!3m7!1e1!3m5!1sYOHVhoh0qFKfbkmSxmYq2A!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3DYOHVhoh0qFKfbkmSxmYq2A%26yaw%3D270!7i16384!8i8192",
+      "source_or_capture_date": "Capture Jul 2023, confirmed in Maps UI",
+      "retrieved_date": "Retrieved 2026-10-30",
+      "use": "Same July 2023 camera station at 917 1st Street, 40.4251724,-86.9173697. Yaw 202 is the target-facing candidate side view; other yaw images give only surrounding context. Rotations are not additional viewpoints.",
+      "limits": "Image is 900x600 thumbnail. Multiple nearby institutional buildings and parked cars make exact target attribution conditional; use GIS position/bearing and do not treat as complete orthogonal elevation.",
+      "file": "sources/streetview_YOHVhoh0qFKfbkmSxmYq2A_yaw270.jpg",
+      "bytes": 166808,
+      "sha256": "002eea4173c60e807a4f3b85f6c02ace2143292b6405171d11ee9f50da60567f",
+      "format": "image/jpeg",
+      "resolution_px": [
+        900,
+        600
+      ]
+    },
+    {
+      "id": "V3-0",
+      "provider": "Google Maps Street View",
+      "title": "Pano 5Lq9rA5K-J4QjYH9TAloYw, yaw 0",
+      "url": "https://www.google.com/maps/@40.4245476,-86.9179131,191a,90y,90t/data=!3m7!1e1!3m5!1s5Lq9rA5K-J4QjYH9TAloYw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3D5Lq9rA5K-J4QjYH9TAloYw%26yaw%3D0!7i16384!8i8192",
+      "source_or_capture_date": "Capture Jul 2023; station 40.4245476,-86.9179131, near 8 Waldron St; confirmed in Maps UI",
+      "retrieved_date": "Retrieved 2026-10-30",
+      "use": "Second distinct street camera station from the south/west; yaw 45 points toward the target candidate, yaw 0 shows the street/context.",
+      "limits": "One camera position only; large trees, vehicles, and angle obscure most wall runs; target-side assignment depends on map footprint.",
+      "file": "sources/streetview_5Lq9rA5K-J4QjYH9TAloYw_yaw0.jpg",
+      "bytes": 154008,
+      "sha256": "f01feae8aa7d97a81684105e41a6617a4c8c28c0ff0e8e6fc854d138aad0a573",
+      "format": "image/jpeg",
+      "resolution_px": [
+        900,
+        600
+      ]
+    },
+    {
+      "id": "V3-45",
+      "provider": "Google Maps Street View",
+      "title": "Pano 5Lq9rA5K-J4QjYH9TAloYw, yaw 45",
+      "url": "https://www.google.com/maps/@40.4245476,-86.9179131,191a,90y,90t/data=!3m7!1e1!1s5Lq9rA5K-J4QjYH9TAloYw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3D5Lq9rA5K-J4QjYH9TAloYw%26yaw%3D45!7i16384!8i8192",
+      "source_or_capture_date": "Capture Jul 2023; station 40.4245476,-86.9179131, near 8 Waldron St; confirmed in Maps UI",
+      "retrieved_date": "Retrieved 2026-10-30",
+      "use": "Second distinct street camera station from the south/west; yaw 45 points toward the target candidate, yaw 0 shows the street/context.",
+      "limits": "One camera position only; large trees, vehicles, and angle obscure most wall runs; target-side assignment depends on map footprint.",
+      "file": "sources/streetview_5Lq9rA5K-J4QjYH9TAloYw_yaw45.jpg",
+      "bytes": 166559,
+      "sha256": "69489e8f27ea742fe11ec0c955cf5d2ca129e4a5104e99b6dfea9f397781e33a",
+      "format": "image/jpeg",
+      "resolution_px": [
+        900,
+        600
+      ]
+    },
+    {
+      "id": "P1",
+      "provider": "Tippecanoe County / West Lafayette planning staff",
+      "title": "Purdue–Hillel Minor Subdivision S-4850, 2019 staff report and sketch plat",
+      "url": "https://www.tippecanoe.in.gov/AgendaCenter/ViewFile/Item/8816?fileID=16761",
+      "source_or_capture_date": "Staff report June 13, 2019; sketch plat May 20, 2019",
+      "retrieved_date": "Downloaded and inspected 2026-10-30",
+      "use": "Neighbor separation: identifies Hillel at northeast corner of State/Waldron, separate parcel, planned existing-building expansion and alley access.",
+      "limits": "Documents Hillel, not the Institute. No Institute architecture is inferred from its sketch.",
+      "file": "sources/adjacent_hillel_minor_subdivision_staff_report_2019.pdf",
+      "bytes": 807357,
+      "sha256": "55d55afe44e06ded2ffdade58a735d155096dc413b8fd1e0b2ed9f3789420a86",
+      "format": "application/pdf"
+    },
+    {
+      "id": "A1",
+      "provider": "Purdue University Archives and Special Collections",
+      "title": "UA 62 Series 3, Box 93, Folder 36 finding-aid entry",
+      "url": "https://archives.lib.purdue.edu/fa/UA62_Series3.pdf",
+      "source_or_capture_date": "Catalog entry: Sep 1974; four contact-sheet/negative items",
+      "retrieved_date": "Indexed/opened 2026-10-30",
+      "use": "Entry describes religious-foundation buildings including a “new Latter-Day Saints [Mormon] building”; candidate historical image lead.",
+      "limits": "Catalog text does not state 14 Waldron, and image/negative was not retrieved or visually evaluated. Direct retrieval was unavailable in prior audit. No local file or hash.",
+      "format": "application/pdf"
+    },
+    {
+      "id": "A2",
+      "provider": "Purdue University Archives and Special Collections",
+      "title": "UA 62 Series 3, Box 84, Folder 48.4 finding-aid lead",
+      "url": "https://archives.lib.purdue.edu/fa/UA62_Series3.pdf",
+      "source_or_capture_date": "Prior audit reports folder dates spanning circa 1968–1989; image date not established",
+      "retrieved_date": "Prior audit inspected online indexed description 2026-10-26",
+      "use": "Catalog lead for exterior Institute of Religion photographs.",
+      "limits": "Finding aid is not the photograph; image was not retrieved or visually evaluated. No local file or hash.",
+      "format": "application/pdf"
+    },
+    {
+      "id": "N1",
+      "provider": "Repository prior audit",
+      "title": "Prior LDS Institute source notes",
+      "url": "../../../../audit/massing_the_church_of_jesus_christ_of_latter_day_saints_6f2a451/source_notes.md",
+      "source_or_capture_date": "Prepared before 2026-10-26",
+      "retrieved_date": "Copied 2026-10-30",
+      "use": "Preserves prior source interpretation, coordinate transform, model estimate caveats and failed archive retrieval history.",
+      "limits": "Repository secondary notes rather than independent exterior evidence.",
+      "file": "sources/prior_audit_source_notes.md",
+      "bytes": 3961,
+      "sha256": "b3ee602a9230352ba11786104e21de797ef8e5046d7abdfcc637fc7474000769",
+      "format": "text/markdown"
+    }
+  ]
+}
