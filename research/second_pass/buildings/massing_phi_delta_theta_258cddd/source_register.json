@@ -1,0 +1,149 @@
+{
+  "building_id": "massing_phi_delta_theta_258cddd",
+  "sources": [
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "e7c0c641a3150a5ab4a3681d20f91f9404530add79dbe9f1bc8b0e8c2a686b24",
+      "bytes": 2209,
+      "id": "G1",
+      "file": "sources/purdue_gis_fid796_2026-10-30.geojson",
+      "role": "Fresh official SOFDH / Phi Delta Theta / 503 State St FID796 feature, queried 2026-10-30; geometry and attributes.",
+      "provider": "Purdue ArcGIS BuildingShapesZip4 FID 796",
+      "limits": "Generalized GIS outline, not a survey of wall lines; NUM_LEVELS and CountOfFLO conflict with visible house, and Extrution has undocumented units/meaning.",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/796?f=pjson"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "788e125a15550d42ef2ff2d61f781a6d1d120a06b453541925d6fed85f04c3f1",
+      "bytes": 32258,
+      "id": "G2",
+      "file": "sources/purdue_gis_building_shapes_metadata.json",
+      "role": "Official service field schema and spatial reference metadata.",
+      "provider": "Purdue ArcGIS BuildingShapesZip4 layer metadata",
+      "limits": "Does not establish survey accuracy or vertical-field semantics.",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "1cf7be7f2ed13987a6f064eaa4d82e0fd63d8e1e6d82dbe71e4cf8488e0eb4e5",
+      "bytes": 16221,
+      "id": "G3",
+      "file": "sources/previous_purdue_gis_fid796_2026-10-26.json",
+      "role": "Prior official query retained to compare with the fresh 2026-10-30 geometry; coordinate ring matches exactly.",
+      "provider": "Purdue GIS prior FID796 snapshot",
+      "limits": "Same generalized GIS and unsupported height limitations as G1.",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D796&outFields=*&returnGeometry=true&outSR=4326&f=pjson"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "775be9e8faf86e010352312c508a7a89afc0fce4538e01f46ef121c32158632f",
+      "bytes": 72547,
+      "id": "V1",
+      "file": "sources/phi_delta_2017_state_street_makeover.html",
+      "role": "Official chapter page dated 2017-06-13; identifies 503 W State and describes exterior image during street work.",
+      "provider": "Purdue Phi Delta Theta, State Street Makeover",
+      "limits": "Article image is one near-frontal/oblique frontage view from 2017, no pose or scale; construction zone obscures base and is temporary.",
+      "url": "https://purdue-phi.net/state-street-makeover/"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "c8bd90a370ed86c61a2d6e56cdb34179bbbc9ea0b5e7aa7c059fb3e56a72fff3",
+      "bytes": 777536,
+      "id": "V1-image",
+      "file": "sources/phi_delta_state_street_front_2017.jpg",
+      "role": "Original 2560x1440 article image; visible facade, portico, pediment, balconies, siding and varied roof silhouette.",
+      "provider": "Purdue Phi Delta Theta article photograph",
+      "limits": "Single perspective with no camera coordinates/scale; no side or rear elevations.",
+      "url": "https://purdue-phi.net/state-street-makeover/"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "e67c395e27600d1a02bec3c394f868cc7db1646614bcc20b2deef157f316ec24",
+      "bytes": 46847,
+      "id": "A1",
+      "file": "sources/esri_world_imagery_mosaic_z20.jpg",
+      "role": "Stored overhead context used with GIS outline for building identity and north-facing State Street frontage orientation.",
+      "provider": "Esri World Imagery XYZ tile mosaic",
+      "limits": "Tile endpoint does not expose image acquisition date; not used for facade, height or material claims.",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/20/{y}/{x}"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "98303bcda077e656353a520f68f268ecbf640dc9f8d6bdbf6b0c6ff00398edd8",
+      "bytes": 26246202,
+      "id": "H1",
+      "file": "../../../../audit/massing_phi_delta_theta_258cddd/sources/phi_delta_theta_scroll_1910_issue.pdf",
+      "role": "Original issue PDF retained in prior audit; article documents 1909 construction, architect Elmer E. Dunlap, brick walls, slate roof, high basement and fourth-floor servants area.",
+      "provider": "The Scroll, Vol. XXXIV, March 1910, Indiana Theta's New House",
+      "limits": "Historical text applies to the 1909 house; it does not establish survival or current full-envelope identity; no elevations.",
+      "url": "https://phideltathetaarchive.com/wp-content/uploads/2012/03/1909-10_vol34_no1-5.pdf"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "d38583004f3442e278af6d99251ca866abe96cfde95069006fc6a3d8b26e268e",
+      "bytes": 81464,
+      "id": "H2",
+      "file": "sources/scroll_1910_pdf_p342.png",
+      "role": "Full-page 160dpi derivative of source PDF page 342; basement and first-floor plans for Indiana Theta Chapter House.",
+      "provider": "The Scroll, 1910 issue, p. 342 plan sheet",
+      "limits": "Historic plan, not facade elevation; page has no compass arrow or scale tied to current structure.",
+      "url": "https://phideltathetaarchive.com/wp-content/uploads/2012/03/1909-10_vol34_no1-5.pdf"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "d578502b916b825385d7a444c9917d99a0e29fdd83658edee5b351be190de44c",
+      "bytes": 64079,
+      "id": "H3",
+      "file": "sources/scroll_1910_pdf_p343.png",
+      "role": "Full-page 160dpi derivative of source PDF page 343; second/third-floor plans for Indiana Theta Chapter House.",
+      "provider": "The Scroll, 1910 issue, p. 343 plan sheet",
+      "limits": "Historic plan, not facade elevation; does not show present-day condition or fourth-floor layout.",
+      "url": "https://phideltathetaarchive.com/wp-content/uploads/2012/03/1909-10_vol34_no1-5.pdf"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "e01b3e7e0ad2253a68f7b4df57da0d49782167976cfe37eb5ec1eb2ad5d358b4",
+      "bytes": 90170,
+      "id": "I1",
+      "file": "sources/phi_delta_2025_26_honor_roll.html",
+      "role": "Official chapter page spans giving year 2025-09-01 through 2026-08-31; supports chapter activity.",
+      "provider": "Purdue Phi Delta Theta 2025–26 Honor Roll",
+      "limits": "Activity/identity only; does not document physical building condition.",
+      "url": "https://purdue-phi.net/honor-roll/"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": "7f30559d88f0319f983398288a8ef4b402d76a884c3c359037d0342e485086ec",
+      "bytes": 71226,
+      "id": "I2",
+      "file": "sources/phi_delta_2019_chapter_house_update.html",
+      "role": "Official 2019 page text captured; historical room/location statement retained as a lead.",
+      "provider": "Purdue Phi Delta Theta Chapter House Update",
+      "limits": "Linked photographs inaccessible (HTTP 500), therefore no visual claims taken from them.",
+      "url": "https://purdue-phi.net/chapter-house-update/"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": null,
+      "bytes": null,
+      "id": "X1",
+      "file": null,
+      "role": "Checked candidate lifecycle passage mentioning reroofing/painting; retained here as a rejected-source record.",
+      "provider": "The Scroll, Summer Supplement 1981, Iowa Beta passage",
+      "limits": "Context identifies Iowa Beta; next Indiana Theta entry is a directory listing, not source of the renovation claim; excluded from target chronology.",
+      "url": "https://www.phideltathetaarchive.com/wp-content/uploads/2023/01/The-Scroll_SummerSuppl1981_Vol194_No4.pdf"
+    },
+    {
+      "source_or_retrieval_date": "2026-10-30",
+      "sha256": null,
+      "bytes": null,
+      "id": "X2",
+      "file": null,
+      "role": "Historic-photo collection retrieval lead.",
+      "provider": "Purdue Archives finding aid, object 5985, Buildings—Fraternity Houses—Phi Delta Theta",
+      "limits": "Public page returned HTTP 403 during review; no image inspected and no visual claim used.",
+      "url": "https://archives.lib.purdue.edu/repositories/2/archival_objects/5985"
+    }
+  ],
+  "generated_utc_date": "2026-10-30"
+}
