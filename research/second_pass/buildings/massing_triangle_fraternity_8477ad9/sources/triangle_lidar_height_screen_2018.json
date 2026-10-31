@@ -1,0 +1,1481 @@
+{
+  "building_id": "massing_triangle_fraternity_8477ad9",
+  "review_date": "2026-10-30",
+  "method": "Official Purdue GIS FID 777 polygon transformed to Indiana 2018 DSM raster CRS. Extracted valid 5-ft DSM cell centers inside polygon; separately sampled same-coordinate 2016-2020 Indiana bare-earth DEM ImageServer using a 6x6 interior WGS84 grid, then compared each terrain value to nearest DSM cell. The DTM at building points is interpolated bare earth, not observed under the building.",
+  "sources": {
+    "footprint": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=FID%3D777&outFields=*&returnGeometry=true&outSR=4326&f=pjson",
+    "DSM": "https://giselevationingov.s3.us-east-2.amazonaws.com/dsmoptimized/statewide/2018/SPW/5ft/in2018_29951885_12_dsm.tif",
+    "DSM_tile": "in2018_29951885_12",
+    "DSM_acquisition_date": "2018-04-20",
+    "DSM_CRS": "PROJCS[\"NAD83(HARN) / Indiana West (ftUS)\",GEOGCS[\"NAD83(HARN)\",DATUM[\"NAD83_High_Accuracy_Reference_Network\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6152\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",37.5],PARAMETER[\"central_meridian\",-87.0833333333333],PARAMETER[\"scale_factor\",0.999966666666667],PARAMETER[\"false_easting\",2952750],PARAMETER[\"false_northing\",820208.333333333],UNIT[\"US survey foot\",0.304800609601219,AUTHORITY[\"EPSG\",\"9003\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "DSM_cell_size_native_ft": [
+      5.0,
+      5.0
+    ],
+    "DSM_sha256": "1547f9840b679656feb4a25a5bb47a496f0c2675659a2b1c8571d3d24815f7ab",
+    "bare_earth_DEM": "https://di-ingov.img.arcgis.com/arcgis/rest/services/DynamicWebMercator/Indiana_2016_2020_DEM/ImageServer/identify",
+    "vertical_units": "DSM in U.S. survey feet; DEM identify returns feet (field service elevation units)."
+  },
+  "DSM_inside_FID777": {
+    "count": 316,
+    "quantiles_ftUS": {
+      "p0": 619.6099853515625,
+      "p10": 647.8499755859375,
+      "p25": 648.1174926757812,
+      "p50": 653.9400024414062,
+      "p75": 654.1400146484375,
+      "p90": 654.2449951171875,
+      "p95": 654.4324951171875,
+      "p99": 656.510498046875,
+      "p100": 657.4199829101562
+    }
+  },
+  "matched_grid_samples": [
+    {
+      "longitude": -86.91719353575927,
+      "latitude": 40.425319031630124,
+      "DSM_ftUS": 647.780029296875,
+      "bare_earth_DEM_ft": 620.06,
+      "surface_minus_ground_ft": 27.720029296875055,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91713141505635,
+      "latitude": 40.425319031630124,
+      "DSM_ftUS": 647.9299926757812,
+      "bare_earth_DEM_ft": 620.38,
+      "surface_minus_ground_ft": 27.549992675781255,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91706929435341,
+      "latitude": 40.425319031630124,
+      "DSM_ftUS": 648.1300048828125,
+      "bare_earth_DEM_ft": 617.84,
+      "surface_minus_ground_ft": 30.290004882812468,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91700717365049,
+      "latitude": 40.425319031630124,
+      "DSM_ftUS": 648.6400146484375,
+      "bare_earth_DEM_ft": 614.12,
+      "surface_minus_ground_ft": 34.520014648437495,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91719353575927,
+      "latitude": 40.42535958613916,
+      "DSM_ftUS": 647.7100219726562,
+      "bare_earth_DEM_ft": 619.98,
+      "surface_minus_ground_ft": 27.730021972656232,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91713141505635,
+      "latitude": 40.42535958613916,
+      "DSM_ftUS": 653.9099731445312,
+      "bare_earth_DEM_ft": 620.4,
+      "surface_minus_ground_ft": 33.50997314453127,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91706929435341,
+      "latitude": 40.42535958613916,
+      "DSM_ftUS": 648.1199951171875,
+      "bare_earth_DEM_ft": 617.26,
+      "surface_minus_ground_ft": 30.85999511718751,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91700717365049,
+      "latitude": 40.42535958613916,
+      "DSM_ftUS": 648.6500244140625,
+      "bare_earth_DEM_ft": 614.0,
+      "surface_minus_ground_ft": 34.6500244140625,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91719353575927,
+      "latitude": 40.425400140648186,
+      "DSM_ftUS": 647.6900024414062,
+      "bare_earth_DEM_ft": 620.03,
+      "surface_minus_ground_ft": 27.660002441406277,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91713141505635,
+      "latitude": 40.425400140648186,
+      "DSM_ftUS": 653.72998046875,
+      "bare_earth_DEM_ft": 619.95,
+      "surface_minus_ground_ft": 33.779980468749955,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91706929435341,
+      "latitude": 40.425400140648186,
+      "DSM_ftUS": 648.0999755859375,
+      "bare_earth_DEM_ft": 616.68,
+      "surface_minus_ground_ft": 31.41997558593755,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91700717365049,
+      "latitude": 40.425400140648186,
+      "DSM_ftUS": 648.4000244140625,
+      "bare_earth_DEM_ft": 614.5,
+      "surface_minus_ground_ft": 33.9000244140625,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91719353575927,
+      "latitude": 40.425440695157214,
+      "DSM_ftUS": 648.3099975585938,
+      "bare_earth_DEM_ft": 620.24,
+      "surface_minus_ground_ft": 28.06999755859374,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91713141505635,
+      "latitude": 40.425440695157214,
+      "DSM_ftUS": 654.489990234375,
+      "bare_earth_DEM_ft": 619.37,
+      "surface_minus_ground_ft": 35.119990234374995,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91706929435341,
+      "latitude": 40.425440695157214,
+      "DSM_ftUS": 654.5,
+      "bare_earth_DEM_ft": 617.35,
+      "surface_minus_ground_ft": 37.14999999999998,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91713141505635,
+      "latitude": 40.42548124966624,
+      "DSM_ftUS": 654.2100219726562,
+      "bare_earth_DEM_ft": 620.2,
+      "surface_minus_ground_ft": 34.010021972656205,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91706929435341,
+      "latitude": 40.42548124966624,
+      "DSM_ftUS": 654.1199951171875,
+      "bare_earth_DEM_ft": 619.03,
+      "surface_minus_ground_ft": 35.08999511718753,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91700717365049,
+      "latitude": 40.42548124966624,
+      "DSM_ftUS": 654.1300048828125,
+      "bare_earth_DEM_ft": 617.87,
+      "surface_minus_ground_ft": 36.260004882812495,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91694505294755,
+      "latitude": 40.42548124966624,
+      "DSM_ftUS": 654.1199951171875,
+      "bare_earth_DEM_ft": 617.89,
+      "surface_minus_ground_ft": 36.229995117187514,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91688293224463,
+      "latitude": 40.42548124966624,
+      "DSM_ftUS": 654.1400146484375,
+      "bare_earth_DEM_ft": 619.34,
+      "surface_minus_ground_ft": 34.80001464843747,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91713141505635,
+      "latitude": 40.425521804175276,
+      "DSM_ftUS": 653.989990234375,
+      "bare_earth_DEM_ft": 620.64,
+      "surface_minus_ground_ft": 33.349990234375014,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91706929435341,
+      "latitude": 40.425521804175276,
+      "DSM_ftUS": 654.0399780273438,
+      "bare_earth_DEM_ft": 620.64,
+      "surface_minus_ground_ft": 33.399978027343764,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91700717365049,
+      "latitude": 40.425521804175276,
+      "DSM_ftUS": 654.0999755859375,
+      "bare_earth_DEM_ft": 619.71,
+      "surface_minus_ground_ft": 34.389975585937464,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91694505294755,
+      "latitude": 40.425521804175276,
+      "DSM_ftUS": 653.9400024414062,
+      "bare_earth_DEM_ft": 619.77,
+      "surface_minus_ground_ft": 34.17000244140627,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    },
+    {
+      "longitude": -86.91688293224463,
+      "latitude": 40.425521804175276,
+      "DSM_ftUS": 653.9500122070312,
+      "bare_earth_DEM_ft": 620.52,
+      "surface_minus_ground_ft": 33.43001220703127,
+      "DEM_status": null,
+      "DEM_catalog_items": {
+        "objectIdFieldName": "OBJECTID",
+        "features": [
+          {
+            "attributes": {
+              "OBJECTID": 43955,
+              "Name": "Indiana_2016_to_2020_SPW_Elevation_MRF",
+              "MinPS": 6.096012,
+              "MaxPS": 3048,
+              "LowPS": 6.096012192024385,
+              "HighPS": 97.53619507239016,
+              "Category": 2,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9705069.872346513,
+              "CenterY": 4838597.119183807,
+              "ZOrder": null,
+              "Image_Year": null,
+              "County": null,
+              "Pixel_Size": null,
+              "Shape_Length": 1589581.052158663,
+              "Shape_Area": 124265723407.28871
+            }
+          },
+          {
+            "attributes": {
+              "OBJECTID": 35356,
+              "Name": "in2018_29951885_12",
+              "MinPS": 0,
+              "MaxPS": 6.096012192024385,
+              "LowPS": 0.7620015240030481,
+              "HighPS": 0.7620015240030481,
+              "Category": 1,
+              "Tag": "Dataset",
+              "GroupName": "",
+              "ProductName": "",
+              "CenterX": -9676178.012384282,
+              "CenterY": 4928674.360474447,
+              "ZOrder": null,
+              "Image_Year": 2018,
+              "County": "Tippecanoe",
+              "Pixel_Size": "2.5 ft.",
+              "Shape_Length": 8013.055784254319,
+              "Shape_Area": 4013051.1784532727
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "surface_minus_interpolated_ground_ft": {
+    "count": 25,
+    "quantiles": {
+      "p0": 27.549992675781255,
+      "p10": 27.724026367187527,
+      "p25": 30.85999511718751,
+      "p50": 33.779980468749955,
+      "p75": 34.6500244140625,
+      "p90": 35.78599316406251,
+      "p95": 36.2540029296875,
+      "p99": 36.93640117187498,
+      "p100": 37.14999999999998
+    },
+    "median": 33.779980468749955
+  },
+  "limits": [
+    "5-ft DSM cells mix roofs, equipment, edges, vegetation and artifacts; samples may fall on roof steps or eaves.",
+    "Bare-earth DEM values within footprint are interpolated terrain, not observed building ground.",
+    "Sampled raster cells are nearest-cell values, not a surface fit or roof-plane classification.",
+    "This 2018 surface predates the site/current 2023 image and later updates; it does not establish current roof features, wall height, story count, datum-tied parapet or ridge."
+  ]
+}
