@@ -7,6 +7,8 @@ Current per-building Blender sources and builders live in [`modular/buildings/`]
 Master sync 2026-10-28: [fresh-open verification](audit/tobin_buildings_master_sync_2026-10-28.json) passed for 110/110 detailed placement markers and 1,941 linked libraries, including the current Circle Pines, Sigma Kappa, and Shoemaker source assets.
 <!-- second-pass-queue:start -->
 
+**Modeling resumed — user direction 2026-10-31.** Second-pass exterior modeling now proceeds down the ranking below, skipping buildings already done (WALC, PMU, Felix Haas). For each building: reuse the research dossier plus new research, rebuild the exterior with a dedicated `build_<id>_second_pass.py` builder (shared kit: `scripts/second_pass/`), run one full independent exterior review, apply changes, run one shorter independent review, apply changes, then mark it for human review and move on. Every modeled second pass, including those done earlier, is listed in the [human-review list](research/second_pass/human_review.json); a human-review flag is not 9.9 acceptance or master integration.
+
 **Active work:** Beering research is committed. The execution log records ranks 2–12 as saved focused passes, with explicit gaps; **rank 13, Purdue Memorial Union**, is now authorized for additional research and exterior modeling (October 30, 2026). WALC remains user-handled. [Execution log](research/second_pass/depth_progress.json).
 
 ## Second-pass exterior ranking

@@ -1,0 +1,31 @@
+{
+  "description": "Second-pass exterior buildings flagged for human review. Per user direction 2026-10-31, every building that has received a modeled second pass is marked for human review, including those already done before this date. A human-review flag is not an independent 9.9 acceptance and not master integration; independent review scores are recorded separately in each building's audit folder.",
+  "updated": "2026-10-31",
+  "process_2026_10_31": "User direction: build the model from existing + new research, run one full independent exterior review, apply changes, run one shorter independent review, apply changes, mark for human review, then move to the next ranked building. The 9.9 acceptance threshold and Tobin-only master integration are unchanged; buildings below 9.9 stay unaccepted until a human decides.",
+  "buildings": [
+    {
+      "building_id": "walc",
+      "rank": 1,
+      "second_pass_status": "Done before 2026-10-31 (user-handled)",
+      "human_review": "Marked for human review",
+      "notes": "User stated they already did WALC; no independent second-pass score is inferred.",
+      "asset": "modular/buildings/walc.blend"
+    },
+    {
+      "building_id": "purdue_memorial_union",
+      "rank": 13,
+      "second_pass_status": "Modeled second pass (iterations 1-5, 2026-10-30)",
+      "human_review": "Marked for human review",
+      "notes": "Exterior refinement iterations recorded in audit/purdue_memorial_union_refine/iteration_0*.md; no final independent second-pass grade recorded.",
+      "asset": "modular/buildings/purdue_memorial_union.blend"
+    },
+    {
+      "building_id": "felix_haas_hall",
+      "rank": null,
+      "second_pass_status": "Modeled second pass r04 (prior work branch); user approved preview",
+      "human_review": "Marked for human review",
+      "notes": "Independent r04 score 7.95/10 (below 9.9); see research/second_pass/prior_work.md.",
+      "asset": "modular/buildings/felix_haas_hall.blend"
+    }
+  ]
+}
