@@ -1,0 +1,93 @@
+{
+  "building_id": "felix_haas_hall",
+  "purpose": "Independent source composition audit; no r05 score",
+  "created_at": "2026-10-31T21:11:57.609477+00:00",
+  "baseline_asset_sha256": "7c608ff383548bfb2159fba7734d4cf461813f06ab024117a7d3201d4ba045fb",
+  "score": null,
+  "accepted": false,
+  "sources": [
+    {
+      "file": "../../sources/user_front_detail_2026-10-28.png",
+      "sha256": "249e66ecfe6f5edcb4546a2c9c1ad143eadebb3e1a2b04ae684dcc53e7bca267",
+      "native_dimensions": [
+        496,
+        403
+      ]
+    },
+    {
+      "file": "../../sources/purdue_events_front.jpg",
+      "sha256": "e955f45f47b615a4868b99bc158b3814574f58ac7895cbe34404301e40a425d8",
+      "native_dimensions": [
+        478,
+        310
+      ]
+    },
+    {
+      "file": "../../sources/color_west_entry_apr2026.png",
+      "sha256": "ba5e9918da065c2070c3219cc1790126b2261b397a7db549818f18c5a6ba7015",
+      "native_dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "file": "../../sources/streetview_west_upper_apr2026.png",
+      "sha256": "dc0fe3a11d0b9986d887735aa9d55ce80394dbc3b964ed5dc9f30c073f4c7966",
+      "native_dimensions": [
+        1280,
+        720
+      ]
+    }
+  ],
+  "derived_images": [
+    {
+      "file": "user_front_enlarged_3x.png",
+      "source": "user_front_detail_2026-10-28.png",
+      "crop_xyxy": [
+        0,
+        0,
+        496,
+        403
+      ],
+      "scale": 3,
+      "resampling": "Pillow default BICUBIC resize; no content reconstruction"
+    },
+    {
+      "file": "right_bay_detail_4x.png",
+      "source": "user_front_detail_2026-10-28.png",
+      "crop_xyxy": [
+        265,
+        20,
+        470,
+        270
+      ],
+      "scale": 4,
+      "resampling": "Pillow default BICUBIC resize; no content reconstruction"
+    },
+    {
+      "file": "upper_right_pixel_enlargement_8x.png",
+      "source": "user_front_detail_2026-10-28.png",
+      "crop_xyxy": [
+        285,
+        22,
+        443,
+        145
+      ],
+      "scale": 8,
+      "resampling": "nearest-neighbor; source pixels preserved"
+    },
+    {
+      "file": "portal_detail_8x.png",
+      "source": "user_front_detail_2026-10-28.png",
+      "crop_xyxy": [
+        175,
+        118,
+        260,
+        270
+      ],
+      "scale": 8,
+      "resampling": "Pillow default BICUBIC resize; no content reconstruction"
+    }
+  ],
+  "precision_warning": "All source pixel landmarks and ratios are visual estimates in an uncalibrated oblique photograph; not surveyed metric dimensions or additional independent viewpoints."
+}
