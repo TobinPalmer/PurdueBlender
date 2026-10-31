@@ -1,0 +1,160 @@
+{
+  "generated_utc_date": "2026-10-30",
+  "building_id": "massing_purdue_lutheran_ministry_5425b3c",
+  "sources": [
+    {
+      "limits": "Address/pin only; current page image field references a broken image URL, so no facade details are taken from it.",
+      "id": "I1",
+      "provider": "Our Saviour Lutheran Church / Purdue Lutheran Ministry official location page",
+      "role": "Official location page lists Purdue Lutheran Ministry at 330 W Fowler and location pin coordinates 40.4277913, -86.909616.",
+      "url": "https://osluth.org/locations/purdue-lutheran-ministry-plm/",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 85552,
+      "sha256": "bddf12d8715ff3cba0bbb1857069ddb1315d029550269745ad20635ab31f1b2a",
+      "file": "sources/official_plm_location_page_2026-10-26.html"
+    },
+    {
+      "limits": "Address/identity evidence only; no building form or construction date.",
+      "id": "I2",
+      "provider": "Purdue University College of Science, Lafayette Area Resource Guide Fall 2022",
+      "role": "Independent Purdue listing for PLM at 330 W Fowler at Fowler/Northwestern intersection.",
+      "url": "https://web.ics.purdue.edu/~thomazj/Lafayette%20Area%20Resource%20Guide%20-%20Fall%202022.pdf",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 450148,
+      "sha256": "0d9f99f77e0bc64eec69a08493ca04f69346abb67715d9a730cc0b8cc8c230e2",
+      "file": "sources/purdue_resource_guide_fall_2022.pdf"
+    },
+    {
+      "limits": "Community-mapped polygon, not an as-built survey; dimensions are derived with project local approximation.",
+      "id": "G1",
+      "provider": "OpenStreetMap contributors, way 860901812",
+      "role": "Named Purdue Lutheran Ministry closed four-corner building way, fresh query on 2026-10-30; source way last edited 2020-10-20.",
+      "url": "https://api.openstreetmap.org/api/0.6/way/860901812/full.json",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 1197,
+      "sha256": "5479e798f3737a05a41dbf46890661c396ede4b2debcc478648d3d865867c822",
+      "file": "sources/osm_way_860901812_full_2026-10-30.json"
+    },
+    {
+      "limits": "Zero match means this layer supplies no official Purdue polygon for PLM; it does not imply absence of a building.",
+      "id": "G2",
+      "provider": "Purdue ArcGIS BuildingShapesZip4 location query",
+      "role": "Fresh query returns no features intersecting envelope around the PLM address and OSM outline.",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&geometry=-86.9100,40.4275,-86.9093,40.4281&geometryType=esriGeometryEnvelope&inSR=4326&outSR=4326&f=geojson",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 98,
+      "sha256": "1ce7eb457779acd1dc230a1bcb4692d06f27533481f26cbfe0e9e599134c0cd4",
+      "file": "sources/purdue_gis_plm_area_2026-10-30.geojson"
+    },
+    {
+      "limits": "Metadata does not establish an authoritative footprint for this ministry parcel.",
+      "id": "G2-meta",
+      "provider": "Purdue ArcGIS BuildingShapesZip4 layer metadata",
+      "role": "Official layer schema and spatial reference for the no-feature query.",
+      "url": "https://services1.arcgis.com/mLNdQKiKsj5Z5YMN/arcgis/rest/services/BuildingShapesZip4/FeatureServer/0?f=pjson",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 32256,
+      "sha256": "d2a7d5c51143397c63ab420ae284f06f22b8db773e8c167643b78a9e050ce07f",
+      "file": "sources/purdue_buildings_layer_metadata_2026-10-30.json"
+    },
+    {
+      "limits": "Nominal tax/parcel attribute, not historical proof; tax layer polygons are parcels, not building footprints, and no parcel geometry is used.",
+      "id": "G3",
+      "provider": "Tippecanoe County Assessor GIS Year Built layer 69",
+      "role": "Target-address assessor record reports Year_Built=1910 and ConditionCode=AV; selected exact address row extracted after current query.",
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/69/query?where=1%3D1&geometry=-86.9100,40.4275,-86.9093,40.4281&geometryType=esriGeometryEnvelope&inSR=4326&outFields=*&returnGeometry=false&f=geojson",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 660,
+      "sha256": "1891732ba1e29a12cb5fee2040ea423bc6df698cffaaad122b0f0b84ed652881",
+      "file": "sources/tippecanoe_330w_fowler_assessor_record_2026-10-30.json"
+    },
+    {
+      "limits": "Layer is reference assessment data; it is not architectural documentation or a building outline.",
+      "id": "G4",
+      "provider": "Tippecanoe County Assessor GIS Year Built layer metadata",
+      "role": "Layer fields and spatial metadata confirm parcel-based Year_Built attribute and parcel geometry.",
+      "url": "https://wfs.schneidercorp.com/arcgis/rest/services/TippecanoeCountyIN_WFS/MapServer/69?f=pjson",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 158744,
+      "sha256": "f61356d6e6cd6f9af7a00322ae391115e192d9ef1a1b9eff7c3dc7ccece94993",
+      "file": "sources/tippecanoe_year_built_layer_metadata_2026-10-30.json"
+    },
+    {
+      "limits": "General data policy, not a building-specific source.",
+      "id": "G5",
+      "provider": "Tippecanoe County Assessor GIS public policy",
+      "role": "Official county GIS policy says physical data are dated, warns GIS is not a legal survey and may not be suitable for all purposes.",
+      "url": "https://www.tippecanoe.in.gov/1048/Assessor-GIS",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 139193,
+      "sha256": "5cf150b0fcd2a73c19cb57a310a7e24b7a559ec7f2f1ab337e49fbb56fb4c657",
+      "file": "sources/tippecanoe_assessor_gis_policy_2026-10-30.html"
+    },
+    {
+      "limits": "Acquisition date unavailable and pixel resolution low; no heights or material claims.",
+      "id": "A1",
+      "provider": "Esri World Imagery tile",
+      "role": "Stored overhead context used to inspect broad target roof plan and OSM identity/orientation.",
+      "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/20/395337/271145",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 9784,
+      "sha256": "8ca68a2b5cdc025933346e18daf280e9e772cf5412c5029189c29f8c3791a19b",
+      "file": "sources/world_imagery_tile.jpg"
+    },
+    {
+      "limits": "Single panorama station, no calibrated scale/camera height; heading is provider-relative; no rear or full flank coverage.",
+      "id": "V1",
+      "provider": "Google Street View, panorama p96xZR5Qx7JJ1MCKPoKlpQ",
+      "role": "900x600 thumbnail, yaw 0/pitch 0, Google capture date March 2026; near-front current view of target and neighboring structure.",
+      "url": "https://www.google.com/maps/@40.427612,-86.9096698,188a,90y,90t/data=!3m7!1e1!3m5!1sp96xZR5Qx7JJ1MCKPoKlpQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Dp96xZR5Qx7JJ1MCKPoKlpQ%26yaw%3D0!7i16384!8i8192",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 113509,
+      "sha256": "e75dfb6024a38657e4a95f0c6d498b11a7d616c88091319f322af285715f3088",
+      "file": "sources/streetview_p96xZR5Qx7JJ1MCKPoKlpQ_yaw0.jpg"
+    },
+    {
+      "limits": "Search point is approximate, exact returned station coordinates are not exposed in saved interface; target partly clipped/obscured, no complete facade.",
+      "id": "V2",
+      "provider": "Google Street View, panorama Ss1pkaQoKLWinLtzPWBBxA",
+      "role": "900x600 thumbnail from nearest panorama returned for west-side search point, yaw 90/pitch 0; Google Maps labels view 400 Northwestern Ave and shows March 2026 capture.",
+      "url": "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=40.42780,-86.90982",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 115212,
+      "sha256": "6b2ebc4b5eae6d252589439916de2f3f219935e9f91403f34f1da6ea8a551c29",
+      "file": "sources/streetview_Ss1pkaQoKLWinLtzPWBBxA_yaw90.jpg"
+    },
+    {
+      "limits": "Target clipped at image edge with branches, parking and perspective; no measured dimensions or complete flank schedule.",
+      "id": "V3",
+      "provider": "Google Street View, panorama f_8SoJLQYfaU5IqFa12efw",
+      "role": "900x600 thumbnail from a distinct camera location near southeast approach, yaw 0/pitch 0; Google Maps labels view 320 W Fowler Ave and shows March 2026 capture.",
+      "url": "https://www.google.com/maps/@40.4276042,-86.9094332,188a,90y,90t/data=!3m7!1e1!3m5!1sf_8SoJLQYfaU5IqFa12efw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.clients6.google.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0%26panoid%3Df_8SoJLQYfaU5IqFa12efw%26yaw%3D0!7i16384!8i8192",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 158786,
+      "sha256": "86f375e1340498de1abd60332121d33293685a84fb592e8f8998d752e90729e4",
+      "file": "sources/streetview_f_8SoJLQYfaU5IqFa12efw_yaw0.jpg"
+    },
+    {
+      "limits": "No embedded capture date or camera pose; cropped above/below wall and limited to front detail; uncalibrated/saturated color.",
+      "id": "V4",
+      "provider": "Purdue Lutheran Ministry official site image, Wayback archived copy",
+      "role": "1536x922 close facade image saved from official PLM WordPress image URL; archived 2024-02-12 and original path names June 2017.",
+      "url": "https://web.archive.org/web/20240212095923im_/https://plm.org/wp-content/uploads/2017/06/cropped-PLM-House-resized-1536x922.jpg",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": 284582,
+      "sha256": "552bd6861cf08be9902d75ab59995771f19f92b8eb0e2a6d6196c8013bee7e93",
+      "file": "sources/plm_house_archived_2024.jpg"
+    },
+    {
+      "limits": "Commercial aggregator summary not verified against assessor card/deed; conflicts with official county GIS Year_Built=1910 and is not adopted as construction date.",
+      "id": "X1",
+      "provider": "CountyOffice public property-record aggregator",
+      "role": "Search result reports 1925 year built for the target address; recorded only as a conflicting lead.",
+      "url": "https://www.countyoffice.org/property-record-330-w-fowler-ave-west-lafayette-in-47906-7a4/",
+      "source_or_retrieval_date": "2026-10-30",
+      "bytes": null,
+      "sha256": null,
+      "file": null
+    }
+  ]
+}
