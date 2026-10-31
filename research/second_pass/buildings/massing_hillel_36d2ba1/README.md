@@ -1,6 +1,6 @@
 # Hillel Foundation at Purdue University — second-pass exterior research
 
-**Queue rank:** 61 · **Stable asset ID:** `massing_hillel_36d2ba1` · **Research status:** prepared with major gaps; provisional, not demonstrated ready to build  
+**Queue rank:** 61 · **Stable asset ID:** `massing_hillel_36d2ba1` · **Research status:** prepared with major gaps; provisional, not demonstrated ready to build
 **Reference condition:** latest directly inspected outdoor imagery is Google Street View, July 2023. Purdue Hillel’s Spring 2023 newsletter identifies this as the same building at the renamed address 912 Mitch Daniels Boulevard. The current Hillel contact page lists that address. No exterior imagery later than July 2023 was found in this pass.
 
 This is a source-led exterior brief for later work. No Blender asset, builder, placement, or master scene was edited.
