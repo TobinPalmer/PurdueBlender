@@ -1,5 +1,7 @@
 # Exterior research, before model building
 
+**November 3, 2026 scope update:** The user resumed exterior upgrades of the highest-priority buildings with independent subagent evaluation and a 9.5/10 target. Mechanical Engineering is active; WALC remains user-handled. Follow [modeling progress](modeling_progress.json). The research queue and unresolved dossier gaps below are preserved; earlier research-only wording records the prior phase.
+
 User-directed research-only phase, 2026-10-28. There are 231 not-yet-second-passed buildings in the revised queue. Research proceeds in ascending new rank. No model, builder, placement or master asset is edited by this phase.
 
 **Research depth update, October 29, 2026:** apply the [research standard](research_standard.md) and [existing-dossier depth review](depth_review_2026-10-29.md). Prepared packages are provisional. Per the latest user direction, use bounded passes, retain explicit gaps and move through the list without exhaustive delays on one building. WALC is handled by the user and skipped for additional research. Focused depth work proceeds from rank 2 onward; the package-progress summary below preserves the earlier acquisition checkpoint and does not assert modeling readiness.

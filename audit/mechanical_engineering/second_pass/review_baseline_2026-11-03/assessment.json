@@ -1,0 +1,176 @@
+{
+  "building_id": "mechanical_engineering",
+  "revision": "baseline_2026-11-03",
+  "asset_path": "modular/buildings/mechanical_engineering.blend",
+  "asset_sha256": "06dd926bcd5c71edcb54a9f7a2073f88048b31664e7e423b9b64bcfed54d561b",
+  "reviewer": "/root/mechanical_baseline (independent, no geometry edits)",
+  "reviewed_at": "2026-11-03",
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Window/opening placement, counts, rhythm, proportions, frames and glazing divisions",
+      "maximum": 3.0,
+      "awarded": 0.6,
+      "citations": [
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_tour_exterior.jpg",
+        "research/second_pass/buildings/mechanical_engineering/sources/commons_2024.jpg",
+        "research/second_pass/buildings/mechanical_engineering/sources/study_2015_pdf_page_65.png",
+        "nw_material.png",
+        "elevations.png"
+      ],
+      "deductions": [
+        "Uniform four-row small-window arrangement replaces lower tall, middle wide and upper short Gatewood families. Historic bar also lacks correct tall main and short upper row proportions.",
+        "Several angled/return faces are entirely blank; source photos and aerial show varied window rhythms. No complete source-backed opening count has been established."
+      ]
+    },
+    {
+      "criterion": "Signature architecture",
+      "maximum": 2.5,
+      "awarded": 0.45,
+      "citations": [
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_2025_current.jpg",
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_tour_exterior.jpg",
+        "portal_material.png",
+        "nw_material.png"
+      ],
+      "deductions": [
+        "Only one generic portal is present. Its object name says Gatewood but its position on the long 1932 bar corresponds to historic portal. It lacks gridded fanlight, carved layered stone, moulded bases, stone two-line name field and relief crest.",
+        "Separate Gatewood portal with brick-filled arched head, stone keystone, pier profiles, deep recess and 2011 plaque is not resolved on stepped wing. Current accessible approaches and secondary entrances are absent or unverified."
+      ]
+    },
+    {
+      "criterion": "Overall proportions, wings/setbacks, roof form and silhouette",
+      "maximum": 2.0,
+      "awarded": 0.55,
+      "citations": [
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_five_wings_diagram.jpg",
+        "top.png",
+        "sw.png",
+        "nw_material.png",
+        "asset_inspection.json"
+      ],
+      "deductions": [
+        "Full 117.03 by 91.80m shell has a uniform18.5m top and0.25m flat roof. Multiple lower wings, hipped sloping perimeter roofs, parapets and rooftop enclosures are represented only by an overhead texture. Texture does not reproduce silhouette.",
+        "Footprint outline is recognizable, but roof voids/roof elevations and five-wing height relationships need segmentation. No measured wing heights accepted."
+      ]
+    },
+    {
+      "criterion": "Material/color fidelity, surface scale, trim and facade depth",
+      "maximum": 1.5,
+      "awarded": 0.65,
+      "citations": [
+        "research/second_pass/buildings/mechanical_engineering/sources/commons_2024.jpg",
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_2025_current.jpg",
+        "portal_material.png",
+        "nw_material.png"
+      ],
+      "deductions": [
+        "Brick/stone/dark-glazing palette and masonry texture give partial identity. Broad white strips and plain surrounds omit projecting belt profiles, soldier heads, decorated spandrels, deep eaves and old/new stone distinctions.",
+        "Source roof image bakes lighting and roof detail onto a single flat plane. Glass is uniformly very dark and lacks observed facade-specific divisions/reflection. Colors remain qualitative under different lighting."
+      ]
+    },
+    {
+      "criterion": "Whole-building visual consistency across all elevations and matched oblique views",
+      "maximum": 1.0,
+      "awarded": 0.2,
+      "citations": [
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_five_wings_diagram.jpg",
+        "research/second_pass/buildings/mechanical_engineering/sources/study_2015_pdf_page_65.png",
+        "elevations.png",
+        "ne.png",
+        "sw.png"
+      ],
+      "deductions": [
+        "All model elevations and two obliques inspected, but repeated grids and blank returns do not follow source wing-specific architecture. Rear/service/court current photographic evidence remains insufficient. No calibrated matched camera poses are available."
+      ]
+    }
+  ],
+  "evidence": {
+    "dossier": "research/second_pass/buildings/mechanical_engineering/README.md",
+    "source_images_directly_inspected": [
+      "research/second_pass/buildings/mechanical_engineering/sources/purdue_five_wings_diagram.jpg",
+      "research/second_pass/buildings/mechanical_engineering/sources/purdue_tour_exterior.jpg",
+      "research/second_pass/buildings/mechanical_engineering/sources/purdue_2025_current.jpg",
+      "research/second_pass/buildings/mechanical_engineering/sources/commons_2024.jpg",
+      "research/second_pass/buildings/mechanical_engineering/sources/study_2015_pdf_page_65.png"
+    ],
+    "saved_asset_reopened": "Blender5.2.3 CLI, asset_inspection.json; inspect_render.py and render_material.py make no asset saves",
+    "settings": "Review renders generated from exact saved collection; Workbench material-color elevations + Cycles12-sample neutral-world daylight NW and portal; cameras and lights transient, no file save. Compare full-size PNGs; composite is navigation only."
+  },
+  "reviewed_views": [
+    "north.png",
+    "south.png",
+    "east.png",
+    "west.png",
+    "ne.png",
+    "sw.png",
+    "top.png",
+    "portal_material.png",
+    "nw_material.png"
+  ],
+  "findings": [
+    {
+      "priority": 1,
+      "feature": "Wing identity and roof geometry",
+      "required_correction": "Register the five source wings against GIS and overhead imagery, segment lower1942/1948 from taller historic/Gatewood volumes, build actual sloping/hipped roof bands and rooftop structures; preserve verified footprint and origin. Do not infer pitch or height merely from texture."
+    },
+    {
+      "priority": 1,
+      "feature": "Facade schedules",
+      "required_correction": "Replace generic grid with wing-specific observed opening rows and bay schedules; Gatewood lower tall, middle larger and top short families, historic bar main and attic/basement rows. Seek new current views for rear/court/service and angled returns."
+    },
+    {
+      "priority": 1,
+      "feature": "Historic and Gatewood portals",
+      "required_correction": "Correct existing long-bar historic portal to M01/M11 with gridded fanlight, stone name field, carved relief/crest and layered profiles; independently place and build Gatewood portal from M02/M12. Misleading object name must not determine facade identity."
+    },
+    {
+      "priority": 2,
+      "feature": "Profiles and finishes",
+      "required_correction": "Match eaves, projecting belts, sills/lintels, masonry panels, recessed frames, pier bases and material scale from source close views; retain uncertainty on concealed current entrance changes."
+    }
+  ],
+  "uncertainties": [
+    "Current post2025 rear/service/court elevations and roof mechanical views missing.",
+    "No complete source-backed whole-building window count or calibrated camera poses.",
+    "No certified wing-specific eave/ridge/floor measurements.2018 unclassified LiDAR requires roof segmentation and vegetation rejection.",
+    "Review score applies only to recorded baseline hash."
+  ],
+  "gates": {
+    "correct_identity": {
+      "pass": true,
+      "detail": "Named ME complex and collection identified; portal object label misleading, substantive facade identity correction remains."
+    },
+    "adequate_exterior_reference_coverage": {
+      "pass": false,
+      "detail": "Rear/service/court/current end views and complete schedules missing."
+    },
+    "no_unresolved_material_exterior_discrepancies": {
+      "pass": false,
+      "detail": "Major roof, openings and portal mismatches."
+    },
+    "saved_file_reopen": {
+      "pass": true,
+      "detail": "Exact path opened successfully with Blender5.2.3 CLI."
+    },
+    "expected_collection_export": {
+      "pass": true,
+      "detail": "Asset_mechanical_engineering contains55 objects."
+    },
+    "portable_dependencies": {
+      "pass": true,
+      "detail": "Only saved image is packed, per asset_inspection; no new dependency added."
+    },
+    "no_regression_to_verified_footprint_orientation_scale": {
+      "pass": true,
+      "detail": "Baseline asset not edited; this is not new measurement validation."
+    }
+  },
+  "acceptance_threshold": 9.5,
+  "threshold_approval": {
+    "date": "2026-11-03",
+    "source": "User: Start upgrading the most needed buildings; spawn new subagents to eval it and do not stop till it is9.5/10",
+    "scope": "User-directed most-needed building upgrades"
+  },
+  "accepted": false
+}
