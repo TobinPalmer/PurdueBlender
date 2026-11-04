@@ -1,0 +1,194 @@
+{
+  "building_id": "mechanical_engineering",
+  "revision": "r02_2026-11-03",
+  "asset_path": "modular/buildings/mechanical_engineering.blend",
+  "asset_sha256": "e8439df6be091ad681ee535df571e692758734c0f6e50d8cfba9bda6ba569bc9",
+  "reviewer": "/root/mechanical_baseline (independent; no geometry edits)",
+  "reviewed_at": "2026-11-03",
+  "max_score": 10,
+  "criteria": [
+    {
+      "criterion": "Window/opening placement, counts, rhythm, proportions, frames and glazing divisions",
+      "maximum": 3.0,
+      "awarded": 0.6,
+      "citations": [
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_tour_exterior.jpg",
+        "research/second_pass/buildings/mechanical_engineering/sources/commons_2024.jpg",
+        "research/second_pass/buildings/mechanical_engineering/sources/study_2015_pdf_page_65.png",
+        "nw_material.png",
+        "elevations.png",
+        "audit/mechanical_engineering/second_pass/source_analysis/purdue_onboarding_gatewood.jpg",
+        "ne.png"
+      ],
+      "deductions": [
+        "Generic repeated small-window grids persist; no newly verified whole-facade schedule. Low1942bar removal leaves elevated upper opening/wall remnants rather than cleanly resolving its two-story source form.",
+        "Official onboarding photo confirms partial Gatewood four tall lower openings left of portal, six larger middle and six shorter upper groups in visible crop; current model lacks those distinct families. Hidden/full-elevation totals remain unknown."
+      ]
+    },
+    {
+      "criterion": "Signature architecture",
+      "maximum": 2.5,
+      "awarded": 0.9,
+      "citations": [
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_2025_current.jpg",
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_tour_exterior.jpg",
+        "portal_material.png",
+        "nw_material.png",
+        "audit/mechanical_engineering/second_pass/additional_sources_2026-11-03/msktd_06.jpg",
+        "source_comparisons.jpg"
+      ],
+      "deductions": [
+        "Historic semicircular aperture recut removes much of prior brick backing, making fanlight grid more legible. Partial correction only.",
+        "Source large rectangular transom is not properly resolved, crest blank, carving missing, raised lettering differs from engraved stone. Gatewood portal, approaches and secondary entries unresolved."
+      ]
+    },
+    {
+      "criterion": "Overall proportions, wings/setbacks, roof form and silhouette",
+      "maximum": 2.0,
+      "awarded": 0.85,
+      "citations": [
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_five_wings_diagram.jpg",
+        "top.png",
+        "sw.png",
+        "nw_material.png",
+        "asset_inspection.json",
+        "ne.png",
+        "audit/mechanical_engineering/second_pass/source_analysis/provenance.json",
+        "audit/mechanical_engineering/second_pass/source_analysis/surface_grid_1m.png",
+        "source_comparisons.jpg"
+      ],
+      "deductions": [
+        "r01 nonplanar diagonal cap seam removed using clipped planar patches. Historic hip retained; low1942body/roof introduced as estimate7.8/7.85m bounded by2018source surfaces.",
+        "NE and north renders show tall floating upper wall/opening/trim remnants at intended lowbar. High roof patch also remains over part of loweredbar; junction/shell classification incomplete. Not a clean source-matching lowwing silhouette.",
+        "Other1929,1948 and Gatewood roofs remain generalized flat surfaces, lacking source-backed differing slopes, heights and rooftop structures."
+      ]
+    },
+    {
+      "criterion": "Material/color fidelity, surface scale, trim and facade depth",
+      "maximum": 1.5,
+      "awarded": 0.3,
+      "citations": [
+        "research/second_pass/buildings/mechanical_engineering/sources/commons_2024.jpg",
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_2025_current.jpg",
+        "portal_material.png",
+        "nw_material.png",
+        "nw_daylight.png",
+        "portal_daylight.png",
+        "asset_inspection.json"
+      ],
+      "deductions": [
+        "New regression: Cycles material renders show main brick facades as untextured gray and old overhead roof texture removed from most roofcap. asset_inspection.json reports a new null material slot on structural envelope; matte gray is present in both consistent and brighter diagnostic lighting.",
+        "Portal stone and dark frames remain; hip has red/brown material. Original source masonry/stone palette now substantially less faithful than r01. Broad flat belts/profiles and missing spandrels persist."
+      ]
+    },
+    {
+      "criterion": "Whole-building visual consistency across all elevations and matched oblique views",
+      "maximum": 1.0,
+      "awarded": 0.15,
+      "citations": [
+        "research/second_pass/buildings/mechanical_engineering/sources/purdue_five_wings_diagram.jpg",
+        "research/second_pass/buildings/mechanical_engineering/sources/study_2015_pdf_page_65.png",
+        "elevations.png",
+        "ne.png",
+        "sw.png"
+      ],
+      "deductions": [
+        "All directions/top/two obliques and two portal lighting conditions independently inspected. Cleared cap seam/fanlight are improvements, but new material loss and upperwall remnants make whole-building consistency worse.",
+        "Full current rear/service/court evidence and calibrated matched cameras remain missing."
+      ]
+    }
+  ],
+  "evidence": {
+    "dossier": "research/second_pass/buildings/mechanical_engineering/README.md",
+    "source_images_directly_inspected": [
+      "research/second_pass/buildings/mechanical_engineering/sources/purdue_five_wings_diagram.jpg",
+      "research/second_pass/buildings/mechanical_engineering/sources/purdue_tour_exterior.jpg",
+      "research/second_pass/buildings/mechanical_engineering/sources/purdue_2025_current.jpg",
+      "research/second_pass/buildings/mechanical_engineering/sources/commons_2024.jpg",
+      "research/second_pass/buildings/mechanical_engineering/sources/study_2015_pdf_page_65.png",
+      "audit/mechanical_engineering/second_pass/additional_sources_2026-11-03/msktd_06.jpg",
+      "audit/mechanical_engineering/second_pass/additional_sources_2026-11-03/gallery_10.jpg",
+      "audit/mechanical_engineering/second_pass/additional_sources_2026-11-03/gallery_16.jpg",
+      "audit/mechanical_engineering/second_pass/source_analysis/purdue_onboarding_gatewood.jpg"
+    ],
+    "saved_asset_reopened": "Blender5.2.3 CLI, asset_inspection.json; inspect_render.py and render_material.py make no asset saves",
+    "settings": "Same saved-asset overview and Cycles12-sample cameras as baseline/r01. Additional daylight diagnostics raise neutral worldstrength from0.7 to1.5 and sun2to3 to expose material assignment; no asset save. Comparisons are approximate source-facing cameras, not calibrated poses.",
+    "source_comparison_notes": "source_comparisons.jpg compares sourceM13 to nw_daylight.png and MSKTD06 to portal_daylight.png, uncalibrated. Source crop900,180,1320,875; modelcrop390,190,810,690. MSKTD duplicates Pepper exposure; no independent viewpoint count claimed."
+  },
+  "reviewed_views": [
+    "north.png",
+    "south.png",
+    "east.png",
+    "west.png",
+    "ne.png",
+    "sw.png",
+    "top.png",
+    "portal_material.png",
+    "nw_material.png",
+    "nw_daylight.png",
+    "portal_daylight.png"
+  ],
+  "findings": [
+    {
+      "priority": 1,
+      "feature": "Material regression",
+      "required_correction": "Restore valid original brick surface assignment on entire structural shell after Boolean operations, remove null material slots/indices and recheck actual Cycles/EEVEE shading; validate roof surfaces intentionally per zone."
+    },
+    {
+      "priority": 1,
+      "feature": "Low1942bar incomplete segmentation",
+      "required_correction": "Remove or reconstruct floating upperwall/opening/trim remnants and high roof patches over intended lowbar. Explicitly split shell by wing footprints; inspect all near junctions and top/NE/north views. Do not discard roofcaps alone while leaving tall walls."
+    },
+    {
+      "priority": 1,
+      "feature": "Wing facade/roof identity",
+      "required_correction": "Replace repeated grid with source-backed per-wing/floor openings, starting clearer official onboarding Gatewood run; model remaining wing-specific heights/roofs, separateGatewoodportal and historic transom/carving. Seek hidden-face evidence; retain gaps."
+    }
+  ],
+  "uncertainties": [
+    "Current post2025 rear/service/court elevations and roof mechanical views missing.",
+    "No complete source-backed whole-building window count or calibrated camera poses.",
+    "No certified wing-specific eave/ridge/floor measurements.2018 unclassified LiDAR requires roof segmentation and vegetation rejection.",
+    "Review score applies only to recorded baseline hash.",
+    "Current additional MSKTD/gallery photos strengthen historic-entry evidence only; no new full hidden-face reference coverage.",
+    "2018 roof diagnostic has unclassified returns and pooled ground reference; no certified eave/ridge dimensions."
+  ],
+  "gates": {
+    "correct_identity": {
+      "pass": true,
+      "detail": "Named ME complex and collection identified; portal object label misleading, substantive facade identity correction remains."
+    },
+    "adequate_exterior_reference_coverage": {
+      "pass": false,
+      "detail": "Rear/service/court/current end views and complete schedules missing."
+    },
+    "no_unresolved_material_exterior_discrepancies": {
+      "pass": false,
+      "detail": "New gray/no-brick surface regression and floating1942upperwalls/highroof remnants; remaining opening/roof/portal mismatches."
+    },
+    "saved_file_reopen": {
+      "pass": true,
+      "detail": "Exact path opened successfully with Blender5.2.3 CLI."
+    },
+    "expected_collection_export": {
+      "pass": true,
+      "detail": "Asset_mechanical_engineering contains106objects."
+    },
+    "portable_dependencies": {
+      "pass": true,
+      "detail": "Only saved image is packed, per asset_inspection; no new dependency added."
+    },
+    "no_regression_to_verified_footprint_orientation_scale": {
+      "pass": true,
+      "detail": "Structural envelope aggregate XY dimensions match baseline; local1942wall segmentation has visual artifacts requiring correction. No campus marker change."
+    }
+  },
+  "acceptance_threshold": 9.5,
+  "threshold_approval": {
+    "date": "2026-11-03",
+    "source": "User: Start upgrading the most needed buildings; spawn new subagents to eval it and do not stop till it is9.5/10",
+    "scope": "User-directed most-needed building upgrades"
+  },
+  "accepted": false,
+  "change_from_baseline": "r02 fixes r01capdeformation/fanlight obstruction and attempts low1942wing, but introduces major material/upperwall regressions; not accepted."
+}
